@@ -1,6 +1,14 @@
 // サイト全体の定数を一元管理
 // 名称・URL・メタ情報をここで定義し、各ページから参照する
 
+export type RoadmapItem = {
+  phase: string;
+  period: string;
+  title: string;
+  description: string;
+  isCurrent?: boolean;
+};
+
 export const siteConfig = {
   name: '蓄電所ネット',
   nameEn: 'BESS NET',
@@ -39,6 +47,7 @@ export const siteConfig = {
       title: '変電所別 系統空き容量公開',
       description:
         'キラーコンテンツ第1弾。10電力会社の公開情報を集約した変電所単位のデータベース。週次更新。',
+      isCurrent: false,
     },
     {
       phase: 'Phase 1',
@@ -46,6 +55,7 @@ export const siteConfig = {
       title: '日本の蓄電所マップ公開',
       description:
         'キラーコンテンツ第2弾。プロジェクトDBと系統情報をレイヤー連動した地図ベースの体験。',
+      isCurrent: false,
     },
     {
       phase: 'Phase 1',
@@ -53,8 +63,9 @@ export const siteConfig = {
       title: '火災・トラブル事例DB公開',
       description:
         'キラーコンテンツ第3弾。国内の蓄電池トラブル事例を公開資料に基づき整理した、業界の安全文化向上に資する情報基盤。',
+      isCurrent: false,
     },
-  ],
+  ] as RoadmapItem[],
 } as const;
 
 export type SiteConfig = typeof siteConfig;
