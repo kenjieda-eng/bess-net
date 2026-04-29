@@ -4,11 +4,10 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
-  // 画像最適化（将来用）
+  // 画像最適化（microCMSの画像配信を許可）
   images: {
     remotePatterns: [
-      // microCMS、Cloudinary等を後で追加
-      // { protocol: 'https', hostname: 'images.microcms-assets.io' },
+      { protocol: 'https', hostname: 'images.microcms-assets.io' },
     ],
   },
 
