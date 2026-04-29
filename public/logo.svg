@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" font-family="'Yu Gothic', 'Hiragino Sans', sans-serif">
+  <rect x="0" y="14" width="14" height="52" rx="2" fill="#00B5A5"/>
+  <text x="28" y="48" font-size="30" font-weight="700" fill="#0F2D4F" letter-spacing="-1">蓄電所ネット</text>
+  <text x="28" y="68" font-size="10" font-weight="500" fill="#6B7280" letter-spacing="2">BESS NET / bess-net.jp</text>
+</svg>
