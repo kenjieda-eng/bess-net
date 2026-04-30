@@ -9,6 +9,12 @@ export type RoadmapItem = {
   isCurrent?: boolean;
 };
 
+export type NavItem = {
+  label: string;
+  href: string;
+  enabled: boolean;
+};
+
 export const siteConfig = {
   name: '蓄電所ネット',
   nameEn: 'BESS NET',
@@ -18,31 +24,57 @@ export const siteConfig = {
     '系統用蓄電池および低圧リソース事業の情報ポータル。業界ニュース、プロジェクトデータベース、市場制度解説、補助金カレンダー、変電所別 系統空き容量、事業者一覧、用語集を一元化。',
   ogImage: '/og-image.png',
   twitter: '',
-  contactEmail: 'contact@bess-net.jp',
+  contactUrl: 'https://eic-jp.org/contact',
   locale: 'ja_JP',
+
+  // 運営者情報（公式）
+  organization: {
+    name: '一般社団法人エネルギー情報センター',
+    nameShort: 'エネルギー情報センター',
+    url: 'https://eic-jp.org/',
+    representative: '理事 江田 健二',
+    address: '〒160-0022 東京都新宿区新宿2丁目9-22 多摩川新宿ビル3F',
+    contactUrl: 'https://eic-jp.org/contact',
+  },
 
   // ナビゲーション（Phase 1で順次有効化）
   nav: [
+    { label: '解説', href: '/explainer', enabled: true },
+    { label: '用語集', href: '/glossary', enabled: true },
+    { label: '補助金', href: '/subsidies', enabled: false },
+    { label: 'プロジェクト', href: '/projects', enabled: false },
     { label: 'ニュース', href: '/news', enabled: false },
-    { label: 'プロジェクトDB', href: '/projects', enabled: false },
-    { label: '市場・制度', href: '/markets', enabled: false },
-    { label: '事業者・サービス', href: '/operators', enabled: false },
-    { label: 'データ', href: '/data', enabled: false },
-    { label: '用語集', href: '/glossary', enabled: false },
+    { label: '事業者', href: '/operators', enabled: false },
+  ] as NavItem[],
+
+  // フッターのリンク群
+  footerLinks: [
+    { label: '蓄電所ネットについて', href: '/about' },
+    { label: '編集方針', href: '/editorial-policy' },
+    { label: 'プライバシーポリシー', href: '/privacy' },
+    { label: '利用規約', href: '/terms' },
   ],
 
   // ロードマップ（トップページ表示用）
   roadmap: [
     {
-      phase: 'Phase 1',
-      period: '0〜2ヶ月',
-      title: 'サイト基盤公開',
+      phase: 'Sprint 1',
+      period: '基盤整備',
+      title: '解説記事・用語集・規約',
       description:
-        '解説記事5本、ニュース週1〜3本、用語集150語、プロジェクトDB初期版、補助金カレンダー初期版を順次公開。',
+        '解説記事5本、用語集150語、About/編集方針/規約/プライバシーポリシー。順次拡充中。',
       isCurrent: true,
     },
     {
-      phase: 'Phase 1',
+      phase: 'Sprint 1',
+      period: '〜2ヶ月',
+      title: 'プロジェクトDB初期版・補助金カレンダー',
+      description:
+        '国内蓄電所プロジェクト情報の構造化掲載と、補助金の公募スケジュール集約。',
+      isCurrent: false,
+    },
+    {
+      phase: 'Sprint 2',
       period: '3〜4ヶ月',
       title: '変電所別 系統空き容量公開',
       description:
@@ -50,7 +82,7 @@ export const siteConfig = {
       isCurrent: false,
     },
     {
-      phase: 'Phase 1',
+      phase: 'Sprint 3',
       period: '5〜6ヶ月',
       title: '日本の蓄電所マップ公開',
       description:
@@ -58,7 +90,7 @@ export const siteConfig = {
       isCurrent: false,
     },
     {
-      phase: 'Phase 1',
+      phase: 'Sprint 5',
       period: '9〜10ヶ月',
       title: '火災・トラブル事例DB公開',
       description:

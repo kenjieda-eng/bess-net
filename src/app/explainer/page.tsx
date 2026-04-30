@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getExplainerList } from '@/lib/microcms';
-import { siteConfig } from '@/lib/site-config';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 
 export const revalidate = 60; // 60秒ごとに再生成
 
@@ -16,15 +17,7 @@ export default async function ExplainerListPage() {
 
   return (
     <>
-      <header className="site-header">
-        <div className="site-header-inner">
-          <Link href="/" className="brand">
-            <span className="brand-mark"></span>
-            蓄電所ネット
-            <span className="brand-en">BESS NET / bess-net.jp</span>
-          </Link>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="section">
         <div className="section-inner">
@@ -62,14 +55,7 @@ export default async function ExplainerListPage() {
         </div>
       </main>
 
-      <footer className="site-footer">
-        <div className="site-footer-inner">
-          <div>© 2026 {siteConfig.name}（bess-net.jp）</div>
-          <div className="site-footer-meta">
-            本サイトは2026年順次公開予定です。
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

@@ -1,58 +1,66 @@
+import Link from 'next/link';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import { getExplainerList } from '@/lib/microcms';
 
-const features = [
+export const revalidate = 60;
+
+const upcomingFeatures = [
   {
     num: '01',
-    title: '業界ニュース・解説',
+    title: '業界ニュース',
     body:
-      '新規連系・補助金採択・制度改正・市場動向を、編集部が独自取材を含めて毎週お届けします。容量市場・需給調整市場・JEPX・FIPなど主要制度の応用解説も。',
+      '新規連系・補助金採択・制度改正・市場動向を、編集部が独自取材を含めて発信します。',
+    status: 'Sprint 1後半',
   },
   {
     num: '02',
     title: 'プロジェクトデータベース',
     body:
-      '国内の系統用蓄電池プロジェクトを公開情報ベースで一元管理。容量・所在地・事業者・ステータス・運転開始時期・併設の有無を構造化して提供します。',
+      '国内の系統用蓄電池プロジェクトを公開情報ベースで一元管理。容量・所在地・事業者・ステータス・運転開始時期・併設の有無を構造化。',
+    status: 'Sprint 1後半',
   },
   {
     num: '03',
-    title: '変電所別 系統空き容量',
+    title: '補助金カレンダー',
     body:
-      '10電力会社が公表する空き容量情報を変電所単位で一覧化。エリア・電圧・容量で素早く絞り込め、開発担当者の用地選定を時短します。',
+      '経産省・エネ庁・NEDO・SII・自治体の蓄電池関連補助金を、公募開始から〆切、採択結果まで継続トラック。',
+    status: 'Sprint 1後半',
   },
   {
     num: '04',
-    title: '補助金カレンダー',
+    title: '変電所別 系統空き容量',
     body:
-      '経産省・エネ庁・NEDO・SII・自治体の蓄電池関連補助金を、公募開始から〆切、採択結果まで継続トラック。蓄電池導入の検討段階で必ず参照される一覧へ。',
+      '10電力会社が公表する空き容量情報を変電所単位で一覧化。エリア・電圧・容量で素早く絞り込み。',
+    status: 'Sprint 2',
   },
   {
     num: '05',
-    title: '事業者・サービス一覧',
+    title: '日本の蓄電所マップ',
     body:
-      '電池メーカー・PCS・EPC・O&M・アグリゲーター・土地・金融・保険・法務・監視・消防・電気主任。蓄電所事業に必要な12カテゴリの事業者を体系的に掲載。',
+      'プロジェクトDBと系統情報をレイヤー連動した地図ベースの体験。',
+    status: 'Sprint 3',
   },
   {
     num: '06',
-    title: '用語集（業界辞典）',
+    title: '事業者・サービス一覧',
     body:
-      '蓄電所事業に関わる用語300語の解説辞典。専門用語に迷ったときの最初の参照先となるよう、定義・関連用語・参考文献を整備します。',
+      '電池メーカー・PCS・EPC・O&M・アグリゲーター・土地・金融・保険・法務・監視・消防・電気主任の12カテゴリ。',
+    status: 'Sprint 2以降',
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  // 公開済みコンテンツの最新を取得
+  const explainerData = await getExplainerList({
+    limit: 5,
+    orders: '-publishedAt',
+  });
+
   return (
     <>
-      {/* ヘッダー */}
-      <header className="site-header">
-        <div className="site-header-inner">
-          <div className="brand">
-            <span className="brand-mark"></span>
-            蓄電所ネット
-            <span className="brand-en">BESS NET / bess-net.jp</span>
-          </div>
-          <span className="coming-soon-badge">COMING SOON</span>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* ヒーロー */}
       <section className="hero">
@@ -65,19 +73,87 @@ export default function Home() {
           <p>
             業界ニュース、プロジェクトデータベース、市場制度解説、補助金カレンダー、変電所別 系統空き容量、事業者情報。蓄電所事業に関わるすべての方が「ここに来れば一通りわかる」サイトを目指します。
           </p>
-          <div className="hero-meta">2026年順次公開予定</div>
+          <div className="hero-cta">
+            <Link href="/explainer" className="btn-primary">
+              解説記事を読む
+            </Link>
+            <Link href="/glossary" className="btn-secondary">
+              用語集を見る
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* 機能紹介 */}
+      {/* 公開中：解説記事 */}
+      <section className="section">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <div className="section-label">Now Live · 公開中</div>
+              <h2 className="section-title">解説記事</h2>
+              <p className="section-desc">
+                市場制度・参入手順・補助金など、業界の実務担当者向けに体系的に解説します。
+              </p>
+            </div>
+            <Link href="/explainer" className="section-link">
+              すべて見る →
+            </Link>
+          </div>
+
+          {explainerData.contents.length === 0 ? (
+            <p>記事はまだありません。準備中です。</p>
+          ) : (
+            <ul className="article-list">
+              {explainerData.contents.map((article) => (
+                <li key={article.id} className="article-item">
+                  <Link
+                    href={`/explainer/${article.slug}`}
+                    className="article-link"
+                  >
+                    <span className="article-category">{article.category}</span>
+                    <h3 className="article-title">{article.title}</h3>
+                    <p className="article-lead">{article.lead}</p>
+                    <span className="article-date">
+                      {new Date(article.publishedAt).toLocaleDateString('ja-JP')}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+
+      {/* 公開中：用語集 */}
+      <section className="section section-alt">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <div className="section-label">Now Live · 公開中</div>
+              <h2 className="section-title">用語集（業界辞典）</h2>
+              <p className="section-desc">
+                蓄電所事業に関わる業界用語を150語以上、一言定義と詳細解説で整備しています。
+              </p>
+            </div>
+            <Link href="/glossary" className="section-link">
+              用語集を開く →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 順次公開予定 */}
       <section className="section features">
         <div className="section-inner">
-          <div className="section-label">What We&apos;re Building</div>
-          <h2 className="section-title">提供予定の主要コンテンツ</h2>
+          <div className="section-label">Coming · 順次公開</div>
+          <h2 className="section-title">公開予定の主要コンテンツ</h2>
           <div className="feature-grid">
-            {features.map((f) => (
+            {upcomingFeatures.map((f) => (
               <div key={f.num} className="feature">
-                <div className="feature-num">{f.num}</div>
+                <div className="feature-num">
+                  {f.num}
+                  <span className="feature-status">{f.status}</span>
+                </div>
                 <h3>{f.title}</h3>
                 <p>{f.body}</p>
               </div>
@@ -120,23 +196,19 @@ export default function Home() {
             蓄電所ネットでは、業界関係者からの情報提供・取材ご協力・サイトへの情報掲載依頼を歓迎します。記事化を保証するものではありませんが、編集部にて拝見の上、適切に検討いたします。
           </p>
           <p>
-            <a href={`mailto:${siteConfig.contactEmail}`}>
-              {siteConfig.contactEmail}
+            <a
+              href={siteConfig.organization.contactUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {siteConfig.organization.contactUrl}
             </a>{' '}
             までご連絡ください。
           </p>
         </div>
       </section>
 
-      {/* フッター */}
-      <footer className="site-footer">
-        <div className="site-footer-inner">
-          <div>© 2026 {siteConfig.name}（bess-net.jp）</div>
-          <div className="site-footer-meta">
-            本サイトは2026年順次公開予定です。記載内容は予告なく変更される場合があります。
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

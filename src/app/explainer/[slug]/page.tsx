@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getExplainerBySlug, getExplainerList } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 
 export const revalidate = 60;
 
@@ -67,15 +69,7 @@ export default async function ExplainerDetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <header className="site-header">
-        <div className="site-header-inner">
-          <Link href="/" className="brand">
-            <span className="brand-mark"></span>
-            蓄電所ネット
-            <span className="brand-en">BESS NET / bess-net.jp</span>
-          </Link>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="section">
         <article className="section-inner article-detail">
@@ -113,11 +107,7 @@ export default async function ExplainerDetailPage({
         </article>
       </main>
 
-      <footer className="site-footer">
-        <div className="site-footer-inner">
-          <div>© 2026 {siteConfig.name}（bess-net.jp）</div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
