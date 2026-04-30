@@ -3,14 +3,13 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getGlossaryBySlug, getGlossaryList } from '@/lib/microcms';
+import { getGlossaryBySlug, getAllGlossarySlugs } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 300;
 
 export async function generateStaticParams() {
-  const data = await getGlossaryList({ limit: 1000, fields: 'slug' });
-  return data.contents.map((item) => ({ slug: item.slug }));
+  return await getAllGlossarySlugs();
 }
 
 export async function generateMetadata({

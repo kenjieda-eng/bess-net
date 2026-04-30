@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getExplainerBySlug, getExplainerList } from '@/lib/microcms';
+import { getExplainerBySlug, getAllExplainerSlugs } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -10,8 +10,7 @@ export const revalidate = 60;
 
 // ビルド時に全記事のスラッグを取得し、静的ページを生成
 export async function generateStaticParams() {
-  const data = await getExplainerList({ limit: 100, fields: 'slug' });
-  return data.contents.map((article) => ({ slug: article.slug }));
+  return await getAllExplainerSlugs();
 }
 
 // 各記事のメタデータ（タイトル・description・OGP）を動的に生成

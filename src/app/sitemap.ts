@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site-config';
-import { getExplainerList, getGlossaryList } from '@/lib/microcms';
+import { getAllExplainer, getAllGlossary } from '@/lib/microcms';
 
 export const revalidate = 300;
 
@@ -20,8 +20,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 解説記事
   let explainerUrls: MetadataRoute.Sitemap = [];
   try {
-    const explainerData = await getExplainerList({ limit: 1000, fields: 'slug,updatedAt' });
-    explainerUrls = explainerData.contents.map((a) => ({
+    const items = await getAllExplainer();
+    explainerUrls = items.map((a) => ({
       url: `${siteConfig.url}/explainer/${a.slug}`,
       lastModified: new Date(a.updatedAt),
       changeFrequency: 'weekly' as const,
@@ -34,8 +34,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 用語集
   let glossaryUrls: MetadataRoute.Sitemap = [];
   try {
-    const glossaryData = await getGlossaryList({ limit: 1000, fields: 'slug,updatedAt' });
-    glossaryUrls = glossaryData.contents.map((g) => ({
+    const items = await getAllGlossary();
+    glossaryUrls = items.map((g) => ({
       url: `${siteConfig.url}/glossary/${g.slug}`,
       lastModified: new Date(g.updatedAt),
       changeFrequency: 'monthly' as const,

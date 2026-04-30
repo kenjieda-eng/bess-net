@@ -98,11 +98,62 @@ export const getGlossaryBySlug = async (
   return data.contents[0] ?? null;
 };
 
-/** 全用語を取得（一覧ページ用、最大1000件） */
-export const getAllGlossary = async () => {
-  const data = await client.getList<Glossary>({
-    endpoint: 'glossary',
-    queries: { limit: 1000, orders: 'term' },
-  });
-  return data.contents;
+/** 全用語を取得（ページング対応・最大1000件） */
+export const getAllGlossary = async (): Promise<Glossary[]> => {
+  const all: Glossary[] = [];
+  const limit = 100; // microCMSの上限
+  for (let offset = 0; offset < 1000; offset += limit) {
+    const data = await client.getList<Glossary>({
+      endpoint: 'glossary',
+      queries: { limit, offset, orders: 'term' },
+    });
+    all.push(...data.contents);
+    if (data.contents.length < limit) break;
+  }
+  return all;
+};
+
+/** 全解説記事を取得（ページング対応） */
+export const getAllExplainer = async (): Promise<Explainer[]> => {
+  const all: Explainer[] = [];
+  const limit = 100;
+  for (let offset = 0; offset < 1000; offset += limit) {
+    const data = await client.getList<Explainer>({
+      endpoint: 'explainer',
+      queries: { limit, offset },
+    });
+    all.push(...data.contents);
+    if (data.contents.length < limit) break;
+  }
+  return all;
+};
+
+/** 全用語のslugを取得（generateStaticParams用、軽量） */
+export const getAllGlossarySlugs = async (): Promise<{ slug: string }[]> => {
+  const slugs: { slug: string }[] = [];
+  const limit = 100;
+  for (let offset = 0; offset < 1000; offset += limit) {
+    const data = await client.getList<Glossary>({
+      endpoint: 'glossary',
+      queries: { limit, offset, fields: 'slug' },
+    });
+    slugs.push(...data.contents.map((g) => ({ slug: g.slug })));
+    if (data.contents.length < limit) break;
+  }
+  return slugs;
+};
+
+/** 全解説記事のslugを取得 */
+export const getAllExplainerSlugs = async (): Promise<{ slug: string }[]> => {
+  const slugs: { slug: string }[] = [];
+  const limit = 100;
+  for (let offset = 0; offset < 1000; offset += limit) {
+    const data = await client.getList<Explainer>({
+      endpoint: 'explainer',
+      queries: { limit, offset, fields: 'slug' },
+    });
+    slugs.push(...data.contents.map((e) => ({ slug: e.slug })));
+    if (data.contents.length < limit) break;
+  }
+  return slugs;
 };
