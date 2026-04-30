@@ -347,6 +347,44 @@
     color: rgba(255,255,255,0.4);
   }
 
+  /* 404 */
+  .not-found {
+    padding: 80px 24px;
+    background: white;
+    min-height: 60vh;
+  }
+  .not-found-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .not-found-code {
+    font-size: clamp(72px, 12vw, 120px);
+    font-weight: 800;
+    color: var(--color-navy);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
+  }
+  .not-found-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 16px;
+  }
+  .not-found-desc {
+    font-size: 15px;
+    color: var(--color-muted);
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  .not-found-links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
   /* ===== 一般ページ（About/Privacy/Terms/Editorial Policy） ===== */
   .page {
     padding: 56px 24px;
@@ -444,6 +482,68 @@
   }
 
   /* ===== 用語集（Glossary） ===== */
+  /* 検索バー */
+  .glossary-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: white;
+    border: 1.5px solid var(--color-line);
+    border-radius: 12px;
+    transition: border-color 0.15s;
+  }
+  .glossary-search-bar:focus-within {
+    border-color: var(--color-accent);
+  }
+  .glossary-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    color: var(--color-text);
+    padding: 4px 0;
+  }
+  .glossary-search-input::placeholder {
+    color: var(--color-muted);
+  }
+  .glossary-search-stats {
+    font-size: 13px;
+    color: var(--color-muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* カテゴリフィルタ */
+  .glossary-category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .glossary-cat-btn {
+    padding: 6px 14px;
+    background: white;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    color: var(--color-navy);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .glossary-cat-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  .glossary-cat-btn.is-active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+  }
+
   .glossary-toc {
     display: flex;
     flex-wrap: wrap;
@@ -784,6 +884,179 @@
     color: var(--color-muted);
     white-space: pre-line;
     line-height: 1.7;
+  }
+
+  /* ===== 補助金・プロジェクト共通テーブル ===== */
+  .subsidy-status-section, .project-status-section {
+    margin-bottom: 40px;
+  }
+  .subsidy-status-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin: 0 0 16px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  .subsidy-status-title.status-open {
+    background: rgba(0,181,165,0.12);
+    color: #00786E;
+  }
+  .subsidy-status-title.status-upcoming {
+    background: rgba(252,185,0,0.15);
+    color: #8C6700;
+  }
+  .subsidy-status-title.status-closed {
+    background: var(--color-bg);
+    color: var(--color-muted);
+  }
+  .subsidy-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    background: white;
+  }
+  .subsidy-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .subsidy-table thead th {
+    background: var(--color-bg);
+    color: var(--color-navy);
+    font-weight: 700;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-line);
+    white-space: nowrap;
+  }
+  .subsidy-table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-line);
+    line-height: 1.6;
+    vertical-align: top;
+  }
+  .subsidy-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .subsidy-table tbody tr:hover {
+    background: rgba(0,181,165,0.04);
+  }
+  .subsidy-link {
+    color: var(--color-navy);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .subsidy-link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  /* バッジ */
+  .subsidy-status-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: -8px 0 24px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .badge-status-open {
+    background: rgba(0,181,165,0.15);
+    color: #00786E;
+  }
+  .badge-status-upcoming {
+    background: rgba(252,185,0,0.18);
+    color: #8C6700;
+  }
+  .badge-status-closed {
+    background: var(--color-bg);
+    color: var(--color-muted);
+  }
+  .badge-category {
+    background: rgba(30,90,168,0.1);
+    color: var(--color-blue);
+  }
+
+  /* 統計カード */
+  .project-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .stat-card {
+    padding: 20px;
+    background: white;
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-navy);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--color-muted);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  /* Empty state（データなし時） */
+  .empty-state {
+    padding: 48px 24px;
+    background: var(--color-bg);
+    border-radius: 12px;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* 関連用語リンク（解説記事末） */
+  .related-term-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .related-term-list li { margin: 0; }
+  .related-term-link {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--color-bg);
+    border-radius: 999px;
+    color: var(--color-navy);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .related-term-link:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+  .related-term-text {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--color-bg);
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: 13px;
   }
 
   .back-link {

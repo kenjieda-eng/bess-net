@@ -3,7 +3,11 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getGlossaryBySlug, getAllGlossarySlugs } from '@/lib/microcms';
+import {
+  getGlossaryBySlug,
+  getAllGlossarySlugs,
+  getGlossaryTermSlugMap,
+} from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 300;
@@ -44,6 +48,9 @@ export default async function GlossaryDetailPage({
   const relatedTerms = item.relatedTerms
     ? item.relatedTerms.split(/[,、，]/).map((t) => t.trim()).filter(Boolean)
     : [];
+
+  // 関連用語→slug マッピング（用語集内リンク用）
+  const termMap = relatedTerms.length > 0 ? await getGlossaryTermSlugMap() : new Map();
 
   // 構造化データ（DefinedTerm）
   const jsonLd = {
@@ -93,15 +100,20 @@ export default async function GlossaryDetailPage({
             <section className="glossary-detail-section">
               <h2>関連用語</h2>
               <ul className="glossary-related-list">
-                {relatedTerms.map((term, i) => (
-                  <li key={i}>
-                    <span>{term}</span>
-                  </li>
-                ))}
+                {relatedTerms.map((term, i) => {
+                  const targetSlug =
+                    termMap.get(term) || termMap.get(term.toLowerCase());
+                  return (
+                    <li key={i}>
+                      {targetSlug ? (
+                        <Link href={`/glossary/${targetSlug}`}>{term}</Link>
+                      ) : (
+                        <span>{term}</span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
-              <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 8 }}>
-                ※ 関連用語のリンク化は今後対応予定です
-              </p>
             </section>
           )}
 

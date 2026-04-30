@@ -2,7 +2,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
-import { getExplainerList } from '@/lib/microcms';
+import { getExplainerList, getGlossaryList, getNewsList } from '@/lib/microcms';
 
 export const revalidate = 60;
 
@@ -52,11 +52,21 @@ const upcomingFeatures = [
 ];
 
 export default async function Home() {
-  // 公開済みコンテンツの最新を取得
-  const explainerData = await getExplainerList({
-    limit: 5,
-    orders: '-publishedAt',
-  });
+  // 公開済みコンテンツの最新を取得（newsはAPI未作成でも落ちないようにラップ）
+  const safeFetch = async <T,>(fn: () => Promise<T>, fallback: T): Promise<T> => {
+    try { return await fn(); } catch { return fallback; }
+  };
+
+  const emptyList = { contents: [], totalCount: 0, offset: 0, limit: 0 };
+
+  const [explainerData, glossaryNew, glossaryTotal, newsData] = await Promise.all([
+    getExplainerList({ limit: 6, orders: '-publishedAt' }),
+    getGlossaryList({ limit: 10, orders: '-publishedAt' }),
+    getGlossaryList({ limit: 1, fields: 'id' }),
+    safeFetch(() => getNewsList({ limit: 3, orders: '-publishedAt' }), emptyList as any),
+  ]);
+  const glossaryCount = glossaryTotal.totalCount;
+  const explainerCount = explainerData.totalCount;
 
   return (
     <>
@@ -84,13 +94,49 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* 最新ニュース（あれば） */}
+      {newsData.contents.length > 0 && (
+        <section className="section">
+          <div className="section-inner">
+            <div className="section-header">
+              <div>
+                <div className="section-label">News · 最新</div>
+                <h2 className="section-title">業界ニュース</h2>
+                <p className="section-desc">
+                  系統用蓄電池・低圧リソース事業の最新動向。
+                </p>
+              </div>
+              <Link href="/news" className="section-link">
+                すべて見る →
+              </Link>
+            </div>
+            <ul className="article-list">
+              {newsData.contents.map((article: any) => (
+                <li key={article.id} className="article-item">
+                  <Link href={`/news/${article.slug}`} className="article-link">
+                    {article.category && article.category[0] && (
+                      <span className="article-category">{article.category[0]}</span>
+                    )}
+                    <h3 className="article-title">{article.title}</h3>
+                    <p className="article-lead">{article.lead}</p>
+                    <span className="article-date">
+                      {new Date(article.publishedAt).toLocaleDateString('ja-JP')}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* 公開中：解説記事 */}
-      <section className="section">
+      <section className={newsData.contents.length > 0 ? "section section-alt" : "section"}>
         <div className="section-inner">
           <div className="section-header">
             <div>
               <div className="section-label">Now Live · 公開中</div>
-              <h2 className="section-title">解説記事</h2>
+              <h2 className="section-title">解説記事（{explainerCount}本）</h2>
               <p className="section-desc">
                 市場制度・参入手順・補助金など、業界の実務担当者向けに体系的に解説します。
               </p>
@@ -125,20 +171,36 @@ export default async function Home() {
       </section>
 
       {/* 公開中：用語集 */}
-      <section className="section section-alt">
+      <section className={newsData.contents.length > 0 ? "section" : "section section-alt"}>
         <div className="section-inner">
           <div className="section-header">
             <div>
               <div className="section-label">Now Live · 公開中</div>
-              <h2 className="section-title">用語集（業界辞典）</h2>
+              <h2 className="section-title">用語集（{glossaryCount}語）</h2>
               <p className="section-desc">
-                蓄電所事業に関わる業界用語を150語以上、一言定義と詳細解説で整備しています。
+                蓄電所事業に関わる業界用語を{glossaryCount}語、一言定義と詳細解説で整備しています。
               </p>
             </div>
             <Link href="/glossary" className="section-link">
               用語集を開く →
             </Link>
           </div>
+
+          {glossaryNew.contents.length > 0 && (
+            <ul className="glossary-list">
+              {glossaryNew.contents.slice(0, 10).map((g) => (
+                <li key={g.id}>
+                  <Link href={`/glossary/${g.slug}`} className="glossary-card">
+                    <div className="glossary-card-term">{g.term}</div>
+                    {g.reading && (
+                      <div className="glossary-card-reading">{g.reading}</div>
+                    )}
+                    <div className="glossary-card-def">{g.shortDef}</div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 

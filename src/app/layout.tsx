@@ -53,7 +53,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const jsonLd = {
+  // 構造化データ：Website + Organization + SearchAction
+  const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: siteConfig.name,
@@ -61,15 +62,61 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: siteConfig.url,
     description: siteConfig.description,
     inLanguage: 'ja-JP',
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.organization.name,
+      url: siteConfig.organization.url,
+    },
   };
+
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: siteConfig.organization.name,
+    alternateName: siteConfig.organization.nameShort,
+    url: siteConfig.organization.url,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '新宿2丁目9-22 多摩川新宿ビル3F',
+      addressLocality: '新宿区',
+      addressRegion: '東京都',
+      postalCode: '160-0022',
+      addressCountry: 'JP',
+    },
+  };
+
+  // Google Analytics 4 ID（Vercel環境変数 NEXT_PUBLIC_GA_MEASUREMENT_ID で設定）
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   return (
     <html lang="ja">
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        {gaId && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}', { anonymize_ip: true });
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body>{children}</body>
     </html>

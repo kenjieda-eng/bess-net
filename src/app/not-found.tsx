@@ -1,49 +1,32 @@
 import Link from 'next/link';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 
 export default function NotFound() {
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        padding: '24px',
-        background: '#F7F9FC',
-      }}
-    >
-      <div>
-        <h1
-          style={{
-            fontSize: '48px',
-            fontWeight: 700,
-            color: '#0F2D4F',
-            marginBottom: '16px',
-          }}
-        >
-          404
-        </h1>
-        <p
-          style={{
-            fontSize: '18px',
-            color: '#1A1A1A',
-            marginBottom: '24px',
-          }}
-        >
-          お探しのページは見つかりませんでした
-        </p>
-        <Link
-          href="/"
-          style={{
-            color: '#00B5A5',
-            fontWeight: 600,
-            textDecoration: 'underline',
-          }}
-        >
-          トップページへ戻る
-        </Link>
-      </div>
-    </div>
+    <>
+      <SiteHeader />
+      <main className="not-found">
+        <div className="not-found-inner">
+          <div className="not-found-code">404</div>
+          <h1 className="not-found-title">お探しのページは見つかりませんでした</h1>
+          <p className="not-found-desc">
+            URLが変更されたか、削除された可能性があります。以下から目的のページへお進みください。
+          </p>
+          <div className="not-found-links">
+            <Link href="/" className="btn-primary">
+              トップへ戻る
+            </Link>
+            <Link href="/explainer" className="btn-secondary">
+              解説記事を見る
+            </Link>
+            <Link href="/glossary" className="btn-secondary">
+              用語集を見る
+            </Link>
+          </div>
+        </div>
+      </main>
+      <SiteFooter />
+    </>
   );
 }

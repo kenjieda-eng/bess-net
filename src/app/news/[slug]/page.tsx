@@ -1,29 +1,31 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 import {
-  getExplainerBySlug,
-  getAllExplainerSlugs,
+  getNewsBySlug,
+  getAllNewsSlugs,
   getGlossaryTermSlugMap,
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
-import SiteHeader from '@/components/SiteHeader';
-import SiteFooter from '@/components/SiteFooter';
 
-export const revalidate = 60;
+export const revalidate = 300;
 
-// ビルド時に全記事のスラッグを取得し、静的ページを生成
 export async function generateStaticParams() {
-  return await getAllExplainerSlugs();
+  try {
+    return await getAllNewsSlugs();
+  } catch {
+    return [];
+  }
 }
 
-// 各記事のメタデータ（タイトル・description・OGP）を動的に生成
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const article = await getExplainerBySlug(params.slug);
+  const article = await getNewsBySlug(params.slug);
   if (!article) return {};
   return {
     title: article.title,
@@ -44,24 +46,29 @@ export async function generateMetadata({
   };
 }
 
-export default async function ExplainerDetailPage({
+export default async function NewsDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const article = await getExplainerBySlug(params.slug);
+  const article = await getNewsBySlug(params.slug);
   if (!article) notFound();
 
-  // 構造化データ（Article schema）
+  const category = (article.category && article.category[0]) || '';
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'NewsArticle',
     headline: article.title,
     description: article.lead,
     datePublished: article.publishedAt,
     dateModified: article.updatedAt,
     author: { '@type': 'Organization', name: siteConfig.name },
-    publisher: { '@type': 'Organization', name: siteConfig.name },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.organization.name,
+      url: siteConfig.organization.url,
+    },
     inLanguage: 'ja-JP',
   };
 
@@ -71,16 +78,15 @@ export default async function ExplainerDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
       <SiteHeader />
-
       <main className="section">
         <article className="section-inner article-detail">
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> /{' '}
-            <Link href="/explainer">解説記事</Link> / {article.category}
+            <Link href="/news">ニュース</Link>
+            {category && ` / ${category}`}
           </p>
-          <span className="article-category">{article.category}</span>
+          {category && <span className="article-category">{category}</span>}
           <h1 className="article-title">{article.title}</h1>
           <p className="article-meta">
             公開日：{new Date(article.publishedAt).toLocaleDateString('ja-JP')}
@@ -102,24 +108,18 @@ export default async function ExplainerDetailPage({
             <RelatedTermsSection relatedTerms={article.relatedTerms} />
           )}
           <p className="back-link">
-            <Link href="/explainer">← 解説記事一覧へ戻る</Link>
+            <Link href="/news">← ニュース一覧へ戻る</Link>
           </p>
         </article>
       </main>
-
       <SiteFooter />
     </>
   );
 }
 
-/** 関連用語をカンマ区切りで分割し、用語集にあるものはリンク化 */
 async function RelatedTermsSection({ relatedTerms }: { relatedTerms: string }) {
   const termMap = await getGlossaryTermSlugMap();
-  const terms = relatedTerms
-    .split(/[,、，]/)
-    .map((t) => t.trim())
-    .filter(Boolean);
-
+  const terms = relatedTerms.split(/[,、，]/).map((t) => t.trim()).filter(Boolean);
   return (
     <section className="article-related">
       <h3>関連用語</h3>
