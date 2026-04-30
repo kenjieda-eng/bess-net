@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F2D4F"/>
+      <stop offset="100%" stop-color="#1E5AA8"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00D4BE"/>
+      <stop offset="100%" stop-color="#00B5A5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- 装飾：右上のグリッドライン -->
+  <g stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- 装飾：右側の蓄電池アイコン風グラフィック -->
+  <g opacity="0.18" transform="translate(900, 165)">
+    <rect x="0" y="0" width="240" height="300" rx="14" fill="none" stroke="#00D4BE" stroke-width="3"/>
+    <rect x="90" y="-18" width="60" height="20" rx="4" fill="none" stroke="#00D4BE" stroke-width="3"/>
+    <rect x="20" y="240" width="200" height="20" rx="2" fill="url(#accent)"/>
+    <rect x="20" y="200" width="200" height="20" rx="2" fill="url(#accent)" opacity="0.85"/>
+    <rect x="20" y="160" width="200" height="20" rx="2" fill="url(#accent)" opacity="0.7"/>
+    <rect x="20" y="120" width="200" height="20" rx="2" fill="url(#accent)" opacity="0.5"/>
+  </g>
+
+  <!-- ブランドマーク -->
+  <rect x="80" y="92" width="14" height="42" rx="3" fill="url(#accent)"/>
+
+  <!-- ブランド名（英語サブ） -->
+  <text x="110" y="118" font-family="-apple-system, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif"
+        font-size="22" font-weight="700" fill="rgba(255,255,255,0.7)" letter-spacing="0.12em">
+    BESS NET
+  </text>
+
+  <!-- 日本語ブランド名 -->
+  <text x="80" y="200" font-family="-apple-system, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif"
+        font-size="60" font-weight="800" fill="white" letter-spacing="-0.02em">
+    蓄電所ネット
+  </text>
+
+  <!-- メイン見出し -->
+  <text x="80" y="295" font-family="-apple-system, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif"
+        font-size="44" font-weight="700" fill="white" letter-spacing="-0.01em">
+    系統用蓄電池・低圧リソース事業の
+  </text>
+  <text x="80" y="350" font-family="-apple-system, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif"
+        font-size="44" font-weight="700" fill="url(#accent)" letter-spacing="-0.01em">
+    実務情報ポータル
+  </text>
+
+  <!-- サブテキスト -->
+  <text x="80" y="430" font-family="-apple-system, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif"
+        font-size="22" font-weight="400" fill="rgba(255,255,255,0.85)" letter-spacing="0.02em">
+    解説 / 用語集 / プロジェクトDB / 補助金カレンダー / 系統空き容量
+  </text>
+
+  <!-- 下部：ドメイン -->
+  <g transform="translate(80, 525)">
+    <rect x="0" y="0" width="180" height="40" rx="20" fill="rgba(0,212,190,0.15)" stroke="rgba(0,212,190,0.4)" stroke-width="1"/>
+    <text x="20" y="26" font-family="-apple-system, 'SF Pro Text', sans-serif"
+          font-size="18" font-weight="600" fill="#00D4BE" letter-spacing="0.04em">
+      bess-net.jp
+    </text>
+  </g>
+
+  <!-- 運営 -->
+  <text x="285" y="551" font-family="-apple-system, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif"
+        font-size="16" font-weight="500" fill="rgba(255,255,255,0.55)" letter-spacing="0.02em">
+    運営：一般社団法人エネルギー情報センター
+  </text>
+</svg>
