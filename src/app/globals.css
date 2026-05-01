@@ -413,7 +413,7 @@
   }
 
   /* ===== 一般ページ（About/Privacy/Terms/Editorial Policy） ===== */
-  /* 文章主体のページは読みやすさ優先で 760px キープ */
+  /* 箇条書き・定義リストが多いため、読書体験用の760pxより少し広い960px */
   .page {
     padding: 56px 24px;
     background: white;
@@ -426,7 +426,7 @@
     }
   }
   .page-inner {
-    max-width: 760px;
+    max-width: 960px;
     margin: 0 auto;
   }
   .page-title {
