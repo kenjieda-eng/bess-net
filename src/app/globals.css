@@ -822,7 +822,7 @@
 
   /* ===== 解説記事 詳細 ===== */
   .article-detail {
-    max-width: 760px;
+    max-width: 880px;
   }
   .article-detail .article-title {
     font-size: clamp(24px, 4vw, 32px);
