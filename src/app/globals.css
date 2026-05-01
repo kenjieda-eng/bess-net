@@ -674,7 +674,7 @@
 
   /* 用語個別ページ */
   .glossary-detail {
-    max-width: 760px;
+    max-width: 880px;
   }
   .glossary-term {
     font-size: clamp(28px, 5vw, 36px);
