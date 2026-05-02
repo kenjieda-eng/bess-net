@@ -181,19 +181,20 @@ export const getGlossaryTermSlugMap = async (): Promise<Map<string, string>> => 
 // ===== 補助金（subsidies）の型定義 =====
 export type Subsidy = {
   id: string;
-  name: string;            // 補助金名
-  slug: string;            // URL用slug
-  organization: string;    // 執行機関
-  category: string[];      // ['国・経産省系'/'SII'/'NEDO'/'環境省'/'自治体']
-  target?: string;         // 対象
-  subsidyRate?: string;    // 補助率
-  maxAmount?: number;      // 上限額（円）
-  applicationStart?: string; // 公募開始 YYYY-MM-DD
-  applicationEnd?: string;   // 公募終了
-  status: string[];        // ['公募中'/'予告'/'採択済'/'終了']
-  officialUrl?: string;    // 公式URL
-  detail?: string;         // 詳細解説（HTML）
-  note?: string;           // 備考
+  name: string;              // 補助金名
+  slug: string;              // URL用slug
+  organization: string;      // 執行機関
+  category: string[];        // ['蓄電池'/'太陽光'/'再エネ統合'/'需要側'/'地域脱炭素'/'ZEH/ZEB'/'EV/V2H']
+  status: string[];          // ['公募中'/'受付終了'/'採択結果公表'/'予算超過終了'/'次年度継続']
+  subsidyRate?: string;      // 補助率（例：1/2、2/3）
+  upperLimit?: string;       // 上限額（例：1億円/件）
+  targetEntity?: string;     // 対象事業者
+  applicationStart?: string; // 申請開始日
+  deadline?: string;         // 〆切日
+  fiscalYear?: string;       // 年度
+  sourceUrl?: string;        // 出典URL（公募要領）
+  scheme?: string;           // 仕組み概要
+  body?: string;             // 詳細本文（HTML）
   publishedAt: string;
   updatedAt: string;
   createdAt: string;
@@ -256,12 +257,10 @@ export type Project = {
   city?: string;           // 市町村
   operator?: string;       // 事業者
   epc?: string;            // EPC
-  commercialOperationDate?: string; // 運転開始予定
-  marketParticipation?: string[];   // ['容量'/'需給調整'/'JEPX']
+  cod?: string;            // 運転開始予定 (Commercial Operation Date)
+  marketParticipation?: string[];   // ['容量市場'/'需給調整市場'/'JEPX'/'長期脱炭素']
   sourceUrl?: string;      // 出典URL
-  fetchedDate?: string;    // 取得日
-  detail?: string;         // 詳細（HTML）
-  note?: string;
+  body?: string;           // 詳細本文（HTML）
   publishedAt: string;
   updatedAt: string;
   createdAt: string;
@@ -313,12 +312,13 @@ export type News = {
   id: string;
   title: string;
   slug: string;
-  category: string[];      // ['連系'/'補助金'/'制度'/'事故'/'人事'/'投資'/'編集部']
+  category: string[];      // ['連系'/'補助金'/'制度'/'事故'/'人事'/'投資'/'編集部'/'技術'/'海外']
   lead: string;
   body: string;
+  sourceName?: string;     // 出典名（例：電気新聞、経産省プレス）
+  sourceUrl?: string;      // 出典URL
+  tags?: string;           // カンマ区切りタグ
   ogImage?: { url: string; height: number; width: number };
-  sources?: string;
-  relatedTerms?: string;
   publishedAt: string;
   updatedAt: string;
   createdAt: string;

@@ -129,7 +129,7 @@ export default async function ProjectsListPage() {
                           <td>{fmtMW(item.outputMw)}</td>
                           <td>{fmtMWh(item.capacityMwh)}</td>
                           <td>{item.operator || '—'}</td>
-                          <td>{item.commercialOperationDate || '—'}</td>
+                          <td>{item.cod || '—'}</td>
                         </tr>
                       ))}
                     </tbody>

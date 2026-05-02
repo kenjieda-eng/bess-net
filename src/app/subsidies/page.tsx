@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     '系統用蓄電池および低圧リソース事業向けの主要補助金を、執行機関別・公募期間別に整理。経産省・エネ庁・SII・NEDO・自治体の蓄電池関連補助金を継続トラック。',
 };
 
-const STATUS_ORDER = ['公募中', '予告', '採択済', '終了', 'その他'];
+const STATUS_ORDER = ['公募中', '次年度継続', '採択結果公表', '受付終了', '予算超過終了', 'その他'];
 
 function groupByStatus(items: Subsidy[]) {
   const groups: Record<string, Subsidy[]> = {};
@@ -34,17 +34,6 @@ function groupByStatus(items: Subsidy[]) {
   return ordered;
 }
 
-function fmtAmount(n?: number): string {
-  if (!n) return '—';
-  if (n >= 100000000) return `${(n / 100000000).toFixed(0)}億円`;
-  if (n >= 10000) return `${(n / 10000).toFixed(0)}万円`;
-  return `${n.toLocaleString()}円`;
-}
-
-function fmtDate(s?: string): string {
-  if (!s) return '—';
-  return s.replace(/^(\d{4})-(\d{2})-(\d{2}).*$/, '$1/$2/$3');
-}
 
 export default async function SubsidiesListPage() {
   let items: Subsidy[] = [];
@@ -106,10 +95,10 @@ export default async function SubsidiesListPage() {
                           </td>
                           <td>{item.organization}</td>
                           <td>{item.subsidyRate || '—'}</td>
-                          <td>{fmtAmount(item.maxAmount)}</td>
+                          <td>{item.upperLimit || '—'}</td>
                           <td>
-                            {fmtDate(item.applicationStart)} 〜<br />
-                            {fmtDate(item.applicationEnd)}
+                            {item.applicationStart || '—'} 〜<br />
+                            {item.deadline || '—'}
                           </td>
                         </tr>
                       ))}

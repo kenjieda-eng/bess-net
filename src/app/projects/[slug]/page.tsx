@@ -76,9 +76,9 @@ export default async function ProjectDetailPage({
               <dt>EPC</dt>
               <dd>{item.epc}</dd>
             </>)}
-            {item.commercialOperationDate && (<>
+            {item.cod && (<>
               <dt>運転開始予定</dt>
-              <dd>{item.commercialOperationDate}</dd>
+              <dd>{item.cod}</dd>
             </>)}
             {item.marketParticipation && item.marketParticipation.length > 0 && (<>
               <dt>市場参加</dt>
@@ -90,29 +90,17 @@ export default async function ProjectDetailPage({
                 <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
                   {item.sourceUrl}
                 </a>
-                {item.fetchedDate && (
-                  <span style={{ color: 'var(--color-muted)', fontSize: 12, marginLeft: 8 }}>
-                    （取得日：{item.fetchedDate}）
-                  </span>
-                )}
               </dd>
             </>)}
           </dl>
 
-          {item.detail && (
+          {item.body && (
             <section className="page-section">
               <h2>プロジェクト詳細</h2>
               <div
                 className="article-body"
-                dangerouslySetInnerHTML={{ __html: item.detail }}
+                dangerouslySetInnerHTML={{ __html: item.body }}
               />
-            </section>
-          )}
-
-          {item.note && (
-            <section className="page-section">
-              <h2>備考</h2>
-              <p>{item.note}</p>
             </section>
           )}
 

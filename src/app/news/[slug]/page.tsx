@@ -6,7 +6,6 @@ import SiteFooter from '@/components/SiteFooter';
 import {
   getNewsBySlug,
   getAllNewsSlugs,
-  getGlossaryTermSlugMap,
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 
@@ -98,14 +97,25 @@ export default async function NewsDetailPage({
             className="article-body"
             dangerouslySetInnerHTML={{ __html: article.body }}
           />
-          {article.sources && (
+          {(article.sourceName || article.sourceUrl) && (
             <section className="article-sources">
               <h3>出典</h3>
-              <p>{article.sources}</p>
+              <p>
+                {article.sourceName && <span>{article.sourceName}</span>}
+                {article.sourceName && article.sourceUrl && <span> ／ </span>}
+                {article.sourceUrl && (
+                  <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    {article.sourceUrl}
+                  </a>
+                )}
+              </p>
             </section>
           )}
-          {article.relatedTerms && (
-            <RelatedTermsSection relatedTerms={article.relatedTerms} />
+          {article.tags && (
+            <section className="article-tags">
+              <h3>タグ</h3>
+              <p>{article.tags}</p>
+            </section>
           )}
           <p className="back-link">
             <Link href="/news">← ニュース一覧へ戻る</Link>
@@ -114,31 +124,5 @@ export default async function NewsDetailPage({
       </main>
       <SiteFooter />
     </>
-  );
-}
-
-async function RelatedTermsSection({ relatedTerms }: { relatedTerms: string }) {
-  const termMap = await getGlossaryTermSlugMap();
-  const terms = relatedTerms.split(/[,、，]/).map((t) => t.trim()).filter(Boolean);
-  return (
-    <section className="article-related">
-      <h3>関連用語</h3>
-      <ul className="related-term-list">
-        {terms.map((term, i) => {
-          const slug = termMap.get(term) || termMap.get(term.toLowerCase());
-          return (
-            <li key={i}>
-              {slug ? (
-                <Link href={`/glossary/${slug}`} className="related-term-link">
-                  {term}
-                </Link>
-              ) : (
-                <span className="related-term-text">{term}</span>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    </section>
   );
 }

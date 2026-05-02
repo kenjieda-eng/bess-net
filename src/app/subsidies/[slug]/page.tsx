@@ -27,18 +27,8 @@ export async function generateMetadata({
   if (!item) return {};
   return {
     title: item.name,
-    description: `${item.organization}が執行する蓄電池関連補助金「${item.name}」の概要。${item.target ?? ''}`,
+    description: `${item.organization}が執行する蓄電池関連補助金「${item.name}」の概要。${item.targetEntity ?? ''}`,
   };
-}
-
-function fmtAmount(n?: number): string {
-  if (!n) return '—';
-  return n.toLocaleString() + '円';
-}
-
-function fmtDate(s?: string): string {
-  if (!s) return '—';
-  return s.replace(/^(\d{4})-(\d{2})-(\d{2}).*$/, '$1年$2月$3日');
 }
 
 export default async function SubsidyDetailPage({
@@ -75,46 +65,52 @@ export default async function SubsidyDetailPage({
           <dl className="info-list" style={{ marginBottom: 32 }}>
             <dt>執行機関</dt>
             <dd>{item.organization}</dd>
-            {item.target && (<>
-              <dt>対象</dt>
-              <dd>{item.target}</dd>
+            {item.targetEntity && (<>
+              <dt>対象事業者</dt>
+              <dd>{item.targetEntity}</dd>
             </>)}
             {item.subsidyRate && (<>
               <dt>補助率</dt>
               <dd>{item.subsidyRate}</dd>
             </>)}
-            {item.maxAmount && (<>
+            {item.upperLimit && (<>
               <dt>上限額</dt>
-              <dd>{fmtAmount(item.maxAmount)}</dd>
+              <dd>{item.upperLimit}</dd>
             </>)}
-            <dt>公募期間</dt>
-            <dd>
-              {fmtDate(item.applicationStart)} 〜 {fmtDate(item.applicationEnd)}
-            </dd>
-            {item.officialUrl && (<>
-              <dt>公式サイト</dt>
+            {(item.applicationStart || item.deadline) && (<>
+              <dt>公募期間</dt>
               <dd>
-                <a href={item.officialUrl} target="_blank" rel="noopener noreferrer">
-                  {item.officialUrl}
+                {item.applicationStart || '—'} 〜 {item.deadline || '—'}
+              </dd>
+            </>)}
+            {item.fiscalYear && (<>
+              <dt>年度</dt>
+              <dd>{item.fiscalYear}</dd>
+            </>)}
+            {item.sourceUrl && (<>
+              <dt>出典URL</dt>
+              <dd>
+                <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
+                  {item.sourceUrl}
                 </a>
               </dd>
             </>)}
           </dl>
 
-          {item.detail && (
+          {item.scheme && (
+            <section className="page-section">
+              <h2>仕組み概要</h2>
+              <p>{item.scheme}</p>
+            </section>
+          )}
+
+          {item.body && (
             <section className="page-section">
               <h2>詳細</h2>
               <div
                 className="article-body"
-                dangerouslySetInnerHTML={{ __html: item.detail }}
+                dangerouslySetInnerHTML={{ __html: item.body }}
               />
-            </section>
-          )}
-
-          {item.note && (
-            <section className="page-section">
-              <h2>備考</h2>
-              <p>{item.note}</p>
             </section>
           )}
 
