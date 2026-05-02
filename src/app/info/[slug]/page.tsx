@@ -5,7 +5,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import {
   getNewsBySlug,
-  getIndustryNewsSlugs,
+  getSiteInfoSlugs,
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 
@@ -13,7 +13,7 @@ export const revalidate = 300;
 
 export async function generateStaticParams() {
   try {
-    return await getIndustryNewsSlugs();
+    return await getSiteInfoSlugs();
   } catch {
     return [];
   }
@@ -45,7 +45,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function NewsDetailPage({
+export default async function InfoDetailPage({
   params,
 }: {
   params: { slug: string };
@@ -53,16 +53,16 @@ export default async function NewsDetailPage({
   const article = await getNewsBySlug(params.slug);
   if (!article) notFound();
 
-  // 編集部カテゴリは /info 側に分離されているため、/news 配下では404
+  // 編集部カテゴリ以外がここで表示されないようガード
   const isEditorial =
     article.category && article.category.includes('編集部');
-  if (isEditorial) notFound();
+  if (!isEditorial) notFound();
 
-  const category = (article.category && article.category[0]) || '';
+  const category = (article.category && article.category[0]) || 'お知らせ';
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
+    '@type': 'Article',
     headline: article.title,
     description: article.lead,
     datePublished: article.publishedAt,
@@ -87,7 +87,7 @@ export default async function NewsDetailPage({
         <article className="section-inner article-detail">
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> /{' '}
-            <Link href="/news">ニュース</Link>
+            <Link href="/info">お知らせ</Link>
             {category && ` / ${category}`}
           </p>
           {category && <span className="article-category">{category}</span>}
@@ -120,4 +120,14 @@ export default async function NewsDetailPage({
             <section className="article-tags">
               <h3>タグ</h3>
               <p>{article.tags}</p>
-    
+            </section>
+          )}
+          <p className="back-link">
+            <Link href="/info">← お知らせ一覧へ戻る</Link>
+          </p>
+        </article>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}

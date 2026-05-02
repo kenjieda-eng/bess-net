@@ -2,7 +2,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
-import { getExplainerList, getGlossaryList, getNewsList } from '@/lib/microcms';
+import { getExplainerList, getGlossaryList, getIndustryNews } from '@/lib/microcms';
 
 export const revalidate = 60;
 
@@ -59,12 +59,25 @@ export default async function Home() {
 
   const emptyList = { contents: [], totalCount: 0, offset: 0, limit: 0 };
 
-  const [explainerData, glossaryNew, glossaryTotal, newsData] = await Promise.all([
+  const [explainerData, glossaryNew, glossaryTotal, industryNewsAll] = await Promise.all([
     getExplainerList({ limit: 6, orders: '-publishedAt' }),
     getGlossaryList({ limit: 10, orders: '-publishedAt' }),
     getGlossaryList({ limit: 1, fields: 'id' }),
-    safeFetch(() => getNewsList({ limit: 3, orders: '-publishedAt' }), emptyList as any),
+    safeFetch(() => getIndustryNews(), [] as any[]),
   ]);
+  // 業界ニュース最新3本（編集部=お知らせは除外済み）
+  const newsData = {
+    contents: (industryNewsAll as any[])
+      .slice()
+      .sort(
+        (a: any, b: any) =>
+          new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      )
+      .slice(0, 3),
+    totalCount: (industryNewsAll as any[]).length,
+    offset: 0,
+    limit: 3,
+  };
   const glossaryCount = glossaryTotal.totalCount;
   const explainerCount = explainerData.totalCount;
 

@@ -2,20 +2,20 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getIndustryNews, type News } from '@/lib/microcms';
+import { getSiteInfo, type News } from '@/lib/microcms';
 
 export const revalidate = 300; // 5分ごと
 
 export const metadata: Metadata = {
-  title: 'ニュース',
+  title: 'お知らせ',
   description:
-    '系統用蓄電池および低圧リソース事業の業界ニュース。新規連系・補助金採択・制度改正・市場動向・人事・投資情報を継続的に発信します。',
+    '蓄電所ネット運営からのお知らせ・サイト更新情報・編集後記。業界ニュースは「ニュース」、市場制度や技術の解説は「解説」をご覧ください。',
 };
 
-export default async function NewsListPage() {
+export default async function InfoListPage() {
   let items: News[] = [];
   try {
-    items = await getIndustryNews();
+    items = await getSiteInfo();
   } catch {
     // API未設定時は空表示
   }
@@ -26,26 +26,25 @@ export default async function NewsListPage() {
       <main className="section">
         <div className="section-inner">
           <p className="article-breadcrumb">
-            <Link href="/">トップ</Link> / ニュース
+            <Link href="/">トップ</Link> / お知らせ
           </p>
-          <div className="section-label">News</div>
-          <h1 className="section-title">ニュース</h1>
+          <div className="section-label">Info</div>
+          <h1 className="section-title">お知らせ</h1>
           <p className="section-desc" style={{ marginBottom: 32 }}>
-            業界の新規連系・補助金採択・制度改正・市場動向を、編集部発で発信しています。
+            蓄電所ネット運営からのお知らせ・サイト更新情報・編集後記をお届けします。
+            業界の速報は<Link href="/news">ニュース</Link>、
+            市場制度や技術の解説は<Link href="/explainer">解説</Link>をご覧ください。
           </p>
 
           {items.length === 0 ? (
             <div className="empty-state">
-              <p>ニュース記事はまだ準備中です。</p>
-              <p style={{ marginTop: 8, fontSize: 13, color: 'var(--color-muted)' }}>
-                Sprint 1終了までに、編集部発信記事3〜5本＋週1〜3本ペースの取材記事の公開を予定しています。
-              </p>
+              <p>お知らせはまだありません。</p>
             </div>
           ) : (
             <ul className="article-list">
               {items.map((article) => (
                 <li key={article.id} className="article-item">
-                  <Link href={`/news/${article.slug}`} className="article-link">
+                  <Link href={`/info/${article.slug}`} className="article-link">
                     {article.category && article.category[0] && (
                       <span className="article-category">{article.category[0]}</span>
                     )}

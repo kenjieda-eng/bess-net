@@ -5,7 +5,8 @@ import {
   getAllGlossary,
   getAllSubsidies,
   getAllProjects,
-  getAllNews,
+  getIndustryNews,
+  getSiteInfo,
 } from '@/lib/microcms';
 
 export const revalidate = 300;
@@ -20,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/glossary`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/subsidies`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/projects`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${siteConfig.url}/info`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/privacy`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
@@ -30,12 +32,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try { return await fn(); } catch { return []; }
   };
 
-  const [explainer, glossary, subsidies, projects, news] = await Promise.all([
+  const [explainer, glossary, subsidies, projects, news, info] = await Promise.all([
     safeFetch(getAllExplainer),
     safeFetch(getAllGlossary),
     safeFetch(getAllSubsidies),
     safeFetch(getAllProjects),
-    safeFetch(getAllNews),
+    safeFetch(getIndustryNews),
+    safeFetch(getSiteInfo),
   ]);
 
   const explainerUrls: MetadataRoute.Sitemap = explainer.map((a) => ({
@@ -68,10 +71,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
+  const infoUrls: MetadataRoute.Sitemap = info.map((n) => ({
+    url: `${siteConfig.url}/info/${n.slug}`,
+    lastModified: new Date(n.updatedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }));
 
   return [
     ...staticUrls,
     ...newsUrls,
+    ...infoUrls,
     ...explainerUrls,
     ...glossaryUrls,
     ...subsidyUrls,
