@@ -141,3 +141,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Claude Code (個人PC用設定。リポジトリには含めない)
+.claude/
