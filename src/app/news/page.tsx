@@ -1,27 +1,42 @@
+// /news 一覧ページ (Server Component)
+// - microCMS から業界ニュース全件取得（編集部以外）
+// - クライアントの NewsBrowser でフィルタ/検索/年絞り/ソート/ページング
+
+import { Suspense } from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { getIndustryNews } from '@/lib/microcms';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getIndustryNews, type News } from '@/lib/microcms';
+import NewsBrowser from './NewsBrowser';
 
-export const revalidate = 300; // 5分ごと
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: 'ニュース',
   description:
-    '系統用蓄電池および低圧リソース事業の業界ニュース。新規連系・補助金採択・制度改正・市場動向・人事・投資情報を継続的に発信します。',
+    '系統用蓄電池(BESS)・低圧リソース事業の業界ニュース。新規連系・運転開始・補助金・PF組成・制度改正・市場動向・人事・海外動向まで網羅。カテゴリ・年・キーワードで絞り込み可能。',
+  alternates: { canonical: '/news' },
 };
 
 export default async function NewsListPage() {
-  let items: News[] = [];
-  try {
-    items = await getIndustryNews();
-  } catch {
-    // API未設定時は空表示
-  }
+  const items = await getIndustryNews();
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: '業界ニュース一覧',
+    description:
+      '系統用蓄電池(BESS)・低圧リソース事業の業界ニュース一覧',
+    numberOfItems: items.length,
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
       <main className="section">
         <div className="section-inner">
@@ -29,35 +44,20 @@ export default async function NewsListPage() {
             <Link href="/">トップ</Link> / ニュース
           </p>
           <div className="section-label">News</div>
-          <h1 className="section-title">ニュース</h1>
-          <p className="section-desc" style={{ marginBottom: 32 }}>
-            業界の新規連系・補助金採択・制度改正・市場動向を、編集部発で発信しています。
+          <h1 className="section-title">業界ニュース</h1>
+          <p className="section-description">
+            系統用蓄電池(BESS)・低圧リソース事業の業界ニュースを、編集部発で発信しています。
+            カテゴリ・年・キーワードで絞り込み可能です。
           </p>
 
           {items.length === 0 ? (
             <div className="empty-state">
               <p>ニュース記事はまだ準備中です。</p>
-              <p style={{ marginTop: 8, fontSize: 13, color: 'var(--color-muted)' }}>
-                Sprint 1終了までに、編集部発信記事3〜5本＋週1〜3本ペースの取材記事の公開を予定しています。
-              </p>
             </div>
           ) : (
-            <ul className="article-list">
-              {items.map((article) => (
-                <li key={article.id} className="article-item">
-                  <Link href={`/news/${article.slug}`} className="article-link">
-                    {article.category && article.category[0] && (
-                      <span className="article-category">{article.category[0]}</span>
-                    )}
-                    <h2 className="article-title">{article.title}</h2>
-                    <p className="article-lead">{article.lead}</p>
-                    <span className="article-date">
-                      {new Date(article.publishedAt).toLocaleDateString('ja-JP')}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <Suspense fallback={<div className="news-loading">読み込み中...</div>}>
+              <NewsBrowser items={items} />
+            </Suspense>
           )}
 
           <p className="back-link">
