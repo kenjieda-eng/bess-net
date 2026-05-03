@@ -120,4 +120,14 @@ export default async function NewsDetailPage({
             <section className="article-tags">
               <h3>タグ</h3>
               <p>{article.tags}</p>
-    
+            </section>
+          )}
+          <p className="back-link">
+            <Link href="/news">← ニュース一覧へ戻る</Link>
+          </p>
+        </article>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
