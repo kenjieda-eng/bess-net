@@ -3,6 +3,7 @@
 // - クライアントの ExplainerBrowser に渡してフィルタ/検索/ソート
 // - SSG + revalidate でビルドコストとSEOを両立
 
+import { Suspense } from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllExplainer } from '@/lib/microcms';
@@ -54,7 +55,9 @@ export default async function ExplainerListPage() {
           {articles.length === 0 ? (
             <p>記事はまだありません。準備中です。</p>
           ) : (
-            <ExplainerBrowser items={articles} />
+            <Suspense fallback={<div className="explainer-loading">読み込み中...</div>}>
+              <ExplainerBrowser items={articles} />
+            </Suspense>
           )}
 
           <p className="back-link">
