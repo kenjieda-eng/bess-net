@@ -1123,3 +1123,250 @@
     text-decoration: underline;
   }
 }
+
+/* ===========================================================
+ * patch_v7_explainer_browser
+ * 既存の globals.css の最後（@layer components の中、または外）に
+ * 以下のブロックを追記してください
+ * =========================================================== */
+
+/* ===== ExplainerBrowser ===== */
+
+.explainer-browser {
+  margin-top: 24px;
+}
+
+/* コントロールバー */
+.explainer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.explainer-search {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  font-size: 16px;
+  background: white;
+  color: var(--color-text);
+}
+.explainer-search:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -1px;
+}
+.explainer-sort {
+  flex: 0 0 auto;
+  padding: 12px 16px;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* カテゴリタブ */
+.explainer-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+.explainer-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: white;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.explainer-tab:hover {
+  border-color: var(--color-accent);
+  color: var(--color-blue);
+}
+.explainer-tab.is-active {
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+  color: white;
+}
+.explainer-tab-count {
+  display: inline-block;
+  min-width: 22px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.18);
+  color: inherit;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+.explainer-tab:not(.is-active) .explainer-tab-count {
+  background: var(--color-bg);
+  color: var(--color-muted);
+}
+
+/* 結果サマリ */
+.explainer-result-summary {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin: 8px 0 16px;
+}
+
+/* カードグリッド */
+.explainer-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .explainer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .explainer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.explainer-card {
+  background: white;
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.explainer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 45, 79, 0.08);
+  border-color: var(--color-accent);
+}
+.explainer-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 22px;
+  text-decoration: none;
+  color: inherit;
+}
+.explainer-card-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.explainer-card-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.explainer-card-read {
+  font-size: 11px;
+  color: var(--color-muted);
+}
+.explainer-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 10px;
+  color: var(--color-navy);
+  /* 2行で打ち切り */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.explainer-card-lead {
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0 0 12px;
+  /* 3行で打ち切り */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1 1 auto;
+}
+.explainer-card-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.explainer-card-tag {
+  font-size: 11px;
+  color: var(--color-blue);
+  background: var(--color-bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.explainer-card-date {
+  font-size: 11px;
+  color: var(--color-muted);
+  margin: 0;
+  text-align: right;
+}
+
+/* もっと見る */
+.explainer-more {
+  text-align: center;
+  margin-top: 24px;
+}
+.explainer-more-button {
+  padding: 12px 28px;
+  border: 1px solid var(--color-navy);
+  border-radius: 8px;
+  background: white;
+  color: var(--color-navy);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.explainer-more-button:hover {
+  background: var(--color-navy);
+  color: white;
+}
+
+/* セクション説明文 */
+.section-description {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin: 0 0 24px;
+  line-height: 1.7;
+}
+
+/* バッジ用カラー（Tailwind の色名相当をベタで） */
+.bg-blue-50    { background-color: #EFF6FF; }
+.text-blue-700 { color: #1D4ED8; }
+.bg-emerald-50    { background-color: #ECFDF5; }
+.text-emerald-700 { color: #047857; }
+.bg-amber-50    { background-color: #FFFBEB; }
+.text-amber-700 { color: #B45309; }
+.bg-purple-50    { background-color: #FAF5FF; }
+.text-purple-700 { color: #6D28D9; }
+.bg-rose-50    { background-color: #FFF1F2; }
+.text-rose-700 { color: #BE123C; }
+.bg-gray-100    { background-color: #F3F4F6; }
+.text-gray-700  { color: #374151; }
