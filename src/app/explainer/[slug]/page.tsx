@@ -78,9 +78,14 @@ export default async function ExplainerDetailPage({
         <article className="section-inner article-detail">
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> /{' '}
-            <Link href="/explainer">解説記事</Link> / {article.category}
+            <Link href="/explainer">解説記事</Link>
+            {article.category && article.category[0] && (
+              <> / {article.category[0]}</>
+            )}
           </p>
-          <span className="article-category">{article.category}</span>
+          {article.category && article.category[0] && (
+            <span className="article-category">{article.category[0]}</span>
+          )}
           <h1 className="article-title">{article.title}</h1>
           <p className="article-meta">
             公開日：{new Date(article.publishedAt).toLocaleDateString('ja-JP')}
