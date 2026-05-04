@@ -7,6 +7,7 @@ import {
   getAllProjects,
   getIndustryNews,
   getSiteInfo,
+  getAllOperators,
 } from '@/lib/microcms';
 
 export const revalidate = 300;
@@ -21,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/glossary`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/subsidies`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/projects`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${siteConfig.url}/operators`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/info`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
@@ -32,13 +34,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try { return await fn(); } catch { return []; }
   };
 
-  const [explainer, glossary, subsidies, projects, news, info] = await Promise.all([
+  const [explainer, glossary, subsidies, projects, news, info, operators] = await Promise.all([
     safeFetch(getAllExplainer),
     safeFetch(getAllGlossary),
     safeFetch(getAllSubsidies),
     safeFetch(getAllProjects),
     safeFetch(getIndustryNews),
     safeFetch(getSiteInfo),
+    safeFetch(getAllOperators),
   ]);
 
   const explainerUrls: MetadataRoute.Sitemap = explainer.map((a) => ({
@@ -77,6 +80,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.5,
   }));
+  const operatorUrls: MetadataRoute.Sitemap = operators.map((o) => ({
+    url: `${siteConfig.url}/operators/${o.slug}`,
+    lastModified: new Date(o.updatedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
 
   return [
     ...staticUrls,
@@ -86,5 +95,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...glossaryUrls,
     ...subsidyUrls,
     ...projectUrls,
+    ...operatorUrls,
   ];
 }

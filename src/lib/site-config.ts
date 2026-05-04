@@ -43,9 +43,9 @@ export const siteConfig = {
     { label: '解説', href: '/explainer', enabled: true },
     { label: '用語集', href: '/glossary', enabled: true },
     { label: '補助金', href: '/subsidies', enabled: true },
+    { label: '事業者ナビ', href: '/operators', enabled: true },
     { label: 'プロジェクト', href: '/projects', enabled: true },
     { label: 'お知らせ', href: '/info', enabled: true },
-    { label: '事業者', href: '/operators', enabled: false },
   ] as NavItem[],
 
   // フッターのリンク群

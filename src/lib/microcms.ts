@@ -357,3 +357,87 @@ export const getIndustryNewsSlugs = async (): Promise<{ slug: string }[]> => {
   const all = await getIndustryNews();
   return all.map((n) => ({ slug: n.slug }));
 };
+
+// =================================================================
+// patch_v10_operators_frontend : 事業者ナビ（operators）
+// 既存の src/lib/microcms.ts の末尾に追記してください
+// =================================================================
+
+// ===== 事業者（operators）の型定義 =====
+export type Operator = {
+  id: string;
+  name: string;
+  slug: string;
+  nameEn?: string;
+  category: string[]; // 複数選択（20カテゴリ）
+  corporateType?: string;
+  websiteUrl?: string;
+  prefecture?: string;
+  city?: string;
+  foundedYear?: number;
+  listedMarket?: string;
+  ticker?: string;
+  description: string;
+  products?: string;
+  bessRelation: string;
+  body?: string;
+  sourceUrl?: string;
+  publishedAt: string;
+  updatedAt: string;
+  createdAt: string;
+  revisedAt: string;
+};
+
+export const getOperatorList = async (queries?: MicroCMSQueries) => {
+  return await client.getList<Operator>({ endpoint: 'operators', queries });
+};
+
+export const getAllOperators = async (): Promise<Operator[]> => {
+  const all: Operator[] = [];
+  const limit = 100;
+  // 403件想定 → 余裕を持って 1000 件まで対応
+  for (let offset = 0; offset < 2000; offset += limit) {
+    const data = await client.getList<Operator>({
+      endpoint: 'operators',
+      queries: { limit, offset, orders: 'name' },
+    });
+    all.push(...data.contents);
+    if (data.contents.length < limit) break;
+  }
+  return all;
+};
+
+export const getOperatorBySlug = async (
+  slug: string
+): Promise<Operator | null> => {
+  // microCMS では PUT で content-id を指定したため id == slug
+  // ただし安全のため filters でも検索可能にする
+  try {
+    const data = await client.get<Operator>({
+      endpoint: 'operators',
+      contentId: slug,
+    });
+    return data;
+  } catch {
+    // フォールバック：filters で検索
+    const data = await client.getList<Operator>({
+      endpoint: 'operators',
+      queries: { filters: `slug[equals]${slug}`, limit: 1 },
+    });
+    return data.contents[0] ?? null;
+  }
+};
+
+export const getAllOperatorSlugs = async (): Promise<{ slug: string }[]> => {
+  const slugs: { slug: string }[] = [];
+  const limit = 100;
+  for (let offset = 0; offset < 2000; offset += limit) {
+    const data = await client.getList<Operator>({
+      endpoint: 'operators',
+      queries: { limit, offset, fields: 'slug' },
+    });
+    slugs.push(...data.contents.map((o) => ({ slug: o.slug })));
+    if (data.contents.length < limit) break;
+  }
+  return slugs;
+};
