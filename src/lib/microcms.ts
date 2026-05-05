@@ -290,13 +290,22 @@ export const getNewsList = async (queries?: MicroCMSQueries) => {
   return await client.getList<News>({ endpoint: 'news', queries });
 };
 
+// 一覧ページ用の軽量フィールド（body は除外して ISR fallback サイズを抑制）
+const NEWS_LIST_FIELDS =
+  'id,title,slug,category,lead,sourceName,sourceUrl,tags,ogImage,publishedAt,updatedAt,createdAt,revisedAt';
+
 export const getAllNews = async (): Promise<News[]> => {
   const all: News[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 2000; offset += limit) {
     const data = await client.getList<News>({
       endpoint: 'news',
-      queries: { limit, offset, orders: '-publishedAt' },
+      queries: {
+        limit,
+        offset,
+        orders: '-publishedAt',
+        fields: NEWS_LIST_FIELDS,
+      },
     });
     all.push(...data.contents);
     if (data.contents.length < limit) break;
