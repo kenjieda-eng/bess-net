@@ -1,15 +1,20 @@
+// /news/[slug] 詳細ページ (Server Component) - patch_v11
+// 用語自動リンク・関連用語バッジ・関連事業者バッジを追加
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import RelatedTermBadges from '@/components/RelatedTermBadges';
+import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
 import {
-  getNewsBySlug,
+  getNewsBySlugWithRelations,
   getIndustryNewsSlugs,
 } from '@/lib/microcms';
+import { linkifyTerms } from '@/lib/term-linker';
 import { siteConfig } from '@/lib/site-config';
 
-export const revalidate = 300;
+export const revalidate = 600;
 
 export async function generateStaticParams() {
   try {
@@ -24,23 +29,23 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const article = await getNewsBySlug(params.slug);
-  if (!article) return {};
+  const news = await getNewsBySlugWithRelations(params.slug);
+  if (!news) return {};
   return {
-    title: article.title,
-    description: article.lead,
+    title: `${news.title}｜業界ニュース`,
+    description: news.lead,
+    alternates: { canonical: `/news/${news.slug}` },
     openGraph: {
-      title: article.title,
-      description: article.lead,
+      title: news.title,
+      description: news.lead,
       type: 'article',
-      publishedTime: article.publishedAt,
-      modifiedTime: article.updatedAt,
-      images: article.ogImage ? [{ url: article.ogImage.url }] : undefined,
+      publishedTime: news.publishedAt,
+      modifiedTime: news.revisedAt,
     },
     twitter: {
       card: 'summary_large_image',
-      title: article.title,
-      description: article.lead,
+      title: news.title,
+      description: news.lead,
     },
   };
 }
@@ -50,24 +55,41 @@ export default async function NewsDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const article = await getNewsBySlug(params.slug);
-  if (!article) notFound();
+  const news = await getNewsBySlugWithRelations(params.slug);
+  if (!news) notFound();
 
-  // 編集部カテゴリは /info 側に分離されているため、/news 配下では404
-  const isEditorial =
-    article.category && article.category.includes('編集部');
-  if (isEditorial) notFound();
+  // 関連用語（Glossary[]）
+  const relatedTerms = (news.relatedTerms ?? []).map((g) => ({
+    term: g.term,
+    slug: g.slug,
+  }));
 
-  const category = (article.category && article.category[0]) || '';
+  // 関連事業者（Operator[]）
+  const relatedOperators = (news.relatedOperators ?? []).map((o) => ({
+    name: o.name,
+    slug: o.slug,
+  }));
+
+  // 本文中の用語自動リンク化
+  const bodyHtml = linkifyTerms(news.body || '', relatedTerms);
+
+  const cat = (news.category && news.category[0]) || '';
+  const dateStr = news.publishedAt
+    ? new Date(news.publishedAt).toLocaleDateString('ja-JP', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+      })
+    : '';
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    headline: article.title,
-    description: article.lead,
-    datePublished: article.publishedAt,
-    dateModified: article.updatedAt,
-    author: { '@type': 'Organization', name: siteConfig.name },
+    headline: news.title,
+    description: news.lead,
+    datePublished: news.publishedAt,
+    dateModified: news.revisedAt,
+    author: { '@type': 'Organization', name: '蓄電所ネット' },
     publisher: {
       '@type': 'Organization',
       name: siteConfig.organization.name,
@@ -86,42 +108,60 @@ export default async function NewsDetailPage({
       <main className="section">
         <article className="section-inner article-detail">
           <p className="article-breadcrumb">
-            <Link href="/">トップ</Link> /{' '}
-            <Link href="/news">ニュース</Link>
-            {category && ` / ${category}`}
+            <Link href="/">トップ</Link> / <Link href="/news">ニュース</Link>
+            {cat && ` / ${cat}`}
           </p>
-          {category && <span className="article-category">{category}</span>}
-          <h1 className="article-title">{article.title}</h1>
+          {cat && <span className="article-category">{cat}</span>}
+          <h1 className="article-title">{news.title}</h1>
           <p className="article-meta">
-            公開日：{new Date(article.publishedAt).toLocaleDateString('ja-JP')}
-            {article.updatedAt && article.updatedAt !== article.publishedAt &&
-              ` / 最終更新：${new Date(article.updatedAt).toLocaleDateString('ja-JP')}`}
+            公開日：{dateStr}
+            {news.revisedAt && (
+              <>
+                {' '}/ 最終更新：
+                {new Date(news.revisedAt).toLocaleDateString('ja-JP')}
+              </>
+            )}
           </p>
-          <p className="article-lead">{article.lead}</p>
+          <p className="article-lead">{news.lead}</p>
           <div
             className="article-body"
-            dangerouslySetInnerHTML={{ __html: article.body }}
+            dangerouslySetInnerHTML={{ __html: bodyHtml }}
           />
-          {(article.sourceName || article.sourceUrl) && (
+
+          {/* 関連事業者バッジ */}
+          {relatedOperators.length > 0 && (
+            <RelatedOperatorBadges operators={relatedOperators} />
+          )}
+
+          {/* 関連用語バッジ */}
+          {relatedTerms.length > 0 && <RelatedTermBadges terms={relatedTerms} />}
+
+          {/* 出典 */}
+          {news.sourceUrl && (
             <section className="article-sources">
               <h3>出典</h3>
               <p>
-                {article.sourceName && <span>{article.sourceName}</span>}
-                {article.sourceName && article.sourceUrl && <span> ／ </span>}
-                {article.sourceUrl && (
-                  <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer">
-                    {article.sourceUrl}
-                  </a>
-                )}
+                {news.sourceName && <span>{news.sourceName}</span>}
+                {news.sourceName && <span> ／ </span>}
+                <a
+                  href={news.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {news.sourceUrl}
+                </a>
               </p>
             </section>
           )}
-          {article.tags && (
+
+          {/* タグ */}
+          {news.tags && (
             <section className="article-tags">
               <h3>タグ</h3>
-              <p>{article.tags}</p>
+              <p>{news.tags}</p>
             </section>
           )}
+
           <p className="back-link">
             <Link href="/news">← ニュース一覧へ戻る</Link>
           </p>

@@ -1,13 +1,18 @@
-// /operators/[slug] 詳細ページ (Server Component)
+// /operators/[slug] 詳細ページ - patch_v11
+// patch_v10 の機能を維持しつつ、関連ニュース＋関連プロジェクトのセクションを追加
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import RelatedNewsList from '@/components/RelatedNewsList';
+import RelatedProjectsList from '@/components/RelatedProjectsList';
 import {
   getOperatorBySlug,
   getAllOperatorSlugs,
   getAllOperators,
+  getNewsByOperatorId,
+  getProjectsByOperatorName,
 } from '@/lib/microcms';
 import {
   OPERATOR_CATEGORY_COLOR,
@@ -59,8 +64,14 @@ export default async function OperatorDetailPage({
   const operator = await getOperatorBySlug(params.slug);
   if (!operator) notFound();
 
+  // 並列で関連データ取得
+  const [allOperators, relatedNews, relatedProjects] = await Promise.all([
+    getAllOperators().catch(() => []),
+    getNewsByOperatorId(operator.id, 10).catch(() => []),
+    getProjectsByOperatorName(operator.name, 10).catch(() => []),
+  ]);
+
   // 関連事業者：同じカテゴリで上位5社（自分以外）
-  const allOperators = await getAllOperators().catch(() => []);
   const primaryCategory = (operator.category && operator.category[0]) || '';
   const related = allOperators
     .filter(
@@ -207,6 +218,26 @@ export default async function OperatorDetailPage({
               <div
                 className="op-detail-body"
                 dangerouslySetInnerHTML={{ __html: operator.body }}
+              />
+            </section>
+          )}
+
+          {/* 関連ニュース（patch_v11 新規）*/}
+          {relatedNews.length > 0 && (
+            <section className="op-detail-section">
+              <RelatedNewsList
+                news={relatedNews}
+                title={`${operator.name}の最新ニュース`}
+              />
+            </section>
+          )}
+
+          {/* 関連プロジェクト（patch_v11 新規）*/}
+          {relatedProjects.length > 0 && (
+            <section className="op-detail-section">
+              <RelatedProjectsList
+                projects={relatedProjects}
+                title={`${operator.name}の関連プロジェクト`}
               />
             </section>
           )}

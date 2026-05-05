@@ -441,3 +441,174 @@ export const getAllOperatorSlugs = async (): Promise<{ slug: string }[]> => {
   }
   return slugs;
 };
+
+// =================================================================
+// patch_v11_cross_links : クロスリンク連携の追加関数
+// 既存の src/lib/microcms.ts の末尾に追記してください
+// =================================================================
+
+// ===== relatedOperators / relatedTerms 型拡張 =====
+// 既存の News 型は src/lib/microcms.ts に定義済み。
+// microCMS は depth=1 でレスポンスに参照先データを展開して返す。
+export type NewsWithRelations = News & {
+  relatedOperators?: Operator[];
+  relatedTerms?: Glossary[];
+};
+
+// 用語名 → slug の正規化用に軽量な Map を作るヘルパ
+export type TermLite = { term: string; slug: string; english?: string };
+
+export const getGlossaryLiteList = async (): Promise<TermLite[]> => {
+  const all: TermLite[] = [];
+  const limit = 100;
+  for (let offset = 0; offset < 1000; offset += limit) {
+    const data = await client.getList<Glossary>({
+      endpoint: 'glossary',
+      queries: { limit, offset, fields: 'term,slug,english' },
+    });
+    all.push(
+      ...data.contents.map((g) => ({
+        term: g.term,
+        slug: g.slug,
+        english: g.english,
+      }))
+    );
+    if (data.contents.length < limit) break;
+  }
+  return all;
+};
+
+// =================================================================
+// 用語集 → ニュース・解説 の逆引き
+// =================================================================
+
+/**
+ * 指定 glossary id を含むニュースを取得（最新順、limit指定可）
+ * microCMS filter: relatedTerms[contains]={glossaryId}
+ */
+export const getNewsByTermId = async (
+  glossaryId: string,
+  limit = 10
+): Promise<News[]> => {
+  try {
+    const data = await client.getList<News>({
+      endpoint: 'news',
+      queries: {
+        filters: `relatedTerms[contains]${glossaryId}`,
+        orders: '-publishedAt',
+        limit,
+      },
+    });
+    return data.contents;
+  } catch {
+    return [];
+  }
+};
+
+/**
+ * 指定用語名を含む解説を取得（CSV文字列の relatedTerms をフィルタ）
+ * microCMS filter: relatedTerms[contains]={termName}
+ */
+export const getExplainersByTermName = async (
+  termName: string,
+  limit = 5
+): Promise<Explainer[]> => {
+  try {
+    const data = await client.getList<Explainer>({
+      endpoint: 'explainer',
+      queries: {
+        filters: `relatedTerms[contains]${termName}`,
+        orders: '-publishedAt',
+        limit,
+      },
+    });
+    return data.contents;
+  } catch {
+    return [];
+  }
+};
+
+// =================================================================
+// 事業者 → ニュース の逆引き
+// =================================================================
+
+/**
+ * 指定 operator id を含むニュースを取得
+ * microCMS filter: relatedOperators[contains]={operatorId}
+ */
+export const getNewsByOperatorId = async (
+  operatorId: string,
+  limit = 10
+): Promise<News[]> => {
+  try {
+    const data = await client.getList<News>({
+      endpoint: 'news',
+      queries: {
+        filters: `relatedOperators[contains]${operatorId}`,
+        orders: '-publishedAt',
+        limit,
+      },
+    });
+    return data.contents;
+  } catch {
+    return [];
+  }
+};
+
+// =================================================================
+// 事業者 → プロジェクト の逆引き
+// =================================================================
+
+/**
+ * 指定事業者名（部分一致）でプロジェクトを取得
+ * Project.operator は文字列フィールド。完全一致でなく contains で絞る。
+ */
+export const getProjectsByOperatorName = async (
+  operatorName: string,
+  limit = 10
+): Promise<Project[]> => {
+  if (!operatorName) return [];
+  try {
+    // 株式会社等を除いた短縮名で検索（例:「株式会社レノバ」→「レノバ」）
+    const shortName = operatorName
+      .replace(/(株式会社|合同会社|有限会社|（株）|\(株\)|ホールディングス)/g, '')
+      .trim();
+    const searchName = shortName.length >= 3 ? shortName : operatorName;
+    const data = await client.getList<Project>({
+      endpoint: 'projects',
+      queries: {
+        filters: `operator[contains]${searchName}`,
+        orders: '-publishedAt',
+        limit,
+      },
+    });
+    return data.contents;
+  } catch {
+    return [];
+  }
+};
+
+// =================================================================
+// 詳細ページ用：関連付き News 取得
+// =================================================================
+
+/**
+ * News をslugで取得（depth=1で relatedOperators/relatedTerms を展開）
+ */
+export const getNewsBySlugWithRelations = async (
+  slug: string
+): Promise<NewsWithRelations | null> => {
+  try {
+    const data = await client.getList<NewsWithRelations>({
+      endpoint: 'news',
+      queries: {
+        filters: `slug[equals]${slug}`,
+        depth: 1,
+        limit: 1,
+      },
+    });
+    return data.contents[0] ?? null;
+  } catch {
+    return null;
+  }
+};

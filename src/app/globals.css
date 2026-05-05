@@ -1978,3 +1978,226 @@
 .text-red-700  { color: #B91C1C; }
 .bg-gray-100   { background-color: #F3F4F6; }
 .text-gray-700 { color: #374151; }
+
+/* =================================================================
+   patch_v11_cross_links : クロスリンク連携の追加CSS
+   既存の src/app/globals.css の末尾に追記してください
+   ================================================================= */
+
+/* 用語自動リンク（本文中） */
+.term-link {
+  color: #0F2D4F;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+.term-link:hover {
+  color: #1E5BA8;
+  text-decoration-style: solid;
+}
+
+/* 関連バッジ（用語・事業者）共通 */
+.related-h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0F2D4F;
+  border-left: 3px solid #1E5BA8;
+  padding-left: 12px;
+  margin: 24px 0 12px;
+}
+
+/* 関連用語バッジ */
+.related-terms-section,
+.related-operators-section {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+.related-term-badges,
+.related-operator-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.related-term-badge,
+.related-operator-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  color: #1f2937;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.related-term-badge:hover,
+.related-operator-badge:hover {
+  background-color: #1E5BA8;
+  border-color: #1E5BA8;
+  color: #fff;
+}
+.related-operator-badge {
+  font-weight: 500;
+}
+
+/* 関連ニュースリスト */
+.related-news-section {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+.related-news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.related-news-item a {
+  display: block;
+  padding: 12px 14px;
+  background: #f9fafb;
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.15s ease;
+}
+.related-news-item a:hover {
+  background: #f3f4f6;
+  border-left-color: #1E5BA8;
+}
+.related-news-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+.related-news-cat {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.related-news-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0F2D4F;
+  line-height: 1.5;
+}
+.related-empty {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  padding: 12px 0;
+}
+
+/* 関連解説リスト */
+.related-explainers-section {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+.related-explainer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.related-explainer-item a {
+  display: block;
+  padding: 14px 16px;
+  background: #f0f9ff;
+  border-left: 3px solid #0ea5e9;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s ease;
+}
+.related-explainer-item a:hover {
+  background: #e0f2fe;
+}
+.related-explainer-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0F2D4F;
+  margin-bottom: 4px;
+}
+.related-explainer-lead {
+  display: block;
+  font-size: 0.85rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* 関連プロジェクトリスト */
+.related-projects-section {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+.related-project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+.related-project-item a {
+  display: block;
+  padding: 12px 14px;
+  background: #f0fdf4;
+  border-left: 3px solid #10b981;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s ease;
+}
+.related-project-item a:hover {
+  background: #d1fae5;
+}
+.related-project-name {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0F2D4F;
+  margin-bottom: 4px;
+}
+.related-project-meta {
+  display: block;
+  font-size: 0.8rem;
+  color: #047857;
+}
+
+/* 用語集詳細：英語表記・読み */
+.glossary-en,
+.glossary-reading {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+/* レスポンシブ */
+@media (max-width: 640px) {
+  .related-project-list {
+    grid-template-columns: 1fr;
+  }
+  .related-news-meta {
+    flex-wrap: wrap;
+  }
+}

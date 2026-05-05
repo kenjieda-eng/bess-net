@@ -1,45 +1,44 @@
+// /explainer/[slug] 詳細ページ - patch_v11
+// 本文中の用語自動リンク + 関連用語バッジ
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
+import RelatedTermBadges from '@/components/RelatedTermBadges';
 import {
   getExplainerBySlug,
   getAllExplainerSlugs,
-  getGlossaryTermSlugMap,
+  getGlossaryLiteList,
 } from '@/lib/microcms';
+import { linkifyTerms, csvTermsToTermList } from '@/lib/term-linker';
 import { siteConfig } from '@/lib/site-config';
-import SiteHeader from '@/components/SiteHeader';
-import SiteFooter from '@/components/SiteFooter';
 
-export const revalidate = 60;
+export const revalidate = 600;
 
-// ビルド時に全記事のスラッグを取得し、静的ページを生成
 export async function generateStaticParams() {
-  return await getAllExplainerSlugs();
+  try {
+    return await getAllExplainerSlugs();
+  } catch {
+    return [];
+  }
 }
 
-// 各記事のメタデータ（タイトル・description・OGP）を動的に生成
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const article = await getExplainerBySlug(params.slug);
-  if (!article) return {};
+  const exp = await getExplainerBySlug(params.slug);
+  if (!exp) return {};
   return {
-    title: article.title,
-    description: article.lead,
+    title: `${exp.title}｜解説`,
+    description: exp.lead,
+    alternates: { canonical: `/explainer/${exp.slug}` },
     openGraph: {
-      title: article.title,
-      description: article.lead,
+      title: exp.title,
+      description: exp.lead,
       type: 'article',
-      publishedTime: article.publishedAt,
-      modifiedTime: article.updatedAt,
-      images: article.ogImage ? [{ url: article.ogImage.url }] : undefined,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: article.title,
-      description: article.lead,
     },
   };
 }
@@ -49,19 +48,36 @@ export default async function ExplainerDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const article = await getExplainerBySlug(params.slug);
-  if (!article) notFound();
+  const exp = await getExplainerBySlug(params.slug);
+  if (!exp) notFound();
 
-  // 構造化データ（Article schema）
+  // 関連用語（CSV文字列）→ TermLike[] 変換
+  const glossaryLite = await getGlossaryLiteList().catch(() => []);
+  const termSlugMap = new Map<string, string>();
+  for (const g of glossaryLite) {
+    termSlugMap.set(g.term, g.slug);
+    if (g.english) termSlugMap.set(g.english, g.slug);
+  }
+  const relatedTerms = csvTermsToTermList(exp.relatedTerms, termSlugMap);
+
+  // 本文中の用語自動リンク化
+  const bodyHtml = linkifyTerms(exp.body || '', relatedTerms);
+
+  const cat = (exp.category && exp.category[0]) || '';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: article.title,
-    description: article.lead,
-    datePublished: article.publishedAt,
-    dateModified: article.updatedAt,
-    author: { '@type': 'Organization', name: siteConfig.name },
-    publisher: { '@type': 'Organization', name: siteConfig.name },
+    headline: exp.title,
+    description: exp.lead,
+    datePublished: exp.publishedAt,
+    dateModified: exp.revisedAt,
+    author: { '@type': 'Organization', name: '蓄電所ネット' },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.organization.name,
+      url: siteConfig.organization.url,
+    },
     inLanguage: 'ja-JP',
   };
 
@@ -71,79 +87,39 @@ export default async function ExplainerDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
       <SiteHeader />
-
       <main className="section">
         <article className="section-inner article-detail">
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> /{' '}
-            <Link href="/explainer">解説記事</Link>
-            {article.category && article.category[0] && (
-              <> / {article.category[0]}</>
-            )}
+            <Link href="/explainer">解説</Link>
+            {cat && ` / ${cat}`}
           </p>
-          {article.category && article.category[0] && (
-            <span className="article-category">{article.category[0]}</span>
-          )}
-          <h1 className="article-title">{article.title}</h1>
-          <p className="article-meta">
-            公開日：{new Date(article.publishedAt).toLocaleDateString('ja-JP')}
-            {article.updatedAt && article.updatedAt !== article.publishedAt &&
-              ` / 最終更新：${new Date(article.updatedAt).toLocaleDateString('ja-JP')}`}
-          </p>
-          <p className="article-lead">{article.lead}</p>
+          {cat && <span className="article-category">{cat}</span>}
+          <h1 className="article-title">{exp.title}</h1>
+          <p className="article-lead">{exp.lead}</p>
           <div
             className="article-body"
-            dangerouslySetInnerHTML={{ __html: article.body }}
+            dangerouslySetInnerHTML={{ __html: bodyHtml }}
           />
-          {article.sources && (
+
+          {/* 関連用語バッジ */}
+          {relatedTerms.length > 0 && <RelatedTermBadges terms={relatedTerms} />}
+
+          {/* 出典 */}
+          {exp.sources && (
             <section className="article-sources">
               <h3>出典</h3>
-              <p>{article.sources}</p>
+              <div dangerouslySetInnerHTML={{ __html: exp.sources }} />
             </section>
           )}
-          {article.relatedTerms && (
-            <RelatedTermsSection relatedTerms={article.relatedTerms} />
-          )}
+
           <p className="back-link">
-            <Link href="/explainer">← 解説記事一覧へ戻る</Link>
+            <Link href="/explainer">← 解説一覧へ戻る</Link>
           </p>
         </article>
       </main>
-
       <SiteFooter />
     </>
-  );
-}
-
-/** 関連用語をカンマ区切りで分割し、用語集にあるものはリンク化 */
-async function RelatedTermsSection({ relatedTerms }: { relatedTerms: string }) {
-  const termMap = await getGlossaryTermSlugMap();
-  const terms = relatedTerms
-    .split(/[,、，]/)
-    .map((t) => t.trim())
-    .filter(Boolean);
-
-  return (
-    <section className="article-related">
-      <h3>関連用語</h3>
-      <ul className="related-term-list">
-        {terms.map((term, i) => {
-          const slug = termMap.get(term) || termMap.get(term.toLowerCase());
-          return (
-            <li key={i}>
-              {slug ? (
-                <Link href={`/glossary/${slug}`} className="related-term-link">
-                  {term}
-                </Link>
-              ) : (
-                <span className="related-term-text">{term}</span>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    </section>
   );
 }
