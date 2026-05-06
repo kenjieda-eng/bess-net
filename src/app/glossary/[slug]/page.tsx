@@ -1,5 +1,5 @@
-// /glossary/[slug] 詳細ページ - patch_v11
-// 既存の用語定義表示に加え、関連ニュース・関連解説のセクションを追加
+// /glossary/[slug] 詳細ページ - patch_v12
+// 用語集詳細の関連用語をCSV文字列表示から、リンク付きバッジ表示に修正
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -7,12 +7,15 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedExplainersList from '@/components/RelatedExplainersList';
+import RelatedTermBadges from '@/components/RelatedTermBadges';
 import {
   getGlossaryBySlug,
   getAllGlossarySlugs,
   getNewsByTermId,
   getExplainersByTermName,
+  getGlossaryLiteList,
 } from '@/lib/microcms';
+import { csvTermsToTermList } from '@/lib/term-linker';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -52,11 +55,23 @@ export default async function GlossaryDetailPage({
   const term = await getGlossaryBySlug(params.slug);
   if (!term) notFound();
 
-  // 関連データを並列取得
-  const [relatedNews, relatedExplainers] = await Promise.all([
+  // 関連データを並列取得（用語マップ含む）
+  const [relatedNews, relatedExplainers, glossaryLite] = await Promise.all([
     getNewsByTermId(term.id, 10).catch(() => []),
     getExplainersByTermName(term.term, 5).catch(() => []),
+    getGlossaryLiteList().catch(() => []),
   ]);
+
+  // CSV文字列の関連用語 → TermLike[] へ変換（patch_v12 新規）
+  const termSlugMap = new Map<string, string>();
+  for (const g of glossaryLite) {
+    termSlugMap.set(g.term, g.slug);
+    if (g.english) termSlugMap.set(g.english, g.slug);
+  }
+  const relatedTerms = csvTermsToTermList(term.relatedTerms || '', termSlugMap);
+
+  // 自分自身を関連用語から除外
+  const relatedTermsFiltered = relatedTerms.filter((t) => t.slug !== term.slug);
 
   const cat = (term.category && term.category[0]) || '';
 
@@ -109,7 +124,12 @@ export default async function GlossaryDetailPage({
             />
           )}
 
-          {/* 関連ニュース（patch_v11 新規）*/}
+          {/* 関連用語バッジ（patch_v12 修正：CSV→リンク付きバッジ）*/}
+          {relatedTermsFiltered.length > 0 && (
+            <RelatedTermBadges terms={relatedTermsFiltered} />
+          )}
+
+          {/* 関連ニュース（patch_v11）*/}
           {relatedNews.length > 0 && (
             <RelatedNewsList
               news={relatedNews}
@@ -117,20 +137,12 @@ export default async function GlossaryDetailPage({
             />
           )}
 
-          {/* 関連解説（patch_v11 新規）*/}
+          {/* 関連解説（patch_v11）*/}
           {relatedExplainers.length > 0 && (
             <RelatedExplainersList
               explainers={relatedExplainers}
               title={`「${term.term}」関連の解説記事`}
             />
-          )}
-
-          {/* 既存の relatedTerms（CSV文字列）表示 - 互換維持 */}
-          {term.relatedTerms && (
-            <section className="article-tags">
-              <h3>関連用語</h3>
-              <p>{term.relatedTerms}</p>
-            </section>
           )}
 
           <p className="back-link">
