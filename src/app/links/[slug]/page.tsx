@@ -1,5 +1,6 @@
-// /links/[slug] 詳細ページ - patch_v14
-// 1900字級の充実したdescriptionを段落表示するように改修
+// /links/[slug] 詳細ページ - patch_v15
+// 「関連タグ」をCSV文字列表示から、用語集ページへのリンク付きバッジに変更
+// （patch_v12 で用語集詳細ページに適用したのと同じパターン）
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -7,7 +8,12 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
-import { getLinkBySlug, getAllLinkSlugs } from '@/lib/microcms';
+import {
+  getLinkBySlug,
+  getAllLinkSlugs,
+  getGlossaryLiteList,
+} from '@/lib/microcms';
+import { csvTermsToTermList } from '@/lib/term-linker';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -27,7 +33,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const link = await getLinkBySlug(params.slug);
   if (!link) return {};
-  // メタディスクリプション用に短い抜粋を生成（最初の段落の冒頭）
   const firstPara = (link.description || '').split('\n\n')[0].replace(/^【[^】]*】/, '').trim();
   const metaDesc = firstPara.substring(0, 160);
   return {
@@ -50,7 +55,6 @@ function renderDescription(desc: string): JSX.Element[] {
   const blocks = desc.split('\n\n').filter((b) => b.trim());
   return blocks.map((block, i) => {
     const trimmed = block.trim();
-    // 「【...】」で始まる行は見出し
     const headingMatch = trimmed.match(/^【([^】]+)】(.*)$/s);
     if (headingMatch) {
       const heading = headingMatch[1];
@@ -71,7 +75,11 @@ export default async function LinkDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const link = await getLinkBySlug(params.slug);
+  // 並列でデータ取得（patch_v15: glossaryLite を追加して関連タグもリンク化）
+  const [link, glossaryLite] = await Promise.all([
+    getLinkBySlug(params.slug),
+    getGlossaryLiteList().catch(() => []),
+  ]);
   if (!link) notFound();
 
   const relatedTerms = (link.relatedTerms ?? []).map((g) => ({
@@ -83,13 +91,28 @@ export default async function LinkDetailPage({
     slug: o.slug,
   }));
 
+  // 関連タグ（CSV文字列）→ TermLike[] にリンク化（patch_v15 新規）
+  // 既に relatedTerms に含まれているものは除外して重複を回避
+  const termSlugMap = new Map<string, string>();
+  for (const g of glossaryLite) {
+    termSlugMap.set(g.term, g.slug);
+    if (g.english) termSlugMap.set(g.english, g.slug);
+  }
+  const existingTermSlugs = new Set(relatedTerms.map((t) => t.slug));
+  const allTagBadges = csvTermsToTermList(link.tags || '', termSlugMap);
+  // 関連用語と重複しないタグだけリンク化、用語集に存在しないタグはプレーン文字列で残す
+  const tagBadges = allTagBadges.filter((t) => !existingTermSlugs.has(t.slug));
+  // CSV元の各タグについて、用語集にマッチしなかったものをリスト化
+  const tagsRaw = (link.tags || '').split(',').map((s) => s.trim()).filter(Boolean);
+  const matchedTagTerms = new Set(allTagBadges.map((t) => t.term));
+  const unlinkedTags = tagsRaw.filter((t) => !matchedTagTerms.has(t));
+
   const primaryCategory = (link.category && link.category[0]) || '';
   const importance = (link.importance && link.importance[0]) || '';
   const country = (link.country && link.country[0]) || '';
   const language = (link.language && link.language[0]) || '';
   const accessType = (link.accessType && link.accessType[0]) || '';
 
-  // メタ用の短い抜粋
   const firstPara = (link.description || '').split('\n\n')[0].replace(/^【[^】]*】/, '').trim();
   const shortLead = firstPara.substring(0, 200);
 
@@ -166,10 +189,24 @@ export default async function LinkDetailPage({
             </section>
           )}
 
-          {link.tags && (
+          {/* 関連タグ（patch_v15 修正：CSV文字列→リンク付きバッジ）*/}
+          {(tagBadges.length > 0 || unlinkedTags.length > 0) && (
             <section className="link-section">
               <h3 className="link-section-h3">関連タグ</h3>
-              <p className="link-tags">{link.tags}</p>
+              <ul className="link-tag-badges">
+                {tagBadges.map((t) => (
+                  <li key={t.slug}>
+                    <Link href={`/glossary/${t.slug}`} className="link-tag-badge link-tag-badge-linked">
+                      {t.term}
+                    </Link>
+                  </li>
+                ))}
+                {unlinkedTags.map((t) => (
+                  <li key={`u-${t}`}>
+                    <span className="link-tag-badge link-tag-badge-plain">{t}</span>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 
