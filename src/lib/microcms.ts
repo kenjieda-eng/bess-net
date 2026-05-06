@@ -680,7 +680,7 @@ export const getAllLinks = async (): Promise<LinkSiteLite[]> => {
       all.push(...data.contents);
       if (data.contents.length < 100) break;
       offset += 100;
-      if (offset >= 1000) break;
+      if (offset >= 5000) break;
     }
     return all;
   } catch {
