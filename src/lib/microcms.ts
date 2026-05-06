@@ -79,7 +79,7 @@ export const getGlossaryBySlug = async (
 export const getAllGlossary = async (): Promise<Glossary[]> => {
   const all: Glossary[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
       queries: { limit, offset, orders: 'term' },
@@ -93,7 +93,7 @@ export const getAllGlossary = async (): Promise<Glossary[]> => {
 export const getAllExplainer = async (): Promise<Explainer[]> => {
   const all: Explainer[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Explainer>({
       endpoint: 'explainer',
       queries: { limit, offset },
@@ -107,7 +107,7 @@ export const getAllExplainer = async (): Promise<Explainer[]> => {
 export const getAllGlossarySlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
       queries: { limit, offset, fields: 'slug' },
@@ -121,7 +121,7 @@ export const getAllGlossarySlugs = async (): Promise<{ slug: string }[]> => {
 export const getAllExplainerSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Explainer>({
       endpoint: 'explainer',
       queries: { limit, offset, fields: 'slug' },
@@ -135,7 +135,7 @@ export const getAllExplainerSlugs = async (): Promise<{ slug: string }[]> => {
 export const getGlossaryTermSlugMap = async (): Promise<Map<string, string>> => {
   const map = new Map<string, string>();
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
       queries: { limit, offset, fields: 'term,slug,english' },
@@ -178,7 +178,7 @@ export const getSubsidyList = async (queries?: MicroCMSQueries) => {
 export const getAllSubsidies = async (): Promise<Subsidy[]> => {
   const all: Subsidy[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Subsidy>({
       endpoint: 'subsidies',
       queries: { limit, offset, orders: 'applicationEnd' },
@@ -198,7 +198,7 @@ export const getSubsidyBySlug = async (slug: string): Promise<Subsidy | null> =>
 export const getAllSubsidySlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Subsidy>({
       endpoint: 'subsidies',
       queries: { limit, offset, fields: 'slug' },
@@ -237,7 +237,7 @@ export const getProjectList = async (queries?: MicroCMSQueries) => {
 export const getAllProjects = async (): Promise<Project[]> => {
   const all: Project[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Project>({
       endpoint: 'projects',
       queries: { limit, offset, orders: '-publishedAt' },
@@ -257,7 +257,7 @@ export const getProjectBySlug = async (slug: string): Promise<Project | null> =>
 export const getAllProjectSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Project>({
       endpoint: 'projects',
       queries: { limit, offset, fields: 'slug' },
@@ -324,7 +324,7 @@ export const getNewsBySlug = async (slug: string): Promise<News | null> => {
 export const getAllNewsSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<News>({
       endpoint: 'news',
       queries: { limit, offset, fields: 'slug' },
@@ -470,7 +470,7 @@ export type TermLite = { term: string; slug: string; english?: string };
 export const getGlossaryLiteList = async (): Promise<TermLite[]> => {
   const all: TermLite[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 1000; offset += limit) {
+  for (let offset = 0; offset < 5000; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
       queries: { limit, offset, fields: 'term,slug,english' },
