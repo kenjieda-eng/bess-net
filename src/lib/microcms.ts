@@ -621,3 +621,90 @@ export const getNewsBySlugWithRelations = async (
     return null;
   }
 };
+
+/* =================================================================
+   patch_v13_links_page : お役立ちサイトAPI連携の追加関数
+   既存の src/lib/microcms.ts の末尾に追記してください
+   ================================================================= */
+
+/* 型定義 */
+export type LinkSite = {
+  id: string;
+  slug: string;
+  title: string;
+  url: string;
+  siteNameEn?: string;
+  description: string;
+  category: string[];
+  country?: string[];
+  language?: string[];
+  importance?: string[];
+  accessType?: string[];
+  contentTypes?: string[];
+  tags?: string;
+  iconUrl?: string;
+  lastChecked?: string;
+  displayOrder?: number;
+  relatedTerms?: Glossary[];
+  relatedOperators?: Operator[];
+  publishedAt?: string;
+  updatedAt?: string;
+};
+
+export type LinkSiteLite = {
+  id: string;
+  slug: string;
+  title: string;
+  url: string;
+  description: string;
+  category: string[];
+  country?: string[];
+  importance?: string[];
+  contentTypes?: string[];
+  tags?: string;
+  displayOrder?: number;
+};
+
+const LINK_LIST_FIELDS =
+  'id,slug,title,url,description,category,country,importance,contentTypes,tags,displayOrder';
+
+export const getAllLinks = async (): Promise<LinkSiteLite[]> => {
+  try {
+    const all: LinkSiteLite[] = [];
+    let offset = 0;
+    while (true) {
+      const data = await client.getList<LinkSiteLite>({
+        endpoint: 'links',
+        queries: { fields: LINK_LIST_FIELDS, limit: 100, offset, orders: 'displayOrder' },
+      });
+      all.push(...data.contents);
+      if (data.contents.length < 100) break;
+      offset += 100;
+      if (offset >= 1000) break;
+    }
+    return all;
+  } catch {
+    return [];
+  }
+};
+
+export const getLinkBySlug = async (slug: string): Promise<LinkSite | null> => {
+  try {
+    const data = await client.getList<LinkSite>({
+      endpoint: 'links',
+      queries: { filters: `slug[equals]${slug}`, depth: 1, limit: 1 },
+    });
+    return data.contents[0] ?? null;
+  } catch {
+    return null;
+  }
+};
+
+export const getAllLinkSlugs = async (): Promise<{ slug: string }[]> => {
+  try {
+    const links = await getAllLinks();
+    return links.map((l) => ({ slug: l.slug }));
+  } catch {
+    return [];
+  }
+};

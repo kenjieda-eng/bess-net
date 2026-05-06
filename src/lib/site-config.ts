@@ -45,6 +45,7 @@ export const siteConfig = {
     { label: '補助金', href: '/subsidies', enabled: true },
     { label: '事業者ナビ', href: '/operators', enabled: true },
     { label: 'プロジェクト', href: '/projects', enabled: true },
+    { label: 'お役立ちサイト', href: '/links', enabled: true },
     { label: 'お知らせ', href: '/info', enabled: true },
   ] as NavItem[],
 
