@@ -2498,3 +2498,30 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* =================================================================
+   patch_v14_links_enrichment : お役立ちサイト詳細の段落表示CSS
+   既存の src/app/globals.css の末尾に追記してください
+   ================================================================= */
+
+/* お役立ちサイト詳細：充実した本文の段落表示 */
+.link-description-detail {
+  margin: 24px 0;
+}
+.link-desc-block {
+  margin-bottom: 24px;
+}
+.link-desc-h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0F2D4F;
+  border-left: 3px solid #1E5BA8;
+  padding-left: 12px;
+  margin: 20px 0 10px;
+}
+.link-desc-p {
+  font-size: 0.95rem;
+  color: #1f2937;
+  line-height: 1.8;
+  margin: 8px 0;
+}

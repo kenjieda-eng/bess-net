@@ -1,4 +1,5 @@
-// /links/[slug] 詳細ページ - patch_v13
+// /links/[slug] 詳細ページ - patch_v14
+// 1900字級の充実したdescriptionを段落表示するように改修
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -26,16 +27,43 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const link = await getLinkBySlug(params.slug);
   if (!link) return {};
+  // メタディスクリプション用に短い抜粋を生成（最初の段落の冒頭）
+  const firstPara = (link.description || '').split('\n\n')[0].replace(/^【[^】]*】/, '').trim();
+  const metaDesc = firstPara.substring(0, 160);
   return {
     title: `${link.title}｜お役立ちサイト一覧`,
-    description: link.description,
+    description: metaDesc,
     alternates: { canonical: `/links/${link.slug}` },
     openGraph: {
       title: `${link.title}｜お役立ちサイト一覧`,
-      description: link.description,
+      description: metaDesc,
       type: 'website',
     },
   };
+}
+
+/**
+ * description を段落分割してHTML化
+ * 「【見出し】\n\n本文\n\n【次の見出し】...」の形式を想定
+ */
+function renderDescription(desc: string): JSX.Element[] {
+  const blocks = desc.split('\n\n').filter((b) => b.trim());
+  return blocks.map((block, i) => {
+    const trimmed = block.trim();
+    // 「【...】」で始まる行は見出し
+    const headingMatch = trimmed.match(/^【([^】]+)】(.*)$/s);
+    if (headingMatch) {
+      const heading = headingMatch[1];
+      const rest = headingMatch[2].trim();
+      return (
+        <div key={i} className="link-desc-block">
+          <h3 className="link-desc-h3">{heading}</h3>
+          {rest && <p className="link-desc-p">{rest}</p>}
+        </div>
+      );
+    }
+    return <p key={i} className="link-desc-p">{trimmed}</p>;
+  });
 }
 
 export default async function LinkDetailPage({
@@ -61,12 +89,16 @@ export default async function LinkDetailPage({
   const language = (link.language && link.language[0]) || '';
   const accessType = (link.accessType && link.accessType[0]) || '';
 
+  // メタ用の短い抜粋
+  const firstPara = (link.description || '').split('\n\n')[0].replace(/^【[^】]*】/, '').trim();
+  const shortLead = firstPara.substring(0, 200);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: link.title,
     alternateName: link.siteNameEn,
-    description: link.description,
+    description: shortLead,
     url: link.url,
     publisher: {
       '@type': 'Organization',
@@ -106,8 +138,6 @@ export default async function LinkDetailPage({
             {accessType && <span className="link-access">{accessType}</span>}
           </div>
 
-          <p className="article-lead">{link.description}</p>
-
           <div className="link-cta">
             <a
               href={link.url}
@@ -118,6 +148,11 @@ export default async function LinkDetailPage({
               公式サイトを開く →
             </a>
             <p className="link-url">{link.url}</p>
+          </div>
+
+          {/* 拡充された詳細説明（段落分割表示）*/}
+          <div className="link-description-detail">
+            {renderDescription(link.description || '')}
           </div>
 
           {link.contentTypes && link.contentTypes.length > 0 && (
@@ -149,12 +184,12 @@ export default async function LinkDetailPage({
             </section>
           )}
 
-          {/* 関連用語バッジ（patch_v13）*/}
+          {/* 関連用語バッジ */}
           {relatedTerms.length > 0 && (
             <RelatedTermBadges terms={relatedTerms} />
           )}
 
-          {/* 関連事業者バッジ（patch_v13）*/}
+          {/* 関連事業者バッジ */}
           {relatedOperators.length > 0 && (
             <RelatedOperatorBadges operators={relatedOperators} />
           )}
