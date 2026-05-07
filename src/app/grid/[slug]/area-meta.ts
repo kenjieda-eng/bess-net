@@ -38,6 +38,15 @@ export const AREA_META: Record<string, AreaMeta> = {
     description:
       '北海道エリア（北海道電力ネットワーク）の変電所別系統空き容量・連系条件・出力制御情報を、24 PDF 公開資料から抽出・統合。送電線情報は将来対応。',
   },
+  // ===== Phase 2-C-1 追加 =====
+  chubu: {
+    slug: 'chubu',
+    areaJp: '中部',
+    operator: '中部電力パワーグリッド',
+    landingUrl: 'https://gridmap.powergrid.chuden.co.jp/',
+    description:
+      '中部エリア（中部電力パワーグリッド）の変電所別系統空き容量・連系条件・出力制御情報を、愛知・静岡・三重・岐阜・長野の5県＋基幹系について一元化。GeoJSON 由来の緯度経度を約97.7%の変電所に付与（地図表示の基盤）。',
+  },
   // ===== Phase 2A 追加 =====
   kansai: {
     slug: 'kansai',
@@ -77,4 +86,5 @@ export const AREA_JP_TO_SLUG: Record<string, string> = {
   中国: 'chugoku',
   沖縄: 'okinawa',
   北海道: 'hokkaido',
+  中部: 'chubu',
 };
