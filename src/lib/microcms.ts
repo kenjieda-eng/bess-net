@@ -803,7 +803,8 @@ export const getAllSubstations = async (
 ): Promise<Substation[]> => {
   const all: Substation[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  // Phase 2-C-1 で総数 5,628 → 既存 5,000 cap を超過。次社追加余裕で 20,000。
+  for (let offset = 0; offset < 20000; offset += limit) {
     const { contents } = await getSubstationList({
       limit,
       offset,
@@ -843,7 +844,8 @@ export const getSubstationBySlug = async (
 export const getAllSubstationSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
   const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  // Phase 2-C-1 で総数 5,628 → 既存 5,000 cap を超過。次社追加余裕で 20,000。
+  for (let offset = 0; offset < 20000; offset += limit) {
     try {
       const data = await client.getList<Substation>({
         endpoint: 'substations',
