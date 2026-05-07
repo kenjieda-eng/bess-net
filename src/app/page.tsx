@@ -107,6 +107,34 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Phase 5 PoC: 新コンテンツ告知 — /grid 系統空き容量DB */}
+      <section className="section section-alt">
+        <div className="section-inner">
+          <div className="home-feature">
+            <span className="home-feature-tag">NEW · Phase 1 PoC</span>
+            <h2>変電所別 系統空き容量データベース</h2>
+            <p>
+              東北電力NW・北陸電力送配電・四国電力送配電の3社・1,449変電所の予想潮流・空容量・N-1電制適用可否・出力制御の可能性を、公表 CSV ベースで一元化。
+              系統用蓄電池の連系検討に必要なデータを、変電所単位で検索可能です。
+            </p>
+            <ul className="home-feature-stats">
+              <li>
+                <strong>1,449</strong>変電所
+              </li>
+              <li>
+                <strong>1,047</strong>空容量プラス
+              </li>
+              <li>
+                <strong>147</strong>N-1電制適用可
+              </li>
+            </ul>
+            <Link href="/grid" className="home-feature-button">
+              データベースを見る →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* 最新ニュース（あれば） */}
       {newsData.contents.length > 0 && (
         <section className="section">

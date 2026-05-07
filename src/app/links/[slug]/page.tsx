@@ -8,6 +8,16 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
+
+// 蓄電所ネット側の系統空き容量DB と関連する link slug 一覧（Phase 5 D-4）
+// 3送配電事業者の公式系統情報ページ + OCCTO 系統情報
+const GRID_RELATED_LINK_SLUGS = new Set<string>([
+  'tohoku-pg',
+  'rikuden-pg',
+  'yonden-pg',
+  'occto-grid-info',
+  'occto-grid',
+]);
 import {
   getLinkBySlug,
   getAllLinkSlugs,
@@ -229,6 +239,19 @@ export default async function LinkDetailPage({
           {/* 関連事業者バッジ */}
           {relatedOperators.length > 0 && (
             <RelatedOperatorBadges operators={relatedOperators} />
+          )}
+
+          {/* 蓄電所ネット側の系統空き容量DB バナー（Phase 5 D-4） */}
+          {GRID_RELATED_LINK_SLUGS.has(link.slug) && (
+            <div className="link-grid-banner">
+              <p>
+                ※ このサイトのデータは{' '}
+                <Link href="/grid">
+                  蓄電所ネット 系統空き容量データベース
+                </Link>{' '}
+                でも変電所別に検索できます。
+              </p>
+            </div>
           )}
 
           <p className="back-link">

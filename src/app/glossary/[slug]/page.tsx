@@ -8,6 +8,30 @@ import SiteFooter from '@/components/SiteFooter';
 import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedExplainersList from '@/components/RelatedExplainersList';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
+
+// /grid 系統空き容量データベースへの導線を表示する用語ページ slug 一覧（Phase 5 D-4）
+const GRID_RELATED_GLOSSARY_SLUGS = new Set<string>([
+  'curtailment',
+  'distribution-substation',
+  'ehv-substation',
+  'extra-high-voltage',
+  'extra-high-voltage-grid',
+  'extra-hv-bess',
+  'grid-available-capacity',
+  'grid-interconnection',
+  'grid-interconnection-code',
+  'grid-interconnection-contract',
+  'interconnection-line',
+  'inter-regional-interconnection',
+  'jeac-9701',
+  'non-firm-connection',
+  'non-firm-detail',
+  'output-control',
+  'point-of-interconnection',
+  'substation',
+  'substation-capacity',
+  'substation-detail',
+]);
 import {
   getGlossaryBySlug,
   getAllGlossarySlugs,
@@ -135,6 +159,20 @@ export default async function GlossaryDetailPage({
               news={relatedNews}
               title={`「${term.term}」が登場するニュース`}
             />
+          )}
+
+          {/* 実データを確認 — /grid 系統空き容量DB への導線（Phase 5 D-4） */}
+          {GRID_RELATED_GLOSSARY_SLUGS.has(term.slug) && (
+            <section className="related-grid-section">
+              <h3 className="related-h3">実データを確認</h3>
+              <p>
+                {term.term} に関連する変電所別の系統空き容量データを蓄電所ネットで確認できます。
+                東北電力NW・北陸電力送配電・四国電力送配電の3社・1,449変電所の予想潮流・空容量・N-1電制適用可否を一元化しています。
+              </p>
+              <Link href="/grid" className="related-grid-button">
+                系統空き容量データベースを見る →
+              </Link>
+            </section>
           )}
 
           {/* 関連解説（patch_v11）*/}

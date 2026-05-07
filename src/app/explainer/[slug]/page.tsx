@@ -6,6 +6,15 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
+
+// /grid 系統空き容量データベースへの導線を表示する解説記事 slug 一覧（Phase 5 D-4）
+const GRID_RELATED_EXPLAINER_SLUGS = new Set<string>([
+  'non-firm-connection-bess',
+  'grid-capacity-map-reading',
+  'interconnection-contract-fit-law',
+  'frt-test-certificate',
+  'grid-connection-process',
+]);
 import {
   getExplainerBySlug,
   getAllExplainerSlugs,
@@ -105,6 +114,19 @@ export default async function ExplainerDetailPage({
 
           {/* 関連用語バッジ */}
           {relatedTerms.length > 0 && <RelatedTermBadges terms={relatedTerms} />}
+
+          {/* 実データを確認する CTA — /grid への導線（Phase 5 D-4） */}
+          {GRID_RELATED_EXPLAINER_SLUGS.has(exp.slug) && (
+            <section className="cta-grid-section">
+              <h3>実データで確認する</h3>
+              <p>
+                本記事で解説した内容について、東北電力NW・北陸電力送配電・四国電力送配電の3社・1,449変電所の最新公表データを蓄電所ネットで一元化しています。
+              </p>
+              <Link href="/grid" className="cta-grid-button">
+                系統空き容量データベースを見る →
+              </Link>
+            </section>
+          )}
 
           {/* 出典 */}
           {exp.sources && (
