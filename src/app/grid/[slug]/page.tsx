@@ -1,6 +1,10 @@
-// /grid/[slug] 変電所詳細ページ — Phase 5（Phase 1版：3社・1,449件）
-// 系統空き容量・連系条件のオープンデータを変電所単位で表示。
+// /grid/[slug] 個別変電所 + エリアページの統合ルート — Phase 5
+// slug の値で分岐:
+//   - 'tohoku' / 'hokuriku' / 'shikoku' → エリアページ (AreaPage コンポーネント)
+//   - それ以外 → 変電所詳細ページ
 // データ提供元の明記は落とし穴45対応。
+// Next.js は同階層に2つの動的ルート ([area] と [slug]) を共存させられないため、
+// 既存 [slug] にエリア用ロジックを集約しています。
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -9,6 +13,8 @@ import SiteFooter from '@/components/SiteFooter';
 import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
 import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
+import AreaPage from './AreaPage';
+import { AREA_META, AREA_JP_TO_SLUG } from './area-meta';
 import {
   getSubstationBySlug,
   getAllSubstationSlugs,
@@ -20,10 +26,12 @@ import { siteConfig } from '@/lib/site-config';
 export const revalidate = 3600; // 1時間
 
 export async function generateStaticParams() {
+  const areaParams = Object.keys(AREA_META).map((slug) => ({ slug }));
   try {
-    return await getAllSubstationSlugs();
+    const subs = await getAllSubstationSlugs();
+    return [...areaParams, ...subs];
   } catch {
-    return [];
+    return areaParams;
   }
 }
 
@@ -73,6 +81,22 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
+  // エリアページ用メタデータ
+  const area = AREA_META[params.slug];
+  if (area) {
+    return {
+      title: `${area.areaJp}エリア｜系統空き容量データベース - 蓄電所ネット`,
+      description: area.description.substring(0, 160),
+      alternates: { canonical: `/grid/${area.slug}` },
+      openGraph: {
+        title: `${area.areaJp}エリア｜系統空き容量データベース`,
+        description: area.description.substring(0, 160),
+        type: 'website',
+        images: ['/og-image.png'],
+      },
+    };
+  }
+
   const sub = await getSubstationBySlug(params.slug);
   if (!sub) return {};
   const operator = firstOf(sub.operator) || '';
@@ -107,11 +131,17 @@ const FIXED_RELATED_TERMS: { term: string; slug: string }[] = [
   { term: 'ウェルカムゾーン', slug: 'welcome-zone' },
 ];
 
-export default async function SubstationDetailPage({
+export default async function GridSlugPage({
   params,
 }: {
   params: { slug: string };
 }) {
+  // slug がエリアスラグなら AreaPage へディスパッチ
+  const area = AREA_META[params.slug];
+  if (area) {
+    return <AreaPage meta={area} />;
+  }
+
   const sub = await getSubstationBySlug(params.slug);
   if (!sub) notFound();
 
@@ -119,6 +149,7 @@ export default async function SubstationDetailPage({
   const areaName = firstOf(sub.area);
   const voltageClass = firstOf(sub.voltage_class);
   const ocPossibility = firstOf(sub.oc_possibility);
+  const areaSlug = areaName ? AREA_JP_TO_SLUG[areaName] : undefined;
 
   // 関連連携を並列取得
   const [relatedOps, relatedNews] = await Promise.all([
@@ -182,7 +213,16 @@ export default async function SubstationDetailPage({
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> /{' '}
             <Link href="/grid">系統空き容量</Link>
-            {areaName && ` / ${areaName}`}
+            {areaName && (
+              <>
+                {' / '}
+                {areaSlug ? (
+                  <Link href={`/grid/${areaSlug}`}>{areaName}エリア</Link>
+                ) : (
+                  `${areaName}エリア`
+                )}
+              </>
+            )}
             {sub.prefecture && ` / ${sub.prefecture}`}
           </p>
 
@@ -408,7 +448,13 @@ export default async function SubstationDetailPage({
           </section>
 
           <p className="back-link">
-            <Link href="/grid">← 系統空き容量一覧へ戻る</Link>
+            {areaSlug && areaName ? (
+              <Link href={`/grid/${areaSlug}`}>
+                ← {areaName}エリア一覧へ戻る
+              </Link>
+            ) : (
+              <Link href="/grid">← 系統空き容量データベースへ戻る</Link>
+            )}
           </p>
         </article>
       </main>

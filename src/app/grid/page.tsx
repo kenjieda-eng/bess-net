@@ -127,12 +127,43 @@ export default async function GridIndexPage() {
           <section className="grid-section">
             <h2 className="grid-section-h2">送配電事業者別</h2>
             <ul className="grid-list">
-              {operatorList.map(([op, n]) => (
-                <li key={op} className="grid-list-row">
-                  <span className="grid-list-label">{op}</span>
-                  <span className="grid-list-value">{n} 件</span>
-                </li>
-              ))}
+              {operatorList.map(([op, n]) => {
+                const slug =
+                  op === '東北電力ネットワーク'
+                    ? 'tohoku'
+                    : op === '北陸電力送配電'
+                    ? 'hokuriku'
+                    : op === '四国電力送配電'
+                    ? 'shikoku'
+                    : null;
+                const areaJp =
+                  op === '東北電力ネットワーク'
+                    ? '東北'
+                    : op === '北陸電力送配電'
+                    ? '北陸'
+                    : op === '四国電力送配電'
+                    ? '四国'
+                    : null;
+                return (
+                  <li key={op} className="grid-list-row">
+                    <span className="grid-list-label">{op}</span>
+                    <span className="grid-list-value">
+                      {n} 件
+                      {slug && areaJp && (
+                        <>
+                          {' '}
+                          <Link
+                            href={`/grid/${slug}`}
+                            className="grid-area-link"
+                          >
+                            → {areaJp}エリア詳細を見る
+                          </Link>
+                        </>
+                      )}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
             <p className="grid-source-note">
               ※ 残り 7社（北海道電力NW・東京電力PG・中部電力PG・関西電力送配電・中国電力NW・九州電力送配電・沖縄電力）は Phase 2 以降で順次追加予定。

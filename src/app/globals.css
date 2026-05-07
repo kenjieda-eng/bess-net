@@ -2768,3 +2768,125 @@
   color: #6b7280;
 }
 .grid-card-meta strong { color: #166534; }
+
+/* =================================================================
+   Phase 5 D-2: エリアページ追加スタイル
+   ================================================================= */
+
+/* テーブル */
+.grid-table-wrap {
+  overflow-x: auto;
+  margin: 8px 0 4px;
+}
+.grid-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+}
+.grid-table th,
+.grid-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: top;
+}
+.grid-table th {
+  background: #f9fafb;
+  font-weight: 700;
+  color: #0F2D4F;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+.grid-table tr:hover td {
+  background: #fafbff;
+}
+.grid-table th.num,
+.grid-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.grid-table a {
+  color: #1E5BA8;
+  text-decoration: none;
+  font-weight: 600;
+}
+.grid-table a:hover { text-decoration: underline; }
+.grid-table .pos { color: #166534; font-weight: 700; }
+.grid-table .zero { color: #6b7280; }
+
+/* Browser (検索/フィルタ) */
+.grid-browser { margin-top: 8px; }
+.grid-browser-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+.grid-browser-search {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fff;
+}
+.grid-browser-select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+  cursor: pointer;
+}
+.grid-browser-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: #4b5563;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.grid-browser-check input { cursor: pointer; }
+.grid-browser-summary {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 8px 0;
+}
+.grid-browser-more {
+  text-align: center;
+  margin-top: 12px;
+}
+.grid-browser-more-btn {
+  padding: 10px 24px;
+  background: #fff;
+  border: 1px solid #1E5BA8;
+  color: #1E5BA8;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.grid-browser-more-btn:hover {
+  background: #1E5BA8;
+  color: #fff;
+}
+
+/* /grid トップ：エリアリンク */
+.grid-list-row a.grid-area-link {
+  color: #1E5BA8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.grid-list-row a.grid-area-link:hover { text-decoration: underline; }
