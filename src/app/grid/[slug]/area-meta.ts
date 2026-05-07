@@ -28,6 +28,16 @@ export const AREA_META: Record<string, AreaMeta> = {
     description:
       '四国エリア（四国電力送配電）の変電所別系統空き容量・連系条件・出力制御情報を、香川・愛媛・徳島・高知の4県＋基幹系について一元化。',
   },
+  // ===== Phase 2B 追加 =====
+  hokkaido: {
+    slug: 'hokkaido',
+    areaJp: '北海道',
+    operator: '北海道電力ネットワーク',
+    landingUrl:
+      'https://www.hepco.co.jp/network/con_service/public_document/',
+    description:
+      '北海道エリア（北海道電力ネットワーク）の変電所別系統空き容量・連系条件・出力制御情報を、24 PDF 公開資料から抽出・統合。送電線情報は将来対応。',
+  },
   // ===== Phase 2A 追加 =====
   kansai: {
     slug: 'kansai',
@@ -66,4 +76,5 @@ export const AREA_JP_TO_SLUG: Record<string, string> = {
   関西: 'kansai',
   中国: 'chugoku',
   沖縄: 'okinawa',
+  北海道: 'hokkaido',
 };

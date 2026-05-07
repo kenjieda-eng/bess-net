@@ -87,7 +87,7 @@ export const siteConfig = {
       period: '3〜4ヶ月',
       title: '変電所別 系統空き容量公開',
       description:
-        '東北電力NW・北陸電力送配電・四国電力送配電・関西電力送配電・中国電力NW・沖縄電力 の計6社・約{substations}件を公開中。北海道電力NW・東京PG・中部PG・九州電力送配電を Phase 2 後半で順次追加予定。',
+        '東北電力NW・北陸電力送配電・四国電力送配電・関西電力送配電・中国電力NW・沖縄電力・北海道電力NW（PDF抽出）の計7社・約{substations}件を公開中。東京PG・中部PG・九州電力送配電を Phase 2 後半で順次追加予定。',
       isCurrent: true,
       status: 'done',
     },

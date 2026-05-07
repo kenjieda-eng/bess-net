@@ -91,6 +91,8 @@ export default async function GridIndexPage() {
     岡山県: { area: 'chugoku', areaJp: '中国' },
     広島県: { area: 'chugoku', areaJp: '中国' },
     山口県: { area: 'chugoku', areaJp: '中国' },
+    // Phase 2B 北海道
+    北海道: { area: 'hokkaido', areaJp: '北海道' },
   };
   const prefCounts = new Map<string, number>();
   for (const s of all) {
@@ -139,8 +141,8 @@ export default async function GridIndexPage() {
           <p className="page-lead">
             系統用蓄電池・再エネ事業の連系検討に必要な変電所別の
             <strong>{total}</strong>地点の空き容量情報。
-            <strong>東北・北陸・四国・関西・中国・沖縄</strong>
-            の6送配電事業者の公表 CSV を一元化。Phase 2-B で北海道、Phase 2-C で東京・中部、Phase 3 で九州（地点別実績→PDF対応）を順次追加予定です。
+            <strong>東北・北陸・四国・関西・中国・沖縄・北海道</strong>
+            の7送配電事業者の公表 CSV / PDF を一元化。Phase 2-C で東京PG・中部PG、Phase 3 で九州（地点別実績→PDF対応）を順次追加予定です。
           </p>
 
           {/* サマリ統計 */}
@@ -174,6 +176,7 @@ export default async function GridIndexPage() {
                   関西電力送配電: { slug: 'kansai', areaJp: '関西' },
                   中国電力ネットワーク: { slug: 'chugoku', areaJp: '中国' },
                   沖縄電力: { slug: 'okinawa', areaJp: '沖縄' },
+                  北海道電力ネットワーク: { slug: 'hokkaido', areaJp: '北海道' },
                 };
                 const m = map[op];
                 return (
@@ -198,7 +201,7 @@ export default async function GridIndexPage() {
               })}
             </ul>
             <p className="grid-source-note">
-              ※ 残り3社（北海道電力NW・東京電力PG・中部電力PG）は Phase 2-B（PDF対応）以降で順次追加予定。九州電力送配電は時系列実績データのみ公開のため Phase 3 で個別対応。
+              ※ 残り2社（東京電力PG・中部電力PG）は Phase 2-C 地図API対応で追加予定。九州電力送配電は時系列実績データのみ公開のため Phase 3 で個別対応。
             </p>
           </section>
 
