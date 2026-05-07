@@ -88,7 +88,7 @@ export const siteConfig = {
       title: '変電所別 系統空き容量公開',
       description:
         '東北電力NW・北陸電力送配電・四国電力送配電・関西電力送配電・中国電力NW・沖縄電力・北海道電力NW（PDF）・中部電力PG（CSV+GeoJSON、緯度経度付き）の計8社・約{substations}件を公開中。東京電力PG・九州電力送配電を Phase 2 後半・Phase 3 で順次追加予定。',
-      isCurrent: true,
+      isCurrent: false,
       status: 'done',
     },
     {
@@ -96,8 +96,8 @@ export const siteConfig = {
       period: '5〜6ヶ月',
       title: '日本の蓄電所マップ公開',
       description:
-        '緯度経度補完＋Leaflet 地図ベースのインタラクティブビュー、プロジェクトDB×系統情報のレイヤー連動を準備中。',
-      isCurrent: false,
+        '中部地方マップを先行公開（中部電力PG 配下 約1,081箇所、緯度経度付き／業界初の検索可能・地図ベース変電所空き容量DB）。残り7社は緯度経度補完を進めつつ Leaflet レイヤーへ順次展開予定。',
+      isCurrent: true,
       status: 'in-progress',
     },
     {

@@ -897,6 +897,87 @@ export const getRelatedOperatorsForSubstation = async (
   }
 };
 
+/* =================================================================
+   Phase 4-pre: 中部地方 Leaflet 地図ページ用ライト型
+   - 既存 SUBSTATION_LIST_FIELDS は latitude/longitude を含まない（list 派生最小化用）
+   - マップ専用の細い fields で list 取得 → 緯度経度 null を除外
+   ================================================================= */
+
+export type SubstationGeoPoint = {
+  slug: string;
+  name: string;
+  prefecture: string | null;
+  voltage_primary_kv: number | null;
+  voltage_secondary_kv: number | null;
+  cap_avail_mw: number | null;
+  n1_eligible: boolean;
+  oc_possibility: string | null;
+  latitude: number;
+  longitude: number;
+};
+
+const SUBSTATION_MAP_FIELDS =
+  'slug,name,prefecture,voltage_primary_kv,voltage_secondary_kv,cap_avail_mw,n1_eligible,oc_possibility,latitude,longitude';
+
+/**
+ * 中部エリアの緯度経度付き変電所のみを取得（Leaflet マップ用）
+ * - area = 中部 で絞り込み（中部電力PG 配下のみ）
+ * - latitude/longitude が null/undefined のレコードは除外
+ * - 落とし穴 #48: offset cap は 20,000 で安全側
+ */
+export const getChubuSubstationsForMap = async (): Promise<
+  SubstationGeoPoint[]
+> => {
+  const all: Substation[] = [];
+  const limit = 100;
+  for (let offset = 0; offset < 20000; offset += limit) {
+    try {
+      const data = await client.getList<Substation>({
+        endpoint: 'substations',
+        queries: {
+          limit,
+          offset,
+          fields: SUBSTATION_MAP_FIELDS,
+          filters: 'area[contains]中部',
+          orders: 'name',
+        },
+      });
+      all.push(...data.contents);
+      if (data.contents.length < limit) break;
+    } catch {
+      break;
+    }
+  }
+  return all
+    .filter(
+      (s) =>
+        typeof s.latitude === 'number' &&
+        typeof s.longitude === 'number' &&
+        !Number.isNaN(s.latitude) &&
+        !Number.isNaN(s.longitude)
+    )
+    .map((s) => ({
+      slug: s.slug,
+      name: s.name,
+      prefecture: s.prefecture ?? null,
+      voltage_primary_kv:
+        typeof s.voltage_primary_kv === 'number' ? s.voltage_primary_kv : null,
+      voltage_secondary_kv:
+        typeof s.voltage_secondary_kv === 'number'
+          ? s.voltage_secondary_kv
+          : null,
+      cap_avail_mw:
+        typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
+      n1_eligible: s.n1_eligible === true,
+      oc_possibility:
+        s.oc_possibility && s.oc_possibility.length > 0
+          ? s.oc_possibility[0]
+          : null,
+      latitude: s.latitude as number,
+      longitude: s.longitude as number,
+    }));
+};
+
 /** 関連ニュースの自動マッチ：本文に変電所名 or 都道府県を含むニュース上位 N 件 */
 export const getRelatedNewsForSubstation = async (
   query: string,

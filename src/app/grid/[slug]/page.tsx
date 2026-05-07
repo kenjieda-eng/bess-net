@@ -278,6 +278,30 @@ export default async function GridSlugPage({
             </p>
           </div>
 
+          {/* Phase 4-pre: 中部 cb-* で緯度経度ありの場合、地図リンク */}
+          {sub.slug.startsWith('cb-') &&
+            typeof sub.latitude === 'number' &&
+            typeof sub.longitude === 'number' && (
+              <div className="grid-map-cta" style={{ margin: '12px 0 20px' }}>
+                <Link
+                  href="/grid/chubu/map"
+                  className="grid-area-link"
+                  style={{
+                    display: 'inline-block',
+                    padding: '8px 14px',
+                    background: '#f0f9ff',
+                    color: '#0066cc',
+                    textDecoration: 'none',
+                    borderRadius: '6px',
+                    border: '1px solid #bfdbfe',
+                    fontSize: '13px',
+                  }}
+                >
+                  🗺 中部マップで位置を確認
+                </Link>
+              </div>
+            )}
+
           {/* (a) 基本情報 */}
           <section className="grid-section">
             <h2 className="grid-section-h2">基本情報</h2>

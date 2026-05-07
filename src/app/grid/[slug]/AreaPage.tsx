@@ -184,6 +184,36 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
             から一元化して掲載しています。
           </p>
 
+          {/* Phase 4-pre: 中部限定マップへの導線 */}
+          {meta.slug === 'chubu' && (
+            <div className="grid-map-cta" style={{ margin: '16px 0 24px' }}>
+              <Link
+                href="/grid/chubu/map"
+                className="grid-map-cta-button"
+                style={{
+                  display: 'inline-block',
+                  padding: '12px 20px',
+                  background: '#0066cc',
+                  color: 'white',
+                  textDecoration: 'none',
+                  borderRadius: '6px',
+                  fontWeight: 'bold',
+                }}
+              >
+                🗺 中部地方マップで見る（緯度経度付き約1,081箇所）
+              </Link>
+              <span
+                style={{
+                  marginLeft: '12px',
+                  fontSize: '12px',
+                  color: '#6b7280',
+                }}
+              >
+                マーカー色で空容量・N-1電制可否を直感的に把握できます。
+              </span>
+            </div>
+          )}
+
           {/* サマリ統計 */}
           <section className="grid-section">
             <h2 className="grid-section-h2">サマリ統計</h2>

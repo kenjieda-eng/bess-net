@@ -202,6 +202,18 @@ export default async function GridIndexPage() {
                           </Link>
                         </>
                       )}
+                      {m?.slug === 'chubu' && (
+                        <>
+                          {' '}
+                          <Link
+                            href="/grid/chubu/map"
+                            className="grid-area-link"
+                            style={{ marginLeft: '8px' }}
+                          >
+                            🗺 マップで見る
+                          </Link>
+                        </>
+                      )}
                     </span>
                   </li>
                 );
