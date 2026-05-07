@@ -708,3 +708,211 @@ export const getAllLinkSlugs = async (): Promise<{ slug: string }[]> => {
     return [];
   }
 };
+
+/* =================================================================
+   Phase 1: 系統空き容量DB (substations) — 1,449件
+   - microCMS フィールドは 20字制限のショートキー (cap_*, op_*, oc_*)
+   - select 系は配列 (operator/area/voltage_class/oc_possibility/data_source_format)
+   - relation は空配列で初期投入済み
+   ================================================================= */
+
+export type Substation = {
+  id: string;
+  slug: string;
+  name: string;
+  operator: string[];
+  area: string[];
+  prefecture?: string;
+  city?: string;
+  address?: string;
+  latitude?: number;
+  longitude?: number;
+  voltage_primary_kv?: number;
+  voltage_secondary_kv?: number;
+  voltage_class?: string[];
+  units?: number;
+  capacity_total_mw?: number;
+  cap_operational_mw?: number;
+  op_constraint?: string;
+  forecast_flow_mw?: number;
+  cap_avail_mw?: number;
+  cap_avail_upper_mw?: number;
+  n1_eligible?: boolean;
+  n1_capacity_mw?: number;
+  oc_possibility?: string[];
+  oc_target_self?: string;
+  oc_target_upper?: string;
+  external_id?: string;
+  non_firm_eligible?: boolean;
+  reinforcement_plan?: string;
+  conn_cost_typical?: string;
+  control_frequency?: number;
+  notes?: string;
+  source_url: string;
+  data_source_format?: string[];
+  last_updated?: string;
+  fetched_at?: string;
+  relatedOperators?: Operator[];
+  relatedNews?: News[];
+  relatedTerms?: Glossary[];
+  relatedSubsidies?: Subsidy[];
+  publishedAt: string;
+  updatedAt: string;
+  createdAt: string;
+  revisedAt: string;
+};
+
+const SUBSTATION_LIST_FIELDS =
+  'id,slug,name,operator,area,prefecture,voltage_primary_kv,voltage_secondary_kv,voltage_class,units,capacity_total_mw,cap_operational_mw,cap_avail_mw,cap_avail_upper_mw,n1_eligible,n1_capacity_mw,oc_possibility,non_firm_eligible,source_url,last_updated,fetched_at';
+
+type SubstationListOpts = {
+  limit?: number;
+  offset?: number;
+  area?: string;
+  operator?: string;
+  fields?: string;
+  orders?: string;
+};
+
+export const getSubstationList = async (
+  opts: SubstationListOpts = {}
+): Promise<{ contents: Substation[]; totalCount: number }> => {
+  const queries: MicroCMSQueries = {
+    limit: opts.limit ?? 100,
+    offset: opts.offset ?? 0,
+    fields: opts.fields ?? SUBSTATION_LIST_FIELDS,
+    orders: opts.orders ?? 'name',
+  };
+  const filters: string[] = [];
+  if (opts.area) filters.push(`area[contains]${opts.area}`);
+  if (opts.operator) filters.push(`operator[contains]${opts.operator}`);
+  if (filters.length) queries.filters = filters.join('[and]');
+  try {
+    const data = await client.getList<Substation>({
+      endpoint: 'substations',
+      queries,
+    });
+    return { contents: data.contents, totalCount: data.totalCount ?? 0 };
+  } catch {
+    return { contents: [], totalCount: 0 };
+  }
+};
+
+export const getAllSubstations = async (
+  opts: { area?: string; operator?: string } = {}
+): Promise<Substation[]> => {
+  const all: Substation[] = [];
+  const limit = 100;
+  for (let offset = 0; offset < 5000; offset += limit) {
+    const { contents } = await getSubstationList({
+      limit,
+      offset,
+      area: opts.area,
+      operator: opts.operator,
+    });
+    all.push(...contents);
+    if (contents.length < limit) break;
+  }
+  return all;
+};
+
+export const getSubstationBySlug = async (
+  slug: string
+): Promise<Substation | null> => {
+  try {
+    const data = await client.get<Substation>({
+      endpoint: 'substations',
+      contentId: slug,
+      queries: { depth: 1 },
+    });
+    return data;
+  } catch {
+    // Fallback: filter
+    try {
+      const data = await client.getList<Substation>({
+        endpoint: 'substations',
+        queries: { filters: `slug[equals]${slug}`, depth: 1, limit: 1 },
+      });
+      return data.contents[0] ?? null;
+    } catch {
+      return null;
+    }
+  }
+};
+
+export const getAllSubstationSlugs = async (): Promise<{ slug: string }[]> => {
+  const slugs: { slug: string }[] = [];
+  const limit = 100;
+  for (let offset = 0; offset < 5000; offset += limit) {
+    try {
+      const data = await client.getList<Substation>({
+        endpoint: 'substations',
+        queries: { limit, offset, fields: 'slug' },
+      });
+      slugs.push(...data.contents.map((s) => ({ slug: s.slug })));
+      if (data.contents.length < limit) break;
+    } catch {
+      break;
+    }
+  }
+  return slugs;
+};
+
+export const getSubstationsByArea = async (
+  area: string,
+  limit = 100
+): Promise<Substation[]> => {
+  const { contents } = await getSubstationList({ area, limit });
+  return contents;
+};
+
+export const getSubstationsByOperator = async (
+  operator: string,
+  limit = 100
+): Promise<Substation[]> => {
+  const { contents } = await getSubstationList({ operator, limit });
+  return contents;
+};
+
+/** 関連事業者の自動マッチ：operator フィールドにマッチする事業者を上位 N 社 */
+export const getRelatedOperatorsForSubstation = async (
+  operatorName: string,
+  limit = 5
+): Promise<Operator[]> => {
+  if (!operatorName) return [];
+  try {
+    const data = await client.getList<Operator>({
+      endpoint: 'operators',
+      queries: {
+        filters: `name[contains]${operatorName}`,
+        limit,
+        fields: 'id,slug,name,description,category,prefecture',
+      },
+    });
+    return data.contents;
+  } catch {
+    return [];
+  }
+};
+
+/** 関連ニュースの自動マッチ：本文に変電所名 or 都道府県を含むニュース上位 N 件 */
+export const getRelatedNewsForSubstation = async (
+  query: string,
+  limit = 5
+): Promise<News[]> => {
+  if (!query) return [];
+  try {
+    const data = await client.getList<News>({
+      endpoint: 'news',
+      queries: {
+        q: query,
+        limit,
+        orders: '-publishedAt',
+        fields: 'id,slug,title,lead,category,publishedAt',
+      },
+    });
+    return data.contents;
+  } catch {
+    return [];
+  }
+};

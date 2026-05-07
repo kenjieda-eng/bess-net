@@ -2565,3 +2565,206 @@
   color: #6b7280;
   font-style: italic;
 }
+
+/* =================================================================
+   Phase 1: 系統空き容量DB (/grid/[slug] / /grid)
+   ================================================================= */
+
+/* 個別ページ ヘッダー */
+.grid-detail-header {
+  margin: 16px 0 24px;
+}
+.grid-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.grid-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.grid-tag-operator { background: #eef2ff; color: #4338ca; }
+.grid-tag-area     { background: #f0f9ff; color: #0369a1; }
+.grid-tag-voltage  { background: #fef3c7; color: #92400e; }
+
+.grid-detail-lead {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* セクション共通 */
+.grid-section {
+  margin: 28px 0;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+.grid-section:first-of-type { border-top: 0; padding-top: 0; }
+.grid-section-h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0F2D4F;
+  border-left: 3px solid #1E5BA8;
+  padding-left: 12px;
+  margin: 0 0 14px;
+}
+
+/* dl (key-value table) */
+.grid-info-table {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 8px 18px;
+  margin: 0;
+  font-size: 0.95rem;
+}
+@media (max-width: 640px) {
+  .grid-info-table { grid-template-columns: 140px 1fr; }
+}
+.grid-info-table dt {
+  color: #6b7280;
+  font-weight: 500;
+}
+.grid-info-table dd {
+  margin: 0;
+  color: #1f2937;
+  word-break: break-word;
+}
+.grid-note {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+.grid-prose {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #1f2937;
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* 状態バッジ */
+.grid-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.grid-badge-ok    { background: #dcfce7; color: #166534; }
+.grid-badge-warn  { background: #fef3c7; color: #92400e; }
+.grid-badge-info  { background: #f3f4f6; color: #4b5563; }
+
+/* 出典・データ提供元 */
+.grid-source-section {
+  background: #f9fafb;
+  padding: 18px 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  border-top: 1px solid #e5e7eb;
+}
+.grid-source-section .grid-section-h2 { margin-top: 0; }
+.grid-source-link {
+  word-break: break-all;
+  color: #1E5BA8;
+  text-decoration: underline;
+}
+.grid-source-note {
+  margin: 14px 0 0;
+  font-size: 0.85rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* 一覧ページ */
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.grid-stat-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px 18px;
+  text-align: center;
+}
+.grid-stat-num {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #0F2D4F;
+}
+.grid-stat-label {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.grid-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.grid-list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px dashed #e5e7eb;
+  font-size: 0.95rem;
+}
+.grid-list-row:last-child { border-bottom: 0; }
+.grid-list-label { color: #1f2937; }
+.grid-list-value { color: #6b7280; font-weight: 600; }
+
+.grid-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.grid-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  transition: all 0.15s ease;
+}
+.grid-card:hover {
+  border-color: #1E5BA8;
+  box-shadow: 0 2px 8px rgba(30, 91, 168, 0.1);
+  transform: translateY(-1px);
+}
+.grid-card-link {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: inherit;
+}
+.grid-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.grid-card-head .grid-tag { font-size: 0.7rem; padding: 2px 8px; }
+.grid-card-name {
+  font-weight: 700;
+  color: #0F2D4F;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.grid-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+.grid-card-meta strong { color: #166534; }
