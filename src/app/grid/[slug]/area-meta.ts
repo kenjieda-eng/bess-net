@@ -28,6 +28,34 @@ export const AREA_META: Record<string, AreaMeta> = {
     description:
       '四国エリア（四国電力送配電）の変電所別系統空き容量・連系条件・出力制御情報を、香川・愛媛・徳島・高知の4県＋基幹系について一元化。',
   },
+  // ===== Phase 2A 追加 =====
+  kansai: {
+    slug: 'kansai',
+    areaJp: '関西',
+    operator: '関西電力送配電',
+    landingUrl:
+      'https://www.kansai-td.co.jp/consignment/disclosure/distribution-equipment/',
+    description:
+      '関西エリア（関西電力送配電）の変電所別系統空き容量・連系条件・出力制御情報を、154kV以上の基幹系統と154kV以下のローカル系統について一元化。',
+  },
+  chugoku: {
+    slug: 'chugoku',
+    areaJp: '中国',
+    operator: '中国電力ネットワーク',
+    landingUrl:
+      'https://www.energia.co.jp/nw/service/retailer/keitou/access/',
+    description:
+      '中国エリア（中国電力ネットワーク）の変電所別系統空き容量・連系条件・出力制御情報を、鳥取・島根・岡山・広島・山口の5県＋基幹系について一元化。',
+  },
+  okinawa: {
+    slug: 'okinawa',
+    areaJp: '沖縄',
+    operator: '沖縄電力',
+    landingUrl:
+      'https://www.okiden.co.jp/business-support/service/rule/plan/index.html',
+    description:
+      '沖縄エリア（沖縄電力）の変電所別系統空き容量・連系条件・出力制御情報を、本島132/66kV系・本島22/13.8kV系・離島の各系統について一元化。',
+  },
 };
 
 // 日本語エリア名 → エリアスラグ
@@ -35,4 +63,7 @@ export const AREA_JP_TO_SLUG: Record<string, string> = {
   東北: 'tohoku',
   北陸: 'hokuriku',
   四国: 'shikoku',
+  関西: 'kansai',
+  中国: 'chugoku',
+  沖縄: 'okinawa',
 };
