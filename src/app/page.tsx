@@ -2,7 +2,14 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
-import { getExplainerList, getGlossaryList, getIndustryNews } from '@/lib/microcms';
+import { getExplainerList, getGlossaryList, getIndustryNews, getSubstationList } from '@/lib/microcms';
+import type { RoadmapStatus } from '@/lib/site-config';
+
+const ROADMAP_BADGE: Record<RoadmapStatus, { label: string; className: string }> = {
+  done: { label: '✅ 公開済', className: 'roadmap-badge roadmap-badge-done' },
+  'in-progress': { label: '🚧 開発中', className: 'roadmap-badge roadmap-badge-in-progress' },
+  planned: { label: '📅 計画中', className: 'roadmap-badge roadmap-badge-planned' },
+};
 
 export const revalidate = 60;
 
@@ -59,12 +66,14 @@ export default async function Home() {
 
   const emptyList = { contents: [], totalCount: 0, offset: 0, limit: 0 };
 
-  const [explainerData, glossaryNew, glossaryTotal, industryNewsAll] = await Promise.all([
+  const [explainerData, glossaryNew, glossaryTotal, industryNewsAll, substationsCount] = await Promise.all([
     getExplainerList({ limit: 6, orders: '-publishedAt' }),
     getGlossaryList({ limit: 10, orders: '-publishedAt' }),
     getGlossaryList({ limit: 1, fields: 'id' }),
     safeFetch(() => getIndustryNews(), [] as any[]),
+    safeFetch(async () => (await getSubstationList({ limit: 0, fields: 'id' })).totalCount, 0),
   ]);
+  const substationsCountStr = substationsCount > 0 ? substationsCount.toLocaleString('en-US') : '4,097';
   // 業界ニュース最新3本（編集部=お知らせは除外済み）
   const newsData = {
     contents: (industryNewsAll as any[])
@@ -271,7 +280,13 @@ export default async function Home() {
           <div className="section-label">Roadmap</div>
           <h2 className="section-title">公開ロードマップ</h2>
           <div className="roadmap-list">
-            {siteConfig.roadmap.map((r, i) => (
+            {siteConfig.roadmap.map((r, i) => {
+              const badge = ROADMAP_BADGE[r.status];
+              const description = r.description.replace(
+                '{substations}',
+                substationsCountStr,
+              );
+              return (
               <div
                 key={i}
                 className={`roadmap-item${r.isCurrent ? ' is-current' : ''}`}
@@ -281,11 +296,15 @@ export default async function Home() {
                   <small>{r.period}</small>
                 </div>
                 <div className="roadmap-content">
-                  <h4>{r.title}</h4>
-                  <p>{r.description}</p>
+                  <h4>
+                    {r.title}
+                    <span className={badge.className}>{badge.label}</span>
+                  </h4>
+                  <p>{description}</p>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

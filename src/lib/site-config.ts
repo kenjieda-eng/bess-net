@@ -1,12 +1,15 @@
 // サイト全体の定数を一元管理
 // 名称・URL・メタ情報をここで定義し、各ページから参照する
 
+export type RoadmapStatus = 'done' | 'in-progress' | 'planned';
+
 export type RoadmapItem = {
   phase: string;
   period: string;
   title: string;
   description: string;
   isCurrent?: boolean;
+  status: RoadmapStatus;
 };
 
 export type NavItem = {
@@ -59,46 +62,52 @@ export const siteConfig = {
   ],
 
   // ロードマップ（トップページ表示用）
+  // description 中の `{substations}` プレースホルダーは page.tsx 側で実際の件数に置換
   roadmap: [
     {
       phase: 'Sprint 1',
       period: '基盤整備',
       title: '解説記事・用語集・規約',
       description:
-        '解説記事5本、用語集150語、About/編集方針/規約/プライバシーポリシー。順次拡充中。',
-      isCurrent: true,
+        '解説記事125本、用語集1,516語、編集方針・規約・プライバシーポリシー、お役立ちサイト210件、事業者ナビ403社など、業界知識基盤が整備済み。',
+      isCurrent: false,
+      status: 'done',
     },
     {
-      phase: 'Sprint 1',
-      period: '〜2ヶ月',
+      phase: 'Sprint 1〜2',
+      period: '1〜2ヶ月',
       title: 'プロジェクトDB初期版・補助金カレンダー',
       description:
-        '国内蓄電所プロジェクト情報の構造化掲載と、補助金の公募スケジュール集約。',
+        '国内蓄電所プロジェクトDB稼働中、補助金カレンダーも公開中。',
       isCurrent: false,
+      status: 'done',
     },
     {
       phase: 'Sprint 2',
       period: '3〜4ヶ月',
       title: '変電所別 系統空き容量公開',
       description:
-        'キラーコンテンツ第1弾。10電力会社の公開情報を集約した変電所単位のデータベース。週次更新。',
-      isCurrent: false,
+        '東北電力NW・北陸電力送配電・四国電力送配電・関西電力送配電・中国電力NW・沖縄電力 の計6社・約{substations}件を公開中。北海道電力NW・東京PG・中部PG・九州電力送配電を Phase 2 後半で順次追加予定。',
+      isCurrent: true,
+      status: 'done',
     },
     {
       phase: 'Sprint 3',
       period: '5〜6ヶ月',
       title: '日本の蓄電所マップ公開',
       description:
-        'キラーコンテンツ第2弾。プロジェクトDBと系統情報をレイヤー連動した地図ベースの体験。',
+        '緯度経度補完＋Leaflet 地図ベースのインタラクティブビュー、プロジェクトDB×系統情報のレイヤー連動を準備中。',
       isCurrent: false,
+      status: 'in-progress',
     },
     {
       phase: 'Sprint 5',
       period: '9〜10ヶ月',
       title: '火災・トラブル事例DB公開',
       description:
-        'キラーコンテンツ第3弾。国内の蓄電池トラブル事例を公開資料に基づき整理した、業界の安全文化向上に資する情報基盤。',
+        '国内の蓄電池トラブル事例を公開資料に基づき整理。業界の安全文化向上に資する情報基盤を計画中。',
       isCurrent: false,
+      status: 'planned',
     },
   ] as RoadmapItem[],
 } as const;
