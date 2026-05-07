@@ -43,6 +43,7 @@ export const siteConfig = {
     { label: '解説', href: '/explainer', enabled: true },
     { label: '用語集', href: '/glossary', enabled: true },
     { label: '補助金', href: '/subsidies', enabled: true },
+    { label: '系統空き容量', href: '/grid', enabled: true },
     { label: '事業者ナビ', href: '/operators', enabled: true },
     { label: 'プロジェクト', href: '/projects', enabled: true },
     { label: 'お役立ちサイト', href: '/links', enabled: true },

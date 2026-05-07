@@ -2890,3 +2890,36 @@
   font-size: 0.85rem;
 }
 .grid-list-row a.grid-area-link:hover { text-decoration: underline; }
+
+/* /grid トップ：人気の検索（都道府県別） */
+.grid-popular-prefs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.grid-popular-prefs li { margin: 0; }
+.grid-popular-link {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #fff;
+  color: #1E5BA8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+.grid-popular-link:hover {
+  border-color: #1E5BA8;
+  background: #eff6ff;
+}
+.grid-popular-count {
+  margin-left: 4px;
+  color: #6b7280;
+  font-size: 0.78rem;
+  font-weight: 400;
+}

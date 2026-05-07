@@ -9,6 +9,7 @@ import {
   getSiteInfo,
   getAllOperators,
   getAllLinks,
+  getAllSubstations,
 } from '@/lib/microcms';
 
 export const revalidate = 300;
@@ -25,6 +26,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/projects`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/operators`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/links`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${siteConfig.url}/grid`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${siteConfig.url}/grid/tohoku`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${siteConfig.url}/grid/hokuriku`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${siteConfig.url}/grid/shikoku`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${siteConfig.url}/info`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
@@ -36,7 +41,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try { return await fn(); } catch { return []; }
   };
 
-  const [explainer, glossary, subsidies, projects, news, info, operators, links] = await Promise.all([
+  const [explainer, glossary, subsidies, projects, news, info, operators, links, substations] = await Promise.all([
     safeFetch(getAllExplainer),
     safeFetch(getAllGlossary),
     safeFetch(getAllSubsidies),
@@ -45,6 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     safeFetch(getSiteInfo),
     safeFetch(getAllOperators),
     safeFetch(getAllLinks),
+    safeFetch(() => getAllSubstations()),
   ]);
 
   const explainerUrls: MetadataRoute.Sitemap = explainer.map((a) => ({
@@ -95,6 +101,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
+  const substationUrls: MetadataRoute.Sitemap = substations.map((s) => ({
+    url: `${siteConfig.url}/grid/${s.slug}`,
+    lastModified: s.last_updated ? new Date(s.last_updated) : now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
 
   return [
     ...staticUrls,
@@ -106,5 +118,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...projectUrls,
     ...operatorUrls,
     ...linkUrls,
+    ...substationUrls,
   ];
 }

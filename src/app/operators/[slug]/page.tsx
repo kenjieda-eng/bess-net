@@ -86,6 +86,14 @@ export default async function OperatorDetailPage({
   const listed = listedLabel(operator);
   const founded = foundedLabel(operator.foundedYear);
 
+  // PoC 期間中：3 送配電事業者は所管エリアの系統空き容量ページへリンク
+  const GRID_AREA_BY_OPERATOR_SLUG: Record<string, { area: string; areaJp: string }> = {
+    'tohoku-epco-nw': { area: 'tohoku', areaJp: '東北' },
+    'rikuden-tdgc': { area: 'hokuriku', areaJp: '北陸' },
+    'yonden-nw': { area: 'shikoku', areaJp: '四国' },
+  };
+  const gridArea = GRID_AREA_BY_OPERATOR_SLUG[operator.slug];
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -239,6 +247,23 @@ export default async function OperatorDetailPage({
                 projects={relatedProjects}
                 title={`${operator.name}の関連プロジェクト`}
               />
+            </section>
+          )}
+
+          {/* 系統空き容量 (PoC: 3社のみ) */}
+          {gridArea && (
+            <section className="op-detail-section">
+              <h2 className="op-detail-h2">
+                {gridArea.areaJp}エリアの系統空き容量
+              </h2>
+              <p>
+                <Link
+                  href={`/grid/${gridArea.area}`}
+                  className="op-related-more"
+                >
+                  → {gridArea.areaJp}エリアの変電所別 系統空き容量を見る
+                </Link>
+              </p>
             </section>
           )}
 

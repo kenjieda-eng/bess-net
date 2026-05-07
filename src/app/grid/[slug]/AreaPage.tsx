@@ -140,11 +140,36 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
     },
   };
 
+  // BreadcrumbList JSON-LD: トップ > 系統空き容量 > {エリア}エリア
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'トップ', item: 'https://bess-net.jp/' },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: '系統空き容量',
+        item: 'https://bess-net.jp/grid',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: `${meta.areaJp}エリア`,
+        item: `https://bess-net.jp/grid/${meta.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <SiteHeader />
       <main className="section">

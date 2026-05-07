@@ -69,6 +69,39 @@ export default async function GridIndexPage() {
     .sort((a, b) => (b.cap_avail_mw || 0) - (a.cap_avail_mw || 0))
     .slice(0, 12);
 
+  // 都道府県別件数（人気の検索用、件数上位8つ）
+  const PREFECTURE_TO_AREA: Record<string, { area: string; areaJp: string }> = {
+    青森県: { area: 'tohoku', areaJp: '東北' },
+    岩手県: { area: 'tohoku', areaJp: '東北' },
+    秋田県: { area: 'tohoku', areaJp: '東北' },
+    宮城県: { area: 'tohoku', areaJp: '東北' },
+    山形県: { area: 'tohoku', areaJp: '東北' },
+    福島県: { area: 'tohoku', areaJp: '東北' },
+    新潟県: { area: 'tohoku', areaJp: '東北' },
+    富山県: { area: 'hokuriku', areaJp: '北陸' },
+    石川県: { area: 'hokuriku', areaJp: '北陸' },
+    福井県: { area: 'hokuriku', areaJp: '北陸' },
+    香川県: { area: 'shikoku', areaJp: '四国' },
+    愛媛県: { area: 'shikoku', areaJp: '四国' },
+    徳島県: { area: 'shikoku', areaJp: '四国' },
+    高知県: { area: 'shikoku', areaJp: '四国' },
+  };
+  const prefCounts = new Map<string, number>();
+  for (const s of all) {
+    if (!s.prefecture) continue;
+    if (!PREFECTURE_TO_AREA[s.prefecture]) continue;
+    prefCounts.set(s.prefecture, (prefCounts.get(s.prefecture) || 0) + 1);
+  }
+  const popularPrefs = Array.from(prefCounts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8)
+    .map(([pref, count]) => ({
+      pref,
+      count,
+      area: PREFECTURE_TO_AREA[pref].area,
+      areaJp: PREFECTURE_TO_AREA[pref].areaJp,
+    }));
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -169,6 +202,26 @@ export default async function GridIndexPage() {
               ※ 残り 7社（北海道電力NW・東京電力PG・中部電力PG・関西電力送配電・中国電力NW・九州電力送配電・沖縄電力）は Phase 2 以降で順次追加予定。
             </p>
           </section>
+
+          {/* 人気の検索（都道府県別件数 上位 8） */}
+          {popularPrefs.length > 0 && (
+            <section className="grid-section">
+              <h2 className="grid-section-h2">人気の検索（都道府県別）</h2>
+              <ul className="grid-popular-prefs">
+                {popularPrefs.map(({ pref, count, area }) => (
+                  <li key={pref}>
+                    <Link href={`/grid/${area}`} className="grid-popular-link">
+                      {pref}の変電所
+                      <span className="grid-popular-count">（{count}件）</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="grid-source-note">
+                各都道府県の変電所は、エリアページで都道府県別ブレークダウン・上位3変電所リンクから詳細にアクセスできます。
+              </p>
+            </section>
+          )}
 
           {/* 電圧階級別 */}
           <section className="grid-section">

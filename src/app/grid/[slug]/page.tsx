@@ -188,6 +188,38 @@ export default async function GridSlugPage({
     license: sub.source_url,
   };
 
+  // BreadcrumbList JSON-LD: トップ > 系統空き容量 > {エリア}エリア > {都道府県} > {変電所名}
+  const breadcrumbItems: { name: string; item: string }[] = [
+    { name: 'トップ', item: 'https://bess-net.jp/' },
+    { name: '系統空き容量', item: 'https://bess-net.jp/grid' },
+  ];
+  if (areaName && areaSlug) {
+    breadcrumbItems.push({
+      name: `${areaName}エリア`,
+      item: `https://bess-net.jp/grid/${areaSlug}`,
+    });
+  }
+  if (sub.prefecture) {
+    breadcrumbItems.push({
+      name: sub.prefecture,
+      item: `https://bess-net.jp/grid/${sub.slug}`,
+    });
+  }
+  breadcrumbItems.push({
+    name: sub.name,
+    item: `https://bess-net.jp/grid/${sub.slug}`,
+  });
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems.map((b, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: b.name,
+      item: b.item,
+    })),
+  };
+
   // 数値の表示用
   const capTotal = fmtNum(sub.capacity_total_mw, ' MW');
   const capOp = fmtNum(sub.cap_operational_mw, ' MW');
@@ -206,6 +238,10 @@ export default async function GridSlugPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <SiteHeader />
       <main className="section">
