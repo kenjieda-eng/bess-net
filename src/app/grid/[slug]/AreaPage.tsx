@@ -12,6 +12,7 @@ import {
   type Substation,
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
+import { GRID_PAGE_RELATED_TERMS } from './related-terms';
 
 export type AreaMeta = {
   slug: string;
@@ -21,13 +22,8 @@ export type AreaMeta = {
   description: string;
 };
 
-const FIXED_TERMS: { term: string; slug: string }[] = [
-  { term: 'N-1電制', slug: 'n-1-control' },
-  { term: 'ノンファーム接続', slug: 'non-firm-connection' },
-  { term: '空き容量', slug: 'available-capacity' },
-  { term: '系統連系', slug: 'grid-connection' },
-  { term: 'ウェルカムゾーン', slug: 'welcome-zone' },
-];
+// 関連用語の固定リンク → ./related-terms.ts に集約（落とし穴 #59 対応：実在slug 検証済み）
+const FIXED_TERMS = GRID_PAGE_RELATED_TERMS;
 
 function fmt(v: number | null | undefined): string {
   if (typeof v !== 'number' || Number.isNaN(v)) return '—';

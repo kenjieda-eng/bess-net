@@ -15,6 +15,7 @@ import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import AreaPage from './AreaPage';
 import { AREA_META, AREA_JP_TO_SLUG } from './area-meta';
+import { GRID_PAGE_RELATED_TERMS } from './related-terms';
 import {
   getSubstationBySlug,
   getAllSubstationSlugs,
@@ -122,14 +123,8 @@ export async function generateMetadata({
   };
 }
 
-// ノンファーム接続・N-1電制等の業界用語へのリンク（固定）
-const FIXED_RELATED_TERMS: { term: string; slug: string }[] = [
-  { term: 'N-1電制', slug: 'n-1-control' },
-  { term: 'ノンファーム接続', slug: 'non-firm-connection' },
-  { term: '空き容量', slug: 'available-capacity' },
-  { term: '系統連系', slug: 'grid-connection' },
-  { term: 'ウェルカムゾーン', slug: 'welcome-zone' },
-];
+// 関連用語の固定リンク → ./related-terms.ts に集約（落とし穴 #59 対応：実在slug 検証済み）
+const FIXED_RELATED_TERMS = GRID_PAGE_RELATED_TERMS;
 
 export default async function GridSlugPage({
   params,
