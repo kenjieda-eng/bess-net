@@ -463,6 +463,31 @@ export default async function GridSlugPage({
             title="関連用語（用語集）"
           />
 
+          {/* (j) v24: 位置情報のご提供セクション (latitude=null の変電所のみ) */}
+          {/* TODO: Google Forms URL を本番に差し替え (現在は仮の placeholder URL) */}
+          {(typeof sub.latitude !== 'number' || Number.isNaN(sub.latitude)) && (
+            <section className="grid-section grid-location-tips">
+              <h2 className="grid-section-h2">📍 位置情報のご提供をお願いします</h2>
+              <p>
+                この変電所の正確な位置情報（住所・緯度経度）をお持ちですか？
+                業界事業者・電力会社のみなさまからのご提供は、業界全体の連系検討プロセス効率化に貢献します。
+              </p>
+              <p>
+                <a
+                  href="https://forms.gle/PLACEHOLDER_REPLACE_ME"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="grid-location-tips-button"
+                >
+                  🔗 位置情報を提供する（外部フォーム）
+                </a>
+              </p>
+              <p className="grid-source-note">
+                ※提供情報は蓄電所ネット 編集部が確認後、データベースに反映します。匿名でのご提供も歓迎です。
+              </p>
+            </section>
+          )}
+
           {/* (f) 一次ソース・データ提供元（落とし穴45：明記必須） */}
           <section className="grid-section grid-source-section">
             <h2 className="grid-section-h2">出典・データ提供元</h2>

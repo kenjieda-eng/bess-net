@@ -159,6 +159,30 @@ export default async function GridIndexPage() {
             の9送配電事業者の公表 CSV / PDF / GeoJSON を一元化。中部エリアは緯度経度付きで地図表示の基盤に。残る東京電力PG は <Link href="/grid/tokyo">公開停止中（5月再開予定）</Link>。
           </p>
 
+          {/* v24: 変電所名フリーテキスト検索バナー */}
+          <section className="grid-search-banner" aria-label="変電所名検索">
+            <h2 className="grid-search-banner-title">🔍 変電所名で検索</h2>
+            <form
+              action="/grid/search"
+              method="get"
+              className="grid-search-form"
+            >
+              <input
+                type="text"
+                name="q"
+                placeholder="例：西部、松ケ枝、新潟"
+                className="grid-search-input"
+                aria-label="変電所名で検索"
+              />
+              <button type="submit" className="grid-search-submit">
+                検索
+              </button>
+            </form>
+            <p className="grid-search-banner-note">
+              全国9社・{total}変電所から名称で検索（部分一致）
+            </p>
+          </section>
+
           {/* サマリ統計 */}
           <section className="grid-section">
             <h2 className="grid-section-h2">サマリ統計</h2>

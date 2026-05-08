@@ -3107,3 +3107,132 @@
   color: #495057;
   border: 1px solid #ced4da;
 }
+
+/* =================================================================
+   v24: 変電所名フリーテキスト検索 (/grid/search) + /grid トップ banner
+   ================================================================= */
+.grid-search-banner {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+  text-align: center;
+}
+.grid-search-banner-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+.grid-search-banner-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+.grid-search-form {
+  display: flex;
+  gap: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.grid-search-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  min-width: 0;
+}
+.grid-search-input:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: -1px;
+  border-color: #2563eb;
+}
+.grid-search-submit {
+  padding: 10px 20px;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.grid-search-submit:hover {
+  background: #0052a3;
+}
+.grid-search-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+.grid-search-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+.grid-search-item:last-child {
+  border-bottom: 0;
+}
+.grid-search-link {
+  display: block;
+  padding: 12px 8px;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.grid-search-link:hover {
+  background: #f9fafb;
+}
+.grid-search-link strong {
+  color: #1f2937;
+  font-size: 1rem;
+}
+.grid-search-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+/* v24: 位置情報のご提供セクション (/grid/[slug] 個別ページ) */
+.grid-location-tips {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+.grid-location-tips-button {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #0066cc;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.grid-location-tips-button:hover {
+  background: #0052a3;
+}
+
+/* v24: モバイル UX 微改善 */
+@media (max-width: 768px) {
+  .grid-info-table dt,
+  .grid-info-table dd {
+    font-size: 0.85rem;
+  }
+  .grid-table {
+    font-size: 0.8rem;
+  }
+  /* テーブル横スクロール */
+  .grid-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .grid-search-form {
+    flex-direction: row;
+  }
+  .grid-search-input {
+    font-size: 16px; /* iOS 自動ズーム回避 */
+  }
+}

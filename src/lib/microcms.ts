@@ -979,6 +979,74 @@ export const getChubuSubstationsForMap = async (): Promise<
     }));
 };
 
+/* =================================================================
+   v24: 変電所名フリーテキスト検索（部分一致 / 名称順序）
+   - microCMS の filters[name][contains] を使い 6,500 件超から検索
+   - 表示は最大 100 件（UI 性能保護）、空容量大きい順
+   ================================================================= */
+
+export type SubstationSearchResult = {
+  slug: string;
+  name: string;
+  operator: string;
+  area: string;
+  prefecture: string | null;
+  voltage_primary_kv: number | null;
+  cap_avail_mw: number | null;
+};
+
+const SUBSTATION_SEARCH_FIELDS =
+  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw';
+
+const SEARCH_DISPLAY_LIMIT = 100;
+
+/**
+ * 変電所名フリーテキスト検索（部分一致）
+ * - 落とし穴 #48: MICROCMS_MAX_OFFSET / MICROCMS_PAGE_LIMIT を参照
+ */
+export const searchSubstationsByName = async (
+  query: string
+): Promise<SubstationSearchResult[]> => {
+  const q = (query || '').trim();
+  if (!q) return [];
+
+  const all: SubstationSearchResult[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+    try {
+      const data = await client.getList<Substation>({
+        endpoint: 'substations',
+        queries: {
+          limit,
+          offset,
+          filters: `name[contains]${q}`,
+          fields: SUBSTATION_SEARCH_FIELDS,
+          orders: '-cap_avail_mw',
+        },
+      });
+      for (const c of data.contents) {
+        all.push({
+          slug: c.slug,
+          name: c.name,
+          operator: Array.isArray(c.operator) ? c.operator[0] ?? '' : c.operator ?? '',
+          area: Array.isArray(c.area) ? c.area[0] ?? '' : c.area ?? '',
+          prefecture: c.prefecture ?? null,
+          voltage_primary_kv:
+            typeof c.voltage_primary_kv === 'number' ? c.voltage_primary_kv : null,
+          cap_avail_mw:
+            typeof c.cap_avail_mw === 'number' ? c.cap_avail_mw : null,
+        });
+        if (all.length >= SEARCH_DISPLAY_LIMIT) break;
+      }
+      if (all.length >= SEARCH_DISPLAY_LIMIT) break;
+      if (data.contents.length < limit) break;
+    } catch {
+      break;
+    }
+  }
+  return all;
+};
+
 /** 関連ニュースの自動マッチ：本文に変電所名 or 都道府県を含むニュース上位 N 件 */
 export const getRelatedNewsForSubstation = async (
   query: string,
