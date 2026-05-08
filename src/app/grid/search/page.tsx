@@ -189,7 +189,19 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               </select>
             </div>
             <div className="grid-search-row">
-              <label htmlFor="f-cap">空容量（MW以上）</label>
+              <label htmlFor="f-cap">
+                空容量（MW以上）
+                <span
+                  style={{
+                    fontWeight: 400,
+                    fontSize: '0.7rem',
+                    color: '#9ca3af',
+                    marginLeft: 4,
+                  }}
+                >
+                  N-1電制可選択時は「N-1電制適用可能量」を対象
+                </span>
+              </label>
               <select
                 id="f-cap"
                 name="cap_avail_min"
@@ -273,6 +285,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                             ` ／ ${r.voltage_primary_kv}kV`}
                           {r.cap_avail_mw != null &&
                             ` ／ 空容量 ${r.cap_avail_mw}MW`}
+                          {r.n1_capacity_mw != null &&
+                            ` ／ N-1可能量 ${r.n1_capacity_mw}MW`}
                           {r.n1_eligible && ' ／ N-1電制可'}
                         </span>
                       </Link>

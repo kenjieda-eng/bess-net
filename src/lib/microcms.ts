@@ -993,6 +993,7 @@ export type SubstationSearchResult = {
   prefecture: string | null;
   voltage_primary_kv: number | null;
   cap_avail_mw: number | null;
+  n1_capacity_mw?: number | null; // v25: N-1電制可 のときの容量表示用
   n1_eligible?: boolean;
 };
 
@@ -1088,7 +1089,7 @@ export const getRelatedNewsForSubstation = async (
    - 表示上限 200 件
    ================================================================= */
 const SEARCH_FILTER_FIELDS =
-  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,n1_eligible';
+  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,n1_capacity_mw,n1_eligible';
 const SEARCH_FILTER_LIMIT = 200;
 
 export const searchSubstationsByFilters = async (
@@ -1102,6 +1103,8 @@ export const searchSubstationsByFilters = async (
   const n1 = (filters.n1_eligible || '').trim();
   const operator = (filters.operator || '').trim();
 
+  const wantN1 = n1 === 'true';
+
   if (q) conditions.push(`name[contains]${q}`);
   if (area) conditions.push(`area[contains]${area}`);
   if (voltageMin) {
@@ -1109,23 +1112,23 @@ export const searchSubstationsByFilters = async (
     if (!Number.isNaN(v))
       conditions.push(`voltage_primary_kv[greater_than]${v - 0.001}`);
   }
+  // 落とし穴 #61 (v25): n1=true 状況の容量フィールド差異
+  // - 通常の変電所:    cap_avail_mw (空容量・当該設備)
+  // - N-1電制可 変電所: n1_capacity_mw (N-1電制適用可能量)
+  // microCMS のデータ仕様で n1=true 全 535件の cap_avail_mw は NULL のため、
+  // 単純に cap_avail_mw[gt]X [and] n1=true は常に 0件 となる（API バグではなくデータ仕様）。
+  // → n1=true のときは「空容量」フィルタを n1_capacity_mw にマップ
   if (capMin) {
     const v = Number(capMin);
-    if (!Number.isNaN(v))
-      conditions.push(`cap_avail_mw[greater_than]${v - 0.001}`);
+    if (!Number.isNaN(v)) {
+      if (wantN1) {
+        conditions.push(`n1_capacity_mw[greater_than]${v - 0.001}`);
+      } else {
+        conditions.push(`cap_avail_mw[greater_than]${v - 0.001}`);
+      }
+    }
   }
-  // 落とし穴 #61 (v25 発見): microCMS の filters で
-  //   `cap_avail_mw[greater_than]X [and] n1_eligible[equals]true`
-  // を組み合わせると 0件返却される（API バグ）。
-  // → n1_eligible[equals]true は API filter には含めず、JS 側で post-filter。
-  const wantN1 = n1 === 'true';
-  if (wantN1 && capMin === '' && conditions.length > 0) {
-    // cap_avail_min なし時のみ API 側で n1 を絞ってよい（area / voltage / operator / name とは正常動作）
-    conditions.push(`n1_eligible[equals]true`);
-  } else if (wantN1 && capMin === '') {
-    // 他フィルタゼロ + n1=true 単独のとき
-    conditions.push(`n1_eligible[equals]true`);
-  }
+  if (wantN1) conditions.push(`n1_eligible[equals]true`);
   if (operator) conditions.push(`operator[contains]${operator}`);
 
   if (conditions.length === 0) return [];
@@ -1133,12 +1136,8 @@ export const searchSubstationsByFilters = async (
   const filterStr = conditions.join('[and]');
   const all: SubstationSearchResult[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
-
-  // n1+cap 同時指定時は post-filter のため少し多めに fetch（最大 SEARCH_FILTER_LIMIT * 5）
-  const needPostFilter = wantN1 && capMin !== '';
-  const fetchCap = needPostFilter
-    ? SEARCH_FILTER_LIMIT * 5
-    : SEARCH_FILTER_LIMIT;
+  // n1=true のときは n1_capacity_mw 降順、それ以外は cap_avail_mw 降順
+  const orderBy = wantN1 ? '-n1_capacity_mw' : '-cap_avail_mw';
 
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     try {
@@ -1149,12 +1148,10 @@ export const searchSubstationsByFilters = async (
           offset,
           filters: filterStr,
           fields: SEARCH_FILTER_FIELDS,
-          orders: '-cap_avail_mw',
+          orders: orderBy,
         },
       });
       for (const c of data.contents) {
-        // post-filter: n1_eligible[equals]true を JS 側で適用（API bug 回避）
-        if (needPostFilter && c.n1_eligible !== true) continue;
         all.push({
           slug: c.slug,
           name: c.name,
@@ -1165,14 +1162,14 @@ export const searchSubstationsByFilters = async (
             typeof c.voltage_primary_kv === 'number' ? c.voltage_primary_kv : null,
           cap_avail_mw:
             typeof c.cap_avail_mw === 'number' ? c.cap_avail_mw : null,
+          n1_capacity_mw:
+            typeof c.n1_capacity_mw === 'number' ? c.n1_capacity_mw : null,
           n1_eligible: c.n1_eligible === true,
         });
         if (all.length >= SEARCH_FILTER_LIMIT) break;
       }
       if (all.length >= SEARCH_FILTER_LIMIT) break;
       if (data.contents.length < limit) break;
-      // post-filter モードで API 側の総数が fetchCap を超過したら打ち切り
-      if (needPostFilter && offset + limit >= fetchCap) break;
     } catch {
       break;
     }
