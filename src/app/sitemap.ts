@@ -10,6 +10,7 @@ import {
   getAllOperators,
   getAllLinks,
   getAllSubstations,
+  getAvailablePrefectures,
 } from '@/lib/microcms';
 
 export const revalidate = 300;
@@ -42,6 +43,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/grid/kyushu`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     // v24 追加: 変電所名フリーテキスト検索ページ
     { url: `${siteConfig.url}/grid/search`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    // v25 追加: 都道府県インデックス
+    { url: `${siteConfig.url}/grid/prefecture`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     // Phase 4-pre 追加: 中部Leafletマップページ
     { url: `${siteConfig.url}/grid/chubu/map`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     // v21 追加: 東京電力PG 公開停止解説ページ
@@ -57,7 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try { return await fn(); } catch { return []; }
   };
 
-  const [explainer, glossary, subsidies, projects, news, info, operators, links, substations] = await Promise.all([
+  const [explainer, glossary, subsidies, projects, news, info, operators, links, substations, prefectures] = await Promise.all([
     safeFetch(getAllExplainer),
     safeFetch(getAllGlossary),
     safeFetch(getAllSubsidies),
@@ -67,6 +70,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     safeFetch(getAllOperators),
     safeFetch(getAllLinks),
     safeFetch(() => getAllSubstations()),
+    safeFetch(getAvailablePrefectures),
   ]);
 
   const explainerUrls: MetadataRoute.Sitemap = explainer.map((a) => ({
@@ -123,6 +127,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
+  // v25: 都道府県別ページ
+  const prefectureUrls: MetadataRoute.Sitemap = prefectures.map((p) => ({
+    url: `${siteConfig.url}/grid/prefecture/${encodeURIComponent(p)}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
 
   return [
     ...staticUrls,
@@ -135,5 +146,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...operatorUrls,
     ...linkUrls,
     ...substationUrls,
+    ...prefectureUrls,
   ];
 }

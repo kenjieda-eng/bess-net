@@ -3236,3 +3236,230 @@
     font-size: 16px; /* iOS 自動ズーム回避 */
   }
 }
+
+/* =================================================================
+   v25: ヒーロー、サマリインフォグラフィック、日本地図、多角検索、都道府県
+   ================================================================= */
+
+/* --- ヒーロー --- */
+.grid-hero {
+  margin: 24px 0;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, #0066cc 0%, #004080 100%);
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.15);
+}
+.grid-hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.grid-hero-number {
+  font-size: clamp(48px, 10vw, 96px);
+  font-weight: bold;
+  line-height: 1;
+  margin: 8px 0;
+  letter-spacing: -0.02em;
+}
+.grid-hero-label {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+.grid-hero-sub {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+.grid-hero-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+  font-size: 0.8rem;
+}
+.grid-hero-feature {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 8px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* --- サマリインフォグラフィック (4カード) --- */
+.grid-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.grid-summary-card {
+  padding: 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.grid-summary-card-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+.grid-summary-card-num {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 4px 0 2px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.grid-summary-card-sub {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+.grid-summary-card-bar {
+  margin-top: 8px;
+  display: block;
+}
+.grid-summary-card-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #0066cc;
+  text-decoration: none;
+}
+.grid-summary-card-link:hover {
+  text-decoration: underline;
+}
+
+/* --- 日本地図ビジュアル --- */
+.grid-japan-map {
+  margin: 24px 0;
+  padding: 16px 8px;
+}
+.grid-japan-map-title {
+  text-align: center;
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.grid-japan-map-sub {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.8rem;
+  margin: 0 0 16px;
+}
+.grid-japan-map-svg {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  height: auto;
+}
+.grid-japan-map-area:hover rect {
+  fill-opacity: 1;
+}
+.grid-japan-map-legend {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* --- 多角検索フォーム (/grid/search) --- */
+.grid-search-form-multi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px 16px;
+  margin: 16px 0 24px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.grid-search-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.grid-search-row label {
+  font-size: 0.78rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+.grid-search-row select.grid-search-input {
+  padding: 9px 12px;
+  background: white;
+}
+.grid-search-row-actions {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+.grid-search-clear {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* --- 都道府県ディレクトリ --- */
+.grid-prefecture-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+}
+.grid-prefecture-cell {
+  margin: 0;
+}
+.grid-prefecture-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s, border-color 0.15s;
+}
+.grid-prefecture-link:hover {
+  background: #f3f4f6;
+  border-color: #cbd5e1;
+}
+.grid-prefecture-link strong {
+  color: #1f2937;
+  font-size: 0.9rem;
+}
+.grid-prefecture-count {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* --- v25 モバイル微調整 --- */
+@media (max-width: 480px) {
+  .grid-hero {
+    padding: 24px 16px;
+  }
+  .grid-hero-features {
+    grid-template-columns: 1fr 1fr;
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 768px) {
+  .grid-summary-card-num {
+    font-size: 1.6rem;
+  }
+  .grid-search-form-multi {
+    grid-template-columns: 1fr;
+  }
+  .grid-prefecture-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+}

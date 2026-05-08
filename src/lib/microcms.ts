@@ -993,6 +993,19 @@ export type SubstationSearchResult = {
   prefecture: string | null;
   voltage_primary_kv: number | null;
   cap_avail_mw: number | null;
+  n1_eligible?: boolean;
+};
+
+/* =================================================================
+   v25: 多角的検索フィルタ
+   ================================================================= */
+export type SubstationSearchFilters = {
+  q?: string;            // 変電所名 部分一致
+  area?: string;         // エリア（北海道/東北/...九州/沖縄）
+  voltage_min?: string;  // 一次電圧 >= (kV)
+  cap_avail_min?: string;// 空容量 >= (MW)
+  n1_eligible?: string;  // 'true' のみ受付
+  operator?: string;     // 送配電事業者 部分一致
 };
 
 const SUBSTATION_SEARCH_FIELDS =
@@ -1067,4 +1080,210 @@ export const getRelatedNewsForSubstation = async (
   } catch {
     return [];
   }
+};
+
+/* =================================================================
+   v25: 多角的検索（searchSubstationsByFilters）
+   - q + area + voltage_min + cap_avail_min + n1_eligible + operator を [and] 結合
+   - 表示上限 200 件
+   ================================================================= */
+const SEARCH_FILTER_FIELDS =
+  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,n1_eligible';
+const SEARCH_FILTER_LIMIT = 200;
+
+export const searchSubstationsByFilters = async (
+  filters: SubstationSearchFilters
+): Promise<SubstationSearchResult[]> => {
+  const conditions: string[] = [];
+  const q = (filters.q || '').trim();
+  const area = (filters.area || '').trim();
+  const voltageMin = (filters.voltage_min || '').trim();
+  const capMin = (filters.cap_avail_min || '').trim();
+  const n1 = (filters.n1_eligible || '').trim();
+  const operator = (filters.operator || '').trim();
+
+  if (q) conditions.push(`name[contains]${q}`);
+  if (area) conditions.push(`area[contains]${area}`);
+  if (voltageMin) {
+    const v = Number(voltageMin);
+    if (!Number.isNaN(v))
+      conditions.push(`voltage_primary_kv[greater_than]${v - 0.001}`);
+  }
+  if (capMin) {
+    const v = Number(capMin);
+    if (!Number.isNaN(v))
+      conditions.push(`cap_avail_mw[greater_than]${v - 0.001}`);
+  }
+  if (n1 === 'true') conditions.push(`n1_eligible[equals]true`);
+  if (operator) conditions.push(`operator[contains]${operator}`);
+
+  if (conditions.length === 0) return [];
+
+  const filterStr = conditions.join('[and]');
+  const all: SubstationSearchResult[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+    try {
+      const data = await client.getList<Substation>({
+        endpoint: 'substations',
+        queries: {
+          limit,
+          offset,
+          filters: filterStr,
+          fields: SEARCH_FILTER_FIELDS,
+          orders: '-cap_avail_mw',
+        },
+      });
+      for (const c of data.contents) {
+        all.push({
+          slug: c.slug,
+          name: c.name,
+          operator: Array.isArray(c.operator) ? c.operator[0] ?? '' : c.operator ?? '',
+          area: Array.isArray(c.area) ? c.area[0] ?? '' : c.area ?? '',
+          prefecture: c.prefecture ?? null,
+          voltage_primary_kv:
+            typeof c.voltage_primary_kv === 'number' ? c.voltage_primary_kv : null,
+          cap_avail_mw:
+            typeof c.cap_avail_mw === 'number' ? c.cap_avail_mw : null,
+          n1_eligible: c.n1_eligible === true,
+        });
+        if (all.length >= SEARCH_FILTER_LIMIT) break;
+      }
+      if (all.length >= SEARCH_FILTER_LIMIT) break;
+      if (data.contents.length < limit) break;
+    } catch {
+      break;
+    }
+  }
+  return all;
+};
+
+/* =================================================================
+   v25: 都道府県ディレクトリ用ヘルパー
+   - 単一の inventory 取得で prefecture リスト + 件数集計を導出（API 節約）
+   ================================================================= */
+type SubstationInventoryRow = {
+  slug: string;
+  name?: string;
+  operator?: string[];
+  area?: string[];
+  prefecture?: string;
+  voltage_primary_kv?: number;
+  cap_avail_mw?: number;
+  n1_eligible?: boolean;
+};
+
+const INVENTORY_FIELDS =
+  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,n1_eligible';
+
+let _inventoryCache: SubstationInventoryRow[] | null = null;
+
+const fetchSubstationInventory = async (): Promise<SubstationInventoryRow[]> => {
+  if (_inventoryCache) return _inventoryCache;
+  const all: SubstationInventoryRow[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+    try {
+      const data = await client.getList<SubstationInventoryRow>({
+        endpoint: 'substations',
+        queries: { limit, offset, fields: INVENTORY_FIELDS },
+      });
+      all.push(...data.contents);
+      if (data.contents.length < limit) break;
+    } catch {
+      break;
+    }
+  }
+  _inventoryCache = all;
+  return all;
+};
+
+/** distinct な都道府県名を 50音順で返す */
+export const getAvailablePrefectures = async (): Promise<string[]> => {
+  const inv = await fetchSubstationInventory();
+  const set = new Set<string>();
+  for (const r of inv) {
+    const p = (r.prefecture || '').trim();
+    if (p) set.add(p);
+  }
+  return Array.from(set).sort();
+};
+
+/** 都道府県 → 件数 マップ */
+export const getPrefectureCountMap = async (): Promise<Record<string, number>> => {
+  const inv = await fetchSubstationInventory();
+  const result: Record<string, number> = {};
+  for (const r of inv) {
+    const p = (r.prefecture || '').trim();
+    if (!p) continue;
+    result[p] = (result[p] || 0) + 1;
+  }
+  return result;
+};
+
+/** エリア (slug) → 件数 マップ */
+export const getAreaCountMap = async (): Promise<Record<string, number>> => {
+  const inv = await fetchSubstationInventory();
+  const AREA_JP_TO_SLUG: Record<string, string> = {
+    北海道: 'hokkaido',
+    東北: 'tohoku',
+    中部: 'chubu',
+    北陸: 'hokuriku',
+    関西: 'kansai',
+    中国: 'chugoku',
+    四国: 'shikoku',
+    九州: 'kyushu',
+    沖縄: 'okinawa',
+  };
+  const result: Record<string, number> = {};
+  for (const r of inv) {
+    const ja = Array.isArray(r.area) ? r.area[0] : r.area;
+    if (!ja) continue;
+    const slug = AREA_JP_TO_SLUG[ja];
+    if (!slug) continue;
+    result[slug] = (result[slug] || 0) + 1;
+  }
+  return result;
+};
+
+/** 指定都道府県の変電所一覧（空容量大きい順） */
+export const getSubstationsByPrefecture = async (
+  prefecture: string
+): Promise<SubstationSearchResult[]> => {
+  if (!prefecture) return [];
+  const all: SubstationSearchResult[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+    try {
+      const data = await client.getList<Substation>({
+        endpoint: 'substations',
+        queries: {
+          limit,
+          offset,
+          filters: `prefecture[equals]${prefecture}`,
+          fields: SEARCH_FILTER_FIELDS,
+          orders: '-cap_avail_mw',
+        },
+      });
+      for (const c of data.contents) {
+        all.push({
+          slug: c.slug,
+          name: c.name,
+          operator: Array.isArray(c.operator) ? c.operator[0] ?? '' : c.operator ?? '',
+          area: Array.isArray(c.area) ? c.area[0] ?? '' : c.area ?? '',
+          prefecture: c.prefecture ?? null,
+          voltage_primary_kv:
+            typeof c.voltage_primary_kv === 'number' ? c.voltage_primary_kv : null,
+          cap_avail_mw:
+            typeof c.cap_avail_mw === 'number' ? c.cap_avail_mw : null,
+          n1_eligible: c.n1_eligible === true,
+        });
+      }
+      if (data.contents.length < limit) break;
+    } catch {
+      break;
+    }
+  }
+  return all;
 };

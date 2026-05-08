@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import JapanGridMap, { type JapanAreaInfo } from '@/components/JapanGridMap';
 import { getAllSubstations } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 
@@ -28,6 +29,18 @@ export default async function GridIndexPage() {
   const total = all.length;
   const byOperator = new Map<string, number>();
   const byVoltage = new Map<string, number>();
+  const byAreaSlug = new Map<string, number>(); // v25: JapanGridMap 用
+  const AREA_JP_TO_SLUG: Record<string, string> = {
+    北海道: 'hokkaido',
+    東北: 'tohoku',
+    中部: 'chubu',
+    北陸: 'hokuriku',
+    関西: 'kansai',
+    中国: 'chugoku',
+    四国: 'shikoku',
+    九州: 'kyushu',
+    沖縄: 'okinawa',
+  };
   let n1OkCount = 0;
   let availPositiveCount = 0;
   for (const s of all) {
@@ -35,9 +48,14 @@ export default async function GridIndexPage() {
     byOperator.set(op, (byOperator.get(op) || 0) + 1);
     const vc = (s.voltage_class && s.voltage_class[0]) || 'その他';
     byVoltage.set(vc, (byVoltage.get(vc) || 0) + 1);
+    const ja = (s.area && s.area[0]) || '';
+    const aSlug = AREA_JP_TO_SLUG[ja];
+    if (aSlug) byAreaSlug.set(aSlug, (byAreaSlug.get(aSlug) || 0) + 1);
     if (s.n1_eligible === true) n1OkCount++;
     if (typeof s.cap_avail_mw === 'number' && s.cap_avail_mw > 0) availPositiveCount++;
   }
+  // v25: 緯度経度付き（現状中部のみ）— Phase 4 で全国化する想定
+  const latlngCount = 1081;
 
   const operatorList = Array.from(byOperator.entries()).sort(
     (a, b) => b[1] - a[1]
@@ -159,6 +177,198 @@ export default async function GridIndexPage() {
             の9送配電事業者の公表 CSV / PDF / GeoJSON を一元化。中部エリアは緯度経度付きで地図表示の基盤に。残る東京電力PG は <Link href="/grid/tokyo">公開停止中（5月再開予定）</Link>。
           </p>
 
+          {/* v25: ヒーローセクション */}
+          <section className="grid-hero" aria-label="蓄電所ネットの強み">
+            <div className="grid-hero-badge">🥇 業界唯一の総合データベース</div>
+            <div className="grid-hero-number">{total.toLocaleString()}</div>
+            <div className="grid-hero-label">変電所</div>
+            <div className="grid-hero-sub">
+              全国9社・関東を除く全国カバー
+            </div>
+            <div className="grid-hero-features">
+              <div className="grid-hero-feature">🥇 業界唯一統合DB</div>
+              <div className="grid-hero-feature">🗺 業界初地図検索</div>
+              <div className="grid-hero-feature">🔍 業界初テキスト検索</div>
+              <div className="grid-hero-feature">📍 業界初クラウドソース基盤</div>
+            </div>
+          </section>
+
+          {/* v25: サマリ・インフォグラフィック (4カード + 進捗バー) */}
+          <section className="grid-section">
+            <h2 className="grid-section-h2">📊 全国の系統空き容量データ</h2>
+            <div className="grid-summary-cards">
+              <div className="grid-summary-card">
+                <div className="grid-summary-card-label">空容量プラス</div>
+                <div
+                  className="grid-summary-card-num"
+                  style={{ color: '#16a34a' }}
+                >
+                  {availPositiveCount.toLocaleString()}
+                </div>
+                <div className="grid-summary-card-sub">
+                  {Math.round((availPositiveCount / total) * 100)}% / 全
+                  {total.toLocaleString()}件
+                </div>
+                <svg
+                  width="100%"
+                  height="8"
+                  className="grid-summary-card-bar"
+                  aria-hidden
+                >
+                  <rect width="100%" height="8" fill="#e5e7eb" rx="4" />
+                  <rect
+                    width={`${(availPositiveCount / total) * 100}%`}
+                    height="8"
+                    fill="#16a34a"
+                    rx="4"
+                  />
+                </svg>
+              </div>
+              <div className="grid-summary-card">
+                <div className="grid-summary-card-label">N-1電制適用可</div>
+                <div
+                  className="grid-summary-card-num"
+                  style={{ color: '#2563eb' }}
+                >
+                  {n1OkCount.toLocaleString()}
+                </div>
+                <div className="grid-summary-card-sub">
+                  {Math.round((n1OkCount / total) * 100)}% /
+                  ノンファーム接続候補
+                </div>
+                <svg
+                  width="100%"
+                  height="8"
+                  className="grid-summary-card-bar"
+                  aria-hidden
+                >
+                  <rect width="100%" height="8" fill="#e5e7eb" rx="4" />
+                  <rect
+                    width={`${(n1OkCount / total) * 100}%`}
+                    height="8"
+                    fill="#2563eb"
+                    rx="4"
+                  />
+                </svg>
+              </div>
+              <div className="grid-summary-card">
+                <div className="grid-summary-card-label">
+                  地図検索可能（中部）
+                </div>
+                <div
+                  className="grid-summary-card-num"
+                  style={{ color: '#ea580c' }}
+                >
+                  {latlngCount.toLocaleString()}
+                </div>
+                <div className="grid-summary-card-sub">
+                  緯度経度付き、業界初
+                </div>
+                <svg
+                  width="100%"
+                  height="8"
+                  className="grid-summary-card-bar"
+                  aria-hidden
+                >
+                  <rect width="100%" height="8" fill="#e5e7eb" rx="4" />
+                  <rect
+                    width={`${(latlngCount / total) * 100}%`}
+                    height="8"
+                    fill="#ea580c"
+                    rx="4"
+                  />
+                </svg>
+                <Link href="/grid/chubu/map" className="grid-summary-card-link">
+                  🗺 中部マップを見る →
+                </Link>
+              </div>
+              <div className="grid-summary-card">
+                <div className="grid-summary-card-label">対応送配電事業者</div>
+                <div
+                  className="grid-summary-card-num"
+                  style={{ color: '#0066cc' }}
+                >
+                  9 / 10
+                </div>
+                <div className="grid-summary-card-sub">
+                  東京PG 公開再開待ち（5月中予定）
+                </div>
+                <svg
+                  width="100%"
+                  height="8"
+                  className="grid-summary-card-bar"
+                  aria-hidden
+                >
+                  <rect width="100%" height="8" fill="#e5e7eb" rx="4" />
+                  <rect width="90%" height="8" fill="#0066cc" rx="4" />
+                </svg>
+                <Link href="/grid/tokyo" className="grid-summary-card-link">
+                  📋 公開状況を見る →
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* v25: 日本地図ビジュアル */}
+          <JapanGridMap
+            areas={
+              [
+                {
+                  slug: 'hokkaido',
+                  fullName: '北海道',
+                  count: byAreaSlug.get('hokkaido') || 0,
+                },
+                {
+                  slug: 'tohoku',
+                  fullName: '東北',
+                  count: byAreaSlug.get('tohoku') || 0,
+                },
+                {
+                  slug: 'tokyo',
+                  fullName: '東京',
+                  count: 0,
+                  isSuspended: true,
+                },
+                {
+                  slug: 'chubu',
+                  fullName: '中部',
+                  count: byAreaSlug.get('chubu') || 0,
+                  hasMap: true,
+                },
+                {
+                  slug: 'hokuriku',
+                  fullName: '北陸',
+                  count: byAreaSlug.get('hokuriku') || 0,
+                },
+                {
+                  slug: 'kansai',
+                  fullName: '関西',
+                  count: byAreaSlug.get('kansai') || 0,
+                },
+                {
+                  slug: 'chugoku',
+                  fullName: '中国',
+                  count: byAreaSlug.get('chugoku') || 0,
+                },
+                {
+                  slug: 'shikoku',
+                  fullName: '四国',
+                  count: byAreaSlug.get('shikoku') || 0,
+                },
+                {
+                  slug: 'kyushu',
+                  fullName: '九州',
+                  count: byAreaSlug.get('kyushu') || 0,
+                },
+                {
+                  slug: 'okinawa',
+                  fullName: '沖縄',
+                  count: byAreaSlug.get('okinawa') || 0,
+                },
+              ] as JapanAreaInfo[]
+            }
+          />
+
           {/* v24: 変電所名フリーテキスト検索バナー */}
           <section className="grid-search-banner" aria-label="変電所名検索">
             <h2 className="grid-search-banner-title">🔍 変電所名で検索</h2>
@@ -181,25 +391,12 @@ export default async function GridIndexPage() {
             <p className="grid-search-banner-note">
               全国9社・{total}変電所から名称で検索（部分一致）
             </p>
-          </section>
-
-          {/* サマリ統計 */}
-          <section className="grid-section">
-            <h2 className="grid-section-h2">サマリ統計</h2>
-            <div className="grid-stats">
-              <div className="grid-stat-card">
-                <div className="grid-stat-num">{total}</div>
-                <div className="grid-stat-label">総変電所数（変圧器バンク含む）</div>
-              </div>
-              <div className="grid-stat-card">
-                <div className="grid-stat-num">{availPositiveCount}</div>
-                <div className="grid-stat-label">空容量プラス</div>
-              </div>
-              <div className="grid-stat-card">
-                <div className="grid-stat-num">{n1OkCount}</div>
-                <div className="grid-stat-label">N-1電制適用可</div>
-              </div>
-            </div>
+            {/* v25: 詳細検索リンク */}
+            <p className="grid-search-banner-note">
+              <Link href="/grid/search">
+                🔧 詳細検索（エリア・電圧・空容量・N-1で絞り込み）
+              </Link>
+            </p>
           </section>
 
           {/* 事業者別 */}
@@ -290,6 +487,12 @@ export default async function GridIndexPage() {
               </ul>
               <p className="grid-source-note">
                 各都道府県の変電所は、エリアページで都道府県別ブレークダウン・上位3変電所リンクから詳細にアクセスできます。
+              </p>
+              {/* v25: 都道府県ディレクトリ */}
+              <p className="grid-source-note">
+                <Link href="/grid/prefecture" className="grid-area-link">
+                  📍 全都道府県の変電所一覧を見る →
+                </Link>
               </p>
             </section>
           )}
