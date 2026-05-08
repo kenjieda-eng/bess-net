@@ -1114,7 +1114,18 @@ export const searchSubstationsByFilters = async (
     if (!Number.isNaN(v))
       conditions.push(`cap_avail_mw[greater_than]${v - 0.001}`);
   }
-  if (n1 === 'true') conditions.push(`n1_eligible[equals]true`);
+  // 落とし穴 #61 (v25 発見): microCMS の filters で
+  //   `cap_avail_mw[greater_than]X [and] n1_eligible[equals]true`
+  // を組み合わせると 0件返却される（API バグ）。
+  // → n1_eligible[equals]true は API filter には含めず、JS 側で post-filter。
+  const wantN1 = n1 === 'true';
+  if (wantN1 && capMin === '' && conditions.length > 0) {
+    // cap_avail_min なし時のみ API 側で n1 を絞ってよい（area / voltage / operator / name とは正常動作）
+    conditions.push(`n1_eligible[equals]true`);
+  } else if (wantN1 && capMin === '') {
+    // 他フィルタゼロ + n1=true 単独のとき
+    conditions.push(`n1_eligible[equals]true`);
+  }
   if (operator) conditions.push(`operator[contains]${operator}`);
 
   if (conditions.length === 0) return [];
@@ -1122,6 +1133,12 @@ export const searchSubstationsByFilters = async (
   const filterStr = conditions.join('[and]');
   const all: SubstationSearchResult[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
+
+  // n1+cap 同時指定時は post-filter のため少し多めに fetch（最大 SEARCH_FILTER_LIMIT * 5）
+  const needPostFilter = wantN1 && capMin !== '';
+  const fetchCap = needPostFilter
+    ? SEARCH_FILTER_LIMIT * 5
+    : SEARCH_FILTER_LIMIT;
 
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     try {
@@ -1136,6 +1153,8 @@ export const searchSubstationsByFilters = async (
         },
       });
       for (const c of data.contents) {
+        // post-filter: n1_eligible[equals]true を JS 側で適用（API bug 回避）
+        if (needPostFilter && c.n1_eligible !== true) continue;
         all.push({
           slug: c.slug,
           name: c.name,
@@ -1152,6 +1171,8 @@ export const searchSubstationsByFilters = async (
       }
       if (all.length >= SEARCH_FILTER_LIMIT) break;
       if (data.contents.length < limit) break;
+      // post-filter モードで API 側の総数が fetchCap を超過したら打ち切り
+      if (needPostFilter && offset + limit >= fetchCap) break;
     } catch {
       break;
     }
