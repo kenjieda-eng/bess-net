@@ -5,12 +5,14 @@
 // - Leaflet デフォルトアイコン問題: Next.js の bundler が画像 path を解決できないので
 //   _getIconUrl を削除し CDN URL に差し替え
 // - クラスタ CSS は leaflet.markercluster の dist から直接 import
+// - v21: モバイル UX 改善（min-height 400px, max 600px）+ ?focus=slug でマーカー自動センター/ポップアップ
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
-import { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
 import Link from 'next/link';
@@ -49,7 +51,58 @@ function chooseIcon(s: SubstationGeoPoint): L.DivIcon {
   return ICON_ORANGE;
 }
 
+// マップサイズスタイル — モバイル(< 640px)で 60vh / min 400px、デスクトップで 70vh / min 500px / max 600px
+// inline style で動的計算は CSS clamp/min を活用
+const MAP_STYLE: React.CSSProperties = {
+  height: 'clamp(400px, 70vh, 600px)',
+  width: '100%',
+  borderRadius: '6px',
+};
+
+const LOADING_STYLE: React.CSSProperties = {
+  ...MAP_STYLE,
+  background: '#f3f4f6',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: '#6b7280',
+  fontSize: '14px',
+};
+
 type Props = { substations: SubstationGeoPoint[] };
+
+/**
+ * 内部コンポーネント: ?focus=cb-XXX が指定されている場合、該当マーカーへ flyTo + openPopup
+ * - useMap は MapContainer の子要素でのみ利用可
+ */
+function FocusController({
+  focusSlug,
+  substations,
+  markerRefs,
+}: {
+  focusSlug: string | null;
+  substations: SubstationGeoPoint[];
+  markerRefs: React.MutableRefObject<Map<string, L.Marker>>;
+}) {
+  const map = useMap();
+  useEffect(() => {
+    if (!focusSlug) return;
+    const target = substations.find((s) => s.slug === focusSlug);
+    if (!target) return;
+    // 少し遅延させて Cluster の展開を待つ
+    const t = setTimeout(() => {
+      map.flyTo([target.latitude, target.longitude], 13, { duration: 1.2 });
+      // flyTo 完了後にポップアップを開く
+      const after = setTimeout(() => {
+        const marker = markerRefs.current.get(focusSlug);
+        if (marker) marker.openPopup();
+      }, 1300);
+      return () => clearTimeout(after);
+    }, 200);
+    return () => clearTimeout(t);
+  }, [focusSlug, substations, map, markerRefs]);
+  return null;
+}
 
 export default function ChubuMap({ substations }: Props) {
   // hydration mismatch 回避：マウント後に描画
@@ -58,25 +111,26 @@ export default function ChubuMap({ substations }: Props) {
     setMounted(true);
   }, []);
 
+  // ?focus= 取得
+  const searchParams = useSearchParams();
+  const focusSlug = searchParams?.get('focus') ?? null;
+
+  // マーカーの実体 ref（focus 時 openPopup 用）
+  const markerRefs = useRef<Map<string, L.Marker>>(new Map());
+
   // 中部地方の中心（名古屋〜松本の中間あたり）
   const center: [number, number] = [35.5, 137.3];
 
   if (!mounted) {
     return (
-      <div
-        style={{
-          height: '70vh',
-          minHeight: '500px',
-          width: '100%',
-          background: '#f3f4f6',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#6b7280',
-          fontSize: '14px',
-        }}
-      >
-        マップを読み込み中…
+      <div style={LOADING_STYLE} aria-label="マップ読み込み中">
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '32px', marginBottom: '8px' }}>🗺</div>
+          <div>マップを読み込み中…</div>
+          <div style={{ fontSize: '12px', marginTop: '4px', color: '#9ca3af' }}>
+            {substations.length} 箇所の変電所データを準備しています
+          </div>
+        </div>
       </div>
     );
   }
@@ -86,7 +140,7 @@ export default function ChubuMap({ substations }: Props) {
       center={center}
       zoom={8}
       scrollWheelZoom={true}
-      style={{ height: '70vh', width: '100%', minHeight: '500px' }}
+      style={MAP_STYLE}
       attributionControl={true}
     >
       <TileLayer
@@ -94,16 +148,27 @@ export default function ChubuMap({ substations }: Props) {
         attribution='&copy; <a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noreferrer">地理院タイル</a>'
         maxZoom={18}
       />
+      <FocusController
+        focusSlug={focusSlug}
+        substations={substations}
+        markerRefs={markerRefs}
+      />
       <MarkerClusterGroup chunkedLoading>
         {substations.map((s) => (
           <Marker
             key={s.slug}
             position={[s.latitude, s.longitude]}
             icon={chooseIcon(s)}
+            ref={(ref) => {
+              if (ref) markerRefs.current.set(s.slug, ref);
+              else markerRefs.current.delete(s.slug);
+            }}
           >
             <Popup>
-              <div style={{ minWidth: '220px' }}>
-                <strong style={{ fontSize: '14px' }}>{s.name}</strong>
+              <div style={{ minWidth: '200px', maxWidth: '260px' }}>
+                <strong style={{ fontSize: '14px', lineHeight: 1.3 }}>
+                  {s.name}
+                </strong>
                 {s.prefecture && (
                   <div style={{ fontSize: '12px', color: '#666' }}>
                     {s.prefecture}
@@ -115,6 +180,7 @@ export default function ChubuMap({ substations }: Props) {
                     padding: '0',
                     listStyle: 'none',
                     fontSize: '12px',
+                    lineHeight: 1.5,
                   }}
                 >
                   <li>
@@ -132,12 +198,13 @@ export default function ChubuMap({ substations }: Props) {
                   href={`/grid/${s.slug}`}
                   style={{
                     display: 'inline-block',
-                    padding: '4px 8px',
+                    padding: '6px 12px',
                     background: '#0066cc',
                     color: 'white',
                     textDecoration: 'none',
                     fontSize: '12px',
-                    borderRadius: '3px',
+                    borderRadius: '4px',
+                    fontWeight: 500,
                   }}
                 >
                   詳細を見る →

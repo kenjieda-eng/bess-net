@@ -2,6 +2,7 @@
 // 環境変数 MICROCMS_SERVICE_DOMAIN と MICROCMS_API_KEY が必要
 
 import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
+import { MICROCMS_MAX_OFFSET, MICROCMS_PAGE_LIMIT } from './constants';
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is not defined');
@@ -78,8 +79,8 @@ export const getGlossaryBySlug = async (
 
 export const getAllGlossary = async (): Promise<Glossary[]> => {
   const all: Glossary[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
       queries: { limit, offset, orders: 'term' },
@@ -92,8 +93,8 @@ export const getAllGlossary = async (): Promise<Glossary[]> => {
 
 export const getAllExplainer = async (): Promise<Explainer[]> => {
   const all: Explainer[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Explainer>({
       endpoint: 'explainer',
       queries: { limit, offset },
@@ -106,8 +107,8 @@ export const getAllExplainer = async (): Promise<Explainer[]> => {
 
 export const getAllGlossarySlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
       queries: { limit, offset, fields: 'slug' },
@@ -120,8 +121,8 @@ export const getAllGlossarySlugs = async (): Promise<{ slug: string }[]> => {
 
 export const getAllExplainerSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Explainer>({
       endpoint: 'explainer',
       queries: { limit, offset, fields: 'slug' },
@@ -134,8 +135,8 @@ export const getAllExplainerSlugs = async (): Promise<{ slug: string }[]> => {
 
 export const getGlossaryTermSlugMap = async (): Promise<Map<string, string>> => {
   const map = new Map<string, string>();
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
       queries: { limit, offset, fields: 'term,slug,english' },
@@ -177,8 +178,8 @@ export const getSubsidyList = async (queries?: MicroCMSQueries) => {
 };
 export const getAllSubsidies = async (): Promise<Subsidy[]> => {
   const all: Subsidy[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Subsidy>({
       endpoint: 'subsidies',
       queries: { limit, offset, orders: 'applicationEnd' },
@@ -197,8 +198,8 @@ export const getSubsidyBySlug = async (slug: string): Promise<Subsidy | null> =>
 };
 export const getAllSubsidySlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Subsidy>({
       endpoint: 'subsidies',
       queries: { limit, offset, fields: 'slug' },
@@ -236,8 +237,8 @@ export const getProjectList = async (queries?: MicroCMSQueries) => {
 };
 export const getAllProjects = async (): Promise<Project[]> => {
   const all: Project[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Project>({
       endpoint: 'projects',
       queries: { limit, offset, orders: '-publishedAt' },
@@ -256,8 +257,8 @@ export const getProjectBySlug = async (slug: string): Promise<Project | null> =>
 };
 export const getAllProjectSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Project>({
       endpoint: 'projects',
       queries: { limit, offset, fields: 'slug' },
@@ -296,8 +297,8 @@ const NEWS_LIST_FIELDS =
 
 export const getAllNews = async (): Promise<News[]> => {
   const all: News[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 2000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<News>({
       endpoint: 'news',
       queries: {
@@ -323,8 +324,8 @@ export const getNewsBySlug = async (slug: string): Promise<News | null> => {
 
 export const getAllNewsSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<News>({
       endpoint: 'news',
       queries: { limit, offset, fields: 'slug' },
@@ -403,9 +404,9 @@ export const getOperatorList = async (queries?: MicroCMSQueries) => {
 
 export const getAllOperators = async (): Promise<Operator[]> => {
   const all: Operator[] = [];
-  const limit = 100;
+  const limit = MICROCMS_PAGE_LIMIT;
   // 403件想定 → 余裕を持って 1000 件まで対応
-  for (let offset = 0; offset < 2000; offset += limit) {
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Operator>({
       endpoint: 'operators',
       queries: { limit, offset, orders: 'name' },
@@ -439,8 +440,8 @@ export const getOperatorBySlug = async (
 
 export const getAllOperatorSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 2000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Operator>({
       endpoint: 'operators',
       queries: { limit, offset, fields: 'slug' },
@@ -469,8 +470,8 @@ export type TermLite = { term: string; slug: string; english?: string };
 
 export const getGlossaryLiteList = async (): Promise<TermLite[]> => {
   const all: TermLite[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 5000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
       queries: { limit, offset, fields: 'term,slug,english' },
@@ -675,12 +676,12 @@ export const getAllLinks = async (): Promise<LinkSiteLite[]> => {
     while (true) {
       const data = await client.getList<LinkSiteLite>({
         endpoint: 'links',
-        queries: { fields: LINK_LIST_FIELDS, limit: 100, offset, orders: 'displayOrder' },
+        queries: { fields: LINK_LIST_FIELDS, limit: MICROCMS_PAGE_LIMIT, offset, orders: 'displayOrder' },
       });
       all.push(...data.contents);
-      if (data.contents.length < 100) break;
-      offset += 100;
-      if (offset >= 5000) break;
+      if (data.contents.length < MICROCMS_PAGE_LIMIT) break;
+      offset += MICROCMS_PAGE_LIMIT;
+      if (offset >= MICROCMS_MAX_OFFSET) break;
     }
     return all;
   } catch {
@@ -802,9 +803,9 @@ export const getAllSubstations = async (
   opts: { area?: string; operator?: string } = {}
 ): Promise<Substation[]> => {
   const all: Substation[] = [];
-  const limit = 100;
-  // Phase 2-C-1 で総数 5,628 → 既存 5,000 cap を超過。次社追加余裕で 20,000。
-  for (let offset = 0; offset < 20000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  // 落とし穴 #48: offset 上限は MICROCMS_MAX_OFFSET（共通定数）で一元管理
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const { contents } = await getSubstationList({
       limit,
       offset,
@@ -843,9 +844,9 @@ export const getSubstationBySlug = async (
 
 export const getAllSubstationSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
-  const limit = 100;
-  // Phase 2-C-1 で総数 5,628 → 既存 5,000 cap を超過。次社追加余裕で 20,000。
-  for (let offset = 0; offset < 20000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  // 落とし穴 #48: offset 上限は MICROCMS_MAX_OFFSET（共通定数）で一元管理
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     try {
       const data = await client.getList<Substation>({
         endpoint: 'substations',
@@ -929,8 +930,8 @@ export const getChubuSubstationsForMap = async (): Promise<
   SubstationGeoPoint[]
 > => {
   const all: Substation[] = [];
-  const limit = 100;
-  for (let offset = 0; offset < 20000; offset += limit) {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     try {
       const data = await client.getList<Substation>({
         endpoint: 'substations',

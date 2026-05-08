@@ -16,18 +16,23 @@ const ChubuMap = dynamic(() => import('@/components/ChubuMap'), {
   loading: () => (
     <div
       style={{
-        height: '70vh',
-        minHeight: '500px',
+        height: 'clamp(400px, 70vh, 600px)',
         width: '100%',
         background: '#f3f4f6',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#6b7280',
-        fontSize: '14px',
+        borderRadius: '6px',
       }}
+      aria-label="マップ初期化中"
     >
-      マップを読み込み中…
+      <div style={{ textAlign: 'center', color: '#6b7280' }}>
+        <div style={{ fontSize: '32px', marginBottom: '8px' }}>🗺</div>
+        <div style={{ fontSize: '14px' }}>マップを初期化中…</div>
+        <div style={{ fontSize: '12px', marginTop: '4px', color: '#9ca3af' }}>
+          1,081 箇所の変電所データを準備しています
+        </div>
+      </div>
     </div>
   ),
 });

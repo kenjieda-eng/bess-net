@@ -278,13 +278,13 @@ export default async function GridSlugPage({
             </p>
           </div>
 
-          {/* Phase 4-pre: 中部 cb-* で緯度経度ありの場合、地図リンク */}
+          {/* Phase 4-pre: 中部 cb-* で緯度経度ありの場合、地図リンク (v21: ?focus= でマーカー自動センター) */}
           {sub.slug.startsWith('cb-') &&
             typeof sub.latitude === 'number' &&
             typeof sub.longitude === 'number' && (
               <div className="grid-map-cta" style={{ margin: '12px 0 20px' }}>
                 <Link
-                  href="/grid/chubu/map"
+                  href={`/grid/chubu/map?focus=${encodeURIComponent(sub.slug)}`}
                   className="grid-area-link"
                   style={{
                     display: 'inline-block',

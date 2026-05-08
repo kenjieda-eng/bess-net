@@ -218,9 +218,26 @@ export default async function GridIndexPage() {
                   </li>
                 );
               })}
+              {/* 東京電力PG: 公開停止中の解説リンク (v21) */}
+              <li
+                className="grid-list-row"
+                style={{ background: '#fffbe6' }}
+              >
+                <span className="grid-list-label">
+                  東京電力パワーグリッド
+                </span>
+                <span className="grid-list-value">
+                  📋 公開停止中（2026年2月〜5月中予定）{' '}
+                  <Link href="/grid/tokyo" className="grid-area-link">
+                    → 公開状況の解説を見る
+                  </Link>
+                </span>
+              </li>
             </ul>
             <p className="grid-source-note">
-              ※ 残り 1社（東京電力PG）は Phase 2-C-2 地図API対応で追加予定。九州電力送配電は時系列実績データのみ公開のため Phase 3 で個別対応。
+              ※ 東京電力PG は 2026年2月よりデータメンテナンスのため公開停止中。再開予定は 5月中（
+              <Link href="/grid/tokyo">解説ページ</Link>
+              ）。九州電力送配電は時系列実績データのみ公開のため Phase 3 で個別対応。
             </p>
           </section>
 
