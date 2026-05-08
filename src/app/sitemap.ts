@@ -38,6 +38,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/grid/hokkaido`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     // Phase 2-C-1 追加
     { url: `${siteConfig.url}/grid/chubu`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    // Phase 3 追加: 九州エリアページ
+    { url: `${siteConfig.url}/grid/kyushu`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     // Phase 4-pre 追加: 中部Leafletマップページ
     { url: `${siteConfig.url}/grid/chubu/map`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     // v21 追加: 東京電力PG 公開停止解説ページ

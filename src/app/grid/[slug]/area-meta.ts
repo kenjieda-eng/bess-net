@@ -75,6 +75,15 @@ export const AREA_META: Record<string, AreaMeta> = {
     description:
       '沖縄エリア（沖縄電力）の変電所別系統空き容量・連系条件・出力制御情報を、本島132/66kV系・本島22/13.8kV系・離島の各系統について一元化。',
   },
+  // ===== Phase 3 追加 =====
+  kyushu: {
+    slug: 'kyushu',
+    areaJp: '九州',
+    operator: '九州電力送配電',
+    landingUrl: 'https://www.kyuden.co.jp/td/service/wheeling/disclosure.html',
+    description:
+      '九州エリア（九州電力送配電）の変電所別系統空き容量・連系条件・出力制御情報を、福岡・佐賀・長崎・大分・熊本・宮崎・鹿児島の7県＋離島について一元化。31地区の変圧器CSV ZIPを集約。',
+  },
 };
 
 // 日本語エリア名 → エリアスラグ
@@ -87,4 +96,5 @@ export const AREA_JP_TO_SLUG: Record<string, string> = {
   沖縄: 'okinawa',
   北海道: 'hokkaido',
   中部: 'chubu',
+  九州: 'kyushu',
 };

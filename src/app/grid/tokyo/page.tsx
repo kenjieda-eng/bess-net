@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   title:
     '東京電力PG 系統空き容量情報の公開状況｜系統空き容量データベース - 蓄電所ネット',
   description:
-    '東京電力パワーグリッド管内の系統空き容量・予想潮流情報は2026年2月よりデータメンテナンスのため公開停止中。再開予定は5月中。蓄電所事業者向けに代替アクセス方法と各社公開状況を整理。',
+    '東京電力パワーグリッド管内の系統空き容量・予想潮流情報は2026年2月よりデータメンテナンスのため公開停止中。再開予定は5月中。蓄電所事業者向けに代替アクセス方法と9社公開状況を整理。',
   alternates: { canonical: '/grid/tokyo' },
   openGraph: {
     title: '東京電力PG 系統情報の公開状況｜系統空き容量データベース',
     description:
-      '東京エリアの公開停止状況・代替アクセス方法・8送配電事業者の公開状況比較',
+      '東京エリアの公開停止状況・代替アクセス方法・9送配電事業者の公開状況比較',
     type: 'article',
     images: ['/og-image.png'],
   },
@@ -244,8 +244,8 @@ export default function TokyoStatusPage() {
           <section className="grid-section">
             <h2 className="grid-section-h2">他送配電事業者の公開状況</h2>
             <p>
-              蓄電所ネットが収録している送配電事業者の公開状況です。東京電力PG
-              の公開再開後、9社目として追加収録予定です。
+              蓄電所ネットが収録している送配電事業者の公開状況です。9社合計で約 6,500件超を一元化しており、東京電力PG
+              の公開再開後、10社目として追加収録予定です。
             </p>
             <div className="grid-table-wrap">
               <table className="grid-table">
@@ -344,7 +344,13 @@ export default function TokyoStatusPage() {
                   </tr>
                   <tr>
                     <td>九州電力送配電</td>
-                    <td colSpan={5}>📋 PDF再対応 検討中（時系列実績データのみ公開）</td>
+                    <td className="num">879</td>
+                    <td>CSV ZIP</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>
+                      <Link href="/grid/kyushu">/grid/kyushu</Link>
+                    </td>
                   </tr>
                   <tr>
                     <td>沖縄電力</td>

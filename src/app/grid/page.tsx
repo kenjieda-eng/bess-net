@@ -99,6 +99,14 @@ export default async function GridIndexPage() {
     三重県: { area: 'chubu', areaJp: '中部' },
     岐阜県: { area: 'chubu', areaJp: '中部' },
     長野県: { area: 'chubu', areaJp: '中部' },
+    // Phase 3 九州
+    福岡県: { area: 'kyushu', areaJp: '九州' },
+    佐賀県: { area: 'kyushu', areaJp: '九州' },
+    長崎県: { area: 'kyushu', areaJp: '九州' },
+    大分県: { area: 'kyushu', areaJp: '九州' },
+    熊本県: { area: 'kyushu', areaJp: '九州' },
+    宮崎県: { area: 'kyushu', areaJp: '九州' },
+    鹿児島県: { area: 'kyushu', areaJp: '九州' },
   };
   const prefCounts = new Map<string, number>();
   for (const s of all) {
@@ -147,8 +155,8 @@ export default async function GridIndexPage() {
           <p className="page-lead">
             系統用蓄電池・再エネ事業の連系検討に必要な変電所別の
             <strong>{total}</strong>地点の空き容量情報。
-            <strong>東北・北陸・四国・関西・中国・沖縄・北海道・中部</strong>
-            の8送配電事業者の公表 CSV / PDF / GeoJSON を一元化。中部エリアは緯度経度付きで地図表示の基盤に。Phase 2-C-2 で東京PG、Phase 3 で九州（地点別実績→PDF対応）を順次追加予定。
+            <strong>東北・北陸・四国・関西・中国・沖縄・北海道・中部・九州</strong>
+            の9送配電事業者の公表 CSV / PDF / GeoJSON を一元化。中部エリアは緯度経度付きで地図表示の基盤に。残る東京電力PG は <Link href="/grid/tokyo">公開停止中（5月再開予定）</Link>。
           </p>
 
           {/* サマリ統計 */}
@@ -184,6 +192,7 @@ export default async function GridIndexPage() {
                   沖縄電力: { slug: 'okinawa', areaJp: '沖縄' },
                   北海道電力ネットワーク: { slug: 'hokkaido', areaJp: '北海道' },
                   中部電力パワーグリッド: { slug: 'chubu', areaJp: '中部' },
+                  九州電力送配電: { slug: 'kyushu', areaJp: '九州' },
                 };
                 const m = map[op];
                 return (
@@ -237,7 +246,7 @@ export default async function GridIndexPage() {
             <p className="grid-source-note">
               ※ 東京電力PG は 2026年2月よりデータメンテナンスのため公開停止中。再開予定は 5月中（
               <Link href="/grid/tokyo">解説ページ</Link>
-              ）。九州電力送配電は時系列実績データのみ公開のため Phase 3 で個別対応。
+              ）。
             </p>
           </section>
 
@@ -315,8 +324,8 @@ export default async function GridIndexPage() {
             <h2 className="grid-section-h2">出典・利用条件</h2>
             <p>
               本データは{' '}
-              <strong>東北電力ネットワーク・北陸電力送配電・四国電力送配電</strong>
-              {' '}が公開する予想潮流等情報の CSV を、蓄電所ネット編集部で一元化したものです。
+              <strong>北海道電力NW・東北電力NW・中部電力PG・北陸電力送配電・関西電力送配電・中国電力NW・四国電力送配電・九州電力送配電・沖縄電力</strong>
+              {' '}の9送配電事業者が公開する予想潮流等情報の CSV / PDF / GeoJSON を、蓄電所ネット編集部で一元化したものです。
               個別変電所の最新情報は、各社の公式サイト（一次ソースリンク）でご確認ください。
               数値の引用・転記には出典明記が必要です。
             </p>
