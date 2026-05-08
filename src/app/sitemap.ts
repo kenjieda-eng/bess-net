@@ -30,6 +30,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/grid/tohoku`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${siteConfig.url}/grid/hokuriku`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${siteConfig.url}/grid/shikoku`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    // Phase 2A 追加
+    { url: `${siteConfig.url}/grid/kansai`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${siteConfig.url}/grid/chugoku`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${siteConfig.url}/grid/okinawa`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    // Phase 2B 追加
+    { url: `${siteConfig.url}/grid/hokkaido`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    // Phase 2-C-1 追加
+    { url: `${siteConfig.url}/grid/chubu`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    // Phase 4-pre 追加: 中部Leafletマップページ
+    { url: `${siteConfig.url}/grid/chubu/map`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/info`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
