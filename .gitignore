@@ -144,3 +144,7 @@ vite.config.ts.timestamp-*
 
 # Claude Code (個人PC用設定。リポジトリには含めない)
 .claude/
+.claude/settings.json
+
+# Next.js auto-generated type declarations
+next-env.d.ts
