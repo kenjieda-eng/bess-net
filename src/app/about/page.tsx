@@ -98,9 +98,12 @@ export default function AboutPage() {
           <section className="page-section">
             <h2>運営者情報</h2>
             <dl className="info-list">
+              <dt>名称</dt>
+              <dd>蓄電所ネット（bess-net.jp）</dd>
               <dt>運営</dt>
+              <dd>{siteConfig.organization.name}</dd>
+              <dt>公式サイト</dt>
               <dd>
-                {siteConfig.organization.name}（
                 <a
                   href={siteConfig.organization.url}
                   target="_blank"
@@ -108,10 +111,7 @@ export default function AboutPage() {
                 >
                   {siteConfig.organization.url}
                 </a>
-                ）
               </dd>
-              <dt>役員</dt>
-              <dd>{siteConfig.organization.representative}</dd>
               <dt>住所</dt>
               <dd>{siteConfig.organization.address}</dd>
               <dt>お問い合わせ</dt>

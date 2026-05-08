@@ -35,7 +35,6 @@ export const siteConfig = {
     name: '一般社団法人エネルギー情報センター',
     nameShort: 'エネルギー情報センター',
     url: 'https://eic-jp.org/',
-    representative: '理事 江田 健二',
     address: '〒160-0022 東京都新宿区新宿2丁目9-22 多摩川新宿ビル3F',
     contactUrl: 'https://eic-jp.org/contact',
   },
