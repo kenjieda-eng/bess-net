@@ -463,8 +463,8 @@ export default async function GridSlugPage({
             title="関連用語（用語集）"
           />
 
-          {/* (j) v24: 位置情報のご提供セクション (latitude=null の変電所のみ) */}
-          {/* TODO: Google Forms URL を本番に差し替え (現在は仮の placeholder URL) */}
+          {/* (j) v24: 位置情報のご提供セクション (latitude=null の変電所のみ)
+              v26: Google Forms 実装前のため、当面はお問い合わせページ (eic-jp.org/contact) 経由で受付 */}
           {(typeof sub.latitude !== 'number' || Number.isNaN(sub.latitude)) && (
             <section className="grid-section grid-location-tips">
               <h2 className="grid-section-h2">📍 位置情報のご提供をお願いします</h2>
@@ -474,12 +474,12 @@ export default async function GridSlugPage({
               </p>
               <p>
                 <a
-                  href="https://forms.gle/PLACEHOLDER_REPLACE_ME"
+                  href={siteConfig.organization.contactUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="grid-location-tips-button"
                 >
-                  🔗 位置情報を提供する（外部フォーム）
+                  🔗 お問い合わせから位置情報を提供する
                 </a>
               </p>
               <p className="grid-source-note">
