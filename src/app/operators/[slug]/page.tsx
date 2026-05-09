@@ -13,7 +13,9 @@ import {
   getAllOperators,
   getNewsByOperatorId,
   getProjectsByOperatorName,
+  getLinkableTargets,
 } from '@/lib/microcms';
+import { linkifyHTML } from '@/lib/linkify';
 import {
   OPERATOR_CATEGORY_COLOR,
   parseProducts,
@@ -64,12 +66,20 @@ export default async function OperatorDetailPage({
   const operator = await getOperatorBySlug(params.slug);
   if (!operator) notFound();
 
-  // 並列で関連データ取得
-  const [allOperators, relatedNews, relatedProjects] = await Promise.all([
-    getAllOperators().catch(() => []),
-    getNewsByOperatorId(operator.id, 10).catch(() => []),
-    getProjectsByOperatorName(operator.name, 10).catch(() => []),
-  ]);
+  // 並列で関連データ取得 + 自動リンク target 取得
+  const [allOperators, relatedNews, relatedProjects, linkableTargets] =
+    await Promise.all([
+      getAllOperators().catch(() => []),
+      getNewsByOperatorId(operator.id, 10).catch(() => []),
+      getProjectsByOperatorName(operator.name, 10).catch(() => []),
+      getLinkableTargets().catch(() => []),
+    ]);
+
+  // 依頼W: 本文中の operators / projects / glossary を自動リンク化（自社除外）
+  const bodyHtml = linkifyHTML(operator.body || '', linkableTargets, {
+    firstOnly: true,
+    selfUrl: `/operators/${operator.slug}`,
+  });
 
   // 関連事業者：同じカテゴリで上位5社（自分以外）
   const primaryCategory = (operator.category && operator.category[0]) || '';
@@ -225,7 +235,7 @@ export default async function OperatorDetailPage({
               <h2 className="op-detail-h2">詳細</h2>
               <div
                 className="op-detail-body"
-                dangerouslySetInnerHTML={{ __html: operator.body }}
+                dangerouslySetInnerHTML={{ __html: bodyHtml }}
               />
             </section>
           )}

@@ -10,8 +10,9 @@ import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
 import {
   getNewsBySlugWithRelations,
   getIndustryNewsSlugs,
+  getLinkableTargets,
 } from '@/lib/microcms';
-import { linkifyTerms } from '@/lib/term-linker';
+import { linkifyHTML } from '@/lib/linkify';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -70,8 +71,12 @@ export default async function NewsDetailPage({
     slug: o.slug,
   }));
 
-  // 本文中の用語自動リンク化
-  const bodyHtml = linkifyTerms(news.body || '', relatedTerms);
+  // 依頼W: 自動リンク（operators + projects + glossary 全件、初出のみ、自記事除外）
+  const linkableTargets = await getLinkableTargets();
+  const bodyHtml = linkifyHTML(news.body || '', linkableTargets, {
+    firstOnly: true,
+    selfUrl: `/news/${news.slug}`,
+  });
 
   const cat = (news.category && news.category[0]) || '';
   const dateStr = news.publishedAt

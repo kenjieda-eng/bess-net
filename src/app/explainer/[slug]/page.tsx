@@ -19,8 +19,10 @@ import {
   getExplainerBySlug,
   getAllExplainerSlugs,
   getGlossaryLiteList,
+  getLinkableTargets,
 } from '@/lib/microcms';
-import { linkifyTerms, csvTermsToTermList } from '@/lib/term-linker';
+import { csvTermsToTermList } from '@/lib/term-linker';
+import { linkifyHTML } from '@/lib/linkify';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -60,7 +62,7 @@ export default async function ExplainerDetailPage({
   const exp = await getExplainerBySlug(params.slug);
   if (!exp) notFound();
 
-  // 関連用語（CSV文字列）→ TermLike[] 変換
+  // 関連用語（CSV文字列）→ TermLike[] 変換 (RelatedTermBadges 用にも保持)
   const glossaryLite = await getGlossaryLiteList().catch(() => []);
   const termSlugMap = new Map<string, string>();
   for (const g of glossaryLite) {
@@ -69,8 +71,12 @@ export default async function ExplainerDetailPage({
   }
   const relatedTerms = csvTermsToTermList(exp.relatedTerms, termSlugMap);
 
-  // 本文中の用語自動リンク化
-  const bodyHtml = linkifyTerms(exp.body || '', relatedTerms);
+  // 依頼W: 自動リンク（operators + projects + glossary 全件、初出のみ、自記事除外）
+  const linkableTargets = await getLinkableTargets();
+  const bodyHtml = linkifyHTML(exp.body || '', linkableTargets, {
+    firstOnly: true,
+    selfUrl: `/explainer/${exp.slug}`,
+  });
 
   const cat = (exp.category && exp.category[0]) || '';
 

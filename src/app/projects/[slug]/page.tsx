@@ -3,7 +3,12 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getProjectBySlug, getAllProjectSlugs } from '@/lib/microcms';
+import {
+  getProjectBySlug,
+  getAllProjectSlugs,
+  getLinkableTargets,
+} from '@/lib/microcms';
+import { linkifyHTML } from '@/lib/linkify';
 
 export const revalidate = 600;
 
@@ -37,6 +42,13 @@ export default async function ProjectDetailPage({
   if (!item) notFound();
 
   const status = (item.status && item.status[0]) || 'その他';
+
+  // 依頼W: 自動リンク（operators + 他 projects + glossary 全件、初出のみ、自記事除外）
+  const linkableTargets = await getLinkableTargets();
+  const bodyHtml = linkifyHTML(item.body || '', linkableTargets, {
+    firstOnly: true,
+    selfUrl: `/projects/${item.slug}`,
+  });
 
   return (
     <>
@@ -99,7 +111,7 @@ export default async function ProjectDetailPage({
               <h2>プロジェクト詳細</h2>
               <div
                 className="article-body"
-                dangerouslySetInnerHTML={{ __html: item.body }}
+                dangerouslySetInnerHTML={{ __html: bodyHtml }}
               />
             </section>
           )}

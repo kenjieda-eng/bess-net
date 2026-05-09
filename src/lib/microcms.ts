@@ -1265,6 +1265,92 @@ export const getAreaCountMap = async (): Promise<Record<string, number>> => {
   return result;
 };
 
+/* =================================================================
+   依頼W Phase 1: 自動リンク用ターゲット集約
+   - operators (name) + projects (name) + glossary (term) を一括取得
+   - モジュールスコープでキャッシュ（同一プロセス内でのみ再利用）
+   - operators 481, projects 269, glossary 1,516 想定（合計 ~2,266 entries）
+   ================================================================= */
+export type LinkifyTarget = {
+  text: string;
+  url: string;
+  type: 'operator' | 'project' | 'glossary';
+};
+
+let _linkableCache: LinkifyTarget[] | null = null;
+
+/** 自動リンク化対象を全件取得（page 1 回／プロセス内 1 回キャッシュ） */
+export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
+  if (_linkableCache) return _linkableCache;
+  const out: LinkifyTarget[] = [];
+
+  // operators (slug, name) — 短い「テス」のような名前は誤マッチを生むので、3文字未満の name は除外
+  try {
+    const limit = MICROCMS_PAGE_LIMIT;
+    for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+      const data = await client.getList<Operator>({
+        endpoint: 'operators',
+        queries: { limit, offset, fields: 'slug,name' },
+      });
+      for (const o of data.contents) {
+        const name = (o.name || '').trim();
+        if (!o.slug || !name || name.length < 3) continue;
+        out.push({ text: name, url: `/operators/${o.slug}`, type: 'operator' });
+        // 「（TMEIC）」のような英字略称を取り出す
+        const aliasMatch = name.match(/[（(]([A-Za-z][A-Za-z0-9.&-]{1,15})[）)]/);
+        if (aliasMatch) {
+          out.push({
+            text: aliasMatch[1],
+            url: `/operators/${o.slug}`,
+            type: 'operator',
+          });
+        }
+      }
+      if (data.contents.length < limit) break;
+    }
+  } catch {
+    /* fall through */
+  }
+
+  // projects (slug, name)
+  try {
+    const limit = MICROCMS_PAGE_LIMIT;
+    for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+      const data = await client.getList<Project>({
+        endpoint: 'projects',
+        queries: { limit, offset, fields: 'slug,name' },
+      });
+      for (const p of data.contents) {
+        const name = (p.name || '').trim();
+        if (!p.slug || !name || name.length < 4) continue; // project は 4 文字以上で誤マッチ抑制
+        out.push({ text: name, url: `/projects/${p.slug}`, type: 'project' });
+      }
+      if (data.contents.length < limit) break;
+    }
+  } catch {
+    /* fall through */
+  }
+
+  // glossary (slug, term, english) — 既存の getGlossaryLiteList を流用
+  try {
+    const lite = await getGlossaryLiteList();
+    for (const g of lite) {
+      const term = (g.term || '').trim();
+      if (!g.slug || !term || term.length < 3) continue; // 用語は 3 文字以上で誤マッチ抑制
+      out.push({ text: term, url: `/glossary/${g.slug}`, type: 'glossary' });
+      const eng = (g.english || '').trim();
+      if (eng && eng.length >= 3) {
+        out.push({ text: eng, url: `/glossary/${g.slug}`, type: 'glossary' });
+      }
+    }
+  } catch {
+    /* fall through */
+  }
+
+  _linkableCache = out;
+  return out;
+};
+
 /** 指定都道府県の変電所一覧（空容量大きい順） */
 export const getSubstationsByPrefecture = async (
   prefecture: string

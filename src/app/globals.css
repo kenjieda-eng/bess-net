@@ -1998,6 +1998,36 @@
   text-decoration-style: solid;
 }
 
+/* 依頼W: 自動リンク（operators / projects / glossary） */
+.auto-link {
+  color: #0F2D4F;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-style 0.15s ease;
+}
+.auto-link:hover {
+  color: #1E5BA8;
+  text-decoration-style: solid;
+}
+/* 種別ごとの色分け（控えめに区別） */
+.auto-link-glossary {
+  color: #0F2D4F; /* 既存 term-link と同色 */
+}
+.auto-link-operator {
+  color: #1d4ed8; /* 事業者は青系 */
+}
+.auto-link-project {
+  color: #047857; /* プロジェクトは緑系 */
+}
+.auto-link-operator:hover {
+  color: #2563eb;
+}
+.auto-link-project:hover {
+  color: #059669;
+}
+
 /* 関連バッジ（用語・事業者）共通 */
 .related-h3 {
   font-size: 1.1rem;
