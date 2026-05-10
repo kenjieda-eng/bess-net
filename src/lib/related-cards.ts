@@ -52,6 +52,56 @@ const NG_TERMS = new Set<string>([
 ]);
 const MIN_LEN = { operator: 4, project: 5, glossary: 5 } as const;
 
+/**
+ * Step 3 のキーワード抽出から除外する汎用語・サイト共通語（依頼Y.7）
+ *
+ * 理由：これらは大半の explainer / project / news に頻出するため、
+ * 単一ヒットでマッチさせると関連性のない結果を量産する。
+ * NG_TERMS（linkify 用）と重複する語もあるが、Step 3 の意味文脈に特化した
+ * 別セットとして維持する（依頼Y.7 §4-5「linkify NG_TERMS との共通化はやらない」）。
+ */
+const NG_KEYWORDS_FOR_STEP3 = new Set<string>([
+  // 業界汎用語
+  '蓄電所',
+  '蓄電池',
+  '系統用蓄電池',
+  '系統用蓄電所',
+  '系統蓄電池',
+  '系統蓄電所',
+  '大規模系統用蓄電池',
+  'BESS',
+  'PCS',
+  'MWh',
+  'MW',
+  'kW',
+  'kWh',
+  'リース',
+  'リユース',
+  '需給調整',
+  '需給調整市場',
+  '容量市場',
+
+  // サイト共通語（蓄電所ネットのほぼ全ページに出現）
+  '蓄電所ネット',
+  '事業者ナビ',
+  '用語集',
+  'お知らせ',
+
+  // 汎用ビジネス語（多くの explainer タイトルに頻出する曖昧語）
+  'メーカー',
+  'サービス',
+  'システム',
+  'グループ',
+  'エネルギー',
+  'プロジェクト',
+  '蓄電池メーカー',
+  '製品メーカー',
+  '総合電機メーカー',
+  '都市ガス事業者',
+  '世界最大',
+  '西日本最大',
+]);
+
 /* ----------------------------- 出力型 ----------------------------- */
 
 export type RelatedOperator = {
@@ -250,9 +300,10 @@ function extractCoreKeyword(title: string): string {
 }
 
 /**
- * baseText から検索用キーワード候補を抽出（依頼Y.5）
+ * baseText から検索用キーワード候補を抽出（依頼Y.5 / Y.7）
  * - 漢字・カタカナ・英数字の連続 4〜18 文字
- * - NG_TERMS は除外（「蓄電所」など過汎用語）
+ * - NG_TERMS は除外（linkify 用、「蓄電所」など過汎用語）
+ * - NG_KEYWORDS_FOR_STEP3 は除外（依頼Y.7、サイト共通語・汎用ビジネス語）
  * - 重複排除、長い順
  */
 function extractKeywordsFromText(text: string, max = 30): string[] {
@@ -264,6 +315,7 @@ function extractKeywordsFromText(text: string, max = 30): string[] {
   const out: string[] = [];
   for (const t of all) {
     if (NG_TERMS.has(t)) continue;
+    if (NG_KEYWORDS_FOR_STEP3.has(t)) continue;
     if (seen.has(t)) continue;
     seen.add(t);
     out.push(t);
