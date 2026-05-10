@@ -344,17 +344,9 @@ async function findRelatedExplainers(
     }
   }
 
-  // Step 4: 最終フォールバック（依頼Y.5 §3-2 で 0 件を回避するため必須）
-  // 直近公開の explainer を埋め合わせる。SEO 的にも教科書サイトとして
-  // 「最新解説をいくつか紹介する」のは違和感がない。
-  if (matches.length < limit) {
-    for (const e of all) {
-      if (matches.length >= limit) break;
-      if (e.slug === excludeSlug || seen.has(e.slug)) continue;
-      matches.push(e);
-      seen.add(e.slug);
-    }
-  }
+  // 依頼Y.6: deterministic fallback (Step 4) は削除。
+  // 「最新 N件で機械的に埋める」と無関係コンテンツが UX ノイズになるため、
+  // 真にマッチした explainer が 0 件のときは空配列を返し、JSX 側で h3 ごと非表示にする。
 
   return matches;
 }
@@ -364,9 +356,9 @@ async function findRelatedExplainers(
  * baseText から linkable target で 0 件しかマッチしない場合、
  * baseTitle / baseName を q として microCMS で全文検索して projects を取得。
  *
- * さらに 0 件のときは「直近公開 N 件」をフォールバックとして使い、
- * §3-2 の「関連プロジェクト ≥ 1」を満たす（教科書サイトとして
- * 「最新の系統用蓄電池プロジェクト」を紹介するのは自然な導線）。
+ * 依頼Y.6: 「直近公開 N 件で埋める」deterministic fallback は削除。
+ * q-search でも 0 件なら空配列を返し、JSX 側で h3 ごと非表示にする
+ * （無関係 project が並ぶ UX ノイズを避ける）。
  */
 async function searchRelatedProjects(
   query: string,
@@ -375,40 +367,23 @@ async function searchRelatedProjects(
 ): Promise<Array<{ slug: string; name: string }>> {
   if (limit <= 0) return [];
   const q = (query || '').trim();
-  let result: Array<{ slug: string; name: string }> = [];
-
-  if (q) {
-    try {
-      const data = await client.getList<{
-        id: string;
-        slug: string;
-        name: string;
-      }>({
-        endpoint: 'projects',
-        queries: { q, limit: limit + 5, fields: 'id,slug,name' },
-      });
-      result = data.contents
-        .filter((p) => p.slug !== excludeSlug)
-        .slice(0, limit)
-        .map((p) => ({ slug: p.slug, name: p.name }));
-    } catch {
-      result = [];
-    }
+  if (!q) return [];
+  try {
+    const data = await client.getList<{
+      id: string;
+      slug: string;
+      name: string;
+    }>({
+      endpoint: 'projects',
+      queries: { q, limit: limit + 5, fields: 'id,slug,name' },
+    });
+    return data.contents
+      .filter((p) => p.slug !== excludeSlug)
+      .slice(0, limit)
+      .map((p) => ({ slug: p.slug, name: p.name }));
+  } catch {
+    return [];
   }
-
-  // フォールバック: q-search が 0 件 → 直近公開 N 件
-  if (result.length < limit) {
-    const all = await getAllProjectsLite();
-    const seen = new Set(result.map((r) => r.slug));
-    for (const p of all) {
-      if (result.length >= limit) break;
-      if (p.slug === excludeSlug || seen.has(p.slug)) continue;
-      result.push({ slug: p.slug, name: p.name });
-      seen.add(p.slug);
-    }
-  }
-
-  return result;
 }
 
 /** microCMS の q 検索で関連 news を取得 */
