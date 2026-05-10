@@ -28,9 +28,10 @@ const SAMPLE_URLS = [
   '/news/pr-2026-05-08-auroraenergyresearch-4',
   '/news/pr-2026-05-08-goodwejapan-15',
   // explainer 3件
+  // 依頼W.6 §3-1A: pcs-power-conversion-system は 404 だったため pcs-selection-guide に変更
   '/explainer/grid-scale-bess',
   '/explainer/balancing-market',
-  '/explainer/aggregator-business',
+  '/explainer/pcs-selection-guide',
 ];
 
 function resolveBase(): string {
@@ -64,8 +65,9 @@ async function main(): Promise<void> {
   for (const path of SAMPLE_URLS) {
     try {
       const res = await fetch(base + path);
-      if (!res.ok) {
-        console.error(`❌ ${path}: HTTP ${res.status}`);
+      // 依頼W.6 §3-1B: HTTP 200 を必須化（404 サンプルを CI で即検出）
+      if (res.status !== 200) {
+        console.error(`❌ ${path}: HTTP ${res.status} (expected 200)`);
         failed++;
         continue;
       }

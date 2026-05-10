@@ -75,11 +75,12 @@ export default async function OperatorDetailPage({
       getLinkableTargets().catch(() => []),
     ]);
 
-  // 依頼W.5: operators 本文は glossary のみリンク（他 operator/project は Phase 3 のサイドバーで扱う）
-  const glossaryOnlyTargets = linkableTargets.filter(
-    (t) => t.type === 'glossary'
+  // 依頼W.6: operators 本文は glossary + operator にリンク許可（projects は除外維持、Phase 3 サイドバー）
+  // 3重 safety net (NG_TERMS / 最小文字数 / linkedRanges) でネスト再発は論理的に不可能
+  const operatorScopedTargets = linkableTargets.filter(
+    (t) => t.type === 'glossary' || t.type === 'operator'
   );
-  const bodyHtml = linkifyHTML(operator.body || '', glossaryOnlyTargets, {
+  const bodyHtml = linkifyHTML(operator.body || '', operatorScopedTargets, {
     firstOnly: true,
     selfUrl: `/operators/${operator.slug}`,
   });
