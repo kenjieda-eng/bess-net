@@ -1307,10 +1307,27 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
         const arr = operatorByName.get(name) ?? [];
         arr.push(url);
         operatorByName.set(name, arr);
-        // 「（TMEIC）」のような英字略称
-        const aliasMatch = name.match(/[（(]([A-Za-z][A-Za-z0-9.&-]{1,15})[）)]/);
-        if (aliasMatch) {
-          out.push({ text: aliasMatch[1], url, type: 'operator' });
+
+        // 依頼W.6 追記: コード側で完結する軽量 alias（microCMS schema 変更なし）
+        //   1) 「（TMEIC）」のような英字略称
+        const parenAlias = name.match(/[（(]([A-Za-z][A-Za-z0-9.&-]{1,15})[）)]/);
+        if (parenAlias) {
+          out.push({ text: parenAlias[1], url, type: 'operator' });
+        }
+        //   2) 法人形態接尾を除去 → 「JFEエンジニアリング株式会社」→「JFEエンジニアリング」
+        //                          「みずほリース株式会社」→「みずほリース」
+        const stripped = name
+          .replace(
+            /(株式会社|合同会社|有限会社|一般社団法人|公益社団法人|一般財団法人|公益財団法人|（株）|\(株\))/g,
+            ''
+          )
+          .replace(/^\s+|\s+$/g, '');
+        if (
+          stripped &&
+          stripped !== name &&
+          stripped.length >= 4 // operator 最小文字数と整合
+        ) {
+          out.push({ text: stripped, url, type: 'operator' });
         }
       }
       if (data.contents.length < limit) break;
