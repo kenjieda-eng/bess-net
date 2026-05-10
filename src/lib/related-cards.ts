@@ -97,25 +97,35 @@ type LiteExplainer = {
 let _explainerCache: LiteExplainer[] | null = null;
 async function getAllExplainerLite(): Promise<LiteExplainer[]> {
   if (_explainerCache) return _explainerCache;
+  // microCMS API は 1リクエストあたり最大 100 件のため、
+  // 100 件超のときはオフセットでページング取得する。
+  const out: LiteExplainer[] = [];
   try {
-    const data = await client.getList<Explainer>({
-      endpoint: 'explainer',
-      queries: {
-        limit: 200,
-        orders: '-publishedAt',
-        fields: 'id,slug,title,lead,category,publishedAt',
-      },
-    });
-    _explainerCache = data.contents.map((e) => ({
-      id: e.id,
-      slug: e.slug,
-      title: e.title,
-      lead: (e as Explainer).lead,
-      category: e.category,
-      publishedAt: e.publishedAt,
-    }));
+    for (let offset = 0; offset < 500; offset += 100) {
+      const data = await client.getList<Explainer>({
+        endpoint: 'explainer',
+        queries: {
+          limit: 100,
+          offset,
+          orders: '-publishedAt',
+          fields: 'id,slug,title,lead,category,publishedAt',
+        },
+      });
+      for (const e of data.contents) {
+        out.push({
+          id: e.id,
+          slug: e.slug,
+          title: e.title,
+          lead: (e as Explainer).lead,
+          category: e.category,
+          publishedAt: e.publishedAt,
+        });
+      }
+      if (data.contents.length < 100) break;
+    }
+    _explainerCache = out;
   } catch {
-    _explainerCache = [];
+    _explainerCache = out.length > 0 ? out : [];
   }
   return _explainerCache;
 }
