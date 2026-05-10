@@ -182,11 +182,12 @@ async function findRelatedByLinkable(
  * explainer タイトルから「コア概念キーワード」を抽出（依頼Y.5）
  * 例: 「系統用蓄電池とは」→「系統用蓄電池」
  *     「リチウムイオン電池の仕組み」→「リチウムイオン電池」
- *     「PCS の選び方ガイド」→「PCS」（短いので採用しないが返す）
- * 末尾の説明的接尾語（とは何か / の解説 / の比較 等）を除去するだけ。
+ * 末尾の説明的接尾語と、bess-net 内で多用される「── サブタイトル」も除去。
  */
 function extractCoreKeyword(title: string): string {
-  const stripped = title
+  // 「Topic ── サブ説明」パターンの prefix のみ残す
+  const beforeSep = title.split(/[─━—]{2,}|[─━—]\s|\s[─━—]/u)[0].trim();
+  const stripped = beforeSep
     .replace(
       /(とは何か|とは何|とは|の概要|の解説|の仕組み|の基礎|入門|まとめ|の比較|の選び方|について|ガイド|入門編)$/u,
       ''
@@ -197,10 +198,34 @@ function extractCoreKeyword(title: string): string {
 }
 
 /**
- * baseText 中で言及される explainer を抽出（依頼Y.5）
+ * baseText から検索用キーワード候補を抽出（依頼Y.5）
+ * - 漢字・カタカナ・英数字の連続 4〜18 文字
+ * - NG_TERMS は除外（「蓄電所」など過汎用語）
+ * - 重複排除、長い順
+ */
+function extractKeywordsFromText(text: string, max = 30): string[] {
+  if (!text) return [];
+  const tokens = text.match(/[一-龥ぁ-ゖァ-ヶー][一-龥ぁ-ゖァ-ヶーA-Za-z0-9]{3,17}/gu) || [];
+  const ascii = text.match(/[A-Za-z][A-Za-z0-9.&-]{3,17}/g) || [];
+  const all = [...tokens, ...ascii];
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const t of all) {
+    if (NG_TERMS.has(t)) continue;
+    if (seen.has(t)) continue;
+    seen.add(t);
+    out.push(t);
+    if (out.length >= max) break;
+  }
+  return out.sort((a, b) => b.length - a.length);
+}
+
+/**
+ * baseText 中で言及される explainer を抽出（依頼Y.5 改）
  * 1) 完全タイトル一致を優先
- * 2) コアキーワード一致でフォールバック（「系統用蓄電池とは」→「系統用蓄電池」）
- * NG_TERMS は適用しない（explainer タイトル自体が概念用語のため）
+ * 2) コアキーワード（── 前 + 接尾語除去後）で再マッチ
+ * 3) baseText からキーワード抽出 → 各 explainer の title+lead に逆方向で含むか
+ *    （依頼Y.5 仕様：projects のキーワード（容量/事業形態/技術）から explainer 抽出）
  */
 async function findRelatedExplainers(
   baseText: string,
@@ -212,7 +237,7 @@ async function findRelatedExplainers(
   const matches: RelatedExplainerItem[] = [];
   const seen = new Set<string>();
 
-  // Step 1: 完全タイトル一致（長い順、精度優先）
+  // Step 1: 完全タイトル一致
   const sortedByTitleLen = [...all].sort(
     (a, b) => b.title.length - a.title.length
   );
@@ -225,16 +250,13 @@ async function findRelatedExplainers(
     seen.add(e.slug);
   }
 
-  // Step 2: コアキーワード一致（接尾語除去後、長い順）
+  // Step 2: コアキーワード一致
   if (matches.length < limit) {
     const candidates = all
       .map((e) => ({ e, core: extractCoreKeyword(e.title) }))
       .filter(
         ({ e, core }) =>
-          core.length >= 4 &&
-          core !== e.title &&
-          e.slug !== excludeSlug &&
-          !seen.has(e.slug)
+          core.length >= 4 && e.slug !== excludeSlug && !seen.has(e.slug)
       )
       .sort((a, b) => b.core.length - a.core.length);
 
@@ -243,6 +265,30 @@ async function findRelatedExplainers(
       if (baseText.indexOf(core) < 0) continue;
       matches.push(e);
       seen.add(e.slug);
+    }
+  }
+
+  // Step 3: 逆方向マッチ — baseText の長尺キーワードを explainer の title+lead で検索
+  if (matches.length < limit) {
+    const keywords = extractKeywordsFromText(baseText, 30);
+    if (keywords.length > 0) {
+      for (const e of all) {
+        if (matches.length >= limit) break;
+        if (e.slug === excludeSlug || seen.has(e.slug)) continue;
+        const haystack = `${e.title} ${e.lead || ''}`;
+        // 長いキーワードから順に試す。1つでも haystack に含まれれば採用
+        let hit = false;
+        for (const kw of keywords) {
+          if (haystack.indexOf(kw) >= 0) {
+            hit = true;
+            break;
+          }
+        }
+        if (hit) {
+          matches.push(e);
+          seen.add(e.slug);
+        }
+      }
     }
   }
 
