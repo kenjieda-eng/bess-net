@@ -23,6 +23,7 @@ import {
 } from '@/lib/microcms';
 import { csvTermsToTermList } from '@/lib/term-linker';
 import { linkifyHTML } from '@/lib/linkify';
+import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -83,6 +84,22 @@ export default async function ExplainerDetailPage({
 
   const cat = (exp.category && exp.category[0]) || '';
 
+  // 依頼Y: 関連エンティティ抽出（operators / projects のみ。glossary は relatedTerms バッジで既に維持）
+  const related = await getRelatedEntities({
+    baseSlug: exp.slug,
+    baseType: 'explainer',
+    baseBodyHtml: exp.body || '',
+    baseTitle: exp.title,
+    wantTypes: ['operator', 'project'],
+    limit: { operator: 3, project: 3 },
+  });
+  const mentions = buildMentions({
+    operators: related.operators,
+    projects: related.projects,
+    news: [],
+    explainers: [],
+  });
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -96,6 +113,7 @@ export default async function ExplainerDetailPage({
       name: siteConfig.organization.name,
       url: siteConfig.organization.url,
     },
+    mentions: mentions.length > 0 ? mentions : undefined,
     inLanguage: 'ja-JP',
   };
 
@@ -121,8 +139,46 @@ export default async function ExplainerDetailPage({
             dangerouslySetInnerHTML={{ __html: bodyHtml }}
           />
 
-          {/* 関連用語バッジ */}
+          {/* 関連用語バッジ（既存：microCMS リレーション） */}
           {relatedTerms.length > 0 && <RelatedTermBadges terms={relatedTerms} />}
+
+          {/* 依頼Y: 本文中で言及された関連事業者 */}
+          {related.operators.length > 0 && (
+            <section className="article-section">
+              <h3 className="related-h3">本文で言及された事業者</h3>
+              <ul className="related-operator-badges">
+                {related.operators.map((o) => (
+                  <li key={o.slug}>
+                    <Link
+                      href={`/operators/${o.slug}`}
+                      className="related-operator-badge"
+                    >
+                      {o.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* 依頼Y: 関連プロジェクト */}
+          {related.projects.length > 0 && (
+            <section className="article-section">
+              <h3 className="related-h3">関連プロジェクト</h3>
+              <ul className="related-operator-badges">
+                {related.projects.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      href={`/projects/${p.slug}`}
+                      className="related-operator-badge"
+                    >
+                      {p.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* 実データを確認する CTA — /grid への導線（Phase 5 D-4） */}
           {GRID_RELATED_EXPLAINER_SLUGS.has(exp.slug) && (

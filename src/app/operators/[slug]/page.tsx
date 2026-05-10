@@ -16,6 +16,7 @@ import {
   getLinkableTargets,
 } from '@/lib/microcms';
 import { linkifyHTML } from '@/lib/linkify';
+import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import {
   OPERATOR_CATEGORY_COLOR,
   parseProducts,
@@ -85,6 +86,18 @@ export default async function OperatorDetailPage({
     selfUrl: `/operators/${operator.slug}`,
   });
 
+  // 依頼Y: 本文＋name から関連エンティティ（operators / news / explainer）を抽出
+  // 関連 projects は既存 getProjectsByOperatorName で取得済（重複しないよう除外）
+  const relatedEntities = await getRelatedEntities({
+    baseSlug: operator.slug,
+    baseType: 'operator',
+    baseBodyHtml: operator.body || '',
+    baseTitle: operator.name,
+    baseName: operator.name,
+    wantTypes: ['operator', 'explainer'],
+    limit: { operator: 8, explainer: 3 },
+  });
+
   // 関連事業者：同じカテゴリで上位5社（自分以外）
   const primaryCategory = (operator.category && operator.category[0]) || '';
   const related = allOperators
@@ -108,6 +121,14 @@ export default async function OperatorDetailPage({
   };
   const gridArea = GRID_AREA_BY_OPERATOR_SLUG[operator.slug];
 
+  // 依頼Y: JSON-LD mentions に関連エンティティを追加
+  const mentions = buildMentions({
+    operators: relatedEntities.operators,
+    projects: relatedProjects.map((p) => ({ slug: p.slug, name: p.name })),
+    news: [],
+    explainers: relatedEntities.explainers,
+  });
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -125,6 +146,7 @@ export default async function OperatorDetailPage({
             addressCountry: 'JP',
           }
         : undefined,
+    mentions: mentions.length > 0 ? mentions : undefined,
     publisher: {
       '@type': 'Organization',
       name: siteConfig.organization.name,
@@ -261,6 +283,44 @@ export default async function OperatorDetailPage({
                 projects={relatedProjects}
                 title={`${operator.name}の関連プロジェクト`}
               />
+            </section>
+          )}
+
+          {/* 依頼Y: 本文中で言及された関連事業者（テキストマッチで抽出） */}
+          {relatedEntities.operators.length > 0 && (
+            <section className="op-detail-section">
+              <h3 className="related-h3">{operator.name}の関連事業者</h3>
+              <ul className="related-operator-badges">
+                {relatedEntities.operators.map((o) => (
+                  <li key={o.slug}>
+                    <Link
+                      href={`/operators/${o.slug}`}
+                      className="related-operator-badge"
+                    >
+                      {o.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* 依頼Y: 関連解説 */}
+          {relatedEntities.explainers.length > 0 && (
+            <section className="op-detail-section">
+              <h3 className="related-h3">関連解説</h3>
+              <ul className="related-explainer-list">
+                {relatedEntities.explainers.map((e) => (
+                  <li key={e.id} className="related-explainer-item">
+                    <Link href={`/explainer/${e.slug}`}>
+                      <span className="related-explainer-title">{e.title}</span>
+                      {e.lead && (
+                        <span className="related-explainer-lead">{e.lead}</span>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 

@@ -13,6 +13,7 @@ import {
   getLinkableTargets,
 } from '@/lib/microcms';
 import { linkifyHTML } from '@/lib/linkify';
+import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -80,6 +81,16 @@ export default async function NewsDetailPage({
     selfUrl: `/news/${news.slug}`,
   });
 
+  // 依頼Y: 関連エンティティ抽出（operators / projects / explainer）
+  const related = await getRelatedEntities({
+    baseSlug: news.slug,
+    baseType: 'news',
+    baseBodyHtml: news.body || '',
+    baseTitle: news.title,
+    wantTypes: ['operator', 'project', 'explainer'],
+    limit: { operator: 5, project: 5, explainer: 2 },
+  });
+
   const cat = (news.category && news.category[0]) || '';
   const dateStr = news.publishedAt
     ? new Date(news.publishedAt).toLocaleDateString('ja-JP', {
@@ -88,6 +99,14 @@ export default async function NewsDetailPage({
         day: 'numeric',
       })
     : '';
+
+  // 依頼Y: JSON-LD mentions
+  const mentions = buildMentions({
+    operators: related.operators,
+    projects: related.projects,
+    news: [],
+    explainers: related.explainers,
+  });
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -102,6 +121,7 @@ export default async function NewsDetailPage({
       name: siteConfig.organization.name,
       url: siteConfig.organization.url,
     },
+    mentions: mentions.length > 0 ? mentions : undefined,
     inLanguage: 'ja-JP',
   };
 
@@ -135,13 +155,70 @@ export default async function NewsDetailPage({
             dangerouslySetInnerHTML={{ __html: bodyHtml }}
           />
 
-          {/* 関連事業者バッジ */}
+          {/* 関連事業者バッジ（既存：microCMS リレーション） */}
           {relatedOperators.length > 0 && (
             <RelatedOperatorBadges operators={relatedOperators} />
           )}
 
-          {/* 関連用語バッジ */}
+          {/* 関連用語バッジ（既存：microCMS リレーション） */}
           {relatedTerms.length > 0 && <RelatedTermBadges terms={relatedTerms} />}
+
+          {/* 依頼Y: 本文中で言及された関連事業者（テキストマッチで抽出） */}
+          {related.operators.length > 0 && (
+            <section className="page-section">
+              <h3 className="related-h3">本文で言及された事業者</h3>
+              <ul className="related-operator-badges">
+                {related.operators.map((o) => (
+                  <li key={o.slug}>
+                    <Link
+                      href={`/operators/${o.slug}`}
+                      className="related-operator-badge"
+                    >
+                      {o.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* 依頼Y: 関連プロジェクト */}
+          {related.projects.length > 0 && (
+            <section className="page-section">
+              <h3 className="related-h3">関連プロジェクト</h3>
+              <ul className="related-operator-badges">
+                {related.projects.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      href={`/projects/${p.slug}`}
+                      className="related-operator-badge"
+                    >
+                      {p.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* 依頼Y: 関連解説 */}
+          {related.explainers.length > 0 && (
+            <section className="page-section related-explainers-section">
+              <h3 className="related-h3">関連解説</h3>
+              <ul className="related-explainer-list">
+                {related.explainers.map((e) => (
+                  <li key={e.id} className="related-explainer-item">
+                    <Link href={`/explainer/${e.slug}`}>
+                      <span className="related-explainer-title">{e.title}</span>
+                      {e.lead && (
+                        <span className="related-explainer-lead">{e.lead}</span>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* 出典 */}
           {news.sourceUrl && (
