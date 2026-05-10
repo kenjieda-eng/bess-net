@@ -178,7 +178,30 @@ async function findRelatedByLinkable(
   return matches;
 }
 
-/** baseText 中で言及される explainer を抽出（title マッチ） */
+/**
+ * explainer タイトルから「コア概念キーワード」を抽出（依頼Y.5）
+ * 例: 「系統用蓄電池とは」→「系統用蓄電池」
+ *     「リチウムイオン電池の仕組み」→「リチウムイオン電池」
+ *     「PCS の選び方ガイド」→「PCS」（短いので採用しないが返す）
+ * 末尾の説明的接尾語（とは何か / の解説 / の比較 等）を除去するだけ。
+ */
+function extractCoreKeyword(title: string): string {
+  const stripped = title
+    .replace(
+      /(とは何か|とは何|とは|の概要|の解説|の仕組み|の基礎|入門|まとめ|の比較|の選び方|について|ガイド|入門編)$/u,
+      ''
+    )
+    .replace(/[\s　]+/g, '')
+    .trim();
+  return stripped;
+}
+
+/**
+ * baseText 中で言及される explainer を抽出（依頼Y.5）
+ * 1) 完全タイトル一致を優先
+ * 2) コアキーワード一致でフォールバック（「系統用蓄電池とは」→「系統用蓄電池」）
+ * NG_TERMS は適用しない（explainer タイトル自体が概念用語のため）
+ */
 async function findRelatedExplainers(
   baseText: string,
   excludeSlug: string,
@@ -187,16 +210,73 @@ async function findRelatedExplainers(
   if (!baseText || limit <= 0) return [];
   const all = await getAllExplainerLite();
   const matches: RelatedExplainerItem[] = [];
-  // 長いタイトル優先
-  const sorted = [...all].sort((a, b) => b.title.length - a.title.length);
-  for (const e of sorted) {
+  const seen = new Set<string>();
+
+  // Step 1: 完全タイトル一致（長い順、精度優先）
+  const sortedByTitleLen = [...all].sort(
+    (a, b) => b.title.length - a.title.length
+  );
+  for (const e of sortedByTitleLen) {
     if (matches.length >= limit) break;
-    if (e.slug === excludeSlug) continue;
+    if (e.slug === excludeSlug || seen.has(e.slug)) continue;
     if (!e.title || e.title.length < 4) continue;
     if (baseText.indexOf(e.title) < 0) continue;
     matches.push(e);
+    seen.add(e.slug);
   }
+
+  // Step 2: コアキーワード一致（接尾語除去後、長い順）
+  if (matches.length < limit) {
+    const candidates = all
+      .map((e) => ({ e, core: extractCoreKeyword(e.title) }))
+      .filter(
+        ({ e, core }) =>
+          core.length >= 4 &&
+          core !== e.title &&
+          e.slug !== excludeSlug &&
+          !seen.has(e.slug)
+      )
+      .sort((a, b) => b.core.length - a.core.length);
+
+    for (const { e, core } of candidates) {
+      if (matches.length >= limit) break;
+      if (baseText.indexOf(core) < 0) continue;
+      matches.push(e);
+      seen.add(e.slug);
+    }
+  }
+
   return matches;
+}
+
+/**
+ * 関連 projects の q-search フォールバック（依頼Y.5）
+ * baseText から linkable target で 0 件しかマッチしない場合、
+ * baseTitle / baseName を q として microCMS で全文検索して projects を取得。
+ */
+async function searchRelatedProjects(
+  query: string,
+  excludeSlug: string,
+  limit: number
+): Promise<Array<{ slug: string; name: string }>> {
+  const q = (query || '').trim();
+  if (!q || limit <= 0) return [];
+  try {
+    const data = await client.getList<{
+      id: string;
+      slug: string;
+      name: string;
+    }>({
+      endpoint: 'projects',
+      queries: { q, limit: limit + 5, fields: 'id,slug,name' },
+    });
+    return data.contents
+      .filter((p) => p.slug !== excludeSlug)
+      .slice(0, limit)
+      .map((p) => ({ slug: p.slug, name: p.name }));
+  } catch {
+    return [];
+  }
 }
 
 /** microCMS の q 検索で関連 news を取得 */
@@ -288,12 +368,27 @@ export async function getRelatedEntities(
     : Promise.resolve([] as Array<{ slug: string; name: string }>);
 
   const pjsP = want.has('project')
-    ? findRelatedByLinkable(
-        baseText,
-        'project',
-        opts.baseType === 'project' ? opts.baseSlug : '',
-        lim.project
-      )
+    ? (async () => {
+        const matched = await findRelatedByLinkable(
+          baseText,
+          'project',
+          opts.baseType === 'project' ? opts.baseSlug : '',
+          lim.project
+        );
+        // 依頼Y.5: linkable で 0 件のとき q-search でフォールバック
+        // 概念解説 (explainer) や news からの project リンクは
+        // 本文で project 名が直接出現することが少ないため、microCMS 全文検索で補強
+        if (matched.length === 0) {
+          const q = (opts.baseTitle || opts.baseName || '').trim();
+          const fallback = await searchRelatedProjects(
+            q,
+            opts.baseType === 'project' ? opts.baseSlug : '',
+            lim.project
+          );
+          return fallback;
+        }
+        return matched;
+      })()
     : Promise.resolve([] as Array<{ slug: string; name: string }>);
 
   // news 検索クエリは baseName 優先（operator/project 名）、なければ title
