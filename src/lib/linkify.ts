@@ -14,6 +14,17 @@ export type LinkTarget = {
   text: string;
   url: string;
   type: 'operator' | 'project' | 'glossary';
+  /**
+   * 主名フラグ（依頼Z）。operator の正式 name はこれが true。
+   * suffix-strip / parenAlias / aliases[] の派生候補は false（または未設定）。
+   */
+  isPrimary?: boolean;
+  /**
+   * aliases[] 由来フラグ（依頼Z）。明示登録された略称を示す。
+   * 同 type の他候補と衝突したとき suffix-strip 由来の派生より優先される。
+   * また min length フィルタを 2字以上に緩和する条件として参照される。
+   */
+  isAlias?: boolean;
 };
 
 export type LinkifyOptions = {
@@ -82,7 +93,11 @@ const TYPE_RANK: Record<LinkTarget['type'], number> = {
 /**
  * 同 text の複数候補に対し優先 target を1件選ぶ:
  *   project > operator > glossary
- *   同 type なら slug が長い方（より具体的）
+ *   同 type なら:
+ *     isPrimary（正式 name）> isAlias（aliases[] 由来）> その他派生（suffix-strip 等）
+ *     ↑ 依頼Z 追加: 「東急」が tokyu-fudosan の suffix-strip ではなく
+ *       tokyu の aliases[] にマッチするよう確定的に決める
+ *   それも同じなら slug が長い方（より具体的）
  *   それも同じなら slug アルファベット順
  *  返り値 > 0 なら a を採用
  */
@@ -90,6 +105,12 @@ function comparePriority(a: LinkTarget, b: LinkTarget): number {
   if (TYPE_RANK[a.type] !== TYPE_RANK[b.type]) {
     return TYPE_RANK[a.type] - TYPE_RANK[b.type];
   }
+  // 依頼Z: 同 type の場合、明示登録の優先順位
+  // primary > alias > その他派生
+  const rankA = a.isPrimary ? 2 : a.isAlias ? 1 : 0;
+  const rankB = b.isPrimary ? 2 : b.isAlias ? 1 : 0;
+  if (rankA !== rankB) return rankA - rankB;
+
   if (a.url.length !== b.url.length) {
     return a.url.length - b.url.length;
   }
@@ -117,10 +138,12 @@ export function linkifyHTML(
       : targets
   )
     // 2. NG_TERMS と最小文字数フィルタ
+    //    依頼Z: isAlias=true の候補は明示登録なので min length=2 まで許容
+    //    （「東急」「東芝」等の3字以下略称を救う）
     .filter((t) => {
       if (!t.text || !t.url) return false;
       if (NG_TERMS.has(t.text)) return false;
-      const min = MIN_LENGTH[t.type] ?? 5;
+      const min = t.isAlias ? 2 : (MIN_LENGTH[t.type] ?? 5);
       return t.text.length >= min;
     });
 

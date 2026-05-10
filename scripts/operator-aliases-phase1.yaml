@@ -1,0 +1,114 @@
+# Phase 1 operator aliases — 依頼Z §2-5
+# 主要 17 社の略称・短縮形リスト。
+#
+# microCMS schema は「テキストエリア（複数行）」方式。
+# YAML 側も block scalar (|) で改行区切り string として表現する。
+# patch スクリプトはこれを読み取り、microCMS には改行区切り string で PATCH。
+#
+# 方針:
+#  - 本文（PR TIMES、operator description、project body）に出現する truncation 表記を救う
+#  - 同 alias を複数 operator に付けない（落とし穴 #77）
+#  - 「東急」は tokyu のみに付与（同名衝突を tokyu 主決定で解消）
+#  - 主名と完全一致する alias は不要（コード側で除外される）
+#
+# 投入方法:
+#   MICROCMS_API_KEY=xxx \
+#   MICROCMS_SERVICE_DOMAIN=yyy \
+#   npx tsx scripts/patch-operator-aliases.ts
+#
+# 投入前に Webhook を OFF、完了後に ON に戻す（依頼Z §投入時の注意）
+
+operators:
+  # === 落とし穴 #69: JFEエンジ truncation 解決 ===
+  - slug: jfe-engineering
+    name: JFEエンジニアリング株式会社
+    aliases: |
+      JFEエンジ
+      JFE-E
+
+  # === 落とし穴 #68: 東急 3社マッチ問題解決 ===
+  # 「東急」は最も主たる事業者 (tokyu) にのみ付与
+  - slug: tokyu
+    name: 東急株式会社
+    aliases: "東急"
+  - slug: tokyu-fudosan
+    name: 東急不動産ホールディングス株式会社
+    aliases: |
+      東急不動産HD
+      東急不動産
+  - slug: tokyu-construction
+    name: 東急建設株式会社
+    aliases: "東急建設"
+
+  # === 略称頻出の主要事業者 ===
+  - slug: toshiba-energy-systems
+    name: 東芝エネルギーシステムズ株式会社
+    aliases: |
+      東芝エネシス
+      東芝エナジー
+  - slug: toshiba
+    name: 株式会社東芝
+    aliases: "東芝"
+  # hitachi (株式会社日立製作所): Phase 1 から除外（microCMS に登録なし、上記 §補足 参照）
+  - slug: sumitomo-electric
+    name: 住友電気工業株式会社
+    aliases: "住友電工"
+  - slug: mizuho-leasing
+    name: みずほリース株式会社
+    aliases: "みずほリース"
+  - slug: tmeic
+    # microCMS 上の実 name は「東芝三菱電機産業システム株式会社（TMEIC）」
+    # （括弧付き、name mismatch warn は無視）
+    name: 東芝三菱電機産業システム株式会社（TMEIC）
+    aliases: "TMEIC"
+
+  # === 海外勢（カタカナ・英字 truncation） ===
+  - slug: tesla-inc
+    # microCMS 上の実 name は「Tesla, Inc.（テスラ）」
+    name: Tesla, Inc.（テスラ）
+    aliases: |
+      Tesla
+      テスラ
+  - slug: pr-fluenceenergyinc
+    # 当初 spec は slug=fluence だったが microCMS 実 slug は pr-fluenceenergyinc
+    # （別エンティティ fluence-japan も存在するが「Fluence Energy, Inc.」本体はこちら）
+    name: Fluence Energy, Inc.
+    aliases: |
+      Fluence
+      フルエンス
+  - slug: catl-japan
+    # 当初 spec は slug=catl だったが microCMS 実 slug は catl-japan
+    # 「CATL（Contemporary Amperex Technology Co., Limited）」という親会社 entry は無し
+    name: CATL Japan
+    aliases: "CATL"
+
+  # === BESS 関連メーカー ===
+  - slug: gs-yuasa
+    name: 株式会社GSユアサ
+    aliases: "GSユアサ"
+  - slug: panasonic-energy
+    # microCMS 実 name は「パナソニック エナジー株式会社」（半角スペース有）
+    name: パナソニック エナジー株式会社
+    aliases: "パナソニックエナジー"
+  - slug: byd-japan
+    name: BYDジャパン株式会社
+    aliases: "BYD"
+
+# === Phase 1 から除外した operators ===
+#  - hitachi (株式会社日立製作所): microCMS に登録なし
+#    （hitachi-industrial = 株式会社日立産機システム は別法人）
+#  - enechange (株式会社ENECHANGE): microCMS に登録なし
+#  両者とも Phase 2 以降で operator entry 追加した上で再投入を検討
+
+# === 補足 ===
+#
+# 注1: slug が microCMS 上の slug と一致しない場合は patch スクリプトが skip する（warn 出力）。
+#      不一致が出たら、microCMS UI で実際の slug を確認して本ファイルを修正。
+# 注2: 主名 (name) はチェック用で、microCMS への PATCH には使われない（slug + aliases のみ）。
+# 注3: 各 operator の追加 alias は依頼書 §やらないこと #1 通り、Phase 2 で別途対応。
+# 注4: aliases 値の形式
+#   - 単一の場合: aliases: "東急"   （フロー形式の string）
+#   - 複数の場合: aliases: |          （block scalar、改行区切り）
+#                   foo
+#                   bar
+#   どちらも patch スクリプト内で改行区切り string に正規化される。

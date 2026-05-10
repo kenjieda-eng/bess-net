@@ -392,6 +392,15 @@ export type Operator = {
   bessRelation: string;
   body?: string;
   sourceUrl?: string;
+  /**
+   * 略称・短縮形（依頼Z）。本文に出現する truncation 表記を明示登録する。
+   * microCMS schema は「テキストエリア（複数行）」方式（江田さん判断）。
+   * 1行に1つの alias を記入し、改行（\n）で区切る。
+   * 例: "JFEエンジ\nJFE-E"、"東急"、"TMEIC" 等。
+   * パース側で split('\n') + trim + length>=2 フィルタ。
+   * 値が無い operator では undefined。
+   */
+  aliases?: string;
   publishedAt: string;
   updatedAt: string;
   createdAt: string;
@@ -1275,6 +1284,16 @@ export type LinkifyTarget = {
   text: string;
   url: string;
   type: 'operator' | 'project' | 'glossary';
+  /**
+   * 主名フラグ（依頼Z）。operator の正式 name はこれが true。
+   * suffix-strip / parenAlias / aliases[] の派生候補は false（または未設定）。
+   */
+  isPrimary?: boolean;
+  /**
+   * aliases[] 由来フラグ（依頼Z）。明示登録された略称を示す。
+   * 同 type の他候補と衝突したとき suffix-strip 由来の派生より優先される。
+   */
+  isAlias?: boolean;
 };
 
 let _linkableCache: LinkifyTarget[] | null = null;
@@ -1291,49 +1310,82 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
   const projectByName = new Map<string, string[]>();
   const glossaryByName = new Map<string, string[]>();
 
-  // operators (slug, name)
+  // operators (slug, name, aliases) — 依頼Z で aliases を取得
+  // 重複 alias 検知用 (alias text -> [slug, ...])
+  const aliasByText = new Map<string, string[]>();
   try {
     const limit = MICROCMS_PAGE_LIMIT;
     for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
       const data = await client.getList<Operator>({
         endpoint: 'operators',
-        queries: { limit, offset, fields: 'slug,name' },
+        queries: { limit, offset, fields: 'slug,name,aliases' },
       });
       for (const o of data.contents) {
         const name = (o.name || '').trim();
         if (!o.slug || !name || name.length < 3) continue;
         const url = `/operators/${o.slug}`;
-        out.push({ text: name, url, type: 'operator' });
+
+        // (a) 主名 — isPrimary: true
+        out.push({ text: name, url, type: 'operator', isPrimary: true });
         const arr = operatorByName.get(name) ?? [];
         arr.push(url);
         operatorByName.set(name, arr);
 
-        // 依頼W.6 追記: コード側で完結する軽量 alias（microCMS schema 変更なし）
+        // (b) 依頼W.6: コード側で完結する軽量派生 alias（isAlias: false）
         //   1) 「（TMEIC）」のような英字略称
         const parenAlias = name.match(/[（(]([A-Za-z][A-Za-z0-9.&-]{1,15})[）)]/);
         if (parenAlias) {
           out.push({ text: parenAlias[1], url, type: 'operator' });
         }
         //   2) 法人形態接尾を除去 → 「JFEエンジニアリング株式会社」→「JFEエンジニアリング」
-        //                          「みずほリース株式会社」→「みずほリース」
         const stripped = name
           .replace(
             /(株式会社|合同会社|有限会社|一般社団法人|公益社団法人|一般財団法人|公益財団法人|（株）|\(株\))/g,
             ''
           )
           .replace(/^\s+|\s+$/g, '');
-        if (
-          stripped &&
-          stripped !== name &&
-          stripped.length >= 4 // operator 最小文字数と整合
-        ) {
+        if (stripped && stripped !== name && stripped.length >= 4) {
           out.push({ text: stripped, url, type: 'operator' });
+        }
+
+        // (c) 依頼Z: microCMS で明示登録された aliases — isAlias: true
+        // schema は「テキストエリア（複数行）」方式。改行（\n / \r\n）で split し、
+        // 各行を trim → 空・1字・主名一致・重複を除外。
+        // 同 alias を複数 operator が持つと曖昧マッチ復活の元になるため、
+        // 重複検知して console.warn する（落とし穴 #77）。
+        const aliasArray = (o.aliases ?? '')
+          .split(/\r?\n/)
+          .map((s) => s.trim())
+          .filter((s) => s.length >= 2);
+        const seenAliases = new Set<string>();
+        for (const alias of aliasArray) {
+          if (alias === name) continue;
+          if (seenAliases.has(alias)) continue;
+          seenAliases.add(alias);
+          out.push({
+            text: alias,
+            url,
+            type: 'operator',
+            isAlias: true,
+          });
+          const aArr = aliasByText.get(alias) ?? [];
+          aArr.push(o.slug);
+          aliasByText.set(alias, aArr);
         }
       }
       if (data.contents.length < limit) break;
     }
   } catch {
     /* fall through */
+  }
+  // alias 重複の警告（依頼Z 落とし穴 #77）
+  for (const [alias, slugs] of aliasByText) {
+    if (slugs.length > 1) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `[getLinkableTargets] alias "${alias}" registered to multiple operators: ${slugs.join(', ')}`
+      );
+    }
   }
 
   // projects (slug, name)
