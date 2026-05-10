@@ -94,9 +94,15 @@ export default async function OperatorDetailPage({
     baseBodyHtml: operator.body || '',
     baseTitle: operator.name,
     baseName: operator.name,
-    wantTypes: ['operator', 'explainer'],
-    limit: { operator: 8, explainer: 3 },
+    wantTypes: ['operator', 'news', 'explainer'],
+    limit: { operator: 8, news: 5, explainer: 3 },
   });
+
+  // 既存 RelatedNewsList と重複しないようフィルタ（既存リレーション側にすでにあるものは除外）
+  const existingNewsSlugs = new Set(relatedNews.map((n) => n.slug));
+  const additionalNews = relatedEntities.news.filter(
+    (n) => !existingNewsSlugs.has(n.slug)
+  );
 
   // 関連事業者：同じカテゴリで上位5社（自分以外）
   const primaryCategory = (operator.category && operator.category[0]) || '';
@@ -125,7 +131,7 @@ export default async function OperatorDetailPage({
   const mentions = buildMentions({
     operators: relatedEntities.operators,
     projects: relatedProjects.map((p) => ({ slug: p.slug, name: p.name })),
-    news: [],
+    news: relatedEntities.news,
     explainers: relatedEntities.explainers,
   });
 
@@ -273,6 +279,38 @@ export default async function OperatorDetailPage({
                 news={relatedNews}
                 title={`${operator.name}の最新ニュース`}
               />
+            </section>
+          )}
+
+          {/* 依頼Y: 本文中で言及された関連ニュース（q 全文検索） */}
+          {additionalNews.length > 0 && (
+            <section className="op-detail-section related-news-section">
+              <h3 className="related-h3">
+                {operator.name}に関連するニュース
+              </h3>
+              <ul className="related-news-list">
+                {additionalNews.map((n) => {
+                  const dateStr = n.publishedAt
+                    ? new Date(n.publishedAt).toLocaleDateString('ja-JP', {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric',
+                      })
+                    : '';
+                  const c = (n.category && n.category[0]) || '';
+                  return (
+                    <li key={n.id} className="related-news-item">
+                      <Link href={`/news/${n.slug}`}>
+                        <span className="related-news-meta">
+                          {c && <span className="related-news-cat">{c}</span>}
+                          <span className="related-news-date">{dateStr}</span>
+                        </span>
+                        <span className="related-news-title">{n.title}</span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
             </section>
           )}
 
