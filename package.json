@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "verify:linkify": "tsx scripts/verify-no-nested-anchors.ts"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

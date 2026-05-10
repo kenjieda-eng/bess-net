@@ -75,8 +75,11 @@ export default async function OperatorDetailPage({
       getLinkableTargets().catch(() => []),
     ]);
 
-  // 依頼W: 本文中の operators / projects / glossary を自動リンク化（自社除外）
-  const bodyHtml = linkifyHTML(operator.body || '', linkableTargets, {
+  // 依頼W.5: operators 本文は glossary のみリンク（他 operator/project は Phase 3 のサイドバーで扱う）
+  const glossaryOnlyTargets = linkableTargets.filter(
+    (t) => t.type === 'glossary'
+  );
+  const bodyHtml = linkifyHTML(operator.body || '', glossaryOnlyTargets, {
     firstOnly: true,
     selfUrl: `/operators/${operator.slug}`,
   });

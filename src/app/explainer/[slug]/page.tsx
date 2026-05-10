@@ -71,8 +71,11 @@ export default async function ExplainerDetailPage({
   }
   const relatedTerms = csvTermsToTermList(exp.relatedTerms, termSlugMap);
 
-  // 依頼W: 自動リンク（operators + projects + glossary 全件、初出のみ、自記事除外）
-  const linkableTargets = await getLinkableTargets();
+  // 依頼W.5: explainer は glossary のみリンク（依頼W 前の状態に戻す）
+  // 教科書として情報密度を保つため operators/projects は本文では扱わない（Phase 3 サイドバー）
+  const linkableTargets = (await getLinkableTargets()).filter(
+    (t) => t.type === 'glossary'
+  );
   const bodyHtml = linkifyHTML(exp.body || '', linkableTargets, {
     firstOnly: true,
     selfUrl: `/explainer/${exp.slug}`,

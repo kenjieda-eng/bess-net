@@ -71,8 +71,10 @@ export default async function NewsDetailPage({
     slug: o.slug,
   }));
 
-  // 依頼W: 自動リンク（operators + projects + glossary 全件、初出のみ、自記事除外）
-  const linkableTargets = await getLinkableTargets();
+  // 依頼W.5: news 本文は glossary + operators のみリンク（projects 除外、汎用 name の連鎖防止）
+  const linkableTargets = (await getLinkableTargets()).filter(
+    (t) => t.type === 'operator' || t.type === 'glossary'
+  );
   const bodyHtml = linkifyHTML(news.body || '', linkableTargets, {
     firstOnly: true,
     selfUrl: `/news/${news.slug}`,

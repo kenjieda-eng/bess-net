@@ -43,8 +43,10 @@ export default async function ProjectDetailPage({
 
   const status = (item.status && item.status[0]) || 'その他';
 
-  // 依頼W: 自動リンク（operators + 他 projects + glossary 全件、初出のみ、自記事除外）
-  const linkableTargets = await getLinkableTargets();
+  // 依頼W.5: projects 本文は glossary + operators のみリンク（他 projects 除外、汎用 name の連鎖防止）
+  const linkableTargets = (await getLinkableTargets()).filter(
+    (t) => t.type === 'operator' || t.type === 'glossary'
+  );
   const bodyHtml = linkifyHTML(item.body || '', linkableTargets, {
     firstOnly: true,
     selfUrl: `/projects/${item.slug}`,

@@ -1,35 +1,106 @@
 /**
- * linkify.ts (依頼W Phase 1)
+ * linkify.ts (依頼W.5 改修版)
  *
- * 既存 term-linker.ts の `linkifyTerms` を拡張し、
- * news / projects / operators / glossary の3種を本文HTML中で自動リンク化する。
+ * 依頼W で発生した HTML <a> ネスト問題を根本修正：
+ * - 同 name で複数候補がある場合は comparePriority で 1 件のみ採用
+ * - text 位置ベースの linkedRanges で初出管理（同 token 内で重複範囲をスキップ）
+ * - <a> / <script> / <style> 内のテキストは触らない
+ * - NG_TERMS と最小文字数フィルタで汎用語を除外
  *
- * 設計方針：
- * - 既存リンク (`<a>...</a>`) 内のテキストは置換しない
- * - HTML タグ内のテキストは置換しない
- * - 1記事内で同じ url 先は最初の1回のみリンク化（読者疲弊防止）
- * - 長いテキストから先にマッチさせる（部分文字列誤マッチ回避）
- * - 同位置で複数 target がマッチした場合は登録順（呼び出し側で project > operator > glossary 順に並べる想定）
+ * 後方互換: linkifyTerms(html, terms) は維持（内部で linkifyHTML を呼ぶ）
  */
 
 export type LinkTarget = {
-  text: string; // マッチ対象（社名、案件名、用語）
-  url: string; // /operators/{slug}, /projects/{slug}, /glossary/{slug}
+  text: string;
+  url: string;
   type: 'operator' | 'project' | 'glossary';
 };
 
 export type LinkifyOptions = {
-  /** true = 同じ url 先は1記事内で最初の1回のみリンク化 (default: true) */
+  /** true = 同 url は記事内で初出のみリンク化 (default: true) */
   firstOnly?: boolean;
-  /** 自身のページ slug。targets から自エンティティを除外する用 */
+  /** 自身のページ url。targets から自エンティティを除外 */
   selfUrl?: string;
 };
 
 /**
- * HTML 文字列に対し targets を適用してリンク化。
- * - HTML タグ内・既存 <a>...</a> 内のテキストは触らない
- * - 同 url は記事内で初出のみ
- * - 長い text 優先（部分マッチ防止）
+ * NG_TERMS — 過剰リンクの温床になる汎用語。
+ * 実機検証で over-match を確認したものを順次追加。
+ * （依頼W.5 §4-2 A）
+ */
+const NG_TERMS = new Set<string>([
+  // 汎用エネルギー語（蓄電所ネットの主題そのもの）
+  '蓄電所',
+  '蓄電池',
+  '系統用蓄電池',
+  '系統用蓄電所',
+  '系統蓄電所',
+  '次世代蓄電池',
+  '日本蓄電池',
+  // 容量・出力単位
+  'BESS',
+  'PCS',
+  'MW',
+  'MWh',
+  'kW',
+  'kWh',
+  // 一般語
+  'リース',
+  'リユース',
+  // 市場制度関連の汎用語（タイトル直撃しがち）
+  '需給調整市場',
+  '容量市場',
+  // 地域名 + 蓄電所のような形式
+  '低圧系統用蓄電池',
+  '系統用蓄電',
+  // PR TIMES タイトル由来の頻出語
+  'プロジェクト',
+  '系統用',
+  '低圧',
+  '太陽光',
+  '再エネ',
+  '電力',
+  '受電',
+  '発電',
+  // 発見次第追加
+]);
+
+/** type 別の最小文字数（依頼W.5 §4-2 B） */
+const MIN_LENGTH: Record<LinkTarget['type'], number> = {
+  operator: 4,
+  project: 5,
+  glossary: 5,
+};
+
+/** type 優先順位（依頼W.5 §4-2 C） */
+const TYPE_RANK: Record<LinkTarget['type'], number> = {
+  project: 3,
+  operator: 2,
+  glossary: 1,
+};
+
+/**
+ * 同 text の複数候補に対し優先 target を1件選ぶ:
+ *   project > operator > glossary
+ *   同 type なら slug が長い方（より具体的）
+ *   それも同じなら slug アルファベット順
+ *  返り値 > 0 なら a を採用
+ */
+function comparePriority(a: LinkTarget, b: LinkTarget): number {
+  if (TYPE_RANK[a.type] !== TYPE_RANK[b.type]) {
+    return TYPE_RANK[a.type] - TYPE_RANK[b.type];
+  }
+  if (a.url.length !== b.url.length) {
+    return a.url.length - b.url.length;
+  }
+  return a.url < b.url ? 1 : a.url > b.url ? -1 : 0;
+}
+
+/**
+ * メイン関数: HTML 中の text に対し targets を適用してリンク化。
+ * - <a>...</a>, <script>, <style>, タグ属性内は触らない
+ * - 同 text の複数候補は1件にまとめる（comparePriority）
+ * - 初出のみ（firstOnly）— url ベースに加え、token 内 linkedRanges でも重複防止
  */
 export function linkifyHTML(
   html: string,
@@ -39,60 +110,48 @@ export function linkifyHTML(
   if (!html) return html;
   const firstOnly = options.firstOnly !== false;
 
-  // self-url 除外
-  const filtered = options.selfUrl
-    ? targets.filter((t) => t.url !== options.selfUrl)
-    : targets;
+  // 1. selfUrl 除外
+  const filtered: LinkTarget[] = (
+    options.selfUrl
+      ? targets.filter((t) => t.url !== options.selfUrl)
+      : targets
+  )
+    // 2. NG_TERMS と最小文字数フィルタ
+    .filter((t) => {
+      if (!t.text || !t.url) return false;
+      if (NG_TERMS.has(t.text)) return false;
+      const min = MIN_LENGTH[t.type] ?? 5;
+      return t.text.length >= min;
+    });
 
-  // 重複 (text, url) を除外し、空・短すぎる text を除外
-  const seen = new Set<string>();
-  const cleaned: LinkTarget[] = [];
+  if (filtered.length === 0) return html;
+
+  // 3. 同 text の複数候補を comparePriority で1件にまとめる
+  const byText = new Map<string, LinkTarget>();
   for (const t of filtered) {
-    if (!t.text || !t.url) continue;
-    if (t.text.length < 2) continue; // 1文字は誤マッチを生むので除外
-    const key = `${t.text}|${t.url}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    cleaned.push(t);
+    const cur = byText.get(t.text);
+    if (!cur || comparePriority(t, cur) > 0) {
+      byText.set(t.text, t);
+    }
   }
-  if (cleaned.length === 0) return html;
+  const deduped = Array.from(byText.values());
 
-  // 長さ降順 → 同長は type 優先順 (project > operator > glossary)
-  const TYPE_PRIORITY: Record<LinkTarget['type'], number> = {
-    project: 0,
-    operator: 1,
-    glossary: 2,
-  };
-  const sorted = [...cleaned].sort((a, b) => {
+  // 4. 長い text 優先でソート（部分マッチ防止）
+  deduped.sort((a, b) => {
     if (b.text.length !== a.text.length) return b.text.length - a.text.length;
-    return TYPE_PRIORITY[a.type] - TYPE_PRIORITY[b.type];
+    return TYPE_RANK[b.type] - TYPE_RANK[a.type];
   });
 
-  // url 単位で初出フラグを管理（同じ url が text バリエーションで複数登録されているケースに対応）
+  // 5. 初出済み url を記事横断で追跡（firstOnly）
   const linkedUrls = new Set<string>();
 
-  // タグ・テキストにトークン分解
+  // 6. HTML を「タグ」「テキスト」トークンに分解（<a>/<script>/<style> 内はタグ扱い）
   const tokens = splitHtmlTokens(html);
+
   const out = tokens
     .map((tk) => {
       if (tk.kind === 'tag') return tk.value;
-      // テキストノードに対し各 target を順に適用
-      let s = tk.value;
-      for (const t of sorted) {
-        if (firstOnly && linkedUrls.has(t.url)) continue;
-        const idx = s.indexOf(t.text);
-        if (idx < 0) continue;
-        const before = s.slice(0, idx);
-        const after = s.slice(idx + t.text.length);
-        const cls = `auto-link auto-link-${t.type}`;
-        const linked =
-          `<a href="${t.url}" class="${cls}" data-link-type="${t.type}">` +
-          escapeHtml(t.text) +
-          '</a>';
-        s = before + linked + after;
-        linkedUrls.add(t.url);
-      }
-      return s;
+      return linkifyTextNode(tk.value, deduped, linkedUrls, firstOnly);
     })
     .join('');
 
@@ -100,11 +159,8 @@ export function linkifyHTML(
 }
 
 /* =============================================================
-   後方互換: 既存 linkifyTerms の API を維持
-   - news / explainer などの既存呼び出しは glossary のみのため
-     新しい linkifyHTML を呼び出すラッパーとして実装
+   後方互換: 既存 linkifyTerms (glossary 用語のみ) の API
    ============================================================= */
-
 type TermLike = { term: string; slug: string };
 
 export function linkifyTerms(html: string, terms: TermLike[]): string {
@@ -119,9 +175,94 @@ export function linkifyTerms(html: string, terms: TermLike[]): string {
   return linkifyHTML(html, targets, { firstOnly: true });
 }
 
-/* ----------------------------- 内部ユーティリティ ----------------------------- */
+/* ----------------------------- 内部実装 ----------------------------- */
 
-/** HTML を「タグ」と「テキスト」のトークンに分解。<a>...</a> 内のテキストはタグ扱いにし置換対象外に。 */
+/**
+ * 1つのテキストノードに対してリンク化を行う:
+ *  - 各 target を長い順に試す
+ *  - マッチ位置が既存 linkedRanges と重複したらスキップ
+ *  - 重複しなければ linkedRanges に登録（次の target はそこを避ける）
+ *  - firstOnly が true で linkedUrls に既登録の url はスキップ
+ *  - 最後に linkedRanges を順序通りに展開して <a> で囲んだ HTML を生成
+ */
+function linkifyTextNode(
+  text: string,
+  targets: LinkTarget[],
+  linkedUrls: Set<string>,
+  firstOnly: boolean
+): string {
+  // ranges: this token 内でリンクすべき範囲 [start, end, target]（start 昇順管理）
+  const ranges: Array<{ start: number; end: number; target: LinkTarget }> = [];
+
+  for (const t of targets) {
+    if (firstOnly && linkedUrls.has(t.url)) continue;
+    const idx = findNonOverlappingMatch(text, t.text, ranges);
+    if (idx < 0) continue;
+    // 範囲を sorted 位置に挿入
+    insertRange(ranges, { start: idx, end: idx + t.text.length, target: t });
+    linkedUrls.add(t.url);
+  }
+
+  if (ranges.length === 0) return text;
+
+  // ranges から HTML を組み立て（start 昇順）
+  let cursor = 0;
+  const out: string[] = [];
+  for (const r of ranges) {
+    if (r.start > cursor) out.push(text.slice(cursor, r.start));
+    const matched = text.slice(r.start, r.end);
+    out.push(buildAnchor(r.target, matched));
+    cursor = r.end;
+  }
+  if (cursor < text.length) out.push(text.slice(cursor));
+  return out.join('');
+}
+
+/** 既登録 ranges と重複しない最初の出現位置を返す（無ければ -1） */
+function findNonOverlappingMatch(
+  text: string,
+  needle: string,
+  ranges: Array<{ start: number; end: number }>
+): number {
+  let from = 0;
+  while (true) {
+    const idx = text.indexOf(needle, from);
+    if (idx < 0) return -1;
+    const end = idx + needle.length;
+    // ranges のいずれかと重複か
+    const overlap = ranges.some(
+      (r) => !(end <= r.start || idx >= r.end)
+    );
+    if (!overlap) return idx;
+    // 次の候補探索を進める
+    from = idx + 1;
+  }
+}
+
+/** ranges に start 昇順で insert */
+function insertRange(
+  ranges: Array<{ start: number; end: number; target: LinkTarget }>,
+  range: { start: number; end: number; target: LinkTarget }
+): void {
+  let i = 0;
+  while (i < ranges.length && ranges[i].start < range.start) i++;
+  ranges.splice(i, 0, range);
+}
+
+function buildAnchor(t: LinkTarget, matchedText: string): string {
+  const cls = `auto-link auto-link-${t.type}`;
+  return (
+    `<a href="${t.url}" class="${cls}" data-link-type="${t.type}">` +
+    escapeHtml(matchedText) +
+    '</a>'
+  );
+}
+
+/**
+ * HTML を「タグ」「テキスト」トークンに分解。
+ * - <a>...</a> 内のテキストは tag 扱い（リンク対象外）
+ * - <script>...</script>, <style>...</style> 内のテキストも tag 扱い
+ */
 function splitHtmlTokens(
   html: string
 ): Array<{ kind: 'tag' | 'text'; value: string }> {
@@ -130,14 +271,17 @@ function splitHtmlTokens(
   let buffer = '';
   let mode: 'text' | 'tag' = 'text';
   let inAnchor = false;
+  let inScript = false;
+  let inStyle = false;
+
+  const isInert = () => inAnchor || inScript || inStyle;
 
   while (i < html.length) {
     const ch = html[i];
     if (mode === 'text') {
       if (ch === '<') {
         if (buffer) {
-          // <a> 内のテキストは tag 扱いにして置換対象外
-          tokens.push({ kind: inAnchor ? 'tag' : 'text', value: buffer });
+          tokens.push({ kind: isInert() ? 'tag' : 'text', value: buffer });
           buffer = '';
         }
         mode = 'tag';
@@ -149,7 +293,11 @@ function splitHtmlTokens(
       buffer += ch;
       if (ch === '>') {
         if (/^<a[\s>]/i.test(buffer)) inAnchor = true;
-        if (/^<\/a\s*>/i.test(buffer)) inAnchor = false;
+        else if (/^<\/a\s*>/i.test(buffer)) inAnchor = false;
+        else if (/^<script[\s>]/i.test(buffer)) inScript = true;
+        else if (/^<\/script\s*>/i.test(buffer)) inScript = false;
+        else if (/^<style[\s>]/i.test(buffer)) inStyle = true;
+        else if (/^<\/style\s*>/i.test(buffer)) inStyle = false;
         tokens.push({ kind: 'tag', value: buffer });
         buffer = '';
         mode = 'text';
@@ -158,7 +306,7 @@ function splitHtmlTokens(
     i++;
   }
   if (buffer) {
-    tokens.push({ kind: mode === 'tag' ? 'tag' : 'text', value: buffer });
+    tokens.push({ kind: mode === 'tag' || isInert() ? 'tag' : 'text', value: buffer });
   }
   return tokens;
 }

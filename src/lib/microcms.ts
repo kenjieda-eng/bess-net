@@ -1279,12 +1279,19 @@ export type LinkifyTarget = {
 
 let _linkableCache: LinkifyTarget[] | null = null;
 
-/** 自動リンク化対象を全件取得（page 1 回／プロセス内 1 回キャッシュ） */
+/** 自動リンク化対象を全件取得（page 1 回／プロセス内 1 回キャッシュ）
+ *  依頼W.5: 同 name の重複（projects 269件中 57+ 重複, glossary 同義 slug 等）を console.warn で報告
+ */
 export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
   if (_linkableCache) return _linkableCache;
   const out: LinkifyTarget[] = [];
 
-  // operators (slug, name) — 短い「テス」のような名前は誤マッチを生むので、3文字未満の name は除外
+  // 重複検知用 (text -> [url, ...])
+  const operatorByName = new Map<string, string[]>();
+  const projectByName = new Map<string, string[]>();
+  const glossaryByName = new Map<string, string[]>();
+
+  // operators (slug, name)
   try {
     const limit = MICROCMS_PAGE_LIMIT;
     for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
@@ -1295,15 +1302,15 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
       for (const o of data.contents) {
         const name = (o.name || '').trim();
         if (!o.slug || !name || name.length < 3) continue;
-        out.push({ text: name, url: `/operators/${o.slug}`, type: 'operator' });
-        // 「（TMEIC）」のような英字略称を取り出す
+        const url = `/operators/${o.slug}`;
+        out.push({ text: name, url, type: 'operator' });
+        const arr = operatorByName.get(name) ?? [];
+        arr.push(url);
+        operatorByName.set(name, arr);
+        // 「（TMEIC）」のような英字略称
         const aliasMatch = name.match(/[（(]([A-Za-z][A-Za-z0-9.&-]{1,15})[）)]/);
         if (aliasMatch) {
-          out.push({
-            text: aliasMatch[1],
-            url: `/operators/${o.slug}`,
-            type: 'operator',
-          });
+          out.push({ text: aliasMatch[1], url, type: 'operator' });
         }
       }
       if (data.contents.length < limit) break;
@@ -1322,8 +1329,12 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
       });
       for (const p of data.contents) {
         const name = (p.name || '').trim();
-        if (!p.slug || !name || name.length < 4) continue; // project は 4 文字以上で誤マッチ抑制
-        out.push({ text: name, url: `/projects/${p.slug}`, type: 'project' });
+        if (!p.slug || !name || name.length < 4) continue;
+        const url = `/projects/${p.slug}`;
+        out.push({ text: name, url, type: 'project' });
+        const arr = projectByName.get(name) ?? [];
+        arr.push(url);
+        projectByName.set(name, arr);
       }
       if (data.contents.length < limit) break;
     }
@@ -1331,20 +1342,55 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
     /* fall through */
   }
 
-  // glossary (slug, term, english) — 既存の getGlossaryLiteList を流用
+  // glossary (slug, term, english)
   try {
     const lite = await getGlossaryLiteList();
     for (const g of lite) {
       const term = (g.term || '').trim();
-      if (!g.slug || !term || term.length < 3) continue; // 用語は 3 文字以上で誤マッチ抑制
-      out.push({ text: term, url: `/glossary/${g.slug}`, type: 'glossary' });
+      if (!g.slug || !term || term.length < 3) continue;
+      const url = `/glossary/${g.slug}`;
+      out.push({ text: term, url, type: 'glossary' });
+      const arr = glossaryByName.get(term) ?? [];
+      arr.push(url);
+      glossaryByName.set(term, arr);
       const eng = (g.english || '').trim();
       if (eng && eng.length >= 3) {
-        out.push({ text: eng, url: `/glossary/${g.slug}`, type: 'glossary' });
+        out.push({ text: eng, url, type: 'glossary' });
+        const earr = glossaryByName.get(eng) ?? [];
+        earr.push(url);
+        glossaryByName.set(eng, earr);
       }
     }
   } catch {
     /* fall through */
+  }
+
+  // 依頼W.5: 重複 name 警告ログ
+  let dupOp = 0,
+    dupPj = 0,
+    dupGl = 0;
+  for (const [name, urls] of operatorByName) {
+    if (urls.length >= 2) {
+      dupOp++;
+      console.warn(`[linkify] operators 重複 name: "${name}" -> ${urls.slice(0, 5).join(', ')}${urls.length > 5 ? ` ...+${urls.length - 5}` : ''}`);
+    }
+  }
+  for (const [name, urls] of projectByName) {
+    if (urls.length >= 2) {
+      dupPj++;
+      console.warn(`[linkify] projects 重複 name: "${name}" (${urls.length}件) -> ${urls.slice(0, 3).join(', ')}${urls.length > 3 ? ` ...+${urls.length - 3}` : ''}`);
+    }
+  }
+  for (const [name, urls] of glossaryByName) {
+    if (urls.length >= 2) {
+      dupGl++;
+      console.warn(`[linkify] glossary 重複 name: "${name}" -> ${urls.slice(0, 5).join(', ')}${urls.length > 5 ? ` ...+${urls.length - 5}` : ''}`);
+    }
+  }
+  if (dupOp + dupPj + dupGl > 0) {
+    console.warn(
+      `[linkify] 重複 name 集計: operators=${dupOp}, projects=${dupPj}, glossary=${dupGl} (依頼W.5 §4-3)`
+    );
   }
 
   _linkableCache = out;
