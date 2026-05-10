@@ -92,6 +92,7 @@ type LiteExplainer = {
   title: string;
   lead?: string;
   category?: string[];
+  publishedAt?: string;
 };
 let _explainerCache: LiteExplainer[] | null = null;
 async function getAllExplainerLite(): Promise<LiteExplainer[]> {
@@ -99,7 +100,11 @@ async function getAllExplainerLite(): Promise<LiteExplainer[]> {
   try {
     const data = await client.getList<Explainer>({
       endpoint: 'explainer',
-      queries: { limit: 200, fields: 'id,slug,title,lead,category' },
+      queries: {
+        limit: 200,
+        orders: '-publishedAt',
+        fields: 'id,slug,title,lead,category,publishedAt',
+      },
     });
     _explainerCache = data.contents.map((e) => ({
       id: e.id,
@@ -107,11 +112,48 @@ async function getAllExplainerLite(): Promise<LiteExplainer[]> {
       title: e.title,
       lead: (e as Explainer).lead,
       category: e.category,
+      publishedAt: e.publishedAt,
     }));
   } catch {
     _explainerCache = [];
   }
   return _explainerCache;
+}
+
+/* ----------------------------- project キャッシュ ----------------------------- */
+type LiteProject = {
+  id: string;
+  slug: string;
+  name: string;
+  publishedAt?: string;
+};
+let _projectCache: LiteProject[] | null = null;
+async function getAllProjectsLite(): Promise<LiteProject[]> {
+  if (_projectCache) return _projectCache;
+  try {
+    const data = await client.getList<{
+      id: string;
+      slug: string;
+      name: string;
+      publishedAt: string;
+    }>({
+      endpoint: 'projects',
+      queries: {
+        limit: 50,
+        orders: '-publishedAt',
+        fields: 'id,slug,name,publishedAt',
+      },
+    });
+    _projectCache = data.contents.map((p) => ({
+      id: p.id,
+      slug: p.slug,
+      name: p.name,
+      publishedAt: p.publishedAt,
+    }));
+  } catch {
+    _projectCache = [];
+  }
+  return _projectCache;
 }
 
 /* ----------------------------- 抽出ロジック ----------------------------- */
@@ -292,6 +334,18 @@ async function findRelatedExplainers(
     }
   }
 
+  // Step 4: 最終フォールバック（依頼Y.5 §3-2 で 0 件を回避するため必須）
+  // 直近公開の explainer を埋め合わせる。SEO 的にも教科書サイトとして
+  // 「最新解説をいくつか紹介する」のは違和感がない。
+  if (matches.length < limit) {
+    for (const e of all) {
+      if (matches.length >= limit) break;
+      if (e.slug === excludeSlug || seen.has(e.slug)) continue;
+      matches.push(e);
+      seen.add(e.slug);
+    }
+  }
+
   return matches;
 }
 
@@ -299,30 +353,52 @@ async function findRelatedExplainers(
  * 関連 projects の q-search フォールバック（依頼Y.5）
  * baseText から linkable target で 0 件しかマッチしない場合、
  * baseTitle / baseName を q として microCMS で全文検索して projects を取得。
+ *
+ * さらに 0 件のときは「直近公開 N 件」をフォールバックとして使い、
+ * §3-2 の「関連プロジェクト ≥ 1」を満たす（教科書サイトとして
+ * 「最新の系統用蓄電池プロジェクト」を紹介するのは自然な導線）。
  */
 async function searchRelatedProjects(
   query: string,
   excludeSlug: string,
   limit: number
 ): Promise<Array<{ slug: string; name: string }>> {
+  if (limit <= 0) return [];
   const q = (query || '').trim();
-  if (!q || limit <= 0) return [];
-  try {
-    const data = await client.getList<{
-      id: string;
-      slug: string;
-      name: string;
-    }>({
-      endpoint: 'projects',
-      queries: { q, limit: limit + 5, fields: 'id,slug,name' },
-    });
-    return data.contents
-      .filter((p) => p.slug !== excludeSlug)
-      .slice(0, limit)
-      .map((p) => ({ slug: p.slug, name: p.name }));
-  } catch {
-    return [];
+  let result: Array<{ slug: string; name: string }> = [];
+
+  if (q) {
+    try {
+      const data = await client.getList<{
+        id: string;
+        slug: string;
+        name: string;
+      }>({
+        endpoint: 'projects',
+        queries: { q, limit: limit + 5, fields: 'id,slug,name' },
+      });
+      result = data.contents
+        .filter((p) => p.slug !== excludeSlug)
+        .slice(0, limit)
+        .map((p) => ({ slug: p.slug, name: p.name }));
+    } catch {
+      result = [];
+    }
   }
+
+  // フォールバック: q-search が 0 件 → 直近公開 N 件
+  if (result.length < limit) {
+    const all = await getAllProjectsLite();
+    const seen = new Set(result.map((r) => r.slug));
+    for (const p of all) {
+      if (result.length >= limit) break;
+      if (p.slug === excludeSlug || seen.has(p.slug)) continue;
+      result.push({ slug: p.slug, name: p.name });
+      seen.add(p.slug);
+    }
+  }
+
+  return result;
 }
 
 /** microCMS の q 検索で関連 news を取得 */
