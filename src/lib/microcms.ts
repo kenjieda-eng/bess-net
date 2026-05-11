@@ -252,6 +252,51 @@ export const getAllPolicyEvents = async (): Promise<PolicyEvent[]> => {
   return all;
 };
 
+// ===== 業界イベント・展示会カレンダー（industry-events、依頼AC） =====
+export type IndustryEvent = {
+  id: string;
+  title: string;
+  slug: string;
+  eventDate: string; // YYYY-MM-DD
+  endDate?: string;
+  venue?: string;
+  location?: string;
+  eventType?: string[];
+  organizer: string;
+  description?: string;
+  officialUrl?: string;
+  registrationDeadline?: string;
+  relatedTopics?: string[];
+  status?: string[];
+  publishedAt: string;
+  updatedAt: string;
+  createdAt: string;
+  revisedAt: string;
+};
+
+/**
+ * 業界イベント・展示会の全件を取得（依頼AC）
+ * - eventDate 降順（最新が先）
+ * - schema 未作成 / 一時的エラー時は空配列で graceful return
+ */
+export const getAllIndustryEvents = async (): Promise<IndustryEvent[]> => {
+  const all: IndustryEvent[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  try {
+    for (let offset = 0; offset < 500; offset += limit) {
+      const data = await client.getList<IndustryEvent>({
+        endpoint: 'industry-events',
+        queries: { limit, offset, orders: '-eventDate' },
+      });
+      all.push(...data.contents);
+      if (data.contents.length < limit) break;
+    }
+  } catch {
+    return [];
+  }
+  return all;
+};
+
 // ===== プロジェクト（projects） =====
 export type Project = {
   id: string;

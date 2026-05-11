@@ -1,0 +1,207 @@
+{
+  "apiFields": [
+    {
+      "fieldId": "title",
+      "name": "イベント名",
+      "kind": "text",
+      "required": true,
+      "description": "イベント名。例: 「スマートエネルギーWeek 2026 春」"
+    },
+    {
+      "fieldId": "slug",
+      "name": "スラッグ",
+      "kind": "text",
+      "required": true,
+      "isUnique": true,
+      "description": "URL 用識別子（英数 + ハイフン）。例: smart-energy-week-spring-2026"
+    },
+    {
+      "fieldId": "eventDate",
+      "name": "開始日",
+      "kind": "date",
+      "required": true,
+      "description": "イベントの開始日。YYYY-MM-DD 形式"
+    },
+    {
+      "fieldId": "endDate",
+      "name": "終了日",
+      "kind": "date",
+      "required": false,
+      "description": "イベントの終了日（任意、複数日開催の場合）"
+    },
+    {
+      "fieldId": "venue",
+      "name": "会場",
+      "kind": "text",
+      "required": false,
+      "description": "会場名。例: 「東京ビッグサイト」「オンライン（Zoom）」"
+    },
+    {
+      "fieldId": "location",
+      "name": "場所",
+      "kind": "text",
+      "required": false,
+      "description": "場所（都道府県市区町村）。例: 「東京都江東区」「オンライン」"
+    },
+    {
+      "fieldId": "eventType",
+      "name": "種別",
+      "kind": "select",
+      "required": false,
+      "selectItems": [
+        { "id": "ie3hKpV7nA", "value": "展示会" },
+        { "id": "ie7sQjW2mB", "value": "セミナー" },
+        { "id": "ie5tRyL8fC", "value": "シンポジウム" },
+        { "id": "ie1pZxN4kD", "value": "学会" },
+        { "id": "ie9wBhT6gE", "value": "業界団体総会" }
+      ],
+      "selectInitialValue": [],
+      "initialValue": {
+        "text": null,
+        "textArea": null,
+        "richEditorV2": null,
+        "media": null,
+        "mediaList": null,
+        "date": null,
+        "relation": null,
+        "relationList": null,
+        "number": null,
+        "file": null,
+        "boolean": null,
+        "select": []
+      },
+      "multipleSelect": false
+    },
+    {
+      "fieldId": "organizer",
+      "name": "主催者",
+      "kind": "text",
+      "required": true,
+      "description": "主催団体・主催企業名。例: 「RX Japan株式会社」「OCCTO」「経済産業省」"
+    },
+    {
+      "fieldId": "description",
+      "name": "説明",
+      "kind": "textArea",
+      "required": false,
+      "description": "イベント概要・対象・業界における位置付け。200字程度を推奨"
+    },
+    {
+      "fieldId": "officialUrl",
+      "name": "公式サイトURL",
+      "kind": "text",
+      "required": false,
+      "description": "イベント公式サイトURL"
+    },
+    {
+      "fieldId": "registrationDeadline",
+      "name": "申込締切",
+      "kind": "date",
+      "required": false,
+      "description": "申込締切日（任意）"
+    },
+    {
+      "fieldId": "relatedTopics",
+      "name": "関連トピック",
+      "kind": "select",
+      "required": false,
+      "selectItems": [
+        { "id": "rt2hMqP5dA", "value": "BESS" },
+        { "id": "rt6nWvJ3kB", "value": "系統用蓄電池" },
+        { "id": "rt8tRyL4gC", "value": "太陽光" },
+        { "id": "rt4dXfN9pD", "value": "VPP" },
+        { "id": "rt1pZxK7tE", "value": "PCS" },
+        { "id": "rt9wBhM6nF", "value": "風力" },
+        { "id": "rt5kQrY8jG", "value": "洋上風力" },
+        { "id": "rt3sFbV2xH", "value": "BESS併設" },
+        { "id": "rt7jTcL4mI", "value": "蓄電池技術" },
+        { "id": "rt0dGwN5kJ", "value": "次世代電池" },
+        { "id": "rtAhZpQ8rK", "value": "全固体電池" },
+        { "id": "rtBxYrM3sL", "value": "需給調整市場" },
+        { "id": "rtCfDvT6nM", "value": "容量市場" },
+        { "id": "rtEgWqL2pN", "value": "長期脱炭素オークション" },
+        { "id": "rtFhXyR9kO", "value": "ノンファーム接続" },
+        { "id": "rtGjKbV4tP", "value": "系統連系" },
+        { "id": "rtHmNcW8sQ", "value": "系統安定化" },
+        { "id": "rtIqPdF2gR", "value": "アグリゲーター" },
+        { "id": "rtJrSeG5mS", "value": "PPA" },
+        { "id": "rtKsTfH9dT", "value": "PF" },
+        { "id": "rtLtUgJ3kU", "value": "GX" },
+        { "id": "rtMvVhK7sV", "value": "脱炭素" },
+        { "id": "rtNwWiL4nW", "value": "再エネ" },
+        { "id": "rtOxXjM8pX", "value": "省エネ" },
+        { "id": "rtPyYkN2tY", "value": "水素" },
+        { "id": "rtQzZlP6gZ", "value": "LDES" },
+        { "id": "rtRaAmQ0sA", "value": "Tesla" },
+        { "id": "rtSbBnR3kB", "value": "Megapack" },
+        { "id": "rtTcCoS7mC", "value": "Fluence" },
+        { "id": "rtUdDpT4dD", "value": "Huawei" },
+        { "id": "rtVeEqU8nE", "value": "CATL" },
+        { "id": "rtWfFrV2pF", "value": "LFP" },
+        { "id": "rtXgGsW6sG", "value": "リユース" },
+        { "id": "rtYhHtX9kH", "value": "バイオマス" },
+        { "id": "rtZiIuY3mI", "value": "電力工学" },
+        { "id": "rt1jJvZ7dJ", "value": "電力エネルギー" },
+        { "id": "rt2kKwA1nK", "value": "業界団体" },
+        { "id": "rt3lLxB5pL", "value": "国際" },
+        { "id": "rt4mMyC9sM", "value": "米国" },
+        { "id": "rt5nNzD3kN", "value": "欧州" },
+        { "id": "rt6oOaE7mO", "value": "中国" },
+        { "id": "rt7pPbF1dP", "value": "地域" },
+        { "id": "rt8qQcG5nQ", "value": "関西" },
+        { "id": "rt9rRdH9pR", "value": "九州" },
+        { "id": "rt0sSeI3sS", "value": "東北" },
+        { "id": "rtUtTfJ7kT", "value": "中部" },
+        { "id": "rtVuUgK1mU", "value": "出力制御" },
+        { "id": "rtWvVhL5dV", "value": "レジリエンス" },
+        { "id": "rtXwWiM9nW", "value": "運用" },
+        { "id": "rtYxXjN3pX", "value": "自家消費" },
+        { "id": "rtZyYkO7sY", "value": "経営戦略" },
+        { "id": "rt1zZlP1kZ", "value": "投資" }
+      ],
+      "selectInitialValue": [],
+      "initialValue": {
+        "text": null,
+        "textArea": null,
+        "richEditorV2": null,
+        "media": null,
+        "mediaList": null,
+        "date": null,
+        "relation": null,
+        "relationList": null,
+        "number": null,
+        "file": null,
+        "boolean": null,
+        "select": []
+      },
+      "multipleSelect": true
+    },
+    {
+      "fieldId": "status",
+      "name": "ステータス",
+      "kind": "select",
+      "required": false,
+      "selectItems": [
+        { "id": "is2hPdT4kA", "value": "予定" },
+        { "id": "is6sJrY7nB", "value": "進行中" },
+        { "id": "is4tLqM3pC", "value": "終了" }
+      ],
+      "selectInitialValue": [],
+      "initialValue": {
+        "text": null,
+        "textArea": null,
+        "richEditorV2": null,
+        "media": null,
+        "mediaList": null,
+        "date": null,
+        "relation": null,
+        "relationList": null,
+        "number": null,
+        "file": null,
+        "boolean": null,
+        "select": []
+      },
+      "multipleSelect": false
+    }
+  ]
+}
