@@ -22,6 +22,7 @@ import {
   getRelatedOperatorsForSubstation,
   getRelatedNewsForSubstation,
 } from '@/lib/microcms';
+import { getNearbyProjects } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 3600; // 1時間
@@ -147,7 +148,7 @@ export default async function GridSlugPage({
   const areaSlug = areaName ? AREA_JP_TO_SLUG[areaName] : undefined;
 
   // 関連連携を並列取得
-  const [relatedOps, relatedNews] = await Promise.all([
+  const [relatedOps, relatedNews, nearbyProjects] = await Promise.all([
     operatorName
       ? getRelatedOperatorsForSubstation(operatorName, 5).catch(() => [])
       : Promise.resolve([]),
@@ -155,6 +156,12 @@ export default async function GridSlugPage({
       sub.prefecture || sub.name || '',
       5
     ).catch(() => []),
+    // 依頼AA Phase 4: 半径10km以内の projects（緯度経度なし substation は早期return で空配列）
+    getNearbyProjects({
+      origin: { latitude: sub.latitude, longitude: sub.longitude },
+      radiusKm: 10,
+      limit: 5,
+    }).catch(() => []),
   ]);
 
   const relatedOpsBadges = relatedOps.map((o) => ({
@@ -455,6 +462,37 @@ export default async function GridSlugPage({
               news={relatedNews}
               title={`${sub.prefecture ?? sub.name} 関連ニュース`}
             />
+          )}
+
+          {/* (h-2) 依頼AA Phase 4: 周辺の蓄電所案件（半径10km、最大5件）
+              緯度経度なし substation の場合は nearbyProjects が空 → h3 ごと非表示 */}
+          {nearbyProjects.length > 0 && (
+            <section className="grid-section">
+              <h3 className="related-h3">この変電所周辺の蓄電所案件</h3>
+              <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 12 }}>
+                {sub.name} の半径 10km 以内に位置する系統用蓄電池プロジェクト（距離が近い順、最大 5件）
+              </p>
+              <ul className="related-project-list">
+                {nearbyProjects.map((p) => {
+                  const meta: string[] = [];
+                  if (p.outputMw != null) meta.push(`${p.outputMw}MW`);
+                  if (p.capacityMwh != null) meta.push(`${p.capacityMwh}MWh`);
+                  if (p.prefecture) meta.push(p.prefecture);
+                  if (p.status) meta.push(p.status);
+                  return (
+                    <li key={p.slug} className="related-project-item">
+                      <Link href={`/projects/${p.slug}`}>
+                        <span className="related-project-name">{p.name}</span>
+                        <span className="related-project-meta">
+                          約 {p.distanceKm.toFixed(1)}km
+                          {meta.length > 0 ? ' / ' + meta.join(' / ') : ''}
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
           )}
 
           {/* (i) 関連用語（固定） */}

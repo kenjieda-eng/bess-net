@@ -9,7 +9,11 @@ import {
   getLinkableTargets,
 } from '@/lib/microcms';
 import { linkifyHTML } from '@/lib/linkify';
-import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
+import {
+  getRelatedEntities,
+  buildMentions,
+  getNearbySubstations,
+} from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -64,6 +68,13 @@ export default async function ProjectDetailPage({
     wantTypes: ['operator', 'news', 'explainer'],
     limit: { operator: 5, news: 3, explainer: 2 },
   });
+
+  // 依頼AA Phase 4: 半径10km以内の substations（緯度経度なし project は早期return で空配列）
+  const nearbySubstations = await getNearbySubstations({
+    origin: { latitude: item.latitude, longitude: item.longitude },
+    radiusKm: 10,
+    limit: 5,
+  }).catch(() => []);
 
   const mentions = buildMentions(related);
 
@@ -217,6 +228,37 @@ export default async function ProjectDetailPage({
                     </Link>
                   </li>
                 ))}
+              </ul>
+            </section>
+          )}
+
+          {/* 依頼AA Phase 4: 接続変電所候補（半径10km、最大5件）
+              緯度経度なし project または周辺に substation が無い場合 h3 ごと非表示 */}
+          {nearbySubstations.length > 0 && (
+            <section className="page-section">
+              <h3 className="related-h3">接続変電所候補</h3>
+              <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 12 }}>
+                {item.name} の半径 10km 以内に位置する変電所（距離が近い順、最大 5件）。
+                ※ 緯度経度データがある変電所のみ表示しています。
+              </p>
+              <ul className="related-project-list">
+                {nearbySubstations.map((s) => {
+                  const meta: string[] = [];
+                  if (s.voltage_primary_kv != null) meta.push(`${s.voltage_primary_kv}kV`);
+                  if (s.cap_avail_mw != null) meta.push(`空容量 ${s.cap_avail_mw}MW`);
+                  if (s.prefecture) meta.push(s.prefecture);
+                  return (
+                    <li key={s.slug} className="related-project-item">
+                      <Link href={`/grid/${s.slug}`}>
+                        <span className="related-project-name">{s.name}</span>
+                        <span className="related-project-meta">
+                          約 {s.distanceKm.toFixed(1)}km
+                          {meta.length > 0 ? ' / ' + meta.join(' / ') : ''}
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </section>
           )}

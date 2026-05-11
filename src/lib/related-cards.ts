@@ -14,10 +14,15 @@
 import {
   client,
   getLinkableTargets,
+  getAllProjectsWithCoords,
+  getAllSubstationsWithCoords,
   type LinkifyTarget,
   type News,
   type Explainer,
+  type ProjectGeoPoint,
+  type SubstationGeoPoint,
 } from './microcms';
+import { findWithinRadius } from './geo-distance';
 
 /* ----------------------------- フィルタ条件 ----------------------------- */
 // 依頼W.5/W.6 の linkify と同じ NG_TERMS / 最小文字数を使う（同期維持）
@@ -621,6 +626,102 @@ export async function getRelatedEntities(
   ]);
 
   return { operators, projects, news, explainers };
+}
+
+/* =================================================================
+   依頼AA Phase 4: 緯度経度マッチング
+   - getNearbyProjects(): substation (origin) の半径内 projects を返す
+   - getNearbySubstations(): project (origin) の半径内 substations を返す
+   - どちらも origin の lat/lng が不明な場合は早期 return で空配列
+     （JSX 側で {nearby.length > 0 && ...} 条件で h3 非表示にする想定）
+   - 候補リストはモジュールキャッシュ (microcms.ts) で 1 回のみ fetch
+   ================================================================= */
+
+/** 緯度経度付き project + 距離（km） */
+export type NearbyProject = ProjectGeoPoint & { distanceKm: number };
+
+/** 緯度経度付き substation + 距離（km） */
+export type NearbySubstation = SubstationGeoPoint & { distanceKm: number };
+
+/**
+ * 与えられた緯度経度から半径内の projects を距離昇順で返す（依頼AA）
+ *
+ * @param origin lat/lng（substation の緯度経度を想定）
+ * @param opts.radiusKm 半径 (km、デフォルト 10)
+ * @param opts.limit 最大件数 (デフォルト 5)
+ * @param opts.excludeSlug 除外する project slug（自身ページ用）
+ */
+export async function getNearbyProjects(opts: {
+  origin: { latitude: number | null | undefined; longitude: number | null | undefined };
+  radiusKm?: number;
+  limit?: number;
+  excludeSlug?: string;
+}): Promise<NearbyProject[]> {
+  const { origin, radiusKm = 10, limit = 5, excludeSlug } = opts;
+  // 早期 return: origin に緯度経度がない場合は空配列
+  if (
+    typeof origin.latitude !== 'number' ||
+    typeof origin.longitude !== 'number' ||
+    Number.isNaN(origin.latitude) ||
+    Number.isNaN(origin.longitude)
+  ) {
+    return [];
+  }
+  const candidates = await getAllProjectsWithCoords();
+  // findWithinRadius 用に lat/lng エイリアスを付与
+  const aliased = candidates
+    .filter((c) => c.slug !== excludeSlug)
+    .map((c) => ({ ...c, lat: c.latitude, lng: c.longitude }));
+  const matches = findWithinRadius(
+    { lat: origin.latitude, lng: origin.longitude },
+    aliased,
+    radiusKm,
+    limit
+  );
+  // 余分な lat/lng エイリアスを取り除き ProjectGeoPoint + distanceKm に戻す
+  return matches.map(({ lat: _lat, lng: _lng, distanceKm, ...rest }) => ({
+    ...(rest as ProjectGeoPoint),
+    distanceKm,
+  }));
+}
+
+/**
+ * 与えられた緯度経度から半径内の substations を距離昇順で返す（依頼AA）
+ *
+ * @param origin lat/lng（project の緯度経度を想定）
+ * @param opts.radiusKm 半径 (km、デフォルト 10)
+ * @param opts.limit 最大件数 (デフォルト 5)
+ * @param opts.excludeSlug 除外する substation slug（自身ページ用）
+ */
+export async function getNearbySubstations(opts: {
+  origin: { latitude: number | null | undefined; longitude: number | null | undefined };
+  radiusKm?: number;
+  limit?: number;
+  excludeSlug?: string;
+}): Promise<NearbySubstation[]> {
+  const { origin, radiusKm = 10, limit = 5, excludeSlug } = opts;
+  if (
+    typeof origin.latitude !== 'number' ||
+    typeof origin.longitude !== 'number' ||
+    Number.isNaN(origin.latitude) ||
+    Number.isNaN(origin.longitude)
+  ) {
+    return [];
+  }
+  const candidates = await getAllSubstationsWithCoords();
+  const aliased = candidates
+    .filter((c) => c.slug !== excludeSlug)
+    .map((c) => ({ ...c, lat: c.latitude, lng: c.longitude }));
+  const matches = findWithinRadius(
+    { lat: origin.latitude, lng: origin.longitude },
+    aliased,
+    radiusKm,
+    limit
+  );
+  return matches.map(({ lat: _lat, lng: _lng, distanceKm, ...rest }) => ({
+    ...(rest as SubstationGeoPoint),
+    distanceKm,
+  }));
 }
 
 /**

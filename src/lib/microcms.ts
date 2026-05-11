@@ -226,10 +226,155 @@ export type Project = {
   marketParticipation?: string[];
   sourceUrl?: string;
   body?: string;
+  /**
+   * 緯度（依頼AA Phase 4）。住所を Geocoding で変換した値。
+   * 「接続変電所候補」セクションの距離マッチングに使用。
+   * null/undefined のレコードは matching 対象外（h3 非表示）。
+   */
+  latitude?: number;
+  /** 経度（依頼AA Phase 4）。詳細は latitude を参照。 */
+  longitude?: number;
   publishedAt: string;
   updatedAt: string;
   createdAt: string;
   revisedAt: string;
+};
+
+/**
+ * 緯度経度を持つ project の軽量型（依頼AA Phase 4）
+ * /grid/{slug} の「周辺の蓄電所案件」で表示用。
+ */
+export type ProjectGeoPoint = {
+  slug: string;
+  name: string;
+  prefecture: string | null;
+  outputMw: number | null;
+  capacityMwh: number | null;
+  operator: string | null;
+  status: string | null;
+  latitude: number;
+  longitude: number;
+};
+
+const PROJECT_GEO_FIELDS =
+  'slug,name,prefecture,outputMw,capacityMwh,operator,status,latitude,longitude';
+
+let _projectGeoCache: ProjectGeoPoint[] | null = null;
+
+/**
+ * 緯度経度付き projects を全件取得（モジュールスコープでキャッシュ）
+ * - microCMS の fields に latitude/longitude を含めて 100 件ずつページング
+ * - latitude/longitude が null/undefined のレコードは除外
+ * - 落とし穴 #82: build 時間影響を抑えるためモジュールキャッシュで 1 回のみ fetch
+ */
+export const getAllProjectsWithCoords = async (): Promise<
+  ProjectGeoPoint[]
+> => {
+  if (_projectGeoCache) return _projectGeoCache;
+  const out: ProjectGeoPoint[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  try {
+    for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+      const data = await client.getList<Project>({
+        endpoint: 'projects',
+        queries: {
+          limit,
+          offset,
+          fields: PROJECT_GEO_FIELDS,
+        },
+      });
+      for (const p of data.contents) {
+        if (
+          typeof p.latitude !== 'number' ||
+          typeof p.longitude !== 'number' ||
+          Number.isNaN(p.latitude) ||
+          Number.isNaN(p.longitude)
+        ) {
+          continue;
+        }
+        out.push({
+          slug: p.slug,
+          name: p.name,
+          prefecture: p.prefecture ?? null,
+          outputMw: typeof p.outputMw === 'number' ? p.outputMw : null,
+          capacityMwh: typeof p.capacityMwh === 'number' ? p.capacityMwh : null,
+          operator: p.operator ?? null,
+          status: p.status && p.status.length > 0 ? p.status[0] : null,
+          latitude: p.latitude,
+          longitude: p.longitude,
+        });
+      }
+      if (data.contents.length < limit) break;
+    }
+    _projectGeoCache = out;
+  } catch {
+    _projectGeoCache = out.length > 0 ? out : [];
+  }
+  return _projectGeoCache;
+};
+
+/**
+ * 緯度経度付き substations を全件取得（依頼AA Phase 4、モジュールキャッシュ）
+ * - 既存 getChubuSubstationsForMap は area='中部' 限定だったが、本関数は area 制約なし
+ *   （中部以外も将来緯度経度が追加されたら自動的に拾う）
+ * - latitude/longitude が null/undefined のレコードは除外
+ */
+let _substationGeoAllCache: SubstationGeoPoint[] | null = null;
+export const getAllSubstationsWithCoords = async (): Promise<
+  SubstationGeoPoint[]
+> => {
+  if (_substationGeoAllCache) return _substationGeoAllCache;
+  const out: SubstationGeoPoint[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  try {
+    for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+      const data = await client.getList<Substation>({
+        endpoint: 'substations',
+        queries: {
+          limit,
+          offset,
+          fields: SUBSTATION_MAP_FIELDS,
+        },
+      });
+      for (const s of data.contents) {
+        if (
+          typeof s.latitude !== 'number' ||
+          typeof s.longitude !== 'number' ||
+          Number.isNaN(s.latitude) ||
+          Number.isNaN(s.longitude)
+        ) {
+          continue;
+        }
+        out.push({
+          slug: s.slug,
+          name: s.name,
+          prefecture: s.prefecture ?? null,
+          voltage_primary_kv:
+            typeof s.voltage_primary_kv === 'number'
+              ? s.voltage_primary_kv
+              : null,
+          voltage_secondary_kv:
+            typeof s.voltage_secondary_kv === 'number'
+              ? s.voltage_secondary_kv
+              : null,
+          cap_avail_mw:
+            typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
+          n1_eligible: s.n1_eligible === true,
+          oc_possibility:
+            s.oc_possibility && s.oc_possibility.length > 0
+              ? s.oc_possibility[0]
+              : null,
+          latitude: s.latitude,
+          longitude: s.longitude,
+        });
+      }
+      if (data.contents.length < limit) break;
+    }
+    _substationGeoAllCache = out;
+  } catch {
+    _substationGeoAllCache = out.length > 0 ? out : [];
+  }
+  return _substationGeoAllCache;
 };
 
 export const getProjectList = async (queries?: MicroCMSQueries) => {
