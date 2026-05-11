@@ -1,0 +1,370 @@
+{
+  "scope": "依頼AF: T 40社 (PR TIMES 由来) の body 拡充 draft（既存 会社概要 + 出典を維持しつつ、取扱製品・蓄電所事業との関係 section を追加）",
+  "note": "S 38社 は既に 4-section 完備のため、別途 enrichment proposal を b-s38 file で扱う",
+  "common_template": {
+    "section_order": ["会社概要", "取扱製品・サービス", "蓄電所事業との関係", "出典"],
+    "structure": "<h3>会社概要</h3><ul>...</ul><h3>取扱製品・サービス</h3><ul>...</ul><h3>蓄電所事業との関係</h3><p>200-400字の業界文脈</p><h3>出典</h3><ul>公式サイト + PR TIMES URL</ul>"
+  },
+  "items": [
+    {
+      "slug": "pr-co8483",
+      "name": "トリナ・ソーラー・ジャパン株式会社",
+      "company_id": 8483,
+      "products": ["太陽光モジュール", "系統用蓄電池", "PCS", "EPC・コンサルティング"],
+      "battery_relation": "中国 Trina Solar の日本法人として、世界トップクラスの太陽光モジュール販売を主軸に、系統用蓄電池および PCS の供給も展開。Trina Storage ブランドのコンテナ型 BESS を国内市場に投入し、太陽光併設のハイブリッド蓄電所案件への提案を進める。グローバルでの 6.5GWh 超の蓄電池納入実績を背景に、日本市場では電力会社・大手商社・専門事業者との協業を加速している。",
+      "official_url": "https://www.trinasolar.com/jp",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/8483"
+    },
+    {
+      "slug": "pr-co113700",
+      "name": "日本エネルギー総合システム株式会社",
+      "company_id": 113700,
+      "products": ["系統用蓄電池の開発・運営", "太陽光発電所の開発", "再エネアグリゲーション"],
+      "battery_relation": "国内の独立系再エネ・蓄電池事業者として、系統用蓄電池の自社開発・運営を主軸に展開。複数の高圧蓄電所案件のパイプラインを保有し、需給調整市場・容量市場での運用を視野に入れる。PR TIMES での継続的なリリース発信から、業界での認知度を高めつつ、機関投資家・大手商社との JV 組成にも前向きな姿勢を見せている。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/113700"
+    },
+    {
+      "slug": "pr-co95695",
+      "name": "プロロジス",
+      "company_id": 95695,
+      "products": ["物流不動産の開発・運営", "屋根上太陽光発電", "EV充電インフラ", "施設併設の蓄電池"],
+      "battery_relation": "世界最大級の物流不動産事業者として、自社保有の物流施設屋根上での太陽光発電を全国規模で展開。サステナビリティ戦略の一環として、施設併設の蓄電池導入・EV充電インフラ整備にも注力する。物流施設のテナント向けに脱炭素ソリューションを提供することで、需要家連動型の蓄電池モデルの先進事例を形成している。",
+      "official_url": "https://www.prologis.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/95695"
+    },
+    {
+      "slug": "pr-co164759",
+      "name": "RS ホールディングス株式会社",
+      "company_id": 164759,
+      "products": ["蓄電池システムの開発・販売", "バナジウムレドックスフロー電池", "産業用エネルギーソリューション"],
+      "battery_relation": "RS Tech / LE Sys を擁するグループとして、長時間放電型のバナジウムレドックスフロー電池の社会実装を推進。福島県浪江町プロジェクト（1.99MW / 12MWh、2027年11月商業運転予定）が業界モデルケースとして注目され、リチウムイオン電池主流の市場における長時間貯蔵の主要選択肢としてのポジションを確立しつつある。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/164759"
+    },
+    {
+      "slug": "pr-yanekara",
+      "name": "株式会社Yanekara",
+      "company_id": 67381,
+      "products": ["V2X 充放電器", "EV/PV/蓄電池連携プラットフォーム", "需給管理 SaaS"],
+      "battery_relation": "東京大学発のスタートアップとして、EV・太陽光・蓄電池を統合管理する V2X 充放電器および SaaS プラットフォームを展開。需給管理機能を組み合わせた分散型エネルギーリソース（DER）の集約運用を強みとし、自治体・物流事業者・小売電力事業者との実証案件を多数進める。系統用蓄電池の運用最適化への展開も視野に、業界の DER アグリゲーションのフロンティアを牽引する。",
+      "official_url": "https://yanekara.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/67381"
+    },
+    {
+      "slug": "pr-fluenceenergyinc",
+      "name": "Fluence Energy, Inc.",
+      "company_id": 156207,
+      "products": ["SmartStack（大規模ユーティリティ BESS）", "Sunstack（太陽光併設 BESS）", "Edgestack（商業・産業用 BESS）", "Ultrastack（超大規模 BESS）", "Mosaic（運用最適化 SaaS）"],
+      "battery_relation": "米 Siemens AG と AES Corporation の合弁による系統用蓄電池の世界トップクラスベンダーとして、2025年2月に日本市場本格参入。BESS ハードウェアと運用最適化プラットフォーム Mosaic の統合提供が特徴で、2025年6月にはエナリス（KDDI 子会社）と MOU を締結し、Mosaic とエナリス DERMS の統合運用に取り組む。Hornsdale Power Reserve（豪州）等のグローバル運用実績を日本市場に持ち込む。",
+      "official_url": "https://fluenceenergy.com/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/156207"
+    },
+    {
+      "slug": "pr-co84204",
+      "name": "三井住友ファイナンス＆リース株式会社",
+      "company_id": 84204,
+      "products": ["設備リース", "プロジェクトファイナンス", "再エネ・蓄電池アセット投資", "サステナブルファイナンス"],
+      "battery_relation": "三井住友フィナンシャルグループの中核リース会社として、再エネ・蓄電池関連アセットへの長期投資を本格化。SMFL みらいパートナーズを通じて、姫路蓄電所（出光・レノバ・長瀬産業との4社共同、国内初の蓄電池プロジェクトファイナンス組成案件）に参画した実績を持つ。プロジェクトファイナンス組成力とアセット運用ノウハウを背景に、業界のサステナブルファイナンスの主要プレイヤーとして存在感を拡大している。",
+      "official_url": "https://www.smfl.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/84204"
+    },
+    {
+      "slug": "pr-co69153",
+      "name": "株式会社ノーバル・ホールディングス",
+      "company_id": 69153,
+      "products": ["再エネ事業の開発・運営", "蓄電所事業", "ホールディングス傘下事業会社の統括"],
+      "battery_relation": "再エネ・脱炭素関連の事業会社を傘下に持つホールディングス。系統用蓄電池の自社開発案件のパイプラインを保有し、機関投資家との連携による中規模案件のシリーズ展開を進める。PR TIMES での継続的な情報発信から、業界での認知度向上と事業者ネットワークの拡充に注力している姿勢が伺える。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/69153"
+    },
+    {
+      "slug": "pr-hobeenergy",
+      "name": "HOBE ENERGY株式会社",
+      "company_id": 169829,
+      "products": ["系統用蓄電池の開発", "再エネ事業", "エネルギーマネジメント"],
+      "battery_relation": "系統用蓄電池の開発を主軸とする独立系エネルギー事業者。複数の高圧蓄電所案件を推進し、機関投資家との JV モデルでの事業組成を検討段階にある。PR TIMES でのリリース発信を通じて、業界での認知度確立と案件パイプラインの拡充を進める。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/169829"
+    },
+    {
+      "slug": "pr-co173175",
+      "name": "日本蓄電開発機構株式会社",
+      "company_id": 173175,
+      "products": ["系統用蓄電池の開発支援", "事業組成コンサルティング", "業界調査・分析"],
+      "battery_relation": "系統用蓄電池の開発を支援する専門事業者として、案件組成・系統連系協議・市場参加戦略の各局面で事業者支援を提供。業界の制度成熟と複雑化に対応する形で、新規参入事業者向けのワンストップサービスを展開する。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/173175"
+    },
+    {
+      "slug": "pr-co160772",
+      "name": "株式会社エンバイオ・ホールディングス",
+      "company_id": 160772,
+      "products": ["土壌汚染浄化・環境修復", "再エネ事業の開発", "蓄電所事業"],
+      "battery_relation": "土壌汚染浄化を主業とする環境系事業者として、再エネ・蓄電所事業への展開を進める。工場跡地等の汚染地浄化と再エネ・蓄電所開発を組み合わせた業界先進的な土地活用モデルを志向しており、業界の用地確保問題（落とし穴 #88 等）への独自アプローチが注目される。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/160772"
+    },
+    {
+      "slug": "pr-co71823",
+      "name": "株式会社グリーンエナジー&カンパニー",
+      "company_id": 71823,
+      "products": ["再エネ事業の開発・運営", "太陽光発電所", "蓄電所事業", "PPA"],
+      "battery_relation": "再エネ・蓄電池関連事業者として、太陽光発電所の開発実績を基盤に系統用蓄電池の自社開発・運営を展開。PPA モデルでの自家消費型ソリューション、機関投資家との JV による中規模案件のシリーズ展開を進めており、地域エネルギー事業者としての存在感を高めている。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/71823"
+    },
+    {
+      "slug": "pr-sigenergyjapan",
+      "name": "Sigenergy Japan株式会社",
+      "company_id": 163624,
+      "products": ["家庭用・産業用蓄電池", "PCS・EMS", "EV充電インフラ", "再エネ統合ソリューション"],
+      "battery_relation": "中国 Sigenergy の日本法人として、家庭用・産業用の蓄電池および統合エネルギー管理ソリューションを展開。リチウムイオン電池主流の市場で、PCS・EMS・EV充電を一体提供する統合パッケージモデルを強みとし、住宅市場から商業・産業用市場への展開を加速している。",
+      "official_url": "https://sigenergy.com/jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/163624"
+    },
+    {
+      "slug": "pr-mirarth",
+      "name": "MIRARTHホールディングス株式会社",
+      "company_id": 34534,
+      "products": ["不動産開発・販売（タカラレーベン）", "再エネ事業（MIRARTHエナジー）", "蓄電所事業", "PPA"],
+      "battery_relation": "東証プライム上場のホールディングス（旧タカラレーベングループ）として、不動産開発の主業から再エネ・蓄電所事業へ多角展開。MIRARTHエナジーを通じて太陽光発電所の開発・運営実績を積み上げ、系統用蓄電池の自社開発案件への参入を進める。上場企業としてのファイナンス力と物件開発ノウハウを背景に、業界の中長期成長エリアへの投資を加速している。",
+      "official_url": "https://www.mirarth.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/34534"
+    },
+    {
+      "slug": "pr-gurnenergypteltd",
+      "name": "Gurīn Energy Pte. Ltd.",
+      "company_id": 134428,
+      "products": ["再エネ事業の開発", "蓄電所事業", "PPA"],
+      "battery_relation": "シンガポール本社の再エネ・蓄電所事業者として、日本市場での系統用蓄電池案件展開を進める。アジア太平洋地域での横断的な事業ノウハウを背景に、日本の制度成熟と市場拡大を見据えた長期投資を計画している。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/134428"
+    },
+    {
+      "slug": "pr-qdpower",
+      "name": "株式会社QD Power",
+      "company_id": 142213,
+      "products": ["産業用蓄電池", "PCS・電源装置", "EV充電インフラ"],
+      "battery_relation": "産業用蓄電池および電源装置を主力とする事業者として、系統用蓄電池の関連製品を展開。BESS のサプライチェーン参画を通じて、業界の機器供給網拡充に貢献する位置にある。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/142213"
+    },
+    {
+      "slug": "pr-co40312",
+      "name": "武蔵精密工業株式会社",
+      "company_id": 40312,
+      "products": ["自動車部品（差動装置・ベベルギア）", "電池関連部品", "蓄電所事業"],
+      "battery_relation": "自動車部品メーカー（東証プライム）として、EV 時代を見据えた電池関連事業への多角展開を進める。完全 EV 化対応の経営戦略の一環として、系統用蓄電池の自社開発案件への参入を検討段階にあり、自動車サプライヤーの BESS 市場参入の象徴的事例として業界に注目される。",
+      "official_url": "https://www.musashi.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/40312"
+    },
+    {
+      "slug": "pr-co125384",
+      "name": "ジンコソーラージャパン株式会社",
+      "company_id": 125384,
+      "products": ["太陽光モジュール", "産業用蓄電池", "BESS システム"],
+      "battery_relation": "中国 JinkoSolar の日本法人として、世界トップクラスの太陽光モジュール販売を主軸に、産業用蓄電池および BESS システムの供給も展開。グローバルでの蓄電池事業（SunTera シリーズ等）を日本市場に導入することで、太陽光併設のハイブリッド蓄電所案件への提案を進める。",
+      "official_url": "https://www.jinkosolar.com/jp",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/125384"
+    },
+    {
+      "slug": "pr-co63241",
+      "name": "日東工業株式会社",
+      "company_id": 63241,
+      "products": ["配電盤・分電盤", "EV充電器", "産業用蓄電池", "BESS パッケージ"],
+      "battery_relation": "国内配電盤大手（東証プライム）として、EV 充電器・産業用蓄電池の事業展開を強化。配電インフラの設計・製造ノウハウを背景に、系統用蓄電池の周辺機器（連系設備・受配電盤）を供給する位置にあり、業界のサプライチェーン基盤を支える主要プレイヤーの一つ。",
+      "official_url": "https://www.nito.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/63241"
+    },
+    {
+      "slug": "pr-co117654",
+      "name": "株式会社資源総合システム",
+      "company_id": 117654,
+      "products": ["再エネ業界調査・コンサルティング", "市場分析レポート", "事業性評価"],
+      "battery_relation": "再エネ・蓄電池業界の専門調査会社（RTS Corporation）として、業界レポートの定期発行を通じて市場動向の定点観測を提供。経済産業省・国際機関等への調査受託実績も多く、業界の意思決定支援基盤の一翼を担う。系統用蓄電池市場の規模予測・事業性評価のリファレンスエリアとして、機関投資家・大手商社・専門事業者の参照源となっている。",
+      "official_url": "https://www.rts-pv.com/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/117654"
+    },
+    {
+      "slug": "pr-co160356",
+      "name": "ADワークスグループ",
+      "company_id": 160356,
+      "products": ["不動産投資・運用", "再エネ事業", "蓄電所事業"],
+      "battery_relation": "不動産投資を主業とするグループとして、再エネ・蓄電所事業への多角展開を進める。不動産アセット運用のノウハウを蓄電所アセットに転用する形で、機関投資家との JV による中規模案件のシリーズ展開を志向している。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/160356"
+    },
+    {
+      "slug": "pr-gates",
+      "name": "GATES株式会社",
+      "company_id": 81261,
+      "products": ["再エネ事業の開発", "蓄電所事業", "事業性評価コンサルティング"],
+      "battery_relation": "再エネ・蓄電池関連事業者として、系統用蓄電池の自社開発および事業組成支援を展開。PR TIMES でのリリース発信を通じて業界での認知度確立と案件パイプライン拡充を進める。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/81261"
+    },
+    {
+      "slug": "pr-co9490",
+      "name": "ハンファジャパン株式会社",
+      "company_id": 9490,
+      "products": ["太陽光モジュール（Q CELLS）", "産業用蓄電池", "BESS ソリューション"],
+      "battery_relation": "韓国 Hanwha Group の日本法人として、Q CELLS ブランドの太陽光モジュールおよび関連 BESS ソリューションを展開。グローバルでの蓄電池量産能力を背景に、日本市場での太陽光併設 BESS の案件提案を進める。",
+      "official_url": "https://www.hanwha-japan.com/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/9490"
+    },
+    {
+      "slug": "pr-ecoflowtechnologyjapan",
+      "name": "EcoFlow Technology Japan株式会社",
+      "company_id": 50601,
+      "products": ["ポータブル電源", "家庭用蓄電池", "産業用蓄電池"],
+      "battery_relation": "中国 EcoFlow の日本法人として、ポータブル電源・家庭用蓄電池の量販事業を主軸に、産業用・系統用蓄電池への展開も視野に入れる。災害レジリエンス需要の高まりを背景に、家庭用市場での実装ノウハウを業界の中規模案件に応用する戦略を志向している。",
+      "official_url": "https://jp.ecoflow.com/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/50601"
+    },
+    {
+      "slug": "pr-co17692",
+      "name": "にしてつグループ",
+      "company_id": 17692,
+      "products": ["鉄道・交通", "不動産開発", "再エネ事業", "蓄電所事業"],
+      "battery_relation": "西日本鉄道を中核とする九州地盤のグループ（東証プライム）として、グループ事業の脱炭素化推進の一環で再エネ・蓄電所事業への参入を進める。沿線不動産・物流施設の集積を活用した自家消費型蓄電池モデル、地域エネルギー事業者としての存在感拡大が業界の中長期成長を支える。",
+      "official_url": "https://www.nnr.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/17692"
+    },
+    {
+      "slug": "pr-tecra",
+      "name": "TECRA株式会社",
+      "company_id": 61009,
+      "products": ["再エネ事業の開発", "蓄電所事業", "事業性評価コンサルティング"],
+      "battery_relation": "再エネ・蓄電池関連事業者として、系統用蓄電池の自社開発案件およびコンサルティングサービスを展開。PR TIMES でのリリース発信を通じて、業界での認知度確立と案件パイプラインの拡充を進めている。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/61009"
+    },
+    {
+      "slug": "pr-auroraenergyresearch",
+      "name": "Aurora Energy Research株式会社",
+      "company_id": 167879,
+      "products": ["エネルギー市場分析", "蓄電池事業性評価", "市場価格予測モデル"],
+      "battery_relation": "英オックスフォード大学発の世界的エネルギー市場分析会社の日本法人として、需給調整市場・容量市場・卸電力市場の価格予測モデルを提供。系統用蓄電池の事業性評価における業界のリファレンス的存在として、機関投資家・大手商社・専門事業者の意思決定を支援する。",
+      "official_url": "https://auroraer.com/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/167879"
+    },
+    {
+      "slug": "pr-co96742",
+      "name": "サステナブルホールディングス株式会社",
+      "company_id": 96742,
+      "products": ["再エネ事業", "蓄電所事業", "サステナブルファイナンス"],
+      "battery_relation": "再エネ・サステナビリティを主軸とするホールディングス。系統用蓄電池の自社開発案件およびグループ会社の事業統括を通じて、業界の中規模事業者として存在感を高める。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/96742"
+    },
+    {
+      "slug": "pr-co143674",
+      "name": "シーラホールディングス",
+      "company_id": 143674,
+      "products": ["不動産投資・運用", "再エネ事業", "蓄電所事業"],
+      "battery_relation": "不動産投資を主業とするホールディングス。系統用蓄電池の自社開発案件への参入および機関投資家との JV による中規模案件のシリーズ展開を志向する。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/143674"
+    },
+    {
+      "slug": "pr-co154701",
+      "name": "ソーラーフロンティア株式会社",
+      "company_id": 154701,
+      "products": ["CIS薄膜太陽電池", "太陽光発電所の開発・販売", "蓄電池併設ソリューション"],
+      "battery_relation": "国産 CIS 薄膜太陽電池の大手メーカーとして、太陽光発電所の開発・販売を主軸に、蓄電池併設ソリューションへの展開を強化。長年の太陽光業界での実績と国産品としての信頼性を背景に、日本市場特化の太陽光＋蓄電池のハイブリッド事業を展開する。",
+      "official_url": "https://www.solar-frontier.com/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/154701"
+    },
+    {
+      "slug": "pr-co53091",
+      "name": "シナネンホールディングス株式会社",
+      "company_id": 53091,
+      "products": ["LPガス・灯油販売", "電力小売", "再エネ事業", "蓄電所事業"],
+      "battery_relation": "国内エネルギー業界の老舗（東証プライム）として、LPガス・灯油・電力小売の主業を背景に、再エネ・蓄電所事業への多角展開を進める。地域エネルギー事業者としての顧客基盤を活用した自家消費型蓄電池モデルが特徴。",
+      "official_url": "https://sinanen-holdings.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/53091"
+    },
+    {
+      "slug": "pr-co9336",
+      "name": "株式会社多摩川ホールディングス",
+      "company_id": 9336,
+      "products": ["再エネ事業の開発・運営", "太陽光発電所", "蓄電所事業"],
+      "battery_relation": "再エネ事業を主軸とするホールディングス（東証スタンダード）として、太陽光発電所の開発・運営を基盤に系統用蓄電池の自社開発案件への参入を進める。",
+      "official_url": "https://tamagawa-hd.com/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/9336"
+    },
+    {
+      "slug": "pr-co107162",
+      "name": "株式会社ワイヤーエナジー",
+      "company_id": 107162,
+      "products": ["再エネ事業", "蓄電所事業", "EV充電インフラ"],
+      "battery_relation": "再エネ・蓄電池関連事業者として、系統用蓄電池の自社開発案件および EV 充電インフラ整備を展開。中小規模案件のシリーズ展開を通じて、業界での認知度確立と事業者ネットワーク拡充を進める。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/107162"
+    },
+    {
+      "slug": "pr-co85148",
+      "name": "株式会社和上ホールディングス",
+      "company_id": 85148,
+      "products": ["太陽光発電の販売・施工", "産業用蓄電池", "蓄電所事業"],
+      "battery_relation": "太陽光発電の販売・施工を主業とするホールディングスとして、産業用蓄電池および系統用蓄電池への展開を進める。中小規模案件中心の事業ポートフォリオを通じて、地域エネルギー事業者としての存在感を高めている。",
+      "official_url": "https://wajo-holdings.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/85148"
+    },
+    {
+      "slug": "pr-goodwejapan",
+      "name": "GoodWe Japan株式会社",
+      "company_id": 167163,
+      "products": ["太陽光発電用 PCS", "産業用蓄電池", "ハイブリッドインバーター"],
+      "battery_relation": "中国 GoodWe の日本法人として、太陽光発電用 PCS および産業用蓄電池の供給を展開。グローバルでの PCS 量産規模を背景に、日本市場での太陽光併設・蓄電池併設 PCS の案件提案を進める。",
+      "official_url": "https://en.goodwe.com/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/167163"
+    },
+    {
+      "slug": "pr-where",
+      "name": "株式会社WHERE",
+      "company_id": 146022,
+      "products": ["再エネ事業の開発", "蓄電所事業", "事業性評価コンサルティング"],
+      "battery_relation": "再エネ・蓄電池関連事業者として、系統用蓄電池の自社開発案件およびコンサルティングサービスを展開。PR TIMES での継続的なリリース発信を通じて、業界での認知度確立を進める。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/146022"
+    },
+    {
+      "slug": "pr-co166651",
+      "name": "ちゅうぎんFG",
+      "company_id": 166651,
+      "products": ["金融サービス（中国銀行グループ）", "プロジェクトファイナンス", "再エネ・蓄電所アセット投資"],
+      "battery_relation": "中国地方を地盤とする金融グループ（東証プライム）として、再エネ・蓄電所案件へのプロジェクトファイナンス組成・アセット投資に注力。地域金融機関としての営業基盤を活用した中小規模事業者向けのファイナンス支援が特徴で、地域経済の脱炭素化推進に貢献する。",
+      "official_url": "https://www.chugin-fg.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/166651"
+    },
+    {
+      "slug": "pr-co75524",
+      "name": "鈴与グループ",
+      "company_id": 75524,
+      "products": ["物流・運輸", "石油・燃料事業", "再エネ事業", "蓄電所事業"],
+      "battery_relation": "静岡県地盤の総合事業グループとして、物流・石油・エネルギーの主業を背景に、再エネ・蓄電所事業への参入を進める。物流施設・石油基地等の自社保有資産を活用した蓄電所立地モデル、地域エネルギー事業者としての存在感拡大が業界の中長期成長を支える。",
+      "official_url": "https://www.suzuyo.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/75524"
+    },
+    {
+      "slug": "pr-co169202",
+      "name": "野村屋グループ",
+      "company_id": 169202,
+      "products": ["不動産・建設", "再エネ事業", "蓄電所事業"],
+      "battery_relation": "不動産・建設業を主業とするグループとして、再エネ・蓄電所事業への多角展開を進める。自社保有用地を活用した蓄電所立地モデル、地域企業との連携を通じた中小規模案件のシリーズ展開が特徴。",
+      "official_url": "",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/169202"
+    },
+    {
+      "slug": "pr-co42098",
+      "name": "古河電池株式会社",
+      "company_id": 42098,
+      "products": ["鉛蓄電池", "リチウムイオン電池", "産業用蓄電池", "BESS パッケージ"],
+      "battery_relation": "古河電工グループの蓄電池専業メーカー（東証スタンダード）として、鉛蓄電池・リチウムイオン電池の国内製造を主軸に、産業用・系統用蓄電池への展開を強化。経済安全保障推進法に整合する国産電池採用案件、信頼性重視の業務用市場における主要選択肢として位置付けられる。",
+      "official_url": "https://www.furukawadenchi.co.jp/",
+      "prtimes_url": "https://prtimes.jp/main/html/searchrlp/company_id/42098"
+    }
+  ]
+}

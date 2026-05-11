@@ -1,0 +1,292 @@
+{
+  "scope": "依頼AB Phase A: 政策・法制度カレンダー初期データ。過去2年 (2024-05～) + 今後1年 (～2027-05) の重要業界イベント 26件。各 7 カテゴリ (容量市場/需給調整/長期脱炭素/パブコメ/重要会議/補助金/法改正)。",
+  "schema_note": "microCMS endpoint policy-events 想定。fields: title, slug, eventDate (YYYY-MM-DD), eventType (法改正/パブコメ/重要会議/オークション/公表), issuer, description, sourceUrl, status (予定/進行中/終了), category[].",
+  "items": [
+    {
+      "slug": "ltdc-3-application-2026-01",
+      "title": "長期脱炭素電源オークション 第3回 応札開始",
+      "eventDate": "2026-01-15",
+      "eventType": "オークション",
+      "issuer": "OCCTO",
+      "description": "電力広域的運営推進機関（OCCTO）が実施する長期脱炭素電源オークション第3回の応札期間が2026年1月に開始。蓄電所事業者には大型 BESS 案件の長期固定収入確保の機会となり、業界の事業性安定化に貢献する重要オークション。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/youryou-ltdc/",
+      "status": "終了",
+      "category": ["長期脱炭素オークション"]
+    },
+    {
+      "slug": "capacity-main-auction-2026-09",
+      "title": "容量市場メインオークション（2030年度実需給）応札期間",
+      "eventDate": "2026-09-01",
+      "eventType": "オークション",
+      "issuer": "OCCTO",
+      "description": "2030年度の容量確保契約金額を決定する容量市場メインオークション。蓄電所事業者は容量提供単価を入札し、4年後の固定収入を確保。実需給年度の電力安定供給に向けた業界最重要オークションの一つ。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/jitsujukyu/",
+      "status": "予定",
+      "category": ["容量市場"]
+    },
+    {
+      "slug": "capacity-additional-auction-2026-03",
+      "title": "容量市場追加オークション（2026年度向け）",
+      "eventDate": "2026-03-15",
+      "eventType": "オークション",
+      "issuer": "OCCTO",
+      "description": "メインオークション後の不足分を補完する追加オークション。直前の需要見通し更新を踏まえた追加調達で、蓄電所事業者には短期参入のチャンス。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/jitsujukyu/",
+      "status": "終了",
+      "category": ["容量市場"]
+    },
+    {
+      "slug": "balancing-market-q1-2026",
+      "title": "需給調整市場 一次調整力（FCR）2026年第1四半期商品 募集開始",
+      "eventDate": "2026-01-04",
+      "eventType": "オークション",
+      "issuer": "OCCTO",
+      "description": "需給調整市場の一次調整力（FCR、応動5秒・継続15分）商品の四半期募集。蓄電所事業者は応動精度の高さを活かして高単価商品への入札を狙う、業界のマルチユース運用の中核市場。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/jukyutyousei/",
+      "status": "終了",
+      "category": ["需給調整市場"]
+    },
+    {
+      "slug": "balancing-market-secondary-2026-04",
+      "title": "需給調整市場 二次調整力①・② 2026年度商品 制度改定",
+      "eventDate": "2026-04-01",
+      "eventType": "公表",
+      "issuer": "OCCTO",
+      "description": "二次調整力①（応動5分・継続30分）・二次調整力②（応動5分・継続30分）の商品仕様改定が2026年度から適用。最低応札単位の見直し、ペナルティ設計の修正など、蓄電所事業者の運用設計に影響する重要改定。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/jukyutyousei/",
+      "status": "終了",
+      "category": ["需給調整市場"]
+    },
+    {
+      "slug": "balancing-market-tertiary-2-2025-04",
+      "title": "需給調整市場 三次調整力② 商品 本格運用開始",
+      "eventDate": "2025-04-01",
+      "eventType": "公表",
+      "issuer": "OCCTO",
+      "description": "需給調整市場の三次調整力②（応動15分・継続3時間）が2025年4月から本格運用開始。再エネ予測誤差吸収用の長時間商品で、蓄電所事業者の中時間運用市場として定着しつつある。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/jukyutyousei/",
+      "status": "終了",
+      "category": ["需給調整市場"]
+    },
+    {
+      "slug": "non-firm-bess-extension-2025-04",
+      "title": "ノンファーム型接続 蓄電所拡大適用 開始",
+      "eventDate": "2025-04-01",
+      "eventType": "公表",
+      "issuer": "OCCTO",
+      "description": "ノンファーム型接続が再エネ発電所だけでなく蓄電所にも本格適用される制度改正が2025年4月から開始。系統制約エリアでの蓄電所立地が容易化し、業界の事業組成に大きな影響を与える制度変更。",
+      "sourceUrl": "https://www.occto.or.jp/access/non-firm.html",
+      "status": "終了",
+      "category": ["法改正"]
+    },
+    {
+      "slug": "n1-control-bess-2024-04",
+      "title": "N-1電制 蓄電所適用ガイドライン 公表",
+      "eventDate": "2024-04-01",
+      "eventType": "公表",
+      "issuer": "OCCTO",
+      "description": "N-1電制（N-1事故時の自動出力制御）の蓄電所適用ガイドラインが2024年4月に公表。蓄電所事業者は N-1電制適用可否を案件設計時から考慮する必要があり、業界の系統連系プロセスに影響。",
+      "sourceUrl": "https://www.occto.or.jp/access/n-1.html",
+      "status": "終了",
+      "category": ["重要会議"]
+    },
+    {
+      "slug": "battery-supply-plan-approved-2024-09",
+      "title": "蓄電池供給確保計画 第1回認定（GSユアサ等4社）",
+      "eventDate": "2024-09-01",
+      "eventType": "公表",
+      "issuer": "METI",
+      "description": "経済安全保障推進法に基づく蓄電池供給確保計画の第1回認定で、GSユアサ（703億円・年2GWh・2028年10月供給開始）など4社が認定。国産電池の供給能力強化に向けた国家戦略の中核施策で、業界の中長期競争力に影響。",
+      "sourceUrl": "https://www.meti.go.jp/press/2024/09/20240901001/20240901001.html",
+      "status": "終了",
+      "category": ["重要会議", "補助金"]
+    },
+    {
+      "slug": "sii-bess-subsidy-2025-fy",
+      "title": "SII 蓄電池導入支援事業 2025年度 公募開始",
+      "eventDate": "2025-04-15",
+      "eventType": "公表",
+      "issuer": "SII",
+      "description": "環境共創イニシアチブ（SII）の蓄電池導入支援事業 2025年度公募が開始。家庭用・産業用・系統用の各セグメント向け補助金プログラムで、業界の市場拡大を後押しする主要補助金の一つ。",
+      "sourceUrl": "https://sii.or.jp/",
+      "status": "終了",
+      "category": ["補助金"]
+    },
+    {
+      "slug": "meti-grid-bess-subsidy-2026-fy",
+      "title": "METI 系統用蓄電池導入支援補助金 2026年度 公募開始",
+      "eventDate": "2026-04-01",
+      "eventType": "公表",
+      "issuer": "METI",
+      "description": "経済産業省の系統用蓄電池導入支援補助金 2026年度公募が開始。再エネ大量連系時代の系統安定化を目的とした大型補助金で、業界の事業組成に直結する重要施策。",
+      "sourceUrl": "https://www.meti.go.jp/policy/energy_environment/global_warming/",
+      "status": "終了",
+      "category": ["補助金"]
+    },
+    {
+      "slug": "env-storage-parity-2025-fy",
+      "title": "環境省 ストレージパリティ事業 2025年度 公募",
+      "eventDate": "2025-05-15",
+      "eventType": "公表",
+      "issuer": "環境省",
+      "description": "環境省のストレージパリティ達成支援事業 2025年度公募。需要家による自家消費型太陽光発電＋蓄電池導入を支援する補助金で、業界の低圧リソース市場の拡大に貢献。",
+      "sourceUrl": "https://www.env.go.jp/earth/post_158.html",
+      "status": "終了",
+      "category": ["補助金"]
+    },
+    {
+      "slug": "occto-grid-info-public-2025-04",
+      "title": "OCCTO 系統情報公開ガイドライン 改訂版 適用",
+      "eventDate": "2025-04-01",
+      "eventType": "法改正",
+      "issuer": "OCCTO",
+      "description": "OCCTO の系統情報公開ガイドラインが2025年4月に改訂・適用開始。蓄電所事業者の用地選定・連系検討に直接影響する変電所別空き容量情報の公開ルールが整備され、業界の透明性が向上。",
+      "sourceUrl": "https://www.occto.or.jp/access/",
+      "status": "終了",
+      "category": ["法改正", "重要会議"]
+    },
+    {
+      "slug": "tepco-pg-grid-info-suspension-2026-05",
+      "title": "東京電力PG 系統情報公開 一時停止（再開予定）",
+      "eventDate": "2026-05-01",
+      "eventType": "公表",
+      "issuer": "東京電力パワーグリッド",
+      "description": "東京電力パワーグリッドが系統情報（変電所別空き容量等）の公開を一時停止し、再開準備中。蓄電所事業者の関東エリア用地選定に影響する事案で、業界の代替アクセス方法の確立が急務。",
+      "sourceUrl": "https://www.tepco.co.jp/pg/",
+      "status": "進行中",
+      "category": ["公表", "重要会議"]
+    },
+    {
+      "slug": "meti-bess-policy-rewrite-2026-05",
+      "title": "経済産業省 BESS（系統用蓄電池）政策の深掘り 公表",
+      "eventDate": "2026-05-08",
+      "eventType": "公表",
+      "issuer": "METI",
+      "description": "経済産業省が2026年5月、系統用蓄電池政策の包括的アップデートを公表。補助金・市場制度・規制の体系を整理し、業界の中長期成長戦略の指針を提示。",
+      "sourceUrl": "https://www.meti.go.jp/",
+      "status": "終了",
+      "category": ["公表"]
+    },
+    {
+      "slug": "occto-deep-rewrite-2026-05",
+      "title": "OCCTO 系統連系制度の深掘り公表",
+      "eventDate": "2026-05-08",
+      "eventType": "公表",
+      "issuer": "OCCTO",
+      "description": "電力広域的運営推進機関が2026年5月、系統連系制度の包括的アップデート公表。ノンファーム接続・N-1電制・空き容量算定の各論点を整理し、業界の事業組成プロセスの明確化を進める。",
+      "sourceUrl": "https://www.occto.or.jp/",
+      "status": "終了",
+      "category": ["公表"]
+    },
+    {
+      "slug": "vpp-bess-deep-rewrite-2026-05",
+      "title": "VPP（仮想発電所）+ 蓄電池の制度整備 公表",
+      "eventDate": "2026-05-08",
+      "eventType": "公表",
+      "issuer": "METI",
+      "description": "経済産業省が2026年5月、VPP（仮想発電所）と蓄電池の制度整備について公表。アグリゲーター事業者・低圧リソース市場の制度設計が進展し、業界の DER 統合運用モデルの基盤が整備される。",
+      "sourceUrl": "https://www.meti.go.jp/policy/energy_environment/",
+      "status": "終了",
+      "category": ["公表", "法改正"]
+    },
+    {
+      "slug": "energy-basic-plan-7-2024-12",
+      "title": "第7次エネルギー基本計画 閣議決定",
+      "eventDate": "2024-12-26",
+      "eventType": "法改正",
+      "issuer": "METI",
+      "description": "第7次エネルギー基本計画が2024年12月に閣議決定。2040年度の電源構成目標、再エネ・原子力・火力・蓄電池の役割を整理し、業界の中長期戦略の指針となる最重要政策文書。",
+      "sourceUrl": "https://www.meti.go.jp/press/2024/12/20241226002/20241226002.html",
+      "status": "終了",
+      "category": ["法改正", "重要会議"]
+    },
+    {
+      "slug": "occto-balancing-market-review-2026",
+      "title": "OCCTO 需給調整市場 制度見直し議論 開始",
+      "eventDate": "2026-03-01",
+      "eventType": "重要会議",
+      "issuer": "OCCTO",
+      "description": "OCCTO の需給調整市場制度見直し議論が2026年3月に本格開始。三次調整力②の運用結果、商品別の応札動向、ペナルティ設計の見直しなどが論点。業界の中期マルチユース運用戦略に影響。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/jukyutyousei/",
+      "status": "進行中",
+      "category": ["重要会議"]
+    },
+    {
+      "slug": "meti-bess-safety-pubcomm-2025-12",
+      "title": "電気事業法施行規則 蓄電所安全規程 改正案パブコメ",
+      "eventDate": "2025-12-15",
+      "eventType": "パブコメ",
+      "issuer": "METI",
+      "description": "電気事業法施行規則の蓄電所安全規程改正案について経済産業省がパブリックコメント募集（締切 2026年1月15日）。火災対応・消防隊員安全確保等の業界共通課題への対応で、業界の地域受容性確保にも影響。",
+      "sourceUrl": "https://www.meti.go.jp/",
+      "status": "終了",
+      "category": ["パブコメ", "法改正"]
+    },
+    {
+      "slug": "occto-non-firm-pubcomm-2025-09",
+      "title": "ノンファーム接続制度 詳細運用ルール パブコメ",
+      "eventDate": "2025-09-01",
+      "eventType": "パブコメ",
+      "issuer": "OCCTO",
+      "description": "ノンファーム接続制度の詳細運用ルール案について OCCTO がパブリックコメント募集。出力制御指令の優先順位、補償ルール、適用範囲の明確化など、蓄電所事業者の事業性に直結する重要パブコメ。",
+      "sourceUrl": "https://www.occto.or.jp/access/non-firm.html",
+      "status": "終了",
+      "category": ["パブコメ", "法改正"]
+    },
+    {
+      "slug": "renewable-energy-act-amendment-pubcomm-2026-02",
+      "title": "再エネ特措法 改正案 パブコメ",
+      "eventDate": "2026-02-01",
+      "eventType": "パブコメ",
+      "issuer": "METI",
+      "description": "再エネ特措法の改正案について経済産業省がパブリックコメント募集。FIP制度の運用見直し、地域共生型再エネの推進、蓄電池併設インセンティブの整備などが論点。",
+      "sourceUrl": "https://www.meti.go.jp/",
+      "status": "終了",
+      "category": ["パブコメ", "法改正"]
+    },
+    {
+      "slug": "meti-bess-industry-strategy-2024-11",
+      "title": "蓄電池産業戦略検討会 第1回",
+      "eventDate": "2024-11-15",
+      "eventType": "重要会議",
+      "issuer": "METI",
+      "description": "経済産業省の蓄電池産業戦略検討会が2024年11月に初開催。蓄電池サプライチェーン、国際競争力、経済安全保障の各論点を体系化し、業界の中長期戦略の方向性を議論。",
+      "sourceUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/chikudenchi/",
+      "status": "終了",
+      "category": ["重要会議"]
+    },
+    {
+      "slug": "renewable-mass-deploy-2026",
+      "title": "再生可能エネルギー大量導入小委員会 2026年度 議論",
+      "eventDate": "2026-04-15",
+      "eventType": "重要会議",
+      "issuer": "METI",
+      "description": "総合資源エネルギー調査会の再生可能エネルギー大量導入・次世代電力ネットワーク小委員会の2026年度議論。蓄電池の役割、系統増強、地域間連系設備の整備が中心論点。",
+      "sourceUrl": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/",
+      "status": "進行中",
+      "category": ["重要会議"]
+    },
+    {
+      "slug": "gx-execution-conference-2026",
+      "title": "GX 実行会議 2026年定例会議",
+      "eventDate": "2026-06-01",
+      "eventType": "重要会議",
+      "issuer": "内閣官房",
+      "description": "GX（グリーントランスフォーメーション）実行会議の2026年定例会議。GX 経済移行債の発行計画、蓄電池産業への投資計画、再エネ大量導入の進捗が議題。業界の長期戦略の基盤となる重要会議。",
+      "sourceUrl": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/",
+      "status": "予定",
+      "category": ["重要会議"]
+    },
+    {
+      "slug": "nedo-battery-research-2026",
+      "title": "NEDO 蓄電池技術開発プロジェクト 2026年度公募",
+      "eventDate": "2026-04-15",
+      "eventType": "公表",
+      "issuer": "NEDO",
+      "description": "新エネルギー・産業技術総合開発機構（NEDO）の蓄電池技術開発プロジェクト 2026年度公募。次世代電池（全固体・ナトリウムイオン・レドックスフロー等）の研究開発、製造プロセス革新等を支援。",
+      "sourceUrl": "https://www.nedo.go.jp/",
+      "status": "終了",
+      "category": ["補助金"]
+    }
+  ]
+}

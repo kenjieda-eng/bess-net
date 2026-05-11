@@ -1,0 +1,435 @@
+{
+  "count": 43,
+  "items": [
+    {
+      "source_id": "qr4hzy_5w0tq",
+      "source_title": "蓄電所ネット（bess-net.jp）ローンチのお知らせ ── 日本初の蓄電所業界専門ポータル",
+      "source_body": "<p>2026年4月29日、日本初となる蓄電所（系統用蓄電池）業界専門ポータルサイト「蓄電所ネット」（URL：bess-net.jp）が正式ローンチしました。一般社団法人エネルギー情報センターが運営主体となり、2030年までに「業界の誰もが知っているサイト」となることを目指します。</p><p><strong>ローンチ時の主要コンテンツ</strong>として、用語集（業界辞典）503語、解説記事30本、プロジェクトDB（国内蓄電所案件）500件、補助金カレンダー50件、編集部発信ニュースを公開しています。今後、Phase 1（0〜9ヶ月）で記事600本・インタビュー36本の追加、事業者カテゴリ一覧、火災・トラブル事例DB、日本の蓄電所マップなどを順次拡充予定です。</p><p><strong>差別化軸</strong>として、Energy-Storage.News型の業界メディア機能、Sandia Global Energy Storage DB級のプロジェクトDB、EPRI Failure DB級の安全情報、LoopNet型の案件マッチング、G2型の比較レビューを、日本市場特化で一体提供する点を掲げています。系統用蓄電池に特化した既存サイト・有料DBの強みを取り込みつつ、無料起点で集客する設計です。</p><p>サイトの活用イメージとして、開発事業者の用地選定・系統条件確認、EPC・O&amp;M事業者の案件動向把握、投資家・ファンドの市場分析、自治体担当者の制度理解、メディア・一般読者の業界入門、と多層的なユーザー層に対応します。事業者・専門職リードの月次10万人到達を中期目標とし、業界従事者の指名認知率80%以上を2030年KPIとして掲げます。</p><p>今後、業界専門家へのインタビュー連載、独自データ可視化（Battery Charts型）、コミュニティ機能、コーポレートPPA・24/7マッチング情報、ESG・グリーンファイナンス情報なども順次追加予定です。業界の皆様からのフィードバック・情報提供を歓迎いたします。</p><p>運営：一般社団法人エネルギー情報センター／編集部問合せ：bess-net.jp 運営者情報ページより。</p>",
+      "source_body_len": 941,
+      "source_url": "https://bess-net.jp/",
+      "source_name": "蓄電所ネット編集部",
+      "proposed_slug": "bess-net-launch-2026",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-416-shizuoka-bess-overview",
+      "source_title": "静岡県の系統用蓄電池動向 ── 牧之原・御前崎などで大型案件運開",
+      "source_body": "<p>静岡県は中部電力パワーグリッド管内で、牧之原・御前崎・菊川等で大型案件が運開した業界の最重要エリアの一つ。</p><p>主要案件は、(1) ブルースカイエナジーの牧之原蓄電所（2026年3月23日商業運転開始、4月28日に商運開始36日で需給調整市場参入、ユーラスエナジーがアグリゲーター）、(2) 東急パワーサプライの御前崎蓄電所（2026年4月運転開始、第1号案件）、(3) レノバの菊川西村蓄電所（出力90MW・容量270MWh、60億円ノンリコース PF、SBI新生銀行アレンジャー、2028年度運転開始予定）、(4) 日本蓄電池の磐田市見附蓄電所（出力1,988kW・容量8,146kWh、2026年1月需給調整市場参入、2026年4月磐田市と防災協定締結）、(5) 御前崎市池新田蓄電所（日本蓄電池8カ所展開の一環）、です。</p><p>静岡県は、(a) 中部電力パワーグリッド管内の主要立地エリア、(b) 太平洋ベルト地帯の大規模需要、(c) 富士山周辺の災害レジリエンス、(d) 自治体・地域企業との戦略的パートナーシップ実績、(e) 御前崎・牧之原・菊川等の主要立地候補地、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/bess-pf-merchant-vs-multiuse\">系統用蓄電池プロジェクトファイナンス</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 716,
+      "source_url": "https://powergrid.chuden.co.jp/news/press/",
+      "source_name": "中部電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "shizuoka-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-428-yamaguchi-bess-overview",
+      "source_title": "山口県の系統用蓄電池動向 ── 中国電力下松蓄電所で旭化成と劣化診断実証",
+      "source_body": "<p>山口県は中国電力ネットワーク管内で、中国電力下松蓄電所（GSユアサ採用・旭化成と劣化診断実証）が業界の注目案件として進展。</p><p>主要案件は、(1) 中国電力の下松蓄電所（出力16MW・容量48MWh、2028年度運転開始予定、2023年1月廃止の下松発電所跡地活用、GSユアサ製LFP・独SMA製PCS・三菱電機設計施工）、(2) 中国電力と旭化成の蓄電池運用最適化システム共同開発（2026年4月発表、4年間の開発・実証）、(3) NC北山田堤下蓄電所（山口市、日本蓄電池8カ所展開の一環、2025年12月4日据え付け開始）、(4) 周南コンビナートの大規模需要家連動、(5) 自治体（下松市・周南市・山口市等）との防災協定可能性、(6) 経済安全保障推進法整合のGSユアサ製国産品採用の象徴的事例、です。</p><p>山口県は、(a) 中国電力ネットワーク管内の戦略的立地、(b) 火力発電所跡地活用モデルの先行事例、(c) 周南コンビナート・徳山等の大規模需要家集積、(d) 旭化成（化学プラント）等の県内大手企業連携、(e) 国産電池採用の象徴エリア、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/national-battery-supply-plan\">国家プロジェクト「蓄電池供給確保計画」</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 705,
+      "source_url": "https://www.energia.co.jp/nw/press/",
+      "source_name": "中国電力ネットワーク（公式プレスリリース）",
+      "proposed_slug": "yamaguchi-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-419-mie-bess-overview",
+      "source_title": "三重県の系統用蓄電池動向 ── 東急パワーサプライ津案件などが進展",
+      "source_body": "<p>三重県は中部電力パワーグリッド管内で、東急パワーサプライ津案件など複数案件が進展している。</p><p>三重県の蓄電所事業展開は、(1) 東急パワーサプライの津市蓄電所（2026年5月運転開始予定、3拠点シリーズの第2号、第1号は御前崎、第3号は太田）、(2) 中部電力管内の系統安定化貢献、(3) 中京工業地帯（四日市・鈴鹿等）の大規模需要家連動、(4) 伊勢湾・尾鷲沖の風力・洋上風力併設の蓄電池構想、(5) 自治体（津市・四日市市・伊勢市等）との防災協定可能性、(6) <a href=\"https://bess-net.jp/glossary/aggregator-business\">アグリゲーター事業</a>者との連携、です。</p><p>三重県は、(a) 中部電力パワーグリッド管内の戦略的立地、(b) 中京工業地帯（製鉄・石油化学・自動車等）の大規模需要家集積、(c) 太平洋沿岸の風力・洋上風力潜在性、(d) 自治体・地域企業との戦略的パートナーシップ機会、(e) リニア中央新幹線・名古屋高速・東名阪等の交通インフラ近接、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/multi-use-operation-strategy\">マルチユース運用</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 681,
+      "source_url": "https://powergrid.chuden.co.jp/news/press/",
+      "source_name": "中部電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "mie-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-429-kumamoto-bess-overview",
+      "source_title": "熊本県の系統用蓄電池動向 ── JR九州+住商の熊本蓄電所、非常時EV充電も",
+      "source_body": "<p>熊本県は九州電力送配電管内、九州エリアの中核で、JR九州・住友商事の熊本蓄電所等の複数案件が業界の注目を集める。</p><p>主要案件は、(1) JR九州・住友商事グループの「でんきの駅富合」（熊本市南区富合町・九州新幹線高架脇遊休地、2026年1月30日完工、第2号案件、災害時EV充電器機能、EVリユースバッテリー活用）、(2) 「でんきの駅川尻」（熊本市南区川尻、2024年9月稼働、第1号案件）、(3) 関西電力グループ・スパークスグループ・JA三井リース・福岡地所4社共同の阿蘇蓄電所（南阿蘇村・出力50MW・容量175MWh、2029年6月運転開始予定、Sungrow製・東芝エネルギーシステムズEPC）、(4) 九州エリアの再エネ大量連系・出力制御頻発エリアの中核、です。</p><p>熊本県は、(a) 九州電力送配電管内の戦略的立地、(b) 九州エリアの再エネ大量連系・出力制御対応の最重要エリア、(c) JR九州×住商等の鉄道沿線立地モデルの先行、(d) 関電グループ等の九州外大手プレイヤーの参入、(e) 自治体・地域企業との戦略的パートナーシップ実績、で業界の中長期最重要成長エリア。<a href=\"https://bess-net.jp/explainer/bess-site-acquisition\">蓄電所立地問題と土地確保</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 697,
+      "source_url": "https://www.kyuden.co.jp/td/news/list.html",
+      "source_name": "九州電力送配電（公式プレスリリース）",
+      "proposed_slug": "kumamoto-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-406-miyagi-bess-overview",
+      "source_title": "宮城県の系統用蓄電池動向 ── Tesla Megapack 43MWh運転中、追加案件検討",
+      "source_body": "<p>宮城県は東北電力ネットワーク管内で、複数の大型案件が運用中・建設中で、業界の重要拠点エリアとなっている。</p><p>主要案件は、(1) Tesla Megapack採用案件（仙台市等で43MWh級が運転中、追加案件検討中）、(2) 日本蓄電池の「NC柴田郡川崎町今宿蓄電所」（出力1,988kW・容量8,146kWh、2026年2月13日受電開始、CATL製セル・TMEIC製PCS）、(3) Remixpoint との共同プロジェクト（日本蓄電池との7拠点開発の一環、仙台市2MW案件で2026年8月頃の需給調整市場参入予定）、(4) 機関投資家・大手商社・専門事業者の複合 JV 案件、(5) 仙台市等の自治体との防災協定可能性、です。</p><p>宮城県は、(a) 東日本大震災後のレジリエンス強化政策、(b) 仙台市等の大需要地、(c) 三陸沖洋上風力連系の準備エリア、(d) 自治体・地域企業との戦略的パートナーシップ機会、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/multi-use-operation-strategy\">マルチユース運用</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 628,
+      "source_url": "https://www.tohokuepco.co.jp/news/index.html",
+      "source_name": "東北電力ネットワーク（公式プレスリリース）",
+      "proposed_slug": "miyagi-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-420-ishikawa-bess-overview",
+      "source_title": "石川県の系統用蓄電池動向 ── 北陸エリアで段階的な蓄電池導入",
+      "source_body": "<p>石川県は北陸電力送配電管内、北陸エリアでの段階的な系統用蓄電池導入を進めている。</p><p>石川県の蓄電所事業展開は、(1) 北陸電力管内の系統安定化貢献、(2) 太陽光・小水力発電所併設の蓄電池プロジェクト、(3) 自治体（金沢市・小松市・能登エリア等）との防災協定可能性、(4) 能登半島地震（2024年）後の災害レジリエンス強化政策との連動、(5) 標準化された高圧2MW・8MWh級案件のシリーズ展開、(6) 機関投資家・地域企業との JV 組成、です。</p><p>石川県は、(a) 北陸電力送配電管内の系統安定化貢献、(b) 加賀地方の太陽光大量連系エリア、(c) 能登半島の災害復興・レジリエンス強化、(d) 自治体・地域企業との戦略的パートナーシップ機会、(e) 金沢市の脱炭素先行地域連携、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/ak5yfdeb7t\">脱炭素先行地域</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 546,
+      "source_url": "https://www.rikuden.co.jp/nw_press/index.html",
+      "source_name": "北陸電力送配電（公式プレスリリース）",
+      "proposed_slug": "ishikawa-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-408-tochigi-bess-overview",
+      "source_title": "栃木県の系統用蓄電池動向 ── サンヴィレッジ拠点で複数案件展開",
+      "source_body": "<p>栃木県は東京電力パワーグリッド管内で、サンヴィレッジ拠点を中心に複数案件が展開中。首都圏に近接する戦略的立地で、業界の主要エリアの一つ。</p><p>主要案件は、(1) 東京センチュリーの那須塩原市30MW・112.665MWh案件（2028年度運転開始予定、自社単独開発）、(2) 双日の栃木県案件検討開始、(3) 伊藤忠系蓄電所の栃木県40MW案件（建設中）、(4) サンヴィレッジ拠点を活用した複数案件展開、(5) 鈴木電機（那須塩原市）等の地元電気工事系の業界貢献、(6) 機関投資家・大手商社・専門事業者の複合 JV 案件、です。</p><p>栃木県は、(a) 東京電力パワーグリッド管内の系統安定化貢献、(b) 首都圏電力需要中心地への近接性、(c) 関東平野での豊富な用地、(d) 那須塩原・宇都宮等の主要立地候補地、(e) 自治体・地域企業との戦略的パートナーシップ機会、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/multi-use-operation-strategy\">マルチユース運用</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 604,
+      "source_url": "https://www.tepco.co.jp/pg/news/index-j.html",
+      "source_name": "東京電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "tochigi-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-418-gifu-bess-overview",
+      "source_title": "岐阜県の系統用蓄電池動向 ── 美濃市2MW/8MWh案件など中小規模中心",
+      "source_body": "<p>岐阜県は中部電力パワーグリッド管内で、美濃市2MW/8MWh案件など中小規模を中心に複数案件が進展している。</p><p>主要案件は、(1) 日本蓄電池の岐阜市太郎丸蓄電所（出力1,988kW・容量8,146kWh、2026年1月14日据え付け開始）、(2) 日本蓄電池の高山市久々野町蓄電所（2026年1月14日据え付け開始、2026年3月受電・運用開始、地域防災拠点機能）、(3) 美濃市2MW・8MWh案件等の中規模クラスター、(4) 自治体（岐阜市・高山市・大垣市等）との防災協定可能性、(5) <a href=\"https://bess-net.jp/glossary/regional-microgrid\">地域マイクログリッド</a>構想、(6) 中部電力管内の系統運用との協調、です。</p><p>岐阜県は、(a) 中部電力パワーグリッド管内の系統安定化貢献、(b) 飛騨山脈・揖斐川・木曽川流域の災害レジリエンス価値、(c) 自治体・地域企業との戦略的パートナーシップ実績、(d) 中山間地域の地域エネルギー自給可能性、(e) 自動車・産業機械サプライヤーとの連動、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/bess-business-decision-tree\">系統用蓄電池ビジネス参入の決定木</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 709,
+      "source_url": "https://powergrid.chuden.co.jp/news/press/",
+      "source_name": "中部電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "gifu-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-370-2025-stem-japan-launch",
+      "source_title": "Stem(米国系AIアグリゲーター)、2025年に日本市場本格進出検討",
+      "source_body": "<p>米Stem, Inc.(NYSE: STEM、AIエネルギー貯蔵プラットフォーム最大手)は2025年中、日本市場への本格進出を検討開始。米国・欧州での豊富な系統用蓄電池運用実績(数GW級リソース管理)を背景に、日本の制度成熟と市場ボリューム拡大を見据えた戦略的な動き。Energy Pool Japan・GridBeyond合同会社・Centrica Business Solutions Japanに次ぐ、欧米系アグリゲーターの日本進出の流れの中核に位置付けられる。日本のアグリゲーター市場が、日系・欧州系・米系の混在する競争激化フェーズに入りつつある。</p><p><em>※公開報道に基づく速報。詳細は出典URL・関連事業者の公式発表参照。</em></p>",
+      "source_body_len": 335,
+      "source_url": "https://www.stem.com/",
+      "source_name": "Stem 公式 / 業界関係者取材",
+      "proposed_slug": "stem-japan-entry",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-415-nagano-bess-overview",
+      "source_title": "長野県の系統用蓄電池動向 ── 環境フレンドリーHD上田案件など複数進展",
+      "source_body": "<p>長野県は中部電力パワーグリッド管内で、複数事業者の蓄電所案件が進展している業界の重要エリア。</p><p>主要案件は、(1) 環境フレンドリーホールディングス（EFHD）の上田市古里蓄電所（出力2MW・容量8MWh、接続権取得完了、2026年5月試運転開始予定）、(2) ポート（東証グロース・7047）の長野県案件への投資決定（三菱UFJ銀行16億円グリーンローン活用、2026年4月発表）、(3) 飯田市の再エネ蓄電池複合プロジェクト（地域エネルギー会社主導）、(4) <a href=\"https://bess-net.jp/glossary/regional-microgrid\">地域マイクログリッド</a>・<a href=\"https://bess-net.jp/glossary/脱炭素先行地域\">脱炭素先行地域</a>選定エリア、(5) 諏訪・松本・長野市等の自治体協定検討、(6) 機関投資家・地域企業との JV 組成、です。</p><p>長野県は、(a) 中部電力パワーグリッド管内の系統安定化貢献、(b) 太陽光・小水力発電大量連系エリア、(c) 飯田市等の脱炭素先行地域モデル、(d) 自治体・地域企業との戦略的パートナーシップ実績、(e) 自然災害（豪雨・土砂災害）レジリエンス価値、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/ak5yfdeb7t\">脱炭素先行地域── 100地域以上選定の実装と地域マイクログリッド・蓄電池の役割</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 780,
+      "source_url": "https://powergrid.chuden.co.jp/news/press/",
+      "source_name": "中部電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "nagano-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-425-hyogo-bess-overview",
+      "source_title": "兵庫県の系統用蓄電池動向 ── 姫路48MWh蓄電所(レノバ)などが運用中",
+      "source_body": "<p>兵庫県は関西電力送配電管内で、姫路48MWh蓄電所（レノバ）など複数の重要案件が運用中の業界主要エリア。</p><p>主要案件は、(1) 姫路蓄電所（出光興産・レノバ・長瀬産業・SMFLみらいパートナーズ4社共同出資、出力15MW・容量48MWh、2025年10月10日運転開始、出光興産兵庫製油所跡地、国内初の蓄電池PF組成事例）、(2) 加西市の自治体連携蓄電所構想、(3) 神戸市・尼崎市・西宮市等の都市近郊立地検討、(4) 阪神工業地帯（製鉄・石油化学・電子部品等）の大規模需要家連動、(5) 機関投資家・大手商社・専門事業者の追加案件検討、(6) 自治体（神戸市・姫路市・加西市等）との防災協定検討、です。</p><p>兵庫県は、(a) 関西電力送配電管内の戦略的立地、(b) 阪神工業地帯（神戸製鉄・川崎重工業・三菱電機等）の大規模需要家集積、(c) 国内初の蓄電池PF組成姫路案件、(d) 自治体・地域企業との戦略的パートナーシップ実績、(e) 阪神・淡路大震災後の災害レジリエンス強化政策、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/bess-pf-merchant-vs-multiuse\">系統用蓄電池プロジェクトファイナンス</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 673,
+      "source_url": "https://www.kepco.co.jp/network/news/",
+      "source_name": "関西電力送配電（公式プレスリリース）",
+      "proposed_slug": "hyogo-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-430-kagoshima-bess-overview",
+      "source_title": "鹿児島県の系統用蓄電池動向 ── 九州電力管内の出力制御対応で蓄電池配備加速",
+      "source_body": "<p>鹿児島県は九州電力送配電管内、九州エリアの再エネ大量連系・出力制御対応のフロンティアで、蓄電池配備加速が進展している。</p><p>鹿児島県の蓄電所事業展開は、(1) 九州エリア最大規模の太陽光大量連系エリアでの出力制御吸収需要、(2) 大規模太陽光発電所併設の蓄電池プロジェクト、(3) 鹿児島市・薩摩川内市・指宿市等の自治体協定可能性、(4) 種子島・屋久島・奄美大島等の離島電力安定化、(5) 桜島の災害レジリエンス価値、(6) 九州電力管内の系統運用最適化との連動、です。</p><p>鹿児島県は、(a) 九州電力送配電管内の戦略的立地、(b) 九州エリアの再エネ大量連系・出力制御頻発エリアの最重要拠点、(c) 種子島・屋久島・奄美大島等の<a href=\"https://bess-net.jp/glossary/regional-microgrid\">地域マイクログリッド</a>潜在性、(d) 自治体・地域企業との戦略的パートナーシップ機会、(e) 災害レジリエンス価値の高いエリア、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/multi-use-operation-strategy\">マルチユース運用</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 660,
+      "source_url": "https://www.kyuden.co.jp/td/news/list.html",
+      "source_name": "九州電力送配電（公式プレスリリース）",
+      "proposed_slug": "kagoshima-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-405-yamagata-bess-overview",
+      "source_title": "山形県の系統用蓄電池動向 ── 再エネ蓄電池複合プロジェクトが計画段階",
+      "source_body": "<p>山形県は東北電力ネットワーク管内で、再エネ蓄電池複合プロジェクトが計画段階で進展している。</p><p>山形県の蓄電所事業展開は、(1) 風力・太陽光発電所併設の蓄電池プロジェクト検討、(2) 山形市・酒田市等の自治体との防災協定可能性、(3) <a href=\"https://bess-net.jp/glossary/aggregator-business\">アグリゲーター事業</a>者と連携した分散型リソース運用、(4) 標準化された高圧蓄電所のシリーズ展開、(5) 機関投資家・地域企業との JV 組成、(6) <a href=\"https://bess-net.jp/glossary/multi-use-operation\">マルチユース運用</a>での収益確保、を含む。</p><p>山形県は、(a) 東北電力管内の系統安定化貢献、(b) 庄内地方の風力大量連系対応、(c) 山形盆地の太陽光連系拡大、(d) 自治体・地域企業との戦略的パートナーシップ機会、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/bess-stakeholder-map\">蓄電所事業のステークホルダーマップ</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 648,
+      "source_url": "https://www.tohokuepco.co.jp/news/index.html",
+      "source_name": "東北電力ネットワーク（公式プレスリリース）",
+      "proposed_slug": "yamagata-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-413-kanagawa-bess-overview",
+      "source_title": "神奈川県の系統用蓄電池動向 ── 横浜・川崎で系統用蓄電池案件の検討",
+      "source_body": "<p>神奈川県は東京電力パワーグリッド管内で、横浜・川崎で系統用蓄電池案件の検討が進む業界の主要エリア。</p><p>神奈川県の蓄電所事業展開は、(1) 横浜・川崎・小田原等の都市近郊立地、(2) パワーエックス（横須賀のPower Base工場で電池生産）の本拠地としての戦略的位置、(3) 京浜工業地帯の大規模需要家連動の蓄電池プロジェクト、(4) <a href=\"https://bess-net.jp/glossary/v2x\">V2X</a>・低圧リソース市場拡大の主要エリア、(5) 川崎市・横浜市等の自治体条例厳格化エリアでの安全設計、(6) 災害時BCP電源としての地域価値、です。</p><p>神奈川県は、(a) 東京電力パワーグリッド管内の戦略的立地、(b) 首都圏電力需要中心地、(c) 京浜工業地帯（製鉄・石油化学・自動車等）の大規模需要家集積、(d) パワーエックスの蓄電池量産拠点、(e) 横浜港・川崎港の物流インフラ、(f) 神奈川県・川崎市・横浜市の脱炭素先行地域連携、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/storage-parity-aggregation\">自家消費型+アグリゲーション</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 663,
+      "source_url": "https://www.tepco.co.jp/pg/news/index-j.html",
+      "source_name": "東京電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "kanagawa-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-491-tesla-autobidder-launch",
+      "source_title": "Tesla Autobidderプラットフォーム、日本市場で本格展開",
+      "source_body": "<p>Tesla Autobidderプラットフォームは日本市場で本格展開を進めている。Autobidderは<a href=\"https://bess-net.jp/glossary/megapack\">Megapack</a>と統合運用される自動入札・運用最適化ソフトウェアで、世界各地で大規模BESSの収益最大化を実現する Tesla 独自技術。</p><p>Autobidderの特徴は、(1) AI による電力市場価格予測・需給予測、(2) Megapackと統合した自動入札運用、(3) 容量市場・需給調整市場・JEPX の<a href=\"https://bess-net.jp/glossary/multi-use-operation\">マルチユース運用</a>最適化、(4) リアルタイム制御で応動精度向上、(5) Tesla グローバルポートフォリオの運用ノウハウを活用、(6) Hornsdale Power Reserve（豪州）等の運用実績、です。</p><p>日本市場展開での Autobidder の競合は、(a) 国内エナリスのBA System・Sustech・Tensor Energy 等のEMS、(b) Fluence Mosaic（Fluence）・Sungrow EMS（Sungrow）・GridBeyond・Stem 等の海外勢、です。Megapack＋Autobidderの統合パッケージは、Tesla の蓄電池事業ポートフォリオ全体の競争優位性。Tesla Japanが日本市場参入を本格化、HDRE Helios等での実装が進んでいる。<a href=\"https://bess-net.jp/explainer/ai-optimization-for-bess\">AI最適化と蓄電池運用</a> も参照。</p><p><em>※本ニュースは公開された情報・取材内容に基づき編集部が整備したものです。詳細は出典・各社公式リソースをご参照ください。</em></p>",
+      "source_body_len": 859,
+      "source_url": "https://www.tesla.com/megapack",
+      "source_name": "Tesla（公式プレスリリース）",
+      "proposed_slug": "tesla-autobidder-japan",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-486-ngk-nas-end-detail",
+      "source_title": "NGK NAS電池撤退の業界への影響分析、長時間放電型(LDES)代替技術需要拡大",
+      "source_body": "<p>日本ガイシ（NGK）の<a href=\"https://bess-net.jp/glossary/nas-battery\">NAS電池</a>事業の構造変化を受けて、業界では長時間放電型（<a href=\"https://bess-net.jp/glossary/long-duration-energy-storage\">LDES</a>）代替技術需要の拡大が進んでいる。NAS電池は世界で唯一NGKが量産する大容量・長時間放電型電池として位置付けられ、6時間以上の長時間放電用途に強みがある。</p><p>NAS電池の業界へのインパクトは、(1) 長期脱炭素電源オークション（LTDC）対象電源としての位置付け、(2) リチウムイオン電池主流の系統用蓄電池市場での代替選択肢、(3) 6時間以上の長時間放電用途での経済優位性、(4) サイクル寿命4,500回以上の長寿命特性、(5) ナトリウム・硫黄資源制約の少なさ、(6) リサイクル性の高さ（材料回収率98%）、です。一方、(a) 300℃高温作動の保温電力消費、(b) 起動時間の長さ、(c) リチウムイオン電池との単位コスト競争、が課題。</p><p>NAS電池に代わる長時間貯蔵技術として、(i) <a href=\"https://bess-net.jp/glossary/レドックスフロー電池\">バナジウムレドックスフロー電池</a>（住友電工・RS Tech/LE Sys等）、(ii) 圧縮空気エネルギー貯蔵（CAES）、(iii) 重力エネルギー貯蔵、(iv) 鉄空気電池、(v) 水素貯蔵、等が並立競争する構図。日本ガイシは生産能力増強発表とLDES市場の浮上で再注目領域となっている。<a href=\"https://bess-net.jp/explainer/redox-flow-vs-lfp\">レドックスフロー電池 vs LFP</a> も参照。</p><p><em>※本ニュースは公開された情報・取材内容に基づき編集部が整備したものです。詳細は出典・各社公式リソースをご参照ください。</em></p>",
+      "source_body_len": 896,
+      "source_url": "https://www.ngk.co.jp/news/",
+      "source_name": "日本ガイシ（公式IR・プレスリリース）",
+      "proposed_slug": "ngk-nas-exit-ldes-impact",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-487-sumitomo-redox-2025-launch",
+      "source_title": "住友電工レドックスフロー電池、2025年に複数の新規案件発表",
+      "source_body": "<p>住友電気工業のバナジウム<a href=\"https://bess-net.jp/glossary/レドックスフロー電池\">レドックスフロー電池</a>事業は、2025年に複数の新規案件発表を進めた。住友電工は世界有数のバナジウムレドックスフロー電池メーカーとして、長時間放電型蓄電池の主要選択肢を提供。</p><p>住友電工レドックスフロー電池の特徴は、(1) サイクル寿命2万回超の長寿命、(2) 6時間以上の長時間放電に経済性、(3) 安全性高い（熱暴走リスクほぼゼロ）、(4) 電解液リユース可能（リサイクル性）、(5) 出力（kW）と容量（kWh）の独立設計可能、(6) 国内のRS Tech・LE Sys との共同事業で浪江町プロジェクト等への展開、です。</p><p>2030年に向けて、長時間貯蔵市場の浮上に伴いレドックスフロー電池は再注目領域となっている。リチウムイオン電池主流の市場で、レドックスフロー・NAS・水素・CAES等の長時間貯蔵技術が並立競争する構図。<a href=\"https://bess-net.jp/explainer/redox-flow-vs-lfp\">レドックスフロー電池 vs LFP</a> も参照。</p><p><em>※本ニュースは公開された情報・取材内容に基づき編集部が整備したものです。詳細は出典・各社公式リソースをご参照ください。</em></p>",
+      "source_body_len": 608,
+      "source_url": "https://sumitomoelectric.com/jp/press",
+      "source_name": "住友電気工業（公式プレスリリース）",
+      "proposed_slug": "sumitomo-redox-flow-2025",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-423-kyoto-bess-overview",
+      "source_title": "京都府の系統用蓄電池動向 ── GSユアサ・京セラ・日新電機の本拠地での開発検討",
+      "source_body": "<p>京都府は関西電力送配電管内で、GSユアサ・京セラ・日新電機の本拠地としての蓄電池産業集積地。国産電池メーカー発祥の地としての歴史的位置と、最先端技術開発の連動が業界の重要トピック。</p><p>京都府の蓄電所事業展開は、(1) GSユアサ（京都市本社）の経済安全保障推進法認定事業（事業総額703億円・補助金248億円・年間2GWh・2028年10月供給開始）、(2) 京セラ・京セラドキュメントソリューションズ等の自家消費＋蓄電池、(3) 日新電機の系統用蓄電池・PCS事業、(4) 京丹後市の<a href=\"https://bess-net.jp/glossary/regional-microgrid\">地域マイクログリッド</a>・<a href=\"https://bess-net.jp/glossary/脱炭素先行地域\">脱炭素先行地域</a>選定、(5) 京都市・京都府の脱炭素先行地域連携、(6) 京都府の新築建物太陽光発電設置義務化（2026年4月施行検討中）、です。</p><p>京都府は、(a) 関西電力送配電管内の戦略的立地、(b) 国産電池メーカー集積地、(c) 京都大学・京大エネルギー理工学研究所等の研究拠点、(d) 自治体・地域企業との戦略的パートナーシップ実績、(e) 京丹後・京都市等の脱炭素先行地域、で業界の中長期最重要成長エリア。<a href=\"https://bess-net.jp/explainer/national-battery-supply-plan\">国家プロジェクト「蓄電池供給確保計画」</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 794,
+      "source_url": "https://www.kepco.co.jp/network/news/",
+      "source_name": "関西電力送配電（公式プレスリリース）",
+      "proposed_slug": "kyoto-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-404-akita-bess-overview",
+      "source_title": "秋田県の系統用蓄電池動向 ── 洋上風力併設の蓄電池構想が浮上",
+      "source_body": "<p>秋田県は東北電力ネットワーク管内、洋上風力大規模連系時代の系統安定化拠点として、洋上風力併設の蓄電池構想が浮上している。</p><p>秋田県は日本の洋上風力潜在性で全国トップクラスのエリアで、(1) 由利本荘市沖・能代市沖の大規模洋上風力プロジェクト、(2) 横手市の風力発電クラスター、(3) 洋上風力併設の系統用蓄電池構想、(4) 大規模送電インフラ整備（再エネ電源接続用海底直流送電・HVDC）との連動、(5) 機関投資家・大手商社・専門事業者の複合 JV 案件、が今後の業界の中長期成長領域。</p><p>洋上風力大規模連系時代に向けて、秋田は<a href=\"https://bess-net.jp/explainer/s6mdc5sye7\">洋上風力大規模連系と海底直流送電（HVDC）── 蓄電池併設の戦略的価値</a>の代表的事例エリア。陸上連系点近傍の蓄電池配備、HVDC運用の調整リソースとしての貢献、出力安定化・予測誤差吸収機能、で業界の重要案件が今後継続的に登場する見通し。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 560,
+      "source_url": "https://www.tohokuepco.co.jp/news/index.html",
+      "source_name": "東北電力ネットワーク（公式プレスリリース）",
+      "proposed_slug": "akita-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-374-2025-toyota-bess-launch",
+      "source_title": "トヨタグループ、2025年に系統用蓄電池事業の検討本格化",
+      "source_body": "<p>トヨタグループは2025年中、系統用蓄電池事業の検討を本格化。トヨタ自動車・パナソニックエナジー(トヨタ・パナソニックエナジーソリューションズ含む共同出資)・豊田通商(子会社ユーラスエナジー保有)・豊田自動織機等のグループ会社の連携で、新規ビジネス領域を模索。EV用車載電池・住宅用蓄電池・系統用蓄電池の3軸統合戦略で、グループ全体の電池事業の総合競争力を強化する戦略。後のトヨタグループの系統用蓄電池の本格参入(2026-2027年予想)へとつながる、戦略検討の起点となった。</p><p><em>※公開報道に基づく速報。詳細は出典URL・関連事業者の公式発表参照。</em></p>",
+      "source_body_len": 296,
+      "source_url": "https://global.toyota/",
+      "source_name": "トヨタ自動車 / 業界関係者取材",
+      "proposed_slug": "toyota-bess-2025",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-421-toyama-bess-overview",
+      "source_title": "富山県の系統用蓄電池動向 ── 北陸送配電の系統運用知見を活用",
+      "source_body": "<p>富山県は北陸電力送配電管内で、北陸送配電の系統運用知見を活用した蓄電所事業が検討されている。</p><p>富山県の蓄電所事業展開は、(1) 北陸電力送配電管内の系統安定化貢献、(2) 富山県の小水力発電大量導入時代の系統運用知見の活用、(3) 富山湾の風力・洋上風力潜在性、(4) 富山市・高岡市等の自治体協定可能性、(5) 標準化された高圧蓄電所のシリーズ展開、(6) 機関投資家・地域企業との JV 組成、(7) <a href=\"https://bess-net.jp/glossary/multi-use-operation\">マルチユース運用</a>での収益確保、です。</p><p>富山県は、(a) 北陸電力送配電管内の系統安定化貢献、(b) 小水力大量導入エリアの運用知見、(c) 富山湾沿岸の物流・港湾インフラ、(d) 自治体・地域企業との戦略的パートナーシップ機会、(e) 立山連峰・神通川等の災害レジリエンス価値、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/bess-stakeholder-map\">蓄電所事業のステークホルダーマップ</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 628,
+      "source_url": "https://www.rikuden.co.jp/nw_press/index.html",
+      "source_name": "北陸電力送配電（公式プレスリリース）",
+      "proposed_slug": "toyama-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-424-osaka-bess-overview",
+      "source_title": "大阪府の系統用蓄電池動向 ── 関西電力グループが大型案件展開",
+      "source_body": "<p>大阪府は関西電力送配電管内、関西エリアの中核で、関西電力グループが大型案件展開を進めている業界の主要エリア。</p><p>大阪府の蓄電所事業展開は、(1) 関西電力本社・関西電力エナジーソリューション・<a href=\"https://bess-net.jp/glossary/e-flow\">E-Flow</a>合同会社（大阪本拠）の事業展開、(2) 大阪ガスの蓄電池併設事業（佐賀県武雄市・北海道千歳市等の関西外案件含む）、(3) 大阪万博（2025年）後の脱炭素・スマートシティ展開との連動、(4) 大阪市内の自家消費＋蓄電池の大規模需要家連動、(5) 京阪神工業地帯の大規模需要家連動、(6) <a href=\"https://bess-net.jp/glossary/v2x\">V2X</a>・低圧リソース市場拡大の主要エリア、です。</p><p>大阪府は、(a) 関西電力送配電管内の主要立地、(b) 関西電力グループ・大阪ガスの本拠地、(c) 京阪神工業地帯（製鉄・石油化学・電子部品等）の大規模需要家集積、(d) 大阪・関西万博を契機とした脱炭素施策、(e) 関西国際空港・梅田等の交通・物流ハブ、で業界の中長期最重要成長エリア。<a href=\"https://bess-net.jp/explainer/bess-stakeholder-map\">蓄電所事業のステークホルダーマップ</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 721,
+      "source_url": "https://www.kepco.co.jp/network/news/",
+      "source_name": "関西電力送配電（公式プレスリリース）",
+      "proposed_slug": "osaka-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-470-tepco-rp-multiple-launch",
+      "source_title": "東京電力RP、関東各地で蓄電所案件の本格展開",
+      "source_body": "<p>東京電力リニューアブルパワー（東京電力RP）は関東各地で蓄電所案件の本格展開を進めている。東京電力グループの再エネ・蓄電池事業の中核会社として、開発・所有・運用の総合力で関東エリアの系統安定化に貢献。</p><p>東京電力RPの蓄電所事業の特徴は、(1) 親会社東京電力ホールディングスの系統運用ノウハウ活用、(2) 東京電力パワーグリッドとの連携による系統情報・運用最適化、(3) 容量市場・需給調整市場・JEPX の<a href=\"https://bess-net.jp/glossary/multi-use-operation\">マルチユース運用</a>、(4) 関東エリアの大規模需要中心地での戦略的立地、(5) 東京電力エナジーパートナー（東京電力EP）の<a href=\"https://bess-net.jp/glossary/aggregator-business\">アグリゲーター事業</a>との連携、です。</p><p>東京電力グループとして、(a) 東京電力RP（開発・所有）、(b) 東京電力PG（系統運用）、(c) 東京電力EP（小売・アグリゲーション）の3社連携で、業界の大手プレイヤーポジションを確立。関西電力グループの紀の川蓄電所・南阿蘇蓄電所、中部電力グループ、九州電力グループ等の電力会社系プレイヤーと並走競争。<a href=\"https://bess-net.jp/explainer/bess-stakeholder-map\">蓄電所事業のステークホルダーマップ</a> も参照。</p><p><em>※本ニュースは公開された情報・取材内容に基づき編集部が整備したものです。詳細は出典・各社公式リソースをご参照ください。</em></p>",
+      "source_body_len": 744,
+      "source_url": "https://www.tepco.co.jp/rp/news/",
+      "source_name": "東京電力リニューアブルパワー（公式IR・プレスリリース）",
+      "proposed_slug": "tepco-rp-bess",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-414-yamanashi-bess-overview",
+      "source_title": "山梨県の系統用蓄電池動向 ── 中小規模案件の検討が進展",
+      "source_body": "<p>山梨県は東京電力パワーグリッド管内で、中小規模案件の検討が進展している。</p><p>山梨県の蓄電所事業展開は、(1) 太陽光発電所併設（甲府盆地等の太陽光大量連系エリア）の蓄電池プロジェクト、(2) <a href=\"https://bess-net.jp/glossary/aggregator-business\">アグリゲーター事業</a>者と連携した分散型リソース運用、(3) 標準化された高圧2MW・8MWh級案件のシリーズ展開、(4) 自治体（甲府市・富士吉田市等）との防災協定可能性、(5) 機関投資家・地域企業との JV 組成、(6) 富士山周辺の災害レジリエンス価値、です。</p><p>山梨県は、(a) 東京電力パワーグリッド管内の系統安定化貢献、(b) 甲府盆地の太陽光連系拡大、(c) 中央自動車道経由の物流アクセス、(d) 自治体・地域企業との戦略的パートナーシップ機会、(e) 国産水素実証拠点（米倉山・甲府市）の連動、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/bess-business-decision-tree\">系統用蓄電池ビジネス参入の決定木</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 641,
+      "source_url": "https://www.tepco.co.jp/pg/news/index-j.html",
+      "source_name": "東京電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "yamanashi-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-403-iwate-bess-overview",
+      "source_title": "岩手県の系統用蓄電池動向 ── 東北電力管内で蓄電所開発が活発化",
+      "source_body": "<p>岩手県は東北電力ネットワーク管内で、再エネ大量連系時代の系統安定化に向けた蓄電所開発が活発化している。</p><p>主要案件は、(1) 日本蓄電池の岩手県40MW案件（2025年中の用地取得完了）、(2) 風力発電所併設の蓄電池プロジェクト検討、(3) 自治体との防災協定可能性、(4) 標準化された高圧2MW・8MWh級案件のシリーズ展開、(5) <a href=\"https://bess-net.jp/glossary/multi-use-operation\">マルチユース運用</a>での収益確保、(6) 商社・電力会社系の中規模・大規模案件検討、です。</p><p>岩手県は、(a) 東北電力ネットワーク管内の系統安定化貢献、(b) 風力・太陽光大量連系時代の対応、(c) 地震・津波等の災害レジリエンス価値、(d) 三陸沿岸の洋上風力潜在性、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/bess-business-decision-tree\">系統用蓄電池ビジネス参入の決定木</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 594,
+      "source_url": "https://www.tohokuepco.co.jp/news/index.html",
+      "source_name": "東北電力ネットワーク（公式プレスリリース）",
+      "proposed_slug": "iwate-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-411-saitama-bess-overview",
+      "source_title": "埼玉県の系統用蓄電池動向 ── 都市近郊の蓄電所立地検討が活発化",
+      "source_body": "<p>埼玉県は東京電力パワーグリッド管内、首都圏電力需要中心地に近接する戦略的エリアで、都市近郊の蓄電所立地検討が活発化している。</p><p>埼玉県の蓄電所事業展開は、(1) 伊藤忠系蓄電所の埼玉県案件（2025年中の用地取得完了）、(2) 東急不動産・Riene 等のコンソーシアム案件、(3) 自家消費・低圧リソースの大規模需要家連動の蓄電池併設、(4) <a href=\"https://bess-net.jp/glossary/regional-microgrid\">地域マイクログリッド</a>・<a href=\"https://bess-net.jp/glossary/regional-microgrid\">災害時BCP電源</a>としての地域価値、(5) 自治体条例厳格化エリアでの安全設計重視、(6) 都市部立地に伴う近隣説明・住民同意プロセス、です。</p><p>埼玉県は、(a) 東京電力パワーグリッド管内の系統安定化貢献、(b) 首都圏電力需要中心地への近接性、(c) 工場・物流倉庫・データセンター等の大規模需要家集積地、(d) <a href=\"https://bess-net.jp/glossary/v2x\">V2X</a>・低圧リソース市場拡大の主要エリア、(e) 都市近郊立地モデルの先行事例、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/bess-site-acquisition\">蓄電所立地問題と土地確保</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 770,
+      "source_url": "https://www.tepco.co.jp/pg/news/index-j.html",
+      "source_name": "東京電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "saitama-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-417-aichi-bess-overview",
+      "source_title": "愛知県の系統用蓄電池動向 ── 中部電力グループが系統用蓄電池配備を加速",
+      "source_body": "<p>愛知県は中部電力パワーグリッド管内、製造業集積地・大規模需要中心地で、中部電力グループが系統用蓄電池配備を加速している業界の重要エリア。</p><p>愛知県の蓄電所事業展開は、(1) 中部電力パワーグリッド管内の主要立地エリア、(2) 中部電力ミライズによる蓄電池ヘッジ取引（HDRE系星星電力日本との5拠点・1万kW・年間909万kWh、2026年1月締結）、(3) 中部電力ミライズと旭化成の蓄電池運用最適化システム共同開発（2026年4月発表、4年間の開発・実証）、(4) トヨタ自動車・出光興産の全固体電池研究拠点（豊田市・名古屋市）、(5) 自動車・自動車部品サプライヤーの自家消費・蓄電池併設、(6) 名古屋市・豊田市等の自治体協定検討、です。</p><p>愛知県は、(a) 中部電力パワーグリッド管内の戦略的立地、(b) 自動車産業集積地（トヨタ・三菱自動車等）、(c) 中京工業地帯の大規模需要家集積、(d) トヨタの全固体電池量産拠点（2027〜2028年量産化目標）、(e) 中部電力グループの本拠地、(f) <a href=\"https://bess-net.jp/glossary/v2x\">V2X</a>市場拡大の主要エリア、で業界の中長期最重要成長エリア。<a href=\"https://bess-net.jp/explainer/ai-optimization-for-bess\">AI最適化と蓄電池運用</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 738,
+      "source_url": "https://powergrid.chuden.co.jp/news/press/",
+      "source_name": "中部電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "aichi-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-402-aomori-bess-overview",
+      "source_title": "青森県の系統用蓄電池動向 ── 風力併設の系統用蓄電池案件が複数進展",
+      "source_body": "<p>青森県は東北電力ネットワーク管内の風力大量連系エリアで、風力併設・系統安定化向けの系統用蓄電池案件が複数進展している。</p><p>主要案件は、(1) 東京ガスがオフテイク契約を結んだ青森県の2カ所（5万kW級と9.9万kW級、2029年度運転開始予定、2026年4月発表）、(2) 太平洋側・日本海側両方での風力発電所併設の検討、(3) 大規模洋上風力（むつ小川原・六ヶ所等）併設の蓄電池構想、(4) 青森県六ヶ所村等での再エネ・水素・蓄電池の複合プロジェクト、(5) 機関投資家・地域企業との JV 組成、です。</p><p>青森県は、(a) 東北・北海道間の<a href=\"https://bess-net.jp/glossary/北本連系設備\">北本連系設備</a>運用拠点に近接、(b) 風力大量連系時代の系統安定化貢献、(c) 洋上風力大規模連系時代の準備、(d) 自治体との防災協定・地域パートナーシップ可能性、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/multi-use-operation-strategy\">マルチユース運用</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 624,
+      "source_url": "https://www.tohokuepco.co.jp/news/index.html",
+      "source_name": "東北電力ネットワーク（公式プレスリリース）",
+      "proposed_slug": "aomori-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-407-fukushima-bess-overview",
+      "source_title": "福島県の系統用蓄電池動向 ── 浪江町でレドックスフロー電池蓄電所の計画進展",
+      "source_body": "<p>福島県は東北電力ネットワーク管内、震災復興・再エネ・蓄電池産業集積戦略のフラッグシップエリアとなっている。</p><p>主要案件は、(1) 浪江町でのバナジウム<a href=\"https://bess-net.jp/glossary/レドックスフロー電池\">レドックスフロー電池</a>蓄電所（RS Tech・LE Sys、出力1.99MW・容量12MWh、2027年11月商業運転予定）、(2) 福島再エネ・水素活用プロジェクト（FH2R等）との連動、(3) 伊藤忠系蓄電所の福島県30MW案件（計画進展中）、(4) 風力発電大量連系（猪苗代・南相馬等）、(5) <a href=\"https://bess-net.jp/glossary/regional-microgrid\">地域マイクログリッド</a>・<a href=\"https://bess-net.jp/glossary/脱炭素先行地域\">脱炭素先行地域</a>選定エリア、(6) 相馬市・南相馬市・大熊町・浪江町等の自治体プロジェクト、です。</p><p>福島県は、(a) 復興・脱炭素・産業創出の三価値統合戦略、(b) 全固体電池・レドックスフロー電池等の次世代電池研究拠点、(c) 機関投資家・大手商社の長期投資先、(d) 福島イノベーション・コースト構想の中核、で業界の中長期最重要成長エリア。<a href=\"https://bess-net.jp/explainer/redox-flow-vs-lfp\">レドックスフロー電池 vs LFP</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 780,
+      "source_url": "https://www.tohokuepco.co.jp/news/index.html",
+      "source_name": "東北電力ネットワーク（公式プレスリリース）",
+      "proposed_slug": "fukushima-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-412-chiba-bess-overview",
+      "source_title": "千葉県の系統用蓄電池動向 ── JAPEX千葉で系統用蓄電所が運開",
+      "source_body": "<p>千葉県は東京電力パワーグリッド管内で、JAPEX（石油資源開発）が同社初の系統用蓄電所を運開した業界の注目エリア。</p><p>主要案件は、(1) JAPEX美浜蓄電所（千葉市・出力1,999kW・容量約6,000kWh、2025年8月1日運転開始、JFEエンジニアリングEPC）、(2) JAPEXの千葉・美浜以外の追加案件検討、(3) パルマ・JBサステナブルのセルフストレージ拠点活用モデル（千葉県を含む全国展開検討）、(4) 千葉県内の物流倉庫・工場・商業施設の自家消費＋蓄電池需要、(5) 京葉工業地帯の大規模需要家連動、(6) 機関投資家・大手商社の追加案件検討、です。</p><p>千葉県は、(a) 東京電力パワーグリッド管内の系統安定化貢献、(b) 首都圏電力需要中心地への近接性、(c) 京葉工業地帯（製鉄・石油化学・LNG基地等）の大規模需要家集積、(d) JAPEX・東京ガス等のエネルギー業界中核地、(e) 千葉ニュータウン等のデータセンター集積、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/self-storage-bess-model\">セルフストレージ拠点に系統用蓄電池</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 650,
+      "source_url": "https://www.tepco.co.jp/pg/news/index-j.html",
+      "source_name": "東京電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "chiba-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-410-gunma-bess-overview",
+      "source_title": "群馬県の系統用蓄電池動向 ── ポート伊勢崎・太田など3拠点が運用中",
+      "source_body": "<p>群馬県は東京電力パワーグリッド管内で、ポート（東証グロース・7047）が伊勢崎・太田の3拠点を運用中の業界の重要拠点エリア。</p><p>主要案件は、(1) ポートの伊勢崎1号機（2025年6月10日運転開始）、(2) ポートの太田蓄電所（2025年6月18日）、(3) ポートの伊勢崎2号機（2025年10月16日）、(4) ポートが三菱UFJ銀行と16億円のグリーンローン契約締結（2026年4月発表）、長野県・長崎県の4案件への投資決定、(5) 東急パワーサプライの太田案件（2026年6月運転開始予定、3社目の御前崎・津に続く順次運開）、(6) 機関投資家・大手商社・専門事業者の追加案件検討、です。</p><p>群馬県は、(a) 東京電力パワーグリッド管内の重要立地エリア、(b) 上場企業（ポート）のグリーンローン活用蓄電所事業の先行モデル、(c) 自治体・地域企業との戦略的パートナーシップ実績、(d) 関東平野の豊富な用地、(e) 自動車産業（SUBARU 等）との連動可能性、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/bess-esg-green-finance\">蓄電所のESG/グリーンファイナンス</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 661,
+      "source_url": "https://www.tepco.co.jp/pg/news/index-j.html",
+      "source_name": "東京電力パワーグリッド（公式プレスリリース）",
+      "proposed_slug": "gunma-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-448-brazil-bess-launch",
+      "source_title": "【ブラジル】ブラジルが系統用蓄電池市場を2025年に本格開放",
+      "source_body": "<p>ブラジルは2025年に系統用蓄電池市場を本格開放した。ANEEL（国家電力規制庁）の規制改革により、再エネ大量連系時代の系統安定化・電力安定供給・脱炭素移行を統合する国家戦略の中核施策として、BESS が本格普及段階に入る。</p><p>ブラジルBESS市場の特徴は、(1) ANEEL 主導の電力市場改革、(2) 大規模水力発電（70%超）と太陽光・風力連系時代の系統柔軟性ニーズ、(3) Eletrobras・Petrobras・Engie Brasil 等の主要プレイヤー、(4) 中国・韓国メーカーの積極参入、(5) BNDES（国家経済社会開発銀行）の融資、(6) 環境エネルギー鉱業省（MME）の長期エネルギー戦略、(7) 米国・欧州メーカーとの戦略提携、です。</p><p>ラテンアメリカ最大の電力市場として、ブラジルはチリ・メキシコ・コロンビア・アルゼンチン等と並走しつつ、独自の戦略的ポジションを構築。日本企業のラテンアメリカ展開機会、現地パートナーシップ、長期インフラ投資、で業界の国際展開機会が拡大。<a href=\"https://bess-net.jp/explainer/global-bess-trends-2026\">系統用蓄電池の海外動向2026</a> も参照。</p><p><em>※本ニュースは公開された業界レポート・公的機関情報に基づき編集部が整備したものです。詳細は出典・関連事業者の公式情報をご参照ください。</em></p>",
+      "source_body_len": 639,
+      "source_url": "https://www.gov.br/aneel/pt-br",
+      "source_name": "ANEEL（ブラジル電力規制庁）",
+      "proposed_slug": "brazil-bess-market-2025",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-401-hokkaido-bess-overview",
+      "source_title": "北海道の系統用蓄電池動向 ── 風力大量導入対応で複数事業者が大型案件発表",
+      "source_body": "<p>北海道は風力・太陽光大量連系時代の系統安定化ニーズが最も高いエリアの一つで、系統用蓄電池配備が業界の最重要トピック。北海道電力ネットワーク管内では複数の大型案件が進展している。</p><p>主要案件は、(1) Canadian Solar e-STORAGE の苗穂変電所隣接プロジェクト（札幌市・出力2MW・容量8.25MWh、2026年2月発表、北海道電力ネットワーク2023年公募落札）、(2) HDRE系星星電力日本の Helios I（出力50MW・容量104MWh、2025年11月運転開始、Tesla Megapack 2XL採用、北海電工EPC）、(3) 台湾HDREによる日本国内3.26GW開発計画の中核拠点、(4) 東京ガス×レノバの北海道75MW案件（オフテイク契約モデル）、(5) ENEOSリニューアブル・住友商事・三菱商事等の追加案件検討、(6) <a href=\"https://bess-net.jp/glossary/北本連系設備\">北本連系設備</a>運用との協調設計、です。</p><p>北海道のBESS市場は、(a) 風力大量連系（風況の良さで全国有数）、(b) 太陽光出力制御吸収、(c) 海外資本の本格参入、(d) 公募方式の透明な事業組成、(e) 公有地リースモデルの先行、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/global-bess-trends-2026\">系統用蓄電池の海外動向2026</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 773,
+      "source_url": "https://www.hepco.co.jp/network/news/",
+      "source_name": "北海道電力ネットワーク（公式プレスリリース）",
+      "proposed_slug": "hokkaido-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-422-fukui-bess-overview",
+      "source_title": "福井県の系統用蓄電池動向 ── 美浜蓄電所(JAPEX)など案件複数",
+      "source_body": "<p>福井県は北陸電力送配電管内で、JAPEX美浜蓄電所など案件が複数進展している。</p><p>主要案件は、(1) JAPEX関連の美浜蓄電所案件群、(2) 原子力発電所立地エリアでの脱炭素移行戦略との連動（敦賀・大飯・美浜）、(3) 北陸電力送配電管内の系統安定化貢献、(4) 福井市・敦賀市・小浜市等の自治体協定可能性、(5) 北陸新幹線延伸（敦賀延伸2024年3月）後の地域経済活性化との連動、(6) <a href=\"https://bess-net.jp/glossary/aggregator-business\">アグリゲーター事業</a>者との連携、です。</p><p>福井県は、(a) 北陸電力送配電管内の戦略的立地、(b) 原子力発電所立地エリアの脱炭素移行先行地域、(c) 越前海岸・若狭湾の風力・洋上風力潜在性、(d) 自治体・地域企業との戦略的パートナーシップ機会、(e) 関西地方への系統連系点近接、で業界の中長期成長エリア。<a href=\"https://bess-net.jp/explainer/multi-use-operation-strategy\">マルチユース運用</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 621,
+      "source_url": "https://www.rikuden.co.jp/nw_press/index.html",
+      "source_name": "北陸電力送配電（公式プレスリリース）",
+      "proposed_slug": "fukui-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-239-fluence-japan-launch",
+      "source_title": "Fluence(米Siemens・AES合弁)、日本市場本格参入 ── SmartStack・Mosaic投入",
+      "source_body": "<p>Fluence Energy(米国、Siemens AGとAES Corporationの合弁)は2025年2月、日本市場への本格参入を発表。BESSハードウェア『SmartStack』『Sunstack』『Edgestack』『Ultrastack』のラインナップと、運用最適化プラットフォーム『Mosaic』を国内事業者向けに投入する。</p><p>続く2025年6月には国内アグリゲーター第1号のエナリス(KDDI子会社)とMOU締結。FluenceのMosaicをエナリスのDERMS(分散電源管理システム)に統合し、蓄電池運用を高度化する。北米・欧州で世界トップクラスの実績を持つFluenceの参入は、日本のBESS市場に大きな刺激を与えている。</p><p><em>※公開報道に基づく速報。詳細は出典URL・関連事業者の公式発表参照。</em></p>",
+      "source_body_len": 386,
+      "source_url": "https://bess-net.jp/",
+      "source_name": "蓄電所ネット編集部（参考：Energy-Storage News）",
+      "proposed_slug": "fluence-japan-entry",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-233-canadian-solar-naebo-detail",
+      "source_title": "Canadian Solar、札幌・苗穂変電所隣接で日本初の系統接続BESS稼働",
+      "source_body": "<p>カナディアン・ソーラー(本社カナダ)の蓄電池事業ブランドe-STORAGEは2026年2月11日、北海道・札幌市内の苗穂変電所隣接地に納入した日本初の系統接続BESS(出力2MW・容量8.25MWh DC)について稼働開始を発表。同BESSは北海道電力ネットワーク株式会社の2023年公募(公有地リース型)で落札した案件で、Canadian Solar Projects K.K.が開発担当。</p><p>本BESSは日本卸電力取引所(JEPX)と需給調整市場(EPRX)への参加を予定。北海道地域の系統柔軟性向上、再エネ統合、市場安定化に貢献する。e-STORAGEはBESSの設計・エンジニアリング・コミッショニングを担当するほか、長期メンテナンス・点検サービスも提供する。海外メーカーが日本市場で系統接続BESSを実装した先行事例として位置付けられる。</p><p><em>※公開報道に基づく速報。詳細は出典URL・関連事業者の公式発表参照。</em></p>",
+      "source_body_len": 436,
+      "source_url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-delivers-its-first-grid-connected-battery-energy",
+      "source_name": "Canadian Solar IR",
+      "proposed_slug": "canadian-solar-naebo",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-335-yonden-bess-launch",
+      "source_title": "四国電力、2024年に系統用蓄電所事業へ参入 ── 松山35MWh先行案件",
+      "source_body": "<p>四国電力株式会社(METI特定卸供給事業者として初期登録)は2024年中、系統用蓄電所事業へ参入。松山市35MWh案件(2025年8月運開)を先行案件として、四国エリアでの本格展開を始めた。四国地域は電力規模が小さく系統制約も限定的だが、再エネ統合への寄与・需給調整市場収益の獲得を目的に蓄電池配備を進める。子会社四国電力送配電(系統運用)、四電工(電気工事)との連携体制も整備されている。</p><p><em>※公開報道に基づく速報。詳細は出典URL・関連事業者の公式発表参照。</em></p>",
+      "source_body_len": 252,
+      "source_url": "https://www.yonden.co.jp/",
+      "source_name": "四国電力 公式",
+      "proposed_slug": "yonden-bess-entry",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-426-wakayama-bess-overview",
+      "source_title": "和歌山県の系統用蓄電池動向 ── 紀の川蓄電所(関電・オリックス、48MW/113MWh)国内最大級",
+      "source_body": "<p>和歌山県は関西電力送配電管内で、紀の川蓄電所（関電・オリックス、出力48MW・容量113MWh）が国内最大級として運用中の業界フラッグシップエリア。</p><p>紀の川蓄電所の特徴は、(1) 関西電力とオリックスの共同事業（紀の川蓄電所合同会社）、(2) 2024年12月1日運転開始、運転開始時点で国内最大級の系統用蓄電所、(3) リチウムイオン蓄電池コンテナ64台、一般家庭1.3万世帯分の1日使用量に相当する充放電、(4) <a href=\"https://bess-net.jp/glossary/e-flow\">E-Flow</a>合同会社による電力市場運用、(5) オリックス・リニューアブルエナジー・マネジメントによるO&amp;M、(6) <a href=\"https://bess-net.jp/glossary/multi-use-operation\">マルチユース運用</a>の代表的事例、です。</p><p>和歌山県は、(a) 関西電力送配電管内の戦略的立地、(b) 国内最大級の蓄電所運用実績、(c) 関西エネルギーインフラの中核、(d) 紀伊半島の太陽光・小水力大量連系エリア、(e) 自治体・地域企業との戦略的パートナーシップ実績、で業界の中長期最重要成長エリア。<a href=\"https://bess-net.jp/explainer/multi-use-operation-strategy\">マルチユース運用</a> も参照。</p><p><em>※本ニュースは公開された各事業者プレスリリース・自治体・送配電事業者公開情報に基づき編集部が整備した地域動向まとめです。詳細は出典URL・該当事業者の公式発表をご参照ください。</em></p>",
+      "source_body_len": 744,
+      "source_url": "https://www.kepco.co.jp/network/news/",
+      "source_name": "関西電力送配電（公式プレスリリース）",
+      "proposed_slug": "wakayama-bess-outlook",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-218-itochu-bess-launch",
+      "source_title": "伊藤忠商事、系統用蓄電所を本格事業化 ── 国内初の自社開発案件発表",
+      "source_body": "<p>伊藤忠商事株式会社(東証プライム・8001)は2024年中、系統用蓄電所事業の本格事業化を発表。METI特定卸供給事業者登録(2022年11月)以降、自社開発案件としては初の蓄電所プロジェクトを東京・関西エリアで複数準備していることを明らかにした。</p><p>伊藤忠は商社としての電力市場知見・グローバルサプライチェーン(電池調達)・金融組成力を組み合わせ、開発・調達・運用・売却までの一気通貫モデルを構築する戦略。再エネ・蓄電所事業の中核プレイヤー化を目指す。</p><p><em>※公開報道に基づく速報。詳細は出典URL・関連事業者の公式発表参照。</em></p>",
+      "source_body_len": 289,
+      "source_url": "https://www.itochu.co.jp/ja/",
+      "source_name": "伊藤忠商事 公式 / METI特定卸供給事業者一覧",
+      "proposed_slug": "itochu-bess-self-developed",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-248-jera-cross-launch",
+      "source_title": "JERA Cross、蓄電池事業を本格化 ── 火力発電と蓄電池ハイブリッド運用",
+      "source_body": "<p>株式会社JERA Cross(東京電力FP・中部電力の合弁発電会社JERAの蓄電池事業子会社、東京・中央区)は2024年6月7日にMETI特定卸供給事業者として登録。続く2025年中、蓄電池事業を本格化し、火力発電と蓄電池のハイブリッド運用モデルを国内で展開する方針を示した。</p><p>JERA本体は国内最大の発電事業者(設備容量約65GW)。これを補完する蓄電池リソースを束ねることで、卸電力市場・需給調整市場・容量市場での収益最大化を狙う。火力+蓄電池のハイブリッド運用は、再エネ大量導入時代の電力需給調整の新しいモデルとして業界の注目を集めている。</p><p><em>※公開報道に基づく速報。詳細は出典URL・関連事業者の公式発表参照。</em></p>",
+      "source_body_len": 336,
+      "source_url": "https://www.jera.co.jp/",
+      "source_name": "JERA 公式 / METI特定卸供給事業者一覧",
+      "proposed_slug": "jera-cross-bess-hybrid",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-314-kyocera-clay-launch",
+      "source_title": "京セラ、世界初クレイ型LIB『Enerezza』2020年市場投入",
+      "source_body": "<p>京セラ株式会社(東証プライム・6971)は2020年中、世界初のクレイ型(半固体)リチウムイオン電池『Enerezza(エネレッツァ)』を市場投入。電極に電解液を練り込んで粘土状にする技術により、2万サイクルの長寿命と高い安全性を実現。電極層を従来の液体型LIBの3〜5倍の厚さに設計でき、製造プロセスの簡素化と低コスト化も両立。後のEnerezza Plus(2022年)、産業用展開(2025年)へと進化していく。家庭用蓄電池市場を中心に、京セラの独自技術として広く採用された。</p><p><em>※公開報道に基づく速報。詳細は出典URL・関連事業者の公式発表参照。</em></p>",
+      "source_body_len": 298,
+      "source_url": "https://www.kyocera.co.jp/solar/products/enerezza/",
+      "source_name": "京セラ 公式",
+      "proposed_slug": "kyocera-enerezza-clay",
+      "collision_with_existing": false
+    },
+    {
+      "source_id": "news-2026-311-byd-japan-2019-launch",
+      "source_title": "BYD、2019年に日本BESS市場参入 ── CATLと並ぶ中華勢の先行者",
+      "source_body": "<p>中国BYDの日本法人BYD JAPAN株式会社(本社横浜市)は2019年中、日本の系統用蓄電池市場へ本格参入。日経新聞報道によれば『中国蓄電池、BYDが日本参入 CATLは半値で』との見出しで、価格競争力で日本市場に攻勢をかけた。後のCATLとの並立する中華勢の先行者となり、2024年(暦年)には日本国内で約100MWhの蓄電池システムを出荷、シェア約18%にまで成長した。</p><p><em>※公開報道に基づく速報。詳細は出典URL・関連事業者の公式発表参照。</em></p>",
+      "source_body_len": 245,
+      "source_url": "https://bess-net.jp/",
+      "source_name": "蓄電所ネット編集部（参考：日本経済新聞）",
+      "proposed_slug": "byd-japan-bess-entry-2019",
+      "collision_with_existing": false
+    }
+  ]
+}

@@ -210,6 +210,48 @@ export const getAllSubsidySlugs = async (): Promise<{ slug: string }[]> => {
   return slugs;
 };
 
+// ===== 政策・法制度カレンダー（policy-events、依頼AB） =====
+export type PolicyEvent = {
+  id: string;
+  title: string;
+  slug: string;
+  eventDate: string; // YYYY-MM-DD
+  eventType: string[]; // microCMS select は配列で返るため
+  issuer: string;
+  description: string;
+  sourceUrl: string;
+  status: string[]; // 予定 / 進行中 / 終了
+  category?: string[];
+  publishedAt: string;
+  updatedAt: string;
+  createdAt: string;
+  revisedAt: string;
+};
+
+/**
+ * 政策・法制度カレンダーの全件を取得（依頼AB）
+ * - eventDate 降順（最新が先）
+ * - schema 未作成の状態でも空配列で graceful return（ページがクラッシュしない設計）
+ */
+export const getAllPolicyEvents = async (): Promise<PolicyEvent[]> => {
+  const all: PolicyEvent[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  try {
+    for (let offset = 0; offset < 500; offset += limit) {
+      const data = await client.getList<PolicyEvent>({
+        endpoint: 'policy-events',
+        queries: { limit, offset, orders: '-eventDate' },
+      });
+      all.push(...data.contents);
+      if (data.contents.length < limit) break;
+    }
+  } catch {
+    // schema 未作成 / 一時的エラーの場合は空配列を返してページを 200 で返す
+    return [];
+  }
+  return all;
+};
+
 // ===== プロジェクト（projects） =====
 export type Project = {
   id: string;
