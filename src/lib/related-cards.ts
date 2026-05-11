@@ -315,26 +315,56 @@ function extractCoreKeyword(title: string): string {
 }
 
 /**
- * baseText から検索用キーワード候補を抽出（依頼Y.5 / Y.7）
- * - 漢字・カタカナ・英数字の連続 4〜18 文字
- * - NG_TERMS は除外（linkify 用、「蓄電所」など過汎用語）
- * - NG_KEYWORDS_FOR_STEP3 は除外（依頼Y.7、サイト共通語・汎用ビジネス語）
+ * baseText を助詞・記号で予分割する（依頼Y.8）
+ *
+ * 落とし穴 #76: greedy regex で「経済産業省の補助金」が一語抽出されると、
+ * explainer 側の「経産省・補助金」表記と substring 一致しない。
+ * 助詞・句読点・括弧で予分割することで個別キーワードに分解する。
+ *
+ * 分割対象（保守的に選定、落とし穴 #79）:
+ *  - 句読点・括弧: 、。・，．「」『』（）()[]｜|/
+ *  - 助詞: の/を/に/と/より/まで/から/および
+ *
+ * 分割しない:
+ *  - 地名後置語 (都/区/市/町/村): 地名複合語を保つ
+ *  - ハイフン (-): 社名 (e.g. JFE-E) で使われる
+ *  - カタカナ長音 (ー): 「メガパック」等の中に出現
+ */
+function splitForKeywordExtraction(text: string): string[] {
+  if (!text) return [];
+  const normalized = text
+    .replace(/[、。・，．「」『』（）()\[\]｜|/]/g, ' ')
+    .replace(/(の|を|に|と|より|まで|から|および)/g, ' ');
+  return normalized.split(/\s+/).filter((s) => s.length > 0);
+}
+
+/**
+ * baseText から検索用キーワード候補を抽出（依頼Y.5 / Y.7 / Y.8）
+ * - 助詞・記号で予分割（依頼Y.8、落とし穴 #76 解決）
+ * - 各セグメント内で 漢字+カタカナ もしくは ASCII 連続を抽出
+ *   （依頼Y.8 で最大長 18 → 12 字に短縮。助詞分割で十分な単語が取れるため）
+ *   （ひらがなは regex から除外。分割後のセグメント内で hiragana 跨ぎを防ぐ）
+ * - NG_TERMS / NG_KEYWORDS_FOR_STEP3 を除外
  * - 重複排除、長い順
  */
 function extractKeywordsFromText(text: string, max = 30): string[] {
   if (!text) return [];
-  const tokens = text.match(/[一-龥ぁ-ゖァ-ヶー][一-龥ぁ-ゖァ-ヶーA-Za-z0-9]{3,17}/gu) || [];
-  const ascii = text.match(/[A-Za-z][A-Za-z0-9.&-]{3,17}/g) || [];
-  const all = [...tokens, ...ascii];
+  const segments = splitForKeywordExtraction(text);
   const seen = new Set<string>();
   const out: string[] = [];
-  for (const t of all) {
-    if (NG_TERMS.has(t)) continue;
-    if (NG_KEYWORDS_FOR_STEP3.has(t)) continue;
-    if (seen.has(t)) continue;
-    seen.add(t);
-    out.push(t);
-    if (out.length >= max) break;
+  for (const seg of segments) {
+    const tokens = seg.match(/[一-龥ァ-ヶー]{4,12}/gu) || [];
+    const ascii = seg.match(/[A-Za-z][A-Za-z0-9.&-]{3,11}/g) || [];
+    for (const t of [...tokens, ...ascii]) {
+      if (NG_TERMS.has(t)) continue;
+      if (NG_KEYWORDS_FOR_STEP3.has(t)) continue;
+      if (seen.has(t)) continue;
+      seen.add(t);
+      out.push(t);
+      if (out.length >= max) {
+        return out.sort((a, b) => b.length - a.length);
+      }
+    }
   }
   return out.sort((a, b) => b.length - a.length);
 }
