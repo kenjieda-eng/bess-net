@@ -1057,6 +1057,45 @@ export const getAllSubstationSlugs = async (): Promise<{ slug: string }[]> => {
   return slugs;
 };
 
+/**
+ * 緯度経度ありの substations slug のみを返す（依頼AB Phase D, 落とし穴 #79 対策）
+ *
+ * Vercel build の 45 min timeout 回避のため、generateStaticParams で
+ * 全 6,516 件を pre-build するのではなく、緯度経度ありの 1,081 件
+ * （中部エリアのみ運用）だけを pre-build する。
+ *
+ * 残り 5,400+ 件は dynamicParams=true (Next.js default) により、
+ * 初回アクセス時に ISR で on-demand 生成される。
+ */
+export const getSubstationSlugsWithCoords = async (): Promise<
+  { slug: string }[]
+> => {
+  const slugs: { slug: string }[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+    try {
+      const data = await client.getList<Substation>({
+        endpoint: 'substations',
+        queries: { limit, offset, fields: 'slug,latitude,longitude' },
+      });
+      for (const s of data.contents) {
+        if (
+          typeof s.latitude === 'number' &&
+          typeof s.longitude === 'number' &&
+          !Number.isNaN(s.latitude) &&
+          !Number.isNaN(s.longitude)
+        ) {
+          slugs.push({ slug: s.slug });
+        }
+      }
+      if (data.contents.length < limit) break;
+    } catch {
+      break;
+    }
+  }
+  return slugs;
+};
+
 export const getSubstationsByArea = async (
   area: string,
   limit = 100

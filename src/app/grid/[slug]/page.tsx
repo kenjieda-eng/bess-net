@@ -18,7 +18,7 @@ import { AREA_META, AREA_JP_TO_SLUG } from './area-meta';
 import { GRID_PAGE_RELATED_TERMS } from './related-terms';
 import {
   getSubstationBySlug,
-  getAllSubstationSlugs,
+  getSubstationSlugsWithCoords,
   getRelatedOperatorsForSubstation,
   getRelatedNewsForSubstation,
 } from '@/lib/microcms';
@@ -27,10 +27,16 @@ import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 3600; // 1時間
 
+// 落とし穴 #79 対策: 全 6,516 件 pre-build すると Vercel 45min timeout に
+// 引っかかるため、緯度経度ありの substations（~1,081件、中部エリア）+ AREA_META
+// のみを pre-build する。残りの substations は dynamicParams=true (Next.js default)
+// により初回アクセス時に ISR on-demand で生成される。
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const areaParams = Object.keys(AREA_META).map((slug) => ({ slug }));
   try {
-    const subs = await getAllSubstationSlugs();
+    const subs = await getSubstationSlugsWithCoords();
     return [...areaParams, ...subs];
   } catch {
     return areaParams;
