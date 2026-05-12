@@ -136,6 +136,47 @@ export default async function FaqPage() {
           ) : (
             <FaqClient items={items} />
           )}
+
+          {/* 内部リンク網状ハブ — FAQ から各コーナーへの導線（各 FAQ の relatedGlossary/relatedExplainer は FaqClient 内で /glossary/{slug} /explainer/{slug} に自動リンク化）*/}
+          <section
+            style={{
+              marginTop: 48,
+              padding: 20,
+              background: 'var(--color-bg)',
+              border: '1px solid var(--color-border)',
+              borderRadius: 8,
+            }}
+          >
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
+              関連コンテンツ
+            </h2>
+            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+              より深く理解するための関連リソース。各 FAQ 内の「関連用語」「関連解説」リンクも併せてご活用ください:
+            </p>
+            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+              <li>
+                <Link href="/glossary">業界用語集（1,500+語）</Link> — 用語の詳細定義・読み・関連語
+              </li>
+              <li>
+                <Link href="/explainer">解説記事（125本）</Link> — 市場制度・参入手順・補助金の体系解説
+              </li>
+              <li>
+                <Link href="/policy-calendar">政策・法制度カレンダー</Link> — 制度改正・パブコメの時系列
+              </li>
+              <li>
+                <Link href="/events">業界イベント・展示会カレンダー</Link> — 学習機会の一覧
+              </li>
+              <li>
+                <Link href="/subsidies">補助金カレンダー</Link> — 公募・採択のトラッキング
+              </li>
+              <li>
+                <Link href="/operators">事業者ナビ（86社）</Link> — 業界プレイヤー検索
+              </li>
+              <li>
+                <Link href="/grid/chubu/map">中部地方 変電所マップ</Link> — 業界唯一の地図ベース系統情報DB
+              </li>
+            </ul>
+          </section>
         </div>
       </main>
       <SiteFooter />

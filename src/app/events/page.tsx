@@ -137,6 +137,44 @@ export default async function EventsCalendarPage() {
           ) : (
             <EventsCalendarClient items={items} />
           )}
+
+          {/* 内部リンク網状ハブ — 事業者・展示会参加準備の関連コーナー */}
+          <section
+            style={{
+              marginTop: 48,
+              padding: 20,
+              background: 'var(--color-bg)',
+              border: '1px solid var(--color-border)',
+              borderRadius: 8,
+            }}
+          >
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
+              関連コンテンツ
+            </h2>
+            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+              展示会参加・営業活動・業界研究を深めるための関連リソース:
+            </p>
+            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+              <li>
+                <Link href="/operators">事業者ナビ（EPC・O&M・PCS・電池メーカー等 86社）</Link>
+              </li>
+              <li>
+                <Link href="/projects">プロジェクトデータベース（国内蓄電所事例）</Link>
+              </li>
+              <li>
+                <Link href="/policy-calendar">政策・法制度カレンダー（パブコメ・重要会議）</Link>
+              </li>
+              <li>
+                <Link href="/explainer">解説記事（市場制度・参入手順 125本）</Link>
+              </li>
+              <li>
+                <Link href="/faq">業界用語よくある質問（FAQ 50件）</Link>
+              </li>
+              <li>
+                <Link href="/links">お役立ちサイト（業界団体・公的機関 210件）</Link>
+              </li>
+            </ul>
+          </section>
         </div>
       </main>
       <SiteFooter />

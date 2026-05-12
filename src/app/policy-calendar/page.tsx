@@ -106,6 +106,44 @@ export default async function PolicyCalendarPage() {
           ) : (
             <PolicyCalendarClient items={items} />
           )}
+
+          {/* 内部リンク網状ハブ — 制度・解説・関連コーナーへの導線 */}
+          <section
+            style={{
+              marginTop: 48,
+              padding: 20,
+              background: 'var(--color-bg)',
+              border: '1px solid var(--color-border)',
+              borderRadius: 8,
+            }}
+          >
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
+              関連コンテンツ
+            </h2>
+            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+              政策・制度の理解を深めるための関連リソース:
+            </p>
+            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+              <li>
+                <Link href="/explainer/grid-scale-bess">系統用蓄電池とは — 基礎解説</Link>
+              </li>
+              <li>
+                <Link href="/explainer/balancing-market">需給調整市場の解説</Link>
+              </li>
+              <li>
+                <Link href="/glossary">業界用語集（1,500+語）</Link>
+              </li>
+              <li>
+                <Link href="/subsidies">補助金カレンダー（公募・採択トラッキング）</Link>
+              </li>
+              <li>
+                <Link href="/events">業界イベント・展示会カレンダー</Link>
+              </li>
+              <li>
+                <Link href="/faq">業界用語よくある質問（FAQ 50件）</Link>
+              </li>
+            </ul>
+          </section>
         </div>
       </main>
       <SiteFooter />

@@ -50,10 +50,19 @@ export const siteConfig = {
     { label: 'プロジェクト', href: '/projects', enabled: true },
     { label: 'お役立ちサイト', href: '/links', enabled: true },
     { label: 'お知らせ', href: '/info', enabled: true },
+    // Sprint 2 追加 (依頼AB/AC/AD)
+    { label: '政策カレンダー', href: '/policy-calendar', enabled: true },
+    { label: 'イベント', href: '/events', enabled: true },
+    { label: 'FAQ', href: '/faq', enabled: true },
   ] as NavItem[],
 
-  // フッターのリンク群
+  // フッターのリンク群（主要コーナーへの導線 + サイト情報）
   footerLinks: [
+    // Sprint 2 追加コーナー
+    { label: '政策・法制度カレンダー', href: '/policy-calendar' },
+    { label: '業界イベント・展示会', href: '/events' },
+    { label: '業界用語よくある質問', href: '/faq' },
+    // サイト情報
     { label: '蓄電所ネットについて', href: '/about' },
     { label: '編集方針', href: '/editorial-policy' },
     { label: 'プライバシーポリシー', href: '/privacy' },

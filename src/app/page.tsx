@@ -13,48 +13,29 @@ const ROADMAP_BADGE: Record<RoadmapStatus, { label: string; className: string }>
 
 export const revalidate = 60;
 
+// Sprint 5+ で計画中の真に未公開なコンテンツのみ列挙。
+// 既公開コーナーは「Now Live · 注目コーナー」または「公開中」セクションへ移動済み。
 const upcomingFeatures = [
   {
     num: '01',
-    title: '業界ニュース',
+    title: '日本の蓄電所マップ全国展開',
     body:
-      '新規連系・補助金採択・制度改正・市場動向を、編集部が独自取材を含めて発信します。',
-    status: 'Sprint 1後半',
+      '現在は中部電力PG 配下 1,081箇所を先行公開。残る7社（東北・北陸・関西・中国・四国・九州・北海道）の緯度経度補完を進めつつ、Leaflet レイヤーへ順次展開予定。',
+    status: 'Sprint 3〜4（進行中）',
   },
   {
     num: '02',
-    title: 'プロジェクトデータベース',
+    title: '火災・トラブル事例DB',
     body:
-      '国内の系統用蓄電池プロジェクトを公開情報ベースで一元管理。容量・所在地・事業者・ステータス・運転開始時期・併設の有無を構造化。',
-    status: 'Sprint 1後半',
+      '国内外の蓄電池トラブル事例（火災・性能低下・系統影響）を公開資料に基づき体系化。業界の安全文化向上に資する情報基盤を構築。',
+    status: 'Sprint 5',
   },
   {
     num: '03',
-    title: '補助金カレンダー',
+    title: '事業者ナビ拡充・口コミ機能',
     body:
-      '経産省・エネ庁・NEDO・SII・自治体の蓄電池関連補助金を、公募開始から〆切、採択結果まで継続トラック。',
-    status: 'Sprint 1後半',
-  },
-  {
-    num: '04',
-    title: '変電所別 系統空き容量',
-    body:
-      '10電力会社が公表する空き容量情報を変電所単位で一覧化。エリア・電圧・容量で素早く絞り込み。',
-    status: 'Sprint 2',
-  },
-  {
-    num: '05',
-    title: '日本の蓄電所マップ',
-    body:
-      'プロジェクトDBと系統情報をレイヤー連動した地図ベースの体験。',
-    status: 'Sprint 3',
-  },
-  {
-    num: '06',
-    title: '事業者・サービス一覧',
-    body:
-      '電池メーカー・PCS・EPC・O&M・アグリゲーター・土地・金融・保険・法務・監視・消防・電気主任の12カテゴリ。',
-    status: 'Sprint 2以降',
+      '現在 86社・78ops を継続拡充しつつ、利用事業者からの匿名レビュー機能を検討中。EPC・O&M・PCS 事業者の客観的評価基盤に。',
+    status: 'Sprint 6〜',
   },
 ];
 
@@ -103,7 +84,7 @@ export default async function Home() {
             <span className="accent">実務情報ポータル</span>
           </h1>
           <p>
-            業界ニュース、プロジェクトデータベース、市場制度解説、補助金カレンダー、変電所別 系統空き容量、事業者情報。蓄電所事業に関わるすべての方が「ここに来れば一通りわかる」サイトを目指します。
+            業界ニュース、プロジェクトデータベース、市場制度解説、補助金カレンダー、政策・法制度カレンダー、業界イベント、業界用語FAQ、変電所別 系統空き容量、事業者情報。蓄電所事業に関わるすべての方が「ここに来れば一通りわかる」サイトを目指します。
           </p>
           <div className="hero-cta">
             <Link href="/explainer" className="btn-primary">
@@ -116,27 +97,99 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Phase 5 PoC: 新コンテンツ告知 — /grid 系統空き容量DB */}
+      {/* AA Phase 4: 業界唯一の地図ベース変電所空き容量DB — 差別化資産の最上位告知 */}
       <section className="section section-alt">
         <div className="section-inner">
           <div className="home-feature">
-            <span className="home-feature-tag">NEW · Phase 1 PoC</span>
-            <h2>変電所別 系統空き容量データベース</h2>
+            <span className="home-feature-tag">業界唯一 · Phase 4 公開中</span>
+            <h2>🗺 中部地方 変電所空き容量マップ</h2>
             <p>
-              東北電力NW・北陸電力送配電・四国電力送配電の3社・1,449変電所の予想潮流・空容量・N-1電制適用可否・出力制御の可能性を、公表 CSV ベースで一元化。
-              系統用蓄電池の連系検討に必要なデータを、変電所単位で検索可能です。
+              中部電力パワーグリッド管内の <strong>1,081箇所</strong> の変電所を、緯度経度付きで Leaflet 地図に可視化。
+              系統空き容量・N-1電制適用可否・出力制御リスクをマーカー色で直感的に把握できる、
+              <strong>業界初の検索可能・地図ベース変電所空き容量データベース</strong> です。
             </p>
             <ul className="home-feature-stats">
               <li>
-                <strong>1,449</strong>変電所
+                <strong>1,081</strong>変電所
               </li>
               <li>
-                <strong>1,047</strong>空容量プラス
+                <strong>業界初</strong>地図UI
               </li>
               <li>
-                <strong>147</strong>N-1電制適用可
+                <strong>緯度経度</strong>付き
               </li>
             </ul>
+            <Link href="/grid/chubu/map" className="home-feature-button">
+              マップを開く →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Sprint 2 Day 2 完遂: 新規 3 corners 同時公開 — /policy-calendar /events /faq */}
+      <section className="section">
+        <div className="section-inner">
+          <div className="section-label">NEW · Sprint 2 新コーナー</div>
+          <h2 className="section-title">時系列で追う、業界の今と動向</h2>
+          <p className="section-desc" style={{ marginBottom: 24 }}>
+            政策・法制度の動き、業界イベント・展示会、よくある質問。蓄電所事業に必要な情報を時系列・体系的に整理しました。
+          </p>
+          <div className="feature-grid">
+            <div className="feature">
+              <div className="feature-num">
+                01<span className="feature-status">公開中</span>
+              </div>
+              <h3>政策・法制度カレンダー</h3>
+              <p>
+                経産省・OCCTO・環境省・NEDO・SII の <strong>26件</strong> の主要政策イベント（法改正・パブコメ・重要会議・オークション・補助金公募）を時系列で一覧。
+              </p>
+              <p style={{ marginTop: 8 }}>
+                <Link href="/policy-calendar" style={{ fontWeight: 600 }}>
+                  /policy-calendar を開く →
+                </Link>
+              </p>
+            </div>
+            <div className="feature">
+              <div className="feature-num">
+                02<span className="feature-status">公開中</span>
+              </div>
+              <h3>業界イベント・展示会カレンダー</h3>
+              <p>
+                スマートエネルギーWeek・PV EXPO・Energy Storage Japan 等の <strong>40件</strong> の展示会・セミナー・学会・業界団体総会を時系列で一覧。
+              </p>
+              <p style={{ marginTop: 8 }}>
+                <Link href="/events" style={{ fontWeight: 600 }}>
+                  /events を開く →
+                </Link>
+              </p>
+            </div>
+            <div className="feature">
+              <div className="feature-num">
+                03<span className="feature-status">公開中</span>
+              </div>
+              <h3>業界用語よくある質問（FAQ）</h3>
+              <p>
+                制度・技術・事業・補助金・その他の5カテゴリで <strong>50件</strong> のQ&Aを整理。新規参入者から既存事業者まで、エントリーポイントとして。
+              </p>
+              <p style={{ marginTop: 8 }}>
+                <Link href="/faq" style={{ fontWeight: 600 }}>
+                  /faq を開く →
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 既存: 系統空き容量DB（マップ以外のテーブル形式アクセス）*/}
+      <section className="section section-alt">
+        <div className="section-inner">
+          <div className="home-feature">
+            <span className="home-feature-tag">公開中 · 9社 系統データ</span>
+            <h2>変電所別 系統空き容量データベース（表形式）</h2>
+            <p>
+              北海道電力NW・東北電力NW・中部電力PG・北陸電力送配電・関西電力送配電・中国電力NW・四国電力送配電・九州電力送配電・沖縄電力 の <strong>9社・約{substationsCountStr}件</strong> の予想潮流・空容量・N-1電制適用可否を、公表データに基づき一元化。エリア別・都道府県別・名称検索でアクセス可能です。
+            </p>
             <Link href="/grid" className="home-feature-button">
               データベースを見る →
             </Link>
