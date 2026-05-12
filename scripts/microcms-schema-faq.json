@@ -1,0 +1,84 @@
+{
+  "apiFields": [
+    {
+      "fieldId": "question",
+      "name": "質問",
+      "kind": "text",
+      "required": true,
+      "description": "FAQ の質問。疑問形（「〜とは？」「〜するには？」）が SEO 推奨"
+    },
+    {
+      "fieldId": "slug",
+      "name": "スラッグ",
+      "kind": "text",
+      "required": true,
+      "isUnique": true,
+      "description": "URL 用識別子。質問の英訳ベース（例: what-is-grid-scale-bess）"
+    },
+    {
+      "fieldId": "answer",
+      "name": "回答",
+      "kind": "textArea",
+      "required": true,
+      "description": "200〜400字の簡潔な回答。結論先出し + 文末に出典・関連リンクを推奨"
+    },
+    {
+      "fieldId": "category",
+      "name": "カテゴリ",
+      "kind": "select",
+      "required": true,
+      "selectItems": [
+        { "id": "fc8kPdR4nA", "value": "制度" },
+        { "id": "fc2nWqJ7mB", "value": "技術" },
+        { "id": "fc6sZrL5gC", "value": "事業" },
+        { "id": "fc4tHxN3kD", "value": "補助金" },
+        { "id": "fc9vBpM8sE", "value": "その他" }
+      ],
+      "selectInitialValue": [],
+      "initialValue": {
+        "text": null,
+        "textArea": null,
+        "richEditorV2": null,
+        "media": null,
+        "mediaList": null,
+        "date": null,
+        "relation": null,
+        "relationList": null,
+        "number": null,
+        "file": null,
+        "boolean": null,
+        "select": []
+      },
+      "multipleSelect": false
+    },
+    {
+      "fieldId": "relatedGlossary",
+      "name": "関連用語集",
+      "kind": "textArea",
+      "required": false,
+      "description": "関連する用語集 slug を改行区切りで記入（例: grid-scale-bess\\nbess）。ページレンダリング時に /glossary/{slug} へリンク化"
+    },
+    {
+      "fieldId": "relatedExplainer",
+      "name": "関連解説",
+      "kind": "textArea",
+      "required": false,
+      "description": "関連する解説 slug を改行区切りで記入。ページレンダリング時に /explainer/{slug} へリンク化"
+    },
+    {
+      "fieldId": "sourceUrl",
+      "name": "出典URL",
+      "kind": "text",
+      "required": false,
+      "description": "公式情報源URL（経産省・OCCTO・SII 等）。回答末尾に表示"
+    },
+    {
+      "fieldId": "displayOrder",
+      "name": "表示順",
+      "kind": "number",
+      "required": false,
+      "description": "同カテゴリ内の表示順序（小さい数値が先）。未設定時は 公開日順"
+    }
+  ],
+  "customFields": []
+}

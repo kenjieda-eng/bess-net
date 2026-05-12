@@ -252,6 +252,50 @@ export const getAllPolicyEvents = async (): Promise<PolicyEvent[]> => {
   return all;
 };
 
+// ===== 業界用語FAQ（faq、依頼AD） =====
+export type Faq = {
+  id: string;
+  question: string;
+  slug: string;
+  answer: string;
+  category: string[]; // microCMS select は配列で返る
+  relatedGlossary?: string; // 改行区切り string
+  relatedExplainer?: string; // 改行区切り string
+  sourceUrl?: string;
+  displayOrder?: number;
+  publishedAt: string;
+  updatedAt: string;
+  createdAt: string;
+  revisedAt: string;
+};
+
+/**
+ * FAQ の全件を取得（依頼AD）
+ * - displayOrder 昇順 → publishedAt 降順
+ * - schema 未作成 / 一時的エラー時は空配列で graceful return
+ */
+export const getAllFaq = async (): Promise<Faq[]> => {
+  const all: Faq[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  try {
+    for (let offset = 0; offset < 500; offset += limit) {
+      const data = await client.getList<Faq>({
+        endpoint: 'faq',
+        queries: {
+          limit,
+          offset,
+          orders: 'displayOrder,-publishedAt',
+        },
+      });
+      all.push(...data.contents);
+      if (data.contents.length < limit) break;
+    }
+  } catch {
+    return [];
+  }
+  return all;
+};
+
 // ===== 業界イベント・展示会カレンダー（industry-events、依頼AC） =====
 export type IndustryEvent = {
   id: string;

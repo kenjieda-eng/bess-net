@@ -1,0 +1,456 @@
+{
+  "scope": "依頼AD Phase A: 業界用語FAQ 50件（5カテゴリ × 10件）",
+  "note": "質問は疑問形、回答 200-400字（結論先出し）、出典URL推奨、関連glossary/explainer slug 任意（改行区切り string）",
+  "items": [
+    {
+      "displayOrder": 1,
+      "category": "制度",
+      "question": "系統用蓄電池とは何ですか？",
+      "answer": "系統用蓄電池とは、電力会社の送配電網（系統）に直接接続される大規模蓄電池のことです。出力数MW〜数百MW、容量数十MWh〜数百MWh級が標準的で、再生可能エネルギーの出力変動吸収、電力市場での裁定取引、需給調整に活用されます。日本では2022年の電気事業法改正で系統用蓄電池が「発電事業」として位置づけられ、市場参加が制度的に整備されました。海外では Tesla Hornsdale Power Reserve（豪州、150MW）等の大型案件が先行し、日本でも紀の川蓄電所（関電・オリックス、48MW/113MWh）が稼働中です。",
+      "sourceUrl": "https://www.meti.go.jp/policy/energy_environment/energy_policy/",
+      "relatedGlossary": "grid-scale-bess\nbess",
+      "relatedExplainer": "grid-scale-bess"
+    },
+    {
+      "displayOrder": 2,
+      "category": "制度",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "answer": "容量市場とは、4年後の電力供給力（kW 価値）を取引する市場で、OCCTO（電力広域的運営推進機関）が運営します。再生可能エネルギーの大量導入で予備力確保が困難になる中、火力・蓄電池・揚水等の調整電源の長期投資を支援する仕組みです。系統用蓄電池は「電源等」として応札可能で、200kW 以上の出力が要件。メインオークション（4年前）と追加オークション（前年）があり、落札すれば容量拠出金（kW単価）が年単位で支払われます。蓄電所のマルチユース運用の中核収益源の一つ。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/",
+      "relatedGlossary": "capacity-market",
+      "relatedExplainer": "capacity-market"
+    },
+    {
+      "displayOrder": 3,
+      "category": "制度",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "answer": "需給調整市場は、電力の需給バランスを瞬時〜数十分単位で調整する電源を取引する市場です。一般送配電事業者（東電PG等）が運営し、商品は応動時間順に：一次調整力（FCR、10秒以内）、二次調整力①②（5分以内）、三次調整力①②（45分以内）の5種類。系統用蓄電池は応動の速さを活かし、特に一次〜二次調整力で競争力を発揮します。2024年4月から本格運用が開始され、蓄電所のマルチユース運用の主要収益源として注目されています。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/jukyu-chousei/",
+      "relatedGlossary": "jepx-balancing-market",
+      "relatedExplainer": "balancing-market"
+    },
+    {
+      "displayOrder": 4,
+      "category": "制度",
+      "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "answer": "長期脱炭素電源オークション（LTDC, Long-term Decarbonization Capacity）は、脱炭素電源の長期投資を支援する OCCTO 運営の入札制度です。2023年度に開始され、対象は原子力・水素・アンモニア・蓄電池・揚水等の脱炭素電源。落札すると最大20年間の容量拠出金が保証され、投資回収の確実性が高まります。系統用蓄電池は対象電源として位置づけられ、特に長時間放電型（4時間以上）が優位。第3回応札が2026年1月開始予定で、業界の中長期投資の方向性を決める制度。",
+      "sourceUrl": "https://www.occto.or.jp/market-board/market/ltdc/",
+      "relatedGlossary": "ltdc-auction",
+      "relatedExplainer": "ltdc-auction"
+    },
+    {
+      "displayOrder": 5,
+      "category": "制度",
+      "question": "ノンファーム型接続とは何ですか？",
+      "answer": "ノンファーム型接続とは、系統混雑時に出力制御を受けることを条件に、系統増強を待たずに連系できる接続方式です。従来のファーム接続では系統増強完了まで（数年〜10年）連系できなかったのが、ノンファームなら混雑時のみ制御を受け入れる前提ですぐに連系可能。再エネ電源・蓄電池の早期連系を実現する制度で、2021年から本格適用、2025年から蓄電所への拡大適用が進行中。系統用蓄電池のメリットは大きく、業界の標準的接続オプションになっています。",
+      "sourceUrl": "https://www.occto.or.jp/access/non-firm/",
+      "relatedGlossary": "non-firm-connection\nnon-firm-connection-bess",
+      "relatedExplainer": "non-firm-connection-bess"
+    },
+    {
+      "displayOrder": 6,
+      "category": "制度",
+      "question": "FIT制度とFIP制度の違いは？",
+      "answer": "FIT（Feed-in Tariff）は固定価格買取制度で、再エネ電源の発電量を市場価格に関わらず固定単価で買い取ります。一方 FIP（Feed-in Premium）は市場価格 + プレミアム（補助）の形式で、市場連動性が高まる仕組み。日本では2022年4月から FIP が大型再エネ電源（1MW以上）の主流制度になりました。FIP では蓄電池併設のメリットが大きく、市場価格高い時間帯に放電する裁定取引（アービトラージ）が事業性を左右。FIT 転 FIP 案件の蓄電池併設が業界のトレンドです。",
+      "sourceUrl": "https://www.enecho.meti.go.jp/category/saving_and_new/saiene/kaitori/fit_fip.html",
+      "relatedGlossary": "fit\nfip",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 7,
+      "category": "制度",
+      "question": "出力制御とは何ですか？蓄電池でどう対応する？",
+      "answer": "出力制御とは、電力需給バランス維持のため、送配電事業者が再エネ電源の発電出力を抑制する措置です。特に九州・北海道・東北エリアで太陽光・風力の大量連系時に発生し、年間の制御時間が増加傾向。蓄電池の役割は2つ：(1) 太陽光併設で出力制御時に充電し制御回避（PV+BESS）、(2) 系統用蓄電池として制御時の余剰電力を吸収し、夕方〜夜間の高単価時間帯に放電（裁定取引）。九州エリアでは出力制御回避が蓄電所事業の核心的価値となっています。",
+      "sourceUrl": "https://www.enecho.meti.go.jp/category/saving_and_new/saiene/grid/index.html",
+      "relatedGlossary": "output-control",
+      "relatedExplainer": "output-control"
+    },
+    {
+      "displayOrder": 8,
+      "category": "制度",
+      "question": "N-1電制とは何ですか？",
+      "answer": "N-1電制とは、送電線の1回線故障時（N-1事故時）に発電機の出力を瞬時自動制御することで、本来必要な系統増強を回避する仕組みです。電源の最大出力ベースで連系するファーム接続では系統増強コストが大きくなりがちですが、N-1電制を組み合わせると小規模の系統増強で連系可能になり、連系コスト・期間が大幅短縮。2024年4月に蓄電所への適用ガイドラインが公表され、系統用蓄電池の連系コスト最適化の重要選択肢となっています。",
+      "sourceUrl": "https://www.occto.or.jp/access/n-1-control/",
+      "relatedGlossary": "n1-control\nn1-control-bess",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 9,
+      "category": "制度",
+      "question": "特定卸供給事業者として何ができますか？",
+      "answer": "特定卸供給事業者とは、2022年の電気事業法改正で新設された区分で、需給調整・取引等を主目的とする事業者を指します。METI（経済産業省）への登録が必要で、要件は事業計画書提出と一定の財務基盤等。登録後は系統用蓄電池の自家保有・運用、卸電力市場での売買、需給調整市場・容量市場への参加が可能になります。系統用蓄電所事業者の大半は本区分で登録しており、伊藤忠・JERA Cross・四国電力等が代表例。蓄電所事業の制度的基盤となる重要登録区分です。",
+      "sourceUrl": "https://www.meti.go.jp/policy/energy_environment/electricity_supply/",
+      "relatedGlossary": "tokutei-orosi-kyokyu",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 10,
+      "category": "制度",
+      "question": "系統連系協議の流れは？",
+      "answer": "系統連系協議は、送配電事業者と発電事業者が連系条件を確定する手続きで、概ね以下の流れ：(1) 事前相談（系統情報公開ツールで空き容量確認）、(2) 接続検討申込（送配電に申請、検討費用支払）、(3) 接続検討結果受領（連系点・容量・費用負担額提示、約3-6ヶ月）、(4) 接続契約申込（受諾なら工事費負担金を払い契約）、(5) 工事完了・連系。系統用蓄電所の場合、約1-2年の協議期間を要するため、事業計画と並行で早期着手が重要。ノンファーム接続も選択肢に。",
+      "sourceUrl": "https://www.occto.or.jp/access/process/",
+      "relatedGlossary": "grid-connection",
+      "relatedExplainer": "grid-connection-process"
+    },
+    {
+      "displayOrder": 1,
+      "category": "技術",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "answer": "リチウムイオン電池の主要正極材料は3種類。LFP（リン酸鉄リチウム）は安全性が最も高く（熱暴走しにくい）、サイクル寿命長い（4,000-6,000回）、コスト低い、エネルギー密度はやや低い。NMC（ニッケル・マンガン・コバルト）はエネルギー密度高く、EV用車載電池の主流。NCA（ニッケル・コバルト・アルミ）は NMC より更にエネルギー密度高いがコスト高。系統用蓄電池では安全性・寿命・コストのバランスで LFP が主流に。CATL・BYD 等の中国メーカーが LFP で世界トップシェアを持ちます。",
+      "sourceUrl": "https://www.nedo.go.jp/library/battery_hakusyo.html",
+      "relatedGlossary": "lithium-ion-battery\nlfp-battery\nnmc-battery\nnca-battery",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 2,
+      "category": "技術",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "answer": "PCS（Power Conditioning System）は、蓄電池の直流（DC）電力を系統の交流（AC）に変換する装置です。蓄電池の充放電制御、系統電圧・周波数追従、保護動作（過電流・地絡）、需給調整市場応動指令の実行など多機能。系統用蓄電池の出力（MW）を決定する主要機器で、変換効率は通常96-98%。主要メーカーは Tesla・Fluence・Sungrow・東芝エネシス・三菱電機・SMA・GoodWe・Huawei 等。PCS の選定で蓄電所の運用性能・市場収益が左右されるため、業界の最重要機器の一つです。",
+      "sourceUrl": "https://www.nedo.go.jp/activities/PT201304_ES01.html",
+      "relatedGlossary": "pcs",
+      "relatedExplainer": "pcs-selection-guide"
+    },
+    {
+      "displayOrder": 3,
+      "category": "技術",
+      "question": "コンテナ型BESSとは何ですか？",
+      "answer": "コンテナ型BESS（Battery Energy Storage System）は、20ft または 40ft 海上輸送コンテナサイズ（ISO 規格）に電池・PCS・空調・消火・制御システムを一体収容した蓄電池ソリューションです。工場で組立・試験を完了させ、現地に運搬・据付するだけで稼働可能。施工期間が短く、用地効率も良い。Tesla Megapack、Fluence SmartStack、Sungrow ST シリーズ、BYD Cube 等が代表例。1コンテナ あたり 2-5MWh が標準で、複数コンテナ並列で 50MWh 以上の大規模案件にも対応。系統用蓄電所の主流形態となっています。",
+      "sourceUrl": "",
+      "relatedGlossary": "container-bess",
+      "relatedExplainer": "container-bess-comparison"
+    },
+    {
+      "displayOrder": 4,
+      "category": "技術",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "answer": "全固体電池とは、リチウムイオン電池の電解質を液体から固体に置き換えた次世代電池技術です。安全性向上（液漏れ・熱暴走リスクほぼゼロ）、高エネルギー密度、長寿命、急速充電が期待されます。トヨタ自動車が2027-2028年量産化目標を公表（EV車載が先行）、米国 QuantumScape・中国 CATL も開発。系統用蓄電池への展開は EV 領域の量産確立後と見込まれ、商業化は2030年前後の見通し。日本では出光興産との共同開発、京セラの半固体（クレイ型）電池 Enerezza が中間ソリューションとして家庭用市場に投入されています。",
+      "sourceUrl": "https://www.nedo.go.jp/news/press/AA5_101569.html",
+      "relatedGlossary": "solid-state-battery",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 5,
+      "category": "技術",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "answer": "レドックスフロー電池は、バナジウム電解液を循環させて充放電する電池で、リチウムイオンと異なる動作原理を持ちます。主な違い：(1) サイクル寿命2万回超（LIB の数千回に対し）、(2) 6時間以上の長時間放電に経済性（LDES 用途）、(3) 安全性高い（熱暴走リスクほぼゼロ）、(4) 電解液リユース可能、(5) 出力（kW）と容量（kWh）の独立設計可能。デメリットはエネルギー密度の低さ・初期コスト。住友電工が世界有数のメーカーで、福島県浪江町プロジェクト（RS Tech/LE Sys 1.99MW/12MWh、2027年運開予定）が国内モデルケース。",
+      "sourceUrl": "https://sumitomoelectric.com/jp/products/redox/",
+      "relatedGlossary": "redox-flow-battery\nldes",
+      "relatedExplainer": "redox-flow-vs-lfp"
+    },
+    {
+      "displayOrder": 6,
+      "category": "技術",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "answer": "NAS電池は、日本ガイシ（NGK）が世界で唯一量産する大容量・長時間放電型の蓄電池で、300℃の高温作動が特徴。サイクル寿命4,500回以上、6時間以上の長時間放電で経済優位、リサイクル性高い（材料回収率98%）。一方、保温電力消費・起動時間の長さ・LIBとの単価競争が課題。長期脱炭素オークション（LTDC）対象電源として再注目され、東邦ガス70MWh案件等で採用実績。リチウムイオン主流の市場で、レドックスフロー・CAES・水素等と並ぶ長時間貯蔵（LDES）の選択肢として位置づけられています。",
+      "sourceUrl": "https://www.ngk.co.jp/product/nas/",
+      "relatedGlossary": "nas-battery\nldes",
+      "relatedExplainer": "ngk-nas-exit-ldes-impact"
+    },
+    {
+      "displayOrder": 7,
+      "category": "技術",
+      "question": "セル・モジュール・パックの違いは？",
+      "answer": "リチウムイオン電池の階層構造です。(1) セル：最小単位の電池、円筒型・角型・パウチ型があり、容量数Ah〜数百Ah。(2) モジュール：セルを直列・並列接続した中間単位、BMS（バッテリーマネジメントシステム）と電圧管理。(3) パック：複数モジュールを統合した最終単位、PCS と連携。系統用蓄電池では「パック」が事業者の購入単位で、容量数百kWh〜数MWh規模。セル製造（CATL・BYD・LG・Samsung 等）→ パックメーカー（Tesla・Fluence 等）→ EPC（システム統合）の3段階サプライチェーンが業界の基本構造です。",
+      "sourceUrl": "",
+      "relatedGlossary": "battery-cell\nbattery-module\nbattery-pack",
+      "relatedExplainer": "lithium-cell-module-pack"
+    },
+    {
+      "displayOrder": 8,
+      "category": "技術",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "answer": "BMS（Battery Management System）は、蓄電池の安全運用と性能最適化を担う制御システムです。主な機能：(1) セル電圧・温度監視、(2) 充放電制御（過充放電防止）、(3) セルバランシング（電圧差均一化）、(4) SOH（State of Health、健全度）・SOC（State of Charge、充電率）算出、(5) 異常検知・保護動作。BMS の品質が電池寿命・安全性を直接左右し、PCS と連携して系統運用に必要な情報を提供。海外メーカーは BMS をパックに内蔵、国内では PCS メーカーが BMS を統合提供することも。蓄電池の「頭脳」に相当する重要装置です。",
+      "sourceUrl": "",
+      "relatedGlossary": "bms",
+      "relatedExplainer": "cell-balancing-technology"
+    },
+    {
+      "displayOrder": 9,
+      "category": "技術",
+      "question": "蓄電池のサイクル寿命とは？",
+      "answer": "サイクル寿命とは、蓄電池が一定の容量保持率（通常80%）を維持できる充放電回数のことです。LIB の場合、LFP は4,000-6,000サイクル、NMC は2,000-3,000サイクル、レドックスフローは2万回超、NAS は4,500回。サイクル寿命は使い方（DOD = 放電深度、温度、充放電レート）で大きく変動し、80% DOD だと公称寿命の半分以下になることも。系統用蓄電池の事業性試算では、サイクル寿命と運用パターン（年間サイクル数）から経済寿命を逆算します。一日2-3サイクル運用が業界標準で、10-15年の事業期間が想定されます。",
+      "sourceUrl": "",
+      "relatedGlossary": "cycle-life\ndepth-of-discharge",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 10,
+      "category": "技術",
+      "question": "蓄電池の劣化診断はどう行う？",
+      "answer": "蓄電池の劣化診断は、運用中の電池の健全度（SOH）を評価する手法で、(1) 容量測定（フルサイクル、最も確実）、(2) 内部抵抗測定（応急的）、(3) インピーダンス測定（精密）、(4) 機械学習による予測（電圧・温度履歴から推定）等があります。中国電力下松蓄電所（48MWh）では旭化成と共同で「劣化診断実証」（2026年4月発表、4年間）を実施中で、業界の運用ノウハウ蓄積の代表事例。診断結果は更新タイミング判断・残価評価・残価ファイナンスに直結し、長期運用案件で重要性が増しています。",
+      "sourceUrl": "",
+      "relatedGlossary": "soh\nbattery-degradation",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 1,
+      "category": "事業",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "answer": "新規参入の標準手順：(1) 事業計画立案（ターゲット市場・規模・収益モデル）、(2) METI 特定卸供給事業者登録（蓄電所所有なら必須）、(3) 用地選定（系統空き容量確認、本サイトの /grid データベース活用）、(4) 系統連系協議（接続検討→接続契約、約1-2年）、(5) EPC 選定・契約（電池・PCS メーカー込み）、(6) ファイナンス組成（自己資金 or PF）、(7) 建設・試運転、(8) 商業運転開始・市場参加。準備期間は標準で2-3年、PF 組成・系統協議に時間がかかります。経験豊富な EPC・コンサルとの連携が成否を左右します。",
+      "sourceUrl": "https://www.meti.go.jp/policy/energy_environment/electricity_supply/",
+      "relatedGlossary": "bess-business-entry",
+      "relatedExplainer": "bess-business-entry-decision-tree"
+    },
+    {
+      "displayOrder": 2,
+      "category": "事業",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "answer": "蓄電所 PF（プロジェクトファイナンス）は、案件の将来キャッシュフローを担保とする融資で、典型的な構造：(1) SPC（特別目的会社）設立、(2) スポンサー出資 + 銀行融資（debt:equity = 70:30 程度）、(3) 容量市場・需給調整市場の長期契約をキャッシュフロー保証、(4) EPC契約・O&M契約をリスク移転、(5) 保険でカバー。国内初の蓄電池 PF は姫路蓄電所（出光・レノバ・長瀬・SMFL 4社、15MW/48MWh、2025年）で、業界モデルケース。アレンジャーは SBI 新生銀行・三菱UFJ等の大手金融機関。20年程度の長期返済が一般的です。",
+      "sourceUrl": "",
+      "relatedGlossary": "non-recourse-pf",
+      "relatedExplainer": "bess-pf-financing"
+    },
+    {
+      "displayOrder": 3,
+      "category": "事業",
+      "question": "EPC選定のポイントは？",
+      "answer": "EPC（Engineering, Procurement, Construction）選定の主要ポイント：(1) 実績（過去案件の規模・運開実績）、(2) 採用機器（電池メーカー・PCS の品質・実績）、(3) 保証内容（性能保証・容量劣化保証の年数・範囲）、(4) 価格（円/kWh）、(5) 工期、(6) O&M との連携（同一社か別社か）、(7) 経済安全保障対応（国産電池採用可否）、(8) 災害・火災対応設計。国内主要 EPC は JFEエンジニアリング・東芝エネシス・北海電工・日立等。海外勢の Sungrow・BYD 等が直接 EPC 提供する案件も増加。複数社の相見積もりと現地視察が必須です。",
+      "sourceUrl": "",
+      "relatedGlossary": "epc",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 4,
+      "category": "事業",
+      "question": "O&M体制はどう設計する？",
+      "answer": "O&M（Operation & Maintenance、運用保守）体制の設計要素：(1) 24h監視（遠隔監視 SaaS、異常検知・通知）、(2) 定期点検（月次・年次、目視・診断機器）、(3) 緊急対応（故障時の出動・部品交換、SLA 設定）、(4) 性能管理（容量劣化トラッキング、保証請求）、(5) 火災対策（消防設備点検・近隣自治体連携）。EPC が O&M 込みパッケージで提供するケースと、専門 O&M 業者（オリックス・リニューアブルエナジー・マネジメント等）に分離発注のケースがあります。長期運用案件では O&M 品質が事業性を直接左右するため、契約条件の精査が重要です。",
+      "sourceUrl": "",
+      "relatedGlossary": "o-and-m",
+      "relatedExplainer": "bess-daily-inspection-checklist"
+    },
+    {
+      "displayOrder": 5,
+      "category": "事業",
+      "question": "蓄電所のIRR目安は？",
+      "answer": "蓄電所事業の IRR（内部収益率）目安は、規模・市場・運用条件で大きく変動しますが、業界標準は8-12%（プロジェクトIRR）。マルチユース運用（容量市場 + 需給調整市場 + JEPX 裁定取引）の組合せ最適化で 10-15% を狙うケースも。一方、容量市場のみ依存だと 6-8% に低下。重要パラメータは：(1) CAPEX（円/kWh）、(2) 容量市場落札単価、(3) 需給調整市場収益、(4) サイクル寿命、(5) O&M コスト、(6) 補助金・税制優遇。詳細感度分析は Aurora Energy Research・Wood Mackenzie 等の業界調査機関のレポートを参照することが推奨されます。",
+      "sourceUrl": "",
+      "relatedGlossary": "irr\nproject-irr",
+      "relatedExplainer": "bess-irr-sensitivity"
+    },
+    {
+      "displayOrder": 6,
+      "category": "事業",
+      "question": "接続検討と接続契約の流れは？",
+      "answer": "系統連系の手続きは2段階：(1) 接続検討：送配電事業者に「この場所にこの規模で連系可能か」を問合せ、検討費用（約100-500万円）を払って3-6ヶ月で結果受領。連系点・系統増強工事費用・連系制約条件が提示されます。(2) 接続契約：検討結果を受諾なら、工事費負担金（系統増強費用、数千万円〜数十億円）を支払い、連系契約締結。接続契約後は工事完了まで1-3年。蓄電所では特に系統増強費用が大きくなりがちで、ノンファーム接続・N-1電制の選択肢検討が事業性を左右します。",
+      "sourceUrl": "https://www.occto.or.jp/access/process/",
+      "relatedGlossary": "grid-connection\ngrid-connection-process",
+      "relatedExplainer": "grid-connection-process"
+    },
+    {
+      "displayOrder": 7,
+      "category": "事業",
+      "question": "蓄電所の用地確保はどうする？",
+      "answer": "蓄電所用地確保の選択肢：(1) 自社保有地（既存工場・物流施設・遊休地の活用）、(2) 公有地リース（自治体・送配電事業者の公募方式、北海道電力NW 2023年公募が代表例）、(3) 民有地賃借（地主との長期契約、地代年数千万円規模）、(4) 廃止発電所跡地（中国電力下松蓄電所のモデル、既設系統連系設備の再利用）。用地選定では (a) 系統連系点近接、(b) 用地面積（5MW案件で約3,000-5,000㎡）、(c) アクセス、(d) 自治体条例（消防・建築・環境）、(e) 近隣住民との合意形成、を総合的に検討。",
+      "sourceUrl": "",
+      "relatedGlossary": "site-acquisition-bess",
+      "relatedExplainer": "site-acquisition-bess"
+    },
+    {
+      "displayOrder": 8,
+      "category": "事業",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "answer": "マルチユース運用とは、複数の電力市場で同一蓄電所を活用し、収益を最大化する運用モデルです。代表的な組合せ：(1) 容量市場（kW 価値、安定収益）、(2) 需給調整市場（kWh 価値、応動の速さで競争）、(3) JEPX 裁定取引（時間帯別単価差を活用、エナリス等のアグリゲーター連携）、(4) 自家消費補完（大口需要家との直接契約）。各市場の応動要件・収益構造を考慮して時間帯別に切り替え、年間収益を最適化します。Tesla Autobidder・Fluence Mosaic 等の AI 最適化プラットフォームが業界標準ツールとして普及中です。",
+      "sourceUrl": "",
+      "relatedGlossary": "multi-use-operation",
+      "relatedExplainer": "multi-use-operation"
+    },
+    {
+      "displayOrder": 9,
+      "category": "事業",
+      "question": "アグリゲーターとは何ですか？",
+      "answer": "アグリゲーターとは、複数の分散型電源（蓄電池・太陽光・EV・需要家機器）を束ねて電力市場に参加させる事業者です。METI 登録区分として「特定計量制度の登録事業者」が制度化されており、需給調整市場で大きな存在感。国内主要事業者：エナリス（KDDI 子会社、第1号）、GridBeyond、Centrica Business Solutions、Energy Pool Japan、Stem（米国系、2025年参入検討）、Fluence（エナリスと MOU）。系統用蓄電池の運用代行 + 市場入札を担う重要パートナーで、業界の制度成熟と市場ボリューム拡大に伴い競争激化中です。",
+      "sourceUrl": "",
+      "relatedGlossary": "aggregator",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 10,
+      "category": "事業",
+      "question": "蓄電所事業の収益モデル一覧",
+      "answer": "蓄電所事業の主要収益モデル：(1) 容量市場収益（kW 価値、安定）、(2) 需給調整市場収益（応動の速さで競争、変動大）、(3) JEPX 裁定取引（時間帯別単価差）、(4) 卸電力市場（スポット・週間先物）、(5) アグリゲーション報酬（DERMS 連携）、(6) 自家消費補完（大口需要家との直接契約）、(7) 補助金（SII・METI・自治体）、(8) RE100/SBTi 関連の脱炭素プレミアム、(9) 容量拠出金（LTDC 落札時、20年間固定）、(10) PPA 契約（小売事業者との長期売電）。これらをマルチユース運用で組み合わせ、年間収益を最適化するのが業界標準です。",
+      "sourceUrl": "",
+      "relatedGlossary": "bess-revenue-model\nmulti-use-operation",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 1,
+      "category": "補助金",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "answer": "系統用蓄電池向けの主要補助金は4つの執行機関別に整理可能：(1) SII（環境共創イニシアチブ）：蓄電池導入支援事業、補助率1/3〜1/2、年度ごとの公募、(2) METI（経済産業省）：系統用蓄電池導入支援、長期脱炭素オークション関連、(3) 環境省：ストレージパリティ事業、自家消費型・地域マイクログリッド、(4) 自治体：東京都・神奈川県等の独自補助。最新の公募状況は本サイトの /subsidies カレンダーで時系列確認可能。補助金は採択倍率高く（3-5倍）、申請書類の質が採否を左右します。",
+      "sourceUrl": "https://sii.or.jp/",
+      "relatedGlossary": "bess-subsidies",
+      "relatedExplainer": "subsidies-guide"
+    },
+    {
+      "displayOrder": 2,
+      "category": "補助金",
+      "question": "SIIの蓄電池導入支援事業とは？",
+      "answer": "SII（一般社団法人 環境共創イニシアチブ）の蓄電池導入支援事業は、業界の主要補助金の一つで、産業用・系統用蓄電池の導入を支援。補助率は事業者規模により1/3〜1/2、上限額は5億円規模。対象設備は蓄電池本体・PCS・関連設備、対象事業者は中小企業から大企業まで幅広い。年度ごとに公募内容が改定されるため、最新の公募要領を必ず確認。採択基準は (a) 事業性、(b) 環境貢献度（CO2 削減効果）、(c) 国産品採用、(d) 革新性、等を総合評価。SII の他に省エネ補助金との併用も可能なケースあり。",
+      "sourceUrl": "https://sii.or.jp/storage_battery/",
+      "relatedGlossary": "sii-bess-subsidy",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 3,
+      "category": "補助金",
+      "question": "METI（経産省）補助金の申請方法は？",
+      "answer": "METI 補助金の典型的な申請フロー：(1) 公募開始情報を入手（METI 公式・SII 公式・本サイト /subsidies）、(2) 公募要領精読（補助対象・補助率・申請期限）、(3) 申請書類準備（事業計画書・経費明細・体制図、3-6ヶ月）、(4) GBiz ID 取得・jGrants 経由でオンライン申請、(5) 採択審査（外部審査員、1-3ヶ月）、(6) 採択通知・交付決定、(7) 設備調達・工事、(8) 完了報告・支払。申請から交付まで最短半年、長いと1年以上。スケジュールに余裕を持った計画策定が重要。コンサルタントの活用も一般的です。",
+      "sourceUrl": "https://www.meti.go.jp/policy/energy_environment/",
+      "relatedGlossary": "meti-bess-subsidy",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 4,
+      "category": "補助金",
+      "question": "環境省ストレージパリティ事業とは？",
+      "answer": "環境省のストレージパリティ事業は、太陽光発電と蓄電池を組み合わせた自家消費型システムの導入を支援する補助金です。「ストレージパリティ」とは蓄電池併設の発電単価が系統電力単価以下になる状態を指し、その普及加速が目的。補助対象：(1) 蓄電池本体・PCS、(2) 太陽光発電設備、(3) 需給管理システム。補助率は事業者規模・地域により2/3〜1/2、地域マイクログリッド構築型は特に手厚い。RE100 達成・脱炭素経営支援の側面もあり、大口需要家・地域エネ事業者の活用が増加中。年度予算枠の早期消化に注意。",
+      "sourceUrl": "https://www.env.go.jp/policy/storage-parity/",
+      "relatedGlossary": "storage-parity",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 5,
+      "category": "補助金",
+      "question": "自治体の独自補助金はある？",
+      "answer": "自治体独自補助金は東京都・神奈川県・大阪府・京都府・福島県・北海道等で多数提供されています。代表例：(1) 東京都「災害にも強く健康にも資する断熱・太陽光住宅普及拡大事業」（蓄電池併設加算）、(2) 神奈川県「太陽光発電蓄電池普及促進事業」、(3) 大阪府「脱炭素モデル構築支援事業」。自治体補助金は (a) 補助率高め（1/2〜2/3）、(b) 申請件数少なく採択倍率低い、(c) 国補助金との併用可能なケース多、というメリット。一方、対象が住宅用・小規模事業用に限られるケースもあり、要件確認必須。本サイト /subsidies カレンダーで継続トラック中。",
+      "sourceUrl": "",
+      "relatedGlossary": "local-government-subsidy",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 6,
+      "category": "補助金",
+      "question": "補助金申請のスケジュール把握法は？",
+      "answer": "補助金申請のスケジュール把握には複数の情報源を組み合わせるのが推奨：(1) 各執行機関の公式メルマガ（SII・METI・環境省・各自治体）、(2) 業界誌・専門メディア（電気新聞、Smart Japan、Energy Shift 等）、(3) 業界団体（蓄電池事業者協議会、JPEA、JWPA）の会員向け情報、(4) 補助金専門コンサルティング会社、(5) 本サイト /subsidies と /policy-calendar の組合せ（パブコメ・改正案・公募予告も含めて時系列追跡可能）。年度初め（4月）と中盤（10月）が公募ピーク。年間計画への組込みが重要です。",
+      "sourceUrl": "https://bess-net.jp/subsidies",
+      "relatedGlossary": "",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 7,
+      "category": "補助金",
+      "question": "補助金の採択基準は？",
+      "answer": "補助金の採択基準は機関により異なりますが、共通する評価軸：(1) 事業性（事業計画の実現性・収益性、KPI 設定の妥当性）、(2) 環境貢献度（CO2 削減効果、再エネ統合貢献）、(3) 革新性（新技術・新ビジネスモデル）、(4) 経済安全保障（国産品採用、サプライチェーン強靭化）、(5) 地域貢献（自治体連携、雇用創出）、(6) 事業者基盤（財務健全性、過去実績）。SII・METI とも外部審査員（学術・業界専門家）が複数項目を採点し、上位を採択。申請書の論理構成・データの裏付け・図表の見やすさが採否を分けます。",
+      "sourceUrl": "",
+      "relatedGlossary": "",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 8,
+      "category": "補助金",
+      "question": "蓄電池供給確保計画とは？認定企業は？",
+      "answer": "蓄電池供給確保計画は、経済安全保障推進法に基づき METI が認定する国家プロジェクトで、国産蓄電池の量産体制構築を支援する制度。第1回認定（2024年9月）で GS ユアサ等4社が認定され、補助金総額は数百億円規模。GS ユアサの認定事業は事業総額703億円・補助金248億円・年間2GWh、2028年10月供給開始予定。経済安全保障観点での国産化推進が目的で、認定企業の電池は系統用蓄電池の調達優先順位が高まる傾向。業界の中長期サプライチェーン地図に大きな影響を与える重要制度です。",
+      "sourceUrl": "https://www.meti.go.jp/policy/mono_info_service/joho/security/index.html",
+      "relatedGlossary": "national-battery-supply-plan",
+      "relatedExplainer": "national-battery-supply-plan"
+    },
+    {
+      "displayOrder": 9,
+      "category": "補助金",
+      "question": "補助金と FIP の併用可否は？",
+      "answer": "補助金と FIP の併用は、補助金の規定により可否が分かれます。一般的なルール：(1) SII・METI の蓄電池補助金は FIP 太陽光と併設可能（補助対象を切り分け）、(2) 自治体補助金は機関により異なる（事前確認必須）、(3) 同一設備への二重補助（国 + 自治体）は通常不可、ただし対象設備・補助項目の切り分けで可能なケースあり。FIP プレミアム単価は補助金額考慮で減額調整される場合もあり、事業計画策定時に CapEx vs 売電収益のバランスを精査することが重要。コンサル・税理士との相談を推奨します。",
+      "sourceUrl": "",
+      "relatedGlossary": "fip\nbess-subsidies",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 10,
+      "category": "補助金",
+      "question": "補助金交付決定後の流れと注意点",
+      "answer": "補助金交付決定後の主要フロー：(1) 設備調達・工事開始（交付決定前の発注は補助対象外、注意）、(2) 工事中の進捗報告（月次・四半期）、(3) 完了報告（実績報告書・領収書・写真等）、(4) 確定検査（現地検査・書類審査、1-3ヶ月）、(5) 補助金確定通知・支払。注意点：(a) 交付決定前の契約発注は補助対象外（必ず決定後に発注）、(b) 工事スケジュール厳守（年度内完了が要件）、(c) 経費の按分計算（補助対象 vs 非対象）、(d) 7年間の財産処分制限（売却・廃棄に承認必要）、(e) 不正受給は返還 + 加算金。",
+      "sourceUrl": "",
+      "relatedGlossary": "",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 1,
+      "category": "その他",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "answer": "リチウムイオン蓄電池には熱暴走による火災リスクがあり、世界各地で事故事例（米国 APS Surprise 火災 2019、韓国の太陽光併設蓄電池火災等）が報告されています。対策は多層的：(1) セル/モジュール/パック各階層での過充電・短絡保護、(2) BMS による温度・電圧監視、(3) 消火設備（窒素・水・FK-5-1-12 等の薬剤）、(4) 排気・換気システム、(5) 隣接設備への類焼防止設計、(6) 消防への事前連絡・自治体協定、(7) 保険加入（火災保険・賠償責任保険）。国際規格 NFPA 855・IEC 62933 への準拠が業界標準。LFP は熱暴走リスクが NMC より低く、安全面で系統用主流に。",
+      "sourceUrl": "https://www.nfpa.org/codes-and-standards/all-codes-and-standards/list-of-codes-and-standards/detail?code=855",
+      "relatedGlossary": "bess-fire-safety",
+      "relatedExplainer": "bess-fire-safety"
+    },
+    {
+      "displayOrder": 2,
+      "category": "その他",
+      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
+      "answer": "蓄電所の地域貢献モデルとしては、自治体との防災協定締結が業界標準化しています。協定内容例：(1) 災害時の電力供給（避難所・公共施設への給電）、(2) EV 充電器併設による被災時モビリティ支援、(3) 系統停止時のマイクログリッド運用、(4) 地域住民への災害啓発活動。日本蓄電池の磐田市見附蓄電所（磐田市と防災協定、2026年4月）、JR九州・住商の「でんきの駅」シリーズ（熊本市、EV 充電器併設）等が代表事例。蓄電所事業の地域受容性向上、自治体補助金獲得、ESG 評価向上に直結する重要モデルです。",
+      "sourceUrl": "",
+      "relatedGlossary": "bess-community-benefit",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 3,
+      "category": "その他",
+      "question": "離島マイクログリッドとは？",
+      "answer": "離島マイクログリッドとは、本土系統と独立した離島内で再エネ・蓄電池・補助電源（ディーゼル等）を組み合わせた自立電力供給システムです。日本では沖縄県・鹿児島県（屋久島・種子島・奄美大島）・東京都伊豆諸島等で実証・運用が進行中。蓄電池の役割は (1) 太陽光・風力の出力安定化、(2) 周波数・電圧維持、(3) 燃料削減（ディーゼル運転時間短縮）、(4) 災害時のレジリエンス。系統用蓄電池の応用領域として注目され、業界の新興フロンティアの一つ。沖縄電力・九州電力等の電力会社と地域企業の共同事業モデルが主流です。",
+      "sourceUrl": "",
+      "relatedGlossary": "microgrid\nisland-microgrid",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 4,
+      "category": "その他",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "answer": "海外 BESS 市場の主要動向：(1) 米国：IRA（インフレ削減法）の税制優遇 ITC で爆発的成長、年間 30GWh+ の新規導入、Tesla・Fluence が市場リード、(2) 欧州：英国・独国・伊国でフロンティア、Energy Storage Summit EU が業界中核、PF 組成成熟、(3) 豪州：Hornsdale Power Reserve（Tesla 150MW、世界初の大型 BESS）の成功後、AEMO 主導で急成長。これら海外市場の業界調査（Wood Mackenzie・BloombergNEF・Aurora Energy Research）は日本企業の海外展開・国内戦略策定の重要参考資料です。本サイトの /explainer/bess-global-trends-2026 で詳細解説。",
+      "sourceUrl": "https://www.iea.org/reports/grid-scale-storage",
+      "relatedGlossary": "bess-global-trends",
+      "relatedExplainer": "bess-global-trends-2026"
+    },
+    {
+      "displayOrder": 5,
+      "category": "その他",
+      "question": "蓄電池のリユース・セカンドライフは？",
+      "answer": "蓄電池リユース・セカンドライフとは、EV 用車載電池の容量劣化後（80%程度）を回収し、定置型蓄電池として再利用する取組です。EV からの大量回収が業界課題となる2030年代を見据え、リサイクルとセカンドライフを組み合わせた循環モデルが業界フロンティア。代表事例：日産自動車の 4R Energy（フォーアールエナジー）、大阪ガスの武雄市プロジェクト（リユース蓄電池採用）、トヨタの一部実証。コスト優位（新品の30-50%）、CO2 削減効果、サーキュラリティの3軸で評価されます。本サイト /explainer/battery-second-life-market で詳細解説。",
+      "sourceUrl": "",
+      "relatedGlossary": "battery-second-life\nbattery-reuse",
+      "relatedExplainer": "battery-second-life-market"
+    },
+    {
+      "displayOrder": 6,
+      "category": "その他",
+      "question": "蓄電池業界の主要業界団体は？",
+      "answer": "蓄電池業界の主要業界団体：(1) 一般社団法人 蓄電池事業者協議会：系統用蓄電池事業者の中核団体、政策提言・事業者間連携、(2) 太陽光発電協会（JPEA）：太陽光業界の中核、PV+BESS の政策提言、(3) 日本風力発電協会（JWPA）：風力業界、洋上風力+蓄電池の議論、(4) 電気事業連合会（電事連）：大手電力会社の業界団体、(5) 海外電力調査会（JEPIC）：海外電力動向の調査・情報共有、(6) 電池工業会：電池メーカーの業界団体、(7) 蓄電池供給確保認定企業：GS ユアサ等4社、国産化推進の中核。各団体の年次総会・セミナーは業界の重要情報源です。",
+      "sourceUrl": "",
+      "relatedGlossary": "battery-industry-associations",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 7,
+      "category": "その他",
+      "question": "蓄電所事業のキャリアパスは？",
+      "answer": "蓄電所業界のキャリアパス例：(1) 開発・PM：用地選定・系統協議・PF 組成、大手商社・電力会社・専門事業者で経験積み、(2) エンジニア：電池・PCS・系統運用、メーカー・EPC で技術蓄積、(3) ファイナンス：銀行・リース・ファンドで PF・ESG 投資、(4) 規制・政策：METI・OCCTO・コンサルで制度設計、(5) アグリゲーター運用：EMS・市場入札、(6) O&M：設備運用、(7) 海外展開：商社・EPC で海外案件。業界経験者の中途市場が活況、新卒採用は電力・メーカー・商社が主流。グリーンタレントハブ等の人材エージェントも活用可能です。",
+      "sourceUrl": "",
+      "relatedGlossary": "",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 8,
+      "category": "その他",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "answer": "系統用蓄電池の主要保険：(1) 火災保険：火災・落雷・水害・台風等の物的損害カバー、(2) 賠償責任保険：第三者への損害賠償（火災延焼・人身事故）、(3) 機械保険：設備故障の修理費用、(4) 性能保証保険（パフォーマンスインシュアランス）：容量劣化等の性能不足時の補償、(5) 利益保険（事業中断保険）：火災等で運転停止時の機会損失補填、(6) PF 関連保険：政治リスク・カントリーリスク（海外案件）。保険料は CAPEX の 0.3-1% 程度が標準。AIG・損保ジャパン・MS&AD 等の大手損保が業界向け専用商品を提供しています。",
+      "sourceUrl": "",
+      "relatedGlossary": "bess-insurance",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 9,
+      "category": "その他",
+      "question": "蓄電所の環境影響評価は必要？",
+      "answer": "蓄電所単独の環境影響評価（環境アセスメント）は通常不要ですが、以下のケースで要件発生：(1) 出力10MW以上の大型案件で都道府県条例による「ミニアセス」、(2) 再エネ発電所併設の場合は併設電源の規模で判定（太陽光30MW以上、風力10MW以上）、(3) 自然公園内・絶滅危惧種生息地・水源涵養地等の特殊立地、(4) 自治体独自の景観・住民同意条例。蓄電所設置に伴う騒音（PCS 冷却ファン）、緑地造成、視認性等の地域影響評価は、自治体協定締結時に検討されます。早期からの自治体・住民とのコミュニケーションが事業推進の鍵です。",
+      "sourceUrl": "",
+      "relatedGlossary": "environmental-assessment",
+      "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 10,
+      "category": "その他",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "answer": "業界の中長期見通し：2030年見通しでは、第7次エネルギー基本計画（2024年12月閣議決定）に基づき、再エネ比率36-38%・系統用蓄電池容量数十GWh 級が目標。2050年カーボンニュートラルでは再エネ50-60%・水素30%程度を想定し、長時間貯蔵（LDES）市場の本格立ち上がり、洋上風力大量連系時代の HVDC + 蓄電池連動、全固体電池の系統用領域展開、リユース蓄電池の循環モデル確立等が業界フロンティア。投資機会としては、機関投資家・大手商社・専門事業者の競争激化、海外資本の本格参入、業界 M&A 加速、が予想されます。本サイトで継続トラック中。",
+      "sourceUrl": "https://www.enecho.meti.go.jp/category/others/basic_plan/",
+      "relatedGlossary": "energy-basic-plan-7\ncarbon-neutrality-2050",
+      "relatedExplainer": ""
+    }
+  ]
+}
