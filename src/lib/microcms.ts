@@ -755,24 +755,36 @@ export type NewsWithRelations = News & {
 // 用語名 → slug の正規化用に軽量な Map を作るヘルパ
 export type TermLite = { term: string; slug: string; english?: string };
 
+// 依頼AI 落とし穴対策: build 時に /glossary/[slug] 1,516件 から呼ばれるため、
+// module-level memoization で全件 fetch を 1 回に抑える
+// (caching なしだと 1,516 × 1,516 = 2.3M items の重複 fetch で worker OOM)
+let _glossaryLiteCache: TermLite[] | null = null;
+let _glossaryLitePromise: Promise<TermLite[]> | null = null;
+
 export const getGlossaryLiteList = async (): Promise<TermLite[]> => {
-  const all: TermLite[] = [];
-  const limit = MICROCMS_PAGE_LIMIT;
-  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
-    const data = await client.getList<Glossary>({
-      endpoint: 'glossary',
-      queries: { limit, offset, fields: 'term,slug,english' },
-    });
-    all.push(
-      ...data.contents.map((g) => ({
-        term: g.term,
-        slug: g.slug,
-        english: g.english,
-      }))
-    );
-    if (data.contents.length < limit) break;
-  }
-  return all;
+  if (_glossaryLiteCache) return _glossaryLiteCache;
+  if (_glossaryLitePromise) return _glossaryLitePromise;
+  _glossaryLitePromise = (async () => {
+    const all: TermLite[] = [];
+    const limit = MICROCMS_PAGE_LIMIT;
+    for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+      const data = await client.getList<Glossary>({
+        endpoint: 'glossary',
+        queries: { limit, offset, fields: 'term,slug,english' },
+      });
+      all.push(
+        ...data.contents.map((g) => ({
+          term: g.term,
+          slug: g.slug,
+          english: g.english,
+        }))
+      );
+      if (data.contents.length < limit) break;
+    }
+    _glossaryLiteCache = all;
+    return all;
+  })();
+  return _glossaryLitePromise;
 };
 
 // =================================================================
@@ -820,6 +832,126 @@ export const getExplainersByTermName = async (
       },
     });
     return data.contents;
+  } catch {
+    return [];
+  }
+};
+
+// =================================================================
+// 用語 → 事業者・プロジェクト・同類用語 の逆引き (依頼AI)
+// =================================================================
+
+/**
+ * 用語名を本文中に含む事業者を取得 (依頼AI)
+ * microCMS filter: body[contains]{termName}[or]description[contains]{termName}
+ * - operator は relatedTerms フィールド未保有のため body/description を対象に
+ * - termNames に複数指定可 (term + english + aliases)
+ */
+export const getOperatorsByTermName = async (
+  termNames: string[],
+  limit = 5
+): Promise<Operator[]> => {
+  try {
+    const valid = termNames.filter((n) => n && n.trim().length >= 2);
+    if (valid.length === 0) return [];
+    // body OR description で各 term を [or] チェイン
+    const parts: string[] = [];
+    for (const n of valid) {
+      parts.push(`body[contains]${n}`);
+      parts.push(`description[contains]${n}`);
+    }
+    const filters = parts.join('[or]');
+    const data = await client.getList<Operator>({
+      endpoint: 'operators',
+      queries: { filters, limit, orders: 'name' },
+    });
+    return data.contents;
+  } catch {
+    return [];
+  }
+};
+
+/**
+ * 用語名を本文中に含むプロジェクトを取得 (依頼AI)
+ * microCMS filter: body[contains]{termName}[or]name[contains]{termName}
+ */
+export const getProjectsByTermName = async (
+  termNames: string[],
+  limit = 5
+): Promise<Project[]> => {
+  try {
+    const valid = termNames.filter((n) => n && n.trim().length >= 2);
+    if (valid.length === 0) return [];
+    const parts: string[] = [];
+    for (const n of valid) {
+      parts.push(`body[contains]${n}`);
+      parts.push(`name[contains]${n}`);
+    }
+    const filters = parts.join('[or]');
+    const data = await client.getList<Project>({
+      endpoint: 'projects',
+      queries: { filters, limit, orders: '-publishedAt' },
+    });
+    return data.contents;
+  } catch {
+    return [];
+  }
+};
+
+/**
+ * 同じ subcategory に属する他の glossary 用語を取得 (依頼AI)
+ * microCMS filter: subcategory[equals]{subcategory}
+ * 指定 slug は除外
+ */
+export const getGlossaryBySubcategory = async (
+  subcategory: string,
+  excludeSlug: string,
+  limit = 8
+): Promise<TermLite[]> => {
+  if (!subcategory) return [];
+  try {
+    const data = await client.getList<Glossary>({
+      endpoint: 'glossary',
+      queries: {
+        filters: `subcategory[equals]${subcategory}`,
+        fields: 'id,term,slug,english',
+        limit: limit + 1, // 自分を除外する分余裕
+        orders: 'term',
+      },
+    });
+    return data.contents
+      .filter((g) => g.slug !== excludeSlug)
+      .slice(0, limit)
+      .map((g) => ({ term: g.term, slug: g.slug, english: g.english }));
+  } catch {
+    return [];
+  }
+};
+
+/**
+ * 同じ category に属する他の glossary 用語を取得 (依頼AI、_一般 fallback 用)
+ * microCMS filter: category[contains]{category}
+ */
+export const getGlossaryByCategory = async (
+  category: string,
+  excludeSlug: string,
+  limit = 8
+): Promise<TermLite[]> => {
+  if (!category) return [];
+  try {
+    const data = await client.getList<Glossary>({
+      endpoint: 'glossary',
+      queries: {
+        filters: `category[contains]${category}`,
+        fields: 'id,term,slug,english',
+        limit: limit + 1,
+        orders: 'term',
+      },
+    });
+    return data.contents
+      .filter((g) => g.slug !== excludeSlug)
+      .slice(0, limit)
+      .map((g) => ({ term: g.term, slug: g.slug, english: g.english }));
   } catch {
     return [];
   }
