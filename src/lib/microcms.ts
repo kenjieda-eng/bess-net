@@ -53,7 +53,9 @@ export type Glossary = {
   slug: string;
   reading?: string;
   english?: string;
-  category: string[];
+  category: string[];          // multipleSelect 配列、12項目から 1-2
+  subcategory?: string;        // 依頼AH Phase B 投入、テキスト自由記述 (116 ユニーク)
+  mainCategory?: string;       // 依頼AH では空のまま、将来用
   shortDef: string;
   detail?: string;
   relatedTerms?: string;

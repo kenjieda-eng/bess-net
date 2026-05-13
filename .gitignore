@@ -144,3 +144,5 @@ vite.config.ts.timestamp-*
 
 # Claude Code (個人PC用設定。リポジトリには含めない)
 .claude/
+03_5月13日朝_実行/
+scripts/__pycache__/
