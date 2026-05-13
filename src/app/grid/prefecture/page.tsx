@@ -10,7 +10,8 @@ import { siteConfig } from '@/lib/site-config';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: '都道府県別 変電所一覧 ｜ 系統空き容量データベース - 蓄電所ネット',
+  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
+  title: '都道府県別 変電所一覧 ｜ 系統空き容量データベース',
   description:
     '全国9送配電事業者の変電所を都道府県別に一覧。各都道府県の件数・空容量・N-1電制適用可否を一画面で。蓄電所連系検討の地域絞り込みに。',
   alternates: { canonical: '/grid/prefecture' },

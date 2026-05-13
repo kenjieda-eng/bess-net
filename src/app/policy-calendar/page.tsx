@@ -13,12 +13,13 @@ import { siteConfig } from '@/lib/site-config';
 export const revalidate = 600; // 10分
 
 export const metadata: Metadata = {
-  title: '政策・法制度カレンダー｜蓄電所ネット',
+  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
+  title: '政策・法制度カレンダー',
   description:
     '系統用蓄電池業界の法改正・パブコメ募集・重要会議・補助金公募・オークション等を時系列で一覧表示。経済産業省・OCCTO・環境省・NEDO・SII の主要政策イベントを継続トラック。',
   alternates: { canonical: '/policy-calendar' },
   openGraph: {
-    title: '政策・法制度カレンダー｜蓄電所ネット',
+    title: '政策・法制度カレンダー',
     description:
       '系統用蓄電池業界の主要政策イベントを時系列で一覧表示。法改正・パブコメ・重要会議・オークション・補助金等。',
     type: 'website',

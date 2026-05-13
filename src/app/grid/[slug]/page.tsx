@@ -93,7 +93,8 @@ export async function generateMetadata({
   const area = AREA_META[params.slug];
   if (area) {
     return {
-      title: `${area.areaJp}エリア｜系統空き容量データベース - 蓄電所ネット`,
+      // layout.tsx titleTemplate が自動付与（落とし穴 #86）
+      title: `${area.areaJp}エリア｜系統空き容量データベース`,
       description: area.description.substring(0, 160),
       alternates: { canonical: `/grid/${area.slug}` },
       openGraph: {
@@ -113,7 +114,8 @@ export async function generateMetadata({
   const availStr = avail !== undefined && avail !== null ? `${avail}MW` : '情報なし';
   const desc = `${sub.name}（${operator}・${vc}）の系統空き容量・連系条件・出力制御情報。空容量${availStr}。出典・最終更新日明記、蓄電所事業の検討材料に。`;
   return {
-    title: `${sub.name} ｜ 系統空き容量・連系条件 - 蓄電所ネット`,
+    // layout.tsx titleTemplate が自動付与（落とし穴 #86）
+    title: `${sub.name} ｜ 系統空き容量・連系条件`,
     description: desc.substring(0, 160),
     alternates: { canonical: `/grid/${sub.slug}` },
     openGraph: {

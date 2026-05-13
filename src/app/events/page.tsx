@@ -13,12 +13,13 @@ import { siteConfig } from '@/lib/site-config';
 export const revalidate = 600; // 10分
 
 export const metadata: Metadata = {
-  title: '業界イベント・展示会カレンダー｜蓄電所ネット',
+  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
+  title: '業界イベント・展示会カレンダー',
   description:
     '系統用蓄電池・再エネ業界の展示会・セミナー・学会・業界団体総会を時系列で一覧表示。スマートエネルギーWeek・PV EXPO・Energy Storage Japan・OCCTO/JEPX 説明会等の主要イベントを継続トラック。',
   alternates: { canonical: '/events' },
   openGraph: {
-    title: '業界イベント・展示会カレンダー｜蓄電所ネット',
+    title: '業界イベント・展示会カレンダー',
     description:
       '系統用蓄電池・再エネ業界の展示会・セミナー・学会を時系列で一覧表示。大型展示会・OCCTO/JEPX 説明会・学会シンポジウム等。',
     type: 'website',

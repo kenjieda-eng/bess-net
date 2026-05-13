@@ -40,7 +40,8 @@ const ChubuMap = dynamic(() => import('@/components/ChubuMap'), {
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: '中部地方 変電所空き容量マップ｜系統空き容量データベース - 蓄電所ネット',
+  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
+  title: '中部地方 変電所空き容量マップ｜系統空き容量データベース',
   description:
     '中部電力パワーグリッド管内の変電所を地図上で可視化。系統空き容量・N-1電制適用可否・出力制御の可能性を地理院タイル淡色地図に重ねて表示。蓄電所事業者の連系検討に。',
   alternates: { canonical: '/grid/chubu/map' },

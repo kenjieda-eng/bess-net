@@ -11,12 +11,13 @@ import { siteConfig } from '@/lib/site-config';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: '系統空き容量データベース ｜ 蓄電所ネット',
+  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
+  title: '系統空き容量データベース',
   description:
     '系統用蓄電池・再エネの連系検討に必要な、変電所別の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を、東北電力NW・北陸電力送配電・四国電力送配電の3社1,449地点について公表情報ベースで一元化。Phase 2 以降で残り7社・地図機能を追加予定。',
   alternates: { canonical: '/grid' },
   openGraph: {
-    title: '系統空き容量データベース ｜ 蓄電所ネット',
+    title: '系統空き容量データベース',
     description: '東北・北陸・四国 3社・1,449変電所の系統空き容量・連系条件',
     type: 'website',
   },

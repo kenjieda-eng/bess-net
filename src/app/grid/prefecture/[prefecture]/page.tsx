@@ -29,7 +29,8 @@ export async function generateMetadata({
 }: PageParams): Promise<Metadata> {
   const decoded = decodeURIComponent(params.prefecture);
   return {
-    title: `${decoded}の変電所一覧 ｜ 系統空き容量データベース - 蓄電所ネット`,
+    // layout.tsx titleTemplate が自動付与（落とし穴 #86）
+    title: `${decoded}の変電所一覧 ｜ 系統空き容量データベース`,
     description: `${decoded}の変電所を空容量大きい順に一覧表示。連系検討の初期スクリーニングに。9送配電事業者の公開データを編集部で整理。`,
     alternates: { canonical: `/grid/prefecture/${encodeURIComponent(decoded)}` },
     openGraph: {

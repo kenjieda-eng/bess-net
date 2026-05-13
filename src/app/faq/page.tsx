@@ -14,12 +14,14 @@ import { siteConfig } from '@/lib/site-config';
 export const revalidate = 600; // 10分
 
 export const metadata: Metadata = {
-  title: '業界用語よくある質問（FAQ）｜蓄電所ネット',
+  // layout.tsx の titleTemplate `%s | 蓄電所ネット` が自動でサフィックスを付与するため、
+  // page 側では「蓄電所ネット」を含めない（重複防止 / 落とし穴 #86）
+  title: '業界用語よくある質問（FAQ）',
   description:
     '系統用蓄電池・再エネ業界に関する50件の Q&A。系統用蓄電池とは？容量市場の仕組みは？事業参入手順は？補助金は？等の頻出質問を制度・技術・事業・補助金・その他の5カテゴリで体系化。',
   alternates: { canonical: '/faq' },
   openGraph: {
-    title: '業界用語よくある質問（FAQ）｜蓄電所ネット',
+    title: '業界用語よくある質問（FAQ）',
     description:
       '系統用蓄電池業界のよくある質問 50件を制度・技術・事業・補助金・その他カテゴリで整理。',
     type: 'website',
