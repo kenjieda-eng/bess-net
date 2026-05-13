@@ -10,8 +10,11 @@
 
 import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
-import { useRouter, useSearchParams } from 'next/navigation';
 import type { Glossary } from '@/lib/microcms';
+
+// useSearchParams を使わない理由: SSR 時に Suspense fallback が描画され
+// SEO 上 1,516 用語が初期 HTML に含まれなくなるため。
+// 代わりに mount 時の window.location.search から URL params を CSR で復元する。
 
 // 既存 schema 12項目の正準順序 (依頼AB 設定)
 const CATEGORY_ORDER = [
@@ -65,30 +68,38 @@ function subcategoryLabel(sub: string): string {
 }
 
 export default function GlossaryBrowser({ items }: Props) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  // SSR 時はデフォルト「すべて」で全件描画 (SEO 上重要)
+  const [category, setCategory] = useState<string>('すべて');
+  const [subcategory, setSubcategory] = useState<string>('すべて');
+  const [query, setQuery] = useState<string>('');
+  const [hydrated, setHydrated] = useState(false);
 
-  // 初期状態を URL から復元
-  const initialCat = searchParams.get('cat') || 'すべて';
-  const initialSub = searchParams.get('sub') || 'すべて';
-  const initialQ = searchParams.get('q') || '';
-
-  const [category, setCategory] = useState<string>(initialCat);
-  const [subcategory, setSubcategory] = useState<string>(initialSub);
-  const [query, setQuery] = useState<string>(initialQ);
-
-  // URL ↔ state 同期 (state 変更時に URL を replace、history 汚染なし)
+  // mount 時に URL params から初期値を復元 (CSR のみ)
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const sp = new URLSearchParams(window.location.search);
+    const cat = sp.get('cat');
+    const sub = sp.get('sub');
+    const q = sp.get('q');
+    if (cat) setCategory(cat);
+    if (sub) setSubcategory(sub);
+    if (q) setQuery(q);
+    setHydrated(true);
+  }, []);
+
+  // state → URL replace (history 汚染なし、hydration 完了後のみ)
+  useEffect(() => {
+    if (!hydrated || typeof window === 'undefined') return;
     const params = new URLSearchParams();
     if (category && category !== 'すべて') params.set('cat', category);
     if (subcategory && subcategory !== 'すべて') params.set('sub', subcategory);
     if (query.trim()) params.set('q', query.trim());
     const qs = params.toString();
-    const newUrl = qs ? `/glossary?${qs}` : '/glossary';
-    if (typeof window !== 'undefined' && window.location.pathname + window.location.search !== newUrl) {
-      router.replace(newUrl, { scroll: false });
+    const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    if (window.location.pathname + window.location.search !== newUrl) {
+      window.history.replaceState(null, '', newUrl);
     }
-  }, [category, subcategory, query, router]);
+  }, [category, subcategory, query, hydrated]);
 
   // ① category 件数 (12項目 + すべて)
   const categoryCounts = useMemo(() => {

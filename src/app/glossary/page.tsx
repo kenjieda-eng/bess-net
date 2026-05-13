@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import GlossaryBrowser from '@/components/GlossaryBrowser';
@@ -37,10 +36,9 @@ export default async function GlossaryListPage() {
           {items.length === 0 ? (
             <p>用語はまだ準備中です。</p>
           ) : (
-            // useSearchParams は CSR でのみ動作 → Suspense でラップ
-            <Suspense fallback={<p>読み込み中...</p>}>
-              <GlossaryBrowser items={items} />
-            </Suspense>
+            // SSR で全 1,516 件描画 (SEO 上重要)、
+            // URL params は GlossaryBrowser の mount 時に window.location から復元
+            <GlossaryBrowser items={items} />
           )}
 
           <p className="back-link" style={{ marginTop: 48 }}>
