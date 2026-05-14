@@ -5,7 +5,10 @@ import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: '蓄電所ネットについて',
+  // 落とし穴 #86 残課題 (Sprint 2.5): layout.tsx titleTemplate `%s | 蓄電所ネット` で
+  // 自動的に「サイトについて | 蓄電所ネット」となる。旧 title「蓄電所ネットについて」だと
+  // 「蓄電所ネットについて | 蓄電所ネット」で「蓄電所ネット」が 2 回出現 → クリーン化
+  title: 'サイトについて',
   description:
     '蓄電所ネット（bess-net.jp）は、系統用蓄電池および低圧リソース事業に関わるすべての方に向けた、日本市場特化の情報ポータルです。',
 };

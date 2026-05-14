@@ -134,14 +134,17 @@ export default function GlossaryBrowser({ items }: Props) {
     return map;
   }, [items]);
 
-  // ③ 現在 category 配下の subcategory 一覧 (件数降順)
+  // ③ 現在 category 配下の subcategory 一覧
+  // Sprint 2.5 改善 2: 明確な subcategory 上位、「_一般」系は末尾に集約
+  // → UX 上、ユーザーが具体的な subcategory を発見しやすい
   const subcategoriesForCurrentCategory = useMemo(() => {
     const m = subcategoryCountsByCategory[category] || new Map();
     return Array.from(m.entries()).sort((a, b) => {
-      // 件数降順 → 「_一般」系は末尾へ
+      // 「_一般」系は末尾へ
       const aGeneric = a[0].endsWith('_一般');
       const bGeneric = b[0].endsWith('_一般');
       if (aGeneric !== bGeneric) return aGeneric ? 1 : -1;
+      // 同じグループ内では件数降順
       return b[1] - a[1];
     });
   }, [category, subcategoryCountsByCategory]);

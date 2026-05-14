@@ -186,15 +186,19 @@ export default async function GlossaryDetailPage({
   // 自分自身を関連用語から除外
   const relatedTermsFiltered = relatedTerms.filter((t) => t.slug !== term.slug);
 
-  const jsonLd = {
+  // Sprint 2.5 改善 3: DefinedTerm schema (termCode/url 追加) + BreadcrumbList 新規追加
+  // SEO リッチリザルト効果、検索エンジンが「業界用語」として正確に認識
+  const definedTermJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
     name: term.term,
     alternateName: term.english,
-    description: term.shortDef,
+    description: term.shortDef ?? (term.detail ? term.detail.replace(/<[^>]+>/g, '').slice(0, 300) : ''),
+    termCode: term.slug,
+    url: `https://bess-net.jp/glossary/${term.slug}`,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
-      name: '蓄電所ネット用語集',
+      name: '蓄電所ネット 業界用語辞典',
       url: 'https://bess-net.jp/glossary',
     },
     publisher: {
@@ -204,11 +208,54 @@ export default async function GlossaryDetailPage({
     },
   };
 
+  // BreadcrumbList: トップ → 用語集 → category → subcategory(_一般 除外) → 用語
+  const breadcrumbItems: Array<{
+    '@type': 'ListItem';
+    position: number;
+    name: string;
+    item: string;
+  }> = [
+    { '@type': 'ListItem', position: 1, name: 'トップ', item: 'https://bess-net.jp/' },
+    { '@type': 'ListItem', position: 2, name: '用語集', item: 'https://bess-net.jp/glossary' },
+  ];
+  let pos = 3;
+  if (cat) {
+    breadcrumbItems.push({
+      '@type': 'ListItem',
+      position: pos++,
+      name: cat,
+      item: `https://bess-net.jp/glossary?cat=${encodeURIComponent(cat)}`,
+    });
+  }
+  if (sub && !useCategoryFallback) {
+    breadcrumbItems.push({
+      '@type': 'ListItem',
+      position: pos++,
+      name: sub,
+      item: `https://bess-net.jp/glossary?cat=${encodeURIComponent(cat)}&sub=${encodeURIComponent(sub)}`,
+    });
+  }
+  breadcrumbItems.push({
+    '@type': 'ListItem',
+    position: pos,
+    name: term.term,
+    item: `https://bess-net.jp/glossary/${term.slug}`,
+  });
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems,
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <SiteHeader />
       <main className="section">
