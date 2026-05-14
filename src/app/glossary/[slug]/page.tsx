@@ -105,9 +105,22 @@ export default async function GlossaryDetailPage({
   const useCategoryFallback = isGenericSubcategory(sub);
 
   // 検索キーワード: term + english (依頼AI、aliases フィールドは glossary 未保有のため未使用)
-  const searchKeywords = [term.term, term.english].filter(
-    (s): s is string => !!s && s.trim().length >= 2
-  );
+  // 落とし穴 #95 (緊急修正): term == english (英語 origin 用語、Configuration Management 等) で
+  // 重複 filter が生成され microCMS 高負荷リクエストの原因となるため、Page 側でも dedupe + 短語除外を実施
+  // (lib helper 側も buildContainsFilter で defensive dedupe するが、二段階防御で安全策)
+  const searchKeywords = (() => {
+    const seen = new Set<string>();
+    const out: string[] = [];
+    for (const raw of [term.term, term.english]) {
+      if (!raw) continue;
+      const t = raw.trim();
+      if (t.length < 3) continue; // 短語 (2 文字以下) は wildcard マッチで負荷大、除外
+      if (seen.has(t)) continue;
+      seen.add(t);
+      out.push(t);
+    }
+    return out;
+  })();
 
   // 関連データを並列取得 (依頼AI: 6 並列 — operators/projects/同類用語 追加)
   const [

@@ -842,25 +842,57 @@ export const getExplainersByTermName = async (
 // =================================================================
 
 /**
- * 用語名を本文中に含む事業者を取得 (依頼AI)
- * microCMS filter: body[contains]{termName}[or]description[contains]{termName}
+ * microCMS filters クエリの「複数フィールド × 複数 term」OR チェインを構築。
+ * 落とし穴 #95 (緊急修正): term.term == term.english の場合 (英語 origin 用語、
+ * Configuration Management / LFP / BIM 等) で重複 filter が発生し
+ * 4倍負荷リクエストとなり microCMS 警告対象になった事象への対処。
+ *
+ * 防御:
+ *   1. dedupe (Set 重複排除)
+ *   2. trim + 空文字除外
+ *   3. length >= 3 (短語の wildcard マッチ防止、SQL injection 的負荷も抑止)
+ *
+ * 出力: 例 termNames=["PCS"], fields=["body","description"]
+ *       → "body[contains]PCS[or]description[contains]PCS"
+ *
+ * 出力: 例 termNames=["A","A","",null,"  ","ABC"], fields=["body"]
+ *       → "body[contains]ABC"  (A は length<3、null/空/重複は除外)
+ */
+const buildContainsFilter = (termNames: (string | undefined | null)[], fields: string[]): string => {
+  // Step 1: trim + 空文字除外 + 短語(<3)除外 + dedupe
+  const cleaned: string[] = [];
+  const seen = new Set<string>();
+  for (const raw of termNames) {
+    if (!raw) continue;
+    const t = raw.trim();
+    if (t.length < 3) continue; // 短語除外
+    if (seen.has(t)) continue;  // dedupe
+    seen.add(t);
+    cleaned.push(t);
+  }
+  if (cleaned.length === 0) return '';
+  // Step 2: term × fields の filter 生成
+  const parts: string[] = [];
+  for (const t of cleaned) {
+    for (const f of fields) {
+      parts.push(`${f}[contains]${t}`);
+    }
+  }
+  return parts.join('[or]');
+};
+
+/**
+ * 用語名を本文中に含む事業者を取得 (依頼AI、落とし穴 #95 修正済)
  * - operator は relatedTerms フィールド未保有のため body/description を対象に
- * - termNames に複数指定可 (term + english + aliases)
+ * - termNames は dedupe + 短語除外 で重複 filter を防止
  */
 export const getOperatorsByTermName = async (
-  termNames: string[],
+  termNames: (string | undefined | null)[],
   limit = 5
 ): Promise<Operator[]> => {
   try {
-    const valid = termNames.filter((n) => n && n.trim().length >= 2);
-    if (valid.length === 0) return [];
-    // body OR description で各 term を [or] チェイン
-    const parts: string[] = [];
-    for (const n of valid) {
-      parts.push(`body[contains]${n}`);
-      parts.push(`description[contains]${n}`);
-    }
-    const filters = parts.join('[or]');
+    const filters = buildContainsFilter(termNames, ['body', 'description']);
+    if (!filters) return [];
     const data = await client.getList<Operator>({
       endpoint: 'operators',
       queries: { filters, limit, orders: 'name' },
@@ -872,22 +904,15 @@ export const getOperatorsByTermName = async (
 };
 
 /**
- * 用語名を本文中に含むプロジェクトを取得 (依頼AI)
- * microCMS filter: body[contains]{termName}[or]name[contains]{termName}
+ * 用語名を本文中に含むプロジェクトを取得 (依頼AI、落とし穴 #95 修正済)
  */
 export const getProjectsByTermName = async (
-  termNames: string[],
+  termNames: (string | undefined | null)[],
   limit = 5
 ): Promise<Project[]> => {
   try {
-    const valid = termNames.filter((n) => n && n.trim().length >= 2);
-    if (valid.length === 0) return [];
-    const parts: string[] = [];
-    for (const n of valid) {
-      parts.push(`body[contains]${n}`);
-      parts.push(`name[contains]${n}`);
-    }
-    const filters = parts.join('[or]');
+    const filters = buildContainsFilter(termNames, ['body', 'name']);
+    if (!filters) return [];
     const data = await client.getList<Project>({
       endpoint: 'projects',
       queries: { filters, limit, orders: '-publishedAt' },
