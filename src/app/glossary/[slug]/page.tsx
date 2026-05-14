@@ -42,7 +42,11 @@ import {
   getProjectsByTermName,
   getGlossaryBySubcategory,
   getGlossaryByCategory,
-  getFaqsByTerm,
+  // getFaqsByTerm 一時撤去 (落とし穴 #98): microCMS 2回目高負荷警告対応
+  // 1,516 ページ × Googlebot 同時クロール → faq endpoint 集中アクセス
+  // 恒久対策 (Sprint 2.5 予定): build 時 事前計算 + JSON キャッシュテーブル化
+  // import 自体は残し、helper も lib に維持 (将来再有効化)
+  // getFaqsByTerm,
 } from '@/lib/microcms';
 import { csvTermsToTermList } from '@/lib/term-linker';
 import { siteConfig } from '@/lib/site-config';
@@ -135,7 +139,10 @@ export default async function GlossaryDetailPage({
     return out.slice(0, 4); // 最大 4 keyword (= filter parts 最大 16 で安全圏)
   })();
 
-  // 関連データを並列取得 (依頼AI + BG: 7 並列 — 関連 FAQ 追加)
+  // 関連データを並列取得 (依頼AI: 6 並列)
+  // 🚨 落とし穴 #98 (microCMS 2回目高負荷警告対応): getFaqsByTerm 一時撤去
+  //    1,516 ページ × クローラ同時アクセスで faq endpoint 集中、WAF ブロック懸念
+  //    恒久対策 (Sprint 2.5): build 時 関連 FAQ 事前計算 → JSON キャッシュ
   const [
     relatedNews,
     relatedExplainers,
@@ -143,7 +150,6 @@ export default async function GlossaryDetailPage({
     relatedOperators,
     relatedProjects,
     sameCategoryTerms,
-    relatedFaqs,
   ] = await Promise.all([
     getNewsByTermId(term.id, 10).catch(() => []),
     getExplainersByTermName(term.term, 10).catch(() => []),
@@ -154,9 +160,9 @@ export default async function GlossaryDetailPage({
     useCategoryFallback
       ? getGlossaryByCategory(cat, term.slug, 8).catch(() => [])
       : getGlossaryBySubcategory(sub, term.slug, 8).catch(() => []),
-    // 依頼BG: 関連 FAQ (buildContainsFilter 経由で重複 filter 防止)
-    getFaqsByTerm(searchKeywords, 5).catch(() => []),
   ]);
+  // 関連 FAQ は一時撤去済 (上記コメント参照、searchKeywords 自体は他で使用)
+  // 将来再有効化時: getFaqsByTerm(searchKeywords, 5) を Promise.all に戻し、JSX も復活
 
   // CSV文字列の関連用語 → TermLike[] へ変換（patch_v12 新規）
   const termSlugMap = new Map<string, string>();
@@ -376,67 +382,11 @@ export default async function GlossaryDetailPage({
             </section>
           )}
 
-          {/* 関連 FAQ (依頼BG 新規) - buildContainsFilter 経由で重複 filter 防止 */}
-          {relatedFaqs.length > 0 && (
-            <section
-              style={{
-                marginTop: 24,
-                padding: 16,
-                background: 'var(--color-bg)',
-                border: '1px solid var(--color-border)',
-                borderRadius: 8,
-              }}
-            >
-              <h3
-                style={{
-                  fontSize: 16,
-                  fontWeight: 700,
-                  marginTop: 0,
-                  marginBottom: 12,
-                }}
-              >
-                ❓ 「{term.term}」関連のよくある質問（{relatedFaqs.length}件）
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                {relatedFaqs.map((faq) => (
-                  <li key={faq.id} style={{ marginBottom: 10, fontSize: 14 }}>
-                    <Link
-                      href={`/faq#${faq.slug}`}
-                      style={{
-                        color: 'var(--color-accent, #0066cc)',
-                        fontWeight: 600,
-                      }}
-                    >
-                      Q. {faq.question}
-                    </Link>
-                    {faq.category && faq.category.length > 0 && (
-                      <span
-                        style={{
-                          marginLeft: 8,
-                          fontSize: 11,
-                          padding: '2px 6px',
-                          background: '#fff',
-                          border: '1px solid var(--color-border)',
-                          borderRadius: 4,
-                          color: 'var(--color-muted)',
-                        }}
-                      >
-                        {faq.category[0]}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              <p style={{ marginTop: 10, fontSize: 12 }}>
-                <Link
-                  href="/faq"
-                  style={{ color: 'var(--color-accent, #0066cc)' }}
-                >
-                  業界用語よくある質問（FAQ 50件）一覧 →
-                </Link>
-              </p>
-            </section>
-          )}
+          {/* 🚨 関連 FAQ (依頼BG 新規) — 落とし穴 #98 で一時撤去 (microCMS 2回目高負荷警告対応)
+              1,516 ページ × クローラ同時アクセスで faq endpoint 集中 → WAF ブロック懸念。
+              恒久対策 (Sprint 2.5 予定): build 時 事前計算 + JSON キャッシュテーブル化で
+              SSR から microCMS リクエストを排除する設計に変更予定。
+              JSX は意図的に削除、復活時は git history (commit fcfb5d4) を参照。 */}
 
           {/* 同じ subcategory (or category fallback) の用語 (依頼AI 新規) */}
           {sameCategoryTerms.length > 0 && (
