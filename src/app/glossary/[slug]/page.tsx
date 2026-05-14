@@ -59,14 +59,19 @@ function subcategoryDisplayLabel(sub?: string): string {
 }
 
 export const revalidate = 600;
+// 落とし穴 #79 Option B (依頼AI で再発): /glossary/[slug] 1,516 ページ × 5 並列 API
+// = build 中 7,580 calls で Vercel 45min timeout に到達。
+// generateStaticParams を空にし、全 1,516 ページを on-demand ISR (revalidate=600)
+// で初回アクセス時に SSR + キャッシュ。dynamicParams=true (default) で 404 にならない。
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  try {
-    return await getAllGlossarySlugs();
-  } catch {
-    return [];
-  }
+  // build 時 0 ページ、全件 on-demand。初回アクセス時に SSR + ISR キャッシュ。
+  return [];
 }
+
+// 開発時/sitemap 生成時に使う slug 一覧は API 経由で取得可能 (getAllGlossarySlugs は維持)
+void getAllGlossarySlugs;
 
 export async function generateMetadata({
   params,
