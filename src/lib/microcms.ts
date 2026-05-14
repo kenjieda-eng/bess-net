@@ -924,20 +924,24 @@ export const getProjectsByTermName = async (
 };
 
 /**
- * 用語名を question / answer に含む FAQ を取得 (依頼BG)
+ * 用語名を question に含む FAQ を取得 (依頼BG)
  * - 落とし穴 #95 対策: buildContainsFilter 経由で dedupe + 短語除外
- * - 1 glossary term につき最大 5 件 (FAQ 50件中の subset)
+ * - 落とし穴 #97 対策: answer 全文検索は microCMS 504 timeout の原因のため
+ *   question のみに絞る (FAQ question は短く specific、関連性十分)
+ * - orders は microCMS デフォルト (-publishedAt) を使用、明示指定は load 増の可能性
+ * - 1 glossary term につき最大 5 件
  */
 export const getFaqsByTerm = async (
   termNames: (string | undefined | null)[],
   limit = 5
 ): Promise<Faq[]> => {
   try {
-    const filters = buildContainsFilter(termNames, ['question', 'answer']);
+    // question only - answer は重い (504 timeout 原因)
+    const filters = buildContainsFilter(termNames, ['question']);
     if (!filters) return [];
     const data = await client.getList<Faq>({
       endpoint: 'faq',
-      queries: { filters, limit, orders: 'displayOrder' },
+      queries: { filters, limit },
     });
     return data.contents;
   } catch {
