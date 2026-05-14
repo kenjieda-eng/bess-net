@@ -54,6 +54,8 @@ export const siteConfig = {
     { label: '政策カレンダー', href: '/policy-calendar', enabled: true },
     { label: 'イベント', href: '/events', enabled: true },
     { label: 'FAQ', href: '/faq', enabled: true },
+    // Sprint 3 追加 (依頼AM、業界唯一 IRR シミュレーター)
+    { label: 'ツール', href: '/tools', enabled: true },
   ] as NavItem[],
 
   // フッターのリンク群（主要コーナーへの導線 + サイト情報）
@@ -62,6 +64,8 @@ export const siteConfig = {
     { label: '政策・法制度カレンダー', href: '/policy-calendar' },
     { label: '業界イベント・展示会', href: '/events' },
     { label: '業界用語よくある質問', href: '/faq' },
+    // Sprint 3 追加 (業界唯一 IRR シミュレーター)
+    { label: '蓄電池IRRシミュレーター', href: '/tools/irr-simulator' },
     // サイト情報
     { label: '蓄電所ネットについて', href: '/about' },
     { label: '編集方針', href: '/editorial-policy' },
