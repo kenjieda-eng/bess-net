@@ -1,0 +1,4573 @@
+{
+  "100-renewable": [],
+  "154kv": [],
+  "22kv": [],
+  "247-carbon-free": [],
+  "275kv": [],
+  "30-minute-value": [],
+  "30min-balancing": [],
+  "4r-energy-japan": [
+    {
+      "id": "k17sxd5vpts",
+      "slug": "faq-sonota-05",
+      "question": "蓄電池のリユース・セカンドライフは？",
+      "category": "その他"
+    }
+  ],
+  "four-quadrant-operation": [],
+  "500kv": [],
+  "5g-network": [],
+  "6-6kv": [],
+  "66kv": [],
+  "abb-energy-storage": [],
+  "ac-bus": [],
+  "ac-cable": [],
+  "ac-alternating-current": [],
+  "adb-detail": [],
+  "adms-advanced-distribution": [],
+  "aemc-australia": [],
+  "aemo-australia": [
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    }
+  ],
+  "area-energy-management-system": [],
+  "aer-australia": [],
+  "aes-corporation": [],
+  "agl-energy-australia": [],
+  "agl-liddell": [],
+  "aiib-detail": [],
+  "ai": [],
+  "api": [],
+  "aws-cloud": [],
+  "ah-detail": [],
+  "ah-ampere-hour": [],
+  "akaysha-energy": [],
+  "akaysha-orana": [],
+  "allocation-report": [],
+  "ameresco": [],
+  "ancillary-services": [],
+  "article-8-fund": [],
+  "article-9-fund": [],
+  "asset-management-detail": [],
+  "asset-manager": [],
+  "asset-owner": [],
+  "australian-lithium": [],
+  "autobidder-tesla": [],
+  "auxiliary-system": [],
+  "azure-cloud": [],
+  "bcp-detail": [],
+  "bcp-insurance": [],
+  "bcp-contract": [],
+  "bcp-subsidy": [],
+  "business-continuity-plan": [],
+  "bcp-business-continuity-plan": [],
+  "beccs-detail": [],
+  "building-energy-management-system": [],
+  "bems": [],
+  "beps-oecd": [],
+  "battery-energy-storage-system": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    },
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    },
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    },
+    {
+      "id": "4ieiz54h9182",
+      "slug": "faq-seido-07",
+      "question": "出力制御とは何ですか？蓄電池でどう対応する？",
+      "category": "制度"
+    }
+  ],
+  "bess-battery-energy-storage-system": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    },
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    },
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    },
+    {
+      "id": "4ieiz54h9182",
+      "slug": "faq-seido-07",
+      "question": "出力制御とは何ですか？蓄電池でどう対応する？",
+      "category": "制度"
+    }
+  ],
+  "bess-detail-2": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    },
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    },
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    },
+    {
+      "id": "4ieiz54h9182",
+      "slug": "faq-seido-07",
+      "question": "出力制御とは何ですか？蓄電池でどう対応する？",
+      "category": "制度"
+    }
+  ],
+  "bess-manufacturing": [],
+  "bess-pipeline": [],
+  "bess-sizing": [],
+  "bess-as-service": [],
+  "bess-price-trend": [],
+  "bess-market-size": [],
+  "balancing-group": [],
+  "bim-building": [],
+  "bis-india": [],
+  "battery-management-system": [
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    },
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    },
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    }
+  ],
+  "bms-vendor-selection": [],
+  "bms-vendor": [],
+  "bms-hierarchy": [],
+  "bms-detail": [
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    },
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    }
+  ],
+  "bms-battery-management-system": [
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    }
+  ],
+  "bmu-battery-monitoring-unit": [],
+  "bmu-soc-balancing": [],
+  "bnef-detail": [],
+  "bol-beginning-of-life": [],
+  "byd-build-your-dreams": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    },
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    }
+  ],
+  "baas": [],
+  "banpu-thailand": [],
+  "battery-acceptance-test": [],
+  "battery-capacity-test": [],
+  "battery-carbon-intensity": [],
+  "battery-container-detail": [],
+  "battery-cycle-test": [],
+  "battery-pack-detail": [],
+  "battery-performance-test": [],
+  "battery-recovery": [],
+  "battery-sizing-tool": [],
+  "battery-tray": [],
+  "behind-the-meter": [],
+  "belgium-bess-market": [],
+  "big-battery-victoria": [],
+  "black-mass": [],
+  "black-start": [],
+  "blackstart-capability": [],
+  "blackrock-investor": [],
+  "blackstart-detail": [],
+  "bloombergnef": [
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    }
+  ],
+  "bloomberg-nef": [
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    }
+  ],
+  "epc-bonus": [],
+  "brazil-bess-market": [],
+  "brine-mining": [],
+  "brookfield-asset-mgmt": [],
+  "brownfield-detail": [],
+  "bureau-veritas": [],
+  "cable-power": [],
+  "cagr-bess": [],
+  "caiso": [],
+  "caiso-california": [],
+  "capex-detail": [
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    }
+  ],
+  "capex": [
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    }
+  ],
+  "catl-contemporary-amperex": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "54zbxd5rdu",
+      "slug": "faq-gijutsu-04",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "category": "技術"
+    },
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    }
+  ],
+  "cbam-eu": [],
+  "cbam-reporting": [],
+  "cbi-standard-2": [],
+  "cbi-standard": [],
+  "cbi-certification": [],
+  "ccc-china": [],
+  "ccgt-combined-cycle": [],
+  "ccs-detail": [],
+  "ccs": [],
+  "ccs-charging-standard": [],
+  "cc-positioning": [],
+  "cdp-disclosure": [],
+  "ce-marking-detail": [],
+  "ce-marking": [],
+  "cfp-product": [],
+  "chademo-standard": [],
+  "chp-cogen": [],
+  "cif-incoterms": [],
+  "cis-australia": [],
+  "cms-condition-monitoring": [],
+  "cnn-detail": [],
+  "co2-free-electricity": [],
+  "co2-emission-intensity": [],
+  "cop-conference": [],
+  "cs-wind": [],
+  "csa-canada": [],
+  "csa-c22": [],
+  "csrd-detail": [],
+  "calendar-aging-test": [],
+  "canada-bess-market": [],
+  "cap-and-trade": [],
+  "capacity-auctions": [],
+  "uk-capacity-market": [],
+  "capacity-performance": [],
+  "capacity-stacking": [],
+  "carbon-border-tax": [],
+  "cfb-battery": [],
+  "carbon-removal": [],
+  "carbon-tax": [],
+  "cash-sweep": [],
+  "cash-trap": [],
+  "cell-stack": [],
+  "change-management": [],
+  "charge-rate": [],
+  "china-bess-market": [],
+  "csg-china": [],
+  "ctg-china": [],
+  "civil-works": [],
+  "climate-group": [],
+  "climate-risk": [],
+  "closing-pf": [],
+  "colocated-storage": [],
+  "co-location": [],
+  "cold-commissioning": [],
+  "completion-test": [],
+  "conditions-precedent": [],
+  "configuration-management": [],
+  "connected-energy-uk": [],
+  "construction-pf": [
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    }
+  ],
+  "counterparty-pf": [],
+  "counterparty-risk": [],
+  "credit-rating-detail": [],
+  "critical-minerals": [],
+  "crma-eu": [],
+  "curtailment-detail": [],
+  "c-rate": [],
+  "c-rate-detail": [],
+  "do-insurance": [],
+  "dac-direct-air": [],
+  "dap-incoterms": [],
+  "dc-bus": [],
+  "dc-cable": [],
+  "dynamic-capacity-limit": [],
+  "dc-direct-current": [],
+  "dekra-detail": [],
+  "der-detail": [
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "der-management-system": [
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "derms-detail": [
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "distributed-energy-resource-2": [],
+  "dle-direct-lithium": [],
+  "dms-distribution": [],
+  "dnv-detail": [],
+  "depth-of-discharge": [
+    {
+      "id": "v_6_pg9rgkg",
+      "slug": "faq-gijutsu-09",
+      "question": "蓄電池のサイクル寿命とは？",
+      "category": "技術"
+    }
+  ],
+  "dod-100": [],
+  "dod-50": [],
+  "dod-80": [],
+  "dod-depth-of-discharge": [],
+  "doe-usa": [],
+  "dpp-digital-product-passport": [],
+  "drc-cobalt-belt": [],
+  "drc-cobalt": [],
+  "dr-subsidy": [],
+  "demand-response": [],
+  "dr-detail": [],
+  "dr-demand-response": [],
+  "dscr": [],
+  "dscr-detail": [],
+  "dsr-demand-side-response": [],
+  "dsra-account": [],
+  "data-center-detail": [],
+  "day-ahead-planning": [],
+  "decarbonization-pathway": [],
+  "decommissioning": [],
+  "demand-charge": [],
+  "demand-forecast-service": [],
+  "denmark-bess-market": [],
+  "devops-detail": [],
+  "diablo-canyon": [],
+  "direct-agreement": [],
+  "direct-recycling": [],
+  "discharge-rate": [],
+  "distribution-pf": [],
+  "distribution-test": [],
+  "dominion-energy": [],
+  "doosan": [],
+  "double-materiality": [],
+  "drawdown-pf": [],
+  "duck-curve": [],
+  "duke-energy": [],
+  "eon-germany": [],
+  "ebit-detail": [],
+  "ebitda-detail": [],
+  "eca-export-credit": [],
+  "edf-france": [],
+  "edf-renewables": [],
+  "egat-thailand": [],
+  "eirr-equity": [],
+  "emc-compliance": [],
+  "energy-management-system": [
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "ems-vendor-selection": [],
+  "ems-vendor": [],
+  "ems-integration": [],
+  "ems-hierarchy": [],
+  "ems-detail": [],
+  "ems-energy-management-system": [],
+  "eneos-holdings": [],
+  "entso-e-europe": [],
+  "eol-end-of-life": [],
+  "eol-threshold": [],
+  "ep100-detail": [],
+  "engineering-procurement-construction": [
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    },
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    },
+    {
+      "id": "2x50lsuao",
+      "slug": "faq-jigyou-04",
+      "question": "O&M体制はどう設計する？",
+      "category": "事業"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "epc-vendor-selection": [],
+  "epcm-detail": [],
+  "epc-operator": [],
+  "epc-contract-detail": [
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    }
+  ],
+  "epc-duration": [],
+  "epc-delay": [],
+  "ercot": [],
+  "ercot-texas": [],
+  "esg-detail": [
+    {
+      "id": "exlqvjemq",
+      "slug": "faq-sonota-02",
+      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
+      "category": "その他"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "esg-investment": [],
+  "esg-rating": [],
+  "esrs-detail": [],
+  "ess-detail": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    },
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    },
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    },
+    {
+      "id": "4ieiz54h9182",
+      "slug": "faq-seido-07",
+      "question": "出力制御とは何ですか？蓄電池でどう対応する？",
+      "category": "制度"
+    }
+  ],
+  "ess-energy-storage-system": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    },
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    },
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    },
+    {
+      "id": "4ieiz54h9182",
+      "slug": "faq-seido-07",
+      "question": "出力制御とは何ですか？蓄電池でどう対応する？",
+      "category": "制度"
+    }
+  ],
+  "ess-plus": [],
+  "eu-climate-law": [],
+  "eu-ets-detail": [],
+  "eu-gbs": [],
+  "eu-nzia": [],
+  "eu-taxonomy": [],
+  "eu-battery-regulation": [],
+  "eu-battery-regulation-detail": [],
+  "ev-vs-bess": [],
+  "ev100-detail": [],
+  "eve-energy-china": [],
+  "evn-vietnam": [],
+  "ev-second-life": [],
+  "ev-charging-infrastructure": [],
+  "ev-deployment": [],
+  "ev-supply-chain": [],
+  "edgestack-fluence": [],
+  "electrical-works": [],
+  "eligibility-criteria": [],
+  "embedded-carbon": [],
+  "enel-italy": [],
+  "enerc": [],
+  "enerc-catl-product": [],
+  "energy-arbitrage": [],
+  "energy-independence": [],
+  "energy-markets-detail": [],
+  "energy-transition": [],
+  "energy-vault-detail": [],
+  "energy-as-service": [],
+  "engie-france": [],
+  "engie-na": [],
+  "entergy-usa": [],
+  "equity-sponsor": [],
+  "eurus-energy": [],
+  "fat-factory-acceptance": [],
+  "fcas-australia-detail": [],
+  "fems": [],
+  "ferc-usa": [],
+  "ferc": [],
+  "fast-frequency-response": [],
+  "ffr": [],
+  "fid-final-investment": [],
+  "fidic-contract": [],
+  "fimer-italian": [],
+  "feed-in-premium": [
+    {
+      "id": "6voqsb4rhfi",
+      "slug": "faq-seido-06",
+      "question": "FIT制度とFIP制度の違いは？",
+      "category": "制度"
+    },
+    {
+      "id": "dbszyk1sq8c",
+      "slug": "faq-hojokin-09",
+      "question": "補助金と FIP の併用可否は？",
+      "category": "補助金"
+    }
+  ],
+  "fip-coupled": [],
+  "fit-to-fip": [],
+  "feed-in-tariff": [
+    {
+      "id": "6voqsb4rhfi",
+      "slug": "faq-seido-06",
+      "question": "FIT制度とFIP制度の違いは？",
+      "category": "制度"
+    }
+  ],
+  "fit-coupled": [],
+  "fit-feed-in-tariff": [
+    {
+      "id": "6voqsb4rhfi",
+      "slug": "faq-seido-06",
+      "question": "FIT制度とFIP制度の違いは？",
+      "category": "制度"
+    }
+  ],
+  "foam-fire-suppression": [],
+  "fob-incoterms": [],
+  "frt": [],
+  "frt-fault-ride-through": [],
+  "facility-net": [],
+  "finland-bess-market": [],
+  "fit-for-55-eu": [],
+  "fitch-detail": [],
+  "fluence-corporation": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    },
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    },
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    },
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    }
+  ],
+  "fluence-mosaic": [
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    }
+  ],
+  "france-bess-market": [],
+  "free-cash-flow": [],
+  "frequency-arbitrage": [],
+  "freq-containment": [],
+  "frequency-regulation": [],
+  "freq-restoration": [],
+  "front-of-meter": [],
+  "gan-detail": [],
+  "gb-standard": [],
+  "gb-t-36276": [],
+  "gcp-cloud": [],
+  "ge-energy-storage": [],
+  "ghg-protocol": [],
+  "gp-general-partner": [],
+  "gpif-japan": [],
+  "gri-detail": [],
+  "gr-ground-fault-relay": [],
+  "gs-yuasa-japan": [],
+  "gwh-detail": [
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    },
+    {
+      "id": "nuryoexs68_v",
+      "slug": "faq-hojokin-08",
+      "question": "蓄電池供給確保計画とは？認定企業は？",
+      "category": "補助金"
+    },
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "gwh-gigawatt-hour": [],
+  "gw-gigawatt": [],
+  "gan-conversion": [],
+  "generation-mix": [],
+  "germany-bess-market": [],
+  "gigafactory-detail": [],
+  "gotion-high-tech": [],
+  "green-loan-principles": [],
+  "greenfield-detail": [],
+  "greenium-detail": [],
+  "grid-carbon-intensity": [],
+  "grid-services": [],
+  "gridstack-fluence": [],
+  "gulf-energy-thailand": [],
+  "high-availability": [],
+  "home-energy-management-system": [],
+  "hems": [],
+  "hv-cable": [],
+  "hvac-bess": [],
+  "hvdc-transmission": [
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "hvdc-grid": [],
+  "habitat-energy": [],
+  "hanwha-qcells": [],
+  "hedging-detail": [],
+  "helios-power-capital": [],
+  "helios-hokkaido": [],
+  "highview-power-detail": [],
+  "hornsdale-power-reserve": [
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    }
+  ],
+  "hot-commissioning": [],
+  "huawei-fusion": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    }
+  ],
+  "hybrid-optimization": [],
+  "hybrid-plants": [],
+  "hydrometallurgy": [],
+  "hydrostor-detail": [],
+  "hyperscaler": [],
+  "hz-hertz": [],
+  "icao": [],
+  "icma-detail": [],
+  "ict-works": [],
+  "idb-detail": [],
+  "iea-international": [],
+  "iea": [],
+  "iec-detail": [
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    }
+  ],
+  "iec": [
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    }
+  ],
+  "iec-60870-standard": [],
+  "iec-62443-detail": [],
+  "iec-62619-standard": [],
+  "iec-62933": [
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    }
+  ],
+  "ieee-detail": [],
+  "ieee": [],
+  "ieee-1547": [],
+  "ieee-2800": [],
+  "ifc-detail": [],
+  "igbt": [],
+  "imo": [],
+  "ipcc-detail": [],
+  "ipp": [],
+  "ira-usa-detail": [
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    }
+  ],
+  "ira-us": [
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    }
+  ],
+  "irena-international": [],
+  "internal-rate-of-return": [
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    }
+  ],
+  "irr": [
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    }
+  ],
+  "iso": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    }
+  ],
+  "iso-14001": [],
+  "iso-23247": [],
+  "iso-27001": [],
+  "iso-50001": [],
+  "iso-9001": [],
+  "iso-ne-detail": [],
+  "iso-rto-usa": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    }
+  ],
+  "issb-detail": [],
+  "itc-detail-2": [
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    }
+  ],
+  "iberdrola": [],
+  "iberdrola-renovables": [],
+  "impact-report": [],
+  "india-bess-market": [],
+  "indonesian-nickel": [],
+  "interest-rate-hedge": [],
+  "interoperability": [],
+  "intertek-detail": [],
+  "intraday-optimization": [],
+  "iot-detail": [],
+  "iot": [],
+  "italy-bess-market": [],
+  "j-credit": [],
+  "j-credit-japan": [],
+  "jba-japan-battery": [],
+  "jbic-detail": [],
+  "jcr-detail": [],
+  "jcre-renewable": [],
+  "jeac-9701-2024": [],
+  "jema-electric": [],
+  "japan-electric-power-exchange": [
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "jera": [
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    }
+  ],
+  "jera-japan": [
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    }
+  ],
+  "jica-detail": [],
+  "jis": [],
+  "jis-c-4441-standard": [],
+  "jr-east": [],
+  "just-transition": [],
+  "just-transition-fund": [],
+  "kc-mark": [],
+  "kexim-detail": [],
+  "kkr-private-equity": [],
+  "kpi-detail": [
+    {
+      "id": "l--pn6-452ab",
+      "slug": "faq-hojokin-07",
+      "question": "補助金の採択基準は？",
+      "category": "補助金"
+    }
+  ],
+  "korea-bess-market": [],
+  "kyoto-protocol": [],
+  "lca-life-cycle-assessment": [],
+  "ldes-detail": [
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    },
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "ld-cap": [],
+  "ld-amount": [],
+  "ld-liquidated-damages": [],
+  "lfp": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    },
+    {
+      "id": "v_6_pg9rgkg",
+      "slug": "faq-gijutsu-09",
+      "question": "蓄電池のサイクル寿命とは？",
+      "category": "技術"
+    }
+  ],
+  "lfp-advantage": [],
+  "lithium-iron-phosphate": [],
+  "lfp-battery-detail": [],
+  "lg-energy-solution": [],
+  "llcr-detail": [],
+  "lmo": [],
+  "lp-limited-partner": [],
+  "lpwa-network": [],
+  "ls-energy-solutions": [],
+  "lstm-detail": [],
+  "ltdc-detail": [
+    {
+      "id": "tswhuk1cfani",
+      "slug": "faq-seido-04",
+      "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "category": "制度"
+    },
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "lto-battery-detail": [],
+  "lv-cable": [],
+  "lean-manufacturing": [],
+  "lender-pf": [],
+  "li-cycle-recycle": [],
+  "lifecycle-management": [],
+  "liquidity-detail": [],
+  "lithium-triangle": [],
+  "lloyds-register": [],
+  "lmp-detail": [],
+  "lock-up": [],
+  "lump-sum-turnkey": [],
+  "mac-clause": [],
+  "maec-optimization": [],
+  "miso-detail": [],
+  "mlops-detail": [],
+  "mmc-converter": [],
+  "msds-detail": [],
+  "mtbf": [],
+  "mtbf-mean-time-between-failures": [],
+  "mttr": [],
+  "mttr-mean-time-to-repair": [],
+  "megawatt": [],
+  "megawatt-hour": [
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    },
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    }
+  ],
+  "mwh-detail": [
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    },
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    }
+  ],
+  "macquarie-group": [],
+  "marginal-pricing": [],
+  "materiality-detail": [],
+  "mechanical-works": [],
+  "megapack": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    }
+  ],
+  "mexico-bess-market": [],
+  "mezzanine-detail": [],
+  "microgrid-resilience": [],
+  "modbus-protocol": [],
+  "module-design": [],
+  "moodys-detail": [],
+  "mosaic-fluence": [
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    }
+  ],
+  "moss-landing-storage": [],
+  "n-plus-1-config": [],
+  "nas-battery": [
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    }
+  ],
+  "nca": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "nedo": [],
+  "new-energy-and-industrial-technology-development-organization": [],
+  "nem-australia-detail": [],
+  "nfpa-855": [
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    }
+  ],
+  "nmc": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    },
+    {
+      "id": "v_6_pg9rgkg",
+      "slug": "faq-gijutsu-09",
+      "question": "蓄電池のサイクル寿命とは？",
+      "category": "技術"
+    }
+  ],
+  "nmc-advantage": [],
+  "nmc-battery-detail": [],
+  "novec-suppression": [],
+  "npv-detail": [],
+  "npv": [],
+  "nyiso-detail": [],
+  "national-grid-uk": [],
+  "nature-based-solutions": [],
+  "negative-pricing": [],
+  "neoen-france": [],
+  "net-metering": [],
+  "net-zero-detail": [],
+  "netherlands-bess-market": [],
+  "nz-bess-market": [],
+  "nextera-energy": [],
+  "nodal-pricing": [],
+  "northvolt-europe": [],
+  "norway-bess-market": [],
+  "om-operation-maintenance": [
+    {
+      "id": "2x50lsuao",
+      "slug": "faq-jigyou-04",
+      "question": "O&M体制はどう設計する？",
+      "category": "事業"
+    },
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    },
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "operation-maintenance": [
+    {
+      "id": "2x50lsuao",
+      "slug": "faq-jigyou-04",
+      "question": "O&M体制はどう設計する？",
+      "category": "事業"
+    },
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    },
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "om-reserve": [],
+  "om-operator": [],
+  "occto-japan-org": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    },
+    {
+      "id": "tswhuk1cfani",
+      "slug": "faq-seido-04",
+      "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "category": "制度"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "occto": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    },
+    {
+      "id": "tswhuk1cfani",
+      "slug": "faq-seido-04",
+      "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "category": "制度"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "organization-for-cross-regional-coordination-of-transmission-operators": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    },
+    {
+      "id": "tswhuk1cfani",
+      "slug": "faq-seido-04",
+      "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "category": "制度"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "occto-telemetering": [],
+  "occto-certification": [],
+  "ocpp-protocol": [],
+  "ocr-overcurrent-relay": [],
+  "oecd-international": [],
+  "oecd-guidelines": [],
+  "ofr-ufr": [],
+  "ofw-offshore-wind": [],
+  "oge-electric": [],
+  "oms-outage-management": [],
+  "opex-detail": [],
+  "opex": [],
+  "ovr-uvr": [],
+  "open-architecture": [],
+  "operating-cash-flow": [],
+  "operations-pf": [],
+  "operations-center": [],
+  "optimization-software": [],
+  "ferc-order-841": [],
+  "origin-energy-australia": [],
+  "origin-eraring": [],
+  "p2p-power-trading": [],
+  "pbt": [],
+  "pbt-payback-time": [],
+  "pcb": [],
+  "power-conditioning-system": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    },
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    },
+    {
+      "id": "tzykp_z2b3pu",
+      "slug": "faq-hojokin-02",
+      "question": "SIIの蓄電池導入支援事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    }
+  ],
+  "pcs-container": [],
+  "pcs-pack-level": [],
+  "pcs-vendor-selection": [],
+  "pcs-vendor": [],
+  "pcs-conversion-eff": [],
+  "pcs-detail": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    }
+  ],
+  "pe-private-equity": [],
+  "pf-arranger": [],
+  "pge-california": [],
+  "pirr-project": [],
+  "pjm-interconnection": [],
+  "pjm": [],
+  "pjm-auction": [],
+  "pjm-rto": [],
+  "pln-indonesia": [],
+  "pl-law": [],
+  "ppa": [
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "power-purchase-agreement": [
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "ppa-business": [],
+  "ppa-detail": [],
+  "prpp-detail": [],
+  "pr-article": [],
+  "pse-mark-detail": [],
+  "pse-certification-detail": [],
+  "ptc-detail": [],
+  "photovoltaic": [],
+  "pack-design": [],
+  "paris-article-6": [],
+  "pay-as-bid": [],
+  "pay-as-cleared": [],
+  "pension-fund": [],
+  "permits-detail": [],
+  "permitting-detail": [],
+  "physical-risk": [],
+  "pivot-power": [],
+  "plus-power": [],
+  "poland-bess-market": [],
+  "power-electronics-spain": [],
+  "power-wall-tesla": [],
+  "power-to-gas": [],
+  "powertitan": [],
+  "powertitan-sungrow": [],
+  "power-let-japan": [],
+  "pre-fid": [],
+  "pre-construction": [],
+  "predictive-analytics": [],
+  "price-forecast-service": [],
+  "price-hedge": [],
+  "price-spike-detail": [],
+  "pmo-detail": [],
+  "punch-list": [],
+  "pyrometallurgy": [],
+  "quality-assurance": [],
+  "quality-control": [],
+  "ri-detail": [],
+  "re100": [
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "re100-detail-2": [
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "re100-detail": [
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "reach-detail": [],
+  "repower-eu": [],
+  "repowereu": [],
+  "repowereu-plan": [],
+  "rohs-detail": [],
+  "return-on-investment": [],
+  "rul": [],
+  "rul-remaining-life": [],
+  "rwe-germany": [],
+  "refinancing-detail": [],
+  "reactive-power-support": [],
+  "real-time-optimization": [],
+  "redwood-materials": [],
+  "renewable-forecast-service": [],
+  "rps-detail": [],
+  "repowering-detail": [],
+  "reserve-pf": [
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    }
+  ],
+  "reserve-markets": [],
+  "retail-market": [],
+  "revenue-floor": [],
+  "revenue-floor-mech": [],
+  "revenue-stacking": [],
+  "reverse-auction": [],
+  "sp-detail": [],
+  "s-plus-3e": [],
+  "sasb-detail": [],
+  "sat-site-acceptance": [],
+  "sbti-detail": [
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "scada-detail": [],
+  "scada": [],
+  "scib-toshiba-product": [],
+  "sdg-13": [],
+  "sdg-7": [],
+  "sdgs-detail": [],
+  "serc-detail": [],
+  "sii": [
+    {
+      "id": "tzykp_z2b3pu",
+      "slug": "faq-hojokin-02",
+      "question": "SIIの蓄電池導入支援事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "2j3fi0tkp1",
+      "slug": "faq-hojokin-03",
+      "question": "METI（経産省）補助金の申請方法は？",
+      "category": "補助金"
+    },
+    {
+      "id": "6l4r_5gpef",
+      "slug": "faq-hojokin-06",
+      "question": "補助金申請のスケジュール把握法は？",
+      "category": "補助金"
+    },
+    {
+      "id": "l--pn6-452ab",
+      "slug": "faq-hojokin-07",
+      "question": "補助金の採択基準は？",
+      "category": "補助金"
+    }
+  ],
+  "sustainable-open-innovation-initiative": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    }
+  ],
+  "sk-on-korea": [],
+  "sla-detail": [
+    {
+      "id": "2x50lsuao",
+      "slug": "faq-jigyou-04",
+      "question": "O&M体制はどう設計する？",
+      "category": "事業"
+    }
+  ],
+  "sla-service-level-agreement": [
+    {
+      "id": "2x50lsuao",
+      "slug": "faq-jigyou-04",
+      "question": "O&M体制はどう設計する？",
+      "category": "事業"
+    }
+  ],
+  "slb-detail": [],
+  "sma-pcs-german": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    }
+  ],
+  "state-of-charge": [
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    }
+  ],
+  "soc-state-of-charge": [
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    }
+  ],
+  "soc-management": [],
+  "state-of-health": [
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    },
+    {
+      "id": "02a4cvr48",
+      "slug": "faq-gijutsu-10",
+      "question": "蓄電池の劣化診断はどう行う？",
+      "category": "技術"
+    }
+  ],
+  "soh-state-of-health": [
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    },
+    {
+      "id": "02a4cvr48",
+      "slug": "faq-gijutsu-10",
+      "question": "蓄電池の劣化診断はどう行う？",
+      "category": "技術"
+    }
+  ],
+  "special-purpose-company": [
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    }
+  ],
+  "spc": [
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    }
+  ],
+  "spc-special-purpose": [
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    }
+  ],
+  "spo-second-party-opinion": [],
+  "spp-detail": [],
+  "samsung-sdi": [],
+  "saudi-bess-market": [],
+  "schneider-electric": [],
+  "scope-1-2-3": [],
+  "sembcorp": [],
+  "senior-debt-detail": [],
+  "sic-conversion": [],
+  "sic-silicon-carbide": [],
+  "siemens-energy-storage": [],
+  "singapore-bess-market": [],
+  "six-sigma": [],
+  "smart-grid-detail": [],
+  "smart-inverter": [],
+  "snowy-2-0": [],
+  "social-bond": [],
+  "sa-bess-market": [],
+  "scal-edison": [],
+  "swf-sovereign": [],
+  "spain-bess-market": [],
+  "spinning-reserve-detail": [],
+  "spodumene": [],
+  "sponsor-pf": [],
+  "stakeholder-management": [],
+  "standalone-storage": [],
+  "standardization": [],
+  "state-grid-china": [],
+  "statkraft": [],
+  "step-in-rights": [],
+  "stranded-asset": [],
+  "strata-clean-energy": [],
+  "subordination": [],
+  "sungrow-energy-storage": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    },
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    }
+  ],
+  "sungrow-japan": [],
+  "sunstack-fluence": [],
+  "sustainability-bond": [],
+  "saf-detail": [],
+  "sfdr-detail": [],
+  "sustech": [],
+  "sustech-japan-ems": [],
+  "sweden-bess-market": [],
+  "switchgear-detail": [],
+  "tcfd-disclosure": [],
+  "tcfd": [],
+  "tnb-malaysia": [],
+  "twh-terawatt-hour": [],
+  "take-or-pay": [],
+  "tariff-electric": [
+    {
+      "id": "6voqsb4rhfi",
+      "slug": "faq-seido-06",
+      "question": "FIT制度とFIP制度の違いは？",
+      "category": "制度"
+    }
+  ],
+  "tax-equity": [],
+  "tensor-energy-ems": [],
+  "tensor-energy": [],
+  "tesla-autobidder": [
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    }
+  ],
+  "tesla-energy-ecosystem": [],
+  "tesla-master-plan": [],
+  "tesla-megapack-product": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    }
+  ],
+  "tesla-megapack-hokkaido": [],
+  "tesla-powerwall-product": [],
+  "tier-1-supplier": [],
+  "tier-2-supplier": [],
+  "time-of-use": [],
+  "transformer-ai": [],
+  "transition-risk": [],
+  "tuv-detail": [],
+  "uae-bess-market": [],
+  "uk-bess-market": [],
+  "uk-cm-bess": [],
+  "ul-9540a": [],
+  "ul-solutions": [],
+  "ul-9540-standard": [],
+  "ul-9540": [],
+  "ul-9540a-standard": [],
+  "ul-certification": [],
+  "un-38-3": [],
+  "un-3480": [],
+  "un-3481": [],
+  "unfccc": [],
+  "us-ira-act": [],
+  "usexim-detail": [],
+  "umicore-recycle": [],
+  "use-of-proceeds": [],
+  "v2b-vehicle-to-building": [],
+  "v2g-detail": [],
+  "vehicle-to-grid": [],
+  "v2h-detail": [],
+  "vehicle-to-home": [],
+  "v2l-detail": [],
+  "v2l": [],
+  "v2x-vehicle-to-x": [],
+  "v2x": [],
+  "va-volt-ampere": [],
+  "vcm-voluntary": [],
+  "voc": [],
+  "vpp-detail": [],
+  "virtual-power-plant": [],
+  "vppa-detail": [],
+  "vpp-platform": [],
+  "vpp-operator": [],
+  "vpp-virtual-power-plant": [],
+  "vattenfall": [],
+  "vendor-audit": [],
+  "vendor-lock-in": [],
+  "virtual-inertia": [],
+  "vistra-energy": [],
+  "voltage-support": [],
+  "wacc": [],
+  "weee-detail": [],
+  "wallerawang": [],
+  "wh-detail": [],
+  "wholesale-market": [],
+  "wood-mackenzie": [
+    {
+      "id": "2u8w-_b4j4p7",
+      "slug": "faq-sonota-04",
+      "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
+      "category": "その他"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    }
+  ],
+  "working-capital": [],
+  "world-bank-detail": [],
+  "xcel-energy": [],
+  "zeb-zero-energy-building": [],
+  "zeh-zero-energy-house": [],
+  "zenobe-energy": [],
+  "zonal-pricing": [],
+  "e-flow": [],
+  "ev2g-detail": [],
+  "kwh-unit-detail": [
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    }
+  ],
+  "kilowatt-hour": [
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    }
+  ],
+  "kwh-value": [],
+  "kwp-detail": [],
+  "kw-kwh-separation": [],
+  "kw-value": [],
+  "var-volt-ampere-reactive": [],
+  "delta-kw": [],
+  "aggregator": [
+    {
+      "id": "ljb-memhee",
+      "slug": "faq-jigyou-09",
+      "question": "アグリゲーターとは何ですか？",
+      "category": "事業"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    }
+  ],
+  "aggregator-detail": [
+    {
+      "id": "ljb-memhee",
+      "slug": "faq-jigyou-09",
+      "question": "アグリゲーターとは何ですか？",
+      "category": "事業"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    }
+  ],
+  "aggregator-business": [],
+  "asbestos-survey": [],
+  "ammonia": [
+    {
+      "id": "tswhuk1cfani",
+      "slug": "faq-seido-04",
+      "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "category": "制度"
+    }
+  ],
+  "arbitrage-detail": [
+    {
+      "id": "6voqsb4rhfi",
+      "slug": "faq-seido-06",
+      "question": "FIT制度とFIP制度の違いは？",
+      "category": "制度"
+    }
+  ],
+  "incoterms": [],
+  "interview-article": [],
+  "imbalance": [],
+  "imbalance-fee-detail": [],
+  "imbalance-charge": [],
+  "inverter": [],
+  "impact-investment": [],
+  "infra-fund": [],
+  "infrastructure-fund": [],
+  "infroneer": [],
+  "equity-detail": [],
+  "eneres-japan": [
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "ljb-memhee",
+      "slug": "faq-jigyou-09",
+      "question": "アグリゲーターとは何ですか？",
+      "category": "事業"
+    }
+  ],
+  "ennet": [],
+  "basic-energy-plan": [
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "basic-act-on-energy-policy": [],
+  "area-price": [],
+  "offsite-ppa": [],
+  "offtake-agreement": [],
+  "operating-lease": [],
+  "operating-lease-detail": [],
+  "orix-energy": [
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "2x50lsuao",
+      "slug": "faq-jigyou-04",
+      "question": "O&M体制はどう設計する？",
+      "category": "事業"
+    }
+  ],
+  "onsite-ppa": [],
+  "autoencoder": [],
+  "open-data": [],
+  "open-circuit-voltage": [],
+  "counter-trade": [],
+  "kanadevia": [],
+  "calendar-aging": [],
+  "calendar-life": [],
+  "country-risk": [
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    }
+  ],
+  "carbon-offset": [],
+  "carbon-credit": [],
+  "carbon-disclosure": [],
+  "carbon-neutral": [
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "carbon-budget": [],
+  "carbon-footprint": [],
+  "carbon-pricing-detail": [],
+  "gas-detector": [],
+  "gas-venting": [],
+  "gas-release": [],
+  "cloud": [],
+  "cloud-computing": [],
+  "clean-energy": [],
+  "cooling-off": [],
+  "coulombic-efficiency": [],
+  "grid-forming": [],
+  "green-infrastructure": [],
+  "greenwashing": [],
+  "green-finance": [],
+  "green-bond-detail": [],
+  "green-bond": [],
+  "green-certification": [],
+  "green-power-certificate": [],
+  "cost-management": [],
+  "connect-manage": [],
+  "cobalt-resource": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "cobalt": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "cobalt-mine": [],
+  "commissioning-bess": [],
+  "commissioning-period": [],
+  "containerized-bess": [],
+  "container-bess": [],
+  "container-bess-detail": [
+    {
+      "id": "5w7902ng3gkm",
+      "slug": "faq-gijutsu-03",
+      "question": "コンテナ型BESSとは何ですか？",
+      "category": "技術"
+    }
+  ],
+  "container-aggregation": [],
+  "corporate-ppa": [],
+  "corporate-ppa-detail": [],
+  "cycle-aging": [],
+  "cycle-life": [
+    {
+      "id": "v_6_pg9rgkg",
+      "slug": "faq-gijutsu-09",
+      "question": "蓄電池のサイクル寿命とは？",
+      "category": "技術"
+    },
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    }
+  ],
+  "cycle-count": [
+    {
+      "id": "v_6_pg9rgkg",
+      "slug": "faq-gijutsu-09",
+      "question": "蓄電池のサイクル寿命とは？",
+      "category": "技術"
+    }
+  ],
+  "cybersecurity-bess": [],
+  "cyber-insurance": [],
+  "cyber-attack-bess": [],
+  "sustainability-linked-loan": [],
+  "sustainability-report": [],
+  "battery-subscription": [],
+  "supply-chain-detail": [
+    {
+      "id": "l--pn6-452ab",
+      "slug": "faq-hojokin-07",
+      "question": "補助金の採択基準は？",
+      "category": "補助金"
+    },
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "nuryoexs68_v",
+      "slug": "faq-hojokin-08",
+      "question": "蓄電池供給確保計画とは？認定企業は？",
+      "category": "補助金"
+    }
+  ],
+  "thermal-camera": [],
+  "system-integrator": [],
+  "system-price": [],
+  "senior-loan": [],
+  "sharp-energy-solution": [],
+  "silicon-anode": [],
+  "siac-arbitration": [],
+  "j-rena-japan": [],
+  "schedule-management": [],
+  "scope": [],
+  "stakeholder": [],
+  "structured-finance": [],
+  "string": [],
+  "storage-parity": [
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    }
+  ],
+  "storage-parity-subsidy": [],
+  "spot-market": [],
+  "day-ahead-market": [],
+  "smart-solar-japan": [],
+  "smart-meter": [],
+  "sleeve": [],
+  "secondary": [],
+  "secondary-reserve-international": [],
+  "security-audit": [],
+  "separator": [],
+  "cell": [],
+  "self-storage": [],
+  "cell-degradation": [],
+  "cell-chem-compare": [],
+  "cell-temperature": [],
+  "cell-monitoring": [],
+  "cell-screening": [],
+  "cell-isolation": [],
+  "cell-voltage": [
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    }
+  ],
+  "cell-current": [],
+  "solar-frontier": [],
+  "tesla-japan": [],
+  "tesla-supercharger": [],
+  "tess-engineering": [],
+  "digital-grid-japan": [],
+  "digital-twin": [],
+  "deployment-plan": [],
+  "demand": [],
+  "demand-control": [],
+  "derated": [],
+  "transition": [],
+  "sodium-ion-battery": [],
+  "nanogrid-detail": [],
+  "nickel-resource": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "nickel": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "nickel-mine": [],
+  "negawatt": [],
+  "non-firm-detail": [
+    {
+      "id": "ipkhcuq8o",
+      "slug": "faq-seido-05",
+      "question": "ノンファーム型接続とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "qx88sorws",
+      "slug": "faq-jigyou-06",
+      "question": "接続検討と接続契約の流れは？",
+      "category": "事業"
+    },
+    {
+      "id": "f-awygf2ry0u",
+      "slug": "faq-seido-10",
+      "question": "系統連系協議の流れは？",
+      "category": "制度"
+    }
+  ],
+  "non-firm-connection": [
+    {
+      "id": "qx88sorws",
+      "slug": "faq-jigyou-06",
+      "question": "接続検討と接続契約の流れは？",
+      "category": "事業"
+    },
+    {
+      "id": "f-awygf2ry0u",
+      "slug": "faq-seido-10",
+      "question": "系統連系協議の流れは？",
+      "category": "制度"
+    }
+  ],
+  "non-recourse": [],
+  "hybrid": [],
+  "halon-suppression": [],
+  "biomass-power": [],
+  "busbar": [],
+  "battery-passive-safety": [],
+  "value-chain": [],
+  "banking": [],
+  "pack": [
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    },
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    }
+  ],
+  "panasonic-energy": [],
+  "public-comment": [],
+  "paris-agreement": [],
+  "power-x-japan": [],
+  "peer-review": [],
+  "peaker-detail": [],
+  "peak-cutting": [],
+  "peak-cut": [],
+  "peak-shifting": [],
+  "peak-shift": [],
+  "peak-demand": [],
+  "finance-lease": [],
+  "finance-lease-detail": [],
+  "fact-check": [],
+  "huawei-japan": [],
+  "filter-circuit": [],
+  "fence-intrusion-prevention": [],
+  "flywheel": [],
+  "full-merchant": [],
+  "blockchain-energy": [],
+  "primary-reserve-international": [],
+  "prosumer": [],
+  "project-db": [],
+  "project-finance": [
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    }
+  ],
+  "project-management": [],
+  "project-manager": [],
+  "hedge": [],
+  "bayesian-optimization": [],
+  "baseload-power": [],
+  "baseload-market": [],
+  "baseload-thermal": [],
+  "market-penalty": [],
+  "penalty-formula": [],
+  "penetration-testing": [],
+  "microgrid-detail": [
+    {
+      "id": "hroaee86yi",
+      "slug": "faq-sonota-03",
+      "question": "離島マイクログリッドとは？",
+      "category": "その他"
+    },
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "exlqvjemq",
+      "slug": "faq-sonota-02",
+      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
+      "category": "その他"
+    },
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    }
+  ],
+  "microgrid": [
+    {
+      "id": "hroaee86yi",
+      "slug": "faq-sonota-03",
+      "question": "離島マイクログリッドとは？",
+      "category": "その他"
+    },
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "exlqvjemq",
+      "slug": "faq-sonota-02",
+      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
+      "category": "その他"
+    },
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    }
+  ],
+  "boost-function": [],
+  "multi-use-detail": [
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    },
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "multi-use-operation": [
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    },
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "manganese-resource": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "merchant-project": [],
+  "main-auction-jp": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    }
+  ],
+  "main-auction": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    }
+  ],
+  "mega-solar": [],
+  "mezzanine": [],
+  "mezzanine-loan": [],
+  "module": [
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    }
+  ],
+  "yard": [],
+  "yard-map": [],
+  "round-trip-efficiency": [],
+  "rack": [
+    {
+      "id": "65g775f32ug",
+      "slug": "faq-hojokin-05",
+      "question": "自治体の独自補助金はある？",
+      "category": "補助金"
+    },
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "rack-bess": [],
+  "requirement": [],
+  "requirement-shortfall": [],
+  "recycle": [
+    {
+      "id": "k17sxd5vpts",
+      "slug": "faq-sonota-05",
+      "question": "蓄電池のリユース・セカンドライフは？",
+      "category": "その他"
+    },
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    }
+  ],
+  "risk-allocation": [],
+  "risk-matrix": [],
+  "risk-management": [],
+  "risk-register": [],
+  "resource-aggregator": [],
+  "lithium-resource": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    },
+    {
+      "id": "54zbxd5rdu",
+      "slug": "faq-gijutsu-04",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "category": "技術"
+    },
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    }
+  ],
+  "lithium": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    },
+    {
+      "id": "54zbxd5rdu",
+      "slug": "faq-gijutsu-04",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "category": "技術"
+    },
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    }
+  ],
+  "lithium-ion-battery": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "54zbxd5rdu",
+      "slug": "faq-gijutsu-04",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "category": "技術"
+    },
+    {
+      "id": "0es7655hq",
+      "slug": "faq-gijutsu-07",
+      "question": "セル・モジュール・パックの違いは？",
+      "category": "技術"
+    }
+  ],
+  "lithium-brine": [],
+  "lithium-mine": [],
+  "reuse": [
+    {
+      "id": "k17sxd5vpts",
+      "slug": "faq-sonota-05",
+      "question": "蓄電池のリユース・セカンドライフは？",
+      "category": "その他"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    },
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "lithium-iron-phosphate-material": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "lease": [
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    },
+    {
+      "id": "0t_1ff_a7b",
+      "slug": "faq-jigyou-07",
+      "question": "蓄電所の用地確保はどうする？",
+      "category": "事業"
+    }
+  ],
+  "lease-contract-detail": [],
+  "rare-earth": [],
+  "legacy-power-source": [],
+  "resilience": [
+    {
+      "id": "hroaee86yi",
+      "slug": "faq-sonota-03",
+      "question": "離島マイクログリッドとは？",
+      "category": "その他"
+    }
+  ],
+  "redox-flow-battery": [
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    }
+  ],
+  "renova-japan": [
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    }
+  ],
+  "renova-kikugawa": [],
+  "renova-kikugawa-270": [],
+  "local-content": [],
+  "primary-reserve": [
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    }
+  ],
+  "fcr-primary": [],
+  "tso-japan-detail": [
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    }
+  ],
+  "general-transmission-distribution": [
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    }
+  ],
+  "mitsui-co": [],
+  "tertiary-reserve": [
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    }
+  ],
+  "tertiary-reserve-1": [
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    }
+  ],
+  "tr1-tertiary": [],
+  "tertiary-reserve-2": [],
+  "tr2-tertiary": [],
+  "mitsubishi-hc-capital": [],
+  "mitsubishi-chemical": [],
+  "mitsubishi-corp": [],
+  "mitsubishi-corporation": [],
+  "upward-dr": [],
+  "upside-scenario": [],
+  "price-cap": [],
+  "downward-dr": [],
+  "downside-scenario": [],
+  "price-floor": [],
+  "force-majeure": [],
+  "imbalanced-charging": [],
+  "chinese-manufacturer": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "chugoku-bess": [],
+  "chugoku-electric": [
+    {
+      "id": "0t_1ff_a7b",
+      "slug": "faq-jigyou-07",
+      "question": "蓄電所の用地確保はどうする？",
+      "category": "事業"
+    },
+    {
+      "id": "02a4cvr48",
+      "slug": "faq-gijutsu-10",
+      "question": "蓄電池の劣化診断はどう行う？",
+      "category": "技術"
+    }
+  ],
+  "central-load-dispatch": [],
+  "smb-management-strengthening": [],
+  "chubu-bess": [],
+  "chubu-electric": [],
+  "mid-day-period": [],
+  "marubeni": [],
+  "marubeni-japan": [],
+  "kyushu-bess": [],
+  "kyushu-electric": [
+    {
+      "id": "hroaee86yi",
+      "slug": "faq-sonota-03",
+      "question": "離島マイクログリッドとは？",
+      "category": "その他"
+    }
+  ],
+  "reserve-capacity": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    }
+  ],
+  "reserve-margin": [],
+  "predictive-maintenance": [],
+  "preventive-maintenance": [],
+  "pre-consultation": [
+    {
+      "id": "f-awygf2ry0u",
+      "slug": "faq-seido-10",
+      "question": "系統連系協議の流れは？",
+      "category": "制度"
+    }
+  ],
+  "corrective-maintenance": [],
+  "accident-report": [],
+  "business-interruption-insurance": [
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    }
+  ],
+  "secondary-market-battery": [],
+  "secondary-reserve-1": [
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    }
+  ],
+  "sr1-secondary": [],
+  "secondary-reserve-2": [],
+  "sr2-secondary": [],
+  "kyocera-energy": [
+    {
+      "id": "54zbxd5rdu",
+      "slug": "faq-gijutsu-04",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "category": "技術"
+    }
+  ],
+  "human-rights-dd": [],
+  "arbitration-clause": [],
+  "itochu": [],
+  "itochu-corporation": [],
+  "low-voltage": [],
+  "lv-bess-detail": [],
+  "low-voltage-resource": [],
+  "low-voltage-grid": [],
+  "sumitomo-chemical": [],
+  "sumitomo-corp": [],
+  "sumitomo-corporation": [],
+  "residential-ess": [],
+  "residential-battery": [],
+  "resident-consent": [
+    {
+      "id": "rh00d0wk98",
+      "slug": "faq-sonota-09",
+      "question": "蓄電所の環境影響評価は必要？",
+      "category": "その他"
+    }
+  ],
+  "saga-bess": [],
+  "co-located": [],
+  "pre-use-self-inspection": [],
+  "supply-reserve": [],
+  "price-spike-jepx": [],
+  "price-forecasting-model": [],
+  "safety-regulations": [],
+  "storage-temperature-range": [],
+  "protection-relay": [],
+  "insurance-broker": [],
+  "letter-of-credit": [],
+  "reliability": [],
+  "forward-market": [],
+  "auction": [],
+  "solid-state-battery": [
+    {
+      "id": "54zbxd5rdu",
+      "slug": "faq-gijutsu-04",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "category": "技術"
+    },
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "public-offering": [],
+  "hyogo-bess": [],
+  "hyogo-subsidy": [],
+  "internal-resistance": [
+    {
+      "id": "02a4cvr48",
+      "slug": "faq-gijutsu-10",
+      "question": "蓄電池の劣化診断はどう行う？",
+      "category": "技術"
+    }
+  ],
+  "internal-short-circuit": [],
+  "renewable-energy": [
+    {
+      "id": "hroaee86yi",
+      "slug": "faq-sonota-03",
+      "question": "離島マイクログリッドとは？",
+      "category": "その他"
+    },
+    {
+      "id": "ipkhcuq8o",
+      "slug": "faq-seido-05",
+      "question": "ノンファーム型接続とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "6voqsb4rhfi",
+      "slug": "faq-seido-06",
+      "question": "FIT制度とFIP制度の違いは？",
+      "category": "制度"
+    },
+    {
+      "id": "l--pn6-452ab",
+      "slug": "faq-hojokin-07",
+      "question": "補助金の採択基準は？",
+      "category": "補助金"
+    },
+    {
+      "id": "4ieiz54h9182",
+      "slug": "faq-seido-07",
+      "question": "出力制御とは何ですか？蓄電池でどう対応する？",
+      "category": "制度"
+    }
+  ],
+  "re100-japan": [
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "renewable-output-forecast": [],
+  "renewable-special-law": [],
+  "renewable-energy-special-measures-act": [],
+  "renewable-surcharge": [],
+  "renewable-energy-surcharge": [],
+  "anti-islanding": [],
+  "redundancy": [],
+  "idemitsu-kosan": [
+    {
+      "id": "54zbxd5rdu",
+      "slug": "faq-gijutsu-04",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "category": "技術"
+    }
+  ],
+  "source": [],
+  "curtailment": [
+    {
+      "id": "4ieiz54h9182",
+      "slug": "faq-seido-07",
+      "question": "出力制御とは何ですか？蓄電池でどう対応する？",
+      "category": "制度"
+    },
+    {
+      "id": "ipkhcuq8o",
+      "slug": "faq-seido-05",
+      "question": "ノンファーム型接続とは何ですか？",
+      "category": "制度"
+    }
+  ],
+  "output-control": [
+    {
+      "id": "4ieiz54h9182",
+      "slug": "faq-seido-07",
+      "question": "出力制御とは何ですか？蓄電池でどう対応する？",
+      "category": "制度"
+    },
+    {
+      "id": "ipkhcuq8o",
+      "slug": "faq-seido-05",
+      "question": "ノンファーム型接続とは何ですか？",
+      "category": "制度"
+    }
+  ],
+  "distributed-energy-resource": [],
+  "initial-capacity": [],
+  "initial-investment": [],
+  "control-power": [],
+  "control-accuracy": [],
+  "power-factor": [],
+  "degradation-ai": [],
+  "accelerated-degradation": [],
+  "degradation-curve": [],
+  "degradation-mitigation": [],
+  "operating-temperature-range": [],
+  "hokkaido-honshu-interconnection": [],
+  "hokkaido-bess": [],
+  "hokkaido-electric": [
+    {
+      "id": "0t_1ff_a7b",
+      "slug": "faq-jigyou-07",
+      "question": "蓄電所の用地確保はどうする？",
+      "category": "事業"
+    }
+  ],
+  "hokuriku-electric": [],
+  "compartmentalization": [],
+  "post-fit": [],
+  "single-unit-rating": [],
+  "islanding": [],
+  "sojitz": [],
+  "right-of-reply": [],
+  "substation-equipment": [],
+  "variable-speed-pumped": [],
+  "simultaneous-balance": [],
+  "frequency": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    },
+    {
+      "id": "hroaee86yi",
+      "slug": "faq-sonota-03",
+      "question": "離島マイクログリッドとは？",
+      "category": "その他"
+    }
+  ],
+  "frequency-deviation": [],
+  "frequency-fluctuation": [],
+  "fc-frequency-conv": [],
+  "frequency-converter": [],
+  "quality-management": [],
+  "commercial-battery": [],
+  "shikoku-bess": [],
+  "shikoku-electric": [
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    }
+  ],
+  "payback-period": [],
+  "property-tax": [],
+  "national-project-bess": [
+    {
+      "id": "nuryoexs68_v",
+      "slug": "faq-hojokin-08",
+      "question": "蓄電池供給確保計画とは？認定企業は？",
+      "category": "補助金"
+    }
+  ],
+  "national-inspection": [],
+  "domestic-production": [
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    },
+    {
+      "id": "nuryoexs68_v",
+      "slug": "faq-hojokin-08",
+      "question": "蓄電池供給確保計画とは？認定企業は？",
+      "category": "補助金"
+    }
+  ],
+  "energy-charter-treaty": [],
+  "international-cooperation": [],
+  "pressure-detection": [],
+  "caes": [],
+  "regional-microgrid": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    }
+  ],
+  "regional-decarbonization": [],
+  "regional-decarbonization-grant": [],
+  "inter-regional-interconnection": [],
+  "geopolitical-risk": [],
+  "geothermal-power": [],
+  "land-classification": [],
+  "ground-fault": [],
+  "balanced-charging": [],
+  "trunk-grid": [],
+  "base-case-scenario": [],
+  "basic-charge": [],
+  "foundation-work": [],
+  "transformer": [],
+  "conversion-efficiency": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    }
+  ],
+  "substation-detail": [],
+  "substation": [],
+  "substation-capacity": [],
+  "evening-peak": [],
+  "external-entrustment-approval": [],
+  "nighttime-power": [],
+  "major-maintenance-reserve": [],
+  "osaka-bess": [],
+  "solar-power": [
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "65g775f32ug",
+      "slug": "faq-hojokin-05",
+      "question": "自治体の独自補助金はある？",
+      "category": "補助金"
+    },
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    }
+  ],
+  "jpea": [
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    }
+  ],
+  "ube-corporation": [],
+  "periodic-inspection": [
+    {
+      "id": "2x50lsuao",
+      "slug": "faq-jigyou-04",
+      "question": "O&M体制はどう設計する？",
+      "category": "事業"
+    }
+  ],
+  "rated-output": [],
+  "rated-capacity": [],
+  "effective-capacity": [],
+  "effective-life": [],
+  "capacity-market": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    },
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    }
+  ],
+  "capacity-market-settlement": [],
+  "capacity-market-agreement": [],
+  "capacity-contribution": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    },
+    {
+      "id": "tswhuk1cfani",
+      "slug": "faq-seido-04",
+      "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "category": "制度"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "capacity-procurement-contract-amount": [],
+  "capacity-contract-payment": [],
+  "small-customer": [],
+  "retail-electricity-business": [],
+  "yamaguchi-bess": [],
+  "construction-plan-notification": [],
+  "urbanization-restricted-area": [],
+  "annual-revenue": [
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "building-standards-law": [],
+  "reinforcement-learning": [],
+  "intraday-current": [],
+  "standby-reserve": [],
+  "recovery-time": [],
+  "circular-economy": [],
+  "dispatch-instruction": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    }
+  ],
+  "response-time-detail": [
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    }
+  ],
+  "bid-quantity": [],
+  "fast-charging": [
+    {
+      "id": "54zbxd5rdu",
+      "slug": "faq-gijutsu-04",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "category": "技術"
+    }
+  ],
+  "performance-warranty": [
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    }
+  ],
+  "performance-guarantee": [
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    }
+  ],
+  "performance-test": [],
+  "performance-test-criteria": [],
+  "sensitivity-analysis": [
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    }
+  ],
+  "investment-fund": [],
+  "duration-time": [],
+  "installation-detail": [],
+  "adoption": [],
+  "grounding": [],
+  "connection-study": [
+    {
+      "id": "qx88sorws",
+      "slug": "faq-jigyou-06",
+      "question": "接続検討と接続契約の流れは？",
+      "category": "事業"
+    },
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    },
+    {
+      "id": "f-awygf2ry0u",
+      "slug": "faq-seido-10",
+      "question": "系統連系協議の流れは？",
+      "category": "制度"
+    }
+  ],
+  "connection-study-response": [],
+  "study-fee-detail": [],
+  "pumped-storage-station": [],
+  "pumped-storage": [],
+  "failure-rate": [],
+  "fault-diagnosis": [],
+  "solar-mandate": [],
+  "shin-denryoku": [],
+  "construction-management": [],
+  "jwpa": [
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    }
+  ],
+  "hitachi-astemo": [],
+  "former-utilities": [],
+  "former-thermal-site": [],
+  "asahi-kasei": [
+    {
+      "id": "02a4cvr48",
+      "slug": "faq-gijutsu-10",
+      "question": "蓄電池の劣化診断はどう行う？",
+      "category": "技術"
+    }
+  ],
+  "daytime-power": [],
+  "intraday-market": [],
+  "duration-rating": [],
+  "keihyo-law": [],
+  "minimum-output-time": [],
+  "active-power": [],
+  "morning-peak": [],
+  "local-ordinance": [],
+  "toray": [],
+  "tokyo-century-japan": [],
+  "tokyo-century-isahaya": [],
+  "tokyo-century-nasu": [],
+  "tokyo-subsidy-detail": [],
+  "tokyo-subsidy": [],
+  "tepco-holdings": [],
+  "tohoku-bess": [],
+  "tohoku-electric": [],
+  "tokyu-power-supply": [],
+  "toshiba-energy": [],
+  "forestry-development-permit": [],
+  "outsourcing-contract": [],
+  "business-improvement-order": [],
+  "industry-association": [
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    },
+    {
+      "id": "6l4r_5gpef",
+      "slug": "faq-hojokin-06",
+      "question": "補助金申請のスケジュール把握法は？",
+      "category": "補助金"
+    }
+  ],
+  "machine-learning": [
+    {
+      "id": "02a4cvr48",
+      "slug": "faq-gijutsu-10",
+      "question": "蓄電池の劣化診断はどう行う？",
+      "category": "技術"
+    }
+  ],
+  "cathode": [],
+  "cathode-material": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "battery-residual-value": [],
+  "weather-forecast": [],
+  "water-mist-suppression": [],
+  "water-cooling-system": [],
+  "hydro-power": [],
+  "water-spray-system": [],
+  "hydrogen": [],
+  "hydrogen-ammonia-fund": [],
+  "okinawa-bess": [],
+  "okinawa-electric": [
+    {
+      "id": "hroaee86yi",
+      "slug": "faq-sonota-03",
+      "question": "離島マイクログリッドとは？",
+      "category": "その他"
+    }
+  ],
+  "scheduled-shutdown": [],
+  "legal-depreciation-period": [],
+  "wave-tidal-power": [],
+  "offshore-wind-detail": [
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    },
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "offshore-wind": [
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    },
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "flood-protection": [],
+  "extinguishing-agent": [],
+  "fire-suppression-system": [],
+  "fire-extinguishing-equipment": [
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    }
+  ],
+  "fire-service-law": [],
+  "fire-service-act": [],
+  "liquid-cooling-system": [],
+  "deep-learning": [],
+  "temperature-detection": [],
+  "governing-law": [],
+  "fire-testing": [],
+  "disaster-response": [],
+  "inspection": [],
+  "fx-forward": [],
+  "reactive-power": [],
+  "smoke-detector": [],
+  "smoke-detection": [],
+  "kumamoto-bess": [],
+  "thermal-management": [],
+  "thermal-diffusion": [],
+  "thermal-runaway": [
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    },
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "54zbxd5rdu",
+      "slug": "faq-gijutsu-04",
+      "question": "全固体電池とは？いつ実用化されますか？",
+      "category": "技術"
+    },
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    }
+  ],
+  "special-depreciation": [],
+  "extra-high-voltage": [],
+  "extra-hv-bess": [],
+  "extra-high-voltage-grid": [],
+  "specified-supply": [],
+  "specified-wholesale-supply": [
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    },
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    }
+  ],
+  "specified-wholesale-supply-business": [
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    },
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    }
+  ],
+  "specified-commercial-transaction-act": [],
+  "ehv-substation": [],
+  "extra-high-voltage-customer": [],
+  "nite": [],
+  "warranty": [],
+  "warranty-liability": [],
+  "environmental-value": [],
+  "environmental-assessment-law": [],
+  "environmental-pollution-insurance": [],
+  "ministry-of-environment": [
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "6l4r_5gpef",
+      "slug": "faq-hojokin-06",
+      "question": "補助金申請のスケジュール把握法は？",
+      "category": "補助金"
+    }
+  ],
+  "ministry-of-the-environment": [
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "6l4r_5gpef",
+      "slug": "faq-hojokin-06",
+      "question": "補助金申請のスケジュール把握法は？",
+      "category": "補助金"
+    }
+  ],
+  "industrial-battery": [],
+  "land-acquisition": [],
+  "land-lease-fee": [],
+  "site-selection": [
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    },
+    {
+      "id": "0t_1ff_a7b",
+      "slug": "faq-jigyou-07",
+      "question": "蓄電所の用地確保はどうする？",
+      "category": "事業"
+    }
+  ],
+  "zoning": [],
+  "dispatch-command": [],
+  "dispatch-resource": [],
+  "dispatch-command-source": [],
+  "unbundling": [],
+  "generation-forecast": [],
+  "power-generation-business": [
+    {
+      "id": "f-awygf2ry0u",
+      "slug": "faq-seido-10",
+      "question": "系統連系協議の流れは？",
+      "category": "制度"
+    }
+  ],
+  "generation-business-operator": [
+    {
+      "id": "f-awygf2ry0u",
+      "slug": "faq-seido-10",
+      "question": "系統連系協議の流れは？",
+      "category": "制度"
+    }
+  ],
+  "surveillance-camera": [],
+  "spinning-reserve": [],
+  "short-circuit-fault": [],
+  "short-circuit-protection": [
+    {
+      "id": "gjule02w1",
+      "slug": "faq-sonota-01",
+      "question": "蓄電所は火災のリスクが高い？対策は？",
+      "category": "その他"
+    }
+  ],
+  "reliable-power": [],
+  "kanagawa-subsidy": [],
+  "fukuoka-bess": [],
+  "fukushima-bess": [],
+  "transfer-pricing": [],
+  "availability": [],
+  "availability-rate": [],
+  "air-cooling-system": [],
+  "nitrogen-suppression": [],
+  "inspection-by-authority": [],
+  "7th-strategic-energy-plan": [
+    {
+      "id": "obhp4kbx4i",
+      "slug": "faq-sonota-10",
+      "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
+      "category": "その他"
+    }
+  ],
+  "third-party-ownership": [],
+  "third-party-evaluator": [],
+  "grid-frequency": [],
+  "grid-enhancement": [
+    {
+      "id": "ipkhcuq8o",
+      "slug": "faq-seido-05",
+      "question": "ノンファーム型接続とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "qx88sorws",
+      "slug": "faq-jigyou-06",
+      "question": "接続検討と接続契約の流れは？",
+      "category": "事業"
+    },
+    {
+      "id": "iys9xshra05z",
+      "slug": "faq-seido-08",
+      "question": "N-1電制とは何ですか？",
+      "category": "制度"
+    }
+  ],
+  "grid-information-service": [],
+  "grid-inertia": [],
+  "grid-scale-battery": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "grid-scale-bess": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "grid-scale-battery-detail": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
+  "grid-scale-bess-subsidy": [],
+  "grid-available-capacity": [
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    }
+  ],
+  "grid-interconnection": [
+    {
+      "id": "f-awygf2ry0u",
+      "slug": "faq-seido-10",
+      "question": "系統連系協議の流れは？",
+      "category": "制度"
+    },
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    },
+    {
+      "id": "qx88sorws",
+      "slug": "faq-jigyou-06",
+      "question": "接続検討と接続契約の流れは？",
+      "category": "事業"
+    },
+    {
+      "id": "0t_1ff_a7b",
+      "slug": "faq-jigyou-07",
+      "question": "蓄電所の用地確保はどうする？",
+      "category": "事業"
+    }
+  ],
+  "grid-interconnection-contract": [],
+  "point-of-interconnection": [
+    {
+      "id": "0t_1ff_a7b",
+      "slug": "faq-jigyou-07",
+      "question": "蓄電所の用地確保はどうする？",
+      "category": "事業"
+    }
+  ],
+  "jeac-9701": [],
+  "grid-interconnection-code": [],
+  "grid-operation": [
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    },
+    {
+      "id": "pjdjmirj35",
+      "slug": "faq-gijutsu-08",
+      "question": "BMS（バッテリーマネジメントシステム）とは？",
+      "category": "技術"
+    }
+  ],
+  "grid-voltage": [
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    }
+  ],
+  "auction-clearing-price": [],
+  "conflict-minerals": [],
+  "economic-security": [
+    {
+      "id": "3m2dbxqu1",
+      "slug": "faq-jigyou-03",
+      "question": "EPC選定のポイントは？",
+      "category": "事業"
+    },
+    {
+      "id": "l--pn6-452ab",
+      "slug": "faq-hojokin-07",
+      "question": "補助金の採択基準は？",
+      "category": "補助金"
+    },
+    {
+      "id": "nuryoexs68_v",
+      "slug": "faq-hojokin-08",
+      "question": "蓄電池供給確保計画とは？認定企業は？",
+      "category": "補助金"
+    }
+  ],
+  "economic-security-act": [
+    {
+      "id": "nuryoexs68_v",
+      "slug": "faq-hojokin-08",
+      "question": "蓄電池供給確保計画とは？認定企業は？",
+      "category": "補助金"
+    }
+  ],
+  "meti": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    }
+  ],
+  "ministry-of-economy-trade-and-industry": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    }
+  ],
+  "transitional-power-source": [],
+  "insulation-resistance": [],
+  "emergency-shutdown": [],
+  "emergency-manual": [],
+  "gunma-bess": [],
+  "dielectric-strength": [],
+  "seismic-design": [],
+  "earthquake-resistant-design": [],
+  "decarbonization": [
+    {
+      "id": "tswhuk1cfani",
+      "slug": "faq-seido-04",
+      "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "category": "制度"
+    },
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "65g775f32ug",
+      "slug": "faq-hojokin-05",
+      "question": "自治体の独自補助金はある？",
+      "category": "補助金"
+    },
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    }
+  ],
+  "decarbonization-leading-region-detail": [],
+  "decarbonization-leading-region": [],
+  "decarbonization-management": [
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    }
+  ],
+  "automatic-fire-alarm": [],
+  "self-consumption": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "2km0c3svk",
+      "slug": "faq-jigyou-10",
+      "question": "蓄電所事業の収益モデル一覧",
+      "category": "事業"
+    }
+  ],
+  "private-electrical-facilities": [],
+  "self-discharge": [],
+  "self-transmission": [],
+  "local-subsidy": [
+    {
+      "id": "exlqvjemq",
+      "slug": "faq-sonota-02",
+      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
+      "category": "その他"
+    },
+    {
+      "id": "65g775f32ug",
+      "slug": "faq-hojokin-05",
+      "question": "自治体の独自補助金はある？",
+      "category": "補助金"
+    },
+    {
+      "id": "dbszyk1sq8c",
+      "slug": "faq-hojokin-09",
+      "question": "補助金と FIP の併用可否は？",
+      "category": "補助金"
+    }
+  ],
+  "local-government-subsidy": [
+    {
+      "id": "exlqvjemq",
+      "slug": "faq-sonota-02",
+      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
+      "category": "その他"
+    },
+    {
+      "id": "65g775f32ug",
+      "slug": "faq-hojokin-05",
+      "question": "自治体の独自補助金はある？",
+      "category": "補助金"
+    },
+    {
+      "id": "dbszyk1sq8c",
+      "slug": "faq-hojokin-09",
+      "question": "補助金と FIP の併用可否は？",
+      "category": "補助金"
+    }
+  ],
+  "ibaraki-bess": [],
+  "chikudensho": [
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    },
+    {
+      "id": "exlqvjemq",
+      "slug": "faq-sonota-02",
+      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
+      "category": "その他"
+    },
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "battery-storage-site": [
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    },
+    {
+      "id": "exlqvjemq",
+      "slug": "faq-sonota-02",
+      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
+      "category": "その他"
+    },
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
+  "bess-leasing": [],
+  "battery-supply-plan": [
+    {
+      "id": "nuryoexs68_v",
+      "slug": "faq-hojokin-08",
+      "question": "蓄電池供給確保計画とは？認定企業は？",
+      "category": "補助金"
+    }
+  ],
+  "battery-industry-assoc": [],
+  "subsidy-rate": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "tzykp_z2b3pu",
+      "slug": "faq-hojokin-02",
+      "question": "SIIの蓄電池導入支援事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "2j3fi0tkp1",
+      "slug": "faq-hojokin-03",
+      "question": "METI（経産省）補助金の申請方法は？",
+      "category": "補助金"
+    },
+    {
+      "id": "15drhrq4xq52",
+      "slug": "faq-hojokin-04",
+      "question": "環境省ストレージパリティ事業とは？",
+      "category": "補助金"
+    },
+    {
+      "id": "65g775f32ug",
+      "slug": "faq-hojokin-05",
+      "question": "自治体の独自補助金はある？",
+      "category": "補助金"
+    }
+  ],
+  "auxiliary-power": [],
+  "product-evaluation": [],
+  "correction-history": [],
+  "planned-balance": [],
+  "planned-value-simultaneous-equilibrium": [],
+  "planned-outage": [],
+  "wheeling": [],
+  "wheeling-supply": [],
+  "wheeling-contract": [],
+  "wheeling-supply-tariff": [],
+  "wheeling-charge": [],
+  "commissioning": [
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    }
+  ],
+  "trial-operation": [
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    }
+  ],
+  "approval-detail": [],
+  "certification-revocation": [],
+  "certification-test": [],
+  "adjustment-reserve": [
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    }
+  ],
+  "adjustment-power-tender": [],
+  "anode": [],
+  "anode-material": [],
+  "load-factor": [],
+  "load-following": [],
+  "load-following-thermal": [],
+  "agency-for-natural-resources-and-energy": [],
+  "meti-committee": [],
+  "startup-time": [
+    {
+      "id": "z3r00o1o8",
+      "slug": "faq-gijutsu-06",
+      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
+      "category": "技術"
+    }
+  ],
+  "ev-battery": [
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    },
+    {
+      "id": "k17sxd5vpts",
+      "slug": "faq-sonota-05",
+      "question": "蓄電池のリユース・セカンドライフは？",
+      "category": "その他"
+    }
+  ],
+  "transportation": [],
+  "community-explanation": [],
+  "additional-auction": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    }
+  ],
+  "additional-auction-jp": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    }
+  ],
+  "transmission-capacity": [],
+  "transmission-grid": [],
+  "reverse-power-flow": [],
+  "reverse-power-flow-prevention": [],
+  "fx-option": [],
+  "customs-clearance": [],
+  "site-preparation": [],
+  "interconnection-line": [],
+  "federated-learning": [],
+  "operating-reserve": [],
+  "commercial-operation-date": [
+    {
+      "id": "ywb_3cxxd-y",
+      "slug": "faq-jigyou-01",
+      "question": "蓄電所事業に新規参入するには何から始めればいい？",
+      "category": "事業"
+    }
+  ],
+  "overcharge-protection": [],
+  "overcharge-test": [],
+  "overdischarge-protection": [],
+  "over-temperature-protection": [],
+  "remote-monitoring": [
+    {
+      "id": "2x50lsuao",
+      "slug": "faq-jigyou-04",
+      "question": "O&M体制はどう設計する？",
+      "category": "事業"
+    }
+  ],
+  "circuit-breaker": [],
+  "cabling": [],
+  "distribution-substation": [],
+  "distribution-grid": [
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    }
+  ],
+  "serious-accident": [],
+  "nail-penetration-test": [],
+  "lead-acid-battery": [],
+  "indirect-auction": [],
+  "kanto-bess": [],
+  "tariff-import": [],
+  "kansai-bess": [],
+  "kansai-electric": [],
+  "kepco": [],
+  "kankenergy-solution": [],
+  "fire-prevention": [],
+  "island-microgrid": [
+    {
+      "id": "hroaee86yi",
+      "slug": "faq-sonota-03",
+      "question": "離島マイクログリッドとは？",
+      "category": "その他"
+    }
+  ],
+  "setback-distance": [],
+  "separation-distance": [],
+  "fire-separation-distance": [],
+  "lightning-surge": [],
+  "electricity-system-reform": [],
+  "power-data": [],
+  "emsc": [],
+  "power-supply-capacity": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    }
+  ],
+  "power-quality": [],
+  "power-market-price-trend": [],
+  "power-supply-warning": [],
+  "voltage-flicker": [],
+  "voltage-fluctuation": [],
+  "chief-electrical-engineer": [],
+  "chief-engineer-elec": [],
+  "electricity-business-act": [
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    }
+  ],
+  "electricity-business-law": [
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "ll453dyfo",
+      "slug": "faq-seido-09",
+      "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    }
+  ],
+  "electrical-safety-laws": [],
+  "electrical-safety-association": [],
+  "electrical-construction-engineer": [],
+  "denki-shimbun": [
+    {
+      "id": "6l4r_5gpef",
+      "slug": "faq-hojokin-06",
+      "question": "補助金申請のスケジュール把握法は？",
+      "category": "補助金"
+    }
+  ],
+  "pse-law": [],
+  "second-life-battery": [],
+  "battery-supply-chain": [],
+  "battery-passport-detail": [],
+  "battery-passport": [],
+  "battery-module-certification": [],
+  "battery-rental": [],
+  "battery-association": [
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    }
+  ],
+  "battery-certification": [],
+  "connection-tender-process": [],
+  "energy-mix": [],
+  "j-power": [],
+  "emi-protection": [],
+  "conduit": [],
+  "electrolyte": [
+    {
+      "id": "kg--8u9-tcc0",
+      "slug": "faq-gijutsu-05",
+      "question": "レドックスフロー電池とリチウムイオン電池はどう違う？",
+      "category": "技術"
+    }
+  ],
+  "tightness-warning": [],
+  "supply-demand-outlook": [],
+  "balancing-market": [
+    {
+      "id": "enwpjm8_vu",
+      "slug": "faq-seido-03",
+      "question": "需給調整市場とは？どんな商品がありますか？",
+      "category": "制度"
+    },
+    {
+      "id": "401j2fbqhecx",
+      "slug": "faq-jigyou-02",
+      "question": "蓄電所のプロジェクトファイナンス（PF）はどう組成する？",
+      "category": "事業"
+    },
+    {
+      "id": "t1qrsp9eot-6",
+      "slug": "faq-gijutsu-02",
+      "question": "PCS（パワーコンディショナー）の役割は？",
+      "category": "技術"
+    },
+    {
+      "id": "fmq8shkpwq",
+      "slug": "faq-jigyou-05",
+      "question": "蓄電所のIRR目安は？",
+      "category": "事業"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    }
+  ],
+  "supply-demand-tightness": [],
+  "demand-forecasting": [],
+  "shizuoka-bess": [],
+  "non-fossil-certificate-market": [],
+  "non-fossil-value-market": [],
+  "non-fossil-certificate": [],
+  "wind-power": [
+    {
+      "id": "k95g6y0lh-x",
+      "slug": "faq-sonota-06",
+      "question": "蓄電池業界の主要業界団体は？",
+      "category": "その他"
+    }
+  ],
+  "response-time": [],
+  "high-voltage": [],
+  "hv-bess-detail": [],
+  "high-voltage-grid": [],
+  "high-voltage-customer": [],
+  "harmonic": [],
+  "harmonic-control-guideline": [],
+  "kagoshima-bess": [],
+  "graphite": []
+}

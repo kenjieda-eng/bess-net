@@ -42,12 +42,22 @@ import {
   getProjectsByTermName,
   getGlossaryBySubcategory,
   getGlossaryByCategory,
-  // getFaqsByTerm 一時撤去 (落とし穴 #98): microCMS 2回目高負荷警告対応
-  // 1,516 ページ × Googlebot 同時クロール → faq endpoint 集中アクセス
-  // 恒久対策 (Sprint 2.5 予定): build 時 事前計算 + JSON キャッシュテーブル化
-  // import 自体は残し、helper も lib に維持 (将来再有効化)
-  // getFaqsByTerm,
+  // 落とし穴 #98 恒久対策: getFaqsByTerm は呼ばず、事前計算済 JSON 参照に切替済
+  // (lib helper は維持、将来需要があれば別 endpoint 用に転用)
 } from '@/lib/microcms';
+
+// 落とし穴 #98 恒久対策 (Phase 2): build 時 事前計算済の関連 FAQ index
+// scripts/build-glossary-faq-index.ts で生成、prebuild で自動更新
+// → /glossary/[slug] の SSR で faq endpoint への microCMS リクエスト ゼロ
+import glossaryFaqIndex from '@/lib/generated/glossary-faq-index.json';
+
+type FaqRef = {
+  id: string;
+  slug: string;
+  question: string;
+  category?: string;
+};
+const faqIndexTyped: Record<string, FaqRef[]> = glossaryFaqIndex as Record<string, FaqRef[]>;
 import { csvTermsToTermList } from '@/lib/term-linker';
 import { siteConfig } from '@/lib/site-config';
 
@@ -161,8 +171,9 @@ export default async function GlossaryDetailPage({
       ? getGlossaryByCategory(cat, term.slug, 8).catch(() => [])
       : getGlossaryBySubcategory(sub, term.slug, 8).catch(() => []),
   ]);
-  // 関連 FAQ は一時撤去済 (上記コメント参照、searchKeywords 自体は他で使用)
-  // 将来再有効化時: getFaqsByTerm(searchKeywords, 5) を Promise.all に戻し、JSX も復活
+  // 落とし穴 #98 恒久対策: 関連 FAQ は build 時 事前計算済 JSON から取得
+  // → microCMS への faq endpoint リクエスト ゼロ ✅
+  const relatedFaqs: FaqRef[] = faqIndexTyped[term.slug] ?? [];
 
   // CSV文字列の関連用語 → TermLike[] へ変換（patch_v12 新規）
   const termSlugMap = new Map<string, string>();
@@ -382,11 +393,68 @@ export default async function GlossaryDetailPage({
             </section>
           )}
 
-          {/* 🚨 関連 FAQ (依頼BG 新規) — 落とし穴 #98 で一時撤去 (microCMS 2回目高負荷警告対応)
-              1,516 ページ × クローラ同時アクセスで faq endpoint 集中 → WAF ブロック懸念。
-              恒久対策 (Sprint 2.5 予定): build 時 事前計算 + JSON キャッシュテーブル化で
-              SSR から microCMS リクエストを排除する設計に変更予定。
-              JSX は意図的に削除、復活時は git history (commit fcfb5d4) を参照。 */}
+          {/* 関連 FAQ (Phase 2 復活): build 時 事前計算 JSON 参照、microCMS リクエストゼロ
+              落とし穴 #98 恒久対策、依頼 BG の主機能を完全復活 */}
+          {relatedFaqs.length > 0 && (
+            <section
+              style={{
+                marginTop: 24,
+                padding: 16,
+                background: 'var(--color-bg)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 8,
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: 16,
+                  fontWeight: 700,
+                  marginTop: 0,
+                  marginBottom: 12,
+                }}
+              >
+                ❓ 「{term.term}」関連のよくある質問（{relatedFaqs.length}件）
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {relatedFaqs.map((faq) => (
+                  <li key={faq.id} style={{ marginBottom: 10, fontSize: 14 }}>
+                    <Link
+                      href={`/faq#${faq.slug}`}
+                      style={{
+                        color: 'var(--color-accent, #0066cc)',
+                        fontWeight: 600,
+                      }}
+                    >
+                      Q. {faq.question}
+                    </Link>
+                    {faq.category && (
+                      <span
+                        style={{
+                          marginLeft: 8,
+                          fontSize: 11,
+                          padding: '2px 6px',
+                          background: '#fff',
+                          border: '1px solid var(--color-border)',
+                          borderRadius: 4,
+                          color: 'var(--color-muted)',
+                        }}
+                      >
+                        {faq.category}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <p style={{ marginTop: 10, fontSize: 12 }}>
+                <Link
+                  href="/faq"
+                  style={{ color: 'var(--color-accent, #0066cc)' }}
+                >
+                  業界用語よくある質問（FAQ 50件）一覧 →
+                </Link>
+              </p>
+            </section>
+          )}
 
           {/* 同じ subcategory (or category fallback) の用語 (依頼AI 新規) */}
           {sameCategoryTerms.length > 0 && (

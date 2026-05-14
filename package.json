@@ -5,6 +5,8 @@
   "description": "蓄電所ネット — 系統用蓄電池・低圧リソース事業の情報ポータル",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run build:glossary-faq-index",
+    "build:glossary-faq-index": "tsx scripts/build-glossary-faq-index.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
