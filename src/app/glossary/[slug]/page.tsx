@@ -108,19 +108,31 @@ export default async function GlossaryDetailPage({
   // 検索キーワード: term + english (依頼AI、aliases フィールドは glossary 未保有のため未使用)
   // 落とし穴 #95 (緊急修正): term == english (英語 origin 用語、Configuration Management 等) で
   // 重複 filter が生成され microCMS 高負荷リクエストの原因となるため、Page 側でも dedupe + 短語除外を実施
-  // (lib helper 側も buildContainsFilter で defensive dedupe するが、二段階防御で安全策)
+  // 落とし穴 #96 (依頼BG 検証中): english に「/」併記 (例 "Grid-Scale Battery / Utility-Scale BESS")
+  // がある場合、単一 keyword として渡すと microCMS 504 timeout の原因。
+  // 「/」「、」「,」で split して subkeyword 化、過度な長さも除去。
   const searchKeywords = (() => {
     const seen = new Set<string>();
     const out: string[] = [];
-    for (const raw of [term.term, term.english]) {
+    const rawCandidates: string[] = [];
+    // term は分割しない (固有名詞性が高い)
+    if (term.term) rawCandidates.push(term.term);
+    // english は「/」「,」「、」併記を分割
+    if (term.english) {
+      for (const part of term.english.split(/[\/,、]/)) {
+        rawCandidates.push(part);
+      }
+    }
+    for (const raw of rawCandidates) {
       if (!raw) continue;
       const t = raw.trim();
       if (t.length < 3) continue; // 短語 (2 文字以下) は wildcard マッチで負荷大、除外
+      if (t.length > 40) continue; // 過度に長い keyword は filter URL 肥大化の原因、除外
       if (seen.has(t)) continue;
       seen.add(t);
       out.push(t);
     }
-    return out;
+    return out.slice(0, 4); // 最大 4 keyword (= filter parts 最大 16 で安全圏)
   })();
 
   // 関連データを並列取得 (依頼AI + BG: 7 並列 — 関連 FAQ 追加)
