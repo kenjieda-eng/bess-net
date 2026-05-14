@@ -7,9 +7,20 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getAllFaq, type Faq } from '@/lib/microcms';
+import { getAllFaq, getGlossaryLiteList, type Faq } from '@/lib/microcms';
 import FaqClient from './FaqClient';
 import { siteConfig } from '@/lib/site-config';
+import { linkifyTerms } from '@/lib/linkify';
+
+// 依頼BG: HTML エスケープ (FAQ answer は plain text なので HTML 化前に必要)
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
 
 export const revalidate = 600; // 10分
 
@@ -39,6 +50,21 @@ export default async function FaqPage() {
   } catch {
     // graceful fallback
   }
+
+  // 依頼BG: FAQ answer に glossary 用語の auto-link を適用 (既存 W シリーズ NG_TERMS 継承)
+  // server-side で linkify 済 HTML を生成して FaqClient に props 経由で渡す
+  // (glossaryLite 1,516件を client bundle に同梱しないため)
+  let glossaryLite: { term: string; slug: string; english?: string }[] = [];
+  try {
+    glossaryLite = await getGlossaryLiteList();
+  } catch {
+    // graceful fallback (linkify なしで描画)
+  }
+  const itemsWithLinkify = items.map((it) => ({
+    ...it,
+    // escapeHtml で安全な HTML 化 → linkifyTerms で <a> 付与
+    answerHtml: glossaryLite.length > 0 ? linkifyTerms(escapeHtml(it.answer), glossaryLite) : undefined,
+  }));
 
   // JSON-LD FAQPage (SEO リッチリザルト対応)
   const faqPageJsonLd =
@@ -136,7 +162,7 @@ export default async function FaqPage() {
               </p>
             </div>
           ) : (
-            <FaqClient items={items} />
+            <FaqClient items={itemsWithLinkify} />
           )}
 
           {/* 内部リンク網状ハブ — FAQ から各コーナーへの導線（各 FAQ の relatedGlossary/relatedExplainer は FaqClient 内で /glossary/{slug} /explainer/{slug} に自動リンク化）*/}

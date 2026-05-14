@@ -42,6 +42,7 @@ import {
   getProjectsByTermName,
   getGlossaryBySubcategory,
   getGlossaryByCategory,
+  getFaqsByTerm,
 } from '@/lib/microcms';
 import { csvTermsToTermList } from '@/lib/term-linker';
 import { siteConfig } from '@/lib/site-config';
@@ -122,7 +123,7 @@ export default async function GlossaryDetailPage({
     return out;
   })();
 
-  // 関連データを並列取得 (依頼AI: 6 並列 — operators/projects/同類用語 追加)
+  // 関連データを並列取得 (依頼AI + BG: 7 並列 — 関連 FAQ 追加)
   const [
     relatedNews,
     relatedExplainers,
@@ -130,6 +131,7 @@ export default async function GlossaryDetailPage({
     relatedOperators,
     relatedProjects,
     sameCategoryTerms,
+    relatedFaqs,
   ] = await Promise.all([
     getNewsByTermId(term.id, 10).catch(() => []),
     getExplainersByTermName(term.term, 10).catch(() => []),
@@ -140,6 +142,8 @@ export default async function GlossaryDetailPage({
     useCategoryFallback
       ? getGlossaryByCategory(cat, term.slug, 8).catch(() => [])
       : getGlossaryBySubcategory(sub, term.slug, 8).catch(() => []),
+    // 依頼BG: 関連 FAQ (buildContainsFilter 経由で重複 filter 防止)
+    getFaqsByTerm(searchKeywords, 5).catch(() => []),
   ]);
 
   // CSV文字列の関連用語 → TermLike[] へ変換（patch_v12 新規）
@@ -357,6 +361,68 @@ export default async function GlossaryDetailPage({
                   </li>
                 ))}
               </ul>
+            </section>
+          )}
+
+          {/* 関連 FAQ (依頼BG 新規) - buildContainsFilter 経由で重複 filter 防止 */}
+          {relatedFaqs.length > 0 && (
+            <section
+              style={{
+                marginTop: 24,
+                padding: 16,
+                background: 'var(--color-bg)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 8,
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: 16,
+                  fontWeight: 700,
+                  marginTop: 0,
+                  marginBottom: 12,
+                }}
+              >
+                ❓ 「{term.term}」関連のよくある質問（{relatedFaqs.length}件）
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {relatedFaqs.map((faq) => (
+                  <li key={faq.id} style={{ marginBottom: 10, fontSize: 14 }}>
+                    <Link
+                      href={`/faq#${faq.slug}`}
+                      style={{
+                        color: 'var(--color-accent, #0066cc)',
+                        fontWeight: 600,
+                      }}
+                    >
+                      Q. {faq.question}
+                    </Link>
+                    {faq.category && faq.category.length > 0 && (
+                      <span
+                        style={{
+                          marginLeft: 8,
+                          fontSize: 11,
+                          padding: '2px 6px',
+                          background: '#fff',
+                          border: '1px solid var(--color-border)',
+                          borderRadius: 4,
+                          color: 'var(--color-muted)',
+                        }}
+                      >
+                        {faq.category[0]}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <p style={{ marginTop: 10, fontSize: 12 }}>
+                <Link
+                  href="/faq"
+                  style={{ color: 'var(--color-accent, #0066cc)' }}
+                >
+                  業界用語よくある質問（FAQ 50件）一覧 →
+                </Link>
+              </p>
             </section>
           )}
 

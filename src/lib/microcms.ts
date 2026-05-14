@@ -858,7 +858,7 @@ export const getExplainersByTermName = async (
  * 出力: 例 termNames=["A","A","",null,"  ","ABC"], fields=["body"]
  *       → "body[contains]ABC"  (A は length<3、null/空/重複は除外)
  */
-const buildContainsFilter = (termNames: (string | undefined | null)[], fields: string[]): string => {
+export const buildContainsFilter = (termNames: (string | undefined | null)[], fields: string[]): string => {
   // Step 1: trim + 空文字除外 + 短語(<3)除外 + dedupe
   const cleaned: string[] = [];
   const seen = new Set<string>();
@@ -916,6 +916,28 @@ export const getProjectsByTermName = async (
     const data = await client.getList<Project>({
       endpoint: 'projects',
       queries: { filters, limit, orders: '-publishedAt' },
+    });
+    return data.contents;
+  } catch {
+    return [];
+  }
+};
+
+/**
+ * 用語名を question / answer に含む FAQ を取得 (依頼BG)
+ * - 落とし穴 #95 対策: buildContainsFilter 経由で dedupe + 短語除外
+ * - 1 glossary term につき最大 5 件 (FAQ 50件中の subset)
+ */
+export const getFaqsByTerm = async (
+  termNames: (string | undefined | null)[],
+  limit = 5
+): Promise<Faq[]> => {
+  try {
+    const filters = buildContainsFilter(termNames, ['question', 'answer']);
+    if (!filters) return [];
+    const data = await client.getList<Faq>({
+      endpoint: 'faq',
+      queries: { filters, limit, orders: 'displayOrder' },
     });
     return data.contents;
   } catch {

@@ -4,6 +4,10 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Faq } from '@/lib/microcms';
 
+// 依頼BG: FAQ answer の auto-link 適用済 HTML を server から受け取る
+// (server-side で linkifyTerms 済、glossaryLite を bundle 同梱せず安全)
+type FaqWithLinkifiedAnswer = Faq & { answerHtml?: string };
+
 const CATEGORY_ORDER = ['制度', '技術', '事業', '補助金', 'その他'];
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -27,7 +31,7 @@ function parseSlugList(text: string | undefined): string[] {
     .filter((s) => s.length > 0);
 }
 
-export default function FaqClient({ items }: { items: Faq[] }) {
+export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [openIds, setOpenIds] = useState<Set<string>>(new Set());
 
@@ -249,17 +253,34 @@ export default function FaqClient({ items }: { items: Faq[] }) {
                       paddingTop: 12,
                     }}
                   >
-                    <p
-                      style={{
-                        fontSize: 14,
-                        margin: '8px 0 12px',
-                        lineHeight: 1.7,
-                        whiteSpace: 'pre-wrap',
-                      }}
-                    >
-                      <strong style={{ marginRight: 4 }}>A.</strong>
-                      {it.answer}
-                    </p>
+                    {/* 依頼BG: server-side linkify 済 HTML があれば優先描画 */}
+                    {it.answerHtml ? (
+                      <p
+                        style={{
+                          fontSize: 14,
+                          margin: '8px 0 12px',
+                          lineHeight: 1.7,
+                          whiteSpace: 'pre-wrap',
+                        }}
+                      >
+                        <strong style={{ marginRight: 4 }}>A.</strong>
+                        <span
+                          dangerouslySetInnerHTML={{ __html: it.answerHtml }}
+                        />
+                      </p>
+                    ) : (
+                      <p
+                        style={{
+                          fontSize: 14,
+                          margin: '8px 0 12px',
+                          lineHeight: 1.7,
+                          whiteSpace: 'pre-wrap',
+                        }}
+                      >
+                        <strong style={{ marginRight: 4 }}>A.</strong>
+                        {it.answer}
+                      </p>
+                    )}
                     {(glossarySlugs.length > 0 ||
                       explainerSlugs.length > 0 ||
                       it.sourceUrl) && (
