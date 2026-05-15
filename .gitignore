@@ -146,3 +146,6 @@ vite.config.ts.timestamp-*
 .claude/
 03_5月13日朝_実行/
 scripts/__pycache__/
+
+# EIC Data precomputed cache (regenerated at build time)
+src/data/eic/
