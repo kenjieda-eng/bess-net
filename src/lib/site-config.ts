@@ -68,6 +68,8 @@ export const siteConfig = {
     { label: '蓄電池IRRシミュレーター', href: '/tools/irr-simulator' },
     // Sprint 4 追加 (業界唯一 補助金マッチング)
     { label: '蓄電池補助金マッチング', href: '/tools/subsidy-match' },
+    // Sprint 4 Day 2 (業界唯一 系統連系診断)
+    { label: '系統連系診断', href: '/tools/grid-connection-check' },
     // サイト情報
     { label: '蓄電所ネットについて', href: '/about' },
     { label: '編集方針', href: '/editorial-policy' },

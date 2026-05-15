@@ -44,11 +44,11 @@ const tools = [
   },
   {
     slug: 'grid-connection-check',
-    title: '系統連系チェック (Coming Soon)',
-    badge: '開発中',
-    available: false,
+    title: '系統連系診断',
+    badge: '業界唯一',
+    available: true,
     description:
-      '希望容量・電圧階級・エリアから連系可能性を簡易判定。9 送配電 1,516 変電所データと連動。',
+      '日本全国 6,507 変電所の公表データから、希望地点・出力に最適な連系候補を Top 5 即時抽出。haversine 距離計算 + 空き容量・N-1 電制・出力制御リスクの総合スコアリング。CSV エクスポート / URL 共有対応。',
   },
 ];
 
