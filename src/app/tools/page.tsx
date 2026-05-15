@@ -36,11 +36,11 @@ const tools = [
   },
   {
     slug: 'subsidy-match',
-    title: '補助金マッチ (Coming Soon)',
-    badge: '開発中',
-    available: false,
+    title: '蓄電池補助金マッチング',
+    badge: '業界唯一',
+    available: true,
     description:
-      'プロジェクト条件に応じた最適な補助金制度を自動マッチング。SII・NEDO・自治体補助金を一括スキャン。',
+      '所在地・用途・容量・事業者種別で 50 件の補助金から Top 10 を即時マッチング。SII・自治体・民間ローン横断、スコアリング型で透明性も担保。CSV エクスポート / URL 共有対応。',
   },
   {
     slug: 'grid-connection-check',

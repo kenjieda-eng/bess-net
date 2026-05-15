@@ -1,0 +1,1880 @@
+[
+  {
+    "id": "regional-bank-green-loans",
+    "slug": "regional-bank-green-loans",
+    "name": "地方銀行のグリーンローン（北海道・東北・北陸・中国・四国・九州エリア）",
+    "organization": "各地方銀行（北海道銀行・北陸銀行・中国銀行・伊予銀行・福岡銀行等）",
+    "category": [],
+    "status": [],
+    "subsidyRate_raw": "地域別・案件別",
+    "upperLimit_raw": "案件別",
+    "targetEntity_raw": "地域の蓄電所事業者・自治体・地域企業",
+    "applicationStart": "随時",
+    "deadline_raw": "随時",
+    "is_rolling": true,
+    "fiscalYear": "通年",
+    "sourceUrl": "https://www.zenginkyo.or.jp/abstract/sustainable-finance/",
+    "scheme": "全国各地方銀行のグリーンローン。地域密着型の中規模・小規模蓄電所案件への融資。",
+    "applicable_prefs": [
+      "北海道",
+      "青森",
+      "岩手",
+      "宮城",
+      "秋田",
+      "山形",
+      "福島",
+      "茨城",
+      "栃木",
+      "群馬",
+      "埼玉",
+      "千葉",
+      "東京",
+      "神奈川",
+      "新潟",
+      "富山",
+      "石川",
+      "福井",
+      "山梨",
+      "長野",
+      "岐阜",
+      "静岡",
+      "愛知",
+      "三重",
+      "滋賀",
+      "京都",
+      "大阪",
+      "兵庫",
+      "奈良",
+      "和歌山",
+      "鳥取",
+      "島根",
+      "岡山",
+      "広島",
+      "山口",
+      "徳島",
+      "香川",
+      "愛媛",
+      "高知",
+      "福岡",
+      "佐賀",
+      "長崎",
+      "熊本",
+      "大分",
+      "宮崎",
+      "鹿児島",
+      "沖縄"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "loan",
+      "subsidy"
+    ]
+  },
+  {
+    "id": "dbj-environmental-finance",
+    "slug": "dbj-environmental-finance",
+    "name": "政投銀（DBJ） 環境格付融資・グリーンファイナンス",
+    "organization": "株式会社日本政策投資銀行（DBJ）",
+    "category": [],
+    "status": [],
+    "subsidyRate_raw": "通常融資金利＋格付連動インセンティブ",
+    "upperLimit_raw": "案件別",
+    "targetEntity_raw": "蓄電所事業者・SPC・大型インフラ案件",
+    "applicationStart": "随時",
+    "deadline_raw": "随時",
+    "is_rolling": true,
+    "fiscalYear": "通年",
+    "sourceUrl": "https://www.dbj.jp/service/finance/environment/index.html",
+    "scheme": "政投銀の環境格付融資。蓄電所大型案件・PF組成の主要レンダー。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "grid"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "loan"
+    ]
+  },
+  {
+    "id": "mizuho-green-loan",
+    "slug": "mizuho-green-loan",
+    "name": "みずほ銀行 グリーンローン",
+    "organization": "株式会社みずほ銀行",
+    "category": [],
+    "status": [],
+    "subsidyRate_raw": "通常融資金利＋グリーンインセンティブ",
+    "upperLimit_raw": "案件別",
+    "targetEntity_raw": "蓄電所事業者・SPC",
+    "applicationStart": "随時",
+    "deadline_raw": "随時",
+    "is_rolling": true,
+    "fiscalYear": "通年",
+    "sourceUrl": "https://www.mizuhobank.co.jp/corporate/sustainability/index.html",
+    "scheme": "みずほ銀行のグリーンローン。みずほリースとの連動で蓄電所事業の総合金融サービス提供。",
+    "applicable_prefs": [
+      "青森",
+      "岩手",
+      "宮城",
+      "秋田",
+      "山形",
+      "福島",
+      "福岡",
+      "佐賀",
+      "長崎",
+      "熊本",
+      "大分",
+      "宮崎",
+      "鹿児島",
+      "大阪"
+    ],
+    "applicable_use_cases": [
+      "grid"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "loan"
+    ]
+  },
+  {
+    "id": "smbc-green-loan",
+    "slug": "smbc-green-loan",
+    "name": "三井住友銀行 グリーンローン",
+    "organization": "株式会社三井住友銀行",
+    "category": [],
+    "status": [],
+    "subsidyRate_raw": "通常融資金利＋グリーンインセンティブ",
+    "upperLimit_raw": "案件別",
+    "targetEntity_raw": "蓄電所事業者・SPC",
+    "applicationStart": "随時",
+    "deadline_raw": "随時",
+    "is_rolling": true,
+    "fiscalYear": "通年",
+    "sourceUrl": "https://www.smbc.co.jp/hojin/sustainability/index.html",
+    "scheme": "三井住友銀行のグリーンローン。蓄電所PFのメガバンク主要レンダーの一角。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "grid"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "loan"
+    ]
+  },
+  {
+    "id": "mufg-green-loan",
+    "slug": "mufg-green-loan",
+    "name": "三菱UFJ銀行 グリーンローン・サステナビリティリンクローン",
+    "organization": "株式会社三菱UFJ銀行",
+    "category": [],
+    "status": [],
+    "subsidyRate_raw": "通常融資金利＋グリーンインセンティブ",
+    "upperLimit_raw": "案件別",
+    "targetEntity_raw": "蓄電所事業者・SPC",
+    "applicationStart": "随時",
+    "deadline_raw": "随時",
+    "is_rolling": true,
+    "fiscalYear": "通年",
+    "sourceUrl": "https://www.bk.mufg.jp/houjin/sustainability/index.html",
+    "scheme": "三菱UFJ銀行のグリーンローン。蓄電所プロジェクトファイナンスでメガバンク最大級の組成実績。",
+    "applicable_prefs": [
+      "長野",
+      "長崎"
+    ],
+    "applicable_use_cases": [
+      "grid"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "loan"
+    ]
+  },
+  {
+    "id": "sendai-self-consumption-2026",
+    "slug": "sendai-self-consumption-2026",
+    "name": "仙台市 自家消費・蓄電池補助金",
+    "organization": "仙台市環境局",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/2",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "1,000万円",
+    "targetEntity_raw": "市内事業者・住宅",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.city.sendai.jp/index.html",
+    "scheme": "仙台市の自家消費型太陽光・蓄電池補助金。東日本大震災後のレジリエンス強化政策。",
+    "applicable_prefs": [
+      "青森",
+      "岩手",
+      "宮城",
+      "秋田",
+      "山形",
+      "福島"
+    ],
+    "applicable_use_cases": [
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "individual",
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "nagoya-bess-2026",
+    "slug": "nagoya-bess-2026",
+    "name": "名古屋市 産業用蓄電池導入補助金",
+    "organization": "名古屋市環境局地球温暖化対策部",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "2,000万円",
+    "targetEntity_raw": "市内事業者",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.city.nagoya.jp/kurashi/category/9-9-0-0-0-0-0-0-0-0.html",
+    "scheme": "名古屋市の産業用蓄電池導入補助金。中部電力グループ本拠地・自動車産業集積地としての位置を踏まえた支援。",
+    "applicable_prefs": [
+      "山梨",
+      "長野",
+      "岐阜",
+      "静岡",
+      "愛知"
+    ],
+    "applicable_use_cases": [
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "kobe-sme-decarbonization-2026",
+    "slug": "kobe-sme-decarbonization-2026",
+    "name": "神戸市 中小企業脱炭素化補助金",
+    "organization": "神戸市環境局",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/2",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "1,000万円",
+    "targetEntity_raw": "市内中小企業",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.city.kobe.lg.jp/a64051/index.html",
+    "scheme": "神戸市の中小企業向け脱炭素化補助金。阪神工業地帯の脱炭素化推進。",
+    "applicable_prefs": [
+      "三重",
+      "滋賀",
+      "京都",
+      "大阪",
+      "兵庫",
+      "奈良",
+      "和歌山"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "kawasaki-decarbonization-2026",
+    "slug": "kawasaki-decarbonization-2026",
+    "name": "川崎市 自家消費型太陽光・蓄電池補助金",
+    "organization": "川崎市環境局地球環境推進室",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "2/3",
+    "subsidyRate_max_pct": 66.66666666666666,
+    "upperLimit_raw": "2,000万円",
+    "targetEntity_raw": "市内事業者",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "2026年12月末",
+    "deadline_iso": "2026-12-31",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.city.kawasaki.jp/kurashi/category/22-1-0-0-0-0-0-0-0-0.html",
+    "scheme": "川崎市の自家消費型太陽光・蓄電池補助金。脱炭素先行地域として補助率2/3の高水準支援。",
+    "applicable_prefs": [
+      "神奈川"
+    ],
+    "applicable_use_cases": [
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "yokohama-self-consumption-2026",
+    "slug": "yokohama-self-consumption-2026",
+    "name": "横浜市 産業用太陽光・蓄電池導入補助金",
+    "organization": "横浜市温暖化対策統括本部",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/2",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "1,500万円",
+    "targetEntity_raw": "市内事業者",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/ondanka/",
+    "scheme": "横浜市の産業用自家消費型太陽光・蓄電池補助金。脱炭素先行地域連携。",
+    "applicable_prefs": [
+      "東京",
+      "神奈川"
+    ],
+    "applicable_use_cases": [
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "occto-ltdc-auction-results",
+    "slug": "occto-ltdc-auction-results",
+    "name": "OCCTO 長期脱炭素電源オークション 約定結果一覧（第1〜6回）",
+    "organization": "OCCTO（電力広域的運営推進機関）",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "採択結果公表"
+    ],
+    "subsidyRate_raw": "20年容量確保契約（規定単価）",
+    "upperLimit_raw": "応札枠による",
+    "targetEntity_raw": "発電・蓄電池事業者",
+    "applicationStart": "公募終了（次回継続）",
+    "deadline_raw": "次回応札年度別",
+    "is_rolling": false,
+    "fiscalYear": "令和4〜7年度",
+    "sourceUrl": "https://www.occto.or.jp/various/capacity-market/",
+    "scheme": "OCCTO 長期脱炭素電源オークションの第1〜6回約定結果。蓄電池の20年契約モデルの確立。",
+    "applicable_prefs": [
+      "東京"
+    ],
+    "applicable_use_cases": [
+      "grid"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "other"
+    ]
+  },
+  {
+    "id": "meti-battery-supply-plan-certification",
+    "slug": "meti-battery-supply-plan-certification",
+    "name": "経産省 蓄電池供給確保計画 認定結果一覧",
+    "organization": "経済産業省",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "採択結果公表"
+    ],
+    "subsidyRate_raw": "事業により異なる",
+    "upperLimit_raw": "数百億円規模",
+    "targetEntity_raw": "蓄電池メーカー・関連事業者",
+    "applicationStart": "随時",
+    "deadline_raw": "事業別",
+    "is_rolling": false,
+    "fiscalYear": "令和4〜8年度",
+    "sourceUrl": "https://www.meti.go.jp/policy/economy/economic_security/battery/",
+    "scheme": "経済安全保障推進法に基づく蓄電池供給確保計画の認定結果ライブラリ。GSユアサ等の主要案件認定。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "grid"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "moe-storage-parity-result-r7",
+    "slug": "moe-storage-parity-result-r7",
+    "name": "環境省 ストレージパリティ補助金 令和7年度採択結果",
+    "organization": "環境省 / 環境イノベーション情報機構（EIC）",
+    "category": [],
+    "status": [
+      "採択結果公表"
+    ],
+    "subsidyRate_raw": "1/3〜2/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "案件別",
+    "targetEntity_raw": "民間企業等",
+    "applicationStart": "公募終了",
+    "deadline_raw": "令和7年度（2025年度）採択発表済",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度（2025年度）",
+    "sourceUrl": "https://www.eic.or.jp/eic/",
+    "scheme": "環境省ストレージパリティ補助金（自家消費型太陽光・蓄電池導入支援）の令和7年度採択結果。",
+    "applicable_prefs": [
+      "東京",
+      "神奈川",
+      "京都"
+    ],
+    "applicable_use_cases": [
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "nedo-green-innovation-battery-result",
+    "slug": "nedo-green-innovation-battery-result",
+    "name": "NEDO グリーンイノベーション基金 蓄電池採択結果一覧",
+    "organization": "NEDO（新エネルギー・産業技術総合開発機構）",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "採択結果公表"
+    ],
+    "subsidyRate_raw": "事業により異なる",
+    "upperLimit_raw": "数百億円規模",
+    "targetEntity_raw": "蓄電池メーカー・部材メーカー・研究機関",
+    "applicationStart": "随時",
+    "deadline_raw": "事業別",
+    "is_rolling": false,
+    "fiscalYear": "令和3〜8年度（複数年度）",
+    "sourceUrl": "https://green-innovation.nedo.go.jp/",
+    "scheme": "NEDO グリーンイノベーション基金の蓄電池関連事業の採択結果ライブラリ。GSユアサ・パナソニック・東芝等の主要案件採択。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [],
+    "applicable_entities": [],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "sii-bess-electrolysis-grant-result-r6",
+    "slug": "sii-bess-electrolysis-grant-result-r6",
+    "name": "SII 系統用蓄電池・水電解装置導入支援事業 令和6年度採択結果",
+    "organization": "環境共創イニシアチブ（SII）",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "採択結果公表"
+    ],
+    "subsidyRate_raw": "1/3〜2/3（事業類型による）",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "案件により異なる",
+    "targetEntity_raw": "全国の事業者・自治体",
+    "applicationStart": "公募終了",
+    "deadline_raw": "令和6年度（2024年度）採択発表済",
+    "is_rolling": false,
+    "fiscalYear": "令和6年度（2024年度）",
+    "sourceUrl": "https://sii.or.jp/storage_battery06/",
+    "scheme": "SII公募の系統用蓄電池・水電解装置導入支援事業の令和6年度採択結果。東京ガス・苫小牧パワーストレージなど多数案件が採択。",
+    "applicable_prefs": [
+      "北海道",
+      "青森",
+      "岩手",
+      "宮城",
+      "秋田",
+      "山形",
+      "福島",
+      "茨城",
+      "栃木",
+      "群馬",
+      "埼玉",
+      "千葉",
+      "東京",
+      "神奈川",
+      "新潟",
+      "富山",
+      "石川",
+      "福井",
+      "山梨",
+      "長野",
+      "岐阜",
+      "静岡",
+      "愛知",
+      "三重",
+      "滋賀",
+      "京都",
+      "大阪",
+      "兵庫",
+      "奈良",
+      "和歌山",
+      "鳥取",
+      "島根",
+      "岡山",
+      "広島",
+      "山口",
+      "徳島",
+      "香川",
+      "愛媛",
+      "高知",
+      "福岡",
+      "佐賀",
+      "長崎",
+      "熊本",
+      "大分",
+      "宮崎",
+      "鹿児島",
+      "沖縄"
+    ],
+    "applicable_use_cases": [
+      "grid"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "aomori-wind-bess-2026",
+    "slug": "aomori-wind-bess-2026",
+    "name": "青森県 風力併設蓄電池導入支援",
+    "organization": "青森県エネルギー総合対策局",
+    "category": [
+      "蓄電池",
+      "再エネ統合"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "5,000万円",
+    "targetEntity_raw": "県内事業者・自治体",
+    "applicationStart": "2026年5月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.aomori.lg.jp/soshiki/energy/",
+    "scheme": "青森県の風力併設蓄電池導入支援。風力大量連系・洋上風力大規模連系時代の系統安定化拠点。",
+    "applicable_prefs": [
+      "北海道",
+      "青森",
+      "岩手",
+      "宮城",
+      "秋田",
+      "山形",
+      "福島",
+      "東京"
+    ],
+    "applicable_use_cases": [],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "kagoshima-solar-bess-2026",
+    "slug": "kagoshima-solar-bess-2026",
+    "name": "鹿児島県 太陽光・蓄電池併設支援",
+    "organization": "鹿児島県商工労働水産部産業立地課",
+    "category": [
+      "蓄電池",
+      "再エネ統合"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/2",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "5,000万円",
+    "targetEntity_raw": "県内事業者・自治体・地域エネルギー会社",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.kagoshima.jp/aj02/index.html",
+    "scheme": "鹿児島県の太陽光・蓄電池併設支援。九州エリア最大の太陽光大量連系エリア・離島電力対応。",
+    "applicable_prefs": [
+      "福岡",
+      "佐賀",
+      "長崎",
+      "熊本",
+      "大分",
+      "宮崎",
+      "鹿児島"
+    ],
+    "applicable_use_cases": [
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "other"
+    ]
+  },
+  {
+    "id": "oita-bess-2026",
+    "slug": "oita-bess-2026",
+    "name": "大分県 系統用蓄電池導入支援",
+    "organization": "大分県商工観光労働部",
+    "category": [
+      "蓄電池",
+      "再エネ統合"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "3,000万円",
+    "targetEntity_raw": "県内事業者・自治体",
+    "applicationStart": "2026年5月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.oita.jp/site/syouko/index.html",
+    "scheme": "大分県の系統用蓄電池導入支援。九州エリア再エネ大量連系時代の中核拠点として支援。",
+    "applicable_prefs": [
+      "福岡",
+      "佐賀",
+      "長崎",
+      "熊本",
+      "大分",
+      "宮崎",
+      "鹿児島"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "gunma-bess-2026",
+    "slug": "gunma-bess-2026",
+    "name": "群馬県 蓄電池導入支援補助金",
+    "organization": "群馬県産業経済部エネルギー政策課",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "2,500万円",
+    "targetEntity_raw": "県内事業者",
+    "applicationStart": "2026年5月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.gunma.jp/page/index.html",
+    "scheme": "群馬県の蓄電池導入支援補助金。ポート（東証グロース）3拠点運用エリアとしての位置を踏まえた支援。",
+    "applicable_prefs": [
+      "群馬",
+      "東京"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "loan",
+      "subsidy"
+    ]
+  },
+  {
+    "id": "ibaraki-decarbonization-2026",
+    "slug": "ibaraki-decarbonization-2026",
+    "name": "茨城県 中小企業脱炭素化補助金",
+    "organization": "茨城県産業戦略部産業政策課",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "1,500万円",
+    "targetEntity_raw": "県内中小企業",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.ibaraki.jp/shokorodo/index.html",
+    "scheme": "茨城県の中小企業向け脱炭素化補助金。鹿島・ひたちなかの大規模工業団地連動。",
+    "applicable_prefs": [
+      "茨城",
+      "栃木",
+      "群馬",
+      "埼玉",
+      "千葉",
+      "東京",
+      "神奈川"
+    ],
+    "applicable_use_cases": [
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "hiroshima-bess-support-2026",
+    "slug": "hiroshima-bess-support-2026",
+    "name": "広島県 産業用蓄電池支援補助金",
+    "organization": "広島県商工労働局イノベーション推進チーム",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "2,000万円",
+    "targetEntity_raw": "県内事業者",
+    "applicationStart": "2026年5月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.hiroshima.lg.jp/site/shoko/index.html",
+    "scheme": "広島県の産業用蓄電池支援。中国電力グループ本拠地としての位置を踏まえた支援。",
+    "applicable_prefs": [
+      "鳥取",
+      "島根",
+      "岡山",
+      "広島",
+      "山口"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "nagano-self-consumption-2026",
+    "slug": "nagano-self-consumption-2026",
+    "name": "長野県 自家消費型太陽光・蓄電池補助金",
+    "organization": "長野県環境部地球温暖化対策課",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/2",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "1,500万円",
+    "targetEntity_raw": "県内事業者・自治体・組合",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.nagano.lg.jp/ondan/index.html",
+    "scheme": "長野県の自家消費型太陽光・蓄電池補助金。脱炭素先行地域（飯田市等）連携の中核施策。",
+    "applicable_prefs": [
+      "山梨",
+      "長野",
+      "岐阜",
+      "静岡",
+      "愛知"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "okinawa-island-energy-2026",
+    "slug": "okinawa-island-energy-2026",
+    "name": "沖縄県 離島電力安定化補助金",
+    "organization": "沖縄県商工労働部産業政策課",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "2/3",
+    "subsidyRate_max_pct": 66.66666666666666,
+    "upperLimit_raw": "1億円",
+    "targetEntity_raw": "離島の事業者・自治体・地域エネルギー会社",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.okinawa.jp/site/shoko/index.html",
+    "scheme": "沖縄県離島電力安定化補助金。宮古島エコアイランド構想等、離島マイクログリッド・蓄電池導入を支援。",
+    "applicable_prefs": [
+      "沖縄"
+    ],
+    "applicable_use_cases": [
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "fukuoka-bess-2026",
+    "slug": "fukuoka-bess-2026",
+    "name": "福岡県 蓄電池導入支援事業",
+    "organization": "福岡県商工部新産業振興課",
+    "category": [
+      "蓄電池",
+      "再エネ統合"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "5,000万円",
+    "targetEntity_raw": "県内事業者・自治体・地域エネルギー会社",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "2026年11月末",
+    "deadline_iso": "2026-11-30",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/shintec.html",
+    "scheme": "福岡県の蓄電池導入支援。LTDC第1号運開の田川蓄電所、JR九州・住商の熊本案件など九州エリア中核地としての位置を踏まえた支援。",
+    "applicable_prefs": [
+      "三重",
+      "滋賀",
+      "京都",
+      "大阪",
+      "兵庫",
+      "奈良",
+      "和歌山",
+      "福岡",
+      "佐賀",
+      "長崎",
+      "熊本",
+      "大分",
+      "宮崎",
+      "鹿児島"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "hyogo-energy-storage-2026",
+    "slug": "hyogo-energy-storage-2026",
+    "name": "兵庫県 産業用太陽光・蓄電池支援事業",
+    "organization": "兵庫県環境部環境政策課",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "3,000万円",
+    "targetEntity_raw": "県内事業者・自治体",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "2026年12月末",
+    "deadline_iso": "2026-12-31",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://web.pref.hyogo.lg.jp/ks05/index.html",
+    "scheme": "兵庫県の産業用太陽光・蓄電池支援。姫路蓄電所などの大型案件集積地としての位置を踏まえた支援。",
+    "applicable_prefs": [
+      "三重",
+      "滋賀",
+      "京都",
+      "大阪",
+      "兵庫",
+      "奈良",
+      "和歌山"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "loan",
+      "subsidy"
+    ]
+  },
+  {
+    "id": "shizuoka-bess-2026",
+    "slug": "shizuoka-bess-2026",
+    "name": "静岡県 産業用蓄電池導入補助金",
+    "organization": "静岡県経済産業部産業政策課",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "5,000万円",
+    "targetEntity_raw": "県内事業者（中小・大企業）",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.shizuoka.jp/sangyokeizai/index.html",
+    "scheme": "静岡県の産業用蓄電池導入補助金。牧之原・御前崎・菊川等の系統用蓄電所集積地としての地位を踏まえた支援。",
+    "applicable_prefs": [
+      "静岡"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "saitama-decarbonization-2026",
+    "slug": "saitama-decarbonization-2026",
+    "name": "埼玉県 中小企業脱炭素化支援補助金",
+    "organization": "埼玉県環境部環境政策課",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/2",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "2,000万円",
+    "targetEntity_raw": "県内中小企業（資本金3億円以下又は従業員300人以下）",
+    "applicationStart": "2026年4月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.saitama.lg.jp/a0509/sme-decarb.html",
+    "scheme": "埼玉県の中小企業向け脱炭素化補助金。自家消費太陽光・蓄電池・省エネ設備を支援。",
+    "applicable_prefs": [
+      "埼玉"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "chiba-bess-support-2026",
+    "slug": "chiba-bess-support-2026",
+    "name": "千葉県 産業用蓄電池導入支援補助金",
+    "organization": "千葉県産業労働部産業振興課",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "3,000万円",
+    "targetEntity_raw": "県内の中小企業・大企業（自家消費型）",
+    "applicationStart": "2026年5月",
+    "deadline_raw": "予算到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.chiba.lg.jp/sangyo/index.html",
+    "scheme": "千葉県の産業用蓄電池・自家消費型太陽光導入支援。京葉工業地帯の脱炭素化を推進。",
+    "applicable_prefs": [
+      "千葉",
+      "東京"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "fukushima-renewable-storage-2026",
+    "slug": "fukushima-renewable-storage-2026",
+    "name": "福島県 再生可能エネルギー・蓄電池導入支援事業",
+    "organization": "福島県エネルギー課",
+    "category": [
+      "蓄電池",
+      "再エネ統合"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/2",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "1億円",
+    "targetEntity_raw": "県内の事業者・自治体・地域エネルギー会社",
+    "applicationStart": "2026年5月",
+    "deadline_raw": "2026年9月末",
+    "deadline_iso": "2026-09-30",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.fukushima.lg.jp/sec/16025d/index.html",
+    "scheme": "福島県再エネ・蓄電池導入支援。震災復興・脱炭素・産業創出を統合する福島イノベーション・コースト構想の中核施策。",
+    "applicable_prefs": [
+      "福島"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "hokkaido-renewable-2026",
+    "slug": "hokkaido-renewable-2026",
+    "name": "北海道 再生可能エネルギー導入加速化補助金",
+    "organization": "北海道経済部産業振興局",
+    "category": [
+      "蓄電池",
+      "再エネ統合"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3〜1/2（事業類型による）",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "5,000万円",
+    "targetEntity_raw": "道内の中小企業・大企業・自治体・組合等",
+    "applicationStart": "2026年4月（年度別）",
+    "deadline_raw": "予算枠到達まで（先着順）",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.pref.hokkaido.lg.jp/keizai/srk/index.html",
+    "scheme": "北海道独自の再エネ導入加速化補助金。風力大量連系時代の系統安定化を踏まえ、蓄電池・自家消費太陽光・水素関連設備への補助を実施。",
+    "applicable_prefs": [
+      "北海道"
+    ],
+    "applicable_use_cases": [
+      "grid",
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "1pc7otu-s_b8",
+    "slug": "nev-portal",
+    "name": "NeV（次世代自動車振興センター）公式サイト",
+    "organization": "NeV（次世代自動車振興センター）",
+    "category": [
+      "EV/V2H"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "事業により異なる",
+    "upperLimit_raw": "事業により異なる",
+    "targetEntity_raw": "個人・法人・自治体",
+    "applicationStart": "随時",
+    "deadline_raw": "事業により異なる",
+    "is_rolling": false,
+    "fiscalYear": "随時更新",
+    "sourceUrl": "https://www.cev-pc.or.jp/",
+    "scheme": "経産省委託のCEV補助金・充電インフラ補助金の交付業務を担当。次世代自動車普及促進の総合ポータル。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "industrial"
+    ],
+    "applicable_entities": [
+      "individual",
+      "corporate",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "42c1lgxgk",
+    "slug": "nedo-koubo-list",
+    "name": "NEDO 公募情報一覧（蓄電池・再エネ関連）",
+    "organization": "NEDO（新エネルギー・産業技術総合開発機構）",
+    "category": [
+      "蓄電池",
+      "再エネ統合"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "事業により異なる",
+    "upperLimit_raw": "事業により異なる",
+    "targetEntity_raw": "事業により異なる",
+    "applicationStart": "随時",
+    "deadline_raw": "事業により異なる",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度（2025年度）",
+    "sourceUrl": "https://www.nedo.go.jp/koubo/",
+    "scheme": "NEDOが実施する蓄電池・再エネ・水素・脱炭素関連の各種公募事業の最新情報。グリーンイノベーション基金事業を含む。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [],
+    "applicable_entities": [],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "49057w9fa",
+    "slug": "nedo-advanced-battery",
+    "name": "先進・革新蓄電池材料評価技術開発（第2期）（NEDO）",
+    "organization": "NEDO（新エネルギー・産業技術総合開発機構）／経済産業省",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "採択結果公表"
+    ],
+    "subsidyRate_raw": "2/3〜定額",
+    "subsidyRate_max_pct": 66.66666666666666,
+    "upperLimit_raw": "案件規模に応じる",
+    "targetEntity_raw": "電池メーカー・大学・研究機関",
+    "applicationStart": "随時公募",
+    "deadline_raw": "事業期間中",
+    "is_rolling": false,
+    "fiscalYear": "事業継続中",
+    "sourceUrl": "https://www.nedo.go.jp/activities/ZZJP_100146.html",
+    "scheme": "リチウムイオン電池の高エネルギー密度化・高安全化・低コスト化に向けた材料評価技術開発を支援。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [],
+    "applicable_entities": [],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "5wx2i1cybl",
+    "slug": "nedo-solid-state-battery",
+    "name": "次世代全固体蓄電池材料の評価・基盤技術開発（NEDO）",
+    "organization": "NEDO（新エネルギー・産業技術総合開発機構）／経済産業省",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "採択結果公表"
+    ],
+    "subsidyRate_raw": "2/3〜定額",
+    "subsidyRate_max_pct": 66.66666666666666,
+    "upperLimit_raw": "案件規模に応じる",
+    "targetEntity_raw": "電池メーカー・大学・研究機関",
+    "applicationStart": "随時公募",
+    "deadline_raw": "事業期間中",
+    "is_rolling": false,
+    "fiscalYear": "令和2〜7年度（2020〜2025年度）",
+    "sourceUrl": "https://www.nedo.go.jp/activities/ZZJP_100257.html",
+    "scheme": "全固体リチウムイオン電池（LIB）の性能向上・材料開発促進のための材料評価基盤技術開発・要素技術開発を支援。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [],
+    "applicable_entities": [],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "fyxbi7-6gg",
+    "slug": "meti-charging-infra-r6h",
+    "name": "令和6年度補正・令和7年度当初 充電・充てんインフラ等導入促進補助金",
+    "organization": "経済産業省／NeV（次世代自動車振興センター）",
+    "category": [
+      "EV/V2H"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/2",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "300万円/基目安",
+    "targetEntity_raw": "充電器設置事業者・施設管理者",
+    "applicationStart": "2025年4月",
+    "deadline_raw": "予算枠到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和6年度補正・令和7年度当初",
+    "sourceUrl": "https://www.meti.go.jp/policy/mono_info_service/mono/automobile/cev/r6hoseijuden.html",
+    "scheme": "EV急速充電器・普通充電器・水素ステーション等の充電・充てんインフラ整備促進。設置場所・規格に応じた補助上限額を設定。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "industrial"
+    ],
+    "applicable_entities": [
+      "individual",
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "eziq0pb67",
+    "slug": "meti-cev-r6h",
+    "name": "令和6年度補正予算 クリーンエネルギー自動車導入促進補助金（CEV補助金）",
+    "organization": "経済産業省／NeV（次世代自動車振興センター）",
+    "category": [
+      "EV/V2H"
+    ],
+    "status": [
+      "受付終了"
+    ],
+    "subsidyRate_raw": "定額",
+    "upperLimit_raw": "車両種別に応じる",
+    "targetEntity_raw": "個人・法人",
+    "applicationStart": "2025年3月31日",
+    "deadline_raw": "予算枠到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和6年度補正（2024年度補正・2025年度執行）",
+    "sourceUrl": "https://www.meti.go.jp/policy/mono_info_service/mono/automobile/cev/r6hosei_cev.html",
+    "scheme": "令和6年度補正予算によるCEV補助金。EV・PHEV・FCV購入支援。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "industrial"
+    ],
+    "applicable_entities": [
+      "individual",
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "l-63v_nxzsgo",
+    "slug": "meti-cev-r7h",
+    "name": "令和7年度補正予算 クリーンエネルギー自動車導入促進補助金（CEV補助金）",
+    "organization": "経済産業省／NeV（次世代自動車振興センター）",
+    "category": [
+      "EV/V2H"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "定額",
+    "upperLimit_raw": "EV普通車130万円、PHEV/FCV別途",
+    "targetEntity_raw": "個人・法人",
+    "applicationStart": "2026年3月31日",
+    "deadline_raw": "予算枠到達まで",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度補正（2025年度補正・2026年度執行）",
+    "sourceUrl": "https://www.meti.go.jp/policy/mono_info_service/mono/automobile/cev/r7h_cev.html",
+    "scheme": "クリーンエネルギー自動車（EV・PHEV・FCV）の購入補助。2025年12月に補助金額見直しで、EV普通車は90万円→130万円に増額。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "industrial"
+    ],
+    "applicable_entities": [
+      "individual",
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "52zn7ysh4kuf",
+    "slug": "tokyo-ev-promotion",
+    "name": "FCV・EV・PHEV車両等の普及促進事業（東京都）",
+    "organization": "東京都／クール・ネット東京",
+    "category": [
+      "EV/V2H"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "定額",
+    "upperLimit_raw": "車両種別に応じる",
+    "targetEntity_raw": "都内個人・法人",
+    "applicationStart": "2025年4月",
+    "deadline_raw": "2026年3月31日",
+    "deadline_iso": "2026-03-31",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度（2025年度）",
+    "sourceUrl": "https://www.tokyo-co2down.jp/subsidy/ev/",
+    "scheme": "都内におけるFCV・EV・PHEVの導入支援。国のCEV補助金との併用が可能で、車両種別ごとに補助上限額を設定。",
+    "applicable_prefs": [
+      "東京",
+      "京都"
+    ],
+    "applicable_use_cases": [
+      "industrial"
+    ],
+    "applicable_entities": [
+      "individual",
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "s3rsylyyc99",
+    "slug": "tokyo-dannetsu-solar",
+    "name": "災害にも強く健康にも資する断熱・太陽光住宅普及拡大事業（東京都）",
+    "organization": "東京都環境局",
+    "category": [
+      "太陽光",
+      "需要側",
+      "ZEH/ZEB"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "定額",
+    "upperLimit_raw": "12万円/kW（太陽光）、その他別途",
+    "targetEntity_raw": "都内住宅事業者・建築主・住宅所有者",
+    "applicationStart": "2025年4月",
+    "deadline_raw": "2026年3月31日",
+    "deadline_iso": "2026-03-31",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度（2025年度）",
+    "sourceUrl": "https://www.kankyo.metro.tokyo.lg.jp/climate/home/dannetsu-solar",
+    "scheme": "都内住宅の断熱化・太陽光発電・蓄電池導入を統合的に支援。新築建物太陽光義務化（2025年4月施行）と連動し、ゼロエミッション住宅普及を推進。",
+    "applicable_prefs": [
+      "東京",
+      "京都"
+    ],
+    "applicable_use_cases": [
+      "self_consumption",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "individual",
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "dq_wwnkwlq",
+    "slug": "tokyo-home-battery-r7",
+    "name": "令和7年度 家庭における蓄電池導入促進事業（東京都）",
+    "organization": "東京都／クール・ネット東京",
+    "category": [
+      "蓄電池",
+      "需要側"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "定額",
+    "upperLimit_raw": "15万円/kWh、上限160万円目安",
+    "targetEntity_raw": "都内住宅所有者・集合住宅管理組合",
+    "applicationStart": "2025年4月",
+    "deadline_raw": "2026年3月31日",
+    "deadline_iso": "2026-03-31",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度（2025年度）",
+    "sourceUrl": "https://www.tokyo-co2down.jp/subsidy/family_tikudenchi/r7/",
+    "scheme": "都内住宅への蓄電池導入支援。太陽光発電と組合せた自家消費率向上、卒FIT対応、災害時BCP対応を促進。",
+    "applicable_prefs": [
+      "東京",
+      "京都"
+    ],
+    "applicable_use_cases": [
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "individual"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "0ccx7xxn7tz",
+    "slug": "tokyo-grid-battery-r8",
+    "name": "令和8年度 系統用大規模蓄電池導入支援事業（東京都）",
+    "organization": "東京都／クール・ネット東京（東京都地球温暖化防止活動推進センター）",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "2/3以内（国補助との合計2/3以内）",
+    "subsidyRate_max_pct": 66.66666666666666,
+    "upperLimit_raw": "案件規模に応じる",
+    "targetEntity_raw": "都内に登記簿上の本店・支店を有する法人（一般送配電事業者を除く）",
+    "applicationStart": "2026年9月1日",
+    "deadline_raw": "2026年9月30日17時必着",
+    "deadline_iso": "2026-09-30",
+    "is_rolling": false,
+    "fiscalYear": "令和8年度（2026年度）",
+    "sourceUrl": "https://www.tokyo-co2down.jp/subsidy/grid-connect/",
+    "scheme": "東京電力管内の電力系統に直接接続する大規模蓄電池の導入経費を助成。再エネの有効活用・普及拡大、電力バランス改善に寄与する事業を支援。",
+    "applicable_prefs": [
+      "東京",
+      "京都"
+    ],
+    "applicable_use_cases": [
+      "grid"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "x6apora_vra",
+    "slug": "env-preceding-region-6-results",
+    "name": "脱炭素先行地域（第6回）選定結果（環境省）",
+    "organization": "環境省",
+    "category": [
+      "地域脱炭素"
+    ],
+    "status": [
+      "採択結果公表"
+    ],
+    "subsidyRate_raw": "2/3",
+    "subsidyRate_max_pct": 66.66666666666666,
+    "upperLimit_raw": "50億円/地域目安",
+    "targetEntity_raw": "地方公共団体",
+    "applicationStart": "2025年2月3日",
+    "deadline_raw": "2025年5月（選定結果公表）",
+    "deadline_iso": "2025-05-31",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度（2025年度）",
+    "sourceUrl": "https://www.env.go.jp/press/press_04798.html",
+    "scheme": "脱炭素先行地域第6回選定結果。山形県米沢市・飯豊町、千葉県市川市、福井県池田町、鳥取県倉吉市、広島県北広島町、愛媛県今治市、宮崎県宮崎市の7件選定。",
+    "applicable_prefs": [
+      "山形",
+      "千葉",
+      "福井",
+      "鳥取",
+      "広島",
+      "愛媛",
+      "宮崎"
+    ],
+    "applicable_use_cases": [],
+    "applicable_entities": [
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "rn02vgxji",
+    "slug": "env-preceding-region-6",
+    "name": "脱炭素先行地域（第6回）募集（環境省）",
+    "organization": "環境省",
+    "category": [
+      "地域脱炭素"
+    ],
+    "status": [
+      "受付終了"
+    ],
+    "subsidyRate_raw": "2/3",
+    "subsidyRate_max_pct": 66.66666666666666,
+    "upperLimit_raw": "50億円/地域目安",
+    "targetEntity_raw": "地方公共団体",
+    "applicationStart": "2025年2月3日",
+    "deadline_raw": "2025年2月6日",
+    "deadline_iso": "2025-02-06",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度（2025年度）",
+    "sourceUrl": "https://www.env.go.jp/press/press_04127.html",
+    "scheme": "第6回脱炭素先行地域募集。35の地方公共団体から15件の計画提案が提出され、7件が脱炭素先行地域として選定。",
+    "applicable_prefs": [
+      "山形",
+      "千葉",
+      "福井",
+      "鳥取",
+      "広島",
+      "愛媛",
+      "宮崎"
+    ],
+    "applicable_use_cases": [],
+    "applicable_entities": [
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "89186wku0y",
+    "slug": "env-decarbonization-leading-region",
+    "name": "脱炭素先行地域（環境省）",
+    "organization": "環境省",
+    "category": [
+      "地域脱炭素"
+    ],
+    "status": [
+      "受付終了"
+    ],
+    "subsidyRate_raw": "2/3",
+    "subsidyRate_max_pct": 66.66666666666666,
+    "upperLimit_raw": "50億円/地域目安",
+    "targetEntity_raw": "地方公共団体",
+    "applicationStart": "随時公募（第1〜6回）",
+    "deadline_raw": "2025年度（第6回で終了）",
+    "is_rolling": false,
+    "fiscalYear": "令和4〜7年度（2022〜2025年度）",
+    "sourceUrl": "https://policies.env.go.jp/policy/roadmap/preceding-region/",
+    "scheme": "2030年度までに民生部門のCO2排出ゼロを実現する地域モデルを選定。最大5年間の継続支援、地域脱炭素移行・再エネ推進交付金で財政支援。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [],
+    "applicable_entities": [
+      "individual",
+      "municipal"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "ar24_9t9epz",
+    "slug": "occto-ltdc-2024-results",
+    "name": "長期脱炭素電源オークション（応札年度：2024年度）約定結果",
+    "organization": "OCCTO（電力広域的運営推進機関）",
+    "category": [
+      "蓄電池",
+      "再エネ統合"
+    ],
+    "status": [
+      "採択結果公表"
+    ],
+    "subsidyRate_raw": "20年契約・容量拠出金",
+    "upperLimit_raw": "案件規模に応じる",
+    "targetEntity_raw": "脱炭素電源事業者（落札事業者）",
+    "applicationStart": "2024年10月",
+    "deadline_raw": "2025年4月28日（結果公表）",
+    "deadline_iso": "2025-04-28",
+    "is_rolling": false,
+    "fiscalYear": "応札年度：2024年度",
+    "sourceUrl": "https://www.occto.or.jp/news/market-board_market_oshirase_2025_20250428_youryouyakujokekka_kouhyou.html",
+    "scheme": "2024年度応札の長期脱炭素電源オークション約定結果。蓄電池・揚水（3〜6時間）の上限75万kWに対し96.1万kWが約定。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "ds9ttcdaq",
+    "slug": "occto-ltdc-2025",
+    "name": "長期脱炭素電源オークション（応札年度：2025年度）",
+    "organization": "OCCTO（電力広域的運営推進機関）／経済産業省",
+    "category": [
+      "蓄電池",
+      "再エネ統合"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "20年契約・容量拠出金",
+    "upperLimit_raw": "案件規模に応じる",
+    "targetEntity_raw": "脱炭素電源（蓄電池・水素・原子力等）事業者",
+    "applicationStart": "2025年10月",
+    "deadline_raw": "2026年1月",
+    "deadline_iso": "2026-01-31",
+    "is_rolling": false,
+    "fiscalYear": "応札年度：2025年度",
+    "sourceUrl": "https://www.occto.or.jp/market-board/market/oshirase/2025/250903_long_boshuyoukou.html",
+    "scheme": "20年契約による長期固定収入で脱炭素電源（蓄電池・水素・アンモニア発電等）の投資回収を支援。蓄電池はリチウムイオン40万kW、それ以外40万kWが募集上限。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "qxi6db7tua2k",
+    "slug": "sii-dr-r6h",
+    "name": "令和6年度補正 需要家側エネルギーリソース活用事業（DR・蓄電池併設）",
+    "organization": "SII（環境共創イニシアチブ）／経済産業省",
+    "category": [
+      "蓄電池",
+      "需要側"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3〜定額",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "60万円/件目安",
+    "targetEntity_raw": "家庭用蓄電池導入者（アグリゲーター経由）",
+    "applicationStart": "2025年3月26日",
+    "deadline_raw": "2025年12月5日",
+    "deadline_iso": "2025-12-05",
+    "is_rolling": false,
+    "fiscalYear": "令和6年度補正（2024年度補正・2025年度執行）",
+    "sourceUrl": "https://dr-battery.sii.or.jp/r6h/",
+    "scheme": "DR対応の家庭用蓄電池導入支援。アグリゲーターによるVPP・需給調整市場参加を前提とし、需要側エネルギーリソースの集約・活用を促進。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "individual",
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "u63f3aexc5",
+    "slug": "sii-dr-r7h",
+    "name": "令和7年度補正 DR家庭用蓄電池事業",
+    "organization": "SII（環境共創イニシアチブ）／経済産業省",
+    "category": [
+      "蓄電池",
+      "需要側"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/3〜定額",
+    "subsidyRate_max_pct": 33.33333333333333,
+    "upperLimit_raw": "60万円/件目安",
+    "targetEntity_raw": "家庭用蓄電池導入者（アグリゲーター経由）",
+    "applicationStart": "2026年4月予定",
+    "deadline_raw": "2026年12月予定",
+    "deadline_iso": "2026-12-31",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度補正（2025年度補正・2026年度執行）",
+    "sourceUrl": "https://dr-battery.sii.or.jp/r7h/",
+    "scheme": "DR（デマンドレスポンス）対応の家庭用蓄電池導入支援。アグリゲーター経由でVPP・需給調整市場参加を前提とし、家庭・業務分野の需要側エネルギーリソース活用を促進。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "individual",
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "nk-duo_2dz",
+    "slug": "sii-saiene06r",
+    "name": "令和6年度補正 再生可能エネルギー電源併設型蓄電システム導入支援事業",
+    "organization": "SII（環境共創イニシアチブ）／経済産業省",
+    "category": [
+      "蓄電池",
+      "太陽光"
+    ],
+    "status": [
+      "公募中"
+    ],
+    "subsidyRate_raw": "1/2〜2/3",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "案件規模に応じる",
+    "targetEntity_raw": "再エネ電源併設型蓄電池導入事業者",
+    "applicationStart": "2025年4月",
+    "deadline_raw": "2025年12月",
+    "deadline_iso": "2025-12-31",
+    "is_rolling": false,
+    "fiscalYear": "令和6年度補正（2024年度補正・2025年度執行）",
+    "sourceUrl": "https://sii.or.jp/saieneheisetsu06r/",
+    "scheme": "太陽光・風力等の再生可能エネルギー電源に併設する蓄電システム導入を支援。FIP転＋蓄電池併設、出力制御回避、コーポレートPPA供給安定化を促進。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "self_consumption"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
+    "id": "re-gd7ruh",
+    "slug": "sii-chikudenchi07",
+    "name": "令和7年度 系統用蓄電池・水電解装置導入支援事業",
+    "organization": "SII（環境共創イニシアチブ）／経済産業省",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [
+      "受付終了"
+    ],
+    "subsidyRate_raw": "1/2〜2/3",
+    "subsidyRate_max_pct": 50,
+    "upperLimit_raw": "案件規模に応じる",
+    "targetEntity_raw": "系統用蓄電池・水電解装置の導入事業者",
+    "applicationStart": "2025年8月29日",
+    "deadline_raw": "2025年10月24日",
+    "deadline_iso": "2025-10-24",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度（2025年度）",
+    "sourceUrl": "https://sii.or.jp/chikudenchi07/",
+    "scheme": "系統用蓄電池および水電解装置（グリーン水素製造）の導入支援。再エネ大量導入時代の需給調整・系統安定化への貢献を目的とし、補助率1/2〜2/3で交付。",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "grid"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  }
+]

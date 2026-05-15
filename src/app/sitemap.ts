@@ -57,6 +57,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Sprint 3 追加 (依頼AM、業界唯一 IRR シミュレーター)
     { url: `${siteConfig.url}/tools`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${siteConfig.url}/tools/irr-simulator`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Sprint 4 追加 (依頼AO、業界唯一 補助金マッチング)
+    { url: `${siteConfig.url}/tools/subsidy-match`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/privacy`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
