@@ -72,6 +72,8 @@ export const siteConfig = {
     { label: '系統連系診断', href: '/tools/grid-connection-check' },
     // Sprint 4 Day 3 (業界唯一 火災リスク自己診断、教育型)
     { label: '火災リスク自己診断', href: '/tools/fire-risk-check' },
+    // Sprint 4 Day 4 (業界唯一 容量市場応札試算、モック版)
+    { label: '容量市場応札試算', href: '/tools/capacity-market-bid' },
     // サイト情報
     { label: '蓄電所ネットについて', href: '/about' },
     { label: '編集方針', href: '/editorial-policy' },

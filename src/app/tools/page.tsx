@@ -35,6 +35,14 @@ const tools = [
       'UL9540A / NFPA 855 / 消防法 観点で 25 問セルフチェック。セル選定・PCS・建屋・運用・緊急対応の 5 カテゴリで総合スコア + 優先改善 Top 5 を即時算出。',
   },
   {
+    slug: 'capacity-market-bid',
+    title: '容量市場応札試算',
+    badge: '業界唯一・モック版',
+    available: true,
+    description:
+      '容量市場メインオークションの応札価格を 9 エリア × 区分別過去実績から推定。推奨応札レンジ + 落札確率 + 想定収入を即時試算。5/29 AU 公開時に精度大幅UP予定。',
+  },
+  {
     slug: 'irr-simulator',
     title: '蓄電池IRRシミュレーター',
     badge: '業界唯一',
