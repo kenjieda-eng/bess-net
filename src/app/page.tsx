@@ -13,15 +13,29 @@ const ROADMAP_BADGE: Record<RoadmapStatus, { label: string; className: string }>
 
 export const revalidate = 60;
 
-// Sprint 5+ で計画中の真に未公開なコンテンツのみ列挙。
-// 既公開コーナーは「Now Live · 注目コーナー」または「公開中」セクションへ移動済み。
+// 業界唯一機能 17件 (Sprint 4 完走、2026-05-15 17/17 達成)
+const uniqueFeatures = [
+  // Sprint 4 前半 (ツール 5件)
+  { href: '/tools/irr-simulator', title: '蓄電池 IRR シミュレーター', desc: '11入力 × 20年DCF × 感度分析。業界唯一のオープン公開ツール。', tag: 'ツール' },
+  { href: '/tools/subsidy-match', title: '補助金マッチング', desc: '事業条件から最適補助金を自動マッチング (50+件)。', tag: 'ツール' },
+  { href: '/tools/grid-connection-check', title: '系統連系診断', desc: '緯度経度 / 都道府県から接続候補変電所 5件抽出 (6,507件DB)。', tag: 'ツール' },
+  { href: '/tools/fire-risk-check', title: '火災リスク自己診断', desc: '25問チェック式、教育型。安全文化醸成に。', tag: 'ツール' },
+  { href: '/tools/capacity-market-bid', title: '容量市場応札試算', desc: '9エリア × 3カテゴリ。モック版、AU実データ連携予定。', tag: 'ツール' },
+  // Sprint 4 後半 (構造可視化 4ハブ)
+  { href: '/map/industry-chaos', title: '業界カオスマップ', desc: '50+社 × 11カテゴリ + 35関係。Matrix + Force graph。', tag: 'ハブ' },
+  { href: '/market/jepx', title: 'JEPX ハブ', desc: '9エリア × 30日 × 30分。ヒートマップ + アービ計算機。', tag: 'ハブ' },
+  { href: '/global', title: '海外5市場ハブ', desc: '米国/EU/中国/インド/豪州 比較マトリクス。', tag: 'ハブ' },
+  { href: '/tracker', title: '業界トラッカー (4軸)', desc: '補助金/系統/事業者/案件 の更新タイムライン。', tag: 'ハブ' },
+];
+
+// Sprint 5+ 計画中
 const upcomingFeatures = [
   {
     num: '01',
-    title: '日本の蓄電所マップ全国展開',
+    title: '業界レポート2026',
     body:
-      '現在は中部電力PG 配下 1,081箇所を先行公開。残る7社（東北・北陸・関西・中国・四国・九州・北海道）の緯度経度補完を進めつつ、Leaflet レイヤーへ順次展開予定。',
-    status: 'Sprint 3〜4（進行中）',
+      '業界唯一機能で蓄積したデータ (補助金/系統/事業者/案件/JEPX/海外5市場) を編集統合した年次レポートを公開予定。',
+    status: 'Sprint 5',
   },
   {
     num: '02',
@@ -32,10 +46,10 @@ const upcomingFeatures = [
   },
   {
     num: '03',
-    title: '事業者ナビ拡充・口コミ機能',
+    title: '日本の蓄電所マップ全国展開',
     body:
-      '現在 86社・78ops を継続拡充しつつ、利用事業者からの匿名レビュー機能を検討中。EPC・O&M・PCS 事業者の客観的評価基盤に。',
-    status: 'Sprint 6〜',
+      '中部電力PG 1,081箇所を先行公開。残る7社（東北・北陸・関西・中国・四国・九州・北海道）の緯度経度補完を進めつつ、Leaflet レイヤーへ順次展開予定。',
+    status: 'Sprint 5〜6',
   },
 ];
 
@@ -93,6 +107,47 @@ export default async function Home() {
             <Link href="/glossary" className="btn-secondary">
               用語集を見る
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Sprint 4 完走: 業界唯一機能 17/17 達成 (2026-05-15) */}
+      <section className="section">
+        <div className="section-inner">
+          <div className="section-label" style={{ color: '#c70', fontWeight: 700 }}>★ Sprint 4 完走 · 業界唯一機能 17/17 達成</div>
+          <h2 className="section-title">蓄電所業界の「ここでしか出来ない」9機能</h2>
+          <p className="section-desc" style={{ marginBottom: 24 }}>
+            2026年5月、当初目標 (7/18 完走) を <strong>2ヶ月前倒し</strong>で達成。
+            無料公開・登録不要で、業界の意思決定に直結する <strong>9機能</strong>を提供します。
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: 12,
+          }}>
+            {uniqueFeatures.map((f) => (
+              <Link key={f.href} href={f.href} style={{
+                display: 'block',
+                padding: 14,
+                border: '1px solid var(--color-border)',
+                borderRadius: 8,
+                textDecoration: 'none',
+                color: 'inherit',
+                background: 'white',
+              }}>
+                <div style={{
+                  fontSize: 10,
+                  display: 'inline-block',
+                  padding: '1px 6px',
+                  background: f.tag === 'ツール' ? '#ffe4d6' : '#d6e4ff',
+                  color: f.tag === 'ツール' ? '#a44' : '#346',
+                  borderRadius: 3,
+                  marginBottom: 4,
+                }}>{f.tag}</div>
+                <h3 style={{ fontSize: 15, fontWeight: 700, margin: '4px 0' }}>{f.title}</h3>
+                <p style={{ fontSize: 12, lineHeight: 1.6, margin: 0, color: 'var(--color-muted)' }}>{f.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

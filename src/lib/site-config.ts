@@ -122,15 +122,24 @@ export const siteConfig = {
       title: '日本の蓄電所マップ公開',
       description:
         '中部地方マップを先行公開（中部電力PG 配下 約1,081箇所、緯度経度付き／業界初の検索可能・地図ベース変電所空き容量DB）。残り7社は緯度経度補完を進めつつ Leaflet レイヤーへ順次展開予定。',
-      isCurrent: true,
+      isCurrent: false,
       status: 'in-progress',
+    },
+    {
+      phase: 'Sprint 4',
+      period: '7〜8ヶ月',
+      title: '業界唯一機能 17/17 達成（圧倒的日本一基盤完了）',
+      description:
+        '蓄電池IRRシミュレーター・補助金マッチング・系統連系診断・火災リスク自己診断・容量市場応札試算（Sprint 4 前半 5ツール）に加え、業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカー4種（Sprint 4 後半 4ハブ）を順次公開。当初目標 7/18 を 2ヶ月前倒しで達成、業界の構造可視化フェーズ完了。',
+      isCurrent: true,
+      status: 'done',
     },
     {
       phase: 'Sprint 5',
       period: '9〜10ヶ月',
-      title: '火災・トラブル事例DB公開',
+      title: '業界レポート2026 公開 + 火災・トラブル事例DB',
       description:
-        '国内の蓄電池トラブル事例を公開資料に基づき整理。業界の安全文化向上に資する情報基盤を計画中。',
+        '業界唯一機能の蓄積データを編集統合した「業界レポート2026」を公開予定。同時並行で国内蓄電池トラブル事例DBを公開資料に基づき整理、業界の安全文化向上に資する情報基盤を構築。',
       isCurrent: false,
       status: 'planned',
     },
