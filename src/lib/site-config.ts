@@ -74,6 +74,11 @@ export const siteConfig = {
     { label: '火災リスク自己診断', href: '/tools/fire-risk-check' },
     // Sprint 4 Day 4 (業界唯一 容量市場応札試算、モック版)
     { label: '容量市場応札試算', href: '/tools/capacity-market-bid' },
+    // Sprint 4 後半 (業界唯一 業界構造可視化)
+    { label: '業界カオスマップ', href: '/map/industry-chaos' },
+    { label: 'JEPXハブ', href: '/market/jepx' },
+    { label: '海外5市場ハブ', href: '/global' },
+    { label: '業界トラッカー', href: '/tracker' },
     // サイト情報
     { label: '蓄電所ネットについて', href: '/about' },
     { label: '編集方針', href: '/editorial-policy' },

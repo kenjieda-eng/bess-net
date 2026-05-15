@@ -65,6 +65,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/tools/fire-risk-check`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 4 Day 4 (依頼AT、業界唯一 容量市場応札試算、モック版)
     { url: `${siteConfig.url}/tools/capacity-market-bid`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Sprint 4 後半 (依頼AP、業界唯一 業界カオスマップ)
+    { url: `${siteConfig.url}/map/industry-chaos`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Sprint 4 後半 (依頼AN、業界唯一 JEPX ハブ)
+    { url: `${siteConfig.url}/market/jepx`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
+    // Sprint 4 後半 (依頼BC、業界唯一 海外5市場ハブ)
+    { url: `${siteConfig.url}/global`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${siteConfig.url}/global/us`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${siteConfig.url}/global/eu`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${siteConfig.url}/global/cn`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${siteConfig.url}/global/in`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${siteConfig.url}/global/au`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    // Sprint 4 後半 (依頼BF、業界唯一 トラッカー4種)
+    { url: `${siteConfig.url}/tracker`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${siteConfig.url}/tracker/subsidy`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${siteConfig.url}/tracker/grid`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${siteConfig.url}/tracker/ag`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${siteConfig.url}/tracker/pf`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/privacy`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
