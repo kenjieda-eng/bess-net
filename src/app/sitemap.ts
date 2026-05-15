@@ -61,6 +61,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/tools/subsidy-match`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     // Sprint 4 Day 2 (依頼AR、業界唯一 系統連系診断)
     { url: `${siteConfig.url}/tools/grid-connection-check`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    // Sprint 4 Day 3 (依頼AS、業界唯一 火災リスク自己診断、教育型)
+    { url: `${siteConfig.url}/tools/fire-risk-check`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/privacy`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },

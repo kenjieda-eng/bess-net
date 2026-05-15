@@ -27,6 +27,14 @@ export const metadata: Metadata = {
 
 const tools = [
   {
+    slug: 'fire-risk-check',
+    title: '蓄電池火災リスク自己診断',
+    badge: '業界唯一・教育型',
+    available: true,
+    description:
+      'UL9540A / NFPA 855 / 消防法 観点で 25 問セルフチェック。セル選定・PCS・建屋・運用・緊急対応の 5 カテゴリで総合スコア + 優先改善 Top 5 を即時算出。',
+  },
+  {
     slug: 'irr-simulator',
     title: '蓄電池IRRシミュレーター',
     badge: '業界唯一',

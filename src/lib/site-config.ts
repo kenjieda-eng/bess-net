@@ -70,6 +70,8 @@ export const siteConfig = {
     { label: '蓄電池補助金マッチング', href: '/tools/subsidy-match' },
     // Sprint 4 Day 2 (業界唯一 系統連系診断)
     { label: '系統連系診断', href: '/tools/grid-connection-check' },
+    // Sprint 4 Day 3 (業界唯一 火災リスク自己診断、教育型)
+    { label: '火災リスク自己診断', href: '/tools/fire-risk-check' },
     // サイト情報
     { label: '蓄電所ネットについて', href: '/about' },
     { label: '編集方針', href: '/editorial-policy' },
