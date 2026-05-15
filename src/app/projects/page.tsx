@@ -139,6 +139,20 @@ export default async function ProjectsListPage() {
             ))
           )}
 
+          <section style={{
+            marginTop: 32, padding: 16,
+            background: 'var(--color-bg)',
+            border: '1px solid var(--color-border)', borderRadius: 6,
+          }}>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (業界唯一機能)</h2>
+            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+              <li><Link href="/tracker/pf">プロジェクトトラッカー</Link> — 案件の追加・更新タイムライン</li>
+              <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター</Link> — 個別案件の収益試算</li>
+              <li><Link href="/tools/capacity-market-bid">容量市場応札試算</Link> — モック版</li>
+              <li><Link href="/industry">業界分析ハブ</Link></li>
+            </ul>
+          </section>
+
           <p className="back-link">
             <Link href="/">← トップへ戻る</Link>
           </p>

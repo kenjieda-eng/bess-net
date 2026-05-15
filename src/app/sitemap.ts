@@ -65,6 +65,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/tools/fire-risk-check`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 4 Day 4 (依頼AT、業界唯一 容量市場応札試算、モック版)
     { url: `${siteConfig.url}/tools/capacity-market-bid`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Sprint 4 後半 (業界分析 4ハブ集約 index)
+    { url: `${siteConfig.url}/industry`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Sprint 5 開始準備 (業界レポート2026 プレビュー版)
+    { url: `${siteConfig.url}/reports`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${siteConfig.url}/reports/2026`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Sprint 5 開始準備 (火災・トラブル事例DB シード版)
+    { url: `${siteConfig.url}/incidents`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 4 後半 (依頼AP、業界唯一 業界カオスマップ)
     { url: `${siteConfig.url}/map/industry-chaos`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 4 後半 (依頼AN、業界唯一 JEPX ハブ)

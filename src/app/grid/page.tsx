@@ -559,6 +559,20 @@ export default async function GridIndexPage() {
             </p>
           </section>
 
+          <section style={{
+            marginTop: 32, padding: 16,
+            background: 'var(--color-bg)',
+            border: '1px solid var(--color-border)', borderRadius: 6,
+          }}>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (業界唯一機能)</h2>
+            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+              <li><Link href="/tools/grid-connection-check">系統連系診断</Link> — 緯度経度から接続候補変電所を 5 件抽出</li>
+              <li><Link href="/tracker/grid">系統トラッカー</Link> — 変電所データの更新タイムライン</li>
+              <li><Link href="/grid/chubu/map">中部マップ (Leaflet)</Link> — 1,081箇所 地図検索</li>
+              <li><Link href="/industry">業界分析ハブ</Link></li>
+            </ul>
+          </section>
+
           <p className="back-link">
             <Link href="/">← トップへ戻る</Link>
           </p>
