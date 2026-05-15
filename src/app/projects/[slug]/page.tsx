@@ -26,6 +26,13 @@ export async function generateStaticParams() {
   }
 }
 
+// 0 (= 調査中) は description にも明示し、誤情報伝播を防止
+function describeMW(n?: number): string {
+  if (n == null) return '—';
+  if (n === 0) return '調査中';
+  return `${n}`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -33,9 +40,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const item = await getProjectBySlug(params.slug);
   if (!item) return {};
+  const mwStr = describeMW(item.outputMw);
+  const mwhStr = describeMW(item.capacityMwh);
   return {
     title: item.name,
-    description: `${item.prefecture}${item.city || ''}に所在する系統用蓄電池プロジェクト「${item.name}」の概要。出力${item.outputMw ?? '—'}MW・容量${item.capacityMwh ?? '—'}MWh。`,
+    description: `${item.prefecture ?? ''}${item.city || ''}に所在する系統用蓄電池プロジェクト「${item.name}」の概要。出力${mwStr === '調査中' ? '調査中' : `${mwStr}MW`}・容量${mwhStr === '調査中' ? '調査中' : `${mwhStr}MWh`}。`,
   };
 }
 
@@ -78,11 +87,21 @@ export default async function ProjectDetailPage({
 
   const mentions = buildMentions(related);
 
+  // 信頼可能な数値のみ JSON-LD に出力 (0 は調査中扱いで省略、誤情報伝播防止)
+  const reliableOutputMw = item.outputMw != null && item.outputMw > 0 ? item.outputMw : undefined;
+  const reliableCapacityMwh = item.capacityMwh != null && item.capacityMwh > 0 ? item.capacityMwh : undefined;
+  const dataNotice = (item.outputMw === 0 || item.capacityMwh === 0)
+    ? ' (出力/容量は調査中。一次情報未確認のため当該数値は省略)'
+    : '';
+  const specSummary = reliableOutputMw && reliableCapacityMwh
+    ? `出力 ${reliableOutputMw} MW / 容量 ${reliableCapacityMwh} MWh の系統用蓄電池プロジェクト`
+    : '系統用蓄電池プロジェクト';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
     name: item.name,
-    description: `${item.prefecture}${item.city || ''}に所在する系統用蓄電池プロジェクト「${item.name}」。`,
+    description: `${item.prefecture ?? ''}${item.city || ''}に所在する${specSummary}「${item.name}」。${dataNotice}`,
     url: `https://bess-net.jp/projects/${item.slug}`,
     mentions: mentions.length > 0 ? mentions : undefined,
     publisher: {
@@ -90,6 +109,19 @@ export default async function ProjectDetailPage({
       name: siteConfig.organization.name,
       url: siteConfig.organization.url,
     },
+    // additionalProperty: 信頼可能な数値のみ
+    ...(reliableOutputMw || reliableCapacityMwh
+      ? {
+          additionalProperty: [
+            ...(reliableOutputMw
+              ? [{ '@type': 'PropertyValue', name: 'outputMw', value: reliableOutputMw, unitText: 'MW' }]
+              : []),
+            ...(reliableCapacityMwh
+              ? [{ '@type': 'PropertyValue', name: 'capacityMwh', value: reliableCapacityMwh, unitText: 'MWh' }]
+              : []),
+          ],
+        }
+      : {}),
   };
 
   return (
@@ -113,13 +145,31 @@ export default async function ProjectDetailPage({
             <span className={`badge badge-status-${status === '稼働中' ? 'open' : status === '建設中' ? 'upcoming' : 'closed'}`}>
               {status}
             </span>
+            {/* 0 値は「調査中」と明示 (誤情報伝播防止) */}
             {item.outputMw != null && (
-              <span className="badge badge-category">出力 {item.outputMw} MW</span>
+              <span className="badge badge-category" title={item.outputMw === 0 ? '公開情報が不足しており、現在調査中です' : undefined}>
+                出力 {item.outputMw === 0 ? '調査中' : `${item.outputMw} MW`}
+              </span>
             )}
             {item.capacityMwh != null && (
-              <span className="badge badge-category">容量 {item.capacityMwh} MWh</span>
+              <span className="badge badge-category" title={item.capacityMwh === 0 ? '公開情報が不足しており、現在調査中です' : undefined}>
+                容量 {item.capacityMwh === 0 ? '調査中' : `${item.capacityMwh} MWh`}
+              </span>
             )}
           </div>
+
+          {/* 詳細ページ用 data disclaimer (依頼: /projects 精査修正 Phase C) */}
+          {(item.outputMw === 0 || item.capacityMwh === 0) && (
+            <section style={{
+              marginBottom: 24, padding: 12,
+              background: 'rgba(255,200,0,0.08)', border: '1px solid #c70',
+              borderRadius: 6, fontSize: 13, lineHeight: 1.7,
+            }} aria-label="データ品質に関するご案内">
+              ※ このプロジェクトは<strong>「調査中」</strong>の項目があります (出力 or 容量)。
+              公開情報が不足しているため、一次情報を確認次第順次更新します。
+              情報をお持ちの方は <a href="https://eic-jp.org/contact" target="_blank" rel="noopener noreferrer">編集部</a> までお寄せください。
+            </section>
+          )}
 
           <dl className="info-list" style={{ marginBottom: 32 }}>
             {(item.prefecture || item.city) && (<>

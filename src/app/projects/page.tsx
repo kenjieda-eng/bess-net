@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getAllProjects, type Project } from '@/lib/microcms';
+import { siteConfig } from '@/lib/site-config';
+
+const siteContactUrl = siteConfig.organization.contactUrl;
 
 export const revalidate = 600;
 
@@ -14,12 +17,29 @@ export const metadata: Metadata = {
 
 const STATUS_ORDER = ['稼働中', '建設中', '接続検討中', '計画中', '廃止'];
 
+// 「調査中」(0 値) を各 status グループの最下位にソート (依頼: Phase C)
+function sortInvestigatingLast(items: Project[]): Project[] {
+  return [...items].sort((a, b) => {
+    const aInvestigating = a.outputMw === 0 || a.capacityMwh === 0 ? 1 : 0;
+    const bInvestigating = b.outputMw === 0 || b.capacityMwh === 0 ? 1 : 0;
+    if (aInvestigating !== bInvestigating) return aInvestigating - bInvestigating;
+    // 二次キー: 出力 MW 降順 (信頼可能データの中で大きい順)
+    const aMw = a.outputMw ?? 0;
+    const bMw = b.outputMw ?? 0;
+    return bMw - aMw;
+  });
+}
+
 function groupByStatus(items: Project[]) {
   const groups: Record<string, Project[]> = {};
   for (const item of items) {
     const status = (item.status && item.status[0]) || 'その他';
     if (!groups[status]) groups[status] = [];
     groups[status].push(item);
+  }
+  // 各グループ内で「調査中」を最下位に
+  for (const s of Object.keys(groups)) {
+    groups[s] = sortInvestigatingLast(groups[s]);
   }
   const ordered: Array<{ status: string; items: Project[] }> = [];
   for (const s of STATUS_ORDER) {
@@ -34,12 +54,35 @@ function groupByStatus(items: Project[]) {
   return ordered;
 }
 
+// 0 MW / 0 MWh を「調査中」と表示 (依頼: /projects データ精査修正 Phase C)
+// 公開情報が不足しているプロジェクトの誤情報伝播を防止
 function fmtMW(n?: number) {
-  return n != null ? `${n.toLocaleString()} MW` : '—';
+  if (n == null) return '—';
+  if (n === 0) return '調査中';
+  return `${n.toLocaleString()} MW`;
 }
 
 function fmtMWh(n?: number) {
-  return n != null ? `${n.toLocaleString()} MWh` : '—';
+  if (n == null) return '—';
+  if (n === 0) return '調査中';
+  return `${n.toLocaleString()} MWh`;
+}
+
+// 「調査中」セル用のクラス (CSS で控えめな色に)
+function cellClass(n?: number): string {
+  return n === 0 ? 'cell-investigating' : '';
+}
+
+// 合計値: 0 MW/MWh はカウントから除外 (info-only エントリの誤計上防止)
+function sumReliable(items: Project[], key: 'outputMw' | 'capacityMwh'): number {
+  return items.reduce((s, i) => {
+    const v = i[key];
+    return v != null && v > 0 ? s + v : s;
+  }, 0);
+}
+
+function reliableCount(items: Project[], key: 'outputMw' | 'capacityMwh'): number {
+  return items.filter((i) => i[key] != null && (i[key] as number) > 0).length;
 }
 
 export default async function ProjectsListPage() {
@@ -50,8 +93,12 @@ export default async function ProjectsListPage() {
     // API未設定時は空表示
   }
 
-  const totalMW = items.reduce((s, i) => s + (i.outputMw || 0), 0);
-  const totalMWh = items.reduce((s, i) => s + (i.capacityMwh || 0), 0);
+  // 「調査中」(0 値) を除いた信頼可能な合計のみ集計
+  const totalMW = sumReliable(items, 'outputMw');
+  const totalMWh = sumReliable(items, 'capacityMwh');
+  const reliableMWCount = reliableCount(items, 'outputMw');
+  const reliableMWhCount = reliableCount(items, 'capacityMwh');
+  const investigatingCount = items.filter((i) => i.outputMw === 0 || i.capacityMwh === 0).length;
   const grouped = groupByStatus(items);
 
   return (
@@ -76,13 +123,29 @@ export default async function ProjectsListPage() {
               </div>
               <div className="stat-card">
                 <div className="stat-num">{totalMW.toLocaleString()}</div>
-                <div className="stat-label">合計出力 MW</div>
+                <div className="stat-label">合計出力 MW <small style={{ display: 'block', fontWeight: 400, color: 'var(--color-muted)', fontSize: 10 }}>({reliableMWCount} 件分)</small></div>
               </div>
               <div className="stat-card">
                 <div className="stat-num">{totalMWh.toLocaleString()}</div>
-                <div className="stat-label">合計容量 MWh</div>
+                <div className="stat-label">合計容量 MWh <small style={{ display: 'block', fontWeight: 400, color: 'var(--color-muted)', fontSize: 10 }}>({reliableMWhCount} 件分)</small></div>
               </div>
             </div>
+          )}
+
+          {/* データ品質 disclaimer (依頼: /projects 精査修正 Phase C) */}
+          {investigatingCount > 0 && (
+            <section style={{
+              marginTop: 0, marginBottom: 24, padding: 16,
+              background: 'rgba(255,200,0,0.08)', border: '1px solid #c70',
+              borderRadius: 6,
+            }} aria-label="データ品質に関するご案内">
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7 }}>
+                ※ 出力 <strong>0 MW</strong> または容量 <strong>0 MWh</strong> と表示されているプロジェクト
+                ({investigatingCount} 件) は<strong>「調査中」</strong>として扱い、合計値の集計からも除外しています。
+                公開情報が不足しているため、一次情報を確認次第順次更新します。
+                情報をお持ちの方は <a href={siteContactUrl} target="_blank" rel="noopener noreferrer">編集部</a> までお寄せください。
+              </p>
+            </section>
           )}
 
           <p className="page-meta" style={{ marginTop: 0, marginBottom: 32, paddingTop: 0, borderTop: 'none' }}>
@@ -126,8 +189,8 @@ export default async function ProjectsListPage() {
                             {item.prefecture}
                             {item.city && ` ${item.city}`}
                           </td>
-                          <td>{fmtMW(item.outputMw)}</td>
-                          <td>{fmtMWh(item.capacityMwh)}</td>
+                          <td className={cellClass(item.outputMw)} style={item.outputMw === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic' } : undefined}>{fmtMW(item.outputMw)}</td>
+                          <td className={cellClass(item.capacityMwh)} style={item.capacityMwh === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic' } : undefined}>{fmtMWh(item.capacityMwh)}</td>
                           <td>{item.operator || '—'}</td>
                           <td>{item.cod || '—'}</td>
                         </tr>
