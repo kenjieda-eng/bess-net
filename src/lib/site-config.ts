@@ -56,6 +56,8 @@ export const siteConfig = {
     { label: 'FAQ', href: '/faq', enabled: true },
     // Sprint 3 追加 (依頼AM、業界唯一 IRR シミュレーター)
     { label: 'ツール', href: '/tools', enabled: true },
+    // EIC Data 統合 (29 系列マーケットダッシュボード、業界唯一)
+    { label: 'マーケット', href: '/dashboard/market', enabled: true },
     // Sprint 4 後半 (業界唯一 4ハブの集約 index)
     { label: '業界分析', href: '/industry', enabled: true },
   ] as NavItem[],

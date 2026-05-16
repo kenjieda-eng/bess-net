@@ -1,13 +1,17 @@
 /**
- * MarketDataPanel — /dashboard/market の各セクション (電源構成/燃料/金融) で再利用される共通テーブル
- * Server Component (内部の CitationPanel は Client)
+ * MarketDataPanel — /dashboard/market の各セクション (電源構成/燃料/金融) で再利用
  *
- * 設計:
- *   - Tier 1 UI 統一規約準拠 (text-base lg:text-lg / py-3 / tabular-nums / 数値強調)
- *   - <details>/<summary> で行内引用展開 (JS 不要、CitationPanel は展開時に hydrate)
- *   - 鉄則 #2: SSR 外部 API 0 (build 時 import 済データのみ)
+ * 設計 (B 案パターン、L-JEPX-UI-005 継続):
+ *   - Client Component ('use client'、useState で expandedId 管理)
+ *   - 各行は Fragment 内 2 つの <tr>: 主行 + (条件付き) 引用行 colSpan=5
+ *   - <details> 撤廃 (cell 内オーバーフロー問題回避、対象行の上に表示されるバグ修正)
+ *   - 鉄則 #2: SSR 外部 API 0 (build 時 import 済データのみ、ランタイム fetch 0)
+ *   - Tier 1 UI 規約: text-base lg:text-lg / py-3 相当 (12px) / tabular-nums
  */
 
+'use client';
+
+import { Fragment, useState } from 'react';
 import type { SeriesData } from '@/types/eic';
 import CitationPanel from '../CitationPanel';
 
@@ -44,6 +48,8 @@ export default function MarketDataPanel({
   csvDir,
   anchorId,
 }: PanelProps) {
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
   if (series.length === 0) {
     return (
       <section
@@ -105,37 +111,60 @@ export default function MarketDataPanel({
             {series.map((s) => {
               const latest = latestValid(s.points);
               const unit = s.meta.unit || defaultUnit;
+              const isExpanded = expandedId === s.id;
               const csvUrl = `https://raw.githubusercontent.com/kenjieda-eng/eic-data-pipeline/main/data/processed/${csvDir}/${s.id}.csv`;
               const catalogUrl = `https://data.eic-jp.org/catalog/${s.id}`;
               return (
-                <tr key={s.id}>
-                  <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>{s.meta.name}</td>
-                  <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 14, color: 'var(--color-muted)' }}>{latest?.date ?? '—'}</td>
-                  {/* 数値カラム: Tier 1 規約 (fontSize 24 + tabular-nums + bold) */}
-                  <td
-                    className="tabular-nums"
-                    style={{
-                      padding: 12,
-                      textAlign: 'right',
-                      border: '1px solid var(--color-border)',
-                      fontSize: 22,
-                      fontWeight: 700,
-                      fontVariantNumeric: 'tabular-nums',
-                      color: 'var(--color-navy, #1e293b)',
-                    }}
-                  >
-                    {latest ? latest.value.toFixed(2) : '—'}
-                  </td>
-                  <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 13, color: 'var(--color-muted)' }}>{unit}</td>
-                  <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>
-                    <details>
-                      <summary style={{ cursor: 'pointer', color: 'var(--color-accent)', fontSize: 13 }}>
-                        引用を開く
-                      </summary>
-                      <CitationPanel indicator={s.meta} csvUrl={csvUrl} catalogUrl={catalogUrl} />
-                    </details>
-                  </td>
-                </tr>
+                <Fragment key={s.id}>
+                  <tr style={{ verticalAlign: 'middle' }}>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>{s.meta.name}</td>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 14, color: 'var(--color-muted)' }}>{latest?.date ?? '—'}</td>
+                    {/* 数値カラム: Tier 1 規約 (fontSize 22 + tabular-nums + bold) */}
+                    <td
+                      className="tabular-nums"
+                      style={{
+                        padding: 12,
+                        textAlign: 'right',
+                        border: '1px solid var(--color-border)',
+                        fontSize: 22,
+                        fontWeight: 700,
+                        fontVariantNumeric: 'tabular-nums',
+                        color: 'var(--color-navy, #1e293b)',
+                      }}
+                    >
+                      {latest ? latest.value.toFixed(2) : '—'}
+                    </td>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 13, color: 'var(--color-muted)' }}>{unit}</td>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>
+                      <button
+                        type="button"
+                        onClick={() => setExpandedId(isExpanded ? null : s.id)}
+                        aria-expanded={isExpanded}
+                        aria-controls={`citation-${s.id}`}
+                        style={{
+                          background: 'none',
+                          border: '1px solid var(--color-border)',
+                          color: 'var(--color-accent, #0066cc)',
+                          fontSize: 13,
+                          padding: '4px 10px',
+                          borderRadius: 4,
+                          cursor: 'pointer',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        {isExpanded ? '▼ 閉じる' : '▶ 引用を開く'}
+                      </button>
+                    </td>
+                  </tr>
+                  {isExpanded && (
+                    <tr>
+                      {/* B 案: 行下 full-width 展開 (colSpan=5) */}
+                      <td colSpan={5} id={`citation-${s.id}`} style={{ padding: 0, border: 'none' }}>
+                        <CitationPanel indicator={s.meta} csvUrl={csvUrl} catalogUrl={catalogUrl} />
+                      </td>
+                    </tr>
+                  )}
+                </Fragment>
               );
             })}
           </tbody>
