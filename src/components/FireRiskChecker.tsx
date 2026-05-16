@@ -201,7 +201,8 @@ export default function FireRiskChecker() {
           background: '#fff4f4',
           border: '2px solid #cc0066',
           borderRadius: 6,
-          fontSize: 13,
+          fontSize: 15,
+          lineHeight: 1.7,
         }}
       >
         ⚠️ <strong>本診断は啓発・自己評価用です。</strong>法的判断・専門助言の代替にはなりません。最終的な火災対策の妥当性は{' '}

@@ -35,7 +35,10 @@ import {
   SCENARIO_DESCRIPTIONS,
   SCENARIO_COLORS,
   getScenarioInput,
+  PRESETS,
+  applyPreset,
   type ScenarioKey,
+  type PresetKey,
 } from '@/lib/irr-defaults';
 
 const SCENARIO_KEYS: ScenarioKey[] = ['optimistic', 'standard', 'pessimistic'];
@@ -451,6 +454,13 @@ export default function IRRSimulator() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [activeEditing, setActiveEditing] = useState<ScenarioKey>('standard');
   const [hydrated, setHydrated] = useState(false);
+  // EDA #1 (依頼36): C 案プリセット (高圧 / 大規模)、既存デフォルト = 大規模
+  const [activePreset, setActivePreset] = useState<PresetKey>('large-scale');
+
+  const handlePresetChange = (key: PresetKey) => {
+    setActivePreset(key);
+    setInputs(applyPreset(key));
+  };
 
   // mount 時に URL params から復元 (落とし穴 #92: useSearchParams 不使用)
   useEffect(() => {
@@ -552,6 +562,62 @@ export default function IRRSimulator() {
         ⚠️ <strong>本シミュレーターは投資判断の参考情報です</strong>。すべての市場 (容量市場・需給調整市場・スポット市場アービトラージ) を併用可能な
         理論上限を示します。現実は市場間の時間配分で trade-off が発生するため、実事業 IRR は本結果より下振れする可能性があります。
         計算ロジック・前提値の詳細は <Link href="/explainer/grid-scale-bess" style={{color:'var(--color-accent, #0066cc)'}}>解説記事</Link> を参照ください。
+      </div>
+
+      {/* EDA #1 (依頼36): C 案プリセット (高圧 / 大規模)、業界事業者向けスケール切替 */}
+      <div
+        style={{
+          marginBottom: 16,
+          padding: 16,
+          background: '#f8fafc',
+          border: '1px solid var(--color-border)',
+          borderRadius: 8,
+        }}
+      >
+        <p style={{ fontSize: 16, fontWeight: 600, marginBottom: 10, color: '#334155' }}>
+          🎯 プリセット選択 (業界事業者向けスケール)
+        </p>
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          {(Object.keys(PRESETS) as PresetKey[]).map((key) => {
+            const p = PRESETS[key];
+            const isActive = activePreset === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                onClick={() => handlePresetChange(key)}
+                aria-pressed={isActive}
+                style={{
+                  padding: '12px 18px',
+                  textAlign: 'left',
+                  background: isActive ? 'var(--color-accent, #0066cc)' : 'white',
+                  color: isActive ? 'white' : '#475569',
+                  border: isActive ? '2px solid var(--color-accent, #0066cc)' : '2px solid #cbd5e1',
+                  borderRadius: 8,
+                  cursor: 'pointer',
+                  transition: 'all 0.15s',
+                  minWidth: 240,
+                  flex: '1 1 240px',
+                }}
+              >
+                <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>
+                  {p.label}
+                </div>
+                <div style={{
+                  fontSize: 13,
+                  color: isActive ? 'rgba(255,255,255,0.92)' : '#64748b',
+                  lineHeight: 1.5,
+                }}>
+                  {p.description}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+        <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 10, marginBottom: 0 }}>
+          ※ プリセット切替で容量・出力・CAPEX (3 シナリオ)・補助金率がスケール連動で再 calibrate されます。
+          他のフィールドは個別に編集可能。
+        </p>
       </div>
 
       {/* シナリオ切替 (どのシナリオの値を編集するか) */}

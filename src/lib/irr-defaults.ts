@@ -103,3 +103,96 @@ export const SCENARIO_COLORS: Record<ScenarioKey, string> = {
   standard: '#006666',
   pessimistic: '#cc6600',
 };
+
+/**
+ * プリセット (C 案、依頼36)
+ * - 高圧: 2 MW / 8 MWh (高圧需要家、補助金活用前提)
+ * - 大規模: 12.5 MW / 50 MWh (系統用 BESS 標準、既存デフォルトと一致)
+ *
+ * CAPEX/補助金は スケール連動で calibrate (約 75 万円/kWh ベース)
+ */
+export type PresetKey = 'high-voltage' | 'large-scale';
+
+interface PresetCapex {
+  optimistic: number; // 億円
+  standard: number;
+  pessimistic: number;
+}
+
+interface PresetSubsidy {
+  optimistic: number; // %
+  standard: number;
+  pessimistic: number;
+}
+
+export interface PresetSpec {
+  key: PresetKey;
+  label: string;
+  description: string;
+  capacity_mwh: number;
+  output_mw: number;
+  capex: PresetCapex; // シナリオ別 CAPEX
+  subsidy: PresetSubsidy; // シナリオ別 補助金率
+}
+
+export const PRESETS: Record<PresetKey, PresetSpec> = {
+  'high-voltage': {
+    key: 'high-voltage',
+    label: '高圧 (2 MW / 8 MWh)',
+    description: '高圧需要家標準、4 時間放電。SII 補助金 + 自治体併用前提',
+    capacity_mwh: 8,
+    output_mw: 2,
+    capex: {
+      // 8 MWh × ~50 万円/kWh = ~4 億円ベース (中規模スケール価格)
+      optimistic: 3.5,
+      standard: 4.2,
+      pessimistic: 5.5,
+    },
+    subsidy: {
+      // 高圧クラスは SII + 自治体併用で補助金率高め
+      optimistic: 50,
+      standard: 40,
+      pessimistic: 20,
+    },
+  },
+  'large-scale': {
+    key: 'large-scale',
+    label: '大規模 (12.5 MW / 50 MWh)',
+    description: '系統用 BESS 標準、容量市場・需給調整市場応札規格 (既存デフォルト)',
+    capacity_mwh: 50,
+    output_mw: 12.5,
+    capex: {
+      // 既存 SCENARIO_DEFAULTS の値そのまま
+      optimistic: 22,
+      standard: 26,
+      pessimistic: 32,
+    },
+    subsidy: {
+      // 既存 SCENARIO_DEFAULTS の値そのまま
+      optimistic: 40,
+      standard: 33,
+      pessimistic: 0,
+    },
+  },
+};
+
+/**
+ * プリセット適用後の IRRInput 3 シナリオを返す
+ * (他フィールドは getScenarioInput の既定値を流用)
+ */
+export function applyPreset(presetKey: PresetKey): Record<ScenarioKey, IRRInput> {
+  const p = PRESETS[presetKey];
+  const scenarios: ScenarioKey[] = ['optimistic', 'standard', 'pessimistic'];
+  const result = {} as Record<ScenarioKey, IRRInput>;
+  for (const s of scenarios) {
+    const base = getScenarioInput(s);
+    result[s] = {
+      ...base,
+      capacity_mwh: p.capacity_mwh,
+      output_mw: p.output_mw,
+      capex_oku: p.capex[s],
+      subsidy_rate: p.subsidy[s],
+    };
+  }
+  return result;
+}

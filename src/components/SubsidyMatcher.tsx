@@ -261,7 +261,7 @@ export default function SubsidyMatcher() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14 }}>
               {/* 都道府県 */}
               <div>
-                <label htmlFor="pref" style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}>
+                <label htmlFor="pref" style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}>
                   対象都道府県
                 </label>
                 <select
@@ -287,7 +287,7 @@ export default function SubsidyMatcher() {
               </div>
               {/* 用途 */}
               <div>
-                <label htmlFor="use_case" style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}>
+                <label htmlFor="use_case" style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}>
                   用途
                 </label>
                 <select
@@ -310,7 +310,7 @@ export default function SubsidyMatcher() {
               </div>
               {/* 事業者種別 */}
               <div>
-                <label htmlFor="entity_type" style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}>
+                <label htmlFor="entity_type" style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}>
                   事業者種別
                 </label>
                 <select
@@ -333,7 +333,7 @@ export default function SubsidyMatcher() {
               </div>
               {/* 設置予定 */}
               <div>
-                <label htmlFor="install_target_date" style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}>
+                <label htmlFor="install_target_date" style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}>
                   設置予定 (日付)
                 </label>
                 <input
@@ -362,7 +362,7 @@ export default function SubsidyMatcher() {
             </h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14 }}>
               <div>
-                <label htmlFor="capacity_kwh" style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}>
+                <label htmlFor="capacity_kwh" style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}>
                   容量
                   <span style={{ color: 'var(--color-muted)', marginLeft: 4, fontWeight: 400 }}>(kWh)</span>
                 </label>
@@ -391,7 +391,7 @@ export default function SubsidyMatcher() {
                 </p>
               </div>
               <div>
-                <label htmlFor="output_kw" style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}>
+                <label htmlFor="output_kw" style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}>
                   出力
                   <span style={{ color: 'var(--color-muted)', marginLeft: 4, fontWeight: 400 }}>(kW)</span>
                 </label>

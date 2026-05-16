@@ -270,7 +270,7 @@ export default function GridConnectionChecker() {
           <div>
             <label
               htmlFor="prefecture"
-              style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}
+              style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}
             >
               対象都道府県 / エリア
             </label>
@@ -301,7 +301,7 @@ export default function GridConnectionChecker() {
           <div>
             <label
               htmlFor="latitude"
-              style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}
+              style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}
             >
               緯度 (任意)
             </label>
@@ -333,7 +333,7 @@ export default function GridConnectionChecker() {
           <div>
             <label
               htmlFor="longitude"
-              style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}
+              style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}
             >
               経度 (任意)
             </label>
@@ -365,7 +365,7 @@ export default function GridConnectionChecker() {
           <div>
             <label
               htmlFor="output_mw"
-              style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}
+              style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}
             >
               出力 (MW)
             </label>
@@ -394,7 +394,7 @@ export default function GridConnectionChecker() {
           <div>
             <label
               htmlFor="capacity_mwh"
-              style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}
+              style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}
             >
               容量 (MWh)
             </label>

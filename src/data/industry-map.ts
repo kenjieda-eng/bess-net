@@ -34,8 +34,12 @@ export interface Player {
   listed: boolean;
   /** 業界活動度 (1-5、5 が最も活発) */
   activity: number;
-  /** operators DB slug (詳細ページへの link、ない場合 null) */
+  /** operators DB slug (/operators/ への link、ない場合 null) */
   operator_slug?: string;
+  /** subsidies DB slug (/subsidies/ への link、金融機関の補助金プログラム等) */
+  subsidy_slug?: string;
+  /** 外部 URL (公式サイト等、operator/subsidy ページが無い場合のフォールバック) */
+  external_url?: string;
   /** メモ (主要事業や差別化要素) */
   note?: string;
 }
@@ -146,11 +150,12 @@ export const PLAYERS: Player[] = [
   { id: 'occto', name: 'OCCTO', category: 'utility', origin: 'JP', listed: false, activity: 5, note: '広域機関、容量市場 運営' },
 
   // ── 金融機関 / PF ──
-  { id: 'dbj', name: '日本政策投資銀行 (DBJ)', category: 'finance', origin: 'JP', listed: false, activity: 5, operator_slug: 'dbj-environmental-finance', note: '大型 BESS PF レンダー' },
+  // ※ DBJ / 地方銀行は補助金/PF プログラム単位で linkable、operator slug ではなく subsidy_slug を使う (EDA 5/16 19:00 指摘対応)
+  { id: 'dbj', name: '日本政策投資銀行 (DBJ)', category: 'finance', origin: 'JP', listed: false, activity: 5, subsidy_slug: 'dbj-environmental-finance', external_url: 'https://www.dbj.jp/', note: '大型 BESS PF レンダー' },
   { id: 'mufg', name: '三菱 UFJ 銀行', category: 'finance', origin: 'JP', listed: true, activity: 4 },
   { id: 'smbc', name: '三井住友銀行', category: 'finance', origin: 'JP', listed: true, activity: 4 },
   { id: 'mizuho', name: 'みずほ銀行', category: 'finance', origin: 'JP', listed: true, activity: 4 },
-  { id: 'regional-banks', name: '地方銀行グリーンローン', category: 'finance', origin: 'JP', listed: false, activity: 3, operator_slug: 'regional-bank-green-loans', note: '中規模案件向け' },
+  { id: 'regional-banks', name: '地方銀行グリーンローン', category: 'finance', origin: 'JP', listed: false, activity: 3, subsidy_slug: 'regional-bank-green-loans', note: '中規模案件向け' },
 
   // ── 土地・不動産 ──
   { id: 'mitsubishi-estate', name: '三菱地所', category: 'land', origin: 'JP', listed: true, activity: 3, note: 'グリーン不動産 戦略' },

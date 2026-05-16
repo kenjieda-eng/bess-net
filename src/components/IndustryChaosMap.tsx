@@ -370,6 +370,7 @@ export default function IndustryChaosMap() {
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                         <strong style={{ fontSize: 13 }}>
+                          {/* EDA #4 (依頼36): リンク優先順 operator > subsidy > external_url > プレーン */}
                           {p.operator_slug ? (
                             <Link
                               href={`/operators/${p.operator_slug}`}
@@ -377,6 +378,22 @@ export default function IndustryChaosMap() {
                             >
                               {p.name}
                             </Link>
+                          ) : p.subsidy_slug ? (
+                            <Link
+                              href={`/subsidies/${p.subsidy_slug}`}
+                              style={{ color: 'var(--color-accent, #0066cc)' }}
+                            >
+                              {p.name}
+                            </Link>
+                          ) : p.external_url ? (
+                            <a
+                              href={p.external_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: 'var(--color-accent, #0066cc)' }}
+                            >
+                              {p.name} ↗
+                            </a>
                           ) : (
                             p.name
                           )}
