@@ -62,13 +62,15 @@ export default function GlobalHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 1 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 海外5市場ハブ
           </p>
           <div className="section-label">業界唯一 · 海外市場ハブ</div>
           <h1 className="section-title">海外5市場ハブ (蓄電池市場比較)</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          {/* Tier 1 UI 統一 #1: text-base lg:text-lg */}
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             世界の蓄電池市場を<strong>5地域 (米国/EU/中国/インド/豪州)</strong> で一覧比較。
             市場規模・主要政策・主要プレイヤー・価格動向・<strong>日本との比較</strong>を1ページに集約。
             業界唯一の海外市場ハブ、無料公開・登録不要。
@@ -82,14 +84,15 @@ export default function GlobalHubPage() {
           <section style={{ marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>市場規模 比較マトリクス</h2>
             <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              {/* Tier 1 UI 統一: fontSize 13 → 16、py-2 → py-3、数値は tabular-nums */}
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 16 }}>
                 <thead>
                   <tr style={{ background: 'var(--color-bg)' }}>
-                    <th style={{ padding: 8, textAlign: 'left', border: '1px solid var(--color-border)' }}>市場</th>
-                    <th style={{ padding: 8, textAlign: 'right', border: '1px solid var(--color-border)' }}>2025累積 (GWh)</th>
-                    <th style={{ padding: 8, textAlign: 'right', border: '1px solid var(--color-border)' }}>2030予測 (GWh)</th>
-                    <th style={{ padding: 8, textAlign: 'right', border: '1px solid var(--color-border)' }}>CAGR</th>
-                    <th style={{ padding: 8, textAlign: 'left', border: '1px solid var(--color-border)' }}>詳細</th>
+                    <th style={{ padding: 12, textAlign: 'left', border: '1px solid var(--color-border)', fontWeight: 600 }}>市場</th>
+                    <th style={{ padding: 12, textAlign: 'right', border: '1px solid var(--color-border)', fontWeight: 600 }}>2025累積 (GWh)</th>
+                    <th style={{ padding: 12, textAlign: 'right', border: '1px solid var(--color-border)', fontWeight: 600 }}>2030予測 (GWh)</th>
+                    <th style={{ padding: 12, textAlign: 'right', border: '1px solid var(--color-border)', fontWeight: 600 }}>CAGR</th>
+                    <th style={{ padding: 12, textAlign: 'left', border: '1px solid var(--color-border)', fontWeight: 600 }}>詳細</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -97,11 +100,11 @@ export default function GlobalHubPage() {
                     const m = GLOBAL_MARKETS[key];
                     return (
                       <tr key={key}>
-                        <td style={{ padding: 8, border: '1px solid var(--color-border)' }}>{m.flag} {m.name}</td>
-                        <td style={{ padding: 8, textAlign: 'right', border: '1px solid var(--color-border)' }}>{m.marketSizeGWh2025}</td>
-                        <td style={{ padding: 8, textAlign: 'right', border: '1px solid var(--color-border)' }}>{m.marketSizeGWh2030}</td>
-                        <td style={{ padding: 8, textAlign: 'right', border: '1px solid var(--color-border)' }}>{m.cagr}</td>
-                        <td style={{ padding: 8, border: '1px solid var(--color-border)' }}>
+                        <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>{m.flag} {m.name}</td>
+                        <td className="tabular-nums" style={{ padding: 12, textAlign: 'right', border: '1px solid var(--color-border)', fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{m.marketSizeGWh2025}</td>
+                        <td className="tabular-nums" style={{ padding: 12, textAlign: 'right', border: '1px solid var(--color-border)', fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{m.marketSizeGWh2030}</td>
+                        <td className="tabular-nums" style={{ padding: 12, textAlign: 'right', border: '1px solid var(--color-border)', fontVariantNumeric: 'tabular-nums' }}>{m.cagr}</td>
+                        <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>
                           <Link href={`/global/${key}`} style={{ color: 'var(--color-accent)' }}>詳細を見る →</Link>
                         </td>
                       </tr>

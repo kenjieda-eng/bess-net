@@ -1,21 +1,24 @@
 /**
- * JEPX 実データ表示 (Server Component)
+ * JEPX 実データ表示 (Client Component)
  * EIC Data (data.eic-jp.org) 経由で日次平均を 9 エリア + システムプライス表示
  *
  * 設計:
- *   - Server Component、build 時 import で読み込み
- *   - 鉄則 #2 完全準拠: SSR 外部 fetch 0
+ *   - 'use client' (引用 panel の展開/折りたたみ state を React で管理)
+ *   - 鉄則 #2 完全準拠: build 時 import で読み込み済み、ランタイム外部 fetch 0
+ *   - Tier 1 UI 改善 + 引用ダイアログ拡張 (CitationPanel)
  */
 
+'use client';
+
+import { Fragment, useState } from 'react';
 import type { SeriesData } from '@/types/eic';
-import { formatCitation } from '@/lib/cite-helpers';
+import CitationPanel from './CitationPanel';
 
 interface Props {
   series: SeriesData[];
 }
 
-// SVG sparkline (直近 30 日 推移、Tier 1 UI 改善で 60×20 → 120×40 に拡大)
-// 業界標準サイズ、視認性向上 + min/max 補助線追加
+// SVG sparkline (直近 30 日 推移、Tier 1 UI 改善で 120×40 + min/max 補助線)
 function Sparkline({ points }: { points: { date: string; value: number | null }[] }) {
   const recent = points.slice(-30);
   if (recent.length === 0) return null;
@@ -41,7 +44,6 @@ function Sparkline({ points }: { points: { date: string; value: number | null }[
       role="img"
       aria-label={`直近 ${recent.length} 日価格推移 (¥${min.toFixed(2)}〜¥${max.toFixed(2)})`}
     >
-      {/* 最高値・最低値の薄い補助線 */}
       <line x1={0} y1={H} x2={W} y2={H} stroke="#e5e7eb" strokeWidth={0.5} />
       <line x1={0} y1={0} x2={W} y2={0} stroke="#e5e7eb" strokeWidth={0.5} />
       <path d={d} fill="none" stroke="#0066cc" strokeWidth={1.5} />
@@ -59,14 +61,16 @@ function latestValid(points: { date: string; value: number | null }[]): { date: 
 }
 
 export default function JepxRealData({ series }: Props) {
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
   if (series.length === 0) {
     return (
-      <p style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+      <p style={{ fontSize: 14, color: 'var(--color-muted)' }}>
         EIC Data のキャッシュが見つかりませんでした (build 時の precompute エラー)。次回 build で復旧します。
       </p>
     );
   }
-  // 表示順: システム → 9 エリア (北海道〜九州)
+
   const order = [
     'jepx-spot-system',
     'jepx-spot-hokkaido',
@@ -86,7 +90,6 @@ export default function JepxRealData({ series }: Props) {
   const totalPoints = sorted.reduce((acc, s) => acc + s.points.length, 0);
 
   return (
-    // Tier 1 UI 改善: 全体本文サイズ拡大 (responsive: text-base lg:text-lg)
     <section className="text-base lg:text-lg" style={{ marginBottom: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', marginBottom: 8 }}>
         <h2 style={{ fontSize: 20, fontWeight: 700, margin: 0 }}>📈 JEPX スポット価格 日次 (実データ、10 系列)</h2>
@@ -99,7 +102,6 @@ export default function JepxRealData({ series }: Props) {
       </p>
 
       <div style={{ overflowX: 'auto' }}>
-        {/* Tier 1 UI 改善: fontSize 13 → 16 (text-base 相当)、row padding 8 → 12 (py-3 相当) */}
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 16 }}>
           <thead>
             <tr style={{ background: 'var(--color-bg)' }}>
@@ -107,42 +109,68 @@ export default function JepxRealData({ series }: Props) {
               <th style={{ padding: 12, textAlign: 'left', border: '1px solid var(--color-border)', fontWeight: 600 }}>最新日</th>
               <th style={{ padding: 12, textAlign: 'right', border: '1px solid var(--color-border)', fontWeight: 600 }}>価格 (¥/kWh)</th>
               <th style={{ padding: 12, textAlign: 'center', border: '1px solid var(--color-border)', fontWeight: 600 }}>直近 30 日</th>
-              <th style={{ padding: 12, textAlign: 'left', border: '1px solid var(--color-border)', fontWeight: 600 }}>引用 (APA)</th>
+              <th style={{ padding: 12, textAlign: 'left', border: '1px solid var(--color-border)', fontWeight: 600 }}>引用</th>
             </tr>
           </thead>
           <tbody>
             {sorted.map((s) => {
               const latest = latestValid(s.points);
-              const apa = formatCitation(s.meta, 'apa');
+              const isExpanded = expandedId === s.id;
+              const csvUrl = `https://raw.githubusercontent.com/kenjieda-eng/eic-data-pipeline/main/data/processed/jepx/${s.id}.csv`;
+              const catalogUrl = `https://data.eic-jp.org/catalog/${s.id}`;
               return (
-                <tr key={s.id}>
-                  <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>{s.meta.name}</td>
-                  <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 14, color: 'var(--color-muted)' }}>{latest?.date ?? '—'}</td>
-                  {/* Tier 1 UI 改善 #3: 価格カラム強調 (text-2xl + font-bold + tabular-nums) */}
-                  <td
-                    className="tabular-nums"
-                    style={{
-                      padding: 12,
-                      textAlign: 'right',
-                      border: '1px solid var(--color-border)',
-                      fontSize: 24,
-                      fontWeight: 700,
-                      fontVariantNumeric: 'tabular-nums',
-                      color: 'var(--color-navy, #1e293b)',
-                    }}
-                  >
-                    {latest ? latest.value.toFixed(2) : '—'}
-                  </td>
-                  <td style={{ padding: 8, textAlign: 'center', border: '1px solid var(--color-border)' }}>
-                    <Sparkline points={s.points} />
-                  </td>
-                  <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 12 }}>
-                    <details>
-                      <summary style={{ cursor: 'pointer', color: 'var(--color-accent)' }}>引用を開く</summary>
-                      <pre style={{ marginTop: 4, padding: 6, background: 'var(--color-bg)', fontSize: 11, whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>{apa}</pre>
-                    </details>
-                  </td>
-                </tr>
+                <Fragment key={s.id}>
+                  <tr>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>{s.meta.name}</td>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 14, color: 'var(--color-muted)' }}>{latest?.date ?? '—'}</td>
+                    {/* Tier 1 UI 改善 #3: 価格カラム (fontSize 24 + font-bold + tabular-nums) */}
+                    <td
+                      className="tabular-nums"
+                      style={{
+                        padding: 12,
+                        textAlign: 'right',
+                        border: '1px solid var(--color-border)',
+                        fontSize: 24,
+                        fontWeight: 700,
+                        fontVariantNumeric: 'tabular-nums',
+                        color: 'var(--color-navy, #1e293b)',
+                      }}
+                    >
+                      {latest ? latest.value.toFixed(2) : '—'}
+                    </td>
+                    <td style={{ padding: 8, textAlign: 'center', border: '1px solid var(--color-border)' }}>
+                      <Sparkline points={s.points} />
+                    </td>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>
+                      <button
+                        type="button"
+                        onClick={() => setExpandedId(isExpanded ? null : s.id)}
+                        aria-expanded={isExpanded}
+                        aria-controls={`citation-${s.id}`}
+                        style={{
+                          background: 'none',
+                          border: '1px solid var(--color-border)',
+                          color: 'var(--color-accent, #0066cc)',
+                          fontSize: 13,
+                          padding: '4px 10px',
+                          borderRadius: 4,
+                          cursor: 'pointer',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        {isExpanded ? '▼ 閉じる' : '▶ 引用を開く'}
+                      </button>
+                    </td>
+                  </tr>
+                  {isExpanded && (
+                    <tr>
+                      {/* B 案: 行下 full-width 展開 (colSpan=5) */}
+                      <td colSpan={5} id={`citation-${s.id}`} style={{ padding: 0, border: 'none' }}>
+                        <CitationPanel indicator={s.meta} csvUrl={csvUrl} catalogUrl={catalogUrl} />
+                      </td>
+                    </tr>
+                  )}
+                </Fragment>
               );
             })}
           </tbody>

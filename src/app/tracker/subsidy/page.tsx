@@ -55,17 +55,19 @@ export default async function SubsidyTrackerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 1 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tracker">業界トラッカー</Link> / 補助金トラッカー
           </p>
           <div className="section-label">業界唯一 · 補助金 更新タイムライン</div>
           <h1 className="section-title">補助金トラッカー</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          {/* Tier 1 UI 統一 #1: text-base lg:text-lg */}
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             蓄電池関連の補助金・公募情報の最新更新を<strong>タイムライン</strong>表示。
-            全 {subsidies.length} 件、更新日時降順。
+            全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{subsidies.length}</span> 件、更新日時降順。
           </p>
-          <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 24 }}>
+          <p className="page-meta" style={{ fontSize: 14, color: 'var(--color-muted)', marginBottom: 24 }}>
             データ更新は 1 時間ごと (ISR)。全件一覧は <Link href="/subsidies">補助金一覧</Link> から。
           </p>
 

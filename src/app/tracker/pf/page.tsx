@@ -61,17 +61,19 @@ export default async function ProjectTrackerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 1 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tracker">業界トラッカー</Link> / プロジェクトトラッカー
           </p>
           <div className="section-label">業界唯一 · 案件 更新タイムライン</div>
           <h1 className="section-title">プロジェクトトラッカー</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          {/* Tier 1 UI 統一 #1: text-base lg:text-lg */}
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             国内蓄電所プロジェクトDBの追加・更新を<strong>タイムライン</strong>表示。
-            全 {projects.length} 件、更新日時降順。
+            全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{projects.length}</span> 件、更新日時降順。
           </p>
-          <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 24 }}>
+          <p className="page-meta" style={{ fontSize: 14, color: 'var(--color-muted)', marginBottom: 24 }}>
             データ更新は 1 時間ごと (ISR)。全件は <Link href="/projects">プロジェクトDB</Link>、IRR シムは <Link href="/tools/irr-simulator">IRRシミュレーター</Link> から。
           </p>
 

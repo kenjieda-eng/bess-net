@@ -83,13 +83,15 @@ export default function IndustryHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 1 UI 統一: max-w 1320 (data.eic-jp.org Phase B-C 規約) */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 業界分析
           </p>
           <div className="section-label">業界唯一 · 業界分析4機能</div>
           <h1 className="section-title">業界分析ハブ</h1>
-          <p className="section-desc" style={{ marginBottom: 24 }}>
+          {/* Tier 1 UI 統一 #1: 本文 text-base lg:text-lg (16-18px) */}
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>
             蓄電所業界の<strong>構造・市場・海外・時系列</strong>を 4 機能で可視化。
             業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカーへの入口です。
             すべて無料公開・登録不要。

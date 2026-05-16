@@ -105,13 +105,15 @@ export default async function ProjectsListPage() {
     <>
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 1 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / プロジェクトDB
           </p>
           <div className="section-label">Projects Database</div>
           <h1 className="section-title">日本の蓄電所プロジェクトDB</h1>
-          <p className="section-desc" style={{ marginBottom: 24 }}>
+          {/* Tier 1 UI 統一 #1: text-base lg:text-lg */}
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>
             国内の系統用蓄電池プロジェクトを公開情報ベースで一元管理しています。
           </p>
 
@@ -189,8 +191,9 @@ export default async function ProjectsListPage() {
                             {item.prefecture}
                             {item.city && ` ${item.city}`}
                           </td>
-                          <td className={cellClass(item.outputMw)} style={item.outputMw === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic' } : undefined}>{fmtMW(item.outputMw)}</td>
-                          <td className={cellClass(item.capacityMwh)} style={item.capacityMwh === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic' } : undefined}>{fmtMWh(item.capacityMwh)}</td>
+                          {/* Tier 1 UI 統一 #3: 数値カラムは tabular-nums で桁揃え */}
+                          <td className={`tabular-nums ${cellClass(item.outputMw)}`} style={item.outputMw === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic', fontVariantNumeric: 'tabular-nums' } : { fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{fmtMW(item.outputMw)}</td>
+                          <td className={`tabular-nums ${cellClass(item.capacityMwh)}`} style={item.capacityMwh === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic', fontVariantNumeric: 'tabular-nums' } : { fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{fmtMWh(item.capacityMwh)}</td>
                           <td>{item.operator || '—'}</td>
                           <td>{item.cod || '—'}</td>
                         </tr>
