@@ -90,13 +90,14 @@ export default function IncidentsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: 分類 C 記事系 max-w 896 (読み物用、リン推奨規約) */}
+        <div className="section-inner" style={{ maxWidth: 896 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 火災・トラブル事例DB
           </p>
           <div className="section-label" style={{ color: '#c70', fontWeight: 700 }}>★ Sprint 5 シード版 · 順次追加</div>
           <h1 className="section-title">火災・トラブル事例DB</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             蓄電池 (BESS) の火災・トラブル事例を<strong>公開情報ベース</strong>で体系化。
             業界の<strong>安全文化向上</strong>に資することを目的とした、業界唯一の事例DB。
             現在 <strong>{INCIDENTS.length}件</strong>のシードデータを掲載。フィルタ UI と追加調査は順次。

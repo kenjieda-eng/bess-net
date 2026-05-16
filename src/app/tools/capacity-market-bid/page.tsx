@@ -97,13 +97,14 @@ export default function CapacityMarketBidPage() {
       />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 容量市場応札試算
           </p>
           <div className="section-label">業界唯一 · モック版 · 5/29 精度UP予定</div>
           <h1 className="section-title">容量市場応札試算</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             容量市場メインオークションの応札価格を、<strong>9 エリア × 3 区分 (新設/既設/経過措置)</strong>{' '}
             の過去 {HISTORY.length} 件実績から推定。<strong>推奨応札レンジ (下限/中央/上限)</strong>{' '}
             と <strong>落札確率 + 想定収入</strong> を即時試算。業界唯一の無料・登録不要ツール。

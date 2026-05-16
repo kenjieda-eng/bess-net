@@ -97,13 +97,14 @@ export default function IrrSimulatorPage() {
       />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 蓄電池IRRシミュレーター
           </p>
           <div className="section-label">業界唯一 · 無料・登録不要</div>
           <h1 className="section-title">蓄電池IRRシミュレーター</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             系統用蓄電池プロジェクトの <strong>IRR・NPV・ペイバック期間</strong> を業界標準ロジックで無料試算。
             <strong>容量市場・需給調整市場・スポットアービトラージ</strong> の 3 市場併用前提で、
             <strong>楽観・標準・悲観</strong> の 3 シナリオを並列計算します。

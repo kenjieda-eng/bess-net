@@ -43,13 +43,14 @@ export default function CountryMarketPage({ countryKey }: { countryKey: CountryK
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: max-w 1320 (5 国共通) */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/global">海外5市場ハブ</Link> / {m.name}
           </p>
           <div className="section-label">海外市場 · {m.nameEn}</div>
           <h1 className="section-title">{m.flag} {m.name} 蓄電池市場概況</h1>
-          <p className="section-desc" style={{ marginBottom: 24 }}>{m.overview}</p>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>{m.overview}</p>
 
           {/* 主要指標カード */}
           <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12, marginBottom: 24 }}>

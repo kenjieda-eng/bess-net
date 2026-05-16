@@ -101,13 +101,14 @@ export default async function Report2026Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: 分類 C レポート (記事 + データテーブル混在)、max-w 1024 で記事性とテーブル可読性のバランス */}
+        <div className="section-inner" style={{ maxWidth: 1024 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/reports">レポート</Link> / 業界レポート2026
           </p>
           <div className="section-label" style={{ color: '#c70', fontWeight: 700 }}>★ プレビュー版 · 2026年7月本編公開予定</div>
           <h1 className="section-title">業界レポート2026 (蓄電所事業 年次レポート)</h1>
-          <p className="section-desc" style={{ marginBottom: 24 }}>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>
             業界唯一機能 17機能で蓄積したデータを編集統合した、蓄電所事業の<strong>年次レポート</strong>。
             市場規模 × 政策 × 主要プレイヤー × 系統 × 火災・トラブル × 海外比較 を1冊に集約します。
             <br />

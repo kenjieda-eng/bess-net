@@ -97,13 +97,14 @@ export default function GridConnectionCheckPage() {
       />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 系統連系診断
           </p>
           <div className="section-label">業界唯一 · 無料・登録不要</div>
           <h1 className="section-title">系統連系診断</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             <strong>{INDEX.total.toLocaleString()} 変電所</strong> の公表データから、希望地点・出力に最適な連系候補を{' '}
             <strong>Top 5</strong> 即時抽出。空き容量・N-1 電制適用可否・距離評価でスコアリング。
             9 送配電を横断検索、CSV エクスポート / URL 共有対応。

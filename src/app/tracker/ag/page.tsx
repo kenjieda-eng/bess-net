@@ -55,15 +55,16 @@ export default async function OperatorTrackerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tracker">業界トラッカー</Link> / 事業者トラッカー
           </p>
           <div className="section-label">業界唯一 · 事業者 更新タイムライン</div>
           <h1 className="section-title">事業者トラッカー</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             事業者ナビ (蓄電所関連事業者) の追加・更新を<strong>タイムライン</strong>表示。
-            全 {operators.length} 件、更新日時降順。
+            全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{operators.length}</span> 件、更新日時降順。
           </p>
           <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 24 }}>
             データ更新は 1 時間ごと (ISR)。全件は <Link href="/operators">事業者ナビ</Link>、業界構造は <Link href="/map/industry-chaos">業界カオスマップ</Link> から。

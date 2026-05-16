@@ -129,13 +129,14 @@ export default function FireRiskCheckPage() {
       />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 火災リスク自己診断
           </p>
           <div className="section-label">業界唯一 · 教育型 · 無料</div>
           <h1 className="section-title">蓄電池火災リスク自己診断</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             蓄電池の火災リスクを <strong>UL9540A / NFPA 855 / 消防法</strong> の主要観点で{' '}
             <strong>{CHECKLIST.length} 問</strong> セルフチェック。
             <strong>セル選定・PCS・建屋・運用・緊急対応</strong> の 5 カテゴリで総合スコア + リスクレベル + 優先改善 Top 5 を即時算出。

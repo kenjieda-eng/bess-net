@@ -90,13 +90,14 @@ export default function ToolsHubPage() {
       />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: max-w 1320 (L-JEPX-UI-002) */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / ツール
           </p>
           <div className="section-label">Tools — 実務ツール</div>
           <h1 className="section-title">ツール一覧</h1>
-          <p className="section-desc" style={{ marginBottom: 32 }}>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 32, lineHeight: 1.7 }}>
             系統用蓄電池プロジェクトの事業性検討・補助金マッチング等、業界事業者向けの
             <strong>実務ツール</strong> を無料・登録不要で提供します。すべてブラウザ完結、データ送信なし。
           </p>

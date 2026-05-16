@@ -95,13 +95,14 @@ export default function SubsidyMatchPage() {
       />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 2/3 UI 統一: max-w 1320 */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 蓄電池補助金マッチング
           </p>
           <div className="section-label">業界唯一 · 無料・登録不要</div>
           <h1 className="section-title">蓄電池補助金マッチング</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             <strong>所在地・用途・容量・事業者種別</strong> で蓄電池補助金 50 件から条件適合の{' '}
             <strong>Top 10</strong> を即時マッチング。SII・自治体・民間ローンを横断検索、
             スコアリング表示で「なぜ該当するか」も透明化。CSV エクスポート / URL 共有対応。
