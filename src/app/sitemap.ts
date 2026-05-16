@@ -76,6 +76,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/map/industry-chaos`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 4 後半 (依頼AN、業界唯一 JEPX ハブ)
     { url: `${siteConfig.url}/market/jepx`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
+    // EIC Data 統合 (マーケットデータダッシュボード、29 系列)
+    { url: `${siteConfig.url}/dashboard/market`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
     // Sprint 4 後半 (依頼BC、業界唯一 海外5市場ハブ)
     { url: `${siteConfig.url}/global`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${siteConfig.url}/global/us`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },

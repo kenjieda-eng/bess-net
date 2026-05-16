@@ -80,6 +80,7 @@ export const siteConfig = {
     { label: '業界分析ハブ', href: '/industry' },
     { label: '業界カオスマップ', href: '/map/industry-chaos' },
     { label: 'JEPXハブ', href: '/market/jepx' },
+    { label: 'マーケットデータ (29 系列)', href: '/dashboard/market' },
     { label: '海外5市場ハブ', href: '/global' },
     { label: '業界トラッカー', href: '/tracker' },
     // Sprint 5 開始準備
