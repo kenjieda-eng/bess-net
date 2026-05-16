@@ -98,13 +98,15 @@ export default async function JEPXHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <SiteHeader />
       <main className="section">
-        <div className="section-inner">
+        {/* Tier 1 UI 改善 #5: max-w-[1320px] (data.eic-jp.org Phase B-C 統一規約) */}
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / JEPX ハブ
           </p>
           <div className="section-label">業界唯一 · スポット市場ハブ</div>
           <h1 className="section-title">JEPX スポット価格 ハブ</h1>
-          <p className="section-desc" style={{ marginBottom: 16 }}>
+          {/* Tier 1 UI 改善 #1: 本文 text-base lg:text-lg (16-18px) */}
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             JEPX スポット市場を <strong>9 エリア + システムプライス</strong> の日次データ ({series.length > 0 ? `${series.length} 系列、約 ${series[0]?.points.length.toLocaleString()} pt × 系列` : '集計中'}) で可視化。
             データは <strong><a href="https://data.eic-jp.org/catalog?domain=power" target="_blank" rel="noopener noreferrer">EIC Data</a></strong> 経由で取得、引用可能 (APA / BibTeX / Chicago)。
             業界唯一のスポット価格ハブ、無料公開・登録不要。
@@ -113,10 +115,10 @@ export default async function JEPXHubPage() {
           {/* 実データセクション (EIC Data) */}
           <JepxRealData series={series} />
 
-          {/* 既存ダッシュボード (30分単位デモ、アービトラージ計算機) */}
-          <section style={{ marginTop: 32, marginBottom: 16 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>🔬 30 分単位デモ + アービトラージ計算機</h2>
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 0, marginBottom: 16 }}>
+          {/* 既存ダッシュボード (30分単位デモ、アービトラージ計算機) — 既存維持 (改善対象外) */}
+          <section style={{ marginTop: 40, marginBottom: 16 }}>
+            <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8 }}>🔬 30 分単位デモ + アービトラージ計算機</h2>
+            <p style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 0, marginBottom: 16, lineHeight: 1.7 }}>
               ※ 以下は <strong>30 分単位の構造に基づくデモデータ</strong>です (実データは上の表、現在 JEPX の 30 分単位データは EIC Data でも整備中)。
               ヒートマップとアービトラージ計算機の UX 確認用にお使いください。実値は上の表または{' '}
               <a href="https://www.jepx.jp/electricpower/market-data/spot/" target="_blank" rel="noopener noreferrer">JEPX 公式</a>
@@ -136,7 +138,7 @@ export default async function JEPXHubPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.7 }}>
             {EIC_DATA_DISCLAIMER}
           </p>
         </div>
