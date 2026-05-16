@@ -19,14 +19,15 @@ const CATALOG_URL = `${EIC_RAW_BASE}/data/catalog/indicators.json`;
 const GITHUB_PAT = process.env.GITHUB_PAT;
 const OUT_DIR = resolve(process.cwd(), 'src/data/eic');
 
+// L-008 解消後の正解版マッピング (リン回答 2026-05-16、R7-1 v2 準拠)
+// data.eic-jp.org/eic-data-pipeline repo の実 CSV 配置を Glob 確認済
+// meti / us は deriveCsvPath() 内で特殊ケース処理 (下記参照)
 const DIR_MAP: Record<string, string> = {
   jepx: 'jepx',
-  meti: 'meti',
   jma: 'jma',
   fuel: 'fuel',
   fx: 'fx',
   jgb: 'jgb',
-  us: 'us',
   tankan: 'tankan',
 };
 
@@ -88,6 +89,20 @@ async function fetchCsv(url: string): Promise<DataPoint[]> {
 
 function deriveCsvPath(ind: Indicator): string {
   const prefix = ind.id.split('-')[0];
+  // 特殊ケース 1: us- プレフィックスは 2 ディレクトリに分岐
+  if (prefix === 'us') {
+    if (ind.id.startsWith('us-treasury-')) {
+      // us-treasury-2y / 5y / 10y / 30y → finance/
+      return `data/processed/finance/${ind.id}.csv`;
+    }
+    // us-cpi-* / us-nonfarm-* / us-unemployment-* / us-fed-funds-* / us-industrial-* → macro/
+    return `data/processed/macro/${ind.id}.csv`;
+  }
+  // 特殊ケース 2: meti- プレフィックスは enecho-power/
+  if (prefix === 'meti') {
+    return `data/processed/enecho-power/${ind.id}.csv`;
+  }
+  // 通常ケース: prefix がそのままディレクトリ名
   const dir = DIR_MAP[prefix] ?? ind.domain;
   return `data/processed/${dir}/${ind.id}.csv`;
 }
@@ -168,9 +183,9 @@ async function main() {
     `[eic-data] Done: ${totalSucceeded} succeeded, ${totalFailed} failed (failed ids: ${failedIds.join(', ') || 'none'})`,
   );
 
-  // 失敗率閾値: デフォルト 30% (pipeline 側の系列拡充に合わせて環境変数で調整可)
-  // 厳格運用に戻すには EIC_MAX_FAILURE_RATE=0.10 を設定
-  const maxFailureRate = Number.parseFloat(process.env.EIC_MAX_FAILURE_RATE ?? '0.30');
+  // 失敗率閾値: L-008 解消後 (リン回答 2026-05-16) は 10% で厳格運用
+  // pipeline 側で新規系列が一時的に未生成な場合のみ EIC_MAX_FAILURE_RATE=0.30 等で調整可
+  const maxFailureRate = Number.parseFloat(process.env.EIC_MAX_FAILURE_RATE ?? '0.10');
   if (catalog.indicators.length > 0 && totalFailed > catalog.indicators.length * maxFailureRate) {
     console.error(`[eic-data] FATAL: failure rate ${(totalFailed / catalog.indicators.length * 100).toFixed(1)}% > ${(maxFailureRate * 100).toFixed(0)}%, aborting build`);
     process.exit(1);
