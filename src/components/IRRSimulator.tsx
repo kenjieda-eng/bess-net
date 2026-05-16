@@ -104,11 +104,12 @@ function paramsToInput(sp: URLSearchParams, base: IRRInput): IRRInput {
 
 function CashflowChart({
   data,
-  height = 280,
+  height = 480,
 }: {
   data: Record<ScenarioKey, IRRResult>;
   height?: number;
 }) {
+  // EDA 改善 #5: 高さ 280 → 480 + SVG W 700 → 900 で aspect ratio 1.875:1 (FRED スタイル時系列)
   const lifespan = data.standard.cashflow.length - 1;
   // 全シナリオの cumulative の min/max を取得
   const allCumValues = SCENARIO_KEYS.flatMap((k) =>
@@ -118,12 +119,12 @@ function CashflowChart({
   const yMax = Math.ceil(Math.max(...allCumValues, 1) + 1);
   const yRange = yMax - yMin;
 
-  // padding
-  const PAD_L = 60;
-  const PAD_R = 20;
-  const PAD_T = 20;
-  const PAD_B = 40;
-  const W = 700;
+  // padding (Y軸ラベル領域も拡大)
+  const PAD_L = 72;
+  const PAD_R = 24;
+  const PAD_T = 40; // 凡例領域確保
+  const PAD_B = 50;
+  const W = 900;
   const H = height;
   const chartW = W - PAD_L - PAD_R;
   const chartH = H - PAD_T - PAD_B;
@@ -164,10 +165,11 @@ function CashflowChart({
             />
             <text
               x={PAD_L - 8}
-              y={yScale(t) + 4}
-              fontSize={11}
+              y={yScale(t) + 5}
+              fontSize={14}
               textAnchor="end"
               fill="#666"
+              style={{ fontVariantNumeric: 'tabular-nums' }}
             >
               {t.toFixed(0)} 億
             </text>
@@ -187,9 +189,10 @@ function CashflowChart({
             <text
               x={xScale(t)}
               y={H - 16}
-              fontSize={11}
+              fontSize={14}
               textAnchor="middle"
               fill="#666"
+              style={{ fontVariantNumeric: 'tabular-nums' }}
             >
               {t}年
             </text>
@@ -223,19 +226,19 @@ function CashflowChart({
             />
           );
         })}
-        {/* 凡例 */}
-        <g transform={`translate(${PAD_L + 10}, ${PAD_T + 10})`}>
+        {/* 凡例: PAD_T 拡大に伴い上部に移動、fontSize 12 → 14 */}
+        <g transform={`translate(${PAD_L + 10}, 8)`}>
           {SCENARIO_KEYS.map((key, i) => (
-            <g key={key} transform={`translate(${i * 80}, 0)`}>
+            <g key={key} transform={`translate(${i * 110}, 0)`}>
               <line
                 x1={0}
-                y1={4}
-                x2={20}
-                y2={4}
+                y1={10}
+                x2={24}
+                y2={10}
                 stroke={SCENARIO_COLORS[key]}
                 strokeWidth={2.5}
               />
-              <text x={24} y={8} fontSize={12} fill="#333">
+              <text x={30} y={14} fontSize={14} fill="#333" fontWeight={500}>
                 {SCENARIO_LABELS[key]}
               </text>
             </g>
@@ -379,10 +382,11 @@ function NumberField({
   id: string;
 }) {
   return (
-    <div style={{ marginBottom: 12 }}>
+    <div style={{ marginBottom: 14 }}>
+      {/* EDA 改善 1, 3: label fontSize 13 → 16、input fontSize 14 → 18、padding 拡大 */}
       <label
         htmlFor={id}
-        style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 4 }}
+        style={{ display: 'block', fontSize: 16, fontWeight: 600, marginBottom: 6, color: '#334155' }}
       >
         {label}
         {unit && (
@@ -404,12 +408,14 @@ function NumberField({
           if (Number.isFinite(v)) onChange(v);
         }}
         aria-describedby={hint ? `${id}-hint` : undefined}
+        className="tabular-nums"
         style={{
           width: '100%',
-          padding: '8px 10px',
-          fontSize: 14,
+          padding: '10px 14px',
+          fontSize: 18,
+          fontVariantNumeric: 'tabular-nums',
           border: '1px solid var(--color-border)',
-          borderRadius: 4,
+          borderRadius: 6,
           fontFamily: 'inherit',
         }}
       />
@@ -417,10 +423,11 @@ function NumberField({
         <p
           id={`${id}-hint`}
           style={{
-            fontSize: 11,
+            fontSize: 14,
             color: 'var(--color-muted)',
-            marginTop: 4,
+            marginTop: 6,
             marginBottom: 0,
+            lineHeight: 1.5,
           }}
         >
           {hint}
@@ -685,9 +692,9 @@ export default function IRRSimulator() {
                 unit="MW"
                 value={cur.output_mw}
                 onChange={(v) => updateAllField('output_mw', v)}
-                step={0.5}
+                step={0.1}
                 min={0.1}
-                hint="例: 12.5 MW (4h 放電)"
+                hint="例: 12.5 MW (4h 放電) / 業界標準刻み 0.1"
               />
               <NumberField
                 id="efficiency"
@@ -796,10 +803,10 @@ export default function IRRSimulator() {
                 unit="円/kWh"
                 value={cur.spot_high}
                 onChange={(v) => updateField('spot_high', v)}
-                step={0.5}
+                step={0.1}
                 min={0}
                 max={100}
-                hint="JEPX 高値 (放電時)"
+                hint="JEPX 高値 (放電時) / 業界標準刻み 0.1"
               />
               <NumberField
                 id="spot_low"
@@ -807,10 +814,10 @@ export default function IRRSimulator() {
                 unit="円/kWh"
                 value={cur.spot_low}
                 onChange={(v) => updateField('spot_low', v)}
-                step={0.5}
+                step={0.1}
                 min={0}
                 max={100}
-                hint="JEPX 低値 (充電時)"
+                hint="JEPX 低値 (充電時) / 業界標準刻み 0.1"
               />
               <NumberField
                 id="capacity_market_yen_per_kw_year"
