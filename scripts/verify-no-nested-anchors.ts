@@ -22,7 +22,7 @@ const SAMPLE_URLS = [
   '/projects/pr-co161802-kumamoto',
   '/projects/pr-co10686-tokyo',
   '/projects/pr-co161611-bess',
-  '/projects/pr-co1379-bess',
+  // '/projects/pr-co1379-bess', // 2026-05-17 削除: microCMS から archive 済 (script 対象外、本番 404)
   // news 3件
   '/news/pr-2026-05-08-co70816-344',
   '/news/pr-2026-05-08-auroraenergyresearch-4',

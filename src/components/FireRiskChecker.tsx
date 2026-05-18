@@ -201,7 +201,7 @@ export default function FireRiskChecker() {
           background: '#fff4f4',
           border: '2px solid #cc0066',
           borderRadius: 6,
-          fontSize: 15,
+          fontSize: 16,
           lineHeight: 1.7,
         }}
       >
@@ -233,7 +233,7 @@ export default function FireRiskChecker() {
             style={{
               marginLeft: 'auto',
               padding: '4px 10px',
-              fontSize: 12,
+              fontSize: 14,
               background: 'transparent',
               border: '1px solid var(--color-border)',
               borderRadius: 4,
@@ -288,7 +288,7 @@ export default function FireRiskChecker() {
               onClick={() => setStep(cat)}
               style={{
                 padding: '8px 14px',
-                fontSize: 13,
+                fontSize: 16,
                 fontWeight: 600,
                 background: step === cat ? CATEGORY_COLORS[cat] : '#fff',
                 color: step === cat ? '#fff' : 'var(--color-text)',
@@ -315,10 +315,10 @@ export default function FireRiskChecker() {
         }}
       >
         <div style={{ marginBottom: 12 }}>
-          <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>
+          <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>
             {CATEGORY_LABELS[step]} ({answeredInStep}/{itemsInStep.length} 回答済)
           </h3>
-          <p style={{ fontSize: 12, color: 'var(--color-muted)', margin: 0 }}>
+          <p style={{ fontSize: 14, color: 'var(--color-muted)', margin: 0 }}>
             {CATEGORY_DESCRIPTIONS[step]}
           </p>
         </div>
@@ -337,18 +337,18 @@ export default function FireRiskChecker() {
             <legend
               style={{
                 padding: '0 6px',
-                fontSize: 13,
+                fontSize: 16,
                 fontWeight: 600,
               }}
             >
               Q{qIdx + 1}. {item.question}
               {item.weight === 3 && (
-                <span style={{ marginLeft: 6, fontSize: 11, color: '#cc0066', fontWeight: 700 }}>
+                <span style={{ marginLeft: 6, fontSize: 13, color: '#cc0066', fontWeight: 700 }}>
                   ★重要
                 </span>
               )}
               {item.reference && (
-                <span style={{ marginLeft: 6, fontSize: 11, color: 'var(--color-muted)' }}>
+                <span style={{ marginLeft: 6, fontSize: 13, color: 'var(--color-muted)' }}>
                   ({item.reference})
                 </span>
               )}
@@ -368,7 +368,7 @@ export default function FireRiskChecker() {
                       background: checked ? '#e7f3ff' : 'transparent',
                       borderRadius: 4,
                       cursor: 'pointer',
-                      fontSize: 13,
+                      fontSize: 16,
                       lineHeight: 1.5,
                     }}
                   >
@@ -384,7 +384,7 @@ export default function FireRiskChecker() {
                       <span
                         style={{
                           marginLeft: 6,
-                          fontSize: 11,
+                          fontSize: 13,
                           color: opt.score >= 8 ? '#006666' : opt.score >= 5 ? '#cc6600' : '#cc0066',
                           fontWeight: 700,
                         }}
@@ -396,7 +396,7 @@ export default function FireRiskChecker() {
                           style={{
                             display: 'block',
                             marginTop: 2,
-                            fontSize: 11,
+                            fontSize: 13,
                             color: 'var(--color-muted)',
                           }}
                         >
@@ -413,7 +413,7 @@ export default function FireRiskChecker() {
                 style={{
                   marginTop: 6,
                   marginBottom: 0,
-                  fontSize: 11,
+                  fontSize: 13,
                   color: 'var(--color-muted)',
                   fontStyle: 'italic',
                 }}
@@ -440,7 +440,7 @@ export default function FireRiskChecker() {
               onClick={() => setStep(CATEGORY_ORDER[currentStepIdx - 1])}
               style={{
                 padding: '8px 14px',
-                fontSize: 13,
+                fontSize: 16,
                 background: '#fff',
                 border: '1px solid var(--color-border)',
                 borderRadius: 4,
@@ -456,7 +456,7 @@ export default function FireRiskChecker() {
               onClick={() => setStep(CATEGORY_ORDER[currentStepIdx + 1])}
               style={{
                 padding: '8px 14px',
-                fontSize: 13,
+                fontSize: 16,
                 background: 'var(--color-accent, #0066cc)',
                 color: '#fff',
                 border: 'none',
@@ -488,14 +488,14 @@ export default function FireRiskChecker() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
           <div>
-            <div style={{ fontSize: 11, color: 'var(--color-muted)' }}>総合スコア</div>
+            <div style={{ fontSize: 13, color: 'var(--color-muted)' }}>総合スコア</div>
             <div style={{ fontSize: 32, fontWeight: 700, color: RISK_COLORS[result.risk_level] }}>
               {result.total_score}
               <span style={{ fontSize: 16, color: 'var(--color-muted)' }}> / 100</span>
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 11, color: 'var(--color-muted)' }}>リスクレベル</div>
+            <div style={{ fontSize: 13, color: 'var(--color-muted)' }}>リスクレベル</div>
             <div
               style={{
                 fontSize: 18,
@@ -507,7 +507,7 @@ export default function FireRiskChecker() {
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 11, color: 'var(--color-muted)' }}>回答進捗</div>
+            <div style={{ fontSize: 13, color: 'var(--color-muted)' }}>回答進捗</div>
             <div style={{ fontSize: 18, fontWeight: 600 }}>
               {result.answered_count} / {result.total_questions}
             </div>
@@ -525,19 +525,19 @@ export default function FireRiskChecker() {
           borderRadius: 6,
         }}
       >
-        <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
           カテゴリ別 スコア
         </h3>
         {result.by_category.map((c) => (
           <div key={c.category} style={{ marginBottom: 12 }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 4 }}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: CATEGORY_COLORS[c.category] }}>
+              <span style={{ fontSize: 16, fontWeight: 600, color: CATEGORY_COLORS[c.category] }}>
                 {c.category_label}
               </span>
-              <span style={{ fontSize: 11, color: 'var(--color-muted)' }}>
+              <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>
                 ({c.answered_count}/{c.total_count} 回答)
               </span>
-              <span style={{ marginLeft: 'auto', fontSize: 13, fontWeight: 700, color: RISK_COLORS[c.risk_level] }}>
+              <span style={{ marginLeft: 'auto', fontSize: 16, fontWeight: 700, color: RISK_COLORS[c.risk_level] }}>
                 {c.score}/100
               </span>
             </div>
@@ -574,7 +574,7 @@ export default function FireRiskChecker() {
             borderRadius: 6,
           }}
         >
-          <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 12, color: '#cc0066' }}>
+          <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12, color: '#cc0066' }}>
             優先改善 Top {result.priority_actions.length}
           </h3>
           <ol style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -595,7 +595,7 @@ export default function FireRiskChecker() {
                     <span
                       style={{
                         padding: '2px 8px',
-                        fontSize: 11,
+                        fontSize: 13,
                         fontWeight: 700,
                         background: sevColor,
                         color: '#fff',
@@ -607,7 +607,7 @@ export default function FireRiskChecker() {
                     <span
                       style={{
                         padding: '2px 8px',
-                        fontSize: 11,
+                        fontSize: 13,
                         fontWeight: 600,
                         background: '#f0f0f0',
                         borderRadius: 3,
@@ -616,17 +616,17 @@ export default function FireRiskChecker() {
                       {CATEGORY_LABELS[a.category]}
                     </span>
                     {a.reference && (
-                      <span style={{ fontSize: 11, color: 'var(--color-muted)' }}>
+                      <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>
                         参考: {a.reference}
                       </span>
                     )}
                   </div>
-                  <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{a.question}</div>
-                  <div style={{ fontSize: 12, color: 'var(--color-muted)' }}>
+                  <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>{a.question}</div>
+                  <div style={{ fontSize: 14, color: 'var(--color-muted)' }}>
                     現選択: 「{a.current_choice}」 (score {a.score}/10)
                   </div>
                   {a.risk_note && (
-                    <div style={{ marginTop: 6, fontSize: 13, color: sevColor }}>{a.risk_note}</div>
+                    <div style={{ marginTop: 6, fontSize: 16, color: sevColor }}>{a.risk_note}</div>
                   )}
                 </li>
               );
@@ -643,7 +643,7 @@ export default function FireRiskChecker() {
           disabled={result.answered_count === 0}
           style={{
             padding: '10px 18px',
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             background: 'var(--color-accent, #0066cc)',
             color: '#fff',
@@ -661,7 +661,7 @@ export default function FireRiskChecker() {
           disabled={result.answered_count === 0}
           style={{
             padding: '10px 18px',
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             background: '#fff',
             color: 'var(--color-text)',
@@ -684,10 +684,10 @@ export default function FireRiskChecker() {
           borderRadius: 6,
         }}
       >
-        <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
           参考文献・関連情報
         </h3>
-        <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+        <ul style={{ fontSize: 16, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
           <li>
             <a
               href="https://www.ul.com/services/ul-9540a-test-method"
