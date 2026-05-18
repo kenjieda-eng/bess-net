@@ -88,6 +88,8 @@ export const siteConfig = {
     // Sprint 5 開始準備
     { label: '業界レポート2026 (プレビュー)', href: '/reports/2026' },
     { label: '火災・トラブル事例DB', href: '/incidents' },
+    // L-029 先回り起草: 5/22 機能完全形達成記念ページ
+    { label: '達成記念', href: '/milestones' },
     // サイト情報
     { label: '蓄電所ネットについて', href: '/about' },
     { label: '編集方針', href: '/editorial-policy' },
