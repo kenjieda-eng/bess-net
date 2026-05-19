@@ -111,6 +111,73 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Sprint X1 完走: Buyer/Seller 振り分けセクション (L-EIC-010 動線確保、5/19 追加) */}
+      <section className="section" style={{ background: '#f8fafc' }}>
+        <div className="section-inner">
+          <div className="section-label" style={{ color: '#1e40af', fontWeight: 700 }}>★ Sprint X1 完走 · 業界事業者向けハブ 8 ページ</div>
+          <h2 className="section-title">あなたに合った情報を — 8 つの動線</h2>
+          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 32, lineHeight: 1.7 }}>
+            蓄電池導入を検討される方 (Buyer) と、蓄電池業界の事業者 (Seller) 向けに、それぞれ 4 つのシナリオ別ページを用意しています。あなたの立場・関心に最も近いページからご覧ください。
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24 }}>
+            {/* Buyer 動線 */}
+            <div style={{ background: 'white', padding: 32, borderRadius: 12, border: '1px solid #e2e8f0' }}>
+              <span style={{
+                display: 'inline-block', padding: '4px 12px', background: '#dbeafe', color: '#1e40af',
+                borderRadius: 999, fontSize: 14, fontWeight: 600, marginBottom: 12,
+              }}>
+                蓄電池を導入したい方へ
+              </span>
+              <h3 style={{ fontSize: 22, fontWeight: 700, color: '#0f172a', marginBottom: 16, marginTop: 0 }}>
+                Buyer 動線 — 4 つのシナリオ
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {[
+                  { href: '/buyer/factory-commercial', title: '工場・商業施設の電気代削減', desc: '自家消費 + ピークカット + BCP' },
+                  { href: '/buyer/capacity-market', title: '容量市場参加検討', desc: 'kW 価値で安定収益' },
+                  { href: '/buyer/balancing-market', title: '需給調整市場参加検討', desc: 'kWh + kW 複合収益' },
+                  { href: '/buyer/ppa-offtake', title: 'PPA・オフテイク契約検討', desc: '長期安定収益 + 金融リスク管理' },
+                ].map((it) => (
+                  <li key={it.href}>
+                    <Link href={it.href} style={{ display: 'block', padding: 12, background: '#f8fafc', borderRadius: 8, textDecoration: 'none', color: 'inherit' }}>
+                      <div style={{ fontSize: 16, fontWeight: 600, color: '#0f172a', lineHeight: 1.4 }}>{it.title}</div>
+                      <div style={{ fontSize: 13, color: '#475569', marginTop: 4 }}>{it.desc}</div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Seller 動線 */}
+            <div style={{ background: 'white', padding: 32, borderRadius: 12, border: '1px solid #e2e8f0' }}>
+              <span style={{
+                display: 'inline-block', padding: '4px 12px', background: '#fef3c7', color: '#a16207',
+                borderRadius: 999, fontSize: 14, fontWeight: 600, marginBottom: 12,
+              }}>
+                蓄電池業界の事業者の方へ
+              </span>
+              <h3 style={{ fontSize: 22, fontWeight: 700, color: '#0f172a', marginBottom: 16, marginTop: 0 }}>
+                Seller 動線 — 4 つのプレイヤー
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {[
+                  { href: '/seller/manufacturer', title: 'メーカー', desc: 'セル・PCS・統合システム' },
+                  { href: '/seller/epc', title: 'EPC 事業者', desc: '設計・調達・建設' },
+                  { href: '/seller/developer', title: 'プロジェクトデベロッパー', desc: 'SPC 設計 + IRR シム + 補助金' },
+                  { href: '/seller/reuse-secondhand', title: '中古売買・リユース', desc: 'EV → 蓄電池 2 次利用' },
+                ].map((it) => (
+                  <li key={it.href}>
+                    <Link href={it.href} style={{ display: 'block', padding: 12, background: '#f8fafc', borderRadius: 8, textDecoration: 'none', color: 'inherit' }}>
+                      <div style={{ fontSize: 16, fontWeight: 600, color: '#0f172a', lineHeight: 1.4 }}>{it.title}</div>
+                      <div style={{ fontSize: 13, color: '#475569', marginTop: 4 }}>{it.desc}</div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sprint 4 完走: 業界唯一機能 17/17 達成 (2026-05-15) */}
       <section className="section">
         <div className="section-inner">

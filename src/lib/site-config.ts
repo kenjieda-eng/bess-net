@@ -90,6 +90,15 @@ export const siteConfig = {
     { label: '火災・トラブル事例DB', href: '/incidents' },
     // L-029 先回り起草: 5/22 機能完全形達成記念ページ
     { label: '達成記念', href: '/milestones' },
+    // Sprint X1 完走 (Buyer 4 + Seller 4 LandingPage、L-EIC-010 動線確保)
+    { label: '工場・商業施設 (Buyer)', href: '/buyer/factory-commercial' },
+    { label: '容量市場参加検討 (Buyer)', href: '/buyer/capacity-market' },
+    { label: '需給調整市場参加検討 (Buyer)', href: '/buyer/balancing-market' },
+    { label: 'PPA・オフテイク契約 (Buyer)', href: '/buyer/ppa-offtake' },
+    { label: 'メーカー向け (Seller)', href: '/seller/manufacturer' },
+    { label: 'EPC 事業者向け (Seller)', href: '/seller/epc' },
+    { label: 'プロジェクトデベロッパー向け (Seller)', href: '/seller/developer' },
+    { label: '中古売買・リユース (Seller)', href: '/seller/reuse-secondhand' },
     // サイト情報
     { label: '蓄電所ネットについて', href: '/about' },
     { label: '編集方針', href: '/editorial-policy' },
