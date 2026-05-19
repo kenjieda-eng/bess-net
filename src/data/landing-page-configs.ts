@@ -527,69 +527,452 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
   'seller/manufacturer': {
     slug: 'seller/manufacturer',
     type: 'seller',
-    title: 'メーカー向けハブ - 蓄電所ネット',
-    description: 'セル・PCS・統合システムメーカー向け (5/21 投入文面 43 で本実装予定)',
-    heroH1: '【5/21 本実装予定】メーカー向けハブ',
-    heroSubcopy: '5/21 朝の投入文面 43 で詳細追記予定。',
-    heroCtaLabel: '掲載・取材のご相談はこちら',
+    title: 'セル・PCS・統合システムメーカー向け｜国内市場規模・競合分布・技術トレンド｜蓄電所ネット',
+    description:
+      '蓄電池セル・PCS・統合システムメーカー向けハブ。国内市場規模、競合分布、技術トレンド、業界レポート引用機会を提供。エネルギー情報センターが業界中立で支援。',
+    ogImage: '/og/seller-manufacturer.png',
+    heroH1: '蓄電池メーカーの国内市場戦略を支援する',
+    heroSubcopy:
+      '日本の蓄電池市場は急成長中。セル・PCS・統合システムメーカー向けに、最新の市場規模、競合分布、技術トレンド、業界レポート引用機会を業界中立で提供します。',
+    heroCtaLabel: 'メーカー掲載・取材のご相談',
     heroCtaUrl: '/contact/seller',
-    painPoints: [],
-    dataReferences: [],
-    dataSectionTitle: '業界の現状を数字で見る',
-    tools: [],
-    insightSlugs: [],
-    faqs: [],
-    ctaPrimary: { label: '掲載・取材のご相談はこちら', url: '/contact/seller' },
+    painPoints: [
+      {
+        icon: '📈',
+        title: '国内市場規模・成長率の把握',
+        description:
+          '蓄電池容量市場、需給調整市場、自家消費市場の規模・成長率を把握する一次情報が散在。業界横断のデータ集約が必須。',
+      },
+      {
+        icon: '🏭',
+        title: '競合メーカーの動向追跡',
+        description:
+          '国内外メーカーの新規参入、技術ロードマップ、価格動向の把握。業界レポート + メーカー DB (8 月公開予定) で詳細分析支援。',
+      },
+      {
+        icon: '🔬',
+        title: '技術トレンドへのキャッチアップ',
+        description:
+          'LFP / NMC / Na イオン / 全固体等の技術トレンド、UL9540A / NFPA855 等の規格動向。AJ 火災事例 DB (5/28 公開) + B-4 消火比較 (9 月) で技術品質向上支援。',
+      },
+      {
+        icon: '📰',
+        title: '業界メディアでの可視性確保',
+        description:
+          '蓄電所ネットの業界レポート 2026 (5/24) + 業界レポート 2027 (12/25) でのメーカー引用機会。技術仕様・実績データの中立的な可視化。',
+      },
+    ],
+    dataReferences: [
+      {
+        label: '容量市場 約定価格 (メーカー製品需要の指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-clearing-price',
+        indicatorIds: ['capacity-market-clearing-price'],
+      },
+      {
+        label: 'JEPX 東京エリア価格 (需要動向)',
+        dataUrl: 'https://data.eic-jp.org/catalog/jepx-spot-tokyo',
+        indicatorIds: ['jepx-spot-tokyo'],
+      },
+      {
+        label: 'USD/JPY 為替 (輸入セル・PCS のコスト指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/fx-usdjpy-monthly-avg',
+        indicatorIds: ['fx-usdjpy-monthly-avg'],
+      },
+      {
+        label: '日本 LNG 輸入価格 (火力代替市場規模指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/fuel-lng-jp-cif',
+        indicatorIds: ['fuel-lng-jp-cif'],
+      },
+    ],
+    dataSectionTitle: '蓄電池市場の最新動向 (メーカー意思決定の基礎データ)',
+    tools: [
+      {
+        label: '火災リスク自己診断 (製品安全性確認)',
+        url: '/tools/fire-risk-check',
+        description: 'メーカー製品の火災リスクを自己診断。UL9540A / NFPA855 準拠の自己評価ツール。',
+      },
+      {
+        label: 'IRR シミュレーター (顧客提案支援)',
+        url: '/tools/irr-simulator',
+        description:
+          'メーカーがエンドユーザーへの提案資料に IRR シミュレーション結果を活用。3 階建て収益モデル対応。',
+      },
+      {
+        label: 'EPC 事業者向けページ',
+        url: '/seller/epc',
+        description: 'メーカー製品を EPC 事業者へ供給する観点での連携情報。',
+      },
+    ],
+    insightSlugs: ['temp-vs-price', 'lng-vs-price-tokyo', 'fx-decomp-lng-jepx-tokyo'],
+    faqs: [
+      {
+        question: 'メーカー製品の蓄電所ネット掲載基準は?',
+        answer:
+          'セル・PCS・統合システム製品で UL9540A / IEC 62619 / JIS C 8715-2 等の規格認証を有する製品が対象。技術仕様・実績データの透明性が重要。掲載依頼時に詳細をご相談ください。',
+      },
+      {
+        question: '業界レポートでの製品引用機会は?',
+        answer:
+          '業界レポート 2026 (5/24 公開) + 業界レポート 2027 (12/25 公開) で、メーカー製品の引用枠あり。技術仕様・市場シェア・実績数値の中立的な引用、メーカー側の事前確認可能。',
+      },
+      {
+        question: 'メーカー DB (8 月公開予定) への登録方法は?',
+        answer:
+          'メーカー DB は 8/15 頃公開予定 (B-1 機能、業界唯一性 22 達成)。製品スペック・価格レンジ・実績案件の登録枠を準備中。8 月初旬にメーカー向け登録案内を予定。',
+      },
+      {
+        question: '蓄電所ネットの業界メディアとしての位置づけは?',
+        answer:
+          'エネルギー情報センター (10 年運営) の事業として、業界中立の立場から蓄電池業界の情報インフラを提供。メーカー、EPC、デベロッパー、エンドユーザーすべてに公平な情報提供を方針とします。',
+      },
+      {
+        question: '取材・寄稿の機会は?',
+        answer:
+          '業界レポート企画、Insight 記事、AJ 火災事例 DB 等で取材機会あり。技術担当者・経営層へのインタビュー、技術論文寄稿の枠を準備中。お問い合わせフォームからご相談ください。',
+      },
+    ],
+    ctaPrimary: { label: 'メーカー掲載・取材のご相談', url: '/contact/seller' },
+    ctaSecondary: { label: '業界レポート 2026 を見る', url: '/reports/2026' },
   },
   'seller/epc': {
     slug: 'seller/epc',
     type: 'seller',
-    title: 'EPC 事業者向けハブ - 蓄電所ネット',
-    description: 'EPC 事業者向け (5/21 投入文面 43 で本実装予定)',
-    heroH1: '【5/21 本実装予定】EPC 事業者向けハブ',
-    heroSubcopy: '5/21 朝の投入文面 43 で詳細追記予定。',
-    heroCtaLabel: '掲載・取材のご相談はこちら',
+    title: 'EPC 事業者向け｜案件規模・地理分布・容量市場/需給調整連動需要｜蓄電所ネット',
+    description:
+      '蓄電池 EPC 事業者向けハブ。案件規模、地理分布、容量市場・需給調整市場連動の需要動向、実績データ。業界中立で支援。',
+    ogImage: '/og/seller-epc.png',
+    heroH1: 'EPC 事業者の案件獲得を、業界データで支援する',
+    heroSubcopy:
+      '蓄電池 EPC 事業者向けに、最新の案件規模・地理分布・容量市場/需給調整市場連動の需要動向を業界中立で提供。掲載・取材・案件マッチング機会も提供します。',
+    heroCtaLabel: 'EPC 事業者掲載のご相談',
     heroCtaUrl: '/contact/seller',
-    painPoints: [],
-    dataReferences: [],
-    dataSectionTitle: '業界の現状を数字で見る',
-    tools: [],
-    insightSlugs: [],
-    faqs: [],
-    ctaPrimary: { label: '掲載・取材のご相談はこちら', url: '/contact/seller' },
+    painPoints: [
+      {
+        icon: '📍',
+        title: '案件の地理分布・規模感の把握',
+        description:
+          '全国の蓄電池プロジェクト案件の地理分布 (10 エリア別)、規模 (MW 級)、稼働時期、オーナー業種の把握が散在情報で困難。',
+      },
+      {
+        icon: '⚡',
+        title: '容量市場/需給調整市場連動の需要動向',
+        description:
+          '容量市場の入札枠拡大、需給調整市場の参入条件変化は EPC 案件数に直結。最新の市場動向を業界中立で提供。',
+      },
+      {
+        icon: '🏗',
+        title: '実績・施工事例の中立的な可視化',
+        description:
+          'EPC 事業者の施工実績・案件規模・技術ノウハウを業界レポート 2026/2027 + 案件 DB (C-3 アグリゲーター、8 月公開) で可視化機会。',
+      },
+      {
+        icon: '🔧',
+        title: 'O&M ベンチマーク',
+        description:
+          'F-4 O&M ベンチマーク (9 月公開予定) で運用保守の業界水準を比較可能、サービス差別化に活用。',
+      },
+    ],
+    dataReferences: [
+      {
+        label: '容量市場 落札枠 (案件需要指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-volume',
+        indicatorIds: ['capacity-market-volume'],
+      },
+      {
+        label: '需給調整市場 約定価格 (参入需要指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/balancing-tertiary2-clearing',
+        indicatorIds: ['balancing-tertiary2-clearing'],
+      },
+      {
+        label: 'JEPX 各エリア価格 (地域別需要分布)',
+        dataUrl: 'https://data.eic-jp.org/catalog/jepx-spot-tokyo',
+        indicatorIds: ['jepx-spot-tokyo', 'jepx-spot-kansai', 'jepx-spot-kyushu'],
+      },
+      {
+        label: '日本 LNG 輸入価格 (火力代替案件需要指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/fuel-lng-jp-cif',
+        indicatorIds: ['fuel-lng-jp-cif'],
+      },
+    ],
+    dataSectionTitle: '案件需要動向の最新データ',
+    tools: [
+      {
+        label: '火災リスク自己診断 (提案時の安全性検証)',
+        url: '/tools/fire-risk-check',
+        description: '施工提案時の火災リスク評価。エンドユーザーへの安全性訴求材料として活用可能。',
+      },
+      {
+        label: '容量市場入札ツール (顧客提案支援)',
+        url: '/tools/capacity-market-bid',
+        description: 'EPC 事業者が顧客への提案資料に容量市場収益シミュレーションを活用。',
+      },
+      {
+        label: 'IRR シミュレーター',
+        url: '/tools/irr-simulator',
+        description: '顧客向け IRR 試算、3 階建て収益モデルでの投資判断支援。',
+      },
+    ],
+    insightSlugs: [
+      'capacity-market-trend',
+      'temp-vs-price',
+      'lng-vs-price-tokyo',
+      'balancing-tertiary2-vs-jepx',
+    ],
+    faqs: [
+      {
+        question: 'EPC 事業者の蓄電所ネット掲載基準は?',
+        answer:
+          '蓄電池プロジェクトの設計・調達・建設実績を有する EPC 事業者が対象。実績規模、技術ノウハウ、安全管理体制等の情報提供で掲載検討。',
+      },
+      {
+        question: '案件マッチング機能は提供されるか?',
+        answer:
+          '当面は業界中立の情報提供に注力、案件マッチングは将来検討。但しお問い合わせフォーム経由でエンドユーザーとの接点機会あり。',
+      },
+      {
+        question: '取材・寄稿の機会は?',
+        answer:
+          '業界レポート、Insight 記事、AJ 火災事例 DB 等で取材機会あり。EPC 視点での技術ノウハウ、施工事例の寄稿枠を準備中。',
+      },
+      {
+        question: 'F-4 O&M ベンチマーク (9 月公開) への参加方法は?',
+        answer:
+          'F-4 機能は 9/17-9/23 公開予定、業界唯一性 23 達成 (D-4 LCOS 分析と並ぶ)。EPC 事業者の O&M データ提供枠を準備中、8 月後半に案内予定。',
+      },
+      {
+        question: 'メーカー製品の比較情報は?',
+        answer:
+          'メーカー DB (B-1、8/15 頃公開) + メーカー別スペック比較 (B-1 機能内) で、EPC 事業者の機材選定支援。',
+      },
+    ],
+    ctaPrimary: { label: 'EPC 事業者掲載のご相談', url: '/contact/seller' },
+    ctaSecondary: { label: '業界レポート 2026 を見る', url: '/reports/2026' },
   },
   'seller/developer': {
     slug: 'seller/developer',
     type: 'seller',
-    title: 'プロジェクトデベロッパー向けハブ - 蓄電所ネット',
-    description: 'プロジェクトデベロッパー向け (5/21 投入文面 43 で本実装予定)',
-    heroH1: '【5/21 本実装予定】プロジェクトデベロッパー向けハブ',
-    heroSubcopy: '5/21 朝の投入文面 43 で詳細追記予定。',
-    heroCtaLabel: '掲載・取材のご相談はこちら',
+    title: 'プロジェクトデベロッパー向け｜SPC スキーム・補助金・土地確保｜蓄電所ネット',
+    description:
+      '蓄電所プロジェクトデベロッパー向けハブ。SPC スキーム、IRR シミュレーション、補助金活用、土地確保、PPA 設計支援。エネルギー情報センターが業界中立で支援。',
+    ogImage: '/og/seller-developer.png',
+    heroH1: 'プロジェクトデベロッパーの SPC 設計を、業界データで支援',
+    heroSubcopy:
+      '蓄電所プロジェクトの SPC スキーム設計、IRR シミュレーション、補助金活用、土地確保、PPA 設計まで業界中立で支援。最新のマクロ指標 (為替・金利・燃料) も提供します。',
+    heroCtaLabel: 'デベロッパー連携のご相談',
     heroCtaUrl: '/contact/seller',
-    painPoints: [],
-    dataReferences: [],
-    dataSectionTitle: '業界の現状を数字で見る',
-    tools: [],
-    insightSlugs: [],
-    faqs: [],
-    ctaPrimary: { label: '掲載・取材のご相談はこちら', url: '/contact/seller' },
+    painPoints: [
+      {
+        icon: '🏢',
+        title: 'SPC スキーム設計の複雑性',
+        description:
+          '蓄電池プロジェクトの SPC (特別目的会社) 設計はファイナンス・税務・契約構造が複雑。マクロリスク管理込みの最適化が必須。',
+      },
+      {
+        icon: '💴',
+        title: 'プロジェクトファイナンスの金利感応度',
+        description:
+          '日米金利差・JGB 10y の動向がプロジェクトファイナンスコストに直結。最新のマクロ指標を継続把握。',
+      },
+      {
+        icon: '🏞',
+        title: '土地確保・地域連携',
+        description:
+          '蓄電所立地の土地確保、地元自治体との連携、E-3 自治体条例 (11/21 公開予定、業界唯一性 25 達成) 情報の把握。',
+      },
+      {
+        icon: '💼',
+        title: '補助金・優遇税制の活用',
+        description:
+          '蓄電池導入補助金、再エネ特措法、固定資産税優遇等の最新動向。業界レポート 2026/2027 で詳細解説予定。',
+      },
+    ],
+    dataReferences: [
+      {
+        label: 'JGB 10y 金利 (プロジェクトファイナンス指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/jgb-10y-yield',
+        indicatorIds: ['jgb-10y-yield'],
+      },
+      {
+        label: '米国 10y 金利 (日米金利差)',
+        dataUrl: 'https://data.eic-jp.org/catalog/us-treasury-10y',
+        indicatorIds: ['us-treasury-10y'],
+      },
+      {
+        label: 'USD/JPY 為替',
+        dataUrl: 'https://data.eic-jp.org/catalog/fx-usdjpy-monthly-avg',
+        indicatorIds: ['fx-usdjpy-monthly-avg'],
+      },
+      {
+        label: '容量市場 約定価格 (事業性指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-clearing-price',
+        indicatorIds: ['capacity-market-clearing-price'],
+      },
+    ],
+    dataSectionTitle: 'プロジェクト開発のマクロ指標 (data.eic-jp.org 提供)',
+    tools: [
+      {
+        label: 'IRR シミュレーター',
+        url: '/tools/irr-simulator',
+        description:
+          'プロジェクトデベロッパーが SPC 設計・投資判断に使用。3 階建て収益モデル + マクロリスク感度分析。',
+      },
+      {
+        label: '容量市場入札ツール',
+        url: '/tools/capacity-market-bid',
+        description: '容量市場参入を前提とした収益モデル試算。',
+      },
+      {
+        label: 'PPA・オフテイク契約検討 (Buyer Landing)',
+        url: '/buyer/ppa-offtake',
+        description:
+          'PPA・オフテイク契約相手 (Buyer 視点) の検討材料。デベロッパー視点での契約設計支援。',
+      },
+    ],
+    insightSlugs: [
+      'jgb-vs-yen-lng',
+      'us-jp-rate-vs-usdjpy',
+      'fx-decomp-lng-jepx-tokyo',
+      'capacity-market-trend',
+    ],
+    faqs: [
+      {
+        question: 'プロジェクトデベロッパー向けの主な支援内容は?',
+        answer:
+          'マクロ指標 (為替・金利・燃料) の最新動向提供、IRR シミュレーション、業界レポートでの事業性データ引用、E-3 自治体条例 (11/21 公開) 情報。SPC スキーム設計の助言は弊社顧問チーム (公認会計士、リク等) でご相談可能。',
+      },
+      {
+        question: 'プロジェクトファイナンスへの金利影響をどう試算するか?',
+        answer:
+          'JGB 10y + 米 10y の最新動向を IRR シミュレーターに入力、感度分析で金利上昇シナリオの IRR 低下を可視化。マクロリスクヘッジの基礎データ提供。',
+      },
+      {
+        question: '土地確保・自治体連携の支援はあるか?',
+        answer:
+          'E-3 自治体条例 (11/21 公開予定、業界唯一性 25 達成) で全国の自治体条例情報を集約予定。土地確保時の地元自治体折衝の基礎情報。',
+      },
+      {
+        question: '補助金・税制優遇の最新情報は?',
+        answer:
+          '業界レポート 2026 (5/24) + 業界レポート 2027 (12/25) で補助金・優遇税制の最新動向を解説予定。緊急性高い場合はお問い合わせフォームから個別相談。',
+      },
+      {
+        question: 'デベロッパー実績の業界メディア掲載機会は?',
+        answer:
+          '業界レポート、Insight 記事、案件 DB (C-3 アグリゲーター、8 月公開) でデベロッパー実績の掲載枠あり。お問い合わせフォームから掲載相談可能。',
+      },
+    ],
+    ctaPrimary: { label: 'デベロッパー連携のご相談', url: '/contact/seller' },
+    ctaSecondary: { label: 'IRR シミュレーターを試す', url: '/tools/irr-simulator' },
   },
   'seller/reuse-secondhand': {
     slug: 'seller/reuse-secondhand',
     type: 'seller',
-    title: '中古売買・リユース事業者向けハブ - 蓄電所ネット',
-    description: '中古売買・リユース事業者向け (5/21 投入文面 43 で本実装予定)',
-    heroH1: '【5/21 本実装予定】中古売買・リユース事業者向けハブ',
-    heroSubcopy: '5/21 朝の投入文面 43 で詳細追記予定。',
-    heroCtaLabel: '掲載・取材のご相談はこちら',
+    title: '中古売買・リユース事業者向け｜EV 2 次利用・劣化曲線・市場規模｜蓄電所ネット',
+    description:
+      '蓄電池中古売買・リユース事業者向けハブ。EV → 蓄電池 2 次利用、劣化曲線、市場規模、リユース事業の収益モデル。エネルギー情報センターが業界中立で支援。',
+    ogImage: '/og/seller-reuse-secondhand.png',
+    heroH1: '蓄電池リユース市場の急成長を、業界データで支援',
+    heroSubcopy:
+      'EV 普及に伴い蓄電池の 2 次利用市場が急成長中。中古売買・リユース事業者向けに、市場規模、劣化曲線、収益モデル、品質基準を業界中立で提供します。',
+    heroCtaLabel: 'リユース事業者掲載のご相談',
     heroCtaUrl: '/contact/seller',
-    painPoints: [],
-    dataReferences: [],
-    dataSectionTitle: '業界の現状を数字で見る',
-    tools: [],
-    insightSlugs: [],
-    faqs: [],
-    ctaPrimary: { label: '掲載・取材のご相談はこちら', url: '/contact/seller' },
+    painPoints: [
+      {
+        icon: '🔋',
+        title: 'EV → 蓄電池 2 次利用の市場規模把握',
+        description:
+          '日本国内の EV 普及台数、退役予定の電池容量、2 次利用転換率の把握が散在情報で困難。業界中立のデータ集約。',
+      },
+      {
+        icon: '📉',
+        title: '劣化曲線の実測データ不足',
+        description:
+          'G-1 劣化曲線実測データ (9/24 公開予定) で、メーカー別・使用条件別の劣化曲線を可視化。リユース価格設定の基礎データ。',
+      },
+      {
+        icon: '💰',
+        title: 'リユース事業の収益モデル設計',
+        description:
+          '中古セルの調達コスト、再生検査・組み直し費用、販売価格、保証期間設計の最適化。業界実例集も提供。',
+      },
+      {
+        icon: '✅',
+        title: '品質基準・安全性保証',
+        description:
+          'UL9540A / IEC 62619 等の規格準拠、火災リスク評価。AJ 火災事例 DB (5/28 公開) で安全性ガイダンス + リユース固有のリスク管理。',
+      },
+    ],
+    dataReferences: [
+      {
+        label: 'EV 関連市場規模指標 (参考)',
+        dataUrl: 'https://data.eic-jp.org/catalog/jepx-spot-tokyo',
+        indicatorIds: ['jepx-spot-tokyo'],
+      },
+      {
+        label: 'USD/JPY 為替 (輸入中古セルのコスト指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/fx-usdjpy-monthly-avg',
+        indicatorIds: ['fx-usdjpy-monthly-avg'],
+      },
+      {
+        label: '容量市場 約定価格 (リユース蓄電池の参入可能性指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-clearing-price',
+        indicatorIds: ['capacity-market-clearing-price'],
+      },
+      {
+        label: '日本 LNG 輸入価格 (自家消費代替市場指標)',
+        dataUrl: 'https://data.eic-jp.org/catalog/fuel-lng-jp-cif',
+        indicatorIds: ['fuel-lng-jp-cif'],
+      },
+    ],
+    dataSectionTitle: 'リユース市場の関連データ',
+    tools: [
+      {
+        label: '火災リスク自己診断 (リユース蓄電池の安全性検証)',
+        url: '/tools/fire-risk-check',
+        description:
+          'リユース蓄電池の火災リスクを自己診断。UL9540A / NFPA855 準拠、リユース固有のリスク評価項目あり。',
+      },
+      {
+        label: 'IRR シミュレーター (リユース事業の収益試算)',
+        url: '/tools/irr-simulator',
+        description:
+          'リユース蓄電池を用いた自家消費・容量市場参入の収益試算。劣化曲線を考慮したライフサイクル分析。',
+      },
+      {
+        label: 'メーカー向けページ (新品メーカーとの連携)',
+        url: '/seller/manufacturer',
+        description: '新品メーカーとの連携、技術仕様情報の取得。',
+      },
+    ],
+    insightSlugs: ['temp-vs-price', 'fx-decomp-lng-jepx-tokyo', 'lng-vs-price-tokyo'],
+    faqs: [
+      {
+        question: 'リユース蓄電池事業の市場規模は?',
+        answer:
+          '日本の EV 普及に伴い、退役 EV 電池の蓄電池 2 次利用市場が 2026 年以降本格化見込み。G-1 劣化曲線実測データ (9/24 公開) + 業界レポート 2027 (12/25) で市場規模・成長率の詳細解説予定。',
+      },
+      {
+        question: '劣化曲線の実測データはいつ公開されるか?',
+        answer:
+          'G-1 劣化曲線実測データは 9/24 公開予定 (業界唯一性 23 達成タイミング)。メーカー別・使用条件別の劣化曲線データを業界中立で提供、リユース価格設定の基礎データ。',
+      },
+      {
+        question: 'リユース蓄電池の容量市場参入は可能?',
+        answer:
+          '可能性あり、但し OCCTO 認定基準への適合確認が必須。リユース固有の劣化評価、保証期間の扱いが論点。容量市場入札ツールで参入可能性試算可能。',
+      },
+      {
+        question: '中古セル調達の海外輸入リスクは?',
+        answer:
+          'USD/JPY 為替変動、輸入規制、品質保証の確保が主要リスク。為替リスクは当ページデータセクションの USD/JPY 動向で継続把握、ヘッジ戦略の検討材料。',
+      },
+      {
+        question: 'リユース事業者の業界メディア掲載機会は?',
+        answer:
+          '業界レポート 2026/2027、AJ 火災事例 DB、Insight 記事でリユース事業者の事例掲載機会あり。リユース事業者の技術ノウハウ、市場戦略の中立的な可視化。',
+      },
+    ],
+    ctaPrimary: { label: 'リユース事業者掲載のご相談', url: '/contact/seller' },
+    ctaSecondary: { label: '火災リスク自己診断を試す', url: '/tools/fire-risk-check' },
   },
 };
