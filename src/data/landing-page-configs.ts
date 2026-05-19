@@ -69,7 +69,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '自家消費＋ピークカット＋BCP の 3 つの効果を実データで比較。容量市場・需給調整市場参入で追加収益も可能。エネルギー情報センターの 10 年運営実績で、業界事業者を中立的に支援します。',
     heroCtaLabel: '無料相談はこちら',
-    heroCtaUrl: '/contact/buyer',
+    heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
         icon: '💸',
@@ -170,7 +170,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '「無料相談はこちら」ボタンから、エネルギー情報センターのお問い合わせフォームへ進めます。10 年運営の実績で、業界中立の立場から導入検討を支援します。',
       },
     ],
-    ctaPrimary: { label: '無料相談はこちら', url: '/contact/buyer' },
+    ctaPrimary: { label: '無料相談はこちら', url: 'https://eic-jp.org/contact' },
     ctaSecondary: { label: '業界レポート 2026 を見る', url: '/reports/2026' },
   },
   // ★★ 雛形 7 件 (5/20-5/21 で投入文面 41/43 で本実装)
@@ -185,7 +185,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       'OCCTO 運営の容量市場は蓄電池事業者にとって kW 価値 (容量提供) による安定収益源。最新の約定価格・落札枠・参入条件をリアルタイムで把握、IRR シミュレーションで投資判断を支援します。',
     heroCtaLabel: '容量市場参入相談はこちら',
-    heroCtaUrl: '/contact/buyer',
+    heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
         icon: '📊',
@@ -288,7 +288,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '日本のエネルギー基本計画では 2030 年までに蓄電池容量を大幅拡大予定。容量市場の枠も連動して拡大見込み。最新動向は当ページのデータセクションで継続更新します。',
       },
     ],
-    ctaPrimary: { label: '容量市場参入相談はこちら', url: '/contact/buyer' },
+    ctaPrimary: { label: '容量市場参入相談はこちら', url: 'https://eic-jp.org/contact' },
     ctaSecondary: { label: '容量市場入札ツールを使う', url: '/tools/capacity-market-bid' },
   },
   'buyer/balancing-market': {
@@ -302,7 +302,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '需給調整市場は一次・二次・三次調整力の 5 商品 × 10 エリア構成。蓄電池の応答速度・容量を最大活用、kWh と kW の複合収益で安定運用を実現。最新の入札動向と参入条件を解説します。',
     heroCtaLabel: '需給調整市場参入相談はこちら',
-    heroCtaUrl: '/contact/buyer',
+    heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
         icon: '🔄',
@@ -404,7 +404,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '再エネ大量導入に伴い調整力需要は拡大基調。特に蓄電池は応答速度・容量制御の柔軟性で参入優位性が大きい。最新の市場動向は当ページデータセクション + Insight 記事で継続更新します。',
       },
     ],
-    ctaPrimary: { label: '需給調整市場参入相談はこちら', url: '/contact/buyer' },
+    ctaPrimary: { label: '需給調整市場参入相談はこちら', url: 'https://eic-jp.org/contact' },
     ctaSecondary: { label: 'IRR シミュレーターを試す', url: '/tools/irr-simulator' },
   },
   'buyer/ppa-offtake': {
@@ -418,7 +418,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '蓄電池プロジェクトの PPA・オフテイク契約設計には、為替・金利・燃料コストの長期変動リスク管理が不可欠。日米金利差・円建て LNG・JGB 等のマクロ指標と連動した契約構造設計を支援します。',
     heroCtaLabel: 'PPA・オフテイク契約相談はこちら',
-    heroCtaUrl: '/contact/buyer',
+    heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
         icon: '💱',
@@ -521,7 +521,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           'Tolling Agreement (容量提供、燃料リスクなし)、Fixed Price PPA (長期固定、為替・金利リスクあり)、Hybrid (部分連動) 等が代表的。プロジェクト規模・オフテイカー業種・地域特性で最適選択が異なります。',
       },
     ],
-    ctaPrimary: { label: 'PPA・オフテイク契約相談はこちら', url: '/contact/buyer' },
+    ctaPrimary: { label: 'PPA・オフテイク契約相談はこちら', url: 'https://eic-jp.org/contact' },
     ctaSecondary: { label: 'IRR シミュレーターを試す', url: '/tools/irr-simulator' },
   },
   'seller/manufacturer': {
@@ -535,7 +535,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '日本の蓄電池市場は急成長中。セル・PCS・統合システムメーカー向けに、最新の市場規模、競合分布、技術トレンド、業界レポート引用機会を業界中立で提供します。',
     heroCtaLabel: 'メーカー掲載・取材のご相談',
-    heroCtaUrl: '/contact/seller',
+    heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
         icon: '📈',
@@ -631,7 +631,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '業界レポート企画、Insight 記事、AJ 火災事例 DB 等で取材機会あり。技術担当者・経営層へのインタビュー、技術論文寄稿の枠を準備中。お問い合わせフォームからご相談ください。',
       },
     ],
-    ctaPrimary: { label: 'メーカー掲載・取材のご相談', url: '/contact/seller' },
+    ctaPrimary: { label: 'メーカー掲載・取材のご相談', url: 'https://eic-jp.org/contact' },
     ctaSecondary: { label: '業界レポート 2026 を見る', url: '/reports/2026' },
   },
   'seller/epc': {
@@ -645,7 +645,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '蓄電池 EPC 事業者向けに、最新の案件規模・地理分布・容量市場/需給調整市場連動の需要動向を業界中立で提供。掲載・取材・案件マッチング機会も提供します。',
     heroCtaLabel: 'EPC 事業者掲載のご相談',
-    heroCtaUrl: '/contact/seller',
+    heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
         icon: '📍',
@@ -745,7 +745,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           'メーカー DB (B-1、8/15 頃公開) + メーカー別スペック比較 (B-1 機能内) で、EPC 事業者の機材選定支援。',
       },
     ],
-    ctaPrimary: { label: 'EPC 事業者掲載のご相談', url: '/contact/seller' },
+    ctaPrimary: { label: 'EPC 事業者掲載のご相談', url: 'https://eic-jp.org/contact' },
     ctaSecondary: { label: '業界レポート 2026 を見る', url: '/reports/2026' },
   },
   'seller/developer': {
@@ -759,7 +759,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '蓄電所プロジェクトの SPC スキーム設計、IRR シミュレーション、補助金活用、土地確保、PPA 設計まで業界中立で支援。最新のマクロ指標 (為替・金利・燃料) も提供します。',
     heroCtaLabel: 'デベロッパー連携のご相談',
-    heroCtaUrl: '/contact/seller',
+    heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
         icon: '🏢',
@@ -861,7 +861,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '業界レポート、Insight 記事、案件 DB (C-3 アグリゲーター、8 月公開) でデベロッパー実績の掲載枠あり。お問い合わせフォームから掲載相談可能。',
       },
     ],
-    ctaPrimary: { label: 'デベロッパー連携のご相談', url: '/contact/seller' },
+    ctaPrimary: { label: 'デベロッパー連携のご相談', url: 'https://eic-jp.org/contact' },
     ctaSecondary: { label: 'IRR シミュレーターを試す', url: '/tools/irr-simulator' },
   },
   'seller/reuse-secondhand': {
@@ -875,7 +875,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       'EV 普及に伴い蓄電池の 2 次利用市場が急成長中。中古売買・リユース事業者向けに、市場規模、劣化曲線、収益モデル、品質基準を業界中立で提供します。',
     heroCtaLabel: 'リユース事業者掲載のご相談',
-    heroCtaUrl: '/contact/seller',
+    heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
         icon: '🔋',
@@ -972,7 +972,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '業界レポート 2026/2027、AJ 火災事例 DB、Insight 記事でリユース事業者の事例掲載機会あり。リユース事業者の技術ノウハウ、市場戦略の中立的な可視化。',
       },
     ],
-    ctaPrimary: { label: 'リユース事業者掲載のご相談', url: '/contact/seller' },
+    ctaPrimary: { label: 'リユース事業者掲載のご相談', url: 'https://eic-jp.org/contact' },
     ctaSecondary: { label: '火災リスク自己診断を試す', url: '/tools/fire-risk-check' },
   },
 };
