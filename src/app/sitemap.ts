@@ -72,6 +72,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/reports/2026`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 5 開始準備 (火災・トラブル事例DB シード版)
     { url: `${siteConfig.url}/incidents`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Sprint X1 Day 1 (Buyer 1 ページ完成例、Day 2-3 で残り 7 ページ追加予定)
+    { url: `${siteConfig.url}/buyer/factory-commercial`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     // 達成記念ページ (5/22 機能完全形達成準備、L-029 先回り起草)
     { url: `${siteConfig.url}/milestones`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/milestones/2026-05-22-feature-complete`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
