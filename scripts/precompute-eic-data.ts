@@ -47,6 +47,8 @@ interface Indicator {
   freshness_sla_days?: number;
   publisher?: string;
   depends_on?: string[];
+  // D-017 ADR: catalog 自己記述、bess-net 側 DIR_MAP 撤廃可能化
+  csv_path?: string;
   [key: string]: unknown;
 }
 
@@ -88,6 +90,12 @@ async function fetchCsv(url: string): Promise<DataPoint[]> {
 }
 
 function deriveCsvPath(ind: Indicator): string {
+  // D-017 ADR (2026-05-17/18 リン側完成): catalog の csv_path フィールド優先
+  // 個別マッピング不要、catalog 自己記述化により Phase D +91 系列追加時のメンテゼロ
+  if (ind.csv_path) {
+    return ind.csv_path;
+  }
+  // ↓ 以下は後方互換 fallback (catalog 未対応エントリ用、将来撤廃可能)
   const prefix = ind.id.split('-')[0];
   // 特殊ケース 1: us- プレフィックスは 2 ディレクトリに分岐
   if (prefix === 'us') {

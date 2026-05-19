@@ -27,6 +27,13 @@ export interface Indicator {
   notes?: string;
   depends_on?: string[]; // 派生系列の依存先 ID
   backfill_start?: string;
+  /**
+   * D-017 ADR (2026-05-17/18 リン側完成): catalog 自己記述による csv 配置パス
+   * 例: 'data/processed/fuel/fuel-coal-au.csv'
+   * これにより bess-net 側 DIR_MAP マッピング不要、catalog 直読み化
+   * 未設定の場合は DIR_MAP fallback (後方互換)
+   */
+  csv_path?: string;
 }
 
 export interface DataPoint {
