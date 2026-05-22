@@ -87,8 +87,8 @@ export const MILESTONES: MilestoneData[] = [
       {
         label: 'data.eic-jp.org 連携稼働',
         detail:
-          'リン (data.eic-jp.org 編集長) との Phase D 第 1 期連動。catalog 約 133 系列引用 (5/22 機能完全形達成日 + Phase D Day 1-3 容量市場 11 系列追加完了時想定値、リン case A 準拠、L-EIC-008 §1 で 5/22 朝の実体確認で確定)。JEPX 10 + JMA 気象 (気温・降水量・日照・風速・積雪・風向) + 燃料 7 + FX 4 + JGB 1 + METI 12 + 米 Treasury 4 + 容量市場 11 系列 + その他の業界中立データ提供基盤',
-        metric: 'catalog 約 133 系列',
+          'リン (data.eic-jp.org 編集長) との Phase D 第 1 期連動。catalog 約 142 系列引用 (5/22 機能完全形達成日 + Phase D Day 1-3 容量市場 20 系列(価格10+容量10)追加完了時の実測値、リン case A 準拠、L-EIC-008 §1 で 5/22 朝の実体確認で確定)。JEPX 10 + JMA 気象 (気温・降水量・日照・風速・積雪・風向) + 燃料 7 + FX 4 + JGB 1 + METI 12 + 米 Treasury 4 + 容量市場 20 系列 + その他の業界中立データ提供基盤',
+        metric: 'catalog 約 142 系列',
       },
       {
         label: 'EIC グループ 3 層エコシステム稼働',
