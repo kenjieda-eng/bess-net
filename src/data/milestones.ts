@@ -50,7 +50,7 @@ export const MILESTONES: MilestoneData[] = [
     slug: '2026-05-22-feature-complete',
     date: '2026-05-22',
     category: 'feature-complete',
-    status: 'upcoming', // 5/22 朝に 'achieved' に変更予定
+    status: 'achieved', // ✨ 2026-05-22 機能完全形達成日に正式公開
     title: '機能完全形達成 - 蓄電所ネット | 2026年5月22日',
     description:
       '蓄電所ネット (bess-net) が 2026 年 5 月 22 日に機能完全形を達成。Sprint X1 完走 (Buyer/Seller 8 LandingPage 実装)、D-017 ACCEPTED 正式化、業界唯一性 13/17 達成。一般社団法人エネルギー情報センターが業界中立で運営。',
