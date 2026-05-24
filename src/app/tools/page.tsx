@@ -27,6 +27,14 @@ export const metadata: Metadata = {
 
 const tools = [
   {
+    slug: 'balancing-revenue',
+    title: '需給調整 収益シナリオ（蓄電池）',
+    badge: '業界唯一',
+    available: true,
+    description:
+      '需給調整市場 6 商品（一次〜三次②・複合）の蓄電池落札単価（EPRX 実績）に落札率・容量を掛けた概算年間収益を試算。前提次第で大きく変わる感応度ツール（L-EIC-018）。Phase 2 で実落札量対応予定。',
+  },
+  {
     slug: 'fire-risk-check',
     title: '蓄電池火災リスク自己診断',
     badge: '業界唯一・教育型',
