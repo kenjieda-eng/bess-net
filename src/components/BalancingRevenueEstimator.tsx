@@ -3,17 +3,25 @@
 /**
  * src/components/BalancingRevenueEstimator.tsx
  *
- * 需給調整 収益シナリオ（蓄電池） — Phase 1
+ * 需給調整 収益シナリオ（蓄電池） — Phase 1 v2
  *
  * 設計:
  *  - microCMS リクエストなし (client-side 計算のみ)
- *  - 単価は props 経由（server page が catalog JSON から注入）、無ければ FY2024 fallback
- *  - L-EIC-018: 単価は「約定時水準・volume 非加重」の明示が必須
+ *  - 単価は pricesByFy props 経由（server page が catalog JSON から注入）
+ *  - FY セレクタ: FY2024（通年・確定）既定 / FY2025 上期(暫定) トグル
+ *  - L-EIC-018: 単価は「約定時水準・volume 非加重」+ 期間非対称の明示
  *  - 三次②の高単価は約定が稀（デフォルト落札率 2%）
  *  - 複合はデフォルトで除外（個別と二重計上し得る）
+ *
+ * v2 変更点 (2026-05-24, リン回答反映):
+ *  - props: pricesByFy + defaultFy（旧 prices/fyLabel を置換）
+ *  - FY ラジオセレクタ追加、既定 FY2024
+ *  - L-EIC-018 注記に期間非対称の一文を追加
  */
 
 import { useState } from 'react';
+
+// ─── 型定義 ───────────────────────────────────────────────────────────────────
 
 export type ProductKey =
   | 'primary'
@@ -23,31 +31,63 @@ export type ProductKey =
   | 'tertiary-2'
   | 'composite';
 
+export type FyKey = 'FY2024' | 'FY2025H1';
+
+// ─── 定数 ─────────────────────────────────────────────────────────────────────
+
 const PRODUCTS: { key: ProductKey; label: string; defRate: number }[] = [
-  { key: 'primary',      label: '一次調整力',   defRate: 5  },
-  { key: 'secondary-1',  label: '二次調整力①', defRate: 5  },
-  { key: 'secondary-2',  label: '二次調整力②', defRate: 5  },
-  { key: 'tertiary-1',   label: '三次調整力①', defRate: 10 },
-  { key: 'tertiary-2',   label: '三次調整力②', defRate: 2  }, // 高単価＝約定が稀（L-EIC-018）
-  { key: 'composite',    label: '複合調整力',   defRate: 0  }, // 既定で除外（個別と重複し得る）
+  { key: 'primary',     label: '一次調整力',   defRate: 5  },
+  { key: 'secondary-1', label: '二次調整力①', defRate: 5  },
+  { key: 'secondary-2', label: '二次調整力②', defRate: 5  },
+  { key: 'tertiary-1',  label: '三次調整力①', defRate: 10 },
+  { key: 'tertiary-2',  label: '三次調整力②', defRate: 2  }, // 高単価＝約定が稀（L-EIC-018）
+  { key: 'composite',   label: '複合調整力',   defRate: 0  }, // 既定で除外（個別と重複し得る）
+];
+
+/** FY セレクタ選択肢 */
+const FY_OPTIONS: { key: FyKey; label: string; note: string }[] = [
+  {
+    key: 'FY2024',
+    label: 'FY2024（通年・確定）',
+    note: '2024/4〜2025/3 通年 — EPRX 2025年3月公表',
+  },
+  {
+    key: 'FY2025H1',
+    label: 'FY2025 上期(暫定・2025/4〜9のみ)',
+    note: '2025/4〜9 上期のみ — EPRX 2025年12月公表。通年は 2026 年 6 月頃見込み',
+  },
 ];
 
 /** FY2024 fallback（出典: data.eic-jp.org catalog 2026-05-24、EPRX） */
-const FALLBACK: Record<ProductKey, number> = {
-  'primary':     15.99,
-  'secondary-1':  7.71,
-  'secondary-2': 12.61,
-  'tertiary-1':  10.60,
-  'tertiary-2': 109.43,
-  'composite':   15.80,
+const FALLBACK_BY_FY: Record<FyKey, Record<ProductKey, number>> = {
+  FY2024: {
+    'primary':     15.99,
+    'secondary-1':  7.71,
+    'secondary-2': 12.61,
+    'tertiary-1':  10.60,
+    'tertiary-2': 109.43,
+    'composite':   15.80,
+  },
+  FY2025H1: {
+    'primary':     11.41,
+    'secondary-1': 14.13,
+    'secondary-2': 14.33,
+    'tertiary-1':  13.83,
+    'tertiary-2':  33.52,
+    'composite':   11.39,
+  },
 };
 
 const BLOCKS_PER_YEAR = 365 * 48; // 17,520 コマ/年
+
+// ─── ユーティリティ ───────────────────────────────────────────────────────────
 
 function fmtYen(v: number): string {
   if (v >= 1e8) return `約 ${(v / 1e8).toFixed(2)} 億円`;
   return `約 ${Math.round(v / 1e4).toLocaleString()} 万円`;
 }
+
+// ─── スタイル定数 ─────────────────────────────────────────────────────────────
 
 const inputStyle: React.CSSProperties = {
   display: 'block',
@@ -81,13 +121,16 @@ const tdStyle: React.CSSProperties = {
   verticalAlign: 'middle',
 };
 
+// ─── コンポーネント ───────────────────────────────────────────────────────────
+
 export function BalancingRevenueEstimator({
-  prices = FALLBACK,
-  fyLabel = 'FY2024',
+  pricesByFy,
+  defaultFy = 'FY2024',
 }: {
-  prices?: Record<ProductKey, number>;
-  fyLabel?: string;
+  pricesByFy?: Record<FyKey, Record<ProductKey, number>>;
+  defaultFy?: FyKey;
 }) {
+  const [selectedFy, setSelectedFy] = useState<FyKey>(defaultFy);
   const [capacityKw, setCapacityKw] = useState(10000);
   const [blocks, setBlocks] = useState(BLOCKS_PER_YEAR);
   const [rates, setRates] = useState<Record<ProductKey, number>>(
@@ -95,10 +138,16 @@ export function BalancingRevenueEstimator({
   );
   const [includeComposite, setIncludeComposite] = useState(false);
 
+  // 選択中 FY の単価マップ（props → fallback の順で解決）
+  const activePrices: Record<ProductKey, number> =
+    pricesByFy?.[selectedFy] ?? FALLBACK_BY_FY[selectedFy];
+
+  const activeFyOption = FY_OPTIONS.find((o) => o.key === selectedFy)!;
+
   const rows = PRODUCTS.filter(
     (p) => p.key !== 'composite' || includeComposite
   ).map((p) => {
-    const price = prices[p.key] ?? 0;
+    const price = activePrices[p.key] ?? 0;
     const rate = rates[p.key] ?? 0;
     const revenue = price * capacityKw * blocks * (rate / 100);
     return { ...p, price, rate, revenue };
@@ -124,22 +173,92 @@ export function BalancingRevenueEstimator({
           ⚠️ これは前提次第で大きく変わる「概算シナリオ」です。
         </strong>
         <br />
-        ・単価は「蓄電池が約定したときの単価水準」（EPRX・{fyLabel}・volume 非加重）。
+        ・単価は「蓄電池が約定したときの単価水準」（EPRX・volume 非加重）。
         <strong>総収益 = 単価 × 全量ではありません</strong>。<br />
         ・三次②の高単価は約定が稀（FY2024: 50 円超の落札量が全体の 2.3% で調達費の 61%）。落札率は保守的に。<br />
         ・エネルギー制約上、蓄電池が全コマ（年 17,520）で同容量を提供することはできません。コマ数・落札率は実態に合わせて下げてください。<br />
+        ・<strong>FY2024（通年）と FY2025（上期のみ）は対象期間が非対称です。比較は通年同士で。</strong>FY2025 通年は EPRX 公表後（2026 年 6 月頃見込み）に更新します。<br />
         ・出典: 電力需給調整力取引所（EPRX）／ data.eic-jp.org catalog 2026-05-24。
       </div>
+
+      {/* ─── FY セレクタ ─── */}
+      <section>
+        <h2
+          style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-navy)', marginBottom: 10 }}
+        >
+          単価の年度
+        </h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+          {FY_OPTIONS.map((opt) => (
+            <label
+              key={opt.key}
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: 8,
+                cursor: 'pointer',
+                padding: '10px 14px',
+                border: `2px solid ${selectedFy === opt.key ? 'var(--color-accent, #00B5A5)' : 'var(--color-border, #e5e7eb)'}`,
+                borderRadius: 6,
+                background: selectedFy === opt.key ? '#f0fffe' : '#fff',
+                transition: 'all 0.15s',
+                flex: '1 1 260px',
+              }}
+            >
+              <input
+                type="radio"
+                name="fy-selector"
+                value={opt.key}
+                checked={selectedFy === opt.key}
+                onChange={() => setSelectedFy(opt.key)}
+                style={{ marginTop: 2, accentColor: 'var(--color-accent, #00B5A5)' }}
+                aria-label={opt.label}
+              />
+              <div>
+                <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--color-navy)' }}>
+                  {opt.label}
+                  {opt.key === 'FY2024' && (
+                    <span
+                      style={{
+                        marginLeft: 6,
+                        fontSize: 10,
+                        padding: '1px 6px',
+                        background: 'var(--color-accent, #00B5A5)',
+                        color: '#fff',
+                        borderRadius: 3,
+                        verticalAlign: 'middle',
+                      }}
+                    >
+                      既定
+                    </span>
+                  )}
+                  {opt.key === 'FY2025H1' && (
+                    <span
+                      style={{
+                        marginLeft: 6,
+                        fontSize: 10,
+                        padding: '1px 6px',
+                        background: '#fef3c7',
+                        color: '#92400e',
+                        borderRadius: 3,
+                        verticalAlign: 'middle',
+                      }}
+                    >
+                      上期のみ・暫定
+                    </span>
+                  )}
+                </div>
+                <div style={{ fontSize: 11, color: '#6b7280', marginTop: 2 }}>{opt.note}</div>
+              </div>
+            </label>
+          ))}
+        </div>
+      </section>
 
       {/* ─── 基本入力 ─── */}
       <section>
         <h2
-          style={{
-            fontSize: 15,
-            fontWeight: 700,
-            color: 'var(--color-navy)',
-            marginBottom: 12,
-          }}
+          style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-navy)', marginBottom: 12 }}
         >
           基本前提
         </h2>
@@ -206,12 +325,7 @@ export function BalancingRevenueEstimator({
       {/* ─── 商品別 落札率 + 収益 ─── */}
       <section>
         <h2
-          style={{
-            fontSize: 15,
-            fontWeight: 700,
-            color: 'var(--color-navy)',
-            marginBottom: 12,
-          }}
+          style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-navy)', marginBottom: 12 }}
         >
           商品別 落札率・期待年間収益
         </h2>
@@ -224,7 +338,7 @@ export function BalancingRevenueEstimator({
               <tr>
                 <th style={thStyle}>商品</th>
                 <th style={{ ...thStyle, textAlign: 'right' }}>
-                  単価（{fyLabel}）
+                  単価（{activeFyOption.label}）
                 </th>
                 <th style={{ ...thStyle, textAlign: 'center' }}>落札率 [%]</th>
                 <th style={{ ...thStyle, textAlign: 'right' }}>期待年間収益</th>
@@ -278,12 +392,7 @@ export function BalancingRevenueEstimator({
                       onChange={(e) =>
                         setRates((s) => ({ ...s, [r.key]: Number(e.target.value) }))
                       }
-                      style={{
-                        ...inputStyle,
-                        width: 72,
-                        textAlign: 'right',
-                        margin: '0 auto',
-                      }}
+                      style={{ ...inputStyle, width: 72, textAlign: 'right', margin: '0 auto' }}
                       aria-label={`${r.label} 落札率`}
                     />
                   </td>
