@@ -251,7 +251,7 @@
   "blackstart-capability": [],
   "blackrock-investor": [],
   "blackstart-detail": [],
-  "bloombergnef": [
+  "bloomberg-nef": [
     {
       "id": "2u8w-_b4j4p7",
       "slug": "faq-sonota-04",
@@ -259,7 +259,7 @@
       "category": "その他"
     }
   ],
-  "bloomberg-nef": [
+  "bloombergnef": [
     {
       "id": "2u8w-_b4j4p7",
       "slug": "faq-sonota-04",
@@ -277,7 +277,7 @@
   "cagr-bess": [],
   "caiso": [],
   "caiso-california": [],
-  "capex-detail": [
+  "capex": [
     {
       "id": "fmq8shkpwq",
       "slug": "faq-jigyou-05",
@@ -291,7 +291,7 @@
       "category": "その他"
     }
   ],
-  "capex": [
+  "capex-detail": [
     {
       "id": "fmq8shkpwq",
       "slug": "faq-jigyou-05",
@@ -453,10 +453,10 @@
   "drc-cobalt": [],
   "dr-subsidy": [],
   "demand-response": [],
-  "dr-detail": [],
   "dr-demand-response": [],
-  "dscr": [],
+  "dr-detail": [],
   "dscr-detail": [],
+  "dscr": [],
   "dsr-demand-side-response": [],
   "dsra-account": [],
   "data-center-detail": [],
@@ -644,8 +644,8 @@
   "eligibility-criteria": [],
   "embedded-carbon": [],
   "enel-italy": [],
-  "enerc": [],
   "enerc-catl-product": [],
+  "enerc": [],
   "energy-arbitrage": [],
   "energy-independence": [],
   "energy-markets-detail": [],
@@ -660,8 +660,8 @@
   "fat-factory-acceptance": [],
   "fcas-australia-detail": [],
   "fems": [],
-  "ferc-usa": [],
   "ferc": [],
+  "ferc-usa": [],
   "fast-frequency-response": [],
   "ffr": [],
   "fid-final-investment": [],
@@ -801,8 +801,8 @@
   "gridstack-fluence": [],
   "gulf-energy-thailand": [],
   "high-availability": [],
-  "home-energy-management-system": [],
   "hems": [],
+  "home-energy-management-system": [],
   "hv-cable": [],
   "hvac-bess": [],
   "hvdc-transmission": [
@@ -855,7 +855,7 @@
   "idb-detail": [],
   "iea-international": [],
   "iea": [],
-  "iec-detail": [
+  "iec": [
     {
       "id": "gjule02w1",
       "slug": "faq-sonota-01",
@@ -863,7 +863,7 @@
       "category": "その他"
     }
   ],
-  "iec": [
+  "iec-detail": [
     {
       "id": "gjule02w1",
       "slug": "faq-sonota-01",
@@ -882,8 +882,8 @@
       "category": "その他"
     }
   ],
-  "ieee-detail": [],
   "ieee": [],
+  "ieee-detail": [],
   "ieee-1547": [],
   "ieee-2800": [],
   "ifc-detail": [],
@@ -891,7 +891,7 @@
   "imo": [],
   "ipcc-detail": [],
   "ipp": [],
-  "ira-usa-detail": [
+  "ira-us": [
     {
       "id": "2u8w-_b4j4p7",
       "slug": "faq-sonota-04",
@@ -899,7 +899,7 @@
       "category": "その他"
     }
   ],
-  "ira-us": [
+  "ira-usa-detail": [
     {
       "id": "2u8w-_b4j4p7",
       "slug": "faq-sonota-04",
@@ -1075,8 +1075,8 @@
     }
   ],
   "lfp-advantage": [],
-  "lithium-iron-phosphate": [],
   "lfp-battery-detail": [],
+  "lithium-iron-phosphate": [],
   "lg-energy-solution": [],
   "llcr-detail": [],
   "lmo": [],
@@ -1127,7 +1127,7 @@
   "mttr": [],
   "mttr-mean-time-to-repair": [],
   "megawatt": [],
-  "megawatt-hour": [
+  "mwh-detail": [
     {
       "id": "1c_f5b7n5i",
       "slug": "faq-seido-01",
@@ -1159,7 +1159,7 @@
       "category": "技術"
     }
   ],
-  "mwh-detail": [
+  "megawatt-hour": [
     {
       "id": "1c_f5b7n5i",
       "slug": "faq-seido-01",
@@ -1269,8 +1269,8 @@
   "nmc-advantage": [],
   "nmc-battery-detail": [],
   "novec-suppression": [],
-  "npv-detail": [],
   "npv": [],
+  "npv-detail": [],
   "nyiso-detail": [],
   "national-grid-uk": [],
   "nature-based-solutions": [],
@@ -1350,6 +1350,26 @@
   ],
   "om-reserve": [],
   "om-operator": [],
+  "organization-for-cross-regional-coordination-of-transmission-operators": [
+    {
+      "id": "5jiu4t3fty",
+      "slug": "faq-seido-02",
+      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
+      "category": "制度"
+    },
+    {
+      "id": "tswhuk1cfani",
+      "slug": "faq-seido-04",
+      "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "category": "制度"
+    },
+    {
+      "id": "osrrp7m9ltw",
+      "slug": "faq-sonota-07",
+      "question": "蓄電所事業のキャリアパスは？",
+      "category": "その他"
+    }
+  ],
   "occto-japan-org": [
     {
       "id": "5jiu4t3fty",
@@ -1371,26 +1391,6 @@
     }
   ],
   "occto": [
-    {
-      "id": "5jiu4t3fty",
-      "slug": "faq-seido-02",
-      "question": "容量市場とは何ですか？事業者はどう参加できますか？",
-      "category": "制度"
-    },
-    {
-      "id": "tswhuk1cfani",
-      "slug": "faq-seido-04",
-      "question": "長期脱炭素電源オークション（LTDC）とは？",
-      "category": "制度"
-    },
-    {
-      "id": "osrrp7m9ltw",
-      "slug": "faq-sonota-07",
-      "question": "蓄電所事業のキャリアパスは？",
-      "category": "その他"
-    }
-  ],
-  "organization-for-cross-regional-coordination-of-transmission-operators": [
     {
       "id": "5jiu4t3fty",
       "slug": "faq-seido-02",
@@ -1484,8 +1484,8 @@
   "pf-arranger": [],
   "pge-california": [],
   "pirr-project": [],
-  "pjm-interconnection": [],
   "pjm": [],
+  "pjm-interconnection": [],
   "pjm-auction": [],
   "pjm-rto": [],
   "pln-indonesia": [],
@@ -1543,7 +1543,7 @@
   "quality-assurance": [],
   "quality-control": [],
   "ri-detail": [],
-  "re100": [
+  "re100-detail-2": [
     {
       "id": "15drhrq4xq52",
       "slug": "faq-hojokin-04",
@@ -1557,7 +1557,7 @@
       "category": "事業"
     }
   ],
-  "re100-detail-2": [
+  "re100": [
     {
       "id": "15drhrq4xq52",
       "slug": "faq-hojokin-04",
@@ -1591,8 +1591,8 @@
   "repowereu-plan": [],
   "rohs-detail": [],
   "return-on-investment": [],
-  "rul": [],
   "rul-remaining-life": [],
+  "rul": [],
   "rwe-germany": [],
   "refinancing-detail": [],
   "reactive-power-support": [],
@@ -1633,8 +1633,8 @@
       "category": "事業"
     }
   ],
-  "scada-detail": [],
   "scada": [],
+  "scada-detail": [],
   "scib-toshiba-product": [],
   "sdg-13": [],
   "sdg-7": [],
@@ -1681,7 +1681,7 @@
     }
   ],
   "sk-on-korea": [],
-  "sla-detail": [
+  "sla-service-level-agreement": [
     {
       "id": "2x50lsuao",
       "slug": "faq-jigyou-04",
@@ -1689,7 +1689,7 @@
       "category": "事業"
     }
   ],
-  "sla-service-level-agreement": [
+  "sla-detail": [
     {
       "id": "2x50lsuao",
       "slug": "faq-jigyou-04",
@@ -1833,12 +1833,12 @@
   "sustainability-bond": [],
   "saf-detail": [],
   "sfdr-detail": [],
-  "sustech": [],
   "sustech-japan-ems": [],
+  "sustech": [],
   "sweden-bess-market": [],
   "switchgear-detail": [],
-  "tcfd-disclosure": [],
   "tcfd": [],
+  "tcfd-disclosure": [],
   "tnb-malaysia": [],
   "twh-terawatt-hour": [],
   "take-or-pay": [],
@@ -1851,8 +1851,8 @@
     }
   ],
   "tax-equity": [],
-  "tensor-energy-ems": [],
   "tensor-energy": [],
+  "tensor-energy-ems": [],
   "tesla-autobidder": [
     {
       "id": "yiugb5gfz9qd",
@@ -1897,14 +1897,14 @@
   "umicore-recycle": [],
   "use-of-proceeds": [],
   "v2b-vehicle-to-building": [],
-  "v2g-detail": [],
   "vehicle-to-grid": [],
+  "v2g-detail": [],
   "v2h-detail": [],
   "vehicle-to-home": [],
   "v2l-detail": [],
   "v2l": [],
-  "v2x-vehicle-to-x": [],
   "v2x": [],
+  "v2x-vehicle-to-x": [],
   "va-volt-ampere": [],
   "vcm-voluntary": [],
   "voc": [],
@@ -1948,7 +1948,7 @@
   "zonal-pricing": [],
   "e-flow": [],
   "ev2g-detail": [],
-  "kwh-unit-detail": [
+  "kilowatt-hour": [
     {
       "id": "3m2dbxqu1",
       "slug": "faq-jigyou-03",
@@ -1980,7 +1980,7 @@
       "category": "事業"
     }
   ],
-  "kilowatt-hour": [
+  "kwh-unit-detail": [
     {
       "id": "3m2dbxqu1",
       "slug": "faq-jigyou-03",
@@ -2018,7 +2018,7 @@
   "kw-value": [],
   "var-volt-ampere-reactive": [],
   "delta-kw": [],
-  "aggregator": [
+  "aggregator-detail": [
     {
       "id": "ljb-memhee",
       "slug": "faq-jigyou-09",
@@ -2038,7 +2038,7 @@
       "category": "事業"
     }
   ],
-  "aggregator-detail": [
+  "aggregator": [
     {
       "id": "ljb-memhee",
       "slug": "faq-jigyou-09",
@@ -2083,8 +2083,8 @@
   "imbalance-charge": [],
   "inverter": [],
   "impact-investment": [],
-  "infra-fund": [],
   "infrastructure-fund": [],
+  "infra-fund": [],
   "infroneer": [],
   "equity-detail": [],
   "eneres-japan": [
@@ -2114,8 +2114,8 @@
   "area-price": [],
   "offsite-ppa": [],
   "offtake-agreement": [],
-  "operating-lease": [],
   "operating-lease-detail": [],
+  "operating-lease": [],
   "orix-energy": [
     {
       "id": "1c_f5b7n5i",
@@ -2172,13 +2172,13 @@
   "green-infrastructure": [],
   "greenwashing": [],
   "green-finance": [],
-  "green-bond-detail": [],
   "green-bond": [],
+  "green-bond-detail": [],
   "green-certification": [],
   "green-power-certificate": [],
   "cost-management": [],
   "connect-manage": [],
-  "cobalt-resource": [
+  "cobalt": [
     {
       "id": "a73kukpsnx",
       "slug": "faq-gijutsu-01",
@@ -2186,7 +2186,7 @@
       "category": "技術"
     }
   ],
-  "cobalt": [
+  "cobalt-resource": [
     {
       "id": "a73kukpsnx",
       "slug": "faq-gijutsu-01",
@@ -2344,7 +2344,7 @@
   "transition": [],
   "sodium-ion-battery": [],
   "nanogrid-detail": [],
-  "nickel-resource": [
+  "nickel": [
     {
       "id": "a73kukpsnx",
       "slug": "faq-gijutsu-01",
@@ -2352,7 +2352,7 @@
       "category": "技術"
     }
   ],
-  "nickel": [
+  "nickel-resource": [
     {
       "id": "a73kukpsnx",
       "slug": "faq-gijutsu-01",
@@ -2430,10 +2430,10 @@
   "power-x-japan": [],
   "peer-review": [],
   "peaker-detail": [],
-  "peak-cutting": [],
   "peak-cut": [],
-  "peak-shifting": [],
+  "peak-cutting": [],
   "peak-shift": [],
+  "peak-shifting": [],
   "peak-demand": [],
   "finance-lease": [],
   "finance-lease-detail": [],
@@ -2465,7 +2465,7 @@
   "market-penalty": [],
   "penalty-formula": [],
   "penetration-testing": [],
-  "microgrid-detail": [
+  "microgrid": [
     {
       "id": "hroaee86yi",
       "slug": "faq-sonota-03",
@@ -2491,7 +2491,7 @@
       "category": "補助金"
     }
   ],
-  "microgrid": [
+  "microgrid-detail": [
     {
       "id": "hroaee86yi",
       "slug": "faq-sonota-03",
@@ -2663,7 +2663,7 @@
   "risk-management": [],
   "risk-register": [],
   "resource-aggregator": [],
-  "lithium-resource": [
+  "lithium": [
     {
       "id": "a73kukpsnx",
       "slug": "faq-gijutsu-01",
@@ -2695,7 +2695,7 @@
       "category": "技術"
     }
   ],
-  "lithium": [
+  "lithium-resource": [
     {
       "id": "a73kukpsnx",
       "slug": "faq-gijutsu-01",
@@ -2874,8 +2874,8 @@
   "tr2-tertiary": [],
   "mitsubishi-hc-capital": [],
   "mitsubishi-chemical": [],
-  "mitsubishi-corp": [],
   "mitsubishi-corporation": [],
+  "mitsubishi-corp": [],
   "upward-dr": [],
   "upside-scenario": [],
   "price-cap": [],
@@ -2912,8 +2912,8 @@
   "chubu-bess": [],
   "chubu-electric": [],
   "mid-day-period": [],
-  "marubeni": [],
   "marubeni-japan": [],
+  "marubeni": [],
   "kyushu-bess": [],
   "kyushu-electric": [
     {
@@ -3080,8 +3080,8 @@
     }
   ],
   "renewable-output-forecast": [],
-  "renewable-special-law": [],
   "renewable-energy-special-measures-act": [],
+  "renewable-special-law": [],
   "renewable-surcharge": [],
   "renewable-energy-surcharge": [],
   "anti-islanding": [],
@@ -3247,8 +3247,8 @@
       "category": "技術"
     }
   ],
-  "substation-detail": [],
   "substation": [],
+  "substation-detail": [],
   "substation-capacity": [],
   "evening-peak": [],
   "external-entrustment-approval": [],
@@ -3402,7 +3402,7 @@
       "category": "技術"
     }
   ],
-  "performance-warranty": [
+  "performance-guarantee": [
     {
       "id": "3m2dbxqu1",
       "slug": "faq-jigyou-03",
@@ -3416,7 +3416,7 @@
       "category": "その他"
     }
   ],
-  "performance-guarantee": [
+  "performance-warranty": [
     {
       "id": "3m2dbxqu1",
       "slug": "faq-jigyou-03",
@@ -3605,8 +3605,8 @@
       "category": "その他"
     }
   ],
-  "fire-service-law": [],
   "fire-service-act": [],
+  "fire-service-law": [],
   "liquid-cooling-system": [],
   "deep-learning": [],
   "temperature-detection": [],
@@ -3652,7 +3652,7 @@
   "extra-hv-bess": [],
   "extra-high-voltage-grid": [],
   "specified-supply": [],
-  "specified-wholesale-supply": [
+  "specified-wholesale-supply-business": [
     {
       "id": "ll453dyfo",
       "slug": "faq-seido-09",
@@ -3666,7 +3666,7 @@
       "category": "事業"
     }
   ],
-  "specified-wholesale-supply-business": [
+  "specified-wholesale-supply": [
     {
       "id": "ll453dyfo",
       "slug": "faq-seido-09",
@@ -3689,7 +3689,7 @@
   "environmental-value": [],
   "environmental-assessment-law": [],
   "environmental-pollution-insurance": [],
-  "ministry-of-environment": [
+  "ministry-of-the-environment": [
     {
       "id": "15drhrq4xq52",
       "slug": "faq-hojokin-04",
@@ -3709,7 +3709,7 @@
       "category": "補助金"
     }
   ],
-  "ministry-of-the-environment": [
+  "ministry-of-environment": [
     {
       "id": "15drhrq4xq52",
       "slug": "faq-hojokin-04",
@@ -3828,6 +3828,38 @@
   ],
   "grid-information-service": [],
   "grid-inertia": [],
+  "grid-scale-battery-detail": [
+    {
+      "id": "8m1_zd3mw",
+      "slug": "faq-hojokin-01",
+      "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "1c_f5b7n5i",
+      "slug": "faq-seido-01",
+      "question": "系統用蓄電池とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "z-mn9xgb5b65",
+      "slug": "faq-sonota-08",
+      "question": "系統用蓄電池の保険はどんなものがある？",
+      "category": "その他"
+    },
+    {
+      "id": "yiugb5gfz9qd",
+      "slug": "faq-jigyou-08",
+      "question": "系統用蓄電池のマルチユース運用とは？",
+      "category": "事業"
+    },
+    {
+      "id": "a73kukpsnx",
+      "slug": "faq-gijutsu-01",
+      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
+      "category": "技術"
+    }
+  ],
   "grid-scale-battery": [
     {
       "id": "8m1_zd3mw",
@@ -3861,38 +3893,6 @@
     }
   ],
   "grid-scale-bess": [
-    {
-      "id": "8m1_zd3mw",
-      "slug": "faq-hojokin-01",
-      "question": "系統用蓄電池の主な補助金制度は？",
-      "category": "補助金"
-    },
-    {
-      "id": "1c_f5b7n5i",
-      "slug": "faq-seido-01",
-      "question": "系統用蓄電池とは何ですか？",
-      "category": "制度"
-    },
-    {
-      "id": "z-mn9xgb5b65",
-      "slug": "faq-sonota-08",
-      "question": "系統用蓄電池の保険はどんなものがある？",
-      "category": "その他"
-    },
-    {
-      "id": "yiugb5gfz9qd",
-      "slug": "faq-jigyou-08",
-      "question": "系統用蓄電池のマルチユース運用とは？",
-      "category": "事業"
-    },
-    {
-      "id": "a73kukpsnx",
-      "slug": "faq-gijutsu-01",
-      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
-      "category": "技術"
-    }
-  ],
-  "grid-scale-battery-detail": [
     {
       "id": "8m1_zd3mw",
       "slug": "faq-hojokin-01",
@@ -3968,8 +3968,8 @@
       "category": "事業"
     }
   ],
-  "jeac-9701": [],
   "grid-interconnection-code": [],
+  "jeac-9701": [],
   "grid-operation": [
     {
       "id": "osrrp7m9ltw",
@@ -4056,8 +4056,8 @@
   "emergency-manual": [],
   "gunma-bess": [],
   "dielectric-strength": [],
-  "seismic-design": [],
   "earthquake-resistant-design": [],
+  "seismic-design": [],
   "decarbonization": [
     {
       "id": "tswhuk1cfani",
@@ -4130,26 +4130,6 @@
   "private-electrical-facilities": [],
   "self-discharge": [],
   "self-transmission": [],
-  "local-subsidy": [
-    {
-      "id": "exlqvjemq",
-      "slug": "faq-sonota-02",
-      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
-      "category": "その他"
-    },
-    {
-      "id": "65g775f32ug",
-      "slug": "faq-hojokin-05",
-      "question": "自治体の独自補助金はある？",
-      "category": "補助金"
-    },
-    {
-      "id": "dbszyk1sq8c",
-      "slug": "faq-hojokin-09",
-      "question": "補助金と FIP の併用可否は？",
-      "category": "補助金"
-    }
-  ],
   "local-government-subsidy": [
     {
       "id": "exlqvjemq",
@@ -4170,8 +4150,28 @@
       "category": "補助金"
     }
   ],
+  "local-subsidy": [
+    {
+      "id": "exlqvjemq",
+      "slug": "faq-sonota-02",
+      "question": "蓄電所の地域貢献（防災・自治体協定）とは？",
+      "category": "その他"
+    },
+    {
+      "id": "65g775f32ug",
+      "slug": "faq-hojokin-05",
+      "question": "自治体の独自補助金はある？",
+      "category": "補助金"
+    },
+    {
+      "id": "dbszyk1sq8c",
+      "slug": "faq-hojokin-09",
+      "question": "補助金と FIP の併用可否は？",
+      "category": "補助金"
+    }
+  ],
   "ibaraki-bess": [],
-  "chikudensho": [
+  "battery-storage-site": [
     {
       "id": "ywb_3cxxd-y",
       "slug": "faq-jigyou-01",
@@ -4203,7 +4203,7 @@
       "category": "その他"
     }
   ],
-  "battery-storage-site": [
+  "chikudensho": [
     {
       "id": "ywb_3cxxd-y",
       "slug": "faq-jigyou-01",
@@ -4347,7 +4347,7 @@
   ],
   "transportation": [],
   "community-explanation": [],
-  "additional-auction": [
+  "additional-auction-jp": [
     {
       "id": "5jiu4t3fty",
       "slug": "faq-seido-02",
@@ -4355,7 +4355,7 @@
       "category": "制度"
     }
   ],
-  "additional-auction-jp": [
+  "additional-auction": [
     {
       "id": "5jiu4t3fty",
       "slug": "faq-seido-02",
@@ -4423,9 +4423,9 @@
       "category": "その他"
     }
   ],
-  "setback-distance": [],
   "separation-distance": [],
   "fire-separation-distance": [],
+  "setback-distance": [],
   "lightning-surge": [],
   "electricity-system-reform": [],
   "power-data": [],
@@ -4487,8 +4487,8 @@
   "pse-law": [],
   "second-life-battery": [],
   "battery-supply-chain": [],
-  "battery-passport-detail": [],
   "battery-passport": [],
+  "battery-passport-detail": [],
   "battery-module-certification": [],
   "battery-rental": [],
   "battery-association": [

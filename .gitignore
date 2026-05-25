@@ -149,3 +149,11 @@ scripts/__pycache__/
 
 # EIC Data precomputed cache (regenerated at build time)
 src/data/eic/
+
+# Vercel env pull output (NEVER commit)
+.env.local
+.env.development.local
+.env.production.local
+
+.vercel
+.env*.local

@@ -861,8 +861,8 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     ogImage: '/og/seller-manufacturer.png',
     heroH1: '蓄電池メーカーの国内市場戦略を支援する',
     heroSubcopy:
-      '日本の蓄電池市場は急成長中。セル・PCS・統合システムメーカー向けに、最新の市場規模、競合分布、技術トレンド、業界レポート引用機会を業界中立で提供します。',
-    heroCtaLabel: 'メーカー掲載・取材のご相談',
+      '蓄電所ネットには「参入検討中の事業者」「投資家・ファンド」「土地保有者」が来訪しています。メーカーとして掲載・取材を受けることで、購買意欲の高い読者に製品・実績を届けられます。市場規模・競合分布・技術トレンドを業界中立で提供し、業界レポート引用・事業者ナビ掲載でメーカーの可視性を最大化します。',
+    heroCtaLabel: 'Buyer に見つけてもらう — 掲載・取材のご相談',
     heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
@@ -887,14 +887,14 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '📰',
         title: '業界メディアでの可視性確保',
         description:
-          '蓄電所ネットの業界レポート 2026 (5/24) + 業界レポート 2027 (12/25) でのメーカー引用機会。技術仕様・実績データの中立的な可視化。',
+          '蓄電所ネットの業界レポート 2026 (7/5公開予定) + 業界レポート 2027 (12/25) でのメーカー引用機会。技術仕様・実績データの中立的な可視化。',
       },
     ],
     dataReferences: [
       {
         label: '容量市場 約定価格 (メーカー製品需要の指標)',
-        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-clearing-price',
-        indicatorIds: ['capacity-market-clearing-price'],
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-main-auction-price-national',
+        indicatorIds: ['capacity-main-auction-price-national'],
       },
       {
         label: 'JEPX 東京エリア価格 (需要動向)',
@@ -934,6 +934,11 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     insightSlugs: ['temp-vs-price', 'lng-vs-price-tokyo', 'fx-decomp-lng-jepx-tokyo'],
     faqs: [
       {
+        question: 'どんな読者が見ますか？今すぐ掲載してもらえますか？',
+        answer:
+          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します(導入検討ページ群)。エネルギー情報センター10年運営の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、業界レポート2026本編(7/5公開予定)での引用・掲載、AJ火災事例DB(5/28公開)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
+      },
+      {
         question: 'メーカー製品の蓄電所ネット掲載基準は?',
         answer:
           'セル・PCS・統合システム製品で UL9540A / IEC 62619 / JIS C 8715-2 等の規格認証を有する製品が対象。技術仕様・実績データの透明性が重要。掲載依頼時に詳細をご相談ください。',
@@ -941,12 +946,12 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '業界レポートでの製品引用機会は?',
         answer:
-          '業界レポート 2026 (5/24 公開) + 業界レポート 2027 (12/25 公開) で、メーカー製品の引用枠あり。技術仕様・市場シェア・実績数値の中立的な引用、メーカー側の事前確認可能。',
+          '業界レポート 2026 (7/5公開予定) + 業界レポート 2027 (12/25 公開) で、メーカー製品の引用枠あり。技術仕様・市場シェア・実績数値の中立的な引用、メーカー側の事前確認可能。',
       },
       {
         question: 'メーカー DB (8 月公開予定) への登録方法は?',
         answer:
-          'メーカー DB は 8/15 頃公開予定 (B-1 機能、業界唯一性 22 達成)。製品スペック・価格レンジ・実績案件の登録枠を準備中。8 月初旬にメーカー向け登録案内を予定。',
+          'メーカー DB は 8/15 頃公開予定 (B-1 機能)。製品スペック・価格レンジ・実績案件の登録枠を準備中。8 月初旬にメーカー向け登録案内を予定。',
       },
       {
         question: '蓄電所ネットの業界メディアとしての位置づけは?',
@@ -959,8 +964,8 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '業界レポート企画、Insight 記事、AJ 火災事例 DB 等で取材機会あり。技術担当者・経営層へのインタビュー、技術論文寄稿の枠を準備中。お問い合わせフォームからご相談ください。',
       },
     ],
-    ctaPrimary: { label: 'メーカー掲載・取材のご相談', url: 'https://eic-jp.org/contact' },
-    ctaSecondary: { label: '業界レポート 2026 を見る', url: '/reports/2026' },
+    ctaPrimary: { label: 'Buyer に見つけてもらう — 掲載・取材のご相談', url: 'https://eic-jp.org/contact' },
+    ctaSecondary: { label: '事業者ナビで掲載例を見る', url: '/operators' },
   },
   'seller/epc': {
     slug: 'seller/epc',
@@ -971,8 +976,8 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     ogImage: '/og/seller-epc.png',
     heroH1: 'EPC 事業者の案件獲得を、業界データで支援する',
     heroSubcopy:
-      '蓄電池 EPC 事業者向けに、最新の案件規模・地理分布・容量市場/需給調整市場連動の需要動向を業界中立で提供。掲載・取材・案件マッチング機会も提供します。',
-    heroCtaLabel: 'EPC 事業者掲載のご相談',
+      '蓄電所ネットには「参入検討中の事業者」「投資家・ファンド」「土地保有者」が来訪しています。EPC 事業者として掲載・取材を受けることで、案件化に向けて動いている読者に施工実績を届けられます。案件規模・地理分布・市場連動需要を業界中立で提供し、事業者ナビ掲載で案件候補との接点を確保します。',
+    heroCtaLabel: 'Buyer に見つけてもらう — 掲載・取材のご相談',
     heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
@@ -1003,13 +1008,13 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     dataReferences: [
       {
         label: '容量市場 落札枠 (案件需要指標)',
-        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-volume',
-        indicatorIds: ['capacity-market-volume'],
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-main-auction-volume-total',
+        indicatorIds: ['capacity-main-auction-volume-total'],
       },
       {
         label: '需給調整市場 約定価格 (参入需要指標)',
-        dataUrl: 'https://data.eic-jp.org/catalog/balancing-tertiary2-clearing',
-        indicatorIds: ['balancing-tertiary2-clearing'],
+        dataUrl: 'https://data.eic-jp.org/catalog/balancing-price-tertiary-2',
+        indicatorIds: ['balancing-price-tertiary-2'],
       },
       {
         label: 'JEPX 各エリア価格 (地域別需要分布)',
@@ -1040,13 +1045,13 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         description: '顧客向け IRR 試算、3 階建て収益モデルでの投資判断支援。',
       },
     ],
-    insightSlugs: [
-      'capacity-market-trend',
-      'temp-vs-price',
-      'lng-vs-price-tokyo',
-      'balancing-tertiary2-vs-jepx',
-    ],
+    insightSlugs: ['temp-vs-price', 'lng-vs-price-tokyo'],
     faqs: [
+      {
+        question: 'どんな読者が見ますか？今すぐ掲載してもらえますか？',
+        answer:
+          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します(導入検討ページ群)。エネルギー情報センター10年運営の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、業界レポート2026本編(7/5公開予定)での引用・掲載、AJ火災事例DB(5/28公開)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
+      },
       {
         question: 'EPC 事業者の蓄電所ネット掲載基準は?',
         answer:
@@ -1065,7 +1070,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: 'F-4 O&M ベンチマーク (9 月公開) への参加方法は?',
         answer:
-          'F-4 機能は 9/17-9/23 公開予定、業界唯一性 23 達成 (D-4 LCOS 分析と並ぶ)。EPC 事業者の O&M データ提供枠を準備中、8 月後半に案内予定。',
+          'F-4 機能は 9/17-9/23 公開予定。EPC 事業者の O&M データ提供枠を準備中、8 月後半に案内予定。',
       },
       {
         question: 'メーカー製品の比較情報は?',
@@ -1073,8 +1078,8 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           'メーカー DB (B-1、8/15 頃公開) + メーカー別スペック比較 (B-1 機能内) で、EPC 事業者の機材選定支援。',
       },
     ],
-    ctaPrimary: { label: 'EPC 事業者掲載のご相談', url: 'https://eic-jp.org/contact' },
-    ctaSecondary: { label: '業界レポート 2026 を見る', url: '/reports/2026' },
+    ctaPrimary: { label: 'Buyer に見つけてもらう — 掲載・取材のご相談', url: 'https://eic-jp.org/contact' },
+    ctaSecondary: { label: '事業者ナビで掲載例を見る', url: '/operators' },
   },
   'seller/developer': {
     slug: 'seller/developer',
@@ -1085,8 +1090,8 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     ogImage: '/og/seller-developer.png',
     heroH1: 'プロジェクトデベロッパーの SPC 設計を、業界データで支援',
     heroSubcopy:
-      '蓄電所プロジェクトの SPC スキーム設計、IRR シミュレーション、補助金活用、土地確保、PPA 設計まで業界中立で支援。最新のマクロ指標 (為替・金利・燃料) も提供します。',
-    heroCtaLabel: 'デベロッパー連携のご相談',
+      '蓄電所ネットには「参入検討中の事業者」「投資家・ファンド」「土地保有者」が来訪しています。プロジェクトデベロッパーとして掲載・取材を受けることで、SPC 組成・資金調達・用地提供を求める読者に実績を届けられます。マクロ指標・補助金・IRR データを業界中立で提供し、事業者ナビ掲載でパートナー候補との接点を確保します。',
+    heroCtaLabel: 'Buyer に見つけてもらう — 連携・掲載のご相談',
     heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
@@ -1105,7 +1110,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '🏞',
         title: '土地確保・地域連携',
         description:
-          '蓄電所立地の土地確保、地元自治体との連携、E-3 自治体条例 (11/21 公開予定、業界唯一性 25 達成) 情報の把握。',
+          '蓄電所立地の土地確保、地元自治体との連携、E-3 自治体条例 (11/21 公開予定) 情報の把握。',
       },
       {
         icon: '💼',
@@ -1132,8 +1137,8 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       },
       {
         label: '容量市場 約定価格 (事業性指標)',
-        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-clearing-price',
-        indicatorIds: ['capacity-market-clearing-price'],
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-main-auction-price-national',
+        indicatorIds: ['capacity-main-auction-price-national'],
       },
     ],
     dataSectionTitle: 'プロジェクト開発のマクロ指標 (data.eic-jp.org 提供)',
@@ -1156,13 +1161,13 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           'PPA・オフテイク契約相手 (Buyer 視点) の検討材料。デベロッパー視点での契約設計支援。',
       },
     ],
-    insightSlugs: [
-      'jgb-vs-yen-lng',
-      'us-jp-rate-vs-usdjpy',
-      'fx-decomp-lng-jepx-tokyo',
-      'capacity-market-trend',
-    ],
+    insightSlugs: ['jgb-vs-yen-lng', 'fx-decomp-lng-jepx-tokyo'],
     faqs: [
+      {
+        question: 'どんな読者が見ますか？今すぐ掲載してもらえますか？',
+        answer:
+          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します(導入検討ページ群)。エネルギー情報センター10年運営の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、業界レポート2026本編(7/5公開予定)での引用・掲載、AJ火災事例DB(5/28公開)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
+      },
       {
         question: 'プロジェクトデベロッパー向けの主な支援内容は?',
         answer:
@@ -1176,12 +1181,12 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '土地確保・自治体連携の支援はあるか?',
         answer:
-          'E-3 自治体条例 (11/21 公開予定、業界唯一性 25 達成) で全国の自治体条例情報を集約予定。土地確保時の地元自治体折衝の基礎情報。',
+          'E-3 自治体条例 (11/21 公開予定) で全国の自治体条例情報を集約予定。土地確保時の地元自治体折衝の基礎情報。',
       },
       {
         question: '補助金・税制優遇の最新情報は?',
         answer:
-          '業界レポート 2026 (5/24) + 業界レポート 2027 (12/25) で補助金・優遇税制の最新動向を解説予定。緊急性高い場合はお問い合わせフォームから個別相談。',
+          '業界レポート 2026 (7/5公開予定) + 業界レポート 2027 (12/25) で補助金・優遇税制の最新動向を解説予定。緊急性高い場合はお問い合わせフォームから個別相談。',
       },
       {
         question: 'デベロッパー実績の業界メディア掲載機会は?',
@@ -1189,8 +1194,8 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '業界レポート、Insight 記事、案件 DB (C-3 アグリゲーター、8 月公開) でデベロッパー実績の掲載枠あり。お問い合わせフォームから掲載相談可能。',
       },
     ],
-    ctaPrimary: { label: 'デベロッパー連携のご相談', url: 'https://eic-jp.org/contact' },
-    ctaSecondary: { label: 'IRR シミュレーターを試す', url: '/tools/irr-simulator' },
+    ctaPrimary: { label: 'Buyer に見つけてもらう — 連携・掲載のご相談', url: 'https://eic-jp.org/contact' },
+    ctaSecondary: { label: '事業者ナビで掲載例を見る', url: '/operators' },
   },
   'seller/reuse-secondhand': {
     slug: 'seller/reuse-secondhand',
@@ -1201,8 +1206,8 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     ogImage: '/og/seller-reuse-secondhand.png',
     heroH1: '蓄電池リユース市場の急成長を、業界データで支援',
     heroSubcopy:
-      'EV 普及に伴い蓄電池の 2 次利用市場が急成長中。中古売買・リユース事業者向けに、市場規模、劣化曲線、収益モデル、品質基準を業界中立で提供します。',
-    heroCtaLabel: 'リユース事業者掲載のご相談',
+      '蓄電所ネットには「参入検討中の事業者」「投資家・ファンド」「土地保有者」が来訪しています。リユース事業者として掲載・取材を受けることで、コスト競争力のある蓄電池を探している読者に調達機会を届けられます。市場規模・劣化曲線・収益モデルを業界中立で提供し、事業者ナビ掲載で買い手との接点を確保します。',
+    heroCtaLabel: 'Buyer に見つけてもらう — 掲載・取材のご相談',
     heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
@@ -1243,8 +1248,8 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       },
       {
         label: '容量市場 約定価格 (リユース蓄電池の参入可能性指標)',
-        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-clearing-price',
-        indicatorIds: ['capacity-market-clearing-price'],
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-main-auction-price-national',
+        indicatorIds: ['capacity-main-auction-price-national'],
       },
       {
         label: '日本 LNG 輸入価格 (自家消費代替市場指標)',
@@ -1275,6 +1280,11 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     insightSlugs: ['temp-vs-price', 'fx-decomp-lng-jepx-tokyo', 'lng-vs-price-tokyo'],
     faqs: [
       {
+        question: 'どんな読者が見ますか？今すぐ掲載してもらえますか？',
+        answer:
+          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します(導入検討ページ群)。エネルギー情報センター10年運営の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、業界レポート2026本編(7/5公開予定)での引用・掲載、AJ火災事例DB(5/28公開)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
+      },
+      {
         question: 'リユース蓄電池事業の市場規模は?',
         answer:
           '日本の EV 普及に伴い、退役 EV 電池の蓄電池 2 次利用市場が 2026 年以降本格化見込み。G-1 劣化曲線実測データ (9/24 公開) + 業界レポート 2027 (12/25) で市場規模・成長率の詳細解説予定。',
@@ -1282,7 +1292,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '劣化曲線の実測データはいつ公開されるか?',
         answer:
-          'G-1 劣化曲線実測データは 9/24 公開予定 (業界唯一性 23 達成タイミング)。メーカー別・使用条件別の劣化曲線データを業界中立で提供、リユース価格設定の基礎データ。',
+          'G-1 劣化曲線実測データは 9/24 公開予定。メーカー別・使用条件別の劣化曲線データを業界中立で提供、リユース価格設定の基礎データ。',
       },
       {
         question: 'リユース蓄電池の容量市場参入は可能?',
@@ -1300,7 +1310,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '業界レポート 2026/2027、AJ 火災事例 DB、Insight 記事でリユース事業者の事例掲載機会あり。リユース事業者の技術ノウハウ、市場戦略の中立的な可視化。',
       },
     ],
-    ctaPrimary: { label: 'リユース事業者掲載のご相談', url: 'https://eic-jp.org/contact' },
-    ctaSecondary: { label: '火災リスク自己診断を試す', url: '/tools/fire-risk-check' },
+    ctaPrimary: { label: 'Buyer に見つけてもらう — 掲載・取材のご相談', url: 'https://eic-jp.org/contact' },
+    ctaSecondary: { label: '事業者ナビで掲載例を見る', url: '/operators' },
   },
 };
