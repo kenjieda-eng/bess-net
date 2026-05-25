@@ -90,11 +90,15 @@ export const siteConfig = {
     { label: '火災・トラブル事例DB', href: '/incidents' },
     // L-029 先回り起草: 5/22 機能完全形達成記念ページ
     { label: '達成記念', href: '/milestones' },
-    // Sprint X1 完走 (Buyer 4 + Seller 4 LandingPage、L-EIC-010 動線確保)
-    { label: '工場・商業施設 (Buyer)', href: '/buyer/factory-commercial' },
-    { label: '容量市場参加検討 (Buyer)', href: '/buyer/capacity-market' },
-    { label: '需給調整市場参加検討 (Buyer)', href: '/buyer/balancing-market' },
-    { label: 'PPA・オフテイク契約 (Buyer)', href: '/buyer/ppa-offtake' },
+    // Buyer プレイヤー別 (2026-05-25 再設計)
+    { label: 'これから参入する事業者', href: '/buyer/new-entry' },
+    { label: '投資家・ファンド', href: '/buyer/investor' },
+    { label: '土地保有者・地主', href: '/buyer/landowner' },
+    { label: '工場・商業施設（自家消費）', href: '/buyer/factory-commercial' },
+    // Buyer 収益深掘り (市場別、残置)
+    { label: '容量市場 収益解説', href: '/buyer/capacity-market' },
+    { label: '需給調整市場 収益解説', href: '/buyer/balancing-market' },
+    { label: 'PPA・オフテイク契約', href: '/buyer/ppa-offtake' },
     { label: 'メーカー向け (Seller)', href: '/seller/manufacturer' },
     { label: 'EPC 事業者向け (Seller)', href: '/seller/epc' },
     { label: 'プロジェクトデベロッパー向け (Seller)', href: '/seller/developer' },

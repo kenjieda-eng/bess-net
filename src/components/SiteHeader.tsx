@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 
 const BUYER_DROPDOWN = [
-  { label: '工場・商業施設', href: '/buyer/factory-commercial' },
-  { label: '容量市場参加検討', href: '/buyer/capacity-market' },
-  { label: '需給調整市場参加検討', href: '/buyer/balancing-market' },
-  { label: 'PPA・オフテイク契約', href: '/buyer/ppa-offtake' },
+  { label: 'これから参入する事業者', href: '/buyer/new-entry' },
+  { label: '投資家・ファンド', href: '/buyer/investor' },
+  { label: '土地保有者・地主', href: '/buyer/landowner' },
+  { label: '工場・商業施設（自家消費）', href: '/buyer/factory-commercial' },
 ];
 
 const SELLER_DROPDOWN = [

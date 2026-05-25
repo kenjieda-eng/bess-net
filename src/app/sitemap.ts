@@ -72,11 +72,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/reports/2026`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 5 開始準備 (火災・トラブル事例DB シード版)
     { url: `${siteConfig.url}/incidents`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    // Sprint X1 Day 1-3 完走 (Buyer 4 + Seller 4 = 8 LandingPage)
+    // Buyer プレイヤー別 4ページ (2026-05-25 再設計、priority 0.9)
+    { url: `${siteConfig.url}/buyer/new-entry`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${siteConfig.url}/buyer/investor`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${siteConfig.url}/buyer/landowner`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${siteConfig.url}/buyer/factory-commercial`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${siteConfig.url}/buyer/capacity-market`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${siteConfig.url}/buyer/balancing-market`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${siteConfig.url}/buyer/ppa-offtake`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    // Buyer 収益深掘り (市場別、残置 priority 0.7)
+    { url: `${siteConfig.url}/buyer/capacity-market`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${siteConfig.url}/buyer/balancing-market`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${siteConfig.url}/buyer/ppa-offtake`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${siteConfig.url}/seller/manufacturer`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${siteConfig.url}/seller/epc`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${siteConfig.url}/seller/developer`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },

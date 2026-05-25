@@ -67,7 +67,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     ogImage: '/og/buyer-factory-commercial.png',
     heroH1: '工場・商業施設の電気代を、蓄電池で 20-30% 削減する',
     heroSubcopy:
-      '自家消費＋ピークカット＋BCP の 3 つの効果を実データで比較。容量市場・需給調整市場参入で追加収益も可能。エネルギー情報センターの 10 年運営実績で、業界事業者を中立的に支援します。',
+      '自家消費＋ピークカット＋BCP の 3 つの効果を実データで比較。容量市場・需給調整市場参入で追加収益も可能。エネルギー情報センターの 10 年運営実績で、業界事業者を中立的に支援します。※系統用(系統に直接つなぐ大型蓄電所)での参入・投資・用地活用をお考えの方は、メニューの「これから参入する事業者」「投資家・ファンド」「土地保有者・地主」もご覧ください。',
     heroCtaLabel: '無料相談はこちら',
     heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
@@ -214,14 +214,14 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     ],
     dataReferences: [
       {
-        label: '容量市場 約定価格 (メインオークション)',
-        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-clearing-price',
-        indicatorIds: ['capacity-market-clearing-price'],
+        label: '容量市場 約定価格 (メインオークション・全国)',
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-main-auction-price-national',
+        indicatorIds: ['capacity-main-auction-price-national'],
       },
       {
-        label: '容量市場 落札枠',
-        dataUrl: 'https://data.eic-jp.org/catalog/capacity-market-volume',
-        indicatorIds: ['capacity-market-volume'],
+        label: '容量市場 落札量 (メインオークション・合計)',
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-main-auction-volume-total',
+        indicatorIds: ['capacity-main-auction-volume-total'],
       },
       {
         label: 'JEPX 東京エリア価格',
@@ -256,7 +256,6 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       },
     ],
     insightSlugs: [
-      'capacity-market-trend',
       'temp-vs-price',
       'lng-vs-price-tokyo',
       'fx-decomp-lng-jepx-tokyo',
@@ -524,6 +523,335 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     ctaPrimary: { label: 'PPA・オフテイク契約相談はこちら', url: 'https://eic-jp.org/contact' },
     ctaSecondary: { label: 'IRR シミュレーターを試す', url: '/tools/irr-simulator' },
   },
+  // ─── Buyer プレイヤー別 3 ページ（2026-05-25 追加）─────────────────────────
+  // ① これから参入する事業者（新規参入）
+  'buyer/new-entry': {
+    slug: 'buyer/new-entry',
+    type: 'buyer',
+    title: '系統用蓄電池ビジネスへの新規参入｜事業性・収益構造・参入手順を実データで｜蓄電所ネット',
+    description:
+      'これから系統用蓄電池(蓄電所)ビジネスに参入したい事業者向け。レベニュースタッキング(JEPX＋容量市場＋需給調整＋長期脱炭素)の収益構造、接続検討〜運開の手順、高圧/低圧の選択、アグリゲーター選定までを実データと業界中立(エネルギー情報センター10年運営)の視点で解説。無料事業性相談受付中。',
+    ogImage: '/og/buyer-new-entry.png',
+    heroH1: '系統用蓄電池ビジネスに、これから参入する事業者へ',
+    heroSubcopy:
+      'レベニュースタッキング(JEPX＋容量市場＋需給調整＋長期脱炭素)の収益構造、接続検討〜運開の手順、高圧/低圧の選び方、アグリゲーター選定までを、実データと業界中立の視点で。エネルギー情報センター10年運営の信頼性で、新規参入の意思決定を支援します。',
+    heroCtaLabel: '無料事業性相談はこちら',
+    heroCtaUrl: 'https://eic-jp.org/contact',
+    painPoints: [
+      {
+        icon: '💡',
+        title: 'そもそも儲かるのか・事業性が読めない',
+        description:
+          'JEPX＋容量市場＋需給調整＋長期脱炭素オークションの「積み上げ型(レベニュースタッキング)」収益構造を実データで把握。高圧2MW/8MWhで初期5〜6億円が目安、収益は電力市場取引の巧拙で変動。',
+      },
+      {
+        icon: '🔌',
+        title: '接続検討に18ヶ月〜2年・接続負担金',
+        description:
+          '接続検討の集中で申請が殺到、接続まで18ヶ月〜2年・想定以上の接続負担金が発生する例も。系統空き容量(/grid)で周辺の余力と立地適性を先に確認。',
+      },
+      {
+        icon: '🤝',
+        title: 'アグリゲーター選定で収益が大きく変わる',
+        description:
+          '同じ設備・同じ立地でも運用アグリゲーターで収益が変動。実績・制御能力・市場対応力を中立の事業者ナビ(/operators)で見極め。',
+      },
+      {
+        icon: '⚖️',
+        title: '高圧 vs 低圧の規模戦略が決められない',
+        description:
+          '2026年4月から低圧(50kW未満)が需給調整市場に参加可能に。中小・新規にも機会拡大、用地自由度も向上。規模戦略の判断材料を提供。',
+      },
+    ],
+    dataReferences: [
+      {
+        label: 'JEPX 東京エリア スポット価格',
+        dataUrl: 'https://data.eic-jp.org/catalog/jepx-spot-tokyo',
+        indicatorIds: ['jepx-spot-tokyo'],
+      },
+      {
+        label: '容量市場 約定価格(メインオークション・全国)',
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-main-auction-price-national',
+        indicatorIds: ['capacity-main-auction-price-national'],
+      },
+      {
+        label: '需給調整(三次②) 蓄電池 年平均落札単価',
+        dataUrl: 'https://data.eic-jp.org/catalog/balancing-price-tertiary-2-battery',
+        indicatorIds: ['balancing-price-tertiary-2-battery'],
+      },
+      {
+        label: '需給調整(三次②) 不足率',
+        dataUrl: 'https://data.eic-jp.org/catalog/balancing-shortage-tertiary-2',
+        indicatorIds: ['balancing-shortage-tertiary-2'],
+      },
+    ],
+    dataSectionTitle: '参入判断に効く市場データ (data.eic-jp.org 提供)',
+    tools: [
+      {
+        label: 'IRR シミュレーター',
+        url: '/tools/irr-simulator',
+        description: '容量市場+JEPX+需給調整の3階建て収益でIRR/回収年数を試算。',
+      },
+      {
+        label: '需給調整 収益シナリオ',
+        url: '/tools/balancing-revenue',
+        description:
+          '蓄電池の需給調整収益を単価×自社入札量×落札率で試算(過大評価を避ける設計)。蓄電池 vs VPP vs 揚水の二極構造比較つき。',
+      },
+      {
+        label: '容量市場 応札試算',
+        url: '/tools/capacity-market-bid',
+        description: '容量市場の入札価格と期待収益を試算。',
+      },
+      {
+        label: '系統連系診断',
+        url: '/tools/grid-connection-check',
+        description: '立地・容量から接続の論点と概算期間を診断。',
+      },
+    ],
+    insightSlugs: ['temp-vs-price', 'lng-vs-price-tokyo'],
+    faqs: [
+      {
+        question: '系統用蓄電池の初期費用と回収期間の目安は?',
+        answer:
+          '高圧の代表例(出力2MW・容量8MWh)で初期5〜6億円が目安。収益は電力市場取引の巧拙で変動し回収年数も幅があります。IRRシミュレーターで自案件の前提を入れて試算できます。',
+      },
+      {
+        question: '接続検討にはどれくらいかかりますか?',
+        answer:
+          '接続検討の集中により申請が殺到しており、接続まで18ヶ月〜2年、想定以上の接続負担金が発生する例もあります。系統空き容量ページ(/grid、9社6,507件)で周辺の余力を先に確認するのが有効です。',
+      },
+      {
+        question: '高圧と低圧、どちらで始めるべき?',
+        answer:
+          '2026年4月から低圧(50kW未満)が需給調整市場に参加可能となり、中小規模・新規参入や用地の自由度が広がりました。規模・資金・用地・運用体制で選択が変わります。',
+      },
+      {
+        question: 'アグリゲーターはどう選べばよい?',
+        answer:
+          '同じ設備・立地でも運用アグリゲーターで収益が大きく変わります。実績・制御能力・市場対応力が見極めの軸。中立の事業者ナビ(/operators)で比較できます。',
+      },
+      {
+        question: '資金調達のハードルは?',
+        answer:
+          '将来収益が市場依存で評価しづらく金融機関は融資に慎重です。レベニュースタッキングの収益構造とリスクを実データで示すことが調達の鍵。事業性相談で論点整理を支援します。',
+      },
+    ],
+    ctaPrimary: { label: '無料事業性相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaSecondary: { label: 'IRR シミュレーターで試算', url: '/tools/irr-simulator' },
+  },
+  // ② 投資家・ファンド
+  'buyer/investor': {
+    slug: 'buyer/investor',
+    type: 'buyer',
+    title: '系統用蓄電池(蓄電所)への投資｜利回り・収益構造・リスクを実データで｜蓄電所ネット',
+    description:
+      '系統用蓄電池(蓄電所)への投資・取得を検討する投資家・ファンド向け。利回りの実態、レベニュースタッキングの収益構造とリスク、案件評価の勘所を、第三者中立の実データで解説。エネルギー情報センターが業界中立で支援。投資・収益試算相談受付中。',
+    ogImage: '/og/buyer-investor.png',
+    heroH1: '系統用蓄電池(蓄電所)に投資・取得したい投資家・ファンドへ',
+    heroSubcopy:
+      '利回りの実態、レベニュースタッキング(JEPX＋容量＋需給調整)の収益とリスク、案件評価の勘所を、営業サイトではなく業界中立の実データで。国内の蓄電所投資は1兆円超、市場急拡大のなかで投資判断を支援します。',
+    heroCtaLabel: '投資・収益試算の相談はこちら',
+    heroCtaUrl: 'https://eic-jp.org/contact',
+    painPoints: [
+      {
+        icon: '📈',
+        title: '利回りの相場観・実態がつかめない',
+        description:
+          '融資型ファンドで予定利回り数%台、エクイティ/表面では高めをうたう案件もあるが変動が大きい。実データと収益構造で相場観を補正。',
+      },
+      {
+        icon: '🎲',
+        title: '収益のブレ(市場依存)とリスク評価',
+        description:
+          '蓄電池・VPPは高単価商品(三次②等)で「当たれば」単価が桁違い、ただし約定は稀。揚水は1〜4円の基準線。蓄電池109.43/VPP46.24/揚水0.72(三次②FY2024)＝約150倍の二極構造をデータで把握。',
+      },
+      {
+        icon: '⚠️',
+        title: '「単価×全量」の過大評価に注意',
+        description:
+          '蓄電池の年平均単価は約定したときの単価水準(落札量で加重していない)。総収益は「単価×自社入札量×落札率」で、約定の希少性を必ず織り込む(過大評価を避ける)。',
+      },
+      {
+        icon: '🔍',
+        title: '案件評価の勘所・出口が見えにくい',
+        description:
+          '立地(系統空き容量)・アグリゲーター・収益構成を中立データで評価。市場規模1兆円超・300GWh級の拡大局面における出口の考え方も整理。',
+      },
+    ],
+    dataReferences: [
+      {
+        label: '需給調整(三次②) 蓄電池 年平均落札単価',
+        dataUrl: 'https://data.eic-jp.org/catalog/balancing-price-tertiary-2-battery',
+        indicatorIds: ['balancing-price-tertiary-2-battery'],
+      },
+      {
+        label: '需給調整(三次②) 揚水 年平均落札単価(比較基準)',
+        dataUrl: 'https://data.eic-jp.org/catalog/balancing-price-tertiary-2-pumped',
+        indicatorIds: ['balancing-price-tertiary-2-pumped'],
+      },
+      {
+        label: '容量市場 約定価格(メインオークション・全国)',
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-main-auction-price-national',
+        indicatorIds: ['capacity-main-auction-price-national'],
+      },
+      {
+        label: 'JEPX 東京エリア スポット価格',
+        dataUrl: 'https://data.eic-jp.org/catalog/jepx-spot-tokyo',
+        indicatorIds: ['jepx-spot-tokyo'],
+      },
+    ],
+    dataSectionTitle: '投資判断に効く市場データ (data.eic-jp.org 提供)',
+    tools: [
+      {
+        label: 'IRR シミュレーター',
+        url: '/tools/irr-simulator',
+        description: '容量市場+JEPX+需給調整の3階建て収益でIRR/回収年数を試算。',
+      },
+      {
+        label: '需給調整 収益シナリオ(二極構造比較)',
+        url: '/tools/balancing-revenue',
+        description:
+          '蓄電池 vs VPP vs 揚水の単価二極構造を可視化。単価×入札量×落札率で過大評価を避ける設計。',
+      },
+      {
+        label: '容量市場 応札試算',
+        url: '/tools/capacity-market-bid',
+        description: '容量市場の入札価格と期待収益を試算。',
+      },
+    ],
+    insightSlugs: ['lng-vs-price-tokyo', 'fx-decomp-lng-jepx-tokyo', 'jgb-vs-yen-lng'],
+    faqs: [
+      {
+        question: '系統用蓄電池投資の利回りはどれくらい?',
+        answer:
+          '融資型ファンドで予定利回り数%台、エクイティ/表面ではより高い利回りをうたう案件もありますが、収益が市場依存で変動が大きい点に注意が必要です。実データで収益構造を確認したうえでの判断を推奨します。',
+      },
+      {
+        question: '収益はどの市場から得られますか?',
+        answer:
+          'JEPXスポット(アービトラージ)を軸に、容量市場(kW価値)、需給調整市場(kWh+kW価値)、長期脱炭素電源オークションを積み上げる「レベニュースタッキング」が基本です。',
+      },
+      {
+        question: '蓄電池の高い単価をそのまま収益に掛けてよい?',
+        answer:
+          'いいえ。蓄電池の年平均単価は「約定したときの単価水準」で、落札量で加重されていません。総収益は「単価×自社入札量×落札率」で、約定の希少性(低い約定率)を必ず織り込んでください。当ツールはこの過大評価を避ける設計です。',
+      },
+      {
+        question: '案件評価で見るべきポイントは?',
+        answer:
+          '立地(系統空き容量・接続条件)、運用アグリゲーターの実績、収益構成(どの市場にどれだけ依存するか)、リスク(市場変動・接続遅延・規制)が主な軸です。中立データで一次情報を確認できます。',
+      },
+      {
+        question: '蓄電所を「買いたい」場合の相談は?',
+        answer:
+          '新規開発だけでなく、稼働中・建設中案件の取得検討も増えています。投資・収益試算の相談から、中立の立場で論点整理を支援します(エネルギー情報センター10年運営)。',
+      },
+    ],
+    ctaPrimary: { label: '投資・収益試算の相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaSecondary: { label: '需給調整 収益シナリオを試す', url: '/tools/balancing-revenue' },
+  },
+  // ③ 土地保有者・地主
+  'buyer/landowner': {
+    slug: 'buyer/landowner',
+    type: 'buyer',
+    title: '土地・遊休地を系統用蓄電池の用地に｜賃貸・売却・収益化を中立で｜蓄電所ネット',
+    description:
+      '土地・遊休地を系統用蓄電池(蓄電所)の用地として活用したい土地保有者・地主向け。用地条件、賃貸・売却・共同事業の選び方、系統空き容量での立地適性チェックを業界中立で解説。エネルギー情報センターが支援。用地査定・活用相談受付中。',
+    ogImage: '/og/buyer-landowner.png',
+    heroH1: '土地・遊休地を、系統用蓄電池(蓄電所)の用地として活かす',
+    heroSubcopy:
+      '蓄電所の用地条件(目安700〜1,000㎡・高圧線が近い・大型車の搬入路)、賃貸 vs 売却 vs 共同事業の選び方、系統空き容量での立地適性を中立の視点で。営業ではなく、まず「自分の土地が向くか」を一緒に確認します。',
+    heroCtaLabel: '用地査定・活用相談はこちら',
+    heroCtaUrl: 'https://eic-jp.org/contact',
+    painPoints: [
+      {
+        icon: '🗺️',
+        title: '自分の土地が蓄電所に向くか分からない',
+        description:
+          '目安は700〜1,000㎡、近くに高圧線、大型トレーラーの搬入路(幅6〜8m)、住居から一定距離など。系統空き容量(/grid)で周辺の系統余力もあわせて確認。',
+      },
+      {
+        icon: '💴',
+        title: '賃貸・売却・共同事業の選び方が分からない',
+        description:
+          '土地貸し(賃料)・売却(買取)・共同事業で、収益・期間・リスクが異なります。中立の立場で違いを整理します。',
+      },
+      {
+        icon: '🏦',
+        title: '信頼できる事業者を見極めたい',
+        description:
+          '用地募集は多数の事業者・電力会社(土地貸付公募)が行っています。中立の事業者ナビ(/operators)で見極めの材料を提供。',
+      },
+      {
+        icon: '📡',
+        title: '系統(高圧線・空き容量)の確認が難しい',
+        description:
+          '系統空き容量ページ(/grid、9社6,507件)で、対象地の周辺変電所の空き容量・連系条件の当たりをつけられます。',
+      },
+    ],
+    dataReferences: [
+      {
+        label: 'JEPX 東京エリア スポット価格(立地の収益性参考)',
+        dataUrl: 'https://data.eic-jp.org/catalog/jepx-spot-tokyo',
+        indicatorIds: ['jepx-spot-tokyo'],
+      },
+      {
+        label: '容量市場 約定価格(メインオークション・全国)',
+        dataUrl: 'https://data.eic-jp.org/catalog/capacity-main-auction-price-national',
+        indicatorIds: ['capacity-main-auction-price-national'],
+      },
+    ],
+    dataSectionTitle: '用地の収益性をつかむ市場データ (data.eic-jp.org 提供)',
+    tools: [
+      {
+        label: '系統連系診断',
+        url: '/tools/grid-connection-check',
+        description: '立地・容量から系統連系の論点と概算期間を診断。',
+      },
+      {
+        label: '系統空き容量(/grid)',
+        url: '/grid',
+        description: '9社6,507件の変電所別 空き容量・連系条件。対象地周辺の系統余力を確認。',
+      },
+      {
+        label: 'IRR シミュレーター(参考)',
+        url: '/tools/irr-simulator',
+        description: '用地を蓄電所にした場合の収益イメージを参考試算。',
+      },
+    ],
+    insightSlugs: ['temp-vs-price'],
+    faqs: [
+      {
+        question: '蓄電所に向く土地の条件は?',
+        answer:
+          '目安として面積700〜1,000㎡程度、近くに高圧線、大型トレーラーの搬入路(道路幅6〜8m以上)、住居から一定距離、農地なら転用可能であること等です。系統空き容量(/grid)で周辺の系統余力もあわせて確認できます。',
+      },
+      {
+        question: '賃貸と売却、どちらがよい?',
+        answer:
+          '賃貸(土地貸し)は継続賃料、売却は一括、共同事業は収益分配と、収益・期間・リスクが異なります。中立の立場で土地条件・ご意向に応じた整理を支援します。',
+      },
+      {
+        question: '電力会社の土地貸付公募とは違う?',
+        answer:
+          '九州電力送配電・北陸電力・中部電力パワーグリッド等が変電所の空きスペース等で土地貸付公募を行っています。民間の用地募集とは別枠で、条件が異なります。両者の違いも整理できます。',
+      },
+      {
+        question: '農地でも活用できますか?',
+        answer:
+          '農地区分により転用可否が分かれます。第2種・第3種農地や雑種地・宅地は活用余地がある一方、転用手続きが必要な場合があります。個別にご相談ください。',
+      },
+      {
+        question: 'まず何から相談すればよい?',
+        answer:
+          '「用地査定・活用相談」から、対象地の住所・面積・周辺状況をもとに、向き不向きと選択肢(賃貸/売却/共同事業)を中立の立場で整理します。',
+      },
+    ],
+    ctaPrimary: { label: '用地査定・活用相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaSecondary: { label: '系統空き容量(/grid)を見る', url: '/grid' },
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
   'seller/manufacturer': {
     slug: 'seller/manufacturer',
     type: 'seller',
