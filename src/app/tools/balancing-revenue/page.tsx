@@ -11,6 +11,11 @@
  * v2 (2026-05-24): FY2024 既定 + FY2025 上期(暫定) トグル（リン回答反映）
  *  - FY2024 = date "2024-04-01"（通年・確定）を既定表示
  *  - FY2025H1 = date "2025-04-01"（上期のみ・暫定）をトグル補助
+ *
+ * v3 (2026-05-25): 電源種別比較（蓄電池 vs VPP vs 揚水）二極構造追加
+ *  - catalog170: battery 6 + vpp 4 + pumped 6 = 16 系列
+ *  - BalancingSourceComparison コンポーネント追加（収益計算機の下）
+ *  - VPP 約定月数注記・L-EIC-018 注記を含む
  */
 
 import Link from 'next/link';
@@ -22,27 +27,47 @@ import {
   type ProductKey,
   type FyKey,
 } from '@/components/BalancingRevenueEstimator';
+import {
+  BalancingSourceComparison,
+  type PricesBySourceFy,
+  type CompFyKey,
+  type CompProduct,
+  type CompSource,
+} from '@/components/BalancingSourceComparison';
 import { siteConfig } from '@/lib/site-config';
 
 // ─── catalog JSON 直読み（server only） ────────────────────────────────────────
-import primaryData    from '@/data/eic/balancing-price-primary-battery.json';
-import secondary1Data from '@/data/eic/balancing-price-secondary-1-battery.json';
-import secondary2Data from '@/data/eic/balancing-price-secondary-2-battery.json';
-import tertiary1Data  from '@/data/eic/balancing-price-tertiary-1-battery.json';
-import tertiary2Data  from '@/data/eic/balancing-price-tertiary-2-battery.json';
-import compositeData  from '@/data/eic/balancing-price-composite-battery.json';
+// battery (6 系列)
+import primaryBatteryData    from '@/data/eic/balancing-price-primary-battery.json';
+import secondary1BatteryData from '@/data/eic/balancing-price-secondary-1-battery.json';
+import secondary2BatteryData from '@/data/eic/balancing-price-secondary-2-battery.json';
+import tertiary1BatteryData  from '@/data/eic/balancing-price-tertiary-1-battery.json';
+import tertiary2BatteryData  from '@/data/eic/balancing-price-tertiary-2-battery.json';
+import compositeBatteryData  from '@/data/eic/balancing-price-composite-battery.json';
+// vpp (4 系列：二次①②は系列なし)
+import primaryVppData    from '@/data/eic/balancing-price-primary-vpp.json';
+import tertiary1VppData  from '@/data/eic/balancing-price-tertiary-1-vpp.json';
+import tertiary2VppData  from '@/data/eic/balancing-price-tertiary-2-vpp.json';
+import compositeVppData  from '@/data/eic/balancing-price-composite-vpp.json';
+// pumped (6 系列)
+import primaryPumpedData    from '@/data/eic/balancing-price-primary-pumped.json';
+import secondary1PumpedData from '@/data/eic/balancing-price-secondary-1-pumped.json';
+import secondary2PumpedData from '@/data/eic/balancing-price-secondary-2-pumped.json';
+import tertiary1PumpedData  from '@/data/eic/balancing-price-tertiary-1-pumped.json';
+import tertiary2PumpedData  from '@/data/eic/balancing-price-tertiary-2-pumped.json';
+import compositePumpedData  from '@/data/eic/balancing-price-composite-pumped.json';
 
 export const revalidate = 86400; // 24h
 
 export const metadata: Metadata = {
   title: '需給調整 収益シナリオ（蓄電池）',
   description:
-    '需給調整市場 6 商品（一次〜三次②・複合）の蓄電池落札単価（EPRX 実績）に落札率・容量・コマ数を掛けた概算年間収益を試算。単価は約定時水準（L-EIC-018）。FY2024 通年確定値を既定表示。',
+    '需給調整市場 6 商品（一次〜三次②・複合）の蓄電池落札単価（EPRX 実績）に落札率・容量・コマ数を掛けた概算年間収益を試算。蓄電池・VPP・揚水の需給調整 落札単価比較（二極構造）も掲載。単価は約定時水準（L-EIC-018）。FY2024 通年確定値を既定表示。',
   alternates: { canonical: '/tools/balancing-revenue' },
   openGraph: {
     title: '需給調整 収益シナリオ（蓄電池）| 蓄電所ネット',
     description:
-      'EPRX 蓄電池単価ベースの概算収益シナリオ。FY2024（通年・確定）を既定、FY2025 上期(暫定)もトグルで確認可能。',
+      'EPRX 蓄電池単価ベースの概算収益シナリオ。蓄電池・VPP・揚水の電源種別比較（二極構造）も収録。FY2024（通年・確定）を既定、FY2025 上期(暫定)もトグルで確認可能。',
     type: 'website',
     images: ['/og-image.png'],
   },
@@ -88,12 +113,12 @@ const FALLBACK_BY_FY: Record<FyKey, Record<ProductKey, number>> = {
 
 export default function BalancingRevenuePage() {
   const productSources: { key: ProductKey; data: CatalogData }[] = [
-    { key: 'primary',     data: primaryData    as CatalogData },
-    { key: 'secondary-1', data: secondary1Data as CatalogData },
-    { key: 'secondary-2', data: secondary2Data as CatalogData },
-    { key: 'tertiary-1',  data: tertiary1Data  as CatalogData },
-    { key: 'tertiary-2',  data: tertiary2Data  as CatalogData },
-    { key: 'composite',   data: compositeData  as CatalogData },
+    { key: 'primary',     data: primaryBatteryData    as CatalogData },
+    { key: 'secondary-1', data: secondary1BatteryData as CatalogData },
+    { key: 'secondary-2', data: secondary2BatteryData as CatalogData },
+    { key: 'tertiary-1',  data: tertiary1BatteryData  as CatalogData },
+    { key: 'tertiary-2',  data: tertiary2BatteryData  as CatalogData },
+    { key: 'composite',   data: compositeBatteryData  as CatalogData },
   ];
 
   // FY2024 と FY2025H1 の単価マップを catalog から構築（読めなければ fallback）
@@ -106,6 +131,51 @@ export default function BalancingRevenuePage() {
     for (const { key, data } of productSources) {
       const v = valueAtDate(data, DATE_MAP[fyKey]);
       if (v !== null) pricesByFy[fyKey][key] = v;
+    }
+  }
+
+  // ─── pricesBySourceFy（電源種別比較用） ────────────────────────────────────
+  type SourceSeries = { product: CompProduct; data: CatalogData }[];
+  const batterySeries: SourceSeries = [
+    { product: '一次',  data: primaryBatteryData    as CatalogData },
+    { product: '二次①', data: secondary1BatteryData as CatalogData },
+    { product: '二次②', data: secondary2BatteryData as CatalogData },
+    { product: '三次①', data: tertiary1BatteryData  as CatalogData },
+    { product: '三次②', data: tertiary2BatteryData  as CatalogData },
+    { product: '複合',  data: compositeBatteryData  as CatalogData },
+  ];
+  const vppSeries: SourceSeries = [
+    // 二次①②は系列なし（VPP は約定ゼロ）
+    { product: '一次',  data: primaryVppData   as CatalogData },
+    { product: '三次①', data: tertiary1VppData as CatalogData },
+    { product: '三次②', data: tertiary2VppData as CatalogData },
+    { product: '複合',  data: compositeVppData as CatalogData },
+  ];
+  const pumpedSeries: SourceSeries = [
+    { product: '一次',  data: primaryPumpedData    as CatalogData },
+    { product: '二次①', data: secondary1PumpedData as CatalogData },
+    { product: '二次②', data: secondary2PumpedData as CatalogData },
+    { product: '三次①', data: tertiary1PumpedData  as CatalogData },
+    { product: '三次②', data: tertiary2PumpedData  as CatalogData },
+    { product: '複合',  data: compositePumpedData  as CatalogData },
+  ];
+  const sourceSeries: Record<CompSource, SourceSeries> = {
+    battery: batterySeries,
+    vpp:     vppSeries,
+    pumped:  pumpedSeries,
+  };
+
+  const pricesBySourceFy: PricesBySourceFy = {
+    battery: { FY2024: {}, FY2025H1: {} },
+    vpp:     { FY2024: {}, FY2025H1: {} },
+    pumped:  { FY2024: {}, FY2025H1: {} },
+  };
+  for (const src of ['battery', 'vpp', 'pumped'] as CompSource[]) {
+    for (const { product, data: d } of sourceSeries[src]) {
+      for (const fyKey of ['FY2024', 'FY2025H1'] as CompFyKey[]) {
+        const v = valueAtDate(d, DATE_MAP[fyKey as FyKey]);
+        if (v !== null) pricesBySourceFy[src][fyKey][product] = v;
+      }
     }
   }
 
@@ -190,6 +260,43 @@ export default function BalancingRevenuePage() {
               defaultFy="FY2024"
             />
           </div>
+
+          {/* ─── 電源種別比較（蓄電池 vs VPP vs 揚水）二極構造 ─── */}
+          <section style={{ marginBottom: 24 }}>
+            <h2
+              style={{
+                fontSize: 20,
+                fontWeight: 700,
+                color: 'var(--color-navy)',
+                marginBottom: 6,
+              }}
+            >
+              電源種別 比較（蓄電池 vs VPP vs 揚水）
+            </h2>
+            <p
+              style={{
+                fontSize: 13,
+                color: '#6b7280',
+                marginBottom: 16,
+                lineHeight: 1.6,
+              }}
+            >
+              需給調整市場における「二極構造」——蓄電池・VPP は上限価格付近、揚水は 1〜4 円の基準線——を電源種別で比較します。
+            </p>
+            <div
+              style={{
+                background: '#fff',
+                border: '1px solid var(--color-border, #e5e7eb)',
+                borderRadius: 8,
+                padding: '24px 20px',
+              }}
+            >
+              <BalancingSourceComparison
+                pricesBySourceFy={pricesBySourceFy}
+                defaultFy="FY2024"
+              />
+            </div>
+          </section>
 
           {/* ─── 出典・免責 ─── */}
           <section
