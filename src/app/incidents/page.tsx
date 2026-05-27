@@ -95,19 +95,28 @@ export default function IncidentsPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 火災・トラブル事例DB
           </p>
-          <div className="section-label" style={{ color: '#c70', fontWeight: 700 }}>★ Sprint 5 シード版 · 順次追加</div>
-          <h1 className="section-title">火災・トラブル事例DB</h1>
+          <div className="section-label" style={{ color: '#c55', fontWeight: 700 }}>🔥 AJ 火災事例 DB v1 · 2026-05-28 公開</div>
+          <h1 className="section-title">火災・トラブル事例 DB</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             蓄電池 (BESS) の火災・トラブル事例を<strong>公開情報ベース</strong>で体系化。
             業界の<strong>安全文化向上</strong>に資することを目的とした、業界唯一の事例DB。
-            現在 <strong>{INCIDENTS.length}件</strong>のシードデータを掲載。フィルタ UI と追加調査は順次。
+            現在 <strong>{INCIDENTS.length}件</strong>を掲載（国内外・公開情報のみ）。
           </p>
+
+          {/* ─ Disclaimer (編集方針 v2 準拠) ─ */}
           <section style={{ padding: 16, marginBottom: 24, background: 'rgba(255,200,0,0.08)', border: '1px solid #c70', borderRadius: 6 }}>
-            <h2 style={{ fontSize: 14, fontWeight: 700, marginTop: 0, marginBottom: 6 }}>⚠ 利用上の注意</h2>
-            <ul style={{ fontSize: 12, lineHeight: 1.7, paddingLeft: 20, margin: 0 }}>
-              <li>本DBは<strong>教育・安全文化向上</strong>を目的としており、特定企業・製品の非難を目的としません。</li>
-              <li>情報は<strong>公開資料 (報道/政府発表/企業プレスリリース)</strong> に基づきます。誤情報を発見した場合は編集部までご連絡ください。</li>
-              <li>詳細は必ず<strong>一次ソース</strong>を参照し、内部判断に用いてください。</li>
+            <h2 style={{ fontSize: 14, fontWeight: 700, marginTop: 0, marginBottom: 6 }}>⚠ 利用上の注意（必読）</h2>
+            <ul style={{ fontSize: 12, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+              <li>本DBは<strong>教育・安全文化向上</strong>を目的としており、法的・技術的な専門助言の代替ではありません。</li>
+              <li>情報は<strong>公開資料（報道/政府発表/企業プレスリリース）</strong>に基づきます。原因欄は「推定原因」であり確定情報ではありません。</li>
+              <li>詳細は必ず<strong>一次ソース</strong>を参照し、内部判断にお使いください。</li>
+              <li>
+                <strong>削除依頼：</strong>掲載内容に誤りまたは削除すべき情報がある場合は
+                <a href="https://eic-jp.org/contact" target="_blank" rel="noopener noreferrer" style={{ marginLeft: 4 }}>
+                  お問い合わせフォーム
+                </a>
+                からご連絡ください。<strong>原則48時間以内</strong>に対応します（緊急の場合は件名に「DB削除依頼【緊急】」とご記入ください）。
+              </li>
             </ul>
           </section>
 
@@ -135,7 +144,7 @@ export default function IncidentsPage() {
                       background: SEVERITY_COLOR[i.severity], color: 'white', fontWeight: 700,
                     }}>{SEVERITY_LABELS[i.severity]}</span>
                     <span style={{ fontSize: 11, padding: '2px 6px', borderRadius: 3, background: '#eef', color: '#446' }}>
-                      {CAUSE_LABELS[i.cause]}
+                      推定原因: {CAUSE_LABELS[i.cause]}
                     </span>
                     <span style={{ fontSize: 11, padding: '2px 6px', borderRadius: 3, background: 'var(--color-bg)', color: 'var(--color-muted)' }}>
                       {REGION_LABELS[i.region]} · {i.date}
@@ -170,15 +179,15 @@ export default function IncidentsPage() {
             </ul>
           </section>
 
-          {/* Sprint 5 計画 */}
+          {/* 拡張計画 */}
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>Sprint 5 拡張計画</h2>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>AJ 火災事例 DB 拡張計画</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.7, paddingLeft: 20, margin: 0 }}>
-              <li>シードを 30+ 件に拡張 (公開情報ベース)</li>
-              <li>地域/重大度/原因 によるフィルタ UI</li>
-              <li>事例間の類似度ヒートマップ</li>
-              <li><Link href="/tools/fire-risk-check">火災リスク自己診断</Link> との連携</li>
-              <li>消防法・自治体条例の規制動向解説</li>
+              <li>事例を 30+ 件に拡張（公開情報ベース・順次追加）</li>
+              <li>地域 / 重大度 / 原因 によるフィルタ UI</li>
+              <li>国内事例の詳細調査（経産省・消防庁・NEDO 資料ベース）</li>
+              <li><Link href="/tools/fire-risk-check">火災リスク自己診断</Link> との連携強化</li>
+              <li>消防法・自治体条例・UL9540A 規制動向解説</li>
             </ul>
           </section>
 

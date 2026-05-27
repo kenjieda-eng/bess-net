@@ -110,6 +110,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/tracker/grid`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
     { url: `${siteConfig.url}/tracker/ag`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
     { url: `${siteConfig.url}/tracker/pf`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
+    // 2026-05-28 需給調整 約定価格トラッカー (業界唯一性 #15)
+    { url: `${siteConfig.url}/tracker/imbalance`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/privacy`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },

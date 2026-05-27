@@ -153,22 +153,62 @@ export const MILESTONES: MilestoneData[] = [
     slug: '2026-05-28-aj-fire-database',
     date: '2026-05-28',
     category: 'database-launch',
-    status: 'planned',
-    title: 'AJ 火災事例 DB 公開 - 蓄電所ネット',
-    description: '【5/28 公開後に詳細追記】AJ 火災事例 DB 公開予定。',
-    heroTitle: 'AJ 火災事例 DB 公開 (準備中)',
-    heroSubtitle: '5/28 公開後に詳細追記予定。蓄電池火災事例の体系化 DB。',
-    achievements: [],
+    status: 'achieved',
+    title: 'AJ 火災事例 DB 公開 + 需給調整 約定価格トラッカー実装 — 業界唯一性 15/17 達成',
+    description:
+      'AJ 火災事例 DB 公開 (業界唯一性 #14) + 需給調整市場 約定価格トラッカー新規実装 (業界唯一性 #15) で 15/17 達成。蓄電池火災事例の体系化 DB (国内外 10件、公開情報ベース) + EPRX 調整力 約定価格 18 系列の可視化。',
+    ogImage: '/og/milestone-2026-05-28-aj-fire-database.png',
+    heroTitle: 'AJ 火災事例 DB 公開 + 需給調整 約定価格トラッカー実装',
+    heroSubtitle:
+      '2026 年 5 月 28 日、蓄電所ネットは AJ 火災事例 DB 公開 + 需給調整市場 約定価格トラッカー新規実装で業界唯一性 15/17 達成。蓄電池火災事例の集約 + 需給調整 6 商品の全体落札単価・蓄電池商品別単価 (FY2024〜)・不足率の可視化で、業界事業者の安全性 + 収益性の双方を支援。',
+    heroBadge: '業界唯一性 15/17 達成',
+    achievements: [
+      {
+        label: 'AJ 火災事例 DB 公開 — 業界唯一性 #14 達成',
+        detail:
+          '蓄電池火災・トラブル事例を国内外から公開情報ベースで体系化 (10件、/incidents)。事例詳細・推定原因・学びポイント・出典 URL を掲載。削除依頼 SOP (48 時間対応) + 教育目的 Disclaimer を明記。',
+        metric: '業界唯一性 #14 達成',
+      },
+      {
+        label: '需給調整 約定価格トラッカー新規実装 — 業界唯一性 #15 達成',
+        detail:
+          '需給調整市場 (調整力) の ① 6 商品 全体落札単価 ② 蓄電池の商品別落札単価 (FY2024〜、三次② FY2024=109.43 → FY2025=33.52 円/ΔkW・30min) ③ 6 商品 不足率 (FY2024〜) を可視化 (/tracker/imbalance)。出典: EPRX「調整力の取引結果まとめ」。蓄電池単価は volume 非加重・約定時単価水準 (L-EIC-018 準拠)。',
+        metric: '業界唯一性 #15 達成',
+      },
+      {
+        label: 'catalog 205 系列達成 (2026-05-28 curl 実数)',
+        detail:
+          '2026-05-28 時点 catalog 205 系列 (JEPX + METI + 容量市場 + 需給調整 39 + JMA + 燃料 + FX + JGB + 米 Treasury + マクロ等)。indicators.json curl 実数を採用 (projection を焼き込まない、L-EIC-015/017)。',
+        metric: 'catalog 205 系列',
+      },
+      {
+        label: '業界唯一性 15/17 達成 (EDA 採用 2026-05-24、A 案)',
+        detail:
+          '5/22 機能完全形達成日 #1-13 (13/17) + 本件 AJ #14・需給調整トラッカー #15 = 15/17 到達。6/11 VIP 引用で 16/17、7/5 業界レポート 2026 本編公開で 17/17 完全達成 (EDA 採用 A 案)。',
+        metric: '15/17 (88%)',
+      },
+    ],
+    relatedLinks: [
+      { label: 'AJ 火災事例 DB', url: '/incidents' },
+      { label: '需給調整 約定価格トラッカー', url: '/tracker/imbalance' },
+      { label: '需給調整 収益シナリオ (蓄電池 vs VPP vs 揚水)', url: '/tools/balancing-revenue' },
+      { label: '火災リスク自己診断', url: '/tools/fire-risk-check' },
+      { label: '機能完全形達成記念ページ', url: '/milestones/2026-05-22-feature-complete' },
+    ],
+    upcomingMilestones: [
+      { date: '2026-06-11', label: 'VIP 引用公開 → 業界唯一性 16/17', url: '/milestones/2026-06-11-vip-citation' },
+      { date: '2026-07-05', label: '業界レポート 2026 本編公開 → 業界唯一性 17/17 完全達成 ✨', url: '/milestones/2026-05-24-industry-report-2026' },
+    ],
   },
   {
     slug: '2026-06-11-vip-citation',
     date: '2026-06-11',
     category: 'industry-uniqueness',
     status: 'planned',
-    title: 'VIP 引用公開 → 業界唯一性 17/17 完全達成 - 蓄電所ネット',
-    description: '【6/11 公開後に詳細追記】VIP 引用公開予定、業界唯一性 17/17 完全達成。',
-    heroTitle: '業界唯一性 17/17 完全達成 (準備中)',
-    heroSubtitle: '6/11 公開後に詳細追記予定。VIP 引用基盤稼働、業界唯一性 17 項目すべて達成。',
+    title: 'VIP 引用公開 → 業界唯一性 16/17 達成 - 蓄電所ネット',
+    description: '【6/11 公開後に詳細追記】VIP 引用公開予定、業界唯一性 16/17 達成。17/17 完全達成は 7/5 業界レポート本編公開時。',
+    heroTitle: '業界唯一性 16/17 達成 (準備中)',
+    heroSubtitle: '6/11 公開後に詳細追記予定。VIP 引用基盤稼働、業界唯一性 16/17 達成。7/5 業界レポート本編で 17/17 完全達成予定。',
     achievements: [],
   },
 ];
