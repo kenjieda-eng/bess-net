@@ -3,16 +3,18 @@
 /**
  * src/components/BalancingSourceComparison.tsx
  *
- * 需給調整 電源種別比較（蓄電池 vs VPP vs 揚水）— 二極構造
+ * 需給調整 電源種別比較（蓄電池・VPP・揚水・火力・水力 — 5種完結）— 二極構造
  *
  * 設計:
  *  - microCMS リクエストなし (client-side 表示のみ)
  *  - pricesBySourceFy props 経由（server page が catalog JSON から注入）、無ければ fallback
  *  - FY セレクタ: FY2024（通年・確定）既定 / FY2025 上期(暫定) トグル
- *  - 三次②の二極構造（蓄電池・VPP ≒ 上限価格 vs 揚水 ≒ 基準線）を前面に
+ *  - 二極構造: 新型（蓄電池・VPP ≒ 上限価格）vs 従来型（火力・水力・揚水 ≒ 1〜5円基準線）
  *  - VPP 注記必須: 二次①②は系列なし、一次FY2024は約定ゼロ、全般的に約定月数が少ない
  *  - L-EIC-018: 単価は「約定時水準・volume 非加重」+ 期間非対称
- *  - 出典: EPRX / data.eic-jp.org catalog 2026-05-25
+ *  - 出典: EPRX / data.eic-jp.org catalog 2026-05-26（balancing 系 39）
+ *
+ * v4 (2026-05-26): 電源種別 5種完結（+火力6+水力5）。balancing 系 39。
  */
 
 import { useState } from 'react';
@@ -20,7 +22,7 @@ import { useState } from 'react';
 // ─── 型定義 ───────────────────────────────────────────────────────────────────
 
 export type CompProduct = '一次' | '二次①' | '二次②' | '三次①' | '三次②' | '複合';
-export type CompSource  = 'battery' | 'vpp' | 'pumped';
+export type CompSource  = 'battery' | 'vpp' | 'thermal' | 'hydro' | 'pumped';
 export type CompFyKey   = 'FY2024' | 'FY2025H1';
 
 export type PricesBySourceFy = Record<
@@ -33,9 +35,11 @@ export type PricesBySourceFy = Record<
 const PRODUCTS: CompProduct[] = ['一次', '二次①', '二次②', '三次①', '三次②', '複合'];
 
 const SOURCE_META: Record<CompSource, { label: string; color: string; bg: string }> = {
-  battery: { label: '蓄電池',          color: 'var(--color-navy, #0F2D4F)',    bg: '#e8f0f8' },
-  vpp:     { label: 'VPP（仮想電源）', color: 'var(--color-accent, #00B5A5)', bg: '#e0faf8' },
-  pumped:  { label: '揚水（従来電源）', color: '#92400e',                      bg: '#fef3c7' },
+  battery: { label: '蓄電池（新型）',  color: 'var(--color-navy, #0F2D4F)',    bg: '#e8f0f8' },
+  vpp:     { label: 'VPP（新型）',     color: 'var(--color-accent, #00B5A5)', bg: '#e0faf8' },
+  thermal: { label: '火力（従来型）',  color: '#b91c1c',                       bg: '#fee2e2' },
+  hydro:   { label: '水力（従来型）',  color: '#1d4ed8',                       bg: '#dbeafe' },
+  pumped:  { label: '揚水（従来型）',  color: '#92400e',                       bg: '#fef3c7' },
 };
 
 const FY_OPTIONS: { key: CompFyKey; label: string; note: string }[] = [
@@ -64,6 +68,14 @@ const FALLBACK: PricesBySourceFy = {
     FY2024:   { '一次': null,  '二次①': null, '二次②': null,  '三次①':  7.21, '三次②':  46.24, '複合':  7.21 },
     FY2025H1: { '一次': 19.35, '二次①': null, '二次②': null,  '三次①':  4.92, '三次②':  62.47, '複合': 15.26 },
   },
+  thermal: {
+    FY2024:   { '一次': 2.29, '二次①': 3.17, '二次②': 3.02, '三次①': 2.90, '三次②': 4.90, '複合': 2.89 },
+    FY2025H1: { '一次': 2.81, '二次①': 3.06, '二次②': 2.90, '三次①': 2.87, '三次②': 1.42, '複合': 2.86 },
+  },
+  hydro: {
+    FY2024:   { '一次': 2.28, '二次①': 2.24, '二次②': 1.82, '三次①': 1.82, '三次②': null, '複合': 1.82 },
+    FY2025H1: { '一次': 1.65, '二次①': 1.66, '二次②': 1.66, '三次①': 1.66, '三次②': null, '複合': 1.65 },
+  },
   pumped: {
     FY2024:   { '一次': 4.17, '二次①': 3.70, '二次②': 1.84, '三次①': 1.90, '三次②': 0.72, '複合': 2.12 },
     FY2025H1: { '一次': 1.85, '二次①': 1.89, '二次②': 2.38, '三次①': 2.26, '三次②': 0.69, '複合': 2.24 },
@@ -81,10 +93,10 @@ function getPrice(
   return data[source]?.[fy]?.[product];
 }
 
-/** 選択中 FY の全 battery+vpp+pumped の最大値（バーチャート正規化用） */
+/** 選択中 FY の全5電源種別の最大値（バーチャート正規化用） */
 function maxPrice(data: PricesBySourceFy, fy: CompFyKey): number {
   let max = 0;
-  for (const src of ['battery', 'vpp', 'pumped'] as CompSource[]) {
+  for (const src of ['battery', 'vpp', 'thermal', 'hydro', 'pumped'] as CompSource[]) {
     for (const prod of PRODUCTS) {
       const v = getPrice(data, src, fy, prod);
       if (v != null && v > max) max = v;
@@ -129,9 +141,10 @@ export function BalancingSourceComparison({
   const maxVal = maxPrice(data, selectedFy);
 
   // 三次② FY2024 の代表値（callout 用）
-  const t2b = FALLBACK.battery.FY2024['三次②']!;
-  const t2v = FALLBACK.vpp.FY2024['三次②']!;
-  const t2p = FALLBACK.pumped.FY2024['三次②']!;
+  const t2b  = FALLBACK.battery.FY2024['三次②']!;
+  const t2v  = FALLBACK.vpp.FY2024['三次②']!;
+  const t2th = FALLBACK.thermal.FY2024['三次②']!;
+  const t2p  = FALLBACK.pumped.FY2024['三次②']!;
 
   return (
     <div className="space-y-6">
@@ -147,12 +160,18 @@ export function BalancingSourceComparison({
           color: '#1e3a5f',
         }}
       >
-        <strong style={{ fontSize: 15 }}>⚡ 需給調整市場の「二極構造」</strong>
+        <strong style={{ fontSize: 15 }}>⚡ 需給調整市場の「二極構造」（5電源種別）</strong>
         <br />
-        三次調整力②（FY2024）: 蓄電池{' '}
+        三次調整力②（FY2024 代表値）
+        <br />
+        　<span style={{ fontWeight: 700 }}>新型</span>：蓄電池{' '}
         <strong style={{ color: 'var(--color-navy)' }}>{t2b} 円</strong> ／ VPP{' '}
-        <strong style={{ color: 'var(--color-accent)' }}>{t2v} 円</strong> ／ 揚水{' '}
+        <strong style={{ color: 'var(--color-accent)' }}>{t2v} 円</strong>
+        <br />
+        　<span style={{ fontWeight: 700 }}>従来型</span>：火力{' '}
+        <strong style={{ color: '#b91c1c' }}>{t2th} 円</strong> ／ 揚水{' '}
         <strong style={{ color: '#92400e' }}>{t2p} 円</strong>
+        <span style={{ color: '#6b7280', fontSize: 12 }}>（水力は三次②約定なし）</span>
         {' '}
         <span
           style={{
@@ -167,9 +186,9 @@ export function BalancingSourceComparison({
           約 {Math.round(t2b / t2p)} 倍差
         </span>
         <br />
-        揚水＝<strong>1〜4 円の基準線（従来電源）</strong>、蓄電池・VPP＝
-        <strong>上限価格付近に集中</strong>。
-        蓄電池・VPP が担う高速応動の希少価値が単価に反映されています。
+        <strong>新型（蓄電池・VPP）＝上限価格付近に集中</strong>、
+        <strong>従来型（火力・水力・揚水）＝1〜5 円の基準線</strong>。
+        高速応動の希少価値が新型の高単価を形成しています。
       </div>
 
       {/* ─── L-EIC-018 注記 ─── */}
@@ -189,10 +208,11 @@ export function BalancingSourceComparison({
         ① 蓄電池・VPP の単価は「約定したときの水準」（volume 非加重）。
         <strong>総収益 = 単価 × 全量ではありません</strong>。<br />
         ② <strong>VPP は約定月数が少なく、値が荒い傾向があります</strong>（二次①②は系列なし・約定ゼロ、一次 FY2024 は約定ゼロ）。<br />
-        ③ 揚水は従来電源の基準線（低単価・安定）。<br />
+        ③ 揚水・火力・水力は従来電源の基準線（低単価・安定）。<br />
         ④ <strong>FY2024（通年）と FY2025（上期のみ）は期間が非対称。比較は通年同士で。</strong>
         FY2025 通年は 2026 年 6 月頃 EPRX 公表後に更新予定。<br />
-        ⑤ 出典: 電力需給調整力取引所（EPRX）「取引実績の取りまとめ結果」より転記・編集 ／ data.eic-jp.org catalog 2026-05-25。
+        ⑤ 出典: 電力需給調整力取引所（EPRX）「取引実績の取りまとめ結果」より転記・編集 ／ data.eic-jp.org catalog 2026-05-26（balancing 系 39）。<br />
+        ⑥ 火力・水力の単価は大口・代表的落札水準（複数年契約 / 発電コスト連動が多い）。蓄電池・VPP と直接比較する際は入札戦略の違いにも留意。
       </div>
 
       {/* ─── FY セレクタ ─── */}
@@ -259,13 +279,13 @@ export function BalancingSourceComparison({
             <thead>
               <tr>
                 <th style={{ ...thStyle, textAlign: 'left' }}>商品</th>
-                {(['battery', 'vpp', 'pumped'] as CompSource[]).map((src) => (
+                {(['battery', 'vpp', 'thermal', 'hydro', 'pumped'] as CompSource[]).map((src) => (
                   <th
                     key={src}
                     style={{
                       ...thStyle,
                       background: SOURCE_META[src].color,
-                      minWidth: 120,
+                      minWidth: 110,
                     }}
                   >
                     {SOURCE_META[src].label}
@@ -300,7 +320,7 @@ export function BalancingSourceComparison({
                         </span>
                       )}
                     </td>
-                    {(['battery', 'vpp', 'pumped'] as CompSource[]).map((src) => {
+                    {(['battery', 'vpp', 'thermal', 'hydro', 'pumped'] as CompSource[]).map((src) => {
                       const v = getPrice(data, src, selectedFy, prod);
                       const isNull = v === null || v === undefined;
                       const barPct = isNull || v === null ? 0 : Math.round((v / maxVal) * 100);
@@ -317,7 +337,7 @@ export function BalancingSourceComparison({
                         >
                           {isNull ? (
                             <span style={{ color: '#9ca3af', fontSize: 12 }}>
-                              {src === 'vpp' ? '系列なし / 約定ゼロ' : '―'}
+                              {(src === 'vpp' || src === 'hydro') ? '系列なし / 約定ゼロ' : '―'}
                             </span>
                           ) : (
                             <div>
@@ -385,7 +405,7 @@ export function BalancingSourceComparison({
         VPP は蓄電池・EV・ヒートポンプ等の分散リソースを束ね、需給調整市場に参加します。
         三次②で蓄電池（109.43 円）に次ぐ 46.24 円（FY2024）を記録しており、
         <strong>次世代アグリゲーターとして運用収益と資産価値の両立</strong>を狙う電源種別です。
-        一次・二次①② は約定月数が少なく参考値。Phase 2 で volume（落札量）データを追加予定。
+        一次・二次①② は約定月数が少なく参考値。落札量は EPRX 非公開（図のみ）のため、不足率を落札しやすさの代理として併用。
       </section>
     </div>
   );

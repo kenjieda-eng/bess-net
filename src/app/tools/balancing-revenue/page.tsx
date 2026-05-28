@@ -16,6 +16,11 @@
  *  - catalog170: battery 6 + vpp 4 + pumped 6 = 16 系列
  *  - BalancingSourceComparison コンポーネント追加（収益計算機の下）
  *  - VPP 約定月数注記・L-EIC-018 注記を含む
+ *
+ * v4 (2026-05-26): 電源種別比較 5種完結（+火力6+水力5）
+ *  - catalog 2026-05-26（balancing 系 39）
+ *  - thermal 6 + hydro 5 (三次②なし) 追加 → BalancingSourceComparison に注入
+ *  - 二極構造: 新型（蓄電池・VPP）vs 従来型（火力・水力・揚水）
  */
 
 import Link from 'next/link';
@@ -56,18 +61,31 @@ import secondary2PumpedData from '@/data/eic/balancing-price-secondary-2-pumped.
 import tertiary1PumpedData  from '@/data/eic/balancing-price-tertiary-1-pumped.json';
 import tertiary2PumpedData  from '@/data/eic/balancing-price-tertiary-2-pumped.json';
 import compositePumpedData  from '@/data/eic/balancing-price-composite-pumped.json';
+// thermal (6 系列)
+import primaryThermalData    from '@/data/eic/balancing-price-primary-thermal.json';
+import secondary1ThermalData from '@/data/eic/balancing-price-secondary-1-thermal.json';
+import secondary2ThermalData from '@/data/eic/balancing-price-secondary-2-thermal.json';
+import tertiary1ThermalData  from '@/data/eic/balancing-price-tertiary-1-thermal.json';
+import tertiary2ThermalData  from '@/data/eic/balancing-price-tertiary-2-thermal.json';
+import compositeThermalData  from '@/data/eic/balancing-price-composite-thermal.json';
+// hydro (5 系列：三次②は系列なし)
+import primaryHydroData    from '@/data/eic/balancing-price-primary-hydro.json';
+import secondary1HydroData from '@/data/eic/balancing-price-secondary-1-hydro.json';
+import secondary2HydroData from '@/data/eic/balancing-price-secondary-2-hydro.json';
+import tertiary1HydroData  from '@/data/eic/balancing-price-tertiary-1-hydro.json';
+import compositeHydroData  from '@/data/eic/balancing-price-composite-hydro.json';
 
 export const revalidate = 86400; // 24h
 
 export const metadata: Metadata = {
   title: '需給調整 収益シナリオ（蓄電池）',
   description:
-    '需給調整市場 6 商品（一次〜三次②・複合）の蓄電池落札単価（EPRX 実績）に落札率・容量・コマ数を掛けた概算年間収益を試算。蓄電池・VPP・揚水の需給調整 落札単価比較（二極構造）も掲載。単価は約定時水準（L-EIC-018）。FY2024 通年確定値を既定表示。',
+    '需給調整市場 6 商品（一次〜三次②・複合）の蓄電池落札単価（EPRX 実績）に落札率・容量・コマ数を掛けた概算年間収益を試算。蓄電池・VPP・揚水・火力・水力の5種完結 落札単価比較（二極構造）も掲載。単価は約定時水準（L-EIC-018）。FY2024 通年確定値を既定表示。',
   alternates: { canonical: '/tools/balancing-revenue' },
   openGraph: {
     title: '需給調整 収益シナリオ（蓄電池）| 蓄電所ネット',
     description:
-      'EPRX 蓄電池単価ベースの概算収益シナリオ。蓄電池・VPP・揚水の電源種別比較（二極構造）も収録。FY2024（通年・確定）を既定、FY2025 上期(暫定)もトグルで確認可能。',
+      'EPRX 蓄電池単価ベースの概算収益シナリオ。蓄電池・VPP・揚水・火力・水力 5種完結の電源種別比較（二極構造）も収録。FY2024（通年・確定）を既定、FY2025 上期(暫定)もトグルで確認可能。',
     type: 'website',
     images: ['/og-image.png'],
   },
@@ -159,18 +177,38 @@ export default function BalancingRevenuePage() {
     { product: '三次②', data: tertiary2PumpedData  as CatalogData },
     { product: '複合',  data: compositePumpedData  as CatalogData },
   ];
+  const thermalSeries: SourceSeries = [
+    { product: '一次',  data: primaryThermalData    as CatalogData },
+    { product: '二次①', data: secondary1ThermalData as CatalogData },
+    { product: '二次②', data: secondary2ThermalData as CatalogData },
+    { product: '三次①', data: tertiary1ThermalData  as CatalogData },
+    { product: '三次②', data: tertiary2ThermalData  as CatalogData },
+    { product: '複合',  data: compositeThermalData  as CatalogData },
+  ];
+  const hydroSeries: SourceSeries = [
+    // 三次②は系列なし（水力は三次②約定ゼロ）
+    { product: '一次',  data: primaryHydroData    as CatalogData },
+    { product: '二次①', data: secondary1HydroData as CatalogData },
+    { product: '二次②', data: secondary2HydroData as CatalogData },
+    { product: '三次①', data: tertiary1HydroData  as CatalogData },
+    { product: '複合',  data: compositeHydroData  as CatalogData },
+  ];
   const sourceSeries: Record<CompSource, SourceSeries> = {
     battery: batterySeries,
     vpp:     vppSeries,
     pumped:  pumpedSeries,
+    thermal: thermalSeries,
+    hydro:   hydroSeries,
   };
 
   const pricesBySourceFy: PricesBySourceFy = {
     battery: { FY2024: {}, FY2025H1: {} },
     vpp:     { FY2024: {}, FY2025H1: {} },
     pumped:  { FY2024: {}, FY2025H1: {} },
+    thermal: { FY2024: {}, FY2025H1: {} },
+    hydro:   { FY2024: {}, FY2025H1: {} },
   };
-  for (const src of ['battery', 'vpp', 'pumped'] as CompSource[]) {
+  for (const src of ['battery', 'vpp', 'pumped', 'thermal', 'hydro'] as CompSource[]) {
     for (const { product, data: d } of sourceSeries[src]) {
       for (const fyKey of ['FY2024', 'FY2025H1'] as CompFyKey[]) {
         const v = valueAtDate(d, DATE_MAP[fyKey as FyKey]);
@@ -261,7 +299,7 @@ export default function BalancingRevenuePage() {
             />
           </div>
 
-          {/* ─── 電源種別比較（蓄電池 vs VPP vs 揚水）二極構造 ─── */}
+          {/* ─── 電源種別比較（5種完結）二極構造 ─── */}
           <section style={{ marginBottom: 24 }}>
             <h2
               style={{
@@ -271,7 +309,7 @@ export default function BalancingRevenuePage() {
                 marginBottom: 6,
               }}
             >
-              電源種別 比較（蓄電池 vs VPP vs 揚水）
+              蓄電池・VPP・揚水・火力・水力／5種完結
             </h2>
             <p
               style={{
@@ -281,7 +319,7 @@ export default function BalancingRevenuePage() {
                 lineHeight: 1.6,
               }}
             >
-              需給調整市場における「二極構造」——蓄電池・VPP は上限価格付近、揚水は 1〜4 円の基準線——を電源種別で比較します。
+              需給調整市場における「二極構造」——新型（蓄電池・VPP）は上限価格付近、従来型（火力・水力・揚水）は 1〜5 円の基準線——を5電源種別で比較します。
             </p>
             <div
               style={{
@@ -334,11 +372,11 @@ export default function BalancingRevenuePage() {
             >
               data.eic-jp.org
             </a>{' '}
-            （{siteConfig.organization.name}、catalog 2026-05-24）。
+            （{siteConfig.organization.name}、catalog 2026-05-26（balancing 系 39））。
             <br />
             ・本ツールは断定的な収益予測ではありません。投資判断には一次資料および専門家への確認を推奨します。
             <br />
-            ・Phase 2 で実落札量（volume-weighted 単価・実落札率）対応予定。
+            ・落札量（volume）は EPRX が図のみ・数値非公開のため系列化せず、不足率を調達逼迫度の代理として併用。市場規模は必要時にグラフ目視の概算（注釈付き・精度限定）。
           </section>
         </div>
       </main>
