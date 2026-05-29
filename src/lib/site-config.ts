@@ -103,6 +103,8 @@ export const siteConfig = {
     { label: 'EPC 事業者向け (Seller)', href: '/seller/epc' },
     { label: 'プロジェクトデベロッパー向け (Seller)', href: '/seller/developer' },
     { label: '中古売買・リユース (Seller)', href: '/seller/reuse-secondhand' },
+    // お問い合わせ (Task 51)
+    { label: 'お問い合わせ', href: '/contact' },
     // サイト情報
     { label: '蓄電所ネットについて', href: '/about' },
     { label: '編集方針', href: '/editorial-policy' },

@@ -112,6 +112,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/tracker/pf`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
     // 2026-05-28 需給調整 約定価格トラッカー (業界唯一性 #15)
     { url: `${siteConfig.url}/tracker/imbalance`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    // Task 51 追加: /contact 6ページ (index + 5区分)
+    { url: `${siteConfig.url}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${siteConfig.url}/contact/buyer`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${siteConfig.url}/contact/seller`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${siteConfig.url}/contact/media`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${siteConfig.url}/contact/investor`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${siteConfig.url}/contact/advisor`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/privacy`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
