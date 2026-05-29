@@ -1,11 +1,12 @@
 /**
  * ContactPageLayout — /contact/[type] 共通レイアウト
  *
- * 設計:
+ * 設計（v2、2026-05-29 修正）:
  *   - Server Component (client directive なし)
  *   - SiteHeader/SiteFooter で既存サイト統一感
- *   - ContactPageConfig を props に受け取り、全 5 区分ページに適用
- *   - CTA は https://eic-jp.org/contact への外部リンク（target="_blank"）
+ *   - ★ globals.css 既存標準クラス（section / section-inner / section-title / section-label /
+ *     article-breadcrumb / btn-primary）と inline style のみで構成（独自クラス追加なし）
+ *   - balancing-revenue / capacity-market-bid と同じ構造パターンを踏襲
  */
 
 import SiteHeader from '@/components/SiteHeader';
@@ -17,43 +18,109 @@ export default function ContactPageLayout({ config }: { config: ContactPageConfi
   return (
     <>
       <SiteHeader />
-      <main className="contact-page">
+      <main className="section">
+        <div className="section-inner" style={{ maxWidth: 1024 }}>
 
-        {/* ─── Hero ─────────────────────────────────────── */}
-        <section className="contact-hero">
-          <div className="contact-hero-inner">
-            <p className="contact-hero-breadcrumb">
-              <Link href="/contact">お問い合わせ</Link>
-              <span aria-hidden="true"> › </span>
-              <span>{config.heroH1}</span>
-            </p>
-            <h1 className="contact-hero-h1">{config.heroH1}</h1>
-            <p className="contact-hero-subcopy">{config.heroSubcopy}</p>
-          </div>
-        </section>
+          {/* ─── パンくず ─── */}
+          <p className="article-breadcrumb">
+            <Link href="/">トップ</Link> /{' '}
+            <Link href="/contact">お問い合わせ</Link> /{' '}
+            {config.heroH1}
+          </p>
 
-        {/* ─── Guidance Cards ───────────────────────────── */}
-        <section className="contact-guidances">
-          <div className="contact-section-inner">
-            <h2 className="contact-section-title">どのようなことでもご相談ください</h2>
-            <ul className="contact-guidance-list">
+          {/* ─── Hero ─── */}
+          <div className="section-label">お問い合わせ</div>
+          <h1 className="section-title">{config.heroH1}</h1>
+          <p
+            className="section-desc"
+            style={{ marginBottom: 32, lineHeight: 1.7 }}
+          >
+            {config.heroSubcopy}
+          </p>
+
+          {/* ─── Guidance Cards ─── */}
+          <section style={{ marginBottom: 32 }}>
+            <h2
+              style={{
+                fontSize: 20,
+                fontWeight: 700,
+                color: 'var(--color-navy, #0F2D4F)',
+                marginBottom: 16,
+              }}
+            >
+              どのようなことでもご相談ください
+            </h2>
+            <ul
+              style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: 16,
+              }}
+            >
               {config.guidances.map((g) => (
-                <li key={g.title} className="contact-guidance-card">
-                  <span className="contact-guidance-icon" aria-hidden="true">{g.icon}</span>
-                  <div>
-                    <h3 className="contact-guidance-card-title">{g.title}</h3>
-                    <p className="contact-guidance-card-desc">{g.description}</p>
+                <li
+                  key={g.title}
+                  style={{
+                    padding: '18px 18px',
+                    border: '1px solid var(--color-border, #e5e7eb)',
+                    borderRadius: 8,
+                    background: '#fff',
+                  }}
+                >
+                  <div
+                    aria-hidden="true"
+                    style={{ fontSize: 24, lineHeight: 1, marginBottom: 8 }}
+                  >
+                    {g.icon}
                   </div>
+                  <h3
+                    style={{
+                      fontSize: 15,
+                      fontWeight: 700,
+                      color: 'var(--color-navy, #0F2D4F)',
+                      marginBottom: 6,
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {g.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      lineHeight: 1.7,
+                      color: '#4b5563',
+                      margin: 0,
+                    }}
+                  >
+                    {g.description}
+                  </p>
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
+          </section>
 
-        {/* ─── CTA ──────────────────────────────────────── */}
-        <section className="contact-cta-section">
-          <div className="contact-section-inner">
-            <p className="contact-cta-note">
+          {/* ─── CTA ─── */}
+          <section
+            style={{
+              padding: '24px 20px',
+              background: '#f0f4f8',
+              border: '1px solid var(--color-border, #e5e7eb)',
+              borderRadius: 8,
+              marginBottom: 32,
+              textAlign: 'center',
+            }}
+          >
+            <p
+              style={{
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: '#374151',
+                marginBottom: 16,
+              }}
+            >
               お問い合わせフォームはエネルギー情報センター（eic-jp.org）が管理・運営しています。
               内容確認後、担当者よりご連絡いたします（平日 10:00–18:00 目安）。
             </p>
@@ -61,34 +128,56 @@ export default function ContactPageLayout({ config }: { config: ContactPageConfi
               href={config.ctaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-cta-button"
+              className="btn-primary"
+              style={{ display: 'inline-block' }}
             >
               {config.ctaLabel}
               <span aria-hidden="true"> ↗</span>
             </a>
-            <p className="contact-cta-sub">
+            <p
+              style={{
+                fontSize: 11,
+                color: '#6b7280',
+                marginTop: 12,
+                marginBottom: 0,
+              }}
+            >
               ※ フォームは一般社団法人エネルギー情報センターの外部サイト（eic-jp.org）に移動します。
             </p>
-          </div>
-        </section>
+          </section>
 
-        {/* ─── Related Links ────────────────────────────── */}
-        <section className="contact-related">
-          <div className="contact-section-inner">
-            <h2 className="contact-section-title">関連するページ</h2>
-            <ul className="contact-related-list">
+          {/* ─── Related Links ─── */}
+          <section style={{ marginBottom: 32 }}>
+            <h2
+              style={{
+                fontSize: 18,
+                fontWeight: 700,
+                color: 'var(--color-navy, #0F2D4F)',
+                marginBottom: 12,
+              }}
+            >
+              関連するページ
+            </h2>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 }}>
               {config.relatedLinks.map((link) => (
                 <li key={link.url}>
-                  <Link href={link.url} className="contact-related-link">
+                  <Link
+                    href={link.url}
+                    style={{
+                      color: 'var(--color-accent, #00B5A5)',
+                      textDecoration: 'none',
+                      fontSize: 14,
+                    }}
+                  >
                     {link.label}
                     <span aria-hidden="true"> →</span>
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
+          </section>
 
+        </div>
       </main>
       <SiteFooter />
     </>
