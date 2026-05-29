@@ -108,13 +108,13 @@ export const HISTORY: CapacityMarketRecord[] = [
   ...expandYear(Y2025, 2025),
 ];
 
-// 2026年度予測 (モック、AU 公開時に実値に置換)
+// 2026年度予測（実データ FY2026 が catalog に含まれるため参考のみ）
 export const FORECAST_2026 = {
-  base_price_existing: 7_000, // 業界予測 中央値
+  base_price_existing: 7_000, // 業界予測 中央値（参考）
   base_price_new: 11_000,
   range_factor: 0.35, // ±35% で範囲表示
-  note: 'AT は予測モック版です。実値は AU 容量市場約定価格DB (5/29 公開予定) で精度UP予定。',
+  note: '実データ (FY2026-FY2029) は data.eic-jp.org 連携済。本フォールバック予測値は参考用。',
 };
 
-// データソース表記
-export const DATA_SOURCE_LABEL = '出典: OCCTO 容量市場メインオークション約定結果 (2024-2025年度) ベース、業界予測値。実値は AU 容量市場約定価格DB (5/29) と連動予定。';
+// データソース表記（フォールバック時の表記）
+export const DATA_SOURCE_LABEL = '出典: OCCTO 容量市場メインオークション約定結果 (業界予測値ベース、フォールバック)。実データは data.eic-jp.org 連携済。';

@@ -21,6 +21,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
   estimateBid,
+  estimateBidWithHistory,
   TREND_LABELS,
   type BidEstimateInput,
   type BidEstimateResult,
@@ -30,10 +31,11 @@ import {
   CATEGORY_LABELS,
   CATEGORY_DESCRIPTIONS,
   filterHistory,
+  filterHistoryByArea,
   getHistory,
-  DATA_VERSION,
   type Area,
   type Category,
+  type CapacityMarketRecord,
 } from '@/lib/capacity-market-data';
 
 const AREAS: Area[] = [
@@ -134,19 +136,25 @@ function downloadCsv(content: string, filename: string) {
 function HistoryChart({
   area,
   category,
+  allHistory,
 }: {
   area: Area;
   category: Category;
+  allHistory?: CapacityMarketRecord[];
 }) {
-  const records = filterHistory(area, category).sort(
-    (a, b) => a.fiscal_year - b.fiscal_year
-  );
+  // live data: エリアのみフィルタ（区分非依存）
+  // mock data: エリア + 区分でフィルタ
+  const records = (
+    allHistory
+      ? filterHistoryByArea(allHistory, area)
+      : filterHistory(area, category)
+  ).sort((a, b) => a.fiscal_year - b.fiscal_year);
 
-  // 全エリアの同区分の価格レンジを取得 (Y軸スケール用)
-  const sameCategoryAll = getHistory().filter((r) => r.category === category);
-  const allPrices = sameCategoryAll.map((r) => r.clearing_price_yen_per_kw_year);
+  // Y軸スケール: live の場合は全エリア価格から、mock の場合は同区分全エリアから
+  const scaleSource = allHistory ?? getHistory().filter((r) => r.category === category);
+  const allPrices = scaleSource.map((r) => r.clearing_price_yen_per_kw_year).filter((v) => v > 0);
   const yMin = 0;
-  const yMax = Math.ceil(Math.max(...allPrices) / 1000) * 1000;
+  const yMax = allPrices.length > 0 ? Math.ceil(Math.max(...allPrices) / 1000) * 1000 : 20000;
 
   const W = 600;
   const H = 220;
@@ -176,7 +184,7 @@ function HistoryChart({
       viewBox={`0 0 ${W} ${H}`}
       style={{ width: '100%', maxWidth: W, height: 'auto' }}
       role="img"
-      aria-label={`過去実績チャート ${AREA_LABELS[area]} ${CATEGORY_LABELS[category]}`}
+      aria-label={`年度別約定価格チャート ${AREA_LABELS[area]}${allHistory ? '' : ` ${CATEGORY_LABELS[category]}`}`}
     >
       {/* y grid + labels */}
       {[0, 0.25, 0.5, 0.75, 1].map((f, i) => {
@@ -235,7 +243,13 @@ const DEFAULT_INPUT: BidEstimateInput = {
   cost_yen_per_kw_year: 6_000,
 };
 
-export default function CapacityMarketBidEstimator() {
+export default function CapacityMarketBidEstimator({
+  initialHistory,
+}: {
+  /** Server Component から props 注入された実データ（鉄則 #2 準拠）。未指定時はモックにフォールバック */
+  initialHistory?: CapacityMarketRecord[];
+}) {
+  const isLive = !!initialHistory && initialHistory.length > 0;
   const [input, setInput] = useState<BidEstimateInput>(DEFAULT_INPUT);
   const [hydrated, setHydrated] = useState(false);
 
@@ -257,7 +271,14 @@ export default function CapacityMarketBidEstimator() {
     }
   }, [input, hydrated]);
 
-  const result = useMemo<BidEstimateResult>(() => estimateBid(input), [input]);
+  const result = useMemo<BidEstimateResult>(
+    () =>
+      isLive && initialHistory
+        ? estimateBidWithHistory(input, initialHistory)
+        : estimateBid(input),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [input, isLive, initialHistory]
+  );
 
   const update = <K extends keyof BidEstimateInput>(key: K, value: BidEstimateInput[K]) => {
     setInput((prev) => ({ ...prev, [key]: value }));
@@ -290,37 +311,65 @@ export default function CapacityMarketBidEstimator() {
 
   return (
     <div>
-      {/* ★ モック版警告バナー (必須) */}
-      <div
-        role="note"
-        style={{
-          padding: 14,
-          marginBottom: 16,
-          background: '#fff8e1',
-          border: '2px solid #f1c40f',
-          borderRadius: 6,
-          fontSize: 13,
-        }}
-      >
-        ⚠️ <strong>本ツールはモック版です。</strong>
-        過去約定価格は OCCTO 2024-2025 年度実績を参考にした業界予測値ベース。
-        実約定価格DB (
-        <strong>AU 容量市場約定価格DB、5/29 公開予定</strong>
-        ) と連動後、microCMS から実値取得・大幅な精度UPを実施します。
-        現時点では「応札戦略の検討起点」としてご活用ください。応札の最終判断は{' '}
-        <a
-          href="https://www.occto.or.jp/market-board/market/youryou-shikou-jisshi.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'var(--color-accent, #0066cc)', fontWeight: 600 }}
+      {/* ★ データソース バナー */}
+      {isLive ? (
+        <div
+          role="note"
+          style={{
+            padding: 14,
+            marginBottom: 16,
+            background: '#e8f5e9',
+            border: '2px solid #2e7d32',
+            borderRadius: 6,
+            fontSize: 13,
+          }}
         >
-          OCCTO 公式情報
-        </a>{' '}
-        ・電気事業法を必ずご確認ください。
-        <span style={{ marginLeft: 6, fontSize: 11, opacity: 0.7 }}>
-          (Data version: <code>{DATA_VERSION}</code>)
-        </span>
-      </div>
+          ✅ <strong>data.eic-jp.org 実データ連携済</strong>（OCCTO 公表値ベース、FY2024-FY2029）。
+          <strong>OCCTO メインオークション約定価格は区分非依存</strong>（同一エリアでは新設/既設/経過措置で同価格）。
+          区分セレクタは応札容量・収入試算の文脈用です。
+          応札の最終判断は{' '}
+          <a
+            href="https://www.occto.or.jp/market-board/market/youryou-shikou-jisshi.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--color-accent, #0066cc)', fontWeight: 600 }}
+          >
+            OCCTO 公式情報
+          </a>{' '}
+          ・電気事業法を必ずご確認ください。
+          <span style={{ marginLeft: 6, fontSize: 11, opacity: 0.7 }}>
+            (Data: <code>live</code> / {initialHistory.length} 件)
+          </span>
+        </div>
+      ) : (
+        <div
+          role="note"
+          style={{
+            padding: 14,
+            marginBottom: 16,
+            background: '#fff8e1',
+            border: '2px solid #f1c40f',
+            borderRadius: 6,
+            fontSize: 13,
+          }}
+        >
+          ⚠️ <strong>フォールバック: モックデータ表示中。</strong>
+          precompute データが未生成のため業界予測値ベースで表示しています。
+          応札の最終判断は{' '}
+          <a
+            href="https://www.occto.or.jp/market-board/market/youryou-shikou-jisshi.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--color-accent, #0066cc)', fontWeight: 600 }}
+          >
+            OCCTO 公式情報
+          </a>{' '}
+          ・電気事業法を必ずご確認ください。
+          <span style={{ marginLeft: 6, fontSize: 11, opacity: 0.7 }}>
+            (Data: <code>mock</code>)
+          </span>
+        </div>
+      )}
 
       {/* フォーム */}
       <form
@@ -388,6 +437,11 @@ export default function CapacityMarketBidEstimator() {
             </select>
             <p style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               {CATEGORY_DESCRIPTIONS[input.category]}
+              {isLive && (
+                <span style={{ display: 'block', marginTop: 2, color: '#2e7d32', fontWeight: 600 }}>
+                  ※ 約定価格は区分非依存（OCCTO メインオークション）
+                </span>
+              )}
             </p>
           </div>
           {/* 容量 */}
@@ -545,7 +599,8 @@ export default function CapacityMarketBidEstimator() {
         }}
       >
         <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
-          過去実績 ({AREA_LABELS[input.area]} エリア × {CATEGORY_LABELS[input.category]})
+          過去実績 ({AREA_LABELS[input.area]} エリア
+          {isLive ? '・区分非依存（全年度加重平均）' : ` × ${CATEGORY_LABELS[input.category]}`})
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, fontSize: 13 }}>
           <div>
@@ -603,9 +658,9 @@ export default function CapacityMarketBidEstimator() {
         }}
       >
         <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
-          過去 2 年 価格推移
+          年度別 約定価格推移{isLive ? '（FY2024-FY2029）' : '（過去 2 年）'}
         </h3>
-        <HistoryChart area={input.area} category={input.category} />
+        <HistoryChart area={input.area} category={input.category} allHistory={initialHistory} />
       </section>
 
       {/* 警告 */}

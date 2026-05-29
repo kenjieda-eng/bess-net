@@ -22,6 +22,7 @@
 
 import {
   filterHistory,
+  filterHistoryByArea,
   type Area,
   type Category,
   type CapacityMarketRecord,
@@ -169,6 +170,91 @@ export function estimateBid(input: BidEstimateInput): BidEstimateResult {
   }
   warnings.push(
     '⚠️ 本試算はモック版です。応札の最終判断は OCCTO 公式情報・電気事業法を必ずご確認ください。'
+  );
+
+  return {
+    recommended_bid_low,
+    recommended_bid_mid,
+    recommended_bid_high,
+    cleared_probability,
+    historical_context: {
+      area_avg: Math.round(area_avg),
+      area_total_capacity_mw,
+      area_trend,
+      sample_size: records.length,
+      latest_price,
+      prior_price,
+    },
+    estimated_annual_revenue_oku,
+    warnings,
+  };
+}
+
+/**
+ * live data 版 estimateBid
+ *  - allRecords: Server Component から props 注入された実データ
+ *  - 区分非依存（filterHistoryByArea でエリアのみフィルタ）
+ *  - モック disclaimer なし、target_fiscal_year 範囲警告なし（FY2024-2029 カバー済み）
+ */
+export function estimateBidWithHistory(
+  input: BidEstimateInput,
+  allRecords: CapacityMarketRecord[]
+): BidEstimateResult {
+  // エリアのみでフィルタ（OCCTO 約定価格は区分非依存）
+  const records: CapacityMarketRecord[] = filterHistoryByArea(allRecords, input.area);
+  const warnings: string[] = [];
+
+  let area_avg = 0;
+  let area_total_capacity_mw = 0;
+  let weightedSum = 0;
+  for (const r of records) {
+    weightedSum += r.clearing_price_yen_per_kw_year * r.cleared_capacity_mw;
+    area_total_capacity_mw += r.cleared_capacity_mw;
+  }
+  if (area_total_capacity_mw > 0) {
+    area_avg = weightedSum / area_total_capacity_mw;
+  }
+
+  const sorted = [...records].sort((a, b) => b.fiscal_year - a.fiscal_year);
+  const latest_price = sorted[0]?.clearing_price_yen_per_kw_year;
+  const prior_price = sorted[1]?.clearing_price_yen_per_kw_year;
+  const area_trend = deriveTrend(latest_price, prior_price);
+
+  const mid = Math.round(area_avg);
+  const lowBase = Math.round(mid * 0.8);
+  const recommended_bid_low = Math.max(input.cost_yen_per_kw_year, lowBase);
+  const recommended_bid_mid = Math.max(input.cost_yen_per_kw_year, mid);
+  const recommended_bid_high = Math.max(input.cost_yen_per_kw_year, Math.round(mid * 1.3));
+
+  function probabilityFor(bid: number, ref_mid: number): number {
+    if (ref_mid === 0) return 50;
+    const r = bid / ref_mid;
+    if (r <= 0.8) return 95;
+    if (r >= 1.3) return 25;
+    if (r <= 1.0) return Math.round(95 - (r - 0.8) * 150);
+    return Math.round(65 - (r - 1.0) * 133);
+  }
+
+  const cleared_probability = {
+    low_bid: probabilityFor(recommended_bid_low, mid),
+    mid_bid: probabilityFor(recommended_bid_mid, mid),
+    high_bid: probabilityFor(recommended_bid_high, mid),
+  };
+
+  const estimated_annual_revenue_oku =
+    (input.capacity_mw * 1000 * recommended_bid_mid) / 1e8;
+
+  if (input.cost_yen_per_kw_year > area_avg * 1.5 && area_avg > 0) {
+    warnings.push(
+      `自社コスト ${input.cost_yen_per_kw_year.toLocaleString()} 円/kW/年 が過去平均の 1.5 倍超。採算性要確認。`
+    );
+  }
+  if (records.length < 2) {
+    warnings.push('該当エリアの過去データが 2 件未満。結果信頼性に注意。');
+  }
+  // 本試算の性質上の注記（モック免責ではなく一般的注意）
+  warnings.push(
+    '本試算は OCCTO 公表過去実績ベースの推定です。応札の最終判断は OCCTO 公式情報・電気事業法を必ずご確認ください。'
   );
 
   return {

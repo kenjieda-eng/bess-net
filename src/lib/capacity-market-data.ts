@@ -45,11 +45,23 @@ export function getDataSourceLabel(): string {
 }
 
 /**
- * エリア × 区分 で履歴をフィルタ
+ * エリア × 区分 で履歴をフィルタ（モックフォールバック用）
  */
 export function filterHistory(
   area: Area,
   category: Category
 ): CapacityMarketRecord[] {
   return HISTORY.filter((r) => r.area === area && r.category === category);
+}
+
+/**
+ * エリアのみでフィルタ（区分非依存、live data 用）
+ * OCCTO メインオークション約定価格は区分非依存
+ * → 同一エリアでは新設/既設/経過措置で同価格
+ */
+export function filterHistoryByArea(
+  records: CapacityMarketRecord[],
+  area: Area
+): CapacityMarketRecord[] {
+  return records.filter((r) => r.area === area);
 }
