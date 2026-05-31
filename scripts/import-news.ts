@@ -80,6 +80,8 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'eneforward-corporate-site-renewal': '開発計画',     // 事業者動向: 事業体制・IR
   'mikimori-hd-bess-500sites': '開発計画',             // 事業者動向: 500拠点展開計画
   'taoke-wide-area-recycling-certification': '制度',   // 事業者動向: 環境大臣広域認定
+  // 2026-06 追加: Eku 長野原は協業→開発計画で同じだが slug override で明示
+  'eku-energy-naganohara-bess-30mw-2026-05': '開発計画', // 群馬県企業局と土地売買契約、2029年運開
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
