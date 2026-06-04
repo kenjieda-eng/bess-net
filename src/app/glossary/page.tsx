@@ -9,7 +9,7 @@ export const revalidate = 300; // 5分ごとに再生成
 
 export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: '用語集（業界辞典）',
+  title: '系統用蓄電池 用語集｜1,500語超の業界辞典',
   description:
     '系統用蓄電池および低圧リソース事業に関わる1,500+の業界用語を、12 カテゴリ・116 サブカテゴリの階層フィルタで検索可能な辞典。BESS、容量市場、需給調整市場、JEPX、託送、SOC、SOHなど、専門用語を一言定義と詳細解説で整備。',
 };

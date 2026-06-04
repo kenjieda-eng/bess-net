@@ -96,11 +96,11 @@ export async function generateMetadata({
   const term = await getGlossaryBySlug(params.slug);
   if (!term) return {};
   return {
-    title: `${term.term}｜用語集`,
+    title: `${term.term}とは？意味・解説｜用語集`,
     description: term.shortDef,
     alternates: { canonical: `/glossary/${term.slug}` },
     openGraph: {
-      title: `${term.term}｜用語集`,
+      title: `${term.term}とは？意味・解説｜用語集`,
       description: term.shortDef,
       type: 'article',
     },

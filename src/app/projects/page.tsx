@@ -10,7 +10,7 @@ const siteContactUrl = siteConfig.organization.contactUrl;
 export const revalidate = 600;
 
 export const metadata: Metadata = {
-  title: 'プロジェクトデータベース',
+  title: '全国の蓄電所プロジェクト一覧（容量・事業者・稼働状況）',
   description:
     '国内の系統用蓄電池プロジェクトを公開情報ベースで一元管理。容量・所在地・事業者・ステータス・運転開始時期・市場参加形態を構造化して提供します。',
 };
