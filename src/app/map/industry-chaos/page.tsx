@@ -51,7 +51,7 @@ export default function IndustryChaosMapPage() {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
     name: '蓄電所事業 業界カオスマップ データセット',
-    description: `主要 ${PLAYERS.length} 社 + 関係 ${RELATIONS.length} 件 (出資/EPC/セル供給/オフテイク等) で業界構造を可視化`,
+    description: `日本の蓄電所事業の業界構造データセット。主要 ${PLAYERS.length} 社を11カテゴリで整理し、出資・EPC・セル供給・オフテイク等 ${RELATIONS.length} 件の企業間関係を構造化して無料公開している。`,
     keywords: ['蓄電所', 'BESS', '業界マップ', '構造可視化', 'カオスマップ'],
     license: 'https://creativecommons.org/licenses/by/4.0/',
     creator: {

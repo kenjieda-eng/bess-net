@@ -69,7 +69,7 @@ export default function IncidentsPage() {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
     name: '蓄電池 火災・トラブル事例 DB',
-    description: '公開情報ベースの BESS 火災・トラブル事例集',
+    description: '系統用蓄電池（BESS）の火災・トラブル事例を公開情報ベースで体系化したデータセット。発生日・地域・推定原因・出典を構造化し、教育と安全文化向上を目的に無料公開している。',
     keywords: ['BESS', '蓄電池', '火災', '熱暴走', '安全', 'インシデント'],
     license: 'https://creativecommons.org/licenses/by/4.0/',
     creator: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
