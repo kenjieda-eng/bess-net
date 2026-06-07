@@ -336,6 +336,35 @@ export default function BalancingRevenuePage() {
             </div>
           </section>
 
+          {/* ─── 蓄電池コストが収益に与える影響（感度解説）Phase C-1 ─── */}
+          <section style={{ marginBottom: 24 }}>
+            <h2 style={{ fontSize: 20, fontWeight: 700, color: 'var(--color-navy)', marginBottom: 8 }}>
+              蓄電池コストが収益に与える影響（事業性の感度）
+            </h2>
+            <div style={{
+              background: '#fff',
+              border: '1px solid var(--color-border, #e5e7eb)',
+              borderRadius: 8,
+              padding: '20px 20px',
+            }}>
+              <p style={{ fontSize: 14, lineHeight: 1.8, margin: '0 0 12px' }}>
+                需給調整 三次②で蓄電池が約定する単価（FY2024 実績 109.43 円/ΔkW・30分）に対し、
+                蓄電池の設備コストが下がるほど IRR は上振れします。系統用蓄電池のCAPEXは
+                <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL ATB 2024版</a>で
+                約 ¥83,000/kWh（米国前提・4時間構成・USD/JPY 158.34）。
+                コストが ±20% 動くと事業性がどう変わるかは{' '}
+                <Link href="/tools/irr-simulator" style={{ color: 'var(--color-accent)' }}>IRR シミュレーター</Link>の
+                3シナリオ（楽観/実データ/保守）で試算できます。
+              </p>
+              <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0 }}>
+                背景は解説{' '}
+                <Link href="/explainer/lcoe-and-bess-economics" style={{ color: 'var(--color-accent)' }}>「LCOEと蓄電池の経済性」</Link>
+                を参照。「再エネ大量導入時代に蓄電池がなぜ経済性を持つか」を、コスト（LCOS）と
+                複数市場の収益から解説しています。
+              </p>
+            </div>
+          </section>
+
           {/* ─── 出典・免責 ─── */}
           <section
             style={{
@@ -377,6 +406,15 @@ export default function BalancingRevenuePage() {
             ・本ツールは断定的な収益予測ではありません。投資判断には一次資料および専門家への確認を推奨します。
             <br />
             ・落札量（volume）は EPRX が図のみ・数値非公開のため系列化せず、不足率を調達逼迫度の代理として併用。市場規模は必要時にグラフ目視の概算（注釈付き・精度限定）。
+            <br />
+            ・感度解説内の蓄電池CAPEX参考値は{' '}
+            <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL Annual Technology Baseline (ATB) 2024</a>
+            （米国前提・CC BY 4.0）、為替換算は{' '}
+            <a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>EIC Data</a>
+            の fx-usdjpy-monthly-avg による。low/high は当サイトの感度レンジ仮定（mid±20%）であり、NREL の予測値ではありません。
+            詳細は解説{' '}
+            <Link href="/explainer/lcoe-and-bess-economics" style={{ color: 'var(--color-accent)' }}>「LCOEと蓄電池の経済性」</Link>
+            を参照。
           </section>
         </div>
       </main>

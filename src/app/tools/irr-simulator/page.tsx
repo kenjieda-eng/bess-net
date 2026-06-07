@@ -15,6 +15,9 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import IRRSimulator from '@/components/IRRSimulator';
 import { siteConfig } from '@/lib/site-config';
+// NREL ATB CAPEX + FX（build 時プリコンピュート済み JSON、鉄則 #2/#4 準拠）
+import atbCapexBatteryData from '@/data/eic/atb-capex-battery.json';
+import fxUsdJpyData from '@/data/eic/fx-usdjpy-monthly-avg.json';
 
 export const revalidate = 86400; // 24h
 
@@ -34,6 +37,24 @@ export const metadata: Metadata = {
 };
 
 export default function IrrSimulatorPage() {
+  // NREL ATB 蓄電池CAPEX 3シナリオ（build 時事前計算、L-EIC-013/015/055 準拠）
+  type EicPoints = { points?: { date: string; value: number }[] };
+  const capexPts = (atbCapexBatteryData as EicPoints).points ?? [];
+  const fxPts    = (fxUsdJpyData        as EicPoints).points ?? [];
+  const capexUsdPerKw  = capexPts.length ? capexPts[capexPts.length - 1].value : 2101;
+  const fxJpyPerUsd    = fxPts.length    ? fxPts[fxPts.length - 1].value       : 158.34;
+  const capexUsdPerKwh = capexUsdPerKw / 4;                                              // 4h 構成
+  const midJpyPerKwh   = Math.round(capexUsdPerKwh * fxJpyPerUsd / 1000) * 1000;        // ≒ 83,000
+  const lowJpyPerKwh   = Math.round(midJpyPerKwh * 0.80 / 100) * 100;                   // ≒ 66,400
+  const highJpyPerKwh  = Math.round(midJpyPerKwh * 1.20 / 100) * 100;                   // ≒ 99,600
+  const capexNrel = {
+    low:  lowJpyPerKwh,
+    mid:  midJpyPerKwh,
+    high: highJpyPerKwh,
+    fxJpyPerUsd:    Math.round(fxJpyPerUsd    * 100) / 100,
+    capexUsdPerKwh: Math.round(capexUsdPerKwh * 100) / 100,
+  };
+
   // JSON-LD SoftwareApplication (SEO リッチリザルト)
   const softwareJsonLd = {
     '@context': 'https://schema.org',
@@ -123,10 +144,11 @@ export default function IrrSimulatorPage() {
           >
             ※ デフォルト値は 2026年5月時点の業界平均値。容量市場 ¥8,000/kW/年 (2025年度オークション結果反映)、
             需給調整市場 ¥1,500/kW/月、JEPX スポット ¥9-23/kWh (2024年度実績) 等を採用。
-            出典: JEPX/OCCTO/SII 公表資料、業界EPC公表値。
+            蓄電池CAPEXの参考値（Step 2）は NREL ATB 2024版（米国前提、mid=実データ）を USD/JPY {capexNrel.fxJpyPerUsd} で円換算。
+            出典: JEPX/OCCTO/SII 公表資料、業界EPC公表値、NREL ATB (CC BY 4.0)。
           </p>
 
-          <IRRSimulator />
+          <IRRSimulator capexNrel={capexNrel} />
 
           {/* 計算ロジック説明 */}
           <section

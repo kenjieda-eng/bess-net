@@ -21,6 +21,15 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
+
+/** NREL ATB 蓄電池CAPEX 3シナリオ（page.tsx から props 経由で受け取る） */
+export interface CapexNrelData {
+  low:  number;  // ¥/kWh、楽観（mid × 0.80、感度レンジ・仮定）
+  mid:  number;  // ¥/kWh、実データ（NREL ATB 2024・米国前提）
+  high: number;  // ¥/kWh、保守（mid × 1.20、感度レンジ・仮定）
+  fxJpyPerUsd:    number;  // 円換算レート（最新 fx-usdjpy-monthly-avg）
+  capexUsdPerKwh: number;  // 元値（$/kWh = $/kW ÷ 4）
+}
 import {
   calculateAll,
   calculateSensitivity,
@@ -444,7 +453,7 @@ function NumberField({
 // メイン
 // ─────────────────────────────────────
 
-export default function IRRSimulator() {
+export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData }) {
   // 入力 state: 3 シナリオ別の IRRInput を保持
   const [inputs, setInputs] = useState<Record<ScenarioKey, IRRInput>>({
     optimistic: getScenarioInput('optimistic'),
@@ -456,6 +465,8 @@ export default function IRRSimulator() {
   const [hydrated, setHydrated] = useState(false);
   // EDA #1 (依頼36): C 案プリセット (高圧 / 大規模)、既存デフォルト = 大規模
   const [activePreset, setActivePreset] = useState<PresetKey>('large-scale');
+  // NREL ATB CAPEX トグル（null = NREL未選択、プリセット/手入力優先）
+  const [capexTier, setCapexTier] = useState<'low' | 'mid' | 'high' | null>(null);
 
   const handlePresetChange = (key: PresetKey) => {
     setActivePreset(key);
@@ -817,17 +828,76 @@ export default function IRRSimulator() {
             <p style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 14 }}>
               ※ 現在 <strong>{SCENARIO_LABELS[activeEditing]}</strong> シナリオを編集中
             </p>
+            {/* NREL ATB 蓄電池CAPEX 3シナリオ トグル（B-2: phase-B 実装、L-EIC-013/015/055 準拠） */}
+            {capexNrel && (
+              <div style={{ marginBottom: 16, padding: 14, background: '#f0f7ff', border: '1px solid #b3d4f5', borderRadius: 6 }}>
+                <p style={{ fontSize: 13, fontWeight: 700, marginTop: 0, marginBottom: 8, color: '#1e3a5f' }}>
+                  📊 NREL ATB 2024 蓄電池CAPEX（米国前提・参考値）— 選択でフィールドに反映
+                </p>
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 8 }}>
+                  {(['low', 'mid', 'high'] as const).map((tier) => {
+                    const TIER_LABELS: Record<string, string> = { low: '楽観 (low)', mid: '実データ (mid)', high: '保守 (high)' };
+                    const TIER_VALUES: Record<string, number>  = { low: capexNrel.low, mid: capexNrel.mid, high: capexNrel.high };
+                    const isActive = capexTier === tier;
+                    return (
+                      <button
+                        key={tier}
+                        type="button"
+                        aria-pressed={isActive}
+                        onClick={() => {
+                          setCapexTier(tier);
+                          // capex_oku(億円) = ¥/kWh × capacity_mwh(MWh) × 1000(kWh/MWh) ÷ 1e8(¥→億¥)
+                          //               = ¥/kWh × capacity_mwh / 100,000
+                          const newCapexOku = Math.round(TIER_VALUES[tier] * cur.capacity_mwh / 100000 * 10) / 10;
+                          updateField('capex_oku', newCapexOku);
+                        }}
+                        style={{
+                          padding: '7px 14px',
+                          fontSize: 13,
+                          fontWeight: 600,
+                          background: isActive ? '#0066cc' : '#fff',
+                          color: isActive ? '#fff' : '#374151',
+                          border: `1px solid ${isActive ? '#0066cc' : '#cbd5e1'}`,
+                          borderRadius: 4,
+                          cursor: 'pointer',
+                          transition: 'all 0.12s',
+                        }}
+                      >
+                        {TIER_LABELS[tier]}
+                        <span style={{ marginLeft: 4, fontWeight: 400 }}>
+                          ¥{TIER_VALUES[tier].toLocaleString()}/kWh
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+                <p style={{ fontSize: 11, color: '#6b7280', margin: '0 0 6px', lineHeight: 1.6 }}>
+                  ※ 選択で <strong>{SCENARIO_LABELS[activeEditing]}</strong> シナリオの CAPEX を自動計算（¥/kWh × {cur.capacity_mwh} MWh = 上の値 × {cur.capacity_mwh} ÷ 100,000 億円）。手入力で上書き可能。
+                </p>
+                <p style={{ fontSize: 11, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
+                  既定値は{' '}
+                  <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc' }}>NREL Annual Technology Baseline (ATB) 2024</a>
+                  の系統用蓄電池CAPEX（米国前提・${capexNrel.capexUsdPerKwh.toFixed(0)}/kWh）を
+                  USD/JPY {capexNrel.fxJpyPerUsd} で円換算（mid＝実データ）。
+                  low/high は感度レンジ（mid±20%）で、幅は NREL ATB のシナリオ不確実性に基づく当サイトの仮定であり、
+                  NREL の予測値そのものではありません。実際の調達価格は案件規模・電池種別・時期で異なります。
+                  データ提供:{' '}
+                  <a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc' }}>EIC Data</a>（CC BY 4.0）。
+                </p>
+              </div>
+            )}
+
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
               <NumberField
                 id="capex_oku"
                 label="初期投資 (CAPEX)"
                 unit="億円"
                 value={cur.capex_oku}
-                onChange={(v) => updateField('capex_oku', v)}
+                onChange={(v) => { setCapexTier(null); updateField('capex_oku', v); }}
                 step={1}
                 min={1}
                 max={500}
-                hint="例: 標準 26 億円"
+                hint="例: 標準 26 億円 / NREL ATB mid(¥83,000/kWh)で50MWh → 41.5億円"
               />
               <NumberField
                 id="opex_yen_per_mw_year"
@@ -1225,6 +1295,12 @@ export default function IRRSimulator() {
               系統用蓄電池 解説記事
             </Link>
             : 事業構造・市場参入の体系解説
+          </li>
+          <li>
+            <Link href="/explainer/lcoe-and-bess-economics" style={{ color: 'var(--color-accent, #0066cc)' }}>
+              解説: LCOEと蓄電池の経済性
+            </Link>
+            : CAPEX・LCOS・複数市場収益から読む蓄電池の事業性（NREL ATB データ活用）
           </li>
         </ul>
       </section>
