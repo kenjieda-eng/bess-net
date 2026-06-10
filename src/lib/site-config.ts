@@ -48,6 +48,8 @@ export const siteConfig = {
     { label: '系統空き容量', href: '/grid', enabled: true },
     { label: '事業者ナビ', href: '/operators', enabled: true },
     { label: 'プロジェクト', href: '/projects', enabled: true },
+    // Sprint 6: 流通案件サンプルページ（EDAさん依頼、全国対応・index公開 2026-06-10）
+    { label: '流通案件', href: '/anken', enabled: true },
     { label: 'お役立ちサイト', href: '/links', enabled: true },
     { label: 'お知らせ', href: '/info', enabled: true },
     // Sprint 2 追加 (依頼AB/AC/AD)
@@ -103,6 +105,8 @@ export const siteConfig = {
     { label: 'EPC 事業者向け (Seller)', href: '/seller/epc' },
     { label: 'プロジェクトデベロッパー向け (Seller)', href: '/seller/developer' },
     { label: '中古売買・リユース (Seller)', href: '/seller/reuse-secondhand' },
+    // Sprint 6 追加: 流通案件サンプルページ（EDAさん依頼、全国対応）
+    { label: '流通案件（全国対応）', href: '/anken' },
     // お問い合わせ (Task 51)
     { label: 'お問い合わせ', href: '/contact' },
     // サイト情報

@@ -95,7 +95,21 @@ export default function SiteHeader() {
               .filter((item) => item.enabled)
               .map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link href={item.href}>
+                    {item.label}
+                    {item.href === '/anken' && (
+                      <span style={{
+                        marginLeft: 5,
+                        fontSize: 10,
+                        background: 'var(--color-accent,#00B5A5)',
+                        color: '#fff',
+                        padding: '1px 5px',
+                        borderRadius: 3,
+                        fontWeight: 700,
+                        verticalAlign: 'middle',
+                      }}>NEW</span>
+                    )}
+                  </Link>
                 </li>
               ))}
             {/* Sprint X1 完走後の 8 LandingPage 動線確保 (L-EIC-010) */}

@@ -7,9 +7,7 @@
  *   - 景表法配慮: 日付改変掲載なし、ステータス表示のみ
  *   - 中立・無償・取り次ぎ明記
  *
- * robots: noindex,follow（初期設定）
- *   ★ 掲載許諾の確定後に index:true へ変更のこと
- *   （metadata.robots = { index: true, follow: true } に書き換える）
+ * robots: index,follow（2026-06-10 EDAさん指示で公開・グローバルナビ掲載に伴い）
  */
 
 import Link from 'next/link';
@@ -22,14 +20,13 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: '蓄電所の流通案件 例（連系枠確保済・中部）｜市場動向',
   description:
-    '蓄電所ネット編集部が把握する、いま動いている開発案件の傾向。連系枠確保済の約2MW/8MWh案件が中部で十数件規模という足元の温度感を、匿名・概括化で参考表示。住所・座標・契約日等は非掲載。',
-  // ★ noindex（初期）: 掲載許諾の確定後に index:true へ変更すること
-  robots: { index: false, follow: true },
+    '蓄電所ネットが取り扱う全国の蓄電所開発案件の傾向。連系枠確保が進む約2MW/8MWh級を中心に、中部エリアの抜粋例を匿名・参考表示（特定回避のため概括化し、住所・座標・契約日等は非掲載）。',
+  robots: { index: true, follow: true },
   alternates: { canonical: '/anken' },
   openGraph: {
     title: '蓄電所の流通案件 例（連系枠確保済・中部）｜市場動向 | 蓄電所ネット',
     description:
-      '連系枠確保済の約2MW/8MWh案件が中部で十数件規模。特定回避のため匿名・概括化で参考表示。',
+      '全国の蓄電所開発案件を取り扱い。連系枠確保が進む約2MW/8MWh級の中部エリア抜粋例を匿名・参考表示。',
     type: 'website',
     images: ['/og-image.png'],
   },
@@ -76,7 +73,7 @@ export default function AnkenPage() {
     <>
       <SiteHeader />
       <main className="section">
-        <div className="section-inner" style={{ maxWidth: 960 }}>
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           {/* パンくず */}
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 流通案件（市場動向）
@@ -86,18 +83,25 @@ export default function AnkenPage() {
           <div className="section-label">市場動向 ／ 参考情報（匿名）</div>
 
           {/* H1 */}
-          <h1 className="section-title">蓄電所の流通案件 例（市場動向）</h1>
+          <h1 className="section-title">蓄電所の流通案件（全国対応）</h1>
+
+          {/* エリアラベル */}
+          <p style={{ fontSize: 13, color: 'var(--color-accent,#00B5A5)', fontWeight: 600, marginBottom: 16, marginTop: -8 }}>
+            対応エリア：全国 ／ 下表は中部エリアの抜粋例
+          </p>
 
           {/* リード文 */}
           <p className="section-desc" style={{ marginBottom: 24, lineHeight: 1.8 }}>
-            蓄電所ネット編集部が把握する、いま動いている開発案件の傾向です。下表は実在案件をもとにした
-            匿名・参考表示で、特定回避のため所在は地方ブロック、規模・時期は概括化しています
-            （住所・座標・契約日等は非掲載）。連系枠の確保が進む約2MW/8MWh級が中部で十数件規模、
-            というのが足元の温度感です。
+            蓄電所ネットでは全国の蓄電所開発案件を取り扱っています。連系枠の確保が進む約2MW/8MWh級を中心に随時更新。
+            下表はそのうち中部エリアの例を抜粋した匿名・参考表示です（特定回避のため所在は地方ブロック、規模・時期は
+            概括化し、住所・座標・契約日等は非掲載）。
           </p>
 
           {/* 表 */}
           <section style={{ marginBottom: 8 }}>
+            <h2 style={{ fontSize: 16, fontWeight: 700, color: 'var(--color-navy,#0F2D4F)', marginBottom: 12 }}>
+              中部エリアの抜粋例
+            </h2>
             <div className="subsidy-table-wrapper">
               <table className="subsidy-table">
                 <thead>
@@ -140,8 +144,8 @@ export default function AnkenPage() {
 
           {/* 注記 */}
           <p style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.7, marginBottom: 40 }}>
-            ※ 本表は市場動向を示す参考情報です。各案件の募集状況・条件は変動します。掲載は実在案件ベースですが
-            特定回避のため概括化しており、個別の正確な情報はお問い合わせ時にご確認ください。
+            ※ 本表は全国の取扱案件のうち中部エリアの抜粋・参考情報です。各案件の募集状況・条件は変動します。特定回避の
+            ため概括化しており、個別の正確な情報や他エリア（北海道〜九州）の案件はお問い合わせ時にご確認ください。
           </p>
 
           {/* CTA */}
@@ -158,8 +162,7 @@ export default function AnkenPage() {
               具体的な案件を知りたい方へ
             </h2>
             <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 24, color: '#cbd5e1' }}>
-              案件の照会・売却/購入のご相談はお問い合わせから。蓄電所ネットは中立な情報提供の立場で、
-              手数料は頂かず案件元へお取り次ぎします。
+              具体的な案件の照会、売却・購入のご相談はお問い合わせから。蓄電所ネットが案件元へお取り次ぎします。
             </p>
             <Link
               href="/contact"
