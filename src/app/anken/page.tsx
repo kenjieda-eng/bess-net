@@ -20,14 +20,14 @@ import SiteFooter from '@/components/SiteFooter';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: '蓄電所の流通案件 例（連系枠確保済・中部）｜市場動向 | 蓄電所ネット',
+  title: '蓄電所の流通案件 例（連系枠確保済・中部）｜市場動向',
   description:
     '蓄電所ネット編集部が把握する、いま動いている開発案件の傾向。連系枠確保済の約2MW/8MWh案件が中部で十数件規模という足元の温度感を、匿名・概括化で参考表示。住所・座標・契約日等は非掲載。',
   // ★ noindex（初期）: 掲載許諾の確定後に index:true へ変更すること
   robots: { index: false, follow: true },
   alternates: { canonical: '/anken' },
   openGraph: {
-    title: '蓄電所の流通案件 例（連系枠確保済・中部）｜市場動向',
+    title: '蓄電所の流通案件 例（連系枠確保済・中部）｜市場動向 | 蓄電所ネット',
     description:
       '連系枠確保済の約2MW/8MWh案件が中部で十数件規模。特定回避のため匿名・概括化で参考表示。',
     type: 'website',
