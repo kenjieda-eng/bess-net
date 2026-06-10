@@ -148,12 +148,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));
-  const glossaryUrls: MetadataRoute.Sitemap = glossary.map((g) => ({
-    url: `${siteConfig.url}/glossary/${g.slug}`,
-    lastModified: new Date(g.updatedAt),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
+  // 旧スタブ（301統合済）は sitemap から除外（2026-06-10）
+  const GLOSSARY_SITEMAP_DENYLIST = new Set(['eu-ets-detail', 'carbon-pricing-detail']);
+  const glossaryUrls: MetadataRoute.Sitemap = glossary
+    .filter((g) => !GLOSSARY_SITEMAP_DENYLIST.has(g.slug))
+    .map((g) => ({
+      url: `${siteConfig.url}/glossary/${g.slug}`,
+      lastModified: new Date(g.updatedAt),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }));
   const subsidyUrls: MetadataRoute.Sitemap = subsidies.map((s) => ({
     url: `${siteConfig.url}/subsidies/${s.slug}`,
     lastModified: new Date(s.updatedAt),
