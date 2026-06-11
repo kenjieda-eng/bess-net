@@ -204,12 +204,48 @@ export const MILESTONES: MilestoneData[] = [
     slug: '2026-06-11-vip-citation',
     date: '2026-06-11',
     category: 'industry-uniqueness',
-    status: 'planned',
-    title: 'VIP 引用公開 → 業界唯一性 16/17 達成 - 蓄電所ネット',
-    description: '【6/11 公開後に詳細追記】VIP 引用公開予定、業界唯一性 16/17 達成。17/17 完全達成は 7/5 業界レポート本編公開時。',
-    heroTitle: '業界唯一性 16/17 達成 (準備中)',
-    heroSubtitle: '6/11 公開後に詳細追記予定。VIP 引用基盤稼働、業界唯一性 16/17 達成。7/5 業界レポート本編で 17/17 完全達成予定。',
-    achievements: [],
+    status: 'achieved',
+    title: '🎊 VIP 引用基盤公開 → 業界唯一性 16/17 達成（17/17 完全達成は 7/5 業界レポート本編）',
+    description: '2026 年 6 月 11 日、蓄電所ネット（bess-net）が VIP 引用基盤を公開し業界唯一性 16/17 を達成。残る 1 項目（業界レポート本編）は 7/5 公開で 17/17 完全達成予定。一般社団法人エネルギー情報センター運営。',
+    ogImage: '/og/milestone-2026-06-11-vip-citation.png',
+    heroTitle: '🎊 業界唯一性 16/17 達成 — VIP 引用基盤公開',
+    heroSubtitle: '2026 年 6 月 11 日、bess-net は VIP 引用基盤を公開し業界唯一性 16/17 を達成。残る 1 項目は 7/5 業界レポート本編公開で 17/17 完全達成へ。',
+    heroBadge: '🎊 業界唯一性 16/17 達成 ✨',
+    achievements: [
+      {
+        label: 'VIP 引用基盤公開（#16）',
+        detail: '業界の経営層・有識者・専門家の発言・寄稿・取材を集約し、蓄電池業界の動向を意思決定者の視点から可視化。編集部監修済み',
+        metric: '業界唯一性 16/17',
+      },
+      {
+        label: '既達マイルストーン',
+        detail: '5/22 機能完全形達成（蓄電池業界の引用インフラ確立）+ 5/28 AJ 火災事例 DB 公開 + 需給調整 約定価格トラッカー（/tracker/imbalance）。本日の VIP 引用基盤で 16/17 に到達',
+        metric: '機能完全形 + AJ DB + VIP',
+      },
+      {
+        label: 'data.eic-jp.org の中立データ基盤を引用',
+        detail: 'リン担当の data.eic-jp.org（catalog 512 系列 / Insight 77 本、2026-06-11 時点）を一次データとして引用。JEPX + JMA + 燃料 + FX + JGB + METI + 米Treasury + 容量市場 + 需給調整 + EDINET + ECB + 地政（輸入相手国別）等',
+        metric: 'catalog 512 / Insight 77',
+      },
+      {
+        label: 'EIC グループ 3 層エコシステム',
+        detail: 'bess-net.jp（業界専門ハブ）+ eic-jp.org（運営窓口・10 年実績）+ data.eic-jp.org（データ基盤）の 3 層連携で蓄電池業界の引用インフラを構成',
+      },
+      {
+        label: '次 = 業界レポート本編公開で 17/17 完全達成',
+        detail: '残る 1 項目（業界レポート本編）を 7/5 に公開し、業界唯一性 17/17 完全達成を予定',
+        metric: '7/5 → 17/17',
+      },
+    ],
+    relatedLinks: [
+      { label: '機能完全形達成記念 (5/22)', url: '/milestones/2026-05-22-feature-complete' },
+      { label: 'AJ 火災事例 DB + 需給調整トラッカー (5/28)', url: '/milestones/2026-05-28-aj-fire-database' },
+      { label: '業界レポート 2026', url: '/reports/2026' },
+      { label: '達成記念一覧', url: '/milestones' },
+    ],
+    upcomingMilestones: [
+      { date: '2026-07-05', label: '業界レポート本編公開 → 業界唯一性 17/17 完全達成 ✨', url: '/reports/2026' },
+    ],
   },
 ];
 
