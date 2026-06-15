@@ -15,7 +15,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "verify:linkify": "tsx scripts/verify-no-nested-anchors.ts"
+    "verify:linkify": "tsx scripts/verify-no-nested-anchors.ts",
+    "precompute:hazard": "tsx scripts/precompute-hazard-risk.ts"
   },
   "dependencies": {
     "csv-parse": "^6.2.1",
@@ -28,6 +29,8 @@
     "react-leaflet-cluster": "^2.1.0"
   },
   "devDependencies": {
+    "@turf/boolean-point-in-polygon": "^7.3.5",
+    "@turf/helpers": "^7.3.5",
     "@types/leaflet": "^1.9.21",
     "@types/node": "^20.17.10",
     "@types/react": "^18.3.18",
