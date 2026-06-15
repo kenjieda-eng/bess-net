@@ -13,6 +13,7 @@ import SiteFooter from '@/components/SiteFooter';
 import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
 import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
+import HazardRiskCard from '@/components/HazardRiskCard';
 import AreaPage from './AreaPage';
 import { AREA_META, AREA_JP_TO_SLUG } from './area-meta';
 import { GRID_PAGE_RELATED_TERMS } from './related-terms';
@@ -455,6 +456,9 @@ export default async function GridSlugPage({
               <p className="grid-prose">{sub.notes}</p>
             </section>
           )}
+
+          {/* 災害リスク参考情報（67番 Phase 3 / reinfolib JSON 参照、SSRリクエスト追加なし） */}
+          <HazardRiskCard slug={params.slug} />
 
           {/* (g) 関連事業者 */}
           {relatedOpsBadges.length > 0 && (
