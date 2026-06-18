@@ -115,6 +115,10 @@ export default async function NewsDetailPage({
     description: news.lead,
     datePublished: news.publishedAt,
     dateModified: news.revisedAt,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteConfig.url}/news/${news.slug}`,
+    },
     author: { '@type': 'Organization', name: '蓄電所ネット' },
     publisher: {
       '@type': 'Organization',

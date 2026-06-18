@@ -2,7 +2,6 @@
 // - microCMS から業界ニュース全件取得（編集部以外）
 // - クライアントの NewsBrowser でフィルタ/検索/年絞り/ソート/ページング
 
-import { Suspense } from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getIndustryNews } from '@/lib/microcms';
@@ -55,9 +54,7 @@ export default async function NewsListPage() {
               <p>ニュース記事はまだ準備中です。</p>
             </div>
           ) : (
-            <Suspense fallback={<div className="news-loading">読み込み中...</div>}>
-              <NewsBrowser items={items} />
-            </Suspense>
+            <NewsBrowser items={items} />
           )}
 
           <p className="back-link">

@@ -1,8 +1,9 @@
 'use client';
 
+// 落とし穴#92対応: useSearchParams を廃止し window.location + history.replaceState 方式に変更
+// SSR 初期 HTML に記事一覧が含まれるようになる（クローラビリティ改善）
 import { useMemo, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import type { News } from '@/lib/microcms';
 import {
   NEWS_CATEGORY_ORDER,
@@ -25,30 +26,43 @@ const SORT_OPTIONS: { key: SortKey; label: string }[] = [
 type Props = { items: News[] };
 
 export default function NewsBrowser({ items }: Props) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const initialCat = searchParams.get('c') || 'すべて';
-  const initialYear = searchParams.get('y') || 'all';
-  const initialQuery = searchParams.get('q') || '';
-  const initialSort = (searchParams.get('s') as SortKey) || 'newest';
-
-  const [activeCategory, setActiveCategory] = useState(initialCat);
-  const [activeYear, setActiveYear] = useState(initialYear);
-  const [query, setQuery] = useState(initialQuery);
-  const [sort, setSort] = useState<SortKey>(initialSort);
+  // SSR 時はデフォルト値で全記事を描画、hydration 後に URL params で上書き
+  const [activeCategory, setActiveCategory] = useState('すべて');
+  const [activeYear, setActiveYear] = useState('all');
+  const [query, setQuery] = useState('');
+  const [sort, setSort] = useState<SortKey>('newest');
   const [visible, setVisible] = useState(PAGE_SIZE);
+  const [mounted, setMounted] = useState(false);
 
+  // CSR: URL パラメータ復元（window.location.search、落とし穴#92 window.location 方式）
   useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    const c = sp.get('c');
+    const y = sp.get('y');
+    const q = sp.get('q');
+    const s = sp.get('s') as SortKey | null;
+    if (c) setActiveCategory(c);
+    if (y) setActiveYear(y);
+    if (q) setQuery(q);
+    if (s === 'oldest') setSort('oldest');
+    setMounted(true);
+  }, []);
+
+  // URL 更新（history.replaceState — useSearchParams / router.replace 禁止 #92）
+  useEffect(() => {
+    if (!mounted) return;
     const params = new URLSearchParams();
     if (activeCategory !== 'すべて') params.set('c', activeCategory);
     if (activeYear !== 'all') params.set('y', activeYear);
     if (query) params.set('q', query);
     if (sort !== 'newest') params.set('s', sort);
     const qs = params.toString();
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-  }, [activeCategory, activeYear, query, sort, pathname, router]);
+    window.history.replaceState(
+      null,
+      '',
+      qs ? `${window.location.pathname}?${qs}` : window.location.pathname
+    );
+  }, [activeCategory, activeYear, query, sort, mounted]);
 
   const catCounts = useMemo(() => newsCountByCategory(items), [items]);
   const years = useMemo(() => newsYearList(items), [items]);
@@ -169,6 +183,8 @@ export default function NewsBrowser({ items }: Props) {
             const primary = cats[0] || 'その他';
             const colorCls = NEWS_CATEGORY_COLOR[primary] || NEWS_CATEGORY_COLOR['編集部'];
             const tags = parseTags(article.tags).slice(0, 3);
+            // 出典なし = 編集部オリジナル記事（深掘り）
+            const isOriginal = !article.sourceName;
             return (
               <li key={article.id} className="news-card">
                 <Link href={`/news/${article.slug}`} className="news-card-link">
@@ -178,6 +194,9 @@ export default function NewsBrowser({ items }: Props) {
                     </span>
                     {cats.length > 1 && (
                       <span className="news-card-badge-sub">+{cats.length - 1}</span>
+                    )}
+                    {isOriginal && (
+                      <span className="news-card-badge-original">編集部</span>
                     )}
                     <span className="news-card-date">{formatDate(article.publishedAt)}</span>
                   </div>
