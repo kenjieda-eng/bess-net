@@ -1,8 +1,9 @@
 'use client';
 
+// 落とし穴#92対応: useSearchParams を廃止し window.location + history.replaceState 方式に変更
+// news 63f4750 と同パターン。SSR初期HTMLに記事リスト含まれるようになる。
 import { useMemo, useState, useCallback, useEffect } from 'react';
 import Link from 'next/link';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import type { Explainer } from '@/lib/microcms';
 import {
   GROUP_ORDER,
@@ -31,30 +32,39 @@ type Props = {
 };
 
 export default function ExplainerBrowser({ items }: Props) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  // URL から初期状態を復元（ディープリンク・SEO 対応）
-  const initialGroup = searchParams.get('g') || 'すべて';
-  const initialQuery = searchParams.get('q') || '';
-  const initialSort = (searchParams.get('s') as SortKey) || 'newest';
-
-  const [activeGroup, setActiveGroup] = useState<string>(initialGroup);
-  const [query, setQuery] = useState<string>(initialQuery);
-  const [sort, setSort] = useState<SortKey>(initialSort);
+  // SSR 時はデフォルト値で全記事を描画、hydration 後に URL params で上書き
+  const [activeGroup, setActiveGroup] = useState<string>('すべて');
+  const [query, setQuery] = useState<string>('');
+  const [sort, setSort] = useState<SortKey>('newest');
   const [visible, setVisible] = useState<number>(PAGE_SIZE);
+  const [mounted, setMounted] = useState(false);
 
-  // URL を状態に追従させる
+  // CSR: URL パラメータ復元（window.location.search、落とし穴#92 window.location 方式）
   useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    const g = sp.get('g');
+    const q = sp.get('q');
+    const s = sp.get('s') as SortKey | null;
+    if (g) setActiveGroup(g);
+    if (q) setQuery(q);
+    if (s && ['newest', 'oldest', 'longest', 'shortest'].includes(s)) setSort(s);
+    setMounted(true);
+  }, []);
+
+  // URL 更新（history.replaceState — useSearchParams / router.replace 禁止 #92）
+  useEffect(() => {
+    if (!mounted) return;
     const params = new URLSearchParams();
     if (activeGroup !== 'すべて') params.set('g', activeGroup);
     if (query) params.set('q', query);
     if (sort !== 'newest') params.set('s', sort);
     const qs = params.toString();
-    const url = qs ? `${pathname}?${qs}` : pathname;
-    router.replace(url, { scroll: false });
-  }, [activeGroup, query, sort, pathname, router]);
+    window.history.replaceState(
+      null,
+      '',
+      qs ? `${window.location.pathname}?${qs}` : window.location.pathname
+    );
+  }, [activeGroup, query, sort, mounted]);
 
   // 全件のグループ別件数(タブ表示用、フィルタ前)
   const groupCounts = useMemo(() => countByGroup(items), [items]);

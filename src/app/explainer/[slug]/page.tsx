@@ -113,6 +113,10 @@ export default async function ExplainerDetailPage({
       name: siteConfig.organization.name,
       url: siteConfig.organization.url,
     },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteConfig.url}/explainer/${exp.slug}`,
+    },
     mentions: mentions.length > 0 ? mentions : undefined,
     inLanguage: 'ja-JP',
   };
