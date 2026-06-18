@@ -1,8 +1,12 @@
+'use client';
+
 // 全ページ共通のヘッダー（ナビゲーション付き）
 // L-EIC-010 動線確認: Sprint X1 完走後の 8 LandingPage 入口確保のため
-//   nav に「導入検討」「業界事業者向け」ドロップダウン追加 (Server Component 維持)
+//   nav に「導入検討」「業界事業者向け」ドロップダウン追加
+// モバイル（md未満）: ハンバーガーメニューで開閉（aria-expanded 対応）
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
+import { useState, useEffect, useRef } from 'react';
 
 const BUYER_DROPDOWN = [
   { label: 'これから参入する事業者', href: '/buyer/new-entry' },
@@ -22,10 +26,12 @@ function NavDropdown({
   label,
   items,
   accent,
+  onLinkClick,
 }: {
   label: string;
   items: { label: string; href: string }[];
   accent: 'buyer' | 'seller';
+  onLinkClick?: () => void;
 }) {
   const accentColor = accent === 'buyer' ? '#1e40af' : '#a16207';
   return (
@@ -61,6 +67,7 @@ function NavDropdown({
             <li key={item.href} style={{ margin: 0 }}>
               <Link
                 href={item.href}
+                onClick={onLinkClick}
                 style={{
                   display: 'block',
                   padding: '8px 12px',
@@ -81,21 +88,67 @@ function NavDropdown({
 }
 
 export default function SiteHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Escape キーで閉じる
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
+
+  // メニュー外タップ/クリックで閉じる
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onOutside = (e: MouseEvent | TouchEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', onOutside);
+    document.addEventListener('touchstart', onOutside, { passive: true });
+    return () => {
+      document.removeEventListener('mousedown', onOutside);
+      document.removeEventListener('touchstart', onOutside);
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <header className="site-header">
+    <header className="site-header" ref={headerRef}>
       <div className="site-header-inner">
-        <Link href="/" className="brand">
+        <Link href="/" className="brand" onClick={closeMenu}>
           <span className="brand-mark"></span>
           蓄電所ネット
           <span className="brand-en">BESS NET / bess-net.jp</span>
         </Link>
-        <nav className="site-nav" aria-label="グローバルナビゲーション">
+
+        {/* ハンバーガーボタン（md未満のみ表示） */}
+        <button
+          className="nav-toggle"
+          aria-expanded={menuOpen}
+          aria-controls="site-nav-menu"
+          aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
+
+        <nav
+          id="site-nav-menu"
+          className={`site-nav${menuOpen ? ' site-nav--open' : ''}`}
+          aria-label="グローバルナビゲーション"
+        >
           <ul>
             {siteConfig.nav
               .filter((item) => item.enabled)
               .map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href}>
+                  <Link href={item.href} onClick={closeMenu}>
                     {item.label}
                     {item.href === '/anken' && (
                       <span style={{
@@ -113,8 +166,8 @@ export default function SiteHeader() {
                 </li>
               ))}
             {/* Sprint X1 完走後の 8 LandingPage 動線確保 (L-EIC-010) */}
-            <NavDropdown label="導入検討" items={BUYER_DROPDOWN} accent="buyer" />
-            <NavDropdown label="業界事業者向け" items={SELLER_DROPDOWN} accent="seller" />
+            <NavDropdown label="導入検討" items={BUYER_DROPDOWN} accent="buyer" onLinkClick={closeMenu} />
+            <NavDropdown label="業界事業者向け" items={SELLER_DROPDOWN} accent="seller" onLinkClick={closeMenu} />
           </ul>
         </nav>
       </div>
