@@ -14,12 +14,12 @@ import SiteFooter from '@/components/SiteFooter';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: '業界分析ハブ (業界カオスマップ × JEPX × 海外5市場 × 業界トラッカー)',
-  description: '蓄電所事業の業界分析4機能を一覧。業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカー。業界唯一の構造可視化基盤、無料公開・登録不要。',
+  title: '業界分析ハブ (業界カオスマップ × JEPX × 海外5市場 × 業界トラッカー × Top50)',
+  description: '蓄電所事業の業界分析5機能を一覧。業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカー・事業者Top50ランキング。業界唯一の構造可視化基盤、無料公開・登録不要。',
   alternates: { canonical: '/industry' },
   openGraph: {
-    title: '業界分析ハブ (4機能)',
-    description: '業界構造 × スポット市場 × 海外比較 × 更新トラッカー',
+    title: '業界分析ハブ (5機能)',
+    description: '業界構造 × スポット市場 × 海外比較 × 更新トラッカー × Top50ランキング',
     type: 'website',
     images: ['/og-image.png'],
   },
@@ -50,6 +50,12 @@ const HUBS = [
     desc: '補助金・系統 (変電所6,500+)・事業者 (540+)・プロジェクトDB の更新を時系列タイムラインで一望。',
     tag: '時系列',
   },
+  {
+    href: '/industry/top50',
+    title: '事業者 Top50 ランキング',
+    desc: '国内 BESS 事業者を総蓄電容量（MWh）で順位付け。bess-net プロジェクトDB（約263件）の build 時集計。容量・件数・展開都道府県数を一覧。',
+    tag: 'ランキング',
+  },
 ];
 
 export default function IndustryHubPage() {
@@ -57,7 +63,7 @@ export default function IndustryHubPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: '蓄電所業界 業界分析ハブ',
-    description: '業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカーの4機能',
+    description: '業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカー・Top50ランキングの5機能',
     numberOfItems: HUBS.length,
     itemListElement: HUBS.map((h, idx) => ({
       '@type': 'ListItem',
@@ -88,12 +94,12 @@ export default function IndustryHubPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 業界分析
           </p>
-          <div className="section-label">業界唯一 · 業界分析4機能</div>
+          <div className="section-label">業界唯一 · 業界分析5機能</div>
           <h1 className="section-title">業界分析ハブ</h1>
           {/* Tier 1 UI 統一 #1: 本文 text-base lg:text-lg (16-18px) */}
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>
-            蓄電所業界の<strong>構造・市場・海外・時系列</strong>を 4 機能で可視化。
-            業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカーへの入口です。
+            蓄電所業界の<strong>構造・市場・海外・時系列・ランキング</strong>を 5 機能で可視化。
+            業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカー・Top50ランキングへの入口です。
             すべて無料公開・登録不要。
           </p>
 

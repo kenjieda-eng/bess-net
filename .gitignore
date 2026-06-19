@@ -150,6 +150,9 @@ scripts/__pycache__/
 # EIC Data precomputed cache (regenerated at build time)
 src/data/eic/
 
+# Operator ranking (regenerated at build time by scripts/precompute-operator-ranking.ts)
+src/data/operator-ranking.json
+
 # Vercel env pull output (NEVER commit)
 .env.local
 .env.development.local
