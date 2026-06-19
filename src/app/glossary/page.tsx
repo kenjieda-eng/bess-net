@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: '系統用蓄電池 用語集｜1,500語超の業界辞典',
   description:
     '系統用蓄電池および低圧リソース事業に関わる1,500+の業界用語を、12 カテゴリ・116 サブカテゴリの階層フィルタで検索可能な辞典。BESS、容量市場、需給調整市場、JEPX、託送、SOC、SOHなど、専門用語を一言定義と詳細解説で整備。',
+  alternates: { canonical: '/glossary' },
+  openGraph: {
+    title: '系統用蓄電池 用語集｜1,500語超の業界辞典 | bess-net',
+    description: '系統用蓄電池・低圧リソース事業の1,500+業界用語を12カテゴリ・116サブカテゴリで検索。BESS・容量市場・需給調整市場・JEPX・SOC/SOH等を一言定義と詳細解説で整備。',
+    type: 'website',
+    url: 'https://bess-net.jp/glossary',
+    images: ['https://bess-net.jp/og-image.png'],
+  },
 };
 
 export default async function GlossaryListPage() {

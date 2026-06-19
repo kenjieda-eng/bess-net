@@ -1,0 +1,4190 @@
+{
+  "summary": {
+    "generatedAt": "2026-06-19T12:46:15.463Z",
+    "totalGlossaryEntries": 1522,
+    "totalDupGroups": 134,
+    "byRule": {
+      "A_slug_detail": 34,
+      "B_term_norm": 92,
+      "C_english_norm": 8
+    },
+    "byConfidence": {
+      "high": 34,
+      "medium": 100,
+      "low": 0
+    },
+    "totalRedirectCandidates": 145
+  },
+  "groups": [
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "capex",
+      "entries": [
+        {
+          "slug": "capex",
+          "term": "CAPEX",
+          "english": "Capital Expenditure",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:11.896Z"
+        },
+        {
+          "slug": "capex-detail",
+          "term": "CAPEX",
+          "english": "Capital Expenditure",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:21:40.007Z"
+        }
+      ],
+      "canonicalSlug": "capex",
+      "redirectSlugs": [
+        "capex-detail"
+      ],
+      "confidence": "high",
+      "note": "\"capex-detail\" は \"-detail\" サフィックスを持ち、\"capex\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "ccs",
+      "entries": [
+        {
+          "slug": "ccs",
+          "term": "CCS",
+          "english": "Carbon Capture and Storage",
+          "category": [
+            "技術",
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:26:03.628Z"
+        },
+        {
+          "slug": "ccs-detail",
+          "term": "CCS",
+          "english": "Carbon Capture and Storage",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:22:57.720Z"
+        }
+      ],
+      "canonicalSlug": "ccs",
+      "redirectSlugs": [
+        "ccs-detail"
+      ],
+      "confidence": "high",
+      "note": "\"ccs-detail\" は \"-detail\" サフィックスを持ち、\"ccs\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "ce-marking",
+      "entries": [
+        {
+          "slug": "ce-marking",
+          "term": "CE適合性宣言",
+          "english": "CE Conformity Declaration",
+          "category": [
+            "技術",
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:22:34.433Z"
+        },
+        {
+          "slug": "ce-marking-detail",
+          "term": "CE Marking",
+          "english": "CE Marking",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:15:43.031Z"
+        }
+      ],
+      "canonicalSlug": "ce-marking",
+      "redirectSlugs": [
+        "ce-marking-detail"
+      ],
+      "confidence": "high",
+      "note": "\"ce-marking-detail\" は \"-detail\" サフィックスを持ち、\"ce-marking\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "curtailment",
+      "entries": [
+        {
+          "slug": "curtailment",
+          "term": "出力制御",
+          "english": "Output Curtailment",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:33:15.637Z"
+        },
+        {
+          "slug": "curtailment-detail",
+          "term": "Curtailment",
+          "english": "Curtailment",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:16:12.948Z"
+        }
+      ],
+      "canonicalSlug": "curtailment",
+      "redirectSlugs": [
+        "curtailment-detail"
+      ],
+      "confidence": "high",
+      "note": "\"curtailment-detail\" は \"-detail\" サフィックスを持ち、\"curtailment\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "c-rate",
+      "entries": [
+        {
+          "slug": "c-rate",
+          "term": "Cレート",
+          "english": "C-rate",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:28.568Z"
+        },
+        {
+          "slug": "c-rate-detail",
+          "term": "Cレート",
+          "english": "C-Rate",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:20.912Z"
+        }
+      ],
+      "canonicalSlug": "c-rate",
+      "redirectSlugs": [
+        "c-rate-detail"
+      ],
+      "confidence": "high",
+      "note": "\"c-rate-detail\" は \"-detail\" サフィックスを持ち、\"c-rate\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "dscr",
+      "entries": [
+        {
+          "slug": "dscr",
+          "term": "DSCR",
+          "english": "Debt Service Coverage Ratio",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:12.493Z"
+        },
+        {
+          "slug": "dscr-detail",
+          "term": "DSCR",
+          "english": "Debt Service Coverage Ratio",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:36.927Z"
+        }
+      ],
+      "canonicalSlug": "dscr",
+      "redirectSlugs": [
+        "dscr-detail"
+      ],
+      "confidence": "high",
+      "note": "\"dscr-detail\" は \"-detail\" サフィックスを持ち、\"dscr\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "eu-ets",
+      "entries": [
+        {
+          "slug": "eu-ets",
+          "term": "EU ETS（欧州排出量取引制度）",
+          "english": "EU Emissions Trading System",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-06-10T12:23:56.800Z"
+        },
+        {
+          "slug": "eu-ets-detail",
+          "term": "EU ETS",
+          "english": "EU Emissions Trading System",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:16.812Z"
+        }
+      ],
+      "canonicalSlug": "eu-ets",
+      "redirectSlugs": [
+        "eu-ets-detail"
+      ],
+      "confidence": "high",
+      "note": "\"eu-ets-detail\" は \"-detail\" サフィックスを持ち、\"eu-ets\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "eu-battery-regulation",
+      "entries": [
+        {
+          "slug": "eu-battery-regulation",
+          "term": "EU電池規則",
+          "english": "EU Battery Regulation",
+          "category": [
+            "市場制度",
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:26:06.754Z"
+        },
+        {
+          "slug": "eu-battery-regulation-detail",
+          "term": "EU電池規則",
+          "english": "EU Battery Regulation",
+          "category": [
+            "市場制度",
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:23:15.570Z"
+        }
+      ],
+      "canonicalSlug": "eu-battery-regulation",
+      "redirectSlugs": [
+        "eu-battery-regulation-detail"
+      ],
+      "confidence": "high",
+      "note": "\"eu-battery-regulation-detail\" は \"-detail\" サフィックスを持ち、\"eu-battery-regulation\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "iec",
+      "entries": [
+        {
+          "slug": "iec",
+          "term": "IEC",
+          "english": "International Electrotechnical Commission",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:30:25.773Z"
+        },
+        {
+          "slug": "iec-detail",
+          "term": "IEC",
+          "english": "International Electrotechnical Commission",
+          "category": [
+            "市場制度",
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:17:52.789Z"
+        }
+      ],
+      "canonicalSlug": "iec",
+      "redirectSlugs": [
+        "iec-detail"
+      ],
+      "confidence": "high",
+      "note": "\"iec-detail\" は \"-detail\" サフィックスを持ち、\"iec\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "ieee",
+      "entries": [
+        {
+          "slug": "ieee",
+          "term": "IEEE",
+          "english": "Institute of Electrical and Electronics Engineers",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:30:25.111Z"
+        },
+        {
+          "slug": "ieee-detail",
+          "term": "IEEE",
+          "english": "Institute of Electrical and Electronics Engineers",
+          "category": [
+            "市場制度",
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:17:52.172Z"
+        }
+      ],
+      "canonicalSlug": "ieee",
+      "redirectSlugs": [
+        "ieee-detail"
+      ],
+      "confidence": "high",
+      "note": "\"ieee-detail\" は \"-detail\" サフィックスを持ち、\"ieee\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "iot",
+      "entries": [
+        {
+          "slug": "iot",
+          "term": "IoT",
+          "english": "Internet of Things",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:17.102Z"
+        },
+        {
+          "slug": "iot-detail",
+          "term": "IoT",
+          "english": "Internet of Things",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:20:57.059Z"
+        }
+      ],
+      "canonicalSlug": "iot",
+      "redirectSlugs": [
+        "iot-detail"
+      ],
+      "confidence": "high",
+      "note": "\"iot-detail\" は \"-detail\" サフィックスを持ち、\"iot\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "mezzanine",
+      "entries": [
+        {
+          "slug": "mezzanine",
+          "term": "メザニン",
+          "english": "Mezzanine Finance",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:32:14.472Z"
+        },
+        {
+          "slug": "mezzanine-detail",
+          "term": "Mezzanine",
+          "english": "Mezzanine",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:18:15.466Z"
+        }
+      ],
+      "canonicalSlug": "mezzanine",
+      "redirectSlugs": [
+        "mezzanine-detail"
+      ],
+      "confidence": "high",
+      "note": "\"mezzanine-detail\" は \"-detail\" サフィックスを持ち、\"mezzanine\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "npv",
+      "entries": [
+        {
+          "slug": "npv",
+          "term": "NPV",
+          "english": "Net Present Value",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:13.765Z"
+        },
+        {
+          "slug": "npv-detail",
+          "term": "NPV",
+          "english": "Net Present Value",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:34.489Z"
+        }
+      ],
+      "canonicalSlug": "npv",
+      "redirectSlugs": [
+        "npv-detail"
+      ],
+      "confidence": "high",
+      "note": "\"npv-detail\" は \"-detail\" サフィックスを持ち、\"npv\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "opex",
+      "entries": [
+        {
+          "slug": "opex",
+          "term": "OPEX",
+          "english": "Operating Expenditure",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:11.181Z"
+        },
+        {
+          "slug": "opex-detail",
+          "term": "OPEX",
+          "english": "Operating Expenditure",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:21:39.389Z"
+        }
+      ],
+      "canonicalSlug": "opex",
+      "redirectSlugs": [
+        "opex-detail"
+      ],
+      "confidence": "high",
+      "note": "\"opex-detail\" は \"-detail\" サフィックスを持ち、\"opex\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "ppa",
+      "entries": [
+        {
+          "slug": "ppa",
+          "term": "PPA",
+          "english": "Power Purchase Agreement",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:09.290Z"
+        },
+        {
+          "slug": "ppa-detail",
+          "term": "PPA（電力受給契約）",
+          "english": "Power Purchase Agreement",
+          "category": [
+            "法務",
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:48.680Z"
+        }
+      ],
+      "canonicalSlug": "ppa",
+      "redirectSlugs": [
+        "ppa-detail"
+      ],
+      "confidence": "high",
+      "note": "\"ppa-detail\" は \"-detail\" サフィックスを持ち、\"ppa\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "re100",
+      "entries": [
+        {
+          "slug": "re100",
+          "term": "RE100",
+          "english": "RE100",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:32:38.942Z"
+        },
+        {
+          "slug": "re100-detail",
+          "term": "RE100",
+          "english": "RE100",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:22:19.105Z"
+        }
+      ],
+      "canonicalSlug": "re100",
+      "redirectSlugs": [
+        "re100-detail"
+      ],
+      "confidence": "high",
+      "note": "\"re100-detail\" は \"-detail\" サフィックスを持ち、\"re100\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "scada",
+      "entries": [
+        {
+          "slug": "scada",
+          "term": "SCADA",
+          "english": "Supervisory Control and Data Acquisition",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:31:26.993Z"
+        },
+        {
+          "slug": "scada-detail",
+          "term": "SCADA",
+          "english": "Supervisory Control and Data Acquisition",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:20:51.455Z"
+        }
+      ],
+      "canonicalSlug": "scada",
+      "redirectSlugs": [
+        "scada-detail"
+      ],
+      "confidence": "high",
+      "note": "\"scada-detail\" は \"-detail\" サフィックスを持ち、\"scada\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "spinning-reserve",
+      "entries": [
+        {
+          "slug": "spinning-reserve",
+          "term": "瞬動予備力",
+          "english": "Spinning Reserve",
+          "category": [
+            "市場制度",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:25:20.224Z"
+        },
+        {
+          "slug": "spinning-reserve-detail",
+          "term": "Spinning Reserve",
+          "english": "Spinning Reserve",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:16:12.346Z"
+        }
+      ],
+      "canonicalSlug": "spinning-reserve",
+      "redirectSlugs": [
+        "spinning-reserve-detail"
+      ],
+      "confidence": "high",
+      "note": "\"spinning-reserve-detail\" は \"-detail\" サフィックスを持ち、\"spinning-reserve\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "v2l",
+      "entries": [
+        {
+          "slug": "v2l",
+          "term": "V2L",
+          "english": "Vehicle-to-Load",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:12.667Z"
+        },
+        {
+          "slug": "v2l-detail",
+          "term": "V2L",
+          "english": "Vehicle to Load",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:53.106Z"
+        }
+      ],
+      "canonicalSlug": "v2l",
+      "redirectSlugs": [
+        "v2l-detail"
+      ],
+      "confidence": "high",
+      "note": "\"v2l-detail\" は \"-detail\" サフィックスを持ち、\"v2l\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "aggregator",
+      "entries": [
+        {
+          "slug": "aggregator",
+          "term": "アグリゲーター",
+          "english": "Aggregator",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:30:32.847Z"
+        },
+        {
+          "slug": "aggregator-detail",
+          "term": "アグリゲーター",
+          "english": "Aggregator",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:22:02.440Z"
+        }
+      ],
+      "canonicalSlug": "aggregator",
+      "redirectSlugs": [
+        "aggregator-detail"
+      ],
+      "confidence": "high",
+      "note": "\"aggregator-detail\" は \"-detail\" サフィックスを持ち、\"aggregator\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "operating-lease",
+      "entries": [
+        {
+          "slug": "operating-lease",
+          "term": "オペレーティングリース",
+          "english": "Operating Lease",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:26:54.912Z"
+        },
+        {
+          "slug": "operating-lease-detail",
+          "term": "オペレーティングリース",
+          "english": "Operating Lease",
+          "category": [
+            "法務",
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:46.170Z"
+        }
+      ],
+      "canonicalSlug": "operating-lease",
+      "redirectSlugs": [
+        "operating-lease-detail"
+      ],
+      "confidence": "high",
+      "note": "\"operating-lease-detail\" は \"-detail\" サフィックスを持ち、\"operating-lease\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "carbon-pricing",
+      "entries": [
+        {
+          "slug": "carbon-pricing",
+          "term": "カーボンプライシング",
+          "english": "Carbon Pricing",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-06-10T12:23:58.849Z"
+        },
+        {
+          "slug": "carbon-pricing-detail",
+          "term": "カーボンプライシング（旧・統合済）",
+          "english": "Carbon Pricing",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-06-10T12:23:59.882Z"
+        }
+      ],
+      "canonicalSlug": "carbon-pricing",
+      "redirectSlugs": [
+        "carbon-pricing-detail"
+      ],
+      "confidence": "high",
+      "note": "\"carbon-pricing-detail\" は \"-detail\" サフィックスを持ち、\"carbon-pricing\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "green-bond",
+      "entries": [
+        {
+          "slug": "green-bond",
+          "term": "グリーンボンド",
+          "english": "Green Bond",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:02.364Z"
+        },
+        {
+          "slug": "green-bond-detail",
+          "term": "グリーンボンド",
+          "english": "Green Bond",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:29.241Z"
+        }
+      ],
+      "canonicalSlug": "green-bond",
+      "redirectSlugs": [
+        "green-bond-detail"
+      ],
+      "confidence": "high",
+      "note": "\"green-bond-detail\" は \"-detail\" サフィックスを持ち、\"green-bond\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "container-bess",
+      "entries": [
+        {
+          "slug": "container-bess",
+          "term": "コンテナBESS",
+          "english": "Container BESS",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:31:34.485Z"
+        },
+        {
+          "slug": "container-bess-detail",
+          "term": "コンテナ型BESS",
+          "english": "Container BESS",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:57.469Z"
+        }
+      ],
+      "canonicalSlug": "container-bess",
+      "redirectSlugs": [
+        "container-bess-detail"
+      ],
+      "confidence": "high",
+      "note": "\"container-bess-detail\" は \"-detail\" サフィックスを持ち、\"container-bess\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "corporate-ppa",
+      "entries": [
+        {
+          "slug": "corporate-ppa",
+          "term": "コーポレートPPA",
+          "english": "Corporate PPA",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:08.633Z"
+        },
+        {
+          "slug": "corporate-ppa-detail",
+          "term": "コーポレートPPA",
+          "english": "Corporate PPA",
+          "category": [
+            "法務",
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:48.056Z"
+        }
+      ],
+      "canonicalSlug": "corporate-ppa",
+      "redirectSlugs": [
+        "corporate-ppa-detail"
+      ],
+      "confidence": "high",
+      "note": "\"corporate-ppa-detail\" は \"-detail\" サフィックスを持ち、\"corporate-ppa\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "finance-lease",
+      "entries": [
+        {
+          "slug": "finance-lease",
+          "term": "ファイナンスリース",
+          "english": "Finance Lease",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:26:55.600Z"
+        },
+        {
+          "slug": "finance-lease-detail",
+          "term": "ファイナンスリース",
+          "english": "Finance Lease",
+          "category": [
+            "法務",
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:45.549Z"
+        }
+      ],
+      "canonicalSlug": "finance-lease",
+      "redirectSlugs": [
+        "finance-lease-detail"
+      ],
+      "confidence": "high",
+      "note": "\"finance-lease-detail\" は \"-detail\" サフィックスを持ち、\"finance-lease\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "microgrid",
+      "entries": [
+        {
+          "slug": "microgrid",
+          "term": "マイクログリッド",
+          "english": "Microgrid",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:30:30.997Z"
+        },
+        {
+          "slug": "microgrid-detail",
+          "term": "マイクログリッド",
+          "english": "Microgrid",
+          "category": [
+            "技術",
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:20:53.998Z"
+        }
+      ],
+      "canonicalSlug": "microgrid",
+      "redirectSlugs": [
+        "microgrid-detail"
+      ],
+      "confidence": "high",
+      "note": "\"microgrid-detail\" は \"-detail\" サフィックスを持ち、\"microgrid\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "substation",
+      "entries": [
+        {
+          "slug": "substation",
+          "term": "変電所",
+          "english": "Substation",
+          "category": [
+            "系統連系"
+          ],
+          "updatedAt": "2026-05-13T06:33:14.302Z"
+        },
+        {
+          "slug": "substation-detail",
+          "term": "変電所",
+          "english": "Substation",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:20.515Z"
+        }
+      ],
+      "canonicalSlug": "substation",
+      "redirectSlugs": [
+        "substation-detail"
+      ],
+      "confidence": "high",
+      "note": "\"substation-detail\" は \"-detail\" サフィックスを持ち、\"substation\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "response-time",
+      "entries": [
+        {
+          "slug": "response-time",
+          "term": "駆けつけ時間",
+          "english": "Response Time / Call-out Time",
+          "category": [
+            "事業",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:30:55.522Z"
+        },
+        {
+          "slug": "response-time-detail",
+          "term": "応動時間",
+          "english": "Response Time",
+          "category": [
+            "技術",
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:25:33.810Z"
+        }
+      ],
+      "canonicalSlug": "response-time",
+      "redirectSlugs": [
+        "response-time-detail"
+      ],
+      "confidence": "high",
+      "note": "\"response-time-detail\" は \"-detail\" サフィックスを持ち、\"response-time\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "tokyo-subsidy",
+      "entries": [
+        {
+          "slug": "tokyo-subsidy",
+          "term": "東京都補助金",
+          "english": "Tokyo Metropolitan Subsidy",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:27:16.579Z"
+        },
+        {
+          "slug": "tokyo-subsidy-detail",
+          "term": "東京都補助金",
+          "english": "Tokyo Subsidy",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:23:02.318Z"
+        }
+      ],
+      "canonicalSlug": "tokyo-subsidy",
+      "redirectSlugs": [
+        "tokyo-subsidy-detail"
+      ],
+      "confidence": "high",
+      "note": "\"tokyo-subsidy-detail\" は \"-detail\" サフィックスを持ち、\"tokyo-subsidy\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "offshore-wind",
+      "entries": [
+        {
+          "slug": "offshore-wind",
+          "term": "洋上風力",
+          "english": "Offshore Wind",
+          "category": [
+            "基礎"
+          ],
+          "updatedAt": "2026-05-13T06:30:12.095Z"
+        },
+        {
+          "slug": "offshore-wind-detail",
+          "term": "洋上風力",
+          "english": "Offshore Wind Power",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:15.333Z"
+        }
+      ],
+      "canonicalSlug": "offshore-wind",
+      "redirectSlugs": [
+        "offshore-wind-detail"
+      ],
+      "confidence": "high",
+      "note": "\"offshore-wind-detail\" は \"-detail\" サフィックスを持ち、\"offshore-wind\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "grid-scale-battery",
+      "entries": [
+        {
+          "slug": "grid-scale-battery",
+          "term": "系統用蓄電池",
+          "english": "Grid-scale Battery",
+          "category": [
+            "事業",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:37.034Z"
+        },
+        {
+          "slug": "grid-scale-battery-detail",
+          "term": "系統用蓄電池",
+          "english": "Grid Scale Battery",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:22:00.621Z"
+        }
+      ],
+      "canonicalSlug": "grid-scale-battery",
+      "redirectSlugs": [
+        "grid-scale-battery-detail"
+      ],
+      "confidence": "high",
+      "note": "\"grid-scale-battery-detail\" は \"-detail\" サフィックスを持ち、\"grid-scale-battery\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "decarbonization-leading-region",
+      "entries": [
+        {
+          "slug": "decarbonization-leading-region",
+          "term": "脱炭素先行地域",
+          "english": "Decarbonization Leading Region",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:32:03.536Z"
+        },
+        {
+          "slug": "decarbonization-leading-region-detail",
+          "term": "脱炭素先行地域",
+          "english": "Decarbonization Leading Region",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:30:40.400Z"
+        }
+      ],
+      "canonicalSlug": "decarbonization-leading-region",
+      "redirectSlugs": [
+        "decarbonization-leading-region-detail"
+      ],
+      "confidence": "high",
+      "note": "\"decarbonization-leading-region-detail\" は \"-detail\" サフィックスを持ち、\"decarbonization-leading-region\" が canonical 候補"
+    },
+    {
+      "rule": "A_slug_detail",
+      "normalizedKey": "battery-passport",
+      "entries": [
+        {
+          "slug": "battery-passport",
+          "term": "電池パスポート",
+          "english": "Battery Passport",
+          "category": [
+            "技術",
+            "市場制度",
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:25:56.879Z"
+        },
+        {
+          "slug": "battery-passport-detail",
+          "term": "電池パスポート",
+          "english": "Battery Passport",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:20:44.605Z"
+        }
+      ],
+      "canonicalSlug": "battery-passport",
+      "redirectSlugs": [
+        "battery-passport-detail"
+      ],
+      "confidence": "high",
+      "note": "\"battery-passport-detail\" は \"-detail\" サフィックスを持ち、\"battery-passport\" が canonical 候補"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ah",
+      "entries": [
+        {
+          "slug": "ah-detail",
+          "term": "Ah",
+          "english": "Ampere Hour",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:19:22.442Z"
+        },
+        {
+          "slug": "ah-ampere-hour",
+          "term": "Ah（アンペア時）",
+          "english": "Ampere-hour",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:30:27.017Z"
+        }
+      ],
+      "canonicalSlug": "ah-ampere-hour",
+      "redirectSlugs": [
+        "ah-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ah\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "bcp",
+      "entries": [
+        {
+          "slug": "bcp-detail",
+          "term": "BCP",
+          "english": "Business Continuity Plan",
+          "category": [
+            "法務",
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:22:24.487Z"
+        },
+        {
+          "slug": "business-continuity-plan",
+          "term": "BCP（事業継続計画）",
+          "english": "Business Continuity Plan",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:32:41.576Z"
+        },
+        {
+          "slug": "bcp-business-continuity-plan",
+          "term": "BCP（事業継続計画）",
+          "english": "Business Continuity Plan",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:30:31.566Z"
+        }
+      ],
+      "canonicalSlug": "business-continuity-plan",
+      "redirectSlugs": [
+        "bcp-business-continuity-plan",
+        "bcp-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"bcp\" が 3 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "bems",
+      "entries": [
+        {
+          "slug": "building-energy-management-system",
+          "term": "BEMS",
+          "english": "Building Energy Management System",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:32:06.607Z"
+        },
+        {
+          "slug": "bems",
+          "term": "BEMS",
+          "english": "Building Energy Management System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:20.273Z"
+        }
+      ],
+      "canonicalSlug": "building-energy-management-system",
+      "redirectSlugs": [
+        "bems"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"bems\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "bess",
+      "entries": [
+        {
+          "slug": "battery-energy-storage-system",
+          "term": "BESS",
+          "english": "Battery Energy Storage System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:36.355Z"
+        },
+        {
+          "slug": "bess-battery-energy-storage-system",
+          "term": "BESS",
+          "english": "Battery Energy Storage System",
+          "category": [
+            "基礎"
+          ],
+          "updatedAt": "2026-05-13T06:30:18.710Z"
+        },
+        {
+          "slug": "bess-detail-2",
+          "term": "BESS",
+          "english": "Battery Energy Storage System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:19:32.485Z"
+        }
+      ],
+      "canonicalSlug": "battery-energy-storage-system",
+      "redirectSlugs": [
+        "bess-battery-energy-storage-system",
+        "bess-detail-2"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"bess\" が 3 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "bms",
+      "entries": [
+        {
+          "slug": "battery-management-system",
+          "term": "BMS",
+          "english": "Battery Management System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:33.528Z"
+        },
+        {
+          "slug": "bms-detail",
+          "term": "BMS（バッテリーマネジメントシステム）",
+          "english": "Battery Management System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:45.209Z"
+        },
+        {
+          "slug": "bms-battery-management-system",
+          "term": "BMS（電池管理システム）",
+          "english": "Battery Management System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:31:28.190Z"
+        }
+      ],
+      "canonicalSlug": "battery-management-system",
+      "redirectSlugs": [
+        "bms-battery-management-system",
+        "bms-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"bms\" が 3 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "blackstart",
+      "entries": [
+        {
+          "slug": "black-start",
+          "term": "Black Start",
+          "english": "Black Start",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:16:11.719Z"
+        },
+        {
+          "slug": "blackstart-detail",
+          "term": "BlackStart",
+          "english": "BlackStart",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:17:32.697Z"
+        }
+      ],
+      "canonicalSlug": "black-start",
+      "redirectSlugs": [
+        "blackstart-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"blackstart\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "bloombergnef",
+      "entries": [
+        {
+          "slug": "bloomberg-nef",
+          "term": "BloombergNEF",
+          "english": "BloombergNEF",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:19:27.416Z"
+        },
+        {
+          "slug": "bloombergnef",
+          "term": "BloombergNEF",
+          "english": "BloombergNEF",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:25:51.958Z"
+        }
+      ],
+      "canonicalSlug": "bloombergnef",
+      "redirectSlugs": [
+        "bloomberg-nef"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"bloombergnef\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "caiso",
+      "entries": [
+        {
+          "slug": "caiso",
+          "term": "CAISO",
+          "english": "California Independent System Operator",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:30:20.746Z"
+        },
+        {
+          "slug": "caiso-california",
+          "term": "CAISO",
+          "english": "California ISO",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:23.094Z"
+        }
+      ],
+      "canonicalSlug": "caiso",
+      "redirectSlugs": [
+        "caiso-california"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"caiso\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "der",
+      "entries": [
+        {
+          "slug": "der-detail",
+          "term": "DER",
+          "english": "Distributed Energy Resources",
+          "category": [
+            "市場制度",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:20:49.558Z"
+        },
+        {
+          "slug": "distributed-energy-resource-2",
+          "term": "DER（分散電源）",
+          "english": "Distributed Energy Resource",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:32:07.903Z"
+        }
+      ],
+      "canonicalSlug": "distributed-energy-resource-2",
+      "redirectSlugs": [
+        "der-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"der\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "derms",
+      "entries": [
+        {
+          "slug": "der-management-system",
+          "term": "DERMS",
+          "english": "Distributed Energy Resource Management System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:11.548Z"
+        },
+        {
+          "slug": "derms-detail",
+          "term": "DERMS",
+          "english": "Distributed Energy Resources Management System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:20:48.936Z"
+        }
+      ],
+      "canonicalSlug": "der-management-system",
+      "redirectSlugs": [
+        "derms-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"derms\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "dod",
+      "entries": [
+        {
+          "slug": "depth-of-discharge",
+          "term": "DOD",
+          "english": "Depth of Discharge",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:29.170Z"
+        },
+        {
+          "slug": "dod-depth-of-discharge",
+          "term": "DOD（Depth of Discharge）",
+          "english": "Depth of Discharge",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:31:32.626Z"
+        }
+      ],
+      "canonicalSlug": "depth-of-discharge",
+      "redirectSlugs": [
+        "dod-depth-of-discharge"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"dod\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "dr",
+      "entries": [
+        {
+          "slug": "demand-response",
+          "term": "DR（デマンドレスポンス）",
+          "english": "Demand Response",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:33:12.921Z"
+        },
+        {
+          "slug": "dr-demand-response",
+          "term": "DR（デマンドレスポンス）",
+          "english": "Demand Response",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:30:35.446Z"
+        },
+        {
+          "slug": "dr-detail",
+          "term": "DR（デマンドレスポンス）",
+          "english": "Demand Response",
+          "category": [
+            "市場制度",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:22:03.022Z"
+        }
+      ],
+      "canonicalSlug": "demand-response",
+      "redirectSlugs": [
+        "dr-demand-response",
+        "dr-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"dr\" が 3 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ems",
+      "entries": [
+        {
+          "slug": "energy-management-system",
+          "term": "EMS",
+          "english": "Energy Management System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:32.863Z"
+        },
+        {
+          "slug": "ems-detail",
+          "term": "EMS（エネルギーマネジメントシステム）",
+          "english": "Energy Management System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:44.572Z"
+        },
+        {
+          "slug": "ems-energy-management-system",
+          "term": "EMS（エネルギーマネジメントシステム）",
+          "english": "Energy Management System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:31:27.592Z"
+        }
+      ],
+      "canonicalSlug": "energy-management-system",
+      "redirectSlugs": [
+        "ems-energy-management-system",
+        "ems-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ems\" が 3 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ercot",
+      "entries": [
+        {
+          "slug": "ercot",
+          "term": "ERCOT",
+          "english": "Electric Reliability Council of Texas",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:30:20.161Z"
+        },
+        {
+          "slug": "ercot-texas",
+          "term": "ERCOT",
+          "english": "Electric Reliability Council of Texas",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:22.484Z"
+        }
+      ],
+      "canonicalSlug": "ercot",
+      "redirectSlugs": [
+        "ercot-texas"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ercot\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ess",
+      "entries": [
+        {
+          "slug": "ess-detail",
+          "term": "ESS",
+          "english": "Energy Storage System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:19:31.788Z"
+        },
+        {
+          "slug": "ess-energy-storage-system",
+          "term": "ESS",
+          "english": "Energy Storage System",
+          "category": [
+            "基礎"
+          ],
+          "updatedAt": "2026-05-13T06:30:18.073Z"
+        }
+      ],
+      "canonicalSlug": "ess-energy-storage-system",
+      "redirectSlugs": [
+        "ess-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ess\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "enerc",
+      "entries": [
+        {
+          "slug": "enerc-catl-product",
+          "term": "EnerC",
+          "english": "EnerC",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:25:10.210Z"
+        },
+        {
+          "slug": "enerc",
+          "term": "EnerC",
+          "english": "CATL EnerC",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:25:53.813Z"
+        }
+      ],
+      "canonicalSlug": "enerc",
+      "redirectSlugs": [
+        "enerc-catl-product"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"enerc\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ferc",
+      "entries": [
+        {
+          "slug": "ferc",
+          "term": "FERC",
+          "english": "Federal Energy Regulatory Commission",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:30:21.891Z"
+        },
+        {
+          "slug": "ferc-usa",
+          "term": "FERC",
+          "english": "Federal Energy Regulatory Commission",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:24.919Z"
+        }
+      ],
+      "canonicalSlug": "ferc",
+      "redirectSlugs": [
+        "ferc-usa"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ferc\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ffr",
+      "entries": [
+        {
+          "slug": "fast-frequency-response",
+          "term": "FFR",
+          "english": "Fast Frequency Response",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:32:05.346Z"
+        },
+        {
+          "slug": "ffr",
+          "term": "FFR（高速周波数応答）",
+          "english": "Fast Frequency Response",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:27:04.567Z"
+        }
+      ],
+      "canonicalSlug": "fast-frequency-response",
+      "redirectSlugs": [
+        "ffr"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ffr\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "frt",
+      "entries": [
+        {
+          "slug": "frt",
+          "term": "FRT",
+          "english": "Fault Ride Through",
+          "category": [
+            "技術",
+            "系統連系"
+          ],
+          "updatedAt": "2026-05-13T06:26:11.438Z"
+        },
+        {
+          "slug": "frt-fault-ride-through",
+          "term": "FRT（事故時運転継続）",
+          "english": "Fault Ride-Through",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:31:42.646Z"
+        }
+      ],
+      "canonicalSlug": "frt-fault-ride-through",
+      "redirectSlugs": [
+        "frt"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"frt\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "gwh",
+      "entries": [
+        {
+          "slug": "gwh-detail",
+          "term": "GWh",
+          "english": "Gigawatt Hour",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:19:23.712Z"
+        },
+        {
+          "slug": "gwh-gigawatt-hour",
+          "term": "GWh（ギガワット時）",
+          "english": "Gigawatt-hour",
+          "category": [
+            "基礎"
+          ],
+          "updatedAt": "2026-05-13T06:30:29.710Z"
+        }
+      ],
+      "canonicalSlug": "gwh-gigawatt-hour",
+      "redirectSlugs": [
+        "gwh-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"gwh\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "hems",
+      "entries": [
+        {
+          "slug": "hems",
+          "term": "HEMS",
+          "english": "Home Energy Management System",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:26:20.871Z"
+        },
+        {
+          "slug": "home-energy-management-system",
+          "term": "HEMS",
+          "english": "Home Energy Management System",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:32:05.964Z"
+        }
+      ],
+      "canonicalSlug": "home-energy-management-system",
+      "redirectSlugs": [
+        "hems"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"hems\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "iea",
+      "entries": [
+        {
+          "slug": "iea-international",
+          "term": "IEA",
+          "english": "International Energy Agency",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:12.469Z"
+        },
+        {
+          "slug": "iea",
+          "term": "IEA（国際エネルギー機関）",
+          "english": "International Energy Agency",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:26:22.137Z"
+        }
+      ],
+      "canonicalSlug": "iea",
+      "redirectSlugs": [
+        "iea-international"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"iea\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ira",
+      "entries": [
+        {
+          "slug": "ira-us",
+          "term": "IRA",
+          "english": "Inflation Reduction Act",
+          "category": [
+            "市場制度",
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:26:08.577Z"
+        },
+        {
+          "slug": "ira-usa-detail",
+          "term": "IRA",
+          "english": "Inflation Reduction Act",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:13.105Z"
+        }
+      ],
+      "canonicalSlug": "ira-us",
+      "redirectSlugs": [
+        "ira-usa-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ira\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "irr",
+      "entries": [
+        {
+          "slug": "internal-rate-of-return",
+          "term": "IRR",
+          "english": "Internal Rate of Return",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:32:51.828Z"
+        },
+        {
+          "slug": "irr",
+          "term": "IRR",
+          "english": "Internal Rate of Return",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:14.388Z"
+        }
+      ],
+      "canonicalSlug": "internal-rate-of-return",
+      "redirectSlugs": [
+        "irr"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"irr\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "jクレジット",
+      "entries": [
+        {
+          "slug": "j-credit",
+          "term": "J-クレジット",
+          "english": "J-Credit",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:27:58.234Z"
+        },
+        {
+          "slug": "j-credit-japan",
+          "term": "J-クレジット",
+          "english": "J-Credit",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:22:09.816Z"
+        }
+      ],
+      "canonicalSlug": "j-credit",
+      "redirectSlugs": [
+        "j-credit-japan"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"jクレジット\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "jera",
+      "entries": [
+        {
+          "slug": "jera",
+          "term": "JERA",
+          "english": "JERA Co., Inc.",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:27:43.285Z"
+        },
+        {
+          "slug": "jera-japan",
+          "term": "JERA",
+          "english": "JERA Co Inc",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:53.185Z"
+        }
+      ],
+      "canonicalSlug": "jera",
+      "redirectSlugs": [
+        "jera-japan"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"jera\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "lfp電池",
+      "entries": [
+        {
+          "slug": "lfp-battery-detail",
+          "term": "LFP電池",
+          "english": "Lithium Iron Phosphate Battery",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:51.969Z"
+        },
+        {
+          "slug": "lithium-iron-phosphate",
+          "term": "LFP電池",
+          "english": "Lithium Iron Phosphate Battery (LFP)",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:34.905Z"
+        }
+      ],
+      "canonicalSlug": "lithium-iron-phosphate",
+      "redirectSlugs": [
+        "lfp-battery-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"lfp電池\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "mtbf",
+      "entries": [
+        {
+          "slug": "mtbf",
+          "term": "MTBF",
+          "english": "Mean Time Between Failures",
+          "category": [
+            "O&M"
+          ],
+          "updatedAt": "2026-05-13T06:30:56.730Z"
+        },
+        {
+          "slug": "mtbf-mean-time-between-failures",
+          "term": "MTBF",
+          "english": "Mean Time Between Failures",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:29.349Z"
+        }
+      ],
+      "canonicalSlug": "mtbf",
+      "redirectSlugs": [
+        "mtbf-mean-time-between-failures"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"mtbf\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "mttr",
+      "entries": [
+        {
+          "slug": "mttr",
+          "term": "MTTR",
+          "english": "Mean Time To Repair",
+          "category": [
+            "O&M"
+          ],
+          "updatedAt": "2026-05-13T06:30:56.128Z"
+        },
+        {
+          "slug": "mttr-mean-time-to-repair",
+          "term": "MTTR",
+          "english": "Mean Time To Repair",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:28.738Z"
+        }
+      ],
+      "canonicalSlug": "mttr",
+      "redirectSlugs": [
+        "mttr-mean-time-to-repair"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"mttr\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "mwh",
+      "entries": [
+        {
+          "slug": "mwh-detail",
+          "term": "MWh",
+          "english": "Megawatt Hour",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:19:24.355Z"
+        },
+        {
+          "slug": "megawatt-hour",
+          "term": "MWh",
+          "english": "Megawatt-hour",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:31.671Z"
+        }
+      ],
+      "canonicalSlug": "megawatt-hour",
+      "redirectSlugs": [
+        "mwh-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"mwh\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "nedo",
+      "entries": [
+        {
+          "slug": "nedo",
+          "term": "NEDO",
+          "english": "New Energy and Industrial Technology Development Organization",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:30:42.392Z"
+        },
+        {
+          "slug": "new-energy-and-industrial-technology-development-organization",
+          "term": "NEDO",
+          "english": "New Energy and Industrial Technology Development Organization",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:32:55.690Z"
+        }
+      ],
+      "canonicalSlug": "new-energy-and-industrial-technology-development-organization",
+      "redirectSlugs": [
+        "nedo"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"nedo\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "o&m",
+      "entries": [
+        {
+          "slug": "om-operation-maintenance",
+          "term": "O&M",
+          "english": "Operation & Maintenance",
+          "category": [
+            "O&M"
+          ],
+          "updatedAt": "2026-05-13T06:31:00.383Z"
+        },
+        {
+          "slug": "operation-maintenance",
+          "term": "O&M",
+          "english": "Operation and Maintenance",
+          "category": [
+            "事業",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:08.154Z"
+        }
+      ],
+      "canonicalSlug": "operation-maintenance",
+      "redirectSlugs": [
+        "om-operation-maintenance"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"o&m\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "occto",
+      "entries": [
+        {
+          "slug": "organization-for-cross-regional-coordination-of-transmission-operators",
+          "term": "OCCTO",
+          "english": "Organization for Cross-regional Coordination of Transmission Operators",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:32:57.585Z"
+        },
+        {
+          "slug": "occto-japan-org",
+          "term": "OCCTO",
+          "english": "Organization for Cross-regional Coordination of Transmission Operators",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:22.962Z"
+        },
+        {
+          "slug": "occto",
+          "term": "OCCTO",
+          "english": "Organization for Cross-regional Coordination of Transmission Operators",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:30:43.015Z"
+        }
+      ],
+      "canonicalSlug": "organization-for-cross-regional-coordination-of-transmission-operators",
+      "redirectSlugs": [
+        "occto",
+        "occto-japan-org"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"occto\" が 3 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "pbt",
+      "entries": [
+        {
+          "slug": "pbt",
+          "term": "PBT",
+          "english": "Payback Time",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:25:57.487Z"
+        },
+        {
+          "slug": "pbt-payback-time",
+          "term": "PBT（投資回収期間）",
+          "english": "Payback Time",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:13.187Z"
+        }
+      ],
+      "canonicalSlug": "pbt-payback-time",
+      "redirectSlugs": [
+        "pbt"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"pbt\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "pcs",
+      "entries": [
+        {
+          "slug": "power-conditioning-system",
+          "term": "PCS",
+          "english": "Power Conditioning System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:34.195Z"
+        },
+        {
+          "slug": "pcs-detail",
+          "term": "PCS（パワーコンディショナー）",
+          "english": "Power Conditioning System",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:43.907Z"
+        }
+      ],
+      "canonicalSlug": "power-conditioning-system",
+      "redirectSlugs": [
+        "pcs-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"pcs\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "pjm",
+      "entries": [
+        {
+          "slug": "pjm",
+          "term": "PJM",
+          "english": "PJM Interconnection",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:30:21.351Z"
+        },
+        {
+          "slug": "pjm-interconnection",
+          "term": "PJM",
+          "english": "PJM Interconnection",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:23.669Z"
+        }
+      ],
+      "canonicalSlug": "pjm",
+      "redirectSlugs": [
+        "pjm-interconnection"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"pjm\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "powertitan",
+      "entries": [
+        {
+          "slug": "powertitan",
+          "term": "PowerTitan",
+          "english": "Sungrow PowerTitan",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:25:54.431Z"
+        },
+        {
+          "slug": "powertitan-sungrow",
+          "term": "PowerTitan",
+          "english": "PowerTitan",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:25:10.798Z"
+        }
+      ],
+      "canonicalSlug": "powertitan",
+      "redirectSlugs": [
+        "powertitan-sungrow"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"powertitan\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "repowereu",
+      "entries": [
+        {
+          "slug": "repower-eu",
+          "term": "REPower EU",
+          "english": "REPower EU",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:16.175Z"
+        },
+        {
+          "slug": "repowereu",
+          "term": "REPowerEU",
+          "english": "REPowerEU Plan",
+          "category": [
+            "市場制度",
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:26:07.960Z"
+        }
+      ],
+      "canonicalSlug": "repowereu",
+      "redirectSlugs": [
+        "repower-eu"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"repowereu\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "rul",
+      "entries": [
+        {
+          "slug": "rul-remaining-life",
+          "term": "RUL",
+          "english": "Remaining Useful Life",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:00.518Z"
+        },
+        {
+          "slug": "rul",
+          "term": "RUL",
+          "english": "Remaining Useful Life",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:13.247Z"
+        }
+      ],
+      "canonicalSlug": "rul",
+      "redirectSlugs": [
+        "rul-remaining-life"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"rul\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "sii",
+      "entries": [
+        {
+          "slug": "sii",
+          "term": "SII",
+          "english": "Sustainable open Innovation Initiative",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:30:41.755Z"
+        },
+        {
+          "slug": "sustainable-open-innovation-initiative",
+          "term": "SII（環境共創イニシアチブ）",
+          "english": "Sustainable Open Innovation Initiative",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:32:55.079Z"
+        }
+      ],
+      "canonicalSlug": "sustainable-open-innovation-initiative",
+      "redirectSlugs": [
+        "sii"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"sii\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "sla",
+      "entries": [
+        {
+          "slug": "sla-service-level-agreement",
+          "term": "SLA",
+          "english": "Service Level Agreement",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:30:59.788Z"
+        },
+        {
+          "slug": "sla-detail",
+          "term": "SLA",
+          "english": "Service Level Agreement",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:21:43.885Z"
+        }
+      ],
+      "canonicalSlug": "sla-service-level-agreement",
+      "redirectSlugs": [
+        "sla-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"sla\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "soc",
+      "entries": [
+        {
+          "slug": "state-of-charge",
+          "term": "SOC",
+          "english": "State of Charge",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:30.454Z"
+        },
+        {
+          "slug": "soc-state-of-charge",
+          "term": "SOC",
+          "english": "State of Charge",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:01.761Z"
+        }
+      ],
+      "canonicalSlug": "state-of-charge",
+      "redirectSlugs": [
+        "soc-state-of-charge"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"soc\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "soh",
+      "entries": [
+        {
+          "slug": "state-of-health",
+          "term": "SOH",
+          "english": "State of Health",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:29.797Z"
+        },
+        {
+          "slug": "soh-state-of-health",
+          "term": "SOH",
+          "english": "State of Health",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:01.170Z"
+        }
+      ],
+      "canonicalSlug": "state-of-health",
+      "redirectSlugs": [
+        "soh-state-of-health"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"soh\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "spc",
+      "entries": [
+        {
+          "slug": "special-purpose-company",
+          "term": "SPC",
+          "english": "Special Purpose Company",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:32:52.430Z"
+        },
+        {
+          "slug": "spc",
+          "term": "SPC",
+          "english": "Special Purpose Company",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:09.911Z"
+        },
+        {
+          "slug": "spc-special-purpose",
+          "term": "SPC（特別目的会社）",
+          "english": "Special Purpose Company",
+          "category": [
+            "市場制度",
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:23:30.577Z"
+        }
+      ],
+      "canonicalSlug": "special-purpose-company",
+      "redirectSlugs": [
+        "spc",
+        "spc-special-purpose"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"spc\" が 3 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "sustech",
+      "entries": [
+        {
+          "slug": "sustech-japan-ems",
+          "term": "Sustech",
+          "english": "Sustech",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:33.774Z"
+        },
+        {
+          "slug": "sustech",
+          "term": "Sustech",
+          "english": "Sustech Inc.",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:26:03.006Z"
+        }
+      ],
+      "canonicalSlug": "sustech",
+      "redirectSlugs": [
+        "sustech-japan-ems"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"sustech\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "tcfd",
+      "entries": [
+        {
+          "slug": "tcfd",
+          "term": "TCFD",
+          "english": "Task Force on Climate-related Financial Disclosures",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:01.745Z"
+        },
+        {
+          "slug": "tcfd-disclosure",
+          "term": "TCFD",
+          "english": "Task Force on Climate-related Financial Disclosures",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:22:17.195Z"
+        }
+      ],
+      "canonicalSlug": "tcfd",
+      "redirectSlugs": [
+        "tcfd-disclosure"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"tcfd\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "tensorenergy",
+      "entries": [
+        {
+          "slug": "tensor-energy",
+          "term": "Tensor Energy",
+          "english": "Tensor Energy",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:26:02.460Z"
+        },
+        {
+          "slug": "tensor-energy-ems",
+          "term": "Tensor Energy",
+          "english": "Tensor Energy",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:33.174Z"
+        }
+      ],
+      "canonicalSlug": "tensor-energy",
+      "redirectSlugs": [
+        "tensor-energy-ems"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"tensorenergy\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ul9540a",
+      "entries": [
+        {
+          "slug": "ul-9540a",
+          "term": "UL 9540A",
+          "english": "UL 9540A",
+          "category": [
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:30:22.567Z"
+        },
+        {
+          "slug": "ul-9540a-standard",
+          "term": "UL9540A",
+          "english": "UL 9540A",
+          "category": [
+            "技術",
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:24:39.563Z"
+        }
+      ],
+      "canonicalSlug": "ul-9540a",
+      "redirectSlugs": [
+        "ul-9540a-standard"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ul9540a\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ul9540",
+      "entries": [
+        {
+          "slug": "ul-9540-standard",
+          "term": "UL9540",
+          "english": "UL 9540",
+          "category": [
+            "技術",
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:22:35.091Z"
+        },
+        {
+          "slug": "ul-9540",
+          "term": "UL9540",
+          "english": "UL 9540",
+          "category": [
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:32:58.859Z"
+        }
+      ],
+      "canonicalSlug": "ul-9540",
+      "redirectSlugs": [
+        "ul-9540-standard"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ul9540\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "v2g",
+      "entries": [
+        {
+          "slug": "vehicle-to-grid",
+          "term": "V2G",
+          "english": "Vehicle to Grid",
+          "category": [
+            "技術",
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:33:10.013Z"
+        },
+        {
+          "slug": "v2g-detail",
+          "term": "V2G",
+          "english": "Vehicle to Grid",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:54.368Z"
+        }
+      ],
+      "canonicalSlug": "vehicle-to-grid",
+      "redirectSlugs": [
+        "v2g-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"v2g\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "v2h",
+      "entries": [
+        {
+          "slug": "v2h-detail",
+          "term": "V2H",
+          "english": "Vehicle to Home",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:53.734Z"
+        },
+        {
+          "slug": "vehicle-to-home",
+          "term": "V2H",
+          "english": "Vehicle-to-Home",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:33:10.761Z"
+        }
+      ],
+      "canonicalSlug": "vehicle-to-home",
+      "redirectSlugs": [
+        "v2h-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"v2h\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "v2x",
+      "entries": [
+        {
+          "slug": "v2x",
+          "term": "V2X",
+          "english": "Vehicle-to-Everything",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:12.051Z"
+        },
+        {
+          "slug": "v2x-vehicle-to-x",
+          "term": "V2X",
+          "english": "Vehicle to Everything",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:12.157Z"
+        }
+      ],
+      "canonicalSlug": "v2x",
+      "redirectSlugs": [
+        "v2x-vehicle-to-x"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"v2x\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "vpp",
+      "entries": [
+        {
+          "slug": "vpp-detail",
+          "term": "VPP",
+          "english": "Virtual Power Plant",
+          "category": [
+            "市場制度",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:22:03.662Z"
+        },
+        {
+          "slug": "virtual-power-plant",
+          "term": "VPP",
+          "english": "Virtual Power Plant",
+          "category": [
+            "技術",
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:33:13.743Z"
+        },
+        {
+          "slug": "vpp-virtual-power-plant",
+          "term": "VPP（仮想発電所）",
+          "english": "Virtual Power Plant",
+          "category": [
+            "低圧"
+          ],
+          "updatedAt": "2026-05-13T06:30:33.496Z"
+        }
+      ],
+      "canonicalSlug": "virtual-power-plant",
+      "redirectSlugs": [
+        "vpp-virtual-power-plant",
+        "vpp-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"vpp\" が 3 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "kwh",
+      "entries": [
+        {
+          "slug": "kilowatt-hour",
+          "term": "kWh",
+          "english": "Kilowatt-hour",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:33:32.269Z"
+        },
+        {
+          "slug": "kwh-unit-detail",
+          "term": "kWh",
+          "english": "Kilowatt Hour",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:19:23.125Z"
+        }
+      ],
+      "canonicalSlug": "kilowatt-hour",
+      "redirectSlugs": [
+        "kwh-unit-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"kwh\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "インバランス料金",
+      "entries": [
+        {
+          "slug": "imbalance-fee-detail",
+          "term": "インバランス料金",
+          "english": "Imbalance Fee",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:04.732Z"
+        },
+        {
+          "slug": "imbalance-charge",
+          "term": "インバランス料金",
+          "english": "Imbalance Charge",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:33:20.156Z"
+        }
+      ],
+      "canonicalSlug": "imbalance-charge",
+      "redirectSlugs": [
+        "imbalance-fee-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"インバランス料金\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "インフラファンド",
+      "entries": [
+        {
+          "slug": "infrastructure-fund",
+          "term": "インフラファンド",
+          "english": "Infrastructure Fund",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:32:12.533Z"
+        },
+        {
+          "slug": "infra-fund",
+          "term": "インフラファンド",
+          "english": "Infrastructure Fund",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:03.563Z"
+        }
+      ],
+      "canonicalSlug": "infrastructure-fund",
+      "redirectSlugs": [
+        "infra-fund"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"インフラファンド\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ガス放出",
+      "entries": [
+        {
+          "slug": "gas-venting",
+          "term": "ガス放出",
+          "english": "Gas Venting",
+          "category": [
+            "技術",
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:21:17.676Z"
+        },
+        {
+          "slug": "gas-release",
+          "term": "ガス放出",
+          "english": "Gas Release",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:32:15.841Z"
+        }
+      ],
+      "canonicalSlug": "gas-release",
+      "redirectSlugs": [
+        "gas-venting"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ガス放出\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "コバルト",
+      "entries": [
+        {
+          "slug": "cobalt",
+          "term": "コバルト",
+          "english": "Cobalt",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:52.382Z"
+        },
+        {
+          "slug": "cobalt-resource",
+          "term": "コバルト",
+          "english": "Cobalt",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:48.415Z"
+        }
+      ],
+      "canonicalSlug": "cobalt",
+      "redirectSlugs": [
+        "cobalt-resource"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"コバルト\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "スポット市場",
+      "entries": [
+        {
+          "slug": "spot-market",
+          "term": "スポット市場",
+          "english": "Spot Market",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:31:57.146Z"
+        },
+        {
+          "slug": "day-ahead-market",
+          "term": "スポット市場（日々）",
+          "english": "Day-Ahead Spot Market",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:33:24.025Z"
+        }
+      ],
+      "canonicalSlug": "day-ahead-market",
+      "redirectSlugs": [
+        "spot-market"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"スポット市場\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ニッケル",
+      "entries": [
+        {
+          "slug": "nickel",
+          "term": "ニッケル",
+          "english": "Nickel",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:51.745Z"
+        },
+        {
+          "slug": "nickel-resource",
+          "term": "ニッケル",
+          "english": "Nickel",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:47.665Z"
+        }
+      ],
+      "canonicalSlug": "nickel",
+      "redirectSlugs": [
+        "nickel-resource"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ニッケル\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ピクカット",
+      "entries": [
+        {
+          "slug": "peak-cut",
+          "term": "ピークカット",
+          "english": "Peak Cut",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:32:01.025Z"
+        },
+        {
+          "slug": "peak-cutting",
+          "term": "ピークカット",
+          "english": "Peak Cutting",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:22:06.801Z"
+        }
+      ],
+      "canonicalSlug": "peak-cut",
+      "redirectSlugs": [
+        "peak-cutting"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ピクカット\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "ピクシフト",
+      "entries": [
+        {
+          "slug": "peak-shift",
+          "term": "ピークシフト",
+          "english": "Peak Shift",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:32:01.675Z"
+        },
+        {
+          "slug": "peak-shifting",
+          "term": "ピークシフト",
+          "english": "Peak Shifting",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:22:07.406Z"
+        }
+      ],
+      "canonicalSlug": "peak-shift",
+      "redirectSlugs": [
+        "peak-shifting"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"ピクシフト\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "メインオクション",
+      "entries": [
+        {
+          "slug": "main-auction-jp",
+          "term": "メインオークション",
+          "english": "Main Auction",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:25:48.303Z"
+        },
+        {
+          "slug": "main-auction",
+          "term": "メインオークション",
+          "english": "Main Auction",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:31:59.660Z"
+        }
+      ],
+      "canonicalSlug": "main-auction",
+      "redirectSlugs": [
+        "main-auction-jp"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"メインオクション\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "リチウム",
+      "entries": [
+        {
+          "slug": "lithium",
+          "term": "リチウム",
+          "english": "Lithium",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:52.967Z"
+        },
+        {
+          "slug": "lithium-resource",
+          "term": "リチウム",
+          "english": "Lithium",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:49.024Z"
+        }
+      ],
+      "canonicalSlug": "lithium",
+      "redirectSlugs": [
+        "lithium-resource"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"リチウム\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "一般送配電事業者",
+      "entries": [
+        {
+          "slug": "tso-japan-detail",
+          "term": "一般送配電事業者",
+          "english": "Transmission and Distribution Operator",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:23.701Z"
+        },
+        {
+          "slug": "general-transmission-distribution",
+          "term": "一般送配電事業者",
+          "english": "General Transmission and Distribution Business",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:27:52.260Z"
+        }
+      ],
+      "canonicalSlug": "general-transmission-distribution",
+      "redirectSlugs": [
+        "tso-japan-detail"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"一般送配電事業者\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "三菱商事",
+      "entries": [
+        {
+          "slug": "mitsubishi-corporation",
+          "term": "三菱商事",
+          "english": "Mitsubishi Corporation",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:56.216Z"
+        },
+        {
+          "slug": "mitsubishi-corp",
+          "term": "三菱商事",
+          "english": "Mitsubishi Corporation",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:27:40.795Z"
+        }
+      ],
+      "canonicalSlug": "mitsubishi-corp",
+      "redirectSlugs": [
+        "mitsubishi-corporation"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"三菱商事\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "丸紅",
+      "entries": [
+        {
+          "slug": "marubeni-japan",
+          "term": "丸紅",
+          "english": "Marubeni Corporation",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:54.432Z"
+        },
+        {
+          "slug": "marubeni",
+          "term": "丸紅",
+          "english": "Marubeni Corporation",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:27:42.047Z"
+        }
+      ],
+      "canonicalSlug": "marubeni",
+      "redirectSlugs": [
+        "marubeni-japan"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"丸紅\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "伊藤忠商事",
+      "entries": [
+        {
+          "slug": "itochu",
+          "term": "伊藤忠商事",
+          "english": "ITOCHU Corporation",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:27:41.422Z"
+        },
+        {
+          "slug": "itochu-corporation",
+          "term": "伊藤忠商事",
+          "english": "Itochu Corporation",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:55.022Z"
+        }
+      ],
+      "canonicalSlug": "itochu",
+      "redirectSlugs": [
+        "itochu-corporation"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"伊藤忠商事\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "住友商事",
+      "entries": [
+        {
+          "slug": "sumitomo-corp",
+          "term": "住友商事",
+          "english": "Sumitomo Corporation",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:27:40.166Z"
+        },
+        {
+          "slug": "sumitomo-corporation",
+          "term": "住友商事",
+          "english": "Sumitomo Corporation",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:56.835Z"
+        }
+      ],
+      "canonicalSlug": "sumitomo-corp",
+      "redirectSlugs": [
+        "sumitomo-corporation"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"住友商事\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "再エネ特措法",
+      "entries": [
+        {
+          "slug": "renewable-energy-special-measures-act",
+          "term": "再エネ特措法",
+          "english": "Act on Special Measures Concerning Procurement of Renewable Energy",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:33:02.524Z"
+        },
+        {
+          "slug": "renewable-special-law",
+          "term": "再エネ特措法",
+          "english": "Renewable Energy Special Law",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:22:31.899Z"
+        }
+      ],
+      "canonicalSlug": "renewable-energy-special-measures-act",
+      "redirectSlugs": [
+        "renewable-special-law"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"再エネ特措法\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "再エネ賦課金",
+      "entries": [
+        {
+          "slug": "renewable-surcharge",
+          "term": "再エネ賦課金",
+          "english": "Renewable Energy Surcharge",
+          "category": [
+            "その他"
+          ],
+          "updatedAt": "2026-05-13T06:30:08.951Z"
+        },
+        {
+          "slug": "renewable-energy-surcharge",
+          "term": "再エネ賦課金",
+          "english": "Renewable Energy Surcharge",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:32:46.013Z"
+        }
+      ],
+      "canonicalSlug": "renewable-energy-surcharge",
+      "redirectSlugs": [
+        "renewable-surcharge"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"再エネ賦課金\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "周波数変換設備",
+      "entries": [
+        {
+          "slug": "fc-frequency-conv",
+          "term": "周波数変換設備",
+          "english": "Frequency Converter",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:21.188Z"
+        },
+        {
+          "slug": "frequency-converter",
+          "term": "周波数変換設備（FC）",
+          "english": "Frequency Converter",
+          "category": [
+            "系統連系"
+          ],
+          "updatedAt": "2026-05-13T06:31:50.304Z"
+        }
+      ],
+      "canonicalSlug": "frequency-converter",
+      "redirectSlugs": [
+        "fc-frequency-conv"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"周波数変換設備\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "容量確保契約金額",
+      "entries": [
+        {
+          "slug": "capacity-procurement-contract-amount",
+          "term": "容量確保契約金額",
+          "english": "Capacity Procurement Contract Amount",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:31:58.396Z"
+        },
+        {
+          "slug": "capacity-contract-payment",
+          "term": "容量確保契約金額（kW価値）",
+          "english": "Capacity Contract Payment",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:32:35.760Z"
+        }
+      ],
+      "canonicalSlug": "capacity-contract-payment",
+      "redirectSlugs": [
+        "capacity-procurement-contract-amount"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"容量確保契約金額\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "性能保証",
+      "entries": [
+        {
+          "slug": "performance-guarantee",
+          "term": "性能保証",
+          "english": "Performance Guarantee",
+          "category": [
+            "事業",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:42.802Z"
+        },
+        {
+          "slug": "performance-warranty",
+          "term": "性能保証",
+          "english": "Performance Warranty",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:23:49.339Z"
+        }
+      ],
+      "canonicalSlug": "performance-guarantee",
+      "redirectSlugs": [
+        "performance-warranty"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"性能保証\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "消防法",
+      "entries": [
+        {
+          "slug": "fire-service-act",
+          "term": "消防法",
+          "english": "Fire Service Act",
+          "category": [
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:32:17.800Z"
+        },
+        {
+          "slug": "fire-service-law",
+          "term": "消防法",
+          "english": "Fire Service Law",
+          "category": [
+            "法務",
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:23:37.531Z"
+        }
+      ],
+      "canonicalSlug": "fire-service-act",
+      "redirectSlugs": [
+        "fire-service-law"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"消防法\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "特定卸供給事業者",
+      "entries": [
+        {
+          "slug": "specified-wholesale-supply-business",
+          "term": "特定卸供給事業者",
+          "english": "Specified Wholesale Supply Business",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:30:32.210Z"
+        },
+        {
+          "slug": "specified-wholesale-supply",
+          "term": "特定卸供給事業者",
+          "english": "Specified Wholesale Supply Business",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:32:09.280Z"
+        }
+      ],
+      "canonicalSlug": "specified-wholesale-supply",
+      "redirectSlugs": [
+        "specified-wholesale-supply-business"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"特定卸供給事業者\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "環境省",
+      "entries": [
+        {
+          "slug": "ministry-of-the-environment",
+          "term": "環境省",
+          "english": "Ministry of the Environment",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:32:27.588Z"
+        },
+        {
+          "slug": "ministry-of-environment",
+          "term": "環境省",
+          "english": "Ministry of the Environment",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:30:39.783Z"
+        }
+      ],
+      "canonicalSlug": "ministry-of-the-environment",
+      "redirectSlugs": [
+        "ministry-of-environment"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"環境省\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "発動指令電源",
+      "entries": [
+        {
+          "slug": "dispatch-resource",
+          "term": "発動指令電源",
+          "english": "Dispatch Resource",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:32:37.037Z"
+        },
+        {
+          "slug": "dispatch-command-source",
+          "term": "発動指令電源",
+          "english": "Dispatch Command Source",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:25:46.427Z"
+        }
+      ],
+      "canonicalSlug": "dispatch-resource",
+      "redirectSlugs": [
+        "dispatch-command-source"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"発動指令電源\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "発電事業者",
+      "entries": [
+        {
+          "slug": "power-generation-business",
+          "term": "発電事業者",
+          "english": "Power Generation Business",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:31:05.379Z"
+        },
+        {
+          "slug": "generation-business-operator",
+          "term": "発電事業者",
+          "english": "Generation Business Operator",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:33:05.011Z"
+        }
+      ],
+      "canonicalSlug": "generation-business-operator",
+      "redirectSlugs": [
+        "power-generation-business"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"発電事業者\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "稼働率",
+      "entries": [
+        {
+          "slug": "availability",
+          "term": "稼働率",
+          "english": "Availability",
+          "category": [
+            "事業",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:30:59.174Z"
+        },
+        {
+          "slug": "availability-rate",
+          "term": "稼働率",
+          "english": "Availability Rate",
+          "category": [
+            "技術",
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:21:43.177Z"
+        }
+      ],
+      "canonicalSlug": "availability",
+      "redirectSlugs": [
+        "availability-rate"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"稼働率\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "系統連系規程",
+      "entries": [
+        {
+          "slug": "grid-interconnection-code",
+          "term": "系統連系規程",
+          "english": "Grid Interconnection Code",
+          "category": [
+            "系統連系"
+          ],
+          "updatedAt": "2026-05-13T06:31:41.982Z"
+        },
+        {
+          "slug": "jeac-9701",
+          "term": "系統連系規程",
+          "english": "JEAC 9701",
+          "category": [
+            "法務",
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:24:11.961Z"
+        }
+      ],
+      "canonicalSlug": "grid-interconnection-code",
+      "redirectSlugs": [
+        "jeac-9701"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"系統連系規程\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "経済産業省",
+      "entries": [
+        {
+          "slug": "meti",
+          "term": "経済産業省",
+          "english": "Ministry of Economy, Trade and Industry",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:30:39.185Z"
+        },
+        {
+          "slug": "ministry-of-economy-trade-and-industry",
+          "term": "経済産業省",
+          "english": "Ministry of Economy, Trade and Industry",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:32:56.985Z"
+        }
+      ],
+      "canonicalSlug": "ministry-of-economy-trade-and-industry",
+      "redirectSlugs": [
+        "meti"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"経済産業省\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "耐震設計",
+      "entries": [
+        {
+          "slug": "earthquake-resistant-design",
+          "term": "耐震設計",
+          "english": "Earthquake Resistant Design",
+          "category": [
+            "技術",
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:21:25.114Z"
+        },
+        {
+          "slug": "seismic-design",
+          "term": "耐震設計",
+          "english": "Seismic Design",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:27:24.335Z"
+        }
+      ],
+      "canonicalSlug": "seismic-design",
+      "redirectSlugs": [
+        "earthquake-resistant-design"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"耐震設計\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "自治体補助金",
+      "entries": [
+        {
+          "slug": "local-government-subsidy",
+          "term": "自治体補助金",
+          "english": "Local Government Subsidy",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:27:17.196Z"
+        },
+        {
+          "slug": "local-subsidy",
+          "term": "自治体補助金",
+          "english": "Local Subsidy",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:23:03.004Z"
+        }
+      ],
+      "canonicalSlug": "local-government-subsidy",
+      "redirectSlugs": [
+        "local-subsidy"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"自治体補助金\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "蓄電所",
+      "entries": [
+        {
+          "slug": "battery-storage-site",
+          "term": "蓄電所",
+          "english": "Battery Storage Site",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:33:37.636Z"
+        },
+        {
+          "slug": "chikudensho",
+          "term": "蓄電所",
+          "english": "Battery Storage Site",
+          "category": [
+            "基礎"
+          ],
+          "updatedAt": "2026-05-13T06:29:02.258Z"
+        }
+      ],
+      "canonicalSlug": "battery-storage-site",
+      "redirectSlugs": [
+        "chikudensho"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"蓄電所\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "試運転",
+      "entries": [
+        {
+          "slug": "commissioning",
+          "term": "試運転",
+          "english": "Commissioning",
+          "category": [
+            "EPC"
+          ],
+          "updatedAt": "2026-05-13T06:32:21.113Z"
+        },
+        {
+          "slug": "trial-operation",
+          "term": "試運転",
+          "english": "Trial Operation",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:34.420Z"
+        }
+      ],
+      "canonicalSlug": "commissioning",
+      "redirectSlugs": [
+        "trial-operation"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"試運転\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "追加オクション",
+      "entries": [
+        {
+          "slug": "additional-auction-jp",
+          "term": "追加オークション",
+          "english": "Additional Auction",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:25:47.676Z"
+        },
+        {
+          "slug": "additional-auction",
+          "term": "追加オークション",
+          "english": "Additional Auction",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:31:59.042Z"
+        }
+      ],
+      "canonicalSlug": "additional-auction",
+      "redirectSlugs": [
+        "additional-auction-jp"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"追加オクション\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "関西電力",
+      "entries": [
+        {
+          "slug": "kansai-electric",
+          "term": "関西電力",
+          "english": "Kansai Electric Power",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:52.526Z"
+        },
+        {
+          "slug": "kepco",
+          "term": "関西電力",
+          "english": "Kansai Electric Power",
+          "category": [
+            "事業"
+          ],
+          "updatedAt": "2026-05-13T06:27:49.757Z"
+        }
+      ],
+      "canonicalSlug": "kepco",
+      "redirectSlugs": [
+        "kansai-electric"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"関西電力\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "離隔距離",
+      "entries": [
+        {
+          "slug": "separation-distance",
+          "term": "離隔距離",
+          "english": "Separation Distance",
+          "category": [
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:30:53.652Z"
+        },
+        {
+          "slug": "fire-separation-distance",
+          "term": "離隔距離",
+          "english": "Fire Separation Distance",
+          "category": [
+            "技術",
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:24:40.178Z"
+        },
+        {
+          "slug": "setback-distance",
+          "term": "離隔距離",
+          "english": "Setback Distance",
+          "category": [
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:32:59.460Z"
+        }
+      ],
+      "canonicalSlug": "setback-distance",
+      "redirectSlugs": [
+        "separation-distance",
+        "fire-separation-distance"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"離隔距離\" が 3 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "電気主任技術者",
+      "entries": [
+        {
+          "slug": "chief-electrical-engineer",
+          "term": "電気主任技術者",
+          "english": "Chief Electrical Engineer",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:33:04.368Z"
+        },
+        {
+          "slug": "chief-engineer-elec",
+          "term": "電気主任技術者",
+          "english": "Chief Electrical Engineer",
+          "category": [
+            "法務",
+            "安全"
+          ],
+          "updatedAt": "2026-05-13T06:22:31.286Z"
+        }
+      ],
+      "canonicalSlug": "chief-electrical-engineer",
+      "redirectSlugs": [
+        "chief-engineer-elec"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"電気主任技術者\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "電気事業法",
+      "entries": [
+        {
+          "slug": "electricity-business-act",
+          "term": "電気事業法",
+          "english": "Electricity Business Act",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:33:05.625Z"
+        },
+        {
+          "slug": "electricity-business-law",
+          "term": "電気事業法",
+          "english": "Electricity Business Law",
+          "category": [
+            "法務"
+          ],
+          "updatedAt": "2026-05-13T06:22:32.517Z"
+        }
+      ],
+      "canonicalSlug": "electricity-business-act",
+      "redirectSlugs": [
+        "electricity-business-law"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"電気事業法\" が 2 エントリで一致"
+    },
+    {
+      "rule": "B_term_norm",
+      "normalizedKey": "非化石価値取引市場",
+      "entries": [
+        {
+          "slug": "non-fossil-certificate-market",
+          "term": "非化石価値取引市場",
+          "english": "Non-Fossil Certificate Market",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:32:30.725Z"
+        },
+        {
+          "slug": "non-fossil-value-market",
+          "term": "非化石価値取引市場",
+          "english": "Non-fossil Value Trading Market",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:27:58.931Z"
+        }
+      ],
+      "canonicalSlug": "non-fossil-certificate-market",
+      "redirectSlugs": [
+        "non-fossil-value-market"
+      ],
+      "confidence": "medium",
+      "note": "term 正規化後 \"非化石価値取引市場\" が 2 エントリで一致"
+    },
+    {
+      "rule": "C_english_norm",
+      "normalizedKey": "climatebondsinitiativestandard",
+      "entries": [
+        {
+          "slug": "cbi-standard-2",
+          "term": "CBI Standard",
+          "english": "Climate Bonds Initiative Standard",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:18:48.498Z"
+        },
+        {
+          "slug": "cbi-standard",
+          "term": "CBI基準",
+          "english": "Climate Bonds Initiative Standard",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:23:25.540Z"
+        }
+      ],
+      "canonicalSlug": "cbi-standard",
+      "redirectSlugs": [
+        "cbi-standard-2"
+      ],
+      "confidence": "medium",
+      "note": "english 正規化後 \"climatebondsinitiativestandard\" が 2 エントリで一致"
+    },
+    {
+      "rule": "C_english_norm",
+      "normalizedKey": "feedintariff",
+      "entries": [
+        {
+          "slug": "feed-in-tariff",
+          "term": "FIT",
+          "english": "Feed-in Tariff",
+          "category": [
+            "補助金"
+          ],
+          "updatedAt": "2026-05-13T06:33:20.832Z"
+        },
+        {
+          "slug": "fit-feed-in-tariff",
+          "term": "FIT制度",
+          "english": "Feed-in Tariff",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:30:09.584Z"
+        }
+      ],
+      "canonicalSlug": "feed-in-tariff",
+      "redirectSlugs": [
+        "fit-feed-in-tariff"
+      ],
+      "confidence": "medium",
+      "note": "english 正規化後 \"feedintariff\" が 2 エントリで一致"
+    },
+    {
+      "rule": "C_english_norm",
+      "normalizedKey": "lithiumironphosphate",
+      "entries": [
+        {
+          "slug": "lfp",
+          "term": "LFP",
+          "english": "Lithium Iron Phosphate",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:09.175Z"
+        },
+        {
+          "slug": "lithium-iron-phosphate-material",
+          "term": "リン酸鉄",
+          "english": "Lithium Iron Phosphate (LFP)",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:26:51.155Z"
+        }
+      ],
+      "canonicalSlug": "lithium-iron-phosphate-material",
+      "redirectSlugs": [
+        "lfp"
+      ],
+      "confidence": "medium",
+      "note": "english 正規化後 \"lithiumironphosphate\" が 2 エントリで一致"
+    },
+    {
+      "rule": "C_english_norm",
+      "normalizedKey": "teslamegapack",
+      "entries": [
+        {
+          "slug": "megapack",
+          "term": "Megapack",
+          "english": "Tesla Megapack",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:25:55.035Z"
+        },
+        {
+          "slug": "tesla-megapack-product",
+          "term": "Tesla Megapack",
+          "english": "Tesla Megapack",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:25:14.584Z"
+        }
+      ],
+      "canonicalSlug": "megapack",
+      "redirectSlugs": [
+        "tesla-megapack-product"
+      ],
+      "confidence": "medium",
+      "note": "english 正規化後 \"teslamegapack\" が 2 エントリで一致"
+    },
+    {
+      "rule": "C_english_norm",
+      "normalizedKey": "re100",
+      "entries": [
+        {
+          "slug": "re100-detail-2",
+          "term": "RE100",
+          "english": "RE100",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:18:35.552Z"
+        },
+        {
+          "slug": "re100",
+          "term": "RE100",
+          "english": "RE100",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:32:38.942Z"
+        },
+        {
+          "slug": "re100-detail",
+          "term": "RE100",
+          "english": "RE100",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:22:19.105Z"
+        },
+        {
+          "slug": "re100-japan",
+          "term": "再エネ100",
+          "english": "RE100",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:27:35.098Z"
+        }
+      ],
+      "canonicalSlug": "re100",
+      "redirectSlugs": [
+        "re100-japan",
+        "re100-detail-2",
+        "re100-detail"
+      ],
+      "confidence": "medium",
+      "note": "english 正規化後 \"re100\" が 4 エントリで一致"
+    },
+    {
+      "rule": "C_english_norm",
+      "normalizedKey": "transformer",
+      "entries": [
+        {
+          "slug": "transformer-ai",
+          "term": "Transformer",
+          "english": "Transformer",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:21:04.062Z"
+        },
+        {
+          "slug": "transformer",
+          "term": "変圧器",
+          "english": "Transformer",
+          "category": [
+            "技術"
+          ],
+          "updatedAt": "2026-05-13T06:31:15.693Z"
+        }
+      ],
+      "canonicalSlug": "transformer",
+      "redirectSlugs": [
+        "transformer-ai"
+      ],
+      "confidence": "medium",
+      "note": "english 正規化後 \"transformer\" が 2 エントリで一致"
+    },
+    {
+      "rule": "C_english_norm",
+      "normalizedKey": "nonfirmconnection",
+      "entries": [
+        {
+          "slug": "non-firm-detail",
+          "term": "ノンファーム",
+          "english": "Non-Firm Connection",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:06.643Z"
+        },
+        {
+          "slug": "non-firm-connection",
+          "term": "ノンファーム接続",
+          "english": "Non-firm Connection",
+          "category": [
+            "系統連系"
+          ],
+          "updatedAt": "2026-05-13T06:33:16.922Z"
+        }
+      ],
+      "canonicalSlug": "non-firm-connection",
+      "redirectSlugs": [
+        "non-firm-detail"
+      ],
+      "confidence": "medium",
+      "note": "english 正規化後 \"nonfirmconnection\" が 2 エントリで一致"
+    },
+    {
+      "rule": "C_english_norm",
+      "normalizedKey": "multiuseoperation",
+      "entries": [
+        {
+          "slug": "multi-use-detail",
+          "term": "マルチユース",
+          "english": "Multi-Use Operation",
+          "category": [
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:24:02.922Z"
+        },
+        {
+          "slug": "multi-use-operation",
+          "term": "マルチユース運用",
+          "english": "Multi-Use Operation",
+          "category": [
+            "事業",
+            "市場制度"
+          ],
+          "updatedAt": "2026-05-13T06:25:59.897Z"
+        }
+      ],
+      "canonicalSlug": "multi-use-operation",
+      "redirectSlugs": [
+        "multi-use-detail"
+      ],
+      "confidence": "medium",
+      "note": "english 正規化後 \"multiuseoperation\" が 2 エントリで一致"
+    }
+  ]
+}
