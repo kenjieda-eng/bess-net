@@ -39,6 +39,8 @@ export const metadata: Metadata = {
     title: '系統用蓄電池 事業者 Top50 ランキング | bess-net',
     description: '国内 BESS 事業者を MWh 容量で順位付け。bess-net プロジェクトDB 集計。',
     type: 'website',
+    url: 'https://bess-net.jp/industry/top50',
+    images: ['https://bess-net.jp/og-image.png'],
   },
 };
 
@@ -164,6 +166,10 @@ export default function IndustryTop50Page() {
               公表情報ベースのため、全建設実績を悉皆的に網羅したものではなく、
               容量（MWh）が公表・登録されているプロジェクトのみを容量合計に算入しています。
               容量非公表のプロジェクトは件数には含みますが容量には加算していません。
+            </p>
+            <p style={{ margin: '4px 0 0' }}>
+              事業者名は法人格表記（株式会社・合同会社等）の違いを正規化して集計しています。
+              複数社の共同出資・コンソーシアムは登録名のまま単独計上しています。
             </p>
             <p style={{ margin: '4px 0 0' }}>
               出典：bess-net プロジェクトデータベース。元情報は各事業者・自治体・報道等の公表資料に基づきます。
