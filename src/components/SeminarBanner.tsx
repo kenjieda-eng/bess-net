@@ -2,10 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
+// ── 次回セミナー掲載時: ACTIVE = true にして URL/END/コピーを更新 ──
+const ACTIVE = false; // 6/19 pps-net セミナー終了（2026-06-20 撤去）
+
 // UTM: pps-net 側アクセス解析で bess-net 経由の到達を識別
 const SEMINAR_URL =
   'https://pps-net.org/seminar/160365?utm_source=bess-net&utm_medium=banner&utm_campaign=seminar_aggregator_20260619';
-const END = new Date('2026-06-20T00:00:00+09:00'); // 6/20 以降は自動非表示（安全網）
+const END = new Date('2026-06-20T00:00:00+09:00');
 
 export function SeminarBanner() {
   const [hidden, setHidden] = useState(false);
@@ -14,7 +17,7 @@ export function SeminarBanner() {
     if (new Date() >= END) setHidden(true);
   }, []);
 
-  if (hidden) return null;
+  if (!ACTIVE || hidden) return null;
 
   const handleClick = () => {
     const w = window as { gtag?: (...a: unknown[]) => void };
