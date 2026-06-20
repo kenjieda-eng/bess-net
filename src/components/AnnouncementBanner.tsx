@@ -24,14 +24,15 @@ export function AnnouncementBanner() {
   // hooks は必ず条件分岐の前に置く
   useEffect(() => {
     setMounted(true);
-    if (!announcementId) return;
+    // dismissible=false の告知は localStorage を無視して常時表示
+    if (!announcementId || !announcement?.dismissible) return;
     if (localStorage.getItem(`announce-dismissed-${announcementId}`) === '1') {
       setDismissed(true);
     }
-  }, [announcementId]);
+  }, [announcementId, announcement?.dismissible]);
 
   if (!announcement) return null;
-  if (mounted && dismissed) return null;
+  if (announcement.dismissible && mounted && dismissed) return null;
 
   const handleDismiss = () => {
     setDismissed(true);

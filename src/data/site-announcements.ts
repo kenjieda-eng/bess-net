@@ -32,7 +32,7 @@ export const SITE_ANNOUNCEMENTS: SiteAnnouncement[] = [
     startAt: '2026-06-20',
     endAt: '2026-07-27',
     variant: 'box',
-    dismissible: true,
+    dismissible: false,
     priority: 10,
   },
 ];
