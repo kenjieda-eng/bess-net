@@ -174,6 +174,11 @@ export default async function EventsCalendarPage() {
               <li>
                 <Link href="/links">お役立ちサイト（業界団体・公的機関 210件）</Link>
               </li>
+              <li>
+                <Link href="/info/seminar-seetel-jc-star-2026-07-27">
+                  【7/27(月) 無料】台湾SEETEL × JC-STAR セミナー案内
+                </Link>
+              </li>
             </ul>
           </section>
         </div>

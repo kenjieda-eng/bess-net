@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { siteConfig } from '@/lib/site-config';
-import { SeminarBanner } from '@/components/SeminarBanner';
+import { AnnouncementBanner } from '@/components/AnnouncementBanner';
 import './globals.css';
 
 export const viewport: Viewport = {
@@ -120,7 +120,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body>
-        <SeminarBanner />
+        <AnnouncementBanner />
         {children}
       </body>
     </html>
