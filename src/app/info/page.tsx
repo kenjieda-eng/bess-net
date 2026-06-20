@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'お知らせ',
   description:
     '蓄電所ネット運営からのお知らせ・サイト更新情報・編集後記。業界ニュースは「ニュース」、市場制度や技術の解説は「解説」をご覧ください。',
+  alternates: { canonical: '/info' },
 };
 
 export default async function InfoListPage() {

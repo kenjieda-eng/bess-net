@@ -2,26 +2,55 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getAllSubsidies, type Subsidy } from '@/lib/microcms';
+import subsidiesData from '@/data/subsidies.json';
+import type { PrecomputedSubsidy } from '../../../scripts/precompute-subsidies';
 
-export const revalidate = 600; // 10分
+// build 時静的生成（鉄則#2/#3: ランタイム microCMS 0）
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: '補助金カレンダー',
   description:
     '系統用蓄電池および低圧リソース事業向けの主要補助金を、執行機関別・公募期間別に整理。経産省・エネ庁・SII・NEDO・自治体の蓄電池関連補助金を継続トラック。',
+  alternates: { canonical: 'https://bess-net.jp/subsidies' },
+  openGraph: {
+    title: '補助金カレンダー | 系統用蓄電池・低圧リソース事業',
+    description:
+      '系統用蓄電池および低圧リソース事業向けの主要補助金を、執行機関・公募期間別に整理。SII・NEDO・経産省・自治体の補助金を継続トラック。',
+    type: 'website',
+    url: 'https://bess-net.jp/subsidies',
+    images: ['/og-image.png'],
+  },
 };
 
-const STATUS_ORDER = ['公募中', '次年度継続', '採択結果公表', '受付終了', '予算超過終了', 'その他'];
+const ALL = subsidiesData as PrecomputedSubsidy[];
 
-function groupByStatus(items: Subsidy[]) {
-  const groups: Record<string, Subsidy[]> = {};
+// build 時の JST 日付（YYYY-MM-DD）で deadline_iso と比較
+function getTodayJST(): string {
+  return new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+// deadline_iso ベースで status を自動導出（鮮度の自動補正）
+function deriveStatus(item: PrecomputedSubsidy, todayISO: string): string {
+  if (!item.is_rolling && item.deadline_iso && item.deadline_iso < todayISO) {
+    return '受付終了';
+  }
+  return item.status[0] || 'その他';
+}
+
+const STATUS_ORDER = [
+  '公募中', '公募予定', '次年度継続',
+  '採択結果公表', '受付終了', '予算超過終了', 'その他',
+];
+
+function groupByStatus(items: PrecomputedSubsidy[], todayISO: string) {
+  const groups: Record<string, PrecomputedSubsidy[]> = {};
   for (const item of items) {
-    const status = (item.status && item.status[0]) || 'その他';
+    const status = deriveStatus(item, todayISO);
     if (!groups[status]) groups[status] = [];
     groups[status].push(item);
   }
-  const ordered: Array<{ status: string; items: Subsidy[] }> = [];
+  const ordered: Array<{ status: string; items: PrecomputedSubsidy[] }> = [];
   for (const s of STATUS_ORDER) {
     if (groups[s]) {
       ordered.push({ status: s, items: groups[s] });
@@ -34,15 +63,9 @@ function groupByStatus(items: Subsidy[]) {
   return ordered;
 }
 
-
-export default async function SubsidiesListPage() {
-  let items: Subsidy[] = [];
-  try {
-    items = await getAllSubsidies();
-  } catch (e) {
-    // API未設定時は空表示
-  }
-  const grouped = groupByStatus(items);
+export default function SubsidiesListPage() {
+  const todayISO = getTodayJST();
+  const grouped = groupByStatus(ALL, todayISO);
 
   return (
     <>
@@ -61,53 +84,50 @@ export default async function SubsidiesListPage() {
             ※ 公募期間・補助率・対象は年度毎に変更されます。最新情報は各執行機関の公式サイトでご確認ください。
           </p>
 
-          {items.length === 0 ? (
-            <div className="empty-state">
-              <p>補助金データはまだ準備中です。</p>
-              <p style={{ marginTop: 8, fontSize: 13, color: 'var(--color-muted)' }}>
-                microCMSへの API 設置完了後、初期20件を投入予定です。
-              </p>
-            </div>
-          ) : (
-            grouped.map((g) => (
-              <section key={g.status} className="subsidy-status-section">
-                <h2 className={`subsidy-status-title status-${g.status === '公募中' ? 'open' : g.status === '予告' ? 'upcoming' : 'closed'}`}>
-                  {g.status}（{g.items.length}件）
-                </h2>
-                <div className="subsidy-table-wrapper">
-                  <table className="subsidy-table">
-                    <thead>
-                      <tr>
-                        <th>補助金名</th>
-                        <th>執行機関</th>
-                        <th>補助率</th>
-                        <th>上限額</th>
-                        <th>公募期間</th>
+          {grouped.map((g) => (
+            <section key={g.status} className="subsidy-status-section">
+              <h2
+                className={`subsidy-status-title status-${
+                  g.status === '公募中' ? 'open'
+                  : g.status === '公募予定' ? 'upcoming'
+                  : 'closed'
+                }`}
+              >
+                {g.status}（{g.items.length}件）
+              </h2>
+              <div className="subsidy-table-wrapper">
+                <table className="subsidy-table">
+                  <thead>
+                    <tr>
+                      <th>補助金名</th>
+                      <th>執行機関</th>
+                      <th>補助率</th>
+                      <th>上限額</th>
+                      <th>公募期間</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {g.items.map((item) => (
+                      <tr key={item.id}>
+                        <td>
+                          <Link href={`/subsidies/${item.slug}`} className="subsidy-link">
+                            {item.name}
+                          </Link>
+                        </td>
+                        <td>{item.organization}</td>
+                        <td>{item.subsidyRate_raw || '—'}</td>
+                        <td>{item.upperLimit_raw || '—'}</td>
+                        <td>
+                          {item.applicationStart || '—'} 〜<br />
+                          {item.deadline_raw || '—'}
+                        </td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {g.items.map((item) => (
-                        <tr key={item.id}>
-                          <td>
-                            <Link href={`/subsidies/${item.slug}`} className="subsidy-link">
-                              {item.name}
-                            </Link>
-                          </td>
-                          <td>{item.organization}</td>
-                          <td>{item.subsidyRate || '—'}</td>
-                          <td>{item.upperLimit || '—'}</td>
-                          <td>
-                            {item.applicationStart || '—'} 〜<br />
-                            {item.deadline || '—'}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </section>
-            ))
-          )}
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          ))}
 
           <section style={{
             marginTop: 32, padding: 16,

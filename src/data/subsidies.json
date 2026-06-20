@@ -1431,7 +1431,7 @@
       "EV/V2H"
     ],
     "status": [
-      "公募中"
+      "受付終了"
     ],
     "subsidyRate_raw": "定額",
     "upperLimit_raw": "車両種別に応じる",
@@ -1469,7 +1469,7 @@
       "ZEH/ZEB"
     ],
     "status": [
-      "公募中"
+      "受付終了"
     ],
     "subsidyRate_raw": "定額",
     "upperLimit_raw": "12万円/kW（太陽光）、その他別途",
@@ -1507,7 +1507,7 @@
       "需要側"
     ],
     "status": [
-      "公募中"
+      "受付終了"
     ],
     "subsidyRate_raw": "定額",
     "upperLimit_raw": "15万円/kWh、上限160万円目安",
@@ -1542,7 +1542,7 @@
       "蓄電池"
     ],
     "status": [
-      "公募中"
+      "公募予定"
     ],
     "subsidyRate_raw": "2/3以内（国補助との合計2/3以内）",
     "subsidyRate_max_pct": 66.66666666666666,
@@ -1719,7 +1719,7 @@
       "再エネ統合"
     ],
     "status": [
-      "公募中"
+      "受付終了"
     ],
     "subsidyRate_raw": "20年契約・容量拠出金",
     "upperLimit_raw": "案件規模に応じる",
@@ -1750,7 +1750,7 @@
       "需要側"
     ],
     "status": [
-      "公募中"
+      "受付終了"
     ],
     "subsidyRate_raw": "1/3〜定額",
     "subsidyRate_max_pct": 33.33333333333333,
@@ -1820,7 +1820,7 @@
       "太陽光"
     ],
     "status": [
-      "公募中"
+      "受付終了"
     ],
     "subsidyRate_raw": "1/2〜2/3",
     "subsidyRate_max_pct": 50,

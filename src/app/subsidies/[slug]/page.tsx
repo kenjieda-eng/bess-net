@@ -28,6 +28,7 @@ export async function generateMetadata({
   return {
     title: item.name,
     description: `${item.organization}が執行する蓄電池関連補助金「${item.name}」の概要。${item.targetEntity ?? ''}`,
+    alternates: { canonical: `/subsidies/${params.slug}` },
   };
 }
 
