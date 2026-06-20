@@ -7,6 +7,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: '利用規約',
   description: '蓄電所ネット（bess-net.jp）の利用規約。',
+  alternates: { canonical: '/terms' },
 };
 
 export default function TermsPage() {

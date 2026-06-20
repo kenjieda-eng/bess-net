@@ -7,6 +7,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'プライバシーポリシー',
   description: '蓄電所ネット（bess-net.jp）における個人情報の取扱いについて。',
+  alternates: { canonical: '/privacy' },
 };
 
 export default function PrivacyPage() {

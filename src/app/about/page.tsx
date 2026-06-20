@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'サイトについて',
   description:
     '蓄電所ネット（bess-net.jp）は、系統用蓄電池および低圧リソース事業に関わるすべての方に向けた、日本市場特化の情報ポータルです。',
+  alternates: { canonical: '/about' },
 };
 
 export default function AboutPage() {

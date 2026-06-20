@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: '編集方針',
   description:
     '蓄電所ネットの編集方針。事実基準・中立性・実務性・透明性・読者への敬意を5原則として、業界の意思決定に資する情報を提供します。',
+  alternates: { canonical: '/editorial-policy' },
 };
 
 export default function EditorialPolicyPage() {
