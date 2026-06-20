@@ -700,8 +700,30 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         dataUrl: 'https://data.eic-jp.org/catalog/jepx-spot-tokyo',
         indicatorIds: ['jepx-spot-tokyo'],
       },
+      // 電力大手9社 財務 Insight（EIC Data、一次出典=金融庁EDINET連結）
+      // 蓄電池投資余力・電力会社財務の文脈データ（2026-06-20 実機確認済）
+      {
+        label: '電力大手9社 ROA 推移（FY2014〜23）― 関西4.4%最高、東京HD1.1%最低',
+        dataUrl: 'https://data.eic-jp.org/insight/power9-roa',
+        indicatorIds: [],
+      },
+      {
+        label: '電力大手9社 売上×営業利益率マトリクス（FY2014〜23）',
+        dataUrl: 'https://data.eic-jp.org/insight/power9-revenue-vs-margin',
+        indicatorIds: [],
+      },
+      {
+        label: '燃料危機V字回復 ― FY22に9社中7社赤字→FY23黒字転換の実態',
+        dataUrl: 'https://data.eic-jp.org/insight/power9-fuel-crisis-recovery',
+        indicatorIds: [],
+      },
+      {
+        label: '電力大手9社 総資産推移（FY2014〜23）',
+        dataUrl: 'https://data.eic-jp.org/insight/power9-total-assets',
+        indicatorIds: [],
+      },
     ],
-    dataSectionTitle: '投資判断に効く市場データ (data.eic-jp.org 提供)',
+    dataSectionTitle: '投資判断に効くデータ・Insight（data.eic-jp.org 提供）',
     tools: [
       {
         label: 'IRR シミュレーター',

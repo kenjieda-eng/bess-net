@@ -118,7 +118,7 @@ export default function LandingPageDataSection({
                   marginTop: 8,
                 }}
               >
-                → EIC Data カタログで詳細
+                → EIC Data で詳細
               </div>
             </a>
           ))}

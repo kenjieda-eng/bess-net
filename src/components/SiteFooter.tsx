@@ -18,6 +18,16 @@ export default function SiteFooter() {
               {siteConfig.organization.url}
             </a>
           </div>
+          <div className="site-footer-org-meta" style={{ marginTop: 4 }}>
+            EICグループ：
+            <a href="https://eic-jp.org/" target="_blank" rel="noopener noreferrer">
+              eic-jp.org
+            </a>
+            {' '}·{' '}
+            <a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer">
+              EIC Data（エネルギー×金融データ）
+            </a>
+          </div>
         </div>
 
         <nav className="site-footer-nav" aria-label="フッターナビゲーション">
