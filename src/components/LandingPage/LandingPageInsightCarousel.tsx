@@ -1,7 +1,7 @@
 /**
  * LandingPageInsightCarousel — 関連 Insight カード
  *
- * 注: Insight slug は data.eic-jp.org/insights/{slug} へのリンクとして表示
+ * 注: Insight slug は data.eic-jp.org/insight/{slug} へのリンクとして表示
  *     bess-net 内 Insight ページは現状未実装 (Sprint X1 後の Phase D で実装予定)
  */
 
@@ -56,7 +56,7 @@ export default function LandingPageInsightCarousel({ insightSlugs }: Props) {
           {insightSlugs.map((slug) => (
             <a
               key={slug}
-              href={`https://data.eic-jp.org/insights/${slug}`}
+              href={`https://data.eic-jp.org/insight/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
               style={{
