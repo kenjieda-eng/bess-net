@@ -1,7 +1,6 @@
 // /grid/tokyo — 東京電力PG 系統空き容量情報の公開状況解説
-// - 東京PG は 2026/02/02 〜 2026/05中（予定）公開停止中
-// - 蓄電所事業者向けに、現状把握・代替アクセス・他社比較を一元提供
-// - 公開再開時の収録準備位置づけ
+// - 東京PG は 2026/02/02 〜 2026/06/01 公開停止、2026/06/02 に公開再開
+// - 蓄電所ネットはデータ取り込み準備中（本ページで進捗更新）
 // - 落とし穴 #57: 静的セグメント `tokyo/` は同階層の `[slug]/` より優先される
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -15,12 +14,12 @@ export const metadata: Metadata = {
   title:
     '東京電力PG 系統空き容量情報の公開状況｜系統空き容量データベース - 蓄電所ネット',
   description:
-    '東京電力パワーグリッド管内の系統空き容量・予想潮流情報は2026年2月よりデータメンテナンスのため公開停止中。再開予定は5月中。蓄電所事業者向けに代替アクセス方法と9社公開状況を整理。',
+    '東京電力パワーグリッド管内の系統空き容量・予想潮流情報は2026年6月2日に公開を再開。蓄電所ネットはデータ取り込み準備中。停止期間（2026年2月〜6月1日）の経緯と代替アクセス方法を整理。',
   alternates: { canonical: '/grid/tokyo' },
   openGraph: {
     title: '東京電力PG 系統情報の公開状況｜系統空き容量データベース',
     description:
-      '東京エリアの公開停止状況・代替アクセス方法・9送配電事業者の公開状況比較',
+      '東京エリア：2026年6月2日に公開再開。蓄電所ネット取り込み準備中・9送配電事業者の公開状況比較',
     type: 'article',
     images: ['/og-image.png'],
   },
@@ -58,9 +57,9 @@ export default function TokyoStatusPage() {
     '@type': 'Article',
     headline: '東京電力PG 系統空き容量情報の公開状況',
     description:
-      '東京電力パワーグリッド管内の系統空き容量・予想潮流情報の公開停止と再開予定、代替アクセス方法、他社の公開状況比較。',
+      '東京電力パワーグリッド管内の系統空き容量・予想潮流情報の公開停止（2026/2〜6/1）と2026年6月2日の公開再開。蓄電所ネットはデータ取り込み準備中。',
     datePublished: '2026-05-08',
-    dateModified: '2026-05-08',
+    dateModified: '2026-06-21',
     author: {
       '@type': 'Organization',
       name: siteConfig.organization.name,
@@ -99,13 +98,15 @@ export default function TokyoStatusPage() {
             東京電力パワーグリッド 系統空き容量情報の公開状況
           </h1>
           <p className="page-lead">
-            東京電力PG 管内の予想潮流・空容量等に関する情報は、データメンテナンスのため公開を一時停止中です（2026年2月2日〜5月中予定）。
-            蓄電所事業者の連系検討にあたっては、以下の代替アクセス方法をご活用ください。
+            東京電力PG 管内の予想潮流・空容量等に関する情報は、2026年2月2日よりデータメンテナンスのため公開を一時停止していましたが、
+            <strong>2026年6月2日に公開を再開しました</strong>（
+            <a href="https://www.tepco.co.jp/pg/consignment/system/" target="_blank" rel="noopener noreferrer">TEPCO公式</a>
+            ）。蓄電所ネットは現在データ取り込み準備中です。
           </p>
 
-          {/* 公開停止の概要 */}
+          {/* 公開停止・再開の経緯 */}
           <section className="grid-section">
-            <h2 className="grid-section-h2">公開停止の概要</h2>
+            <h2 className="grid-section-h2">公開停止・再開の経緯</h2>
             <dl className="grid-info-table">
               <dt>停止対象</dt>
               <dd>
@@ -115,8 +116,10 @@ export default function TokyoStatusPage() {
               <dd>2026年2月2日</dd>
               <dt>当初再開予定</dt>
               <dd>2026年4月中</dd>
-              <dt>現在の再開予定</dt>
-              <dd>2026年5月中（4月30日に延期発表）</dd>
+              <dt>延期後の再開予定</dt>
+              <dd>2026年5月中（2026年4月30日に延期発表）</dd>
+              <dt>実際の公開再開日</dt>
+              <dd><strong>2026年6月2日</strong></dd>
               <dt>停止理由</dt>
               <dd>データメンテナンス</dd>
               <dt>公式アナウンス</dt>
@@ -127,28 +130,19 @@ export default function TokyoStatusPage() {
                   rel="noopener noreferrer"
                   className="grid-source-link"
                 >
-                  東京電力PG 系統情報ページ
+                  東京電力PG 系統情報ページ（TEPCO公式）
                 </a>
               </dd>
-              <dt>FAQ</dt>
-              <dd>
-                <a
-                  href="https://www.tepco.co.jp/pg/consignment/system/pdf/keitou_faq20260430.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="grid-source-link"
-                >
-                  よくあるご質問（PDF, 2026年4月30日版）
-                </a>
-              </dd>
+              <dt>蓄電所ネットの対応状況</dt>
+              <dd>データ取り込み準備中（完了後 /grid/tokyo にデータを追加予定）</dd>
             </dl>
           </section>
 
           {/* 代替アクセス方法 */}
           <section className="grid-section">
-            <h2 className="grid-section-h2">代替アクセス方法（公式案内）</h2>
+            <h2 className="grid-section-h2">事前相談窓口（公式案内）</h2>
             <p>
-              東京電力PG は、公開停止期間中の系統情報について「事前相談等でご確認いただけます」と案内しています。具体的な相談窓口：
+              公開再開後も、個別の連系検討には以下の事前相談窓口をご活用ください（東京電力PG 公式案内）：
             </p>
             <ul className="grid-list">
               <li className="grid-list-row">
@@ -285,7 +279,7 @@ export default function TokyoStatusPage() {
                       <strong>東京電力PG</strong>
                     </td>
                     <td colSpan={5}>
-                      <strong>📋 公開停止中（2026年2月〜5月中予定）</strong>
+                      <strong>📋 2026年6月2日に公開再開。蓄電所ネットはデータ取り込み準備中</strong>
                     </td>
                   </tr>
                   <tr>
@@ -371,11 +365,11 @@ export default function TokyoStatusPage() {
             </p>
           </section>
 
-          {/* 蓄電所ネットの対応方針 */}
+          {/* 蓄電所ネットの対応状況 */}
           <section className="grid-section">
-            <h2 className="grid-section-h2">蓄電所ネットの対応方針</h2>
+            <h2 className="grid-section-h2">蓄電所ネットの対応状況（取り込み準備中）</h2>
             <p>
-              東京電力PG が系統情報の公開を再開した時点で、蓄電所ネットは速やかに収録対応を進めます。中部電力PG
+              東京電力PG が2026年6月2日に公開を再開したため、蓄電所ネットは現在データ取り込み作業を進めています。中部電力PG
               と同様の手順で：
             </p>
             <ol className="grid-prose">
@@ -388,9 +382,9 @@ export default function TokyoStatusPage() {
               </li>
             </ol>
             <p>
-              進捗は
+              取り込み完了後は、本ページおよび
               <Link href="/news">業界ニュース</Link>
-              または本ページで随時更新します。
+              でお知らせします。
             </p>
           </section>
 
@@ -407,8 +401,8 @@ export default function TokyoStatusPage() {
               >
                 東京電力パワーグリッド「当社における系統情報について」
               </a>
-              {' '}の公開情報をもとに 2026年5月8日 時点で蓄電所ネット編集部が整理したものです。
-              再開状況等は変動するため、最新情報は公式ページでご確認ください。
+              {' '}の公開情報をもとに蓄電所ネット編集部が整理したものです（最終更新：2026年6月21日）。
+              最新情報は公式ページでご確認ください。
             </p>
           </section>
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）
   title: '系統空き容量データベース',
   description:
-    '北海道・東北・中部・北陸・関西・中国・四国・九州・沖縄の9送配電事業者・6,507変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。中部は緯度経度付き地図検索に対応。東京電力PGは公開停止中（再開待ち）。',
+    '北海道・東北・中部・北陸・関西・中国・四国・九州・沖縄の9送配電事業者・6,507変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。中部は緯度経度付き地図検索に対応。東京電力PGは2026年6月2日に公開再開（蓄電所ネット取り込み準備中）。',
   alternates: { canonical: '/grid' },
   openGraph: {
     title: '系統空き容量データベース',
@@ -188,7 +188,7 @@ export default async function GridIndexPage() {
             系統用蓄電池・再エネ事業の連系検討に必要な変電所別の
             <strong>{total}</strong>地点の空き容量情報。
             <strong>東北・北陸・四国・関西・中国・沖縄・北海道・中部・九州</strong>
-            の9送配電事業者の公表 CSV / PDF / GeoJSON を一元化。中部エリアは緯度経度付きで地図表示の基盤に。残る東京電力PG は <Link href="/grid/tokyo">公開停止中（5月再開予定）</Link>。
+            の9送配電事業者の公表 CSV / PDF / GeoJSON を一元化。中部エリアは緯度経度付きで地図表示の基盤に。東京電力PG は <Link href="/grid/tokyo">2026年6月2日に公開再開（データ取り込み準備中）</Link>。
           </p>
 
           {/* v25: ヒーローセクション */}
@@ -305,7 +305,7 @@ export default async function GridIndexPage() {
                   9 / 10
                 </div>
                 <div className="grid-summary-card-sub">
-                  東京PG 公開再開待ち（5月中予定）
+                  東京PG データ取り込み準備中（6/2再開済）
                 </div>
                 <svg
                   width="100%"
@@ -471,15 +471,15 @@ export default async function GridIndexPage() {
                   東京電力パワーグリッド
                 </span>
                 <span className="grid-list-value">
-                  📋 公開停止中（2026年2月〜5月中予定）{' '}
+                  📋 2026年6月2日に公開再開（データ取り込み準備中）{' '}
                   <Link href="/grid/tokyo" className="grid-area-link">
-                    → 公開状況の解説を見る
+                    → 詳細を見る
                   </Link>
                 </span>
               </li>
             </ul>
             <p className="grid-source-note">
-              ※ 東京電力PG は 2026年2月よりデータメンテナンスのため公開停止中。再開予定は 5月中（
+              ※ 東京電力PG は 2026年6月2日に公開を再開。蓄電所ネットはデータ取り込み準備中（
               <Link href="/grid/tokyo">解説ページ</Link>
               ）。
             </p>
