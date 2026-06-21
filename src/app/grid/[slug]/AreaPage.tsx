@@ -376,6 +376,43 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
             </section>
           )}
 
+          {/* 系統連系診断CTA */}
+          <section style={{
+            margin: '8px 0 24px',
+            padding: '16px 20px',
+            background: 'linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%)',
+            border: '2px solid #2563eb',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px',
+            flexWrap: 'wrap',
+          }}>
+            <div style={{ flex: 1, minWidth: '200px' }}>
+              <p style={{ margin: '0 0 4px', fontSize: '15px', fontWeight: '700', color: '#1e40af' }}>
+                ⚡ {meta.areaJp}エリアで系統連系を診断する
+              </p>
+              <p style={{ margin: 0, fontSize: '12px', color: '#4b5563', lineHeight: 1.5 }}>
+                連系候補変電所の特定・N-1電制の可否・接続コスト概算（平均エンゲージ92秒）
+              </p>
+            </div>
+            <Link
+              href={`/tools/grid-connection-check?area=${meta.slug}`}
+              style={{
+                padding: '10px 20px',
+                background: '#2563eb',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '6px',
+                fontWeight: '700',
+                fontSize: '14px',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              系統連系診断を始める →
+            </Link>
+          </section>
+
           {/* 全変電所リスト (Client side filter) */}
           <section className="grid-section">
             <h2 className="grid-section-h2">全変電所リスト（検索・フィルタ）</h2>
@@ -431,6 +468,9 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
               ※ 本ページの数値は <strong>{meta.operator}</strong>
               が公表する予想潮流等情報の CSV
               に基づいています。最新情報・利用条件は各社の公式サイトでご確認ください。
+            </p>
+            <p className="grid-source-note">
+              <Link href="/tracker/grid" className="grid-area-link">📋 変電所データの更新タイムラインを見る（/tracker/grid）→</Link>
             </p>
           </section>
 

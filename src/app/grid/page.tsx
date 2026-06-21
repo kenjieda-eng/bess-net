@@ -143,6 +143,20 @@ export default async function GridIndexPage() {
       areaJp: PREFECTURE_TO_AREA[pref].areaJp,
     }));
 
+  // 鮮度の明示: データセット全体の最新 last_updated
+  const latestUpdatedStr = (() => {
+    const d = all
+      .map(s => s.last_updated)
+      .filter((v): v is string => !!v)
+      .sort()
+      .at(-1);
+    if (!d) return '—';
+    const dt = new Date(d);
+    return Number.isNaN(dt.getTime())
+      ? d
+      : dt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'numeric', day: 'numeric' });
+  })();
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -547,6 +561,43 @@ export default async function GridIndexPage() {
             </section>
           )}
 
+          {/* 系統連系診断CTA（最高エンゲージ 平均92.7秒） */}
+          <section style={{
+            margin: '24px 0',
+            padding: '20px 24px',
+            background: 'linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%)',
+            border: '2px solid #2563eb',
+            borderRadius: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '20px',
+            flexWrap: 'wrap',
+          }}>
+            <div style={{ flex: 1, minWidth: '220px' }}>
+              <p style={{ margin: '0 0 6px', fontSize: '16px', fontWeight: '700', color: '#1e40af' }}>
+                ⚡ 系統連系の可否・コストを今すぐ診断
+              </p>
+              <p style={{ margin: 0, fontSize: '13px', color: '#4b5563', lineHeight: 1.6 }}>
+                変電所名・エリアから連系候補を絞り込み、N-1電制の適用可否・接続コスト概算を確認できます。
+              </p>
+            </div>
+            <Link
+              href="/tools/grid-connection-check"
+              style={{
+                padding: '12px 24px',
+                background: '#2563eb',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: '700',
+                fontSize: '15px',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              系統連系診断を始める →
+            </Link>
+          </section>
+
           {/* データ提供元の明記（落とし穴45） */}
           <section className="grid-section grid-source-section">
             <h2 className="grid-section-h2">出典・利用条件</h2>
@@ -556,6 +607,10 @@ export default async function GridIndexPage() {
               {' '}の9送配電事業者が公開する予想潮流等情報の CSV / PDF / GeoJSON を、蓄電所ネット編集部で一元化したものです。
               個別変電所の最新情報は、各社の公式サイト（一次ソースリンク）でご確認ください。
               数値の引用・転記には出典明記が必要です。
+            </p>
+            <p style={{ marginTop: 8, fontSize: 13, color: 'var(--color-muted)' }}>
+              データ最終更新（代表）：<strong>{latestUpdatedStr}</strong>
+              <Link href="/tracker/grid" className="grid-area-link">更新タイムラインを見る →</Link>
             </p>
           </section>
 

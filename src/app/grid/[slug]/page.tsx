@@ -292,6 +292,14 @@ export default async function GridSlugPage({
               {sub.prefecture ? `・${sub.prefecture}` : ''} の{voltageClass ?? '変電所'}
               。系統空き容量・出力制御の可能性・N-1電制適用可否などの公表情報を整理しています。
             </p>
+            {/* 鮮度の明示 */}
+            <p style={{ fontSize: '12px', color: 'var(--color-muted)', margin: '4px 0 0', textAlign: 'right' }}>
+              データ最終更新：<strong>{lastUpdated}</strong>
+              <span style={{ margin: '0 6px', opacity: 0.4 }}>|</span>
+              <Link href="/tracker/grid" style={{ color: 'inherit', textDecoration: 'underline' }}>
+                更新タイムライン
+              </Link>
+            </p>
           </div>
 
           {/* Phase 4-pre: 中部 cb-* で緯度経度ありの場合、地図リンク (v21: ?focus= でマーカー自動センター) */}
@@ -538,6 +546,43 @@ export default async function GridSlugPage({
             </section>
           )}
 
+          {/* 系統連系診断CTA（出典セクション直前） */}
+          <section style={{
+            margin: '24px 0',
+            padding: '16px 20px',
+            background: 'linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%)',
+            border: '2px solid #2563eb',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px',
+            flexWrap: 'wrap',
+          }}>
+            <div style={{ flex: 1, minWidth: '200px' }}>
+              <p style={{ margin: '0 0 4px', fontSize: '15px', fontWeight: '700', color: '#1e40af' }}>
+                ⚡ この変電所で系統連系を診断する
+              </p>
+              <p style={{ margin: 0, fontSize: '12px', color: '#4b5563', lineHeight: 1.5 }}>
+                連系候補変電所の特定・N-1電制の可否・接続コスト概算（平均エンゲージ92秒）
+              </p>
+            </div>
+            <Link
+              href={`/tools/grid-connection-check?substation=${encodeURIComponent(sub.slug)}`}
+              style={{
+                padding: '10px 20px',
+                background: '#2563eb',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '6px',
+                fontWeight: '700',
+                fontSize: '14px',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              系統連系診断を始める →
+            </Link>
+          </section>
+
           {/* (f) 一次ソース・データ提供元（落とし穴45：明記必須） */}
           <section className="grid-section grid-source-section">
             <h2 className="grid-section-h2">出典・データ提供元</h2>
@@ -574,6 +619,9 @@ export default async function GridSlugPage({
                 公式サイト
               </a>{' '}
               でご確認ください。データの利用条件・免責事項は各事業者の利用規約に従います。
+            </p>
+            <p className="grid-source-note">
+              <Link href="/tracker/grid" className="grid-area-link">📋 変電所データの更新タイムラインを見る（/tracker/grid）→</Link>
             </p>
           </section>
 

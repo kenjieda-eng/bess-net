@@ -53,6 +53,7 @@ export default async function PrefecturePage({ params }: PageParams) {
     0
   );
 
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -126,6 +127,43 @@ export default async function PrefecturePage({ params }: PageParams) {
             </div>
           </section>
 
+          {/* 系統連系診断CTA */}
+          <section style={{
+            margin: '8px 0 24px',
+            padding: '16px 20px',
+            background: 'linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%)',
+            border: '2px solid #2563eb',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px',
+            flexWrap: 'wrap',
+          }}>
+            <div style={{ flex: 1, minWidth: '200px' }}>
+              <p style={{ margin: '0 0 4px', fontSize: '15px', fontWeight: '700', color: '#1e40af' }}>
+                ⚡ {decoded}の変電所で系統連系を診断する
+              </p>
+              <p style={{ margin: 0, fontSize: '12px', color: '#4b5563', lineHeight: 1.5 }}>
+                連系候補変電所の特定・N-1電制の可否・接続コスト概算（平均エンゲージ92秒）
+              </p>
+            </div>
+            <Link
+              href={`/tools/grid-connection-check?prefecture=${encodeURIComponent(decoded)}`}
+              style={{
+                padding: '10px 20px',
+                background: '#2563eb',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '6px',
+                fontWeight: '700',
+                fontSize: '14px',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              系統連系診断を始める →
+            </Link>
+          </section>
+
           <section className="grid-section">
             <h2 className="grid-section-h2">変電所一覧（空容量大きい順）</h2>
             <ul className="grid-search-list">
@@ -153,6 +191,7 @@ export default async function PrefecturePage({ params }: PageParams) {
           <p className="grid-source-note">
             データソース: {siteConfig.organization.name}{' '}
             編集部が、9送配電事業者の公開情報を整理。最新情報は各社の公式サイトをご確認ください。
+            <Link href="/tracker/grid" className="grid-area-link" style={{ marginLeft: 8 }}>更新タイムライン →</Link>
           </p>
 
           <p className="back-link">
