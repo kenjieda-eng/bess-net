@@ -45,6 +45,7 @@ export async function generateMetadata({
   return {
     title: item.name,
     description: `${item.prefecture ?? ''}${item.city || ''}に所在する系統用蓄電池プロジェクト「${item.name}」の概要。出力${mwStr === '調査中' ? '調査中' : `${mwStr}MW`}・容量${mwhStr === '調査中' ? '調査中' : `${mwhStr}MWh`}。`,
+    alternates: { canonical: `https://bess-net.jp/projects/${params.slug}` },
   };
 }
 
