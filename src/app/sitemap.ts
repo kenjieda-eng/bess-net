@@ -256,6 +256,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'chief-engineer-elec',
     'electricity-business-law',
     'non-fossil-value-market',
+    // P1 batch2: Rule C — english 正規化重複統合（2026-06-21）
+    // 除外: lfp / transformer-ai
+    'cbi-standard-2',
+    'fit-feed-in-tariff',
+    'tesla-megapack-product',
+    're100-detail-2', 're100-japan',
+    'non-firm-detail',
+    'multi-use-detail',
   ]);
   const glossaryUrls: MetadataRoute.Sitemap = glossary
     .filter((g) => !GLOSSARY_SITEMAP_DENYLIST.has(g.slug))

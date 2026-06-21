@@ -25,7 +25,9 @@
  *     - #93 spot-market（GA4 6v）← day-ahead-market（1v）
  *     - #112 dispatch-command-source（GSC 4.4位）← dispatch-resource（0v）
  *     - #123 fire-separation-distance（GA4 8v・397秒）← setback-distance, separation-distance
- *   Rule C（english正規化 8件）は batch2 へ保留（ユウ再監査待ち）。
+ *   Rule C（english正規化 8件）batch2 承認（2026-06-21）:
+ *     6グループ統合。除外: #129 lfp（クラスタ要整理）、#132 transformer-ai（別概念）。
+ *     ※ re100-detail は batch1 Rule A で既存のため batch2 では追加しない（冪等）。
  *
  * 保護:
  *   src/data/legacy-news-allowlist.json に列挙されたスラッグ（現存 28 件）は
@@ -184,6 +186,17 @@ const GLOSSARY_301: Record<string, string> = {
   '/glossary/chief-engineer-elec':                   '/glossary/chief-electrical-engineer',
   '/glossary/electricity-business-law':              '/glossary/electricity-business-act',
   '/glossary/non-fossil-value-market':               '/glossary/non-fossil-certificate-market',
+
+  // P1 batch2: Rule C — english 正規化重複統合（2026-06-21）
+  // 除外: #129 lfp（クラスタ要整理）、#132 transformer-ai（変圧器≠AITransformer、別概念）
+  // ※ re100-detail → re100 は batch1 Rule A 既存（line 63）のため追加しない
+  '/glossary/cbi-standard-2':          '/glossary/cbi-standard',
+  '/glossary/fit-feed-in-tariff':      '/glossary/feed-in-tariff',
+  '/glossary/tesla-megapack-product':  '/glossary/megapack',
+  '/glossary/re100-detail-2':          '/glossary/re100',
+  '/glossary/re100-japan':             '/glossary/re100',
+  '/glossary/non-firm-detail':         '/glossary/non-firm-connection',
+  '/glossary/multi-use-detail':        '/glossary/multi-use-operation',
 };
 
 export function middleware(req: NextRequest) {
