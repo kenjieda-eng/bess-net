@@ -1,5 +1,4 @@
-// /grid 系統空き容量DB トップ — Phase 1（3社・1,449件）
-// 検索・地図機能は Phase 2 以降。現状は概要・サマリ統計を表示。
+// /grid 系統空き容量DB トップ — 9社・6,507件（2026-06時点）
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
@@ -14,11 +13,11 @@ export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）
   title: '系統空き容量データベース',
   description:
-    '系統用蓄電池・再エネの連系検討に必要な、変電所別の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を、東北電力NW・北陸電力送配電・四国電力送配電の3社1,449地点について公表情報ベースで一元化。Phase 2 以降で残り7社・地図機能を追加予定。',
+    '北海道・東北・中部・北陸・関西・中国・四国・九州・沖縄の9送配電事業者・6,507変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。中部は緯度経度付き地図検索に対応。東京電力PGは公開停止中（再開待ち）。',
   alternates: { canonical: '/grid' },
   openGraph: {
     title: '系統空き容量データベース',
-    description: '東北・北陸・四国 3社・1,449変電所の系統空き容量・連系条件',
+    description: '9社・6,507変電所の系統空き容量・連系条件。中部は地図検索対応。',
     type: 'website',
   },
 };
@@ -162,7 +161,7 @@ export default async function GridIndexPage() {
     '@type': 'CollectionPage',
     name: '系統空き容量データベース',
     description:
-      '東北・北陸・四国 3社・1,449変電所の系統空き容量・連系条件',
+      '9社・6,507変電所の系統空き容量・連系条件。中部は地図検索対応。',
     url: 'https://bess-net.jp/grid',
     numberOfItems: total,
     publisher: {
