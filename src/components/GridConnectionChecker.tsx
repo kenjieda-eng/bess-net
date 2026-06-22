@@ -240,7 +240,7 @@ export default function GridConnectionChecker() {
         ⚠️ <strong>本診断は参考情報です</strong>。{INDEX.total.toLocaleString()} 変電所の公表データから連系候補を Top 5 抽出します。
         座標あり {INDEX.with_coords.toLocaleString()} 件は距離計算、座標なしは同都道府県内集約検索。
         実際の連系可否・空き容量は<strong>各送配電事業者への接続検討申請</strong>で確定します。
-        東京電力PG 管内は公開停止中のため対象外です。
+        東京電力PG 管内（13都県＋基幹系）も2026年6月より収録・診断対象です。
       </div>
 
       {/* フォーム */}
@@ -704,7 +704,7 @@ export default function GridConnectionChecker() {
               系統空き容量データベース
             </Link>
             {' '}
-            — 6,507 変電所の全データ閲覧
+            — 8,225 変電所の全データ閲覧
           </li>
           <li>
             <Link href="/grid/chubu/map" style={{ color: 'var(--color-accent, #0066cc)' }}>

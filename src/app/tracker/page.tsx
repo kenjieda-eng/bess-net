@@ -31,7 +31,7 @@ const TRACKERS = [
   {
     href: '/tracker/grid',
     title: '系統トラッカー',
-    desc: '変電所空き容量データの更新タイムライン (6,500+ 件)',
+    desc: '変電所空き容量データの更新タイムライン (8,200+ 件)',
     label: 'BF-2',
   },
   {

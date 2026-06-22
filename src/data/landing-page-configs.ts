@@ -619,7 +619,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '接続検討にはどれくらいかかりますか?',
         answer:
-          '接続検討の集中により申請が殺到しており、接続まで18ヶ月〜2年、想定以上の接続負担金が発生する例もあります。系統空き容量ページ(/grid、9社6,507件)で周辺の余力を先に確認するのが有効です。',
+          '接続検討の集中により申請が殺到しており、接続まで18ヶ月〜2年、想定以上の接続負担金が発生する例もあります。系統空き容量ページ(/grid、10社8,225件)で周辺の余力を先に確認するのが有効です。',
       },
       {
         question: '高圧と低圧、どちらで始めるべき?',
@@ -809,7 +809,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '📡',
         title: '系統(高圧線・空き容量)の確認が難しい',
         description:
-          '系統空き容量ページ(/grid、9社6,507件)で、対象地の周辺変電所の空き容量・連系条件の当たりをつけられます。',
+          '系統空き容量ページ(/grid、10社8,225件)で、対象地の周辺変電所の空き容量・連系条件の当たりをつけられます。',
       },
     ],
     dataReferences: [
@@ -834,7 +834,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         label: '系統空き容量(/grid)',
         url: '/grid',
-        description: '9社6,507件の変電所別 空き容量・連系条件。対象地周辺の系統余力を確認。',
+        description: '10社8,225件の変電所別 空き容量・連系条件。対象地周辺の系統余力を確認。',
       },
       {
         label: 'IRR シミュレーター(参考)',

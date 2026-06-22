@@ -44,8 +44,8 @@ export const SOP_ENTRIES: SopEntry[] = [
   { id: 'projects', url: '/projects', label: 'プロジェクト DB', frequency: 'monthly-1st', persona: 'チサ' },
   { id: 'policy-calendar-monthly', url: '/policy-calendar', label: '政策カレンダー 月次総括', frequency: 'monthly-1st', persona: 'セイ' },
   // 四半期 初頭
-  { id: 'grid', url: '/grid', label: '系統空き容量 9 社', frequency: 'quarterly-1st', persona: 'チサ/モリ',
-    notes: '東電 PG は月次再開チェックを monthly-1st に統合' },
+  { id: 'grid', url: '/grid', label: '系統空き容量 10 社', frequency: 'quarterly-1st', persona: 'チサ/モリ',
+    notes: '東京電力PG は2026年6月に収録済み（10社目）' },
   { id: 'operators', url: '/operators', label: '事業者ナビ', frequency: 'quarterly-1st', persona: 'チサ' },
   { id: 'industry-chaos', url: '/map/industry-chaos', label: '業界カオスマップ', frequency: 'quarterly-1st', persona: 'チサ' },
   { id: 'incidents-review', url: '/incidents', label: '火災事例 DB 四半期レビュー', frequency: 'quarterly-1st', persona: '山口/加藤/斎藤' },

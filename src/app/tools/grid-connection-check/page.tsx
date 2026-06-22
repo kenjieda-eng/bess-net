@@ -3,7 +3,7 @@
  *
  * 設計 (CLAUDE.md §0 鉄則完全準拠):
  *   - 鉄則 #2: SSR で外部 API リクエスト 0 (事前計算済 40 JSON 参照)
- *   - 鉄則 #3: 単一 URL、動的ルートなし、6,507 件は build 時計算 + 都道府県別分割
+ *   - 鉄則 #3: 単一 URL、動的ルートなし、8,225 件は build 時計算 + 都道府県別分割
  *   - 鉄則 #4: ピーク負荷 0 req/分
  *   - 落とし穴 #98 完全回避: build 時 1 回 microCMS から取得、SSR は静的 JSON のみ
  */
@@ -19,14 +19,14 @@ import substationsIndex from '@/data/substations/index.json';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: '系統連系診断 (6,507 変電所DB ベース)',
+  title: '系統連系診断 (8,225 変電所DB ベース)',
   description:
-    '日本全国 6,507 変電所の公表データから、希望地点・出力に最適な連系候補を Top 5 即時抽出。空き容量・N-1 電制適用可否・距離評価でスコアリング。業界唯一の無料ツール。',
+    '日本全国 8,225 変電所の公表データから、希望地点・出力に最適な連系候補を Top 5 即時抽出。空き容量・N-1 電制適用可否・距離評価でスコアリング。業界唯一の無料ツール。',
   alternates: { canonical: '/tools/grid-connection-check' },
   openGraph: {
-    title: '系統連系診断 (業界唯一・6,507変電所DB)',
+    title: '系統連系診断 (業界唯一・8,225変電所DB)',
     description:
-      '所在地・出力・容量で連系候補 Top 5 を即時診断。9 送配電・1,500+ 件の空き容量データを横断検索。',
+      '所在地・出力・容量で連系候補 Top 5 を即時診断。10 送配電・8,200+ 件の空き容量データを横断検索。',
     type: 'website',
     images: ['/og-image.png'],
   },
@@ -46,7 +46,7 @@ export default function GridConnectionCheckPage() {
     name: '系統連系診断',
     alternateName: 'BESS Grid Connection Checker',
     description:
-      '日本全国 6,507 変電所の公表データから、希望地点・出力に最適な連系候補を即時抽出するブラウザ完結ツール。',
+      '日本全国 8,225 変電所の公表データから、希望地点・出力に最適な連系候補を即時抽出するブラウザ完結ツール。',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web Browser',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
@@ -59,7 +59,7 @@ export default function GridConnectionCheckPage() {
       url: siteConfig.organization.url,
     },
     featureList: [
-      '6,507 変電所データベース ベース',
+      '8,225 変電所データベース ベース',
       '都道府県 + 緯度経度 + 出力で診断',
       'haversine 距離計算 (km)',
       'feasibility スコアリング (0-100)',
@@ -120,8 +120,8 @@ export default function GridConnectionCheckPage() {
               color: 'var(--color-muted)',
             }}
           >
-            ※ データは microCMS 上の 系統空き容量データベース (6,507 件) と同期。座標あり {INDEX.with_coords.toLocaleString()} 件は距離順、座標なしは都道府県内全件集約検索。
-            東京電力PG 管内は公開停止中のため対象外。最新更新 {INDEX.updated_at.slice(0, 10)}。
+            ※ データは microCMS 上の 系統空き容量データベース ({INDEX.total.toLocaleString()} 件) と同期。座標あり {INDEX.with_coords.toLocaleString()} 件は距離順、座標なしは都道府県内全件集約検索。
+            東京電力PG（13都県＋基幹系）も2026年6月より収録・診断対象です。最新更新 {INDEX.updated_at.slice(0, 10)}。
           </p>
 
           <GridConnectionChecker />

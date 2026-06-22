@@ -18,7 +18,7 @@ const uniqueFeatures = [
   // Sprint 4 前半 (ツール 5件)
   { href: '/tools/irr-simulator', title: '蓄電池 IRR シミュレーター', desc: '11入力 × 20年DCF × 感度分析。業界唯一のオープン公開ツール。', tag: 'ツール' },
   { href: '/tools/subsidy-match', title: '補助金マッチング', desc: '事業条件から最適補助金を自動マッチング (50+件)。', tag: 'ツール' },
-  { href: '/tools/grid-connection-check', title: '系統連系診断', desc: '緯度経度 / 都道府県から接続候補変電所 5件抽出 (6,507件DB)。', tag: 'ツール' },
+  { href: '/tools/grid-connection-check', title: '系統連系診断', desc: '緯度経度 / 都道府県から接続候補変電所 5件抽出 (8,225件DB)。', tag: 'ツール' },
   { href: '/tools/fire-risk-check', title: '火災リスク自己診断', desc: '25問チェック式、教育型。安全文化醸成に。', tag: 'ツール' },
   { href: '/tools/capacity-market-bid', title: '容量市場応札試算', desc: '9エリア × 3カテゴリ。モック版、AU実データ連携予定。', tag: 'ツール' },
   // Sprint 4 後半 (構造可視化 4ハブ)
@@ -48,7 +48,7 @@ const upcomingFeatures = [
     num: '03',
     title: '日本の蓄電所マップ全国展開',
     body:
-      '中部電力PG 1,081箇所を先行公開。残る7社（東北・北陸・関西・中国・四国・九州・北海道）の緯度経度補完を進めつつ、Leaflet レイヤーへ順次展開予定。',
+      '中部電力PG 1,081箇所を先行公開（地図対応は現状この1社のみ）。残る9社（北海道・東北・東京・北陸・関西・中国・四国・九州・沖縄）の緯度経度補完を進めつつ、Leaflet レイヤーへ順次展開予定。',
     status: 'Sprint 5〜6',
   },
 ];
@@ -68,7 +68,7 @@ export default async function Home() {
     safeFetch(() => getIndustryNews(), [] as any[]),
     safeFetch(async () => (await getSubstationList({ limit: 0, fields: 'id' })).totalCount, 0),
   ]);
-  const substationsCountStr = substationsCount > 0 ? substationsCount.toLocaleString('en-US') : '4,097';
+  const substationsCountStr = substationsCount > 0 ? substationsCount.toLocaleString('en-US') : '8,225';
   // 業界ニュース最新3本（編集部=お知らせは除外済み）
   const newsData = {
     contents: (industryNewsAll as any[])
@@ -307,10 +307,10 @@ export default async function Home() {
       <section className="section section-alt">
         <div className="section-inner">
           <div className="home-feature">
-            <span className="home-feature-tag">公開中 · 9社 系統データ</span>
+            <span className="home-feature-tag">公開中 · 10社 系統データ</span>
             <h2>変電所別 系統空き容量データベース（表形式）</h2>
             <p>
-              北海道電力NW・東北電力NW・中部電力PG・北陸電力送配電・関西電力送配電・中国電力NW・四国電力送配電・九州電力送配電・沖縄電力 の <strong>9社・約{substationsCountStr}件</strong> の予想潮流・空容量・N-1電制適用可否を、公表データに基づき一元化。エリア別・都道府県別・名称検索でアクセス可能です。
+              北海道電力NW・東北電力NW・東京電力PG・中部電力PG・北陸電力送配電・関西電力送配電・中国電力NW・四国電力送配電・九州電力送配電・沖縄電力 の <strong>10社・約{substationsCountStr}件</strong> の予想潮流・空容量・N-1電制適用可否を、公表データに基づき一元化。エリア別・都道府県別・名称検索でアクセス可能です。
             </p>
             <Link href="/grid" className="home-feature-button">
               データベースを見る →

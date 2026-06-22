@@ -1335,10 +1335,10 @@ export const getAllSubstationSlugs = async (): Promise<{ slug: string }[]> => {
  * 緯度経度ありの substations slug のみを返す（依頼AB Phase D, 落とし穴 #79 対策）
  *
  * Vercel build の 45 min timeout 回避のため、generateStaticParams で
- * 全 6,516 件を pre-build するのではなく、緯度経度ありの 1,081 件
+ * 全 8,225 件を pre-build するのではなく、緯度経度ありの 1,081 件
  * （中部エリアのみ運用）だけを pre-build する。
  *
- * 残り 5,400+ 件は dynamicParams=true (Next.js default) により、
+ * 残りは dynamicParams=true (Next.js default) により、
  * 初回アクセス時に ISR で on-demand 生成される。
  */
 export const getSubstationSlugsWithCoords = async (): Promise<
@@ -1490,7 +1490,7 @@ export const getChubuSubstationsForMap = async (): Promise<
 
 /* =================================================================
    v24: 変電所名フリーテキスト検索（部分一致 / 名称順序）
-   - microCMS の filters[name][contains] を使い 6,500 件超から検索
+   - microCMS の filters[name][contains] を使い 8,200 件超から検索
    - 表示は最大 100 件（UI 性能保護）、空容量大きい順
    ================================================================= */
 

@@ -47,8 +47,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/grid/prefecture`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     // Phase 4-pre 追加: 中部Leafletマップページ
     { url: `${siteConfig.url}/grid/chubu/map`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    // v21 追加: 東京電力PG 公開停止解説ページ
-    { url: `${siteConfig.url}/grid/tokyo`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    // 東京電力PG エリアデータページ（2026/6 収録）＋ 公開停止・再開の経緯ページ
+    { url: `${siteConfig.url}/grid/tokyo`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${siteConfig.url}/grid/tokyo/status`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${siteConfig.url}/info`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     // Sprint 2 追加コーナー（依頼AB/AC/AD）
     { url: `${siteConfig.url}/policy-calendar`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },

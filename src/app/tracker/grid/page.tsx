@@ -17,7 +17,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: '系統トラッカー (変電所空き容量 更新タイムライン)',
-  description: '変電所空き容量データの最新更新を時系列で表示。9電力会社・6,500+ 変電所をカバー。業界唯一の系統データトラッカー、無料公開・登録不要。',
+  description: '変電所空き容量データの最新更新を時系列で表示。10電力会社・8,200+ 変電所をカバー。業界唯一の系統データトラッカー、無料公開・登録不要。',
   alternates: { canonical: '/tracker/grid' },
   openGraph: {
     title: '系統トラッカー (変電所空き容量 更新タイムライン)',
