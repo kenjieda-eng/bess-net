@@ -84,6 +84,16 @@ export const AREA_META: Record<string, AreaMeta> = {
     description:
       '九州エリア（九州電力送配電）の変電所別系統空き容量・連系条件・出力制御情報を、福岡・佐賀・長崎・大分・熊本・宮崎・鹿児島の7県＋離島について一元化。31地区の変圧器CSV ZIPを集約。',
   },
+  // ===== Phase 2c 追加（東京電力PG、10社目）=====
+  tokyo: {
+    slug: 'tokyo',
+    areaJp: '東京',
+    operator: '東京電力パワーグリッド',
+    landingUrl: 'https://www.tepco.co.jp/pg/consignment/system/',
+    sourceFormat: 'PDF',
+    description:
+      '東京エリア（東京電力パワーグリッド）の変電所別系統空き容量・連系条件・出力制御情報を、東京・神奈川・埼玉・千葉・茨城・群馬・栃木・山梨＋静岡（富士川以東）・福島/長野/新潟（一部）＋基幹系の13都県について一元化。TEPCO公表の予想潮流等PDFから抽出。空容量は逆潮流側、緯度経度・地図表示は今後対応。',
+  },
 };
 
 // 日本語エリア名 → エリアスラグ
@@ -97,4 +107,5 @@ export const AREA_JP_TO_SLUG: Record<string, string> = {
   北海道: 'hokkaido',
   中部: 'chubu',
   九州: 'kyushu',
+  東京: 'tokyo',
 };

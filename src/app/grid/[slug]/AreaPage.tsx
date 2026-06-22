@@ -20,6 +20,8 @@ export type AreaMeta = {
   operator: string;
   landingUrl: string;
   description: string;
+  /** 出典データ形式（既定: CSV）。東京PGは予想潮流PDF由来のため 'PDF'。 */
+  sourceFormat?: string;
 };
 
 // 関連用語の固定リンク → ./related-terms.ts に集約（落とし穴 #59 対応：実在slug 検証済み）
@@ -180,9 +182,20 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
           </h1>
           <p className="page-lead">
             {meta.operator} 管内の{total}変電所（変圧器バンク含む）の系統空き容量・
-            予想潮流・出力制御の可能性・N-1電制適用可否を、公表 CSV
+            予想潮流・出力制御の可能性・N-1電制適用可否を、公表 {meta.sourceFormat ?? 'CSV'}
             から一元化して掲載しています。
           </p>
+
+          {/* 東京エリア: 公開停止・再開の経緯ページへの導線（404を作らない・経緯保持）*/}
+          {meta.slug === 'tokyo' && (
+            <p className="grid-source-note" style={{ margin: '4px 0 16px' }}>
+              📋 東京電力PGの公開停止（2026年2月〜6月1日）・再開（6月2日）の経緯は{' '}
+              <Link href="/grid/tokyo/status" className="grid-area-link">
+                公開状況の解説ページ
+              </Link>
+              {' '}をご覧ください。
+            </p>
+          )}
 
           {/* Phase 4-pre: 中部限定マップへの導線 */}
           {meta.slug === 'chubu' && (
@@ -466,7 +479,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
             </dl>
             <p className="grid-source-note">
               ※ 本ページの数値は <strong>{meta.operator}</strong>
-              が公表する予想潮流等情報の CSV
+              が公表する予想潮流等情報の {meta.sourceFormat ?? 'CSV'}
               に基づいています。最新情報・利用条件は各社の公式サイトでご確認ください。
             </p>
             <p className="grid-source-note">

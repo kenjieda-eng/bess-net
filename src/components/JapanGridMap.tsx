@@ -26,7 +26,7 @@ const AREA_BOX: Record<
 > = {
   hokkaido: { x: 320, y: 30, w: 120, h: 90, color: '#0ea5e9' },
   tohoku: { x: 290, y: 130, w: 110, h: 130, color: '#22c55e' },
-  tokyo: { x: 280, y: 270, w: 120, h: 80, color: '#9ca3af' }, // 公開停止：グレー
+  tokyo: { x: 280, y: 270, w: 120, h: 80, color: '#6366f1' }, // 東京PG：収録済み
   chubu: { x: 200, y: 230, w: 90, h: 100, color: '#f59e0b' }, // 中部：地図対応
   hokuriku: { x: 180, y: 180, w: 80, h: 60, color: '#06b6d4' },
   kansai: { x: 130, y: 250, w: 80, h: 80, color: '#ef4444' },

@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）
   title: '系統空き容量データベース',
   description:
-    '北海道・東北・中部・北陸・関西・中国・四国・九州・沖縄の9送配電事業者・6,507変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。中部は緯度経度付き地図検索に対応。東京電力PGは2026年6月2日に公開再開（蓄電所ネット取り込み準備中）。',
+    '北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の10送配電事業者・8,225変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。東京電力PGは2026年6月の公開再開を受け13都県＋基幹系を収録。中部は緯度経度付き地図検索に対応。',
   alternates: { canonical: '/grid' },
   openGraph: {
     title: '系統空き容量データベース',
-    description: '9社・6,507変電所の系統空き容量・連系条件。中部は地図検索対応。',
+    description: '10社・8,225変電所の系統空き容量・連系条件。中部は地図検索対応。',
     type: 'website',
   },
 };
@@ -33,6 +33,7 @@ export default async function GridIndexPage() {
   const AREA_JP_TO_SLUG: Record<string, string> = {
     北海道: 'hokkaido',
     東北: 'tohoku',
+    東京: 'tokyo',
     中部: 'chubu',
     北陸: 'hokuriku',
     関西: 'kansai',
@@ -125,6 +126,15 @@ export default async function GridIndexPage() {
     熊本県: { area: 'kyushu', areaJp: '九州' },
     宮崎県: { area: 'kyushu', areaJp: '九州' },
     鹿児島県: { area: 'kyushu', areaJp: '九州' },
+    // Phase 2c 東京（東京電力PG）— 静岡/長野/福島/新潟は他社既存マップを維持
+    東京都: { area: 'tokyo', areaJp: '東京' },
+    神奈川県: { area: 'tokyo', areaJp: '東京' },
+    埼玉県: { area: 'tokyo', areaJp: '東京' },
+    千葉県: { area: 'tokyo', areaJp: '東京' },
+    茨城県: { area: 'tokyo', areaJp: '東京' },
+    群馬県: { area: 'tokyo', areaJp: '東京' },
+    栃木県: { area: 'tokyo', areaJp: '東京' },
+    山梨県: { area: 'tokyo', areaJp: '東京' },
   };
   const prefCounts = new Map<string, number>();
   for (const s of all) {
@@ -161,7 +171,7 @@ export default async function GridIndexPage() {
     '@type': 'CollectionPage',
     name: '系統空き容量データベース',
     description:
-      '9社・6,507変電所の系統空き容量・連系条件。中部は地図検索対応。',
+      '10社・8,225変電所の系統空き容量・連系条件。中部は地図検索対応。',
     url: 'https://bess-net.jp/grid',
     numberOfItems: total,
     publisher: {
@@ -187,8 +197,8 @@ export default async function GridIndexPage() {
           <p className="page-lead">
             系統用蓄電池・再エネ事業の連系検討に必要な変電所別の
             <strong>{total}</strong>地点の空き容量情報。
-            <strong>東北・北陸・四国・関西・中国・沖縄・北海道・中部・九州</strong>
-            の9送配電事業者の公表 CSV / PDF / GeoJSON を一元化。中部エリアは緯度経度付きで地図表示の基盤に。東京電力PG は <Link href="/grid/tokyo">2026年6月2日に公開再開（データ取り込み準備中）</Link>。
+            <strong>北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄</strong>
+            の10送配電事業者の公表 CSV / PDF / GeoJSON を一元化。中部エリアは緯度経度付きで地図表示の基盤に。東京電力PG は <Link href="/grid/tokyo">2026年6月の公開再開を受け13都県＋基幹系を収録</Link>。
           </p>
 
           {/* v25: ヒーローセクション */}
@@ -197,7 +207,7 @@ export default async function GridIndexPage() {
             <div className="grid-hero-number">{total.toLocaleString()}</div>
             <div className="grid-hero-label">変電所</div>
             <div className="grid-hero-sub">
-              全国9社・関東を除く全国カバー
+              全国10社・全国フルカバー（関東含む）
             </div>
             <div className="grid-hero-features">
               <div className="grid-hero-feature">🥇 業界唯一統合DB</div>
@@ -302,10 +312,10 @@ export default async function GridIndexPage() {
                   className="grid-summary-card-num"
                   style={{ color: '#0066cc' }}
                 >
-                  9 / 10
+                  10 / 10
                 </div>
                 <div className="grid-summary-card-sub">
-                  東京PG データ取り込み準備中（6/2再開済）
+                  東京電力PG を10社目として収録（13都県＋基幹系）
                 </div>
                 <svg
                   width="100%"
@@ -314,10 +324,10 @@ export default async function GridIndexPage() {
                   aria-hidden
                 >
                   <rect width="100%" height="8" fill="#e5e7eb" rx="4" />
-                  <rect width="90%" height="8" fill="#0066cc" rx="4" />
+                  <rect width="100%" height="8" fill="#0066cc" rx="4" />
                 </svg>
                 <Link href="/grid/tokyo" className="grid-summary-card-link">
-                  📋 公開状況を見る →
+                  ⚡ 東京エリアのデータを見る →
                 </Link>
               </div>
             </div>
@@ -340,8 +350,7 @@ export default async function GridIndexPage() {
                 {
                   slug: 'tokyo',
                   fullName: '東京',
-                  count: 0,
-                  isSuspended: true,
+                  count: byAreaSlug.get('tokyo') || 0,
                 },
                 {
                   slug: 'chubu',
@@ -403,7 +412,7 @@ export default async function GridIndexPage() {
               </button>
             </form>
             <p className="grid-search-banner-note">
-              全国9社・{total}変電所から名称で検索（部分一致）
+              全国10社・{total}変電所から名称で検索（部分一致）
             </p>
             {/* v25: 詳細検索リンク */}
             <p className="grid-search-banner-note">
@@ -428,6 +437,7 @@ export default async function GridIndexPage() {
                   北海道電力ネットワーク: { slug: 'hokkaido', areaJp: '北海道' },
                   中部電力パワーグリッド: { slug: 'chubu', areaJp: '中部' },
                   九州電力送配電: { slug: 'kyushu', areaJp: '九州' },
+                  東京電力パワーグリッド: { slug: 'tokyo', areaJp: '東京' },
                 };
                 const m = map[op];
                 return (

@@ -35,7 +35,11 @@ export const revalidate = 3600; // 1時間
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const areaParams = Object.keys(AREA_META).map((slug) => ({ slug }));
+  // 'tokyo' は静的セグメント /grid/tokyo/page.tsx が担当（落とし穴 #57）。
+  // ここで生成すると静的ルートと衝突するため除外する。
+  const areaParams = Object.keys(AREA_META)
+    .filter((slug) => slug !== 'tokyo')
+    .map((slug) => ({ slug }));
   try {
     const subs = await getSubstationSlugsWithCoords();
     return [...areaParams, ...subs];
