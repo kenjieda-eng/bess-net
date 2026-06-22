@@ -18,7 +18,11 @@ type PageParams = { params: { prefecture: string } };
 export async function generateStaticParams(): Promise<{ prefecture: string }[]> {
   try {
     const prefs = await getAvailablePrefectures();
-    return prefs.map((p) => ({ prefecture: encodeURIComponent(p) }));
+    // ★ 生（デコード済み）の都道府県名を返す。Next.js が静的パス生成時に
+    //   自動でエンコードするため、ここで encodeURIComponent すると二重
+    //   エンコードになりルート不一致 → 直リンク 404（全47都道府県）。
+    //   ページ側は decodeURIComponent(params.prefecture) で受ける。
+    return prefs.map((p) => ({ prefecture: p }));
   } catch {
     return [];
   }
