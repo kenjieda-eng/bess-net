@@ -1,0 +1,8 @@
+# 元PDF（45MB、再DL可能なのでリポジトリに含めない）
+pdfs/
+*.pdf
+
+# 探索・デバッグ中間出力（再生成可能）
+explore_output.txt
+explore_all_output.txt
+parse_debug.txt
