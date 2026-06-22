@@ -31,7 +31,7 @@ export async function generateMetadata({
   return {
     // layout.tsx titleTemplate が自動付与（落とし穴 #86）
     title: `${decoded}の変電所一覧 ｜ 系統空き容量データベース`,
-    description: `${decoded}の変電所を空容量大きい順に一覧表示。連系検討の初期スクリーニングに。9送配電事業者の公開データを編集部で整理。`,
+    description: `${decoded}の変電所を空容量大きい順に一覧表示。連系検討の初期スクリーニングに。10送配電事業者の公開データを編集部で整理。`,
     alternates: { canonical: `/grid/prefecture/${encodeURIComponent(decoded)}` },
     openGraph: {
       title: `${decoded}の変電所一覧｜系統空き容量データベース`,
@@ -190,7 +190,7 @@ export default async function PrefecturePage({ params }: PageParams) {
 
           <p className="grid-source-note">
             データソース: {siteConfig.organization.name}{' '}
-            編集部が、9送配電事業者の公開情報を整理。最新情報は各社の公式サイトをご確認ください。
+            編集部が、10送配電事業者の公開情報を整理。最新情報は各社の公式サイトをご確認ください。
             <Link href="/tracker/grid" className="grid-area-link" style={{ marginLeft: 8 }}>更新タイムライン →</Link>
           </p>
 

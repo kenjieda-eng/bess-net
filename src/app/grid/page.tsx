@@ -1,4 +1,4 @@
-// /grid 系統空き容量DB トップ — 9社・6,507件（2026-06時点）
+// /grid 系統空き容量DB トップ — 10社・8,225件（2026-06時点、東京電力PG追加）
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
@@ -472,27 +472,7 @@ export default async function GridIndexPage() {
                   </li>
                 );
               })}
-              {/* 東京電力PG: 公開停止中の解説リンク (v21) */}
-              <li
-                className="grid-list-row"
-                style={{ background: '#fffbe6' }}
-              >
-                <span className="grid-list-label">
-                  東京電力パワーグリッド
-                </span>
-                <span className="grid-list-value">
-                  📋 2026年6月2日に公開再開（データ取り込み準備中）{' '}
-                  <Link href="/grid/tokyo" className="grid-area-link">
-                    → 詳細を見る
-                  </Link>
-                </span>
-              </li>
             </ul>
-            <p className="grid-source-note">
-              ※ 東京電力PG は 2026年6月2日に公開を再開。蓄電所ネットはデータ取り込み準備中（
-              <Link href="/grid/tokyo">解説ページ</Link>
-              ）。
-            </p>
           </section>
 
           {/* 人気の検索（都道府県別件数 上位 8） */}
@@ -612,10 +592,13 @@ export default async function GridIndexPage() {
             <h2 className="grid-section-h2">出典・利用条件</h2>
             <p>
               本データは{' '}
-              <strong>北海道電力NW・東北電力NW・中部電力PG・北陸電力送配電・関西電力送配電・中国電力NW・四国電力送配電・九州電力送配電・沖縄電力</strong>
-              {' '}の9送配電事業者が公開する予想潮流等情報の CSV / PDF / GeoJSON を、蓄電所ネット編集部で一元化したものです。
+              <strong>北海道電力NW・東北電力NW・東京電力PG・中部電力PG・北陸電力送配電・関西電力送配電・中国電力NW・四国電力送配電・九州電力送配電・沖縄電力</strong>
+              {' '}の10送配電事業者が公開する予想潮流等情報の CSV / PDF / GeoJSON を、蓄電所ネット編集部で一元化したものです。
               個別変電所の最新情報は、各社の公式サイト（一次ソースリンク）でご確認ください。
               数値の引用・転記には出典明記が必要です。
+            </p>
+            <p style={{ marginTop: 4, fontSize: 13, color: 'var(--color-muted)' }}>
+              ※ 東京電力PG は2026年4月23日時点の予想潮流等PDF（13都県＋基幹系）を収録。空容量は逆潮流側の値です。
             </p>
             <p style={{ marginTop: 8, fontSize: 13, color: 'var(--color-muted)' }}>
               データ最終更新（代表）：<strong>{latestUpdatedStr}</strong>

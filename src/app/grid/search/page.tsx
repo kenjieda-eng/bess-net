@@ -135,7 +135,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
           <h1 className="page-title">変電所 詳細検索</h1>
           <p className="page-lead">
-            全国9社・6,500変電所超の中から、変電所名・エリア・電圧階級・空容量・N-1電制適用可・送配電事業者の
+            全国10社・8,200変電所超の中から、変電所名・エリア・電圧階級・空容量・N-1電制適用可・送配電事業者の
             6 つの軸で絞り込み検索できます（複数条件は AND 結合）。
           </p>
 
@@ -334,7 +334,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
           <p className="grid-source-note">
             データソース: {siteConfig.organization.name}{' '}
-            編集部が、9送配電事業者の公開情報を整理。
+            編集部が、10送配電事業者の公開情報を整理。
           </p>
 
           <p className="back-link">

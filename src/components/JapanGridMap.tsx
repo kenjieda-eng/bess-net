@@ -117,7 +117,7 @@ export default function JapanGridMap({ areas }: Props) {
       </svg>
 
       <p className="grid-japan-map-legend">
-        🗾 簡易レイアウト図　🗺 = マップ対応　灰色 = 公開停止中
+        🗾 簡易レイアウト図　🗺 = マップ対応（中部）　全10エリア稼働中
       </p>
     </section>
   );
