@@ -11,7 +11,6 @@ import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 import { useEffect, useRef, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
@@ -106,14 +105,16 @@ function FocusController({
 
 export default function ChubuMap({ substations }: Props) {
   // hydration mismatch 回避：マウント後に描画
+  // ?focus= は useSearchParams を使わず mount 時に window.location から取得
+  // （落とし穴#92: useSearchParams はルートを dynamic 化する。本コンポーネントは
+  //  next/dynamic ssr:false で client-only のため window.location で十分）
   const [mounted, setMounted] = useState(false);
+  const [focusSlug, setFocusSlug] = useState<string | null>(null);
   useEffect(() => {
     setMounted(true);
+    const sp = new URLSearchParams(window.location.search);
+    setFocusSlug(sp.get('focus'));
   }, []);
-
-  // ?focus= 取得
-  const searchParams = useSearchParams();
-  const focusSlug = searchParams?.get('focus') ?? null;
 
   // マーカーの実体 ref（focus 時 openPopup 用）
   const markerRefs = useRef<Map<string, L.Marker>>(new Map());
