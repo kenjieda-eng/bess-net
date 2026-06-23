@@ -39,11 +39,16 @@ export const getExplainerList = async (queries?: MicroCMSQueries) => {
 export const getExplainerBySlug = async (
   slug: string
 ): Promise<Explainer | null> => {
-  const data = await client.getList<Explainer>({
-    endpoint: 'explainer',
-    queries: { filters: `slug[equals]${slug}`, limit: 1 },
-  });
-  return data.contents[0] ?? null;
+  // rate limit(429) 等で throw→500 にしない。失敗時 null → page 側 notFound()（落とし穴 #98 / P0 監査）
+  try {
+    const data = await client.getList<Explainer>({
+      endpoint: 'explainer',
+      queries: { filters: `slug[equals]${slug}`, limit: 1 },
+    });
+    return data.contents[0] ?? null;
+  } catch {
+    return null;
+  }
 };
 
 // ===== 用語集（glossary）の型定義 =====
@@ -72,11 +77,16 @@ export const getGlossaryList = async (queries?: MicroCMSQueries) => {
 export const getGlossaryBySlug = async (
   slug: string
 ): Promise<Glossary | null> => {
-  const data = await client.getList<Glossary>({
-    endpoint: 'glossary',
-    queries: { filters: `slug[equals]${slug}`, limit: 1 },
-  });
-  return data.contents[0] ?? null;
+  // rate limit(429) 等で throw→500 にしない。失敗時 null（P0 監査、全 getXBySlug を guard 統一）
+  try {
+    const data = await client.getList<Glossary>({
+      endpoint: 'glossary',
+      queries: { filters: `slug[equals]${slug}`, limit: 1 },
+    });
+    return data.contents[0] ?? null;
+  } catch {
+    return null;
+  }
 };
 
 export const getAllGlossary = async (): Promise<Glossary[]> => {
@@ -192,11 +202,16 @@ export const getAllSubsidies = async (): Promise<Subsidy[]> => {
   return all;
 };
 export const getSubsidyBySlug = async (slug: string): Promise<Subsidy | null> => {
-  const data = await client.getList<Subsidy>({
-    endpoint: 'subsidies',
-    queries: { filters: `slug[equals]${slug}`, limit: 1 },
-  });
-  return data.contents[0] ?? null;
+  // rate limit(429) 等で throw→500 にしない。失敗時 null → page 側 notFound()（P0 監査）
+  try {
+    const data = await client.getList<Subsidy>({
+      endpoint: 'subsidies',
+      queries: { filters: `slug[equals]${slug}`, limit: 1 },
+    });
+    return data.contents[0] ?? null;
+  } catch {
+    return null;
+  }
 };
 export const getAllSubsidySlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
@@ -527,11 +542,16 @@ export const getAllProjects = async (): Promise<Project[]> => {
   return all;
 };
 export const getProjectBySlug = async (slug: string): Promise<Project | null> => {
-  const data = await client.getList<Project>({
-    endpoint: 'projects',
-    queries: { filters: `slug[equals]${slug}`, limit: 1 },
-  });
-  return data.contents[0] ?? null;
+  // rate limit(429) 等で throw→500 にしない。失敗時 null → page 側 notFound()（P0 監査）
+  try {
+    const data = await client.getList<Project>({
+      endpoint: 'projects',
+      queries: { filters: `slug[equals]${slug}`, limit: 1 },
+    });
+    return data.contents[0] ?? null;
+  } catch {
+    return null;
+  }
 };
 export const getAllProjectSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
@@ -593,11 +613,16 @@ export const getAllNews = async (): Promise<News[]> => {
 };
 
 export const getNewsBySlug = async (slug: string): Promise<News | null> => {
-  const data = await client.getList<News>({
-    endpoint: 'news',
-    queries: { filters: `slug[equals]${slug}`, limit: 1 },
-  });
-  return data.contents[0] ?? null;
+  // rate limit(429) 等で throw→500 にしない。失敗時 null → page 側 notFound()（P0 監査）
+  try {
+    const data = await client.getList<News>({
+      endpoint: 'news',
+      queries: { filters: `slug[equals]${slug}`, limit: 1 },
+    });
+    return data.contents[0] ?? null;
+  } catch {
+    return null;
+  }
 };
 
 export const getAllNewsSlugs = async (): Promise<{ slug: string }[]> => {
@@ -716,12 +741,16 @@ export const getOperatorBySlug = async (
     });
     return data;
   } catch {
-    // フォールバック：filters で検索
-    const data = await client.getList<Operator>({
-      endpoint: 'operators',
-      queries: { filters: `slug[equals]${slug}`, limit: 1 },
-    });
-    return data.contents[0] ?? null;
+    // フォールバック：filters で検索（rate limit 等で再 throw しないよう guard、429→500回避）
+    try {
+      const data = await client.getList<Operator>({
+        endpoint: 'operators',
+        queries: { filters: `slug[equals]${slug}`, limit: 1 },
+      });
+      return data.contents[0] ?? null;
+    } catch {
+      return null;
+    }
   }
 };
 
