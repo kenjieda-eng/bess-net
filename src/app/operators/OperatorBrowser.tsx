@@ -2,7 +2,6 @@
 
 import { useMemo, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import type { Operator } from '@/lib/microcms';
 import {
   OPERATOR_CATEGORY_ORDER,
@@ -23,30 +22,42 @@ const SORT_OPTIONS: { key: SortKey; label: string }[] = [
 type Props = { items: Operator[] };
 
 export default function OperatorBrowser({ items }: Props) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const initialCat = searchParams.get('c') || 'すべて';
-  const initialPref = searchParams.get('p') || 'all';
-  const initialQuery = searchParams.get('q') || '';
-  const initialSort = (searchParams.get('s') as SortKey) || 'name';
-
-  const [activeCategory, setActiveCategory] = useState(initialCat);
-  const [activePref, setActivePref] = useState(initialPref);
-  const [query, setQuery] = useState(initialQuery);
-  const [sort, setSort] = useState<SortKey>(initialSort);
+  // 落とし穴 #92 回避: useSearchParams は使わない（Suspense fallback で初期 SSR が
+  // 描画されず SEO 致命傷）。URL 状態は window.location + history.replaceState で扱う
+  // （CLAUDE.md §3-1 の OK パターン）。初期 state はデフォルト = SSR は全件描画 → SEO 維持。
+  const [activeCategory, setActiveCategory] = useState('すべて');
+  const [activePref, setActivePref] = useState('all');
+  const [query, setQuery] = useState('');
+  const [sort, setSort] = useState<SortKey>('name');
   const [visible, setVisible] = useState(PAGE_SIZE);
+  const [hydrated, setHydrated] = useState(false);
 
+  // マウント後に URL クエリから状態を復元（client-only。SSR では実行されず default のまま）
   useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    const c = sp.get('c');
+    const p = sp.get('p');
+    const q = sp.get('q');
+    const s = sp.get('s') as SortKey | null;
+    if (c) setActiveCategory(c);
+    if (p) setActivePref(p);
+    if (q) setQuery(q);
+    if (s) setSort(s);
+    setHydrated(true);
+  }, []);
+
+  // 状態変化を URL に反映（復元完了後のみ。replaceState で履歴を汚さない）
+  useEffect(() => {
+    if (!hydrated) return;
     const params = new URLSearchParams();
     if (activeCategory !== 'すべて') params.set('c', activeCategory);
     if (activePref !== 'all') params.set('p', activePref);
     if (query) params.set('q', query);
     if (sort !== 'name') params.set('s', sort);
     const qs = params.toString();
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-  }, [activeCategory, activePref, query, sort, pathname, router]);
+    const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    window.history.replaceState(null, '', url);
+  }, [activeCategory, activePref, query, sort, hydrated]);
 
   const catCounts = useMemo(() => operatorCountByCategory(items), [items]);
   const prefs = useMemo(() => operatorPrefList(items), [items]);
@@ -98,7 +109,8 @@ export default function OperatorBrowser({ items }: Props) {
     setVisible(PAGE_SIZE);
   }, [activeCategory, activePref, query, sort]);
 
-  const visibleItems = filtered.slice(0, visible);
+  // SEO: 全 operator を SSR の DOM に出す（初期HTMLに全社リンクが載る）。
+  // 表示は visible 件までで、超過分は hidden 属性で隠す（「もっと見る」で開示）。
   const hasMore = visible < filtered.length;
 
   const onClickMore = useCallback(
@@ -175,13 +187,13 @@ export default function OperatorBrowser({ items }: Props) {
       {/* グリッド */}
       {filtered.length > 0 && (
         <ul className="op-grid">
-          {visibleItems.map((operator) => {
+          {filtered.map((operator, idx) => {
             const cats = operator.category || [];
             const primary = cats[0] || 'その他';
             const colorCls =
               OPERATOR_CATEGORY_COLOR[primary] || 'bg-gray-100 text-gray-700';
             return (
-              <li key={operator.id} className="op-card">
+              <li key={operator.id} className="op-card" hidden={idx >= visible}>
                 <Link
                   href={`/operators/${operator.slug}`}
                   className="op-card-link"

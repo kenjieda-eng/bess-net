@@ -2,7 +2,6 @@
 // - microCMS から事業者全件取得（403件想定）
 // - クライアントの OperatorBrowser でカテゴリタブ/検索/都道府県絞り/ページング
 
-import { Suspense } from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllOperators } from '@/lib/microcms';
@@ -55,11 +54,9 @@ export default async function OperatorListPage() {
               <p>事業者情報はまだ準備中です。</p>
             </div>
           ) : (
-            <Suspense
-              fallback={<div className="news-loading">読み込み中...</div>}
-            >
-              <OperatorBrowser items={items} />
-            </Suspense>
+            // 落とし穴 #92 対応: OperatorBrowser は useSearchParams を使わないため
+            // Suspense 不要。全 operator を SSR 描画した上に client-side フィルタを重ねる（SEO維持）。
+            <OperatorBrowser items={items} />
           )}
 
           <section style={{
