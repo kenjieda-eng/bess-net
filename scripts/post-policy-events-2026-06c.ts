@@ -21,6 +21,11 @@
  * 実行: npx tsx scripts/post-policy-events-2026-06c.ts [--dry-run]
  */
 
+// モジュール化（top-level import/export がないと script 扱い＝global scope となり、
+// 他 script の const SERVICE_DOMAIN/API_KEY と "Cannot redeclare" 衝突 → build 失敗。
+// 06b は import {} from 'node:process' で回避していた。本ファイルは export {} で明示。
+export {};
+
 const SERVICE_DOMAIN = process.env.MICROCMS_SERVICE_DOMAIN;
 const API_KEY = process.env.MICROCMS_API_KEY;
 const DRY_RUN = process.argv.includes('--dry-run');
