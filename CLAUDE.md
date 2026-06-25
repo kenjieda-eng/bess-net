@@ -98,6 +98,11 @@ deploy 後 30分監視:
   ☐ 異常検知時は即 江田さん 連絡
 ```
 
+## 鉄則（2026-06 追加）: 大量動的ルートは「429縮退 ＋ relations precompute」で runtime microCMS を 0 に
+
+大量動的ルート（1,000+ ページ）は **「429 縮退（getXBySlug は throw せず null→page で notFound/404）＋ relations は build 時 precompute」をセットで実装** し、runtime microCMS を 0 にする。
+2026-06-23 の Vercel 500（rate-limit）を **3段防御**（#100 helper guard → 全ルート try/catch 統一 → #102 precompute）で構造解消した実績に基づく（落とし穴 #100 / #102）。
+
 ---
 
 # 📖 第1章：必読落とし穴 TOP 15
@@ -132,6 +137,26 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
 #93 build 時 memoization 必須（1,000+ ページで getList 重複呼び出し）
 #96 english 併記 "/" / "、" 分割（split + length 制限）
 #94 body[contains] hit 率限界（compound term は relatedTerms 推奨）
+```
+
+## 2026-06 追加（#100〜#103｜rate-limit 3段防御 ＋ SEO）
+
+```
+#100 ★★★★★ runtime detail helper（getXBySlug）は 429 で throw せず null を返す
+     → page notFound() が 404 吸収＝500 回避。runtime microCMS は 429 縮退設計を必須に。
+     実証: commit 298f1f0 / dfc7b36（2026-06-23 Vercel 500 を解消、3段防御の第1段）。
+
+#101 ★★★★ 非ASCII 動的ルートの generateStaticParams は encodeURIComponent せず「生値」を返す
+     → Next.js が内部で1回エンコード。重ねると二重エンコードで全件404。
+     実証: commit ad06c0c（prefecture 404、47都道府県のクローラビリティ回復）。
+
+#102 ★★★★ 大量動的ルートの relations は build 時 precompute（runtime microCMS 0）
+     → glossary(dfc7b36, detail-index 7.47MB)・operators(da0c618, 1.50MB)で確立。/projects 等へ横展開可。
+     #98（SSR集中アクセス）の恒久対策の決定版（3段防御の第3段）。
+
+#103 ★★★ SEO重要 index は useSearchParams 不使用＋一覧は全件SSR
+     → window.location＋history.replaceState（hydratedガード）。先頭N可視＋残りhidden で SEO 維持。
+     実証: commit 0011c09（operators）/ 8b93864（ChubuMap）。落とし穴 #92 の精緻化版。
 ```
 
 ---
@@ -427,6 +452,21 @@ async function main() {
 
 ---
 
+# 📚 第8章：L-EIC 教訓（運用知見）
+
+> ※ L-EIC-001〜026 は外部 handover ドキュメント（`01_最初に読む/`）側で管理。本リポジトリには 2026-06 以降に確定した教訓を本章に追記する。
+
+## L-EIC-027: 日付を持つコンテンツの status は「コードで日付導出」する
+
+日付を持つコンテンツ（補助金・イベント・告知・政策）は **status を手動で持たず、日付（deadline_iso 等）から build 時にコードで導出** する。
+手動 status は時間で必ず drift し、補助金では「締切切れを公募中表示」＝信頼毀損になる。
+
+- **実証**: 2026-06-20 /subsidies で締切切れ約7件が「公募中」に混在 → 06-21 `deadline_iso` による build 時 auto-derive（commit 3782934、公募中 32→26 / 受付終了 4→12）で人手ゼロ解消。
+- **運用**: 鮮度タスク（月次）は「日付で分からない変化（後継年度版・予算到達・条件変更・404）」だけに集中する。
+- **整合**: status 導出は build 時（静的）、runtime microCMS 0（鉄則 #98 / 落とし穴 #102）。
+
+---
+
 # 🔚 まとめ
 
 ```
@@ -453,4 +493,5 @@ async function main() {
 
 **更新履歴**:
 - 2026-05-14（v30）: 初版、落とし穴 #95 #97 #98 を踏まえた 5鉄則確立
+- 2026-06-25（ユウ）: 落とし穴 #100〜#103（rate-limit 3段防御＋SEO）＋鉄則追加（429縮退＋precompute）＋第8章 L-EIC-027（日付導出 status）を追記。実証 commit: 298f1f0 / dfc7b36 / ad06c0c / da0c618 / 0011c09 / 8b93864 / 3782934。
 - （将来）: 新規セッションで追記、更新時刻 + 更新者を末尾に
