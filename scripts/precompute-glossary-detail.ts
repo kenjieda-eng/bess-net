@@ -25,6 +25,7 @@ import {
   getAllProjects,
 } from '../src/lib/microcms';
 import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
+import { GLOSSARY_301_SOURCE_SLUGS } from '../src/lib/glossary-301';
 
 // ── 出力型（ページが必要とする最小フィールドのみ）──────────────────
 type TermLite = { term: string; slug: string };
@@ -110,8 +111,11 @@ async function main(): Promise<void> {
   );
 
   // term/english → slug マップ（relatedTerms CSV 解決用）
+  // stage-2A: 301元slug（重複/旧entry）はマップから除外し、同名は canonical のみ解決させる
+  // → relatedTerms の 301-hop（A:同名718件）を撲滅（落とし穴#102）。
   const termSlugMap = new Map<string, string>();
   for (const g of glossary) {
+    if (GLOSSARY_301_SOURCE_SLUGS.has(g.slug)) continue;
     termSlugMap.set(g.term, g.slug);
     if (g.english) termSlugMap.set(g.english, g.slug);
   }
@@ -162,17 +166,18 @@ async function main(): Promise<void> {
 
     // sameCategoryTerms: subcategory[equals] or category[contains]、self 除外、order term、limit 8
     let sameCategoryTerms: TermLite[] = [];
+    // stage-2A: 301元slug は同カテゴリ候補からも除外（301-hop リンク防止）
     if (useCategoryFallback) {
       if (cat) {
         sameCategoryTerms = glossary
-          .filter((x) => x.slug !== g.slug && (x.category ?? []).includes(cat))
+          .filter((x) => x.slug !== g.slug && !GLOSSARY_301_SOURCE_SLUGS.has(x.slug) && (x.category ?? []).includes(cat))
           .sort((a, b) => (a.term ?? '').localeCompare(b.term ?? ''))
           .slice(0, 8)
           .map((x) => ({ term: x.term, slug: x.slug }));
       }
     } else if (sub) {
       sameCategoryTerms = glossary
-        .filter((x) => x.slug !== g.slug && (x.subcategory ?? '') === sub)
+        .filter((x) => x.slug !== g.slug && !GLOSSARY_301_SOURCE_SLUGS.has(x.slug) && (x.subcategory ?? '') === sub)
         .sort((a, b) => (a.term ?? '').localeCompare(b.term ?? ''))
         .slice(0, 8)
         .map((x) => ({ term: x.term, slug: x.slug }));

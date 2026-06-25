@@ -3,6 +3,7 @@
 
 import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
 import { MICROCMS_MAX_OFFSET, MICROCMS_PAGE_LIMIT } from './constants';
+import { GLOSSARY_301_SOURCE_SLUGS } from './glossary-301';
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is not defined');
@@ -1946,6 +1947,9 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
     for (const g of lite) {
       const term = (g.term || '').trim();
       if (!g.slug || !term || term.length < 3) continue;
+      // stage-2A: 301元slug（重複/旧entry）は本文オートリンクのターゲットにしない
+      // → 同名は canonical のみ残り、autolink/relatedTerms の 301-hop を撲滅（落とし穴#102）。
+      if (GLOSSARY_301_SOURCE_SLUGS.has(g.slug)) continue;
       const url = `/glossary/${g.slug}`;
       out.push({ text: term, url, type: 'glossary' });
       const arr = glossaryByName.get(term) ?? [];
