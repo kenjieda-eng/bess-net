@@ -72,6 +72,8 @@ export const siteConfig = {
     { label: '業界用語よくある質問', href: '/faq' },
     // Sprint 3 追加 (業界唯一 IRR シミュレーター)
     { label: '蓄電池IRRシミュレーター', href: '/tools/irr-simulator' },
+    // 66番 (業界唯一 LCOE/LCOS 計算機)
+    { label: 'LCOE・LCOS計算機', href: '/tools/lcoe-lcos' },
     // Sprint 4 追加 (業界唯一 補助金マッチング)
     { label: '蓄電池補助金マッチング', href: '/tools/subsidy-match' },
     // Sprint 4 Day 2 (業界唯一 系統連系診断)

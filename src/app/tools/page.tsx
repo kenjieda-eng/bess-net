@@ -59,6 +59,14 @@ const tools = [
       '系統用蓄電池プロジェクトの IRR・NPV・ペイバック期間を業界標準ロジックで無料試算。3 シナリオ (楽観/標準/悲観) 並列計算、感応度分析、CSV エクスポート対応。',
   },
   {
+    slug: 'lcoe-lcos',
+    title: 'LCOE・LCOS計算機',
+    badge: '業界唯一',
+    available: true,
+    description:
+      '系統用蓄電池の LCOS（均等化蓄電原価）と太陽光・風力・原子力等の電源別 LCOE を前提条件から試算。NREL ATB 2024 基準（米国前提）、コスト内訳・電源別比較・NREL参考値の並列表示。',
+  },
+  {
     slug: 'subsidy-match',
     title: '蓄電池補助金マッチング',
     badge: '業界唯一',

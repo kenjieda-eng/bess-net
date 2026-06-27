@@ -146,6 +146,7 @@ export default function IrrSimulatorPage() {
             需給調整市場 ¥1,500/kW/月、JEPX スポット ¥9-23/kWh (2024年度実績) 等を採用。
             蓄電池CAPEXの参考値（Step 2）は NREL ATB 2024版（米国前提、mid=実データ）を USD/JPY {capexNrel.fxJpyPerUsd} で円換算。
             出典: JEPX/OCCTO/SII 公表資料、業界EPC公表値、NREL ATB (CC BY 4.0)。
+            均等化原価で比べたい場合は <Link href="/tools/lcoe-lcos">LCOE・LCOS計算機</Link> もご利用ください。
           </p>
 
           <IRRSimulator capexNrel={capexNrel} />
