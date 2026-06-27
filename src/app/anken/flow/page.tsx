@@ -39,7 +39,7 @@ export default function AnkenFlowPage() {
           </p>
           <div className="section-label">流通案件 ／ 仕組み</div>
           <h1 className="section-title">蓄電所案件のお取り次ぎの流れ ─ 中立的な窓口</h1>
-          <p className="section-desc" style={{ marginBottom: 28, lineHeight: 1.85 }}>
+          <p className="section-desc anken-prose" style={{ marginBottom: 28, lineHeight: 1.85, marginLeft: 0 }}>
             蓄電所ネット（一般社団法人エネルギー情報センター運営）は、買いたい方・売りたい方をつなぐ中立的な窓口です。
             宅地建物取引の媒介・代理は行わず、案件元へのお取り次ぎ・コンサルティングを行います。
           </p>
@@ -63,14 +63,18 @@ export default function AnkenFlowPage() {
             ))}
           </div>
 
+          <p className="anken-prose" style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 36, marginLeft: 0 }}>
+            ご相談・お取り次ぎの費用は、ご相談内容に応じて個別にご案内します。
+          </p>
+
           <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, marginBottom: 12 }}>なぜ中立な窓口なのか</h2>
-          <p style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 28 }}>
+          <p className="anken-prose" style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 28, marginLeft: 0 }}>
             蓄電所ネットは中立な業界ハブとして、業界全体の健全な流通を促すことを目的としています。
             宅地建物取引の媒介・代理は行わないため、買い手・売り手のどちらにも偏らず、中立にお取り次ぎできます。
           </p>
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, marginBottom: 12 }}>守秘・個人情報の取り扱い</h2>
-          <p style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 28 }}>
+          <p className="anken-prose" style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 28, marginLeft: 0 }}>
             お預かりした情報は、お取り次ぎの目的の範囲でのみ取り扱います。しつこい営業は行いません。
             個別案件の住所・座標・契約日等の詳細は、特定回避のため公開ページには掲載していません。
           </p>
@@ -91,7 +95,7 @@ export default function AnkenFlowPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85 }}>
+          <p className="anken-prose" style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
             ※ 蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。取引条件は案件元と直接ご確認ください。
           </p>
         </div>

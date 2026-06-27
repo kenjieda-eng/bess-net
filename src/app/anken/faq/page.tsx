@@ -72,12 +72,12 @@ export default function AnkenFaqPage() {
           </p>
           <div className="section-label">流通案件 ／ FAQ</div>
           <h1 className="section-title">蓄電所 流通案件のよくある質問</h1>
-          <p className="section-desc" style={{ marginBottom: 28, lineHeight: 1.85 }}>
+          <p className="section-desc anken-prose" style={{ marginBottom: 28, lineHeight: 1.85, marginLeft: 0 }}>
             蓄電所の流通案件・お取り次ぎについて、よくいただくご質問にお答えします。
             蓄電所ネット（一般社団法人エネルギー情報センター運営）は中立的な窓口です。
           </p>
 
-          <div style={{ marginBottom: 32 }}>
+          <div className="anken-prose" style={{ marginBottom: 32, marginLeft: 0 }}>
             {FAQ.map((f) => (
               <div key={f.q} style={{ ...card, marginBottom: 12 }}>
                 <h2 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 6px', color: NAVY }}>Q. {f.q}</h2>
@@ -102,7 +102,7 @@ export default function AnkenFaqPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85 }}>
+          <p className="anken-prose" style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
             ※ 蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。掲載は特定回避のため概括化しており、住所・座標・契約日等は掲載していません。取引条件は案件元と直接ご確認ください。
           </p>
         </div>

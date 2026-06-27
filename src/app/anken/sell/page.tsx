@@ -39,7 +39,7 @@ export default function AnkenSellPage() {
           </p>
           <div className="section-label">流通案件 ／ 売却・譲渡</div>
           <h1 className="section-title">蓄電所の用地・開発案件を売却/譲渡したい方へ</h1>
-          <p className="section-desc" style={{ marginBottom: 28, lineHeight: 1.85 }}>
+          <p className="section-desc anken-prose" style={{ marginBottom: 28, lineHeight: 1.85, marginLeft: 0 }}>
             用地・開発中案件・事業の売却や譲渡をご検討の方へ。蓄電所ネット（一般社団法人エネルギー情報センター運営）が、
             匿名・守秘で中立に買い手へお取り次ぎします。宅地建物取引の媒介・代理は行いません。
           </p>
@@ -66,7 +66,7 @@ export default function AnkenSellPage() {
           </div>
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, marginBottom: 12 }}>匿名・守秘で安心</h2>
-          <p style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 12 }}>
+          <p className="anken-prose" style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 12, marginLeft: 0 }}>
             公開ページに住所・座標・契約日等の個別情報は掲載しません（特定回避のため概括化）。
             お預かりした情報はお取り次ぎの目的の範囲でのみ扱い、しつこい営業は行いません。
             お取り次ぎの詳細は <Link href="/anken/flow">お取り次ぎの流れ</Link> をご確認ください。
@@ -88,7 +88,7 @@ export default function AnkenSellPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85 }}>
+          <p className="anken-prose" style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
             ※ 蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。取引条件は案件元と直接ご確認ください。
           </p>
         </div>

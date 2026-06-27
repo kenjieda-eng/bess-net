@@ -3610,3 +3610,12 @@
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   }
 }
+
+/* /anken 本文の可読幅（2026-06-27 微調整）。外枠 section-inner は 1320 維持し、
+   長い本文（リード・説明・注記・免責・FAQ回答）だけ ~940px 中央寄せで行長を抑える。
+   表(.subsidy-table-wrapper)・多列カードグリッド・CTA には付与しない（情報密度維持）。 */
+.anken-prose {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}

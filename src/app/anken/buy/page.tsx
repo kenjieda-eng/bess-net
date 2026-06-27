@@ -39,7 +39,7 @@ export default function AnkenBuyPage() {
           </p>
           <div className="section-label">流通案件 ／ 購入・取得</div>
           <h1 className="section-title">蓄電所の開発案件・用地を購入/取得したい方へ</h1>
-          <p className="section-desc" style={{ marginBottom: 28, lineHeight: 1.85 }}>
+          <p className="section-desc anken-prose" style={{ marginBottom: 28, lineHeight: 1.85, marginLeft: 0 }}>
             連系枠の確保が進む2MW/8MWh級を中心に、全国の蓄電所開発案件が流通しています。
             蓄電所ネット（一般社団法人エネルギー情報センター運営）が、中立的に案件元へお取り次ぎします。
           </p>
@@ -67,7 +67,7 @@ export default function AnkenBuyPage() {
           </div>
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, marginBottom: 12 }}>どんな案件があるか（匿名・傾向）</h2>
-          <p style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 12 }}>
+          <p className="anken-prose" style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 12, marginLeft: 0 }}>
             連系枠確保済の2MW/8MWh級を中心に、宅地系・農地系・山林系の地目、連系目安〜6ヶ月／6〜12ヶ月／12ヶ月超など、
             規模・ステータス・エリアの傾向を匿名で公開しています（個別特定は避けています）。
             具体的な傾向は <Link href="/anken">流通案件トップの市場動向</Link> をご覧ください。確認の流れは{' '}
@@ -90,7 +90,7 @@ export default function AnkenBuyPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85 }}>
+          <p className="anken-prose" style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
             ※ 蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。掲載は特定回避のため概括化しており、住所・座標・契約日等は掲載していません。取引条件は案件元と直接ご確認ください。
           </p>
         </div>

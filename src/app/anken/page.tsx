@@ -150,7 +150,7 @@ export default function AnkenPage() {
           {/* 1. ヒーロー */}
           <div className="section-label">流通案件 ／ 売買・取り次ぎ（中立）</div>
           <h1 className="section-title">全国の蓄電所流通案件 ─ 売買・連系枠確保済案件のお取り次ぎ</h1>
-          <p className="section-desc" style={{ marginBottom: 24, lineHeight: 1.85 }}>
+          <p className="section-desc anken-prose" style={{ marginBottom: 24, lineHeight: 1.85, marginLeft: 0 }}>
             連系枠の確保が進む2MW/8MWh級を中心に、全国の蓄電所開発案件が流通しています。買いたい・売りたい・まず相談したい
             ——蓄電所ネット（<strong>一般社団法人エネルギー情報センター</strong>運営）が、<strong>中立的に</strong>案件元へお取り次ぎします。
           </p>
@@ -221,7 +221,7 @@ export default function AnkenPage() {
               </table>
             </div>
           </section>
-          <p style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.7, marginBottom: 44 }}>
+          <p className="anken-prose" style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.7, marginBottom: 44, marginLeft: 0 }}>
             ※ 本表・分布は全国の取扱案件のうち中部エリアの抜粋・参考情報です。各案件の募集状況・条件は変動します。特定回避の
             ため概括化しており、個別の正確な情報や他エリア（北海道〜九州）の案件はお問い合わせ時にご確認ください。
           </p>
@@ -229,7 +229,7 @@ export default function AnkenPage() {
           {/* 各エリアの案件イメージ（サンプル例・実在ではない＝L-EIC-019）*/}
           <section style={{ marginBottom: 8 }}>
             <h3 style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6 }}>各エリアの案件イメージ（サンプル例）</h3>
-            <p style={{ fontSize: 12.5, color: '#b45309', lineHeight: 1.7, marginBottom: 12, fontWeight: 600 }}>
+            <p className="anken-prose" style={{ fontSize: 12.5, color: '#b45309', lineHeight: 1.7, marginBottom: 12, fontWeight: 600, marginLeft: 0 }}>
               ※ 中部エリア以外は、市場で想定される案件像を示すサンプル例です（実在の特定案件・正確な情報ではありません）。中部は実取扱案件の匿名抜粋です。実際の案件・他エリアの取扱はお問い合わせ時にご確認ください。
             </p>
             <div className="subsidy-table-wrapper">
@@ -257,7 +257,7 @@ export default function AnkenPage() {
               </table>
             </div>
           </section>
-          <p style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.7, marginBottom: 44 }}>
+          <p className="anken-prose" style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.7, marginBottom: 44, marginLeft: 0 }}>
             ※ 上記サンプル例は特定の実在案件を示すものではなく、匿名・概括化した一般的な傾向の例示です（座標・住所・実日付は含みません）。
           </p>
 
@@ -294,13 +294,16 @@ export default function AnkenPage() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 14, marginBottom: 44 }}>
+          <p style={{ fontSize: 14, marginBottom: 8 }}>
             <Link href="/anken/flow" style={{ color: ACCENT, fontWeight: 700 }}>詳しくは お取り次ぎの流れ →</Link>
+          </p>
+          <p className="anken-prose" style={{ fontSize: 13, color: 'var(--color-muted)', lineHeight: 1.7, marginTop: 0, marginBottom: 44, marginLeft: 0 }}>
+            ご相談・お取り次ぎの費用は、ご相談内容に応じて個別にご案内します。
           </p>
 
           {/* 6. FAQ 抜粋 */}
           <h2 style={{ fontSize: 22, fontWeight: 700, color: NAVY, marginBottom: 16 }}>よくある質問</h2>
-          <div style={{ marginBottom: 12 }}>
+          <div className="anken-prose" style={{ marginBottom: 12, marginLeft: 0 }}>
             {[
               ['なぜ詳細が載っていないの？', '個別特定を避けるため匿名・概括化しています。詳細はお問い合わせ時に案件元へお取り次ぎします。'],
               ['買い手・売り手どちらも相談できる？', 'どちらも可能です。全国対応で中立にお取り次ぎします。'],
@@ -341,7 +344,7 @@ export default function AnkenPage() {
           {/* 免責（本文そのまま）*/}
           <section style={{ ...card, marginBottom: 16 }}>
             <h2 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>免責</h2>
-            <small style={{ fontSize: 12.5, lineHeight: 1.85, color: 'var(--color-muted)', display: 'block' }}>
+            <small className="anken-prose" style={{ fontSize: 12.5, lineHeight: 1.85, color: 'var(--color-muted)', display: 'block', marginLeft: 0 }}>
               本ページは蓄電所ネットが把握した市場動向の参考情報です。特定回避のため概括化しており、住所・座標・契約日等は掲載していません。
               蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。
               取引条件は案件元と直接ご確認ください。最新の募集状況は変動します。
