@@ -1,6 +1,6 @@
 /**
  * /anken/buy — 購入・取得したい方へ（anken Phase1 下層）
- * 静的・SSR・canonical自己参照。CTA→eic-jp.org/contact。中立・無償・非媒介 免責。
+ * 静的・SSR・canonical自己参照。CTA→eic-jp.org/contact。中立・非媒介（有償化方針）免責。
  */
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -14,12 +14,12 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: '蓄電所の開発案件・用地を購入/取得したい方へ',
   description:
-    '蓄電所の開発案件・用地を購入/取得したい投資家・新規参入・EPC・地主の方へ。連系枠確保済の2MW/8MWh級を中心に、匿名でご紹介し中立・無償で案件元へお取り次ぎ。媒介・手数料はありません。',
+    '蓄電所の開発案件・用地を購入/取得したい投資家・新規参入・EPC・地主の方へ。連系枠確保済の2MW/8MWh級を中心に、匿名でご紹介し中立的に案件元へお取り次ぎ。宅地建物取引の媒介・代理は行いません。',
   robots: { index: true, follow: true },
   alternates: { canonical: '/anken/buy' },
   openGraph: {
     title: '蓄電所の開発案件・用地を購入/取得したい方へ | 蓄電所ネット',
-    description: '連系枠確保済の蓄電所案件を匿名でご紹介。中立・無償で案件元へお取り次ぎ。',
+    description: '連系枠確保済の蓄電所案件を匿名でご紹介。中立的に案件元へお取り次ぎ。',
     type: 'website',
   },
 };
@@ -33,7 +33,7 @@ export default function AnkenBuyPage() {
     <>
       <SiteHeader />
       <main className="section">
-        <div className="section-inner" style={{ maxWidth: 980 }}>
+        <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/anken">流通案件</Link> / 購入・取得したい方へ
           </p>
@@ -41,7 +41,7 @@ export default function AnkenBuyPage() {
           <h1 className="section-title">蓄電所の開発案件・用地を購入/取得したい方へ</h1>
           <p className="section-desc" style={{ marginBottom: 28, lineHeight: 1.85 }}>
             連系枠の確保が進む2MW/8MWh級を中心に、全国の蓄電所開発案件が流通しています。
-            蓄電所ネット（一般社団法人エネルギー情報センター運営）が、中立・無償で案件元へお取り次ぎします。
+            蓄電所ネット（一般社団法人エネルギー情報センター運営）が、中立的に案件元へお取り次ぎします。
           </p>
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, marginBottom: 12 }}>こんな方に</h2>
@@ -76,7 +76,7 @@ export default function AnkenBuyPage() {
 
           <section style={{ background: NAVY, borderRadius: 12, padding: '28px 24px', color: '#fff', margin: '20px 0 32px' }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#fff' }}>購入・取得のご相談</h2>
-            <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>投資基準・希望エリア・規模をお知らせください。中立・無償でお取り次ぎします。</p>
+            <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>投資基準・希望エリア・規模をお知らせください。中立的にお取り次ぎします。</p>
             <AnkenContactCTA location="buy">購入・取得のご相談はこちら →</AnkenContactCTA>
           </section>
 
@@ -91,7 +91,7 @@ export default function AnkenBuyPage() {
           </section>
 
           <p style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85 }}>
-            ※ 蓄電所ネット（一般社団法人エネルギー情報センター）は中立・無償の情報提供および案件元へのお取り次ぎを行うもので、宅地建物取引の媒介・代理は行いません。掲載は特定回避のため概括化しており、住所・座標・契約日等は掲載していません。取引条件は案件元と直接ご確認ください。
+            ※ 蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。掲載は特定回避のため概括化しており、住所・座標・契約日等は掲載していません。取引条件は案件元と直接ご確認ください。
           </p>
         </div>
       </main>
