@@ -30,10 +30,15 @@ function getTodayJST(): string {
   return new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
 }
 
-// deadline_iso ベースで status を自動導出（鮮度の自動補正）
+// deadline_iso / start_iso ベースで status を自動導出（鮮度の自動補正・L-EIC-027）
 function deriveStatus(item: PrecomputedSubsidy, todayISO: string): string {
+  // 締切超過が最優先（受付終了）
   if (!item.is_rolling && item.deadline_iso && item.deadline_iso < todayISO) {
     return '受付終了';
+  }
+  // 開始日が未来 → 公募予定（L-EIC-027拡張。start_iso は精密日付のみ）
+  if (item.start_iso && item.start_iso > todayISO) {
+    return '公募予定';
   }
   return item.status[0] || 'その他';
 }

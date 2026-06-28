@@ -147,6 +147,22 @@ function parseDeadline(s: string): DeadlineInfo {
 }
 
 // ──────────────────────────────────────
+// 開始日 解析（applicationStart → start_iso、公募予定 auto-derive 用・L-EIC-027拡張）
+// 捏造回避（L-EIC-019）: 「YYYY年MM月DD日」or「YYYY-MM-DD」の精密日付のみ採用。
+// 「2026年4月」(月のみ)・「未定」・「随時」等は undefined（公募予定 判定に使わない）。
+// ──────────────────────────────────────
+
+function parseStartIso(s: string): string | undefined {
+  const raw = (s || '').trim();
+  if (!raw) return undefined;
+  let m = raw.match(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
+  if (m) return `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`;
+  m = raw.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/); // 日まで明記された場合のみ（月のみは不採用）
+  if (m) return `${m[1]}-${String(parseInt(m[2])).padStart(2, '0')}-${String(parseInt(m[3])).padStart(2, '0')}`;
+  return undefined;
+}
+
+// ──────────────────────────────────────
 // 補助率 解析 (「1/3」「33%」「最大 50%」等)
 // ──────────────────────────────────────
 
@@ -185,6 +201,8 @@ export interface PrecomputedSubsidy {
   upperLimit_raw: string;
   targetEntity_raw: string;
   applicationStart: string;
+  /** 開始日の機械可読 ISO（精密日付のみ・公募予定 auto-derive 用・L-EIC-027拡張） */
+  start_iso?: string;
   deadline_raw: string;
   deadline_iso?: string;
   is_rolling: boolean;
@@ -256,6 +274,7 @@ async function main(): Promise<void> {
       upperLimit_raw: s.upperLimit || '',
       targetEntity_raw: s.targetEntity || '',
       applicationStart: s.applicationStart || '',
+      start_iso: parseStartIso(s.applicationStart || ''),
       deadline_raw: s.deadline || '',
       deadline_iso: deadline.deadline_iso,
       is_rolling: deadline.is_rolling,
