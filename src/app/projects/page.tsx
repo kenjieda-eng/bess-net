@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getAllProjects, type Project } from '@/lib/microcms';
+import { EXCLUDED_PROJECT_SLUGS } from '@/lib/projects-excluded';
 import { siteConfig } from '@/lib/site-config';
 
 const siteContactUrl = siteConfig.organization.contactUrl;
@@ -93,6 +94,8 @@ export default async function ProjectsListPage() {
   } catch {
     // API未設定時は空表示
   }
+  // 非プロジェクト（ニュース性）8件を一覧/件数/集計から除外（非破壊・noindex は詳細ページ側）
+  items = items.filter((p) => !EXCLUDED_PROJECT_SLUGS.has(p.slug));
 
   // 「調査中」(0 値) を除いた信頼可能な合計のみ集計
   const totalMW = sumReliable(items, 'outputMw');

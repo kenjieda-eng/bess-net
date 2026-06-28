@@ -9,6 +9,7 @@ import {
   getLinkableTargets,
 } from '@/lib/microcms';
 import { linkifyHTML } from '@/lib/linkify';
+import { isExcludedProject } from '@/lib/projects-excluded';
 import {
   getRelatedEntities,
   buildMentions,
@@ -46,6 +47,8 @@ export async function generateMetadata({
     title: item.name,
     description: `${item.prefecture ?? ''}${item.city || ''}に所在する系統用蓄電池プロジェクト「${item.name}」の概要。出力${mwStr === '調査中' ? '調査中' : `${mwStr}MW`}・容量${mwhStr === '調査中' ? '調査中' : `${mwhStr}MWh`}。`,
     alternates: { canonical: `https://bess-net.jp/projects/${params.slug}` },
+    // 非プロジェクト（ニュース性）8件は noindex（ページは残す＝404にしない・非破壊）
+    ...(isExcludedProject(params.slug) ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
