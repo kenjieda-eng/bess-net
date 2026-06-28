@@ -38,6 +38,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import legacyAllowlist from '@/data/legacy-news-allowlist.json';
 import { GLOSSARY_301 } from '@/lib/glossary-301';
+import { PROJECTS_301 } from '@/lib/projects-301';
 
 const LEGACY = new Set(legacyAllowlist as string[]);
 
@@ -47,6 +48,11 @@ export function middleware(req: NextRequest) {
   // Glossary 重複統合 301
   if (pathname in GLOSSARY_301) {
     return NextResponse.redirect(new URL(GLOSSARY_301[pathname], req.url), { status: 301 });
+  }
+
+  // Projects 重複統合 301（旧slug → canonical・2026-06-28）
+  if (pathname in PROJECTS_301) {
+    return NextResponse.redirect(new URL(PROJECTS_301[pathname], req.url), { status: 301 });
   }
 
   // /news/news-2026-{数字}-{...} パターンのみ対象
@@ -62,5 +68,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/news/:slug*', '/glossary/:slug*'],
+  matcher: ['/news/:slug*', '/glossary/:slug*', '/projects/:slug*'],
 };
