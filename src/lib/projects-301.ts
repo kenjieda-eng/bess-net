@@ -27,6 +27,8 @@ export const PROJECTS_301: Record<string, string> = {
   '/projects/gunma-ota':               '/projects/ota-bess',
   // 5 石川県加賀市2MW/4MWh蓄電所
   '/projects/pr-2mw-4mwh-bess-3':      '/projects/pr-2mw-4mwh-bess-2',
+  // 6 武雄蓄電所（2026-06-29 stage6・みずほリースPR ⇔ 4社canonical jfe-takeo）
+  '/projects/pr-co85927-bess':         '/projects/jfe-takeo',
 };
 
 /** 301元の bare slug（一覧除外・noindex 判定の補助。完全一致） */
