@@ -6,7 +6,8 @@
  * - 既存 getLinkableTargets() の operators/projects target を流用してマッチング
  *   （NG_TERMS / 最小文字数 / 株式会社 等の suffix-strip alias がそのまま効く）
  * - 関連 explainer は別途キャッシュ
- * - 関連 news は microCMS の `q` パラメータで全文検索
+ * - 関連 news は build 時事前計算マップ（generated/related-news-map.json）から読込
+ *   （2026-06-30・鉄則#98：旧 searchRelatedNews の microCMS `q` 全文検索を撤去）
  *
  * 戻り値はカード表示用に最小限のフィールドのみ。
  */
@@ -23,6 +24,7 @@ import {
   type SubstationGeoPoint,
 } from './microcms';
 import { findWithinRadius } from './geo-distance';
+import relatedNewsMap from './generated/related-news-map.json';
 
 /* ----------------------------- フィルタ条件 ----------------------------- */
 // 依頼W.5/W.6 の linkify と同じ NG_TERMS / 最小文字数を使う（同期維持）
@@ -146,6 +148,9 @@ export type RelatedNewsItem = {
   publishedAt?: string;
   category?: string[];
 };
+
+/** build 時事前計算した関連newsマップ（"project:<slug>" / "pref:<base>" → NewsRef[]）。runtime q を排除（鉄則#98） */
+const RELATED_NEWS_MAP = relatedNewsMap as Record<string, RelatedNewsItem[]>;
 
 export type RelatedExplainerItem = {
   id: string;
@@ -462,38 +467,10 @@ async function findRelatedExplainers(
  * （低精度の q 全文検索結果を出さない＝関連カードの品質維持）。
  */
 
-/** microCMS の q 検索で関連 news を取得 */
-async function searchRelatedNews(
-  query: string,
-  excludeSlug: string,
-  limit: number
-): Promise<RelatedNewsItem[]> {
-  const q = (query || '').trim();
-  if (!q || limit <= 0) return [];
-  try {
-    const data = await client.getList<News>({
-      endpoint: 'news',
-      queries: {
-        q,
-        limit: limit + 5,
-        orders: '-publishedAt',
-        fields: 'id,slug,title,publishedAt,category',
-      },
-    });
-    return data.contents
-      .filter((n) => n.slug !== excludeSlug)
-      .slice(0, limit)
-      .map((n) => ({
-        id: n.id,
-        slug: n.slug,
-        title: n.title,
-        publishedAt: n.publishedAt,
-        category: n.category,
-      }));
-  } catch {
-    return [];
-  }
-}
+/**
+ * 関連 news は build 時事前計算（generated/related-news-map.json）に統一（2026-06-30・鉄則#98）。
+ * 旧 searchRelatedNews（news へ q 全文検索）は撤去。getRelatedEntities が RELATED_NEWS_MAP を参照する。
+ */
 
 /* ----------------------------- 公開 API ----------------------------- */
 
@@ -562,15 +539,14 @@ export async function getRelatedEntities(
       )
     : Promise.resolve([] as Array<{ slug: string; name: string }>);
 
-  // news 検索クエリは baseName 優先（operator/project 名）、なければ title
-  const newsQuery = (opts.baseName || opts.baseTitle || '').trim();
-  const newsP = want.has('news')
-    ? searchRelatedNews(
-        newsQuery,
-        opts.baseType === 'news' ? opts.baseSlug : '',
-        lim.news
-      )
-    : Promise.resolve([] as RelatedNewsItem[]);
+  // 関連 news は build 時事前計算マップから読込（鉄則#98・2026-06-30）。
+  // 旧 searchRelatedNews（news への q 全文検索）は撤去。キーは "<baseType>:<baseSlug>"。
+  // 現状 wantTypes に 'news' を持つのは projects/[slug] のみ（"project:<slug>" を参照）。
+  const newsP: Promise<RelatedNewsItem[]> = Promise.resolve(
+    want.has('news')
+      ? (RELATED_NEWS_MAP[`${opts.baseType}:${opts.baseSlug}`] ?? []).slice(0, lim.news)
+      : [],
+  );
 
   const expP = want.has('explainer')
     ? findRelatedExplainers(

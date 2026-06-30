@@ -4,6 +4,13 @@
 import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
 import { MICROCMS_MAX_OFFSET, MICROCMS_PAGE_LIMIT } from './constants';
 import { GLOSSARY_301_SOURCE_SLUGS } from './glossary-301';
+import relatedNewsMap from './generated/related-news-map.json';
+
+/** build 時事前計算した関連newsマップ（"pref:<base>" / "project:<slug>" → newsRef[]）。runtime q を排除（鉄則#98） */
+const RELATED_NEWS_MAP = relatedNewsMap as Record<
+  string,
+  Array<{ id: string; slug: string; title: string; publishedAt: string; category: string[] }>
+>;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is not defined');
@@ -1600,26 +1607,21 @@ export const searchSubstationsByName = async (
   return all;
 };
 
-/** 関連ニュースの自動マッチ：本文に変電所名 or 都道府県を含むニュース上位 N 件 */
+/**
+ * 関連ニュース：build 時事前計算マップ（related-news-map.json）の都道府県キーから返す。
+ * 旧実装は q=都道府県 で news 全文検索していたが、runtime microCMS q を撤去（2026-06-30・鉄則#98）。
+ * query は grid/[slug] が渡す sub.prefecture（例「群馬県」）。事前計算側と同じ base 形に正規化して引く。
+ */
 export const getRelatedNewsForSubstation = async (
   query: string,
   limit = 5
 ): Promise<News[]> => {
-  if (!query) return [];
-  try {
-    const data = await client.getList<News>({
-      endpoint: 'news',
-      queries: {
-        q: query,
-        limit,
-        orders: '-publishedAt',
-        fields: 'id,slug,title,lead,category,publishedAt',
-      },
-    });
-    return data.contents;
-  } catch {
-    return [];
-  }
+  const q = (query || '').trim();
+  if (!q) return [];
+  const base = q === '北海道' ? '北海道' : q.replace(/(都|府|県)$/, '');
+  const refs = (RELATED_NEWS_MAP[`pref:${base}`] ?? []).slice(0, limit);
+  // refs は表示に必要な最小フィールド（id,slug,title,publishedAt,category）。RelatedNewsList は本5項目のみ参照。
+  return refs as unknown as News[];
 };
 
 /* =================================================================
