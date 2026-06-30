@@ -5,7 +5,7 @@
  * middleware.ts が `/projects/旧` → `/projects/canonical` の 301 に使用。
  *
  * 非破壊: 旧entry は microCMS に残す（middleware が 301 吸収＝404を作らない）。
- * 一覧除外は src/lib/projects-excluded.ts（301元 6 slug を登録）。
+ * 一覧除外は src/lib/projects-excluded.ts（PROJECTS_301_SOURCE_SLUGS を自動 union＝301元 7 slug を登録）。
  * canonical は dry-run でデータ妥当性を確認・空フィールドは情報補完 PATCH 済（cod/status）。
  *
  * 5グループ（projects分析 発見③ / stage-1監査D・ユウ監査 2026-06-28）:
@@ -29,6 +29,8 @@ export const PROJECTS_301: Record<string, string> = {
   '/projects/pr-2mw-4mwh-bess-3':      '/projects/pr-2mw-4mwh-bess-2',
   // 6 武雄蓄電所（2026-06-29 stage6・みずほリースPR ⇔ 4社canonical jfe-takeo）
   '/projects/pr-co85927-bess':         '/projects/jfe-takeo',
+  // 7 ポート群馬太田蓄電所（2026-06-30 stage9・需給調整参入PR183/計画中 ⇔ 稼働中2MW/8MWh canonical pr-co16325-gunma）
+  '/projects/pr-co16325-bess':         '/projects/pr-co16325-gunma',
 };
 
 /** 301元の bare slug（一覧除外・noindex 判定の補助。完全一致） */
