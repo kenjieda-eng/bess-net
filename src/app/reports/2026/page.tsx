@@ -18,6 +18,7 @@ import {
   getAllSubsidies,
   getAllSubstations,
 } from '@/lib/microcms';
+import { isListExcludedProject } from '@/lib/projects-excluded';
 import { GLOBAL_MARKETS, COUNTRY_ORDER } from '@/data/global-markets';
 import { PLAYERS, RELATIONS, CATEGORY_LABELS } from '@/data/industry-map';
 
@@ -40,12 +41,16 @@ const safeFetch = async <T,>(fn: () => Promise<T[]>): Promise<T[]> => {
 };
 
 export default async function Report2026Page() {
-  const [operators, projects, subsidies, substations] = await Promise.all([
+  const [operators, projectsRaw, subsidies, substations] = await Promise.all([
     safeFetch(getAllOperators),
     safeFetch(getAllProjects),
     safeFetch(getAllSubsidies),
     safeFetch(() => getAllSubstations()),
   ]);
+
+  // /projects 表示と同じ除外（非プロジェクト8＋301重複元8）を適用してから集計する。
+  // raw(278)のまま集計すると非PJ混入＋301重複の二重計上で過大計上になる（#1レポート点検・2026-06-30）。
+  const projects = projectsRaw.filter((p) => !isListExcludedProject(p.slug));
 
   // 集計
   const operatorCount = operators.length;
