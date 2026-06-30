@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getSiteInfo, type News } from '@/lib/microcms';
+import { isExcludedInfo } from '@/lib/info-excluded';
 
 export const revalidate = 300; // 5分ごと
 
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
 export default async function InfoListPage() {
   let items: News[] = [];
   try {
-    items = await getSiteInfo();
+    // 無関係PR（パン屋/芸術祭/旧セミナー等）を一覧から除外（非破壊・info-excluded SSOT）
+    items = (await getSiteInfo()).filter((n) => !isExcludedInfo(n.slug));
   } catch {
     // API未設定時は空表示
   }

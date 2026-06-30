@@ -7,6 +7,7 @@ import {
   getNewsBySlug,
   getSiteInfoSlugs,
 } from '@/lib/microcms';
+import { isExcludedInfo } from '@/lib/info-excluded';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 300;
@@ -30,6 +31,8 @@ export async function generateMetadata({
     title: article.title,
     description: article.lead,
     alternates: { canonical: `/info/${params.slug}` },
+    // 無関係PR（info-excluded）は noindex（ページは残置＝404にしない・一覧からは除外）
+    ...(isExcludedInfo(params.slug) ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: article.title,
       description: article.lead,
