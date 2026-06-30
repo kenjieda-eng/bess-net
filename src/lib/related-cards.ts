@@ -454,39 +454,13 @@ async function findRelatedExplainers(
 }
 
 /**
- * 関連 projects の q-search フォールバック（依頼Y.5）
- * baseText から linkable target で 0 件しかマッチしない場合、
- * baseTitle / baseName を q として microCMS で全文検索して projects を取得。
- *
- * 依頼Y.6: 「直近公開 N 件で埋める」deterministic fallback は削除。
- * q-search でも 0 件なら空配列を返し、JSX 側で h3 ごと非表示にする
- * （無関係 project が並ぶ UX ノイズを避ける）。
+ * 関連 projects の q-search フォールバック（旧 searchRelatedProjects・依頼Y.5）は撤去（2026-06-30）。
+ * 旧実装は news/explainer 詳細のレンダリング毎に、linkable 0 件時に projects へ
+ * q 全文検索（?q=記事タイトル&limit=10&fields=id,slug,name）を発行していた。
+ * microCMS から本番トラフィックの照会を受けたため、鉄則#98（重い検索を避けメモリ内照合に統一）に従い廃止。
+ * 関連 projects は findRelatedByLinkable（本文中固有名のメモリ内照合）のみとし、0 件なら非表示にする
+ * （低精度の q 全文検索結果を出さない＝関連カードの品質維持）。
  */
-async function searchRelatedProjects(
-  query: string,
-  excludeSlug: string,
-  limit: number
-): Promise<Array<{ slug: string; name: string }>> {
-  if (limit <= 0) return [];
-  const q = (query || '').trim();
-  if (!q) return [];
-  try {
-    const data = await client.getList<{
-      id: string;
-      slug: string;
-      name: string;
-    }>({
-      endpoint: 'projects',
-      queries: { q, limit: limit + 5, fields: 'id,slug,name' },
-    });
-    return data.contents
-      .filter((p) => p.slug !== excludeSlug)
-      .slice(0, limit)
-      .map((p) => ({ slug: p.slug, name: p.name }));
-  } catch {
-    return [];
-  }
-}
 
 /** microCMS の q 検索で関連 news を取得 */
 async function searchRelatedNews(
@@ -576,28 +550,16 @@ export async function getRelatedEntities(
       )
     : Promise.resolve([] as Array<{ slug: string; name: string }>);
 
+  // 関連 projects は linkable（本文中固有名のメモリ内照合）のみ。
+  // 依頼Y.5 の q-search フォールバックは撤去（2026-06-30・鉄則#98）：
+  // 0 件時に projects へ q 全文検索を発行していたのを廃止し、0 件なら非表示にする。
   const pjsP = want.has('project')
-    ? (async () => {
-        const matched = await findRelatedByLinkable(
-          baseText,
-          'project',
-          opts.baseType === 'project' ? opts.baseSlug : '',
-          lim.project
-        );
-        // 依頼Y.5: linkable で 0 件のとき q-search でフォールバック
-        // 概念解説 (explainer) や news からの project リンクは
-        // 本文で project 名が直接出現することが少ないため、microCMS 全文検索で補強
-        if (matched.length === 0) {
-          const q = (opts.baseTitle || opts.baseName || '').trim();
-          const fallback = await searchRelatedProjects(
-            q,
-            opts.baseType === 'project' ? opts.baseSlug : '',
-            lim.project
-          );
-          return fallback;
-        }
-        return matched;
-      })()
+    ? findRelatedByLinkable(
+        baseText,
+        'project',
+        opts.baseType === 'project' ? opts.baseSlug : '',
+        lim.project
+      )
     : Promise.resolve([] as Array<{ slug: string; name: string }>);
 
   // news 検索クエリは baseName 優先（operator/project 名）、なければ title
