@@ -76,7 +76,7 @@ export default function GlobalHubPage() {
             業界唯一の海外市場ハブ、無料公開・登録不要。
           </p>
           <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 24 }}>
-            ※ 編集部が IEA / BloombergNEF / 各国政府発表 等の公開情報に基づき作成 (2025-2026 時点)。
+            ※ 編集部が IEA / BloombergNEF / SolarPower Europe / 各国政府発表 等の公開情報に基づき作成 (2026年上半期 時点)。
             最新は各種一次情報を参照。
           </p>
 

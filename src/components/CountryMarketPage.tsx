@@ -23,7 +23,7 @@ export default function CountryMarketPage({ countryKey }: { countryKey: CountryK
     author: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
     publisher: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
     datePublished: '2026-05-15',
-    dateModified: '2026-05-15',
+    dateModified: '2026-06-30',
     mainEntityOfPage: `https://bess-net.jp/global/${countryKey}`,
   };
 
@@ -120,7 +120,7 @@ export default function CountryMarketPage({ countryKey }: { countryKey: CountryK
           </section>
 
           <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.7 }}>
-            ※ 編集部が IEA / BloombergNEF / 各国政府発表 等の公開情報に基づき作成 (2025-2026 時点)。
+            ※ 編集部が IEA / BloombergNEF / SolarPower Europe / 各国政府発表 等の公開情報に基づき作成 (2026年上半期 時点)。
             最新は各種一次情報を参照。
           </p>
         </div>
