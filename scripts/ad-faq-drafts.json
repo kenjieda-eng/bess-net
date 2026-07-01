@@ -451,6 +451,60 @@
       "sourceUrl": "https://www.enecho.meti.go.jp/category/others/basic_plan/",
       "relatedGlossary": "energy-basic-plan-7\ncarbon-neutrality-2050",
       "relatedExplainer": ""
+    },
+    {
+      "displayOrder": 13,
+      "category": "制度",
+      "question": "蓄電池・電源産業戦略（2026年6月改定）とは？蓄電所事業への影響は？",
+      "answer": "経済産業省は2022年策定の「蓄電池産業戦略」を2026年6月2日に「蓄電池・電源産業戦略」へ改定しました。3つの目標を見直し、(1) 国内製造基盤150GWh/年の確立時期を「2030年」から「2030年代半ば」に延期、(2) 日本企業のグローバル蓄電池関連売上高を2025年から2035年に3倍へ、(3) 全固体電池を2030年頃に本格実用化、としています。延期の背景は中国勢のEV・車載向け増産と価格競争、米欧のEV政策変更による需要見通しの不透明化。国内基盤拡充・上流資源確保・次世代技術開発など7つの政策の柱で官民一体の取組を進めます。系統用蓄電池は国内製造基盤・サプライチェーン強靱化の主要な需要先として位置づけられます。",
+      "sourceUrl": "https://www.meti.go.jp/press/2026/06/20260602001/20260602001.html",
+      "relatedGlossary": "grid-scale-bess",
+      "relatedExplainer": "national-battery-supply-plan"
+    },
+    {
+      "displayOrder": 12,
+      "category": "制度",
+      "question": "長期脱炭素電源オークション（LTDC）第3回の結果は？蓄電池の落札は？",
+      "answer": "OCCTOは2026年5月13日に第3回長期脱炭素電源オークション（応札年度2025年度、2026年1月応札）の約定結果を公表しました。落札は32件・約730万kWで、内訳は脱炭素電源 約426万kW＋LNG専焼火力 約304万kW。蓄電池（リチウムイオン蓄電池・揚水代替）には募集枠40万kWの4倍超の応札が集中し、約81.9万kWが落札されました。脱炭素電源の約定総額は約3,503億円/年（前年比 約2.2倍）に拡大。系統用蓄電池の人気が続く一方、報道では今後の回で蓄電池の募集枠が縮小される方向も示されており、応札戦略の見直しが論点です。最新の募集要綱は OCCTO・資源エネルギー庁の公表資料を参照。",
+      "sourceUrl": "https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/2025_boshuyoukou_long.html",
+      "relatedGlossary": "ltdc-detail",
+      "relatedExplainer": "ltdc-3rd-auction-ccs-ldes"
+    },
+    {
+      "displayOrder": 11,
+      "category": "制度",
+      "question": "GX-ETS（排出量取引制度）は蓄電所事業にどう影響しますか？",
+      "answer": "GX-ETSは、GX推進法に基づく日本の排出量取引制度です。2023年度からの試行を経て、2026年度から排出枠の遵守を求める本格フェーズへ移行し（対象は年間CO2排出量が一定規模以上の大規模排出事業者）、2033年度からは発電部門に段階的な有償オークションを導入する方針です。蓄電所事業への影響は主に3つ：(1) 炭素価格が火力の限界費用を押し上げ、卸電力市場のボラティリティが拡大して蓄電池の裁定取引収益が増える可能性、(2) GXフューチャー・リーグ会員要件と補助金がリンクし、脱炭素コミットが事業要件化、(3) 蓄電池の脱炭素貢献（再エネ統合）が企業の排出削減・カーボンプライシング対応の手段として評価される、という経路です。詳細は本サイト /explainer/eu-ets-and-gx-ets-for-bess で解説。",
+      "sourceUrl": "https://www.meti.go.jp/policy/energy_environment/global_warming/GX-ETS/",
+      "relatedGlossary": "",
+      "relatedExplainer": "eu-ets-and-gx-ets-for-bess"
+    },
+    {
+      "displayOrder": 12,
+      "category": "補助金",
+      "question": "GXフューチャー・リーグとは？補助金の応募要件になるって本当ですか？",
+      "answer": "GXフューチャー・リーグは、GX（グリーントランスフォーメーション）に取り組む企業の枠組みで、個社単位で①2030年度の直接・間接排出量目標、②自社のGX需要創出に係る2つ以上のコミットメントを提出した企業が会員となります。令和7年度補正予算のGX関連補助金（省エネ・非化石転換補助金〔設備単位型〕や、大規模業務産業用蓄電システム導入支援等）では、会員であることが応募要件として求められます（中小企業は対象外の場合あり）。系統用蓄電池の大規模案件で補助金活用を狙う事業者は、2026年度以降のGXフューチャー・リーグへの参加と排出量実績の報告が前提になり得るため、早期の準備が重要です。最新の要件はSII公募要領とGXフューチャー・リーグ公式HPを必ず確認してください。",
+      "sourceUrl": "https://sii.or.jp/chikudenchi07r/",
+      "relatedGlossary": "grid-scale-bess-subsidy",
+      "relatedExplainer": "subsidies-guide"
+    },
+    {
+      "displayOrder": 11,
+      "category": "補助金",
+      "question": "令和7年度補正予算の系統用蓄電池向け補助金には何がありますか？",
+      "answer": "令和7年度補正予算では、SII（環境共創イニシアチブ）が複数の蓄電池関連補助事業を実施します。代表例は (1) 系統用蓄電システム等導入支援事業（系統用蓄電池・水電解装置）、(2) 再生可能エネルギー導入拡大・系統用蓄電池等電力貯蔵システム導入支援事業（大規模業務産業用蓄電システム等を含む）、(3) 省エネ・非化石転換補助金〔設備単位型／GX設備単位型〕。補助率・上限は事業ごとに異なり、大規模案件ではGXフューチャー・リーグ会員要件や排出量実績報告が求められる場合があります。設備単位型の1次公募は2026年4月27日に終了し、2次公募はSIIのHPで順次公表予定。公募要領を必ず確認し、本サイトの /subsidies カレンダーで時系列を追跡してください。",
+      "sourceUrl": "https://sii.or.jp/chikudenchi07r/",
+      "relatedGlossary": "grid-scale-bess-subsidy",
+      "relatedExplainer": "subsidies-guide"
+    },
+    {
+      "displayOrder": 11,
+      "category": "その他",
+      "question": "米国のFEOC規制とは？日本の蓄電池企業に影響はありますか？",
+      "answer": "FEOC（Foreign Entity of Concern、懸念外国主体）規制は、米国の2025年成立法（OBBBA）に基づき、税額控除（ITC 48E・製造控除45X）の対象から中国系など特定外国主体の関与を排除する仕組みです。財務省・IRSは2026年2月12日にNotice 2026-15で運用指針を公表。2026年着工分から「資材コスト比率（MACR）」55%以上（2030年に75%まで段階的に上昇）を満たす必要があり、中国製セル・部材への依存が控除適格性を損ないます。蓄電池ITC（48E）は2033年着工分まで存続するため、米国市場は引き続き拡大しますが、サプライチェーンの非中国化が進行。日本企業（GSユアサ等の国産セルや非中国系メーカー）にとっては、米国向け供給の競争条件が改善する追い風になり得ます。詳細は本サイト /explainer/global-bess-trends-2026 を参照。",
+      "sourceUrl": "https://www.morganlewis.com/pubs/2026/03/how-feoc-rules-are-reshaping-energy-storage-tax-credit-eligibility",
+      "relatedGlossary": "",
+      "relatedExplainer": "usa-itc-storage\nglobal-bess-trends-2026"
     }
   ]
 }
