@@ -1218,7 +1218,7 @@ export const getAllLinkSlugs = async (): Promise<{ slug: string }[]> => {
 };
 
 /* =================================================================
-   Phase 1: 系統空き容量DB (substations) — 1,449件
+   系統空き容量DB (substations) — 現在10社8,225件（東京電力PG含む・2026-06）
    - microCMS フィールドは 20字制限のショートキー (cap_*, op_*, oc_*)
    - select 系は配列 (operator/area/voltage_class/oc_possibility/data_source_format)
    - relation は空配列で初期投入済み

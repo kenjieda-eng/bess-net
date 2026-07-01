@@ -186,12 +186,12 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
             から一元化して掲載しています。
           </p>
 
-          {/* 東京エリア: 公開停止・再開の経緯ページへの導線（404を作らない・経緯保持）*/}
+          {/* 東京エリア: 収録済（表データ）。公開停止・再開の経緯は記録ページへ（404を作らない・経緯保持）*/}
           {meta.slug === 'tokyo' && (
             <p className="grid-source-note" style={{ margin: '4px 0 16px' }}>
-              📋 東京電力PGの公開停止（2026年2月〜6月1日）・再開（6月2日）の経緯は{' '}
+              📋 東京電力PG（13都県＋基幹系）は2026年6月に収録済（表データ。地図・緯度経度は後日対応）。公開停止（2026年2月〜6月1日）・再開（6月2日）の経緯は{' '}
               <Link href="/grid/tokyo/status" className="grid-area-link">
-                公開状況の解説ページ
+                記録ページ
               </Link>
               {' '}をご覧ください。
             </p>

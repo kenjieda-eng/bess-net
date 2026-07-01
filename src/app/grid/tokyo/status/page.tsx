@@ -10,8 +10,9 @@ import { siteConfig } from '@/lib/site-config';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
+  // layout titleTemplate '%s | 蓄電所ネット' が自動付与（落とし穴#88）＝ここで社名を重ねない
   title:
-    '東京電力PG 系統情報の公開停止・再開の経緯｜系統空き容量データベース - 蓄電所ネット',
+    '東京電力PG 系統情報の公開停止・再開の経緯｜系統空き容量データベース',
   description:
     '東京電力パワーグリッド管内の系統空き容量・予想潮流情報は2026年2月2日に公開停止、2026年6月2日に公開再開。蓄電所ネットは2026年6月に10社目として収録（1,718件）。停止〜再開の経緯と事前相談窓口を整理。',
   alternates: { canonical: '/grid/tokyo/status' },

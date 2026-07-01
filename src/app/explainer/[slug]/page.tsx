@@ -189,7 +189,7 @@ export default async function ExplainerDetailPage({
             <section className="cta-grid-section">
               <h3>実データで確認する</h3>
               <p>
-                本記事で解説した内容について、東北電力NW・北陸電力送配電・四国電力送配電の3社・1,449変電所の最新公表データを蓄電所ネットで一元化しています。
+                本記事で解説した内容について、全国10社・8,225変電所（関東含む）の最新公表データを蓄電所ネットで一元化しています。
               </p>
               <Link href="/grid" className="cta-grid-button">
                 系統空き容量データベースを見る →

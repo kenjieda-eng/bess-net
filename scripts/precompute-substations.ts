@@ -5,7 +5,7 @@
  * 依頼AR 事前計算スクリプト (落とし穴 #98 / 鉄則 #3 完全準拠)
  *
  * 処理:
- *   1. microCMS から substations 全 6,507 件取得 (build 中 1 回のみ)
+ *   1. microCMS から substations 全件取得（現在10社8,225件・build 中 1 回のみ）
  *   2. 都道府県別 47 JSON に分割
  *   3. 各 JSON は軽量化 (距離計算 + UI 表示に必要なフィールドのみ)
  *   4. index.json で全体メタ + 件数集計
