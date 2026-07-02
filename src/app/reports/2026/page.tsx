@@ -1,10 +1,10 @@
 /**
- * /reports/2026 — 業界レポート2026 (プレビュー版)
+ * /reports/2026 — 業界レポート2026（本編・全10章）
  *
  * 設計:
- *   - Server Component、microCMS 集約から自動集計
- *   - 鉄則 #2 準拠: getAll* 各1回 (合計 ~4 endpoints)、ISR 1時間
- *   - 7/5 完全公開予定、現在はプレビュー版
+ *   - Server Component、microCMS 集約から自動集計（冒頭の主要指標はライブ）
+ *   - 鉄則 #2 準拠: getAll* 各1回 (合計 ~4 endpoints)、ISR 1時間、SSR維持(#103)
+ *   - 本文10章は Report2026Body（doc2/3 本文＋doc4 確定値・2026-07-02）。7/5 本編公開。
  */
 
 import Link from 'next/link';
@@ -21,16 +21,17 @@ import {
 import { isListExcludedProject } from '@/lib/projects-excluded';
 import { GLOBAL_MARKETS, COUNTRY_ORDER } from '@/data/global-markets';
 import { PLAYERS, RELATIONS, CATEGORY_LABELS } from '@/data/industry-map';
+import Report2026Body from '@/components/Report2026Body';
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: '業界レポート2026 (蓄電所事業 年次レポート、プレビュー)',
-  description: '蓄電所事業の年次レポート2026。市場規模・政策・主要プレイヤー・系統データ・火災事例・海外比較を業界唯一機能の蓄積データから編集統合。プレビュー版。',
+  title: '業界レポート2026（蓄電所事業 年次レポート・本編）',
+  description: '蓄電所事業の年次レポート2026（本編）。市場概況・政策・主要プレイヤー・系統データ・補助金・火災事例・海外比較・展望を全10章に編集統合。数値は当サイトDB登録分（262件・8,225変電所等）＋公的一次情報。',
   alternates: { canonical: '/reports/2026' },
   openGraph: {
-    title: '業界レポート2026 (蓄電所事業 年次レポート)',
-    description: '業界唯一機能から編集統合した年次レポート (プレビュー)',
+    title: '業界レポート2026（蓄電所事業 年次レポート・本編）',
+    description: '業界唯一機能の蓄積データを全10章に編集統合した年次レポート（本編）。',
     type: 'article',
     images: ['/og-image.png'],
   },
@@ -83,12 +84,12 @@ export default async function Report2026Page() {
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: '業界レポート2026 (蓄電所事業 年次レポート、プレビュー)',
-    description: '蓄電所事業の年次レポート2026。市場規模・政策・主要プレイヤー・系統データ・火災事例・海外比較を業界唯一機能の蓄積データから編集統合',
+    headline: '業界レポート2026（蓄電所事業 年次レポート・本編）',
+    description: '蓄電所事業の年次レポート2026（本編・全10章）。市場概況・政策・主要プレイヤー・系統データ・補助金・火災事例・海外比較・展望を業界唯一機能の蓄積データと公的一次情報から編集統合',
     author: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
     publisher: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
     datePublished: '2026-05-15',
-    dateModified: '2026-05-15',
+    dateModified: '2026-07-02',
     mainEntityOfPage: 'https://bess-net.jp/reports/2026',
   };
   const breadcrumbJsonLd = {
@@ -111,18 +112,18 @@ export default async function Report2026Page() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/reports">レポート</Link> / 業界レポート2026
           </p>
-          <div className="section-label" style={{ color: '#c70', fontWeight: 700 }}>★ プレビュー版 · 2026年7月本編公開予定</div>
-          <h1 className="section-title">業界レポート2026 (蓄電所事業 年次レポート)</h1>
+          <div className="section-label" style={{ color: '#0a7', fontWeight: 700 }}>業界レポート2026（本編）· 2026年7月公開</div>
+          <h1 className="section-title">業界レポート2026（蓄電所事業 年次レポート）</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>
-            業界唯一機能 17機能で蓄積したデータを編集統合した、蓄電所事業の<strong>年次レポート</strong>。
-            市場規模 × 政策 × 主要プレイヤー × 系統 × 火災・トラブル × 海外比較 を1冊に集約します。
+            業界唯一機能で蓄積したデータを編集統合した、蓄電所事業の<strong>年次レポート（本編・全10章）</strong>。
+            市場概況 × 政策・制度 × 主要プレイヤー × 系統データ × 補助金 × 火災・トラブル × 海外比較 × 展望 を1冊に集約します。
             <br />
-            本ページはプレビュー版 (主要数値の即時集計)。本編は <strong>2026年7月</strong>公開予定。
+            冒頭の主要指標は当サイトDBから<strong>リアルタイム集計</strong>（日々自動更新）。本文10章は下段に掲載。
           </p>
 
           {/* TOC */}
           <section style={{ marginBottom: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>目次 (本編予定)</h2>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>目次（本編 全10章）</h2>
             <ol style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 24, margin: 0 }}>
               <li>序章: 蓄電所事業 2025-2026 年の見取り図</li>
               <li>市場概況: 国内累積導入量、年次推移、地域偏在</li>
@@ -257,13 +258,29 @@ export default async function Report2026Page() {
             </table>
           </section>
 
+          {/* 本編 全10章（doc2/3 本文 ＋ doc4 確定値・2026-07-02）。集計値はライブ props で動的維持 */}
+          <Report2026Body
+            projectCount={projectCount}
+            totalMW={Math.round(totalMW)}
+            totalMWh={Math.round(totalMWh)}
+            operatorCount={operatorCount}
+            subsidyCount={subsidyCount}
+            substationCount={substationCount}
+            statusMap={projectsByStatus}
+            topPrefs={topPrefs}
+            playersCount={PLAYERS.length}
+            relationsCount={RELATIONS.length}
+            categoryCount={Object.keys(CATEGORY_LABELS).length}
+            globalTotal2025={globalTotal2025}
+            globalTotal2030={globalTotal2030}
+          />
+
           {/* 注意書き */}
-          <section style={{ marginBottom: 32, padding: 16, background: 'rgba(255,200,0,0.08)', border: '1px solid #c70', borderRadius: 6 }}>
+          <section style={{ marginTop: 40, marginBottom: 32, padding: 16, background: 'rgba(255,200,0,0.08)', border: '1px solid #c70', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>注意事項</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.7, paddingLeft: 20, margin: 0 }}>
-              <li>本ページは<strong>プレビュー版</strong>で、主要数値の即時集計を表示。</li>
-              <li>本編は <strong>2026年7月</strong>公開予定。執筆部分・図表・分析コメントを追加。</li>
-              <li>数値は当サイト DB の登録分。公開情報に基づくため、国内全体の実数とは異なります。</li>
+              <li>冒頭の主要指標は当サイトDBからのリアルタイム集計で、日々自動更新されます。</li>
+              <li>数値は当サイト DB の登録分（公開情報ベース）。国内全体の実数とは異なります。全国推計・将来予測は出所を明示した参考値です。</li>
               <li>引用・転載時は当サイト名 (蓄電所ネット / bess-net.jp) を明記してください。</li>
             </ul>
           </section>
