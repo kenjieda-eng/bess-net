@@ -1,6 +1,11 @@
 import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site-config';
 import {
+  NEWS_HUB_CATEGORIES,
+  newsCountByCategory,
+  newsYearList,
+} from '@/lib/news-utils';
+import {
   getAllExplainer,
   getAllGlossary,
   getAllSubsidies,
@@ -292,6 +297,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
+  // カテゴリ別・年別 SSRハブ（/news/category/[category], /news/archive/[year]）
+  // 件数>0 のみ収録。非ASCIIカテゴリは encodeURIComponent（sitemap の URL は実 URL）。
+  const newsCatCounts = newsCountByCategory(news);
+  const newsCategoryUrls: MetadataRoute.Sitemap = NEWS_HUB_CATEGORIES.filter(
+    (c) => (newsCatCounts[c] || 0) > 0
+  ).map((c) => ({
+    url: `${siteConfig.url}/news/category/${encodeURIComponent(c)}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+  const newsYearUrls: MetadataRoute.Sitemap = newsYearList(news).map((y) => ({
+    url: `${siteConfig.url}/news/archive/${y.year}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }));
   const infoUrls: MetadataRoute.Sitemap = info.map((n) => ({
     url: `${siteConfig.url}/info/${n.slug}`,
     lastModified: new Date(n.updatedAt),
@@ -326,6 +348,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...staticUrls,
+    ...newsCategoryUrls,
+    ...newsYearUrls,
     ...newsUrls,
     ...infoUrls,
     ...explainerUrls,

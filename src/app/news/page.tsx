@@ -5,8 +5,14 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getIndustryNews } from '@/lib/microcms';
+import {
+  NEWS_HUB_CATEGORIES,
+  newsCountByCategory,
+  newsYearList,
+} from '@/lib/news-utils';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import NewsArchiveNav from '@/components/NewsArchiveNav';
 import NewsBrowser from './NewsBrowser';
 
 export const revalidate = 300;
@@ -20,6 +26,13 @@ export const metadata: Metadata = {
 
 export default async function NewsListPage() {
   const items = await getIndustryNews();
+
+  // カテゴリ別・年別 SSRハブへのクロスリンク導線（件数>0 のみ）
+  const catCounts = newsCountByCategory(items);
+  const archiveCategories = NEWS_HUB_CATEGORIES.filter(
+    (c) => (catCounts[c] || 0) > 0
+  ).map((c) => ({ name: c, count: catCounts[c] || 0 }));
+  const archiveYears = newsYearList(items);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -54,7 +67,13 @@ export default async function NewsListPage() {
               <p>ニュース記事はまだ準備中です。</p>
             </div>
           ) : (
-            <NewsBrowser items={items} />
+            <>
+              <NewsArchiveNav
+                categories={archiveCategories}
+                years={archiveYears}
+              />
+              <NewsBrowser items={items} />
+            </>
           )}
 
           <p className="back-link">

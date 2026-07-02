@@ -1702,6 +1702,99 @@
   color: white;
 }
 
+/* ==== ニュース アーカイブ導線 / カテゴリ・年 SSRハブ ==== */
+.news-archive-nav {
+  margin: 24px 0 28px;
+  padding: 16px 18px;
+  background: var(--color-bg-soft, #f8fafc);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.news-archive-nav-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+.news-archive-nav-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-right: 2px;
+  white-space: nowrap;
+}
+.news-hub-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: white;
+  color: var(--color-navy);
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.news-hub-chip:hover {
+  background: var(--color-navy);
+  color: white;
+  border-color: var(--color-navy);
+}
+.news-hub-chip.is-current {
+  background: var(--color-navy);
+  color: white;
+  border-color: var(--color-navy);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+/* ハブの残り記事（折りたたみ・全<a>はSSR HTMLに含まれる＝SEO維持） */
+.news-hub-more {
+  margin-top: 24px;
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  padding: 0 16px;
+  background: white;
+}
+.news-hub-more-summary {
+  cursor: pointer;
+  padding: 14px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+.news-hub-rest {
+  list-style: none;
+  padding: 0 0 10px;
+  margin: 0;
+}
+.news-hub-rest-item {
+  border-top: 1px solid var(--color-line);
+}
+.news-hub-rest-link {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 9px 4px;
+  text-decoration: none;
+  color: var(--color-navy);
+}
+.news-hub-rest-link:hover {
+  color: var(--color-accent);
+}
+.news-hub-rest-date {
+  flex: 0 0 auto;
+  font-size: 12px;
+  color: var(--color-text-muted, #64748b);
+  font-variant-numeric: tabular-nums;
+}
+.news-hub-rest-title {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 /* バッジ追加色 (Tailwind 互換) */
 .bg-teal-50    { background-color: #F0FDFA; }
 .text-teal-700 { color: #0F766E; }

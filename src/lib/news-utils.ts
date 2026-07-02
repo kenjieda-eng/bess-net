@@ -18,6 +18,13 @@ export const NEWS_CATEGORY_ORDER = [
   '地域自治体',
 ];
 
+/**
+ * SSRハブ（/news/category/[category]）生成対象カテゴリの候補。
+ * NEWS_CATEGORY_ORDER から「すべて」を除いた実カテゴリ 12種。
+ * 実際のハブ生成・sitemap 収録は「件数>0」のカテゴリのみ（例: 事故/人事 が0本なら非生成）。
+ */
+export const NEWS_HUB_CATEGORIES = NEWS_CATEGORY_ORDER.filter((c) => c !== 'すべて');
+
 /** カテゴリ別バッジ色 */
 export const NEWS_CATEGORY_COLOR: Record<string, string> = {
   連系: 'bg-blue-50 text-blue-700',
