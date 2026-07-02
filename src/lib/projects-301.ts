@@ -5,7 +5,7 @@
  * middleware.ts が `/projects/旧` → `/projects/canonical` の 301 に使用。
  *
  * 非破壊: 旧entry は microCMS に残す（middleware が 301 吸収＝404を作らない）。
- * 一覧除外は src/lib/projects-excluded.ts（PROJECTS_301_SOURCE_SLUGS を自動 union＝301元 8 slug を登録）。
+ * 一覧除外は src/lib/projects-excluded.ts（PROJECTS_301_SOURCE_SLUGS を自動 union＝301元 10 slug を登録）。
  * canonical は dry-run でデータ妥当性を確認・空フィールドは情報補完 PATCH 済（cod/status）。
  *
  * 5グループ（projects分析 発見③ / stage-1監査D・ユウ監査 2026-06-28）:
@@ -33,6 +33,9 @@ export const PROJECTS_301: Record<string, string> = {
   '/projects/pr-co16325-bess':         '/projects/pr-co16325-gunma',
   // 8 オリンピア太田・伊勢崎蓄電所（2026-07-01・PowerX PR/14.8MWh ⇔ operator=オリンピア正・slug綺麗 canonical olympia-ota-isesaki）
   '/projects/pr-co109041-gunma-148mwh': '/projects/olympia-ota-isesaki',
+  // 9-10 日本蓄電池 PR-import 重複（2026-07-02・容量補完①）: raw「日本蓄電池 [県][市]」0/0 stub ⇔ curated NC{市}{地区}蓄電所 8.146MWh
+  '/projects/pr-co161802-fukushima-2': '/projects/nc-shirakawa-omotegou', // 福島県白河市
+  '/projects/pr-co161802-yamaguchi-2': '/projects/nc-shunan-yuno',        // 山口県周南市
 };
 
 /** 301元の bare slug（一覧除外・noindex 判定の補助。完全一致） */
