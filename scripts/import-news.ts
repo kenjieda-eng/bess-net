@@ -82,6 +82,12 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'taoke-wide-area-recycling-certification': '制度',   // 事業者動向: 環境大臣広域認定
   // 2026-06 追加: Eku 長野原は協業→開発計画で同じだが slug override で明示
   'eku-energy-naganohara-bess-30mw-2026-05': '開発計画', // 群馬県企業局と土地売買契約、2029年運開
+  // 2026-07 月次（前月6月配信5件・手順3 マッピング）
+  'itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06': '開発計画', // 筑前町67MW着工
+  'tepco-daiwa-house-bess-jv-1gw-2026-06': '開発計画',                              // 東電×大和ハウス業務提携
+  'nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06': '連系',                    // NC口春 受電開始
+  'nippon-chikudenchi-takayama-disaster-agreement-2026-06': '地域自治体',           // 高山市 防災協定
+  're100-denryoku-will-aggregation-3sites-2026-06': '連系',                        // RE100×ウィル アグリ
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
