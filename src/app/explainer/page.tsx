@@ -6,8 +6,13 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllExplainer } from '@/lib/microcms';
+import {
+  EXPLAINER_HUB_GROUPS,
+  countByGroupUnion,
+} from '@/lib/explainer-utils';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import ExplainerCategoryNav from '@/components/ExplainerCategoryNav';
 import ExplainerBrowser from './ExplainerBrowser';
 
 export const revalidate = 300; // 5分ごとに再生成
@@ -21,6 +26,12 @@ export const metadata: Metadata = {
 
 export default async function ExplainerListPage() {
   const articles = await getAllExplainer();
+
+  // カテゴリ別SSRハブへのクロスリンク（件数>0のみ・クローラが辿れる実<a>。client filterは維持）
+  const hubCounts = countByGroupUnion(articles);
+  const hubGroups = EXPLAINER_HUB_GROUPS.filter(
+    (g) => (hubCounts[g] || 0) > 0
+  ).map((g) => ({ name: g, count: hubCounts[g] || 0 }));
 
   // 構造化データ：CollectionPage + 内包するArticleの一覧
   const jsonLd = {
@@ -54,7 +65,10 @@ export default async function ExplainerListPage() {
           {articles.length === 0 ? (
             <p>記事はまだありません。準備中です。</p>
           ) : (
-            <ExplainerBrowser items={articles} />
+            <>
+              <ExplainerCategoryNav groups={hubGroups} />
+              <ExplainerBrowser items={articles} />
+            </>
           )}
 
           <p className="back-link">

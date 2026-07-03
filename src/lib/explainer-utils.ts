@@ -92,3 +92,33 @@ export function countByGroup(items: Explainer[]): Record<string, number> {
   }
   return counts;
 }
+
+/**
+ * SSRハブ（/explainer/category/[category]）の対象グループ候補。
+ * GROUP_ORDER から「すべて」を除いた 6グループ。実生成は件数>0 のみ（データ駆動）。
+ */
+export const EXPLAINER_HUB_GROUPS = GROUP_ORDER.filter((g) => g !== 'すべて');
+
+/**
+ * 記事の全カテゴリ（multi-select）を union でグループ集合に写像。
+ * toGroup（先頭のみ）と異なり、複数カテゴリ記事は各グループのハブに出る。空は「その他」。
+ */
+export function toGroups(
+  category: string[] | string | null | undefined
+): string[] {
+  const arr = !category ? [] : Array.isArray(category) ? category : [category];
+  const groups = arr
+    .filter(Boolean)
+    .map((c) => CATEGORY_GROUP_MAP[c] || 'その他');
+  const uniq = [...new Set(groups)];
+  return uniq.length > 0 ? uniq : ['その他'];
+}
+
+/** union 基準（toGroups）のグループ別件数。ハブページ・SSRナビの件数表示に使用 */
+export function countByGroupUnion(items: Explainer[]): Record<string, number> {
+  const counts: Record<string, number> = {};
+  for (const it of items) {
+    for (const g of toGroups(it.category)) counts[g] = (counts[g] || 0) + 1;
+  }
+  return counts;
+}

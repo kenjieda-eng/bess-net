@@ -6,6 +6,10 @@ import {
   newsYearList,
 } from '@/lib/news-utils';
 import {
+  EXPLAINER_HUB_GROUPS,
+  countByGroupUnion,
+} from '@/lib/explainer-utils';
+import {
   getAllExplainer,
   getAllGlossary,
   getAllSubsidies,
@@ -153,6 +157,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const explainerUrls: MetadataRoute.Sitemap = explainer.map((a) => ({
     url: `${siteConfig.url}/explainer/${a.slug}`,
     lastModified: new Date(a.updatedAt),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+  // カテゴリ別 SSRハブ（/explainer/category/[category]・件数>0のみ・/news ハブと同方式）
+  const explainerGroupCounts = countByGroupUnion(explainer);
+  const explainerCategoryUrls: MetadataRoute.Sitemap = EXPLAINER_HUB_GROUPS.filter(
+    (g) => (explainerGroupCounts[g] || 0) > 0
+  ).map((g) => ({
+    url: `${siteConfig.url}/explainer/category/${encodeURIComponent(g)}`,
+    lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));
@@ -352,6 +366,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...newsYearUrls,
     ...newsUrls,
     ...infoUrls,
+    ...explainerCategoryUrls,
     ...explainerUrls,
     ...glossaryUrls,
     ...subsidyUrls,
