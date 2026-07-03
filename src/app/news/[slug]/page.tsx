@@ -14,6 +14,7 @@ import {
 } from '@/lib/microcms';
 import { linkifyHTML } from '@/lib/linkify';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
+import { isExcludedNews } from '@/lib/news-excluded';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -37,6 +38,8 @@ export async function generateMetadata({
     title: `${news.title}｜業界ニュース`,
     description: news.lead,
     alternates: { canonical: `/news/${news.slug}` },
+    // off-topic PR（news-excluded）は noindex（ページは残置＝404にしない・一覧/sitemapからは除外）
+    ...(isExcludedNews(params.slug) ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: news.title,
       description: news.lead,
