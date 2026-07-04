@@ -22,6 +22,7 @@ import {
   getLinkableTargets,
 } from '@/lib/microcms';
 import { csvTermsToTermList } from '@/lib/term-linker';
+import { GLOSSARY_301_SOURCE_SLUGS } from '@/lib/glossary-301';
 import { linkifyHTML } from '@/lib/linkify';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
@@ -67,6 +68,8 @@ export default async function ExplainerDetailPage({
   const glossaryLite = await getGlossaryLiteList().catch(() => []);
   const termSlugMap = new Map<string, string>();
   for (const g of glossaryLite) {
+    // P4 B-1: 301元slug（重複/旧entry）はバッジ先にしない（stage-2A c081b5c と対称・301-hop解消）
+    if (GLOSSARY_301_SOURCE_SLUGS.has(g.slug)) continue;
     termSlugMap.set(g.term, g.slug);
     if (g.english) termSlugMap.set(g.english, g.slug);
   }
