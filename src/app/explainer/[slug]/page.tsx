@@ -22,7 +22,7 @@ import {
   getLinkableTargets,
 } from '@/lib/microcms';
 import { csvTermsToTermList } from '@/lib/term-linker';
-import { GLOSSARY_301_SOURCE_SLUGS } from '@/lib/glossary-301';
+import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary-301';
 import { linkifyHTML } from '@/lib/linkify';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
@@ -67,8 +67,16 @@ export default async function ExplainerDetailPage({
   // 関連用語（CSV文字列）→ TermLike[] 変換 (RelatedTermBadges 用にも保持)
   const glossaryLite = await getGlossaryLiteList().catch(() => []);
   const termSlugMap = new Map<string, string>();
+  // P4 B-3: 301元エントリの term/english は canonical slug へ解決して登録（L-EIC-022）。
+  // B-1 の除外だと canonical と表記が違う term のバッジが消えるため、解決に昇格。
+  // live エントリは後段で登録＝同名 term は live 優先（上書き）。
   for (const g of glossaryLite) {
-    // P4 B-1: 301元slug（重複/旧entry）はバッジ先にしない（stage-2A c081b5c と対称・301-hop解消）
+    if (!GLOSSARY_301_SOURCE_SLUGS.has(g.slug)) continue;
+    const canonical = canonicalGlossarySlug(g.slug);
+    termSlugMap.set(g.term, canonical);
+    if (g.english) termSlugMap.set(g.english, canonical);
+  }
+  for (const g of glossaryLite) {
     if (GLOSSARY_301_SOURCE_SLUGS.has(g.slug)) continue;
     termSlugMap.set(g.term, g.slug);
     if (g.english) termSlugMap.set(g.english, g.slug);

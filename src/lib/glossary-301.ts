@@ -163,6 +163,13 @@ export const GLOSSARY_301: Record<string, string> = {
   '/glossary/re100-japan':             '/glossary/re100',
   '/glossary/non-firm-detail':         '/glossary/non-firm-connection',
   '/glossary/multi-use-detail':        '/glossary/multi-use-operation',
+
+  // P4 B-3: Rule C batch2 クローズ＋explainerリンク監査 新規発見（2026-07-04 ユウ監査確定）
+  // 却下: transformer-ai→transformer（#132 別概念・変圧器≠AI Transformer）
+  // 独立維持: lithium-iron-phosphate-material（リン酸鉄=材料。301しない）
+  '/glossary/us-ira-act':      '/glossary/ira-us',                  // 同一概念IRA・薄テンプレ（ira-usa-detail→ira-us と整合）
+  '/glossary/output-control':  '/glossary/curtailment',             // term「出力制御」完全一致の真重複（curtailment 13記事で主流）
+  '/glossary/lfp':             '/glossary/lithium-iron-phosphate',  // #129 向き先変更: 総称LFPは電池側へ（6/19監査方針）
 };
 
 // 301 元slug集合（bare slug、"/glossary/" prefix 除去）。term→slug / english→slug マップから除外する。

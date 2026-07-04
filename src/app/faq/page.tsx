@@ -10,7 +10,7 @@ import SiteFooter from '@/components/SiteFooter';
 import { getAllFaq, getGlossaryLiteList, type Faq } from '@/lib/microcms';
 import FaqClient from './FaqClient';
 import { siteConfig } from '@/lib/site-config';
-import { GLOSSARY_301_SOURCE_SLUGS } from '@/lib/glossary-301';
+import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary-301';
 import { linkifyTerms } from '@/lib/linkify';
 
 // 依頼BG: HTML エスケープ (FAQ answer は plain text なので HTML 化前に必要)
@@ -57,9 +57,11 @@ export default async function FaqPage() {
   // (glossaryLite 1,516件を client bundle に同梱しないため)
   let glossaryLite: { term: string; slug: string; english?: string }[] = [];
   try {
-    // P4 B-1: 301元slug（重複/旧entry）はauto-link先にしない（stage-2A c081b5c と対称・301-hop解消）
-    glossaryLite = (await getGlossaryLiteList()).filter(
-      (g) => !GLOSSARY_301_SOURCE_SLUGS.has(g.slug)
+    // P4 B-3: 301元エントリの term は canonical slug へ解決して auto-link（L-EIC-022・B-1 除外の昇格）
+    glossaryLite = (await getGlossaryLiteList()).map((g) =>
+      GLOSSARY_301_SOURCE_SLUGS.has(g.slug)
+        ? { ...g, slug: canonicalGlossarySlug(g.slug) }
+        : g
     );
   } catch {
     // graceful fallback (linkify なしで描画)

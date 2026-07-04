@@ -24,7 +24,7 @@ import {
   getGlossaryLiteList,
 } from '@/lib/microcms';
 import { csvTermsToTermList } from '@/lib/term-linker';
-import { GLOSSARY_301_SOURCE_SLUGS } from '@/lib/glossary-301';
+import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary-301';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -105,8 +105,15 @@ export default async function LinkDetailPage({
   // 関連タグ（CSV文字列）→ TermLike[] にリンク化（patch_v15 新規）
   // 既に relatedTerms に含まれているものは除外して重複を回避
   const termSlugMap = new Map<string, string>();
+  // P4 B-3: 301元エントリの term/english は canonical slug へ解決して登録（L-EIC-022）。
+  // live エントリは後段で登録＝同名 term は live 優先（上書き）。
   for (const g of glossaryLite) {
-    // P4 B-1: 301元slug（重複/旧entry）はバッジ先にしない（stage-2A c081b5c と対称・301-hop解消）
+    if (!GLOSSARY_301_SOURCE_SLUGS.has(g.slug)) continue;
+    const canonical = canonicalGlossarySlug(g.slug);
+    termSlugMap.set(g.term, canonical);
+    if (g.english) termSlugMap.set(g.english, canonical);
+  }
+  for (const g of glossaryLite) {
     if (GLOSSARY_301_SOURCE_SLUGS.has(g.slug)) continue;
     termSlugMap.set(g.term, g.slug);
     if (g.english) termSlugMap.set(g.english, g.slug);

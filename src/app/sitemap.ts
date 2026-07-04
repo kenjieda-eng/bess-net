@@ -9,6 +9,7 @@ import {
   EXPLAINER_HUB_GROUPS,
   countByGroupUnion,
 } from '@/lib/explainer-utils';
+import { GLOSSARY_301_SOURCE_SLUGS } from '@/lib/glossary-301';
 import {
   getAllExplainer,
   getAllGlossary,
@@ -286,7 +287,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'multi-use-detail',
   ]);
   const glossaryUrls: MetadataRoute.Sitemap = glossary
-    .filter((g) => !GLOSSARY_SITEMAP_DENYLIST.has(g.slug))
+    // P4 B-3: GLOSSARY_301 元slugは自動除外（手動DENYLISTとのunion・追補時の反映漏れ防止 L-EIC-021）
+    .filter((g) => !GLOSSARY_SITEMAP_DENYLIST.has(g.slug) && !GLOSSARY_301_SOURCE_SLUGS.has(g.slug))
     .map((g) => ({
       url: `${siteConfig.url}/glossary/${g.slug}`,
       lastModified: new Date(g.updatedAt),
