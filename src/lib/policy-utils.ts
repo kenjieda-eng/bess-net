@@ -48,22 +48,27 @@ export function jstDateOf(iso: string): string {
 }
 
 /**
- * 表示用ステータスの日付自動導出（L-EIC-027 横展開・2026-07-05）。
- * 一覧・詳細・トップの全表示経路はこの関数を通す（microCMS データは不変＝表示側 derive のみ）。
+ * 表示用ステータスの日付自動導出（L-EIC-027 横展開・2026-07-05。第2弾で events にも汎用化）。
+ * policy-events（一覧・詳細）と industry-events（/events 一覧）の表示経路はこの関数を通す
+ * （microCMS データは不変＝表示側 derive のみ）。
  * ルール（これ以外は変えない）:
- *  - 格納「予定」かつ イベント日付 < 今日(JST) → 「終了」に自動補正（既存語彙のみ・新語彙は導入しない）
- *  - 例外: 種別「パブコメ」は対象外（日付=公示日・締切は description 内でコード判定不能）
+ *  - 格納「予定」かつ 基準日 < 今日(JST) → 「終了」に自動補正（既存語彙のみ・新語彙は導入しない）
+ *  - 基準日 = endDate（期間イベントの最終日）があればそれ、なければ eventDate
+ *    → 開催中（6/30〜7/2 等）に「終了」と出さない
+ *  - 例外: 種別「パブコメ」は対象外（policy用。日付=公示日・締切は description 内でコード判定不能）
  *  - 格納「進行中」「終了」は一切変更しない（人手判断の尊重）
  */
 export function deriveDisplayStatus(ev: {
   eventDate: string;
-  eventType: string[] | string;
-  status: string[] | string;
+  endDate?: string;
+  eventType?: string[] | string;
+  status?: string[] | string;
 }): string {
   const stored = firstOf(ev.status);
   if (stored !== '予定') return stored;
   if (firstOf(ev.eventType) === 'パブコメ') return stored;
-  if (jstDateOf(ev.eventDate) < jstTodayISO()) return '終了';
+  const base = ev.endDate || ev.eventDate;
+  if (jstDateOf(base) < jstTodayISO()) return '終了';
   return stored;
 }
 

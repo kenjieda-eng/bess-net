@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import type { IndustryEvent } from '@/lib/microcms';
-import { jstTodayISO, jstDateOf } from '@/lib/policy-utils';
+import { jstTodayISO, jstDateOf, deriveDisplayStatus } from '@/lib/policy-utils';
 
 const EVENT_TYPE_COLORS: Record<string, string> = {
   展示会: '#0066cc',
@@ -87,7 +87,8 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
   const statuses = useMemo(() => {
     const s = new Set<string>();
     for (const it of items) {
-      const st = firstOf(it.status);
+      // L-EIC-027: 表示・フィルタとも derive 後のステータスで統一（バッジと食い違わせない）
+      const st = deriveDisplayStatus(it);
       if (st) s.add(st);
     }
     return Array.from(s).sort();
@@ -100,7 +101,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
       const t = firstOf(it.eventType);
       if (typeFilter !== 'all' && t !== typeFilter) return false;
       if (organizerFilter !== 'all' && it.organizer !== organizerFilter) return false;
-      const st = firstOf(it.status);
+      const st = deriveDisplayStatus(it); // L-EIC-027: フィルタもバッジと同じ derive 後の値で判定
       if (statusFilter !== 'all' && st !== statusFilter) return false;
       return true;
     });
@@ -262,7 +263,8 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {g.items.map((it) => {
                 const type = firstOf(it.eventType);
-                const status = firstOf(it.status);
+                // L-EIC-027: 「予定」の期日超過（endDateあれば最終日基準）のみ表示側で「終了」へ
+                const status = deriveDisplayStatus(it);
                 return (
                   <li
                     key={it.id}
