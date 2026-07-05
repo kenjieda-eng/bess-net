@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import type { IndustryEvent } from '@/lib/microcms';
+import { jstTodayISO, jstDateOf } from '@/lib/policy-utils';
 
 const EVENT_TYPE_COLORS: Record<string, string> = {
   展示会: '#0066cc',
@@ -107,19 +108,23 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
 
   const grouped = useMemo(() => groupByYearMonth(filtered), [filtered]);
 
-  // 今月のハイライト（status=予定、今月+来月までの 3件）
-  const today = new Date();
-  const horizonEnd = new Date(today.getFullYear(), today.getMonth() + 2, 0); // end of next month
+  // 直近ハイライト（status=予定、今日(JST)以降60日以内・開催日昇順=直近優先・最大5件）
+  // 修正前は items が eventDate 降順のまま slice(0,3) しており、遠い日付が優先されて
+  // 直近イベント（7/10・7/15 等）が隠れるバグがあった（2026-07-05 events分析）。
   const highlights = useMemo(() => {
+    const today = jstTodayISO();
+    const end = new Date(new Date(today).getTime() + 60 * 24 * 60 * 60 * 1000)
+      .toISOString()
+      .slice(0, 10);
     return items
       .filter((it) => {
         if (!it.eventDate) return false;
-        const st = firstOf(it.status);
-        if (st !== '予定') return false;
-        const d = new Date(it.eventDate);
-        return d >= today && d <= horizonEnd;
+        if (firstOf(it.status) !== '予定') return false;
+        const d = jstDateOf(it.eventDate);
+        return d >= today && d <= end;
       })
-      .slice(0, 3);
+      .sort((a, b) => (a.eventDate < b.eventDate ? -1 : 1))
+      .slice(0, 5);
   }, [items]);
 
   return (
@@ -136,7 +141,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
           }}
         >
           <h2 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 12px 0' }}>
-            🎯 今月〜来月の主要イベント
+            🎯 直近の主要イベント（60日以内）
           </h2>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {highlights.map((it) => (

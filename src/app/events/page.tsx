@@ -6,20 +6,25 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getAllIndustryEvents, type IndustryEvent } from '@/lib/microcms';
+import {
+  getAllIndustryEvents,
+  getOperatorList,
+  getExplainerList,
+  type IndustryEvent,
+} from '@/lib/microcms';
 import EventsCalendarClient from './EventsCalendarClient';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600; // 10分
 
 export const metadata: Metadata = {
-  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: '業界イベント・展示会カレンダー',
+  // layout.tsx titleTemplate が自動付与（落とし穴 #86）→「… | 蓄電所ネット」（P2 SEO）
+  title: '蓄電池・再エネ 業界イベント・展示会カレンダー',
   description:
     '系統用蓄電池・再エネ業界の展示会・セミナー・学会・業界団体総会を時系列で一覧表示。スマートエネルギーWeek・PV EXPO・Energy Storage Japan・OCCTO/JEPX 説明会等の主要イベントを継続トラック。',
   alternates: { canonical: '/events' },
   openGraph: {
-    title: '業界イベント・展示会カレンダー',
+    title: '蓄電池・再エネ 業界イベント・展示会カレンダー',
     description:
       '系統用蓄電池・再エネ業界の展示会・セミナー・学会を時系列で一覧表示。大型展示会・OCCTO/JEPX 説明会・学会シンポジウム等。',
     type: 'website',
@@ -33,6 +38,19 @@ export default async function EventsCalendarPage() {
   } catch {
     // graceful fallback
   }
+  // P3: 関連コンテンツの件数を動的参照（トップページと同じ totalCount パターン・失敗時はフォールバック実数）
+  const safeCount = async (fn: () => Promise<{ totalCount: number }>, fallback: number) => {
+    try {
+      const r = await fn();
+      return r.totalCount > 0 ? r.totalCount : fallback;
+    } catch {
+      return fallback;
+    }
+  };
+  const [operatorCount, explainerCount] = await Promise.all([
+    safeCount(() => getOperatorList({ limit: 1, fields: 'id' }), 544),
+    safeCount(() => getExplainerList({ limit: 1, fields: 'id' }), 174),
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -52,6 +70,20 @@ export default async function EventsCalendarPage() {
   const upcomingEvents = items
     .filter((it) => Array.isArray(it.status) && it.status.includes('予定'))
     .slice(0, 10);
+  // P2: ItemList JSON-LD（全件・既存フィールドから機械生成、推測補完しない）
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: '蓄電池・再エネ 業界イベント・展示会カレンダー',
+    numberOfItems: items.length,
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.title,
+      ...(it.officialUrl ? { url: it.officialUrl } : {}),
+    })),
+  };
+
   const eventListJsonLd = upcomingEvents.map((it) => ({
     '@context': 'https://schema.org',
     '@type': 'Event',
@@ -79,6 +111,10 @@ export default async function EventsCalendarPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
       {eventListJsonLd.length > 0 && (
         <script
@@ -157,7 +193,7 @@ export default async function EventsCalendarPage() {
             </p>
             <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
-                <Link href="/operators">事業者ナビ（EPC・O&M・PCS・電池メーカー等 86社）</Link>
+                <Link href="/operators">事業者ナビ（EPC・O&M・PCS・電池メーカー等 {operatorCount}社）</Link>
               </li>
               <li>
                 <Link href="/projects">プロジェクトデータベース（国内蓄電所事例）</Link>
@@ -166,7 +202,7 @@ export default async function EventsCalendarPage() {
                 <Link href="/policy-calendar">政策・法制度カレンダー（パブコメ・重要会議）</Link>
               </li>
               <li>
-                <Link href="/explainer">解説記事（市場制度・参入手順 125本）</Link>
+                <Link href="/explainer">解説記事（市場制度・参入手順 {explainerCount}本）</Link>
               </li>
               <li>
                 <Link href="/faq">業界用語よくある質問（FAQ 50件）</Link>
