@@ -21,6 +21,7 @@ import {
   STATUS_COLORS,
   firstOf,
   formatDateJa,
+  deriveDisplayStatus,
 } from '@/lib/policy-utils';
 import { siteConfig } from '@/lib/site-config';
 
@@ -66,7 +67,8 @@ export default async function PolicyEventDetailPage({
   if (!ev) notFound();
 
   const type = firstOf(ev.eventType);
-  const status = firstOf(ev.status);
+  // L-EIC-027: 「予定」の期日超過のみ表示側で「終了」へ自動補正（パブコメ除外・進行中/終了不変）
+  const status = deriveDisplayStatus(ev);
   const canonicalUrl = `${siteConfig.url}/policy-calendar/${ev.slug}`;
 
   // 関連用語（glossary）: linkable-targets（GLOSSARY_301 元除外済の共有基盤）をメモリ内照合

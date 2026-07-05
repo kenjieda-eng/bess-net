@@ -40,6 +40,33 @@ export function jstTodayISO(): string {
   return new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
 }
 
+/** ISO日時 → JST の YYYY-MM-DD（microCMS date は UTC 格納のため +9h で日付化） */
+export function jstDateOf(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return (iso || '').slice(0, 10);
+  return new Date(d.getTime() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+/**
+ * 表示用ステータスの日付自動導出（L-EIC-027 横展開・2026-07-05）。
+ * 一覧・詳細・トップの全表示経路はこの関数を通す（microCMS データは不変＝表示側 derive のみ）。
+ * ルール（これ以外は変えない）:
+ *  - 格納「予定」かつ イベント日付 < 今日(JST) → 「終了」に自動補正（既存語彙のみ・新語彙は導入しない）
+ *  - 例外: 種別「パブコメ」は対象外（日付=公示日・締切は description 内でコード判定不能）
+ *  - 格納「進行中」「終了」は一切変更しない（人手判断の尊重）
+ */
+export function deriveDisplayStatus(ev: {
+  eventDate: string;
+  eventType: string[] | string;
+  status: string[] | string;
+}): string {
+  const stored = firstOf(ev.status);
+  if (stored !== '予定') return stored;
+  if (firstOf(ev.eventType) === 'パブコメ') return stored;
+  if (jstDateOf(ev.eventDate) < jstTodayISO()) return '終了';
+  return stored;
+}
+
 /** 詳細ページ化する対象9件（slug＝policy-events の slug フィールド） */
 export const POLICY_DETAIL_SLUGS: readonly string[] = [
   'meti-connection-review-cap-2026-08',        // 2026-08-01 接続検討数の事業者別上限

@@ -9,6 +9,7 @@ import {
   STATUS_COLORS,
   firstOf,
   formatDateJa,
+  deriveDisplayStatus,
   POLICY_DETAIL_SLUG_SET,
 } from '@/lib/policy-utils';
 
@@ -159,7 +160,8 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {g.items.map((it) => {
                 const type = firstOf(it.eventType);
-                const status = firstOf(it.status);
+                // L-EIC-027: 「予定」の期日超過のみ表示側で「終了」へ自動補正（パブコメ除外・進行中/終了不変）
+                const status = deriveDisplayStatus(it);
                 return (
                   <li
                     key={it.id}
