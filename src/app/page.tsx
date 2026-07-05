@@ -2,7 +2,14 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
-import { getExplainerList, getGlossaryList, getIndustryNews, getSubstationList } from '@/lib/microcms';
+import { getExplainerList, getGlossaryList, getIndustryNews, getSubstationList, getAllPolicyEvents, type PolicyEvent } from '@/lib/microcms';
+import {
+  POLICY_DETAIL_SLUG_SET,
+  EVENT_TYPE_COLORS,
+  firstOf,
+  formatDateJa,
+  jstTodayISO,
+} from '@/lib/policy-utils';
 import type { RoadmapStatus } from '@/lib/site-config';
 
 const ROADMAP_BADGE: Record<RoadmapStatus, { label: string; className: string }> = {
@@ -61,13 +68,26 @@ export default async function Home() {
 
   const emptyList = { contents: [], totalCount: 0, offset: 0, limit: 0 };
 
-  const [explainerData, glossaryNew, glossaryTotal, industryNewsAll, substationsCount] = await Promise.all([
+  const [explainerData, glossaryNew, glossaryTotal, industryNewsAll, substationsCount, policyEventsAll] = await Promise.all([
     getExplainerList({ limit: 6, orders: '-publishedAt' }),
     getGlossaryList({ limit: 10, orders: '-publishedAt' }),
     getGlossaryList({ limit: 1, fields: 'id' }),
     safeFetch(() => getIndustryNews(), [] as any[]),
     safeFetch(async () => (await getSubstationList({ limit: 0, fields: 'id' })).totalCount, 0),
+    safeFetch(() => getAllPolicyEvents(), [] as PolicyEvent[]),
   ]);
+  // P2: 今後の政策イベント（本日以降JST・60日以内・日付昇順・最大3件。0件時はブロック非表示）
+  const todayJst = jstTodayISO();
+  const in60d = new Date(new Date(todayJst).getTime() + 60 * 24 * 60 * 60 * 1000)
+    .toISOString()
+    .slice(0, 10);
+  const upcomingPolicyEvents = policyEventsAll
+    .filter((e) => {
+      const d = (e.eventDate || '').slice(0, 10);
+      return d >= todayJst && d <= in60d;
+    })
+    .sort((a, b) => (a.eventDate < b.eventDate ? -1 : 1))
+    .slice(0, 3);
   const substationsCountStr = substationsCount > 0 ? substationsCount.toLocaleString('en-US') : '8,225';
   // 業界ニュース最新3本（編集部=お知らせは除外済み）
   const newsData = {
@@ -302,6 +322,72 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* P2: 今後の政策イベント（60日以内・最大3件・SSR。0件時は非表示） */}
+      {upcomingPolicyEvents.length > 0 && (
+        <section className="section section-alt">
+          <div className="section-inner">
+            <div className="section-label">Policy · 直近の制度スケジュール</div>
+            <h2 className="section-title">📅 今後の政策イベント</h2>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '16px 0 12px' }}>
+              {upcomingPolicyEvents.map((ev) => {
+                const type = firstOf(ev.eventType);
+                const href = POLICY_DETAIL_SLUG_SET.has(ev.slug)
+                  ? `/policy-calendar/${ev.slug}`
+                  : '/policy-calendar';
+                return (
+                  <li
+                    key={ev.id}
+                    style={{
+                      padding: '12px 16px',
+                      marginBottom: 10,
+                      border: '1px solid var(--color-border)',
+                      borderRadius: 6,
+                      background: 'var(--color-bg-card, #fff)',
+                      fontSize: 14,
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontWeight: 700,
+                        color: 'var(--color-muted)',
+                        marginRight: 10,
+                        fontVariantNumeric: 'tabular-nums',
+                      }}
+                    >
+                      {formatDateJa(ev.eventDate)}
+                    </span>
+                    {type && (
+                      <span
+                        style={{
+                          fontSize: 11,
+                          padding: '2px 8px',
+                          borderRadius: 4,
+                          color: '#fff',
+                          background: EVENT_TYPE_COLORS[type] || '#666',
+                          fontWeight: 600,
+                          marginRight: 10,
+                        }}
+                      >
+                        {type}
+                      </span>
+                    )}
+                    <Link href={href} style={{ fontWeight: 600 }}>
+                      {ev.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <p style={{ fontSize: 13 }}>
+              <Link href="/policy-calendar" style={{ fontWeight: 600 }}>
+                政策・法制度カレンダーをすべて見る →
+              </Link>
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* 既存: 系統空き容量DB（マップ以外のテーブル形式アクセス）*/}
       <section className="section section-alt">

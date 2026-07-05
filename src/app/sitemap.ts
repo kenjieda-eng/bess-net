@@ -10,6 +10,7 @@ import {
   countByGroupUnion,
 } from '@/lib/explainer-utils';
 import { GLOSSARY_301_SOURCE_SLUGS } from '@/lib/glossary-301';
+import { POLICY_DETAIL_SLUGS } from '@/lib/policy-utils';
 import {
   getAllExplainer,
   getAllGlossary,
@@ -63,6 +64,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/info`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     // Sprint 2 追加コーナー（依頼AB/AC/AD）
     { url: `${siteConfig.url}/policy-calendar`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    // P1: 政策イベント詳細（充実9件のみ SSG・POLICY_DETAIL_SLUGS と同期）
+    ...POLICY_DETAIL_SLUGS.map((s) => ({
+      url: `${siteConfig.url}/policy-calendar/${s}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    })),
     { url: `${siteConfig.url}/events`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/faq`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     // Sprint 3 追加 (依頼AM、業界唯一 IRR シミュレーター)

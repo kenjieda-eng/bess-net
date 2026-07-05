@@ -22,6 +22,7 @@ import {
   getLinkableTargets,
 } from '@/lib/microcms';
 import { csvTermsToTermList } from '@/lib/term-linker';
+import { toGroup } from '@/lib/explainer-utils';
 import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary-301';
 import { linkifyHTML } from '@/lib/linkify';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
@@ -213,6 +214,20 @@ export default async function ExplainerDetailPage({
             <section className="article-sources">
               <h3>出典</h3>
               <div dangerouslySetInnerHTML={{ __html: exp.sources }} />
+            </section>
+          )}
+
+          {/* P2: 制度・市場系記事に政策カレンダーCTA（コード側テンプレのみ・本文PATCHなし） */}
+          {toGroup(exp.category) === '制度・市場' && (
+            <section className="cta-grid-section">
+              <h3>📅 政策・法制度カレンダー</h3>
+              <p>
+                本記事に関連する法改正・パブコメ・重要会議・オークション等の政策イベントを、
+                蓄電所ネットが時系列で継続トラックしています。
+              </p>
+              <Link href="/policy-calendar" className="cta-grid-button">
+                政策・法制度カレンダーを見る →
+              </Link>
             </section>
           )}
 

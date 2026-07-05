@@ -8,18 +8,19 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getAllPolicyEvents, type PolicyEvent } from '@/lib/microcms';
 import PolicyCalendarClient from './PolicyCalendarClient';
+import { POLICY_DETAIL_SLUG_SET } from '@/lib/policy-utils';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600; // 10分
 
 export const metadata: Metadata = {
-  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: '政策・法制度カレンダー',
+  // layout.tsx titleTemplate が自動付与（落とし穴 #86）→「… | 蓄電所ネット」（P3 SEO基礎）
+  title: '蓄電池・BESS 政策・法制度カレンダー',
   description:
     '系統用蓄電池業界の法改正・パブコメ募集・重要会議・補助金公募・オークション等を時系列で一覧表示。経済産業省・OCCTO・環境省・NEDO・SII の主要政策イベントを継続トラック。',
   alternates: { canonical: '/policy-calendar' },
   openGraph: {
-    title: '政策・法制度カレンダー',
+    title: '蓄電池・BESS 政策・法制度カレンダー',
     description:
       '系統用蓄電池業界の主要政策イベントを時系列で一覧表示。法改正・パブコメ・重要会議・オークション・補助金等。',
     type: 'website',
@@ -48,12 +49,31 @@ export default async function PolicyCalendarPage() {
     },
     numberOfItems: items.length,
   };
+  // P3: ItemList JSON-LD（全件。詳細ページのある9件のみ url 付与）
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: '蓄電池・BESS 政策・法制度カレンダー',
+    numberOfItems: items.length,
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.title,
+      ...(POLICY_DETAIL_SLUG_SET.has(it.slug)
+        ? { url: `${siteConfig.url}/policy-calendar/${it.slug}` }
+        : {}),
+    })),
+  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
       <SiteHeader />
       <main className="section">

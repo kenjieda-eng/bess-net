@@ -1,37 +1,16 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import type { PolicyEvent } from '@/lib/microcms';
-
-const EVENT_TYPE_COLORS: Record<string, string> = {
-  オークション: '#0066cc',
-  パブコメ: '#cc6600',
-  法改正: '#cc0066',
-  重要会議: '#006666',
-  公表: '#666666',
-};
-
-const STATUS_COLORS: Record<string, string> = {
-  予定: '#0066cc',
-  進行中: '#cc6600',
-  終了: '#888888',
-};
-
-function firstOf(arr: string[] | string | undefined): string {
-  if (Array.isArray(arr)) return arr[0] ?? '';
-  return arr ?? '';
-}
-
-function formatDateJa(iso: string): string {
-  if (!iso) return '';
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return iso;
-  const yyyy = d.getFullYear();
-  const mm = d.getMonth() + 1;
-  const dd = d.getDate();
-  const wd = ['日', '月', '火', '水', '木', '金', '土'][d.getDay()];
-  return `${yyyy}-${String(mm).padStart(2, '0')}-${String(dd).padStart(2, '0')} (${wd})`;
-}
+// P1: 表示ロジックは policy-utils に移設して詳細ページと共有（複製再実装しない）
+import {
+  EVENT_TYPE_COLORS,
+  STATUS_COLORS,
+  firstOf,
+  formatDateJa,
+  POLICY_DETAIL_SLUG_SET,
+} from '@/lib/policy-utils';
 
 function groupByYearMonth(items: PolicyEvent[]): Array<{ ym: string; items: PolicyEvent[] }> {
   const groups: Record<string, PolicyEvent[]> = {};
@@ -244,7 +223,16 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
                         lineHeight: 1.4,
                       }}
                     >
-                      {it.title}
+                      {POLICY_DETAIL_SLUG_SET.has(it.slug) ? (
+                        <Link
+                          href={`/policy-calendar/${it.slug}`}
+                          style={{ color: 'inherit', textDecoration: 'underline' }}
+                        >
+                          {it.title}
+                        </Link>
+                      ) : (
+                        it.title
+                      )}
                     </h3>
                     {it.description && (
                       <p style={{ fontSize: 14, margin: '4px 0 8px', lineHeight: 1.6 }}>

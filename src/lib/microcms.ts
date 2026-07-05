@@ -259,23 +259,35 @@ export type PolicyEvent = {
  * - eventDate 降順（最新が先）
  * - schema 未作成の状態でも空配列で graceful return（ページがクラッシュしない設計）
  */
+// P1 詳細9ページ＋一覧＋トップ＋sitemap から build 時に呼ばれるため memoize（#93）。
+// 失敗時はキャッシュせず空配列（graceful・次回呼び出しで再試行）。
+let _policyEventsCache: PolicyEvent[] | null = null;
+let _policyEventsPromise: Promise<PolicyEvent[]> | null = null;
+
 export const getAllPolicyEvents = async (): Promise<PolicyEvent[]> => {
-  const all: PolicyEvent[] = [];
-  const limit = MICROCMS_PAGE_LIMIT;
-  try {
-    for (let offset = 0; offset < 500; offset += limit) {
-      const data = await client.getList<PolicyEvent>({
-        endpoint: 'policy-events',
-        queries: { limit, offset, orders: '-eventDate' },
-      });
-      all.push(...data.contents);
-      if (data.contents.length < limit) break;
+  if (_policyEventsCache) return _policyEventsCache;
+  if (_policyEventsPromise) return _policyEventsPromise;
+  _policyEventsPromise = (async () => {
+    const all: PolicyEvent[] = [];
+    const limit = MICROCMS_PAGE_LIMIT;
+    try {
+      for (let offset = 0; offset < 500; offset += limit) {
+        const data = await client.getList<PolicyEvent>({
+          endpoint: 'policy-events',
+          queries: { limit, offset, orders: '-eventDate' },
+        });
+        all.push(...data.contents);
+        if (data.contents.length < limit) break;
+      }
+    } catch {
+      // schema 未作成 / 一時的エラーの場合は空配列を返してページを 200 で返す
+      _policyEventsPromise = null;
+      return [];
     }
-  } catch {
-    // schema 未作成 / 一時的エラーの場合は空配列を返してページを 200 で返す
-    return [];
-  }
-  return all;
+    _policyEventsCache = all;
+    return all;
+  })();
+  return _policyEventsPromise;
 };
 
 // ===== 業界用語FAQ（faq、依頼AD） =====
