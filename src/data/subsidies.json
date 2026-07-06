@@ -1,5 +1,35 @@
 [
   {
+    "id": "l0hmm8hawl",
+    "slug": "sii-chikudenchi07r",
+    "name": "令和7年度補正 系統用蓄電システム等導入支援事業",
+    "organization": "SII（環境共創イニシアチブ）／経済産業省",
+    "category": [
+      "蓄電池"
+    ],
+    "status": [],
+    "subsidyRate_raw": "",
+    "upperLimit_raw": "",
+    "targetEntity_raw": "",
+    "applicationStart": "",
+    "deadline_raw": "",
+    "is_rolling": false,
+    "fiscalYear": "令和7年度補正（2025年度補正・2026年度執行）",
+    "sourceUrl": "https://sii.or.jp/chikudenchi07r/",
+    "scheme": "系統用蓄電システム等の導入支援（令和7年度補正）。公募スケジュール・要領は未公表。応募要件として、GXフューチャー・リーグ会員であることが求められる方針（中小企業を除く。事業トップ記載）。【2026-07-06 確認】公募説明会の事前エントリー受付が開始（会場・オンライン併用、参加には事前エントリー必須）。日時・会場は公式エントリーフォーム参照: https://sii.or.jp/entries/chikudenchi07r/input",
+    "applicable_prefs": [],
+    "applicable_use_cases": [
+      "grid",
+      "industrial"
+    ],
+    "applicable_entities": [
+      "corporate"
+    ],
+    "kind": [
+      "subsidy"
+    ]
+  },
+  {
     "id": "regional-bank-green-loans",
     "slug": "regional-bank-green-loans",
     "name": "地方銀行のグリーンローン（北海道・東北・北陸・中国・四国・九州エリア）",
