@@ -1747,25 +1747,25 @@
   {
     "id": "ds9ttcdaq",
     "slug": "occto-ltdc-2025",
-    "name": "長期脱炭素電源オークション（応札年度：2025年度）",
+    "name": "長期脱炭素電源オークション（応札年度：2025年度）約定結果",
     "organization": "OCCTO（電力広域的運営推進機関）／経済産業省",
     "category": [
       "蓄電池",
       "再エネ統合"
     ],
     "status": [
-      "公募中"
+      "採択結果公表"
     ],
     "subsidyRate_raw": "20年契約・容量拠出金",
     "upperLimit_raw": "案件規模に応じる",
-    "targetEntity_raw": "脱炭素電源（蓄電池・水素・原子力等）事業者",
-    "applicationStart": "2025年10月",
-    "deadline_raw": "2026年1月",
-    "deadline_iso": "2026-01-31",
+    "targetEntity_raw": "脱炭素電源（蓄電池・水素・原子力等）事業者（落札事業者）",
+    "applicationStart": "2025年10月（参加登録）・2026年1月（応札）",
+    "deadline_raw": "2026年5月13日（約定結果公表）",
+    "deadline_iso": "2026-05-13",
     "is_rolling": false,
     "fiscalYear": "応札年度：2025年度",
-    "sourceUrl": "https://www.occto.or.jp/market-board/market/oshirase/2025/250903_long_boshuyoukou.html",
-    "scheme": "20年契約による長期固定収入で脱炭素電源（蓄電池・水素・アンモニア発電等）の投資回収を支援。蓄電池はリチウムイオン40万kW、それ以外40万kWが募集上限。",
+    "sourceUrl": "https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/2025_boshuyoukou_long.html",
+    "scheme": "2025年度応札の長期脱炭素電源オークション約定結果（2026年5月13日公表）。約定総容量729.9万kW（脱炭素電源426.1万kW＋LNG専焼火力303.8万kW、落札率67%）。蓄電池は応札125.1万kW・落札率46%。「リチウムイオン蓄電池・揚水（新設除く）」区分の約定は81.9万kW、「リチウムイオン以外の蓄電池・揚水（新設）・LDES」区分は88.6万kW。容量確保契約の結果公表は2026年8月頃予定。",
     "applicable_prefs": [],
     "applicable_use_cases": [],
     "applicable_entities": [

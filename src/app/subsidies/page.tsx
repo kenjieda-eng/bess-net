@@ -32,6 +32,8 @@ function getTodayJST(): string {
 
 // deadline_iso / start_iso ベースで status を自動導出（鮮度の自動補正・L-EIC-027）
 function deriveStatus(item: PrecomputedSubsidy, todayISO: string): string {
+  // 採択結果公表は終端状態（結果公表日が過去でも受付終了に上書きしない）
+  if (item.status[0] === '採択結果公表') return '採択結果公表';
   // 締切超過が最優先（受付終了）
   if (!item.is_rolling && item.deadline_iso && item.deadline_iso < todayISO) {
     return '受付終了';
