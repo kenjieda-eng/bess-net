@@ -70,6 +70,56 @@ function isGenericSubcategory(sub?: string): boolean {
   return !!sub && /_一般$/.test(sub);
 }
 
+// ── 導線ブロックの旧値正規化（2026-07-06 恒久化バッチ）──────────────
+// microCMS glossary detail に焼き込まれた「関連：実データで確認」等の導線ブロックの
+// 旧値（9社6,507件・関東を除く・業界初）を build 時に現行値へ正規化する。
+// 件数は src/data/substations（/grid の真実源）から動的算出＝今後のデータ更新に自動追随。
+// 完全一致の文脈付き置換のみ（「業界初心者」等の正当な本文・証券コード6507 を誤置換しない）。
+function loadGridStats(): { operators: number; total: string; n1: number } {
+  const dir = path.join(process.cwd(), 'src', 'data', 'substations');
+  const ops = new Set<string>();
+  let total = 0;
+  let n1 = 0;
+  for (const f of fs.readdirSync(dir)) {
+    if (!f.endsWith('.json')) continue;
+    const arr = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+    const items: Array<{ operator?: string; n1_eligible?: boolean }> = Array.isArray(arr) ? arr : arr.items ?? [];
+    for (const it of items) {
+      if (!it) continue;
+      total++;
+      if (it.operator) ops.add(it.operator);
+      if (it.n1_eligible === true) n1++;
+    }
+  }
+  return { operators: ops.size, total: total.toLocaleString('en-US'), n1 };
+}
+
+function buildGridCtaReplacers(): Array<[string, string]> {
+  const s = loadGridStats();
+  const db = `${s.operators}社${s.total}変電所`;
+  return [
+    // 件数系（順序重要: 長い文脈から先に）
+    ['系統空き容量データベース（9社6,507件、関東を除く全国カバー）', `系統空き容量データベース（${db}）`],
+    ['9社6,507件', db],
+    ['全国9社・6,507変電所', `全国${s.operators}社・${s.total}変電所`],
+    ['N-1電制適用可 約536件', `N-1電制適用可 約${s.n1}件`],
+    ['N-1電制可 約536件', `N-1電制可 約${s.n1}件`],
+    // 「業界初」→「当サイト独自」（L-EIC-019・7/3 explainer T4 と同方針）
+    ['中部地方マップ（業界初）', '中部地方マップ（当サイト独自）'],
+    ['中部地方マップ（業界初の', '中部地方マップ（当サイト独自の'],
+    ['、業界初の地図検索）', '、当サイト独自の地図検索）'],
+    ['（青枠 = N-1電制適用可、業界初）', '（青枠 = N-1電制適用可、当サイト独自）'],
+    ['変電所名フリーテキスト検索（業界初）', '変電所名フリーテキスト検索（当サイト独自）'],
+  ];
+}
+
+function normalizeGridCta(text: string | undefined, replacers: Array<[string, string]>): string | undefined {
+  if (!text) return text;
+  let out = text;
+  for (const [from, to] of replacers) out = out.split(from).join(to);
+  return out;
+}
+
 // ── news を relatedTerms（glossary 関連）込みで取得 ─────────────────
 // getAllNews は NEWS_LIST_FIELDS で relatedTerms を含まないため独自取得。
 type NewsWithRel = NewsRef & { relatedTermIds: string[] };
@@ -133,6 +183,8 @@ async function main(): Promise<void> {
   console.log('[precompute-glossary-detail] メモリ内リレーション計算...');
   const t1 = Date.now();
   const index: Record<string, GlossaryDetailEntry> = {};
+  const ctaReplacers = buildGridCtaReplacers();
+  let normalizedCount = 0;
 
   for (const g of glossary) {
     const cat = (g.category && g.category[0]) || '';
@@ -191,16 +243,21 @@ async function main(): Promise<void> {
       .map((term) => ({ term, slug: termSlugMap.get(term) ?? '' }))
       .filter((t) => t.slug.length > 0 && t.slug !== g.slug);
 
+    const detailNorm = normalizeGridCta(g.detail, ctaReplacers);
+    const shortDefNorm = normalizeGridCta(g.shortDef, ctaReplacers) ?? g.shortDef;
+    if (detailNorm !== g.detail || shortDefNorm !== g.shortDef) normalizedCount++;
+
     index[g.slug] = {
       term: {
         id: g.id, term: g.term, slug: g.slug, english: g.english, reading: g.reading,
-        shortDef: g.shortDef, detail: g.detail, category: g.category ?? [], subcategory: g.subcategory,
+        shortDef: shortDefNorm, detail: detailNorm, category: g.category ?? [], subcategory: g.subcategory,
       },
       relatedNews, relatedExplainers, relatedOperators, relatedProjects,
       sameCategoryTerms, useCategoryFallback, relatedTerms,
     };
   }
   console.log(`  → ${Object.keys(index).length} entries (${Date.now() - t1}ms)`);
+  console.log(`  導線ブロック正規化: ${normalizedCount} entries（旧値 9社6,507/関東を除く/業界初 → 現行値）`);
 
   const outDir = path.join(process.cwd(), 'src', 'lib', 'generated');
   fs.mkdirSync(outDir, { recursive: true });
