@@ -40,7 +40,7 @@ export default function ReportsIndexPage() {
               </h2>
               <p style={{ fontSize: 13, lineHeight: 1.7, margin: 0, color: 'var(--color-muted)' }}>
                 市場規模 / 政策動向 / 主要プレイヤー / 系統 / 火災・トラブル / 海外比較 を集約した当サイト独自の年次レポート。
-                プレビュー版を公開中、本編は順次。
+                本編（全10章）を公開中。
               </p>
             </li>
           </ul>
