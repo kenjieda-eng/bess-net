@@ -355,7 +355,6 @@
   "csrd-detail": [],
   "calendar-aging-test": [],
   "canada-bess-market": [],
-  "cap-and-trade": [],
   "capacity-auctions": [],
   "uk-capacity-market": [],
   "capacity-performance": [],
@@ -626,6 +625,7 @@
   "ess-plus": [],
   "eu-climate-law": [],
   "eu-ets-detail": [],
+  "eu-ets": [],
   "eu-gbs": [],
   "eu-nzia": [],
   "eu-taxonomy": [],
@@ -765,7 +765,14 @@
   "gpif-japan": [],
   "gri-detail": [],
   "gr-ground-fault-relay": [],
-  "gs-yuasa-japan": [],
+  "gs-yuasa-japan": [
+    {
+      "id": "5we7-y_tx",
+      "slug": "faq-sonota-11",
+      "question": "米国のFEOC規制とは？日本の蓄電池企業に影響はありますか？",
+      "category": "その他"
+    }
+  ],
   "gwh-detail": [
     {
       "id": "2u8w-_b4j4p7",
@@ -784,10 +791,17 @@
       "slug": "faq-sonota-10",
       "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
       "category": "その他"
+    },
+    {
+      "id": "5-gb3_p0w0b",
+      "slug": "faq-seido-13",
+      "question": "蓄電池・電源産業戦略（2026年6月改定）とは？蓄電所事業への影響は？",
+      "category": "制度"
     }
   ],
   "gwh-gigawatt-hour": [],
   "gw-gigawatt": [],
+  "gx-ets": [],
   "gan-conversion": [],
   "generation-mix": [],
   "germany-bess-market": [],
@@ -953,6 +967,12 @@
       "slug": "faq-sonota-04",
       "question": "海外（米国・欧州・豪州）のBESS市場動向は？",
       "category": "その他"
+    },
+    {
+      "id": "5we7-y_tx",
+      "slug": "faq-sonota-11",
+      "question": "米国のFEOC規制とは？日本の蓄電池企業に影響はありますか？",
+      "category": "その他"
     }
   ],
   "iberdrola": [],
@@ -1031,6 +1051,8 @@
   "korea-bess-market": [],
   "kyoto-protocol": [],
   "lca-life-cycle-assessment": [],
+  "lcoe": [],
+  "lcos": [],
   "ldes-detail": [
     {
       "id": "kg--8u9-tcc0",
@@ -1089,6 +1111,12 @@
       "id": "tswhuk1cfani",
       "slug": "faq-seido-04",
       "question": "長期脱炭素電源オークション（LTDC）とは？",
+      "category": "制度"
+    },
+    {
+      "id": "o0_g-ks69q",
+      "slug": "faq-seido-12",
+      "question": "長期脱炭素電源オークション（LTDC）第3回の結果は？蓄電池の落札は？",
       "category": "制度"
     },
     {
@@ -1368,6 +1396,12 @@
       "slug": "faq-sonota-07",
       "question": "蓄電所事業のキャリアパスは？",
       "category": "その他"
+    },
+    {
+      "id": "o0_g-ks69q",
+      "slug": "faq-seido-12",
+      "question": "長期脱炭素電源オークション（LTDC）第3回の結果は？蓄電池の落札は？",
+      "category": "制度"
     }
   ],
   "occto-japan-org": [
@@ -1388,6 +1422,12 @@
       "slug": "faq-sonota-07",
       "question": "蓄電所事業のキャリアパスは？",
       "category": "その他"
+    },
+    {
+      "id": "o0_g-ks69q",
+      "slug": "faq-seido-12",
+      "question": "長期脱炭素電源オークション（LTDC）第3回の結果は？蓄電池の落札は？",
+      "category": "制度"
     }
   ],
   "occto": [
@@ -1408,6 +1448,12 @@
       "slug": "faq-sonota-07",
       "question": "蓄電所事業のキャリアパスは？",
       "category": "その他"
+    },
+    {
+      "id": "o0_g-ks69q",
+      "slug": "faq-seido-12",
+      "question": "長期脱炭素電源オークション（LTDC）第3回の結果は？蓄電池の落札は？",
+      "category": "制度"
     }
   ],
   "occto-telemetering": [],
@@ -1677,6 +1723,12 @@
       "id": "8m1_zd3mw",
       "slug": "faq-hojokin-01",
       "question": "系統用蓄電池の主な補助金制度は？",
+      "category": "補助金"
+    },
+    {
+      "id": "zt1toec-d8yy",
+      "slug": "faq-hojokin-11",
+      "question": "令和7年度補正予算の系統用蓄電池向け補助金には何がありますか？",
       "category": "補助金"
     }
   ],
@@ -2159,10 +2211,19 @@
   ],
   "carbon-budget": [],
   "carbon-footprint": [],
+  "carbon-pricing": [
+    {
+      "id": "imy5ykm6i",
+      "slug": "faq-seido-11",
+      "question": "GX-ETS（排出量取引制度）は蓄電所事業にどう影響しますか？",
+      "category": "制度"
+    }
+  ],
   "carbon-pricing-detail": [],
   "gas-detector": [],
   "gas-venting": [],
   "gas-release": [],
+  "cap-and-trade": [],
   "cloud": [],
   "cloud-computing": [],
   "clean-energy": [],
@@ -2174,6 +2235,7 @@
   "green-finance": [],
   "green-bond": [],
   "green-bond-detail": [],
+  "green-loan": [],
   "green-certification": [],
   "green-power-certificate": [],
   "cost-management": [],
@@ -2275,6 +2337,18 @@
       "slug": "faq-hojokin-08",
       "question": "蓄電池供給確保計画とは？認定企業は？",
       "category": "補助金"
+    },
+    {
+      "id": "5we7-y_tx",
+      "slug": "faq-sonota-11",
+      "question": "米国のFEOC規制とは？日本の蓄電池企業に影響はありますか？",
+      "category": "その他"
+    },
+    {
+      "id": "5-gb3_p0w0b",
+      "slug": "faq-seido-13",
+      "question": "蓄電池・電源産業戦略（2026年6月改定）とは？蓄電所事業への影響は？",
+      "category": "制度"
     }
   ],
   "thermal-camera": [],
@@ -3019,6 +3093,12 @@
       "slug": "faq-sonota-10",
       "question": "蓄電所事業の長期見通し（2030年・2050年）は？",
       "category": "その他"
+    },
+    {
+      "id": "5-gb3_p0w0b",
+      "slug": "faq-seido-13",
+      "question": "蓄電池・電源産業戦略（2026年6月改定）とは？蓄電所事業への影響は？",
+      "category": "制度"
     }
   ],
   "public-offering": [],
@@ -3149,6 +3229,7 @@
   "post-fit": [],
   "single-unit-rating": [],
   "islanding": [],
+  "wholesale-electricity-market": [],
   "sojitz": [],
   "right-of-reply": [],
   "substation-equipment": [],
@@ -3356,6 +3437,20 @@
   "retail-electricity-business": [],
   "yamaguchi-bess": [],
   "construction-plan-notification": [],
+  "interconnection-cost-burden": [
+    {
+      "id": "qx88sorws",
+      "slug": "faq-jigyou-06",
+      "question": "接続検討と接続契約の流れは？",
+      "category": "事業"
+    },
+    {
+      "id": "f-awygf2ry0u",
+      "slug": "faq-seido-10",
+      "question": "系統連系協議の流れは？",
+      "category": "制度"
+    }
+  ],
   "urbanization-restricted-area": [],
   "annual-revenue": [
     {
@@ -3848,16 +3943,16 @@
       "category": "その他"
     },
     {
+      "id": "zt1toec-d8yy",
+      "slug": "faq-hojokin-11",
+      "question": "令和7年度補正予算の系統用蓄電池向け補助金には何がありますか？",
+      "category": "補助金"
+    },
+    {
       "id": "yiugb5gfz9qd",
       "slug": "faq-jigyou-08",
       "question": "系統用蓄電池のマルチユース運用とは？",
       "category": "事業"
-    },
-    {
-      "id": "a73kukpsnx",
-      "slug": "faq-gijutsu-01",
-      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
-      "category": "技術"
     }
   ],
   "grid-scale-battery": [
@@ -3880,16 +3975,16 @@
       "category": "その他"
     },
     {
+      "id": "zt1toec-d8yy",
+      "slug": "faq-hojokin-11",
+      "question": "令和7年度補正予算の系統用蓄電池向け補助金には何がありますか？",
+      "category": "補助金"
+    },
+    {
       "id": "yiugb5gfz9qd",
       "slug": "faq-jigyou-08",
       "question": "系統用蓄電池のマルチユース運用とは？",
       "category": "事業"
-    },
-    {
-      "id": "a73kukpsnx",
-      "slug": "faq-gijutsu-01",
-      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
-      "category": "技術"
     }
   ],
   "grid-scale-bess": [
@@ -3912,16 +4007,16 @@
       "category": "その他"
     },
     {
+      "id": "zt1toec-d8yy",
+      "slug": "faq-hojokin-11",
+      "question": "令和7年度補正予算の系統用蓄電池向け補助金には何がありますか？",
+      "category": "補助金"
+    },
+    {
       "id": "yiugb5gfz9qd",
       "slug": "faq-jigyou-08",
       "question": "系統用蓄電池のマルチユース運用とは？",
       "category": "事業"
-    },
-    {
-      "id": "a73kukpsnx",
-      "slug": "faq-gijutsu-01",
-      "question": "リチウムイオン電池の種類（LFP / NMC / NCA）の違いは？",
-      "category": "技術"
     }
   ],
   "grid-scale-bess-subsidy": [],
@@ -4034,6 +4129,12 @@
       "slug": "faq-seido-09",
       "question": "特定卸供給事業者として何ができますか？",
       "category": "制度"
+    },
+    {
+      "id": "5-gb3_p0w0b",
+      "slug": "faq-seido-13",
+      "question": "蓄電池・電源産業戦略（2026年6月改定）とは？蓄電所事業への影響は？",
+      "category": "制度"
     }
   ],
   "ministry-of-economy-trade-and-industry": [
@@ -4047,6 +4148,12 @@
       "id": "ll453dyfo",
       "slug": "faq-seido-09",
       "question": "特定卸供給事業者として何ができますか？",
+      "category": "制度"
+    },
+    {
+      "id": "5-gb3_p0w0b",
+      "slug": "faq-seido-13",
+      "question": "蓄電池・電源産業戦略（2026年6月改定）とは？蓄電所事業への影響は？",
       "category": "制度"
     }
   ],
@@ -4066,6 +4173,12 @@
       "category": "制度"
     },
     {
+      "id": "o0_g-ks69q",
+      "slug": "faq-seido-12",
+      "question": "長期脱炭素電源オークション（LTDC）第3回の結果は？蓄電池の落札は？",
+      "category": "制度"
+    },
+    {
       "id": "8m1_zd3mw",
       "slug": "faq-hojokin-01",
       "question": "系統用蓄電池の主な補助金制度は？",
@@ -4082,12 +4195,6 @@
       "slug": "faq-hojokin-05",
       "question": "自治体の独自補助金はある？",
       "category": "補助金"
-    },
-    {
-      "id": "z3r00o1o8",
-      "slug": "faq-gijutsu-06",
-      "question": "NAS電池（ナトリウム硫黄電池）の特徴は？",
-      "category": "技術"
     }
   ],
   "decarbonization-leading-region-detail": [],
@@ -4321,7 +4428,14 @@
   "load-factor": [],
   "load-following": [],
   "load-following-thermal": [],
-  "agency-for-natural-resources-and-energy": [],
+  "agency-for-natural-resources-and-energy": [
+    {
+      "id": "o0_g-ks69q",
+      "slug": "faq-seido-12",
+      "question": "長期脱炭素電源オークション（LTDC）第3回の結果は？蓄電池の落札は？",
+      "category": "制度"
+    }
+  ],
   "meti-committee": [],
   "startup-time": [
     {
