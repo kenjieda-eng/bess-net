@@ -39,7 +39,7 @@ export default function ReportsIndexPage() {
                 <Link href="/reports/2026">業界レポート2026 (蓄電所事業 年次レポート)</Link>
               </h2>
               <p style={{ fontSize: 13, lineHeight: 1.7, margin: 0, color: 'var(--color-muted)' }}>
-                市場規模 / 政策動向 / 主要プレイヤー / 系統 / 火災・トラブル / 海外比較 を集約した業界初の年次レポート。
+                市場規模 / 政策動向 / 主要プレイヤー / 系統 / 火災・トラブル / 海外比較 を集約した当サイト独自の年次レポート。
                 プレビュー版を公開中、本編は順次。
               </p>
             </li>

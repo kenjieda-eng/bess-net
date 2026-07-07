@@ -248,14 +248,14 @@ export default async function Home() {
             <p>
               中部電力パワーグリッド管内の <strong>1,081箇所</strong> の変電所を、緯度経度付きで Leaflet 地図に可視化。
               系統空き容量・N-1電制適用可否・出力制御リスクをマーカー色で直感的に把握できる、
-              <strong>業界初の検索可能・地図ベース変電所空き容量データベース</strong> です。
+              <strong>当サイト独自の検索可能・地図ベース変電所空き容量データベース</strong> です。
             </p>
             <ul className="home-feature-stats">
               <li>
                 <strong>1,081</strong>変電所
               </li>
               <li>
-                <strong>業界初</strong>地図UI
+                <strong>当サイト独自</strong>の地図UI
               </li>
               <li>
                 <strong>緯度経度</strong>付き

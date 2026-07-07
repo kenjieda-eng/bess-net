@@ -211,9 +211,9 @@ export default async function GridIndexPage() {
             </div>
             <div className="grid-hero-features">
               <div className="grid-hero-feature">🥇 業界唯一統合DB</div>
-              <div className="grid-hero-feature">🗺 業界初地図検索</div>
-              <div className="grid-hero-feature">🔍 業界初テキスト検索</div>
-              <div className="grid-hero-feature">📍 業界初クラウドソース基盤</div>
+              <div className="grid-hero-feature">🗺 当サイト独自の地図検索</div>
+              <div className="grid-hero-feature">🔍 当サイト独自のテキスト検索</div>
+              <div className="grid-hero-feature">📍 当サイト独自のクラウドソース基盤</div>
             </div>
           </section>
 
@@ -286,7 +286,7 @@ export default async function GridIndexPage() {
                   {latlngCount.toLocaleString()}
                 </div>
                 <div className="grid-summary-card-sub">
-                  緯度経度付き、業界初
+                  緯度経度付き、当サイト独自
                 </div>
                 <svg
                   width="100%"
