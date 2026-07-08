@@ -7,7 +7,14 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getAllFaq, getGlossaryLiteList, type Faq } from '@/lib/microcms';
+import {
+  getAllFaq,
+  getGlossaryLiteList,
+  getGlossaryList,
+  getExplainerList,
+  getOperatorList,
+  type Faq,
+} from '@/lib/microcms';
 import FaqClient from './FaqClient';
 import { siteConfig } from '@/lib/site-config';
 import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary-301';
@@ -25,20 +32,28 @@ function escapeHtml(text: string): string {
 
 export const revalidate = 600; // 10分
 
-export const metadata: Metadata = {
-  // layout.tsx の titleTemplate `%s | 蓄電所ネット` が自動でサフィックスを付与するため、
-  // page 側では「蓄電所ネット」を含めない（重複防止 / 落とし穴 #86）
-  title: '業界用語よくある質問（FAQ）',
-  description:
-    '系統用蓄電池・再エネ業界に関する50件の Q&A。系統用蓄電池とは？容量市場の仕組みは？事業参入手順は？補助金は？等の頻出質問を制度・技術・事業・補助金・その他の5カテゴリで体系化。',
-  alternates: { canonical: '/faq' },
-  openGraph: {
-    title: '業界用語よくある質問（FAQ）',
-    description:
-      '系統用蓄電池業界のよくある質問 50件を制度・技術・事業・補助金・その他カテゴリで整理。',
-    type: 'website',
-  },
-};
+// 件数はハードコードせず memoize 済 getAllFaq から動的化（faq分析2026-07-08 P1。
+// layout.tsx の titleTemplate `%s | 蓄電所ネット` が自動でサフィックス付与＝page 側では含めない #86/#88）
+export async function generateMetadata(): Promise<Metadata> {
+  let n = 0;
+  try {
+    n = (await getAllFaq()).length;
+  } catch {
+    // 縮退時は件数なし文言
+  }
+  const countPhrase = n > 0 ? `${n}件の Q&A` : 'Q&A';
+  const countPhraseShort = n > 0 ? `よくある質問 ${n}件` : 'よくある質問';
+  return {
+    title: '系統用蓄電池・蓄電所事業のよくある質問（FAQ）',
+    description: `系統用蓄電池・再エネ業界に関する${countPhrase}。系統用蓄電池とは？容量市場の仕組みは？事業参入手順は？補助金は？等の頻出質問を制度・技術・事業・補助金・その他の5カテゴリで体系化。`,
+    alternates: { canonical: '/faq' },
+    openGraph: {
+      title: '系統用蓄電池・蓄電所事業のよくある質問（FAQ）',
+      description: `系統用蓄電池業界の${countPhraseShort}を制度・技術・事業・補助金・その他カテゴリで整理。`,
+      type: 'website',
+    },
+  };
+}
 
 function stripHtml(text: string): string {
   return text.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -66,11 +81,33 @@ export default async function FaqPage() {
   } catch {
     // graceful fallback (linkify なしで描画)
   }
+  // P2: NEWバッジ（コード導出・自動失効＝L-EIC-027 思想）。サーバー側で再生成時点を基準に
+  // publishedAt が窓内の項目へ isNew を付与（クライアントで日時計算しない＝hydration差分回避）。
+  // 窓=30日: 指定の90日では初期50問（publishedAt=2026-05-12 一括投入）も全て対象となり
+  // 検証基準「NEW=6（6/30追加分）」と両立しないため、実データに合わせて調整（要ユウ確認・1定数で変更可）
+  const NEW_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
+  const nowMs = Date.now();
   const itemsWithLinkify = items.map((it) => ({
     ...it,
     // escapeHtml で安全な HTML 化 → linkifyTerms で <a> 付与
     answerHtml: glossaryLite.length > 0 ? linkifyTerms(escapeHtml(it.answer), glossaryLite) : undefined,
+    isNew: !!it.publishedAt && nowMs - new Date(it.publishedAt).getTime() < NEW_WINDOW_MS,
   }));
+
+  // P2: 関連コンテンツ件数の動的化（/events 4087833 と同一パターン・失敗時フォールバック）
+  const safeCount = async (fn: () => Promise<{ totalCount: number }>, fallback: number) => {
+    try {
+      const r = await fn();
+      return r.totalCount > 0 ? r.totalCount : fallback;
+    } catch {
+      return fallback;
+    }
+  };
+  const [glossaryCount, explainerCount, operatorCount] = await Promise.all([
+    safeCount(() => getGlossaryList({ limit: 1, fields: 'id' }), 1524),
+    safeCount(() => getExplainerList({ limit: 1, fields: 'id' }), 174),
+    safeCount(() => getOperatorList({ limit: 1, fields: 'id' }), 544),
+  ]);
 
   // JSON-LD FAQPage (SEO リッチリザルト対応)
   const faqPageJsonLd =
@@ -92,9 +129,11 @@ export default async function FaqPage() {
   const collectionJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: '業界用語FAQ',
+    name: '系統用蓄電池・蓄電所事業のよくある質問（FAQ）',
     description:
-      '系統用蓄電池業界のよくある質問 50件を制度・技術・事業・補助金・その他カテゴリで整理。',
+      items.length > 0
+        ? `系統用蓄電池業界のよくある質問 ${items.length}件を制度・技術・事業・補助金・その他カテゴリで整理。`
+        : '系統用蓄電池業界のよくある質問を制度・技術・事業・補助金・その他カテゴリで整理。',
     url: 'https://bess-net.jp/faq',
     publisher: {
       '@type': 'Organization',
@@ -120,12 +159,12 @@ export default async function FaqPage() {
       <main className="section">
         <div className="section-inner">
           <p className="article-breadcrumb">
-            <Link href="/">トップ</Link> / 業界用語FAQ
+            <Link href="/">トップ</Link> / よくある質問（FAQ）
           </p>
           <div className="section-label">FAQ — Frequently Asked Questions</div>
-          <h1 className="section-title">業界用語よくある質問（FAQ）</h1>
+          <h1 className="section-title">系統用蓄電池・蓄電所事業のよくある質問（FAQ）</h1>
           <p className="section-desc" style={{ marginBottom: 24 }}>
-            系統用蓄電池・再エネ業界に関する <strong>50件のよくある質問</strong> を、制度・技術・事業・補助金・その他の
+            系統用蓄電池・再エネ業界に関する <strong>{items.length > 0 ? `${items.length}件の` : ''}よくある質問</strong> を、制度・技術・事業・補助金・その他の
             5カテゴリで整理しています。新規参入者・既存事業者の双方に役立つエントリーポイントとして、関連用語集・関連解説へのリンクも含めています。
           </p>
           <p
@@ -155,16 +194,7 @@ export default async function FaqPage() {
               }}
             >
               <p style={{ margin: 0, fontSize: 15 }}>
-                業界用語FAQ のデータは準備中です。
-              </p>
-              <p
-                style={{
-                  marginTop: 8,
-                  fontSize: 13,
-                  color: 'var(--color-muted)',
-                }}
-              >
-                microCMS の faq エンドポイント設定完了後、初期データ 50件を投入予定です。
+                FAQを読み込めませんでした。時間をおいて再度お試しください。
               </p>
             </div>
           ) : (
@@ -189,10 +219,10 @@ export default async function FaqPage() {
             </p>
             <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
-                <Link href="/glossary">業界用語集（1,500+語）</Link> — 用語の詳細定義・読み・関連語
+                <Link href="/glossary">業界用語集（{glossaryCount.toLocaleString()}語）</Link> — 用語の詳細定義・読み・関連語
               </li>
               <li>
-                <Link href="/explainer">解説記事（125本）</Link> — 市場制度・参入手順・補助金の体系解説
+                <Link href="/explainer">解説記事（{explainerCount}本）</Link> — 市場制度・参入手順・補助金の体系解説
               </li>
               <li>
                 <Link href="/policy-calendar">政策・法制度カレンダー</Link> — 制度改正・パブコメの時系列
@@ -204,10 +234,10 @@ export default async function FaqPage() {
                 <Link href="/subsidies">補助金カレンダー</Link> — 公募・採択のトラッキング
               </li>
               <li>
-                <Link href="/operators">事業者ナビ（86社）</Link> — 業界プレイヤー検索
+                <Link href="/operators">事業者ナビ（{operatorCount}社）</Link> — 業界プレイヤー検索
               </li>
               <li>
-                <Link href="/grid/chubu/map">中部地方 変電所マップ</Link> — 業界唯一の地図ベース系統情報DB
+                <Link href="/grid/chubu/map">中部地方 変電所マップ</Link> — 当サイト独自の地図ベース系統情報DB
               </li>
             </ul>
           </section>

@@ -6,7 +6,8 @@ import type { Faq } from '@/lib/microcms';
 
 // 依頼BG: FAQ answer の auto-link 適用済 HTML を server から受け取る
 // (server-side で linkifyTerms 済、glossaryLite を bundle 同梱せず安全)
-type FaqWithLinkifiedAnswer = Faq & { answerHtml?: string };
+// isNew はサーバー側（page.tsx）で publishedAt 90日以内を判定して付与（hydration差分回避）
+type FaqWithLinkifiedAnswer = Faq & { answerHtml?: string; isNew?: boolean };
 
 const CATEGORY_ORDER = ['制度', '技術', '事業', '補助金', 'その他'];
 
@@ -234,6 +235,22 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
                     >
                       Q. {it.question}
                     </span>
+                    {it.isNew && (
+                      <span
+                        style={{
+                          fontSize: 10,
+                          padding: '2px 6px',
+                          borderRadius: 4,
+                          color: '#fff',
+                          background: '#e11d48',
+                          fontWeight: 700,
+                          letterSpacing: '0.05em',
+                          flexShrink: 0,
+                        }}
+                      >
+                        NEW
+                      </span>
+                    )}
                   </span>
                   <span
                     style={{
@@ -245,14 +262,16 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
                     {isOpen ? '−' : '+'}
                   </span>
                 </button>
-                {isOpen && (
-                  <div
-                    style={{
-                      padding: '0 16px 16px 16px',
-                      borderTop: '1px solid var(--color-border)',
-                      paddingTop: 12,
-                    }}
-                  >
+                {/* P1: 回答は常時レンダリング（初期DOMに全56件掲載＝SEO）。開閉は display 切替のみ
+                    （faq分析2026-07-08 案1。初期状態は全閉のまま＝hydration mismatch なし） */}
+                <div
+                  style={{
+                    padding: '0 16px 16px 16px',
+                    borderTop: '1px solid var(--color-border)',
+                    paddingTop: 12,
+                    display: isOpen ? undefined : 'none',
+                  }}
+                >
                     {/* 依頼BG: server-side linkify 済 HTML があれば優先描画 */}
                     {it.answerHtml ? (
                       <p
@@ -348,8 +367,7 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
                         )}
                       </div>
                     )}
-                  </div>
-                )}
+                </div>
               </li>
             );
           })}

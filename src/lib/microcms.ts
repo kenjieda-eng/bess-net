@@ -312,26 +312,39 @@ export type Faq = {
  * - displayOrder 昇順 → publishedAt 降順
  * - schema 未作成 / 一時的エラー時は空配列で graceful return
  */
+// /faq の generateMetadata と page 本体の双方から呼ばれるためプロセス内 memoize（#93）。
+// 再生成あたり faq 実リクエスト1回を維持（Next の fetch dedupe に暗黙依存しない）。
+// 失敗時はキャッシュせず空配列（graceful #100・次回呼び出しで再試行）。
+let _faqCache: Faq[] | null = null;
+let _faqPromise: Promise<Faq[]> | null = null;
+
 export const getAllFaq = async (): Promise<Faq[]> => {
-  const all: Faq[] = [];
-  const limit = MICROCMS_PAGE_LIMIT;
-  try {
-    for (let offset = 0; offset < 500; offset += limit) {
-      const data = await client.getList<Faq>({
-        endpoint: 'faq',
-        queries: {
-          limit,
-          offset,
-          orders: 'displayOrder,-publishedAt',
-        },
-      });
-      all.push(...data.contents);
-      if (data.contents.length < limit) break;
+  if (_faqCache) return _faqCache;
+  if (_faqPromise) return _faqPromise;
+  _faqPromise = (async () => {
+    const all: Faq[] = [];
+    const limit = MICROCMS_PAGE_LIMIT;
+    try {
+      for (let offset = 0; offset < 500; offset += limit) {
+        const data = await client.getList<Faq>({
+          endpoint: 'faq',
+          queries: {
+            limit,
+            offset,
+            orders: 'displayOrder,-publishedAt',
+          },
+        });
+        all.push(...data.contents);
+        if (data.contents.length < limit) break;
+      }
+    } catch {
+      _faqPromise = null;
+      return [];
     }
-  } catch {
-    return [];
-  }
-  return all;
+    _faqCache = all;
+    return all;
+  })();
+  return _faqPromise;
 };
 
 // ===== 業界イベント・展示会カレンダー（industry-events、依頼AC） =====
