@@ -30,7 +30,8 @@ export const SITE_ANNOUNCEMENTS: SiteAnnouncement[] = [
     href: '/info/seminar-seetel-jc-star-2026-07-27',
     ctaText: '詳細・お申込み案内を見る →',
     startAt: '2026-06-20',
-    endAt: '2026-07-27',
+    // 2026-07-09 募集締切につき前日日付で即時非表示化（判定は jstDate <= endAt の当日含む比較）
+    endAt: '2026-07-08',
     variant: 'box',
     dismissible: false,
     priority: 10,

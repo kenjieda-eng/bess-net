@@ -7,16 +7,15 @@ import { siteConfig } from '@/lib/site-config';
 export const dynamic = 'force-static';
 
 const SLUG = 'seminar-seetel-jc-star-2026-07-27';
-const PPS_URL =
-  'https://pps-net.org/seminar/161088?utm_source=bess-net&utm_medium=referral&utm_campaign=seminar_seetel_20260727';
 
 export const metadata: Metadata = {
-  title: '台湾SEETEL × JC-STAR｜日本の系統用蓄電池セミナー(2026/7/27)｜蓄電所ネット',
+  // layout の titleTemplate が「 | 蓄電所ネット」を付与するため手書きサフィックスは持たない（#88）
+  title: '【募集終了】台湾SEETEL × JC-STAR｜日本の系統用蓄電池セミナー(2026/7/27)',
   description:
     '2026年7月27日開催。台湾SEETEL（JC-STAR★1取得）登壇の無料セミナー。JC-STAR対応・系統用蓄電池2030政策動向・台湾VPP事例・日台スマートグリッドフォーラム。東京・神保町、定員140名（抽選）。',
   alternates: { canonical: `/info/${SLUG}` },
   openGraph: {
-    title: '台湾SEETEL × JC-STAR｜日本の系統用蓄電池セミナー(2026/7/27)',
+    title: '【募集終了】台湾SEETEL × JC-STAR｜日本の系統用蓄電池セミナー(2026/7/27)',
     description:
       '2026年7月27日（月）16:00〜20:00、東京・神保町。JC-STAR★1取得の台湾SEETELが登壇。系統用蓄電池の2030政策・VPP・日台スマートグリッドフォーラム。無料・定員140名（抽選）。',
     type: 'website',
@@ -60,8 +59,8 @@ export default function SeetelSeminarPage() {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'JPY',
-      availability: 'https://schema.org/LimitedAvailability',
-      url: PPS_URL,
+      // 2026-07-09 募集締切（url は utm付き申込URLの残存を避けるため除去）
+      availability: 'https://schema.org/SoldOut',
     },
     description:
       'JC-STAR★1取得の台湾SEETELが登壇。系統用蓄電池の2030政策動向・台湾VPP事例・日台スマートグリッドフォーラム。蓄電池事業者・アグリゲーター・EPC・電力会社・投資家向け。',
@@ -90,7 +89,7 @@ export default function SeetelSeminarPage() {
             className="article-title"
             style={{ fontSize: '1.45rem', lineHeight: 1.5, marginTop: 12 }}
           >
-            【7/27(月) 無料セミナー】台湾SEETEL × JC-STAR
+            【募集終了】【7/27(月) 無料セミナー】台湾SEETEL × JC-STAR
             <br />― 日本の系統用蓄電池市場へ
           </h1>
           <p className="article-meta">2026年6月20日掲載</p>
@@ -100,6 +99,23 @@ export default function SeetelSeminarPage() {
               2027年4月以降、蓄電池の機器選定で重要となる <strong>JC-STAR★1</strong>。台湾企業として初めて BMS＋蓄電池モジュールと EMS の両方で JC-STAR★1 を取得した{' '}
               <strong>SEETEL Group</strong> を迎え、日本市場戦略と最先端の蓄電池・EMS 技術、2030年に向けた系統用蓄電池の政策動向、台湾で先行するVPP事例、日台の有識者フォーラムを通じて次世代電力システムを展望します。蓄電池事業者・アグリゲーター・EPC・電力会社・投資家の皆さま向けのセミナーです。
             </p>
+
+            {/* 2026-07-09 募集締切告知（開催情報は記録として存置） */}
+            <div
+              style={{
+                margin: '20px 0 24px',
+                padding: '14px 18px',
+                background: '#fef2f2',
+                border: '2px solid #b91c1c',
+                borderRadius: 8,
+                fontSize: 15,
+                fontWeight: 700,
+                color: '#b91c1c',
+                lineHeight: 1.7,
+              }}
+            >
+              本セミナーの募集は締め切りました。多数のお申込みをありがとうございました。
+            </div>
 
             <h2>開催概要</h2>
             <table
@@ -178,13 +194,13 @@ export default function SeetelSeminarPage() {
             </p>
           </div>
 
-          {/* CTA */}
+          {/* 2026-07-09 募集締切: 申込CTA（外部リンク）は非リンク表示へ置換 */}
           <div
             style={{
               margin: '32px 0',
               padding: 24,
               background: '#f8fafc',
-              border: '2px solid #0F2D4F',
+              border: '2px solid #6b7280',
               borderRadius: 8,
               textAlign: 'center',
             }}
@@ -193,30 +209,16 @@ export default function SeetelSeminarPage() {
               style={{
                 fontSize: 15,
                 fontWeight: 700,
-                marginBottom: 16,
+                marginBottom: 8,
                 marginTop: 0,
-                color: '#0F2D4F',
+                color: '#374151',
               }}
             >
-              お申し込み・最新情報は新電力ネットの特設ページへ
+              募集は締め切りました
             </p>
-            <a
-              href={PPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                background: '#0F2D4F',
-                color: '#fff',
-                padding: '12px 28px',
-                borderRadius: 4,
-                fontSize: 14,
-                fontWeight: 700,
-                textDecoration: 'none',
-              }}
-            >
-              申し込みページへ（新電力ネット）→
-            </a>
+            <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: 0 }}>
+              多数のお申込みをありがとうございました。
+            </p>
           </div>
 
           <p
@@ -227,7 +229,7 @@ export default function SeetelSeminarPage() {
               marginBottom: 24,
             }}
           >
-            ※ 本ページは案内です。お申し込み受付は主催 SEETEL Group ／協力 新電力ネット（エネルギー情報センター）の特設ページで行われます。bess-net ではお申し込み受付・個人情報の取得を行いません。
+            ※ 本ページは開催案内の記録です。お申し込み受付は主催 SEETEL Group ／協力 新電力ネット（エネルギー情報センター）の特設ページで行われました。bess-net ではお申し込み受付・個人情報の取得を行いません。
           </p>
 
           <p className="back-link">
