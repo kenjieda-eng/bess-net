@@ -1,5 +1,5 @@
 /**
- * /tools/subsidy-match — 蓄電池補助金マッチング (依頼AO、業界唯一機能)
+ * /tools/subsidy-match — 蓄電池補助金マッチング (依頼AO)
  *
  * 設計 (CLAUDE.md §0 鉄則完全準拠):
  *   - 鉄則 #2: SSR で外部 API リクエスト 0 (事前計算済 JSON 参照のみ)
@@ -19,18 +19,22 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import SubsidyMatcher from '@/components/SubsidyMatcher';
 import { siteConfig } from '@/lib/site-config';
+import subsidiesData from '@/data/subsidies.json';
 
 export const revalidate = 86400; // 24h
+
+// 件数はローカル JSON から動的参照（焼き込み drift 防止・tools分析2026-07-09 変更3。microCMS 0 req）
+const SUBSIDY_COUNT = (subsidiesData as unknown[]).length;
 
 export const metadata: Metadata = {
   title: '蓄電池補助金マッチング (無料・登録不要)',
   description:
-    '蓄電池補助金を所在地・用途・容量・事業者種別で即マッチング。SII・自治体・民間ローンの 50 件から条件適合の Top 10 を表示。業界唯一の無料ツール。',
+    `蓄電池補助金を所在地・用途・容量・事業者種別で即マッチング。SII・自治体・民間ローンの ${SUBSIDY_COUNT} 件から条件適合の Top 10 を表示。無料・登録不要。`,
   alternates: { canonical: '/tools/subsidy-match' },
   openGraph: {
-    title: '蓄電池補助金マッチング (業界唯一・無料)',
+    title: '蓄電池補助金マッチング (無料・登録不要)',
     description:
-      'SII・自治体・民間ローンの 50 件補助金から、所在地・用途・容量・事業者種別で適合制度を Top 10 即時抽出。',
+      `SII・自治体・民間ローンの ${SUBSIDY_COUNT} 件補助金から、所在地・用途・容量・事業者種別で適合制度を Top 10 即時抽出。`,
     type: 'website',
     images: ['/og-image.png'],
   },
@@ -100,10 +104,10 @@ export default function SubsidyMatchPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 蓄電池補助金マッチング
           </p>
-          <div className="section-label">業界唯一 · 無料・登録不要</div>
+          <div className="section-label">補助金DB連携（{SUBSIDY_COUNT}件） · 無料・登録不要</div>
           <h1 className="section-title">蓄電池補助金マッチング</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
-            <strong>所在地・用途・容量・事業者種別</strong> で蓄電池補助金 50 件から条件適合の{' '}
+            <strong>所在地・用途・容量・事業者種別</strong> で蓄電池補助金 {SUBSIDY_COUNT} 件から条件適合の{' '}
             <strong>Top 10</strong> を即時マッチング。SII・自治体・民間ローンを横断検索、
             スコアリング表示で「なぜ該当するか」も透明化。CSV エクスポート / URL 共有対応。
           </p>

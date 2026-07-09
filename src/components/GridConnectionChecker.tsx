@@ -704,14 +704,14 @@ export default function GridConnectionChecker() {
               系統空き容量データベース
             </Link>
             {' '}
-            — 8,225 変電所の全データ閲覧
+            — 全国10社・全変電所データ閲覧
           </li>
           <li>
             <Link href="/grid/chubu/map" style={{ color: 'var(--color-accent, #0066cc)' }}>
               中部地方 変電所マップ
             </Link>
             {' '}
-            — 業界唯一の地図ベース UI
+            — 当サイト独自の地図ベース UI
           </li>
           <li>
             <Link href="/tools/irr-simulator" style={{ color: 'var(--color-accent, #0066cc)' }}>

@@ -48,12 +48,13 @@ import volumeKyushuData    from '@/data/eic/capacity-main-auction-volume-kyushu.
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: '容量市場応札試算（業界唯一・実データ連携）',
+  // layout titleTemplate が「 | 蓄電所ネット」を自動付与（#88）
+  title: '容量市場応札試算（OCCTO実データ連携・無料）',
   description:
-    '容量市場メインオークションの応札価格を 9 エリア・FY2024-FY2029 実績（OCCTO 公表値 / data.eic-jp.org）から推定。推奨応札レンジ + 落札確率 + 想定収入を即時試算。区分非依存を正しく反映。業界唯一の無料ツール。',
+    '容量市場メインオークションの応札価格を 9 エリア・FY2024-FY2029 実績（OCCTO 公表値 / data.eic-jp.org）から推定。推奨応札レンジ + 落札確率 + 想定収入を即時試算。区分非依存を正しく反映。無料・登録不要。',
   alternates: { canonical: '/tools/capacity-market-bid' },
   openGraph: {
-    title: '容量市場応札試算（業界唯一・実データ連携）| 蓄電所ネット',
+    title: '容量市場応札試算（OCCTO実データ連携・無料）| 蓄電所ネット',
     description:
       '9 エリア × FY2024-FY2029 実績（OCCTO 公表値）から推奨応札価格 + 落札確率を試算。区分非依存（新設/既設/経過措置で同価格）を正しく反映。',
     type: 'website',
@@ -194,12 +195,12 @@ export default function CapacityMarketBidPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 容量市場応札試算
           </p>
-          <div className="section-label">業界唯一 · 実データ連携 · 無料</div>
-          <h1 className="section-title">容量市場応札試算</h1>
+          <div className="section-label">OCCTO 実データ連携 · 無料・登録不要</div>
+          <h1 className="section-title">容量市場応札試算（OCCTO実データ連携・無料）</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             容量市場メインオークションの応札価格を、<strong>9 エリア × FY2024-FY2029（6 年度・{liveHistory.length} 件）</strong>の
             OCCTO 公表実績から推定。<strong>推奨応札レンジ (下限/中央/上限)</strong>{' '}
-            と <strong>落札確率 + 想定収入</strong> を即時試算。業界唯一の無料・登録不要ツール。
+            と <strong>落札確率 + 想定収入</strong> を即時試算。無料・登録不要ツール。
           </p>
           <p
             className="page-meta"

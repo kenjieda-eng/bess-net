@@ -1,5 +1,5 @@
 /**
- * /tools/lcoe-lcos — LCOE・LCOS 計算機（66番、業界唯一）
+ * /tools/lcoe-lcos — LCOE・LCOS 計算機（66番）
  *
  * 設計（鉄則#2/#4・落とし穴#92/#103・L-EIC-019/055）:
  *  - 単一 URL・動的ルートなし（静的扱い）。microCMS 0（client-side 計算）。
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     '系統用蓄電池の LCOS（均等化蓄電原価）と電源別 LCOE（均等化発電原価）を前提条件から無料試算。NREL ATB 2024（米国前提）の蓄電池CAPEX・電源別CAPEX/LCOEを基準に、効率・サイクル・割引率等を調整。ブラウザ完結・登録不要。',
   alternates: { canonical: '/tools/lcoe-lcos' },
   openGraph: {
-    title: 'LCOE・LCOS計算機（業界唯一・無料）',
+    title: 'LCOE・LCOS計算機（無料・登録不要）',
     description:
       '系統用蓄電池のLCOS・電源別LCOEを前提条件から試算。NREL ATB 2024基準・米国前提/レンジ仮定明記。',
     type: 'website',
@@ -132,7 +132,7 @@ export default function LcoeLcosPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / LCOE・LCOS計算機
           </p>
-          <div className="section-label">業界唯一 · 無料・登録不要</div>
+          <div className="section-label">NREL ATB 2024 準拠 · 無料・登録不要</div>
           <h1 className="section-title">LCOE・LCOS計算機（均等化発電原価・均等化蓄電原価）</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             系統用蓄電池の <strong>LCOS（均等化蓄電原価）</strong> と、太陽光・風力・原子力等の

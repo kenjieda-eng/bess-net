@@ -27,6 +27,7 @@ import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary
 import { linkifyHTML } from '@/lib/linkify';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
+import { TOOL_CTAS } from '@/lib/tools-cta';
 
 export const revalidate = 600;
 
@@ -208,6 +209,17 @@ export default async function ExplainerDetailPage({
               </Link>
             </section>
           )}
+
+          {/* 文脈ツールCTA — grid CTA の勝ちパターン横展開（tools分析2026-07-09 変更4、対象 slug は tools-cta.ts） */}
+          {TOOL_CTAS.filter((c) => c.explainerSlugs.has(exp.slug)).map((c) => (
+            <section key={c.href} className="cta-grid-section">
+              <h3>{c.label}</h3>
+              <p>{c.text}</p>
+              <Link href={c.href} className="cta-grid-button">
+                {c.button} →
+              </Link>
+            </section>
+          ))}
 
           {/* 出典 */}
           {exp.sources && (

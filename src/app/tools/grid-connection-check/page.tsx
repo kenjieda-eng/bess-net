@@ -1,5 +1,5 @@
 /**
- * /tools/grid-connection-check — 系統連系診断 (依頼AR、業界唯一機能)
+ * /tools/grid-connection-check — 系統連系診断 (依頼AR)
  *
  * 設計 (CLAUDE.md §0 鉄則完全準拠):
  *   - 鉄則 #2: SSR で外部 API リクエスト 0 (事前計算済 40 JSON 参照)
@@ -18,25 +18,27 @@ import substationsIndex from '@/data/substations/index.json';
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
-  title: '系統連系診断 (8,225 変電所DB ベース)',
-  description:
-    '日本全国 8,225 変電所の公表データから、希望地点・出力に最適な連系候補を Top 5 即時抽出。空き容量・N-1 電制適用可否・距離評価でスコアリング。業界唯一の無料ツール。',
-  alternates: { canonical: '/tools/grid-connection-check' },
-  openGraph: {
-    title: '系統連系診断 (業界唯一・8,225変電所DB)',
-    description:
-      '所在地・出力・容量で連系候補 Top 5 を即時診断。10 送配電・8,200+ 件の空き容量データを横断検索。',
-    type: 'website',
-    images: ['/og-image.png'],
-  },
-};
-
 const INDEX = substationsIndex as {
   total: number;
   with_coords: number;
   pref_count: number;
   updated_at: string;
+};
+// 変電所数はローカル JSON から動的参照（焼き込み drift 防止・tools分析2026-07-09 変更3。microCMS 0 req）
+const TOTAL_STR = INDEX.total.toLocaleString('en-US');
+
+export const metadata: Metadata = {
+  title: `系統連系診断 (${TOTAL_STR} 変電所DB ベース)`,
+  description:
+    `日本全国 ${TOTAL_STR} 変電所の公表データから、希望地点・出力に最適な連系候補を Top 5 即時抽出。空き容量・N-1 電制適用可否・距離評価でスコアリング。無料・登録不要。`,
+  alternates: { canonical: '/tools/grid-connection-check' },
+  openGraph: {
+    title: `系統連系診断 (全国10社・${TOTAL_STR}変電所DB)`,
+    description:
+      '所在地・出力・容量で連系候補 Top 5 を即時診断。10 送配電の空き容量データを横断検索。',
+    type: 'website',
+    images: ['/og-image.png'],
+  },
 };
 
 export default function GridConnectionCheckPage() {
@@ -46,7 +48,7 @@ export default function GridConnectionCheckPage() {
     name: '系統連系診断',
     alternateName: 'BESS Grid Connection Checker',
     description:
-      '日本全国 8,225 変電所の公表データから、希望地点・出力に最適な連系候補を即時抽出するブラウザ完結ツール。',
+      `日本全国 ${TOTAL_STR} 変電所の公表データから、希望地点・出力に最適な連系候補を即時抽出するブラウザ完結ツール。`,
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web Browser',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
@@ -59,7 +61,7 @@ export default function GridConnectionCheckPage() {
       url: siteConfig.organization.url,
     },
     featureList: [
-      '8,225 変電所データベース ベース',
+      `${TOTAL_STR} 変電所データベース ベース`,
       '都道府県 + 緯度経度 + 出力で診断',
       'haversine 距離計算 (km)',
       'feasibility スコアリング (0-100)',
@@ -102,7 +104,7 @@ export default function GridConnectionCheckPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 系統連系診断
           </p>
-          <div className="section-label">業界唯一 · 無料・登録不要</div>
+          <div className="section-label">全国10社・{TOTAL_STR}変電所DB · 無料・登録不要</div>
           <h1 className="section-title">系統連系診断</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             <strong>{INDEX.total.toLocaleString()} 変電所</strong> の公表データから、希望地点・出力に最適な連系候補を{' '}

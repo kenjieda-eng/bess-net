@@ -1,5 +1,5 @@
 /**
- * /tools/fire-risk-check — 火災リスク自己診断 (依頼AS、業界唯一・教育型)
+ * /tools/fire-risk-check — 火災リスク自己診断 (依頼AS、教育型)
  *
  * 設計 (CLAUDE.md §0 鉄則完全準拠):
  *   - 鉄則 #2: SSR 外部 API 0 (チェックリストは静的データ)
@@ -25,10 +25,10 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: '火災リスク自己診断 (UL9540A 25問チェック)',
   description:
-    '蓄電池の火災リスクを 25 問でセルフチェック。UL9540A / NFPA 855 / 消防法 の主要観点を網羅。総合スコア + カテゴリ別評価 + 優先改善 Top 5 を即時算出。業界唯一の無料・教育型ツール。',
+    '蓄電池の火災リスクを 25 問でセルフチェック。UL9540A / NFPA 855 / 消防法 の主要観点を網羅。総合スコア + カテゴリ別評価 + 優先改善 Top 5 を即時算出。無料・登録不要の教育型ツール。',
   alternates: { canonical: '/tools/fire-risk-check' },
   openGraph: {
-    title: '火災リスク自己診断 (UL9540A 25問、業界唯一)',
+    title: '火災リスク自己診断 (UL9540A 準拠・25問)',
     description: 'セル選定・PCS・建屋・運用・緊急対応の 5 カテゴリ 25 問チェックリスト。',
     type: 'website',
     images: ['/og-image.png'],
@@ -134,7 +134,7 @@ export default function FireRiskCheckPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 火災リスク自己診断
           </p>
-          <div className="section-label">業界唯一 · 教育型 · 無料</div>
+          <div className="section-label">UL9540A 準拠・25問 · 教育型 · 無料</div>
           <h1 className="section-title">蓄電池火災リスク自己診断</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             蓄電池の火災リスクを <strong>UL9540A / NFPA 855 / 消防法</strong> の主要観点で{' '}

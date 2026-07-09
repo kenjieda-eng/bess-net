@@ -267,7 +267,7 @@ export default function BalancingRevenuePage() {
             需給調整 収益シナリオ（蓄電池）
           </p>
 
-          <div className="section-label">業界唯一 · 無料・登録不要</div>
+          <div className="section-label">EPRX 実約定価格・6商品 · 無料・登録不要</div>
           <h1 className="section-title">需給調整 収益シナリオ（蓄電池）</h1>
           <p
             className="section-desc text-base lg:text-lg"

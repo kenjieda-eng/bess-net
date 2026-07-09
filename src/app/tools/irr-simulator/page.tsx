@@ -1,5 +1,5 @@
 /**
- * /tools/irr-simulator — 蓄電池IRRシミュレーター (依頼AM、業界唯一機能)
+ * /tools/irr-simulator — 蓄電池IRRシミュレーター (依頼AM)
  *
  * 設計:
  *   - 単一 URL、動的ルートなし → 落とし穴 #79 #98 とは無関係 (静的扱い)
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     '系統用蓄電池プロジェクトのIRR・NPV・ペイバック期間を業界標準ロジックで無料試算。容量市場・需給調整市場・スポットアービトラージの3市場併用前提、3シナリオ(楽観/標準/悲観)並列計算、感応度分析、CSVエクスポート対応。',
   alternates: { canonical: '/tools/irr-simulator' },
   openGraph: {
-    title: '蓄電池IRRシミュレーター (業界唯一・無料)',
+    title: '蓄電池IRRシミュレーター (無料・登録不要)',
     description:
       '系統用蓄電池の事業性をIRR/NPV/ペイバックで試算。3シナリオ並列・感応度分析・CSV出力対応。',
     type: 'website',
@@ -123,7 +123,7 @@ export default function IrrSimulatorPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tools">ツール</Link> / 蓄電池IRRシミュレーター
           </p>
-          <div className="section-label">業界唯一 · 無料・登録不要</div>
+          <div className="section-label">無料・登録不要 · ブラウザ完結</div>
           <h1 className="section-title">蓄電池IRRシミュレーター</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             系統用蓄電池プロジェクトの <strong>IRR・NPV・ペイバック期間</strong> を業界標準ロジックで無料試算。

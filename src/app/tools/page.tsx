@@ -10,6 +10,12 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import substationsIndex from '@/data/substations/index.json';
+import subsidiesData from '@/data/subsidies.json';
+
+// 件数はローカル JSON から動的参照（焼き込み drift 防止・tools分析2026-07-09 変更3。microCMS 0 req）
+const SUBSTATION_TOTAL = (substationsIndex as { total: number }).total;
+const SUBSIDY_COUNT = (subsidiesData as unknown[]).length;
 
 export const revalidate = 86400;
 
@@ -26,18 +32,28 @@ export const metadata: Metadata = {
 };
 
 const tools = [
+  // 並び順: GA4 2026-06-01〜07-09 表示回数順・tools分析2026-07-09（P2）
+  // バッジ: 「業界唯一」撤去→事実バッジへ差替（L-EIC-019・tools分析2026-07-09 P1）
   {
-    slug: 'balancing-revenue',
-    title: '需給調整 収益シナリオ（蓄電池）',
-    badge: '業界唯一',
+    slug: 'grid-connection-check',
+    title: '系統連系診断',
+    badge: `全国10社・${SUBSTATION_TOTAL.toLocaleString('en-US')}変電所DB`,
     available: true,
     description:
-      '需給調整市場 6 商品（一次〜三次②・複合）の蓄電池落札単価（EPRX 実績）に落札率・容量を掛けた概算年間収益を試算。前提次第で大きく変わる感応度ツール（L-EIC-018）。Phase 2 で実落札量対応予定。',
+      `日本全国 ${SUBSTATION_TOTAL.toLocaleString('en-US')} 変電所の公表データから、希望地点・出力に最適な連系候補を Top 5 即時抽出。haversine 距離計算 + 空き容量・N-1 電制・出力制御リスクの総合スコアリング。CSV エクスポート / URL 共有対応。`,
+  },
+  {
+    slug: 'irr-simulator',
+    title: '蓄電池IRRシミュレーター',
+    badge: '無料・登録不要',
+    available: true,
+    description:
+      '系統用蓄電池プロジェクトの IRR・NPV・ペイバック期間を業界標準ロジックで無料試算。3 シナリオ (楽観/標準/悲観) 並列計算、感応度分析、CSV エクスポート対応。',
   },
   {
     slug: 'fire-risk-check',
     title: '蓄電池火災リスク自己診断',
-    badge: '業界唯一・教育型',
+    badge: 'UL9540A 準拠・25問',
     available: true,
     description:
       'UL9540A / NFPA 855 / 消防法 観点で 25 問セルフチェック。セル選定・PCS・建屋・運用・緊急対応の 5 カテゴリで総合スコア + 優先改善 Top 5 を即時算出。',
@@ -45,42 +61,34 @@ const tools = [
   {
     slug: 'capacity-market-bid',
     title: '容量市場応札試算',
-    badge: '業界唯一・モック版',
+    badge: 'OCCTO 実データ連携（54件）',
     available: true,
     description:
-      '容量市場メインオークションの応札価格を 9 エリア × 区分別過去実績から推定。推奨応札レンジ + 落札確率 + 想定収入を即時試算。5/29 AU 公開時に精度大幅UP予定。',
-  },
-  {
-    slug: 'irr-simulator',
-    title: '蓄電池IRRシミュレーター',
-    badge: '業界唯一',
-    available: true,
-    description:
-      '系統用蓄電池プロジェクトの IRR・NPV・ペイバック期間を業界標準ロジックで無料試算。3 シナリオ (楽観/標準/悲観) 並列計算、感応度分析、CSV エクスポート対応。',
-  },
-  {
-    slug: 'lcoe-lcos',
-    title: 'LCOE・LCOS計算機',
-    badge: '業界唯一',
-    available: true,
-    description:
-      '系統用蓄電池の LCOS（均等化蓄電原価）と太陽光・風力・原子力等の電源別 LCOE を前提条件から試算。NREL ATB 2024 基準（米国前提）、コスト内訳・電源別比較・NREL参考値の並列表示。',
+      '容量市場メインオークションの応札価格を 9 エリア × FY2024-FY2029 実績（OCCTO 公表値 / data.eic-jp.org）から推定。推奨応札レンジ + 落札確率 + 想定収入を即時試算。',
   },
   {
     slug: 'subsidy-match',
     title: '蓄電池補助金マッチング',
-    badge: '業界唯一',
+    badge: `補助金DB連携（${SUBSIDY_COUNT}件）`,
     available: true,
     description:
-      '所在地・用途・容量・事業者種別で 50 件の補助金から Top 10 を即時マッチング。SII・自治体・民間ローン横断、スコアリング型で透明性も担保。CSV エクスポート / URL 共有対応。',
+      `所在地・用途・容量・事業者種別で ${SUBSIDY_COUNT} 件の補助金から Top 10 を即時マッチング。SII・自治体・民間ローン横断、スコアリング型で透明性も担保。CSV エクスポート / URL 共有対応。`,
   },
   {
-    slug: 'grid-connection-check',
-    title: '系統連系診断',
-    badge: '業界唯一',
+    slug: 'balancing-revenue',
+    title: '需給調整 収益シナリオ（蓄電池）',
+    badge: 'EPRX 実約定価格・6商品',
     available: true,
     description:
-      '日本全国 8,225 変電所の公表データから、希望地点・出力に最適な連系候補を Top 5 即時抽出。haversine 距離計算 + 空き容量・N-1 電制・出力制御リスクの総合スコアリング。CSV エクスポート / URL 共有対応。',
+      '需給調整市場 6 商品（一次〜三次②・複合）の蓄電池落札単価（EPRX 実績）に落札率・容量を掛けた概算年間収益を試算。前提次第で大きく変わる感応度ツール（L-EIC-018）。Phase 2 で実落札量対応予定。',
+  },
+  {
+    slug: 'lcoe-lcos',
+    title: 'LCOE・LCOS計算機',
+    badge: 'NREL ATB 2024 準拠',
+    available: true,
+    description:
+      '系統用蓄電池の LCOS（均等化蓄電原価）と太陽光・風力・原子力等の電源別 LCOE を前提条件から試算。NREL ATB 2024 基準（米国前提）、コスト内訳・電源別比較・NREL参考値の並列表示。',
   },
 ];
 
