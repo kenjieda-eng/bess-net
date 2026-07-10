@@ -20,6 +20,22 @@ export interface SiteAnnouncement {
 // 次回告知: この配列に1エントリ追加するだけで全ページ上部に出る
 export const SITE_ANNOUNCEMENTS: SiteAnnouncement[] = [
   {
+    // 稼働中蓄電所ご紹介の常設PR導線（2026-07-11 EDAさん発案・バナー文言A案）
+    // 常設のため endAt=2099-12-31（4週後 2026-08上旬に GA4 ファネルレビュー予定）。
+    // イベント告知バナーが発生した場合は priority で上書き可（その都度 EDAさん判断）
+    id: 'operating-bess-introduction',
+    enabled: true,
+    type: 'notice',
+    title: '【ご案内】稼働中の系統用蓄電池（蓄電所）のご紹介が可能です →',
+    href: '/info/operating-bess-introduction',
+    ctaText: '',
+    startAt: '2026-07-11',
+    endAt: '2099-12-31',
+    variant: 'bar',
+    dismissible: false,
+    priority: 5,
+  },
+  {
     id: 'seminar-seetel-jc-star-2026-07-27',
     enabled: true,
     type: 'seminar',
