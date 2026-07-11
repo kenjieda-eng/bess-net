@@ -27,7 +27,7 @@ export default function ReportsIndexPage() {
           </p>
           <h1 className="section-title">業界レポート</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>
-            蓄電所業界の年次レポートを公開予定。業界唯一機能で蓄積したデータを編集統合します。
+            蓄電所業界の年次レポートを公開予定。当サイト独自機能で蓄積したデータを編集統合します。
           </p>
 
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>

@@ -11,7 +11,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: '業界トラッカー (補助金 × 系統 × 事業者 × 案件 タイムライン)',
-  description: '蓄電所事業の最新動向を 4 軸 (補助金/系統空き容量/事業者/プロジェクト) でタイムライン表示。業界唯一の更新トラッカー、無料公開・登録不要。',
+  description: '蓄電所事業の最新動向を 4 軸 (補助金/系統空き容量/事業者/プロジェクト) でタイムライン表示。当サイト独自の更新トラッカー、無料公開・登録不要。',
   alternates: { canonical: '/tracker' },
   openGraph: {
     title: '業界トラッカー (補助金 × 系統 × 事業者 × 案件)',
@@ -82,12 +82,12 @@ export default function TrackerHubPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 業界トラッカー
           </p>
-          <div className="section-label">業界唯一 · 更新タイムライン</div>
+          <div className="section-label">当サイト独自 · 更新タイムライン</div>
           <h1 className="section-title">業界トラッカー</h1>
           <p className="section-desc" style={{ marginBottom: 24 }}>
             蓄電所事業の最新動向を <strong>4 軸</strong>(補助金 / 系統空き容量 / 事業者 / プロジェクト)
             でタイムライン表示。情報源は当サイトの全エントリで、定期更新を一覧。
-            業界唯一の更新トラッカー、無料公開・登録不要。
+            当サイト独自の更新トラッカー、無料公開・登録不要。
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16, marginTop: 24 }}>

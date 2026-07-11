@@ -203,14 +203,14 @@ export default async function GridIndexPage() {
 
           {/* v25: ヒーローセクション */}
           <section className="grid-hero" aria-label="蓄電所ネットの強み">
-            <div className="grid-hero-badge">🥇 業界唯一の総合データベース</div>
+            <div className="grid-hero-badge">🥇 当サイト独自の総合データベース</div>
             <div className="grid-hero-number">{total.toLocaleString()}</div>
             <div className="grid-hero-label">変電所</div>
             <div className="grid-hero-sub">
               全国10社・全国フルカバー（関東含む）
             </div>
             <div className="grid-hero-features">
-              <div className="grid-hero-feature">🥇 業界唯一統合DB</div>
+              <div className="grid-hero-feature">🥇 当サイト独自統合DB</div>
               <div className="grid-hero-feature">🗺 当サイト独自の地図検索</div>
               <div className="grid-hero-feature">🔍 当サイト独自のテキスト検索</div>
               <div className="grid-hero-feature">📍 当サイト独自のクラウドソース基盤</div>
@@ -611,7 +611,7 @@ export default async function GridIndexPage() {
             background: 'var(--color-bg)',
             border: '1px solid var(--color-border)', borderRadius: 6,
           }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (業界唯一機能)</h2>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (当サイト独自機能)</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/tools/grid-connection-check">系統連系診断</Link> — 緯度経度から接続候補変電所を 5 件抽出</li>
               <li><Link href="/tracker/grid">系統トラッカー</Link> — 変電所データの更新タイムライン</li>

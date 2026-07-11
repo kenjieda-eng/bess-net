@@ -155,7 +155,7 @@ export default async function MarketDashboardPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / マーケットデータ
           </p>
-          <div className="section-label">業界唯一 · マーケットデータハブ</div>
+          <div className="section-label">当サイト独自 · マーケットデータハブ</div>
           <h1 className="section-title">マーケットデータダッシュボード</h1>
           {/* Tier 1 UI 統一: text-base lg:text-lg */}
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
@@ -209,7 +209,7 @@ export default async function MarketDashboardPage() {
             background: 'var(--color-bg)',
             border: '1px solid var(--color-border)', borderRadius: 6,
           }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (業界唯一機能)</h2>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (当サイト独自機能)</h2>
             <ul style={{ fontSize: 14, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/market/jepx">JEPX スポット価格ハブ</Link> — 10 系列 × 5,158 日次レコード</li>
               <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター</Link> — 割引率の参考に金融指標を活用</li>

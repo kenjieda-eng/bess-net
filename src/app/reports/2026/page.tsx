@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/reports/2026' },
   openGraph: {
     title: '業界レポート2026（蓄電所事業 年次レポート・本編）',
-    description: '業界唯一機能の蓄積データを全10章に編集統合した年次レポート（本編）。',
+    description: '当サイト独自機能の蓄積データを全10章に編集統合した年次レポート（本編）。',
     type: 'article',
     images: ['/og-image.png'],
   },
@@ -85,7 +85,7 @@ export default async function Report2026Page() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: '業界レポート2026（蓄電所事業 年次レポート・本編）',
-    description: '蓄電所事業の年次レポート2026（本編・全10章）。市場概況・政策・主要プレイヤー・系統データ・補助金・火災事例・海外比較・展望を業界唯一機能の蓄積データと公的一次情報から編集統合',
+    description: '蓄電所事業の年次レポート2026（本編・全10章）。市場概況・政策・主要プレイヤー・系統データ・補助金・火災事例・海外比較・展望を当サイト独自機能の蓄積データと公的一次情報から編集統合',
     author: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
     publisher: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
     datePublished: '2026-05-15',
@@ -115,7 +115,7 @@ export default async function Report2026Page() {
           <div className="section-label" style={{ color: '#0a7', fontWeight: 700 }}>業界レポート2026（本編）· 2026年7月公開</div>
           <h1 className="section-title">業界レポート2026（蓄電所事業 年次レポート）</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>
-            業界唯一機能で蓄積したデータを編集統合した、蓄電所事業の<strong>年次レポート（本編・全10章）</strong>。
+            当サイト独自機能で蓄積したデータを編集統合した、蓄電所事業の<strong>年次レポート（本編・全10章）</strong>。
             市場概況 × 政策・制度 × 主要プレイヤー × 系統データ × 補助金 × 火災・トラブル × 海外比較 × 展望 を1冊に集約します。
             <br />
             冒頭の主要指標は当サイトDBから<strong>リアルタイム集計</strong>（日々自動更新）。本文10章は下段に掲載。

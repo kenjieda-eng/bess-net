@@ -17,7 +17,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: '補助金トラッカー (蓄電池関連 補助金 更新タイムライン)',
-  description: '蓄電池関連の補助金・公募情報の最新更新をタイムライン表示。業界唯一の補助金トラッカー、無料公開・登録不要。',
+  description: '蓄電池関連の補助金・公募情報の最新更新をタイムライン表示。当サイト独自の補助金トラッカー、無料公開・登録不要。',
   alternates: { canonical: '/tracker/subsidy' },
   openGraph: {
     title: '補助金トラッカー (蓄電池関連 更新タイムライン)',
@@ -60,7 +60,7 @@ export default async function SubsidyTrackerPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tracker">業界トラッカー</Link> / 補助金トラッカー
           </p>
-          <div className="section-label">業界唯一 · 補助金 更新タイムライン</div>
+          <div className="section-label">当サイト独自 · 補助金 更新タイムライン</div>
           <h1 className="section-title">補助金トラッカー</h1>
           {/* Tier 1 UI 統一 #1: text-base lg:text-lg */}
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
@@ -77,7 +77,7 @@ export default async function SubsidyTrackerPage() {
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/subsidies">補助金一覧</Link></li>
-              <li><Link href="/tools/subsidy-match">補助金マッチング (業界唯一)</Link></li>
+              <li><Link href="/tools/subsidy-match">補助金マッチング (無料・登録不要)</Link></li>
               <li><Link href="/tracker">業界トラッカー (4軸)</Link></li>
             </ul>
           </section>

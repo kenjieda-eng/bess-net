@@ -19,7 +19,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: '業界カオスマップ (主要事業者 + 関係構造)',
-  description: `蓄電所事業の業界構造を可視化。${PLAYERS.length} 社の主要プレイヤーを 11 カテゴリで整理 + ${RELATIONS.length} 件の関係 (出資/EPC/セル供給/オフテイク等) を表示。業界唯一の構造マップ、無料公開。`,
+  description: `蓄電所事業の業界構造を可視化。${PLAYERS.length} 社の主要プレイヤーを 11 カテゴリで整理 + ${RELATIONS.length} 件の関係 (出資/EPC/セル供給/オフテイク等) を表示。当サイト独自の構造マップ、無料公開。`,
   alternates: { canonical: '/map/industry-chaos' },
   openGraph: {
     title: '業界カオスマップ (蓄電所事業 主要事業者 + 関係構造)',
@@ -96,14 +96,14 @@ export default function IndustryChaosMapPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 業界カオスマップ
           </p>
-          <div className="section-label">業界唯一 · 構造可視化</div>
+          <div className="section-label">当サイト独自 · 構造可視化</div>
           <h1 className="section-title">蓄電所事業 業界カオスマップ</h1>
           {/* Tier 2/3 UI 統一: 分類 D 視覚重視、コンテナは既存維持、解説のみ text-base lg:text-lg (L-JEPX-UI-006 最小修正) */}
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             蓄電所事業の<strong>業界構造を可視化</strong>。主要 {PLAYERS.length} 社を{' '}
             <strong>11 カテゴリ</strong> (デベロッパー / EPC / O&M / セル / システム / PCS / EMS / 電力 / 金融 / 土地 / コンサル)
             で整理 + <strong>{RELATIONS.length} 件の関係</strong> (出資/EPC/セル供給/オフテイク等) を表示。
-            業界唯一の構造マップ、無料公開・登録不要。
+            当サイト独自の構造マップ、無料公開・登録不要。
           </p>
           <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 24 }}>
             ※ 主要事業者を抽出した「業界構造可視化」用ビュー。完全網羅は{' '}

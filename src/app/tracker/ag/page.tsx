@@ -17,7 +17,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: '事業者トラッカー (蓄電所事業者 540+ 更新タイムライン)',
-  description: '事業者ナビ (540+社) の追加・更新を時系列で表示。カテゴリ別フィルタ可能。業界唯一の事業者トラッカー、無料公開・登録不要。',
+  description: '事業者ナビ (540+社) の追加・更新を時系列で表示。カテゴリ別フィルタ可能。当サイト独自の事業者トラッカー、無料公開・登録不要。',
   alternates: { canonical: '/tracker/ag' },
   openGraph: {
     title: '事業者トラッカー (蓄電所事業者 540+)',
@@ -60,7 +60,7 @@ export default async function OperatorTrackerPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tracker">業界トラッカー</Link> / 事業者トラッカー
           </p>
-          <div className="section-label">業界唯一 · 事業者 更新タイムライン</div>
+          <div className="section-label">当サイト独自 · 事業者 更新タイムライン</div>
           <h1 className="section-title">事業者トラッカー</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             事業者ナビ (蓄電所関連事業者) の追加・更新を<strong>タイムライン</strong>表示。
@@ -76,7 +76,7 @@ export default async function OperatorTrackerPage() {
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/operators">事業者ナビ (全件)</Link></li>
-              <li><Link href="/map/industry-chaos">業界カオスマップ (業界唯一)</Link></li>
+              <li><Link href="/map/industry-chaos">業界カオスマップ (当サイト独自)</Link></li>
               <li><Link href="/tracker">業界トラッカー (4軸)</Link></li>
             </ul>
           </section>

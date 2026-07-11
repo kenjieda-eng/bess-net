@@ -79,7 +79,7 @@ function buildCsv(input: BidEstimateInput, result: BidEstimateResult): string {
   const lines: string[] = [];
   lines.push('# 容量市場応札試算 結果出力 (bess-net.jp/tools/capacity-market-bid)');
   lines.push(`# 生成日時: ${new Date().toISOString()}`);
-  lines.push('# ⚠️ モック版。応札の最終判断は OCCTO 公式情報を確認');
+  lines.push('# ※ 本試算は参考値。応札の最終判断は OCCTO 公式情報を確認');
   lines.push('');
   lines.push('## 入力条件');
   lines.push(`エリア,${AREA_LABELS[input.area]}`);

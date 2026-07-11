@@ -52,7 +52,7 @@ export default function LandingPageToolsLinks({ tools }: { tools: LandingPageToo
                   marginBottom: 8,
                 }}
               >
-                ★ 業界唯一・無料
+                ★ 当サイト独自・無料
               </div>
               <h3
                 style={{

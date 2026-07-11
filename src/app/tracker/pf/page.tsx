@@ -17,7 +17,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'プロジェクトトラッカー (蓄電所案件 更新タイムライン)',
-  description: '国内蓄電所プロジェクトDBの追加・更新を時系列で表示。発電容量・蓄電容量・運転開始予定等で絞り込み可。業界唯一の案件トラッカー、無料公開・登録不要。',
+  description: '国内蓄電所プロジェクトDBの追加・更新を時系列で表示。発電容量・蓄電容量・運転開始予定等で絞り込み可。当サイト独自の案件トラッカー、無料公開・登録不要。',
   alternates: { canonical: '/tracker/pf' },
   openGraph: {
     title: 'プロジェクトトラッカー (蓄電所案件)',
@@ -66,7 +66,7 @@ export default async function ProjectTrackerPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tracker">業界トラッカー</Link> / プロジェクトトラッカー
           </p>
-          <div className="section-label">業界唯一 · 案件 更新タイムライン</div>
+          <div className="section-label">当サイト独自 · 案件 更新タイムライン</div>
           <h1 className="section-title">プロジェクトトラッカー</h1>
           {/* Tier 1 UI 統一 #1: text-base lg:text-lg */}
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
@@ -83,8 +83,8 @@ export default async function ProjectTrackerPage() {
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/projects">プロジェクトDB (全件)</Link></li>
-              <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター (業界唯一)</Link></li>
-              <li><Link href="/tools/capacity-market-bid">容量市場応札試算 (モック)</Link></li>
+              <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター (無料・登録不要)</Link></li>
+              <li><Link href="/tools/capacity-market-bid">容量市場応札試算 (OCCTO実データ連携)</Link></li>
               <li><Link href="/tracker">業界トラッカー (4軸)</Link></li>
             </ul>
           </section>

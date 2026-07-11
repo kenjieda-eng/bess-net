@@ -18,7 +18,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: '火災・トラブル事例DB (蓄電池 国内外 公開情報)',
-  description: `蓄電池 (BESS) の火災・トラブル事例を公開情報ベースで体系化。${INCIDENTS.length}件のシードデータを掲載。教育・安全文化向上を目的とした業界唯一の事例DB。`,
+  description: `蓄電池 (BESS) の火災・トラブル事例を公開情報ベースで体系化。${INCIDENTS.length}件のシードデータを掲載。教育・安全文化向上を目的とした当サイト独自の事例DB。`,
   alternates: { canonical: '/incidents' },
   openGraph: {
     title: '火災・トラブル事例DB (蓄電池 国内外)',
@@ -99,7 +99,7 @@ export default function IncidentsPage() {
           <h1 className="section-title">火災・トラブル事例 DB</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             蓄電池 (BESS) の火災・トラブル事例を<strong>公開情報ベース</strong>で体系化。
-            業界の<strong>安全文化向上</strong>に資することを目的とした、業界唯一の事例DB。
+            業界の<strong>安全文化向上</strong>に資することを目的とした、当サイト独自の事例DB。
             現在 <strong>{INCIDENTS.length}件</strong>を掲載（国内外・公開情報のみ）。
           </p>
 
@@ -194,7 +194,7 @@ export default function IncidentsPage() {
           <section style={{ marginTop: 16, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
-              <li><Link href="/tools/fire-risk-check">火災リスク自己診断 (業界唯一・教育型)</Link></li>
+              <li><Link href="/tools/fire-risk-check">火災リスク自己診断 (教育型・無料)</Link></li>
               <li><Link href="/reports/2026">業界レポート2026 (プレビュー)</Link></li>
               <li><Link href="/industry">業界分析ハブ</Link></li>
             </ul>

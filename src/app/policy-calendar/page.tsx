@@ -161,7 +161,7 @@ export default async function PolicyCalendarPage() {
                 <Link href="/events">業界イベント・展示会カレンダー</Link>
               </li>
               <li>
-                <Link href="/faq">業界用語よくある質問（FAQ 50件）</Link>
+                <Link href="/faq">業界用語よくある質問（FAQ）</Link>
               </li>
             </ul>
           </section>

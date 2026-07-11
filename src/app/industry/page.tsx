@@ -15,7 +15,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: '業界分析ハブ (業界カオスマップ × JEPX × 海外5市場 × 業界トラッカー × Top50)',
-  description: '蓄電所事業の業界分析5機能を一覧。業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカー・事業者Top50ランキング。業界唯一の構造可視化基盤、無料公開・登録不要。',
+  description: '蓄電所事業の業界分析5機能を一覧。業界カオスマップ・JEPXハブ・海外5市場ハブ・業界トラッカー・事業者Top50ランキング。当サイト独自の構造可視化基盤、無料公開・登録不要。',
   alternates: { canonical: '/industry' },
   openGraph: {
     title: '業界分析ハブ (5機能)',
@@ -94,7 +94,7 @@ export default function IndustryHubPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 業界分析
           </p>
-          <div className="section-label">業界唯一 · 業界分析5機能</div>
+          <div className="section-label">当サイト独自 · 業界分析5機能</div>
           <h1 className="section-title">業界分析ハブ</h1>
           {/* Tier 1 UI 統一 #1: 本文 text-base lg:text-lg (16-18px) */}
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>

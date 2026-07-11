@@ -25,7 +25,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: 'JEPX ハブ (スポット価格 日次10系列 × ヒートマップ × アービトラージ)',
   description:
-    'JEPX スポット価格の業界唯一ハブ。9エリア + システムプライスの日次データを EIC Data (data.eic-jp.org) 経由で取得。ヒートマップ、アービトラージ計算機、引用機能つき。無料公開・登録不要。',
+    'JEPX スポット価格の当サイト独自ハブ。9エリア + システムプライスの日次データを EIC Data (data.eic-jp.org) 経由で取得。ヒートマップ、アービトラージ計算機、引用機能つき。無料公開・登録不要。',
   alternates: { canonical: '/market/jepx' },
   openGraph: {
     title: 'JEPX ハブ (スポット価格 × ヒートマップ × 蓄電池アービトラージ)',
@@ -103,13 +103,13 @@ export default async function JEPXHubPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / JEPX ハブ
           </p>
-          <div className="section-label">業界唯一 · スポット市場ハブ</div>
+          <div className="section-label">当サイト独自 · スポット市場ハブ</div>
           <h1 className="section-title">JEPX スポット価格 ハブ</h1>
           {/* Tier 1 UI 改善 #1: 本文 text-base lg:text-lg (16-18px) */}
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             JEPX スポット市場を <strong>9 エリア + システムプライス</strong> の日次データ ({series.length > 0 ? `${series.length} 系列、約 ${series[0]?.points.length.toLocaleString()} pt × 系列` : '集計中'}) で可視化。
             データは <strong><a href="https://data.eic-jp.org/catalog?domain=power" target="_blank" rel="noopener noreferrer">EIC Data</a></strong> 経由で取得、引用可能 (APA / BibTeX / Chicago)。
-            業界唯一のスポット価格ハブ、無料公開・登録不要。
+            当サイト独自のスポット価格ハブ、無料公開・登録不要。
           </p>
 
           {/* 実データセクション (EIC Data) */}
@@ -131,7 +131,7 @@ export default async function JEPXHubPage() {
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター</Link></li>
-              <li><Link href="/tools/capacity-market-bid">容量市場応札試算 (モック)</Link></li>
+              <li><Link href="/tools/capacity-market-bid">容量市場応札試算 (OCCTO実データ連携)</Link></li>
               <li><Link href="/explainer/spot-market">解説: スポット市場とは</Link></li>
               <li><Link href="/glossary/jepx">用語集: JEPX</Link></li>
               <li><a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer">EIC Data（一次データソース）</a></li>

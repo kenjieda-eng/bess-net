@@ -205,7 +205,7 @@ export default async function EventsCalendarPage() {
                 <Link href="/explainer">解説記事（市場制度・参入手順 {explainerCount}本）</Link>
               </li>
               <li>
-                <Link href="/faq">業界用語よくある質問（FAQ 50件）</Link>
+                <Link href="/faq">業界用語よくある質問（FAQ）</Link>
               </li>
               <li>
                 <Link href="/links">お役立ちサイト（業界団体・公的機関 210件）</Link>

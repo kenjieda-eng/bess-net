@@ -23,11 +23,11 @@ export const revalidate = 60;
 // 業界唯一機能 17件 (Sprint 4 完走、2026-05-15 17/17 達成)
 const uniqueFeatures = [
   // Sprint 4 前半 (ツール 5件)
-  { href: '/tools/irr-simulator', title: '蓄電池 IRR シミュレーター', desc: '11入力 × 20年DCF × 感度分析。業界唯一のオープン公開ツール。', tag: 'ツール' },
+  { href: '/tools/irr-simulator', title: '蓄電池 IRR シミュレーター', desc: '11入力 × 20年DCF × 感度分析。無料・登録不要のオープン公開ツール。', tag: 'ツール' },
   { href: '/tools/subsidy-match', title: '補助金マッチング', desc: '事業条件から最適補助金を自動マッチング (50+件)。', tag: 'ツール' },
   { href: '/tools/grid-connection-check', title: '系統連系診断', desc: '緯度経度 / 都道府県から接続候補変電所 5件抽出 (8,225件DB)。', tag: 'ツール' },
   { href: '/tools/fire-risk-check', title: '火災リスク自己診断', desc: '25問チェック式、教育型。安全文化醸成に。', tag: 'ツール' },
-  { href: '/tools/capacity-market-bid', title: '容量市場応札試算', desc: '9エリア × 3カテゴリ。モック版、AU実データ連携予定。', tag: 'ツール' },
+  { href: '/tools/capacity-market-bid', title: '容量市場応札試算', desc: '9エリア × FY2024-FY2029。OCCTO実データ連携。', tag: 'ツール' },
   // Sprint 4 後半 (構造可視化 4ハブ)
   { href: '/map/industry-chaos', title: '業界カオスマップ', desc: '50+社 × 11カテゴリ + 35関係。Matrix + Force graph。', tag: 'ハブ' },
   { href: '/market/jepx', title: 'JEPX ハブ', desc: '9エリア × 30日 × 30分。ヒートマップ + アービ計算機。', tag: 'ハブ' },
@@ -41,7 +41,7 @@ const upcomingFeatures = [
     num: '01',
     title: '業界レポート2026',
     body:
-      '業界唯一機能で蓄積したデータ (補助金/系統/事業者/案件/JEPX/海外5市場) を編集統合した年次レポートを公開予定。',
+      '当サイト独自機能で蓄積したデータ (補助金/系統/事業者/案件/JEPX/海外5市場) を編集統合した年次レポートを公開予定。',
     status: 'Sprint 5',
   },
   {
@@ -201,7 +201,7 @@ export default async function Home() {
       {/* Sprint 4 完走: 業界唯一機能 17/17 達成 (2026-05-15) */}
       <section className="section">
         <div className="section-inner">
-          <div className="section-label" style={{ color: '#c70', fontWeight: 700 }}>★ Sprint 4 完走 · 業界唯一機能 17/17 達成</div>
+          <div className="section-label" style={{ color: '#c70', fontWeight: 700 }}>★ Sprint 4 完走 · 当サイト独自機能 17/17 達成</div>
           <h2 className="section-title">蓄電所業界の「ここでしか出来ない」9機能</h2>
           <p className="section-desc" style={{ marginBottom: 24 }}>
             2026年5月、当初目標 (7/18 完走) を <strong>2ヶ月前倒し</strong>で達成。
@@ -243,7 +243,7 @@ export default async function Home() {
       <section className="section section-alt">
         <div className="section-inner">
           <div className="home-feature">
-            <span className="home-feature-tag">業界唯一 · Phase 4 公開中</span>
+            <span className="home-feature-tag">当サイト独自 · Phase 4 公開中</span>
             <h2>🗺 中部地方 変電所空き容量マップ</h2>
             <p>
               中部電力パワーグリッド管内の <strong>1,081箇所</strong> の変電所を、緯度経度付きで Leaflet 地図に可視化。
@@ -311,7 +311,7 @@ export default async function Home() {
               </div>
               <h3>業界用語よくある質問（FAQ）</h3>
               <p>
-                制度・技術・事業・補助金・その他の5カテゴリで <strong>50件</strong> のQ&Aを整理。新規参入者から既存事業者まで、エントリーポイントとして。
+                制度・技術・事業・補助金・その他の5カテゴリで Q&A を体系整理。新規参入者から既存事業者まで、エントリーポイントとして。
               </p>
               <p style={{ marginTop: 8 }}>
                 <Link href="/faq" style={{ fontWeight: 600 }}>

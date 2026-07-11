@@ -317,7 +317,7 @@ export default async function GlossaryDetailPage({
               </ul>
               <p style={{ marginTop: 10, fontSize: 12 }}>
                 <Link href="/faq" style={{ color: 'var(--color-accent, #0066cc)' }}>
-                  業界用語よくある質問（FAQ 50件）一覧 →
+                  業界用語よくある質問（FAQ）一覧 →
                 </Link>
               </p>
             </section>

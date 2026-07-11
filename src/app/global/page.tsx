@@ -18,7 +18,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: '海外5市場ハブ (米国/EU/中国/インド/豪州 蓄電池市場比較)',
-  description: '世界の蓄電池市場を5地域 (米国/EU/中国/インド/豪州) で一覧比較。市場規模/政策/主要プレイヤー/価格動向/日本との比較。業界唯一の海外市場ハブ、無料公開・登録不要。',
+  description: '世界の蓄電池市場を5地域 (米国/EU/中国/インド/豪州) で一覧比較。市場規模/政策/主要プレイヤー/価格動向/日本との比較。当サイト独自の海外市場ハブ、無料公開・登録不要。',
   alternates: { canonical: '/global' },
   openGraph: {
     title: '海外5市場ハブ (米国/EU/中国/インド/豪州)',
@@ -67,13 +67,13 @@ export default function GlobalHubPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 海外5市場ハブ
           </p>
-          <div className="section-label">業界唯一 · 海外市場ハブ</div>
+          <div className="section-label">当サイト独自 · 海外市場ハブ</div>
           <h1 className="section-title">海外5市場ハブ (蓄電池市場比較)</h1>
           {/* Tier 1 UI 統一 #1: text-base lg:text-lg */}
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             世界の蓄電池市場を<strong>5地域 (米国/EU/中国/インド/豪州)</strong> で一覧比較。
             市場規模・主要政策・主要プレイヤー・価格動向・<strong>日本との比較</strong>を1ページに集約。
-            業界唯一の海外市場ハブ、無料公開・登録不要。
+            当サイト独自の海外市場ハブ、無料公開・登録不要。
           </p>
           <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 24 }}>
             ※ 編集部が IEA / BloombergNEF / SolarPower Europe / 各国政府発表 等の公開情報に基づき作成 (2026年上半期 時点)。

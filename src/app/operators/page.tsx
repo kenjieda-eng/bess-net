@@ -64,7 +64,7 @@ export default async function OperatorListPage() {
             background: 'var(--color-bg)',
             border: '1px solid var(--color-border)', borderRadius: 6,
           }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (業界唯一機能)</h2>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (当サイト独自機能)</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/map/industry-chaos">業界カオスマップ</Link> — 主要 50+ 社を 11 カテゴリで構造化</li>
               <li><Link href="/tracker/ag">事業者トラッカー</Link> — 事業者ナビの追加・更新タイムライン</li>

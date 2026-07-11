@@ -154,7 +154,7 @@ export default function BalancingTrackerPage() {
             <Link href="/tracker">業界トラッカー</Link> /{' '}
             需給調整 約定価格
           </p>
-          <div className="section-label" style={{ color: '#0c6', fontWeight: 700 }}>★ 業界唯一 · 商品別 年次トラッカー</div>
+          <div className="section-label" style={{ color: '#0c6', fontWeight: 700 }}>★ 当サイト独自 · 商品別 年次トラッカー</div>
           <h1 className="section-title">需給調整市場 約定価格トラッカー</h1>
           <p className="section-desc" style={{ marginBottom: 8, lineHeight: 1.7 }}>
             電力需給調整力取引所 (EPRX) が公表する調整力の<strong>商品別・年次 約定価格</strong>と<strong>不足率</strong>を可視化。

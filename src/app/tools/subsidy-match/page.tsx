@@ -122,7 +122,7 @@ export default function SubsidyMatchPage() {
               color: 'var(--color-muted)',
             }}
           >
-            ※ データは microCMS 上の 補助金カレンダー (50 件) と同期。build 時に事前計算した
+            ※ データは microCMS 上の 補助金カレンダー ({SUBSIDY_COUNT} 件) と同期。build 時に事前計算した
             キーワード抽出 (都道府県・用途・事業者種別) でクライアント側マッチング。
             実申請には各制度の公式情報を必ずご確認ください。
           </p>

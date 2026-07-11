@@ -17,7 +17,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: '系統トラッカー (変電所空き容量 更新タイムライン)',
-  description: '変電所空き容量データの最新更新を時系列で表示。10電力会社・8,200+ 変電所をカバー。業界唯一の系統データトラッカー、無料公開・登録不要。',
+  description: '変電所空き容量データの最新更新を時系列で表示。10電力会社・8,200+ 変電所をカバー。当サイト独自の系統データトラッカー、無料公開・登録不要。',
   alternates: { canonical: '/tracker/grid' },
   openGraph: {
     title: '系統トラッカー (変電所空き容量 更新タイムライン)',
@@ -70,7 +70,7 @@ export default async function GridTrackerPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / <Link href="/tracker">業界トラッカー</Link> / 系統トラッカー
           </p>
-          <div className="section-label">業界唯一 · 系統データ 更新タイムライン</div>
+          <div className="section-label">当サイト独自 · 系統データ 更新タイムライン</div>
           <h1 className="section-title">系統トラッカー (変電所空き容量)</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             変電所空き容量データの最新更新を<strong>タイムライン</strong>表示。
@@ -87,7 +87,7 @@ export default async function GridTrackerPage() {
             <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/grid">系統空き容量 (全社一覧)</Link></li>
               <li><Link href="/grid/chubu/map">中部 Leaflet 地図 (緯度経度付き)</Link></li>
-              <li><Link href="/tools/grid-connection-check">系統連系診断 (業界唯一)</Link></li>
+              <li><Link href="/tools/grid-connection-check">系統連系診断 (無料・登録不要)</Link></li>
               <li><Link href="/tracker">業界トラッカー (4軸)</Link></li>
             </ul>
           </section>
