@@ -72,7 +72,7 @@ export function deriveDisplayStatus(ev: {
   return stored;
 }
 
-/** 詳細ページ化する対象9件（slug＝policy-events の slug フィールド） */
+/** 詳細ページ化する対象10件（slug＝policy-events の slug フィールド） */
 export const POLICY_DETAIL_SLUGS: readonly string[] = [
   'meti-connection-review-cap-2026-08',        // 2026-08-01 接続検討数の事業者別上限
   'capacity-outage-plan-briefing-2026-06',     // 2026-06-26 容量市場 実務説明会（容量停止計画）
@@ -80,6 +80,7 @@ export const POLICY_DETAIL_SLUGS: readonly string[] = [
   'occto-balancing-committee-61-2026-06',      // 2026-06-09 第61回 需給調整市場検討小委員会
   'meti-reserve-capacity-bid-pubcomm-2026-06', // 2026-06-05 予備電源GL・容量市場入札GL パブコメ
   'meti-battery-power-industry-strategy-2026-06', // 2026-06-02 蓄電池産業戦略推進会議
+  'occto-capacity-kentoukai-73-2026-05',       // 2026-05-27 第73回 容量市場検討会（週次2026-07-17 追加・ハイブリッド基準充足）
   'ltdc-3-auction-result-2026-05',             // 2026-05-13 LTDC第3回 約定結果
   'bess-grid-connection-quick-2026-04',        // 2026-04-01 接続検討早期化＋暫定空押さえ対策
   'balancing-market-reform-2026-03',           // 2026-03-13 需給調整市場 2026年度改革
