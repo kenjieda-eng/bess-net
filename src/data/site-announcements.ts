@@ -6,6 +6,8 @@ export interface SiteAnnouncement {
   enabled: boolean;
   type: AnnouncementType;
   title: string;
+  /** モバイル用の短縮文言（bar 型のみ使用・未指定なら title） */
+  titleShort?: string;
   subtitle?: string;
   dateLabel?: string;
   href: string;
@@ -27,12 +29,14 @@ export const SITE_ANNOUNCEMENTS: SiteAnnouncement[] = [
     enabled: true,
     type: 'notice',
     title: '【ご案内】稼働中の系統用蓄電池（蓄電所）のご紹介が可能です →',
+    titleShort: '稼働中蓄電所のご紹介が可能です →',
     href: '/info/operating-bess-introduction',
     ctaText: '',
     startAt: '2026-07-11',
     endAt: '2099-12-31',
     variant: 'bar',
-    dismissible: false,
+    // 2026-07-12 EDAさん指示: ×で閉じられる（sessionStorage＝そのセッション中のみ非表示）
+    dismissible: true,
     priority: 5,
   },
   {

@@ -24,9 +24,10 @@ export function AnnouncementBanner() {
   // hooks は必ず条件分岐の前に置く
   useEffect(() => {
     setMounted(true);
-    // dismissible=false の告知は localStorage を無視して常時表示
+    // ×で閉じたら sessionStorage でそのセッション中のみ非表示（翌訪問では再表示・2026-07-12）。
+    // SSR/初回クライアント描画は常に表示＝hydration mismatch なし（mounted ガード）
     if (!announcementId || !announcement?.dismissible) return;
-    if (localStorage.getItem(`announce-dismissed-${announcementId}`) === '1') {
+    if (sessionStorage.getItem(`bess-banner-dismissed-${announcementId}`) === '1') {
       setDismissed(true);
     }
   }, [announcementId, announcement?.dismissible]);
@@ -36,7 +37,7 @@ export function AnnouncementBanner() {
 
   const handleDismiss = () => {
     setDismissed(true);
-    localStorage.setItem(`announce-dismissed-${announcement.id}`, '1');
+    sessionStorage.setItem(`bess-banner-dismissed-${announcement.id}`, '1');
   };
 
   if (announcement.variant === 'bar') {
@@ -44,16 +45,19 @@ export function AnnouncementBanner() {
       <div
         role="region"
         aria-label="お知らせ"
-        style={{ background: 'var(--color-navy)', position: 'relative' }}
+        // sticky: スクロール中も最上部に表示（文書フロー内＝CLS なし）。
+        // zIndex 45 = 本文より上・SiteHeader のメニューオーバーレイ(50)より下
+        style={{ background: 'var(--color-navy)', position: 'sticky', top: 0, zIndex: 45 }}
         className="w-full text-white text-sm"
       >
         <Link
           href={announcement.href}
-          className="mx-auto block max-w-6xl px-4 py-2 text-center text-white no-underline hover:underline"
+          className="mx-auto block max-w-6xl px-4 py-1.5 text-center text-white no-underline hover:underline"
           style={{ paddingRight: announcement.dismissible ? '48px' : undefined }}
         >
           <span className="font-bold" style={{ color: 'var(--color-accent)' }}>
-            {announcement.title}
+            <span className="hidden sm:inline">{announcement.title}</span>
+            <span className="sm:hidden">{announcement.titleShort ?? announcement.title}</span>
           </span>
           {announcement.ctaText && <span>　{announcement.ctaText}</span>}
         </Link>

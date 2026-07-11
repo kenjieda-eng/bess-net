@@ -12,8 +12,12 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import substationsIndex from '@/data/substations/index.json';
 
 export const dynamic = 'force-static';
+
+// 変電所数はローカル JSON から動的参照（焼き込み禁止・v15 原則。microCMS 0 req）
+const SUBSTATION_TOTAL_STR = (substationsIndex as { total: number }).total.toLocaleString('en-US');
 
 const SLUG = 'operating-bess-introduction';
 const CONTACT_URL =
@@ -55,7 +59,28 @@ export default function OperatingBessIntroductionPage() {
           </h1>
 
           <div className="article-body">
-            <p>{LEAD}</p>
+            <p>
+              {LEAD}
+              電力・エネルギー分野の専門家が直接ご相談に対応します。
+            </p>
+
+            {/* 信頼性強化（2026-07-12 ノブ案）。記載は EIC 公式サイト・自サイトで出典が取れた事実のみ（L-EIC-019） */}
+            <h2>安心してご相談いただける理由</h2>
+            <ul style={{ paddingLeft: 20, lineHeight: 1.9 }}>
+              <li>
+                <strong>電力業界の専門家が直接対応</strong> —
+                ご相談には、蓄電池・エネルギー分野の著書（『2時間でわかる 蓄電池ビジネスの未来』ほか）を持つ運営法人理事の江田健二が対応します。
+              </li>
+              <li>
+                <strong>業界データ基盤の運営元</strong> —
+                蓄電所ネットは全国10社・{SUBSTATION_TOTAL_STR}変電所の系統情報DB、540社超の事業者ナビ、
+                <Link href="/reports/2026">業界レポート2026</Link> 等を運営しており、案件を評価するためのデータ基盤を持っています。
+              </li>
+              <li>
+                <strong>中立的な業界メディアとしての運営実績</strong> —
+                運営元の{siteConfig.organization.name}（EIC）は、電力・エネルギーの会員制総合情報サイト「新電力ネット」の運営、セミナーの主催・講演会の開催・書籍の出版・講師派遣を行う法人です（2026年7月の台湾SEETEL×JC-STARセミナーにも協力）。
+              </li>
+            </ul>
 
             <h2>こんな方へ</h2>
             <ul style={{ paddingLeft: 20, lineHeight: 1.9 }}>
@@ -76,10 +101,26 @@ export default function OperatingBessIntroductionPage() {
                 <strong>ご紹介</strong> — 条件に合う案件・お相手をご紹介します
               </li>
             </ol>
+            <p>
+              <strong>ご相談・お問い合わせは無料です。</strong>
+            </p>
+
+            <h2>よくあるご質問</h2>
+            <p style={{ marginBottom: 8 }}>
+              <strong>Q. 相談だけでも可能ですか？</strong>
+              <br />
+              A. 可能です。条件が固まっていない段階のご相談もお受けします。
+            </p>
+            <p>
+              <strong>Q. 売却側の相談もできますか？</strong>
+              <br />
+              A. はい。保有蓄電所の売却・譲渡のご相談も受け付けています。
+            </p>
 
             <h2>運営元について</h2>
             <p>
               本サービスは、蓄電所ネットの運営元である{siteConfig.organization.name}（EIC）が承ります。
+              EIC は各種統計等のエネルギーに関する情報の提供、セミナーの主催および講演会の開催・書籍の出版、環境・エネルギーに関するアドバイザー事業を行う一般社団法人です（代表理事: 坂越健一）。
               ※案件の状況により、ご希望に沿うご紹介ができない場合があります。
             </p>
           </div>
