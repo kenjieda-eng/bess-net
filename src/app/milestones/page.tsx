@@ -11,8 +11,45 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getAchievedMilestones, getUpcomingMilestones } from '@/data/milestones';
+import { siteConfig } from '@/lib/site-config';
+import type { RoadmapStatus } from '@/lib/site-config';
+import substationsIndex from '@/data/substations/index.json';
 
 export const revalidate = 86400;
+
+// トップから移設（top分析2026-07-12・削除ではなく移設の大原則）: 公開ロードマップ＋公開予定コンテンツ
+const ROADMAP_BADGE: Record<RoadmapStatus, { label: string; className: string }> = {
+  done: { label: '✅ 公開済', className: 'roadmap-badge roadmap-badge-done' },
+  'in-progress': { label: '🚧 開発中', className: 'roadmap-badge roadmap-badge-in-progress' },
+  planned: { label: '📅 計画中', className: 'roadmap-badge roadmap-badge-planned' },
+};
+
+// 変電所数はローカル JSON（本ページは静的 import のみの設計＝鉄則 #2 を維持）
+const SUBSTATIONS_STR = (substationsIndex as { total: number }).total.toLocaleString('en-US');
+
+const upcomingFeatures = [
+  {
+    num: '01',
+    title: '業界レポート2026',
+    body:
+      '当サイト独自機能で蓄積したデータ (補助金/系統/事業者/案件/JEPX/海外5市場) を編集統合した年次レポートを公開予定。',
+    status: 'Sprint 5',
+  },
+  {
+    num: '02',
+    title: '火災・トラブル事例DB',
+    body:
+      '国内外の蓄電池トラブル事例（火災・性能低下・系統影響）を公開資料に基づき体系化。業界の安全文化向上に資する情報基盤を構築。',
+    status: 'Sprint 5',
+  },
+  {
+    num: '03',
+    title: '日本の蓄電所マップ全国展開',
+    body:
+      '中部電力PG 1,081箇所を先行公開（地図対応は現状この1社のみ）。残る9社（北海道・東北・東京・北陸・関西・中国・四国・九州・沖縄）の緯度経度補完を進めつつ、Leaflet レイヤーへ順次展開予定。',
+    status: 'Sprint 5〜6',
+  },
+];
 
 export const metadata: Metadata = {
   title: '達成記念ページ一覧 - 蓄電所ネット',
@@ -124,6 +161,54 @@ export default function MilestonesIndexPage() {
               </ul>
             </section>
           )}
+
+          {/* ── トップから移設: 公開予定の主要コンテンツ（本文不変） ── */}
+          <section className="features" style={{ marginBottom: 48 }}>
+            <div className="section-label">Coming · 順次公開</div>
+            <h2 className="section-title" style={{ fontSize: 24 }}>公開予定の主要コンテンツ</h2>
+            <div className="feature-grid">
+              {upcomingFeatures.map((f) => (
+                <div key={f.num} className="feature">
+                  <div className="feature-num">
+                    {f.num}
+                    <span className="feature-status">{f.status}</span>
+                  </div>
+                  <h3>{f.title}</h3>
+                  <p>{f.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── トップから移設: 公開ロードマップ（Sprint 1〜5・本文不変） ── */}
+          <section className="roadmap" style={{ marginBottom: 48 }}>
+            <div className="section-label">Roadmap</div>
+            <h2 className="section-title" style={{ fontSize: 24 }}>公開ロードマップ</h2>
+            <div className="roadmap-list">
+              {siteConfig.roadmap.map((r, i) => {
+                const badge = ROADMAP_BADGE[r.status];
+                const description = r.description.replace('{substations}', SUBSTATIONS_STR);
+                return (
+                  <div
+                    key={i}
+                    className={`roadmap-item${r.isCurrent ? ' is-current' : ''}`}
+                  >
+                    <div className="roadmap-when">
+                      {r.phase}
+                      <small>{r.period}</small>
+                    </div>
+                    <div className="roadmap-content">
+                      <h4>
+                        {r.title}
+                        <span className={badge.className}>{badge.label}</span>
+                      </h4>
+                      <p>{description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
         </div>
       </main>
       <SiteFooter />
