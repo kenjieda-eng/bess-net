@@ -27,6 +27,12 @@ interface PanelProps {
   csvDir: string;
   /** anchor for SEO (Dataset schema URL fragment) */
   anchorId: string;
+  /** データ最新月バッジ（YYYY-MM。page 側で系列実値からコード導出・焼き込み禁止 L-EIC-027） */
+  latestDataMonth?: string;
+  /** 蓄電所文脈の「読み方」2〜3文（dashboard-market分析2026-07-12 P2） */
+  readingGuide?: string;
+  /** 鮮度・供給元状況の注記（※…。P1c） */
+  freshnessNote?: string;
 }
 
 function latestValid(points: { date: string; value: number | null }[]): { date: string; value: number } | null {
@@ -47,6 +53,9 @@ export default function MarketDataPanel({
   sourceName,
   csvDir,
   anchorId,
+  latestDataMonth,
+  readingGuide,
+  freshnessNote,
 }: PanelProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -85,10 +94,40 @@ export default function MarketDataPanel({
       }}
     >
       <header style={{ marginBottom: 20 }}>
-        <h2 id={`${anchorId}-title`} style={{ fontSize: 24, fontWeight: 700, margin: '0 0 8px' }}>{title}</h2>
+        <h2 id={`${anchorId}-title`} style={{ fontSize: 24, fontWeight: 700, margin: '0 0 8px' }}>
+          {title}
+          {latestDataMonth && (
+            <span
+              style={{
+                marginLeft: 10,
+                fontSize: 12,
+                fontWeight: 600,
+                padding: '3px 10px',
+                borderRadius: 4,
+                background: 'var(--color-bg)',
+                border: '1px solid var(--color-border)',
+                color: 'var(--color-muted)',
+                verticalAlign: 'middle',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              データ最新月: {latestDataMonth}
+            </span>
+          )}
+        </h2>
         <p className="text-base lg:text-lg" style={{ color: 'var(--color-text)', lineHeight: 1.7, margin: 0 }}>
           {description}
         </p>
+        {readingGuide && (
+          <p style={{ fontSize: 14, color: 'var(--color-text)', lineHeight: 1.7, marginTop: 8, marginBottom: 0 }}>
+            <strong>読み方:</strong> {readingGuide}
+          </p>
+        )}
+        {freshnessNote && (
+          <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 8, marginBottom: 0 }}>
+            {freshnessNote}
+          </p>
+        )}
         <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 8 }}>
           出典:{' '}
           <a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceName}</a>
