@@ -56,6 +56,14 @@ export const TOOL_CTAS: ToolCta[] = [
     explainerSlugs: new Set(['subsidies-guide', 'storage-parity-aggregation']),
   },
   {
+    href: '/industry/top50',
+    label: '国内事業者の勢力図をランキングで見る',
+    text: 'bess-net プロジェクトDBの build 時集計による、系統用蓄電池 事業者ランキング Top50（総蓄電容量MWh順・容量/件数/展開都道府県数）を公開しています。',
+    button: '事業者ランキング Top50 を見る',
+    // 選定ルール: title/slug「事業者」「参入」機械マッチのうち参入・業界構造の基幹3記事（industry群分析2026-07-15 変更2c）
+    explainerSlugs: new Set(['grid-scale-bess', 'bess-business-decision-tree', 'bess-stakeholder-map']),
+  },
+  {
     href: '/tools/lcoe-lcos',
     label: 'LCOE・LCOSを前提条件から試算する',
     text: 'NREL ATB 2024 を基準に、蓄電池 LCOS（均等化蓄電原価）と電源別 LCOE を効率・サイクル・割引率などの前提から無料で試算できます。',

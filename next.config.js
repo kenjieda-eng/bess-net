@@ -11,6 +11,14 @@ const nextConfig = {
     ],
   },
 
+  // 旧URL 301（GA4 実流入・404 実測あり。industry群分析2026-07-15 P3）
+  async redirects() {
+    return [
+      { source: '/industry-tracker', destination: '/tracker', permanent: true },
+      { source: '/project-tracker', destination: '/tracker/pf', permanent: true },
+    ];
+  },
+
   // セキュリティヘッダー
   async headers() {
     return [

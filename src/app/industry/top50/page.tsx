@@ -31,12 +31,14 @@ type RankingData = {
 };
 
 export const metadata: Metadata = {
-  title: '系統用蓄電池 事業者 Top50 ランキング',
+  // 「2026年版」は集計日（operator-ranking.json generatedAt・prebuild毎再生成）が2026年である事実に基づく表記。
+  // 毎年の自動更新は不要＝年が変わったら手動見直し（industry群分析2026-07-15 変更2a）。#88 template自動付与
+  title: '系統用蓄電池 事業者ランキング Top50【2026年版】',
   description:
-    '系統用蓄電池（BESS）事業者を総蓄電容量（MWh）で順位付け。bess-net プロジェクトDB 約263件を build 時集計。容量上位50社の実績を一覧。',
+    '系統用蓄電池（BESS）事業者を総蓄電容量（MWh）で順位付け。bess-net プロジェクトDBを build 時集計。容量上位50社の実績を一覧。',
   alternates: { canonical: '/industry/top50' },
   openGraph: {
-    title: '系統用蓄電池 事業者 Top50 ランキング | bess-net',
+    title: '系統用蓄電池 事業者ランキング Top50【2026年版】',
     description: '国内 BESS 事業者を MWh 容量で順位付け。bess-net プロジェクトDB 集計。',
     type: 'website',
     url: 'https://bess-net.jp/industry/top50',
@@ -61,10 +63,11 @@ export default function IndustryTop50Page() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: '系統用蓄電池 事業者 Top50 ランキング',
+    name: '系統用蓄電池 事業者ランキング Top50【2026年版】',
     description: '国内 BESS 事業者を総蓄電容量（MWh）で順位付けしたランキング',
     numberOfItems: ranking.length,
-    itemListElement: ranking.slice(0, 10).map((r) => ({
+    // 変更2b: 上位50全件を ItemList 化（集計データから生成＝焼き込みなし）
+    itemListElement: ranking.slice(0, 50).map((r) => ({
       '@type': 'ListItem',
       position: r.rank,
       name: r.operator,
@@ -111,7 +114,7 @@ export default function IndustryTop50Page() {
             <Link href="/">トップ</Link> / <Link href="/industry">業界分析</Link> / 事業者 Top50
           </p>
           <div className="section-label">Industry</div>
-          <h1 className="section-title">事業者ランキング Top50</h1>
+          <h1 className="section-title">系統用蓄電池 事業者ランキング Top50【2026年版】</h1>
           <p className="section-description">
             bess-net プロジェクトDB に登録された系統用蓄電池プロジェクトを事業者別に集計し、
             総蓄電容量（MWh）の大きい順にランキングしています。
