@@ -28,12 +28,12 @@ const INDEX = substationsIndex as {
 const TOTAL_STR = INDEX.total.toLocaleString('en-US');
 
 export const metadata: Metadata = {
-  title: `系統連系診断 (${TOTAL_STR} 変電所DB ベース)`,
+  title: `蓄電池 系統連系診断 (${TOTAL_STR} 変電所DBベース)`,
   description:
     `日本全国 ${TOTAL_STR} 変電所の公表データから、希望地点・出力に最適な連系候補を Top 5 即時抽出。空き容量・N-1 電制適用可否・距離評価でスコアリング。無料・登録不要。`,
   alternates: { canonical: '/tools/grid-connection-check' },
   openGraph: {
-    title: `系統連系診断 (全国10社・${TOTAL_STR}変電所DB)`,
+    title: `蓄電池 系統連系診断 (全国10社・${TOTAL_STR}変電所DB)`,
     description:
       '所在地・出力・容量で連系候補 Top 5 を即時診断。10 送配電の空き容量データを横断検索。',
     type: 'website',

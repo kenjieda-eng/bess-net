@@ -35,12 +35,12 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   // layout titleTemplate `%s | 蓄電所ネット` が自動付与（落とし穴#86/#88）
-  title: 'LCOE・LCOS計算機（均等化発電原価・均等化蓄電原価）',
+  title: '蓄電池 LCOE・LCOS計算機（均等化発電原価・蓄電原価）',
   description:
     '系統用蓄電池の LCOS（均等化蓄電原価）と電源別 LCOE（均等化発電原価）を前提条件から無料試算。NREL ATB 2024（米国前提）の蓄電池CAPEX・電源別CAPEX/LCOEを基準に、効率・サイクル・割引率等を調整。ブラウザ完結・登録不要。',
   alternates: { canonical: '/tools/lcoe-lcos' },
   openGraph: {
-    title: 'LCOE・LCOS計算機（無料・登録不要）',
+    title: '蓄電池 LCOE・LCOS計算機（無料・登録不要）',
     description:
       '系統用蓄電池のLCOS・電源別LCOEを前提条件から試算。NREL ATB 2024基準・米国前提/レンジ仮定明記。',
     type: 'website',

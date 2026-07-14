@@ -35,7 +35,7 @@ export async function generateMetadata({
   const news = await getNewsBySlugWithRelations(params.slug);
   if (!news) return {};
   return {
-    title: `${news.title}｜業界ニュース`,
+    title: `${news.title}｜蓄電池業界ニュース`,
     description: news.lead,
     alternates: { canonical: `/news/${news.slug}` },
     // off-topic PR（news-excluded）は noindex（ページは残置＝404にしない・一覧/sitemapからは除外）

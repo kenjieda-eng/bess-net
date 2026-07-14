@@ -43,11 +43,11 @@ export async function generateMetadata({
   const cat = decodeURIComponent(params.category);
   return {
     // layout.tsx titleTemplate `%s | 蓄電所ネット` が自動付与（落とし穴#88: 手動で付けない）
-    title: `${cat}のニュース一覧｜業界ニュース`,
+    title: `${cat}のニュース一覧｜蓄電池業界ニュース`,
     description: `系統用蓄電池(BESS)業界の「${cat}」に関する最新ニュースをまとめて掲載。蓄電所ネット編集部が新規連系・運転開始・制度改正・市場動向などを継続収集しています。`,
     alternates: { canonical: `/news/category/${encodeURIComponent(cat)}` },
     openGraph: {
-      title: `${cat}のニュース一覧｜業界ニュース`,
+      title: `${cat}のニュース一覧｜蓄電池業界ニュース`,
       description: `系統用蓄電池業界の「${cat}」関連ニュースアーカイブ`,
       type: 'website',
     },

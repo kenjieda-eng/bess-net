@@ -37,11 +37,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { year } = params;
   return {
-    title: `${year}年のニュース一覧｜業界ニュース`,
+    title: `${year}年のニュース一覧｜蓄電池業界ニュース`,
     description: `${year}年に配信した系統用蓄電池(BESS)業界ニュースの年別アーカイブ。新規連系・運転開始・制度改正・投資・市場動向を新着順に掲載。`,
     alternates: { canonical: `/news/archive/${year}` },
     openGraph: {
-      title: `${year}年のニュース一覧｜業界ニュース`,
+      title: `${year}年のニュース一覧｜蓄電池業界ニュース`,
       description: `${year}年の系統用蓄電池業界ニュース アーカイブ`,
       type: 'website',
     },

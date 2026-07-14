@@ -4,19 +4,29 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { getAllOperators } from '@/lib/microcms';
+import { getAllOperators, getOperatorList } from '@/lib/microcms';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import OperatorBrowser from './OperatorBrowser';
 
 export const revalidate = 600;
 
-export const metadata: Metadata = {
-  title: '事業者ナビ',
-  description:
-    '系統用蓄電池(BESS)・低圧リソース事業に関わる主要事業者を 20カテゴリ・400社超で網羅。電池メーカー / PCS / EPC / O&M / 開発事業者 / アグリゲーター / 送配電 / 電力会社 / 商社 / 金融 / 法務 等から検索・絞り込み可能。',
-  alternates: { canonical: '/operators' },
-};
+// 件数は totalCount 動的参照（title総仕上げ2026-07-15。+1req/600s・faq確立パターン #93）
+export async function generateMetadata(): Promise<Metadata> {
+  let n = 544;
+  try {
+    const r = await getOperatorList({ limit: 1, fields: 'id' });
+    if (r.totalCount > 0) n = r.totalCount;
+  } catch {
+    // 縮退時はフォールバック値
+  }
+  return {
+    title: `蓄電所事業者ナビ（全国${n}社）`,
+    description:
+      '系統用蓄電池(BESS)・低圧リソース事業に関わる主要事業者を 20カテゴリ・400社超で網羅。電池メーカー / PCS / EPC / O&M / 開発事業者 / アグリゲーター / 送配電 / 電力会社 / 商社 / 金融 / 法務 等から検索・絞り込み可能。',
+    alternates: { canonical: '/operators' },
+  };
+}
 
 export default async function OperatorListPage() {
   const items = await getAllOperators();
@@ -24,7 +34,7 @@ export default async function OperatorListPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: '事業者ナビ',
+    name: '蓄電所事業者ナビ',
     description:
       '系統用蓄電池(BESS)・低圧リソース事業に関わる主要事業者一覧',
     numberOfItems: items.length,

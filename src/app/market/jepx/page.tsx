@@ -23,12 +23,12 @@ import { EIC_DATA_DISCLAIMER } from '@/lib/cite-helpers';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: 'JEPX ハブ (スポット価格 日次10系列 × ヒートマップ × アービトラージ)',
+  title: 'JEPX スポット価格ハブ（日次10系列 × ヒートマップ）｜蓄電池アービトラージ',
   description:
     'JEPX スポット価格の当サイト独自ハブ。9エリア + システムプライスの日次データを EIC Data (data.eic-jp.org) 経由で取得。ヒートマップ、アービトラージ計算機、引用機能つき。無料公開・登録不要。',
   alternates: { canonical: '/market/jepx' },
   openGraph: {
-    title: 'JEPX ハブ (スポット価格 × ヒートマップ × 蓄電池アービトラージ)',
+    title: 'JEPX スポット価格ハブ（日次10系列 × ヒートマップ）｜蓄電池アービトラージ',
     description: 'JEPX 10 系列 日次 + 既存 30分単位デモ + アービトラージ計算機',
     type: 'website',
     images: ['/og-image.png'],

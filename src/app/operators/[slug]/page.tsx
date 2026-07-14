@@ -80,11 +80,11 @@ export async function generateMetadata({
   if (!entry) return {};
   const o = entry.operator;
   return {
-    title: `${o.name}｜事業者ナビ`,
+    title: `${o.name}｜蓄電所事業者ナビ`,
     description: o.description,
     alternates: { canonical: `/operators/${o.slug}` },
-    openGraph: { title: `${o.name}｜事業者ナビ`, description: o.description, type: 'profile' },
-    twitter: { card: 'summary', title: `${o.name}｜事業者ナビ`, description: o.description },
+    openGraph: { title: `${o.name}｜蓄電所事業者ナビ`, description: o.description, type: 'profile' },
+    twitter: { card: 'summary', title: `${o.name}｜蓄電所事業者ナビ`, description: o.description },
   };
 }
 

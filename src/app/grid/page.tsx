@@ -11,12 +11,12 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: '系統空き容量データベース',
+  title: '変電所 系統空き容量データベース（全国10社・蓄電池連系検討）',
   description:
     '北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の10送配電事業者・8,225変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。東京電力PGは2026年6月の公開再開を受け13都県＋基幹系を収録。中部は緯度経度付き地図検索に対応。',
   alternates: { canonical: '/grid' },
   openGraph: {
-    title: '系統空き容量データベース',
+    title: '変電所 系統空き容量データベース（全国10社・蓄電池連系検討）',
     description: '10社・8,225変電所の系統空き容量・連系条件。中部は地図検索対応。',
     type: 'website',
   },

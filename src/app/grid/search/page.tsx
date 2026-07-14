@@ -16,13 +16,13 @@ import { siteConfig } from '@/lib/site-config';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title:
-    '変電所詳細検索 ｜ 系統空き容量データベース - 蓄電所ネット',
+  // #88: 手書き「- 蓄電所ネット」を除去（template が自動付与・title総仕上げ2026-07-15）
+  title: '変電所詳細検索｜蓄電池 系統空き容量DB',
   description:
     '名称・エリア・電圧階級・空容量・N-1電制適用可・送配電事業者で絞り込み検索。蓄電所連系検討の精密スクリーニングに。',
   alternates: { canonical: '/grid/search' },
   openGraph: {
-    title: '変電所詳細検索｜系統空き容量データベース',
+    title: '変電所詳細検索｜蓄電池 系統空き容量DB',
     description:
       '8,200変電所超を 6 つの軸で絞り込み（変電所名・エリア・電圧・空容量・N-1電制・送配電事業者）',
     type: 'website',

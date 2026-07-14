@@ -10,7 +10,7 @@ import SiteFooter from '@/components/SiteFooter';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: 'レポート (業界レポート 年次)',
+  title: '業界レポート（蓄電池・蓄電所 年次）',
   description: '蓄電所業界の年次レポートを公開予定。業界レポート2026 (7月予定)。',
   alternates: { canonical: '/reports' },
 };

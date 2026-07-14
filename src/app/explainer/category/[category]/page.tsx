@@ -50,11 +50,11 @@ export async function generateMetadata({
   const cat = decodeURIComponent(params.category);
   return {
     // layout.tsx titleTemplate `%s | 蓄電所ネット` が自動付与（落とし穴#88: 手動で付けない）
-    title: `${cat}の解説記事一覧`,
+    title: `${cat}の解説記事一覧（蓄電池・蓄電所）`,
     description: `系統用蓄電池(BESS)・低圧リソース事業の「${cat}」に関する解説記事アーカイブ。容量市場・需給調整市場・系統連系・技術・安全法務などを実務担当者向けに体系化した記事を一覧で読めます。`,
     alternates: { canonical: `/explainer/category/${encodeURIComponent(cat)}` },
     openGraph: {
-      title: `${cat}の解説記事一覧`,
+      title: `${cat}の解説記事一覧（蓄電池・蓄電所）`,
       description: `系統用蓄電池業界の「${cat}」解説記事アーカイブ`,
       type: 'website',
     },
@@ -100,7 +100,7 @@ export default async function ExplainerCategoryPage({
   const collectionJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${cat}の解説記事一覧`,
+    name: `${cat}の解説記事一覧（蓄電池・蓄電所）`,
     description: `系統用蓄電池業界の「${cat}」解説記事 ${items.length}本`,
     numberOfItems: items.length,
     isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },

@@ -18,11 +18,11 @@ import { PLAYERS, RELATIONS, CATEGORY_LABELS } from '@/data/industry-map';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: '業界カオスマップ (主要事業者 + 関係構造)',
+  title: '蓄電池業界カオスマップ（主要事業者＋関係構造）',
   description: `蓄電所事業の業界構造を可視化。${PLAYERS.length} 社の主要プレイヤーを 11 カテゴリで整理 + ${RELATIONS.length} 件の関係 (出資/EPC/セル供給/オフテイク等) を表示。当サイト独自の構造マップ、無料公開。`,
   alternates: { canonical: '/map/industry-chaos' },
   openGraph: {
-    title: '業界カオスマップ (蓄電所事業 主要事業者 + 関係構造)',
+    title: '蓄電池業界カオスマップ（蓄電所事業 主要事業者＋関係構造）',
     description: '11 カテゴリの主要事業者 + 関係 30+ 件で業界構造を可視化',
     type: 'website',
     images: ['/og-image.png'],

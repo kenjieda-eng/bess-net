@@ -99,11 +99,11 @@ export async function generateMetadata({
   if (area) {
     return {
       // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-      title: `${area.areaJp}エリア｜系統空き容量データベース`,
+      title: `${area.areaJp}エリア｜蓄電池 系統空き容量DB`,
       description: area.description.substring(0, 160),
       alternates: { canonical: `/grid/${area.slug}` },
       openGraph: {
-        title: `${area.areaJp}エリア｜系統空き容量データベース`,
+        title: `${area.areaJp}エリア｜蓄電池 系統空き容量DB`,
         description: area.description.substring(0, 160),
         type: 'website',
         images: ['/og-image.png'],
@@ -120,18 +120,18 @@ export async function generateMetadata({
   const desc = `${sub.name}（${operator}・${vc}）の系統空き容量・連系条件・出力制御情報。空容量${availStr}。出典・最終更新日明記、蓄電所事業の検討材料に。`;
   return {
     // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-    title: `${sub.name} ｜ 系統空き容量・連系条件`,
+    title: `${sub.name}の系統空き容量・蓄電池連系条件`,
     description: desc.substring(0, 160),
     alternates: { canonical: `/grid/${sub.slug}` },
     openGraph: {
-      title: `${sub.name} ｜ 系統空き容量・連系条件`,
+      title: `${sub.name}の系統空き容量・蓄電池連系条件`,
       description: desc.substring(0, 160),
       type: 'article',
       images: ['/og-image.png'],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${sub.name} ｜ 系統空き容量・連系条件`,
+      title: `${sub.name}の系統空き容量・蓄電池連系条件`,
       description: desc.substring(0, 160),
     },
   };

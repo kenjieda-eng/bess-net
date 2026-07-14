@@ -49,12 +49,12 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   // layout titleTemplate が「 | 蓄電所ネット」を自動付与（#88）
-  title: '容量市場応札試算（OCCTO実データ連携・無料）',
+  title: '容量市場応札試算（蓄電池・OCCTO実データ連携）',
   description:
     '容量市場メインオークションの応札価格を 9 エリア・FY2024-FY2029 実績（OCCTO 公表値 / data.eic-jp.org）から推定。推奨応札レンジ + 落札確率 + 想定収入を即時試算。区分非依存を正しく反映。無料・登録不要。',
   alternates: { canonical: '/tools/capacity-market-bid' },
   openGraph: {
-    title: '容量市場応札試算（OCCTO実データ連携・無料）| 蓄電所ネット',
+    title: '容量市場応札試算（蓄電池・OCCTO実データ連携）| 蓄電所ネット',
     description:
       '9 エリア × FY2024-FY2029 実績（OCCTO 公表値）から推奨応札価格 + 落札確率を試算。区分非依存（新設/既設/経過措置で同価格）を正しく反映。',
     type: 'website',

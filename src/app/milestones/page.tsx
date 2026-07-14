@@ -52,7 +52,8 @@ const upcomingFeatures = [
 ];
 
 export const metadata: Metadata = {
-  title: '達成記念ページ一覧 - 蓄電所ネット',
+  // #88: 手書き「- 蓄電所ネット」を除去（template が自動付与・本番二重を実測し修正 2026-07-15）
+  title: '達成記念ページ一覧',
   description:
     '蓄電所ネット (bess-net) の達成記念ページ一覧。機能完全形達成、業界レポート公開、業界唯一性達成等の主要マイルストーン。一般社団法人エネルギー情報センターが業界中立で運営。',
   alternates: { canonical: '/milestones' },

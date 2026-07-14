@@ -52,7 +52,8 @@ import shortageTer2           from '@/data/eic/balancing-shortage-tertiary-2.jso
 import shortageComposite      from '@/data/eic/balancing-shortage-composite.json';
 
 export const metadata: Metadata = {
-  title: '需給調整市場 約定価格トラッカー（商品別・年次）| 蓄電所ネット',
+  // #88: 手書き「| 蓄電所ネット」を除去（template が自動付与・本番二重を実測し修正 2026-07-15）
+  title: '需給調整市場 約定価格トラッカー（商品別・年次）',
   description:
     '需給調整市場（調整力）の商品別・年次約定価格を業界中立で可視化。① 6商品 全体落札単価 ② 蓄電池の商品別落札単価（三次② FY2024=109.43 円/ΔkW・30分）③ 6商品 不足率。出典: EPRX（電力需給調整力取引所）。',
   alternates: { canonical: '/tracker/imbalance' },

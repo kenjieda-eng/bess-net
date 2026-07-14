@@ -9,12 +9,12 @@ import type { PrecomputedSubsidy } from '../../../scripts/precompute-subsidies';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: '補助金カレンダー',
+  title: '蓄電池 補助金カレンダー',
   description:
     '系統用蓄電池および低圧リソース事業向けの主要補助金を、執行機関別・公募期間別に整理。経産省・エネ庁・SII・NEDO・自治体の蓄電池関連補助金を継続トラック。',
   alternates: { canonical: 'https://bess-net.jp/subsidies' },
   openGraph: {
-    title: '補助金カレンダー | 系統用蓄電池・低圧リソース事業',
+    title: '蓄電池 補助金カレンダー | 系統用蓄電池・低圧リソース事業',
     description:
       '系統用蓄電池および低圧リソース事業向けの主要補助金を、執行機関・公募期間別に整理。SII・NEDO・経産省・自治体の補助金を継続トラック。',
     type: 'website',

@@ -18,7 +18,7 @@ import ExplainerBrowser from './ExplainerBrowser';
 export const revalidate = 300; // 5分ごとに再生成
 
 export const metadata: Metadata = {
-  title: '解説記事一覧',
+  title: '解説記事一覧 — 蓄電池・蓄電所事業の実務解説',
   description:
     '系統用蓄電池(BESS)・低圧リソース事業の制度・市場・技術を実務担当者向けに体系化した解説記事。容量市場、需給調整市場、JEPX、長期脱炭素オークション、補助金、参入手順、安全・法務まで網羅。カテゴリ・キーワードで素早く絞り込み可能。',
   alternates: { canonical: '/explainer' },

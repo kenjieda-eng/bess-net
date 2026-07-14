@@ -127,7 +127,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${meta.areaJp}エリア｜系統空き容量データベース`,
+    name: `${meta.areaJp}エリア｜蓄電池 系統空き容量DB`,
     description: meta.description,
     url: `https://bess-net.jp/grid/${meta.slug}`,
     numberOfItems: total,

@@ -11,12 +11,12 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: '都道府県別 変電所一覧 ｜ 系統空き容量データベース',
+  title: '都道府県別 変電所一覧｜蓄電池 系統空き容量DB',
   description:
     '全国10送配電事業者の変電所を都道府県別に一覧。各都道府県の件数・空容量・N-1電制適用可否を一画面で。蓄電所連系検討の地域絞り込みに。',
   alternates: { canonical: '/grid/prefecture' },
   openGraph: {
-    title: '都道府県別 変電所一覧｜系統空き容量データベース',
+    title: '都道府県別 変電所一覧｜蓄電池 系統空き容量DB',
     description: '全国10社・約40都道府県別の変電所件数を一覧表示',
     type: 'website',
   },

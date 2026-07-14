@@ -34,11 +34,11 @@ export async function generateMetadata({
   const decoded = decodeURIComponent(params.prefecture);
   return {
     // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-    title: `${decoded}の変電所一覧 ｜ 系統空き容量データベース`,
+    title: `${decoded}の変電所一覧｜蓄電池 系統空き容量DB`,
     description: `${decoded}の変電所を空容量大きい順に一覧表示。連系検討の初期スクリーニングに。10送配電事業者の公開データを編集部で整理。`,
     alternates: { canonical: `/grid/prefecture/${encodeURIComponent(decoded)}` },
     openGraph: {
-      title: `${decoded}の変電所一覧｜系統空き容量データベース`,
+      title: `${decoded}の変電所一覧｜蓄電池 系統空き容量DB`,
       description: `${decoded}の変電所を空容量大きい順に一覧表示`,
       type: 'website',
     },

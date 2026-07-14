@@ -109,11 +109,11 @@ export async function generateMetadata({
   if (!entry) return {};
   const { term } = entry;
   return {
-    title: `${term.term}とは？意味・解説｜用語集`,
+    title: `${term.term}とは？意味・解説｜蓄電池・エネルギー用語集`,
     description: term.shortDef,
     alternates: { canonical: `/glossary/${term.slug}` },
     openGraph: {
-      title: `${term.term}とは？意味・解説｜用語集`,
+      title: `${term.term}とは？意味・解説｜蓄電池・エネルギー用語集`,
       description: term.shortDef,
       type: 'article',
     },

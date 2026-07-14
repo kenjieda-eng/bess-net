@@ -23,12 +23,12 @@ import { CHECKLIST } from '@/data/fire-risk-checklist';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: '火災リスク自己診断 (UL9540A 25問チェック)',
+  title: '蓄電池 火災リスク自己診断（UL9540A 25問チェック）',
   description:
     '蓄電池の火災リスクを 25 問でセルフチェック。UL9540A / NFPA 855 / 消防法 の主要観点を網羅。総合スコア + カテゴリ別評価 + 優先改善 Top 5 を即時算出。無料・登録不要の教育型ツール。',
   alternates: { canonical: '/tools/fire-risk-check' },
   openGraph: {
-    title: '火災リスク自己診断 (UL9540A 準拠・25問)',
+    title: '蓄電池 火災リスク自己診断（UL9540A 準拠・25問）',
     description: 'セル選定・PCS・建屋・運用・緊急対応の 5 カテゴリ 25 問チェックリスト。',
     type: 'website',
     images: ['/og-image.png'],

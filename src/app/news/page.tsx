@@ -18,7 +18,7 @@ import NewsBrowser from './NewsBrowser';
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: 'ニュース',
+  title: '蓄電池業界ニュース',
   description:
     '系統用蓄電池(BESS)・低圧リソース事業の業界ニュース。新規連系・運転開始・補助金・PF組成・制度改正・市場動向・人事・海外動向まで網羅。カテゴリ・年・キーワードで絞り込み可能。',
   alternates: { canonical: '/news' },

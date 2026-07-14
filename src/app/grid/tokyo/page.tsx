@@ -13,11 +13,11 @@ const META = AREA_META.tokyo;
 
 export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: `${META.areaJp}エリア｜系統空き容量データベース`,
+  title: `${META.areaJp}エリア｜蓄電池 系統空き容量DB`,
   description: META.description.substring(0, 160),
   alternates: { canonical: '/grid/tokyo' },
   openGraph: {
-    title: `${META.areaJp}エリア｜系統空き容量データベース`,
+    title: `${META.areaJp}エリア｜蓄電池 系統空き容量DB`,
     description: META.description.substring(0, 160),
     type: 'website',
     images: ['/og-image.png'],

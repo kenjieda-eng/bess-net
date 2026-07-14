@@ -11,12 +11,12 @@ export const revalidate = 600;
 
 export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: 'お役立ちサイト一覧',
+  title: 'お役立ちサイト一覧（蓄電池・電力業界）',
   description:
     '系統用蓄電池・再エネ・脱炭素関連の業界関係者が日々ブックマークしておきたい外部サイトを、ジャンル×重要度×国別に厳選。国・行政・業界団体・補助金・研究機関・専門メディア・海外政府機関・国際機関・データソース・ESG等。',
   alternates: { canonical: '/links' },
   openGraph: {
-    title: 'お役立ちサイト一覧',
+    title: 'お役立ちサイト一覧（蓄電池・電力業界）',
     description:
       '系統用蓄電池業界関係者向けの外部サイト総合ガイド。約200サイトをジャンル別に厳選。',
     type: 'website',

@@ -10,11 +10,11 @@ import SiteFooter from '@/components/SiteFooter';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: '業界トラッカー (補助金 × 系統 × 事業者 × 案件 タイムライン)',
+  title: '蓄電池業界トラッカー（補助金 × 系統 × 事業者 × 案件）',
   description: '蓄電所事業の最新動向を 4 軸 (補助金/系統空き容量/事業者/プロジェクト) でタイムライン表示。当サイト独自の更新トラッカー、無料公開・登録不要。',
   alternates: { canonical: '/tracker' },
   openGraph: {
-    title: '業界トラッカー (補助金 × 系統 × 事業者 × 案件)',
+    title: '蓄電池業界トラッカー（補助金 × 系統 × 事業者 × 案件）',
     description: '4軸タイムラインで蓄電所事業の最新動向を一望',
     type: 'website',
     images: ['/og-image.png'],

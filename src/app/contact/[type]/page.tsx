@@ -31,7 +31,7 @@ type Props = { params: Promise<{ type: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type } = await params;
   const config = CONTACT_PAGES_CONFIGS[type as PlayerType];
-  if (!config) return { title: 'お問い合わせ | 蓄電所ネット' };
+  if (!config) return { title: 'お問い合わせ' }; // #88: template が自動付与のため手書きサフィックス除去
 
   return {
     title: config.title,
