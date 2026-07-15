@@ -138,69 +138,31 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ── 2. 8つの動線ガイド（現行のまま・文言不変） ───────────── */}
+      {/* ── 2. あなたに合った入口へ（入口再設計2026-07-15: 8動線→3分岐LP。既存8ページは各LPの深掘り先に降格・存置） ── */}
       <section className="section" style={{ background: '#f8fafc' }}>
         <div className="section-inner">
-          <div className="section-label" style={{ color: '#1e40af', fontWeight: 700 }}>★ Sprint X1 完走 · 業界事業者向けハブ 8 ページ</div>
-          <h2 className="section-title">あなたに合った情報を — 8 つの動線</h2>
+          <div className="section-label" style={{ color: '#1e40af', fontWeight: 700 }}>Start Here</div>
+          <h2 className="section-title">あなたに合った入口へ</h2>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 32, lineHeight: 1.7 }}>
-            蓄電池導入を検討される方 (Buyer) と、蓄電池業界の事業者 (Seller) 向けに、それぞれ 4 つのシナリオ別ページを用意しています。あなたの立場・関心に最も近いページからご覧ください。
+            立場に合わせて、3つの入口を用意しています。
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24 }}>
-            {/* Buyer 動線 */}
-            <div style={{ background: 'white', padding: 32, borderRadius: 12, border: '1px solid #e2e8f0' }}>
-              <span style={{
-                display: 'inline-block', padding: '4px 12px', background: '#dbeafe', color: '#1e40af',
-                borderRadius: 999, fontSize: 14, fontWeight: 600, marginBottom: 12,
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+            {[
+              { href: '/start/buy', title: '蓄電所を買いたい・導入したい', desc: '稼働中の取得・新規開発への投資・工場や施設への導入のご相談' },
+              { href: '/start/sell', title: '蓄電所を売りたい・案件がある', desc: '売却・譲渡、開発中案件や土地の活用のご相談' },
+              { href: '/start/partner', title: '蓄電池ビジネスに事業として関わりたい', desc: 'データ・ツール・協業の窓口' },
+            ].map((it) => (
+              <Link key={it.href} href={it.href} style={{
+                display: 'block', background: 'white', padding: 28, borderRadius: 12,
+                border: '1px solid #e2e8f0', textDecoration: 'none', color: 'inherit',
               }}>
-                蓄電池を導入したい方へ
-              </span>
-              <h3 style={{ fontSize: 22, fontWeight: 700, color: '#0f172a', marginBottom: 16, marginTop: 0 }}>
-                Buyer 動線 — 4 つのシナリオ
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {[
-                  { href: '/buyer/factory-commercial', title: '工場・商業施設の電気代削減', desc: '自家消費 + ピークカット + BCP' },
-                  { href: '/buyer/capacity-market', title: '容量市場参加検討', desc: 'kW 価値で安定収益' },
-                  { href: '/buyer/balancing-market', title: '需給調整市場参加検討', desc: 'kWh + kW 複合収益' },
-                  { href: '/buyer/ppa-offtake', title: 'PPA・オフテイク契約検討', desc: '長期安定収益 + 金融リスク管理' },
-                ].map((it) => (
-                  <li key={it.href}>
-                    <Link href={it.href} style={{ display: 'block', padding: 12, background: '#f8fafc', borderRadius: 8, textDecoration: 'none', color: 'inherit' }}>
-                      <div style={{ fontSize: 16, fontWeight: 600, color: '#0f172a', lineHeight: 1.4 }}>{it.title}</div>
-                      <div style={{ fontSize: 13, color: '#475569', marginTop: 4 }}>{it.desc}</div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* Seller 動線 */}
-            <div style={{ background: 'white', padding: 32, borderRadius: 12, border: '1px solid #e2e8f0' }}>
-              <span style={{
-                display: 'inline-block', padding: '4px 12px', background: '#fef3c7', color: '#a16207',
-                borderRadius: 999, fontSize: 14, fontWeight: 600, marginBottom: 12,
-              }}>
-                蓄電池業界の事業者の方へ
-              </span>
-              <h3 style={{ fontSize: 22, fontWeight: 700, color: '#0f172a', marginBottom: 16, marginTop: 0 }}>
-                Seller 動線 — 4 つのプレイヤー
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {[
-                  { href: '/seller/manufacturer', title: 'メーカー', desc: 'セル・PCS・統合システム' },
-                  { href: '/seller/epc', title: 'EPC 事業者', desc: '設計・調達・建設' },
-                  { href: '/seller/developer', title: 'プロジェクトデベロッパー', desc: 'SPC 設計 + IRR シム + 補助金' },
-                  { href: '/seller/reuse-secondhand', title: '中古売買・リユース', desc: 'EV → 蓄電池 2 次利用' },
-                ].map((it) => (
-                  <li key={it.href}>
-                    <Link href={it.href} style={{ display: 'block', padding: 12, background: '#f8fafc', borderRadius: 8, textDecoration: 'none', color: 'inherit' }}>
-                      <div style={{ fontSize: 16, fontWeight: 600, color: '#0f172a', lineHeight: 1.4 }}>{it.title}</div>
-                      <div style={{ fontSize: 13, color: '#475569', marginTop: 4 }}>{it.desc}</div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <h3 style={{ fontSize: 19, fontWeight: 700, color: '#0f172a', marginTop: 0, marginBottom: 8, lineHeight: 1.5 }}>
+                  {it.title}
+                </h3>
+                <p style={{ fontSize: 14, color: '#475569', margin: 0, lineHeight: 1.7 }}>{it.desc}</p>
+                <div style={{ fontSize: 13, color: '#1e40af', fontWeight: 600, marginTop: 12 }}>入口を開く →</div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

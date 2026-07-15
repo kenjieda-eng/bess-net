@@ -8,18 +8,13 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 import { useState, useEffect, useRef } from 'react';
 
-const BUYER_DROPDOWN = [
-  { label: 'これから参入する事業者', href: '/buyer/new-entry' },
-  { label: '投資家・ファンド', href: '/buyer/investor' },
-  { label: '土地保有者・地主', href: '/buyer/landowner' },
-  { label: '工場・商業施設（自家消費）', href: '/buyer/factory-commercial' },
-];
-
-const SELLER_DROPDOWN = [
-  { label: 'メーカー', href: '/seller/manufacturer' },
-  { label: 'EPC 事業者', href: '/seller/epc' },
-  { label: 'プロジェクトデベロッパー', href: '/seller/developer' },
-  { label: '中古売買・リユース', href: '/seller/reuse-secondhand' },
+// 入口再設計2026-07-15: 「導入検討」「業界事業者向け」2メニュー→「はじめての方へ」1メニューへ統合
+// （既存 buyer/seller 8ページは各LPの「さらに詳しく」経由に降格・ページ自体は存置）
+const START_DROPDOWN = [
+  { label: '買いたい・導入したい', href: '/start/buy' },
+  { label: '売りたい・案件がある', href: '/start/sell' },
+  { label: '事業として関わりたい', href: '/start/partner' },
+  { label: '稼働中蓄電所のご紹介', href: '/info/operating-bess-introduction' },
 ];
 
 function NavDropdown({
@@ -165,9 +160,8 @@ export default function SiteHeader() {
                   </Link>
                 </li>
               ))}
-            {/* Sprint X1 完走後の 8 LandingPage 動線確保 (L-EIC-010) */}
-            <NavDropdown label="導入検討" items={BUYER_DROPDOWN} accent="buyer" onLinkClick={closeMenu} />
-            <NavDropdown label="業界事業者向け" items={SELLER_DROPDOWN} accent="seller" onLinkClick={closeMenu} />
+            {/* 入口再設計2026-07-15: 3分岐LP＋稼働中蓄電所ご紹介の統合メニュー */}
+            <NavDropdown label="はじめての方へ" items={START_DROPDOWN} accent="buyer" onLinkClick={closeMenu} />
           </ul>
         </nav>
       </div>

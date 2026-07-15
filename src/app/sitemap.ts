@@ -64,6 +64,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/info`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     // 稼働中蓄電所ご紹介（静的1枚ページ・/info 一覧は microCMS 由来のため明示追加、2026-07-11）
     { url: `${siteConfig.url}/info/operating-bess-introduction`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    // 入口再設計 3分岐LP（2026-07-15）
+    { url: `${siteConfig.url}/start/buy`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${siteConfig.url}/start/sell`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${siteConfig.url}/start/partner`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     // Sprint 2 追加コーナー（依頼AB/AC/AD）
     { url: `${siteConfig.url}/policy-calendar`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     // P1: 政策イベント詳細（充実9件のみ SSG・POLICY_DETAIL_SLUGS と同期）
