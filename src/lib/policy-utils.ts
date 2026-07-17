@@ -72,9 +72,10 @@ export function deriveDisplayStatus(ev: {
   return stored;
 }
 
-/** 詳細ページ化する対象10件（slug＝policy-events の slug フィールド） */
+/** 詳細ページ化する対象11件（slug＝policy-events の slug フィールド） */
 export const POLICY_DETAIL_SLUGS: readonly string[] = [
   'meti-connection-review-cap-2026-08',        // 2026-08-01 接続検討数の事業者別上限
+  'meti-stable-supply-wg4-balancing-cap-2026-07', // 2026-07-14 第4回 電力安定供給WG（上限価格15→10円案・週次2026-07-17積み残し）
   'capacity-outage-plan-briefing-2026-06',     // 2026-06-26 容量市場 実務説明会（容量停止計画）
   'meti-grid-wg11-bess-connection-2026-06',    // 2026-06-10 第11回 次世代電力系統WG（土地使用権原）
   'occto-balancing-committee-61-2026-06',      // 2026-06-09 第61回 需給調整市場検討小委員会
