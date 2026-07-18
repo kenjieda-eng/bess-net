@@ -257,6 +257,12 @@ export default async function IndustryHubPage() {
               <li><Link href="/tools/fire-risk-check">火災リスク自己診断</Link></li>
               <li><Link href="/tools/capacity-market-bid">容量市場応札試算</Link></li>
               <li><Link href="/tools">ツール一覧</Link></li>
+              <li>
+                制度の仕組み（EIC Data 教材）:{' '}
+                <a href="https://data.eic-jp.org/insight/jp-power-markets-three-layers?utm_source=bess-net&utm_medium=referral&utm_campaign=edu_cluster" target="_blank" rel="noopener noreferrer">
+                  電力市場の3層：スポット・容量・需給調整の読み方 ↗
+                </a>
+              </li>
             </ul>
           </section>
         </div>

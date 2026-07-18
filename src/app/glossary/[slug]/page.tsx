@@ -18,6 +18,7 @@ import type { News, Explainer } from '@/lib/microcms';
 // fallback 専用（index 未収録 slug のときのみ呼ぶ。try/catch で 500 回避）
 import { getGlossaryBySlug } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
+import { GLOSSARY_EDU_LINKS } from '@/lib/edu-links';
 
 // build 時事前計算: 用語本体＋全関連リレーション（microCMS runtime ゼロ）
 import glossaryDetailIndex from '@/lib/generated/glossary-detail-index.json';
@@ -238,6 +239,20 @@ export default async function GlossaryDetailPage({
               <Link href="/grid" className="related-grid-button">
                 系統空き容量データベースを見る →
               </Link>
+            </section>
+          )}
+
+          {/* 制度の仕組み（EIC Data 教材）— リン共有2026-07-18・build時静的マップ結合＝runtime 0 */}
+          {GLOSSARY_EDU_LINKS[term.slug] && (
+            <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8 }}>
+              <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>制度の仕組み（EIC Data 教材）</h3>
+              <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+                {GLOSSARY_EDU_LINKS[term.slug].map((l) => (
+                  <li key={l.href}>
+                    <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label} ↗</a>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 

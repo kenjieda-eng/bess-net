@@ -194,6 +194,12 @@ export default function BalancingTrackerPage() {
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+              <li>
+                制度の仕組み（EIC Data 教材）:{' '}
+                <a href="https://data.eic-jp.org/insight/imbalance-charge-structure?utm_source=bess-net&utm_medium=referral&utm_campaign=edu_cluster" target="_blank" rel="noopener noreferrer">
+                  インバランス料金の仕組み ↗
+                </a>
+              </li>
               <li><Link href="/tools/balancing-revenue">需給調整 収益シナリオ（蓄電池 vs VPP vs 揚水 比較）</Link></li>
               <li><Link href="/buyer/balancing-market">需給調整市場 収益解説（Buyer 向け）</Link></li>
               <li><Link href="/dashboard/market">マーケットデータ ダッシュボード（29 系列）</Link></li>

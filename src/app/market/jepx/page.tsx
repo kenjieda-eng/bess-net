@@ -134,6 +134,12 @@ export default async function JEPXHubPage() {
               <li><Link href="/tools/capacity-market-bid">容量市場応札試算 (OCCTO実データ連携)</Link></li>
               <li><Link href="/explainer/spot-market">解説: スポット市場とは</Link></li>
               <li><Link href="/glossary/jepx">用語集: JEPX</Link></li>
+              <li>
+                制度の仕組み（EIC Data 教材）:{' '}
+                <a href="https://data.eic-jp.org/insight/how-to-read-area-prices?utm_source=bess-net&utm_medium=referral&utm_campaign=edu_cluster" target="_blank" rel="noopener noreferrer">
+                  エリアプライスと市場分断の読み方 ↗
+                </a>
+              </li>
               <li><a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer">EIC Data（一次データソース）</a></li>
               <li><a href="https://data.eic-jp.org/markets" target="_blank" rel="noopener noreferrer">EIC Data › マーケット（エネルギー×金融の時系列）</a></li>
               <li><a href="https://data.eic-jp.org/watch" target="_blank" rel="noopener noreferrer">EIC Data › Watch（マーケットモニター）</a></li>

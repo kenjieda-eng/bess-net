@@ -613,6 +613,12 @@ export default async function GridIndexPage() {
           }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (当サイト独自機能)</h2>
             <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+              <li>
+                制度の仕組み（EIC Data 教材）:{' '}
+                <a href="https://data.eic-jp.org/insight/wheeling-charge-structure?utm_source=bess-net&utm_medium=referral&utm_campaign=edu_cluster" target="_blank" rel="noopener noreferrer">
+                  託送料金の仕組み ↗
+                </a>
+              </li>
               <li><Link href="/tools/grid-connection-check">系統連系診断</Link> — 緯度経度から接続候補変電所を 5 件抽出</li>
               <li><Link href="/tracker/grid">系統トラッカー</Link> — 変電所データの更新タイムライン</li>
               <li><Link href="/grid/chubu/map">中部マップ (Leaflet)</Link> — 1,081箇所 地図検索</li>

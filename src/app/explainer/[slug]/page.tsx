@@ -28,6 +28,7 @@ import { linkifyHTML } from '@/lib/linkify';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 import { TOOL_CTAS } from '@/lib/tools-cta';
+import { EXPLAINER_EDU_LINKS } from '@/lib/edu-links';
 
 export const revalidate = 600;
 
@@ -220,6 +221,20 @@ export default async function ExplainerDetailPage({
               </Link>
             </section>
           ))}
+
+          {/* 制度の仕組み（EIC Data 教材）— リン共有2026-07-18 */}
+          {EXPLAINER_EDU_LINKS[exp.slug] && (
+            <section className="article-section">
+              <h3 className="related-h3">制度の仕組み（EIC Data 教材）</h3>
+              <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+                {EXPLAINER_EDU_LINKS[exp.slug].map((l) => (
+                  <li key={l.href}>
+                    <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label} ↗</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* 出典 */}
           {exp.sources && (
