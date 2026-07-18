@@ -5,6 +5,7 @@ import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
 import { MICROCMS_MAX_OFFSET, MICROCMS_PAGE_LIMIT } from './constants';
 import { GLOSSARY_301_SOURCE_SLUGS } from './glossary-301';
 import { isExcludedNews } from './news-excluded';
+import { isTopicExcludedNews } from './news-topic-gate';
 import relatedNewsMap from './generated/related-news-map.json';
 
 /** build 時事前計算した関連newsマップ（"pref:<base>" / "project:<slug>" → newsRef[]）。runtime q を排除（鉄則#98） */
@@ -682,8 +683,13 @@ export const getIndustryNews = async (): Promise<News[]> => {
   const all = await getAllNews();
   // off-topic PR-import も除外（news-excluded SSOT・非破壊）: /news 一覧・カテゴリ/年ハブ・
   // sitemap・件数集計すべてここ経由。詳細ページは getNewsBySlug 直取得のため残置＝noindex は page 側。
+  // P0 主題ゲート（news分析2026-07-18）: 「title または本文」判定は prebuild 事前計算
+  // （news-topic-exclusions.json）＝一覧・カテゴリ・年別・トップ・sitemap・generateStaticParams に一貫適用（#109）
   return all.filter(
-    (n) => !(n.category && n.category.includes('編集部')) && !isExcludedNews(n.slug)
+    (n) =>
+      !(n.category && n.category.includes('編集部')) &&
+      !isExcludedNews(n.slug) &&
+      !isTopicExcludedNews(n.slug)
   );
 };
 

@@ -15,6 +15,7 @@ import {
 import { linkifyHTML } from '@/lib/linkify';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { isExcludedNews } from '@/lib/news-excluded';
+import { isOnTopicNewsArticle } from '@/lib/news-topic-gate';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -62,6 +63,10 @@ export default async function NewsDetailPage({
 }) {
   const news = await getNewsBySlugWithRelations(params.slug);
   if (!news) notFound();
+
+  // P0 主題ゲート（news分析2026-07-18）: 蓄電池と無関係な記事は詳細ページも404
+  // （取得済み title+body で判定＝追加フェッチなし。誤除外は NEWS_TOPIC_ALLOWLIST で復帰＝完全可逆）
+  if (!isOnTopicNewsArticle({ slug: news.slug, title: news.title, body: news.body })) notFound();
 
   // 関連用語（Glossary[]）
   const relatedTerms = (news.relatedTerms ?? []).map((g) => ({

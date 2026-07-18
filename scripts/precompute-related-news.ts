@@ -23,6 +23,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { getAllNews, getAllProjects, type News } from '../src/lib/microcms';
+import { isTopicExcludedNews } from '../src/lib/news-topic-gate';
 
 type NewsRef = { id: string; slug: string; title: string; publishedAt: string; category: string[] };
 
@@ -74,8 +75,10 @@ function matchNews(news: News[], needle: string, limit: number): NewsRef[] {
 async function main(): Promise<void> {
   console.log('[precompute-related-news] microCMS bulk 取得（getAllNews + getAllProjects 各1回）...');
   const t0 = Date.now();
-  const [news, projects] = await Promise.all([getAllNews(), getAllProjects()]);
-  console.log(`  news=${news.length} projects=${projects.length} (${Date.now() - t0}ms)`);
+  const [newsAll, projects] = await Promise.all([getAllNews(), getAllProjects()]);
+  // P0 主題ゲート（news分析2026-07-18）: 関連ニュース枠にも同一フィルタ＝表示系ズレ禁止（#109）
+  const news = newsAll.filter((n) => !isTopicExcludedNews(n.slug));
+  console.log(`  news=${news.length}（主題ゲート前 ${newsAll.length}） projects=${projects.length} (${Date.now() - t0}ms)`);
 
   const t1 = Date.now();
   const map: Record<string, NewsRef[]> = {};
