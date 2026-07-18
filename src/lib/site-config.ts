@@ -62,6 +62,8 @@ export const siteConfig = {
     { label: 'マーケット', href: '/dashboard/market', enabled: true },
     // Sprint 4 後半 (業界唯一 4ハブの集約 index)
     { label: '業界分析', href: '/industry', enabled: true },
+    // 低圧クラスタ Stage1（2026-07-18・NEWバッジは SiteHeader で30日コード導出 #108）
+    { label: '低圧蓄電所', href: '/lv', enabled: true },
   ] as NavItem[],
 
   // フッターのリンク群（主要コーナーへの導線 + サイト情報）

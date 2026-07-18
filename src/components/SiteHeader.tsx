@@ -8,6 +8,10 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 import { useState, useEffect, useRef } from 'react';
 
+// 低圧クラスタ Stage1（2026-07-18）: /lv ナビの NEW バッジは公開日から30日のみコード導出（#108・手動撤去不要）
+const LV_NAV_LAUNCH_DATE = '2026-07-18';
+const LV_NAV_IS_NEW = Date.now() - new Date(LV_NAV_LAUNCH_DATE).getTime() < 30 * 24 * 60 * 60 * 1000;
+
 // 入口再設計2026-07-15: 「導入検討」「業界事業者向け」2メニュー→「はじめての方へ」1メニューへ統合
 // （既存 buyer/seller 8ページは各LPの「さらに詳しく」経由に降格・ページ自体は存置）
 const START_DROPDOWN = [
@@ -145,7 +149,7 @@ export default function SiteHeader() {
                 <li key={item.href}>
                   <Link href={item.href} onClick={closeMenu}>
                     {item.label}
-                    {item.href === '/anken' && (
+                    {(item.href === '/anken' || (item.href === '/lv' && LV_NAV_IS_NEW)) && (
                       <span style={{
                         marginLeft: 5,
                         fontSize: 10,

@@ -222,6 +222,17 @@ export default async function ExplainerDetailPage({
             </section>
           ))}
 
+          {/* 低圧クラスタ Stage1（2026-07-18）: 低圧解説→/lv ガイドへの接続（対象1記事のみ・最小） */}
+          {exp.slug === 'low-voltage-balancing-market-launch' && (
+            <section className="article-section">
+              <h3 className="related-h3">低圧蓄電所 総合ガイド</h3>
+              <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+                <li><Link href="/lv">低圧蓄電所 総合ガイド ── 仕組み・収益・購入・参入</Link></li>
+                <li><Link href="/lv/what-is">低圧蓄電所（低圧系統用蓄電池）とは？ ── 仕組みと高圧との違い</Link></li>
+              </ul>
+            </section>
+          )}
+
           {/* 制度の仕組み（EIC Data 教材）— リン共有2026-07-18 */}
           {EXPLAINER_EDU_LINKS[exp.slug] && (
             <section className="article-section">
