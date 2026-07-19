@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import StartTrustBlock from '@/components/StartTrustBlock';
 
 export const dynamic = 'force-static';
 
@@ -65,6 +66,47 @@ export default function StartSellPage() {
             </ol>
             <p>
               <strong>ご相談・お問い合わせは無料です。</strong>
+            </p>
+
+            {/* ── 3LP増補 A案（2026-07-19）: 固有節→流れ→安心材料→相談前FAQ。CTA/リンク4本/titleは不変 ── */}
+            <h2>ご相談時に「あると話が早い」情報（5点）</h2>
+            <ol style={{ paddingLeft: 20, lineHeight: 1.9 }}>
+              <li>所在地（都道府県・市区町村）</li>
+              <li>規模（kW／kWh）</li>
+              <li>系統連系の状況（承諾前・承諾済・連系済）</li>
+              <li>段階（開発中・建設中・稼働中）</li>
+              <li>ご希望の時期・条件感</li>
+            </ol>
+            <p>
+              <strong>そろっていなくても大丈夫です。</strong>
+              分かる範囲でお知らせいただければ、確認しながら進めます。
+            </p>
+
+            <h2>ご相談の流れ（3ステップ）</h2>
+            <ol style={{ paddingLeft: 20, lineHeight: 1.9 }}>
+              <li><strong>フォームから送信</strong> ── 上の5点は分かる範囲で。</li>
+              <li><strong>EICチームから返信</strong> ── 内容を確認し、折り返しご連絡します。</li>
+              <li><strong>オンライン等でご相談</strong> ── 市場環境の共有と、進め方のご提案をします。</li>
+            </ol>
+            <p>ここまですべて無料です。ご相談によって売却の義務が生じることはありません。</p>
+
+            <StartTrustBlock />
+
+            <h2>ご相談前のよくある質問</h2>
+            <p>
+              <strong>Q. 売却を決めていない段階（相場感を知りたいだけ）でも良いですか？</strong>
+              <br />
+              A. 構いません。市場環境や進め方の情報提供だけのご相談も承ります。
+            </p>
+            <p>
+              <strong>Q. 案件情報の扱いが心配です。</strong>
+              <br />
+              A. ご相談内容・案件情報は、相談対応の目的以外には使いません。買い手候補への提示は、ご了承をいただいてから行います。
+            </p>
+            <p>
+              <strong>Q. 開発途中の案件・土地だけでも相談できますか？</strong>
+              <br />
+              A. できます。系統枠・用地の段階からのご相談も対象です。
             </p>
           </div>
 

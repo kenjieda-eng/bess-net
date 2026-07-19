@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import StartTrustBlock from '@/components/StartTrustBlock';
 
 export const dynamic = 'force-static';
 
@@ -74,6 +75,44 @@ export default function StartPartnerPage() {
             </p>
             <p>
               <strong>ご相談・お問い合わせは無料です。</strong>
+            </p>
+
+            {/* ── 3LP増補 A案（2026-07-19）: 固有節→流れ→安心材料→相談前FAQ。CTA/リンク5本/titleは不変 ── */}
+            <h2>「関わり方」の5類型 ── 自分の立ち位置を見つける</h2>
+            <ol style={{ paddingLeft: 20, lineHeight: 1.9 }}>
+              <li><strong>開発する</strong> ── 用地取得から連系・建設まで（低圧の手順は<Link href="/lv/entry-guide">事業参入ガイド</Link>へ）。</li>
+              <li><strong>出資・投資する</strong> ── 区画購入・共同出資などの資金参加。</li>
+              <li><strong>土地を提供する</strong> ── 遊休地・転用が難しい土地の活用先として。</li>
+              <li><strong>機器・サービスを提供する</strong> ── 機器・EPC・O&M・ソフトウェアなどの供給側。</li>
+              <li><strong>束ねる・運用する</strong> ── アグリゲーションや運用面での連携。</li>
+            </ol>
+            <p>複数の類型にまたがるご相談も普通です。</p>
+
+            <h2>ご相談の流れ（3ステップ）</h2>
+            <ol style={{ paddingLeft: 20, lineHeight: 1.9 }}>
+              <li><strong>フォームから送信</strong> ── 関心のある類型・現在の状況を一言で。</li>
+              <li><strong>EICチームから返信</strong> ── 内容を確認し、折り返しご連絡します。</li>
+              <li><strong>オンライン等でご相談</strong> ── 業界の現在地の共有と、参入・連携の選択肢をご提案します。</li>
+            </ol>
+            <p>ここまですべて無料です。</p>
+
+            <StartTrustBlock />
+
+            <h2>ご相談前のよくある質問</h2>
+            <p>
+              <strong>Q. 具体的な事業計画がなくても相談できますか？</strong>
+              <br />
+              A. できます。「どんな関わり方があるか」を知る段階からどうぞ。上の5類型が地図になります。
+            </p>
+            <p>
+              <strong>Q. bess-netへの情報掲載・協業の相談もここで良いですか？</strong>
+              <br />
+              A. はい。掲載・データ提供・共同企画などのご相談も同じ窓口で承ります。
+            </p>
+            <p>
+              <strong>Q. 費用はかかりますか？</strong>
+              <br />
+              A. ご相談は無料です。協業の内容によって費用が発生する場合は、事前に明示し、合意のうえで進めます。
             </p>
           </div>
 

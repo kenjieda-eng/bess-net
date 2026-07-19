@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import StartTrustBlock from '@/components/StartTrustBlock';
 
 export const dynamic = 'force-static';
 
@@ -76,6 +77,43 @@ export default function StartBuyPage() {
             </p>
             <p>
               <strong>ご相談・お問い合わせは無料です。</strong>
+            </p>
+
+            {/* ── 3LP増補 A案（2026-07-19）: 固有節→流れ→安心材料→相談前FAQ。CTA/リンク5本/titleは不変 ── */}
+            <h2>ご相談でよくあるテーマ</h2>
+            <ul style={{ paddingLeft: 20, lineHeight: 1.9 }}>
+              <li><strong>新設か、稼働中か</strong> ── ゼロから開発するか、稼働中の蓄電所を取得するか（稼働中のご紹介は<Link href="/info/operating-bess-introduction">「稼働中蓄電所のご紹介」</Link>へ）。</li>
+              <li><strong>高圧か、低圧か</strong> ── 投資規模と手続き負担が大きく異なります（低圧の全体像は<Link href="/lv">総合ガイド</Link>へ）。</li>
+              <li><strong>価格・利回りの妥当性</strong> ── 販売資料の前提条件をどう読むか。</li>
+              <li><strong>補助金が使えるか</strong> ── 公募状況と対象要件の確認。</li>
+            </ul>
+            <p>どのテーマも「まだ絞れていない」段階からで大丈夫です。</p>
+
+            <h2>ご相談の流れ（3ステップ）</h2>
+            <ol style={{ paddingLeft: 20, lineHeight: 1.9 }}>
+              <li><strong>フォームから送信</strong> ── 現時点で分かっている範囲で構いません。</li>
+              <li><strong>EICチームから返信</strong> ── 内容を確認し、折り返しご連絡します（必要に応じて日程調整）。</li>
+              <li><strong>オンライン等でご相談</strong> ── 状況の整理と、取りうる選択肢をご提案します。</li>
+            </ol>
+            <p>ここまですべて無料です。ご相談によって契約や購入の義務が生じることはありません。</p>
+
+            <StartTrustBlock />
+
+            <h2>ご相談前のよくある質問</h2>
+            <p>
+              <strong>Q. 検討を始めたばかりでも相談できますか？</strong>
+              <br />
+              A. できます。「何から調べればよいか」という段階のご相談も歓迎です。基礎を独学されたい方は<Link href="/lv">総合ガイド</Link>もご活用ください。
+            </p>
+            <p>
+              <strong>Q. 相談すると、必ず何かを勧められますか？</strong>
+              <br />
+              A. いいえ。目的は状況の整理と選択肢のご提示です。検討の結果「今は買わない」という結論になるご相談も普通にあります。
+            </p>
+            <p>
+              <strong>Q. 相談内容が外部に伝わることはありませんか？</strong>
+              <br />
+              A. ご相談内容は、相談対応の目的以外には使いません。
             </p>
           </div>
 
