@@ -70,6 +70,9 @@ export default function StartPartnerPage() {
               </li>
             </ol>
             <p>
+              低圧での事業参入という入口もあります（<Link href="/lv/entry-guide">事業参入ガイドへ</Link>）。
+            </p>
+            <p>
               <strong>ご相談・お問い合わせは無料です。</strong>
             </p>
           </div>

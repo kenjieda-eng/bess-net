@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { siteConfig } from '@/lib/site-config';
+import { siteConfig, LV_NAV_LAUNCH_DATE } from '@/lib/site-config';
 import { getExplainerList, getGlossaryList, getIndustryNews, getSubstationList, getAllPolicyEvents, type PolicyEvent } from '@/lib/microcms';
 import {
   POLICY_DETAIL_SLUG_SET,
@@ -254,6 +254,15 @@ export default async function Home() {
                 </ul>
               </>
             )}
+
+            {/* Stage5: 低圧クラスタ導線（今週の動き枠内1項目・NEWはLV_NAV_LAUNCH_DATE 30日コード導出 #108・ナビと同時消灯） */}
+            <p style={{ fontSize: 14, marginTop: 16, padding: '12px 16px', border: '1px solid var(--color-border)', borderRadius: 6, background: 'var(--color-bg-card, #fff)', lineHeight: 1.7 }}>
+              {Date.now() - new Date(LV_NAV_LAUNCH_DATE).getTime() < 30 * 24 * 60 * 60 * 1000 && (
+                <span style={{ fontSize: 10, padding: '2px 6px', borderRadius: 4, color: '#fff', background: '#e11d48', fontWeight: 700, marginRight: 8, verticalAlign: 'middle' }}>NEW</span>
+              )}
+              <Link href="/lv" style={{ fontWeight: 600 }}>低圧蓄電所・低圧系統用蓄電池 総合ガイド</Link>
+              <span style={{ color: 'var(--color-muted)' }}> ── 仕組み・収益・購入・参入を中立の立場で体系解説</span>
+            </p>
 
             <p style={{ fontSize: 13, marginTop: 12 }}>
               カレンダーで追う: <Link href="/policy-calendar" style={{ fontWeight: 600 }}>政策・法制度</Link>

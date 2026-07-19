@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import GlossaryBrowser from '@/components/GlossaryBrowser';
 import { getAllGlossary } from '@/lib/microcms';
+import { GLOSSARY_DISPLAY_EXCLUDED_SLUGS } from '@/lib/glossary-301';
 
 export const revalidate = 300; // 5分ごとに再生成
 
@@ -23,7 +24,8 @@ export const metadata: Metadata = {
 };
 
 export default async function GlossaryListPage() {
-  const items = await getAllGlossary();
+  // Stage5: 表示系完全除外slug（低圧リソース重複解消）を一覧からも除去（定数1箇所管理）
+  const items = (await getAllGlossary()).filter((g) => !GLOSSARY_DISPLAY_EXCLUDED_SLUGS.has(g.slug));
 
   return (
     <>

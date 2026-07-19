@@ -72,6 +72,9 @@ export default function StartBuyPage() {
               </li>
             </ol>
             <p>
+              小規模から始める低圧蓄電所という選択肢もあります（<Link href="/lv">総合ガイドへ</Link>）。
+            </p>
+            <p>
               <strong>ご相談・お問い合わせは無料です。</strong>
             </p>
           </div>

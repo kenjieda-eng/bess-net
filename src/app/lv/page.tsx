@@ -9,6 +9,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvContactCta from '@/components/LvContactCta';
 import { siteConfig } from '@/lib/site-config';
+import { getIndustryNews } from '@/lib/microcms';
 
 export const dynamic = 'force-static';
 
@@ -75,7 +76,20 @@ const RELATED = [
   { href: '/glossary/adjustment-reserve', label: '調整力（用語集）' },
 ];
 
-export default function LvHubPage() {
+export default async function LvHubPage() {
+  // Stage5: 低圧の最新ニュース（news分析P1）。build時に getIndustryNews（主題ゲート・除外済みの
+  // 単一チョークポイント）から title「低圧」含む3件を抽出。全静的・runtime fetch 0（force-static）。
+  // 失敗時は空＝枠ごと非表示（429縮退 #100）。
+  let lvNews: { slug: string; title: string; publishedAt?: string }[] = [];
+  try {
+    lvNews = (await getIndustryNews())
+      .filter((n) => (n.title || '').includes('低圧'))
+      .slice(0, 3)
+      .map((n) => ({ slug: n.slug, title: n.title, publishedAt: n.publishedAt }));
+  } catch {
+    lvNews = [];
+  }
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -133,6 +147,27 @@ export default function LvHubPage() {
               低圧蓄電所のFAQ（6問）は<Link href="/faq">よくある質問</Link>でご覧いただけます。
             </p>
           </div>
+
+          {/* Stage5: 低圧の最新ニュース（0件時は枠ごと非表示） */}
+          {lvNews.length > 0 && (
+            <section style={{ padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8, marginBottom: 32 }}>
+              <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
+                低圧の最新ニュース <Link href="/news" style={{ fontSize: 13, fontWeight: 600, marginLeft: 8 }}>すべて見る →</Link>
+              </h2>
+              <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+                {lvNews.map((n) => (
+                  <li key={n.slug}>
+                    <Link href={`/news/${n.slug}`}>{n.title}</Link>
+                    {n.publishedAt && (
+                      <span style={{ fontSize: 12, color: 'var(--color-muted)', marginLeft: 8 }}>
+                        {new Date(n.publishedAt).toLocaleDateString('ja-JP')}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* 関連する当サイトのコンテンツ（全て実在確認済み L-EIC-021） */}
           <section style={{ padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8, marginBottom: 32 }}>

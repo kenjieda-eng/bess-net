@@ -198,6 +198,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 301統合済スラッグは sitemap から除外（L-EIC-021）
   // P1 batch1 追加（2026-06-19）: Rule A 30件 + Rule B 100件 + 既存 2件 = 132件
   const GLOSSARY_SITEMAP_DENYLIST = new Set([
+    // 低圧クラスタ Stage5（2026-07-19）: 低圧リソース重複解消（301→low-voltage-resource-term）
+    'low-voltage-resource',
     // 既存（§3.5 炭素価格クラスタ）
     'eu-ets-detail', 'carbon-pricing-detail',
     // Rule A: -detail スタブ

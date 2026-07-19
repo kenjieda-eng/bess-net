@@ -1,6 +1,9 @@
 // サイト全体の定数を一元管理
 // 名称・URL・メタ情報をここで定義し、各ページから参照する
 
+// 低圧クラスタ公開日（2026-07-18）: ナビ・トップの NEW バッジ30日コード導出のSSOT（#108・Stage5でここへ集約）
+export const LV_NAV_LAUNCH_DATE = '2026-07-18';
+
 export type RoadmapStatus = 'done' | 'in-progress' | 'planned';
 
 export type RoadmapItem = {

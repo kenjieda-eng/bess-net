@@ -5,11 +5,11 @@
 //   nav に「導入検討」「業界事業者向け」ドロップダウン追加
 // モバイル（md未満）: ハンバーガーメニューで開閉（aria-expanded 対応）
 import Link from 'next/link';
-import { siteConfig } from '@/lib/site-config';
+import { siteConfig, LV_NAV_LAUNCH_DATE } from '@/lib/site-config';
 import { useState, useEffect, useRef } from 'react';
 
 // 低圧クラスタ Stage1（2026-07-18）: /lv ナビの NEW バッジは公開日から30日のみコード導出（#108・手動撤去不要）
-const LV_NAV_LAUNCH_DATE = '2026-07-18';
+// Stage5: LV_NAV_LAUNCH_DATE はトップと共用のため site-config へ SSOT 化
 const LV_NAV_IS_NEW = Date.now() - new Date(LV_NAV_LAUNCH_DATE).getTime() < 30 * 24 * 60 * 60 * 1000;
 
 // 入口再設計2026-07-15: 「導入検討」「業界事業者向け」2メニュー→「はじめての方へ」1メニューへ統合

@@ -25,7 +25,7 @@ import {
   getAllProjects,
 } from '../src/lib/microcms';
 import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
-import { GLOSSARY_301_SOURCE_SLUGS } from '../src/lib/glossary-301';
+import { GLOSSARY_301_SOURCE_SLUGS, GLOSSARY_DISPLAY_EXCLUDED_SLUGS } from '../src/lib/glossary-301';
 
 // ── 出力型（ページが必要とする最小フィールドのみ）──────────────────
 type TermLite = { term: string; slug: string };
@@ -187,6 +187,8 @@ async function main(): Promise<void> {
   let normalizedCount = 0;
 
   for (const g of glossary) {
+    // Stage5: 表示系完全除外slug（index非収録=生成なし・関連語リンクなし。301はmiddleware）
+    if (GLOSSARY_DISPLAY_EXCLUDED_SLUGS.has(g.slug)) continue;
     const cat = (g.category && g.category[0]) || '';
     const sub = g.subcategory || '';
     const useCategoryFallback = isGenericSubcategory(sub);

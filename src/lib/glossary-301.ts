@@ -170,7 +170,19 @@ export const GLOSSARY_301: Record<string, string> = {
   '/glossary/us-ira-act':      '/glossary/ira-us',                  // 同一概念IRA・薄テンプレ（ira-usa-detail→ira-us と整合）
   '/glossary/output-control':  '/glossary/curtailment',             // term「出力制御」完全一致の真重複（curtailment 13記事で主流）
   '/glossary/lfp':             '/glossary/lithium-iron-phosphate',  // #129 向き先変更: 総称LFPは電池側へ（6/19監査方針）
+
+  // 低圧クラスタ Stage5（2026-07-19）: Stage4 で発生した同名 term 併存を解消
+  // 旧=量産期の汎用文 → 新=lvクラスタ良質版（Stage4投入・/lv 配下リンクは全て新側）
+  '/glossary/low-voltage-resource': '/glossary/low-voltage-resource-term',
 };
+
+/**
+ * 表示系から完全除外する旧slug（低圧クラスタ Stage5・news P0 と同型のコード側除外・定数1箇所管理）。
+ * precompute の detail-index（=generateStaticParams・関連語リンク）と /glossary 一覧から除去する。
+ * 301 リダイレクト自体は上の GLOSSARY_301 が処理（microCMS は無変更＝完全可逆）。
+ * ※ 既存132件の301元は「生成しつつ middleware 301」の現行運用のまま（本Setには入れない）。
+ */
+export const GLOSSARY_DISPLAY_EXCLUDED_SLUGS: Set<string> = new Set(['low-voltage-resource']);
 
 // 301 元slug集合（bare slug、"/glossary/" prefix 除去）。term→slug / english→slug マップから除外する。
 export const GLOSSARY_301_SOURCE_SLUGS: Set<string> = new Set(
