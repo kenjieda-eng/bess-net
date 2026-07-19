@@ -124,9 +124,15 @@ export default function LvHubPage() {
               </Link>
             ))}
           </div>
-          <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 32 }}>
-            用語集・よくある質問（FAQ）を順次拡充中です。
-          </p>
+          {/* Stage4: 関連用語4語＋FAQ導線（glossary/faq 投入済み・実在確認済み L-EIC-021） */}
+          <div style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 32, lineHeight: 1.9 }}>
+            <p style={{ margin: '0 0 2px' }}>
+              関連用語: <Link href="/glossary/low-voltage-bess">低圧蓄電所</Link>・<Link href="/glossary/low-voltage-resource-term">低圧リソース</Link>・<Link href="/glossary/device-level-metering">機器個別計測</Link>・<Link href="/glossary/bess-unit-sale">区画販売（分譲蓄電所）</Link>
+            </p>
+            <p style={{ margin: 0 }}>
+              低圧蓄電所のFAQ（6問）は<Link href="/faq">よくある質問</Link>でご覧いただけます。
+            </p>
+          </div>
 
           {/* 関連する当サイトのコンテンツ（全て実在確認済み L-EIC-021） */}
           <section style={{ padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8, marginBottom: 32 }}>

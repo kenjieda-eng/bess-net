@@ -147,6 +147,11 @@ export default function LvEntryGuidePage() {
             。
           </p>
 
+          {/* Stage4: 関連用語（glossary 投入済み・実在確認済み） */}
+          <p style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+            関連用語: <Link href="/glossary/device-level-metering">機器個別計測</Link>
+          </p>
+
           <section className="article-sources" style={{ marginTop: 24 }}>
             <h3 style={{ fontSize: 15, fontWeight: 700 }}>出典</h3>
             <ul style={{ fontSize: 13, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>

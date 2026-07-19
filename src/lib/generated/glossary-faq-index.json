@@ -2088,6 +2088,18 @@
       "slug": "faq-jigyou-08",
       "question": "系統用蓄電池のマルチユース運用とは？",
       "category": "事業"
+    },
+    {
+      "id": "yic3-u58r",
+      "slug": "faq-lv-02",
+      "question": "低圧蓄電所の収益はどこから生まれますか？",
+      "category": "事業"
+    },
+    {
+      "id": "w77i-7tup1",
+      "slug": "faq-lv-01",
+      "question": "低圧蓄電所とは何ですか？高圧の蓄電所と何が違いますか？",
+      "category": "技術"
     }
   ],
   "aggregator": [
@@ -2108,6 +2120,18 @@
       "slug": "faq-jigyou-08",
       "question": "系統用蓄電池のマルチユース運用とは？",
       "category": "事業"
+    },
+    {
+      "id": "yic3-u58r",
+      "slug": "faq-lv-02",
+      "question": "低圧蓄電所の収益はどこから生まれますか？",
+      "category": "事業"
+    },
+    {
+      "id": "w77i-7tup1",
+      "slug": "faq-lv-01",
+      "question": "低圧蓄電所とは何ですか？高圧の蓄電所と何が違いますか？",
+      "category": "技術"
     }
   ],
   "aggregator-business": [],
@@ -2916,6 +2940,12 @@
       "slug": "faq-seido-03",
       "question": "需給調整市場とは？どんな商品がありますか？",
       "category": "制度"
+    },
+    {
+      "id": "51ay85d_zsld",
+      "slug": "faq-lv-05",
+      "question": "低圧蓄電所事業に参入するには、何から始めればよいですか？",
+      "category": "事業"
     }
   ],
   "general-transmission-distribution": [
@@ -2924,6 +2954,12 @@
       "slug": "faq-seido-03",
       "question": "需給調整市場とは？どんな商品がありますか？",
       "category": "制度"
+    },
+    {
+      "id": "51ay85d_zsld",
+      "slug": "faq-lv-05",
+      "question": "低圧蓄電所事業に参入するには、何から始めればよいですか？",
+      "category": "事業"
     }
   ],
   "mitsui-co": [],
@@ -2952,7 +2988,14 @@
   "mitsubishi-corp": [],
   "upward-dr": [],
   "upside-scenario": [],
-  "price-cap": [],
+  "price-cap": [
+    {
+      "id": "yic3-u58r",
+      "slug": "faq-lv-02",
+      "question": "低圧蓄電所の収益はどこから生まれますか？",
+      "category": "事業"
+    }
+  ],
   "downward-dr": [],
   "downside-scenario": [],
   "price-floor": [],
@@ -3052,7 +3095,40 @@
   "itochu-corporation": [],
   "low-voltage": [],
   "lv-bess-detail": [],
+  "low-voltage-resource-term": [],
   "low-voltage-resource": [],
+  "low-voltage-bess": [
+    {
+      "id": "w77i-7tup1",
+      "slug": "faq-lv-01",
+      "question": "低圧蓄電所とは何ですか？高圧の蓄電所と何が違いますか？",
+      "category": "技術"
+    },
+    {
+      "id": "x_g8vjaw8j",
+      "slug": "faq-lv-06",
+      "question": "低圧蓄電所に使える補助金はありますか？",
+      "category": "補助金"
+    },
+    {
+      "id": "yic3-u58r",
+      "slug": "faq-lv-02",
+      "question": "低圧蓄電所の収益はどこから生まれますか？",
+      "category": "事業"
+    },
+    {
+      "id": "odmsh10y5",
+      "slug": "faq-lv-04",
+      "question": "低圧蓄電所を購入する前に、何を確認すべきですか？",
+      "category": "事業"
+    },
+    {
+      "id": "51ay85d_zsld",
+      "slug": "faq-lv-05",
+      "question": "低圧蓄電所事業に参入するには、何から始めればよいですか？",
+      "category": "事業"
+    }
+  ],
   "low-voltage-grid": [],
   "sumitomo-chemical": [],
   "sumitomo-corp": [],
@@ -3205,7 +3281,14 @@
   ],
   "distributed-energy-resource": [],
   "initial-capacity": [],
-  "initial-investment": [],
+  "initial-investment": [
+    {
+      "id": "w77i-7tup1",
+      "slug": "faq-lv-01",
+      "question": "低圧蓄電所とは何ですか？高圧の蓄電所と何が違いますか？",
+      "category": "技術"
+    }
+  ],
   "control-power": [],
   "control-accuracy": [],
   "power-factor": [],
@@ -3226,6 +3309,7 @@
   ],
   "hokuriku-electric": [],
   "compartmentalization": [],
+  "bess-unit-sale": [],
   "post-fit": [],
   "single-unit-rating": [],
   "islanding": [],
@@ -3624,6 +3708,7 @@
       "category": "補助金"
     }
   ],
+  "device-level-metering": [],
   "machine-learning": [
     {
       "id": "02a4cvr48",
@@ -4052,6 +4137,12 @@
       "slug": "faq-jigyou-07",
       "question": "蓄電所の用地確保はどうする？",
       "category": "事業"
+    },
+    {
+      "id": "odmsh10y5",
+      "slug": "faq-lv-04",
+      "question": "低圧蓄電所を購入する前に、何を確認すべきですか？",
+      "category": "事業"
     }
   ],
   "grid-interconnection-contract": [],
@@ -4420,6 +4511,12 @@
       "slug": "faq-seido-03",
       "question": "需給調整市場とは？どんな商品がありますか？",
       "category": "制度"
+    },
+    {
+      "id": "yic3-u58r",
+      "slug": "faq-lv-02",
+      "question": "低圧蓄電所の収益はどこから生まれますか？",
+      "category": "事業"
     }
   ],
   "adjustment-power-tender": [],
