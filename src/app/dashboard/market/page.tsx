@@ -89,6 +89,13 @@ export default async function MarketDashboardPage() {
   const fuelLatestMonthJa = fuelLatestMonth
     ? `${fuelLatestMonth.slice(0, 4)}年${Number(fuelLatestMonth.slice(5, 7))}月`
     : undefined;
+  // Stage3同梱: 「確認中」括弧書きは月齢>2ヶ月のときのみ表示（鮮度連動・L-EIC-027 コード導出）
+  const nowD = new Date();
+  const fuelMonthAge = fuelLatestMonth
+    ? (nowD.getFullYear() - Number(fuelLatestMonth.slice(0, 4))) * 12 +
+      (nowD.getMonth() + 1 - Number(fuelLatestMonth.slice(5, 7)))
+    : Number.POSITIVE_INFINITY;
+  const fuelStaleSuffix = fuelMonthAge > 2 ? '（データ供給元の公表状況を確認中）' : '';
 
   // P2a: 蓄電所事業者向けサマリー3指標（既存ロードデータからコード導出・追加取得なし）
   const summaryItems = [
@@ -301,7 +308,7 @@ export default async function MarketDashboardPage() {
             csvDir="fuel"
             latestDataMonth={fuelLatestMonth}
             readingGuide="燃料価格は卸電力（JEPX）価格の主要ドライバーで、蓄電池の充放電スプレッドに影響します。"
-            freshnessNote={fuelLatestMonthJa ? `※ 現在 ${fuelLatestMonthJa}分までの掲載です（データ供給元の公表状況を確認中）。` : undefined}
+            freshnessNote={fuelLatestMonthJa ? `※ 現在 ${fuelLatestMonthJa}分までの掲載です${fuelStaleSuffix}。` : undefined}
           />
 
           {/* セクション 3: 金融指標 */}
