@@ -41,6 +41,18 @@ const GUIDES = [
     title: '低圧蓄電所の収益モデル',
     desc: '収入はどこから生まれ、何に左右されるのか。市場・契約・コストの3層で分解。',
   },
+  {
+    href: '/lv/buying-guide',
+    num: '解説③',
+    title: '低圧蓄電所の購入・投資ガイド',
+    desc: '分譲（区画）購入までの5ステップと、収益前提・契約・機器・土地・保安の8項目チェックリスト。',
+  },
+  {
+    href: '/lv/risks',
+    num: '解説④',
+    title: '低圧蓄電所のリスクと注意点',
+    desc: '価格変動・制度変更・機器・事業者・災害・出口の6リスクと、「高利回り」表示を読む5つの視点。',
+  },
 ];
 
 const RELATED = [
@@ -85,7 +97,7 @@ export default function LvHubPage() {
             契約電力50kW未満の「低圧」で系統に連系する蓄電池事業 ── 低圧蓄電所（低圧系統用蓄電池）への関心が高まっています。2026年4月には需給調整市場が低圧リソースに開かれ、区画販売（分譲）型の商品も増えてきました。一方で、検索して出てくる情報の多くは販売者側の資料です。このページは、販売者ではない中立の立場から、仕組み・収益・リスク・制度を一次資料ベースで整理する総合ガイドです。
           </p>
 
-          {/* 解説シリーズ（Stage1: 2本） */}
+          {/* 解説シリーズ（Stage2: 4本） */}
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>解説シリーズ</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16, marginBottom: 8 }}>
             {GUIDES.map((g) => (
@@ -101,7 +113,7 @@ export default function LvHubPage() {
             ))}
           </div>
           <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 32 }}>
-            購入・投資ガイド、リスクと注意点、事業参入ガイド、制度・規制と補助金を順次公開予定です（7月中）。
+            事業参入ガイド、制度・規制と補助金を順次公開予定です（7月中）。
           </p>
 
           {/* 関連する当サイトのコンテンツ（全て実在確認済み L-EIC-021） */}

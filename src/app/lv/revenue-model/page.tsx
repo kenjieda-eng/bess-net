@@ -121,7 +121,7 @@ export default function LvRevenueModelPage() {
               <li><strong>費用の網羅性</strong>: 税・保険・撤去まで含んだ「手取り」ベースか。</li>
             </ol>
             <ul style={{ paddingLeft: 20, lineHeight: 1.9 }}>
-              <li>リスク面の各論（価格変動・制度・機器・災害等）は、続編の解説で詳しく扱う予定です（7月中公開）。</li>
+              <li>リスク面の各論は解説「<Link href="/lv/risks">リスクと注意点</Link>」で詳しく扱っています。</li>
             </ul>
 
             <h2>まとめ ── 数字より先に構造を</h2>
