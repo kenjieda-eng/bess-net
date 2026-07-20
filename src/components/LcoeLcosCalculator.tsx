@@ -186,7 +186,9 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
       </div>
 
       {/* ───────── LCOS（常時DOM・非選択時 display:none で SEO 維持 #103）───────── */}
-      <div style={{ display: tab === 'lcos' ? 'grid' : 'none', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 16, border: '1px solid var(--color-border)', borderTop: 'none', borderRadius: '0 0 8px 8px', padding: 18 }}>
+      {/* 列定義は .lcos-tab-grid（globals.css）へ移設: 狭幅(≤640px)で1カラムへ折返し。
+          display はタブ切替のため inline のまま（非選択時 none・常時DOMで SEO 維持 #103）。 */}
+      <div className="lcos-tab-grid" style={{ display: tab === 'lcos' ? 'grid' : 'none', gap: 16, border: '1px solid var(--color-border)', borderTop: 'none', borderRadius: '0 0 8px 8px', padding: 18 }}>
           {/* 入力 */}
           <div style={cardStyle}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>入力条件（蓄電・容量1kWhあたり）</h2>

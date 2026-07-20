@@ -1231,6 +1231,20 @@
   .back-link a:hover {
     text-decoration: underline;
   }
+
+  /* /tools/lcoe-lcos LCOS タブの入力/結果グリッド（2026-07-20）
+     従来は inline の gridTemplateColumns:'minmax(0,1fr) minmax(0,1fr)' 固定で、
+     mobile 375px では2カラムのまま内側が詰まっていた（Phase2 の A/B でフォント起因でないと確認済）。
+     列定義のみをここに移し、狭幅で1カラムへ折り返す。
+     ※ display はタブ切替のため React 側の inline（grid / none）が担う（#103 常時DOM維持）。 */
+  .lcos-tab-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  @media (max-width: 640px) {
+    .lcos-tab-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
 }
 
 /* ===========================================================
