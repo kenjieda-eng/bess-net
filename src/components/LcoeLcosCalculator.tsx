@@ -48,16 +48,16 @@ function Field({
   const toModel = (v: number) => (pct ? v / 100 : v);
   return (
     <div style={{ marginBottom: 14 }}>
-      <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', fontSize: 13, fontWeight: 600, marginBottom: 4 }}>
+      <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', fontSize: 15, fontWeight: 600, marginBottom: 4 }}>
         <span>{label}</span>
         <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
           <input
             type="number" value={display} min={pct ? min * 100 : min} max={pct ? max * 100 : max} step={pct ? step * 100 : step}
             onChange={(e) => { const n = Number(e.target.value); if (Number.isFinite(n)) onChange(toModel(n)); }}
-            style={{ width: 92, padding: '4px 6px', fontSize: 13, textAlign: 'right', border: '1px solid var(--color-border)', borderRadius: 4 }}
+            style={{ width: 92, padding: '4px 6px', fontSize: 15, textAlign: 'right', border: '1px solid var(--color-border)', borderRadius: 4 }}
             aria-label={label}
           />
-          <span style={{ fontSize: 12, color: 'var(--color-muted)', minWidth: 42 }}>{unit}</span>
+          <span style={{ fontSize: 13, color: 'var(--color-muted)', minWidth: 42 }}>{unit}</span>
         </span>
       </label>
       <input
@@ -65,7 +65,7 @@ function Field({
         onChange={(e) => onChange(toModel(Number(e.target.value)))}
         style={{ width: '100%' }} aria-label={`${label} スライダー`}
       />
-      {hint && <p style={{ fontSize: 11, color: 'var(--color-muted)', margin: '2px 0 0' }}>{hint}</p>}
+      {hint && <p style={{ fontSize: 12, color: 'var(--color-muted)', margin: '2px 0 0' }}>{hint}</p>}
     </div>
   );
 }
@@ -168,7 +168,7 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
       }}
     >
       <span style={{ fontSize: 15 }}>{label}</span>
-      <br /><span style={{ fontSize: 11, color: 'var(--color-muted)', fontWeight: 400 }}>{sub}</span>
+      <br /><span style={{ fontSize: 12, color: 'var(--color-muted)', fontWeight: 400 }}>{sub}</span>
     </button>
   );
 
@@ -191,20 +191,20 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
           <div style={cardStyle}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>入力条件（蓄電・容量1kWhあたり）</h2>
             <div style={{ marginBottom: 14 }}>
-              <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>
+              <label style={{ fontSize: 15, fontWeight: 600, display: 'block', marginBottom: 6 }}>
                 蓄電池CAPEX（NREL ATB 2024・米国前提）
               </label>
               <div style={{ display: 'flex', gap: 4, marginBottom: 8 }}>
                 {(['low', 'mid', 'high'] as const).map((m) => (
                   <button key={m} onClick={() => setCapex(m)}
                     style={{
-                      flex: 1, padding: '6px 4px', fontSize: 12, cursor: 'pointer', borderRadius: 4,
+                      flex: 1, padding: '6px 4px', fontSize: 15, cursor: 'pointer', borderRadius: 4,
                       border: '1px solid var(--color-border)',
                       background: capexMode === m ? 'var(--color-accent, #0066cc)' : 'var(--color-bg)',
                       color: capexMode === m ? '#fff' : 'var(--color-text)', fontWeight: capexMode === m ? 700 : 500,
                     }}>
                     {m === 'low' ? '楽観' : m === 'mid' ? '標準' : '保守'}<br />
-                    <span style={{ fontSize: 10 }}>{yen(lcosCapex[m])}</span>
+                    <span style={{ fontSize: 12 }}>{yen(lcosCapex[m])}</span>
                   </button>
                 ))}
               </div>
@@ -229,24 +229,24 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
               <div style={{ fontSize: 44, fontWeight: 800, lineHeight: 1.1, color: 'var(--color-accent, #0066cc)' }}>
                 {yen(lcosResult.lcosJpyPerKwh, 1)}<span style={{ fontSize: 18, fontWeight: 600 }}>/kWh</span>
               </div>
-              <div style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 6 }}>
+              <div style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 6 }}>
                 = {yen(Math.round(lcosResult.lcosJpyPerMwh))}/MWh ・ {usd(Math.round(lcosResult.lcosUsdPerMwh))}/MWh
               </div>
             </div>
 
-            <h3 style={{ fontSize: 13, fontWeight: 700, margin: '8px 0 6px' }}>コスト内訳（寄与）</h3>
+            <h3 style={{ fontSize: 15, fontWeight: 700, margin: '8px 0 6px' }}>コスト内訳（寄与）</h3>
             <div style={{ display: 'flex', height: 26, borderRadius: 4, overflow: 'hidden', border: '1px solid var(--color-border)' }}>
               <div style={{ width: `${lcosResult.capexPct}%`, background: '#0066cc' }} title={`CAPEX ${lcosResult.capexPct.toFixed(0)}%`} />
               <div style={{ width: `${lcosResult.chargePct}%`, background: '#e8833a' }} title={`充電費 ${lcosResult.chargePct.toFixed(0)}%`} />
               <div style={{ width: `${lcosResult.omPct}%`, background: '#5aa469' }} title={`O&M ${lcosResult.omPct.toFixed(0)}%`} />
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 8, fontSize: 12 }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 8, fontSize: 13 }}>
               <span><span style={{ color: '#0066cc' }}>■</span> CAPEX {lcosResult.capexPct.toFixed(0)}%（{yen(lcosResult.capexContrib, 1)}/kWh）</span>
               <span><span style={{ color: '#e8833a' }}>■</span> 充電費 {lcosResult.chargePct.toFixed(0)}%（{yen(lcosResult.chargeContrib, 1)}/kWh）</span>
               <span><span style={{ color: '#5aa469' }}>■</span> O&M {lcosResult.omPct.toFixed(0)}%（{yen(lcosResult.omContrib, 1)}/kWh）</span>
             </div>
 
-            <table style={{ width: '100%', fontSize: 12, marginTop: 16, borderCollapse: 'collapse' }}>
+            <table style={{ width: '100%', fontSize: 15, marginTop: 16, borderCollapse: 'collapse' }}>
               <tbody>
                 {[
                   ['年間放電量（容量1kWhあたり）', `${lcosResult.dischargePerYear.toFixed(1)} kWh/年`],
@@ -274,11 +274,11 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
 
           <div style={{ ...cardStyle, overflowX: 'auto' }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>電源別 簡易LCOE 比較</h2>
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
               CAPEX は NREL ATB 2024（$/kW×{fxJpyPerUsd}）。CF は代表値（概数・編集可）。
               「NREL ATB参考値」は ATB が独自CF・前提で算出した公表 LCOE（$/MWh）で、左の簡易値とは前提が異なります。
             </p>
-            <table style={{ width: '100%', fontSize: 13, borderCollapse: 'collapse', minWidth: 640 }}>
+            <table style={{ width: '100%', fontSize: 15, borderCollapse: 'collapse', minWidth: 640 }}>
               <thead>
                 <tr style={{ borderBottom: '2px solid var(--color-border)', textAlign: 'right' }}>
                   <th style={{ textAlign: 'left', padding: '6px 8px' }}>電源</th>
@@ -298,7 +298,7 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
                       <input type="number" value={Math.round((cfBySource[r.key] ?? r.cfDefault) * 1000) / 10}
                         min={1} max={100} step={1}
                         onChange={(e) => { const n = Number(e.target.value); if (Number.isFinite(n)) setCfBySource((p) => ({ ...p, [r.key]: n / 100 })); }}
-                        style={{ width: 56, padding: '3px 4px', fontSize: 12, textAlign: 'right', border: '1px solid var(--color-border)', borderRadius: 4 }}
+                        style={{ width: 56, padding: '3px 4px', fontSize: 13, textAlign: 'right', border: '1px solid var(--color-border)', borderRadius: 4 }}
                         aria-label={`${r.label} 設備利用率`} />
                     </td>
                     <td style={{ padding: '6px 8px', fontWeight: 700, color: 'var(--color-accent, #0066cc)' }}>{yen(r.simpleJpyPerKwh, 1)}</td>
@@ -308,7 +308,7 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
                 ))}
                 <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
                   <td style={{ textAlign: 'left', padding: '6px 8px', fontWeight: 600 }}>火力（参考）</td>
-                  <td colSpan={5} style={{ padding: '6px 8px', fontSize: 12, color: 'var(--color-muted)' }}>
+                  <td colSpan={5} style={{ padding: '6px 8px', fontSize: 15, color: 'var(--color-muted)' }}>
                     NREL ATB に火力 LCOE 系列なし。概数 $40–80/MWh ＋ 燃料費・CO2価格依存（定性）。確定ソース調査中につき本ツールでは試算しません（捏造回避）。
                   </td>
                 </tr>

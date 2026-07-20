@@ -277,7 +277,7 @@ export default function BalancingRevenuePage() {
             <strong>蓄電池落札単価（EPRX 実績）</strong>に
             落札率・容量・年間コマ数を掛けた<strong>概算年間収益</strong>を試算します。
           </p>
-          <p style={{ fontSize: 13, color: '#6b7280', marginBottom: 24, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 15, color: '#6b7280', marginBottom: 24, lineHeight: 1.6 }}>
             単価は「蓄電池が約定したときの水準」（volume 非加重、L-EIC-018）です。
             既定は <strong>FY2024（通年・確定）</strong>。FY2025 上期(暫定) もトグルで切替可能。
             前提次第で結果が大きく変わる<strong>感応度ツール</strong>としてご活用ください。
@@ -313,7 +313,7 @@ export default function BalancingRevenuePage() {
             </h2>
             <p
               style={{
-                fontSize: 13,
+                fontSize: 15,
                 color: '#6b7280',
                 marginBottom: 16,
                 lineHeight: 1.6,
@@ -347,7 +347,7 @@ export default function BalancingRevenuePage() {
               borderRadius: 8,
               padding: '20px 20px',
             }}>
-              <p style={{ fontSize: 14, lineHeight: 1.8, margin: '0 0 12px' }}>
+              <p style={{ fontSize: 15, lineHeight: 1.8, margin: '0 0 12px' }}>
                 需給調整 三次②で蓄電池が約定する単価（FY2024 実績 109.43 円/ΔkW・30分）に対し、
                 蓄電池の設備コストが下がるほど IRR は上振れします。系統用蓄電池のCAPEXは
                 <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL ATB 2024版</a>で
@@ -356,7 +356,7 @@ export default function BalancingRevenuePage() {
                 <Link href="/tools/irr-simulator" style={{ color: 'var(--color-accent)' }}>IRR シミュレーター</Link>の
                 3シナリオ（楽観/実データ/保守）で試算できます。
               </p>
-              <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0 }}>
+              <p style={{ fontSize: 15, lineHeight: 1.8, margin: 0 }}>
                 背景は解説{' '}
                 <Link href="/explainer/lcoe-and-bess-economics" style={{ color: 'var(--color-accent)' }}>「LCOEと蓄電池の経済性」</Link>
                 を参照。「再エネ大量導入時代に蓄電池がなぜ経済性を持つか」を、コスト（LCOS）と
@@ -372,12 +372,12 @@ export default function BalancingRevenuePage() {
               background: 'var(--color-bg, #f9fafb)',
               border: '1px solid var(--color-border, #e5e7eb)',
               borderRadius: 8,
-              fontSize: 12,
+              fontSize: 13,
               color: '#6b7280',
               lineHeight: 1.8,
             }}
           >
-            <strong style={{ color: '#374151', fontSize: 13 }}>出典・免責</strong>
+            <strong style={{ color: '#374151', fontSize: 15 }}>出典・免責</strong>
             <br />
             ・単価データ出典:{' '}
             <a

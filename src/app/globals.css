@@ -2117,6 +2117,10 @@
   font-size: 15px;
   line-height: 1.8;
   color: var(--color-text);
+  /* microCMS 本文の長い URL（例: prtimes.jp の検索URL）が mobile 375px で
+     はみ出す既存不具合の解消（2026-07-20 実測 421px→375px 内）。 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .op-detail-body p { margin: 0 0 16px; }
 .op-detail-body a { color: var(--color-blue); text-decoration: underline; }

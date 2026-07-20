@@ -96,14 +96,14 @@ const inputStyle: React.CSSProperties = {
   padding: '6px 10px',
   border: '1px solid var(--color-border, #ccc)',
   borderRadius: 4,
-  fontSize: 14,
+  fontSize: 15,
   background: '#fff',
 };
 
 const tableStyle: React.CSSProperties = {
   width: '100%',
   borderCollapse: 'collapse',
-  fontSize: 13,
+  fontSize: 15,
 };
 
 const thStyle: React.CSSProperties = {
@@ -164,12 +164,12 @@ export function BalancingRevenueEstimator({
           background: '#fffbeb',
           padding: '14px 16px',
           borderRadius: '0 6px 6px 0',
-          fontSize: 13,
+          fontSize: 15,
           lineHeight: 1.7,
           color: '#374151',
         }}
       >
-        <strong style={{ fontSize: 14 }}>
+        <strong style={{ fontSize: 15 }}>
           ⚠️ これは前提次第で大きく変わる「概算シナリオ」です。
         </strong>
         <br />
@@ -215,13 +215,13 @@ export function BalancingRevenueEstimator({
                 aria-label={opt.label}
               />
               <div>
-                <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--color-navy)' }}>
+                <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--color-navy)' }}>
                   {opt.label}
                   {opt.key === 'FY2024' && (
                     <span
                       style={{
                         marginLeft: 6,
-                        fontSize: 10,
+                        fontSize: 12,
                         padding: '1px 6px',
                         background: 'var(--color-accent, #00B5A5)',
                         color: '#fff',
@@ -236,7 +236,7 @@ export function BalancingRevenueEstimator({
                     <span
                       style={{
                         marginLeft: 6,
-                        fontSize: 10,
+                        fontSize: 12,
                         padding: '1px 6px',
                         background: '#fef3c7',
                         color: '#92400e',
@@ -248,7 +248,7 @@ export function BalancingRevenueEstimator({
                     </span>
                   )}
                 </div>
-                <div style={{ fontSize: 11, color: '#6b7280', marginTop: 2 }}>{opt.note}</div>
+                <div style={{ fontSize: 12, color: '#6b7280', marginTop: 2 }}>{opt.note}</div>
               </div>
             </label>
           ))}
@@ -269,7 +269,7 @@ export function BalancingRevenueEstimator({
             gap: 16,
           }}
         >
-          <label style={{ fontSize: 13, fontWeight: 600, display: 'block' }}>
+          <label style={{ fontSize: 15, fontWeight: 600, display: 'block' }}>
             提供容量 [kW]
             <input
               type="number"
@@ -280,12 +280,12 @@ export function BalancingRevenueEstimator({
               style={inputStyle}
               aria-label="提供容量（kW）"
             />
-            <span style={{ fontSize: 11, color: '#6b7280', marginTop: 2, display: 'block' }}>
+            <span style={{ fontSize: 12, color: '#6b7280', marginTop: 2, display: 'block' }}>
               応札・調達に充てる容量
             </span>
           </label>
 
-          <label style={{ fontSize: 13, fontWeight: 600, display: 'block' }}>
+          <label style={{ fontSize: 15, fontWeight: 600, display: 'block' }}>
             年間提供コマ数 [30 分]
             <input
               type="number"
@@ -297,12 +297,12 @@ export function BalancingRevenueEstimator({
               style={inputStyle}
               aria-label="年間提供コマ数"
             />
-            <span style={{ fontSize: 11, color: '#6b7280', marginTop: 2, display: 'block' }}>
+            <span style={{ fontSize: 12, color: '#6b7280', marginTop: 2, display: 'block' }}>
               最大 {BLOCKS_PER_YEAR.toLocaleString()}（365×48）。エネルギー制約で実際は下回ります。
             </span>
           </label>
 
-          <div style={{ fontSize: 13 }}>
+          <div style={{ fontSize: 15 }}>
             <span style={{ fontWeight: 600 }}>複合調整力</span>
             <div style={{ marginTop: 8 }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
@@ -314,7 +314,7 @@ export function BalancingRevenueEstimator({
                 />
                 <span>複合を含める（二重計上注意）</span>
               </label>
-              <span style={{ fontSize: 11, color: '#6b7280', marginTop: 4, display: 'block' }}>
+              <span style={{ fontSize: 12, color: '#6b7280', marginTop: 4, display: 'block' }}>
                 個別商品と重複し得るため既定で除外
               </span>
             </div>
@@ -329,7 +329,7 @@ export function BalancingRevenueEstimator({
         >
           商品別 落札率・期待年間収益
         </h2>
-        <p style={{ fontSize: 12, color: '#6b7280', marginBottom: 8 }}>
+        <p style={{ fontSize: 15, color: '#6b7280', marginBottom: 8 }}>
           落札率は保守的なプレースホルダ（保証値ではありません）。実態に合わせて調整してください。
         </p>
         <div style={{ overflowX: 'auto' }}>
@@ -353,7 +353,7 @@ export function BalancingRevenueEstimator({
                       <span
                         style={{
                           marginLeft: 6,
-                          fontSize: 10,
+                          fontSize: 12,
                           padding: '1px 5px',
                           background: '#fef3c7',
                           color: '#92400e',
@@ -367,7 +367,7 @@ export function BalancingRevenueEstimator({
                       <span
                         style={{
                           marginLeft: 6,
-                          fontSize: 10,
+                          fontSize: 12,
                           padding: '1px 5px',
                           background: '#ede9fe',
                           color: '#5b21b6',
@@ -380,7 +380,7 @@ export function BalancingRevenueEstimator({
                   </td>
                   <td style={{ ...tdStyle, textAlign: 'right', whiteSpace: 'nowrap' }}>
                     {r.price.toFixed(2)}{' '}
-                    <span style={{ fontSize: 11, color: '#9ca3af' }}>円/ΔkW・30分</span>
+                    <span style={{ fontSize: 12, color: '#9ca3af' }}>円/ΔkW・30分</span>
                   </td>
                   <td style={{ ...tdStyle, textAlign: 'center' }}>
                     <input
@@ -449,7 +449,7 @@ export function BalancingRevenueEstimator({
           background: 'var(--color-bg, #f9fafb)',
           border: '1px solid var(--color-border, #e5e7eb)',
           borderRadius: 6,
-          fontSize: 12,
+          fontSize: 13,
           color: '#6b7280',
           lineHeight: 1.7,
         }}

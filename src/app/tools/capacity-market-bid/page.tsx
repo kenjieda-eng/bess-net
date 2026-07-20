@@ -209,7 +209,7 @@ export default function CapacityMarketBidPage() {
               marginBottom: 24,
               paddingTop: 0,
               borderTop: 'none',
-              fontSize: 13,
+              fontSize: 15,
               color: 'var(--color-muted)',
             }}
           >
@@ -235,7 +235,7 @@ export default function CapacityMarketBidPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               試算ロジック
             </h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>過去平均算出</strong>: 当該エリア（区分非依存）の FY2024-FY2029 約定価格を、落札容量 (MW) で加重平均
               </li>
@@ -252,7 +252,7 @@ export default function CapacityMarketBidPage() {
                 <strong>想定収入</strong>: 応札容量 (MW) × 1000 (kW) × 推奨中央応札価格 (円/kW/年) ÷ 10⁸ (億円換算)
               </li>
             </ul>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 12, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 12, marginBottom: 0 }}>
               <strong>警告ロジック</strong>: 自社コストが過去平均×1.5 超 → 採算性要確認、データ 2 件未満 → 信頼性注意。
               出典: data.eic-jp.org / OCCTO 公表値。
             </p>
@@ -271,7 +271,7 @@ export default function CapacityMarketBidPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               容量市場 基礎解説
             </h2>
-            <dl style={{ fontSize: 14, lineHeight: 1.7 }}>
+            <dl style={{ fontSize: 15, lineHeight: 1.7 }}>
               <dt style={{ fontWeight: 700, marginTop: 8 }}>容量市場 (Capacity Market)</dt>
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
                 OCCTO が運営する電力供給能力 (kW 価値) の取引市場。発電事業者は将来 4 年後の供給力を応札し、
@@ -313,20 +313,20 @@ export default function CapacityMarketBidPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12, color: '#2e7d32' }}>
               ✅ data.eic-jp.org 実データ連携完了（2026-05-29）
             </h2>
-            <p style={{ fontSize: 14, lineHeight: 1.8, marginTop: 0 }}>
+            <p style={{ fontSize: 15, lineHeight: 1.8, marginTop: 0 }}>
               容量市場メインオークション約定価格（OCCTO 公表値ベース）を{' '}
               <a href="https://data.eic-jp.org" target="_blank" rel="noopener noreferrer"
                 style={{ color: '#2e7d32', fontWeight: 600 }}>data.eic-jp.org</a>{' '}
               （{siteConfig.organization.name} 運営）から連携。v6.3 統合エコシステム双方向連携の本格実装。
             </p>
-            <ul style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>✅ 過去約定価格 → OCCTO 公表値の実データ（FY2024-FY2029、9 エリア）</li>
               <li>✅ 区分非依存を正しく反映（新設/既設/経過措置で同価格）</li>
               <li>✅ 履歴 → 2 年から 6 年に拡大（FY2024-FY2029）</li>
               <li>📅 将来拡張: LTDC（長期脱炭素オークション）との併用シナリオ</li>
               <li>📅 将来拡張: 追加オークション結果の追加（Phase D 第2-3期）</li>
             </ul>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 12, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 12, marginBottom: 0 }}>
               出典: OCCTO 容量市場メインオークション約定結果 / data.eic-jp.org catalog（容量市場 20 系列）。
               catalog 自動更新対応（revalidate 86400）。
             </p>

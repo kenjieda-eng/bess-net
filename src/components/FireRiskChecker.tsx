@@ -220,7 +220,7 @@ export default function FireRiskChecker() {
           borderRadius: 6,
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6, fontSize: 13 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6, fontSize: 15 }}>
           <span style={{ fontWeight: 600 }}>進捗:</span>
           <span aria-live="polite">
             {result.answered_count} / {result.total_questions} 回答済 (
@@ -233,7 +233,7 @@ export default function FireRiskChecker() {
             style={{
               marginLeft: 'auto',
               padding: '4px 10px',
-              fontSize: 14,
+              fontSize: 15,
               background: 'transparent',
               border: '1px solid var(--color-border)',
               borderRadius: 4,
@@ -318,7 +318,7 @@ export default function FireRiskChecker() {
           <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>
             {CATEGORY_LABELS[step]} ({answeredInStep}/{itemsInStep.length} 回答済)
           </h3>
-          <p style={{ fontSize: 14, color: 'var(--color-muted)', margin: 0 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', margin: 0 }}>
             {CATEGORY_DESCRIPTIONS[step]}
           </p>
         </div>
@@ -343,12 +343,12 @@ export default function FireRiskChecker() {
             >
               Q{qIdx + 1}. {item.question}
               {item.weight === 3 && (
-                <span style={{ marginLeft: 6, fontSize: 13, color: '#cc0066', fontWeight: 700 }}>
+                <span style={{ marginLeft: 6, fontSize: 15, color: '#cc0066', fontWeight: 700 }}>
                   ★重要
                 </span>
               )}
               {item.reference && (
-                <span style={{ marginLeft: 6, fontSize: 13, color: 'var(--color-muted)' }}>
+                <span style={{ marginLeft: 6, fontSize: 15, color: 'var(--color-muted)' }}>
                   ({item.reference})
                 </span>
               )}
@@ -384,7 +384,7 @@ export default function FireRiskChecker() {
                       <span
                         style={{
                           marginLeft: 6,
-                          fontSize: 13,
+                          fontSize: 15,
                           color: opt.score >= 8 ? '#006666' : opt.score >= 5 ? '#cc6600' : '#cc0066',
                           fontWeight: 700,
                         }}
@@ -396,7 +396,7 @@ export default function FireRiskChecker() {
                           style={{
                             display: 'block',
                             marginTop: 2,
-                            fontSize: 13,
+                            fontSize: 15,
                             color: 'var(--color-muted)',
                           }}
                         >
@@ -413,7 +413,7 @@ export default function FireRiskChecker() {
                 style={{
                   marginTop: 6,
                   marginBottom: 0,
-                  fontSize: 13,
+                  fontSize: 15,
                   color: 'var(--color-muted)',
                   fontStyle: 'italic',
                 }}
@@ -488,14 +488,14 @@ export default function FireRiskChecker() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
           <div>
-            <div style={{ fontSize: 13, color: 'var(--color-muted)' }}>総合スコア</div>
+            <div style={{ fontSize: 15, color: 'var(--color-muted)' }}>総合スコア</div>
             <div style={{ fontSize: 32, fontWeight: 700, color: RISK_COLORS[result.risk_level] }}>
               {result.total_score}
               <span style={{ fontSize: 16, color: 'var(--color-muted)' }}> / 100</span>
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 13, color: 'var(--color-muted)' }}>リスクレベル</div>
+            <div style={{ fontSize: 15, color: 'var(--color-muted)' }}>リスクレベル</div>
             <div
               style={{
                 fontSize: 18,
@@ -507,7 +507,7 @@ export default function FireRiskChecker() {
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 13, color: 'var(--color-muted)' }}>回答進捗</div>
+            <div style={{ fontSize: 15, color: 'var(--color-muted)' }}>回答進捗</div>
             <div style={{ fontSize: 18, fontWeight: 600 }}>
               {result.answered_count} / {result.total_questions}
             </div>
@@ -534,7 +534,7 @@ export default function FireRiskChecker() {
               <span style={{ fontSize: 16, fontWeight: 600, color: CATEGORY_COLORS[c.category] }}>
                 {c.category_label}
               </span>
-              <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+              <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
                 ({c.answered_count}/{c.total_count} 回答)
               </span>
               <span style={{ marginLeft: 'auto', fontSize: 16, fontWeight: 700, color: RISK_COLORS[c.risk_level] }}>
@@ -595,7 +595,7 @@ export default function FireRiskChecker() {
                     <span
                       style={{
                         padding: '2px 8px',
-                        fontSize: 13,
+                        fontSize: 15,
                         fontWeight: 700,
                         background: sevColor,
                         color: '#fff',
@@ -607,7 +607,7 @@ export default function FireRiskChecker() {
                     <span
                       style={{
                         padding: '2px 8px',
-                        fontSize: 13,
+                        fontSize: 15,
                         fontWeight: 600,
                         background: '#f0f0f0',
                         borderRadius: 3,
@@ -616,13 +616,13 @@ export default function FireRiskChecker() {
                       {CATEGORY_LABELS[a.category]}
                     </span>
                     {a.reference && (
-                      <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+                      <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
                         参考: {a.reference}
                       </span>
                     )}
                   </div>
                   <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>{a.question}</div>
-                  <div style={{ fontSize: 14, color: 'var(--color-muted)' }}>
+                  <div style={{ fontSize: 15, color: 'var(--color-muted)' }}>
                     現選択: 「{a.current_choice}」 (score {a.score}/10)
                   </div>
                   {a.risk_note && (

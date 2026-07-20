@@ -435,7 +435,7 @@ function NumberField({
         <p
           id={`${id}-hint`}
           style={{
-            fontSize: 14,
+            fontSize: 15,
             color: 'var(--color-muted)',
             marginTop: 6,
             marginBottom: 0,
@@ -567,7 +567,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
           background: '#fff8e1',
           border: '1px solid #f1c40f',
           borderRadius: 6,
-          fontSize: 13,
+          fontSize: 15,
         }}
       >
         ⚠️ <strong>本シミュレーターは投資判断の参考情報です</strong>。すべての市場 (容量市場・需給調整市場・スポット市場アービトラージ) を併用可能な
@@ -615,7 +615,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                   {p.label}
                 </div>
                 <div style={{
-                  fontSize: 13,
+                  fontSize: 15,
                   color: isActive ? 'rgba(255,255,255,0.92)' : '#64748b',
                   lineHeight: 1.5,
                 }}>
@@ -625,7 +625,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
             );
           })}
         </div>
-        <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 10, marginBottom: 0 }}>
+        <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 10, marginBottom: 0 }}>
           ※ プリセット切替で容量・出力・CAPEX (3 シナリオ)・補助金率がスケール連動で再 calibrate されます。
           他のフィールドは個別に編集可能。
         </p>
@@ -641,7 +641,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
           borderRadius: 6,
         }}
       >
-        <label style={{ fontSize: 13, fontWeight: 600, marginRight: 12 }}>
+        <label style={{ fontSize: 15, fontWeight: 600, marginRight: 12 }}>
           編集するシナリオ:
         </label>
         {SCENARIO_KEYS.map((k) => (
@@ -653,7 +653,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
             style={{
               marginRight: 8,
               padding: '6px 14px',
-              fontSize: 13,
+              fontSize: 15,
               fontWeight: 600,
               background: activeEditing === k ? SCENARIO_COLORS[k] : '#fff',
               color: activeEditing === k ? '#fff' : 'var(--color-text)',
@@ -671,7 +671,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
           style={{
             marginLeft: 16,
             padding: '6px 14px',
-            fontSize: 13,
+            fontSize: 15,
             background: 'transparent',
             border: '1px solid var(--color-border)',
             borderRadius: 4,
@@ -682,7 +682,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
         </button>
         <p
           style={{
-            fontSize: 12,
+            fontSize: 15,
             color: 'var(--color-muted)',
             marginTop: 8,
             marginBottom: 0,
@@ -712,7 +712,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
             onClick={() => setStep(s as 1 | 2 | 3)}
             style={{
               padding: '10px 18px',
-              fontSize: 14,
+              fontSize: 15,
               fontWeight: 600,
               background: step === s ? 'var(--color-accent, #0066cc)' : '#fff',
               color: step === s ? '#fff' : 'var(--color-text)',
@@ -748,7 +748,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
             <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               Step 1/3: 設備情報 (3 シナリオ共通)
             </h3>
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 14 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 14 }}>
               ※ 設備情報の変更は 3 シナリオ全てに同時適用されます (物理的設備の前提)。
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
@@ -825,13 +825,13 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
             <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               Step 2/3: 投資情報 (シナリオ別)
             </h3>
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 14 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 14 }}>
               ※ 現在 <strong>{SCENARIO_LABELS[activeEditing]}</strong> シナリオを編集中
             </p>
             {/* NREL ATB 蓄電池CAPEX 3シナリオ トグル（B-2: phase-B 実装、L-EIC-013/015/055 準拠） */}
             {capexNrel && (
               <div style={{ marginBottom: 16, padding: 14, background: '#f0f7ff', border: '1px solid #b3d4f5', borderRadius: 6 }}>
-                <p style={{ fontSize: 13, fontWeight: 700, marginTop: 0, marginBottom: 8, color: '#1e3a5f' }}>
+                <p style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8, color: '#1e3a5f' }}>
                   📊 NREL ATB 2024 蓄電池CAPEX（米国前提・参考値）— 選択でフィールドに反映
                 </p>
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 8 }}>
@@ -853,7 +853,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                         }}
                         style={{
                           padding: '7px 14px',
-                          fontSize: 13,
+                          fontSize: 15,
                           fontWeight: 600,
                           background: isActive ? '#0066cc' : '#fff',
                           color: isActive ? '#fff' : '#374151',
@@ -871,10 +871,10 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                     );
                   })}
                 </div>
-                <p style={{ fontSize: 11, color: '#6b7280', margin: '0 0 6px', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 12, color: '#6b7280', margin: '0 0 6px', lineHeight: 1.6 }}>
                   ※ 選択で <strong>{SCENARIO_LABELS[activeEditing]}</strong> シナリオの CAPEX を自動計算（¥/kWh × {cur.capacity_mwh} MWh = 上の値 × {cur.capacity_mwh} ÷ 100,000 億円）。手入力で上書き可能。
                 </p>
-                <p style={{ fontSize: 11, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontSize: 12, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
                   既定値は{' '}
                   <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc' }}>NREL Annual Technology Baseline (ATB) 2024</a>
                   の系統用蓄電池CAPEX（米国前提・${capexNrel.capexUsdPerKwh.toFixed(0)}/kWh）を
@@ -929,7 +929,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
             <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               Step 3/3: 市場前提 (シナリオ別)
             </h3>
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 14 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 14 }}>
               ※ 現在 <strong>{SCENARIO_LABELS[activeEditing]}</strong> シナリオを編集中
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
@@ -996,7 +996,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
               onClick={() => setStep((s) => (s - 1) as 1 | 2 | 3)}
               style={{
                 padding: '8px 16px',
-                fontSize: 14,
+                fontSize: 15,
                 background: '#fff',
                 border: '1px solid var(--color-border)',
                 borderRadius: 4,
@@ -1012,7 +1012,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
               onClick={() => setStep((s) => (s + 1) as 1 | 2 | 3)}
               style={{
                 padding: '8px 16px',
-                fontSize: 14,
+                fontSize: 15,
                 background: 'var(--color-accent, #0066cc)',
                 color: '#fff',
                 border: 'none',
@@ -1027,7 +1027,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
           <span
             style={{
               marginLeft: 'auto',
-              fontSize: 12,
+              fontSize: 13,
               color: 'var(--color-muted)',
               alignSelf: 'center',
             }}
@@ -1074,7 +1074,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
             >
               <div
                 style={{
-                  fontSize: 13,
+                  fontSize: 15,
                   fontWeight: 700,
                   color: SCENARIO_COLORS[k],
                   marginBottom: 8,
@@ -1082,7 +1082,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
               >
                 {SCENARIO_LABELS[k]}
               </div>
-              <div style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 4 }}>
+              <div style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 4 }}>
                 IRR
               </div>
               <div style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>
@@ -1093,7 +1093,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
                   gap: 8,
-                  fontSize: 12,
+                  fontSize: 13,
                 }}
               >
                 <div>
@@ -1133,7 +1133,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
       <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 24, marginBottom: 8 }}>
         年次累積キャッシュフロー
       </h3>
-      <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
         各シナリオの累積CFが 0 を超える年が payback (回収完了)。グラフが右肩上がりで 0 を超えれば事業性 OK。
       </p>
       <div
@@ -1159,14 +1159,14 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
           border: '1px solid var(--color-border)',
           borderRadius: 6,
           marginBottom: 24,
-          fontSize: 13,
+          fontSize: 15,
         }}
       >
         <table
           style={{
             width: '100%',
             borderCollapse: 'collapse',
-            fontSize: 13,
+            fontSize: 15,
           }}
           aria-label="感応度分析テーブル"
         >
@@ -1223,7 +1223,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
           onClick={handleCsvExport}
           style={{
             padding: '10px 18px',
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             background: 'var(--color-accent, #0066cc)',
             color: '#fff',
@@ -1239,7 +1239,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
           onClick={handleShareUrl}
           style={{
             padding: '10px 18px',
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             background: '#fff',
             color: 'var(--color-text)',
@@ -1265,7 +1265,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
         <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
           関連用語・解説
         </h3>
-        <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+        <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
           <li>
             <Link href="/glossary/irr" style={{ color: 'var(--color-accent, #0066cc)' }}>
               IRR (内部収益率)

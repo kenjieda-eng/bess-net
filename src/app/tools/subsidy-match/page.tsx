@@ -118,7 +118,7 @@ export default function SubsidyMatchPage() {
               marginBottom: 24,
               paddingTop: 0,
               borderTop: 'none',
-              fontSize: 13,
+              fontSize: 15,
               color: 'var(--color-muted)',
             }}
           >
@@ -142,10 +142,10 @@ export default function SubsidyMatchPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               マッチングロジック
             </h2>
-            <p style={{ fontSize: 14, lineHeight: 1.8, marginTop: 0, marginBottom: 12 }}>
+            <p style={{ fontSize: 15, lineHeight: 1.8, marginTop: 0, marginBottom: 12 }}>
               スコアリング方式 (合計最大 100 点):
             </p>
-            <ul style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>都道府県一致</strong>: +30 (全国対応含む)
               </li>
@@ -162,7 +162,7 @@ export default function SubsidyMatchPage() {
                 <strong>補助率明示</strong>: +10 (% / 分数で算定可)
               </li>
             </ul>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 12, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 12, marginBottom: 0 }}>
               <strong>除外条件</strong>: スコア &lt; 30 (全項目不一致レベル) は Top 10 から除外。
               <strong>補助金額試算</strong>: 補助率 (max %) × 想定 CAPEX (1MW あたり 1.5 億円業界目安)。実額は別途査定。
             </p>
@@ -181,7 +181,7 @@ export default function SubsidyMatchPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               使い方
             </h2>
-            <ol style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ol style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>Step 1</strong>: 都道府県 + 用途 + 事業者種別 + 設置予定日 を選択
               </li>
@@ -201,7 +201,7 @@ export default function SubsidyMatchPage() {
             <p
               style={{
                 marginTop: 12,
-                fontSize: 13,
+                fontSize: 15,
                 color: 'var(--color-muted)',
               }}
             >

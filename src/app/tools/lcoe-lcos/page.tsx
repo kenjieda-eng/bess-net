@@ -146,7 +146,7 @@ export default function LcoeLcosPage() {
           {/* 出典・免責（必須・L-EIC-055、本文そのまま）*/}
           <section style={{ marginTop: 24, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8 }}>
             <h2 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>出典・前提・免責</h2>
-            <small style={{ fontSize: 12.5, lineHeight: 1.8, color: 'var(--color-muted)', display: 'block' }}>
+            <small style={{ fontSize: 13.5, lineHeight: 1.8, color: 'var(--color-muted)', display: 'block' }}>
               既定値: 蓄電池CAPEX＝NREL ATB 2024（米国前提・$/kW÷4h、USD/JPY換算）。電源別LCOE参考値＝NREL ATB 2024（$/MWh）。
               充電単価＝JEPXスポット平均の概数。low/highは感度レンジ（mid±20%）でNREL ATBのシナリオ不確実性に基づく当サイトの仮定であり、
               NRELの予測値そのものではありません。本ツールは概算であり、実際のLCOS/LCOEは案件規模・電池種別・立地・時期で異なります。
@@ -159,7 +159,7 @@ export default function LcoeLcosPage() {
           {/* 計算ロジック */}
           <section style={{ marginTop: 16, padding: 20, background: 'var(--color-bg-card, #fff)', border: '1px solid var(--color-border)', borderRadius: 8 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>計算ロジック</h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.8, marginTop: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, marginTop: 0 }}>
               <li><strong>LCOS</strong> = ( CAPEX + Σ(O&M + 充電費)/(1+r)<sup>t</sup> ) / ( Σ 放電量/(1+r)<sup>t</sup> )。放電量=年サイクル×DoD、充電費=(放電量/RTE)×充電単価、N=min(事業年数, サイクル寿命/年サイクル)。</li>
               <li><strong>LCOE</strong> = ( CAPEX + Σ PV(O&M) + Σ PV(燃料) ) / Σ PV( CF×8760 )。電源別CAPEXはNREL ATB、CFは代表値（概数・編集可）。</li>
               <li><strong>NREL ATB参考値</strong>は ATB が独自CF・前提で公表した LCOE（$/MWh）。本ツールの簡易LCOEとは前提が異なるため値は一致しません（比較用）。</li>
@@ -170,7 +170,7 @@ export default function LcoeLcosPage() {
           {/* 関連リンク（curl 200 確認済のみ）*/}
           <section style={{ marginTop: 16, padding: 20, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>関連コンテンツ</h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/glossary/lcoe">LCOE（均等化発電原価）— 用語解説</Link></li>
               <li><Link href="/glossary/lcos">LCOS（均等化蓄電原価）— 用語解説</Link></li>
               <li><Link href="/explainer/lcoe-and-bess-economics">解説: LCOEと蓄電池の経済性</Link></li>

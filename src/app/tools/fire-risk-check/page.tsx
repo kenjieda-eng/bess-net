@@ -158,7 +158,7 @@ export default function FireRiskCheckPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               参考規格・法令 概要
             </h2>
-            <dl style={{ fontSize: 14, lineHeight: 1.7 }}>
+            <dl style={{ fontSize: 15, lineHeight: 1.7 }}>
               <dt style={{ fontWeight: 700, marginTop: 8 }}>UL9540A (米国)</dt>
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
                 蓄電池の熱暴走伝播試験規格。セル → モジュール → ラック → ユニット → 設置場所の各段階で
@@ -201,7 +201,7 @@ export default function FireRiskCheckPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12, color: '#cc0066' }}>
               重要な注意事項 (必読)
             </h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>本診断は啓発・自己評価用です</strong>。法的判断・専門助言の代替にはなりません。
               </li>
@@ -236,7 +236,7 @@ export default function FireRiskCheckPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               使い方
             </h2>
-            <ol style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ol style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>Step 1-5</strong>: セル選定 / PCS / 建屋 / 運用 / 緊急対応 の 25 問に順次回答
               </li>

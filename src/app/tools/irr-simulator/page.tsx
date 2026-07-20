@@ -138,7 +138,7 @@ export default function IrrSimulatorPage() {
               marginBottom: 24,
               paddingTop: 0,
               borderTop: 'none',
-              fontSize: 13,
+              fontSize: 15,
               color: 'var(--color-muted)',
             }}
           >
@@ -164,7 +164,7 @@ export default function IrrSimulatorPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               計算ロジック・前提
             </h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>収益モデル</strong>: アービトラージ (放電 - 充電 × 効率) + 容量市場 (固定対価)
                 + 需給調整 (月額固定) の単純加算
@@ -190,7 +190,7 @@ export default function IrrSimulatorPage() {
             </ul>
             <p
               style={{
-                fontSize: 13,
+                fontSize: 15,
                 color: 'var(--color-muted)',
                 marginTop: 12,
                 marginBottom: 0,
@@ -215,7 +215,7 @@ export default function IrrSimulatorPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               使い方
             </h2>
-            <ol style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ol style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>シナリオ選択</strong>: 編集したいシナリオ (楽観/標準/悲観) を選択
               </li>

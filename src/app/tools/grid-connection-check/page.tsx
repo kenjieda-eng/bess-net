@@ -118,7 +118,7 @@ export default function GridConnectionCheckPage() {
               marginBottom: 24,
               paddingTop: 0,
               borderTop: 'none',
-              fontSize: 13,
+              fontSize: 15,
               color: 'var(--color-muted)',
             }}
           >
@@ -141,10 +141,10 @@ export default function GridConnectionCheckPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               診断ロジック
             </h2>
-            <p style={{ fontSize: 14, lineHeight: 1.8, marginTop: 0, marginBottom: 12 }}>
+            <p style={{ fontSize: 15, lineHeight: 1.8, marginTop: 0, marginBottom: 12 }}>
               feasibility スコアリング (最大 100 点):
             </p>
-            <ul style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>空き容量 vs 出力</strong>: 比率 1.5x で +30 / 1.0x で +20 / 0.5x で +10
               </li>
@@ -164,7 +164,7 @@ export default function GridConnectionCheckPage() {
                 <strong>同都道府県フォールバック</strong> (距離不明時): +5
               </li>
             </ul>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 12, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 12, marginBottom: 0 }}>
               <strong>レコメンデーション判定</strong>: スコア ≥70 「連系可能性高」/ ≥50 「連系可能性あり」/ ≥30 「連系困難」/ {'<'} 30 「個別協議必須」。
               <strong>注意</strong>: 公表データベースの参考情報です。実際の連系可否は各送配電事業者への接続検討申請で確定します。
             </p>
@@ -183,7 +183,7 @@ export default function GridConnectionCheckPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               使い方
             </h2>
-            <ol style={{ fontSize: 14, lineHeight: 1.8 }}>
+            <ol style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>都道府県選択</strong>: 連系希望のエリアを選択 (都道府県別件数表示)
               </li>

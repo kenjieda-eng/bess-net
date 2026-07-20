@@ -152,7 +152,7 @@ export default function ToolsHubPage() {
                     style={{
                       display: 'inline-block',
                       padding: '2px 10px',
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: 600,
                       borderRadius: 4,
                       background: t.available ? 'var(--color-accent, #0066cc)' : '#888',
@@ -174,7 +174,7 @@ export default function ToolsHubPage() {
                   </h3>
                   <p
                     style={{
-                      fontSize: 13,
+                      fontSize: 15,
                       lineHeight: 1.6,
                       color: 'var(--color-text)',
                       margin: 0,
@@ -186,7 +186,7 @@ export default function ToolsHubPage() {
                     <p
                       style={{
                         marginTop: 12,
-                        fontSize: 13,
+                        fontSize: 15,
                         fontWeight: 600,
                         color: 'var(--color-accent, #0066cc)',
                       }}
@@ -212,7 +212,7 @@ export default function ToolsHubPage() {
               background: 'var(--color-bg)',
               border: '1px solid var(--color-border)',
               borderRadius: 8,
-              fontSize: 13,
+              fontSize: 15,
               color: 'var(--color-muted)',
             }}
           >

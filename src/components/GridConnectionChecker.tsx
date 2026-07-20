@@ -234,7 +234,7 @@ export default function GridConnectionChecker() {
           background: '#fff8e1',
           border: '1px solid #f1c40f',
           borderRadius: 6,
-          fontSize: 13,
+          fontSize: 15,
         }}
       >
         ⚠️ <strong>本診断は参考情報です</strong>。{INDEX.total.toLocaleString()} 変電所の公表データから連系候補を Top 5 抽出します。
@@ -281,7 +281,7 @@ export default function GridConnectionChecker() {
               style={{
                 width: '100%',
                 padding: '8px 10px',
-                fontSize: 14,
+                fontSize: 15,
                 border: '1px solid var(--color-border)',
                 borderRadius: 4,
                 fontFamily: 'inherit',
@@ -293,7 +293,7 @@ export default function GridConnectionChecker() {
                 </option>
               ))}
             </select>
-            <p style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               空き容量 + 構造化済データから候補抽出
             </p>
           </div>
@@ -319,13 +319,13 @@ export default function GridConnectionChecker() {
               style={{
                 width: '100%',
                 padding: '8px 10px',
-                fontSize: 14,
+                fontSize: 15,
                 border: '1px solid var(--color-border)',
                 borderRadius: 4,
                 fontFamily: 'inherit',
               }}
             />
-            <p style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               緯度経度入力で距離順ソート
             </p>
           </div>
@@ -351,13 +351,13 @@ export default function GridConnectionChecker() {
               style={{
                 width: '100%',
                 padding: '8px 10px',
-                fontSize: 14,
+                fontSize: 15,
                 border: '1px solid var(--color-border)',
                 borderRadius: 4,
                 fontFamily: 'inherit',
               }}
             />
-            <p style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               Google Maps 等から取得
             </p>
           </div>
@@ -380,13 +380,13 @@ export default function GridConnectionChecker() {
               style={{
                 width: '100%',
                 padding: '8px 10px',
-                fontSize: 14,
+                fontSize: 15,
                 border: '1px solid var(--color-border)',
                 borderRadius: 4,
                 fontFamily: 'inherit',
               }}
             />
-            <p style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               例: 12.5 MW
             </p>
           </div>
@@ -409,13 +409,13 @@ export default function GridConnectionChecker() {
               style={{
                 width: '100%',
                 padding: '8px 10px',
-                fontSize: 14,
+                fontSize: 15,
                 border: '1px solid var(--color-border)',
                 borderRadius: 4,
                 fontFamily: 'inherit',
               }}
             />
-            <p style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               例: 50 MWh (4h 放電)
             </p>
           </div>
@@ -423,7 +423,7 @@ export default function GridConnectionChecker() {
         <p
           style={{
             marginTop: 12,
-            fontSize: 12,
+            fontSize: 15,
             color: 'var(--color-muted)',
           }}
           aria-live="polite"
@@ -444,13 +444,13 @@ export default function GridConnectionChecker() {
         }}
         aria-live="polite"
       >
-        <div style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 4 }}>
+        <div style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 4 }}>
           連系難易度判定
         </div>
         <div style={{ fontSize: 20, fontWeight: 700, color: recColor }}>
           {result.recommendation_label}
         </div>
-        <div style={{ marginTop: 8, fontSize: 12, color: 'var(--color-muted)' }}>
+        <div style={{ marginTop: 8, fontSize: 13, color: 'var(--color-muted)' }}>
           対象都道府県内変電所: {result.total_in_prefecture.toLocaleString()} 件 / Top{' '}
           {result.candidates.length} を表示
         </div>
@@ -465,7 +465,7 @@ export default function GridConnectionChecker() {
             border: '1px dashed var(--color-border)',
             borderRadius: 6,
             textAlign: 'center',
-            fontSize: 14,
+            fontSize: 15,
             color: 'var(--color-muted)',
           }}
         >
@@ -503,7 +503,7 @@ export default function GridConnectionChecker() {
                     <span
                       style={{
                         padding: '2px 8px',
-                        fontSize: 11,
+                        fontSize: 12,
                         fontWeight: 700,
                         background: 'var(--color-accent, #0066cc)',
                         color: '#fff',
@@ -515,7 +515,7 @@ export default function GridConnectionChecker() {
                     <span
                       style={{
                         padding: '2px 8px',
-                        fontSize: 11,
+                        fontSize: 12,
                         fontWeight: 600,
                         background: '#f0f0f0',
                         borderRadius: 3,
@@ -527,7 +527,7 @@ export default function GridConnectionChecker() {
                       <span
                         style={{
                           padding: '2px 8px',
-                          fontSize: 11,
+                          fontSize: 12,
                           fontWeight: 600,
                           background: '#e7f3ff',
                           color: '#0066cc',
@@ -541,7 +541,7 @@ export default function GridConnectionChecker() {
                       <span
                         style={{
                           padding: '2px 8px',
-                          fontSize: 11,
+                          fontSize: 12,
                           fontWeight: 600,
                           background: '#e8f5e9',
                           color: '#2e7d32',
@@ -559,16 +559,16 @@ export default function GridConnectionChecker() {
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
                     gap: 8,
-                    fontSize: 13,
+                    fontSize: 15,
                     marginBottom: 10,
                   }}
                 >
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 11 }}>送配電</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>送配電</div>
                     <div>{s.operator || '—'}</div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 11 }}>電圧 (kV)</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>電圧 (kV)</div>
                     <div>
                       {s.voltage_primary_kv !== null && s.voltage_secondary_kv !== null
                         ? `${s.voltage_primary_kv} / ${s.voltage_secondary_kv}`
@@ -576,13 +576,13 @@ export default function GridConnectionChecker() {
                     </div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 11 }}>空き容量</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>空き容量</div>
                     <div style={{ fontWeight: 600 }}>
                       {s.cap_avail_mw !== null ? `${s.cap_avail_mw} MW` : '—'}
                     </div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 11 }}>運用容量</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>運用容量</div>
                     <div>
                       {s.cap_operational_mw !== null ? `${s.cap_operational_mw} MW` : '—'}
                     </div>
@@ -596,7 +596,7 @@ export default function GridConnectionChecker() {
                         display: 'inline-block',
                         margin: '0 4px 4px 0',
                         padding: '2px 8px',
-                        fontSize: 11,
+                        fontSize: 12,
                         background: 'var(--color-bg)',
                         border: '1px solid var(--color-border)',
                         borderRadius: 3,
@@ -610,7 +610,7 @@ export default function GridConnectionChecker() {
                   <Link
                     href={`/grid/${s.slug}`}
                     style={{
-                      fontSize: 13,
+                      fontSize: 15,
                       fontWeight: 600,
                       color: 'var(--color-accent, #0066cc)',
                     }}
@@ -633,7 +633,7 @@ export default function GridConnectionChecker() {
             background: 'var(--color-bg)',
             border: '1px solid var(--color-border)',
             borderRadius: 6,
-            fontSize: 13,
+            fontSize: 15,
             color: 'var(--color-muted)',
           }}
         >
@@ -656,7 +656,7 @@ export default function GridConnectionChecker() {
           disabled={result.candidates.length === 0}
           style={{
             padding: '10px 18px',
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             background: 'var(--color-accent, #0066cc)',
             color: '#fff',
@@ -673,7 +673,7 @@ export default function GridConnectionChecker() {
           onClick={handleShareUrl}
           style={{
             padding: '10px 18px',
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             background: '#fff',
             color: 'var(--color-text)',
@@ -698,7 +698,7 @@ export default function GridConnectionChecker() {
         <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
           関連ツール・データ
         </h3>
-        <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+        <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
           <li>
             <Link href="/grid" style={{ color: 'var(--color-accent, #0066cc)' }}>
               系統空き容量データベース
