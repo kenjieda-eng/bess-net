@@ -165,18 +165,20 @@ function ForceGraph({ players, relations }: { players: Player[]; relations: type
               />
               <text
                 x={pos.x}
-                y={pos.y + r + 10}
-                fontSize={9}
+                y={pos.y + r + 12}
+                fontSize={12}
                 textAnchor="middle"
                 fill="#333"
               >
-                {p.name.length > 10 ? p.name.slice(0, 10) + '…' : p.name}
+                {/* PC可読性（2026-07-20）: 9→12px。ラベル幅を据え置き重なりを増やさないため
+                    切り詰めを10→8文字に（12px×8字 ≒ 従来 9px×10字）。viewBox は 800×600 のまま。 */}
+                {p.name.length > 8 ? p.name.slice(0, 8) + '…' : p.name}
               </text>
             </g>
           );
         })}
       </svg>
-      <p style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 8 }}>
+      <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 8 }}>
         ※ フォースグラフはノードをカテゴリ別に同心円配置した簡易ビュー。詳細関係はマトリクスビュー or{' '}
         <Link href="/operators">事業者ナビ</Link>で確認。
       </p>
@@ -252,7 +254,7 @@ export default function IndustryChaosMap() {
                 onClick={() => update('view', v)}
                 style={{
                   padding: '6px 14px',
-                  fontSize: 13,
+                  fontSize: 15,
                   fontWeight: 600,
                   background: state.view === v ? 'var(--color-accent, #0066cc)' : '#fff',
                   color: state.view === v ? '#fff' : 'var(--color-text)',
@@ -266,12 +268,12 @@ export default function IndustryChaosMap() {
             ))}
           </div>
           {/* category */}
-          <label style={{ fontSize: 12 }}>
+          <label style={{ fontSize: 14 }}>
             カテゴリ:{' '}
             <select
               value={state.category}
               onChange={(e) => update('category', e.target.value as CategoryKey | 'all')}
-              style={{ padding: '4px 6px', fontSize: 12 }}
+              style={{ padding: '4px 6px', fontSize: 14 }}
             >
               <option value="all">すべて ({PLAYERS.length})</option>
               {categoryKeys.map((c) => (
@@ -282,12 +284,12 @@ export default function IndustryChaosMap() {
             </select>
           </label>
           {/* listed */}
-          <label style={{ fontSize: 12 }}>
+          <label style={{ fontSize: 14 }}>
             上場:{' '}
             <select
               value={state.listed}
               onChange={(e) => update('listed', e.target.value as ListedFilter)}
-              style={{ padding: '4px 6px', fontSize: 12 }}
+              style={{ padding: '4px 6px', fontSize: 14 }}
             >
               <option value="all">すべて</option>
               <option value="listed">上場</option>
@@ -295,12 +297,12 @@ export default function IndustryChaosMap() {
             </select>
           </label>
           {/* origin */}
-          <label style={{ fontSize: 12 }}>
+          <label style={{ fontSize: 14 }}>
             原産:{' '}
             <select
               value={state.origin}
               onChange={(e) => update('origin', e.target.value as OriginFilter)}
-              style={{ padding: '4px 6px', fontSize: 12 }}
+              style={{ padding: '4px 6px', fontSize: 14 }}
             >
               <option value="all">すべて</option>
               <option value="domestic">日本</option>
@@ -308,12 +310,12 @@ export default function IndustryChaosMap() {
             </select>
           </label>
           {/* activity */}
-          <label style={{ fontSize: 12 }}>
+          <label style={{ fontSize: 14 }}>
             業界活動度 ≥:{' '}
             <select
               value={state.minActivity}
               onChange={(e) => update('minActivity', parseInt(e.target.value, 10))}
-              style={{ padding: '4px 6px', fontSize: 12 }}
+              style={{ padding: '4px 6px', fontSize: 14 }}
             >
               {[1, 2, 3, 4, 5].map((a) => (
                 <option key={a} value={a}>
@@ -322,7 +324,7 @@ export default function IndustryChaosMap() {
               ))}
             </select>
           </label>
-          <span style={{ fontSize: 12, color: 'var(--color-muted)', marginLeft: 'auto' }} aria-live="polite">
+          <span style={{ fontSize: 14, color: 'var(--color-muted)', marginLeft: 'auto' }} aria-live="polite">
             表示中: {filtered.length} / {PLAYERS.length} 社
           </span>
         </div>
@@ -338,7 +340,7 @@ export default function IndustryChaosMap() {
               <section key={cat} style={{ marginBottom: 24 }}>
                 <h3
                   style={{
-                    fontSize: 15,
+                    fontSize: 17,
                     fontWeight: 700,
                     margin: 0,
                     marginBottom: 8,
@@ -365,11 +367,11 @@ export default function IndustryChaosMap() {
                         border: `1px solid var(--color-border)`,
                         borderLeft: `3px solid ${CATEGORY_COLORS[p.category]}`,
                         borderRadius: 4,
-                        fontSize: 12,
+                        fontSize: 14,
                       }}
                     >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                        <strong style={{ fontSize: 13 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 6, flexWrap: 'wrap' }}>
+                        <strong style={{ fontSize: 15, minWidth: 0 }}>
                           {/* EDA #4 (依頼36): リンク優先順 operator > subsidy > external_url > プレーン */}
                           {p.operator_slug ? (
                             <Link
@@ -398,15 +400,15 @@ export default function IndustryChaosMap() {
                             p.name
                           )}
                         </strong>
-                        <span style={{ fontSize: 10, color: CATEGORY_COLORS[p.category] }}>
+                        <span style={{ fontSize: 12, color: CATEGORY_COLORS[p.category], whiteSpace: 'nowrap' }}>
                           {'★'.repeat(p.activity)}
                         </span>
                       </div>
-                      <div style={{ fontSize: 10, color: 'var(--color-muted)', marginTop: 2 }}>
+                      <div style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 2 }}>
                         {ORIGIN_LABELS[p.origin]} {p.listed && '・上場'}
                       </div>
                       {p.note && (
-                        <div style={{ fontSize: 11, marginTop: 4, color: '#444' }}>{p.note}</div>
+                        <div style={{ fontSize: 13, marginTop: 4, color: '#444' }}>{p.note}</div>
                       )}
                     </article>
                   ))}
@@ -437,10 +439,10 @@ export default function IndustryChaosMap() {
           background: 'var(--color-bg)',
           border: '1px solid var(--color-border)',
           borderRadius: 6,
-          fontSize: 13,
+          fontSize: 15,
         }}
       >
-        <h3 style={{ fontSize: 14, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
           関係データ集計 ({RELATIONS.length} 件)
         </h3>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -462,7 +464,7 @@ export default function IndustryChaosMap() {
                 key={t}
                 style={{
                   padding: '4px 10px',
-                  fontSize: 11,
+                  fontSize: 13,
                   background: '#fff',
                   border: '1px solid var(--color-border)',
                   borderRadius: 3,
@@ -475,7 +477,7 @@ export default function IndustryChaosMap() {
         </div>
       </section>
 
-      <p style={{ fontSize: 12, color: 'var(--color-muted)' }}>
+      <p style={{ fontSize: 14, color: 'var(--color-muted)' }}>
         ※ 主要 {PLAYERS.length} 社 + 関係 {RELATIONS.length} 件の業界構造可視化。完全網羅は{' '}
         <Link href="/operators">事業者ナビ (544社)</Link>を参照。
         関係データは公開情報・業界既知の事実に基づき編集部が整理。

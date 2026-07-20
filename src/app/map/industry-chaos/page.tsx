@@ -105,7 +105,8 @@ export default function IndustryChaosMapPage() {
             で整理 + <strong>{RELATIONS.length} 件の関係</strong> (出資/EPC/セル供給/オフテイク等) を表示。
             当サイト独自の構造マップ、無料公開・登録不要。
           </p>
-          <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 24 }}>
+          {/* PC可読性（ユウ実測 2026-07-20）: 図の説明・注記 13→15px。当ページ限定 */}
+          <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 24 }}>
             ※ 主要事業者を抽出した「業界構造可視化」用ビュー。完全網羅は{' '}
             <Link href="/operators">事業者ナビ (544 社)</Link> を参照。
             関係データは公開情報・業界既知の事実に基づき編集部が整理。
@@ -125,7 +126,7 @@ export default function IndustryChaosMapPage() {
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
               関連
             </h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li>
                 <Link href="/operators">事業者ナビ (544 社、完全リスト)</Link>
               </li>

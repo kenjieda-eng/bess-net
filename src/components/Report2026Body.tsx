@@ -24,11 +24,13 @@ export type Report2026BodyProps = {
   globalTotal2030: number;
 };
 
+// PC可読性（ユウ実測 2026-07-20）: 本文14→16px・注記13→16px。/reports/2026 専用コンポーネント
+// （他ページ未使用＝grep確認済み）のためページスコープで完結。H3 は本文16pxとの階層維持で16→18px。
 const H2: React.CSSProperties = { fontSize: 20, fontWeight: 700, marginTop: 40, marginBottom: 12, paddingBottom: 6, borderBottom: '2px solid var(--color-border)' };
-const H3: React.CSSProperties = { fontSize: 16, fontWeight: 700, marginTop: 20, marginBottom: 8 };
-const P: React.CSSProperties = { fontSize: 14, lineHeight: 1.9, marginBottom: 12 };
-const NOTE: React.CSSProperties = { fontSize: 13, lineHeight: 1.8, color: 'var(--color-muted)', background: 'var(--color-bg)', borderLeft: '3px solid var(--color-border)', padding: '8px 12px', margin: '12px 0' };
-const LINKS: React.CSSProperties = { fontSize: 13, lineHeight: 1.9, marginTop: 8, marginBottom: 4 };
+const H3: React.CSSProperties = { fontSize: 18, fontWeight: 700, marginTop: 20, marginBottom: 8 };
+const P: React.CSSProperties = { fontSize: 16, lineHeight: 1.9, marginBottom: 12 };
+const NOTE: React.CSSProperties = { fontSize: 16, lineHeight: 1.8, color: 'var(--color-muted)', background: 'var(--color-bg)', borderLeft: '3px solid var(--color-border)', padding: '8px 12px', margin: '12px 0' };
+const LINKS: React.CSSProperties = { fontSize: 15, lineHeight: 1.9, marginTop: 8, marginBottom: 4 };
 
 function n(v: number): string { return v.toLocaleString(); }
 
@@ -44,7 +46,7 @@ export default function Report2026Body(props: Report2026BodyProps) {
   return (
     <div className="report-body" style={{ marginTop: 40 }}>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>本編</h2>
-      <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 8 }}>
+      <p style={{ fontSize: 16, color: 'var(--color-muted)', marginBottom: 8 }}>
         以下は編集部が当サイトの一次データ機能で蓄積した情報を統合した本編（全10章）です。数値は当サイトDB登録分（公開情報ベース、国内全体の実数とは異なる）と、公的一次情報を出所明示のうえ用いています。
       </p>
 
@@ -233,14 +235,14 @@ export default function Report2026Body(props: Report2026BodyProps) {
       {/* 出典脚注 */}
       <section>
         <h2 style={H2}>出典</h2>
-        <ul style={{ fontSize: 12, lineHeight: 1.8, color: 'var(--color-muted)', paddingLeft: 20 }}>
+        <ul style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--color-muted)', paddingLeft: 20 }}>
           <li>資源エネルギー庁「系統用蓄電池の現状と課題」（2024-05-29）ほか meti.go.jp 各資料</li>
           <li>OCCTO「長期脱炭素電源オークション約定結果（応札2023年度）落札電源一覧」（2024-04-26）</li>
           <li>日経エネルギーNext「系統用蓄電池が殺到、長期脱炭素電源オークション初回入札結果」</li>
           <li>PVeye WEB「脱炭素電源競売で蓄電池1GW強落札」「鹿児島で大型蓄電池が全焼」</li>
           <li>経済産業省 産業保安・安全グループ 電力安全課「蓄電池設備における爆発・火災事故及びその対応」（2024-09-10）</li>
         </ul>
-        <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 8, lineHeight: 1.8 }}>
+        <p style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 8, lineHeight: 1.8 }}>
           ※ 本レポートの数値は当サイトDB登録分（公開情報を編集部が構造化・集計）であり、国内全体の実数とは異なります。全国推計・将来予測は出所を明示した参考値です。引用時は出典として当サイト名（蓄電所ネット／bess-net.jp）を明記してください。
         </p>
       </section>

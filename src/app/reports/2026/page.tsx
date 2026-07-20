@@ -123,8 +123,8 @@ export default async function Report2026Page() {
 
           {/* TOC */}
           <section style={{ marginBottom: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>目次（本編 全10章）</h2>
-            <ol style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 24, margin: 0 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>目次（本編 全10章）</h2>
+            <ol style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 24, margin: 0 }}>
               <li>序章: 蓄電所事業 2025-2026 年の見取り図</li>
               <li>市場概況: 国内累積導入量、年次推移、地域偏在</li>
               <li>政策・制度: 容量市場、長期脱炭素電源オークション、需給調整市場</li>
@@ -155,7 +155,7 @@ export default async function Report2026Page() {
           {statusEntries.length > 0 && (
             <section style={{ marginBottom: 32 }}>
               <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📈 プロジェクトステータス内訳</h2>
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 16 }}>
                 <thead>
                   <tr style={{ background: 'var(--color-bg)' }}>
                     <th style={{ padding: 8, textAlign: 'left', border: '1px solid var(--color-border)' }}>ステータス</th>
@@ -180,7 +180,7 @@ export default async function Report2026Page() {
           {topPrefs.length > 0 && (
             <section style={{ marginBottom: 32 }}>
               <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🗾 プロジェクト所在地 Top 5 都道府県</h2>
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 16 }}>
                 <thead>
                   <tr style={{ background: 'var(--color-bg)' }}>
                     <th style={{ padding: 8, textAlign: 'left', border: '1px solid var(--color-border)' }}>順位</th>
@@ -204,7 +204,7 @@ export default async function Report2026Page() {
           {/* 業界構造 */}
           <section style={{ marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🗺 業界構造 (カオスマップ抜粋)</h2>
-            <p style={{ fontSize: 13, lineHeight: 1.7 }}>
+            <p style={{ fontSize: 16, lineHeight: 1.7 }}>
               主要 <strong>{PLAYERS.length}社</strong>を <strong>11カテゴリ</strong>で整理 + <strong>{RELATIONS.length}件</strong>の関係 (出資/EPC/セル供給/オフテイク等) で構造を可視化。
               詳細は <Link href="/map/industry-chaos">業界カオスマップ</Link> 参照。
             </p>
@@ -214,7 +214,7 @@ export default async function Report2026Page() {
                 return (
                   <div key={k} style={{
                     padding: 8, border: '1px solid var(--color-border)', borderRadius: 4,
-                    fontSize: 12, textAlign: 'center',
+                    fontSize: 13, textAlign: 'center',
                   }}>
                     <div style={{ color: 'var(--color-muted)' }}>{CATEGORY_LABELS[k]}</div>
                     <div style={{ fontWeight: 700, fontSize: 16 }}>{cnt}</div>
@@ -227,11 +227,11 @@ export default async function Report2026Page() {
           {/* 海外比較 */}
           <section style={{ marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🌐 海外比較 (主要 5 市場)</h2>
-            <p style={{ fontSize: 13, lineHeight: 1.7 }}>
+            <p style={{ fontSize: 16, lineHeight: 1.7 }}>
               米国/EU/中国/インド/豪州 の 5 大市場で、2025年累積 <strong>{globalTotal2025} GWh</strong>、2030予測 <strong>{globalTotal2030} GWh</strong>。
               詳細は <Link href="/global">海外5市場ハブ</Link> 参照。
             </p>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, marginTop: 8 }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 16, marginTop: 8 }}>
               <thead>
                 <tr style={{ background: 'var(--color-bg)' }}>
                   <th style={{ padding: 8, textAlign: 'left', border: '1px solid var(--color-border)' }}>市場</th>
@@ -277,8 +277,8 @@ export default async function Report2026Page() {
 
           {/* 注意書き */}
           <section style={{ marginTop: 40, marginBottom: 32, padding: 16, background: 'rgba(255,200,0,0.08)', border: '1px solid #c70', borderRadius: 6 }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>注意事項</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.7, paddingLeft: 20, margin: 0 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>注意事項</h2>
+            <ul style={{ fontSize: 16, lineHeight: 1.7, paddingLeft: 20, margin: 0 }}>
               <li>冒頭の主要指標は当サイトDBからのリアルタイム集計で、日々自動更新されます。</li>
               <li>数値は当サイト DB の登録分（公開情報ベース）。国内全体の実数とは異なります。全国推計・将来予測は出所を明示した参考値です。</li>
               <li>引用・転載時は当サイト名 (蓄電所ネット / bess-net.jp) を明記してください。</li>
@@ -286,8 +286,8 @@ export default async function Report2026Page() {
           </section>
 
           <section style={{ padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (一次データへ)</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (一次データへ)</h2>
+            <ul style={{ fontSize: 16, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/operators">事業者ナビ ({operatorCount}社)</Link></li>
               <li><Link href="/projects">プロジェクトDB ({projectCount}件)</Link></li>
               <li><Link href="/subsidies">補助金一覧 ({subsidyCount}件)</Link></li>
@@ -310,9 +310,9 @@ function Stat({ label, value, sub }: { label: string; value: string; sub?: strin
       padding: 12, border: '1px solid var(--color-border)', borderRadius: 6,
       background: 'rgba(0, 102, 204, 0.06)', textAlign: 'center',
     }}>
-      <div style={{ fontSize: 11, color: 'var(--color-muted)', marginBottom: 4 }}>{label}</div>
+      <div style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 4 }}>{label}</div>
       <div style={{ fontSize: 22, fontWeight: 700 }}>{value}</div>
-      {sub && <div style={{ fontSize: 10, color: 'var(--color-muted)', marginTop: 2 }}>{sub}</div>}
+      {sub && <div style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 2 }}>{sub}</div>}
     </div>
   );
 }
