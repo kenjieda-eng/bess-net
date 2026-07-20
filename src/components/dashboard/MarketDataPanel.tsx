@@ -75,7 +75,7 @@ export default function MarketDataPanel({
         <h2 id={`${anchorId}-title`} style={{ fontSize: 20, fontWeight: 700, marginBottom: 8, color: '#92400e' }}>
           ⚠ {title}
         </h2>
-        <p style={{ fontSize: 14, color: '#92400e', lineHeight: 1.7, margin: 0 }}>
+        <p style={{ fontSize: 15, color: '#92400e', lineHeight: 1.7, margin: 0 }}>
           このセクションのデータは EIC Data pipeline 側で整備中です。次回 build で自動反映されます。
         </p>
       </section>
@@ -100,7 +100,7 @@ export default function MarketDataPanel({
             <span
               style={{
                 marginLeft: 10,
-                fontSize: 12,
+                fontSize: 13,
                 fontWeight: 600,
                 padding: '3px 10px',
                 borderRadius: 4,
@@ -119,16 +119,16 @@ export default function MarketDataPanel({
           {description}
         </p>
         {readingGuide && (
-          <p style={{ fontSize: 14, color: 'var(--color-text)', lineHeight: 1.7, marginTop: 8, marginBottom: 0 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-text)', lineHeight: 1.7, marginTop: 8, marginBottom: 0 }}>
             <strong>読み方:</strong> {readingGuide}
           </p>
         )}
         {freshnessNote && (
-          <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 8, marginBottom: 0 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 8, marginBottom: 0 }}>
             {freshnessNote}
           </p>
         )}
-        <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 8 }}>
+        <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 8 }}>
           出典:{' '}
           <a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceName}</a>
           、<a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer">EIC Data (data.eic-jp.org)</a> 経由
@@ -157,7 +157,7 @@ export default function MarketDataPanel({
                 <Fragment key={s.id}>
                   <tr style={{ verticalAlign: 'middle' }}>
                     <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>{s.meta.name}</td>
-                    <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 14, color: 'var(--color-muted)' }}>{latest?.date ?? '—'}</td>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 15, color: 'var(--color-muted)' }}>{latest?.date ?? '—'}</td>
                     {/* 数値カラム: Tier 1 規約 (fontSize 22 + tabular-nums + bold) */}
                     <td
                       className="tabular-nums"
@@ -173,7 +173,7 @@ export default function MarketDataPanel({
                     >
                       {latest ? latest.value.toFixed(2) : '—'}
                     </td>
-                    <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 13, color: 'var(--color-muted)' }}>{unit}</td>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 15, color: 'var(--color-muted)' }}>{unit}</td>
                     <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>
                       <button
                         type="button"
@@ -184,7 +184,7 @@ export default function MarketDataPanel({
                           background: 'none',
                           border: '1px solid var(--color-border)',
                           color: 'var(--color-accent, #0066cc)',
-                          fontSize: 13,
+                          fontSize: 15,
                           padding: '4px 10px',
                           borderRadius: 4,
                           cursor: 'pointer',

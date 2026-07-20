@@ -135,7 +135,7 @@ export default function LvEntryGuidePage() {
           </div>
 
           <LvContactCta variant="entry" />
-          <p style={{ fontSize: 13, textAlign: 'center', marginTop: 0 }}>
+          <p style={{ fontSize: 15, textAlign: 'center', marginTop: 0 }}>
             区画の購入を検討中の方は{' '}
             <a
               href="https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_lv_buy"
@@ -148,13 +148,13 @@ export default function LvEntryGuidePage() {
           </p>
 
           {/* Stage4: 関連用語（glossary 投入済み・実在確認済み） */}
-          <p style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)' }}>
             関連用語: <Link href="/glossary/device-level-metering">機器個別計測</Link>
           </p>
 
           <section className="article-sources" style={{ marginTop: 24 }}>
             <h3 style={{ fontSize: 15, fontWeight: 700 }}>出典</h3>
-            <ul style={{ fontSize: 13, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
                 九州電力送配電「蓄電池等の低圧電線路への連系申込みについて」{' '}
                 <a href="https://www.kyuden.co.jp/td/service/application/interconnection.html" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
@@ -176,7 +176,7 @@ export default function LvEntryGuidePage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-19</p>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-19</p>
           <p className="back-link">
             <Link href="/lv">← 低圧蓄電所 総合ガイドへ戻る</Link>
           </p>

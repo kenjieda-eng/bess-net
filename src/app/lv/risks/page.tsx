@@ -143,7 +143,7 @@ export default function LvRisksPage() {
 
           <section className="article-sources" style={{ marginTop: 24 }}>
             <h3 style={{ fontSize: 15, fontWeight: 700 }}>出典</h3>
-            <ul style={{ fontSize: 13, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
                 経済産業省 第4回 電力安定供給ワーキンググループ{' '}
                 <a href="https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/stable_power_supply_wg/004.html" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
@@ -165,7 +165,7 @@ export default function LvRisksPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-19</p>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-19</p>
           <p className="back-link">
             <Link href="/lv">← 低圧蓄電所 総合ガイドへ戻る</Link>
           </p>

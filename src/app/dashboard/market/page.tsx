@@ -226,7 +226,7 @@ export default async function MarketDashboardPage() {
             業界レポート2026 の引用基盤、無料公開・登録不要。
           </p>
           {/* P1a: 取得ジョブ日とデータ鮮度の混同を解消（dashboard-market分析2026-07-12） */}
-          <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 20 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 20 }}>
             データ取得: 毎朝 8:00 JST（系列により公表ラグ・更新停止があります。各セクションにデータ最新月を表示）
           </p>
 
@@ -258,11 +258,11 @@ export default async function MarketDashboardPage() {
                         borderRadius: 6,
                       }}
                     >
-                      <div style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 4 }}>{it.label}</div>
+                      <div style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 4 }}>{it.label}</div>
                       <div className="tabular-nums" style={{ fontSize: 20, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
-                        {it.last!.value.toFixed(it.digits)} <span style={{ fontSize: 13, fontWeight: 500 }}>{it.unit}</span>
+                        {it.last!.value.toFixed(it.digits)} <span style={{ fontSize: 15, fontWeight: 500 }}>{it.unit}</span>
                       </div>
-                      <div style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 2 }}>
+                      <div style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 2 }}>
                         {delta !== null && (
                           <span style={{ color: delta > 0 ? '#b91c1c' : delta < 0 ? '#15803d' : 'var(--color-muted)', fontWeight: 600 }}>
                             {it.deltaLabel} {delta > 0 ? '+' : ''}{delta.toFixed(it.digits)} {it.deltaUnit}
@@ -274,7 +274,7 @@ export default async function MarketDashboardPage() {
                   );
                 })}
               </div>
-              <p style={{ fontSize: 13, marginTop: 10, marginBottom: 0 }}>
+              <p style={{ fontSize: 15, marginTop: 10, marginBottom: 0 }}>
                 金利は蓄電池投資の割引率の前提になります →{' '}
                 <Link href="/tools/irr-simulator">蓄電池 IRR シミュレーターで事業性を試算</Link>
               </p>
@@ -331,7 +331,7 @@ export default async function MarketDashboardPage() {
             border: '1px solid var(--color-border)', borderRadius: 6,
           }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (当サイト独自機能)</h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/market/jepx">JEPX スポット価格ハブ</Link> — 10 系列 × 5,158 日次レコード</li>
               <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター</Link> — 割引率の参考に金融指標を活用</li>
               <li><Link href="/reports/2026">業界レポート2026</Link> — 本編公開中（全10章）</li>
@@ -340,7 +340,7 @@ export default async function MarketDashboardPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.7 }}>
             {EIC_DATA_DISCLAIMER}
           </p>
         </div>

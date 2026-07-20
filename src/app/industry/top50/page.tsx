@@ -144,7 +144,7 @@ export default function IndustryTop50Page() {
                   minWidth: 140,
                 }}
               >
-                <div style={{ fontSize: 11, color: '#555', marginBottom: 2 }}>{s.label}</div>
+                <div style={{ fontSize: 12, color: '#555', marginBottom: 2 }}>{s.label}</div>
                 <div style={{ fontSize: 20, fontWeight: 700, color: '#234' }}>{s.value}</div>
               </div>
             ))}
@@ -158,7 +158,7 @@ export default function IndustryTop50Page() {
               border: '1px solid #fde68a',
               borderRadius: 6,
               marginBottom: 24,
-              fontSize: 13,
+              fontSize: 15,
               lineHeight: 1.7,
             }}
           >
@@ -192,7 +192,7 @@ export default function IndustryTop50Page() {
               <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>
                 容量データ未登録の事業者（{noCapacityOperators.length}社）
               </h2>
-              <p style={{ fontSize: 13, color: '#666', marginBottom: 12 }}>
+              <p style={{ fontSize: 15, color: '#666', marginBottom: 12 }}>
                 プロジェクトを手がけているが、容量（MWh）が公表・登録されていないためランキングに含まれない事業者です。
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
@@ -201,7 +201,7 @@ export default function IndustryTop50Page() {
                     key={op.operator}
                     style={{
                       padding: '4px 10px',
-                      fontSize: 13,
+                      fontSize: 15,
                       background: '#f5f5f5',
                       border: '1px solid #ddd',
                       borderRadius: 4,
@@ -213,14 +213,14 @@ export default function IndustryTop50Page() {
                         style={{ color: 'var(--color-text)', textDecoration: 'none' }}
                       >
                         {op.operator}
-                        <span style={{ fontSize: 11, color: '#888', marginLeft: 4 }}>
+                        <span style={{ fontSize: 12, color: '#888', marginLeft: 4 }}>
                           ({op.projectCount}件)
                         </span>
                       </Link>
                     ) : (
                       <>
                         {op.operator}
-                        <span style={{ fontSize: 11, color: '#888', marginLeft: 4 }}>
+                        <span style={{ fontSize: 12, color: '#888', marginLeft: 4 }}>
                           ({op.projectCount}件)
                         </span>
                       </>
@@ -239,7 +239,7 @@ export default function IndustryTop50Page() {
               background: 'var(--color-bg)',
               border: '1px solid var(--color-border)',
               borderRadius: 6,
-              fontSize: 13,
+              fontSize: 15,
             }}
           >
             <strong>関連ページ</strong>

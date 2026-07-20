@@ -35,7 +35,7 @@ export default function LvContactCta({ variant }: { variant: 'buy' | 'entry' }) 
       <p style={{ fontSize: 15, fontWeight: 700, marginBottom: 8, marginTop: 0, color: '#0F2D4F' }}>
         {v.heading}
       </p>
-      <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 16, lineHeight: 1.7 }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 16, lineHeight: 1.7 }}>
         {v.body}
       </p>
       <a
@@ -48,7 +48,7 @@ export default function LvContactCta({ variant }: { variant: 'buy' | 'entry' }) 
           color: '#fff',
           padding: '12px 28px',
           borderRadius: 4,
-          fontSize: 14,
+          fontSize: 15,
           fontWeight: 700,
           textDecoration: 'none',
         }}

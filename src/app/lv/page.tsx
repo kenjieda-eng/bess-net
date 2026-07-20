@@ -131,15 +131,15 @@ export default async function LvHubPage() {
                 display: 'block', padding: 20, border: '1px solid var(--color-border)',
                 borderRadius: 8, textDecoration: 'none', color: 'inherit', background: 'white',
               }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--color-accent, #0066cc)', marginBottom: 4 }}>{g.num}</div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--color-accent, #0066cc)', marginBottom: 4 }}>{g.num}</div>
                 <h3 style={{ fontSize: 17, fontWeight: 700, margin: '0 0 8px', lineHeight: 1.5 }}>{g.title}</h3>
-                <p style={{ fontSize: 13, lineHeight: 1.7, margin: 0, color: 'var(--color-muted)' }}>{g.desc}</p>
-                <div style={{ fontSize: 12, color: 'var(--color-accent)', marginTop: 8 }}>読む →</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, margin: 0, color: 'var(--color-muted)' }}>{g.desc}</p>
+                <div style={{ fontSize: 13, color: 'var(--color-accent)', marginTop: 8 }}>読む →</div>
               </Link>
             ))}
           </div>
           {/* Stage4: 関連用語4語＋FAQ導線（glossary/faq 投入済み・実在確認済み L-EIC-021） */}
-          <div style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 32, lineHeight: 1.9 }}>
+          <div style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 32, lineHeight: 1.9 }}>
             <p style={{ margin: '0 0 2px' }}>
               関連用語: <Link href="/glossary/low-voltage-bess">低圧蓄電所</Link>・<Link href="/glossary/low-voltage-resource-term">低圧リソース</Link>・<Link href="/glossary/device-level-metering">機器個別計測</Link>・<Link href="/glossary/bess-unit-sale">区画販売（分譲蓄電所）</Link>
             </p>
@@ -152,14 +152,14 @@ export default async function LvHubPage() {
           {lvNews.length > 0 && (
             <section style={{ padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8, marginBottom: 32 }}>
               <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
-                低圧の最新ニュース <Link href="/news" style={{ fontSize: 13, fontWeight: 600, marginLeft: 8 }}>すべて見る →</Link>
+                低圧の最新ニュース <Link href="/news" style={{ fontSize: 15, fontWeight: 600, marginLeft: 8 }}>すべて見る →</Link>
               </h2>
-              <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+              <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
                 {lvNews.map((n) => (
                   <li key={n.slug}>
                     <Link href={`/news/${n.slug}`}>{n.title}</Link>
                     {n.publishedAt && (
-                      <span style={{ fontSize: 12, color: 'var(--color-muted)', marginLeft: 8 }}>
+                      <span style={{ fontSize: 13, color: 'var(--color-muted)', marginLeft: 8 }}>
                         {new Date(n.publishedAt).toLocaleDateString('ja-JP')}
                       </span>
                     )}
@@ -172,7 +172,7 @@ export default async function LvHubPage() {
           {/* 関連する当サイトのコンテンツ（全て実在確認済み L-EIC-021） */}
           <section style={{ padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8, marginBottom: 32 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連する当サイトのコンテンツ</h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               {RELATED.map((r) => (
                 <li key={r.href}><Link href={r.href}>{r.label}</Link></li>
               ))}
@@ -185,23 +185,23 @@ export default async function LvHubPage() {
             <div>
               <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>購入・投資を検討している</h3>
               <LvContactCta variant="buy" />
-              <p style={{ fontSize: 13, marginTop: 0 }}>
+              <p style={{ fontSize: 15, marginTop: 0 }}>
                 蓄電所全般の購入・導入は <Link href="/start/buy">蓄電所を買いたい・導入したい方へ</Link> もご覧ください。
               </p>
             </div>
             <div>
               <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>事業として参入したい</h3>
               <LvContactCta variant="entry" />
-              <p style={{ fontSize: 13, marginTop: 0 }}>
+              <p style={{ fontSize: 15, marginTop: 0 }}>
                 業界全体のデータ・協業は <Link href="/start/partner">蓄電池ビジネスに関わりたい方へ</Link> もご覧ください。
               </p>
             </div>
           </div>
 
-          <p style={{ fontSize: 12, color: 'var(--color-muted)', lineHeight: 1.7 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', lineHeight: 1.7 }}>
             本ガイドは情報提供を目的とし、特定商品の勧誘・利回りの保証は行いません。
           </p>
-          <p style={{ fontSize: 12, color: 'var(--color-muted)' }}>公開日: 2026-07-18</p>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)' }}>公開日: 2026-07-18</p>
         </div>
       </main>
       <SiteFooter />

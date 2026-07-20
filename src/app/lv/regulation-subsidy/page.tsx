@@ -12,7 +12,7 @@ import { siteConfig } from '@/lib/site-config';
 
 export const dynamic = 'force-static';
 
-const TD: React.CSSProperties = { border: '1px solid var(--color-border)', padding: '8px 10px', fontSize: 13, lineHeight: 1.7, verticalAlign: 'top' };
+const TD: React.CSSProperties = { border: '1px solid var(--color-border)', padding: '8px 10px', fontSize: 15, lineHeight: 1.7, verticalAlign: 'top' };
 
 export const metadata: Metadata = {
   // layout titleTemplate が「 | 蓄電所ネット」を自動付与（#88）
@@ -143,7 +143,7 @@ export default function LvRegulationSubsidyPage() {
                 </tbody>
               </table>
             </div>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)' }}>
               本表は2026年7月時点の公表情報に基づく整理です。最新の動向は当サイトの政策カレンダー（<Link href="/policy-calendar">政策・制度カレンダー</Link>）で追えます。
             </p>
 
@@ -157,13 +157,13 @@ export default function LvRegulationSubsidyPage() {
           <LvContactCta variant="buy" />
 
           {/* Stage4: 関連用語（glossary 投入済み・実在確認済み） */}
-          <p style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)' }}>
             関連用語: <Link href="/glossary/low-voltage-resource-term">低圧リソース</Link>
           </p>
 
           <section className="article-sources" style={{ marginTop: 24 }}>
             <h3 style={{ fontSize: 15, fontWeight: 700 }}>出典</h3>
-            <ul style={{ fontSize: 13, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
                 OCCTO 第57回 需給調整市場検討小委員会 資料3{' '}
                 <a href="https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2025/files/jukyu_shijyo_57_03.pdf" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
@@ -197,7 +197,7 @@ export default function LvRegulationSubsidyPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-19</p>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-19</p>
           <p className="back-link">
             <Link href="/lv">← 低圧蓄電所 総合ガイドへ戻る</Link>
           </p>

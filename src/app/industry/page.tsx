@@ -202,19 +202,19 @@ export default async function IndustryHubPage() {
               <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 10 }}>
                 今週の業界ハイライト
               </h2>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: 14, lineHeight: 1.9 }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: 15, lineHeight: 1.9 }}>
                 {highlights.map((h) => (
                   <li key={h.axis}>
                     <span style={{ fontVariantNumeric: 'tabular-nums', color: 'var(--color-muted)', fontWeight: 600, marginRight: 8 }}>
                       {h.updatedAt.slice(0, 10)}
                     </span>
                     <span style={{
-                      fontSize: 11, padding: '2px 8px', borderRadius: 4, marginRight: 8,
+                      fontSize: 12, padding: '2px 8px', borderRadius: 4, marginRight: 8,
                       background: '#d6e4ff', color: '#346', fontWeight: 600,
                     }}>{h.axis}</span>
                     {h.name} を更新
                     {' '}
-                    <Link href={h.href} style={{ fontSize: 13, fontWeight: 600 }}>タイムラインへ →</Link>
+                    <Link href={h.href} style={{ fontSize: 15, fontWeight: 600 }}>タイムラインへ →</Link>
                   </li>
                 ))}
               </ul>
@@ -228,29 +228,29 @@ export default async function IndustryHubPage() {
                 borderRadius: 8, textDecoration: 'none', color: 'inherit', background: 'white',
               }}>
                 <div style={{
-                  fontSize: 10, display: 'inline-block', padding: '1px 6px',
+                  fontSize: 12, display: 'inline-block', padding: '1px 6px',
                   background: '#d6e4ff', color: '#346', borderRadius: 3, marginBottom: 4,
                 }}>{h.tag}</div>
                 <h2 style={{ fontSize: 17, fontWeight: 700, margin: '4px 0 8px' }}>{h.title}</h2>
                 {/* P1b: 今日の1数字チップ（コード導出） */}
                 {h.chip && (
                   <div style={{
-                    display: 'inline-block', fontSize: 12, fontWeight: 700, padding: '2px 10px',
+                    display: 'inline-block', fontSize: 13, fontWeight: 700, padding: '2px 10px',
                     borderRadius: 999, background: '#f0fdf4', border: '1px solid #bbf7d0', color: '#15803d',
                     marginBottom: 8, fontVariantNumeric: 'tabular-nums',
                   }}>
                     {h.chip}
                   </div>
                 )}
-                <p style={{ fontSize: 13, lineHeight: 1.7, margin: 0, color: 'var(--color-text)' }}>{h.desc}</p>
-                <div style={{ fontSize: 12, color: 'var(--color-accent)', marginTop: 8 }}>開く →</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, margin: 0, color: 'var(--color-text)' }}>{h.desc}</p>
+                <div style={{ fontSize: 13, color: 'var(--color-accent)', marginTop: 8 }}>開く →</div>
               </Link>
             ))}
           </div>
 
           <section style={{ padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>ツール (実務支援5機能)</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター</Link></li>
               <li><Link href="/tools/subsidy-match">補助金マッチング</Link></li>
               <li><Link href="/tools/grid-connection-check">系統連系診断</Link></li>

@@ -81,7 +81,7 @@ export default function CitationPanel({ indicator, csvUrl, catalogUrl }: Citatio
 
   const tabButtonStyle = (active: boolean): React.CSSProperties => ({
     padding: '6px 14px',
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: active ? 600 : 400,
     backgroundColor: active ? 'var(--color-accent, #0066cc)' : 'transparent',
     color: active ? 'white' : 'var(--color-text, #475569)',
@@ -134,7 +134,7 @@ export default function CitationPanel({ indicator, csvUrl, catalogUrl }: Citatio
           aria-live="polite"
           style={{
             padding: '6px 14px',
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             backgroundColor: copied ? '#10b981' : 'var(--color-accent, #0066cc)',
             color: 'white',
@@ -155,7 +155,7 @@ export default function CitationPanel({ indicator, csvUrl, catalogUrl }: Citatio
           backgroundColor: 'white',
           border: '1px solid #e2e8f0',
           borderRadius: 6,
-          fontSize: 14,
+          fontSize: 15,
           lineHeight: 1.7,
           whiteSpace: 'pre-wrap',
           wordBreak: 'break-word',
@@ -171,7 +171,7 @@ export default function CitationPanel({ indicator, csvUrl, catalogUrl }: Citatio
       <div
         style={{
           marginTop: 12,
-          fontSize: 13,
+          fontSize: 15,
           color: '#64748b',
           display: 'flex',
           flexWrap: 'wrap',

@@ -26,7 +26,7 @@ const RANK_BADGE: Record<number, { label: string; bg: string; color: string }> =
 export default function OperatorRankingTable({ ranking }: Props) {
   return (
     <div style={{ overflowX: 'auto' }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
         <thead>
           <tr style={{ background: '#f0f4ff', textAlign: 'left' }}>
             {['順位', '事業者', '総容量 (MWh)', '総出力 (MW)', '件数', '展開都道府県数'].map(
@@ -72,7 +72,7 @@ export default function OperatorRankingTable({ ranking }: Props) {
                         background: badge.bg,
                         color: badge.color,
                         fontWeight: 700,
-                        fontSize: 13,
+                        fontSize: 15,
                       }}
                     >
                       {badge.label}
@@ -105,7 +105,7 @@ export default function OperatorRankingTable({ ranking }: Props) {
                         display: 'inline-block',
                         marginLeft: 6,
                         padding: '1px 5px',
-                        fontSize: 10,
+                        fontSize: 12,
                         background: '#e0e7ff',
                         color: '#3730a3',
                         borderRadius: 3,
@@ -129,7 +129,7 @@ export default function OperatorRankingTable({ ranking }: Props) {
                   {r.totalCapacityMwh.toLocaleString('ja-JP')}
                   <span
                     style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       color: '#888',
                       marginLeft: 4,
                       display: 'block',
@@ -161,8 +161,8 @@ export default function OperatorRankingTable({ ranking }: Props) {
           })}
         </tbody>
       </table>
-      <p style={{ fontSize: 12, color: '#888', marginTop: 8 }}>
-        ※ <span style={{ display: 'inline-block', padding: '1px 5px', fontSize: 10, background: '#e0e7ff', color: '#3730a3', borderRadius: 3 }}>共同</span>{' '}
+      <p style={{ fontSize: 15, color: '#888', marginTop: 8 }}>
+        ※ <span style={{ display: 'inline-block', padding: '1px 5px', fontSize: 12, background: '#e0e7ff', color: '#3730a3', borderRadius: 3 }}>共同</span>{' '}
         は「○○・△△」「○○他」等の共同出資/コンソーシアム。登録名どおりに計上し、構成各社へは分解していません。
       </p>
     </div>

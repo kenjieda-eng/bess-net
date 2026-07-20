@@ -145,13 +145,13 @@ export default function LvRevenueModelPage() {
           </section>
 
           {/* Stage4: 関連用語（glossary 投入済み・実在確認済み） */}
-          <p style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)' }}>
             関連用語: <Link href="/glossary/device-level-metering">機器個別計測</Link>
           </p>
 
           <section className="article-sources" style={{ marginTop: 24 }}>
             <h3 style={{ fontSize: 15, fontWeight: 700 }}>出典</h3>
-            <ul style={{ fontSize: 13, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
                 OCCTO 第57回 需給調整市場検討小委員会 資料3{' '}
                 <a href="https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2025/files/jukyu_shijyo_57_03.pdf" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
@@ -167,7 +167,7 @@ export default function LvRevenueModelPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-18</p>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-18</p>
           <p className="back-link">
             <Link href="/lv">← 低圧蓄電所 総合ガイドへ戻る</Link>
           </p>

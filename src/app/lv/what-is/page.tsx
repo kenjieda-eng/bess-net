@@ -91,7 +91,7 @@ export default function LvWhatIsPage() {
 
             <h2>高圧の蓄電所との違い</h2>
             <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, lineHeight: 1.7 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15, lineHeight: 1.7 }}>
                 <thead>
                   <tr>
                     <th style={TH}>項目</th>
@@ -110,7 +110,7 @@ export default function LvWhatIsPage() {
                 </tbody>
               </table>
             </div>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)' }}>
               保安規制・手続きの適用は設備構成や設置形態により異なります。個別案件では施工事業者・所管窓口への確認が必要です。
             </p>
 
@@ -137,13 +137,13 @@ export default function LvWhatIsPage() {
           <LvContactCta variant="entry" />
 
           {/* Stage4: 関連用語（glossary 投入済み・実在確認済み） */}
-          <p style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)' }}>
             関連用語: <Link href="/glossary/low-voltage-resource-term">低圧リソース</Link>・<Link href="/glossary/bess-unit-sale">区画販売（分譲蓄電所）</Link>
           </p>
 
           <section className="article-sources" style={{ marginTop: 24 }}>
             <h3 style={{ fontSize: 15, fontWeight: 700 }}>出典</h3>
-            <ul style={{ fontSize: 13, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
                 関西電力「高圧電力とは？低圧電力や特別高圧電力との違い」{' '}
                 <a href="https://sol.kepco.jp/useful/aircontrol/w/koatsudenryokui/" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
@@ -165,7 +165,7 @@ export default function LvWhatIsPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-18</p>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16 }}>公開日: 2026-07-18</p>
           <p className="back-link">
             <Link href="/lv">← 低圧蓄電所 総合ガイドへ戻る</Link>
           </p>
