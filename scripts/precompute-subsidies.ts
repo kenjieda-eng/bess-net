@@ -6,8 +6,9 @@
  *
  * 処理:
  *   1. microCMS から subsidies 全 50 件取得 (build 中 1 回のみ)
- *   2. 自由文字列フィールド (body / targetEntity / scheme / name) からキーワード抽出:
- *      - 都道府県名 → applicable_prefs
+ *   2. キーワード抽出:
+ *      - 都道府県名 → applicable_prefs（★ name / organization のみから導出。2026-07-20 回帰修正:
+ *        scheme/body の「採択案件の実施地」「社名」を対象地域と誤認する不具合を根治）
  *      - 用途キーワード → applicable_use_cases (grid / self_consumption / industrial)
  *      - 事業者種別 → applicable_entities (individual / corporate / municipal)
  *      - 種別 → kind (subsidy / loan / tax / other)
@@ -78,24 +79,92 @@ function stripHtml(s: string): string {
   return s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function extractPrefectures(text: string): string[] {
+/**
+ * 正式名 → 短縮名。長い順に走査してマスクすることで部分一致衝突を防ぐ
+ * （最重要ケース:「東京都」⊃「京都」。他に「北海道」も「北海」等の誤検出を避ける）。
+ */
+const PREF_FULL_FORMS: [string, string][] = ([
+  ['北海道', '北海道'], ['東京都', '東京'], ['京都府', '京都'], ['大阪府', '大阪'],
+  ...PREFECTURES.filter((p) => !['北海道', '東京', '京都', '大阪'].includes(p)).map(
+    (p): [string, string] => [`${p}県`, p]
+  ),
+] as [string, string][]).sort((a, b) => b[0].length - a[0].length);
+
+/**
+ * 政令指定都市等 → 所在都道府県。市名だけで県名を含まない実施主体（例: 名古屋市環境局）の救済用。
+ * name/organization からの導出に限って使う（本文からは拾わない）。
+ */
+const CITY_TO_PREF: Record<string, string> = {
+  札幌市: '北海道', 仙台市: '宮城', さいたま市: '埼玉', 千葉市: '千葉',
+  横浜市: '神奈川', 川崎市: '神奈川', 相模原市: '神奈川', 新潟市: '新潟',
+  静岡市: '静岡', 浜松市: '静岡', 名古屋市: '愛知', 京都市: '京都',
+  大阪市: '大阪', 堺市: '大阪', 神戸市: '兵庫', 岡山市: '岡山',
+  広島市: '広島', 北九州市: '福岡', 福岡市: '福岡', 熊本市: '熊本',
+};
+
+/**
+ * 全国機関（交付主体が国・国の実施機関）の organization パターン。
+ * 該当かつ県名が特定できない場合は「全国公募」とみなし全 47 都道府県を付与する。
+ * ※ 都道府県・市の部署名（例:「静岡県経済産業部」）は「経済産業省」に一致しないことを確認済み。
+ */
+const NATIONAL_ORG_PATTERNS: RegExp[] = [
+  /経済産業省/, /資源エネルギー庁/, /環境省/, /国土交通省/, /農林水産省/,
+  /\bSII\b/, /環境共創イニシアチブ/, /環境イノベーション情報機構/,
+  /NEDO/, /新エネルギー・産業技術総合開発機構/,
+  /OCCTO/, /電力広域的運営推進機関/,
+  /NeV/, /次世代自動車振興センター/,
+];
+
+/**
+ * applicable_prefs（＝補助金の対象地域＝交付主体の管轄）の導出。
+ *
+ * 【重要・2026-07-20 回帰修正】
+ * 以前は name/organization/scheme/body/targetEntity を連結した全文から県名を拾っていたため、
+ * 本文に書かれた「採択案件の実施地」や社名（例:『東京センチュリー』）まで対象地域として抽出され、
+ * 全国公募が数県に狭まる／無関係な県が付く誤派生が発生していた（/tools/subsidy-match の回帰）。
+ * → 導出元を **name と organization のみ** に限定する。scheme/body の県名記述はコンテンツとして残す。
+ *
+ * 返り値の意味（subsidy-matcher と対応）:
+ *   47件 = 全国対象（isPrefMatch が全県で真・「全国対象」表示）
+ *   1〜N件 = その都道府県のみ
+ *   []    = 地域を特定できず（マッチ加点なし。従来どおり）
+ */
+function derivePrefectures(name: string, organization: string): string[] {
+  const text = `${name || ''} ${organization || ''}`;
+  if (!text.trim()) return [];
+
+  // 明示的な全国表記
+  if (/全国|日本全国|国内全域/.test(text)) return [...PREFECTURES];
+
   const found = new Set<string>();
-  if (!text) return [];
-  // 「全国」「日本全国」キーワードなら全 47 都道府県を applicable とする
-  if (/全国|日本全国|国内全域/.test(text)) {
-    return [...PREFECTURES];
-  }
-  // 地域名 → 都道府県展開
-  for (const [region, prefs] of Object.entries(REGIONS_TO_PREFS)) {
-    if (text.includes(region)) {
-      for (const p of prefs) found.add(p);
+  // 都道府県名: 先に「正式名（東京都/京都府/○○県）」で拾って該当箇所をマスクしてから短縮名を走査。
+  // ★「東京都」は文字列として「京都」を含むため、マスクなしだと東京都の補助金に京都が混入する
+  //   （2026-07-20 監査で東京都4エントリの誤派生を検出）。
+  let rest = text;
+  for (const [full, short] of PREF_FULL_FORMS) {
+    if (rest.includes(full)) {
+      found.add(short);
+      rest = rest.split(full).join('　');
     }
   }
-  // 都道府県名 直接マッチ
-  for (const pref of PREFECTURES) {
-    if (text.includes(pref)) found.add(pref);
+  // 地域名 → 都道府県展開（例:「九州エリア」）※マスク後の残りに対して
+  for (const [region, prefs] of Object.entries(REGIONS_TO_PREFS)) {
+    if (rest.includes(region)) for (const p of prefs) found.add(p);
   }
-  return Array.from(found);
+  // 短縮名 直接マッチ（例:「クール・ネット東京」）
+  for (const pref of PREFECTURES) {
+    if (rest.includes(pref)) found.add(pref);
+  }
+  // 市名 → 所在県（県名を含まない自治体主体の救済）
+  for (const [city, pref] of Object.entries(CITY_TO_PREF)) {
+    if (text.includes(city)) found.add(pref);
+  }
+  if (found.size > 0) return Array.from(found);
+
+  // 地域が特定できず、かつ交付主体が全国機関 → 全国公募として全 47 都道府県
+  if (NATIONAL_ORG_PATTERNS.some((re) => re.test(text))) return [...PREFECTURES];
+
+  return [];
 }
 
 function extractKeywordTags(text: string, dict: Record<string, string[]>): string[] {
@@ -246,7 +315,9 @@ async function main(): Promise<void> {
       s.targetEntity || '',
     ].join(' ');
 
-    const prefs = extractPrefectures(fullText);
+    // 対象地域は name/organization からのみ導出（本文の実施地・社名を拾わない・2026-07-20 回帰修正）
+    const prefs = derivePrefectures(s.name, s.organization || '');
+    // 用途/事業者種別/種別は地理でないため従来どおり全文から抽出
     const useCases = extractKeywordTags(fullText, USE_CASE_KEYWORDS);
     const entities = extractKeywordTags(fullText, ENTITY_KEYWORDS);
     const kinds = extractKeywordTags(fullText, KIND_KEYWORDS);
