@@ -45,7 +45,7 @@ export default function AnkenSellPage() {
           </p>
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, marginBottom: 12 }}>こんな方に</h2>
-          <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, marginBottom: 28 }}>
+          <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, marginBottom: 28 }}>
             <li>地主・土地保有者（用地の売却・賃貸・共同開発を検討）</li>
             <li>開発事業者（開発中案件・連系枠付き案件の売却）</li>
             <li>事業譲渡を検討する事業者（運用中・建設中案件の譲渡）</li>
@@ -60,13 +60,13 @@ export default function AnkenSellPage() {
             ].map(([h, d]) => (
               <div key={h} style={card}>
                 <h3 style={{ fontSize: 15, fontWeight: 700, margin: '0 0 6px', color: NAVY }}>{h}</h3>
-                <p style={{ fontSize: 13.5, lineHeight: 1.8, margin: 0 }}>{d}</p>
+                <p style={{ fontSize: 15.5, lineHeight: 1.8, margin: 0 }}>{d}</p>
               </div>
             ))}
           </div>
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, marginBottom: 12 }}>匿名・守秘で安心</h2>
-          <p className="anken-prose" style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 12, marginLeft: 0 }}>
+          <p className="anken-prose" style={{ fontSize: 15, lineHeight: 1.85, marginBottom: 12, marginLeft: 0 }}>
             公開ページに住所・座標・契約日等の個別情報は掲載しません（特定回避のため概括化）。
             お預かりした情報はお取り次ぎの目的の範囲でのみ扱い、しつこい営業は行いません。
             お取り次ぎの詳細は <Link href="/anken/flow">お取り次ぎの流れ</Link> をご確認ください。
@@ -74,13 +74,13 @@ export default function AnkenSellPage() {
 
           <section style={{ background: NAVY, borderRadius: 12, padding: '28px 24px', color: '#fff', margin: '20px 0 32px' }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#fff' }}>売却・譲渡のご相談</h2>
-            <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>用地・案件の概要をお知らせください。匿名・守秘で中立にお取り次ぎします。</p>
+            <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>用地・案件の概要をお知らせください。匿名・守秘で中立にお取り次ぎします。</p>
             <AnkenContactCTA location="sell">売却・譲渡のご相談はこちら →</AnkenContactCTA>
           </section>
 
           <section style={{ ...card, marginBottom: 16 }}>
-            <h2 style={{ fontSize: 14, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/seller/developer">プロジェクトデベロッパーの方へ</Link></li>
               <li><Link href="/buyer/landowner">土地保有者・地主の方へ</Link></li>
               <li><Link href="/anken">流通案件トップ（市場動向）</Link></li>
@@ -88,7 +88,7 @@ export default function AnkenSellPage() {
             </ul>
           </section>
 
-          <p className="anken-prose" style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
+          <p className="anken-prose" style={{ fontSize: 15.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
             ※ 蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。取引条件は案件元と直接ご確認ください。
           </p>
         </div>

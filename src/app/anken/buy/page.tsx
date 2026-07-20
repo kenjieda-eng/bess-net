@@ -45,7 +45,7 @@ export default function AnkenBuyPage() {
           </p>
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, marginBottom: 12 }}>こんな方に</h2>
-          <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, marginBottom: 28 }}>
+          <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, marginBottom: 28 }}>
             <li>投資家・ファンド（蓄電所をポートフォリオに組み入れたい）</li>
             <li>新規参入事業者（連系枠確保済案件から始めたい）</li>
             <li>EPC 事業者（施工・運用案件のソーシング）</li>
@@ -61,13 +61,13 @@ export default function AnkenBuyPage() {
             ].map(([h, d]) => (
               <div key={h} style={card}>
                 <h3 style={{ fontSize: 15, fontWeight: 700, margin: '0 0 6px', color: NAVY }}>{h}</h3>
-                <p style={{ fontSize: 13.5, lineHeight: 1.8, margin: 0 }}>{d}</p>
+                <p style={{ fontSize: 15.5, lineHeight: 1.8, margin: 0 }}>{d}</p>
               </div>
             ))}
           </div>
 
           <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, marginBottom: 12 }}>どんな案件があるか（匿名・傾向）</h2>
-          <p className="anken-prose" style={{ fontSize: 14, lineHeight: 1.85, marginBottom: 12, marginLeft: 0 }}>
+          <p className="anken-prose" style={{ fontSize: 15, lineHeight: 1.85, marginBottom: 12, marginLeft: 0 }}>
             連系枠確保済の2MW/8MWh級を中心に、宅地系・農地系・山林系の地目、連系目安〜6ヶ月／6〜12ヶ月／12ヶ月超など、
             規模・ステータス・エリアの傾向を匿名で公開しています（個別特定は避けています）。
             具体的な傾向は <Link href="/anken">流通案件トップの市場動向</Link> をご覧ください。確認の流れは{' '}
@@ -76,13 +76,13 @@ export default function AnkenBuyPage() {
 
           <section style={{ background: NAVY, borderRadius: 12, padding: '28px 24px', color: '#fff', margin: '20px 0 32px' }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#fff' }}>購入・取得のご相談</h2>
-            <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>投資基準・希望エリア・規模をお知らせください。中立的にお取り次ぎします。</p>
+            <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>投資基準・希望エリア・規模をお知らせください。中立的にお取り次ぎします。</p>
             <AnkenContactCTA location="buy">購入・取得のご相談はこちら →</AnkenContactCTA>
           </section>
 
           <section style={{ ...card, marginBottom: 16 }}>
-            <h2 style={{ fontSize: 14, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/buyer/investor">投資家・ファンドの方へ</Link></li>
               <li><Link href="/buyer/new-entry">これから参入する事業者の方へ</Link></li>
               <li><Link href="/anken">流通案件トップ（市場動向）</Link></li>
@@ -90,7 +90,7 @@ export default function AnkenBuyPage() {
             </ul>
           </section>
 
-          <p className="anken-prose" style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
+          <p className="anken-prose" style={{ fontSize: 15.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
             ※ 蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。掲載は特定回避のため概括化しており、住所・座標・契約日等は掲載していません。取引条件は案件元と直接ご確認ください。
           </p>
         </div>

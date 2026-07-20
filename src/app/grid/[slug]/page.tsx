@@ -297,7 +297,7 @@ export default async function GridSlugPage({
               。系統空き容量・出力制御の可能性・N-1電制適用可否などの公表情報を整理しています。
             </p>
             {/* 鮮度の明示 */}
-            <p style={{ fontSize: '12px', color: 'var(--color-muted)', margin: '4px 0 0', textAlign: 'right' }}>
+            <p style={{ fontSize: '15px', color: 'var(--color-muted)', margin: '4px 0 0', textAlign: 'right' }}>
               データ最終更新：<strong>{lastUpdated}</strong>
               <span style={{ margin: '0 6px', opacity: 0.4 }}>|</span>
               <Link href="/tracker/grid" style={{ color: 'inherit', textDecoration: 'underline' }}>
@@ -322,7 +322,7 @@ export default async function GridSlugPage({
                     textDecoration: 'none',
                     borderRadius: '6px',
                     border: '1px solid #bfdbfe',
-                    fontSize: '13px',
+                    fontSize: '15px',
                   }}
                 >
                   🗺 中部マップで位置を確認
@@ -493,7 +493,7 @@ export default async function GridSlugPage({
           {nearbyProjects.length > 0 && (
             <section className="grid-section">
               <h3 className="related-h3">この変電所周辺の蓄電所案件</h3>
-              <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 12 }}>
+              <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 12 }}>
                 {sub.name} の半径 10km 以内に位置する系統用蓄電池プロジェクト（距離が近い順、最大 5件）
               </p>
               <ul className="related-project-list">
@@ -566,7 +566,7 @@ export default async function GridSlugPage({
               <p style={{ margin: '0 0 4px', fontSize: '15px', fontWeight: '700', color: '#1e40af' }}>
                 ⚡ この変電所で系統連系を診断する
               </p>
-              <p style={{ margin: 0, fontSize: '12px', color: '#4b5563', lineHeight: 1.5 }}>
+              <p style={{ margin: 0, fontSize: '15px', color: '#4b5563', lineHeight: 1.5 }}>
                 連系候補変電所の特定・N-1電制の可否・接続コスト概算（平均エンゲージ92秒）
               </p>
             </div>
@@ -579,7 +579,7 @@ export default async function GridSlugPage({
                 textDecoration: 'none',
                 borderRadius: '6px',
                 fontWeight: '700',
-                fontSize: '14px',
+                fontSize: '15px',
                 whiteSpace: 'nowrap',
               }}
             >

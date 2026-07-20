@@ -101,10 +101,10 @@ function DistroBar({ title, items }: { title: string; items: { label: string; n:
   const total = items.reduce((s, i) => s + i.n, 0) || 1;
   return (
     <div style={{ background: 'var(--color-bg-card,#fff)', border: '1px solid var(--color-border)', borderRadius: 8, padding: 14 }}>
-      <h3 style={{ fontSize: 13, fontWeight: 700, margin: '0 0 10px', color: NAVY }}>{title}</h3>
+      <h3 style={{ fontSize: 15, fontWeight: 700, margin: '0 0 10px', color: NAVY }}>{title}</h3>
       {items.map((i) => (
         <div key={i.label} style={{ marginBottom: 7 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, marginBottom: 2 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 2 }}>
             <span>{i.label}</span><span style={{ color: 'var(--color-muted)' }}>{i.n}件</span>
           </div>
           <div style={{ height: 6, background: 'var(--color-bg,#f1f5f9)', borderRadius: 3, overflow: 'hidden' }}>
@@ -120,8 +120,8 @@ function IntentCard({ href, external, title, note }: { href: string; external?: 
   const inner = (
     <div style={{ padding: 20, height: '100%', background: 'var(--color-bg-card,#fff)', border: `1px solid var(--color-border)`, borderTop: `3px solid ${ACCENT}`, borderRadius: 8 }}>
       <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 6px', color: NAVY }}>{title}</h3>
-      <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: 0 }}>{note}</p>
-      <p style={{ marginTop: 12, fontSize: 14, fontWeight: 700, color: ACCENT }}>進む →</p>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', margin: 0 }}>{note}</p>
+      <p style={{ marginTop: 12, fontSize: 15, fontWeight: 700, color: ACCENT }}>進む →</p>
     </div>
   );
   return external ? (
@@ -166,21 +166,21 @@ export default function AnkenPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 14, marginBottom: 44 }}>
             <div style={card}>
               <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 8px', color: NAVY }}>案件のご紹介</h3>
-              <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0 }}>全国・連系枠確保済中心の開発案件。特定回避のため匿名で傾向を公開し、詳細はお問い合わせ時に案件元へお取り次ぎします。</p>
+              <p style={{ fontSize: 15, lineHeight: 1.8, margin: 0 }}>全国・連系枠確保済中心の開発案件。特定回避のため匿名で傾向を公開し、詳細はお問い合わせ時に案件元へお取り次ぎします。</p>
             </div>
             <div style={card}>
               <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 8px', color: NAVY }}>売買のお取り次ぎ</h3>
-              <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0 }}>買い手・売り手の双方をつなぐ窓口です。宅地建物取引の媒介・代理は行いません（情報提供・お取り次ぎ・コンサルティング）。</p>
+              <p style={{ fontSize: 15, lineHeight: 1.8, margin: 0 }}>買い手・売り手の双方をつなぐ窓口です。宅地建物取引の媒介・代理は行いません（情報提供・お取り次ぎ・コンサルティング）。</p>
             </div>
             <div style={card}>
               <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 8px', color: NAVY }}>専門相談</h3>
-              <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0 }}>連系枠・農地転用・区域区分・資金スキーム・中古/リユース蓄電池の活用まで、業界ハブとして幅広くご相談に対応します。</p>
+              <p style={{ fontSize: 15, lineHeight: 1.8, margin: 0 }}>連系枠・農地転用・区域区分・資金スキーム・中古/リユース蓄電池の活用まで、業界ハブとして幅広くご相談に対応します。</p>
             </div>
           </div>
 
           {/* 3. 市場動向（匿名集計）+ 抜粋テーブル */}
           <h2 style={{ fontSize: 22, fontWeight: 700, color: NAVY, marginBottom: 6 }}>市場動向（匿名集計）</h2>
-          <p style={{ fontSize: 13, color: ACCENT, fontWeight: 600, marginBottom: 16 }}>対応エリア：全国 ／ 下表・下記分布は中部エリアの抜粋例</p>
+          <p style={{ fontSize: 15, color: ACCENT, fontWeight: 600, marginBottom: 16 }}>対応エリア：全国 ／ 下表・下記分布は中部エリアの抜粋例</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 12, marginBottom: 20 }}>
             <DistroBar title="規模" items={[{ label: '2MW/8MWh級中心', n: ANKEN_DATA.length }]} />
             <DistroBar title="ステータス" items={dStatus} />
@@ -205,23 +205,23 @@ export default function AnkenPage() {
                     <tr key={row.id}>
                       <td style={{ fontWeight: 700, color: NAVY, textAlign: 'center' }}>{row.id}</td>
                       <td>{row.area}</td>
-                      <td style={{ whiteSpace: 'nowrap', fontSize: 13 }}>{row.scale}</td>
-                      <td style={{ fontSize: 13 }}>{row.chikumoku}</td>
-                      <td style={{ fontSize: 13 }}>{row.kukaku}</td>
-                      <td style={{ fontSize: 13 }}>
+                      <td style={{ whiteSpace: 'nowrap', fontSize: 15 }}>{row.scale}</td>
+                      <td style={{ fontSize: 15 }}>{row.chikumoku}</td>
+                      <td style={{ fontSize: 15 }}>{row.kukaku}</td>
+                      <td style={{ fontSize: 15 }}>
                         {row.hazard === '特記なし'
                           ? <span style={{ color: '#9ca3af' }}>{row.hazard}</span>
                           : <span style={{ color: '#b45309', fontWeight: 600 }}>{row.hazard}</span>}
                       </td>
-                      <td style={{ fontSize: 13, color: statusColor(row.status) }}>{row.status}</td>
-                      <td style={{ fontSize: 13, whiteSpace: 'nowrap' }}>{row.renkei}</td>
+                      <td style={{ fontSize: 15, color: statusColor(row.status) }}>{row.status}</td>
+                      <td style={{ fontSize: 15, whiteSpace: 'nowrap' }}>{row.renkei}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </section>
-          <p className="anken-prose" style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.7, marginBottom: 44, marginLeft: 0 }}>
+          <p className="anken-prose" style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.7, marginBottom: 44, marginLeft: 0 }}>
             ※ 本表・分布は全国の取扱案件のうち中部エリアの抜粋・参考情報です。各案件の募集状況・条件は変動します。特定回避の
             ため概括化しており、個別の正確な情報や他エリア（北海道〜九州）の案件はお問い合わせ時にご確認ください。
           </p>
@@ -229,7 +229,7 @@ export default function AnkenPage() {
           {/* 各エリアの案件イメージ（サンプル例・実在ではない＝L-EIC-019）*/}
           <section style={{ marginBottom: 8 }}>
             <h3 style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6 }}>各エリアの案件イメージ（サンプル例）</h3>
-            <p className="anken-prose" style={{ fontSize: 12.5, color: '#b45309', lineHeight: 1.7, marginBottom: 12, fontWeight: 600, marginLeft: 0 }}>
+            <p className="anken-prose" style={{ fontSize: 15.5, color: '#b45309', lineHeight: 1.7, marginBottom: 12, fontWeight: 600, marginLeft: 0 }}>
               ※ 中部エリア以外は、市場で想定される案件像を示すサンプル例です（実在の特定案件・正確な情報ではありません）。中部は実取扱案件の匿名抜粋です。実際の案件・他エリアの取扱はお問い合わせ時にご確認ください。
             </p>
             <div className="subsidy-table-wrapper">
@@ -246,18 +246,18 @@ export default function AnkenPage() {
                   {SAMPLE_DATA.map((row, i) => (
                     <tr key={`${row.area}-${i}`}>
                       <td style={{ fontWeight: 600, color: NAVY }}>{row.area}</td>
-                      <td style={{ whiteSpace: 'nowrap', fontSize: 13 }}>{row.scale}</td>
-                      <td style={{ fontSize: 13 }}>{row.chikumoku}</td>
-                      <td style={{ fontSize: 13 }}>{row.kukaku}</td>
-                      <td style={{ fontSize: 13, color: statusColor(row.status) }}>{row.status}</td>
-                      <td style={{ fontSize: 13, whiteSpace: 'nowrap' }}>{row.renkei}</td>
+                      <td style={{ whiteSpace: 'nowrap', fontSize: 15 }}>{row.scale}</td>
+                      <td style={{ fontSize: 15 }}>{row.chikumoku}</td>
+                      <td style={{ fontSize: 15 }}>{row.kukaku}</td>
+                      <td style={{ fontSize: 15, color: statusColor(row.status) }}>{row.status}</td>
+                      <td style={{ fontSize: 15, whiteSpace: 'nowrap' }}>{row.renkei}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </section>
-          <p className="anken-prose" style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.7, marginBottom: 44, marginLeft: 0 }}>
+          <p className="anken-prose" style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.7, marginBottom: 44, marginLeft: 0 }}>
             ※ 上記サンプル例は特定の実在案件を示すものではなく、匿名・概括化した一般的な傾向の例示です（座標・住所・実日付は含みません）。
           </p>
 
@@ -271,7 +271,7 @@ export default function AnkenPage() {
             ].map((col) => (
               <div key={col.h} style={card}>
                 <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 10px', color: NAVY }}>{col.h}</h3>
-                <ul style={{ fontSize: 14, lineHeight: 1.8, paddingLeft: 18, margin: '0 0 12px' }}>
+                <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 18, margin: '0 0 12px' }}>
                   {col.items.map((it) => <li key={it}>{it}</li>)}
                 </ul>
                 {col.cta}
@@ -289,15 +289,15 @@ export default function AnkenPage() {
               ['④当事者間で成約', '成約は当事者間。当サイトは媒介・代理を行いません・守秘'],
             ].map(([h, d]) => (
               <div key={h} style={{ ...card, borderTop: `3px solid ${ACCENT}` }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{h}</div>
-                <div style={{ fontSize: 13, color: 'var(--color-muted)', lineHeight: 1.7 }}>{d}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{h}</div>
+                <div style={{ fontSize: 15, color: 'var(--color-muted)', lineHeight: 1.7 }}>{d}</div>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 14, marginBottom: 8 }}>
+          <p style={{ fontSize: 15, marginBottom: 8 }}>
             <Link href="/anken/flow" style={{ color: ACCENT, fontWeight: 700 }}>詳しくは お取り次ぎの流れ →</Link>
           </p>
-          <p className="anken-prose" style={{ fontSize: 13, color: 'var(--color-muted)', lineHeight: 1.7, marginTop: 0, marginBottom: 44, marginLeft: 0 }}>
+          <p className="anken-prose" style={{ fontSize: 15, color: 'var(--color-muted)', lineHeight: 1.7, marginTop: 0, marginBottom: 44, marginLeft: 0 }}>
             ご相談・お取り次ぎの費用は、ご相談内容に応じて個別にご案内します。
           </p>
 
@@ -310,22 +310,22 @@ export default function AnkenPage() {
             ].map(([q, a]) => (
               <div key={q} style={{ ...card, marginBottom: 10 }}>
                 <p style={{ fontWeight: 700, margin: '0 0 4px', color: NAVY }}>Q. {q}</p>
-                <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0 }}>A. {a}</p>
+                <p style={{ fontSize: 15, lineHeight: 1.8, margin: 0 }}>A. {a}</p>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 14, marginBottom: 44 }}>
+          <p style={{ fontSize: 15, marginBottom: 44 }}>
             <Link href="/anken/faq" style={{ color: ACCENT, fontWeight: 700 }}>もっと見る → よくある質問</Link>
           </p>
 
           {/* 7. 信頼シグナル */}
           <section style={{ ...card, background: 'var(--color-bg,#f8fafc)', marginBottom: 44 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, color: NAVY, marginTop: 0, marginBottom: 10 }}>蓄電所ネットの信頼</h2>
-            <p style={{ fontSize: 14, lineHeight: 1.8, marginTop: 0 }}>
+            <p style={{ fontSize: 15, lineHeight: 1.8, marginTop: 0 }}>
               <strong>一般社団法人エネルギー情報センター</strong>が運営する中立的な業界ハブです。中立・守秘・全国対応でお取り次ぎします。
               案件のご紹介は、当サイトが整備する以下のデータ基盤を背景としています。
             </p>
-            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/grid">系統データ（全国 8,225 変電所地点）</Link></li>
               <li><Link href="/operators">事業者データベース（544 社）</Link></li>
               <li><Link href="/projects">蓄電所プロジェクト（263 件）</Link></li>
@@ -344,7 +344,7 @@ export default function AnkenPage() {
           {/* 免責（本文そのまま）*/}
           <section style={{ ...card, marginBottom: 16 }}>
             <h2 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>免責</h2>
-            <small className="anken-prose" style={{ fontSize: 12.5, lineHeight: 1.85, color: 'var(--color-muted)', display: 'block', marginLeft: 0 }}>
+            <small className="anken-prose" style={{ fontSize: 13.5, lineHeight: 1.85, color: 'var(--color-muted)', display: 'block', marginLeft: 0 }}>
               本ページは蓄電所ネットが把握した市場動向の参考情報です。特定回避のため概括化しており、住所・座標・契約日等は掲載していません。
               蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。
               取引条件は案件元と直接ご確認ください。最新の募集状況は変動します。

@@ -52,7 +52,7 @@ const DEPTH_CAT_LABEL: Record<number, string> = {
 function StatusBadge({ status }: { status: HazardStatus }) {
   if (status === 'inside') {
     return (
-      <span className="grid-badge grid-badge-warn" style={{ fontSize: '0.82rem' }}>
+      <span className="grid-badge grid-badge-warn" style={{ fontSize: '15px' }}>
         区域内
       </span>
     );
@@ -65,7 +65,7 @@ function StatusBadge({ status }: { status: HazardStatus }) {
           background: '#fffbeb',
           color: '#92400e',
           border: '1px solid #fde68a',
-          fontSize: '0.82rem',
+          fontSize: '15px',
           fontWeight: 500,
         }}
       >
@@ -75,13 +75,13 @@ function StatusBadge({ status }: { status: HazardStatus }) {
   }
   if (status === 'none') {
     return (
-      <span className="grid-badge grid-badge-info" style={{ fontSize: '0.82rem' }}>
+      <span className="grid-badge grid-badge-info" style={{ fontSize: '15px' }}>
         区域外
       </span>
     );
   }
   return (
-    <span className="grid-badge grid-badge-info" style={{ fontSize: '0.82rem', color: '#9ca3af' }}>
+    <span className="grid-badge grid-badge-info" style={{ fontSize: '15px', color: '#9ca3af' }}>
       取得不可
     </span>
   );
@@ -125,7 +125,7 @@ function MultipleRiskWarning({ entry }: { entry: HazardEntry }) {
     <p
       style={{
         marginTop: 10,
-        fontSize: '0.85rem',
+        fontSize: '15px',
         color: '#92400e',
         background: '#fffbeb',
         border: '1px solid #fde68a',
@@ -158,7 +158,7 @@ export default function HazardRiskCard({ slug }: HazardRiskCardProps) {
       <h2 className="grid-section-h2">災害リスク参考情報</h2>
 
       {!entry ? (
-        <p style={{ fontSize: '0.9rem', color: '#6b7280', margin: '8px 0 0' }}>
+        <p style={{ fontSize: '15px', color: '#6b7280', margin: '8px 0 0' }}>
           座標未確認のため災害リスク情報なし（位置情報が登録されると自動反映されます）
         </p>
       ) : (

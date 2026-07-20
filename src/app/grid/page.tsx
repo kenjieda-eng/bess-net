@@ -566,7 +566,7 @@ export default async function GridIndexPage() {
               <p style={{ margin: '0 0 6px', fontSize: '16px', fontWeight: '700', color: '#1e40af' }}>
                 ⚡ 系統連系の可否・コストを今すぐ診断
               </p>
-              <p style={{ margin: 0, fontSize: '13px', color: '#4b5563', lineHeight: 1.6 }}>
+              <p style={{ margin: 0, fontSize: '15px', color: '#4b5563', lineHeight: 1.6 }}>
                 変電所名・エリアから連系候補を絞り込み、N-1電制の適用可否・接続コスト概算を確認できます。
               </p>
             </div>
@@ -597,10 +597,10 @@ export default async function GridIndexPage() {
               個別変電所の最新情報は、各社の公式サイト（一次ソースリンク）でご確認ください。
               数値の引用・転記には出典明記が必要です。
             </p>
-            <p style={{ marginTop: 4, fontSize: 13, color: 'var(--color-muted)' }}>
+            <p style={{ marginTop: 4, fontSize: 15, color: 'var(--color-muted)' }}>
               ※ 東京電力PG は2026年4月23日時点の予想潮流等PDF（13都県＋基幹系）を収録。空容量は逆潮流側の値です。
             </p>
-            <p style={{ marginTop: 8, fontSize: 13, color: 'var(--color-muted)' }}>
+            <p style={{ marginTop: 8, fontSize: 15, color: 'var(--color-muted)' }}>
               データ最終更新（代表）：<strong>{latestUpdatedStr}</strong>
               <Link href="/tracker/grid" className="grid-area-link">更新タイムラインを見る →</Link>
             </p>
@@ -612,7 +612,7 @@ export default async function GridIndexPage() {
             border: '1px solid var(--color-border)', borderRadius: 6,
           }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (当サイト独自機能)</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li>
                 制度の仕組み（EIC Data 教材）:{' '}
                 <a href="https://data.eic-jp.org/insight/wheeling-charge-structure?utm_source=bess-net&utm_medium=referral&utm_campaign=edu_cluster" target="_blank" rel="noopener noreferrer">

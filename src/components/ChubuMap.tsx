@@ -65,7 +65,7 @@ const LOADING_STYLE: React.CSSProperties = {
   alignItems: 'center',
   justifyContent: 'center',
   color: '#6b7280',
-  fontSize: '14px',
+  fontSize: '15px',
 };
 
 type Props = { substations: SubstationGeoPoint[] };
@@ -128,7 +128,7 @@ export default function ChubuMap({ substations }: Props) {
         <div style={{ textAlign: 'center' }}>
           <div style={{ fontSize: '32px', marginBottom: '8px' }}>🗺</div>
           <div>マップを読み込み中…</div>
-          <div style={{ fontSize: '12px', marginTop: '4px', color: '#9ca3af' }}>
+          <div style={{ fontSize: '13px', marginTop: '4px', color: '#9ca3af' }}>
             {substations.length} 箇所の変電所データを準備しています
           </div>
         </div>
@@ -167,11 +167,11 @@ export default function ChubuMap({ substations }: Props) {
           >
             <Popup>
               <div style={{ minWidth: '200px', maxWidth: '260px' }}>
-                <strong style={{ fontSize: '14px', lineHeight: 1.3 }}>
+                <strong style={{ fontSize: '15px', lineHeight: 1.3 }}>
                   {s.name}
                 </strong>
                 {s.prefecture && (
-                  <div style={{ fontSize: '12px', color: '#666' }}>
+                  <div style={{ fontSize: '13px', color: '#666' }}>
                     {s.prefecture}
                   </div>
                 )}
@@ -180,7 +180,7 @@ export default function ChubuMap({ substations }: Props) {
                     margin: '8px 0',
                     padding: '0',
                     listStyle: 'none',
-                    fontSize: '12px',
+                    fontSize: '15px',
                     lineHeight: 1.5,
                   }}
                 >
@@ -203,7 +203,7 @@ export default function ChubuMap({ substations }: Props) {
                     background: '#0066cc',
                     color: 'white',
                     textDecoration: 'none',
-                    fontSize: '12px',
+                    fontSize: '13px',
                     borderRadius: '4px',
                     fontWeight: 500,
                   }}

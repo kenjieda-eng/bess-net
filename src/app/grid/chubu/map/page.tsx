@@ -28,8 +28,8 @@ const ChubuMap = dynamic(() => import('@/components/ChubuMap'), {
     >
       <div style={{ textAlign: 'center', color: '#6b7280' }}>
         <div style={{ fontSize: '32px', marginBottom: '8px' }}>🗺</div>
-        <div style={{ fontSize: '14px' }}>マップを初期化中…</div>
-        <div style={{ fontSize: '12px', marginTop: '4px', color: '#9ca3af' }}>
+        <div style={{ fontSize: '15px' }}>マップを初期化中…</div>
+        <div style={{ fontSize: '13px', marginTop: '4px', color: '#9ca3af' }}>
           1,081 箇所の変電所データを準備しています
         </div>
       </div>
@@ -155,7 +155,7 @@ export default async function ChubuMapPage() {
                 gap: '16px',
                 flexWrap: 'wrap',
                 margin: '12px 0',
-                fontSize: '13px',
+                fontSize: '15px',
                 listStyle: 'none',
                 padding: 0,
               }}

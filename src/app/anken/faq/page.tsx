@@ -81,20 +81,20 @@ export default function AnkenFaqPage() {
             {FAQ.map((f) => (
               <div key={f.q} style={{ ...card, marginBottom: 12 }}>
                 <h2 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 6px', color: NAVY }}>Q. {f.q}</h2>
-                <p style={{ fontSize: 14, lineHeight: 1.85, margin: 0 }}>A. {f.a}</p>
+                <p style={{ fontSize: 15, lineHeight: 1.85, margin: 0 }}>A. {f.a}</p>
               </div>
             ))}
           </div>
 
           <section style={{ background: NAVY, borderRadius: 12, padding: '28px 24px', color: '#fff', marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#fff' }}>その他のご質問・ご相談</h2>
-            <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>ご不明点は何でもお問い合わせください。中立的にお取り次ぎします。</p>
+            <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>ご不明点は何でもお問い合わせください。中立的にお取り次ぎします。</p>
             <AnkenContactCTA location="faq">お問い合わせはこちら →</AnkenContactCTA>
           </section>
 
           <section style={{ ...card, marginBottom: 16 }}>
-            <h2 style={{ fontSize: 14, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
-            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/anken">流通案件トップ（市場動向）</Link></li>
               <li><Link href="/anken/flow">お取り次ぎの流れ</Link></li>
               <li><Link href="/anken/buy">購入・取得したい方へ</Link></li>
@@ -102,7 +102,7 @@ export default function AnkenFaqPage() {
             </ul>
           </section>
 
-          <p className="anken-prose" style={{ fontSize: 12.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
+          <p className="anken-prose" style={{ fontSize: 15.5, color: 'var(--color-muted)', lineHeight: 1.85, marginLeft: 0 }}>
             ※ 蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な情報提供および案件元へのお取り次ぎ・コンサルティングを行うもので、宅地建物取引の媒介・代理は行いません。掲載は特定回避のため概括化しており、住所・座標・契約日等は掲載していません。取引条件は案件元と直接ご確認ください。
           </p>
         </div>

@@ -194,7 +194,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 <span
                   style={{
                     fontWeight: 400,
-                    fontSize: '0.7rem',
+                    fontSize: '12px',
                     color: '#9ca3af',
                     marginLeft: 4,
                   }}

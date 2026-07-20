@@ -146,7 +146,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
           </h2>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {highlights.map((it) => (
-              <li key={it.id} style={{ marginBottom: 8, fontSize: 14 }}>
+              <li key={it.id} style={{ marginBottom: 8, fontSize: 15 }}>
                 <span style={{ color: 'var(--color-muted)', fontWeight: 600 }}>
                   {formatDateJa(it.eventDate)}
                 </span>{' '}
@@ -175,12 +175,12 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
             alignItems: 'center',
           }}
         >
-          <label style={{ fontSize: 13 }}>
+          <label style={{ fontSize: 15, minWidth: 0, maxWidth: '100%' }}>
             年度:{' '}
             <select
               value={yearFilter}
               onChange={(e) => setYearFilter(e.target.value)}
-              style={{ padding: '4px 8px', fontSize: 13 }}
+              style={{ padding: '4px 8px', fontSize: 15, maxWidth: '100%' }}
             >
               <option value="all">全年</option>
               {years.map((y) => (
@@ -190,12 +190,12 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
               ))}
             </select>
           </label>
-          <label style={{ fontSize: 13 }}>
+          <label style={{ fontSize: 15, minWidth: 0, maxWidth: '100%' }}>
             種別:{' '}
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
-              style={{ padding: '4px 8px', fontSize: 13 }}
+              style={{ padding: '4px 8px', fontSize: 15, maxWidth: '100%' }}
             >
               <option value="all">全種別</option>
               {types.map((t) => (
@@ -205,12 +205,12 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
               ))}
             </select>
           </label>
-          <label style={{ fontSize: 13 }}>
+          <label style={{ fontSize: 15, minWidth: 0, maxWidth: '100%' }}>
             主催:{' '}
             <select
               value={organizerFilter}
               onChange={(e) => setOrganizerFilter(e.target.value)}
-              style={{ padding: '4px 8px', fontSize: 13 }}
+              style={{ padding: '4px 8px', fontSize: 15, maxWidth: '100%' }}
             >
               <option value="all">全主催</option>
               {organizers.map((o) => (
@@ -220,12 +220,12 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
               ))}
             </select>
           </label>
-          <label style={{ fontSize: 13 }}>
+          <label style={{ fontSize: 15, minWidth: 0, maxWidth: '100%' }}>
             ステータス:{' '}
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              style={{ padding: '4px 8px', fontSize: 13 }}
+              style={{ padding: '4px 8px', fontSize: 15, maxWidth: '100%' }}
             >
               <option value="all">全ステータス</option>
               {statuses.map((s) => (
@@ -235,7 +235,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
               ))}
             </select>
           </label>
-          <span style={{ fontSize: 13, color: 'var(--color-muted)', marginLeft: 'auto' }}>
+          <span style={{ fontSize: 15, color: 'var(--color-muted)', marginLeft: 'auto' }}>
             {filtered.length} 件表示中 / 全 {items.length} 件
           </span>
         </div>
@@ -285,13 +285,13 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
                         flexWrap: 'wrap',
                       }}
                     >
-                      <span style={{ fontSize: 13, color: 'var(--color-muted)', fontWeight: 600 }}>
+                      <span style={{ fontSize: 15, color: 'var(--color-muted)', fontWeight: 600 }}>
                         {formatDateRange(it.eventDate, it.endDate)}
                       </span>
                       {type && (
                         <span
                           style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             padding: '2px 8px',
                             borderRadius: 4,
                             color: '#fff',
@@ -305,7 +305,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
                       {status && (
                         <span
                           style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             padding: '2px 8px',
                             borderRadius: 4,
                             color: '#fff',
@@ -316,7 +316,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
                           {status}
                         </span>
                       )}
-                      <span style={{ fontSize: 12, color: 'var(--color-muted)' }}>
+                      <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
                         主催: <strong>{it.organizer}</strong>
                       </span>
                     </div>
@@ -333,7 +333,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
                     {(it.venue || it.location) && (
                       <p
                         style={{
-                          fontSize: 13,
+                          fontSize: 15,
                           margin: '4px 0',
                           color: 'var(--color-muted)',
                         }}
@@ -346,7 +346,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
                       </p>
                     )}
                     {it.description && (
-                      <p style={{ fontSize: 14, margin: '4px 0 8px', lineHeight: 1.6 }}>
+                      <p style={{ fontSize: 15, margin: '4px 0 8px', lineHeight: 1.6 }}>
                         {it.description}
                       </p>
                     )}
@@ -356,7 +356,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
                           href={it.officialUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ fontSize: 13, color: 'var(--color-accent, #0066cc)' }}
+                          style={{ fontSize: 15, color: 'var(--color-accent, #0066cc)' }}
                         >
                           公式サイト →
                         </a>
@@ -364,7 +364,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
                       {it.registrationDeadline && (
                         <span
                           style={{
-                            fontSize: 12,
+                            fontSize: 15,
                             color: '#cc6600',
                             fontWeight: 600,
                           }}

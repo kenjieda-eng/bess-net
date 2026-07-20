@@ -164,7 +164,7 @@ export default async function EventsCalendarPage() {
               <p
                 style={{
                   marginTop: 8,
-                  fontSize: 13,
+                  fontSize: 15,
                   color: 'var(--color-muted)',
                 }}
               >
@@ -188,10 +188,10 @@ export default async function EventsCalendarPage() {
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               関連コンテンツ
             </h2>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
               展示会参加・営業活動・業界研究を深めるための関連リソース:
             </p>
-            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
                 <Link href="/operators">事業者ナビ（EPC・O&M・PCS・電池メーカー等 {operatorCount}社）</Link>
               </li>

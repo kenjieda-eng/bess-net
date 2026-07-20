@@ -147,7 +147,7 @@ export default async function PrefecturePage({ params }: PageParams) {
               <p style={{ margin: '0 0 4px', fontSize: '15px', fontWeight: '700', color: '#1e40af' }}>
                 ⚡ {decoded}の変電所で系統連系を診断する
               </p>
-              <p style={{ margin: 0, fontSize: '12px', color: '#4b5563', lineHeight: 1.5 }}>
+              <p style={{ margin: 0, fontSize: '15px', color: '#4b5563', lineHeight: 1.5 }}>
                 連系候補変電所の特定・N-1電制の可否・接続コスト概算（平均エンゲージ92秒）
               </p>
             </div>
@@ -160,7 +160,7 @@ export default async function PrefecturePage({ params }: PageParams) {
                 textDecoration: 'none',
                 borderRadius: '6px',
                 fontWeight: '700',
-                fontSize: '14px',
+                fontSize: '15px',
                 whiteSpace: 'nowrap',
               }}
             >

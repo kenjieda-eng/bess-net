@@ -105,8 +105,8 @@ export default function IncidentsPage() {
 
           {/* ─ Disclaimer (編集方針 v2 準拠) ─ */}
           <section style={{ padding: 16, marginBottom: 24, background: 'rgba(255,200,0,0.08)', border: '1px solid #c70', borderRadius: 6 }}>
-            <h2 style={{ fontSize: 14, fontWeight: 700, marginTop: 0, marginBottom: 6 }}>⚠ 利用上の注意（必読）</h2>
-            <ul style={{ fontSize: 12, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 6 }}>⚠ 利用上の注意（必読）</h2>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li>本DBは<strong>教育・安全文化向上</strong>を目的としており、法的・技術的な専門助言の代替ではありません。</li>
               <li>情報は<strong>公開資料（報道/政府発表/企業プレスリリース）</strong>に基づきます。原因欄は「推定原因」であり確定情報ではありません。</li>
               <li>詳細は必ず<strong>一次ソース</strong>を参照し、内部判断にお使いください。</li>
@@ -140,31 +140,31 @@ export default function IncidentsPage() {
                 }}>
                   <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', marginBottom: 6 }}>
                     <span style={{
-                      fontSize: 11, padding: '2px 8px', borderRadius: 4,
+                      fontSize: 12, padding: '2px 8px', borderRadius: 4,
                       background: SEVERITY_COLOR[i.severity], color: 'white', fontWeight: 700,
                     }}>{SEVERITY_LABELS[i.severity]}</span>
-                    <span style={{ fontSize: 11, padding: '2px 6px', borderRadius: 3, background: '#eef', color: '#446' }}>
+                    <span style={{ fontSize: 12, padding: '2px 6px', borderRadius: 3, background: '#eef', color: '#446' }}>
                       推定原因: {CAUSE_LABELS[i.cause]}
                     </span>
-                    <span style={{ fontSize: 11, padding: '2px 6px', borderRadius: 3, background: 'var(--color-bg)', color: 'var(--color-muted)' }}>
+                    <span style={{ fontSize: 12, padding: '2px 6px', borderRadius: 3, background: 'var(--color-bg)', color: 'var(--color-muted)' }}>
                       {REGION_LABELS[i.region]} · {i.date}
                     </span>
                     {i.capacity_mwh && (
-                      <span style={{ fontSize: 11, padding: '2px 6px', borderRadius: 3, background: 'var(--color-bg)', color: 'var(--color-muted)' }}>
+                      <span style={{ fontSize: 12, padding: '2px 6px', borderRadius: 3, background: 'var(--color-bg)', color: 'var(--color-muted)' }}>
                         {i.capacity_mwh} MWh
                       </span>
                     )}
                   </div>
                   <h3 style={{ fontSize: 15, fontWeight: 700, margin: '4px 0' }}>{i.facilityName}</h3>
-                  <p style={{ fontSize: 12, color: 'var(--color-muted)', margin: '0 0 6px' }}>{i.location}</p>
-                  <p style={{ fontSize: 13, lineHeight: 1.7, margin: '6px 0' }}>{i.summary}</p>
+                  <p style={{ fontSize: 15, color: 'var(--color-muted)', margin: '0 0 6px' }}>{i.location}</p>
+                  <p style={{ fontSize: 15, lineHeight: 1.7, margin: '6px 0' }}>{i.summary}</p>
                   {i.lessons && (
-                    <p style={{ fontSize: 12, lineHeight: 1.7, margin: '6px 0', padding: 8, background: 'rgba(0,102,204,0.05)', borderLeft: '3px solid var(--color-accent)' }}>
+                    <p style={{ fontSize: 15, lineHeight: 1.7, margin: '6px 0', padding: 8, background: 'rgba(0,102,204,0.05)', borderLeft: '3px solid var(--color-accent)' }}>
                       <strong>学びポイント: </strong>{i.lessons}
                     </p>
                   )}
                   {i.sourceUrls && i.sourceUrls.length > 0 && (
-                    <div style={{ fontSize: 11, marginTop: 6 }}>
+                    <div style={{ fontSize: 12, marginTop: 6 }}>
                       <strong style={{ color: 'var(--color-muted)' }}>出典: </strong>
                       {i.sourceUrls.map((u, idx) => (
                         <span key={u}>
@@ -182,7 +182,7 @@ export default function IncidentsPage() {
           {/* 拡張計画 */}
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>AJ 火災事例 DB 拡張計画</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.7, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.7, paddingLeft: 20, margin: 0 }}>
               <li>事例を 30+ 件に拡張（公開情報ベース・順次追加）</li>
               <li>地域 / 重大度 / 原因 によるフィルタ UI</li>
               <li>国内事例の詳細調査（経産省・消防庁・NEDO 資料ベース）</li>
@@ -193,7 +193,7 @@ export default function IncidentsPage() {
 
           <section style={{ marginTop: 16, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/tools/fire-risk-check">火災リスク自己診断 (教育型・無料)</Link></li>
               <li><Link href="/reports/2026">業界レポート2026 (プレビュー)</Link></li>
               <li><Link href="/industry">業界分析ハブ</Link></li>
@@ -212,7 +212,7 @@ function Stat({ label, value }: { label: string; value: string }) {
       padding: 10, border: '1px solid var(--color-border)', borderRadius: 6,
       background: 'rgba(0, 102, 204, 0.06)', textAlign: 'center',
     }}>
-      <div style={{ fontSize: 11, color: 'var(--color-muted)', marginBottom: 4 }}>{label}</div>
+      <div style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 4 }}>{label}</div>
       <div style={{ fontSize: 18, fontWeight: 700 }}>{value}</div>
     </div>
   );

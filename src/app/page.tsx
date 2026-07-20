@@ -55,7 +55,7 @@ function FeatureCard({ f }: { f: { href: string; title: string; desc: string; ta
       background: 'white',
     }}>
       <div style={{
-        fontSize: 10,
+        fontSize: 12,
         display: 'inline-block',
         padding: '1px 6px',
         background: f.tag === 'ツール' ? '#ffe4d6' : '#d6e4ff',
@@ -64,7 +64,7 @@ function FeatureCard({ f }: { f: { href: string; title: string; desc: string; ta
         marginBottom: 4,
       }}>{f.tag}</div>
       <h3 style={{ fontSize: 15, fontWeight: 700, margin: '4px 0' }}>{f.title}</h3>
-      <p style={{ fontSize: 12, lineHeight: 1.6, margin: 0, color: 'var(--color-muted)' }}>{f.desc}</p>
+      <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, color: 'var(--color-muted)' }}>{f.desc}</p>
     </Link>
   );
 }
@@ -124,7 +124,7 @@ export default async function Home() {
             業界ニュース、プロジェクトデータベース、市場制度解説、補助金カレンダー、政策・法制度カレンダー、業界イベント、業界用語FAQ、変電所別 系統空き容量、事業者情報。蓄電所事業に関わるすべての方が「ここに来れば一通りわかる」サイトを目指します。
           </p>
           {/* 実績数値（全て動的導出・焼き込みなし） */}
-          <p style={{ fontSize: 14, opacity: 0.92, marginTop: 8 }}>
+          <p style={{ fontSize: 15, opacity: 0.92, marginTop: 8 }}>
             解説記事 {explainerCount}本 · 用語集 {glossaryCount.toLocaleString('en-US')}語 · 変電所 {substationsCountStr}件/10社 · 中部マップ {chubuCountStr}箇所
           </p>
           <div className="hero-cta">
@@ -159,8 +159,8 @@ export default async function Home() {
                 <h3 style={{ fontSize: 19, fontWeight: 700, color: '#0f172a', marginTop: 0, marginBottom: 8, lineHeight: 1.5 }}>
                   {it.title}
                 </h3>
-                <p style={{ fontSize: 14, color: '#475569', margin: 0, lineHeight: 1.7 }}>{it.desc}</p>
-                <div style={{ fontSize: 13, color: '#1e40af', fontWeight: 600, marginTop: 12 }}>入口を開く →</div>
+                <p style={{ fontSize: 15, color: '#475569', margin: 0, lineHeight: 1.7 }}>{it.desc}</p>
+                <div style={{ fontSize: 15, color: '#1e40af', fontWeight: 600, marginTop: 12 }}>入口を開く →</div>
               </Link>
             ))}
           </div>
@@ -192,7 +192,7 @@ export default async function Home() {
                           border: '1px solid var(--color-border)',
                           borderRadius: 6,
                           background: 'var(--color-bg-card, #fff)',
-                          fontSize: 14,
+                          fontSize: 15,
                           lineHeight: 1.6,
                         }}
                       >
@@ -209,7 +209,7 @@ export default async function Home() {
                         {type && (
                           <span
                             style={{
-                              fontSize: 11,
+                              fontSize: 12,
                               padding: '2px 8px',
                               borderRadius: 4,
                               color: '#fff',
@@ -234,7 +234,7 @@ export default async function Home() {
             {latestNews.length > 0 && (
               <>
                 <h3 style={{ fontSize: 16, fontWeight: 700, margin: '20px 0 8px' }}>
-                  📰 業界ニュース <Link href="/news" style={{ fontSize: 13, fontWeight: 600, marginLeft: 8 }}>すべて見る →</Link>
+                  📰 業界ニュース <Link href="/news" style={{ fontSize: 15, fontWeight: 600, marginLeft: 8 }}>すべて見る →</Link>
                 </h3>
                 <ul className="article-list">
                   {latestNews.map((article: any) => (
@@ -256,15 +256,15 @@ export default async function Home() {
             )}
 
             {/* Stage5: 低圧クラスタ導線（今週の動き枠内1項目・NEWはLV_NAV_LAUNCH_DATE 30日コード導出 #108・ナビと同時消灯） */}
-            <p style={{ fontSize: 14, marginTop: 16, padding: '12px 16px', border: '1px solid var(--color-border)', borderRadius: 6, background: 'var(--color-bg-card, #fff)', lineHeight: 1.7 }}>
+            <p style={{ fontSize: 15, marginTop: 16, padding: '12px 16px', border: '1px solid var(--color-border)', borderRadius: 6, background: 'var(--color-bg-card, #fff)', lineHeight: 1.7 }}>
               {Date.now() - new Date(LV_NAV_LAUNCH_DATE).getTime() < 30 * 24 * 60 * 60 * 1000 && (
-                <span style={{ fontSize: 10, padding: '2px 6px', borderRadius: 4, color: '#fff', background: '#e11d48', fontWeight: 700, marginRight: 8, verticalAlign: 'middle' }}>NEW</span>
+                <span style={{ fontSize: 12, padding: '2px 6px', borderRadius: 4, color: '#fff', background: '#e11d48', fontWeight: 700, marginRight: 8, verticalAlign: 'middle' }}>NEW</span>
               )}
               <Link href="/lv" style={{ fontWeight: 600 }}>低圧蓄電所・低圧系統用蓄電池 総合ガイド</Link>
               <span style={{ color: 'var(--color-muted)' }}> ── 仕組み・収益・購入・参入を中立の立場で体系解説</span>
             </p>
 
-            <p style={{ fontSize: 13, marginTop: 12 }}>
+            <p style={{ fontSize: 15, marginTop: 12 }}>
               カレンダーで追う: <Link href="/policy-calendar" style={{ fontWeight: 600 }}>政策・法制度</Link>
               {' / '}
               <Link href="/events" style={{ fontWeight: 600 }}>業界イベント</Link>
@@ -294,7 +294,7 @@ export default async function Home() {
           </div>
           {/* 残り機能はデフォルト折りたたみ（#107: details=表示切替・初期DOMに全文残る） */}
           <details style={{ marginTop: 16 }}>
-            <summary style={{ cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--color-accent, #0066cc)' }}>
+            <summary style={{ cursor: 'pointer', fontSize: 15, fontWeight: 600, color: 'var(--color-accent, #0066cc)' }}>
               その他の機能を表示（補助金マッチング・容量市場応札試算・業界分析ハブ など 6件）
             </summary>
             <div style={{
@@ -308,7 +308,7 @@ export default async function Home() {
               ))}
             </div>
           </details>
-          <p style={{ fontSize: 14, marginTop: 16 }}>
+          <p style={{ fontSize: 15, marginTop: 16 }}>
             <Link href="/tools" style={{ fontWeight: 600 }}>すべてのツールを見る →</Link>
           </p>
         </div>
@@ -341,7 +341,7 @@ export default async function Home() {
               <h3 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>
                 解説記事（{explainerCount}本）
               </h3>
-              <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+              <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
                 市場制度・参入手順・補助金など、実務担当者向けに体系解説。
                 <Link href="/explainer" style={{ fontWeight: 600, marginLeft: 6 }}>すべて見る →</Link>
               </p>
@@ -368,7 +368,7 @@ export default async function Home() {
               <h3 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>
                 用語集（{glossaryCount.toLocaleString('en-US')}語）
               </h3>
-              <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+              <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
                 業界用語を一言定義と詳細解説で整備。
                 <Link href="/glossary" style={{ fontWeight: 600, marginLeft: 6 }}>用語集を開く →</Link>
               </p>
@@ -389,7 +389,7 @@ export default async function Home() {
               )}
             </div>
           </div>
-          <p style={{ fontSize: 13, marginTop: 16 }}>
+          <p style={{ fontSize: 15, marginTop: 16 }}>
             <Link href="/faq" style={{ fontWeight: 600 }}>業界用語よくある質問（FAQ）→</Link>
           </p>
         </div>
@@ -426,7 +426,7 @@ export default async function Home() {
             までご連絡ください。
           </p>
           {/* 記録系（ロードマップ・公開予定）は /milestones へ移設（top分析2026-07-12） */}
-          <p style={{ fontSize: 13, marginTop: 16 }}>
+          <p style={{ fontSize: 15, marginTop: 16 }}>
             <Link href="/milestones" style={{ fontWeight: 600 }}>サイトの歩み・公開予定 →</Link>
           </p>
         </div>
