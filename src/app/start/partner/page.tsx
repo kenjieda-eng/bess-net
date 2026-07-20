@@ -140,7 +140,7 @@ export default function StartPartnerPage() {
                 color: '#fff',
                 padding: '12px 28px',
                 borderRadius: 4,
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: 700,
                 textDecoration: 'none',
               }}
@@ -149,7 +149,7 @@ export default function StartPartnerPage() {
             </a>
           </div>
 
-          <p style={{ fontSize: 12, color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: 24 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: 24 }}>
             本サービスは、蓄電所ネットの運営元である{siteConfig.organization.name}（EIC）が承ります。
           </p>
 
@@ -160,7 +160,7 @@ export default function StartPartnerPage() {
               background: 'var(--color-bg)',
               border: '1px solid var(--color-border)',
               borderRadius: 8,
-              fontSize: 14,
+              fontSize: 15,
             }}
           >
             <h2 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>さらに詳しく</h2>

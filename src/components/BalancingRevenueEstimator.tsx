@@ -221,7 +221,7 @@ export function BalancingRevenueEstimator({
                     <span
                       style={{
                         marginLeft: 6,
-                        fontSize: 12,
+                        fontSize: 15,
                         padding: '1px 6px',
                         background: 'var(--color-accent, #00B5A5)',
                         color: '#fff',
@@ -236,7 +236,7 @@ export function BalancingRevenueEstimator({
                     <span
                       style={{
                         marginLeft: 6,
-                        fontSize: 12,
+                        fontSize: 15,
                         padding: '1px 6px',
                         background: '#fef3c7',
                         color: '#92400e',
@@ -248,7 +248,7 @@ export function BalancingRevenueEstimator({
                     </span>
                   )}
                 </div>
-                <div style={{ fontSize: 12, color: '#6b7280', marginTop: 2 }}>{opt.note}</div>
+                <div style={{ fontSize: 13, color: '#6b7280', marginTop: 2 }}>{opt.note}</div>
               </div>
             </label>
           ))}
@@ -280,7 +280,7 @@ export function BalancingRevenueEstimator({
               style={inputStyle}
               aria-label="提供容量（kW）"
             />
-            <span style={{ fontSize: 12, color: '#6b7280', marginTop: 2, display: 'block' }}>
+            <span style={{ fontSize: 15, color: '#6b7280', marginTop: 2, display: 'block' }}>
               応札・調達に充てる容量
             </span>
           </label>
@@ -297,7 +297,7 @@ export function BalancingRevenueEstimator({
               style={inputStyle}
               aria-label="年間提供コマ数"
             />
-            <span style={{ fontSize: 12, color: '#6b7280', marginTop: 2, display: 'block' }}>
+            <span style={{ fontSize: 15, color: '#6b7280', marginTop: 2, display: 'block' }}>
               最大 {BLOCKS_PER_YEAR.toLocaleString()}（365×48）。エネルギー制約で実際は下回ります。
             </span>
           </label>
@@ -314,7 +314,7 @@ export function BalancingRevenueEstimator({
                 />
                 <span>複合を含める（二重計上注意）</span>
               </label>
-              <span style={{ fontSize: 12, color: '#6b7280', marginTop: 4, display: 'block' }}>
+              <span style={{ fontSize: 15, color: '#6b7280', marginTop: 4, display: 'block' }}>
                 個別商品と重複し得るため既定で除外
               </span>
             </div>
@@ -353,7 +353,7 @@ export function BalancingRevenueEstimator({
                       <span
                         style={{
                           marginLeft: 6,
-                          fontSize: 12,
+                          fontSize: 15,
                           padding: '1px 5px',
                           background: '#fef3c7',
                           color: '#92400e',
@@ -367,7 +367,7 @@ export function BalancingRevenueEstimator({
                       <span
                         style={{
                           marginLeft: 6,
-                          fontSize: 12,
+                          fontSize: 15,
                           padding: '1px 5px',
                           background: '#ede9fe',
                           color: '#5b21b6',
@@ -380,7 +380,7 @@ export function BalancingRevenueEstimator({
                   </td>
                   <td style={{ ...tdStyle, textAlign: 'right', whiteSpace: 'nowrap' }}>
                     {r.price.toFixed(2)}{' '}
-                    <span style={{ fontSize: 12, color: '#9ca3af' }}>円/ΔkW・30分</span>
+                    <span style={{ fontSize: 15, color: '#9ca3af' }}>円/ΔkW・30分</span>
                   </td>
                   <td style={{ ...tdStyle, textAlign: 'center' }}>
                     <input
@@ -449,7 +449,7 @@ export function BalancingRevenueEstimator({
           background: 'var(--color-bg, #f9fafb)',
           border: '1px solid var(--color-border, #e5e7eb)',
           borderRadius: 6,
-          fontSize: 13,
+          fontSize: 15,
           color: '#6b7280',
           lineHeight: 1.7,
         }}

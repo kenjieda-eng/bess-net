@@ -57,7 +57,7 @@ function Field({
             style={{ width: 92, padding: '4px 6px', fontSize: 15, textAlign: 'right', border: '1px solid var(--color-border)', borderRadius: 4 }}
             aria-label={label}
           />
-          <span style={{ fontSize: 13, color: 'var(--color-muted)', minWidth: 42 }}>{unit}</span>
+          <span style={{ fontSize: 15, color: 'var(--color-muted)', minWidth: 42 }}>{unit}</span>
         </span>
       </label>
       <input
@@ -65,7 +65,7 @@ function Field({
         onChange={(e) => onChange(toModel(Number(e.target.value)))}
         style={{ width: '100%' }} aria-label={`${label} スライダー`}
       />
-      {hint && <p style={{ fontSize: 12, color: 'var(--color-muted)', margin: '2px 0 0' }}>{hint}</p>}
+      {hint && <p style={{ fontSize: 15, color: 'var(--color-muted)', margin: '2px 0 0' }}>{hint}</p>}
     </div>
   );
 }
@@ -168,7 +168,7 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
       }}
     >
       <span style={{ fontSize: 15 }}>{label}</span>
-      <br /><span style={{ fontSize: 12, color: 'var(--color-muted)', fontWeight: 400 }}>{sub}</span>
+      <br /><span style={{ fontSize: 15, color: 'var(--color-muted)', fontWeight: 400 }}>{sub}</span>
     </button>
   );
 
@@ -204,7 +204,7 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
                       color: capexMode === m ? '#fff' : 'var(--color-text)', fontWeight: capexMode === m ? 700 : 500,
                     }}>
                     {m === 'low' ? '楽観' : m === 'mid' ? '標準' : '保守'}<br />
-                    <span style={{ fontSize: 12 }}>{yen(lcosCapex[m])}</span>
+                    <span style={{ fontSize: 15 }}>{yen(lcosCapex[m])}</span>
                   </button>
                 ))}
               </div>
@@ -240,7 +240,7 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
               <div style={{ width: `${lcosResult.chargePct}%`, background: '#e8833a' }} title={`充電費 ${lcosResult.chargePct.toFixed(0)}%`} />
               <div style={{ width: `${lcosResult.omPct}%`, background: '#5aa469' }} title={`O&M ${lcosResult.omPct.toFixed(0)}%`} />
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 8, fontSize: 13 }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 8, fontSize: 15 }}>
               <span><span style={{ color: '#0066cc' }}>■</span> CAPEX {lcosResult.capexPct.toFixed(0)}%（{yen(lcosResult.capexContrib, 1)}/kWh）</span>
               <span><span style={{ color: '#e8833a' }}>■</span> 充電費 {lcosResult.chargePct.toFixed(0)}%（{yen(lcosResult.chargeContrib, 1)}/kWh）</span>
               <span><span style={{ color: '#5aa469' }}>■</span> O&M {lcosResult.omPct.toFixed(0)}%（{yen(lcosResult.omContrib, 1)}/kWh）</span>
@@ -298,7 +298,7 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
                       <input type="number" value={Math.round((cfBySource[r.key] ?? r.cfDefault) * 1000) / 10}
                         min={1} max={100} step={1}
                         onChange={(e) => { const n = Number(e.target.value); if (Number.isFinite(n)) setCfBySource((p) => ({ ...p, [r.key]: n / 100 })); }}
-                        style={{ width: 56, padding: '3px 4px', fontSize: 13, textAlign: 'right', border: '1px solid var(--color-border)', borderRadius: 4 }}
+                        style={{ width: 56, padding: '3px 4px', fontSize: 15, textAlign: 'right', border: '1px solid var(--color-border)', borderRadius: 4 }}
                         aria-label={`${r.label} 設備利用率`} />
                     </td>
                     <td style={{ padding: '6px 8px', fontWeight: 700, color: 'var(--color-accent, #0066cc)' }}>{yen(r.simpleJpyPerKwh, 1)}</td>

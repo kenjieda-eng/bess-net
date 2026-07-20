@@ -117,7 +117,7 @@ export default async function PolicyCalendarPage() {
               <p
                 style={{
                   marginTop: 8,
-                  fontSize: 13,
+                  fontSize: 15,
                   color: 'var(--color-muted)',
                 }}
               >
@@ -141,10 +141,10 @@ export default async function PolicyCalendarPage() {
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               関連コンテンツ
             </h2>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
               政策・制度の理解を深めるための関連リソース:
             </p>
-            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
                 <Link href="/explainer/grid-scale-bess">系統用蓄電池とは — 基礎解説</Link>
               </li>

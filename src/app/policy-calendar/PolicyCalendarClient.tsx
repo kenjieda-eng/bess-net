@@ -87,12 +87,12 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
             alignItems: 'center',
           }}
         >
-          <label style={{ fontSize: 13 }}>
+          <label style={{ fontSize: 15 }}>
             年度:{' '}
             <select
               value={yearFilter}
               onChange={(e) => setYearFilter(e.target.value)}
-              style={{ padding: '4px 8px', fontSize: 13 }}
+              style={{ padding: '4px 8px', fontSize: 15 }}
             >
               <option value="all">全年</option>
               {years.map((y) => (
@@ -102,12 +102,12 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
               ))}
             </select>
           </label>
-          <label style={{ fontSize: 13 }}>
+          <label style={{ fontSize: 15 }}>
             種別:{' '}
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
-              style={{ padding: '4px 8px', fontSize: 13 }}
+              style={{ padding: '4px 8px', fontSize: 15 }}
             >
               <option value="all">全種別</option>
               {types.map((t) => (
@@ -117,12 +117,12 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
               ))}
             </select>
           </label>
-          <label style={{ fontSize: 13 }}>
+          <label style={{ fontSize: 15 }}>
             発行元:{' '}
             <select
               value={issuerFilter}
               onChange={(e) => setIssuerFilter(e.target.value)}
-              style={{ padding: '4px 8px', fontSize: 13 }}
+              style={{ padding: '4px 8px', fontSize: 15 }}
             >
               <option value="all">全発行元</option>
               {issuers.map((i) => (
@@ -132,7 +132,7 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
               ))}
             </select>
           </label>
-          <span style={{ fontSize: 13, color: 'var(--color-muted)', marginLeft: 'auto' }}>
+          <span style={{ fontSize: 15, color: 'var(--color-muted)', marginLeft: 'auto' }}>
             {filtered.length} 件表示中 / 全 {items.length} 件
           </span>
         </div>
@@ -182,13 +182,13 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
                         flexWrap: 'wrap',
                       }}
                     >
-                      <span style={{ fontSize: 13, color: 'var(--color-muted)', fontWeight: 600 }}>
+                      <span style={{ fontSize: 15, color: 'var(--color-muted)', fontWeight: 600 }}>
                         {formatDateJa(it.eventDate)}
                       </span>
                       {type && (
                         <span
                           style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             padding: '2px 8px',
                             borderRadius: 4,
                             color: '#fff',
@@ -202,7 +202,7 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
                       {status && (
                         <span
                           style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             padding: '2px 8px',
                             borderRadius: 4,
                             color: '#fff',
@@ -213,7 +213,7 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
                           {status}
                         </span>
                       )}
-                      <span style={{ fontSize: 12, color: 'var(--color-muted)' }}>
+                      <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
                         発行元: <strong>{it.issuer}</strong>
                       </span>
                     </div>
@@ -237,7 +237,7 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
                       )}
                     </h3>
                     {it.description && (
-                      <p style={{ fontSize: 14, margin: '4px 0 8px', lineHeight: 1.6 }}>
+                      <p style={{ fontSize: 15, margin: '4px 0 8px', lineHeight: 1.6 }}>
                         {it.description}
                       </p>
                     )}
@@ -246,7 +246,7 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
                         href={it.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ fontSize: 13, color: 'var(--color-accent, #0066cc)' }}
+                        style={{ fontSize: 15, color: 'var(--color-accent, #0066cc)' }}
                       >
                         公式情報源 →
                       </a>

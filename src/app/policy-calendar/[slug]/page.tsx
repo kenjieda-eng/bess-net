@@ -157,13 +157,13 @@ export default async function PolicyEventDetailPage({
               margin: '12px 0 20px',
             }}
           >
-            <span style={{ fontSize: 14, color: 'var(--color-muted)', fontWeight: 600 }}>
+            <span style={{ fontSize: 15, color: 'var(--color-muted)', fontWeight: 600 }}>
               {formatDateJa(ev.eventDate)}
             </span>
             {type && (
               <span
                 style={{
-                  fontSize: 12,
+                  fontSize: 15,
                   padding: '2px 10px',
                   borderRadius: 4,
                   color: '#fff',
@@ -177,7 +177,7 @@ export default async function PolicyEventDetailPage({
             {status && (
               <span
                 style={{
-                  fontSize: 12,
+                  fontSize: 15,
                   padding: '2px 10px',
                   borderRadius: 4,
                   color: '#fff',
@@ -188,7 +188,7 @@ export default async function PolicyEventDetailPage({
                 {status}
               </span>
             )}
-            <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+            <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
               発行元: <strong>{ev.issuer}</strong>
             </span>
           </div>
@@ -225,7 +225,7 @@ export default async function PolicyEventDetailPage({
                           : '4px solid var(--color-border)',
                         borderRadius: 6,
                         background: 'var(--color-bg-card, #fff)',
-                        fontSize: 14,
+                        fontSize: 15,
                         lineHeight: 1.6,
                       }}
                     >
@@ -285,7 +285,7 @@ export default async function PolicyEventDetailPage({
             ) : (
               <p>出典URLは一覧ページをご参照ください。</p>
             )}
-            <p className="page-meta" style={{ fontSize: 12 }}>
+            <p className="page-meta" style={{ fontSize: 15 }}>
               ※ 各イベントの公式情報は出典 URL（経済産業省・OCCTO・環境省・NEDO・SII 等）をご参照ください。
               ※ 当サイトは公開情報を整理した第三者発信であり、各機関の公式情報とは独立しています。
             </p>

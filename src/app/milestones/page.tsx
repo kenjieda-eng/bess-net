@@ -115,7 +115,7 @@ export default function MilestonesIndexPage() {
                         color: 'inherit',
                       }}
                     >
-                      <div style={{ fontSize: 14, fontWeight: 600, color: '#1d4ed8', fontVariantNumeric: 'tabular-nums' }} className="tabular-nums">
+                      <div style={{ fontSize: 15, fontWeight: 600, color: '#1d4ed8', fontVariantNumeric: 'tabular-nums' }} className="tabular-nums">
                         {formatDateJa(m.date)}
                       </div>
                       <div style={{ fontSize: 18, fontWeight: 700, color: '#0f172a', marginTop: 4, lineHeight: 1.5 }}>
@@ -148,7 +148,7 @@ export default function MilestonesIndexPage() {
                         color: 'inherit',
                       }}
                     >
-                      <div style={{ fontSize: 14, fontWeight: 600, color: '#d97706', fontVariantNumeric: 'tabular-nums' }} className="tabular-nums">
+                      <div style={{ fontSize: 15, fontWeight: 600, color: '#d97706', fontVariantNumeric: 'tabular-nums' }} className="tabular-nums">
                         {formatDateJa(m.date)}
                         {m.status === 'upcoming' && ' (公開待ち)'}
                         {m.status === 'planned' && ' (予定)'}

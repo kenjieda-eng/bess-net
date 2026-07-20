@@ -142,7 +142,7 @@ export default function SubsidiesListPage() {
             border: '1px solid var(--color-border)', borderRadius: 6,
           }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (当サイト独自機能)</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/tools/subsidy-match">補助金マッチング</Link> — 事業条件から最適補助金を自動マッチング</li>
               <li><Link href="/tracker/subsidy">補助金トラッカー</Link> — 補助金の追加・更新タイムライン</li>
               <li><Link href="/industry">業界分析ハブ</Link></li>

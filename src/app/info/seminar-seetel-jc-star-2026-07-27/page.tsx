@@ -122,7 +122,7 @@ export default function SeetelSeminarPage() {
               style={{
                 width: '100%',
                 borderCollapse: 'collapse',
-                fontSize: 14,
+                fontSize: 15,
                 lineHeight: 1.8,
               }}
             >
@@ -153,7 +153,7 @@ export default function SeetelSeminarPage() {
               <li>
                 <strong>日本の系統用蓄電池制度設計から読み解く2030政策動向と事業機会</strong>
                 <br />
-                <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+                <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
                   村谷 敬 氏（AnPrenergy）
                 </span>
               </li>
@@ -162,14 +162,14 @@ export default function SeetelSeminarPage() {
                   台湾企業初 JC-STAR 取得 SEETEL の日本市場戦略・次世代蓄電池/EMSソリューション
                 </strong>
                 <br />
-                <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+                <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
                   松島可奈恵 氏・Ray Wen 氏・Jeff Chang 氏（SEETEL Group）
                 </span>
               </li>
               <li style={{ marginTop: 12 }}>
                 <strong>特別講演：台湾VPPの現状と展望</strong>
                 <br />
-                <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+                <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
                   胡 誌麟 教授（台湾中央大学）
                 </span>
               </li>
@@ -178,7 +178,7 @@ export default function SeetelSeminarPage() {
                   パネルディスカッション「日台スマートグリッド未来フォーラム ― Utility 3.0」
                 </strong>
                 <br />
-                <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>
+                <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
                   石井英雄 氏（早稲田大学）・岡本浩 氏（東京電力HD 上席フェロー）・胡誌麟 教授
                   ／ファシリテーター：松島可奈恵 氏
                 </span>
@@ -216,14 +216,14 @@ export default function SeetelSeminarPage() {
             >
               募集は締め切りました
             </p>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', margin: 0 }}>
               多数のお申込みをありがとうございました。
             </p>
           </div>
 
           <p
             style={{
-              fontSize: 12,
+              fontSize: 15,
               color: 'var(--color-muted)',
               lineHeight: 1.7,
               marginBottom: 24,

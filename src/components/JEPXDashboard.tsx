@@ -126,7 +126,7 @@ export default function JEPXDashboard() {
               cursor: 'pointer',
               fontWeight: view === tab.id ? 700 : 500,
               color: view === tab.id ? 'var(--color-accent)' : 'var(--color-text)',
-              fontSize: 14,
+              fontSize: 15,
             }}
           >
             {tab.label}
@@ -136,13 +136,13 @@ export default function JEPXDashboard() {
 
       {/* エリア選択 */}
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16, alignItems: 'center' }}>
-        <label style={{ fontSize: 13, fontWeight: 600 }}>エリア:</label>
-        <select value={area} onChange={(e) => setArea(e.target.value as AreaKey)} style={{ padding: '6px 10px', border: '1px solid var(--color-border)', borderRadius: 4, fontSize: 13 }}>
+        <label style={{ fontSize: 15, fontWeight: 600 }}>エリア:</label>
+        <select value={area} onChange={(e) => setArea(e.target.value as AreaKey)} style={{ padding: '6px 10px', border: '1px solid var(--color-border)', borderRadius: 4, fontSize: 15 }}>
           {AREAS.map((a) => (<option key={a} value={a}>{AREA_LABELS[a]}</option>))}
         </select>
-        <button onClick={handleShare} style={{ padding: '6px 12px', fontSize: 12, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 4, cursor: 'pointer' }}>URL共有</button>
-        <button onClick={exportCSV} style={{ padding: '6px 12px', fontSize: 12, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 4, cursor: 'pointer' }}>CSV出力</button>
-        {shareMsg && <span style={{ fontSize: 12, color: 'var(--color-accent)' }} aria-live="polite">{shareMsg}</span>}
+        <button onClick={handleShare} style={{ padding: '6px 12px', fontSize: 15, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 4, cursor: 'pointer' }}>URL共有</button>
+        <button onClick={exportCSV} style={{ padding: '6px 12px', fontSize: 15, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 4, cursor: 'pointer' }}>CSV出力</button>
+        {shareMsg && <span style={{ fontSize: 15, color: 'var(--color-accent)' }} aria-live="polite">{shareMsg}</span>}
       </div>
 
       {/* 価格推移 (line chart) */}
@@ -175,7 +175,7 @@ export default function JEPXDashboard() {
         />
       )}
 
-      <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.6 }}>
         ※ 本データは JEPX 公表値ベースの<strong>モック</strong>です (編集部生成、決定論的)。
         最新の実勢値は <a href="https://www.jepx.jp/electricpower/market-data/spot/" target="_blank" rel="noopener noreferrer">JEPX 公式</a> を参照。
       </p>
@@ -248,7 +248,7 @@ function Heatmap({ records }: { records: { dateStr: string; daysAgo: number; slo
   };
   return (
     <div style={{ overflowX: 'auto' }}>
-      <table style={{ borderCollapse: 'collapse', fontSize: 9, lineHeight: 1 }} aria-label="価格ヒートマップ">
+      <table style={{ borderCollapse: 'collapse', fontSize: 12, lineHeight: 1 }} aria-label="価格ヒートマップ">
         <thead>
           <tr>
             <th style={{ padding: 2, textAlign: 'left', minWidth: 60 }}>日付</th>
@@ -272,7 +272,7 @@ function Heatmap({ records }: { records: { dateStr: string; daysAgo: number; slo
           ))}
         </tbody>
       </table>
-      <p style={{ fontSize: 11, color: 'var(--color-muted)', marginTop: 8 }}>
+      <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 8 }}>
         色: 青 (安値、{vMin.toFixed(1)}円) → 黄 → 赤 (高値、{vMax.toFixed(1)}円) / マウスオーバーで詳細
       </p>
     </div>
@@ -328,17 +328,17 @@ function ArbitrageView({ area, capacityMWh, setCapacityMWh, efficiency, setEffic
     <div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12, marginBottom: 16 }}>
         <div>
-          <label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>容量 (MWh)</label>
+          <label style={{ fontSize: 15, fontWeight: 600, display: 'block', marginBottom: 4 }}>容量 (MWh)</label>
           <input type="number" min={1} max={500} step={1} value={capacityMWh} onChange={(e) => setCapacityMWh(Number(e.target.value))}
             style={{ width: '100%', padding: '6px 8px', border: '1px solid var(--color-border)', borderRadius: 4 }} />
         </div>
         <div>
-          <label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>往復効率 (%)</label>
+          <label style={{ fontSize: 15, fontWeight: 600, display: 'block', marginBottom: 4 }}>往復効率 (%)</label>
           <input type="number" min={50} max={100} step={1} value={Math.round(efficiency * 100)} onChange={(e) => setEfficiency(Number(e.target.value) / 100)}
             style={{ width: '100%', padding: '6px 8px', border: '1px solid var(--color-border)', borderRadius: 4 }} />
         </div>
         <div>
-          <label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>1日サイクル数</label>
+          <label style={{ fontSize: 15, fontWeight: 600, display: 'block', marginBottom: 4 }}>1日サイクル数</label>
           <select value={cycles} onChange={(e) => setCycles(Number(e.target.value))}
             style={{ width: '100%', padding: '6px 8px', border: '1px solid var(--color-border)', borderRadius: 4 }}>
             <option value={1}>1サイクル</option>
@@ -358,8 +358,8 @@ function ArbitrageView({ area, capacityMWh, setCapacityMWh, efficiency, setEffic
 
       {comparison && (
         <div style={{ marginTop: 16 }}>
-          <h3 style={{ fontSize: 14, fontWeight: 700, marginBottom: 8 }}>9エリア比較 (過去30日 平均日次粗利益)</h3>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+          <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 8 }}>9エリア比較 (過去30日 平均日次粗利益)</h3>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
             <thead>
               <tr style={{ background: 'var(--color-bg)' }}>
                 <th style={{ padding: 6, textAlign: 'left', border: '1px solid var(--color-border)' }}>エリア</th>
@@ -389,7 +389,7 @@ function Card({ label, value, accent }: { label: string; value: string; accent?:
       padding: 12, border: '1px solid var(--color-border)', borderRadius: 6,
       background: accent ? 'rgba(0, 102, 204, 0.08)' : 'transparent',
     }}>
-      <div style={{ fontSize: 11, color: 'var(--color-muted)', marginBottom: 4 }}>{label}</div>
+      <div style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 4 }}>{label}</div>
       <div style={{ fontSize: accent ? 18 : 16, fontWeight: 700 }}>{value}</div>
     </div>
   );

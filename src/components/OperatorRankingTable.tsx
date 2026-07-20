@@ -105,7 +105,7 @@ export default function OperatorRankingTable({ ranking }: Props) {
                         display: 'inline-block',
                         marginLeft: 6,
                         padding: '1px 5px',
-                        fontSize: 12,
+                        fontSize: 15,
                         background: '#e0e7ff',
                         color: '#3730a3',
                         borderRadius: 3,
@@ -129,7 +129,7 @@ export default function OperatorRankingTable({ ranking }: Props) {
                   {r.totalCapacityMwh.toLocaleString('ja-JP')}
                   <span
                     style={{
-                      fontSize: 12,
+                      fontSize: 15,
                       color: '#888',
                       marginLeft: 4,
                       display: 'block',
@@ -162,7 +162,7 @@ export default function OperatorRankingTable({ ranking }: Props) {
         </tbody>
       </table>
       <p style={{ fontSize: 15, color: '#888', marginTop: 8 }}>
-        ※ <span style={{ display: 'inline-block', padding: '1px 5px', fontSize: 12, background: '#e0e7ff', color: '#3730a3', borderRadius: 3 }}>共同</span>{' '}
+        ※ <span style={{ display: 'inline-block', padding: '1px 5px', fontSize: 15, background: '#e0e7ff', color: '#3730a3', borderRadius: 3 }}>共同</span>{' '}
         は「○○・△△」「○○他」等の共同出資/コンソーシアム。登録名どおりに計上し、構成各社へは分解していません。
       </p>
     </div>

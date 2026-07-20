@@ -66,7 +66,7 @@ export default async function OperatorTrackerPage() {
             事業者ナビ (蓄電所関連事業者) の追加・更新を<strong>タイムライン</strong>表示。
             全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{operators.length}</span> 件、更新日時降順。
           </p>
-          <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 24 }}>
+          <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 24 }}>
             データ更新は 1 時間ごと (ISR)。全件は <Link href="/operators">事業者ナビ</Link>、業界構造は <Link href="/map/industry-chaos">業界カオスマップ</Link> から。
           </p>
 
@@ -74,7 +74,7 @@ export default async function OperatorTrackerPage() {
 
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/operators">事業者ナビ (全件)</Link></li>
               <li><Link href="/map/industry-chaos">業界カオスマップ (当サイト独自)</Link></li>
               <li><Link href="/tracker">業界トラッカー (4軸)</Link></li>

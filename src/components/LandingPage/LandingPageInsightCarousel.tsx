@@ -37,7 +37,7 @@ export default function LandingPageInsightCarousel({ insightSlugs }: Props) {
         </h2>
         <p
           style={{
-            fontSize: 14,
+            fontSize: 15,
             color: '#64748b',
             textAlign: 'center',
             marginBottom: 32,
@@ -71,7 +71,7 @@ export default function LandingPageInsightCarousel({ insightSlugs }: Props) {
             >
               <div
                 style={{
-                  fontSize: 12,
+                  fontSize: 13,
                   color: '#a16207',
                   fontWeight: 700,
                   marginBottom: 8,
@@ -91,7 +91,7 @@ export default function LandingPageInsightCarousel({ insightSlugs }: Props) {
               >
                 {INSIGHT_LABELS[slug] ?? slug}
               </div>
-              <div style={{ fontSize: 13, color: '#1d4ed8' }}>EIC Data で読む →</div>
+              <div style={{ fontSize: 15, color: '#1d4ed8' }}>EIC Data で読む →</div>
             </a>
           ))}
         </div>

@@ -35,7 +35,7 @@ export default function LandingPageDataSection({
         </h2>
         <p
           style={{
-            fontSize: 14,
+            fontSize: 15,
             color: '#64748b',
             textAlign: 'center',
             marginBottom: 40,
@@ -78,7 +78,7 @@ export default function LandingPageDataSection({
             >
               <div
                 style={{
-                  fontSize: 14,
+                  fontSize: 15,
                   fontWeight: 600,
                   color: '#1d4ed8',
                   marginBottom: 8,
@@ -113,7 +113,7 @@ export default function LandingPageDataSection({
               )}
               <div
                 style={{
-                  fontSize: 13,
+                  fontSize: 15,
                   color: '#1d4ed8',
                   marginTop: 8,
                 }}

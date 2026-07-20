@@ -226,7 +226,7 @@ export default async function ExplainerDetailPage({
           {exp.slug === 'low-voltage-balancing-market-launch' && (
             <section className="article-section">
               <h3 className="related-h3">低圧蓄電所 総合ガイド</h3>
-              <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+              <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
                 <li><Link href="/lv">低圧蓄電所 総合ガイド ── 仕組み・収益・購入・参入</Link></li>
                 <li><Link href="/lv/what-is">低圧蓄電所（低圧系統用蓄電池）とは？ ── 仕組みと高圧との違い</Link></li>
               </ul>
@@ -237,7 +237,7 @@ export default async function ExplainerDetailPage({
           {EXPLAINER_EDU_LINKS[exp.slug] && (
             <section className="article-section">
               <h3 className="related-h3">制度の仕組み（EIC Data 教材）</h3>
-              <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+              <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
                 {EXPLAINER_EDU_LINKS[exp.slug].map((l) => (
                   <li key={l.href}>
                     <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label} ↗</a>

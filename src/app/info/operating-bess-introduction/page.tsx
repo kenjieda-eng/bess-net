@@ -157,7 +157,7 @@ export default function OperatingBessIntroductionPage() {
                 color: '#fff',
                 padding: '12px 28px',
                 borderRadius: 4,
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: 700,
                 textDecoration: 'none',
               }}
@@ -173,7 +173,7 @@ export default function OperatingBessIntroductionPage() {
               background: 'var(--color-bg)',
               border: '1px solid var(--color-border)',
               borderRadius: 8,
-              fontSize: 14,
+              fontSize: 15,
             }}
           >
             <h2 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>

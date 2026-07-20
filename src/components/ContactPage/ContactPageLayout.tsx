@@ -89,7 +89,7 @@ export default function ContactPageLayout({ config }: { config: ContactPageConfi
                   </h3>
                   <p
                     style={{
-                      fontSize: 13,
+                      fontSize: 15,
                       lineHeight: 1.7,
                       color: '#4b5563',
                       margin: 0,
@@ -115,7 +115,7 @@ export default function ContactPageLayout({ config }: { config: ContactPageConfi
           >
             <p
               style={{
-                fontSize: 14,
+                fontSize: 15,
                 lineHeight: 1.7,
                 color: '#374151',
                 marginBottom: 16,
@@ -136,7 +136,7 @@ export default function ContactPageLayout({ config }: { config: ContactPageConfi
             </a>
             <p
               style={{
-                fontSize: 11,
+                fontSize: 12,
                 color: '#6b7280',
                 marginTop: 12,
                 marginBottom: 0,
@@ -166,7 +166,7 @@ export default function ContactPageLayout({ config }: { config: ContactPageConfi
                     style={{
                       color: 'var(--color-accent, #00B5A5)',
                       textDecoration: 'none',
-                      fontSize: 14,
+                      fontSize: 15,
                     }}
                   >
                     {link.label}

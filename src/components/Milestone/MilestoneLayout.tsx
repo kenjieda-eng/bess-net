@@ -39,7 +39,7 @@ function MilestoneHero({ milestone }: { milestone: MilestoneData }) {
               background: '#fbbf24',
               color: '#0f172a',
               borderRadius: 999,
-              fontSize: 14,
+              fontSize: 15,
               fontWeight: 700,
               marginBottom: 20,
             }}
@@ -179,7 +179,7 @@ function MilestoneAchievements({ achievements }: { achievements: MilestoneData['
                         background: '#eff6ff',
                         color: '#1e40af',
                         borderRadius: 4,
-                        fontSize: 14,
+                        fontSize: 15,
                         fontWeight: 600,
                         fontVariantNumeric: 'tabular-nums',
                       }}
@@ -286,7 +286,7 @@ function MilestoneUpcoming({
               <div style={{ flexGrow: 1 }}>
                 <div
                   style={{
-                    fontSize: 14,
+                    fontSize: 15,
                     fontWeight: 600,
                     color: '#1e40af',
                     fontVariantNumeric: 'tabular-nums',
@@ -311,7 +311,7 @@ function MilestoneUpcoming({
                 <Link
                   href={u.url}
                   style={{
-                    fontSize: 14,
+                    fontSize: 15,
                     fontWeight: 500,
                     color: '#1d4ed8',
                     textDecoration: 'none',

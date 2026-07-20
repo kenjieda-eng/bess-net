@@ -76,7 +76,7 @@ export default async function GridTrackerPage() {
             変電所空き容量データの最新更新を<strong>タイムライン</strong>表示。
             全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{substations.length}</span> 件、 last_updated 降順。
           </p>
-          <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 24 }}>
+          <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 24 }}>
             データ更新は 1 時間ごと (ISR)。全件は <Link href="/grid">系統空き容量</Link>、地図検索は <Link href="/grid/chubu/map">中部マップ</Link> から。
           </p>
 
@@ -84,7 +84,7 @@ export default async function GridTrackerPage() {
 
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/grid">系統空き容量 (全社一覧)</Link></li>
               <li><Link href="/grid/chubu/map">中部 Leaflet 地図 (緯度経度付き)</Link></li>
               <li><Link href="/tools/grid-connection-check">系統連系診断 (無料・登録不要)</Link></li>

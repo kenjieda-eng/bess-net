@@ -235,7 +235,7 @@ export default function GlossaryBrowser({ items }: Props) {
             style={{
               marginLeft: 12,
               padding: '6px 14px',
-              fontSize: 13,
+              fontSize: 15,
               fontWeight: 600,
               background: 'transparent',
               color: 'var(--color-muted)',
@@ -281,7 +281,7 @@ export default function GlossaryBrowser({ items }: Props) {
               onKeyDown={(e) => onTabKeyDown(e, idx)}
               style={{
                 padding: '8px 14px',
-                fontSize: 13,
+                fontSize: 15,
                 fontWeight: 600,
                 background: isActive ? color : '#fff',
                 color: isActive ? '#fff' : 'var(--color-text, #222)',
@@ -320,7 +320,7 @@ export default function GlossaryBrowser({ items }: Props) {
             onClick={() => setSubcategory('すべて')}
             style={{
               padding: '4px 12px',
-              fontSize: 12,
+              fontSize: 15,
               fontWeight: 600,
               background: subcategory === 'すべて' ? '#333' : '#fff',
               color: subcategory === 'すべて' ? '#fff' : 'var(--color-muted)',
@@ -343,7 +343,7 @@ export default function GlossaryBrowser({ items }: Props) {
                 onClick={() => setSubcategory(sub)}
                 style={{
                   padding: '4px 12px',
-                  fontSize: 12,
+                  fontSize: 15,
                   fontWeight: 500,
                   background: isActive ? 'var(--color-accent, #0066cc)' : '#fff',
                   color: isActive ? '#fff' : 'var(--color-muted)',
@@ -371,7 +371,7 @@ export default function GlossaryBrowser({ items }: Props) {
             flexWrap: 'wrap',
             marginBottom: 16,
             alignItems: 'center',
-            fontSize: 12,
+            fontSize: 13,
             color: 'var(--color-muted)',
           }}
         >
@@ -431,7 +431,7 @@ export default function GlossaryBrowser({ items }: Props) {
                     {firstOf(item.category) && (
                       <span
                         style={{
-                          fontSize: 10,
+                          fontSize: 12,
                           padding: '2px 6px',
                           borderRadius: 4,
                           background:
@@ -446,7 +446,7 @@ export default function GlossaryBrowser({ items }: Props) {
                     {item.subcategory && (
                       <span
                         style={{
-                          fontSize: 10,
+                          fontSize: 12,
                           padding: '2px 6px',
                           borderRadius: 4,
                           background: 'var(--color-bg)',
@@ -471,7 +471,7 @@ export default function GlossaryBrowser({ items }: Props) {
           <p
             style={{
               marginTop: 24,
-              fontSize: 12,
+              fontSize: 15,
               color: 'var(--color-muted)',
               fontStyle: 'italic',
             }}
@@ -501,7 +501,7 @@ function FilterChip({
         background: 'var(--color-bg)',
         border: '1px solid var(--color-line)',
         borderRadius: 999,
-        fontSize: 11,
+        fontSize: 12,
         color: 'var(--color-text, #222)',
       }}
     >
@@ -516,7 +516,7 @@ function FilterChip({
           background: 'transparent',
           border: 'none',
           color: 'var(--color-muted)',
-          fontSize: 14,
+          fontSize: 15,
           cursor: 'pointer',
           lineHeight: 1,
         }}

@@ -65,7 +65,7 @@ export default function JepxRealData({ series }: Props) {
 
   if (series.length === 0) {
     return (
-      <p style={{ fontSize: 14, color: 'var(--color-muted)' }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)' }}>
         EIC Data のキャッシュが見つかりませんでした (build 時の precompute エラー)。次回 build で復旧します。
       </p>
     );
@@ -93,9 +93,9 @@ export default function JepxRealData({ series }: Props) {
     <section className="text-base lg:text-lg" style={{ marginBottom: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', marginBottom: 8 }}>
         <h2 style={{ fontSize: 20, fontWeight: 700, margin: 0 }}>📈 JEPX スポット価格 日次 (実データ、10 系列)</h2>
-        <span style={{ fontSize: 13, color: 'var(--color-muted)' }}>最終更新: {latestUpdate} / 合計 {totalPoints.toLocaleString()} pt</span>
+        <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>最終更新: {latestUpdate} / 合計 {totalPoints.toLocaleString()} pt</span>
       </div>
-      <p style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12, lineHeight: 1.6 }}>
         出典: <a href="https://data.eic-jp.org/catalog?domain=power" target="_blank" rel="noopener noreferrer">EIC Data (data.eic-jp.org)</a>
         、原データは日本卸電力取引所 (JEPX) 公表値、
         <a href="https://www.jepx.jp/electricpower/index.html" target="_blank" rel="noopener noreferrer">jepx-terms</a> 準拠。
@@ -122,7 +122,7 @@ export default function JepxRealData({ series }: Props) {
                 <Fragment key={s.id}>
                   <tr>
                     <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>{s.meta.name}</td>
-                    <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 14, color: 'var(--color-muted)' }}>{latest?.date ?? '—'}</td>
+                    <td style={{ padding: 12, border: '1px solid var(--color-border)', fontSize: 15, color: 'var(--color-muted)' }}>{latest?.date ?? '—'}</td>
                     {/* Tier 1 UI 改善 #3: 価格カラム (fontSize 24 + font-bold + tabular-nums) */}
                     <td
                       className="tabular-nums"
@@ -151,7 +151,7 @@ export default function JepxRealData({ series }: Props) {
                           background: 'none',
                           border: '1px solid var(--color-border)',
                           color: 'var(--color-accent, #0066cc)',
-                          fontSize: 13,
+                          fontSize: 15,
                           padding: '4px 10px',
                           borderRadius: 4,
                           cursor: 'pointer',

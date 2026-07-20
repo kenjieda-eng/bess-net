@@ -167,7 +167,7 @@ export default async function ProjectDetailPage({
             <section style={{
               marginBottom: 24, padding: 12,
               background: 'rgba(255,200,0,0.08)', border: '1px solid #c70',
-              borderRadius: 6, fontSize: 13, lineHeight: 1.7,
+              borderRadius: 6, fontSize: 15, lineHeight: 1.7,
             }} aria-label="データ品質に関するご案内">
               ※ このプロジェクトは<strong>「調査中」</strong>の項目があります (出力 or 容量)。
               公開情報が不足しているため、一次情報を確認次第順次更新します。
@@ -291,7 +291,7 @@ export default async function ProjectDetailPage({
           {nearbySubstations.length > 0 && (
             <section className="page-section">
               <h3 className="related-h3">接続変電所候補</h3>
-              <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 12 }}>
+              <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 12 }}>
                 {item.name} の半径 10km 以内に位置する変電所（距離が近い順、最大 5件）。
                 ※ 緯度経度データがある変電所のみ表示しています。
               </p>
@@ -317,7 +317,7 @@ export default async function ProjectDetailPage({
             </section>
           )}
 
-          <div className="page-section" style={{ background: 'var(--color-bg)', padding: 16, borderRadius: 8, fontSize: 13, color: 'var(--color-muted)' }}>
+          <div className="page-section" style={{ background: 'var(--color-bg)', padding: 16, borderRadius: 8, fontSize: 15, color: 'var(--color-muted)' }}>
             <p style={{ margin: 0 }}>
               本ページは公開情報を構造化したものです。掲載企業の公式情報とは独立した情報として発信しています。
               掲載内容に関するご指摘は{' '}

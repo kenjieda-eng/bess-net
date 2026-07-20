@@ -129,11 +129,11 @@ export default async function ProjectsListPage() {
               </div>
               <div className="stat-card">
                 <div className="stat-num">{totalMW.toLocaleString()}</div>
-                <div className="stat-label">合計出力 MW <small style={{ display: 'block', fontWeight: 400, color: 'var(--color-muted)', fontSize: 10 }}>({reliableMWCount} 件分)</small></div>
+                <div className="stat-label">合計出力 MW <small style={{ display: 'block', fontWeight: 400, color: 'var(--color-muted)', fontSize: 12 }}>({reliableMWCount} 件分)</small></div>
               </div>
               <div className="stat-card">
                 <div className="stat-num">{totalMWh.toLocaleString()}</div>
-                <div className="stat-label">合計容量 MWh <small style={{ display: 'block', fontWeight: 400, color: 'var(--color-muted)', fontSize: 10 }}>({reliableMWhCount} 件分)</small></div>
+                <div className="stat-label">合計容量 MWh <small style={{ display: 'block', fontWeight: 400, color: 'var(--color-muted)', fontSize: 12 }}>({reliableMWhCount} 件分)</small></div>
               </div>
             </div>
           )}
@@ -145,7 +145,7 @@ export default async function ProjectsListPage() {
               background: 'rgba(255,200,0,0.08)', border: '1px solid #c70',
               borderRadius: 6,
             }} aria-label="データ品質に関するご案内">
-              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7 }}>
+              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.7 }}>
                 ※ 出力 <strong>0 MW</strong> または容量 <strong>0 MWh</strong> と表示されているプロジェクト
                 ({investigatingCount} 件) は<strong>「調査中」</strong>として扱い、合計値の集計からも除外しています。
                 公開情報が不足しているため、一次情報を確認次第順次更新します。
@@ -161,7 +161,7 @@ export default async function ProjectsListPage() {
           {items.length === 0 ? (
             <div className="empty-state">
               <p>プロジェクトデータはまだ準備中です。</p>
-              <p style={{ marginTop: 8, fontSize: 13, color: 'var(--color-muted)' }}>
+              <p style={{ marginTop: 8, fontSize: 15, color: 'var(--color-muted)' }}>
                 公開情報のリサーチを経て、Sprint 1終了までに10件以上の初期データを公開予定です。
               </p>
             </div>
@@ -215,7 +215,7 @@ export default async function ProjectsListPage() {
             border: '1px solid var(--color-border)', borderRadius: 6,
           }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (当サイト独自機能)</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/tracker/pf">プロジェクトトラッカー</Link> — 案件の追加・更新タイムライン</li>
               <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター</Link> — 個別案件の収益試算</li>
               <li><Link href="/tools/capacity-market-bid">容量市場応札試算</Link> — OCCTO実データ連携</li>

@@ -337,7 +337,7 @@ export default function CapacityMarketBidEstimator({
             OCCTO 公式情報
           </a>{' '}
           ・電気事業法を必ずご確認ください。
-          <span style={{ marginLeft: 6, fontSize: 12, opacity: 0.7 }}>
+          <span style={{ marginLeft: 6, fontSize: 15, opacity: 0.7 }}>
             (Data: <code>live</code> / {initialHistory.length} 件)
           </span>
         </div>
@@ -365,7 +365,7 @@ export default function CapacityMarketBidEstimator({
             OCCTO 公式情報
           </a>{' '}
           ・電気事業法を必ずご確認ください。
-          <span style={{ marginLeft: 6, fontSize: 12, opacity: 0.7 }}>
+          <span style={{ marginLeft: 6, fontSize: 15, opacity: 0.7 }}>
             (Data: <code>mock</code>)
           </span>
         </div>
@@ -435,7 +435,7 @@ export default function CapacityMarketBidEstimator({
               <option value="new">{CATEGORY_LABELS.new}</option>
               <option value="transition">{CATEGORY_LABELS.transition}</option>
             </select>
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               {CATEGORY_DESCRIPTIONS[input.category]}
               {isLive && (
                 <span style={{ display: 'block', marginTop: 2, color: '#2e7d32', fontWeight: 600 }}>
@@ -512,7 +512,7 @@ export default function CapacityMarketBidEstimator({
                 fontFamily: 'inherit',
               }}
             />
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               保守的入札ライン (= ペイバック計算上の最低価格)
             </p>
           </div>
@@ -559,14 +559,14 @@ export default function CapacityMarketBidEstimator({
                 borderRadius: 4,
               }}
             >
-              <div style={{ fontSize: 12, color: tier.color, fontWeight: 700, marginBottom: 4 }}>
+              <div style={{ fontSize: 13, color: tier.color, fontWeight: 700, marginBottom: 4 }}>
                 {tier.label}
               </div>
               <div style={{ fontSize: 24, fontWeight: 700 }}>
                 {tier.price.toLocaleString()}
-                <span style={{ fontSize: 12, color: 'var(--color-muted)', marginLeft: 4 }}>円/kW/年</span>
+                <span style={{ fontSize: 15, color: 'var(--color-muted)', marginLeft: 4 }}>円/kW/年</span>
               </div>
-              <div style={{ marginTop: 4, fontSize: 13 }}>
+              <div style={{ marginTop: 4, fontSize: 15 }}>
                 落札確率 <strong style={{ color: tier.color }}>{tier.prob}%</strong>
               </div>
             </div>
@@ -604,26 +604,26 @@ export default function CapacityMarketBidEstimator({
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, fontSize: 15 }}>
           <div>
-            <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>過去平均</div>
+            <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>過去平均</div>
             <div style={{ fontSize: 18, fontWeight: 700 }}>
               {result.historical_context.area_avg.toLocaleString()}
-              <span style={{ fontSize: 12, color: 'var(--color-muted)' }}> 円/kW/年</span>
+              <span style={{ fontSize: 15, color: 'var(--color-muted)' }}> 円/kW/年</span>
             </div>
           </div>
           <div>
-            <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>トレンド</div>
+            <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>トレンド</div>
             <div style={{ fontSize: 16, fontWeight: 700, color: trendColor }}>
               {TREND_LABELS[result.historical_context.area_trend]}
             </div>
           </div>
           <div>
-            <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>過去落札合計</div>
+            <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>過去落札合計</div>
             <div style={{ fontSize: 16, fontWeight: 600 }}>
               {result.historical_context.area_total_capacity_mw.toLocaleString()} MW
             </div>
           </div>
           <div>
-            <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>参照件数</div>
+            <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>参照件数</div>
             <div style={{ fontSize: 16, fontWeight: 600 }}>
               {result.historical_context.sample_size} 件
             </div>
@@ -637,7 +637,7 @@ export default function CapacityMarketBidEstimator({
                 padding: 8,
                 background: 'var(--color-bg)',
                 borderRadius: 4,
-                fontSize: 13,
+                fontSize: 15,
                 color: 'var(--color-muted)',
               }}
             >

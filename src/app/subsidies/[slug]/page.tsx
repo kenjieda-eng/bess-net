@@ -116,7 +116,7 @@ export default async function SubsidyDetailPage({
           )}
 
           <div className="page-section" style={{ background: '#FFF8E1', padding: 16, borderRadius: 8 }}>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', margin: 0 }}>
               ⚠️ 公募期間・補助率・対象は変更される場合があります。応募前に必ず公式サイトで最新情報をご確認ください。
             </p>
           </div>

@@ -119,7 +119,7 @@ export default function CountryMarketPage({ countryKey }: { countryKey: CountryK
             </ul>
           </section>
 
-          <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.7 }}>
             ※ 編集部が IEA / BloombergNEF / SolarPower Europe / 各国政府発表 等の公開情報に基づき作成 (2026年上半期 時点)。
             最新は各種一次情報を参照。
           </p>
@@ -137,7 +137,7 @@ function Card({ label, value, accent }: { label: string; value: string; accent?:
       padding: 16, border: '1px solid var(--color-border)', borderRadius: 8,
       background: accent ? 'rgba(0, 102, 204, 0.06)' : 'transparent',
     }}>
-      <div style={{ fontSize: 14, color: 'var(--color-muted)', marginBottom: 6 }}>{label}</div>
+      <div style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 6 }}>{label}</div>
       <div className="tabular-nums" style={{ fontSize: 24, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{value}</div>
     </div>
   );

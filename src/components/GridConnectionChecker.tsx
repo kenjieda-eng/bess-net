@@ -293,7 +293,7 @@ export default function GridConnectionChecker() {
                 </option>
               ))}
             </select>
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               空き容量 + 構造化済データから候補抽出
             </p>
           </div>
@@ -325,7 +325,7 @@ export default function GridConnectionChecker() {
                 fontFamily: 'inherit',
               }}
             />
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               緯度経度入力で距離順ソート
             </p>
           </div>
@@ -357,7 +357,7 @@ export default function GridConnectionChecker() {
                 fontFamily: 'inherit',
               }}
             />
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               Google Maps 等から取得
             </p>
           </div>
@@ -386,7 +386,7 @@ export default function GridConnectionChecker() {
                 fontFamily: 'inherit',
               }}
             />
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               例: 12.5 MW
             </p>
           </div>
@@ -415,7 +415,7 @@ export default function GridConnectionChecker() {
                 fontFamily: 'inherit',
               }}
             />
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
               例: 50 MWh (4h 放電)
             </p>
           </div>
@@ -450,7 +450,7 @@ export default function GridConnectionChecker() {
         <div style={{ fontSize: 20, fontWeight: 700, color: recColor }}>
           {result.recommendation_label}
         </div>
-        <div style={{ marginTop: 8, fontSize: 13, color: 'var(--color-muted)' }}>
+        <div style={{ marginTop: 8, fontSize: 15, color: 'var(--color-muted)' }}>
           対象都道府県内変電所: {result.total_in_prefecture.toLocaleString()} 件 / Top{' '}
           {result.candidates.length} を表示
         </div>
@@ -503,7 +503,7 @@ export default function GridConnectionChecker() {
                     <span
                       style={{
                         padding: '2px 8px',
-                        fontSize: 12,
+                        fontSize: 15,
                         fontWeight: 700,
                         background: 'var(--color-accent, #0066cc)',
                         color: '#fff',
@@ -515,7 +515,7 @@ export default function GridConnectionChecker() {
                     <span
                       style={{
                         padding: '2px 8px',
-                        fontSize: 12,
+                        fontSize: 15,
                         fontWeight: 600,
                         background: '#f0f0f0',
                         borderRadius: 3,
@@ -527,7 +527,7 @@ export default function GridConnectionChecker() {
                       <span
                         style={{
                           padding: '2px 8px',
-                          fontSize: 12,
+                          fontSize: 15,
                           fontWeight: 600,
                           background: '#e7f3ff',
                           color: '#0066cc',
@@ -541,7 +541,7 @@ export default function GridConnectionChecker() {
                       <span
                         style={{
                           padding: '2px 8px',
-                          fontSize: 12,
+                          fontSize: 15,
                           fontWeight: 600,
                           background: '#e8f5e9',
                           color: '#2e7d32',
@@ -564,11 +564,11 @@ export default function GridConnectionChecker() {
                   }}
                 >
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>送配電</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>送配電</div>
                     <div>{s.operator || '—'}</div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>電圧 (kV)</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>電圧 (kV)</div>
                     <div>
                       {s.voltage_primary_kv !== null && s.voltage_secondary_kv !== null
                         ? `${s.voltage_primary_kv} / ${s.voltage_secondary_kv}`
@@ -576,13 +576,13 @@ export default function GridConnectionChecker() {
                     </div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>空き容量</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>空き容量</div>
                     <div style={{ fontWeight: 600 }}>
                       {s.cap_avail_mw !== null ? `${s.cap_avail_mw} MW` : '—'}
                     </div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>運用容量</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>運用容量</div>
                     <div>
                       {s.cap_operational_mw !== null ? `${s.cap_operational_mw} MW` : '—'}
                     </div>
@@ -596,7 +596,7 @@ export default function GridConnectionChecker() {
                         display: 'inline-block',
                         margin: '0 4px 4px 0',
                         padding: '2px 8px',
-                        fontSize: 12,
+                        fontSize: 15,
                         background: 'var(--color-bg)',
                         border: '1px solid var(--color-border)',
                         borderRadius: 3,

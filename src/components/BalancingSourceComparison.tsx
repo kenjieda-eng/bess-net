@@ -171,14 +171,14 @@ export function BalancingSourceComparison({
         　<span style={{ fontWeight: 700 }}>従来型</span>：火力{' '}
         <strong style={{ color: '#b91c1c' }}>{t2th} 円</strong> ／ 揚水{' '}
         <strong style={{ color: '#92400e' }}>{t2p} 円</strong>
-        <span style={{ color: '#6b7280', fontSize: 13 }}>（水力は三次②約定なし）</span>
+        <span style={{ color: '#6b7280', fontSize: 15 }}>（水力は三次②約定なし）</span>
         {' '}
         <span
           style={{
             display: 'inline-block',
             background: 'var(--color-navy)',
             color: '#fff',
-            fontSize: 12,
+            fontSize: 15,
             padding: '1px 6px',
             borderRadius: 3,
           }}
@@ -198,7 +198,7 @@ export function BalancingSourceComparison({
           background: '#fffbeb',
           padding: '12px 16px',
           borderRadius: '0 6px 6px 0',
-          fontSize: 13,
+          fontSize: 15,
           lineHeight: 1.7,
           color: '#374151',
         }}
@@ -251,7 +251,7 @@ export function BalancingSourceComparison({
                   {opt.key === 'FY2024' && (
                     <span
                       style={{
-                        marginLeft: 6, fontSize: 12, padding: '1px 5px',
+                        marginLeft: 6, fontSize: 15, padding: '1px 5px',
                         background: 'var(--color-accent)', color: '#fff', borderRadius: 3,
                       }}
                     >
@@ -259,7 +259,7 @@ export function BalancingSourceComparison({
                     </span>
                   )}
                 </div>
-                <div style={{ fontSize: 12, color: '#6b7280', marginTop: 1 }}>{opt.note}</div>
+                <div style={{ fontSize: 13, color: '#6b7280', marginTop: 1 }}>{opt.note}</div>
               </div>
             </label>
           ))}
@@ -270,7 +270,7 @@ export function BalancingSourceComparison({
       <section>
         <h3 style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-navy)', marginBottom: 8 }}>
           落札単価 比較表 — {activeFyOption.label}
-          <span style={{ fontSize: 12, fontWeight: 400, color: '#6b7280', marginLeft: 8 }}>
+          <span style={{ fontSize: 15, fontWeight: 400, color: '#6b7280', marginLeft: 8 }}>
             （円/ΔkW・30分）
           </span>
         </h3>
@@ -312,7 +312,7 @@ export function BalancingSourceComparison({
                       {isTertiary2 && (
                         <span
                           style={{
-                            marginLeft: 6, fontSize: 12, padding: '1px 5px',
+                            marginLeft: 6, fontSize: 15, padding: '1px 5px',
                             background: '#fef3c7', color: '#92400e', borderRadius: 3,
                           }}
                         >
@@ -336,7 +336,7 @@ export function BalancingSourceComparison({
                           }}
                         >
                           {isNull ? (
-                            <span style={{ color: '#9ca3af', fontSize: 13 }}>
+                            <span style={{ color: '#9ca3af', fontSize: 15 }}>
                               {(src === 'vpp' || src === 'hydro') ? '系列なし / 約定ゼロ' : '―'}
                             </span>
                           ) : (
@@ -380,7 +380,7 @@ export function BalancingSourceComparison({
             </tbody>
           </table>
         </div>
-        <p style={{ fontSize: 12, color: '#6b7280', marginTop: 6 }}>
+        <p style={{ fontSize: 15, color: '#6b7280', marginTop: 6 }}>
           ※ バーは同 FY・全商品の最大値（{maxVal.toFixed(2)} 円）を 100% として正規化。
           「系列なし / 約定ゼロ」は EPRX での公表データなし。
         </p>
@@ -393,7 +393,7 @@ export function BalancingSourceComparison({
           background: '#f0fffe',
           border: '1px solid var(--color-accent, #00B5A5)',
           borderRadius: 6,
-          fontSize: 13,
+          fontSize: 15,
           color: '#374151',
           lineHeight: 1.7,
         }}

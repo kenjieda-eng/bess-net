@@ -84,7 +84,7 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
           onClick={() => setActiveCategory('all')}
           style={{
             padding: '6px 14px',
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             background: activeCategory === 'all' ? 'var(--color-accent, #0066cc)' : '#fff',
             color: activeCategory === 'all' ? '#fff' : 'var(--color-text)',
@@ -101,7 +101,7 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
             onClick={() => setActiveCategory(c)}
             style={{
               padding: '6px 14px',
-              fontSize: 14,
+              fontSize: 15,
               fontWeight: 600,
               background:
                 activeCategory === c ? CATEGORY_COLORS[c] || '#0066cc' : '#fff',
@@ -123,14 +123,14 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
           gap: 12,
           marginBottom: 20,
           alignItems: 'center',
-          fontSize: 13,
+          fontSize: 15,
         }}
       >
         <button
           onClick={expandAll}
           style={{
             padding: '4px 10px',
-            fontSize: 12,
+            fontSize: 15,
             background: 'transparent',
             border: '1px solid var(--color-border)',
             borderRadius: 4,
@@ -143,7 +143,7 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
           onClick={collapseAll}
           style={{
             padding: '4px 10px',
-            fontSize: 12,
+            fontSize: 15,
             background: 'transparent',
             border: '1px solid var(--color-border)',
             borderRadius: 4,
@@ -214,7 +214,7 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
                     {category && (
                       <span
                         style={{
-                          fontSize: 11,
+                          fontSize: 12,
                           padding: '2px 8px',
                           borderRadius: 4,
                           color: '#fff',
@@ -238,7 +238,7 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
                     {it.isNew && (
                       <span
                         style={{
-                          fontSize: 10,
+                          fontSize: 12,
                           padding: '2px 6px',
                           borderRadius: 4,
                           color: '#fff',
@@ -276,7 +276,7 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
                     {it.answerHtml ? (
                       <p
                         style={{
-                          fontSize: 14,
+                          fontSize: 15,
                           margin: '8px 0 12px',
                           lineHeight: 1.7,
                           whiteSpace: 'pre-wrap',
@@ -290,7 +290,7 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
                     ) : (
                       <p
                         style={{
-                          fontSize: 14,
+                          fontSize: 15,
                           margin: '8px 0 12px',
                           lineHeight: 1.7,
                           whiteSpace: 'pre-wrap',
@@ -308,7 +308,7 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
                           marginTop: 10,
                           paddingTop: 10,
                           borderTop: '1px dashed var(--color-border)',
-                          fontSize: 13,
+                          fontSize: 15,
                           lineHeight: 1.8,
                           color: 'var(--color-muted)',
                         }}

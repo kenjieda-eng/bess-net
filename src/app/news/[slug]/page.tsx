@@ -236,7 +236,7 @@ export default async function NewsDetailPage({
           {(news.title || '').includes('低圧') && (
             <section className="page-section">
               <h3 className="related-h3">関連ガイド</h3>
-              <p style={{ fontSize: 14, lineHeight: 1.7 }}>
+              <p style={{ fontSize: 15, lineHeight: 1.7 }}>
                 <Link href="/lv" style={{ fontWeight: 600 }}>低圧蓄電所・低圧系統用蓄電池 総合ガイド</Link>
                 <span style={{ color: 'var(--color-muted)' }}> ── 仕組み・収益・購入・参入を中立の立場で体系解説</span>
               </p>

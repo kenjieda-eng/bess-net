@@ -75,7 +75,7 @@ export default function GlobalHubPage() {
             市場規模・主要政策・主要プレイヤー・価格動向・<strong>日本との比較</strong>を1ページに集約。
             当サイト独自の海外市場ハブ、無料公開・登録不要。
           </p>
-          <p className="page-meta" style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 24 }}>
+          <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 24 }}>
             ※ 編集部が IEA / BloombergNEF / SolarPower Europe / 各国政府発表 等の公開情報に基づき作成 (2026年上半期 時点)。
             最新は各種一次情報を参照。
           </p>
@@ -113,7 +113,7 @@ export default function GlobalHubPage() {
                 </tbody>
               </table>
             </div>
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 8 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 8 }}>
               ※ 日本は2025累積 4GWh、2030予測 14GWh (経産省 第7次エネ基本計画ベース)。
               米国は日本の約20倍、中国は約50倍の規模。
             </p>
@@ -131,12 +131,12 @@ export default function GlobalHubPage() {
                     borderRadius: 8, textDecoration: 'none', color: 'inherit', background: 'white',
                   }}>
                     <div style={{ fontSize: 24, marginBottom: 4 }}>{m.flag} <strong style={{ fontSize: 18 }}>{m.name}</strong></div>
-                    <div style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 8 }}>{m.nameEn}</div>
-                    <p style={{ fontSize: 13, lineHeight: 1.6, margin: '8px 0' }}>{m.overview.slice(0, 100)}…</p>
-                    <ul style={{ fontSize: 12, lineHeight: 1.6, paddingLeft: 18, margin: '8px 0' }}>
+                    <div style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 8 }}>{m.nameEn}</div>
+                    <p style={{ fontSize: 15, lineHeight: 1.6, margin: '8px 0' }}>{m.overview.slice(0, 100)}…</p>
+                    <ul style={{ fontSize: 15, lineHeight: 1.6, paddingLeft: 18, margin: '8px 0' }}>
                       {m.highlights.slice(0, 2).map((h, i) => (<li key={i}>{h}</li>))}
                     </ul>
-                    <div style={{ fontSize: 12, color: 'var(--color-accent)', marginTop: 8 }}>詳細を見る →</div>
+                    <div style={{ fontSize: 13, color: 'var(--color-accent)', marginTop: 8 }}>詳細を見る →</div>
                   </Link>
                 );
               })}
@@ -145,7 +145,7 @@ export default function GlobalHubPage() {
 
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/map/industry-chaos">業界カオスマップ (国内主要事業者)</Link></li>
               <li><Link href="/market/jepx">JEPX ハブ (国内スポット市場)</Link></li>
               <li><Link href="/operators">事業者ナビ (国内544社)</Link></li>

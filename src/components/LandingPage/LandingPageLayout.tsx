@@ -36,7 +36,7 @@ export default function LandingPageLayout({ config }: { config: LandingPageConfi
           background: '#eff6ff',
           borderBottom: '1px solid #dbeafe',
           padding: '8px 16px',
-          fontSize: 13,
+          fontSize: 15,
           textAlign: 'center',
         }}
       >

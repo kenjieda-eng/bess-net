@@ -246,7 +246,7 @@ export default async function GlossaryDetailPage({
           {GLOSSARY_EDU_LINKS[term.slug] && (
             <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8 }}>
               <h3 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>制度の仕組み（EIC Data 教材）</h3>
-              <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+              <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
                 {GLOSSARY_EDU_LINKS[term.slug].map((l) => (
                   <li key={l.href}>
                     <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label} ↗</a>
@@ -272,12 +272,12 @@ export default async function GlossaryDetailPage({
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {relatedOperators.map((op) => (
-                  <li key={op.id} style={{ marginBottom: 8, fontSize: 14 }}>
+                  <li key={op.id} style={{ marginBottom: 8, fontSize: 15 }}>
                     <Link href={`/operators/${op.slug}`} style={{ color: 'var(--color-accent, #0066cc)', fontWeight: 600 }}>
                       {op.name}
                     </Link>
                     {op.bessRelation && (
-                      <span style={{ color: 'var(--color-muted)', marginLeft: 8, fontSize: 12 }}>
+                      <span style={{ color: 'var(--color-muted)', marginLeft: 8, fontSize: 15 }}>
                         — {op.bessRelation.slice(0, 60)}
                       </span>
                     )}
@@ -295,11 +295,11 @@ export default async function GlossaryDetailPage({
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {relatedProjects.map((p) => (
-                  <li key={p.id} style={{ marginBottom: 8, fontSize: 14 }}>
+                  <li key={p.id} style={{ marginBottom: 8, fontSize: 15 }}>
                     <Link href={`/projects/${p.slug}`} style={{ color: 'var(--color-accent, #0066cc)', fontWeight: 600 }}>
                       {p.name}
                     </Link>
-                    <span style={{ color: 'var(--color-muted)', marginLeft: 8, fontSize: 12 }}>
+                    <span style={{ color: 'var(--color-muted)', marginLeft: 8, fontSize: 15 }}>
                       {p.prefecture && `${p.prefecture} / `}
                       {p.outputMw && `${p.outputMw}MW`}
                       {p.capacityMwh && ` / ${p.capacityMwh}MWh`}
@@ -318,19 +318,19 @@ export default async function GlossaryDetailPage({
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {relatedFaqs.map((faq) => (
-                  <li key={faq.id} style={{ marginBottom: 10, fontSize: 14 }}>
+                  <li key={faq.id} style={{ marginBottom: 10, fontSize: 15 }}>
                     <Link href={`/faq#${faq.slug}`} style={{ color: 'var(--color-accent, #0066cc)', fontWeight: 600 }}>
                       Q. {faq.question}
                     </Link>
                     {faq.category && (
-                      <span style={{ marginLeft: 8, fontSize: 11, padding: '2px 6px', background: '#fff', border: '1px solid var(--color-border)', borderRadius: 4, color: 'var(--color-muted)' }}>
+                      <span style={{ marginLeft: 8, fontSize: 12, padding: '2px 6px', background: '#fff', border: '1px solid var(--color-border)', borderRadius: 4, color: 'var(--color-muted)' }}>
                         {faq.category}
                       </span>
                     )}
                   </li>
                 ))}
               </ul>
-              <p style={{ marginTop: 10, fontSize: 12 }}>
+              <p style={{ marginTop: 10, fontSize: 15 }}>
                 <Link href="/faq" style={{ color: 'var(--color-accent, #0066cc)' }}>
                   業界用語よくある質問（FAQ）一覧 →
                 </Link>
@@ -349,18 +349,18 @@ export default async function GlossaryDetailPage({
                 （{sameCategoryTerms.length}件）
               </h3>
               {useCategoryFallback && (
-                <p style={{ fontSize: 12, color: 'var(--color-muted)', margin: '0 0 12px' }}>
+                <p style={{ fontSize: 15, color: 'var(--color-muted)', margin: '0 0 12px' }}>
                   ※ この用語は &quot;{sub}&quot; (一般用語)に分類されているため、カテゴリ単位の類似用語を表示しています。
                 </p>
               )}
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {sameCategoryTerms.map((t) => (
-                  <Link key={t.slug} href={`/glossary/${t.slug}`} style={{ padding: '4px 10px', background: '#fff', border: '1px solid var(--color-border)', borderRadius: 4, fontSize: 13, color: 'var(--color-accent, #0066cc)', textDecoration: 'none' }}>
+                  <Link key={t.slug} href={`/glossary/${t.slug}`} style={{ padding: '4px 10px', background: '#fff', border: '1px solid var(--color-border)', borderRadius: 4, fontSize: 15, color: 'var(--color-accent, #0066cc)', textDecoration: 'none' }}>
                     {t.term}
                   </Link>
                 ))}
               </div>
-              <p style={{ marginTop: 12, fontSize: 12 }}>
+              <p style={{ marginTop: 12, fontSize: 15 }}>
                 <Link
                   href={useCategoryFallback ? `/glossary?cat=${encodeURIComponent(cat)}` : `/glossary?cat=${encodeURIComponent(cat)}&sub=${encodeURIComponent(sub)}`}
                   style={{ color: 'var(--color-accent, #0066cc)' }}

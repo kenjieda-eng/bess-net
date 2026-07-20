@@ -162,14 +162,14 @@ export default function BalancingTrackerPage() {
             系統用蓄電池の収益源として注目される需給調整市場（三次調整力②）の動向を業界中立で追跡。
           </p>
           {updatedAt && (
-            <p style={{ fontSize: 12, color: 'var(--color-muted)', marginBottom: 16 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 16 }}>
               データ更新: {updatedAt.slice(0, 10)} ／ 出典: 一般社団法人 電力需給調整力取引所 (EPRX)「調整力の取引結果まとめ」を加工
             </p>
           )}
 
           {/* ─ L-EIC-018 重要注記 ─ */}
           <section style={{ padding: 14, marginBottom: 24, background: 'rgba(0,102,204,0.06)', border: '1px solid var(--color-accent)', borderRadius: 6 }}>
-            <p style={{ fontSize: 13, lineHeight: 1.7, margin: 0 }}>
+            <p style={{ fontSize: 15, lineHeight: 1.7, margin: 0 }}>
               <strong>⚠ 読み方の注意（L-EIC-018）:</strong>{' '}
               蓄電池の落札単価は「<strong>約定したときの単価水準</strong>」（volume 非加重の約定時平均）であり、
               「単価 × 市場全量」で総収益を試算することはできません（高単価は小ボリュームの約定に乗る）。
@@ -193,7 +193,7 @@ export default function BalancingTrackerPage() {
           {/* ─ 関連リンク ─ */}
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
                 制度の仕組み（EIC Data 教材）:{' '}
                 <a href="https://data.eic-jp.org/insight/imbalance-charge-structure?utm_source=bess-net&utm_medium=referral&utm_campaign=edu_cluster" target="_blank" rel="noopener noreferrer">
@@ -224,14 +224,14 @@ export default function BalancingTrackerPage() {
 
 // ─── ヘルパー: 水平バー ────────────────────────────────────────────────────────
 function HBar({ value, max, color, label }: { value: number | null; max: number; color: string; label?: string }) {
-  if (value === null) return <span style={{ fontSize: 12, color: '#aaa' }}>—</span>;
+  if (value === null) return <span style={{ fontSize: 15, color: '#aaa' }}>—</span>;
   const pct = max > 0 ? Math.round((value / max) * 100) : 0;
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
       <div style={{ flex: 1, background: '#eee', borderRadius: 3, height: 16, overflow: 'hidden' }}>
         <div style={{ width: `${pct}%`, background: color, height: '100%', borderRadius: 3, transition: 'width 0.3s' }} />
       </div>
-      <span style={{ fontSize: 12, minWidth: 56, textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>
+      <span style={{ fontSize: 15, minWidth: 56, textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>
         {value.toFixed(2)}{label}
       </span>
     </div>
@@ -248,11 +248,11 @@ function Section1Overall({ overallSeries }: { overallSeries: Record<Product, Cat
   return (
     <section style={{ marginBottom: 40 }}>
       <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>① 全体 落札単価（商品別・年次）</h2>
-      <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 16 }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 16 }}>
         単位: 円/ΔkW・30min ／ 出典: EPRX「調整力の取引結果まとめ」年間まとめ PDF を転記・加工
       </p>
       <div style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
           <thead>
             <tr style={{ background: 'var(--color-bg)' }}>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', width: 120 }}>商品</th>
@@ -293,14 +293,14 @@ function Section2Battery({ batterySeries }: { batterySeries: Record<Product, Cat
   return (
     <section style={{ marginBottom: 40 }}>
       <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>② 蓄電池 落札単価（商品別・年次）</h2>
-      <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 4 }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 4 }}>
         単位: 円/ΔkW・30min ／ FY2024 以降のデータ（EPRX 公表値）
       </p>
-      <p style={{ fontSize: 12, padding: '6px 10px', background: 'rgba(0,102,204,0.06)', borderLeft: '3px solid var(--color-accent)', marginBottom: 16 }}>
+      <p style={{ fontSize: 15, padding: '6px 10px', background: 'rgba(0,102,204,0.06)', borderLeft: '3px solid var(--color-accent)', marginBottom: 16 }}>
         ⚠ L-EIC-018: 蓄電池単価は約定時の単価水準（volume 非加重）。総収益 ≠ 単価 × 全量。
       </p>
       <div style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
           <thead>
             <tr style={{ background: 'var(--color-bg)' }}>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', width: 120 }}>商品</th>
@@ -322,7 +322,7 @@ function Section2Battery({ batterySeries }: { batterySeries: Record<Product, Cat
                 }}>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>
                     {PRODUCT_SHORT[p]}
-                    {isTer2 && <span style={{ marginLeft: 6, fontSize: 10, padding: '2px 5px', background: '#f60', color: 'white', borderRadius: 3 }}>注目</span>}
+                    {isTer2 && <span style={{ marginLeft: 6, fontSize: 12, padding: '2px 5px', background: '#f60', color: 'white', borderRadius: 3 }}>注目</span>}
                   </td>
                   <td style={{ padding: '10px 12px' }}>
                     <HBar value={v24} max={maxVal} color={isTer2 ? '#e06020' : '#4a90d9'} label=" 円" />
@@ -330,7 +330,7 @@ function Section2Battery({ batterySeries }: { batterySeries: Record<Product, Cat
                   <td style={{ padding: '10px 12px' }}>
                     <HBar value={v25} max={maxVal} color={isTer2 ? '#f09060' : '#7ab8f5'} label=" 円" />
                   </td>
-                  <td style={{ padding: '10px 12px', fontSize: 12 }}>
+                  <td style={{ padding: '10px 12px', fontSize: 15 }}>
                     {ratio !== null ? (
                       <span style={{ color: ratio > 0 ? '#090' : '#c00', fontWeight: 600 }}>
                         {ratio > 0 ? '▲' : '▼'}{Math.abs(ratio).toFixed(0)}%
@@ -343,7 +343,7 @@ function Section2Battery({ batterySeries }: { batterySeries: Record<Product, Cat
           </tbody>
         </table>
       </div>
-      <p style={{ fontSize: 12, marginTop: 8, color: 'var(--color-muted)' }}>
+      <p style={{ fontSize: 15, marginTop: 8, color: 'var(--color-muted)' }}>
         ※ 三次②（三次調整力②）FY2024=109.43 円 は他商品の 10〜15 倍水準。FY2025 上期（暫定）は 33.52 円に低下。
         蓄電池の単価優位は小ボリューム・高値での約定構造を反映しています（L-EIC-018）。
       </p>
@@ -361,14 +361,14 @@ function Section3Shortage({ shortageSeries }: { shortageSeries: Record<Product, 
   return (
     <section style={{ marginBottom: 40 }}>
       <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>③ 不足率（商品別・年次）</h2>
-      <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 4 }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 4 }}>
         単位: % ／ 調達量が必要量を下回った割合。FY2024 以降（定義が 2023〜2024 で変更、FY2024 以降のみ収録）。
       </p>
-      <p style={{ fontSize: 12, padding: '6px 10px', background: 'rgba(220,0,0,0.04)', borderLeft: '3px solid #c00', marginBottom: 16 }}>
+      <p style={{ fontSize: 15, padding: '6px 10px', background: 'rgba(220,0,0,0.04)', borderLeft: '3px solid #c00', marginBottom: 16 }}>
         不足率が高い商品 = 調達不足が頻発 → 参入余地・高単価形成の背景。
       </p>
       <div style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
           <thead>
             <tr style={{ background: 'var(--color-bg)' }}>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', width: 120 }}>商品</th>
@@ -390,7 +390,7 @@ function Section3Shortage({ shortageSeries }: { shortageSeries: Record<Product, 
                 }}>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>
                     {PRODUCT_SHORT[p]}
-                    {high && <span style={{ marginLeft: 6, fontSize: 10, padding: '2px 5px', background: '#c00', color: 'white', borderRadius: 3 }}>高不足</span>}
+                    {high && <span style={{ marginLeft: 6, fontSize: 12, padding: '2px 5px', background: '#c00', color: 'white', borderRadius: 3 }}>高不足</span>}
                   </td>
                   <td style={{ padding: '10px 12px' }}>
                     <HBar value={v24} max={maxVal} color={high ? '#c44' : '#4a90d9'} label="%" />
@@ -398,7 +398,7 @@ function Section3Shortage({ shortageSeries }: { shortageSeries: Record<Product, 
                   <td style={{ padding: '10px 12px' }}>
                     <HBar value={v25} max={maxVal} color={high ? '#d88' : '#7ab8f5'} label="%" />
                   </td>
-                  <td style={{ padding: '10px 12px', fontSize: 12 }}>
+                  <td style={{ padding: '10px 12px', fontSize: 15 }}>
                     {ratio !== null ? (
                       <span style={{ color: ratio > 0 ? '#c00' : '#090', fontWeight: 600 }}>
                         {ratio > 0 ? '▲' : '▼'}{Math.abs(ratio).toFixed(0)}%
@@ -424,13 +424,13 @@ function Section4Ter2Trend({ ter2Overall }: { ter2Overall: CatalogJson }) {
   return (
     <section style={{ marginBottom: 40 }}>
       <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>④ 三次調整力② 全体 落札単価 — 5年トレンド</h2>
-      <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 16 }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 16 }}>
         単位: 円/ΔkW・30min ／ 蓄電池参入前後の需給構造変化を可視化
       </p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         {pts.map((pt) => (
           <div key={pt.date} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span style={{ fontSize: 13, fontWeight: 600, minWidth: 70 }}>{fyLabel(pt.date)}</span>
+            <span style={{ fontSize: 15, fontWeight: 600, minWidth: 70 }}>{fyLabel(pt.date)}</span>
             <div style={{ flex: 1, background: '#eee', borderRadius: 3, height: 22, overflow: 'hidden' }}>
               <div style={{
                 width: `${Math.round((pt.value / maxVal) * 100)}%`,
@@ -439,7 +439,7 @@ function Section4Ter2Trend({ ter2Overall }: { ter2Overall: CatalogJson }) {
                 borderRadius: 3,
               }} />
             </div>
-            <span style={{ fontSize: 13, minWidth: 60, textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>
+            <span style={{ fontSize: 15, minWidth: 60, textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>
               {pt.value.toFixed(2)} 円
             </span>
           </div>

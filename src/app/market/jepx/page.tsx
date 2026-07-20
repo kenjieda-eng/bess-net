@@ -118,7 +118,7 @@ export default async function JEPXHubPage() {
           {/* 既存ダッシュボード (30分単位デモ、アービトラージ計算機) — 既存維持 (改善対象外) */}
           <section style={{ marginTop: 40, marginBottom: 16 }}>
             <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8 }}>🔬 30 分単位デモ + アービトラージ計算機</h2>
-            <p style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 0, marginBottom: 16, lineHeight: 1.7 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 16, lineHeight: 1.7 }}>
               ※ 以下は <strong>30 分単位の構造に基づくデモデータ</strong>です (実データは上の表、現在 JEPX の 30 分単位データは EIC Data でも整備中)。
               ヒートマップとアービトラージ計算機の UX 確認用にお使いください。実値は上の表または{' '}
               <a href="https://www.jepx.jp/electricpower/market-data/spot/" target="_blank" rel="noopener noreferrer">JEPX 公式</a>
@@ -129,7 +129,7 @@ export default async function JEPXHubPage() {
 
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
-            <ul style={{ fontSize: 13, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター</Link></li>
               <li><Link href="/tools/capacity-market-bid">容量市場応札試算 (OCCTO実データ連携)</Link></li>
               <li><Link href="/explainer/spot-market">解説: スポット市場とは</Link></li>
@@ -146,7 +146,7 @@ export default async function JEPXHubPage() {
             </ul>
           </section>
 
-          <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.7 }}>
             {EIC_DATA_DISCLAIMER}
           </p>
         </div>

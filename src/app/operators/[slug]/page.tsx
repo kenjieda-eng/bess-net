@@ -158,7 +158,7 @@ export default async function OperatorDetailPage({
               <p style={{ margin: '0 0 4px', fontSize: 15, fontWeight: 700, color: '#1e40af' }}>
                 ⚡ {operator.name} 管内の系統空き容量データ
               </p>
-              <p style={{ margin: '0 0 8px', fontSize: 13, color: '#4b5563', lineHeight: 1.6 }}>
+              <p style={{ margin: '0 0 8px', fontSize: 15, color: '#4b5563', lineHeight: 1.6 }}>
                 {gridArea.areaJp}エリアの変電所別 系統空き容量・予想潮流・N-1電制適用可否を一元化しています。
               </p>
               <Link href={`/grid/${gridArea.area}`} className="op-related-more" style={{ fontWeight: 700, color: '#2563eb' }}>

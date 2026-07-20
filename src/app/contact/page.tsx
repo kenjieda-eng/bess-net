@@ -125,7 +125,7 @@ export default function ContactIndexPage() {
                       >
                         {cat.label}
                       </div>
-                      <div style={{ fontSize: 13, color: '#4b5563', lineHeight: 1.6 }}>
+                      <div style={{ fontSize: 15, color: '#4b5563', lineHeight: 1.6 }}>
                         {cat.description}
                       </div>
                     </div>
@@ -171,7 +171,7 @@ export default function ContactIndexPage() {
                 paddingLeft: 20,
                 margin: '0 0 20px 0',
                 lineHeight: 1.8,
-                fontSize: 14,
+                fontSize: 15,
                 color: '#374151',
               }}
             >

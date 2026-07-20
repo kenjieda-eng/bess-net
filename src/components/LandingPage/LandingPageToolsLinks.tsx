@@ -45,7 +45,7 @@ export default function LandingPageToolsLinks({ tools }: { tools: LandingPageToo
             >
               <div
                 style={{
-                  fontSize: 12,
+                  fontSize: 13,
                   color: '#1d4ed8',
                   fontWeight: 700,
                   letterSpacing: '0.05em',
@@ -68,7 +68,7 @@ export default function LandingPageToolsLinks({ tools }: { tools: LandingPageToo
               </h3>
               <p
                 style={{
-                  fontSize: 14,
+                  fontSize: 15,
                   lineHeight: 1.7,
                   color: '#475569',
                   marginBottom: 12,
@@ -77,7 +77,7 @@ export default function LandingPageToolsLinks({ tools }: { tools: LandingPageToo
               >
                 {t.description}
               </p>
-              <div style={{ fontSize: 14, color: '#1d4ed8', fontWeight: 600 }}>
+              <div style={{ fontSize: 15, color: '#1d4ed8', fontWeight: 600 }}>
                 使ってみる →
               </div>
             </Link>

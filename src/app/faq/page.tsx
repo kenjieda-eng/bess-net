@@ -214,10 +214,10 @@ export default async function FaqPage() {
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
               関連コンテンツ
             </h2>
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
               より深く理解するための関連リソース。各 FAQ 内の「関連用語」「関連解説」リンクも併せてご活用ください:
             </p>
-            <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
+            <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
                 <Link href="/glossary">業界用語集（{glossaryCount.toLocaleString()}語）</Link> — 用語の詳細定義・読み・関連語
               </li>

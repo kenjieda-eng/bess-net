@@ -41,7 +41,7 @@ export default function LandingPageHero({ config }: { config: LandingPageConfig 
               background: badgeBg,
               color: badgeColor,
               borderRadius: 999,
-              fontSize: 14,
+              fontSize: 15,
               fontWeight: 600,
               marginBottom: 16,
             }}

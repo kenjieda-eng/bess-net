@@ -100,7 +100,7 @@ export default function MarketDataPanel({
             <span
               style={{
                 marginLeft: 10,
-                fontSize: 13,
+                fontSize: 15,
                 fontWeight: 600,
                 padding: '3px 10px',
                 borderRadius: 4,

@@ -97,15 +97,15 @@ export default function TrackerHubPage() {
                 border: '1px solid var(--color-border)', borderRadius: 8,
                 textDecoration: 'none', color: 'inherit', background: 'white',
               }}>
-                <div style={{ fontSize: 11, color: 'var(--color-muted)' }}>{t.label}</div>
+                <div style={{ fontSize: 12, color: 'var(--color-muted)' }}>{t.label}</div>
                 <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>{t.title}</div>
-                <p style={{ fontSize: 13, lineHeight: 1.6, margin: 0, color: 'var(--color-text)' }}>{t.desc}</p>
-                <div style={{ fontSize: 12, color: 'var(--color-accent)', marginTop: 8 }}>タイムラインを見る →</div>
+                <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, color: 'var(--color-text)' }}>{t.desc}</p>
+                <div style={{ fontSize: 13, color: 'var(--color-accent)', marginTop: 8 }}>タイムラインを見る →</div>
               </Link>
             ))}
           </div>
 
-          <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 24 }}>
+          <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 24 }}>
             ※ データは microCMS / 当サイト DB から取得。各ページは 1 時間ごとに更新。
           </p>
         </div>

@@ -61,7 +61,7 @@ export default function TrackerTimeline({ items, limit = 100 }: { items: Timelin
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center' }}>
                   {item.category && (
                     <span style={{
-                      fontSize: 13,
+                      fontSize: 15,
                       padding: '3px 8px',
                       background: 'var(--color-bg)',
                       border: '1px solid var(--color-border)',
@@ -76,13 +76,13 @@ export default function TrackerTimeline({ items, limit = 100 }: { items: Timelin
                   )}
                   {item.tags && item.tags.map((t) => (
                     <span key={t} style={{
-                      fontSize: 12, padding: '2px 7px', background: '#eef',
+                      fontSize: 15, padding: '2px 7px', background: '#eef',
                       borderRadius: 3, color: '#446',
                     }}>{t}</span>
                   ))}
                 </div>
                 {item.description && (
-                  <p style={{ margin: '6px 0 0 0', fontSize: 14, color: 'var(--color-muted)', lineHeight: 1.6 }}>
+                  <p style={{ margin: '6px 0 0 0', fontSize: 15, color: 'var(--color-muted)', lineHeight: 1.6 }}>
                     {item.description.slice(0, 120)}
                     {item.description.length > 120 ? '…' : ''}
                   </p>
@@ -92,7 +92,7 @@ export default function TrackerTimeline({ items, limit = 100 }: { items: Timelin
           </ul>
         </section>
       ))}
-      <p style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 16 }}>
+      <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16 }}>
         上位{' '}
         <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>
           {Math.min(limit, sorted.length)}

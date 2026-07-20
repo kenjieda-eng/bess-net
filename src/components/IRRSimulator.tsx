@@ -871,10 +871,10 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                     );
                   })}
                 </div>
-                <p style={{ fontSize: 12, color: '#6b7280', margin: '0 0 6px', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 15, color: '#6b7280', margin: '0 0 6px', lineHeight: 1.6 }}>
                   ※ 選択で <strong>{SCENARIO_LABELS[activeEditing]}</strong> シナリオの CAPEX を自動計算（¥/kWh × {cur.capacity_mwh} MWh = 上の値 × {cur.capacity_mwh} ÷ 100,000 億円）。手入力で上書き可能。
                 </p>
-                <p style={{ fontSize: 12, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontSize: 15, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
                   既定値は{' '}
                   <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc' }}>NREL Annual Technology Baseline (ATB) 2024</a>
                   の系統用蓄電池CAPEX（米国前提・${capexNrel.capexUsdPerKwh.toFixed(0)}/kWh）を
@@ -1027,7 +1027,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
           <span
             style={{
               marginLeft: 'auto',
-              fontSize: 13,
+              fontSize: 15,
               color: 'var(--color-muted)',
               alignSelf: 'center',
             }}
@@ -1082,7 +1082,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
               >
                 {SCENARIO_LABELS[k]}
               </div>
-              <div style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 4 }}>
+              <div style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 4 }}>
                 IRR
               </div>
               <div style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>
@@ -1093,7 +1093,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
                   gap: 8,
-                  fontSize: 13,
+                  fontSize: 15,
                 }}
               >
                 <div>

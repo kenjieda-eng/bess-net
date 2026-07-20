@@ -386,7 +386,7 @@ export default function SubsidyMatcher() {
                     fontFamily: 'inherit',
                   }}
                 />
-                <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+                <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
                   例: 50,000 kWh = 50 MWh
                 </p>
               </div>
@@ -415,7 +415,7 @@ export default function SubsidyMatcher() {
                     fontFamily: 'inherit',
                   }}
                 />
-                <p style={{ fontSize: 12, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
+                <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 4, marginBottom: 0 }}>
                   例: 12,500 kW = 12.5 MW (4h 放電)
                 </p>
               </div>
@@ -478,7 +478,7 @@ export default function SubsidyMatcher() {
           <span
             style={{
               marginLeft: 'auto',
-              fontSize: 13,
+              fontSize: 15,
               color: 'var(--color-muted)',
               alignSelf: 'center',
             }}
@@ -550,7 +550,7 @@ export default function SubsidyMatcher() {
                         display: 'inline-block',
                         padding: '2px 8px',
                         marginRight: 8,
-                        fontSize: 12,
+                        fontSize: 15,
                         fontWeight: 700,
                         background: 'var(--color-accent, #0066cc)',
                         color: '#fff',
@@ -561,7 +561,7 @@ export default function SubsidyMatcher() {
                     </span>
                     <span
                       style={{
-                        fontSize: 12,
+                        fontSize: 15,
                         fontWeight: 600,
                         padding: '2px 8px',
                         background: '#f0f0f0',
@@ -574,7 +574,7 @@ export default function SubsidyMatcher() {
                     {isExpired && (
                       <span
                         style={{
-                          fontSize: 12,
+                          fontSize: 15,
                           fontWeight: 600,
                           padding: '2px 8px',
                           background: '#fdd',
@@ -595,15 +595,15 @@ export default function SubsidyMatcher() {
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 8, fontSize: 15, marginBottom: 10 }}>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>補助率</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>補助率</div>
                     <div>{m.subsidy.subsidyRate_raw || '—'}</div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>上限額</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>上限額</div>
                     <div>{m.subsidy.upperLimit_raw || '—'}</div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>期限</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>期限</div>
                     <div>
                       {m.subsidy.is_rolling
                         ? '随時受付'
@@ -611,7 +611,7 @@ export default function SubsidyMatcher() {
                     </div>
                   </div>
                   <div>
-                    <div style={{ color: 'var(--color-muted)', fontSize: 12 }}>試算額</div>
+                    <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>試算額</div>
                     <div style={{ fontWeight: 600, color: 'var(--color-accent, #0066cc)' }}>
                       {m.estimated_amount_oku !== null
                         ? `約 ${m.estimated_amount_oku.toFixed(2)} 億円`
@@ -628,7 +628,7 @@ export default function SubsidyMatcher() {
                         display: 'inline-block',
                         margin: '0 4px 4px 0',
                         padding: '2px 8px',
-                        fontSize: 12,
+                        fontSize: 15,
                         background: 'var(--color-bg)',
                         border: '1px solid var(--color-border)',
                         borderRadius: 3,

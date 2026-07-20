@@ -81,7 +81,7 @@ export default function OpsFreshnessPage() {
               13 SOP 次回更新予定日（{sopRows.length} 件）
             </h2>
             <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
                 <thead style={{ background: 'var(--color-navy,#0F2D4F)', color: '#fff' }}>
                   <tr>
                     <th style={{ padding: '8px 10px', textAlign: 'left' }}>コンテンツ</th>
@@ -97,13 +97,13 @@ export default function OpsFreshnessPage() {
                       <tr key={r.id} style={{ borderBottom: '1px solid var(--color-border,#e5e7eb)' }}>
                         <td style={{ padding: '7px 10px' }}>
                           <a href={r.url} style={{ color: 'var(--color-accent,#00B5A5)' }}>{r.label}</a>
-                          <div style={{ fontSize: 11, color: '#6b7280' }}>{r.url}</div>
+                          <div style={{ fontSize: 12, color: '#6b7280' }}>{r.url}</div>
                         </td>
                         <td style={{ padding: '7px 10px' }}>{FREQ_LABEL[r.frequency]}</td>
                         <td style={{ padding: '7px 10px' }}>{r.persona}</td>
                         <td style={{ padding: '7px 10px', color: overdue ? '#b91c1c' : '#374151', fontWeight: overdue ? 700 : 400 }}>
                           {r.next ? new Date(r.next).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '随時'}
-                          {overdue && <span style={{ marginLeft: 6, fontSize: 11 }}>⚠ 期限超過</span>}
+                          {overdue && <span style={{ marginLeft: 6, fontSize: 12 }}>⚠ 期限超過</span>}
                         </td>
                       </tr>
                     );
@@ -119,10 +119,10 @@ export default function OpsFreshnessPage() {
               catalog SLA 違反（{slaViolations.length} / {indicators.length} 件）
             </h2>
             {slaViolations.length === 0 ? (
-              <p style={{ color: '#15803d', fontSize: 14 }}>✅ 違反なし（catalog {indicators.length} 系列、全て SLA 内）</p>
+              <p style={{ color: '#15803d', fontSize: 15 }}>✅ 違反なし（catalog {indicators.length} 系列、全て SLA 内）</p>
             ) : (
               <div style={{ overflowX: 'auto' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
                   <thead style={{ background: '#b91c1c', color: '#fff' }}>
                     <tr>
                       <th style={{ padding: '8px 10px', textAlign: 'left' }}>系列 ID</th>
@@ -136,7 +136,7 @@ export default function OpsFreshnessPage() {
                       const ds = daysSince(v.observation_cutoff || v.updated_at) ?? 0;
                       return (
                         <tr key={v.id} style={{ borderBottom: '1px solid var(--color-border,#e5e7eb)' }}>
-                          <td style={{ padding: '7px 10px', fontFamily: 'monospace', fontSize: 12 }}>{v.id}</td>
+                          <td style={{ padding: '7px 10px', fontFamily: 'monospace', fontSize: 15 }}>{v.id}</td>
                           <td style={{ padding: '7px 10px' }}>{v.name ?? '—'}</td>
                           <td style={{ padding: '7px 10px', textAlign: 'right' }}>{v.freshness_sla_days}</td>
                           <td style={{ padding: '7px 10px', textAlign: 'right', color: '#b91c1c', fontWeight: 700 }}>{ds}</td>
@@ -150,7 +150,7 @@ export default function OpsFreshnessPage() {
           </section>
 
           {/* ─── 注記 ─── */}
-          <section style={{ padding: '14px 16px', background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 12, color: '#6b7280', lineHeight: 1.7 }}>
+          <section style={{ padding: '14px 16px', background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 13, color: '#6b7280', lineHeight: 1.7 }}>
             <strong style={{ color: '#374151' }}>運用ノート</strong>
             <br />
             ・本ページは <code>noindex</code> + robots.txt Disallow で一般公開しない。
