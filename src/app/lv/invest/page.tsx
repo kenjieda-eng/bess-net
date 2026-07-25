@@ -10,7 +10,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
 import { siteConfig } from '@/lib/site-config';
-import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
+import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
 
 export const dynamic = 'force-static';
 
@@ -51,6 +51,8 @@ const ENTRIES = [
     num: '②',
     title: '買うか迷っている',
     desc: '利回り・回収・リスクをどう考えるか。',
+    // B2: B群記事を主リンクに。既存（リスク・IRRシム）は「関連する解説」へ。
+    guideArticlesB: true,
     links: [
       { href: '/lv/risks', label: 'リスクと注意点' },
       { href: '/tools/irr-simulator', label: 'IRRシミュレーター' },
@@ -129,6 +131,24 @@ export default function LvInvestHubPage() {
                   <>
                     <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
                       {LV_INVEST_ARTICLES_A.map((a) => (
+                        <li key={a.slug}>
+                          <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '10px 0 4px', fontWeight: 600 }}>関連する解説</p>
+                    <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                      {e.links.map((l) => (
+                        <li key={l.href}>
+                          <Link href={l.href}>{l.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : 'guideArticlesB' in e && e.guideArticlesB ? (
+                  <>
+                    <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                      {LV_INVEST_ARTICLES_B.map((a) => (
                         <li key={a.slug}>
                           <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
                         </li>

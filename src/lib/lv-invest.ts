@@ -19,8 +19,8 @@ export function isLvInvestExplainer(exp: Pick<Explainer, 'category'>): boolean {
  * 6記事の SEO メタ（titleタグは layout が「 | 蓄電所ネット」を自動付与するため、ここでは
  * サフィックスを除いた形で持つ・#88 二重回避）。ハブ分岐①のリンク順もこの配列順。
  */
-// group: 'A' = 「まず知りたい」（分岐①に列挙）／'G' = 運営・相談（分岐⑤に列挙）
-export type LvInvestArticle = { slug: string; group: 'A' | 'G'; hubLabel: string; seoTitle: string; meta: string };
+// group: 'A' = 「まず知りたい」（分岐①）／'B' = 「買うか迷っている」（分岐②）／'G' = 運営・相談（分岐⑤）
+export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'G'; hubLabel: string; seoTitle: string; meta: string };
 
 export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
   {
@@ -129,10 +129,76 @@ export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
     seoTitle: '低圧蓄電所を「買わない」判断も支援します（蓄電池投資）',
     meta: '見送りは失敗ではなく判断です。低圧蓄電所投資を見送る合理的な理由、再検討のタイミング、見送り相談の使い方を解説します。',
   },
+  // B2（2026-07-25）: B群前半9本（分岐②「買うか迷っている」前半・本丸前編）
+  {
+    slug: 'five-year-payback',
+    group: 'B',
+    hubLabel: '「5年で投資回収」とは、どういう意味ですか？',
+    seoTitle: '低圧蓄電所の「5年で投資回収」の意味と確認点（蓄電池投資）',
+    meta: '「5年で回収」は多くの場合、販売価格を年間想定収益で割った単純計算です。分子・分母の定義、含まれていない費用、確認の仕方を解説。',
+  },
+  {
+    slug: 'ten-year-view',
+    group: 'B',
+    hubLabel: '5年回収と言われた案件を10年目線で考える',
+    seoTitle: '低圧蓄電所投資を10年目線で考える（蓄電池の回収と長期収支）',
+    meta: '回収後の5年こそ差がつく期間。劣化・保証切れ・市場変化・修繕と撤去まで、低圧蓄電所を10年の収支表で考える方法を解説します。',
+  },
+  {
+    slug: 'yield-vs-take-home',
+    group: 'B',
+    hubLabel: '想定利回りと実際の手取りは何が違う？',
+    seoTitle: '低圧蓄電所の表面利回りと手取りの違い（蓄電池投資）',
+    meta: '表面利回りは売上÷価格の単純計算。手取りは費用と税を引いた後。低圧蓄電所投資で両者がどれだけ離れるか、手順で確認する方法。',
+  },
+  {
+    slug: 'revenue-400-math',
+    group: 'B',
+    hubLabel: '年間400万円の売上なら、手元にいくら残る？',
+    seoTitle: '低圧蓄電所の売上400万円の手取り計算手順（蓄電池投資）',
+    meta: '年間売上400万円の低圧蓄電所で手元に残る金額の計算手順。費目の一覧と埋め方、慎重ケースのやり方まで。金額の断定はせず手順を提供。',
+  },
+  {
+    slug: 'is-2000man-expensive',
+    group: 'B',
+    hubLabel: '販売価格2,000万円は高いのか、安いのか',
+    seoTitle: '低圧蓄電所の価格2,000万円は高い？安い？比べ方（蓄電池投資）',
+    meta: '低圧蓄電所の価格の高い安いは単価・含まれる範囲・条件の3点で決まる。相場の断定ではなく、正しく比較する手順を解説します。',
+  },
+  {
+    slug: 'is-it-profitable',
+    group: 'B',
+    hubLabel: '低圧蓄電所は本当に儲かるのか',
+    seoTitle: '低圧蓄電所投資は本当に儲かるのか — 正直な答え（蓄電池）',
+    meta: '「儲かるのか」への正直な答えは「条件次第で、誰にも保証できない」。何が成否を分けるのか、4つの要素と確認の順番を解説します。',
+  },
+  {
+    slug: 'feels-suspicious',
+    group: 'B',
+    hubLabel: '低圧蓄電所投資が怪しいと感じたときに確認すること',
+    seoTitle: '低圧蓄電所投資は怪しい？と感じたときの確認手順（蓄電池）',
+    meta: '「怪しい」という感覚は大切なセンサー。会社・案件・説明・契約の4点を順に確認する手順と、「怪しい」と「新しい」の見分け方。',
+  },
+  {
+    slug: 'five-numbers-to-check',
+    group: 'B',
+    hubLabel: '「高利回り」と言われたときに見る5つの数字',
+    seoTitle: '蓄電池投資で「高利回り」と言われたら見る5つの数字（低圧蓄電所）',
+    meta: '「高利回り」という言葉自体は何も保証しません。分母分子の定義・前提単価と稼働率・劣化と保証・年間費用・慎重ケースの5つを確認。',
+  },
+  {
+    slug: 'yield-guarantee-check',
+    group: 'B',
+    hubLabel: '「利回り保証」と言われたら何を確認する？',
+    seoTitle: '蓄電池投資の「利回り保証」の確認点 — 保証の中身を分解（低圧蓄電所）',
+    meta: '「利回り保証」は誰が・何を・何年・どの原資で保証するかで意味が全く違う。保証の分解手順と、「元本保証」という説明への注意点。',
+  },
 ];
 
 /** 「まず知りたい」A群（分岐①・表示順） */
 export const LV_INVEST_ARTICLES_A = LV_INVEST_ARTICLES.filter((a) => a.group === 'A');
+/** 「買うか迷っている」B群（分岐②・表示順） */
+export const LV_INVEST_ARTICLES_B = LV_INVEST_ARTICLES.filter((a) => a.group === 'B');
 /** 運営・相談 G群（分岐⑤） */
 export const LV_INVEST_ARTICLES_G = LV_INVEST_ARTICLES.filter((a) => a.group === 'G');
 
