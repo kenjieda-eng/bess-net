@@ -10,7 +10,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
 import { siteConfig } from '@/lib/site-config';
-import { LV_INVEST_ARTICLES } from '@/lib/lv-invest';
+import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
 
 export const dynamic = 'force-static';
 
@@ -72,6 +72,8 @@ const ENTRIES = [
     num: '⑤',
     title: '無料で相談したい',
     desc: 'できること・できないことを先に明示します。',
+    // B1: 運営・相談（G群）記事を主リンクに。相談前アンカーは「関連」リンクに残す。
+    guideArticlesG: true,
     links: [{ href: '#invest-trust', label: '相談前にお読みください' }],
   },
 ] as const;
@@ -126,7 +128,7 @@ export default function LvInvestHubPage() {
                 {'guideArticles' in e && e.guideArticles ? (
                   <>
                     <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
-                      {LV_INVEST_ARTICLES.map((a) => (
+                      {LV_INVEST_ARTICLES_A.map((a) => (
                         <li key={a.slug}>
                           <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
                         </li>
@@ -134,6 +136,21 @@ export default function LvInvestHubPage() {
                     </ul>
                     <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '10px 0 4px', fontWeight: 600 }}>関連する解説</p>
                     <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                      {e.links.map((l) => (
+                        <li key={l.href}>
+                          <Link href={l.href}>{l.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : 'guideArticlesG' in e && e.guideArticlesG ? (
+                  <>
+                    <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                      {LV_INVEST_ARTICLES_G.map((a) => (
+                        <li key={a.slug}>
+                          <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
+                        </li>
+                      ))}
                       {e.links.map((l) => (
                         <li key={l.href}>
                           <Link href={l.href}>{l.label}</Link>
@@ -205,6 +222,16 @@ export default function LvInvestHubPage() {
               <li>
                 <a href="/dl/anken-hikaku-v1.pdf" target="_blank" rel="noopener noreferrer">
                   低圧蓄電所 案件比較表（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/pre-purchase-checklist-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  購入前チェックリスト（1枚版・PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/family-onepager-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  家族・役員説明用 1枚資料（PDF）
                 </a>
               </li>
             </ul>
