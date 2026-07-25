@@ -78,6 +78,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // 低圧クラスタ Stage3（2026-07-19・シリーズ6本完結）
     { url: `${siteConfig.url}/lv/entry-guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${siteConfig.url}/lv/regulation-subsidy`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    // 低圧投資家ガイド W1（2026-07-20・入口ハブ）
+    { url: `${siteConfig.url}/lv/invest`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     // Sprint 2 追加コーナー（依頼AB/AC/AD）
     { url: `${siteConfig.url}/policy-calendar`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     // P1: 政策イベント詳細（充実9件のみ SSG・POLICY_DETAIL_SLUGS と同期）

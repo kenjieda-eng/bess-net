@@ -123,6 +123,19 @@ export default async function LvHubPage() {
             契約電力50kW未満の「低圧」で系統に連系する蓄電池事業 ── 低圧蓄電所（低圧系統用蓄電池）への関心が高まっています。2026年4月には需給調整市場が低圧リソースに開かれ、区画販売（分譲）型の商品も増えてきました。一方で、検索して出てくる情報の多くは販売者側の資料です。このページは、販売者ではない中立の立場から、仕組み・収益・リスク・制度を一次資料ベースで整理する総合ガイドです。
           </p>
 
+          {/* 投資家ガイド ハブへの入口（W1 Stage1・2026-07-20） */}
+          <Link href="/lv/invest" style={{
+            display: 'block', padding: 20, border: '1px solid var(--color-accent, #0066cc)',
+            borderRadius: 8, textDecoration: 'none', color: 'inherit', background: 'var(--color-bg-card, #fff)',
+            marginBottom: 32,
+          }}>
+            <h3 style={{ fontSize: 17, fontWeight: 700, margin: '0 0 6px', lineHeight: 1.5 }}>投資家のための低圧蓄電所ガイド</h3>
+            <p style={{ fontSize: 15, lineHeight: 1.7, margin: 0, color: 'var(--color-muted)' }}>
+              買う前の疑問から購入後・売却まで。個人投資家向けに、段階に合わせて中立の立場で整理します。
+            </p>
+            <div style={{ fontSize: 13, color: 'var(--color-accent)', marginTop: 8 }}>ガイドを見る →</div>
+          </Link>
+
           {/* 解説シリーズ（Stage3: 6本完結） */}
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>解説シリーズ</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16, marginBottom: 8 }}>
