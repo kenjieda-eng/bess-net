@@ -6,6 +6,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllExplainer } from '@/lib/microcms';
+import { isLvInvestExplainer } from '@/lib/lv-invest';
 import {
   EXPLAINER_HUB_GROUPS,
   countByGroupUnion,
@@ -25,7 +26,8 @@ export const metadata: Metadata = {
 };
 
 export default async function ExplainerListPage() {
-  const articles = await getAllExplainer();
+  // 低圧投資家ガイド（category:低圧投資）は /lv/invest 専用routeで表示＝/explainer には混ぜない（W2）
+  const articles = (await getAllExplainer()).filter((a) => !isLvInvestExplainer(a));
 
   // カテゴリ別SSRハブへのクロスリンク（件数>0のみ・クローラが辿れる実<a>。client filterは維持）
   const hubCounts = countByGroupUnion(articles);

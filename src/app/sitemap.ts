@@ -11,6 +11,7 @@ import {
 } from '@/lib/explainer-utils';
 import { GLOSSARY_301_SOURCE_SLUGS } from '@/lib/glossary-301';
 import { POLICY_DETAIL_SLUGS } from '@/lib/policy-utils';
+import { isLvInvestExplainer } from '@/lib/lv-invest';
 import {
   getAllExplainer,
   getAllGlossary,
@@ -181,14 +182,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     safeFetch(getAvailablePrefectures),
   ]);
 
-  const explainerUrls: MetadataRoute.Sitemap = explainer.map((a) => ({
+  // 低圧投資家ガイド記事は /explainer には出さず /lv/invest/[slug] を正とする（W2・canonical と整合）
+  const explainerPublic = explainer.filter((a) => !isLvInvestExplainer(a));
+  const explainerUrls: MetadataRoute.Sitemap = explainerPublic.map((a) => ({
     url: `${siteConfig.url}/explainer/${a.slug}`,
     lastModified: new Date(a.updatedAt),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));
+  // 低圧投資家ガイド 記事（/lv/invest/[slug]・W2）
+  const lvInvestUrls: MetadataRoute.Sitemap = explainer
+    .filter((a) => isLvInvestExplainer(a))
+    .map((a) => ({
+      url: `${siteConfig.url}/lv/invest/${a.slug}`,
+      lastModified: new Date(a.updatedAt),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }));
   // カテゴリ別 SSRハブ（/explainer/category/[category]・件数>0のみ・/news ハブと同方式）
-  const explainerGroupCounts = countByGroupUnion(explainer);
+  const explainerGroupCounts = countByGroupUnion(explainerPublic);
   const explainerCategoryUrls: MetadataRoute.Sitemap = EXPLAINER_HUB_GROUPS.filter(
     (g) => (explainerGroupCounts[g] || 0) > 0
   ).map((g) => ({
@@ -398,6 +410,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...infoUrls,
     ...explainerCategoryUrls,
     ...explainerUrls,
+    ...lvInvestUrls,
     ...glossaryUrls,
     ...subsidyUrls,
     ...projectUrls,

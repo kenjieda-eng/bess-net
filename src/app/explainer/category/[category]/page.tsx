@@ -14,6 +14,7 @@ import SiteFooter from '@/components/SiteFooter';
 import ExplainerHubList from '@/components/ExplainerHubList';
 import ExplainerCategoryNav from '@/components/ExplainerCategoryNav';
 import { getAllExplainer, type Explainer } from '@/lib/microcms';
+import { isLvInvestExplainer } from '@/lib/lv-invest';
 import {
   EXPLAINER_HUB_GROUPS,
   toGroups,
@@ -26,7 +27,8 @@ export const dynamicParams = false;
 
 async function safeGetAll(): Promise<Explainer[]> {
   try {
-    return await getAllExplainer();
+    // 低圧投資家ガイド（category:低圧投資）は /lv/invest 専用routeで表示＝/explainer カテゴリからも除外（W2）
+    return (await getAllExplainer()).filter((a) => !isLvInvestExplainer(a));
   } catch {
     return []; // 429等は空縮退（#100）。generateStaticParams は空、page は notFound。
   }

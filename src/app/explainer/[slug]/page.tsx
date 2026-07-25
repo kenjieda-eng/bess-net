@@ -29,6 +29,7 @@ import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 import { TOOL_CTAS } from '@/lib/tools-cta';
 import { EXPLAINER_EDU_LINKS } from '@/lib/edu-links';
+import { isLvInvestExplainer } from '@/lib/lv-invest';
 
 export const revalidate = 600;
 
@@ -47,10 +48,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const exp = await getExplainerBySlug(params.slug);
   if (!exp) return {};
+  // 低圧投資家ガイド記事は /lv/invest/[slug] が正（重複インデックス防止・canonical を向ける／redirect でなく
+  // canonical 採用。直アクセスは 200 のまま・#88 二重サフィックスなし・W2）
+  const isInvest = isLvInvestExplainer(exp);
   return {
     title: `${exp.title}｜解説`,
     description: exp.lead,
-    alternates: { canonical: `/explainer/${exp.slug}` },
+    alternates: { canonical: isInvest ? `/lv/invest/${exp.slug}` : `/explainer/${exp.slug}` },
     openGraph: {
       title: exp.title,
       description: exp.lead,

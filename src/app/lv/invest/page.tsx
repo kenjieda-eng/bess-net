@@ -10,6 +10,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
 import { siteConfig } from '@/lib/site-config';
+import { LV_INVEST_ARTICLES } from '@/lib/lv-invest';
 
 export const dynamic = 'force-static';
 
@@ -38,6 +39,8 @@ const ENTRIES = [
     num: '①',
     title: 'まず知りたい',
     desc: '仕組みと、何に投資するのかの全体像から。',
+    // W2: 投入記事を主リンクに（LV_INVEST_ARTICLES で管理・週次追記）。既存リンクは「関連する解説」へ。
+    guideArticles: true,
     links: [
       { href: '/lv/what-is', label: '低圧蓄電所とは' },
       { href: '/lv/revenue-model', label: '収益モデル' },
@@ -120,13 +123,33 @@ export default function LvInvestHubPage() {
                   {e.title}
                 </h3>
                 <p style={{ fontSize: 15, lineHeight: 1.7, margin: '0 0 10px', color: 'var(--color-muted)' }}>{e.desc}</p>
-                <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
-                  {e.links.map((l) => (
-                    <li key={l.href}>
-                      <Link href={l.href}>{l.label}</Link>
-                    </li>
-                  ))}
-                </ul>
+                {'guideArticles' in e && e.guideArticles ? (
+                  <>
+                    <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                      {LV_INVEST_ARTICLES.map((a) => (
+                        <li key={a.slug}>
+                          <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '10px 0 4px', fontWeight: 600 }}>関連する解説</p>
+                    <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                      {e.links.map((l) => (
+                        <li key={l.href}>
+                          <Link href={l.href}>{l.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    {e.links.map((l) => (
+                      <li key={l.href}>
+                        <Link href={l.href}>{l.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
@@ -166,6 +189,26 @@ export default function LvInvestHubPage() {
               無料で相談する（何かを買う必要はありません） →
             </a>
           </div>
+
+          {/* 登録不要のDL資料（W2 Stage3・GA4 file_download で自動計測想定・download属性なし通常アンカー） */}
+          <section style={{ margin: '0 0 32px', padding: 20, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>登録不要の資料</h2>
+            <p style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
+              登録・メールアドレス不要でそのまま開けます。
+            </p>
+            <ul style={{ fontSize: 15, lineHeight: 2.0, paddingLeft: 18, margin: 0 }}>
+              <li>
+                <a href="/dl/questions-15-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  販売会社に聞く15の質問シート（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/anken-hikaku-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  低圧蓄電所 案件比較表（PDF）
+                </a>
+              </li>
+            </ul>
+          </section>
 
           <LvInvestTrustBlock />
 
