@@ -10,7 +10,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
 import { siteConfig } from '@/lib/site-config';
-import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
+import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_C, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
 
 export const dynamic = 'force-static';
 
@@ -62,6 +62,8 @@ const ENTRIES = [
     num: '③',
     title: '営業資料を受け取った',
     desc: '提案書の読み方と、確認すべきこと。',
+    // B4: C群記事を主リンクに。既存（購入・投資ガイド）は「関連する解説」へ。
+    guideArticlesC: true,
     links: [{ href: '/lv/buying-guide', label: '購入・投資ガイド（チェックリスト8項目）' }],
   },
   {
@@ -149,6 +151,24 @@ export default function LvInvestHubPage() {
                   <>
                     <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
                       {LV_INVEST_ARTICLES_B.map((a) => (
+                        <li key={a.slug}>
+                          <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '10px 0 4px', fontWeight: 600 }}>関連する解説</p>
+                    <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                      {e.links.map((l) => (
+                        <li key={l.href}>
+                          <Link href={l.href}>{l.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : 'guideArticlesC' in e && e.guideArticlesC ? (
+                  <>
+                    <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                      {LV_INVEST_ARTICLES_C.map((a) => (
                         <li key={a.slug}>
                           <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
                         </li>
@@ -252,6 +272,26 @@ export default function LvInvestHubPage() {
               <li>
                 <a href="/dl/family-onepager-v1.pdf" target="_blank" rel="noopener noreferrer">
                   家族・役員説明用 1枚資料（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/investment-decision-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  投資判断シート（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/take-home-worksheet-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  手取り計算シート（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/advisor-briefing-template-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  税理士・金融機関向け 説明ひな型（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/conservative-case-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  慎重ケース早見シート（PDF）
                 </a>
               </li>
             </ul>

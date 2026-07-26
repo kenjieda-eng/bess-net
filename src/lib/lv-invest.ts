@@ -19,8 +19,9 @@ export function isLvInvestExplainer(exp: Pick<Explainer, 'category'>): boolean {
  * 6記事の SEO メタ（titleタグは layout が「 | 蓄電所ネット」を自動付与するため、ここでは
  * サフィックスを除いた形で持つ・#88 二重回避）。ハブ分岐①のリンク順もこの配列順。
  */
-// group: 'A' = 「まず知りたい」（分岐①）／'B' = 「買うか迷っている」（分岐②）／'G' = 運営・相談（分岐⑤）
-export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'G'; hubLabel: string; seoTitle: string; meta: string };
+// group: 'A' = 「まず知りたい」（分岐①）／'B' = 「買うか迷っている」（分岐②）／
+//        'C' = 「営業資料を受け取った」（分岐③）／'G' = 運営・相談（分岐⑤）
+export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'C' | 'G'; hubLabel: string; seoTitle: string; meta: string };
 
 export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
   {
@@ -257,12 +258,99 @@ export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
     seoTitle: '低圧蓄電所の10年後 — 機器・市場・選択肢の変化（蓄電池投資）',
     meta: '10年後を正確に予測できる人はいません。機器・市場・制度がどう変わり得るか、幅で考える方法と「選び直せる契約」の重要性を解説。',
   },
+  // B4（2026-07-26）: C群12本（分岐③「営業資料を受け取った」完結）
+  {
+    slug: 'sales-doc-first-look',
+    group: 'C',
+    hubLabel: '販売会社から資料をもらったら、最初に見るページ',
+    seoTitle: '低圧蓄電所の営業資料で最初に見るページ（蓄電池投資）',
+    meta: '分厚い提案資料は最初の10分で全部読まなくていい。最初に開くべき3箇所（前提数値・費用一覧・保証条件）と読む順番を解説します。',
+  },
+  {
+    slug: 'proposal-how-to-read',
+    group: 'C',
+    hubLabel: '低圧蓄電所の提案書の読み方',
+    seoTitle: '低圧蓄電所の提案書の読み方 — 構成と要注意ページ（蓄電池）',
+    meta: '提案書の典型構成（市場性→案件→収支→会社紹介）と、各パートで確認すべきこと・流し読みでよいパートを仕分けして解説します。',
+  },
+  {
+    slug: 'fifteen-questions-guide',
+    group: 'C',
+    hubLabel: '販売会社に聞いておきたい15の質問（使い方ガイド）',
+    seoTitle: '低圧蓄電所の販売会社に聞く15の質問 — 使い方（蓄電池投資）',
+    meta: '配布中の15の質問シートの使い方。質問の意図、聞く順番、回答の記録方法、答え方から会社を見る方法まで解説します。',
+  },
+  {
+    slug: 'vague-answers',
+    group: 'C',
+    hubLabel: '回答が曖昧だったら注意したい質問',
+    seoTitle: '低圧蓄電所の営業で曖昧な回答に注意すべき質問（蓄電池）',
+    meta: '全質問に完璧な回答は不要。ただし「ここが曖昧なら立ち止まる」質問が5つあります。曖昧さの種類と、その後の進め方を解説。',
+  },
+  {
+    slug: 'simulation-check',
+    group: 'C',
+    hubLabel: '収支シミュレーションのどこを見る？',
+    seoTitle: '低圧蓄電所の収支シミュレーションの見方 — 5つの確認点（蓄電池）',
+    meta: '収支シミュレーションで見るのは結論の利回りではなく前提。単価・稼働率・劣化・費用・期間の5点をどう確認するかを解説します。',
+  },
+  {
+    slug: 'missing-costs',
+    group: 'C',
+    hubLabel: 'シミュレーションに入っていないことが多い費用',
+    seoTitle: '低圧蓄電所の収支に入っていないことが多い費用一覧（蓄電池）',
+    meta: '撤去費・修繕引当・保険・固定資産税・パワコン交換 — シミュレーションから漏れがちな費用のチェックリストと確認の聞き方。',
+  },
+  {
+    slug: 'conservative-conversion',
+    group: 'C',
+    hubLabel: '販売会社のシミュレーションを慎重ケースに直す方法',
+    seoTitle: '低圧蓄電所の収支を慎重ケースに直す3ステップ（蓄電池投資）',
+    meta: '売上8割・費用1.2倍・期間10年 — 販売会社のシミュレーションを自分の慎重ケースに直す3ステップと、結果の読み方を解説します。',
+  },
+  {
+    slug: 'compare-two-offers',
+    group: 'C',
+    hubLabel: '2社の低圧蓄電所案件を比べる方法',
+    seoTitle: '低圧蓄電所の2社比較のやり方 — 条件を揃えて比べる（蓄電池）',
+    meta: '2案件の比較は「条件を揃える」が9割。価格の範囲・前提数値・保証・契約を同じ物差しに直す手順と、比較表の使い方を解説します。',
+  },
+  {
+    slug: 'not-only-price',
+    group: 'C',
+    hubLabel: '価格だけで販売会社を選ばない方がよい理由',
+    seoTitle: '低圧蓄電所を価格だけで選ばない方がよい理由（蓄電池投資）',
+    meta: '最安値の案件が最良とは限らない理由を構造で説明。価格差の出どころ、安さの内訳、価格以外で差がつく4項目を解説します。',
+  },
+  {
+    slug: 'manufacturer-check',
+    group: 'C',
+    hubLabel: '蓄電池メーカーはどこを確認すればよい？',
+    seoTitle: '低圧蓄電所の蓄電池メーカーの確認点 — 保証と継続性（蓄電池）',
+    meta: 'メーカー名の知名度より確認すべきは保証の中身と履行体制。容量保証・国内サポート・事業継続性の3点をどう確認するかを解説。',
+  },
+  {
+    slug: 'epc-role',
+    group: 'C',
+    hubLabel: 'EPC会社は購入後も関係するのか',
+    seoTitle: '低圧蓄電所のEPC会社とは — 購入後の関わりまで（蓄電池）',
+    meta: 'EPC（設計・調達・施工）は建てて終わりではない。工事品質が10年の故障率を決め、O&Mを兼ねる場合も。確認点を解説します。',
+  },
+  {
+    slug: 'aggregator-role',
+    group: 'C',
+    hubLabel: 'アグリゲーターとは、投資家にとって何をする会社？',
+    seoTitle: 'アグリゲーターとは — 低圧蓄電所投資家のための解説（蓄電池）',
+    meta: 'あなたの収入はこの会社の腕で決まる。アグリゲーターの仕事、収益配分の仕組み、契約前に確認したい5点を投資家目線で解説。',
+  },
 ];
 
 /** 「まず知りたい」A群（分岐①・表示順） */
 export const LV_INVEST_ARTICLES_A = LV_INVEST_ARTICLES.filter((a) => a.group === 'A');
 /** 「買うか迷っている」B群（分岐②・表示順） */
 export const LV_INVEST_ARTICLES_B = LV_INVEST_ARTICLES.filter((a) => a.group === 'B');
+/** 「営業資料を受け取った」C群（分岐③・表示順） */
+export const LV_INVEST_ARTICLES_C = LV_INVEST_ARTICLES.filter((a) => a.group === 'C');
 /** 運営・相談 G群（分岐⑤） */
 export const LV_INVEST_ARTICLES_G = LV_INVEST_ARTICLES.filter((a) => a.group === 'G');
 
