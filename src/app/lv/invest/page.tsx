@@ -10,7 +10,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
 import { siteConfig } from '@/lib/site-config';
-import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_C, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
+import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_C, LV_INVEST_ARTICLES_D, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
 
 export const dynamic = 'force-static';
 
@@ -65,6 +65,14 @@ const ENTRIES = [
     // B4: C群記事を主リンクに。既存（購入・投資ガイド）は「関連する解説」へ。
     guideArticlesC: true,
     links: [{ href: '/lv/buying-guide', label: '購入・投資ガイド（チェックリスト8項目）' }],
+  },
+  {
+    // B5: 分岐③直後の新カード。番号は付けず「＋」で補足カードを示す（既存①〜⑤は不変）。
+    num: '＋',
+    title: '契約・保証を確認したい',
+    desc: '販売会社・契約書・メーカー保証・運用委託を確認する段階へ。',
+    guideArticlesD: true,
+    links: [],
   },
   {
     num: '④',
@@ -183,6 +191,14 @@ export default function LvInvestHubPage() {
                       ))}
                     </ul>
                   </>
+                ) : 'guideArticlesD' in e && e.guideArticlesD ? (
+                  <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    {LV_INVEST_ARTICLES_D.map((a) => (
+                      <li key={a.slug}>
+                        <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
+                      </li>
+                    ))}
+                  </ul>
                 ) : 'guideArticlesG' in e && e.guideArticlesG ? (
                   <>
                     <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
@@ -292,6 +308,21 @@ export default function LvInvestHubPage() {
               <li>
                 <a href="/dl/conservative-case-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
                   慎重ケース早見シート（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/contract-checklist-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  契約書確認チェックシート（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/warranty-check-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  メーカー保証確認シート（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/aggregator-contract-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  アグリゲーター契約確認シート（PDF）
                 </a>
               </li>
             </ul>

@@ -20,8 +20,9 @@ export function isLvInvestExplainer(exp: Pick<Explainer, 'category'>): boolean {
  * サフィックスを除いた形で持つ・#88 二重回避）。ハブ分岐①のリンク順もこの配列順。
  */
 // group: 'A' = 「まず知りたい」（分岐①）／'B' = 「買うか迷っている」（分岐②）／
-//        'C' = 「営業資料を受け取った」（分岐③）／'G' = 運営・相談（分岐⑤）
-export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'C' | 'G'; hubLabel: string; seoTitle: string; meta: string };
+//        'C' = 「営業資料を受け取った」（分岐③）／'D' = 「契約・保証を確認したい」（分岐③直後カード）／
+//        'G' = 運営・相談（分岐⑤）
+export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'C' | 'D' | 'G'; hubLabel: string; seoTitle: string; meta: string };
 
 export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
   {
@@ -343,6 +344,91 @@ export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
     seoTitle: 'アグリゲーターとは — 低圧蓄電所投資家のための解説（蓄電池）',
     meta: 'あなたの収入はこの会社の腕で決まる。アグリゲーターの仕事、収益配分の仕組み、契約前に確認したい5点を投資家目線で解説。',
   },
+  // B5（2026-07-27）: D群12本（契約・保証群／分岐③直後カード「契約・保証を確認したい」）
+  {
+    slug: 'how-to-choose-seller',
+    group: 'D',
+    hubLabel: '販売会社はどのように選べばよい？',
+    seoTitle: '低圧蓄電所の販売会社の選び方 — 5つの確認軸（蓄電池投資）',
+    meta: '知名度や価格ではなく、開示・体制・契約・実在・相性の5軸で選ぶ。10年付き合う相手として販売会社を評価する方法を解説します。',
+  },
+  {
+    slug: 'seller-bankruptcy',
+    group: 'D',
+    hubLabel: '販売会社が倒産したらどうなる？',
+    seoTitle: '低圧蓄電所の販売会社が倒産したら — 影響と備え（蓄電池）',
+    meta: '販売会社の倒産で何が止まり、何が残るのか。設備の所有権・保証の行方・支払段階別のリスクと、購入前にできる4つの備えを解説。',
+  },
+  {
+    slug: 'aggregator-exit',
+    group: 'D',
+    hubLabel: 'アグリゲーターが撤退したらどうなる？',
+    seoTitle: 'アグリゲーター撤退時の低圧蓄電所への影響と備え（蓄電池）',
+    meta: '運用会社の撤退で収入は一時止まり得るが、設備は残る。空白期間の実際、代替先の探し方、契約時に確認すべき移行条項を解説。',
+  },
+  {
+    slug: 'overseas-manufacturer',
+    group: 'D',
+    hubLabel: '海外メーカーの蓄電池でも大丈夫？',
+    seoTitle: '海外メーカーの蓄電池は大丈夫？低圧蓄電所での確認点',
+    meta: '世界の蓄電池市場は海外大手が中心で、海外製自体は普通の選択。国内サポート・保証履行・部品供給の3点で個体差を見る方法を解説。',
+  },
+  {
+    slug: 'capacity-guarantee',
+    group: 'D',
+    hubLabel: '容量保証とは何を保証しているのか',
+    seoTitle: '蓄電池の容量保証とは — 保証の中身と免責の読み方（低圧蓄電所）',
+    meta: '容量保証は「何年後に何%の容量」を約束する仕組み。保証される数値の意味、免責条件、請求の手順まで投資家向けに解説します。',
+  },
+  {
+    slug: 'long-warranty-safe',
+    group: 'D',
+    hubLabel: '保証期間が長ければ安心ですか？',
+    seoTitle: '蓄電池の保証期間が長ければ安心？年数より見るべき点（低圧蓄電所）',
+    meta: '「15年保証」の年数だけでは安心できない理由。保証の中身×履行体制×会社の継続性のかけ算で保証の実力を評価する方法を解説。',
+  },
+  {
+    slug: 'contract-clauses',
+    group: 'D',
+    hubLabel: '売買契約書で特に確認したい条項',
+    seoTitle: '低圧蓄電所の売買契約書で確認したい条項（蓄電池投資）',
+    meta: '法的助言ではなく「読む前の地図」。目的物・価格範囲・支払と遅延・検収・保証・解除の6エリアと、専門家に見せるときのコツ。',
+  },
+  {
+    slug: 'om-contract',
+    group: 'D',
+    hubLabel: '運用委託契約で確認したいこと',
+    seoTitle: '低圧蓄電所の運用委託契約の確認点（アグリゲーター契約）',
+    meta: '収入を決める契約なのに読まれにくい運用委託契約。配分・期間・レポート・撤退条項・責任分界の5点をどう確認するかを解説。',
+  },
+  {
+    slug: 'land-own-or-lease',
+    group: 'D',
+    hubLabel: '土地は所有と賃借のどちらがよい？',
+    seoTitle: '低圧蓄電所の土地は所有か賃借か — 違いと確認点（蓄電池）',
+    meta: '所有は初期費用が重く出口が自由、賃借は軽く始められて条件次第。優劣ではなく、あなたの計画との相性で選ぶための比較を解説。',
+  },
+  {
+    slug: 'grid-connection-status',
+    group: 'D',
+    hubLabel: '連系承諾済みと申請中では何が違う？',
+    seoTitle: '低圧蓄電所の連系承諾済みと申請中の違い（系統連系）',
+    meta: '連系は蓄電所が電力系統につながる入口。承諾済み＝枠が確保された状態、申請中＝まだ確定していない状態。確認書面と質問を解説。',
+  },
+  {
+    slug: 'payment-timing',
+    group: 'D',
+    hubLabel: '購入代金はいつ支払うのが一般的？',
+    seoTitle: '低圧蓄電所の代金支払時期 — 前払いリスクと確認点（蓄電池）',
+    meta: '支払時期は交渉と確認の対象。契約時・工事段階・引渡時の分割が一般的な構図で、全額前払いには理由の確認を。遅延条項とセットで。',
+  },
+  {
+    slug: 'pre-completion-vs-operating',
+    group: 'D',
+    hubLabel: '完成前案件と稼働済み案件の違い',
+    seoTitle: '低圧蓄電所の完成前案件と稼働済み案件の違い（蓄電池投資）',
+    meta: '完成前は価格が抑えめで不確実性を引き受ける、稼働済みは実績が見えて価格に乗る。それぞれの確認ポイントの違いを解説します。',
+  },
 ];
 
 /** 「まず知りたい」A群（分岐①・表示順） */
@@ -351,6 +437,8 @@ export const LV_INVEST_ARTICLES_A = LV_INVEST_ARTICLES.filter((a) => a.group ===
 export const LV_INVEST_ARTICLES_B = LV_INVEST_ARTICLES.filter((a) => a.group === 'B');
 /** 「営業資料を受け取った」C群（分岐③・表示順） */
 export const LV_INVEST_ARTICLES_C = LV_INVEST_ARTICLES.filter((a) => a.group === 'C');
+/** 「契約・保証を確認したい」D群（分岐③直後カード・表示順） */
+export const LV_INVEST_ARTICLES_D = LV_INVEST_ARTICLES.filter((a) => a.group === 'D');
 /** 運営・相談 G群（分岐⑤） */
 export const LV_INVEST_ARTICLES_G = LV_INVEST_ARTICLES.filter((a) => a.group === 'G');
 
