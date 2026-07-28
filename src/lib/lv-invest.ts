@@ -21,8 +21,8 @@ export function isLvInvestExplainer(exp: Pick<Explainer, 'category'>): boolean {
  */
 // group: 'A' = 「まず知りたい」（分岐①）／'B' = 「買うか迷っている」（分岐②）／
 //        'C' = 「営業資料を受け取った」（分岐③）／'D' = 「契約・保証を確認したい」（分岐③直後カード）／
-//        'G' = 運営・相談（分岐⑤）
-export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'C' | 'D' | 'G'; hubLabel: string; seoTitle: string; meta: string };
+//        'F' = 「すでに購入した」（分岐④・購入後）／'G' = 運営・相談（分岐⑤）
+export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'C' | 'D' | 'F' | 'G'; hubLabel: string; seoTitle: string; meta: string };
 
 export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
   {
@@ -429,6 +429,91 @@ export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
     seoTitle: '低圧蓄電所の完成前案件と稼働済み案件の違い（蓄電池投資）',
     meta: '完成前は価格が抑えめで不確実性を引き受ける、稼働済みは実績が見えて価格に乗る。それぞれの確認ポイントの違いを解説します。',
   },
+  // B6（2026-07-27）: F群12本（分岐④「すでに購入した」完結・購入後群）
+  {
+    slug: 'first-month-checklist',
+    group: 'F',
+    hubLabel: '購入後、最初の1か月に確認すること',
+    seoTitle: '低圧蓄電所の購入後、最初の1か月の確認リスト（蓄電池）',
+    meta: '引渡し直後の1か月が投資家の基礎を作る。書類の確認、稼働の確認、連絡網の整備、最初のレポートの読み方まで順番に解説します。',
+  },
+  {
+    slug: 'monthly-report-reading',
+    group: 'F',
+    hubLabel: '毎月の運用レポートはどこを見る？',
+    seoTitle: '低圧蓄電所の月次運用レポートの読み方（蓄電池投資）',
+    meta: '月次レポートは5分で読める。売上・稼働率・充放電量・手数料・特記事項の5点の見方と、記録を続ける仕組み化を解説します。',
+  },
+  {
+    slug: 'revenue-below-forecast',
+    group: 'F',
+    hubLabel: '売上が想定より少ないときの確認手順',
+    seoTitle: '低圧蓄電所の売上が想定より少ないときの確認手順（蓄電池）',
+    meta: '慌てる前に切り分ける。市場要因か・稼働要因か・契約要因かを月次レポートで確認する手順と、質問の文例を解説します。',
+  },
+  {
+    slug: 'three-months-low',
+    group: 'F',
+    hubLabel: '売上が3か月連続で低いときは誰に聞く？',
+    seoTitle: '低圧蓄電所の売上不振が続くとき — 相談先と段階（蓄電池）',
+    meta: '単月は様子見、3か月続いたら行動。アグリゲーター→販売会社→第三者の順で相談する段階と、それぞれに聞くことを解説します。',
+  },
+  {
+    slug: 'battery-outage',
+    group: 'F',
+    hubLabel: '蓄電池が停止したときに起きること',
+    seoTitle: '低圧蓄電所の蓄電池が停止したら — 流れと費用負担（蓄電池）',
+    meta: '停止の検知から復旧までの標準的な流れ、収入への影響、費用負担の切り分け（保証内か・保険か・自己負担か）を解説します。',
+  },
+  {
+    slug: 'compare-aggregator-performance',
+    group: 'F',
+    hubLabel: 'アグリゲーターの運用成績は比較できる？',
+    seoTitle: 'アグリゲーターの運用成績の比べ方 — 低圧蓄電所（蓄電池）',
+    meta: '横並びの公開ランキングはまだ無い。それでも市場データとの突き合わせ、複数レポートの比較、質問での見極めはできる。方法を解説。',
+  },
+  {
+    slug: 'change-aggregator',
+    group: 'F',
+    hubLabel: 'アグリゲーターを変更することはできる？',
+    seoTitle: 'アグリゲーターの変更はできる？手順と注意点 — 低圧蓄電所',
+    meta: '契約上は変更可能な場合が多いが、違約金・切替空白・機器対応の3つのハードルがある。変更を考え始めたときの手順を解説します。',
+  },
+  {
+    slug: 'annual-checkup',
+    group: 'F',
+    hubLabel: '毎年1回行いたい蓄電所の健康診断',
+    seoTitle: '低圧蓄電所の年1回健康診断 — 7項目の点検リスト（蓄電池）',
+    meta: '年1回、1時間の書類仕事で投資の健康を守る。実績・劣化・費用・契約・保険・保証・出口の7項目を点検する方法を解説します。',
+  },
+  {
+    slug: 'documents-to-keep',
+    group: 'F',
+    hubLabel: '購入後に保管しておきたい書類一覧',
+    seoTitle: '低圧蓄電所の保管書類一覧 — 10年守る書類の管理（蓄電池）',
+    meta: '契約・設備・実績・税務の4分類で保管書類を一覧化。紛失時の再発行先、デジタル保管のすすめ、家族との共有方法を解説します。',
+  },
+  {
+    slug: 'inheritance-succession',
+    group: 'F',
+    hubLabel: '低圧蓄電所を相続・事業承継するとき',
+    seoTitle: '低圧蓄電所の相続・事業承継 — 引き継ぐ準備と手続きの概観（蓄電池）',
+    meta: '設備・土地・契約・記録の4つを引き継ぐ。生前にできる準備、承継時の手続きの流れ、家族への伝え方を概観します。税務は税理士へ。',
+  },
+  {
+    slug: 'sell-midway',
+    group: 'F',
+    hubLabel: '低圧蓄電所を途中で売却したいとき',
+    seoTitle: '低圧蓄電所の途中売却 — 方法・準備・価格の考え方（蓄電池）',
+    meta: '中古市場は発展途上だが売却の道はある。売り先の種類、価格を決める要素、売却を有利にする日頃の準備を解説します。',
+  },
+  {
+    slug: 'decommissioning',
+    group: 'F',
+    hubLabel: '撤去するときには何が必要？',
+    seoTitle: '低圧蓄電所の撤去 — 費用・手続き・リサイクルの概観（蓄電池）',
+    meta: '撤去は最後に必ず来る工程。費用の見積もり時期、手続きと関係者、蓄電池の処分・リサイクル、土地の原状回復までを概観します。',
+  },
 ];
 
 /** 「まず知りたい」A群（分岐①・表示順） */
@@ -439,6 +524,8 @@ export const LV_INVEST_ARTICLES_B = LV_INVEST_ARTICLES.filter((a) => a.group ===
 export const LV_INVEST_ARTICLES_C = LV_INVEST_ARTICLES.filter((a) => a.group === 'C');
 /** 「契約・保証を確認したい」D群（分岐③直後カード・表示順） */
 export const LV_INVEST_ARTICLES_D = LV_INVEST_ARTICLES.filter((a) => a.group === 'D');
+/** 「すでに購入した」F群（分岐④・購入後・表示順） */
+export const LV_INVEST_ARTICLES_F = LV_INVEST_ARTICLES.filter((a) => a.group === 'F');
 /** 運営・相談 G群（分岐⑤） */
 export const LV_INVEST_ARTICLES_G = LV_INVEST_ARTICLES.filter((a) => a.group === 'G');
 

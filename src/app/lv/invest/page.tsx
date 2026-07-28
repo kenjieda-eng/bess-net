@@ -10,7 +10,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
 import { siteConfig } from '@/lib/site-config';
-import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_C, LV_INVEST_ARTICLES_D, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
+import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_C, LV_INVEST_ARTICLES_D, LV_INVEST_ARTICLES_F, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
 
 export const dynamic = 'force-static';
 
@@ -75,10 +75,12 @@ const ENTRIES = [
     links: [],
   },
   {
+    // B6: F群12本（購入後）を自動リスト化。/faq 暫定リンクと公開予告の1行を撤去（既存①〜⑤番号は不変）。
     num: '④',
     title: 'すでに購入した',
-    desc: '運用レポートの見方から、将来の売却まで。このセクションの記事は順次公開します。',
-    links: [{ href: '/faq', label: 'よくある質問' }],
+    desc: '運用レポートの見方から、健康診断・相続・売却・撤去まで。',
+    guideArticlesF: true,
+    links: [],
   },
   {
     num: '⑤',
@@ -194,6 +196,14 @@ export default function LvInvestHubPage() {
                 ) : 'guideArticlesD' in e && e.guideArticlesD ? (
                   <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
                     {LV_INVEST_ARTICLES_D.map((a) => (
+                      <li key={a.slug}>
+                        <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : 'guideArticlesF' in e && e.guideArticlesF ? (
+                  <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    {LV_INVEST_ARTICLES_F.map((a) => (
                       <li key={a.slug}>
                         <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
                       </li>
@@ -323,6 +333,11 @@ export default function LvInvestHubPage() {
               <li>
                 <a href="/dl/aggregator-contract-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
                   アグリゲーター契約確認シート（PDF）
+                </a>
+              </li>
+              <li>
+                <a href="/dl/monthly-annual-log-v1.pdf" target="_blank" rel="noopener noreferrer">
+                  月次実績管理・年次健康診断表（PDF）
                 </a>
               </li>
             </ul>
