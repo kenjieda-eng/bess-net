@@ -21,8 +21,9 @@ export function isLvInvestExplainer(exp: Pick<Explainer, 'category'>): boolean {
  */
 // group: 'A' = 「まず知りたい」（分岐①）／'B' = 「買うか迷っている」（分岐②）／
 //        'C' = 「営業資料を受け取った」（分岐③）／'D' = 「契約・保証を確認したい」（分岐③直後カード）／
+//        'E' = 「よくある相談パターン・読み物」（分岐⑤直前カード）／
 //        'F' = 「すでに購入した」（分岐④・購入後）／'G' = 運営・相談（分岐⑤）
-export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'C' | 'D' | 'F' | 'G'; hubLabel: string; seoTitle: string; meta: string };
+export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G'; hubLabel: string; seoTitle: string; meta: string };
 
 export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
   {
@@ -514,6 +515,106 @@ export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
     seoTitle: '低圧蓄電所の撤去 — 費用・手続き・リサイクルの概観（蓄電池）',
     meta: '撤去は最後に必ず来る工程。費用の見積もり時期、手続きと関係者、蓄電池の処分・リサイクル、土地の原状回復までを概観します。',
   },
+  // B7（2026-07-27）: E群9本（相談パターン想定例6本＋読み物3本・分岐⑤直前カード）
+  {
+    slug: 'case-solar-owner',
+    group: 'E',
+    hubLabel: '相談パターン: 低圧太陽光オーナーが次の投資として検討したケース',
+    seoTitle: '【想定例】太陽光オーナーが低圧蓄電所を検討したら（蓄電池投資）',
+    meta: 'FIT収入の次を探す太陽光オーナーの検討パターン（編集部作成の想定例）。利回り感覚の違いに気づくまでの論点と確認の流れを紹介。',
+  },
+  {
+    slug: 'case-corporate-cash',
+    group: 'E',
+    hubLabel: '相談パターン: 法人の余剰資金で検討した経営者のケース',
+    seoTitle: '【想定例】法人の余剰資金で低圧蓄電所を検討したら（蓄電池）',
+    meta: '会社の余剰資金の使い道として低圧蓄電所を検討する経営者の想定例。本業とのバランス、税効果の位置づけ、役員への説明の論点を紹介。',
+  },
+  {
+    slug: 'case-family-opposed',
+    group: 'E',
+    hubLabel: '相談パターン: 家族に反対されたまま迷っているケース',
+    seoTitle: '【想定例】家族に反対された低圧蓄電所投資の整理（蓄電池）',
+    meta: '本人は前向き、配偶者は反対 — よくある膠着の想定例。反対理由の分解、説明のやり直し方、見送りも含めた出口の作り方を紹介。',
+  },
+  {
+    slug: 'case-decided-not-to-buy',
+    group: 'E',
+    hubLabel: '相談パターン: 検討の結果、見送りを選んだケース',
+    seoTitle: '【想定例】低圧蓄電所投資を見送ったケースの検討過程（蓄電池）',
+    meta: '見送りは失敗ではなく判断 — 検討を尽くして買わなかった想定例。見送りの決め手、断り方、再検討条件の残し方を紹介します。',
+  },
+  {
+    slug: 'case-two-offers',
+    group: 'E',
+    hubLabel: '相談パターン: 2社の提案を比較して選んだケース',
+    seoTitle: '【想定例】低圧蓄電所2社比較の検討過程（蓄電池投資）',
+    meta: '価格差のある2社をどう比べたか — 比較検討の想定例。条件を揃える翻訳作業、質問への回答の差、最後の決め手を紹介します。',
+  },
+  {
+    slug: 'case-tax-motivated',
+    group: 'E',
+    hubLabel: '相談パターン: 税効果を目的に検討を始めたケース',
+    seoTitle: '【想定例】節税目的で低圧蓄電所を検討したら（蓄電池投資）',
+    meta: '「節税になる」が入口だった検討の想定例。繰延と減税の区別、素の収支の確認、目的と結果を入れ替える判断の転換点を紹介します。',
+  },
+  {
+    slug: 'how-tax-pros-see',
+    group: 'E',
+    hubLabel: '税理士は低圧蓄電所投資をどう見るか（一般論）',
+    seoTitle: '税理士から見た低圧蓄電所投資 — 確認される論点（蓄電池）',
+    meta: '税理士に相談すると何を聞かれ、何を確認されるのか。無記名の一般論として、専門家の視点を先回りで理解できるよう整理します。',
+  },
+  {
+    slug: 'how-insurers-see',
+    group: 'E',
+    hubLabel: '保険の視点で見る低圧蓄電所 — 何を確認されるか（一般論）',
+    seoTitle: '低圧蓄電所の保険 — 補償範囲と加入時の確認点（蓄電池）',
+    meta: '火災・自然災害・賠償・休業 — 低圧蓄電所に関わる保険の種類と、加入時に確認される項目・確認すべき項目を一般論で整理します。',
+  },
+  {
+    slug: 'aggregator-day',
+    group: 'E',
+    hubLabel: 'アグリゲーターの仕事を1日単位で見てみる',
+    seoTitle: 'アグリゲーターの1日 — 低圧蓄電所の運用の裏側（蓄電池）',
+    meta: 'あなたの蓄電池が寝ている間に何が起きているか。前日の計画から当日の制御、月末のレポートまで、運用の仕事を時間軸で解説。',
+  },
+  // B7（2026-07-27）: 運営・相談 G群 G-4〜G-8（分岐⑤リストに追記・表示順は LV_INVEST_ARTICLES_G の G_ORDER で明示）
+  {
+    slug: 'will-you-be-sold-to',
+    group: 'G',
+    hubLabel: '相談したら何かを売られますか？',
+    seoTitle: '蓄電所ネットに相談したら営業される？売り込みなしの理由',
+    meta: '相談＝営業リストという不安への回答。売り込みをしない運営方針、情報の扱い、相談後に起きること・起きないことを明示します。',
+  },
+  {
+    slug: 'why-no-yield-guarantee',
+    group: 'G',
+    hubLabel: '蓄電所ネットが「利回り保証」をしない理由',
+    seoTitle: '「利回り保証」を蓄電所ネットがしない・すすめない理由（蓄電池）',
+    meta: '将来の市場収益は誰にも保証できない — 中立サイトが保証を扱わない理由と、保証を求めたくなる心理への正直な向き合い方。',
+  },
+  {
+    slug: 'listing-criteria',
+    group: 'G',
+    hubLabel: '案件・事業者情報の掲載基準',
+    seoTitle: '蓄電所ネットの案件・事業者情報の掲載基準（低圧蓄電所）',
+    meta: '何を確認してから載せるのか、掲載と推奨の違い、対価の明示、訂正・削除の手続き — 情報掲載の基準を公開します。',
+  },
+  {
+    slug: 'how-we-verify',
+    group: 'G',
+    hubLabel: '販売会社からの情報をどう確認しているか',
+    seoTitle: '蓄電所ネットの情報確認の手順 — 一次情報主義（低圧蓄電所）',
+    meta: '事業者から提供された情報をそのまま載せない理由と、書面照合・公開情報照合・保留の3段階の確認手順を公開します。',
+  },
+  {
+    slug: 'consultation-policy',
+    group: 'G',
+    hubLabel: 'よくあるご相談と回答の方針',
+    seoTitle: '蓄電所ネットの相談対応と編集・訂正の考え方（低圧蓄電所）',
+    meta: 'どんな相談が多いか、どう答えるか、答えられない相談はどうするか。相談対応と記事の編集・訂正の方針をまとめて公開します。',
+  },
 ];
 
 /** 「まず知りたい」A群（分岐①・表示順） */
@@ -524,10 +625,27 @@ export const LV_INVEST_ARTICLES_B = LV_INVEST_ARTICLES.filter((a) => a.group ===
 export const LV_INVEST_ARTICLES_C = LV_INVEST_ARTICLES.filter((a) => a.group === 'C');
 /** 「契約・保証を確認したい」D群（分岐③直後カード・表示順） */
 export const LV_INVEST_ARTICLES_D = LV_INVEST_ARTICLES.filter((a) => a.group === 'D');
+/** 「よくある相談パターン・読み物」E群（分岐⑤直前カード・表示順） */
+export const LV_INVEST_ARTICLES_E = LV_INVEST_ARTICLES.filter((a) => a.group === 'E');
 /** 「すでに購入した」F群（分岐④・購入後・表示順） */
 export const LV_INVEST_ARTICLES_F = LV_INVEST_ARTICLES.filter((a) => a.group === 'F');
-/** 運営・相談 G群（分岐⑤） */
-export const LV_INVEST_ARTICLES_G = LV_INVEST_ARTICLES.filter((a) => a.group === 'G');
+/**
+ * 運営・相談 G群（分岐⑤）。既存3本と B7 追記5本が交互配置になるため、配列順でなく
+ * 明示 G_ORDER で表示順を固定する（新規Gを追加したら G_ORDER にも追記すること）。
+ */
+const LV_INVEST_G_ORDER = [
+  'free-consultation-scope',
+  'will-you-be-sold-to',
+  'not-buying-is-fine',
+  'how-we-earn',
+  'why-no-yield-guarantee',
+  'listing-criteria',
+  'how-we-verify',
+  'consultation-policy',
+];
+export const LV_INVEST_ARTICLES_G = LV_INVEST_ARTICLES.filter((a) => a.group === 'G').sort(
+  (x, y) => LV_INVEST_G_ORDER.indexOf(x.slug) - LV_INVEST_G_ORDER.indexOf(y.slug)
+);
 
 export const LV_INVEST_SEO_MAP: Record<string, LvInvestArticle> = Object.fromEntries(
   LV_INVEST_ARTICLES.map((a) => [a.slug, a])

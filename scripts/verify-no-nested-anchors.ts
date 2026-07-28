@@ -10,6 +10,10 @@
  *   VERCEL_URL=preview-xxx.vercel.app tsx scripts/verify-no-nested-anchors.ts
  */
 
+// news 1件は sitemap から動的取得（固定URLは archive で 404 化する。2026-07-27 B7:
+// 旧 /news/pr-2026-05-08-goodwejapan-15 が本番 404 になった件を恒久対策）。
+const NEWS_SAMPLE_FALLBACK = '/lv/what-is'; // sitemap 取得失敗時の恒久URL
+
 const SAMPLE_URLS = [
   // operators 5件
   '/operators/osaka-gas',
@@ -23,16 +27,28 @@ const SAMPLE_URLS = [
   '/projects/pr-co10686-tokyo',
   '/projects/pr-co161611-bess',
   // '/projects/pr-co1379-bess', // 2026-05-17 削除: microCMS から archive 済 (script 対象外、本番 404)
-  // news 3件
+  // news 2件（固定・恒久サンプル）＋ 1件は sitemap から動的解決（下記 resolveNewsSample）
   '/news/pr-2026-05-08-co70816-344',
   '/news/pr-2026-05-08-auroraenergyresearch-4',
-  '/news/pr-2026-05-08-goodwejapan-15',
   // explainer 3件
   // 依頼W.6 §3-1A: pcs-power-conversion-system は 404 だったため pcs-selection-guide に変更
   '/explainer/grid-scale-bess',
   '/explainer/balancing-market',
   '/explainer/pcs-selection-guide',
 ];
+
+/** sitemap.xml から実在する /news/<slug> を1件取得。失敗時は恒久URLにフォールバック。 */
+async function resolveNewsSample(base: string): Promise<string> {
+  try {
+    const res = await fetch(base + '/sitemap.xml');
+    if (!res.ok) return NEWS_SAMPLE_FALLBACK;
+    const xml = await res.text();
+    const m = xml.match(/https?:\/\/[^<]*?(\/news\/[a-z0-9-]+)</i);
+    return m ? m[1] : NEWS_SAMPLE_FALLBACK;
+  } catch {
+    return NEWS_SAMPLE_FALLBACK;
+  }
+}
 
 function resolveBase(): string {
   const argIdx = process.argv.indexOf('--base');
@@ -58,11 +74,14 @@ function countAutoLinks(html: string): number {
 
 async function main(): Promise<void> {
   const base = resolveBase();
+  const newsSample = await resolveNewsSample(base);
+  const urls = [...SAMPLE_URLS, newsSample];
   console.log(`[verify-linkify] base: ${base}`);
-  console.log(`[verify-linkify] checking ${SAMPLE_URLS.length} pages...`);
+  console.log(`[verify-linkify] news sample (dynamic): ${newsSample}`);
+  console.log(`[verify-linkify] checking ${urls.length} pages...`);
 
   let failed = 0;
-  for (const path of SAMPLE_URLS) {
+  for (const path of urls) {
     try {
       const res = await fetch(base + path);
       // 依頼W.6 §3-1B: HTTP 200 を必須化（404 サンプルを CI で即検出）
@@ -87,10 +106,10 @@ async function main(): Promise<void> {
   }
 
   if (failed > 0) {
-    console.error(`\n${failed}/${SAMPLE_URLS.length} pages have issues. Build FAILED.`);
+    console.error(`\n${failed}/${urls.length} pages have issues. Build FAILED.`);
     process.exit(1);
   }
-  console.log(`\nAll ${SAMPLE_URLS.length} pages clean. ✓`);
+  console.log(`\nAll ${urls.length} pages clean. ✓`);
 }
 
 main().catch((e) => {

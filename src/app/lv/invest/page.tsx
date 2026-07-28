@@ -10,7 +10,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
 import { siteConfig } from '@/lib/site-config';
-import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_C, LV_INVEST_ARTICLES_D, LV_INVEST_ARTICLES_F, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
+import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_C, LV_INVEST_ARTICLES_D, LV_INVEST_ARTICLES_E, LV_INVEST_ARTICLES_F, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
 
 export const dynamic = 'force-static';
 
@@ -83,6 +83,14 @@ const ENTRIES = [
     links: [],
   },
   {
+    // B7: 分岐⑤の直前に新カード。番号は付けず「・」で読み物カードを示す（既存①〜⑤は不変）。
+    num: '・',
+    title: 'よくある相談パターン・読み物',
+    desc: '編集部作成の想定例と、運用の裏側の読み物。',
+    guideArticlesE: true,
+    links: [],
+  },
+  {
     num: '⑤',
     title: '無料で相談したい',
     desc: 'できること・できないことを先に明示します。',
@@ -141,7 +149,7 @@ export default function LvInvestHubPage() {
                 <p style={{ fontSize: 15, lineHeight: 1.7, margin: '0 0 10px', color: 'var(--color-muted)' }}>{e.desc}</p>
                 {'guideArticles' in e && e.guideArticles ? (
                   <>
-                    <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    <ul className="lv-invest-rows">
                       {LV_INVEST_ARTICLES_A.map((a) => (
                         <li key={a.slug}>
                           <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
@@ -149,7 +157,7 @@ export default function LvInvestHubPage() {
                       ))}
                     </ul>
                     <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '10px 0 4px', fontWeight: 600 }}>関連する解説</p>
-                    <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    <ul className="lv-invest-related">
                       {e.links.map((l) => (
                         <li key={l.href}>
                           <Link href={l.href}>{l.label}</Link>
@@ -159,7 +167,7 @@ export default function LvInvestHubPage() {
                   </>
                 ) : 'guideArticlesB' in e && e.guideArticlesB ? (
                   <>
-                    <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    <ul className="lv-invest-rows">
                       {LV_INVEST_ARTICLES_B.map((a) => (
                         <li key={a.slug}>
                           <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
@@ -167,7 +175,7 @@ export default function LvInvestHubPage() {
                       ))}
                     </ul>
                     <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '10px 0 4px', fontWeight: 600 }}>関連する解説</p>
-                    <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    <ul className="lv-invest-related">
                       {e.links.map((l) => (
                         <li key={l.href}>
                           <Link href={l.href}>{l.label}</Link>
@@ -177,7 +185,7 @@ export default function LvInvestHubPage() {
                   </>
                 ) : 'guideArticlesC' in e && e.guideArticlesC ? (
                   <>
-                    <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    <ul className="lv-invest-rows">
                       {LV_INVEST_ARTICLES_C.map((a) => (
                         <li key={a.slug}>
                           <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
@@ -185,7 +193,7 @@ export default function LvInvestHubPage() {
                       ))}
                     </ul>
                     <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '10px 0 4px', fontWeight: 600 }}>関連する解説</p>
-                    <ul style={{ fontSize: 14, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    <ul className="lv-invest-related">
                       {e.links.map((l) => (
                         <li key={l.href}>
                           <Link href={l.href}>{l.label}</Link>
@@ -194,7 +202,7 @@ export default function LvInvestHubPage() {
                     </ul>
                   </>
                 ) : 'guideArticlesD' in e && e.guideArticlesD ? (
-                  <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                  <ul className="lv-invest-rows">
                     {LV_INVEST_ARTICLES_D.map((a) => (
                       <li key={a.slug}>
                         <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
@@ -202,8 +210,16 @@ export default function LvInvestHubPage() {
                     ))}
                   </ul>
                 ) : 'guideArticlesF' in e && e.guideArticlesF ? (
-                  <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                  <ul className="lv-invest-rows">
                     {LV_INVEST_ARTICLES_F.map((a) => (
+                      <li key={a.slug}>
+                        <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : 'guideArticlesE' in e && e.guideArticlesE ? (
+                  <ul className="lv-invest-rows">
+                    {LV_INVEST_ARTICLES_E.map((a) => (
                       <li key={a.slug}>
                         <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
                       </li>
@@ -211,7 +227,7 @@ export default function LvInvestHubPage() {
                   </ul>
                 ) : 'guideArticlesG' in e && e.guideArticlesG ? (
                   <>
-                    <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                    <ul className="lv-invest-rows">
                       {LV_INVEST_ARTICLES_G.map((a) => (
                         <li key={a.slug}>
                           <Link href={`/lv/invest/${a.slug}`}>{a.hubLabel}</Link>
@@ -225,7 +241,7 @@ export default function LvInvestHubPage() {
                     </ul>
                   </>
                 ) : (
-                  <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 18, margin: 0 }}>
+                  <ul className="lv-invest-rows">
                     {e.links.map((l) => (
                       <li key={l.href}>
                         <Link href={l.href}>{l.label}</Link>
@@ -279,65 +295,65 @@ export default function LvInvestHubPage() {
             <p style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
               登録・メールアドレス不要でそのまま開けます。
             </p>
-            <ul style={{ fontSize: 15, lineHeight: 2.0, paddingLeft: 18, margin: 0 }}>
+            <ul className="lv-invest-rows lv-invest-rows--dl">
               <li>
                 <a href="/dl/questions-15-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  販売会社に聞く15の質問シート（PDF）
+                  販売会社に聞く15の質問シート
                 </a>
               </li>
               <li>
                 <a href="/dl/anken-hikaku-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  低圧蓄電所 案件比較表（PDF）
+                  低圧蓄電所 案件比較表
                 </a>
               </li>
               <li>
                 <a href="/dl/pre-purchase-checklist-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  購入前チェックリスト（1枚版・PDF）
+                  購入前チェックリスト（1枚版）
                 </a>
               </li>
               <li>
                 <a href="/dl/family-onepager-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  家族・役員説明用 1枚資料（PDF）
+                  家族・役員説明用 1枚資料
                 </a>
               </li>
               <li>
                 <a href="/dl/investment-decision-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  投資判断シート（PDF）
+                  投資判断シート
                 </a>
               </li>
               <li>
                 <a href="/dl/take-home-worksheet-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  手取り計算シート（PDF）
+                  手取り計算シート
                 </a>
               </li>
               <li>
                 <a href="/dl/advisor-briefing-template-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  税理士・金融機関向け 説明ひな型（PDF）
+                  税理士・金融機関向け 説明ひな型
                 </a>
               </li>
               <li>
                 <a href="/dl/conservative-case-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  慎重ケース早見シート（PDF）
+                  慎重ケース早見シート
                 </a>
               </li>
               <li>
                 <a href="/dl/contract-checklist-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  契約書確認チェックシート（PDF）
+                  契約書確認チェックシート
                 </a>
               </li>
               <li>
                 <a href="/dl/warranty-check-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  メーカー保証確認シート（PDF）
+                  メーカー保証確認シート
                 </a>
               </li>
               <li>
                 <a href="/dl/aggregator-contract-sheet-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  アグリゲーター契約確認シート（PDF）
+                  アグリゲーター契約確認シート
                 </a>
               </li>
               <li>
                 <a href="/dl/monthly-annual-log-v1.pdf" target="_blank" rel="noopener noreferrer">
-                  月次実績管理・年次健康診断表（PDF）
+                  月次実績管理・年次健康診断表
                 </a>
               </li>
             </ul>
