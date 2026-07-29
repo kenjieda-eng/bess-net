@@ -599,7 +599,8 @@ export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
     slug: 'will-you-be-sold-to',
     group: 'G',
     hubLabel: '相談したら何かを売られますか？',
-    seoTitle: '蓄電所ネットに相談したら営業される？売り込みなしの理由',
+    // 総点検所見①: KW「蓄電池」を付加（layout が「 | 蓄電所ネット」を1回付与・#88 維持）
+    seoTitle: '蓄電所ネットに相談したら営業される？売り込みなしの理由（蓄電池投資）',
     meta: '相談＝営業リストという不安への回答。売り込みをしない運営方針、情報の扱い、相談後に起きること・起きないことを明示します。',
   },
   {

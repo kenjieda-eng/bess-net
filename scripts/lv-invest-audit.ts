@@ -9,7 +9,9 @@
  * 出力: 標準出力に表形式サマリ＋ scratchpad に evidence JSON。
  */
 import { LV_INVEST_ARTICLES } from '@/lib/lv-invest';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readFileSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const BASE = (process.env.AUDIT_BASE || 'https://bess-net.jp').replace(/\/$/, '');
 const OUT = process.env.AUDIT_OUT || 'audit-evidence.json';
@@ -21,14 +23,13 @@ const EXTERNAL_LINK_SLUGS = LV_INVEST_ARTICLES.filter((a) => a.externalLinks?.le
 
 const CTA_URL = 'https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_lv_invest';
 
-// ---- 禁止語の作業リスト（正準9語は外部「編集ガイドライン §1-A」依存。ここは超集合で判定） ----
-// HARD_BANNED: 断定的な詐欺的表現。鉤括弧内でも不可＝全87で0であるべき（narrow・確度高）。
-const HARD_BANNED = [
-  '元本を保証', '元本は保証', '絶対に安全', 'リスクはありません', 'ノーリスクで', '確実に儲かります', '必ず儲かります', '損はしません',
-];
-// QUOTE_FORM: 断定的マーケ語の超集合。出現しうるが「全出現が「」内」であるべき（括弧外出現をNGとして報告）。
-// 必ず儲か等は教育的警告として「」内で使われる（引用形）。()内・地の文での露出のみ検出する。
-const QUOTE_FORM = ['元本保証', '利回り保証', '高利回り', '利回りを保証', '必ず儲か', '絶対に儲か', '確実に儲か', '元本割れしません'];
+// ---- 禁止語の正準リスト（scripts/lv-invest-banned-words.json に内蔵・以後の監査はこれで判定） ----
+// hardBanned: 全87で0であるべき（鉤括弧内でも不可）。quoteOnly: 出現可だが全出現が「」内であるべき。
+const BANNED = JSON.parse(
+  readFileSync(resolve(dirname(fileURLToPath(import.meta.url)), 'lv-invest-banned-words.json'), 'utf8')
+) as { hardBanned: string[]; quoteOnly: string[] };
+const HARD_BANNED = BANNED.hardBanned;
+const QUOTE_FORM = BANNED.quoteOnly;
 
 const LINK_PREFIXES = ['/lv', '/dl', '/tools', '/faq', '/market', '/buyer', '/policy-calendar', '/incidents', '/about', '/privacy', '/editorial-policy'];
 
@@ -343,8 +344,9 @@ async function main() {
   // 2-5 banned words
   const banAny = records.filter((r) => r.banHits.length > 0);
   const quoteAny = records.filter((r) => r.quoteViolations.length > 0);
-  P(`\n[2-5] 禁止語（作業リスト・正準は外部§1-A）: 完全禁止相当hit記事=${banAny.length} / 引用形の括弧外出現=${quoteAny.length}`);
-  banAny.forEach((r) => P(`   完全禁止hit ${r.slug}: ${JSON.stringify(r.banHits)}`));
+  P(`\n[2-5] 禁止語（正準: scripts/lv-invest-banned-words.json）: hardBanned=${JSON.stringify(HARD_BANNED)} / quoteOnly=${JSON.stringify(QUOTE_FORM)}`);
+  P(`   hardBanned hit記事=${banAny.length} / quoteOnly の括弧外出現記事=${quoteAny.length}`);
+  banAny.forEach((r) => P(`   hardBanned hit ${r.slug}: ${JSON.stringify(r.banHits)}`));
   quoteAny.forEach((r) => P(`   括弧外 ${r.slug}: ${JSON.stringify(r.quoteViolations)}`));
 
   // 2-6 link sweep
