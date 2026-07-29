@@ -615,6 +615,35 @@ export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
     seoTitle: '蓄電所ネットの相談対応と編集・訂正の考え方（低圧蓄電所）',
     meta: 'どんな相談が多いか、どう答えるか、答えられない相談はどうするか。相談対応と記事の編集・訂正の方針をまとめて公開します。',
   },
+  // B8（2026-07-28・最終）: 運営・相談 G群 G-9〜G-12（G_ORDER 末尾に追記）
+  {
+    slug: 'who-answers',
+    group: 'G',
+    hubLabel: '相談を担当するのはどんな人たちか',
+    seoTitle: '蓄電所ネットの相談担当の紹介（低圧蓄電所の無料相談）',
+    meta: '誰が答えるのか分からない相談窓口は使いにくい。運営団体と代表の紹介、相談対応の体制、得意なこと・できないことを明示します。',
+  },
+  {
+    slug: 'how-we-protect-data',
+    group: 'G',
+    hubLabel: '相談者の情報をどのように守るか',
+    seoTitle: '低圧蓄電所の相談情報の取り扱い — 蓄電所ネットの方針',
+    meta: '相談内容・連絡先の利用目的、第三者提供をしない方針、匿名相談の可否、記事化の同意ルールまで、情報の扱いを明示します。',
+  },
+  {
+    slug: 'our-vision',
+    group: 'G',
+    hubLabel: '蓄電所ネットが目指す低圧蓄電所市場',
+    seoTitle: '蓄電所ネットが目指す低圧蓄電所市場のかたち（蓄電池投資）',
+    meta: '情報の非対称性を減らし「確認できる市場」へ。買い手・誠実な売り手の双方に良い市場を目指す当サイトの考えを公開します。',
+  },
+  {
+    slug: 'guide-changelog',
+    group: 'G',
+    hubLabel: '低圧投資家ガイドの更新・訂正履歴',
+    seoTitle: '低圧投資家ガイドの更新・訂正履歴（低圧蓄電所）',
+    meta: 'このガイドの公開・更新・訂正の履歴を時系列で公開。誤りは隠さず直し、履歴を残す — 編集方針の実践ページです。',
+  },
 ];
 
 /** 「まず知りたい」A群（分岐①・表示順） */
@@ -642,6 +671,11 @@ const LV_INVEST_G_ORDER = [
   'listing-criteria',
   'how-we-verify',
   'consultation-policy',
+  // B8（最終）: G-9〜G-12
+  'who-answers',
+  'how-we-protect-data',
+  'our-vision',
+  'guide-changelog',
 ];
 export const LV_INVEST_ARTICLES_G = LV_INVEST_ARTICLES.filter((a) => a.group === 'G').sort(
   (x, y) => LV_INVEST_G_ORDER.indexOf(x.slug) - LV_INVEST_G_ORDER.indexOf(y.slug)

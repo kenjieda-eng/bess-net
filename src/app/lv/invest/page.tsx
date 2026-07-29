@@ -10,6 +10,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
 import { siteConfig } from '@/lib/site-config';
+import { getIndustryNews } from '@/lib/microcms';
 import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_C, LV_INVEST_ARTICLES_D, LV_INVEST_ARTICLES_E, LV_INVEST_ARTICLES_F, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
 
 export const dynamic = 'force-static';
@@ -100,7 +101,20 @@ const ENTRIES = [
   },
 ] as const;
 
-export default function LvInvestHubPage() {
+export default async function LvInvestHubPage() {
+  // B8: 低圧の最新ニュース（R-1〜R-3・R-6 実体化）。/lv ハブと同一機構＝build時に getIndustryNews
+  // （主題ゲート・除外済みの単一チョークポイント）から title「低圧」含む最新5件を抽出。全静的
+  // （force-static）・runtime microCMS 0（新規fanoutなし・鉄則#1/#2）。失敗時は空＝ニュース枠のみ非表示。
+  let lvNews: { slug: string; title: string; publishedAt?: string }[] = [];
+  try {
+    lvNews = (await getIndustryNews())
+      .filter((n) => (n.title || '').includes('低圧'))
+      .slice(0, 5)
+      .map((n) => ({ slug: n.slug, title: n.title, publishedAt: n.publishedAt }));
+  } catch {
+    lvNews = [];
+  }
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -357,6 +371,43 @@ export default function LvInvestHubPage() {
                 </a>
               </li>
             </ul>
+          </section>
+
+          {/* B8: 低圧蓄電所の最新情報（R-1 ニュース枠／R-2 制度・政策／R-3 トラブル。トラストブロックの前） */}
+          <section style={{ margin: '0 0 32px', padding: 20, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>低圧蓄電所の最新情報</h2>
+            {lvNews.length > 0 && (
+              <div style={{ marginBottom: 16 }}>
+                <p style={{ fontSize: 14, fontWeight: 600, margin: '0 0 4px' }}>
+                  低圧の最新ニュース <Link href="/news" style={{ fontSize: 13, fontWeight: 600, marginLeft: 6 }}>ニュース一覧へ →</Link>
+                </p>
+                <ul className="lv-invest-rows">
+                  {lvNews.map((n) => (
+                    <li key={n.slug}>
+                      <Link href={`/news/${n.slug}`}>{n.title}</Link>
+                      {n.publishedAt && (
+                        <span style={{ fontSize: 13, color: 'var(--color-muted)', marginLeft: 8 }}>
+                          {new Date(n.publishedAt).toLocaleDateString('ja-JP')}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <div style={{ marginBottom: 16 }}>
+              <p style={{ fontSize: 14, fontWeight: 600, margin: '0 0 4px' }}>制度・政策の動き</p>
+              <ul className="lv-invest-rows">
+                <li><Link href="/lv/regulation-subsidy">低圧の制度・規制の解説</Link></li>
+                <li><Link href="/policy-calendar">政策・法制度カレンダー</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p style={{ fontSize: 14, fontWeight: 600, margin: '0 0 4px' }}>トラブル・注意情報</p>
+              <ul className="lv-invest-rows">
+                <li><Link href="/incidents">火災・トラブル事例DB</Link></li>
+              </ul>
+            </div>
           </section>
 
           <LvInvestTrustBlock />
