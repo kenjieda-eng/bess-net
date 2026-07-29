@@ -11,6 +11,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
+import LvInvestEduLinks from '@/components/LvInvestEduLinks';
 import {
   getExplainerBySlug,
   getAllExplainer,
@@ -146,6 +147,9 @@ export default async function LvInvestArticlePage({
           <h1 className="article-title">{exp.title}</h1>
           <p className="article-lead">{exp.lead}</p>
           <div className="article-body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+
+          {/* 本文「次に読む」の後段: EIC Data 教材への発リンク（相互リンク・リン連携） */}
+          <LvInvestEduLinks links={LV_INVEST_SEO_MAP[exp.slug]?.externalLinks} />
 
           {relatedTerms.length > 0 && <RelatedTermBadges terms={relatedTerms} />}
 

@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvContactCta from '@/components/LvContactCta';
+import LvInvestEduLinks from '@/components/LvInvestEduLinks';
 import { siteConfig } from '@/lib/site-config';
 
 export const dynamic = 'force-static';
@@ -129,6 +130,11 @@ export default function LvRevenueModelPage() {
               低圧蓄電所の収益は「市場 × 契約 × コスト」の掛け算であり、単一の利回り数字では比較できません。当サイトは販売者ではないため、個別商品の評価はしませんが、検討の考え方は無料でご相談いただけます。
             </p>
           </div>
+
+          {/* EIC Data 教材への発リンク（相互リンク・リン連携） */}
+          <LvInvestEduLinks
+            links={[{ href: 'https://data.eic-jp.org/insight/guide', label: '電力市場の教材ハブ（EIC Data）' }]}
+          />
 
           <LvContactCta variant="buy" />
           <LvContactCta variant="entry" />

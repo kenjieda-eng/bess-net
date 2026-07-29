@@ -23,7 +23,15 @@ export function isLvInvestExplainer(exp: Pick<Explainer, 'category'>): boolean {
 //        'C' = 「営業資料を受け取った」（分岐③）／'D' = 「契約・保証を確認したい」（分岐③直後カード）／
 //        'E' = 「よくある相談パターン・読み物」（分岐⑤直前カード）／
 //        'F' = 「すでに購入した」（分岐④・購入後）／'G' = 運営・相談（分岐⑤）
-export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G'; hubLabel: string; seoTitle: string; meta: string };
+/** EIC Data（data.eic-jp.org）教材クラスタへの発リンク（相互リンク・リン連携）。href は UTM 付与前の素URL。 */
+export type LvInvestExternalLink = { href: string; label: string };
+export type LvInvestArticle = { slug: string; group: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G'; hubLabel: string; seoTitle: string; meta: string; externalLinks?: LvInvestExternalLink[] };
+
+/**
+ * EIC Data 教材への相互リンクに付与する共通 UTM（edu_cluster 流入計測用・リン→GA4）。
+ * LvInvestEduLinks が href 末尾に付与する（データ側は素URLで持つ・二重付与回避）。
+ */
+export const EIC_EDU_UTM = '?utm_source=bess-net&utm_medium=referral&utm_campaign=edu_cluster';
 
 export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
   {
@@ -472,6 +480,9 @@ export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
     hubLabel: 'アグリゲーターの運用成績は比較できる？',
     seoTitle: 'アグリゲーターの運用成績の比べ方 — 低圧蓄電所（蓄電池）',
     meta: '横並びの公開ランキングはまだ無い。それでも市場データとの突き合わせ、複数レポートの比較、質問での見極めはできる。方法を解説。',
+    externalLinks: [
+      { href: 'https://data.eic-jp.org/insight/how-to-read-area-prices', label: 'エリアプライスと市場分断の読み方（EIC Data）' },
+    ],
   },
   {
     slug: 'change-aggregator',
@@ -578,6 +589,10 @@ export const LV_INVEST_ARTICLES: LvInvestArticle[] = [
     hubLabel: 'アグリゲーターの仕事を1日単位で見てみる',
     seoTitle: 'アグリゲーターの1日 — 低圧蓄電所の運用の裏側（蓄電池）',
     meta: 'あなたの蓄電池が寝ている間に何が起きているか。前日の計画から当日の制御、月末のレポートまで、運用の仕事を時間軸で解説。',
+    externalLinks: [
+      { href: 'https://data.eic-jp.org/insight/imbalance-charge-structure', label: 'インバランス料金の仕組み（EIC Data）' },
+      { href: 'https://data.eic-jp.org/insight/how-to-read-balancing-market', label: '需給調整市場の読み方（EIC Data）' },
+    ],
   },
   // B7（2026-07-27）: 運営・相談 G群 G-4〜G-8（分岐⑤リストに追記・表示順は LV_INVEST_ARTICLES_G の G_ORDER で明示）
   {
