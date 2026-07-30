@@ -17,11 +17,21 @@ import {
 
 const PAGE_SIZE = 12;
 type SortKey = 'newest' | 'oldest';
+type TypeKey = 'all' | 'editorial' | 'press';
 
 const SORT_OPTIONS: { key: SortKey; label: string }[] = [
   { key: 'newest', label: '新着順' },
   { key: 'oldest', label: '古い順' },
 ];
+
+const TYPE_OPTIONS: { key: TypeKey; label: string }[] = [
+  { key: 'all', label: 'すべて' },
+  { key: 'editorial', label: '編集記事' },
+  { key: 'press', label: 'プレスリリース' },
+];
+
+/** 編集記事 = slug が news- で始まる（深掘り）。それ以外（pr-・legacy slug）は press。 */
+const isEditorialNews = (slug: string) => slug.startsWith('news-');
 
 type Props = { items: News[] };
 
@@ -29,6 +39,7 @@ export default function NewsBrowser({ items }: Props) {
   // SSR 時はデフォルト値で全記事を描画、hydration 後に URL params で上書き
   const [activeCategory, setActiveCategory] = useState('すべて');
   const [activeYear, setActiveYear] = useState('all');
+  const [activeType, setActiveType] = useState<TypeKey>('all');
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState<SortKey>('newest');
   const [visible, setVisible] = useState(PAGE_SIZE);
@@ -41,10 +52,12 @@ export default function NewsBrowser({ items }: Props) {
     const y = sp.get('y');
     const q = sp.get('q');
     const s = sp.get('s') as SortKey | null;
+    const t = sp.get('t') as TypeKey | null;
     if (c) setActiveCategory(c);
     if (y) setActiveYear(y);
     if (q) setQuery(q);
     if (s === 'oldest') setSort('oldest');
+    if (t === 'editorial' || t === 'press') setActiveType(t);
     setMounted(true);
   }, []);
 
@@ -54,6 +67,7 @@ export default function NewsBrowser({ items }: Props) {
     const params = new URLSearchParams();
     if (activeCategory !== 'すべて') params.set('c', activeCategory);
     if (activeYear !== 'all') params.set('y', activeYear);
+    if (activeType !== 'all') params.set('t', activeType);
     if (query) params.set('q', query);
     if (sort !== 'newest') params.set('s', sort);
     const qs = params.toString();
@@ -62,7 +76,7 @@ export default function NewsBrowser({ items }: Props) {
       '',
       qs ? `${window.location.pathname}?${qs}` : window.location.pathname
     );
-  }, [activeCategory, activeYear, query, sort, mounted]);
+  }, [activeCategory, activeYear, activeType, query, sort, mounted]);
 
   const catCounts = useMemo(() => newsCountByCategory(items), [items]);
   const years = useMemo(() => newsYearList(items), [items]);
@@ -74,6 +88,8 @@ export default function NewsBrowser({ items }: Props) {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     let result = items.filter((n) => {
+      if (activeType === 'editorial' && !isEditorialNews(n.slug)) return false;
+      if (activeType === 'press' && isEditorialNews(n.slug)) return false;
       if (activeCategory !== 'すべて') {
         if (!(n.category || []).includes(activeCategory)) return false;
       }
@@ -98,11 +114,11 @@ export default function NewsBrowser({ items }: Props) {
       return sort === 'oldest' ? da - db : db - da;
     });
     return result;
-  }, [items, activeCategory, activeYear, query, sort]);
+  }, [items, activeCategory, activeYear, activeType, query, sort]);
 
   useEffect(() => {
     setVisible(PAGE_SIZE);
-  }, [activeCategory, activeYear, query, sort]);
+  }, [activeCategory, activeYear, activeType, query, sort]);
 
   const visibleItems = filtered.slice(0, visible);
   const hasMore = visible < filtered.length;
@@ -121,6 +137,18 @@ export default function NewsBrowser({ items }: Props) {
           onChange={(e) => setQuery(e.target.value)}
           aria-label="ニュースを検索"
         />
+        <select
+          className="news-type"
+          value={activeType}
+          onChange={(e) => setActiveType(e.target.value as TypeKey)}
+          aria-label="種別で絞り込み"
+        >
+          {TYPE_OPTIONS.map((o) => (
+            <option key={o.key} value={o.key}>
+              {o.label}
+            </option>
+          ))}
+        </select>
         <select
           className="news-year"
           value={activeYear}

@@ -27,6 +27,19 @@ export const metadata: Metadata = {
 export default async function NewsListPage() {
   const items = await getIndustryNews();
 
+  // N3: 既取得 items から導出（追加fetch/新規クライアント配布なし＝負荷中立）
+  const byNewest = (a: { publishedAt: string }, b: { publishedAt: string }) =>
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  // 編集部の深掘り = slug が news-（news-weekly- を除く）。最新5本。
+  const editorialPicks = items
+    .filter((n) => n.slug.startsWith('news-') && !n.slug.startsWith('news-weekly-'))
+    .sort(byNewest)
+    .slice(0, 5);
+  // 今週のまとめ = slug が news-weekly-。最新1本・無ければ枠ごと非表示（8/1〜運用予定）。
+  const weeklyRoundup = items
+    .filter((n) => n.slug.startsWith('news-weekly-'))
+    .sort(byNewest)[0];
+
   // カテゴリ別・年別 SSRハブへのクロスリンク導線（件数>0 のみ）
   const catCounts = newsCountByCategory(items);
   const archiveCategories = NEWS_HUB_CATEGORIES.filter(
@@ -68,6 +81,32 @@ export default async function NewsListPage() {
             </div>
           ) : (
             <>
+              {/* N3: 今週のまとめ（予約枠・記事未存在なら非表示・日付は焼かない） */}
+              {weeklyRoundup && (
+                <section className="page-section news-shelf">
+                  <h2 className="news-shelf-title">今週のまとめ</h2>
+                  <ul className="lv-invest-rows">
+                    <li>
+                      <Link href={`/news/${weeklyRoundup.slug}`}>{weeklyRoundup.title}</Link>
+                    </li>
+                  </ul>
+                </section>
+              )}
+
+              {/* N3: 編集部の深掘り 固定枠（news- 最新5本・pr-除外） */}
+              {editorialPicks.length > 0 && (
+                <section className="page-section news-shelf">
+                  <h2 className="news-shelf-title">編集部の深掘り</h2>
+                  <ul className="lv-invest-rows">
+                    {editorialPicks.map((n) => (
+                      <li key={n.id}>
+                        <Link href={`/news/${n.slug}`}>{n.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+
               <NewsArchiveNav
                 categories={archiveCategories}
                 years={archiveYears}

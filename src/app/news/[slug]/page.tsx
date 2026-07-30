@@ -7,6 +7,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
+import NewsNextStepBlock from '@/components/NewsNextStepBlock';
 import {
   getNewsBySlugWithRelations,
   getIndustryNewsSlugs,
@@ -35,8 +36,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const news = await getNewsBySlugWithRelations(params.slug);
   if (!news) return {};
+  // N4: 深掘り(news-)記事はメタtitleの中間サフィックスを除去し「 | 蓄電所ネット」1回に正規化（#88）。
+  // PR転載(pr-/その他legacy slug)は現行どおり不変。microCMS の title field は一切変更しない。
+  const isEditorial = news.slug.startsWith('news-');
+  const metaTitle = isEditorial
+    ? news.title.replace(/\s*[｜|]\s*(?:蓄電池)?業界ニュース\s*$/u, '').trim()
+    : `${news.title}｜蓄電池業界ニュース`;
   return {
-    title: `${news.title}｜蓄電池業界ニュース`,
+    title: metaTitle,
     description: news.lead,
     alternates: { canonical: `/news/${news.slug}` },
     // off-topic PR（news-excluded）は noindex（ページは残置＝404にしない・一覧/sitemapからは除外）
@@ -242,6 +249,9 @@ export default async function NewsDetailPage({
               </p>
             </section>
           )}
+
+          {/* N1: このニュースの先へ（文脈誘導・追加fetchなし・title＋本文＋タグで判定） */}
+          <NewsNextStepBlock title={news.title} body={news.body} tags={news.tags} />
 
           {/* 出典 */}
           {news.sourceUrl && (

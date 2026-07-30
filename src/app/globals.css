@@ -1523,7 +1523,7 @@
   outline: 2px solid var(--color-accent);
   outline-offset: -1px;
 }
-.news-year, .news-sort {
+.news-year, .news-sort, .news-type {
   flex: 0 0 auto;
   padding: 12px 16px;
   border: 1px solid var(--color-line);
@@ -1532,6 +1532,24 @@
   background: white;
   color: var(--color-text);
   cursor: pointer;
+}
+
+/* N3: 一覧上段の固定枠（編集部の深掘り／今週のまとめ）・行アイテムは .lv-invest-rows 流用 */
+.news-shelf {
+  margin: 0 0 20px;
+}
+.news-shelf-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--color-navy);
+}
+/* N1: 記事末尾「このニュースの先へ」のカテゴリ見出し */
+.news-next-step-cat {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-muted);
+  margin: 0 0 6px;
 }
 
 .news-tabs {
