@@ -88,6 +88,25 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06': '連系',                    // NC口春 受電開始
   'nippon-chikudenchi-takayama-disaster-agreement-2026-06': '地域自治体',           // 高山市 防災協定
   're100-denryoku-will-aggregation-3sites-2026-06': '連系',                        // RE100×ウィル アグリ
+  // 2026-08 月次（前月7月配信18件・原文照合対象）— 全 category は microCMS 実在値のみ
+  'mikimori-hd-bess-10sites-81mwh-2026-07': '開発計画',                            // 三木森HD 10案件81MWh運開予定
+  'sbi-moneyplaza-bess-fund-ota-shimane-2026-07': '投資',                          // SBIマネープラザ 蓄電所ファンド
+  'ecokaku-technologies-bess-4sites-keiren-2026-07': '連系',                       // エコ革 4施設 初系統連系
+  'jesdi-hachigata-bess-juden-2026-07': '連系',                                    // JESDI 鉢形蓄電所 受電
+  'glome-hd-toyooka-1-bess-shiunten-2026-07': '連系',                              // グローム 豊岡1号 試運転
+  'seela-hd-oyama-bess-2mw-2026-07': '投資',                                       // シーラHD 小山 取得（仕入れ）
+  'nippon-chikudenchi-shirakawa-disaster-agreement-2026-07': '地域自治体',          // 日本蓄電池 白河市 防災協定
+  'tensor-energy-rising-lv-bess-partnership-2026-07': '開発計画',                   // Tensor×ライジング 低圧提携
+  'gates-bess-6sites-2026-07': '開発計画',                                         // GATES 6件推進
+  'hexa-tokyo-gas-fukushima-bess-offtake-49mw-2026-07': '開発計画',                // ヘキサ×東京ガス 20年オフテイク
+  'tokyo-gas-bess-1gw-mimasaka-2026-07': '開発計画',                               // 東京ガス 1GW突破・美作受託
+  're100-denryoku-escript-aggregation-2026-07': '連系',                           // RE100×エスクリプト アグリ
+  're100-denryoku-birdman-aggregation-2026-07': '連系',                           // RE100×Birdman アグリ
+  'birdman-sakaiminato-bess-unten-2026-07': '連系',                               // Birdman 境港 完工・運開
+  'tess-engineering-komoro-bess-43mw-epc-2026-07': '技術',                        // テス 小諸 EPC受注
+  'sinexcel-matsusaka-bess-balancing-entry-2026-07': '連系',                      // SINEXCEL 松阪 需給調整参入
+  'remixpoint-ogano-bess-10th-chakou-2026-07': '開発計画',                        // リミックス 小鹿野町 10か所目着工
+  'juniper-assets-kyushu-bess-financial-close-2026-07': '海外',                    // Juniper 九州 FC（海外資本）
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
