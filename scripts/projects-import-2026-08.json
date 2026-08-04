@@ -1,0 +1,324 @@
+[
+  {
+    "slug": "hexa-fukushima-tokyogas-offtake",
+    "name": "福島県系統用蓄電所（ヘキサ・エネルギーサービス／東京ガス20年オフテイク）",
+    "prefecture": "福島県",
+    "operator": "ヘキサ・エネルギーサービス合同会社",
+    "outputMw": 49.7,
+    "capacityMwh": 202.1,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000005.000173123.html",
+    "body": "<p><strong>福島県系統用蓄電所</strong>は、ヘキサ・エネルギーサービス（I Squared Capitalグループ）が開発・保有・維持管理し、東京ガスが20年間の長期オフテイク契約で運用権を取得する系統用蓄電池（出力49.7MW／容量202.1MWh）。商業運転開始は2029年度予定。所在は福島県（市町村は非公表）。ヘキサは国内で合計549MW（2025年11月時点）の系統用蓄電池開発を進行中（2026年7月28日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-hachioji-bess",
+    "name": "東京都八王子市蓄電所（三木森HD）",
+    "prefecture": "東京都",
+    "city": "八王子市",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>東京都八王子市蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2026年10月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-kakogawa-bess",
+    "name": "兵庫県加古川市蓄電所（三木森HD）",
+    "prefecture": "兵庫県",
+    "city": "加古川市",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>兵庫県加古川市蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2026年11月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-katta-bess",
+    "name": "宮城県刈田郡蓄電所（三木森HD）",
+    "prefecture": "宮城県",
+    "city": "刈田郡",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>宮城県刈田郡蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2026年12月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-kuma-bess",
+    "name": "熊本県球磨郡蓄電所（三木森HD）",
+    "prefecture": "熊本県",
+    "city": "球磨郡",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>熊本県球磨郡蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2026年12月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-tamana-gun-bess",
+    "name": "熊本県玉名郡蓄電所（三木森HD）",
+    "prefecture": "熊本県",
+    "city": "玉名郡",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>熊本県玉名郡蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2026年12月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-nishimorokata-bess",
+    "name": "宮崎県西諸県郡蓄電所（三木森HD）",
+    "prefecture": "宮崎県",
+    "city": "西諸県郡",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>宮崎県西諸県郡蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2027年2月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-otawara-bess",
+    "name": "栃木県大田原市蓄電所（三木森HD）",
+    "prefecture": "栃木県",
+    "city": "大田原市",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>栃木県大田原市蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2027年2月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-kamimashiki-bess",
+    "name": "熊本県上益城郡蓄電所（三木森HD）",
+    "prefecture": "熊本県",
+    "city": "上益城郡",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>熊本県上益城郡蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2027年2月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-yame-bess",
+    "name": "福岡県八女市蓄電所（三木森HD）",
+    "prefecture": "福岡県",
+    "city": "八女市",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>福岡県八女市蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2027年3月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "mikimori-ise-bess",
+    "name": "三重県伊勢市蓄電所（三木森HD）",
+    "prefecture": "三重県",
+    "city": "伊勢市",
+    "operator": "三木森ホールディングス",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000099599.html",
+    "body": "<p><strong>三重県伊勢市蓄電所</strong>は、三木森ホールディングスが取得・運用契約を締結した系統用蓄電所10案件（総出力19.8MW／総容量81MWh）の一つ。運転開始予定は2027年3月。個別の出力・容量は一次リリースに記載がなく調査中。運用はアービトラージ取引を基本とし、将来的にデータセンター参画やFIP再エネ連携も視野（2026年7月9日発表）。</p>"
+  },
+  {
+    "slug": "sbi-moneyplaza-ota-bess",
+    "name": "島根県大田市系統用蓄電所（SBIマネープラザファンド）",
+    "prefecture": "島根県",
+    "city": "大田市",
+    "operator": "SBIマネープラザ（ファンド組成）",
+    "epc": "ウエストエネルギーソリューション",
+    "outputMw": 1.99,
+    "capacityMwh": 10.16,
+    "status": [
+      "稼働中"
+    ],
+    "marketParticipation": [
+      "需給調整市場"
+    ],
+    "sourceUrl": "https://www.sbi-moneyplaza.co.jp/wp-content/uploads/2026/07/press_20260701-01.pdf",
+    "body": "<p><strong>島根県大田市の系統用蓄電所</strong>（出力1,990kW／容量10,160kWh）は需給調整市場に参入済み。SBIマネープラザが2026年7月1日に同社初の系統用蓄電所ファンドを組成・運用開始し、本蓄電所を投資対象とする。EPCはウエストエネルギーソリューション、アグリゲーターは東芝。一般事業法人出資による民間資金導入の先行事例（施設固有名は非公表）。</p>"
+  },
+  {
+    "slug": "mimasaka-bess",
+    "name": "美作蓄電所（バッテリーファーム／東京ガス最適運用）",
+    "prefecture": "岡山県",
+    "city": "美作市",
+    "operator": "合同会社バッテリーファーム",
+    "outputMw": 29,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://www.tokyo-gas.co.jp/news/press/20260715-01.html",
+    "body": "<p><strong>美作蓄電所</strong>（岡山県美作市、出力2.9万kW=29MW、容量は非公表＝調査中）は、合同会社バッテリーファームが保有する系統用蓄電池。開発はStonepeak Partners傘下のKingdom BESS Development、運用は東京ガスが最適運用サービス（IGNITURE）を受託。商業運転開始は2028年度予定。本契約により東京ガスの運用予定容量は107.6万kW（1GW超）に到達（2026年7月15日発表）。</p>"
+  },
+  {
+    "slug": "nc-sendai-kamiayashi",
+    "name": "NC仙台市青葉区上愛子蓄電所（日本蓄電池）",
+    "prefecture": "宮城県",
+    "city": "仙台市青葉区",
+    "operator": "日本蓄電池（合同会社NCパイオニア）",
+    "outputMw": 1.988,
+    "capacityMwh": 8.146,
+    "cod": "2026-04-01",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000199.000033609.html",
+    "body": "<p><strong>NC仙台市青葉区上愛子蓄電所</strong>は、リミックスポイントと日本蓄電池の共同出資ファンド「合同会社NCパイオニア」による全国7拠点プロジェクトの2拠点目（定格出力1,988kW／定格容量8,146kWh）。2026年4月1日受電開始。蓄電システムはCATL製、PCSはTMEIC製。需給調整市場へは2026年8月頃参入予定（2026年4月1日発表）。</p>"
+  },
+  {
+    "slug": "nc-kainan",
+    "name": "和歌山県海南市の系統用蓄電所（NCパイオニア）",
+    "prefecture": "和歌山県",
+    "city": "海南市",
+    "operator": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000201.000033609.html",
+    "body": "<p><strong>和歌山県海南市の系統用蓄電所</strong>は、リミックスポイントと日本蓄電池の共同出資ファンド「合同会社NCパイオニア」が2026年末までに全国7か所で開発する系統用蓄電所の一つ。受電開始は2026年9月見込み。出力・容量・施設名は一次リリースに記載がなく調査中（2026年6月1日発表のNC口春蓄電所受電リリース内「今後の見通し」に記載）。</p>"
+  },
+  {
+    "slug": "nc-ibigawa",
+    "name": "岐阜県揖斐川町の系統用蓄電所（NCパイオニア）",
+    "prefecture": "岐阜県",
+    "city": "揖斐郡揖斐川町",
+    "operator": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000201.000033609.html",
+    "body": "<p><strong>岐阜県揖斐川町の系統用蓄電所</strong>は、リミックスポイントと日本蓄電池の共同出資ファンド「合同会社NCパイオニア」が2026年末までに全国7か所で開発する系統用蓄電所の一つ。受電開始は2026年10月見込み。出力・容量・施設名は一次リリースに記載がなく調査中（2026年6月1日発表のNC口春蓄電所受電リリース内「今後の見通し」に記載）。</p>"
+  },
+  {
+    "slug": "nc-nagano-city",
+    "name": "長野県長野市の系統用蓄電所（NCパイオニア）",
+    "prefecture": "長野県",
+    "city": "長野市",
+    "operator": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+    "outputMw": 0,
+    "capacityMwh": 0,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000201.000033609.html",
+    "body": "<p><strong>長野県長野市の系統用蓄電所</strong>は、リミックスポイントと日本蓄電池の共同出資ファンド「合同会社NCパイオニア」が2026年末までに全国7か所で開発する系統用蓄電所の一つ。受電開始は2026年10月見込み。出力・容量・施設名は一次リリースに記載がなく調査中（2026年6月1日発表のNC口春蓄電所受電リリース内「今後の見通し」に記載）。</p>"
+  },
+  {
+    "slug": "kijimadaira-bess",
+    "name": "木島平蓄電所（OPTIRON北信）",
+    "prefecture": "長野県",
+    "city": "下高井郡",
+    "operator": "合同会社OPTIRON北信（SMFLみらいパートナーズ61%・藤巻建設34%・東芝プラントシステム5%）",
+    "epc": "東芝プラントシステム",
+    "outputMw": 52.45,
+    "capacityMwh": 160.48,
+    "status": [
+      "建設中"
+    ],
+    "sourceUrl": "https://www.toshiba-tpsc.co.jp/assets/pdf/topics/20260608_1.pdf",
+    "body": "<p><strong>木島平蓄電所</strong>（長野県下高井郡、出力52.45MW／容量160.48MWh）は、SMFLみらいパートナーズ・藤巻建設・東芝プラントシステムの3社出資SPC「合同会社OPTIRON北信」による系統用蓄電池事業。2026年6月着工、2028年度運転開始予定。EPCは東芝プラントシステム、アグリゲーターは東芝。資金調達はノンリコースプロジェクトファイナンス（2026年6月8日発表）。</p>"
+  },
+  {
+    "slug": "hasu-iiyama-bess",
+    "name": "蓮蓄電所（OPTIRON北信）",
+    "prefecture": "長野県",
+    "city": "飯山市",
+    "operator": "合同会社OPTIRON北信（SMFLみらいパートナーズ61%・藤巻建設34%・東芝プラントシステム5%）",
+    "epc": "東芝プラントシステム",
+    "outputMw": 31.95,
+    "capacityMwh": 90.27,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://www.toshiba-tpsc.co.jp/assets/pdf/topics/20260608_1.pdf",
+    "body": "<p><strong>蓮蓄電所</strong>（長野県飯山市、出力31.95MW／容量90.27MWh）は、SMFLみらいパートナーズ・藤巻建設・東芝プラントシステムの3社出資SPC「合同会社OPTIRON北信」による系統用蓄電池事業。2026年8月着工予定、2028年度運転開始予定。EPCは東芝プラントシステム、アグリゲーターは東芝（2026年6月8日発表）。</p>"
+  },
+  {
+    "slug": "erex-no3-kameoka",
+    "name": "イーレックス系統用蓄電池 第3号案件（京都府亀岡市）",
+    "prefecture": "京都府",
+    "city": "亀岡市",
+    "operator": "イーレックス",
+    "epc": "グリーンエナジー・プラス",
+    "outputMw": 2,
+    "capacityMwh": 8,
+    "status": [
+      "計画中"
+    ],
+    "sourceUrl": "https://www.erex.co.jp/news/pressrelease/3567/",
+    "body": "<p><strong>イーレックス系統用蓄電池 第3号案件</strong>（京都府亀岡市、定格出力2MW規模／定格容量8MWh規模）は、イーレックスが2026年7月23日に投資決定しグリーンエナジー・プラスと工事請負契約を締結した関西電力管内の系統用蓄電池。電池方式はリチウムイオン（LFP）。イーレックスが保有・維持管理・運用（アグリゲーター）を担い、卸電力・需給調整・容量の3市場で収益化する。運転開始は2027年度第1四半期予定（第1号=宮崎県串間市・第2号=千葉県に続く案件）。</p>"
+  },
+  {
+    "slug": "taoke-kakamigahara-no2",
+    "name": "岐阜県各務原市②号2MW高圧蓄電所（TAOKE ENERGY）",
+    "prefecture": "岐阜県",
+    "city": "各務原市",
+    "operator": "TAOKE ENERGY（SPC: PP6合同会社）",
+    "outputMw": 2,
+    "capacityMwh": 8,
+    "cod": "2026-07-07",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000034.000103834.html",
+    "body": "<p><strong>岐阜県各務原市②号2MW高圧蓄電所</strong>（2MW／8MWh）は、TAOKE ENERGYがSPC「PP6合同会社」を通じて推進する同社初の外部資金活用型蓄電所ファンド案件。2026年7月7日に系統連系完了。TAOKEはSI・EMS・アグリゲーションの三位一体モデルで開発から運用まで一貫支援する（2026年7月14日発表）。</p>"
+  },
+  {
+    "slug": "taoke-tahara-mutsure",
+    "name": "愛知県田原市六連町2MW高圧蓄電所（TAOKE ENERGY）",
+    "prefecture": "愛知県",
+    "city": "田原市",
+    "operator": "TAOKE ENERGY（SPC: PP合同会社）",
+    "outputMw": 2,
+    "capacityMwh": 8.14,
+    "cod": "2026-07-31",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000037.000103834.html",
+    "body": "<p><strong>愛知県田原市六連町2MW高圧蓄電所</strong>（定格出力2MW／容量8.14MWh）は、TAOKE ENERGYがSPC「PP合同会社」を通じて推進する蓄電所ファンド案件で、系統連系を完了した6案件の一つ。2026年7月31日系統連系。2026年10月を目途に需給調整市場「一次調整力（オフライン）」への参入を予定（2026年8月3日発表）。※ミツウロコ「田原蓄電所」とは別案件。</p>"
+  },
+  {
+    "slug": "nextes-izunokuni",
+    "name": "伊豆の国市系統用蓄電所（NEXTES・使用済み電池活用）",
+    "prefecture": "静岡県",
+    "city": "伊豆の国市",
+    "operator": "株式会社NEXTES",
+    "outputMw": 2,
+    "capacityMwh": 10,
+    "status": [
+      "稼働中"
+    ],
+    "sourceUrl": "https://nextes.jp/news/20260717.html",
+    "body": "<p><strong>伊豆の国市の系統用蓄電所</strong>（静岡県伊豆の国市、出力2MW／容量10MWh）は、NEXTES（旧NExT-e Solutions）が使用済み電池を再活用して構築した系統用蓄電所。東京都「ゼロエミッション東京」技術開発支援事業の採択を経て、2026年6月より段階的に運転を開始。栃木県那須塩原市の先行拠点の知見を活用し規模を拡大した案件で、需給調整市場への参画を見据えた運用体制を構築中（2026年7月17日発表）。</p>"
+  }
+]
