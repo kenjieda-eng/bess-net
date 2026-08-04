@@ -2,10 +2,11 @@
  * src/lib/news-topic-gate.ts — news 主題キーワードゲート（news分析2026-07-18 P0）
  *
  * 目的: 企業単位のPR自動取込で混入する「蓄電池と無関係」なリリースを表示系から一貫除外する。
- * 方式: 「title または本文に主題キーワードを含めば適合」。一覧フローは body 非取得（ISRサイズ抑制の
- *   既存設計）のため、判定は prebuild（scripts/precompute-news-topic-gate.ts）で全件 body 込みで
- *   実行し、除外 slug を src/lib/generated/news-topic-exclusions.json に出力→runtime は Set 照合のみ
- *   （#102 precompute 整合・負荷ゼロ・意味論は「title または本文」と完全一致）。
+ * 方式: 「title・lead・tags・本文のいずれかに主題キーワードを含めば適合」。一覧フローは body 非取得
+ *   （ISRサイズ抑制の既存設計）のため、判定は prebuild（scripts/precompute-news-topic-gate.ts）で
+ *   全件 body 込みで実行し、除外 slug を src/lib/generated/news-topic-exclusions.json に出力→runtime は
+ *   Set 照合のみ（#102 precompute 整合・負荷ゼロ）。詳細ページのライブ判定も同一4フィールドで行い、
+ *   両ゲートの判定テキストを常に一致させる（乖離すると一覧表示×詳細404の壊れリンクが生じる）。
  * 可逆性: microCMS は一切変更しない。誤除外は NEWS_TOPIC_ALLOWLIST に slug を1行追加すれば
  *   次 build から復帰する（precompute・詳細ページゲートの両方が allowlist を尊重）。
  */
@@ -50,8 +51,21 @@ export function isTopicExcludedNews(slug: string): boolean {
   return EXCLUDED_SET.has(slug);
 }
 
-/** 記事全文（title＋body）での適合判定（/news/[slug] 詳細ページ用・取得済みデータのみ＝追加фетチなし） */
-export function isOnTopicNewsArticle(article: { slug: string; title?: string; body?: string }): boolean {
+/**
+ * 記事全文での適合判定（/news/[slug] 詳細ページ用・取得済みデータのみ＝追加フェッチなし）。
+ * 判定テキストは precompute（title＋lead＋tags＋body）と完全同一にする。
+ * ここが狭いと「一覧に出るが詳細404」の壊れリンクが生じる（2026-08-03 実証: キーワードが
+ * lead のみの2記事が該当。pr-2023-11-27-co37124-28 / pr-2024-01-26-co73738-105）。
+ */
+export function isOnTopicNewsArticle(article: {
+  slug: string;
+  title?: string;
+  lead?: string;
+  tags?: string;
+  body?: string;
+}): boolean {
   if (NEWS_TOPIC_ALLOWLIST.includes(article.slug)) return true;
-  return isOnTopicNewsText(`${article.title ?? ''}\n${article.body ?? ''}`);
+  return isOnTopicNewsText(
+    `${article.title ?? ''}\n${article.lead ?? ''}\n${article.tags ?? ''}\n${article.body ?? ''}`
+  );
 }

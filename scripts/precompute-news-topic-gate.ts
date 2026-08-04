@@ -2,8 +2,9 @@
 /**
  * scripts/precompute-news-topic-gate.ts — news 主題ゲートの build 時事前計算（news分析2026-07-18 P0）
  *
- * 全 news を body 込みで取得し、「title または本文」に主題キーワードを含まないものを
+ * 全 news を body 込みで取得し、「title・lead・tags・本文」のいずれにも主題キーワードを含まないものを
  * src/lib/generated/news-topic-exclusions.json に出力する（#102 precompute 方式・runtime 0）。
+ * ※判定テキストは詳細ページの isOnTopicNewsArticle と完全同一に保つこと（乖離＝壊れリンクの原因）。
  * - 既存除外（編集部カテゴリ・news-excluded）はここでは対象外＝表示中の集合のみ判定
  *   （news-excluded 済み slug はどのみち getIndustryNews で除外されるため二重管理しない）
  * - NEWS_TOPIC_ALLOWLIST の slug は除外しない（誤除外復帰・news-topic-gate.ts 側で管理）

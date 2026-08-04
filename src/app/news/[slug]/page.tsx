@@ -72,8 +72,18 @@ export default async function NewsDetailPage({
   if (!news) notFound();
 
   // P0 主題ゲート（news分析2026-07-18）: 蓄電池と無関係な記事は詳細ページも404
-  // （取得済み title+body で判定＝追加フェッチなし。誤除外は NEWS_TOPIC_ALLOWLIST で復帰＝完全可逆）
-  if (!isOnTopicNewsArticle({ slug: news.slug, title: news.title, body: news.body })) notFound();
+  // （取得済み title+lead+tags+body で判定＝precompute と同一テキスト・追加フェッチなし。
+  //   誤除外は NEWS_TOPIC_ALLOWLIST で復帰＝完全可逆）
+  if (
+    !isOnTopicNewsArticle({
+      slug: news.slug,
+      title: news.title,
+      lead: news.lead,
+      tags: news.tags,
+      body: news.body,
+    })
+  )
+    notFound();
 
   // 関連用語（Glossary[]）
   const relatedTerms = (news.relatedTerms ?? []).map((g) => ({
