@@ -1,0 +1,874 @@
+[
+ {
+  "slug": "arao-bess",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000100.000055631.html"
+  },
+  "note": "日経BP記事で引用一致確認（出力2MW・容量8MWh）。一次ソース発見: afterFIT/テレビショッピング研究所のPR TIMESリリース（2023-07-"
+ },
+ {
+  "slug": "au-tsu",
+  "set": {
+   "outputMw": 28,
+   "capacityMwh": 90
+  },
+  "note": "エナリス公式リリースで「発電出力 28MW / 蓄電池容量 90MWh」「2027年4月（予定）」を確認。auリニューアブルエナジー=蓄電池事業者、エナリス=ア"
+ },
+ {
+  "slug": "daiwa-kurate",
+  "set": {
+   "outputMw": 1.9,
+   "capacityMwh": 9.8
+  },
+  "note": "元URL（daiwahouse.co.jp）はAkamaiボット遮断でWebFetch/curlとも403。同一リリースの公式配信（共同通信PRワイヤー htt"
+ },
+ {
+  "slug": "eneos-chiba",
+  "set": {
+   "outputMw": 100,
+   "capacityMwh": 202
+  },
+  "note": "ENEOSリリースPDF（2023-08-17）本文を直接読取。表「今後稼働予定の産業用蓄電池」に千葉県市原市（大阪国際石油精製㈱千葉製油所内）100MW/20"
+ },
+ {
+  "slug": "eneos-muroran",
+  "set": {
+   "outputMw": 50,
+   "capacityMwh": 88
+  },
+  "note": "GSユアサnewsroomで「納入先: ENEOS室蘭事業所 出力(MW)50・容量(MWh)88」を確認。ただし同ページは「稼働予定時期: 2023年度」で運"
+ },
+ {
+  "slug": "eneos-negishi",
+  "set": {
+   "outputMw": 5,
+   "capacityMwh": 10
+  },
+  "note": "ENEOSリリースPDF本文で「蓄電池出力5MW、容量10MWh」「充放電の遠隔制御を開始しました」、概要表で着工2022年6月・事業開始2023年8月（予定表"
+ },
+ {
+  "slug": "energia-first-bess",
+  "set": {
+   "outputMw": 10,
+   "capacityMwh": 30,
+   "prefecture": "山口県",
+   "city": "下松市",
+   "name": "下松蓄電所（中国電力）"
+  },
+  "note": "中国電力公式リリースで「出力1万kW以上、蓄電容量3万kWh以上」を確認（値は下限「以上」表記→10MW/30MWhは最低値）。conflict解決: 所在地は +corrections"
+ },
+ {
+  "slug": "eurus-tagawa-4",
+  "set": {
+   "outputMw": 1.5,
+   "capacityMwh": 4.58,
+   "name": "ユーラス白鳥バッテリーパーク"
+  },
+  "note": "ユーラス公式リリース（2022-11-07）で「1,500kW（4,580kWh）のリチウムイオン電池」（ユーラス白鳥バッテリーパーク・田川市）を確認。conf +corrections"
+ },
+ {
+  "slug": "idemitsu-hyogo",
+  "set": {
+   "outputMw": 15,
+   "capacityMwh": 48
+  },
+  "note": "出光リリースPDF本文を直接読取。「蓄電システム容量15MW／蓄電容量48MWh」、運転開始2025年10月10日（「運転を開始しました」=開始済）、所在地兵庫"
+ },
+ {
+  "slug": "jrk-sumitomo-kumamoto",
+  "set": {
+   "outputMw": 1.5,
+   "capacityMwh": 6.3
+  },
+  "note": "住友商事公式ページで「2026年1月30日…『でんきの駅富合』を完工」「定格出力1.5メガワット」「実効容量6.3メガワット時」を確認（容量は実効容量表記）。事"
+ },
+ {
+  "slug": "kamigumi-bess",
+  "set": {
+   "outputMw": 13,
+   "capacityMwh": 54.84,
+   "sourceUrl": "https://www.kamigumi.co.jp/news/news2026/press_20260527/"
+  },
+  "note": "LNEWSで引用一致確認後、一次ソース発見: 上組自社リリース（2026-05-27）で「出力13MW、容量54.84MWh」「5月27日に竣工」「兵庫県加西市"
+ },
+ {
+  "slug": "kepco-eflow-aso-chikugo",
+  "set": {
+   "outputMw": 89,
+   "capacityMwh": 320,
+   "body": "<p><strong>南阿蘇・筑後蓄電所</strong>は、関西電力株式会社が参画する系統用蓄電所で、熊本県南阿蘇村と福岡県筑後市の2カ所に立地します。E-Flow合同会社（関西電力100%子会社）が運用を担当し、2024年3月18日（南阿蘇村）・3月25日（筑後市）に発表されました。</p><p>関西電力グループは、2030年代初頭に系統用蓄電池の事業規模1GW（1,000MW）を目指す方針のもと、関西エリアを越えた全国展開を進めており、本2案件はその九州エリアでの代表的展開事例です。E-Flowは2023年4月設立の100%子会社で、VPP・系統用蓄電池運営・再エネアグリゲーションの3本柱の事業を展開し、2030年度に売上3,000億円を目指しています。</p><p>九州電力送配電管内の戦略立地で、関西電力の関西圏外への戦略的拡大として業界の地域横断展開モデルの代表例です。市場参加戦略は容量市場・需給調整市場・JEPXスポット市場の組合せが想定され、E-Flowの市場参加・運用最適化のノウハウを活かした効率運営が特徴です。</p><p><em>※本案件情報は、各事業者の公式プレスリリース・IR資料等に基づき編集部が整備したものです。最新の進捗・諸元については、上記出典URLおよび各事業者の公式IR・プレスリリースをご参照ください。</em></p><p>※本エントリは関西電力×E-Flowの2案件合算（阿蘇蓄電所50MW/175MWh・2029年6月商業運転予定／筑後蓄電所39MW/145MWh・2028年12月商業運転予定）。一次リリース2026年3月25日（20260325_1j/2j）。個別分割の要否は2026年9月判断予定。</p>"
+  },
+  "note": "PDFはWebFetch解析不可→保存済みバイナリをpdftotextで抽出し照合。source_url(20260325_1j.pdf)は阿蘇蓄電所のみ: 定"
+ },
+ {
+  "slug": "kirishima-bess",
+  "set": {
+   "outputMw": 1.99,
+   "capacityMwh": 8.128,
+   "status": [
+    "稼働中"
+   ],
+   "sourceUrl": "https://www.jpn-energy.jp/news/release/entry-472.html"
+  },
+  "note": "media記事(3rd-in)で引用文「出力は1.99MW、容量は8.128MWhに達します」確認。WebSearchで事業者一次(日本エネルギー総合システム "
+ },
+ {
+  "slug": "kumagaya-bess",
+  "set": {
+   "outputMw": 1.96,
+   "capacityMwh": 7.46
+  },
+  "note": "GSユアサ一次リリースで出力1.96MW/容量7.46MWh確認(埼玉県熊谷市=弥藤吾、事業者=坂東蓄電所1号合同会社、出資:グリーンパワーマネジメント・東北電"
+ },
+ {
+  "slug": "marubeni-2400mwh",
+  "set": {
+   "capacityMwh": 2400,
+   "sourceUrl": "https://www.marubeni.com/jp/news/2025/group/00053.html"
+  },
+  "note": "tier=noneだがsource_url自体が丸紅の一次リリース(2025-11-20)で引用文を見出しで確認。WebSearchでも同内容の事業者版 den"
+ },
+ {
+  "slug": "marubeni-ina",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": [
+    "稼働中"
+   ]
+  },
+  "note": "丸紅一次リリース(2024-11-18)で定格出力2MW/定格容量8MWh確認。「2024年10月より運転を開始した」と運転開始済を明記(竣工式2024-11-"
+ },
+ {
+  "slug": "mirait-chikushino",
+  "set": {
+   "outputMw": 1.958,
+   "capacityMwh": 7.834
+  },
+  "note": "ミライト・ワンPR TIMES一次(2025-07-28)で定格出力1,958.4kW=1.958MW/定格容量7,833.6kWh=7.834MWh確認。「2"
+ },
+ {
+  "slug": "mitsuuroko-sendai",
+  "set": {
+   "outputMw": 1.534,
+   "capacityMwh": 6.14
+  },
+  "note": "ミツウロコグリーンエネルギーPR TIMES一次(2023-12-21)で出力/容量1,534kW/6,140kWh確認。「2023年12月15日より運用を開始"
+ },
+ {
+  "slug": "mitsuuroko-tahara",
+  "set": {
+   "outputMw": 1.5,
+   "capacityMwh": 6
+  },
+  "note": "ミツウロコPR TIMES一次(2026-05-08)で出力1,500kW/容量6,000kWh確認。2023年9月20日運用開始済、かつ「2026年5月8日よ"
+ },
+ {
+  "slug": "naganuma-bess",
+  "set": {
+   "outputMw": 37.515,
+   "sourceUrl": "https://www.jys-joyoshoji.co.jp/info/179/"
+  },
+  "note": "しろくま電力PR TIMES(2024-07-02)で「落札容量：37,515kW」確認、MWh記載なし→null。conflict解決: ページ上で応札・落札"
+ },
+ {
+  "slug": "olympia-ota-isesaki",
+  "set": {
+   "capacityMwh": 14.8,
+   "sourceUrl": "https://oly.co.jp/news/gunma-ota-start-of-operation/"
+  },
+  "note": "パワーエックスPR TIMES(2023-08-08受注発表)で「群馬県太田市と伊勢崎市の2拠点で合計蓄電容量14.8MWh」確認(2.7MWh級×6台・当時は"
+ },
+ {
+  "slug": "osaka-large-bess",
+  "set": {
+   "outputMw": 99,
+   "capacityMwh": 396
+  },
+  "note": "PDFはWebFetch解析不可→curl+pdftotextで照合。関電一次(2025-05-07)で「定格出力９９ＭＷ、定格容量３９６ＭＷｈ」確認(多奈川蓄"
+ },
+ {
+  "slug": "ota-bess",
+  "set": {
+   "capacityMwh": 8.14,
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000039.000093934.html"
+  },
+  "note": "tier=noneだがsource_url自体が事業者fantasistaの自社リリース(経過開示、2025-08-01)=一次。「蓄電池容量 8.14MWh」"
+ },
+ {
+  "slug": "pr-000kwh-bess",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "エネフォワードPR TIMES一次(2026-02-03)で「AC出力2,000kW、蓄電容量8,000kWh」確認。「2026年1月より本格的な商用運転を開始"
+ },
+ {
+  "slug": "pr-219mwh-bess",
+  "set": {
+   "outputMw": 26,
+   "capacityMwh": 219
+  },
+  "note": "26MWは各拠点の定格出力（福島県内・宮崎県内の2拠点、各109.6MWh）。合計出力の記載はページになし。219MWhは合計値（ページに「合計219MWh」明"
+ },
+ {
+  "slug": "pr-co10686-tokyo",
+  "set": {
+   "outputMw": 46,
+   "capacityMwh": 184
+  },
+  "note": "「総開発規模は４６ＭＷ／１８４ＭＷｈ」確認。個別所在地の記載なし（国内各地で段階的開発）。「２０２７年度までにすべての系統用蓄電所が稼働開始を予定」＝稼働未確認"
+ },
+ {
+  "slug": "pr-co109041-gunma",
+  "set": {
+   "outputMw": 1.998,
+   "capacityMwh": 7.404
+  },
+  "note": "PCS出力1,998kW／蓄電容量（定格）7,404kWh、群馬県伊勢崎市三室町。「2025年2月13日から運転を開始しました」＝運転開始済を確認。"
+ },
+ {
+  "slug": "pr-co109041-hyogo",
+  "set": {
+   "outputMw": 1.979,
+   "capacityMwh": 8.226
+  },
+  "note": "数値は各拠点値（朝来メガパワー蓄電所・丹波メガパワー蓄電所の2拠点、同仕様1,979kW/8,226kWh）。受注発表であり竣工2025年6月（予定）＝本ページ"
+ },
+ {
+  "slug": "pr-co113700-bess-2",
+  "set": {
+   "outputMw": 1.9,
+   "capacityMwh": 8.2
+  },
+  "note": "1.9MW/8.2MWhは各拠点値（岐阜県下呂市・愛知県瀬戸市・岐阜県高山市の3拠点、同仕様）。建設は2025年9月開始済、運転開始は下呂2026年上期・瀬戸/"
+ },
+ {
+  "slug": "pr-co113700-bess-3",
+  "set": {
+   "outputMw": 1.99,
+   "capacityMwh": 8.128
+  },
+  "note": "AC容量1.99MW／DC容量8.128MWh、和歌山県和歌山市。運用開始時期（予定）2026年3月＝連系目標であり稼働未開始。"
+ },
+ {
+  "slug": "pr-co12501-bess",
+  "set": {
+   "capacityMwh": 180,
+   "sourceUrl": "https://www.eco-st.co.jp/31935/"
+  },
+  "note": "tier=none→一次ソース検索を実施し、エコスタイル自社サイトの同一リリース（2024-02-07、「2026年末までに合計180MWhの蓄電所を国内で開発"
+ },
+ {
+  "slug": "pr-co13775-bess",
+  "set": {
+   "outputMw": 0.05,
+   "capacityMwh": 0.1
+  },
+  "note": "「AC49.9kW／DC100kWhのPCS一体型蓄電池（GW50K-ET-JP-G10）」を確認。1基あたりの標準仕様（outputMw 0.05は49.9k"
+ },
+ {
+  "slug": "pr-co140317-bess",
+  "set": {
+   "capacityMwh": 8.2
+  },
+  "note": "「和歌山県和歌山市松江に設備容量約8.2MWhの系統用蓄電所を建設・運営する事業を計画」を確認。出力（MW/kW）の記載なし→null。JICNによる3億円支援"
+ },
+ {
+  "slug": "pr-co143072-bess-2",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8.1,
+   "prefecture": "徳島県",
+   "city": "徳島市・板野郡板野町"
+  },
+  "note": "conflict解決: 所在地は徳島県（徳島市および板野郡板野町）の2件で東京都ではない（東京センチュリーとの協業名由来の誤りと推定→prefectureは徳島 +corrections"
+ },
+ {
+  "slug": "pr-co149815-bess",
+  "set": {
+   "outputMw": 1.99,
+   "capacityMwh": 8.226
+  },
+  "note": "出力1,990kW／容量8,226kWh確認（徳島県板野郡）。ページは「令和8年夏頃の運転開始を予定」＝未稼働。DB status=稼働中 はページと不整合（c"
+ },
+ {
+  "slug": "pr-co151398-bess",
+  "set": {
+   "outputMw": 1.99,
+   "capacityMwh": 8
+  },
+  "note": "「AC出力：約1.99MWh」「蓄電容量：約8MWh」確認。出力単位はページ原文ママでMWh表記（実態はMWとみられる）。運転開始目標2026年＝未稼働、DB "
+ },
+ {
+  "slug": "pr-co154894-bess",
+  "set": {
+   "capacityMwh": 40
+  },
+  "note": "「2028年3月までに合計40MWh規模の蓄電所の開発・運用開始を目指す」「高圧 合計40MWh」確認。40MWhは複数地点の合計目標であり単一発電所の容量では"
+ },
+ {
+  "slug": "pr-co154894-bess-2",
+  "set": {
+   "outputMw": 1.969,
+   "capacityMwh": 8
+  },
+  "note": "出力：1,969kW/8,000kWh・青森県三戸郡五戸町・運転開始予定年月2026年8月を確認。未稼働（計画中と整合）。"
+ },
+ {
+  "slug": "pr-co161802-bess-4",
+  "set": {
+   "outputMw": 1.949,
+   "capacityMwh": 8.128,
+   "status": [
+    "稼働中"
+   ]
+  },
+  "note": "定格出力1,949kW・定格容量8,128kWh、愛知県春日井市西尾町666番地を確認。「需給調整市場への参入を開始した」（2025-10-14発表・過去形）＝"
+ },
+ {
+  "slug": "pr-co161802-fukushima",
+  "set": {
+   "outputMw": 1.988,
+   "capacityMwh": 8.146
+  },
+  "note": "定格出力・容量1,988kW・8,146kWh確認。仕様表に「運転開始日 2026年3月3日」明記（curlで実文確認）、受電開始と同日。"
+ },
+ {
+  "slug": "pr-co161802-gifu",
+  "set": {
+   "outputMw": 1.988,
+   "capacityMwh": 8.146
+  },
+  "note": "蓄電池システム1,988kW・8,146kWh確認（岐阜市太郎丸）。「2026年4月13日より需給調整市場向けの運用を開始した」（過去形）＝運用開始済。"
+ },
+ {
+  "slug": "pr-co161802-gifu-3",
+  "set": {
+   "outputMw": 1.988,
+   "capacityMwh": 8.146
+  },
+  "note": "1,988kW・8,146kWh確認（羽島市足近町）。2026年1月3日に需給調整市場向け運用開始済（過去形告知）。"
+ },
+ {
+  "slug": "pr-co161802-kumamoto",
+  "set": {
+   "outputMw": 1.988,
+   "capacityMwh": 8.146
+  },
+  "note": "定格出力・容量1,988kW・8,146kWh確認（玉名市）。ページは受電開始のみで、curl全文grepでも運転開始/運用開始/商用の記載ゼロ。稼働開始は本ソ"
+ },
+ {
+  "slug": "pr-co161802-kumamoto-2",
+  "set": {
+   "outputMw": 1.998,
+   "capacityMwh": 8.146
+  },
+  "note": "「1,998kW（1,000kW×2台）」「8,146kWh（407.3kWh×20台）」確認（宇城市豊野町、熊本県内第1号）。ページ表記は「受電開始予定 20"
+ },
+ {
+  "slug": "pr-co161802-miyagi",
+  "set": {
+   "outputMw": 1.988,
+   "capacityMwh": 8.146
+  },
+  "note": "定格出力・容量1,988kW・8,146kWh確認（NC仙台市上愛子B蓄電所）。仕様表に「運転開始日 2026年4月1日」明記（curlで実文確認）、受電開始済"
+ },
+ {
+  "slug": "pr-co161802-saga-2",
+  "set": {
+   "outputMw": 1.988,
+   "capacityMwh": 8.146
+  },
+  "note": "定格出力1,988kW・容量8,146kWh確認（唐津市相知町）。2025-10-10受電開始だが「今後、商用運転開始に向けた最終調整を行ってまいります」＝商用"
+ },
+ {
+  "slug": "pr-co161802-shimane",
+  "set": {
+   "outputMw": 1.988,
+   "capacityMwh": 8.146
+  },
+  "note": "NC益田市東町蓄電所（島根県益田市）。「定格出力・容量 1,988kW・8,146kWh」原文確認。2026年3月19日に受電開始（過去形）、設備表に「運転開始"
+ },
+ {
+  "slug": "pr-co161802-yamaguchi",
+  "set": {
+   "outputMw": 1.988,
+   "capacityMwh": 8.146
+  },
+  "note": "NC北山田堤下蓄電所（山口県山口市嘉川）。「定格出力・容量 1,988kW・8,146kWh」原文確認。2026年1月30日に受電開始（過去形）、設備表に「運転"
+ },
+ {
+  "slug": "pr-co164583-bess",
+  "set": {
+   "outputMw": 10,
+   "sourceUrl": "https://hp-renewenergy.com/2026/04/28/%E4%BD%8E%E5%9C%A7%E7%B3%BB%E7%B5%B1%E7%94%A8%E8%93%84%E9%9B%BB%E6%89%80%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E5%A7%8B%E5%8B%95/"
+  },
+  "note": "tier=none→運営者HPリニューエナジー自社サイトの一次リリース（2026-04-28）を発見・取得可、newSourceUrlに設定。「年間210区画（"
+ },
+ {
+  "slug": "pr-co166651-bess",
+  "set": {
+   "outputMw": 1.99,
+   "capacityMwh": 8.2
+  },
+  "note": "島根県松江市宍道町・パワーエックス製Mega Power 2700A×3台を原文確認。「運転開始 2026年度中（予定）」＝未稼働。発行元は株式会社ちゅうぎんエ"
+ },
+ {
+  "slug": "pr-co168085-saga",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": [
+    "稼働中"
+   ]
+  },
+  "note": "MSK伊万里蓄電所（佐賀県伊万里市東山代町）。「出力：2MW／容量：8MWh」原文確認。2025年12月竣工・2026年1月より卸電力市場運用実施（過去形）・2"
+ },
+ {
+  "slug": "pr-co168657-bess",
+  "set": {
+   "outputMw": 3.998,
+   "capacityMwh": 16.448
+  },
+  "note": "各地点「定格出力：1,999kW／定格容量：8,224kWh」（SUNGROW製）×2地点（佐賀県みやき町・兵庫県姫路市）を原文確認。記載値は2地点合計（3.9"
+ },
+ {
+  "slug": "pr-co169202-bess",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "上田市古里蓄電所（BESS KOSATO、長野県上田市）。「2,000kW ／ 8,000kWh」原文確認。2026年1月27日に系統接続・受電を開始し系統用蓄"
+ },
+ {
+  "slug": "pr-co169202-bess-2",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "conflict解決: 原文は全15サイトとも「2,000kW / 8,000Wh」表記（Wh単位）だが、同一運営者（野村屋HD）の後続リリース（p/00000"
+ },
+ {
+  "slug": "pr-co169829-bess",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 5,
+   "prefecture": "埼玉県",
+   "city": "熊谷市"
+  },
+  "note": "conflict解決: 所在地は「埼玉県熊谷市上奈良」（上奈良は熊谷市の地名）でDBのprefecture=奈良県は誤り→埼玉県に要修正。「設備容量：5MWh（ +corrections"
+ },
+ {
+  "slug": "pr-co173123-fukuoka",
+  "set": {
+   "outputMw": 29.97,
+   "capacityMwh": 130.39
+  },
+  "note": "田川蓄電所（福岡県田川市、ヘキサ・エネルギーサービス）。「出力：29,970kW」「定格容量合計：130,390kWh」原文確認。長期脱炭素電源オークション第1"
+ },
+ {
+  "slug": "pr-co173175-saitama-5mwh-2",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 5
+  },
+  "note": "七本木蓄電所（埼玉県児玉郡上里町、日本蓄電開発機構）。「出力2MWに対して5MWhの容量を確保しており」原文確認。2026年3月31日受電完了（過去形）だが需給"
+ },
+ {
+  "slug": "pr-co173175-shiga-4mwh",
+  "set": {
+   "capacityMwh": 4,
+   "sourceUrl": "https://japan-energystorage.co.jp/information/%E6%97%A5%E6%9C%AC%E8%93%84%E9%9B%BB%E9%96%8B%E7%99%BA%E6%A9%9F%E6%A7%8B%E3%80%81%E6%BB%8B%E8%B3%80%E7%9C%8C%E3%81%A74mwh%E8%A6%8F%E6%A8%A1%E3%81%AE%E7%B3%BB%E7%B5%B1%E7%94%A8%E8%93%84%E9%9B%BB/",
+   "city": "愛知郡愛荘町"
+  },
+  "note": "tier=none→運営者（日本蓄電開発機構）自社サイトの一次リリースを発見・取得可、newSourceUrlに設定。見出し「滋賀県で4MWh規模の系統用蓄電池 +corrections"
+ },
+ {
+  "slug": "pr-co175281-shizuoka",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "静岡県牧之原市（ブルースカイエナジー）。「発電出力/蓄電容量 2MW/8MWh」原文確認。「商業運転開始 2026年3月23日」および「商業運転開始をしておりま"
+ },
+ {
+  "slug": "pr-co176308-bess",
+  "set": {
+   "capacityMwh": 2.315
+  },
+  "note": "ページで公称容量2,315kWh/定格容量2,083kWh双方確認（capacityMwhは公称値2.315を採用、定格は2.083）。出力kWは非記載。第1号"
+ },
+ {
+  "slug": "pr-co176494-okayama",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "『2026年1月30日：完工・運転開始』『先日完工し、営業運転を開始した』を確認（岡山県備前市伊部蓄電所、エネフォワード）。需給調整市場参入は2026年4月末予"
+ },
+ {
+  "slug": "pr-co21766-bess",
+  "set": {
+   "outputMw": 165,
+   "sourceUrl": "https://www.tokyo-gas.co.jp/news/press/20250306-01.html"
+  },
+  "note": "一次ソース発見: 東京ガス2025-03-06プレス。森町睦実蓄電所75MW（静岡県）＋苫小牧蓄電所90MW（北海道）＝計165MWを確認。MWh記載なし。商業"
+ },
+ {
+  "slug": "pr-co28193-bess",
+  "set": {
+   "outputMw": 0.05,
+   "capacityMwh": 0.1
+  },
+  "note": "『49.9kW／100kWhのPCS一体型蓄電池を標準仕様』を確認（メディオテック・防災型低圧蓄電所事業）。1基あたり標準仕様で特定地点なし。事業開始は2026"
+ },
+ {
+  "slug": "pr-co33609-miyagi-2mw",
+  "set": {
+   "outputMw": 1.988,
+   "capacityMwh": 8.146
+  },
+  "note": "定格出力1,988kW／定格容量8,146kWhを確認（NC仙台市青葉区上愛子蓄電所、宮城県仙台市）。『2026年4月1日に受電を開始しました』のみで、需給調整"
+ },
+ {
+  "slug": "pr-co40055-bess",
+  "set": {
+   "outputMw": 1.999,
+   "capacityMwh": 7.52
+  },
+  "note": "出力1,999kW（高圧）／蓄電池容量7,520kWh（直流換算）を確認。所在地は愛知県豊橋市新西浜町（東三河バイオマス発電所敷地内）、運営はサーラエナジー（サ"
+ },
+ {
+  "slug": "pr-co53091-chiba",
+  "set": {
+   "outputMw": 1,
+   "capacityMwh": 5.3,
+   "status": [
+    "稼働中"
+   ]
+  },
+  "note": "系統出力1MW／定格容量5.3MWhを確認（千葉県旭市、ミライフ千葉支店旭店敷地内）。『8月8日に竣工式を執り行い、同日、稼働を開始した』＋営業運転開始日202"
+ },
+ {
+  "slug": "pr-co55631-gunma",
+  "set": {
+   "outputMw": 2
+  },
+  "note": "『出力：２MW』を3拠点分確認（各拠点2MW×3＝計6MW、outputMwは期待値どおり拠点あたり2.0）。容量kWh/MWhは記載なし。リリース発行2025"
+ },
+ {
+  "slug": "pr-co61878-bess",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8.4
+  },
+  "note": "定格出力2MW／定格容量8.4MWhを確認（熊本県玉名郡長洲町、事業主体J＆S蓄電合同会社）。『運用開始 2024年10月1日』＋2024年10月18日開所式＝"
+ },
+ {
+  "slug": "pr-co67590-bess",
+  "set": {
+   "outputMw": 50,
+   "capacityMwh": 112.88
+  },
+  "note": "『定格出力/定格容量(予定) 50,000kW /112,880kWh』を確認（(仮称)KSE熊本蓄電所、KSエナジー×日立製作所の協創、2026-02-06契"
+ },
+ {
+  "slug": "pr-co69153-ibaraki",
+  "set": {
+   "outputMw": 1.927,
+   "capacityMwh": 3.854
+  },
+  "note": "『1927.2kWの出力で3854.4kWhの容量を持つ2時間システム』を確認（茨城県取手市、ノーバル・ソーラー、Tesla MEGAPACK）。2025-04"
+ },
+ {
+  "slug": "pr-co69153-ibaraki-2",
+  "set": {
+   "outputMw": 1.927,
+   "capacityMwh": 4.888
+  },
+  "note": "『1927.2kW出力の4887.6kWh（2時間システム）』を確認（茨城県常総市、ノーバル・ソーラー、CATL製LFP 407.3kWh×12基）。『2025"
+ },
+ {
+  "slug": "pr-co76147-bess-2",
+  "set": {
+   "outputMw": 101
+  },
+  "note": "頁は「合計定格出力101MW」を明記。合計容量は頁に記載なし（那須塩原112,665/諫早64,380/島原64,380/多久144,855kWhの個別値のみ、"
+ },
+ {
+  "slug": "pr-co76147-hokkaido",
+  "set": {
+   "outputMw": 20,
+   "capacityMwh": 78.97
+  },
+  "note": "定格出力20,000kW・定格容量78,970kWh確認。2027年度運転開始予定（未稼働）。J&TC北芽室蓄電合同会社（東京センチュリー×JFEエンジニアリン"
+ },
+ {
+  "slug": "pr-co85634-fukuoka",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "約2MW/8MWh確認。系統連系日2025-10-02、「系統用蓄電事業を開始したことをお知らせ」＝運転開始済を頁確認（中川商事第一系統用蓄電所・福岡県古賀市）"
+ },
+ {
+  "slug": "pr-co86244-bess-2",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "3拠点各「2MW/8MWh（高圧）」確認。運転開始済はTPS静岡御前崎01のみ（2026年4月商業運転開始済を頁確認）。TPS三重津01=2026年5月予定・T"
+ },
+ {
+  "slug": "pr-co86244-bess-4",
+  "set": {
+   "outputMw": 25,
+   "capacityMwh": 50
+  },
+  "note": "出力25MW・蓄電池容量50MWh確認。2025年4月建設開始予定（発表2025-02-04時点未着工・運開日記載なし）。両社は複数地点で計100MW/約400"
+ },
+ {
+  "slug": "pr-co86244-bess-7",
+  "set": {
+   "outputMw": 1.99,
+   "capacityMwh": 7.403
+  },
+  "note": "3地点各「出力1,990kW・電池容量7,403kWh」を仕様表で確認。運開予定=津2025年3月・知多2025年7月・牧之原2026年1月（発表時点で未稼働）"
+ },
+ {
+  "slug": "pr-co88876-bess",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>系統用蓄電池</strong>は、系統用蓄電池事業「紀の川桃山町に立地する系統用蓄電所。発表企業：スターシーズ株式会社。ステータス：建設中（発表日：2025-09-17）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://starseeds.co.jp/ir/\" target=\"_blank\" rel=\"noopener noreferrer\">https://starseeds.co.jp/ir/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000042.000088876.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000042.000088876.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>※出力・容量の出典はエネハブ（enehub.jp）（一次リリース非公表のため媒体値を採用）。</p>"
+  },
+  "note": "指定URLは404（WebFetch/curl Mozilla UAとも）。同一記事の正URL https://enehub.jp/news/スターシーズ和歌山"
+ },
+ {
+  "slug": "pr-co88876-bess-2",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>系統用蓄電池</strong>は、に立地する系統用蓄電所。発表企業：スターシーズ株式会社。ステータス：建設中（発表日：2025-09-04）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://starseeds.co.jp/ir/\" target=\"_blank\" rel=\"noopener noreferrer\">https://starseeds.co.jp/ir/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000037.000088876.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000037.000088876.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>※出力・容量の出典はエネハブ（enehub.jp）（一次リリース非公表のため媒体値を採用）。</p>"
+  },
+  "note": "指定URLは404（WebFetch/curl Mozilla UAとも）。同一記事の正URL（URLエンコード形 enehub.jp/news/スターシーズ和"
+ },
+ {
+  "slug": "pr-co89612-bess-2",
+  "set": {
+   "outputMw": 200,
+   "capacityMwh": 800
+  },
+  "note": "「日本最大級の蓄電容量200MW／800MWh」確認。台湾EUKA Powerと基本合意書締結（2025-09-01）段階、正式契約は2025年12月頃予定、九"
+ },
+ {
+  "slug": "pr-co92942-bess",
+  "set": {
+   "outputMw": 1.99,
+   "capacityMwh": 8.226
+  },
+  "note": "定格出力1,990kW・蓄電池公称容量8,226kWh確認。頁は「2026年夏頃の運転開始を予定」（発表時点未稼働）＝DBのstatus稼働中は本ソースでは確認"
+ },
+ {
+  "slug": "pr-co95695-bess",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 6,
+   "status": [
+    "稼働中"
+   ]
+  },
+  "note": "「出力は合計2MW、蓄電容量は6MWh」確認。「稼働開始および市場参入は4月1日から」＝2026-04-01稼働開始済（発表2026-04-23、稼働中・市場運"
+ },
+ {
+  "slug": "pr-co96742-mie",
+  "set": {
+   "outputMw": 1.995,
+   "capacityMwh": 8.34
+  },
+  "note": "出力1,995kW・容量8,340kWh確認。試運転2026年2月・本稼働2026年6月頃予定（発表時点未稼働、本ソースでは稼働開始未確認）。"
+ },
+ {
+  "slug": "pr-co98598-bess",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>サービスステーション跡地を活用した高圧系統用蓄電所</strong>は、～松浦市に立地する系統用蓄電所。出力 4 MW 規模。発表企業：COSMO。ステータス：稼働中（発表日：2026-02-25）。</p><p>～松浦市、仙台市の2拠点で計約4MW、2027年度より順次運転開始へ～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.cosmo-energy.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.cosmo-energy.co.jp</a></li><li>企業公式サイト: <a href=\"https://ceh.cosmo-oil.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://ceh.cosmo-oil.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000291.000098598.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000291.000098598.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>※出力約2MWは松浦単体。従来表記4MWは松浦＋仙台の2拠点合計（コスモ公式リリースで確認・2026-08照合）。</p>"
+  },
+  "note": "conflict解消: 頁は松浦（長崎）約2MW/約8MWh＋仙台（宮城）約2MW/約8MWhの2拠点で「計約4MW」と明記＝既知4MWは2拠点合計、本行（松浦 +corrections"
+ },
+ {
+  "slug": "pr-daigas-hokkaido",
+  "set": {
+   "outputMw": 25,
+   "capacityMwh": 50
+  },
+  "note": "出力25MW/容量50MWh確認。着工済・運転開始は2027年1月予定（未稼働）。SPC上長都ひかり蓄電合同会社・北海道千歳市上長都。"
+ },
+ {
+  "slug": "pr-ekuenergyjapan-fukuoka",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "「運転を2026年4月から開始いたしました」＝開始済を頁で確認（上頓野蓄電所・福岡県直方市）。"
+ },
+ {
+  "slug": "pr-energy-bess",
+  "set": {
+   "outputMw": 1.99,
+   "capacityMwh": 8.146
+  },
+  "note": "定格出力1,990kW/定格容量8,146kWh確認。商業運転開始済（2025年12月、岩手北上蓄電所）。"
+ },
+ {
+  "slug": "pr-energy-bess-2",
+  "set": {
+   "outputMw": 1.97,
+   "capacityMwh": 8.14
+  },
+  "note": "約2MW/8.14MWh確認（仕様表は出力1.97MW→採用）。ただし頁は見学会告知（2025-07-02付）で稼働/運転/需給調整市場の記載が一切なく、sta"
+ },
+ {
+  "slug": "pr-energy-ntt-bess",
+  "set": {
+   "outputMw": 1.124,
+   "capacityMwh": 5.304,
+   "status": [
+    "稼働中"
+   ]
+  },
+  "note": "PCS出力1,124kW/公称容量5,304kWh確認。「2025年1月より商用運転を開始しました」＝開始済。埼玉和光蓄電所（埼玉県和光市、運営NTTアノードエ"
+ },
+ {
+  "slug": "pr-lehmanhodings-saitama",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "operator": "LehmanSoft Japan株式会社"
+  },
+  "note": "2MW/8MWh確認。「2025年11月1日付で商用稼働を開始し」JEPX取引開始済。db cod 2025-12-16はリリース日由来とみられ、商用稼働開始日 +corrections"
+ },
+ {
+  "slug": "pr-looop-saitama",
+  "set": {
+   "capacityMwh": 7.684,
+   "status": [
+    "稼働中"
+   ]
+  },
+  "note": "容量7,683.8kWh・運転開始日2025年2月21日（開始済）を確認。出力（kW）は頁に記載なし→null。埼玉県比企郡小川町・蓄電ステーション。"
+ },
+ {
+  "slug": "pr-matsuo-okayama-8mwh",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "2MW×1基/2.6MWh×3基（合計8MWh）確認。受電開始2026-02-27・系統連系開始2026-03-04は完了済だが、運転開始/商業運転の明示なし・"
+ },
+ {
+  "slug": "pr-matsuo-toyama-8mwh",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "定格出力・容量2MW×1基/2.6MWh×3基（合計8MWh）確認。受電開始2026-01-09済だが商業運転開始の記載なし・需給調整市場は参画予定→statu"
+ },
+ {
+  "slug": "pr-sustech-bess",
+  "set": {
+   "outputMw": 1.3,
+   "capacityMwh": 4.2
+  },
+  "note": "出力1.3MW/容量4.2MWh確認（滋賀県米原市、GSユアサLEPS-2-14）。「運転開始は2026年9月の予定」＝未稼働。db status「稼働中」は頁"
+ },
+ {
+  "slug": "pr-taokeenergy-mie-2mw",
+  "set": {
+   "outputMw": 2,
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000025.000103834.html"
+  },
+  "note": "「系統連系が4月17日に完了」（系統連系日2026-04-17）・定格出力2MW確認、容量記載なし→null。運転開始/商業運転の記載なし、一次調整力市場（オフ"
+ },
+ {
+  "slug": "sado-megasolar-bess",
+  "set": {
+   "outputMw": 5,
+   "capacityMwh": 5
+  },
+  "note": "PDF本文抽出で「出 力 ／ 容 量 5，0００kW ／ 5，000kWh」を確認（蓄電池5MW/5MWh、両津火力発電所構内=新潟県佐渡市）。本リリース（20"
+ },
+ {
+  "slug": "sapporo-mri",
+  "set": {
+   "outputMw": 10,
+   "capacityMwh": 30
+  },
+  "note": "出力10MW/蓄電池容量30MWh確認。安全祈願祭2025-03-27実施済、運転開始時期2027年4月（予定）＝未稼働。SPC北海道札幌蓄電合同会社（9社出資"
+ },
+ {
+  "slug": "sumitomo-nissan-chitose",
+  "set": {
+   "outputMw": 6,
+   "capacityMwh": 23
+  },
+  "note": "一次ソースで「定格出力 6メガワット、実効容量23メガワット時の系統用蓄電システム」を確認。稼働は「今年度後半より本設備の本格的な稼働を開始し」（2023-09"
+ },
+ {
+  "slug": "sunvillage-echizen",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 8
+  },
+  "note": "「2MW/8MWhクラスの高圧蓄電所を建設し、2025年10月の運転開始を目指します」を確認。数値は「クラス」表記（公称規模）。運転開始は目標であり稼働確認なし"
+ },
+ {
+  "slug": "tepco-ntt-tsumagoi",
+  "set": {
+   "outputMw": 2,
+   "capacityMwh": 9.3,
+   "status": [
+    "稼働中"
+   ],
+   "operator": "嬬恋蓄電所合同会社（東電HD×NTTアノードエナジー）"
+  },
+  "note": "「出力2.0MW/容量9.3MWh」「2025年5月15日より商業運転を開始いたしました」を確認。conflict解決: 運営主体は東京電力ホールディングスとN +corrections"
+ },
+ {
+  "slug": "tokyogas-tomakomai-75",
+  "set": {
+   "outputMw": 25,
+   "capacityMwh": 75
+  },
+  "note": "「蓄電池出力/蓄電池容量 2.5万kW/7.5万kWh」（=25MW/75MWh）と「商業運転開始 2028年以降（予定）」を確認。事業者は苫小牧パワーストレー"
+ },
+ {
+  "slug": "tokyu-higashimatsuyama",
+  "set": {
+   "outputMw": 1.8,
+   "capacityMwh": 4.9
+  },
+  "note": "「定格出力1.8MW、定格容量4.9MWh」を確認（DBのoutputMw 1.799は一次発表の1.8MWと微差）。運転開始は2023年発表時点で「2024年"
+ },
+ {
+  "slug": "west-akitakata",
+  "set": {
+   "outputMw": 10.8,
+   "capacityMwh": 34.569,
+   "sourceUrl": "https://www.west-gr.co.jp/news/3974/"
+  },
+  "note": "一次ソース発見（ウエストHDニュースリリース2026-05-12、PDF）。「蓄電システム出力 10.8MW／蓄電容量 34.569MWh」「設置工事を完了し、"
+ },
+ {
+  "slug": "pr-co55631-tokyo-4mw",
+  "set": {
+   "prefecture": "群馬県",
+   "city": "太田市・桐生市"
+  },
+  "note": "corrections（一次照合済）"
+ }
+]

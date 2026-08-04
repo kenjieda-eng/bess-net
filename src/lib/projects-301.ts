@@ -36,6 +36,38 @@ export const PROJECTS_301: Record<string, string> = {
   // 9-10 日本蓄電池 PR-import 重複（2026-07-02・容量補完①）: raw「日本蓄電池 [県][市]」0/0 stub ⇔ curated NC{市}{地区}蓄電所 8.146MWh
   '/projects/pr-co161802-fukushima-2': '/projects/nc-shirakawa-omotegou', // 福島県白河市
   '/projects/pr-co161802-yamaguchi-2': '/projects/nc-shunan-yuno',        // 山口県周南市
+  // 11〜 調査中182件一斉整理（2026-08-04・projects-fill-2026-08 検証済: dup18組+verify4組）
+  '/projects/pr-daigas-hokkaido-2':                '/projects/pr-daigas-hokkaido', // 千歳・上長都25MW/50MWh 同一案件（3重登載）
+  '/projects/osakagas-chitose':                    '/projects/pr-daigas-hokkaido', // 千歳・上長都25MW/50MWh 同一案件（3重登載）
+  '/projects/pr-co55631-hokkaido':                 '/projects/naganuma-bess', // 長沼37,515kW 同一案件（事業者は城洋商事に訂正）
+  '/projects/pr-co161802-bess-2':                  '/projects/pr-co161802-bess-4', // 春日井西尾蓄電所 同一地点（4重登載）
+  '/projects/pr-co161802-bess-3':                  '/projects/pr-co161802-bess-4', // 春日井西尾蓄電所 同一地点（4重登載）
+  '/projects/pr-co86244-bess-3':                   '/projects/pr-co161802-bess-4', // 春日井西尾蓄電所 同一地点（4重登載）
+  '/projects/pr-afterfit-bess':                    '/projects/arao-bess', // 荒尾2MW/8MWh 同一案件（3重登載）
+  '/projects/pr-co55631-kumamoto':                 '/projects/arao-bess', // 荒尾2MW/8MWh 同一案件（3重登載）
+  '/projects/pr-co2296-bess':                      '/projects/daiwa-kurate', // 大和ハウス鞍手1.9MW/9.8MWh 同一案件
+  '/projects/pr-co113700-bess-5':                  '/projects/kirishima-bess', // 霧島1.99MW/8.128MWh 同一案件（3重登載）
+  '/projects/pr-co113700-bess':                    '/projects/kirishima-bess', // 霧島1.99MW/8.128MWh 同一案件（3重登載）
+  '/projects/pr-co109041-bess-3':                  '/projects/pr-co86244-bess-7', // JMES3地点（津・東浦・牧之原）同一取引
+  '/projects/pr-co161802-saga':                    '/projects/pr-co161802-saga-2', // NC唐津市相知町 同一案件
+  '/projects/pr-co161802-gifu-2':                  '/projects/pr-co161802-gifu', // NC岐阜市太郎丸 同一案件
+  '/projects/pr-co161802-gifu-4':                  '/projects/pr-co161802-gifu-3', // NC羽島足近町 同一案件
+  '/projects/pr-co70816-bess':                     '/projects/mitsuuroko-tahara', // ミツウロコ田原1,500kW/6,000kWh 同一案件
+  '/projects/pr-co70816-bess-2':                   '/projects/mitsuuroko-tahara', // ミツウロコ田原1,500kW/6,000kWh 同一案件
+  '/projects/pr-co70816-miyagi':                   '/projects/mitsuuroko-sendai', // ミツウロコ仙台1,534kW/6,140kWh 同一案件
+  '/projects/pr-looop-tokyo':                      '/projects/pr-looop-saitama', // Looop比企郡小川町 同一案件（東京都事業採択のため東京都表記になっていた）
+  '/projects/pr-co86244-bess-5':                   '/projects/sunvillage-echizen', // 越前2MW/8MWh 同一案件
+  '/projects/pr-co175281-bess':                    '/projects/pr-co175281-shizuoka', // ブルースカイ牧之原 同一案件
+  '/projects/pr-co143072-bess-3':                  '/projects/pr-co143072-bess-2', // テス×東京センチュリー徳島2件 同一提携
+  '/projects/pr-co89612-bess':                     '/projects/pr-co89612-bess-2', // EUKA 200MW/800MWh 同一プロジェクト
+  '/projects/pr-co93934-bess':                     '/projects/ota-bess', // fantasista群馬太田8.14MWh 同一案件（3重登載）
+  '/projects/pr-co93934-bess-2':                   '/projects/ota-bess', // fantasista群馬太田8.14MWh 同一案件（3重登載）
+  '/projects/pr-co161802-miyagi-2':                '/projects/nc-sendai-kamiayashi', // verify_clusters判定 2026-08
+  '/projects/pr-co33609-kumamoto-2mw':             '/projects/pr-co161802-kumamoto', // verify_clusters判定 2026-08
+  '/projects/pr-co116500-bess':                    '/projects/pr-lehmanhodings-saitama', // verify_clusters判定 2026-08
+  '/projects/pr-co116500-bess-2':                  '/projects/pr-lehmanhodings-saitama', // verify_clusters判定 2026-08
+  '/projects/hdre-hokkaido-50':                    '/projects/pr-100mwh-bess', // verify_clusters判定 2026-08
+  '/projects/pr-auroraenergyres-hokkaido-50mw':    '/projects/pr-100mwh-bess', // verify_clusters判定 2026-08
 };
 
 /** 301元の bare slug（一覧除外・noindex 判定の補助。完全一致） */
