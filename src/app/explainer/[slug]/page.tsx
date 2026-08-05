@@ -30,6 +30,14 @@ import { siteConfig } from '@/lib/site-config';
 import { TOOL_CTAS } from '@/lib/tools-cta';
 import { EXPLAINER_EDU_LINKS } from '@/lib/edu-links';
 import { isLvInvestExplainer } from '@/lib/lv-invest';
+import ExplainerNextStepBlock from '@/components/ExplainerNextStepBlock';
+import explainerRelatedMap from '@/lib/generated/explainer-related-map.json';
+
+// E1⑤フォールバック用の precompute 済み関連マップ（同カテゴリ2本・自己除外・runtime 0）
+const EXPLAINER_RELATED_MAP = explainerRelatedMap as Record<
+  string,
+  { slug: string; title: string }[]
+>;
 
 export const revalidate = 600;
 
@@ -51,8 +59,14 @@ export async function generateMetadata({
   // 低圧投資家ガイド記事は /lv/invest/[slug] が正（重複インデックス防止・canonical を向ける／redirect でなく
   // canonical 採用。直アクセスは 200 のまま・#88 二重サフィックスなし・W2）
   const isInvest = isLvInvestExplainer(exp);
+  // E3 タイトル衛生（2026-08-05）: サフィックス区切りを半角「 | 」に統一（layout テンプレの
+  // 「 | 蓄電所ネット」と整合＝全角半角混在の解消）。title 末尾が既に「解説」の記事（3件）は
+  // 「解説 | 解説」の重複を避けサフィックス省略。CMS title 本文は不変（リライトは8/10 GSC後）。
+  const metaTitle = exp.title.trimEnd().endsWith('解説')
+    ? exp.title
+    : `${exp.title} | 解説`;
   return {
-    title: `${exp.title}｜解説`,
+    title: metaTitle,
     description: exp.lead,
     alternates: { canonical: isInvest ? `/lv/invest/${exp.slug}` : `/explainer/${exp.slug}` },
     openGraph: {
@@ -225,6 +239,21 @@ export default async function ExplainerDetailPage({
               </Link>
             </section>
           ))}
+
+          {/* E1+E4: この解説の先へ（先勝ち5系統＋TOP10スターCTA・既存CTAと行き先重複時は自動省略・追加フェッチ0） */}
+          <ExplainerNextStepBlock
+            slug={exp.slug}
+            title={exp.title}
+            category={exp.category}
+            lead={exp.lead}
+            body={exp.body}
+            related={EXPLAINER_RELATED_MAP[exp.slug] ?? []}
+            excludeHrefs={[
+              ...(GRID_RELATED_EXPLAINER_SLUGS.has(exp.slug) ? ['/grid'] : []),
+              ...TOOL_CTAS.filter((c) => c.explainerSlugs.has(exp.slug)).map((c) => c.href),
+              ...(toGroup(exp.category) === '制度・市場' ? ['/policy-calendar'] : []),
+            ]}
+          />
 
           {/* 低圧クラスタ Stage1（2026-07-18）: 低圧解説→/lv ガイドへの接続（対象1記事のみ・最小） */}
           {exp.slug === 'low-voltage-balancing-market-launch' && (

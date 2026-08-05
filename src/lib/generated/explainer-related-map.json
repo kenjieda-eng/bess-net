@@ -1,0 +1,1742 @@
+{
+ "aggregator-business": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "ai-optimization-for-bess": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "aichi-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "akita-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "aomori-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "asean-bess-market": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "australia-nem-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "balancing-market": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "balancing-market-cap-cut-2026": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "balancing-market-fcr-detail": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "balancing-market-practical": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "baseload-market-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "battery-cooling-systems": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "battery-degradation-diagnostics": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "battery-passport-2027-implementation": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "battery-recycling-economics": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-second-life-market",
+   "title": "蓄電池リユース市場とセカンドライフ ── 寿命末期の経済価値"
+  }
+ ],
+ "battery-second-life-market": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "battery-types-and-specs": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "bess-annual-inspection-procedures": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "bess-business-decision-tree": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "bess-cybersecurity-strategy": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "bess-daily-inspection-checklist": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "bess-degradation-monitoring-operations": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "bess-depreciation-tax": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "bess-emergency-response-manual": [
+  {
+   "slug": "global-bess-fire-cases",
+   "title": "蓄電池火災のグローバル事例 ── 韓国・米国・豪州の教訓"
+  },
+  {
+   "slug": "bess-safety-and-fire",
+   "title": "蓄電池の安全性と火災対策：消防法・離隔距離・近隣対応の実務"
+  }
+ ],
+ "bess-epc-selection": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "bess-esg-green-finance": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "bess-insurance-guide": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "bess-investment-funds": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "bess-irr-sensitivity": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "bess-lease-contract": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "bess-ma-valuation": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "bess-net-launch-2026": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "bess-pf-merchant-vs-multiuse": [
+  {
+   "slug": "national-battery-supply-plan",
+   "title": "国家プロジェクト「蓄電池供給確保計画」 ── GSユアサ等の認定の意義"
+  },
+  {
+   "slug": "decarbonization-leading-regions-detail",
+   "title": "脱炭素先行地域── 100地域以上選定の実装と地域マイクログリッド・蓄電池の役割"
+  }
+ ],
+ "bess-revenue-simulation": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "bess-safety-and-fire": [
+  {
+   "slug": "bess-emergency-response-manual",
+   "title": "蓄電所の緊急対応マニュアル ── 火災・地震・停電・サイバー攻撃時の標準フロー"
+  },
+  {
+   "slug": "global-bess-fire-cases",
+   "title": "蓄電池火災のグローバル事例 ── 韓国・米国・豪州の教訓"
+  }
+ ],
+ "bess-safety-regulations-implementation": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "bess-site-acquisition": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "bess-spare-parts-strategy": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "bess-stakeholder-map": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "bess-supply-chain-responsibility": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "bms-vs-ems": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "brazil-bess-market-2025": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "byd-japan-bess-entry-2019": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "c-rate-application-design": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "canadian-solar-naebo": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "capacity-market": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "capacity-market-advanced": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "capacity-market-main-vs-additional": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "capacity-market-penalty-calc": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "capacity-market-transitional": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "capacity-output-design": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "cell-balancing-technology": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "chiba-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "chief-electrical-engineer": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "china-battery-policy": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "container-bess-comparison": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "corporate-ppa-with-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "cycle-vs-calendar-life": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "data-center-bess-strategy": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "dc-vs-ac-coupling-pv-bess": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "debt-service-reserve-account": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "decarbonization-leading-regions-detail": [
+  {
+   "slug": "national-battery-supply-plan",
+   "title": "国家プロジェクト「蓄電池供給確保計画」 ── GSユアサ等の認定の意義"
+  },
+  {
+   "slug": "bess-pf-merchant-vs-multiuse",
+   "title": "系統用蓄電池プロジェクトファイナンス ── フルマーチャント vs マルチユース"
+  }
+ ],
+ "digital-twin-bess": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "dscr-llcr-bess-pf": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "environmental-assessment-bess": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "epc-contract-key-clauses": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "eu-cbam-battery": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "eu-ets-and-gx-ets-for-bess": [
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  },
+  {
+   "slug": "lcoe-and-bess-economics",
+   "title": "LCOEと蓄電池の経済性 ─ なぜ蓄電所は「LCOS」で見るべきか"
+  }
+ ],
+ "fip-and-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "fluence-japan-entry": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "frt-test-certificate": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "fukui-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "fukushima-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "fx-risk-battery-procurement": [
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  },
+  {
+   "slug": "periodic-reporting-meti",
+   "title": "経産省への定期報告義務 ── 蓄電所事業者の年次報告とデータ開示"
+  }
+ ],
+ "generation-side-charge-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "gifu-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "global-bess-fire-cases": [
+  {
+   "slug": "bess-emergency-response-manual",
+   "title": "蓄電所の緊急対応マニュアル ── 火災・地震・停電・サイバー攻撃時の標準フロー"
+  },
+  {
+   "slug": "bess-safety-and-fire",
+   "title": "蓄電池の安全性と火災対策：消防法・離隔距離・近隣対応の実務"
+  }
+ ],
+ "global-bess-trends-2026": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "gravity-caes-storage": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "green-bond-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "grid-capacity-map-reading": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "grid-connection-construction-fee": [
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  },
+  {
+   "slug": "grid-capacity-map-reading",
+   "title": "系統空き容量マップの読み方 ── 一般送配電事業者の公開情報を実務に活かす"
+  }
+ ],
+ "grid-connection-process": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "grid-connection-study-fee": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-capacity-map-reading",
+   "title": "系統空き容量マップの読み方 ── 一般送配電事業者の公開情報を実務に活かす"
+  }
+ ],
+ "grid-interconnection-negotiation-process": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "grid-reinforcement-cost-share": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "grid-scale-bess": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "gross-bidding-abolition": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "gunma-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "hokkaido-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "hvdc-offshore-wind-bess": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "hydrogen-cofiring-bess": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "hyogo-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "imbalance-2022-reform": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "imbalance-pricing-and-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "integrated-market-2026": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "interconnection-contract-fit-law": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "interconnection-cost-3-types": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "ishikawa-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "island-microgrid-bess": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "itochu-bess-self-developed": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "iwate-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "jepx-arbitrage": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "jepx-intraday-spot-operations": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "jera-cross-bess-hybrid": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "kagoshima-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "kanagawa-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "kumamoto-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "kwh-vs-mwh": [
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+  },
+  {
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "kyocera-enerezza-clay": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "kyoto-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "large-bess-ems-architecture": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "lcoe-and-bess-economics": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "lcoe-and-power-mix": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-bess-economics",
+   "title": "LCOEと蓄電池の経済性 ─ なぜ蓄電所は「LCOS」で見るべきか"
+  }
+ ],
+ "lithium-cell-module-pack": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "local-ordinance-and-resident-consultation": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "long-term-decarbonization-auction": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "low-voltage-balancing-market-launch": [
+  {
+   "slug": "storage-parity-aggregation",
+   "title": "自家消費型+アグリゲーション ── ストレージパリティ補助金活用の実務"
+  },
+  {
+   "slug": "self-storage-bess-model",
+   "title": "セルフストレージ拠点に系統用蓄電池 ── パルマ×JBサステナブルモデルの新潮流"
+  }
+ ],
+ "low-voltage-resources-and-vpp": [
+  {
+   "slug": "storage-parity-aggregation",
+   "title": "自家消費型+アグリゲーション ── ストレージパリティ補助金活用の実務"
+  },
+  {
+   "slug": "self-storage-bess-model",
+   "title": "セルフストレージ拠点に系統用蓄電池 ── パルマ×JBサステナブルモデルの新潮流"
+  }
+ ],
+ "ltdc-3rd-auction-ccs-ldes": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "mie-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "miyagi-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "multi-use-operation-strategy": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "nagano-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "national-battery-supply-plan": [
+  {
+   "slug": "bess-pf-merchant-vs-multiuse",
+   "title": "系統用蓄電池プロジェクトファイナンス ── フルマーチャント vs マルチユース"
+  },
+  {
+   "slug": "decarbonization-leading-regions-detail",
+   "title": "脱炭素先行地域── 100地域以上選定の実装と地域マイクログリッド・蓄電池の役割"
+  }
+ ],
+ "ngk-nas-exit-ldes-impact": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "non-firm-connection-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "om-service-selection": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "osaka-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "ota-firmware-update-bess": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "pcs-selection-guide": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "pcs-topology-comparison": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "periodic-reporting-meti": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "pf-sponsor-guarantee": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "post-fit-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "ppa-wholesale-contract": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "wheeling-supply-contract",
+   "title": "託送供給契約と蓄電池 ── 系統利用の法的枠組み"
+  }
+ ],
+ "redox-flow-vs-lfp": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "remote-monitoring-selection": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "renewable-curtailment-and-bess": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "response-time-vs-reserves": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "round-trip-efficiency": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "saitama-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "self-storage-bess-model": [
+  {
+   "slug": "storage-parity-aggregation",
+   "title": "自家消費型+アグリゲーション ── ストレージパリティ補助金活用の実務"
+  },
+  {
+   "slug": "low-voltage-balancing-market-launch",
+   "title": "低圧系統用蓄電池の需給調整市場参入 ── 4月実装開始とアグリ事業の本格化"
+  }
+ ],
+ "shizuoka-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "soc-soh-degradation-management": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "sodium-ion-battery-grid-deployment": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "solar-bess-hybrid": [
+  {
+   "slug": "storage-parity-aggregation",
+   "title": "自家消費型+アグリゲーション ── ストレージパリティ補助金活用の実務"
+  },
+  {
+   "slug": "self-storage-bess-model",
+   "title": "セルフストレージ拠点に系統用蓄電池 ── パルマ×JBサステナブルモデルの新潮流"
+  }
+ ],
+ "solid-state-battery-grid-deployment": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "stem-japan-entry": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "storage-parity-aggregation": [
+  {
+   "slug": "self-storage-bess-model",
+   "title": "セルフストレージ拠点に系統用蓄電池 ── パルマ×JBサステナブルモデルの新潮流"
+  },
+  {
+   "slug": "low-voltage-balancing-market-launch",
+   "title": "低圧系統用蓄電池の需給調整市場参入 ── 4月実装開始とアグリ事業の本格化"
+  }
+ ],
+ "subsidies-guide": [
+  {
+   "slug": "national-battery-supply-plan",
+   "title": "国家プロジェクト「蓄電池供給確保計画」 ── GSユアサ等の認定の意義"
+  },
+  {
+   "slug": "bess-pf-merchant-vs-multiuse",
+   "title": "系統用蓄電池プロジェクトファイナンス ── フルマーチャント vs マルチユース"
+  }
+ ],
+ "substation-availability-13-indicators-guide": [
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  },
+  {
+   "slug": "battery-second-life-market",
+   "title": "蓄電池リユース市場とセカンドライフ ── 寿命末期の経済価値"
+  }
+ ],
+ "substation-availability-cross-area-analysis": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "asean-bess-market",
+   "title": "ASEAN蓄電池市場 ── タイ・ベトナム・フィリピンの新興機会"
+  }
+ ],
+ "sumitomo-redox-flow-2025": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "tepco-pg-grid-info-suspension-2026": [
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  },
+  {
+   "slug": "asean-bess-market",
+   "title": "ASEAN蓄電池市場 ── タイ・ベトナム・フィリピンの新興機会"
+  }
+ ],
+ "tepco-rp-bess": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "tertiary-reserve-1-detail": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "tertiary-reserve-2-strategy": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "tesla-autobidder-japan": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "tochigi-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "tokyo-solar-mandate-2025": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "toyama-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "toyota-bess-2025": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "transformer-breaker-bess": [
+  {
+   "slug": "substation-availability-13-indicators-guide",
+   "title": "変電所別 空き容量データの読み方 ── 13指標の意味と蓄電所事業者向け実務活用ガイド"
+  },
+  {
+   "slug": "battery-recycling-economics",
+   "title": "蓄電池リサイクル産業の経済性 ── 都市鉱山と循環型産業構築"
+  }
+ ],
+ "usa-itc-storage": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "v2g-vehicle-to-grid": [
+  {
+   "slug": "storage-parity-aggregation",
+   "title": "自家消費型+アグリゲーション ── ストレージパリティ補助金活用の実務"
+  },
+  {
+   "slug": "self-storage-bess-model",
+   "title": "セルフストレージ拠点に系統用蓄電池 ── パルマ×JBサステナブルモデルの新潮流"
+  }
+ ],
+ "wakayama-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "wheeling-charge-2027": [
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  },
+  {
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（9社6,507件）から読み解くエリア別パターン"
+  }
+ ],
+ "wheeling-supply-contract": [
+  {
+   "slug": "fx-risk-battery-procurement",
+   "title": "電池調達の為替リスクと国際売買契約 ── 海外電池メーカー取引の実務"
+  },
+  {
+   "slug": "periodic-reporting-meti",
+   "title": "経産省への定期報告義務 ── 蓄電所事業者の年次報告とデータ開示"
+  }
+ ],
+ "yamagata-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "yamaguchi-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "yamanashi-bess-outlook": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ],
+ "yonden-bess-entry": [
+  {
+   "slug": "eu-ets-and-gx-ets-for-bess",
+   "title": "EU ETSとGX-ETS ─ 排出量取引は蓄電池ビジネスに何をもたらすか"
+  },
+  {
+   "slug": "lcoe-and-power-mix",
+   "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
+  }
+ ]
+}
