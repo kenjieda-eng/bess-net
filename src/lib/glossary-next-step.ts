@@ -80,9 +80,8 @@ export function glossaryRouteFor(
 }
 
 /**
- * G2 「よく引かれる用語」TOP20。
- * 1〜15 = 2026年7月 GA4 実測（依頼指定）。16〜20 = GA4 直接参照が不可のため
- * 「関連コンテンツ密度（news+解説+事業者+projects 連結数）上位の核心語」で補完（2026-08-05 実査値）。
+ * G2 「よく引かれる用語」TOP20（全20語 = 2026年7月 GA4 実測順）。
+ * 16〜20 は当初「関連密度上位」で暫定補完 → 2026-08-07 金曜ワンセット⑦b で GA4 実測16〜20位へ差し替え。
  * 四半期ごとに GA4 上位で手動更新する運用（次回更新目安: 2026-10）。
  */
 export const GLOSSARY_TOP20_SLUGS: string[] = [
@@ -101,12 +100,12 @@ export const GLOSSARY_TOP20_SLUGS: string[] = [
   'battery-energy-storage-system',
   'gw-gigawatt',
   'extra-high-voltage',
-  // ── 補完5（関連密度上位・核心語） ──
-  'capacity-market',
-  'grid-scale-battery',
-  'virtual-power-plant',
-  'balancing-market',
-  'japan-electric-power-exchange',
+  // ── 16〜20位（2026年7月 GA4 実測・2026-08-07 差し替え） ──
+  'trunk-grid',
+  'battery-storage-site',
+  'megawatt-hour',
+  '154kv',
+  'specified-wholesale-supply',
 ];
 
 /**

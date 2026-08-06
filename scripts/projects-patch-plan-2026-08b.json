@@ -1,0 +1,18 @@
+[
+ {
+  "slug": "pr-ekuenergyjapan-fukuoka",
+  "set": {
+   "city": "直方市上頓野"
+  },
+  "note": "一次リリース所在地欄=福岡県直方市上頓野（Japan、断片はタイトル読点分割由来と特定）"
+ },
+ {
+  "slug": "pr-co96742-mie",
+  "set": {
+   "marketParticipation": [
+    "需給調整市場"
+   ]
+  },
+  "note": "松阪同一性確定(サステナブルHD 1,995kW/8,340kWh=SINEXCEL 2MW/8MWh・商用2026-06一致・役割相補)→需給調整市場参入を反映"
+ }
+]
