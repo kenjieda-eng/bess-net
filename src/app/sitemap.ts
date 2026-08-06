@@ -9,7 +9,8 @@ import {
   EXPLAINER_HUB_GROUPS,
   countByGroupUnion,
 } from '@/lib/explainer-utils';
-import { GLOSSARY_301_SOURCE_SLUGS } from '@/lib/glossary-301';
+import { GLOSSARY_301_SOURCE_SLUGS, GLOSSARY_DISPLAY_EXCLUDED_SLUGS } from '@/lib/glossary-301';
+import { isListExcludedProject } from '@/lib/projects-excluded';
 import { POLICY_DETAIL_SLUGS } from '@/lib/policy-utils';
 import { isLvInvestExplainer } from '@/lib/lv-invest';
 import {
@@ -328,7 +329,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
   const glossaryUrls: MetadataRoute.Sitemap = glossary
     // P4 B-3: GLOSSARY_301 元slugは自動除外（手動DENYLISTとのunion・追補時の反映漏れ防止 L-EIC-021）
-    .filter((g) => !GLOSSARY_SITEMAP_DENYLIST.has(g.slug) && !GLOSSARY_301_SOURCE_SLUGS.has(g.slug))
+    .filter((g) => !GLOSSARY_SITEMAP_DENYLIST.has(g.slug) && !GLOSSARY_301_SOURCE_SLUGS.has(g.slug) && !GLOSSARY_DISPLAY_EXCLUDED_SLUGS.has(g.slug))
     .map((g) => ({
       url: `${siteConfig.url}/glossary/${g.slug}`,
       lastModified: new Date(g.updatedAt),
@@ -341,12 +342,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'weekly' as const,
     priority: 0.6,
   }));
-  const projectUrls: MetadataRoute.Sitemap = projects.map((p) => ({
-    url: `${siteConfig.url}/projects/${p.slug}`,
-    lastModified: new Date(p.updatedAt),
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
-  }));
+  // B-1 sitemap衛生（#109拡張・2026-08-07）: 301統合元（middlewareが301）と noindex（EXCLUDED）を除外
+  const projectUrls: MetadataRoute.Sitemap = projects
+    .filter((p) => !isListExcludedProject(p.slug))
+    .map((p) => ({
+      url: `${siteConfig.url}/projects/${p.slug}`,
+      lastModified: new Date(p.updatedAt),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    }));
   const newsUrls: MetadataRoute.Sitemap = news.map((n) => ({
     url: `${siteConfig.url}/news/${n.slug}`,
     lastModified: new Date(n.updatedAt),

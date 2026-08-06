@@ -4,6 +4,7 @@
 // 鉄則#4: ピーク負荷 = 0 req/分（静的ページ）
 
 import fs from 'node:fs';
+import { getOperatorCountSafe } from '@/lib/microcms';
 import path from 'node:path';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -46,7 +47,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function IndustryTop50Page() {
+export default async function IndustryTop50Page() {
+  const opCount = await getOperatorCountSafe(); // A-1: 社数動的化
   const rankingData: RankingData = JSON.parse(
     fs.readFileSync(path.join(process.cwd(), 'src/data/operator-ranking.json'), 'utf-8')
   );
@@ -245,7 +247,7 @@ export default function IndustryTop50Page() {
             <strong>関連ページ</strong>
             <ul style={{ margin: '8px 0 0', paddingLeft: 20, lineHeight: 1.9 }}>
               <li>
-                <Link href="/operators">事業者データベース</Link>（544社の詳細情報）
+                <Link href="/operators">事業者データベース</Link>（{opCount}社の詳細情報）
               </li>
               <li>
                 <Link href="/projects">プロジェクトデータベース</Link>（{totalProjects}件のプロジェクト詳細）

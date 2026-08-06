@@ -127,6 +127,29 @@ export const getAllExplainer = async (): Promise<Explainer[]> => {
   return all;
 };
 
+/**
+ * /glossary ハブ一覧専用の Lite 取得（総点検フォローアップC・2026-08-07）。
+ * GlossaryBrowser が使用するフィールドのみ fields 指定で取得し、未使用の detail（長文HTML）等を
+ * RSC flight payload から排除する（実測: detail 込みで 4.2M chars → 大幅減）。
+ * #103（term/english/reading/shortDef の全語初期DOM）は本関数でも全て取得＝不変。
+ */
+export const getGlossaryHubList = async (): Promise<Glossary[]> => {
+  const all: Glossary[] = [];
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+    const data = await client.getList<Glossary>({
+      endpoint: 'glossary',
+      queries: {
+        limit, offset, orders: 'term',
+        fields: 'id,term,slug,reading,english,category,subcategory,shortDef',
+      },
+    });
+    all.push(...data.contents);
+    if (data.contents.length < limit) break;
+  }
+  return all;
+};
+
 export const getAllGlossarySlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
@@ -754,6 +777,20 @@ export type Operator = {
 
 export const getOperatorList = async (queries?: MicroCMSQueries) => {
   return await client.getList<Operator>({ endpoint: 'operators', queries });
+};
+
+/**
+ * 事業者総数の安全取得（総点検フォローアップA-1・2026-08-07）。
+ * totalCount のみ参照（+1req・#93 の確立パターン）。429等の縮退時は fallback を返し 500 を出さない。
+ * 横断ページのリンク文言「（全国N社）」の固定値を撲滅し、増減に自動追従させる。
+ */
+export const getOperatorCountSafe = async (fallback = 550): Promise<number> => {
+  try {
+    const r = await getOperatorList({ limit: 1, fields: 'id' });
+    return r.totalCount > 0 ? r.totalCount : fallback;
+  } catch {
+    return fallback;
+  }
 };
 
 export const getAllOperators = async (): Promise<Operator[]> => {

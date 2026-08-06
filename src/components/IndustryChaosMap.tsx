@@ -190,7 +190,7 @@ function ForceGraph({ players, relations }: { players: Player[]; relations: type
 // メイン
 // ───────────────────────────────────────
 
-export default function IndustryChaosMap() {
+export default function IndustryChaosMap({ operatorCount }: { operatorCount?: number } = {}) {
   const [state, setState] = useState<FilterState>(DEFAULT);
   const [hydrated, setHydrated] = useState(false);
 
@@ -479,7 +479,7 @@ export default function IndustryChaosMap() {
 
       <p style={{ fontSize: 14, color: 'var(--color-muted)' }}>
         ※ 主要 {PLAYERS.length} 社 + 関係 {RELATIONS.length} 件の業界構造可視化。完全網羅は{' '}
-        <Link href="/operators">事業者ナビ (544社)</Link>を参照。
+        <Link href="/operators">事業者ナビ{operatorCount ? ` (${operatorCount}社)` : ''}</Link>を参照。
         関係データは公開情報・業界既知の事実に基づき編集部が整理。
       </p>
     </div>

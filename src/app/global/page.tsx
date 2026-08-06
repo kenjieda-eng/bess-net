@@ -8,6 +8,7 @@
  */
 
 import Link from 'next/link';
+import { getOperatorCountSafe } from '@/lib/microcms';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -28,7 +29,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GlobalHubPage() {
+export default async function GlobalHubPage() {
+  const opCount = await getOperatorCountSafe(); // A-1: 社数動的化
   const itemListJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -148,7 +150,7 @@ export default function GlobalHubPage() {
             <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/map/industry-chaos">業界カオスマップ (国内主要事業者)</Link></li>
               <li><Link href="/market/jepx">JEPX ハブ (国内スポット市場)</Link></li>
-              <li><Link href="/operators">事業者ナビ (国内544社)</Link></li>
+              <li><Link href="/operators">事業者ナビ (国内{opCount}社)</Link></li>
             </ul>
           </section>
         </div>

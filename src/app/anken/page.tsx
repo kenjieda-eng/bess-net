@@ -9,6 +9,7 @@
  */
 
 import Link from 'next/link';
+import { getOperatorCountSafe } from '@/lib/microcms';
 import type { Metadata } from 'next';
 import type { CSSProperties } from 'react';
 import SiteHeader from '@/components/SiteHeader';
@@ -133,7 +134,9 @@ function IntentCard({ href, external, title, note }: { href: string; external?: 
 
 const card: CSSProperties = { padding: 20, background: 'var(--color-bg-card,#fff)', border: '1px solid var(--color-border)', borderRadius: 8 };
 
-export default function AnkenPage() {
+export default async function AnkenPage() {
+  // A-1(2026-08-07): 社数はtotalCount動的参照（#93・縮退フォールバック付）
+  const opCount = await getOperatorCountSafe();
   const dStatus = countBy((r) => r.status.replace('土地契約済・', ''));
   const dRenkei = countBy((r) => r.renkei);
   const dChikumoku = countBy((r) => chikumokuGroup(r.chikumoku));
@@ -327,8 +330,8 @@ export default function AnkenPage() {
             </p>
             <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/grid">系統データ（全国 8,225 変電所地点）</Link></li>
-              <li><Link href="/operators">事業者データベース（544 社）</Link></li>
-              <li><Link href="/projects">蓄電所プロジェクト（263 件）</Link></li>
+              <li><Link href="/operators">事業者データベース（{opCount} 社）</Link></li>
+              <li><Link href="/projects">蓄電所プロジェクトDB（全国）</Link></li>
             </ul>
           </section>
 

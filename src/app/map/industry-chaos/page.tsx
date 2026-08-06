@@ -8,6 +8,7 @@
  */
 
 import Link from 'next/link';
+import { getOperatorCountSafe } from '@/lib/microcms';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -29,7 +30,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function IndustryChaosMapPage() {
+export default async function IndustryChaosMapPage() {
+  const opCount = await getOperatorCountSafe(); // A-1: 社数動的化
   // JSON-LD ItemList (主要事業者)
   const itemListJsonLd = {
     '@context': 'https://schema.org',
@@ -108,11 +110,11 @@ export default function IndustryChaosMapPage() {
           {/* PC可読性（ユウ実測 2026-07-20）: 図の説明・注記 13→15px。当ページ限定 */}
           <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 24 }}>
             ※ 主要事業者を抽出した「業界構造可視化」用ビュー。完全網羅は{' '}
-            <Link href="/operators">事業者ナビ (544 社)</Link> を参照。
+            <Link href="/operators">事業者ナビ ({opCount} 社)</Link> を参照。
             関係データは公開情報・業界既知の事実に基づき編集部が整理。
           </p>
 
-          <IndustryChaosMap />
+          <IndustryChaosMap operatorCount={opCount} />
 
           <section
             style={{
@@ -128,7 +130,7 @@ export default function IndustryChaosMapPage() {
             </h2>
             <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li>
-                <Link href="/operators">事業者ナビ (544 社、完全リスト)</Link>
+                <Link href="/operators">事業者ナビ ({opCount} 社、完全リスト)</Link>
               </li>
               <li>
                 <Link href="/projects">プロジェクトデータベース</Link>

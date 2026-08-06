@@ -31,6 +31,14 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function OperatorListPage() {
   const items = await getAllOperators();
 
+  // A-2(2026-08-07): 最終更新はデータ側の最新更新日時（microCMS updatedAt/revisedAt の最大値）を表示。
+  // fields 無指定取得のためタイムスタンプは応答に含まれる（型未宣言のため cast）。
+  const latestUpdated = items.reduce((acc, it) => {
+    const t = it as unknown as { updatedAt?: string; revisedAt?: string };
+    const d = (t.revisedAt || t.updatedAt || '').slice(0, 10);
+    return d > acc ? d : acc;
+  }, '');
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -58,6 +66,11 @@ export default async function OperatorListPage() {
             系統用蓄電池(BESS)・低圧リソース事業に関わる主要事業者を 20カテゴリ・
             {items.length}社で網羅。カテゴリ・キーワード・都道府県で絞り込み可能です。
           </p>
+          {latestUpdated && (
+            <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 20px' }}>
+              最終更新: {latestUpdated}（掲載データの最新更新日）
+            </p>
+          )}
 
           {items.length === 0 ? (
             <div className="empty-state">
