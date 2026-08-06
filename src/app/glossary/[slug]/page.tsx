@@ -19,6 +19,7 @@ import type { News, Explainer } from '@/lib/microcms';
 import { getGlossaryBySlug } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 import { GLOSSARY_EDU_LINKS } from '@/lib/edu-links';
+import GlossaryNextStepBlock from '@/components/GlossaryNextStepBlock';
 
 // build 時事前計算: 用語本体＋全関連リレーション（microCMS runtime ゼロ）
 import glossaryDetailIndex from '@/lib/generated/glossary-detail-index.json';
@@ -177,10 +178,36 @@ export default async function GlossaryDetailPage({
   breadcrumbItems.push({ '@type': 'ListItem', position: pos, name: term.term, item: `https://bess-net.jp/glossary/${term.slug}` });
   const breadcrumbJsonLd = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumbItems };
 
+  // G3（2026-08-05）: FAQPage 構造化データ。answer は既存定義文の機械切出しのみ
+  // （shortDef＋detail 冒頭のプレーンテキスト・200字上限・新規文章の生成なし）。
+  // 既存 DefinedTerm と併存（別 @type・プロパティ重複なし）。空 answer なら出力しない。
+  const detailPlain = (term.detail || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  let faqAnswer = (term.shortDef || '').trim();
+  if (faqAnswer.length < 120 && detailPlain) {
+    faqAnswer = `${faqAnswer}${faqAnswer ? ' ' : ''}${detailPlain}`;
+  }
+  if (faqAnswer.length > 200) faqAnswer = `${faqAnswer.slice(0, 200)}…`;
+  const faqPageJsonLd = faqAnswer
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: `${term.term}とは？`,
+            acceptedAnswer: { '@type': 'Answer', text: faqAnswer },
+          },
+        ],
+      }
+    : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {faqPageJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd) }} />
+      )}
       <SiteHeader />
       <main className="section">
         <article className="section-inner article-detail">
@@ -370,6 +397,17 @@ export default async function GlossaryDetailPage({
               </p>
             </section>
           )}
+
+          {/* G1+G4: この用語の先へ（curated関連優先＋同カテゴリ補完・文脈ルーティング1系統・★CTA・追加フェッチ0） */}
+          <GlossaryNextStepBlock
+            slug={term.slug}
+            category={term.category}
+            curatedTerms={relatedTermsFiltered}
+            sameCategoryTerms={sameCategoryTerms}
+            firstExplainer={relatedExplainers[0]
+              ? { slug: relatedExplainers[0].slug, title: relatedExplainers[0].title }
+              : undefined}
+          />
 
           <p className="back-link">
             <Link href="/glossary">← 用語集一覧へ戻る</Link>

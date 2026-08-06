@@ -49,6 +49,8 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 type Props = {
   items: Glossary[];
+  /** G2（2026-08-05）: 検索窓直下に差し込むサーバー描画の棚（「よく引かれる用語」等） */
+  topShelf?: React.ReactNode;
 };
 
 function firstOf(arr: string[] | string | undefined): string {
@@ -67,7 +69,7 @@ function subcategoryLabel(sub: string): string {
   return sub;
 }
 
-export default function GlossaryBrowser({ items }: Props) {
+export default function GlossaryBrowser({ items, topShelf }: Props) {
   // SSR 時はデフォルト「すべて」で全件描画 (SEO 上重要)
   const [category, setCategory] = useState<string>('すべて');
   const [subcategory, setSubcategory] = useState<string>('すべて');
@@ -248,6 +250,9 @@ export default function GlossaryBrowser({ items }: Props) {
           </button>
         )}
       </div>
+
+      {/* G2: 検索窓直下の棚（サーバー描画・「よく引かれる用語」）。既存のタブ・検索・一覧は不変 */}
+      {topShelf}
 
       {/* category タブ (13個、横スクロール可) */}
       <div
