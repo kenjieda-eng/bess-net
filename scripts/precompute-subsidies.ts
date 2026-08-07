@@ -277,6 +277,8 @@ export interface PrecomputedSubsidy {
   is_rolling: boolean;
   fiscalYear: string;
   sourceUrl: string;
+  /** microCMS updatedAt（S1③ 最終更新表示用・データ側真実の更新日時） */
+  updatedAt?: string;
   scheme: string;
   /** 抽出タグ */
   applicable_prefs: string[];     // 対象都道府県 (47項目 or 一部)
@@ -351,6 +353,7 @@ async function main(): Promise<void> {
       is_rolling: deadline.is_rolling,
       fiscalYear: s.fiscalYear || '',
       sourceUrl: s.sourceUrl || '',
+      updatedAt: (s as unknown as { updatedAt?: string }).updatedAt,
       scheme: s.scheme || '',
       applicable_prefs: prefs,
       applicable_use_cases: useCases,

@@ -5,8 +5,9 @@ import SiteFooter from '@/components/SiteFooter';
 import subsidiesData from '@/data/subsidies.json';
 import type { PrecomputedSubsidy } from '../../../scripts/precompute-subsidies';
 
-// build 時静的生成（鉄則#2/#3: ランタイム microCMS 0）
-export const dynamic = 'force-static';
+// S1(2026-08-08): force-static → 日次ISR。データは bundled JSON のまま（runtime microCMS 0 維持）だが、
+// 「締切まであと◯日」と deriveStatus（L-EIC-027）が毎日自己更新される（従来はビルド時に凍結）。
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: '蓄電池 補助金カレンダー',
@@ -45,6 +46,21 @@ function deriveStatus(item: PrecomputedSubsidy, todayISO: string): string {
   return item.status[0] || 'その他';
 }
 
+/**
+ * S1② 締切カウントダウン（表示規約 2026-08-08）:
+ *   未来=「あと◯日」／当日=「本日締切」／超過=「締切済」（グループは deriveStatus が受付終了へ自動移動）／
+ *   deadline_iso なし・随時=表示なし。日次 ISR（revalidate=86400）で当日基準が自己更新される。
+ */
+function deadlineCountdown(item: PrecomputedSubsidy, todayISO: string): string | null {
+  if (item.is_rolling || !item.deadline_iso) return null;
+  const days = Math.round(
+    (Date.parse(item.deadline_iso) - Date.parse(todayISO)) / 86400000
+  );
+  if (days > 0) return `あと${days}日`;
+  if (days === 0) return '本日締切';
+  return '締切済';
+}
+
 const STATUS_ORDER = [
   '公募中', '公募予定', '次年度継続',
   '採択結果公表', '受付終了', '予算超過終了', 'その他',
@@ -74,6 +90,19 @@ export default function SubsidiesListPage() {
   const todayISO = getTodayJST();
   const grouped = groupByStatus(ALL, todayISO);
 
+  // S1① 公募中の専用棚（締切昇順・締切なし/随時は末尾）
+  const openItems = ALL.filter((i) => deriveStatus(i, todayISO) === '公募中').sort((a, b) => {
+    const ka = a.deadline_iso && !a.is_rolling ? a.deadline_iso : '9999-99-99';
+    const kb = b.deadline_iso && !b.is_rolling ? b.deadline_iso : '9999-99-99';
+    return ka < kb ? -1 : ka > kb ? 1 : 0;
+  });
+
+  // S1③ 最終更新（掲載データの最新更新日時 = microCMS updatedAt 最大値・JST）
+  const latestUpdated = ALL.reduce((acc, it) => {
+    const u = it.updatedAt ? new Date(Date.parse(it.updatedAt) + 9 * 3600 * 1000).toISOString().slice(0, 10) : '';
+    return u > acc ? u : acc;
+  }, '');
+
   return (
     <>
       <SiteHeader />
@@ -87,9 +116,38 @@ export default function SubsidiesListPage() {
           <p className="section-desc" style={{ marginBottom: 24 }}>
             系統用蓄電池および低圧リソース事業に活用できる主要補助金を、執行機関・公募期間で整理しています。
           </p>
-          <p className="page-meta" style={{ marginTop: 0, marginBottom: 32, paddingTop: 0, borderTop: 'none' }}>
+          <p className="page-meta" style={{ marginTop: 0, marginBottom: 8, paddingTop: 0, borderTop: 'none' }}>
             ※ 公募期間・補助率・対象は年度毎に変更されます。最新情報は各執行機関の公式サイトでご確認ください。
           </p>
+          {latestUpdated && (
+            <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '0 0 24px' }}>
+              最終更新: {latestUpdated}（掲載データの最新更新日）
+            </p>
+          )}
+
+          {/* S1① 公募中の専用棚（締切昇順・あと◯日つき） */}
+          {openItems.length > 0 && (
+            <section className="page-section news-shelf" style={{ marginBottom: 28 }}>
+              <h2 className="news-shelf-title">いま公募中（締切が近い順）</h2>
+              <ul className="lv-invest-rows">
+                {openItems.map((item) => {
+                  const cd = deadlineCountdown(item, todayISO);
+                  return (
+                    <li key={item.id}>
+                      <Link href={`/subsidies/${item.slug}`}>{item.name}</Link>
+                      <span style={{ marginLeft: 8, fontSize: 13, color: 'var(--color-muted)' }}>
+                        {item.is_rolling
+                          ? '（随時受付）'
+                          : item.deadline_iso
+                            ? `（締切 ${item.deadline_iso}${cd ? `・${cd}` : ''}）`
+                            : ''}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          )}
 
           {grouped.map((g) => (
             <section key={g.status} className="subsidy-status-section">
@@ -127,6 +185,14 @@ export default function SubsidiesListPage() {
                         <td>
                           {item.applicationStart || '—'} 〜<br />
                           {item.deadline_raw || '—'}
+                          {g.status === '公募中' && deadlineCountdown(item, todayISO) && (
+                            <>
+                              <br />
+                              <strong style={{ fontSize: 13 }}>
+                                {deadlineCountdown(item, todayISO)}
+                              </strong>
+                            </>
+                          )}
                         </td>
                       </tr>
                     ))}
