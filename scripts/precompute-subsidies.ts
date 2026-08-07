@@ -100,6 +100,12 @@ const CITY_TO_PREF: Record<string, string> = {
   静岡市: '静岡', 浜松市: '静岡', 名古屋市: '愛知', 京都市: '京都',
   大阪市: '大阪', 堺市: '大阪', 神戸市: '兵庫', 岡山市: '岡山',
   広島市: '広島', 北九州市: '福岡', 福岡市: '福岡', 熊本市: '熊本',
+  // S3都道府県拡張（2026-08-08）で applicable_prefs が空になった自治体を追加。
+  // 「市名に県名を含まない」ケースは今後も増えるため、投入時に空派生を検出したら本表に足す。
+  金沢市: '石川', 岡崎市: '愛知', 富山市: '富山', 鳥取市: '鳥取', 長崎市: '長崎',
+  甲府市: '山梨', 那覇市: '沖縄', 松江市: '島根', 高松市: '香川', 松山市: '愛媛',
+  盛岡市: '岩手', 水戸市: '茨城', 宇都宮市: '栃木', 前橋市: '群馬', 津市: '三重',
+  大津市: '滋賀', 神戸市以外: '', 
 };
 
 /**
@@ -191,8 +197,19 @@ interface DeadlineInfo {
   raw: string;                  // 元文字列
 }
 
+/**
+ * 和暦（令和/平成）→ 西暦の正規化（2026-08-08・S3投入で deadline_iso 取得率 1/29 だったため追加）。
+ * 自治体ページは「令和8年6月30日」表記が主流で、既存の西暦パーサでは拾えなかった。
+ * 数字の直後に年/月/日が続く形のみを変換＝誤変換しない。
+ */
+function toSeireki(s: string): string {
+  return s
+    .replace(/令和\s*(元|[0-9]+)\s*年/g, (_m, y) => `${2018 + (y === '元' ? 1 : parseInt(y, 10))}年`)
+    .replace(/平成\s*(元|[0-9]+)\s*年/g, (_m, y) => `${1988 + (y === '元' ? 1 : parseInt(y, 10))}年`);
+}
+
 function parseDeadline(s: string): DeadlineInfo {
-  const raw = (s || '').trim();
+  const raw = toSeireki((s || '').trim());
   if (!raw) return { is_rolling: false, raw };
   if (/随時|通年|オープン|常時/.test(raw)) {
     return { is_rolling: true, raw };
@@ -222,7 +239,7 @@ function parseDeadline(s: string): DeadlineInfo {
 // ──────────────────────────────────────
 
 function parseStartIso(s: string): string | undefined {
-  const raw = (s || '').trim();
+  const raw = toSeireki((s || '').trim());
   if (!raw) return undefined;
   let m = raw.match(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
   if (m) return `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`;
