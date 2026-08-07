@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import subsidiesData from '@/data/subsidies.json';
 import type { PrecomputedSubsidy } from '../../../scripts/precompute-subsidies';
+import SubsidiesBrowser, { type BrowserItem } from './SubsidiesBrowser';
 
 // S1(2026-08-08): force-static → 日次ISR。データは bundled JSON のまま（runtime microCMS 0 維持）だが、
 // 「締切まであと◯日」と deriveStatus（L-EIC-027）が毎日自己更新される（従来はビルド時に凍結）。
@@ -66,6 +67,7 @@ const STATUS_ORDER = [
   '採択結果公表', '受付終了', '予算超過終了', 'その他',
 ];
 
+// （グループ分けは SubsidiesBrowser 側に移設。関数は将来の再利用のため残置）
 function groupByStatus(items: PrecomputedSubsidy[], todayISO: string) {
   const groups: Record<string, PrecomputedSubsidy[]> = {};
   for (const item of items) {
@@ -86,9 +88,47 @@ function groupByStatus(items: PrecomputedSubsidy[], todayISO: string) {
   return ordered;
 }
 
+/** 地域ラベル（県名バッジ）: 全国 / 単県 / 複数県 / 地域指定なし（民間の全国融資等） */
+function regionLabelOf(prefs: string[]): string {
+  if (prefs.length >= 47) return '全国';
+  if (prefs.length === 0) return '地域指定なし';
+  if (prefs.length === 1) return `${prefs[0]}${/[都道府県]$/.test(prefs[0]) ? '' : '県'}`;
+  const head = prefs[0];
+  return `${head}${/[都道府県]$/.test(head) ? '' : '県'} 他${prefs.length - 1}件`;
+}
+
 export default function SubsidiesListPage() {
   const todayISO = getTodayJST();
-  const grouped = groupByStatus(ALL, todayISO);
+
+  // 絞り込みバー用の enriched props（deriveStatus・カウントダウンはサーバ側で計算＝
+  // revalidate=86400 の日次自己更新がそのままクライアント表示に反映される）
+  const browserItems: BrowserItem[] = ALL.map((item) => {
+    const prefs = item.applicable_prefs || [];
+    const isNationwide = prefs.length >= 47;
+    return {
+      id: item.id,
+      slug: item.slug,
+      name: item.name,
+      organization: item.organization,
+      subsidyRate: item.subsidyRate_raw || '',
+      upperLimit: item.upperLimit_raw || '',
+      applicationStart: item.applicationStart || '',
+      deadlineRaw: item.deadline_raw || '',
+      status: deriveStatus(item, todayISO),
+      countdown: deadlineCountdown(item, todayISO),
+      regionLabel: regionLabelOf(prefs),
+      prefKeys: isNationwide ? ['all-japan'] : prefs,
+      isNationwide,
+      entities: item.applicable_entities || [],
+      haystack: [
+        item.name, item.organization, item.targetEntity_raw, item.scheme,
+        item.subsidyRate_raw, item.fiscalYear, ...prefs.slice(0, 3),
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase(),
+    };
+  });
 
   // S1① 公募中の専用棚（締切昇順・締切なし/随時は末尾）
   const openItems = ALL.filter((i) => deriveStatus(i, todayISO) === '公募中').sort((a, b) => {
@@ -149,58 +189,9 @@ export default function SubsidiesListPage() {
             </section>
           )}
 
-          {grouped.map((g) => (
-            <section key={g.status} className="subsidy-status-section">
-              <h2
-                className={`subsidy-status-title status-${
-                  g.status === '公募中' ? 'open'
-                  : g.status === '公募予定' ? 'upcoming'
-                  : 'closed'
-                }`}
-              >
-                {g.status}（{g.items.length}件）
-              </h2>
-              <div className="subsidy-table-wrapper">
-                <table className="subsidy-table">
-                  <thead>
-                    <tr>
-                      <th>補助金名</th>
-                      <th>執行機関</th>
-                      <th>補助率</th>
-                      <th>上限額</th>
-                      <th>公募期間</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {g.items.map((item) => (
-                      <tr key={item.id}>
-                        <td>
-                          <Link href={`/subsidies/${item.slug}`} className="subsidy-link">
-                            {item.name}
-                          </Link>
-                        </td>
-                        <td>{item.organization}</td>
-                        <td>{item.subsidyRate_raw || '—'}</td>
-                        <td>{item.upperLimit_raw || '—'}</td>
-                        <td>
-                          {item.applicationStart || '—'} 〜<br />
-                          {item.deadline_raw || '—'}
-                          {g.status === '公募中' && deadlineCountdown(item, todayISO) && (
-                            <>
-                              <br />
-                              <strong style={{ fontSize: 13 }}>
-                                {deadlineCountdown(item, todayISO)}
-                              </strong>
-                            </>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          ))}
+          {/* 絞り込みバー＋一覧（クライアント）: 全件をDOMに出し、除外行は hidden。
+              deriveStatus/カウントダウンはサーバ計算値を props で受け渡し＝日次ISRの自己更新を維持 */}
+          <SubsidiesBrowser items={browserItems} />
 
           <section style={{
             marginTop: 32, padding: 16,
