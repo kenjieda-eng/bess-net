@@ -1,6 +1,7 @@
 // /grid/prefecture — 都道府県インデックス（v25）
 // 全都道府県を件数の多い順にリスト表示。
 import type { Metadata } from 'next';
+import { AREA_META } from '../[slug]/area-meta';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/grid/prefecture' },
   openGraph: {
     title: '都道府県別 変電所一覧｜蓄電池 系統空き容量DB',
-    description: '全国10社・約40都道府県別の変電所件数を一覧表示',
+    description: `全国${Object.keys(AREA_META).length}社・都道府県別の変電所件数を一覧表示`,
     type: 'website',
   },
 };

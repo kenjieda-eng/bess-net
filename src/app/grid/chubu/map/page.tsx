@@ -142,6 +142,20 @@ export default async function ChubuMapPage() {
             件。地理院タイル（淡色地図）ベース。マーカーをクリックすると個別変電所ページに遷移します。
           </p>
 
+          {/* Gr2(2026-08-08): データ基準日の統一表示（AREA_META.chubu と同値） */}
+          <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 16px' }}>
+            データ基準日: 2026/06/22取込（中部電力パワーグリッドの公表データ）
+          </p>
+
+          {/* Gr3(2026-08-08): 逆ブリッジ */}
+          <section className="page-section news-shelf" style={{ marginBottom: 20 }}>
+            <h2 className="news-shelf-title" style={{ fontSize: 16 }}>このデータの読み方</h2>
+            <ul className="lv-invest-rows">
+              <li><Link href="/explainer/grid-capacity-map-reading">解説: 空き容量マップの読み方</Link></li>
+              <li><Link href="/glossary/grid-available-capacity">用語: 系統空き容量とは</Link></li>
+            </ul>
+          </section>
+
           {/* 凡例 */}
           <section
             className="grid-section"

@@ -22,6 +22,10 @@ export type AreaMeta = {
   description: string;
   /** 出典データ形式（既定: CSV）。東京PGは予想潮流PDF由来のため 'PDF'。 */
   sourceFormat?: string;
+  /** データ基準日（当サイトへの取込日=リポジトリ実日付。Gr2・2026-08-08） */
+  dataDate?: string;
+  /** 基準日の補足（例: 東京PGの公表PDF自体の時点） */
+  dataDateNote?: string;
 };
 
 // 関連用語の固定リンク → ./related-terms.ts に集約（落とし穴 #59 対応：実在slug 検証済み）
@@ -185,6 +189,23 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
             予想潮流・出力制御の可能性・N-1電制適用可否を、公表 {meta.sourceFormat ?? 'CSV'}
             から一元化して掲載しています。
           </p>
+
+          {/* Gr2(2026-08-08): データ基準日の統一表示（取込日=リポジトリ実日付・東京は公表PDF時点を併記） */}
+          {meta.dataDate && (
+            <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 16px' }}>
+              データ基準日: {meta.dataDate.replace(/-/g, '/')}取込（{meta.operator}の公表データ）
+              {meta.dataDateNote ? `／${meta.dataDateNote}` : ''}
+            </p>
+          )}
+
+          {/* Gr3(2026-08-08): 逆ブリッジ — 読み方の解説と関連用語へ（ゼロfetch・実在slug確認済） */}
+          <section className="page-section news-shelf" style={{ marginBottom: 20 }}>
+            <h2 className="news-shelf-title" style={{ fontSize: 16 }}>このデータの読み方</h2>
+            <ul className="lv-invest-rows">
+              <li><Link href="/explainer/grid-capacity-map-reading">解説: 空き容量マップの読み方</Link></li>
+              <li><Link href="/glossary/grid-available-capacity">用語: 系統空き容量とは</Link></li>
+            </ul>
+          </section>
 
           {/* 東京エリア: 収録済（表データ）。公開停止・再開の経緯は記録ページへ（404を作らない・経緯保持）*/}
           {meta.slug === 'tokyo' && (

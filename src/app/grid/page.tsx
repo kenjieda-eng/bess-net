@@ -1,4 +1,4 @@
-// /grid 系統空き容量DB トップ — 10社・8,225件（2026-06時点、東京電力PG追加）
+// /grid 系統空き容量DB トップ — 件数は index.json / AREA_META から動的算出（Gr5②・2026-08-08）
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
@@ -6,18 +6,24 @@ import SiteFooter from '@/components/SiteFooter';
 import JapanGridMap, { type JapanAreaInfo } from '@/components/JapanGridMap';
 import { getAllSubstations } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
+import substationsIndex from '@/data/substations/index.json';
+import { AREA_META } from './[slug]/area-meta';
+
+// Gr5②(2026-08-08): 件数はデータ実数から動的算出（焼き込み廃止・データ増減に自動追従）
+const GRID_TOTAL: number = (substationsIndex as { total: number }).total;
+const GRID_OPERATORS: number = Object.keys(AREA_META).length;
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: '変電所 系統空き容量データベース（全国10社・蓄電池連系検討）',
+  // layout.tsx titleTemplate が自動付与（落とし穴 #86）。件数はデータ実数（index.json）から動的算出（Gr5②）
+  title: `変電所 系統空き容量データベース（全国${GRID_OPERATORS}社・蓄電池連系検討）`,
   description:
-    '北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の10送配電事業者・8,225変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。東京電力PGは2026年6月の公開再開を受け13都県＋基幹系を収録。中部は緯度経度付き地図検索に対応。',
+    `北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の${GRID_OPERATORS}送配電事業者・${GRID_TOTAL.toLocaleString()}変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。東京電力PGは2026年6月の公開再開を受け13都県＋基幹系を収録。中部は緯度経度付き地図検索に対応。`,
   alternates: { canonical: '/grid' },
   openGraph: {
-    title: '変電所 系統空き容量データベース（全国10社・蓄電池連系検討）',
-    description: '10社・8,225変電所の系統空き容量・連系条件。中部は地図検索対応。',
+    title: `変電所 系統空き容量データベース（全国${GRID_OPERATORS}社・蓄電池連系検討）`,
+    description: `${GRID_OPERATORS}社・${GRID_TOTAL.toLocaleString()}変電所の系統空き容量・連系条件。中部は地図検索対応。`,
     type: 'website',
   },
 };
@@ -171,7 +177,7 @@ export default async function GridIndexPage() {
     '@type': 'CollectionPage',
     name: '系統空き容量データベース',
     description:
-      '10社・8,225変電所の系統空き容量・連系条件。中部は地図検索対応。',
+      `${GRID_OPERATORS}社・${GRID_TOTAL.toLocaleString()}変電所の系統空き容量・連系条件。中部は地図検索対応。`,
     url: 'https://bess-net.jp/grid',
     numberOfItems: total,
     publisher: {
@@ -207,7 +213,7 @@ export default async function GridIndexPage() {
             <div className="grid-hero-number">{total.toLocaleString()}</div>
             <div className="grid-hero-label">変電所</div>
             <div className="grid-hero-sub">
-              全国10社・全国フルカバー（関東含む）
+              全国{GRID_OPERATORS}社・全国フルカバー（関東含む）
             </div>
             <div className="grid-hero-features">
               <div className="grid-hero-feature">🥇 当サイト独自統合DB</div>
@@ -412,7 +418,7 @@ export default async function GridIndexPage() {
               </button>
             </form>
             <p className="grid-search-banner-note">
-              全国10社・{total}変電所から名称で検索（部分一致）
+              全国{GRID_OPERATORS}社・{total}変電所から名称で検索（部分一致）
             </p>
             {/* v25: 詳細検索リンク */}
             <p className="grid-search-banner-note">

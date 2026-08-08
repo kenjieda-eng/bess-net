@@ -25,6 +25,10 @@ import {
 } from '@/lib/microcms';
 import { getNearbyProjects } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
+import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
+
+// Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件は非表示）
+const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
 
 export const revalidate = 3600; // 1時間
 
@@ -471,6 +475,20 @@ export default async function GridSlugPage({
 
           {/* 災害リスク参考情報（67番 Phase 3 / reinfolib JSON 参照、SSRリクエスト追加なし） */}
           <HazardRiskCard slug={params.slug} />
+
+          {/* Gr4(2026-08-08): この県の蓄電所案件（precompute件数・0件の県は非表示・ゼロfetch） */}
+          {sub.prefecture && PREF_PROJECT_COUNT[sub.prefecture] ? (
+            <section className="page-section news-shelf">
+              <h2 className="news-shelf-title" style={{ fontSize: 16 }}>この県の蓄電所案件</h2>
+              <ul className="lv-invest-rows">
+                <li>
+                  <Link href="/projects">
+                    {sub.prefecture}の蓄電所案件 {PREF_PROJECT_COUNT[sub.prefecture]}件 → プロジェクトDB
+                  </Link>
+                </li>
+              </ul>
+            </section>
+          ) : null}
 
           {/* (g) 関連事業者 */}
           {relatedOpsBadges.length > 0 && (

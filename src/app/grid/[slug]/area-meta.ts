@@ -1,4 +1,5 @@
 // area-meta.ts
+// dataDate はリポジトリへの取込コミット実日付（2026-08-08 Gr2 実査）。再取込時に更新すること。
 // /grid/[slug] のエリアスラグ ↔ 表示名マップ。
 // page.tsx は default 以外のオブジェクト export を許さないため別ファイルに分離。
 import type { AreaMeta } from './AreaPage';
@@ -6,6 +7,7 @@ import type { AreaMeta } from './AreaPage';
 export const AREA_META: Record<string, AreaMeta> = {
   tohoku: {
     slug: 'tohoku',
+    dataDate: '2026-06-22',
     areaJp: '東北',
     operator: '東北電力ネットワーク',
     landingUrl: 'https://nw.tohoku-epco.co.jp/consignment/system/announcement/',
@@ -14,6 +16,7 @@ export const AREA_META: Record<string, AreaMeta> = {
   },
   hokuriku: {
     slug: 'hokuriku',
+    dataDate: '2026-05-15',
     areaJp: '北陸',
     operator: '北陸電力送配電',
     landingUrl: 'https://www.rikuden.co.jp/nw_notification/U_154seiyaku.html',
@@ -22,6 +25,7 @@ export const AREA_META: Record<string, AreaMeta> = {
   },
   shikoku: {
     slug: 'shikoku',
+    dataDate: '2026-05-15',
     areaJp: '四国',
     operator: '四国電力送配電',
     landingUrl: 'https://www.yonden.co.jp/nw/line_access/data.html',
@@ -31,6 +35,7 @@ export const AREA_META: Record<string, AreaMeta> = {
   // ===== Phase 2B 追加 =====
   hokkaido: {
     slug: 'hokkaido',
+    dataDate: '2026-05-15',
     areaJp: '北海道',
     operator: '北海道電力ネットワーク',
     landingUrl:
@@ -41,6 +46,7 @@ export const AREA_META: Record<string, AreaMeta> = {
   // ===== Phase 2-C-1 追加 =====
   chubu: {
     slug: 'chubu',
+    dataDate: '2026-06-22',
     areaJp: '中部',
     operator: '中部電力パワーグリッド',
     landingUrl: 'https://gridmap.powergrid.chuden.co.jp/',
@@ -50,6 +56,7 @@ export const AREA_META: Record<string, AreaMeta> = {
   // ===== Phase 2A 追加 =====
   kansai: {
     slug: 'kansai',
+    dataDate: '2026-05-15',
     areaJp: '関西',
     operator: '関西電力送配電',
     landingUrl:
@@ -59,6 +66,7 @@ export const AREA_META: Record<string, AreaMeta> = {
   },
   chugoku: {
     slug: 'chugoku',
+    dataDate: '2026-05-15',
     areaJp: '中国',
     operator: '中国電力ネットワーク',
     landingUrl:
@@ -68,6 +76,7 @@ export const AREA_META: Record<string, AreaMeta> = {
   },
   okinawa: {
     slug: 'okinawa',
+    dataDate: '2026-05-15',
     areaJp: '沖縄',
     operator: '沖縄電力',
     landingUrl:
@@ -78,6 +87,7 @@ export const AREA_META: Record<string, AreaMeta> = {
   // ===== Phase 3 追加 =====
   kyushu: {
     slug: 'kyushu',
+    dataDate: '2026-05-15',
     areaJp: '九州',
     operator: '九州電力送配電',
     landingUrl: 'https://www.kyuden.co.jp/td/service/wheeling/disclosure.html',
@@ -87,6 +97,8 @@ export const AREA_META: Record<string, AreaMeta> = {
   // ===== Phase 2c 追加（東京電力PG、10社目）=====
   tokyo: {
     slug: 'tokyo',
+    dataDate: '2026-06-22',
+    dataDateNote: '公表PDFは2026年4月23日時点（予想潮流等）',
     areaJp: '東京',
     operator: '東京電力パワーグリッド',
     landingUrl: 'https://www.tepco.co.jp/pg/consignment/system/',

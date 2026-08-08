@@ -10,6 +10,11 @@ import {
   getSubstationsByPrefecture,
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
+import { AREA_META, AREA_JP_TO_SLUG } from '../../[slug]/area-meta';
+import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
+
+// Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件の県は非表示）
+const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
 
 export const revalidate = 3600;
 
@@ -104,6 +109,33 @@ export default async function PrefecturePage({ params }: PageParams) {
             蓄電所ネット 統合データベースから {decoded} の変電所{' '}
             {subs.length}件を空容量大きい順に一覧表示しています。連系検討の初期スクリーニングに。
           </p>
+
+          {/* Gr2(2026-08-08): データ基準日（県内変電所の属するエリアの取込日。複数エリア混在時は最新） */}
+          {(() => {
+            const dates = [...new Set(subs.map((s) => AREA_META[AREA_JP_TO_SLUG[s.area || ''] || '']?.dataDate).filter(Boolean))] as string[];
+            const ops = [...new Set(subs.map((s) => AREA_META[AREA_JP_TO_SLUG[s.area || ''] || '']?.operator).filter(Boolean))] as string[];
+            if (dates.length === 0) return null;
+            const latest = dates.sort().slice(-1)[0];
+            return (
+              <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 16px' }}>
+                データ基準日: {latest.replace(/-/g, '/')}取込（{ops.join('・')}の公表データ）
+              </p>
+            );
+          })()}
+
+          {/* Gr3+Gr4(2026-08-08): 逆ブリッジ＋県内案件リンク（ゼロfetch） */}
+          <section className="page-section news-shelf" style={{ marginBottom: 20 }}>
+            <h2 className="news-shelf-title" style={{ fontSize: 16 }}>このデータの読み方・関連</h2>
+            <ul className="lv-invest-rows">
+              <li><Link href="/explainer/grid-capacity-map-reading">解説: 空き容量マップの読み方</Link></li>
+              <li><Link href="/glossary/grid-available-capacity">用語: 系統空き容量とは</Link></li>
+              {PREF_PROJECT_COUNT[decoded] ? (
+                <li>
+                  <Link href="/projects">この県の蓄電所案件 {PREF_PROJECT_COUNT[decoded]}件 → プロジェクトDB</Link>
+                </li>
+              ) : null}
+            </ul>
+          </section>
 
           <section className="grid-section">
             <h2 className="grid-section-h2">サマリ統計</h2>

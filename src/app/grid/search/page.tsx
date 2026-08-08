@@ -4,6 +4,12 @@
 // - 表示上限 200 件（UI 性能保護）、空容量大きい順
 // - 落とし穴 #57: 静的セグメント `search/` は同階層 [slug] より優先
 import type { Metadata } from 'next';
+import substationsIndex from '@/data/substations/index.json';
+import { AREA_META } from '../[slug]/area-meta';
+
+// Gr5②(2026-08-08): 件数はデータ実数から動的算出
+const GRID_TOTAL: number = (substationsIndex as { total: number }).total;
+const GRID_OPERATORS: number = Object.keys(AREA_META).length;
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -135,7 +141,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
           <h1 className="page-title">変電所 詳細検索</h1>
           <p className="page-lead">
-            全国10社・8,200変電所超の中から、変電所名・エリア・電圧階級・空容量・N-1電制適用可・送配電事業者の
+            全国{GRID_OPERATORS}社・{GRID_TOTAL.toLocaleString()}変電所の中から、変電所名・エリア・電圧階級・空容量・N-1電制適用可・送配電事業者の
             6 つの軸で絞り込み検索できます（複数条件は AND 結合）。
           </p>
 
