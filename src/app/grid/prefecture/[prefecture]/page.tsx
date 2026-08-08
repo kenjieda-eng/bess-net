@@ -10,7 +10,7 @@ import {
   getSubstationsByPrefecture,
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
-import { AREA_META, AREA_JP_TO_SLUG } from '../../[slug]/area-meta';
+import { formatDataDateLabelForAreas } from '@/lib/grid-data-date';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 
 // Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件の県は非表示）
@@ -110,18 +110,12 @@ export default async function PrefecturePage({ params }: PageParams) {
             {subs.length}件を空容量大きい順に一覧表示しています。連系検討の初期スクリーニングに。
           </p>
 
-          {/* Gr2(2026-08-08): データ基準日（県内変電所の属するエリアの取込日。複数エリア混在時は最新） */}
-          {(() => {
-            const dates = [...new Set(subs.map((s) => AREA_META[AREA_JP_TO_SLUG[s.area || ''] || '']?.dataDate).filter(Boolean))] as string[];
-            const ops = [...new Set(subs.map((s) => AREA_META[AREA_JP_TO_SLUG[s.area || ''] || '']?.operator).filter(Boolean))] as string[];
-            if (dates.length === 0) return null;
-            const latest = dates.sort().slice(-1)[0];
-            return (
-              <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 16px' }}>
-                データ基準日: {latest.replace(/-/g, '/')}取込（{ops.join('・')}の公表データ）
-              </p>
-            );
-          })()}
+          {/* データ基準日: microCMS 実値（precompute area_dates）から供給（Gr2是正・2026-08-08） */}
+          {formatDataDateLabelForAreas(subs.map((s) => s.area || '')) && (
+            <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 16px' }}>
+              データ基準日: {formatDataDateLabelForAreas(subs.map((s) => s.area || ''))}
+            </p>
+          )}
 
           {/* Gr3+Gr4(2026-08-08): 逆ブリッジ＋県内案件リンク（ゼロfetch） */}
           <section className="page-section news-shelf" style={{ marginBottom: 20 }}>

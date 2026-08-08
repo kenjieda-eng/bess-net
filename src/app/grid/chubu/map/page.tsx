@@ -4,6 +4,7 @@
 // - データは getChubuSubstationsForMap で 100 件単位 list 取得
 // - 落とし穴 #57 対応: /grid/[slug] と /grid/chubu/map はセグメント数が異なるため共存可
 import dynamic from 'next/dynamic';
+import { formatDataDateLabel } from '@/lib/grid-data-date';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
@@ -142,10 +143,12 @@ export default async function ChubuMapPage() {
             件。地理院タイル（淡色地図）ベース。マーカーをクリックすると個別変電所ページに遷移します。
           </p>
 
-          {/* Gr2(2026-08-08): データ基準日の統一表示（AREA_META.chubu と同値） */}
-          <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 16px' }}>
-            データ基準日: 2026/06/22取込（中部電力パワーグリッドの公表データ）
-          </p>
+          {/* データ基準日: microCMS 実値（precompute area_dates）から供給（Gr2是正・2026-08-08） */}
+          {formatDataDateLabel('中部') && (
+            <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 16px' }}>
+              データ基準日: {formatDataDateLabel('中部')}（中部電力パワーグリッドの公表データ）
+            </p>
+          )}
 
           {/* Gr3(2026-08-08): 逆ブリッジ */}
           <section className="page-section news-shelf" style={{ marginBottom: 20 }}>

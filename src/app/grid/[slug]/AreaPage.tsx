@@ -1,6 +1,7 @@
 // AreaPage.tsx - エリア別系統空き容量ページ (server component)
 // /grid/tohoku, /grid/hokuriku, /grid/shikoku から呼び出される
 import Link from 'next/link';
+import { formatDataDateLabel } from '@/lib/grid-data-date';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import SubstationsBrowser from '@/components/SubstationsBrowser';
@@ -22,10 +23,6 @@ export type AreaMeta = {
   description: string;
   /** 出典データ形式（既定: CSV）。東京PGは予想潮流PDF由来のため 'PDF'。 */
   sourceFormat?: string;
-  /** データ基準日（当サイトへの取込日=リポジトリ実日付。Gr2・2026-08-08） */
-  dataDate?: string;
-  /** 基準日の補足（例: 東京PGの公表PDF自体の時点） */
-  dataDateNote?: string;
 };
 
 // 関連用語の固定リンク → ./related-terms.ts に集約（落とし穴 #59 対応：実在slug 検証済み）
@@ -190,11 +187,10 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
             から一元化して掲載しています。
           </p>
 
-          {/* Gr2(2026-08-08): データ基準日の統一表示（取込日=リポジトリ実日付・東京は公表PDF時点を併記） */}
-          {meta.dataDate && (
+          {/* データ基準日: microCMS 実値（precompute area_dates）から供給（Gr2是正・2026-08-08） */}
+          {formatDataDateLabel(meta.areaJp) && (
             <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 16px' }}>
-              データ基準日: {meta.dataDate.replace(/-/g, '/')}取込（{meta.operator}の公表データ）
-              {meta.dataDateNote ? `／${meta.dataDateNote}` : ''}
+              データ基準日: {formatDataDateLabel(meta.areaJp)}（{meta.operator}の公表データ）
             </p>
           )}
 

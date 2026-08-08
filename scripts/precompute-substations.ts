@@ -50,6 +50,8 @@ export interface LiteSubstation {
   cap_avail_mw: number | null;
   /** N-1 電制適用可 */
   n1_eligible: boolean;
+  /** 当サイトへの取込日（データ基準日の表示に使用・2026-08-08 Gr2是正） */
+  fetched_at: string | null;
   /** 出力制御の可能性 (1 番目を採用) */
   oc_possibility: string | null;
   /** 緯度 (存在する場合のみ) */
@@ -66,7 +68,7 @@ const FETCH_FIELDS = [
   'voltage_primary_kv', 'voltage_secondary_kv',
   'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw',
   'n1_eligible', 'oc_possibility', 'latitude', 'longitude',
-  'last_updated',
+  'last_updated', 'fetched_at', 'area',
 ].join(',');
 
 async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
@@ -96,6 +98,8 @@ async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
         latitude: typeof s.latitude === 'number' ? s.latitude : null,
         longitude: typeof s.longitude === 'number' ? s.longitude : null,
         last_updated: s.last_updated ?? null,
+
+        fetched_at: typeof (s as unknown as { fetched_at?: string }).fetched_at === 'string' ? (s as unknown as { fetched_at: string }).fetched_at : null,
       });
     }
     if (data.contents.length < limit) break;
@@ -160,8 +164,33 @@ async function main(): Promise<void> {
   }
 
   // index.json: メタ + by_pref 集計
+  // Gr2是正(2026-08-08): エリア別のデータ基準日を集計してデータ側から供給する。
+  // last_updated = 各社の公表時点 / fetched_at = 当サイトの取込日。
+  // エリア内で値がばらつく場合は最大値（最新）を採用し、variants 数を持たせて注記表示に使う。
+  const areaDates: Record<string, { last_updated: string | null; fetched_at: string | null; last_updated_variants: number; count: number }> = {};
+  for (const s of all) {
+    const area = s.area || '(不明)';
+    const cur = (areaDates[area] ??= { last_updated: null, fetched_at: null, last_updated_variants: 0, count: 0 });
+    cur.count += 1;
+    const lu = s.last_updated ? s.last_updated.slice(0, 10) : null;
+    const fa = s.fetched_at ? s.fetched_at.slice(0, 10) : null;
+    if (lu && (!cur.last_updated || lu > cur.last_updated)) cur.last_updated = lu;
+    if (fa && (!cur.fetched_at || fa > cur.fetched_at)) cur.fetched_at = fa;
+  }
+  // variants（公表時点の種類数）を数え直す
+  const luSets: Record<string, Set<string>> = {};
+  for (const s of all) {
+    const area = s.area || '(不明)';
+    (luSets[area] ??= new Set()).add(s.last_updated ? s.last_updated.slice(0, 10) : '');
+  }
+  for (const [area, set] of Object.entries(luSets)) {
+    set.delete('');
+    if (areaDates[area]) areaDates[area].last_updated_variants = set.size;
+  }
+
   const index = {
     total: all.length,
+    area_dates: areaDates,
     with_coords: withCoords,
     without_coords: withoutCoords,
     by_pref: byPrefCount,
