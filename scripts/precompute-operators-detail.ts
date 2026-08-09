@@ -16,6 +16,9 @@ import * as fs from 'node:fs';
 // Op1/Op2(2026-08-08): 事業者名の突合は精度優先の共有ロジックに一本化（誤掲載防止）
 import { mentionsOperator, projectOperatorMatches } from '../src/lib/operator-match';
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '../src/lib/projects-excluded';
+// 表示対象外のニュース（off-topic PR / 主題ゲート）は関連に含めない＝404リンクを作らない（2026-08-08 実測42件）
+import { isExcludedNews } from '../src/lib/news-excluded';
+import { isTopicExcludedNews } from '../src/lib/news-topic-gate';
 import * as path from 'node:path';
 import {
   client,
@@ -115,13 +118,16 @@ async function main(): Promise<void> {
     // 本文のみの一致は「登壇者として言及」等が混じり根拠が弱いため不採用（2026-08-08 実測: 本文のみ1,348件は玉石混交）。
     const newsSeen = new Set<string>();
     const relatedNews: NewsRef[] = [];
+    // /news 一覧と同じ除外（isExcludedNews / isTopicExcludedNews）を適用。
+    // 詳細ページが 404 になる記事を関連として出さないため（誤掲載＝信頼毀損の防止）。
+    const visible = (slug: string) => !isExcludedNews(slug) && !isTopicExcludedNews(slug);
     for (const n of newsByOpId.get(op.id) ?? []) {
-      if (newsSeen.has(n.slug)) continue;
+      if (newsSeen.has(n.slug) || !visible(n.slug)) continue;
       newsSeen.add(n.slug);
       relatedNews.push(n);
     }
     for (const n of news) {
-      if (newsSeen.has(n.slug)) continue;
+      if (newsSeen.has(n.slug) || !visible(n.slug)) continue;
       const byTitle = mentionsOperator(n.title ?? '', op.name);
       const bySource = mentionsOperator((n as unknown as { sourceName?: string }).sourceName ?? '', op.name);
       if (!byTitle && !bySource) continue;
