@@ -13,6 +13,9 @@
  * 実行: prebuild。手動は MICROCMS_API_KEY=... MICROCMS_SERVICE_DOMAIN=bess-net npx tsx scripts/precompute-operators-detail.ts
  */
 import * as fs from 'node:fs';
+// Op1/Op2(2026-08-08): 事業者名の突合は精度優先の共有ロジックに一本化（誤掲載防止）
+import { mentionsOperator, projectOperatorMatches } from '../src/lib/operator-match';
+import { LIST_EXCLUDED_PROJECT_SLUGS } from '../src/lib/projects-excluded';
 import * as path from 'node:path';
 import {
   client,
@@ -62,7 +65,7 @@ async function fetchAllNewsWithOperators(): Promise<(NewsRef & { relatedOperator
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<any>({
       endpoint: 'news',
-      queries: { limit, offset, fields: 'id,title,slug,category,publishedAt,relatedOperators', depth: 0, orders: '-publishedAt' },
+      queries: { limit, offset, fields: 'id,title,slug,category,publishedAt,relatedOperators,sourceName', depth: 0, orders: '-publishedAt' },
     });
     for (const n of data.contents) {
       const rel = Array.isArray(n.relatedOperators) ? n.relatedOperators : [];
@@ -72,11 +75,6 @@ async function fetchAllNewsWithOperators(): Promise<(NewsRef & { relatedOperator
     if (data.contents.length < limit) break;
   }
   return out;
-}
-
-function shortName(name: string): string {
-  const s = name.replace(/(株式会社|合同会社|有限会社|（株）|\(株\)|ホールディングス)/g, '').trim();
-  return s.length >= 3 ? s : name;
 }
 
 async function main(): Promise<void> {
@@ -113,13 +111,31 @@ async function main(): Promise<void> {
   for (const op of operators) {
     const cat0 = (op.category && op.category[0]) || '';
 
-    // relatedNews: news.relatedOperators contains op.id（limit 10）
-    const relatedNews = (newsByOpId.get(op.id) ?? []).slice(0, 10);
+    // Op2(2026-08-08) relatedNews: ①microCMSリレーション（手動・最優先） ∪ ②タイトル一致 ∪ ③発信元(sourceName)一致。
+    // 本文のみの一致は「登壇者として言及」等が混じり根拠が弱いため不採用（2026-08-08 実測: 本文のみ1,348件は玉石混交）。
+    const newsSeen = new Set<string>();
+    const relatedNews: NewsRef[] = [];
+    for (const n of newsByOpId.get(op.id) ?? []) {
+      if (newsSeen.has(n.slug)) continue;
+      newsSeen.add(n.slug);
+      relatedNews.push(n);
+    }
+    for (const n of news) {
+      if (newsSeen.has(n.slug)) continue;
+      const byTitle = mentionsOperator(n.title ?? '', op.name);
+      const bySource = mentionsOperator((n as unknown as { sourceName?: string }).sourceName ?? '', op.name);
+      if (!byTitle && !bySource) continue;
+      newsSeen.add(n.slug);
+      relatedNews.push({ id: n.id, slug: n.slug, title: n.title, publishedAt: n.publishedAt, category: n.category });
+    }
+    relatedNews.sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''));
+    const relatedNewsTop = relatedNews.slice(0, 10);
 
-    // relatedProjects: project.operator(string) contains shortName（limit 10, -publishedAt）
-    const sn = shortName(op.name);
+    // Op1(2026-08-08) relatedProjects: 語境界＋法人格つきの厳格突合（素の部分一致は暴発するため不採用）。
+    // 一覧除外（非プロジェクト・301元）は掲載対象から外す。
     const relatedProjects: ProjectRef[] = projects
-      .filter((p) => (p.operator ?? '').includes(sn))
+      .filter((p) => !LIST_EXCLUDED_PROJECT_SLUGS.has(p.slug))
+      .filter((p) => projectOperatorMatches(p.operator ?? '', op.name))
       .sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''))
       .slice(0, 10)
       .map((p) => ({ id: p.id, slug: p.slug, name: p.name, prefecture: p.prefecture, outputMw: p.outputMw, capacityMwh: p.capacityMwh }));
@@ -156,7 +172,7 @@ async function main(): Promise<void> {
         bessRelation: op.bessRelation, websiteUrl: op.websiteUrl, sourceUrl: op.sourceUrl,
       },
       bodyHtml,
-      relatedNews,
+      relatedNews: relatedNewsTop,
       relatedProjects,
       relatedExplainers,
       sameCategoryOperators,

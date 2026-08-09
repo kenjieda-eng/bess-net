@@ -79,12 +79,24 @@ export async function generateMetadata({
   const entry = await loadEntry(params.slug);
   if (!entry) return {};
   const o = entry.operator;
+  // Op5(2026-08-08): その社ならではの手札（実案件・関連ニュース）の件数を title に載せる。
+  // 0件の要素は省略し、両方0なら従来どおり社名のみ（誇張しない）。
+  const nProjects = entry.relatedProjects?.length ?? 0;
+  const mNews = entry.relatedNews?.length ?? 0;
+  const facts: string[] = [];
+  if (nProjects > 0) facts.push(`案件${nProjects}件`);
+  if (mNews > 0) facts.push(`関連ニュース${mNews}本`);
+  const factSuffix = facts.length > 0 ? ` — ${facts.join('・')}` : '';
+  const title = `${o.name}の蓄電所事業${factSuffix}｜蓄電所事業者ナビ`;
+  const description = facts.length > 0
+    ? `${o.name}の蓄電所・系統用蓄電池に関する${facts.join('・')}を掲載。${o.description ?? ''}`.trim()
+    : o.description;
   return {
-    title: `${o.name}｜蓄電所事業者ナビ`,
-    description: o.description,
+    title,
+    description,
     alternates: { canonical: `/operators/${o.slug}` },
-    openGraph: { title: `${o.name}｜蓄電所事業者ナビ`, description: o.description, type: 'profile' },
-    twitter: { card: 'summary', title: `${o.name}｜蓄電所事業者ナビ`, description: o.description },
+    openGraph: { title, description, type: 'profile' },
+    twitter: { card: 'summary', title, description },
   };
 }
 
@@ -205,14 +217,14 @@ export default async function OperatorDetailPage({
           {/* 関連ニュース */}
           {relatedNews.length > 0 && (
             <section className="op-detail-section">
-              <RelatedNewsList news={relatedNews as unknown as News[]} title={`${operator.name}の最新ニュース`} />
+              <RelatedNewsList news={relatedNews as unknown as News[]} title={`${operator.name}のニュース`} />
             </section>
           )}
 
           {/* 関連プロジェクト */}
           {relatedProjects.length > 0 && (
             <section className="op-detail-section">
-              <RelatedProjectsList projects={relatedProjects as unknown as Project[]} title={`${operator.name}の関連プロジェクト`} />
+              <RelatedProjectsList projects={relatedProjects as unknown as Project[]} title={`${operator.name}の実案件`} />
             </section>
           )}
 
