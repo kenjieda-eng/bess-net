@@ -1,0 +1,29 @@
+{
+  "totals": {
+    "operators": 544,
+    "projectsVisible": 228,
+    "newsTotal": 1340,
+    "projectLinks": 204,
+    "newsLinks": 460
+  },
+  "falseNegativeProjects": [],
+  "falseNegativeNews": [],
+  "overreach": {
+    "ポート株式会社": {
+      "title": 0,
+      "project": 3
+    },
+    "パス株式会社": {
+      "title": 0,
+      "project": 0
+    },
+    "株式会社テス": {
+      "title": 1,
+      "project": 2
+    },
+    "東急株式会社": {
+      "title": 2,
+      "project": 0
+    }
+  }
+}

@@ -23,6 +23,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "verify:linkify": "tsx scripts/verify-no-nested-anchors.ts",
+    "verify:operators": "tsx scripts/verify-operator-matching.ts",
     "precompute:hazard": "tsx scripts/precompute-hazard-risk.ts"
   },
   "dependencies": {

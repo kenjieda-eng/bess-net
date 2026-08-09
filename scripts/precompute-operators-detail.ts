@@ -14,7 +14,14 @@
  */
 import * as fs from 'node:fs';
 // Op1/Op2(2026-08-08): 事業者名の突合は精度優先の共有ロジックに一本化（誤掲載防止）
-import { mentionsOperator, projectOperatorMatches } from '../src/lib/operator-match';
+// 2026-08-09: 構造化フィールド（事業者欄・sourceName）はマスタ完全一致で解決し、本文向け厳格ルールと和を取る
+import {
+  mentionsOperator,
+  projectOperatorMatches,
+  buildEntityIndex,
+  resolveStructuredEntities,
+  findStructuredFalseNegatives,
+} from '../src/lib/operator-match';
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '../src/lib/projects-excluded';
 // 表示対象外のニュース（off-topic PR / 主題ゲート）は関連に含めない＝404リンクを作らない（2026-08-08 実測42件）
 import { isExcludedNews } from '../src/lib/news-excluded';
@@ -62,8 +69,11 @@ type OperatorDetailEntry = {
 };
 
 // news を relatedOperators（operator 関連）込みで取得（getAllNews は relatedOperators 非含）
-async function fetchAllNewsWithOperators(): Promise<(NewsRef & { relatedOperatorIds: string[] })[]> {
-  const out: (NewsRef & { relatedOperatorIds: string[] })[] = [];
+// ※ sourceName を出力に載せ忘れると発信元突合が無言で死ぬ（2026-08-09 実測: 常に undefined だった）
+async function fetchAllNewsWithOperators(): Promise<
+  (NewsRef & { relatedOperatorIds: string[]; sourceName: string })[]
+> {
+  const out: (NewsRef & { relatedOperatorIds: string[]; sourceName: string })[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<any>({
@@ -73,7 +83,7 @@ async function fetchAllNewsWithOperators(): Promise<(NewsRef & { relatedOperator
     for (const n of data.contents) {
       const rel = Array.isArray(n.relatedOperators) ? n.relatedOperators : [];
       const ids = rel.map((r: any) => (typeof r === 'string' ? r : r?.id)).filter(Boolean);
-      out.push({ id: n.id, slug: n.slug, title: n.title, publishedAt: n.publishedAt ?? '', category: n.category ?? [], relatedOperatorIds: ids });
+      out.push({ id: n.id, slug: n.slug, title: n.title, publishedAt: n.publishedAt ?? '', category: n.category ?? [], relatedOperatorIds: ids, sourceName: n.sourceName ?? '' });
     }
     if (data.contents.length < limit) break;
   }
@@ -111,6 +121,37 @@ async function main(): Promise<void> {
   const index: Record<string, OperatorDetailEntry> = {};
   const gridMatched: string[] = [];
 
+  // ---- 構造化フィールドの事前解決（2026-08-09 偽陰性是正） --------------------
+  // 事業者欄 / sourceName は「事業者名そのもの」が入る欄。本文向けの厳格ルール
+  // （法人格つき完全形 or コア名4字以上）だけでは 3字以下の略称を落とし、
+  // 実測で 株式会社レノバ=0件（実在6件）／丸紅株式会社=0件（実在2件）となっていた。
+  // マスタとの完全一致で解決し（前方一致は東急⊂東急不動産 等 35組の誤マッチ余地があるため不採用）、
+  // 既存のテキスト突合と **和集合** を取って既存の紐付けを一切落とさない。
+  const entityIndex = buildEntityIndex(operators.map((o) => o.name));
+  const projectsVisible = projects.filter((p) => !LIST_EXCLUDED_PROJECT_SLUGS.has(p.slug));
+  const structProjectsByOp = new Map<string, Set<string>>(); // operator.name → project slug
+  for (const p of projectsVisible) {
+    for (const name of resolveStructuredEntities(p.operator ?? '', entityIndex)) {
+      const set = structProjectsByOp.get(name) ?? new Set<string>();
+      set.add(p.slug);
+      structProjectsByOp.set(name, set);
+    }
+  }
+  const structNewsByOp = new Map<string, Set<string>>(); // operator.name → news slug
+  for (const n of news) {
+    for (const name of resolveStructuredEntities(n.sourceName, entityIndex)) {
+      const set = structNewsByOp.get(name) ?? new Set<string>();
+      set.add(n.slug);
+      structNewsByOp.set(name, set);
+    }
+  }
+  const newsBySlug = new Map(news.map((n) => [n.slug, n]));
+  console.log(`  構造化解決: projects=${structProjectsByOp.size}社 news(sourceName)=${structNewsByOp.size}社`);
+
+  // 回帰検査は「表示上位10件」ではなく突合の**全件**で判定する（10件超の社を偽陰性と誤検出しないため）
+  const allMatchedProjects = new Map<string, Set<string>>();
+  const allMatchedNews = new Map<string, Set<string>>();
+
   for (const op of operators) {
     const cat0 = (op.category && op.category[0]) || '';
 
@@ -126,6 +167,13 @@ async function main(): Promise<void> {
       newsSeen.add(n.slug);
       relatedNews.push(n);
     }
+    // ④ 発信元(sourceName)の構造化解決（「A株式会社／B株式会社」等の連名も分割して拾う）
+    for (const slug of structNewsByOp.get(op.name) ?? []) {
+      const n = newsBySlug.get(slug);
+      if (!n || newsSeen.has(slug) || !visible(slug)) continue;
+      newsSeen.add(slug);
+      relatedNews.push({ id: n.id, slug: n.slug, title: n.title, publishedAt: n.publishedAt, category: n.category });
+    }
     for (const n of news) {
       if (newsSeen.has(n.slug) || !visible(n.slug)) continue;
       const byTitle = mentionsOperator(n.title ?? '', op.name);
@@ -136,12 +184,17 @@ async function main(): Promise<void> {
     }
     relatedNews.sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''));
     const relatedNewsTop = relatedNews.slice(0, 10);
+    allMatchedNews.set(op.name, new Set(relatedNews.map((n) => n.slug)));
 
-    // Op1(2026-08-08) relatedProjects: 語境界＋法人格つきの厳格突合（素の部分一致は暴発するため不採用）。
-    // 一覧除外（非プロジェクト・301元）は掲載対象から外す。
-    const relatedProjects: ProjectRef[] = projects
-      .filter((p) => !LIST_EXCLUDED_PROJECT_SLUGS.has(p.slug))
-      .filter((p) => projectOperatorMatches(p.operator ?? '', op.name))
+    // Op1(2026-08-08) relatedProjects: 語境界＋法人格つきの厳格突合（素の部分一致は暴発するため不採用）
+    //  ∪ 事業者欄のマスタ完全一致（2026-08-09 偽陰性是正）。
+    // 一覧除外（非プロジェクト・301元）は掲載対象から外す＝404/301 になるリンクを作らない。
+    const structProjects = structProjectsByOp.get(op.name) ?? new Set<string>();
+    const matchedProjects = projectsVisible.filter(
+      (p) => structProjects.has(p.slug) || projectOperatorMatches(p.operator ?? '', op.name)
+    );
+    allMatchedProjects.set(op.name, new Set(matchedProjects.map((p) => p.slug)));
+    const relatedProjects: ProjectRef[] = matchedProjects
       .sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''))
       .slice(0, 10)
       .map((p) => ({ id: p.id, slug: p.slug, name: p.name, prefecture: p.prefecture, outputMw: p.outputMw, capacityMwh: p.capacityMwh }));
@@ -193,6 +246,58 @@ async function main(): Promise<void> {
   const json = JSON.stringify(index);
   fs.writeFileSync(outPath, json);
   const sizeMB = (Buffer.byteLength(json, 'utf8') / 1024 / 1024).toFixed(2);
+
+  // ---- 回帰検査用の監査データを書き出す（2026-08-09） -------------------------
+  // 「詳細ページで 0件表示になる社なのに、構造化フィールドに社名が現れる」組を機械抽出する。
+  // 検査本体は scripts/verify-operator-matching.ts（本 JSON を読むだけ＝microCMS 不要）。
+  const operatorNames = operators.map((o) => o.name);
+  const fnProjects = findStructuredFalseNegatives(
+    operatorNames,
+    projectsVisible.map((p) => ({ key: p.slug, value: p.operator ?? '' })),
+    entityIndex,
+    allMatchedProjects
+  );
+  const fnNews = findStructuredFalseNegatives(
+    operatorNames,
+    news
+      .filter((n) => !isExcludedNews(n.slug) && !isTopicExcludedNews(n.slug))
+      .map((n) => ({ key: n.slug, value: n.sourceName })),
+    entityIndex,
+    allMatchedNews
+  );
+  // 暴発の常時監視（本文向け厳格ルールが短い社名で暴れていないか）
+  const overreach: Record<string, { title: number; project: number }> = {};
+  for (const name of ['ポート株式会社', 'パス株式会社', '株式会社テス', '東急株式会社']) {
+    if (!operatorNames.includes(name)) continue;
+    overreach[name] = {
+      title: news.filter((n) => mentionsOperator(n.title ?? '', name)).length,
+      project: projectsVisible.filter((p) => projectOperatorMatches(p.operator ?? '', name)).length,
+    };
+  }
+  const auditPath = path.join(outDir, 'operators-match-audit.json');
+  fs.writeFileSync(
+    auditPath,
+    JSON.stringify(
+      {
+        totals: {
+          operators: operators.length,
+          projectsVisible: projectsVisible.length,
+          newsTotal: news.length,
+          projectLinks: Object.values(index).reduce((a, e) => a + e.relatedProjects.length, 0),
+          newsLinks: Object.values(index).reduce((a, e) => a + e.relatedNews.length, 0),
+        },
+        falseNegativeProjects: fnProjects,
+        falseNegativeNews: fnNews,
+        overreach,
+      },
+      null,
+      2
+    )
+  );
+  console.log(`  監査: ${auditPath} 偽陰性 projects=${fnProjects.length} news=${fnNews.length}`);
+  if (fnProjects.length || fnNews.length) {
+    for (const r of [...fnProjects, ...fnNews]) console.log(`    ★要確認 ${r.operator} ⇢ ${r.key}「${r.value}」`);
+  }
 
   const withNews = Object.values(index).filter((e) => e.relatedNews.length > 0).length;
   const withProj = Object.values(index).filter((e) => e.relatedProjects.length > 0).length;
