@@ -200,6 +200,14 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
             <ul className="lv-invest-rows">
               <li><Link href="/explainer/grid-capacity-map-reading">解説: 空き容量マップの読み方</Link></li>
               <li><Link href="/glossary/grid-available-capacity">用語: 系統空き容量とは</Link></li>
+              {/* Gr9-③(2026-08-09): エリアを引き継いだ状態で詳細検索を開く。
+                  エリアページ10件には /grid/search への導線が1本も無かった。
+                  area の値はフォームの select 実値（日本語）と一致させる。*/}
+              <li>
+                <Link href={`/grid/search?area=${encodeURIComponent(meta.areaJp)}`}>
+                  {meta.areaJp}エリアで条件を絞り込む（電圧・空容量・N-1電制）
+                </Link>
+              </li>
             </ul>
           </section>
 

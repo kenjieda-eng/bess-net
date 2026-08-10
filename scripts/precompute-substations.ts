@@ -217,10 +217,30 @@ async function main(): Promise<void> {
     };
   }
 
+  // Gr9(2026-08-09): 県ごとの空容量トップ（変電所詳細の「この県の他の変電所」用）。
+  // ★見出しに「近隣」「周辺」は使わない — 座標を持たないため物理的な近さは保証できない。
+  // 自ページを除いて5件出せるよう、余裕を見て8件持つ。
+  const prefTop: Record<string, Array<{ slug: string; name: string; cap: number | null; kv: number | null }>> = {};
+  for (const s of all) {
+    const pref = s.prefecture || 'unknown';
+    (prefTop[pref] ??= []).push({
+      slug: s.slug,
+      name: s.name,
+      cap: typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
+      kv: typeof s.voltage_primary_kv === 'number' ? s.voltage_primary_kv : null,
+    });
+  }
+  for (const pref of Object.keys(prefTop)) {
+    prefTop[pref] = prefTop[pref]
+      .sort((a, b) => (b.cap ?? -1) - (a.cap ?? -1))
+      .slice(0, 8);
+  }
+
   const index = {
     total: all.length,
     area_dates: areaDates,
     pref_meta: prefMeta,
+    pref_top: prefTop,
     with_coords: withCoords,
     without_coords: withoutCoords,
     by_pref: byPrefCount,

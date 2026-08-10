@@ -174,6 +174,14 @@ export default async function GridSlugPage({
   if (!sub) notFound();
 
   const operatorName = firstOf(sub.operator);
+  // Gr9-②: 同県の他の変電所（precompute の pref_top から自ページを除いて上位5件）
+  const samePrefOthers = (
+    (substationsIndex as { pref_top?: Record<string, Array<{ slug: string; name: string; cap: number | null; kv: number | null }>> })
+      .pref_top?.[sub.prefecture ?? ''] ?? []
+  )
+    .filter((o) => o.slug !== sub.slug)
+    // ★新規リンクは合計6本以内に収める制約があるため、①の4本＋②の3本＋重複撤去1本で 6本とする
+    .slice(0, 3);
   const areaName = firstOf(sub.area);
   const voltageClass = firstOf(sub.voltage_class);
   const ocPossibility = firstOf(sub.oc_possibility);
@@ -505,6 +513,64 @@ export default async function GridSlugPage({
             </section>
           ) : null}
 
+          {/* Gr9-①(2026-08-09): この条件で探す。
+              変電所詳細から /grid/search・県ページへ抜ける導線が1本も無く、1,487ページが行き止まりだった。
+              値はフォームの select 実値（area=日本語・operator=正式社名）と一致させる。属性が無い行は出さない。*/}
+          <section className="page-section news-shelf">
+            <h2 className="news-shelf-title" style={{ fontSize: 16 }}>この条件で探す</h2>
+            <ul className="lv-invest-rows">
+              {sub.prefecture && (
+                <li>
+                  <Link href={`/grid/prefecture/${encodeURIComponent(sub.prefecture)}`}>
+                    {sub.prefecture}の変電所をすべて見る
+                  </Link>
+                </li>
+              )}
+              {operatorName && (
+                <li>
+                  <Link
+                    href={`/grid/search?operator=${encodeURIComponent(operatorName)}&cap_avail_min=10`}
+                  >
+                    {operatorName}管内で空容量10MW以上を探す
+                  </Link>
+                </li>
+              )}
+              {typeof sub.voltage_primary_kv === 'number' && (
+                <li>
+                  <Link
+                    href={`/grid/search?voltage_min=${sub.voltage_primary_kv}&cap_avail_min=0`}
+                  >
+                    同じ{sub.voltage_primary_kv}kV以上で空容量がある変電所を探す
+                  </Link>
+                </li>
+              )}
+              <li>
+                <Link href="/grid/search">条件を指定して探す（詳細検索）</Link>
+              </li>
+            </ul>
+          </section>
+
+          {/* Gr9-②: 同じ県の他の変電所（空容量の大きい順・自ページ除外・precompute・ゼロfetch）。
+              ★「近隣」「周辺」とは呼ばない — 座標を持たないため物理的な近さを保証できない。*/}
+          {samePrefOthers.length > 0 && (
+            <section className="page-section news-shelf">
+              <h2 className="news-shelf-title" style={{ fontSize: 16 }}>
+                {sub.prefecture}の他の変電所（空容量の大きい順）
+              </h2>
+              <ul className="lv-invest-rows">
+                {samePrefOthers.map((o) => (
+                  <li key={o.slug}>
+                    <Link href={`/grid/${o.slug}`}>
+                      {o.name}
+                      {o.kv != null && ` — ${o.kv}kV`}
+                      {o.cap != null && ` ／ 空容量 ${o.cap}MW`}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {/* (g) 関連事業者 */}
           {relatedOpsBadges.length > 0 && (
             <RelatedOperatorBadges
@@ -657,9 +723,8 @@ export default async function GridSlugPage({
               </a>{' '}
               でご確認ください。データの利用条件・免責事項は各事業者の利用規約に従います。
             </p>
-            <p className="grid-source-note">
-              <Link href="/tracker/grid" className="grid-area-link">📋 変電所データの更新タイムラインを見る（/tracker/grid）→</Link>
-            </p>
+            {/* Gr9(2026-08-09): /tracker/grid は上部のデータ基準日注記に既に置かれており、
+                本文内で2回出ていた。リンク総量を増やさないため、この重複行は撤去した。*/}
           </section>
 
           <p className="back-link">
