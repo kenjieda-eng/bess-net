@@ -74,6 +74,41 @@ export function mentionsOperator(text: string, operatorName: string): boolean {
 }
 
 /**
+ * mentionsOperator と同一の判定で、text 中の言及位置 [start, end) を返す。
+ * 役割語との距離を測る用途（Op9）。判定基準がぶれないよう同じ規則を使う。
+ */
+export function findOperatorMentions(text: string, operatorName: string): [number, number][] {
+  const out: [number, number][] = [];
+  if (!text || !operatorName) return out;
+
+  for (const form of strictForms(operatorName)) {
+    let from = 0;
+    for (;;) {
+      const i = text.indexOf(form, from);
+      if (i === -1) break;
+      out.push([i, i + form.length]);
+      from = i + 1;
+    }
+  }
+
+  const core = coreName(operatorName);
+  if (core.length >= 4) {
+    let from = 0;
+    for (;;) {
+      const i = text.indexOf(core, from);
+      if (i === -1) break;
+      const before = i > 0 ? text[i - 1] : '';
+      const after = i + core.length < text.length ? text[i + core.length] : '';
+      const beforeOk = !before || !NAME_CHAR.test(before);
+      const afterOk = !after || !NAME_CHAR.test(after) || /[株合有ホグ]/.test(after);
+      if (beforeOk && afterOk) out.push([i, i + core.length]);
+      from = i + 1;
+    }
+  }
+  return out.sort((a, b) => a[0] - b[0]);
+}
+
+/**
  * projects.operator（「A（SPC名・100%出資）」「A×B」等の複合値）に対する突合。
  * 区切りで分割し、各要素に mentionsOperator を適用する。
  *

@@ -26,6 +26,12 @@ import { LIST_EXCLUDED_PROJECT_SLUGS } from '../src/lib/projects-excluded';
 // 表示対象外のニュース（off-topic PR / 主題ゲート）は関連に含めない＝404リンクを作らない（2026-08-08 実測42件）
 import { isExcludedNews } from '../src/lib/news-excluded';
 import { isTopicExcludedNews } from '../src/lib/news-topic-gate';
+// Op8/Op9(2026-08-09): 関連解説はカテゴリ・ルーティング、関与案件は役割ラベル必須で抽出
+import {
+  explainerSlugsForOperator,
+  OPERATOR_EXPLAINER_LIMIT,
+} from '../src/lib/operator-explainer-routing';
+import { detectInvolvementRoles, type InvolvementRole } from '../src/lib/project-involvement';
 import * as path from 'node:path';
 import {
   client,
@@ -57,12 +63,15 @@ type NewsRef = { id: string; slug: string; title: string; publishedAt: string; c
 type ProjectRef = { id: string; slug: string; name: string; prefecture?: string; outputMw?: number; capacityMwh?: number };
 type ExplainerRef = { id: string; slug: string; title: string; lead?: string };
 type OperatorLite = { id: string; slug: string; name: string; description?: string };
+// Op9: 関与案件（保有ではない）。役割ラベルを必ず伴う。
+type InvolvedProjectRef = ProjectRef & { roles: InvolvementRole[] };
 
 type OperatorDetailEntry = {
   operator: Record<string, any>;   // page が描画する素フィールド
   bodyHtml: string;                // linkify 済本文
   relatedNews: NewsRef[];
   relatedProjects: ProjectRef[];
+  involvedProjects: InvolvedProjectRef[];
   relatedExplainers: ExplainerRef[];
   sameCategoryOperators: OperatorLite[];
   gridArea: { area: string; areaJp: string } | null;
@@ -152,6 +161,14 @@ async function main(): Promise<void> {
   const allMatchedProjects = new Map<string, Set<string>>();
   const allMatchedNews = new Map<string, Set<string>>();
 
+  // Op8: 解説の slug 索引＋ルーティング先の実在検証（欠けたら警告＝リンク切れを作らない）
+  const explainerBySlug = new Map(explainers.map((e) => [e.slug, e]));
+  const routedAll = new Set<string>();
+  for (const op of operators) for (const s of explainerSlugsForOperator(op.category)) routedAll.add(s);
+  const missingRoutes = [...routedAll].filter((s) => !explainerBySlug.has(s));
+  console.log(`  Op8 ルーティング先: ${routedAll.size}本 / 実在しない slug: ${missingRoutes.length}${missingRoutes.length ? ' ⚠ ' + missingRoutes.join(', ') : ''}`);
+  const explainerEmpty: string[] = [];
+
   for (const op of operators) {
     const cat0 = (op.category && op.category[0]) || '';
 
@@ -199,13 +216,40 @@ async function main(): Promise<void> {
       .slice(0, 10)
       .map((p) => ({ id: p.id, slug: p.slug, name: p.name, prefecture: p.prefecture, outputMw: p.outputMw, capacityMwh: p.capacityMwh }));
 
-    // relatedExplainers: 本文/説明に explainer.title を含む（高精度 Step1、limit 3）
+    // Op9(2026-08-09) involvedProjects: 保有ではない「関与」案件。
+    // 役割語と社名が同一文にあるものだけを採用し、役割ラベルを必ず伴う。
+    // 保有側（relatedProjects）に既に出ている案件は重複させない。
+    const ownedSlugs = allMatchedProjects.get(op.name) ?? new Set<string>();
+    const involvedProjects: InvolvedProjectRef[] = projectsVisible
+      .filter((p) => !ownedSlugs.has(p.slug))
+      .map((p) => ({ p, roles: detectInvolvementRoles(p.name ?? '', (p as any).body, op.name) }))
+      .filter((x) => x.roles.length > 0)
+      .sort((a, b) => (b.p.publishedAt ?? '').localeCompare(a.p.publishedAt ?? ''))
+      .slice(0, 10)
+      .map(({ p, roles }) => ({
+        id: p.id, slug: p.slug, name: p.name, prefecture: p.prefecture,
+        outputMw: p.outputMw, capacityMwh: p.capacityMwh, roles,
+      }));
+
+    // Op8(2026-08-09) relatedExplainers: カテゴリ・ルーティング（全社に必ず付く）。
+    // 本文一致（従来条件）は「加点」として先頭に寄せるだけで、必須条件にはしない。
+    // ※従来はタイトル完全一致を必須にしていたため 544社すべて 0件だった。
     const haystack = `${op.name} ${op.description ?? ''} ${op.body ?? ''}`;
-    const relatedExplainers: ExplainerRef[] = explainers
-      .filter((e) => e.title && e.title.length >= 4 && haystack.includes(e.title) && e.slug !== op.slug)
-      .sort((a, b) => (b.title.length - a.title.length))
-      .slice(0, 3)
+    const bonusSlugs = explainers
+      .filter((e) => e.title && e.title.length >= 6 && haystack.includes(e.title) && e.slug !== op.slug)
+      .sort((a, b) => b.title.length - a.title.length)
+      .map((e) => e.slug);
+    const routedSlugs = explainerSlugsForOperator(op.category);
+    const explainerOrder: string[] = [];
+    for (const s of [...bonusSlugs, ...routedSlugs]) {
+      if (!explainerOrder.includes(s) && s !== op.slug) explainerOrder.push(s);
+    }
+    const relatedExplainers: ExplainerRef[] = explainerOrder
+      .map((s) => explainerBySlug.get(s))
+      .filter((e): e is NonNullable<typeof e> => Boolean(e))
+      .slice(0, OPERATOR_EXPLAINER_LIMIT)
       .map((e) => ({ id: e.id, slug: e.slug, title: e.title, lead: (e as any).lead }));
+    if (relatedExplainers.length === 0) explainerEmpty.push(op.slug);
 
     // sameCategoryOperators: 同カテゴリ top 6（自分除外）
     const sameCategoryOperators: OperatorLite[] = cat0
@@ -233,6 +277,7 @@ async function main(): Promise<void> {
       bodyHtml,
       relatedNews: relatedNewsTop,
       relatedProjects,
+      involvedProjects,
       relatedExplainers,
       sameCategoryOperators,
       gridArea,
@@ -302,6 +347,14 @@ async function main(): Promise<void> {
   const withNews = Object.values(index).filter((e) => e.relatedNews.length > 0).length;
   const withProj = Object.values(index).filter((e) => e.relatedProjects.length > 0).length;
   const withExp = Object.values(index).filter((e) => e.relatedExplainers.length > 0).length;
+  const withInv = Object.values(index).filter((e) => e.involvedProjects.length > 0).length;
+  const invLinks = Object.values(index).reduce((a, e) => a + e.involvedProjects.length, 0);
+  const roleCount: Record<string, number> = {};
+  for (const e of Object.values(index)) {
+    for (const p of e.involvedProjects) for (const r of p.roles) roleCount[r] = (roleCount[r] ?? 0) + 1;
+  }
+  console.log(`  Op8 関連解説: ${withExp}社（0件社=${explainerEmpty.length}）`);
+  console.log(`  Op9 関与案件: ${withInv}社 / ${invLinks}件 役割内訳=${JSON.stringify(roleCount)}`);
   console.log(`[precompute-operators-detail] 書き出し完了: ${outPath} (${sizeMB} MB)`);
   console.log(`  entries=${Object.keys(index).length}`);
   console.log(`  関連あり: news=${withNews} project=${withProj} explainer=${withExp}`);

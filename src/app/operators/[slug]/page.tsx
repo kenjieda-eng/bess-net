@@ -27,6 +27,8 @@ import operatorsDetailIndex from '@/lib/generated/operators-detail-index.json';
 type NewsRef = { id: string; slug: string; title: string; publishedAt: string; category: string[] };
 type ProjectRef = { id: string; slug: string; name: string; prefecture?: string; outputMw?: number; capacityMwh?: number };
 type ExplainerRef = { id: string; slug: string; title: string; lead?: string };
+// Op9: 関与案件（保有ではない）。役割ラベルを必ず伴う。
+type InvolvedProjectRef = ProjectRef & { roles: string[] };
 type OperatorLite = { id: string; slug: string; name: string; description?: string };
 type OperatorRaw = {
   id: string; name: string; slug: string; nameEn?: string; category: string[];
@@ -39,6 +41,7 @@ type OperatorDetailEntry = {
   bodyHtml: string;
   relatedNews: NewsRef[];
   relatedProjects: ProjectRef[];
+  involvedProjects?: InvolvedProjectRef[];
   relatedExplainers: ExplainerRef[];
   sameCategoryOperators: OperatorLite[];
   gridArea: { area: string; areaJp: string } | null;
@@ -67,7 +70,7 @@ async function loadEntry(slug: string): Promise<OperatorDetailEntry | null> {
       bessRelation: op.bessRelation, websiteUrl: op.websiteUrl, sourceUrl: op.sourceUrl,
     },
     bodyHtml: op.body ?? '',
-    relatedNews: [], relatedProjects: [], relatedExplainers: [], sameCategoryOperators: [], gridArea: null,
+    relatedNews: [], relatedProjects: [], involvedProjects: [], relatedExplainers: [], sameCategoryOperators: [], gridArea: null,
   };
 }
 
@@ -81,6 +84,7 @@ export async function generateMetadata({
   const o = entry.operator;
   // Op5(2026-08-08): その社ならではの手札（実案件・関連ニュース）の件数を title に載せる。
   // 0件の要素は省略し、両方0なら従来どおり社名のみ（誇張しない）。
+  // ★Op9(2026-08-09): 件数は「保有・開発案件」のみを数える。関与案件は混ぜない（誇張しない）。
   const nProjects = entry.relatedProjects?.length ?? 0;
   const mNews = entry.relatedNews?.length ?? 0;
   const facts: string[] = [];
@@ -110,6 +114,8 @@ export default async function OperatorDetailPage({
 
   const operator = entry.operator;
   const { bodyHtml, relatedNews, relatedProjects, sameCategoryOperators, gridArea } = entry;
+  const involvedProjects = entry.involvedProjects ?? [];
+  const relatedExplainers = entry.relatedExplainers ?? [];
 
   const products = parseProducts(operator.products);
   const listed = listedLabel(operator as any);
@@ -120,7 +126,7 @@ export default async function OperatorDetailPage({
     operators: sameCategoryOperators.map((o) => ({ slug: o.slug, name: o.name })),
     projects: relatedProjects.map((p) => ({ slug: p.slug, name: p.name })),
     news: relatedNews,
-    explainers: [],
+    explainers: relatedExplainers.map((e) => ({ id: e.id, slug: e.slug, title: e.title })),
   });
 
   const jsonLd = {
@@ -221,10 +227,64 @@ export default async function OperatorDetailPage({
             </section>
           )}
 
-          {/* 関連プロジェクト */}
+          {/* 保有・開発案件（事業者欄が根拠。Op9 で「関与案件」と明確に分離）*/}
           {relatedProjects.length > 0 && (
             <section className="op-detail-section">
-              <RelatedProjectsList projects={relatedProjects as unknown as Project[]} title={`${operator.name}の実案件`} />
+              <RelatedProjectsList projects={relatedProjects as unknown as Project[]} title={`${operator.name}の保有・開発案件`} />
+            </section>
+          )}
+
+          {/* 関与案件（Op9）: 保有ではなく、オフテイク・運用受託・EPC・機器供給・出資などで関わる案件。
+              役割ラベルを必ず添え、保有と誤読させない。0件なら非表示。*/}
+          {involvedProjects.length > 0 && (
+            <section className="op-detail-section">
+              <h3 className="related-h3">{operator.name}が関与する案件（保有以外）</h3>
+              <p className="op-detail-note" style={{ margin: '0 0 8px', fontSize: 14, color: '#6b7280' }}>
+                {operator.name}はこれらの案件を保有していません。各行の役割で関わっています。
+              </p>
+              <ul className="related-project-list">
+                {involvedProjects.map((p) => {
+                  const meta: string[] = [];
+                  if (p.outputMw) meta.push(`${p.outputMw}MW`);
+                  if (p.capacityMwh) meta.push(`${p.capacityMwh}MWh`);
+                  if (p.prefecture) meta.push(p.prefecture);
+                  return (
+                    <li key={p.id} className="related-project-item">
+                      <Link href={`/projects/${p.slug}`}>
+                        <span className="op-involve-roles" style={{ display: 'inline-block', marginRight: 8, padding: '1px 8px', fontSize: 12, fontWeight: 700, color: '#3730a3', background: '#eef2ff', border: '1px solid #c7d2fe', borderRadius: 999 }}>
+                          {p.roles.join('・')}
+                        </span>
+                        <span className="related-project-name">{p.name}</span>
+                        {meta.length > 0 && (
+                          <span className="related-project-meta">{meta.join(' / ')}</span>
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          )}
+
+          {/* Op8: この立場の相手と付き合ううえで読むべき解説（カテゴリ・ルーティング。全社に表示）*/}
+          {relatedExplainers.length > 0 && (
+            <section className="op-detail-section">
+              <h3 className="related-h3">
+                {primaryCategory ? `「${primaryCategory}」と付き合うために読む解説` : '蓄電所事業の基礎から読む解説'}
+              </h3>
+              <ul className="op-related-list">
+                {relatedExplainers.map((e) => (
+                  <li key={e.id}>
+                    <Link href={`/explainer/${e.slug}`}>
+                      <span className="op-related-name">{e.title}</span>
+                      {e.lead && <span className="op-related-desc">{e.lead}</span>}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="op-related-more">
+                <Link href="/explainer">→ 解説記事の一覧を見る</Link>
+              </p>
             </section>
           )}
 
