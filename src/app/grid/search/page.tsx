@@ -118,7 +118,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
   const response = hasAnyFilter
     ? await searchSubstationsByFilters(filters)
-    : { items: [], totalCount: 0, truncated: false };
+    : { items: [], totalCount: 0, truncated: false, failed: false };
   const results = response.items;
 
   // 結果に含まれる県から導線用の件数を集める（Gr8）
@@ -333,8 +333,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           {hasAnyFilter && (
             <section className="grid-section">
               <h2 className="grid-section-h2">
-                条件に一致: {response.totalCount.toLocaleString()}件 / 全
-                {GRID_TOTAL.toLocaleString()}件
+                {response.failed
+                  ? 'データを取得できませんでした'
+                  : `条件に一致: ${response.totalCount.toLocaleString()}件 / 全${GRID_TOTAL.toLocaleString()}件`}
               </h2>
               <p className="grid-source-note" style={{ marginTop: 0 }}>
                 {response.truncated
@@ -373,6 +374,19 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                     </li>
                   ))}
                 </ul>
+              ) : response.failed ? (
+                /* 取得失敗を「該当なし」と偽らない（2026-08-09） */
+                <div className="grid-source-note">
+                  <p style={{ marginTop: 0 }}>
+                    アクセスが集中しているため、検索結果を取得できませんでした。少し時間をおいて再度お試しください。
+                    エリア別・都道府県別の一覧は下記からご覧いただけます。
+                  </p>
+                  <p style={{ marginBottom: 0 }}>
+                    <Link href="/grid">← エリア別一覧</Link>
+                    {' / '}
+                    <Link href="/grid/prefecture">📍 都道府県別一覧</Link>
+                  </p>
+                </div>
               ) : (
                 <div className="grid-source-note">
                   <p style={{ marginTop: 0 }}>

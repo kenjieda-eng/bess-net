@@ -1710,6 +1710,12 @@ export type SubstationSearchResponse = {
   items: SubstationSearchResult[];
   totalCount: number;
   truncated: boolean;
+  /**
+   * 取得中にエラー（429・一時障害等）が起きたか。
+   * ★これを持たずに 0件 を返すと「該当なし」と区別がつかず、
+   *   一時的な失敗を「条件に一致するものはありません」と誤って伝えてしまう（2026-08-09 実際に遭遇）。
+   */
+  failed: boolean;
 };
 
 export const searchSubstationsByFilters = async (
@@ -1763,7 +1769,7 @@ export const searchSubstationsByFilters = async (
   if (wantN1) conditions.push(`n1_eligible[equals]true`);
   if (operator) conditions.push(`operator[contains]${operator}`);
 
-  if (conditions.length === 0) return { items: [], totalCount: 0, truncated: false };
+  if (conditions.length === 0) return { items: [], totalCount: 0, truncated: false, failed: false };
 
   const filterStr = conditions.join('[and]');
   const all: SubstationSearchResult[] = [];
@@ -1771,6 +1777,7 @@ export const searchSubstationsByFilters = async (
   // n1=true のときは n1_capacity_mw 降順、それ以外は cap_avail_mw 降順
   const orderBy = wantN1 ? '-n1_capacity_mw' : '-cap_avail_mw';
   let totalCount = 0;
+  let failed = false;
 
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     try {
@@ -1805,10 +1812,11 @@ export const searchSubstationsByFilters = async (
       if (all.length >= SEARCH_FILTER_LIMIT) break;
       if (data.contents.length < limit) break;
     } catch {
+      failed = true;
       break;
     }
   }
-  return { items: all, totalCount, truncated: totalCount > all.length };
+  return { items: all, totalCount, truncated: totalCount > all.length, failed };
 };
 
 /* =================================================================
