@@ -5,6 +5,12 @@ import SiteFooter from '@/components/SiteFooter';
 import subsidiesData from '@/data/subsidies.json';
 import type { PrecomputedSubsidy } from '../../../scripts/precompute-subsidies';
 import SubsidiesBrowser, { type BrowserItem } from './SubsidiesBrowser';
+// S4(2026-08-09): 状態導出と締切表示は詳細ページと共有する（両者が drift しないように）
+import {
+  getTodayJST,
+  deriveSubsidyStatus as deriveStatus,
+  deadlineCountdown,
+} from '@/lib/subsidies-meta';
 
 // S1(2026-08-08): force-static → 日次ISR。データは bundled JSON のまま（runtime microCMS 0 維持）だが、
 // 「締切まであと◯日」と deriveStatus（L-EIC-027）が毎日自己更新される（従来はビルド時に凍結）。
@@ -27,40 +33,8 @@ export const metadata: Metadata = {
 
 const ALL = subsidiesData as PrecomputedSubsidy[];
 
-// build 時の JST 日付（YYYY-MM-DD）で deadline_iso と比較
-function getTodayJST(): string {
-  return new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
-}
 
-// deadline_iso / start_iso ベースで status を自動導出（鮮度の自動補正・L-EIC-027）
-function deriveStatus(item: PrecomputedSubsidy, todayISO: string): string {
-  // 採択結果公表は終端状態（結果公表日が過去でも受付終了に上書きしない）
-  if (item.status[0] === '採択結果公表') return '採択結果公表';
-  // 締切超過が最優先（受付終了）
-  if (!item.is_rolling && item.deadline_iso && item.deadline_iso < todayISO) {
-    return '受付終了';
-  }
-  // 開始日が未来 → 公募予定（L-EIC-027拡張。start_iso は精密日付のみ）
-  if (item.start_iso && item.start_iso > todayISO) {
-    return '公募予定';
-  }
-  return item.status[0] || 'その他';
-}
 
-/**
- * S1② 締切カウントダウン（表示規約 2026-08-08）:
- *   未来=「あと◯日」／当日=「本日締切」／超過=「締切済」（グループは deriveStatus が受付終了へ自動移動）／
- *   deadline_iso なし・随時=表示なし。日次 ISR（revalidate=86400）で当日基準が自己更新される。
- */
-function deadlineCountdown(item: PrecomputedSubsidy, todayISO: string): string | null {
-  if (item.is_rolling || !item.deadline_iso) return null;
-  const days = Math.round(
-    (Date.parse(item.deadline_iso) - Date.parse(todayISO)) / 86400000
-  );
-  if (days > 0) return `あと${days}日`;
-  if (days === 0) return '本日締切';
-  return '締切済';
-}
 
 const STATUS_ORDER = [
   '公募中', '公募予定', '次年度継続',

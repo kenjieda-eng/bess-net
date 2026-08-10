@@ -7,8 +7,39 @@ import {
   getSubsidyBySlug,
   getAllSubsidySlugs,
 } from '@/lib/microcms';
+import subsidiesData from '@/data/subsidies.json';
+import {
+  getTodayJST,
+  deriveSubsidyStatus,
+  buildSubsidyTitle,
+  buildSubsidyDescription,
+  subsidyDisplayName,
+  SUBSIDY_POINTER_SLUGS,
+  type SubsidyDateFacts,
+} from '@/lib/subsidies-meta';
 
 export const revalidate = 600;
+
+/**
+ * 状態の判定に使う日付は precompute 済みの subsidies.json から取る（S4・2026-08-09）。
+ * runtime の microCMS レコードは deadline_iso / is_rolling を持たないため、
+ * 生 status をそのまま出すと「締切超過なのに公募中」になり得る（L-EIC-027）。
+ */
+const DATE_FACTS: Record<string, SubsidyDateFacts> = Object.fromEntries(
+  (subsidiesData as Array<Record<string, unknown>>).map((s) => [
+    s.slug as string,
+    {
+      status: (s.status as string[]) ?? [],
+      deadline_iso: (s.deadline_iso as string | null) ?? null,
+      start_iso: (s.start_iso as string | null) ?? null,
+      is_rolling: Boolean(s.is_rolling),
+    },
+  ])
+);
+
+function factsFor(slug: string, raw: { status?: string[] }): SubsidyDateFacts {
+  return DATE_FACTS[slug] ?? { status: raw.status ?? [], deadline_iso: null, start_iso: null, is_rolling: false };
+}
 
 export async function generateStaticParams() {
   try {
@@ -25,10 +56,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const item = await getSubsidyBySlug(params.slug);
   if (!item) return {};
+  // S4/S5(2026-08-09): 制度名を前に出し、状態（公募中・締切）を載せる。
+  // サイト名は title 内に1回だけ入れるため titleTemplate を absolute で回避する。
+  const today = getTodayJST();
+  const facts = factsFor(params.slug, item);
+  const title = buildSubsidyTitle(params.slug, item.name, facts, today);
+  const description = buildSubsidyDescription(params.slug, item, facts, today);
   return {
-    title: item.name,
-    description: `${item.organization}が執行する蓄電池関連補助金「${item.name}」の概要。${item.targetEntity ?? ''}`,
+    title: { absolute: title },
+    description,
     alternates: { canonical: `/subsidies/${params.slug}` },
+    openGraph: { title, description, type: 'article' },
   };
 }
 
@@ -43,8 +81,14 @@ export default async function SubsidyDetailPage({
   const item = await getSubsidyBySlug(params.slug);
   if (!item) notFound();
 
-  const status = (item.status && item.status[0]) || 'その他';
+  // 状態は日付から導出する（生 status は drift する・L-EIC-027）
+  const today = getTodayJST();
+  const facts = factsFor(params.slug, item);
+  const status = deriveSubsidyStatus(facts, today);
   const category = (item.category && item.category[0]) || '';
+  // S5: 当サイトは公式サイトではないため、H1 の「◯◯公式サイト」表記を是正する
+  const displayName = subsidyDisplayName(params.slug, item.name);
+  const isPointer = SUBSIDY_POINTER_SLUGS.has(params.slug);
 
   return (
     <>
@@ -65,7 +109,14 @@ export default async function SubsidyDetailPage({
             </p>
           )}
 
-          <h1 className="page-title">{item.name}</h1>
+          <h1 className="page-title">{displayName}</h1>
+
+          {/* S5: 出典が主のページは「当サイトは公式サイトではない」ことを本文で明示する */}
+          {isPointer && (
+            <p className="page-meta" style={{ marginTop: 0, marginBottom: 12 }}>
+              本ページは蓄電所ネットによる制度メモです。申請要領・最新の公募情報は、下記の出典URL（運営団体の公式サイト）をご確認ください。
+            </p>
+          )}
 
           <div className="subsidy-status-badges">
             <span className={`badge badge-status-${status === '公募中' ? 'open' : status === '予告' ? 'upcoming' : 'closed'}`}>
