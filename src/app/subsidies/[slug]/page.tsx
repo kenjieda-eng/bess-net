@@ -33,6 +33,7 @@ const DATE_FACTS: Record<string, SubsidyDateFacts> = Object.fromEntries(
       deadline_iso: (s.deadline_iso as string | null) ?? null,
       start_iso: (s.start_iso as string | null) ?? null,
       is_rolling: Boolean(s.is_rolling),
+      deadline_raw: (s.deadline_raw as string | null) ?? null,
     },
   ])
 );

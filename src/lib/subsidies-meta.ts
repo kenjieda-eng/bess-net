@@ -25,7 +25,18 @@ export type SubsidyDateFacts = {
   deadline_iso?: string | null;
   start_iso?: string | null;
   is_rolling?: boolean;
+  /** 原文の締切表記。deadline_iso が「月末」等からの丸めかを判定するために使う */
+  deadline_raw?: string | null;
 };
+
+/**
+ * 原文の締切が「日」まで確定しているか。
+ * deadline_iso は「2026年12月予定」「2026年11月末」からでも月末日に丸められるため、
+ * これを見ずに M/D を出すと**原文にない精度を断定**してしまう（2026-08-09 実測7件）。
+ */
+export function isDayPreciseDeadline(raw?: string | null): boolean {
+  return Boolean(raw && /\d{1,2}\s*月\s*\d{1,2}\s*日/.test(String(raw)));
+}
 
 /** build 時の JST 日付（YYYY-MM-DD） */
 export function getTodayJST(): string {
@@ -113,7 +124,10 @@ export function statusLabel(item: SubsidyDateFacts, todayISO: string): string {
   if (st === '公募中') {
     if (!item.is_rolling && item.deadline_iso && item.deadline_iso >= todayISO) {
       const [, mm, dd] = item.deadline_iso.split('-');
-      return `公募中・締切${Number(mm)}/${Number(dd)}`;
+      // 原文が「12月予定」「11月末」等で日が確定していない場合は、月までしか出さない
+      return isDayPreciseDeadline(item.deadline_raw)
+        ? `公募中・締切${Number(mm)}/${Number(dd)}`
+        : `公募中・締切${Number(mm)}月`;
     }
     return '公募中';
   }
