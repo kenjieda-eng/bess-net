@@ -40,11 +40,16 @@ export function extractGistCandidates(shortDef: string): string[] {
   const first = sd.split('。')[0].trim();
   const clauses = first.split('、').map((s) => s.trim()).filter(Boolean);
 
+  // ★優先順位つき（この順序に意味がある）。返り値の順序＝優先順位。
+  //   ① 末尾節（和文の定義は述語＝定義核が末尾に来る）
+  //   ② 第1文まるごと
+  //   ③ 括弧の後ろ（「…（注記）の◯◯」の実体部分）
+  // **先頭の従属節は候補にしない**。「電気事業法に基づき、〜」の前半だけを採ると
+  // 「使用前自主検査とは — 電気事業法に基づき｜蓄電所ネット」のように文が切れて読めなくなる
+  //  （2026-08-09 本番照合で7語の実害を確認して是正）。
   const raw: string[] = [];
-  if (clauses.length > 0) raw.push(clauses[clauses.length - 1]); // 末尾節（定義核）
-  raw.push(first); // 第1文まるごと
-  if (clauses.length > 1) raw.push(clauses[0]);
-  // 括弧の後ろ（「…（注記）の◯◯」の実体部分）
+  if (clauses.length > 0) raw.push(clauses[clauses.length - 1]);
+  raw.push(first);
   const paren = [...first.matchAll(/[）)]/g)];
   if (paren.length > 0) raw.push(first.slice(paren[paren.length - 1].index! + 1).trim());
 
@@ -69,17 +74,11 @@ export function buildGlossaryTitle(term: string, shortDef: string): string {
 
   const base = name.length + JOIN_WIDTH + SITE_SUFFIX.length;
   const candidates = extractGistCandidates(shortDef);
-  const fits = candidates.filter((c) => base + c.length <= TITLE_SOFT_MAX);
-  if (fits.length > 0) {
-    const gist = fits.reduce((a, b) => (b.length > a.length ? b : a));
-    return `${name}とは — ${gist}${SITE_SUFFIX}`;
-  }
-  const loose = candidates.filter((c) => base + c.length <= TITLE_HARD_MAX);
-  if (loose.length > 0) {
-    const gist = loose.reduce((a, b) => (b.length < a.length ? b : a));
-    return `${name}とは — ${gist}${SITE_SUFFIX}`;
-  }
-  return fallback;
+  // ★長さではなく**優先順位**で選ぶ。最長を選ぶと、定義核より長い先頭の従属節が勝ってしまう。
+  const gist =
+    candidates.find((c) => base + c.length <= TITLE_SOFT_MAX) ??
+    candidates.find((c) => base + c.length <= TITLE_HARD_MAX);
+  return gist ? `${name}とは — ${gist}${SITE_SUFFIX}` : fallback;
 }
 
 /**
