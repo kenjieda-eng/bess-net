@@ -19,6 +19,7 @@ import type { News, Explainer } from '@/lib/microcms';
 import { getGlossaryBySlug } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 import { GLOSSARY_EDU_LINKS } from '@/lib/edu-links';
+import { buildGlossaryTitle, buildGlossaryDescription } from '@/lib/glossary-meta';
 import GlossaryNextStepBlock from '@/components/GlossaryNextStepBlock';
 
 // build 時事前計算: 用語本体＋全関連リレーション（microCMS runtime ゼロ）
@@ -110,15 +111,18 @@ export async function generateMetadata({
   const entry = await loadEntry(params.slug);
   if (!entry) return {};
   const { term } = entry;
+  // S1(2026-08-09): CTR 改善。サフィックスを詰めて「定義の要点」を検索結果に出す。
+  // サイト名は title 内に1回だけ入れるため、layout の titleTemplate を absolute で回避する。
+  const title = buildGlossaryTitle(term.term, term.shortDef);
+  const description = buildGlossaryDescription(term.term, term.shortDef, {
+    english: term.english,
+    category: (term.category && term.category[0]) || '',
+  });
   return {
-    title: `${term.term}とは？意味・解説｜蓄電池・エネルギー用語集`,
-    description: term.shortDef,
+    title: { absolute: title },
+    description,
     alternates: { canonical: `/glossary/${term.slug}` },
-    openGraph: {
-      title: `${term.term}とは？意味・解説｜蓄電池・エネルギー用語集`,
-      description: term.shortDef,
-      type: 'article',
-    },
+    openGraph: { title, description, type: 'article' },
   };
 }
 
