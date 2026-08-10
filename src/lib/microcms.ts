@@ -1622,6 +1622,7 @@ export type SubstationSearchFilters = {
   area?: string;         // エリア（北海道/東北/...九州/沖縄）
   voltage_min?: string;  // 一次電圧 >= (kV)
   cap_avail_min?: string;// 空容量 >= (MW)
+  cap_avail_max?: string;// 空容量 <= (MW)（Gr7 2026-08-09: 自由入力の上限側）
   n1_eligible?: string;  // 'true' のみ受付
   operator?: string;     // 送配電事業者 部分一致
 };
@@ -1704,14 +1705,22 @@ const SEARCH_FILTER_FIELDS =
   'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,n1_capacity_mw,n1_eligible';
 const SEARCH_FILTER_LIMIT = 200;
 
+/** Gr7(2026-08-09): 件数表示のため totalCount も返す（表示は上限200件のまま） */
+export type SubstationSearchResponse = {
+  items: SubstationSearchResult[];
+  totalCount: number;
+  truncated: boolean;
+};
+
 export const searchSubstationsByFilters = async (
   filters: SubstationSearchFilters
-): Promise<SubstationSearchResult[]> => {
+): Promise<SubstationSearchResponse> => {
   const conditions: string[] = [];
   const q = (filters.q || '').trim();
   const area = (filters.area || '').trim();
   const voltageMin = (filters.voltage_min || '').trim();
   const capMin = (filters.cap_avail_min || '').trim();
+  const capMax = (filters.cap_avail_max || '').trim();
   const n1 = (filters.n1_eligible || '').trim();
   const operator = (filters.operator || '').trim();
 
@@ -1740,16 +1749,28 @@ export const searchSubstationsByFilters = async (
       }
     }
   }
+  // Gr7: 空容量の上限側（自由入力）。min と同じく n1=true のときは n1_capacity_mw に写す
+  if (capMax) {
+    const v = Number(capMax);
+    if (!Number.isNaN(v)) {
+      conditions.push(
+        wantN1
+          ? `n1_capacity_mw[less_than]${v + 0.001}`
+          : `cap_avail_mw[less_than]${v + 0.001}`
+      );
+    }
+  }
   if (wantN1) conditions.push(`n1_eligible[equals]true`);
   if (operator) conditions.push(`operator[contains]${operator}`);
 
-  if (conditions.length === 0) return [];
+  if (conditions.length === 0) return { items: [], totalCount: 0, truncated: false };
 
   const filterStr = conditions.join('[and]');
   const all: SubstationSearchResult[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
   // n1=true のときは n1_capacity_mw 降順、それ以外は cap_avail_mw 降順
   const orderBy = wantN1 ? '-n1_capacity_mw' : '-cap_avail_mw';
+  let totalCount = 0;
 
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     try {
@@ -1763,6 +1784,7 @@ export const searchSubstationsByFilters = async (
           orders: orderBy,
         },
       });
+      totalCount = data.totalCount ?? totalCount;
       for (const c of data.contents) {
         all.push({
           slug: c.slug,
@@ -1786,7 +1808,7 @@ export const searchSubstationsByFilters = async (
       break;
     }
   }
-  return all;
+  return { items: all, totalCount, truncated: totalCount > all.length };
 };
 
 /* =================================================================

@@ -11,6 +11,11 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getChubuSubstationsForMap } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
+import substationsIndex from '@/data/substations/index.json';
+
+// 件数は焼き込まず index.json から動的参照（CLAUDE.md 受け入れ基準）
+const MAP_POINTS = (substationsIndex as { with_coords?: number }).with_coords ?? 0;
+const MAP_TITLE = `中部電力パワーグリッドの空き容量マップ — 変電所${MAP_POINTS.toLocaleString()}件を地図表示｜蓄電所ネット`;
 
 const ChubuMap = dynamic(() => import('@/components/ChubuMap'), {
   ssr: false,
@@ -41,13 +46,14 @@ const ChubuMap = dynamic(() => import('@/components/ChubuMap'), {
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: '中部地方 変電所空き容量マップ｜蓄電池 系統空き容量DB',
+  // Gr6(2026-08-09): 「中部電力 空き容量マップ」(98表示) に当たるよう事業者名を入れる。
+  // ★マップを実際に持つのは中部だけ。他エリアで「マップ」を名乗らないこと。
+  title: { absolute: MAP_TITLE },
   description:
     '中部電力パワーグリッド管内の変電所を地図上で可視化。系統空き容量・N-1電制適用可否・出力制御の可能性を地理院タイル淡色地図に重ねて表示。蓄電所事業者の連系検討に。',
   alternates: { canonical: '/grid/chubu/map' },
   openGraph: {
-    title: '中部地方 変電所空き容量マップ｜蓄電池 系統空き容量DB',
+    title: MAP_TITLE,
     description:
       '中部電力PG 管内の地図ベース系統情報。マーカー色で空容量・N-1電制可否を直感的に把握。',
     type: 'website',

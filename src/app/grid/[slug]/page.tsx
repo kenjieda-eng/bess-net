@@ -26,6 +26,16 @@ import {
 import { getNearbyProjects } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
+import substationsIndex from '@/data/substations/index.json';
+import { buildAreaTitle, buildAreaDescription } from '@/lib/grid-meta';
+import { formatDataDateLabel } from '@/lib/grid-data-date';
+
+// Gr6(2026-08-09): エリア別の変電所件数（precompute の area_dates から・runtime fetch 0）
+const AREA_SUBSTATION_COUNT: Record<string, number> = Object.fromEntries(
+  Object.entries(
+    (substationsIndex as { area_dates?: Record<string, { count: number }> }).area_dates ?? {}
+  ).map(([area, v]) => [area, v.count])
+);
 
 // Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件は非表示）
 const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
@@ -101,17 +111,22 @@ export async function generateMetadata({
   // エリアページ用メタデータ
   const area = AREA_META[params.slug];
   if (area) {
+    // Gr6(2026-08-09): 「◯◯電力 空き容量」の検索語に当たるよう、事業者名を title に入れる。
+    // サイト名は title 内に1回だけ入れるため titleTemplate を absolute で回避する。
+    const count = AREA_SUBSTATION_COUNT[area.areaJp] ?? null;
+    const title = buildAreaTitle(area.areaJp, area.operator, count);
+    const description = buildAreaDescription(
+      area.areaJp,
+      area.operator,
+      count,
+      formatDataDateLabel(area.areaJp),
+      area.description.substring(0, 90)
+    );
     return {
-      // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-      title: `${area.areaJp}エリア｜蓄電池 系統空き容量DB`,
-      description: area.description.substring(0, 160),
+      title: { absolute: title },
+      description,
       alternates: { canonical: `/grid/${area.slug}` },
-      openGraph: {
-        title: `${area.areaJp}エリア｜蓄電池 系統空き容量DB`,
-        description: area.description.substring(0, 160),
-        type: 'website',
-        images: ['/og-image.png'],
-      },
+      openGraph: { title, description, type: 'website', images: ['/og-image.png'] },
     };
   }
 

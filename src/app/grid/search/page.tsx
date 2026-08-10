@@ -18,6 +18,12 @@ import {
   type SubstationSearchFilters,
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
+import { formatDataDateLabel } from '@/lib/grid-data-date';
+import { subsidyCountForPref } from '@/lib/grid-meta';
+import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
+
+// Gr8(2026-08-09): 検索結果からの導線に使う県別件数（precompute・runtime fetch 0）
+const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
 
 export const dynamic = 'force-dynamic';
 
@@ -81,13 +87,24 @@ const CAP_OPTIONS: Array<[string, string]> = [
 ];
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
+  // Gr7(2026-08-09): URLパラメータは既存名を維持しつつ、subsidies/operators と同じ短い別名も受ける。
+  // （既存のリンクを壊さずに ?cap_min= / ?cap_max= / ?voltage= / ?n1= でも共有できるようにする）
+  const sp = (searchParams ?? {}) as Record<string, string | undefined>;
+  const pick = (...keys: string[]): string | undefined => {
+    for (const k of keys) {
+      const v = (sp[k] || '').trim();
+      if (v) return v;
+    }
+    return undefined;
+  };
   const filters: SubstationSearchFilters = {
-    q: (searchParams?.q || '').trim() || undefined,
-    area: (searchParams?.area || '').trim() || undefined,
-    voltage_min: (searchParams?.voltage_min || '').trim() || undefined,
-    cap_avail_min: (searchParams?.cap_avail_min || '').trim() || undefined,
-    n1_eligible: (searchParams?.n1_eligible || '').trim() || undefined,
-    operator: (searchParams?.operator || '').trim() || undefined,
+    q: pick('q'),
+    area: pick('area'),
+    voltage_min: pick('voltage_min', 'voltage'),
+    cap_avail_min: pick('cap_avail_min', 'cap_min', 'cap_preset'),
+    cap_avail_max: pick('cap_avail_max', 'cap_max'),
+    n1_eligible: pick('n1_eligible', 'n1'),
+    operator: pick('operator'),
   };
 
   const hasAnyFilter =
@@ -95,10 +112,25 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     !!filters.area ||
     !!filters.voltage_min ||
     !!filters.cap_avail_min ||
+    !!filters.cap_avail_max ||
     filters.n1_eligible === 'true' ||
     !!filters.operator;
 
-  const results = hasAnyFilter ? await searchSubstationsByFilters(filters) : [];
+  const response = hasAnyFilter
+    ? await searchSubstationsByFilters(filters)
+    : { items: [], totalCount: 0, truncated: false };
+  const results = response.items;
+
+  // 結果に含まれる県から導線用の件数を集める（Gr8）
+  const resultPrefs = [...new Set(results.map((r) => r.prefecture).filter(Boolean))] as string[];
+  const linkPrefs = resultPrefs
+    .map((p) => ({
+      pref: p,
+      projects: PREF_PROJECT_COUNT[p] ?? 0,
+      subsidies: subsidyCountForPref(p),
+    }))
+    .filter((x) => x.projects > 0 || x.subsidies > 0)
+    .slice(0, 6);
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -141,8 +173,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
           <h1 className="page-title">変電所 詳細検索</h1>
           <p className="page-lead">
-            全国{GRID_OPERATORS}社・{GRID_TOTAL.toLocaleString()}変電所の中から、変電所名・エリア・電圧階級・空容量・N-1電制適用可・送配電事業者の
-            6 つの軸で絞り込み検索できます（複数条件は AND 結合）。
+            全国{GRID_OPERATORS}社・{GRID_TOTAL.toLocaleString()}変電所の中から、変電所名・エリア・電圧階級・空容量（プリセット／MWの自由入力で上限・下限とも指定可）・N-1電制適用可・送配電事業者で
+            絞り込み検索できます（複数条件は AND 結合）。絞り込んだ状態のURLはそのまま共有できます。
           </p>
 
           {/* 詳細検索フォーム */}
@@ -210,8 +242,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               </label>
               <select
                 id="f-cap"
-                name="cap_avail_min"
-                defaultValue={filters.cap_avail_min ?? ''}
+                name="cap_preset"
+                defaultValue={CAP_OPTIONS.some(([v]) => v === (filters.cap_avail_min ?? '')) ? filters.cap_avail_min ?? '' : ''}
                 className="grid-search-input"
               >
                 <option value="">指定なし</option>
@@ -222,6 +254,38 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 ))}
               </select>
             </div>
+            {/* Gr7(2026-08-09): 空容量の自由入力（上限・下限の両方向）。上のプリセットは残す */}
+            <div className="grid-search-row">
+              <label htmlFor="f-cap-min">空容量の範囲（MW・自由入力）</label>
+              <span className="grid-search-range">
+                <input
+                  id="f-cap-min"
+                  type="number"
+                  name="cap_avail_min"
+                  min="0"
+                  step="0.1"
+                  inputMode="decimal"
+                  defaultValue={filters.cap_avail_min ?? ''}
+                  placeholder="以上（例: 12.5）"
+                  className="grid-search-input"
+                  style={{ maxWidth: 190 }}
+                />
+                <span style={{ margin: '0 8px', color: '#6b7280' }}>〜</span>
+                <input
+                  id="f-cap-max"
+                  type="number"
+                  name="cap_avail_max"
+                  min="0"
+                  step="0.1"
+                  inputMode="decimal"
+                  defaultValue={filters.cap_avail_max ?? ''}
+                  placeholder="以下（例: 80）"
+                  className="grid-search-input"
+                  style={{ maxWidth: 190 }}
+                />
+              </span>
+            </div>
+
             <div className="grid-search-row">
               <label htmlFor="f-n1">N-1電制適用可</label>
               <select
@@ -269,10 +333,14 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           {hasAnyFilter && (
             <section className="grid-section">
               <h2 className="grid-section-h2">
-                検索結果：{results.length}件
-                {results.length === 0 && '（該当なし）'}
-                {results.length === 200 && '（上位200件まで表示）'}
+                条件に一致: {response.totalCount.toLocaleString()}件 / 全
+                {GRID_TOTAL.toLocaleString()}件
               </h2>
+              <p className="grid-source-note" style={{ marginTop: 0 }}>
+                {response.truncated
+                  ? `空容量の大きい順に上位${results.length}件を表示しています。さらに条件を絞ると全件を確認できます。`
+                  : `${results.length.toLocaleString()}件すべてを表示しています。`}
+              </p>
               {results.length > 0 ? (
                 <ul className="grid-search-list">
                   {results.map((r) => (
@@ -295,17 +363,72 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                             ` ／ N-1可能量 ${r.n1_capacity_mw}MW`}
                           {r.n1_eligible && ' ／ N-1電制可'}
                         </span>
+                        {/* Gr7(2026-08-09): 行ごとにデータ基準日を明示（Gr2の実値を流用） */}
+                        {formatDataDateLabel(r.area) && (
+                          <span className="grid-search-meta" style={{ color: '#6b7280', fontSize: 12 }}>
+                            {formatDataDateLabel(r.area)}
+                          </span>
+                        )}
                       </Link>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className="grid-source-note">
-                  指定された条件に一致する変電所は見つかりませんでした。
-                  条件を緩めるか、<Link href="/grid">エリア別一覧</Link>
-                  からお探しください。
-                </p>
+                <div className="grid-source-note">
+                  <p style={{ marginTop: 0 }}>
+                    指定された条件に一致する変電所は見つかりませんでした。次のどれかで条件をゆるめてください。
+                  </p>
+                  <ul className="grid-prose" style={{ marginTop: 4 }}>
+                    <li>空容量の下限を下げる（例: 50MW以上 → 10MW以上）／上限を外す</li>
+                    <li>電圧階級の指定を外す（高い階級ほど該当が少なくなります）</li>
+                    <li>N-1電制適用可の指定を外す（対象は全体の一部です）</li>
+                    <li>変電所名の部分一致をやめて、エリアだけで絞る</li>
+                  </ul>
+                  <p style={{ marginBottom: 0 }}>
+                    <Link href="/grid">← エリア別一覧</Link>
+                    {' / '}
+                    <Link href="/grid/prefecture">📍 都道府県別一覧</Link>
+                  </p>
+                </div>
               )}
+            </section>
+          )}
+
+          {/* Gr8(2026-08-09): 検索結果からの導線。0件の枠は出さない */}
+          {hasAnyFilter && results.length > 0 && (
+            <section className="grid-section">
+              <h2 className="grid-section-h2">この結果から次へ</h2>
+              {linkPrefs.length > 0 && (
+                <ul className="grid-prose">
+                  {linkPrefs.map((x) => (
+                    <li key={x.pref}>
+                      <strong>{x.pref}</strong>：
+                      {x.projects > 0 && (
+                        <>
+                          <Link href="/projects">蓄電所案件 {x.projects}件</Link>
+                          {x.subsidies > 0 && ' ／ '}
+                        </>
+                      )}
+                      {x.subsidies > 0 && (
+                        <Link href="/subsidies">この県で使える補助金 {x.subsidies}件</Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <ul className="grid-prose">
+                <li>
+                  <Link href="/explainer/grid-capacity-map-reading">
+                    解説: 系統空き容量マップの読み方（13指標の意味）
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/glossary/grid-available-capacity">用語: 系統空き容量とは</Link>
+                </li>
+                <li>
+                  <Link href="/tools/grid-connection-check">系統連系診断（事業条件から可否の目安を確認）</Link>
+                </li>
+              </ul>
             </section>
           )}
 
@@ -322,8 +445,12 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                   ：「西部」と入力すると「西部変電所」「西部開閉所」等にヒット。
                 </li>
                 <li>
-                  <strong>表示上限 200 件</strong>
-                  ：それ以上は更に条件を絞ってください。
+                  <strong>件数は常に表示</strong>
+                  ：条件に一致する総件数を出したうえで、空容量の大きい順に最大200件を表示します。
+                </li>
+                <li>
+                  <strong>URLで共有できる</strong>
+                  ：?area=関西&amp;cap_min=10&amp;cap_max=80&amp;n1=true のように、絞り込んだ状態をそのまま渡せます。
                 </li>
                 <li>
                   <strong>空容量プラス</strong>

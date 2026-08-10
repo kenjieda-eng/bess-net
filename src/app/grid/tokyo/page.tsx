@@ -6,19 +6,35 @@
 import type { Metadata } from 'next';
 import AreaPage from '../[slug]/AreaPage';
 import { AREA_META } from '../[slug]/area-meta';
+import substationsIndex from '@/data/substations/index.json';
+import { buildAreaTitle, buildAreaDescription } from '@/lib/grid-meta';
+import { formatDataDateLabel } from '@/lib/grid-data-date';
 
 export const revalidate = 3600;
 
 const META = AREA_META.tokyo;
 
+// Gr6(2026-08-09): 東京は静的セグメントで [slug] を通らないため、同じ title 生成をここにも適用する
+//（適用漏れがあると「東京電力 空き容量」に当たらないままになる）。
+const TOKYO_COUNT =
+  (substationsIndex as { area_dates?: Record<string, { count: number }> }).area_dates?.[META.areaJp]
+    ?.count ?? null;
+const TOKYO_TITLE = buildAreaTitle(META.areaJp, META.operator, TOKYO_COUNT);
+const TOKYO_DESC = buildAreaDescription(
+  META.areaJp,
+  META.operator,
+  TOKYO_COUNT,
+  formatDataDateLabel(META.areaJp),
+  META.description.substring(0, 90)
+);
+
 export const metadata: Metadata = {
-  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: `${META.areaJp}エリア｜蓄電池 系統空き容量DB`,
-  description: META.description.substring(0, 160),
+  title: { absolute: TOKYO_TITLE },
+  description: TOKYO_DESC,
   alternates: { canonical: '/grid/tokyo' },
   openGraph: {
-    title: `${META.areaJp}エリア｜蓄電池 系統空き容量DB`,
-    description: META.description.substring(0, 160),
+    title: TOKYO_TITLE,
+    description: TOKYO_DESC,
     type: 'website',
     images: ['/og-image.png'],
   },

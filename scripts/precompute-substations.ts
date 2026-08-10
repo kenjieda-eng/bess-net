@@ -188,9 +188,39 @@ async function main(): Promise<void> {
     if (areaDates[area]) areaDates[area].last_updated_variants = set.size;
   }
 
+  // Gr6(2026-08-09): 県 → 管轄エリア／一般送配電事業者。
+  // 県ページの title/description に事業者名を出すため（「◯◯電力 空き容量」の検索語に当てる）。
+  // 件数の多い順に並べ、主たる管轄が先頭に来るようにする。
+  const prefAreaCount: Record<string, Record<string, number>> = {};
+  const prefOperatorCount: Record<string, Record<string, number>> = {};
+  for (const s of all) {
+    const pref = s.prefecture || 'unknown';
+    if (s.area) {
+      const a = (prefAreaCount[pref] ??= {});
+      a[s.area] = (a[s.area] ?? 0) + 1;
+    }
+    if (s.operator) {
+      const o = (prefOperatorCount[pref] ??= {});
+      o[s.operator] = (o[s.operator] ?? 0) + 1;
+    }
+  }
+  const sortedKeys = (m: Record<string, number> | undefined): string[] =>
+    Object.entries(m ?? {})
+      .sort((a, b) => b[1] - a[1])
+      .map(([k]) => k);
+  const prefMeta: Record<string, { count: number; areas: string[]; operators: string[] }> = {};
+  for (const [pref, count] of Object.entries(byPrefCount)) {
+    prefMeta[pref] = {
+      count: count as number,
+      areas: sortedKeys(prefAreaCount[pref]),
+      operators: sortedKeys(prefOperatorCount[pref]),
+    };
+  }
+
   const index = {
     total: all.length,
     area_dates: areaDates,
+    pref_meta: prefMeta,
     with_coords: withCoords,
     without_coords: withoutCoords,
     by_pref: byPrefCount,

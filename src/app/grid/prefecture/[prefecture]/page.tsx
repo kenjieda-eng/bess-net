@@ -11,6 +11,19 @@ import {
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 import { formatDataDateLabelForAreas } from '@/lib/grid-data-date';
+import substationsIndex from '@/data/substations/index.json';
+import {
+  buildPrefTitle,
+  buildPrefDescription,
+  operatorLabelMulti,
+  subsidyCountForPref,
+} from '@/lib/grid-meta';
+
+// Gr6/Gr8(2026-08-09): 県 → 件数・管轄エリア・事業者（precompute・runtime fetch 0）
+type PrefMeta = { count: number; areas: string[]; operators: string[] };
+const PREF_META: Record<string, PrefMeta> =
+  (substationsIndex as { pref_meta?: Record<string, PrefMeta> }).pref_meta ?? {};
+
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 
 // Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件の県は非表示）
@@ -37,16 +50,25 @@ export async function generateMetadata({
   params,
 }: PageParams): Promise<Metadata> {
   const decoded = decodeURIComponent(params.prefecture);
+  // Gr6(2026-08-09): 管轄する一般送配電事業者名と件数を title/description に出す。
+  // ※47県の title は従来すべて同一テンプレートで、CTR差（三重3.16% vs 静岡0.82%）は
+  //   title では説明できない（順位も 6.57 vs 6.56 でほぼ同一）。本変更は
+  //   「◯◯電力 空き容量」という検索語への当たり判定を増やすためのもの。
+  const meta = PREF_META[decoded];
+  const operators = meta?.operators ?? [];
+  const count = meta?.count ?? null;
+  const title = buildPrefTitle(decoded, operators, count);
+  const description = buildPrefDescription(
+    decoded,
+    operators,
+    count,
+    formatDataDateLabelForAreas(meta?.areas ?? [])
+  );
   return {
-    // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-    title: `${decoded}の変電所一覧｜蓄電池 系統空き容量DB`,
-    description: `${decoded}の変電所を空容量大きい順に一覧表示。連系検討の初期スクリーニングに。10送配電事業者の公開データを編集部で整理。`,
+    title: { absolute: title },
+    description,
     alternates: { canonical: `/grid/prefecture/${encodeURIComponent(decoded)}` },
-    openGraph: {
-      title: `${decoded}の変電所一覧｜蓄電池 系統空き容量DB`,
-      description: `${decoded}の変電所を空容量大きい順に一覧表示`,
-      type: 'website',
-    },
+    openGraph: { title, description, type: 'website' },
   };
 }
 
@@ -54,6 +76,10 @@ export default async function PrefecturePage({ params }: PageParams) {
   const decoded = decodeURIComponent(params.prefecture);
   const subs = await getSubstationsByPrefecture(decoded);
   if (subs.length === 0) notFound();
+
+  // Gr6/Gr8: 管轄エリア・事業者（precompute の pref_meta）
+  const prefMeta = PREF_META[decoded];
+  const prefOperators = prefMeta?.operators ?? [];
 
   const positive = subs.filter((s) => (s.cap_avail_mw ?? 0) > 0).length;
   const n1 = subs.filter((s) => s.n1_eligible === true).length;
@@ -128,6 +154,24 @@ export default async function PrefecturePage({ params }: PageParams) {
                   <Link href="/projects">この県の蓄電所案件 {PREF_PROJECT_COUNT[decoded]}件 → プロジェクトDB</Link>
                 </li>
               ) : null}
+              {/* Gr8(2026-08-09): この県で使える補助金（applicable_prefs 由来・0件は非表示） */}
+              {subsidyCountForPref(decoded) > 0 ? (
+                <li>
+                  <Link href="/subsidies">
+                    この県で使える補助金 {subsidyCountForPref(decoded)}件 → 補助金カレンダー
+                  </Link>
+                </li>
+              ) : null}
+              <li>
+                <Link href="/tools/grid-connection-check">系統連系診断（事業条件から可否の目安を確認）</Link>
+              </li>
+              <li>
+                <Link
+                  href={`/grid/search?area=${encodeURIComponent(prefMeta?.areas?.[0] ?? '')}&cap_min=10`}
+                >
+                  {operatorLabelMulti(prefOperators)}管内で空容量10MW以上を検索
+                </Link>
+              </li>
             </ul>
           </section>
 
