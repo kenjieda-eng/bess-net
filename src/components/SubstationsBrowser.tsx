@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Substation } from '@/lib/microcms';
+// Gr10(2026-08-11): 都道府県欄に系統区分・設備区分を出さない（原値は設備区分として別表示）
+import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
 
 const PAGE_SIZE = 20;
 
@@ -116,7 +118,7 @@ export default function SubstationsBrowser({ items }: Props) {
             <thead>
               <tr>
                 <th>変電所名</th>
-                <th>都道府県</th>
+                <th>都道府県／設備区分</th>
                 <th>電圧階級</th>
                 <th className="num">台数</th>
                 <th className="num">空容量(MW)</th>
@@ -135,7 +137,17 @@ export default function SubstationsBrowser({ items }: Props) {
                     <td>
                       <Link href={`/grid/${s.slug}`}>{s.name}</Link>
                     </td>
-                    <td>{s.prefecture || '—'}</td>
+                    <td>
+                      {(() => {
+                        const place = normalizeSubstationPlace(
+                          s.prefecture,
+                          Array.isArray(s.area) ? s.area[0] : (s.area as unknown as string | undefined)
+                        );
+                        if (place.prefecture) return place.prefecture;
+                        if (place.facilityClass) return `設備区分: ${place.facilityClass}`;
+                        return '—';
+                      })()}
+                    </td>
                     <td>{vc || '—'}</td>
                     <td className="num">
                       {typeof s.units === 'number' ? s.units : '—'}

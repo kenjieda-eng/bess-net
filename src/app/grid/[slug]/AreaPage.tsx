@@ -41,6 +41,20 @@ function fmtDate(iso: string | undefined): string {
   return d.toLocaleDateString('ja-JP');
 }
 
+/**
+ * Gr10(2026-08-11): 表の「都道府県」列に系統区分・設備区分を出さない。
+ * 都道府県が確定しないものは「設備区分: ◯◯」と明示する（原値は捨てない）。
+ */
+function placeLabel(s: Substation): string {
+  const place = normalizeSubstationPlace(
+    s.prefecture,
+    Array.isArray(s.area) ? s.area[0] : (s.area as unknown as string | undefined)
+  );
+  if (place.prefecture) return place.prefecture;
+  if (place.facilityClass) return `設備区分: ${place.facilityClass}`;
+  return '—';
+}
+
 export default async function AreaPage({ meta }: { meta: AreaMeta }) {
   const subs = await getAllSubstations({ area: meta.areaJp });
 
@@ -320,7 +334,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
               <table className="grid-table">
                 <thead>
                   <tr>
-                    <th>都道府県</th>
+                    <th>都道府県／設備区分</th>
                     <th className="num">件数</th>
                     <th className="num">空容量プラス</th>
                     <th>上位3変電所</th>
@@ -347,6 +361,45 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
             </div>
           </section>
 
+          {/* Gr10(2026-08-11): 設備区分別（沖縄電力・関西電力送配電の原値。都道府県ではない） */}
+          {facilityRows.length > 0 && (
+            <section className="grid-section">
+              <h2 className="grid-section-h2">設備区分別ブレークダウン</h2>
+              <p className="grid-source-note" style={{ marginTop: 0 }}>
+                {meta.operator}の公表データは変電所を系統・設備の区分で分けており、都道府県の記載がありません。原値をそのまま区分として掲載しています。
+              </p>
+              <div className="grid-table-wrap">
+                <table className="grid-table">
+                  <thead>
+                    <tr>
+                      <th>設備区分</th>
+                      <th className="num">件数</th>
+                      <th className="num">空容量プラス</th>
+                      <th>上位3変電所</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {facilityRows.map((r) => (
+                      <tr key={r.p}>
+                        <td>{r.p}</td>
+                        <td className="num">{r.count}</td>
+                        <td className="num">{r.posCount}</td>
+                        <td>
+                          {r.top3.map((x, i) => (
+                            <span key={x.id}>
+                              {i > 0 ? '・' : ''}
+                              <Link href={`/grid/${x.slug}`}>{x.name}</Link>
+                            </span>
+                          ))}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+
           {/* 電圧階級別 */}
           <section className="grid-section">
             <h2 className="grid-section-h2">電圧階級別ブレークダウン</h2>
@@ -372,7 +425,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                   <thead>
                     <tr>
                       <th>変電所</th>
-                      <th>都道府県</th>
+                      <th>都道府県／設備区分</th>
                       <th>電圧階級</th>
                       <th className="num">台数</th>
                       <th className="num">空容量(MW)</th>
@@ -386,7 +439,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                         <td>
                           <Link href={`/grid/${s.slug}`}>{s.name}</Link>
                         </td>
-                        <td>{s.prefecture || '—'}</td>
+                        <td>{placeLabel(s)}</td>
                         <td>{(s.voltage_class && s.voltage_class[0]) || '—'}</td>
                         <td className="num">{s.units ?? '—'}</td>
                         <td className="num">
@@ -428,7 +481,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                   <thead>
                     <tr>
                       <th>変電所</th>
-                      <th>都道府県</th>
+                      <th>都道府県／設備区分</th>
                       <th>電圧階級</th>
                       <th className="num">N-1電制適用可能量(MW)</th>
                       <th className="num">空容量(MW)</th>
@@ -440,7 +493,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                         <td>
                           <Link href={`/grid/${s.slug}`}>{s.name}</Link>
                         </td>
-                        <td>{s.prefecture || '—'}</td>
+                        <td>{placeLabel(s)}</td>
                         <td>{(s.voltage_class && s.voltage_class[0]) || '—'}</td>
                         <td className="num">{fmt(s.n1_capacity_mw ?? null)}</td>
                         <td className="num">{fmt(s.cap_avail_mw ?? null)}</td>
