@@ -29,6 +29,8 @@ import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import substationsIndex from '@/data/substations/index.json';
 import { buildAreaTitle, buildAreaDescription } from '@/lib/grid-meta';
 import { formatDataDateLabel } from '@/lib/grid-data-date';
+// Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
+import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
 
 // Gr6(2026-08-09): エリア別の変電所件数（precompute の area_dates から・runtime fetch 0）
 const AREA_SUBSTATION_COUNT: Record<string, number> = Object.fromEntries(
@@ -174,11 +176,26 @@ export default async function GridSlugPage({
   if (!sub) notFound();
 
   const operatorName = firstOf(sub.operator);
-  // Gr9-②: 同県の他の変電所（precompute の pref_top から自ページを除いて上位5件）
-  const samePrefOthers = (
-    (substationsIndex as { pref_top?: Record<string, Array<{ slug: string; name: string; cap: number | null; kv: number | null }>> })
-      .pref_top?.[sub.prefecture ?? ''] ?? []
-  )
+  // Gr10追補(2026-08-11): 府県と設備区分を分離する。
+  // ★これを通さないと、詳細ページだけ生値（「関西ローカル系」「沖縄本島66kV系・配変」）が残る。
+  const place = normalizeSubstationPlace(
+    sub.prefecture,
+    Array.isArray(sub.area) ? sub.area[0] : (sub.area as unknown as string | undefined)
+  );
+  const areaJpForLinks = Array.isArray(sub.area) ? sub.area[0] : undefined;
+  const idxTops = substationsIndex as {
+    pref_top?: Record<string, Array<{ slug: string; name: string; cap: number | null; kv: number | null }>>;
+    area_top?: Record<string, Array<{ slug: string; name: string; cap: number | null; kv: number | null }>>;
+  };
+  // Gr9-②: 同じ県の他の変電所。府県が確定しない関西は、代わりに同じエリアの空容量上位を出す。
+  // ★「近隣」「周辺」「近くの」とは呼ばない（座標を持たないため物理的な近さを保証できない）。
+  const othersSource = place.prefecture
+    ? idxTops.pref_top?.[place.prefecture] ?? []
+    : idxTops.area_top?.[areaJpForLinks ?? ''] ?? [];
+  const othersHeading = place.prefecture
+    ? `${place.prefecture}の他の変電所（空容量の大きい順）`
+    : `${areaJpForLinks ?? ''}エリアで空容量の大きい変電所`;
+  const samePrefOthers = othersSource
     .filter((o) => o.slug !== sub.slug)
     // ★新規リンクは合計6本以内に収める制約があるため、①の4本＋②の3本＋重複撤去1本で 6本とする
     .slice(0, 3);
@@ -367,8 +384,16 @@ export default async function GridSlugPage({
               <dd>{fmtStr(operatorName)}</dd>
               <dt>エリア</dt>
               <dd>{fmtStr(areaName)}</dd>
+              {/* Gr10追補(2026-08-11): 生の原値を「都道府県」として出さない。
+                  府県が確定しない社（関西電力送配電・沖縄電力）は「設備区分」として別行で出す。*/}
               <dt>都道府県</dt>
-              <dd>{fmtStr(sub.prefecture)}</dd>
+              <dd>{fmtStr(place.prefecture)}</dd>
+              {place.facilityClass && (
+                <>
+                  <dt>設備区分</dt>
+                  <dd>{place.facilityClass}</dd>
+                </>
+              )}
               <dt>電圧（一次）</dt>
               <dd>{v1}</dd>
               <dt>電圧（二次）</dt>
@@ -519,13 +544,21 @@ export default async function GridSlugPage({
           <section className="page-section news-shelf">
             <h2 className="news-shelf-title" style={{ fontSize: 16 }}>この条件で探す</h2>
             <ul className="lv-invest-rows">
-              {sub.prefecture && (
+              {/* Gr10追補: 府県が確定するならその県ページへ（301を経由させない）。
+                  確定しないなら行を消さず、同じ位置にエリアページへの導線を置く（行き止まりにしない）。*/}
+              {place.prefecture ? (
                 <li>
-                  <Link href={`/grid/prefecture/${encodeURIComponent(sub.prefecture)}`}>
-                    {sub.prefecture}の変電所をすべて見る
+                  <Link href={`/grid/prefecture/${encodeURIComponent(place.prefecture)}`}>
+                    {place.prefecture}の変電所をすべて見る
                   </Link>
                 </li>
-              )}
+              ) : areaJpForLinks && AREA_JP_TO_SLUG[areaJpForLinks] ? (
+                <li>
+                  <Link href={`/grid/${AREA_JP_TO_SLUG[areaJpForLinks]}`}>
+                    {areaJpForLinks}エリアの変電所をすべて見る
+                  </Link>
+                </li>
+              ) : null}
               {operatorName && (
                 <li>
                   <Link
@@ -555,7 +588,7 @@ export default async function GridSlugPage({
           {samePrefOthers.length > 0 && (
             <section className="page-section news-shelf">
               <h2 className="news-shelf-title" style={{ fontSize: 16 }}>
-                {sub.prefecture}の他の変電所（空容量の大きい順）
+                {othersHeading}
               </h2>
               <ul className="lv-invest-rows">
                 {samePrefOthers.map((o) => (

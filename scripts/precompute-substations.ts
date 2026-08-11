@@ -246,8 +246,26 @@ async function main(): Promise<void> {
       .slice(0, 8);
   }
 
+  // Gr10追補(2026-08-11): エリアごとの空容量トップ。
+  // 府県が確定しない関西（ローカル系1,575＋基幹系49）で「同じ県の他の変電所」を出せないため、
+  // 代わりに「{エリア}エリアで空容量の大きい変電所」を出す。★「近隣」「周辺」とは呼ばない。
+  const areaTop: Record<string, Array<{ slug: string; name: string; cap: number | null; kv: number | null }>> = {};
+  for (const s of all) {
+    if (!s.area) continue;
+    (areaTop[s.area] ??= []).push({
+      slug: s.slug,
+      name: s.name,
+      cap: typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
+      kv: typeof s.voltage_primary_kv === 'number' ? s.voltage_primary_kv : null,
+    });
+  }
+  for (const area of Object.keys(areaTop)) {
+    areaTop[area] = areaTop[area].sort((a, b) => (b.cap ?? -1) - (a.cap ?? -1)).slice(0, 8);
+  }
+
   const index = {
     total: all.length,
+    area_top: areaTop,
     area_dates: areaDates,
     pref_meta: prefMeta,
     pref_top: prefTop,

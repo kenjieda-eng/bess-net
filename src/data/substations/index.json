@@ -1,5 +1,507 @@
 {
   "total": 8225,
+  "area_top": {
+    "中部": [
+      {
+        "slug": "cb-1112",
+        "name": "千秋変電所",
+        "cap": 74,
+        "kv": 77
+      },
+      {
+        "slug": "cb-1119",
+        "name": "蟹江変電所",
+        "cap": 74,
+        "kv": 77
+      },
+      {
+        "slug": "cb-1121",
+        "name": "名南変電所",
+        "cap": 74,
+        "kv": 77
+      },
+      {
+        "slug": "cb-1124",
+        "name": "当知変電所",
+        "cap": 74,
+        "kv": 77
+      },
+      {
+        "slug": "cb-1133",
+        "name": "稲葉地変電所",
+        "cap": 74,
+        "kv": 77
+      },
+      {
+        "slug": "cb-1137",
+        "name": "仲沖変電所",
+        "cap": 74,
+        "kv": 77
+      },
+      {
+        "slug": "cb-1139",
+        "name": "横内変電所",
+        "cap": 74,
+        "kv": 77
+      },
+      {
+        "slug": "cb-1140",
+        "name": "小木変電所",
+        "cap": 74,
+        "kv": 77
+      }
+    ],
+    "中国": [
+      {
+        "slug": "egz-hiroshima-s90002",
+        "name": "上平原変電所",
+        "cap": 28,
+        "kv": 110
+      },
+      {
+        "slug": "egz-okayama-s130004",
+        "name": "西江原変電所",
+        "cap": 28,
+        "kv": 110
+      },
+      {
+        "slug": "egz-hiroshima-s0001",
+        "name": "西条変電所",
+        "cap": 23,
+        "kv": 110
+      },
+      {
+        "slug": "egz-hiroshima-s0002",
+        "name": "三篠変電所",
+        "cap": 23,
+        "kv": 110
+      },
+      {
+        "slug": "egz-hiroshima-s0004-2",
+        "name": "国泰寺変電所",
+        "cap": 23,
+        "kv": 110
+      },
+      {
+        "slug": "egz-hiroshima-s0005-2",
+        "name": "千田町変電所",
+        "cap": 23,
+        "kv": 110
+      },
+      {
+        "slug": "egz-hiroshima-s0008",
+        "name": "仁保変電所",
+        "cap": 23,
+        "kv": 110
+      },
+      {
+        "slug": "egz-hiroshima-s0016-2",
+        "name": "吉島変電所",
+        "cap": 23,
+        "kv": 110
+      }
+    ],
+    "北海道": [
+      {
+        "slug": "hkd-main-0109",
+        "name": "大通変電所",
+        "cap": 30,
+        "kv": 66
+      },
+      {
+        "slug": "hkd-main-0110",
+        "name": "南三条変電所",
+        "cap": 30,
+        "kv": 66
+      },
+      {
+        "slug": "hkd-main-0112",
+        "name": "薄野変電所",
+        "cap": 30,
+        "kv": 66
+      },
+      {
+        "slug": "hkd-main-0132",
+        "name": "北三条変電所",
+        "cap": 30,
+        "kv": 66
+      },
+      {
+        "slug": "hkd-main-0133",
+        "name": "札幌中央変電所",
+        "cap": 30,
+        "kv": 66
+      },
+      {
+        "slug": "hkd-main-0043",
+        "name": "旭川中央変電所",
+        "cap": 20,
+        "kv": 66
+      },
+      {
+        "slug": "hkd-main-0048",
+        "name": "旭川変電所",
+        "cap": 20,
+        "kv": 66
+      },
+      {
+        "slug": "hkd-main-0066",
+        "name": "七条変電所",
+        "cap": 20,
+        "kv": 66
+      }
+    ],
+    "関西": [
+      {
+        "slug": "ksi-local-h-3",
+        "name": "三休橋",
+        "cap": 85,
+        "kv": 77
+      },
+      {
+        "slug": "ksi-local-ay-5",
+        "name": "西院",
+        "cap": 28,
+        "kv": 77
+      },
+      {
+        "slug": "ksi-local-bc-3",
+        "name": "北衣手",
+        "cap": 28,
+        "kv": 77
+      },
+      {
+        "slug": "ksi-local-be-2",
+        "name": "加美",
+        "cap": 28,
+        "kv": 77
+      },
+      {
+        "slug": "ksi-local-bf-3",
+        "name": "津門",
+        "cap": 28,
+        "kv": 77
+      },
+      {
+        "slug": "ksi-local-bj-6",
+        "name": "芦屋",
+        "cap": 28,
+        "kv": 77
+      },
+      {
+        "slug": "ksi-local-bn-3",
+        "name": "島原",
+        "cap": 28,
+        "kv": 77
+      },
+      {
+        "slug": "ksi-local-bz-3",
+        "name": "有隣",
+        "cap": 28,
+        "kv": 77
+      }
+    ],
+    "九州": [
+      {
+        "slug": "kyu-321",
+        "name": "佐世保",
+        "cap": 31,
+        "kv": 66
+      },
+      {
+        "slug": "kyu-382",
+        "name": "新地",
+        "cap": 30,
+        "kv": 66
+      },
+      {
+        "slug": "kyu-114",
+        "name": "神辺",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "kyu-118",
+        "name": "原古賀",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "kyu-182",
+        "name": "寿町",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "kyu-183",
+        "name": "上野",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "kyu-204",
+        "name": "石垣",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "kyu-287",
+        "name": "神野",
+        "cap": 28,
+        "kv": 66
+      }
+    ],
+    "沖縄": [
+      {
+        "slug": "oki-honto-66kv-100001",
+        "name": "東町変電所",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "oki-honto-66kv-110001",
+        "name": "壷川変電所",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "oki-honto-66kv-120001",
+        "name": "松尾変電所",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "oki-honto-66kv-130001",
+        "name": "古波蔵変電所",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "oki-honto-66kv-150001",
+        "name": "上間変電所",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "oki-honto-66kv-180001",
+        "name": "繁多川変電所",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "oki-honto-66kv-190002",
+        "name": "牧志変電所",
+        "cap": 28,
+        "kv": 66
+      },
+      {
+        "slug": "oki-honto-66kv-200001",
+        "name": "久茂地変電所",
+        "cap": 28,
+        "kv": 66
+      }
+    ],
+    "北陸": [
+      {
+        "slug": "rkd-ishikawa-iss0019",
+        "name": "西金沢　77/6kV",
+        "cap": 33,
+        "kv": 77
+      },
+      {
+        "slug": "rkd-ishikawa-iss0028",
+        "name": "昭和町",
+        "cap": 32,
+        "kv": 77
+      },
+      {
+        "slug": "rkd-toyama-tss0037",
+        "name": "城南",
+        "cap": 32,
+        "kv": 66
+      },
+      {
+        "slug": "rkd-toyama-tss0050",
+        "name": "南高岡",
+        "cap": 32,
+        "kv": 66
+      },
+      {
+        "slug": "rkd-fukui-fss0013",
+        "name": "中福井",
+        "cap": 31,
+        "kv": 77
+      },
+      {
+        "slug": "rkd-fukui-fss0015",
+        "name": "春山",
+        "cap": 31,
+        "kv": 77
+      },
+      {
+        "slug": "rkd-fukui-fss0017",
+        "name": "南福井",
+        "cap": 31,
+        "kv": 77
+      },
+      {
+        "slug": "rkd-ishikawa-iss0025",
+        "name": "鞍月　77/6kV",
+        "cap": 31,
+        "kv": 77
+      }
+    ],
+    "東北": [
+      {
+        "slug": "thk-aomori-1b0003",
+        "name": "青森本町",
+        "cap": 32,
+        "kv": 66
+      },
+      {
+        "slug": "thk-miyagi-4601-2",
+        "name": "五ツ橋",
+        "cap": 32,
+        "kv": 66
+      },
+      {
+        "slug": "thk-miyagi-4704",
+        "name": "仙台本町",
+        "cap": 32,
+        "kv": 66
+      },
+      {
+        "slug": "thk-niigata-7705",
+        "name": "沼垂",
+        "cap": 32,
+        "kv": 66
+      },
+      {
+        "slug": "thk-yamagata-5403",
+        "name": "本町通",
+        "cap": 32,
+        "kv": 66
+      },
+      {
+        "slug": "thk-miyagi-4104",
+        "name": "勾当台",
+        "cap": 31,
+        "kv": 66
+      },
+      {
+        "slug": "thk-miyagi-4510",
+        "name": "あすと長町",
+        "cap": 31,
+        "kv": 66
+      },
+      {
+        "slug": "thk-niigata-7c0001",
+        "name": "長岡",
+        "cap": 31,
+        "kv": 66
+      }
+    ],
+    "東京": [
+      {
+        "slug": "tpg-0894",
+        "name": "東海町(2)",
+        "cap": 136,
+        "kv": null
+      },
+      {
+        "slug": "tpg-0828",
+        "name": "神田(1)",
+        "cap": 68,
+        "kv": null
+      },
+      {
+        "slug": "tpg-0830",
+        "name": "上大手町",
+        "cap": 68,
+        "kv": null
+      },
+      {
+        "slug": "tpg-0831",
+        "name": "永代橋中間",
+        "cap": 68,
+        "kv": null
+      },
+      {
+        "slug": "tpg-0833",
+        "name": "南鞘町(1)",
+        "cap": 68,
+        "kv": null
+      },
+      {
+        "slug": "tpg-0838",
+        "name": "北新橋中間",
+        "cap": 68,
+        "kv": null
+      },
+      {
+        "slug": "tpg-0839",
+        "name": "内幸町",
+        "cap": 68,
+        "kv": null
+      },
+      {
+        "slug": "tpg-0849",
+        "name": "高輪中間",
+        "cap": 68,
+        "kv": null
+      }
+    ],
+    "四国": [
+      {
+        "slug": "ydn-kochi-0015",
+        "name": "下知変電所",
+        "cap": 80,
+        "kv": 66
+      },
+      {
+        "slug": "ydn-ehime-0012",
+        "name": "石井変電所",
+        "cap": 76,
+        "kv": 66
+      },
+      {
+        "slug": "ydn-ehime-0023",
+        "name": "衣山変電所",
+        "cap": 76,
+        "kv": 66
+      },
+      {
+        "slug": "ydn-kagawa-0010",
+        "name": "東浜変電所",
+        "cap": 76,
+        "kv": 66
+      },
+      {
+        "slug": "ydn-kagawa-0021",
+        "name": "栗林変電所",
+        "cap": 76,
+        "kv": 66
+      },
+      {
+        "slug": "ydn-kochi-0014",
+        "name": "本町変電所",
+        "cap": 76,
+        "kv": 66
+      },
+      {
+        "slug": "ydn-ehime-0010",
+        "name": "春日変電所",
+        "cap": 66,
+        "kv": 66
+      },
+      {
+        "slug": "ydn-tokushima-0005",
+        "name": "徳島変電所",
+        "cap": 63,
+        "kv": 66
+      }
+    ]
+  },
   "area_dates": {
     "中部": {
       "last_updated": "2026-04-27",
@@ -2656,5 +3158,5 @@
   "max_pref_size_kb": 771,
   "max_pref": "unknown",
   "pref_count": 42,
-  "updated_at": "2026-08-11T03:12:37.042Z"
+  "updated_at": "2026-08-11T09:25:46.218Z"
 }
