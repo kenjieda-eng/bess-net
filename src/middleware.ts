@@ -39,6 +39,8 @@ import type { NextRequest } from 'next/server';
 import legacyAllowlist from '@/data/legacy-news-allowlist.json';
 import { GLOSSARY_301 } from '@/lib/glossary-301';
 import { PROJECTS_301 } from '@/lib/projects-301';
+// Gr10(2026-08-11): 設備区分が都道府県URLになっていた7本を 301（削除はしない）
+import { GRID_PREFECTURE_301 } from '@/lib/grid-prefecture';
 
 const LEGACY = new Set(legacyAllowlist as string[]);
 
@@ -55,6 +57,19 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL(PROJECTS_301[pathname], req.url), { status: 301 });
   }
 
+  // Gr10: /grid/prefecture/{設備区分} → 沖縄県ページ / 関西エリアページ
+  // pathname はエンコード済みで来るためデコードして突合する
+  const decodedPath = (() => {
+    try {
+      return decodeURIComponent(pathname);
+    } catch {
+      return pathname;
+    }
+  })();
+  if (decodedPath in GRID_PREFECTURE_301) {
+    return NextResponse.redirect(new URL(GRID_PREFECTURE_301[decodedPath], req.url), { status: 301 });
+  }
+
   // /news/news-2026-{数字}-{...} パターンのみ対象
   const m = pathname.match(/^\/news\/(news-2026-\d+-.+)$/);
   if (m) {
@@ -68,5 +83,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/news/:slug*', '/glossary/:slug*', '/projects/:slug*'],
+  matcher: ['/news/:slug*', '/glossary/:slug*', '/projects/:slug*', '/grid/prefecture/:slug*'],
 };

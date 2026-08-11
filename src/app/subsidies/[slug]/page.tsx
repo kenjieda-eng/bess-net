@@ -14,6 +14,7 @@ import {
   buildSubsidyTitle,
   buildSubsidyDescription,
   subsidyDisplayName,
+  hasNoSchedule,
   SUBSIDY_POINTER_SLUGS,
   type SubsidyDateFacts,
 } from '@/lib/subsidies-meta';
@@ -85,7 +86,10 @@ export default async function SubsidyDetailPage({
   // 状態は日付から導出する（生 status は drift する・L-EIC-027）
   const today = getTodayJST();
   const facts = factsFor(params.slug, item);
-  const status = deriveSubsidyStatus(facts, today);
+  // Gr10-⑤(2026-08-11): 期日を一切持たないレコード（執行団体の紹介ページ等）は状態バッジを出さない。
+  // 「随時〜事業により異なる」に「公募中」を付けるのは誤り。
+  const noSchedule = hasNoSchedule(item, facts);
+  const status = noSchedule ? '' : deriveSubsidyStatus(facts, today);
   const category = (item.category && item.category[0]) || '';
   // S5: 当サイトは公式サイトではないため、H1 の「◯◯公式サイト」表記を是正する
   const displayName = subsidyDisplayName(params.slug, item.name);
@@ -120,9 +124,11 @@ export default async function SubsidyDetailPage({
           )}
 
           <div className="subsidy-status-badges">
-            <span className={`badge badge-status-${status === '公募中' ? 'open' : status === '予告' ? 'upcoming' : 'closed'}`}>
-              {status}
-            </span>
+            {status && (
+              <span className={`badge badge-status-${status === '公募中' ? 'open' : status === '予告' ? 'upcoming' : 'closed'}`}>
+                {status}
+              </span>
+            )}
             {category && <span className="badge badge-category">{category}</span>}
           </div>
 

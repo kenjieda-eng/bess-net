@@ -23,6 +23,8 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { client, type Substation } from '../src/lib/microcms';
 import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
+// Gr10(2026-08-11): 系統区分・設備区分が prefecture に入っている社があるため正規化する
+import { normalizeSubstationPlace } from '../src/lib/grid-prefecture';
 
 // 出力スキーマ (距離計算 + UI で必要な最小フィールド)
 export interface LiteSubstation {
@@ -32,8 +34,10 @@ export interface LiteSubstation {
   slug: string;
   /** 変電所名 (例: 壱岐) */
   name: string;
-  /** 都道府県 (例: 福岡県) */
+  /** 都道府県 (例: 福岡県)。Gr10: 正規化済み。確定できない場合は null（推測で埋めない） */
   prefecture: string | null;
+  /** Gr10: 原値が都道府県でなかった場合の設備区分（「関西ローカル系」「沖縄本島66kV系・配変」等） */
+  facility_class: string | null;
   /** 送配電事業者 (1 番目を採用) */
   operator: string | null;
   /** エリア (関東/関西/北海道等) */
@@ -84,7 +88,13 @@ async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
         id: s.id,
         slug: s.slug,
         name: s.name,
-        prefecture: s.prefecture ?? null,
+        ...(() => {
+          const place = normalizeSubstationPlace(
+            s.prefecture,
+            Array.isArray(s.area) && s.area.length > 0 ? s.area[0] : null
+          );
+          return { prefecture: place.prefecture, facility_class: place.facilityClass };
+        })(),
         operator: Array.isArray(s.operator) && s.operator.length > 0 ? s.operator[0] : null,
         area: Array.isArray(s.area) && s.area.length > 0 ? s.area[0] : null,
         voltage_primary_kv: typeof s.voltage_primary_kv === 'number' ? s.voltage_primary_kv : null,

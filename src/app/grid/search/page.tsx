@@ -20,6 +20,7 @@ import {
 import { siteConfig } from '@/lib/site-config';
 import { formatDataDateLabel } from '@/lib/grid-data-date';
 import { subsidyCountForPref } from '@/lib/grid-meta';
+import { rescueAreaParam } from '@/lib/grid-prefecture';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 
 // Gr8(2026-08-09): 検索結果からの導線に使う県別件数（precompute・runtime fetch 0）
@@ -45,9 +46,12 @@ type SearchPageProps = {
   searchParams: SubstationSearchFilters;
 };
 
+// Gr10(2026-08-11): 東京が選択肢から抜けており、東京エリア1,718件を絞り込めなかった
+// （エリアページからの ?area=東京 も選択肢外扱いになってしまう）。実データの area 値に合わせる。
 const AREAS = [
   '北海道',
   '東北',
+  '東京',
   '中部',
   '北陸',
   '関西',
@@ -60,6 +64,7 @@ const AREAS = [
 const OPERATORS = [
   '北海道電力ネットワーク',
   '東北電力ネットワーク',
+  '東京電力パワーグリッド',
   '中部電力パワーグリッド',
   '北陸電力送配電',
   '関西電力送配電',
@@ -97,14 +102,61 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     }
     return undefined;
   };
+  // Gr10(2026-08-11): 不正値を黙って0件にしない。
+  //  - 選択肢型（area/operator/n1）に選択肢外 → その旨と有効な選択肢を出し、条件から外す
+  //  - 数値型に数値以外 → その条件を無視して検索し、その旨を添える
+  //  - 実際に起こる検索（大阪府・沖縄県）は救済してエリアに寄せる
+  const notices: string[] = [];
+  const rawArea = pick('area');
+  let areaValue: string | undefined;
+  if (rawArea) {
+    const rescue = rescueAreaParam(rawArea);
+    if (rescue) {
+      areaValue = rescue.area;
+      notices.push(rescue.note);
+    } else if (AREAS.includes(rawArea)) {
+      areaValue = rawArea;
+    } else {
+      notices.push(
+        `指定された値「${rawArea}」はエリアの選択肢にありません。指定できるのは ${AREAS.join('・')} です。この条件は外して検索しました。`
+      );
+    }
+  }
+
+  const rawOperator = pick('operator');
+  let operatorValue: string | undefined;
+  if (rawOperator) {
+    if (OPERATORS.includes(rawOperator)) {
+      operatorValue = rawOperator;
+    } else {
+      notices.push(
+        `指定された値「${rawOperator}」は送配電事業者の選択肢にありません。正式名称（例: ${OPERATORS[0]}）で指定してください。この条件は外して検索しました。`
+      );
+    }
+  }
+
+  const rawN1 = pick('n1_eligible', 'n1');
+  let n1Value: string | undefined;
+  if (rawN1) {
+    if (rawN1 === 'true') n1Value = 'true';
+    else notices.push(`N-1電制の指定は true のみ有効です（「${rawN1}」は無視しました）。`);
+  }
+
+  const numeric = (raw: string | undefined, label: string): string | undefined => {
+    if (!raw) return undefined;
+    if (Number.isFinite(Number(raw))) return raw;
+    notices.push(`「${raw}」は数値で指定してください（${label}）。この条件は無視して検索しました。`);
+    return undefined;
+  };
+
   const filters: SubstationSearchFilters = {
     q: pick('q'),
-    area: pick('area'),
-    voltage_min: pick('voltage_min', 'voltage'),
-    cap_avail_min: pick('cap_avail_min', 'cap_min', 'cap_preset'),
-    cap_avail_max: pick('cap_avail_max', 'cap_max'),
-    n1_eligible: pick('n1_eligible', 'n1'),
-    operator: pick('operator'),
+    area: areaValue,
+    voltage_min: numeric(pick('voltage_min', 'voltage'), '電圧'),
+    cap_avail_min: numeric(pick('cap_avail_min', 'cap_min', 'cap_preset'), '空容量の下限'),
+    cap_avail_max: numeric(pick('cap_avail_max', 'cap_max'), '空容量の上限'),
+    n1_eligible: n1Value,
+    operator: operatorValue,
   };
 
   const hasAnyFilter =
@@ -330,6 +382,18 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </div>
           </form>
 
+          {/* Gr10: 指定値についての注意（取得失敗の表示とは別メッセージ） */}
+          {notices.length > 0 && (
+            <div
+              className="grid-source-note"
+              style={{ background: '#FFF8E1', border: '1px solid #f0d58c', borderRadius: 8, padding: '10px 14px', margin: '0 0 16px' }}
+            >
+              {notices.map((n) => (
+                <p key={n} style={{ margin: '4px 0' }}>{n}</p>
+              ))}
+            </div>
+          )}
+
           {hasAnyFilter && (
             <section className="grid-section">
               <h2 className="grid-section-h2">
@@ -356,6 +420,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                           {' ／ '}
                           {r.area}エリア
                           {r.prefecture && ` ／ ${r.prefecture}`}
+                          {/* Gr10(2026-08-11): 系統区分・設備区分は都道府県として表示しない */}
+                          {!r.prefecture && r.facility_class && ` ／ 設備区分: ${r.facility_class}`}
                           {r.voltage_primary_kv != null &&
                             ` ／ ${r.voltage_primary_kv}kV`}
                           {r.cap_avail_mw != null &&

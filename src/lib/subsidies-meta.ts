@@ -118,6 +118,29 @@ export function splitFiscalPrefix(name: string): { core: string; fiscal: string 
   return { core: String(name).slice(m[0].length).trim(), fiscal: m[1] };
 }
 
+/**
+ * 期日を一切持たない「随時／事業により異なる」型のレコードか。
+ * 例: /subsidies/nev-portal は執行団体の紹介ページで自前の公募を持たず、
+ *     公募期間「随時 〜 事業により異なる」・補助率/上限とも「事業により異なる」。
+ *     ここに「公募中」を出すのは誤り（Gr10-⑤・2026-08-11）。
+ * ※ /subsidies/meti-cev-r7h は「2025年3月31日〜予算枠到達まで」と期日があるため対象外。
+ */
+const NO_SCHEDULE_RE = /^(随時|事業により異なる|未定|—|-|通年)$/;
+
+export function hasNoSchedule(item: {
+  applicationStart?: string;
+  deadline?: string;
+}, facts: SubstationLikeFacts): boolean {
+  const start = (item.applicationStart ?? '').trim();
+  const end = (item.deadline ?? '').trim();
+  const startVague = !start || NO_SCHEDULE_RE.test(start);
+  const endVague = !end || NO_SCHEDULE_RE.test(end);
+  return startVague && endVague && !facts.deadline_iso && !facts.start_iso;
+}
+
+/** hasNoSchedule が参照する最小の型 */
+type SubstationLikeFacts = Pick<SubsidyDateFacts, 'deadline_iso' | 'start_iso'>;
+
 /** 状態ラベル（title に載せる短い形）。載せない場合は空文字。 */
 export function statusLabel(item: SubsidyDateFacts, todayISO: string): string {
   const st = deriveSubsidyStatus(item, todayISO);

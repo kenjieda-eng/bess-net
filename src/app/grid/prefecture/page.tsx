@@ -6,6 +6,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getPrefectureCountMap } from '@/lib/microcms';
+import { KANSAI_PREFECTURES } from '@/lib/grid-prefecture';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 3600;
@@ -66,6 +67,14 @@ export default async function PrefectureIndexPage() {
           <p className="page-lead">
             データのある {sorted.length} 都道府県・合計 {total.toLocaleString()}{' '}
             変電所を一覧表示。各都道府県をクリックすると該当変電所の一覧へ遷移します。
+          </p>
+
+          {/* Gr10(2026-08-11): 掲載が無い府県について、無いことを黙らずに理由を書く。
+              関西電力送配電の公表データには変電所の府県の記載がないため個別ページを作れない。*/}
+          <p className="grid-source-note" style={{ margin: '-8px 0 16px' }}>
+            {Array.from(KANSAI_PREFECTURES).join('・')}
+            は、関西電力送配電の公表データに変電所の府県の記載がないため個別ページがありません。{' '}
+            <Link href="/grid/kansai">関西エリアの一覧（変電所1,624件）へ</Link>
           </p>
 
           <section className="grid-section">

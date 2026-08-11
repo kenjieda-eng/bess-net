@@ -1,6 +1,7 @@
 // AreaPage.tsx - エリア別系統空き容量ページ (server component)
 // /grid/tohoku, /grid/hokuriku, /grid/shikoku から呼び出される
 import Link from 'next/link';
+import { KANSAI_NO_PREFECTURE_NOTE, normalizeSubstationPlace } from '@/lib/grid-prefecture';
 import { formatDataDateLabel } from '@/lib/grid-data-date';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -53,16 +54,45 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
   const availAvg = positive.length > 0 ? availSum / positive.length : 0;
 
   // ===== 都道府県別 =====
+  // Gr10(2026-08-11): 原値に系統区分・設備区分が入っている社があるため正規化して数える。
+  // 都道府県として確定できないものは「（府県の記載なし）」に集約し、
+  // 設備区分は下の「設備区分別」表に出す（都道府県として表示しない）。
   const byPref = new Map<string, Substation[]>();
+  const byFacility = new Map<string, Substation[]>();
   for (const s of subs) {
-    const p = s.prefecture || '（基幹系）';
+    const place = normalizeSubstationPlace(
+      s.prefecture,
+      Array.isArray(s.area) ? s.area[0] : (s.area as unknown as string | undefined)
+    );
+    const p = place.prefecture || '（府県の記載なし）';
     if (!byPref.has(p)) byPref.set(p, []);
     byPref.get(p)!.push(s);
+    if (place.facilityClass) {
+      if (!byFacility.has(place.facilityClass)) byFacility.set(place.facilityClass, []);
+      byFacility.get(place.facilityClass)!.push(s);
+    }
   }
   const prefRows = Array.from(byPref.entries())
     .map(([p, list]) => {
       const pos = list.filter(
         (s) => typeof s.cap_avail_mw === 'number' && s.cap_avail_mw > 0
+      );
+      const top3 = [...list]
+        .sort(
+          (a, b) =>
+            ((b.cap_avail_mw as number) || -Infinity) -
+            ((a.cap_avail_mw as number) || -Infinity)
+        )
+        .slice(0, 3);
+      return { p, count: list.length, posCount: pos.length, top3 };
+    })
+    .sort((a, b) => b.count - a.count);
+
+  // Gr10: 設備区分別（原値を捨てず、正しい見出しで残す）
+  const facilityRows = Array.from(byFacility.entries())
+    .map(([p, list]) => {
+      const pos = list.filter(
+        (x) => typeof x.cap_avail_mw === 'number' && x.cap_avail_mw > 0
       );
       const top3 = [...list]
         .sort(
@@ -210,6 +240,14 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
               </li>
             </ul>
           </section>
+
+          {/* Gr10(2026-08-11): 関西は公表データに府県の記載がないため府県ページを作れない。
+              「無い」ことを黙って隠さず、理由と代替手段を書く。*/}
+          {meta.slug === 'kansai' && (
+            <p className="grid-source-note" style={{ margin: '4px 0 16px' }}>
+              📋 {KANSAI_NO_PREFECTURE_NOTE}
+            </p>
+          )}
 
           {/* 東京エリア: 収録済（表データ）。公開停止・再開の経緯は記録ページへ（404を作らない・経緯保持）*/}
           {meta.slug === 'tokyo' && (

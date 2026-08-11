@@ -7,6 +7,9 @@ import { GLOSSARY_301_SOURCE_SLUGS } from './glossary-301';
 import { isExcludedNews } from './news-excluded';
 import { isTopicExcludedNews } from './news-topic-gate';
 import relatedNewsMap from './generated/related-news-map.json';
+// Gr10(2026-08-11): 系統区分・設備区分が「都道府県」として入っている社があるため、
+// 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
+import { normalizeSubstationPlace, isRealPrefecture } from './grid-prefecture';
 
 /** build 時事前計算した関連newsマップ（"pref:<base>" / "project:<slug>" → newsRef[]）。runtime q を排除（鉄則#98） */
 const RELATED_NEWS_MAP = relatedNewsMap as Record<
@@ -1607,7 +1610,10 @@ export type SubstationSearchResult = {
   name: string;
   operator: string;
   area: string;
+  /** Gr10(2026-08-11): 都道府県。確定できない場合は null（推測で埋めない） */
   prefecture: string | null;
+  /** Gr10: 原値が都道府県でなかった場合の設備区分（「関西ローカル系」「沖縄本島66kV系・配変」等） */
+  facility_class?: string | null;
   voltage_primary_kv: number | null;
   cap_avail_mw: number | null;
   n1_capacity_mw?: number | null; // v25: N-1電制可 のときの容量表示用
@@ -1662,7 +1668,13 @@ export const searchSubstationsByName = async (
           name: c.name,
           operator: Array.isArray(c.operator) ? c.operator[0] ?? '' : c.operator ?? '',
           area: Array.isArray(c.area) ? c.area[0] ?? '' : c.area ?? '',
-          prefecture: c.prefecture ?? null,
+          ...(() => {
+            const place = normalizeSubstationPlace(
+              c.prefecture,
+              Array.isArray(c.area) ? c.area[0] : c.area
+            );
+            return { prefecture: place.prefecture, facility_class: place.facilityClass };
+          })(),
           voltage_primary_kv:
             typeof c.voltage_primary_kv === 'number' ? c.voltage_primary_kv : null,
           cap_avail_mw:
@@ -1798,7 +1810,13 @@ export const searchSubstationsByFilters = async (
           name: c.name,
           operator: Array.isArray(c.operator) ? c.operator[0] ?? '' : c.operator ?? '',
           area: Array.isArray(c.area) ? c.area[0] ?? '' : c.area ?? '',
-          prefecture: c.prefecture ?? null,
+          ...(() => {
+            const place = normalizeSubstationPlace(
+              c.prefecture,
+              Array.isArray(c.area) ? c.area[0] : c.area
+            );
+            return { prefecture: place.prefecture, facility_class: place.facilityClass };
+          })(),
           voltage_primary_kv:
             typeof c.voltage_primary_kv === 'number' ? c.voltage_primary_kv : null,
           cap_avail_mw:
@@ -1864,8 +1882,14 @@ export const getAvailablePrefectures = async (): Promise<string[]> => {
   const inv = await fetchSubstationInventory();
   const set = new Set<string>();
   for (const r of inv) {
-    const p = (r.prefecture || '').trim();
-    if (p) set.add(p);
+    // Gr10: 設備区分（関西ローカル系・沖縄本島66kV系 等）は都道府県として扱わない
+    const place = normalizeSubstationPlace(
+      r.prefecture,
+      Array.isArray((r as { area?: string[] | string }).area)
+        ? ((r as { area?: string[] }).area as string[])[0]
+        : ((r as { area?: string }).area as string | undefined)
+    );
+    if (place.prefecture) set.add(place.prefecture);
   }
   return Array.from(set).sort();
 };
@@ -1875,9 +1899,14 @@ export const getPrefectureCountMap = async (): Promise<Record<string, number>> =
   const inv = await fetchSubstationInventory();
   const result: Record<string, number> = {};
   for (const r of inv) {
-    const p = (r.prefecture || '').trim();
-    if (!p) continue;
-    result[p] = (result[p] || 0) + 1;
+    const place = normalizeSubstationPlace(
+      r.prefecture,
+      Array.isArray((r as { area?: string[] | string }).area)
+        ? ((r as { area?: string[] }).area as string[])[0]
+        : ((r as { area?: string }).area as string | undefined)
+    );
+    if (!place.prefecture) continue;
+    result[place.prefecture] = (result[place.prefecture] || 0) + 1;
   }
   return result;
 };
@@ -2107,6 +2136,12 @@ export const getSubstationsByPrefecture = async (
   prefecture: string
 ): Promise<SubstationSearchResult[]> => {
   if (!prefecture) return [];
+  // Gr10: microCMS 側に「沖縄県」という値は存在せず、6つの設備区分に分かれている。
+  // 供給区域が沖縄県のみである定義に基づき、エリアで引き当てる（microCMS は書き換えない）。
+  const filterExpr =
+    prefecture === '沖縄県'
+      ? `area[contains]沖縄`
+      : `prefecture[equals]${prefecture}`;
   const all: SubstationSearchResult[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
@@ -2116,7 +2151,7 @@ export const getSubstationsByPrefecture = async (
         queries: {
           limit,
           offset,
-          filters: `prefecture[equals]${prefecture}`,
+          filters: filterExpr,
           fields: SEARCH_FILTER_FIELDS,
           orders: '-cap_avail_mw',
         },
@@ -2127,7 +2162,13 @@ export const getSubstationsByPrefecture = async (
           name: c.name,
           operator: Array.isArray(c.operator) ? c.operator[0] ?? '' : c.operator ?? '',
           area: Array.isArray(c.area) ? c.area[0] ?? '' : c.area ?? '',
-          prefecture: c.prefecture ?? null,
+          ...(() => {
+            const place = normalizeSubstationPlace(
+              c.prefecture,
+              Array.isArray(c.area) ? c.area[0] : c.area
+            );
+            return { prefecture: place.prefecture, facility_class: place.facilityClass };
+          })(),
           voltage_primary_kv:
             typeof c.voltage_primary_kv === 'number' ? c.voltage_primary_kv : null,
           cap_avail_mw:
