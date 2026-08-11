@@ -72,6 +72,14 @@ export default async function OperatorListPage() {
             </p>
           )}
 
+          {/* Op4①②(2026-08-12): カテゴリ別一覧への導線 */}
+          <p style={{ fontSize: 15, margin: '0 0 20px' }}>
+            カテゴリ別一覧:{' '}
+            <Link href="/operators/makers">系統用蓄電池メーカー一覧</Link>
+            {' ・ '}
+            <Link href="/operators/aggregators">蓄電池アグリゲーター一覧</Link>
+          </p>
+
           {items.length === 0 ? (
             <div className="empty-state">
               <p>事業者情報はまだ準備中です。</p>

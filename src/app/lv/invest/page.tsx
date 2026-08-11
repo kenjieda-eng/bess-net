@@ -20,12 +20,12 @@ const CONTACT_URL =
 
 export const metadata: Metadata = {
   // layout titleTemplate が「 | 蓄電所ネット」を自動付与（#88 二重回避）
-  title: '投資家のための低圧蓄電所ガイド（低圧系統用蓄電池の購入・投資）',
+  title: '低圧系統用蓄電池の投資ガイド ── 購入・分譲・利回りの確認点',
   description:
     '低圧系統用蓄電池（低圧蓄電所）への投資を検討する方向けの中立ガイド。買う前の疑問・営業資料の読み方から、購入後の運用、将来の売却まで。無料相談・登録不要の資料も。',
   alternates: { canonical: '/lv/invest' },
   openGraph: {
-    title: '投資家のための低圧蓄電所ガイド（低圧系統用蓄電池の購入・投資）',
+    title: '低圧系統用蓄電池の投資ガイド ── 購入・分譲・利回りの確認点',
     description:
       '低圧系統用蓄電池（低圧蓄電所）への投資を検討する方向けの中立ガイド。買う前の疑問から購入後の運用、将来の売却まで。',
     type: 'website',
@@ -135,7 +135,7 @@ export default async function LvInvestHubPage() {
             <Link href="/">ホーム</Link> / <Link href="/lv">低圧蓄電所</Link> / 投資家のためのガイド
           </p>
           <div className="section-label">LV INVEST — 投資家のための低圧蓄電所ガイド</div>
-          <h1 className="section-title">投資家のための低圧蓄電所ガイド</h1>
+          <h1 className="section-title">低圧系統用蓄電池の投資ガイド</h1>
           <p style={{ fontSize: 16, color: 'var(--color-muted)', marginTop: 4, marginBottom: 20, lineHeight: 1.7 }}>
             低圧系統用蓄電池を検討する方へ — 買う前の疑問から、購入後の運用、将来の売却まで
           </p>

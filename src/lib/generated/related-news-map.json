@@ -1,4 +1,655 @@
 {
+  "project:starseeds-wakayama-inokuchi": [
+    {
+      "id": "tfow9e226q",
+      "slug": "pr-2025-09-11-co88876-41",
+      "title": "スターシーズ株式会社、独自の高圧系統用オールインワン型蓄電池システムの構築及び受注",
+      "publishedAt": "2025-09-11T11:39:32.000Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "hc8vz48v5",
+      "slug": "pr-2025-09-02-co88876-34",
+      "title": "スターシーズ株式会社、Long Corridor Asset Management Limitedの一任運用ファンドから資金調達を実施",
+      "publishedAt": "2025-09-02T08:24:37.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "m_be8c4r6",
+      "slug": "pr-2025-08-05-co88876-33",
+      "title": "スターシーズ株式会社、系統用蓄電所の接続権２件取得　和歌山で設置工事を開始",
+      "publishedAt": "2025-08-05T10:32:37.000Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "dog_ueat3_1",
+      "slug": "pr-2025-07-17-re100-22",
+      "title": "スターシーズ株式会社とＲＥ１００電力株式会社系統用蓄電所アグリゲーションにおける業務提携について",
+      "publishedAt": "2025-07-17T07:00:02.000Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "floxqbvg35",
+      "slug": "pr-2025-07-10-co113700-26",
+      "title": "スターシーズ株式会社と日本エネルギー総合システム株式会社　系統用蓄電所開発における業務提携について",
+      "publishedAt": "2025-07-10T07:00:01.000Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "hnxruj3dz",
+      "slug": "pr-2025-06-03-co88876-30",
+      "title": "スターシーズ株式会社、系統用蓄電池事業へ本格参入",
+      "publishedAt": "2025-06-03T07:05:06.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:nextes-izunokuni": [
+    {
+      "id": "lrn-qkosr",
+      "slug": "pr-2026-04-01-nextes-9",
+      "title": "NEXTES、世界有数のスマートバッテリー企業AESCと1.5GWhの蓄電池セル戦略的調達契約を締結",
+      "publishedAt": "2026-04-01T01:00:04.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "6j8r1trdiqbb",
+      "slug": "pr-2026-03-10-nextes-7",
+      "title": "再エネ急拡大で「蓄電」時代へ。系統用蓄電のNExT-e Solutions、「NEXTES」に社名変更。",
+      "publishedAt": "2026-03-10T01:00:02.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-ise-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-yame-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-kamimashiki-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-otawara-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-nishimorokata-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-tamana-gun-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-kuma-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-katta-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-kakogawa-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:mikimori-hachioji-bess": [
+    {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "6lve0f6ty3",
+      "slug": "mikimori-hd-bess-500sites",
+      "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
+      "publishedAt": "2026-05-23T06:45:18.523Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "1inxmnn_l",
+      "slug": "pr-2026-02-12-co99599-27",
+      "title": "株式会社三木森、みずほ銀行を単独アレンジャーとして極度45億円の仕入資金枠を契約締結",
+      "publishedAt": "2026-02-12T04:00:01.000Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
+      "id": "y9i_bby3m",
+      "slug": "pr-2025-07-18-co99599-24",
+      "title": "株式会社三木森、系統用蓄電所開発事業への本格参入を発表",
+      "publishedAt": "2025-07-18T05:48:49.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:hexa-fukushima-tokyogas-offtake": [
+    {
+      "id": "oyek9x7j3b",
+      "slug": "hexa-tokyo-gas-fukushima-bess-offtake-49mw-2026-07",
+      "title": "ヘキサ・エネルギーサービス、福島県の系統用蓄電池（49.7MW／202.1MWh）で東京ガスと20年の長期オフテイク契約 ─ 2029年度商用運転予定",
+      "publishedAt": "2026-08-02T11:23:34.070Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "635x-uhsn",
+      "slug": "hexa-ltdca-2025-chugoku-tohoku",
+      "title": "ヘキサ・エネルギーサービス、2025年度長期脱炭素電源オークションで系統用蓄電池2案件（合計90.47MW）を落札",
+      "publishedAt": "2026-05-23T06:45:09.056Z",
+      "category": [
+        "オークション"
+      ]
+    },
+    {
+      "id": "1a1f6udp2sq",
+      "slug": "pr-2026-05-08-auroraenergyresearch-4",
+      "title": "オーロラ・エナジー・リサーチ、ヘキサ・エネルギーサービスによる国内系統用蓄電所4件（計148MW）の経済性分析を支援",
+      "publishedAt": "2026-05-08T06:00:01.000Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "utdqu357x",
+      "slug": "pr-2025-07-29-co55631-148",
+      "title": "しろくま電力はヘキサ・エネルギーサービスと、全国10カ所の系統用蓄電所を開発中。第一号案件は25年秋に運転開始予定",
+      "publishedAt": "2025-07-29T05:00:02.000Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "5xxp8d-c6u",
+      "slug": "pr-2025-03-10-co109041-142",
+      "title": "ヘキサ・エネルギーサービスと系統蓄電所開発で業務提携",
+      "publishedAt": "2025-03-10T02:00:03.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:nc-nagahama-mikawacho": [
+    {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "kqayappwr",
+      "slug": "nippon-chikudenchi-takayama-kuguno",
+      "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
+      "publishedAt": "2026-05-23T06:45:11.689Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "chx1zpg1bt",
+      "slug": "nippon-chikudenchi-shirakawa",
+      "title": "日本蓄電池、福島県白河市「NC白河市表郷番沢蓄電所」が受電開始",
+      "publishedAt": "2026-05-23T06:45:10.187Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "k-_pactewp",
+      "slug": "nippon-chikudenchi-tottori-ketaka",
+      "title": "日本蓄電池、鳥取市「NC鳥取市気高町蓄電所」が需給調整市場での運用を開始",
+      "publishedAt": "2026-05-23T06:45:03.681Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "news-2026-1-jbra",
+      "slug": "news-2026-1-jbra",
+      "title": "一般社団法人 日本蓄電池リサイクル協会、蓄電池業界の発展に向けた活動を強化",
+      "publishedAt": "2026-01-15T01:00:00.000Z",
+      "category": [
+        "制度"
+      ]
+    },
+    {
+      "id": "ls5atlnqn",
+      "slug": "pr-2026-04-23-co161802-59",
+      "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
+      "publishedAt": "2026-04-23T01:00:02.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:nc-kama-kuchiharu": [
+    {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "kqayappwr",
+      "slug": "nippon-chikudenchi-takayama-kuguno",
+      "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
+      "publishedAt": "2026-05-23T06:45:11.689Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "chx1zpg1bt",
+      "slug": "nippon-chikudenchi-shirakawa",
+      "title": "日本蓄電池、福島県白河市「NC白河市表郷番沢蓄電所」が受電開始",
+      "publishedAt": "2026-05-23T06:45:10.187Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "k-_pactewp",
+      "slug": "nippon-chikudenchi-tottori-ketaka",
+      "title": "日本蓄電池、鳥取市「NC鳥取市気高町蓄電所」が需給調整市場での運用を開始",
+      "publishedAt": "2026-05-23T06:45:03.681Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "news-2026-1-jbra",
+      "slug": "news-2026-1-jbra",
+      "title": "一般社団法人 日本蓄電池リサイクル協会、蓄電池業界の発展に向けた活動を強化",
+      "publishedAt": "2026-01-15T01:00:00.000Z",
+      "category": [
+        "制度"
+      ]
+    },
+    {
+      "id": "ls5atlnqn",
+      "slug": "pr-2026-04-23-co161802-59",
+      "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
+      "publishedAt": "2026-04-23T01:00:02.000Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
   "project:oyama-au-bess": [
     {
       "id": "6vi18o_2gw",
@@ -11,15 +662,6 @@
     }
   ],
   "project:tsu-tohogas-bess": [
-    {
-      "id": "m-gs5yxv4",
-      "slug": "pr-2024-12-17-co152409-3",
-      "title": "東邦ガス株式会社とのNon-FIT太陽光発電所の電力売買契約の締結に関するお知らせ",
-      "publishedAt": "2024-12-17T07:20:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
     {
       "id": "f-xu4t-3eq",
       "slug": "pr-2024-03-11-co765-98",
@@ -124,17 +766,6 @@
       "publishedAt": "2023-08-08T01:00:03.000Z",
       "category": [
         "連系"
-      ]
-    }
-  ],
-  "project:sagamihara-tokyu-bess": [
-    {
-      "id": "8sugfp04pri",
-      "slug": "pr-2025-07-28-co165825-1",
-      "title": "第７回 東急グループ 環境・社会貢献賞表彰を実施",
-      "publishedAt": "2025-07-28T05:00:14.000Z",
-      "category": [
-        "開発計画"
       ]
     }
   ],
@@ -276,6 +907,33 @@
   ],
   "project:nc-shirakawa-omotegou": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -316,33 +974,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -350,6 +981,33 @@
   ],
   "project:nc-shunan-yuno": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -390,33 +1048,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -657,15 +1288,6 @@
       ]
     },
     {
-      "id": "o7zfx-3ee8",
-      "slug": "pr-2024-03-07-co55631-111",
-      "title": "NECキャピタルソリューションとafterFITは、ヨロズ大分に1.2MWのソーラーカーポートと野立て太陽光発電設備を設置し電力供給を開始",
-      "publishedAt": "2024-03-07T07:45:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
       "id": "imqbmjebjn",
       "slug": "pr-2024-01-11-co55631-110",
       "title": "afterFIT、双日、ミライト・ワンが磯子カンツリークラブに先進的なグリーンソリューションを提供　蓄電池・EV充電スタンド併設型ソーラーカーポートを導入",
@@ -699,6 +1321,15 @@
       "publishedAt": "2023-04-27T02:00:02.000Z",
       "category": [
         "制度"
+      ]
+    },
+    {
+      "id": "wrnm7mqe297",
+      "slug": "pr-2026-04-08-co8483-237",
+      "title": "【PV EXPO 2026 出展レポート】トリナ・ソーラー、最新の太陽光発電モジュール・系統用蓄電システムを公開",
+      "publishedAt": "2026-04-08T02:00:01.000Z",
+      "category": [
+        "連系"
       ]
     }
   ],
@@ -753,6 +1384,15 @@
   ],
   "project:pr-co13775-bess-3": [
     {
+      "id": "r7leuh4ptq",
+      "slug": "ecokaku-technologies-bess-4sites-keiren-2026-07",
+      "title": "エコ革（テクノロジーズ子会社）、系統用蓄電池事業で初の系統連系が完了 ─ 4施設・合計7,956kW／32,638kWh",
+      "publishedAt": "2026-08-02T11:23:25.422Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "cjqxb6y55",
       "slug": "pr-2026-04-23-co109041-239",
       "title": "デル・テクノロジーズ主催セミナーに当社代表の伊藤が登壇",
@@ -813,20 +1453,20 @@
       "publishedAt": "2025-04-01T06:30:01.000Z",
       "category": [
         "投資"
-      ]
-    },
-    {
-      "id": "y4m7d3sqq",
-      "slug": "pr-2026-03-14-co13775-27",
-      "title": "低圧系統用蓄電池が事業化、2026年度の需給調整市場に対応！約6坪から始まる新事業",
-      "publishedAt": "2026-03-14T13:25:09.000Z",
-      "category": [
-        "制度"
       ]
     }
   ],
   "project:pr-co13775-bess-2": [
     {
+      "id": "r7leuh4ptq",
+      "slug": "ecokaku-technologies-bess-4sites-keiren-2026-07",
+      "title": "エコ革（テクノロジーズ子会社）、系統用蓄電池事業で初の系統連系が完了 ─ 4施設・合計7,956kW／32,638kWh",
+      "publishedAt": "2026-08-02T11:23:25.422Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "cjqxb6y55",
       "slug": "pr-2026-04-23-co109041-239",
       "title": "デル・テクノロジーズ主催セミナーに当社代表の伊藤が登壇",
@@ -887,15 +1527,6 @@
       "publishedAt": "2025-04-01T06:30:01.000Z",
       "category": [
         "投資"
-      ]
-    },
-    {
-      "id": "y4m7d3sqq",
-      "slug": "pr-2026-03-14-co13775-27",
-      "title": "低圧系統用蓄電池が事業化、2026年度の需給調整市場に対応！約6坪から始まる新事業",
-      "publishedAt": "2026-03-14T13:25:09.000Z",
-      "category": [
-        "制度"
       ]
     }
   ],
@@ -939,6 +1570,15 @@
   ],
   "project:pr-eprx-2026-bess-bess": [
     {
+      "id": "r7leuh4ptq",
+      "slug": "ecokaku-technologies-bess-4sites-keiren-2026-07",
+      "title": "エコ革（テクノロジーズ子会社）、系統用蓄電池事業で初の系統連系が完了 ─ 4施設・合計7,956kW／32,638kWh",
+      "publishedAt": "2026-08-02T11:23:25.422Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "cjqxb6y55",
       "slug": "pr-2026-04-23-co109041-239",
       "title": "デル・テクノロジーズ主催セミナーに当社代表の伊藤が登壇",
@@ -1000,15 +1640,6 @@
       "category": [
         "投資"
       ]
-    },
-    {
-      "id": "y4m7d3sqq",
-      "slug": "pr-2026-03-14-co13775-27",
-      "title": "低圧系統用蓄電池が事業化、2026年度の需給調整市場に対応！約6坪から始まる新事業",
-      "publishedAt": "2026-03-14T13:25:09.000Z",
-      "category": [
-        "制度"
-      ]
     }
   ],
   "project:pr-co16325-bess": [
@@ -1037,15 +1668,6 @@
       "publishedAt": "2024-11-29T00:30:01.000Z",
       "category": [
         "市場統計"
-      ]
-    },
-    {
-      "id": "o7zfx-3ee8",
-      "slug": "pr-2024-03-07-co55631-111",
-      "title": "NECキャピタルソリューションとafterFITは、ヨロズ大分に1.2MWのソーラーカーポートと野立て太陽光発電設備を設置し電力供給を開始",
-      "publishedAt": "2024-03-07T07:45:01.000Z",
-      "category": [
-        "制度"
       ]
     },
     {
@@ -1083,6 +1705,15 @@
       "category": [
         "制度"
       ]
+    },
+    {
+      "id": "wrnm7mqe297",
+      "slug": "pr-2026-04-08-co8483-237",
+      "title": "【PV EXPO 2026 出展レポート】トリナ・ソーラー、最新の太陽光発電モジュール・系統用蓄電システムを公開",
+      "publishedAt": "2026-04-08T02:00:01.000Z",
+      "category": [
+        "連系"
+      ]
     }
   ],
   "project:pr-co55631-hokkaido": [
@@ -1111,15 +1742,6 @@
       "publishedAt": "2025-12-23T05:00:13.000Z",
       "category": [
         "投資"
-      ]
-    },
-    {
-      "id": "r-odm7xxtw",
-      "slug": "pr-2025-12-09-co55631-157",
-      "title": "山口県企業局としろくま電力が連携！令和8年度からの「やまぐちぶちエコでんき」の募集を開始！",
-      "publishedAt": "2025-12-09T01:03:32.000Z",
-      "category": [
-        "地域自治体"
       ]
     },
     {
@@ -1157,52 +1779,14 @@
       "category": [
         "連系"
       ]
-    }
-  ],
-  "project:pr-looop-saitama": [
-    {
-      "id": "z1kbmsgx5f",
-      "slug": "pr-2025-06-27-looop-142",
-      "title": "一戸建て実験施設「Looop Green Lab.」完成",
-      "publishedAt": "2025-06-27T02:00:02.000Z",
-      "category": [
-        "開発計画"
-      ]
     },
     {
-      "id": "k1y8cobnj",
-      "slug": "pr-2026-01-08-looop-162",
-      "title": "Looopでんき、「引越し祝い割」を開始",
-      "publishedAt": "2026-01-08T03:00:02.000Z",
+      "id": "ll4pldgv3g",
+      "slug": "pr-2025-04-02-co55631-139",
+      "title": "しろくま電力は、導入コスト0円のソーラーカーポートほか、製造業の電気代削減に特化した脱炭素ソリューションを「第10回ものづくりワールド名古屋」で紹介",
+      "publishedAt": "2025-04-02T05:00:02.000Z",
       "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "gl6-cdvyprv",
-      "slug": "pr-2025-09-10-looop-152",
-      "title": "【経営エンターテイメント番組「REAL VALUE（リアルバリュー）」でも話題】「Looopでんき」の公式モバイルアプリ、累計30万ダウンロードを突破！",
-      "publishedAt": "2025-09-10T10:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "032sn26pg",
-      "slug": "pr-2025-09-02-looop-151",
-      "title": "Looopでんき、お客さまの声を活かし”自動割引適用”される「おまもりチケット」提供開始",
-      "publishedAt": "2025-09-02T02:00:03.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "84jzhyp5p40a",
-      "slug": "pr-2025-01-30-looop-129",
-      "title": "～再生可能エネルギーの普及を目指して～「Looopでんき」料金プランをリニューアル",
-      "publishedAt": "2025-01-30T03:00:03.000Z",
-      "category": [
-        "制度"
+        "技術"
       ]
     }
   ],
@@ -1237,6 +1821,15 @@
   ],
   "project:pr-co173175-saitama-5mwh-2": [
     {
+      "id": "xjdl73o7z",
+      "slug": "jesdi-hachigata-bess-juden-2026-07",
+      "title": "日本蓄電開発機構、埼玉県寄居町「鉢形蓄電所」が受電開始 ─ 上奈良・七本木に続く県内3拠点目の系統用蓄電所",
+      "publishedAt": "2026-08-02T11:23:26.420Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "g90bhoyk3qko",
       "slug": "pr-2025-11-18-co173175-1",
       "title": "日本蓄電開発機構、滋賀県で4MWh規模の系統用蓄電池プロジェクトが受電完了",
@@ -1247,6 +1840,33 @@
     }
   ],
   "project:pr-co161802-bess-4": [
+    {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
@@ -1288,33 +1908,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -1433,24 +2026,6 @@
       "publishedAt": "2026-04-23T05:10:01.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "1gzu_w60rtyu",
-      "slug": "pr-2026-02-24-co95695-164",
-      "title": "プロロジス、運営施設外での初めてのオンサイトPPAをMonotaRO社と締結",
-      "publishedAt": "2026-02-24T05:10:01.000Z",
-      "category": [
-        "開発計画"
-      ]
-    },
-    {
-      "id": "1dihiq4ibh",
-      "slug": "pr-2026-01-29-co95695-160",
-      "title": "プロロジス、令和7年度 新エネ大賞「新エネルギー財団会長賞」を受賞",
-      "publishedAt": "2026-01-29T05:19:23.000Z",
-      "category": [
-        "開発計画"
       ]
     },
     {
@@ -1996,6 +2571,33 @@
   ],
   "project:pr-co161802-bess-3": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -2036,33 +2638,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -2267,21 +2842,21 @@
   ],
   "project:pr-co99599-bess": [
     {
+      "id": "c6alxzund",
+      "slug": "mikimori-hd-bess-10sites-81mwh-2026-07",
+      "title": "三木森HD、総容量81MWh・10案件の系統用蓄電所を順次運転開始へ ─ 総出力19.8MW、2026年10月〜2027年3月",
+      "publishedAt": "2026-08-02T11:23:23.004Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "6lve0f6ty3",
       "slug": "mikimori-hd-bess-500sites",
       "title": "三木森、持株会社体制へ移行 ─ 系統用蓄電池を本年度23拠点（184MWh）運開、5年で500拠点目標",
       "publishedAt": "2026-05-23T06:45:18.523Z",
       "category": [
         "開発計画"
-      ]
-    },
-    {
-      "id": "umhaooyr3",
-      "slug": "pr-2026-03-05-co99599-28",
-      "title": "株式会社三木森、2026年度「ベストベンチャー100」に選出！",
-      "publishedAt": "2026-03-05T05:00:01.000Z",
-      "category": [
-        "海外"
       ]
     },
     {
@@ -2473,15 +3048,6 @@
       ]
     },
     {
-      "id": "7hkuii0vro",
-      "slug": "pr-2026-01-13-co14485-664",
-      "title": "クラダシ、事業拡大に伴いコーポレートアイデンティティを刷新　日本一のインパクト企業グループを目指す",
-      "publishedAt": "2026-01-13T04:00:02.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
       "id": "l6m-i7cpy9",
       "slug": "pr-2025-11-13-co14485-649",
       "title": "クラダシ、辻・本郷スマートアセット株式会社と合弁事業（蓄電所投資ファンド組成の検討を含む）の実施に向けて基本合意",
@@ -2508,15 +3074,6 @@
       "publishedAt": "2025-06-18T06:30:01.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "0jd_csunalce",
-      "slug": "pr-2025-02-01-fitfounder-4",
-      "title": "名古屋グランパスとのゴールドパートナー契約締結のお知らせ",
-      "publishedAt": "2025-02-01T03:00:02.000Z",
-      "category": [
-        "地域自治体"
       ]
     },
     {
@@ -2569,17 +3126,6 @@
       ]
     }
   ],
-  "project:pr-power-bess": [
-    {
-      "id": "k35phhp8ayne",
-      "slug": "pr-2025-12-01-co28729-537",
-      "title": "ジェイテクト、花園工場にCNプラントを新設、水素バーナー式アルミ溶解保持炉を量産ラインに導入",
-      "publishedAt": "2025-12-01T02:00:03.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    }
-  ],
   "project:pr-co14485-bess": [
     {
       "id": "v_4futti3",
@@ -2597,15 +3143,6 @@
       "publishedAt": "2026-05-01T06:00:46.000Z",
       "category": [
         "投資"
-      ]
-    },
-    {
-      "id": "7hkuii0vro",
-      "slug": "pr-2026-01-13-co14485-664",
-      "title": "クラダシ、事業拡大に伴いコーポレートアイデンティティを刷新　日本一のインパクト企業グループを目指す",
-      "publishedAt": "2026-01-13T04:00:02.000Z",
-      "category": [
-        "地域自治体"
       ]
     },
     {
@@ -2685,15 +3222,6 @@
       ]
     },
     {
-      "id": "iyey62_q10n",
-      "slug": "pr-2026-03-02-co32407-4291",
-      "title": "「国内AIデータセンター事業参入の構造と勝ち筋」と題して、株式会社インフラコモンズ 代表取締役 今泉 大輔氏によるセミナーを2026年4月10日(金)に開催!!",
-      "publishedAt": "2026-03-02T07:00:02.000Z",
-      "category": [
-        "技術"
-      ]
-    },
-    {
       "id": "i51ns-_6-gw5",
       "slug": "pr-2026-02-16-co32407-4277-2",
       "title": "「系統側蓄電池×コーポレートＰＰＡの法務」と題して、ベーカー＆マッケンジー法律事務所 弁護士 江口 直明氏によるセミナーを2026年3月23日(月)に開催!!",
@@ -2710,9 +3238,27 @@
       "category": [
         "連系"
       ]
+    },
+    {
+      "id": "uol8g8nxlbc",
+      "slug": "pr-2026-02-16-co32407-4277-5",
+      "title": "「系統側蓄電池×コーポレートＰＰＡの法務」と題して、ベーカー＆マッケンジー法律事務所 弁護士 江口 直明氏によるセミナーを2026年3月23日(月)に開催!!",
+      "publishedAt": "2026-02-16T01:00:02.000Z",
+      "category": [
+        "連系"
+      ]
     }
   ],
   "project:pr-co13775-bess": [
+    {
+      "id": "r7leuh4ptq",
+      "slug": "ecokaku-technologies-bess-4sites-keiren-2026-07",
+      "title": "エコ革（テクノロジーズ子会社）、系統用蓄電池事業で初の系統連系が完了 ─ 4施設・合計7,956kW／32,638kWh",
+      "publishedAt": "2026-08-02T11:23:25.422Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "cjqxb6y55",
       "slug": "pr-2026-04-23-co109041-239",
@@ -2774,15 +3320,6 @@
       "publishedAt": "2025-04-01T06:30:01.000Z",
       "category": [
         "投資"
-      ]
-    },
-    {
-      "id": "y4m7d3sqq",
-      "slug": "pr-2026-03-14-co13775-27",
-      "title": "低圧系統用蓄電池が事業化、2026年度の需給調整市場に対応！約6坪から始まる新事業",
-      "publishedAt": "2026-03-14T13:25:09.000Z",
-      "category": [
-        "制度"
       ]
     }
   ],
@@ -2981,18 +3518,18 @@
       "category": [
         "開発計画"
       ]
-    },
-    {
-      "id": "wyxz90t9g4ek",
-      "slug": "pr-2022-03-10-co18049-180",
-      "title": "森トラストグループ春季震災訓練",
-      "publishedAt": "2022-03-10T05:00:07.000Z",
-      "category": [
-        "地域自治体"
-      ]
     }
   ],
   "project:pr-co143072-bess-4": [
+    {
+      "id": "u3gal45sc2ng",
+      "slug": "tess-engineering-komoro-bess-43mw-epc-2026-07",
+      "title": "テス・エンジニアリング、長野県小諸市の系統用蓄電所（約43MW／約171MWh）EPCを大口受注 ─ 受注額約60億円、2028年3月納期",
+      "publishedAt": "2026-08-02T11:23:39.864Z",
+      "category": [
+        "技術"
+      ]
+    },
     {
       "id": "8oj7ii0ac",
       "slug": "tess-riene-energy-tagawa-eps",
@@ -3054,15 +3591,6 @@
       "publishedAt": "2025-10-01T07:00:01.000Z",
       "category": [
         "開発計画"
-      ]
-    },
-    {
-      "id": "5q17mn4f6a",
-      "slug": "pr-2025-07-28-teslajapan-47",
-      "title": "沖縄県初となる「テスラ沖縄」をオープン",
-      "publishedAt": "2025-07-28T04:03:07.000Z",
-      "category": [
-        "地域自治体"
       ]
     }
   ],
@@ -3148,6 +3676,15 @@
   ],
   "project:pr-co143072-bess-3": [
     {
+      "id": "u3gal45sc2ng",
+      "slug": "tess-engineering-komoro-bess-43mw-epc-2026-07",
+      "title": "テス・エンジニアリング、長野県小諸市の系統用蓄電所（約43MW／約171MWh）EPCを大口受注 ─ 受注額約60億円、2028年3月納期",
+      "publishedAt": "2026-08-02T11:23:39.864Z",
+      "category": [
+        "技術"
+      ]
+    },
+    {
       "id": "8oj7ii0ac",
       "slug": "tess-riene-energy-tagawa-eps",
       "title": "テスグループ、リエネ・エナジーのグループ企業から系統用蓄電所（約8.9MWh）の設置工事を受注",
@@ -3209,62 +3746,6 @@
       "category": [
         "開発計画"
       ]
-    },
-    {
-      "id": "5q17mn4f6a",
-      "slug": "pr-2025-07-28-teslajapan-47",
-      "title": "沖縄県初となる「テスラ沖縄」をオープン",
-      "publishedAt": "2025-07-28T04:03:07.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    }
-  ],
-  "project:pr-looop-tokyo": [
-    {
-      "id": "z1kbmsgx5f",
-      "slug": "pr-2025-06-27-looop-142",
-      "title": "一戸建て実験施設「Looop Green Lab.」完成",
-      "publishedAt": "2025-06-27T02:00:02.000Z",
-      "category": [
-        "開発計画"
-      ]
-    },
-    {
-      "id": "k1y8cobnj",
-      "slug": "pr-2026-01-08-looop-162",
-      "title": "Looopでんき、「引越し祝い割」を開始",
-      "publishedAt": "2026-01-08T03:00:02.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "gl6-cdvyprv",
-      "slug": "pr-2025-09-10-looop-152",
-      "title": "【経営エンターテイメント番組「REAL VALUE（リアルバリュー）」でも話題】「Looopでんき」の公式モバイルアプリ、累計30万ダウンロードを突破！",
-      "publishedAt": "2025-09-10T10:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "032sn26pg",
-      "slug": "pr-2025-09-02-looop-151",
-      "title": "Looopでんき、お客さまの声を活かし”自動割引適用”される「おまもりチケット」提供開始",
-      "publishedAt": "2025-09-02T02:00:03.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "84jzhyp5p40a",
-      "slug": "pr-2025-01-30-looop-129",
-      "title": "～再生可能エネルギーの普及を目指して～「Looopでんき」料金プランをリニューアル",
-      "publishedAt": "2025-01-30T03:00:03.000Z",
-      "category": [
-        "制度"
-      ]
     }
   ],
   "project:pr-daigas-hokkaido-2": [
@@ -3279,6 +3760,15 @@
     }
   ],
   "project:pr-co76147-hokkaido": [
+    {
+      "id": "023s2ahmrnbk",
+      "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
+      "title": "伊藤忠商事・三菱地所・東京センチュリー、福岡県筑前町で系統用蓄電所（67MW／230.1MWh）建設に着手 ─ 2027年度商業運転へ",
+      "publishedAt": "2026-07-02T03:37:41.521Z",
+      "category": [
+        "開発計画"
+      ]
+    },
     {
       "id": "4et8ye58lw",
       "slug": "pr-2025-12-15-co143072-119",
@@ -3586,6 +4076,15 @@
   ],
   "project:pr-co76147-bess-2": [
     {
+      "id": "023s2ahmrnbk",
+      "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
+      "title": "伊藤忠商事・三菱地所・東京センチュリー、福岡県筑前町で系統用蓄電所（67MW／230.1MWh）建設に着手 ─ 2027年度商業運転へ",
+      "publishedAt": "2026-07-02T03:37:41.521Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "4et8ye58lw",
       "slug": "pr-2025-12-15-co143072-119",
       "title": "TESSグループ、東京センチュリー株式会社グループから「系統用蓄電所」２件（容量合計約16.3MWh）の設置工事を受注",
@@ -3624,6 +4123,15 @@
   ],
   "project:pr-100mw-bess": [
     {
+      "id": "023s2ahmrnbk",
+      "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
+      "title": "伊藤忠商事・三菱地所・東京センチュリー、福岡県筑前町で系統用蓄電所（67MW／230.1MWh）建設に着手 ─ 2027年度商業運転へ",
+      "publishedAt": "2026-07-02T03:37:41.521Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "4et8ye58lw",
       "slug": "pr-2025-12-15-co143072-119",
       "title": "TESSグループ、東京センチュリー株式会社グループから「系統用蓄電所」２件（容量合計約16.3MWh）の設置工事を受注",
@@ -3661,6 +4169,24 @@
     }
   ],
   "project:pr-co21766-bess": [
+    {
+      "id": "8ddpu47wqzc",
+      "slug": "tokyo-gas-bess-1gw-mimasaka-2026-07",
+      "title": "東京ガス、系統用蓄電池の運用予定容量が1GWを突破 ─ 岡山・美作蓄電所（29MW）の最適運用を新たに受託",
+      "publishedAt": "2026-08-02T11:23:35.357Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "oyek9x7j3b",
+      "slug": "hexa-tokyo-gas-fukushima-bess-offtake-49mw-2026-07",
+      "title": "ヘキサ・エネルギーサービス、福島県の系統用蓄電池（49.7MW／202.1MWh）で東京ガスと20年の長期オフテイク契約 ─ 2029年度商用運転予定",
+      "publishedAt": "2026-08-02T11:23:34.070Z",
+      "category": [
+        "開発計画"
+      ]
+    },
     {
       "id": "6qrybs-4iv",
       "slug": "pr-2026-03-03-shizenconnect-27",
@@ -3987,6 +4513,15 @@
   ],
   "project:pr-co2296-bess": [
     {
+      "id": "bgi_ynk7n",
+      "slug": "tepco-daiwa-house-bess-jv-1gw-2026-06",
+      "title": "東京電力HDと大和ハウス工業、系統用蓄電所の共同開発で業務提携 ─ 2035年までに全国1GW／4GWh規模を目標",
+      "publishedAt": "2026-07-02T03:37:42.750Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "3xqzqck_86",
       "slug": "pr-2025-08-18-co109041-178",
       "title": "大和ハウス工業より系統用蓄電システムを受注",
@@ -4184,6 +4719,15 @@
   ],
   "project:pr-co143072-bess-2": [
     {
+      "id": "u3gal45sc2ng",
+      "slug": "tess-engineering-komoro-bess-43mw-epc-2026-07",
+      "title": "テス・エンジニアリング、長野県小諸市の系統用蓄電所（約43MW／約171MWh）EPCを大口受注 ─ 受注額約60億円、2028年3月納期",
+      "publishedAt": "2026-08-02T11:23:39.864Z",
+      "category": [
+        "技術"
+      ]
+    },
+    {
       "id": "8oj7ii0ac",
       "slug": "tess-riene-energy-tagawa-eps",
       "title": "テスグループ、リエネ・エナジーのグループ企業から系統用蓄電所（約8.9MWh）の設置工事を受注",
@@ -4245,15 +4789,6 @@
       "category": [
         "開発計画"
       ]
-    },
-    {
-      "id": "5q17mn4f6a",
-      "slug": "pr-2025-07-28-teslajapan-47",
-      "title": "沖縄県初となる「テスラ沖縄」をオープン",
-      "publishedAt": "2025-07-28T04:03:07.000Z",
-      "category": [
-        "地域自治体"
-      ]
     }
   ],
   "project:pr-co55631-kumamoto": [
@@ -4282,15 +4817,6 @@
       "publishedAt": "2025-12-23T05:00:13.000Z",
       "category": [
         "投資"
-      ]
-    },
-    {
-      "id": "r-odm7xxtw",
-      "slug": "pr-2025-12-09-co55631-157",
-      "title": "山口県企業局としろくま電力が連携！令和8年度からの「やまぐちぶちエコでんき」の募集を開始！",
-      "publishedAt": "2025-12-09T01:03:32.000Z",
-      "category": [
-        "地域自治体"
       ]
     },
     {
@@ -4328,6 +4854,15 @@
       "category": [
         "連系"
       ]
+    },
+    {
+      "id": "ll4pldgv3g",
+      "slug": "pr-2025-04-02-co55631-139",
+      "title": "しろくま電力は、導入コスト0円のソーラーカーポートほか、製造業の電気代削減に特化した脱炭素ソリューションを「第10回ものづくりワールド名古屋」で紹介",
+      "publishedAt": "2025-04-02T05:00:02.000Z",
+      "category": [
+        "技術"
+      ]
     }
   ],
   "project:pr-co93934-bess-2": [
@@ -4342,6 +4877,33 @@
     }
   ],
   "project:pr-co161802-kumamoto-2": [
+    {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
@@ -4386,33 +4948,6 @@
       "category": [
         "連系"
       ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
     }
   ],
   "project:pr-daigas-hokkaido": [
@@ -4427,6 +4962,15 @@
     }
   ],
   "project:pr-co143072-bess": [
+    {
+      "id": "u3gal45sc2ng",
+      "slug": "tess-engineering-komoro-bess-43mw-epc-2026-07",
+      "title": "テス・エンジニアリング、長野県小諸市の系統用蓄電所（約43MW／約171MWh）EPCを大口受注 ─ 受注額約60億円、2028年3月納期",
+      "publishedAt": "2026-08-02T11:23:39.864Z",
+      "category": [
+        "技術"
+      ]
+    },
     {
       "id": "8oj7ii0ac",
       "slug": "tess-riene-energy-tagawa-eps",
@@ -4488,15 +5032,6 @@
       "publishedAt": "2025-10-01T07:00:01.000Z",
       "category": [
         "開発計画"
-      ]
-    },
-    {
-      "id": "5q17mn4f6a",
-      "slug": "pr-2025-07-28-teslajapan-47",
-      "title": "沖縄県初となる「テスラ沖縄」をオープン",
-      "publishedAt": "2025-07-28T04:03:07.000Z",
-      "category": [
-        "地域自治体"
       ]
     }
   ],
@@ -4598,6 +5133,33 @@
   ],
   "project:pr-co161802-bess-2": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -4641,33 +5203,6 @@
       "category": [
         "連系"
       ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
     }
   ],
   "project:pr-co55631-bess": [
@@ -4696,15 +5231,6 @@
       "publishedAt": "2025-12-23T05:00:13.000Z",
       "category": [
         "投資"
-      ]
-    },
-    {
-      "id": "r-odm7xxtw",
-      "slug": "pr-2025-12-09-co55631-157",
-      "title": "山口県企業局としろくま電力が連携！令和8年度からの「やまぐちぶちエコでんき」の募集を開始！",
-      "publishedAt": "2025-12-09T01:03:32.000Z",
-      "category": [
-        "地域自治体"
       ]
     },
     {
@@ -4742,9 +5268,27 @@
       "category": [
         "連系"
       ]
+    },
+    {
+      "id": "ll4pldgv3g",
+      "slug": "pr-2025-04-02-co55631-139",
+      "title": "しろくま電力は、導入コスト0円のソーラーカーポートほか、製造業の電気代削減に特化した脱炭素ソリューションを「第10回ものづくりワールド名古屋」で紹介",
+      "publishedAt": "2025-04-02T05:00:02.000Z",
+      "category": [
+        "技術"
+      ]
     }
   ],
   "project:pr-co76147-bess": [
+    {
+      "id": "023s2ahmrnbk",
+      "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
+      "title": "伊藤忠商事・三菱地所・東京センチュリー、福岡県筑前町で系統用蓄電所（67MW／230.1MWh）建設に着手 ─ 2027年度商業運転へ",
+      "publishedAt": "2026-07-02T03:37:41.521Z",
+      "category": [
+        "開発計画"
+      ]
+    },
     {
       "id": "4et8ye58lw",
       "slug": "pr-2025-12-15-co143072-119",
@@ -4795,6 +5339,24 @@
   ],
   "project:pr-co33609-bess": [
     {
+      "id": "ian7g8-qkz1c",
+      "slug": "remixpoint-ogano-bess-10th-chakou-2026-07",
+      "title": "リミックスポイント、自社保有の系統用蓄電所10か所目「小鹿野町両神薄864-10蓄電所」が着工（埼玉県小鹿野町）",
+      "publishedAt": "2026-08-02T11:23:42.334Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "8cq0_jgc2",
       "slug": "pr-2026-01-15-co33609-192-2",
       "title": "リミックスポイント×ブルースカイエナジー低圧太陽光発電所運用モデルの事業化に向け業務提携",
@@ -4832,6 +5394,33 @@
     }
   ],
   "project:pr-co161802-bess": [
+    {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
@@ -4873,33 +5462,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -5163,6 +5725,33 @@
   ],
   "project:pr-co161802-saga-2": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -5206,33 +5795,6 @@
       "category": [
         "連系"
       ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
     }
   ],
   "project:pr-co16325-gunma-2": [
@@ -5261,15 +5823,6 @@
       "publishedAt": "2024-11-29T00:30:01.000Z",
       "category": [
         "市場統計"
-      ]
-    },
-    {
-      "id": "o7zfx-3ee8",
-      "slug": "pr-2024-03-07-co55631-111",
-      "title": "NECキャピタルソリューションとafterFITは、ヨロズ大分に1.2MWのソーラーカーポートと野立て太陽光発電設備を設置し電力供給を開始",
-      "publishedAt": "2024-03-07T07:45:01.000Z",
-      "category": [
-        "制度"
       ]
     },
     {
@@ -5307,6 +5860,15 @@
       "category": [
         "制度"
       ]
+    },
+    {
+      "id": "wrnm7mqe297",
+      "slug": "pr-2026-04-08-co8483-237",
+      "title": "【PV EXPO 2026 出展レポート】トリナ・ソーラー、最新の太陽光発電モジュール・系統用蓄電システムを公開",
+      "publishedAt": "2026-04-08T02:00:01.000Z",
+      "category": [
+        "連系"
+      ]
     }
   ],
   "project:pr-ekuenergyjapan-fukuoka": [
@@ -5330,6 +5892,33 @@
     }
   ],
   "project:pr-co161802-yamaguchi-2": [
+    {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
@@ -5374,33 +5963,6 @@
       "category": [
         "連系"
       ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
     }
   ],
   "project:pr-afterfit-bess": [
@@ -5429,15 +5991,6 @@
       "publishedAt": "2025-12-23T05:00:13.000Z",
       "category": [
         "投資"
-      ]
-    },
-    {
-      "id": "r-odm7xxtw",
-      "slug": "pr-2025-12-09-co55631-157",
-      "title": "山口県企業局としろくま電力が連携！令和8年度からの「やまぐちぶちエコでんき」の募集を開始！",
-      "publishedAt": "2025-12-09T01:03:32.000Z",
-      "category": [
-        "地域自治体"
       ]
     },
     {
@@ -5474,6 +6027,15 @@
       "publishedAt": "2025-06-11T02:29:55.000Z",
       "category": [
         "連系"
+      ]
+    },
+    {
+      "id": "ll4pldgv3g",
+      "slug": "pr-2025-04-02-co55631-139",
+      "title": "しろくま電力は、導入コスト0円のソーラーカーポートほか、製造業の電気代削減に特化した脱炭素ソリューションを「第10回ものづくりワールド名古屋」で紹介",
+      "publishedAt": "2025-04-02T05:00:02.000Z",
+      "category": [
+        "技術"
       ]
     }
   ],
@@ -5749,15 +6311,6 @@
       ]
     },
     {
-      "id": "o7zfx-3ee8",
-      "slug": "pr-2024-03-07-co55631-111",
-      "title": "NECキャピタルソリューションとafterFITは、ヨロズ大分に1.2MWのソーラーカーポートと野立て太陽光発電設備を設置し電力供給を開始",
-      "publishedAt": "2024-03-07T07:45:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
       "id": "imqbmjebjn",
       "slug": "pr-2024-01-11-co55631-110",
       "title": "afterFIT、双日、ミライト・ワンが磯子カンツリークラブに先進的なグリーンソリューションを提供　蓄電池・EV充電スタンド併設型ソーラーカーポートを導入",
@@ -5791,6 +6344,15 @@
       "publishedAt": "2023-04-27T02:00:02.000Z",
       "category": [
         "制度"
+      ]
+    },
+    {
+      "id": "wrnm7mqe297",
+      "slug": "pr-2026-04-08-co8483-237",
+      "title": "【PV EXPO 2026 出展レポート】トリナ・ソーラー、最新の太陽光発電モジュール・系統用蓄電システムを公開",
+      "publishedAt": "2026-04-08T02:00:01.000Z",
+      "category": [
+        "連系"
       ]
     }
   ],
@@ -5846,6 +6408,33 @@
   ],
   "project:pr-co161802-saga": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -5889,33 +6478,6 @@
       "category": [
         "連系"
       ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
     }
   ],
   "project:pr-co55631-gunma": [
@@ -5944,15 +6506,6 @@
       "publishedAt": "2025-12-23T05:00:13.000Z",
       "category": [
         "投資"
-      ]
-    },
-    {
-      "id": "r-odm7xxtw",
-      "slug": "pr-2025-12-09-co55631-157",
-      "title": "山口県企業局としろくま電力が連携！令和8年度からの「やまぐちぶちエコでんき」の募集を開始！",
-      "publishedAt": "2025-12-09T01:03:32.000Z",
-      "category": [
-        "地域自治体"
       ]
     },
     {
@@ -5989,6 +6542,15 @@
       "publishedAt": "2025-06-11T02:29:55.000Z",
       "category": [
         "連系"
+      ]
+    },
+    {
+      "id": "ll4pldgv3g",
+      "slug": "pr-2025-04-02-co55631-139",
+      "title": "しろくま電力は、導入コスト0円のソーラーカーポートほか、製造業の電気代削減に特化した脱炭素ソリューションを「第10回ものづくりワールド名古屋」で紹介",
+      "publishedAt": "2025-04-02T05:00:02.000Z",
+      "category": [
+        "技術"
       ]
     }
   ],
@@ -6034,6 +6596,33 @@
   ],
   "project:pr-co161802-gifu-4": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -6077,36 +6666,18 @@
       "category": [
         "連系"
       ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
     }
   ],
   "project:pr-co173123-fukuoka": [
+    {
+      "id": "oyek9x7j3b",
+      "slug": "hexa-tokyo-gas-fukushima-bess-offtake-49mw-2026-07",
+      "title": "ヘキサ・エネルギーサービス、福島県の系統用蓄電池（49.7MW／202.1MWh）で東京ガスと20年の長期オフテイク契約 ─ 2029年度商用運転予定",
+      "publishedAt": "2026-08-02T11:23:34.070Z",
+      "category": [
+        "開発計画"
+      ]
+    },
     {
       "id": "635x-uhsn",
       "slug": "hexa-ltdca-2025-chugoku-tohoku",
@@ -6218,7 +6789,63 @@
       ]
     }
   ],
+  "project:pr-lehmanhodings-saitama": [
+    {
+      "id": "p9op6s7anas",
+      "slug": "lehmansoft-storage-revenue-simulator",
+      "title": "LehmanSoft Japan、系統用蓄電所の収益を簡易試算できるWebアプリを公開",
+      "publishedAt": "2026-05-23T06:45:26.163Z",
+      "category": [
+        "技術"
+      ]
+    },
+    {
+      "id": "6ug5tdbt83n",
+      "slug": "pr-2026-03-06-lehmanhodings-255",
+      "title": "LehmanSoft Japan、埼玉2MW蓄電池が需給調整市場へ参入",
+      "publishedAt": "2026-03-06T06:30:02.000Z",
+      "category": [
+        "制度"
+      ]
+    },
+    {
+      "id": "flokfawgp",
+      "slug": "pr-2025-12-16-lehmanhodings-226",
+      "title": "LehmanSoft Japan、系統用蓄電所2案件の販売を開始",
+      "publishedAt": "2025-12-16T06:16:22.000Z",
+      "category": [
+        "オークション"
+      ]
+    }
+  ],
   "project:pr-co161802-gifu-3": [
+    {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
@@ -6260,33 +6887,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -6294,6 +6894,33 @@
   ],
   "project:pr-co161802-gifu-2": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -6334,33 +6961,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -6388,6 +6988,33 @@
   ],
   "project:pr-co161802-yamaguchi": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -6428,33 +7055,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -6462,6 +7062,33 @@
   ],
   "project:pr-co161802-fukushima-2": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -6502,33 +7129,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -6583,6 +7183,33 @@
   ],
   "project:pr-co161802-fukushima": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -6623,33 +7250,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -6657,6 +7257,33 @@
   ],
   "project:pr-co161802-kumamoto": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -6697,33 +7324,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -6805,6 +7405,33 @@
   ],
   "project:pr-co161802-miyagi-2": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -6845,33 +7472,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -6879,6 +7479,33 @@
   ],
   "project:pr-co161802-shimane": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -6919,33 +7546,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -6953,6 +7553,33 @@
   ],
   "project:pr-co161802-miyagi": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -6993,33 +7620,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -7031,15 +7631,6 @@
       "slug": "tokyu-riene-mitsubishi-evc-alliance",
       "title": "東急不動産・リエネ・三菱電機、エネルギーバリューチェーン高度化で3社業務提携 ─ 系統用蓄電池の統合制御・合弁会社設立も検討",
       "publishedAt": "2026-05-23T06:45:25.019Z",
-      "category": [
-        "開発計画"
-      ]
-    },
-    {
-      "id": "8sugfp04pri",
-      "slug": "pr-2025-07-28-co165825-1",
-      "title": "第７回 東急グループ 環境・社会貢献賞表彰を実施",
-      "publishedAt": "2025-07-28T05:00:14.000Z",
       "category": [
         "開発計画"
       ]
@@ -7081,15 +7672,6 @@
       ]
     },
     {
-      "id": "mhtttmq11",
-      "slug": "pr-2026-03-17-co6953-659",
-      "title": "東急不動産の物流施設「LOGI’Q」シリーズ 中国地方初進出物件「LOGI'Q広島」着工",
-      "publishedAt": "2026-03-17T06:00:01.000Z",
-      "category": [
-        "海外"
-      ]
-    },
-    {
       "id": "0vvkxhlly-k",
       "slug": "pr-2026-01-30-co6953-622",
       "title": "東急不動産の物流施設「LOGI’Q」シリーズ「LOGI’Q蓮田」竣工 延床面積3万坪、シリーズ初の大型蓄電池を用いたエネルギーマネジメント",
@@ -7097,9 +7679,54 @@
       "category": [
         "技術"
       ]
+    },
+    {
+      "id": "47ggbe02jppv",
+      "slug": "pr-2025-08-28-co20242-104",
+      "title": "「てるまるでんちプロジェクト」始動！東急パワーサプライが先着１０００世帯に家庭用蓄電池を無償配布 ８月２８日（木）１１：００より先着順で申込受付開始～設置家庭の電気代削減と都市レジリエンス向上に貢献～",
+      "publishedAt": "2025-08-28T02:00:03.000Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "vfx1al7x8aw4",
+      "slug": "pr-2023-08-03-co109041-33",
+      "title": "東急不動産、パワーエックスの系統用蓄電池を初導入",
+      "publishedAt": "2023-08-03T02:00:03.000Z",
+      "category": [
+        "連系"
+      ]
     }
   ],
   "project:pr-co161802-gifu": [
+    {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
@@ -7141,33 +7768,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -7424,15 +8024,6 @@
       ]
     },
     {
-      "id": "r-odm7xxtw",
-      "slug": "pr-2025-12-09-co55631-157",
-      "title": "山口県企業局としろくま電力が連携！令和8年度からの「やまぐちぶちエコでんき」の募集を開始！",
-      "publishedAt": "2025-12-09T01:03:32.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
       "id": "69cvq04q1j",
       "slug": "pr-2025-09-01-co55631-146",
       "title": "九電工は系統用蓄電池事業の第一号となる３案件を関東地区で運転開始　しろくま電力の蓄電池システムで再エネの有効活用に貢献",
@@ -7466,6 +8057,15 @@
       "publishedAt": "2025-06-11T02:29:55.000Z",
       "category": [
         "連系"
+      ]
+    },
+    {
+      "id": "ll4pldgv3g",
+      "slug": "pr-2025-04-02-co55631-139",
+      "title": "しろくま電力は、導入コスト0円のソーラーカーポートほか、製造業の電気代削減に特化した脱炭素ソリューションを「第10回ものづくりワールド名古屋」で紹介",
+      "publishedAt": "2025-04-02T05:00:02.000Z",
+      "category": [
+        "技術"
       ]
     }
   ],
@@ -7528,6 +8128,15 @@
     }
   ],
   "project:pr-co173175-shiga-4mwh": [
+    {
+      "id": "xjdl73o7z",
+      "slug": "jesdi-hachigata-bess-juden-2026-07",
+      "title": "日本蓄電開発機構、埼玉県寄居町「鉢形蓄電所」が受電開始 ─ 上奈良・七本木に続く県内3拠点目の系統用蓄電所",
+      "publishedAt": "2026-08-02T11:23:26.420Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "g90bhoyk3qko",
       "slug": "pr-2025-11-18-co173175-1",
@@ -7634,6 +8243,24 @@
   ],
   "project:pr-co33609-kumamoto-2mw": [
     {
+      "id": "ian7g8-qkz1c",
+      "slug": "remixpoint-ogano-bess-10th-chakou-2026-07",
+      "title": "リミックスポイント、自社保有の系統用蓄電所10か所目「小鹿野町両神薄864-10蓄電所」が着工（埼玉県小鹿野町）",
+      "publishedAt": "2026-08-02T11:23:42.334Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "8cq0_jgc2",
       "slug": "pr-2026-01-15-co33609-192-2",
       "title": "リミックスポイント×ブルースカイエナジー低圧太陽光発電所運用モデルの事業化に向け業務提携",
@@ -7671,6 +8298,15 @@
     }
   ],
   "project:pr-co173175-saitama-5mwh": [
+    {
+      "id": "xjdl73o7z",
+      "slug": "jesdi-hachigata-bess-juden-2026-07",
+      "title": "日本蓄電開発機構、埼玉県寄居町「鉢形蓄電所」が受電開始 ─ 上奈良・七本木に続く県内3拠点目の系統用蓄電所",
+      "publishedAt": "2026-08-02T11:23:26.420Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "g90bhoyk3qko",
       "slug": "pr-2025-11-18-co173175-1",
@@ -7729,6 +8365,24 @@
     }
   ],
   "project:pr-co33609-miyagi-2mw": [
+    {
+      "id": "ian7g8-qkz1c",
+      "slug": "remixpoint-ogano-bess-10th-chakou-2026-07",
+      "title": "リミックスポイント、自社保有の系統用蓄電所10か所目「小鹿野町両神薄864-10蓄電所」が着工（埼玉県小鹿野町）",
+      "publishedAt": "2026-08-02T11:23:42.334Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "8cq0_jgc2",
       "slug": "pr-2026-01-15-co33609-192-2",
@@ -7900,6 +8554,33 @@
   ],
   "project:jpn-gifu-sendai": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -7940,33 +8621,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -7974,6 +8628,33 @@
   ],
   "project:jpn-kawasaki": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -8014,33 +8695,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -8048,6 +8702,33 @@
   ],
   "project:jpn-uki": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -8088,33 +8769,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -8163,33 +8817,6 @@
   ],
   "project:mitsuuroko-sendai": [
     {
-      "id": "8cb2j0v43z",
-      "slug": "pr-2025-08-07-co70816-276",
-      "title": "オフサイトコーポレートPPAによる電力の提供について",
-      "publishedAt": "2025-08-07T02:00:03.000Z",
-      "category": [
-        "補助金"
-      ]
-    },
-    {
-      "id": "dhk19pfbs7",
-      "slug": "pr-2025-08-07-co70816-276-2",
-      "title": "オフサイトコーポレートPPAによる電力の提供について",
-      "publishedAt": "2025-08-07T02:00:03.000Z",
-      "category": [
-        "補助金"
-      ]
-    },
-    {
-      "id": "bl9j_nmgcqle",
-      "slug": "pr-2025-08-07-co70816-276-3",
-      "title": "オフサイトコーポレートPPAによる電力の提供について",
-      "publishedAt": "2025-08-07T02:00:03.000Z",
-      "category": [
-        "補助金"
-      ]
-    },
-    {
       "id": "cuh72m45w4",
       "slug": "pr-2025-05-08-co70816-256",
       "title": "系統用蓄電池の運用受託サービス開始のお知らせ",
@@ -8200,33 +8827,6 @@
     }
   ],
   "project:mitsuuroko-tahara": [
-    {
-      "id": "8cb2j0v43z",
-      "slug": "pr-2025-08-07-co70816-276",
-      "title": "オフサイトコーポレートPPAによる電力の提供について",
-      "publishedAt": "2025-08-07T02:00:03.000Z",
-      "category": [
-        "補助金"
-      ]
-    },
-    {
-      "id": "dhk19pfbs7",
-      "slug": "pr-2025-08-07-co70816-276-2",
-      "title": "オフサイトコーポレートPPAによる電力の提供について",
-      "publishedAt": "2025-08-07T02:00:03.000Z",
-      "category": [
-        "補助金"
-      ]
-    },
-    {
-      "id": "bl9j_nmgcqle",
-      "slug": "pr-2025-08-07-co70816-276-3",
-      "title": "オフサイトコーポレートPPAによる電力の提供について",
-      "publishedAt": "2025-08-07T02:00:03.000Z",
-      "category": [
-        "補助金"
-      ]
-    },
     {
       "id": "cuh72m45w4",
       "slug": "pr-2025-05-08-co70816-256",
@@ -8245,15 +8845,6 @@
       "publishedAt": "2026-05-23T06:45:25.019Z",
       "category": [
         "開発計画"
-      ]
-    },
-    {
-      "id": "mhtttmq11",
-      "slug": "pr-2026-03-17-co6953-659",
-      "title": "東急不動産の物流施設「LOGI’Q」シリーズ 中国地方初進出物件「LOGI'Q広島」着工",
-      "publishedAt": "2026-03-17T06:00:01.000Z",
-      "category": [
-        "海外"
       ]
     },
     {
@@ -8326,6 +8917,15 @@
   ],
   "project:tc-nagasaki": [
     {
+      "id": "023s2ahmrnbk",
+      "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
+      "title": "伊藤忠商事・三菱地所・東京センチュリー、福岡県筑前町で系統用蓄電所（67MW／230.1MWh）建設に着手 ─ 2027年度商業運転へ",
+      "publishedAt": "2026-07-02T03:37:41.521Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "4et8ye58lw",
       "slug": "pr-2025-12-15-co143072-119",
       "title": "TESSグループ、東京センチュリー株式会社グループから「系統用蓄電所」２件（容量合計約16.3MWh）の設置工事を受注",
@@ -8364,6 +8964,33 @@
   ],
   "project:jpn-iwata-4": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -8404,33 +9031,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -8438,6 +9038,33 @@
   ],
   "project:jpn-takayama": [
     {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
+    {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
       "title": "日本蓄電池、岐阜県高山市「NC高山市久々野町蓄電所」が需給調整市場での運用を開始",
@@ -8478,33 +9105,6 @@
       "slug": "pr-2026-04-23-co161802-59",
       "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
       "publishedAt": "2026-04-23T01:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "3325n917emc2",
-      "slug": "pr-2026-04-20-co161802-58",
-      "title": "【日本蓄電池株式会社】磐田市と災害時応援協定を締結",
-      "publishedAt": "2026-04-20T01:00:01.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
-    {
-      "id": "q2n6gtliuic",
-      "slug": "pr-2026-04-13-co161802-57",
-      "title": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
-      "publishedAt": "2026-04-13T06:00:01.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "0p-0clik_01r",
-      "slug": "pr-2026-04-03-co161802-56",
-      "title": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
-      "publishedAt": "2026-04-03T01:00:02.000Z",
       "category": [
         "連系"
       ]
@@ -8675,6 +9275,15 @@
   ],
   "project:daiwa-kurate": [
     {
+      "id": "bgi_ynk7n",
+      "slug": "tepco-daiwa-house-bess-jv-1gw-2026-06",
+      "title": "東京電力HDと大和ハウス工業、系統用蓄電所の共同開発で業務提携 ─ 2035年までに全国1GW／4GWh規模を目標",
+      "publishedAt": "2026-07-02T03:37:42.750Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "3xqzqck_86",
       "slug": "pr-2025-08-18-co109041-178",
       "title": "大和ハウス工業より系統用蓄電システムを受注",
@@ -8740,21 +9349,21 @@
       ]
     },
     {
-      "id": "phws4lwxvsl1",
-      "slug": "pr-2023-11-20-co3079-107",
-      "title": "【脱炭素】大阪ガスは、環境に配慮した「ガス」と「電気」を二刀流で供給 2023年度までの中期目標を達成、再生可能エネルギー普及貢献量250万kW",
-      "publishedAt": "2023-11-20T02:30:08.000Z",
+      "id": "o42nbj7nym5l",
+      "slug": "pr-2023-06-07-co76147-114",
+      "title": "大阪ガス、伊藤忠商事との系統用蓄電池事業の実施について",
+      "publishedAt": "2023-06-07T03:21:42.000Z",
       "category": [
-        "編集部"
+        "連系"
       ]
     },
     {
-      "id": "zkhf6fvhk",
-      "slug": "pr-2023-07-27-co55631-98",
-      "title": "大阪ガス、ＪＡ三井リース、afterFITによる営農型発電所を含む非FIT/非FIP太陽光発電所の建設について",
-      "publishedAt": "2023-07-27T05:00:02.000Z",
+      "id": "ckni-_9h-111",
+      "slug": "pr-2022-11-17-co73834-45",
+      "title": "大阪ガスが神戸市と実施する「一般家庭での家電別電力需要を把握する実証」にソニーネットワークコミュニケーションズSPが提供するNoCode IoT/DX Platform『MEEQ（ミーク）』が採用",
+      "publishedAt": "2022-11-17T05:30:13.000Z",
       "category": [
-        "補助金"
+        "地域自治体"
       ]
     }
   ],
@@ -8769,26 +9378,8 @@
       ]
     },
     {
-      "id": "yghcsix49y",
-      "slug": "pr-2024-03-22-co55631-115",
-      "title": "双日、ミライト・ワン、しろくま電力（旧afterFIT）が那須ガーデンアウトレットにソーラーカーポートと屋根置き太陽光発電設備を導入",
-      "publishedAt": "2024-03-22T02:00:03.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
       "id": "zo0crseg_oim",
       "slug": "pr-2024-03-22-co55631-115-3",
-      "title": "双日、ミライト・ワン、しろくま電力（旧afterFIT）が那須ガーデンアウトレットにソーラーカーポートと屋根置き太陽光発電設備を導入",
-      "publishedAt": "2024-03-22T02:00:03.000Z",
-      "category": [
-        "制度"
-      ]
-    },
-    {
-      "id": "axz4y652vt7l",
-      "slug": "pr-2024-03-22-co55631-115-2",
       "title": "双日、ミライト・ワン、しろくま電力（旧afterFIT）が那須ガーデンアウトレットにソーラーカーポートと屋根置き太陽光発電設備を導入",
       "publishedAt": "2024-03-22T02:00:03.000Z",
       "category": [
@@ -9275,18 +9866,27 @@
       "category": [
         "連系"
       ]
-    },
-    {
-      "id": "mnyze8fp-e",
-      "slug": "pr-2025-04-08-co55631-137",
-      "title": "しろくま電力、「低炭素電力会社」における高圧部門の電力供給量 第1位！電気代削減と脱炭素で前年比2倍に拡大",
-      "publishedAt": "2025-04-08T05:00:02.000Z",
-      "category": [
-        "地域自治体"
-      ]
     }
   ],
   "pref:福島": [
+    {
+      "id": "oyek9x7j3b",
+      "slug": "hexa-tokyo-gas-fukushima-bess-offtake-49mw-2026-07",
+      "title": "ヘキサ・エネルギーサービス、福島県の系統用蓄電池（49.7MW／202.1MWh）で東京ガスと20年の長期オフテイク契約 ─ 2029年度商用運転予定",
+      "publishedAt": "2026-08-02T11:23:34.070Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "nisg0sgcx",
+      "slug": "nippon-chikudenchi-shirakawa-disaster-agreement-2026-07",
+      "title": "日本蓄電池、福島県白河市と災害時の系統用蓄電池による電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-08-02T11:23:30.105Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
     {
       "id": "chx1zpg1bt",
       "slug": "nippon-chikudenchi-shirakawa",
@@ -9392,6 +9992,15 @@
   ],
   "pref:栃木": [
     {
+      "id": "3bakoxojfqo",
+      "slug": "seela-hd-oyama-bess-2mw-2026-07",
+      "title": "シーラHD、栃木県小山市の系統用蓄電所（2MW／8MWh）を取得へ ─ 子会社シーラソーラーが仕入れ、2026年11月引渡し予定",
+      "publishedAt": "2026-08-02T11:23:28.828Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
       "id": "hjpgdqzqp",
       "slug": "powerx-nikko-storage-megapower2500",
       "title": "パワーエックス、栃木県「日光蓄電所」向けに系統用蓄電システム72台（162.4MWh）を受注",
@@ -9452,15 +10061,6 @@
       "publishedAt": "2025-03-13T01:00:03.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "v18qcqzisf",
-      "slug": "pr-2023-08-07-co86244-12",
-      "title": "【サンヴィレッジ】O&Mを手掛ける新たな事業会社を設立",
-      "publishedAt": "2023-08-07T01:45:07.000Z",
-      "category": [
-        "地域自治体"
       ]
     }
   ],
@@ -9540,6 +10140,24 @@
   ],
   "pref:埼玉": [
     {
+      "id": "ian7g8-qkz1c",
+      "slug": "remixpoint-ogano-bess-10th-chakou-2026-07",
+      "title": "リミックスポイント、自社保有の系統用蓄電所10か所目「小鹿野町両神薄864-10蓄電所」が着工（埼玉県小鹿野町）",
+      "publishedAt": "2026-08-02T11:23:42.334Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "xjdl73o7z",
+      "slug": "jesdi-hachigata-bess-juden-2026-07",
+      "title": "日本蓄電開発機構、埼玉県寄居町「鉢形蓄電所」が受電開始 ─ 上奈良・七本木に続く県内3拠点目の系統用蓄電所",
+      "publishedAt": "2026-08-02T11:23:26.420Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "3dsux0c8cze",
       "slug": "pr-2026-03-31-co173175-3",
       "title": "埼玉県上里町で5MWh規模の系統用蓄電池「七本木蓄電所」を受電、上奈良蓄電所に続き3月での連続受電により、蓄電インフラ整備を加速",
@@ -9592,24 +10210,6 @@
       "category": [
         "オークション"
       ]
-    },
-    {
-      "id": "j_z4_jbf4z",
-      "slug": "pr-2021-04-23-co21794-35",
-      "title": "埼玉工業大学、再生エネ用蓄電池の１年間の実証実験を実施  ～太陽光発電とレドックスフロー電池による電力需給システムを構築し、３,０００時間稼働 ～",
-      "publishedAt": "2021-04-23T03:00:15.000Z",
-      "category": [
-        "開発計画"
-      ]
-    },
-    {
-      "id": "w17cf0gij",
-      "slug": "pr-2020-03-09-co21794-28",
-      "title": "埼玉工業大学、再生エネ用の新型蓄電池を開発  太陽光発電とレドックスフロー電池を連動させた電力需給システムの実証実験を開始",
-      "publishedAt": "2020-03-09T03:00:34.000Z",
-      "category": [
-        "開発計画"
-      ]
     }
   ],
   "pref:千葉": [
@@ -9621,52 +10221,43 @@
       "category": [
         "連系"
       ]
-    },
+    }
+  ],
+  "pref:東京": [
     {
-      "id": "1rwuzq57crq",
-      "slug": "pr-2025-06-27-co55631-147",
-      "title": "ホームセンター国内最大級の348台分！ジョイフル本田千葉ニュータウン店にソーラーカーポートを設置",
-      "publishedAt": "2025-06-27T02:00:02.000Z",
-      "category": [
-        "市場統計"
-      ]
-    },
-    {
-      "id": "xypm-_xbfxm",
-      "slug": "pr-2024-12-12-co55631-127",
-      "title": "ジョイフル本田千葉ニュータウン店に1.1MWのPPA*1方式ソーラーカーポートの設置を計画　ホームセンターでは国内最大級",
-      "publishedAt": "2024-12-12T05:00:02.000Z",
+      "id": "8ddpu47wqzc",
+      "slug": "tokyo-gas-bess-1gw-mimasaka-2026-07",
+      "title": "東京ガス、系統用蓄電池の運用予定容量が1GWを突破 ─ 岡山・美作蓄電所（29MW）の最適運用を新たに受託",
+      "publishedAt": "2026-08-02T11:23:35.357Z",
       "category": [
         "開発計画"
       ]
     },
     {
-      "id": "bm6a0gk_925",
-      "slug": "pr-2023-02-01-co55631-88",
-      "title": "afterFITはエンバイオ・ホールディングスと共同で、ケーヨーデイツーの3店舗にソーラーカーポートを設置し、ＰＰＡでの電力提供を2月1日から開始。脱炭素経営だけでなく、電気代削減対策として有効。",
-      "publishedAt": "2023-02-01T02:00:01.000Z",
+      "id": "oyek9x7j3b",
+      "slug": "hexa-tokyo-gas-fukushima-bess-offtake-49mw-2026-07",
+      "title": "ヘキサ・エネルギーサービス、福島県の系統用蓄電池（49.7MW／202.1MWh）で東京ガスと20年の長期オフテイク契約 ─ 2029年度商用運転予定",
+      "publishedAt": "2026-08-02T11:23:34.070Z",
       "category": [
-        "制度"
-      ]
-    }
-  ],
-  "pref:東京": [
-    {
-      "id": "gj3g7kfd7yr",
-      "slug": "pr-2026-05-08-goodwejapan-15",
-      "title": "GoodWe製「Suncakeシリーズ防眩モジュール」令和7年度 東京都補助金対象製品に認定",
-      "publishedAt": "2026-05-08T10:19:09.000Z",
-      "category": [
-        "補助金"
+        "開発計画"
       ]
     },
     {
-      "id": "z_tkaz_uqua",
-      "slug": "pr-2025-12-24-co136212-108",
-      "title": "【お知らせ】人々の未来の利益と今の生活を豊かにする『CAMEL』東京メトロ全線でCM放映中！！！",
-      "publishedAt": "2025-12-24T08:00:02.000Z",
+      "id": "bgi_ynk7n",
+      "slug": "tepco-daiwa-house-bess-jv-1gw-2026-06",
+      "title": "東京電力HDと大和ハウス工業、系統用蓄電所の共同開発で業務提携 ─ 2035年までに全国1GW／4GWh規模を目標",
+      "publishedAt": "2026-07-02T03:37:42.750Z",
       "category": [
-        "投資"
+        "開発計画"
+      ]
+    },
+    {
+      "id": "023s2ahmrnbk",
+      "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
+      "title": "伊藤忠商事・三菱地所・東京センチュリー、福岡県筑前町で系統用蓄電所（67MW／230.1MWh）建設に着手 ─ 2027年度商業運転へ",
+      "publishedAt": "2026-07-02T03:37:41.521Z",
+      "category": [
+        "開発計画"
       ]
     },
     {
@@ -9703,24 +10294,6 @@
       "publishedAt": "2026-04-08T05:00:01.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "x918k3gu9z-g",
-      "slug": "pr-2026-04-08-co10686-1304",
-      "title": "～東京都の支援事業に２年連続で採択～東急㈱グループが系統用蓄電所事業を推進総開発規模４６ＭＷ／１８４ＭＷｈ、２０２７年度までに稼働開始",
-      "publishedAt": "2026-04-08T05:00:01.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "gtck-5kc3m",
-      "slug": "pr-2026-04-01-co176494-13",
-      "title": "本社移転および東京支社開設、ならびにコーポレートロゴ刷新のお知らせ",
-      "publishedAt": "2026-04-01T01:10:02.000Z",
-      "category": [
-        "開発計画"
       ]
     }
   ],
@@ -9777,6 +10350,15 @@
   ],
   "pref:石川": [
     {
+      "id": "14zk0_pptrnf",
+      "slug": "gates-bess-6sites-2026-07",
+      "title": "GATES、高圧・系統用蓄電池事業を新たに6件推進 ─ 長野・石川・岐阜・静岡・愛媛で2027年末までの完工・運用開始を目指す",
+      "publishedAt": "2026-08-02T11:23:32.958Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "8t-azwo74cyy",
       "slug": "pr-2026-04-01-co180465-4",
       "title": "石川県加賀市にて約2MW／約4MWh 蓄電所を運転開始しました",
@@ -9828,6 +10410,24 @@
   ],
   "pref:長野": [
     {
+      "id": "u3gal45sc2ng",
+      "slug": "tess-engineering-komoro-bess-43mw-epc-2026-07",
+      "title": "テス・エンジニアリング、長野県小諸市の系統用蓄電所（約43MW／約171MWh）EPCを大口受注 ─ 受注額約60億円、2028年3月納期",
+      "publishedAt": "2026-08-02T11:23:39.864Z",
+      "category": [
+        "技術"
+      ]
+    },
+    {
+      "id": "14zk0_pptrnf",
+      "slug": "gates-bess-6sites-2026-07",
+      "title": "GATES、高圧・系統用蓄電池事業を新たに6件推進 ─ 長野・石川・岐阜・静岡・愛媛で2027年末までの完工・運用開始を目指す",
+      "publishedAt": "2026-08-02T11:23:32.958Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "b2csf0xez",
       "slug": "eku-energy-naganohara-bess-30mw-2026-05",
       "title": "Eku Energy Japan、群馬県企業局と土地売買契約 ─ 「長野原蓄電所」（30MW／120MWh）を開発へ、2029年運開予定",
@@ -9865,6 +10465,24 @@
     }
   ],
   "pref:岐阜": [
+    {
+      "id": "14zk0_pptrnf",
+      "slug": "gates-bess-6sites-2026-07",
+      "title": "GATES、高圧・系統用蓄電池事業を新たに6件推進 ─ 長野・石川・岐阜・静岡・愛媛で2027年末までの完工・運用開始を目指す",
+      "publishedAt": "2026-08-02T11:23:32.958Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
+      "id": "99t8_17g7h1",
+      "slug": "nippon-chikudenchi-takayama-disaster-agreement-2026-06",
+      "title": "日本蓄電池、岐阜県高山市と災害時の系統用蓄電池からの電力供給協定を締結 ─ 約8MWhで72時間・約470世帯分を供給可能",
+      "publishedAt": "2026-07-02T03:38:56.312Z",
+      "category": [
+        "地域自治体"
+      ]
+    },
     {
       "id": "kqayappwr",
       "slug": "nippon-chikudenchi-takayama-kuguno",
@@ -9922,6 +10540,15 @@
   ],
   "pref:静岡": [
     {
+      "id": "14zk0_pptrnf",
+      "slug": "gates-bess-6sites-2026-07",
+      "title": "GATES、高圧・系統用蓄電池事業を新たに6件推進 ─ 長野・石川・岐阜・静岡・愛媛で2027年末までの完工・運用開始を目指す",
+      "publishedAt": "2026-08-02T11:23:32.958Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "74-8b0krqsk",
       "slug": "pr-2026-03-23-co175281-7",
       "title": "静岡県牧之原市にて第一号蓄電所が運転開始",
@@ -9974,15 +10601,6 @@
       "category": [
         "開発計画"
       ]
-    },
-    {
-      "id": "y9c7iqngwaf",
-      "slug": "pr-2025-04-18-co49660-127",
-      "title": "東洋製罐 静岡工場においてオンサイトPPAモデルを活用した再生可能エネルギー電気の利用を開始",
-      "publishedAt": "2025-04-18T01:00:03.000Z",
-      "category": [
-        "技術"
-      ]
     }
   ],
   "pref:愛知": [
@@ -10006,6 +10624,15 @@
     }
   ],
   "pref:三重": [
+    {
+      "id": "m8l_d9pay6",
+      "slug": "sinexcel-matsusaka-bess-balancing-entry-2026-07",
+      "title": "SINEXCEL、三重県松阪市の系統用蓄電所（2MW／8MWh）が需給調整市場へ参入 ─ 日本国内で同社初の需給調整市場向け案件",
+      "publishedAt": "2026-08-02T11:23:41.063Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "eoj9rfmqf6xn",
       "slug": "pr-2026-05-07-taokeenergy-25",
@@ -10067,15 +10694,6 @@
       "publishedAt": "2025-04-22T02:02:34.000Z",
       "category": [
         "開発計画"
-      ]
-    },
-    {
-      "id": "wmofyhhrq",
-      "slug": "pr-2025-12-18-co173607-1",
-      "title": "八千代グリーンエナジー株式会社、系統用蓄電池事業に本格参入",
-      "publishedAt": "2025-12-18T01:00:04.000Z",
-      "category": [
-        "連系"
       ]
     }
   ],
@@ -10155,15 +10773,6 @@
       ]
     },
     {
-      "id": "gj3g7kfd7yr",
-      "slug": "pr-2026-05-08-goodwejapan-15",
-      "title": "GoodWe製「Suncakeシリーズ防眩モジュール」令和7年度 東京都補助金対象製品に認定",
-      "publishedAt": "2026-05-08T10:19:09.000Z",
-      "category": [
-        "補助金"
-      ]
-    },
-    {
       "id": "qlowh84mk8",
       "slug": "pr-2026-04-08-co10686-1304-2",
       "title": "～東京都の支援事業に２年連続で採択～東急㈱グループが系統用蓄電所事業を推進総開発規模４６ＭＷ／１８４ＭＷｈ、２０２７年度までに稼働開始",
@@ -10182,21 +10791,30 @@
       ]
     },
     {
-      "id": "83mj-3beq9c",
-      "slug": "pr-2026-03-05-co2888-719",
-      "title": "【3/19開催】GX時代におけるエネルギー利活用の最適化へ　創刊28年の『環境ビジネス』がセミナー申し込み受付開始、経産省・東京都・日本総研の有識者らが登壇＜アーカイブ配信なし＞",
-      "publishedAt": "2026-03-05T01:00:02.000Z",
-      "category": [
-        "補助金"
-      ]
-    },
-    {
       "id": "3ai616p9cj6f",
       "slug": "pr-2025-11-25-qenest-17",
       "title": "【東京電力管内・先着300台】蓄電池導入キャンペーン開始！導入実質0円（東京都限定）＆蓄電運用によるキャッシュバック等で年間最大約6,400円お得",
       "publishedAt": "2025-11-25T04:00:02.000Z",
       "category": [
         "制度"
+      ]
+    },
+    {
+      "id": "v55mu5zd2xva",
+      "slug": "pr-2024-12-17-co55631-129",
+      "title": "しろくま電力、東京都「系統用大規模蓄電池導入促進事業」の第一号案件を2024年12月に運転開始。事業主は兵庫県JYSグループ。",
+      "publishedAt": "2024-12-17T05:00:02.000Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "pm6ebol52q7",
+      "slug": "pr-2023-11-21-yamabishi-19",
+      "title": "東京都利島村の浄水場にリチウムイオン蓄電システムを納入　～太陽光発電・非常用発電機と連系して離島のエネルギー課題解決に貢献～",
+      "publishedAt": "2023-11-21T01:00:03.000Z",
+      "category": [
+        "連系"
       ]
     }
   ],
@@ -10256,17 +10874,17 @@
       ]
     },
     {
-      "id": "d_l5inw2fe-z",
-      "slug": "pr-2025-07-23-co102265-12",
-      "title": "【大阪・関西万博】猛暑でも快適な冷たくなるベンチを設置",
-      "publishedAt": "2025-07-22T23:00:02.000Z",
+      "id": "q_yobz8sw73e",
+      "slug": "pr-2025-04-24-co42328-1329",
+      "title": "【JPIセミナー】大阪ガス（株）「再エネバリューチェーン事業及び系統用蓄電池事業 その最新動向と今後の更なる展開について」5月20日(火)開催",
+      "publishedAt": "2025-04-24T06:20:01.000Z",
       "category": [
-        "技術"
+        "連系"
       ]
     },
     {
-      "id": "q_yobz8sw73e",
-      "slug": "pr-2025-04-24-co42328-1329",
+      "id": "ldr08geh5cc5",
+      "slug": "pr-2025-04-24-co42328-1329-2",
       "title": "【JPIセミナー】大阪ガス（株）「再エネバリューチェーン事業及び系統用蓄電池事業 その最新動向と今後の更なる展開について」5月20日(火)開催",
       "publishedAt": "2025-04-24T06:20:01.000Z",
       "category": [
@@ -10294,6 +10912,15 @@
       ]
     },
     {
+      "id": "32e318f634",
+      "slug": "glome-hd-toyooka-1-bess-shiunten-2026-07",
+      "title": "グローム・ホールディングス、系統用蓄電所「豊岡1号」（最大受電1,988kW）が試運転を開始 ─ 8月1日受電予定、関西電力送配電に連系",
+      "publishedAt": "2026-08-02T11:23:27.615Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "batszbetoxj",
       "slug": "pr-2025-04-09-co109041-154",
       "title": "エネルギーパワーから系統用蓄電システムを受注",
@@ -10304,6 +10931,15 @@
     }
   ],
   "pref:奈良": [
+    {
+      "id": "xjdl73o7z",
+      "slug": "jesdi-hachigata-bess-juden-2026-07",
+      "title": "日本蓄電開発機構、埼玉県寄居町「鉢形蓄電所」が受電開始 ─ 上奈良・七本木に続く県内3拠点目の系統用蓄電所",
+      "publishedAt": "2026-08-02T11:23:26.420Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "3dsux0c8cze",
       "slug": "pr-2026-03-31-co173175-3",
@@ -10339,18 +10975,18 @@
       "category": [
         "連系"
       ]
-    },
-    {
-      "id": "uqn_lwhm2yuo",
-      "slug": "pr-2014-01-21-co2296-355",
-      "title": "戸建住宅専用体験施設「住まいまるごと体験館」　法人向けショールーム同時オープン（ニュースリリース）",
-      "publishedAt": "2014-01-21T01:30:01.000Z",
-      "category": [
-        "開発計画"
-      ]
     }
   ],
   "pref:和歌山": [
+    {
+      "id": "sbmy1luxt9",
+      "slug": "re100-denryoku-will-aggregation-3sites-2026-06",
+      "title": "RE100電力、ウィルと系統用蓄電池のアグリゲーション業務代行契約を締結 ─ 和歌山・熊本・大分の3拠点（各1.99MW／8.128MWh）を運用",
+      "publishedAt": "2026-07-02T03:38:57.567Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "tqfebbgcw2p5",
       "slug": "pr-2025-12-24-hd-6",
@@ -10371,6 +11007,15 @@
     }
   ],
   "pref:鳥取": [
+    {
+      "id": "ayvqsuf_15v",
+      "slug": "birdman-sakaiminato-bess-unten-2026-07",
+      "title": "Birdman、鳥取県境港市の系統用蓄電池（1,999.9kW／8,128kWh）が完工・運用開始 ─ 7月1日受電、HUAWEI製を採用",
+      "publishedAt": "2026-08-02T11:23:38.687Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "k-_pactewp",
       "slug": "nippon-chikudenchi-tottori-ketaka",
@@ -10401,6 +11046,15 @@
   ],
   "pref:島根": [
     {
+      "id": "59ng3lef2q",
+      "slug": "sbi-moneyplaza-bess-fund-ota-shimane-2026-07",
+      "title": "SBIマネープラザ、初の系統用蓄電所ファンドを組成・運用開始 ─ 島根県大田市の蓄電所（1,990kW／10,160kWh）が対象、需給調整市場に参入済",
+      "publishedAt": "2026-08-02T11:23:24.231Z",
+      "category": [
+        "投資"
+      ]
+    },
+    {
       "id": "ao-vrrbr09a",
       "slug": "pr-2026-04-01-co161802-55",
       "title": "【日本蓄電池株式会社】島根県益田市にて系統用蓄電施設「NC益田市東町蓄電所」受電開始",
@@ -10430,6 +11084,15 @@
   ],
   "pref:岡山": [
     {
+      "id": "8ddpu47wqzc",
+      "slug": "tokyo-gas-bess-1gw-mimasaka-2026-07",
+      "title": "東京ガス、系統用蓄電池の運用予定容量が1GWを突破 ─ 岡山・美作蓄電所（29MW）の最適運用を新たに受託",
+      "publishedAt": "2026-08-02T11:23:35.357Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "v4dz1mi4u8al",
       "slug": "pr-2026-02-10-co176494-7",
       "title": "【稼働開始】岡山県備前市に伊部蓄電所が竣工・運転開始",
@@ -10457,15 +11120,6 @@
       "category": [
         "地域自治体",
         "連系"
-      ]
-    },
-    {
-      "id": "mhtttmq11",
-      "slug": "pr-2026-03-17-co6953-659",
-      "title": "東急不動産の物流施設「LOGI’Q」シリーズ 中国地方初進出物件「LOGI'Q広島」着工",
-      "publishedAt": "2026-03-17T06:00:01.000Z",
-      "category": [
-        "海外"
       ]
     },
     {
@@ -10515,15 +11169,6 @@
     }
   ],
   "pref:山口": [
-    {
-      "id": "r-odm7xxtw",
-      "slug": "pr-2025-12-09-co55631-157",
-      "title": "山口県企業局としろくま電力が連携！令和8年度からの「やまぐちぶちエコでんき」の募集を開始！",
-      "publishedAt": "2025-12-09T01:03:32.000Z",
-      "category": [
-        "地域自治体"
-      ]
-    },
     {
       "id": "ls5atlnqn",
       "slug": "pr-2026-04-23-co161802-59",
@@ -10596,6 +11241,17 @@
       "publishedAt": "2026-03-11T10:37:39.000Z",
       "category": [
         "地域自治体"
+      ]
+    }
+  ],
+  "pref:愛媛": [
+    {
+      "id": "14zk0_pptrnf",
+      "slug": "gates-bess-6sites-2026-07",
+      "title": "GATES、高圧・系統用蓄電池事業を新たに6件推進 ─ 長野・石川・岐阜・静岡・愛媛で2027年末までの完工・運用開始を目指す",
+      "publishedAt": "2026-08-02T11:23:32.958Z",
+      "category": [
+        "開発計画"
       ]
     }
   ],
@@ -10675,21 +11331,30 @@
   ],
   "pref:福岡": [
     {
+      "id": "b3jir78j08s",
+      "slug": "nippon-chikudenchi-nc-kuchiharu-bess-juden-2026-06",
+      "title": "日本蓄電池、福岡県嘉麻市「NC口春蓄電所」（1,975kW／8,146kWh）が受電開始 ─ リミックスポイントとの共同ファンドで開発",
+      "publishedAt": "2026-07-02T03:38:55.119Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "023s2ahmrnbk",
+      "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
+      "title": "伊藤忠商事・三菱地所・東京センチュリー、福岡県筑前町で系統用蓄電所（67MW／230.1MWh）建設に着手 ─ 2027年度商業運転へ",
+      "publishedAt": "2026-07-02T03:37:41.521Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "dwjwmpgqzg",
       "slug": "pr-2026-02-05-co111100-150",
       "title": "福岡の老舗「元祖もつ鍋 楽天地」福岡市内の12店舗にモバイルバッテリーシェアリング「プラパ」を導入",
       "publishedAt": "2026-02-05T07:00:01.000Z",
       "category": [
         "市場統計"
-      ]
-    },
-    {
-      "id": "zb8epenugrrx",
-      "slug": "pr-2025-12-16-co111100-146",
-      "title": "福岡市のふるさと納税でスリーアールの人気商品が販売スタート！",
-      "publishedAt": "2025-12-16T02:01:50.000Z",
-      "category": [
-        "地域自治体"
       ]
     },
     {
@@ -10736,15 +11401,6 @@
       "category": [
         "投資"
       ]
-    },
-    {
-      "id": "m05i6nw4-ri",
-      "slug": "pr-2026-03-25-co76147-228",
-      "title": "福岡県筑後市における特別高圧系統用蓄電池事業の実施決定について",
-      "publishedAt": "2026-03-25T05:04:10.000Z",
-      "category": [
-        "連系"
-      ]
     }
   ],
   "pref:佐賀": [
@@ -10785,15 +11441,6 @@
       ]
     },
     {
-      "id": "obq6pgx90j",
-      "slug": "pr-2026-04-01-eco-17",
-      "title": "佐賀県鳥栖市にecoプロパティーズとナカノ商会が共同開発したBTS型物流施設が竣工",
-      "publishedAt": "2026-04-01T01:00:04.000Z",
-      "category": [
-        "開発計画"
-      ]
-    },
-    {
       "id": "kq9co66sg0p",
       "slug": "pr-2026-02-03-co176494-5",
       "title": "【稼働開始】佐賀県伊万里市に最大容量8,000kWhの系統用蓄電所が完成",
@@ -10819,6 +11466,15 @@
       "category": [
         "投資"
       ]
+    },
+    {
+      "id": "7b3h31w0q",
+      "slug": "pr-2025-08-07-co161802-5",
+      "title": "日本蓄電池と九電工は系統用蓄電池施設の開発に関する基本契約を締結",
+      "publishedAt": "2025-08-07T06:00:06.000Z",
+      "category": [
+        "連系"
+      ]
     }
   ],
   "pref:長崎": [
@@ -10842,6 +11498,15 @@
     }
   ],
   "pref:熊本": [
+    {
+      "id": "sbmy1luxt9",
+      "slug": "re100-denryoku-will-aggregation-3sites-2026-06",
+      "title": "RE100電力、ウィルと系統用蓄電池のアグリゲーション業務代行契約を締結 ─ 和歌山・熊本・大分の3拠点（各1.99MW／8.128MWh）を運用",
+      "publishedAt": "2026-07-02T03:38:57.567Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "ztlcg_jaqx8b",
       "slug": "pr-2026-03-09-co161802-43",
@@ -10908,6 +11573,15 @@
   ],
   "pref:大分": [
     {
+      "id": "sbmy1luxt9",
+      "slug": "re100-denryoku-will-aggregation-3sites-2026-06",
+      "title": "RE100電力、ウィルと系統用蓄電池のアグリゲーション業務代行契約を締結 ─ 和歌山・熊本・大分の3拠点（各1.99MW／8.128MWh）を運用",
+      "publishedAt": "2026-07-02T03:38:57.567Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "l6qjhusp4",
       "slug": "oita-hiji-bess-51mw-itochu-enex-pf-2026-05",
       "title": "大分・日出町の系統用蓄電所（51MW／204MWh）に伊藤忠エネクスら国内4社が出資、あおぞら銀行PF組成 ─ RSBMがアセットマネジメント",
@@ -10923,15 +11597,6 @@
       "publishedAt": "2026-05-23T06:45:12.839Z",
       "category": [
         "技術"
-      ]
-    },
-    {
-      "id": "o7zfx-3ee8",
-      "slug": "pr-2024-03-07-co55631-111",
-      "title": "NECキャピタルソリューションとafterFITは、ヨロズ大分に1.2MWのソーラーカーポートと野立て太陽光発電設備を設置し電力供給を開始",
-      "publishedAt": "2024-03-07T07:45:01.000Z",
-      "category": [
-        "制度"
       ]
     },
     {

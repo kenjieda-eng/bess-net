@@ -191,6 +191,18 @@ export default async function GlossaryDetailPage({
     faqAnswer = `${faqAnswer}${faqAnswer ? ' ' : ''}${detailPlain}`;
   }
   if (faqAnswer.length > 200) faqAnswer = `${faqAnswer.slice(0, 200)}…`;
+  // 8/12便B-2（2026-08-12）: detail 内の「よくある質問」（<h4>Q. …</h4><p>…</p>）を
+  // FAQPage mainEntity へ自動反映する器。本文（microCMS）が真実源＝JSON-LD は追随のみで
+  // 二重管理しない（G3 の「answer は既存文の機械切出しのみ・新規生成なし」の規律を維持）。
+  // FAQ本文は detail として初期DOMに描画される（#107 準拠）。
+  const inlineFaqs: Array<{ q: string; a: string }> = [];
+  for (const m of (term.detail || '').matchAll(
+    /<h4[^>]*>\s*Q[.．]\s*([^<]+?)\s*<\/h4>\s*<p>([\s\S]*?)<\/p>/g
+  )) {
+    const q = m[1].trim();
+    const a = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    if (q && a) inlineFaqs.push({ q, a });
+  }
   const faqPageJsonLd = faqAnswer
     ? {
         '@context': 'https://schema.org',
@@ -201,6 +213,11 @@ export default async function GlossaryDetailPage({
             name: `${term.term}とは？`,
             acceptedAnswer: { '@type': 'Answer', text: faqAnswer },
           },
+          ...inlineFaqs.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
         ],
       }
     : null;

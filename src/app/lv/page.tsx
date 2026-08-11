@@ -15,14 +15,14 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   // layout titleTemplate が「 | 蓄電所ネット」を自動付与（#88）
-  title: '低圧蓄電所・低圧系統用蓄電池 総合ガイド ── 仕組み・収益・購入・参入',
+  title: '低圧系統用蓄電池・低圧蓄電所 総合ガイド ── 仕組み・収益・購入・参入',
   description:
-    '低圧蓄電所（低圧系統用蓄電池）の仕組み・収益モデル・購入や事業参入の考え方を、販売者ではない中立の立場で体系的に解説。2026年4月に始まった需給調整市場の低圧開放など最新制度も一次資料ベースで扱います。',
+    '低圧系統用蓄電池（低圧蓄電所）の仕組み・収益モデル・購入や事業参入の考え方を、販売者ではない中立の立場で体系的に解説。2026年4月に始まった需給調整市場の低圧開放など最新制度も一次資料ベースで扱います。',
   alternates: { canonical: '/lv' },
   openGraph: {
-    title: '低圧蓄電所・低圧系統用蓄電池 総合ガイド ── 仕組み・収益・購入・参入',
+    title: '低圧系統用蓄電池・低圧蓄電所 総合ガイド ── 仕組み・収益・購入・参入',
     description:
-      '低圧蓄電所（低圧系統用蓄電池）の仕組み・収益・購入・参入を中立の立場で体系解説。',
+      '低圧系統用蓄電池（低圧蓄電所）の仕組み・収益・購入・参入を中立の立場で体系解説。',
     type: 'website',
     url: 'https://bess-net.jp/lv',
     images: ['https://bess-net.jp/og-image.png'],
@@ -39,13 +39,13 @@ const GUIDES = [
   {
     href: '/lv/revenue-model',
     num: '解説②',
-    title: '低圧蓄電所の収益モデル',
+    title: '低圧系統用蓄電池（低圧蓄電所）の収益モデル',
     desc: '収入はどこから生まれ、何に左右されるのか。市場・契約・コストの3層で分解。',
   },
   {
     href: '/lv/buying-guide',
     num: '解説③',
-    title: '低圧蓄電所の購入・投資ガイド',
+    title: '低圧系統用蓄電池の購入・投資ガイド',
     desc: '分譲（区画）購入までの5ステップと、収益前提・契約・機器・土地・保安の8項目チェックリスト。',
   },
   {
@@ -63,7 +63,7 @@ const GUIDES = [
   {
     href: '/lv/regulation-subsidy',
     num: '解説⑥',
-    title: '低圧蓄電所の制度・規制と補助金',
+    title: '低圧系統用蓄電池の制度・規制と補助金',
     desc: '電気事業法・保安・消防・計量・需給調整市場の要件と補助金の探し方。「決定済み」と「検討中」を区別した現在地。',
   },
 ];
@@ -101,8 +101,8 @@ export default async function LvHubPage() {
   const collectionJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: '低圧蓄電所・低圧系統用蓄電池 総合ガイド',
-    description: '低圧蓄電所（低圧系統用蓄電池）の仕組み・収益・購入・参入を中立の立場で体系解説。',
+    name: '低圧系統用蓄電池・低圧蓄電所 総合ガイド',
+    description: '低圧系統用蓄電池（低圧蓄電所）の仕組み・収益・購入・参入を中立の立場で体系解説。',
     url: 'https://bess-net.jp/lv',
     publisher: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
   };
@@ -118,7 +118,7 @@ export default async function LvHubPage() {
             <Link href="/">ホーム</Link> / 低圧蓄電所
           </p>
           <div className="section-label">LV BESS — 低圧蓄電所ガイド</div>
-          <h1 className="section-title">低圧蓄電所・低圧系統用蓄電池 総合ガイド</h1>
+          <h1 className="section-title">低圧系統用蓄電池・低圧蓄電所 総合ガイド</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 32, lineHeight: 1.8 }}>
             契約電力50kW未満の「低圧」で系統に連系する蓄電池事業 ── 低圧蓄電所（低圧系統用蓄電池）への関心が高まっています。2026年4月には需給調整市場が低圧リソースに開かれ、区画販売（分譲）型の商品も増えてきました。一方で、検索して出てくる情報の多くは販売者側の資料です。このページは、販売者ではない中立の立場から、仕組み・収益・リスク・制度を一次資料ベースで整理する総合ガイドです。
           </p>

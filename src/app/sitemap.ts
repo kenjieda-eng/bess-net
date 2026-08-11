@@ -39,6 +39,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/subsidies`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/projects`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/operators`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    // Op4①②(2026-08-12): 事業者カテゴリ別一覧
+    { url: `${siteConfig.url}/operators/makers`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${siteConfig.url}/operators/aggregators`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${siteConfig.url}/links`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${siteConfig.url}/grid`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/grid/tohoku`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },

@@ -160,6 +160,8 @@ async function main(): Promise<void> {
   // 回帰検査は「表示上位10件」ではなく突合の**全件**で判定する（10件超の社を偽陰性と誤検出しないため）
   const allMatchedProjects = new Map<string, Set<string>>();
   const allMatchedNews = new Map<string, Set<string>>();
+  // Op4(2026-08-12): 関与件数の全件カウント（表示は10件でsliceするため別持ち）
+  const involvedCountByOp = new Map<string, number>();
 
   // Op8: 解説の slug 索引＋ルーティング先の実在検証（欠けたら警告＝リンク切れを作らない）
   const explainerBySlug = new Map(explainers.map((e) => [e.slug, e]));
@@ -220,10 +222,12 @@ async function main(): Promise<void> {
     // 役割語と社名が同一文にあるものだけを採用し、役割ラベルを必ず伴う。
     // 保有側（relatedProjects）に既に出ている案件は重複させない。
     const ownedSlugs = allMatchedProjects.get(op.name) ?? new Set<string>();
-    const involvedProjects: InvolvedProjectRef[] = projectsVisible
+    const involvedAll = projectsVisible
       .filter((p) => !ownedSlugs.has(p.slug))
       .map((p) => ({ p, roles: detectInvolvementRoles(p.name ?? '', (p as any).body, op.name) }))
-      .filter((x) => x.roles.length > 0)
+      .filter((x) => x.roles.length > 0);
+    involvedCountByOp.set(op.name, involvedAll.length);
+    const involvedProjects: InvolvedProjectRef[] = involvedAll
       .sort((a, b) => (b.p.publishedAt ?? '').localeCompare(a.p.publishedAt ?? ''))
       .slice(0, 10)
       .map(({ p, roles }) => ({
@@ -287,6 +291,26 @@ async function main(): Promise<void> {
 
   const outDir = path.join(process.cwd(), 'src', 'lib', 'generated');
   fs.mkdirSync(outDir, { recursive: true });
+
+  // Op4①②(2026-08-12): カテゴリ別一覧ページ用の軽量索引。
+  // ★件数は表示上位10件（relatedProjects/involvedProjects のslice後）ではなく**突合の全件**を数える
+  //   （日本蓄電池は32件・表示は10件のため、sliceを数えると過少になる）。
+  const categoryIndex = operators.map((op) => {
+    const entry = index[op.slug];
+    return {
+      slug: op.slug,
+      name: op.name,
+      category: op.category ?? [],
+      projects: allMatchedProjects.get(op.name)?.size ?? 0,
+      involved: involvedCountByOp.get(op.name) ?? 0,
+    };
+  });
+  fs.writeFileSync(
+    path.join(outDir, 'operators-category-index.json'),
+    JSON.stringify(categoryIndex)
+  );
+  console.log(`  カテゴリ索引: ${categoryIndex.length}社 → operators-category-index.json`);
+
   const outPath = path.join(outDir, 'operators-detail-index.json');
   const json = JSON.stringify(index);
   fs.writeFileSync(outPath, json);

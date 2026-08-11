@@ -15,6 +15,8 @@ const LV_NAV_IS_NEW = Date.now() - new Date(LV_NAV_LAUNCH_DATE).getTime() < 30 *
 // 入口再設計2026-07-15: 「導入検討」「業界事業者向け」2メニュー→「はじめての方へ」1メニューへ統合
 // （既存 buyer/seller 8ページは各LPの「さらに詳しく」経由に降格・ページ自体は存置）
 const START_DROPDOWN = [
+  // 8/12便C（2026-08-12）: 「蓄電所とは」導線1本のみ追加（手数据え置き）
+  { label: '蓄電所とは', href: '/glossary/battery-storage-site' },
   { label: '買いたい・導入したい', href: '/start/buy' },
   { label: '売りたい・案件がある', href: '/start/sell' },
   { label: '事業として関わりたい', href: '/start/partner' },
