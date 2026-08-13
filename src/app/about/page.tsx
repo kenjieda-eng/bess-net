@@ -75,7 +75,7 @@ export default function AboutPage() {
                 <strong>補助金カレンダー</strong>：経産省・エネ庁・NEDO・SII・自治体の蓄電池関連補助金を継続トラック（順次拡充中）
               </li>
               <li>
-                <strong>変電所別 系統空き容量</strong>：10電力会社が公表する空き容量情報を集約（公開準備中・Sprint 2）
+                <strong>変電所別 系統空き容量</strong>：10電力会社が公表する空き容量情報を集約
               </li>
               <li>
                 <strong>事業者・サービス一覧</strong>：20カテゴリの事業者を体系的に掲載
