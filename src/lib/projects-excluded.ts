@@ -22,6 +22,11 @@ export const EXCLUDED_PROJECT_SLUGS: ReadonlySet<string> = new Set<string>([
   'pr-jaxa-where-bess',         // 業務提携
   'pr-co109041-bess-2',         // 業務提携（GA4 338秒・noindex でも URL は残るのでアクセス維持）
   'pr-100mw-bess',              // 英国BESS出資参画ニュース（実案件 pr-100mwh-bess とは別）
+  // 金曜ワンセット#2 ⑦-1（2026-08-14）: jfe-tc-memuro（北海道芽室・20MW/79MWh）の二重登載。
+  // JFE 2025-03-17 PR の実績表にある熊本別案件（J&S蓄電・玉名郡長洲町・1.9MW/8.4MWh）の行を
+  // 誤って取り込み、名称=芽室・所在地=熊本県玉名市という自己矛盾レコードになっていた。
+  // 正エントリは jfe-tc-memuro。熊本の実案件は別途起票の判断待ち（一次: 20230727/20241021 PR）。
+  'pr-jfe-hokkaido',
   // 2026-08-04 一斉整理: 案件性なし32件＋混載1件（projects-fill-2026-08・EDAさん承認済）
   'pr-co109041-bess-4',                // 案件性なし（基本合意による3年間30地点の高圧系統蓄電所開発計画の発表・特定地点なし）
   'pr-co113700-bess-4',                // 案件性なし（提携・全国展開計画の発表のみで特定地点なし）

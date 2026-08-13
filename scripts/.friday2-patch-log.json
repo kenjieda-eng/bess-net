@@ -1,0 +1,84 @@
+[
+  {
+    "slug": "taishi-bess",
+    "endpoint": "projects",
+    "keys": [
+      "name",
+      "prefecture",
+      "city",
+      "operator",
+      "outputMw",
+      "capacityMwh",
+      "latitude",
+      "longitude",
+      "body",
+      "sourceUrl"
+    ],
+    "drift": [],
+    "misses": []
+  },
+  {
+    "slug": "tokyo-ev-promotion",
+    "endpoint": "subsidies",
+    "keys": [
+      "targetEntity",
+      "scheme"
+    ],
+    "drift": [],
+    "misses": []
+  },
+  {
+    "slug": "namie-redox-flow",
+    "endpoint": "projects",
+    "keys": [
+      "operator"
+    ],
+    "drift": [],
+    "misses": []
+  },
+  {
+    "slug": "sado-megasolar-bess",
+    "endpoint": "projects",
+    "keys": [
+      "operator"
+    ],
+    "drift": [],
+    "misses": []
+  },
+  {
+    "slug": "arao-bess",
+    "endpoint": "projects",
+    "keys": [
+      "operator"
+    ],
+    "drift": [],
+    "misses": []
+  },
+  {
+    "slug": "naganuma-bess",
+    "endpoint": "projects",
+    "keys": [
+      "operator"
+    ],
+    "drift": [],
+    "misses": []
+  },
+  {
+    "slug": "tagawa-130mwh",
+    "endpoint": "projects",
+    "keys": [
+      "operator"
+    ],
+    "drift": [],
+    "misses": []
+  },
+  {
+    "slug": "osaka-large-bess",
+    "endpoint": "projects",
+    "keys": [
+      "operator"
+    ],
+    "drift": [],
+    "misses": []
+  }
+]

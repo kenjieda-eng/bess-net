@@ -73,7 +73,8 @@ export async function generateMetadata({
 }
 
 // S2②（2026-08-08）: EV系2ページに事業用・系統用への分岐導線を上部表示
-const EV_BRANCH_SLUGS = new Set<string>(['meti-cev-r7h', 'nev-portal']);
+// ⑦-3(2026-08-14): tokyo-ev-promotion も車両のみ（定置用蓄電池は対象外）のため分岐導線を表示
+const EV_BRANCH_SLUGS = new Set<string>(['meti-cev-r7h', 'nev-portal', 'tokyo-ev-promotion']);
 
 export default async function SubsidyDetailPage({
   params,

@@ -3350,19 +3350,20 @@
     ],
     "subsidyRate_raw": "定額",
     "upperLimit_raw": "車両種別に応じる",
-    "targetEntity_raw": "都内個人・法人",
+    "targetEntity_raw": "都内の個人・法人（FCV・EV・PHEV車両の導入者。定置用（系統用）蓄電池は対象外）",
     "applicationStart": "2025年4月",
     "deadline_raw": "2026年3月31日",
     "deadline_iso": "2026-03-31",
     "is_rolling": false,
     "fiscalYear": "令和7年度（2025年度）",
     "sourceUrl": "https://www.tokyo-co2down.jp/subsidy/ev/",
-    "updatedAt": "2026-05-02T13:18:25.989Z",
-    "scheme": "都内におけるFCV・EV・PHEVの導入支援。国のCEV補助金との併用が可能で、車両種別ごとに補助上限額を設定。",
+    "updatedAt": "2026-08-13T08:59:54.053Z",
+    "scheme": "都内におけるFCV・EV・PHEVの導入支援。国のCEV補助金との併用が可能で、車両種別ごとに補助上限額を設定。助成対象は車両のみで、定置用（系統用）蓄電池は対象外。V2H・V2B等の設備は本事業では車両助成額の上乗せ事由であり、設備自体への助成は別事業。",
     "applicable_prefs": [
       "東京"
     ],
     "applicable_use_cases": [
+      "grid",
       "industrial"
     ],
     "applicable_entities": [
