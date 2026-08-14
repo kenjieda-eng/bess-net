@@ -69,14 +69,26 @@ function buildHeaders(): Record<string, string> {
   return headers;
 }
 
-async function fetchJson<T>(url: string): Promise<T> {
+// PAT失効時の縮退: 無効な Bearer を付けると GitHub raw は public repo でも 404/401 を返す。
+// 認証付きで失敗したら無認証で1回だけリトライ（repo は public なので取得可能）。
+// 実証: 2026-08-14 ローカル build で PAT 失効により catalog 404 → 無認証で 581 系列全成功。
+async function fetchWithPatFallback(url: string): Promise<Response> {
   const res = await fetch(url, { headers: buildHeaders() });
+  if (!res.ok && GITHUB_PAT && [401, 403, 404].includes(res.status)) {
+    console.warn(`[eic-data] ⚠ HTTP ${res.status} with PAT → retrying unauthenticated: ${url}`);
+    return fetch(url, { headers: { 'User-Agent': 'bess-net-build-script' } });
+  }
+  return res;
+}
+
+async function fetchJson<T>(url: string): Promise<T> {
+  const res = await fetchWithPatFallback(url);
   if (!res.ok) throw new Error(`Fetch failed: ${url} (HTTP ${res.status})`);
   return res.json() as Promise<T>;
 }
 
 async function fetchCsv(url: string): Promise<DataPoint[]> {
-  const res = await fetch(url, { headers: buildHeaders() });
+  const res = await fetchWithPatFallback(url);
   if (!res.ok) throw new Error(`Fetch failed: ${url} (HTTP ${res.status})`);
   const text = await res.text();
   const records = parse(text, { columns: true, skip_empty_lines: true }) as Array<Record<string, string>>;

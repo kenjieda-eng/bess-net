@@ -107,6 +107,9 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'sinexcel-matsusaka-bess-balancing-entry-2026-07': '連系',                      // SINEXCEL 松阪 需給調整参入
   'remixpoint-ogano-bess-10th-chakou-2026-07': '開発計画',                        // リミックス 小鹿野町 10か所目着工
   'juniper-assets-kyushu-bess-financial-close-2026-07': '海外',                    // Juniper 九州 FC（海外資本）
+  // 金曜ワンセット#2（2026-08-14）
+  'nihon-chikudenchi-kama-bousai-kyotei-2026-08': '地域自治体',                    // 嘉麻市 防災協定
+  'eku-hirohara-sueteuke-2026-08': '開発計画',                                     // 広原 据付完了
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
