@@ -89,7 +89,7 @@ export default function AnkenFaqPage() {
           <section style={{ background: NAVY, borderRadius: 12, padding: '28px 24px', color: '#fff', marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#fff' }}>その他のご質問・ご相談</h2>
             <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>ご不明点は何でもお問い合わせください。中立的にお取り次ぎします。</p>
-            <AnkenContactCTA location="faq">お問い合わせはこちら →</AnkenContactCTA>
+            <AnkenContactCTA page="faq" position="main">お問い合わせはこちら →</AnkenContactCTA>
           </section>
 
           <section style={{ ...card, marginBottom: 16 }}>

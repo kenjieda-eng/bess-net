@@ -56,7 +56,7 @@ export default function AnkenFlowPage() {
                 <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 6px', color: NAVY }}>{h}</h3>
                 <p style={{ fontSize: 15, lineHeight: 1.8, margin: 0 }}>
                   {d}
-                  {link ? <AnkenContactCTA location="flow" kind="inline">{link}</AnkenContactCTA> : null}
+                  {link ? <AnkenContactCTA page="flow" position="step1" kind="inline">{link}</AnkenContactCTA> : null}
                   {tail}
                 </p>
               </div>
@@ -82,7 +82,7 @@ export default function AnkenFlowPage() {
           <section style={{ background: NAVY, borderRadius: 12, padding: '28px 24px', color: '#fff', marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#fff' }}>まずはお気軽にご相談ください</h2>
             <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>買い・売り・相談のいずれも、中立的にお取り次ぎします。</p>
-            <AnkenContactCTA location="flow">お問い合わせ・ご相談はこちら →</AnkenContactCTA>
+            <AnkenContactCTA page="flow" position="footer">お問い合わせ・ご相談はこちら →</AnkenContactCTA>
           </section>
 
           <section style={{ ...card, marginBottom: 16 }}>

@@ -4,8 +4,13 @@
  * src/components/AnkenContactCTA.tsx
  *
  * /anken 系の「相談・問い合わせ」CTA。外部の eic-jp.org/contact へ誘導し、
- * クリックで GA4 イベント 'anken_contact_click'（location 別）を発火。
+ * クリックで GA4 イベント 'anken_contact_click'（page / position 別）を発火。
  * サーバーコンポーネントのページから差し込める唯一の client 部品。
+ *
+ * An1-①（2026-08-15）: 問い合わせ計測の設置。
+ *   - UTM: utm_source=bess-net / utm_medium=anken / utm_campaign=anken_{page} /
+ *          utm_content={position}（同一ページ内の複数CTAを位置で区別）
+ *   - イベント params: page, position, link_url（GA4 側でキーイベント昇格して利用）
  *
  * 法務: 蓄電所ネット（一般社団法人エネルギー情報センター）は中立的な
  *       情報提供／取り次ぎ／コンサル。媒介・代理はしない（本文は各ページ免責に記載）。
@@ -13,23 +18,39 @@
 
 import type { CSSProperties, ReactNode } from 'react';
 
-const CONTACT_URL = 'https://eic-jp.org/contact';
+const CONTACT_BASE = 'https://eic-jp.org/contact';
+
+export type AnkenPage = 'top' | 'buy' | 'sell' | 'flow' | 'faq';
+
+function buildContactUrl(page: AnkenPage, position: string): string {
+  const params = new URLSearchParams({
+    utm_source: 'bess-net',
+    utm_medium: 'anken',
+    utm_campaign: `anken_${page}`,
+    utm_content: position,
+  });
+  return `${CONTACT_BASE}?${params.toString()}`;
+}
 
 export default function AnkenContactCTA({
-  location,
+  page,
+  position,
   children,
   kind = 'primary',
   style,
 }: {
-  location: string; // 'hero' | 'buy' | 'sell' | 'flow' | 'faq' | 'footer' | ...
+  page: AnkenPage;
+  position: string; // 'hero' | 'usecase' | 'footer' | 'main' | 'step1' | ...
   children: ReactNode;
   kind?: 'primary' | 'light' | 'inline';
   style?: CSSProperties;
 }) {
+  const href = buildContactUrl(page, position);
+
   const handleClick = () => {
     const w = window as { gtag?: (...a: unknown[]) => void };
     if (typeof window !== 'undefined' && w.gtag) {
-      w.gtag('event', 'anken_contact_click', { location, link_url: CONTACT_URL });
+      w.gtag('event', 'anken_contact_click', { page, position, link_url: href });
     }
   };
 
@@ -50,7 +71,7 @@ export default function AnkenContactCTA({
 
   return (
     <a
-      href={CONTACT_URL}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}

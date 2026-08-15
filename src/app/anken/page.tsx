@@ -126,7 +126,7 @@ function IntentCard({ href, external, title, note }: { href: string; external?: 
     </div>
   );
   return external ? (
-    <AnkenContactCTA location="hero" kind="inline" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>{inner}</AnkenContactCTA>
+    <AnkenContactCTA page="top" position="hero" kind="inline" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>{inner}</AnkenContactCTA>
   ) : (
     <Link href={href} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>{inner}</Link>
   );
@@ -157,11 +157,44 @@ export default async function AnkenPage() {
             連系枠の確保が進む2MW/8MWh級を中心に、全国の蓄電所開発案件が流通しています。買いたい・売りたい・まず相談したい
             ——蓄電所ネット（<strong>一般社団法人エネルギー情報センター</strong>運営）が、<strong>中立的に</strong>案件元へお取り次ぎします。
           </p>
+          <p className="anken-prose" style={{ fontSize: 15, lineHeight: 1.7, margin: '0 0 24px' }}>
+            ※ 本ページは<strong>開発段階の案件</strong>のお取り次ぎです。稼働中の蓄電所をお探しの方は →{' '}
+            <Link href="/info/operating-bess-introduction" style={{ color: ACCENT, fontWeight: 700 }}>稼働中蓄電所のご紹介</Link>
+          </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 14, marginBottom: 44 }}>
             <IntentCard href="/anken/buy" title="案件を買いたい・取得したい" note="投資家・新規参入・EPC・地主の方" />
             <IntentCard href="/anken/sell" title="用地・案件を売りたい・譲渡したい" note="地主・開発事業者の方" />
             <IntentCard href="#" external title="まず相談したい" note="守秘でお取り次ぎ" />
+          </div>
+
+          {/* 1.5 お取り次ぎの流れ（要約）＋FAQ主要3問 — An1-②（2026-08-15）
+              flow/faq 下層の要点を本体にインライン化（GA4実測: 下層流入が本体比ほぼゼロのため）。
+              アコーディオンは details/summary＝初期DOMに全文が載る表示切替（#103/#107）。 */}
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: NAVY, marginBottom: 12 }}>お取り次ぎの流れ</h2>
+          <ol className="anken-prose" style={{ fontSize: 15, lineHeight: 2.0, margin: '0 0 10px', paddingLeft: 22 }}>
+            <li><strong>お問い合わせ</strong> — 買いたい・売りたい・相談したい、のいずれかと概要をお送りください</li>
+            <li><strong>蓄電所ネットが内容確認</strong> — 内容を確認し、適切な案件元へお取り次ぎします</li>
+            <li><strong>案件元と直接ご商談</strong> — 以降は案件元と直接ご商談いただきます</li>
+            <li><strong>成約は当事者間</strong> — 当サイトは宅地建物取引の媒介・代理を行いません（守秘）</li>
+          </ol>
+          <p style={{ fontSize: 15, marginBottom: 4 }}>
+            <Link href="/anken/flow" style={{ color: ACCENT, fontWeight: 700 }}>詳しくは お取り次ぎの流れ →</Link>
+          </p>
+          <p className="anken-prose" style={{ fontSize: 15, color: 'var(--color-muted)', lineHeight: 1.7, marginTop: 0, marginBottom: 20, marginLeft: 0 }}>
+            ご相談・お取り次ぎの費用は、ご相談内容に応じて個別にご案内します。
+          </p>
+          <div className="anken-prose" style={{ marginBottom: 44, marginLeft: 0 }}>
+            {[
+              ['費用はかかりますか？', 'ご相談・お取り次ぎの費用は、ご相談内容に応じて個別にご案内しています。まずはお問い合わせ時にご確認ください。'],
+              ['守秘・個人情報の扱いは？', 'お預かりした情報はお取り次ぎの目的の範囲でのみ扱い、しつこい営業は行いません。公開ページに住所・座標等の個別情報は掲載しません。'],
+              ['宅建業の媒介ですか？', 'いいえ。情報提供と案件元へのお取り次ぎ・コンサルティングであり、宅地建物取引の媒介・代理は行いません。成約は当事者間で行われます。'],
+            ].map(([q, a]) => (
+              <details key={q} style={{ ...card, marginBottom: 8, padding: '12px 20px' }}>
+                <summary style={{ fontWeight: 700, color: NAVY, cursor: 'pointer', fontSize: 15 }}>Q. {q}</summary>
+                <p style={{ fontSize: 15, lineHeight: 1.8, margin: '8px 0 0' }}>A. {a}</p>
+              </details>
+            ))}
           </div>
 
           {/* 2. 蓄電所ネットができること */}
@@ -183,7 +216,7 @@ export default async function AnkenPage() {
 
           {/* 3. 市場動向（匿名集計）+ 抜粋テーブル */}
           <h2 style={{ fontSize: 22, fontWeight: 700, color: NAVY, marginBottom: 6 }}>市場動向（匿名集計）</h2>
-          <p style={{ fontSize: 15, color: ACCENT, fontWeight: 600, marginBottom: 16 }}>対応エリア：全国 ／ 下表・下記分布は中部エリアの抜粋例</p>
+          <p style={{ fontSize: 15, color: ACCENT, fontWeight: 600, marginBottom: 16 }}>対応エリア：全国（実例の掲載は中部から順次拡大中） ／ 下表・下記分布は中部エリアの抜粋例</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 12, marginBottom: 20 }}>
             <DistroBar title="規模" items={[{ label: '2MW/8MWh級中心', n: ANKEN_DATA.length }]} />
             <DistroBar title="ステータス" items={dStatus} />
@@ -270,7 +303,7 @@ export default async function AnkenPage() {
             {[
               { h: '買いたい', items: ['連系枠確保済案件を探したい', '投資基準に合う規模を知りたい', 'EPC・運用先を紹介してほしい'], cta: <Link href="/anken/buy" style={{ color: ACCENT, fontWeight: 700 }}>購入の相談 →</Link> },
               { h: '売りたい', items: ['用地・開発中案件を売却したい', '事業譲渡の相手を探したい', '適正な相場感を知りたい'], cta: <Link href="/anken/sell" style={{ color: ACCENT, fontWeight: 700 }}>売却の相談 →</Link> },
-              { h: '相談したい', items: ['連系枠・農地転用・区域区分の進め方', '資金・事業スキーム', '中古・リユース蓄電池の活用'], cta: <AnkenContactCTA location="usecase-consult" kind="inline">相談する →</AnkenContactCTA> },
+              { h: '相談したい', items: ['連系枠・農地転用・区域区分の進め方', '資金・事業スキーム', '中古・リユース蓄電池の活用'], cta: <AnkenContactCTA page="top" position="usecase" kind="inline">相談する →</AnkenContactCTA> },
             ].map((col) => (
               <div key={col.h} style={card}>
                 <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 10px', color: NAVY }}>{col.h}</h3>
@@ -282,27 +315,7 @@ export default async function AnkenPage() {
             ))}
           </div>
 
-          {/* 5. お取り次ぎの流れ（要約）*/}
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: NAVY, marginBottom: 16 }}>お取り次ぎの流れ</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 12, marginBottom: 12 }}>
-            {[
-              ['①お問い合わせ', '買い/売り/相談の内容をお送りください'],
-              ['②お取り次ぎ', '蓄電所ネットが内容を確認し案件元へ取り次ぎ'],
-              ['③直接ご商談', '案件元と直接ご商談いただきます'],
-              ['④当事者間で成約', '成約は当事者間。当サイトは媒介・代理を行いません・守秘'],
-            ].map(([h, d]) => (
-              <div key={h} style={{ ...card, borderTop: `3px solid ${ACCENT}` }}>
-                <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{h}</div>
-                <div style={{ fontSize: 15, color: 'var(--color-muted)', lineHeight: 1.7 }}>{d}</div>
-              </div>
-            ))}
-          </div>
-          <p style={{ fontSize: 15, marginBottom: 8 }}>
-            <Link href="/anken/flow" style={{ color: ACCENT, fontWeight: 700 }}>詳しくは お取り次ぎの流れ →</Link>
-          </p>
-          <p className="anken-prose" style={{ fontSize: 15, color: 'var(--color-muted)', lineHeight: 1.7, marginTop: 0, marginBottom: 44, marginLeft: 0 }}>
-            ご相談・お取り次ぎの費用は、ご相談内容に応じて個別にご案内します。
-          </p>
+          {/* 5. お取り次ぎの流れ → An1-②で本体上部（3分岐カード直下）へ移動（2026-08-15） */}
 
           {/* 6. FAQ 抜粋 */}
           <h2 style={{ fontSize: 22, fontWeight: 700, color: NAVY, marginBottom: 16 }}>よくある質問</h2>
@@ -341,7 +354,7 @@ export default async function AnkenPage() {
             <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 24, color: '#cbd5e1' }}>
               具体的な案件の照会、売却・購入のご相談はお問い合わせから。蓄電所ネットが中立的に案件元へお取り次ぎします。
             </p>
-            <AnkenContactCTA location="footer">具体的な案件の照会・売却/購入のご相談はこちら →</AnkenContactCTA>
+            <AnkenContactCTA page="top" position="footer">具体的な案件の照会・売却/購入のご相談はこちら →</AnkenContactCTA>
           </section>
 
           {/* 免責（本文そのまま）*/}

@@ -75,7 +75,7 @@ export default function AnkenSellPage() {
           <section style={{ background: NAVY, borderRadius: 12, padding: '28px 24px', color: '#fff', margin: '20px 0 32px' }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#fff' }}>売却・譲渡のご相談</h2>
             <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>用地・案件の概要をお知らせください。匿名・守秘で中立にお取り次ぎします。</p>
-            <AnkenContactCTA location="sell">売却・譲渡のご相談はこちら →</AnkenContactCTA>
+            <AnkenContactCTA page="sell" position="main">売却・譲渡のご相談はこちら →</AnkenContactCTA>
           </section>
 
           <section style={{ ...card, marginBottom: 16 }}>

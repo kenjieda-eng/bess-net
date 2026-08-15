@@ -77,7 +77,7 @@ export default function AnkenBuyPage() {
           <section style={{ background: NAVY, borderRadius: 12, padding: '28px 24px', color: '#fff', margin: '20px 0 32px' }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#fff' }}>購入・取得のご相談</h2>
             <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 20, color: '#cbd5e1' }}>投資基準・希望エリア・規模をお知らせください。中立的にお取り次ぎします。</p>
-            <AnkenContactCTA location="buy">購入・取得のご相談はこちら →</AnkenContactCTA>
+            <AnkenContactCTA page="buy" position="main">購入・取得のご相談はこちら →</AnkenContactCTA>
           </section>
 
           <section style={{ ...card, marginBottom: 16 }}>
