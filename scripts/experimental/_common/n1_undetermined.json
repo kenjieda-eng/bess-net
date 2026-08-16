@@ -4,13 +4,15 @@
  "generated_from": [
   "hokuriku/hokuriku_csv_2608_normalized.json",
   "tepco/tepco_csv_2607_normalized.json",
-  "reports/grid-tohoku-dryrun-2026-08-16.json"
+  "reports/grid-tohoku-dryrun-2026-08-16.json",
+  "_common/n1_undetermined_chugoku.json"
  ],
- "count": 255,
+ "count": 263,
  "count_by_area": {
   "北陸": 222,
   "東京": 13,
-  "東北": 20
+  "東北": 20,
+  "中国": 8
  },
  "entries": [
   {
@@ -2562,6 +2564,86 @@
    "prefecture": "新潟県",
    "stored_n1_eligible": false,
    "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-kikan-s0006",
+   "external_id": "energia_kikan_基S6",
+   "name": "新小野田変電所",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-kikan-s0008",
+   "external_id": "energia_kikan_基S8",
+   "name": "柳井火力変電所",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-kikan-s0016",
+   "external_id": "energia_kikan_基S16",
+   "name": "(名称非公開) energia_kikan_基S16",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-kikan-x",
+   "external_id": "energia_kikan_【留意事項】",
+   "name": "(名称非公開) energia_kikan_【留意事項】",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-shimane-s0001-3",
+   "external_id": "energia_shimane_島⑥S1",
+   "name": "西郷発電所",
+   "prefecture": "島根県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-shimane-s0002",
+   "external_id": "energia_shimane_島⑥S2",
+   "name": "黒木発電所",
+   "prefecture": "島根県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-shimane-s0003-3",
+   "external_id": "energia_shimane_島⑥S3",
+   "name": "海士変電所",
+   "prefecture": "島根県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-okayama-s80004",
+   "external_id": "energia_okayama_岡⑤S8-4",
+   "name": "湯原第一変電所",
+   "prefecture": "岡山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
   }
  ]
 }

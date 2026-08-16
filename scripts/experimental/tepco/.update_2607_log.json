@@ -1,0 +1,661 @@
+{
+  "fetched_at": "2026-08-16T03:03:02.475Z",
+  "ok": 1717,
+  "fail": 0,
+  "failures": [],
+  "changed": [
+    {
+      "slug": "tpg-1698",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1705",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0003",
+      "keys": [
+        "forecast_flow_mw",
+        "n1_capacity_mw",
+        "n1_eligible"
+      ]
+    },
+    {
+      "slug": "tpg-0004",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0223",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1706",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1707",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0107",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0109",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1708",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1709",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1710",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0584",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1711",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0581",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1712",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1324",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1326",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1716",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0374",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1717",
+      "keys": [
+        "forecast_flow_mw",
+        "cap_operational_mw",
+        "capacity_total_mw",
+        "n1_capacity_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1718",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0825",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0108",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0110",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0112",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0114",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0115",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0117",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0118",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0119",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0120",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0215",
+      "keys": [
+        "cap_avail_upper_mw",
+        "oc_possibility"
+      ]
+    },
+    {
+      "slug": "tpg-0221",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0222",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0227",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0228",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0229",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0231",
+      "keys": [
+        "forecast_flow_mw",
+        "cap_operational_mw",
+        "capacity_total_mw",
+        "n1_capacity_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0232",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0233",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0234",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0235",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0236",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0368",
+      "keys": [
+        "cap_operational_mw",
+        "capacity_total_mw",
+        "n1_capacity_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0585",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0587",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0589",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0590",
+      "keys": [
+        "forecast_flow_mw",
+        "cap_operational_mw",
+        "n1_capacity_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0592",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0583",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0596",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0597",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0591",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0600",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0601",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0602",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0603",
+      "keys": [
+        "forecast_flow_mw",
+        "cap_operational_mw",
+        "capacity_total_mw",
+        "n1_capacity_mw"
+      ]
+    },
+    {
+      "slug": "tpg-0609",
+      "keys": [
+        "cap_avail_upper_mw",
+        "oc_possibility"
+      ]
+    },
+    {
+      "slug": "tpg-0610",
+      "keys": [
+        "cap_avail_upper_mw",
+        "oc_possibility"
+      ]
+    },
+    {
+      "slug": "tpg-0612",
+      "keys": [
+        "cap_avail_upper_mw",
+        "oc_possibility"
+      ]
+    },
+    {
+      "slug": "tpg-0613",
+      "keys": [
+        "cap_avail_upper_mw",
+        "oc_possibility"
+      ]
+    },
+    {
+      "slug": "tpg-0979",
+      "keys": [
+        "name"
+      ]
+    },
+    {
+      "slug": "tpg-1192",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1193",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1194",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1260",
+      "keys": [
+        "cap_operational_mw",
+        "capacity_total_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1303",
+      "keys": [
+        "capacity_total_mw",
+        "n1_capacity_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1306",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1307",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1313",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1319",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1320",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1322",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1325",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1327",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1329",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1330",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1332",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1334",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1336",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1549",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1550",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1551",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1553",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1554",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1582",
+      "keys": [
+        "cap_avail_upper_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1606",
+      "keys": [
+        "cap_avail_upper_mw",
+        "oc_possibility"
+      ]
+    },
+    {
+      "slug": "tpg-1608",
+      "keys": [
+        "cap_avail_upper_mw",
+        "oc_possibility"
+      ]
+    },
+    {
+      "slug": "tpg-1613",
+      "keys": [
+        "cap_avail_upper_mw",
+        "oc_possibility"
+      ]
+    },
+    {
+      "slug": "tpg-1614",
+      "keys": [
+        "cap_avail_upper_mw",
+        "oc_possibility"
+      ]
+    },
+    {
+      "slug": "tpg-1624",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1625",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1626",
+      "keys": [
+        "forecast_flow_mw",
+        "cap_operational_mw",
+        "n1_capacity_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1627",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1628",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1629",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1630",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1693",
+      "keys": [
+        "cap_avail_upper_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1695",
+      "keys": [
+        "cap_avail_upper_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1696",
+      "keys": [
+        "cap_avail_upper_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1699",
+      "keys": [
+        "n1_capacity_mw",
+        "n1_eligible"
+      ]
+    },
+    {
+      "slug": "tpg-1703",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "tpg-1701",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "fetched_at": "2026-08-16T12:53:37.496Z",
+  "ok": 873,
+  "fail": 0,
+  "failures": [],
+  "renumber": [
+    {
+      "slug": "egz-shimane-s0006",
+      "name": "玉造変電所",
+      "prefecture": "島根県",
+      "old_external_id": "energia_shimane_島①S6",
+      "new_external_id": "energia_shimane_島①S6-2",
+      "kv": "110/6",
+      "capacity_total_mw": 42,
+      "cap_avail_old": 12,
+      "cap_avail_new": 14
+    },
+    {
+      "slug": "egz-hiroshima-s150001-2",
+      "name": "安浦変電所",
+      "prefecture": "広島県",
+      "old_external_id": "energia_hiroshima_広⑤S15-1",
+      "new_external_id": "energia_hiroshima_広⑤S15",
+      "kv": "22/6",
+      "capacity_total_mw": 9,
+      "cap_avail_old": 0,
+      "cap_avail_new": 0
+    },
+    {
+      "slug": "egz-hiroshima-s160002",
+      "name": "大崎変電所",
+      "prefecture": "広島県",
+      "old_external_id": "energia_hiroshima_広⑤S16-2",
+      "new_external_id": "energia_hiroshima_広⑤S16",
+      "kv": "22/6",
+      "capacity_total_mw": 11,
+      "cap_avail_old": 5,
+      "cap_avail_new": 5
+    }
+  ],
+  "created": [
+    "egz-shimane-s60001-2"
+  ]
+}

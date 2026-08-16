@@ -62,6 +62,12 @@ if tk_report.exists():
             "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
         })
 
+# ── 中国（2026-08-06 / 2026-07-27公表） ──
+# parse_chugoku_csv.py が出力する社別ファイルを統合（社別構造を維持）。
+cg = ROOT / "_common" / "n1_undetermined_chugoku.json"
+if cg.exists():
+    entries.extend(json.loads(cg.read_text(encoding="utf-8"))["entries"])
+
 by_area = {}
 for e in entries:
     by_area[e["area"]] = by_area.get(e["area"], 0) + 1
@@ -71,7 +77,8 @@ OUT.write_text(json.dumps({
                "false に潰れているが、実態は「不可」ではなく「未算定」。表示の三値化タスクの入力。",
     "note": "再取込では上書きせず現値維持する（社を問わず既定）。",
     "generated_from": ["hokuriku/hokuriku_csv_2608_normalized.json", "tepco/tepco_csv_2607_normalized.json",
-                       "reports/grid-tohoku-dryrun-2026-08-16.json"],
+                       "reports/grid-tohoku-dryrun-2026-08-16.json",
+                       "_common/n1_undetermined_chugoku.json"],
     "count": len(entries), "count_by_area": by_area, "entries": entries,
 }, ensure_ascii=False, indent=1), encoding="utf-8")
 print(f"出力 {OUT}: 計{len(entries)}件 {by_area}")

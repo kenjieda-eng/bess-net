@@ -1,0 +1,39 @@
+{
+ "entries": [
+  {
+   "changed_on": "2026-08-16",
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-shimane-s0006",
+   "name": "玉造変電所",
+   "prefecture": "島根県",
+   "external_id_prev": "energia_shimane_島①S6",
+   "external_id_new": "energia_shimane_島①S6-2",
+   "evidence": "名称・電圧面(110/6kV)・設備容量(42)・運用容量・台数が一致するため同一設備と判定"
+  },
+  {
+   "changed_on": "2026-08-16",
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-hiroshima-s150001-2",
+   "name": "安浦変電所",
+   "prefecture": "広島県",
+   "external_id_prev": "energia_hiroshima_広⑤S15-1",
+   "external_id_new": "energia_hiroshima_広⑤S15",
+   "evidence": "名称・電圧面(22/6kV)・設備容量(9)・運用容量・台数が一致するため同一設備と判定"
+  },
+  {
+   "changed_on": "2026-08-16",
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-hiroshima-s160002",
+   "name": "大崎変電所",
+   "prefecture": "広島県",
+   "external_id_prev": "energia_hiroshima_広⑤S16-2",
+   "external_id_new": "energia_hiroshima_広⑤S16",
+   "evidence": "名称・電圧面(22/6kV)・設備容量(11)・運用容量・台数が一致するため同一設備と判定"
+  }
+ ],
+ "note": "No.の振り直しで external_id が変わった設備の履歴。slug は公開URLのため維持し、external_id のみ更新する（次回の突合を壊さないため）。microCMS の notes は詳細ページに表示されるフィールドのため、履歴はリポジトリ側で保持する。",
+ "count": 3
+}

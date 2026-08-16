@@ -182,7 +182,9 @@ def num_eq(a, b):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", required=True)
-    ap.parse_args()
+    ap.add_argument("--emit-plan", action="store_true",
+                    help="本実行用の patch 計画を出力（承認後のみ。microCMS へは書き込まない）")
+    args = ap.parse_args()
 
     R = {"generated": date.today().isoformat(), "version_old": "2026/4/1",
          "version_new": "2026/8/6", "version_evidence": MAPPING_PDF_NOTE,
@@ -279,6 +281,9 @@ def main():
     # 名称＋電圧面＋設備容量＋運用容量＋台数が一致するものは「同一設備のNo.変更」として扱い、
     # 新規/消滅から外して要判断に載せる（external_id が変わるため機械的な上書きは危険）。
     renumber_pairs = []
+    # ★振り直しの (baseline, CSV行) 対も保持する。これを保持しないと後段の更新計画から漏れ、
+    #   当該レコードだけ値も external_id も更新されない（2026-08-16 中国本実行で実際に3件発生）。
+    renumber_matched = []
     for r in list(new_rows):
         for b in list(removed):
             if (b.get("name") or "").strip() != (r.get("name") or "").strip():
@@ -297,6 +302,7 @@ def main():
                 "capacity_total_mw": b.get("capacity_total_mw"),
                 "cap_avail_old": b.get("cap_avail_mw"), "cap_avail_new": r.get("cap_avail_mw"),
             })
+            renumber_matched.append((b, r))
             new_rows.remove(r)
             removed.remove(b)
             break
@@ -426,6 +432,103 @@ def main():
     }, ensure_ascii=False, indent=1), encoding="utf-8")
     write_md(R)
     print(f"\n→ {OUT_JSON} / {OUT_MD} / {N1_OUT} 出力")
+
+    if args.emit_plan:
+        # 本実行用 patch 計画（承認 2026-08-16）。microCMS への書込はここでは行わない。
+        # 裁定2: last_updated は**レコード単位**で由来CSVの版日付を入れる（全件一律にしない）。
+        META_TO_DATE = {"2026年8月6日更新": "2026-08-06", "2026年7月27日更新": "2026-07-27"}
+        # 裁定1: No.振り直し3件は slug 維持・external_id を新Noへ更新（旧Noは履歴に退避）
+        RENUMBER = {p["slug"]: p for p in renumber_pairs}
+        # 新規1件の slug: 既存規約 `s{S番号}{枝番4桁}` は 島④S6-1 が既に egz-shimane-s60001 を
+        # 使用しているため、既存の衝突回避規約（-2 サフィックス・島⑤S9-2 等で実績）に従う。
+        NEW_SLUG = {"energia_shimane_島①S6-1": "egz-shimane-s60001-2"}
+        APPROVED = ["cap_avail_mw", "cap_avail_upper_mw", "cap_operational_mw", "forecast_flow_mw",
+                    "capacity_total_mw", "n1_capacity_mw", "units"]
+        updates, creates, n1_skip, oc_skip = [], [], 0, 0
+        # 振り直し3件も更新対象に含める（matched には入っていない）
+        for b, r in list(matched) + renumber_matched:
+            lu = META_TO_DATE.get(r.get("src_meta") or "")
+            if not lu:
+                raise SystemExit(f"版日付が未知のメタ行: {r.get('src_meta')!r}")
+            patch = {"last_updated": f"{lu}T00:00:00.000Z",
+                     "source_url": f"{BASE_URL}/zip/{r['zip']}.zip"}
+            changed = []
+            for k in APPROVED:
+                o, n = b.get(k), r.get(k)
+                if n is not None and o != n:
+                    patch[k] = n
+                    changed.append(k)
+            if r.get("n1_eligible") is None:
+                if b.get("n1_eligible") is not None:
+                    n1_skip += 1
+            elif r["n1_eligible"] != b.get("n1_eligible"):
+                patch["n1_eligible"] = r["n1_eligible"]
+                changed.append("n1_eligible")
+            if r.get("oc_possibility") is None:
+                if b.get("oc_possibility") is not None:
+                    oc_skip += 1
+            elif r["oc_possibility"] == "有り" and b.get("oc_possibility") != "有り":
+                patch["oc_possibility"] = ["有り"]
+                changed.append("oc_possibility")
+            if b["slug"] in RENUMBER:
+                patch["external_id"] = RENUMBER[b["slug"]]["new_external_id"]
+                changed.append("external_id")
+            updates.append({"slug": b["slug"], "patch": patch, "changed": changed})
+        for r in new_rows:
+            slug = NEW_SLUG.get(r["external_id"])
+            if not slug:
+                raise SystemExit(f"新規行の slug 未定義: {r['external_id']}")
+            lu = META_TO_DATE[r["src_meta"]]
+            content = {
+                "slug": slug, "name": r["name"],
+                "operator": ["中国電力ネットワーク"], "area": ["中国"],
+                "prefecture": r["prefecture"],
+                "voltage_class": ["110kV系" if (r["voltage_primary_kv"] or 0) >= 110 else "その他"],
+                "n1_eligible": r["n1_eligible"] is True,
+                "external_id": r["external_id"],
+                "source_url": f"{BASE_URL}/zip/{r['zip']}.zip",
+                "data_source_format": ["CSV"],
+                "last_updated": f"{lu}T00:00:00.000Z",
+            }
+            for k in ["voltage_primary_kv", "voltage_secondary_kv"] + APPROVED:
+                if r.get(k) is not None:
+                    content[k] = r[k]
+            if r.get("op_constraint"):
+                content["op_constraint"] = r["op_constraint"]
+            if r.get("oc_possibility") == "有り":
+                content["oc_possibility"] = ["有り"]
+            creates.append({"slug": slug, "content": content})
+        PLAN = HERE / "update_plan_202608.json"
+        PLAN.write_text(json.dumps({
+            "generated": date.today().isoformat(),
+            "last_updated_by_version": META_TO_DATE,
+            "n1_undetermined_skipped": n1_skip, "oc_undetermined_skipped": oc_skip,
+            "update_count": len(updates), "changed_count": sum(1 for u in updates if u["changed"]),
+            "create_count": len(creates),
+            "renumber": renumber_pairs,
+            "updates": updates, "creates": creates,
+        }, ensure_ascii=False, indent=1), encoding="utf-8")
+        # 裁定1: 旧 external_id の履歴（microCMS の notes は詳細ページに表示されるため汚さない）
+        HIST = HERE.parent / "_common" / "external_id_history.json"
+        hist = json.loads(HIST.read_text(encoding="utf-8")) if HIST.exists() else {"entries": []}
+        for p in renumber_pairs:
+            if not any(e["slug"] == p["slug"] and e["external_id_prev"] == p["old_external_id"]
+                       for e in hist["entries"]):
+                hist["entries"].append({
+                    "changed_on": date.today().isoformat(), "operator": "中国電力ネットワーク",
+                    "area": "中国", "slug": p["slug"], "name": p["name"], "prefecture": p["prefecture"],
+                    "external_id_prev": p["old_external_id"], "external_id_new": p["new_external_id"],
+                    "evidence": f"名称・電圧面({p['kv']}kV)・設備容量({p['capacity_total_mw']})・"
+                                f"運用容量・台数が一致するため同一設備と判定",
+                })
+        hist["note"] = ("No.の振り直しで external_id が変わった設備の履歴。slug は公開URLのため維持し、"
+                        "external_id のみ更新する（次回の突合を壊さないため）。microCMS の notes は"
+                        "詳細ページに表示されるフィールドのため、履歴はリポジトリ側で保持する。")
+        hist["count"] = len(hist["entries"])
+        HIST.write_text(json.dumps(hist, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"\n→ {PLAN.name}: 更新{len(updates)}件（値変化{sum(1 for u in updates if u['changed'])}）"
+              f" / 新規{len(creates)}件 / N-1スキップ{n1_skip} / 出力制御スキップ{oc_skip}")
+        print(f"→ {HIST.name}: external_id 履歴 {hist['count']}件")
     print("[dry-run] 完了（microCMS 書込なし）")
 
 

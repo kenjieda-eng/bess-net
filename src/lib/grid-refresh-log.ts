@@ -39,6 +39,30 @@ export type GridRefreshEntry = {
 export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
   {
     importedOn: '2026-08-16',
+    areaJp: '中国',
+    areaSlug: 'chugoku',
+    operator: '中国電力ネットワーク',
+    publishedVersion: '2026年8月6日更新版（岡山・島根・鳥取・山口は2026年7月27日更新）',
+    total: 874,
+    decreased: 44,
+    zeroed: 2,
+    increased: 24,
+    changed: 167,
+    added: 1,
+    removed: 0,
+    topDecreases: [
+      { name: '用瀬変電所', prefecture: '鳥取県', from: 12, to: 6 },
+      { name: '打吹変電所', prefecture: '鳥取県', from: 16, to: 10 },
+      { name: '明塚変電所', prefecture: '島根県', from: 4, to: 1 },
+      { name: '真加部変電所', prefecture: '岡山県', from: 7, to: 4 },
+      { name: '岩国(変)', prefecture: '山口県', from: 17, to: 14 },
+    ],
+    note: 'N-1電制の未算定8件・出力制御の未算定15件は現値維持。玉造変電所に110/22kVバンクを新規収録。'
+      + '安浦・大崎・玉造の3件は公表No.の振り直し（設備は同一・URLは維持）。',
+    report: 'reports/grid-chugoku-dryrun-2026-08-16.md',
+  },
+  {
+    importedOn: '2026-08-16',
     areaJp: '東北',
     areaSlug: 'tohoku',
     operator: '東北電力ネットワーク',

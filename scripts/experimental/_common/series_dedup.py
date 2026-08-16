@@ -31,6 +31,7 @@ def apply_series_dedup(
     base_ids: Set[str],
     base_names: Optional[Dict[str, str]] = None,
     *,
+    enable_baseline_name_rule: bool = False,
     key_id: str = "external_id",
     key_name: str = "name",
     value_keys: Sequence[str] = ("cap_operational_mw", "forecast_flow_mw"),
@@ -83,7 +84,10 @@ def apply_series_dedup(
             continue
 
         # ② baseline 名称一致（他地区・他系列からの写像）
-        mapped = base_names.get(r.get(key_name))
+        # ★既定は無効（落とし穴 #117・2026-08-16）。No.の振り直しがある社では、同名の正当な設備を
+        #   「既存の再掲」と誤判定して除去してしまう（中国で玉造/安浦/大崎の4行を誤除去した実績）。
+        #   TEPCO の 23区ファイルのように「他地区局を丸ごと再掲する」社でのみ opt-in する。
+        mapped = base_names.get(r.get(key_name)) if enable_baseline_name_rule else None
         if mapped:
             excluded.append({**r, "exclude_reason": f"既存 {mapped} の再掲（他系列/他地区の相互参照）"})
             continue

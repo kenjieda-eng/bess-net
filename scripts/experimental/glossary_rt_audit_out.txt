@@ -1,0 +1,23 @@
+﻿# GLOSSARY_301: 0 redirects（旧slug種類）
+# glossary-detail-index: 1522 entries
+# 旧slug のうち index にエントリが残存: 0/0
+
+## 付替え対象 relatedTerms（relatedTerm.slug が 301元=旧 を指す）
+
+| # | エントリ slug | 現 relatedTerm 値(旧) | 旧slug | canonical slug | canonical term | 解決 |
+|--:|---|---|---|---|---|---|
+
+## 旧slug別 被参照件数
+
+## stage-2 方式内訳（重要）
+  A. CSV値 == canonical term名（同名・map解決がold優先）: 0件
+     → CSV置換では直らない。old entry 削除 or term→slug map で 301元を除外する方式が必要。
+  B. CSV値 != canonical term名（旧エイリアス/英名等）: 0件
+     → relatedTerms CSV の値を canonical term名へ置換すれば解決（純粋な付替え）。
+  B の例（先頭10）:
+
+## 件数サマリ
+  影響エントリ数(relatedTerms付替えが必要なglossaryエントリ): 0
+  付替え対象 relatedTerm 数(総数): 0（A同名 0 / B別名 0）
+  旧slug 種類数(被参照): 0
+  ※ 解決方式 = term 完全一致（csvTermsToTermList）。relatedTerm.slug は precompute(runtime同一)解決先。
