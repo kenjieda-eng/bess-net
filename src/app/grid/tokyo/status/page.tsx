@@ -9,6 +9,13 @@ import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 3600;
 
+// このページの最終更新日（内容を更新したらここだけ上げる）。
+// JSON-LD dateModified と本文の「最終更新」表示の単一ソース（2026-08-16 是正:
+// 従来は2箇所ハードコードで drift していた。ビルド日からの自動生成は内容無変更の再ビルドでも
+// 日付が進み「実態と異なる鮮度表示」になるため採らない）。
+const PAGE_UPDATED = '2026-08-16';
+const PAGE_UPDATED_JP = PAGE_UPDATED.replace(/^(\d+)-0?(\d+)-0?(\d+)$/, '$1年$2月$3日');
+
 export const metadata: Metadata = {
   // layout titleTemplate '%s | 蓄電所ネット' が自動付与（落とし穴#88）＝ここで社名を重ねない
   title:
@@ -44,7 +51,7 @@ export default function TokyoStatusPage() {
     description:
       '東京電力パワーグリッド管内の系統空き容量・予想潮流情報の公開停止（2026/2〜6/1）と2026年6月2日の公開再開。蓄電所ネットは2026年6月に10社目として収録。',
     datePublished: '2026-05-08',
-    dateModified: '2026-06-22',
+    dateModified: PAGE_UPDATED,
     author: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
     publisher: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
     mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://bess-net.jp/grid/tokyo/status' },
@@ -141,7 +148,7 @@ export default function TokyoStatusPage() {
               <a href="https://www.tepco.co.jp/pg/consignment/system/" target="_blank" rel="noopener noreferrer" className="grid-source-link">
                 東京電力パワーグリッド「当社における系統情報について」
               </a>
-              {' '}の公開情報をもとに蓄電所ネット編集部が整理したものです（最終更新：2026年6月22日）。最新情報は公式ページでご確認ください。
+              {' '}の公開情報をもとに蓄電所ネット編集部が整理したものです（最終更新：{PAGE_UPDATED_JP}）。最新情報は公式ページでご確認ください。
             </p>
           </section>
 
