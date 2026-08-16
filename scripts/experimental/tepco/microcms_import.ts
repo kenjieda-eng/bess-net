@@ -42,7 +42,9 @@ function toContent(r: any) {
     n1_eligible: !!r.n1_eligible,
     source_url: r.source_url,
     last_updated: r.last_updated,
-    fetched_at: '2026-06-22T00:00:00.000Z',
+    // fetched_at は実行時刻から動的付与（2026-08-16 是正: 旧 '2026-06-22' ハードコードは
+    // 再取込のたびに実態とズレるため廃止）
+    fetched_at: new Date().toISOString(),
   };
   // 数値（null は送らない＝microCMS側で空に）
   for (const [k, src] of [

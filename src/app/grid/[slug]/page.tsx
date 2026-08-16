@@ -15,6 +15,7 @@ import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import HazardRiskCard from '@/components/HazardRiskCard';
 import AreaPage from './AreaPage';
+import { isFrozenSubstation, FROZEN_SUBSTATION_NOTE } from '@/lib/substations-frozen';
 import { AREA_META, AREA_JP_TO_SLUG } from './area-meta';
 import { GRID_PAGE_RELATED_TERMS } from './related-terms';
 import {
@@ -349,6 +350,23 @@ export default async function GridSlugPage({
               </Link>
             </p>
           </div>
+
+          {/* 凍結注記（tpg-1623 湯船・2026-08-16裁定）: 初期DOMに表示（#107） */}
+          {isFrozenSubstation(sub.slug) && (
+            <div
+              style={{
+                margin: '12px 0 20px',
+                padding: '12px 16px',
+                background: '#fffbeb',
+                border: '1px solid #f59e0b',
+                borderRadius: 8,
+                fontSize: 15,
+                lineHeight: 1.8,
+              }}
+            >
+              ⚠ {FROZEN_SUBSTATION_NOTE}
+            </div>
+          )}
 
           {/* Phase 4-pre: 中部 cb-* で緯度経度ありの場合、地図リンク (v21: ?focus= でマーカー自動センター) */}
           {sub.slug.startsWith('cb-') &&

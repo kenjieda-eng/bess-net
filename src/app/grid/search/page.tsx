@@ -17,6 +17,7 @@ import {
   searchSubstationsByFilters,
   type SubstationSearchFilters,
 } from '@/lib/microcms';
+import { isFrozenSubstation } from '@/lib/substations-frozen';
 import { siteConfig } from '@/lib/site-config';
 import { formatDataDateLabel } from '@/lib/grid-data-date';
 import { subsidyCountForPref } from '@/lib/grid-meta';
@@ -171,7 +172,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const response = hasAnyFilter
     ? await searchSubstationsByFilters(filters)
     : { items: [], totalCount: 0, truncated: false, failed: false };
-  const results = response.items;
+  // 凍結変電所（更新停止）は連系候補に出さない（2026-08-16裁定・詳細ページ自体は維持）
+  const results = response.items.filter((r) => !isFrozenSubstation(r.slug));
 
   // 結果に含まれる県から導線用の件数を集める（Gr8）
   const resultPrefs = [...new Set(results.map((r) => r.prefecture).filter(Boolean))] as string[];

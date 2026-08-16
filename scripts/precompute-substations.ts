@@ -22,6 +22,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { client, type Substation } from '../src/lib/microcms';
+import { FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
 import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
 // Gr10(2026-08-11): 系統区分・設備区分が prefecture に入っている社があるため正規化する
 import { normalizeSubstationPlace } from '../src/lib/grid-prefecture';
@@ -179,6 +180,9 @@ async function main(): Promise<void> {
   // エリア内で値がばらつく場合は最大値（最新）を採用し、variants 数を持たせて注記表示に使う。
   const areaDates: Record<string, { last_updated: string | null; fetched_at: string | null; last_updated_variants: number; count: number }> = {};
   for (const s of all) {
+    // 凍結変電所（更新停止・substations-frozen.ts）は件数・基準日の集計から除外（2026-08-16裁定）。
+    // レコード自体は県別JSON・詳細ページ・sitemapに残る（URL保全）。
+    if (FROZEN_SUBSTATION_SLUGS.has(s.slug)) continue;
     const area = s.area || '(不明)';
     const cur = (areaDates[area] ??= { last_updated: null, fetched_at: null, last_updated_variants: 0, count: 0 });
     cur.count += 1;
@@ -190,6 +194,7 @@ async function main(): Promise<void> {
   // variants（公表時点の種類数）を数え直す
   const luSets: Record<string, Set<string>> = {};
   for (const s of all) {
+    if (FROZEN_SUBSTATION_SLUGS.has(s.slug)) continue; // 凍結は基準日variants集計からも除外
     const area = s.area || '(不明)';
     (luSets[area] ??= new Set()).add(s.last_updated ? s.last_updated.slice(0, 10) : '');
   }
@@ -264,7 +269,8 @@ async function main(): Promise<void> {
   }
 
   const index = {
-    total: all.length,
+    // 凍結変電所は総数から除外（2026-08-16裁定: 湯船−1・新富士21B22B+1 で総表示は不変）
+    total: all.filter((s) => !FROZEN_SUBSTATION_SLUGS.has(s.slug)).length,
     area_top: areaTop,
     area_dates: areaDates,
     pref_meta: prefMeta,

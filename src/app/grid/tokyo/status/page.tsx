@@ -90,6 +90,10 @@ export default function TokyoStatusPage() {
               <dd>2026年5月中（2026年4月30日に延期発表）</dd>
               <dt>実際の公開再開日</dt>
               <dd><strong>2026年6月2日</strong></dd>
+              <dt>再開後の更新</dt>
+              <dd>2026年7月10日 系統構成・予想潮流を更新</dd>
+              <dt>CSV形式の追加</dt>
+              <dd>2026年7月16日 予想潮流等のCSV形式データを追加（当サイトは同CSVから再取込）</dd>
               <dt>停止理由</dt>
               <dd>データメンテナンス</dd>
               <dt>公式アナウンス</dt>

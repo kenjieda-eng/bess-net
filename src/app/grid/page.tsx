@@ -5,6 +5,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import JapanGridMap, { type JapanAreaInfo } from '@/components/JapanGridMap';
 import { getAllSubstations } from '@/lib/microcms';
+import { isFrozenSubstation } from '@/lib/substations-frozen';
 import { siteConfig } from '@/lib/site-config';
 import substationsIndex from '@/data/substations/index.json';
 import { AREA_META } from './[slug]/area-meta';
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）。件数はデータ実数（index.json）から動的算出（Gr5②）
   title: `変電所 系統空き容量データベース（全国${GRID_OPERATORS}社・蓄電池連系検討）`,
   description:
-    `北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の${GRID_OPERATORS}送配電事業者・${GRID_TOTAL.toLocaleString()}変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。東京電力PGは2026年6月の公開再開を受け13都県＋基幹系を収録。中部は緯度経度付き地図検索に対応。`,
+    `北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の${GRID_OPERATORS}送配電事業者・${GRID_TOTAL.toLocaleString()}変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。東京電力PGは2026年7月10日公表のCSV版（13都県＋基幹系）を収録。中部は緯度経度付き地図検索に対応。`,
   alternates: { canonical: '/grid' },
   openGraph: {
     title: `変電所 系統空き容量データベース（全国${GRID_OPERATORS}社・蓄電池連系検討）`,
@@ -51,6 +52,8 @@ export default async function GridIndexPage() {
   let n1OkCount = 0;
   let availPositiveCount = 0;
   for (const s of all) {
+    // 凍結変電所（更新停止）は各種集計から除外（2026-08-16裁定・詳細ページは維持）
+    if (isFrozenSubstation(s.slug)) continue;
     const op = (s.operator && s.operator[0]) || 'その他';
     byOperator.set(op, (byOperator.get(op) || 0) + 1);
     const vc = (s.voltage_class && s.voltage_class[0]) || 'その他';
@@ -89,7 +92,9 @@ export default async function GridIndexPage() {
       (s) =>
         typeof s.cap_avail_mw === 'number' &&
         s.cap_avail_mw > 0 &&
-        s.n1_eligible === true
+        s.n1_eligible === true &&
+        // 凍結変電所は閲覧候補（TOP棚）から除外（2026-08-16裁定）
+        !isFrozenSubstation(s.slug)
     )
     .sort((a, b) => (b.cap_avail_mw || 0) - (a.cap_avail_mw || 0))
     .slice(0, 12);
@@ -604,7 +609,7 @@ export default async function GridIndexPage() {
               数値の引用・転記には出典明記が必要です。
             </p>
             <p style={{ marginTop: 4, fontSize: 15, color: 'var(--color-muted)' }}>
-              ※ 東京電力PG は2026年4月23日時点の予想潮流等PDF（13都県＋基幹系）を収録。空容量は逆潮流側の値です。
+              ※ 東京電力PG は2026年7月10日公表の系統構成・予想潮流（CSV版・13都県＋基幹系）を収録。空容量は逆潮流側の値です。
             </p>
             <p style={{ marginTop: 8, fontSize: 15, color: 'var(--color-muted)' }}>
               データ最終更新（代表）：<strong>{latestUpdatedStr}</strong>

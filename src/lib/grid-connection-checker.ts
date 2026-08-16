@@ -20,6 +20,8 @@
  *   - 同都道府県 (距離不明) フォールバック: +5
  */
 
+import { isFrozenSubstation } from './substations-frozen';
+
 export interface LiteSubstation {
   id: string;
   slug: string;
@@ -194,8 +196,10 @@ export function diagnoseGridConnection(
   substations: LiteSubstation[],
   limit = 5
 ): DiagnosisResult {
+  // 凍結変電所（更新停止・substations-frozen.ts）は連系候補に出さない（2026-08-16裁定）
+  const active = substations.filter((s) => !isFrozenSubstation(s.slug));
   // 各 substation スコアリング
-  const scored: ScoredSubstation[] = substations.map((s) => {
+  const scored: ScoredSubstation[] = active.map((s) => {
     let distance: number | null = null;
     if (
       input.latitude !== undefined &&
