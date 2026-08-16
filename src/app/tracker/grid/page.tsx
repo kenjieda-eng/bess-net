@@ -10,6 +10,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import { GRID_REFRESH_LOG } from '@/lib/grid-refresh-log';
 import TrackerTimeline, { type TimelineItem } from '@/components/TrackerTimeline';
 import { getAllSubstations } from '@/lib/microcms';
 
@@ -79,6 +80,57 @@ export default async function GridTrackerPage() {
           <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 24 }}>
             データ更新は 1 時間ごと (ISR)。全件は <Link href="/grid">系統空き容量</Link>、地図検索は <Link href="/grid/chubu/map">中部マップ</Link> から。
           </p>
+
+          {/* 依頼BK(2026-08-16): 取込ごとの「空き容量の増減」要約。投資判断に直結する変化を
+              タイムラインの個別行に埋もれさせないため、社別の要約を先頭に置く（#107 初期DOM）。 */}
+          {GRID_REFRESH_LOG.length > 0 && (
+            <section style={{ marginBottom: 28 }}>
+              <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 6 }}>直近の再取込サマリ（空き容量の増減）</h2>
+              <p style={{ fontSize: 15, color: 'var(--color-muted)', margin: '0 0 12px', lineHeight: 1.7 }}>
+                各社の公表データを当サイトへ取り込んだ際の変化です。<strong>空き容量が減った変電所</strong>は
+                連系検討に直結するため、社ごとの件数と代表例を残しています。
+              </p>
+              <div style={{ display: 'grid', gap: 12 }}>
+                {GRID_REFRESH_LOG.map((r) => (
+                  <div
+                    key={`${r.areaSlug}-${r.importedOn}`}
+                    style={{ padding: 16, background: 'var(--color-bg-card,#fff)', border: '1px solid var(--color-border)', borderRadius: 8 }}
+                  >
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'baseline', marginBottom: 6 }}>
+                      <Link href={`/grid/${r.areaSlug}`} style={{ fontSize: 16, fontWeight: 700 }}>
+                        {r.areaJp}エリア（{r.operator}）
+                      </Link>
+                      <span style={{ fontSize: 15, color: 'var(--color-muted)' }}>
+                        {r.publishedVersion} ／ 取込 {r.importedOn} ／ {r.total.toLocaleString()}件
+                      </span>
+                    </div>
+                    <p style={{ fontSize: 15, lineHeight: 1.8, margin: '0 0 6px' }}>
+                      空き容量が<strong style={{ color: '#b45309' }}>減った {r.decreased} 件</strong>
+                      （うちゼロ化 {r.zeroed} 件）／
+                      <strong style={{ color: '#15803d' }}>増えた {r.increased} 件</strong>
+                      ／ 値が変わった {r.changed} 件
+                      {r.added > 0 && ` ／ 新規収録 ${r.added} 件`}
+                      {r.removed > 0 && ` ／ 掲載終了 ${r.removed} 件`}
+                    </p>
+                    {r.topDecreases.length > 0 && (
+                      <p style={{ fontSize: 15, lineHeight: 1.8, margin: '0 0 4px', color: 'var(--color-muted)' }}>
+                        減少の例:{' '}
+                        {r.topDecreases.map((d, i) => (
+                          <span key={d.name}>
+                            {i > 0 && ' ／ '}
+                            {d.name}（{d.prefecture}）{d.from} → {d.to} MW
+                          </span>
+                        ))}
+                      </p>
+                    )}
+                    {r.note && (
+                      <p style={{ fontSize: 15, lineHeight: 1.7, margin: 0, color: 'var(--color-muted)' }}>※ {r.note}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           <TrackerTimeline items={items} limit={100} />
 

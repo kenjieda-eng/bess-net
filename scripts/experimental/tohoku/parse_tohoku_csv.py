@@ -153,7 +153,9 @@ def vkey(v1, v2):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", required=True)
-    ap.parse_args()
+    ap.add_argument("--emit-plan", action="store_true",
+                    help="本実行用の patch 計画を出力（承認後のみ。microCMS へは書き込まない）")
+    args = ap.parse_args()
 
     R = {"generated": date.today().isoformat(), "version_old": VERSION_OLD, "version_new": VERSION_NEW,
          "files": [], "warnings": [], "requires_judgement": []}
@@ -365,6 +367,46 @@ def main():
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")
     write_md(R)
+
+    if args.emit_plan:
+        # 本実行用の patch 計画（承認済み・2026-08-16）。microCMS への書込はこのスクリプトでは行わない。
+        # last_updated=2026-07-03（メタ行「2026年7月3日作成」。他にデータ時点の公表がないため
+        # この版の唯一の日付根拠。従来は版 YYYYMM の月初を当てる旧方式だった＝見え方の系統が変わる）
+        APPROVED = ["cap_avail_mw", "cap_avail_upper_mw", "cap_operational_mw", "forecast_flow_mw",
+                    "capacity_total_mw", "n1_capacity_mw", "units"]
+        plan, n1_skipped, oc_skipped = [], 0, 0
+        for b, r in matched:
+            patch = {"last_updated": "2026-07-03T00:00:00.000Z",
+                     "source_url": f"{BASE_URL}/{r['src_file']}"}
+            changed = []
+            for k in APPROVED:
+                o, n = b.get(k), r.get(k)
+                if n is not None and o != n:
+                    patch[k] = n
+                    changed.append(k)
+            if r.get("n1_eligible") is None:
+                if b.get("n1_eligible") is not None:
+                    n1_skipped += 1
+            elif r["n1_eligible"] != b.get("n1_eligible"):
+                patch["n1_eligible"] = r["n1_eligible"]
+                changed.append("n1_eligible")
+            if r.get("oc_possibility") is None:
+                if b.get("oc_possibility") is not None:
+                    oc_skipped += 1
+            elif r["oc_possibility"] == "有り" and b.get("oc_possibility") != "有り":
+                patch["oc_possibility"] = ["有り"]
+                changed.append("oc_possibility")
+            plan.append({"slug": b["slug"], "patch": patch, "changed": changed})
+        PLAN_OUT = HERE / "update_plan_202607.json"
+        PLAN_OUT.write_text(json.dumps({
+            "generated": date.today().isoformat(), "version": VERSION_NEW,
+            "last_updated": "2026-07-03T00:00:00.000Z",
+            "n1_undetermined_skipped": n1_skipped, "oc_undetermined_skipped": oc_skipped,
+            "count": len(plan), "changed_count": sum(1 for p in plan if p["changed"]),
+            "plan": plan,
+        }, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"\n→ {PLAN_OUT.name}: {len(plan)}件（値変化 {sum(1 for p in plan if p['changed'])}件 / "
+              f"N-1未算定スキップ {n1_skipped} / 出力制御未算定スキップ {oc_skipped}）")
     print(f"\n→ {OUT_JSON} / {OUT_MD} 出力")
     print("[dry-run] 完了（microCMS 書込なし）")
 

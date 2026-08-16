@@ -2,7 +2,7 @@
   "total": 8228,
   "summary": {
     "total": 8228,
-    "avail_positive": 6044,
+    "avail_positive": 6045,
     "n1_ok": 723,
     "with_coords": 1081,
     "latest_last_updated": "2026-08-05T00:00:00.000Z",
@@ -446,6 +446,12 @@
         "kv": 66
       },
       {
+        "slug": "thk-iwate-2203",
+        "name": "盛岡中央",
+        "cap": 32,
+        "kv": 66
+      },
+      {
         "slug": "thk-miyagi-4601-2",
         "name": "五ツ橋",
         "cap": 32,
@@ -470,20 +476,14 @@
         "kv": 66
       },
       {
-        "slug": "thk-miyagi-4104",
-        "name": "勾当台",
+        "slug": "thk-akita-3405",
+        "name": "南通",
         "cap": 31,
         "kv": 66
       },
       {
         "slug": "thk-miyagi-4510",
         "name": "あすと長町",
-        "cap": 31,
-        "kv": 66
-      },
-      {
-        "slug": "thk-niigata-7c0001",
-        "name": "長岡",
         "cap": 31,
         "kv": 66
       }
@@ -633,9 +633,9 @@
       "count": 274
     },
     "東北": {
-      "last_updated": "2026-04-01",
-      "fetched_at": "2026-05-06",
-      "last_updated_variants": 3,
+      "last_updated": "2026-07-03",
+      "fetched_at": "2026-08-16",
+      "last_updated_variants": 1,
       "count": 884
     },
     "東京": {
@@ -2204,12 +2204,12 @@
       {
         "slug": "thk-akita-3405",
         "name": "南通",
-        "cap": 29,
+        "cap": 31,
         "kv": 66
       },
       {
-        "slug": "thk-akita-3804",
-        "name": "横手",
+        "slug": "thk-akita-3503",
+        "name": "牛島",
         "cap": 23,
         "kv": 66
       },
@@ -2226,26 +2226,26 @@
         "kv": 66
       },
       {
-        "slug": "thk-akita-3503",
-        "name": "牛島",
-        "cap": 22,
+        "slug": "thk-akita-3601",
+        "name": "大仙",
+        "cap": 21,
         "kv": 66
       },
       {
         "slug": "thk-akita-3603",
         "name": "角館",
-        "cap": 22,
+        "cap": 21,
+        "kv": 66
+      },
+      {
+        "slug": "thk-akita-3804",
+        "name": "横手",
+        "cap": 21,
         "kv": 66
       },
       {
         "slug": "thk-akita-3104-2",
         "name": "花輪",
-        "cap": 20,
-        "kv": 66
-      },
-      {
-        "slug": "thk-akita-3403",
-        "name": "大川反",
         "cap": 20,
         "kv": 66
       }
@@ -2258,12 +2258,6 @@
         "kv": 66
       },
       {
-        "slug": "thk-aomori-1204",
-        "name": "桔梗野",
-        "cap": 23,
-        "kv": 66
-      },
-      {
         "slug": "thk-aomori-1b0001",
         "name": "浦町",
         "cap": 23,
@@ -2272,6 +2266,12 @@
       {
         "slug": "thk-aomori-1109",
         "name": "浪打",
+        "cap": 22,
+        "kv": 66
+      },
+      {
+        "slug": "thk-aomori-1204",
+        "name": "桔梗野",
         "cap": 22,
         "kv": 66
       },
@@ -2288,8 +2288,8 @@
         "kv": 66
       },
       {
-        "slug": "thk-aomori-1110",
-        "name": "浪岡",
+        "slug": "thk-aomori-1103",
+        "name": "石江",
         "cap": 21,
         "kv": 66
       },
@@ -2308,26 +2308,20 @@
         "kv": 66
       },
       {
+        "slug": "thk-fukushima-6702",
+        "name": "久保田",
+        "cap": 22,
+        "kv": 66
+      },
+      {
         "slug": "thk-fukushima-6106",
         "name": "栄町",
         "cap": 21,
         "kv": 66
       },
       {
-        "slug": "thk-fukushima-6702",
-        "name": "久保田",
-        "cap": 21,
-        "kv": 66
-      },
-      {
         "slug": "thk-fukushima-6802",
         "name": "細沼",
-        "cap": 21,
-        "kv": 66
-      },
-      {
-        "slug": "thk-fukushima-6d0002",
-        "name": "東平",
         "cap": 21,
         "kv": 66
       },
@@ -2348,42 +2342,42 @@
         "name": "久留米",
         "cap": 20,
         "kv": 66
+      },
+      {
+        "slug": "thk-fukushima-6f0010",
+        "name": "坂下",
+        "cap": 20,
+        "kv": 66
       }
     ],
     "岩手県": [
       {
-        "slug": "thk-iwate-2202",
-        "name": "西通",
-        "cap": 30,
+        "slug": "thk-iwate-2203",
+        "name": "盛岡中央",
+        "cap": 32,
         "kv": 66
       },
       {
-        "slug": "thk-iwate-2203",
-        "name": "盛岡中央",
+        "slug": "thk-iwate-2202",
+        "name": "西通",
         "cap": 28,
         "kv": 66
       },
       {
         "slug": "thk-iwate-2204",
         "name": "高松",
-        "cap": 20,
-        "kv": 66
-      },
-      {
-        "slug": "thk-iwate-2205",
-        "name": "青山",
-        "cap": 20,
+        "cap": 21,
         "kv": 66
       },
       {
         "slug": "thk-iwate-2302",
         "name": "仙北町",
-        "cap": 20,
+        "cap": 21,
         "kv": 66
       },
       {
-        "slug": "thk-iwate-2904",
-        "name": "立根",
+        "slug": "thk-iwate-2205",
+        "name": "青山",
         "cap": 20,
         "kv": 66
       },
@@ -2394,8 +2388,14 @@
         "kv": 66
       },
       {
-        "slug": "thk-iwate-2306",
-        "name": "岩手滝沢",
+        "slug": "thk-iwate-2308",
+        "name": "都南",
+        "cap": 19,
+        "kv": 66
+      },
+      {
+        "slug": "thk-iwate-2312",
+        "name": "向中野",
         "cap": 19,
         "kv": 66
       }
@@ -2414,12 +2414,6 @@
         "kv": 66
       },
       {
-        "slug": "thk-miyagi-4104",
-        "name": "勾当台",
-        "cap": 31,
-        "kv": 66
-      },
-      {
         "slug": "thk-miyagi-4510",
         "name": "あすと長町",
         "cap": 31,
@@ -2432,15 +2426,21 @@
         "kv": 66
       },
       {
+        "slug": "thk-miyagi-4104",
+        "name": "勾当台",
+        "cap": 29,
+        "kv": 66
+      },
+      {
         "slug": "thk-miyagi-4901",
         "name": "仙台",
-        "cap": 29,
+        "cap": 28,
         "kv": 66
       },
       {
         "slug": "thk-miyagi-4403",
         "name": "福田町",
-        "cap": 24,
+        "cap": 25,
         "kv": 66
       },
       {
@@ -2466,20 +2466,8 @@
       {
         "slug": "thk-niigata-7k0007",
         "name": "浅貝",
-        "cap": 27,
+        "cap": 28,
         "kv": 154
-      },
-      {
-        "slug": "thk-niigata-7702",
-        "name": "藤見",
-        "cap": 22,
-        "kv": 66
-      },
-      {
-        "slug": "thk-niigata-7905",
-        "name": "鳥屋野",
-        "cap": 22,
-        "kv": 66
       },
       {
         "slug": "thk-niigata-7906",
@@ -2488,14 +2476,26 @@
         "kv": 66
       },
       {
-        "slug": "thk-niigata-7910",
-        "name": "亀貝",
+        "slug": "thk-niigata-7b0006",
+        "name": "北三条",
         "cap": 22,
         "kv": 66
       },
       {
-        "slug": "thk-niigata-7b0006",
-        "name": "北三条",
+        "slug": "thk-niigata-7c0002",
+        "name": "城岡",
+        "cap": 22,
+        "kv": 66
+      },
+      {
+        "slug": "thk-niigata-7f0002",
+        "name": "十日町",
+        "cap": 22,
+        "kv": 66
+      },
+      {
+        "slug": "thk-niigata-7h0010",
+        "name": "和田",
         "cap": 22,
         "kv": 66
       }
@@ -2508,32 +2508,8 @@
         "kv": 66
       },
       {
-        "slug": "thk-yamagata-5204",
-        "name": "谷地",
-        "cap": 22,
-        "kv": 66
-      },
-      {
-        "slug": "thk-yamagata-5905",
-        "name": "西鶴岡",
-        "cap": 22,
-        "kv": 66
-      },
-      {
-        "slug": "thk-yamagata-5308",
-        "name": "あかねヶ丘",
-        "cap": 21,
-        "kv": 66
-      },
-      {
         "slug": "thk-yamagata-5312",
         "name": "桜田",
-        "cap": 21,
-        "kv": 66
-      },
-      {
-        "slug": "thk-yamagata-5402",
-        "name": "松波",
         "cap": 21,
         "kv": 66
       },
@@ -2544,8 +2520,32 @@
         "kv": 66
       },
       {
-        "slug": "thk-yamagata-5104",
-        "name": "新庄十日町",
+        "slug": "thk-yamagata-5203",
+        "name": "寒河江陵西",
+        "cap": 20,
+        "kv": 66
+      },
+      {
+        "slug": "thk-yamagata-5302",
+        "name": "栄町通",
+        "cap": 20,
+        "kv": 66
+      },
+      {
+        "slug": "thk-yamagata-5306",
+        "name": "城南",
+        "cap": 20,
+        "kv": 66
+      },
+      {
+        "slug": "thk-yamagata-5308",
+        "name": "あかねヶ丘",
+        "cap": 20,
+        "kv": 66
+      },
+      {
+        "slug": "thk-yamagata-5310",
+        "name": "谷柏",
         "cap": 20,
         "kv": 66
       }
@@ -3221,13 +3221,13 @@
     "福井県": 29161,
     "石川県": 46914,
     "富山県": 36218,
-    "秋田県": 42767,
-    "青森県": 46852,
-    "福島県": 79003,
-    "岩手県": 47556,
-    "宮城県": 68012,
-    "新潟県": 86645,
-    "山形県": 40929,
+    "秋田県": 42770,
+    "青森県": 46850,
+    "福島県": 78991,
+    "岩手県": 47554,
+    "宮城県": 68009,
+    "新潟県": 86641,
+    "山形県": 40925,
     "栃木県": 50365,
     "群馬県": 54524,
     "茨城県": 62585,
@@ -3245,5 +3245,5 @@
   "max_pref_size_kb": 816,
   "max_pref": "unknown",
   "pref_count": 42,
-  "updated_at": "2026-08-16T08:47:33.654Z"
+  "updated_at": "2026-08-16T11:23:32.185Z"
 }

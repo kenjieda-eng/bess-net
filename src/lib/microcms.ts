@@ -10,6 +10,7 @@ import relatedNewsMap from './generated/related-news-map.json';
 // Gr10(2026-08-11): 系統区分・設備区分が「都道府県」として入っている社があるため、
 // 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
 import { normalizeSubstationPlace, isRealPrefecture } from './grid-prefecture';
+import { FROZEN_SUBSTATION_SLUGS } from './substations-frozen';
 
 /** build 時事前計算した関連newsマップ（"pref:<base>" / "project:<slug>" → newsRef[]）。runtime q を排除（鉄則#98） */
 const RELATED_NEWS_MAP = relatedNewsMap as Record<
@@ -1396,7 +1397,11 @@ export const getAllSubstations = async (
     all.push(...contents);
     if (contents.length < limit) break;
   }
-  return all;
+  // 凍結変電所（更新停止・substations-frozen.ts）は一覧・集計から除外する。
+  // BM積み残しの是正（2026-08-16）: /grid は除外済みだったがエリア詳細・県ページが未適用で、
+  // 東京 1,718（/grid）と 1,719（/grid/tokyo）、静岡 251 と 252 の食い違いが出ていた。
+  // 詳細ページ（getSubstationBySlug）は対象外＝URL は 200 のまま維持する。
+  return all.filter((s) => !FROZEN_SUBSTATION_SLUGS.has(s.slug));
 };
 
 export const getSubstationBySlug = async (
@@ -2181,5 +2186,6 @@ export const getSubstationsByPrefecture = async (
       break;
     }
   }
-  return all;
+  // 凍結変電所は県ページの一覧・件数からも除外（BM積み残しの是正・2026-08-16）
+  return all.filter((s) => !FROZEN_SUBSTATION_SLUGS.has(s.slug));
 };

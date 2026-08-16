@@ -3,12 +3,14 @@
  "note": "再取込では上書きせず現値維持する（社を問わず既定）。",
  "generated_from": [
   "hokuriku/hokuriku_csv_2608_normalized.json",
-  "tepco/tepco_csv_2607_normalized.json"
+  "tepco/tepco_csv_2607_normalized.json",
+  "reports/grid-tohoku-dryrun-2026-08-16.json"
  ],
- "count": 235,
+ "count": 255,
  "count_by_area": {
   "北陸": 222,
-  "東京": 13
+  "東京": 13,
+  "東北": 20
  },
  "entries": [
   {
@@ -2360,6 +2362,206 @@
    "prefecture": "神奈川県",
    "stored_n1_eligible": false,
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-kikan-0002",
+   "external_id": "tohoku_kikan01_002",
+   "name": "上北",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-kikan-0006",
+   "external_id": "tohoku_kikan01_006",
+   "name": "東花巻",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-kikan-0008",
+   "external_id": "tohoku_kikan01_008",
+   "name": "西仙台",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-kikan-0020",
+   "external_id": "tohoku_kikan01_020",
+   "name": "南相馬",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-aomori-1a0008",
+   "external_id": "tohoku_local01_1A08",
+   "name": "1A08",
+   "prefecture": "青森県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-iwate-2407",
+   "external_id": "tohoku_local02_2407",
+   "name": "後藤野",
+   "prefecture": "岩手県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-akita-3201",
+   "external_id": "tohoku_local03_3201",
+   "name": "能代東",
+   "prefecture": "秋田県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-akita-3205",
+   "external_id": "tohoku_local03_3205",
+   "name": "八森",
+   "prefecture": "秋田県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-akita-3307",
+   "external_id": "tohoku_local03_3307",
+   "name": "土崎",
+   "prefecture": "秋田県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-miyagi-4805",
+   "external_id": "tohoku_local04_4805",
+   "name": "大日",
+   "prefecture": "宮城県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-yamagata-5102",
+   "external_id": "tohoku_local05_5102",
+   "name": "鳥越",
+   "prefecture": "山形県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-yamagata-5103",
+   "external_id": "tohoku_local05_5103",
+   "name": "真室川",
+   "prefecture": "山形県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-yamagata-5106",
+   "external_id": "tohoku_local05_5106",
+   "name": "大石田",
+   "prefecture": "山形県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-yamagata-5208",
+   "external_id": "tohoku_local05_5208",
+   "name": "寒河江",
+   "prefecture": "山形県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-yamagata-5505",
+   "external_id": "tohoku_local05_5505",
+   "name": "小松",
+   "prefecture": "山形県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-fukushima-6d0011-2",
+   "external_id": "tohoku_local06_6D11",
+   "name": "6D11",
+   "prefecture": "福島県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-fukushima-6f0011",
+   "external_id": "tohoku_local06_6F11",
+   "name": "若松",
+   "prefecture": "福島県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-niigata-7308",
+   "external_id": "tohoku_local07_7308",
+   "name": "7308",
+   "prefecture": "新潟県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-niigata-7f0008",
+   "external_id": "tohoku_local07_7F08",
+   "name": "7F08",
+   "prefecture": "新潟県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
+  },
+  {
+   "operator": "東北電力ネットワーク",
+   "area": "東北",
+   "slug": "thk-niigata-7k0007-2",
+   "external_id": "tohoku_local07_7K07",
+   "name": "浅貝",
+   "prefecture": "新潟県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）"
   }
  ]
 }

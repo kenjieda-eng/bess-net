@@ -48,6 +48,20 @@ for r in tk_new:
             "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
         })
 
+# ── 東北（2026-07-03公表・202607版） ──
+# dry-run レポート（reports/grid-tohoku-dryrun-2026-08-16.json）の n1_undetermined を社別に統合。
+# 本実行（2026-08-16）でも上書きせず現値維持した20件。
+tk_report = Path("reports/grid-tohoku-dryrun-2026-08-16.json")
+if tk_report.exists():
+    for e in json.loads(tk_report.read_text(encoding="utf-8"))["n1_undetermined"]["entries"]:
+        entries.append({
+            "operator": "東北電力ネットワーク", "area": "東北",
+            "slug": e["slug"], "external_id": e["external_id"], "name": e["name"],
+            "prefecture": e["prefecture"],
+            "stored_n1_eligible": e["stored"],
+            "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+        })
+
 by_area = {}
 for e in entries:
     by_area[e["area"]] = by_area.get(e["area"], 0) + 1
@@ -56,7 +70,8 @@ OUT.write_text(json.dumps({
     "purpose": "公表CSVで N-1電制適用可否が未算定（-）の設備。microCMS の n1_eligible は boolean のため "
                "false に潰れているが、実態は「不可」ではなく「未算定」。表示の三値化タスクの入力。",
     "note": "再取込では上書きせず現値維持する（社を問わず既定）。",
-    "generated_from": ["hokuriku/hokuriku_csv_2608_normalized.json", "tepco/tepco_csv_2607_normalized.json"],
+    "generated_from": ["hokuriku/hokuriku_csv_2608_normalized.json", "tepco/tepco_csv_2607_normalized.json",
+                       "reports/grid-tohoku-dryrun-2026-08-16.json"],
     "count": len(entries), "count_by_area": by_area, "entries": entries,
 }, ensure_ascii=False, indent=1), encoding="utf-8")
 print(f"出力 {OUT}: 計{len(entries)}件 {by_area}")
