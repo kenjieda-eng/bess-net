@@ -4,15 +4,40 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import JapanGridMap, { type JapanAreaInfo } from '@/components/JapanGridMap';
-import { getAllSubstations } from '@/lib/microcms';
-import { isFrozenSubstation } from '@/lib/substations-frozen';
 import { siteConfig } from '@/lib/site-config';
+import { getAreaDates } from '@/lib/grid-data-date';
 import substationsIndex from '@/data/substations/index.json';
 import { AREA_META } from './[slug]/area-meta';
 
 // Gr5②(2026-08-08): 件数はデータ実数から動的算出（焼き込み廃止・データ増減に自動追従）
-const GRID_TOTAL: number = (substationsIndex as { total: number }).total;
+// BM(2026-08-16): 本文・meta とも下記 summary を単一ソースにする（従来は本文=runtime microCMS /
+// meta=index.total の二重管理で 8,229 と 8,228 が混在していた）。
+type GridSummary = {
+  total: number;
+  avail_positive: number;
+  n1_ok: number;
+  with_coords: number;
+  latest_last_updated: string | null;
+  by_voltage: Record<string, number>;
+  by_operator: Record<string, number>;
+  by_area_slug: Record<string, number>;
+  by_prefecture: Record<string, number>;
+  highlights: Array<{
+    id: string; slug: string; name: string; prefecture: string | null;
+    operator: string | null; voltage_class: string | null; cap_avail_mw: number | null;
+  }>;
+};
+const GRID_SUMMARY = (substationsIndex as unknown as { summary: GridSummary }).summary;
+const GRID_TOTAL: number = GRID_SUMMARY.total;
 const GRID_OPERATORS: number = Object.keys(AREA_META).length;
+
+/** 東京エリアのデータ基準日（/grid/tokyo と同じ area_dates 実値を参照＝注記の二重管理を断つ） */
+const TOKYO_PUBLISHED_JP: string | null = (() => {
+  const d = getAreaDates('東京')?.last_updated;
+  if (!d) return null;
+  const m = d.match(/^(\d{4})-0?(\d+)-0?(\d+)$/);
+  return m ? `${m[1]}年${m[2]}月${m[3]}日` : d;
+})();
 
 export const revalidate = 3600;
 
@@ -20,7 +45,7 @@ export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）。件数はデータ実数（index.json）から動的算出（Gr5②）
   title: `変電所 系統空き容量データベース（全国${GRID_OPERATORS}社・蓄電池連系検討）`,
   description:
-    `北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の${GRID_OPERATORS}送配電事業者・${GRID_TOTAL.toLocaleString()}変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。東京電力PGは2026年7月10日公表のCSV版（13都県＋基幹系）を収録。中部は緯度経度付き地図検索に対応。`,
+    `北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の${GRID_OPERATORS}送配電事業者・${GRID_TOTAL.toLocaleString()}変電所の系統空き容量・予想潮流・出力制御の可能性・N-1電制適用可否を公表情報ベースで一元化。東京電力PGは${TOKYO_PUBLISHED_JP ?? '最新'}公表のCSV版（13都県＋基幹系）を収録。中部は緯度経度付き地図検索に対応。`,
   alternates: { canonical: '/grid' },
   openGraph: {
     title: `変電所 系統空き容量データベース（全国${GRID_OPERATORS}社・蓄電池連系検討）`,
@@ -30,44 +55,21 @@ export const metadata: Metadata = {
 };
 
 export default async function GridIndexPage() {
-  const all = await getAllSubstations();
+  // BM(2026-08-16): 集計は build 時 precompute（src/data/substations/index.json の summary）から取る。
+  // 従来は runtime に getAllSubstations()（microCMS 83リクエスト/再生成）で数え直しており、
+  //   ① エリア詳細ページ（precompute 由来）と別ソース＝件数の二重管理
+  //   ② 凍結変電所の除外が total だけ漏れて 8,229（本文）と 8,228（meta・エリア別合計）が混在
+  // という不整合を生んでいた。エリア詳細と同一ソースへ統一し、runtime microCMS を 0 にする
+  // （鉄則#2/#3・落とし穴#98/#102）。数値は焼き込まず全て summary 参照（落とし穴#108）。
+  const SUMMARY = GRID_SUMMARY;
+  const total = SUMMARY.total;
+  const availPositiveCount = SUMMARY.avail_positive;
+  const n1OkCount = SUMMARY.n1_ok;
+  const latlngCount = SUMMARY.with_coords;
+  const byAreaSlug = new Map<string, number>(Object.entries(SUMMARY.by_area_slug));
+  const byVoltage = new Map<string, number>(Object.entries(SUMMARY.by_voltage));
 
-  // サマリ統計
-  const total = all.length;
-  const byOperator = new Map<string, number>();
-  const byVoltage = new Map<string, number>();
-  const byAreaSlug = new Map<string, number>(); // v25: JapanGridMap 用
-  const AREA_JP_TO_SLUG: Record<string, string> = {
-    北海道: 'hokkaido',
-    東北: 'tohoku',
-    東京: 'tokyo',
-    中部: 'chubu',
-    北陸: 'hokuriku',
-    関西: 'kansai',
-    中国: 'chugoku',
-    四国: 'shikoku',
-    九州: 'kyushu',
-    沖縄: 'okinawa',
-  };
-  let n1OkCount = 0;
-  let availPositiveCount = 0;
-  for (const s of all) {
-    // 凍結変電所（更新停止）は各種集計から除外（2026-08-16裁定・詳細ページは維持）
-    if (isFrozenSubstation(s.slug)) continue;
-    const op = (s.operator && s.operator[0]) || 'その他';
-    byOperator.set(op, (byOperator.get(op) || 0) + 1);
-    const vc = (s.voltage_class && s.voltage_class[0]) || 'その他';
-    byVoltage.set(vc, (byVoltage.get(vc) || 0) + 1);
-    const ja = (s.area && s.area[0]) || '';
-    const aSlug = AREA_JP_TO_SLUG[ja];
-    if (aSlug) byAreaSlug.set(aSlug, (byAreaSlug.get(aSlug) || 0) + 1);
-    if (s.n1_eligible === true) n1OkCount++;
-    if (typeof s.cap_avail_mw === 'number' && s.cap_avail_mw > 0) availPositiveCount++;
-  }
-  // v25: 緯度経度付き（現状中部のみ）— Phase 4 で全国化する想定
-  const latlngCount = 1081;
-
-  const operatorList = Array.from(byOperator.entries()).sort(
+  const operatorList = Object.entries(SUMMARY.by_operator).sort(
     (a, b) => b[1] - a[1]
   );
   const voltageOrder = [
@@ -86,18 +88,9 @@ export default async function GridIndexPage() {
     .map((v) => [v, byVoltage.get(v) || 0] as const)
     .filter(([, n]) => n > 0);
 
-  // 上位の閲覧候補（空容量プラスかつ N-1 電制可、上位 12 件）
-  const highlights = all
-    .filter(
-      (s) =>
-        typeof s.cap_avail_mw === 'number' &&
-        s.cap_avail_mw > 0 &&
-        s.n1_eligible === true &&
-        // 凍結変電所は閲覧候補（TOP棚）から除外（2026-08-16裁定）
-        !isFrozenSubstation(s.slug)
-    )
-    .sort((a, b) => (b.cap_avail_mw || 0) - (a.cap_avail_mw || 0))
-    .slice(0, 12);
+  // 上位の閲覧候補（空容量プラスかつ N-1 電制可、上位 12 件）。
+  // 凍結変電所の除外も precompute 側で済んでいる（substations-frozen.ts が単一ソース）。
+  const highlights = SUMMARY.highlights;
 
   // 都道府県別件数（人気の検索用、件数上位8つ）
   const PREFECTURE_TO_AREA: Record<string, { area: string; areaJp: string }> = {
@@ -147,13 +140,8 @@ export default async function GridIndexPage() {
     栃木県: { area: 'tokyo', areaJp: '東京' },
     山梨県: { area: 'tokyo', areaJp: '東京' },
   };
-  const prefCounts = new Map<string, number>();
-  for (const s of all) {
-    if (!s.prefecture) continue;
-    if (!PREFECTURE_TO_AREA[s.prefecture]) continue;
-    prefCounts.set(s.prefecture, (prefCounts.get(s.prefecture) || 0) + 1);
-  }
-  const popularPrefs = Array.from(prefCounts.entries())
+  const popularPrefs = Object.entries(SUMMARY.by_prefecture)
+    .filter(([pref]) => !!PREFECTURE_TO_AREA[pref])
     .sort((a, b) => b[1] - a[1])
     .slice(0, 8)
     .map(([pref, count]) => ({
@@ -163,13 +151,9 @@ export default async function GridIndexPage() {
       areaJp: PREFECTURE_TO_AREA[pref].areaJp,
     }));
 
-  // 鮮度の明示: データセット全体の最新 last_updated
+  // 鮮度の明示: データセット全体の最新 last_updated（＝10社中で最も新しい社の基準日）
   const latestUpdatedStr = (() => {
-    const d = all
-      .map(s => s.last_updated)
-      .filter((v): v is string => !!v)
-      .sort()
-      .at(-1);
+    const d = SUMMARY.latest_last_updated;
     if (!d) return '—';
     const dt = new Date(d);
     return Number.isNaN(dt.getTime())
@@ -537,11 +521,11 @@ export default async function GridIndexPage() {
                     <Link href={`/grid/${s.slug}`} className="grid-card-link">
                       <div className="grid-card-head">
                         <span className="grid-tag grid-tag-operator">
-                          {s.operator?.[0] ?? ''}
+                          {s.operator ?? ''}
                         </span>
-                        {s.voltage_class?.[0] && (
+                        {s.voltage_class && (
                           <span className="grid-tag grid-tag-voltage">
-                            {s.voltage_class[0]}
+                            {s.voltage_class}
                           </span>
                         )}
                       </div>
@@ -609,7 +593,7 @@ export default async function GridIndexPage() {
               数値の引用・転記には出典明記が必要です。
             </p>
             <p style={{ marginTop: 4, fontSize: 15, color: 'var(--color-muted)' }}>
-              ※ 東京電力PG は2026年7月10日公表の系統構成・予想潮流（CSV版・13都県＋基幹系）を収録。空容量は逆潮流側の値です。
+              ※ 東京電力PG は{TOKYO_PUBLISHED_JP ?? '最新'}公表の系統構成・予想潮流（CSV版・13都県＋基幹系）を収録。空容量は逆潮流側の値です。
             </p>
             <p style={{ marginTop: 8, fontSize: 15, color: 'var(--color-muted)' }}>
               データ最終更新（代表）：<strong>{latestUpdatedStr}</strong>

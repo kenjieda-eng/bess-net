@@ -55,6 +55,8 @@ export interface LiteSubstation {
   cap_avail_mw: number | null;
   /** N-1 電制適用可 */
   n1_eligible: boolean;
+  /** 電圧階級（1番目・「154kV系」等）。BM(2026-08-16): /grid の電圧階級別集計をここから作る */
+  voltage_class: string | null;
   /** 当サイトへの取込日（データ基準日の表示に使用・2026-08-08 Gr2是正） */
   fetched_at: string | null;
   /** 出力制御の可能性 (1 番目を採用) */
@@ -70,7 +72,7 @@ export interface LiteSubstation {
 // 取得対象 fields (cost 最適化: 必要なものだけ)
 const FETCH_FIELDS = [
   'id', 'slug', 'name', 'prefecture', 'operator', 'area',
-  'voltage_primary_kv', 'voltage_secondary_kv',
+  'voltage_primary_kv', 'voltage_secondary_kv', 'voltage_class',
   'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw',
   'n1_eligible', 'oc_possibility', 'latitude', 'longitude',
   'last_updated', 'fetched_at', 'area',
@@ -104,6 +106,8 @@ async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
         cap_operational_mw: typeof s.cap_operational_mw === 'number' ? s.cap_operational_mw : null,
         cap_avail_mw: typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
         n1_eligible: s.n1_eligible === true,
+        voltage_class: Array.isArray(s.voltage_class) && s.voltage_class.length > 0
+          ? s.voltage_class[0] : null,
         oc_possibility: Array.isArray(s.oc_possibility) && s.oc_possibility.length > 0
           ? s.oc_possibility[0] : null,
         latitude: typeof s.latitude === 'number' ? s.latitude : null,
@@ -268,9 +272,62 @@ async function main(): Promise<void> {
     areaTop[area] = areaTop[area].sort((a, b) => (b.cap ?? -1) - (a.cap ?? -1)).slice(0, 8);
   }
 
+  // ── BM(2026-08-16): /grid 全国集計を build 時に確定させる ──────────────
+  // 従来 /grid は runtime に getAllSubstations()（microCMS 83リクエスト）で集計していたため、
+  // ①エリア詳細（precompute）と別ソースになり ②凍結除外が total だけ漏れて 8,229/8,228 が混在した。
+  // 集計はここ（＝エリア詳細と同一ソース）で作り、ページは参照するだけにする（鉄則#3・落とし穴#102/#108）。
+  const active = all.filter((s) => !FROZEN_SUBSTATION_SLUGS.has(s.slug));
+  const AREA_JP_TO_SLUG: Record<string, string> = {
+    北海道: 'hokkaido', 東北: 'tohoku', 東京: 'tokyo', 中部: 'chubu', 北陸: 'hokuriku',
+    関西: 'kansai', 中国: 'chugoku', 四国: 'shikoku', 九州: 'kyushu', 沖縄: 'okinawa',
+  };
+  const byVoltage: Record<string, number> = {};
+  const byOperator: Record<string, number> = {};
+  const byAreaSlug: Record<string, number> = {};
+  const byPrefActive: Record<string, number> = {};
+  let availPositive = 0;
+  let n1Ok = 0;
+  let latestLastUpdated: string | null = null;
+  for (const s of active) {
+    const vc = s.voltage_class || 'その他';
+    byVoltage[vc] = (byVoltage[vc] ?? 0) + 1;
+    const op = s.operator || 'その他';
+    byOperator[op] = (byOperator[op] ?? 0) + 1;
+    const aSlug = s.area ? AREA_JP_TO_SLUG[s.area] : undefined;
+    if (aSlug) byAreaSlug[aSlug] = (byAreaSlug[aSlug] ?? 0) + 1;
+    if (s.prefecture) byPrefActive[s.prefecture] = (byPrefActive[s.prefecture] ?? 0) + 1;
+    if (typeof s.cap_avail_mw === 'number' && s.cap_avail_mw > 0) availPositive++;
+    if (s.n1_eligible === true) n1Ok++;
+    if (s.last_updated && (!latestLastUpdated || s.last_updated > latestLastUpdated)) {
+      latestLastUpdated = s.last_updated;
+    }
+  }
+  // 注目変電所（空容量プラス × N-1電制適用可・上位12件）
+  const highlights = active
+    .filter((s) => typeof s.cap_avail_mw === 'number' && s.cap_avail_mw > 0 && s.n1_eligible === true)
+    .sort((a, b) => (b.cap_avail_mw ?? 0) - (a.cap_avail_mw ?? 0))
+    .slice(0, 12)
+    .map((s) => ({
+      id: s.id, slug: s.slug, name: s.name, prefecture: s.prefecture,
+      operator: s.operator, voltage_class: s.voltage_class, cap_avail_mw: s.cap_avail_mw,
+    }));
+
   const index = {
     // 凍結変電所は総数から除外（2026-08-16裁定: 湯船−1・新富士21B22B+1 で総表示は不変）
-    total: all.filter((s) => !FROZEN_SUBSTATION_SLUGS.has(s.slug)).length,
+    total: active.length,
+    // /grid 全国集計（すべて凍結除外・total と同一母数）
+    summary: {
+      total: active.length,
+      avail_positive: availPositive,
+      n1_ok: n1Ok,
+      with_coords: active.filter((s) => typeof s.latitude === 'number' && typeof s.longitude === 'number').length,
+      latest_last_updated: latestLastUpdated,
+      by_voltage: byVoltage,
+      by_operator: byOperator,
+      by_area_slug: byAreaSlug,
+      by_prefecture: byPrefActive,
+      highlights,
+    },
     area_top: areaTop,
     area_dates: areaDates,
     pref_meta: prefMeta,
