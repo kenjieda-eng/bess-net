@@ -1,0 +1,765 @@
+{
+ "generated": "2026-08-16",
+ "version_old": "2026/4/1",
+ "version_new": "2026/8/6",
+ "version_evidence": "２０２６年８月６日更新（access/pdf/mapping.pdf マップ内表記・2026-08-16 実機確認）",
+ "files": [
+  {
+   "zip": "csv_220kv.zip",
+   "member": "sys_capa_kikan01_tr_202608_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_220kv.zip",
+   "bytes": 4887,
+   "encoding": "cp932",
+   "meta_row": "2026年8月6日更新",
+   "file_version": "202608",
+   "data_rows": 34,
+   "prefecture": null
+  },
+  {
+   "zip": "csv_tori.zip",
+   "member": "sys_capa_local11_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_tori.zip",
+   "bytes": 4174,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 25,
+   "prefecture": "鳥取県"
+  },
+  {
+   "zip": "csv_tori.zip",
+   "member": "sys_capa_local12_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_tori.zip",
+   "bytes": 3005,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 9,
+   "prefecture": "鳥取県"
+  },
+  {
+   "zip": "csv_tori.zip",
+   "member": "sys_capa_local13_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_tori.zip",
+   "bytes": 4737,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 29,
+   "prefecture": "鳥取県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local21_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "bytes": 3723,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 22,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local22_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "bytes": 3587,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 18,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local23_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "bytes": 4097,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 21,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local24_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "bytes": 4153,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 19,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local25_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "bytes": 3775,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 16,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local26_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "bytes": 2430,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 3,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local31_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "bytes": 5321,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 41,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local32_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "bytes": 6222,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 54,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local33_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "bytes": 4251,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 33,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local34_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "bytes": 4019,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 28,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local35_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "bytes": 5676,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 41,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local36_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "bytes": 4531,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 23,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local41_tr_202608_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "bytes": 7952,
+   "encoding": "cp932",
+   "meta_row": "2026年8月6日更新",
+   "file_version": "202608",
+   "data_rows": 68,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local42_tr_202608_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "bytes": 5927,
+   "encoding": "cp932",
+   "meta_row": "2026年8月6日更新",
+   "file_version": "202608",
+   "data_rows": 45,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local43_tr_202608_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "bytes": 5469,
+   "encoding": "cp932",
+   "meta_row": "2026年8月6日更新",
+   "file_version": "202608",
+   "data_rows": 39,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local44_tr_202608_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "bytes": 5088,
+   "encoding": "cp932",
+   "meta_row": "2026年8月6日更新",
+   "file_version": "202608",
+   "data_rows": 26,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local45_tr_202608_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "bytes": 4460,
+   "encoding": "cp932",
+   "meta_row": "2026年8月6日更新",
+   "file_version": "202608",
+   "data_rows": 29,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local46_tr_202608_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "bytes": 7548,
+   "encoding": "cp932",
+   "meta_row": "2026年8月6日更新",
+   "file_version": "202608",
+   "data_rows": 86,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local51_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "bytes": 9638,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 65,
+   "prefecture": "山口県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local52_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "bytes": 4905,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 23,
+   "prefecture": "山口県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local53_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "bytes": 6528,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 37,
+   "prefecture": "山口県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local54_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "bytes": 3843,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 18,
+   "prefecture": "山口県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local55_tr_202607_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "bytes": 6155,
+   "encoding": "cp932",
+   "meta_row": "2026年7月27日更新",
+   "file_version": "202607",
+   "data_rows": 22,
+   "prefecture": "山口県"
+  }
+ ],
+ "warnings": [],
+ "requires_judgement": [
+  "No.の振り直し（同一設備で external_id が変化）3件 → slug維持のまま external_id を更新するか要判断"
+ ],
+ "file_versions": {
+  "202608": [
+   "広島県",
+   "（基幹系）"
+  ],
+  "202607": [
+   "山口県",
+   "岡山県",
+   "島根県",
+   "鳥取県"
+  ]
+ },
+ "dedupe": {
+  "before": 874,
+  "after": 874,
+  "removed": 0,
+  "breakdown": {},
+  "examples": []
+ },
+ "counts": {
+  "baseline": 873,
+  "new_after_dedupe": 874,
+  "matched": 870,
+  "new_records": 1,
+  "disappeared": 0,
+  "ambiguous": 0,
+  "changed": 167,
+  "unchanged": 703,
+  "delta_pct": 0.11
+ },
+ "field_stats": {
+  "空き容量(当該)": {
+   "changed": 68,
+   "filled": 0,
+   "lost_to_undetermined": 1
+  },
+  "空容量(上位系等考慮)": {
+   "changed": 43,
+   "filled": 0,
+   "lost_to_undetermined": 1
+  },
+  "運用容量": {
+   "changed": 22,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "予想潮流": {
+   "changed": 55,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "設備容量": {
+   "changed": 10,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "N-1電制適用可能量": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "台数": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 1
+  },
+  "出力制御の可能性": {
+   "changed": 0,
+   "filled": 27,
+   "lost_to_undetermined": 15
+  }
+ },
+ "avail_decreased": {
+  "count": 44,
+  "zeroed": 2,
+  "top10": [
+   {
+    "slug": "egz-tottori-s0008",
+    "name": "用瀬変電所",
+    "prefecture": "鳥取県",
+    "old": 12,
+    "new": 6.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "egz-tottori-s20002-2",
+    "name": "打吹変電所",
+    "prefecture": "鳥取県",
+    "old": 16,
+    "new": 10.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "egz-shimane-s90003",
+    "name": "明塚変電所",
+    "prefecture": "島根県",
+    "old": 4,
+    "new": 1.0,
+    "delta": -3.0
+   },
+   {
+    "slug": "egz-okayama-s20002-5",
+    "name": "真加部変電所",
+    "prefecture": "岡山県",
+    "old": 7,
+    "new": 4.0,
+    "delta": -3.0
+   },
+   {
+    "slug": "egz-yamaguchi-s40003-2",
+    "name": "岩国(変)",
+    "prefecture": "山口県",
+    "old": 17,
+    "new": 14.0,
+    "delta": -3.0
+   },
+   {
+    "slug": "egz-tottori-s10002-2",
+    "name": "倉吉変電所",
+    "prefecture": "鳥取県",
+    "old": 18,
+    "new": 16.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-tottori-s20002-3",
+    "name": "車尾変電所",
+    "prefecture": "鳥取県",
+    "old": 15,
+    "new": 13.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-tottori-s50002-2",
+    "name": "吉谷変電所",
+    "prefecture": "鳥取県",
+    "old": 8,
+    "new": 6.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-shimane-s30003",
+    "name": "揖屋変電所",
+    "prefecture": "島根県",
+    "old": 15,
+    "new": 13.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-shimane-s0006-2",
+    "name": "北原変電所",
+    "prefecture": "島根県",
+    "old": 3,
+    "new": 1.0,
+    "delta": -2.0
+   }
+  ]
+ },
+ "avail_increased": {
+  "count": 24,
+  "top5": [
+   {
+    "slug": "egz-hiroshima-s100003",
+    "name": "焼山南変電所",
+    "prefecture": "広島県",
+    "old": 0,
+    "new": 4.0,
+    "delta": 4.0
+   },
+   {
+    "slug": "egz-yamaguchi-s30002-4",
+    "name": "深川(変)",
+    "prefecture": "山口県",
+    "old": 1,
+    "new": 5.0,
+    "delta": 4.0
+   },
+   {
+    "slug": "egz-hiroshima-s30002-2",
+    "name": "小河原変電所",
+    "prefecture": "広島県",
+    "old": 4,
+    "new": 7.0,
+    "delta": 3.0
+   },
+   {
+    "slug": "egz-tottori-s10003",
+    "name": "鳥取変電所",
+    "prefecture": "鳥取県",
+    "old": 10,
+    "new": 12.0,
+    "delta": 2.0
+   },
+   {
+    "slug": "egz-tottori-s0005",
+    "name": "八橋変電所",
+    "prefecture": "鳥取県",
+    "old": 2,
+    "new": 4.0,
+    "delta": 2.0
+   }
+  ]
+ },
+ "n1_undetermined": {
+  "count": 8,
+  "entries": [
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-kikan-s0006",
+    "external_id": "energia_kikan_基S6",
+    "name": "新小野田変電所",
+    "prefecture": null,
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-kikan-s0008",
+    "external_id": "energia_kikan_基S8",
+    "name": "柳井火力変電所",
+    "prefecture": null,
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-kikan-s0016",
+    "external_id": "energia_kikan_基S16",
+    "name": "(名称非公開) energia_kikan_基S16",
+    "prefecture": null,
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-kikan-x",
+    "external_id": "energia_kikan_【留意事項】",
+    "name": "(名称非公開) energia_kikan_【留意事項】",
+    "prefecture": null,
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-shimane-s0001-3",
+    "external_id": "energia_shimane_島⑥S1",
+    "name": "西郷発電所",
+    "prefecture": "島根県",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-shimane-s0002",
+    "external_id": "energia_shimane_島⑥S2",
+    "name": "黒木発電所",
+    "prefecture": "島根県",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-shimane-s0003-3",
+    "external_id": "energia_shimane_島⑥S3",
+    "name": "海士変電所",
+    "prefecture": "島根県",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-okayama-s80004",
+    "external_id": "energia_okayama_岡⑤S8-4",
+    "name": "湯原第一変電所",
+    "prefecture": "岡山県",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+   }
+  ]
+ },
+ "oc_undetermined": {
+  "count": 15,
+  "entries": [
+   {
+    "slug": "egz-okayama-s80004",
+    "name": "湯原第一変電所",
+    "prefecture": "岡山県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s280001-3",
+    "name": "高須変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s280002-3",
+    "name": "高須変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s290001-3",
+    "name": "向島変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s290002-3",
+    "name": "向島変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s300001-3",
+    "name": "因島変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s300002-3",
+    "name": "因島変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s310001",
+    "name": "生名変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s310002",
+    "name": "生名変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s320002",
+    "name": "伯方変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s320003",
+    "name": "伯方変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s330001-2",
+    "name": "大三島変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s330002-2",
+    "name": "大三島変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s340001-2",
+    "name": "瀬戸田変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   },
+   {
+    "slug": "egz-hiroshima-s340002-2",
+    "name": "瀬戸田変電所",
+    "prefecture": "広島県",
+    "stored": "有り"
+   }
+  ]
+ },
+ "n1_changed": {
+  "count": 0,
+  "examples": []
+ },
+ "renamed_blocking": [],
+ "renumbered": [],
+ "disclosure_change": [],
+ "renumber_pairs": [
+  {
+   "slug": "egz-shimane-s0006",
+   "name": "玉造変電所",
+   "prefecture": "島根県",
+   "old_external_id": "energia_shimane_島①S6",
+   "new_external_id": "energia_shimane_島①S6-2",
+   "kv": "110/6",
+   "capacity_total_mw": 42,
+   "cap_avail_old": 12,
+   "cap_avail_new": 14.0
+  },
+  {
+   "slug": "egz-hiroshima-s150001-2",
+   "name": "安浦変電所",
+   "prefecture": "広島県",
+   "old_external_id": "energia_hiroshima_広⑤S15-1",
+   "new_external_id": "energia_hiroshima_広⑤S15",
+   "kv": "22/6",
+   "capacity_total_mw": 9,
+   "cap_avail_old": 0,
+   "cap_avail_new": 0.0
+  },
+  {
+   "slug": "egz-hiroshima-s160002",
+   "name": "大崎変電所",
+   "prefecture": "広島県",
+   "old_external_id": "energia_hiroshima_広⑤S16-2",
+   "new_external_id": "energia_hiroshima_広⑤S16",
+   "kv": "22/6",
+   "capacity_total_mw": 11,
+   "cap_avail_old": 5,
+   "cap_avail_new": 5.0
+  }
+ ],
+ "ambiguous_rows": [],
+ "new_records_detail": [
+  {
+   "external_id": "energia_shimane_島①S6-1",
+   "name": "玉造変電所",
+   "prefecture": "島根県",
+   "kv": "110/22",
+   "cap_avail_mw": 6.0,
+   "cap_operational_mw": 6.0,
+   "member": "sys_capa_local21_tr_202607_07.csv"
+  }
+ ],
+ "disappeared_records": [],
+ "pref_counts": {
+  "old": {
+   "（基幹系）": 34,
+   "山口県": 165,
+   "広島県": 293,
+   "岡山県": 220,
+   "島根県": 98,
+   "鳥取県": 63
+  },
+  "new": {
+   "（基幹系）": 34,
+   "鳥取県": 63,
+   "島根県": 99,
+   "岡山県": 220,
+   "広島県": 293,
+   "山口県": 165
+  }
+ }
+}

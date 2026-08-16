@@ -1,0 +1,87 @@
+{
+ "purpose": "公表CSVで N-1電制適用可否が未算定（-）の設備（中国電力NW分）。microCMS の n1_eligible は boolean のため false に潰れているが実態は「未算定」。",
+ "note": "再取込では上書きせず現値維持する。_common/n1_undetermined.json への統合用。",
+ "count": 8,
+ "entries": [
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-kikan-s0006",
+   "external_id": "energia_kikan_基S6",
+   "name": "新小野田変電所",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-kikan-s0008",
+   "external_id": "energia_kikan_基S8",
+   "name": "柳井火力変電所",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-kikan-s0016",
+   "external_id": "energia_kikan_基S16",
+   "name": "(名称非公開) energia_kikan_基S16",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-kikan-x",
+   "external_id": "energia_kikan_【留意事項】",
+   "name": "(名称非公開) energia_kikan_【留意事項】",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-shimane-s0001-3",
+   "external_id": "energia_shimane_島⑥S1",
+   "name": "西郷発電所",
+   "prefecture": "島根県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-shimane-s0002",
+   "external_id": "energia_shimane_島⑥S2",
+   "name": "黒木発電所",
+   "prefecture": "島根県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-shimane-s0003-3",
+   "external_id": "energia_shimane_島⑥S3",
+   "name": "海士変電所",
+   "prefecture": "島根県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  },
+  {
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-okayama-s80004",
+   "external_id": "energia_okayama_岡⑤S8-4",
+   "name": "湯原第一変電所",
+   "prefecture": "岡山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
+  }
+ ]
+}
