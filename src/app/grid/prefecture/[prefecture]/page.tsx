@@ -11,6 +11,8 @@ import {
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
 import { formatDataDateLabelForAreas } from '@/lib/grid-data-date';
+// 落とし穴 #116 の恒久策(2026-08-16): 県一覧も build 時 precompute の静的データを使う
+import { getPrefectureSubstationsStatic } from '@/lib/grid-static-lists';
 import substationsIndex from '@/data/substations/index.json';
 import {
   buildPrefTitle,
@@ -74,7 +76,7 @@ export async function generateMetadata({
 
 export default async function PrefecturePage({ params }: PageParams) {
   const decoded = decodeURIComponent(params.prefecture);
-  const subs = await getSubstationsByPrefecture(decoded);
+  const subs = getPrefectureSubstationsStatic(decoded);
   if (subs.length === 0) notFound();
 
   // Gr6/Gr8: 管轄エリア・事業者（precompute の pref_meta）

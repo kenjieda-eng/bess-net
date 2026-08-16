@@ -9,10 +9,12 @@ import SubstationsBrowser from '@/components/SubstationsBrowser';
 import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import {
-  getAllSubstations,
   getRelatedOperatorsForSubstation,
   type Substation,
 } from '@/lib/microcms';
+// 落とし穴 #116 の恒久策(2026-08-16): エリアの一覧は build 時 precompute の静的データを使う。
+// runtime microCMS だと Next の fetch キャッシュで再取込直後のビルドが旧データを出力する。
+import { getAreaSubstationsStatic, toSubstationShape } from '@/lib/grid-static-lists';
 import { siteConfig } from '@/lib/site-config';
 import { GRID_PAGE_RELATED_TERMS } from './related-terms';
 
@@ -56,7 +58,7 @@ function placeLabel(s: Substation): string {
 }
 
 export default async function AreaPage({ meta }: { meta: AreaMeta }) {
-  const subs = await getAllSubstations({ area: meta.areaJp });
+  const subs = toSubstationShape(getAreaSubstationsStatic(meta.areaJp));
 
   // ===== サマリ統計 =====
   const total = subs.length;

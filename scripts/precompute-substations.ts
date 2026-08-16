@@ -67,6 +67,8 @@ export interface LiteSubstation {
   longitude: number | null;
   /** 最終更新日 ISO */
   last_updated: string | null;
+  /** 出典URL（エリアページの「サンプルCSV直リンク」に使う） */
+  source_url: string | null;
 }
 
 // 取得対象 fields (cost 最適化: 必要なものだけ)
@@ -75,7 +77,7 @@ const FETCH_FIELDS = [
   'voltage_primary_kv', 'voltage_secondary_kv', 'voltage_class',
   'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw',
   'n1_eligible', 'oc_possibility', 'latitude', 'longitude',
-  'last_updated', 'fetched_at', 'area',
+  'last_updated', 'fetched_at', 'area', 'source_url',
 ].join(',');
 
 async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
@@ -110,6 +112,7 @@ async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
           ? s.voltage_class[0] : null,
         oc_possibility: Array.isArray(s.oc_possibility) && s.oc_possibility.length > 0
           ? s.oc_possibility[0] : null,
+        source_url: typeof s.source_url === 'string' ? s.source_url : null,
         latitude: typeof s.latitude === 'number' ? s.latitude : null,
         longitude: typeof s.longitude === 'number' ? s.longitude : null,
         last_updated: s.last_updated ?? null,
@@ -311,6 +314,41 @@ async function main(): Promise<void> {
       id: s.id, slug: s.slug, name: s.name, prefecture: s.prefecture,
       operator: s.operator, voltage_class: s.voltage_class, cap_avail_mw: s.cap_avail_mw,
     }));
+
+  // ── 落とし穴 #116 の恒久策（2026-08-16）─────────────────────────────
+  // エリアページ・県ページが runtime microCMS を読むと、Next の fetch キャッシュにより
+  // 「再取込直後のビルドが旧データを出力する」。/grid と同様に build 時 precompute の
+  // 静的データへ寄せて、構造的に断つ（no-store は静的ルートを動的化するため使わない）。
+  // 凍結変電所はここでも除外し、/grid の集計と件数を一致させる。
+  // 実体は by_area に1回だけ持ち、県は「エリア名＋添字」の参照で持つ（二重保持でサイズが倍になるため）
+  const areaLists: Record<string, LiteSubstation[]> = {};
+  for (const s of active) {
+    if (s.area) (areaLists[s.area] ??= []).push(s);
+  }
+  // 表示順は既存の runtime 実装に合わせる（エリア=名称順）
+  for (const k of Object.keys(areaLists)) {
+    areaLists[k].sort((a, b) => (a.name || '').localeCompare(b.name || '', 'ja'));
+  }
+  // 県は空容量の大きい順（既存の getSubstationsByPrefecture の orders と同じ）
+  const prefRefs: Record<string, Array<[string, number]>> = {};
+  for (const [areaJp, list] of Object.entries(areaLists)) {
+    list.forEach((s, i) => {
+      if (s.prefecture) (prefRefs[s.prefecture] ??= []).push([areaJp, i]);
+    });
+  }
+  for (const k of Object.keys(prefRefs)) {
+    prefRefs[k].sort((x, y) => {
+      const a = areaLists[x[0]][x[1]].cap_avail_mw ?? -1;
+      const b = areaLists[y[0]][y[1]].cap_avail_mw ?? -1;
+      return b - a;
+    });
+  }
+  const genDir = path.join(process.cwd(), 'src', 'lib', 'generated');
+  fs.mkdirSync(genDir, { recursive: true });
+  const listsPath = path.join(genDir, 'grid-area-lists.json');
+  fs.writeFileSync(listsPath, JSON.stringify({ by_area: areaLists, pref_refs: prefRefs }));
+  console.log(`  grid-area-lists.json: エリア${Object.keys(areaLists).length} / 県${Object.keys(prefRefs).length}`
+    + ` (${(fs.statSync(listsPath).size / 1024).toFixed(0)} KB)`);
 
   const index = {
     // 凍結変電所は総数から除外（2026-08-16裁定: 湯船−1・新富士21B22B+1 で総表示は不変）
