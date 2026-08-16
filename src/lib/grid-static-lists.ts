@@ -28,6 +28,9 @@ export type GridListItem = {
   cap_operational_mw: number | null;
   cap_avail_mw: number | null;
   n1_eligible: boolean;
+  units: number | null;
+  n1_capacity_mw: number | null;
+  external_id: string | null;
   voltage_class: string | null;
   oc_possibility: string | null;
   latitude: number | null;
@@ -81,6 +84,9 @@ export function toSubstationShape(items: GridListItem[]): Substation[] {
     cap_operational_mw: s.cap_operational_mw ?? undefined,
     cap_avail_mw: s.cap_avail_mw ?? undefined,
     n1_eligible: s.n1_eligible,
+    units: s.units ?? undefined,
+    n1_capacity_mw: s.n1_capacity_mw ?? undefined,
+    external_id: s.external_id ?? undefined,
     oc_possibility: s.oc_possibility ? [s.oc_possibility] : [],
     latitude: s.latitude ?? undefined,
     longitude: s.longitude ?? undefined,

@@ -9,7 +9,7 @@
     "build:related-news": "tsx scripts/precompute-related-news.ts",
     "build:explainer-related": "tsx scripts/precompute-explainer-related.ts",
     "build:projects-pref-count": "tsx scripts/precompute-projects-pref-count.ts",
-  "build:news-topic-gate": "tsx scripts/precompute-news-topic-gate.ts",
+    "build:news-topic-gate": "tsx scripts/precompute-news-topic-gate.ts",
     "build:operator-ranking": "tsx scripts/precompute-operator-ranking.ts",
     "build:glossary-detail": "tsx scripts/precompute-glossary-detail.ts",
     "build:operators-detail": "tsx scripts/precompute-operators-detail.ts",
@@ -24,7 +24,8 @@
     "type-check": "tsc --noEmit",
     "verify:linkify": "tsx scripts/verify-no-nested-anchors.ts",
     "verify:operators": "tsx scripts/verify-operator-matching.ts",
-    "precompute:hazard": "tsx scripts/precompute-hazard-risk.ts"
+    "precompute:hazard": "tsx scripts/precompute-hazard-risk.ts",
+    "verify:grid-fields": "tsx scripts/verify-grid-list-fields.ts"
   },
   "dependencies": {
     "csv-parse": "^6.2.1",

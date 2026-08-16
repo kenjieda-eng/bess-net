@@ -28,6 +28,20 @@ import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
 import { normalizeSubstationPlace } from '../src/lib/grid-prefecture';
 
 // 出力スキーマ (距離計算 + UI で必要な最小フィールド)
+//
+// ★★ 一覧に出る列 ＝ このスキーマに必ず入れる（2026-08-16・#118）★★
+//   エリア/県ページは runtime microCMS をやめてこのデータだけで描画する（#116 恒久策）。
+//   そのため「表示に使う列」がここに無いと、その列だけ静かに「—」になる（実際に台数・
+//   N-1電制適用可能量で発生）。列を増やすときは必ず両方を更新すること。
+//
+//   一覧が参照するフィールド（2026-08-16 実査・grep で全数確認）:
+//     SubstationsBrowser: id, slug, name, prefecture, area, voltage_class, units,
+//                         cap_avail_mw, oc_possibility, external_id(検索), n1_eligible
+//     AreaPage:           上記 ＋ n1_capacity_mw, last_updated, source_url,
+//                         capacity_total_mw, cap_operational_mw, facility_class
+//     県ページ:            slug, name, operator, area, prefecture, facility_class,
+//                         voltage_primary_kv, cap_avail_mw, n1_eligible
+//   ＋ 地図/距離計算: latitude, longitude ／ 基準日表示: fetched_at
 export interface LiteSubstation {
   /** content id (microCMS の内部 id) */
   id: string;
@@ -55,6 +69,12 @@ export interface LiteSubstation {
   cap_avail_mw: number | null;
   /** N-1 電制適用可 */
   n1_eligible: boolean;
+  /** 変圧器台数（一覧の「台数」列） */
+  units: number | null;
+  /** N-1 電制適用可能量 MW（エリアページの N-1電制Top20表） */
+  n1_capacity_mw: number | null;
+  /** 公表側の設備No.（SubstationsBrowser の検索対象） */
+  external_id: string | null;
   /** 電圧階級（1番目・「154kV系」等）。BM(2026-08-16): /grid の電圧階級別集計をここから作る */
   voltage_class: string | null;
   /** 当サイトへの取込日（データ基準日の表示に使用・2026-08-08 Gr2是正） */
@@ -76,7 +96,8 @@ const FETCH_FIELDS = [
   'id', 'slug', 'name', 'prefecture', 'operator', 'area',
   'voltage_primary_kv', 'voltage_secondary_kv', 'voltage_class',
   'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw',
-  'n1_eligible', 'oc_possibility', 'latitude', 'longitude',
+  'n1_eligible', 'n1_capacity_mw', 'units', 'external_id',
+  'oc_possibility', 'latitude', 'longitude',
   'last_updated', 'fetched_at', 'area', 'source_url',
 ].join(',');
 
@@ -108,6 +129,9 @@ async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
         cap_operational_mw: typeof s.cap_operational_mw === 'number' ? s.cap_operational_mw : null,
         cap_avail_mw: typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
         n1_eligible: s.n1_eligible === true,
+        units: typeof s.units === 'number' ? s.units : null,
+        n1_capacity_mw: typeof s.n1_capacity_mw === 'number' ? s.n1_capacity_mw : null,
+        external_id: typeof s.external_id === 'string' ? s.external_id : null,
         voltage_class: Array.isArray(s.voltage_class) && s.voltage_class.length > 0
           ? s.voltage_class[0] : null,
         oc_possibility: Array.isArray(s.oc_possibility) && s.oc_possibility.length > 0
