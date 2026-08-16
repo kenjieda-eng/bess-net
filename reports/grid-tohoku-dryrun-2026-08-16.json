@@ -1,0 +1,521 @@
+{
+ "generated": "2026-08-16",
+ "version_old": "202603",
+ "version_new": "202607",
+ "files": [
+  {
+   "file": "sys_capa_kikan01_tr_202607_02.csv",
+   "url": "https://nw.tohoku-epco.co.jp/consignment/system/announcement/data/sys_capa_kikan01_tr_202607_02.csv",
+   "bytes": 4410,
+   "encoding": "cp932",
+   "meta_row": "2026年7月3日作成",
+   "lines": 106,
+   "data_rows": 31,
+   "prefecture": null
+  },
+  {
+   "file": "sys_capa_local01_tr_202607_02.csv",
+   "url": "https://nw.tohoku-epco.co.jp/consignment/system/announcement/data/sys_capa_local01_tr_202607_02.csv",
+   "bytes": 13972,
+   "encoding": "cp932",
+   "meta_row": "2026年7月3日作成",
+   "lines": 101,
+   "data_rows": 98,
+   "prefecture": "青森県"
+  },
+  {
+   "file": "sys_capa_local02_tr_202607_02.csv",
+   "url": "https://nw.tohoku-epco.co.jp/consignment/system/announcement/data/sys_capa_local02_tr_202607_02.csv",
+   "bytes": 11163,
+   "encoding": "cp932",
+   "meta_row": "2026年7月3日作成",
+   "lines": 106,
+   "data_rows": 100,
+   "prefecture": "岩手県"
+  },
+  {
+   "file": "sys_capa_local03_tr_202607_02.csv",
+   "url": "https://nw.tohoku-epco.co.jp/consignment/system/announcement/data/sys_capa_local03_tr_202607_02.csv",
+   "bytes": 9700,
+   "encoding": "cp932",
+   "meta_row": "2026年7月3日作成",
+   "lines": 93,
+   "data_rows": 90,
+   "prefecture": "秋田県"
+  },
+  {
+   "file": "sys_capa_local04_tr_202607_02.csv",
+   "url": "https://nw.tohoku-epco.co.jp/consignment/system/announcement/data/sys_capa_local04_tr_202607_02.csv",
+   "bytes": 11528,
+   "encoding": "cp932",
+   "meta_row": "2026年7月3日作成",
+   "lines": 145,
+   "data_rows": 142,
+   "prefecture": "宮城県"
+  },
+  {
+   "file": "sys_capa_local05_tr_202607_02.csv",
+   "url": "https://nw.tohoku-epco.co.jp/consignment/system/announcement/data/sys_capa_local05_tr_202607_02.csv",
+   "bytes": 9728,
+   "encoding": "cp932",
+   "meta_row": "2026年7月3日作成",
+   "lines": 96,
+   "data_rows": 85,
+   "prefecture": "山形県"
+  },
+  {
+   "file": "sys_capa_local06_tr_202607_02.csv",
+   "url": "https://nw.tohoku-epco.co.jp/consignment/system/announcement/data/sys_capa_local06_tr_202607_02.csv",
+   "bytes": 15800,
+   "encoding": "cp932",
+   "meta_row": "2026年7月3日作成",
+   "lines": 268,
+   "data_rows": 160,
+   "prefecture": "福島県"
+  },
+  {
+   "file": "sys_capa_local07_tr_202607_02.csv",
+   "url": "https://nw.tohoku-epco.co.jp/consignment/system/announcement/data/sys_capa_local07_tr_202607_02.csv",
+   "bytes": 15431,
+   "encoding": "cp932",
+   "meta_row": "2026年7月3日作成",
+   "lines": 181,
+   "data_rows": 178,
+   "prefecture": "新潟県"
+  }
+ ],
+ "warnings": [],
+ "requires_judgement": [],
+ "dedupe": {
+  "before": 884,
+  "after": 884,
+  "removed": 0,
+  "breakdown": {},
+  "examples": []
+ },
+ "counts": {
+  "baseline": 884,
+  "new_after_dedupe": 884,
+  "matched": 884,
+  "new_records": 0,
+  "disappeared": 0,
+  "ambiguous": 0,
+  "changed": 386,
+  "unchanged": 498,
+  "delta_pct": 0.0
+ },
+ "field_stats": {
+  "空き容量(当該)": {
+   "changed": 332,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "空容量(上位系等考慮)": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "運用容量": {
+   "changed": 3,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "予想潮流": {
+   "changed": 51,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "設備容量": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "N-1電制適用可能量": {
+   "changed": 2,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "台数": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "出力制御の可能性": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 10
+  }
+ },
+ "avail_decreased": {
+  "count": 226,
+  "zeroed": 7,
+  "top10": [
+   {
+    "slug": "thk-aomori-1704",
+    "name": "七戸",
+    "prefecture": "青森県",
+    "old": 10,
+    "new": 2.0,
+    "delta": -8.0
+   },
+   {
+    "slug": "thk-yamagata-5801",
+    "name": "酒田北港",
+    "prefecture": "山形県",
+    "old": 14,
+    "new": 7.0,
+    "delta": -7.0
+   },
+   {
+    "slug": "thk-iwate-2211-2",
+    "name": "柏台",
+    "prefecture": "岩手県",
+    "old": 10,
+    "new": 4.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "thk-fukushima-6501",
+    "name": "原町",
+    "prefecture": "福島県",
+    "old": 11,
+    "new": 5.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "thk-miyagi-4b0006",
+    "name": "北古川",
+    "prefecture": "宮城県",
+    "old": 10,
+    "new": 5.0,
+    "delta": -5.0
+   },
+   {
+    "slug": "thk-yamagata-5708",
+    "name": "浜中",
+    "prefecture": "山形県",
+    "old": 15,
+    "new": 10.0,
+    "delta": -5.0
+   },
+   {
+    "slug": "thk-yamagata-5905",
+    "name": "西鶴岡",
+    "prefecture": "山形県",
+    "old": 22,
+    "new": 17.0,
+    "delta": -5.0
+   },
+   {
+    "slug": "thk-fukushima-6203",
+    "name": "6203",
+    "prefecture": "福島県",
+    "old": 5,
+    "new": 0.0,
+    "delta": -5.0
+   },
+   {
+    "slug": "thk-fukushima-6806",
+    "name": "大越",
+    "prefecture": "福島県",
+    "old": 5,
+    "new": 0.0,
+    "delta": -5.0
+   },
+   {
+    "slug": "thk-fukushima-6901",
+    "name": "泉崎",
+    "prefecture": "福島県",
+    "old": 10,
+    "new": 5.0,
+    "delta": -5.0
+   }
+  ]
+ },
+ "avail_increased": {
+  "count": 106,
+  "top5": [
+   {
+    "slug": "thk-iwate-2312",
+    "name": "向中野",
+    "prefecture": "岩手県",
+    "old": 0,
+    "new": 19.0,
+    "delta": 19.0
+   },
+   {
+    "slug": "thk-niigata-7102",
+    "name": "荒川",
+    "prefecture": "新潟県",
+    "old": 10,
+    "new": 17.0,
+    "delta": 7.0
+   },
+   {
+    "slug": "thk-akita-3404",
+    "name": "新屋",
+    "prefecture": "秋田県",
+    "old": 5,
+    "new": 11.0,
+    "delta": 6.0
+   },
+   {
+    "slug": "thk-yamagata-5306",
+    "name": "城南",
+    "prefecture": "山形県",
+    "old": 15,
+    "new": 20.0,
+    "delta": 5.0
+   },
+   {
+    "slug": "thk-aomori-1105",
+    "name": "今別",
+    "prefecture": "青森県",
+    "old": 2,
+    "new": 6.0,
+    "delta": 4.0
+   }
+  ]
+ },
+ "n1_undetermined": {
+  "count": 20,
+  "entries": [
+   {
+    "slug": "thk-kikan-0002",
+    "external_id": "tohoku_kikan01_002",
+    "name": "上北",
+    "prefecture": null,
+    "stored": false
+   },
+   {
+    "slug": "thk-kikan-0006",
+    "external_id": "tohoku_kikan01_006",
+    "name": "東花巻",
+    "prefecture": null,
+    "stored": false
+   },
+   {
+    "slug": "thk-kikan-0008",
+    "external_id": "tohoku_kikan01_008",
+    "name": "西仙台",
+    "prefecture": null,
+    "stored": false
+   },
+   {
+    "slug": "thk-kikan-0020",
+    "external_id": "tohoku_kikan01_020",
+    "name": "南相馬",
+    "prefecture": null,
+    "stored": false
+   },
+   {
+    "slug": "thk-aomori-1a0008",
+    "external_id": "tohoku_local01_1A08",
+    "name": "1A08",
+    "prefecture": "青森県",
+    "stored": false
+   },
+   {
+    "slug": "thk-iwate-2407",
+    "external_id": "tohoku_local02_2407",
+    "name": "後藤野",
+    "prefecture": "岩手県",
+    "stored": false
+   },
+   {
+    "slug": "thk-akita-3201",
+    "external_id": "tohoku_local03_3201",
+    "name": "能代東",
+    "prefecture": "秋田県",
+    "stored": false
+   },
+   {
+    "slug": "thk-akita-3205",
+    "external_id": "tohoku_local03_3205",
+    "name": "八森",
+    "prefecture": "秋田県",
+    "stored": false
+   },
+   {
+    "slug": "thk-akita-3307",
+    "external_id": "tohoku_local03_3307",
+    "name": "土崎",
+    "prefecture": "秋田県",
+    "stored": false
+   },
+   {
+    "slug": "thk-miyagi-4805",
+    "external_id": "tohoku_local04_4805",
+    "name": "大日",
+    "prefecture": "宮城県",
+    "stored": false
+   },
+   {
+    "slug": "thk-yamagata-5102",
+    "external_id": "tohoku_local05_5102",
+    "name": "鳥越",
+    "prefecture": "山形県",
+    "stored": false
+   },
+   {
+    "slug": "thk-yamagata-5103",
+    "external_id": "tohoku_local05_5103",
+    "name": "真室川",
+    "prefecture": "山形県",
+    "stored": false
+   },
+   {
+    "slug": "thk-yamagata-5106",
+    "external_id": "tohoku_local05_5106",
+    "name": "大石田",
+    "prefecture": "山形県",
+    "stored": false
+   },
+   {
+    "slug": "thk-yamagata-5208",
+    "external_id": "tohoku_local05_5208",
+    "name": "寒河江",
+    "prefecture": "山形県",
+    "stored": false
+   },
+   {
+    "slug": "thk-yamagata-5505",
+    "external_id": "tohoku_local05_5505",
+    "name": "小松",
+    "prefecture": "山形県",
+    "stored": false
+   },
+   {
+    "slug": "thk-fukushima-6d0011-2",
+    "external_id": "tohoku_local06_6D11",
+    "name": "6D11",
+    "prefecture": "福島県",
+    "stored": false
+   },
+   {
+    "slug": "thk-fukushima-6f0011",
+    "external_id": "tohoku_local06_6F11",
+    "name": "若松",
+    "prefecture": "福島県",
+    "stored": false
+   },
+   {
+    "slug": "thk-niigata-7308",
+    "external_id": "tohoku_local07_7308",
+    "name": "7308",
+    "prefecture": "新潟県",
+    "stored": false
+   },
+   {
+    "slug": "thk-niigata-7f0008",
+    "external_id": "tohoku_local07_7F08",
+    "name": "7F08",
+    "prefecture": "新潟県",
+    "stored": false
+   },
+   {
+    "slug": "thk-niigata-7k0007-2",
+    "external_id": "tohoku_local07_7K07",
+    "name": "浅貝",
+    "prefecture": "新潟県",
+    "stored": false
+   }
+  ]
+ },
+ "oc_undetermined": {
+  "count": 10,
+  "entries": [
+   {
+    "slug": "thk-niigata-7j0001",
+    "name": "佐渡",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   },
+   {
+    "slug": "thk-niigata-7j0002",
+    "name": "相川",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   },
+   {
+    "slug": "thk-niigata-7j0003",
+    "name": "7J03",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   },
+   {
+    "slug": "thk-niigata-7j0004",
+    "name": "高千",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   },
+   {
+    "slug": "thk-niigata-7j0005",
+    "name": "金沢",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   },
+   {
+    "slug": "thk-niigata-7j0006",
+    "name": "両津",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   },
+   {
+    "slug": "thk-niigata-7j0007",
+    "name": "7J07",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   },
+   {
+    "slug": "thk-niigata-7j0008",
+    "name": "羽茂",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   },
+   {
+    "slug": "thk-niigata-7k0007",
+    "name": "浅貝",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   },
+   {
+    "slug": "thk-niigata-7k0007-2",
+    "name": "浅貝",
+    "prefecture": "新潟県",
+    "stored": "有り"
+   }
+  ]
+ },
+ "n1_changed": {
+  "count": 0,
+  "examples": []
+ },
+ "renamed_blocking": [],
+ "renumbered": [],
+ "ambiguous_rows": [],
+ "new_records": [],
+ "disappeared_records": [],
+ "pref_counts": {
+  "old": {
+   "新潟県": 178,
+   "福島県": 160,
+   "山形県": 85,
+   "宮城県": 142,
+   "秋田県": 90,
+   "岩手県": 100,
+   "青森県": 98,
+   "（基幹系）": 31
+  },
+  "new": {
+   "（基幹系）": 31,
+   "青森県": 98,
+   "岩手県": 100,
+   "秋田県": 90,
+   "宮城県": 142,
+   "山形県": 85,
+   "福島県": 160,
+   "新潟県": 178
+  }
+ }
+}
