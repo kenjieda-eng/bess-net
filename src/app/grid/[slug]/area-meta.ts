@@ -19,8 +19,9 @@ export const AREA_META: Record<string, AreaMeta> = {
     areaJp: '北陸',
     operator: '北陸電力送配電',
     landingUrl: 'https://www.rikuden.co.jp/nw_notification/U_154seiyaku.html',
+    sourceFormat: 'CSV',
     description:
-      '北陸エリア（北陸電力送配電）の変電所別系統空き容量・連系条件・出力制御情報を、富山・石川・福井の3県＋基幹系について一元化。',
+      '北陸エリア（北陸電力送配電）の変電所別系統空き容量・連系条件・出力制御情報を、富山・石川・福井の3県＋基幹系について一元化。予想潮流・空容量（変圧器）CSVから抽出。',
   },
   shikoku: {
     slug: 'shikoku',

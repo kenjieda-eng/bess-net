@@ -1,0 +1,2365 @@
+{
+ "purpose": "公表CSVで N-1電制適用可否が未算定（-）の設備。microCMS の n1_eligible は boolean のため false に潰れているが、実態は「不可」ではなく「未算定」。表示の三値化タスクの入力。",
+ "note": "再取込では上書きせず現値維持する（社を問わず既定）。",
+ "generated_from": [
+  "hokuriku/hokuriku_csv_2608_normalized.json",
+  "tepco/tepco_csv_2607_normalized.json"
+ ],
+ "count": 235,
+ "count_by_area": {
+  "北陸": 222,
+  "東京": 13
+ },
+ "entries": [
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-kikan-hss0014",
+   "external_id": "rkd-kikan-hss0014",
+   "name": "(名称非公開) rikuden_kikan01_HSS014",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-kikan-hss0017",
+   "external_id": "rkd-kikan-hss0017",
+   "name": "和田一",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-kikan-hss0018",
+   "external_id": "rkd-kikan-hss0018",
+   "name": "折立",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-kikan-hss0022",
+   "external_id": "rkd-kikan-hss0022",
+   "name": "東町",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-kikan-hss0023",
+   "external_id": "rkd-kikan-hss0023",
+   "name": "牧",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-kikan-hss0038",
+   "external_id": "rkd-kikan-hss0038",
+   "name": "和泉",
+   "prefecture": null,
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0001",
+   "external_id": "rkd-toyama-tss0001",
+   "name": "境川第二",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0002",
+   "external_id": "rkd-toyama-tss0002",
+   "name": "泊",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0003",
+   "external_id": "rkd-toyama-tss0003",
+   "name": "黒東第二",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0004",
+   "external_id": "rkd-toyama-tss0004",
+   "name": "入善",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0005",
+   "external_id": "rkd-toyama-tss0005",
+   "name": "(名称非公開) rikuden_local01_TSS005",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0006",
+   "external_id": "rkd-toyama-tss0006",
+   "name": "黒部",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0007",
+   "external_id": "rkd-toyama-tss0007",
+   "name": "桜井",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0008",
+   "external_id": "rkd-toyama-tss0008",
+   "name": "宇奈月",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0009",
+   "external_id": "rkd-toyama-tss0009",
+   "name": "江口",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0010",
+   "external_id": "rkd-toyama-tss0010",
+   "name": "魚津",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0011",
+   "external_id": "rkd-toyama-tss0011",
+   "name": "東滑川",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0012",
+   "external_id": "rkd-toyama-tss0012",
+   "name": "早月第一",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0013",
+   "external_id": "rkd-toyama-tss0013",
+   "name": "高月",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0014",
+   "external_id": "rkd-toyama-tss0014",
+   "name": "伊折",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0015",
+   "external_id": "rkd-toyama-tss0015",
+   "name": "馬場島",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0016",
+   "external_id": "rkd-toyama-tss0016",
+   "name": "舟橋",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0018",
+   "external_id": "rkd-toyama-tss0018",
+   "name": "上市",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0019",
+   "external_id": "rkd-toyama-tss0019",
+   "name": "五百石",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0020",
+   "external_id": "rkd-toyama-tss0020",
+   "name": "水橋",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0021",
+   "external_id": "rkd-toyama-tss0021",
+   "name": "真川",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0022",
+   "external_id": "rkd-toyama-tss0022",
+   "name": "小見",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0023",
+   "external_id": "rkd-toyama-tss0023",
+   "name": "常願寺第一",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0024",
+   "external_id": "rkd-toyama-tss0024",
+   "name": "上滝",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0025",
+   "external_id": "rkd-toyama-tss0025",
+   "name": "東富山",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0026",
+   "external_id": "rkd-toyama-tss0026",
+   "name": "(名称非公開) rikuden_local01_TSS026",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0027",
+   "external_id": "rkd-toyama-tss0027",
+   "name": "奥田",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0029",
+   "external_id": "rkd-toyama-tss0029",
+   "name": "岩瀬",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0030",
+   "external_id": "rkd-toyama-tss0030",
+   "name": "針原",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0031",
+   "external_id": "rkd-toyama-tss0031",
+   "name": "広田",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0032",
+   "external_id": "rkd-toyama-tss0032",
+   "name": "富山",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0033",
+   "external_id": "rkd-toyama-tss0033",
+   "name": "牛島",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0034",
+   "external_id": "rkd-toyama-tss0034",
+   "name": "中富山",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0035",
+   "external_id": "rkd-toyama-tss0035",
+   "name": "富南",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0036",
+   "external_id": "rkd-toyama-tss0036",
+   "name": "南富山",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0037",
+   "external_id": "rkd-toyama-tss0037",
+   "name": "城南",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0038",
+   "external_id": "rkd-toyama-tss0038",
+   "name": "掛尾",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0039",
+   "external_id": "rkd-toyama-tss0039",
+   "name": "婦中",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0040",
+   "external_id": "rkd-toyama-tss0040",
+   "name": "猪谷",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0041",
+   "external_id": "rkd-toyama-tss0041",
+   "name": "大沢野",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0042",
+   "external_id": "rkd-toyama-tss0042",
+   "name": "五平定",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0043",
+   "external_id": "rkd-toyama-tss0043",
+   "name": "八尾",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0045",
+   "external_id": "rkd-toyama-tss0045",
+   "name": "東射水",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0046",
+   "external_id": "rkd-toyama-tss0046",
+   "name": "射水",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0047",
+   "external_id": "rkd-toyama-tss0047",
+   "name": "小杉",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0048",
+   "external_id": "rkd-toyama-tss0048",
+   "name": "大門",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0049",
+   "external_id": "rkd-toyama-tss0049",
+   "name": "新湊",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0050",
+   "external_id": "rkd-toyama-tss0050",
+   "name": "南高岡",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0051",
+   "external_id": "rkd-toyama-tss0051",
+   "name": "高岡",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0053",
+   "external_id": "rkd-toyama-tss0053",
+   "name": "米島",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0054",
+   "external_id": "rkd-toyama-tss0054",
+   "name": "西高岡",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0055",
+   "external_id": "rkd-toyama-tss0055",
+   "name": "沖布",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0056",
+   "external_id": "rkd-toyama-tss0056",
+   "name": "(名称非公開) rikuden_local01_TSS056",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0057",
+   "external_id": "rkd-toyama-tss0057",
+   "name": "氷見",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0058",
+   "external_id": "rkd-toyama-tss0058",
+   "name": "戸出",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0059",
+   "external_id": "rkd-toyama-tss0059",
+   "name": "井波",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0060",
+   "external_id": "rkd-toyama-tss0060",
+   "name": "早川",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0061",
+   "external_id": "rkd-toyama-tss0061",
+   "name": "福岡",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0062",
+   "external_id": "rkd-toyama-tss0062",
+   "name": "庄西",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0063",
+   "external_id": "rkd-toyama-tss0063",
+   "name": "砺波",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0064",
+   "external_id": "rkd-toyama-tss0064",
+   "name": "石動",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0065",
+   "external_id": "rkd-toyama-tss0065",
+   "name": "浅地",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0066",
+   "external_id": "rkd-toyama-tss0066",
+   "name": "福野",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0067",
+   "external_id": "rkd-toyama-tss0067",
+   "name": "福野66/22kV",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0068",
+   "external_id": "rkd-toyama-tss0068",
+   "name": "福光",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0069",
+   "external_id": "rkd-toyama-tss0069",
+   "name": "(名称非公開) rikuden_local01_TSS069",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0070",
+   "external_id": "rkd-toyama-tss0070",
+   "name": "城端",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0071",
+   "external_id": "rkd-toyama-tss0071",
+   "name": "中崎",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-toyama-tss0073",
+   "external_id": "rkd-toyama-tss0073",
+   "name": "第一押川",
+   "prefecture": "富山県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0001",
+   "external_id": "rkd-ishikawa-iss0001",
+   "name": "北金沢　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0002",
+   "external_id": "rkd-ishikawa-iss0002",
+   "name": "高松",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0003",
+   "external_id": "rkd-ishikawa-iss0003",
+   "name": "宇ノ気",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0004",
+   "external_id": "rkd-ishikawa-iss0004",
+   "name": "津幡",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0005",
+   "external_id": "rkd-ishikawa-iss0005",
+   "name": "大浦　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0007",
+   "external_id": "rkd-ishikawa-iss0007",
+   "name": "浅野",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0008",
+   "external_id": "rkd-ishikawa-iss0008",
+   "name": "北安江　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0010",
+   "external_id": "rkd-ishikawa-iss0010",
+   "name": "金石　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0012",
+   "external_id": "rkd-ishikawa-iss0012",
+   "name": "東金沢　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0014",
+   "external_id": "rkd-ishikawa-iss0014",
+   "name": "金沢中央",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0015",
+   "external_id": "rkd-ishikawa-iss0015",
+   "name": "長坂",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0016",
+   "external_id": "rkd-ishikawa-iss0016",
+   "name": "田上",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0017",
+   "external_id": "rkd-ishikawa-iss0017",
+   "name": "増泉",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0018",
+   "external_id": "rkd-ishikawa-iss0018",
+   "name": "大工町",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0019",
+   "external_id": "rkd-ishikawa-iss0019",
+   "name": "西金沢　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0020",
+   "external_id": "rkd-ishikawa-iss0020",
+   "name": "(名称非公開) rikuden_local02_ISS020",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0021",
+   "external_id": "rkd-ishikawa-iss0021",
+   "name": "額",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0022",
+   "external_id": "rkd-ishikawa-iss0022",
+   "name": "安原",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0023",
+   "external_id": "rkd-ishikawa-iss0023",
+   "name": "松任",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0024",
+   "external_id": "rkd-ishikawa-iss0024",
+   "name": "美川",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0025",
+   "external_id": "rkd-ishikawa-iss0025",
+   "name": "鞍月　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0027",
+   "external_id": "rkd-ishikawa-iss0027",
+   "name": "泉野",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0028",
+   "external_id": "rkd-ishikawa-iss0028",
+   "name": "昭和町",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0029",
+   "external_id": "rkd-ishikawa-iss0029",
+   "name": "竹松",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0030",
+   "external_id": "rkd-ishikawa-iss0030",
+   "name": "下林",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0031",
+   "external_id": "rkd-ishikawa-iss0031",
+   "name": "久常",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0032",
+   "external_id": "rkd-ishikawa-iss0032",
+   "name": "根上",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0033",
+   "external_id": "rkd-ishikawa-iss0033",
+   "name": "小松",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0034",
+   "external_id": "rkd-ishikawa-iss0034",
+   "name": "安宅　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0036",
+   "external_id": "rkd-ishikawa-iss0036",
+   "name": "粟津",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0037",
+   "external_id": "rkd-ishikawa-iss0037",
+   "name": "大聖寺　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0038",
+   "external_id": "rkd-ishikawa-iss0038",
+   "name": "(名称非公開) rikuden_local02_ISS038",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0039",
+   "external_id": "rkd-ishikawa-iss0039",
+   "name": "片山津",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0041",
+   "external_id": "rkd-ishikawa-iss0041",
+   "name": "山中　77/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0042",
+   "external_id": "rkd-ishikawa-iss0042",
+   "name": "山代",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0043",
+   "external_id": "rkd-ishikawa-iss0043",
+   "name": "沢",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0044",
+   "external_id": "rkd-ishikawa-iss0044",
+   "name": "箱宮",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0045",
+   "external_id": "rkd-ishikawa-iss0045",
+   "name": "枯渕",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0046",
+   "external_id": "rkd-ishikawa-iss0046",
+   "name": "九谷　直配",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0047",
+   "external_id": "rkd-ishikawa-iss0047",
+   "name": "荒木田",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0048",
+   "external_id": "rkd-ishikawa-iss0048",
+   "name": "川北",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0049",
+   "external_id": "rkd-ishikawa-iss0049",
+   "name": "鶴来",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0050",
+   "external_id": "rkd-ishikawa-iss0050",
+   "name": "福岡第一　直配",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0051",
+   "external_id": "rkd-ishikawa-iss0051",
+   "name": "吉野第一　直配",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0052",
+   "external_id": "rkd-ishikawa-iss0052",
+   "name": "吉野谷　直配",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0053",
+   "external_id": "rkd-ishikawa-iss0053",
+   "name": "尾口　直配",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0055",
+   "external_id": "rkd-ishikawa-iss0055",
+   "name": "三ツ又第一　直配",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0056",
+   "external_id": "rkd-ishikawa-iss0056",
+   "name": "桑島　直配",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0057",
+   "external_id": "rkd-ishikawa-iss0057",
+   "name": "白峰　直配",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0058",
+   "external_id": "rkd-ishikawa-iss0058",
+   "name": "市ノ瀬　直配",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0059",
+   "external_id": "rkd-ishikawa-iss0059",
+   "name": "羽咋",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0061",
+   "external_id": "rkd-ishikawa-iss0061",
+   "name": "押水　66/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0062",
+   "external_id": "rkd-ishikawa-iss0062",
+   "name": "能登部",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0063",
+   "external_id": "rkd-ishikawa-iss0063",
+   "name": "高浜",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0064",
+   "external_id": "rkd-ishikawa-iss0064",
+   "name": "若葉台",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0065",
+   "external_id": "rkd-ishikawa-iss0065",
+   "name": "富来",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0066",
+   "external_id": "rkd-ishikawa-iss0066",
+   "name": "徳田",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0067",
+   "external_id": "rkd-ishikawa-iss0067",
+   "name": "七尾",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0068",
+   "external_id": "rkd-ishikawa-iss0068",
+   "name": "和倉",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0069",
+   "external_id": "rkd-ishikawa-iss0069",
+   "name": "中島　66/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0070",
+   "external_id": "rkd-ishikawa-iss0070",
+   "name": "中島　66/22kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0071",
+   "external_id": "rkd-ishikawa-iss0071",
+   "name": "穴水",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0072",
+   "external_id": "rkd-ishikawa-iss0072",
+   "name": "瑞穂",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0073",
+   "external_id": "rkd-ishikawa-iss0073",
+   "name": "宇出津　66/6kV",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0075",
+   "external_id": "rkd-ishikawa-iss0075",
+   "name": "内浦",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0076",
+   "external_id": "rkd-ishikawa-iss0076",
+   "name": "飯田",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0077",
+   "external_id": "rkd-ishikawa-iss0077",
+   "name": "門前",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0078",
+   "external_id": "rkd-ishikawa-iss0078",
+   "name": "輪島",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0079",
+   "external_id": "rkd-ishikawa-iss0079",
+   "name": "湖南",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0080",
+   "external_id": "rkd-ishikawa-iss0080",
+   "name": "内灘",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0081",
+   "external_id": "rkd-ishikawa-iss0081",
+   "name": "鶴ヶ丘",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0082",
+   "external_id": "rkd-ishikawa-iss0082",
+   "name": "大浜",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0083",
+   "external_id": "rkd-ishikawa-iss0083",
+   "name": "千鳥台",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0084",
+   "external_id": "rkd-ishikawa-iss0084",
+   "name": "第2千鳥台",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0085",
+   "external_id": "rkd-ishikawa-iss0085",
+   "name": "蚊爪",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0086",
+   "external_id": "rkd-ishikawa-iss0086",
+   "name": "湊",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0087",
+   "external_id": "rkd-ishikawa-iss0087",
+   "name": "北陽台",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0088",
+   "external_id": "rkd-ishikawa-iss0088",
+   "name": "河原市",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0089",
+   "external_id": "rkd-ishikawa-iss0089",
+   "name": "白帆台",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0090",
+   "external_id": "rkd-ishikawa-iss0090",
+   "name": "鉄工中配電塔",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0091",
+   "external_id": "rkd-ishikawa-iss0091",
+   "name": "鉄工北配電塔",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0092",
+   "external_id": "rkd-ishikawa-iss0092",
+   "name": "鉄工西配電塔",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0093",
+   "external_id": "rkd-ishikawa-iss0093",
+   "name": "鉄工東配電塔",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0094",
+   "external_id": "rkd-ishikawa-iss0094",
+   "name": "鉄工南配電塔",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0095",
+   "external_id": "rkd-ishikawa-iss0095",
+   "name": "能登島配電塔",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0096",
+   "external_id": "rkd-ishikawa-iss0096",
+   "name": "粟蔵配電塔",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0097",
+   "external_id": "rkd-ishikawa-iss0097",
+   "name": "町野配電塔",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0098",
+   "external_id": "rkd-ishikawa-iss0098",
+   "name": "柳田配電塔",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-ishikawa-iss0099",
+   "external_id": "rkd-ishikawa-iss0099",
+   "name": "森本",
+   "prefecture": "石川県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0001",
+   "external_id": "rkd-fukui-fss0001",
+   "name": "金津",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0002",
+   "external_id": "rkd-fukui-fss0002",
+   "name": "芦原",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0003",
+   "external_id": "rkd-fukui-fss0003",
+   "name": "三国",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0004",
+   "external_id": "rkd-fukui-fss0004",
+   "name": "臨港",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0005",
+   "external_id": "rkd-fukui-fss0005",
+   "name": "丸岡",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0006",
+   "external_id": "rkd-fukui-fss0006",
+   "name": "春江",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0007",
+   "external_id": "rkd-fukui-fss0007",
+   "name": "西長田",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0008",
+   "external_id": "rkd-fukui-fss0008",
+   "name": "北庄",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0009",
+   "external_id": "rkd-fukui-fss0009",
+   "name": "松岡",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0010",
+   "external_id": "rkd-fukui-fss0010",
+   "name": "山王",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0011",
+   "external_id": "rkd-fukui-fss0011",
+   "name": "開発",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0012",
+   "external_id": "rkd-fukui-fss0012",
+   "name": "東福井",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0013",
+   "external_id": "rkd-fukui-fss0013",
+   "name": "中福井",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0014",
+   "external_id": "rkd-fukui-fss0014",
+   "name": "北福井",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0015",
+   "external_id": "rkd-fukui-fss0015",
+   "name": "春山",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0016",
+   "external_id": "rkd-fukui-fss0016",
+   "name": "橋南",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0017",
+   "external_id": "rkd-fukui-fss0017",
+   "name": "南福井",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0018",
+   "external_id": "rkd-fukui-fss0018",
+   "name": "花堂",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0019",
+   "external_id": "rkd-fukui-fss0019",
+   "name": "東郷",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0020",
+   "external_id": "rkd-fukui-fss0020",
+   "name": "成和",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0021",
+   "external_id": "rkd-fukui-fss0021",
+   "name": "小和清水",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0022",
+   "external_id": "rkd-fukui-fss0022",
+   "name": "足羽77/6kV",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0023",
+   "external_id": "rkd-fukui-fss0023",
+   "name": "勝山77/6kV",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0024",
+   "external_id": "rkd-fukui-fss0024",
+   "name": "荒土",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0025",
+   "external_id": "rkd-fukui-fss0025",
+   "name": "友江",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0026",
+   "external_id": "rkd-fukui-fss0026",
+   "name": "大野",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0028",
+   "external_id": "rkd-fukui-fss0028",
+   "name": "神明",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0029",
+   "external_id": "rkd-fukui-fss0029",
+   "name": "新武生",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0030",
+   "external_id": "rkd-fukui-fss0030",
+   "name": "鯖江",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0031",
+   "external_id": "rkd-fukui-fss0031",
+   "name": "水落",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0032",
+   "external_id": "rkd-fukui-fss0032",
+   "name": "西田中",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0033",
+   "external_id": "rkd-fukui-fss0033",
+   "name": "織田77/6kV",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0035",
+   "external_id": "rkd-fukui-fss0035",
+   "name": "西武生",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0036",
+   "external_id": "rkd-fukui-fss0036",
+   "name": "王子保",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0037",
+   "external_id": "rkd-fukui-fss0037",
+   "name": "湯尾",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0038",
+   "external_id": "rkd-fukui-fss0038",
+   "name": "粟田部77/6kV",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0039",
+   "external_id": "rkd-fukui-fss0039",
+   "name": "(名称非公開) rikuden_local03_FSS039",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0040",
+   "external_id": "rkd-fukui-fss0040",
+   "name": "敦賀",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0041",
+   "external_id": "rkd-fukui-fss0041",
+   "name": "西敦賀",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0042",
+   "external_id": "rkd-fukui-fss0042",
+   "name": "南敦賀77/6kV",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0043",
+   "external_id": "rkd-fukui-fss0043",
+   "name": "持越",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0044",
+   "external_id": "rkd-fukui-fss0044",
+   "name": "蒲生",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0045",
+   "external_id": "rkd-fukui-fss0045",
+   "name": "宮崎配電塔",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0046",
+   "external_id": "rkd-fukui-fss0046",
+   "name": "白山配電塔",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0047",
+   "external_id": "rkd-fukui-fss0047",
+   "name": "米ノ浦配電塔",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0048",
+   "external_id": "rkd-fukui-fss0048",
+   "name": "四ツ杉配電塔",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0049",
+   "external_id": "rkd-fukui-fss0049",
+   "name": "道口配電塔",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0051",
+   "external_id": "rkd-fukui-fss0051",
+   "name": "(名称非公開) rikuden_local03_FSS051",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0052",
+   "external_id": "rkd-fukui-fss0052",
+   "name": "(名称非公開) rikuden_local03_FSS052",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0053",
+   "external_id": "rkd-fukui-fss0053",
+   "name": "(名称非公開) rikuden_local03_FSS053",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0054",
+   "external_id": "rkd-fukui-fss0054",
+   "name": "(名称非公開) rikuden_local03_FSS054",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0055",
+   "external_id": "rkd-fukui-fss0055",
+   "name": "(名称非公開) rikuden_local03_FSS055",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0056",
+   "external_id": "rkd-fukui-fss0056",
+   "name": "(名称非公開) rikuden_local03_FSS056",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0057",
+   "external_id": "rkd-fukui-fss0057",
+   "name": "(名称非公開) rikuden_local03_FSS057",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0058",
+   "external_id": "rkd-fukui-fss0058",
+   "name": "(名称非公開) rikuden_local03_FSS058",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0059",
+   "external_id": "rkd-fukui-fss0059",
+   "name": "(名称非公開) rikuden_local03_FSS059",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0060",
+   "external_id": "rkd-fukui-fss0060",
+   "name": "(名称非公開) rikuden_local03_FSS060",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0061",
+   "external_id": "rkd-fukui-fss0061",
+   "name": "(名称非公開) rikuden_local03_FSS061",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "北陸電力送配電",
+   "area": "北陸",
+   "slug": "rkd-fukui-fss0062",
+   "external_id": "rkd-fukui-fss0062",
+   "name": "(名称非公開) rikuden_local03_FSS062",
+   "prefecture": "福井県",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0017",
+   "external_id": "変栃木県 22kV 3",
+   "name": "塩原第１",
+   "prefecture": "栃木県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0018",
+   "external_id": "変栃木県 22kV 4",
+   "name": "塩原第２",
+   "prefecture": "栃木県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0019",
+   "external_id": "変栃木県 22kV 5",
+   "name": "塩原第３",
+   "prefecture": "栃木県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0389",
+   "external_id": "変埼玉県 22kV 5",
+   "name": "向堀",
+   "prefecture": "埼玉県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0390",
+   "external_id": "変埼玉県 22kV 6",
+   "name": "西平",
+   "prefecture": "埼玉県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0595",
+   "external_id": "変千葉県 154kV 11",
+   "name": "新木更津5・8B",
+   "prefecture": "千葉県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0608",
+   "external_id": "変千葉県 22kV 4",
+   "name": "溝原",
+   "prefecture": "千葉県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0609",
+   "external_id": "変千葉県 22kV 5",
+   "name": "西岬",
+   "prefecture": "千葉県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0610",
+   "external_id": "変千葉県 22kV 6",
+   "name": "神戸",
+   "prefecture": "千葉県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0611",
+   "external_id": "変千葉県 22kV 7",
+   "name": "犬石",
+   "prefecture": "千葉県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0612",
+   "external_id": "変千葉県 22kV 8",
+   "name": "長尾",
+   "prefecture": "千葉県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0613",
+   "external_id": "変千葉県 22kV 9",
+   "name": "塩浦",
+   "prefecture": "千葉県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-1359",
+   "external_id": "変神奈川県 22kV 19",
+   "name": "三枚橋(1)",
+   "prefecture": "神奈川県",
+   "stored_n1_eligible": false,
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）"
+  }
+ ]
+}

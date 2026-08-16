@@ -1,0 +1,477 @@
+{
+  "fetched_at": "2026-08-16T05:36:00.612Z",
+  "ok": 271,
+  "fail": 0,
+  "failures": [],
+  "changed": [
+    {
+      "slug": "rkd-kikan-hss0001",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0002",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0003",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0004",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0005",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0006",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0007",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0008",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0009",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0010",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0011",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0012",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0013",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0015",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0019",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0020",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0021",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0024",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0025",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0026",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0027",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0030",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0031",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0032",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0033",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0034",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0035",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0036",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-kikan-hss0038",
+      "keys": [
+        "cap_avail_mw",
+        "cap_operational_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0002",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0010",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0018",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0019",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0020",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0035",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0041",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0043",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0048",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0050",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0058",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0061",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0062",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0063",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0072",
+      "keys": [
+        "forecast_flow_mw"
+      ]
+    },
+    {
+      "slug": "rkd-toyama-tss0073",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0002",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0004",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0009",
+      "keys": [
+        "cap_operational_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0021",
+      "keys": [
+        "cap_operational_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0023",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0030",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0034",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0039",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0041",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0042",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0044",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0050",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0063",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0065",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0067",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0068",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-ishikawa-iss0072",
+      "keys": [
+        "cap_operational_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0001",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0002",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0005",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0006",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0010",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0013",
+      "keys": [
+        "cap_operational_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0017",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0025",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0026",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0028",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0029",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0030",
+      "keys": [
+        "cap_avail_mw",
+        "units"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0031",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0037",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    },
+    {
+      "slug": "rkd-fukui-fss0056",
+      "keys": [
+        "cap_avail_mw"
+      ]
+    }
+  ],
+  "created": [
+    "rkd-toyama-tss0074",
+    "rkd-toyama-tss0075",
+    "rkd-toyama-tss0076"
+  ]
+}

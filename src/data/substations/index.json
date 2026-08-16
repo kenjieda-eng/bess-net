@@ -1,5 +1,5 @@
 {
-  "total": 8225,
+  "total": 8228,
   "area_top": {
     "中部": [
       {
@@ -321,12 +321,6 @@
         "kv": 66
       },
       {
-        "slug": "rkd-toyama-tss0050",
-        "name": "南高岡",
-        "cap": 32,
-        "kv": 66
-      },
-      {
         "slug": "rkd-fukui-fss0013",
         "name": "中福井",
         "cap": 31,
@@ -339,16 +333,22 @@
         "kv": 77
       },
       {
-        "slug": "rkd-fukui-fss0017",
-        "name": "南福井",
-        "cap": 31,
-        "kv": 77
-      },
-      {
         "slug": "rkd-ishikawa-iss0025",
         "name": "鞍月　77/6kV",
         "cap": 31,
         "kv": 77
+      },
+      {
+        "slug": "rkd-toyama-tss0033",
+        "name": "牛島",
+        "cap": 31,
+        "kv": 66
+      },
+      {
+        "slug": "rkd-toyama-tss0038",
+        "name": "掛尾",
+        "cap": 31,
+        "kv": 66
       }
     ],
     "東北": [
@@ -540,10 +540,10 @@
       "count": 151
     },
     "北陸": {
-      "last_updated": "2026-04-01",
-      "fetched_at": "2026-05-06",
+      "last_updated": "2026-08-05",
+      "fetched_at": "2026-08-16",
       "last_updated_variants": 1,
-      "count": 271
+      "count": 274
     },
     "東北": {
       "last_updated": "2026-04-01",
@@ -778,7 +778,7 @@
       ]
     },
     "富山県": {
-      "count": 73,
+      "count": 76,
       "areas": [
         "北陸"
       ],
@@ -1979,7 +1979,13 @@
       {
         "slug": "rkd-fukui-fss0017",
         "name": "南福井",
-        "cap": 31,
+        "cap": 29,
+        "kv": 77
+      },
+      {
+        "slug": "rkd-fukui-fss0030",
+        "name": "鯖江",
+        "cap": 28,
         "kv": 77
       },
       {
@@ -2003,12 +2009,6 @@
       {
         "slug": "rkd-fukui-fss0018",
         "name": "花堂",
-        "cap": 21,
-        "kv": 77
-      },
-      {
-        "slug": "rkd-fukui-fss0038",
-        "name": "粟田部77/6kV",
         "cap": 21,
         "kv": 77
       }
@@ -2071,12 +2071,6 @@
         "kv": 66
       },
       {
-        "slug": "rkd-toyama-tss0050",
-        "name": "南高岡",
-        "cap": 32,
-        "kv": 66
-      },
-      {
         "slug": "rkd-toyama-tss0033",
         "name": "牛島",
         "cap": 31,
@@ -2091,6 +2085,12 @@
       {
         "slug": "rkd-toyama-tss0034",
         "name": "中富山",
+        "cap": 30,
+        "kv": 66
+      },
+      {
+        "slug": "rkd-toyama-tss0050",
+        "name": "南高岡",
         "cap": 30,
         "kv": 66
       },
@@ -3065,7 +3065,7 @@
     ]
   },
   "with_coords": 1081,
-  "without_coords": 7145,
+  "without_coords": 7148,
   "by_pref": {
     "unknown": 1762,
     "愛知県": 407,
@@ -3089,7 +3089,7 @@
     "沖縄県": 151,
     "福井県": 61,
     "石川県": 98,
-    "富山県": 73,
+    "富山県": 76,
     "秋田県": 90,
     "青森県": 98,
     "福島県": 163,
@@ -3111,7 +3111,7 @@
     "徳島県": 55
   },
   "sizes_bytes": {
-    "unknown": 789184,
+    "unknown": 789183,
     "愛知県": 186918,
     "静岡県": 114040,
     "三重県": 61772,
@@ -3133,7 +3133,7 @@
     "沖縄県": 71730,
     "福井県": 27555,
     "石川県": 44358,
-    "富山県": 32844,
+    "富山県": 34242,
     "秋田県": 40402,
     "青森県": 44269,
     "福島県": 74702,
@@ -3154,9 +3154,9 @@
     "高知県": 25006,
     "徳島県": 25059
   },
-  "total_size_kb": 3611,
+  "total_size_kb": 3612,
   "max_pref_size_kb": 771,
   "max_pref": "unknown",
   "pref_count": 42,
-  "updated_at": "2026-08-16T05:15:31.527Z"
+  "updated_at": "2026-08-16T05:40:31.596Z"
 }
