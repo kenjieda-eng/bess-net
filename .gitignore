@@ -160,3 +160,5 @@ src/data/operator-ranking.json
 
 .vercel
 .env*.local
+__pycache__/
+*.pyc
