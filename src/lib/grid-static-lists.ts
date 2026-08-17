@@ -77,6 +77,9 @@ export function toSubstationShape(items: GridListItem[]): Substation[] {
     operator: s.operator ? [s.operator] : [],
     area: s.area ? [s.area] : [],
     prefecture: s.prefecture ?? undefined,
+    // #119(2026-08-17): 原値（関西ローカル系・沖縄の設備区分）。落とすと一覧の
+    // 「都道府県／設備区分」列が全行「—」になり、設備区分別ブレークダウンが消える。
+    facility_class: s.facility_class ?? null,
     voltage_primary_kv: s.voltage_primary_kv ?? undefined,
     voltage_secondary_kv: s.voltage_secondary_kv ?? undefined,
     voltage_class: s.voltage_class ? [s.voltage_class] : [],

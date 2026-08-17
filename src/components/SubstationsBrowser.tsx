@@ -144,7 +144,11 @@ export default function SubstationsBrowser({ items }: Props) {
                           Array.isArray(s.area) ? s.area[0] : (s.area as unknown as string | undefined)
                         );
                         if (place.prefecture) return place.prefecture;
-                        if (place.facilityClass) return `設備区分: ${place.facilityClass}`;
+                        // #119(2026-08-17): 渡ってくる record は正規化済みで原値は
+                        // facility_class にある。再正規化の結果だけを見ると全行「—」になる。
+                        const stored = (s as { facility_class?: string | null }).facility_class;
+                        const fc = stored ?? place.facilityClass;
+                        if (fc) return `設備区分: ${fc}`;
                         return '—';
                       })()}
                     </td>

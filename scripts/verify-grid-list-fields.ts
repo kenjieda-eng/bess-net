@@ -8,8 +8,15 @@
  *
  * 本スクリプトは「一覧に出る列 ＝ 静的JSONに必ず入っている」ことを毎回検査する。
  * 実行: npx tsx scripts/verify-grid-list-fields.ts   （microCMS へのアクセスなし・ローカル検査のみ）
+ *
+ * 追補（落とし穴 #119・2026-08-17）: 検査軸を2つに増やした。
+ *   軸1（#118）静的JSONに列があるか
+ *   軸2（#119）その列が消費側（toSubstationShape）まで届いているか
+ * facility_class は軸1を満たしていたのに toSubstationShape が落としており、
+ * 関西1,575件・沖縄151件の設備区分が一覧で不可視だった。軸1だけでは検出できない。
  */
 import * as fs from 'node:fs';
+import { toSubstationShape, type GridListItem } from '../src/lib/grid-static-lists';
 
 // 一覧ビューが参照するフィールド（追加時はここも更新する）
 const REQUIRED_FOR_LIST = [
@@ -52,7 +59,35 @@ function main() {
       console.log(`  ✓ ${area}（${list.length}件・台数あり ${withUnits}件）`);
     }
   }
-  console.log(fail === 0 ? '\n[verify-grid-list-fields] PASS' : `\n[verify-grid-list-fields] FAIL ${fail}エリア`);
+  // ── 軸2（#119）: 静的JSONの値が toSubstationShape を通っても残るか ──
+  // 「JSONにはある／画面には出ない」を検出する。値を持つ代表レコードで往復照合する。
+  console.log('\n[軸2] 消費側 shape（toSubstationShape）への到達を検査');
+  const SHAPE_CRITICAL = [
+    'facility_class', 'units', 'n1_capacity_mw', 'external_id',
+    'voltage_class', 'cap_avail_mw', 'last_updated', 'source_url',
+  ] as const;
+  for (const key of SHAPE_CRITICAL) {
+    // その列に実値を持つレコードを全エリアから1件拾う（無ければ検査対象外）
+    let sample: Record<string, unknown> | undefined;
+    let fromArea = '';
+    for (const area of areas) {
+      const hit = data.by_area[area].find((s) => s[key] !== null && s[key] !== undefined);
+      if (hit) { sample = hit; fromArea = area; break; }
+    }
+    if (!sample) { console.log(`  - ${key}: 実値を持つレコードなし（検査対象外）`); continue; }
+    const shaped = toSubstationShape([sample as unknown as GridListItem])[0] as unknown as Record<string, unknown>;
+    const got = shaped[key];
+    // 配列フィールド（voltage_class 等）は空配列も「消失」扱い
+    const lost = got === null || got === undefined || (Array.isArray(got) && got.length === 0);
+    if (lost) {
+      fail++;
+      console.log(`  ✗ ${key}: 静的JSON=${JSON.stringify(sample[key])}（${fromArea}）→ shape で消失`);
+    } else {
+      console.log(`  ✓ ${key}: ${fromArea} の実値が shape まで到達`);
+    }
+  }
+
+  console.log(fail === 0 ? '\n[verify-grid-list-fields] PASS' : `\n[verify-grid-list-fields] FAIL ${fail}件`);
   if (fail) process.exit(1);
 }
 

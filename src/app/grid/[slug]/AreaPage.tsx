@@ -44,14 +44,34 @@ function fmtDate(iso: string | undefined): string {
 }
 
 /**
- * Gr10(2026-08-11): 表の「都道府県」列に系統区分・設備区分を出さない。
- * 都道府県が確定しないものは「設備区分: ◯◯」と明示する（原値は捨てない）。
+ * 落とし穴 #119(2026-08-17): 二重正規化で原値が消えるのを防ぐ。
+ *
+ * Gr10(b166f57) は一覧系ヘルパ（getAllSubstations / searchSubstationsByName /
+ * getSubstationsByPrefecture）と precompute の両方で正規化を済ませており、
+ * 渡ってくる record は既に prefecture=正規化後・facility_class=原値 になっている。
+ * そこへ再度 normalizeSubstationPlace(prefecture) を掛けると原値が null に潰れ、
+ * 一覧の「都道府県／設備区分」列が全行「—」／設備区分別ブレークダウンが空になる
+ * （関西1,575件・沖縄151件が Gr10 以来ずっと不可視だった）。
+ * → 保存済みの facility_class があればそれを正とする。
  */
-function placeLabel(s: Substation): string {
+function resolvePlace(s: Substation): {
+  prefecture: string | null;
+  facilityClass: string | null;
+} {
   const place = normalizeSubstationPlace(
     s.prefecture,
     Array.isArray(s.area) ? s.area[0] : (s.area as unknown as string | undefined)
   );
+  const stored = (s as { facility_class?: string | null }).facility_class;
+  return { prefecture: place.prefecture, facilityClass: stored ?? place.facilityClass };
+}
+
+/**
+ * Gr10(2026-08-11): 表の「都道府県」列に系統区分・設備区分を出さない。
+ * 都道府県が確定しないものは「設備区分: ◯◯」と明示する（原値は捨てない）。
+ */
+function placeLabel(s: Substation): string {
+  const place = resolvePlace(s);
   if (place.prefecture) return place.prefecture;
   if (place.facilityClass) return `設備区分: ${place.facilityClass}`;
   return '—';
@@ -76,10 +96,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
   const byPref = new Map<string, Substation[]>();
   const byFacility = new Map<string, Substation[]>();
   for (const s of subs) {
-    const place = normalizeSubstationPlace(
-      s.prefecture,
-      Array.isArray(s.area) ? s.area[0] : (s.area as unknown as string | undefined)
-    );
+    const place = resolvePlace(s);
     const p = place.prefecture || '（府県の記載なし）';
     if (!byPref.has(p)) byPref.set(p, []);
     byPref.get(p)!.push(s);
