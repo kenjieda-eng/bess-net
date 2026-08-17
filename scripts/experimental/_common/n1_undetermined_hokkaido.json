@@ -1,0 +1,77 @@
+{
+ "purpose": "公表CSVで N-1電制適用可否が未算定（―）の設備（北海道電力NW分）",
+ "note": "再取込では上書きせず現値維持する。_common/n1_undetermined.json への統合用。",
+ "count": 7,
+ "entries": [
+  {
+   "operator": "北海道電力ネットワーク",
+   "area": "北海道",
+   "slug": "hkd-main-0047",
+   "external_id": "hepco_map_forecast_tide_list_03_1_v2-33.0",
+   "name": "旭川変電所",
+   "prefecture": "北海道",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+  },
+  {
+   "operator": "北海道電力ネットワーク",
+   "area": "北海道",
+   "slug": "hkd-main-0142",
+   "external_id": "hepco_map_forecast_tide_list_10_23_v2-22.0",
+   "name": "錦橋変電所",
+   "prefecture": "北海道",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+  },
+  {
+   "operator": "北海道電力ネットワーク",
+   "area": "北海道",
+   "slug": "hkd-main-0187",
+   "external_id": "hepco_map_forecast_tide_list_12_87_v2-33.0",
+   "name": "留産変電所",
+   "prefecture": "北海道",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+  },
+  {
+   "operator": "北海道電力ネットワーク",
+   "area": "北海道",
+   "slug": "hkd-main-0287",
+   "external_id": "hepco_map_forecast_tide_list_18_13_v2-33.0",
+   "name": "中札内変電所",
+   "prefecture": "北海道",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+  },
+  {
+   "operator": "北海道電力ネットワーク",
+   "area": "北海道",
+   "slug": "hkd-main-0308",
+   "external_id": "hepco_map_forecast_tide_list_18_83_v2-11.0",
+   "name": "上岩松変電所",
+   "prefecture": "北海道",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+  },
+  {
+   "operator": "北海道電力ネットワーク",
+   "area": "北海道",
+   "slug": "hkd-main-0310",
+   "external_id": "hepco_map_forecast_tide_list_18_85_v2-11.0",
+   "name": "然別第二変電所",
+   "prefecture": "北海道",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+  },
+  {
+   "operator": "北海道電力ネットワーク",
+   "area": "北海道",
+   "slug": "hkd-main-0312",
+   "external_id": "hepco_map_forecast_tide_list_18_87_v2-11.0",
+   "name": "然別第一変電所",
+   "prefecture": "北海道",
+   "stored_n1_eligible": false,
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+  }
+ ]
+}

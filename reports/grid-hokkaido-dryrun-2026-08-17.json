@@ -1,0 +1,1526 @@
+{
+ "generated": "2026-08-17",
+ "version_old": "2026/4/1",
+ "files": [
+  {
+   "zip": "sys_capa_kikan.zip",
+   "member": "sys_capa_kikan01_Tr_202607_01.csv",
+   "bytes": 3723,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "kikan",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 35
+  },
+  {
+   "zip": "sys_capa_kikan.zip",
+   "member": "sys_capa_kikan01_line_202607_01.csv",
+   "bytes": 10576,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "kikan",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local01.zip",
+   "member": "sys_capa_local01_Tr_202607_01.csv",
+   "bytes": 3995,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local01",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 40
+  },
+  {
+   "zip": "sys_capa_local01.zip",
+   "member": "sys_capa_local01_line_202607_01.csv",
+   "bytes": 6953,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local01",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local02.zip",
+   "member": "sys_capa_local02_Tr_202607_01.csv",
+   "bytes": 753,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local02",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 5
+  },
+  {
+   "zip": "sys_capa_local02.zip",
+   "member": "sys_capa_local02_line_202607_01.csv",
+   "bytes": 1176,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local02",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local03.zip",
+   "member": "sys_capa_local03_Tr_202607_01.csv",
+   "bytes": 2022,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local03",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 22
+  },
+  {
+   "zip": "sys_capa_local03.zip",
+   "member": "sys_capa_local03_line_202607_01.csv",
+   "bytes": 2573,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local03",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local04.zip",
+   "member": "sys_capa_local04_Tr_202607_01.csv",
+   "bytes": 2444,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local04",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 26
+  },
+  {
+   "zip": "sys_capa_local04.zip",
+   "member": "sys_capa_local04_line_202607_01.csv",
+   "bytes": 4246,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local04",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local05.zip",
+   "member": "sys_capa_local05_Tr_202607_01.csv",
+   "bytes": 1266,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local05",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 12
+  },
+  {
+   "zip": "sys_capa_local05.zip",
+   "member": "sys_capa_local05_line_202607_01.csv",
+   "bytes": 2457,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local05",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local06.zip",
+   "member": "sys_capa_local06_Tr_202505_01.csv",
+   "bytes": 942,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local06",
+   "meta_row": "2025年5月29日更新",
+   "file_version": "202505",
+   "data_rows": 8
+  },
+  {
+   "zip": "sys_capa_local06.zip",
+   "member": "sys_capa_local06_line_202505_01.csv",
+   "bytes": 1618,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local06",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local07.zip",
+   "member": "sys_capa_local07_Tr_202607_01.csv",
+   "bytes": 1223,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local07",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 12
+  },
+  {
+   "zip": "sys_capa_local07.zip",
+   "member": "sys_capa_local07_line_202607_01.csv",
+   "bytes": 3617,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local07",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local08.zip",
+   "member": "sys_capa_local08_Tr_202605_01.csv",
+   "bytes": 940,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local08",
+   "meta_row": "2026年5月29日更新",
+   "file_version": "202605",
+   "data_rows": 8
+  },
+  {
+   "zip": "sys_capa_local08.zip",
+   "member": "sys_capa_local08_line_202605_01.csv",
+   "bytes": 2053,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local08",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local09.zip",
+   "member": "sys_capa_local09_Tr_202605_01.csv",
+   "bytes": 725,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local09",
+   "meta_row": "2026年5月29日更新",
+   "file_version": "202605",
+   "data_rows": 5
+  },
+  {
+   "zip": "sys_capa_local09.zip",
+   "member": "sys_capa_local09_line_202605_01.csv",
+   "bytes": 1988,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local09",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local10.zip",
+   "member": "sys_capa_local10_Tr_202607_01.csv",
+   "bytes": 1740,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local10",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 18
+  },
+  {
+   "zip": "sys_capa_local10.zip",
+   "member": "sys_capa_local10_line_202607_01.csv",
+   "bytes": 3893,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local10",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local11.zip",
+   "member": "sys_capa_local11_Tr_202607_01.csv",
+   "bytes": 1125,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local11",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 10
+  },
+  {
+   "zip": "sys_capa_local11.zip",
+   "member": "sys_capa_local11_line_202607_01.csv",
+   "bytes": 2944,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local11",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local12.zip",
+   "member": "sys_capa_local12_Tr_202607_01.csv",
+   "bytes": 1979,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local12",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 23
+  },
+  {
+   "zip": "sys_capa_local12.zip",
+   "member": "sys_capa_local12_line_202607_01.csv",
+   "bytes": 3777,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local12",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local13.zip",
+   "member": "sys_capa_local13_Tr_202607_01.csv",
+   "bytes": 2558,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local13",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 26
+  },
+  {
+   "zip": "sys_capa_local13.zip",
+   "member": "sys_capa_local13_line_202607_01.csv",
+   "bytes": 5749,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local13",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local14.zip",
+   "member": "sys_capa_local14_Tr_202607_01.csv",
+   "bytes": 3676,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local14",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 33
+  },
+  {
+   "zip": "sys_capa_local14.zip",
+   "member": "sys_capa_local14_line_202607_01.csv",
+   "bytes": 7052,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local14",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local15.zip",
+   "member": "sys_capa_local15_Tr_202607_01.csv",
+   "bytes": 1008,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local15",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 8
+  },
+  {
+   "zip": "sys_capa_local15.zip",
+   "member": "sys_capa_local15_line_202607_01.csv",
+   "bytes": 2577,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local15",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local16.zip",
+   "member": "sys_capa_local16_Tr_202607_01.csv",
+   "bytes": 1068,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local16",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 9
+  },
+  {
+   "zip": "sys_capa_local16.zip",
+   "member": "sys_capa_local16_line_202607_01.csv",
+   "bytes": 2410,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local16",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local17.zip",
+   "member": "sys_capa_local17_Tr_202608_01.csv",
+   "bytes": 1919,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local17",
+   "meta_row": "2026年8月7日更新",
+   "file_version": "202608",
+   "data_rows": 17
+  },
+  {
+   "zip": "sys_capa_local17.zip",
+   "member": "sys_capa_local17_line_202608_01.csv",
+   "bytes": 4447,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local17",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local18.zip",
+   "member": "sys_capa_local18_Tr_202607_01.csv",
+   "bytes": 3557,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local18",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 38
+  },
+  {
+   "zip": "sys_capa_local18.zip",
+   "member": "sys_capa_local18_line_202607_01.csv",
+   "bytes": 6414,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local18",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local19.zip",
+   "member": "sys_capa_local19_Tr_202607_01.csv",
+   "bytes": 1322,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local19",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 11
+  },
+  {
+   "zip": "sys_capa_local19.zip",
+   "member": "sys_capa_local19_line_202607_01.csv",
+   "bytes": 2273,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local19",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local20.zip",
+   "member": "sys_capa_local20_Tr_202607_01.csv",
+   "bytes": 1109,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local20",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 10
+  },
+  {
+   "zip": "sys_capa_local20.zip",
+   "member": "sys_capa_local20_line_202607_01.csv",
+   "bytes": 2328,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local20",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local21.zip",
+   "member": "sys_capa_local21_Tr_202607_01.csv",
+   "bytes": 1049,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local21",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 9
+  },
+  {
+   "zip": "sys_capa_local21.zip",
+   "member": "sys_capa_local21_line_202607_01.csv",
+   "bytes": 2958,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local21",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local22.zip",
+   "member": "sys_capa_local22_Tr_202607_01.csv",
+   "bytes": 2039,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local22",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 18
+  },
+  {
+   "zip": "sys_capa_local22.zip",
+   "member": "sys_capa_local22_line_202607_01.csv",
+   "bytes": 6712,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local22",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local23.zip",
+   "member": "sys_capa_local23_Tr_202607_01.csv",
+   "bytes": 1525,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local23",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 13
+  },
+  {
+   "zip": "sys_capa_local23.zip",
+   "member": "sys_capa_local23_line_202607_01.csv",
+   "bytes": 2437,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local23",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  },
+  {
+   "zip": "sys_capa_local24.zip",
+   "member": "sys_capa_local24_Tr_202607_01.csv",
+   "bytes": 4211,
+   "encoding": "cp932",
+   "kind": "変圧器",
+   "group": "local24",
+   "meta_row": "2026年7月31日更新",
+   "file_version": "202607",
+   "data_rows": 43
+  },
+  {
+   "zip": "sys_capa_local24.zip",
+   "member": "sys_capa_local24_line_202607_01.csv",
+   "bytes": 9315,
+   "encoding": "cp932",
+   "kind": "送電線(対象外)",
+   "group": "local24",
+   "meta_row": null,
+   "file_version": null,
+   "data_rows": 0
+  }
+ ],
+ "warnings": [],
+ "requires_judgement": [
+  "基幹（187kV以上）35件が baseline に未収録 → 新規追加するかの方針判断と slug 採番が必要",
+  "No.振り直し 10件 → slug維持・external_id更新の可否（中国と同じ扱いにするか）"
+ ],
+ "versions": [
+  {
+   "file_version": "202607",
+   "meta_row": "2026年7月31日更新",
+   "iso": "2026-07-31",
+   "groups": [
+    "kikan",
+    "local01",
+    "local02",
+    "local03",
+    "local04",
+    "local05",
+    "local07",
+    "local10",
+    "local11",
+    "local12",
+    "local13",
+    "local14",
+    "local15",
+    "local16",
+    "local18",
+    "local19",
+    "local20",
+    "local21",
+    "local22",
+    "local23",
+    "local24"
+   ]
+  },
+  {
+   "file_version": "202505",
+   "meta_row": "2025年5月29日更新",
+   "iso": "2025-05-29",
+   "groups": [
+    "local06"
+   ]
+  },
+  {
+   "file_version": "202605",
+   "meta_row": "2026年5月29日更新",
+   "iso": "2026-05-29",
+   "groups": [
+    "local08",
+    "local09"
+   ]
+  },
+  {
+   "file_version": "202608",
+   "meta_row": "2026年8月7日更新",
+   "iso": "2026-08-07",
+   "groups": [
+    "local17"
+   ]
+  }
+ ],
+ "baseline_source": {
+  "count": 424,
+  "data_source_format": [
+   "PDF"
+  ],
+  "sample_source_url": "https://www.hepco.co.jp/network/con_service/public_document/pdf/map_forecast_tide_list_24.pdf",
+  "external_id_pattern": "hepco_map_forecast_tide_list_{PDF番号}_{No}_v2-{二次電圧}",
+  "kikan_records": 0
+ },
+ "dedupe": {
+  "before": 459,
+  "after": 459,
+  "removed": 0,
+  "breakdown": {},
+  "examples": []
+ },
+ "counts": {
+  "baseline": 424,
+  "new_total": 459,
+  "new_local": 424,
+  "new_kikan": 35,
+  "matched": 424,
+  "new_records": 0,
+  "disappeared": 0,
+  "renumbered": 10,
+  "changed": 88,
+  "unchanged": 336,
+  "delta_pct": 8.25
+ },
+ "field_stats": {
+  "空き容量(当該)": {
+   "changed": 58,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "空容量(上位系等考慮)": {
+   "changed": 13,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "運用容量": {
+   "changed": 9,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "予想潮流": {
+   "changed": 14,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "設備容量": {
+   "changed": 12,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "N-1電制適用可能量": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "台数": {
+   "changed": 3,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "出力制御の可能性": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 9
+  }
+ },
+ "avail_decreased": {
+  "count": 29,
+  "zeroed": 4,
+  "top10": [
+   {
+    "slug": "hkd-main-0234",
+    "name": "東岩見沢変電所",
+    "old": 9,
+    "new": 6.0,
+    "delta": -3.0
+   },
+   {
+    "slug": "hkd-main-0005",
+    "name": "稚内西変電所",
+    "old": 10,
+    "new": 8.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "hkd-main-0018",
+    "name": "浜頓別変電所",
+    "old": 3,
+    "new": 1.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "hkd-main-0229",
+    "name": "新十津川変電所",
+    "old": 6,
+    "new": 4.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "hkd-main-0344",
+    "name": "錦岡変電所",
+    "old": 2,
+    "new": 0.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "hkd-main-0356",
+    "name": "厚真変電所",
+    "old": 2,
+    "new": 0.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "hkd-main-0381",
+    "name": "えりも変電所",
+    "old": 3,
+    "new": 1.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "hkd-main-0424",
+    "name": "軍川変電所",
+    "old": 3,
+    "new": 1.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "hkd-main-0022",
+    "name": "美深変電所",
+    "old": 10,
+    "new": 9.0,
+    "delta": -1.0
+   },
+   {
+    "slug": "hkd-main-0059",
+    "name": "愛別変電所",
+    "old": 6,
+    "new": 5.0,
+    "delta": -1.0
+   }
+  ]
+ },
+ "avail_increased": {
+  "count": 29,
+  "top5": [
+   {
+    "slug": "hkd-main-0347",
+    "name": "緑町変電所",
+    "old": 10,
+    "new": 20.0,
+    "delta": 10.0
+   },
+   {
+    "slug": "hkd-main-0187",
+    "name": "留産変電所",
+    "old": 6,
+    "new": 11.0,
+    "delta": 5.0
+   },
+   {
+    "slug": "hkd-main-0300",
+    "name": "中士幌変電所",
+    "old": 2,
+    "new": 7.0,
+    "delta": 5.0
+   },
+   {
+    "slug": "hkd-main-0315",
+    "name": "西帯広変電所",
+    "old": 10,
+    "new": 15.0,
+    "delta": 5.0
+   },
+   {
+    "slug": "hkd-main-0275",
+    "name": "標茶配電塔",
+    "old": 0,
+    "new": 4.0,
+    "delta": 4.0
+   }
+  ]
+ },
+ "n1": {
+  "baseline_ok": 3,
+  "csv_ok": 24,
+  "csv_ok_zero_mw": 5,
+  "csv_undetermined": 8,
+  "changed": [],
+  "ok_list": [
+   {
+    "group": "kikan",
+    "no": "202",
+    "name": "西旭川変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "203",
+    "name": "旭川変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "204",
+    "name": "留辺蘂変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 0.0
+   },
+   {
+    "group": "kikan",
+    "no": "205",
+    "name": "女満別変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 29.0
+   },
+   {
+    "group": "kikan",
+    "no": "206",
+    "name": "南九条変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "207",
+    "name": "西札幌変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "208",
+    "name": "苗穂変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "209",
+    "name": "篠路変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "210",
+    "name": "南札幌変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "211",
+    "name": "恵庭変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "212",
+    "name": "西小樽変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "213",
+    "name": "北江別変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 90.0
+   },
+   {
+    "group": "kikan",
+    "no": "214",
+    "name": "西滝川変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 0.0
+   },
+   {
+    "group": "kikan",
+    "no": "215",
+    "name": "宇円別変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 0.0
+   },
+   {
+    "group": "kikan",
+    "no": "216",
+    "name": "東釧路変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 0.0
+   },
+   {
+    "group": "kikan",
+    "no": "217",
+    "name": "西春別変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 0.0
+   },
+   {
+    "group": "kikan",
+    "no": "218",
+    "name": "北芽室変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "219",
+    "name": "西音更変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "kikan",
+    "no": "221",
+    "name": "室蘭変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 32.0
+   },
+   {
+    "group": "kikan",
+    "no": "222",
+    "name": "苫小牧変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 45.0
+   },
+   {
+    "group": "kikan",
+    "no": "229",
+    "name": "他社変電所",
+    "kv": "187.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "local03",
+    "no": "1",
+    "name": "旭川変電所",
+    "kv": "110.0/66.0",
+    "capacity_mw": 100.0
+   },
+   {
+    "group": "local05",
+    "no": "18",
+    "name": "斜里変電所",
+    "kv": "66.0/33.0",
+    "capacity_mw": 1.0
+   },
+   {
+    "group": "local24",
+    "no": "42",
+    "name": "銭亀沢変電所",
+    "kv": "66.0/33.0",
+    "capacity_mw": 10.0
+   }
+  ]
+ },
+ "n1_undetermined": {
+  "count": 7,
+  "entries": [
+   {
+    "operator": "北海道電力ネットワーク",
+    "area": "北海道",
+    "slug": "hkd-main-0047",
+    "external_id": "hepco_map_forecast_tide_list_03_1_v2-33.0",
+    "name": "旭川変電所",
+    "prefecture": "北海道",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+   },
+   {
+    "operator": "北海道電力ネットワーク",
+    "area": "北海道",
+    "slug": "hkd-main-0142",
+    "external_id": "hepco_map_forecast_tide_list_10_23_v2-22.0",
+    "name": "錦橋変電所",
+    "prefecture": "北海道",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+   },
+   {
+    "operator": "北海道電力ネットワーク",
+    "area": "北海道",
+    "slug": "hkd-main-0187",
+    "external_id": "hepco_map_forecast_tide_list_12_87_v2-33.0",
+    "name": "留産変電所",
+    "prefecture": "北海道",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+   },
+   {
+    "operator": "北海道電力ネットワーク",
+    "area": "北海道",
+    "slug": "hkd-main-0287",
+    "external_id": "hepco_map_forecast_tide_list_18_13_v2-33.0",
+    "name": "中札内変電所",
+    "prefecture": "北海道",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+   },
+   {
+    "operator": "北海道電力ネットワーク",
+    "area": "北海道",
+    "slug": "hkd-main-0308",
+    "external_id": "hepco_map_forecast_tide_list_18_83_v2-11.0",
+    "name": "上岩松変電所",
+    "prefecture": "北海道",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+   },
+   {
+    "operator": "北海道電力ネットワーク",
+    "area": "北海道",
+    "slug": "hkd-main-0310",
+    "external_id": "hepco_map_forecast_tide_list_18_85_v2-11.0",
+    "name": "然別第二変電所",
+    "prefecture": "北海道",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+   },
+   {
+    "operator": "北海道電力ネットワーク",
+    "area": "北海道",
+    "slug": "hkd-main-0312",
+    "external_id": "hepco_map_forecast_tide_list_18_87_v2-11.0",
+    "name": "然別第一変電所",
+    "prefecture": "北海道",
+    "stored_n1_eligible": false,
+    "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+   }
+  ]
+ },
+ "oc_undetermined": {
+  "count": 9,
+  "entries": [
+   {
+    "slug": "hkd-main-0114",
+    "name": "西札幌変電所",
+    "stored": "有り"
+   },
+   {
+    "slug": "hkd-main-0117",
+    "name": "屯田変電所",
+    "stored": "有り"
+   },
+   {
+    "slug": "hkd-main-0119",
+    "name": "琴似変電所",
+    "stored": "有り"
+   },
+   {
+    "slug": "hkd-main-0120",
+    "name": "二十四軒変電所",
+    "stored": "有り"
+   },
+   {
+    "slug": "hkd-main-0121",
+    "name": "宮の沢変電所",
+    "stored": "有り"
+   },
+   {
+    "slug": "hkd-main-0122",
+    "name": "山の手変電所",
+    "stored": "有り"
+   },
+   {
+    "slug": "hkd-main-0123",
+    "name": "西野三条変電所",
+    "stored": "有り"
+   },
+   {
+    "slug": "hkd-main-0124",
+    "name": "手稲変電所",
+    "stored": "有り"
+   },
+   {
+    "slug": "hkd-main-0125",
+    "name": "前田変電所",
+    "stored": "有り"
+   }
+  ]
+ },
+ "renumber": [
+  {
+   "slug": "hkd-main-0040",
+   "name": "智恵文変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_01_94_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_01_93_v2-6.6",
+   "kv": "22.0/6.6",
+   "capacity_total_mw": 3.0
+  },
+  {
+   "slug": "hkd-main-0116",
+   "name": "石狩変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_07_8_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_07_9_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 40.0
+  },
+  {
+   "slug": "hkd-main-0117",
+   "name": "屯田変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_07_10_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_07_11_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 40.0
+  },
+  {
+   "slug": "hkd-main-0118",
+   "name": "樽川変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_07_21_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_07_71_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 40.0
+  },
+  {
+   "slug": "hkd-main-0279",
+   "name": "中標津変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_17_54_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_17_56_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 35.0
+  },
+  {
+   "slug": "hkd-main-0280",
+   "name": "標津変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_17_58_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_17_60_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 16.0
+  },
+  {
+   "slug": "hkd-main-0281",
+   "name": "峰浜変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_17_66_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_17_68_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 3.0
+  },
+  {
+   "slug": "hkd-main-0282",
+   "name": "羅臼変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_17_68_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_17_70_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 10.0
+  },
+  {
+   "slug": "hkd-main-0423",
+   "name": "軍川変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_24_159_v2-22.0",
+   "new_external_id": "hepco_map_forecast_tide_list_24_156_v2-22.0",
+   "kv": "66.0/22.0",
+   "capacity_total_mw": 10.0
+  },
+  {
+   "slug": "hkd-main-0424",
+   "name": "軍川変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_24_159_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_24_156_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 10.0
+  }
+ ],
+ "new_records_detail": [],
+ "kikan_detail": [
+  {
+   "no": "1",
+   "name": "西当別変電所",
+   "kv": "275.0/187.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "3",
+   "name": "西野変電所",
+   "kv": "275.0/187.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "72",
+   "name": "北新得変電所",
+   "kv": "275.0/187.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "116",
+   "name": "南早来変電所",
+   "kv": "275.0/187.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "117",
+   "name": "大野変電所",
+   "kv": "275.0/187.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "201",
+   "name": "西名寄変電所",
+   "kv": "187.0/100.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "202",
+   "name": "西旭川変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "203",
+   "name": "旭川変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "204",
+   "name": "留辺蘂変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 0.0
+  },
+  {
+   "no": "205",
+   "name": "女満別変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 29.0
+  },
+  {
+   "no": "206",
+   "name": "南九条変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "207",
+   "name": "西札幌変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "208",
+   "name": "苗穂変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "209",
+   "name": "篠路変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "210",
+   "name": "南札幌変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "211",
+   "name": "恵庭変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "212",
+   "name": "西小樽変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "213",
+   "name": "北江別変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 90.0
+  },
+  {
+   "no": "214",
+   "name": "西滝川変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 0.0
+  },
+  {
+   "no": "215",
+   "name": "宇円別変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 0.0
+  },
+  {
+   "no": "216",
+   "name": "東釧路変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 0.0
+  },
+  {
+   "no": "217",
+   "name": "西春別変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 0.0
+  },
+  {
+   "no": "218",
+   "name": "北芽室変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "219",
+   "name": "西音更変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "220",
+   "name": "西伊達変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "221",
+   "name": "室蘭変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 32.0
+  },
+  {
+   "no": "222",
+   "name": "苫小牧変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 45.0
+  },
+  {
+   "no": "223",
+   "name": "南早来変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "224",
+   "name": "東苫小牧変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "225",
+   "name": "北静内変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "226",
+   "name": "北七飯変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "227",
+   "name": "大野変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "228",
+   "name": "西中川変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": false,
+   "n1_capacity_mw": null
+  },
+  {
+   "no": "229",
+   "name": "他社変電所",
+   "kv": "187.0/66.0",
+   "cap_avail_mw": null,
+   "n1_eligible": true,
+   "n1_capacity_mw": 100.0
+  },
+  {
+   "no": "230",
+   "name": "富村変電所",
+   "kv": "187.0/11.0",
+   "cap_avail_mw": null,
+   "n1_eligible": null,
+   "n1_capacity_mw": null
+  }
+ ],
+ "disappeared_records": [],
+ "group_counts": {
+  "old": {
+   "local24": 43,
+   "local23": 13,
+   "local22": 18,
+   "local21": 9,
+   "local20": 10,
+   "local19": 11,
+   "local18": 38,
+   "local17": 17,
+   "local16": 9,
+   "local15": 8,
+   "local14": 33,
+   "local13": 26,
+   "local12": 23,
+   "local11": 10,
+   "local10": 18,
+   "local09": 5,
+   "local08": 8,
+   "local07": 12,
+   "local06": 8,
+   "local05": 12,
+   "local04": 26,
+   "local03": 22,
+   "local02": 5,
+   "local01": 40
+  },
+  "new": {
+   "kikan": 35,
+   "local01": 40,
+   "local02": 5,
+   "local03": 22,
+   "local04": 26,
+   "local05": 12,
+   "local06": 8,
+   "local07": 12,
+   "local08": 8,
+   "local09": 5,
+   "local10": 18,
+   "local11": 10,
+   "local12": 23,
+   "local13": 26,
+   "local14": 33,
+   "local15": 8,
+   "local16": 9,
+   "local17": 17,
+   "local18": 38,
+   "local19": 11,
+   "local20": 10,
+   "local21": 9,
+   "local22": 18,
+   "local23": 13,
+   "local24": 43
+  }
+ }
+}
