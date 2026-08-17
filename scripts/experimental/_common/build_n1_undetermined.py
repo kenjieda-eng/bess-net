@@ -68,6 +68,11 @@ cg = ROOT / "_common" / "n1_undetermined_chugoku.json"
 if cg.exists():
     entries.extend(json.loads(cg.read_text(encoding="utf-8"))["entries"])
 
+# ── 北海道（2026-07-31ほか公表・版4種） ──
+hk = ROOT / "_common" / "n1_undetermined_hokkaido.json"
+if hk.exists():
+    entries.extend(json.loads(hk.read_text(encoding="utf-8"))["entries"])
+
 by_area = {}
 for e in entries:
     by_area[e["area"]] = by_area.get(e["area"], 0) + 1
@@ -78,7 +83,8 @@ OUT.write_text(json.dumps({
     "note": "再取込では上書きせず現値維持する（社を問わず既定）。",
     "generated_from": ["hokuriku/hokuriku_csv_2608_normalized.json", "tepco/tepco_csv_2607_normalized.json",
                        "reports/grid-tohoku-dryrun-2026-08-16.json",
-                       "_common/n1_undetermined_chugoku.json"],
+                       "_common/n1_undetermined_chugoku.json",
+                       "_common/n1_undetermined_hokkaido.json"],
     "count": len(entries), "count_by_area": by_area, "entries": entries,
 }, ensure_ascii=False, indent=1), encoding="utf-8")
 print(f"出力 {OUT}: 計{len(entries)}件 {by_area}")

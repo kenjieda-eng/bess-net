@@ -37,9 +37,11 @@ export const AREA_META: Record<string, AreaMeta> = {
     areaJp: '北海道',
     operator: '北海道電力ネットワーク',
     landingUrl:
-      'https://www.hepco.co.jp/network/con_service/public_document/',
+      'https://www.hepco.co.jp/network/con_service/public_document/bid_info.html',
+    // 裁定4(2026-08-17): PDF抽出 → 公表CSV(ZIP)へソース形式を変更。基幹（187kV以上）35件を新規収録。
+    sourceFormat: 'CSV',
     description:
-      '北海道エリア（北海道電力ネットワーク）の変電所別系統空き容量・連系条件・出力制御情報を、24 PDF 公開資料から抽出・統合。送電線情報は将来対応。',
+      '北海道エリア（北海道電力ネットワーク）の変電所別系統空き容量・連系条件・出力制御情報を、基幹系（187kV以上）＋110kV以下24系統の公表CSVから抽出・統合。送電線情報は将来対応。',
   },
   // ===== Phase 2-C-1 追加 =====
   chubu: {

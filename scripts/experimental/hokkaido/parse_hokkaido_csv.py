@@ -14,6 +14,13 @@
     source_url も pdf/map_forecast_tide_list_{NN}.pdf）。今回は CSV への**ソース形式変更**を伴う。
   - **基幹（kikan）35件は baseline に1件も存在しない**（424 = local01〜24 の合計と完全一致）。
 
+★★ external_id を突合キーに使わないこと（2026-08-17 実証・北海道固有の必須事項）★★
+  No. は系統内で一括シフトする（local17 で +2）。external_id は `PDF番号×No×二次電圧` なので、
+  シフト後は **別設備同士で external_id が一致する**（baseline No68=羅臼 と CSV No68=峰浜）。
+  → 主キーは「系統＋名称＋電圧面」。external_id は表示・履歴用にのみ保持する。
+  ※ この主キーの弱点: **名称が変わると突合できない**。次回の再取込では、同一系統内で
+    「消えた名称」と「現れた名称」を電圧面・容量で突き合わせて改称かどうかを必ず確認すること。
+
 ★突合の要点（2026-08-17 実証）:
   external_id は `PDF番号 × No. × 二次電圧` だが、**No. は系統内で一括シフトすることがある**
   （local17 で +2 シフト）。この場合 eid が偶然一致して**別設備同士を結びつける**（峰浜↔羅臼）。
@@ -177,7 +184,9 @@ def ident_key(name, kv1, kv2):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", required=True)
-    ap.parse_args()
+    ap.add_argument("--emit-plan", action="store_true",
+                    help="本実行用の patch 計画を出力（承認後のみ。microCMS へは書き込まない）")
+    args = ap.parse_args()
 
     R = {"generated": date.today().isoformat(), "version_old": "2026/4/1",
          "files": [], "warnings": [], "requires_judgement": []}
@@ -389,6 +398,110 @@ def main():
     }, ensure_ascii=False, indent=1), encoding="utf-8")
     write_md(R)
     print(f"\n→ {OUT_JSON} / {OUT_MD} / {N1_OUT} 出力")
+
+    if args.emit_plan:
+        # 本実行用 patch 計画（承認 2026-08-17）。microCMS への書込はここでは行わない。
+        APPROVED = ["cap_avail_mw", "cap_avail_upper_mw", "cap_operational_mw", "forecast_flow_mw",
+                    "capacity_total_mw", "n1_capacity_mw", "units"]
+
+        def zip_url(grp):
+            return BASE_URL + "/zip/sys_capa_" + grp + ".zip"
+
+        updates, creates, n1_skip, oc_skip = [], [], 0, 0
+        for b, r in matched:
+            iso = meta_to_iso(r["src_meta"] or "")
+            if not iso:
+                raise SystemExit("版日付が読めない: " + repr(r["src_meta"]))
+            # 裁定3: last_updated はレコード単位／裁定4: ソース形式を PDF→CSV
+            patch = {"last_updated": iso + "T00:00:00.000Z",
+                     "source_url": zip_url(r["group"]),
+                     "data_source_format": ["CSV"]}
+            changed = []
+            for k in APPROVED:
+                o, n = b.get(k), r.get(k)
+                if n is not None and o != n:
+                    patch[k] = n
+                    changed.append(k)
+            if r.get("n1_eligible") is None:
+                if b.get("n1_eligible") is not None:
+                    n1_skip += 1
+            elif r["n1_eligible"] != b.get("n1_eligible"):
+                patch["n1_eligible"] = r["n1_eligible"]
+                changed.append("n1_eligible")
+            if r.get("oc_possibility") is None:
+                if b.get("oc_possibility") is not None:
+                    oc_skip += 1
+            elif r["oc_possibility"] == "有り" and b.get("oc_possibility") != "有り":
+                patch["oc_possibility"] = ["有り"]
+                changed.append("oc_possibility")
+            # 裁定2: No.振り直しは slug 維持・external_id のみ更新
+            if b.get("external_id") != r["external_id"]:
+                patch["external_id"] = r["external_id"]
+                changed.append("external_id")
+            updates.append({"slug": b["slug"], "patch": patch, "changed": changed})
+
+        # 裁定1: 基幹35件を新規追加。slug は他社に倣い hkd-kikan-{No:04d}
+        #   （既存 hkd-main は local 系統の区分名で「基幹」の意味ではないため踏襲しない）
+        for r in kikan_rows:
+            iso = meta_to_iso(r["src_meta"] or "")
+            kv1 = r["voltage_primary_kv"] or 0
+            vc = ("500kV系" if kv1 >= 500 else "275kV系" if kv1 >= 275 else
+                  "187kV系" if kv1 >= 187 else "110kV系" if kv1 >= 110 else
+                  "66kV系" if kv1 >= 66 else "22kV系" if kv1 >= 22 else "その他")
+            content = {
+                "slug": "hkd-kikan-%04d" % int(r["no"]),
+                "name": r["name"],
+                "operator": ["北海道電力ネットワーク"],
+                "area": ["北海道"],
+                # 県別ブレークダウンは他社に倣い「（基幹系）」＝prefecture を持たせない
+                "voltage_class": [vc],
+                "n1_eligible": r["n1_eligible"] is True,
+                "external_id": "hepco_sys_capa_kikan_" + r["no"] + "_v2-" + str(r["voltage_secondary_kv"]),
+                "source_url": zip_url("kikan"),
+                "data_source_format": ["CSV"],
+                "last_updated": iso + "T00:00:00.000Z",
+            }
+            for k in ["voltage_primary_kv", "voltage_secondary_kv"] + APPROVED:
+                if r.get(k) is not None:
+                    content[k] = r[k]
+            if r.get("op_constraint"):
+                content["op_constraint"] = r["op_constraint"]
+            if r.get("oc_possibility") == "有り":
+                content["oc_possibility"] = ["有り"]
+            creates.append({"slug": content["slug"], "content": content,
+                            "n1_zero_ok": r["n1_eligible"] is True and r["n1_capacity_mw"] == 0})
+
+        PLAN = HERE / "update_plan_202607.json"
+        PLAN.write_text(json.dumps({
+            "generated": date.today().isoformat(),
+            "n1_undetermined_skipped": n1_skip, "oc_undetermined_skipped": oc_skip,
+            "update_count": len(updates), "changed_count": sum(1 for u in updates if u["changed"]),
+            "create_count": len(creates),
+            "renumber": renumber, "updates": updates, "creates": creates,
+        }, ensure_ascii=False, indent=1), encoding="utf-8")
+
+        HIST = HERE.parent / "_common" / "external_id_history.json"
+        hist = json.loads(HIST.read_text(encoding="utf-8")) if HIST.exists() else {"entries": []}
+        for x in renumber:
+            if not any(e["slug"] == x["slug"] and e["external_id_prev"] == x["old_external_id"]
+                       for e in hist["entries"]):
+                hist["entries"].append({
+                    "changed_on": date.today().isoformat(),
+                    "operator": "北海道電力ネットワーク", "area": "北海道",
+                    "slug": x["slug"], "name": x["name"], "prefecture": "北海道",
+                    "external_id_prev": x["old_external_id"],
+                    "external_id_new": x["new_external_id"],
+                    "evidence": "名称・電圧面(" + x["kv"] + "kV)・設備容量が一致。"
+                                "★北海道はNo.が系統内で一括シフトするため external_id は突合キーに使わない",
+                })
+        hist["count"] = len(hist["entries"])
+        HIST.write_text(json.dumps(hist, ensure_ascii=False, indent=1), encoding="utf-8")
+        print("")
+        print("→ " + PLAN.name + ": 更新%d件（値変化%d） / 新規%d件 / N-1スキップ%d / 出力制御スキップ%d"
+              % (len(updates), sum(1 for u in updates if u["changed"]), len(creates), n1_skip, oc_skip))
+        print("→ external_id_history.json: %d件" % hist["count"])
+        print("   0MWの「可」で新規投入: %d件" % sum(1 for c in creates if c["n1_zero_ok"]))
+
     print("[dry-run] 完了（microCMS 書込なし）")
 
 

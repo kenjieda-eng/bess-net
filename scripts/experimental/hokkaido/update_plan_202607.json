@@ -1,0 +1,6272 @@
+{
+ "generated": "2026-08-17",
+ "n1_undetermined_skipped": 7,
+ "oc_undetermined_skipped": 9,
+ "update_count": 424,
+ "changed_count": 95,
+ "create_count": 35,
+ "renumber": [
+  {
+   "slug": "hkd-main-0040",
+   "name": "智恵文変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_01_94_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_01_93_v2-6.6",
+   "kv": "22.0/6.6",
+   "capacity_total_mw": 3.0
+  },
+  {
+   "slug": "hkd-main-0116",
+   "name": "石狩変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_07_8_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_07_9_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 40.0
+  },
+  {
+   "slug": "hkd-main-0117",
+   "name": "屯田変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_07_10_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_07_11_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 40.0
+  },
+  {
+   "slug": "hkd-main-0118",
+   "name": "樽川変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_07_21_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_07_71_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 40.0
+  },
+  {
+   "slug": "hkd-main-0279",
+   "name": "中標津変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_17_54_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_17_56_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 35.0
+  },
+  {
+   "slug": "hkd-main-0280",
+   "name": "標津変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_17_58_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_17_60_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 16.0
+  },
+  {
+   "slug": "hkd-main-0281",
+   "name": "峰浜変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_17_66_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_17_68_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 3.0
+  },
+  {
+   "slug": "hkd-main-0282",
+   "name": "羅臼変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_17_68_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_17_70_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 10.0
+  },
+  {
+   "slug": "hkd-main-0423",
+   "name": "軍川変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_24_159_v2-22.0",
+   "new_external_id": "hepco_map_forecast_tide_list_24_156_v2-22.0",
+   "kv": "66.0/22.0",
+   "capacity_total_mw": 10.0
+  },
+  {
+   "slug": "hkd-main-0424",
+   "name": "軍川変電所",
+   "old_external_id": "hepco_map_forecast_tide_list_24_159_v2-6.6",
+   "new_external_id": "hepco_map_forecast_tide_list_24_156_v2-6.6",
+   "kv": "66.0/6.6",
+   "capacity_total_mw": 10.0
+  }
+ ],
+ "updates": [
+  {
+   "slug": "hkd-main-0001",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0002",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0003",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0004",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0005",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 8.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0006",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0007",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0008",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0009",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0010",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_operational_mw": 4.0,
+    "capacity_total_mw": 6.0
+   },
+   "changed": [
+    "cap_operational_mw",
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0011",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0012",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0013",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0014",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -6.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0015",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0016",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0017",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0018",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0019",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0020",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0021",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0022",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 9.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0023",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0024",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0025",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0026",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0027",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0028",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0029",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0030",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0031",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0032",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0033",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0034",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0035",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0036",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0037",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0038",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0039",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0040",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local01.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "external_id": "hepco_map_forecast_tide_list_01_93_v2-6.6"
+   },
+   "changed": [
+    "external_id"
+   ]
+  },
+  {
+   "slug": "hkd-main-0041",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local02.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0042",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local02.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0043",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local02.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0044",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local02.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0045",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local02.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0046",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": 83.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0047",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0048",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0049",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0050",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0051",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0052",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0053",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0054",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0055",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -30.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0056",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 6.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0057",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0058",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0059",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 5.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0060",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0061",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0062",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0063",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0064",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0065",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0066",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "units": 2
+   },
+   "changed": [
+    "units"
+   ]
+  },
+  {
+   "slug": "hkd-main-0067",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local03.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0068",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0069",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0070",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 3.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0071",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0072",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0073",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0074",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_operational_mw": 25.0,
+    "capacity_total_mw": 40.0
+   },
+   "changed": [
+    "cap_operational_mw",
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0075",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0076",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0077",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0078",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0079",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0080",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0081",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0082",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0083",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0084",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0085",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0086",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0087",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 5.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0088",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 0.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0089",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0090",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0091",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0092",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0093",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local04.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0094",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0095",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0096",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0097",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0098",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0099",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0100",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "capacity_total_mw": 10.0
+   },
+   "changed": [
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0101",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0102",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0103",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 10.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0104",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 9.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0105",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local05.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0106",
+   "patch": {
+    "last_updated": "2025-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local06.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0107",
+   "patch": {
+    "last_updated": "2025-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local06.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0108",
+   "patch": {
+    "last_updated": "2025-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local06.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0109",
+   "patch": {
+    "last_updated": "2025-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local06.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0110",
+   "patch": {
+    "last_updated": "2025-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local06.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0111",
+   "patch": {
+    "last_updated": "2025-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local06.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0112",
+   "patch": {
+    "last_updated": "2025-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local06.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0113",
+   "patch": {
+    "last_updated": "2025-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local06.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0114",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_upper_mw": 20.0
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0115",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 19.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0116",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "external_id": "hepco_map_forecast_tide_list_07_9_v2-6.6"
+   },
+   "changed": [
+    "external_id"
+   ]
+  },
+  {
+   "slug": "hkd-main-0117",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "external_id": "hepco_map_forecast_tide_list_07_11_v2-6.6"
+   },
+   "changed": [
+    "external_id"
+   ]
+  },
+  {
+   "slug": "hkd-main-0119",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_upper_mw": 20.0
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0120",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_upper_mw": 20.0
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0121",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_upper_mw": 15.0
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0122",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_upper_mw": 20.0
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0123",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_upper_mw": 20.0
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0124",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_upper_mw": 20.0
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0125",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_upper_mw": 19.0
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0118",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local07.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "external_id": "hepco_map_forecast_tide_list_07_71_v2-6.6"
+   },
+   "changed": [
+    "external_id"
+   ]
+  },
+  {
+   "slug": "hkd-main-0126",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local08.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0127",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local08.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0128",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local08.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0129",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local08.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0130",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local08.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0131",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local08.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0132",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local08.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0133",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local08.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0134",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local09.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0135",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local09.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0136",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local09.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0137",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local09.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0138",
+   "patch": {
+    "last_updated": "2026-05-29T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local09.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0139",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0140",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0141",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0142",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0143",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0144",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0145",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 19.0,
+    "cap_avail_upper_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0146",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_upper_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0147",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0148",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0149",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0150",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0151",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0152",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0153",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0154",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0155",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0156",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local10.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0157",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0158",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0159",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0160",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0161",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0162",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0163",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "capacity_total_mw": 35.0
+   },
+   "changed": [
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0164",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0165",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0166",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local11.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0167",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 10.0,
+    "cap_avail_upper_mw": 10.0,
+    "cap_operational_mw": 25.0,
+    "capacity_total_mw": 40.0
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw",
+    "cap_operational_mw",
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0168",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0169",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0170",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0171",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0172",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0173",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0174",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0175",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0176",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0177",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -10.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0178",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 5.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0179",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0180",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0181",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0182",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0183",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0184",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 6.0,
+    "cap_avail_upper_mw": 6.0,
+    "cap_operational_mw": 6.0,
+    "capacity_total_mw": 6.0
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw",
+    "cap_operational_mw",
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0185",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0186",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0187",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 11.0,
+    "cap_avail_upper_mw": 10.0
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0188",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0189",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local12.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0190",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0191",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0192",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0193",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0194",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0195",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0196",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0197",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 7.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0198",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0199",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 2.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0200",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0201",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0202",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0203",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0204",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0205",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0206",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0207",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0208",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 7.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0209",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0210",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0211",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0212",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0213",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0214",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0215",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local13.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0216",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0217",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0218",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 8.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0219",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 5.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0220",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0221",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 9.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0222",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0223",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0224",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -3.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0225",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0226",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0227",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0228",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0229",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 4.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0230",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0231",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0232",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0233",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0234",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 6.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0235",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0236",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0237",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 2.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0238",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0239",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0240",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0241",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0242",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0243",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0244",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0245",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0246",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0247",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0248",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local14.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0249",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local15.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0250",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local15.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 4.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0251",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local15.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 2.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0252",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local15.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0253",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local15.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0254",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local15.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 2.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0255",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local15.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0256",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local15.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0257",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local16.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0258",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local16.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0259",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local16.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "units": 2
+   },
+   "changed": [
+    "units"
+   ]
+  },
+  {
+   "slug": "hkd-main-0260",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local16.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0261",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local16.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0262",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local16.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0263",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local16.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0,
+    "cap_operational_mw": 10.0,
+    "capacity_total_mw": 10.0
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_operational_mw",
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0264",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local16.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0265",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local16.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0266",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0267",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0268",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0269",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0270",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0271",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0272",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0273",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0274",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0275",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 4.0,
+    "cap_operational_mw": 10.0,
+    "capacity_total_mw": 10.0
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_operational_mw",
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0276",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0277",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0278",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 5.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0279",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 0.0,
+    "external_id": "hepco_map_forecast_tide_list_17_56_v2-6.6"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "external_id"
+   ]
+  },
+  {
+   "slug": "hkd-main-0280",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "external_id": "hepco_map_forecast_tide_list_17_60_v2-6.6"
+   },
+   "changed": [
+    "external_id"
+   ]
+  },
+  {
+   "slug": "hkd-main-0281",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "external_id": "hepco_map_forecast_tide_list_17_68_v2-6.6"
+   },
+   "changed": [
+    "external_id"
+   ]
+  },
+  {
+   "slug": "hkd-main-0282",
+   "patch": {
+    "last_updated": "2026-08-07T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local17.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "external_id": "hepco_map_forecast_tide_list_17_70_v2-6.6"
+   },
+   "changed": [
+    "external_id"
+   ]
+  },
+  {
+   "slug": "hkd-main-0283",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0284",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0285",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0286",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0287",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0288",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0289",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0290",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 2.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0291",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0292",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0293",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0294",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0295",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0296",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0297",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0298",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0299",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0300",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 7.0,
+    "cap_operational_mw": 10.0,
+    "capacity_total_mw": 10.0
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_operational_mw",
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0301",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0302",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0303",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0304",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 6.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0305",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0306",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0307",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0308",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0309",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0310",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0311",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0312",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0313",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0314",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0315",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 15.0,
+    "cap_operational_mw": 15.0,
+    "capacity_total_mw": 30.0
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_operational_mw",
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0316",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0317",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0318",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0319",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0320",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local18.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0321",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0322",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 2.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0323",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0324",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0325",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0326",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0327",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0328",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0329",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -7.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0330",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0331",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local19.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0332",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0333",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0334",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0335",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0336",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0337",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0338",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0339",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0340",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0341",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local20.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0342",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local21.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0343",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local21.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 13.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0344",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local21.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 0.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0345",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local21.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0346",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local21.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0347",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local21.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 20.0,
+    "cap_operational_mw": 20.0,
+    "capacity_total_mw": 40.0,
+    "units": 2
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_operational_mw",
+    "capacity_total_mw",
+    "units"
+   ]
+  },
+  {
+   "slug": "hkd-main-0348",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local21.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0349",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local21.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0350",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local21.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0351",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0352",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0353",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0354",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0355",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0356",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 0.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0357",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0358",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0359",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0360",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0361",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0362",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0363",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0364",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0365",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0366",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": 2.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0367",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 2.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0368",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local22.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0369",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0370",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 4.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0371",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0372",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0373",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0374",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0375",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -12.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0376",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0377",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 3.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0378",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0379",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -18.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0380",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0381",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local23.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0382",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0383",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0384",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -6.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0385",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0386",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0387",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0388",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0389",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0390",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0391",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0392",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0393",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0394",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -8.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0395",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 3.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0396",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0397",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0398",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0399",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 4.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0400",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0401",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0402",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 8.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0403",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0404",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0405",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0406",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0407",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 3.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0408",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0409",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0410",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0411",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": 0.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0412",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0413",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0414",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -4.0
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0415",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0416",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 5.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0417",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0418",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "capacity_total_mw": 16.0
+   },
+   "changed": [
+    "capacity_total_mw"
+   ]
+  },
+  {
+   "slug": "hkd-main-0419",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0420",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0421",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0422",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ]
+   },
+   "changed": []
+  },
+  {
+   "slug": "hkd-main-0423",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "forecast_flow_mw": -1.0,
+    "external_id": "hepco_map_forecast_tide_list_24_156_v2-22.0"
+   },
+   "changed": [
+    "forecast_flow_mw",
+    "external_id"
+   ]
+  },
+  {
+   "slug": "hkd-main-0424",
+   "patch": {
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_local24.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "cap_avail_mw": 1.0,
+    "external_id": "hepco_map_forecast_tide_list_24_156_v2-6.6"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "external_id"
+   ]
+  }
+ ],
+ "creates": [
+  {
+   "slug": "hkd-kikan-0001",
+   "content": {
+    "slug": "hkd-kikan-0001",
+    "name": "西当別変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "275kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_1_v2-187.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 275.0,
+    "voltage_secondary_kv": 187.0,
+    "cap_operational_mw": 1200.0,
+    "forecast_flow_mw": 1177.0,
+    "capacity_total_mw": 1800.0,
+    "units": 3,
+    "op_constraint": "熱容量"
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0003",
+   "content": {
+    "slug": "hkd-kikan-0003",
+    "name": "西野変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "275kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_3_v2-187.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 275.0,
+    "voltage_secondary_kv": 187.0,
+    "cap_operational_mw": 1200.0,
+    "forecast_flow_mw": 1022.0,
+    "capacity_total_mw": 1800.0,
+    "units": 3,
+    "op_constraint": "熱容量"
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0072",
+   "content": {
+    "slug": "hkd-kikan-0072",
+    "name": "北新得変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "275kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_72_v2-187.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 275.0,
+    "voltage_secondary_kv": 187.0,
+    "cap_operational_mw": 450.0,
+    "forecast_flow_mw": -503.0,
+    "capacity_total_mw": 900.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0116",
+   "content": {
+    "slug": "hkd-kikan-0116",
+    "name": "南早来変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "275kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_116_v2-187.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 275.0,
+    "voltage_secondary_kv": 187.0,
+    "cap_operational_mw": 600.0,
+    "forecast_flow_mw": 638.0,
+    "capacity_total_mw": 1200.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0117",
+   "content": {
+    "slug": "hkd-kikan-0117",
+    "name": "大野変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "275kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_117_v2-187.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 275.0,
+    "voltage_secondary_kv": 187.0,
+    "cap_operational_mw": 450.0,
+    "forecast_flow_mw": -536.0,
+    "capacity_total_mw": 900.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0201",
+   "content": {
+    "slug": "hkd-kikan-0201",
+    "name": "西名寄変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_201_v2-100.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 100.0,
+    "cap_operational_mw": 100.0,
+    "forecast_flow_mw": -233.0,
+    "capacity_total_mw": 200.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0202",
+   "content": {
+    "slug": "hkd-kikan-0202",
+    "name": "西旭川変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_202_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 195.0,
+    "forecast_flow_mw": 43.0,
+    "capacity_total_mw": 300.0,
+    "n1_capacity_mw": 100.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0203",
+   "content": {
+    "slug": "hkd-kikan-0203",
+    "name": "旭川変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_203_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 150.0,
+    "forecast_flow_mw": -60.0,
+    "capacity_total_mw": 300.0,
+    "n1_capacity_mw": 100.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0204",
+   "content": {
+    "slug": "hkd-kikan-0204",
+    "name": "留辺蘂変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_204_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 198.0,
+    "forecast_flow_mw": -331.0,
+    "capacity_total_mw": 300.0,
+    "n1_capacity_mw": 0.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": true
+  },
+  {
+   "slug": "hkd-kikan-0205",
+   "content": {
+    "slug": "hkd-kikan-0205",
+    "name": "女満別変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_205_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 100.0,
+    "forecast_flow_mw": -171.0,
+    "capacity_total_mw": 200.0,
+    "n1_capacity_mw": 29.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0206",
+   "content": {
+    "slug": "hkd-kikan-0206",
+    "name": "南九条変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_206_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 299.0,
+    "forecast_flow_mw": 121.0,
+    "capacity_total_mw": 450.0,
+    "n1_capacity_mw": 100.0,
+    "units": 3,
+    "op_constraint": "熱容量"
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0207",
+   "content": {
+    "slug": "hkd-kikan-0207",
+    "name": "西札幌変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_207_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 575.0,
+    "forecast_flow_mw": -486.0,
+    "capacity_total_mw": 800.0,
+    "n1_capacity_mw": 100.0,
+    "units": 4,
+    "op_constraint": "熱容量"
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0208",
+   "content": {
+    "slug": "hkd-kikan-0208",
+    "name": "苗穂変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_208_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 398.0,
+    "forecast_flow_mw": 81.0,
+    "capacity_total_mw": 600.0,
+    "n1_capacity_mw": 100.0,
+    "units": 3,
+    "op_constraint": "熱容量"
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0209",
+   "content": {
+    "slug": "hkd-kikan-0209",
+    "name": "篠路変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_209_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 200.0,
+    "forecast_flow_mw": 82.0,
+    "capacity_total_mw": 400.0,
+    "n1_capacity_mw": 100.0,
+    "units": 2,
+    "op_constraint": "熱容量"
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0210",
+   "content": {
+    "slug": "hkd-kikan-0210",
+    "name": "南札幌変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_210_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 389.0,
+    "forecast_flow_mw": 10.0,
+    "capacity_total_mw": 600.0,
+    "n1_capacity_mw": 100.0,
+    "units": 3,
+    "op_constraint": "熱容量"
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0211",
+   "content": {
+    "slug": "hkd-kikan-0211",
+    "name": "恵庭変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_211_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 299.0,
+    "forecast_flow_mw": -249.0,
+    "capacity_total_mw": 500.0,
+    "n1_capacity_mw": 100.0,
+    "units": 3,
+    "op_constraint": "熱容量"
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0212",
+   "content": {
+    "slug": "hkd-kikan-0212",
+    "name": "西小樽変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_212_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 198.0,
+    "forecast_flow_mw": -173.0,
+    "capacity_total_mw": 350.0,
+    "n1_capacity_mw": 100.0,
+    "units": 3,
+    "op_constraint": "熱容量"
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0213",
+   "content": {
+    "slug": "hkd-kikan-0213",
+    "name": "北江別変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_213_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 197.0,
+    "forecast_flow_mw": -260.0,
+    "capacity_total_mw": 350.0,
+    "n1_capacity_mw": 90.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0214",
+   "content": {
+    "slug": "hkd-kikan-0214",
+    "name": "西滝川変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_214_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 150.0,
+    "forecast_flow_mw": -357.0,
+    "capacity_total_mw": 300.0,
+    "n1_capacity_mw": 0.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": true
+  },
+  {
+   "slug": "hkd-kikan-0215",
+   "content": {
+    "slug": "hkd-kikan-0215",
+    "name": "宇円別変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_215_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 153.0,
+    "forecast_flow_mw": -430.0,
+    "capacity_total_mw": 275.0,
+    "n1_capacity_mw": 0.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": true
+  },
+  {
+   "slug": "hkd-kikan-0216",
+   "content": {
+    "slug": "hkd-kikan-0216",
+    "name": "東釧路変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_216_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 198.0,
+    "forecast_flow_mw": -475.0,
+    "capacity_total_mw": 300.0,
+    "n1_capacity_mw": 0.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": true
+  },
+  {
+   "slug": "hkd-kikan-0217",
+   "content": {
+    "slug": "hkd-kikan-0217",
+    "name": "西春別変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_217_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 100.0,
+    "forecast_flow_mw": -293.0,
+    "capacity_total_mw": 200.0,
+    "n1_capacity_mw": 0.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": true
+  },
+  {
+   "slug": "hkd-kikan-0218",
+   "content": {
+    "slug": "hkd-kikan-0218",
+    "name": "北芽室変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_218_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 158.0,
+    "forecast_flow_mw": -185.0,
+    "capacity_total_mw": 310.0,
+    "n1_capacity_mw": 100.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0219",
+   "content": {
+    "slug": "hkd-kikan-0219",
+    "name": "西音更変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_219_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 199.0,
+    "forecast_flow_mw": -194.0,
+    "capacity_total_mw": 300.0,
+    "n1_capacity_mw": 100.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0220",
+   "content": {
+    "slug": "hkd-kikan-0220",
+    "name": "西伊達変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_220_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 60.0,
+    "forecast_flow_mw": -126.0,
+    "capacity_total_mw": 60.0,
+    "units": 1,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0221",
+   "content": {
+    "slug": "hkd-kikan-0221",
+    "name": "室蘭変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_221_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 150.0,
+    "forecast_flow_mw": -268.0,
+    "capacity_total_mw": 300.0,
+    "n1_capacity_mw": 32.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0222",
+   "content": {
+    "slug": "hkd-kikan-0222",
+    "name": "苫小牧変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_222_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 199.0,
+    "forecast_flow_mw": -305.0,
+    "capacity_total_mw": 350.0,
+    "n1_capacity_mw": 45.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0223",
+   "content": {
+    "slug": "hkd-kikan-0223",
+    "name": "南早来変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_223_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 200.0,
+    "forecast_flow_mw": -319.0,
+    "capacity_total_mw": 400.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0224",
+   "content": {
+    "slug": "hkd-kikan-0224",
+    "name": "東苫小牧変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_224_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 100.0,
+    "forecast_flow_mw": -108.0,
+    "capacity_total_mw": 200.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0225",
+   "content": {
+    "slug": "hkd-kikan-0225",
+    "name": "北静内変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_225_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 60.0,
+    "forecast_flow_mw": -152.0,
+    "capacity_total_mw": 120.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0226",
+   "content": {
+    "slug": "hkd-kikan-0226",
+    "name": "北七飯変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_226_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 195.0,
+    "forecast_flow_mw": -185.0,
+    "capacity_total_mw": 300.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0227",
+   "content": {
+    "slug": "hkd-kikan-0227",
+    "name": "大野変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_227_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 191.0,
+    "forecast_flow_mw": -176.0,
+    "capacity_total_mw": 300.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0228",
+   "content": {
+    "slug": "hkd-kikan-0228",
+    "name": "西中川変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_228_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 100.0,
+    "forecast_flow_mw": -160.0,
+    "capacity_total_mw": 200.0,
+    "units": 2,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0229",
+   "content": {
+    "slug": "hkd-kikan-0229",
+    "name": "他社変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": true,
+    "external_id": "hepco_sys_capa_kikan_229_v2-66.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 66.0,
+    "cap_operational_mw": 330.0,
+    "forecast_flow_mw": -300.0,
+    "capacity_total_mw": 495.0,
+    "n1_capacity_mw": 100.0,
+    "units": 3,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  },
+  {
+   "slug": "hkd-kikan-0230",
+   "content": {
+    "slug": "hkd-kikan-0230",
+    "name": "富村変電所",
+    "operator": [
+     "北海道電力ネットワーク"
+    ],
+    "area": [
+     "北海道"
+    ],
+    "voltage_class": [
+     "187kV系"
+    ],
+    "n1_eligible": false,
+    "external_id": "hepco_sys_capa_kikan_230_v2-11.0",
+    "source_url": "https://www.hepco.co.jp/network/con_service/public_document/zip/sys_capa_kikan.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-31T00:00:00.000Z",
+    "voltage_primary_kv": 187.0,
+    "voltage_secondary_kv": 11.0,
+    "units": 1,
+    "op_constraint": "熱容量",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_zero_ok": false
+  }
+ ]
+}

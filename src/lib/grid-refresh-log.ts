@@ -38,6 +38,31 @@ export type GridRefreshEntry = {
 
 export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
   {
+    importedOn: '2026-08-17',
+    areaJp: '北海道',
+    areaSlug: 'hokkaido',
+    operator: '北海道電力ネットワーク',
+    publishedVersion: '2026年7月31日更新版ほか（系統により2025年5月〜2026年8月7日）',
+    total: 459,
+    decreased: 29,
+    zeroed: 4,
+    increased: 29,
+    changed: 95,
+    added: 35,
+    removed: 0,
+    topDecreases: [
+      { name: '東岩見沢変電所', prefecture: '北海道', from: 9, to: 6 },
+      { name: '稚内西変電所', prefecture: '北海道', from: 10, to: 8 },
+      { name: '浜頓別変電所', prefecture: '北海道', from: 3, to: 1 },
+      { name: '新十津川変電所', prefecture: '北海道', from: 6, to: 4 },
+      { name: '錦岡変電所', prefecture: '北海道', from: 2, to: 0 },
+    ],
+    note: '基幹系（187kV以上）35件を新規収録し、N-1電制適用可が3→24件になりました'
+      + '（従来は基幹系そのものが未収録でした）。データ源をPDF抽出から公表CSVへ変更。'
+      + 'N-1電制の未算定7件・出力制御の未算定9件は現値維持。',
+    report: 'reports/grid-hokkaido-dryrun-2026-08-17.md',
+  },
+  {
     importedOn: '2026-08-16',
     areaJp: '中国',
     areaSlug: 'chugoku',

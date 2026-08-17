@@ -1,0 +1,89 @@
+{
+  "fetched_at": "2026-08-17T04:32:24.758Z",
+  "ok": 424,
+  "created": 35,
+  "fail": 0,
+  "failures": [],
+  "renumber": [
+    {
+      "slug": "hkd-main-0040",
+      "name": "智恵文変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_01_94_v2-6.6",
+      "new_external_id": "hepco_map_forecast_tide_list_01_93_v2-6.6",
+      "kv": "22.0/6.6",
+      "capacity_total_mw": 3
+    },
+    {
+      "slug": "hkd-main-0116",
+      "name": "石狩変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_07_8_v2-6.6",
+      "new_external_id": "hepco_map_forecast_tide_list_07_9_v2-6.6",
+      "kv": "66.0/6.6",
+      "capacity_total_mw": 40
+    },
+    {
+      "slug": "hkd-main-0117",
+      "name": "屯田変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_07_10_v2-6.6",
+      "new_external_id": "hepco_map_forecast_tide_list_07_11_v2-6.6",
+      "kv": "66.0/6.6",
+      "capacity_total_mw": 40
+    },
+    {
+      "slug": "hkd-main-0118",
+      "name": "樽川変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_07_21_v2-6.6",
+      "new_external_id": "hepco_map_forecast_tide_list_07_71_v2-6.6",
+      "kv": "66.0/6.6",
+      "capacity_total_mw": 40
+    },
+    {
+      "slug": "hkd-main-0279",
+      "name": "中標津変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_17_54_v2-6.6",
+      "new_external_id": "hepco_map_forecast_tide_list_17_56_v2-6.6",
+      "kv": "66.0/6.6",
+      "capacity_total_mw": 35
+    },
+    {
+      "slug": "hkd-main-0280",
+      "name": "標津変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_17_58_v2-6.6",
+      "new_external_id": "hepco_map_forecast_tide_list_17_60_v2-6.6",
+      "kv": "66.0/6.6",
+      "capacity_total_mw": 16
+    },
+    {
+      "slug": "hkd-main-0281",
+      "name": "峰浜変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_17_66_v2-6.6",
+      "new_external_id": "hepco_map_forecast_tide_list_17_68_v2-6.6",
+      "kv": "66.0/6.6",
+      "capacity_total_mw": 3
+    },
+    {
+      "slug": "hkd-main-0282",
+      "name": "羅臼変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_17_68_v2-6.6",
+      "new_external_id": "hepco_map_forecast_tide_list_17_70_v2-6.6",
+      "kv": "66.0/6.6",
+      "capacity_total_mw": 10
+    },
+    {
+      "slug": "hkd-main-0423",
+      "name": "軍川変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_24_159_v2-22.0",
+      "new_external_id": "hepco_map_forecast_tide_list_24_156_v2-22.0",
+      "kv": "66.0/22.0",
+      "capacity_total_mw": 10
+    },
+    {
+      "slug": "hkd-main-0424",
+      "name": "軍川変電所",
+      "old_external_id": "hepco_map_forecast_tide_list_24_159_v2-6.6",
+      "new_external_id": "hepco_map_forecast_tide_list_24_156_v2-6.6",
+      "kv": "66.0/6.6",
+      "capacity_total_mw": 10
+    }
+  ]
+}
