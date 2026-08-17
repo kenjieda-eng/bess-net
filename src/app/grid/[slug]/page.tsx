@@ -15,7 +15,7 @@ import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import HazardRiskCard from '@/components/HazardRiskCard';
 import AreaPage from './AreaPage';
-import { isFrozenSubstation, FROZEN_SUBSTATION_NOTE } from '@/lib/substations-frozen';
+import { isFrozenSubstation, frozenSubstationNote } from '@/lib/substations-frozen';
 import { AREA_META, AREA_JP_TO_SLUG } from './area-meta';
 import { GRID_PAGE_RELATED_TERMS } from './related-terms';
 import {
@@ -351,7 +351,7 @@ export default async function GridSlugPage({
             </p>
           </div>
 
-          {/* 凍結注記（tpg-1623 湯船・2026-08-16裁定）: 初期DOMに表示（#107） */}
+          {/* 凍結注記: 初期DOMに表示（#107）。文言は slug ごと（src/data/substations-frozen.json） */}
           {isFrozenSubstation(sub.slug) && (
             <div
               style={{
@@ -364,7 +364,7 @@ export default async function GridSlugPage({
                 lineHeight: 1.8,
               }}
             >
-              ⚠ {FROZEN_SUBSTATION_NOTE}
+              ⚠ {frozenSubstationNote(sub.slug)}
             </div>
           )}
 

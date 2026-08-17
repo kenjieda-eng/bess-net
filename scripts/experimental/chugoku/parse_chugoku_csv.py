@@ -28,6 +28,8 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent / "_common"))
 from series_dedup import apply_series_dedup, summarize  # noqa: E402
+from note_rows import skip_reason  # noqa: E402
+from frozen import drop_frozen  # noqa: E402
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -112,14 +114,22 @@ def parse_oc(v):
 
 
 def is_data_row(no: str) -> bool:
-    """※（脚注）・（フェンス）はデータ行ではない。【留意事項】は既存側に取り込まれているため残す"""
+    """※（脚注）・（フェンス）はデータ行ではない。
+
+    2026-08-17 変更: 従来は「【留意事項】は既存側に取り込まれているため残す」としていたが、
+    その既存側（egz-kikan-x）自体が誤取込だったため、注記見出しは No. 欄で弾く。
+    判別は _common/note_rows.py（値ではなく No.欄と名称で判定＝九州「南関」型の
+    実在設備を巻き込まない）。既存レコードは削除せず凍結除外で扱う
+    （src/data/substations-frozen.json）。
+    """
     if not no:
         return False
-    return not (no.startswith("※") or no.startswith("・"))
+    return skip_reason(no, "dummy", []) is None
 
 
 def load_zip_rows():
     files, rows = [], []
+    skipped_notes = []  # 注記行として弾いた行（黙って捨てない・必ず件数と理由を出す）
     for zname, prefkey, pref in ZIPS:
         zpath = SRC / f"{zname}.zip"
         with zipfile.ZipFile(zpath) as zf:
@@ -136,9 +146,12 @@ def load_zip_rows():
                     if not r or len(r) < 13:
                         continue
                     no = clean(r[COL["no"]])
-                    if not no or not is_data_row(no):
+                    if not no:
+                        continue  # 末尾の空行。注記行ではないのでログに載せない
+                    if not is_data_row(no):
+                        skipped_notes.append((f"{zname}/{member}", no[:40], "No.欄が注記見出し"))
                         continue
-                    rows.append({
+                    row = {
                         "external_id": f"energia_{prefkey}_{no}",
                         "no": no, "zip": zname, "member": member, "prefecture": pref,
                         "name": clean(r[COL["name"]]),
@@ -155,13 +168,29 @@ def load_zip_rows():
                         "n1_capacity_mw": to_float(r[COL["n1_mw"]]),
                         "oc_possibility": parse_oc(r[COL["oc"]]),
                         "src_encoding": enc, "src_meta": meta,
-                    })
+                    }
+                    # 保険: 名称が空かつ設備値が全て空の行（実体のない行）。
+                    # ★「全項目 null」単独では弾かない — 九州「南関」型（連番Noと実名を持ち
+                    #   公表値だけが空欄の実在設備）を巻き込むため（_common/note_rows.py 参照）。
+                    why = skip_reason(no, row["name"], [
+                        row["voltage_primary_kv"], row["voltage_secondary_kv"], row["units"],
+                        row["capacity_total_mw"], row["cap_operational_mw"],
+                        row["cap_avail_mw"], row["n1_capacity_mw"],
+                    ])
+                    if why:
+                        skipped_notes.append((row["external_id"], row["name"], why))
+                        continue
+                    rows.append(row)
                     cnt += 1
                 files.append({"zip": f"{zname}.zip", "member": member,
                               "url": f"{BASE_URL}/zip/{zname}.zip",
                               "bytes": len(raw), "encoding": enc, "meta_row": meta,
                               "file_version": m.group(1) if m else None,
                               "data_rows": cnt, "prefecture": pref})
+    if skipped_notes:
+        print(f"  注記行スキップ: {len(skipped_notes)}件（設備行として取り込まない・2026-08-17 追加）")
+        for eid, nm, why in skipped_notes[:10]:
+            print(f"    - {eid} 「{nm}」← {why}")
     return files, rows
 
 
@@ -203,6 +232,9 @@ def main():
 
     # ── baseline（本番実データ GET・落とし穴#113）──
     base = json.loads(BASELINE.read_text(encoding="utf-8"))
+    # 凍結レコードは公表CSVに存在しない／設備行ではないため baseline から外す。
+    # 外さないと毎回「消滅」として差分に出続け、本当の消滅が埋もれる（2026-08-17）。
+    base = drop_frozen(base)
     NUMKEYS = ["cap_avail_mw", "cap_avail_upper_mw", "cap_operational_mw", "capacity_total_mw",
                "forecast_flow_mw", "n1_capacity_mw", "units", "voltage_primary_kv", "voltage_secondary_kv"]
     for b in base:

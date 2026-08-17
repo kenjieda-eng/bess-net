@@ -1,7 +1,7 @@
 {
  "purpose": "公表CSVで N-1電制適用可否が未算定（-）の設備（中国電力NW分）。microCMS の n1_eligible は boolean のため false に潰れているが実態は「未算定」。",
  "note": "再取込では上書きせず現値維持する。_common/n1_undetermined.json への統合用。",
- "count": 8,
+ "count": 7,
  "entries": [
   {
    "operator": "中国電力ネットワーク",
@@ -29,16 +29,6 @@
    "slug": "egz-kikan-s0016",
    "external_id": "energia_kikan_基S16",
    "name": "(名称非公開) energia_kikan_基S16",
-   "prefecture": null,
-   "stored_n1_eligible": false,
-   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
-  },
-  {
-   "operator": "中国電力ネットワーク",
-   "area": "中国",
-   "slug": "egz-kikan-x",
-   "external_id": "energia_kikan_【留意事項】",
-   "name": "(名称非公開) energia_kikan_【留意事項】",
    "prefecture": null,
    "stored_n1_eligible": false,
    "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
