@@ -34,6 +34,21 @@ export function isRealPrefecture(value: string | null | undefined): boolean {
   return !!value && REAL_PREFECTURES.has(value.trim());
 }
 
+/**
+ * 府県の記載も設備区分の記載も無いレコードに与える設備区分（案B・2026-08-17）。
+ * 各社の公表ファイルの語彙に合わせて「基幹系統」とする。
+ *
+ * ★microCMS には書き戻さない（案A不採用）。prefecture へ系統区分を書くのは
+ *   Gr10「系統区分を都道府県として扱っていた不具合を是正」に逆行するため、
+ *   専用列である facilityClass 側に持たせる（関西1,575・沖縄151と同じ扱い）。
+ *
+ * ★導出条件は「prefecture が確定しない かつ 原値が無い」ことのみ。
+ *   - slug（-kikan-）に依存させない: 命名が揃っていない社（中部 cb-*）を取りこぼす
+ *   - 電圧階級に依存させない: 東京の275kV系など実在の県を持つ設備を誤分類する
+ *   - 原値がある関西「関西ローカル系」等は原値のまま（上書きしない）
+ */
+export const KIKAN_FACILITY_CLASS = '基幹系統';
+
 export type NormalizedPlace = {
   /** 都道府県（確定できないときは null。**推測で埋めない**） */
   prefecture: string | null;
@@ -57,8 +72,11 @@ export function normalizeSubstationPlace(
   // 沖縄電力の供給区域は沖縄県のみ（定義であって推測ではない）
   if (ar === '沖縄') return { prefecture: '沖縄県', facilityClass: raw || null };
 
-  // 関西ローカル系・基幹系（null）など、府県を確定できないもの
-  return { prefecture: null, facilityClass: raw || null };
+  // 関西ローカル系など、府県は確定できないが原値のある設備区分（原値を優先・上書きしない）
+  if (raw) return { prefecture: null, facilityClass: raw };
+
+  // 府県も設備区分も記載が無いもの ＝ 各社の基幹系統ファイル由来（2026-08-17 実測 222件・7社）
+  return { prefecture: null, facilityClass: KIKAN_FACILITY_CLASS };
 }
 
 /* ------------------------------------------------------------------ *

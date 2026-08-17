@@ -91,16 +91,19 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
 
   // ===== 都道府県別 =====
   // Gr10(2026-08-11): 原値に系統区分・設備区分が入っている社があるため正規化して数える。
-  // 都道府県として確定できないものは「（府県の記載なし）」に集約し、
-  // 設備区分は下の「設備区分別」表に出す（都道府県として表示しない）。
+  // 2026-08-17（案B）: 府県が確定しないものは設備区分（関西ローカル系・基幹系統）で行を立てる。
+  //   列見出しが「都道府県／設備区分」なので、行レベルの表示（placeLabel）とも一致する。
+  //   どちらも無いレコードだけ「（府県の記載なし）」へ集約する（フォールバック文言は不変）。
   const byPref = new Map<string, Substation[]>();
   const byFacility = new Map<string, Substation[]>();
   for (const s of subs) {
     const place = resolvePlace(s);
-    const p = place.prefecture || '（府県の記載なし）';
+    const p = place.prefecture || place.facilityClass || '（府県の記載なし）';
     if (!byPref.has(p)) byPref.set(p, []);
     byPref.get(p)!.push(s);
-    if (place.facilityClass) {
+    // 「設備区分別」表は、府県が確定していて設備区分が上表に出ない社（沖縄）専用。
+    // 府県が null の社（関西・各社の基幹系統）は上表に出ているので二重掲載しない。
+    if (place.prefecture && place.facilityClass) {
       if (!byFacility.has(place.facilityClass)) byFacility.set(place.facilityClass, []);
       byFacility.get(place.facilityClass)!.push(s);
     }

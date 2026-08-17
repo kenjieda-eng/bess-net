@@ -3200,7 +3200,7 @@
     "徳島県": 55
   },
   "sizes_bytes": {
-    "unknown": 1133417,
+    "unknown": 1135637,
     "愛知県": 251241,
     "静岡県": 156431,
     "三重県": 83090,
@@ -3243,9 +3243,9 @@
     "高知県": 35821,
     "徳島県": 35667
   },
-  "total_size_kb": 5101,
-  "max_pref_size_kb": 1107,
+  "total_size_kb": 5104,
+  "max_pref_size_kb": 1109,
   "max_pref": "unknown",
   "pref_count": 42,
-  "updated_at": "2026-08-17T05:13:53.679Z"
+  "updated_at": "2026-08-17T11:33:45.744Z"
 }
