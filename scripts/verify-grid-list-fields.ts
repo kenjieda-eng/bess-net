@@ -87,6 +87,29 @@ function main() {
     }
   }
 
+  // ── 軸3（#121）: 「データ基準日」の単一ソースが実データの最新版と一致するか ──
+  // エリアページのヘッダも出典欄も src/data/substations/index.json の area_dates を見る。
+  // 旧実装は出典欄が subs[0].last_updated（名称順の1件目＝実質ランダム）で、版が複数ある
+  // エリア（北海道4種）でヘッダ 8/7・出典欄 7/31 と食い違っていた。
+  console.log('\n[軸3] データ基準日の単一ソース（area_dates）が実データの最新版と一致するか');
+  const areaDates = (JSON.parse(fs.readFileSync('src/data/substations/index.json', 'utf8')) as {
+    area_dates?: Record<string, { last_updated: string | null; last_updated_variants: number }>;
+  }).area_dates ?? {};
+  for (const area of areas) {
+    const dates = data.by_area[area]
+      .map((s) => String(s.last_updated ?? '').slice(0, 10))
+      .filter(Boolean);
+    const actualMax = dates.sort().at(-1) ?? null;
+    const variants = new Set(dates).size;
+    const meta = areaDates[area];
+    const ok = meta?.last_updated === actualMax && meta?.last_updated_variants === variants;
+    if (!ok) fail++;
+    console.log(
+      `  ${ok ? '✓' : '✗'} ${area}: area_dates=${meta?.last_updated ?? 'なし'}（${meta?.last_updated_variants ?? '?'}種）` +
+        ` / 実データ最新=${actualMax}（${variants}種）`
+    );
+  }
+
   console.log(fail === 0 ? '\n[verify-grid-list-fields] PASS' : `\n[verify-grid-list-fields] FAIL ${fail}件`);
   if (fail) process.exit(1);
 }

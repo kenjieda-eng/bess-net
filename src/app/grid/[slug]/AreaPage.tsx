@@ -2,7 +2,7 @@
 // /grid/tohoku, /grid/hokuriku, /grid/shikoku から呼び出される
 import Link from 'next/link';
 import { KANSAI_NO_PREFECTURE_NOTE, normalizeSubstationPlace } from '@/lib/grid-prefecture';
-import { formatDataDateLabel } from '@/lib/grid-data-date';
+import { formatDataDateLabel, getAreaDates } from '@/lib/grid-data-date';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import SubstationsBrowser from '@/components/SubstationsBrowser';
@@ -188,8 +188,20 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
   const relatedOpsBadges = relatedOps.map((o) => ({ name: o.name, slug: o.slug }));
 
   // ===== 出典の最終更新日 =====
-  const lastUpdated = subs.length > 0 ? subs[0].last_updated : undefined;
-  const sampleSourceUrl = subs.length > 0 ? subs[0].source_url : meta.landingUrl;
+  // 落とし穴 #121(2026-08-17): ヘッダの「データ基準日」と二重管理にしない。
+  // 旧実装は subs[0].last_updated（一覧の先頭レコード＝名称順の1件目・実質ランダム）を
+  // 「代表」としていたため、版が複数あるエリアでヘッダと食い違った
+  // （北海道は4種＝07-31が421件・08-07が17件・05-29系が21件で、ヘッダ8/7・出典欄7/31）。
+  // 単一ソースは grid-data-date.ts（precompute の area_dates.last_updated＝エリア内の最新版）。
+  const areaDates = getAreaDates(meta.areaJp);
+  const lastUpdated = areaDates?.last_updated ?? undefined;
+  // サンプルCSVも代表日と同じ版の行から採る（「8/7」と表示して7/31のCSVを指さない）
+  const sampleSourceUrl =
+    (lastUpdated
+      ? subs.find((s) => (s.last_updated || '').slice(0, 10) === lastUpdated)?.source_url
+      : undefined) ??
+    (subs.length > 0 ? subs[0].source_url : undefined) ??
+    meta.landingUrl;
 
   const jsonLd = {
     '@context': 'https://schema.org',
