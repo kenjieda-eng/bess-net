@@ -1,0 +1,9845 @@
+{
+ "generated_on": "2026-08-19",
+ "last_updated": "2026-08-17T00:00:00.000Z",
+ "update_count": 1107,
+ "value_changed": 369,
+ "oc_changed": 0,
+ "op_constraint_changed": 0,
+ "face_changed": [
+  "cb-6240"
+ ],
+ "coord_update_count": 15,
+ "coord_updates": [
+  {
+   "slug": "cb-2037",
+   "lat": 34.982401,
+   "lng": 138.409045
+  },
+  {
+   "slug": "cb-2113",
+   "lat": 34.694454,
+   "lng": 137.516078
+  },
+  {
+   "slug": "cb-5154",
+   "lat": 36.416016,
+   "lng": 138.23306
+  },
+  {
+   "slug": "cb-5159",
+   "lat": 36.389644,
+   "lng": 138.271694
+  },
+  {
+   "slug": "cb-5169",
+   "lat": 36.325377,
+   "lng": 138.557532
+  },
+  {
+   "slug": "cb-5176",
+   "lat": 36.287941,
+   "lng": 138.447722
+  },
+  {
+   "slug": "cb-5179",
+   "lat": 36.204568,
+   "lng": 138.46381
+  },
+  {
+   "slug": "cb-5181",
+   "lat": 36.255945,
+   "lng": 138.471401
+  },
+  {
+   "slug": "cb-5182",
+   "lat": 36.055769,
+   "lng": 138.459857
+  },
+  {
+   "slug": "cb-5183",
+   "lat": 35.982812,
+   "lng": 138.509756
+  },
+  {
+   "slug": "cb-6139",
+   "lat": 35.045829,
+   "lng": 137.131255
+  },
+  {
+   "slug": "cb-6154",
+   "lat": 35.130875,
+   "lng": 137.137943
+  },
+  {
+   "slug": "cb-6155",
+   "lat": 35.12814,
+   "lng": 137.1065
+  },
+  {
+   "slug": "cb-6156",
+   "lat": 35.146234,
+   "lng": 137.116296
+  },
+  {
+   "slug": "cb-6157",
+   "lat": 35.168294,
+   "lng": 137.112986
+  }
+ ],
+ "coord_history": [
+  {
+   "slug": "cb-2113",
+   "name": "坊瀬変電所",
+   "old": [
+    34.695477,
+    137.515187
+   ],
+   "new": [
+    34.694454,
+    137.516078
+   ]
+  },
+  {
+   "slug": "cb-5154",
+   "name": "秋和変電所",
+   "old": [
+    36.416361,
+    138.231568
+   ],
+   "new": [
+    36.416016,
+    138.23306
+   ]
+  },
+  {
+   "slug": "cb-5159",
+   "name": "国分変電所",
+   "old": [
+    36.388202,
+    138.278271
+   ],
+   "new": [
+    36.389644,
+    138.271694
+   ]
+  },
+  {
+   "slug": "cb-5169",
+   "name": "茂沢水力変電所",
+   "old": [
+    36.322853,
+    138.557875
+   ],
+   "new": [
+    36.325377,
+    138.557532
+   ]
+  },
+  {
+   "slug": "cb-5176",
+   "name": "三岡変電所",
+   "old": [
+    36.291015,
+    138.449445
+   ],
+   "new": [
+    36.287941,
+    138.447722
+   ]
+  },
+  {
+   "slug": "cb-5179",
+   "name": "臼田町変電所",
+   "old": [
+    36.204054,
+    138.467298
+   ],
+   "new": [
+    36.204568,
+    138.46381
+   ]
+  },
+  {
+   "slug": "cb-5181",
+   "name": "北中込変電所",
+   "old": [
+    36.256442,
+    138.464239
+   ],
+   "new": [
+    36.255945,
+    138.471401
+   ]
+  },
+  {
+   "slug": "cb-5182",
+   "name": "八那池第一水力変電所",
+   "old": [
+    36.056749,
+    138.46595
+   ],
+   "new": [
+    36.055769,
+    138.459857
+   ]
+  },
+  {
+   "slug": "cb-5183",
+   "name": "野辺山変電所",
+   "old": [
+    35.982521,
+    138.508759
+   ],
+   "new": [
+    35.982812,
+    138.509756
+   ]
+  },
+  {
+   "slug": "cb-6139",
+   "name": "南豊田変電所（２）",
+   "old": [
+    35.045808,
+    137.131734
+   ],
+   "new": [
+    35.045829,
+    137.131255
+   ]
+  },
+  {
+   "slug": "cb-6154",
+   "name": "猿投変電所",
+   "old": [
+    35.131088,
+    137.138042
+   ],
+   "new": [
+    35.130875,
+    137.137943
+   ]
+  },
+  {
+   "slug": "cb-6155",
+   "name": "三好ヶ丘変電所",
+   "old": [
+    35.127479,
+    137.10647
+   ],
+   "new": [
+    35.12814,
+    137.1065
+   ]
+  },
+  {
+   "slug": "cb-6156",
+   "name": "篠原変電所",
+   "old": [
+    35.144726,
+    137.116557
+   ],
+   "new": [
+    35.146234,
+    137.116296
+   ]
+  },
+  {
+   "slug": "cb-6157",
+   "name": "八草変電所",
+   "old": [
+    35.167956,
+    137.11243
+   ],
+   "new": [
+    35.168294,
+    137.112986
+   ]
+  }
+ ],
+ "coord_gain": [
+  {
+   "slug": "cb-2037",
+   "name": "豊田変電所（１）",
+   "lat": 34.982401,
+   "lng": 138.409045
+  }
+ ],
+ "updates": [
+  {
+   "slug": "cb-1",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-3",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-7",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-8",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-9",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1001",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1002",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1003",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1004",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1005",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1006",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1008",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1010",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1011",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1012",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1013",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1014",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1015",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1016",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1017",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1018",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1020",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1021",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1022",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1023",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1024",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1025",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1026",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1027",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1028",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1029",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1030",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1031",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1032",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1034",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1035",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1036",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1037",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1038",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1039",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1040",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1041",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1042",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1043",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1044",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1045",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1046",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1047",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1048",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1049",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1050",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1051",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1052",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1053",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1101",
+   "patch": {
+    "cap_avail_mw": 26.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1102",
+   "patch": {
+    "capacity_total_mw": 43.0,
+    "cap_operational_mw": 43.0,
+    "cap_avail_mw": 40.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1103",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1104",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1105",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1106",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1107",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1108",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1109",
+   "patch": {
+    "cap_avail_mw": 38.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1110",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1111",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1112",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1113",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1114",
+   "patch": {
+    "capacity_total_mw": 62.0,
+    "cap_operational_mw": 62.0,
+    "cap_avail_mw": 59.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1115",
+   "patch": {
+    "cap_avail_mw": 46.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1116",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1117",
+   "patch": {
+    "cap_avail_mw": 68.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1118",
+   "patch": {
+    "cap_avail_mw": 38.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1119",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1120",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1121",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1122",
+   "patch": {
+    "cap_avail_mw": 40.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1123",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1124",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1125",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1126",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1127",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1128",
+   "patch": {
+    "cap_avail_mw": 49.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1129",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1130",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1131",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1132",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1133",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1134",
+   "patch": {
+    "capacity_total_mw": 38.0,
+    "cap_operational_mw": 38.0,
+    "cap_avail_mw": 36.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1135",
+   "patch": {
+    "cap_avail_mw": 51.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1136",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1137",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1138",
+   "patch": {
+    "cap_avail_mw": 44.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1139",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1140",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1141",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1142",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1143",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1144",
+   "patch": {
+    "cap_avail_mw": 47.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1145",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1146",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1147",
+   "patch": {
+    "cap_avail_mw": 65.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1148",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1149",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1150",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1151",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1152",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1153",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1154",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1155",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1156",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1157",
+   "patch": {
+    "cap_avail_mw": 68.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1158",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1159",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1160",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1161",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1162",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1163",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1164",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1165",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1166",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1167",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1168",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1169",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1170",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1171",
+   "patch": {
+    "cap_avail_mw": 44.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1172",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1173",
+   "patch": {
+    "cap_avail_mw": 34.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1174",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1175",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1176",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1177",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1178",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1179",
+   "patch": {
+    "cap_avail_mw": 72.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1180",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1181",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1182",
+   "patch": {
+    "cap_avail_mw": 38.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1183",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1184",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1185",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1186",
+   "patch": {
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1187",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1188",
+   "patch": {
+    "cap_avail_mw": 48.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1189",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1190",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1191",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1192",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1193",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1194",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1195",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1196",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1197",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1199",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1200",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1201",
+   "patch": {
+    "units": 2,
+    "capacity_total_mw": 38.0,
+    "cap_operational_mw": 38.0,
+    "cap_avail_mw": 38.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "units",
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1202",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1203",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1204",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1205",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1206",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1207",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1208",
+   "patch": {
+    "cap_avail_mw": 15.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1209",
+   "patch": {
+    "cap_avail_mw": 61.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1210",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1211",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1212",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1213",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1214",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1215",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1216",
+   "patch": {
+    "cap_avail_mw": 42.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1217",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1218",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1219",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1220",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1221",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1222",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1223",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1224",
+   "patch": {
+    "cap_avail_mw": 30.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1225",
+   "patch": {
+    "cap_avail_mw": 70.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1226",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1227",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1228",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1229",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1230",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1231",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1232",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1233",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1234",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1235",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1236",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1237",
+   "patch": {
+    "cap_avail_mw": 46.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1238",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1239",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1240",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1241",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1242",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1243",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1244",
+   "patch": {
+    "cap_avail_mw": 19.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1245",
+   "patch": {
+    "capacity_total_mw": 38.0,
+    "cap_operational_mw": 38.0,
+    "cap_avail_mw": 26.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1246",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1248",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1249",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1250",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1251",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1253",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1254",
+   "patch": {
+    "cap_avail_mw": 44.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1255",
+   "patch": {
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1256",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1257",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1258",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-1259",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1260",
+   "patch": {
+    "cap_avail_mw": 35.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1261",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1262",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1263",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1264",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1265",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1266",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1267",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1268",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1271",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1272",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1273",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1274",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1275",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1276",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1277",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1278",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1279",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1280",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1281",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1282",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1283",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1286",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1288",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1290",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1291",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1292",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1293",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1294",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1296",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1297",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1298",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1299",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1300",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1301",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1302",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1303",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1304",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1305",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1307",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1308",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1310",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1311",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1313",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-1314",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-1315",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2001",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2002",
+   "patch": {
+    "n1_capacity_mw": 109.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "n1_capacity_mw"
+   ]
+  },
+  {
+   "slug": "cb-2003",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2004",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2005",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2006",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2007",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2008",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2020",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2021",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2022",
+   "patch": {
+    "n1_capacity_mw": 0.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "n1_capacity_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2023",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2024",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2025",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2030",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2031",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2032",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2033",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2034",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2035",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2037",
+   "patch": {
+    "latitude": 34.982401,
+    "longitude": 138.409045,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-2038",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2039",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2040",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2041",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2042",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2043",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2101",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2102",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2103",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2104",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2105",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2106",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2107",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2108",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2110",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2111",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2112",
+   "patch": {
+    "cap_avail_mw": 26.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2113",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "latitude": 34.694454,
+    "longitude": 137.516078,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-2114",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2115",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2116",
+   "patch": {
+    "cap_avail_mw": 39.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2117",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2118",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2119",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2120",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2121",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2122",
+   "patch": {
+    "cap_avail_mw": 30.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2123",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2124",
+   "patch": {
+    "cap_avail_mw": 19.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2125",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2126",
+   "patch": {
+    "cap_avail_mw": 33.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2127",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2128",
+   "patch": {
+    "cap_avail_mw": 47.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2129",
+   "patch": {
+    "cap_avail_mw": 32.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2130",
+   "patch": {
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2131",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2132",
+   "patch": {
+    "cap_avail_mw": 19.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2133",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2134",
+   "patch": {
+    "cap_avail_mw": 43.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2135",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2136",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2137",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2138",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2139",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2140",
+   "patch": {
+    "cap_avail_mw": 47.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2141",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2142",
+   "patch": {
+    "cap_avail_mw": 34.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2143",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2144",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2145",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2146",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2147",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2148",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2150",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2152",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2153",
+   "patch": {
+    "cap_avail_mw": 26.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2154",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2155",
+   "patch": {
+    "cap_avail_mw": 21.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2156",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2157",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2158",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2159",
+   "patch": {
+    "cap_avail_mw": 33.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2160",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2161",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2162",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2163",
+   "patch": {
+    "cap_avail_mw": 34.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2200",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2201",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2202",
+   "patch": {
+    "cap_avail_mw": 30.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2203",
+   "patch": {
+    "cap_avail_mw": 48.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2204",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2205",
+   "patch": {
+    "cap_avail_mw": 27.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2206",
+   "patch": {
+    "cap_avail_mw": 31.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2207",
+   "patch": {
+    "cap_avail_mw": 36.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2208",
+   "patch": {
+    "cap_avail_mw": 36.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2209",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2210",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2211",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2212",
+   "patch": {
+    "cap_avail_mw": 12.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2213",
+   "patch": {
+    "cap_avail_mw": 69.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2214",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2215",
+   "patch": {
+    "cap_avail_mw": 14.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2216",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2217",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2218",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2219",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2220",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2221",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2222",
+   "patch": {
+    "cap_avail_mw": 26.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2223",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2224",
+   "patch": {
+    "cap_avail_mw": 30.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2225",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2226",
+   "patch": {
+    "cap_avail_mw": 34.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2227",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2228",
+   "patch": {
+    "cap_avail_mw": 14.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2229",
+   "patch": {
+    "cap_avail_mw": 44.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2230",
+   "patch": {
+    "cap_avail_mw": 43.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2231",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2232",
+   "patch": {
+    "cap_avail_mw": 39.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2233",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2234",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2235",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2236",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2237",
+   "patch": {
+    "cap_avail_mw": 47.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2238",
+   "patch": {
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2239",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2240",
+   "patch": {
+    "cap_avail_mw": 42.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2241",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2242",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2300",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2301",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2302",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2303",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2304",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2305",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2306",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2307",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2308",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2309",
+   "patch": {
+    "cap_avail_mw": 49.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2310",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2311",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2312",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2313",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2314",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2316",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2317",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2318",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2319",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2320",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2322",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2323",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2324",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2325",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2326",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2327",
+   "patch": {
+    "cap_avail_mw": 46.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2328",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2329",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2330",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2331",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2332",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2333",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2334",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2336",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2337",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2338",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2339",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2340",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-2341",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-2342",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-2343",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-6203",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6204",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6206",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3601",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3602",
+   "patch": {
+    "capacity_total_mw": 560.0,
+    "n1_capacity_mw": 78.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "n1_capacity_mw"
+   ]
+  },
+  {
+   "slug": "cb-3603",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3604",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3606",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3607",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3608",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3609",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3610",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3611",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3612",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3613",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3614",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3615",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3616",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3617",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3651",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3652",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3653",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3654",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3655",
+   "patch": {
+    "cap_avail_mw": 15.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3656",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3657",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3658",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3659",
+   "patch": {
+    "cap_avail_mw": 34.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3660",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3661",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3662",
+   "patch": {
+    "cap_avail_mw": 22.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3663",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3664",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3665",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3666",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3667",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3668",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3669",
+   "patch": {
+    "cap_avail_mw": 24.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3670",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3671",
+   "patch": {
+    "cap_avail_mw": 24.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3672",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3673",
+   "patch": {
+    "cap_avail_mw": 43.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3674",
+   "patch": {
+    "cap_avail_mw": 34.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3675",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3676",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3677",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3678",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3679",
+   "patch": {
+    "cap_avail_mw": 39.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3680",
+   "patch": {
+    "cap_avail_mw": 30.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3681",
+   "patch": {
+    "cap_avail_mw": 33.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3682",
+   "patch": {
+    "cap_avail_mw": 33.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3683",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3684",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3685",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3686",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3687",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3688",
+   "patch": {
+    "cap_avail_mw": 46.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3689",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3690",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3691",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3692",
+   "patch": {
+    "cap_avail_mw": 32.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3693",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3694",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3695",
+   "patch": {
+    "cap_avail_mw": 25.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3696",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3697",
+   "patch": {
+    "cap_avail_mw": 38.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3698",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3699",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3700",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3701",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3702",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3703",
+   "patch": {
+    "cap_avail_mw": 39.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3704",
+   "patch": {
+    "cap_avail_mw": 15.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3706",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3707",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3708",
+   "patch": {
+    "cap_avail_mw": 34.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3709",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3710",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3711",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3712",
+   "patch": {
+    "cap_avail_mw": 7.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3713",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3714",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3715",
+   "patch": {
+    "cap_avail_mw": 42.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3716",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3717",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3718",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3719",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3720",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3721",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3722",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3723",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3724",
+   "patch": {
+    "cap_avail_mw": 32.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3725",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3726",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3727",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3728",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3729",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3730",
+   "patch": {
+    "cap_avail_mw": 44.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3731",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3732",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3733",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3734",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3735",
+   "patch": {
+    "cap_avail_mw": 40.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3736",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3737",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3738",
+   "patch": {
+    "cap_avail_mw": 36.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3739",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3740",
+   "patch": {
+    "units": 2,
+    "capacity_total_mw": 19.0,
+    "cap_operational_mw": 19.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "units",
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ]
+  },
+  {
+   "slug": "cb-3741",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3742",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3743",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3744",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3745",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3746",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3747",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3748",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3749",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3750",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3751",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3752",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3753",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3754",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3755",
+   "patch": {
+    "cap_avail_mw": 44.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3756",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3757",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3758",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3759",
+   "patch": {
+    "cap_avail_mw": 26.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3760",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3761",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3762",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3763",
+   "patch": {
+    "cap_avail_mw": 14.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3765",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3766",
+   "patch": {
+    "cap_avail_mw": 23.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-3767",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3769",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3770",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3998",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-3999",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4001",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4002",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4003",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4004",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4005",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4006",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4007",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4008",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4009",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4010",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4011",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4101",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4102",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4103",
+   "patch": {
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4104",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4105",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4106",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4107",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4108",
+   "patch": {
+    "cap_avail_mw": 28.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4109",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4110",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4111",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4112",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4113",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4114",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4115",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4116",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4118",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4119",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4120",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4121",
+   "patch": {
+    "cap_avail_mw": 28.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4122",
+   "patch": {
+    "cap_avail_mw": 43.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4123",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4124",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4125",
+   "patch": {
+    "cap_avail_mw": 35.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4127",
+   "patch": {
+    "cap_avail_mw": 36.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4128",
+   "patch": {
+    "cap_avail_mw": 18.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4129",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4130",
+   "patch": {
+    "cap_avail_mw": 42.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4131",
+   "patch": {
+    "cap_avail_mw": 40.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4132",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4133",
+   "patch": {
+    "cap_avail_mw": 47.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4134",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4135",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4136",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4137",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4138",
+   "patch": {
+    "cap_avail_mw": 42.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4139",
+   "patch": {
+    "cap_avail_mw": 25.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4140",
+   "patch": {
+    "cap_avail_mw": 43.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4141",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4142",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4143",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4144",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4145",
+   "patch": {
+    "cap_avail_mw": 30.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4146",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4147",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4148",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4149",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4150",
+   "patch": {
+    "cap_avail_mw": 49.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4151",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4152",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4153",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4154",
+   "patch": {
+    "cap_avail_mw": 12.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4155",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4156",
+   "patch": {
+    "cap_avail_mw": 23.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4157",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4158",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4159",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4160",
+   "patch": {
+    "cap_avail_mw": 20.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4161",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4162",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4163",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4164",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4165",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4166",
+   "patch": {
+    "cap_operational_mw": 19.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw"
+   ]
+  },
+  {
+   "slug": "cb-4190",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4201",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4202",
+   "patch": {
+    "cap_avail_mw": 25.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4203",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4204",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4205",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4206",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4207",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4208",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4209",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4210",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4211",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4212",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4213",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4214",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4215",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4216",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4217",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4218",
+   "patch": {
+    "cap_avail_mw": 26.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4219",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4220",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4221",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4222",
+   "patch": {
+    "cap_avail_mw": 33.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4223",
+   "patch": {
+    "cap_avail_mw": 39.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4224",
+   "patch": {
+    "cap_avail_mw": 42.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4225",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4226",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4227",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4228",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4229",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4230",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4231",
+   "patch": {
+    "cap_avail_mw": 22.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4232",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4233",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4234",
+   "patch": {
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4235",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4236",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4301",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4302",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4303",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4304",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4305",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4306",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4307",
+   "patch": {
+    "cap_avail_mw": 7.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4308",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4309",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4310",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4311",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4312",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4313",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4314",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4315",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4316",
+   "patch": {
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4317",
+   "patch": {
+    "cap_avail_mw": 35.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4318",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4319",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4320",
+   "patch": {
+    "cap_avail_mw": 23.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4321",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4322",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4323",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4324",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4325",
+   "patch": {
+    "cap_avail_mw": 40.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4326",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4327",
+   "patch": {
+    "cap_avail_mw": 21.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4328",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4401",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4402",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4403",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4404",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4405",
+   "patch": {
+    "cap_avail_mw": 7.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4406",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4407",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4408",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4409",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4410",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4411",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4412",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4413",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4414",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4415",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4416",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4417",
+   "patch": {
+    "cap_avail_mw": 18.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4418",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4419",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4420",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-4421",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4701",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4702",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4703",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4704",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4705",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4706",
+   "patch": {
+    "capacity_total_mw": 7.0,
+    "cap_operational_mw": 6.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4707",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4708",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4709",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4710",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4711",
+   "patch": {
+    "capacity_total_mw": 86.0,
+    "cap_operational_mw": 86.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ]
+  },
+  {
+   "slug": "cb-4712",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-4713",
+   "patch": {
+    "capacity_total_mw": 39.0,
+    "cap_operational_mw": 39.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ]
+  },
+  {
+   "slug": "cb-4714",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4715",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4716",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4717",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4718",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4719",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4720",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-4727",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6146",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6147",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5001",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5002",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5003",
+   "patch": {
+    "cap_operational_mw": 43.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5004",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5005",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5006",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5007",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5008",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5009",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5010",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5011",
+   "patch": {
+    "units": 2,
+    "capacity_total_mw": 380.0,
+    "cap_operational_mw": 285.0,
+    "n1_capacity_mw": 95.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "units",
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "n1_capacity_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5012",
+   "patch": {
+    "n1_capacity_mw": 28.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "n1_capacity_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5013",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5014",
+   "patch": {
+    "n1_capacity_mw": 28.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "n1_capacity_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5016",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5017",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5018",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5019",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5020",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5021",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5022",
+   "patch": {
+    "n1_capacity_mw": 27.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "n1_capacity_mw"
+   ]
+  },
+  {
+   "slug": "cb-5023",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5024",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5025",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5026",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5027",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5028",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5029",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5030",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5031",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5101",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5102",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5103",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5104",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5105",
+   "patch": {
+    "cap_avail_mw": 21.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5106",
+   "patch": {
+    "cap_avail_mw": 27.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5107",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5108",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5109",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5110",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5111",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5112",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5113",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5114",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5115",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5116",
+   "patch": {
+    "cap_avail_mw": 15.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5117",
+   "patch": {
+    "cap_avail_mw": 48.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5118",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5119",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5120",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5121",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5123",
+   "patch": {
+    "cap_operational_mw": 37.0,
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw",
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5124",
+   "patch": {
+    "cap_operational_mw": 66.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5125",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5126",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5127",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5128",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5130",
+   "patch": {
+    "cap_operational_mw": 37.0,
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw",
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5131",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5132",
+   "patch": {
+    "cap_avail_mw": 33.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5133",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5134",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5135",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5136",
+   "patch": {
+    "cap_avail_mw": 47.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5137",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5138",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5139",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5140",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5141",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5142",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5143",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5144",
+   "patch": {
+    "cap_avail_mw": 22.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5145",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5146",
+   "patch": {
+    "cap_avail_mw": 7.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5147",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5148",
+   "patch": {
+    "cap_avail_mw": 31.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5149",
+   "patch": {
+    "cap_avail_mw": 18.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5150",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5151",
+   "patch": {
+    "cap_avail_mw": 20.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5152",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5153",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5154",
+   "patch": {
+    "latitude": 36.416016,
+    "longitude": 138.23306,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-5155",
+   "patch": {
+    "cap_avail_mw": 18.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5156",
+   "patch": {
+    "cap_avail_mw": 30.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5157",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5158",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5159",
+   "patch": {
+    "cap_avail_mw": 47.0,
+    "latitude": 36.389644,
+    "longitude": 138.271694,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-5160",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5161",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5162",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5163",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5164",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5165",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5166",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5167",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5168",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5169",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "latitude": 36.325377,
+    "longitude": 138.557532,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-5170",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5171",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5172",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5173",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5174",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5175",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5176",
+   "patch": {
+    "cap_avail_mw": 12.0,
+    "latitude": 36.287941,
+    "longitude": 138.447722,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-5177",
+   "patch": {
+    "cap_avail_mw": 15.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5178",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5179",
+   "patch": {
+    "latitude": 36.204568,
+    "longitude": 138.46381,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-5180",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5181",
+   "patch": {
+    "cap_avail_mw": 22.0,
+    "latitude": 36.255945,
+    "longitude": 138.471401,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-5182",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "latitude": 36.055769,
+    "longitude": 138.459857,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-5183",
+   "patch": {
+    "latitude": 35.982812,
+    "longitude": 138.509756,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-5184",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5185",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5186",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5187",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5188",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5189",
+   "patch": {
+    "cap_avail_mw": 48.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5190",
+   "patch": {
+    "cap_avail_mw": 18.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5191",
+   "patch": {
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5192",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5193",
+   "patch": {
+    "cap_avail_mw": 42.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5194",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5195",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5196",
+   "patch": {
+    "cap_avail_mw": 18.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5197",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5198",
+   "patch": {
+    "cap_avail_mw": 19.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5199",
+   "patch": {
+    "cap_avail_mw": 21.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5200",
+   "patch": {
+    "cap_avail_mw": 49.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5201",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5202",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5203",
+   "patch": {
+    "cap_avail_mw": 7.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5204",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5205",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5206",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5207",
+   "patch": {
+    "cap_avail_mw": 27.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5208",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5209",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5210",
+   "patch": {
+    "cap_avail_mw": 25.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5211",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5212",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5213",
+   "patch": {
+    "cap_avail_mw": 15.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5214",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5215",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5216",
+   "patch": {
+    "cap_avail_mw": 7.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5218",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5219",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5220",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5221",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5222",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5223",
+   "patch": {
+    "cap_avail_mw": 22.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5224",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5225",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5226",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5227",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5228",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5229",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5230",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5231",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5232",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5233",
+   "patch": {
+    "cap_avail_mw": 14.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5234",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5235",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5236",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5237",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5238",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5239",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5240",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5241",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5242",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5243",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5244",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5245",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5246",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5247",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5249",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5250",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5251",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5252",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5253",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5254",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5255",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5256",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5257",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5258",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5259",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5260",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5261",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5262",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5263",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5264",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-5265",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5266",
+   "patch": {
+    "cap_operational_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5267",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5268",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-5269",
+   "patch": {
+    "cap_operational_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5270",
+   "patch": {
+    "cap_operational_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw",
+    "oc_skipped"
+   ]
+  },
+  {
+   "slug": "cb-5271",
+   "patch": {
+    "cap_operational_mw": 2.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw"
+   ]
+  },
+  {
+   "slug": "cb-5272",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6001",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6002",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6003",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6004",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6005",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6006",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6007",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6009",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6010",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6011",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6012",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6013",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6014",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6015",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6016",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6017",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6018",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6019",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6020",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6021",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6022",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6023",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6025",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6101",
+   "patch": {
+    "cap_avail_mw": 61.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6102",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6104",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6105",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6106",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6107",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6108",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6109",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6110",
+   "patch": {
+    "cap_avail_mw": 41.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6111",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6112",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6113",
+   "patch": {
+    "cap_avail_mw": 42.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6114",
+   "patch": {
+    "cap_avail_mw": 49.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6115",
+   "patch": {
+    "cap_avail_mw": 40.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6116",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6117",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6118",
+   "patch": {
+    "capacity_total_mw": 43.0,
+    "cap_operational_mw": 43.0,
+    "cap_avail_mw": 38.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6119",
+   "patch": {
+    "cap_avail_mw": 40.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6120",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6121",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6122",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6123",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6124",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6125",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6126",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6127",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6128",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6129",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6130",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6131",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6132",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6133",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6134",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6135",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6136",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6137",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6138",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6139",
+   "patch": {
+    "latitude": 35.045829,
+    "longitude": 137.131255,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-6140",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6141",
+   "patch": {
+    "cap_avail_mw": 15.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6142",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6143",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6144",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6145",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6148",
+   "patch": {
+    "cap_avail_mw": 62.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6149",
+   "patch": {
+    "cap_operational_mw": 19.0,
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_operational_mw",
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6150",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6151",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6152",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6153",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6154",
+   "patch": {
+    "cap_avail_mw": 36.0,
+    "latitude": 35.130875,
+    "longitude": 137.137943,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-6155",
+   "patch": {
+    "latitude": 35.12814,
+    "longitude": 137.1065,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-6156",
+   "patch": {
+    "latitude": 35.146234,
+    "longitude": 137.116296,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-6157",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "latitude": 35.168294,
+    "longitude": 137.112986,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "coords"
+   ]
+  },
+  {
+   "slug": "cb-6158",
+   "patch": {
+    "cap_avail_mw": 39.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6159",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6160",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6161",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6162",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6163",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6164",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6165",
+   "patch": {
+    "cap_avail_mw": 48.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6166",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6167",
+   "patch": {
+    "cap_avail_mw": 18.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6168",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6169",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6170",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6171",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6172",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6173",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6174",
+   "patch": {
+    "cap_avail_mw": 12.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6175",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6176",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6177",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6178",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6179",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6180",
+   "patch": {
+    "cap_avail_mw": 39.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6181",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6182",
+   "patch": {
+    "cap_avail_mw": 19.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6183",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6184",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6185",
+   "patch": {
+    "cap_avail_mw": 48.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6186",
+   "patch": {
+    "cap_avail_mw": 45.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6187",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6188",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6189",
+   "patch": {
+    "cap_avail_mw": 28.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6190",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6191",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6192",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6193",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6194",
+   "patch": {
+    "cap_avail_mw": 26.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6195",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6196",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6197",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6198",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6199",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6200",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6201",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6202",
+   "patch": {
+    "cap_avail_mw": 12.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6205",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6207",
+   "patch": {
+    "cap_avail_mw": 21.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6208",
+   "patch": {
+    "cap_avail_mw": 47.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6209",
+   "patch": {
+    "cap_avail_mw": 37.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6210",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6211",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6212",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6213",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6214",
+   "patch": {
+    "cap_avail_mw": 39.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6215",
+   "patch": {
+    "cap_avail_mw": 27.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6216",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6217",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6218",
+   "patch": {
+    "cap_avail_mw": 48.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6219",
+   "patch": {
+    "cap_avail_mw": 35.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6220",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6222",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6223",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6224",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6225",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6226",
+   "patch": {
+    "cap_avail_mw": 43.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6227",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6228",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6229",
+   "patch": {
+    "cap_avail_mw": 31.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6230",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6231",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6232",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6233",
+   "patch": {
+    "cap_avail_mw": 32.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6234",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6235",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6236",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6237",
+   "patch": {
+    "cap_avail_mw": 12.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6238",
+   "patch": {
+    "cap_avail_mw": 14.0,
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "cb-6239",
+   "patch": {
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": []
+  },
+  {
+   "slug": "cb-6240",
+   "patch": {
+    "voltage_primary_kv": 77.0,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "77kV系"
+    ],
+    "last_updated": "2026-08-17T00:00:00.000Z"
+   },
+   "changed": [
+    "voltage_primary_kv",
+    "voltage_secondary_kv",
+    "voltage_class"
+   ]
+  }
+ ]
+}

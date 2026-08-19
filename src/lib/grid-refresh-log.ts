@@ -39,6 +39,34 @@ export type GridRefreshEntry = {
 export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
   {
     importedOn: '2026-08-19',
+    areaJp: '中部',
+    areaSlug: 'chubu',
+    operator: '中部電力パワーグリッド',
+    publishedVersion: '2026年8月17日更新版（gridmap・全7レイヤ同一版）',
+    total: 1107,
+    decreased: 120,
+    zeroed: 4,
+    increased: 231,
+    changed: 369,
+    added: 0,
+    removed: 0,
+    topDecreases: [
+      { name: '常滑変電所', prefecture: '愛知県', from: 42, to: 26 },
+      { name: '国府宮変電所', prefecture: '愛知県', from: 72, to: 59 },
+      { name: '柳町変電所', prefecture: '長野県', from: 49, to: 37 },
+      { name: '中御所変電所', prefecture: '長野県', from: 49, to: 37 },
+      { name: '里小牧変電所', prefecture: '愛知県', from: 46, to: 40 },
+    ],
+    note: '設備の増減なし（新規0・消滅0）。足助水力変電所（２）は電圧階級が変わった1件'
+      + '（33kV→77kV系・公表側の記載変更・設備は同一）。'
+      + '座標修正14件（公表側の位置修正に追随・全件を逆ジオコーダで県一致確認のうえ適用）と'
+      + '豊田変電所（１）への座標新規付与1件で、地図の座標保有は1,081→1,082件。'
+      + 'N-1電制は可148件（0MW可15件を含む三値を維持）・可否の変化なし。'
+      + '空容量が未公表（-）の193件は独自算出せず未設定のまま維持（公表側が算出式を明記していないため）。',
+    report: 'reports/grid-chubu-dryrun-2026-08-19.md',
+  },
+  {
+    importedOn: '2026-08-19',
     areaJp: '関西',
     areaSlug: 'kansai',
     operator: '関西電力送配電',
