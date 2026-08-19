@@ -1,0 +1,571 @@
+{
+ "generated_on": "2026-08-19",
+ "area": "中部",
+ "operator": "中部電力パワーグリッド",
+ "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ）",
+ "endpoint_discovery": "pass_data/pass.json（マップ公式マニフェスト・KRCA503G.html のインラインJSが参照）から全16エンドポイントを確定。総当たり・JSバンドル推測なし。初期取込(2026/5/7)の baseline source_url とも一致（KRSIH010..016）",
+ "files": [
+  {
+   "layer": "KRSIH010",
+   "url": "https://gridmap.powergrid.chuden.co.jp/geo_data/KRSIH010",
+   "bytes": 12998,
+   "container": "ZIP",
+   "csv_encoding": "cp932",
+   "version_row": "2026年8月17日更新",
+   "members": [
+    "送電線(対象外)",
+    "その他(対象外): フェンス No",
+    "変電所"
+   ],
+   "data_rows": 9,
+   "prefecture": "（基幹）"
+  },
+  {
+   "layer": "KRSIH011",
+   "url": "https://gridmap.powergrid.chuden.co.jp/geo_data/KRSIH011",
+   "bytes": 86885,
+   "container": "ZIP",
+   "csv_encoding": "cp932",
+   "version_row": "2026年8月17日更新",
+   "members": [
+    "送電線(対象外)",
+    "変電所"
+   ],
+   "data_rows": 251,
+   "prefecture": "愛知県"
+  },
+  {
+   "layer": "KRSIH012",
+   "url": "https://gridmap.powergrid.chuden.co.jp/geo_data/KRSIH012",
+   "bytes": 72128,
+   "container": "ZIP",
+   "csv_encoding": "cp932",
+   "version_row": "2026年8月17日更新",
+   "members": [
+    "送電線(対象外)",
+    "変電所"
+   ],
+   "data_rows": 174,
+   "prefecture": "静岡県"
+  },
+  {
+   "layer": "KRSIH013",
+   "url": "https://gridmap.powergrid.chuden.co.jp/geo_data/KRSIH013",
+   "bytes": 55793,
+   "container": "ZIP",
+   "csv_encoding": "cp932",
+   "version_row": "2026年8月17日更新",
+   "members": [
+    "送電線(対象外)",
+    "変電所"
+   ],
+   "data_rows": 135,
+   "prefecture": "三重県"
+  },
+  {
+   "layer": "KRSIH014",
+   "url": "https://gridmap.powergrid.chuden.co.jp/geo_data/KRSIH014",
+   "bytes": 60535,
+   "container": "ZIP",
+   "csv_encoding": "cp932",
+   "version_row": "2026年8月17日更新",
+   "members": [
+    "送電線(対象外)",
+    "変電所"
+   ],
+   "data_rows": 184,
+   "prefecture": "岐阜県"
+  },
+  {
+   "layer": "KRSIH015",
+   "url": "https://gridmap.powergrid.chuden.co.jp/geo_data/KRSIH015",
+   "bytes": 68529,
+   "container": "ZIP",
+   "csv_encoding": "cp932",
+   "version_row": "2026年8月17日更新",
+   "members": [
+    "送電線(対象外)",
+    "変電所"
+   ],
+   "data_rows": 198,
+   "prefecture": "長野県"
+  },
+  {
+   "layer": "KRSIH016",
+   "url": "https://gridmap.powergrid.chuden.co.jp/geo_data/KRSIH016",
+   "bytes": 63357,
+   "container": "ZIP",
+   "csv_encoding": "cp932",
+   "version_row": "2026年8月17日更新",
+   "members": [
+    "送電線(対象外)",
+    "変電所"
+   ],
+   "data_rows": 156,
+   "prefecture": "愛知県"
+  }
+ ],
+ "warnings": [],
+ "requires_judgement": [
+  "電圧面変化 1件（旧電圧面の行は新データに不在＝同一設備の記載変更と推定。slug維持で電圧面・電圧階級を更新するか裁定）",
+  "座標の新規付与候補 1件（採用は裁定事項）",
+  "座標が異なる既存レコード 14件（上書きせず・公表側修正か要確認）",
+  "空容量が'-'で予想潮流のみの行 193件 → 運用容量−|予想潮流| で算出するか（関西前例・裁定事項）"
+ ],
+ "version": {
+  "当方(現行)": "2026-04-27",
+  "新": [
+   "2026年8月17日更新"
+  ],
+  "taishobi": "2026年08月17日時点",
+  "レイヤ割れ": false
+ },
+ "excluded_note_rows": {
+  "count": 0,
+  "rows": [],
+  "note": "送電線CSV・フェンスCSVは member ごと対象外（行単位の除外とは別勘定）"
+ },
+ "dedupe": {
+  "before": 1107,
+  "after": 1107,
+  "removed": 0,
+  "rule2": "不使用（#117）",
+  "examples": []
+ },
+ "coords": {
+  "before": 1081,
+  "after_default_keep": 1081,
+  "after_if_adopt_gain": 1082,
+  "diff_count": 14,
+  "diffs": [
+   {
+    "slug": "cb-2113",
+    "name": "坊瀬変電所",
+    "old": [
+     34.695477,
+     137.515187
+    ],
+    "new": [
+     34.694454,
+     137.516078
+    ],
+    "delta_deg": 0.001023
+   },
+   {
+    "slug": "cb-5154",
+    "name": "秋和変電所",
+    "old": [
+     36.416361,
+     138.231568
+    ],
+    "new": [
+     36.416016,
+     138.23306
+    ],
+    "delta_deg": 0.001492
+   },
+   {
+    "slug": "cb-5159",
+    "name": "国分変電所",
+    "old": [
+     36.388202,
+     138.278271
+    ],
+    "new": [
+     36.389644,
+     138.271694
+    ],
+    "delta_deg": 0.006577
+   },
+   {
+    "slug": "cb-5169",
+    "name": "茂沢水力変電所",
+    "old": [
+     36.322853,
+     138.557875
+    ],
+    "new": [
+     36.325377,
+     138.557532
+    ],
+    "delta_deg": 0.002524
+   },
+   {
+    "slug": "cb-5176",
+    "name": "三岡変電所",
+    "old": [
+     36.291015,
+     138.449445
+    ],
+    "new": [
+     36.287941,
+     138.447722
+    ],
+    "delta_deg": 0.003074
+   },
+   {
+    "slug": "cb-5179",
+    "name": "臼田町変電所",
+    "old": [
+     36.204054,
+     138.467298
+    ],
+    "new": [
+     36.204568,
+     138.46381
+    ],
+    "delta_deg": 0.003488
+   },
+   {
+    "slug": "cb-5181",
+    "name": "北中込変電所",
+    "old": [
+     36.256442,
+     138.464239
+    ],
+    "new": [
+     36.255945,
+     138.471401
+    ],
+    "delta_deg": 0.007162
+   },
+   {
+    "slug": "cb-5182",
+    "name": "八那池第一水力変電所",
+    "old": [
+     36.056749,
+     138.46595
+    ],
+    "new": [
+     36.055769,
+     138.459857
+    ],
+    "delta_deg": 0.006093
+   },
+   {
+    "slug": "cb-5183",
+    "name": "野辺山変電所",
+    "old": [
+     35.982521,
+     138.508759
+    ],
+    "new": [
+     35.982812,
+     138.509756
+    ],
+    "delta_deg": 0.000997
+   },
+   {
+    "slug": "cb-6139",
+    "name": "南豊田変電所（２）",
+    "old": [
+     35.045808,
+     137.131734
+    ],
+    "new": [
+     35.045829,
+     137.131255
+    ],
+    "delta_deg": 0.000479
+   },
+   {
+    "slug": "cb-6154",
+    "name": "猿投変電所",
+    "old": [
+     35.131088,
+     137.138042
+    ],
+    "new": [
+     35.130875,
+     137.137943
+    ],
+    "delta_deg": 0.000213
+   },
+   {
+    "slug": "cb-6155",
+    "name": "三好ヶ丘変電所",
+    "old": [
+     35.127479,
+     137.10647
+    ],
+    "new": [
+     35.12814,
+     137.1065
+    ],
+    "delta_deg": 0.000661
+   },
+   {
+    "slug": "cb-6156",
+    "name": "篠原変電所",
+    "old": [
+     35.144726,
+     137.116557
+    ],
+    "new": [
+     35.146234,
+     137.116296
+    ],
+    "delta_deg": 0.001508
+   },
+   {
+    "slug": "cb-6157",
+    "name": "八草変電所",
+    "old": [
+     35.167956,
+     137.11243
+    ],
+    "new": [
+     35.168294,
+     137.112986
+    ],
+    "delta_deg": 0.000556
+   }
+  ],
+  "gain_candidates": [
+   {
+    "slug": "cb-2037",
+    "name": "豊田変電所（１）",
+    "lat": 34.982401,
+    "lng": 138.409045
+   }
+  ],
+  "map_point_missing": [],
+  "block_main_run": false
+ },
+ "missing_groups": {
+  "conclusion": "北海道・関西型の『丸ごと欠け』なし。変電所CSV 7レイヤ計1,107件は当方収録と完全一致。地図には他に 発電所340・他社変電所1,063・開閉所20 等のマーカーがあるが、いずれも空容量CSVに値を持たない別種設備（変圧器空き容量の対象外）",
+  "map_icon_breakdown": {
+   "toshaHendenshoBlue.png": 169,
+   "toshaHaihenBlue.png": 860,
+   "toshaHaihenRed.png": 50,
+   "toshaHaihenYellow.png": 2,
+   "toshaHaihenBlack.png": 1,
+   "hatsudensho.png": 340,
+   "toshaKaiheijo.png": 19,
+   "tashaKaiheijo.png": 1,
+   "tashaHendensho.png": 1063
+  },
+  "map_only_nos": []
+ },
+ "avail_calculation": {
+  "直読": 914,
+  "予想潮流のみ（空容量'-'）": 193,
+  "初期取込の扱い": "直読のみ（算出せず null）。基幹9件は現行も null",
+  "提案（要判断）": "関西では公表PDFの留意事項に基づき 運用容量−|予想潮流| で算出した。中部も同型の排他パターン（両方あり0件）だが、公表側の算出式の記載を確認できるまで本 dry-run では直読のみとし、算出採用は本実行の裁定事項とする"
+ },
+ "join_key": {
+  "確定": "主キー=名称＋電圧面（タイブレーク: 設備容量→運用容量→台数）。eid=chuden_{変電所No} はクロスチェック用（実測で1,107/1,107一致・一括シフトなし・単独キーにしない）",
+  "名称の正規化": "trim のみ。NFKC 禁止（全角括弧枝番（２）の保持）。No のみ NFKC"
+ },
+ "counts": {
+  "baseline": 1107,
+  "raw": 1107,
+  "dedup": 1107,
+  "matched": 1106,
+  "new": 0,
+  "removed": 0,
+  "ambiguous": 0,
+  "eid_mismatch": 0,
+  "changed_records": 369,
+  "total_after": 1107,
+  "pct": 0.0
+ },
+ "by_pref_new": {
+  "基幹系統": 9,
+  "愛知県": 407,
+  "静岡県": 174,
+  "三重県": 135,
+  "岐阜県": 184,
+  "長野県": 198
+ },
+ "field_stats": {
+  "空き容量": {
+   "変化": 351,
+   "新規充足": 0,
+   "新データで欠落(現値維持)": 0
+  },
+  "運用容量": {
+   "変化": 21,
+   "新規充足": 0,
+   "新データで欠落(現値維持)": 0
+  },
+  "設備容量": {
+   "変化": 12,
+   "新規充足": 0,
+   "新データで欠落(現値維持)": 0
+  },
+  "N-1電制適用可能量": {
+   "変化": 7,
+   "新規充足": 0,
+   "新データで欠落(現値維持)": 0
+  },
+  "台数": {
+   "変化": 3,
+   "新規充足": 0,
+   "新データで欠落(現値維持)": 0
+  }
+ },
+ "cap_avail": {
+  "decreased": 120,
+  "zeroed": 4,
+  "increased": 231,
+  "top_decreases": [
+   {
+    "slug": "cb-1245",
+    "name": "常滑変電所",
+    "prefecture": "愛知県",
+    "voltage": "77/6.6",
+    "from": 42,
+    "to": 26.0,
+    "delta": -16.0
+   },
+   {
+    "slug": "cb-1114",
+    "name": "国府宮変電所",
+    "prefecture": "愛知県",
+    "voltage": "77/6.6",
+    "from": 72,
+    "to": 59.0,
+    "delta": -13.0
+   },
+   {
+    "slug": "cb-5123",
+    "name": "柳町変電所",
+    "prefecture": "長野県",
+    "voltage": "77/6.6",
+    "from": 49,
+    "to": 37.0,
+    "delta": -12.0
+   },
+   {
+    "slug": "cb-5130",
+    "name": "中御所変電所",
+    "prefecture": "長野県",
+    "voltage": "77/6.6",
+    "from": 49,
+    "to": 37.0,
+    "delta": -12.0
+   },
+   {
+    "slug": "cb-1102",
+    "name": "里小牧変電所",
+    "prefecture": "愛知県",
+    "voltage": "77/6.6",
+    "from": 46,
+    "to": 40.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "cb-1134",
+    "name": "古知野変電所",
+    "prefecture": "愛知県",
+    "voltage": "77/6.6",
+    "from": 42,
+    "to": 36.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "cb-1157",
+    "name": "十三塚変電所",
+    "prefecture": "愛知県",
+    "voltage": "77/6.6",
+    "from": 74,
+    "to": 68.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "cb-1201",
+    "name": "星崎変電所",
+    "prefecture": "愛知県",
+    "voltage": "77/6.6",
+    "from": 43,
+    "to": 38.0,
+    "delta": -5.0
+   },
+   {
+    "slug": "cb-2134",
+    "name": "寺脇変電所",
+    "prefecture": "静岡県",
+    "voltage": "77/6.6",
+    "from": 47,
+    "to": 43.0,
+    "delta": -4.0
+   },
+   {
+    "slug": "cb-2214",
+    "name": "土方変電所",
+    "prefecture": "静岡県",
+    "voltage": "77/6.6",
+    "from": 8,
+    "to": 4.0,
+    "delta": -4.0
+   }
+  ],
+  "top_increases": [
+   {
+    "slug": "cb-1238",
+    "name": "矢田変電所",
+    "prefecture": "愛知県",
+    "voltage": "77/6.6",
+    "from": 9,
+    "to": 17.0,
+    "delta": 8.0
+   },
+   {
+    "slug": "cb-3689",
+    "name": "河芸変電所",
+    "prefecture": "三重県",
+    "voltage": "77/6.6",
+    "from": 4,
+    "to": 11.0,
+    "delta": 7.0
+   },
+   {
+    "slug": "cb-3659",
+    "name": "上小波田変電所",
+    "prefecture": "三重県",
+    "voltage": "77/6.6",
+    "from": 28,
+    "to": 34.0,
+    "delta": 6.0
+   },
+   {
+    "slug": "cb-3686",
+    "name": "広陽変電所",
+    "prefecture": "三重県",
+    "voltage": "77/6.6",
+    "from": 4,
+    "to": 10.0,
+    "delta": 6.0
+   },
+   {
+    "slug": "cb-3743",
+    "name": "通町変電所",
+    "prefecture": "三重県",
+    "voltage": "77/6.6",
+    "from": 3,
+    "to": 9.0,
+    "delta": 6.0
+   }
+  ]
+ },
+ "n1": {
+  "ok_new": 148,
+  "zero_ok": 15,
+  "changed": 0,
+  "changes": [],
+  "undetermined": 0
+ },
+ "oc_undetermined": 0,
+ "voltage_face_changed": [
+  {
+   "slug": "cb-6240",
+   "external_id": "chuden_6240",
+   "name": "足助水力変電所（２）",
+   "old_voltage": "33/6.6",
+   "new_voltage": "77/6.6"
+  }
+ ],
+ "new_records_detail": [],
+ "disappeared_records": []
+}
