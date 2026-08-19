@@ -1,0 +1,25 @@
+{
+ "count": 2,
+ "entries": [
+  {
+   "operator": "関西電力送配電",
+   "area": "関西",
+   "slug": "ksi-local-ec-6",
+   "external_id": "kansai_local_滋ＥC",
+   "name": "赤子山",
+   "prefecture": "関西ローカル系",
+   "stored_n1_eligible": false,
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）"
+  },
+  {
+   "operator": "関西電力送配電",
+   "area": "関西",
+   "slug": "ksi-local-d-7",
+   "external_id": "kansai_local_滋D",
+   "name": "高時川",
+   "prefecture": "関西ローカル系",
+   "stored_n1_eligible": false,
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）"
+  }
+ ]
+}

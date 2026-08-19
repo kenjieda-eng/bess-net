@@ -1,0 +1,1064 @@
+{
+ "generated_on": "2026-08-19",
+ "area": "関西",
+ "operator": "関西電力送配電",
+ "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ）",
+ "files": [
+  {
+   "file": "154kv_more_trans.csv",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_more_trans.csv",
+   "bytes": 13819,
+   "encoding": "cp932",
+   "version_row": "2026年08月17日更新",
+   "pdf": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_more_space.pdf",
+   "data_rows": 127
+  },
+  {
+   "file": "154kv_less_trans.csv",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_trans.csv",
+   "bytes": 161619,
+   "encoding": "cp932",
+   "version_row": "2026年08月17日更新",
+   "pdf": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_space.pdf",
+   "data_rows": 1575
+  }
+ ],
+ "warnings": [],
+ "requires_judgement": [
+  "No./枝番の振り直し 1件 -> slug維持のまま external_id を更新するか要判断",
+  "同一No.・同一名称で電圧面が変化 3件 -> 設備更新か公表記載変更かの確認が必要（機械的に上書きすると別バンクへ書き込む）",
+  "消滅（新CSVに不在）5件 -> 301/凍結の方針判断が必要"
+ ],
+ "excluded_note_rows": {
+  "count": 1,
+  "rows": [
+   {
+    "set": "more",
+    "no": "*1 当該系統は、系統安定度等により制約がありますので、連系可能量については、別途詳細検討が必要となります。",
+    "name": "",
+    "reason": "No.欄が設備Noの形をしていない（注記行）"
+   }
+  ],
+  "method": "No.欄が設備Noの形をしている行だけ通すホワイトリスト（#120）",
+  "fence_note": "フェンスは 154kv_more_fence.csv という別ファイルにあり、trans CSV には混入しない。more_trans の Ｂ=北摂・Ｃ=猪名川は実在の500kV変電所のため除外しない（#120(2) の過剰除去回避）"
+ },
+ "avail_calculation": {
+  "more": {
+   "運用容量−|予想潮流|": 126,
+   "算出不能（運用容量または予想潮流が未公表）": 1
+  },
+  "less": {
+   "運用容量−|予想潮流|": 279,
+   "カラム直読": 1296
+  }
+ },
+ "dedupe": {
+  "before": 1702,
+  "after": 1702,
+  "removed": 0,
+  "rule2_baseline_name": "使用しない（#117・関西は同名が極めて多い）",
+  "breakdown": {},
+  "examples": []
+ },
+ "version": {
+  "当方(現行)": "2026-04-01",
+  "新(more)": "2026-08-17",
+  "新(less)": "2026-08-17",
+  "版割れ": false,
+  "根拠": "CSV1行目『2026年08月17日更新』／PDF『2026年8月17日時点』"
+ },
+ "join_key": {
+  "確定": "external_id = kansai_{kikan|local}_{No.原文} + 電圧面",
+  "tiebreak": "設備容量 -> 運用容量 -> 台数（#115・主キーに混ぜない）",
+  "external_idは安全か": "安全。No.+名称の一致は more 48/48・less 1,570/1,571（不一致1件は名称変更として要判断に計上）。北海道のような一括シフトは無い",
+  "一意性": "一意ではない。baseline で 268種の external_id が複数レコードを持つ（同一No.の電圧面違い）",
+  "more対応": "No.= A..EA / 陸A..陸K / 海A..海F / 枝番 AI-1,AI-2,AJ-1,AJ-2,AL-1,AL-2 -> kansai_kikan_{No原文（全角）}",
+  "less対応": "No.= 北/神/京/姫/南/滋/和/奈 + 英字（+数字/枝番） -> kansai_local_{No原文（半角）}",
+  "全角半角": "NFKC で正規化してから突合（baseline は more=全角・less=半角のまま保持）"
+ },
+ "counts": {
+  "baseline": 1624,
+  "csv_raw": 1702,
+  "csv_dedup": 1702,
+  "matched": 1616,
+  "new": 83,
+  "removed": 5,
+  "ambiguous": 0,
+  "changed_records": 619,
+  "total_after": 1702,
+  "pct": 4.8
+ },
+ "by_set": {
+  "more": 127,
+  "less": 1575
+ },
+ "baseline_by_class": {
+  "基幹系統": 49,
+  "関西ローカル系": 1575
+ },
+ "field_stats": {
+  "空き容量(当該)": {
+   "変化": 185,
+   "新規充足": 326,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "空容量(上位系等考慮)": {
+   "変化": 191,
+   "新規充足": 326,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "運用容量": {
+   "変化": 34,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "設備容量": {
+   "変化": 34,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "N-1電制適用可能量": {
+   "変化": 12,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "台数": {
+   "変化": 9,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  }
+ },
+ "cap_avail": {
+  "decreased": 93,
+  "zeroed": 10,
+  "increased": 92,
+  "top_decreases": [
+   {
+    "slug": "ksi-local-at-10",
+    "name": "内原",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_和AT",
+    "voltage": "77/6.6",
+    "from": 11,
+    "to": 0.0,
+    "delta": -11.0
+   },
+   {
+    "slug": "ksi-local-aj-9",
+    "name": "阪井",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_和AJ",
+    "voltage": "77/6.6",
+    "from": 14,
+    "to": 4.0,
+    "delta": -10.0
+   },
+   {
+    "slug": "ksi-local-ay-5",
+    "name": "西院",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_京AY",
+    "voltage": "77/6.6",
+    "from": 28,
+    "to": 19.0,
+    "delta": -9.0
+   },
+   {
+    "slug": "ksi-local-f-2",
+    "name": "本郷",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_京Ｆ",
+    "voltage": "33/6.6",
+    "from": 9,
+    "to": 3.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "ksi-local-g-3",
+    "name": "高浜",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_京Ｇ",
+    "voltage": "77/6.6",
+    "from": 18,
+    "to": 12.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "ksi-local-br-8",
+    "name": "信楽",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_滋BR",
+    "voltage": "77/6.6",
+    "from": 7,
+    "to": 1.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "ksi-local-c-7",
+    "name": "高野口",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_和C",
+    "voltage": "77/6.6",
+    "from": 13,
+    "to": 7.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "ksi-local-af-9",
+    "name": "岡崎",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_和AF",
+    "voltage": "77/6.6",
+    "from": 16,
+    "to": 10.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "ksi-local-ag-10",
+    "name": "紀三井寺",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_和AG",
+    "voltage": "77/6.6",
+    "from": 9,
+    "to": 3.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "ksi-local-ao-9",
+    "name": "箕島",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_和AO",
+    "voltage": "77/6.6",
+    "from": 13,
+    "to": 7.0,
+    "delta": -6.0
+   }
+  ],
+  "top_increases": [
+   {
+    "slug": "ksi-local-aa-7",
+    "name": "比良",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_滋AA",
+    "voltage": "77/6.6",
+    "from": 0,
+    "to": 7.0,
+    "delta": 7.0
+   },
+   {
+    "slug": "ksi-local-bx",
+    "name": "浜町",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_北BX",
+    "voltage": "77/6.6",
+    "from": 4,
+    "to": 9.0,
+    "delta": 5.0
+   },
+   {
+    "slug": "ksi-local-e-5",
+    "name": "氷上",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_神E",
+    "voltage": "77/6.6",
+    "from": 0,
+    "to": 4.0,
+    "delta": 4.0
+   },
+   {
+    "slug": "ksi-local-dp-4",
+    "name": "松陰",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_神DP",
+    "voltage": "77/6.6",
+    "from": 2,
+    "to": 6.0,
+    "delta": 4.0
+   },
+   {
+    "slug": "ksi-local-dt-6",
+    "name": "土山",
+    "prefecture": "関西ローカル系",
+    "external_id": "kansai_local_神DT",
+    "voltage": "77/6.6",
+    "from": 8,
+    "to": 12.0,
+    "delta": 4.0
+   }
+  ]
+ },
+ "n1_undetermined": {
+  "count": 2,
+  "entries": [
+   {
+    "operator": "関西電力送配電",
+    "area": "関西",
+    "slug": "ksi-local-ec-6",
+    "external_id": "kansai_local_滋ＥC",
+    "name": "赤子山",
+    "prefecture": "関西ローカル系",
+    "stored_n1_eligible": false,
+    "source": "154kv_{more,less}_trans.csv（2026-08-17公表）"
+   },
+   {
+    "operator": "関西電力送配電",
+    "area": "関西",
+    "slug": "ksi-local-d-7",
+    "external_id": "kansai_local_滋D",
+    "name": "高時川",
+    "prefecture": "関西ローカル系",
+    "stored_n1_eligible": false,
+    "source": "154kv_{more,less}_trans.csv（2026-08-17公表）"
+   }
+  ],
+  "file": "scripts/experimental/_common/n1_undetermined_kansai.json"
+ },
+ "oc_undetermined": 14,
+ "n1_changed": {
+  "count": 0,
+  "examples": []
+ },
+ "renamed_same_no": [],
+ "renumbered": [
+  {
+   "slug": "ksi-local-d-7",
+   "name": "高時川",
+   "old_external_id": "kansai_local_滋D",
+   "new_external_id": "kansai_local_滋ED",
+   "voltage": "22/6.6"
+  }
+ ],
+ "voltage_face_changed": [
+  {
+   "slug": "ksi-local-h-5",
+   "external_id": "kansai_local_神H",
+   "name": "篠山",
+   "old_voltage": "77/6.6",
+   "new_voltage": "22/6.6",
+   "old_cap_avail_mw": 6,
+   "new_cap_avail_mw": 7.0
+  },
+  {
+   "slug": "ksi-local-q-6",
+   "external_id": "kansai_local_神Q",
+   "name": "山口",
+   "old_voltage": "77/6.6",
+   "new_voltage": "22/6.6",
+   "old_cap_avail_mw": 5,
+   "new_cap_avail_mw": 5.0
+  },
+  {
+   "slug": "ksi-local-t-5",
+   "external_id": "kansai_local_神T",
+   "name": "大池",
+   "old_voltage": "77/6.6",
+   "new_voltage": "22/6.6",
+   "old_cap_avail_mw": 4,
+   "new_cap_avail_mw": 5.0
+  }
+ ],
+ "ambiguous_rows": [],
+ "new_records_detail": [
+  {
+   "external_id": "kansai_kikan_Ｂ",
+   "name": "北摂",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 2850.0,
+   "cap_avail_mw": -318.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｃ",
+   "name": "猪名川",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 2850.0,
+   "cap_avail_mw": 365.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｄ",
+   "name": "新綾部",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 1425.0,
+   "cap_avail_mw": 1108.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｅ",
+   "name": "嶺南",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 2850.0,
+   "cap_avail_mw": 447.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｆ",
+   "name": "西京都",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 2850.0,
+   "cap_avail_mw": 2634.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｇ",
+   "name": "南京都",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 2850.0,
+   "cap_avail_mw": 1136.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｈ",
+   "name": "新生駒",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 1425.0,
+   "cap_avail_mw": -127.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｉ",
+   "name": "紀の川",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 2850.0,
+   "cap_avail_mw": 2580.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｊ",
+   "name": "能勢",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 2137.0,
+   "cap_avail_mw": 1817.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｋ",
+   "name": "金剛",
+   "set": "more",
+   "voltage": "500/275",
+   "cap_operational_mw": 1425.0,
+   "cap_avail_mw": 340.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｌ",
+   "name": "猪名川",
+   "set": "more",
+   "voltage": "500/154",
+   "cap_operational_mw": 1068.0,
+   "cap_avail_mw": 946.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｍ",
+   "name": "西京都",
+   "set": "more",
+   "voltage": "500/154",
+   "cap_operational_mw": 1068.0,
+   "cap_avail_mw": 928.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｎ",
+   "name": "南京都",
+   "set": "more",
+   "voltage": "500/154",
+   "cap_operational_mw": 2137.0,
+   "cap_avail_mw": 2111.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｏ",
+   "name": "新生駒",
+   "set": "more",
+   "voltage": "500/154",
+   "cap_operational_mw": 2850.0,
+   "cap_avail_mw": 2511.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｐ",
+   "name": "信貴",
+   "set": "more",
+   "voltage": "500/154",
+   "cap_operational_mw": 2137.0,
+   "cap_avail_mw": 259.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｑ",
+   "name": "御坊",
+   "set": "more",
+   "voltage": "500/77",
+   "cap_operational_mw": 313.0,
+   "cap_avail_mw": -393.0
+  },
+  {
+   "external_id": "kansai_kikan_Ｒ",
+   "name": "奥多々良木",
+   "set": "more",
+   "voltage": "500/77",
+   "cap_operational_mw": 285.0,
+   "cap_avail_mw": 125.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＢ",
+   "name": "北大阪",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 570.0,
+   "cap_avail_mw": 510.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＣ",
+   "name": "淀川",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 427.0,
+   "cap_avail_mw": 393.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＤ",
+   "name": "西大阪",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 570.0,
+   "cap_avail_mw": 497.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＥ",
+   "name": "甲賀",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 855.0,
+   "cap_avail_mw": 235.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＦ",
+   "name": "湖南",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 855.0,
+   "cap_avail_mw": 669.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＧ",
+   "name": "栗東",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 855.0,
+   "cap_avail_mw": 827.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＨ",
+   "name": "洛南",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 427.0,
+   "cap_avail_mw": 412.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＩ",
+   "name": "枚方",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 427.0,
+   "cap_avail_mw": 420.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＪ",
+   "name": "新寝屋川",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 427.0,
+   "cap_avail_mw": 372.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＫ",
+   "name": "新生駒",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 427.0,
+   "cap_avail_mw": 422.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＬ",
+   "name": "東大阪",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 570.0,
+   "cap_avail_mw": 566.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＭ",
+   "name": "南河内",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 855.0,
+   "cap_avail_mw": 843.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＮ",
+   "name": "泉南",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 855.0,
+   "cap_avail_mw": 757.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＯ",
+   "name": "南大阪",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 855.0,
+   "cap_avail_mw": 773.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＰ",
+   "name": "泉北",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 427.0,
+   "cap_avail_mw": 403.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＱ",
+   "name": "北葛城",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 427.0,
+   "cap_avail_mw": 59.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＲ",
+   "name": "紀の川",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 313.0,
+   "cap_avail_mw": 45.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＳ",
+   "name": "海南港",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 313.0,
+   "cap_avail_mw": -16.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＴ",
+   "name": "多奈川",
+   "set": "more",
+   "voltage": "275/77",
+   "cap_operational_mw": 427.0,
+   "cap_avail_mw": -78.0
+  },
+  {
+   "external_id": "kansai_kikan_ＢＵ",
+   "name": "変電所",
+   "set": "more",
+   "voltage": "275/154",
+   "cap_operational_mw": null,
+   "cap_avail_mw": null
+  },
+  {
+   "external_id": "kansai_kikan_ＣＢ",
+   "name": "南大浜",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 570.0,
+   "cap_avail_mw": 556.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＣ",
+   "name": "酉島",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 199.0,
+   "cap_avail_mw": 62.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＤ",
+   "name": "神崎",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 318.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＥ",
+   "name": "御幣島",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 285.0,
+   "cap_avail_mw": 278.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＧ",
+   "name": "豊崎",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 285.0,
+   "cap_avail_mw": 225.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＨ",
+   "name": "西三国",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 712.0,
+   "cap_avail_mw": 624.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＩ",
+   "name": "新鳥飼",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 338.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＪ",
+   "name": "円町",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 297.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＫ",
+   "name": "島原",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 254.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＬ",
+   "name": "荒神口",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 272.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＭ",
+   "name": "横大路",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 855.0,
+   "cap_avail_mw": 806.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＮ",
+   "name": "新八幡",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 348.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＯ",
+   "name": "奈良",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 712.0,
+   "cap_avail_mw": 712.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＰ",
+   "name": "蹴上",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 326.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＱ",
+   "name": "古川橋",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 641.0,
+   "cap_avail_mw": 551.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＲ",
+   "name": "本町",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 570.0,
+   "cap_avail_mw": 509.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＳ",
+   "name": "野江",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 570.0,
+   "cap_avail_mw": 489.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＴ",
+   "name": "空心町",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 285.0,
+   "cap_avail_mw": 246.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＵ",
+   "name": "猪飼野",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 313.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＶ",
+   "name": "東意岐部",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 330.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＷ",
+   "name": "堺港",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 760.0,
+   "cap_avail_mw": 738.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＸ",
+   "name": "高島",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 142.0,
+   "cap_avail_mw": 40.0
+  },
+  {
+   "external_id": "kansai_kikan_ＣＹ",
+   "name": "高津",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 300.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＢ",
+   "name": "本田",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 223.0,
+   "cap_avail_mw": 134.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＣ",
+   "name": "矢田",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 317.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＤ",
+   "name": "八尾",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 570.0,
+   "cap_avail_mw": 531.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＥ",
+   "name": "中河内",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 332.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＦ",
+   "name": "長曽根",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 570.0,
+   "cap_avail_mw": 551.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＧ",
+   "name": "松屋",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 340.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＨ",
+   "name": "敷津",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 712.0,
+   "cap_avail_mw": 618.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＩ",
+   "name": "萩之茶屋",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 272.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＪ",
+   "name": "新宮",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 125.0,
+   "cap_avail_mw": 81.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＫ",
+   "name": "向日町",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 237.0,
+   "cap_avail_mw": 215.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＬ",
+   "name": "勢野",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 237.0,
+   "cap_avail_mw": 229.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＭ",
+   "name": "堺浜",
+   "set": "more",
+   "voltage": "154/77",
+   "cap_operational_mw": 356.0,
+   "cap_avail_mw": 347.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＯ",
+   "name": "生瀬",
+   "set": "more",
+   "voltage": "154/22",
+   "cap_operational_mw": 42.0,
+   "cap_avail_mw": 21.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＱ",
+   "name": "新曽根崎",
+   "set": "more",
+   "voltage": "154/22",
+   "cap_operational_mw": 522.0,
+   "cap_avail_mw": 433.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＲ",
+   "name": "本町",
+   "set": "more",
+   "voltage": "154/22",
+   "cap_operational_mw": 209.0,
+   "cap_avail_mw": 165.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＳ",
+   "name": "城見",
+   "set": "more",
+   "voltage": "154/22",
+   "cap_operational_mw": 47.0,
+   "cap_avail_mw": 34.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＵ",
+   "name": "テクノポート",
+   "set": "more",
+   "voltage": "154/22",
+   "cap_operational_mw": 171.0,
+   "cap_avail_mw": 169.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＶ",
+   "name": "城見",
+   "set": "more",
+   "voltage": "154/6.6",
+   "cap_operational_mw": 14.0,
+   "cap_avail_mw": 11.0
+  },
+  {
+   "external_id": "kansai_kikan_ＤＷ",
+   "name": "上本町",
+   "set": "more",
+   "voltage": "154/6.6",
+   "cap_operational_mw": 28.0,
+   "cap_avail_mw": 28.0
+  },
+  {
+   "external_id": "kansai_local_京GX",
+   "name": "アネックス三和",
+   "set": "less",
+   "voltage": "33/6.6",
+   "cap_operational_mw": 2.0,
+   "cap_avail_mw": 2.0
+  },
+  {
+   "external_id": "kansai_local_神EF",
+   "name": "有馬6",
+   "set": "less",
+   "voltage": "77/6.6",
+   "cap_operational_mw": 26.0,
+   "cap_avail_mw": 11.0
+  },
+  {
+   "external_id": "kansai_local_神EF",
+   "name": "有馬22",
+   "set": "less",
+   "voltage": "77/22",
+   "cap_operational_mw": 31.0,
+   "cap_avail_mw": 30.0
+  },
+  {
+   "external_id": "kansai_local_神HT",
+   "name": "尾崎",
+   "set": "less",
+   "voltage": "22/6.6",
+   "cap_operational_mw": 2.0,
+   "cap_avail_mw": 2.0
+  }
+ ],
+ "disappeared_records": [
+  {
+   "slug": "ksi-local-ea-4",
+   "external_id": "kansai_local_京EA",
+   "name": "玄妙",
+   "voltage": "33/6.6",
+   "cap_avail_mw": 2
+  },
+  {
+   "slug": "ksi-local-ct-4",
+   "external_id": "kansai_local_京CT",
+   "name": "美豆",
+   "voltage": "77/6.6",
+   "cap_avail_mw": 8
+  },
+  {
+   "slug": "ksi-local-gb-2",
+   "external_id": "kansai_local_南GB",
+   "name": "金剛南",
+   "voltage": "22/6.6",
+   "cap_avail_mw": 5
+  },
+  {
+   "slug": "ksi-local-ga-2",
+   "external_id": "kansai_local_南GA",
+   "name": "金剛中",
+   "voltage": "22/6.6",
+   "cap_avail_mw": 5
+  },
+  {
+   "slug": "ksi-kikan-l",
+   "external_id": "kansai_kikan_陸Ｌ",
+   "name": "万波",
+   "voltage": "154/6.6",
+   "cap_avail_mw": null
+  }
+ ]
+}

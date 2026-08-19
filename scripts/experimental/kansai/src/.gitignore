@@ -1,0 +1,7 @@
+# パーサが読むのは CSV のみ。PDF は版日付（「2026年8月17日時点」）の確認だけに使ったため
+# リポジトリには入れない（more 1.3MB / less 5.2MB。他社の src は 28K〜108K）。
+# 再取得は公表ページのリンクから:
+#   https://www.kansai-td.co.jp/consignment/disclosure/distribution-equipment/index.html
+#   → /interchange/takusou/pdf/154kv_{more,less}_space.pdf
+*.pdf
+_landing.html
