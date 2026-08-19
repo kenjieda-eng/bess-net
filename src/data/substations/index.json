@@ -1,18 +1,18 @@
 {
-  "total": 8263,
+  "total": 8341,
   "summary": {
-    "total": 8263,
-    "avail_positive": 6049,
-    "n1_ok": 744,
+    "total": 8341,
+    "avail_positive": 6431,
+    "n1_ok": 790,
     "with_coords": 1081,
-    "latest_last_updated": "2026-08-07T00:00:00.000Z",
+    "latest_last_updated": "2026-08-17T00:00:00.000Z",
     "by_voltage": {
-      "500kV系": 48,
-      "275kV系": 152,
-      "154kV系": 359,
-      "77kV系": 2039,
+      "500kV系": 65,
+      "275kV系": 172,
+      "154kV系": 400,
+      "77kV系": 2037,
       "その他": 1983,
-      "22kV系": 762,
+      "22kV系": 764,
       "110kV系": 568,
       "66kV系": 2290,
       "187kV系": 53,
@@ -22,7 +22,7 @@
       "中部電力パワーグリッド": 1107,
       "中国電力ネットワーク": 873,
       "北海道電力ネットワーク": 459,
-      "関西電力送配電": 1624,
+      "関西電力送配電": 1702,
       "九州電力送配電": 879,
       "沖縄電力": 151,
       "北陸電力送配電": 274,
@@ -34,7 +34,7 @@
       "chubu": 1107,
       "chugoku": 873,
       "hokkaido": 459,
-      "kansai": 1624,
+      "kansai": 1702,
       "kyushu": 879,
       "okinawa": 151,
       "hokuriku": 274,
@@ -85,7 +85,116 @@
       "高知県": 56,
       "徳島県": 55
     },
-    "highlights": []
+    "highlights": [
+      {
+        "id": "ksi-kikan-j-2",
+        "slug": "ksi-kikan-j-2",
+        "name": "能勢",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "500kV系",
+        "cap_avail_mw": 1817
+      },
+      {
+        "id": "ksi-kikan-d-3",
+        "slug": "ksi-kikan-d-3",
+        "name": "新綾部",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "500kV系",
+        "cap_avail_mw": 1108
+      },
+      {
+        "id": "ksi-kikan-m",
+        "slug": "ksi-kikan-m",
+        "name": "西京都",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "500kV系",
+        "cap_avail_mw": 928
+      },
+      {
+        "id": "ksi-kikan-ao",
+        "slug": "ksi-kikan-ao",
+        "name": "西神戸",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "275kV系",
+        "cap_avail_mw": 800
+      },
+      {
+        "id": "ksi-kikan-bo",
+        "slug": "ksi-kikan-bo",
+        "name": "南大阪",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "275kV系",
+        "cap_avail_mw": 773
+      },
+      {
+        "id": "ksi-kikan-aa",
+        "slug": "ksi-kikan-aa",
+        "name": "伊丹",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "275kV系",
+        "cap_avail_mw": 769
+      },
+      {
+        "id": "ksi-kikan-cw",
+        "slug": "ksi-kikan-cw",
+        "name": "堺港",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "154kV系",
+        "cap_avail_mw": 738
+      },
+      {
+        "id": "ksi-kikan-bf",
+        "slug": "ksi-kikan-bf",
+        "name": "湖南",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "275kV系",
+        "cap_avail_mw": 669
+      },
+      {
+        "id": "ksi-kikan-ac",
+        "slug": "ksi-kikan-ac",
+        "name": "淀川",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "275kV系",
+        "cap_avail_mw": 605
+      },
+      {
+        "id": "ksi-kikan-bl",
+        "slug": "ksi-kikan-bl",
+        "name": "東大阪",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "275kV系",
+        "cap_avail_mw": 566
+      },
+      {
+        "id": "ksi-kikan-df",
+        "slug": "ksi-kikan-df",
+        "name": "長曽根",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "154kV系",
+        "cap_avail_mw": 551
+      },
+      {
+        "id": "ksi-kikan-ab",
+        "slug": "ksi-kikan-ab",
+        "name": "北大阪",
+        "prefecture": null,
+        "operator": "関西電力送配電",
+        "voltage_class": "275kV系",
+        "cap_avail_mw": 510
+      }
+    ]
   },
   "area_top": {
     "中部": [
@@ -240,52 +349,52 @@
     ],
     "関西": [
       {
-        "slug": "ksi-local-h-3",
-        "name": "三休橋",
-        "cap": 85,
-        "kv": 77
+        "slug": "ksi-kikan-f-2",
+        "name": "西京都",
+        "cap": 2634,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-ay-5",
-        "name": "西院",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-i",
+        "name": "紀の川",
+        "cap": 2580,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bc-3",
-        "name": "北衣手",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-o",
+        "name": "新生駒",
+        "cap": 2511,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-be-2",
-        "name": "加美",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-a",
+        "name": "西播",
+        "cap": 2267,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bf-3",
-        "name": "津門",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-n",
+        "name": "南京都",
+        "cap": 2111,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bj-6",
-        "name": "芦屋",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-j-2",
+        "name": "能勢",
+        "cap": 1817,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bn-3",
-        "name": "島原",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-g-2",
+        "name": "南京都",
+        "cap": 1136,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bz-3",
-        "name": "有隣",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-d-3",
+        "name": "新綾部",
+        "cap": 1108,
+        "kv": 500
       }
     ],
     "九州": [
@@ -609,10 +718,10 @@
       "count": 459
     },
     "関西": {
-      "last_updated": "2026-04-01",
-      "fetched_at": "2026-05-07",
+      "last_updated": "2026-08-17",
+      "fetched_at": "2026-08-19",
       "last_updated_variants": 1,
-      "count": 1624
+      "count": 1702
     },
     "九州": {
       "last_updated": "2026-04-28",
@@ -653,7 +762,7 @@
   },
   "pref_meta": {
     "unknown": {
-      "count": 1797,
+      "count": 1880,
       "areas": [
         "関西",
         "北陸",
@@ -1054,52 +1163,52 @@
   "pref_top": {
     "unknown": [
       {
-        "slug": "ksi-local-h-3",
-        "name": "三休橋",
-        "cap": 85,
-        "kv": 77
+        "slug": "ksi-kikan-f-2",
+        "name": "西京都",
+        "cap": 2634,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-ay-5",
-        "name": "西院",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-i",
+        "name": "紀の川",
+        "cap": 2580,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bc-3",
-        "name": "北衣手",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-o",
+        "name": "新生駒",
+        "cap": 2511,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-be-2",
-        "name": "加美",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-a",
+        "name": "西播",
+        "cap": 2267,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bf-3",
-        "name": "津門",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-n",
+        "name": "南京都",
+        "cap": 2111,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bj-6",
-        "name": "芦屋",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-j-2",
+        "name": "能勢",
+        "cap": 1817,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bn-3",
-        "name": "島原",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-g-2",
+        "name": "南京都",
+        "cap": 1136,
+        "kv": 500
       },
       {
-        "slug": "ksi-local-bz-3",
-        "name": "有隣",
-        "cap": 28,
-        "kv": 77
+        "slug": "ksi-kikan-d-3",
+        "name": "新綾部",
+        "cap": 1108,
+        "kv": 500
       }
     ],
     "愛知県": [
@@ -3154,9 +3263,9 @@
     ]
   },
   "with_coords": 1081,
-  "without_coords": 7184,
+  "without_coords": 7267,
   "by_pref": {
-    "unknown": 1797,
+    "unknown": 1880,
     "愛知県": 407,
     "静岡県": 252,
     "三重県": 135,
@@ -3200,7 +3309,7 @@
     "徳島県": 55
   },
   "sizes_bytes": {
-    "unknown": 1135637,
+    "unknown": 1186666,
     "愛知県": 251241,
     "静岡県": 156431,
     "三重県": 83090,
@@ -3243,9 +3352,9 @@
     "高知県": 35821,
     "徳島県": 35667
   },
-  "total_size_kb": 5104,
-  "max_pref_size_kb": 1109,
+  "total_size_kb": 5153,
+  "max_pref_size_kb": 1159,
   "max_pref": "unknown",
   "pref_count": 42,
-  "updated_at": "2026-08-17T13:26:24.053Z"
+  "updated_at": "2026-08-19T12:50:06.025Z"
 }

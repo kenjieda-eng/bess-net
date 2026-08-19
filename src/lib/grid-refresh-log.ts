@@ -38,6 +38,35 @@ export type GridRefreshEntry = {
 
 export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
   {
+    importedOn: '2026-08-19',
+    areaJp: '関西',
+    areaSlug: 'kansai',
+    operator: '関西電力送配電',
+    publishedVersion: '2026年8月17日更新版（154kV以上・未満とも同一版）',
+    total: 1702,
+    decreased: 93,
+    zeroed: 10,
+    increased: 92,
+    changed: 619,
+    added: 83,
+    removed: 0,
+    topDecreases: [
+      { name: '内原', prefecture: '関西ローカル系', from: 11, to: 0 },
+      { name: '阪井', prefecture: '関西ローカル系', from: 14, to: 4 },
+      { name: '西院', prefecture: '関西ローカル系', from: 28, to: 19 },
+      { name: '本郷', prefecture: '関西ローカル系', from: 9, to: 3 },
+      { name: '高浜', prefecture: '関西ローカル系', from: 18, to: 12 },
+    ],
+    note: '基幹系統79件（500/275kV等）を新規収録し、公表128件の全容を収録しました（従来は49件のみ）。'
+      + '空容量は基幹が全行「運用容量−|予想潮流|」で算出（公表カラムに実値なし・PDF留意事項(2)）、'
+      + 'ローカルはカラム直読1,296件＋同式で算出279件。空容量の新規充足326件。'
+      + '篠山・山口・大池の3件は電圧階級が77kV系→22kV系に変更（公表側の記載変更・設備は同一）。'
+      + '高時川は公表No.の振り直し（滋D→滋ED・設備は同一・URLは維持）。'
+      + '玄妙・美豆・金剛南・金剛中・万波の5件は最新版に不掲載のため凍結（更新停止・ページ維持）。'
+      + 'N-1電制の未算定2件・出力制御の未算定14件は現値維持。',
+    report: 'reports/grid-kansai-dryrun-2026-08-17.md',
+  },
+  {
     importedOn: '2026-08-17',
     areaJp: '北海道',
     areaSlug: 'hokkaido',

@@ -6,15 +6,17 @@
   "tepco/tepco_csv_2607_normalized.json",
   "reports/grid-tohoku-dryrun-2026-08-16.json",
   "_common/n1_undetermined_chugoku.json",
-  "_common/n1_undetermined_hokkaido.json"
+  "_common/n1_undetermined_hokkaido.json",
+  "_common/n1_undetermined_kansai.json"
  ],
- "count": 270,
+ "count": 271,
  "count_by_area": {
   "北陸": 222,
   "東京": 13,
   "東北": 20,
-  "中国": 8,
-  "北海道": 7
+  "中国": 7,
+  "北海道": 7,
+  "関西": 2
  },
  "entries": [
   {
@@ -2600,16 +2602,6 @@
   {
    "operator": "中国電力ネットワーク",
    "area": "中国",
-   "slug": "egz-kikan-x",
-   "external_id": "energia_kikan_【留意事項】",
-   "name": "(名称非公開) energia_kikan_【留意事項】",
-   "prefecture": null,
-   "stored_n1_eligible": false,
-   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）"
-  },
-  {
-   "operator": "中国電力ネットワーク",
-   "area": "中国",
    "slug": "egz-shimane-s0001-3",
    "external_id": "energia_shimane_島⑥S1",
    "name": "西郷発電所",
@@ -2716,6 +2708,26 @@
    "prefecture": "北海道",
    "stored_n1_eligible": false,
    "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）"
+  },
+  {
+   "operator": "関西電力送配電",
+   "area": "関西",
+   "slug": "ksi-local-ec-6",
+   "external_id": "kansai_local_滋ＥC",
+   "name": "赤子山",
+   "prefecture": "関西ローカル系",
+   "stored_n1_eligible": false,
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）"
+  },
+  {
+   "operator": "関西電力送配電",
+   "area": "関西",
+   "slug": "ksi-local-d-7",
+   "external_id": "kansai_local_滋D",
+   "name": "高時川",
+   "prefecture": "関西ローカル系",
+   "stored_n1_eligible": false,
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）"
   }
  ]
 }

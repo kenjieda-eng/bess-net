@@ -142,6 +142,17 @@
    "external_id_prev": "hepco_map_forecast_tide_list_24_159_v2-6.6",
    "external_id_new": "hepco_map_forecast_tide_list_24_156_v2-6.6",
    "evidence": "名称・電圧面(66.0/6.6kV)・設備容量が一致。★北海道はNo.が系統内で一括シフトするため external_id は突合キーに使わない"
+  },
+  {
+   "area": "関西",
+   "operator": "関西電力送配電",
+   "slug": "ksi-local-d-7",
+   "name": "高時川",
+   "old_external_id": "kansai_local_滋D",
+   "new_external_id": "kansai_local_滋ED",
+   "changed_on": "2026-08-19",
+   "source_version": "2026-08-17",
+   "evidence": "名称・電圧面(22/6.6)・設備容量(2)・運用容量(2)・台数(1)の5項目一致。旧滋Dは既存の荒川(ksi-local-d-8, 33/6.6)が保持（baselineでは2件が滋Dを共有→公表側が高時川へ滋EDを新規付番して解消）"
   }
  ],
  "note": "No.の振り直しで external_id が変わった設備の履歴。slug は公開URLのため維持し、external_id のみ更新する（次回の突合を壊さないため）。microCMS の notes は詳細ページに表示されるフィールドのため、履歴はリポジトリ側で保持する。",
