@@ -1,0 +1,25 @@
+{
+ "count": 2,
+ "entries": [
+  {
+   "operator": "九州電力送配電",
+   "area": "九州",
+   "slug": "kyu-278",
+   "external_id": "kyuden_11_11(1)",
+   "name": "大鶴",
+   "prefecture": "佐賀県",
+   "stored_n1_eligible": false,
+   "source": "td_rHc7Jd0i.zip（2026-07-28更新）"
+  },
+  {
+   "operator": "九州電力送配電",
+   "area": "九州",
+   "slug": "kyu-500",
+   "external_id": "kyuden_16_45",
+   "name": "南関",
+   "prefecture": "熊本県",
+   "stored_n1_eligible": false,
+   "source": "td_rHc7Jd0i.zip（2026-07-28更新）"
+  }
+ ]
+}
