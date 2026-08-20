@@ -70,7 +70,17 @@ function nearRoleWord(unit: string, spans: [number, number][], word: string): bo
     for (const [s, e] of spans) {
       // 社名スパンと役割語スパンの隙間が近いこと（前後どちらでもよい）
       const gap = s >= j ? s - j : i >= e ? i - e : 0;
-      if (gap <= ROLE_PROXIMITY_CHARS) return true;
+      if (gap > ROLE_PROXIMITY_CHARS) continue;
+      // ★2026-08-20: 社名と役割語の**間に「製」がある場合は帰属しない**。
+      //   機器構成の列挙文「蓄電池セルはA製、PCSはB製を採用し、システム構築はCが担当」で
+      //   A/B にも proximity 内の「システム構築」が付く誤帰属を実測
+      //   （ota-johyo の CATL・tsunokobaru の GSユアサ）。「製」を挟む＝その社は
+      //   製造元として列挙されているだけで、後続の役割語は別社のもの。
+      //   正例（「TMEICがシステム構築を担当」「システム構築は千代田化工建設」）は
+      //   間に「製」が無いため影響しない。
+      const between = s >= j ? unit.slice(j, s) : i >= e ? unit.slice(e, i) : '';
+      if (between.includes('製')) continue;
+      return true;
     }
     from = i + 1;
   }

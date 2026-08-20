@@ -222,9 +222,30 @@ async function main(): Promise<void> {
     // 役割語と社名が同一文にあるものだけを採用し、役割ラベルを必ず伴う。
     // 保有側（relatedProjects）に既に出ている案件は重複させない。
     const ownedSlugs = allMatchedProjects.get(op.name) ?? new Set<string>();
+    // Op9追補(2026-08-20): 関与判定は aliases も試す（登録名の括弧注記は coreName で
+    // 落ちるため、「TMEIC製」「CATL製」等の別名表記が正式名では届かない。実測:
+    // NC銚子市春日町の本文「蓄電池システムはTMEIC製（電池セルはCATL製）」が不検出だった）。
+    // ★適用は関与（Op9）のみ。保有案件・news突合への alias 展開は掲載件数が変わるため
+    //   別途裁定（語境界・長さガードは operator-match の既存規則をそのまま通る）。
+    const aliasVariants = [
+      op.name,
+      ...String((op as { aliases?: string }).aliases || '')
+        .split(/[\n、,/]/)
+        .map((s) => s.trim())
+        .filter(Boolean),
+    ];
     const involvedAll = projectsVisible
       .filter((p) => !ownedSlugs.has(p.slug))
-      .map((p) => ({ p, roles: detectInvolvementRoles(p.name ?? '', (p as any).body, op.name) }))
+      .map((p) => ({
+        p,
+        roles: [
+          ...new Set(
+            aliasVariants.flatMap((nv) =>
+              detectInvolvementRoles(p.name ?? '', (p as any).body, nv)
+            )
+          ),
+        ],
+      }))
       .filter((x) => x.roles.length > 0);
     involvedCountByOp.set(op.name, involvedAll.length);
     const involvedProjects: InvolvedProjectRef[] = involvedAll
