@@ -153,6 +153,28 @@
    "changed_on": "2026-08-19",
    "source_version": "2026-08-17",
    "evidence": "名称・電圧面(22/6.6)・設備容量(2)・運用容量(2)・台数(1)の5項目一致。旧滋Dは既存の荒川(ksi-local-d-8, 33/6.6)が保持（baselineでは2件が滋Dを共有→公表側が高時川へ滋EDを新規付番して解消）"
+  },
+  {
+   "area": "九州",
+   "operator": "九州電力送配電",
+   "slug": "kyu-619",
+   "name": "大口",
+   "old_external_id": "kyuden_21_4",
+   "new_external_id": "kyuden_21_4(1)",
+   "changed_on": "2026-08-20",
+   "source_version": "2026-07-27/28",
+   "evidence": "バンク分割掲載（110/6・47MW・3台の既存が(1)側と全一致。(2)=110/22は新設バンク）"
+  },
+  {
+   "area": "九州",
+   "operator": "九州電力送配電",
+   "slug": "kyu-798",
+   "name": "ｱｲﾗﾝﾄﾞｼﾃｨ",
+   "old_external_id": "kyuden_27_11",
+   "new_external_id": "kyuden_27_11(1)",
+   "changed_on": "2026-08-20",
+   "source_version": "2026-07-27/28",
+   "evidence": "バンク分割掲載（66/6・57MW・2台の既存が(1)側と全一致。(2)=66/22は新設バンク）"
   }
  ],
  "note": "No.の振り直しで external_id が変わった設備の履歴。slug は公開URLのため維持し、external_id のみ更新する（次回の突合を壊さないため）。microCMS の notes は詳細ページに表示されるフィールドのため、履歴はリポジトリ側で保持する。",

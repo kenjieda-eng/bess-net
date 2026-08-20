@@ -78,6 +78,11 @@ ks = ROOT / "_common" / "n1_undetermined_kansai.json"
 if ks.exists():
     entries.extend(json.loads(ks.read_text(encoding="utf-8"))["entries"])
 
+# ── 九州（2026-07-27/28公表・版2種） ──
+ky = ROOT / "_common" / "n1_undetermined_kyushu.json"
+if ky.exists():
+    entries.extend(json.loads(ky.read_text(encoding="utf-8"))["entries"])
+
 by_area = {}
 for e in entries:
     by_area[e["area"]] = by_area.get(e["area"], 0) + 1
@@ -90,7 +95,8 @@ OUT.write_text(json.dumps({
                        "reports/grid-tohoku-dryrun-2026-08-16.json",
                        "_common/n1_undetermined_chugoku.json",
                        "_common/n1_undetermined_hokkaido.json",
-                       "_common/n1_undetermined_kansai.json"],
+                       "_common/n1_undetermined_kansai.json",
+                       "_common/n1_undetermined_kyushu.json"],
     "count": len(entries), "count_by_area": by_area, "entries": entries,
 }, ensure_ascii=False, indent=1), encoding="utf-8")
 print(f"出力 {OUT}: 計{len(entries)}件 {by_area}")

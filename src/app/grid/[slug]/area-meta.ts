@@ -85,7 +85,12 @@ export const AREA_META: Record<string, AreaMeta> = {
     slug: 'kyushu',
     areaJp: '九州',
     operator: '九州電力送配電',
+    // ★九州は ZIP の URL（/var/rev0/.../td_{ランダム英数字}.zip）が更新のたびに変わる。
+    //   サンプル直リンクはレコードの source_url（再取込で毎回更新）から出るため、ここには
+    //   ZIP を直書きしない。再取込時は必ず公表ページのアンカーから現行URLを実確認すること
+    //   （2026-08-20: 旧 td_cdujh4te.zip が 404 化し td_rHc7Jd0i.zip へ変わったのを実測）。
     landingUrl: 'https://www.kyuden.co.jp/td/service/wheeling/disclosure.html',
+    sourceFormat: 'CSV',
     description:
       '九州エリア（九州電力送配電）の変電所別系統空き容量・連系条件・出力制御情報を、福岡・佐賀・長崎・大分・熊本・宮崎・鹿児島の7県＋離島について一元化。31地区の変圧器CSV ZIPを集約。',
   },

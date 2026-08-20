@@ -38,6 +38,34 @@ export type GridRefreshEntry = {
 
 export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
   {
+    importedOn: '2026-08-20',
+    areaJp: '九州',
+    areaSlug: 'kyushu',
+    operator: '九州電力送配電',
+    publishedVersion: '2026年7月27日／28日更新版（地区により異なる・31地区）',
+    total: 883,
+    decreased: 55,
+    zeroed: 10,
+    increased: 25,
+    changed: 164,
+    added: 4,
+    removed: 0,
+    topDecreases: [
+      { name: '水俣', prefecture: '熊本県', from: 8, to: 1 },
+      { name: '飫肥', prefecture: '鹿児島県', from: 10, to: 4 },
+      { name: '大和', prefecture: '福岡県', from: 13, to: 8 },
+      { name: '京泊', prefecture: '長崎県', from: 5, to: 0 },
+      { name: '愛野', prefecture: '長崎県', from: 9, to: 4 },
+    ],
+    note: '大口・ｱｲﾗﾝﾄﾞｼﾃｨはバンク分割掲載に伴う公表No.の変更（設備は同一・URLは維持）で、'
+      + '分割で新設された第2バンク2件と宮人・枕崎第3バンクの計4件を新規収録。'
+      + '侍金は名称修正1件（公表側の訂正「待金」→「侍金」に追随）。'
+      + '志和池第3バンク・原田の2件は所在県を確定できるまで収録を保留。'
+      + 'N-1電制は可69件（0MW可20件を含む三値を維持）・可否の変化なし・未算定2件は現値維持。'
+      + '公表値がすべて空欄の実在変電所「南関」（熊本県）は従来どおり収録を維持。',
+    report: 'reports/grid-kyushu-dryrun-2026-08-19.md',
+  },
+  {
     importedOn: '2026-08-19',
     areaJp: '中部',
     areaSlug: 'chubu',

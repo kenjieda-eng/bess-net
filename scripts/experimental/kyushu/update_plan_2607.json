@@ -1,0 +1,8014 @@
+{
+ "generated_on": "2026-08-20",
+ "update_count": 879,
+ "value_changed": 164,
+ "create_count": 4,
+ "held": [
+  {
+   "external_id": "kyuden_22_13(3)",
+   "name": "志和池",
+   "reason": "志和池: GSIで宮崎県都城市（muni=45202）と確定したが、既存13(1)/(2)が鹿児島県で収録済み。同時修正は裁定外のため3件まとめて要判断（今回保留）"
+  },
+  {
+   "external_id": "kyuden_22_39",
+   "name": "原田",
+   "reason": "原田: 都城市（宮崎）と霧島市（鹿児島）の両方に実在し、地区マップPDFは画像ベースで判定不能＝県を確定できず保留（次回更新待ち）"
+  }
+ ],
+ "n1_undetermined_skipped": 2,
+ "oc_undetermined_skipped": 1,
+ "renumber": [
+  {
+   "slug": "kyu-619",
+   "name": "大口",
+   "old_external_id": "kyuden_21_4",
+   "new_external_id": "kyuden_21_4(1)",
+   "prefecture": "鹿児島県",
+   "voltage": "110/6"
+  },
+  {
+   "slug": "kyu-798",
+   "name": "ｱｲﾗﾝﾄﾞｼﾃｨ",
+   "old_external_id": "kyuden_27_11",
+   "new_external_id": "kyuden_27_11(1)",
+   "prefecture": "福岡県",
+   "voltage": "66/6"
+  }
+ ],
+ "renamed": [
+  {
+   "slug": "kyu-764",
+   "external_id": "kyuden_25_18",
+   "old_name": "待金",
+   "new_name": "侍金",
+   "prefecture": "鹿児島県",
+   "voltage": "22/6"
+  }
+ ],
+ "source_url_new": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip",
+ "updates": [
+  {
+   "slug": "kyu-1",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-2",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-3",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-4",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-5",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-6",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-7",
+   "patch": {
+    "capacity_total_mw": 38.0,
+    "cap_operational_mw": 38.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ]
+  },
+  {
+   "slug": "kyu-8",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-9",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-10",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-11",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-12",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-13",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-14",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-15",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-16",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-17",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-18",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-19",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-20",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-21",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-22",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-23",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-24",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-25",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-26",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-27",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-28",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-29",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-30",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-31",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-32",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-33",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-34",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-35",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-36",
+   "patch": {
+    "forecast_flow_mw": -109.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-37",
+   "patch": {
+    "forecast_flow_mw": -280.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-38",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-39",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-40",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-41",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-42",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-43",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-44",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-45",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-46",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-47",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-48",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-49",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-50",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-51",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-52",
+   "patch": {
+    "forecast_flow_mw": 914.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-53",
+   "patch": {
+    "forecast_flow_mw": -103.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-54",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-55",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-56",
+   "patch": {
+    "cap_avail_mw": 17.0,
+    "cap_avail_upper_mw": 17.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-57",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-58",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "cap_avail_upper_mw": 6.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-59",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-60",
+   "patch": {
+    "forecast_flow_mw": -295.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-61",
+   "patch": {
+    "forecast_flow_mw": -427.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-62",
+   "patch": {
+    "forecast_flow_mw": -434.0,
+    "n1_capacity_mw": 38.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw",
+    "n1_capacity_mw"
+   ]
+  },
+  {
+   "slug": "kyu-63",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-64",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-65",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-66",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-67",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-68",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-69",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-70",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-71",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-72",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-73",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-74",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-75",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-76",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-77",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-78",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-79",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-80",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-81",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-82",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-83",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-84",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-85",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-86",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-87",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-88",
+   "patch": {
+    "forecast_flow_mw": 1298.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-89",
+   "patch": {
+    "forecast_flow_mw": -224.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-90",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-91",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-92",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-93",
+   "patch": {
+    "cap_avail_mw": 12.0,
+    "cap_avail_upper_mw": 12.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-94",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-95",
+   "patch": {
+    "units": 3,
+    "capacity_total_mw": 66.0,
+    "cap_operational_mw": 66.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "units",
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ]
+  },
+  {
+   "slug": "kyu-96",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-97",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-98",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-99",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-100",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-101",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-102",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-103",
+   "patch": {
+    "forecast_flow_mw": -139.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-104",
+   "patch": {
+    "forecast_flow_mw": -1.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-105",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-106",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-107",
+   "patch": {
+    "forecast_flow_mw": -231.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-108",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "cap_avail_upper_mw": 5.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-109",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-110",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-111",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-112",
+   "patch": {
+    "cap_avail_mw": 14.0,
+    "cap_avail_upper_mw": 14.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-113",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-114",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-115",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-116",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-117",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-118",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-119",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-120",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-121",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-122",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-123",
+   "patch": {
+    "cap_avail_mw": 21.0,
+    "cap_avail_upper_mw": 21.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-124",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "cap_avail_upper_mw": 16.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-125",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-126",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-127",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-128",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-129",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-130",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-131",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-132",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-133",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-134",
+   "patch": {
+    "cap_avail_mw": 14.0,
+    "cap_avail_upper_mw": 14.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-135",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-136",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "cap_avail_upper_mw": 16.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-137",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "cap_avail_upper_mw": 9.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-138",
+   "patch": {
+    "cap_avail_mw": 3.0,
+    "cap_avail_upper_mw": 3.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-139",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-140",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "cap_avail_upper_mw": 11.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-141",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-142",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-143",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "cap_avail_upper_mw": 2.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-144",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-145",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "cap_avail_upper_mw": 5.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-146",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-147",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-148",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-149",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-150",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-151",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-152",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-153",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-154",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-155",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-156",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-157",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-158",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-159",
+   "patch": {
+    "capacity_total_mw": 613.0,
+    "cap_operational_mw": 459.0,
+    "forecast_flow_mw": -763.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-160",
+   "patch": {
+    "capacity_total_mw": 412.0,
+    "cap_operational_mw": 359.0,
+    "forecast_flow_mw": -130.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-161",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-162",
+   "patch": {
+    "forecast_flow_mw": -84.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-163",
+   "patch": {
+    "forecast_flow_mw": -141.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-164",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-165",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-166",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-167",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-168",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-169",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-170",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-171",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-172",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-173",
+   "patch": {
+    "forecast_flow_mw": -517.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-174",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-175",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-176",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-177",
+   "patch": {
+    "capacity_total_mw": 85.0,
+    "cap_operational_mw": 85.0,
+    "cap_avail_mw": 26.0,
+    "cap_avail_upper_mw": 26.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-178",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-179",
+   "patch": {
+    "forecast_flow_mw": -662.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-180",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-181",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-182",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-183",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-184",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-185",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-186",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-187",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-188",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-189",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-190",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-191",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-192",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-193",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-194",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-195",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-196",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-197",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-198",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-199",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-200",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-201",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-202",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-203",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-204",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-205",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-206",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-207",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-208",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-209",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-210",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-211",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-212",
+   "patch": {
+    "forecast_flow_mw": -429.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-213",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-214",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-215",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-216",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-217",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-218",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-219",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-220",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-221",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-222",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-223",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-224",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-225",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-226",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-227",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-228",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-229",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-230",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-231",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-232",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-233",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-234",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-235",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-236",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-237",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-238",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-239",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-240",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-241",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-242",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-243",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-244",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-245",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-246",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-247",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-248",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-249",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-250",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-251",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-252",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-253",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-254",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-255",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-256",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-257",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-258",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-259",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-260",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-261",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-262",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-263",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-264",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-265",
+   "patch": {
+    "forecast_flow_mw": -511.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-266",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-267",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-268",
+   "patch": {
+    "forecast_flow_mw": -330.0,
+    "n1_capacity_mw": 136.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw",
+    "n1_capacity_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-269",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-270",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-271",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-272",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-273",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-274",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-275",
+   "patch": {
+    "cap_avail_mw": 15.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-276",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-277",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-278",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-279",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-280",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-281",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-282",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-283",
+   "patch": {
+    "capacity_total_mw": 57.0,
+    "cap_operational_mw": 57.0,
+    "cap_avail_mw": 25.0,
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw",
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-284",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-285",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-286",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-287",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-288",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-289",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-290",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-291",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-292",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-293",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-294",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-295",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-296",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-297",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-298",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-299",
+   "patch": {
+    "forecast_flow_mw": -135.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-300",
+   "patch": {
+    "forecast_flow_mw": -292.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-301",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-302",
+   "patch": {
+    "forecast_flow_mw": -153.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-303",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-304",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-305",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-306",
+   "patch": {
+    "forecast_flow_mw": -367.0,
+    "n1_capacity_mw": 105.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw",
+    "n1_capacity_mw"
+   ]
+  },
+  {
+   "slug": "kyu-307",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-308",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-309",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-310",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-311",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-312",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-313",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-314",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-315",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-316",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-317",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-318",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-319",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-320",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-321",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-322",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-323",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-324",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-325",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-326",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-327",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-328",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-329",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-330",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-331",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-332",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-333",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-334",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-335",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-336",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-337",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-338",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-339",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-340",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-341",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-342",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-343",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-344",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-345",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-346",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-347",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-348",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-349",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-350",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-351",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-352",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-353",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-354",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-355",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-356",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-357",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-358",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-359",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-360",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-361",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-362",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-363",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-364",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-365",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-366",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-367",
+   "patch": {
+    "forecast_flow_mw": -53.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-368",
+   "patch": {
+    "forecast_flow_mw": -4.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-369",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-370",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-371",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-372",
+   "patch": {
+    "cap_avail_mw": 14.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-373",
+   "patch": {
+    "capacity_total_mw": 66.0,
+    "cap_operational_mw": 66.0,
+    "cap_avail_mw": 19.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-374",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-375",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-376",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-377",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-378",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-379",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-380",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-381",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-382",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-383",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-384",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-385",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-386",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-387",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-388",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-389",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-390",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-391",
+   "patch": {
+    "forecast_flow_mw": -289.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-392",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-393",
+   "patch": {
+    "cap_avail_mw": 16.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-394",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-395",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-396",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-397",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-398",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-399",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-400",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-401",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-402",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-403",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-404",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-405",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-406",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-407",
+   "patch": {
+    "cap_avail_mw": 7.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-408",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-409",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-410",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-411",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-412",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-413",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-414",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-415",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-416",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-417",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-418",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-419",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-420",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-421",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-422",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-423",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-424",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-425",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-426",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-427",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-428",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-429",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-430",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-431",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-432",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-433",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-434",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-435",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-436",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-437",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-438",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-439",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-440",
+   "patch": {
+    "forecast_flow_mw": 281.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-441",
+   "patch": {
+    "forecast_flow_mw": -383.0,
+    "n1_capacity_mw": 90.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw",
+    "n1_capacity_mw"
+   ]
+  },
+  {
+   "slug": "kyu-442",
+   "patch": {
+    "forecast_flow_mw": -56.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-443",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-444",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-445",
+   "patch": {
+    "forecast_flow_mw": -12.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-446",
+   "patch": {
+    "forecast_flow_mw": -75.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-447",
+   "patch": {
+    "forecast_flow_mw": -49.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-448",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-449",
+   "patch": {
+    "forecast_flow_mw": -171.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-450",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-451",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-452",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-453",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-454",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-455",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-456",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-457",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-458",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-459",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-460",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-461",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-462",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-463",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-464",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-465",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-466",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-467",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-468",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-469",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-470",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-471",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-472",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-473",
+   "patch": {
+    "cap_avail_mw": 18.0,
+    "cap_avail_upper_mw": 18.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-474",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-475",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-476",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-477",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-478",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-479",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-480",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-481",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-482",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-483",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-484",
+   "patch": {
+    "cap_avail_mw": 11.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-485",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-486",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-487",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-488",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-489",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-490",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-491",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-492",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-493",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-494",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-495",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-496",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-497",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-498",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-499",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-500",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-501",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-502",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-503",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-504",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-505",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-506",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-507",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-508",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-509",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-510",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-511",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-512",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-513",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-514",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-515",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-516",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-517",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-518",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-519",
+   "patch": {
+    "forecast_flow_mw": 372.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-520",
+   "patch": {
+    "forecast_flow_mw": -203.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-521",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-522",
+   "patch": {
+    "forecast_flow_mw": -89.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-523",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-524",
+   "patch": {
+    "forecast_flow_mw": -19.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-525",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "cap_avail_upper_mw": 10.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-526",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-527",
+   "patch": {
+    "forecast_flow_mw": -106.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-528",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-529",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-530",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-531",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-532",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-533",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-534",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-535",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-536",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-537",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-538",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-539",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-540",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-541",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-542",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-543",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-544",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-545",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-546",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-547",
+   "patch": {
+    "cap_avail_upper_mw": 0.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-548",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-549",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-550",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-551",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-552",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-553",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-554",
+   "patch": {
+    "forecast_flow_mw": -155.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-555",
+   "patch": {
+    "forecast_flow_mw": -402.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-556",
+   "patch": {
+    "forecast_flow_mw": -308.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-557",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-558",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-559",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-560",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-561",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-562",
+   "patch": {
+    "forecast_flow_mw": -521.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-563",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-564",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-565",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-566",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-567",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-568",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-569",
+   "patch": {
+    "forecast_flow_mw": -19.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-570",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-571",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-572",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-573",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-574",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-575",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-576",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-577",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-578",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-579",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-580",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-581",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-582",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-583",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-584",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-585",
+   "patch": {
+    "forecast_flow_mw": -400.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-586",
+   "patch": {
+    "forecast_flow_mw": -640.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-587",
+   "patch": {
+    "forecast_flow_mw": -342.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-588",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-589",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-590",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-591",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-592",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-593",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-594",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-595",
+   "patch": {
+    "capacity_total_mw": 57.0,
+    "cap_operational_mw": 57.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ]
+  },
+  {
+   "slug": "kyu-596",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-597",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-598",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-599",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-600",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-601",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-602",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-603",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-604",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-605",
+   "patch": {
+    "capacity_total_mw": 66.0,
+    "cap_operational_mw": 66.0,
+    "cap_avail_mw": 19.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw",
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-606",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-607",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-608",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-609",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-610",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-611",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-612",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-613",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-614",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-615",
+   "patch": {
+    "forecast_flow_mw": -794.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-616",
+   "patch": {
+    "forecast_flow_mw": -367.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-617",
+   "patch": {
+    "forecast_flow_mw": -104.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-618",
+   "patch": {
+    "forecast_flow_mw": -508.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-620",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-621",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-622",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-623",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-624",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-625",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-626",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-627",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-628",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-629",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-630",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-631",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-632",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-633",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-634",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-635",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-636",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-637",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-638",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-639",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-640",
+   "patch": {
+    "forecast_flow_mw": -566.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-641",
+   "patch": {
+    "forecast_flow_mw": -302.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-642",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-643",
+   "patch": {
+    "forecast_flow_mw": -697.0,
+    "n1_capacity_mw": 0.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw",
+    "n1_capacity_mw"
+   ]
+  },
+  {
+   "slug": "kyu-644",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-645",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-646",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-647",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-648",
+   "patch": {
+    "forecast_flow_mw": -14.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-649",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-650",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-651",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-652",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-653",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-654",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-655",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-656",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-657",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-658",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-659",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-660",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-661",
+   "patch": {
+    "cap_avail_mw": 7.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-662",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-663",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-664",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-665",
+   "patch": {
+    "cap_avail_mw": 4.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-666",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-667",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-668",
+   "patch": {
+    "cap_avail_mw": 13.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-669",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-670",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-671",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-672",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-673",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-674",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-675",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-676",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-677",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-678",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-679",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-680",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-681",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-682",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-683",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-684",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-685",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-686",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-687",
+   "patch": {
+    "forecast_flow_mw": -222.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-688",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-689",
+   "patch": {
+    "forecast_flow_mw": -506.0,
+    "n1_capacity_mw": 43.0,
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw",
+    "n1_capacity_mw",
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-690",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-691",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-692",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-693",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-694",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-695",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-696",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-697",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-698",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-699",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-700",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-701",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-702",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-703",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-704",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-705",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-706",
+   "patch": {
+    "cap_avail_mw": 2.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-707",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-708",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-709",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-710",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-711",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-712",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-713",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-714",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-715",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-716",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-717",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-718",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-719",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-720",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-721",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-722",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-723",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-724",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-725",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-726",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-727",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-728",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-729",
+   "patch": {
+    "oc_possibility": [
+     "有り"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "oc_possibility"
+   ]
+  },
+  {
+   "slug": "kyu-730",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-731",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-732",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-733",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-734",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-735",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-736",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-737",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-738",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-739",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-740",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-741",
+   "patch": {
+    "forecast_flow_mw": -918.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-742",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-743",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-744",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-745",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-746",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-747",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-748",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-749",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-750",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-751",
+   "patch": {
+    "cap_avail_mw": 1.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-752",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-753",
+   "patch": {
+    "cap_avail_mw": 0.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-754",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-755",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-756",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-757",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-758",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-759",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-760",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-761",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-762",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-763",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-764",
+   "patch": {
+    "name": "侍金",
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "name"
+   ]
+  },
+  {
+   "slug": "kyu-765",
+   "patch": {
+    "forecast_flow_mw": -518.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-766",
+   "patch": {
+    "forecast_flow_mw": 5.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-767",
+   "patch": {
+    "forecast_flow_mw": -208.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-768",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-769",
+   "patch": {
+    "cap_avail_mw": 12.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-770",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-771",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-772",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-773",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-774",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-775",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-776",
+   "patch": {
+    "cap_avail_mw": 9.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-777",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-778",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-779",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-780",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-781",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-782",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-783",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-784",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-785",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-786",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-787",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-788",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-789",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-790",
+   "patch": {
+    "cap_avail_mw": 6.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-791",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-792",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-793",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-794",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-795",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-796",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-797",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-799",
+   "patch": {
+    "forecast_flow_mw": -858.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-800",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-801",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-802",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-803",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-804",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-805",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-806",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-807",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-808",
+   "patch": {
+    "cap_avail_mw": 5.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-809",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-810",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-811",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-812",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-813",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-814",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-815",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-816",
+   "patch": {
+    "cap_avail_mw": 10.0,
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw"
+   ]
+  },
+  {
+   "slug": "kyu-817",
+   "patch": {
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-818",
+   "patch": {
+    "forecast_flow_mw": 44.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-819",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-820",
+   "patch": {
+    "forecast_flow_mw": -5.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-821",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-822",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-823",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-824",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-825",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-826",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-827",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-828",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-829",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-830",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-831",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-832",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-833",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-834",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-835",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-836",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-837",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-838",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-839",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-840",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-841",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-842",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-843",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-844",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-845",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-846",
+   "patch": {
+    "cap_avail_mw": 8.0,
+    "cap_avail_upper_mw": 8.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-847",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-848",
+   "patch": {
+    "forecast_flow_mw": -28.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "forecast_flow_mw"
+   ]
+  },
+  {
+   "slug": "kyu-849",
+   "patch": {
+    "cap_avail_mw": 26.0,
+    "cap_avail_upper_mw": 26.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-850",
+   "patch": {
+    "cap_avail_mw": 15.0,
+    "cap_avail_upper_mw": 15.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-851",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-852",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-853",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-854",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-855",
+   "patch": {
+    "cap_avail_mw": 27.0,
+    "cap_avail_upper_mw": 27.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "cap_avail_mw",
+    "cap_avail_upper_mw"
+   ]
+  },
+  {
+   "slug": "kyu-856",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-857",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-858",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-859",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-860",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-861",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-862",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-863",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-864",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-865",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-866",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-867",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-868",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-869",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-870",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-871",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-872",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-873",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-874",
+   "patch": {
+    "capacity_total_mw": 69.0,
+    "cap_operational_mw": 69.0,
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ]
+  },
+  {
+   "slug": "kyu-875",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-876",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-877",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-878",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-879",
+   "patch": {
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": []
+  },
+  {
+   "slug": "kyu-619",
+   "patch": {
+    "external_id": "kyuden_21_4(1)",
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "external_id"
+   ]
+  },
+  {
+   "slug": "kyu-798",
+   "patch": {
+    "external_id": "kyuden_27_11(1)",
+    "last_updated": "2026-07-27T00:00:00.000Z",
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip"
+   },
+   "changed": [
+    "external_id"
+   ]
+  }
+ ],
+ "creates": [
+  {
+   "slug": "kyu-880",
+   "external_id": "kyuden_21_23",
+   "name": "宮人",
+   "prefecture": "鹿児島県",
+   "evidence": "GSI地名検索: 伊佐市「大口宮人」「宮人」muni=46224",
+   "content": {
+    "name": "宮人",
+    "slug": "kyu-880",
+    "operator": [
+     "九州電力送配電"
+    ],
+    "area": [
+     "九州"
+    ],
+    "prefecture": "鹿児島県",
+    "voltage_primary_kv": 22.0,
+    "voltage_secondary_kv": 6.0,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9.0,
+    "cap_operational_mw": 9.0,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0.0,
+    "cap_avail_upper_mw": 0.0,
+    "n1_eligible": false,
+    "external_id": "kyuden_21_23",
+    "non_firm_eligible": false,
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_undetermined_as_false": false
+  },
+  {
+   "slug": "kyu-881",
+   "external_id": "kyuden_21_4(2)",
+   "name": "大口",
+   "prefecture": "鹿児島県",
+   "evidence": "同名既存 kyu-619 大口（鹿児島県）から継承",
+   "content": {
+    "name": "大口",
+    "slug": "kyu-881",
+    "operator": [
+     "九州電力送配電"
+    ],
+    "area": [
+     "九州"
+    ],
+    "prefecture": "鹿児島県",
+    "voltage_primary_kv": 110.0,
+    "voltage_secondary_kv": 22.0,
+    "voltage_class": [
+     "110kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19.0,
+    "cap_operational_mw": 19.0,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 10.0,
+    "cap_avail_upper_mw": 0.0,
+    "n1_eligible": false,
+    "external_id": "kyuden_21_4(2)",
+    "non_firm_eligible": false,
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_undetermined_as_false": false
+  },
+  {
+   "slug": "kyu-882",
+   "external_id": "kyuden_23_20(3)",
+   "name": "枕崎",
+   "prefecture": "鹿児島県",
+   "evidence": "同名既存 kyu-708/709 枕崎（鹿児島県）から継承",
+   "content": {
+    "name": "枕崎",
+    "slug": "kyu-882",
+    "operator": [
+     "九州電力送配電"
+    ],
+    "area": [
+     "九州"
+    ],
+    "prefecture": "鹿児島県",
+    "voltage_primary_kv": 66.0,
+    "voltage_secondary_kv": 22.0,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0.0,
+    "cap_avail_upper_mw": 0.0,
+    "n1_eligible": false,
+    "external_id": "kyuden_23_20(3)",
+    "non_firm_eligible": false,
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-28T00:00:00.000Z",
+    "oc_possibility": [
+     "有り"
+    ]
+   },
+   "n1_undetermined_as_false": false
+  },
+  {
+   "slug": "kyu-883",
+   "external_id": "kyuden_27_11(2)",
+   "name": "ｱｲﾗﾝﾄﾞｼﾃｨ",
+   "prefecture": "福岡県",
+   "evidence": "同名既存 kyu-798 ｱｲﾗﾝﾄﾞｼﾃｨ（福岡県）から継承",
+   "content": {
+    "name": "ｱｲﾗﾝﾄﾞｼﾃｨ",
+    "slug": "kyu-883",
+    "operator": [
+     "九州電力送配電"
+    ],
+    "area": [
+     "九州"
+    ],
+    "prefecture": "福岡県",
+    "voltage_primary_kv": 66.0,
+    "voltage_secondary_kv": 22.0,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19.0,
+    "cap_operational_mw": 19.0,
+    "op_constraint": "熱容量",
+    "forecast_flow_mw": 0.0,
+    "n1_eligible": false,
+    "external_id": "kyuden_27_11(2)",
+    "non_firm_eligible": false,
+    "source_url": "https://www.kyuden.co.jp/var/rev0/0900/4948/td_rHc7Jd0i.zip",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-07-27T00:00:00.000Z"
+   },
+   "n1_undetermined_as_false": false
+  }
+ ]
+}
