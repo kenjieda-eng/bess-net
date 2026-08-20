@@ -19,9 +19,13 @@ const SORT_OPTIONS: { key: SortKey; label: string }[] = [
   { key: 'foundedAsc', label: '設立年（旧→新）' },
 ];
 
-type Props = { items: Operator[] };
+type Props = {
+  items: Operator[];
+  /** Op6(2026-08-20): CSV出力用の 掲載案件数/関与件数（precompute の category-index 由来） */
+  counts?: Record<string, { projects: number; involved: number }>;
+};
 
-export default function OperatorBrowser({ items }: Props) {
+export default function OperatorBrowser({ items, counts }: Props) {
   // 落とし穴 #92 回避: useSearchParams は使わない（Suspense fallback で初期 SSR が
   // 描画されず SEO 致命傷）。URL 状態は window.location + history.replaceState で扱う
   // （CLAUDE.md §3-1 の OK パターン）。初期 state はデフォルト = SSR は全件描画 → SEO 維持。
@@ -118,6 +122,43 @@ export default function OperatorBrowser({ items }: Props) {
     []
   );
 
+  // Op6(2026-08-20): 絞り込み結果のCSVダウンロード（クライアント側生成・表示中の結果のみ）。
+  // - 列 = 社名/カテゴリ/掲載案件数/関与件数/詳細URL（個人情報なし）
+  // - 1行目に出典＋取得日時（全件CSVは提供しない＝絞り込み結果に限定する設計判断のまま）
+  // - UTF-8 BOM 付き（Excel の文字化け回避）
+  const onDownloadCsv = useCallback(() => {
+    const esc = (v: string) => `"${(v ?? '').replace(/"/g, '""')}"`;
+    const now = new Date();
+    const pad = (n: number) => String(n).padStart(2, '0');
+    const stamp = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    const lines = [
+      `出典: 蓄電所ネット bess-net.jp（取得日時: ${stamp}）`,
+      '社名,カテゴリ,掲載案件数,関与件数,詳細URL',
+      ...filtered.map((o) => {
+        const c = counts?.[o.slug];
+        return [
+          esc(o.name),
+          esc((o.category || []).join('・')),
+          String(c?.projects ?? 0),
+          String(c?.involved ?? 0),
+          `https://bess-net.jp/operators/${o.slug}`,
+        ].join(',');
+      }),
+    ];
+    // UTF-8 BOM: Excel は BOM 無しUTF-8を cp932 と誤判定して文字化けする
+    const blob = new Blob(['﻿' + lines.join('\r\n') + '\r\n'], {
+      type: 'text/csv;charset=utf-8',
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `operators-bess-net-${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, [filtered, counts]);
+
   return (
     <div className="op-browser">
       {/* コントロール */}
@@ -177,11 +218,23 @@ export default function OperatorBrowser({ items }: Props) {
         })}
       </nav>
 
-      {/* 結果サマリ */}
-      <p className="op-result-summary">
-        {filtered.length === 0
-          ? '該当する事業者がありません。条件を変更してください。'
-          : `${filtered.length}件中 ${Math.min(visible, filtered.length)}件を表示`}
+      {/* 結果サマリ＋CSV（Op6） */}
+      <p className="op-result-summary" style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+        <span>
+          {filtered.length === 0
+            ? '該当する事業者がありません。条件を変更してください。'
+            : `${filtered.length}件中 ${Math.min(visible, filtered.length)}件を表示`}
+        </span>
+        {filtered.length > 0 && (
+          <button
+            type="button"
+            className="op-more-button"
+            style={{ padding: '4px 12px', fontSize: 13 }}
+            onClick={onDownloadCsv}
+          >
+            この絞り込み結果をCSVダウンロード（{filtered.length}社）
+          </button>
+        )}
       </p>
 
       {/* グリッド */}

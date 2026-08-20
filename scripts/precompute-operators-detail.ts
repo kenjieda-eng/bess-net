@@ -289,6 +289,25 @@ async function main(): Promise<void> {
   }
   console.log(`  → ${Object.keys(index).length} entries (${Date.now() - t1}ms)`);
 
+  // Op3(2026-08-20): 同カテゴリの他事業者を「掲載案件数降順 → 五十音・最大5社」に。
+  // ★必ずループ後の第2パスで行う: allMatchedProjects はループ内で逐次 set されるため、
+  //   ループ中に参照すると後続社の件数が 0 扱いになり並びが実行順に依存する。
+  for (const op of operators) {
+    const cat0 = (op.category && op.category[0]) || '';
+    index[op.slug].sameCategoryOperators = cat0
+      ? operators
+          .filter((o) => o.slug !== op.slug && (o.category ?? []).includes(cat0))
+          .sort(
+            (a, b) =>
+              (allMatchedProjects.get(b.name)?.size ?? 0) -
+                (allMatchedProjects.get(a.name)?.size ?? 0) ||
+              a.name.localeCompare(b.name, 'ja')
+          )
+          .slice(0, 5)
+          .map((o) => ({ id: o.id, slug: o.slug, name: o.name, description: o.description }))
+      : [];
+  }
+
   const outDir = path.join(process.cwd(), 'src', 'lib', 'generated');
   fs.mkdirSync(outDir, { recursive: true });
 
@@ -301,6 +320,9 @@ async function main(): Promise<void> {
       slug: op.slug,
       name: op.name,
       category: op.category ?? [],
+      // Op4④(2026-08-20): 都道府県別一覧の生成元。原値をそのまま持つ
+      //（「海外」「情報非公開」等の非県値も入る＝ページ生成側で実在47都道府県のみに絞る）
+      prefecture: op.prefecture ?? null,
       projects: allMatchedProjects.get(op.name)?.size ?? 0,
       involved: involvedCountByOp.get(op.name) ?? 0,
     };

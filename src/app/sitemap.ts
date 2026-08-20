@@ -11,6 +11,8 @@ import {
 } from '@/lib/explainer-utils';
 import { GLOSSARY_301_SOURCE_SLUGS, GLOSSARY_DISPLAY_EXCLUDED_SLUGS } from '@/lib/glossary-301';
 import { isListExcludedProject } from '@/lib/projects-excluded';
+import { REAL_PREFECTURES } from '@/lib/grid-prefecture';
+import operatorCategoryIndex from '@/lib/generated/operators-category-index.json';
 import { POLICY_DETAIL_SLUGS } from '@/lib/policy-utils';
 import { isLvInvestExplainer } from '@/lib/lv-invest';
 import {
@@ -42,6 +44,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Op4①②(2026-08-12): 事業者カテゴリ別一覧
     { url: `${siteConfig.url}/operators/makers`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${siteConfig.url}/operators/aggregators`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    // Op4③④(2026-08-20): EPC一覧＋都道府県別（県別ページは下の operatorPrefUrls で動的列挙）
+    { url: `${siteConfig.url}/operators/epc`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${siteConfig.url}/operators/pref`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${siteConfig.url}/links`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${siteConfig.url}/grid`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${siteConfig.url}/grid/tohoku`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
@@ -389,6 +394,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
+
+  // Op4④(2026-08-20): 都道府県別 事業者一覧（実データのある実在都道府県のみ・実カウント）
+  const operatorPrefUrls: MetadataRoute.Sitemap = [...new Set(
+    (operatorCategoryIndex as Array<{ prefecture: string | null }>)
+      .map((o) => o.prefecture)
+      .filter((p): p is string => Boolean(p) && REAL_PREFECTURES.has(p as string))
+  )].map((pref) => ({
+    url: `${siteConfig.url}/operators/pref/${pref}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }));
   const linkUrls: MetadataRoute.Sitemap = links.map((l) => ({
     url: `${siteConfig.url}/links/${l.slug}`,
     lastModified: now,
@@ -422,6 +439,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...subsidyUrls,
     ...projectUrls,
     ...operatorUrls,
+    ...operatorPrefUrls,
     ...linkUrls,
     ...substationUrls,
     ...prefectureUrls,

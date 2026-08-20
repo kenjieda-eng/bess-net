@@ -62,6 +62,8 @@ export default function MakersPage() {
           <p className="grid-source-note" style={{ marginTop: 16 }}>
             <Link href="/operators/aggregators">蓄電池アグリゲーター一覧</Link>
             {' / '}
+            <Link href="/operators/epc">蓄電池EPC一覧</Link>
+            {' / '}
             <Link href="/operators">← 事業者ナビ（全{(categoryIndex as unknown[]).length}社・カテゴリ絞り込み）</Link>
           </p>
           <p className="grid-source-note">

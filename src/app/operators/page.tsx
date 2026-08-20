@@ -8,6 +8,7 @@ import { getAllOperators, getOperatorList } from '@/lib/microcms';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import OperatorBrowser from './OperatorBrowser';
+import categoryIndex from '@/lib/generated/operators-category-index.json';
 
 export const revalidate = 600;
 
@@ -79,6 +80,10 @@ export default async function OperatorListPage() {
             <Link href="/operators/makers">系統用蓄電池メーカー一覧</Link>
             {' ・ '}
             <Link href="/operators/aggregators">蓄電池アグリゲーター一覧</Link>
+            {' ・ '}
+            <Link href="/operators/epc">蓄電池EPC一覧</Link>
+            {' ・ '}
+            <Link href="/operators/pref">都道府県別</Link>
           </p>
 
           {items.length === 0 ? (
@@ -88,7 +93,14 @@ export default async function OperatorListPage() {
           ) : (
             // 落とし穴 #92 対応: OperatorBrowser は useSearchParams を使わないため
             // Suspense 不要。全 operator を SSR 描画した上に client-side フィルタを重ねる（SEO維持）。
-            <OperatorBrowser items={items} />
+            <OperatorBrowser
+              items={items}
+              counts={Object.fromEntries(
+                (categoryIndex as Array<{ slug: string; projects: number; involved: number }>).map(
+                  (o) => [o.slug, { projects: o.projects, involved: o.involved }]
+                )
+              )}
+            />
           )}
 
           <section style={{
