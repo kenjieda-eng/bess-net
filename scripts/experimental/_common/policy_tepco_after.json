@@ -1,0 +1,48 @@
+{
+ "before": {
+  "id": "jq9zjxzn_xah",
+  "createdAt": "2026-05-11T12:32:51.125Z",
+  "updatedAt": "2026-08-14T02:51:18.181Z",
+  "publishedAt": "2026-05-11T12:32:51.125Z",
+  "revisedAt": "2026-08-14T02:51:18.181Z",
+  "title": "東京電力PG 系統情報公開 一時停止（再開予定）",
+  "slug": "tepco-pg-grid-info-suspension-2026-05",
+  "eventDate": "2026-05-01T00:00:00.000Z",
+  "eventType": [
+   "公表"
+  ],
+  "issuer": "東京電力パワーグリッド",
+  "description": "東京電力パワーグリッドが系統情報（変電所別空き容量等）の公開を一時停止し、再開準備中。蓄電所事業者の関東エリア用地選定に影響する事案で、業界の代替アクセス方法の確立が急務。",
+  "sourceUrl": "https://www.tepco.co.jp/pg/",
+  "status": [
+   "終了"
+  ],
+  "category": [
+   "公表",
+   "重要会議"
+  ]
+ },
+ "after": {
+  "id": "jq9zjxzn_xah",
+  "createdAt": "2026-05-11T12:32:51.125Z",
+  "updatedAt": "2026-08-21T07:35:24.382Z",
+  "publishedAt": "2026-05-11T12:32:51.125Z",
+  "revisedAt": "2026-08-21T07:35:24.382Z",
+  "title": "東京電力PG 系統情報公開 一時停止 → 6月2日再開",
+  "slug": "tepco-pg-grid-info-suspension-2026-05",
+  "eventDate": "2026-05-01T00:00:00.000Z",
+  "eventType": [
+   "公表"
+  ],
+  "issuer": "東京電力パワーグリッド",
+  "description": "東京電力パワーグリッドが系統情報（変電所別空き容量等）の公開を2026年2月2日に一時停止し、データメンテナンスを経て2026年6月2日に公開を再開。蓄電所事業者の関東エリア用地選定に影響した事案で、停止期間中は事前相談等での確認が代替手段だった。",
+  "sourceUrl": "https://www.tepco.co.jp/pg/",
+  "status": [
+   "終了"
+  ],
+  "category": [
+   "公表",
+   "重要会議"
+  ]
+ }
+}
