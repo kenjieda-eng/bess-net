@@ -21,6 +21,7 @@ import {
   buildEntityIndex,
   resolveStructuredEntities,
   findStructuredFalseNegatives,
+  normalizeEntityName,
 } from '../src/lib/operator-match';
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '../src/lib/projects-excluded';
 // 表示対象外のニュース（off-topic PR / 主題ゲート）は関連に含めない＝404リンクを作らない（2026-08-08 実測42件）
@@ -146,12 +147,60 @@ async function main(): Promise<void> {
       structProjectsByOp.set(name, set);
     }
   }
+  // ---- aliases（2026-08-21・A-1差分便 §2）----
+  // §2-1 news 突合へは展開する（ユウ裁定・承認済み）: 言及の検出であり誤検出の影響は関連記事の増減にとどまる。
+  // §2-2 保有案件（projects の事業者欄）への展開は保留＝ドライランのみ（誰が保有しているかは事業判断に直結）。
+  const aliasListOf = (op: { aliases?: string }) =>
+    String(op.aliases || '').split(/[\n、,/]/).map((s) => s.trim()).filter(Boolean);
+  const aliasesByName = new Map<string, string[]>(operators.map((o) => [o.name, aliasListOf(o as { aliases?: string })]));
+  // news 用の構造化索引: 正式名＋aliases を正規化キーに（projects 用 entityIndex には混ぜない）
+  const newsEntityIndex = new Map<string, string[]>(entityIndex);
+  for (const o of operators) {
+    for (const a of aliasesByName.get(o.name) ?? []) {
+      const k = normalizeEntityName(a);
+      if (k.length < 2) continue;
+      const arr = newsEntityIndex.get(k) ?? [];
+      if (!arr.includes(o.name)) arr.push(o.name);
+      newsEntityIndex.set(k, arr);
+    }
+  }
+  // §2-2 ドライラン用: projects 構造化索引に aliases を足した版（適用はしない・差分の計測のみ）
+  const projectsEntityIndexAlias = new Map<string, string[]>(entityIndex);
+  for (const o of operators) {
+    for (const a of aliasesByName.get(o.name) ?? []) {
+      const k = normalizeEntityName(a);
+      if (k.length < 2) continue;
+      const arr = projectsEntityIndexAlias.get(k) ?? [];
+      if (!arr.includes(o.name)) arr.push(o.name);
+      projectsEntityIndexAlias.set(k, arr);
+    }
+  }
+  const structProjectsByOpAlias = new Map<string, Set<string>>();
+  for (const p of projectsVisible) {
+    for (const name of resolveStructuredEntities(p.operator ?? '', projectsEntityIndexAlias)) {
+      const set = structProjectsByOpAlias.get(name) ?? new Set<string>();
+      set.add(p.slug);
+      structProjectsByOpAlias.set(name, set);
+    }
+  }
+  const newsAliasAdded = new Map<string, string[]>();       // op.name → alias 経由でのみ増えた news slug
+  const projectsAliasDryRun: Array<{ slug: string; name: string; before: number; after: number;
+    added: Array<{ project: string; reason: string }> }> = [];
+
   const structNewsByOp = new Map<string, Set<string>>(); // operator.name → news slug
   for (const n of news) {
-    for (const name of resolveStructuredEntities(n.sourceName, entityIndex)) {
+    // §2-1: sourceName の構造化解決は aliases 込みの索引で（差分計測のため alias なし解決も取る）
+    const withAlias = resolveStructuredEntities(n.sourceName, newsEntityIndex);
+    const without = new Set(resolveStructuredEntities(n.sourceName, entityIndex));
+    for (const name of withAlias) {
       const set = structNewsByOp.get(name) ?? new Set<string>();
       set.add(n.slug);
       structNewsByOp.set(name, set);
+      if (!without.has(name)) {
+        const arr = newsAliasAdded.get(name) ?? [];
+        arr.push(n.slug);
+        newsAliasAdded.set(name, arr);
+      }
     }
   }
   const newsBySlug = new Map(news.map((n) => [n.slug, n]));
@@ -193,11 +242,19 @@ async function main(): Promise<void> {
       newsSeen.add(slug);
       relatedNews.push({ id: n.id, slug: n.slug, title: n.title, publishedAt: n.publishedAt, category: n.category });
     }
+    // §2-1(2026-08-21): title/sourceName の言及は正式名＋aliases で判定（語境界・長さガードは既存規則のまま）
+    const nameVariants = [op.name, ...(aliasesByName.get(op.name) ?? [])];
     for (const n of news) {
       if (newsSeen.has(n.slug) || !visible(n.slug)) continue;
-      const byTitle = mentionsOperator(n.title ?? '', op.name);
-      const bySource = mentionsOperator((n as unknown as { sourceName?: string }).sourceName ?? '', op.name);
-      if (!byTitle && !bySource) continue;
+      const src = (n as unknown as { sourceName?: string }).sourceName ?? '';
+      const byOfficial = mentionsOperator(n.title ?? '', op.name) || mentionsOperator(src, op.name);
+      const byAny = byOfficial || nameVariants.some((v) => mentionsOperator(n.title ?? '', v) || mentionsOperator(src, v));
+      if (!byAny) continue;
+      if (!byOfficial) {
+        const arr = newsAliasAdded.get(op.name) ?? [];
+        arr.push(n.slug);
+        newsAliasAdded.set(op.name, arr);
+      }
       newsSeen.add(n.slug);
       relatedNews.push({ id: n.id, slug: n.slug, title: n.title, publishedAt: n.publishedAt, category: n.category });
     }
@@ -213,6 +270,25 @@ async function main(): Promise<void> {
       (p) => structProjects.has(p.slug) || projectOperatorMatches(p.operator ?? '', op.name)
     );
     allMatchedProjects.set(op.name, new Set(matchedProjects.map((p) => p.slug)));
+
+    // §2-2(2026-08-21) ドライラン: 保有案件に aliases を適用した場合に増える案件を計測するだけ（適用しない）
+    {
+      const als = aliasesByName.get(op.name) ?? [];
+      if (als.length > 0) {
+        const before = new Set(matchedProjects.map((p) => p.slug));
+        const structAlias = structProjectsByOpAlias.get(op.name) ?? new Set<string>();
+        const added: Array<{ project: string; reason: string }> = [];
+        for (const p of projectsVisible) {
+          if (before.has(p.slug)) continue;
+          const hitAlias = als.find((a) => projectOperatorMatches(p.operator ?? '', a));
+          if (structAlias.has(p.slug)) added.push({ project: p.slug, reason: `事業者欄の構造化解決（alias）: ${p.operator ?? ''}` });
+          else if (hitAlias) added.push({ project: p.slug, reason: `事業者欄の言及（alias「${hitAlias}」）: ${p.operator ?? ''}` });
+        }
+        if (added.length > 0) {
+          projectsAliasDryRun.push({ slug: op.slug, name: op.name, before: before.size, after: before.size + added.length, added });
+        }
+      }
+    }
     const relatedProjects: ProjectRef[] = matchedProjects
       .sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''))
       .slice(0, 10)
@@ -309,6 +385,26 @@ async function main(): Promise<void> {
     };
   }
   console.log(`  → ${Object.keys(index).length} entries (${Date.now() - t1}ms)`);
+
+  // §2(2026-08-21) aliases 展開の計測レポート（§2-1 news は適用済み・§2-2 projects はドライランのみ）
+  {
+    const newsRows = [...newsAliasAdded.entries()].map(([name, slugs]) => ({
+      name, slug: operators.find((o) => o.name === name)?.slug ?? '', added: [...new Set(slugs)],
+    })).filter((r) => r.added.length > 0).sort((a, b) => b.added.length - a.added.length);
+    const newsAddedTotal = newsRows.reduce((n, r) => n + r.added.length, 0);
+    const report = {
+      generated_on: new Date().toISOString().slice(0, 10),
+      news_alias_applied: { operators_gained: newsRows.length, news_added: newsAddedTotal, rows: newsRows },
+      projects_alias_dry_run: { operators_affected: projectsAliasDryRun.length,
+        projects_added: projectsAliasDryRun.reduce((n, r) => n + r.added.length, 0), rows: projectsAliasDryRun,
+        note: '適用していない（保留・ユウ裁定）。適用した場合に掲載案件数が動く社のみ列挙' },
+    };
+    const repDir = path.join(process.cwd(), 'scripts', 'experimental', 'operators');
+    fs.mkdirSync(repDir, { recursive: true });
+    fs.writeFileSync(path.join(repDir, 'alias-expansion-report.json'), JSON.stringify(report, null, 1));
+    console.log(`  §2-1 news aliases 適用: ${newsRows.length}社 / +${newsAddedTotal}本`);
+    console.log(`  §2-2 projects aliases ドライラン: ${projectsAliasDryRun.length}社 / +${report.projects_alias_dry_run.projects_added}件（未適用）`);
+  }
 
   // Op3(2026-08-20): 同カテゴリの他事業者を「掲載案件数降順 → 五十音・最大5社」に。
   // ★必ずループ後の第2パスで行う: allMatchedProjects はループ内で逐次 set されるため、

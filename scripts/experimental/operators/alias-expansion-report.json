@@ -1,0 +1,73 @@
+{
+ "generated_on": "2026-08-21",
+ "news_alias_applied": {
+  "operators_gained": 4,
+  "news_added": 21,
+  "rows": [
+   {
+    "name": "Tesla, Inc.（テスラ）",
+    "slug": "tesla-inc",
+    "added": [
+     "pr-2025-07-28-teslajapan-47",
+     "pr-2025-07-03-co69153-5",
+     "pr-2025-06-14-co43349-18",
+     "pr-2025-02-04-co43349-17",
+     "pr-2024-06-04-co43349-13",
+     "pr-2024-05-21-co43349-12",
+     "pr-2022-05-30-co31337-24",
+     "pr-2021-08-19-co43349-9",
+     "pr-2021-05-28-co43349-7"
+    ]
+   },
+   {
+    "name": "CATL Japan",
+    "slug": "catl-japan",
+    "added": [
+     "pr-2026-03-17-volt-6",
+     "pr-2025-11-20-co51303-34",
+     "pr-2025-09-03-taokeenergy-9",
+     "news-2026-409-ibaraki-bess-overview",
+     "pr-2025-03-12-co69153-4",
+     "pr-2025-02-20-taokeenergy-3"
+    ]
+   },
+   {
+    "name": "Fluence Energy, Inc.",
+    "slug": "pr-fluenceenergyinc",
+    "added": [
+     "pr-2026-03-11-fluenceenergyinc-4",
+     "pr-2025-12-11-bluefieldenergy-1",
+     "pr-2025-09-11-fluenceenergyinc-3",
+     "pr-2025-02-20-fluenceenergyinc-2",
+     "pr-2025-01-22-fluenceenergyinc-1"
+    ]
+   },
+   {
+    "name": "株式会社GSユアサ",
+    "slug": "gs-yuasa",
+    "added": [
+     "pr-2025-09-25-shizenconnect-5"
+    ]
+   }
+  ]
+ },
+ "projects_alias_dry_run": {
+  "operators_affected": 1,
+  "projects_added": 1,
+  "rows": [
+   {
+    "slug": "jfe-engineering",
+    "name": "JFEエンジニアリング株式会社",
+    "before": 2,
+    "after": 3,
+    "added": [
+     {
+      "project": "jfe-takeo",
+      "reason": "事業者欄の構造化解決（alias）: JFEエンジ・大阪ガス・みずほリース・九州製鋼"
+     }
+    ]
+   }
+  ],
+  "note": "適用していない（保留・ユウ裁定）。適用した場合に掲載案件数が動く社のみ列挙"
+ }
+}
