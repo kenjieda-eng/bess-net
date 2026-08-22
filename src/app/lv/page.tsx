@@ -70,7 +70,7 @@ const GUIDES = [
 
 const RELATED = [
   { href: '/explainer/low-voltage-balancing-market-launch', label: '低圧系統用蓄電池の需給調整市場参入 ── 4月実装開始とアグリ事業の本格化（解説）' },
-  { href: '/policy-calendar/meti-stable-supply-wg4-balancing-cap-2026-07', label: '第4回 電力安定供給WG ── 需給調整市場の上限価格15円→10円引下げ案（政策詳細）' },
+  { href: '/policy-calendar/meti-stable-supply-wg4-balancing-cap-2026-07', label: '第4回 電力安定供給WG ── 需給調整市場の上限価格15円→10円引下げ（2026年9月1日実需給分から適用・政策詳細）' },
   { href: '/explainer/balancing-market-practical', label: '需給調整市場の実務：応札から精算までのプロセス（解説）' },
   { href: '/glossary/aggregator', label: 'アグリゲーター（用語集）' },
   { href: '/glossary/adjustment-reserve', label: '調整力（用語集）' },

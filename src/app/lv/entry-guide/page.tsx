@@ -1,7 +1,8 @@
 /**
  * /lv/entry-guide — 低圧クラスタ解説⑤「事業参入ガイド」（Stage3・2026-07-19）
  * 全静的・#107初期DOM・利回り数値の自前提示なし・販売業者の名指しなし・内部リンク実在確認済み（L-EIC-021）
- * JC-STAR は「〜とされています・要確認」の慎重表現（断定なし）／15→10円は「案・決定前」表記で①〜④と統一
+ * JC-STAR は「〜とされています・要確認」の慎重表現（断定なし）／15→10円は EPRX 2026-07-30 公表で確定済。
+ * 時点明示の両論併記（8/31実需給分まで15.00円・9/1実需給分から10.00円）で①〜④と統一（L-EIC-019/-027）
  */
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -124,7 +125,7 @@ export default function LvEntryGuidePage() {
             <h2>STEP6 事業計画 ── 感応度で考える</h2>
             <ul style={{ paddingLeft: 20, lineHeight: 1.9 }}>
               <li>
-                収益計画は単一シナリオでなく感応度で: 需給調整市場の上限価格15円→10円案（2026年9月適用案・決定前）のような制度変更、価格水準の変化、劣化を織り込んで幅で見る（→ 解説<Link href="/lv/revenue-model">②</Link>・<Link href="/lv/risks">④</Link>）。市場の実データは <Link href="/market/jepx">JEPX スポット価格ハブ</Link>などで確認できます。
+                収益計画は単一シナリオでなく感応度で: 需給調整市場の上限価格引下げ（一次・二次①・複合商品。2026年8月31日実需給分まで15.00円/ΔkW・30分、2026年9月1日実需給分から10.00円/ΔkW・30分）のような制度変更、価格水準の変化、劣化を織り込んで幅で見る（→ 解説<Link href="/lv/revenue-model">②</Link>・<Link href="/lv/risks">④</Link>）。市場の実データは <Link href="/market/jepx">JEPX スポット価格ハブ</Link>などで確認できます。
               </li>
             </ul>
 

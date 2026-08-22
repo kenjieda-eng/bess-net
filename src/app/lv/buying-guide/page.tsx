@@ -1,7 +1,9 @@
 /**
  * /lv/buying-guide — 低圧クラスタ解説③「購入・投資ガイド」（Stage2・2026-07-19）
  * 全静的・#107初期DOM・利回り数値の自前提示なし・販売業者の名指しなし・内部リンク実在確認済み（L-EIC-021）
- * 上限価格15→10円は「案・決定前」と明記（L-EIC-019・①②と統一）／消防・保安は一次出典に基づく慎重表現
+ * 上限価格15→10円は EPRX 2026-07-30 公表で確定済。時点明示の両論併記（8/31実需給分まで15.00円・
+ * 9/1実需給分から10.00円）で書く＝9/1 を跨いでも陳腐化させない（L-EIC-019/-027・①②と統一）／
+ * 消防・保安は一次出典に基づく慎重表現
  */
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -94,7 +96,7 @@ export default function LvBuyingGuidePage() {
             <h2>契約前チェックリスト（8項目・中立版）</h2>
             <ol style={{ paddingLeft: 20, lineHeight: 1.9 }}>
               <li>
-                <strong>収益前提</strong>: どの市場の・どの年度の価格を前提にしているか。需給調整市場の<strong>上限価格15円→10円引下げ案（2026年9月1日実需給分から適用案・2026年7月時点で決定前）</strong>のような制度動向が織り込まれているか（詳細: <Link href="/policy-calendar/meti-stable-supply-wg4-balancing-cap-2026-07">第4回 電力安定供給WG ── 上限価格15円→10円引下げ案</Link>）。
+                <strong>収益前提</strong>: どの市場の・どの年度の価格を前提にしているか。需給調整市場の<strong>上限価格引下げ（一次・二次①・複合商品。2026年8月31日実需給分まで15.00円/ΔkW・30分、2026年9月1日実需給分から10.00円/ΔkW・30分）</strong>のような制度動向が織り込まれているか（詳細: <Link href="/policy-calendar/meti-stable-supply-wg4-balancing-cap-2026-07">第4回 電力安定供給WG ── 上限価格15円→10円引下げ</Link>）。
               </li>
               <li>
                 <strong>費用の網羅性</strong>: 提示「利回り」に O&M・通信/計量・保険・税（固定資産税等）・将来の機器交換・撤去費まで含まれているか（構造は<Link href="/lv/revenue-model">解説②</Link>参照）。

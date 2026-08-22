@@ -109,7 +109,12 @@ const DATE_MAP: Record<FyKey, string> = {
   FY2025H1: '2025-04-01',
 };
 
-/** FY2024 / FY2025H1 の fallback 単価（catalog が読めない場合） */
+/**
+ * FY2024 / FY2025H1 の fallback 単価（catalog が読めない場合）
+ * ★EPRX の約定実績 年平均であって ΔkW 上限価格ではない（上限は 2026/8/31 実需給分まで 15.00 円、
+ *   2026/9/1 実需給分から 10.00 円。EPRX 2026-07-30 公表）。実績値を上限値に書き換えないこと。
+ *   上限改定の注記は BalancingRevenueEstimator の L-EIC-018 ブロックに時点明示で置く（#107）。
+ */
 const FALLBACK_BY_FY: Record<FyKey, Record<ProductKey, number>> = {
   FY2024: {
     'primary':     15.99,
@@ -319,7 +324,7 @@ export default function BalancingRevenuePage() {
                 lineHeight: 1.6,
               }}
             >
-              需給調整市場における「二極構造」——新型（蓄電池・VPP）は上限価格付近、従来型（火力・水力・揚水）は 1〜5 円の基準線——を5電源種別で比較します。
+              需給調整市場における「二極構造」——新型（蓄電池・VPP）は各年度当時の上限価格付近、従来型（火力・水力・揚水）は 1〜5 円の基準線——を5電源種別で比較します。
             </p>
             <div
               style={{
