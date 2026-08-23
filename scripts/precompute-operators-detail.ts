@@ -18,6 +18,7 @@ import * as fs from 'node:fs';
 import {
   mentionsOperator,
   projectOperatorMatches,
+  strictAliasProjectMatch,
   buildEntityIndex,
   resolveStructuredEntities,
   findStructuredFalseNegatives,
@@ -274,12 +275,17 @@ async function main(): Promise<void> {
     //  ∪ 事業者欄のマスタ完全一致（2026-08-09 偽陰性是正）。
     // 一覧除外（非プロジェクト・301元）は掲載対象から外す＝404/301 になるリンクを作らない。
     const structProjects = structProjectsByOp.get(op.name) ?? new Set<string>();
-    const matchedProjects = projectsVisible.filter(
+    const matchedProjects = [...projectsVisible.filter(
       (p) => structProjects.has(p.slug) || projectOperatorMatches(p.operator ?? '', op.name)
-    );
+    )];
     allMatchedProjects.set(op.name, new Set(matchedProjects.map((p) => p.slug)));
 
-    // §2-2(2026-08-21) ドライラン: 保有案件に aliases を適用した場合に増える案件を計測するだけ（適用しない）
+    // §1(2026-08-23・ユウ裁定) 保有案件に aliases を**適用**する。
+    // ★必須条件: 保有は事業判断（EPC一覧・Top50 の並び順の根拠）に直結するため、
+    //   関与判定（Op9 の mentionsOperator）より 1段厳しい判定を通す。
+    //     - 構造化欄: resolveStructuredEntities による**マスタ完全一致**（前方一致を採らない）
+    //     - 言及判定: strictAliasProjectMatch（法人格つき完全形のみ。素の alias 単独一致は不採用）
+    //   登録済み alias 21件は全て法人格を含まないため、実質は構造化完全一致のみが効く。
     {
       const als = aliasesByName.get(op.name) ?? [];
       if (als.length > 0) {
@@ -288,12 +294,16 @@ async function main(): Promise<void> {
         const added: Array<{ project: string; reason: string }> = [];
         for (const p of projectsVisible) {
           if (before.has(p.slug)) continue;
-          const hitAlias = als.find((a) => projectOperatorMatches(p.operator ?? '', a));
-          if (structAlias.has(p.slug)) added.push({ project: p.slug, reason: `事業者欄の構造化解決（alias）: ${p.operator ?? ''}` });
-          else if (hitAlias) added.push({ project: p.slug, reason: `事業者欄の言及（alias「${hitAlias}」）: ${p.operator ?? ''}` });
+          const hitAlias = als.find((a) => strictAliasProjectMatch(p.operator ?? '', a));
+          if (structAlias.has(p.slug)) added.push({ project: p.slug, reason: `事業者欄の構造化解決（alias・マスタ完全一致）: ${p.operator ?? ''}` });
+          else if (hitAlias) added.push({ project: p.slug, reason: `事業者欄の言及（alias「${hitAlias}」・法人格つき完全形）: ${p.operator ?? ''}` });
         }
         if (added.length > 0) {
           projectsAliasDryRun.push({ slug: op.slug, name: op.name, before: before.size, after: before.size + added.length, added });
+          // ★適用: 増えた案件を保有案件に加える
+          const addedSlugs = new Set(added.map((a) => a.project));
+          for (const p of projectsVisible) if (addedSlugs.has(p.slug)) matchedProjects.push(p);
+          allMatchedProjects.set(op.name, new Set(matchedProjects.map((p) => p.slug)));
         }
       }
     }
@@ -394,7 +404,7 @@ async function main(): Promise<void> {
   }
   console.log(`  → ${Object.keys(index).length} entries (${Date.now() - t1}ms)`);
 
-  // §2(2026-08-21) aliases 展開の計測レポート（§2-1 news は適用済み・§2-2 projects はドライランのみ）
+  // §2(2026-08-21) aliases 展開の計測レポート（news・projects とも適用済み。projects は 2026-08-23 に厳格判定で適用）
   {
     const newsRows = [...newsAliasAdded.entries()].map(([name, slugs]) => ({
       name, slug: operators.find((o) => o.name === name)?.slug ?? '', added: [...new Set(slugs)],
@@ -403,15 +413,15 @@ async function main(): Promise<void> {
     const report = {
       generated_on: new Date().toISOString().slice(0, 10),
       news_alias_applied: { operators_gained: newsRows.length, news_added: newsAddedTotal, rows: newsRows },
-      projects_alias_dry_run: { operators_affected: projectsAliasDryRun.length,
+      projects_alias_applied: { operators_affected: projectsAliasDryRun.length,
         projects_added: projectsAliasDryRun.reduce((n, r) => n + r.added.length, 0), rows: projectsAliasDryRun,
-        note: '適用していない（保留・ユウ裁定）。適用した場合に掲載案件数が動く社のみ列挙' },
+        note: '2026-08-23 適用済（ユウ裁定・厳格判定つき）。構造化欄はマスタ完全一致、言及判定は strictAliasProjectMatch（法人格つき完全形のみ）' },
     };
     const repDir = path.join(process.cwd(), 'scripts', 'experimental', 'operators');
     fs.mkdirSync(repDir, { recursive: true });
     fs.writeFileSync(path.join(repDir, 'alias-expansion-report.json'), JSON.stringify(report, null, 1));
     console.log(`  §2-1 news aliases 適用: ${newsRows.length}社 / +${newsAddedTotal}本`);
-    console.log(`  §2-2 projects aliases ドライラン: ${projectsAliasDryRun.length}社 / +${report.projects_alias_dry_run.projects_added}件（未適用）`);
+    console.log(`  §1 projects aliases 適用（厳格判定）: ${projectsAliasDryRun.length}社 / +${report.projects_alias_applied.projects_added}件（適用済）`);
   }
 
   // Op3(2026-08-20): 同カテゴリの他事業者を「掲載案件数降順 → 五十音・最大5社」に。

@@ -286,3 +286,80 @@ export function findStructuredFalseNegatives(
   }
   return out;
 }
+
+/* ------------------------------------------------------------------------ *
+ * 保有案件への alias 適用（2026-08-23・§1 ユウ裁定の必須条件）
+ *
+ * 保有は「誰が持っているか」という事業判断に直結し、掲載件数は EPC一覧・Top50 の
+ * 並び順の根拠になる。したがって関与判定（Op9）より **1段厳しい** 基準を課す。
+ *
+ * mentionsOperator の穴: strictForms は name 自身（法人格なしの素の表記）を
+ * 3字以上なら候補に含めるため、素の alias が語境界チェックなしの includes で当たる。
+ *   実測(2026-08-23): 登録済み alias 21件は **全て法人格を含まない**
+ *   （Fluence／テスラ／東急／JFEエンジ／CATL／BYD／GSユアサ 等）。
+ *   このまま保有案件に使うと「東急」が「東急不動産」に、「BYD」が「BYDジャパン」に
+ *   当たりうる（危険ペア35組と同型の暴発）。
+ *
+ * 本関数の規則:
+ *   ① alias に法人格を付した完全形（株式会社X／X株式会社／X合同会社／Xホールディングス 等）
+ *      が事業者欄に現れる場合のみ採用する。
+ *   ② alias 自体が法人格を含む場合は、語境界を満たす一致のみ採用する。
+ *   ③ 素の alias（法人格なし）単独の一致は **採らない**。
+ *      → 構造化欄でのマスタ完全一致（resolveStructuredEntities）に任せる。
+ *        完全一致は前方一致を採らないため親会社へ流れない。
+ * ------------------------------------------------------------------------ */
+
+/** alias に法人格を付した完全形のみ（素の表記は含めない） */
+function legalBearingForms(alias: string): string[] {
+  const core = coreName(alias);
+  if (core.length < 2) return [];
+  const forms = new Set<string>();
+  for (const suffix of ['株式会社', '合同会社', '有限会社', 'ホールディングス', 'グループ']) {
+    forms.add(`${core}${suffix}`);
+  }
+  for (const prefix of ['株式会社', '合同会社', '有限会社']) {
+    forms.add(`${prefix}${core}`);
+  }
+  return [...forms];
+}
+
+/** alias が法人格を含む表記か */
+function aliasHasLegalForm(alias: string): boolean {
+  LEGAL_RE.lastIndex = 0;
+  return LEGAL_RE.test(String(alias || ''));
+}
+
+/**
+ * 保有案件の事業者欄に対する alias 突合（厳格版）。
+ * 関与判定（mentionsOperator）より 1段厳しい。
+ */
+export function strictAliasProjectMatch(projectOperator: string, alias: string): boolean {
+  if (!projectOperator || !alias) return false;
+  const text = String(projectOperator);
+  const parts = [
+    text,
+    ...text.replace(/（[^）]*）|\([^)]*\)/g, ' ').split(/[×／/、,・]| と | および /).map((p) => p.trim()),
+  ].filter(Boolean);
+
+  // ① 法人格つき完全形
+  for (const form of legalBearingForms(alias)) {
+    if (parts.some((p) => p.includes(form))) return true;
+  }
+  // ② alias 自体が法人格を含む場合のみ、語境界つきで採用
+  if (aliasHasLegalForm(alias)) {
+    const a = String(alias).trim();
+    for (const p of parts) {
+      let from = 0;
+      for (;;) {
+        const i = p.indexOf(a, from);
+        if (i === -1) break;
+        const before = i > 0 ? p[i - 1] : '';
+        const after = i + a.length < p.length ? p[i + a.length] : '';
+        if ((!before || !NAME_CHAR.test(before)) && (!after || !NAME_CHAR.test(after))) return true;
+        from = i + 1;
+      }
+    }
+  }
+  // ③ 素の alias 単独の一致は採らない
+  return false;
+}

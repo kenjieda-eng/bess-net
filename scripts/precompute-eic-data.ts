@@ -16,7 +16,6 @@ const EIC_PIPELINE_BRANCH = 'main';
 const EIC_RAW_BASE = `https://raw.githubusercontent.com/${EIC_PIPELINE_REPO}/${EIC_PIPELINE_BRANCH}`;
 const CATALOG_URL = `${EIC_RAW_BASE}/data/catalog/indicators.json`;
 
-const GITHUB_PAT = process.env.GITHUB_PAT;
 const OUT_DIR = resolve(process.cwd(), 'src/data/eic');
 
 // L-008 解消後の正解版マッピング (リン回答 2026-05-16、R7-1 v2 準拠)
@@ -63,32 +62,30 @@ interface SeriesData {
   points: DataPoint[];
 }
 
+// 2026-08-23: GITHUB_PAT を廃止し無認証取得に一本化。
+// 根拠（reports/github-pat-audit-2026-08-21.md）: 取得先は raw.githubusercontent.com で
+// リポジトリ kenjieda-eng/eic-data-pipeline は public。無認証で 602 系列・失敗0・出力は
+// 認証あり版とバイト同一。一方 PAT が失効すると raw が 404 を返し prebuild が即死する
+// （2026-08-14 の Vercel Error 772c4ed が実例）。持ち続ける利益がなくリスクだけが残るため除去した。
 function buildHeaders(): Record<string, string> {
-  const headers: Record<string, string> = { 'User-Agent': 'bess-net-build-script' };
-  if (GITHUB_PAT) headers['Authorization'] = `Bearer ${GITHUB_PAT}`;
-  return headers;
+  return { 'User-Agent': 'bess-net-build-script' };
 }
 
-// PAT失効時の縮退: 無効な Bearer を付けると GitHub raw は public repo でも 404/401 を返す。
-// 認証付きで失敗したら無認証で1回だけリトライ（repo は public なので取得可能）。
-// 実証: 2026-08-14 ローカル build で PAT 失効により catalog 404 → 無認証で 581 系列全成功。
-async function fetchWithPatFallback(url: string): Promise<Response> {
-  const res = await fetch(url, { headers: buildHeaders() });
-  if (!res.ok && GITHUB_PAT && [401, 403, 404].includes(res.status)) {
-    console.warn(`[eic-data] ⚠ HTTP ${res.status} with PAT → retrying unauthenticated: ${url}`);
-    return fetch(url, { headers: { 'User-Agent': 'bess-net-build-script' } });
-  }
-  return res;
+// 旧 fetchWithPatFallback（認証失敗時に無認証で1回リトライ）は、Bearer を付けなくなったことで
+// 発火条件（401/403/404 かつ PAT あり）が構造的に成立しなくなったため 2026-08-23 に削除した。
+// 取得は最初から無認証なので、縮退させる先が存在しない。
+async function fetchRaw(url: string): Promise<Response> {
+  return fetch(url, { headers: buildHeaders() });
 }
 
 async function fetchJson<T>(url: string): Promise<T> {
-  const res = await fetchWithPatFallback(url);
+  const res = await fetchRaw(url);
   if (!res.ok) throw new Error(`Fetch failed: ${url} (HTTP ${res.status})`);
   return res.json() as Promise<T>;
 }
 
 async function fetchCsv(url: string): Promise<DataPoint[]> {
-  const res = await fetchWithPatFallback(url);
+  const res = await fetchRaw(url);
   if (!res.ok) throw new Error(`Fetch failed: ${url} (HTTP ${res.status})`);
   const text = await res.text();
   const records = parse(text, { columns: true, skip_empty_lines: true }) as Array<Record<string, string>>;
@@ -129,10 +126,6 @@ function deriveCsvPath(ind: Indicator): string {
 
 async function main() {
   console.log('[eic-data] Starting precompute...');
-  if (!GITHUB_PAT) {
-    console.warn('[eic-data] ⚠ GITHUB_PAT not set, using unauthenticated 60 req/h limit');
-  }
-
   // catalog 取得
   console.log('[eic-data] Fetching catalog...');
   let catalog: { indicators: Indicator[] };
