@@ -1,0 +1,194 @@
+{
+ "generated_on": "2026-08-23",
+ "master_operators": 580,
+ "tier2": {
+  "total": 169,
+  "detected": 9,
+  "remaining": 160,
+  "hits": [
+   {
+    "name": "株式会社ミライト・ワン",
+    "count": 6,
+    "firstUrl": "https://bess-net.jp/news/pr-2026-04-20-co109041-238",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "a-contains-existing"
+     ],
+     "reasons": [
+      "既存社名「株式会社ミライト」＋ノイズ語「・ワン」＝前後の語を巻き込んだ断片"
+     ],
+     "matchedExisting": "株式会社ミライト"
+    }
+   },
+   {
+    "name": "・ＳＭＢＣ日興証券株式会社",
+    "count": 1,
+    "firstUrl": "https://bess-net.jp/news/pr-2024-09-11-co109041-101",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "d-broken-delimiter"
+     ],
+     "reasons": [
+      "先頭が区切り記号（「・」「／」）で始まる＝語として不完全"
+     ]
+    }
+   },
+   {
+    "name": "・戸田建設株式会社",
+    "count": 1,
+    "firstUrl": "https://bess-net.jp/news/pr-2024-09-11-co109041-101",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "a-contains-existing",
+      "d-broken-delimiter"
+     ],
+     "reasons": [
+      "既存社名「戸田建設株式会社」＋ノイズ語「・」＝前後の語を巻き込んだ断片",
+      "先頭が区切り記号（「・」「／」）で始まる＝語として不完全"
+     ],
+     "matchedExisting": "戸田建設株式会社"
+    }
+   },
+   {
+    "name": "グローム・ホールディングス",
+    "count": 1,
+    "firstUrl": "https://bess-net.jp/news/glome-hd-toyooka-1-bess-shiunten-2026-07",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "d-broken-delimiter"
+     ],
+     "reasons": [
+      "区切り記号（「・」「／」）を含むが法人格が無い＝分割の途中で切れた疑い"
+     ]
+    }
+   },
+   {
+    "name": "ヒューリック株式会社・芙蓉総合リース株式会社",
+    "count": 1,
+    "firstUrl": "https://bess-net.jp/news/pr-2026-03-19-rs-11",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "a-contains-existing"
+     ],
+     "reasons": [
+      "既存社名「ヒューリック株式会社」＋ノイズ語「・芙蓉総合リース株式会社」＝前後の語を巻き込んだ断片"
+     ],
+     "matchedExisting": "ヒューリック株式会社"
+    }
+   },
+   {
+    "name": "株式会社・芙蓉総合リース株式会社・伊藤忠商事株式会社",
+    "count": 1,
+    "firstUrl": "https://bess-net.jp/news/pr-2026-03-19-rs-11",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "a-contains-existing"
+     ],
+     "reasons": [
+      "既存社名「芙蓉総合リース株式会社」＋ノイズ語「株式会社・・伊藤忠商事株式会社」＝前後の語を巻き込んだ断片"
+     ],
+     "matchedExisting": "芙蓉総合リース株式会社"
+    }
+   },
+   {
+    "name": "株式会社東急パワーサプライ向",
+    "count": 1,
+    "firstUrl": "https://bess-net.jp/news/pr-2026-04-14-co86244-66",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "a-contains-existing"
+     ],
+     "reasons": [
+      "既存社名「株式会社東急パワーサプライ」＋ノイズ語「向」＝前後の語を巻き込んだ断片"
+     ],
+     "matchedExisting": "株式会社東急パワーサプライ"
+    }
+   },
+   {
+    "name": "株式会社徳島大正銀行100",
+    "count": 1,
+    "firstUrl": "https://bess-net.jp/news/pr-2026-02-20-sustech-79",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "a-contains-existing"
+     ],
+     "reasons": [
+      "既存社名「株式会社徳島大正銀行」＋ノイズ語「100」＝前後の語を巻き込んだ断片"
+     ],
+     "matchedExisting": "株式会社徳島大正銀行"
+    }
+   },
+   {
+    "name": "台湾ビリオン電機株式会社",
+    "count": 1,
+    "firstUrl": "https://bess-net.jp/news/pr-2024-08-09-co146923-1",
+    "guard": {
+     "isFragment": true,
+     "confidence": "review",
+     "patterns": [
+      "a-contains-existing"
+     ],
+     "reasons": [
+      "既存社名「ビリオン電機株式会社」を部分文字列として含む（余り「台湾」。実在の別法人の可能性があり要確認）"
+     ],
+     "matchedExisting": "ビリオン電機株式会社"
+    }
+   }
+  ]
+ },
+ "tier1_posted": {
+  "total": 36,
+  "detected": 2,
+  "hits": [
+   {
+    "name": "茨城県ノーバル・ホールディングス",
+    "slug": "noval-holdings",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "b-leading-place",
+      "d-broken-delimiter"
+     ],
+     "reasons": [
+      "先頭が地名「茨城県」（地名の前置を巻き込んだ断片の疑い）",
+      "区切り記号（「・」「／」）を含むが法人格が無い＝分割の途中で切れた疑い"
+     ]
+    }
+   },
+   {
+    "name": "E-Flow合同会社運用",
+    "slug": "e-flow-unyo",
+    "guard": {
+     "isFragment": true,
+     "confidence": "high",
+     "patterns": [
+      "a-contains-existing",
+      "c-trailing-action"
+     ],
+     "reasons": [
+      "既存社名「E-Flow合同会社」＋ノイズ語「運用」＝前後の語を巻き込んだ断片",
+      "末尾が動作語「運用」（語尾を巻き込んだ断片の疑い）"
+     ],
+     "matchedExisting": "E-Flow合同会社"
+    }
+   }
+  ]
+ }
+}

@@ -39,6 +39,8 @@ import type { NextRequest } from 'next/server';
 import legacyAllowlist from '@/data/legacy-news-allowlist.json';
 import { GLOSSARY_301 } from '@/lib/glossary-301';
 import { PROJECTS_301 } from '@/lib/projects-301';
+// 2026-08-23: 社名抽出の断片2件を正エントリへ 301（削除はしない・operators-301.ts が SSOT）
+import { OPERATORS_301 } from '@/lib/operators-301';
 // Gr10(2026-08-11): 設備区分が都道府県URLになっていた7本を 301（削除はしない）
 import { GRID_PREFECTURE_301 } from '@/lib/grid-prefecture';
 
@@ -55,6 +57,11 @@ export function middleware(req: NextRequest) {
   // Projects 重複統合 301（旧slug → canonical・2026-06-28）
   if (pathname in PROJECTS_301) {
     return NextResponse.redirect(new URL(PROJECTS_301[pathname], req.url), { status: 301 });
+  }
+
+  // Operators 重複統合 301（抽出断片 → 正エントリ・2026-08-23）
+  if (pathname in OPERATORS_301) {
+    return NextResponse.redirect(new URL(OPERATORS_301[pathname], req.url), { status: 301 });
   }
 
   // Gr10: /grid/prefecture/{設備区分} → 沖縄県ページ / 関西エリアページ

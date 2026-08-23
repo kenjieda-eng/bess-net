@@ -13,6 +13,7 @@ import { GLOSSARY_301_SOURCE_SLUGS, GLOSSARY_DISPLAY_EXCLUDED_SLUGS } from '@/li
 import { isListExcludedProject } from '@/lib/projects-excluded';
 import { REAL_PREFECTURES } from '@/lib/grid-prefecture';
 import operatorCategoryIndex from '@/lib/generated/operators-category-index.json';
+import { isExcludedOperator } from '@/lib/operators-excluded';
 import { POLICY_DETAIL_SLUGS } from '@/lib/policy-utils';
 import { isLvInvestExplainer } from '@/lib/lv-invest';
 import {
@@ -388,7 +389,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.5,
   }));
-  const operatorUrls: MetadataRoute.Sitemap = operators.map((o) => ({
+  // 2026-08-23: 抽出断片（301元）は sitemap から除外（middleware が正エントリへ 301）
+  const operatorUrls: MetadataRoute.Sitemap = operators.filter((o) => !isExcludedOperator(o.slug)).map((o) => ({
     url: `${siteConfig.url}/operators/${o.slug}`,
     lastModified: new Date(o.updatedAt),
     changeFrequency: 'monthly' as const,

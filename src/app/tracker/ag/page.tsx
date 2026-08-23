@@ -12,6 +12,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import TrackerTimeline, { type TimelineItem } from '@/components/TrackerTimeline';
 import { getAllOperators } from '@/lib/microcms';
+import { isExcludedOperator } from '@/lib/operators-excluded';
 
 export const revalidate = 3600;
 
@@ -29,7 +30,8 @@ export const metadata: Metadata = {
 
 export default async function OperatorTrackerPage() {
   let operators: Awaited<ReturnType<typeof getAllOperators>> = [];
-  try { operators = await getAllOperators(); } catch { /* graceful */ }
+  // 2026-08-23: 抽出断片（301元）は件数・タイムラインから除外
+  try { operators = (await getAllOperators()).filter((o) => !isExcludedOperator(o.slug)); } catch { /* graceful */ }
 
   const items: TimelineItem[] = operators.map((o) => ({
     id: o.id,

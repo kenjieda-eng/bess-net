@@ -12,6 +12,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import { isExcludedOperator } from '@/lib/operators-excluded';
 import {
   getAllOperators,
   getAllProjects,
@@ -54,7 +55,8 @@ export default async function Report2026Page() {
   const projects = projectsRaw.filter((p) => !isListExcludedProject(p.slug));
 
   // 集計
-  const operatorCount = operators.length;
+  // 2026-08-23: 抽出断片（301元）は件数から除外
+  const operatorCount = operators.filter((o) => !isExcludedOperator(o.slug)).length;
   const projectCount = projects.length;
   const subsidyCount = subsidies.length;
   const substationCount = substations.length;

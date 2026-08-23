@@ -5,6 +5,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllOperators, getOperatorList } from '@/lib/microcms';
+import { isExcludedOperator } from '@/lib/operators-excluded';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import OperatorBrowser from './OperatorBrowser';
@@ -31,7 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function OperatorListPage() {
-  const items = await getAllOperators();
+  // 2026-08-23: 抽出断片（301元）は一覧・件数から除外（middleware が正エントリへ 301）
+  const items = (await getAllOperators()).filter((o) => !isExcludedOperator(o.slug));
 
   // A-2(2026-08-07): 最終更新はデータ側の最新更新日時（microCMS updatedAt/revisedAt の最大値）を表示。
   // fields 無指定取得のためタイムスタンプは応答に含まれる（型未宣言のため cast）。

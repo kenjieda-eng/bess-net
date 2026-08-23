@@ -43,6 +43,7 @@ import {
   getLinkableTargets,
 } from '../src/lib/microcms';
 import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
+import { isExcludedOperator } from '../src/lib/operators-excluded';
 import { linkifyHTML } from '../src/lib/linkify';
 
 // 送配電事業者 slug → /grid エリア（P4 相互リンク、10社）
@@ -103,7 +104,7 @@ async function fetchAllNewsWithOperators(): Promise<
 async function main(): Promise<void> {
   console.log('[precompute-operators-detail] microCMS bulk 取得...');
   const t0 = Date.now();
-  const [operators, projects, explainers, glossary, news, linkable] = await Promise.all([
+  const [operatorsRaw, projects, explainers, glossary, news, linkable] = await Promise.all([
     getAllOperators(),
     getAllProjects(),
     getAllExplainer(),
@@ -111,6 +112,13 @@ async function main(): Promise<void> {
     fetchAllNewsWithOperators(),
     getLinkableTargets(),
   ]);
+  // 2026-08-23: 社名抽出の断片（301元）を master から除外。除外しないと同一案件が断片と正の
+  // 両方に計上され重複計上になる（実測: kepco-eflow-aso-chikugo）。非破壊＝microCMS は削除しない。
+  const operators = operatorsRaw.filter((o: { slug: string }) => !isExcludedOperator(o.slug));
+  if (operators.length !== operatorsRaw.length) {
+    const dropped = operatorsRaw.filter((o: { slug: string }) => isExcludedOperator(o.slug)).map((o: { slug: string; name: string }) => `${o.name}(${o.slug})`);
+    console.log(`  ★抽出断片を除外: ${operatorsRaw.length} → ${operators.length}（${dropped.join(' / ')}）`);
+  }
   console.log(`  operators=${operators.length} projects=${projects.length} explainer=${explainers.length} glossary=${glossary.length} news=${news.length} linkable=${linkable.length} (${Date.now() - t0}ms)`);
 
   // operator 本文 linkify 用 target（依頼W.6: glossary + operator のみ）

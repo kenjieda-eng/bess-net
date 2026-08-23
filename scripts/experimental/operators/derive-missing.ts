@@ -35,6 +35,8 @@ function loadEnv() {
 }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+import { checkFragment } from './fragment-guard';
+
 const OUT_MD = 'reports/operators-missing-2026-08-21.md';
 const OUT_JSON = 'reports/operators-missing-2026-08-21.json';
 
@@ -188,9 +190,26 @@ async function main() {
   // ---- 判定 ----
   const isForeignish = (raw: string) => /^[A-Za-zＡ-Ｚａ-ｚ0-9 .&\-]+$/.test(raw.replace(/株式会社|合同会社/g, '')) || /Japan|ジャパン/.test(raw);
   const isOrgish = (raw: string) => /(部|課|室|センター|事務局|協議会|委員会|連絡会|プロジェクト|事業部|支社|支店|営業所)$/.test(nkey(raw));
+  // §3(2026-08-23): 抽出断片ガード。既存社名＋aliases を照合名にして4パターンで判定する。
+  // 断片は既存社と別文字列になるため slug 照合・正規化キー完全一致では検出できない
+  // （8/23 に「E-Flow合同会社運用」「茨城県ノーバル・ホールディングス」の2件を登録してしまった）。
+  // ★ガードで落とした候補は保留候補に回して除外理由をログに残す（黙って消さない）。
+  const existingNames: string[] = [];
+  for (const o of operators) {
+    existingNames.push(o.name);
+    for (const a of String((o as { aliases?: string }).aliases ?? '').split(/[,、\n]/).map((x) => x.trim()).filter(Boolean)) existingNames.push(a);
+  }
+  const guardDropped: Array<{ name: string; count: number; patterns: string[]; reasons: string[]; confidence: string }> = [];
+
   const rows = [...hits.values()].map((h) => {
     let verdict: '登録候補' | '保留候補' = '登録候補';
     const why: string[] = [];
+    const g = checkFragment(h.raw, existingNames);
+    if (g.isFragment) {
+      verdict = '保留候補';
+      why.push(`抽出断片の疑い[${g.confidence}]（${g.patterns.map((p) => p.split('-')[0]).join(',')}）: ${g.reasons.join(' ／ ')}`);
+      guardDropped.push({ name: h.raw, count: h.count, patterns: g.patterns, reasons: g.reasons, confidence: g.confidence });
+    }
     if (!h.legal) { verdict = '保留候補'; why.push('法人格なし（略称のみ）'); }
     if (isForeignish(h.raw)) { verdict = '保留候補'; why.push('海外法人／日本法人か要確認'); }
     if (isOrgish(h.raw)) { verdict = '保留候補'; why.push('部署・組織名の可能性'); }
@@ -213,6 +232,7 @@ async function main() {
     generated_on: '2026-08-21',
     population: {
       operators_master: operators.length, master_keys: masterKeys.size, alias_keys: aliasKeys,
+      fragment_guard_dropped: guardDropped.length,
       projects_total: projectsAll.length, projects_visible: projects.length,
       news_total: news.length, news_visible: newsVisible.length,
     },

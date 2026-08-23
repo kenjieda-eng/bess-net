@@ -4,6 +4,7 @@
 import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
 import { MICROCMS_MAX_OFFSET, MICROCMS_PAGE_LIMIT } from './constants';
 import { GLOSSARY_301_SOURCE_SLUGS } from './glossary-301';
+import { EXCLUDED_OPERATOR_SLUGS } from './operators-excluded';
 import { isExcludedNews } from './news-excluded';
 import { isTopicExcludedNews } from './news-topic-gate';
 import relatedNewsMap from './generated/related-news-map.json';
@@ -791,7 +792,10 @@ export const getOperatorList = async (queries?: MicroCMSQueries) => {
 export const getOperatorCountSafe = async (fallback = 550): Promise<number> => {
   try {
     const r = await getOperatorList({ limit: 1, fields: 'id' });
-    return r.totalCount > 0 ? r.totalCount : fallback;
+    // 2026-08-23: 抽出断片（301元・operators-excluded.ts）は一覧に出ないため件数からも差し引く。
+    // 除外 slug は microCMS に実在する前提（middleware が 301 で吸収し DELETE はしない）。
+    const n = r.totalCount - EXCLUDED_OPERATOR_SLUGS.size;
+    return n > 0 ? n : fallback;
   } catch {
     return fallback;
   }
