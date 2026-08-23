@@ -1,0 +1,353 @@
+{
+ "generated_on": "2026-08-23",
+ "operators_total_after": 580,
+ "excluded": [
+  {
+   "name": "合同会社クラダシ",
+   "reason": "一次情報で当該法人を特定できない（社名抽出が「・」で切れた断片と判断）"
+  }
+ ],
+ "held": [
+  {
+   "name": "合同会社バッテリーファーム",
+   "reason": "カテゴリを一次情報で確定できず、category は POST 必須のため登録不可"
+  },
+  {
+   "name": "株式会社テレビショッピング研究所",
+   "reason": "同上（本業は通信販売。荒尾案件では事業主だが開発・運用は afterFIT）"
+  }
+ ],
+ "posted_count": 36,
+ "posted": [
+  {
+   "name": "オリンピア",
+   "slug": "olympia-dev",
+   "id": "JkXjPu0afXs8",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://oly.co.jp/about/company/"
+  },
+  {
+   "name": "株式会社城洋商事",
+   "slug": "johyo-shoji",
+   "id": "ynY9_40oLvie",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.jys-joyoshoji.co.jp/chikudenchi/"
+  },
+  {
+   "name": "株式会社ミライト",
+   "slug": "mirait",
+   "id": "R5Sw4dIYy",
+   "category": [
+    "EPC"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000073.000130563.html"
+  },
+  {
+   "name": "リニューアブルエナジー・マネジメント株式会社",
+   "slug": "renewable-energy-management",
+   "id": "6sM0t8aeCnNJ",
+   "category": [
+    "O&M"
+   ],
+   "sourceUrl": "https://www.orix.co.jp/orem/company/outline.html"
+  },
+  {
+   "name": "合同会社NCパイオニア",
+   "slug": "nc-pioneer",
+   "id": "LG1WFaWWMi",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000205.000033609.html"
+  },
+  {
+   "name": "合同会社クラダシ・インベストメント2号",
+   "slug": "kuradashi-investment-2",
+   "id": "jWXZIwH-unPj",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000028.000071823.html"
+  },
+  {
+   "name": "御徳蓄電所合同会社",
+   "slug": "otoku-bess",
+   "id": "7YmaeCwxzLRX",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.itochu.co.jp/ja/news/press/2023/230718.html"
+  },
+  {
+   "name": "茨城県ノーバル・ホールディングス",
+   "slug": "noval-holdings",
+   "id": "Vxd6qjWpcHU",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000004.000069153.html"
+  },
+  {
+   "name": "四電エンジニアリング株式会社",
+   "slug": "yonden-engineering",
+   "id": "xkIYqNi1kGK",
+   "category": [
+    "EPC"
+   ],
+   "sourceUrl": "https://www.yon-e.co.jp/company/information"
+  },
+  {
+   "name": "九州製鋼",
+   "slug": "kyushu-seiko",
+   "id": "DIPKbpN1uBEG",
+   "category": [
+    "開発事業者",
+    "土地"
+   ],
+   "sourceUrl": "https://www.jfe-eng.co.jp/news/2024/20240711.html"
+  },
+  {
+   "name": "住友商事九州",
+   "slug": "sumitomo-corp-kyushu",
+   "id": "cxkN88wms",
+   "category": [
+    "商社"
+   ],
+   "sourceUrl": "https://www.sumitomocorp.com/ja/jp/sc-kyushu/company"
+  },
+  {
+   "name": "森トラスト株式会社",
+   "slug": "mori-trust",
+   "id": "qhsOyrP4q",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.mori-trust.co.jp/news/2026/20260402/"
+  },
+  {
+   "name": "株式会社おてんとさん",
+   "slug": "otentosan",
+   "id": "CPuJbaLAC",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000008.000072482.html"
+  },
+  {
+   "name": "松山みかんエナジー合同会社",
+   "slug": "matsuyama-mikan-energy",
+   "id": "D4tSbQhXZ",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.yonden.co.jp/press/2023/__icsFiles/afieldfile/2023/06/14/pr004.pdf"
+  },
+  {
+   "name": "坂東蓄電所1号合同会社",
+   "slug": "bando-bess-1",
+   "id": "EwutAcvF3x",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.mizuho-ls.co.jp/ja/news/news-728778551538335610/main/0/link/240226_1.pdf"
+  },
+  {
+   "name": "西鉄自然電力合同会社",
+   "slug": "nishitetsu-shizen-denryoku",
+   "id": "qXrYhtIacF",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000635.000017692.html"
+  },
+  {
+   "name": "北海道札幌蓄電合同会社",
+   "slug": "hokkaido-sapporo-chikuden",
+   "id": "uXhzp-ksL-G",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.aaconst.co.jp/news/news-release/20250327/"
+  },
+  {
+   "name": "多奈川蓄電所合同会社",
+   "slug": "tanagawa-bess",
+   "id": "SwWi_dRVmhPt",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.kepco.co.jp/corporate/pr/2025/pdf/20250507_1j.pdf"
+  },
+  {
+   "name": "SBIマネープラザ",
+   "slug": "sbi-moneyplaza",
+   "id": "6cgriQRU5mtA",
+   "category": [
+    "金融"
+   ],
+   "sourceUrl": "https://www.sbi-moneyplaza.co.jp/wp-content/uploads/2026/07/press_20260701-01.pdf"
+  },
+  {
+   "name": "E-Flow合同会社運用",
+   "slug": "e-flow-unyo",
+   "id": "9wKtn1SzHu",
+   "category": [
+    "アグリゲーター"
+   ],
+   "sourceUrl": "https://eflow.co.jp/05_company.html"
+  },
+  {
+   "name": "株式会社関電エネルギーソリューション",
+   "slug": "kanden-energy-solution",
+   "id": "SCu5G9tav",
+   "category": [
+    "電力会社"
+   ],
+   "sourceUrl": "https://www.kenes.jp/company/profile.html"
+  },
+  {
+   "name": "嬬恋蓄電所合同会社",
+   "slug": "tsumagoi-bess",
+   "id": "JyUDAwz6uJZh",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www4.tepco.co.jp/press/release/2023/1666669_8713.html"
+  },
+  {
+   "name": "株式会社ミツウロコグループホールディングス",
+   "slug": "mitsuuroko-gr-hd",
+   "id": "CAQMCEvzu",
+   "category": [
+    "電力会社",
+    "アグリゲーター"
+   ],
+   "sourceUrl": "https://www.mitsuuroko.com/business/"
+  },
+  {
+   "name": "でんきの駅合同会社",
+   "slug": "denki-no-eki",
+   "id": "JHn1640PFbR",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.sumitomocorp.com/ja/jp/news/topics/2023/group/20230329"
+  },
+  {
+   "name": "J＆S蓄電合同会社",
+   "slug": "js-chikuden",
+   "id": "aS5yPzguz",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.jfe-eng.co.jp/news/2024/20241021.html"
+  },
+  {
+   "name": "株式会社徳島大正銀行",
+   "slug": "tokushima-taisho-bank",
+   "id": "eiO0rpDZ8v",
+   "category": [
+    "金融"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000149815.html"
+  },
+  {
+   "name": "苫小牧パワーストレージ合同会社",
+   "slug": "tomakomai-power-storage",
+   "id": "zFuWnBfyJkJ7",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.tokyo-gas.co.jp/news/press/20251125-01.html"
+  },
+  {
+   "name": "合同会社OPTIRON北信",
+   "slug": "optiron-hokushin",
+   "id": "CIPARTl3FX",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000186.000084204.html"
+  },
+  {
+   "name": "フォーアールエナジー",
+   "slug": "4r-energy",
+   "id": "m_oD-xpdIE",
+   "category": [
+    "電池メーカー"
+   ],
+   "sourceUrl": "https://www.4r-energy.com/"
+  },
+  {
+   "name": "アールワン蓄電所合同会社",
+   "slug": "r1-bess",
+   "id": "dJBxUKcUsdX",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000052.000054933.html"
+  },
+  {
+   "name": "宮崎県串間市蓄電所合同会社",
+   "slug": "kushima-bess",
+   "id": "tAvE7jOH7T4D",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.erex.co.jp/news/pressrelease/3150/"
+  },
+  {
+   "name": "福岡県筑前町蓄電所合同会社",
+   "slug": "chikuzenmachi-bess",
+   "id": "hw5nTm7-q807",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.itochu.co.jp/ja/news/press/2026/260601.html"
+  },
+  {
+   "name": "アールツー蓄電所合同会社",
+   "slug": "r2-bess",
+   "id": "RtbrM7JT6pqm",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.renovainc.com/business/power_plant/mori-machi_mutsumi-energy-storage/"
+  },
+  {
+   "name": "岡谷鋼機",
+   "slug": "okaya-kohki",
+   "id": "axNbRlF_gMQ9",
+   "category": [
+    "商社"
+   ],
+   "sourceUrl": "https://www.okaya.co.jp/company/profile/index.html"
+  },
+  {
+   "name": "ハニカム1合同会社",
+   "slug": "honeycomb-1",
+   "id": "eleHMuBcN",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.hexa-es.com/ja/news/g2kezb0fl_u"
+  },
+  {
+   "name": "合同会社RJキャピタル2",
+   "slug": "rj-capital-2",
+   "id": "JhK75Cb55Ji5",
+   "category": [
+    "開発事業者"
+   ],
+   "sourceUrl": "https://www.reene-energy.co.jp/wp-content/uploads/2026/03/0805.pdf"
+  }
+ ],
+ "not_found": [
+  "合同会社バッテリーファーム",
+  "株式会社テレビショッピング研究所"
+ ]
+}
