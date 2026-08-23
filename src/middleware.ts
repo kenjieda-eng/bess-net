@@ -90,5 +90,8 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/news/:slug*', '/glossary/:slug*', '/projects/:slug*', '/grid/prefecture/:slug*'],
+  // ★matcher に無いパスは middleware 自体が起動しない。301 マップを足したら必ずここも足すこと
+  //   （2026-08-23: OPERATORS_301 を配線したのに /operators を matcher に入れ忘れ、本番で 45分間
+  //     301 が発火せず 200 のままだった）。
+  matcher: ['/news/:slug*', '/glossary/:slug*', '/projects/:slug*', '/grid/prefecture/:slug*', '/operators/:slug*'],
 };
