@@ -8,7 +8,9 @@
  * 設計:
  *  - microCMS リクエストなし (client-side 計算のみ)
  *  - 単価は pricesByFy props 経由（server page が catalog JSON から注入）
- *  - FY セレクタ: FY2024（通年・確定）既定 / FY2025 上期(暫定) トグル
+ *  - FY セレクタ: FY2024（通年・確定）既定 / FY2025（通年・確定）トグル
+ *  - 2026-08-24: FY2025 が上期暫定 → 通年確報に差し替え（EPRX 2026-06-18 公表）。
+ *    fallback とラベルは src/lib/balancing-fallback.ts（SSOT）を参照する（#121 の二重管理を解消）
  *  - L-EIC-018: 単価は「約定時水準・volume 非加重」+ 期間非対称の明示
  *  - 三次②の高単価は約定が稀（デフォルト落札率 2%）
  *  - 複合はデフォルトで除外（個別と二重計上し得る）
@@ -20,6 +22,11 @@
  */
 
 import { useState } from 'react';
+import {
+  BALANCING_BATTERY_FALLBACK,
+  BALANCING_FY_META,
+  type BalancingFyKey,
+} from '@/lib/balancing-fallback';
 
 // ─── 型定義 ───────────────────────────────────────────────────────────────────
 
@@ -31,7 +38,7 @@ export type ProductKey =
   | 'tertiary-2'
   | 'composite';
 
-export type FyKey = 'FY2024' | 'FY2025H1';
+export type FyKey = BalancingFyKey;
 
 // ─── 定数 ─────────────────────────────────────────────────────────────────────
 
@@ -45,21 +52,12 @@ const PRODUCTS: { key: ProductKey; label: string; defRate: number }[] = [
 ];
 
 /** FY セレクタ選択肢 */
-const FY_OPTIONS: { key: FyKey; label: string; note: string }[] = [
-  {
-    key: 'FY2024',
-    label: 'FY2024（通年・確定）',
-    note: '2024/4〜2025/3 通年 — EPRX 2025年3月公表',
-  },
-  {
-    key: 'FY2025H1',
-    label: 'FY2025 上期(暫定・2025/4〜9のみ)',
-    note: '2025/4〜9 上期のみ — EPRX 2025年12月公表。通年は 2026 年 6 月頃見込み',
-  },
-];
+const FY_OPTIONS: { key: FyKey; label: string; note: string }[] = (['FY2024', 'FY2025'] as FyKey[]).map(
+  (key) => ({ key, label: BALANCING_FY_META[key].label, note: BALANCING_FY_META[key].note })
+);
 
 /**
- * FY2024 / FY2025H1 fallback（出典: data.eic-jp.org catalog 2026-05-24、EPRX）
+ * fallback は src/lib/balancing-fallback.ts（SSOT）を参照する。
  *
  * ★これは「約定実績の年平均（volume 非加重）」であって ΔkW 上限価格ではない。
  *   上限価格（一次・二次①・複合）は 2026/8/31 実需給分まで 15.00 円、2026/9/1 実需給分から 10.00 円
@@ -67,24 +65,7 @@ const FY_OPTIONS: { key: FyKey; label: string; note: string }[] = [
  *   実績値をこの上限値に書き換えてはいけない（FY ラベル付きの過去実績＝改竄になる）。
  *   上限改定は上部の L-EIC-018 注記で時点明示する（#107 初期DOM）。
  */
-const FALLBACK_BY_FY: Record<FyKey, Record<ProductKey, number>> = {
-  FY2024: {
-    'primary':     15.99,
-    'secondary-1':  7.71,
-    'secondary-2': 12.61,
-    'tertiary-1':  10.60,
-    'tertiary-2': 109.43,
-    'composite':   15.80,
-  },
-  FY2025H1: {
-    'primary':     11.41,
-    'secondary-1': 14.13,
-    'secondary-2': 14.33,
-    'tertiary-1':  13.83,
-    'tertiary-2':  33.52,
-    'composite':   11.39,
-  },
-};
+const FALLBACK_BY_FY: Record<FyKey, Record<ProductKey, number>> = BALANCING_BATTERY_FALLBACK;
 
 const BLOCKS_PER_YEAR = 365 * 48; // 17,520 コマ/年
 
@@ -185,11 +166,11 @@ export function BalancingRevenueEstimator({
         <strong>総収益 = 単価 × 全量ではありません</strong>。<br />
         ・三次②の高単価は約定が稀（FY2024: 50 円超の落札量が全体の 2.3% で調達費の 61%）。落札率は保守的に。<br />
         ・エネルギー制約上、蓄電池が全コマ（年 17,520）で同容量を提供することはできません。コマ数・落札率は実態に合わせて下げてください。<br />
-        ・<strong>FY2024（通年）と FY2025（上期のみ）は対象期間が非対称です。比較は通年同士で。</strong>FY2025 通年は EPRX 公表後（2026 年 6 月頃見込み）に更新します。<br />
+        ・<strong>FY2024・FY2025 とも通年（各年度 4月〜翌3月）の確定値です。</strong>FY2025 は EPRX が 2026 年 6 月 18 日に公表した通年確報で、旧・上期暫定値から改訂されています。<br />
         ・<strong>ΔkW 上限価格の改定</strong>: 一次調整力・二次調整力①・複合商品の上限価格は
         <strong>2026 年 8 月 31 日実需給分まで 15.00 円/ΔkW・30分、2026 年 9 月 1 日実需給分から 10.00 円/ΔkW・30分</strong>
         （適用終了は「当面の間」）。二次調整力②・三次調整力①は 7.21 円/ΔkW・30分を当面継続、三次調整力②は上限なし。
-        <strong>下表の単価は引下げ前の実績（FY2024 通年／FY2025 上期）</strong>のため、2026 年 9 月以降を試算する場合は
+        <strong>下表の単価は引下げ前の実績（FY2024 通年／FY2025 通年）</strong>のため、2026 年 9 月以降を試算する場合は
         上限のある商品の単価を新上限以下に読み替えてください（出典: EPRX 2026 年 7 月 30 日公表「需給調整市場のΔkW上限価格について」、
         根拠: 第 4 回 電力安定供給ワーキンググループ 資料 6）。<br />
         ・出典: 電力需給調整力取引所（EPRX）／ data.eic-jp.org catalog 2026-05-24。
@@ -246,7 +227,7 @@ export function BalancingRevenueEstimator({
                       既定
                     </span>
                   )}
-                  {opt.key === 'FY2025H1' && (
+                  {opt.key === 'FY2025' && (
                     <span
                       style={{
                         marginLeft: 6,
@@ -258,7 +239,7 @@ export function BalancingRevenueEstimator({
                         verticalAlign: 'middle',
                       }}
                     >
-                      上期のみ・暫定
+                      通年・確定
                     </span>
                   )}
                 </div>

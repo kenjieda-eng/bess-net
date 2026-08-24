@@ -8,9 +8,10 @@
  *  - revalidate = 86400（catalog 更新に追従）
  *  - 出典: EPRX（電力需給調整力取引所）+ 加工した旨を明記
  *
- * v2 (2026-05-24): FY2024 既定 + FY2025 上期(暫定) トグル（リン回答反映）
+ * v2 (2026-05-24): FY2024 既定 + FY2025 トグル（リン回答反映）
+ * v5 (2026-08-24): FY2025 を通年確報へ差し替え／水力・揚水の合算系列 6本と二次②VPP を追加
  *  - FY2024 = date "2024-04-01"（通年・確定）を既定表示
- *  - FY2025H1 = date "2025-04-01"（上期のみ・暫定）をトグル補助
+ *  - FY2025 = date "2025-04-01"（通年・確定。2026-08-24 に上期暫定から差し替え）をトグル補助
  *
  * v3 (2026-05-25): 電源種別比較（蓄電池 vs VPP vs 揚水）二極構造追加
  *  - catalog170: battery 6 + vpp 4 + pumped 6 = 16 系列
@@ -40,6 +41,7 @@ import {
   type CompSource,
 } from '@/components/BalancingSourceComparison';
 import { siteConfig } from '@/lib/site-config';
+import { BALANCING_BATTERY_FALLBACK, BALANCING_FY_DATE } from '@/lib/balancing-fallback';
 
 // ─── catalog JSON 直読み（server only） ────────────────────────────────────────
 // battery (6 系列)
@@ -49,9 +51,10 @@ import secondary2BatteryData from '@/data/eic/balancing-price-secondary-2-batter
 import tertiary1BatteryData  from '@/data/eic/balancing-price-tertiary-1-battery.json';
 import tertiary2BatteryData  from '@/data/eic/balancing-price-tertiary-2-battery.json';
 import compositeBatteryData  from '@/data/eic/balancing-price-composite-battery.json';
-// vpp (4 系列：二次①②は系列なし)
+// vpp (5 系列：二次①は系列なし。二次②は 2026-08-24 に新設)
 import primaryVppData    from '@/data/eic/balancing-price-primary-vpp.json';
 import tertiary1VppData  from '@/data/eic/balancing-price-tertiary-1-vpp.json';
+import secondary2VppData from '@/data/eic/balancing-price-secondary-2-vpp.json'; // 2026-08-24 新設（FY2025 は3月のみ落札）
 import tertiary2VppData  from '@/data/eic/balancing-price-tertiary-2-vpp.json';
 import compositeVppData  from '@/data/eic/balancing-price-composite-vpp.json';
 // pumped (6 系列)
@@ -61,6 +64,13 @@ import secondary2PumpedData from '@/data/eic/balancing-price-secondary-2-pumped.
 import tertiary1PumpedData  from '@/data/eic/balancing-price-tertiary-1-pumped.json';
 import tertiary2PumpedData  from '@/data/eic/balancing-price-tertiary-2-pumped.json';
 import compositePumpedData  from '@/data/eic/balancing-price-composite-pumped.json';
+// hydro-pumped (6 系列・FY2025 のみ。2026-08-24 に EPRX が水力と揚水を合算公表に変更)
+import primaryHydroPumpedData    from '@/data/eic/balancing-price-primary-hydro-pumped.json';
+import secondary1HydroPumpedData from '@/data/eic/balancing-price-secondary-1-hydro-pumped.json';
+import secondary2HydroPumpedData from '@/data/eic/balancing-price-secondary-2-hydro-pumped.json';
+import tertiary1HydroPumpedData  from '@/data/eic/balancing-price-tertiary-1-hydro-pumped.json';
+import tertiary2HydroPumpedData  from '@/data/eic/balancing-price-tertiary-2-hydro-pumped.json';
+import compositeHydroPumpedData  from '@/data/eic/balancing-price-composite-hydro-pumped.json';
 // thermal (6 系列)
 import primaryThermalData    from '@/data/eic/balancing-price-primary-thermal.json';
 import secondary1ThermalData from '@/data/eic/balancing-price-secondary-1-thermal.json';
@@ -85,7 +95,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '需給調整 収益シナリオ（蓄電池）| 蓄電所ネット',
     description:
-      'EPRX 蓄電池単価ベースの概算収益シナリオ。蓄電池・VPP・揚水・火力・水力 5種完結の電源種別比較（二極構造）も収録。FY2024（通年・確定）を既定、FY2025 上期(暫定)もトグルで確認可能。',
+      'EPRX 蓄電池単価ベースの概算収益シナリオ。蓄電池・VPP・揚水・火力・水力 5種完結の電源種別比較（二極構造）も収録。FY2024（通年・確定）を既定、FY2025（通年・確定）もトグルで確認可能。',
     type: 'website',
     images: ['/og-image.png'],
   },
@@ -103,36 +113,17 @@ function valueAtDate(data: CatalogData, isoDate: string): number | null {
   return pt?.value ?? null;
 }
 
-/** FY2024 = 2024-04-01（通年・確定） / FY2025H1 = 2025-04-01（上期・暫定） */
-const DATE_MAP: Record<FyKey, string> = {
-  FY2024:   '2024-04-01',
-  FY2025H1: '2025-04-01',
-};
+/** FY キー → catalog の date は SSOT（balancing-fallback.ts）を参照 */
+const DATE_MAP: Record<FyKey, string> = BALANCING_FY_DATE;
 
 /**
- * FY2024 / FY2025H1 の fallback 単価（catalog が読めない場合）
+ * fallback は src/lib/balancing-fallback.ts（SSOT）を参照する。
+ * ★2026-08-24: 従来は本ファイルと BalancingRevenueEstimator.tsx の2箇所で同じ値を別々に持つ
+ *   二重管理だった（落とし穴 #121）。両方を SSOT 参照に寄せた。
  * ★EPRX の約定実績 年平均であって ΔkW 上限価格ではない（上限は 2026/8/31 実需給分まで 15.00 円、
  *   2026/9/1 実需給分から 10.00 円。EPRX 2026-07-30 公表）。実績値を上限値に書き換えないこと。
- *   上限改定の注記は BalancingRevenueEstimator の L-EIC-018 ブロックに時点明示で置く（#107）。
  */
-const FALLBACK_BY_FY: Record<FyKey, Record<ProductKey, number>> = {
-  FY2024: {
-    'primary':     15.99,
-    'secondary-1':  7.71,
-    'secondary-2': 12.61,
-    'tertiary-1':  10.60,
-    'tertiary-2': 109.43,
-    'composite':   15.80,
-  },
-  FY2025H1: {
-    'primary':     11.41,
-    'secondary-1': 14.13,
-    'secondary-2': 14.33,
-    'tertiary-1':  13.83,
-    'tertiary-2':  33.52,
-    'composite':   11.39,
-  },
-};
+const FALLBACK_BY_FY: Record<FyKey, Record<ProductKey, number>> = BALANCING_BATTERY_FALLBACK;
 
 export default function BalancingRevenuePage() {
   const productSources: { key: ProductKey; data: CatalogData }[] = [
@@ -144,13 +135,13 @@ export default function BalancingRevenuePage() {
     { key: 'composite',   data: compositeBatteryData  as CatalogData },
   ];
 
-  // FY2024 と FY2025H1 の単価マップを catalog から構築（読めなければ fallback）
+  // FY2024 と FY2025 の単価マップを catalog から構築（読めなければ fallback）
   const pricesByFy: Record<FyKey, Record<ProductKey, number>> = {
     FY2024:   { ...FALLBACK_BY_FY.FY2024 },
-    FY2025H1: { ...FALLBACK_BY_FY.FY2025H1 },
+    FY2025: { ...FALLBACK_BY_FY.FY2025 },
   };
 
-  for (const fyKey of ['FY2024', 'FY2025H1'] as FyKey[]) {
+  for (const fyKey of ['FY2024', 'FY2025'] as FyKey[]) {
     for (const { key, data } of productSources) {
       const v = valueAtDate(data, DATE_MAP[fyKey]);
       if (v !== null) pricesByFy[fyKey][key] = v;
@@ -172,6 +163,7 @@ export default function BalancingRevenuePage() {
     { product: '一次',  data: primaryVppData   as CatalogData },
     { product: '三次①', data: tertiary1VppData as CatalogData },
     { product: '三次②', data: tertiary2VppData as CatalogData },
+    { product: '二次②', data: secondary2VppData as CatalogData },
     { product: '複合',  data: compositeVppData as CatalogData },
   ];
   const pumpedSeries: SourceSeries = [
@@ -198,24 +190,35 @@ export default function BalancingRevenuePage() {
     { product: '三次①', data: tertiary1HydroData  as CatalogData },
     { product: '複合',  data: compositeHydroData  as CatalogData },
   ];
+  // 2026-08-24: FY2025 から水力・揚水は合算系列（hydro / pumped は FY2024 で終端）
+  const hydroPumpedSeries: SourceSeries = [
+    { product: '一次',  data: primaryHydroPumpedData    as CatalogData },
+    { product: '二次①', data: secondary1HydroPumpedData as CatalogData },
+    { product: '二次②', data: secondary2HydroPumpedData as CatalogData },
+    { product: '三次①', data: tertiary1HydroPumpedData  as CatalogData },
+    { product: '三次②', data: tertiary2HydroPumpedData  as CatalogData },
+    { product: '複合',  data: compositeHydroPumpedData  as CatalogData },
+  ];
   const sourceSeries: Record<CompSource, SourceSeries> = {
     battery: batterySeries,
     vpp:     vppSeries,
     pumped:  pumpedSeries,
     thermal: thermalSeries,
     hydro:   hydroSeries,
+    hydroPumped: hydroPumpedSeries,
   };
 
   const pricesBySourceFy: PricesBySourceFy = {
-    battery: { FY2024: {}, FY2025H1: {} },
-    vpp:     { FY2024: {}, FY2025H1: {} },
-    pumped:  { FY2024: {}, FY2025H1: {} },
-    thermal: { FY2024: {}, FY2025H1: {} },
-    hydro:   { FY2024: {}, FY2025H1: {} },
+    battery:     { FY2024: {}, FY2025: {} },
+    vpp:         { FY2024: {}, FY2025: {} },
+    pumped:      { FY2024: {}, FY2025: {} },
+    thermal:     { FY2024: {}, FY2025: {} },
+    hydro:       { FY2024: {}, FY2025: {} },
+    hydroPumped: { FY2024: {}, FY2025: {} },
   };
-  for (const src of ['battery', 'vpp', 'pumped', 'thermal', 'hydro'] as CompSource[]) {
+  for (const src of ['battery', 'vpp', 'pumped', 'thermal', 'hydro', 'hydroPumped'] as CompSource[]) {
     for (const { product, data: d } of sourceSeries[src]) {
-      for (const fyKey of ['FY2024', 'FY2025H1'] as CompFyKey[]) {
+      for (const fyKey of ['FY2024', 'FY2025'] as CompFyKey[]) {
         const v = valueAtDate(d, DATE_MAP[fyKey as FyKey]);
         if (v !== null) pricesBySourceFy[src][fyKey][product] = v;
       }
@@ -284,7 +287,7 @@ export default function BalancingRevenuePage() {
           </p>
           <p style={{ fontSize: 15, color: '#6b7280', marginBottom: 24, lineHeight: 1.6 }}>
             単価は「蓄電池が約定したときの水準」（volume 非加重、L-EIC-018）です。
-            既定は <strong>FY2024（通年・確定）</strong>。FY2025 上期(暫定) もトグルで切替可能。
+            既定は <strong>FY2024（通年・確定）</strong>。<strong>FY2025（通年・確定）</strong> もトグルで切替可能（FY2025 は EPRX 2026年6月18日公表の通年確報）。
             前提次第で結果が大きく変わる<strong>感応度ツール</strong>としてご活用ください。
           </p>
 
@@ -395,7 +398,7 @@ export default function BalancingRevenuePage() {
             </a>
             より転記・編集（加工した旨を明記）。EPRX 利用規約 §4 に従い非商用・出典明示で利用。
             <br />
-            ・FY2024 は通年確定値（EPRX 2025年3月公表）。FY2025 は上期のみ（2025/4〜9、EPRX 2025年12月公表）。FY2025 通年は 2026 年 6 月頃 EPRX 公表後に更新予定。
+            ・FY2024・FY2025 とも通年の確定値です（FY2024 は EPRX 2025年3月公表、FY2025 は EPRX 2026年6月18日公表の通年確報で旧・上期暫定値から改訂）。FY2025 は水力と揚水が EPRX 側で合算公表に変わったため、電源種別比較の FY2025 は「水力・揚水（合算）」の1行で表示しています。
             <br />
             ・データ加工・提供:{' '}
             <a

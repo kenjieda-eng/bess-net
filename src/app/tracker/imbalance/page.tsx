@@ -257,7 +257,7 @@ function Section1Overall({ overallSeries }: { overallSeries: Record<Product, Cat
             <tr style={{ background: 'var(--color-bg)' }}>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', width: 120 }}>商品</th>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', minWidth: 200 }}>FY2024（確定）</th>
-              <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', minWidth: 200 }}>FY2025（上期暫定）</th>
+              <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', minWidth: 200 }}>FY2025（通年）</th>
             </tr>
           </thead>
           <tbody>
@@ -305,7 +305,7 @@ function Section2Battery({ batterySeries }: { batterySeries: Record<Product, Cat
             <tr style={{ background: 'var(--color-bg)' }}>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', width: 120 }}>商品</th>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', minWidth: 220 }}>FY2024（確定）</th>
-              <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', minWidth: 220 }}>FY2025（上期暫定）</th>
+              <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', minWidth: 220 }}>FY2025（通年）</th>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', width: 80 }}>前年比</th>
             </tr>
           </thead>
@@ -344,7 +344,7 @@ function Section2Battery({ batterySeries }: { batterySeries: Record<Product, Cat
         </table>
       </div>
       <p style={{ fontSize: 15, marginTop: 8, color: 'var(--color-muted)' }}>
-        ※ 三次②（三次調整力②）FY2024=109.43 円 は他商品の 10〜15 倍水準。FY2025 上期（暫定）は 33.52 円に低下。
+        ※ 三次②（三次調整力②）FY2024=109.43 円 は他商品の 10〜15 倍水準。FY2025 通年は 19.31 円に低下（EPRX 2026年6月18日公表の通年確報。旧・上期暫定値 33.52 円から改訂）。
         蓄電池の単価優位は小ボリューム・高値での約定構造を反映しています（L-EIC-018）。
       </p>
     </section>
@@ -373,7 +373,7 @@ function Section3Shortage({ shortageSeries }: { shortageSeries: Record<Product, 
             <tr style={{ background: 'var(--color-bg)' }}>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', width: 120 }}>商品</th>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', minWidth: 200 }}>FY2024（確定）</th>
-              <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', minWidth: 200 }}>FY2025（上期暫定）</th>
+              <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', minWidth: 200 }}>FY2025（通年）</th>
               <th style={{ padding: '8px 12px', textAlign: 'left', borderBottom: '2px solid var(--color-border)', width: 80 }}>YoY</th>
             </tr>
           </thead>

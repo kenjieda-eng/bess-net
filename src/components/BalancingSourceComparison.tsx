@@ -8,7 +8,10 @@
  * 設計:
  *  - microCMS リクエストなし (client-side 表示のみ)
  *  - pricesBySourceFy props 経由（server page が catalog JSON から注入）、無ければ fallback
- *  - FY セレクタ: FY2024（通年・確定）既定 / FY2025 上期(暫定) トグル
+ *  - FY セレクタ: FY2024（通年・確定）既定 / FY2025（通年・確定）トグル
+ *  - 2026-08-24: FY2025 が上期暫定 → 通年確報に差し替わった（EPRX 2026-06-18 公表）。
+ *    同時に水力・揚水が PDF 上で統合されたため、FY2025 は hydroPumped 行で表示する
+ *    （hydro / pumped は FY2024 で終端。統合値を水力または揚水の値として出さない＝意味が変わる）。
  *  - 二極構造: 新型（蓄電池・VPP ≒ 各年度当時の上限価格）vs 従来型（火力・水力・揚水 ≒ 1〜5円基準線）
  *  - 上限価格は 2026/8/31 実需給分まで 15.00円、2026/9/1 実需給分から 10.00円（一次・二次①・複合）。
  *    表示単価は引下げ前の FY 実績なので、注記⑦で時点を明示する（値は EPRX 実績のため書き換えない）
@@ -24,8 +27,8 @@ import { useState } from 'react';
 // ─── 型定義 ───────────────────────────────────────────────────────────────────
 
 export type CompProduct = '一次' | '二次①' | '二次②' | '三次①' | '三次②' | '複合';
-export type CompSource  = 'battery' | 'vpp' | 'thermal' | 'hydro' | 'pumped';
-export type CompFyKey   = 'FY2024' | 'FY2025H1';
+export type CompSource  = 'battery' | 'vpp' | 'thermal' | 'hydro' | 'pumped' | 'hydroPumped';
+export type CompFyKey   = 'FY2024' | 'FY2025';
 
 export type PricesBySourceFy = Record<
   CompSource,
@@ -42,6 +45,14 @@ const SOURCE_META: Record<CompSource, { label: string; color: string; bg: string
   thermal: { label: '火力（従来型）',  color: '#b91c1c',                       bg: '#fee2e2' },
   hydro:   { label: '水力（従来型）',  color: '#1d4ed8',                       bg: '#dbeafe' },
   pumped:  { label: '揚水（従来型）',  color: '#92400e',                       bg: '#fef3c7' },
+  // 2026-08-24: FY2025 の EPRX PDF で水力と揚水が統合されたため新設（FY2025 のみ）
+  hydroPumped: { label: '水力・揚水（従来型・合算）', color: '#1d4ed8',          bg: '#dbeafe' },
+};
+
+/** FY ごとに表示する電源種別（FY2025 は水力・揚水が統合され、個別系列は FY2024 で終端） */
+const SOURCES_BY_FY: Record<CompFyKey, CompSource[]> = {
+  FY2024: ['battery', 'vpp', 'thermal', 'hydro', 'pumped'],
+  FY2025: ['battery', 'vpp', 'thermal', 'hydroPumped'],
 };
 
 const FY_OPTIONS: { key: CompFyKey; label: string; note: string }[] = [
@@ -51,36 +62,44 @@ const FY_OPTIONS: { key: CompFyKey; label: string; note: string }[] = [
     note:  '2024/4〜2025/3 — EPRX 2025年3月公表',
   },
   {
-    key:   'FY2025H1',
-    label: 'FY2025 上期(暫定・2025/4〜9のみ)',
-    note:  '2025/4〜9 上期のみ — EPRX 2025年12月公表。通年は 2026年6月頃見込み',
+    key:   'FY2025',
+    label: 'FY2025（通年・確定）',
+    note:  '2025/4〜2026/3 — EPRX 2026年6月公表。水力・揚水は合算値',
   },
 ];
 
 /**
- * Fallback 単価（出典: EPRX catalog 2026-05-25）
+ * Fallback 単価（出典: EPRX ／ data.eic-jp.org catalog 2026-08-24）
  * null = 系列なし / 約定ゼロ
+ * ★catalog が読めた場合は page.tsx が実データで上書きするため、ここは保険値。
+ *   値を変えるときは catalog の実値と一致させること（#121 の二重管理を残さない）。
  */
 const FALLBACK: PricesBySourceFy = {
   battery: {
     FY2024:   { '一次': 15.99, '二次①':  7.71, '二次②': 12.61, '三次①': 10.60, '三次②': 109.43, '複合': 15.80 },
-    FY2025H1: { '一次': 11.41, '二次①': 14.13, '二次②': 14.33, '三次①': 13.83, '三次②':  33.52, '複合': 11.39 },
+    FY2025:   { '一次': 11.52, '二次①': 12.51, '二次②': 12.81, '三次①': 12.28, '三次②':  19.31, '複合': 11.50 },
   },
   vpp: {
     FY2024:   { '一次': null,  '二次①': null, '二次②': null,  '三次①':  7.21, '三次②':  46.24, '複合':  7.21 },
-    FY2025H1: { '一次': 19.35, '二次①': null, '二次②': null,  '三次①':  4.92, '三次②':  62.47, '複合': 15.26 },
+    FY2025:   { '一次': 19.12, '二次①': null, '二次②': 14.74, '三次①':  7.09, '三次②':  53.59, '複合': 17.07 },
   },
   thermal: {
     FY2024:   { '一次': 2.29, '二次①': 3.17, '二次②': 3.02, '三次①': 2.90, '三次②': 4.90, '複合': 2.89 },
-    FY2025H1: { '一次': 2.81, '二次①': 3.06, '二次②': 2.90, '三次①': 2.87, '三次②': 1.42, '複合': 2.86 },
+    FY2025:   { '一次': 2.61, '二次①': 2.89, '二次②': 2.75, '三次①': 2.65, '三次②': 1.34, '複合': 2.63 },
   },
+  // hydro / pumped は FY2024 で終端（FY2025 は hydroPumped に統合された）
   hydro: {
     FY2024:   { '一次': 2.28, '二次①': 2.24, '二次②': 1.82, '三次①': 1.82, '三次②': null, '複合': 1.82 },
-    FY2025H1: { '一次': 1.65, '二次①': 1.66, '二次②': 1.66, '三次①': 1.66, '三次②': null, '複合': 1.65 },
+    FY2025:   {},
   },
   pumped: {
     FY2024:   { '一次': 4.17, '二次①': 3.70, '二次②': 1.84, '三次①': 1.90, '三次②': 0.72, '複合': 2.12 },
-    FY2025H1: { '一次': 1.85, '二次①': 1.89, '二次②': 2.38, '三次①': 2.26, '三次②': 0.69, '複合': 2.24 },
+    FY2025:   {},
+  },
+  // FY2025 のみ（FY2024 は水力・揚水が別系列で公表されていた）
+  hydroPumped: {
+    FY2024:   {},
+    FY2025:   { '一次': 1.49, '二次①': 1.73, '二次②': 1.81, '三次①': 1.68, '三次②': 0.64, '複合': 1.67 },
   },
 };
 
@@ -98,7 +117,7 @@ function getPrice(
 /** 選択中 FY の全5電源種別の最大値（バーチャート正規化用） */
 function maxPrice(data: PricesBySourceFy, fy: CompFyKey): number {
   let max = 0;
-  for (const src of ['battery', 'vpp', 'thermal', 'hydro', 'pumped'] as CompSource[]) {
+  for (const src of SOURCES_BY_FY[fy]) {
     for (const prod of PRODUCTS) {
       const v = getPrice(data, src, fy, prod);
       if (v != null && v > max) max = v;
@@ -211,14 +230,17 @@ export function BalancingSourceComparison({
         <strong>総収益 = 単価 × 全量ではありません</strong>。<br />
         ② <strong>VPP は約定月数が少なく、値が荒い傾向があります</strong>（二次①②は系列なし・約定ゼロ、一次 FY2024 は約定ゼロ）。<br />
         ③ 揚水・火力・水力は従来電源の基準線（低単価・安定）。<br />
-        ④ <strong>FY2024（通年）と FY2025（上期のみ）は期間が非対称。比較は通年同士で。</strong>
-        FY2025 通年は 2026 年 6 月頃 EPRX 公表後に更新予定。<br />
+        ④ <strong>FY2024・FY2025 とも通年（各年度 4月〜翌3月）の確定値です。</strong>
+        FY2025 は EPRX が 2026 年 6 月 18 日に公表した通年確報で、旧・上期暫定値から改訂されています。<br />
+        ④-2 <strong>FY2025 は水力と揚水が EPRX 側で合算公表に変わりました</strong>。
+        本表では FY2025 を「水力・揚水（合算）」の 1 行で表示し、FY2024 は従来どおり水力・揚水を
+        別行で表示します（合算値を水力または揚水の値として出すと系列の意味が変わるため）。<br />
         ⑤ 出典: 電力需給調整力取引所（EPRX）「取引実績の取りまとめ結果」より転記・編集 ／ data.eic-jp.org catalog 2026-05-26（balancing 系 39）。<br />
         ⑥ 火力・水力の単価は大口・代表的落札水準（複数年契約 / 発電コスト連動が多い）。蓄電池・VPP と直接比較する際は入札戦略の違いにも留意。<br />
         ⑦ <strong>ΔkW 上限価格の改定</strong>: 一次調整力・二次調整力①・複合商品の上限価格は、
         <strong>2026年8月31日実需給分まで 15.00 円/ΔkW・30分、2026年9月1日実需給分から 10.00 円/ΔkW・30分</strong>
         （適用終了は「当面の間」）。二次調整力②・三次調整力①は 7.21 円/ΔkW・30分を当面継続、三次調整力②は上限なし。
-        本表の FY2024・FY2025 上期は<strong>引下げ前の実績</strong>で、2026年9月以降の上限のある商品の単価水準はこれより低くなります
+        本表の FY2024・FY2025 は<strong>引下げ前の実績</strong>で、2026年9月以降の上限のある商品の単価水準はこれより低くなります
         （出典: 電力需給調整力取引所（EPRX）2026年7月30日公表「需給調整市場のΔkW上限価格について」、根拠: 第4回 電力安定供給ワーキンググループ 資料6）。
       </div>
 
@@ -286,7 +308,7 @@ export function BalancingSourceComparison({
             <thead>
               <tr>
                 <th style={{ ...thStyle, textAlign: 'left' }}>商品</th>
-                {(['battery', 'vpp', 'thermal', 'hydro', 'pumped'] as CompSource[]).map((src) => (
+                {SOURCES_BY_FY[selectedFy].map((src) => (
                   <th
                     key={src}
                     style={{
@@ -327,7 +349,7 @@ export function BalancingSourceComparison({
                         </span>
                       )}
                     </td>
-                    {(['battery', 'vpp', 'thermal', 'hydro', 'pumped'] as CompSource[]).map((src) => {
+                    {SOURCES_BY_FY[selectedFy].map((src) => {
                       const v = getPrice(data, src, selectedFy, prod);
                       const isNull = v === null || v === undefined;
                       const barPct = isNull || v === null ? 0 : Math.round((v / maxVal) * 100);
