@@ -66,12 +66,20 @@ const PAT_LABEL: Record<string, string> = {
     const v = scan(r.name);
     if (v.isFragment) t2hits.push({ name: r.name, count: r.count, firstUrl: r.firstUrl, guard: v });
   }
-  const t1hits: Array<{ name: string; slug: string; guard: FragmentVerdict }> = [];
+  // ★判定は「レポート記載の社名」ではなく **現行マスタの社名** で行う。
+  //   マスタ側で改名が起きるとレポートの社名は過去の記録として古くなり、
+  //   旧称を現行マスタと突き合わせて偽陽性を出す（2026-08-24 に mirait の改名で実際に発生）。
+  const nameBySlug = new Map(ops.map((o) => [o.slug, o.name]));
+  const t1hits: Array<{ name: string; slug: string; guard: FragmentVerdict; renamedFrom?: string }> = [];
   for (const p of posted.posted) {
-    // 登録済み36社は自分自身がマスタに居るので、自分を除いた照合名で判定する
-    const others = existing.filter((e) => e !== p.name);
-    const v = checkFragment(p.name, others);
-    if (v.isFragment) t1hits.push({ name: p.name, slug: p.slug, guard: v });
+    const current = nameBySlug.get(p.slug);
+    if (!current) continue; // マスタから消えている（301集約済み等）
+    // 登録済み社は自分自身がマスタに居るので、自分を除いた照合名で判定する
+    const others = existing.filter((e) => e !== current);
+    const v = checkFragment(current, others);
+    if (v.isFragment) {
+      t1hits.push({ name: current, slug: p.slug, guard: v, ...(current !== p.name ? { renamedFrom: p.name } : {}) });
+    }
   }
 
   const byPat = (hits: Array<{ guard: FragmentVerdict }>) => {

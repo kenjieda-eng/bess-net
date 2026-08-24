@@ -88,7 +88,9 @@ const SLUGS: Record<string, string> = {
   'でんきの駅合同会社': 'denki-no-eki',
   'フォーアールエナジー': '4r-energy',
   '岡谷鋼機': 'okaya-kohki',
-  '株式会社ミライト': 'mirait',
+  // 2026-08-24: 株式会社ミライトは 2022-07-01 に3社統合で「株式会社ミライト・ワン」となり消滅。
+  //   マスタも改名済（slug は識別子なので不変）。再実行時に旧称で再登録しないよう対訳表も更新する。
+  '株式会社ミライト・ワン': 'mirait',
   '御徳蓄電所合同会社': 'otoku-bess',
   '森トラスト株式会社': 'mori-trust',
   '北海道札幌蓄電合同会社': 'hokkaido-sapporo-chikuden',
