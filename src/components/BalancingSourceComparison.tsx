@@ -296,9 +296,23 @@ export function BalancingSourceComparison({
       </section>
 
       {/* ─── 比較テーブル ─── */}
-      <section>
+      {/*
+        #107 / #103(2026-08-24): FY2025 が上期暫定 → 通年確報になり、隠れている値の価値が変わったため、
+        **両FYを初期DOMに描画し hidden で表示切替**する（DOM の生成/破棄ではない）。
+        operators(0011c09) / ChubuMap(8b93864) で確立した「先頭N可視＋残りhidden」と同じ方式。
+        hidden 属性は display:none 相当なのでレイアウトを押し広げず CLS を増やさない。
+        データ量は 5電源 × 6商品 × 2FY = 60値で、両方描画してもコストは無視できる。
+      */}
+      {FY_OPTIONS.map((fyOption) => {
+        const fy = fyOption.key;
+        const fyMaxVal = maxPrice(data, fy);
+        // hidden 属性だけで十分（display:none 相当＝支援技術からも外れる）。
+        // aria-hidden の併記は冗長で、可視側に aria-hidden="false" が出るため付けない。
+        return (
+          <section key={fy} hidden={fy !== selectedFy}>
+
         <h3 style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-navy)', marginBottom: 8 }}>
-          落札単価 比較表 — {activeFyOption.label}
+          落札単価 比較表 — {fyOption.label}
           <span style={{ fontSize: 15, fontWeight: 400, color: '#6b7280', marginLeft: 8 }}>
             （円/ΔkW・30分）
           </span>
@@ -308,7 +322,7 @@ export function BalancingSourceComparison({
             <thead>
               <tr>
                 <th style={{ ...thStyle, textAlign: 'left' }}>商品</th>
-                {SOURCES_BY_FY[selectedFy].map((src) => (
+                {SOURCES_BY_FY[fy].map((src) => (
                   <th
                     key={src}
                     style={{
@@ -349,10 +363,10 @@ export function BalancingSourceComparison({
                         </span>
                       )}
                     </td>
-                    {SOURCES_BY_FY[selectedFy].map((src) => {
-                      const v = getPrice(data, src, selectedFy, prod);
+                    {SOURCES_BY_FY[fy].map((src) => {
+                      const v = getPrice(data, src, fy, prod);
                       const isNull = v === null || v === undefined;
-                      const barPct = isNull || v === null ? 0 : Math.round((v / maxVal) * 100);
+                      const barPct = isNull || v === null ? 0 : Math.round((v / fyMaxVal) * 100);
                       const isHighVal = !isNull && v !== null && v > 10;
 
                       return (
@@ -410,10 +424,12 @@ export function BalancingSourceComparison({
           </table>
         </div>
         <p style={{ fontSize: 15, color: '#6b7280', marginTop: 6 }}>
-          ※ バーは同 FY・全商品の最大値（{maxVal.toFixed(2)} 円）を 100% として正規化。
+          ※ バーは同 FY・全商品の最大値（{fyMaxVal.toFixed(2)} 円）を 100% として正規化。
           「系列なし / 約定ゼロ」は EPRX での公表データなし。
         </p>
-      </section>
+          </section>
+        );
+      })}
 
       {/* ─── VPP 補足注記 ─── */}
       <section
