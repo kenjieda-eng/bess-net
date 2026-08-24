@@ -30,6 +30,37 @@ export const PREFECTURES = [
   '佐賀県', '長崎県', '熊本県', '大分県', '宮崎県', '鹿児島県', '沖縄県',
 ] as const;
 
+/**
+ * 国名・地域名の前置（(b) の国名版・2026-08-24 追加）
+ * 「台湾ビリオン電機株式会社」= 台湾（国名）＋「ビリオン電機株式会社」（実在の日本法人）の合成。
+ * 地名前置（茨城県ノーバル…）と同型だが、法人格を含むため (b) の既存規則では拾えない。
+ * ★誤検出を避けるため「国名を取り除いた残りがマスタに実在する社名と完全一致する」場合のみ断片とする
+ *   （例: 日本蓄電池株式会社 → 残り「蓄電池株式会社」はマスタに無いので断片としない）。
+ */
+export const LEADING_COUNTRY_PREFIXES = [
+  '台湾', '中国', '韓国', '米国', 'アメリカ', '英国', 'イギリス', 'ドイツ', 'フランス', 'インド',
+  'オーストラリア', '豪州', 'シンガポール', 'タイ', 'ベトナム', 'インドネシア', 'マレーシア',
+  'カナダ', 'スペイン', 'イタリア', 'オランダ', 'デンマーク', 'ノルウェー', 'スウェーデン', 'フィンランド',
+] as const;
+
+/**
+ * 「類似名だが別法人」の明示ペア（2026-08-24 追加・落とし穴 #117 と同型の opt-out）
+ *
+ * 名称一致ルールは、正当な別法人を「既存社の断片」と誤判定して落とすことがある。
+ * #117（series_dedup のルール②が同名の正当な設備を誤除去した）と同じ構造なので、
+ * 実在が一次情報で確認できた社名はここに明示して前方一致・部分一致ルールの対象外にする。
+ *
+ * ・株式会社ミライト・ワン … 東証プライム 1417（MIRAIT ONE Corporation）。系統用蓄電所の実案件あり
+ *   （自社公式 https://www.mirait-one.com/info/001697.html 2025-07-28 筑紫野天山蓄電所・EPC受託）。
+ *   「株式会社ミライト」を部分文字列として含むため (a) で high 判定されるが、断片ではない。
+ * ・株式会社ミライト・ワン・システムズ … 別法人（東京都港区・未上場・2022年7月設立・ソフトウェア）。
+ *   「ミライト・ワン」への 301 は誤り。双方向の誤マージを防ぐため両方を登録する。
+ */
+export const NOT_FRAGMENT_ALLOWLIST: ReadonlySet<string> = new Set<string>([
+  '株式会社ミライト・ワン',
+  '株式会社ミライト・ワン・システムズ',
+]);
+
 /** 末尾に付くと断片を疑う動作語（(c)） */
 export const TRAILING_ACTION_WORDS = [
   '運用', '開発', '建設', '設置', '出資', '保有', '運転', '施工', '導入', '供給', '納入', '製造',
@@ -100,11 +131,32 @@ export function checkFragment(name: string, existingNames: Iterable<string>): Fr
   const reasons: string[] = [];
   let matchedExisting: string | undefined;
 
+  // ★「類似名だが別法人」は一切の断片判定から除外する（#117 と同型の opt-out）
+  if (NOT_FRAGMENT_ALLOWLIST.has(n) || NOT_FRAGMENT_ALLOWLIST.has(String(name).trim())) {
+    return { isFragment: false, confidence: 'high', patterns: [], reasons: ['明示allowlist（類似名だが別法人）'] };
+  }
+
+  // (b2) 国名前置 + 残りがマスタの実在社名と完全一致 → 断片（confidence high）
+  for (const c of LEADING_COUNTRY_PREFIXES) {
+    if (!n.startsWith(c) || n.length <= c.length + 2) continue;
+    const rest = n.slice(c.length);
+    for (const raw of existingNames) {
+      if (NFKC(raw) === rest) {
+        patterns.push('b-leading-place');
+        matchedExisting = raw;
+        reasons.push(`国名「${c}」を前置した形で、残り「${rest}」がマスタの実在社名と完全一致（国名前置の断片）`);
+        break;
+      }
+    }
+    if (matchedExisting) break;
+  }
+
   // (a) 既存社名を部分文字列として含む（完全一致は「既存」であって断片ではないので除く）
   //     ★「余り」がノイズ語（動作語・数字・区切り・他社名の連結）なら断片とほぼ確定 high、
   //       地域名などの修飾語なら実在の別法人（例: 住友商事九州）の可能性があるため review。
   let weak = false;
   for (const raw of existingNames) {
+    if (patterns.includes('b-leading-place')) break; // 国名前置で確定済み
     const e = NFKC(raw);
     if (!e || e.length < 4) continue; // 短すぎる社名は部分一致が暴発する
     if (e === n) continue;            // 完全一致＝既存社そのもの

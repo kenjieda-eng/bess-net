@@ -3,25 +3,9 @@
  "master_operators": 580,
  "tier2": {
   "total": 169,
-  "detected": 9,
-  "remaining": 160,
+  "detected": 8,
+  "remaining": 161,
   "hits": [
-   {
-    "name": "株式会社ミライト・ワン",
-    "count": 6,
-    "firstUrl": "https://bess-net.jp/news/pr-2026-04-20-co109041-238",
-    "guard": {
-     "isFragment": true,
-     "confidence": "high",
-     "patterns": [
-      "a-contains-existing"
-     ],
-     "reasons": [
-      "既存社名「株式会社ミライト」＋ノイズ語「・ワン」＝前後の語を巻き込んだ断片"
-     ],
-     "matchedExisting": "株式会社ミライト"
-    }
-   },
    {
     "name": "・ＳＭＢＣ日興証券株式会社",
     "count": 1,
@@ -140,12 +124,12 @@
     "firstUrl": "https://bess-net.jp/news/pr-2024-08-09-co146923-1",
     "guard": {
      "isFragment": true,
-     "confidence": "review",
+     "confidence": "high",
      "patterns": [
-      "a-contains-existing"
+      "b-leading-place"
      ],
      "reasons": [
-      "既存社名「ビリオン電機株式会社」を部分文字列として含む（余り「台湾」。実在の別法人の可能性があり要確認）"
+      "国名「台湾」を前置した形で、残り「ビリオン電機株式会社」がマスタの実在社名と完全一致（国名前置の断片）"
      ],
      "matchedExisting": "ビリオン電機株式会社"
     }
