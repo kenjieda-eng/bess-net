@@ -483,7 +483,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               <div className="grid-print-header">
                 <div>出典: {printOperators.length > 0 ? printOperators.join('・') : '10送配電事業者'} の公表情報を蓄電所ネット編集部が整理</div>
                 {printAreaDates.length > 0 && <div>公表日: {printAreaDates.join(' ／ ')}</div>}
-                {listsGeneratedAt && <div>当サイト取込日: {listsGeneratedAt.slice(0, 10)}</div>}
+                {/* ユウ照合(2026-08-26): 行の「当サイト取込 =各社データの取込日」と別の意味のため語を分ける */}
+                {listsGeneratedAt && <div>検索用データの生成日: {listsGeneratedAt.slice(0, 10)}</div>}
                 <div>このページのURL: {shareUrl}</div>
                 <div>印刷日時: <span className="grid-print-datetime" /></div>
               </div>
@@ -524,8 +525,10 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                           {r.voltage_primary_kv == null && r.voltage_secondary_kv != null &&
                             ` ／ 二次${r.voltage_secondary_kv}kV`}
                           {r.disambiguator && ` ／ ${r.disambiguator}`}
-                          {r.cap_avail_mw != null &&
-                            ` ／ 空容量 ${r.cap_avail_mw}MW`}
+                          {/* ユウ照合(2026-08-26): 未公表は空白でなく明記（注記③「未公表は空容量条件で対象外」と対応） */}
+                          {r.cap_avail_mw != null
+                            ? ` ／ 空容量 ${r.cap_avail_mw}MW`
+                            : ' ／ 空容量 未公表'}
                           {r.n1_capacity_mw != null &&
                             ` ／ N-1可能量 ${r.n1_capacity_mw}MW`}
                           {r.n1_eligible && ' ／ N-1電制可'}

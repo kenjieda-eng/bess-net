@@ -68,15 +68,30 @@ export function getSearchPopulationTotal(): number {
 /** index.json 側の全件数（表示用。母集団と一致しない場合はページ側で通知） */
 export const GRID_INDEX_TOTAL: number = (substationsIndex as { total: number }).total;
 
+/** 都道府県コード順（JIS X 0401）。select の並び順にのみ使う（ユウ照合 2026-08-26: 文字コード順→コード順へ） */
+const PREF_CODE_ORDER = [
+  '北海道', '青森県', '岩手県', '宮城県', '秋田県', '山形県', '福島県',
+  '茨城県', '栃木県', '群馬県', '埼玉県', '千葉県', '東京都', '神奈川県',
+  '新潟県', '富山県', '石川県', '福井県', '山梨県', '長野県', '岐阜県',
+  '静岡県', '愛知県', '三重県', '滋賀県', '京都府', '大阪府', '兵庫県',
+  '奈良県', '和歌山県', '鳥取県', '島根県', '岡山県', '広島県', '山口県',
+  '徳島県', '香川県', '愛媛県', '高知県', '福岡県', '佐賀県', '長崎県',
+  '熊本県', '大分県', '宮崎県', '鹿児島県', '沖縄県',
+];
+
 /** データに実在する都道府県（Gr10 で県扱いから外した区分は prefecture=null なので自然に出ない） */
 export function getAvailablePrefectures(): Array<{ pref: string; count: number }> {
   const m = new Map<string, number>();
   for (const i of getSearchPopulation()) {
     if (i.prefecture) m.set(i.prefecture, (m.get(i.prefecture) ?? 0) + 1);
   }
+  const codeIdx = (p: string) => {
+    const i = PREF_CODE_ORDER.indexOf(p);
+    return i === -1 ? 999 : i; // 想定外の値は末尾（データ由来なので通常発生しない）
+  };
   return [...m.entries()]
     .map(([pref, count]) => ({ pref, count }))
-    .sort((a, b) => a.pref.localeCompare(b.pref, 'ja'));
+    .sort((a, b) => codeIdx(a.pref) - codeIdx(b.pref) || a.pref.localeCompare(b.pref, 'ja'));
 }
 
 /** 都道府県の区分を一切持たない事業者（例: 関西電力送配電）。select 下の注記に使う */
