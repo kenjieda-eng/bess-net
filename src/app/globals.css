@@ -3842,7 +3842,9 @@
   .grid-search-submit,
   .grid-search-clear,
   .back-link,
-  .article-breadcrumb {
+  .article-breadcrumb,
+  div[aria-label='お知らせ'] {
+    /* サイト共通の告知バナー（AnnouncementBanner・sticky）。印刷PDF に写り込むため除外 */
     display: none !important;
   }
   .grid-print-header {
