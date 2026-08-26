@@ -1,23 +1,37 @@
-// /grid/search — v25: 多角的検索フィルタ
-// - q (変電所名) + area + voltage_min + cap_avail_min + n1_eligible + operator
-// - microCMS filters [and] 結合、searchSubstationsByFilters 関数で検索
-// - 表示上限 200 件（UI 性能保護）、空容量大きい順
+// /grid/search — v25: 多角的検索フィルタ → Gr11(2026-08-25): precompute 検索へ移行
+// - q + area + prefecture + voltage_min + cap_avail_min/max + n1_eligible + operator（AND 結合）
+// - ★データ源は grid-area-lists.json（build 時 precompute・凍結除外済み）。runtime microCMS 0
+//   （CLAUDE.md 2-2 Q3。切替前突合: reports/grid-search-parity-2026-08-25.md 件数86/86一致）
+// - 描画は従来どおりサーバ側＝結果一覧は初期DOMに載る（#107。URL共有・印刷の前提）
+// - 表示上限 200 件（UI 性能保護）、空容量大きい順（tie は名称→slug で固定）
 // - 落とし穴 #57: 静的セグメント `search/` は同階層 [slug] より優先
 import type { Metadata } from 'next';
-import substationsIndex from '@/data/substations/index.json';
 import { AREA_META } from '../[slug]/area-meta';
 
 // Gr5②(2026-08-08): 件数はデータ実数から動的算出
-const GRID_TOTAL: number = (substationsIndex as { total: number }).total;
+// Gr11: 検索母集団（grid-area-lists）と index.json の total は同じ precompute が同時生成する。
+//   万一食い違えば生成工程の破損なので、母集団側を表示に使い食い違いは build ログで気付ける。
+const GRID_TOTAL: number = getSearchPopulationTotal();
+const GRID_INDEX_TOTAL_CHECK: number = GRID_INDEX_TOTAL;
+if (GRID_TOTAL !== GRID_INDEX_TOTAL_CHECK) {
+  console.warn(`[grid/search] 母集団不一致: lists=${GRID_TOTAL} index=${GRID_INDEX_TOTAL_CHECK}`);
+}
 const GRID_OPERATORS: number = Object.keys(AREA_META).length;
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import {
-  searchSubstationsByFilters,
-  type SubstationSearchFilters,
-} from '@/lib/microcms';
-import { isFrozenSubstation } from '@/lib/substations-frozen';
+  searchGridStatic,
+  getSearchPopulationTotal,
+  getAvailablePrefectures,
+  getOperatorsWithoutPrefecture,
+  getCapUnpublishedTotal,
+  GRID_INDEX_TOTAL,
+  type GridSearchFilters,
+} from '@/lib/grid-search-core';
+import { getGridListsGeneratedAt } from '@/lib/grid-static-lists';
+import GridSearchUrlCopy from '@/components/GridSearchUrlCopy';
+import GridPrintButton from '@/components/GridPrintButton';
 import { siteConfig } from '@/lib/site-config';
 import { formatDataDateLabel } from '@/lib/grid-data-date';
 import { subsidyCountForPref } from '@/lib/grid-meta';
@@ -44,7 +58,7 @@ export const metadata: Metadata = {
 };
 
 type SearchPageProps = {
-  searchParams: SubstationSearchFilters;
+  searchParams: GridSearchFilters;
 };
 
 // Gr10(2026-08-11): 東京が選択肢から抜けており、東京エリア1,718件を絞り込めなかった
@@ -136,6 +150,21 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     }
   }
 
+  // Gr11-①: 都道府県条件。選択肢はデータに実在する県のみ（静的47県を焼き込まない）
+  const availablePrefs = getAvailablePrefectures();
+  const prefNames = availablePrefs.map((p) => p.pref);
+  const rawPref = pick('prefecture', 'pref');
+  let prefValue: string | undefined;
+  if (rawPref) {
+    if (prefNames.includes(rawPref)) {
+      prefValue = rawPref;
+    } else {
+      notices.push(
+        `指定された値「${rawPref}」は都道府県の選択肢にありません。「長崎県」のような実在の県名で指定してください（データに区分がある${prefNames.length}都道府県のみ指定できます）。この条件は外して検索しました。`
+      );
+    }
+  }
+
   const rawN1 = pick('n1_eligible', 'n1');
   let n1Value: string | undefined;
   if (rawN1) {
@@ -150,9 +179,10 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     return undefined;
   };
 
-  const filters: SubstationSearchFilters = {
+  const filters: GridSearchFilters = {
     q: pick('q'),
     area: areaValue,
+    prefecture: prefValue,
     voltage_min: numeric(pick('voltage_min', 'voltage'), '電圧'),
     cap_avail_min: numeric(pick('cap_avail_min', 'cap_min', 'cap_preset'), '空容量の下限'),
     cap_avail_max: numeric(pick('cap_avail_max', 'cap_max'), '空容量の上限'),
@@ -163,17 +193,42 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const hasAnyFilter =
     !!filters.q ||
     !!filters.area ||
+    !!filters.prefecture ||
     !!filters.voltage_min ||
     !!filters.cap_avail_min ||
     !!filters.cap_avail_max ||
     filters.n1_eligible === 'true' ||
     !!filters.operator;
 
+  // Gr11: precompute メモリ内検索（凍結は母集団の生成時に除外済み＝件数と表示が一貫する）
   const response = hasAnyFilter
-    ? await searchSubstationsByFilters(filters)
-    : { items: [], totalCount: 0, truncated: false, failed: false };
-  // 凍結変電所（更新停止）は連系候補に出さない（2026-08-16裁定・詳細ページ自体は維持）
-  const results = response.items.filter((r) => !isFrozenSubstation(r.slug));
+    ? searchGridStatic(filters)
+    : { items: [], totalCount: 0, truncated: false, capUnpublishedInMatches: 0 };
+  const results = response.items;
+
+  // Gr11-④: 共有 URL（サーバ側で確定させる。有効と判定した条件だけを載せる）
+  const shareParams = new URLSearchParams();
+  if (filters.q) shareParams.set('q', filters.q);
+  if (filters.area) shareParams.set('area', filters.area);
+  if (filters.prefecture) shareParams.set('prefecture', filters.prefecture);
+  if (filters.voltage_min) shareParams.set('voltage_min', filters.voltage_min);
+  if (filters.cap_avail_min) shareParams.set('cap_avail_min', filters.cap_avail_min);
+  if (filters.cap_avail_max) shareParams.set('cap_avail_max', filters.cap_avail_max);
+  if (filters.n1_eligible === 'true') shareParams.set('n1_eligible', 'true');
+  if (filters.operator) shareParams.set('operator', filters.operator);
+  const conditionCount = [...shareParams.keys()].length;
+  const shareUrl = `${siteConfig.url}/grid/search${conditionCount ? `?${shareParams.toString()}` : ''}`;
+
+  // Gr11-③: 空容量が未公表（null）の全件数（データから算出・焼き込まない）
+  const capUnpublishedTotal = getCapUnpublishedTotal();
+  // Gr11-①: 都道府県の区分を持たない事業者（データ由来。0社なら注記なし）
+  const opsWithoutPref = getOperatorsWithoutPrefecture();
+  // Gr11-⑤: 印刷ヘッダ用（出典=結果に含まれる事業者・公表日=エリア基準日・取込日=母集団生成日時）
+  const printOperators = [...new Set(results.map((r) => r.operator).filter(Boolean))] as string[];
+  const printAreaDates = [...new Set(results.map((r) => r.area).filter(Boolean))]
+    .map((a) => formatDataDateLabel(a as string))
+    .filter(Boolean) as string[];
+  const listsGeneratedAt = getGridListsGeneratedAt();
 
   // 結果に含まれる県から導線用の件数を集める（Gr8）
   const resultPrefs = [...new Set(results.map((r) => r.prefecture).filter(Boolean))] as string[];
@@ -265,6 +320,28 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               </select>
             </div>
             <div className="grid-search-row">
+              <label htmlFor="f-pref">都道府県</label>
+              <select
+                id="f-pref"
+                name="prefecture"
+                defaultValue={filters.prefecture ?? ''}
+                className="grid-search-input"
+              >
+                <option value="">指定なし</option>
+                {availablePrefs.map(({ pref, count }) => (
+                  <option key={pref} value={pref}>
+                    {pref}（{count}件）
+                  </option>
+                ))}
+              </select>
+              {/* Gr11-①: 県の区分を持たない事業者の注記（データから導出。該当0社なら出さない） */}
+              {opsWithoutPref.length > 0 && (
+                <span style={{ fontSize: 12, color: '#6b7280', display: 'block', marginTop: 4 }}>
+                  {opsWithoutPref.map((o) => `${o.operator}の公表データ（${o.count.toLocaleString()}件）には都道府県の区分がありません。エリア「${o.area}」で絞ってください。`).join(' ')}
+                </span>
+              )}
+            </div>
+            <div className="grid-search-row">
               <label htmlFor="f-volt">電圧階級（一次kV 以上）</label>
               <select
                 id="f-volt"
@@ -338,6 +415,10 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                   style={{ maxWidth: 190 }}
                 />
               </span>
+              {/* Gr11-③: 空容量条件の意味の明記（件数はデータから算出・焼き込まない。挙動は不変） */}
+              <span style={{ fontSize: 12, color: '#6b7280', display: 'block', marginTop: 4 }}>
+                空容量が未公表（情報なし）の {capUnpublishedTotal.toLocaleString()} 件は、空容量の条件（プリセット・範囲のいずれも）を指定すると対象外になります。
+              </span>
             </div>
 
             <div className="grid-search-row">
@@ -398,15 +479,27 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
           {hasAnyFilter && (
             <section className="grid-section">
+              {/* Gr11-⑤: 印刷ヘッダ（画面では非表示・印刷時のみ。値はデータ側から） */}
+              <div className="grid-print-header">
+                <div>出典: {printOperators.length > 0 ? printOperators.join('・') : '10送配電事業者'} の公表情報を蓄電所ネット編集部が整理</div>
+                {printAreaDates.length > 0 && <div>公表日: {printAreaDates.join(' ／ ')}</div>}
+                {listsGeneratedAt && <div>当サイト取込日: {listsGeneratedAt.slice(0, 10)}</div>}
+                <div>このページのURL: {shareUrl}</div>
+                <div>印刷日時: <span className="grid-print-datetime" /></div>
+              </div>
               <h2 className="grid-section-h2">
-                {response.failed
-                  ? 'データを取得できませんでした'
-                  : `条件に一致: ${response.totalCount.toLocaleString()}件 / 全${GRID_TOTAL.toLocaleString()}件`}
+                条件に一致: {response.totalCount.toLocaleString()}件 / 全{GRID_TOTAL.toLocaleString()}件
+                {response.capUnpublishedInMatches > 0 &&
+                  `（うち空容量 未公表 ${response.capUnpublishedInMatches.toLocaleString()}件）`}
               </h2>
-              <p className="grid-source-note" style={{ marginTop: 0 }}>
-                {response.truncated
-                  ? `空容量の大きい順に上位${results.length}件を表示しています。さらに条件を絞ると全件を確認できます。`
-                  : `${results.length.toLocaleString()}件すべてを表示しています。`}
+              <p className="grid-source-note no-print" style={{ marginTop: 0, display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+                <span>
+                  {response.truncated
+                    ? `空容量の大きい順に上位${results.length}件を表示しています。さらに条件を絞ると全件を確認できます。`
+                    : `${results.length.toLocaleString()}件すべてを表示しています。`}
+                </span>
+                <GridSearchUrlCopy url={shareUrl} conditions={conditionCount} />
+                <GridPrintButton page="grid_search" />
               </p>
               {results.length > 0 ? (
                 <ul className="grid-search-list">
@@ -424,8 +517,13 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                           {r.prefecture && ` ／ ${r.prefecture}`}
                           {/* Gr10(2026-08-11): 系統区分・設備区分は都道府県として表示しない */}
                           {!r.prefecture && r.facility_class && ` ／ 設備区分: ${r.facility_class}`}
+                          {/* Gr11-②: 二次電圧を常時表示（同名の識別の第一手段）。同名グループで
+                              二次電圧も同値のときのみ disambiguator（公式Noの枝番 等）を併記 */}
                           {r.voltage_primary_kv != null &&
-                            ` ／ ${r.voltage_primary_kv}kV`}
+                            ` ／ ${r.voltage_primary_kv}${r.voltage_secondary_kv != null ? `/${r.voltage_secondary_kv}` : ''}kV`}
+                          {r.voltage_primary_kv == null && r.voltage_secondary_kv != null &&
+                            ` ／ 二次${r.voltage_secondary_kv}kV`}
+                          {r.disambiguator && ` ／ ${r.disambiguator}`}
                           {r.cap_avail_mw != null &&
                             ` ／ 空容量 ${r.cap_avail_mw}MW`}
                           {r.n1_capacity_mw != null &&
@@ -433,7 +531,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                           {r.n1_eligible && ' ／ N-1電制可'}
                         </span>
                         {/* Gr7(2026-08-09): 行ごとにデータ基準日を明示（Gr2の実値を流用） */}
-                        {formatDataDateLabel(r.area) && (
+                        {r.area && formatDataDateLabel(r.area) && (
                           <span className="grid-search-meta" style={{ color: '#6b7280', fontSize: 12 }}>
                             {formatDataDateLabel(r.area)}
                           </span>
@@ -442,20 +540,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                     </li>
                   ))}
                 </ul>
-              ) : response.failed ? (
-                /* 取得失敗を「該当なし」と偽らない（2026-08-09） */
-                <div className="grid-source-note">
-                  <p style={{ marginTop: 0 }}>
-                    アクセスが集中しているため、検索結果を取得できませんでした。少し時間をおいて再度お試しください。
-                    エリア別・都道府県別の一覧は下記からご覧いただけます。
-                  </p>
-                  <p style={{ marginBottom: 0 }}>
-                    <Link href="/grid">← エリア別一覧</Link>
-                    {' / '}
-                    <Link href="/grid/prefecture">📍 都道府県別一覧</Link>
-                  </p>
-                </div>
               ) : (
+                /* Gr11: メモリ内検索のため「取得失敗」は構造的に起きない（failed 分岐を撤去） */
                 <div className="grid-source-note">
                   <p style={{ marginTop: 0 }}>
                     指定された条件に一致する変電所は見つかりませんでした。次のどれかで条件をゆるめてください。

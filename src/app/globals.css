@@ -3818,3 +3818,62 @@
   color: var(--color-blue);
   text-decoration: underline;
 }
+
+/* ============================================================
+   Gr11-⑤ (2026-08-25): /grid 詳細・検索結果の印刷用スタイル
+   - ナビ・フッタ・ボタン類を隠し、表は改ページで行が割れないようにする
+   - 印刷ヘッダ（出典・公表日・取込日・URL・印刷日時）は .grid-print-header に
+     server 側で描画しておき、画面では隠して印刷時のみ出す
+   ============================================================ */
+.grid-print-header {
+  display: none;
+}
+@media print {
+  @page {
+    margin: 14mm 12mm;
+  }
+  header,
+  footer,
+  nav,
+  .site-header,
+  .site-footer,
+  .no-print,
+  .grid-search-form-multi,
+  .grid-search-submit,
+  .grid-search-clear,
+  .back-link,
+  .article-breadcrumb {
+    display: none !important;
+  }
+  .grid-print-header {
+    display: block;
+    border-bottom: 1px solid #999;
+    margin-bottom: 8mm;
+    padding-bottom: 3mm;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #000;
+  }
+  main,
+  .section,
+  .section-inner {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+  table {
+    page-break-inside: auto;
+  }
+  tr,
+  li.grid-search-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}

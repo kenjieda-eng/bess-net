@@ -168,11 +168,19 @@ export default async function PrefecturePage({ params }: PageParams) {
                 <Link href="/tools/grid-connection-check">系統連系診断（事業条件から可否の目安を確認）</Link>
               </li>
               <li>
-                <Link
-                  href={`/grid/search?area=${encodeURIComponent(prefMeta?.areas?.[0] ?? '')}&cap_min=10`}
-                >
-                  {operatorLabelMulti(prefOperators)}管内で空容量10MW以上を検索
-                </Link>
+                {/* Gr11-①(2026-08-25): データに県の区分がある県は prefecture= を引き継いで検索を開く。
+                    区分が無い県（関西の2府4県など）は従来どおりエリアで開く */}
+                {subs.length > 0 && subs.some((x) => x.prefecture === decoded) ? (
+                  <Link href={`/grid/search?prefecture=${encodeURIComponent(decoded)}&cap_avail_min=10`}>
+                    {decoded}内で空容量10MW以上を検索（条件で絞り込む）
+                  </Link>
+                ) : (
+                  <Link
+                    href={`/grid/search?area=${encodeURIComponent(prefMeta?.areas?.[0] ?? '')}&cap_min=10`}
+                  >
+                    {operatorLabelMulti(prefOperators)}管内で空容量10MW以上を検索
+                  </Link>
+                )}
               </li>
             </ul>
           </section>

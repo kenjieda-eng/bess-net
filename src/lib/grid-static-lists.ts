@@ -41,12 +41,19 @@ export type GridListItem = {
 };
 
 const DATA = lists as unknown as {
+  /** 生成日時（ISO）。precompute-substations.ts が書く。Gr11 で追加（旧生成物では undefined） */
+  generated_at?: string;
   by_area: Record<string, GridListItem[]>;
   /** 県 → [エリア名, by_area 内の添字]。実体を二重に持たないための参照（生成JSONのサイズ半減） */
   pref_refs: Record<string, Array<[string, number]>>;
 };
 
 const _prefCache = new Map<string, GridListItem[]>();
+
+/** 検索母集団の生成日時（ISO）。旧生成物では null */
+export function getGridListsGeneratedAt(): string | null {
+  return DATA.generated_at ?? null;
+}
 
 /** エリア（日本語名）の変電所一覧。未知エリアは空配列（縮退・404は作らない） */
 export function getAreaSubstationsStatic(areaJp: string): GridListItem[] {

@@ -30,6 +30,7 @@ import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import substationsIndex from '@/data/substations/index.json';
 import { buildAreaTitle, buildAreaDescription } from '@/lib/grid-meta';
 import { formatDataDateLabel } from '@/lib/grid-data-date';
+import GridPrintButton from '@/components/GridPrintButton';
 // Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
 
@@ -335,6 +336,13 @@ export default async function GridSlugPage({
                 <span className="grid-tag grid-tag-voltage">{voltageClass}</span>
               )}
             </div>
+            {/* Gr11-⑤(2026-08-25): 印刷ヘッダ（画面では非表示・印刷時のみ。値はデータ側から） */}
+            <div className="grid-print-header">
+              <div>出典: {operatorName ?? '送配電事業者'} の公表情報（公表日: {lastUpdated}）を蓄電所ネット編集部が整理</div>
+              <div>当サイト取込日: {fmtDate(sub.fetched_at)}</div>
+              <div>このページのURL: {siteConfig.url}/grid/{sub.slug}</div>
+              <div>印刷日時: <span className="grid-print-datetime" /></div>
+            </div>
             <h1 className="article-title">{sub.name}</h1>
             <p className="grid-detail-lead">
               {operatorName ?? '事業者情報なし'} 管内
@@ -348,6 +356,8 @@ export default async function GridSlugPage({
               <Link href="/tracker/grid" style={{ color: 'inherit', textDecoration: 'underline' }}>
                 更新タイムライン
               </Link>
+              <span style={{ margin: '0 6px', opacity: 0.4 }}>|</span>
+              <GridPrintButton page="grid_detail" />
             </p>
           </div>
 

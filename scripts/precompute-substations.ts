@@ -370,7 +370,8 @@ async function main(): Promise<void> {
   const genDir = path.join(process.cwd(), 'src', 'lib', 'generated');
   fs.mkdirSync(genDir, { recursive: true });
   const listsPath = path.join(genDir, 'grid-area-lists.json');
-  fs.writeFileSync(listsPath, JSON.stringify({ by_area: areaLists, pref_refs: prefRefs }));
+  // Gr11(2026-08-25): 検索母集団の生成日時を JSON 内に持つ（ユウ条件3。鮮度の追跡用）
+  fs.writeFileSync(listsPath, JSON.stringify({ generated_at: new Date().toISOString(), by_area: areaLists, pref_refs: prefRefs }));
   console.log(`  grid-area-lists.json: エリア${Object.keys(areaLists).length} / 県${Object.keys(prefRefs).length}`
     + ` (${(fs.statSync(listsPath).size / 1024).toFixed(0)} KB)`);
 
