@@ -110,6 +110,8 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   // 金曜ワンセット#2（2026-08-14）
   'nihon-chikudenchi-kama-bousai-kyotei-2026-08': '地域自治体',                    // 嘉麻市 防災協定
   'eku-hirohara-sueteuke-2026-08': '開発計画',                                     // 広原 据付完了
+  // 金曜ワンセット#4（2026-08-30 遅延実施）
+  'bluefield-aggregation-100mw-2026-08': '市場統計',                               // 採用決定容量100MW突破（実績統計）
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {

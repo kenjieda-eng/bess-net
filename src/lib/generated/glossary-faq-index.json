@@ -2069,7 +2069,14 @@
   "kw-kwh-separation": [],
   "kw-value": [],
   "var-volt-ampere-reactive": [],
-  "delta-kw": [],
+  "delta-kw": [
+    {
+      "id": "yic3-u58r",
+      "slug": "faq-lv-02",
+      "question": "低圧蓄電所の収益はどこから生まれますか？",
+      "category": "事業"
+    }
+  ],
   "aggregator-detail": [
     {
       "id": "ljb-memhee",
@@ -2931,6 +2938,12 @@
       "slug": "faq-seido-03",
       "question": "需給調整市場とは？どんな商品がありますか？",
       "category": "制度"
+    },
+    {
+      "id": "yic3-u58r",
+      "slug": "faq-lv-02",
+      "question": "低圧蓄電所の収益はどこから生まれますか？",
+      "category": "事業"
     }
   ],
   "fcr-primary": [],
@@ -3076,6 +3089,12 @@
       "slug": "faq-seido-03",
       "question": "需給調整市場とは？どんな商品がありますか？",
       "category": "制度"
+    },
+    {
+      "id": "yic3-u58r",
+      "slug": "faq-lv-02",
+      "question": "低圧蓄電所の収益はどこから生まれますか？",
+      "category": "事業"
     }
   ],
   "sr1-secondary": [],
