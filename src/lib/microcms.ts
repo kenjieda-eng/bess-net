@@ -321,9 +321,30 @@ let _policyEventsCache: PolicyEvent[] | null = null;
 let _policyEventsPromise: Promise<PolicyEvent[]> | null = null;
 
 /**
+ * イベントの表示順（/policy-calendar・/events 共通の SSOT）。
+ *   第一キー: eventDate 降順（従来どおり。ここは変えない＝読者に見える本当の変更にしない）
+ *   タイブレーク: title（ja ロケール昇順）→ slug 昇順
+ *
+ * ★2026-08-31 追加（落とし穴 #124）: 従来は microCMS の `orders: '-eventDate'` だけで、
+ *   同着日の並びは「参照元 API の登録順」に暗黙依存していた。industry-events から
+ *   policy-events へデータを移した瞬間に登録順が変わり、同着日の並びが入れ替わって表面化した
+ *   （/events 11箇所・集合と日付は不変）。Gr11 の /grid/search と同じ
+ *   「意味のあるキー → 名称 → slug」型に揃え、どの経路から読んでも決定的にする。
+ */
+export function compareEventsForDisplay(a: PolicyEvent, b: PolicyEvent): number {
+  const da = (a.eventDate ?? '').slice(0, 10);
+  const db = (b.eventDate ?? '').slice(0, 10);
+  if (da !== db) return db.localeCompare(da); // eventDate 降順（新しいものが先）
+  const byTitle = (a.title ?? '').localeCompare(b.title ?? '', 'ja');
+  if (byTitle !== 0) return byTitle;
+  return (a.slug ?? '').localeCompare(b.slug ?? '');
+}
+
+/**
  * policy-events の生の全件（kind で絞らない）。統合後の唯一の fetch 経路。
  * ★消費側は必ず getAllPolicyEvents（政策側）か getAllIndustryEvents（業界側）を使う。
  *   両者は同じ 1 回の fetch を共有するため runtime のリクエスト数は増えない（鉄則 #2）。
+ *   並びは compareEventsForDisplay で決定的に固定してから返す（両ビューが同じ規則になる）。
  */
 const getAllEventsRaw = async (): Promise<PolicyEvent[]> => {
   if (_policyEventsCache) return _policyEventsCache;
@@ -345,6 +366,7 @@ const getAllEventsRaw = async (): Promise<PolicyEvent[]> => {
       _policyEventsPromise = null;
       return [];
     }
+    all.sort(compareEventsForDisplay);
     _policyEventsCache = all;
     return all;
   })();
