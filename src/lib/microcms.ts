@@ -277,11 +277,31 @@ export type PolicyEvent = {
   sourceUrl: string;
   status: string[]; // 予定 / 進行中 / 終了
   category?: string[];
+  /**
+   * API統合（2026-08-31）で追加した区分。select「政策」／「業界」。
+   * ★必須にしていないため、統合前からの既存54件は未設定のまま＝コード側で「未設定＝政策」と扱う。
+   */
+  kind?: string[];
+  // ↓ 業界イベント（旧 industry-events）から統合したフィールド。政策イベント側は未設定
+  endDate?: string; // 終了日（複数日開催）。status 導出は endDate ?? eventDate
+  venue?: string; // 会場
+  location?: string; // 場所（都道府県市区町村）
+  registrationDeadline?: string; // 申込締切
+  relatedTopics?: string[]; // 関連トピック（select 複数）
   publishedAt: string;
   updatedAt: string;
   createdAt: string;
   revisedAt: string;
 };
+
+/** kind の区分値（microCMS select の実値と一致させること） */
+export const EVENT_KIND_POLICY = '政策';
+export const EVENT_KIND_INDUSTRY = '業界';
+
+/** 業界イベントか（kind に「業界」を含む） */
+export function isIndustryKind(ev: Pick<PolicyEvent, 'kind'>): boolean {
+  return Array.isArray(ev.kind) && ev.kind.includes(EVENT_KIND_INDUSTRY);
+}
 
 /**
  * 政策・法制度カレンダーの全件を取得（依頼AB）
@@ -293,7 +313,12 @@ export type PolicyEvent = {
 let _policyEventsCache: PolicyEvent[] | null = null;
 let _policyEventsPromise: Promise<PolicyEvent[]> | null = null;
 
-export const getAllPolicyEvents = async (): Promise<PolicyEvent[]> => {
+/**
+ * policy-events の生の全件（kind で絞らない）。統合後の唯一の fetch 経路。
+ * ★消費側は必ず getAllPolicyEvents（政策側）か getAllIndustryEvents（業界側）を使う。
+ *   両者は同じ 1 回の fetch を共有するため runtime のリクエスト数は増えない（鉄則 #2）。
+ */
+const getAllEventsRaw = async (): Promise<PolicyEvent[]> => {
   if (_policyEventsCache) return _policyEventsCache;
   if (_policyEventsPromise) return _policyEventsPromise;
   _policyEventsPromise = (async () => {
@@ -317,6 +342,16 @@ export const getAllPolicyEvents = async (): Promise<PolicyEvent[]> => {
     return all;
   })();
   return _policyEventsPromise;
+};
+
+/**
+ * 政策・法制度カレンダー（/policy-calendar・詳細・トップ・sitemap）で使う全件。
+ * API統合（2026-08-31）以降は「kind が未設定 または 政策」に限定する。
+ * ★未設定を政策として通すのが要（統合前からの既存54件は kind を持たない＝PATCH していない）。
+ */
+export const getAllPolicyEvents = async (): Promise<PolicyEvent[]> => {
+  const all = await getAllEventsRaw();
+  return all.filter((ev) => !isIndustryKind(ev));
 };
 
 // ===== 業界用語FAQ（faq、依頼AD） =====

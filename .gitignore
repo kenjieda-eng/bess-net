@@ -162,3 +162,7 @@ src/data/operator-ranking.json
 .env*.local
 __pycache__/
 *.pyc
+
+# microCMS 全件バックアップ（GET生レスポンス）。ローカルと OneDrive 05_データアセット に二重保管。
+# リポジトリには入れない（サイズと機微の両面）。2026-08-31 API統合便で追加
+backups/
