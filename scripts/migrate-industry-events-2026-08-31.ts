@@ -144,6 +144,48 @@ async function migrateOne(r: IndustryRec, label: string): Promise<'ok' | 'skip' 
   return 'ok';
 }
 
+/** レコードが持つ「検証したい select 値」の集合（relatedTopics ＋ eventType） */
+function selectValuesOf(r: IndustryRec): string[] {
+  return [...(r.relatedTopics ?? []).map((v) => `rt:${v}`), ...(r.eventType ?? []).map((v) => `et:${v}`)];
+}
+
+/**
+ * 投入順を greedy set cover で決める（ユウ追加指示 2026-08-31）。
+ * 「まだ検証していない select 値を最も多く新たに含む1件」を貪欲に選ぶ。
+ * → relatedTopics 52値・eventType 5値が最初の数件で全数検証される。
+ * 同点は relatedTopics の多い順 → slug 昇順で決定的にする（再実行で順序が揺れない）。
+ */
+function greedyOrder(src: IndustryRec[]): { order: IndustryRec[]; coveredAt: number; totalValues: number } {
+  const remaining = [...src];
+  const order: IndustryRec[] = [];
+  const seen = new Set<string>();
+  const allValues = new Set(src.flatMap(selectValuesOf));
+  let coveredAt = -1;
+  while (remaining.length) {
+    let best = 0;
+    let bestGain = -1;
+    for (let i = 0; i < remaining.length; i++) {
+      const gain = selectValuesOf(remaining[i]).filter((v) => !seen.has(v)).length;
+      const cur = remaining[i];
+      const bst = remaining[best];
+      if (
+        gain > bestGain ||
+        (gain === bestGain &&
+          ((cur.relatedTopics?.length ?? 0) > (bst.relatedTopics?.length ?? 0) ||
+            ((cur.relatedTopics?.length ?? 0) === (bst.relatedTopics?.length ?? 0) && cur.slug < bst.slug)))
+      ) {
+        best = i;
+        bestGain = gain;
+      }
+    }
+    const pick = remaining.splice(best, 1)[0];
+    selectValuesOf(pick).forEach((v) => seen.add(v));
+    order.push(pick);
+    if (coveredAt === -1 && seen.size === allValues.size) coveredAt = order.length;
+  }
+  return { order, coveredAt, totalValues: allValues.size };
+}
+
 async function main(): Promise<void> {
   console.log(`[migrate] mode=${DRY ? 'DRY-RUN' : 'EXECUTE'}${ONLY_CANARY ? ' (canary のみ)' : ''}`);
   const src = await fetchAllIndustry();
@@ -153,34 +195,72 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // canary = relatedTopics が最多の1件（新 eventType・endDate・venue・location も同時に検証）
-  const canary = [...src].sort((a, b) => (b.relatedTopics?.length ?? 0) - (a.relatedTopics?.length ?? 0))[0];
-  const rest = src.filter((r) => r.slug !== canary.slug);
+  const rtAll = new Set(src.flatMap((r) => r.relatedTopics ?? []));
+  const etAll = new Set(src.flatMap((r) => r.eventType ?? []));
+  const { order, coveredAt, totalValues } = greedyOrder(src);
+  console.log(`\n■ 投入順（greedy set cover）: 検証対象 select 値 = relatedTopics ${rtAll.size}種 ＋ eventType ${etAll.size}種 = ${totalValues}`);
+  console.log(`   ★${coveredAt} 件目で全 ${totalValues} 値のカバー完了（以降は既検証の値のみ）`);
+  const cum = new Set<string>();
+  order.slice(0, Math.max(coveredAt, 1)).forEach((r, i) => {
+    const before = cum.size;
+    selectValuesOf(r).forEach((v) => cum.add(v));
+    console.log(`     ${String(i + 1).padStart(2)}. ${r.slug.padEnd(38)} 新規カバー +${cum.size - before}（累計 ${cum.size}/${totalValues}）`);
+  });
 
-  console.log(`\n■ canary（選択肢が silently drop されないかの実地検証）: ${canary.slug}`);
-  console.log(`   eventType=${JSON.stringify(canary.eventType)} relatedTopics=${JSON.stringify(canary.relatedTopics)}`);
-  const c = await migrateOne(canary, '[canary]');
-  if (c === 'err') {
-    console.error('\n★ canary で差分検出 → 残り40件は投入せず停止（スキーマの選択肢を確認してください）');
-    process.exit(1);
-  }
-  if (ONLY_CANARY) {
-    console.log('\n--canary 指定のためここで終了');
-    return;
-  }
-
-  console.log(`\n■ 残り ${rest.length} 件`);
-  let ok = c === 'ok' ? 1 : 0, skip = c === 'skip' ? 1 : 0, err = 0;
-  for (const [i, r] of rest.entries()) {
-    const v = await migrateOne(r, `[${i + 2}/41]`);
-    if (v === 'ok') ok++; else if (v === 'skip') skip++; else { err++; console.error('  ★差分検出 → 以降を中止'); break; }
+  // 停止条件は「毎件」: POST 直後の #106 照合で不一致が出たら即中止（ユウ追加指示）
+  let ok = 0, skip = 0, err = 0;
+  let stoppedAt = -1;
+  for (const [i, r] of order.entries()) {
+    const label = i === 0 ? '[canary 1/41]' : `[${i + 1}/41]`;
+    let v: 'ok' | 'skip' | 'err';
+    try {
+      v = await migrateOne(r, label);
+    } catch (e) {
+      const msg = (e as Error).message;
+      console.error(`  [★例外] ${r.slug}: ${msg}`);
+      if (/HTTP 400/.test(msg)) {
+        console.error('  ★400 = スキーマの必須設定が変わった可能性を最初に疑うこと（0-e は Management API が無く直接読めない）。');
+        console.error('    既存54件は GET できているため読み取り側の破壊は起きていない。');
+      }
+      v = 'err';
+    }
+    if (v === 'ok') ok++;
+    else if (v === 'skip') skip++;
+    else {
+      err++;
+      stoppedAt = i + 1;
+      console.error(`\n★ ${stoppedAt} 件目で不一致 → 残り ${order.length - stoppedAt} 件は投入せず停止。`);
+      console.error('  投入済みの件は消さない（EDAさんが選択肢を追加後、PATCH で補正する）。');
+      break;
+    }
+    if (i === 0 && ONLY_CANARY) {
+      console.log('\n--canary 指定のためここで終了');
+      break;
+    }
     await new Promise((x) => setTimeout(x, 400));
   }
 
-  console.log(`\n[done] ok=${ok} skip=${skip} err=${err}`);
+  console.log(`\n[done] ok=${ok} skip=${skip} err=${err}${stoppedAt > 0 ? ` （${stoppedAt}件目で停止）` : ''}`);
+
+  // 最終確認: 52値の差集合（唯一の検証手段にはしない・毎件照合の上乗せ）
+  if (!DRY && err === 0 && !ONLY_CANARY) {
+    const migrated = await api<{ contents: Array<{ relatedTopics?: string[]; eventType?: string[] }> }>(
+      'GET',
+      `${PE}?limit=100&filters=kind[contains]業界&fields=slug,relatedTopics,eventType`
+    );
+    const gotRt = new Set(migrated.contents.flatMap((c) => c.relatedTopics ?? []));
+    const gotEt = new Set(migrated.contents.flatMap((c) => c.eventType ?? []));
+    const missRt = [...rtAll].filter((v) => !gotRt.has(v));
+    const missEt = [...etAll].filter((v) => !gotEt.has(v));
+    console.log(`[最終確認] kind=業界 の件数: ${migrated.contents.length}`);
+    console.log(`  relatedTopics 差集合: ${missRt.length === 0 ? '空 ✓（' + rtAll.size + '値すべて到達）' : '★欠け ' + JSON.stringify(missRt)}`);
+    console.log(`  eventType 差集合    : ${missEt.length === 0 ? '空 ✓（' + etAll.size + '値すべて到達）' : '★欠け ' + JSON.stringify(missEt)}`);
+    if (missRt.length || missEt.length) process.exitCode = 1;
+  }
+
   const pe = await api<{ totalCount: number }>('GET', `${PE}?limit=0`);
   console.log(`[policy-events 総件数] ${pe.totalCount}（54 + 41 = 95 が想定）`);
-  process.exit(err > 0 ? 1 : 0);
+  if (err > 0) process.exit(1);
 }
 
 main().catch((e) => {
