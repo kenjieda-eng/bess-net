@@ -1,5 +1,5 @@
 // /events 業界イベント・展示会カレンダー（依頼AC Phase C）
-// - microCMS の industry-events エンドポイントから全件取得
+// - microCMS の policy-events（kind=業界）から取得（2026-08-31 API統合。旧 industry-events は廃止）
 // - フィルタ機能はクライアントコンポーネントで実装
 // - schema 未作成時 / API エラー時は空配列で graceful fallback
 import Link from 'next/link';
@@ -168,7 +168,7 @@ export default async function EventsCalendarPage() {
                   color: 'var(--color-muted)',
                 }}
               >
-                microCMS の industry-events エンドポイント設定完了後、初期データ 40件を投入予定です。
+                データの取得に一時的に失敗した可能性があります。時間をおいて再度お試しください。
               </p>
             </div>
           ) : (

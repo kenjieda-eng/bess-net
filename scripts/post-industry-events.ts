@@ -1,4 +1,11 @@
 /**
+ * ★2026-08-31 廃止（実行しないこと）
+ * 旧 industry-events エンドポイントは policy-events（kind=業界）へ統合済み。
+ * 本スクリプトは過去の一回物の記録として残しているだけで、実行すると廃止予定の
+ * エンドポイントへ書き込もうとする。新規の業界イベント投入は policy-events に
+ * kind=業界 で行うこと（移行手順は scripts/migrate-industry-events-2026-08-31.ts）。
+ */
+/**
  * scripts/post-industry-events.ts
  *
  * 依頼AC Phase B: 江田さん作成の industry-events エンドポイントに 40件投入

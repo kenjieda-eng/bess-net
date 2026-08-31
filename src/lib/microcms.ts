@@ -287,7 +287,14 @@ export type PolicyEvent = {
   venue?: string; // 会場
   location?: string; // 場所（都道府県市区町村）
   registrationDeadline?: string; // 申込締切
-  relatedTopics?: string[]; // 関連トピック（select 複数）
+  /** 関連トピック（select 複数・選択肢52）。統合の移行先はこのフィールド */
+  eventTopics?: string[];
+  /**
+   * ★未使用。2026-08-31 に単一選択で作られてしまい 4値→1値に silently drop（#106）したため、
+   * 複数選択の eventTopics を新設して移行した。削除はせず空のまま放置している
+   * （canary の 'BESS' 1件だけ値が残る）。読み書きとも行わないこと。
+   */
+  relatedTopics?: string[];
   publishedAt: string;
   updatedAt: string;
   createdAt: string;
@@ -411,7 +418,7 @@ export const getAllFaq = async (): Promise<Faq[]> => {
   return _faqPromise;
 };
 
-// ===== 業界イベント・展示会カレンダー（industry-events、依頼AC） =====
+// ===== 業界イベント・展示会カレンダー（依頼AC。2026-08-31 以降の実体は policy-events kind=業界） =====
 export type IndustryEvent = {
   id: string;
   title: string;
@@ -425,7 +432,8 @@ export type IndustryEvent = {
   description?: string;
   officialUrl?: string;
   registrationDeadline?: string;
-  relatedTopics?: string[];
+  /** 関連トピック。統合後は policy-events.eventTopics から写像（旧 relatedTopics は参照しない） */
+  eventTopics?: string[];
   status?: string[];
   publishedAt: string;
   updatedAt: string;
@@ -435,25 +443,36 @@ export type IndustryEvent = {
 
 /**
  * 業界イベント・展示会の全件を取得（依頼AC）
- * - eventDate 降順（最新が先）
- * - schema 未作成 / 一時的エラー時は空配列で graceful return
+ * - eventDate 降順（最新が先。getAllEventsRaw の orders をそのまま引き継ぐ）
+ *
+ * ★2026-08-31 API統合: 取得元を旧 industry-events から policy-events（kind=業界）へ切替。
+ *   /events 側の描画コードを触らずに済むよう、IndustryEvent 形へ写像して返す:
+ *     issuer → organizer ／ sourceUrl → officialUrl ／ eventTopics → eventTopics
+ *   政策側（getAllPolicyEvents）と同じ 1 回の fetch を共有するため runtime リクエストは増えない。
+ *   slug の照合は必ず kind と組で行うこと（この関数を通せば kind=業界 に限定済み）。
  */
 export const getAllIndustryEvents = async (): Promise<IndustryEvent[]> => {
-  const all: IndustryEvent[] = [];
-  const limit = MICROCMS_PAGE_LIMIT;
-  try {
-    for (let offset = 0; offset < 500; offset += limit) {
-      const data = await client.getList<IndustryEvent>({
-        endpoint: 'industry-events',
-        queries: { limit, offset, orders: '-eventDate' },
-      });
-      all.push(...data.contents);
-      if (data.contents.length < limit) break;
-    }
-  } catch {
-    return [];
-  }
-  return all;
+  const all = await getAllEventsRaw();
+  return all.filter(isIndustryKind).map((ev) => ({
+    id: ev.id,
+    title: ev.title,
+    slug: ev.slug,
+    eventDate: ev.eventDate,
+    endDate: ev.endDate,
+    venue: ev.venue,
+    location: ev.location,
+    eventType: ev.eventType,
+    organizer: ev.issuer, // policy-events では issuer が主催者の受け皿
+    description: ev.description,
+    officialUrl: ev.sourceUrl, // 同 sourceUrl が公式サイトURLの受け皿
+    registrationDeadline: ev.registrationDeadline,
+    eventTopics: ev.eventTopics,
+    status: ev.status,
+    publishedAt: ev.publishedAt,
+    updatedAt: ev.updatedAt,
+    createdAt: ev.createdAt,
+    revisedAt: ev.revisedAt,
+  }));
 };
 
 // ===== プロジェクト（projects） =====

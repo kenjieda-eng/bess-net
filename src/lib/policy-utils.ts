@@ -49,7 +49,8 @@ export function jstDateOf(iso: string): string {
 
 /**
  * 表示用ステータスの日付自動導出（L-EIC-027 横展開・2026-07-05。第2弾で events にも汎用化）。
- * policy-events（一覧・詳細）と industry-events（/events 一覧）の表示経路はこの関数を通す
+ * 政策側（/policy-calendar 一覧・詳細）と業界側（/events 一覧）の表示経路はこの関数を通す
+ * ※2026-08-31 の API 統合で両者とも実体は policy-events（kind で区別）
  * （microCMS データは不変＝表示側 derive のみ）。
  * ルール（これ以外は変えない）:
  *  - 格納「予定」かつ 基準日 < 今日(JST) → 「終了」に自動補正（既存語彙のみ・新語彙は導入しない）

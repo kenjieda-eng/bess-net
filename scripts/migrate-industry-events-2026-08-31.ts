@@ -4,8 +4,12 @@
  * microCMS API 統合（11→10）: industry-events 41件 → policy-events（kind=業界）へ POST
  *
  * 前提: EDAさんが管理画面で policy-events にスキーマ追加済み（kind / endDate / venue /
- *       location / registrationDeadline / relatedTopics ＋ eventType に業界5値 ＋ kind 2値）。
+ *       location / registrationDeadline / eventTopics ＋ eventType に業界5値 ＋ kind 2値）。
  *       industry-events の下書きは 0 件（EDAさん確認）＝公開41件のみで完結。
+ *       ★eventTopics は 2026-08-31 に新規作成した複数選択フィールド（選択肢52）。
+ *         先に作られた relatedTopics は単一選択で 4値→1値に silently drop したため使わない
+ *         （削除もしない・空のまま放置）。52値の事前検証は
+ *         scripts/verify-eventtopics-2026-08-31.ts で PASS 済み（差集合 両方向とも空）。
  *
  * ★#106（未定義の select 値は silently drop される）が最大リスク。
  *   コンテンツAPIキーでは select の選択肢を列挙できない（Management API は 403）ため、
@@ -60,7 +64,10 @@ function toPayload(r: IndustryRec): Record<string, unknown> {
   if (r.description) p.description = r.description;
   if (r.officialUrl) p.sourceUrl = r.officialUrl;
   if (r.registrationDeadline) p.registrationDeadline = r.registrationDeadline;
-  if (r.relatedTopics?.length) p.relatedTopics = r.relatedTopics;
+  // ★2026-08-31 変更: 移行先は eventTopics（複数選択）。
+  //   旧 policy-events.relatedTopics は単一選択で作られており 4値→1値に silently drop したため、
+  //   EDAさんが eventTopics を新規作成。relatedTopics には書き込まない（削除もしない・空のまま放置）。
+  if (r.relatedTopics?.length) p.eventTopics = r.relatedTopics;
   if (r.status?.length) p.status = r.status;
   // category は送らない（空のまま）
   return p;
@@ -128,7 +135,7 @@ async function migrateOne(r: IndustryRec, label: string): Promise<'ok' | 'skip' 
     return 'skip';
   }
   if (DRY) {
-    console.log(`  [dry-run] ${label} POST ${r.slug} | ${String(payload.eventType)} | topics=${(payload.relatedTopics as string[] | undefined)?.length ?? 0} | endDate=${payload.endDate ? String(payload.endDate).slice(0, 10) : '—'}`);
+    console.log(`  [dry-run] ${label} POST ${r.slug} | ${String(payload.eventType)} | topics=${(payload.eventTopics as string[] | undefined)?.length ?? 0} | endDate=${payload.endDate ? String(payload.endDate).slice(0, 10) : '—'}`);
     return 'ok';
   }
   const res = await api<{ id: string }>('POST', PE, payload);
@@ -146,6 +153,7 @@ async function migrateOne(r: IndustryRec, label: string): Promise<'ok' | 'skip' 
 
 /** レコードが持つ「検証したい select 値」の集合（relatedTopics ＋ eventType） */
 function selectValuesOf(r: IndustryRec): string[] {
+  // 送信先は eventTopics だが、元データは industry-events.relatedTopics（値は同じ）
   return [...(r.relatedTopics ?? []).map((v) => `rt:${v}`), ...(r.eventType ?? []).map((v) => `et:${v}`)];
 }
 
@@ -244,16 +252,16 @@ async function main(): Promise<void> {
 
   // 最終確認: 52値の差集合（唯一の検証手段にはしない・毎件照合の上乗せ）
   if (!DRY && err === 0 && !ONLY_CANARY) {
-    const migrated = await api<{ contents: Array<{ relatedTopics?: string[]; eventType?: string[] }> }>(
+    const migrated = await api<{ contents: Array<{ eventTopics?: string[]; eventType?: string[] }> }>(
       'GET',
-      `${PE}?limit=100&filters=kind[contains]業界&fields=slug,relatedTopics,eventType`
+      `${PE}?limit=100&filters=kind[contains]業界&fields=slug,eventTopics,eventType`
     );
-    const gotRt = new Set(migrated.contents.flatMap((c) => c.relatedTopics ?? []));
+    const gotRt = new Set(migrated.contents.flatMap((c) => c.eventTopics ?? []));
     const gotEt = new Set(migrated.contents.flatMap((c) => c.eventType ?? []));
     const missRt = [...rtAll].filter((v) => !gotRt.has(v));
     const missEt = [...etAll].filter((v) => !gotEt.has(v));
     console.log(`[最終確認] kind=業界 の件数: ${migrated.contents.length}`);
-    console.log(`  relatedTopics 差集合: ${missRt.length === 0 ? '空 ✓（' + rtAll.size + '値すべて到達）' : '★欠け ' + JSON.stringify(missRt)}`);
+    console.log(`  eventTopics 差集合  : ${missRt.length === 0 ? '空 ✓（' + rtAll.size + '値すべて到達）' : '★欠け ' + JSON.stringify(missRt)}`);
     console.log(`  eventType 差集合    : ${missEt.length === 0 ? '空 ✓（' + etAll.size + '値すべて到達）' : '★欠け ' + JSON.stringify(missEt)}`);
     if (missRt.length || missEt.length) process.exitCode = 1;
   }
