@@ -112,6 +112,11 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'eku-hirohara-sueteuke-2026-08': '開発計画',                                     // 広原 据付完了
   // 金曜ワンセット#4（2026-08-30 遅延実施）
   'bluefield-aggregation-100mw-2026-08': '市場統計',                               // 採用決定容量100MW突破（実績統計）
+  // 月次バッチ 2026-09-01（categorySuggestion が microCMS の実在値そのものなので slug で明示）
+  'occto-tsuika-auction-fy2027-kekka-2026-08': 'オークション',                      // 容量市場 追加オークション約定結果
+  'marubeni-fip-solar-bess-balancing-2026-08': '連系',                             // FIP太陽光併設 需給調整市場 参入審査合格
+  'tensor-tokyocentury-teikei-2026-08': '開発計画',                                // Tensor×東京センチュリー 包括業務提携
+  'correc-okayama-sannyu-2026-08': '開発計画',                                     // コレックHD 系統用蓄電池事業参入
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
