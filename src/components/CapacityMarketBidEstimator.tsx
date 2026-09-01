@@ -250,6 +250,12 @@ export default function CapacityMarketBidEstimator({
   initialHistory?: CapacityMarketRecord[];
 }) {
   const isLive = !!initialHistory && initialHistory.length > 0;
+  // ★Cm1: 年度レンジを initialHistory から導出（FY を焼き込まない。新年度の着地で自動更新）
+  const liveFyLabel = (() => {
+    const fys = [...new Set((initialHistory ?? []).map((r) => r.fiscal_year))].sort((a, b) => a - b);
+    if (fys.length === 0) return null;
+    return fys.length === 1 ? `FY${fys[0]}` : `FY${fys[0]}-FY${fys[fys.length - 1]}`;
+  })();
   const [input, setInput] = useState<BidEstimateInput>(DEFAULT_INPUT);
   const [hydrated, setHydrated] = useState(false);
 
@@ -324,7 +330,7 @@ export default function CapacityMarketBidEstimator({
             fontSize: 15,
           }}
         >
-          ✅ <strong>data.eic-jp.org 実データ連携済</strong>（OCCTO 公表値ベース、FY2024-FY2029）。
+          ✅ <strong>data.eic-jp.org 実データ連携済</strong>（OCCTO 公表値ベース{liveFyLabel ? `、${liveFyLabel}` : ''}）。
           <strong>OCCTO メインオークション約定価格は区分非依存</strong>（同一エリアでは新設/既設/経過措置で同価格）。
           区分セレクタは応札容量・収入試算の文脈用です。
           応札の最終判断は{' '}
@@ -658,7 +664,7 @@ export default function CapacityMarketBidEstimator({
         }}
       >
         <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>
-          年度別 約定価格推移{isLive ? '（FY2024-FY2029）' : '（過去 2 年）'}
+          年度別 約定価格推移{isLive ? (liveFyLabel ? `（${liveFyLabel}）` : '') : '（過去 2 年）'}
         </h3>
         <HistoryChart area={input.area} category={input.category} allHistory={initialHistory} />
       </section>
