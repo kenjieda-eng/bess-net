@@ -2,10 +2,10 @@
  "overdueAsOf": "2026-09-03",
  "totals": {
   "all": 331,
-  "listed": 246,
-  "investigating": 42,
-  "overdue": 56,
-  "both": 10
+  "listed": 245,
+  "investigating": 41,
+  "overdue": 55,
+  "both": 9
  },
  "investigating": [
   {
@@ -381,14 +381,13 @@
    "name": "静岡菊川蓄電所",
    "operator": "テスホールディングス株式会社",
    "prefecture": "静岡県",
-   "city": "",
+   "city": "菊川市",
    "outputMw": 30,
    "capacityMwh": 0,
    "status": "建設中",
    "cod": "2025-04-30",
    "missing": [
-    "capacityMwh",
-    "city"
+    "capacityMwh"
    ]
   },
   {
@@ -477,7 +476,7 @@
    "name": "滋賀県で4MWh規模の系統用蓄電池",
    "operator": "日本蓄電開発機構株式会社",
    "prefecture": "滋賀県",
-   "city": "愛知郡愛荘町",
+   "city": "愛荘町",
    "outputMw": 0,
    "capacityMwh": 4,
    "status": "稼働中",
@@ -490,8 +489,8 @@
    "slug": "pr-co176308-bess",
    "name": "13ft系統用蓄電池",
    "operator": "株式会社NEXTES",
-   "prefecture": "東京都",
-   "city": "Solutions、東京電力グループと共同開発。日本の市",
+   "prefecture": "広島県",
+   "city": "庄原市",
    "outputMw": 0,
    "capacityMwh": 2.315,
    "status": "計画中",
@@ -595,30 +594,15 @@
    ]
   },
   {
-   "slug": "pr-co88876-bess-3",
-   "name": "系統用蓄電池（スターシーズ株式会社）",
-   "operator": "スターシーズ株式会社",
-   "prefecture": "和歌山県",
-   "city": "和歌山市",
-   "outputMw": 0,
-   "capacityMwh": 0,
-   "status": "計画中",
-   "cod": "2025-09-19",
-   "missing": [
-    "outputMw",
-    "capacityMwh"
-   ]
-  },
-  {
    "slug": "pr-looop-saitama",
    "name": "埼玉県～電力卸市蓄電所",
    "operator": "株式会社Looop",
    "prefecture": "埼玉県",
-   "city": "～電力卸市",
+   "city": "小川町",
    "outputMw": 0,
    "capacityMwh": 7.684,
    "status": "稼働中",
-   "cod": "2025-04-03",
+   "cod": "2025-02-21",
    "missing": [
     "outputMw"
    ]
@@ -628,7 +612,7 @@
    "name": "系統用蓄電池（TECRA株式会社）",
    "operator": "TECRA株式会社",
    "prefecture": "宮城県",
-   "city": "【想定年利12.0%】不動産クラウドファンディング「TECROWD」、国内開発型ファンド「宮城県角田市",
+   "city": "角田市",
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
@@ -870,14 +854,13 @@
    "name": "静岡菊川蓄電所",
    "operator": "テスホールディングス株式会社",
    "prefecture": "静岡県",
-   "city": "",
+   "city": "菊川市",
    "outputMw": 30,
    "capacityMwh": 0,
    "status": "建設中",
    "cod": "2025-04-30",
    "missing": [
-    "capacityMwh",
-    "city"
+    "capacityMwh"
    ]
   },
   {
@@ -1037,8 +1020,8 @@
    "slug": "pr-co176308-bess",
    "name": "13ft系統用蓄電池",
    "operator": "株式会社NEXTES",
-   "prefecture": "東京都",
-   "city": "Solutions、東京電力グループと共同開発。日本の市",
+   "prefecture": "広島県",
+   "city": "庄原市",
    "outputMw": 0,
    "capacityMwh": 2.315,
    "status": "計画中",
@@ -1247,21 +1230,6 @@
    ]
   },
   {
-   "slug": "pr-co88876-bess-3",
-   "name": "系統用蓄電池（スターシーズ株式会社）",
-   "operator": "スターシーズ株式会社",
-   "prefecture": "和歌山県",
-   "city": "和歌山市",
-   "outputMw": 0,
-   "capacityMwh": 0,
-   "status": "計画中",
-   "cod": "2025-09-19",
-   "missing": [
-    "outputMw",
-    "capacityMwh"
-   ]
-  },
-  {
    "slug": "pr-co89612-bess-2",
    "name": "系統用蓄電池（マーチャントバンカーズ株式会社）",
    "operator": "マーチャントバンカーズ株式会社",
@@ -1358,7 +1326,7 @@
    "name": "系統用蓄電池（TECRA株式会社）",
    "operator": "TECRA株式会社",
    "prefecture": "宮城県",
-   "city": "【想定年利12.0%】不動産クラウドファンディング「TECROWD」、国内開発型ファンド「宮城県角田市",
+   "city": "角田市",
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",

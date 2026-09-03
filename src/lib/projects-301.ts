@@ -5,10 +5,12 @@
  * middleware.ts が `/projects/旧` → `/projects/canonical` の 301 に使用。
  *
  * 非破壊: 旧entry は microCMS に残す（middleware が 301 吸収＝404を作らない）。
- * 一覧除外は src/lib/projects-excluded.ts（PROJECTS_301_SOURCE_SLUGS を自動 union＝301元 10 slug を登録）。
+ * 一覧除外は src/lib/projects-excluded.ts（PROJECTS_301_SOURCE_SLUGS を自動 union）。
+ * sitemap も isListExcludedProject で除外されるため、本マップに1行足せば
+ * 「301 ＋ 一覧除外 ＋ sitemap 除外」が同時に成立する（件数は焼き込まない・#121）。
  * canonical は dry-run でデータ妥当性を確認・空フィールドは情報補完 PATCH 済（cod/status）。
  *
- * 5グループ（projects分析 発見③ / stage-1監査D・ユウ監査 2026-06-28）:
+ * 統合グループ（projects分析 発見③ / stage-1監査D・ユウ監査 2026-06-28 以降の追記）:
  *   1 千里蓄電所      → osakagas-suita（大阪ガス・11MW/23MWh）
  *   2 上奈良蓄電所    → kaminara-bess（HOBE ENERGY・5MWh）
  *   3 琵琶湖蓄電所    → pr-co18049-bess（森トラスト・8.7MW/19.7MWh）
@@ -68,6 +70,12 @@ export const PROJECTS_301: Record<string, string> = {
   '/projects/pr-co116500-bess-2':                  '/projects/pr-lehmanhodings-saitama', // verify_clusters判定 2026-08
   '/projects/hdre-hokkaido-50':                    '/projects/pr-100mwh-bess', // verify_clusters判定 2026-08
   '/projects/pr-auroraenergyres-hokkaido-50mw':    '/projects/pr-100mwh-bess', // verify_clusters判定 2026-08
+  // 12 スターシーズ和歌山井ノ口蓄電所（2026-09-03 Pj2-C・ユウ裁定§3）
+  //    同一一次（PR TIMES 000000044.000088876）・同一所在地（和歌山県和歌山市）。
+  //    旧側 pr-co88876-bess-3 は body が「〜は、に立地する」の所在地欠落定型文で cod=発表日
+  //    ＝PR一括取込の汎用レコードの特徴が揃う。canonical はキュレーション済みの
+  //    starseeds-wakayama-inokuchi。microCMS レコードは削除しない（middleware が 301 吸収）。
+  '/projects/pr-co88876-bess-3':                   '/projects/starseeds-wakayama-inokuchi',
 };
 
 /** 301元の bare slug（一覧除外・noindex 判定の補助。完全一致） */
