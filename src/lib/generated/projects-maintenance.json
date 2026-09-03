@@ -1,0 +1,1455 @@
+{
+ "overdueAsOf": "2026-09-03",
+ "totals": {
+  "all": 331,
+  "listed": 246,
+  "investigating": 43,
+  "overdue": 56,
+  "both": 10
+ },
+ "investigating": [
+  {
+   "slug": "jpn-gifu-sendai",
+   "name": "日本蓄電池岐阜・仙台蓄電所（建設中）",
+   "operator": "日本蓄電池",
+   "prefecture": "岐阜県",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "建設中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "city",
+    "cod"
+   ]
+  },
+  {
+   "slug": "marubeni-2400mwh",
+   "name": "丸紅新電力2.4GWh共同開発計画",
+   "operator": "丸紅新電力他",
+   "prefecture": "全国",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 2400,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "city",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-hachioji-bess",
+   "name": "東京都八王子市蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "東京都",
+   "city": "八王子市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-ise-bess",
+   "name": "三重県伊勢市蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "三重県",
+   "city": "伊勢市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-kakogawa-bess",
+   "name": "兵庫県加古川市蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "兵庫県",
+   "city": "加古川市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-kamimashiki-bess",
+   "name": "熊本県上益城郡蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "熊本県",
+   "city": "上益城郡",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-katta-bess",
+   "name": "宮城県刈田郡蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "宮城県",
+   "city": "刈田郡",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-kuma-bess",
+   "name": "熊本県球磨郡蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "熊本県",
+   "city": "球磨郡",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-nishimorokata-bess",
+   "name": "宮崎県西諸県郡蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "宮崎県",
+   "city": "西諸県郡",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-otawara-bess",
+   "name": "栃木県大田原市蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "栃木県",
+   "city": "大田原市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-tamana-gun-bess",
+   "name": "熊本県玉名郡蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "熊本県",
+   "city": "玉名郡",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mikimori-yame-bess",
+   "name": "福岡県八女市蓄電所（三木森HD）",
+   "operator": "三木森ホールディングス",
+   "prefecture": "福岡県",
+   "city": "八女市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "mimasaka-bess",
+   "name": "美作蓄電所（バッテリーファーム／東京ガス最適運用）",
+   "operator": "合同会社バッテリーファーム",
+   "prefecture": "岡山県",
+   "city": "美作市",
+   "outputMw": 29,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "naganuma-bess",
+   "name": "長沼蓄電所",
+   "operator": "株式会社城洋商事",
+   "prefecture": "北海道",
+   "city": "長沼町",
+   "outputMw": 37.515,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "namie-redox-flow",
+   "name": "浪江レドックスフロー蓄電所",
+   "operator": "株式会社RS Technologies",
+   "prefecture": "福島県",
+   "city": "浪江町",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "nc-ibigawa",
+   "name": "岐阜県揖斐川町の系統用蓄電所（NCパイオニア）",
+   "operator": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+   "prefecture": "岐阜県",
+   "city": "揖斐郡揖斐川町",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "nc-kainan",
+   "name": "和歌山県海南市の系統用蓄電所（NCパイオニア）",
+   "operator": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+   "prefecture": "和歌山県",
+   "city": "海南市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "nc-nagano-city",
+   "name": "NC長野市上ケ屋蓄電所（NCパイオニア）",
+   "operator": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+   "prefecture": "長野県",
+   "city": "長野市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "建設中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  },
+  {
+   "slug": "olympia-ota-isesaki",
+   "name": "太田・伊勢崎蓄電所（オリンピア）",
+   "operator": "オリンピア",
+   "prefecture": "群馬県",
+   "city": "太田市・伊勢崎市",
+   "outputMw": 0,
+   "capacityMwh": 14.8,
+   "status": "稼働中",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "cod"
+   ]
+  },
+  {
+   "slug": "ota-bess",
+   "name": "群馬太田蓄電所（fantasista）",
+   "operator": "株式会社fantasista（SPC: fantasista battery 1合同会社）",
+   "prefecture": "群馬県",
+   "city": "太田市",
+   "outputMw": 0,
+   "capacityMwh": 8.14,
+   "status": "稼働中",
+   "cod": "2025年8月",
+   "missing": [
+    "outputMw"
+   ]
+  },
+  {
+   "slug": "pr-co109041-bess",
+   "name": "ヘキサ・エネルギーサービスと系統蓄電所",
+   "operator": "パワーエックス",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2025-03-10",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co110152-bess",
+   "name": "300億円規模の系統用蓄電池",
+   "operator": "株式会社ＩＢｅｅＴ",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 174,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2026-04-03",
+   "missing": [
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co12501-bess",
+   "name": "系統用蓄電所（株式会社エコスタイル）",
+   "operator": "株式会社エコスタイル",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 180,
+   "status": "計画中",
+   "cod": "2024-02-07",
+   "missing": [
+    "outputMw",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co140317-bess",
+   "name": "株式会社脱炭素化支援機構がエネルギーパワー株式会社の開発する系統用蓄電所",
+   "operator": "脱炭素化支援機構",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 8.2,
+   "status": "計画中",
+   "cod": "2025-10-14",
+   "missing": [
+    "outputMw",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co143072-bess",
+   "name": "静岡菊川蓄電所",
+   "operator": "テスホールディングス株式会社",
+   "prefecture": "静岡県",
+   "city": "",
+   "outputMw": 30,
+   "capacityMwh": 0,
+   "status": "建設中",
+   "cod": "2025-04-30",
+   "missing": [
+    "capacityMwh",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co154894-bess",
+   "name": "ヒューリック株式会社・芙蓉総合リース株式会社・伊藤忠商事株式会社との系統用蓄電池",
+   "operator": "RSアセットアドバイザーズ株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 40,
+   "status": "計画中",
+   "cod": "2026-03-19",
+   "missing": [
+    "outputMw",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co160356-bess",
+   "name": "エー・ディー・ワークスの系統用蓄電所",
+   "operator": "ADワークスグループ",
+   "prefecture": "三重県",
+   "city": "第一拠点のADW三重松阪市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2026-03-31",
+   "missing": [
+    "outputMw",
+    "capacityMwh"
+   ]
+  },
+  {
+   "slug": "pr-co160356-bess-2",
+   "name": "系統用蓄電所（ADワークスグループ）",
+   "operator": "ADワークスグループ",
+   "prefecture": "三重県",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2026-02-12",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co160356-bess-3",
+   "name": "系統用蓄電所（ADワークスグループ）",
+   "operator": "ADワークスグループ",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2025-04-21",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co161802-bess",
+   "name": "日本蓄電池",
+   "operator": "日本蓄電池株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2025-12-10",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co164583-bess",
+   "name": "低圧系統用蓄電所（HPリニューエナジー株式会社）",
+   "operator": "HPリニューエナジー株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 10,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2026-04-28",
+   "missing": [
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co173175-shiga-4mwh",
+   "name": "滋賀県で4MWh規模の系統用蓄電池",
+   "operator": "日本蓄電開発機構株式会社",
+   "prefecture": "滋賀県",
+   "city": "愛知郡愛荘町",
+   "outputMw": 0,
+   "capacityMwh": 4,
+   "status": "稼働中",
+   "cod": "2025-11-18",
+   "missing": [
+    "outputMw"
+   ]
+  },
+  {
+   "slug": "pr-co176308-bess",
+   "name": "13ft系統用蓄電池",
+   "operator": "株式会社NEXTES",
+   "prefecture": "東京都",
+   "city": "Solutions、東京電力グループと共同開発。日本の市",
+   "outputMw": 0,
+   "capacityMwh": 2.315,
+   "status": "計画中",
+   "cod": "2026-01-30",
+   "missing": [
+    "outputMw"
+   ]
+  },
+  {
+   "slug": "pr-co21766-bess",
+   "name": "系統用蓄電池（東京ガス株式会社）",
+   "operator": "東京ガス株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 165,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2025-03-12",
+   "missing": [
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co33609-bess",
+   "name": "日本蓄電池（株式会社リミックスポイント）",
+   "operator": "株式会社リミックスポイント",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2025-12-09",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co55631-bess",
+   "name": "全国10カ所の系統用蓄電所",
+   "operator": "しろくま電力株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2025-07-29",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co55631-gunma",
+   "name": "太田・足利の系統用蓄電所（しろくま電力）",
+   "operator": "しろくま電力株式会社",
+   "prefecture": "群馬県",
+   "city": "太田市",
+   "outputMw": 2,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2025-09-01",
+   "missing": [
+    "capacityMwh"
+   ]
+  },
+  {
+   "slug": "pr-co55631-tokyo-4mw",
+   "name": "系統用大規模蓄電池",
+   "operator": "しろくま電力株式会社",
+   "prefecture": "群馬県",
+   "city": "太田市・桐生市",
+   "outputMw": 4,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2024-12-17",
+   "missing": [
+    "capacityMwh"
+   ]
+  },
+  {
+   "slug": "pr-co76147-bess-2",
+   "name": "自社単独開発による特別高圧系統用蓄電池",
+   "operator": "東京センチュリー株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 101,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2025-12-12",
+   "missing": [
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co88876-bess-3",
+   "name": "系統用蓄電池（スターシーズ株式会社）",
+   "operator": "スターシーズ株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2025-09-19",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-looop-saitama",
+   "name": "埼玉県～電力卸市蓄電所",
+   "operator": "株式会社Looop",
+   "prefecture": "埼玉県",
+   "city": "～電力卸市",
+   "outputMw": 0,
+   "capacityMwh": 7.684,
+   "status": "稼働中",
+   "cod": "2025-04-03",
+   "missing": [
+    "outputMw"
+   ]
+  },
+  {
+   "slug": "pr-tecra-miyagi",
+   "name": "系統用蓄電池（TECRA株式会社）",
+   "operator": "TECRA株式会社",
+   "prefecture": "宮城県",
+   "city": "【想定年利12.0%】不動産クラウドファンディング「TECROWD」、国内開発型ファンド「宮城県角田市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2024-12-19",
+   "missing": [
+    "outputMw",
+    "capacityMwh"
+   ]
+  },
+  {
+   "slug": "starseeds-wakayama-inokuchi",
+   "name": "和歌山井ノ口蓄電所（スターシーズ）",
+   "operator": "スターシーズ",
+   "prefecture": "和歌山県",
+   "city": "和歌山市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "",
+   "cod": "",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "cod"
+   ]
+  }
+ ],
+ "overdue": [
+  {
+   "slug": "itochu-otoku",
+   "name": "御徳蓄電所（伊藤忠商事・東急不動産他）",
+   "operator": "伊藤忠商事・東急不動産・リエネ・IBeeT（御徳蓄電所合同会社）",
+   "prefecture": "福岡県",
+   "city": "鞍手郡小竹町",
+   "outputMw": 20,
+   "capacityMwh": 56,
+   "status": "建設中",
+   "cod": "2025年度",
+   "missing": []
+  },
+  {
+   "slug": "kasai-megapower",
+   "name": "加西メガパワー蓄電所",
+   "operator": "上組（株式会社上組）",
+   "prefecture": "兵庫県",
+   "city": "加西市",
+   "outputMw": 13,
+   "capacityMwh": 54.84,
+   "status": "計画中",
+   "cod": "2026年2月",
+   "missing": []
+  },
+  {
+   "slug": "marubeni-kitahiroshima",
+   "name": "北広島蓄電所（丸紅）",
+   "operator": "丸紅",
+   "prefecture": "北海道",
+   "city": "北広島市",
+   "outputMw": 30,
+   "capacityMwh": 120,
+   "status": "建設中",
+   "cod": "2025年度",
+   "missing": []
+  },
+  {
+   "slug": "nanahongi-bess",
+   "name": "七本木蓄電所（HOBE ENERGY）",
+   "operator": "HOBE ENERGY",
+   "prefecture": "埼玉県",
+   "city": "上里町",
+   "outputMw": null,
+   "capacityMwh": 5,
+   "status": "",
+   "cod": "2026-03-31",
+   "missing": []
+  },
+  {
+   "slug": "nc-kama-kuchiharu",
+   "name": "NC口春蓄電所（日本蓄電池）",
+   "operator": "日本蓄電池",
+   "prefecture": "福岡県",
+   "city": "嘉麻市",
+   "outputMw": 1.975,
+   "capacityMwh": 8.146,
+   "status": "",
+   "cod": "2026-06-01",
+   "missing": []
+  },
+  {
+   "slug": "nc-nagahama-mikawacho",
+   "name": "NC長浜市三川町蓄電所（日本蓄電池）",
+   "operator": "日本蓄電池",
+   "prefecture": "滋賀県",
+   "city": "長浜市",
+   "outputMw": 1.988,
+   "capacityMwh": 8.146,
+   "status": "",
+   "cod": "2026-05-22",
+   "missing": []
+  },
+  {
+   "slug": "nc-sendai-kamiayashi",
+   "name": "NC仙台市青葉区上愛子蓄電所（日本蓄電池）",
+   "operator": "日本蓄電池（合同会社NCパイオニア）",
+   "prefecture": "宮城県",
+   "city": "仙台市青葉区",
+   "outputMw": 1.988,
+   "capacityMwh": 8.146,
+   "status": "",
+   "cod": "2026-04-01",
+   "missing": []
+  },
+  {
+   "slug": "nc-shirakawa-omotegou",
+   "name": "NC白河市表郷番沢蓄電所",
+   "operator": "日本蓄電池",
+   "prefecture": "福島県",
+   "city": "白河市",
+   "outputMw": 1.988,
+   "capacityMwh": 8.146,
+   "status": "",
+   "cod": "2026-04-28",
+   "missing": []
+  },
+  {
+   "slug": "nc-shunan-yuno",
+   "name": "NC周南市湯野蓄電所",
+   "operator": "日本蓄電池",
+   "prefecture": "山口県",
+   "city": "周南市",
+   "outputMw": 1.988,
+   "capacityMwh": 8.146,
+   "status": "",
+   "cod": "2026-04-01",
+   "missing": []
+  },
+  {
+   "slug": "nec-omuta",
+   "name": "RED大牟田蓄電所（NECキャピタル系・九電みらい）",
+   "operator": "NCSアールイーキャピタル（NECキャピタルソリューション100%子会社）・九電みらいエナジー",
+   "prefecture": "福岡県",
+   "city": "大牟田市",
+   "outputMw": 1.999,
+   "capacityMwh": 8.226,
+   "status": "計画中",
+   "cod": "2025年10月",
+   "missing": []
+  },
+  {
+   "slug": "pr-219mwh-bess",
+   "name": "バンプージャパンから合計219MWhの系統用蓄電システムを受注",
+   "operator": "パワーエックス",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 26,
+   "capacityMwh": 219,
+   "status": "建設中",
+   "cod": "2025-06-05",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co113700-bess-2",
+   "name": "系統用蓄電池（日本エネルギー総合システム株式会社）",
+   "operator": "日本エネルギー総合システム株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 1.9,
+   "capacityMwh": 8.2,
+   "status": "建設中",
+   "cod": "2025-11-19",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co113700-bess-3",
+   "name": "エレビスタ株式会社の系統用蓄電所",
+   "operator": "日本エネルギー総合システム株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 1.99,
+   "capacityMwh": 8.128,
+   "status": "計画中",
+   "cod": "2025-09-26",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co12501-bess",
+   "name": "系統用蓄電所（株式会社エコスタイル）",
+   "operator": "株式会社エコスタイル",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 180,
+   "status": "計画中",
+   "cod": "2024-02-07",
+   "missing": [
+    "outputMw",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co13775-bess",
+   "name": "低圧系統用蓄電池（株式会社テクノロジーズ）",
+   "operator": "株式会社テクノロジーズ",
+   "prefecture": "",
+   "city": "低圧系統用蓄電池が事業化、2026年度の需給調整市",
+   "outputMw": 0.05,
+   "capacityMwh": 0.1,
+   "status": "計画中",
+   "cod": "2026-03-14",
+   "missing": [
+    "prefecture"
+   ]
+  },
+  {
+   "slug": "pr-co140317-bess",
+   "name": "株式会社脱炭素化支援機構がエネルギーパワー株式会社の開発する系統用蓄電所",
+   "operator": "脱炭素化支援機構",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 8.2,
+   "status": "計画中",
+   "cod": "2025-10-14",
+   "missing": [
+    "outputMw",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co143072-bess",
+   "name": "静岡菊川蓄電所",
+   "operator": "テスホールディングス株式会社",
+   "prefecture": "静岡県",
+   "city": "",
+   "outputMw": 30,
+   "capacityMwh": 0,
+   "status": "建設中",
+   "cod": "2025-04-30",
+   "missing": [
+    "capacityMwh",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co143072-bess-2",
+   "name": "系統用蓄電所（テスホールディングス株式会社）",
+   "operator": "テスホールディングス株式会社",
+   "prefecture": "徳島県",
+   "city": "徳島市・板野郡板野町",
+   "outputMw": 2,
+   "capacityMwh": 8.1,
+   "status": "建設中",
+   "cod": "2025-12-15",
+   "missing": []
+  },
+  {
+   "slug": "pr-co154894-bess",
+   "name": "ヒューリック株式会社・芙蓉総合リース株式会社・伊藤忠商事株式会社との系統用蓄電池",
+   "operator": "RSアセットアドバイザーズ株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 40,
+   "status": "計画中",
+   "cod": "2026-03-19",
+   "missing": [
+    "outputMw",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co154894-bess-2",
+   "name": "RSアセットアドバイザーズと前田建設工業が系統用蓄電池",
+   "operator": "RSアセットアドバイザーズ株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 1.969,
+   "capacityMwh": 8,
+   "status": "計画中",
+   "cod": "2025-02-25",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co161802-kumamoto-2",
+   "name": "NC宇城市豊野町蓄電所",
+   "operator": "日本蓄電池株式会社",
+   "prefecture": "熊本県",
+   "city": "【日本蓄電池株式会社】宇城市",
+   "outputMw": 1.998,
+   "capacityMwh": 8.146,
+   "status": "建設中",
+   "cod": "2025-12-18",
+   "missing": []
+  },
+  {
+   "slug": "pr-co16325-bess-2",
+   "name": "群馬伊勢崎第二蓄電所（ポート）",
+   "operator": "ポート株式会社",
+   "prefecture": "群馬県",
+   "city": "伊勢崎市",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": "計画中",
+   "cod": "2025-10-16",
+   "missing": []
+  },
+  {
+   "slug": "pr-co164154-bess",
+   "name": "札幌で国内最大級の蓄電プロジェクト蓄電所",
+   "operator": "SUNGROW JAPAN",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 100,
+   "capacityMwh": 351,
+   "status": "建設中",
+   "cod": "2025-06-10",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co164583-bess",
+   "name": "低圧系統用蓄電所（HPリニューエナジー株式会社）",
+   "operator": "HPリニューエナジー株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 10,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2026-04-28",
+   "missing": [
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co166651-bess",
+   "name": "パワーエックスと蓄電池",
+   "operator": "ちゅうぎんFG",
+   "prefecture": "",
+   "city": "—第１号案件として松江市",
+   "outputMw": 1.99,
+   "capacityMwh": 8.2,
+   "status": "計画中",
+   "cod": "2026-04-20",
+   "missing": [
+    "prefecture"
+   ]
+  },
+  {
+   "slug": "pr-co168657-bess",
+   "name": "ヒューリックグループの系統用蓄電池",
+   "operator": "株式会社Shizen Connect",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 3.998,
+   "capacityMwh": 16.448,
+   "status": "計画中",
+   "cod": "2026-04-15",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co169202-bess-2",
+   "name": "系統用蓄電池（野村屋グループ）",
+   "operator": "野村屋グループ",
+   "prefecture": "",
+   "city": "【野村",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": "計画中",
+   "cod": "2025-12-01",
+   "missing": [
+    "prefecture"
+   ]
+  },
+  {
+   "slug": "pr-co173175-saitama-5mwh-2",
+   "name": "埼玉県上里町で5MWh規模の系統用蓄電池",
+   "operator": "日本蓄電開発機構株式会社",
+   "prefecture": "埼玉県",
+   "city": "上里町",
+   "outputMw": 2,
+   "capacityMwh": 5,
+   "status": "計画中",
+   "cod": "2026-03-31",
+   "missing": []
+  },
+  {
+   "slug": "pr-co176308-bess",
+   "name": "13ft系統用蓄電池",
+   "operator": "株式会社NEXTES",
+   "prefecture": "東京都",
+   "city": "Solutions、東京電力グループと共同開発。日本の市",
+   "outputMw": 0,
+   "capacityMwh": 2.315,
+   "status": "計画中",
+   "cod": "2026-01-30",
+   "missing": [
+    "outputMw"
+   ]
+  },
+  {
+   "slug": "pr-co18049-bess",
+   "name": "琵琶湖蓄電所",
+   "operator": "森トラスト株式会社",
+   "prefecture": "滋賀県",
+   "city": "守山市",
+   "outputMw": 8.7,
+   "capacityMwh": 19.7,
+   "status": "計画中",
+   "cod": "2026-04-02",
+   "missing": []
+  },
+  {
+   "slug": "pr-co21766-bess",
+   "name": "系統用蓄電池（東京ガス株式会社）",
+   "operator": "東京ガス株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 165,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2025-03-12",
+   "missing": [
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co28193-bess",
+   "name": "防災型低圧蓄電所",
+   "operator": "株式会社メディオテック",
+   "prefecture": "",
+   "city": "2026年度需給調整市",
+   "outputMw": 0.05,
+   "capacityMwh": 0.1,
+   "status": "計画中",
+   "cod": "2026-04-02",
+   "missing": [
+    "prefecture"
+   ]
+  },
+  {
+   "slug": "pr-co40055-bess",
+   "name": "再エネ併設型蓄電所（株式会社サーラコーポレーション）",
+   "operator": "株式会社サーラコーポレーション",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 1.999,
+   "capacityMwh": 7.52,
+   "status": "計画中",
+   "cod": "2024-10-06",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co67590-bess",
+   "name": "特別高圧系統用蓄電池",
+   "operator": "株式会社 日立製作所",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 50,
+   "capacityMwh": 112.88,
+   "status": "計画中",
+   "cod": "2026-02-10",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co70816-bess-3",
+   "name": "ミツウロコ愛知県田原蓄電所",
+   "operator": "株式会社ミツウロコグループホールディングス",
+   "prefecture": "愛知県",
+   "city": "田原市",
+   "outputMw": 1.5,
+   "capacityMwh": 6,
+   "status": "計画中",
+   "cod": "2022-02-09",
+   "missing": []
+  },
+  {
+   "slug": "pr-co72482-miyagi-264mwh",
+   "name": "宮城県で農業資材店を展開する株式会社おてんとさんが系統用蓄電所",
+   "operator": "株式会社おてんとさん",
+   "prefecture": "宮城県",
+   "city": "",
+   "outputMw": 66,
+   "capacityMwh": 264,
+   "status": "建設中",
+   "cod": "2026-02-26",
+   "missing": [
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co76147-bess-2",
+   "name": "自社単独開発による特別高圧系統用蓄電池",
+   "operator": "東京センチュリー株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 101,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2025-12-12",
+   "missing": [
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co76147-hokkaido",
+   "name": "北海道電力ネットワーク北芽室変電所隣地における特別高圧系統用蓄電池",
+   "operator": "東京センチュリー株式会社",
+   "prefecture": "北海道",
+   "city": "",
+   "outputMw": 20,
+   "capacityMwh": 78.97,
+   "status": "計画中",
+   "cod": "2025-03-17",
+   "missing": [
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co86244-bess-4",
+   "name": "キャピタルエナジーとサンヴィレッジフルマーチャントでの系統用蓄電所",
+   "operator": "株式会社サンヴィレッジ",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 25,
+   "capacityMwh": 50,
+   "status": "計画中",
+   "cod": "2025-02-04",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co86244-bess-7",
+   "name": "系統蓄電所（株式会社サンヴィレッジ）",
+   "operator": "株式会社サンヴィレッジ",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 1.99,
+   "capacityMwh": 7.403,
+   "status": "計画中",
+   "cod": "2024-09-20",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co86244-tochigi-8mwh",
+   "name": "8MWhの自社蓄電所",
+   "operator": "株式会社サンヴィレッジ",
+   "prefecture": "栃木県",
+   "city": "株式会社サンヴィレッジ、栃木県足利市",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": "計画中",
+   "cod": "2025-10-17",
+   "missing": []
+  },
+  {
+   "slug": "pr-co88876-bess",
+   "name": "系統用蓄電池（スターシーズ株式会社）",
+   "operator": "スターシーズ株式会社",
+   "prefecture": "",
+   "city": "系統用蓄電池事業「紀の川桃山町",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": "建設中",
+   "cod": "2025-09-17",
+   "missing": [
+    "prefecture"
+   ]
+  },
+  {
+   "slug": "pr-co88876-bess-2",
+   "name": "系統用蓄電池（スターシーズ株式会社）",
+   "operator": "スターシーズ株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": "建設中",
+   "cod": "2025-09-04",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co88876-bess-3",
+   "name": "系統用蓄電池（スターシーズ株式会社）",
+   "operator": "スターシーズ株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2025-09-19",
+   "missing": [
+    "outputMw",
+    "capacityMwh",
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co89612-bess-2",
+   "name": "系統用蓄電池（マーチャントバンカーズ株式会社）",
+   "operator": "マーチャントバンカーズ株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 200,
+   "capacityMwh": 800,
+   "status": "計画中",
+   "cod": "2025-09-02",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-co96742-mie",
+   "name": "三重県松阪市に初の系統用蓄電所",
+   "operator": "サステナブルホールディングス株式会社",
+   "prefecture": "三重県",
+   "city": "松阪市",
+   "outputMw": 1.995,
+   "capacityMwh": 8.34,
+   "status": "計画中",
+   "cod": "2025-12-03",
+   "missing": []
+  },
+  {
+   "slug": "pr-daigas-hokkaido",
+   "name": "北海道千歳市の系統用蓄電池",
+   "operator": "Daigasグループ",
+   "prefecture": "北海道",
+   "city": "千歳市",
+   "outputMw": 25,
+   "capacityMwh": 50,
+   "status": "建設中",
+   "cod": "2025-06-20",
+   "missing": []
+  },
+  {
+   "slug": "pr-energy-bess-2",
+   "name": "小山市蓄電所（TAOKE ENERGY）",
+   "operator": "TAOKE ENERGY株式会社",
+   "prefecture": "栃木県",
+   "city": "小山市",
+   "outputMw": 1.97,
+   "capacityMwh": 8.14,
+   "status": "計画中",
+   "cod": "2025-12-18",
+   "missing": []
+  },
+  {
+   "slug": "pr-japan-bess",
+   "name": "系統用蓄電池（ブルースカイエナジー）",
+   "operator": "ブルースカイエナジー株式会社",
+   "prefecture": "",
+   "city": "",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": "計画中",
+   "cod": "2026-03-23",
+   "missing": [
+    "prefecture",
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-matsuo-okayama-8mwh",
+   "name": "岡山県で8MWhの系統用蓄電池",
+   "operator": "MATSUO",
+   "prefecture": "岡山県",
+   "city": "",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": "計画中",
+   "cod": "2026-03-12",
+   "missing": [
+    "city"
+   ]
+  },
+  {
+   "slug": "pr-matsuo-toyama-8mwh",
+   "name": "富山県富山市にて8MWhの系統用蓄電池",
+   "operator": "MATSUO",
+   "prefecture": "富山県",
+   "city": "富山市",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": "計画中",
+   "cod": "2026-01-09",
+   "missing": []
+  },
+  {
+   "slug": "pr-tecra-miyagi",
+   "name": "系統用蓄電池（TECRA株式会社）",
+   "operator": "TECRA株式会社",
+   "prefecture": "宮城県",
+   "city": "【想定年利12.0%】不動産クラウドファンディング「TECROWD」、国内開発型ファンド「宮城県角田市",
+   "outputMw": 0,
+   "capacityMwh": 0,
+   "status": "計画中",
+   "cod": "2024-12-19",
+   "missing": [
+    "outputMw",
+    "capacityMwh"
+   ]
+  },
+  {
+   "slug": "taoke-kakamigahara-no2",
+   "name": "岐阜県各務原市②号2MW高圧蓄電所（TAOKE ENERGY）",
+   "operator": "TAOKE ENERGY（SPC: PP6合同会社）",
+   "prefecture": "岐阜県",
+   "city": "各務原市",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "status": "",
+   "cod": "2026-07-07",
+   "missing": []
+  },
+  {
+   "slug": "taoke-tahara-mutsure",
+   "name": "愛知県田原市六連町2MW高圧蓄電所（TAOKE ENERGY）",
+   "operator": "TAOKE ENERGY（SPC: PP合同会社）",
+   "prefecture": "愛知県",
+   "city": "田原市",
+   "outputMw": 2,
+   "capacityMwh": 8.14,
+   "status": "",
+   "cod": "2026-07-31",
+   "missing": []
+  },
+  {
+   "slug": "will-bungoono",
+   "name": "豊後大野蓄電所（ウィル）",
+   "operator": "ウィル（アグリゲーション：RE100電力）",
+   "prefecture": "大分県",
+   "city": "豊後大野市",
+   "outputMw": 1.99,
+   "capacityMwh": 8.128,
+   "status": "建設中",
+   "cod": "2026年6月（予定）",
+   "missing": []
+  },
+  {
+   "slug": "will-yamaga",
+   "name": "山鹿蓄電所（ウィル）",
+   "operator": "ウィル（アグリゲーション：RE100電力）",
+   "prefecture": "熊本県",
+   "city": "山鹿市",
+   "outputMw": 1.99,
+   "capacityMwh": 8.128,
+   "status": "建設中",
+   "cod": "2026年7月（予定）",
+   "missing": []
+  }
+ ]
+}
