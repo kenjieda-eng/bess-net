@@ -3,7 +3,7 @@
  "totals": {
   "all": 331,
   "listed": 246,
-  "investigating": 43,
+  "investigating": 42,
   "overdue": 56,
   "both": 10
  },
@@ -50,11 +50,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2026年10月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -82,11 +81,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2026年11月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -98,11 +96,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2027年2月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -114,11 +111,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2026年12月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -130,11 +126,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2026年12月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -146,11 +141,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2027年2月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -162,11 +156,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2027年2月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -178,11 +171,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2026年12月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -194,11 +186,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2027年3月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -256,11 +247,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
-   "cod": "",
+   "cod": "2026年10月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -288,11 +278,10 @@
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "建設中",
-   "cod": "",
+   "cod": "2026年10月（予定）",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "cod"
+    "capacityMwh"
    ]
   },
   {
@@ -377,16 +366,14 @@
    "slug": "pr-co140317-bess",
    "name": "株式会社脱炭素化支援機構がエネルギーパワー株式会社の開発する系統用蓄電所",
    "operator": "脱炭素化支援機構",
-   "prefecture": "",
-   "city": "",
+   "prefecture": "和歌山県",
+   "city": "和歌山市",
    "outputMw": 0,
    "capacityMwh": 8.2,
    "status": "計画中",
    "cod": "2025-10-14",
    "missing": [
-    "outputMw",
-    "prefecture",
-    "city"
+    "outputMw"
    ]
   },
   {
@@ -433,22 +420,6 @@
    "missing": [
     "outputMw",
     "capacityMwh"
-   ]
-  },
-  {
-   "slug": "pr-co160356-bess-2",
-   "name": "系統用蓄電所（ADワークスグループ）",
-   "operator": "ADワークスグループ",
-   "prefecture": "三重県",
-   "city": "",
-   "outputMw": 0,
-   "capacityMwh": 0,
-   "status": "稼働中",
-   "cod": "2026-02-12",
-   "missing": [
-    "outputMw",
-    "capacityMwh",
-    "city"
    ]
   },
   {
@@ -627,17 +598,15 @@
    "slug": "pr-co88876-bess-3",
    "name": "系統用蓄電池（スターシーズ株式会社）",
    "operator": "スターシーズ株式会社",
-   "prefecture": "",
-   "city": "",
+   "prefecture": "和歌山県",
+   "city": "和歌山市",
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
    "cod": "2025-09-19",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "prefecture",
-    "city"
+    "capacityMwh"
    ]
   },
   {
@@ -886,16 +855,14 @@
    "slug": "pr-co140317-bess",
    "name": "株式会社脱炭素化支援機構がエネルギーパワー株式会社の開発する系統用蓄電所",
    "operator": "脱炭素化支援機構",
-   "prefecture": "",
-   "city": "",
+   "prefecture": "和歌山県",
+   "city": "和歌山市",
    "outputMw": 0,
    "capacityMwh": 8.2,
    "status": "計画中",
    "cod": "2025-10-14",
    "missing": [
-    "outputMw",
-    "prefecture",
-    "city"
+    "outputMw"
    ]
   },
   {
@@ -1283,17 +1250,15 @@
    "slug": "pr-co88876-bess-3",
    "name": "系統用蓄電池（スターシーズ株式会社）",
    "operator": "スターシーズ株式会社",
-   "prefecture": "",
-   "city": "",
+   "prefecture": "和歌山県",
+   "city": "和歌山市",
    "outputMw": 0,
    "capacityMwh": 0,
    "status": "計画中",
    "cod": "2025-09-19",
    "missing": [
     "outputMw",
-    "capacityMwh",
-    "prefecture",
-    "city"
+    "capacityMwh"
    ]
   },
   {
