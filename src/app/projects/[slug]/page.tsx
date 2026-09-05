@@ -10,6 +10,7 @@ import {
 } from '@/lib/microcms';
 import { linkifyHTML } from '@/lib/linkify';
 import { isExcludedProject } from '@/lib/projects-excluded';
+import { reconstructProjectBody } from '@/lib/projects-body';
 import {
   getRelatedEntities,
   buildMentions,
@@ -62,11 +63,17 @@ export default async function ProjectDetailPage({
 
   const status = (item.status && item.status[0]) || 'その他';
 
+  // Pj2-E（裁定A・案B）: 取込器テンプレの第1段落を field から再生成する。
+  // 2026-05 の一括取込が body に所在地・諸元・ステータスを焼き込んだため、field を PATCH しても
+  // 本文が追随しなかった。テンプレ指紋に一致する body だけを対象にし、以降はこの body を使う
+  // （#119: 正規化は一箇所で掛ける。表示・linkify・関連エンティティ抽出はすべて同じ値を見る）。
+  const body = reconstructProjectBody(item);
+
   // 依頼W.5: projects 本文は glossary + operators のみリンク（他 projects 除外、汎用 name の連鎖防止）
   const linkableTargets = (await getLinkableTargets()).filter(
     (t) => t.type === 'operator' || t.type === 'glossary'
   );
-  const bodyHtml = linkifyHTML(item.body || '', linkableTargets, {
+  const bodyHtml = linkifyHTML(body, linkableTargets, {
     firstOnly: true,
     selfUrl: `/projects/${item.slug}`,
   });
@@ -75,7 +82,7 @@ export default async function ProjectDetailPage({
   const related = await getRelatedEntities({
     baseSlug: item.slug,
     baseType: 'project',
-    baseBodyHtml: item.body || '',
+    baseBodyHtml: body,
     baseTitle: item.name,
     baseName: item.operator || item.name,
     wantTypes: ['operator', 'news', 'explainer'],
@@ -206,7 +213,7 @@ export default async function ProjectDetailPage({
             </>)}
           </dl>
 
-          {item.body && (
+          {body && (
             <section className="page-section">
               <h2>プロジェクト詳細</h2>
               <div
