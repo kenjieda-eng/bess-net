@@ -109,6 +109,11 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'juniper-assets-kyushu-bess-financial-close-2026-07': '海外',                    // Juniper 九州 FC（海外資本）
   // 金曜ワンセット#2（2026-08-14）
   'nihon-chikudenchi-kama-bousai-kyotei-2026-08': '地域自治体',                    // 嘉麻市 防災協定
+  // 金曜ワンセット#5（2026-09-05 遅延実施・対象 9/1〜9/3＋救済1件）— 全 category は microCMS 実在値のみ
+  'erex-bess-aggregation-start-2026-09': '連系',                                  // イーレックス アグリ開始（他社蓄電池の運用受託）
+  'smart-energy-powerx-heisetsu-mou-2026-09': '開発計画',                          // スマートエナジー×パワーエックス 協業検討覚書
+  'tokugin-tomoni-itano-shunko-2026-09': '連系',                                  // とくぎんトモニ 板野郡 竣工（アグリ Sustech）
+  'glome-nishikata-no2-hikiwatashi-2026-08': '連系',                              // グローム 西方町第2号 検収引渡し（#4 救済）
   'eku-hirohara-sueteuke-2026-08': '開発計画',                                     // 広原 据付完了
   // 金曜ワンセット#4（2026-08-30 遅延実施）
   'bluefield-aggregation-100mw-2026-08': '市場統計',                               // 採用決定容量100MW突破（実績統計）

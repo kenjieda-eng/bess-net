@@ -1,13 +1,27 @@
 {
  "overdueAsOf": "2026-09-05",
  "totals": {
-  "all": 331,
-  "listed": 244,
-  "investigating": 40,
+  "all": 332,
+  "listed": 245,
+  "investigating": 41,
   "overdue": 55,
   "both": 9
  },
  "investigating": [
+  {
+   "slug": "glome-nishikata-kanai-2465-bess",
+   "name": "GM西方町金井2465蓄電所（グローム・ホールディングス）",
+   "operator": "グローム・ホールディングス株式会社",
+   "prefecture": "栃木県",
+   "city": "栃木市西方町金井",
+   "outputMw": 1.994,
+   "capacityMwh": 0,
+   "status": "稼働中",
+   "cod": "2026-07-10",
+   "missing": [
+    "capacityMwh"
+   ]
+  },
   {
    "slug": "jpn-gifu-sendai",
    "name": "日本蓄電池岐阜・仙台蓄電所（建設中）",
