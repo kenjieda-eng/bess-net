@@ -76,6 +76,14 @@ export const PROJECTS_301: Record<string, string> = {
   //    ＝PR一括取込の汎用レコードの特徴が揃う。canonical はキュレーション済みの
   //    starseeds-wakayama-inokuchi。microCMS レコードは削除しない（middleware が 301 吸収）。
   '/projects/pr-co88876-bess-3':                   '/projects/starseeds-wakayama-inokuchi',
+  // 13 徳島県板野郡蓄電所（とくぎんトモニリンクアップ）（2026-09-05 金曜#5 追修便・ユウ裁定 9/5）
+  //    旧側 pr-co92942-bess は name が PR タイトル断片「初となる系統用蓄電所」・city null・
+  //    sourceUrl が Sustech トップページ・cod=参入発表日（2026-02-20）＝PR一括取込の汎用レコード。
+  //    諸元（1.99MW/8.226MWh・徳島県）は canonical と一致し、Sustech は同設備のアグリゲーター。
+  //    canonical はキュレーション済み（一次: Sustech PR 000000090.000092942・2026-08-31 竣工）。
+  //    latitude/longitude は移植しない（addr_source=pref-only の派生座標・一次裏付けなし）。
+  //    microCMS レコードは削除しない（middleware が 301 吸収）。
+  '/projects/pr-co92942-bess':                     '/projects/pr-co149815-bess',
 };
 
 /** 301元の bare slug（一覧除外・noindex 判定の補助。完全一致） */
