@@ -2,8 +2,8 @@
  "overdueAsOf": "2026-09-05",
  "totals": {
   "all": 331,
-  "listed": 245,
-  "investigating": 41,
+  "listed": 244,
+  "investigating": 40,
   "overdue": 55,
   "both": 9
  },
@@ -419,23 +419,6 @@
    "missing": [
     "outputMw",
     "capacityMwh"
-   ]
-  },
-  {
-   "slug": "pr-co160356-bess-3",
-   "name": "系統用蓄電所（ADワークスグループ）",
-   "operator": "ADワークスグループ",
-   "prefecture": "",
-   "city": "",
-   "outputMw": 0,
-   "capacityMwh": 0,
-   "status": "稼働中",
-   "cod": "2025-04-21",
-   "missing": [
-    "outputMw",
-    "capacityMwh",
-    "prefecture",
-    "city"
    ]
   },
   {

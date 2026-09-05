@@ -65,6 +65,15 @@ export const EXCLUDED_PROJECT_SLUGS: ReadonlySet<string> = new Set<string>([
   'pr-power-bess',                     // 案件性なし（Recharge Power社の日本展開構想・資本業務提携発表）
   'pr-pv-expo-2026-bess',              // 案件性なし（PV EXPO 2026出展レポート）
   'gifu-imari-bess',                   // 混載エントリ（岐阜太郎丸＋伊万里の2案件混載・各構成要素は個別entryに存在）
+  // 2026-09-05 Pj2-F（ユウ裁定 Pj2-E §3-1）: ADワークスの「系統用蓄電所事業への参入表明」
+  // （PR TIMES 000000002・2025-04-21）。特定地点なしの参入表明で、pr-co99599-bess 等と同性格。
+  //   ・prefecture / city とも null、outputMw / capacityMwh とも 0（一次に所在地も数値も無い＝忠実）
+  //   ・status='稼働中' は一次と矛盾（本文は「蓄電所設備発注準備の段階」＝機器発注前）
+  //   ・cod='2025-04-21' は配信日時「2025年4月21日 09時00分」の転記で運開日ではない
+  // 本文が指す唯一の設備「第一拠点」は pr-co160356-bess（ADW三重松阪市蓄電所・PR 000000054）と
+  // 同一だが、301（重複統合）ではなく「案件性なし」として除外する（実体のある案件ではないため）。
+  // 詳細: reports/projects-adw-identity-2026-09-05.md
+  'pr-co160356-bess-3',
 ]);
 
 // 一覧（/projects）除外 = 非プロジェクト8 ∪ 301元6（重複統合・2026-06-28）。
