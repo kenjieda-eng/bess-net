@@ -24,6 +24,7 @@ import {
   type SubstationGeoPoint,
 } from './microcms';
 import { findWithinRadius } from './geo-distance';
+import { isListExcludedProject } from './projects-excluded';
 import relatedNewsMap from './generated/related-news-map.json';
 
 /* ----------------------------- フィルタ条件 ----------------------------- */
@@ -607,8 +608,12 @@ export async function getNearbyProjects(opts: {
   }
   const candidates = await getAllProjectsWithCoords();
   // findWithinRadius 用に lat/lng エイリアスを付与
+  // Pj2-G ■3.5（2026-09-08・ユウ裁定）: 一覧除外レコード（301元＋案件性なし）を近隣カードの候補から外す。
+  //   301元は middleware が canonical へ 301 するため、カードのリンクが「クリックすると別 slug に飛ぶ」状態になり、
+  //   同一設備が canonical と重複して並ぶこともある。/projects 一覧・sitemap は既に除外済みで、
+  //   近隣カードだけが未配線だった（表示側のみの変更・microCMS レコードは不変更）。
   const aliased = candidates
-    .filter((c) => c.slug !== excludeSlug)
+    .filter((c) => c.slug !== excludeSlug && !isListExcludedProject(c.slug))
     .map((c) => ({ ...c, lat: c.latitude, lng: c.longitude }));
   const matches = findWithinRadius(
     { lat: origin.latitude, lng: origin.longitude },

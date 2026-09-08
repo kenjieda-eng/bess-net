@@ -1,10 +1,10 @@
 {
   "totals": {
     "operators": 578,
-    "projectsVisible": 245,
-    "newsTotal": 1369,
-    "projectLinks": 266,
-    "newsLinks": 513
+    "projectsVisible": 243,
+    "newsTotal": 1378,
+    "projectLinks": 259,
+    "newsLinks": 521
   },
   "falseNegativeProjects": [
     {

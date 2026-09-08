@@ -28,7 +28,8 @@
     "verify:grid-fields": "tsx scripts/verify-grid-list-fields.ts",
     "verify:capacity-coverage": "tsx scripts/verify-capacity-coverage.ts",
     "build:projects-maintenance": "tsx scripts/precompute-projects-maintenance.ts",
-    "verify:projects-body": "tsx scripts/verify-projects-body.ts"
+    "verify:projects-body": "tsx scripts/verify-projects-body.ts",
+    "verify:nearby-cards": "tsx scripts/verify-nearby-cards.ts"
   },
   "dependencies": {
     "csv-parse": "^6.2.1",

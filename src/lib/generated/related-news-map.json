@@ -1,4 +1,35 @@
 {
+  "project:glome-nishikata-kanai-2465-bess": [
+    {
+      "id": "m555y3p8we6",
+      "slug": "glome-nishikata-no2-hikiwatashi-2026-08",
+      "title": "グローム・ホールディングス、栃木県栃木市「GM西方町金井2465蓄電所」（最大受電電力1,994kW）の検収・引渡しが完了 ─ 当初予定より約7週間前倒し",
+      "publishedAt": "2026-09-05T11:04:43.015Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "32e318f634",
+      "slug": "glome-hd-toyooka-1-bess-shiunten-2026-07",
+      "title": "グローム・ホールディングス、系統用蓄電所「豊岡1号」（最大受電1,988kW）が試運転を開始 ─ 8月1日受電予定、関西電力送配電に連系",
+      "publishedAt": "2026-08-02T11:23:27.615Z",
+      "category": [
+        "連系"
+      ]
+    }
+  ],
+  "project:correc-okayama-kumegun-bess": [
+    {
+      "id": "tfuq2_suy3z8",
+      "slug": "correc-okayama-sannyu-2026-08",
+      "title": "コレックホールディングス、系統用蓄電池事業に参入 ─ 岡山県久米郡「岡山蓄電所（仮称）」（約2MW／約8MWh）を取得へ",
+      "publishedAt": "2026-09-01T04:35:06.424Z",
+      "category": [
+        "開発計画"
+      ]
+    }
+  ],
   "project:nc-ikeda-yawata-bess": [
     {
       "id": "effq_rfaw",
@@ -451,6 +482,15 @@
       ]
     },
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "qeerk2-sofb",
       "slug": "pr-2026-03-27-co176494-12",
       "title": "牧之原蓄電所における需給調整市場への参入開始のお知らせ",
@@ -466,15 +506,6 @@
       "publishedAt": "2026-04-28T07:26:03.000Z",
       "category": [
         "制度"
-      ]
-    },
-    {
-      "id": "uwg-dtzenvdt",
-      "slug": "pr-2026-03-27-co175281-10",
-      "title": "九州で併設型蓄電池3案件が稼働開始",
-      "publishedAt": "2026-03-27T01:00:02.000Z",
-      "category": [
-        "開発計画"
       ]
     }
   ],
@@ -525,6 +556,15 @@
       ]
     },
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "qeerk2-sofb",
       "slug": "pr-2026-03-27-co176494-12",
       "title": "牧之原蓄電所における需給調整市場への参入開始のお知らせ",
@@ -540,15 +580,6 @@
       "publishedAt": "2026-04-28T07:26:03.000Z",
       "category": [
         "制度"
-      ]
-    },
-    {
-      "id": "uwg-dtzenvdt",
-      "slug": "pr-2026-03-27-co175281-10",
-      "title": "九州で併設型蓄電池3案件が稼働開始",
-      "publishedAt": "2026-03-27T01:00:02.000Z",
-      "category": [
-        "開発計画"
       ]
     }
   ],
@@ -599,6 +630,15 @@
       ]
     },
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "qeerk2-sofb",
       "slug": "pr-2026-03-27-co176494-12",
       "title": "牧之原蓄電所における需給調整市場への参入開始のお知らせ",
@@ -614,15 +654,6 @@
       "publishedAt": "2026-04-28T07:26:03.000Z",
       "category": [
         "制度"
-      ]
-    },
-    {
-      "id": "uwg-dtzenvdt",
-      "slug": "pr-2026-03-27-co175281-10",
-      "title": "九州で併設型蓄電池3案件が稼働開始",
-      "publishedAt": "2026-03-27T01:00:02.000Z",
-      "category": [
-        "開発計画"
       ]
     }
   ],
@@ -673,6 +704,15 @@
       ]
     },
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "qeerk2-sofb",
       "slug": "pr-2026-03-27-co176494-12",
       "title": "牧之原蓄電所における需給調整市場への参入開始のお知らせ",
@@ -688,15 +728,6 @@
       "publishedAt": "2026-04-28T07:26:03.000Z",
       "category": [
         "制度"
-      ]
-    },
-    {
-      "id": "uwg-dtzenvdt",
-      "slug": "pr-2026-03-27-co175281-10",
-      "title": "九州で併設型蓄電池3案件が稼働開始",
-      "publishedAt": "2026-03-27T01:00:02.000Z",
-      "category": [
-        "開発計画"
       ]
     }
   ],
@@ -880,6 +911,15 @@
     }
   ],
   "project:erex-no3-kameoka": [
+    {
+      "id": "ezqe5j8fwv",
+      "slug": "erex-bess-aggregation-start-2026-09",
+      "title": "イーレックス、系統用蓄電池のアグリゲーションサービスを開始 ─ 事業全体で2028年までに取扱電源100MWへ",
+      "publishedAt": "2026-09-05T11:04:39.152Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "z3j-teuex",
       "slug": "gec-kameoka-sekou-2026-08",
@@ -2766,6 +2806,15 @@
   ],
   "project:pr-co109041-bess-4": [
     {
+      "id": "v7kttie2hu",
+      "slug": "smart-energy-powerx-heisetsu-mou-2026-09",
+      "title": "スマートエナジー、パワーエックスと発電所併設型蓄電池の導入推進に関する協業検討の覚書 ─ JC-Star対応の蓄電システムを資機材提供",
+      "publishedAt": "2026-09-05T11:04:40.482Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "i35cchde05",
       "slug": "powerx-kamigumi-oita-storage",
       "title": "パワーエックス、上組の大分・特別高圧蓄電所向けに蓄電システム36台（81.2MWh）を受注",
@@ -2826,15 +2875,6 @@
       "publishedAt": "2026-02-27T04:00:02.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "5w99je0_0",
-      "slug": "pr-2025-12-19-fg-21",
-      "title": "ちゅうぎんインパクトファンド投資先である「株式会社パワーエックス」の東京証券取引所グロース市場への新規上場について",
-      "publishedAt": "2025-12-19T04:00:02.000Z",
-      "category": [
-        "投資"
       ]
     }
   ],
@@ -3171,6 +3211,15 @@
   ],
   "project:pr-co109041-bess-3": [
     {
+      "id": "v7kttie2hu",
+      "slug": "smart-energy-powerx-heisetsu-mou-2026-09",
+      "title": "スマートエナジー、パワーエックスと発電所併設型蓄電池の導入推進に関する協業検討の覚書 ─ JC-Star対応の蓄電システムを資機材提供",
+      "publishedAt": "2026-09-05T11:04:40.482Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "i35cchde05",
       "slug": "powerx-kamigumi-oita-storage",
       "title": "パワーエックス、上組の大分・特別高圧蓄電所向けに蓄電システム36台（81.2MWh）を受注",
@@ -3231,15 +3280,6 @@
       "publishedAt": "2026-02-27T04:00:02.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "5w99je0_0",
-      "slug": "pr-2025-12-19-fg-21",
-      "title": "ちゅうぎんインパクトファンド投資先である「株式会社パワーエックス」の東京証券取引所グロース市場への新規上場について",
-      "publishedAt": "2025-12-19T04:00:02.000Z",
-      "category": [
-        "投資"
       ]
     }
   ],
@@ -4313,6 +4353,15 @@
       ]
     },
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "qeerk2-sofb",
       "slug": "pr-2026-03-27-co176494-12",
       "title": "牧之原蓄電所における需給調整市場への参入開始のお知らせ",
@@ -4328,15 +4377,6 @@
       "publishedAt": "2026-04-28T07:26:03.000Z",
       "category": [
         "制度"
-      ]
-    },
-    {
-      "id": "uwg-dtzenvdt",
-      "slug": "pr-2026-03-27-co175281-10",
-      "title": "九州で併設型蓄電池3案件が稼働開始",
-      "publishedAt": "2026-03-27T01:00:02.000Z",
-      "category": [
-        "開発計画"
       ]
     }
   ],
@@ -4387,6 +4427,15 @@
       ]
     },
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "qeerk2-sofb",
       "slug": "pr-2026-03-27-co176494-12",
       "title": "牧之原蓄電所における需給調整市場への参入開始のお知らせ",
@@ -4402,15 +4451,6 @@
       "publishedAt": "2026-04-28T07:26:03.000Z",
       "category": [
         "制度"
-      ]
-    },
-    {
-      "id": "uwg-dtzenvdt",
-      "slug": "pr-2026-03-27-co175281-10",
-      "title": "九州で併設型蓄電池3案件が稼働開始",
-      "publishedAt": "2026-03-27T01:00:02.000Z",
-      "category": [
-        "開発計画"
       ]
     }
   ],
@@ -4666,6 +4706,15 @@
   ],
   "project:pr-co76147-hokkaido": [
     {
+      "id": "cyytrq27j39",
+      "slug": "tensor-tokyocentury-teikei-2026-08",
+      "title": "Tensor Energy、東京センチュリーと系統用蓄電池事業で包括業務提携 ─ 実運用データでAI運用基盤を強化",
+      "publishedAt": "2026-09-01T04:35:04.743Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "023s2ahmrnbk",
       "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
       "title": "伊藤忠商事・三菱地所・東京センチュリー、福岡県筑前町で系統用蓄電所（67MW／230.1MWh）建設に着手 ─ 2027年度商業運転へ",
@@ -4916,6 +4965,15 @@
   ],
   "project:pr-co109041-bess-2": [
     {
+      "id": "v7kttie2hu",
+      "slug": "smart-energy-powerx-heisetsu-mou-2026-09",
+      "title": "スマートエナジー、パワーエックスと発電所併設型蓄電池の導入推進に関する協業検討の覚書 ─ JC-Star対応の蓄電システムを資機材提供",
+      "publishedAt": "2026-09-05T11:04:40.482Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "i35cchde05",
       "slug": "powerx-kamigumi-oita-storage",
       "title": "パワーエックス、上組の大分・特別高圧蓄電所向けに蓄電システム36台（81.2MWh）を受注",
@@ -4977,18 +5035,18 @@
       "category": [
         "連系"
       ]
-    },
-    {
-      "id": "5w99je0_0",
-      "slug": "pr-2025-12-19-fg-21",
-      "title": "ちゅうぎんインパクトファンド投資先である「株式会社パワーエックス」の東京証券取引所グロース市場への新規上場について",
-      "publishedAt": "2025-12-19T04:00:02.000Z",
-      "category": [
-        "投資"
-      ]
     }
   ],
   "project:pr-co76147-bess-2": [
+    {
+      "id": "cyytrq27j39",
+      "slug": "tensor-tokyocentury-teikei-2026-08",
+      "title": "Tensor Energy、東京センチュリーと系統用蓄電池事業で包括業務提携 ─ 実運用データでAI運用基盤を強化",
+      "publishedAt": "2026-09-01T04:35:04.743Z",
+      "category": [
+        "開発計画"
+      ]
+    },
     {
       "id": "023s2ahmrnbk",
       "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
@@ -5036,6 +5094,15 @@
     }
   ],
   "project:pr-100mw-bess": [
+    {
+      "id": "cyytrq27j39",
+      "slug": "tensor-tokyocentury-teikei-2026-08",
+      "title": "Tensor Energy、東京センチュリーと系統用蓄電池事業で包括業務提携 ─ 実運用データでAI運用基盤を強化",
+      "publishedAt": "2026-09-01T04:35:04.743Z",
+      "category": [
+        "開発計画"
+      ]
+    },
     {
       "id": "023s2ahmrnbk",
       "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
@@ -5279,6 +5346,15 @@
   ],
   "project:pr-219mwh-bess": [
     {
+      "id": "v7kttie2hu",
+      "slug": "smart-energy-powerx-heisetsu-mou-2026-09",
+      "title": "スマートエナジー、パワーエックスと発電所併設型蓄電池の導入推進に関する協業検討の覚書 ─ JC-Star対応の蓄電システムを資機材提供",
+      "publishedAt": "2026-09-05T11:04:40.482Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "i35cchde05",
       "slug": "powerx-kamigumi-oita-storage",
       "title": "パワーエックス、上組の大分・特別高圧蓄電所向けに蓄電システム36台（81.2MWh）を受注",
@@ -5339,15 +5415,6 @@
       "publishedAt": "2026-02-27T04:00:02.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "5w99je0_0",
-      "slug": "pr-2025-12-19-fg-21",
-      "title": "ちゅうぎんインパクトファンド投資先である「株式会社パワーエックス」の東京証券取引所グロース市場への新規上場について",
-      "publishedAt": "2025-12-19T04:00:02.000Z",
-      "category": [
-        "投資"
       ]
     }
   ],
@@ -5917,6 +5984,15 @@
   ],
   "project:pr-co109041-bess": [
     {
+      "id": "v7kttie2hu",
+      "slug": "smart-energy-powerx-heisetsu-mou-2026-09",
+      "title": "スマートエナジー、パワーエックスと発電所併設型蓄電池の導入推進に関する協業検討の覚書 ─ JC-Star対応の蓄電システムを資機材提供",
+      "publishedAt": "2026-09-05T11:04:40.482Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "i35cchde05",
       "slug": "powerx-kamigumi-oita-storage",
       "title": "パワーエックス、上組の大分・特別高圧蓄電所向けに蓄電システム36台（81.2MWh）を受注",
@@ -5977,15 +6053,6 @@
       "publishedAt": "2026-02-27T04:00:02.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "5w99je0_0",
-      "slug": "pr-2025-12-19-fg-21",
-      "title": "ちゅうぎんインパクトファンド投資先である「株式会社パワーエックス」の東京証券取引所グロース市場への新規上場について",
-      "publishedAt": "2025-12-19T04:00:02.000Z",
-      "category": [
-        "投資"
       ]
     }
   ],
@@ -6138,6 +6205,15 @@
     }
   ],
   "project:pr-co76147-bess": [
+    {
+      "id": "cyytrq27j39",
+      "slug": "tensor-tokyocentury-teikei-2026-08",
+      "title": "Tensor Energy、東京センチュリーと系統用蓄電池事業で包括業務提携 ─ 実運用データでAI運用基盤を強化",
+      "publishedAt": "2026-09-01T04:35:04.743Z",
+      "category": [
+        "開発計画"
+      ]
+    },
     {
       "id": "023s2ahmrnbk",
       "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
@@ -6336,6 +6412,15 @@
   ],
   "project:pr-sustech-bess": [
     {
+      "id": "wecjjcqi9p7",
+      "slug": "tokugin-tomoni-itano-shunko-2026-09",
+      "title": "とくぎんトモニリンクアップ、徳島県板野郡の系統用蓄電所（1,990kW／8,226kWh）が竣工 ─ アグリゲーターはSustech",
+      "publishedAt": "2026-09-05T11:04:41.739Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kef35j2ti13",
       "slug": "pr-2026-03-12-sustech-80",
       "title": "Sustech、「脱炭素経営EXPO2026春」に出展",
@@ -6394,9 +6479,36 @@
   ],
   "project:pr-co149815-bess": [
     {
+      "id": "wecjjcqi9p7",
+      "slug": "tokugin-tomoni-itano-shunko-2026-09",
+      "title": "とくぎんトモニリンクアップ、徳島県板野郡の系統用蓄電所（1,990kW／8,226kWh）が竣工 ─ アグリゲーターはSustech",
+      "publishedAt": "2026-09-05T11:04:41.739Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "38yctuqcl",
       "slug": "pr-2026-02-20-sustech-79",
       "title": "Sustech、徳島大正銀行グループ(とくぎんトモニリンクアップ社)初となる系統用蓄電所においてアグリゲーションサービスを受託",
+      "publishedAt": "2026-02-20T01:00:02.000Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "0k40-ulud",
+      "slug": "pr-2026-02-20-co109041-222",
+      "title": "とくぎんトモニリンクアップ向け系統蓄電システムを受注",
+      "publishedAt": "2026-02-20T01:00:02.000Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
+      "id": "9-ctzh7iv7",
+      "slug": "pr-2026-02-20-co149815-13",
+      "title": "【とくぎんトモニリンクアップ】　～四国の地方銀行グループ初～　系統用蓄電池事業への参入について",
       "publishedAt": "2026-02-20T01:00:02.000Z",
       "category": [
         "連系"
@@ -6524,6 +6636,15 @@
       ]
     },
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "qeerk2-sofb",
       "slug": "pr-2026-03-27-co176494-12",
       "title": "牧之原蓄電所における需給調整市場への参入開始のお知らせ",
@@ -6539,15 +6660,6 @@
       "publishedAt": "2026-04-28T07:26:03.000Z",
       "category": [
         "制度"
-      ]
-    },
-    {
-      "id": "uwg-dtzenvdt",
-      "slug": "pr-2026-03-27-co175281-10",
-      "title": "九州で併設型蓄電池3案件が稼働開始",
-      "publishedAt": "2026-03-27T01:00:02.000Z",
-      "category": [
-        "開発計画"
       ]
     }
   ],
@@ -6908,6 +7020,15 @@
   ],
   "project:pr-co109041-gunma": [
     {
+      "id": "v7kttie2hu",
+      "slug": "smart-energy-powerx-heisetsu-mou-2026-09",
+      "title": "スマートエナジー、パワーエックスと発電所併設型蓄電池の導入推進に関する協業検討の覚書 ─ JC-Star対応の蓄電システムを資機材提供",
+      "publishedAt": "2026-09-05T11:04:40.482Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "i35cchde05",
       "slug": "powerx-kamigumi-oita-storage",
       "title": "パワーエックス、上組の大分・特別高圧蓄電所向けに蓄電システム36台（81.2MWh）を受注",
@@ -6968,15 +7089,6 @@
       "publishedAt": "2026-02-27T04:00:02.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "5w99je0_0",
-      "slug": "pr-2025-12-19-fg-21",
-      "title": "ちゅうぎんインパクトファンド投資先である「株式会社パワーエックス」の東京証券取引所グロース市場への新規上場について",
-      "publishedAt": "2025-12-19T04:00:02.000Z",
-      "category": [
-        "投資"
       ]
     }
   ],
@@ -7077,6 +7189,15 @@
   ],
   "project:pr-co109041-hyogo": [
     {
+      "id": "v7kttie2hu",
+      "slug": "smart-energy-powerx-heisetsu-mou-2026-09",
+      "title": "スマートエナジー、パワーエックスと発電所併設型蓄電池の導入推進に関する協業検討の覚書 ─ JC-Star対応の蓄電システムを資機材提供",
+      "publishedAt": "2026-09-05T11:04:40.482Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "i35cchde05",
       "slug": "powerx-kamigumi-oita-storage",
       "title": "パワーエックス、上組の大分・特別高圧蓄電所向けに蓄電システム36台（81.2MWh）を受注",
@@ -7137,15 +7258,6 @@
       "publishedAt": "2026-02-27T04:00:02.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "5w99je0_0",
-      "slug": "pr-2025-12-19-fg-21",
-      "title": "ちゅうぎんインパクトファンド投資先である「株式会社パワーエックス」の東京証券取引所グロース市場への新規上場について",
-      "publishedAt": "2025-12-19T04:00:02.000Z",
-      "category": [
-        "投資"
       ]
     }
   ],
@@ -7434,30 +7546,12 @@
   ],
   "project:pr-co85634-fukuoka": [
     {
-      "id": "d-pbv84u6ls",
-      "slug": "pr-2026-01-22-co85634-20",
-      "title": "ヒラソル・エナジー 容量市場メインオークションで複数案件を落札",
-      "publishedAt": "2026-01-22T02:30:01.000Z",
-      "category": [
-        "オークション"
-      ]
-    },
-    {
       "id": "jads235ea8ff",
       "slug": "pr-2025-11-05-co85634-19",
       "title": "中川商事、ヒラソル・エナジーが福岡県古賀市で系統用蓄電所運転開始",
       "publishedAt": "2025-11-05T03:45:19.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "sn5elw2zi",
-      "slug": "pr-2025-09-12-co85634-17",
-      "title": "ヒラソル・エナジー、OpenADR認証を取得。需給調整市場対応のアグリゲーター向けシステムを構築し、電力安定供給に貢献",
-      "publishedAt": "2025-09-12T00:00:02.000Z",
-      "category": [
-        "制度"
       ]
     }
   ],
@@ -8003,6 +8097,15 @@
   ],
   "project:pr-co92942-bess": [
     {
+      "id": "wecjjcqi9p7",
+      "slug": "tokugin-tomoni-itano-shunko-2026-09",
+      "title": "とくぎんトモニリンクアップ、徳島県板野郡の系統用蓄電所（1,990kW／8,226kWh）が竣工 ─ アグリゲーターはSustech",
+      "publishedAt": "2026-09-05T11:04:41.739Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kef35j2ti13",
       "slug": "pr-2026-03-12-sustech-80",
       "title": "Sustech、「脱炭素経営EXPO2026春」に出展",
@@ -8243,6 +8346,15 @@
       ]
     },
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "qeerk2-sofb",
       "slug": "pr-2026-03-27-co176494-12",
       "title": "牧之原蓄電所における需給調整市場への参入開始のお知らせ",
@@ -8259,14 +8371,34 @@
       "category": [
         "制度"
       ]
+    }
+  ],
+  "project:pr-co160356-bess": [
+    {
+      "id": "m17enhw93qy",
+      "slug": "pr-2026-03-31-ad-54",
+      "title": "エー・ディー・ワークスの系統用蓄電所事業 第一拠点のADW三重松阪市蓄電所が本連系・稼働開始",
+      "publishedAt": "2026-03-31T06:30:01.000Z",
+      "category": [
+        "連系"
+      ]
     },
     {
-      "id": "uwg-dtzenvdt",
-      "slug": "pr-2026-03-27-co175281-10",
-      "title": "九州で併設型蓄電池3案件が稼働開始",
-      "publishedAt": "2026-03-27T01:00:02.000Z",
+      "id": "bgzk3uo4la",
+      "slug": "pr-2026-02-12-ad-43",
+      "title": "エー・ディー・ワークス 系統用蓄電所の第一拠点「ADW三重松阪蓄電所」 現地にて竣工式を開催",
+      "publishedAt": "2026-02-12T06:30:01.000Z",
       "category": [
-        "開発計画"
+        "連系"
+      ]
+    },
+    {
+      "id": "u_l0w25y8",
+      "slug": "pr-2025-04-21-ad-2",
+      "title": "再エネ普及のため需要増加中の「系統用蓄電所」事業に、収益不動産のエー・ディー・ワークスが参入",
+      "publishedAt": "2025-04-21T00:00:01.000Z",
+      "category": [
+        "連系"
       ]
     }
   ],
@@ -8790,6 +8922,15 @@
   ],
   "project:pr-co109041-gunma-148mwh": [
     {
+      "id": "v7kttie2hu",
+      "slug": "smart-energy-powerx-heisetsu-mou-2026-09",
+      "title": "スマートエナジー、パワーエックスと発電所併設型蓄電池の導入推進に関する協業検討の覚書 ─ JC-Star対応の蓄電システムを資機材提供",
+      "publishedAt": "2026-09-05T11:04:40.482Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "i35cchde05",
       "slug": "powerx-kamigumi-oita-storage",
       "title": "パワーエックス、上組の大分・特別高圧蓄電所向けに蓄電システム36台（81.2MWh）を受注",
@@ -8850,15 +8991,6 @@
       "publishedAt": "2026-02-27T04:00:02.000Z",
       "category": [
         "連系"
-      ]
-    },
-    {
-      "id": "5w99je0_0",
-      "slug": "pr-2025-12-19-fg-21",
-      "title": "ちゅうぎんインパクトファンド投資先である「株式会社パワーエックス」の東京証券取引所グロース市場への新規上場について",
-      "publishedAt": "2025-12-19T04:00:02.000Z",
-      "category": [
-        "投資"
       ]
     }
   ],
@@ -9374,6 +9506,15 @@
   ],
   "project:marubeni-ina": [
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kpn3u0uzc",
       "slug": "pr-2026-03-03-co51303-39",
       "title": "ニシム電子工業、丸紅新電力、パワーエックスによる「Mega Power 2500」を中核とした太陽光併設型蓄電池・系統用蓄電池パッケージ商品の提供開始について",
@@ -9430,15 +9571,6 @@
     {
       "id": "zkl9i27q6ku0",
       "slug": "pr-2025-07-24-co86244-54",
-      "title": "丸紅新電力とサンヴィレッジによる系統用蓄電池のフルパッケージ商品の提供開始について",
-      "publishedAt": "2025-07-24T06:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "u-42kad3ktr",
-      "slug": "pr-2025-07-24-co51303-29",
       "title": "丸紅新電力とサンヴィレッジによる系統用蓄電池のフルパッケージ商品の提供開始について",
       "publishedAt": "2025-07-24T06:00:02.000Z",
       "category": [
@@ -9859,6 +9991,15 @@
     }
   ],
   "project:tc-nagasaki": [
+    {
+      "id": "cyytrq27j39",
+      "slug": "tensor-tokyocentury-teikei-2026-08",
+      "title": "Tensor Energy、東京センチュリーと系統用蓄電池事業で包括業務提携 ─ 実運用データでAI運用基盤を強化",
+      "publishedAt": "2026-09-01T04:35:04.743Z",
+      "category": [
+        "開発計画"
+      ]
+    },
     {
       "id": "023s2ahmrnbk",
       "slug": "itochu-mitsubishi-estate-tokyo-century-chikuzen-bess-67mw-2026-06",
@@ -10480,6 +10621,15 @@
   ],
   "project:marubeni-kitahiroshima": [
     {
+      "id": "tbma34a6lv",
+      "slug": "marubeni-fip-solar-bess-balancing-2026-08",
+      "title": "丸紅新電力ら4社、FIP太陽光併設型蓄電池が需給調整市場の参入審査に合格 ─ 8月から調整力提供を開始",
+      "publishedAt": "2026-09-01T04:35:03.447Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "kpn3u0uzc",
       "slug": "pr-2026-03-03-co51303-39",
       "title": "ニシム電子工業、丸紅新電力、パワーエックスによる「Mega Power 2500」を中核とした太陽光併設型蓄電池・系統用蓄電池パッケージ商品の提供開始について",
@@ -10536,15 +10686,6 @@
     {
       "id": "zkl9i27q6ku0",
       "slug": "pr-2025-07-24-co86244-54",
-      "title": "丸紅新電力とサンヴィレッジによる系統用蓄電池のフルパッケージ商品の提供開始について",
-      "publishedAt": "2025-07-24T06:00:02.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "u-42kad3ktr",
-      "slug": "pr-2025-07-24-co51303-29",
       "title": "丸紅新電力とサンヴィレッジによる系統用蓄電池のフルパッケージ商品の提供開始について",
       "publishedAt": "2025-07-24T06:00:02.000Z",
       "category": [
@@ -10991,6 +11132,15 @@
   ],
   "pref:栃木": [
     {
+      "id": "m555y3p8we6",
+      "slug": "glome-nishikata-no2-hikiwatashi-2026-08",
+      "title": "グローム・ホールディングス、栃木県栃木市「GM西方町金井2465蓄電所」（最大受電電力1,994kW）の検収・引渡しが完了 ─ 当初予定より約7週間前倒し",
+      "publishedAt": "2026-09-05T11:04:43.015Z",
+      "category": [
+        "連系"
+      ]
+    },
+    {
       "id": "3bakoxojfqo",
       "slug": "seela-hd-oyama-bess-2mw-2026-07",
       "title": "シーラHD、栃木県小山市の系統用蓄電所（2MW／8MWh）を取得へ ─ 子会社シーラソーラーが仕入れ、2026年11月引渡し予定",
@@ -11049,15 +11199,6 @@
       "slug": "pr-2025-09-01-co55631-146",
       "title": "九電工は系統用蓄電池事業の第一号となる３案件を関東地区で運転開始　しろくま電力の蓄電池システムで再エネの有効活用に貢献",
       "publishedAt": "2025-09-01T02:00:03.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "7dbue97vu",
-      "slug": "pr-2025-03-13-co109041-144",
-      "title": "Q.ENESTホールディングスから系統用蓄電システムを受注",
-      "publishedAt": "2025-03-13T01:00:03.000Z",
       "category": [
         "連系"
       ]
@@ -11242,6 +11383,15 @@
   ],
   "pref:東京": [
     {
+      "id": "cyytrq27j39",
+      "slug": "tensor-tokyocentury-teikei-2026-08",
+      "title": "Tensor Energy、東京センチュリーと系統用蓄電池事業で包括業務提携 ─ 実運用データでAI運用基盤を強化",
+      "publishedAt": "2026-09-01T04:35:04.743Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "8ddpu47wqzc",
       "slug": "tokyo-gas-bess-1gw-mimasaka-2026-07",
       "title": "東京ガス、系統用蓄電池の運用予定容量が1GWを突破 ─ 岡山・美作蓄電所（29MW）の最適運用を新たに受託",
@@ -11300,15 +11450,6 @@
       "slug": "pr-2023-09-25-co69153-2",
       "title": "つくば市ノーバル・ソーラーの大規模蓄電事業が東京都「系統用大規模蓄電池導入促進事業」に採択",
       "publishedAt": "2023-09-25T05:59:15.000Z",
-      "category": [
-        "連系"
-      ]
-    },
-    {
-      "id": "qlowh84mk8",
-      "slug": "pr-2026-04-08-co10686-1304-2",
-      "title": "～東京都の支援事業に２年連続で採択～東急㈱グループが系統用蓄電所事業を推進総開発規模４６ＭＷ／１８４ＭＷｈ、２０２７年度までに稼働開始",
-      "publishedAt": "2026-04-08T05:00:01.000Z",
       "category": [
         "連系"
       ]
@@ -12164,6 +12305,15 @@
   ],
   "pref:岡山": [
     {
+      "id": "tfuq2_suy3z8",
+      "slug": "correc-okayama-sannyu-2026-08",
+      "title": "コレックホールディングス、系統用蓄電池事業に参入 ─ 岡山県久米郡「岡山蓄電所（仮称）」（約2MW／約8MWh）を取得へ",
+      "publishedAt": "2026-09-01T04:35:06.424Z",
+      "category": [
+        "開発計画"
+      ]
+    },
+    {
       "id": "8ddpu47wqzc",
       "slug": "tokyo-gas-bess-1gw-mimasaka-2026-07",
       "title": "東京ガス、系統用蓄電池の運用予定容量が1GWを突破 ─ 岡山・美作蓄電所（29MW）の最適運用を新たに受託",
@@ -12296,6 +12446,15 @@
     }
   ],
   "pref:徳島": [
+    {
+      "id": "wecjjcqi9p7",
+      "slug": "tokugin-tomoni-itano-shunko-2026-09",
+      "title": "とくぎんトモニリンクアップ、徳島県板野郡の系統用蓄電所（1,990kW／8,226kWh）が竣工 ─ アグリゲーターはSustech",
+      "publishedAt": "2026-09-05T11:04:41.739Z",
+      "category": [
+        "連系"
+      ]
+    },
     {
       "id": "ut1k6_1pm",
       "slug": "pr-2026-04-08-co85634-26",

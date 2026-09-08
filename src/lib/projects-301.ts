@@ -84,6 +84,17 @@ export const PROJECTS_301: Record<string, string> = {
   //    latitude/longitude は移植しない（addr_source=pref-only の派生座標・一次裏付けなし）。
   //    microCMS レコードは削除しない（middleware が 301 吸収）。
   '/projects/pr-co92942-bess':                     '/projects/pr-co149815-bess',
+  // 14 ADW三重松阪蓄電所（2026-09-08 Pj2-G・ユウ裁定 Pj2-F(1)）
+  //    ★「別法人＝別案件」ガードの逆パターン。保有者(ADW)と施工者(サステナブルHD)が
+  //    それぞれ自社リリースを出したため、同一設備が2レコードに二重登載されていた。
+  //    同一性の一次逐語（ADW PR 000000043・竣工式）:
+  //      「施工会社であるサステナブルホールディングス株式会社、アグリゲーターのデジタルグリッド株式会社、
+  //        O＆M（運営・保守）のJESM株式会社各社の代表の方々らにご参列いただき」
+  //    所在地（三重県松阪市）・稼働日（2026-03-31）・諸元（1,995kW/8,340kWh ≒ 2MW/8MWh）が一致。
+  //    canonical は案件の主体である保有・運営者側（ADW）。301 の前に canonical へ諸元を移設済み
+  //    （outputMw 0→1.995・capacityMwh 0→8.34。出所は SHD PR 000000065 の実値であり、
+  //     PR 077 の丸め 2MW/8MWh でも ADW 側「2,000kW以下」の上限表記でもない）。
+  '/projects/pr-co96742-mie-8mwh':                 '/projects/pr-co160356-bess',
 };
 
 /** 301元の bare slug（一覧除外・noindex 判定の補助。完全一致） */

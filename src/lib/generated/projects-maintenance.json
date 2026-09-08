@@ -1,9 +1,9 @@
 {
- "overdueAsOf": "2026-09-05",
+ "overdueAsOf": "2026-09-08",
  "totals": {
   "all": 332,
-  "listed": 244,
-  "investigating": 41,
+  "listed": 243,
+  "investigating": 40,
   "overdue": 55,
   "both": 9
  },
@@ -381,7 +381,7 @@
    "name": "株式会社脱炭素化支援機構がエネルギーパワー株式会社の開発する系統用蓄電所",
    "operator": "脱炭素化支援機構",
    "prefecture": "和歌山県",
-   "city": "和歌山市",
+   "city": "和歌山市松江",
    "outputMw": 0,
    "capacityMwh": 8.2,
    "status": "計画中",
@@ -418,21 +418,6 @@
     "outputMw",
     "prefecture",
     "city"
-   ]
-  },
-  {
-   "slug": "pr-co160356-bess",
-   "name": "エー・ディー・ワークスの系統用蓄電所",
-   "operator": "ADワークスグループ",
-   "prefecture": "三重県",
-   "city": "第一拠点のADW三重松阪市",
-   "outputMw": 0,
-   "capacityMwh": 0,
-   "status": "稼働中",
-   "cod": "2026-03-31",
-   "missing": [
-    "outputMw",
-    "capacityMwh"
    ]
   },
   {
@@ -592,7 +577,7 @@
   },
   {
    "slug": "pr-looop-saitama",
-   "name": "埼玉県～電力卸市蓄電所",
+   "name": "埼玉県比企郡蓄電ステーション（Looop）",
    "operator": "株式会社Looop",
    "prefecture": "埼玉県",
    "city": "小川町",
@@ -837,7 +822,7 @@
    "name": "株式会社脱炭素化支援機構がエネルギーパワー株式会社の開発する系統用蓄電所",
    "operator": "脱炭素化支援機構",
    "prefecture": "和歌山県",
-   "city": "和歌山市",
+   "city": "和歌山市松江",
    "outputMw": 0,
    "capacityMwh": 8.2,
    "status": "計画中",
@@ -905,10 +890,10 @@
   },
   {
    "slug": "pr-co161802-kumamoto-2",
-   "name": "NC宇城市豊野町蓄電所",
+   "name": "NC宇城市豊野町蓄電所（日本蓄電池）",
    "operator": "日本蓄電池株式会社",
    "prefecture": "熊本県",
-   "city": "【日本蓄電池株式会社】宇城市",
+   "city": "宇城市豊野町",
    "outputMw": 1.998,
    "capacityMwh": 8.146,
    "status": "建設中",
@@ -962,15 +947,13 @@
    "slug": "pr-co166651-bess",
    "name": "パワーエックスと蓄電池",
    "operator": "ちゅうぎんFG",
-   "prefecture": "",
-   "city": "—第１号案件として松江市",
+   "prefecture": "島根県",
+   "city": "松江市宍道町",
    "outputMw": 1.99,
    "capacityMwh": 8.2,
    "status": "計画中",
    "cod": "2026-04-20",
-   "missing": [
-    "prefecture"
-   ]
+   "missing": []
   },
   {
    "slug": "pr-co168657-bess",
@@ -1187,10 +1170,10 @@
   },
   {
    "slug": "pr-co86244-tochigi-8mwh",
-   "name": "8MWhの自社蓄電所",
+   "name": "足利市借宿蓄電所（サンヴィレッジ）",
    "operator": "株式会社サンヴィレッジ",
    "prefecture": "栃木県",
-   "city": "株式会社サンヴィレッジ、栃木県足利市",
+   "city": "足利市",
    "outputMw": 2,
    "capacityMwh": 8,
    "status": "計画中",
@@ -1201,15 +1184,13 @@
    "slug": "pr-co88876-bess",
    "name": "紀の川桃山町蓄電所（スターシーズ）",
    "operator": "スターシーズ株式会社",
-   "prefecture": "",
-   "city": "系統用蓄電池事業「紀の川桃山町",
+   "prefecture": "和歌山県",
+   "city": "紀の川市桃山町最上",
    "outputMw": 2,
    "capacityMwh": 8,
    "status": "建設中",
    "cod": "2025-09-17",
-   "missing": [
-    "prefecture"
-   ]
+   "missing": []
   },
   {
    "slug": "pr-co88876-bess-2",
