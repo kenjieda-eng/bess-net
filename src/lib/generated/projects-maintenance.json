@@ -2,8 +2,8 @@
  "overdueAsOf": "2026-09-08",
  "totals": {
   "all": 332,
-  "listed": 243,
-  "investigating": 40,
+  "listed": 241,
+  "investigating": 39,
   "overdue": 55,
   "both": 9
  },
@@ -20,23 +20,6 @@
    "cod": "2026-07-10",
    "missing": [
     "capacityMwh"
-   ]
-  },
-  {
-   "slug": "jpn-gifu-sendai",
-   "name": "日本蓄電池岐阜・仙台蓄電所（建設中）",
-   "operator": "日本蓄電池",
-   "prefecture": "岐阜県",
-   "city": "",
-   "outputMw": 0,
-   "capacityMwh": 0,
-   "status": "建設中",
-   "cod": "",
-   "missing": [
-    "outputMw",
-    "capacityMwh",
-    "city",
-    "cod"
    ]
   },
   {
@@ -378,10 +361,10 @@
   },
   {
    "slug": "pr-co140317-bess",
-   "name": "株式会社脱炭素化支援機構がエネルギーパワー株式会社の開発する系統用蓄電所",
-   "operator": "脱炭素化支援機構",
+   "name": "和歌山県和歌山市松江蓄電所",
+   "operator": "エネルギーパワー株式会社",
    "prefecture": "和歌山県",
-   "city": "和歌山市松江",
+   "city": "和歌山市",
    "outputMw": 0,
    "capacityMwh": 8.2,
    "status": "計画中",
@@ -819,10 +802,10 @@
   },
   {
    "slug": "pr-co140317-bess",
-   "name": "株式会社脱炭素化支援機構がエネルギーパワー株式会社の開発する系統用蓄電所",
-   "operator": "脱炭素化支援機構",
+   "name": "和歌山県和歌山市松江蓄電所",
+   "operator": "エネルギーパワー株式会社",
    "prefecture": "和歌山県",
-   "city": "和歌山市松江",
+   "city": "和歌山市",
    "outputMw": 0,
    "capacityMwh": 8.2,
    "status": "計画中",
@@ -945,7 +928,7 @@
   },
   {
    "slug": "pr-co166651-bess",
-   "name": "パワーエックスと蓄電池",
+   "name": "（仮称）松江市宍道蓄電所",
    "operator": "ちゅうぎんFG",
    "prefecture": "島根県",
    "city": "松江市宍道町",

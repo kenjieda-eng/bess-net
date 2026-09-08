@@ -18,6 +18,39 @@
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { mentionsCoreWithBoundary } from '../src/lib/operator-match';
+
+/**
+ * 偽陰性検出の境界判定 回帰ケース（2026-09-08 Pj2-G 追修便）。
+ * 検出器が素の部分一致だったため 東急 ⊂ 東急不動産 を偽陰性として誤検出していた。
+ * 境界判定へ直したうえで、**真の言及を隠していないこと**を毎回ここで担保する。
+ */
+const BOUNDARY_CASES: Array<{ raw: string; core: string; want: boolean; why: string }> = [
+  // ── 真陽性（検出し続けなければならない）
+  { raw: '日本蓄電池株式会社', core: '日本蓄電池', want: true, why: 'コア＋法人格＝同一社' },
+  { raw: '株式会社テス', core: 'テス', want: true, why: '法人格＋コア＝同一社' },
+  { raw: '宮城白石蓄電所合同会社（代表:IBeeT・東急が共同出資）', core: '東急', want: true, why: '区切り文字に挟まれた言及' },
+  { raw: '九州電力・NExT-eSolutions（リユース電池）', core: '九州電力', want: true, why: '先頭＋区切り' },
+  { raw: 'エネルギーパワー', core: 'エネルギーパワー', want: true, why: '完全一致' },
+  // ── 偽陽性（拾ってはならない）
+  { raw: '宮城白石蓄電所合同会社（代表:IBeeT・東急不動産が共同出資）', core: '東急', want: false, why: '★本件の実データ。東急 ⊂ 東急不動産 の前方一致' },
+  { raw: '東急不動産株式会社', core: '東急', want: false, why: '前方一致（別法人）' },
+  { raw: 'サステナブルホールディングス株式会社', core: 'テナブル', want: false, why: '語中一致' },
+];
+
+function runBoundaryRegression(): string[] {
+  const problems: string[] = [];
+  let ok = 0;
+  for (const c of BOUNDARY_CASES) {
+    const got = mentionsCoreWithBoundary(c.raw, c.core);
+    if (got === c.want) { ok++; continue; }
+    problems.push(`境界判定 ${c.core} ⇢「${c.raw}」期待=${c.want} 実際=${got}（${c.why}）`);
+  }
+  const tp = BOUNDARY_CASES.filter((c) => c.want).length;
+  console.log(`  ${problems.length === 0 ? '✅' : '❌'} 境界判定の回帰: ${ok}/${BOUNDARY_CASES.length} PASS（真陽性ケース ${tp}件を含む）`);
+  for (const p of problems) console.log(`      ${p}`);
+  return problems;
+}
 
 type FalseNegative = { operator: string; key: string; value: string };
 type Audit = {
@@ -50,6 +83,9 @@ function main(): void {
     `  対象: operators=${audit.totals.operators} projects=${audit.totals.projectsVisible} news=${audit.totals.newsTotal}`
   );
   console.log(`  接続: project=${audit.totals.projectLinks}件 news=${audit.totals.newsLinks}件`);
+
+  // 0) 検出器そのものの回帰（境界判定・真陽性を隠していないか）
+  problems.push(...runBoundaryRegression());
 
   // 1) 偽陰性（0件表示なのに構造化フィールドに社名が現れる）
   for (const [label, rows] of [

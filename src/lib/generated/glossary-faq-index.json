@@ -682,6 +682,7 @@
     }
   ],
   "fip-coupled": [],
+  "fip-colocated-battery": [],
   "fit-to-fip": [],
   "feed-in-tariff": [
     {
@@ -991,6 +992,7 @@
   "j-credit-japan": [],
   "jba-japan-battery": [],
   "jbic-detail": [],
+  "jc-star": [],
   "jcr-detail": [],
   "jcre-renewable": [],
   "jeac-9701-2024": [],
@@ -1247,6 +1249,20 @@
   ],
   "moss-landing-storage": [],
   "n-plus-1-config": [],
+  "n-1-densei": [
+    {
+      "id": "iys9xshra05z",
+      "slug": "faq-seido-08",
+      "question": "N-1電制とは何ですか？",
+      "category": "制度"
+    },
+    {
+      "id": "qx88sorws",
+      "slug": "faq-jigyou-06",
+      "question": "接続検討と接続契約の流れは？",
+      "category": "事業"
+    }
+  ],
   "nas-battery": [
     {
       "id": "z3r00o1o8",
@@ -1304,6 +1320,7 @@
   "nature-based-solutions": [],
   "negative-pricing": [],
   "neoen-france": [],
+  "net-cone": [],
   "net-metering": [],
   "net-zero-detail": [],
   "netherlands-bess-market": [],
@@ -3166,6 +3183,7 @@
   "co-located": [],
   "pre-use-self-inspection": [],
   "supply-reserve": [],
+  "expected-unserved-energy": [],
   "price-spike-jepx": [],
   "price-forecasting-model": [],
   "safety-regulations": [],
@@ -3698,6 +3716,7 @@
   "minimum-output-time": [],
   "active-power": [],
   "morning-peak": [],
+  "expected-capacity": [],
   "local-ordinance": [],
   "toray": [],
   "tokyo-century-japan": [],
@@ -4659,6 +4678,7 @@
   "lightning-surge": [],
   "electricity-system-reform": [],
   "power-data": [],
+  "power-trading": [],
   "emsc": [],
   "power-supply-capacity": [
     {

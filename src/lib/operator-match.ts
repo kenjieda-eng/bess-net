@@ -245,6 +245,52 @@ function isNetworthyCore(core: string): boolean {
 }
 
 /**
+ * コア名が「その社を指す言及」として現れているかを境界つきで判定する（2026-09-08 Pj2-G 追修便）。
+ *
+ * 素の `raw.includes(core)` だと 東急 ⊂ 東急不動産 のような前方一致で誤検出する
+ * （実測: ibeet-miyagi-shiroishi-bess の事業者欄「…IBeeT・東急不動産が共同出資…」を
+ *  東急株式会社 の偽陰性として報告していた。実マッチャは前方一致禁止で正しく繋いでいない＝
+ *  検出器の期待値側の誤り。落とし穴 operators-matching「★前方一致禁止(東急⊂東急不動産35組)」と同型）。
+ *
+ * 判定: core の出現位置ごとに前後を見て、
+ *   ・後ろ … 文字列末尾／区切り文字／法人格（株式会社・合同会社 等）が続く場合のみ有効
+ *            （「日本蓄電池」＋「株式会社」は同一社なので有効、「東急」＋「不動産」は別社なので無効）
+ *   ・前   … 文字列先頭／区切り文字／法人格で終わる場合のみ有効
+ *            （「株式会社」＋「テス」は有効、「サス」＋「テス」のような語中は無効）
+ * を満たす出現が1つでもあれば true。
+ */
+// ★「・」(U+30FB) はカタカナ範囲に含まれるが、日本語では社名の内部（エー・ディー・ワークス）と
+//   列挙の区切り（九州電力・NExT-e Solutions）の両方に使われる。ここでは区切りとして扱う——
+//   区切り扱いにしないと「A・B」形式の併記から B の言及を拾えず、真の重複を隠してしまうため。
+//   本件の実バグ（東急 ⊂ 東急不動産）は漢字の連続なので、この扱いでも正しく弾ける。
+const NAME_CHAR_RE = /[0-9A-Za-z０-９Ａ-Ｚａ-ｚ぀-ヿ㐀-鿿豈-﫿]/;
+const SEPARATOR_RE = /[・･／/、，,。.（）()「」『』【】〔〕［］[\]〜~:：;；&＆＋+＿_-]/;
+const isNameChar = (ch: string): boolean => NAME_CHAR_RE.test(ch) && !SEPARATOR_RE.test(ch);
+/** 後続が同一社を指す語（法人格）。ホールディングス／グループは別法人を作るので含めない */
+const LEGAL_AFTER_RE = /^(株式会社|合同会社|有限会社|合資会社|合名会社|一般社団法人|一般財団法人|\(株\)|（株）|㈱)/;
+const LEGAL_BEFORE_RE = /(株式会社|合同会社|有限会社|合資会社|合名会社|一般社団法人|一般財団法人|\(株\)|（株）|㈱)$/;
+
+export function mentionsCoreWithBoundary(raw: string, core: string): boolean {
+  if (!raw || !core) return false;
+  let from = 0;
+  for (;;) {
+    const i = raw.indexOf(core, from);
+    if (i < 0) return false;
+    from = i + 1;
+    const before = raw.slice(0, i);
+    const after = raw.slice(i + core.length);
+    const beforeOk = before === '' || !isNameChar(before.slice(-1)) || LEGAL_BEFORE_RE.test(before);
+    // 後続が平仮名（助詞「東急が共同出資」等）なら境界とみなす。
+    // 検出器は「真の重複を隠さない」側に寄せる（過検出は報告1行で済むが、見落としは重複を見逃す）。
+    // 漢字・カタカナの連続（東急不動産・テスラ）は引き続き弾く。
+    const HIRAGANA_RE = /[ぁ-ゖゝゞ]/;
+    const afterOk =
+      after === '' || !isNameChar(after[0]) || HIRAGANA_RE.test(after[0]) || LEGAL_AFTER_RE.test(after);
+    if (beforeOk && afterOk) return true;
+  }
+}
+
+/**
  * 構造化フィールドの偽陰性を検出する。
  * @param linked 事業者名 → 紐付いているレコードkeyの集合（実際の突合結果）
  */
@@ -271,7 +317,8 @@ export function findStructuredFalseNegatives(
     const already = linked.get(opName);
     for (const rec of records) {
       const raw = (rec.value ?? '').replace(/[\s　]/g, '');
-      if (!raw || raw === 'null' || !raw.includes(core)) continue;
+      // 前方一致（東急 ⊂ 東急不動産）で誤検出しないよう、境界つきの言及だけを候補にする
+      if (!raw || raw === 'null' || !mentionsCoreWithBoundary(raw, core)) continue;
       if (already?.has(rec.key)) continue;
       if (STRUCTURED_MATCH_ALLOWLIST.has(`${opName}|${normalizeEntityName(rec.value)}`)) continue;
       // その値がより具体的な別法人に解決されているなら、紐付けないのが正しい

@@ -1,18 +1,12 @@
 {
   "totals": {
     "operators": 578,
-    "projectsVisible": 243,
+    "projectsVisible": 241,
     "newsTotal": 1378,
-    "projectLinks": 259,
+    "projectLinks": 257,
     "newsLinks": 521
   },
-  "falseNegativeProjects": [
-    {
-      "operator": "東急株式会社",
-      "key": "ibeet-miyagi-shiroishi-bess",
-      "value": "宮城白石蓄電所合同会社（代表: IBeeT・東急不動産が共同出資）"
-    }
-  ],
+  "falseNegativeProjects": [],
   "falseNegativeNews": [],
   "overreach": {
     "ポート株式会社": {

@@ -1,12 +1,12 @@
 {
  "aggregator-business": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "ai-optimization-for-bess": [
@@ -51,55 +51,65 @@
  ],
  "asean-bess-market": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "australia-nem-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "balancing-market": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "balancing-market-cap-cut-2026": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "balancing-market-fcr-detail": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "balancing-market-practical": [
+  {
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
+  },
+  {
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+  }
+ ],
+ "balancing-price-cap-10yen-explainer": [
   {
    "slug": "tepco-pg-grid-info-suspension-2026",
    "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
@@ -111,12 +121,12 @@
  ],
  "baseload-market-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "battery-cooling-systems": [
@@ -141,12 +151,12 @@
  ],
  "battery-passport-2027-implementation": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "battery-recycling-economics": [
@@ -191,12 +201,12 @@
  ],
  "bess-business-decision-tree": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "bess-cybersecurity-strategy": [
@@ -231,12 +241,12 @@
  ],
  "bess-depreciation-tax": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "bess-emergency-response-manual": [
@@ -281,22 +291,22 @@
  ],
  "bess-investment-funds": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "bess-irr-sensitivity": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "bess-lease-contract": [
@@ -311,12 +321,12 @@
  ],
  "bess-ma-valuation": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "bess-net-launch-2026": [
@@ -341,12 +351,12 @@
  ],
  "bess-revenue-simulation": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "bess-safety-and-fire": [
@@ -371,12 +381,12 @@
  ],
  "bess-site-acquisition": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "bess-spare-parts-strategy": [
@@ -391,12 +401,12 @@
  ],
  "bess-stakeholder-map": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "bess-supply-chain-responsibility": [
@@ -461,52 +471,52 @@
  ],
  "capacity-market": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "capacity-market-advanced": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "capacity-market-main-vs-additional": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "capacity-market-penalty-calc": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "capacity-market-transitional": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "capacity-output-design": [
@@ -551,12 +561,12 @@
  ],
  "china-battery-policy": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "container-bess-comparison": [
@@ -571,12 +581,12 @@
  ],
  "corporate-ppa-with-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "cycle-vs-calendar-life": [
@@ -611,12 +621,12 @@
  ],
  "debt-service-reserve-account": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "decarbonization-leading-regions-detail": [
@@ -641,12 +651,12 @@
  ],
  "dscr-llcr-bess-pf": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "environmental-assessment-bess": [
@@ -671,12 +681,12 @@
  ],
  "eu-cbam-battery": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "eu-ets-and-gx-ets-for-bess": [
@@ -691,12 +701,12 @@
  ],
  "fip-and-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "fluence-japan-entry": [
@@ -751,12 +761,12 @@
  ],
  "generation-side-charge-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "gifu-bess-outlook": [
@@ -781,12 +791,12 @@
  ],
  "global-bess-trends-2026": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "gravity-caes-storage": [
@@ -801,92 +811,92 @@
  ],
  "green-bond-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "grid-capacity-map-reading": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "grid-connection-construction-fee": [
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-capacity-map-reading",
-   "title": "系統空き容量マップの読み方 ── 一般送配電事業者の公開情報を実務に活かす"
+   "slug": "grid-connection-study-fee",
+   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
   }
  ],
  "grid-connection-process": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "grid-connection-study-fee": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-capacity-map-reading",
-   "title": "系統空き容量マップの読み方 ── 一般送配電事業者の公開情報を実務に活かす"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "grid-interconnection-negotiation-process": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "grid-reinforcement-cost-share": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "grid-scale-bess": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "gross-bidding-abolition": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "gunma-bess-outlook": [
@@ -909,7 +919,7 @@
    "title": "LCOEと電源構成 ─ 最も安い電源が、なぜ日本で主役になれないのか"
   }
  ],
- "hvdc-offshore-wind-bess": [
+ "how-to-check-grid-from-site": [
   {
    "slug": "grid-connection-construction-fee",
    "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
@@ -917,6 +927,16 @@
   {
    "slug": "grid-connection-study-fee",
    "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+  }
+ ],
+ "hvdc-offshore-wind-bess": [
+  {
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
+  },
+  {
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "hydrogen-cofiring-bess": [
@@ -941,32 +961,32 @@
  ],
  "imbalance-2022-reform": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "imbalance-pricing-and-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "integrated-market-2026": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "interconnection-contract-fit-law": [
@@ -981,12 +1001,12 @@
  ],
  "interconnection-cost-3-types": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "ishikawa-bess-outlook": [
@@ -1001,12 +1021,12 @@
  ],
  "island-microgrid-bess": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "itochu-bess-self-developed": [
@@ -1031,22 +1051,22 @@
  ],
  "jepx-arbitrage": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "jepx-intraday-spot-operations": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "jera-cross-bess-hybrid": [
@@ -1091,12 +1111,12 @@
  ],
  "kwh-vs-mwh": [
   {
-   "slug": "grid-connection-construction-fee",
-   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
+   "slug": "how-to-check-grid-from-site",
+   "title": "蓄電池の候補地が決まったら ── 変電所と空き容量を自分で調べる手順"
   },
   {
-   "slug": "grid-connection-study-fee",
-   "title": "接続検討料の実務 ── 申込書類・費用相場・回答内容の読み解き"
+   "slug": "grid-connection-construction-fee",
+   "title": "連系工事費負担金 ── 蓄電所事業のCAPEXに直撃する系統側コストの実務"
   }
  ],
  "kyocera-enerezza-clay": [
@@ -1171,12 +1191,12 @@
  ],
  "long-term-decarbonization-auction": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "low-voltage-balancing-market-launch": [
@@ -1201,12 +1221,12 @@
  ],
  "ltdc-3rd-auction-ccs-ldes": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "mie-bess-outlook": [
@@ -1231,12 +1251,12 @@
  ],
  "multi-use-operation-strategy": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "nagano-bess-outlook": [
@@ -1271,12 +1291,12 @@
  ],
  "non-firm-connection-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "om-service-selection": [
@@ -1341,22 +1361,22 @@
  ],
  "pf-sponsor-guarantee": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "post-fit-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "ppa-wholesale-contract": [
@@ -1391,12 +1411,12 @@
  ],
  "renewable-curtailment-and-bess": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "response-time-vs-reserves": [
@@ -1531,12 +1551,12 @@
  ],
  "substation-availability-cross-area-analysis": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "asean-bess-market",
-   "title": "ASEAN蓄電池市場 ── タイ・ベトナム・フィリピンの新興機会"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "sumitomo-redox-flow-2025": [
@@ -1551,12 +1571,12 @@
  ],
  "tepco-pg-grid-info-suspension-2026": [
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "asean-bess-market",
-   "title": "ASEAN蓄電池市場 ── タイ・ベトナム・フィリピンの新興機会"
+   "slug": "substation-availability-cross-area-analysis",
+   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
   }
  ],
  "tepco-rp-bess": [
@@ -1571,22 +1591,22 @@
  ],
  "tertiary-reserve-1-detail": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "tertiary-reserve-2-strategy": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "tesla-autobidder-japan": [
@@ -1611,12 +1631,12 @@
  ],
  "tokyo-solar-mandate-2025": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "toyama-bess-outlook": [
@@ -1651,12 +1671,12 @@
  ],
  "usa-itc-storage": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "v2g-vehicle-to-grid": [
@@ -1681,12 +1701,12 @@
  ],
  "wheeling-charge-2027": [
   {
-   "slug": "tepco-pg-grid-info-suspension-2026",
-   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
+   "slug": "balancing-price-cap-10yen-explainer",
+   "title": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味"
   },
   {
-   "slug": "substation-availability-cross-area-analysis",
-   "title": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（10社8,225件）から読み解くエリア別パターン"
+   "slug": "tepco-pg-grid-info-suspension-2026",
+   "title": "東京電力PG 系統情報 公開停止の影響と代替アクセス方法 ── 蓄電所事業者向け実務ガイド"
   }
  ],
  "wheeling-supply-contract": [
