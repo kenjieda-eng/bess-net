@@ -1,11 +1,11 @@
 {
- "overdueAsOf": "2026-09-08",
+ "overdueAsOf": "2026-09-09",
  "totals": {
   "all": 332,
   "listed": 241,
-  "investigating": 39,
-  "overdue": 55,
-  "both": 9
+  "investigating": 38,
+  "overdue": 54,
+  "both": 8
  },
  "investigating": [
   {
@@ -357,20 +357,6 @@
     "outputMw",
     "prefecture",
     "city"
-   ]
-  },
-  {
-   "slug": "pr-co140317-bess",
-   "name": "和歌山県和歌山市松江蓄電所",
-   "operator": "エネルギーパワー株式会社",
-   "prefecture": "和歌山県",
-   "city": "和歌山市",
-   "outputMw": 0,
-   "capacityMwh": 8.2,
-   "status": "計画中",
-   "cod": "2025-10-14",
-   "missing": [
-    "outputMw"
    ]
   },
   {
@@ -798,20 +784,6 @@
    "cod": "2026-03-14",
    "missing": [
     "prefecture"
-   ]
-  },
-  {
-   "slug": "pr-co140317-bess",
-   "name": "和歌山県和歌山市松江蓄電所",
-   "operator": "エネルギーパワー株式会社",
-   "prefecture": "和歌山県",
-   "city": "和歌山市",
-   "outputMw": 0,
-   "capacityMwh": 8.2,
-   "status": "計画中",
-   "cod": "2025-10-14",
-   "missing": [
-    "outputMw"
    ]
   },
   {
