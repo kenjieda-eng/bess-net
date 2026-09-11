@@ -1,8 +1,8 @@
 {
- "overdueAsOf": "2026-09-09",
+ "overdueAsOf": "2026-09-11",
  "totals": {
-  "all": 332,
-  "listed": 241,
+  "all": 344,
+  "listed": 253,
   "investigating": 38,
   "overdue": 54,
   "both": 8

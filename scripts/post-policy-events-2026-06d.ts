@@ -55,7 +55,8 @@ async function probeUrl(url: string): Promise<string> {
   try {
     const resp = await fetch(url, {
       method: 'GET', redirect: 'follow',
-      headers: { 'User-Agent': 'Mozilla/5.0 (bess-net policy-calendar verify)' },
+      // 2026-09-11 金曜#6 ⑦(e): WAF 対策で Chrome UA。※meti.go.jp は Chrome UA でも 202（本文0字の bot 判定）を返すことがある＝本文はブラウザで照合
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', Accept: 'text/html,application/xhtml+xml,*/*;q=0.8', 'Accept-Language': 'ja,en;q=0.8' },
       signal: AbortSignal.timeout(20000),
     });
     return String(resp.status);

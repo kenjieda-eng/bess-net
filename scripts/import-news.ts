@@ -122,6 +122,13 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'marubeni-fip-solar-bess-balancing-2026-08': '連系',                             // FIP太陽光併設 需給調整市場 参入審査合格
   'tensor-tokyocentury-teikei-2026-08': '開発計画',                                // Tensor×東京センチュリー 包括業務提携
   'correc-okayama-sannyu-2026-08': '開発計画',                                     // コレックHD 系統用蓄電池事業参入
+  // 金曜ワンセット#6（2026-09-11・対象 9/4〜9/10）— 全 category は microCMS 実在値のみ
+  'daiwa-energy-eneos-shimizu-50mw-epc-2026-09': '技術',                          // 大和エネルギー EPC 本格参入（ENEOS Power 清水 50MW/109MWh）
+  'hexa-fukushima-miyagi-merchant-bess-2026-09': '連系',                          // HEXA 高圧2件 商業運転・市場運用開始
+  'nc-yanai-tosaki-balancing-entry-2026-09': '連系',                              // NC柳井市遠崎洛田 需給調整市場参入
+  'sustainable-hd-bess-pivot-2026-09': '開発計画',                                // サステナブルHD 系統用蓄電池事業へ主軸移行
+  'sustainable-hd-raptor-safety-design-2026-09': '技術',                          // Raptor 安全設計・基本保証期間
+  'green-chord-lv-bess-package-2026-09': '技術',                                  // GREEN CHORD 低圧パッケージ提供開始
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
