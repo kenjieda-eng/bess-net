@@ -15,8 +15,9 @@ cod の根拠表示・「運転開始予定」ラベル・ADW 諸元の逐語確
 2. **■6(b) の PATCH は止めた（hold）**。依頼では ■6(b) は「コード修正」だが、表示されている「TMEIC 製」は src に無く、
    **microCMS の本文 5 field**（news 3・projects 2）にある。本便の PATCH 範囲（■1(b)/(c)・■6(a)(c)）の外なので、
    件別の前値・後値と一次の再確認までで止めた。承認があれば 1 コマンドで書ける（§3.2）。
-3. **■5 の 9/17 新規 POST は止めた**。同定の結果は「別物」（一次に 9/25 の LTDC 説明会は存在しない）で、依頼の分岐では「9/17 新規 POST」だが、
-   本便の書込は PATCH とコード修正のみのため POST はしていない。POST 値は §6 に用意した。
+3. **■5 の 9/17 新規 POST は止めた**。同定の結果は「9/25 の LTDC 説明会は一次に存在しない」「9/25 レコードを 9/17 と同一とする一次の根拠も無い」。
+   依頼の分岐では「別物 → 9/17 新規 POST」に当たるが、本便の書込は PATCH とコード修正のみのため POST はしていない。POST 値は §6 に用意した。
+   なお反証側の指摘どおり、9/25 は 5 月の生成ドラフト由来で、それが毎年 9 月の制度詳細説明会を想定していた可能性は一次からは否定も肯定もできない（§6）。
 4. **丹波の座標は書いていない**。検算の結果、丹波は座標が未設定（金曜#6 の新規 12 件は全件座標なしで POST＝設計どおり）。
    設定は「ずれの是正」ではなく新規データの追加になるため、値（一次所在地から取得・逆ジオで丹波市を確認）だけ提示した（§3.2）。
 5. 丹波の実 slug は `tamba-megapower`。依頼の `/projects/pr-co109041-hyogo-2` は存在しない（§7 で両方 curl）。
@@ -68,6 +69,9 @@ cod を持つのは 5 件。
 
 cod null の 8 件（eneos-shimizu・hexa-fukushima/miyagi-merchant-bess・nc-yanai-tosaki-bess・adw-kagoshima/kumamoto/nichinan/taki-bess）は、
 一次に運転開始日が無い（年度精度・引渡し月のみ・需給調整運用開始日のみ・年精度）ため null が妥当。
+**adw-kagoshima は一次どうしが食い違う**: PR036（2025-12-23）と ADWG 2026-08-06 決算説明資料 PDF p.46（https://contents.xj-storage.jp/xcontents/32500/599513f5/3101/42ab/a276/cecaa9963f9d/140120260806512121.pdf 「第３号拠点 鹿児島県鹿児島市にて 2026年12月稼働開始予定」）は 2026年12月、
+6/15〜6/24 付資料は「2027年稼働予定」。8/6 資料が後なので「2027年に更新済み」とは言えない（同資料 p.46 は同じ資料の p.4 と矛盾する「年内に計10拠点」も含み、旧記述の再掲の可能性はあるが注記は無い）。
+cod null は「確定できない」を理由に維持。本文が「その後…2027年稼働予定」と更新されたように読める書き方なら、時点を明示した併記に直す案（表のみ）。
 **status が sourceUrl だけでは読めない**のは adw-kagoshima（建設中）・adw-nichinan（建設中）で、根拠は 6/22・6/24 付 ADWG 資料の「工事中」（本文にリンク済み）。
 nichinan は sourceUrl（6/15）とその資料では「用地取得済み」止まりなので、より直接にするなら sourceUrl を 6/24 付資料 PDF へ差し替える案（表のみ）。
 
@@ -174,6 +178,8 @@ PDF 8 枚目（印刷 7）「５．蓄電所保有状況／用地取得状況」
 - **ただし値は 9 行とも同一の「約」付き概数**（稼働中の 1 号も契約段階の 7〜9 号も同じ）。3〜6 号には拠点別のリリースに出力／容量の記載が無く、この数値が 3〜6 号に示されている一次は 6/22・6/24 付の表だけ。
 - **一般方針は別物**: PR036（2025-12-23）「出力が2MW以下の高圧蓄電所の開発を中心に」、PR077（2026-06-22）「出力2MW程度の高圧蓄電所の開発を中心に」は事業全体の方針で MWh の記載も無い。
 - 参考: ADW は竣工済みの 2 号でも拠点別概要を同じ概数で開示している（PR085 2026-08-31「出力／容量 約2MW／約8MWh」）。
+- まとめると「行ごとに割り当てられているが、中身は ADW の標準仕様の概数（高圧上限 2,000kW 近傍／約8MWh）で、拠点別に精査された値である根拠は無い」。6/22 版では同じ誤記「約8MW」が 8 行すべてに入っていた。
+- **留保（3号 鹿児島）**: 用地は PR036「6,756 ㎡」で、2号 益城町（PR024「1,274㎡」・竣工時「約2MW／約8MWh」）の約 5.3 倍。3号の MW/MWh を示す一次は上の表の行セル（9 行一律の概数）だけなので、adw-kagoshima-bess の 2／8 は「表の行割当に基づく概数」と位置づけておくのが妥当（PATCH なし）。
 
 ### 4.3 (c) 4 レコードの現値
 
@@ -227,7 +233,10 @@ verify:nearby-cards と同じ「配線（静的）＋ built HTML」の 2 軸。
 
 ## 6. ■5 9/17 LTDC 制度詳細説明会（同定は調査のみ）
 
-**結論: 別物**（一次に 9/25 の LTDC 説明会は存在しない）。
+**結論: 9/25 の LTDC 説明会は一次に存在しない。9/25 レコードを 9/17 と同一とする一次の根拠も無い**（依頼の分岐では「別物」側）。
+ただし 9/25 レコードは 2026-05-12 の生成ドラフト（commit 1afdba9「Phase A で生成した 40件の draft」・scripts/ac-industry-events-drafts.json に出典なしの同一内容）で、
+OCCTO は制度詳細説明会を毎年 9 月中旬〜下旬に開いている（案内 URL 名 2023-09-21・2024-09-20・2025-09-19・2026-09-17）。ドラフトがこの説明会を想定していた可能性は一次からは否定も肯定もできない。
+編集上の結論（9/17 は一次の値で登録し、9/25 はこのまま置かない）はどちらでも変わらない。
 
 - 9/17 の一次: https://www.occto.or.jp/news/market-board_market_oshirase_2026_260917_youryou_longax_setsumeikai_annai_1.html （更新日 2026-09-09）
   「2026年9月17日（木曜日）　14時00分～16時30分」「※参加受付は終了いたしました。」「現地とWebのどちらにご参加いただいても同じ内容となります。」「Web開催については、会議ツール「Webex」を使用します。」
@@ -255,19 +264,193 @@ verify:nearby-cards と同じ「配線（静的）＋ built HTML」の 2 軸。
 
 ## 7. デプロイ後の本番 curl（素 URL）
 
-デプロイ後の生出力（`curl -s --http1.1 -D - -o /dev/null -w "%{http_code}\n" "<URL>"` のヘッダ部＋該当箇所の抜粋）は完了報告に記載（#6 と同じ運用。報告書のためだけのコミットで再ビルドを起こさない）。
+デプロイ: 9f1a447・3e248ae・17b1163（push 13:03:23Z）→ `gh api repos/kenjieda-eng/bess-net/commits/17b1163/status` = **success**（Vercel・updated_at 2026-09-11T13:17:06Z）。
+本番の素 URL（クエリ・キャッシュ回避ヘッダなし）。取得 2026-09-11T13:31:14Z（デプロイ完了の約 14 分後）。
 
-デプロイ前の本番（素 URL・2026-09-11 22:0x JST）:
-- microCMS PATCH の webhook 再ビルド（dda845b・Vercel success 13:01:32Z）で、**データ**（朝来・丹波の本文の IR 逐語 1 文・朝来の座標）は既に本番反映済み。
-  /projects/pr-co109041-hyogo・/projects/tamba-megapower とも本文に「和歌山メガパワー蓄電所は2026年３月から商業運転を開始しております。」（出典: <a href="https://kenep.co.jp/pdf/ir_20260414-1.pdf" …>）を確認。
-- **コード**は旧: 両ページとも `<dt>運転開始予定</dt><dd>2025-12-01</dd>`、/projects の列見出し `<th>運開予定</th>`、/glossary 1,534語。
-- /projects/pr-co109041-hyogo-2 は 404（存在しない slug。丹波は tamba-megapower）。
+### https://bess-net.jp/projects
 
-ローカルビルド（BUILD EXIT 0・fetch-cache 退避済み #116）の built HTML:
-- projects/pr-co109041-hyogo.html・tamba-megapower.html: `<dt>運転開始</dt><dd>2025-12-01</dd>`＋IR 逐語 1 文
-- projects.html: 列見出し `<th>運転開始</th>`（「運開予定」0）、「（予定）」で終わるセル 82（本便で付く 64＋cod に元から「（予定）」を含む 18）、例 `<td>2028-02-01（予定）</td>`
-- glossary.html: `<strong>1392語</strong>`・一意の用語リンク 1,392
-- verify:linkify 15/15 clean・verify:projects-body 28 PASS・verify:nearby-cards PASS（全 31 origin 混入 0）・verify:operators PASS・verify:no-301-links PASS・tsc 0 エラー・maintenance 出力は変更前と同一（掲載 253・調査中 38・予定日超過 54）
+```
+$ curl -s --http1.1 -D - -o /dev/null -w "%{http_code}\n" "https://bess-net.jp/projects"
+HTTP/1.1 200 OK
+Age: 841
+Cache-Control: public, max-age=0, must-revalidate
+Content-Length: 345416
+Content-Type: text/html; charset=utf-8
+Date: Fri, 11 Sep 2026 13:17:15 GMT
+Etag: "13pyat2ckn46geh"
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+Vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Matched-Path: /projects
+X-Vercel-Cache: STALE
+X-Vercel-Id: hnd1::iad1::xx7k9-1789133477256-26f110314f80
+
+200
+```
+
+- <th>運転開始</th> ×4（表 4 つの見出し）／「運開予定」0 件
+- 「（予定）」で終わるセル 82（本便で付く 64＋cod に元から「（予定）」を含む 18）
+- 朝来の行: 1.979 MW｜8.226 MWh｜エネルギーパワー株式会社｜2025-12-01（稼働中＝日付のまま）
+- adw-higashiura-bess の行: 2 MW｜8 MWh｜株式会社エー・ディー・ワークス｜2028-02-01（予定）
+- adw-kagoshima-bess の行: 2 MW｜8 MWh｜株式会社エー・ディー・ワークス｜—（cod null）
+
+### https://bess-net.jp/projects/pr-co109041-hyogo
+
+```
+$ curl -s --http1.1 -D - -o /dev/null -w "%{http_code}\n" "https://bess-net.jp/projects/pr-co109041-hyogo"
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline
+Content-Length: 54871
+Content-Type: text/html; charset=utf-8
+Date: Fri, 11 Sep 2026 13:31:17 GMT
+Etag: "ff178675c95be75bf004b3a763572f70"
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+Vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Matched-Path: /projects/pr-co109041-hyogo
+X-Vercel-Cache: PRERENDER
+X-Vercel-Id: hnd1::6m7dk-1789133477617-707a6266dc30
+
+200
+```
+
+- <dt>運転開始</dt><dd>2025-12-01</dd>
+- 「朝来メガパワー蓄電所及び丹波メガパワー蓄電所は2025年12月から、和歌山メガパワー蓄電所は2026年３月から商業運転を開始しております。」（出典: <a href="https://kenep.co.jp/pdf/ir_20260414-1.pdf" target="_blank" rel="noopener noreferrer">エネルギーパワー「子会社設立に関するお知らせ」</a>, 2026年4月14日）。
+- 座標は HTML に出力されない（地図・近隣カードの計算にのみ使用）。書込値は §3.1 の #106 照合で確認済み
+
+### https://bess-net.jp/projects/pr-co109041-hyogo-2
+
+```
+$ curl -s --http1.1 -D - -o /dev/null -w "%{http_code}\n" "https://bess-net.jp/projects/pr-co109041-hyogo-2"
+HTTP/1.1 404 Not Found
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Length: 19368
+Content-Type: text/html; charset=utf-8
+Date: Fri, 11 Sep 2026 13:31:18 GMT
+Etag: "xe4m49syylcqu"
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+Vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Matched-Path: /projects/[slug]
+X-Vercel-Cache: MISS
+X-Vercel-Id: hnd1::iad1::xx7k9-1789133478372-0cdcf856c6e0
+
+404
+```
+
+- 404（存在しない slug。丹波の実 slug は tamba-megapower＝次項）
+
+### https://bess-net.jp/projects/tamba-megapower
+
+```
+$ curl -s --http1.1 -D - -o /dev/null -w "%{http_code}\n" "https://bess-net.jp/projects/tamba-megapower"
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline
+Content-Length: 55859
+Content-Type: text/html; charset=utf-8
+Date: Fri, 11 Sep 2026 13:31:19 GMT
+Etag: "830539d3e5d116c87916d750818f4272"
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+Vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Matched-Path: /projects/tamba-megapower
+X-Vercel-Cache: PRERENDER
+X-Vercel-Id: hnd1::dd78d-1789133479612-a04ff7edc875
+
+200
+```
+
+- <dt>運転開始</dt><dd>2025-12-01</dd>
+- 和歌山メガパワー蓄電所は2026年３月から商業運転を開始しております。」（出典: <a href="https://kenep.co.jp/pdf/ir_20260414-1.pdf" target="_blank" rel="noopener noreferrer">エネルギーパワー「子会社設立に関するお知らせ」</a>, 2026年4月14日）。
+
+### https://bess-net.jp/projects/adw-kagoshima-bess
+
+```
+$ curl -s --http1.1 -D - -o /dev/null -w "%{http_code}\n" "https://bess-net.jp/projects/adw-kagoshima-bess"
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline
+Content-Length: 49525
+Content-Type: text/html; charset=utf-8
+Date: Fri, 11 Sep 2026 13:31:20 GMT
+Etag: "1ca03a7be7aaf39a8c78a27819760cca"
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+Vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Matched-Path: /projects/adw-kagoshima-bess
+X-Vercel-Cache: PRERENDER
+X-Vercel-Id: hnd1::qb5ff-1789133480645-a120e48d48d0
+
+200
+```
+
+- cod null のため「運転開始／運転開始予定」の行なし（<dt>運転開始…</dt> 0 件）
+- 本文「約2MW／約8MWh（いずれも概数）」、一覧の行は 2 MW｜8 MWh（PATCH なし・現値のまま）
+
+### https://bess-net.jp/glossary
+
+```
+$ curl -s --http1.1 -D - -o /dev/null -w "%{http_code}\n" "https://bess-net.jp/glossary"
+HTTP/1.1 200 OK
+Age: 188
+Cache-Control: public, max-age=0, must-revalidate
+Content-Length: 1490878
+Content-Type: text/html; charset=utf-8
+Date: Fri, 11 Sep 2026 13:17:17 GMT
+Etag: "ytjw150x3nq5vq"
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+Vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Matched-Path: /glossary
+X-Vercel-Cache: HIT
+X-Vercel-Id: hnd1::iad1::bzgf7-1789133481362-38ae00bb677b
+
+200
+```
+
+- <strong>1392<!-- -->語</strong>（デプロイ前 1534語）
+- 一覧から GLOSSARY_301 の元 slug へのリンク 0（デプロイ前 142）
+
+キャッシュの読み（#112）: /projects は STALE・Age 841（revalidate 600 超の窓。Date 13:17:15 GMT＝新デプロイで生成されたコピーで、内容は新コード）。/glossary は HIT・Age 188（新デプロイ後の生成）。詳細ページ 3 件は PRERENDER（新ビルドの事前生成）。旧内容を返した URL は 0。
+データ（本文の IR 逐語・朝来の座標）は PATCH の webhook 再ビルド（dda845b・Vercel success 13:01:32Z）の時点で先に本番反映されており、デプロイ前の本番ではコードだけが旧（`<dt>運転開始予定</dt>`・`<th>運開予定</th>`・1534語）だった。
+
+ローカルビルド（BUILD EXIT 0・fetch-cache 退避済み #116）: verify:linkify 15/15 clean・verify:projects-body 28 PASS・verify:nearby-cards PASS（全 31 origin 混入 0）・verify:operators PASS・verify:no-301-links PASS・tsc 0 エラー・maintenance 出力は変更前と同一（掲載 253・調査中 38・予定日超過 54）。
 
 ---
 
@@ -276,10 +459,11 @@ verify:nearby-cards と同じ「配線（静的）＋ built HTML」の 2 軸。
 ### 8.1 (a) capacity-additional-auction-2026-03 の出典
 
 §3.1 のとおり差し替え済み。旧 URL は 404（Wayback にも捕捉なし）。**付随所見（表のみ）**:
-- eventDate `2026-03-15` は一次の日程（参加登録 2025-03-03〜04-25 → 開催判断 2025-04-23・告知 04-28 → 応札 2025-06-04〜06-16 → 約定結果公表 2025-07-28）のどれにも当たらない。
+- eventDate `2026-03-15`（日曜）は一次の日程（参加登録 2025-03-03〜04-25 → 開催判断 2025-04-23・告知 04-28 → 応札 2025-06-04〜06-16 → 約定結果公表 2025-07-28 → 容量確保契約の結果公表 2026-01-07）のどれにも当たらない。
   対象実需給年度 2027 年度の追加オークション（参加登録 2026-03-02〜04-24・応札 06-03〜06-15・結果 08-06）にも 3/15 の工程は無い。
   是正案: title・status「終了」と整合させるなら eventDate を 2025-06-04（応札受付開始）または 2025-07-28（約定結果公表。この場合 sourceUrl は約定結果ページ https://www.occto.or.jp/news/market-board_market_oshirase_2025_20250728_youryouyakujokekka_kouhyou.html ）。slug の「-2026-03」も誤った年月を含む（URL 変更を伴うため指摘のみ）。
-- description「直前の需要見通し更新を踏まえた追加調達」は一次の定義「メインオークション実施後の想定需要の変化や供給力の変化を踏まえ、必要と判断された場合に、実需給年度の1年前に実施するオークション。」（約定結果 PDF p.4）と「直前」の点で食い違う。
+- description「直前の需要見通し更新を踏まえた追加調達」は是正不要（反証で訂正）。「直前の」は「需要見通し更新」にかかり、一次も直近の需要想定更新（2025年度供給計画・約定結果 PDF p.7 の 3 月「供給計画に基づく需要想定更新」→ 4/23 実施判断）を踏まえた実施判断を示している。「実需給年度の直前」とも読める多義表現という程度。
+- 2027 年度向けに読み替えると、既存の occto-capacity-tsuika-2027-result-2026-08（eventDate 2026-08-06）と重複する。対象実需給年度 2026 年度として是正する方向を補強する。
 
 ### 8.2 (b)「TMEIC 製」の全数（file:line）
 
@@ -297,6 +481,7 @@ verify:nearby-cards と同じ「配線（静的）＋ built HTML」の 2 軸。
 | projects/nc-sendai-kamiayashi.body | 蓄電システムはCATL製、PCSはTMEIC製 | sourceUrl（リミックスポイント）の表「蓄電システム｜CATL製」「PCS｜TMEIC製」と一致 → 揃えない |
 | explainer/miyagi-bess-outlook.body | 電池はCATL製セル、PCSはTMEIC製の組合せ | PCS＝TMEIC の形 → 揃えない（「セル」は一次に無い語＝要判断として残す） |
 | news/pr-2021-12-21-co76147-39.body・pr-2026-04-23-co161802-59.body | TMEIC製の蓄電システム…／CATL製の蓄電システムとTMEIC製のPCS | PR TIMES の逐語転載 → 揃えない |
+| news/pr-2026-04-17-co138114-59.body | システムはTMEIC（ティーマイク）製を採用し | PR TIMES の逐語転載 → 揃えない（反証側が追加で検出。括弧で「TMEIC 製」の検索から漏れていた） |
 | src/lib/projects-excluded.ts:40 | コメント「TMEIC製・東芝アグリゲーター」 | 非表示（除外レコードの注記） |
 | scripts/batch5-friday2-2026-08-14.ts:188・news-import-2026-08-w2.json:24・news-import-2026-08-w4.json:42,69・post-projects-2026-08-w4.ts:100 | 「TMEIC 製（…CATL 製）」形 | 実行済みの投入記録（microCMS が真実源。書き換えても表示は変わらない） |
 | scripts/news-import-2026-07.json:25・projects-import-2026-08.json:197・projects-monthly-2026-06.ts:67,76・b-to-explainer-*.json | 「PCSはTMEIC製」形 | 同上 |
@@ -304,6 +489,12 @@ verify:nearby-cards と同じ「配線（静的）＋ built HTML」の 2 軸。
 
 注: 日本蓄電池の受電告知リリースは、施設概要表「蓄電池システム｜TMEIC（蓄電池：CATL）」と本文「CATL製の蓄電システムとTMEIC製のPCS」が**同じリリースの中に併存**している（一次自体が 2 つの形）。
 今回揃えるのは「蓄電池システムは TMEIC 製（…CATL 製）」＝表由来の書き方だけ。
+
+反証側の補足（hold の判断材料）:
+- nc-tamana-aono の「一次は表形式のみ」は sourceUrl（102）に限る。同じ施設のリミックスポイント発表 000000196.000033609 は「蓄電システム｜CATL製」「PCS｜TMEIC製」の形で、定格出力も 1,988kW（102 は 1,998kW）。文言は 102 の表に由来するので判定は変わらない。
+- 銚子の 2 件は、レコード内のほかのラテン文字語（JEPX 等）に空白を入れていないため、後値の空白入り（サイト既存の nc-yanai-tosaki-bess の表記に合わせた）がレコード内で揃わない。空白なし「蓄電池システムはTMEIC（蓄電池はCATL）、」にする選択肢もある（誤りではない）。
+- 範囲外の所見: projects/nc-sendai-kamiayashi（第2段落）と projects/pr-co161802-miyagi に「・蓄電システムTMEIC（蓄電池：CATL）・」があり、一次（000000051・000000056.000161802）の表のラベルは「蓄電池システム」。nc-sendai-kamiayashi では第1段落「蓄電システムはCATL製」と正反対になる。「TMEIC 製」を含まないため本件の対象外として表のみ。
+- 今宿（柴田郡川崎町）の出力が一次の間で 1,988kW（040）／1,998kW（080）と違う（表のみ）。
 
 ### 8.3 (c) 朝来・丹波の座標
 
