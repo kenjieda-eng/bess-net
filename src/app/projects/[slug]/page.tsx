@@ -11,6 +11,7 @@ import {
 import { linkifyHTML } from '@/lib/linkify';
 import { isExcludedProject } from '@/lib/projects-excluded';
 import { reconstructProjectBody } from '@/lib/projects-body';
+import { codLabel } from '@/lib/projects-cod';
 import {
   getRelatedEntities,
   buildMentions,
@@ -196,7 +197,8 @@ export default async function ProjectDetailPage({
               <dd>{item.epc}</dd>
             </>)}
             {item.cod && (<>
-              <dt>運転開始予定</dt>
+              {/* 金曜#6 追修便 ■2: 稼働中は「運転開始」、それ以外は「運転開始予定」（判定は projects-cod.ts に一本化） */}
+              <dt>{codLabel(item)}</dt>
               <dd>{item.cod}</dd>
             </>)}
             {item.marketParticipation && item.marketParticipation.length > 0 && (<>

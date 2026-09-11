@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getAllProjects, type Project } from '@/lib/microcms';
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '@/lib/projects-excluded';
+import { codCellText } from '@/lib/projects-cod';
 import { siteConfig } from '@/lib/site-config';
 
 const siteContactUrl = siteConfig.organization.contactUrl;
@@ -180,7 +181,8 @@ export default async function ProjectsListPage() {
                         <th>出力</th>
                         <th>容量</th>
                         <th>事業者</th>
-                        <th>運開予定</th>
+                        {/* 金曜#6 追修便 ■2: 列見出しは「運転開始」、未実現の日付にだけセル側で「（予定）」を付ける（projects-cod.ts） */}
+                        <th>運転開始</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -199,7 +201,7 @@ export default async function ProjectsListPage() {
                           <td className={`tabular-nums ${cellClass(item.outputMw)}`} style={item.outputMw === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic', fontVariantNumeric: 'tabular-nums' } : { fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{fmtMW(item.outputMw)}</td>
                           <td className={`tabular-nums ${cellClass(item.capacityMwh)}`} style={item.capacityMwh === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic', fontVariantNumeric: 'tabular-nums' } : { fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{fmtMWh(item.capacityMwh)}</td>
                           <td>{item.operator || '—'}</td>
-                          <td>{item.cod || '—'}</td>
+                          <td>{codCellText(item)}</td>
                         </tr>
                       ))}
                     </tbody>

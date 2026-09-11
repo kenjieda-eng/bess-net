@@ -23,6 +23,8 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '../src/lib/projects-excluded';
+// cod の解釈と予定日超過の判定は src/lib/projects-cod.ts に一本化（詳細ページの「運転開始／運転開始予定」ラベルと同じ関数・#119）
+import { isCodOverdue, jstTodayISO } from '../src/lib/projects-cod';
 
 const SERVICE_DOMAIN = process.env.MICROCMS_SERVICE_DOMAIN;
 const API_KEY = process.env.MICROCMS_API_KEY;
@@ -44,46 +46,9 @@ type Row = {
   cod?: string;
 };
 
-/** ビルド日（JST） */
-function todayJST(): string {
-  return new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
-}
-
-/**
- * cod の表記ゆれを ISO 日付に寄せる。解釈できないものは null（＝超過判定の対象外）。
- * projects の cod は 'YYYY-MM-DD' が主だが '2026年8月' '2028年度' 等の自由記述も混在するため、
- * 「確実に過ぎている」と言える形にだけ寄せる（月のみは月末、年度のみは年度末＝甘めに倒す）。
- */
-export function normalizeCod(cod?: string): string | null {
-  if (!cod) return null;
-  const s = cod.trim();
-  let m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s);
-  if (m) return `${m[1]}-${m[2]}-${m[3]}`;
-  m = /^(\d{4})年(\d{1,2})月(\d{1,2})日/.exec(s);
-  if (m) return `${m[1]}-${String(m[2]).padStart(2, '0')}-${String(m[3]).padStart(2, '0')}`;
-  m = /^(\d{4})年(\d{1,2})月/.exec(s);
-  if (m) {
-    const y = Number(m[1]);
-    const mo = Number(m[2]);
-    const last = new Date(Date.UTC(y, mo, 0)).getUTCDate(); // 当月末日
-    return `${y}-${String(mo).padStart(2, '0')}-${String(last).padStart(2, '0')}`;
-  }
-  m = /^(\d{4})年度/.exec(s);
-  if (m) return `${Number(m[1]) + 1}-03-31`;
-  return null;
-}
-
 /** 「調査中」判定（/projects の investigatingCount と同一式） */
 export function isInvestigating(p: Pick<Row, 'outputMw' | 'capacityMwh'>): boolean {
   return p.outputMw === 0 || p.capacityMwh === 0;
-}
-
-/** 運開予定日超過 かつ status が稼働中でない */
-export function isOverdue(p: Pick<Row, 'cod' | 'status'>, today: string): boolean {
-  const d = normalizeCod(p.cod);
-  if (!d) return false;
-  const st = (p.status ?? [])[0] ?? '';
-  return d < today && st !== '稼働中';
 }
 
 type Entry = {
@@ -135,10 +100,10 @@ async function main(): Promise<void> {
     if (all.length >= d.totalCount) break;
   }
   const listed = all.filter((p) => !LIST_EXCLUDED_PROJECT_SLUGS.has(p.slug));
-  const today = todayJST();
+  const today = jstTodayISO();
 
   const investigating = listed.filter(isInvestigating).map(toEntry).sort((a, b) => a.slug.localeCompare(b.slug));
-  const overdue = listed.filter((p) => isOverdue(p, today)).map(toEntry).sort((a, b) => a.slug.localeCompare(b.slug));
+  const overdue = listed.filter((p) => isCodOverdue(p, today)).map(toEntry).sort((a, b) => a.slug.localeCompare(b.slug));
   const both = investigating.filter((i) => overdue.some((o) => o.slug === i.slug)).map((i) => i.slug);
 
   const out = {
