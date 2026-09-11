@@ -189,6 +189,16 @@ export const GLOSSARY_301_SOURCE_SLUGS: Set<string> = new Set(
   Object.keys(GLOSSARY_301).map((p) => p.replace(/^\/glossary\//, ''))
 );
 
+/**
+ * 一覧（/glossary）・sitemap など「用語へリンクを並べる面」から外す slug か（表示除外 ∪ 301元）。
+ * 金曜#6 追修便 ■4（2026-09-11）: /glossary 一覧が表示除外しか見ておらず、301元 143 件中 142 件へ直接リンクしていた
+ *   （同じ用語が重複表示され、クリックで 301 を 1 回挟む）。Pj2-G ■3.5 の近隣プロジェクトカードと同型の欠陥。
+ *   一覧系は必ずこの関数で絞る（scripts/verify-no-301-links.ts が配線と built HTML の両方を検査する）。
+ */
+export function isGlossaryListExcluded(slug: string): boolean {
+  return GLOSSARY_DISPLAY_EXCLUDED_SLUGS.has(slug) || GLOSSARY_301_SOURCE_SLUGS.has(slug);
+}
+
 /** 301 チェーン（A→B→C）を最終 canonical の bare slug へ解決。 */
 export function canonicalGlossarySlug(slug: string): string {
   let cur = '/glossary/' + slug;

@@ -4,7 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import GlossaryBrowser from '@/components/GlossaryBrowser';
 import { getGlossaryHubList } from '@/lib/microcms';
-import { GLOSSARY_DISPLAY_EXCLUDED_SLUGS } from '@/lib/glossary-301';
+import { isGlossaryListExcluded } from '@/lib/glossary-301';
 import { GLOSSARY_TOP20_SLUGS } from '@/lib/glossary-next-step';
 
 export const revalidate = 300; // 5分ごとに再生成
@@ -26,8 +26,9 @@ export const metadata: Metadata = {
 
 export default async function GlossaryListPage() {
   // Stage5: 表示系完全除外slug（低圧リソース重複解消）を一覧からも除去（定数1箇所管理）
+  // 金曜#6 追修便 ■4: 301元（GLOSSARY_301 の元 slug）も除外。除外しないと同じ用語が重複表示され、クリックで 301 を挟む
   // C軽量化(2026-08-07): Browser使用フィールドのみのLite取得（detail等の未使用長文をflightから排除・#103全語DOMは不変）
-  const items = (await getGlossaryHubList()).filter((g) => !GLOSSARY_DISPLAY_EXCLUDED_SLUGS.has(g.slug));
+  const items = (await getGlossaryHubList()).filter((g) => !isGlossaryListExcluded(g.slug));
 
   // G2: よく引かれる用語（TOP20・定数順。GA4上位で四半期ごとに glossary-next-step.ts を手動更新）
   const bySlug = new Map(items.map((g) => [g.slug, g]));
