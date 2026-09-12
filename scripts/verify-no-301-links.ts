@@ -21,8 +21,9 @@
  */
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { GLOSSARY_301_SOURCE_SLUGS } from '../src/lib/glossary-301';
+import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '../src/lib/glossary-301';
 import { PROJECTS_301_SOURCE_SLUGS } from '../src/lib/projects-301';
+import { GRID_PAGE_RELATED_TERMS } from '../src/app/grid/[slug]/related-terms';
 
 const STRICT = process.argv.includes('--strict');
 const APP = '.next/server/app';
@@ -49,6 +50,10 @@ for (const [label, file, re, anchor] of WIRES) {
   console.log(`   ${ok ? '✓' : '✗ 未配線'} ${label}（${file}）`);
   if (!ok) fail++;
 }
+// 軸1b（追修便② ■7(b)）: キュレーション済みの固定リンクは「除外」でなく「301 の宛先へ差し替え」。301 元が残っていれば FAIL
+const gridHits = GRID_PAGE_RELATED_TERMS.filter((t) => GLOSSARY_301_SOURCE_SLUGS.has(t.slug));
+console.log(`   ${gridHits.length === 0 ? '✓' : '✗'} /grid 関連用語の固定リンク（src/app/grid/[slug]/related-terms.ts）: 301 元 ${gridHits.length}${gridHits.length ? `（${gridHits.map((t) => `${t.term}=${t.slug}→${canonicalGlossarySlug(t.slug)}`).join('・')}）` : ''}・${GRID_PAGE_RELATED_TERMS.length} 語`);
+if (gridHits.length) fail++;
 
 // ── 軸2: built HTML 全面走査
 const nextCfg = existsSync('next.config.js') ? readFileSync('next.config.js', 'utf8') : '';
@@ -104,6 +109,21 @@ if (!existsSync(APP)) {
     console.log(`   ${e ? '✗' : '✓'} ${f}: 301元リンク ${e?.n ?? 0}${e ? `（${JSON.stringify(e.kinds)} 例: ${[...e.samples].join(' ')}）` : ''}`);
   }
   if (total(listHits) > 0) fail++;
+
+  // 軸3（追修便② ■7(a)）: 一覧から外した 301 元は「重複の解消」であって「語の消失」ではないことを担保する。
+  //   一覧に出ていない 301 元それぞれについて、301 の最終宛先（チェーンは canonicalGlossarySlug で解決）が一覧に出ていること。
+  //   宛先が一覧に無ければ、その語は一覧から消えている（FAIL・slug を列挙）。
+  const glossaryHtml = existsSync(join(APP, 'glossary.html')) ? readFileSync(join(APP, 'glossary.html'), 'utf8') : '';
+  const shown = new Set([...glossaryHtml.matchAll(/href="\/glossary\/([^"#?]+)"/g)].map((m) => decodeURIComponent(m[1])));
+  const sources = [...GLOSSARY_301_SOURCE_SLUGS];
+  const missing = sources
+    .filter((s) => !shown.has(s))
+    .map((s) => ({ s, to: canonicalGlossarySlug(s) }))
+    .filter(({ to }) => !shown.has(to));
+  console.log(`\n軸3: /glossary 一覧の 301 元 ${sources.length} 件 → 宛先の掲載（一覧の語数 ${shown.size}）`);
+  console.log(`   ${missing.length === 0 ? '✓' : '✗'} 宛先が一覧に無い 301 元: ${missing.length}${missing.length ? `（${missing.map(({ s, to }) => `${s}→${to}`).join(' ')}）` : '（除外はすべて重複の解消＝語の消失なし）'}`);
+  if (!glossaryHtml) { console.log('   ✗ glossary.html が無い'); fail++; }
+  if (missing.length) fail++;
   console.log(`   詳細ページ等: 301元リンクを含むファイル ${detailHits.length} 件・計 ${total(detailHits)} 本${STRICT ? '（--strict: 0 必須）' : '（参考）'}`);
   const byType = new Map<string, number>();
   for (const [f, e] of detailHits) { const t = f.split('/')[0]; byType.set(t, (byType.get(t) ?? 0) + e.n); }
