@@ -153,6 +153,11 @@ src/data/eic/
 # Operator ranking (regenerated at build time by scripts/precompute-operator-ranking.ts)
 src/data/operator-ranking.json
 
+# Build-time precompute outputs (regenerated every build by the prebuild chain in package.json).
+# 金曜#6 追修便③ ■7（2026-09-12）: 既に追跡中の 11 ファイルは、この行だけでは ignore されない
+#   （git rm -r --cached src/lib/generated が別途必要＝承認待ち）。新しく増えるファイルはここで ignore される。
+src/lib/generated/
+
 # Vercel env pull output (NEVER commit)
 .env.local
 .env.development.local
