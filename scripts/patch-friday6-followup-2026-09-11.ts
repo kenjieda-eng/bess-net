@@ -25,6 +25,8 @@ const KEY = process.env.MICROCMS_API_KEY;
 if (!KEY) { console.error('MICROCMS_API_KEY 未設定'); process.exit(1); }
 const DRY = process.argv.includes('--dry-run');
 const INCLUDE_HELD = process.argv.includes('--include-held');
+/** --only=<語>: label に <語> を含む行だけを対象にする（承認された hold 行だけを書くため・追修便② ■6 で追加） */
+const ONLY = (process.argv.find((a) => a.startsWith('--only=')) ?? '').slice('--only='.length);
 const SYS = new Set(['id', 'createdAt', 'updatedAt', 'publishedAt', 'revisedAt']);
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36';
 
@@ -252,9 +254,11 @@ async function runRow(row: Row): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const nHold = ROWS.filter((r) => r.group === 'hold').length;
-  console.log(`[friday6 追修便 PATCH] mode=${DRY ? 'DRY-RUN' : 'EXECUTE'} / ${ROWS.length} 行（exec ${ROWS.length - nHold}・hold ${nHold}${INCLUDE_HELD ? '＝書く' : '＝提示のみ'}）`);
-  for (const row of ROWS) await runRow(row);
+  const rows = ONLY ? ROWS.filter((r) => r.label.includes(ONLY)) : ROWS;
+  const nHold = rows.filter((r) => r.group === 'hold').length;
+  console.log(`[friday6 追修便 PATCH] mode=${DRY ? 'DRY-RUN' : 'EXECUTE'} / ${rows.length} 行${ONLY ? `（--only=${ONLY}）` : ''}（exec ${rows.length - nHold}・hold ${nHold}${INCLUDE_HELD ? '＝書く' : '＝提示のみ'}）`);
+  if (rows.length === 0) { console.error('対象行なし'); process.exit(1); }
+  for (const row of rows) await runRow(row);
   console.log(`\n[done] 実行 ${done} / スキップ・見送り ${skipped} / 失敗 ${failed}`);
   if (changes.length) console.log(`  変更 field: ${changes.join(', ')}`);
   held.forEach((h) => console.log('  - ' + h));
