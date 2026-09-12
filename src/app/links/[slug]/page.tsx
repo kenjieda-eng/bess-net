@@ -24,7 +24,7 @@ import {
   getGlossaryLiteList,
 } from '@/lib/microcms';
 import { csvTermsToTermList } from '@/lib/term-linker';
-import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary-301';
+import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug, canonicalizeTermLinks } from '@/lib/glossary-301';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 600;
@@ -93,10 +93,13 @@ export default async function LinkDetailPage({
   ]);
   if (!link) notFound();
 
-  const relatedTerms = (link.relatedTerms ?? []).map((g) => ({
-    term: g.term,
-    slug: g.slug,
-  }));
+  // 301 元を指す参照は宛先へ付け替える（追修便③ ■6・canonicalizeTermLinks）
+  const relatedTerms = canonicalizeTermLinks(
+    (link.relatedTerms ?? []).map((g) => ({
+      term: g.term,
+      slug: g.slug,
+    }))
+  );
   const relatedOperators = (link.relatedOperators ?? []).map((o) => ({
     name: o.name,
     slug: o.slug,

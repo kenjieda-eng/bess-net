@@ -28,12 +28,13 @@ import glossaryDetailIndex from '@/lib/generated/glossary-detail-index.json';
 import glossaryFaqIndex from '@/lib/generated/glossary-faq-index.json';
 
 // /grid 系統空き容量データベースへの導線を表示する用語ページ slug 一覧（Phase 5 D-4）
+// 追修便③ ■6: 301 元の 'non-firm-detail'・'output-control' を削除（301 元の頁は描画されず死に行。宛先 non-firm-connection・curtailment は既にある）
 const GRID_RELATED_GLOSSARY_SLUGS = new Set<string>([
   'curtailment', 'distribution-substation', 'ehv-substation', 'extra-high-voltage',
   'extra-high-voltage-grid', 'extra-hv-bess', 'grid-available-capacity', 'grid-interconnection',
   'grid-interconnection-code', 'grid-interconnection-contract', 'interconnection-line',
-  'inter-regional-interconnection', 'jeac-9701', 'non-firm-connection', 'non-firm-detail',
-  'output-control', 'point-of-interconnection', 'substation', 'substation-capacity', 'substation-detail',
+  'inter-regional-interconnection', 'jeac-9701', 'non-firm-connection',
+  'point-of-interconnection', 'substation', 'substation-capacity', 'substation-detail',
 ]);
 
 // ── 事前計算 index の型 ──────────────────────────────────────────────

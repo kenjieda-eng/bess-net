@@ -17,7 +17,7 @@ import {
 } from '@/lib/microcms';
 import FaqClient from './FaqClient';
 import { siteConfig } from '@/lib/site-config';
-import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary-301';
+import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug, canonicalizeSlugLines } from '@/lib/glossary-301';
 import { linkifyTerms } from '@/lib/linkify';
 
 // 依頼BG: HTML エスケープ (FAQ answer は plain text なので HTML 化前に必要)
@@ -89,6 +89,8 @@ export default async function FaqPage() {
   const nowMs = Date.now();
   const itemsWithLinkify = items.map((it) => ({
     ...it,
+    // 追修便③ ■6: 人が選んだ関連用語（改行区切り slug）が 301 元を指す場合は宛先へ付け替える
+    relatedGlossary: canonicalizeSlugLines(it.relatedGlossary),
     // escapeHtml で安全な HTML 化 → linkifyTerms で <a> 付与
     answerHtml: glossaryLite.length > 0 ? linkifyTerms(escapeHtml(it.answer), glossaryLite) : undefined,
     isNew: !!it.publishedAt && nowMs - new Date(it.publishedAt).getTime() < NEW_WINDOW_MS,

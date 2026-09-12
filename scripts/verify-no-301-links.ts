@@ -54,6 +54,27 @@ for (const [label, file, re, anchor] of WIRES) {
 const gridHits = GRID_PAGE_RELATED_TERMS.filter((t) => GLOSSARY_301_SOURCE_SLUGS.has(t.slug));
 console.log(`   ${gridHits.length === 0 ? '✓' : '✗'} /grid 関連用語の固定リンク（src/app/grid/[slug]/related-terms.ts）: 301 元 ${gridHits.length}${gridHits.length ? `（${gridHits.map((t) => `${t.term}=${t.slug}→${canonicalGlossarySlug(t.slug)}`).join('・')}）` : ''}・${GRID_PAGE_RELATED_TERMS.length} 語`);
 if (gridHits.length) fail++;
+// 軸1c（追修便③ ■6）: コードに書いた固定リンク（'/glossary/<301元>' のリテラル）が無いこと。301 のマップ自体・生成物・除外用リストは対象外
+{
+  const skip = new Set(['src/lib/glossary-301.ts', 'src/lib/projects-301.ts', 'src/app/sitemap.ts']);
+  const lits: string[] = [];
+  const walkSrc = (dir: string) => {
+    for (const n of readdirSync(dir)) {
+      const f = join(dir, n);
+      if (statSync(f).isDirectory()) { if (n !== 'generated') walkSrc(f); continue; }
+      if (!/\.(ts|tsx)$/.test(n)) continue;
+      const rel = relative('.', f).replace(/\\/g, '/');
+      if (skip.has(rel)) continue;
+      const s = readFileSync(f, 'utf8');
+      for (const m of s.matchAll(/['"`]\/glossary\/([a-z0-9][a-z0-9-]*)['"`]/g)) {
+        if (GLOSSARY_301_SOURCE_SLUGS.has(m[1])) lits.push(`${rel}: /glossary/${m[1]}→${canonicalGlossarySlug(m[1])}`);
+      }
+    }
+  };
+  walkSrc('src');
+  console.log(`   ${lits.length === 0 ? '✓' : '✗'} コード内の固定リンク（'/glossary/<301元>' のリテラル）: ${lits.length}${lits.length ? `（${lits.join('・')}）` : ''}`);
+  if (lits.length) fail++;
+}
 
 // ── 軸2: built HTML 全面走査
 const nextCfg = existsSync('next.config.js') ? readFileSync('next.config.js', 'utf8') : '';

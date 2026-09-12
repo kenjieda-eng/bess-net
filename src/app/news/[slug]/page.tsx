@@ -18,6 +18,7 @@ import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { isExcludedNews } from '@/lib/news-excluded';
 import { isOnTopicNewsArticle } from '@/lib/news-topic-gate';
 import { siteConfig } from '@/lib/site-config';
+import { canonicalizeTermLinks } from '@/lib/glossary-301';
 
 export const revalidate = 600;
 
@@ -85,11 +86,13 @@ export default async function NewsDetailPage({
   )
     notFound();
 
-  // 関連用語（Glossary[]）
-  const relatedTerms = (news.relatedTerms ?? []).map((g) => ({
-    term: g.term,
-    slug: g.slug,
-  }));
+  // 関連用語（Glossary[]）。301 元を指す参照は宛先へ付け替える（追修便③ ■6・canonicalizeTermLinks）
+  const relatedTerms = canonicalizeTermLinks(
+    (news.relatedTerms ?? []).map((g) => ({
+      term: g.term,
+      slug: g.slug,
+    }))
+  );
 
   // 関連事業者（Operator[]）
   const relatedOperators = (news.relatedOperators ?? []).map((o) => ({

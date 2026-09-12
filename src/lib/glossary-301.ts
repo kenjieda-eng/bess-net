@@ -209,3 +209,27 @@ export function canonicalGlossarySlug(slug: string): string {
   }
   return cur.replace(/^\/glossary\//, '');
 }
+
+/**
+ * 人が選んだ固定参照（microCMS の relatedTerms 等）の slug を 301 の宛先へ付け替え、同じ宛先は先勝ちで 1 つにまとめる。
+ * 金曜#6 追修便③ ■6（2026-09-12）: 「生成一覧は除外・人が選んだ固定参照は宛先へ差し替え」。
+ *   参照データ（microCMS）は書き換えず、表示の直前にここで付け替える（同じ規則を news・links・faq が共有する＝#119）。
+ */
+export function canonicalizeTermLinks<T extends { slug: string }>(terms: T[]): T[] {
+  const seen = new Set<string>();
+  const out: T[] = [];
+  for (const t of terms) {
+    const slug = canonicalGlossarySlug(t.slug);
+    if (seen.has(slug)) continue;
+    seen.add(slug);
+    out.push(slug === t.slug ? t : { ...t, slug });
+  }
+  return out;
+}
+
+/** 改行区切りの slug 列（faq.relatedGlossary）を 301 の宛先へ付け替える（重複は先勝ちで 1 つ）。 */
+export function canonicalizeSlugLines(text: string | undefined): string | undefined {
+  if (!text) return text;
+  const slugs = text.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
+  return canonicalizeTermLinks(slugs.map((slug) => ({ slug }))).map((t) => t.slug).join('\n');
+}

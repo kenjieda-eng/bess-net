@@ -1267,7 +1267,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
         </h3>
         <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
           <li>
-            <Link href="/glossary/irr" style={{ color: 'var(--color-accent, #0066cc)' }}>
+            <Link href="/glossary/internal-rate-of-return" style={{ color: 'var(--color-accent, #0066cc)' }}>
               IRR (内部収益率)
             </Link>
             : 投資の収益性を測る指標
