@@ -9,36 +9,21 @@
  *   両ゲートの判定テキストを常に一致させる（乖離すると一覧表示×詳細404の壊れリンクが生じる）。
  * 可逆性: microCMS は一切変更しない。誤除外は NEWS_TOPIC_ALLOWLIST に slug を1行追加すれば
  *   次 build から復帰する（precompute・詳細ページゲートの両方が allowlist を尊重）。
+ * 分離（金曜#6 追修便④ ■1・2026-09-13）: 判定語・判定関数は生成物に依存しない news-topic-patterns.ts へ移し、
+ *   ここは生成物（除外 slug 集合）を読む部分だけを持つ。既存の import 先を変えないため再エクスポートする。
+ *   このファイルは生成物を import するので、prebuild では build:news-topic-gate を先頭で走らせる
+ *   （microcms.ts 経由でこのファイルを読む他の precompute より前に出力を作る）。
  */
 
 import topicExclusions from './generated/news-topic-exclusions.json';
+import { NEWS_TOPIC_ALLOWLIST } from './news-topic-patterns';
 
-/** 主題キーワード（title または本文のいずれかに含めば適合。ESS のみ英単語境界＝Business等の誤ヒット防止） */
-export const TOPIC_PATTERNS: RegExp[] = [
-  /蓄電/,        // 蓄電池・蓄電所・蓄電施設を包含
-  /BESS/,
-  /系統用/,
-  /需給調整/,
-  /容量市場/,
-  /アグリゲー/,  // アグリゲーター / アグリゲーション
-  /VPP/,
-  /バッテリ/,
-  /JEPX/,
-  /電力市場/,
-  /長期脱炭素/,
-  /\bESS\b/,
-];
-
-/**
- * 誤除外復帰用 allowlist（slug を1行追加→次 build で一覧・詳細とも復帰。microCMS 変更不要）
- * 例: 'pr-2026-01-01-example-1',
- */
-export const NEWS_TOPIC_ALLOWLIST: string[] = [];
-
-/** テキスト（title＋本文等の連結）が主題適合か */
-export function isOnTopicNewsText(text: string): boolean {
-  return TOPIC_PATTERNS.some((re) => re.test(text));
-}
+export {
+  TOPIC_PATTERNS,
+  NEWS_TOPIC_ALLOWLIST,
+  isOnTopicNewsText,
+  isOnTopicNewsArticle,
+} from './news-topic-patterns';
 
 const EXCLUDED_SET: ReadonlySet<string> = new Set(
   (topicExclusions as { excludedSlugs: string[] }).excludedSlugs.filter(
@@ -49,23 +34,4 @@ const EXCLUDED_SET: ReadonlySet<string> = new Set(
 /** prebuild 計算済みの主題不適合 slug か（一覧・カテゴリ・年別・トップ・sitemap・generateStaticParams 用） */
 export function isTopicExcludedNews(slug: string): boolean {
   return EXCLUDED_SET.has(slug);
-}
-
-/**
- * 記事全文での適合判定（/news/[slug] 詳細ページ用・取得済みデータのみ＝追加フェッチなし）。
- * 判定テキストは precompute（title＋lead＋tags＋body）と完全同一にする。
- * ここが狭いと「一覧に出るが詳細404」の壊れリンクが生じる（2026-08-03 実証: キーワードが
- * lead のみの2記事が該当。pr-2023-11-27-co37124-28 / pr-2024-01-26-co73738-105）。
- */
-export function isOnTopicNewsArticle(article: {
-  slug: string;
-  title?: string;
-  lead?: string;
-  tags?: string;
-  body?: string;
-}): boolean {
-  if (NEWS_TOPIC_ALLOWLIST.includes(article.slug)) return true;
-  return isOnTopicNewsText(
-    `${article.title ?? ''}\n${article.lead ?? ''}\n${article.tags ?? ''}\n${article.body ?? ''}`
-  );
 }

@@ -22,9 +22,8 @@ import {
   getSubstationBySlug,
   getSubstationSlugsWithCoords,
   getRelatedOperatorsForSubstation,
-  getRelatedNewsForSubstation,
 } from '@/lib/microcms';
-import { getNearbyProjects } from '@/lib/related-cards';
+import { getNearbyProjects, getRelatedNewsForSubstation } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import substationsIndex from '@/data/substations/index.json';

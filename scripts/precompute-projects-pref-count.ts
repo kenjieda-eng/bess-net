@@ -52,6 +52,7 @@ async function main(): Promise<void> {
   for (const k of Object.keys(counts).sort()) sorted[k] = counts[k];
 
   const outPath = path.join(process.cwd(), 'src/lib/generated/projects-pref-count.json');
+  fs.mkdirSync(path.dirname(outPath), { recursive: true }); // 新規クローンには出力フォルダ自体が無い
   fs.writeFileSync(outPath, JSON.stringify(sorted, null, 1) + '\n');
   console.log(`[projects-pref-count] projects ${all.length}件（可視 ${visible.length}）→ ${Object.keys(sorted).length}都道府県 → ${outPath}`);
 }

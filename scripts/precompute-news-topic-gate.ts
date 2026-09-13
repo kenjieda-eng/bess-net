@@ -10,11 +10,14 @@
  * - NEWS_TOPIC_ALLOWLIST の slug は除外しない（誤除外復帰・news-topic-gate.ts 側で管理）
  * - 出力は slug ソート済み・タイムスタンプなし＝データ不変なら差分ゼロ（drift 抑制）
  *
- * 実行: prebuild（build:related-news より前）。手動: npx tsx --env-file=.env.local scripts/precompute-news-topic-gate.ts
+ * 実行: prebuild の先頭（build:generated-mark の直後）。microcms.ts → news-topic-gate.ts 経由でこの出力を
+ *   import する他の precompute より前に作る（追修便④ ■1）。手動: npx tsx --env-file=.env.local scripts/precompute-news-topic-gate.ts
+ * ※ 判定語は news-topic-patterns.ts から読む（news-topic-gate.ts は自分の出力を import するため、ここから読むと
+ *   生成物の無い新規クローンで起動できない。2026-09-13 実測 MODULE_NOT_FOUND）。
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { TOPIC_PATTERNS, NEWS_TOPIC_ALLOWLIST } from '../src/lib/news-topic-gate';
+import { TOPIC_PATTERNS, NEWS_TOPIC_ALLOWLIST } from '../src/lib/news-topic-patterns';
 
 const SERVICE_DOMAIN = process.env.MICROCMS_SERVICE_DOMAIN;
 const API_KEY = process.env.MICROCMS_API_KEY;
@@ -48,6 +51,7 @@ async function main(): Promise<void> {
     .sort();
 
   const outPath = path.join(process.cwd(), 'src/lib/generated/news-topic-exclusions.json');
+  fs.mkdirSync(path.dirname(outPath), { recursive: true }); // 新規クローンには出力フォルダ自体が無い
   fs.writeFileSync(outPath, JSON.stringify({ excludedSlugs }, null, 2) + '\n');
   console.log(`[news-topic-gate] news ${all.length}件中 主題不適合 ${excludedSlugs.length}件 → ${outPath}`);
 }

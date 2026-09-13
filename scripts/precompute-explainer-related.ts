@@ -53,6 +53,7 @@ async function main(): Promise<void> {
   for (const k of Object.keys(map).sort()) sorted[k] = map[k];
 
   const outPath = path.join(process.cwd(), 'src/lib/generated/explainer-related-map.json');
+  fs.mkdirSync(path.dirname(outPath), { recursive: true }); // 新規クローンには出力フォルダ自体が無い
   fs.writeFileSync(outPath, JSON.stringify(sorted, null, 1) + '\n');
   console.log(`[explainer-related] explainer ${all.length}件（非lv ${pool.length}）→ 関連マップ ${Object.keys(sorted).length}entry → ${outPath}`);
 }

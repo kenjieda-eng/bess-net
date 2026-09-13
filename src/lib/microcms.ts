@@ -7,17 +7,15 @@ import { GLOSSARY_301_SOURCE_SLUGS } from './glossary-301';
 import { EXCLUDED_OPERATOR_SLUGS } from './operators-excluded';
 import { isExcludedNews } from './news-excluded';
 import { isTopicExcludedNews } from './news-topic-gate';
-import relatedNewsMap from './generated/related-news-map.json';
 // Gr10(2026-08-11): 系統区分・設備区分が「都道府県」として入っている社があるため、
 // 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
 import { normalizeSubstationPlace, isRealPrefecture } from './grid-prefecture';
 import { FROZEN_SUBSTATION_SLUGS } from './substations-frozen';
 
-/** build 時事前計算した関連newsマップ（"pref:<base>" / "project:<slug>" → newsRef[]）。runtime q を排除（鉄則#98） */
-const RELATED_NEWS_MAP = relatedNewsMap as Record<
-  string,
-  Array<{ id: string; slug: string; title: string; publishedAt: string; category: string[] }>
->;
+// 関連newsマップ（generated/related-news-map.json）はここでは import しない（金曜#6 追修便④ ■1・2026-09-13）。
+// microcms.ts は prebuild の precompute 各スクリプトが読むため、ここで生成物を import すると、生成物の無い
+// 新規クローン（Vercel）では prebuild の1本目から起動できない（MODULE_NOT_FOUND・実測）。
+// マップを引く getRelatedNewsForSubstation は related-cards.ts（ページだけが読む）に置く。
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is not defined');
@@ -1776,22 +1774,7 @@ export const searchSubstationsByName = async (
   return all;
 };
 
-/**
- * 関連ニュース：build 時事前計算マップ（related-news-map.json）の都道府県キーから返す。
- * 旧実装は q=都道府県 で news 全文検索していたが、runtime microCMS q を撤去（2026-06-30・鉄則#98）。
- * query は grid/[slug] が渡す sub.prefecture（例「群馬県」）。事前計算側と同じ base 形に正規化して引く。
- */
-export const getRelatedNewsForSubstation = async (
-  query: string,
-  limit = 5
-): Promise<News[]> => {
-  const q = (query || '').trim();
-  if (!q) return [];
-  const base = q === '北海道' ? '北海道' : q.replace(/(都|府|県)$/, '');
-  const refs = (RELATED_NEWS_MAP[`pref:${base}`] ?? []).slice(0, limit);
-  // refs は表示に必要な最小フィールド（id,slug,title,publishedAt,category）。RelatedNewsList は本5項目のみ参照。
-  return refs as unknown as News[];
-};
+// getRelatedNewsForSubstation（変電所ページの関連ニュース）は related-cards.ts へ移設（追修便④ ■1・上の import 部の注記を参照）。
 
 /* =================================================================
    v25: 多角的検索（searchSubstationsByFilters）

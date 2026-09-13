@@ -121,6 +121,7 @@ async function main(): Promise<void> {
   };
 
   const outPath = path.join(process.cwd(), 'src/lib/generated/projects-maintenance.json');
+  fs.mkdirSync(path.dirname(outPath), { recursive: true }); // 新規クローンには出力フォルダ自体が無い
   fs.writeFileSync(outPath, JSON.stringify(out, null, 1) + '\n');
   console.log(
     `[projects-maintenance] projects ${all.length}件（掲載 ${listed.length}）→ 調査中 ${investigating.length} / 予定日超過 ${overdue.length}（重複 ${both.length}・判定日 ${today}）→ ${outPath}`
