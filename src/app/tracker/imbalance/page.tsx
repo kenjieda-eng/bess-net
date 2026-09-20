@@ -286,7 +286,8 @@ function Section1Overall({ overallSeries }: { overallSeries: Record<Product, Cat
     <section style={{ marginBottom: 40 }}>
       <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>① 全体 落札単価（商品別・年次）</h2>
       <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 16 }}>
-        単位: 円/ΔkW・30min ／ 出典: EPRX「調整力の取引結果まとめ」年間まとめ PDF を転記・加工
+        {/* ★Lc-3: Lc-2 の取りこぼし。EPRX の実在名は「取引実績の取りまとめ結果」（同社ページの <title>/<h1> で実測）。 */}
+        単位: 円/ΔkW・30min ／ 出典: EPRX「取引実績の取りまとめ結果」の年次 PDF を転記・加工
       </p>
       <div style={{ overflowX: 'auto' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>

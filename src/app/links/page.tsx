@@ -6,6 +6,7 @@ import SiteFooter from '@/components/SiteFooter';
 import LinksBrowser from '@/components/LinksBrowser';
 import { getAllLinks } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
+import { isExcludedLink } from '@/lib/links-excluded';
 
 export const revalidate = 600;
 
@@ -24,7 +25,9 @@ export const metadata: Metadata = {
 };
 
 export default async function LinksIndexPage() {
-  const links = await getAllLinks();
+  // Lc-3 ■2: 一覧・件数（JSON-LD numberOfItems）から除外エントリを外す。
+  // 詳細ページは 200 のまま noindex（src/lib/links-excluded.ts）。
+  const links = (await getAllLinks()).filter((l) => !isExcludedLink(l.slug));
 
   const jsonLd = {
     '@context': 'https://schema.org',

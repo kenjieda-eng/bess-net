@@ -16,6 +16,7 @@ import operatorCategoryIndex from '@/lib/generated/operators-category-index.json
 import { isExcludedOperator } from '@/lib/operators-excluded';
 import { POLICY_DETAIL_SLUGS } from '@/lib/policy-utils';
 import { isLvInvestExplainer } from '@/lib/lv-invest';
+import { isExcludedLink } from '@/lib/links-excluded';
 import {
   getAllExplainer,
   getAllGlossary,
@@ -408,7 +409,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'weekly' as const,
     priority: 0.6,
   }));
-  const linkUrls: MetadataRoute.Sitemap = links.map((l) => ({
+  // Lc-3 ■2: 除外エントリは sitemap からも外す（noindex と矛盾させない）
+  const linkUrls: MetadataRoute.Sitemap = links.filter((l) => !isExcludedLink(l.slug)).map((l) => ({
     url: `${siteConfig.url}/links/${l.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,

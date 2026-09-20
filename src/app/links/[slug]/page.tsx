@@ -26,12 +26,14 @@ import {
 import { csvTermsToTermList } from '@/lib/term-linker';
 import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug, canonicalizeTermLinks } from '@/lib/glossary-301';
 import { siteConfig } from '@/lib/site-config';
+import { isExcludedLink } from '@/lib/links-excluded';
 
 export const revalidate = 600;
 
 export async function generateStaticParams() {
   try {
-    return await getAllLinkSlugs();
+    // Lc-3 ■2: 除外エントリは静的生成の対象から外す（dynamicParams で 200 のまま到達できる）
+    return (await getAllLinkSlugs()).filter((p) => !isExcludedLink(p.slug));
   } catch {
     return [];
   }
@@ -50,6 +52,8 @@ export async function generateMetadata({
     title: `${link.title}｜お役立ちサイト一覧`,
     description: metaDesc,
     alternates: { canonical: `/links/${link.slug}` },
+    // Lc-3 ■2: 一覧から外したエントリは noindex（URL は 200 のまま＝404 を作らない）
+    ...(isExcludedLink(params.slug) ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: `${link.title}｜お役立ちサイト一覧`,
       description: metaDesc,
