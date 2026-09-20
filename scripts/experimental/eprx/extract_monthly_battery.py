@@ -63,6 +63,14 @@ PRODUCTS: list[tuple[str, str]] = [
 ]
 PRODUCTS_BY_LEN = sorted(PRODUCTS, key=lambda x: -len(x[0]))
 
+# 公表元の URL とファイル名（出典欄にはこちらを出す）。
+# ★手元の作業ファイル名を出典に書いてはいけない。読者も依頼者も辿れない名前になる
+#   （2026-09-20 に一度 eprx_2024.pdf と表示してしまい是正）。
+PUBLISHED_PDF: dict[str, str] = {
+    "FY2024": "https://www.eprx.or.jp/information/docs/summary_2024.pdf",
+    "FY2025": "https://www.eprx.or.jp/information/summary_2025.pdf",
+}
+
 CATALOG_SERIES = {
     "primary": "balancing-price-primary-battery",
     "secondary-1": "balancing-price-secondary-1-battery",
@@ -164,9 +172,14 @@ def main() -> None:
         if not path.exists():
             sys.exit(f"[中止] PDF が無い: {path}")
         print(f"[extract] {fy} ← {path}")
+        published = PUBLISHED_PDF.get(fy)
+        if not published:
+            sys.exit(f"[中止] {fy} の公表 PDF の URL が PUBLISHED_PDF に未登録")
         fiscal_years[fy] = {
             "pdf": {
-                "file_name": path.name,
+                "published_file_name": published.rsplit("/", 1)[-1],
+                "published_url": published,
+                "local_file_name": path.name,
                 "sha256": sha256_of(path),
                 "source_page": "https://www.eprx.or.jp/information/summary.php",
             },

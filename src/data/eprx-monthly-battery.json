@@ -14,7 +14,9 @@
   "fiscal_years": {
     "FY2024": {
       "pdf": {
-        "file_name": "eprx_2024.pdf",
+        "published_file_name": "summary_2024.pdf",
+        "published_url": "https://www.eprx.or.jp/information/docs/summary_2024.pdf",
+        "local_file_name": "eprx_2024.pdf",
         "sha256": "98a0291128c3ff90901fe599fce6d71b377ea73533d796c8639603aeb7d1276f",
         "source_page": "https://www.eprx.or.jp/information/summary.php"
       },
@@ -149,7 +151,9 @@
     },
     "FY2025": {
       "pdf": {
-        "file_name": "eprx_2025.pdf",
+        "published_file_name": "summary_2025.pdf",
+        "published_url": "https://www.eprx.or.jp/information/summary_2025.pdf",
+        "local_file_name": "eprx_2025.pdf",
         "sha256": "af43178612d3c4ebe5e6c4aee70238bff6847eacc217544705a0e2bc197572ba",
         "source_page": "https://www.eprx.or.jp/information/summary.php"
       },

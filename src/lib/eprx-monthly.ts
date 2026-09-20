@@ -128,7 +128,10 @@ export function productJaOf(fy: string, product: BalancingProductKey): string | 
   return DATA.fiscal_years?.[fy]?.products?.[product]?.product_ja ?? null;
 }
 
-/** 転記元 PDF のファイル名（出所表示用） */
+/**
+ * 転記元 PDF の「公表元でのファイル名」（出所表示用）。
+ * ★手元の作業ファイル名（local_file_name）を出してはいけない。読者も依頼者も辿れない。
+ */
 export function pdfFileNameOf(fy: string): string | null {
-  return DATA.fiscal_years?.[fy]?.pdf?.file_name ?? null;
+  return DATA.fiscal_years?.[fy]?.pdf?.published_file_name ?? null;
 }
