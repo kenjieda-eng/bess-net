@@ -19,6 +19,8 @@ import { siteConfig } from '@/lib/site-config';
 import { DAILY_DATA, MONTHLY_DATA, AREAS } from '@/data/jepx-history';
 import { getIndicatorsByIdPrefix, getSeriesMany } from '@/lib/eic-data';
 import { EIC_DATA_DISCLAIMER } from '@/lib/cite-helpers';
+// Lc-2: JEPX の実在するページ名（資料名の僭称を避ける）
+import { JEPX_SPOT_PAGE_NAME } from '@/lib/eic-license';
 
 export const revalidate = 86400;
 
@@ -122,7 +124,10 @@ export default async function JEPXHubPage() {
               ※ 以下は <strong>30 分単位の構造に基づくデモデータ</strong>です (実データは上の表、現在 JEPX の 30 分単位データは EIC Data でも整備中)。
               ヒートマップとアービトラージ計算機の UX 確認用にお使いください。実値は上の表または{' '}
               <a href="https://www.jepx.jp/" target="_blank" rel="noopener noreferrer">JEPX 公式サイト</a>
-              {'（出典: JEPX「スポット市場取引結果」）を参照。'}
+              {/* ★Lc-2: Lc-1 で書いた「スポット市場取引結果」は JEPX に存在しない名称だった
+                  （2026-09-20 実測: spot ページの <title> は「スポット市場 | 市場情報 | 電力取引 | JEPX」、
+                   サイト内に「取引結果」の語は 0 件）。実在するページ名に是正する。 */}
+              {`（出典: JEPX「${JEPX_SPOT_PAGE_NAME}」）を参照。`}
             </p>
           </section>
           <JEPXDashboard />

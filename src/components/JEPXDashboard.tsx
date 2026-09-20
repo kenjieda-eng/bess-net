@@ -15,6 +15,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { DAILY_DATA, MONTHLY_DATA, AREA_LABELS, AREAS, type AreaKey } from '@/data/jepx-history';
 import { calcArbitrage, calcAvgArbitrage, compareAreas } from '@/lib/jepx-analyzer';
+// Lc-2: JEPX の実在するページ名（Lc-1 で書いた「スポット市場取引結果」はサイト内に存在しなかった）
+import { JEPX_SPOT_PAGE_NAME } from '@/lib/eic-license';
 
 type View = 'price' | 'heatmap' | 'monthly' | 'arbitrage';
 
@@ -177,7 +179,7 @@ export default function JEPXDashboard() {
 
       <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.6 }}>
         ※ 本データは JEPX 公表値ベースの<strong>モック</strong>です (編集部生成、決定論的)。
-        最新の実勢値は <a href="https://www.jepx.jp/" target="_blank" rel="noopener noreferrer">JEPX 公式サイト</a>（出典: JEPX「スポット市場取引結果」）を参照。
+        最新の実勢値は <a href="https://www.jepx.jp/" target="_blank" rel="noopener noreferrer">JEPX 公式サイト</a>（出典: JEPX「{JEPX_SPOT_PAGE_NAME}」）を参照。
       </p>
     </div>
   );

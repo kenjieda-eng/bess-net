@@ -1,0 +1,286 @@
+{
+  "_meta": {
+    "description": "EPRX 需給調整市場 6 商品 × 蓄電池の月次平均落札単価（年度内の幅を表示するための転記データ）",
+    "unit": "円/ΔkW・30分",
+    "source_name": "一般社団法人 電力需給調整力取引所（EPRX）「取引実績の取りまとめ結果」",
+    "source_top": "https://www.eprx.or.jp/",
+    "source_index": "https://www.eprx.or.jp/information/summary.php",
+    "generated_by": "scripts/experimental/eprx/extract_monthly_battery.py",
+    "null_means": "未約定（PDF 上は「ー」）。平均には含めない。",
+    "averaging": "約定月の単純平均（約定量で加重しない）。カタログの年平均と同じ定義。",
+    "verified_by": "npm run verify:eprx-monthly（月次平均＝カタログ年平均・約定月数の一致を検査）",
+    "license_note": "EPRX 利用規約 §4 に従い、出典と加工（PDF からの転記）を明記して利用。リンクは §3 によりトップページ。"
+  },
+  "fiscal_years": {
+    "FY2024": {
+      "pdf": {
+        "file_name": "eprx_2024.pdf",
+        "sha256": "98a0291128c3ff90901fe599fce6d71b377ea73533d796c8639603aeb7d1276f",
+        "source_page": "https://www.eprx.or.jp/information/summary.php"
+      },
+      "products": {
+        "primary": {
+          "product_ja": "一次調整力",
+          "catalog_series": "balancing-price-primary-battery",
+          "pdf_page": 14,
+          "page_heading": "2-1-4．一次調整力 電源種別別の平均落札単価 14",
+          "months": {
+            "4月": 16.28,
+            "5月": 18.55,
+            "6月": 17.77,
+            "7月": 15.52,
+            "8月": 17.28,
+            "9月": 14.36,
+            "10月": 18.33,
+            "11月": 18.19,
+            "12月": 17.64,
+            "1月": 14.78,
+            "2月": 11.42,
+            "3月": 11.76
+          },
+          "awarded_months": 12
+        },
+        "secondary-1": {
+          "product_ja": "二次調整力①",
+          "catalog_series": "balancing-price-secondary-1-battery",
+          "pdf_page": 22,
+          "page_heading": "2-2-4．二次調整力① 電源種別別の平均落札単価 22",
+          "months": {
+            "4月": 3.58,
+            "5月": 4.11,
+            "6月": 9.0,
+            "7月": null,
+            "8月": null,
+            "9月": null,
+            "10月": null,
+            "11月": 19.01,
+            "12月": 14.11,
+            "1月": 5.52,
+            "2月": 3.24,
+            "3月": 3.08
+          },
+          "awarded_months": 8
+        },
+        "secondary-2": {
+          "product_ja": "二次調整力②",
+          "catalog_series": "balancing-price-secondary-2-battery",
+          "pdf_page": 30,
+          "page_heading": "2-3-4．二次調整力② 電源種別別の平均落札単価 30",
+          "months": {
+            "4月": 7.0,
+            "5月": 8.77,
+            "6月": 19.29,
+            "7月": 19.39,
+            "8月": 19.5,
+            "9月": 19.5,
+            "10月": null,
+            "11月": 19.01,
+            "12月": 14.13,
+            "1月": 5.52,
+            "2月": 3.24,
+            "3月": 3.36
+          },
+          "awarded_months": 11
+        },
+        "tertiary-1": {
+          "product_ja": "三次調整力①",
+          "catalog_series": "balancing-price-tertiary-1-battery",
+          "pdf_page": 38,
+          "page_heading": "2-4-4．三次調整力① 電源種別別の平均落札単価 38",
+          "months": {
+            "4月": 7.0,
+            "5月": null,
+            "6月": 18.94,
+            "7月": 15.78,
+            "8月": 15.88,
+            "9月": 8.52,
+            "10月": 6.17,
+            "11月": 14.62,
+            "12月": 13.94,
+            "1月": 6.12,
+            "2月": 4.5,
+            "3月": 5.15
+          },
+          "awarded_months": 11
+        },
+        "composite": {
+          "product_ja": "複合商品",
+          "catalog_series": "balancing-price-composite-battery",
+          "pdf_page": 46,
+          "page_heading": "2-5-4．複合商品 電源種別別の平均落札単価 46",
+          "months": {
+            "4月": 16.16,
+            "5月": 18.46,
+            "6月": 17.76,
+            "7月": 15.34,
+            "8月": 17.05,
+            "9月": 13.31,
+            "10月": 18.15,
+            "11月": 18.03,
+            "12月": 17.53,
+            "1月": 14.69,
+            "2月": 11.39,
+            "3月": 11.74
+          },
+          "awarded_months": 12
+        },
+        "tertiary-2": {
+          "product_ja": "三次調整力②",
+          "catalog_series": "balancing-price-tertiary-2-battery",
+          "pdf_page": 54,
+          "page_heading": "2-6-4．三次調整力② 電源種別別の平均落札単価 54",
+          "months": {
+            "4月": 234.89,
+            "5月": 200.39,
+            "6月": 177.7,
+            "7月": 171.5,
+            "8月": 164.55,
+            "9月": 82.19,
+            "10月": 84.69,
+            "11月": 17.11,
+            "12月": null,
+            "1月": 9.81,
+            "2月": 17.95,
+            "3月": 43.0
+          },
+          "awarded_months": 11
+        }
+      }
+    },
+    "FY2025": {
+      "pdf": {
+        "file_name": "eprx_2025.pdf",
+        "sha256": "af43178612d3c4ebe5e6c4aee70238bff6847eacc217544705a0e2bc197572ba",
+        "source_page": "https://www.eprx.or.jp/information/summary.php"
+      },
+      "products": {
+        "primary": {
+          "product_ja": "一次調整力",
+          "catalog_series": "balancing-price-primary-battery",
+          "pdf_page": 14,
+          "page_heading": "2-1-4．一次調整力 電源種別別の平均落札単価 14",
+          "months": {
+            "4月": 10.85,
+            "5月": 10.27,
+            "6月": 13.48,
+            "7月": 13.52,
+            "8月": 10.73,
+            "9月": 9.61,
+            "10月": 8.82,
+            "11月": 11.55,
+            "12月": 12.26,
+            "1月": 13.49,
+            "2月": 13.24,
+            "3月": 10.39
+          },
+          "awarded_months": 12
+        },
+        "secondary-1": {
+          "product_ja": "二次調整力①",
+          "catalog_series": "balancing-price-secondary-1-battery",
+          "pdf_page": 22,
+          "page_heading": "2-2-4．二次調整力① 電源種別別の平均落札単価 22",
+          "months": {
+            "4月": 10.78,
+            "5月": 7.43,
+            "6月": 18.72,
+            "7月": 17.33,
+            "8月": 18.32,
+            "9月": 12.22,
+            "10月": 15.71,
+            "11月": 9.14,
+            "12月": 11.61,
+            "1月": 10.67,
+            "2月": 7.84,
+            "3月": 10.32
+          },
+          "awarded_months": 12
+        },
+        "secondary-2": {
+          "product_ja": "二次調整力②",
+          "catalog_series": "balancing-price-secondary-2-battery",
+          "pdf_page": 30,
+          "page_heading": "2-3-4．二次調整力② 電源種別別の平均落札単価 30",
+          "months": {
+            "4月": 10.64,
+            "5月": 8.14,
+            "6月": 18.77,
+            "7月": 17.21,
+            "8月": 18.22,
+            "9月": 13.03,
+            "10月": 15.49,
+            "11月": 8.15,
+            "12月": 13.16,
+            "1月": 10.59,
+            "2月": 8.63,
+            "3月": 11.69
+          },
+          "awarded_months": 12
+        },
+        "tertiary-1": {
+          "product_ja": "三次調整力①",
+          "catalog_series": "balancing-price-tertiary-1-battery",
+          "pdf_page": 38,
+          "page_heading": "2-4-4．三次調整力① 電源種別別の平均落札単価 38",
+          "months": {
+            "4月": 10.75,
+            "5月": 7.91,
+            "6月": 18.15,
+            "7月": 15.96,
+            "8月": 17.78,
+            "9月": 12.4,
+            "10月": 13.86,
+            "11月": 7.86,
+            "12月": 12.68,
+            "1月": 10.39,
+            "2月": 8.38,
+            "3月": 11.22
+          },
+          "awarded_months": 12
+        },
+        "composite": {
+          "product_ja": "複合商品",
+          "catalog_series": "balancing-price-composite-battery",
+          "pdf_page": 46,
+          "page_heading": "2-5-4．複合商品 電源種別別の平均落札単価 46",
+          "months": {
+            "4月": 10.83,
+            "5月": 10.25,
+            "6月": 13.45,
+            "7月": 13.49,
+            "8月": 10.72,
+            "9月": 9.59,
+            "10月": 8.82,
+            "11月": 11.54,
+            "12月": 12.26,
+            "1月": 13.48,
+            "2月": 13.22,
+            "3月": 10.38
+          },
+          "awarded_months": 12
+        },
+        "tertiary-2": {
+          "product_ja": "三次調整力②",
+          "catalog_series": "balancing-price-tertiary-2-battery",
+          "pdf_page": 54,
+          "page_heading": "2-6-4．三次調整力② 電源種別別の平均落札単価 54",
+          "months": {
+            "4月": 42.28,
+            "5月": 5.76,
+            "6月": 3.52,
+            "7月": 50.83,
+            "8月": 58.28,
+            "9月": 40.42,
+            "10月": 1.58,
+            "11月": 0.92,
+            "12月": 5.73,
+            "1月": 2.64,
+            "2月": 9.66,
+            "3月": 10.05
+          },
+          "awarded_months": 12
+        }
+      }
+    }
+  }
+}

@@ -8,6 +8,28 @@
  *   - Day 3 (5/21): Seller 4 ページ詳細追記 (投入文面 43)
  */
 
+// ★Lc-2 ■4(b): 三次② FY2024 の単価 3 値（蓄電池 / VPP / 揚水）を本文に焼き込んでいた。
+//   同じ値が /tools/balancing-revenue・/tracker/imbalance・BalancingSourceComparison にも散在しており（#121 型）、
+//   カタログが改訂されるとここだけ古くなる。カタログ参照に寄せる。
+import tertiary2Battery from '@/data/eic/balancing-price-tertiary-2-battery.json';
+import tertiary2Vpp from '@/data/eic/balancing-price-tertiary-2-vpp.json';
+import tertiary2Pumped from '@/data/eic/balancing-price-tertiary-2-pumped.json';
+
+/** カタログ JSON から指定日の値を読む（読めなければ null） */
+function catalogValue(json: unknown, date: string): number | null {
+  const pts = (json as { points?: { date: string; value: number | null }[] }).points ?? [];
+  return pts.find((p) => p.date === date)?.value ?? null;
+}
+const FY2024 = '2024-04-01';
+const T2_BATTERY = catalogValue(tertiary2Battery, FY2024);
+const T2_VPP = catalogValue(tertiary2Vpp, FY2024);
+const T2_PUMPED = catalogValue(tertiary2Pumped, FY2024);
+/** 「蓄電池109.43/VPP46.24/揚水0.72(三次②FY2024)＝約150倍」相当の文を動的に作る */
+const T2_SPREAD_TEXT =
+  T2_BATTERY !== null && T2_VPP !== null && T2_PUMPED !== null
+    ? `蓄電池${T2_BATTERY}/VPP${T2_VPP}/揚水${T2_PUMPED}(三次②FY2024)＝約${Math.round(T2_BATTERY / T2_PUMPED)}倍の二極構造`
+    : '蓄電池・VPPと揚水の間にある大きな価格差';
+
 export type LandingPageType = 'buyer' | 'seller';
 
 export interface LandingPagePainPoint {
@@ -664,7 +686,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '🎲',
         title: '収益のブレ(市場依存)とリスク評価',
         description:
-          '蓄電池・VPPは高単価商品(三次②等)で「当たれば」単価が桁違い、ただし約定は稀。揚水は1〜4円の基準線。蓄電池109.43/VPP46.24/揚水0.72(三次②FY2024)＝約150倍の二極構造をデータで把握。',
+          `蓄電池・VPPは高単価商品(三次②等)で「当たれば」単価が桁違い、ただし約定は稀。揚水は1〜4円の基準線。${T2_SPREAD_TEXT}をデータで把握。`,
       },
       {
         icon: '⚠️',

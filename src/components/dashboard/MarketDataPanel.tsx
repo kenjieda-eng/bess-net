@@ -14,6 +14,10 @@
 import { Fragment, useState } from 'react';
 import type { SeriesData } from '@/types/eic';
 import CitationPanel from '../CitationPanel';
+// Lc-2 ■3: 出典リンクの href はカタログの source_url をそのまま出していた。
+// カタログには JEPX 16・EPRX 46 系列の「深い URL」が入っており、両社の条文はトップのみを認める。
+// ソース別の方針表（src/lib/eic-license.ts）を通してから href にする。資料名（sourceName）はそのまま残す。
+import { normalizeSourceLinkHref } from '@/lib/eic-license';
 
 interface PanelProps {
   title: string;
@@ -130,7 +134,7 @@ export default function MarketDataPanel({
         )}
         <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 8 }}>
           出典:{' '}
-          <a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceName}</a>
+          <a href={normalizeSourceLinkHref(sourceUrl)} target="_blank" rel="noopener noreferrer">{sourceName}</a>
           、<a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer">EIC Data (data.eic-jp.org)</a> 経由
         </p>
       </header>

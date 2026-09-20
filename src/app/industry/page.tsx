@@ -13,6 +13,8 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { PLAYERS } from '@/data/industry-map';
+// Lc-2 ■1: JEPX の出所表記（条文で出所明示が利用の条件）。文言とリンク先は eic-license.ts に一本化（#119）
+import { jepxNoticeLines, JEPX_TOP } from '@/lib/eic-license';
 import { getSubsidyList, getSubstationList, getOperatorList, getProjectList } from '@/lib/microcms';
 import operatorRanking from '@/data/operator-ranking.json';
 import jepxHokkaido from '@/data/eic/jepx-spot-hokkaido.json';
@@ -46,6 +48,15 @@ const JEPX_AREAS: JepxJson[] = [
   jepxHokkaido, jepxTohoku, jepxTokyo, jepxChubu, jepxHokuriku,
   jepxKansai, jepxChugoku, jepxShikoku, jepxKyushu,
 ] as JepxJson[];
+
+/**
+ * Lc-2 ■1(c): 出所表記はカタログの license_notice を逐語で出すのが原則だが、
+ * jepx-spot-* は上流（eic-data-pipeline）で license_notice が空（2026-09-20 実測・9系列とも）。
+ * カタログが埋まるまでは JEPX の条文に基づく既定文を出す（jepxNoticeLines が自動で切り替える）。
+ */
+const JEPX_SOURCE_LINE = jepxNoticeLines(
+  (JEPX_AREAS[0] as unknown as { meta?: { license_notice?: string } }).meta?.license_notice,
+).join(' ');
 
 /** 9エリアの最新スポット値平均（¥/kWh）と最新日付 */
 function jepxLatestAvg(): { avg: number; date: string } | null {
@@ -247,6 +258,33 @@ export default async function IndustryHubPage() {
               </Link>
             ))}
           </div>
+
+          {/* ─── Lc-2 ■1: カードの数字の出所 ───────────────────────────────────
+              JEPX 著作権条項は「利用する場合は、出所を明示した上でご利用下さい」と出所明示を利用の条件にしている。
+              このページは 9 エリアのスポット価格から作った数値をチップに出しながら、出所表記が 1 件も無かった
+              （2026-09-20 実測: ビルド済 HTML 本文の「出典」「出所」「ライセンス」いずれも 0 件）。
+              リンクは JEPX「リンクについて」の但書「・トップページ以外のページへのリンク」に従いトップ固定。
+              ★カードは <Link> 全体がクリック領域なので、注記はカードの外に置く（<a> の入れ子＝verify:linkify が落ちる）。 */}
+          <section style={{ padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6, marginBottom: 16 }}>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>上の数字の出所</h2>
+            <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0, color: 'var(--color-text)' }}>
+              ・「最新スポット平均」: {JEPX_SOURCE_LINE}{' '}
+              データ取得は{' '}
+              <a href="https://data.eic-jp.org/catalog?domain=power" target="_blank" rel="noopener noreferrer">
+                EIC Data (data.eic-jp.org)
+              </a>{' '}
+              経由で、エリア別の日次平均をさらに 9 エリアで単純平均した加工値です（各エリアの約定価格そのものではありません）。
+              一次情報は{' '}
+              <a href={JEPX_TOP} target="_blank" rel="noopener noreferrer">
+                JEPX 公式サイト
+              </a>
+              。
+              <br />
+              {/* ★件数は焼き込まない（チップ側は PLAYERS.length 等で動的導出しているので、
+                  ここに数字を書くと同じ意味の値の二重管理になる・CLAUDE.md「件数・数値は動的参照」）。 */}
+              ・カードの「掲載◯社」「直近7日 更新◯件」「首位 ◯MWh」: 蓄電所ネットのデータベース（元情報は各事業者・自治体・報道等の公表資料）に基づく自社集計です。
+            </p>
+          </section>
 
           <section style={{ padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>ツール (実務支援5機能)</h2>

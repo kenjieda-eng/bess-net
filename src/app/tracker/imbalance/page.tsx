@@ -29,7 +29,8 @@ import { siteConfig } from '@/lib/site-config';
 export const revalidate = 86400;
 
 // Lc-1(2026-09-20): ライセンス表記の逐語表示と、カタログに残る 404 license_url の正規化
-import { licenseNoticeLines, normalizeLicenseUrl } from '@/lib/eic-license';
+// Lc-2(2026-09-20): EPRX 利用規約 §3 に従いリンク先はトップへ（EPRX_TOP）
+import { licenseNoticeLines, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
 
 // ─── catalog JSON 直読み（18 系列） ────────────────────────────────────────────
 // ① 全体 落札単価 (6)
@@ -54,15 +55,24 @@ import shortageTer1           from '@/data/eic/balancing-shortage-tertiary-1.jso
 import shortageTer2           from '@/data/eic/balancing-shortage-tertiary-2.json';
 import shortageComposite      from '@/data/eic/balancing-shortage-composite.json';
 
+// ─── Lc-2 ■4(b): 三次② の値の焼き込みを解消 ──────────────────────────────────
+// 109.43 が metadata.description・openGraph.description・本文注記の 3 箇所に文字列で入っていた（#121 型の多重管理）。
+// 同じ意味の値を 3 箇所で別々に持つと、カタログが改訂されたときに片方だけ古くなる（FY2025 は実際に
+// 旧・上期暫定 33.52 → 19.31 へ改訂された前例がある）。カタログ参照に寄せる。
+// ★getPoint は関数宣言なので巻き上げられ、この位置から呼べる（定義は下方 102 行付近）。
+const TER2_FY2024 = getPoint(priceBatteryTer2 as unknown as CatalogJson, '2024-04');
+const TER2_FY2025 = getPoint(priceBatteryTer2 as unknown as CatalogJson, '2025-04');
+const ter2Text = (v: number | null) => (v === null ? '—' : v.toFixed(2));
+
 export const metadata: Metadata = {
   // #88: 手書き「| 蓄電所ネット」を除去（template が自動付与・本番二重を実測し修正 2026-07-15）
   title: '需給調整市場 約定価格トラッカー（商品別・年次）',
   description:
-    '需給調整市場（調整力）の商品別・年次約定価格を業界中立で可視化。① 6商品 全体落札単価 ② 蓄電池の商品別落札単価（三次② FY2024=109.43 円/ΔkW・30分）③ 6商品 不足率。出典: EPRX（電力需給調整力取引所）。',
+    `需給調整市場（調整力）の商品別・年次約定価格を業界中立で可視化。① 6商品 全体落札単価 ② 蓄電池の商品別落札単価（三次② FY2024=${ter2Text(TER2_FY2024)} 円/ΔkW・30分）③ 6商品 不足率。出典: EPRX（電力需給調整力取引所）。`,
   alternates: { canonical: '/tracker/imbalance' },
   openGraph: {
     title: '需給調整市場 約定価格トラッカー | 蓄電所ネット',
-    description: 'EPRX 公表の調整力 約定価格（商品別・年次）を可視化。蓄電池三次② FY2024=109.43 円/ΔkW・30分。',
+    description: `EPRX 公表の調整力 約定価格（商品別・年次）を可視化。蓄電池三次② FY2024=${ter2Text(TER2_FY2024)} 円/ΔkW・30分。`,
     type: 'website',
     images: ['/og-image.png'],
   },
@@ -174,7 +184,10 @@ export default function BalancingTrackerPage() {
           </p>
           {updatedAt && (
             <p style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 16 }}>
-              データ更新: {updatedAt.slice(0, 10)} ／ 出典: 一般社団法人 電力需給調整力取引所 (EPRX)「調整力の取引結果まとめ」を加工
+              {/* ★Lc-2: 資料名を実在の名称に是正。EPRX の公表ページは「取引実績の取りまとめ結果」
+                  （https://www.eprx.or.jp/information/summary.php の <title>/<h1> で 2026-09-20 実測）。
+                  「調整力の取引結果まとめ」は当サイトの言い換えで、EPRX 側に存在しない名称だった。 */}
+              データ更新: {updatedAt.slice(0, 10)} ／ 出典: 一般社団法人 電力需給調整力取引所（EPRX）「取引実績の取りまとめ結果」を加工
             </p>
           )}
           <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 16, lineHeight: 1.7 }}>
@@ -182,6 +195,11 @@ export default function BalancingTrackerPage() {
             <a href={EPRX_LICENSE_URL} target="_blank" rel="noopener noreferrer">
               EPRX 利用規約
             </a>
+            <br />
+            {/* ★Lc-2 ■2: 「§4 が何を定めているか」（条文の説明）と「当サイトが非商用か」（自己判定・未確定）を分ける。
+                当サイトを非商用と名乗らない。照会の結果が出たら書き直す。 */}
+            EPRX 利用規約 §4 に従い、出典と加工した旨を明記しています。§4 は商用目的での利用に EPRX との事前契約を求めており、
+            当サイトの利用が該当するかは EPRX に照会中です。
           </p>
 
           {/* ─ L-EIC-018 重要注記 ─ */}
@@ -225,10 +243,12 @@ export default function BalancingTrackerPage() {
                 <a href={siteConfig.organization.url} target="_blank" rel="noopener noreferrer">
                   一般社団法人エネルギー情報センター
                 </a>
-                ／ 出典:
-                <a href="https://www.eprx.or.jp/information/summary.php" target="_blank" rel="noopener noreferrer" style={{ marginLeft: 4 }}>
-                  EPRX「調整力の取引結果まとめ」
+                ／ 出典:{' '}
+                {/* ★Lc-2 ■3: EPRX 利用規約 §3 によりリンクはトップ。資料名は地の文で残す。 */}
+                <a href={EPRX_TOP} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 4 }}>
+                  EPRX
                 </a>
+                「取引実績の取りまとめ結果」
               </li>
             </ul>
           </section>
@@ -361,7 +381,10 @@ function Section2Battery({ batterySeries }: { batterySeries: Record<Product, Cat
         </table>
       </div>
       <p style={{ fontSize: 15, marginTop: 8, color: 'var(--color-muted)' }}>
-        ※ 三次②（三次調整力②）FY2024=109.43 円 は他商品の 10〜15 倍水準。FY2025 通年は 19.31 円に低下（EPRX 2026年6月18日公表の通年確報。旧・上期暫定値 33.52 円から改訂）。
+        {/* ★Lc-2 ■4(b): 109.43 / 19.31 をカタログ参照に。
+            「旧・上期暫定値 33.52 円」だけは現カタログに存在しない歴史的値のため文字列のまま残す
+            （改訂前の値は再生成されない＝動的参照にできない。#123 の時点明示として残す）。 */}
+        ※ 三次②（三次調整力②）FY2024={ter2Text(TER2_FY2024)} 円 は他商品の 10〜15 倍水準。FY2025 通年は {ter2Text(TER2_FY2025)} 円に低下（EPRX 2026年6月18日公表の通年確報。旧・上期暫定値 33.52 円から改訂）。
         蓄電池の単価優位は小ボリューム・高値での約定構造を反映しています（L-EIC-018）。
       </p>
     </section>

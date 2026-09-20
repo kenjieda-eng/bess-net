@@ -24,6 +24,8 @@ import {
   deriveDisplayStatus,
 } from '@/lib/policy-utils';
 import { siteConfig } from '@/lib/site-config';
+// Lc-2 ■3: 出典リンクはソース別のリンク方針表を通す（JEPX・EPRX はトップのみ）
+import { normalizeSourceLinkHref } from '@/lib/eic-license';
 
 export const revalidate = 600;
 export const dynamicParams = false; // 対象9件以外は routing 層で 404（#100）
@@ -278,9 +280,20 @@ export default async function PolicyEventDetailPage({
             <h3>公式情報源</h3>
             {ev.sourceUrl ? (
               <p>
-                <a href={ev.sourceUrl} target="_blank" rel="noopener noreferrer">
-                  {ev.sourceUrl}
+                {/* ★Lc-2 ■3: JEPX・EPRX は条文で「リンクは原則トップページ」。microCMS の sourceUrl には
+                    出所の正確な所在（深い URL）を残したまま、表示するリンクだけ方針表を通して寄せる。
+                    href と表示テキストが食い違わないよう、テキストも正規化後の URL にする。 */}
+                <a href={normalizeSourceLinkHref(ev.sourceUrl)} target="_blank" rel="noopener noreferrer">
+                  {normalizeSourceLinkHref(ev.sourceUrl)}
                 </a>
+                {normalizeSourceLinkHref(ev.sourceUrl) !== ev.sourceUrl && (
+                  <>
+                    <br />
+                    <span className="page-meta" style={{ fontSize: 15 }}>
+                      （出所: {ev.issuer ?? '公表機関'}。リンク先は公表機関のリンク方針によりトップページです）
+                    </span>
+                  </>
+                )}
               </p>
             ) : (
               <p>出典URLは一覧ページをご参照ください。</p>

@@ -112,11 +112,22 @@ const tdStyle: React.CSSProperties = {
 
 // ─── コンポーネント ───────────────────────────────────────────────────────────
 
+/** 年度内の幅（月次の最小〜最大・約定月数）。Lc-2 ■4 */
+export type MonthlyRange = { min: number; max: number; awardedMonths: number };
+
 export function BalancingRevenueEstimator({
   pricesByFy,
+  rangesByFy,
   defaultFy = 'FY2024',
 }: {
   pricesByFy?: Record<FyKey, Record<ProductKey, number>>;
+  /**
+   * ★Lc-2 ■4: 単価は「年平均」なので、年度内の振れを併記しないと
+   *   「その水準が年間続く」と読まれる（三次② FY2024 は 9.81〜234.89＝24 倍）。
+   *   server page が src/data/eprx-monthly-battery.json から注入する。
+   *   カタログ年平均と突合が取れなかった商品は入ってこない（＝幅を出さずに縮退する）。
+   */
+  rangesByFy?: Record<FyKey, Partial<Record<ProductKey, MonthlyRange>>>;
   defaultFy?: FyKey;
 }) {
   const [selectedFy, setSelectedFy] = useState<FyKey>(defaultFy);
@@ -133,13 +144,15 @@ export function BalancingRevenueEstimator({
 
   const activeFyOption = FY_OPTIONS.find((o) => o.key === selectedFy)!;
 
+  const activeRanges: Partial<Record<ProductKey, MonthlyRange>> = rangesByFy?.[selectedFy] ?? {};
+
   const rows = PRODUCTS.filter(
     (p) => p.key !== 'composite' || includeComposite
   ).map((p) => {
     const price = activePrices[p.key] ?? 0;
     const rate = rates[p.key] ?? 0;
     const revenue = price * capacityKw * blocks * (rate / 100);
-    return { ...p, price, rate, revenue };
+    return { ...p, price, rate, revenue, range: activeRanges[p.key] };
   });
 
   const total = rows.reduce((s, r) => s + r.revenue, 0);
@@ -333,7 +346,7 @@ export function BalancingRevenueEstimator({
               <tr>
                 <th style={thStyle}>商品</th>
                 <th style={{ ...thStyle, textAlign: 'right' }}>
-                  単価（{activeFyOption.label}）
+                  単価（{activeFyOption.label}・年平均）
                 </th>
                 <th style={{ ...thStyle, textAlign: 'center' }}>落札率 [%]</th>
                 <th style={{ ...thStyle, textAlign: 'right' }}>期待年間収益</th>
@@ -376,6 +389,17 @@ export function BalancingRevenueEstimator({
                   <td style={{ ...tdStyle, textAlign: 'right', whiteSpace: 'nowrap' }}>
                     {r.price.toFixed(2)}{' '}
                     <span style={{ fontSize: 15, color: '#9ca3af' }}>円/ΔkW・30分</span>
+                    {/* ★Lc-2 ■4(e): 年平均と年度内の幅を必ず同じ視野に置く。
+                        平均だけだと「この水準が年間続く」と読まれる（三次② FY2024 は最小の 24 倍まで振れる）。 */}
+                    {r.range && (
+                      <>
+                        <br />
+                        <span style={{ fontSize: 15, color: '#6b7280' }}>
+                          月次 {r.range.min.toFixed(2)}〜{r.range.max.toFixed(2)}
+                          <span style={{ color: '#9ca3af' }}>・約定 {r.range.awardedMonths} か月</span>
+                        </span>
+                      </>
+                    )}
                   </td>
                   <td style={{ ...tdStyle, textAlign: 'center' }}>
                     <input

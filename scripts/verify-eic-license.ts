@@ -14,13 +14,44 @@
  *   軸2: license_url が既知の 404（src/lib/eic-license.ts の DEAD_LICENSE_URL_FIX の左辺）→ 警告
  *        表示側は normalizeLicenseUrl で正した URL を出すため読者影響は無いが、上流カタログの修正が要る合図
  *   軸3: license_url が無い系列 → 警告（リンクなしで license 名だけが出る）
+ *   軸4: ★表示系列を持つのに出典表記が無いルート → 警告（Lc-2 ■1(d)）
+ *        JEPX の著作権条項は「利用する場合は、出所を明示した上でご利用下さい」、OCCTO も「出典を記載してください」と
+ *        出所明示を利用の条件にしている。/industry が 9 系列から作った数値を出典表記ゼロで出していた（2026-09-20 実測）。
+ *        「系列を import しているのはページ、出所表記は子コンポーネント」という形があるので、
+ *        page.tsx 単体ではなく import をたどった到達ファイル群で判定する。
  *
  * 実行: npm run verify:eic-license（prebuild の末尾でも走る）
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { DEAD_LICENSE_URL_FIX } from '../src/lib/eic-license';
+import { DEAD_LICENSE_URL_FIX, normalizeSourceLinkHref } from '../src/lib/eic-license';
 export {};
+
+// ─── 軸0: リンク方針表そのものの自己テスト（Lc-2）─────────────────────────────
+// normalizeSourceLinkHref は「同じホストの深い URL をトップへ寄せる」関数だが、
+// 判定を `${u.origin}/ === top` と書くと**そのホストの全 URL が素通り**する。
+// 実際に一度埋め込み、/policy-calendar の生成 HTML に深い EPRX リンクが残って初めて気づいた。
+// 関数の振る舞いは build のたびに確かめる（表を増やすときの取り違えもここで止まる）。
+const LINK_POLICY_CASES: [string, string][] = [
+  ['https://www.eprx.or.jp/information/post.php', 'https://www.eprx.or.jp/'],
+  ['https://www.eprx.or.jp/information/summary.php', 'https://www.eprx.or.jp/'],
+  ['https://www.eprx.or.jp/', 'https://www.eprx.or.jp/'],
+  ['https://www.eprx.or.jp/terms/', 'https://www.eprx.or.jp/terms/'], // 利用条件ページは例外
+  ['https://www.jepx.jp/electricpower/market-data/spot/', 'https://www.jepx.jp/'],
+  ['https://www.jepx.jp/disclaimer/', 'https://www.jepx.jp/disclaimer/'], // 同上
+  ['https://www.jepx.jp/', 'https://www.jepx.jp/'],
+  ['https://www.occto.or.jp/market-board/market/', 'https://www.occto.or.jp/market-board/market/'], // deep-ok
+  ['https://www.meti.go.jp/press/whatever.html', 'https://www.meti.go.jp/press/whatever.html'], // 方針表に無いソースは触らない
+];
+const policyNg = LINK_POLICY_CASES.filter(([input, want]) => normalizeSourceLinkHref(input) !== want);
+if (policyNg.length === 0) {
+  console.log(`[verify:eic-license] ok   リンク方針表の自己テスト: ${LINK_POLICY_CASES.length} 件すべて期待どおり`);
+} else {
+  console.warn(`[verify:eic-license] ★WARN リンク方針表の自己テストが不一致: ${policyNg.length} 件`);
+  for (const [input, want] of policyNg) {
+    console.warn(`   - ${input}\n       → ${normalizeSourceLinkHref(input)}（期待: ${want}）`);
+  }
+}
 
 const ROOT = process.cwd();
 const SRC = path.join(ROOT, 'src');
@@ -101,6 +132,112 @@ warn('license_notice が空', emptyNotice);
 warn('license_url が既知の 404（上流カタログの修正待ち・表示は正規化済み）', deadUrl);
 warn('license_url が無い', noUrl);
 warn('カタログに JSON が無い（prebuild 前・または id の綴り違い）', missingFile);
+
+// ─── 軸4: 表示系列を持つのに出典表記が無いルート（Lc-2 ■1(d)）─────────────────
+
+/** import 文から、同じリポジトリ内のファイルへの参照だけを取り出す */
+function localImportsOf(file: string): string[] {
+  const text = fs.readFileSync(file, 'utf8');
+  const out: string[] = [];
+  for (const m of text.matchAll(/from\s+['"]([^'"]+)['"]/g)) {
+    const spec = m[1];
+    let base: string | null = null;
+    if (spec.startsWith('@/')) base = path.join(SRC, spec.slice(2));
+    else if (spec.startsWith('./') || spec.startsWith('../')) base = path.resolve(path.dirname(file), spec);
+    if (!base) continue;
+    for (const ext of ['.tsx', '.ts', '/index.tsx', '/index.ts']) {
+      const p = base + ext;
+      if (fs.existsSync(p) && fs.statSync(p).isFile()) {
+        out.push(p);
+        break;
+      }
+    }
+  }
+  return out;
+}
+
+/** page.tsx から import を辿って到達するファイル群（深さ制限つき・循環対策あり） */
+function reachableFrom(entry: string, maxDepth = 3): string[] {
+  const seen = new Set<string>([entry]);
+  let frontier = [entry];
+  for (let d = 0; d < maxDepth; d++) {
+    const next: string[] = [];
+    for (const f of frontier) {
+      for (const dep of localImportsOf(f)) {
+        if (seen.has(dep)) continue;
+        seen.add(dep);
+        next.push(dep);
+      }
+    }
+    frontier = next;
+    if (frontier.length === 0) break;
+  }
+  return [...seen];
+}
+
+/**
+ * 出典表記とみなす語。
+ * ★「EIC Data」「data.eic-jp.org」を判定語に入れてはいけない。
+ *   /industry には教材への送客リンク「制度の仕組み（EIC Data 教材）」があり、共通フッタにも
+ *   グループサイトへのリンクがある。これらを出典表記と数えると、実際に出典ゼロだった /industry が
+ *   素通りする（＝この検査が何も検出できない）。2026-09-20 に実際に素通りすることを確認して締めた。
+ * ★共通フッタと src/lib も判定対象から外す。
+ *   フッタは全ページに出るのでページ固有の表記にならない。src/lib は出典表記の「語彙そのもの」
+ *   （eic-license.ts の既定文など）を持つため、import しただけで合格になってしまう。
+ */
+const ATTRIBUTION_WORDS = ['出典', '出所', 'データ提供'];
+const FOOTER_FILE = path.join(SRC, 'components', 'SiteFooter.tsx');
+const ATTRIBUTION_SCAN_DIRS = [path.join(SRC, 'app'), path.join(SRC, 'components')];
+
+const APP_DIR = path.join(SRC, 'app');
+const pageFiles: string[] = [];
+(function collectPages(dir: string) {
+  if (!fs.existsSync(dir)) return;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) collectPages(p);
+    else if (e.name === 'page.tsx') pageFiles.push(p);
+  }
+})(APP_DIR);
+
+const routesMissingAttribution: string[] = [];
+for (const page of pageFiles) {
+  const files = reachableFrom(page).filter((f) => f !== FOOTER_FILE);
+  let seriesCount = 0;
+  let hasAttribution = false;
+  for (const f of files) {
+    const text = fs.readFileSync(f, 'utf8');
+    for (const m of text.matchAll(/@\/data\/eic\/([a-z0-9-]+)\.json/g)) {
+      if (!NOT_A_SERIES.has(m[1])) seriesCount++;
+    }
+    // コメントは出典表記として数えない。
+    // ★行頭が // や * かどうかで判定してはいけない。JSX の {/* … */} は継続行が日本語で始まるため
+    //   行単位のフィルタをすり抜け、「出所表記が無い」と書いた説明コメント自体で合格してしまう
+    //   （2026-09-20 の否定テストで実際にすり抜けた）。ブロックコメントごと除去する。
+    if (ATTRIBUTION_SCAN_DIRS.some((d) => f.startsWith(d))) {
+      const visible = text.replace(/\/\*[\s\S]*?\*\//g, ' ').replace(/^\s*\/\/.*$/gm, ' ');
+      if (ATTRIBUTION_WORDS.some((w) => visible.includes(w))) hasAttribution = true;
+    }
+  }
+  if (seriesCount > 0 && !hasAttribution) {
+    const route = '/' + path.relative(APP_DIR, path.dirname(page)).replace(/\\/g, '/');
+    routesMissingAttribution.push(`${route}（系列 ${seriesCount} ・${path.relative(ROOT, page).replace(/\\/g, '/')}）`);
+  }
+}
+
+// 軸4 の要素はルート名であって系列 id ではないので、warn() の「参照:」補記は付けない
+if (routesMissingAttribution.length === 0) {
+  console.log('[verify:eic-license] ok   表示系列を持つのに出典表記が無いルート: 0 件');
+} else {
+  console.warn(
+    `[verify:eic-license] WARN 表示系列を持つのに出典表記が無いルート（JEPX/OCCTO は出所明示が利用の条件）: ${routesMissingAttribution.length} 件`,
+  );
+  for (const r of routesMissingAttribution) console.warn(`   - ${r}`);
+}
+console.log(
+  `[verify:eic-license] 注記: 動的ロード（getIndicatorsByIdPrefix / getSeriesMany）の系列は静的 import ではないため軸4 の系列数に含まれない。` +
+    ` /market/jepx・/dashboard/market が該当（いずれも出典表記あり・2026-09-20 実測）。`,
+);
 
 console.log('[verify:eic-license] 警告のみ・ビルドは止めない（exit 0）');
 process.exit(0);

@@ -12,6 +12,8 @@ import {
   deriveDisplayStatus,
   POLICY_DETAIL_SLUG_SET,
 } from '@/lib/policy-utils';
+// Lc-2 ■3: 出典リンクはソース別のリンク方針表を通す（JEPX・EPRX はトップのみ）
+import { normalizeSourceLinkHref } from '@/lib/eic-license';
 
 function groupByYearMonth(items: PolicyEvent[]): Array<{ ym: string; items: PolicyEvent[] }> {
   const groups: Record<string, PolicyEvent[]> = {};
@@ -243,7 +245,7 @@ export default function PolicyCalendarClient({ items }: { items: PolicyEvent[] }
                     )}
                     {it.sourceUrl && (
                       <a
-                        href={it.sourceUrl}
+                        href={normalizeSourceLinkHref(it.sourceUrl)}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ fontSize: 15, color: 'var(--color-accent, #0066cc)' }}

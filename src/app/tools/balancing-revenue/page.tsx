@@ -44,7 +44,27 @@ import { siteConfig } from '@/lib/site-config';
 import { BALANCING_BATTERY_FALLBACK, BALANCING_FY_DATE } from '@/lib/balancing-fallback';
 
 // Lc-1(2026-09-20): ライセンス表記の逐語表示と、カタログに残る 404 license_url の正規化
-import { licenseNoticeLines, normalizeLicenseUrl } from '@/lib/eic-license';
+import { licenseNoticeLines, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
+// Lc-2 ■4: 年度内の幅（月次 min〜max）。カタログは年平均しか持たないため EPRX 年次 PDF からの転記を使う
+import { getVerifiedMonthlyStats, getMonthlyStats, pdfFileNameOf } from '@/lib/eprx-monthly';
+
+/**
+ * 幅の転記元を出典欄に書くための文字列（Lc-2 ■4(d)）。
+ * ファイル名とページ番号をデータ側から組み立てるので、年度を足しても書き換え漏れが起きない。
+ */
+const MONTHLY_PDF_SOURCE = (['FY2024', 'FY2025'] as const)
+  .map((fy) => {
+    const file = pdfFileNameOf(fy);
+    if (!file) return null;
+    const pages = [...new Set(
+      (['primary', 'secondary-1', 'secondary-2', 'tertiary-1', 'tertiary-2', 'composite'] as const)
+        .map((p) => getMonthlyStats(fy, p)?.pdfPage)
+        .filter((n): n is number => typeof n === 'number'),
+    )].sort((a, b) => a - b);
+    return `${fy} は ${file} の p${pages.join('・p')}`;
+  })
+  .filter((s): s is string => s !== null)
+  .join(' ／ ');
 
 // ─── catalog JSON 直読み（server only） ────────────────────────────────────────
 // battery (6 系列)
@@ -160,6 +180,25 @@ export default function BalancingRevenuePage() {
       if (v !== null) pricesByFy[fyKey][key] = v;
     }
   }
+
+  // ─── Lc-2 ■4: 年度内の幅（月次の最小〜最大）────────────────────────────────
+  // 年平均だけを出すと「その水準が年間続く」と読まれる。三次②は FY2024 で 9.81〜234.89（24 倍）動く。
+  // 月次はカタログに無い（frequency: annual）ため、EPRX 年次 PDF からの転記（src/data/eprx-monthly-battery.json）を使う。
+  // ★getVerifiedMonthlyStats は「月次平均（丸め）＝表示中の年平均」が成り立つときだけ値を返す。
+  //   出所の違う 2 つの数値を並べるので、ずれたら幅を出さずに縮退する（scripts/verify-eprx-monthly.ts が build で警告）。
+  const rangesByFy: Record<FyKey, Partial<Record<ProductKey, { min: number; max: number; awardedMonths: number }>>> = {
+    FY2024: {},
+    FY2025: {},
+  };
+  for (const fyKey of ['FY2024', 'FY2025'] as FyKey[]) {
+    for (const { key } of productSources) {
+      const stats = getVerifiedMonthlyStats(fyKey, key, pricesByFy[fyKey][key]);
+      if (stats) {
+        rangesByFy[fyKey][key] = { min: stats.min, max: stats.max, awardedMonths: stats.awardedMonths };
+      }
+    }
+  }
+  const tertiary2Fy2024 = rangesByFy.FY2024['tertiary-2'];
 
   // ─── pricesBySourceFy（電源種別比較用） ────────────────────────────────────
   type SourceSeries = { product: CompProduct; data: CatalogData }[];
@@ -316,6 +355,7 @@ export default function BalancingRevenuePage() {
           >
             <BalancingRevenueEstimator
               pricesByFy={pricesByFy}
+              rangesByFy={rangesByFy}
               defaultFy="FY2024"
             />
           </div>
@@ -369,7 +409,14 @@ export default function BalancingRevenuePage() {
               padding: '20px 20px',
             }}>
               <p style={{ fontSize: 15, lineHeight: 1.8, margin: '0 0 12px' }}>
-                需給調整 三次②で蓄電池が約定する単価（FY2024 実績 109.43 円/ΔkW・30分）に対し、
+                {/* ★Lc-2 ■4(b): 109.43 を本文に焼き込んでいた（CLAUDE.md「数値は焼き込まず動的参照」違反）。
+                    カタログ参照に変え、同時に年度内の幅を併記する（■4(e) 年平均と幅を同じ視野に）。 */}
+                需給調整 三次②で蓄電池が約定する単価（FY2024 年平均{' '}
+                {pricesByFy.FY2024['tertiary-2'].toFixed(2)} 円/ΔkW・30分
+                {tertiary2Fy2024
+                  ? `、月次では ${tertiary2Fy2024.min.toFixed(2)}〜${tertiary2Fy2024.max.toFixed(2)}・約定 ${tertiary2Fy2024.awardedMonths} か月`
+                  : ''}
+                ）に対し、
                 蓄電池の設備コストが下がるほど IRR は上振れします。系統用蓄電池のCAPEXは
                 <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL ATB 2024版</a>で
                 約 ¥83,000/kWh（米国前提・4時間構成・USD/JPY 158.34）。
@@ -400,16 +447,23 @@ export default function BalancingRevenuePage() {
           >
             <strong style={{ color: '#374151', fontSize: 15 }}>出典・免責</strong>
             <br />
+            {/* ★Lc-2 ■3: EPRX 利用規約 §3「本サイトへのリンクは原則としてトップページ…」に従い、
+                リンク先はトップ・出所（資料名）は地の文で明示する。JEPX と同じ扱い（src/lib/eic-license.ts の方針表）。 */}
             ・単価データ出典:{' '}
             <a
-              href="https://www.eprx.or.jp/information/summary.php"
+              href={EPRX_TOP}
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'var(--color-accent)' }}
             >
-              一般社団法人 電力需給調整力取引所（EPRX）「取引実績の取りまとめ結果」
+              一般社団法人 電力需給調整力取引所（EPRX）
             </a>
-            より転記・編集（加工した旨を明記）。EPRX 利用規約 §4 に従い出典明示で利用。
+            「取引実績の取りまとめ結果」より転記・編集。
+            <br />
+            {/* ★Lc-2 ■2: 「§4 が何を定めているか」（条文の説明・正しい）と
+                「当サイトが非商用か」（自己判定・未確定）を分けて書く。当サイトを非商用と名乗らない。 */}
+            ・EPRX 利用規約 §4 に従い、出典と加工した旨を明記しています。§4 は商用目的での利用に EPRX との事前契約を求めており、
+            当サイトの利用が該当するかは EPRX に照会中です。
             <br />
             ・ライセンス表記（EIC カタログ license_notice の逐語）:「{EPRX_SOURCE_LINE}」 ／ 規約:{' '}
             <a
@@ -420,6 +474,15 @@ export default function BalancingRevenuePage() {
             >
               EPRX 利用規約
             </a>
+            <br />
+            {/* ★Lc-2 ■4(d): 幅は年平均と出所が違う（カタログではなく PDF からの転記）。
+                読者にも依頼者にも、どの資料の何ページから来た数値かが分かる形にする。 */}
+            ・上表の「月次 …〜…」は年度内の幅で、出所は{' '}
+            <a href={EPRX_TOP} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>
+              EPRX
+            </a>
+            「取引実績の取りまとめ結果」の年次 PDF（{MONTHLY_PDF_SOURCE}）です。未約定の月は幅に含めません（「約定 N か月」がその月数）。
+            月次の単純平均が上の年平均と一致することを毎ビルド検査しています（一致しない場合は幅を表示しません）。
             <br />
             ・FY2024・FY2025 とも通年の確定値です（FY2024 は EPRX 2025年3月公表、FY2025 は EPRX 2026年6月18日公表の通年確報で旧・上期暫定値から改訂）。FY2025 は水力と揚水が EPRX 側で合算公表に変わったため、電源種別比較の FY2025 は「水力・揚水（合算）」の1行で表示しています。
             <br />

@@ -162,10 +162,15 @@ export function BalancingSourceComparison({
   const maxVal = maxPrice(data, selectedFy);
 
   // 三次② FY2024 の代表値（callout 用）
-  const t2b  = FALLBACK.battery.FY2024['三次②']!;
-  const t2v  = FALLBACK.vpp.FY2024['三次②']!;
-  const t2th = FALLBACK.thermal.FY2024['三次②']!;
-  const t2p  = FALLBACK.pumped.FY2024['三次②']!;
+  // ★Lc-2 ■4(b): ここは props（catalog 実データ）ではなく FALLBACK 定数を直接読んでいた。
+  //   表本体は data（＝props 優先）で描画しているのに callout と注記だけ保険値を出す二重管理になっており、
+  //   カタログが改訂されても callout の数字が変わらない。props → 保険値の順で解決するよう是正する。
+  const pick = (src: CompSource): number =>
+    (getPrice(data, src, 'FY2024', '三次②') ?? FALLBACK[src].FY2024['三次②']) as number;
+  const t2b  = pick('battery');
+  const t2v  = pick('vpp');
+  const t2th = pick('thermal');
+  const t2p  = pick('pumped');
 
   return (
     <div className="space-y-6">
@@ -448,7 +453,9 @@ export function BalancingSourceComparison({
         </strong>
         <br />
         VPP は蓄電池・EV・ヒートポンプ等の分散リソースを束ね、需給調整市場に参加します。
-        三次②で蓄電池（109.43 円）に次ぐ 46.24 円（FY2024）を記録しており、
+        {/* ★Lc-2 ■4(b): 109.43 / 46.24 を注記に焼き込んでいた（表本体は props の実データで描画しているのに
+            注記だけ固定値＝同じ意味の値の二重管理・#121）。同じ props から読む。 */}
+        三次②で蓄電池（{t2b.toFixed(2)} 円）に次ぐ {t2v.toFixed(2)} 円（FY2024）を記録しており、
         <strong>次世代アグリゲーターとして運用収益と資産価値の両立</strong>を狙う電源種別です。
         一次・二次①② は約定月数が少なく参考値。落札量は EPRX 非公開（図のみ）のため、不足率を落札しやすさの代理として併用。
       </section>
