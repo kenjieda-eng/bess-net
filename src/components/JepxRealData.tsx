@@ -98,7 +98,7 @@ export default function JepxRealData({ series }: Props) {
       <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12, lineHeight: 1.6 }}>
         出典: <a href="https://data.eic-jp.org/catalog?domain=power" target="_blank" rel="noopener noreferrer">EIC Data (data.eic-jp.org)</a>
         、原データは日本卸電力取引所 (JEPX) 公表値、
-        <a href="https://www.jepx.jp/electricpower/index.html" target="_blank" rel="noopener noreferrer">jepx-terms</a> 準拠。
+        <a href="https://www.jepx.jp/disclaimer/" target="_blank" rel="noopener noreferrer">jepx-terms</a> 準拠。
       </p>
 
       <div style={{ overflowX: 'auto' }}>

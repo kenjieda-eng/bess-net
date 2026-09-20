@@ -177,7 +177,7 @@ export default function JEPXDashboard() {
 
       <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 16, lineHeight: 1.6 }}>
         ※ 本データは JEPX 公表値ベースの<strong>モック</strong>です (編集部生成、決定論的)。
-        最新の実勢値は <a href="https://www.jepx.jp/electricpower/market-data/spot/" target="_blank" rel="noopener noreferrer">JEPX 公式</a> を参照。
+        最新の実勢値は <a href="https://www.jepx.jp/" target="_blank" rel="noopener noreferrer">JEPX 公式サイト</a>（出典: JEPX「スポット市場取引結果」）を参照。
       </p>
     </div>
   );

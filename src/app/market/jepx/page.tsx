@@ -64,7 +64,7 @@ export default async function JEPXHubPage() {
       name: '日本卸電力取引所 (JEPX)',
       url: 'https://www.jepx.jp/',
     },
-    license: 'https://www.jepx.jp/electricpower/index.html',
+    license: 'https://www.jepx.jp/disclaimer/',
     keywords: ['JEPX', 'スポット価格', '電力市場', 'アービトラージ', '蓄電池'],
     temporalCoverage: `2012-04-01/${latestUpdate}`,
     isAccessibleForFree: true,
@@ -121,8 +121,8 @@ export default async function JEPXHubPage() {
             <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 16, lineHeight: 1.7 }}>
               ※ 以下は <strong>30 分単位の構造に基づくデモデータ</strong>です (実データは上の表、現在 JEPX の 30 分単位データは EIC Data でも整備中)。
               ヒートマップとアービトラージ計算機の UX 確認用にお使いください。実値は上の表または{' '}
-              <a href="https://www.jepx.jp/electricpower/market-data/spot/" target="_blank" rel="noopener noreferrer">JEPX 公式</a>
-              {' '}を参照。
+              <a href="https://www.jepx.jp/" target="_blank" rel="noopener noreferrer">JEPX 公式サイト</a>
+              {'（出典: JEPX「スポット市場取引結果」）を参照。'}
             </p>
           </section>
           <JEPXDashboard />

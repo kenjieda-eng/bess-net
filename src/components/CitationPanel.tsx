@@ -13,6 +13,8 @@
 import { useState } from 'react';
 import type { Indicator } from '@/types/eic';
 import { formatCitation } from '@/lib/cite-helpers';
+// Lc-1(2026-09-20): カタログの license_url に 404 が残っている（OCCTO 63・JEPX 16 系列）。表示の直前で正す
+import { normalizeLicenseUrl } from '@/lib/eic-license';
 
 interface CitationPanelProps {
   indicator: Indicator;
@@ -183,7 +185,7 @@ export default function CitationPanel({ indicator, csvUrl, catalogUrl }: Citatio
           <strong style={{ color: '#475569' }}>ライセンス:</strong>{' '}
           {indicator.license_url ? (
             <a
-              href={indicator.license_url}
+              href={normalizeLicenseUrl(indicator.license_url)}
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'var(--color-accent, #0066cc)', textDecoration: 'underline' }}

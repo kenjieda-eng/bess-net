@@ -43,6 +43,9 @@ import {
 import { siteConfig } from '@/lib/site-config';
 import { BALANCING_BATTERY_FALLBACK, BALANCING_FY_DATE } from '@/lib/balancing-fallback';
 
+// Lc-1(2026-09-20): ライセンス表記の逐語表示と、カタログに残る 404 license_url の正規化
+import { licenseNoticeLines, normalizeLicenseUrl } from '@/lib/eic-license';
+
 // ─── catalog JSON 直読み（server only） ────────────────────────────────────────
 // battery (6 系列)
 import primaryBatteryData    from '@/data/eic/balancing-price-primary-battery.json';
@@ -100,6 +103,16 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
 };
+
+// ─── Lc-1 ■4: ライセンス表記は逐語で出す（要約しない・2026-09-20） ─────────────
+// 表示中の EPRX 系列 46 本は license_notice が全て同一・空は 0 本（実測）。代表として 1 本から読む。
+// ★license_notice の 2 行目「EPRX 利用規約 §4 に従い、非商用・出典明示で利用可。…商用利用は事前契約…」は
+//   EPRX 条文に無い当社データ基盤側の判断で、EDAさんが EPRX へ照会中（Lc-1 ■1）。判定が返るまで表示しない。
+//   → 逐語で出すのは出典行のみ。照会結果が出たら上流カタログを直し、ここで全行を出す。
+const EPRX_META = primaryBatteryData.meta as unknown as { license_notice?: string; license_url?: string };
+const EPRX_NOTICE_LINES = licenseNoticeLines(EPRX_META.license_notice);
+const EPRX_SOURCE_LINE = EPRX_NOTICE_LINES[0] ?? '';
+const EPRX_LICENSE_URL = normalizeLicenseUrl(EPRX_META.license_url) ?? 'https://www.eprx.or.jp/terms/';
 
 // ─── catalog helpers ──────────────────────────────────────────────────────────
 
@@ -396,7 +409,17 @@ export default function BalancingRevenuePage() {
             >
               一般社団法人 電力需給調整力取引所（EPRX）「取引実績の取りまとめ結果」
             </a>
-            より転記・編集（加工した旨を明記）。EPRX 利用規約 §4 に従い非商用・出典明示で利用。
+            より転記・編集（加工した旨を明記）。EPRX 利用規約 §4 に従い出典明示で利用。
+            <br />
+            ・ライセンス表記（EIC カタログ license_notice の逐語）:「{EPRX_SOURCE_LINE}」 ／ 規約:{' '}
+            <a
+              href={EPRX_LICENSE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'var(--color-accent)' }}
+            >
+              EPRX 利用規約
+            </a>
             <br />
             ・FY2024・FY2025 とも通年の確定値です（FY2024 は EPRX 2025年3月公表、FY2025 は EPRX 2026年6月18日公表の通年確報で旧・上期暫定値から改訂）。FY2025 は水力と揚水が EPRX 側で合算公表に変わったため、電源種別比較の FY2025 は「水力・揚水（合算）」の1行で表示しています。
             <br />

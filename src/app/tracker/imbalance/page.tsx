@@ -28,6 +28,9 @@ import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 86400;
 
+// Lc-1(2026-09-20): ライセンス表記の逐語表示と、カタログに残る 404 license_url の正規化
+import { licenseNoticeLines, normalizeLicenseUrl } from '@/lib/eic-license';
+
 // ─── catalog JSON 直読み（18 系列） ────────────────────────────────────────────
 // ① 全体 落札単価 (6)
 import priceOverallPrimary    from '@/data/eic/balancing-price-primary.json';
@@ -64,6 +67,14 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
 };
+
+// ─── Lc-1 ■4: ライセンス表記は逐語で出す（要約しない・2026-09-20） ─────────────
+// 表示中の EPRX 系列 18 本は license_notice が全て同一・空は 0 本（実測）。代表として 1 本から読む。
+// ★2 行目「…非商用・出典明示で利用可。…商用利用は事前契約…」は EPRX 条文に無い当社データ基盤側の判断で
+//   EPRX へ照会中（Lc-1 ■1）。判定が返るまで表示しない＝逐語で出すのは出典行のみ。
+const EPRX_META = priceOverallPrimary.meta as unknown as { license_notice?: string; license_url?: string };
+const EPRX_SOURCE_LINE = licenseNoticeLines(EPRX_META.license_notice)[0] ?? '';
+const EPRX_LICENSE_URL = normalizeLicenseUrl(EPRX_META.license_url) ?? 'https://www.eprx.or.jp/terms/';
 
 // ─── 型定義 ────────────────────────────────────────────────────────────────────
 type DataPoint = { date: string; value: number | null };
@@ -166,6 +177,12 @@ export default function BalancingTrackerPage() {
               データ更新: {updatedAt.slice(0, 10)} ／ 出典: 一般社団法人 電力需給調整力取引所 (EPRX)「調整力の取引結果まとめ」を加工
             </p>
           )}
+          <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 16, lineHeight: 1.7 }}>
+            ライセンス表記（EIC カタログ license_notice の逐語）:「{EPRX_SOURCE_LINE}」 ／ 規約:{' '}
+            <a href={EPRX_LICENSE_URL} target="_blank" rel="noopener noreferrer">
+              EPRX 利用規約
+            </a>
+          </p>
 
           {/* ─ L-EIC-018 重要注記 ─ */}
           <section style={{ padding: 14, marginBottom: 24, background: 'rgba(0,102,204,0.06)', border: '1px solid var(--color-accent)', borderRadius: 6 }}>
