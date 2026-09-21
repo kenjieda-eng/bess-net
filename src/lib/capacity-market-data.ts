@@ -1,63 +1,27 @@
 /**
  * src/lib/capacity-market-data.ts
  *
- * 容量市場データソース 抽象化レイヤー (依頼AT)
+ * 容量市場データの参照口（依頼AT → Nv-0b ■2 で実データ専用に整理・2026-09-21）
  *
- * AT (モック版): src/data/capacity-market-history.ts 静的 import
- * AU (5/29 公開) 後: microCMS の事前計算 JSON 経由に切替 (鉄則 #2 #3 遵守)
- *
- * インターフェイス安定性:
- *   getHistory() / getForecast() のシグネチャは固定。
- *   AU 切替時は本ファイルの実装のみ差し替え (UI/lib 側は変更なし)。
+ * ★モックを参照ゼロにした
+ *   以前はここが src/data/capacity-market-history.ts（モック）の唯一の入口で、
+ *   getHistory / filterHistory / getForecast2026 / getDataSourceLabel がモックを返していた。
+ *   実データ（EIC カタログ＝OCCTO 公表値）は /tools/capacity-market-bid の page.tsx が
+ *   buildLiveHistory() で組み立てて props で渡しており、モックはカタログが欠けたときの fallback にだけ使われていた。
+ *   そのモックは「AM/AO で 2025 標準 8,000 円採用と整合」（history.ts:80）と書かれ、既定値に合わせて作られ、
+ *   しかも本文（「東京 8,500→8,000」）の出典にまでなっていた（循環）。
+ *   → fallback は「数値を出さない」に変え、モックへの参照をすべて外した。
+ *     モックのファイル自体の削除は次便（rm を伴うため）。
  */
 
-import {
-  HISTORY,
-  FORECAST_2026,
-  DATA_SOURCE_LABEL,
-  type CapacityMarketRecord,
-  type Area,
-  type Category,
-} from '@/data/capacity-market-history';
+import type { Area, CapacityMarketRecord } from './capacity-market-types';
 
-export type { CapacityMarketRecord, Area, Category };
-export { AREA_LABELS, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS } from '@/data/capacity-market-history';
-
-/** バージョンマーカー: 'mock' (AT) → 'live' (AU 連携後) */
-export const DATA_VERSION: 'mock' | 'live' = 'mock';
+export type { Area, CapacityMarketRecord };
+export { AREA_LABELS } from './capacity-market-types';
 
 /**
- * 過去約定価格データ取得 (全件)
- * 9 エリア × 3 区分 × 2 年度 = 54 件
- */
-export function getHistory(): CapacityMarketRecord[] {
-  return HISTORY;
-}
-
-/** 2026年度予測値 取得 */
-export function getForecast2026(): typeof FORECAST_2026 {
-  return FORECAST_2026;
-}
-
-/** データソース表記 */
-export function getDataSourceLabel(): string {
-  return DATA_SOURCE_LABEL;
-}
-
-/**
- * エリア × 区分 で履歴をフィルタ（モックフォールバック用）
- */
-export function filterHistory(
-  area: Area,
-  category: Category
-): CapacityMarketRecord[] {
-  return HISTORY.filter((r) => r.area === area && r.category === category);
-}
-
-/**
- * エリアのみでフィルタ（区分非依存、live data 用）
- * OCCTO メインオークション約定価格は区分非依存
- * → 同一エリアでは新設/既設/経過措置で同価格
+ * エリアのみでフィルタ（区分非依存）
+ * OCCTO メインオークションの約定価格はエリア単位で決まり、区分（新設/既設/経過措置）によって変わらない。
  */
 export function filterHistoryByArea(
   records: CapacityMarketRecord[],

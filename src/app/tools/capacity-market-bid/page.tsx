@@ -11,7 +11,7 @@
  *   - 年度レンジ・年度数・件数・エリア数は catalog coverage / 系列データから導出（Cm1・焼き込みなし）
  *   - 区分非依存を正しく反映（OCCTO 約定価格は新設/既設/経過措置で同価格）
  *   - Server Component で liveHistory 構築 → props 注入（鉄則 #2）
- *   - フォールバック: precompute 欠落時はモック + バナー
+ *   - フォールバック: precompute 欠落時は「データ未取得」とだけ表示し、数値は出さない（Nv-0b ■2 でモックを撤去）
  *   - L-EIC-005/008§9/011 準拠
  */
 
@@ -21,6 +21,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import CapacityMarketBidEstimator from '@/components/CapacityMarketBidEstimator';
 import { siteConfig } from '@/lib/site-config';
+// Nv-0b ■2: 型はモックでなく capacity-market-types（区分欄を持たない）から取る
 import type { Area, CapacityMarketRecord } from '@/lib/capacity-market-data';
 import {
   summarizeAreaSeries,
@@ -107,6 +108,30 @@ const VOLUME_BY_AREA: Record<Area, EicJson> = {
 
 const LIVE_AREAS: Area[] = ['hokkaido','tohoku','tokyo','chubu','hokuriku','kansai','chugoku','shikoku','kyushu'];
 
+// ─── Nv-0b ■4(a): 「対象実需給年度 2025 年度の特徴」の数値はカタログから導出する ─────────────
+// 旧本文「既設価格が前年比 25-30% 下落 (東京 8,500→8,000 円/kW/年 等)」は、値も指標も一次に無かった。
+//   ・値: カタログ（OCCTO 公表値）の東京は 14,137 → 3,495（-75.3%）。8,500 も 8,000 も存在しない
+//   ・指標: OCCTO の約定結果は区分列を持たない（約定価格はエリア単位・区分非依存）。「既設価格」という値は無い
+//   ・出所: src/data/capacity-market-history.ts のモック。同 :80 が「AM/AO で 2025 標準 8,000 円採用と整合」と
+//     書いており、既定値に合わせて作ったモックを出典にしていた（循環）
+// 同じページが実データを表示しているのに本文だけ食い違っていたので、実データから数値を出す。
+const TOKYO_FY2024 = valueAtDate(PRICE_BY_AREA.tokyo, '2024-04-01');
+const TOKYO_FY2025 = valueAtDate(PRICE_BY_AREA.tokyo, '2025-04-01');
+const TOKYO_CHANGE_PCT =
+  TOKYO_FY2024 !== null && TOKYO_FY2025 !== null && TOKYO_FY2024 !== 0
+    ? ((TOKYO_FY2025 - TOKYO_FY2024) / TOKYO_FY2024) * 100
+    : null;
+const FY2024_BY_AREA = LIVE_AREAS.map((a) => valueAtDate(PRICE_BY_AREA[a], '2024-04-01'));
+/** 対象実需給年度 2024 年度が全エリア同額で約定したか（事実として書くだけで、理由は推測しない） */
+const FY2024_UNIFORM =
+  FY2024_BY_AREA.length > 0 && FY2024_BY_AREA.every((v) => v !== null && v === FY2024_BY_AREA[0]);
+const FY2025_BY_AREA = LIVE_AREAS.map((a) => valueAtDate(PRICE_BY_AREA[a], '2025-04-01')).filter(
+  (v): v is number => v !== null,
+);
+const FY2025_MIN = FY2025_BY_AREA.length ? Math.min(...FY2025_BY_AREA) : null;
+const FY2025_MAX = FY2025_BY_AREA.length ? Math.max(...FY2025_BY_AREA) : null;
+const yen = (v: number | null) => (v === null ? '—' : v.toLocaleString('ja-JP'));
+
 /** 実データ CapacityMarketRecord[] を構築（フォールバック: 空配列） */
 function buildLiveHistory(): CapacityMarketRecord[] {
   const records: CapacityMarketRecord[] = [];
@@ -122,7 +147,6 @@ function buildLiveHistory(): CapacityMarketRecord[] {
         records.push({
           fiscal_year: fy,
           area,
-          category: 'existing', // OCCTO 約定価格は区分非依存、ダミー値
           clearing_price_yen_per_kw_year: price,
           cleared_capacity_mw: volumeKw / 1000, // kW → MW
         });
@@ -236,7 +260,7 @@ export default function CapacityMarketBidPage() {
             {isLive
               ? <>データ出典: <strong>data.eic-jp.org 容量市場メインオークション約定価格（OCCTO 公表値ベース、{rangeLabel}）</strong>。
                 <strong>OCCTO 約定価格は区分非依存</strong>（同一エリアでは新設/既設/経過措置で同価格）を正しく反映。</>
-              : <>⚠️ precompute データ未生成のためモック表示中。<code>npm run precompute-eic-data</code> を実行後に再ビルドしてください。</>
+              : <>⚠️ 約定結果データが未生成のため試算を表示していません（推測値で埋めていません）。<code>npm run precompute-eic-data</code> を実行後に再ビルドしてください。</>
             }
           </p>
 
@@ -308,14 +332,29 @@ export default function CapacityMarketBidPage() {
               </dd>
               <dt style={{ fontWeight: 700, marginTop: 8 }}>区分</dt>
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
-                <strong>新設電源</strong>: 4 年後新規運開予定の電源。価格は既設より高め。<br />
+                {/* ★Nv-0b ■4(b): 「新設は価格が既設より高め」を削除。約定価格は区分非依存で、一次は区分別の約定価格を公表していない。 */}
+                <strong>新設電源</strong>: 4 年後新規運開予定の電源。<br />
                 <strong>既設電源</strong>: 運転中の電源。容量市場の主流、毎年応札。<br />
-                <strong>経過措置電源</strong>: 制度導入時の暫定区分、~2028 年度に新設・既設へ統合予定。
+                <strong>経過措置電源</strong>: 制度導入時の暫定区分、~2028 年度に新設・既設へ統合予定。<br />
+                ※ 約定価格はエリア単位で決まり、区分によって変わりません。一次（OCCTO「容量市場メインオークション約定結果」）は区分別の約定価格を公表していません。
               </dd>
-              <dt style={{ fontWeight: 700, marginTop: 8 }}>2025 年度の特徴</dt>
+              {/* ★Nv-0b ■4(a)・■3(c): 数値を同じページの実データ（OCCTO 公表値）に合わせ、年度が「対象実需給年度」であることを明記。
+                  旧本文の「電源充実化と上限価格 (ネット CONE) 引き下げの影響」は、誤った下落幅（25-30%）に付いていた理由づけで
+                  出所が無いため外した。「AT のデフォルト値もこの実勢を反映」はモック由来で事実に反するため外した。 */}
+              <dt style={{ fontWeight: 700, marginTop: 8 }}>対象実需給年度 2025 年度の特徴</dt>
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
-                既設価格が前年比 25-30% 下落 (東京 8,500→8,000 円/kW/年 等)。電源充実化と上限価格 (ネット CONE)
-                引き下げの影響。AT のデフォルト値もこの実勢を反映。
+                東京エリアの約定価格は、対象実需給年度 2024 年度の {yen(TOKYO_FY2024)} 円/kW から
+                2025 年度の {yen(TOKYO_FY2025)} 円/kW へ
+                {TOKYO_CHANGE_PCT !== null ? ` ${Math.abs(TOKYO_CHANGE_PCT).toFixed(1)}% ${TOKYO_CHANGE_PCT < 0 ? '下落' : '上昇'}` : ' 変化'}
+                しました（OCCTO「容量市場メインオークション約定結果」）。
+                {FY2024_UNIFORM && FY2024_BY_AREA[0] !== null
+                  ? ` 対象実需給年度 2024 年度は全 ${LIVE_AREAS.length} エリアが同額（${yen(FY2024_BY_AREA[0])} 円/kW）で約定しています。`
+                  : ''}
+                {FY2025_MIN !== null && FY2025_MAX !== null
+                  ? ` 2025 年度はエリアにより ${yen(FY2025_MIN)}〜${yen(FY2025_MAX)} 円/kW です。`
+                  : ''}
+                <br />
+                ※「2025 年度」は対象実需給年度です。メインオークションはその 4 年前に実施されます（例: 2025 年度に実施したオークションの対象実需給年度は 2029 年度）。
               </dd>
             </dl>
           </section>

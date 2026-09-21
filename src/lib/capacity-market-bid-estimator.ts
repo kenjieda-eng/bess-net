@@ -1,36 +1,37 @@
 /**
  * src/lib/capacity-market-bid-estimator.ts
  *
- * 容量市場応札試算 純粋関数 (依頼AT モック版)
+ * 容量市場応札試算 純粋関数（依頼AT → Nv-0b ■2 で実データ専用に整理・2026-09-21）
  *
  * 試算モデル:
- *   1. 過去 (2024-2025) 当該エリア・区分の約定価格を取得
- *   2. trend 判定: 直近 2 年比較で rising / flat / falling
- *   3. 推奨応札価格レンジ:
+ *   1. 当該エリアの約定価格（OCCTO 公表値＝EIC カタログ）を全対象実需給年度ぶん取得
+ *   2. trend 判定: 直近 2 年度の比較で rising / flat / falling
+ *   3. 推奨応札価格レンジ（★係数は当サイトのモデル仮定。実データから fit したものではない）:
  *      - low: max(自社コスト, 過去平均 × 0.8)
  *      - mid: 過去平均
  *      - high: 過去平均 × 1.3
- *   4. 落札確率近似: 過去価格との乖離から logistic 様で推定
+ *   4. 落札確率近似（同上・モデル仮定）:
  *      - bid ≤ 過去平均 × 0.8 → 95%
  *      - bid = 過去平均 → 65%
  *      - bid ≥ 過去平均 × 1.3 → 25%
  *   5. 警告:
  *      - 自社コスト > 過去平均 × 1.5 → 採算性要確認
  *      - 過去データ不足 (< 2 件) → 結果信頼性低い
- *      - モック版 disclaimer
+ *
+ * ★Nv-0b ■2: モック版の estimateBid を削除した。
+ *   モック（src/data/capacity-market-history.ts）は区分別（新設/既設/経過措置）の価格を持っていたが、
+ *   その指標は一次に存在しない（OCCTO の約定価格は区分非依存）。
+ *   入力からも category を外した（実データ経路では最初から使われていなかった）。
  */
 
 import {
-  filterHistory,
   filterHistoryByArea,
   type Area,
-  type Category,
   type CapacityMarketRecord,
 } from './capacity-market-data';
 
 export interface BidEstimateInput {
   area: Area;
-  category: Category;
   /** 応札容量 (MW) */
   capacity_mw: number;
   /** 対象年度 (2026 or 2027) */
@@ -95,106 +96,10 @@ export const TREND_LABELS: Record<(typeof TRENDS)[number], string> = {
 };
 
 /**
- * メイン: 入力 → 試算結果
- */
-export function estimateBid(input: BidEstimateInput): BidEstimateResult {
-  const records: CapacityMarketRecord[] = filterHistory(input.area, input.category);
-  const warnings: string[] = [];
-
-  // 過去平均 (cleared_capacity_mw による加重平均、より正確)
-  let area_avg = 0;
-  let area_total_capacity_mw = 0;
-  let weightedSum = 0;
-  for (const r of records) {
-    weightedSum += r.clearing_price_yen_per_kw_year * r.cleared_capacity_mw;
-    area_total_capacity_mw += r.cleared_capacity_mw;
-  }
-  if (area_total_capacity_mw > 0) {
-    area_avg = weightedSum / area_total_capacity_mw;
-  }
-
-  // 最新年度 / 前年度の価格
-  const sorted = [...records].sort((a, b) => b.fiscal_year - a.fiscal_year);
-  const latest_price = sorted[0]?.clearing_price_yen_per_kw_year;
-  const prior_price = sorted[1]?.clearing_price_yen_per_kw_year;
-  const area_trend = deriveTrend(latest_price, prior_price);
-
-  // 推奨応札価格 (mid = 過去平均、low = max(コスト, mid×0.8)、high = mid×1.3)
-  const mid = Math.round(area_avg);
-  const lowBase = Math.round(mid * 0.8);
-  const recommended_bid_low = Math.max(input.cost_yen_per_kw_year, lowBase);
-  const recommended_bid_mid = Math.max(input.cost_yen_per_kw_year, mid);
-  const recommended_bid_high = Math.max(input.cost_yen_per_kw_year, Math.round(mid * 1.3));
-
-  // 落札確率: bid 価格に対する logistic 近似
-  // bid = mid × 0.8 → 95%、mid → 65%、mid × 1.3 → 25%
-  function probabilityFor(bid: number, ref_mid: number): number {
-    if (ref_mid === 0) return 50;
-    const r = bid / ref_mid;
-    // 単純線形補間 (実運用では実データから fit)
-    if (r <= 0.8) return 95;
-    if (r >= 1.3) return 25;
-    // 0.8 → 95、1.0 → 65、1.3 → 25
-    if (r <= 1.0) {
-      // 0.8〜1.0 で 95〜65 線形
-      return Math.round(95 - (r - 0.8) * 150);
-    }
-    // 1.0〜1.3 で 65〜25 線形
-    return Math.round(65 - (r - 1.0) * 133);
-  }
-
-  const cleared_probability = {
-    low_bid: probabilityFor(recommended_bid_low, mid),
-    mid_bid: probabilityFor(recommended_bid_mid, mid),
-    high_bid: probabilityFor(recommended_bid_high, mid),
-  };
-
-  // 想定収入: 応札容量 × 推奨 mid 価格 / 1e8 (億円換算)
-  // capacity_mw × 1000 kW × 円/kW/年 = 円/年 → ÷1e8 = 億円/年
-  const estimated_annual_revenue_oku =
-    (input.capacity_mw * 1000 * recommended_bid_mid) / 1e8;
-
-  // 警告
-  if (input.cost_yen_per_kw_year > area_avg * 1.5 && area_avg > 0) {
-    warnings.push(
-      `自社コスト ${input.cost_yen_per_kw_year.toLocaleString()} 円/kW/年 が過去平均の 1.5 倍超。採算性要確認。`
-    );
-  }
-  if (records.length < 2) {
-    warnings.push('該当エリア・区分の過去データが 2 件未満。結果信頼性に注意。');
-  }
-  if (input.target_fiscal_year > 2026) {
-    warnings.push(
-      `${input.target_fiscal_year} 年度応札は予測の不確実性が大きい (現在モック値)。AU 容量市場約定価格DB (5/29 公開) で精度UP予定。`
-    );
-  }
-  warnings.push(
-    '⚠️ 本試算はモック版です。応札の最終判断は OCCTO 公式情報・電気事業法を必ずご確認ください。'
-  );
-
-  return {
-    recommended_bid_low,
-    recommended_bid_mid,
-    recommended_bid_high,
-    cleared_probability,
-    historical_context: {
-      area_avg: Math.round(area_avg),
-      area_total_capacity_mw,
-      area_trend,
-      sample_size: records.length,
-      latest_price,
-      prior_price,
-    },
-    estimated_annual_revenue_oku,
-    warnings,
-  };
-}
-
-/**
- * live data 版 estimateBid
- *  - allRecords: Server Component から props 注入された実データ
+ * 応札試算（実データ）
+ *  - allRecords: Server Component から props 注入された実データ（EIC カタログ＝OCCTO 公表値）
  *  - 区分非依存（filterHistoryByArea でエリアのみフィルタ）
- *  - モック disclaimer なし、target_fiscal_year 範囲警告なし（FY2024-2029 カバー済み）
+ *  - ★target_fiscal_year は試算に使っていない（推奨価格は当該エリアの全年度の加重平均から出る）
  */
 export function estimateBidWithHistory(
   input: BidEstimateInput,
