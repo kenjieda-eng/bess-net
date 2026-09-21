@@ -17,6 +17,7 @@ import HazardRiskCard from '@/components/HazardRiskCard';
 import AreaPage from './AreaPage';
 import { isFrozenSubstation, frozenSubstationNote } from '@/lib/substations-frozen';
 import { AREA_META, AREA_JP_TO_SLUG } from './area-meta';
+import { sourceFileName } from '@/lib/grid-source';
 import { GRID_PAGE_RELATED_TERMS } from './related-terms';
 import {
   getSubstationBySlug,
@@ -204,6 +205,9 @@ export default async function GridSlugPage({
   const voltageClass = firstOf(sub.voltage_class);
   const ocPossibility = firstOf(sub.oc_possibility);
   const areaSlug = areaName ? AREA_JP_TO_SLUG[areaName] : undefined;
+  // Ck-1 A2: 出典リンクは各社の公表ページ（area-meta の landingUrl）。ファイル名は文字で示す
+  const sourcePageUrl = areaSlug ? AREA_META[areaSlug]?.landingUrl : undefined;
+  const sourceFile = sourceFileName(sub.source_url);
 
   // 関連連携を並列取得
   const [relatedOps, relatedNews, nearbyProjects] = await Promise.all([
@@ -245,7 +249,8 @@ export default async function GridSlugPage({
       url: siteConfig.organization.url,
     },
     isAccessibleForFree: true,
-    license: sub.source_url,
+    // Ck-1 A2: 月次で 404 化する公表ファイルの URL を出さない。公表ページ（利用条件もここから辿れる）を指す
+    ...(sourcePageUrl ? { isBasedOn: sourcePageUrl } : {}),
   };
 
   // BreadcrumbList JSON-LD: トップ > 系統空き容量 > {エリア}エリア > {都道府県} > {変電所名}
@@ -758,30 +763,47 @@ export default async function GridSlugPage({
               <dd>{lastUpdated}</dd>
               <dt>蓄電所ネット取得日</dt>
               <dd>{fmtDate(sub.fetched_at)}</dd>
-              <dt>一次ソースURL</dt>
-              <dd>
-                <a
-                  href={sub.source_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="grid-source-link"
-                >
-                  {sub.source_url}
-                </a>
-              </dd>
+              {/* Ck-1 A2: 公表ファイル（月次で名前が変わる CSV/ZIP）への直リンクをやめ、各社の公表ページへ。
+                  取り込んだファイルはファイル名と取得日を文字で残す（source_url の原値は microCMS に保持）。 */}
+              {sourcePageUrl && (
+                <>
+                  <dt>一次ソース（公表ページ）</dt>
+                  <dd>
+                    <a
+                      href={sourcePageUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="grid-source-link"
+                    >
+                      {sourcePageUrl}
+                    </a>
+                  </dd>
+                </>
+              )}
+              {sourceFile && (
+                <>
+                  <dt>取り込んだ公表ファイル</dt>
+                  <dd>
+                    {sourceFile}（{fmtDate(sub.fetched_at)} 取得）
+                  </dd>
+                </>
+              )}
             </dl>
             <p className="grid-source-note">
               ※ 本ページの数値は{' '}
               <strong>{operatorName ?? '送配電事業者'}</strong>{' '}
-              が公表する予想潮流等情報に基づいています。最新情報は{' '}
-              <a
-                href={sub.source_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                公式サイト
-              </a>{' '}
-              でご確認ください。データの利用条件・免責事項は各事業者の利用規約に従います。
+              が公表する予想潮流等情報に基づいています。
+              {sourcePageUrl ? (
+                <>
+                  最新情報は{' '}
+                  <a href={sourcePageUrl} target="_blank" rel="noopener noreferrer">
+                    公式サイト
+                  </a>{' '}
+                  でご確認ください。
+                </>
+              ) : null}
+              公表ファイルは月次で差し替わり名前が変わるため、ファイルへは直接リンクしていません。
+              データの利用条件・免責事項は各事業者の利用規約に従います。
             </p>
             {/* Gr9(2026-08-09): /tracker/grid は上部のデータ基準日注記に既に置かれており、
                 本文内で2回出ていた。リンク総量を増やさないため、この重複行は撤去した。*/}

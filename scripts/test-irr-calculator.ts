@@ -23,6 +23,8 @@ import {
 } from '../src/lib/irr-calculator';
 import { getScenarioInput, SCENARIO_DEFAULTS } from '../src/lib/irr-defaults';
 import { CAPACITY_MARKET_NATIONAL } from '../src/lib/capacity-market-defaults';
+import { DEPTH_OF_DISCHARGE, PROJECT_LIFETIME_YEARS, ROUND_TRIP_EFFICIENCY } from '../src/lib/storage-assumptions';
+import { LCOS_DEFAULTS } from '../src/lib/lcoe-lcos';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
@@ -53,15 +55,27 @@ console.log('━━━ Group 1: 基本収益計算 ━━━');
 
 // Test 1: arbitrage 収益 (劣化なし、1年目想定)
 {
-  // 50 MWh × 1000 (kWh) × 0.85 (DoD) × 0.88 (eff) = 37,400 kWh/cycle
-  // 365 cycles × 37,400 = 13,651,000 kWh/year
-  // (23-9) ¥/kWh × 13,651,000 = ¥191,114,000 ≈ ¥191.11M
+  // ★Ck-1 A9: 往復効率・放電深度は storage-assumptions.ts の 1 箇所（旧 88% / 85% の焼き込み期待値は廃止）
+  //   50 MWh × 1000 (kWh) × DoD × eff × 365 cycles × (23-9) ¥/kWh
+  //   = 50,000 × 0.90 × 0.85 × 365 × 14 = ¥195,457,500（2026-09-21 時点の既定値）
+  const expected = 50_000 * DEPTH_OF_DISCHARGE.value * ROUND_TRIP_EFFICIENCY.value * 365 * (STD.spot_high - STD.spot_low);
   const result = arbitrageRevenueYen(STD, 1);
   assert(
-    'arbitrage 標準 1 年目: ~¥191M',
-    approx(result, 191_114_000, 2_000_000),
+    `arbitrage 標準 1 年目: ¥${Math.round(expected / 1e6)}M（DoD ${DEPTH_OF_DISCHARGE.value}・効率 ${ROUND_TRIP_EFFICIENCY.value}）`,
+    approx(result, expected, 1_000),
     `actual=¥${Math.round(result / 1e6)}M`
   );
+}
+
+// Test 1b: ★Ck-1 A9 — IRR と LCOS の性能前提が同じ定義を見ている（#119/#121）
+{
+  assert('IRR 効率 = storage-assumptions（%）', STD.efficiency === Math.round(ROUND_TRIP_EFFICIENCY.value * 100), `IRR=${STD.efficiency}`);
+  assert('IRR 耐用年数 = storage-assumptions', STD.lifespan_years === PROJECT_LIFETIME_YEARS.value, `IRR=${STD.lifespan_years}`);
+  assert('IRR DoD = storage-assumptions（%）', STD.dod === Math.round(DEPTH_OF_DISCHARGE.value * 100), `IRR=${STD.dod}`);
+  assert('LCOS 往復効率 = IRR 効率', Math.round(LCOS_DEFAULTS.rte * 100) === STD.efficiency, `LCOS=${LCOS_DEFAULTS.rte}`);
+  assert('LCOS DoD = IRR DoD', Math.round(LCOS_DEFAULTS.dod * 100) === STD.dod, `LCOS=${LCOS_DEFAULTS.dod}`);
+  assert('LCOS 事業年数 = IRR 耐用年数', LCOS_DEFAULTS.projectYears === STD.lifespan_years, `LCOS=${LCOS_DEFAULTS.projectYears}`);
+  assert('往復効率・寿命は一次（NREL ATB）・DoD は前提値と明示', ROUND_TRIP_EFFICIENCY.source.kind === 'primary' && PROJECT_LIFETIME_YEARS.source.kind === 'primary' && DEPTH_OF_DISCHARGE.source.kind === 'assumption');
 }
 
 // Test 2: 容量市場 収益（★Nv-0c: 既定値はカタログの national 中央値。旧 8,000 は一次に対応が無かった）

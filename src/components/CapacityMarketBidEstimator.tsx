@@ -355,7 +355,7 @@ export default function CapacityMarketBidEstimator({
           }}
         >
           ✅ <strong>data.eic-jp.org 実データ連携済</strong>（OCCTO 公表値ベース{liveFyLabel ? `、${liveFyLabel}` : ''}）。
-          <strong>OCCTO メインオークション約定価格は区分非依存</strong>（同一エリアでは新設/既設/経過措置で同価格）。
+          <strong>OCCTO メインオークション約定価格は区分非依存</strong>（約定価格の決め方に新設・既設の別はありません。経過措置は約定価格ではなく容量確保契約金額からの控除で、対象実需給年度 2029 年度を最後に廃止）。
           応札の最終判断は{' '}
           <a
             href={OCCTO_CAPACITY_MARKET_URL}
@@ -546,7 +546,7 @@ export default function CapacityMarketBidEstimator({
         }}
       >
         <h3 style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>
-          過去実績 ({AREA_LABELS[input.area]} エリア・区分非依存（全年度加重平均）)
+          過去実績 ({AREA_LABELS[input.area]} エリア・区分非依存（全対象実需給年度の加重平均）)
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, fontSize: 15 }}>
           <div>

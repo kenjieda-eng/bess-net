@@ -6,6 +6,7 @@ import { MICROCMS_MAX_OFFSET, MICROCMS_PAGE_LIMIT } from './constants';
 import { GLOSSARY_301_SOURCE_SLUGS } from './glossary-301';
 import { EXCLUDED_OPERATOR_SLUGS } from './operators-excluded';
 import { isExcludedNews } from './news-excluded';
+import { isExcludedEvent } from './events-excluded';
 import { isTopicExcludedNews } from './news-topic-gate';
 // Gr10(2026-08-11): 系統区分・設備区分が「都道府県」として入っている社があるため、
 // 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
@@ -365,8 +366,11 @@ const getAllEventsRaw = async (): Promise<PolicyEvent[]> => {
       return [];
     }
     all.sort(compareEventsForDisplay);
-    _policyEventsCache = all;
-    return all;
+    // Ck-1 A4: 一次で実在を確認できないレコードを表示から外す（DELETE しない・src/lib/events-excluded.ts）。
+    //   ここ（唯一の fetch 経路）で外すので /events・/policy-calendar・トップ・sitemap に同時に効く。
+    const visible = all.filter((ev) => !isExcludedEvent(ev.slug));
+    _policyEventsCache = visible;
+    return visible;
   })();
   return _policyEventsPromise;
 };

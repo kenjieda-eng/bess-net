@@ -16,13 +16,14 @@ import SiteFooter from '@/components/SiteFooter';
 import IRRSimulator from '@/components/IRRSimulator';
 import { siteConfig } from '@/lib/site-config';
 // NREL ATB CAPEX + FX（build 時プリコンピュート済み JSON、鉄則 #2/#4 準拠）
-import atbCapexBatteryData from '@/data/eic/atb-capex-battery.json';
-import fxUsdJpyData from '@/data/eic/fx-usdjpy-monthly-avg.json';
+import { BATTERY_CAPEX } from '@/lib/nrel-atb-reference';
+import { fxLabel } from '@/lib/fx-reference';
 // Nv-0c ■3: 容量市場の出所と年度範囲はカタログから（文言は capacity-market-defaults.ts に一本化）
 import { CAPACITY_MARKET_NATIONAL as CMN, CAPACITY_MARKET_SOURCE_TEXT, yenLabel } from '@/lib/capacity-market-defaults';
 // Nv-0c: スポットの既定価差を、JEPX 30 分値の日内価差（カタログ）と照合して示す
 import { SPOT_SPREAD_REFERENCE as SSR, spreadLabel } from '@/lib/spot-spread-reference';
 import { getScenarioInput } from '@/lib/irr-defaults';
+import { DEPTH_OF_DISCHARGE, PROJECT_LIFETIME_YEARS, ROUND_TRIP_EFFICIENCY } from '@/lib/storage-assumptions';
 
 export const revalidate = 86400; // 24h
 
@@ -46,22 +47,20 @@ export default function IrrSimulatorPage() {
   const stdInput = getScenarioInput('standard');
   const stdSpread = stdInput.spot_high - stdInput.spot_low;
   // NREL ATB 蓄電池CAPEX 3シナリオ（build 時事前計算、L-EIC-013/015/055 準拠）
-  type EicPoints = { points?: { date: string; value: number }[] };
-  const capexPts = (atbCapexBatteryData as EicPoints).points ?? [];
-  const fxPts    = (fxUsdJpyData        as EicPoints).points ?? [];
-  const capexUsdPerKw  = capexPts.length ? capexPts[capexPts.length - 1].value : 2101;
-  const fxJpyPerUsd    = fxPts.length    ? fxPts[fxPts.length - 1].value       : 158.34;
-  const capexUsdPerKwh = capexUsdPerKw / 4;                                              // 4h 構成
-  const midJpyPerKwh   = Math.round(capexUsdPerKwh * fxJpyPerUsd / 1000) * 1000;        // ≒ 83,000
-  const lowJpyPerKwh   = Math.round(midJpyPerKwh * 0.80 / 100) * 100;                   // ≒ 66,400
-  const highJpyPerKwh  = Math.round(midJpyPerKwh * 1.20 / 100) * 100;                   // ≒ 99,600
-  const capexNrel = {
-    low:  lowJpyPerKwh,
-    mid:  midJpyPerKwh,
-    high: highJpyPerKwh,
-    fxJpyPerUsd:    Math.round(fxJpyPerUsd    * 100) / 100,
-    capexUsdPerKwh: Math.round(capexUsdPerKwh * 100) / 100,
-  };
+  // Ck-1 A9: 円換算は nrel-atb-reference.ts の 1 箇所に寄せた（lcoe-lcos と同じ値）。
+  // ★旧版はここで別に計算し、カタログが空のときの代替値（CAPEX 2101 $/kW・USD/JPY 158.34）を焼き込んでいた。
+  //   代替値は置かない（カタログが無ければ NREL の参考値ボタン自体を出さない）。
+  const capexNrel = BATTERY_CAPEX
+    ? {
+        low: BATTERY_CAPEX.low,
+        mid: BATTERY_CAPEX.mid,
+        high: BATTERY_CAPEX.high,
+        fxJpyPerUsd: BATTERY_CAPEX.fxJpyPerUsd,
+        capexUsdPerKwh: BATTERY_CAPEX.usdPerKwh,
+        atbYear: BATTERY_CAPEX.atbYear,
+        fxMonthLabel: BATTERY_CAPEX.fxMonthLabel,
+      }
+    : undefined;
 
   // JSON-LD SoftwareApplication (SEO リッチリザルト)
   const softwareJsonLd = {
@@ -141,7 +140,8 @@ export default function IrrSimulatorPage() {
             <strong>楽観・標準・悲観</strong> の 3 シナリオを並列計算します。
             ブラウザ完結 (ログイン不要)、入力データはサーバー送信なし、CSV エクスポート対応。
           </p>
-          <p
+          {/* Ck-1 A12: 表を入れるため p → div（p の中に table は置けない＝hydration エラーになる） */}
+          <div
             className="page-meta"
             style={{
               marginTop: 0,
@@ -169,6 +169,42 @@ export default function IrrSimulatorPage() {
             参考: 直近の実施回（対象実需給年度 {CMN.latest?.deliveryFy}）の全国値は {yenLabel(CMN.latest?.value)} 円/kW。
             全国値は OCCTO が公表した全国値ではなく、エリア値からの加重平均です。
             「対象実需給年度」は供給力を提供する年度で、メインオークションはその 4 年前に実施されます。
+            {/* Ck-1 A12: 中央値を読者が検算できるよう、全観測値を年度ラベルつきで出す（カタログから動的・焼き込みなし） */}
+            {CMN.count > 0 && (
+              <table
+                style={{ borderCollapse: 'collapse', margin: '8px 0 10px', fontSize: 14, lineHeight: 1.6 }}
+                aria-label="容量市場メインオークション 全国加重平均（対象実需給年度別）"
+              >
+                <caption style={{ textAlign: 'left', fontSize: 14, marginBottom: 4 }}>
+                  全国加重平均の全 {CMN.count} 年度（中央値 {yenLabel(CMN.median)} 円/kW の計算に使った値）
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col" style={{ textAlign: 'left', padding: '2px 12px 2px 0', borderBottom: '1px solid var(--color-border)' }}>対象実需給年度</th>
+                    <th scope="col" style={{ textAlign: 'right', padding: '2px 12px', borderBottom: '1px solid var(--color-border)' }}>円/kW</th>
+                    <th scope="col" style={{ textAlign: 'left', padding: '2px 0 2px 12px', borderBottom: '1px solid var(--color-border)' }}>既定値での扱い</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {CMN.observations.map((o) => {
+                    const tags: string[] = [];
+                    if (CMN.max?.deliveryFy === o.deliveryFy) tags.push('楽観＝最大');
+                    if (CMN.min?.deliveryFy === o.deliveryFy) tags.push('悲観＝最小');
+                    if (CMN.medianObservations.some((m) => m.deliveryFy === o.deliveryFy)) {
+                      tags.push(CMN.medianIsObserved ? '標準＝中央値' : '中央 2 値（平均が標準）');
+                    }
+                    if (CMN.latest?.deliveryFy === o.deliveryFy) tags.push('直近の実施回');
+                    return (
+                      <tr key={o.deliveryFy}>
+                        <td style={{ padding: '2px 12px 2px 0' }}>{o.deliveryFy} 年度</td>
+                        <td style={{ padding: '2px 12px', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{yenLabel(o.value)}</td>
+                        <td style={{ padding: '2px 0 2px 12px' }}>{tags.join('・') || '—'}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            )}
             <br />
             ・<strong>需給調整対価</strong>: 既定値を置いていません。需給調整市場の収益は、蓄電池の容量をどれだけ需給調整に割り当てるかで大きく変わるためです。
             入力する場合は、裁定取引・容量市場と<strong>同じ容量を重複して計上しない</strong>よう注意してください。
@@ -180,7 +216,16 @@ export default function IrrSimulatorPage() {
             リチウムイオン電池の 1,000kW以上10,000kW未満・10,000kW以上30,000kW未満がいずれも 1/3 以内（補助対象経費に対する率・上限額あり）であることを
             33% で近似したものです。本試算は CAPEX 全額に掛けています（近似）。
             <br />
-            ・<strong>CAPEX の参考値</strong>（Step 2）: NREL ATB 2024（米国前提・mid=実データ・CC BY 4.0）を USD/JPY {capexNrel.fxJpyPerUsd} で円換算。
+            {capexNrel && (
+              <>
+                ・<strong>CAPEX の参考値</strong>（Step 2）: NREL ATB {capexNrel.atbYear} 年版（米国前提・mid=実データ・CC BY 4.0）の 4 時間構成 {capexNrel.capexUsdPerKwh} $/kWh を {fxLabel()} で円換算した {capexNrel.mid.toLocaleString('ja-JP')} 円/kWh。
+              </>
+            )}
+            <br />
+            {/* Ck-1 A9: 性能前提は storage-assumptions.ts の 1 箇所（/tools/lcoe-lcos と同じ値） */}
+            ・<strong>充放電効率・耐用年数・放電深度</strong>: 効率 {Math.round(ROUND_TRIP_EFFICIENCY.value * 100)}%・耐用年数 {PROJECT_LIFETIME_YEARS.value} 年は{' '}
+            <a href={ROUND_TRIP_EFFICIENCY.source.kind === 'primary' ? ROUND_TRIP_EFFICIENCY.source.url : undefined} target="_blank" rel="noopener noreferrer">{ROUND_TRIP_EFFICIENCY.source.label}</a>
+            の前提です。放電深度 {Math.round(DEPTH_OF_DISCHARGE.value * 100)}% は{DEPTH_OF_DISCHARGE.source.label}です。
             <br />
             ・<strong>スポット価格の高値・安値</strong>（標準の価差 {spreadLabel(stdSpread)} 円/kWh）は当サイトの想定値です。
             {SSR.fy !== null && (
@@ -194,7 +239,7 @@ export default function IrrSimulatorPage() {
             ・<strong>CAPEX の既定値、補助率の楽観・悲観値と高圧プリセットの値は当サイトの想定値で、一次資料の公表値ではありません。</strong>
             <br />
             均等化原価で比べたい場合は <Link href="/tools/lcoe-lcos">LCOE・LCOS計算機</Link> もご利用ください。
-          </p>
+          </div>
 
           <IRRSimulator
             capexNrel={capexNrel}

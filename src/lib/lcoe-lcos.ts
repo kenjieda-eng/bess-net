@@ -5,13 +5,15 @@
  * 純関数のみ（'use client' 不要）。client component から import。
  *
  * 出典前提（L-EIC-019/055）:
- *  - 蓄電池CAPEX = NREL ATB 2024（$/kW÷4h、USD/JPY換算、米国前提）。
- *  - 電源別 CAPEX/LCOE参考 = NREL ATB 2024。CF代表値・充電単価は概数（編集可）。
+ *  - 蓄電池CAPEX = NREL ATB（$/kW÷4h、USD/JPY換算、米国前提）。版と為替の月は nrel-atb-reference.ts / fx-reference.ts が出す。
+ *  - 電源別 CAPEX・CF・LCOE参考 = NREL ATB（カタログ）。充電単価は概数（編集可）。
  *  - low/high は感度レンジ（mid±20%）＝当サイトの仮定で NREL の予測値そのものではない。
  *
  * 検証ワーク例（既定値）: 放電328.5/年・充電費¥3,865・O&M¥1,660・annuity(5%,15)=10.38
  *   → 分子140,344 / 分母3,409.7 → LCOS ≈ ¥41/kWh（≈$260/MWh）。
  */
+
+import { DEPTH_OF_DISCHARGE, PROJECT_LIFETIME_YEARS, ROUND_TRIP_EFFICIENCY } from './storage-assumptions';
 
 /** 年金現価係数 Σ_{t=1..N} 1/(1+r)^t（r=0 は N、N は実数可） */
 export function annuityFactor(rate: number, years: number): number {
@@ -104,33 +106,28 @@ export function computeLCOE(inp: LcoeInput, fxJpyPerUsd: number): LcoeResult {
 }
 
 // ───────────────────────── 既定値 ─────────────────────────
-/** LCOS 既定値（編集可・出典付き。CAPEX は page.tsx から NREL ATB 実値で上書き） */
+/**
+ * LCOS 既定値（編集可。CAPEX は page.tsx から NREL ATB 実値で上書き）
+ * ★Ck-1 A9: 往復効率・放電深度・事業年数は storage-assumptions.ts の 1 箇所に寄せた（IRR シミュレーターと同じ値）。
+ */
 export const LCOS_DEFAULTS: Omit<LcosInput, 'capexJpyPerKwh'> = {
-  rte: 0.85,                // 往復効率 85%（概数）
-  cyclesPerYear: 365,       // 年1サイクル/日
-  dod: 0.90,                // 放電深度 90%
-  chargePriceJpyPerKwh: 10, // JEPXスポット平均の概数（¥/kWh）
-  omRate: 0.02,             // O&M 2%/年（CAPEX比）
-  discountRate: 0.05,       // 割引率 5%
-  projectYears: 15,         // 事業年数
-  cycleLife: 6000,          // サイクル寿命（LFP概数）
+  rte: ROUND_TRIP_EFFICIENCY.value,        // NREL ATB 2024 年版
+  cyclesPerYear: 365,                      // 年1サイクル/日
+  dod: DEPTH_OF_DISCHARGE.value,           // 当サイトの前提値（出所なし）
+  chargePriceJpyPerKwh: 10,                // JEPXスポット平均の概数（¥/kWh）
+  omRate: 0.02,                            // O&M 2%/年（CAPEX比）
+  discountRate: 0.05,                      // 割引率 5%
+  projectYears: PROJECT_LIFETIME_YEARS.value, // NREL ATB 2024 年版の寿命
+  cycleLife: 6000,                         // サイクル寿命（LFP概数）
 };
 
-/** 電源別 LCOE の代表値（CF・出典は spec 準拠。CAPEX/LCOE参考は NREL ATB 実値を page.tsx で注入） */
-export interface PowerSourceMeta {
-  key: string;
-  label: string;
-  cfDefault: number;        // 代表 CF 0–1（概数・編集可）
-}
-export const POWER_SOURCES: PowerSourceMeta[] = [
-  { key: 'utility-pv',     label: '太陽光（事業用）', cfDefault: 0.17 },
-  { key: 'onshore-wind',   label: '陸上風力',         cfDefault: 0.30 },
-  { key: 'offshore-wind',  label: '洋上風力',         cfDefault: 0.40 },
-  { key: 'nuclear',        label: '原子力',           cfDefault: 0.85 },
-  { key: 'geothermal',     label: '地熱',             cfDefault: 0.80 },
-  { key: 'hydro',          label: '水力',             cfDefault: 0.45 },
-];
-
+/*
+ * 電源別の一覧と既定の設備利用率（CF）は src/lib/nrel-atb-reference.ts（POWER_SOURCE_REFS）へ移した（Ck-1 A8・2026-09-21）。
+ * ★旧版はここに CF の概数を焼き込んでいた（太陽光 0.17・陸上風力 0.30・洋上風力 0.40・原子力 0.85・地熱 0.80・水力 0.45）。
+ *   同じ画面で CAPEX と LCOE 参考値はカタログ（NREL ATB）を読んでいたため前提が混在し、
+ *   ATB の CF（太陽光 26.3%・陸上風力 44.8%・洋上風力 45.3%・原子力 92.7%・地熱 90%・水力 33%）と食い違っていた。
+ *   CF もカタログから出す。値を焼き込まない。
+ */
 /** LCOE 既定（編集可・概数） */
 export const LCOE_DEFAULTS = {
   omRate: 0.02,        // O&M 2%/年（概数）

@@ -27,6 +27,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "verify:linkify": "tsx scripts/verify-no-nested-anchors.ts",
+    "verify:source-names": "tsx scripts/verify-source-names.ts",
     "verify:operators": "tsx scripts/verify-operator-matching.ts",
     "precompute:hazard": "tsx scripts/precompute-hazard-risk.ts",
     "verify:grid-fields": "tsx scripts/verify-grid-list-fields.ts",

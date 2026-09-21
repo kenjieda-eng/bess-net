@@ -25,10 +25,12 @@ import Link from 'next/link';
 /** NREL ATB 蓄電池CAPEX 3シナリオ（page.tsx から props 経由で受け取る） */
 export interface CapexNrelData {
   low:  number;  // ¥/kWh、楽観（mid × 0.80、感度レンジ・仮定）
-  mid:  number;  // ¥/kWh、実データ（NREL ATB 2024・米国前提）
+  mid:  number;  // ¥/kWh、実データ（NREL ATB・米国前提）
   high: number;  // ¥/kWh、保守（mid × 1.20、感度レンジ・仮定）
   fxJpyPerUsd:    number;  // 円換算レート（最新 fx-usdjpy-monthly-avg）
   capexUsdPerKwh: number;  // 元値（$/kWh = $/kW ÷ 4）
+  atbYear:        number;  // NREL ATB の版（カタログの base year）
+  fxMonthLabel:   string;  // 為替の対象月「2026年8月」
 }
 import {
   calculateAll,
@@ -51,6 +53,7 @@ import {
 } from '@/lib/irr-defaults';
 // Nv-0c ■1: 容量市場の既定値はカタログ（OCCTO 約定結果の全国加重平均）から。画面の年度ラベル・出所もここから出す
 import { CAPACITY_MARKET_NATIONAL as CMN, yenLabel } from '@/lib/capacity-market-defaults';
+import { DEPTH_OF_DISCHARGE, PROJECT_LIFETIME_YEARS, ROUND_TRIP_EFFICIENCY } from '@/lib/storage-assumptions';
 // ★Nv-0c: スポットの参照値（JEPX 30 分値の日内価差）は page.tsx（サーバ）で計算し、hint 文字列だけを props で受け取る。
 //   ここで src/lib/spot-spread-reference.ts を import すると、日次 539 点 × 2 系列の JSON がクライアントに入り
 //   ページ JS が約 9 kB 増えた（12.6 → 21.6 kB を実測）。
@@ -844,7 +847,7 @@ export default function IRRSimulator({
                 step={1}
                 min={50}
                 max={100}
-                hint="LFP 系: 85-90%"
+                hint={`既定 ${Math.round(ROUND_TRIP_EFFICIENCY.value * 100)}%＝${ROUND_TRIP_EFFICIENCY.source.label}の前提（往復効率）`}
               />
               <NumberField
                 id="lifespan_years"
@@ -855,7 +858,7 @@ export default function IRRSimulator({
                 step={1}
                 min={5}
                 max={40}
-                hint="例: 20 年"
+                hint={`既定 ${PROJECT_LIFETIME_YEARS.value} 年＝${PROJECT_LIFETIME_YEARS.source.label}の蓄電池寿命`}
               />
               <NumberField
                 id="cycles_per_year"
@@ -877,7 +880,7 @@ export default function IRRSimulator({
                 step={1}
                 min={50}
                 max={100}
-                hint="例: 80-90%"
+                hint={`既定 ${Math.round(DEPTH_OF_DISCHARGE.value * 100)}%＝${DEPTH_OF_DISCHARGE.source.label}`}
               />
             </div>
           </div>
@@ -894,7 +897,7 @@ export default function IRRSimulator({
             {capexNrel && (
               <div style={{ marginBottom: 16, padding: 14, background: '#f0f7ff', border: '1px solid #b3d4f5', borderRadius: 6 }}>
                 <p style={{ fontSize: 15, fontWeight: 700, marginTop: 0, marginBottom: 8, color: '#1e3a5f' }}>
-                  📊 NREL ATB 2024 蓄電池CAPEX（米国前提・参考値）— 選択でフィールドに反映
+                  📊 NREL ATB {capexNrel.atbYear} 年版 蓄電池CAPEX（米国前提・参考値）— 選択でフィールドに反映
                 </p>
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 8 }}>
                   {(['low', 'mid', 'high'] as const).map((tier) => {
@@ -938,9 +941,9 @@ export default function IRRSimulator({
                 </p>
                 <p style={{ fontSize: 15, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
                   既定値は{' '}
-                  <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc' }}>NREL Annual Technology Baseline (ATB) 2024</a>
+                  <a href="https://atb.nlr.gov/" target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc' }}>NREL Annual Technology Baseline (ATB) {capexNrel.atbYear} 年版</a>
                   の系統用蓄電池CAPEX（米国前提・${capexNrel.capexUsdPerKwh.toFixed(0)}/kWh）を
-                  USD/JPY {capexNrel.fxJpyPerUsd} で円換算（mid＝実データ）。
+                  USD/JPY {capexNrel.fxJpyPerUsd}（{capexNrel.fxMonthLabel}の月中平均・日本銀行）で円換算（mid＝実データ）。
                   low/high は感度レンジ（mid±20%）で、幅は NREL ATB のシナリオ不確実性に基づく当サイトの仮定であり、
                   NREL の予測値そのものではありません。実際の調達価格は案件規模・電池種別・時期で異なります。
                   データ提供:{' '}
@@ -959,7 +962,12 @@ export default function IRRSimulator({
                 step={1}
                 min={1}
                 max={500}
-                hint="例: 標準 26 億円 / NREL ATB mid(¥83,000/kWh)で50MWh → 41.5億円"
+                // Ck-1 A9: ¥83,000 は USD/JPY に依存する値なので焼き込まない（為替・版はカタログから）
+                hint={
+                  capexNrel
+                    ? `例: 標準 26 億円（当サイトの想定値） / NREL ATB ${capexNrel.atbYear} 年版 mid(¥${capexNrel.mid.toLocaleString('ja-JP')}/kWh・USD/JPY ${capexNrel.fxJpyPerUsd}・${capexNrel.fxMonthLabel})で50MWh → ${(Math.round(capexNrel.mid * 50000 / 1e7) / 10).toLocaleString('ja-JP')}億円`
+                    : '例: 標準 26 億円（当サイトの想定値）'
+                }
               />
               <NumberField
                 id="opex_yen_per_mw_year"

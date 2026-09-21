@@ -56,6 +56,13 @@ function median(values: number[]): number | null {
 }
 
 const values = NATIONAL_OBSERVATIONS.map((o) => o.value);
+/** 中央値を構成する観測値（奇数個なら 1 つ・偶数個なら中央 2 つ）。表で「中央」の行に印をつけるため（Ck-1 A12） */
+const medianObservations: NationalObservation[] = (() => {
+  const s = [...NATIONAL_OBSERVATIONS].sort((a, b) => a.value - b.value);
+  const n = s.length;
+  if (n === 0) return [];
+  return n % 2 === 1 ? [s[(n - 1) / 2]] : [s[n / 2 - 1], s[n / 2]];
+})();
 const minObs = NATIONAL_OBSERVATIONS.reduce<NationalObservation | null>(
   (a, b) => (a === null || b.value < a.value ? b : a),
   null,
@@ -72,6 +79,8 @@ export const CAPACITY_MARKET_NATIONAL = {
   /** 中央値。偶数個のときは中央 2 値の平均（観測値ではない） */
   median: median(values),
   medianIsObserved: NATIONAL_OBSERVATIONS.length % 2 === 1,
+  /** 中央値を構成する観測値（1 つまたは 2 つ） */
+  medianObservations,
   min: minObs,
   max: maxObs,
   /** 直近の実施回（最大の対象実需給年度） */

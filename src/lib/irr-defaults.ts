@@ -32,6 +32,9 @@
  *       ★以前「JEPX の公表系列に日内高安は無い」「23 は日平均 5.43〜19.30 の範囲外」と書いていたが、
  *         前者は誤り（30 分値から出せる）、後者は違う指標同士の比較で成り立たなかった（Nv-0c レビューで是正）。
  *   - CAPEX: 当サイトの想定値（26 / 22 / 32 億円）。NREL ATB の参考値は IRRSimulator の Step 2 で別途提示。
+ *   - 充放電効率・耐用年数・放電深度（Ck-1 A9）: src/lib/storage-assumptions.ts の 1 箇所。
+ *       効率 85%・寿命 15 年は NREL ATB 2024 年版「Utility-Scale Battery Storage」の本文。DoD 90% は当サイトの前提値（出所なし）。
+ *       旧 88% / 20 年 / 85% は出所の記載が無く、LCOS 側（85% / 15 年 / 90%）と不揃いだった。
  *   - 補助率: 大規模の標準 33% は、SII 系統用蓄電システム等導入支援事業（令和7年度補正）公募要領 1-10 で
  *       リチウムイオン電池の 1,000kW以上10,000kW未満・10,000kW以上30,000kW未満がいずれも 1/3 以内（補助対象経費に対する率・
  *       上限額あり）であることを 33% で近似したもの。本試算は CAPEX 全額に掛けている（近似）。
@@ -42,21 +45,28 @@
 import type { IRRInput } from './irr-calculator';
 // Nv-0c ■1: 容量市場の既定値はカタログ（OCCTO 約定結果の全国加重平均）から導出する
 import { CAPACITY_MARKET_SCENARIO_DEFAULTS as CM } from './capacity-market-defaults';
+// Ck-1 A9: 蓄電池の性能前提はサイト内で 1 箇所に定義する
+import { DEPTH_OF_DISCHARGE, PROJECT_LIFETIME_YEARS, ROUND_TRIP_EFFICIENCY } from './storage-assumptions';
 
 /** シナリオキー */
 export type ScenarioKey = 'optimistic' | 'standard' | 'pessimistic';
 
-/** 設備系の共通デフォルト (3 シナリオ共通) */
+/**
+ * 設備系の共通デフォルト (3 シナリオ共通)
+ * ★Ck-1 A9（2026-09-21）: 往復効率・耐用年数・放電深度は storage-assumptions.ts の 1 箇所に寄せた（#119/#121）。
+ *   旧値 88% / 20 年 / 85% は出所の記載が無く、/tools/lcoe-lcos（85% / 15 年 / 90%）と不揃いだった。
+ *   往復効率 85%・寿命 15 年は NREL ATB 2024 年版の本文、放電深度 90% は当サイトの前提値（出所なし）。
+ */
 export const COMMON_DEFAULTS = {
   capacity_mwh: 50,
   output_mw: 12.5, // 4 時間放電
-  efficiency: 88,
-  lifespan_years: 20,
+  efficiency: Math.round(ROUND_TRIP_EFFICIENCY.value * 100),
+  lifespan_years: PROJECT_LIFETIME_YEARS.value,
   cycles_per_year: 365,
-  dod: 85,
+  dod: Math.round(DEPTH_OF_DISCHARGE.value * 100),
   opex_yen_per_mw_year: 5_000_000,
   discount_rate: 5, // NPV 計算用、業界一般的な水準
-} as const;
+};
 
 /** シナリオ別デフォルト (CAPEX/補助金/市場価格) */
 export const SCENARIO_DEFAULTS: Record<ScenarioKey, Omit<IRRInput, keyof typeof COMMON_DEFAULTS>> = {

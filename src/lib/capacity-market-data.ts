@@ -21,7 +21,7 @@ export { AREA_LABELS } from './capacity-market-types';
 
 /**
  * エリアのみでフィルタ（区分非依存）
- * OCCTO メインオークションの約定価格はエリア単位で決まり、区分（新設/既設/経過措置）によって変わらない。
+ * OCCTO メインオークションの約定価格はエリア（ブロック）単位で決まり、新設・既設で変わらない（経過措置は約定価格ではなく容量確保契約金額の控除で、実需給2029を最後に廃止・Ck-1 A10）。
  */
 export function filterHistoryByArea(
   records: CapacityMarketRecord[],

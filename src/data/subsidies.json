@@ -691,8 +691,8 @@
     "deadline_raw": "令和8年(2026年)12月10日（木）17:00必着（※申請期間の途中であっても、予算額を超える申請があった場合は受付を終了）",
     "is_rolling": false,
     "fiscalYear": "2026年度",
-    "sourceUrl": "https://www.pref.shiga.lg.jp/ippan/kankyoshizen/ondanka/343483.html",
-    "updatedAt": "2026-08-07T11:07:45.815Z",
+    "sourceUrl": "https://www.pref.shiga.lg.jp/cg00/3127.html",
+    "updatedAt": "2026-09-21T12:12:34.166Z",
     "scheme": "蓄電池単体（発電設備と併設または既設発電設備に接続する場合に限る。） 【対象】中小企業者等であって滋賀県内に事業所等を有する事業者 等（県税に滞納がない事業者／省エネ診断を受けた事業者） 【要件】再エネ発電設備との併設が条件 【要注意】候補URL（pref.shiga.lg.jp/ippan/kankyoshizen/ondanka/343483.html）はHTTP 200で取得できたが、事業名・連絡先・リンクのみのスタブページで、対象者・蓄電池の対象可否・補助率・公募期間の記載は一切なし。同ページが案内する公式リンク2本で裏取りした：(a) 公益財団法人滋賀県産業支援プラザ https://www.shigaplaza.or.jp/news/hojokin-co2-20260422/ ＝ ステータス表示「受付中」、受付期間 2026年4月30日〜12月10日17:00必着、補助対象者「中小企業者等であって滋賀県内に事業所等を有する事業者 等」、対象設備の一例「●再エネ設備の導入：太陽光発電および蓄電池の設置 など」、様式に「交付申請（太陽光＋蓄電池版）」あり、申請状況 2026年8月3日現在 予算額63,000千円／交付決定額12,029千円（＝予算残あり）。(b) 県公式サイト「ゼロナビしが」 https://zeronavi.shiga.jp/company/subsidy/prefecture/1/ ＝ 対象設備に「太陽光発電設備:太陽光発電＋蓄電池、太陽光発電」および quote 欄の「蓄電池単体（発電設備と併設または既設発電設備に接続する場合に限る。）」を明記。よって蓄電池単体申請も可だが発電設備との併設または既設発電設備への接続が必須＝needsRenewableCombo=true。候補JSONの status「要確認」→実データで「公募中」に確定、rate「要CC確認」→上記のとおり確定。名称はプラザHPでは「令和8年度 省エネ・再エネ等設備導入加速化補助金」（「事業」なし）と表記ゆれあり、nameOfficialは候補URL（県ページ）記載を採用。省エネ診断の受診が申請要件（ファイナンスリース／オンサイトPPAを除く）。 【2026-08-08 一次照合・S3都道府県拡張】",
     "applicable_prefs": [
       "滋賀"
@@ -1707,8 +1707,8 @@
     "deadline_raw": "随時",
     "is_rolling": true,
     "fiscalYear": "通年",
-    "sourceUrl": "https://www.dbj.jp/service/finance/environment/index.html",
-    "updatedAt": "2026-05-03T23:44:56.690Z",
+    "sourceUrl": "https://www.dbj.jp/service/sustainability_rating/enviro/",
+    "updatedAt": "2026-09-21T12:12:28.240Z",
     "scheme": "政投銀の環境格付融資。蓄電所大型案件・PF組成の主要レンダー。",
     "applicable_prefs": [],
     "applicable_use_cases": [
@@ -1763,8 +1763,8 @@
     "deadline_raw": "随時",
     "is_rolling": true,
     "fiscalYear": "通年",
-    "sourceUrl": "https://www.smbc.co.jp/hojin/sustainability/index.html",
-    "updatedAt": "2026-05-03T23:44:55.112Z",
+    "sourceUrl": "https://www.smbc.co.jp/hojin/financing/sustainable/gss/",
+    "updatedAt": "2026-09-21T12:12:36.139Z",
     "scheme": "三井住友銀行のグリーンローン。蓄電所PFのメガバンク主要レンダーの一角。",
     "applicable_prefs": [],
     "applicable_use_cases": [
@@ -1791,8 +1791,8 @@
     "deadline_raw": "随時",
     "is_rolling": true,
     "fiscalYear": "通年",
-    "sourceUrl": "https://www.bk.mufg.jp/houjin/sustainability/index.html",
-    "updatedAt": "2026-05-03T23:44:54.376Z",
+    "sourceUrl": "https://www.bk.mufg.jp/csr/framework/index.html",
+    "updatedAt": "2026-09-21T12:12:32.253Z",
     "scheme": "三菱UFJ銀行のグリーンローン。蓄電所プロジェクトファイナンスでメガバンク最大級の組成実績。",
     "applicable_prefs": [],
     "applicable_use_cases": [
@@ -2324,8 +2324,8 @@
     "deadline_raw": "令和6年度（2024年度）採択発表済",
     "is_rolling": false,
     "fiscalYear": "令和6年度（2024年度）",
-    "sourceUrl": "https://sii.or.jp/storage_battery06/",
-    "updatedAt": "2026-05-03T23:44:46.327Z",
+    "sourceUrl": "https://sii.or.jp/chikudenchi06/decision.html",
+    "updatedAt": "2026-09-21T12:12:30.249Z",
     "scheme": "SII公募の系統用蓄電池・水電解装置導入支援事業の令和6年度採択結果。東京ガス・苫小牧パワーストレージなど多数案件が採択。",
     "applicable_prefs": [
       "北海道",

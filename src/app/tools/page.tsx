@@ -12,6 +12,8 @@ import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
 import substationsIndex from '@/data/substations/index.json';
 import subsidiesData from '@/data/subsidies.json';
+// Ck-1 A5: 容量市場の年度範囲はカタログから（「対象実需給年度」を明記・範囲を焼き込まない）
+import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults';
 
 // 件数はローカル JSON から動的参照（焼き込み drift 防止・tools分析2026-07-09 変更3。microCMS 0 req）
 const SUBSTATION_TOTAL = (substationsIndex as { total: number }).total;
@@ -64,7 +66,7 @@ const tools = [
     badge: 'OCCTO 実データ連携（54件）',
     available: true,
     description:
-      '容量市場メインオークションの応札価格を 9 エリア × FY2024-FY2029 実績（OCCTO 公表値 / data.eic-jp.org）から推定。推奨応札レンジ + 落札確率 + 想定収入を即時試算。',
+      `容量市場メインオークションの応札価格を 9 エリア × 対象実需給年度 ${CMN.firstFy}〜${CMN.lastFy} の実績（出典: OCCTO 公表値 / data.eic-jp.org）から推定。推奨応札レンジ + 落札確率 + 想定収入を即時試算。`,
   },
   {
     slug: 'subsidy-match',

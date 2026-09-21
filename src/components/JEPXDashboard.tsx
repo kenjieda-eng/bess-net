@@ -17,6 +17,7 @@ import { DAILY_DATA, MONTHLY_DATA, AREA_LABELS, AREAS, type AreaKey } from '@/da
 import { calcArbitrage, calcAvgArbitrage, compareAreas } from '@/lib/jepx-analyzer';
 // Lc-2: JEPX の実在するページ名（Lc-1 で書いた「スポット市場取引結果」はサイト内に存在しなかった）
 import { JEPX_SPOT_PAGE_NAME } from '@/lib/eic-license';
+import { ROUND_TRIP_EFFICIENCY } from '@/lib/storage-assumptions';
 
 type View = 'price' | 'heatmap' | 'monthly' | 'arbitrage';
 
@@ -24,7 +25,8 @@ export default function JEPXDashboard() {
   const [view, setView] = useState<View>('price');
   const [area, setArea] = useState<AreaKey>('tokyo');
   const [capacityMWh, setCapacityMWh] = useState<number>(10);
-  const [efficiency, setEfficiency] = useState<number>(0.85);
+  // Ck-1 A9: 往復効率の既定はサイト内 1 箇所（storage-assumptions.ts・NREL ATB 2024 年版の 85%）
+  const [efficiency, setEfficiency] = useState<number>(ROUND_TRIP_EFFICIENCY.value);
   const [cycles, setCycles] = useState<number>(1);
   const [shareMsg, setShareMsg] = useState<string>('');
 

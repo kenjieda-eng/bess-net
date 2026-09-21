@@ -17,6 +17,7 @@ import {
 import { getAreaSubstationsStatic, toSubstationShape } from '@/lib/grid-static-lists';
 import { siteConfig } from '@/lib/site-config';
 import { GRID_PAGE_RELATED_TERMS } from './related-terms';
+import { sourceFileName } from '@/lib/grid-source';
 
 export type AreaMeta = {
   slug: string;
@@ -196,12 +197,13 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
   const areaDates = getAreaDates(meta.areaJp);
   const lastUpdated = areaDates?.last_updated ?? undefined;
   // サンプルCSVも代表日と同じ版の行から採る（「8/7」と表示して7/31のCSVを指さない）
+  // Ck-1 A2: URL ではなくファイル名だけを表示する（直リンクは翌月に 404 化するため）
   const sampleSourceUrl =
     (lastUpdated
       ? subs.find((s) => (s.last_updated || '').slice(0, 10) === lastUpdated)?.source_url
       : undefined) ??
-    (subs.length > 0 ? subs[0].source_url : undefined) ??
-    meta.landingUrl;
+    (subs.length > 0 ? subs[0].source_url : undefined);
+  const sampleFileName = sourceFileName(sampleSourceUrl);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -615,17 +617,20 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
               </dd>
               <dt>データ最終更新日（代表）</dt>
               <dd>{fmtDate(lastUpdated)}</dd>
-              <dt>サンプルCSV直リンク</dt>
-              <dd>
-                <a
-                  href={sampleSourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="grid-source-link"
-                >
-                  {sampleSourceUrl}
-                </a>
-              </dd>
+              {/* Ck-1 A2: 公表ファイル（月次で名前が変わる）への直リンクをやめ、ファイル名を文字で示す。
+                  旧「サンプルCSV直リンク」は翌月には 404 になっていた（九州 ZIP・四国/東北 CSV で実測）。 */}
+              {sampleFileName && (
+                <>
+                  <dt>取り込んだ公表ファイル（例）</dt>
+                  <dd>
+                    {sampleFileName}
+                    <br />
+                    <span style={{ fontSize: 14, color: 'var(--color-muted)' }}>
+                      公表ファイルは月次で差し替わり名前が変わるため、直接リンクしていません。上の公式情報ページから取得できます。
+                    </span>
+                  </dd>
+                </>
+              )}
             </dl>
             <p className="grid-source-note">
               ※ 本ページの数値は <strong>{meta.operator}</strong>

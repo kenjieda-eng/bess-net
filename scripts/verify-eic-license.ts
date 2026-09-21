@@ -6,7 +6,7 @@
  *   Y-14 の宿題④。落とすのではなく警告（exit 0 固定）。ライセンス表記の欠落はビルドを止める性質の問題ではなく、
  *   気づかないまま公開が続くことが問題なので、毎ビルドのログに出す。
  *
- * 表示系列の定義: src 配下（src/data を除く）の .ts/.tsx が import している `@/data/eic/<id>.json`。
+ * 表示系列の定義: src 配下（src/data を除く）の .ts/.tsx が import している `@/data/eic/<id>.json`（相対パス `../data/eic/<id>.json` も含む・Ck-1）。
  *   これらは src/data/eic/<id>.json（上流 eic-data-pipeline が prebuild で再生成）にメタを持つ。
  *
  * 検査:
@@ -86,10 +86,20 @@ function metaOf(id: string): Meta | null {
 // 検査対象に混ぜると license_notice 空・license_url 無しに必ず計上され、件数の信号が濁る。
 const NOT_A_SERIES = new Set(['catalog']);
 
+/**
+ * カタログ系列の import。`@/data/eic/<id>.json` と、scripts からも読めるよう相対パスで書いた
+ * `../data/eic/<id>.json`（src/lib/capacity-market-defaults.ts・spot-spread-reference.ts・
+ * nrel-atb-reference.ts・fx-reference.ts）の両方を拾う。
+ * ★Ck-1（2026-09-21）: 旧版は `@/` 形式しか拾わず、Nv-0c で相対 import にした系列（容量市場 national・
+ *   JEPX 日内価差）が「表示系列」から漏れていた。import / require 文の文字列だけを対象にする（コメント中の
+ *   パス表記は数えない）。
+ */
+const EIC_IMPORT_RE = /(?:from\s+|import\s*\(\s*|require\s*\(\s*)['"][^'"]*?data\/eic\/([a-z0-9-]+)\.json['"]/g;
+
 const used = new Map<string, string[]>(); // id → 参照元ファイル
 for (const f of walk(SRC)) {
   const text = fs.readFileSync(f, 'utf8');
-  for (const m of text.matchAll(/@\/data\/eic\/([a-z0-9-]+)\.json/g)) {
+  for (const m of text.matchAll(EIC_IMPORT_RE)) {
     if (NOT_A_SERIES.has(m[1])) continue;
     const rel = path.relative(ROOT, f).replace(/\\/g, '/');
     const list = used.get(m[1]) ?? [];
@@ -115,7 +125,7 @@ for (const id of ids) {
   if (!meta.license_url) noUrl.push(id);
 }
 
-console.log(`[verify:eic-license] 表示系列 ${ids.length} 件（src が import している @/data/eic/*.json）`);
+console.log(`[verify:eic-license] 表示系列 ${ids.length} 件（src が import している data/eic/*.json・相対 import 含む）`);
 const warn = (label: string, list: string[]) => {
   if (list.length === 0) {
     console.log(`[verify:eic-license] ok   ${label}: 0 件`);
@@ -207,7 +217,7 @@ for (const page of pageFiles) {
   let hasAttribution = false;
   for (const f of files) {
     const text = fs.readFileSync(f, 'utf8');
-    for (const m of text.matchAll(/@\/data\/eic\/([a-z0-9-]+)\.json/g)) {
+    for (const m of text.matchAll(EIC_IMPORT_RE)) {
       if (!NOT_A_SERIES.has(m[1])) seriesCount++;
     }
     // コメントは出典表記として数えない。

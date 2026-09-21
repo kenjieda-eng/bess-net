@@ -110,7 +110,7 @@ export const INCIDENTS: Incident[] = [
     summary: '風力発電併設 BESS で 2022/8 に火災発生、複数日延焼、近隣道路通行止め。',
     lessons: '再エネ併設 BESS の協調制御と防火対策。',
     sourceUrls: [
-      'https://www.hawaiianelectric.com/about-us/news-and-events/press-releases',
+      'https://www.hawaiianelectric.com/about-us/newsroom', // Ck-1 A3: 旧 press-releases は 404。現行のニュースリリース一覧（title「Newsroom | Hawaiian Electric」）
     ],
   },
   {
@@ -124,7 +124,7 @@ export const INCIDENTS: Incident[] = [
     summary: '2017-2019 にかけて韓国国内で 23 件以上の BESS 火災が連続発生。政府調査で複数原因 (絶縁性能、保護システム、運用環境、統合管理) を特定。',
     lessons: '急速な導入と品質管理のバランス。韓国政府の調査報告は国際的に参照されている。',
     sourceUrls: [
-      'https://english.motie.go.kr/en/pc/pressreleases/bbs/bbsView.do?bbs_seq_n=572',
+      'https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/161771/view', // Ck-1 A3: 旧英語版 URL は 404。同じ発表（2019-06-11「ESS 사고원인 조사결과 및 안전강화 대책 발표」・産業通商部）
     ],
   },
   {
@@ -139,7 +139,7 @@ export const INCIDENTS: Incident[] = [
     summary: '北京の商業ビル併設 BESS で 2021/4 に爆発、消防士 2 名殉職、1 名負傷。',
     lessons: '中国国内では本事故を契機に BESS 安全基準 (GB/T) の整備が進む。',
     sourceUrls: [
-      'https://www.cnesa.org/index.php?m=content&c=index&a=show&catid=7&id=290',
+      'https://www.cnesa.org/information/detail/?column_id=58&id=376', // Ck-1 A3: 旧 URL は soft-404。CNESA の同事故の記事（2021-04-24「沉痛悼念丰台储能电站火灾事故中牺牲的消防员！」）
     ],
   },
   {
@@ -154,7 +154,7 @@ export const INCIDENTS: Incident[] = [
     summary: 'コミッショニング中の Tesla Megapack 1台で 2021/7 火災発生、隣接ユニットへ拡大。3日間延焼後鎮火。',
     lessons: '冷却液漏洩 + 電気アークによる発火。Tesla の試運転手順改善のきっかけ。',
     sourceUrls: [
-      'https://www.energysafe.vic.gov.au/news-and-publications/news-and-resources/victorian-big-battery-fire',
+      'https://www.energysafe.vic.gov.au/sites/default/files/2022-12/VBB_StatementOfFindings_FINAL_28Sep2021.pdf', // Ck-1 A3: 旧ページは 404。Energy Safe Victoria の同火災の調査結果（Statement of Technical Findings）
     ],
   },
   {
@@ -197,7 +197,7 @@ export const INCIDENTS: Incident[] = [
     summary: 'LG Chem (現 LG Energy Solution) 製セルの一部に絶縁不良が確認され、複数の蓄電所で発火リスクが指摘。2020年に大規模リコール。',
     lessons: 'セル製造品質と現場での発火リスクの直接的な関係。サプライチェーン透明性の重要性。',
     sourceUrls: [
-      'https://www.lgensol.com/en/business-newsroom/news-list?utm=press',
+      'https://www.lgensol.com/en/company/newsroom', // Ck-1 A3: 旧 news-list は 404。現行の Newsroom（title「Newsroom｜LG Energy Solution」）
     ],
   },
 ];

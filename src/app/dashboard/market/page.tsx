@@ -181,7 +181,8 @@ export default async function MarketDashboardPage() {
       },
       publisher: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
       creator: { '@type': 'Organization', name: '財務省 + 日本銀行 + FRED', url: 'https://www.mof.go.jp/jgbs/' },
-      license: 'https://www.mof.go.jp/copyright/index.htm',
+      // Ck-1 A3: 旧 /copyright/index.htm は 404。財務省の「著作権・リンク等について」（公共データ利用規約 PDL1.0 の記載あり）
+      license: 'https://www.mof.go.jp/about_mof/notice/index.html',
       isAccessibleForFree: true,
     },
   ];

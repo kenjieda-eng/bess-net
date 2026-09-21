@@ -9,7 +9,7 @@
  * v2 (2026-05-29): data.eic-jp.org 容量市場 20 系列 実データ連携
  *   - catalog 240（balancing 39 + capacity 20 含む）
  *   - 年度レンジ・年度数・件数・エリア数は catalog coverage / 系列データから導出（Cm1・焼き込みなし）
- *   - 区分非依存を正しく反映（OCCTO 約定価格は新設/既設/経過措置で同価格）
+ *   - 区分非依存を反映（OCCTO 約定価格の決め方に新設・既設の別なし。経過措置は契約金額の控除で、実需給2029を最後に廃止＝約款 附則 第2条7・Ck-1 A10）
  *   - Server Component で liveHistory 構築 → props 注入（鉄則 #2）
  *   - フォールバック: precompute 欠落時は「データ未取得」とだけ表示し、数値は出さない（Nv-0b ■2 でモックを撤去）
  *   - L-EIC-005/008§9/011 準拠
@@ -203,7 +203,7 @@ export default function CapacityMarketBidPage() {
     },
     featureList: [
       '全国エリアの約定実データ（OCCTO 公表値、data.eic-jp.org 連携）',
-      '区分非依存の正しい反映（新設/既設/経過措置で同価格）',
+      '区分非依存の反映（約定価格の決め方に新設・既設の別なし）',
       '推奨応札価格レンジ (下限/中央/上限)',
       '価格帯別 落札確率近似',
       'トレンド判定 (上昇/横ばい/下落)',
@@ -267,7 +267,7 @@ export default function CapacityMarketBidPage() {
           >
             {isLive
               ? <>データ出典: <strong>data.eic-jp.org 容量市場メインオークション約定価格（OCCTO 公表値ベース、{rangeLabel}）</strong>。
-                <strong>OCCTO 約定価格は区分非依存</strong>（同一エリアでは新設/既設/経過措置で同価格）を正しく反映。</>
+                <strong>OCCTO 約定価格は区分非依存</strong>（約定価格の決め方に新設・既設の別はありません。経過措置は約定価格ではなく容量確保契約金額からの控除で、対象実需給年度 2029 年度を最後に廃止）を反映。</>
               : <>⚠️ 約定結果データが未生成のため試算を表示していません（推測値で埋めていません）。<code>npm run precompute-eic-data</code> を実行後に再ビルドしてください。</>
             }
           </p>
@@ -331,7 +331,8 @@ export default function CapacityMarketBidPage() {
               </dd>
               <dt style={{ fontWeight: 700, marginTop: 8 }}>メインオークション</dt>
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
-                毎年実施、4 年後実需要を対象。区分は新設/既設/経過措置。本ツールはメインオークションを対象。
+                {/* Ck-1 A10: 旧「区分は新設/既設/経過措置」は誤り（経過措置は区分ではなく契約金額の控除） */}
+                毎年実施、4 年後の実需給年度を対象。本ツールはメインオークションを対象。
               </dd>
               <dt style={{ fontWeight: 700, marginTop: 8 }}>長期脱炭素オークション (LTDC)</dt>
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
@@ -343,7 +344,10 @@ export default function CapacityMarketBidPage() {
                 {/* ★Nv-0b ■4(b): 「新設は価格が既設より高め」を削除。約定価格は区分非依存で、一次は区分別の約定価格を公表していない。 */}
                 <strong>新設電源</strong>: 4 年後新規運開予定の電源。<br />
                 <strong>既設電源</strong>: 運転中の電源。<br />
-                <strong>経過措置電源</strong>: 制度導入時の暫定区分、~2028 年度に新設・既設へ統合予定。<br />
+                {/* Ck-1 A10: 旧「経過措置電源: 制度導入時の暫定区分、~2028 年度に新設・既設へ統合予定」は削除。
+                    一次（OCCTO「容量確保契約約款（対象実需給年度：2024 - 2029 年度）」附則）では、経過措置は電源の区分ではなく
+                    容量確保契約金額からの控除で、対象実需給年度 2029 年度を最後に廃止（2030 年度の募集要綱では「（削除）」）。
+                    「2028 年度に新設・既設へ統合」に当たる記述は一次に無い。 */}
                 ※ 約定価格はエリア単位で決まり、区分によって変わりません。一次（OCCTO「容量市場メインオークション約定結果」）は区分別の約定価格を公表していません。
               </dd>
               {/* ★Nv-0b ■4(a)・■3(c): 数値を同じページの実データ（OCCTO 公表値）に合わせ、年度が「対象実需給年度」であることを明記。
@@ -389,7 +393,7 @@ export default function CapacityMarketBidPage() {
             </p>
             <ul style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>✅ 過去約定価格 → OCCTO 公表値の実データ（{rangeLabel}、{areaCount} エリア）</li>
-              <li>✅ 区分非依存を正しく反映（新設/既設/経過措置で同価格）</li>
+              <li>✅ 区分非依存を反映（約定価格の決め方に新設・既設の別なし。経過措置＝契約金額の控除は対象実需給年度 2029 年度を最後に廃止）</li>
               <li>✅ 収録年度 → {yearCount} 年度（{rangeLabel}）</li>
               <li>📅 将来拡張: LTDC（長期脱炭素オークション）との併用シナリオ</li>
               <li>📅 将来拡張: 追加オークション結果の追加（Phase D 第2-3期）</li>

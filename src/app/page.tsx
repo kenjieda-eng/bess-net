@@ -14,6 +14,8 @@ import {
   jstTodayISO,
 } from '@/lib/policy-utils';
 import substationsIndex from '@/data/substations/index.json';
+// Ck-1 A5: 容量市場の年度範囲はカタログから（「対象実需給年度」を明記・範囲を焼き込まない）
+import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults';
 
 export const revalidate = 60;
 
@@ -35,7 +37,7 @@ function buildPrimaryCards(substationsCountStr: string, chubuCountStr: string) {
 // 折りたたみ側（初期DOMに全文残す・#107 表示切替方式＝details）
 const moreFeatures = [
   { href: '/tools/subsidy-match', title: '補助金マッチング', desc: '事業条件から最適補助金を自動マッチング (50+件)。', tag: 'ツール' },
-  { href: '/tools/capacity-market-bid', title: '容量市場応札試算', desc: '9エリア × FY2024-FY2029。OCCTO実データ連携。', tag: 'ツール' },
+  { href: '/tools/capacity-market-bid', title: '容量市場応札試算', desc: `9エリア × 対象実需給年度 ${CMN.firstFy}〜${CMN.lastFy}。出典: OCCTO 約定結果（実データ連携）。`, tag: 'ツール' },
   { href: '/map/industry-chaos', title: '業界カオスマップ', desc: '50+社 × 11カテゴリ + 35関係。Matrix + Force graph。', tag: 'ハブ' },
   { href: '/market/jepx', title: 'JEPX ハブ', desc: '9エリア × 30日 × 30分。ヒートマップ + アービ計算機。', tag: 'ハブ' },
   { href: '/global', title: '海外5市場ハブ', desc: '米国/EU/中国/インド/豪州 比較マトリクス。', tag: 'ハブ' },

@@ -47,6 +47,7 @@ import { BALANCING_BATTERY_FALLBACK, BALANCING_FY_DATE } from '@/lib/balancing-f
 import { licenseNoticeLines, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
 // Lc-2 ■4: 年度内の幅（月次 min〜max）。カタログは年平均しか持たないため EPRX 年次 PDF からの転記を使う
 import { getVerifiedMonthlyStats, getMonthlyStats, pdfFileNameOf } from '@/lib/eprx-monthly';
+import { BATTERY_CAPEX } from '@/lib/nrel-atb-reference';
 
 /**
  * 幅の転記元を出典欄に書くための文字列（Lc-2 ■4(d)）。
@@ -417,12 +418,19 @@ export default function BalancingRevenuePage() {
                   ? `、月次では ${tertiary2Fy2024.min.toFixed(2)}〜${tertiary2Fy2024.max.toFixed(2)}・約定 ${tertiary2Fy2024.awardedMonths} か月`
                   : ''}
                 ）に対し、
-                蓄電池の設備コストが下がるほど IRR は上振れします。系統用蓄電池のCAPEXは
-                <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL ATB 2024版</a>で
-                約 ¥83,000/kWh（米国前提・4時間構成・USD/JPY 158.34）。
+                蓄電池の設備コストが下がるほど IRR は上振れします。
+                {/* Ck-1 A9: 「約 ¥83,000/kWh（…USD/JPY 158.34）」を焼き込んでいた。為替・版はカタログから（nrel-atb-reference.ts）。
+                    シナリオ名も IRR シミュレーターの実際の名前（楽観/標準/悲観）に合わせた（旧「楽観/実データ/保守」は CAPEX ボタンの名前と混同）。 */}
+                {BATTERY_CAPEX && (
+                  <>
+                    系統用蓄電池のCAPEXは
+                    <a href="https://atb.nlr.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL ATB {BATTERY_CAPEX.atbYear} 年版</a>で
+                    約 ¥{BATTERY_CAPEX.mid.toLocaleString('ja-JP')}/kWh（米国前提・4時間構成・USD/JPY {BATTERY_CAPEX.fxJpyPerUsd}＝{BATTERY_CAPEX.fxMonthLabel}の月中平均・日本銀行）。
+                  </>
+                )}
                 コストが ±20% 動くと事業性がどう変わるかは{' '}
                 <Link href="/tools/irr-simulator" style={{ color: 'var(--color-accent)' }}>IRR シミュレーター</Link>の
-                3シナリオ（楽観/実データ/保守）で試算できます。
+                3シナリオ（楽観/標準/悲観）で試算できます。
               </p>
               <p style={{ fontSize: 15, lineHeight: 1.8, margin: 0 }}>
                 背景は解説{' '}
@@ -502,7 +510,7 @@ export default function BalancingRevenuePage() {
             ・落札量（volume）は EPRX が図のみ・数値非公開のため系列化せず、不足率を調達逼迫度の代理として併用。市場規模は必要時にグラフ目視の概算（注釈付き・精度限定）。
             <br />
             ・感度解説内の蓄電池CAPEX参考値は{' '}
-            <a href="https://atb.nrel.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL Annual Technology Baseline (ATB) 2024</a>
+            <a href="https://atb.nlr.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL Annual Technology Baseline (ATB) 2024</a>
             （米国前提・CC BY 4.0）、為替換算は{' '}
             <a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>EIC Data</a>
             の fx-usdjpy-monthly-avg による。low/high は当サイトの感度レンジ仮定（mid±20%）であり、NREL の予測値ではありません。

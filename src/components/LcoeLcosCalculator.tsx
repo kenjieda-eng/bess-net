@@ -14,15 +14,25 @@ import {
   LCOS_DEFAULTS, LCOE_DEFAULTS,
   type LcosInput,
 } from '@/lib/lcoe-lcos';
+import { DEPTH_OF_DISCHARGE, PROJECT_LIFETIME_YEARS, ROUND_TRIP_EFFICIENCY } from '@/lib/storage-assumptions';
 
 export interface LcosCapexProp {
   low: number; mid: number; high: number;
   fxJpyPerUsd: number; capexUsdPerKwh: number;
+  /** NREL ATB の版（カタログの base year） */
+  atbYear: number;
+  /** 為替の対象月（画面表記「2026年8月」） */
+  fxMonthLabel: string;
 }
+/**
+ * 電源別の行。Ck-1 A8: CF もカタログ（NREL ATB）から。値が無い系列は null（行は出すが試算しない）。
+ * 版（atbYear）は系列ごとに違いうる（原子力の CF は ATB 2023 年版が最新）ので行ごとに持つ。
+ */
 export interface SourceProp {
   key: string; label: string;
-  capexJpyPerKw: number; capexUsdPerKw: number;
-  lcoeUsdPerMwh: number; cfDefault: number;
+  capexJpyPerKw: number | null; capexUsdPerKw: number | null; capexAtbYear: number | null;
+  lcoeUsdPerMwh: number | null; lcoeAtbYear: number | null;
+  cfDefault: number | null; cfAtbYear: number | null;
 }
 interface Props {
   lcosCapex: LcosCapexProp;
@@ -86,7 +96,7 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
   const [lcoeLife, setLcoeLife] = useState(LCOE_DEFAULTS.lifeYears);
   const [lcoeOmRate, setLcoeOmRate] = useState(LCOE_DEFAULTS.omRate);
   const [cfBySource, setCfBySource] = useState<Record<string, number>>(
-    Object.fromEntries(sources.map((s) => [s.key, s.cfDefault])),
+    Object.fromEntries(sources.filter((s) => s.cfDefault !== null).map((s) => [s.key, s.cfDefault as number])),
   );
 
   // mount: URL params 復元（落とし穴#92）
@@ -141,17 +151,21 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
   const lcosResult = useMemo(() => computeLCOS(lcos, fxJpyPerUsd), [lcos, fxJpyPerUsd]);
 
   const lcoeRows = useMemo(() => sources.map((s) => {
-    const r = computeLCOE({
-      capexJpyPerKw: s.capexJpyPerKw,
-      cf: cfBySource[s.key] ?? s.cfDefault,
-      omRate: lcoeOmRate, fuelJpyPerKwh: 0,
-      discountRate: lcoeDiscount, lifeYears: lcoeLife,
-    }, fxJpyPerUsd);
+    const cf = cfBySource[s.key] ?? s.cfDefault;
+    // CAPEX か CF がカタログに無い電源は試算しない（代替の概数を置かない）
+    const r = s.capexJpyPerKw !== null && cf !== null
+      ? computeLCOE({
+          capexJpyPerKw: s.capexJpyPerKw,
+          cf,
+          omRate: lcoeOmRate, fuelJpyPerKwh: 0,
+          discountRate: lcoeDiscount, lifeYears: lcoeLife,
+        }, fxJpyPerUsd)
+      : null;
     return {
-      key: s.key, label: s.label, cfDefault: s.cfDefault,
+      key: s.key, label: s.label, cf, cfAtbYear: s.cfAtbYear,
       capexJpyPerKw: s.capexJpyPerKw,
-      simpleJpyPerKwh: r.lcoeJpyPerKwh,
-      simpleUsdPerMwh: r.lcoeUsdPerMwh,
+      simpleJpyPerKwh: r?.lcoeJpyPerKwh ?? null,
+      simpleUsdPerMwh: r?.lcoeUsdPerMwh ?? null,
       atbUsdPerMwh: s.lcoeUsdPerMwh,
     };
   }), [sources, cfBySource, lcoeOmRate, lcoeDiscount, lcoeLife, fxJpyPerUsd]);
@@ -194,7 +208,7 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 12 }}>入力条件（蓄電・容量1kWhあたり）</h2>
             <div style={{ marginBottom: 14 }}>
               <label style={{ fontSize: 15, fontWeight: 600, display: 'block', marginBottom: 6 }}>
-                蓄電池CAPEX（NREL ATB 2024・米国前提）
+                蓄電池CAPEX（NREL ATB {lcosCapex.atbYear} 年版・米国前提）
               </label>
               <div style={{ display: 'flex', gap: 4, marginBottom: 8 }}>
                 {(['low', 'mid', 'high'] as const).map((m) => (
@@ -212,15 +226,18 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
               </div>
               <Field label="CAPEX（手入力で上書き）" value={lcos.capexJpyPerKwh} onChange={setLcosField('capexJpyPerKwh')}
                 min={20000} max={200000} step={1000} unit="¥/kWh"
-                hint={`標準=NREL ATB実値（$/kW÷4h×${lcosCapex.fxJpyPerUsd}）。楽観/保守=mid±20%（感度レンジ・仮定）`} />
+                hint={`標準=NREL ATB ${lcosCapex.atbYear} 年版の実値（$/kW÷4h×USD/JPY ${lcosCapex.fxJpyPerUsd}＝${lcosCapex.fxMonthLabel}の月中平均）。楽観/保守=mid±20%（感度レンジ・仮定）`} />
             </div>
-            <Field label="往復効率（RTE）" value={lcos.rte} onChange={setLcosField('rte')} min={0.6} max={0.98} step={0.01} unit="%" pct hint="概数 85%" />
+            <Field label="往復効率（RTE）" value={lcos.rte} onChange={setLcosField('rte')} min={0.6} max={0.98} step={0.01} unit="%" pct
+              hint={`既定 ${Math.round(ROUND_TRIP_EFFICIENCY.value * 100)}%＝${ROUND_TRIP_EFFICIENCY.source.label}の前提`} />
             <Field label="年間サイクル数" value={lcos.cyclesPerYear} onChange={setLcosField('cyclesPerYear')} min={50} max={730} step={5} unit="回/年" />
-            <Field label="放電深度（DoD）" value={lcos.dod} onChange={setLcosField('dod')} min={0.5} max={1} step={0.01} unit="%" pct />
+            <Field label="放電深度（DoD）" value={lcos.dod} onChange={setLcosField('dod')} min={0.5} max={1} step={0.01} unit="%" pct
+              hint={`既定 ${Math.round(DEPTH_OF_DISCHARGE.value * 100)}%＝${DEPTH_OF_DISCHARGE.source.label}`} />
             <Field label="充電単価" value={lcos.chargePriceJpyPerKwh} onChange={setLcosField('chargePriceJpyPerKwh')} min={0} max={40} step={0.5} unit="¥/kWh" hint="JEPXスポット平均の概数" />
             <Field label="O&M率（CAPEX比/年）" value={lcos.omRate} onChange={setLcosField('omRate')} min={0} max={0.08} step={0.005} unit="%" pct />
             <Field label="割引率" value={lcos.discountRate} onChange={setLcosField('discountRate')} min={0} max={0.12} step={0.005} unit="%" pct />
-            <Field label="事業年数" value={lcos.projectYears} onChange={setLcosField('projectYears')} min={5} max={25} step={1} unit="年" />
+            <Field label="事業年数" value={lcos.projectYears} onChange={setLcosField('projectYears')} min={5} max={25} step={1} unit="年"
+              hint={`既定 ${PROJECT_LIFETIME_YEARS.value} 年＝${PROJECT_LIFETIME_YEARS.source.label}の蓄電池寿命`} />
             <Field label="サイクル寿命" value={lcos.cycleLife} onChange={setLcosField('cycleLife')} min={1000} max={12000} step={250} unit="回" hint={`実効年数 N = min(事業年数, 寿命/年サイクル) = ${lcosResult.n.toFixed(1)}年`} />
           </div>
 
@@ -277,8 +294,8 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
           <div style={{ ...cardStyle, overflowX: 'auto' }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>電源別 簡易LCOE 比較</h2>
             <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
-              CAPEX は NREL ATB 2024（$/kW×{fxJpyPerUsd}）。CF は代表値（概数・編集可）。
-              「NREL ATB参考値」は ATB が独自CF・前提で算出した公表 LCOE（$/MWh）で、左の簡易値とは前提が異なります。
+              CAPEX・CF の既定値はいずれも NREL ATB（米国前提・各行の版）。CAPEX は $/kW を USD/JPY {fxJpyPerUsd}（{lcosCapex.fxMonthLabel}の月中平均・日本銀行）で円換算。CF は編集できます。
+              「NREL ATB参考値」は ATB が公表した LCOE（$/MWh）で、割引率・寿命・O&amp;M などの前提が本ツールの簡易計算と異なるため、値は一致しません。
             </p>
             <table style={{ width: '100%', fontSize: 15, borderCollapse: 'collapse', minWidth: 640 }}>
               <thead>
@@ -295,17 +312,24 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
                 {lcoeRows.map((r) => (
                   <tr key={r.key} style={{ borderBottom: '1px solid var(--color-border)', textAlign: 'right' }}>
                     <td style={{ textAlign: 'left', padding: '6px 8px', fontWeight: 600 }}>{r.label}</td>
-                    <td style={{ padding: '6px 8px' }}>{yen(Math.round(r.capexJpyPerKw))}</td>
+                    <td style={{ padding: '6px 8px' }}>{r.capexJpyPerKw !== null ? yen(Math.round(r.capexJpyPerKw)) : '—'}</td>
                     <td style={{ padding: '4px 8px' }}>
-                      <input type="number" value={Math.round((cfBySource[r.key] ?? r.cfDefault) * 1000) / 10}
-                        min={1} max={100} step={1}
-                        onChange={(e) => { const n = Number(e.target.value); if (Number.isFinite(n)) setCfBySource((p) => ({ ...p, [r.key]: n / 100 })); }}
-                        style={{ width: 56, padding: '3px 4px', fontSize: 15, textAlign: 'right', border: '1px solid var(--color-border)', borderRadius: 4 }}
-                        aria-label={`${r.label} 設備利用率`} />
+                      {r.cf !== null ? (
+                        <>
+                          <input type="number" value={Math.round(r.cf * 1000) / 10}
+                            min={1} max={100} step={0.1}
+                            onChange={(e) => { const n = Number(e.target.value); if (Number.isFinite(n)) setCfBySource((p) => ({ ...p, [r.key]: n / 100 })); }}
+                            style={{ width: 64, padding: '3px 4px', fontSize: 15, textAlign: 'right', border: '1px solid var(--color-border)', borderRadius: 4 }}
+                            aria-label={`${r.label} 設備利用率`} />
+                          {r.cfAtbYear !== null && (
+                            <div style={{ fontSize: 13, color: 'var(--color-muted)' }}>既定: ATB {r.cfAtbYear}</div>
+                          )}
+                        </>
+                      ) : '—'}
                     </td>
-                    <td style={{ padding: '6px 8px', fontWeight: 700, color: 'var(--color-accent, #0066cc)' }}>{yen(r.simpleJpyPerKwh, 1)}</td>
-                    <td style={{ padding: '6px 8px' }}>{usd(Math.round(r.simpleUsdPerMwh))}</td>
-                    <td style={{ padding: '6px 8px', color: 'var(--color-muted)' }}>{usd(Math.round(r.atbUsdPerMwh))}</td>
+                    <td style={{ padding: '6px 8px', fontWeight: 700, color: 'var(--color-accent, #0066cc)' }}>{r.simpleJpyPerKwh !== null ? yen(r.simpleJpyPerKwh, 1) : '—'}</td>
+                    <td style={{ padding: '6px 8px' }}>{r.simpleUsdPerMwh !== null ? usd(Math.round(r.simpleUsdPerMwh)) : '—'}</td>
+                    <td style={{ padding: '6px 8px', color: 'var(--color-muted)' }}>{r.atbUsdPerMwh !== null ? usd(Math.round(r.atbUsdPerMwh)) : '—'}</td>
                   </tr>
                 ))}
                 <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
