@@ -22,7 +22,7 @@ export const TOOL_CTAS: ToolCta[] = [
   {
     href: '/tools/capacity-market-bid',
     label: '容量市場の応札水準を実データで試算する',
-    text: '本記事に関連して、容量市場メインオークションの約定実績（9エリア・FY2024-FY2029、OCCTO 公表値）から推奨応札レンジ・落札確率・想定収入を無料で試算できます。',
+    text: '本記事に関連して、容量市場メインオークションのエリア別約定価格（9エリア・対象実需給年度 2024〜2029、OCCTO 公表値）の過去平均をもとに、推奨応札レンジ・落札確率の目安（当サイトのモデル仮定）・想定収入を無料で試算できます。',
     button: '容量市場応札試算ツールを使う',
     // 選定ルール: title「容量市場」or slug capacity-market（LTDC 専門記事は対象外）・最大5
     explainerSlugs: new Set([

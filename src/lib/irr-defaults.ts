@@ -1,31 +1,47 @@
 /**
  * src/lib/irr-defaults.ts
  *
- * 蓄電池IRRシミュレーター デフォルト値 (依頼AM、2026年5月最新版)
+ * 蓄電池IRRシミュレーター デフォルト値 (依頼AM → Nv-0c で出所を是正・2026-09-21)
  *
- * 編集方針:
- *   - 加藤+石田+中村 監修 (AM_デフォルト値最新化_議論_2026-05-14.md 準拠)
- *   - 標準値は業界一般的な事業性ライン (IRR 4-7% 想定)
- *   - 楽観/悲観は事業性レンジの境界を示す
+ * ★経緯（Nv-0c）
+ *   容量市場 8,000・需給調整 1,500 の出所は 2026-05-14 の議論メモ（計画フォルダ
+ *   02_計画・運営/AM_デフォルト値最新化_議論_2026-05-14.md）だった。メモには
+ *   「2026 年度容量市場 約定価格（OCCTO 2026年3月公表）: 全国平均 約 7,500 …」
+ *   「2026年4月 需給調整市場 平均約定価格（OCCTO 速報）: 一次調整力 約 1,800-2,200 円/kW/月」とあるが、
+ *   どちらも一次に対応が無い。容量市場の数値は OCCTO の約定結果のどの年度・エリアとも一致せず、
+ *   需給調整市場の約定価格を公表しているのは OCCTO ではなく EPRX で、単位も円/ΔkW・30分（円/kW/月ではない）。
+ *   ＝議論の中で実在の機関名を付けた数値が作られ、それが既定値になっていた。
+ *   ★恒久ルール: 一次で埋まらない値は既定値に置かない。置く場合は「当サイトの想定」と明記する。
  *
- * 出典:
- *   - 容量市場: ★要是正（Nv-0b・2026-09-21）。下の 8,000（標準）/ 12,000（楽観）/ 5,000（悲観）は一次に対応する値が無い。
- *       正しい一次は OCCTO（電力広域的運営推進機関）「容量市場メインオークション約定結果」。
- *       ※ 旧記載「JEPX/OCCTO 公表 2025年度オークション結果」は誤り。JEPX は容量市場オークション結果の公表主体ではない。
- *       ※ 年度は必ず「対象実需給年度」か「実施年度」で書く（OCCTO 自身が両方の表記を使うため「2025年度」だけでは曖昧）。
- *         カタログ capacity-main-auction-price-* の date は対象実需給年度（cutoff_semantics: "delivery"）。
- *         参考: 対象実需給年度 2025 年度 = 東京 3,495 円/kW・全国加重平均 3,737.14 円/kW。8,000 はどの年度・エリアにも無い。
- *       ★値を差し替えるまで「OCCTO 公表」と書き換えてはいけない（8,000 を OCCTO の資料に帰属させる偽の出所になる）。
- *         既定値の定義（national 固定かエリア追随か）は依頼者の選択待ち（Nv-0b ■1(a)）。
- *   - 需給調整市場: ★未確認（Nv-0b で検出）。需給調整市場の運営・公表主体は OCCTO ではなく EPRX（電力需給調整力取引所）。
- *       また下の 1,500 円/kW/月 は EPRX の公表単位（円/ΔkW・30分）と単位が違い、公表値との対応が確認できていない。
- *   - スポット価格: ★未確認（Nv-0b で検出）。¥23/9 は日内の高値・安値の想定で、JEPX の公表系列に日内高安は無い。
- *       カタログ jepx-spot-system の 2024 年度の日平均は 5.43〜19.30 円/kWh で、23 はその範囲の外。
- *   - CAPEX: 業界 EPC 公表値中央値 (中国LFP / 国産混在)
- *   - SII 補助金: 系統用蓄電池 等導入支援事業 採択実績
+ * ★設計意図と実際の結果のずれ（未解決・Nv1 で扱う）
+ *   同メモは「標準シナリオ IRR 4-7% 想定」としていたが、旧既定値での標準 IRR は 25.35%。
+ *   原因は同じ出力（12.5MW）を裁定・容量市場・需給調整に全量で同時計上している収益モデル
+ *   （irr-calculator.ts annualCashflowYen の単純な足し算）。画面にはこの点を注記している（IRRSimulator）。
+ *
+ * 各値の出所（2026-09-21 時点）:
+ *   - 容量市場: ★カタログ参照（src/lib/capacity-market-defaults.ts）。
+ *       OCCTO「容量市場メインオークション約定結果」を data.eic-jp.org がエリア値から約定容量で加重平均した全国値。
+ *       標準＝全観測値（対象実需給年度）の中央値／楽観＝最大／悲観＝最小。
+ *       ※ JEPX は容量市場の公表主体ではない（旧記載「JEPX/OCCTO 公表」は誤り）。
+ *       ※ 年度は必ず「対象実需給年度」か「実施年度」で書く。カタログの date は対象実需給年度。
+ *   - 需給調整市場: ★既定値を置かない（0）。一次に対応が無く単位も違うため。利用者が入力する。
+ *   - スポット価格: 当サイトの想定値（標準 23/9 ＝ 価差 14 円/kWh）。
+ *       一次と照合できる: JEPX の 30 分値から算出した日内スプレッド（カタログ jepx-spread-top8-system・
+ *       上位 8 コマ − 下位 8 コマ＝4 時間相当）の 2025 年度平均は 8.10 円/kWh、日内最大 − 最小（理論上限）は 10.24 円/kWh。
+ *       既定の価差 14 円はどちらも上回る＝裁定収益は過大方向。画面では src/lib/spot-spread-reference.ts から動的に示す。
+ *       ★以前「JEPX の公表系列に日内高安は無い」「23 は日平均 5.43〜19.30 の範囲外」と書いていたが、
+ *         前者は誤り（30 分値から出せる）、後者は違う指標同士の比較で成り立たなかった（Nv-0c レビューで是正）。
+ *   - CAPEX: 当サイトの想定値（26 / 22 / 32 億円）。NREL ATB の参考値は IRRSimulator の Step 2 で別途提示。
+ *   - 補助率: 大規模の標準 33% は、SII 系統用蓄電システム等導入支援事業（令和7年度補正）公募要領 1-10 で
+ *       リチウムイオン電池の 1,000kW以上10,000kW未満・10,000kW以上30,000kW未満がいずれも 1/3 以内（補助対象経費に対する率・
+ *       上限額あり）であることを 33% で近似したもの。本試算は CAPEX 全額に掛けている（近似）。
+ *       ★鉤括弧で逐語引用のように書かない（上の記述は 2 行を要約したもの）。
+ *       大規模の楽観 40%・悲観 0%、高圧プリセットの 50/40/20% は当サイトの想定。
  */
 
 import type { IRRInput } from './irr-calculator';
+// Nv-0c ■1: 容量市場の既定値はカタログ（OCCTO 約定結果の全国加重平均）から導出する
+import { CAPACITY_MARKET_SCENARIO_DEFAULTS as CM } from './capacity-market-defaults';
 
 /** シナリオキー */
 export type ScenarioKey = 'optimistic' | 'standard' | 'pessimistic';
@@ -47,24 +63,24 @@ export const SCENARIO_DEFAULTS: Record<ScenarioKey, Omit<IRRInput, keyof typeof 
   optimistic: {
     spot_high: 28,
     spot_low: 6,
-    capacity_market_yen_per_kw_year: 12_000,
-    ancillary_yen_per_kw_month: 2_200,
+    capacity_market_yen_per_kw_year: CM.optimistic, // national の最大（カタログ）
+    ancillary_yen_per_kw_month: 0, // Nv-0c ■2: 既定値を置かない（一次に対応が無く単位も違う）
     capex_oku: 22, // 中国LFP + コスト最適化
     subsidy_rate: 40, // SII + 自治体併用
   },
   standard: {
     spot_high: 23,
     spot_low: 9,
-    capacity_market_yen_per_kw_year: 8_000, // 2025年度大幅下落反映
-    ancillary_yen_per_kw_month: 1_500,
+    capacity_market_yen_per_kw_year: CM.standard, // national の中央値（カタログ）
+    ancillary_yen_per_kw_month: 0, // Nv-0c ■2: 既定値を置かない
     capex_oku: 26,
     subsidy_rate: 33,
   },
   pessimistic: {
     spot_high: 19,
     spot_low: 12,
-    capacity_market_yen_per_kw_year: 5_000,
-    ancillary_yen_per_kw_month: 800,
+    capacity_market_yen_per_kw_year: CM.pessimistic, // national の最小（カタログ）
+    ancillary_yen_per_kw_month: 0, // Nv-0c ■2: 既定値を置かない
     capex_oku: 32,
     subsidy_rate: 0,
   },
@@ -98,12 +114,15 @@ export const SCENARIO_LABELS: Record<ScenarioKey, string> = {
 
 /** UI 表示用 説明 */
 export const SCENARIO_DESCRIPTIONS: Record<ScenarioKey, string> = {
+  // ★Nv-0c: 評価語（「事業性が確保できる最良ケース」等）と、一次に対応の無い数値（「容量市場 ¥8,000 (2025年度実績)」）を外した。
+  //   何を上側・下側に置いたかだけを書く。容量市場の数値は画面の Step 3 にカタログ値と年度つきで出している。
+  // ★補助率・CAPEX の具体値は書かない（プリセットで変わり、説明文と入力値が食い違うため・Nv-0c レビュー）
   optimistic:
-    'スポット価格高位 + 容量市場高水準 + 補助金併用 + 中国LFP低 CAPEX。事業性が確保できる最良ケース。',
+    '容量市場は全国値の過去最大（対象実需給年度）。スポット価差は大きめ、補助率は高め、CAPEX は低め（いずれも当サイトの想定）。',
   standard:
-    '業界一般的な事業性ライン。スポット価格 ¥23/9、容量市場 ¥8,000/kW/年 (2025年度実績)、SII補助金 33%。',
+    '容量市場は全国値の中央値（対象実需給年度）。スポット価差・補助率・CAPEX は当サイトの想定の中位。',
   pessimistic:
-    'スポット価格圧縮 + 容量市場縮小 + 補助金なし + CAPEX高位。事業性が厳しい下振れケース。',
+    '容量市場は全国値の過去最小（対象実需給年度）。スポット価差は小さめ、補助なし、CAPEX は高め（いずれも当サイトの想定）。',
 };
 
 /** UI 表示用 カラー (3 シナリオの統一カラーリング) */
@@ -148,7 +167,8 @@ export const PRESETS: Record<PresetKey, PresetSpec> = {
   'high-voltage': {
     key: 'high-voltage',
     label: '高圧 (2 MW / 8 MWh)',
-    description: '高圧需要家標準、4 時間放電。SII 補助金 + 自治体併用前提',
+    // ★Nv-0c: 「高圧需要家標準」「SII 補助金 + 自治体併用前提」を外した（根拠の無い一般化・補助率を SII 由来に見せる書き方）
+    description: '2 MW / 8 MWh・4 時間放電。CAPEX・補助率は当サイトの想定',
     capacity_mwh: 8,
     output_mw: 2,
     capex: {
@@ -167,7 +187,7 @@ export const PRESETS: Record<PresetKey, PresetSpec> = {
   'large-scale': {
     key: 'large-scale',
     label: '大規模 (12.5 MW / 50 MWh)',
-    description: '系統用 BESS 標準、容量市場・需給調整市場応札規格 (既存デフォルト)',
+    description: '12.5 MW / 50 MWh・4 時間放電（当サイトの既定）',
     capacity_mwh: 50,
     output_mw: 12.5,
     capex: {

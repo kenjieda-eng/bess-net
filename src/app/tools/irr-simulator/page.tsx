@@ -18,6 +18,11 @@ import { siteConfig } from '@/lib/site-config';
 // NREL ATB CAPEX + FX（build 時プリコンピュート済み JSON、鉄則 #2/#4 準拠）
 import atbCapexBatteryData from '@/data/eic/atb-capex-battery.json';
 import fxUsdJpyData from '@/data/eic/fx-usdjpy-monthly-avg.json';
+// Nv-0c ■3: 容量市場の出所と年度範囲はカタログから（文言は capacity-market-defaults.ts に一本化）
+import { CAPACITY_MARKET_NATIONAL as CMN, CAPACITY_MARKET_SOURCE_TEXT, yenLabel } from '@/lib/capacity-market-defaults';
+// Nv-0c: スポットの既定価差を、JEPX 30 分値の日内価差（カタログ）と照合して示す
+import { SPOT_SPREAD_REFERENCE as SSR, spreadLabel } from '@/lib/spot-spread-reference';
+import { getScenarioInput } from '@/lib/irr-defaults';
 
 export const revalidate = 86400; // 24h
 
@@ -25,7 +30,7 @@ export const metadata: Metadata = {
   // layout.tsx titleTemplate `%s | 蓄電所ネット` で自動付与 (落とし穴 #86)
   title: '蓄電池IRRシミュレーター (無料・登録不要)',
   description:
-    '系統用蓄電池プロジェクトのIRR・NPV・ペイバック期間を業界標準ロジックで無料試算。容量市場・需給調整市場・スポットアービトラージの3市場併用前提、3シナリオ(楽観/標準/悲観)並列計算、感応度分析、CSVエクスポート対応。',
+    '系統用蓄電池プロジェクトのIRR・NPV・ペイバック期間を、収益を単純加算する簡易モデルで概算（無料）。容量市場・需給調整市場・スポットアービトラージの収益を入力でき、3シナリオ(楽観/標準/悲観)を並列計算。感応度分析・CSVエクスポート対応。',
   alternates: { canonical: '/tools/irr-simulator' },
   openGraph: {
     title: '蓄電池IRRシミュレーター (無料・登録不要)',
@@ -37,6 +42,9 @@ export const metadata: Metadata = {
 };
 
 export default function IrrSimulatorPage() {
+  // 標準シナリオの既定の価差（スポット高値 − 低値）
+  const stdInput = getScenarioInput('standard');
+  const stdSpread = stdInput.spot_high - stdInput.spot_low;
   // NREL ATB 蓄電池CAPEX 3シナリオ（build 時事前計算、L-EIC-013/015/055 準拠）
   type EicPoints = { points?: { date: string; value: number }[] };
   const capexPts = (atbCapexBatteryData as EicPoints).points ?? [];
@@ -62,7 +70,7 @@ export default function IrrSimulatorPage() {
     name: '蓄電池IRRシミュレーター',
     alternateName: 'BESS IRR Simulator',
     description:
-      '系統用蓄電池プロジェクトのIRR・NPV・ペイバック期間を業界標準ロジックで無料試算するブラウザ完結型ツール。',
+      '系統用蓄電池プロジェクトのIRR・NPV・ペイバック期間を、収益を単純加算する簡易モデルで概算するブラウザ完結型ツール（無料）。',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web Browser',
     offers: {
@@ -126,8 +134,10 @@ export default function IrrSimulatorPage() {
           <div className="section-label">無料・登録不要 · ブラウザ完結</div>
           <h1 className="section-title">蓄電池IRRシミュレーター</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
-            系統用蓄電池プロジェクトの <strong>IRR・NPV・ペイバック期間</strong> を業界標準ロジックで無料試算。
-            <strong>容量市場・需給調整市場・スポットアービトラージ</strong> の 3 市場併用前提で、
+            {/* ★Nv-0c: 「業界標準ロジック」「3 市場併用前提」を外した。同じ出力を複数の収益に同時計上する簡易モデルで、
+                「業界標準」に当たる根拠も無い。需給調整は既定値を置かなくなった。 */}
+            系統用蓄電池プロジェクトの <strong>IRR・NPV・ペイバック期間</strong> を、収益を単純加算する簡易モデルで概算します（無料）。
+            <strong>容量市場・需給調整市場・スポットアービトラージ</strong> の収益を入力でき（需給調整は既定値なし）、
             <strong>楽観・標準・悲観</strong> の 3 シナリオを並列計算します。
             ブラウザ完結 (ログイン不要)、入力データはサーバー送信なし、CSV エクスポート対応。
           </p>
@@ -142,17 +152,62 @@ export default function IrrSimulatorPage() {
               color: 'var(--color-muted)',
             }}
           >
-            ※ デフォルト値は 2026年5月時点の業界平均値。容量市場 ¥8,000/kW/年 (2025年度オークション結果反映)、
-            需給調整市場 ¥1,500/kW/月、JEPX スポット ¥9-23/kWh (2024年度実績) 等を採用。
-            蓄電池CAPEXの参考値（Step 2）は NREL ATB 2024版（米国前提、mid=実データ）を USD/JPY {capexNrel.fxJpyPerUsd} で円換算。
-            出典: JEPX/OCCTO/SII 公表資料、業界EPC公表値、NREL ATB (CC BY 4.0)。
+            {/* ★Nv-0c ■3: 実際に使っている一次だけを、正しい機関名・資料名で書く。
+                旧「容量市場 ¥8,000/kW/年 (2025年度オークション結果反映)」「需給調整市場 ¥1,500/kW/月」
+                「JEPX スポット ¥9-23/kWh (2024年度実績)」「出典: JEPX/OCCTO/SII 公表資料」は、いずれも一次に対応が無かった
+                （8,000・1,500 は 2026-05-14 の議論メモ由来）。スポットは JEPX 30 分値の日内価差と照合でき、既定の価差は過大方向。
+                値が一次に対応していないものに「公表資料」とは書かない。 */}
+            {/* ★#107: 既定値の数値・年度ラベル・理由は初期 DOM に載せる。
+                IRRSimulator はウィザード形式で Step 3 はクリックするまで描画されないため、ここ（サーバ描画）に置く。 */}
+            <strong>※ 既定値と出所</strong>
+            <br />
+            ・<strong>容量市場対価</strong>: {CAPACITY_MARKET_SOURCE_TEXT}（対象実需給年度 {CMN.firstFy}〜{CMN.lastFy} の {CMN.count} 年度分）から、
+            標準＝中央値 {yenLabel(CMN.median)} 円/kW
+            {CMN.medianIsObserved ? '' : `（${CMN.count} 年度の中央 2 値の平均で、どの年度の値そのものでもありません）`}、
+            楽観＝最大 {yenLabel(CMN.max?.value)} 円/kW（対象実需給年度 {CMN.max?.deliveryFy}）、
+            悲観＝最小 {yenLabel(CMN.min?.value)} 円/kW（対象実需給年度 {CMN.min?.deliveryFy}）。
+            参考: 直近の実施回（対象実需給年度 {CMN.latest?.deliveryFy}）の全国値は {yenLabel(CMN.latest?.value)} 円/kW。
+            全国値は OCCTO が公表した全国値ではなく、エリア値からの加重平均です。
+            「対象実需給年度」は供給力を提供する年度で、メインオークションはその 4 年前に実施されます。
+            <br />
+            ・<strong>需給調整対価</strong>: 既定値を置いていません。需給調整市場の収益は、蓄電池の容量をどれだけ需給調整に割り当てるかで大きく変わるためです。
+            入力する場合は、裁定取引・容量市場と<strong>同じ容量を重複して計上しない</strong>よう注意してください。
+            需給調整市場の約定単価を公表しているのは電力需給調整力取引所（EPRX）で、単位は円/ΔkW・30分です（入力欄の円/kW/月とは単位が違います）。
+            商品別の実データ（年平均と年度内の幅）は <Link href="/tools/balancing-revenue">需給調整市場 収益試算</Link> で確認できます。
+            <br />
+            {/* ★Nv-0c レビュー: 鉤括弧で逐語引用のように書かない（実際は公募要領の 2 行を要約したもの） */}
+            ・<strong>補助率</strong>: 大規模プリセットの標準 33% は、SII 系統用蓄電システム等導入支援事業（令和7年度補正）公募要領 1-10 で
+            リチウムイオン電池の 1,000kW以上10,000kW未満・10,000kW以上30,000kW未満がいずれも 1/3 以内（補助対象経費に対する率・上限額あり）であることを
+            33% で近似したものです。本試算は CAPEX 全額に掛けています（近似）。
+            <br />
+            ・<strong>CAPEX の参考値</strong>（Step 2）: NREL ATB 2024（米国前提・mid=実データ・CC BY 4.0）を USD/JPY {capexNrel.fxJpyPerUsd} で円換算。
+            <br />
+            ・<strong>スポット価格の高値・安値</strong>（標準の価差 {spreadLabel(stdSpread)} 円/kWh）は当サイトの想定値です。
+            {SSR.fy !== null && (
+              <>
+                一次と照合すると、JEPX の 30 分値から算出した日内価差（システムプライス）の {SSR.fy} 年度平均は、
+                4 時間充放電に相当する上位 8 コマ−下位 8 コマで {spreadLabel(SSR.top8Avg)} 円/kWh、日内の最大−最小（理論上限）で {spreadLabel(SSR.rangeAvg)} 円/kWh です。
+                {stdSpread > (SSR.top8Avg ?? Infinity) ? <strong>既定の価差はこれを上回るため、裁定収益は過大になりうる方向です。</strong> : null}
+              </>
+            )}
+            <br />
+            ・<strong>CAPEX の既定値、補助率の楽観・悲観値と高圧プリセットの値は当サイトの想定値で、一次資料の公表値ではありません。</strong>
+            <br />
             均等化原価で比べたい場合は <Link href="/tools/lcoe-lcos">LCOE・LCOS計算機</Link> もご利用ください。
           </p>
 
-          <IRRSimulator capexNrel={capexNrel} />
+          <IRRSimulator
+            capexNrel={capexNrel}
+            spotHint={
+              SSR.fy !== null
+                ? `放電時の想定単価（当サイトの想定）。参考: JEPX 30 分値の日内価差 ${SSR.fy} 年度平均は 4 時間相当 ${spreadLabel(SSR.top8Avg)} 円/kWh`
+                : undefined
+            }
+          />
 
-          {/* 計算ロジック説明 */}
+          {/* 計算ロジック説明（IRRSimulator の注意書きから #calc-logic で案内している） */}
           <section
+            id="calc-logic"
             style={{
               marginTop: 40,
               padding: 20,

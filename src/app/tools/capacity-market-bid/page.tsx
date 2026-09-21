@@ -59,12 +59,12 @@ export const metadata: Metadata = {
   // layout titleTemplate が「 | 蓄電所ネット」を自動付与（#88）
   title: '容量市場応札試算（蓄電池・OCCTO実データ連携）',
   description:
-    '容量市場メインオークションの応札価格を全国エリアの約定実績（OCCTO 公表値 / data.eic-jp.org）から推定。推奨応札レンジ + 落札確率 + 想定収入を即時試算。区分非依存を正しく反映。無料・登録不要。',
+    '容量市場メインオークションのエリア別約定価格（OCCTO 公表値 / data.eic-jp.org）の過去平均をもとに、推奨応札レンジ・落札確率の目安（当サイトのモデル仮定）・想定収入を試算。約定価格は区分非依存。無料・登録不要。',
   alternates: { canonical: '/tools/capacity-market-bid' },
   openGraph: {
     title: '容量市場応札試算（蓄電池・OCCTO実データ連携）| 蓄電所ネット',
     description:
-      '全国エリアの約定実績（OCCTO 公表値）から推奨応札価格 + 落札確率を試算。区分非依存（新設/既設/経過措置で同価格）を正しく反映。',
+      'エリア別約定価格（OCCTO 公表値）の過去平均をもとに、推奨応札レンジと落札確率の目安（当サイトのモデル仮定）を試算。約定価格は区分非依存。',
     type: 'website',
     images: ['/og-image.png'],
   },
@@ -163,14 +163,21 @@ export default function CapacityMarketBidPage() {
 
   // ★Cm1: 年度レンジ・年度数・件数・エリア数を catalog coverage / 系列データから導出（焼き込みなし）
   const cov = summarizeAreaSeries(LIVE_AREAS.map((a) => PRICE_BY_AREA[a]));
-  const rangeLabel = cov.rangeLabel ?? '実データ';       // 例 'FY2024-FY2029'
+  // ★Nv-0c: 表示用の年度ラベルは「対象実需給年度 2024〜2029」（CLAUDE.md 受け入れ基準・容量市場の年度表記）。
+  //   cov.rangeLabel（'FY2024-FY2029'）は coverage 検査の比較にも使われているので、ここで表示用に組み直す。
+  const firstFyNum = cov.labelFirst ? Number(cov.labelFirst.replace('FY', '')) : null;
+  const lastFyNum = cov.labelLast ? Number(cov.labelLast.replace('FY', '')) : null;
+  const rangeLabel =
+    firstFyNum !== null && lastFyNum !== null
+      ? `対象実需給年度 ${firstFyNum}〜${lastFyNum}`
+      : '実データ';
   const yearCount = cov.count;                            // 例 6
   const areaCount = cov.areaCount;                        // 例 9（欠けたら実数）
   const recordCount = liveHistory.length || cov.recordCount;
   const dataUpdatedAt = latestUpdatedAt(LIVE_AREAS.map((a) => PRICE_BY_AREA[a]));
   // 直近2年度のラベル（トレンド判定の説明用）
   const lastFy = cov.labelLast ? Number(cov.labelLast.replace('FY', '')) : null;
-  const recentTwo = lastFy !== null && yearCount >= 2 ? `FY${lastFy - 1}-FY${lastFy}` : rangeLabel;
+  const recentTwo = lastFy !== null && yearCount >= 2 ? `対象実需給年度 ${lastFy - 1}〜${lastFy}` : rangeLabel;
   // 上流異常（coverage と系列データの不一致・不変条件違反）は build ログに警告を出す
   if (cov.warnings.length > 0) {
     for (const w of cov.warnings) console.warn(`[capacity-market-bid] ${w}`);
@@ -182,7 +189,7 @@ export default function CapacityMarketBidPage() {
     name: '容量市場応札試算',
     alternateName: 'BESS Capacity Market Bid Estimator',
     description:
-      '容量市場メインオークションの過去約定価格（全国エリア、OCCTO 公表値ベース）から推奨応札価格 + 落札確率 + 想定収入を推定するブラウザ完結ツール。区分非依存を正しく反映。',
+      '容量市場メインオークションのエリア別約定価格（OCCTO 公表値）の過去平均をもとに、推奨応札レンジ・落札確率の目安（当サイトのモデル仮定）・想定収入を試算するブラウザ完結ツール。',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web Browser',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
@@ -242,9 +249,10 @@ export default function CapacityMarketBidPage() {
           <div className="section-label">OCCTO 実データ連携 · 無料・登録不要</div>
           <h1 className="section-title">容量市場応札試算（OCCTO実データ連携・無料）</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
-            容量市場メインオークションの応札価格を、<strong>{areaCount} エリア × {rangeLabel}（{yearCount} 年度・{recordCount} 件）</strong>の
-            OCCTO 公表実績から推定。<strong>推奨応札レンジ (下限/中央/上限)</strong>{' '}
-            と <strong>落札確率 + 想定収入</strong> を即時試算。無料・登録不要ツール。
+            {/* ★Nv-0c: 「OCCTO 公表実績から推定」の係り先を過去平均だけに限定する。推奨レンジの係数と落札確率は当サイトのモデル仮定 */}
+            容量市場メインオークションの <strong>{areaCount} エリア × {rangeLabel}（{yearCount} 年度・{recordCount} 件）</strong>の
+            約定価格（OCCTO 公表値）から過去平均を出し、それをもとに <strong>推奨応札レンジ (下限/中央/上限)</strong>{' '}
+            と <strong>落札確率の目安・想定収入</strong> を試算します（レンジの係数と落札確率は当サイトのモデル仮定）。無料・登録不要ツール。
           </p>
           <p
             className="page-meta"
@@ -287,7 +295,7 @@ export default function CapacityMarketBidPage() {
                 <strong>推奨応札レンジ</strong>: 下限 = max(自社コスト, 過去平均×0.8) / 中央 = 過去平均 / 上限 = 過去平均×1.3
               </li>
               <li>
-                <strong>落札確率近似</strong>: 過去平均との価格比から線形補間 (×0.8 → 95% / ×1.0 → 65% / ×1.3 → 25%)
+                <strong>落札確率近似</strong>（当サイトのモデル仮定。実績から推定した値ではない）: 過去平均との価格比から線形補間 (×0.8 → 95% / ×1.0 → 65% / ×1.3 → 25%)
               </li>
               <li>
                 <strong>トレンド判定</strong>: 直近 2 年（{recentTwo}）比較で価格変動 ±5% 内 → 横ばい、それ以上 → 上昇/下落
@@ -334,7 +342,7 @@ export default function CapacityMarketBidPage() {
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
                 {/* ★Nv-0b ■4(b): 「新設は価格が既設より高め」を削除。約定価格は区分非依存で、一次は区分別の約定価格を公表していない。 */}
                 <strong>新設電源</strong>: 4 年後新規運開予定の電源。<br />
-                <strong>既設電源</strong>: 運転中の電源。容量市場の主流、毎年応札。<br />
+                <strong>既設電源</strong>: 運転中の電源。<br />
                 <strong>経過措置電源</strong>: 制度導入時の暫定区分、~2028 年度に新設・既設へ統合予定。<br />
                 ※ 約定価格はエリア単位で決まり、区分によって変わりません。一次（OCCTO「容量市場メインオークション約定結果」）は区分別の約定価格を公表していません。
               </dd>

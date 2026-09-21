@@ -22,6 +22,9 @@ import {
   type IRRInput,
 } from '../src/lib/irr-calculator';
 import { getScenarioInput, SCENARIO_DEFAULTS } from '../src/lib/irr-defaults';
+import { CAPACITY_MARKET_NATIONAL } from '../src/lib/capacity-market-defaults';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 let pass = 0;
 let fail = 0;
@@ -61,26 +64,46 @@ console.log('━━━ Group 1: 基本収益計算 ━━━');
   );
 }
 
-// Test 2: 容量市場 収益
+// Test 2: 容量市場 収益（★Nv-0c: 既定値はカタログの national 中央値。旧 8,000 は一次に対応が無かった）
 {
-  // 12.5 MW × 1000 kW × ¥8,000 = ¥100,000,000 = ¥100M
+  // 12.5 MW × 1000 kW × national 中央値
+  const expected = 12.5 * 1000 * (CAPACITY_MARKET_NATIONAL.median ?? NaN);
   const result = capacityMarketRevenueYen(STD);
   assert(
-    '容量市場 標準: ¥100M',
-    approx(result, 100_000_000, 1),
+    `容量市場 標準: ¥${Math.round(expected / 1e6)}M（12.5MW × national 中央値 ${CAPACITY_MARKET_NATIONAL.median}）`,
+    approx(result, expected, 1),
     `actual=¥${result}`
   );
 }
 
-// Test 3: 需給調整 収益 (年換算)
+// Test 2b: ★既定値がカタログ由来であること（落ちるべきときに落ちる形）
+//   カタログの JSON を別経路で読み、中央値・最大・最小を独立に計算して、3 シナリオの既定値と突き合わせる。
 {
-  // 12.5 MW × 1000 kW × ¥1,500/月 × 12 = ¥225M
-  const result = ancillaryRevenueYen(STD);
-  assert(
-    '需給調整 標準: ¥225M/年',
-    approx(result, 225_000_000, 1),
-    `actual=¥${result}`
-  );
+  const raw = JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), 'src/data/eic/capacity-main-auction-price-national.json'), 'utf8'),
+  ) as { points: { date: string; value: number | null }[] };
+  const vals = raw.points.map((p) => p.value).filter((v): v is number => typeof v === 'number').sort((a, b) => a - b);
+  const n = vals.length;
+  const med = n % 2 ? vals[(n - 1) / 2] : (vals[n / 2 - 1] + vals[n / 2]) / 2;
+  assert(`national の観測値が 1 件以上（${n} 件）`, n > 0);
+  assert(`標準 = national 中央値（${med}）`, SCENARIO_DEFAULTS.standard.capacity_market_yen_per_kw_year === med,
+    `actual=${SCENARIO_DEFAULTS.standard.capacity_market_yen_per_kw_year}`);
+  assert(`楽観 = national 最大（${vals[n - 1]}）`, SCENARIO_DEFAULTS.optimistic.capacity_market_yen_per_kw_year === vals[n - 1],
+    `actual=${SCENARIO_DEFAULTS.optimistic.capacity_market_yen_per_kw_year}`);
+  assert(`悲観 = national 最小（${vals[0]}）`, SCENARIO_DEFAULTS.pessimistic.capacity_market_yen_per_kw_year === vals[0],
+    `actual=${SCENARIO_DEFAULTS.pessimistic.capacity_market_yen_per_kw_year}`);
+  assert('旧既定値 8,000 / 12,000 / 5,000 はどのシナリオにも残っていない',
+    !(['optimistic', 'standard', 'pessimistic'] as const).some((k) =>
+      [8_000, 12_000, 5_000].includes(SCENARIO_DEFAULTS[k].capacity_market_yen_per_kw_year)));
+}
+
+// Test 3: 需給調整 収益（★Nv-0c: 既定値を置かない＝0。式は手入力値で検査する）
+{
+  assert('需給調整 既定値: 3 シナリオとも 0',
+    (['optimistic', 'standard', 'pessimistic'] as const).every((k) => SCENARIO_DEFAULTS[k].ancillary_yen_per_kw_month === 0));
+  // 式の検査: 12.5 MW × 1000 kW × ¥1,000/月 × 12 = ¥150M（入力値はテスト用の任意値）
+  const result = ancillaryRevenueYen({ ...STD, ancillary_yen_per_kw_month: 1_000 });
+  assert('需給調整 式: 12.5MW × ¥1,000/月 × 12 = ¥150M', approx(result, 150_000_000, 1), `actual=¥${result}`);
 }
 
 // Test 4: OPEX
@@ -113,13 +136,14 @@ assert(
 
 console.log('\n━━━ Group 3: 年次キャッシュフロー ━━━');
 
-// Test 9: 1年目 CF = revenue - opex
+// Test 9: 1年目 CF = revenue - opex（各項目を独立に足して突き合わせる）
 {
   const cf = annualCashflowYen(STD, 1);
-  // ~191M (arb) + 100M (cap) + 225M (anc) - 62.5M (opex) = ~453.5M
+  const expected =
+    arbitrageRevenueYen(STD, 1) + capacityMarketRevenueYen(STD) + ancillaryRevenueYen(STD) - opexYen(STD);
   assert(
-    '1年目 CF 標準: ~¥453M',
-    approx(cf, 453_614_000, 5_000_000),
+    `1年目 CF 標準 = 裁定 + 容量 + 需給 − OPEX（¥${Math.round(expected / 1e6)}M）`,
+    approx(cf, expected, 1),
     `actual=¥${Math.round(cf / 1e6)}M`
   );
 }
@@ -158,7 +182,7 @@ console.log('\n━━━ Group 4: NPV / IRR / Payback (標準シナリオ) ━�
 // Test 12: NPV 標準シナリオ (5% 割引、ライフサイクル 20 年)
 {
   const npv = calcNPV(STD, 0.05);
-  // 簡易計算: 年 ~4.5億 × 20 年 = 90 億、PV ~56 億、initial=17.4 億 → NPV ~38 億規模
+  // 規模は既定値に依存するため固定しない（Nv-0c で既定値をカタログ由来に変更。2026-09-21 時点の実測は年 CF 約 2.61 億・NPV 約 13.24 億）
   assert(
     '標準 NPV @5%: 正の値',
     npv > 0,

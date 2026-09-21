@@ -84,7 +84,6 @@ if (HISTORY.length === 0) {
 const base = (over: Partial<BidEstimateInput> = {}): BidEstimateInput => ({
   area: 'tokyo',
   capacity_mw: 50,
-  target_fiscal_year: 2026,
   cost_yen_per_kw_year: 6_000,
   ...over,
 });

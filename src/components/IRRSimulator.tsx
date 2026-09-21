@@ -49,6 +49,12 @@ import {
   type ScenarioKey,
   type PresetKey,
 } from '@/lib/irr-defaults';
+// Nv-0c ■1: 容量市場の既定値はカタログ（OCCTO 約定結果の全国加重平均）から。画面の年度ラベル・出所もここから出す
+import { CAPACITY_MARKET_NATIONAL as CMN, yenLabel } from '@/lib/capacity-market-defaults';
+// ★Nv-0c: スポットの参照値（JEPX 30 分値の日内価差）は page.tsx（サーバ）で計算し、hint 文字列だけを props で受け取る。
+//   ここで src/lib/spot-spread-reference.ts を import すると、日次 539 点 × 2 系列の JSON がクライアントに入り
+//   ページ JS が約 9 kB 増えた（12.6 → 21.6 kB を実測）。
+const SPOT_HINT_FALLBACK = '放電時の想定単価（当サイトの想定）';
 
 const SCENARIO_KEYS: ScenarioKey[] = ['optimistic', 'standard', 'pessimistic'];
 
@@ -56,7 +62,13 @@ const SCENARIO_KEYS: ScenarioKey[] = ['optimistic', 'standard', 'pessimistic'];
 // URL params シリアライズ (落とし穴 #92: window.location ベース)
 // ─────────────────────────────────────
 
-function inputToParams(input: IRRInput): URLSearchParams {
+/**
+ * ★Nv-0c: 既定値（base）と違う項目だけを書き出す。
+ *   旧版は操作しなくても開いた瞬間に全 13 項目を URL に書き込んでいたため、ブックマークや共有 URL の多くに
+ *   旧既定値（容量市場 8,000・需給調整 1,500）がそのまま入っている。全項目を書き続けると、カタログが更新されて
+ *   既定値（中央値）が変わっても、ブックマークには古い値が残り続ける。
+ */
+function inputToParams(input: IRRInput, base: IRRInput = getScenarioInput('standard')): URLSearchParams {
   const sp = new URLSearchParams();
   // 数値 keys を短縮形で詰める (URL 短く保つ)
   const map: Record<string, keyof IRRInput> = {
@@ -76,7 +88,7 @@ function inputToParams(input: IRRInput): URLSearchParams {
   };
   for (const [k, v] of Object.entries(map)) {
     const val = input[v];
-    if (typeof val === 'number') sp.set(k, String(val));
+    if (typeof val === 'number' && val !== base[v]) sp.set(k, String(val));
   }
   return sp;
 }
@@ -272,6 +284,9 @@ function buildCsv(
   const lines: string[] = [];
   lines.push('# 蓄電池IRRシミュレーター 結果出力 (bess-net.jp/tools/irr-simulator)');
   lines.push(`# 生成日時: ${new Date().toISOString()}`);
+  // ★Nv-0c ■4・■5: 数値だけが注記なしで持ち出されないよう、CSV にも同じ注記を入れる
+  lines.push('# ※ 概算です。結果の正確性は保証しません。投資判断は利用者ご自身の責任で行ってください。');
+  lines.push('# ※ 同じ出力を複数の収益源（裁定取引・容量市場・需給調整）に同時に計上する簡易モデルです。実際の収益はこれより小さくなる可能性があります。');
   lines.push('');
 
   // サマリ
@@ -386,7 +401,8 @@ function NumberField({
   label: string;
   value: number;
   onChange: (v: number) => void;
-  step?: number;
+  /** ★'any' を許す（Nv-0c）: 容量市場の既定値はカタログ由来で 500 の倍数にならず、step=500 だと既定値のまま :invalid になる */
+  step?: number | 'any';
   min?: number;
   max?: number;
   unit?: string;
@@ -453,7 +469,15 @@ function NumberField({
 // メイン
 // ─────────────────────────────────────
 
-export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData }) {
+export default function IRRSimulator({
+  capexNrel,
+  spotHint,
+}: {
+  capexNrel?: CapexNrelData;
+  /** スポット高値欄の hint（page.tsx がカタログの日内価差から組み立てる） */
+  spotHint?: string;
+}) {
+  const SPOT_HINT = spotHint ?? SPOT_HINT_FALLBACK;
   // 入力 state: 3 シナリオ別の IRRInput を保持
   const [inputs, setInputs] = useState<Record<ScenarioKey, IRRInput>>({
     optimistic: getScenarioInput('optimistic'),
@@ -473,12 +497,23 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
     setInputs(applyPreset(key));
   };
 
+  // ★Nv-0c: URL から復元した容量市場・需給調整が、現在の既定値と違うときに画面で知らせる
+  const [urlOverride, setUrlOverride] = useState<{ cm: number; an: number } | null>(null);
+
   // mount 時に URL params から復元 (落とし穴 #92: useSearchParams 不使用)
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const sp = new URLSearchParams(window.location.search);
     if (sp.toString().length > 0) {
       // 共有 URL からの遷移時のみ、標準シナリオに override 適用
+      const def = getScenarioInput('standard');
+      const restored = paramsToInput(sp, def);
+      if (
+        restored.capacity_market_yen_per_kw_year !== def.capacity_market_yen_per_kw_year ||
+        restored.ancillary_yen_per_kw_month !== def.ancillary_yen_per_kw_month
+      ) {
+        setUrlOverride({ cm: restored.capacity_market_yen_per_kw_year, an: restored.ancillary_yen_per_kw_month });
+      }
       setInputs((prev) => ({
         ...prev,
         standard: paramsToInput(sp, prev.standard),
@@ -491,7 +526,8 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
   useEffect(() => {
     if (!hydrated || typeof window === 'undefined') return;
     const sp = inputToParams(inputs.standard);
-    const newUrl = `${window.location.pathname}?${sp.toString()}`;
+    const qs = sp.toString();
+    const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
     if (window.location.pathname + window.location.search !== newUrl) {
       window.history.replaceState(null, '', newUrl);
     }
@@ -526,6 +562,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
   };
 
   const resetDefaults = () => {
+    setUrlOverride(null);
     setInputs({
       optimistic: getScenarioInput('optimistic'),
       standard: getScenarioInput('standard'),
@@ -540,7 +577,8 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
 
   const handleShareUrl = async () => {
     const sp = inputToParams(inputs.standard);
-    const url = `${window.location.origin}${window.location.pathname}?${sp.toString()}`;
+    const qs = sp.toString();
+    const url = `${window.location.origin}${window.location.pathname}${qs ? `?${qs}` : ''}`;
     try {
       await navigator.clipboard.writeText(url);
       alert('入力条件付き URL をクリップボードにコピーしました\n' + url);
@@ -570,9 +608,33 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
           fontSize: 15,
         }}
       >
-        ⚠️ <strong>本シミュレーターは投資判断の参考情報です</strong>。すべての市場 (容量市場・需給調整市場・スポット市場アービトラージ) を併用可能な
-        理論上限を示します。現実は市場間の時間配分で trade-off が発生するため、実事業 IRR は本結果より下振れする可能性があります。
-        計算ロジック・前提値の詳細は <Link href="/explainer/grid-scale-bess" style={{color:'var(--color-accent, #0066cc)'}}>解説記事</Link> を参照ください。
+        {/* ★Nv-0c ■4・■5: 同時計上で過大になりうる方向を明示し、概算・非保証・利用者責任の 3 点を明記（5/11 設計メモの必須事項） */}
+        ⚠️ <strong>この試算は概算です。結果の正確性は保証しません。投資判断は利用者ご自身の責任で行ってください。</strong>
+        <br />
+        この試算は、<strong>同じ出力を複数の収益源（裁定取引・容量市場・需給調整）に同時に計上する簡易モデル</strong>です。
+        容量市場で落札した容量には供給力を提供する義務があり、同じ時間帯に同じ容量を複数の市場に提供することはできません。
+        そのため<strong>実際の収益はこの試算より小さくなる可能性があります</strong>（収益の積み上げ方は改修予定です）。
+        {urlOverride && (
+          <>
+            <br />
+            {/* ★Nv-0c: 旧 URL（ブックマーク・共有）の値が黙って使われないよう、既定値との違いを見せる */}
+            <span style={{ display: 'block', marginTop: 8, color: '#92400e' }}>
+              ⚠️ <strong>URL で指定された値を標準シナリオに適用しています</strong>:
+              容量市場対価 {yenLabel(urlOverride.cm)} 円/kW/年（現在の既定値 {yenLabel(CMN.median)}）、
+              需給調整対価 {yenLabel(urlOverride.an)} 円/kW/月（現在は既定値なし＝0）。
+              以前の既定値（容量市場 8,000・需給調整 1,500）は一次資料に対応が無かったため、2026-09-21 に変更しました。{' '}
+              <button
+                type="button"
+                onClick={resetDefaults}
+                style={{ padding: '2px 10px', fontSize: 15, border: '1px solid #92400e', borderRadius: 4, background: '#fff', cursor: 'pointer' }}
+              >
+                既定値に戻す
+              </button>
+            </span>
+          </>
+        )}
+        {/* ★Nv-0c: 旧案内先 /explainer/grid-scale-bess には計算ロジックも前提値も書かれていなかった。ページ内の実在する節へ。 */}
+        既定値の出所はページ上部の「既定値と出所」、計算式はページ下部の「<a href="#calc-logic" style={{color:'var(--color-accent, #0066cc)'}}>計算ロジック・前提</a>」をご覧ください。
       </div>
 
       {/* EDA #1 (依頼36): C 案プリセット (高圧 / 大規模)、業界事業者向けスケール切替 */}
@@ -771,7 +833,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                 onChange={(v) => updateAllField('output_mw', v)}
                 step={0.1}
                 min={0.1}
-                hint="例: 12.5 MW (4h 放電) / 業界標準刻み 0.1"
+                hint="例: 12.5 MW（4 時間放電）。0.1 刻み"
               />
               <NumberField
                 id="efficiency"
@@ -793,7 +855,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                 step={1}
                 min={5}
                 max={40}
-                hint="一般 20 年"
+                hint="例: 20 年"
               />
               <NumberField
                 id="cycles_per_year"
@@ -815,7 +877,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                 step={1}
                 min={50}
                 max={100}
-                hint="一般 80-90%"
+                hint="例: 80-90%"
               />
             </div>
           </div>
@@ -919,7 +981,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                 step={1}
                 min={0}
                 max={100}
-                hint="SII: 33%、自治体併用 40%、無補助 0%"
+                hint="SII 公募要領: LiB 1,000〜30,000kW は 1/3 以内（上限）。40%・0%・高圧プリセットの値は当サイトの想定"
               />
             </div>
           </div>
@@ -942,7 +1004,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                 step={0.1}
                 min={0}
                 max={100}
-                hint="JEPX 高値 (放電時) / 業界標準刻み 0.1"
+                hint={SPOT_HINT}
               />
               <NumberField
                 id="spot_low"
@@ -953,7 +1015,7 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                 step={0.1}
                 min={0}
                 max={100}
-                hint="JEPX 低値 (充電時) / 業界標準刻み 0.1"
+                hint="充電時の想定単価（当サイトの想定）。高値との差が裁定の価差"
               />
               <NumberField
                 id="capacity_market_yen_per_kw_year"
@@ -961,10 +1023,14 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                 unit="円/kW/年"
                 value={cur.capacity_market_yen_per_kw_year}
                 onChange={(v) => updateField('capacity_market_yen_per_kw_year', v)}
-                step={500}
+                step="any"
                 min={0}
                 max={50_000}
-                hint="2025年度オークション ~8,000"
+                hint={
+                  CMN.count > 0
+                    ? `全国値 中央値 ${yenLabel(CMN.median)}／最大 ${yenLabel(CMN.max?.value)}（対象実需給年度 ${CMN.max?.deliveryFy ?? '—'}）／最小 ${yenLabel(CMN.min?.value)}（対象実需給年度 ${CMN.min?.deliveryFy ?? '—'}）`
+                    : 'カタログを取得できなかったため既定値は 0。値を入力してください'
+                }
               />
               <NumberField
                 id="ancillary_yen_per_kw_month"
@@ -975,9 +1041,20 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
                 step={100}
                 min={0}
                 max={10_000}
-                hint="三次調整力相当"
+                hint="既定値なし（下の注記を参照）。入力する場合は他の収益と同じ容量を重複計上しない"
               />
             </div>
+            {/* ★Nv-0c ■1・■2: 入力欄の近くに要点だけ置く。出所・年度・理由の全文はページ上部の「既定値と出所」（初期 DOM・#107）。
+                同じ説明文を 2 箇所に書くと食い違いの元になるため、ここは案内に留める（#119/#121）。 */}
+            <p style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.7, margin: '4px 0 0' }}>
+              {CMN.count > 0
+                ? `容量市場対価の既定値は、全国値（対象実需給年度 ${CMN.firstFy}〜${CMN.lastFy}）の中央値・最大・最小です。`
+                : '容量市場のカタログを取得できなかったため、既定値は 0 です。'}
+              需給調整対価には既定値を置いていません。入力する場合は、裁定取引・容量市場と<strong>同じ容量を重複して計上しない</strong>よう注意してください
+              （公表単価は EPRX の円/ΔkW・30分。実データは{' '}
+              <Link href="/tools/balancing-revenue" style={{ color: '#0066cc' }}>需給調整市場 収益試算</Link>）。
+              出所と理由の詳細はページ上部の「既定値と出所」をご覧ください。
+            </p>
           </div>
         )}
 
@@ -1049,6 +1126,10 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
       >
         計算結果 (3 シナリオ並列)
       </h2>
+      {/* ★Nv-0c ■4: 結果の近くにも「過大になりうる方向」を置く（上部の注意書きは入力欄を挟んで離れているため） */}
+      <p style={{ fontSize: 15, color: '#92400e', margin: '0 0 12px', lineHeight: 1.6 }}>
+        ⚠️ 同じ出力を複数の収益源に同時に計上する簡易モデルの概算です。実際の収益はこれより小さくなる可能性があります。
+      </p>
       <div
         role="region"
         aria-label="計算結果サマリ"
@@ -1134,7 +1215,8 @@ export default function IRRSimulator({ capexNrel }: { capexNrel?: CapexNrelData 
         年次累積キャッシュフロー
       </h3>
       <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
-        各シナリオの累積CFが 0 を超える年が payback (回収完了)。グラフが右肩上がりで 0 を超えれば事業性 OK。
+        {/* ★Nv-0c: 過大になりうる試算から「事業性 OK」と肯定しない */}
+        各シナリオの累積CFが 0 を超える年が payback（回収完了）の目安です。本モデルは同じ出力を複数の収益源に同時計上するため、回収は実際より早く出る可能性があります。
       </p>
       <div
         style={{

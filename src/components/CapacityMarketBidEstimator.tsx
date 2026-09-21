@@ -3,10 +3,10 @@
 /**
  * src/components/CapacityMarketBidEstimator.tsx
  *
- * 容量市場応札試算 UI (依頼AT モック版)
+ * 容量市場応札試算 UI（依頼AT → Nv-0b/Nv-0c で実データ専用に整理）
  *
  * 機能:
- *   - 入力: エリア / 区分 / 容量 / 対象年度 / 自社コスト
+ *   - 入力: エリア / 容量 / 自社コスト（区分・対象年度は試算に影響しないため撤去）
  *   - 結果: 推奨応札価格 (low/mid/high) + 落札確率 + トレンド + 収入試算
  *   - 過去 2 年実績 SVG チャート (Recharts 非依存)
  *   - CSV エクスポート
@@ -57,7 +57,6 @@ function inputToParams(input: BidEstimateInput): URLSearchParams {
   const sp = new URLSearchParams();
   sp.set('area', input.area);
   sp.set('cap', String(input.capacity_mw));
-  sp.set('fy', String(input.target_fiscal_year));
   sp.set('cost', String(input.cost_yen_per_kw_year));
   return sp;
 }
@@ -68,7 +67,6 @@ function paramsToInput(sp: URLSearchParams, base: BidEstimateInput): BidEstimate
   return {
     area: (AREAS.includes(areaV as Area) ? (areaV as Area) : base.area) as Area,
     capacity_mw: Number(sp.get('cap') ?? base.capacity_mw),
-    target_fiscal_year: Number(sp.get('fy') ?? base.target_fiscal_year),
     cost_yen_per_kw_year: Number(sp.get('cost') ?? base.cost_yen_per_kw_year),
   };
 }
@@ -86,13 +84,13 @@ function buildCsv(input: BidEstimateInput, result: BidEstimateResult): string {
   lines.push('## 入力条件');
   lines.push(`エリア,${AREA_LABELS[input.area]}`);
   lines.push(`応札容量 (MW),${input.capacity_mw}`);
-  lines.push(`対象年度,${input.target_fiscal_year}`);
   lines.push(`自社コスト (円/kW/年),${input.cost_yen_per_kw_year}`);
   lines.push('');
   lines.push('## 試算結果');
   lines.push(`推奨応札 下限,${result.recommended_bid_low}`);
   lines.push(`推奨応札 中央,${result.recommended_bid_mid}`);
   lines.push(`推奨応札 上限,${result.recommended_bid_high}`);
+  lines.push('# 落札確率は当サイトのモデル仮定による目安（OCCTO の実績から推定した値ではない）');
   lines.push(`落札確率 下限応札時,${result.cleared_probability.low_bid}%`);
   lines.push(`落札確率 中央応札時,${result.cleared_probability.mid_bid}%`);
   lines.push(`落札確率 上限応札時,${result.cleared_probability.high_bid}%`);
@@ -104,10 +102,10 @@ function buildCsv(input: BidEstimateInput, result: BidEstimateResult): string {
   lines.push(`トレンド,${TREND_LABELS[result.historical_context.area_trend]}`);
   lines.push(`参照レコード数,${result.historical_context.sample_size}`);
   if (result.historical_context.latest_price !== undefined) {
-    lines.push(`最新年度価格,${result.historical_context.latest_price}`);
+    lines.push(`最新の対象実需給年度の価格,${result.historical_context.latest_price}`);
   }
   if (result.historical_context.prior_price !== undefined) {
-    lines.push(`前年度価格,${result.historical_context.prior_price}`);
+    lines.push(`その前の対象実需給年度の価格,${result.historical_context.prior_price}`);
   }
   lines.push('');
   lines.push('## 警告');
@@ -231,7 +229,6 @@ function HistoryChart({
 const DEFAULT_INPUT: BidEstimateInput = {
   area: 'tokyo',
   capacity_mw: 50,
-  target_fiscal_year: 2026,
   cost_yen_per_kw_year: 6_000,
 };
 
@@ -246,11 +243,17 @@ export default function CapacityMarketBidEstimator({
 }) {
   const isLive = !!initialHistory && initialHistory.length > 0;
   // ★Cm1: 年度レンジを initialHistory から導出（FY を焼き込まない。新年度の着地で自動更新）
-  const liveFyLabel = (() => {
-    const fys = [...new Set((initialHistory ?? []).map((r) => r.fiscal_year))].sort((a, b) => a - b);
-    if (fys.length === 0) return null;
-    return fys.length === 1 ? `FY${fys[0]}` : `FY${fys[0]}-FY${fys[fys.length - 1]}`;
-  })();
+  // ★Nv-0c: 年度は「対象実需給年度」と明記する（CLAUDE.md 受け入れ基準・容量市場の年度表記）
+  const liveFys = [...new Set((initialHistory ?? []).map((r) => r.fiscal_year))].sort((a, b) => a - b);
+  const liveFyLabel =
+    liveFys.length === 0
+      ? null
+      : liveFys.length === 1
+        ? `対象実需給年度 ${liveFys[0]}`
+        : `対象実需給年度 ${liveFys[0]}〜${liveFys[liveFys.length - 1]}`;
+  /** 直近 2 つの対象実需給年度（年度推移の表示用） */
+  const latestFy = liveFys.length ? liveFys[liveFys.length - 1] : null;
+  const priorFy = liveFys.length >= 2 ? liveFys[liveFys.length - 2] : null;
   const [input, setInput] = useState<BidEstimateInput>(DEFAULT_INPUT);
   const [hydrated, setHydrated] = useState(false);
 
@@ -433,29 +436,8 @@ export default function CapacityMarketBidEstimator({
               }}
             />
           </div>
-          {/* 対象年度 */}
-          <div>
-            <label htmlFor="fy" style={{ display: 'block', fontSize: 15, fontWeight: 600, marginBottom: 4 }}>
-              対象年度
-            </label>
-            <select
-              id="fy"
-              value={input.target_fiscal_year}
-              onChange={(e) => update('target_fiscal_year', parseInt(e.target.value, 10))}
-              style={{
-                width: '100%',
-                padding: '8px 10px',
-                fontSize: 15,
-                border: '1px solid var(--color-border)',
-                borderRadius: 4,
-                fontFamily: 'inherit',
-              }}
-            >
-              <option value={2026}>2026 年度</option>
-              <option value={2027}>2027 年度</option>
-              <option value={2028}>2028 年度</option>
-            </select>
-          </div>
+          {/* ★Nv-0c ■6(b): 「対象年度」セレクタを撤去。選んだ年度は試算に一切使われておらず、
+              操作しても結果が変わらない UI は「年度を反映した」と誤認させる。 */}
           {/* 自社コスト */}
           <div>
             <label htmlFor="cost" style={{ display: 'block', fontSize: 15, fontWeight: 600, marginBottom: 4 }}>
@@ -549,8 +531,7 @@ export default function CapacityMarketBidEstimator({
             margin: '12px 0 0',
           }}
         >
-          💰 想定収入 (中央応札時): <strong>{result.estimated_annual_revenue_oku.toFixed(2)} 億円/年</strong>{' '}
-          (× {input.target_fiscal_year} 年度契約期間)
+          💰 想定収入 (中央応札時): <strong>{result.estimated_annual_revenue_oku.toFixed(2)} 億円/年</strong>
         </p>
       </section>
 
@@ -606,8 +587,9 @@ export default function CapacityMarketBidEstimator({
                 color: 'var(--color-muted)',
               }}
             >
-              年度推移: 前年度 {result.historical_context.prior_price.toLocaleString()} 円 → 最新年度{' '}
-              {result.historical_context.latest_price.toLocaleString()} 円
+              {/* ★Nv-0c: 「前年度 → 最新年度」は現年度と読まれるおそれ。中身は対象実需給年度なので年度を明記する */}
+              推移（対象実需給年度）: {priorFy ?? '前年度'} 年度 {result.historical_context.prior_price.toLocaleString()} 円 →{' '}
+              {latestFy ?? '最新'} 年度 {result.historical_context.latest_price.toLocaleString()} 円
             </div>
           )}
       </section>

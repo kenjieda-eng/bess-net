@@ -34,8 +34,6 @@ export interface BidEstimateInput {
   area: Area;
   /** 応札容量 (MW) */
   capacity_mw: number;
-  /** 対象年度 (2026 or 2027) */
-  target_fiscal_year: number;
   /** 自社コスト (円/kW/年) */
   cost_yen_per_kw_year: number;
 }
@@ -99,7 +97,9 @@ export const TREND_LABELS: Record<(typeof TRENDS)[number], string> = {
  * 応札試算（実データ）
  *  - allRecords: Server Component から props 注入された実データ（EIC カタログ＝OCCTO 公表値）
  *  - 区分非依存（filterHistoryByArea でエリアのみフィルタ）
- *  - ★target_fiscal_year は試算に使っていない（推奨価格は当該エリアの全年度の加重平均から出る）
+ *  - ★対象年度は入力に持たない（Nv-0c ■6(b)）。推奨価格は当該エリアの全対象実需給年度の加重平均から出る。
+ *    以前は target_fiscal_year を入力に持っていたが試算に一切使われておらず、
+ *    画面のセレクタを操作しても結果が変わらなかった（年度を反映したと誤認させる UI）。
  */
 export function estimateBidWithHistory(
   input: BidEstimateInput,
@@ -159,7 +159,7 @@ export function estimateBidWithHistory(
   }
   // 本試算の性質上の注記（モック免責ではなく一般的注意）
   warnings.push(
-    '本試算は OCCTO 公表過去実績ベースの推定です。応札の最終判断は OCCTO 公式情報・電気事業法を必ずご確認ください。'
+    '過去平均は OCCTO 公表の約定価格から算出していますが、推奨レンジの係数と落札確率は当サイトのモデル仮定です（実績から推定した値ではありません）。応札の最終判断は OCCTO 公式情報・電気事業法を必ずご確認ください。'
   );
 
   return {
