@@ -56,4 +56,24 @@ export const SITE_ANNOUNCEMENTS: SiteAnnouncement[] = [
     dismissible: false,
     priority: 10,
   },
+  {
+    // An-1（2026-09-21）: 10/14 セミナー。当サイト運営団体（EIC）の共催＝運営者の告知であることを文言に出す。
+    // 一次 https://pps-net.org/seminar/165196（2026-09-21 取得）。名称は一次の「経営者のための…」に合わせた
+    // （依頼の要約は「経営者向け」）。モバイルは短縮表記のため「向け」のまま。
+    // 期間: 公開日〜開催当日（endAt は日付単位＝10/14 を含む）。priority 10 > 稼働中紹介 5 のため期間中は
+    // こちらだけが出て、10/15 から稼働中紹介に戻る。判定: src/lib/announcement-schedule.ts
+    id: 'seminar-bess-investment-2026-10-14',
+    enabled: true,
+    type: 'seminar',
+    title: '10/14(水)13:00 無料オンライン｜経営者のための系統用蓄電池投資セミナー（運営団体共催）',
+    titleShort: '10/14 無料｜経営者向け蓄電池投資セミナー',
+    href: '/info/seminar-bess-investment-2026-10-14',
+    ctaText: '',
+    startAt: '2026-09-21',
+    endAt: '2026-10-14',
+    variant: 'bar',
+    // 稼働中紹介と同じ（×で閉じる・sessionStorage＝そのセッション中のみ非表示）
+    dismissible: true,
+    priority: 10,
+  },
 ];

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { siteConfig } from '@/lib/site-config';
 import { AnnouncementBanner } from '@/components/AnnouncementBanner';
+import { toJstDate } from '@/lib/announcement-schedule';
 import './globals.css';
 
 export const viewport: Viewport = {
@@ -120,7 +121,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body>
-        <AnnouncementBanner />
+        {/* 描画日を渡す: 静的ページの HTML と初回のクライアント描画を一致させる（AnnouncementBanner 冒頭参照） */}
+        <AnnouncementBanner renderedJstDate={toJstDate(new Date())} />
         {children}
       </body>
     </html>

@@ -2,42 +2,57 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { SITE_ANNOUNCEMENTS, type SiteAnnouncement } from '@/data/site-announcements';
+import { SITE_ANNOUNCEMENTS } from '@/data/site-announcements';
+import { selectActiveAnnouncement, toJstDate } from '@/lib/announcement-schedule';
 
-function getActiveAnnouncement(): SiteAnnouncement | null {
-  // JST (UTC+9) の日付文字列と比較
-  const now = new Date();
-  const jstDate = new Date(now.getTime() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
-  const active = SITE_ANNOUNCEMENTS
-    .filter((a) => a.enabled && a.startAt <= jstDate && jstDate <= a.endAt)
-    .sort((a, b) => b.priority - a.priority);
-  return active[0] ?? null;
-}
-
-export function AnnouncementBanner() {
-  const [dismissed, setDismissed] = useState(false);
+/**
+ * @param renderedJstDate サーバがこのページを描画した日（JST・YYYY-MM-DD）。layout が渡す。
+ *   静的ページの HTML はビルド時に焼かれ、次のビルドまで同じものが配られる。初回のクライアント描画を
+ *   この日で選べば HTML と一致する（hydration 失敗を起こさない）。閲覧日での選び直しはマウント後に行う。
+ *   ★これが無いと、startAt・endAt を跨いだ閲覧（例: 10/14 ビルドの HTML を 10/15 に閲覧）で
+ *     サーバとクライアントの選ぶ告知が食い違う（An-1・2026-09-21）。
+ */
+export function AnnouncementBanner({ renderedJstDate }: { renderedJstDate?: string }) {
+  const [jstDate, setJstDate] = useState<string>(() => renderedJstDate ?? toJstDate(new Date()));
+  // 閉じた告知の id（真偽値でなく id で持つ: 告知が入れ替わった直後に前の告知の「閉じた」を引き継がない）
+  const [dismissedId, setDismissedId] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
 
-  const announcement = getActiveAnnouncement();
+  const announcement = selectActiveAnnouncement(SITE_ANNOUNCEMENTS, jstDate);
   const announcementId = announcement?.id ?? null;
 
   // hooks は必ず条件分岐の前に置く
   useEffect(() => {
+    // 閲覧日で選び直す（サーバの描画日と同じなら変化なし）
+    setJstDate(toJstDate(new Date()));
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
     // ×で閉じたら sessionStorage でそのセッション中のみ非表示（翌訪問では再表示・2026-07-12）。
-    // SSR/初回クライアント描画は常に表示＝hydration mismatch なし（mounted ガード）
+    // SSR/初回クライアント描画は常に表示＝hydration mismatch なし（mounted ガード）。
+    // ★storage はプライベートモード・サイトデータのブロック等で例外を投げうる。root layout の部品が
+    //   投げるとサイト全体がエラー画面になるため、読めなければ「閉じていない」とみなす。
     if (!announcementId || !announcement?.dismissible) return;
-    if (sessionStorage.getItem(`bess-banner-dismissed-${announcementId}`) === '1') {
-      setDismissed(true);
+    try {
+      if (sessionStorage.getItem(`bess-banner-dismissed-${announcementId}`) === '1') {
+        setDismissedId(announcementId);
+      }
+    } catch {
+      /* 読めなければ表示する */
     }
   }, [announcementId, announcement?.dismissible]);
 
   if (!announcement) return null;
-  if (announcement.dismissible && mounted && dismissed) return null;
+  if (announcement.dismissible && mounted && dismissedId === announcement.id) return null;
 
   const handleDismiss = () => {
-    setDismissed(true);
-    sessionStorage.setItem(`bess-banner-dismissed-${announcement.id}`, '1');
+    setDismissedId(announcement.id);
+    try {
+      sessionStorage.setItem(`bess-banner-dismissed-${announcement.id}`, '1');
+    } catch {
+      /* 保存できなくても、このページ表示中は閉じたままにする */
+    }
   };
 
   if (announcement.variant === 'bar') {

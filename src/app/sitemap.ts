@@ -76,6 +76,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/info`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     // 稼働中蓄電所ご紹介（静的1枚ページ・/info 一覧は microCMS 由来のため明示追加、2026-07-11）
     { url: `${siteConfig.url}/info/operating-bess-introduction`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    // 10/14 セミナー案内（静的1枚ページ・An-1 2026-09-21）。依頼により掲載（前例 SEETEL の案内ページは sitemap 未掲載のまま）。
+    // ページは開催後も記録として残す（SEETEL と同じ）
+    { url: `${siteConfig.url}/info/seminar-bess-investment-2026-10-14`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     // 入口再設計 3分岐LP（2026-07-15）
     { url: `${siteConfig.url}/start/buy`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${siteConfig.url}/start/sell`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
