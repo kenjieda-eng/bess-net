@@ -150,7 +150,7 @@ export default async function GlobalHubPage() {
             <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/map/industry-chaos">業界カオスマップ (国内主要事業者)</Link></li>
               <li><Link href="/market/jepx">JEPX ハブ (国内スポット市場)</Link></li>
-              <li><Link href="/operators">事業者ナビ (国内{opCount}社)</Link></li>
+              <li><Link href="/operators">事業者ナビ{opCount != null ? ` (国内${opCount}社)` : ''}</Link></li>
             </ul>
           </section>
         </div>

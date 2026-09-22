@@ -6,34 +6,34 @@
  * 形式: APA 7 / BibTeX / Chicago 17
  */
 import type { Indicator } from '@/types/eic';
+import { clampToRunDateJst, todayJst } from '@/lib/eic-date';
 
 export type CitationFormat = 'bibtex' | 'apa' | 'chicago';
 
-export function formatCitation(indicator: Indicator, format: CitationFormat = 'apa'): string {
+export function formatCitation(indicator: Indicator, format: CitationFormat = 'apa', runDate: string = todayJst()): string {
+  // Ck-1a ■2-12: 年・アクセス日は observation_cutoff を実行日（JST）で頭打ちにして使う。
+  //   JEPX は受渡日＝明日、容量市場は対象実需給年度（2029-04-01）が入るため、そのままだと未来の日付・年になる。
+  const asOf = clampToRunDateJst(indicator.observation_cutoff, runDate) ?? runDate;
   switch (format) {
     case 'bibtex':
-      return formatBibtex(indicator);
+      return formatBibtex(indicator, asOf);
     case 'apa':
-      return formatApa(indicator);
+      return formatApa(indicator, asOf);
     case 'chicago':
-      return formatChicago(indicator);
+      return formatChicago(indicator, asOf);
   }
 }
 
-function safeYear(dateStr?: string): number {
-  if (!dateStr) return new Date().getFullYear();
-  const d = new Date(dateStr);
-  return Number.isNaN(d.getFullYear()) ? new Date().getFullYear() : d.getFullYear();
-}
+const yearOf = (asOf: string): number => Number(asOf.slice(0, 4));
 
-function formatApa(ind: Indicator): string {
-  const year = safeYear(ind.observation_cutoff);
+function formatApa(ind: Indicator, asOf: string): string {
+  const year = yearOf(asOf);
   const publisher = ind.publisher ?? ind.source_name;
   return `${publisher}. (${year}). ${ind.name}. EIC Data. https://data.eic-jp.org/catalog/${ind.id}`;
 }
 
-function formatBibtex(ind: Indicator): string {
-  const year = safeYear(ind.observation_cutoff);
+function formatBibtex(ind: Indicator, asOf: string): string {
+  const year = yearOf(asOf);
   const publisher = ind.publisher ?? ind.source_name;
   const key = `eic_${ind.id.replaceAll('-', '_')}`;
   return `@misc{${key},
@@ -45,11 +45,10 @@ function formatBibtex(ind: Indicator): string {
 }`;
 }
 
-function formatChicago(ind: Indicator): string {
-  const year = safeYear(ind.observation_cutoff);
+function formatChicago(ind: Indicator, asOf: string): string {
+  const year = yearOf(asOf);
   const publisher = ind.publisher ?? ind.source_name;
-  const access = ind.observation_cutoff ?? new Date().toISOString().slice(0, 10);
-  return `${publisher}. "${ind.name}." EIC Data. Accessed ${access}. https://data.eic-jp.org/catalog/${ind.id}.`;
+  return `${publisher}. "${ind.name}." EIC Data. Accessed ${asOf}. https://data.eic-jp.org/catalog/${ind.id}.`;
 }
 
 /**

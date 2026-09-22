@@ -21,6 +21,8 @@ import { getIndicatorsByIdPrefix, getSeriesMany } from '@/lib/eic-data';
 import { EIC_DATA_DISCLAIMER } from '@/lib/cite-helpers';
 // Lc-2: JEPX の実在するページ名（資料名の僭称を避ける）
 import { JEPX_SPOT_PAGE_NAME } from '@/lib/eic-license';
+// Ck-1a ■2-12: 実行日（JST）をここで 1 回だけ決めて表示部品へ渡す
+import { todayJst } from '@/lib/eic-date';
 
 export const revalidate = 86400;
 
@@ -41,7 +43,8 @@ export default async function JEPXHubPage() {
   // EIC Data の JEPX 10 系列を build 時データから読込 (SSR 外部 fetch 0)
   const indicators = await getIndicatorsByIdPrefix('jepx-');
   const series = await getSeriesMany(indicators.map((ind) => ind.id));
-  const latestUpdate = series[0]?.meta.updated_at?.slice(0, 10) ?? new Date().toISOString().slice(0, 10);
+  const runDate = todayJst();
+  const latestUpdate = series[0]?.meta.updated_at?.slice(0, 10) ?? runDate;
 
   // JSON-LD Dataset (EIC Data 経由の実データを明示)
   const datasetJsonLd = {
@@ -115,7 +118,7 @@ export default async function JEPXHubPage() {
           </p>
 
           {/* 実データセクション (EIC Data) */}
-          <JepxRealData series={series} />
+          <JepxRealData series={series} runDate={runDate} />
 
           {/* 既存ダッシュボード (30分単位デモ、アービトラージ計算機) — 既存維持 (改善対象外) */}
           <section style={{ marginTop: 40, marginBottom: 16 }}>

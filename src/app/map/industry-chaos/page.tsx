@@ -110,11 +110,11 @@ export default async function IndustryChaosMapPage() {
           {/* PC可読性（ユウ実測 2026-07-20）: 図の説明・注記 13→15px。当ページ限定 */}
           <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 24 }}>
             ※ 主要事業者を抽出した「業界構造可視化」用ビュー。完全網羅は{' '}
-            <Link href="/operators">事業者ナビ ({opCount} 社)</Link> を参照。
+            <Link href="/operators">事業者ナビ{opCount != null ? ` (${opCount} 社)` : ''}</Link> を参照。
             関係データは公開情報・業界既知の事実に基づき編集部が整理。
           </p>
 
-          <IndustryChaosMap operatorCount={opCount} />
+          <IndustryChaosMap operatorCount={opCount ?? undefined} />
 
           <section
             style={{
@@ -130,7 +130,7 @@ export default async function IndustryChaosMapPage() {
             </h2>
             <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li>
-                <Link href="/operators">事業者ナビ ({opCount} 社、完全リスト)</Link>
+                <Link href="/operators">事業者ナビ{opCount != null ? ` (${opCount} 社、完全リスト)` : '（完全リスト）'}</Link>
               </li>
               <li>
                 <Link href="/projects">プロジェクトデータベース</Link>

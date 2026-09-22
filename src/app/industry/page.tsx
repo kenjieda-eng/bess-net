@@ -15,6 +15,7 @@ import SiteFooter from '@/components/SiteFooter';
 import { PLAYERS } from '@/data/industry-map';
 // Lc-2 ■1: JEPX の出所表記（条文で出所明示が利用の条件）。文言とリンク先は eic-license.ts に一本化（#119）
 import { jepxNoticeLines, JEPX_TOP } from '@/lib/eic-license';
+import { lastValidPointAsOf, todayJst } from '@/lib/eic-date';
 import { getSubsidyList, getSubstationList, getOperatorList, getProjectList } from '@/lib/microcms';
 import { isExcludedSubsidy } from '@/data/subsidies-excluded';
 import { isExcludedOperator } from '@/lib/operators-excluded';
@@ -67,12 +68,12 @@ const JEPX_SOURCE_LINE = jepxNoticeLines(
   (JEPX_AREAS[0] as unknown as { meta?: { license_notice?: string } }).meta?.license_notice,
 ).join(' ');
 
-/** 9エリアの最新スポット値平均（¥/kWh）と最新日付 */
-function jepxLatestAvg(): { avg: number; date: string } | null {
+/** 9エリアの最新スポット値平均（¥/kWh）と最新日付（実行日 JST 以前の点に限る・Ck-1a ■2-12） */
+function jepxLatestAvg(runDate: string): { avg: number; date: string } | null {
   const lasts: { date: string; value: number }[] = [];
   for (const s of JEPX_AREAS) {
-    const pts = (s.points ?? []).filter((p): p is { date: string; value: number } => p.value != null);
-    if (pts.length) lasts.push(pts[pts.length - 1]);
+    const p = lastValidPointAsOf(s.points ?? [], runDate);
+    if (p) lasts.push(p);
   }
   if (!lasts.length) return null;
   const avg = lasts.reduce((a, b) => a + b.value, 0) / lasts.length;
@@ -123,7 +124,7 @@ export default async function IndustryHubPage() {
     .slice(0, 3);
   const updates7d = counts7d.reduce((a, b) => a + b, 0);
 
-  const jepx = jepxLatestAvg();
+  const jepx = jepxLatestAvg(todayJst());
   const top1 = RANKING.ranking[0];
 
   // 5機能カード（「今日の1数字」チップ付き・全てコード導出）

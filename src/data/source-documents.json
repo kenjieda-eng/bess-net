@@ -68,7 +68,10 @@
    "url": "https://www.occto.or.jp/assets/market-board/market/files/youryou_gaiyousetumei.pdf",
    "title_verbatim": "説明会資料／容量市場の概要について／2019年10月／電力広域的運営推進機関",
    "checked_on": "2026-09-20",
-   "used_in": "explainer/capacity-market.sources"
+   "used_in": "explainer/capacity-market.sources",
+   "aliases": [
+    "容量市場の概要について"
+   ]
   },
   {
    "name": "脱炭素先行地域",
@@ -539,6 +542,62 @@
    "title_verbatim": "需給調整市場とは | 取引概要 | 一般社団法人 電力需給調整力取引所",
    "checked_on": "2026-09-21",
    "used_in": "explainer/grid-scale-bess.sources（Ck-1 A11 で差し替え）"
+  },
+  {
+   "name": "取引規程（需給調整市場）",
+   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+   "url": "https://www.eprx.or.jp/outline/docs/kitei_ver.18_260701.pdf",
+   "title_verbatim": "取引規程（需給調整市場） 2026年７月１日 実施 一般社団法人電力需給調整力取引所（PDF 1頁。掲載ページ https://www.eprx.or.jp/outline/announcement.html の title「需給調整市場に係る取引規程等の公表 | 取引概要 | 一般社団法人 電力需給調整力取引所」）",
+   "checked_on": "2026-09-22",
+   "used_in": "glossary 9 件の detail（A11-2-17）／explainer/tertiary-reserve-1-detail.sources（A11-2-15）／explainer/aggregator-business.sources（A11-2-16-c）"
+  },
+  {
+   "name": "取引実績",
+   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+   "url": "https://www.eprx.or.jp/information/results.php",
+   "title_verbatim": "取引実績 | 取引情報 | 一般社団法人 電力需給調整力取引所",
+   "checked_on": "2026-09-22",
+   "used_in": "links/occto-data.description（A11-2-07-b）／glossary/tertiary-reserve-2.detail（A11-2-11）"
+  },
+  {
+   "name": "取引ガイド（全商品）",
+   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+   "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
+   "title_verbatim": "取引ガイド （全商品） 2026年 7月 1日 第10版（PDF 1頁）",
+   "checked_on": "2026-09-22",
+   "used_in": "explainer/balancing-market-practical.sources（A11-2-16-b）"
+  },
+  {
+   "name": "需給調整市場の参加申込",
+   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+   "url": "https://www.eprx.or.jp/outline/application.html",
+   "title_verbatim": "需給調整市場の参加申込 | 取引概要 | 一般社団法人 電力需給調整力取引所",
+   "checked_on": "2026-09-22",
+   "used_in": "explainer/aggregator-business.sources（A11-2-16-c）"
+  },
+  {
+   "name": "容量市場関係の情報・手続き",
+   "publisher": "電力広域的運営推進機関（OCCTO）",
+   "url": "https://www.occto.or.jp/various/capacity-market/",
+   "title_verbatim": "容量市場関係の情報・手続き｜電力広域的運営推進機関",
+   "checked_on": "2026-09-22",
+   "used_in": "explainer/bess-revenue-simulation.sources（A11-2-16-a）"
+  },
+  {
+   "name": "（参考資料）需給調整市場の概要",
+   "publisher": "電力広域的運営推進機関（OCCTO）",
+   "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2018/files/jukyu_shijo_03_05_02_02.pdf",
+   "title_verbatim": "第３回需給調整市場検討小委員会 資料５－２－２ 意見募集資料 （参考資料） 需給調整市場の概要 ２０１８年４月２７日 電力広域的運営推進機関（PDF 1頁）",
+   "checked_on": "2026-09-22",
+   "used_in": "explainer/balancing-market.sources（A11-2-24）"
+  },
+  {
+   "name": "容量市場業務マニュアル　容量停止計画の調整業務編（実需給年度の2年度前に行う容量停止計画の調整）（対象実需給年度：2026年度以降）",
+   "publisher": "電力広域的運営推進機関（OCCTO）",
+   "url": "https://www.occto.or.jp/news/012415.html",
+   "title_verbatim": "容量市場　実務説明会（容量停止計画の調整業務）（対象実需給年度：2028年度）の開催案内について｜電力広域的運営推進機関（本文に資料名が逐語で載る。マニュアル直後の空白は全角）",
+   "checked_on": "2026-09-22",
+   "used_in": "policy-events/capacity-outage-plan-briefing-2026-06.description（A5-12）"
   }
  ]
 }

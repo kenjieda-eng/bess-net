@@ -276,7 +276,7 @@ export default function IrrSimulatorPage() {
                 <strong>IRR 計算</strong>: 二分法 (bisection)、収束精度 1e-6 億円
               </li>
               <li>
-                <strong>NPV 計算</strong>: 割引率 5% (デフォルト)、20 年間 DCF
+                <strong>NPV 計算</strong>: 割引率 5% (デフォルト)、耐用年数（既定 {PROJECT_LIFETIME_YEARS.value} 年・入力で変更可）の DCF
               </li>
               <li>
                 <strong>ペイバック</strong>: 累積CFが補助金控除後の初期投資を上回る年 (線形補間)

@@ -18,6 +18,7 @@ import CitationPanel from '../CitationPanel';
 // カタログには JEPX 16・EPRX 46 系列の「深い URL」が入っており、両社の条文はトップのみを認める。
 // ソース別の方針表（src/lib/eic-license.ts）を通してから href にする。資料名（sourceName）はそのまま残す。
 import { normalizeSourceLinkHref } from '@/lib/eic-license';
+import { lastValidPointAsOf } from '@/lib/eic-date';
 
 interface PanelProps {
   title: string;
@@ -37,15 +38,8 @@ interface PanelProps {
   readingGuide?: string;
   /** 鮮度・供給元状況の注記（※…。P1c） */
   freshnessNote?: string;
-}
-
-function latestValid(points: { date: string; value: number | null }[]): { date: string; value: number } | null {
-  for (let i = points.length - 1; i >= 0; i--) {
-    if (points[i].value !== null) {
-      return { date: points[i].date, value: points[i].value as number };
-    }
-  }
-  return null;
+  /** 実行日（JST・YYYY-MM-DD）。ページ側で 1 回だけ評価して渡す（Ck-1a ■2-12・src/lib/eic-date.ts） */
+  runDate: string;
 }
 
 export default function MarketDataPanel({
@@ -60,6 +54,7 @@ export default function MarketDataPanel({
   latestDataMonth,
   readingGuide,
   freshnessNote,
+  runDate,
 }: PanelProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -152,7 +147,7 @@ export default function MarketDataPanel({
           </thead>
           <tbody>
             {series.map((s) => {
-              const latest = latestValid(s.points);
+              const latest = lastValidPointAsOf(s.points, runDate);
               const unit = s.meta.unit || defaultUnit;
               const isExpanded = expandedId === s.id;
               const csvUrl = `https://raw.githubusercontent.com/kenjieda-eng/eic-data-pipeline/main/data/processed/${csvDir}/${s.id}.csv`;
@@ -203,7 +198,7 @@ export default function MarketDataPanel({
                     <tr>
                       {/* B 案: 行下 full-width 展開 (colSpan=5) */}
                       <td colSpan={5} id={`citation-${s.id}`} style={{ padding: 0, border: 'none' }}>
-                        <CitationPanel indicator={s.meta} csvUrl={csvUrl} catalogUrl={catalogUrl} />
+                        <CitationPanel indicator={s.meta} csvUrl={csvUrl} catalogUrl={catalogUrl} runDate={runDate} />
                       </td>
                     </tr>
                   )}

@@ -343,7 +343,7 @@ export default async function AnkenPage() {
             </p>
             <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/grid">系統データ（全国 8,225 変電所地点）</Link></li>
-              <li><Link href="/operators">事業者データベース（{opCount} 社）</Link></li>
+              <li><Link href="/operators">事業者データベース{opCount != null ? `（${opCount} 社）` : ''}</Link></li>
               <li><Link href="/projects">蓄電所プロジェクトDB（全国）</Link></li>
             </ul>
           </section>

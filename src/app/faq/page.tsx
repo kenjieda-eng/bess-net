@@ -12,7 +12,7 @@ import {
   getGlossaryLiteList,
   getGlossaryList,
   getExplainerList,
-  getOperatorList,
+  getOperatorCountSafe,
   type Faq,
 } from '@/lib/microcms';
 import FaqClient from './FaqClient';
@@ -97,18 +97,19 @@ export default async function FaqPage() {
   }));
 
   // P2: 関連コンテンツ件数の動的化（/events 4087833 と同一パターン・失敗時フォールバック）
-  const safeCount = async (fn: () => Promise<{ totalCount: number }>, fallback: number) => {
+  // Ck-1a ■2-6: 取れないときは null を返して件数を出さない（固定のフォールバック値は実数と食い違うので使わない）
+  const safeCount = async (fn: () => Promise<{ totalCount: number }>): Promise<number | null> => {
     try {
       const r = await fn();
-      return r.totalCount > 0 ? r.totalCount : fallback;
+      return r.totalCount > 0 ? r.totalCount : null;
     } catch {
-      return fallback;
+      return null;
     }
   };
   const [glossaryCount, explainerCount, operatorCount] = await Promise.all([
-    safeCount(() => getGlossaryList({ limit: 1, fields: 'id' }), 1524),
-    safeCount(() => getExplainerList({ limit: 1, fields: 'id' }), 174),
-    safeCount(() => getOperatorList({ limit: 1, fields: 'id' }), 544),
+    safeCount(() => getGlossaryList({ limit: 1, fields: 'id' })),
+    safeCount(() => getExplainerList({ limit: 1, fields: 'id' })),
+    getOperatorCountSafe(), // 事業者は一覧と同じ数（除外を差し引く）
   ]);
 
   // JSON-LD FAQPage (SEO リッチリザルト対応)
@@ -221,10 +222,10 @@ export default async function FaqPage() {
             </p>
             <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
-                <Link href="/glossary">業界用語集（{glossaryCount.toLocaleString()}語）</Link> — 用語の詳細定義・読み・関連語
+                <Link href="/glossary">業界用語集{glossaryCount != null ? `（${glossaryCount.toLocaleString()}語）` : ''}</Link> — 用語の詳細定義・読み・関連語
               </li>
               <li>
-                <Link href="/explainer">解説記事（{explainerCount}本）</Link> — 市場制度・参入手順・補助金の体系解説
+                <Link href="/explainer">解説記事{explainerCount != null ? `（${explainerCount}本）` : ''}</Link> — 市場制度・参入手順・補助金の体系解説
               </li>
               <li>
                 <Link href="/policy-calendar">政策・法制度カレンダー</Link> — 制度改正・パブコメの時系列
@@ -236,7 +237,7 @@ export default async function FaqPage() {
                 <Link href="/subsidies">補助金カレンダー</Link> — 公募・採択のトラッキング
               </li>
               <li>
-                <Link href="/operators">事業者ナビ（{operatorCount}社）</Link> — 業界プレイヤー検索
+                <Link href="/operators">事業者ナビ{operatorCount != null ? `（${operatorCount}社）` : ''}</Link> — 業界プレイヤー検索
               </li>
               <li>
                 <Link href="/grid/chubu/map">中部地方 変電所マップ</Link> — 当サイト独自の地図ベース系統情報DB

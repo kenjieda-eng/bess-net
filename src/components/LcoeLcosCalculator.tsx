@@ -11,7 +11,7 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import {
   computeLCOS, computeLCOE,
-  LCOS_DEFAULTS, LCOE_DEFAULTS,
+  LCOS_DEFAULTS, LCOE_DEFAULTS, LCOE_EXCLUDED_NOTE,
   type LcosInput,
 } from '@/lib/lcoe-lcos';
 import { DEPTH_OF_DISCHARGE, PROJECT_LIFETIME_YEARS, ROUND_TRIP_EFFICIENCY } from '@/lib/storage-assumptions';
@@ -332,14 +332,10 @@ export default function LcoeLcosCalculator({ lcosCapex, sources, fxJpyPerUsd }: 
                     <td style={{ padding: '6px 8px', color: 'var(--color-muted)' }}>{r.atbUsdPerMwh !== null ? usd(Math.round(r.atbUsdPerMwh)) : '—'}</td>
                   </tr>
                 ))}
-                <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                  <td style={{ textAlign: 'left', padding: '6px 8px', fontWeight: 600 }}>火力（参考）</td>
-                  <td colSpan={5} style={{ padding: '6px 8px', fontSize: 15, color: 'var(--color-muted)' }}>
-                    NREL ATB に火力 LCOE 系列なし。概数 $40–80/MWh ＋ 燃料費・CO2価格依存（定性）。確定ソース調査中につき本ツールでは試算しません（捏造回避）。
-                  </td>
-                </tr>
               </tbody>
             </table>
+            {/* Ck-1a ■2-8: 火力・原子力は行を出さない（燃料費 0 の簡易計算では過小になる）。理由を 1 行だけ出す */}
+            <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 8, marginBottom: 0 }}>※ {LCOE_EXCLUDED_NOTE}</p>
           </div>
         </div>
     </div>

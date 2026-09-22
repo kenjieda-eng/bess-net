@@ -730,7 +730,7 @@ export default function SubsidyMatcher() {
             <Link href="/subsidies" style={{ color: 'var(--color-accent, #0066cc)' }}>
               補助金カレンダー
             </Link>
-            — 50 件の補助金・融資制度の全件一覧
+            — {ALL_SUBSIDIES.length} 件の補助金・融資制度の全件一覧
           </li>
           <li>
             <Link href="/explainer/grid-scale-bess" style={{ color: 'var(--color-accent, #0066cc)' }}>

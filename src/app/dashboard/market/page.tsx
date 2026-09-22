@@ -21,6 +21,7 @@ import MarketDataPanel from '@/components/dashboard/MarketDataPanel';
 import { getIndicatorsByIdPrefix, getSeriesMany } from '@/lib/eic-data';
 import { EIC_DATA_DISCLAIMER } from '@/lib/cite-helpers';
 import { siteConfig } from '@/lib/site-config';
+import { todayJst } from '@/lib/eic-date';
 
 export const revalidate = 86400; // 24h ISR
 
@@ -42,24 +43,27 @@ export const metadata: Metadata = {
 import type { SeriesData } from '@/types/eic';
 
 /** セクション内全系列の非 null 最新データ月（YYYY-MM） */
-function latestDataMonthOf(series: SeriesData[]): string | undefined {
+function latestDataMonthOf(series: SeriesData[], runDate: string): string | undefined {
   let max = '';
   for (const s of series) {
     for (const p of s.points) {
-      if (p.value != null && p.date > max) max = p.date;
+      // Ck-1a ■2-12: 実行日（JST）より後の点は数えない（src/lib/eic-date.ts）
+      if (p.value != null && p.date.slice(0, 10) <= runDate && p.date > max) max = p.date;
     }
   }
   return max ? max.slice(0, 7) : undefined;
 }
 
 /** 系列の末尾2つの非 null 点（最新値＋前回値） */
-function lastTwoValid(s: SeriesData | undefined): { last?: { date: string; value: number }; prev?: { date: string; value: number } } {
+function lastTwoValid(s: SeriesData | undefined, runDate: string): { last?: { date: string; value: number }; prev?: { date: string; value: number } } {
   if (!s) return {};
-  const pts = s.points.filter((p): p is { date: string; value: number } => p.value != null);
+  const pts = s.points.filter((p): p is { date: string; value: number } => p.value != null && p.date.slice(0, 10) <= runDate);
   return { last: pts[pts.length - 1], prev: pts[pts.length - 2] };
 }
 
 export default async function MarketDashboardPage() {
+  // Ck-1a ■2-12: 実行日（JST）をここで 1 回だけ決め、最新月・最新値・引用の取得日の頭打ちに使う
+  const runDate = todayJst();
   // 電源構成 (METI 12 系列)
   const metiIndicators = await getIndicatorsByIdPrefix('meti-');
   const metiSeries = await getSeriesMany(metiIndicators.map((i) => i.id));
@@ -82,9 +86,9 @@ export default async function MarketDashboardPage() {
   const totalSeries = metiSeries.length + fuelSeries.length + financeSeries.length;
 
   // P1b: セクション毎のデータ最新月（系列実値からコード導出）
-  const metiLatestMonth = latestDataMonthOf(metiSeries);
-  const fuelLatestMonth = latestDataMonthOf(fuelSeries);
-  const financeLatestMonth = latestDataMonthOf(financeSeries);
+  const metiLatestMonth = latestDataMonthOf(metiSeries, runDate);
+  const fuelLatestMonth = latestDataMonthOf(fuelSeries, runDate);
+  const financeLatestMonth = latestDataMonthOf(financeSeries, runDate);
   // P1c 燃料注記の月表記も実データ導出（焼き込み禁止。供給元復旧時は自動追従し、注記撤去は別タスク）
   const fuelLatestMonthJa = fuelLatestMonth
     ? `${fuelLatestMonth.slice(0, 4)}年${Number(fuelLatestMonth.slice(5, 7))}月`
@@ -101,7 +105,7 @@ export default async function MarketDashboardPage() {
   const summaryItems = [
     {
       label: '日本 LNG 輸入価格（CIF）',
-      ...lastTwoValid(fuelSeries.find((s) => s.id === 'fuel-lng-jp-cif')),
+      ...lastTwoValid(fuelSeries.find((s) => s.id === 'fuel-lng-jp-cif'), runDate),
       unit: '$/MMBtu',
       deltaLabel: '前月比',
       deltaUnit: '$',
@@ -109,7 +113,7 @@ export default async function MarketDashboardPage() {
     },
     {
       label: 'JGB 10年金利（新発）',
-      ...lastTwoValid(financeSeries.find((s) => s.id === 'jgb-10y-yield')),
+      ...lastTwoValid(financeSeries.find((s) => s.id === 'jgb-10y-yield'), runDate),
       unit: '%',
       deltaLabel: '前日比',
       deltaUnit: 'pt',
@@ -117,7 +121,7 @@ export default async function MarketDashboardPage() {
     },
     {
       label: '再エネ比率（発電ベース）',
-      ...lastTwoValid(metiSeries.find((s) => s.id === 'meti-renewables-share')),
+      ...lastTwoValid(metiSeries.find((s) => s.id === 'meti-renewables-share'), runDate),
       unit: '%',
       deltaLabel: '前月比',
       deltaUnit: 'pt',
@@ -293,6 +297,7 @@ export default async function MarketDashboardPage() {
             sourceName="経済産業省 電力調査統計"
             csvDir="enecho-power"
             latestDataMonth={metiLatestMonth}
+            runDate={runDate}
             readingGuide="再エネ比率の上昇は出力制御・価格変動の増加要因であり、蓄電池の裁定機会と調整力需要の背景データです。"
             freshnessNote="※ 出典（METI 電力調査統計）の公表は4〜6ヶ月遅れのため、最新月が過去になります（構造的なもので正常です）。"
           />
@@ -308,6 +313,7 @@ export default async function MarketDashboardPage() {
             sourceName="World Bank Pink Sheet"
             csvDir="fuel"
             latestDataMonth={fuelLatestMonth}
+            runDate={runDate}
             readingGuide="燃料価格は卸電力（JEPX）価格の主要ドライバーで、蓄電池の充放電スプレッドに影響します。"
             freshnessNote={fuelLatestMonthJa ? `※ 現在 ${fuelLatestMonthJa}分までの掲載です${fuelStaleSuffix}。` : undefined}
           />
@@ -323,6 +329,7 @@ export default async function MarketDashboardPage() {
             sourceName="財務省 国債金利情報 + FRED + 日本銀行"
             csvDir="finance"
             latestDataMonth={financeLatestMonth}
+            runDate={runDate}
             readingGuide="金利は蓄電池投資の割引率・資金調達コストの前提です。IRR シミュレーターの割引率設定の参考にどうぞ。"
           />
 

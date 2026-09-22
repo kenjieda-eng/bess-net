@@ -13,9 +13,13 @@
 import { Fragment, useState } from 'react';
 import type { SeriesData } from '@/types/eic';
 import CitationPanel from './CitationPanel';
+// Ck-1a ■2-12: 受渡日が明日の点（JST 10:30 以降の取得で入る）を「最新日」に出さない
+import { lastValidPointAsOf, pointsAsOf } from '@/lib/eic-date';
 
 interface Props {
   series: SeriesData[];
+  /** 実行日（JST・YYYY-MM-DD）。ページ側で todayJst() を 1 回だけ評価して渡す（部品内で new Date() しない） */
+  runDate: string;
 }
 
 // SVG sparkline (直近 30 日 推移、Tier 1 UI 改善で 120×40 + min/max 補助線)
@@ -51,16 +55,8 @@ function Sparkline({ points }: { points: { date: string; value: number | null }[
   );
 }
 
-function latestValid(points: { date: string; value: number | null }[]): { date: string; value: number } | null {
-  for (let i = points.length - 1; i >= 0; i--) {
-    if (points[i].value !== null) {
-      return { date: points[i].date, value: points[i].value as number };
-    }
-  }
-  return null;
-}
 
-export default function JepxRealData({ series }: Props) {
+export default function JepxRealData({ series, runDate }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   if (series.length === 0) {
@@ -114,7 +110,8 @@ export default function JepxRealData({ series }: Props) {
           </thead>
           <tbody>
             {sorted.map((s) => {
-              const latest = latestValid(s.points);
+              // 日付と値は同じ点から取る（日付だけ頭打ちにして値は明日のまま、にしない）
+              const latest = lastValidPointAsOf(s.points, runDate);
               const isExpanded = expandedId === s.id;
               const csvUrl = `https://raw.githubusercontent.com/kenjieda-eng/eic-data-pipeline/main/data/processed/jepx/${s.id}.csv`;
               const catalogUrl = `https://data.eic-jp.org/catalog/${s.id}`;
@@ -139,7 +136,7 @@ export default function JepxRealData({ series }: Props) {
                       {latest ? latest.value.toFixed(2) : '—'}
                     </td>
                     <td style={{ padding: 8, textAlign: 'center', border: '1px solid var(--color-border)' }}>
-                      <Sparkline points={s.points} />
+                      <Sparkline points={pointsAsOf(s.points, runDate)} />
                     </td>
                     <td style={{ padding: 12, border: '1px solid var(--color-border)' }}>
                       <button
@@ -166,7 +163,7 @@ export default function JepxRealData({ series }: Props) {
                     <tr>
                       {/* B 案: 行下 full-width 展開 (colSpan=5) */}
                       <td colSpan={5} id={`citation-${s.id}`} style={{ padding: 0, border: 'none' }}>
-                        <CitationPanel indicator={s.meta} csvUrl={csvUrl} catalogUrl={catalogUrl} />
+                        <CitationPanel indicator={s.meta} csvUrl={csvUrl} catalogUrl={catalogUrl} runDate={runDate} />
                       </td>
                     </tr>
                   )}

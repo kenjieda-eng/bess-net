@@ -112,6 +112,21 @@ deploy 後 30分監視:
 大量動的ルート（1,000+ ページ）は **「429 縮退（getXBySlug は throw せず null→page で notFound/404）＋ relations は build 時 precompute」をセットで実装** し、runtime microCMS を 0 にする。
 2026-06-23 の Vercel 500（rate-limit）を **3段防御**（#100 helper guard → 全ルート try/catch 統一 → #102 precompute）で構造解消した実績に基づく（落とし穴 #100 / #102）。
 
+## 停止条件（2026-09-22 追加・Ck-1a ■2-9）
+
+依頼書に書かれていなくても常に禁止。サブエージェント（Agent／Workflow）にも同じ条件を渡す。
+
+```
+✗ rm ／ rmdir ／ Remove-Item（del・git clean など同じ働きの操作を含む）
+  ★一時物も対象: 自作の空ディレクトリ・0 バイトの残骸・scratch ファイルも消さない。残して、報告で申告する。
+    一時物は最初から scratchpad（リポジトリの外）に作る。リポジトリ内に作ってしまったら消さずに mv で退避する。
+✗ git push --force
+✗ .env／.env.local の内容表示（`set -a && . ./.env.local && set +a` で読み込んで使うのは可）
+✗ microCMS の DELETE／PUT（非表示はコード側の除外リスト。PATCH は差分限定＋前後 GET で #106 照合）
+```
+
+実証: 2026-09-21 Ck-1 で、自作の空ディレクトリ `scripts/.ck1tmp` を rmdir で消した（停止条件違反として申告）。
+
 ---
 
 # 📖 第1章：必読落とし穴 TOP 15
@@ -786,6 +801,7 @@ async function main() {
 - 2026-08-31（CC・API統合）: 落とし穴 #124（一覧の並びが参照元APIの登録順に暗黙依存／ソート指定に決定的なタイブレークを置く）を追加。industry-events→policy-events 統合で /events の同着日11箇所が入替（集合・件数・日付は不変・#106 41/41一致）。compareEventsForDisplay に一本化し /policy-calendar と /events を同一規則に。詳細: reports/events-order-implicit-dependency-2026-08-31.md
 - 2026-08-17（CC・基幹ラベル案B）: 第8章 L-EIC-028（表示区分は microCMS に書かず正規化ヘルパで導出）を追記。基幹系統222件を書込ゼロで解消（江田さん裁定により案A＝prefecture への PATCH は不採用）
 - 2026-08-22（CC・需給調整市場 上限価格の確定反映）: 落とし穴 #122（richEditor は保存時に正規化するため PATCH の冪等キーに送信本文の全文一致を使わない・追記型は marker 必須）・#123（「案・審議中」表記は確定時に全滅する／時点明示の両論併記で書く・実績値と上限価格を混同しない）を追加。src 9箇所＋microCMS 7フィールドを是正（EPRX 2026-07-30 公表）
+- 2026-09-22（CC・Ck-1a ■2-9）: 第0章に「停止条件」を新設（rm／rmdir／Remove-Item は自作の一時物・空ディレクトリ・0 バイト残骸にも適用＝消さずに残して申告、push --force・.env 表示・microCMS DELETE/PUT の禁止を明文化）。Ck-1 で自作の空ディレクトリを rmdir した件の再発防止
 - 2026-08-17（CC・基幹ラベル調査）: 落とし穴 #119（二重正規化で原値が消える／#118 の機械検査では検出不能）を追加。verify:grid-fields を2軸化（軸2＝消費側 shape への到達検査）。「（基幹系）」は Gr10(b166f57) がコード側で「（府県の記載なし）」へ置換した文言で、microCMS のデータには全社0件（＝再取込による劣化ではない）
 - 2026-08-16（CC・中国本実行）: 落とし穴 #117（series_dedup ルール②は既定OFF・社ごとopt-in）を追加。No.振り直しは slug 維持＋external_id 更新＋履歴（_common/external_id_history.json）で扱う。last_updated はレコード単位（県により版が異なる社があるため）
 - （将来）: 新規セッションで追記、更新時刻 + 更新者を末尾に

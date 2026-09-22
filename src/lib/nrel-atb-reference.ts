@@ -112,14 +112,14 @@ export const POWER_SOURCE_REFS: PowerSourceRef[] = RAW.map((r) => {
   };
 });
 
-/** 電源別の値が使う ATB の版の一覧（画面の注記用。例「2024 年版（原子力の CF は 2023 年版）」） */
-export function atbYearsLabel(): string {
+/** 電源別の値が使う ATB の版の一覧（画面の注記用。例「2024 年版（原子力の CF は 2023 年版）」）。refs は画面に出す電源だけを渡す */
+export function atbYearsLabel(refs: readonly PowerSourceRef[] = POWER_SOURCE_REFS): string {
   const years = new Set<number>();
-  for (const r of POWER_SOURCE_REFS) for (const v of [r.cf, r.capexUsdPerKw, r.lcoeUsdPerMwh]) if (v) years.add(v.atbYear);
+  for (const r of refs) for (const v of [r.cf, r.capexUsdPerKw, r.lcoeUsdPerMwh]) if (v) years.add(v.atbYear);
   const ys = [...years].sort((a, b) => b - a);
   if (ys.length <= 1) return ys.length ? `ATB ${ys[0]} 年版` : 'ATB（カタログ未取得）';
   const main = ys[0];
-  const exceptions = POWER_SOURCE_REFS.flatMap((r) =>
+  const exceptions = refs.flatMap((r) =>
     (
       [
         ['CF', r.cf],

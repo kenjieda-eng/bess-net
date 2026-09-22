@@ -13,6 +13,7 @@
 import { useState } from 'react';
 import type { Indicator } from '@/types/eic';
 import { formatCitation } from '@/lib/cite-helpers';
+import { clampToRunDateJst } from '@/lib/eic-date';
 // Lc-1(2026-09-20): カタログの license_url に 404 が残っている（OCCTO 63・JEPX 16 系列）。表示の直前で正す
 import { normalizeLicenseUrl } from '@/lib/eic-license';
 
@@ -22,6 +23,8 @@ interface CitationPanelProps {
   csvUrl?: string;
   /** カタログ詳細 URL (Optional) */
   catalogUrl?: string;
+  /** 実行日（JST・YYYY-MM-DD）。取得日・アクセス日の頭打ちに使う。ページ側で 1 回だけ決めて渡す（Ck-1a ■2-12） */
+  runDate: string;
 }
 
 type CitationFormat = 'apa' | 'bibtex' | 'chicago' | 'short';
@@ -33,9 +36,10 @@ const FORMAT_LABELS: Record<CitationFormat, string> = {
   short: '短縮',
 };
 
-function formatShort(ind: Indicator): string {
+function formatShort(ind: Indicator, runDate: string): string {
   const publisher = ind.publisher ?? ind.source_name;
-  const accessDate = ind.observation_cutoff ?? new Date().toISOString().slice(0, 10);
+  // observation_cutoff は JEPX では受渡日（明日）になりうる。取得日として出すので実行日で頭打ちにする
+  const accessDate = clampToRunDateJst(ind.observation_cutoff, runDate) ?? runDate;
   return `出典: ${publisher}, via EIC Data (${accessDate}). https://data.eic-jp.org/catalog/${ind.id}`;
 }
 
@@ -56,12 +60,12 @@ function fallbackCopy(text: string): boolean {
   }
 }
 
-export default function CitationPanel({ indicator, csvUrl, catalogUrl }: CitationPanelProps) {
+export default function CitationPanel({ indicator, csvUrl, catalogUrl, runDate }: CitationPanelProps) {
   const [format, setFormat] = useState<CitationFormat>('apa');
   const [copied, setCopied] = useState(false);
 
   const citation =
-    format === 'short' ? formatShort(indicator) : formatCitation(indicator, format);
+    format === 'short' ? formatShort(indicator, runDate) : formatCitation(indicator, format, runDate);
 
   const copyToClipboard = async () => {
     let ok = false;

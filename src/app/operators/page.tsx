@@ -4,7 +4,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { getAllOperators, getOperatorList } from '@/lib/microcms';
+import { getAllOperators, getOperatorCountSafe } from '@/lib/microcms';
 import { isExcludedOperator } from '@/lib/operators-excluded';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -15,15 +15,10 @@ export const revalidate = 600;
 
 // 件数は totalCount 動的参照（title総仕上げ2026-07-15。+1req/600s・faq確立パターン #93）
 export async function generateMetadata(): Promise<Metadata> {
-  let n = 544;
-  try {
-    const r = await getOperatorList({ limit: 1, fields: 'id' });
-    if (r.totalCount > 0) n = r.totalCount;
-  } catch {
-    // 縮退時はフォールバック値
-  }
+  // Ck-1a ■2-6: 一覧と同じ数（除外を差し引いた数）。取れないときは件数を出さない（固定のフォールバック値は使わない）
+  const n = await getOperatorCountSafe();
   return {
-    title: `蓄電所事業者ナビ（全国${n}社）`,
+    title: n != null ? `蓄電所事業者ナビ（全国${n}社）` : '蓄電所事業者ナビ',
     description:
       // ⑥鮮度(2026-08-14): 「400社超」の焼き込みが実態544社と乖離していたため、数値を書かない表現に
       '系統用蓄電池(BESS)・低圧リソース事業に関わる主要事業者を 20カテゴリで網羅。電池メーカー / PCS / EPC / O&M / 開発事業者 / アグリゲーター / 送配電 / 電力会社 / 商社 / 金融 / 法務 等から検索・絞り込み可能。',

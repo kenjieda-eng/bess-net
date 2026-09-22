@@ -128,10 +128,20 @@ export const LCOS_DEFAULTS: Omit<LcosInput, 'capexJpyPerKwh'> = {
  *   ATB の CF（太陽光 26.3%・陸上風力 44.8%・洋上風力 45.3%・原子力 92.7%・地熱 90%・水力 33%）と食い違っていた。
  *   CF もカタログから出す。値を焼き込まない。
  */
+/**
+ * 簡易 LCOE 表に出さない電源（Ck-1a ■2-8・2026-09-22）。
+ * 本ツールの簡易 LCOE は燃料費を 0 として計算する（LCOE_DEFAULTS.fuelJpyPerKwh）。燃料を使う電源に当てはめると
+ * 実態より安い値が出るため、行ごと出さない。火力は NREL ATB に LCOE 系列が無く、もともと試算していない。
+ */
+export const LCOE_EXCLUDED_SOURCE_KEYS: ReadonlySet<string> = new Set(['nuclear']);
+/** 画面に出す理由（1 行・表の直下と計算ロジック欄で同じ文を使う） */
+export const LCOE_EXCLUDED_NOTE =
+  '火力・原子力は燃料費がかかる電源で、燃料費を 0 とする本ツールの簡易計算では実際より安い値になるため、表に載せていません。';
+
 /** LCOE 既定（編集可・概数） */
 export const LCOE_DEFAULTS = {
   omRate: 0.02,        // O&M 2%/年（概数）
-  fuelJpyPerKwh: 0,    // 燃料費（再エネ=0、原子力等は概数で別途）
+  fuelJpyPerKwh: 0,    // 燃料費（燃料を使う電源は LCOE_EXCLUDED_SOURCE_KEYS で表から外す）
   discountRate: 0.05,  // 割引率 5%
   lifeYears: 25,       // 設備寿命（概数）
 };

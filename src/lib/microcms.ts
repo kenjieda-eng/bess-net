@@ -8,7 +8,7 @@ import { EXCLUDED_OPERATOR_SLUGS, isHiddenOperator } from './operators-excluded'
 import { isExcludedNews } from './news-excluded';
 import { isExcludedEvent } from './events-excluded';
 import { isExcludedSubsidy } from '../data/subsidies-excluded';
-import { isHiddenLink } from './links-excluded';
+import { isHiddenLink, LINKS_EXCLUDED_SLUGS } from './links-excluded';
 import { isTopicExcludedNews } from './news-topic-gate';
 // Gr10(2026-08-11): 系統区分・設備区分が「都道府県」として入っている社があるため、
 // 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
@@ -870,18 +870,22 @@ export const getOperatorList = async (queries?: MicroCMSQueries) => {
 
 /**
  * 事業者総数の安全取得（総点検フォローアップA-1・2026-08-07）。
- * totalCount のみ参照（+1req・#93 の確立パターン）。429等の縮退時は fallback を返し 500 を出さない。
+ * totalCount のみ参照（+1req・#93 の確立パターン）。429等の縮退時は 500 を出さない。
  * 横断ページのリンク文言「（全国N社）」の固定値を撲滅し、増減に自動追従させる。
+ * ★Ck-1a ■2-6（2026-09-22）: 取れないときは null を返し、呼び出し側は**件数を出さない**。
+ *   以前は固定のフォールバック値（550／544）を返しており、取得に失敗した瞬間に実数と違う数字が出ていた。
+ *   /operators・/events・/faq の件数もこの関数に一本化した（#121: 同じ意味の値を二箇所で算出しない）。
  */
-export const getOperatorCountSafe = async (fallback = 550): Promise<number> => {
+export const getOperatorCountSafe = async (): Promise<number | null> => {
   try {
     const r = await getOperatorList({ limit: 1, fields: 'id' });
     // 2026-08-23: 抽出断片（301元・operators-excluded.ts）は一覧に出ないため件数からも差し引く。
+    // Ck-1a: 非表示の企業（HIDDEN_OPERATORS）も EXCLUDED_OPERATOR_SLUGS に含まれる。
     // 除外 slug は microCMS に実在する前提（middleware が 301 で吸収し DELETE はしない）。
     const n = r.totalCount - EXCLUDED_OPERATOR_SLUGS.size;
-    return n > 0 ? n : fallback;
+    return n > 0 ? n : null;
   } catch {
-    return fallback;
+    return null;
   }
 };
 
@@ -1373,6 +1377,21 @@ export const getLinkBySlug = async (slug: string): Promise<LinkSite | null> => {
       queries: { filters: `slug[equals]${slug}`, depth: 1, limit: 1 },
     });
     return data.contents[0] ?? null;
+  } catch {
+    return null;
+  }
+};
+
+/**
+ * /links の掲載件数（一覧と同じ数＝除外リストを差し引いた数）。totalCount のみ参照（+1req）。
+ * 取れないときは null を返し、呼び出し側は件数を出さない（Ck-1a ■2-11・焼き込み「210件」の撲滅）。
+ * 除外 slug は microCMS に実在する前提（非表示は DELETE しない方針）。
+ */
+export const getLinkCountSafe = async (): Promise<number | null> => {
+  try {
+    const r = await client.getList<LinkSiteLite>({ endpoint: 'links', queries: { limit: 1, fields: 'id' } });
+    const n = r.totalCount - LINKS_EXCLUDED_SLUGS.size;
+    return n > 0 ? n : null;
   } catch {
     return null;
   }

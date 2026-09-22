@@ -8,7 +8,8 @@
  * 計算モデル:
  *   - 年次キャッシュフロー = arbitrage + capacity_market + ancillary - opex
  *   - 初期投資 = capex × (1 - subsidy_rate/100)
- *   - degradation: 年 1% 容量低下 (20年で 80%)、arbitrage のみ影響
+ *   - degradation: 年 1% 容量低下（1 年目 100%・以後毎年 −1%・下限 70%。既定の耐用年数 15 年なら最終年 86%）、arbitrage のみ影響
+ *     （耐用年数の既定値は src/lib/storage-assumptions.ts の PROJECT_LIFETIME_YEARS）
  *   - IRR: Newton-Raphson 法 (NPV(r) = 0 を解く)
  *   - NPV: 標準 DCF
  *   - Payback: 累積CFが初期投資を超えるまでの年数 (線形補間)

@@ -149,7 +149,8 @@ export default async function LinkDetailPage({
     name: link.title,
     alternateName: link.siteNameEn,
     description: shortLead,
-    url: link.url,
+    // Ck-1a: 公式 URL を一次で同定できず空にしたエントリ（A11-2-07 occto-data 等）は url を出さない
+    ...(link.url ? { url: link.url } : {}),
     publisher: {
       '@type': 'Organization',
       name: siteConfig.organization.name,
@@ -188,17 +189,20 @@ export default async function LinkDetailPage({
             {accessType && <span className="link-access">{accessType}</span>}
           </div>
 
-          <div className="link-cta">
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-cta-btn"
-            >
-              公式サイトを開く →
-            </a>
-            <p className="link-url">{link.url}</p>
-          </div>
+          {/* Ck-1a: url が空（一次で同定できず空にした）なら CTA を出さない。href="" は自ページを新しいタブで開いてしまう */}
+          {link.url ? (
+            <div className="link-cta">
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-cta-btn"
+              >
+                公式サイトを開く →
+              </a>
+              <p className="link-url">{link.url}</p>
+            </div>
+          ) : null}
 
           {/* 拡充された詳細説明（段落分割表示）*/}
           <div className="link-description-detail">

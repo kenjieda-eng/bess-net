@@ -16,6 +16,7 @@ import { siteConfig } from '@/lib/site-config';
 // build 時 precompute 済カタログ（鉄則#2/#4）。Ck-1 A8/A9: 読み方を 1 箇所（nrel-atb-reference / fx-reference）に寄せた。
 // ★旧版はこのページで ATB の CAPEX・LCOE を読みつつ、CF だけ lcoe-lcos.ts の概数を使い、為替は代替値 158.34 を焼き込んでいた。
 import { ATB_SOURCE_NAME, BATTERY_CAPEX, POWER_SOURCE_REFS, atbYearsLabel } from '@/lib/nrel-atb-reference';
+import { LCOE_EXCLUDED_NOTE, LCOE_EXCLUDED_SOURCE_KEYS } from '@/lib/lcoe-lcos';
 import { FX_USDJPY, fxLabel } from '@/lib/fx-reference';
 
 export const revalidate = 86400;
@@ -52,7 +53,9 @@ export default function LcoeLcosPage() {
     : null;
 
   // ── 電源別（NREL ATB の CAPEX・CF・LCOE。いずれもカタログ）──
-  const sources: SourceProp[] = POWER_SOURCE_REFS.map((s) => ({
+  // Ck-1a ■2-8: 燃料費 0 の簡易計算に合わない電源（原子力）は表に出さない（LCOE_EXCLUDED_SOURCE_KEYS）
+  const tableRefs = POWER_SOURCE_REFS.filter((s) => !LCOE_EXCLUDED_SOURCE_KEYS.has(s.key));
+  const sources: SourceProp[] = tableRefs.map((s) => ({
     key: s.key,
     label: s.label,
     capexUsdPerKw: s.capexUsdPerKw ? Math.round(s.capexUsdPerKw.value) : null,
@@ -63,7 +66,7 @@ export default function LcoeLcosPage() {
     cfDefault: s.cf ? Math.round(s.cf.value * 1000) / 1000 : null,
     cfAtbYear: s.cf?.atbYear ?? null,
   }));
-  const atbYears = atbYearsLabel();
+  const atbYears = atbYearsLabel(tableRefs);
 
   const softwareJsonLd = {
     '@context': 'https://schema.org',
@@ -82,7 +85,7 @@ export default function LcoeLcosPage() {
     featureList: [
       'LCOS（均等化蓄電原価）試算（¥/kWh・¥/MWh・$/MWh）',
       'コスト内訳（CAPEX/充電費/O&M 寄与）',
-      '電源別 LCOE 比較（太陽光/風力/原子力/地熱/水力）',
+      '電源別 LCOE 比較（太陽光/風力/地熱/水力）',
       'NREL ATB 参考値の並列表示',
       '入力条件付き URL 共有',
     ],
@@ -110,7 +113,7 @@ export default function LcoeLcosPage() {
           <div className="section-label">NREL ATB 準拠 · 無料・登録不要</div>
           <h1 className="section-title">LCOE・LCOS計算機（均等化発電原価・均等化蓄電原価）</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
-            系統用蓄電池の <strong>LCOS（均等化蓄電原価）</strong> と、太陽光・風力・原子力等の
+            系統用蓄電池の <strong>LCOS（均等化蓄電原価）</strong> と、太陽光・風力・地熱・水力の
             <strong>電源別 LCOE（均等化発電原価）</strong> を前提条件から試算します。
             蓄電池CAPEX・電源別のCAPEX・設備利用率・LCOE参考値は <strong>NREL ATB（米国前提・{atbYears}）</strong> を基準に、
             効率・サイクル・割引率などを調整できます。ブラウザ完結・データ送信なし。
@@ -144,7 +147,7 @@ export default function LcoeLcosPage() {
               <li><strong>LCOS</strong> = ( CAPEX + Σ(O&M + 充電費)/(1+r)<sup>t</sup> ) / ( Σ 放電量/(1+r)<sup>t</sup> )。放電量=年サイクル×DoD、充電費=(放電量/RTE)×充電単価、N=min(事業年数, サイクル寿命/年サイクル)。</li>
               <li><strong>LCOE</strong> = ( CAPEX + Σ PV(O&M) + Σ PV(燃料) ) / Σ PV( CF×8760 )。電源別の CAPEX・CF の既定値は NREL ATB（CF は編集可）。</li>
               <li><strong>NREL ATB参考値</strong>は ATB が公表した LCOE（$/MWh）。CF は同じ ATB の値でも、割引率・寿命・O&amp;M などの前提が本ツールの簡易計算と異なるため値は一致しません（比較用）。</li>
-              <li><strong>火力</strong>は NREL ATB に LCOE 系列がなく、燃料費・CO2価格依存のため本ツールでは試算しません（概数 $40–80/MWh の定性注記のみ・捏造回避）。</li>
+              <li><strong>火力・原子力</strong>: {LCOE_EXCLUDED_NOTE}</li>
             </ul>
           </section>
 

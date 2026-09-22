@@ -274,7 +274,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         label: '需給調整市場参加検討',
         url: '/buyer/balancing-market',
         description:
-          '需給調整市場 (5 商品 × 10 エリア) への参加検討ガイド。容量市場との並行参加可能性も解説。',
+          '需給調整市場 (5 商品 × 9 エリア) への参加検討ガイド。容量市場との並行参加可能性も解説。',
       },
     ],
     insightSlugs: [
@@ -317,19 +317,19 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     type: 'buyer',
     title: '需給調整市場参加検討｜kWh+kW 価値で複合収益｜蓄電所ネット',
     description:
-      '需給調整市場 (5 商品 × 10 エリア) への参加を検討中の蓄電池事業者向け。一次・二次・三次調整力の最新動向、収益試算、参入条件を実データで解説。エネルギー情報センターが業界中立で支援。',
+      '需給調整市場 (5 商品 × 9 エリア) への参加を検討中の蓄電池事業者向け。一次・二次・三次調整力の最新動向、収益試算、参入条件を実データで解説。エネルギー情報センターが業界中立で支援。',
     ogImage: '/og/buyer-balancing-market.png',
     heroH1: '需給調整市場で kWh+kW 複合収益を最大化する',
     heroSubcopy:
-      '需給調整市場は一次・二次・三次調整力の 5 商品 × 10 エリア構成。蓄電池の応答速度・容量を最大活用、kWh と kW の複合収益で安定運用を実現。最新の入札動向と参入条件を解説します。',
+      '需給調整市場は一次・二次・三次調整力の 5 商品 × 9 エリア構成。蓄電池の応答速度・容量を最大活用、kWh と kW の複合収益で安定運用を実現。最新の入札動向と参入条件を解説します。',
     heroCtaLabel: '需給調整市場参入相談はこちら',
     heroCtaUrl: 'https://eic-jp.org/contact',
     painPoints: [
       {
         icon: '🔄',
-        title: '5 商品 × 10 エリアの選択が複雑',
+        title: '5 商品 × 9 エリアの選択が複雑',
         description:
-          '一次調整力 / 二次調整力①② / 三次調整力①② の特性比較、北海道〜九州の 10 エリア別需要・約定価格分析、複合的な最適化判断が必要。',
+          '一次調整力 / 二次調整力①② / 三次調整力①② の特性比較、北海道〜九州の 9 エリア別需要・約定価格分析、複合的な最適化判断が必要。',
       },
       {
         icon: '⚡',
@@ -341,7 +341,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '💹',
         title: '約定価格の変動把握',
         description:
-          '需給調整市場の約定価格は日々変動。5 商品 × 10 エリア = 50 系列のリアルタイム把握が業界事業者にとって負担。',
+          '需給調整市場の約定価格は日々変動。5 商品 × 9 エリア = 45 系列のリアルタイム把握が業界事業者にとって負担。',
       },
       {
         icon: '🎯',
@@ -372,7 +372,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         indicatorIds: ['fuel-lng-jp-cif'],
       },
     ],
-    dataSectionTitle: '需給調整市場 5 商品 × 10 エリアの最新動向',
+    dataSectionTitle: '需給調整市場 5 商品 × 9 エリアの最新動向',
     tools: [
       {
         label: 'IRR シミュレーター',
@@ -405,7 +405,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '一次調整力 (10 秒以内応答)、二次調整力① (5 分以内)、二次調整力② (5 分以内)、三次調整力① (15 分以内)、三次調整力② (45 分以内)。蓄電池は応答速度に優位性があり、特に一次・二次調整力で高収益化可能です。',
       },
       {
-        question: '10 エリア別の参加判断は?',
+        question: '9 エリア別の参加判断は?',
         answer:
           'エリア別に需要規模・約定価格・電源構成が異なります。北海道・東北は再エネ変動が大きく調整力需要高、九州は太陽光抑制対応で調整力需要急増。最新動向は当ページデータセクションで継続更新。',
       },

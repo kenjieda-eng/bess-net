@@ -247,7 +247,7 @@ export default async function IndustryTop50Page() {
             <strong>関連ページ</strong>
             <ul style={{ margin: '8px 0 0', paddingLeft: 20, lineHeight: 1.9 }}>
               <li>
-                <Link href="/operators">事業者データベース</Link>（{opCount}社の詳細情報）
+                <Link href="/operators">事業者データベース</Link>{opCount != null ? `（${opCount}社の詳細情報）` : ''}
               </li>
               <li>
                 <Link href="/projects">プロジェクトデータベース</Link>（{totalProjects}件のプロジェクト詳細）

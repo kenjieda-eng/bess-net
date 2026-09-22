@@ -8,7 +8,8 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import {
   getAllIndustryEvents,
-  getOperatorList,
+  getOperatorCountSafe,
+  getLinkCountSafe,
   getExplainerList,
   type IndustryEvent,
 } from '@/lib/microcms';
@@ -38,18 +39,20 @@ export default async function EventsCalendarPage() {
   } catch {
     // graceful fallback
   }
-  // P3: 関連コンテンツの件数を動的参照（トップページと同じ totalCount パターン・失敗時はフォールバック実数）
-  const safeCount = async (fn: () => Promise<{ totalCount: number }>, fallback: number) => {
+  // P3: 関連コンテンツの件数を動的参照（トップページと同じ totalCount パターン）。
+  // Ck-1a ■2-6: 取れないときは null を返して件数を出さない（固定のフォールバック値は実数と食い違うので使わない）。
+  const safeCount = async (fn: () => Promise<{ totalCount: number }>): Promise<number | null> => {
     try {
       const r = await fn();
-      return r.totalCount > 0 ? r.totalCount : fallback;
+      return r.totalCount > 0 ? r.totalCount : null;
     } catch {
-      return fallback;
+      return null;
     }
   };
-  const [operatorCount, explainerCount] = await Promise.all([
-    safeCount(() => getOperatorList({ limit: 1, fields: 'id' }), 544),
-    safeCount(() => getExplainerList({ limit: 1, fields: 'id' }), 174),
+  const [operatorCount, explainerCount, linkCount] = await Promise.all([
+    getOperatorCountSafe(), // 事業者は一覧と同じ数（除外を差し引く）
+    safeCount(() => getExplainerList({ limit: 1, fields: 'id' })),
+    getLinkCountSafe(), // /links は一覧と同じ数（除外を差し引く）。以前は「210件」の焼き込みだった
   ]);
 
   const jsonLd = {
@@ -194,7 +197,7 @@ export default async function EventsCalendarPage() {
             </p>
             <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               <li>
-                <Link href="/operators">事業者ナビ（EPC・O&M・PCS・電池メーカー等 {operatorCount}社）</Link>
+                <Link href="/operators">事業者ナビ（EPC・O&M・PCS・電池メーカー等{operatorCount != null ? ` ${operatorCount}社` : ''}）</Link>
               </li>
               <li>
                 <Link href="/projects">プロジェクトデータベース（国内蓄電所事例）</Link>
@@ -203,18 +206,13 @@ export default async function EventsCalendarPage() {
                 <Link href="/policy-calendar">政策・法制度カレンダー（パブコメ・重要会議）</Link>
               </li>
               <li>
-                <Link href="/explainer">解説記事（市場制度・参入手順 {explainerCount}本）</Link>
+                <Link href="/explainer">解説記事（市場制度・参入手順{explainerCount != null ? ` ${explainerCount}本` : ''}）</Link>
               </li>
               <li>
                 <Link href="/faq">業界用語よくある質問（FAQ）</Link>
               </li>
               <li>
-                <Link href="/links">お役立ちサイト（業界団体・公的機関 210件）</Link>
-              </li>
-              <li>
-                <Link href="/info/seminar-seetel-jc-star-2026-07-27">
-                  【7/27(月) 無料】台湾SEETEL × JC-STAR セミナー案内
-                </Link>
+                <Link href="/links">お役立ちサイト（業界団体・公的機関{linkCount != null ? ` ${linkCount}件` : ''}）</Link>
               </li>
             </ul>
           </section>
