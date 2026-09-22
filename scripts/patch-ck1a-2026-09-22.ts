@@ -17,7 +17,7 @@
  * ★冪等: 既に適用済み（set: 現在値＝to ／ replace・replaceAll: to があり from が無い、または挿入型で to がある）なら skip。
  * ★POST / PUT / DELETE なし。
  *
- * 実行: set -a && . ./.env.local && set +a && npx tsx scripts/patch-ck1a-2026-09-22.ts [--dry-run] [--only <id>] [--prefix <id-prefix>]
+ * 実行: set -a && . ./.env.local && set +a && npx tsx scripts/patch-ck1a-2026-09-22.ts [--dry-run] [--only <id>] [--prefix <id-prefix>] [--skip <id,id,...>]
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
@@ -30,6 +30,7 @@ const DRY = process.argv.includes('--dry-run');
 const arg = (name: string) => { const i = process.argv.indexOf(name); return i >= 0 ? process.argv[i + 1] : null; };
 const ONLY = arg('--only');
 const PREFIX = arg('--prefix');
+const SKIP = new Set((arg('--skip') ?? '').split(',').filter(Boolean));
 const PLAN = path.join(process.cwd(), 'scripts', 'ck1a-patch-plan-2026-09-22.json');
 const LOG = path.join(process.cwd(), 'scripts', `ck1a-patch-log-2026-09-22${PREFIX ? `-${PREFIX}` : ''}.json`);
 const SYS = new Set(['id', 'createdAt', 'updatedAt', 'publishedAt', 'revisedAt']);
@@ -65,13 +66,16 @@ async function getRec(e: string, slug: string): Promise<Rec | null> {
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const norm = (v: unknown) => JSON.stringify(v === undefined ? null : v);
 const count = (s: string, w: string) => (w ? s.split(w).length - 1 : 0);
-const RICH = new Set(['explainer.body', 'glossary.detail']);
+const RICH = new Set(['explainer.body', 'glossary.detail', 'news.body']);
+/** richEditor は保存時に ' → &apos; 等へ正規化する（#122）。照合前に引用符の実体参照だけ戻す。
+ *  &lt; &gt; &amp; は戻さない（本文に書かれた「<」等の文字を、送り返すときにタグへ化けさせないため） */
+const decode = (s: string) => s.replace(/&apos;|&#39;|&#x27;/g, "'").replace(/&quot;/g, '"');
 
 type LogRow = Op & { result: string; before?: string; after?: string; otherFieldChanges?: number; note?: string };
 
 async function main() {
   const plan = JSON.parse(fs.readFileSync(PLAN, 'utf8')) as { ops: Op[] };
-  const ops = plan.ops.filter((o) => (!ONLY || o.id === ONLY) && (!PREFIX || o.id.startsWith(PREFIX)));
+  const ops = plan.ops.filter((o) => (!ONLY || o.id === ONLY) && (!PREFIX || o.id.startsWith(PREFIX)) && !SKIP.has(o.id));
   console.log(`[Ck-1a PATCH] mode=${DRY ? 'DRY-RUN' : 'EXECUTE'} / ${ops.length} 件`);
   const log: LogRow[] = [];
   let ok = 0, skipped = 0, failed = 0;
@@ -82,7 +86,9 @@ async function main() {
     const raw = b[o.field];
     // select（配列）等の非文字列フィールドは JSON 文字列で比較し、送信は JSON.parse した値にする（例: status ["受付終了"]）
     const isJson = Array.isArray(raw) || (raw !== null && typeof raw === 'object');
-    const cur = isJson ? JSON.stringify(raw) : typeof raw === 'string' ? raw : raw === undefined || raw === null ? '' : String(raw);
+    const curRaw = isJson ? JSON.stringify(raw) : typeof raw === 'string' ? raw : raw === undefined || raw === null ? '' : String(raw);
+    // richEditor は正規化済みの本文を返すので、照合は実体参照を戻した素の文字列で行う（送信も素の文字列からの置換）
+    const cur = RICH.has(`${o.endpoint}.${o.field}`) ? decode(curRaw) : curRaw;
     if (isJson && o.op !== 'set') { console.log(`✗ ${tag}: 非文字列フィールドは set のみ`); failed++; log.push({ ...o, result: 'non-string-field' }); continue; }
     let next: string;
     if (o.op === 'set') {
@@ -103,7 +109,13 @@ async function main() {
     }
     console.log(`■ ${tag}\n    前: ${(o.op === 'set' ? cur : o.from).slice(0, 300)}\n    後: ${o.to.slice(0, 300)}\n    理由: ${o.why}`);
     if (DRY) { ok++; log.push({ ...o, result: 'dry-run', before: cur }); continue; }
-    await api('PATCH', `${ep(o.endpoint)}/${b.id}`, { [o.field]: isJson ? JSON.parse(next) : next });
+    try {
+      await api('PATCH', `${ep(o.endpoint)}/${b.id}`, { [o.field]: isJson ? JSON.parse(next) : next });
+    } catch (e) {
+      // 例: links.url は必須項目のため "" は HTTP 400（変更なし）。1 件の失敗で全体を止めず記録して続ける
+      console.log(`✗ ${tag}: PATCH 失敗（変更なし） ${String(e).slice(0, 200)}`); failed++;
+      log.push({ ...o, result: 'patch-error', before: cur, note: String(e).slice(0, 300) }); continue;
+    }
     await sleep(900);
     const a = await getRec(o.endpoint, o.slug);
     let other = 0;
@@ -112,15 +124,16 @@ async function main() {
       if (norm(a?.[k]) !== norm(b[k])) { other++; console.log(`    ✗ 対象外フィールドが変化: ${k}`); }
     }
     const avRaw = a?.[o.field];
-    const av = isJson ? JSON.stringify(avRaw ?? null) : typeof avRaw === 'string' ? avRaw : avRaw === undefined || avRaw === null ? '' : String(avRaw);
+    const avStr = isJson ? JSON.stringify(avRaw ?? null) : typeof avRaw === 'string' ? avRaw : avRaw === undefined || avRaw === null ? '' : String(avRaw);
     const rich = RICH.has(`${o.endpoint}.${o.field}`);
+    const av = rich ? decode(avStr) : avStr;
     let fieldOk: boolean;
     if (o.op === 'set' && !rich) fieldOk = av === next;
     else if (o.to === '') fieldOk = count(av, o.from) === 0 || (o.op === 'set' && av === '');
     else fieldOk = av.includes(o.to) && (o.to.includes(o.from) || count(av, o.from) === 0);
     console.log(`    #106: ${fieldOk && other === 0 ? `✓ 対象 ${o.field} 反映${rich ? '（richEditor: 素の文字列で判定）' : ''}・他フィールド変化 0` : '★NG'}`);
     if (fieldOk && other === 0) ok++; else failed++;
-    log.push({ ...o, result: fieldOk && other === 0 ? 'ok' : 'verify-ng', before: cur, after: av, otherFieldChanges: other });
+    log.push({ ...o, result: fieldOk && other === 0 ? 'ok' : 'verify-ng', before: cur, after: avStr, otherFieldChanges: other, ...(rich && avStr !== av ? { note: 'richEditor が実体参照に正規化（#122）。素の文字列で照合' } : {}) });
     await sleep(300);
   }
   if (!DRY) {

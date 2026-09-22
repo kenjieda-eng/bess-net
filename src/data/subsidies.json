@@ -21,8 +21,8 @@
     "is_rolling": false,
     "fiscalYear": "応札年度：2026年度",
     "sourceUrl": "https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/2026_boshuyoukou_long.html",
-    "updatedAt": "2026-09-08T00:47:32.576Z",
-    "scheme": "2026年度応札の長期脱炭素電源オークション。募集要綱を策定し容量確保契約約款を改定して2026年9月2日に公表（意見募集 7/21〜8/3 を経て）。スケジュール: 事業者情報登録 10/13〜16 → 電源等情報登録 10/19〜23（審査 10/26〜12/8）→ 期待容量登録 12/9〜15 → 応札受付 2027/1/19〜26 → 約定結果は応札終了から3か月後目途。制度詳細説明会 9/17（木）14:00（現地＋Web）。業務マニュアル（参加登録・応札・契約締結編）は 9/2〜9/15 意見募集中。前回（応札年度2025）は蓄電池応札125.1万kW・落札率46%（occto-ltdc-2025 参照）。",
+    "updatedAt": "2026-09-22T11:43:54.547Z",
+    "scheme": "応札年度2026年度の長期脱炭素電源オークション。募集要綱を策定し容量確保契約約款を改定して2026年9月2日に公表（意見募集 7/21〜8/3 を経て）。スケジュール: 事業者情報登録 10/13〜16 → 電源等情報登録 10/19〜23（審査 10/26〜12/8）→ 期待容量登録 12/9〜15 → 応札受付 2027/1/19〜26 → 約定結果は応札終了から3か月後目途。制度詳細説明会 9/17（木）14:00（現地＋Web）。業務マニュアル（参加登録・応札・契約締結編）は 9/2〜9/15 意見募集中。前回（応札年度2025年度）は蓄電池応札125.1万kW・落札率46%（occto-ltdc-2025 参照）。",
     "applicable_prefs": [
       "北海道",
       "青森",
@@ -692,8 +692,8 @@
     "is_rolling": false,
     "fiscalYear": "2026年度",
     "sourceUrl": "https://www.pref.shiga.lg.jp/cg00/3127.html",
-    "updatedAt": "2026-09-21T12:12:34.166Z",
-    "scheme": "蓄電池単体（発電設備と併設または既設発電設備に接続する場合に限る。） 【対象】中小企業者等であって滋賀県内に事業所等を有する事業者 等（県税に滞納がない事業者／省エネ診断を受けた事業者） 【要件】再エネ発電設備との併設が条件 【要注意】候補URL（pref.shiga.lg.jp/ippan/kankyoshizen/ondanka/343483.html）はHTTP 200で取得できたが、事業名・連絡先・リンクのみのスタブページで、対象者・蓄電池の対象可否・補助率・公募期間の記載は一切なし。同ページが案内する公式リンク2本で裏取りした：(a) 公益財団法人滋賀県産業支援プラザ https://www.shigaplaza.or.jp/news/hojokin-co2-20260422/ ＝ ステータス表示「受付中」、受付期間 2026年4月30日〜12月10日17:00必着、補助対象者「中小企業者等であって滋賀県内に事業所等を有する事業者 等」、対象設備の一例「●再エネ設備の導入：太陽光発電および蓄電池の設置 など」、様式に「交付申請（太陽光＋蓄電池版）」あり、申請状況 2026年8月3日現在 予算額63,000千円／交付決定額12,029千円（＝予算残あり）。(b) 県公式サイト「ゼロナビしが」 https://zeronavi.shiga.jp/company/subsidy/prefecture/1/ ＝ 対象設備に「太陽光発電設備:太陽光発電＋蓄電池、太陽光発電」および quote 欄の「蓄電池単体（発電設備と併設または既設発電設備に接続する場合に限る。）」を明記。よって蓄電池単体申請も可だが発電設備との併設または既設発電設備への接続が必須＝needsRenewableCombo=true。候補JSONの status「要確認」→実データで「公募中」に確定、rate「要CC確認」→上記のとおり確定。名称はプラザHPでは「令和8年度 省エネ・再エネ等設備導入加速化補助金」（「事業」なし）と表記ゆれあり、nameOfficialは候補URL（県ページ）記載を採用。省エネ診断の受診が申請要件（ファイナンスリース／オンサイトPPAを除く）。 【2026-08-08 一次照合・S3都道府県拡張】",
+    "updatedAt": "2026-09-22T11:42:33.737Z",
+    "scheme": "CO₂ネットゼロ社会づくりの推進、地域経済の活性化および災害時における代替エネルギーの確保等の防災対策を推進する観点から、中小企業者等の省エネ・再エネ等設備の導入に対する補助制度を実施しています。本事業は滋賀県の助成により公益財団法人滋賀県産業支援プラザが実施しています。対象設備（再生可能エネルギー等設備）：太陽光発電＋蓄電池、蓄電池単体（発電設備と併設または既設発電設備に接続する場合に限る。）",
     "applicable_prefs": [
       "滋賀"
     ],
@@ -702,8 +702,7 @@
       "industrial"
     ],
     "applicable_entities": [
-      "corporate",
-      "municipal"
+      "corporate"
     ],
     "kind": [
       "subsidy"
@@ -1639,7 +1638,9 @@
     "name": "政投銀（DBJ） 環境格付融資・グリーンファイナンス",
     "organization": "株式会社日本政策投資銀行（DBJ）",
     "category": [],
-    "status": [],
+    "status": [
+      "受付終了"
+    ],
     "subsidyRate_raw": "通常融資金利＋格付連動インセンティブ",
     "upperLimit_raw": "案件別",
     "targetEntity_raw": "蓄電所事業者・SPC・大型インフラ案件",
@@ -1648,7 +1649,7 @@
     "is_rolling": true,
     "fiscalYear": "通年",
     "sourceUrl": "https://www.dbj.jp/service/sustainability_rating/enviro/",
-    "updatedAt": "2026-09-21T12:12:28.240Z",
+    "updatedAt": "2026-09-22T11:42:35.697Z",
     "scheme": "政投銀の環境格付融資。蓄電所大型案件・PF組成の主要レンダー。",
     "applicable_prefs": [],
     "applicable_use_cases": [
@@ -1801,7 +1802,7 @@
     "is_rolling": false,
     "fiscalYear": "令和4〜7年度",
     "sourceUrl": "https://www.occto.or.jp/various/capacity-market/",
-    "updatedAt": "2026-05-03T23:44:49.433Z",
+    "updatedAt": "2026-09-22T11:43:58.454Z",
     "scheme": "OCCTO 長期脱炭素電源オークションの第1〜6回約定結果。蓄電池の20年契約モデルの確立。",
     "applicable_prefs": [
       "北海道",
@@ -2200,8 +2201,8 @@
     "deadline_raw": "予算到達まで",
     "is_rolling": false,
     "fiscalYear": "令和8年度（2026年度）",
-    "sourceUrl": "https://www.pref.aomori.lg.jp/soshiki/energy/",
-    "updatedAt": "2026-05-03T23:44:37.548Z",
+    "sourceUrl": "https://www.pref.aomori.lg.jp/soshiki/kankyo/energy/",
+    "updatedAt": "2026-09-22T11:48:36.409Z",
     "scheme": "青森県の風力併設蓄電池導入支援。風力大量連系・洋上風力大規模連系時代の系統安定化拠点。",
     "applicable_prefs": [
       "青森"
@@ -3225,8 +3226,8 @@
     "is_rolling": false,
     "fiscalYear": "応札年度：2024年度",
     "sourceUrl": "https://www.occto.or.jp/news/market-board_market_oshirase_2025_20250428_youryouyakujokekka_kouhyou.html",
-    "updatedAt": "2026-05-02T13:18:21.224Z",
-    "scheme": "2024年度応札の長期脱炭素電源オークション約定結果。蓄電池・揚水（3〜6時間）の上限75万kWに対し96.1万kWが約定。",
+    "updatedAt": "2026-09-22T11:44:02.432Z",
+    "scheme": "応札年度2024年度の長期脱炭素電源オークション約定結果。蓄電池・揚水（3〜6時間）の上限75万kWに対し96.1万kWが約定。",
     "applicable_prefs": [
       "北海道",
       "青森",
@@ -3305,8 +3306,8 @@
     "is_rolling": false,
     "fiscalYear": "応札年度：2025年度",
     "sourceUrl": "https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/2025_boshuyoukou_long.html",
-    "updatedAt": "2026-07-06T13:01:48.550Z",
-    "scheme": "2025年度応札の長期脱炭素電源オークション約定結果（2026年5月13日公表）。約定総容量729.9万kW（脱炭素電源426.1万kW＋LNG専焼火力303.8万kW、落札率67%）。蓄電池は応札125.1万kW・落札率46%。「リチウムイオン蓄電池・揚水（新設除く）」区分の約定は81.9万kW、「リチウムイオン以外の蓄電池・揚水（新設）・LDES」区分は88.6万kW。容量確保契約の結果公表は2026年8月頃予定。",
+    "updatedAt": "2026-09-22T11:44:06.289Z",
+    "scheme": "応札年度2025年度の長期脱炭素電源オークション約定結果（2026年5月13日公表）。約定総容量729.9万kW（脱炭素電源426.1万kW＋LNG専焼火力303.8万kW、落札率67%）。蓄電池は応札125.1万kW・落札率46%。「リチウムイオン蓄電池・揚水（新設除く）」区分の約定は81.9万kW、「リチウムイオン以外の蓄電池・揚水（新設）・LDES」区分は88.6万kW。容量確保契約の結果公表は2026年8月頃予定。",
     "applicable_prefs": [
       "北海道",
       "青森",

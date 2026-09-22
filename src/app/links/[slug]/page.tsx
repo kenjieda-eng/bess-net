@@ -149,7 +149,7 @@ export default async function LinkDetailPage({
     name: link.title,
     alternateName: link.siteNameEn,
     description: shortLead,
-    // Ck-1a: 公式 URL を一次で同定できず空にしたエントリ（A11-2-07 occto-data 等）は url を出さない
+    // Ck-1a: url が空のエントリは url を出さない（links.url は microCMS の必須項目で通常は空にならないが、念のため）
     ...(link.url ? { url: link.url } : {}),
     publisher: {
       '@type': 'Organization',
@@ -189,7 +189,7 @@ export default async function LinkDetailPage({
             {accessType && <span className="link-access">{accessType}</span>}
           </div>
 
-          {/* Ck-1a: url が空（一次で同定できず空にした）なら CTA を出さない。href="" は自ページを新しいタブで開いてしまう */}
+          {/* Ck-1a: url が空なら CTA を出さない（href="" は自ページを新しいタブで開いてしまう）。必須項目のため通常は起きない */}
           {link.url ? (
             <div className="link-cta">
               <a
