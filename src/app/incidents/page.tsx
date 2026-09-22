@@ -12,7 +12,8 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
-import { INCIDENTS, SEVERITY_LABELS, CAUSE_LABELS, REGION_LABELS } from '@/data/incidents';
+// Ck-1a ■1-5: hidden の事例を除いた VISIBLE_INCIDENTS だけを数える・並べる
+import { VISIBLE_INCIDENTS as INCIDENTS, SEVERITY_LABELS, CAUSE_LABELS, REGION_LABELS } from '@/data/incidents';
 
 export const revalidate = 86400;
 

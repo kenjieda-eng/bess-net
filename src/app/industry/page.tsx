@@ -16,6 +16,15 @@ import { PLAYERS } from '@/data/industry-map';
 // Lc-2 ■1: JEPX の出所表記（条文で出所明示が利用の条件）。文言とリンク先は eic-license.ts に一本化（#119）
 import { jepxNoticeLines, JEPX_TOP } from '@/lib/eic-license';
 import { getSubsidyList, getSubstationList, getOperatorList, getProjectList } from '@/lib/microcms';
+import { isExcludedSubsidy } from '@/data/subsidies-excluded';
+import { isExcludedOperator } from '@/lib/operators-excluded';
+
+// 「最新更新」ハイライトで拾わないレコード（補助金・事業者の除外リスト）
+function isHiddenRecord(axis: string, slug: string | undefined): boolean {
+  if (axis === '補助金') return isExcludedSubsidy(slug);
+  if (axis === '事業者') return isExcludedOperator(slug);
+  return false;
+}
 import operatorRanking from '@/data/operator-ranking.json';
 import jepxHokkaido from '@/data/eic/jepx-spot-hokkaido.json';
 import jepxTohoku from '@/data/eic/jepx-spot-tohoku.json';
@@ -94,8 +103,9 @@ export default async function IndustryHubPage() {
   const [latests, counts7d] = await Promise.all([
     Promise.all(axes.map((a) =>
       safeFetch(async () => {
-        const r = await a.fn({ limit: 1, orders: '-updatedAt', fields: 'name,updatedAt' } as any);
-        const it = (r as any).contents?.[0];
+        // Ck-1a ■1: 非表示（除外リスト）のレコードを「最新」に拾わないよう数件取って先頭の可視レコードを使う
+        const r = await a.fn({ limit: 5, orders: '-updatedAt', fields: 'name,slug,updatedAt' } as any);
+        const it = ((r as any).contents ?? []).find((c: { slug?: string }) => !isHiddenRecord(a.key, c.slug));
         return it ? { axis: a.key, href: a.href, name: it.name as string, updatedAt: it.updatedAt as string } : null;
       }, null)
     )),

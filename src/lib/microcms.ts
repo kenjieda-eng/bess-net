@@ -4,9 +4,11 @@
 import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
 import { MICROCMS_MAX_OFFSET, MICROCMS_PAGE_LIMIT } from './constants';
 import { GLOSSARY_301_SOURCE_SLUGS } from './glossary-301';
-import { EXCLUDED_OPERATOR_SLUGS } from './operators-excluded';
+import { EXCLUDED_OPERATOR_SLUGS, isHiddenOperator } from './operators-excluded';
 import { isExcludedNews } from './news-excluded';
 import { isExcludedEvent } from './events-excluded';
+import { isExcludedSubsidy } from '../data/subsidies-excluded';
+import { isHiddenLink } from './links-excluded';
 import { isTopicExcludedNews } from './news-topic-gate';
 // Gr10(2026-08-11): 系統区分・設備区分が「都道府県」として入っている社があるため、
 // 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
@@ -236,9 +238,13 @@ export const getAllSubsidies = async (): Promise<Subsidy[]> => {
     all.push(...data.contents);
     if (data.contents.length < limit) break;
   }
-  return all;
+  // Ck-1a ■1-1: 一次で実在を確認できない制度を外す（DELETE しない・src/data/subsidies-excluded.ts）。
+  //   precompute（subsidies.json）・sitemap・件数もこの関数を通るので同時に効く。
+  return all.filter((s) => !isExcludedSubsidy(s.slug));
 };
 export const getSubsidyBySlug = async (slug: string): Promise<Subsidy | null> => {
+  // Ck-1a ■1-1: 除外した制度は詳細も出さない（null → page 側 notFound()）
+  if (isExcludedSubsidy(slug)) return null;
   // rate limit(429) 等で throw→500 にしない。失敗時 null → page 側 notFound()（P0 監査）
   try {
     const data = await client.getList<Subsidy>({
@@ -261,7 +267,7 @@ export const getAllSubsidySlugs = async (): Promise<{ slug: string }[]> => {
     slugs.push(...data.contents.map((s) => ({ slug: s.slug })));
     if (data.contents.length < limit) break;
   }
-  return slugs;
+  return slugs.filter((s) => !isExcludedSubsidy(s.slug));
 };
 
 // ===== 政策・法制度カレンダー（policy-events、依頼AB） =====
@@ -891,12 +897,16 @@ export const getAllOperators = async (): Promise<Operator[]> => {
     all.push(...data.contents);
     if (data.contents.length < limit) break;
   }
-  return all;
+  // Ck-1a ■1-3: 一次で実在を確認できない企業を外す（DELETE しない・src/lib/operators-excluded.ts の HIDDEN_OPERATORS）。
+  //   301 元（抽出断片）は従来どおり各ページ側の isExcludedOperator で外す（ここでは外さない＝既存の集計を変えない）。
+  return all.filter((o) => !isHiddenOperator(o.slug));
 };
 
 export const getOperatorBySlug = async (
   slug: string
 ): Promise<Operator | null> => {
+  // Ck-1a ■1-3: 非表示の企業は詳細も出さない（null → page 側 notFound()）
+  if (isHiddenOperator(slug)) return null;
   // microCMS では PUT で content-id を指定したため id == slug
   // ただし安全のため filters でも検索可能にする
   try {
@@ -930,7 +940,7 @@ export const getAllOperatorSlugs = async (): Promise<{ slug: string }[]> => {
     slugs.push(...data.contents.map((o) => ({ slug: o.slug })));
     if (data.contents.length < limit) break;
   }
-  return slugs;
+  return slugs.filter((o) => !isHiddenOperator(o.slug));
 };
 
 // =================================================================
@@ -1091,7 +1101,7 @@ export const getOperatorsByTermName = async (
       endpoint: 'operators',
       queries: { filters, limit, orders: 'name' },
     });
-    return data.contents;
+    return data.contents.filter((o) => !isHiddenOperator(o.slug)); // Ck-1a ■1-3
   } catch {
     return [];
   }
@@ -1347,13 +1357,16 @@ export const getAllLinks = async (): Promise<LinkSiteLite[]> => {
       offset += MICROCMS_PAGE_LIMIT;
       if (offset >= MICROCMS_MAX_OFFSET) break;
     }
-    return all;
+    // Ck-1a: 宛先を一次で確認できないエントリを外す（DELETE しない・src/lib/links-excluded.ts の HIDDEN_LINKS）
+    return all.filter((l) => !isHiddenLink(l.slug));
   } catch {
     return [];
   }
 };
 
 export const getLinkBySlug = async (slug: string): Promise<LinkSite | null> => {
+  // Ck-1a: 非表示のエントリは詳細も出さない（null → page 側 notFound()）
+  if (isHiddenLink(slug)) return null;
   try {
     const data = await client.getList<LinkSite>({
       endpoint: 'links',
@@ -1599,7 +1612,7 @@ export const getRelatedOperatorsForSubstation = async (
         fields: 'id,slug,name,description,category,prefecture',
       },
     });
-    return data.contents;
+    return data.contents.filter((o) => !isHiddenOperator(o.slug)); // Ck-1a ■1-3
   } catch {
     return [];
   }
@@ -2057,6 +2070,8 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
       for (const o of data.contents) {
         const name = (o.name || '').trim();
         if (!o.slug || !name || name.length < 3) continue;
+        // Ck-1a ■1-3: 非表示の企業（詳細 404）へ本文から自動リンクしない
+        if (isHiddenOperator(o.slug)) continue;
         const url = `/operators/${o.slug}`;
 
         // (a) 主名 — isPrimary: true

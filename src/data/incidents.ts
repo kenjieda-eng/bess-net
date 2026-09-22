@@ -22,6 +22,12 @@ export interface Incident {
   summary: string; // 1-2 文
   lessons?: string; // 学びポイント (任意)
   sourceUrls: string[]; // 必須
+  /**
+   * true なら /incidents（一覧・件数・JSON-LD）に出さない（Ck-1a ■1-5・2026-09-22）。
+   * 一次で事実を確認できない事例を、データを消さずに外すためのフラグ（DELETE しない方針と同じ）。
+   * 表示側は必ず VISIBLE_INCIDENTS を使う（INCIDENTS を直接数えない）。
+   */
+  hidden?: boolean;
 }
 
 export const SEVERITY_LABELS: Record<IncidentSeverity, string> = {
@@ -70,6 +76,10 @@ export const INCIDENTS: Incident[] = [
   },
   {
     id: 'moss-landing-2024',
+    // Ck-1a ■1-5: 非表示（承認表 §0-4 src/data/incidents.ts:83 moss-landing-2024 行・同定できず）。
+    //   2024-09-26 の Moss Landing 火災は一次で確認できず、PG&E Elkhorn 火災（2022-09-20・Tesla Megapack）と
+    //   Vistra の火災（2025-01-16）を混同している。引用の EPA 資料も実在を確認できない。
+    hidden: true,
     date: '2024-09-26',
     location: '米国カリフォルニア州 Moss Landing',
     region: 'us',
@@ -201,3 +211,7 @@ export const INCIDENTS: Incident[] = [
     ],
   },
 ];
+
+/** 表示に使う事例（hidden を除く）。件数・一覧・JSON-LD はすべてこれを数える（#121: 同じ意味の値を二箇所で出さない） */
+export const VISIBLE_INCIDENTS: Incident[] = INCIDENTS.filter((i) => !i.hidden);
+

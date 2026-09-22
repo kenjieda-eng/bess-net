@@ -11,6 +11,9 @@
  *     実完全リストは /operators (544 社、microCMS) を参照。
  */
 
+import { isHiddenOperator } from '@/lib/operators-excluded';
+import { isExcludedSubsidy } from '@/data/subsidies-excluded';
+
 export type CategoryKey =
   | 'developer'        // BESS デベロッパー (事業主)
   | 'epc'              // EPC
@@ -94,7 +97,7 @@ export const CATEGORY_COLORS: Record<CategoryKey, string> = {
 // PLAYERS (50+ 代表的事業者)
 // ──────────────────────────────────────
 
-export const PLAYERS: Player[] = [
+const PLAYERS_RAW: Player[] = [
   // ── デベロッパー (国内) ──
   { id: 'jfe-engi', name: 'JFE エンジニアリング', category: 'developer', origin: 'JP', listed: true, activity: 5, operator_slug: 'jfe-engineering', note: '北海道大型 BESS 案件先行' },
   { id: 'osaka-gas', name: '大阪ガス', category: 'developer', origin: 'JP', listed: true, activity: 5, operator_slug: 'osaka-gas', note: 'マルチユース BESS 戦略' },
@@ -167,6 +170,17 @@ export const PLAYERS: Player[] = [
   { id: 'mhri', name: 'みずほリサーチ&テクノロジーズ', category: 'consulting', origin: 'JP', listed: false, activity: 3 },
   { id: 'eic', name: 'エネルギー情報センター', category: 'consulting', origin: 'JP', listed: false, activity: 4, note: '蓄電所ネット 運営、業界中立媒体' },
 ];
+
+/**
+ * 表示用の PLAYERS。非表示にした事業者・補助金（Ck-1a ■1・operators-excluded.ts／subsidies-excluded.ts）への
+ * リンクだけを外す（行そのものは残す＝「地方銀行グリーンローン」という業界の区分は実在する）。
+ * 外したリンク先は詳細が 404 になるため、ここで落とさないと壊れたリンクになる。
+ */
+export const PLAYERS: Player[] = PLAYERS_RAW.map((p) => ({
+  ...p,
+  operator_slug: p.operator_slug && !isHiddenOperator(p.operator_slug) ? p.operator_slug : undefined,
+  subsidy_slug: p.subsidy_slug && !isExcludedSubsidy(p.subsidy_slug) ? p.subsidy_slug : undefined,
+}));
 
 // ──────────────────────────────────────
 // RELATIONS (35 件、主要事業者間の関係)
