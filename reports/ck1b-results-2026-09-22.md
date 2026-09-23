@@ -329,6 +329,20 @@ $ curl -s https://bess-net.jp/tools/subsidy-match  → HTTP/1.1 200 OK | X-Verce
     「67 件の補助金」: DOM 1 件 / JSON-LD 0 件
 ```
 
+### 追加デプロイ後の再確認（8249a52・Vercel success 2026-09-23 10:10:55Z）
+
+上の (6) は commit ae5ae84 のデプロイ直後に取ったもので、`/faq` の「GS ユアサ等4社」が 1 件残っていた。
+これは §4 の 3 件とは別のレコード（`faq/faq-sonota-06`）に同じ誤りが波及していたためで、一次を取り直して是正し、
+本報告のコミット（8249a52）のビルドで反映された。素URL で再取得した結果:
+
+```
+$ curl -s https://bess-net.jp/faq  → HTTP/1.1 200 OK | X-Vercel-Cache: PRERENDER | Age: 0
+    「GS ユアサ等4社」: 0 件
+    「第1回認定（2024年9月）」: 0 件
+    「初回は令和5年4月28日の8件」: 1 件
+    「令和5年4月28日」: 2 件
+```
+
 ## (7) 触らなかったもの（Ck-2 送り）
 
 - **A11 の境界 3 件**（glossary の ffr・fast-frequency-response・adjustment-power-tender）… Ck-1a の反証で「取引規程に主題の語が 0 件」として保留したまま。
