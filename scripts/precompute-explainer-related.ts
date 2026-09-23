@@ -12,6 +12,7 @@
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { isExcludedExplainer } from '../src/lib/explainer-excluded';
 
 const SERVICE_DOMAIN = process.env.MICROCMS_SERVICE_DOMAIN;
 const API_KEY = process.env.MICROCMS_API_KEY;
@@ -37,7 +38,9 @@ async function main(): Promise<void> {
   }
 
   // 低圧投資（/lv/invest 専用）は対象外（src/lib/lv-invest.ts と同判定: category に 低圧投資）
-  const pool = all.filter((a) => !(a.category || []).includes('低圧投資'));
+  // Ck-1b ■6: 非表示の記事（src/lib/explainer-excluded.ts）も関連に出さない。
+  //   このスクリプトは microcms.ts を経由せず独自に fetch するため、ここでも同じ集合を使う（#119）。
+  const pool = all.filter((a) => !(a.category || []).includes('低圧投資') && !isExcludedExplainer(a.slug));
   const catOf = (a: Row) => (a.category && a.category[0]) || 'その他';
 
   const map: Record<string, { slug: string; title: string }[]> = {};

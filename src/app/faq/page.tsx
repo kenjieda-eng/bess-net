@@ -11,7 +11,7 @@ import {
   getAllFaq,
   getGlossaryLiteList,
   getGlossaryList,
-  getExplainerList,
+  getExplainerCountSafe,
   getOperatorCountSafe,
   type Faq,
 } from '@/lib/microcms';
@@ -108,7 +108,7 @@ export default async function FaqPage() {
   };
   const [glossaryCount, explainerCount, operatorCount] = await Promise.all([
     safeCount(() => getGlossaryList({ limit: 1, fields: 'id' })),
-    safeCount(() => getExplainerList({ limit: 1, fields: 'id' })),
+    getExplainerCountSafe(), // Ck-1b ■6: 解説記事も一覧と同じ数（非表示を差し引く）
     getOperatorCountSafe(), // 事業者は一覧と同じ数（除外を差し引く）
   ]);
 

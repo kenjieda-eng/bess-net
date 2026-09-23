@@ -18,6 +18,7 @@
  */
 
 import type { PrecomputedSubsidy } from '../../scripts/precompute-subsidies';
+import { deriveSubsidyStatus } from './subsidies-meta';
 
 export type UseCase = 'grid' | 'self_consumption' | 'industrial';
 export type EntityType = 'individual' | 'corporate' | 'municipal';
@@ -68,6 +69,19 @@ function isPrefMatch(input_pref: string, subsidy_prefs: string[]): boolean {
   return subsidy_prefs.some((sp) => normalizePref(sp) === np);
 }
 
+/**
+ * 受付を終えた制度は候補に出さない（Ck-1b ■3・2026-09-23）。
+ * 表示側と同じ導出関数（deriveSubsidyStatus・L-EIC-027）で判定する＝「同じ意味の値を二箇所で算出しない」（#121）。
+ * ★is_rolling（随時）のレコードは isDeadlineValid を必ず通るため、status を見ないと
+ *   受付を終えた商品（例: DBJ 環境格付融資）が Top10 に出続ける。
+ */
+function isClosedForApplication(s: PrecomputedSubsidy, target_iso: string): boolean {
+  return deriveSubsidyStatus(
+    { status: s.status ?? [], deadline_iso: s.deadline_iso, start_iso: s.start_iso, is_rolling: s.is_rolling },
+    target_iso,
+  ) === '受付終了';
+}
+
 function isDeadlineValid(s: PrecomputedSubsidy, target_iso: string): boolean {
   if (s.is_rolling) return true; // 随時
   if (!s.deadline_iso) return true; // 期限不明は除外しない (情報不足、減点扱い)
@@ -88,6 +102,8 @@ export function matchSubsidies(
   const results: MatchResult[] = [];
 
   for (const s of subsidies) {
+    // Ck-1b ■3: 受付終了は候補に出さない（申し込めない制度を勧めない）
+    if (isClosedForApplication(s, target)) continue;
     let score = 0;
     const reasons: string[] = [];
 

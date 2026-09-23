@@ -10,7 +10,7 @@ import {
   getAllIndustryEvents,
   getOperatorCountSafe,
   getLinkCountSafe,
-  getExplainerList,
+  getExplainerCountSafe,
   type IndustryEvent,
 } from '@/lib/microcms';
 import EventsCalendarClient from './EventsCalendarClient';
@@ -51,7 +51,7 @@ export default async function EventsCalendarPage() {
   };
   const [operatorCount, explainerCount, linkCount] = await Promise.all([
     getOperatorCountSafe(), // 事業者は一覧と同じ数（除外を差し引く）
-    safeCount(() => getExplainerList({ limit: 1, fields: 'id' })),
+    getExplainerCountSafe(), // Ck-1b ■6: 解説記事も一覧と同じ数（非表示を差し引く）
     getLinkCountSafe(), // /links は一覧と同じ数（除外を差し引く）。以前は「210件」の焼き込みだった
   ]);
 

@@ -3,7 +3,10 @@
  * scripts/test-eic-date.ts — src/lib/eic-date.ts の単体テスト（Ck-1a ■2-12）
  * 実行: npx tsx scripts/test-eic-date.ts
  */
-import { clampToRunDateJst, lastValidPointAsOf, pointsAsOf, todayJst } from '../src/lib/eic-date';
+import {
+  clampToRunDateJst, lastValidPointAsOf, pointsAsOf, todayJst,
+  daysSinceUpdatedAt, stalledNote, FEED_STALL_THRESHOLD_DAYS,
+} from '../src/lib/eic-date';
 export {};
 
 let pass = 0, fail = 0;
@@ -37,6 +40,14 @@ eq('lastValidPointAsOf: 翌日になれば明日だった点', lastValidPointAsO
 eq('lastValidPointAsOf: null を飛ばす', lastValidPointAsOf([{ date: '2026-09-21', value: 1 }, { date: '2026-09-22', value: null }], '2026-09-22'), { date: '2026-09-21', value: 1 });
 eq('lastValidPointAsOf: 全部未来 → null', lastValidPointAsOf([{ date: '2026-09-23', value: 1 }], '2026-09-22'), null);
 eq('pointsAsOf: スパークラインから明日の点を外す', pointsAsOf(pts, '2026-09-22').map((p) => p.date), ['2026-09-21', '2026-09-22']);
+
+// Ck-1b §7: 取得停止の注記（「確認済みの系列」AND「閾値」の AND 条件）
+eq('daysSinceUpdatedAt', daysSinceUpdatedAt('2026-09-05T09:50:19+09:00', '2026-09-23'), 18);
+eq('daysSinceUpdatedAt: 値なし', daysSinceUpdatedAt(null, '2026-09-23'), null);
+eq('stalled: fit-price は注記あり', stalledNote('fit-price-solar-business', '2026-09-05T09:50:19+09:00', '2026-09-23')?.note, '取得停止中（2026-09-05 時点）');
+eq('stalled: 同じだけ古くても未登録の系列は注記なし（正常に古い年次系列を巻き込まない）', stalledNote('edinet-revenue-total', '2026-05-21T00:00:00+09:00', '2026-09-23'), null);
+eq('stalled: 登録済みでも閾値未満なら注記なし（上流復旧で自動的に消える）', stalledNote('fit-price-solar-business', '2026-09-22T09:00:00+09:00', '2026-09-23'), null);
+eq('閾値', FEED_STALL_THRESHOLD_DAYS, 7);
 
 console.log(`\n${pass}/${pass + fail} PASS`);
 process.exit(fail ? 1 : 0);

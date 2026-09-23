@@ -9,6 +9,7 @@ import { isExcludedNews } from './news-excluded';
 import { isExcludedEvent } from './events-excluded';
 import { isExcludedSubsidy } from '../data/subsidies-excluded';
 import { isHiddenLink, LINKS_EXCLUDED_SLUGS } from './links-excluded';
+import { isExcludedExplainer, EXPLAINER_EXCLUDED_SLUGS } from './explainer-excluded';
 import { isTopicExcludedNews } from './news-topic-gate';
 // Gr10(2026-08-11): 系統区分・設備区分が「都道府県」として入っている社があるため、
 // 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
@@ -55,6 +56,8 @@ export const getExplainerList = async (queries?: MicroCMSQueries) => {
 export const getExplainerBySlug = async (
   slug: string
 ): Promise<Explainer | null> => {
+  // Ck-1b ■6: 非表示の記事は詳細も出さない（null → page 側 notFound()）
+  if (isExcludedExplainer(slug)) return null;
   // rate limit(429) 等で throw→500 にしない。失敗時 null → page 側 notFound()（落とし穴 #98 / P0 監査）
   try {
     const data = await client.getList<Explainer>({
@@ -130,7 +133,22 @@ export const getAllExplainer = async (): Promise<Explainer[]> => {
     all.push(...data.contents);
     if (data.contents.length < limit) break;
   }
-  return all;
+  // Ck-1b ■6: 全面改稿までの非表示（DELETE しない・src/lib/explainer-excluded.ts）
+  return all.filter((e) => !isExcludedExplainer(e.slug));
+};
+
+/**
+ * explainer の掲載本数（一覧と同じ数＝非表示を差し引いた数）。totalCount のみ参照（+1req）。
+ * 取れないときは null を返し、呼び出し側は件数を出さない（Ck-1a ■2-6 と同じ規則・#121）。
+ */
+export const getExplainerCountSafe = async (): Promise<number | null> => {
+  try {
+    const r = await getExplainerList({ limit: 1, fields: 'id' });
+    const n = r.totalCount - EXPLAINER_EXCLUDED_SLUGS.size;
+    return n > 0 ? n : null;
+  } catch {
+    return null;
+  }
 };
 
 /**
@@ -181,7 +199,7 @@ export const getAllExplainerSlugs = async (): Promise<{ slug: string }[]> => {
     slugs.push(...data.contents.map((e) => ({ slug: e.slug })));
     if (data.contents.length < limit) break;
   }
-  return slugs;
+  return slugs.filter((e) => !isExcludedExplainer(e.slug));
 };
 
 export const getGlossaryTermSlugMap = async (): Promise<Map<string, string>> => {
@@ -1039,7 +1057,7 @@ export const getExplainersByTermName = async (
         limit,
       },
     });
-    return data.contents;
+    return data.contents.filter((e) => !isExcludedExplainer(e.slug)); // Ck-1b ■6
   } catch {
     return [];
   }

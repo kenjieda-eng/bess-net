@@ -40,8 +40,13 @@ export const metadata: Metadata = {
 };
 
 export default async function JEPXHubPage() {
-  // EIC Data の JEPX 10 系列を build 時データから読込 (SSR 外部 fetch 0)
-  const indicators = await getIndicatorsByIdPrefix('jepx-');
+  // EIC Data の JEPX スポット 10 系列を build 時データから読込 (SSR 外部 fetch 0)
+  // ★Ck-1b ■1: 前方一致は 'jepx-spot-'。'jepx-' だと 2026-09-21 にカタログへ入った派生 30 系列
+  //   （jepx-spread-{top4,top8,range}-* ・aggregation: derived）も吸い込み、本文が「40 系列」・
+  //   HTML が 10.49MB になっていた（見出しは「10 系列」のまま）。派生系列はこのページには出さない。
+  //   ※「aggregation !== 'derived' で除く」案は不可: 同じ条件は meti-renewables-share（/dashboard/market で表示中）も
+  //     落としてしまう（derived は JEPX 派生 30 件のほかに 15 件あり、うち 1 件が表示系列）。
+  const indicators = await getIndicatorsByIdPrefix('jepx-spot-');
   const series = await getSeriesMany(indicators.map((ind) => ind.id));
   const runDate = todayJst();
   const latestUpdate = series[0]?.meta.updated_at?.slice(0, 10) ?? runDate;

@@ -6,6 +6,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig, LV_NAV_LAUNCH_DATE } from '@/lib/site-config';
 import { getExplainerList, getGlossaryList, getIndustryNews, getSubstationList, getAllPolicyEvents, type PolicyEvent } from '@/lib/microcms';
+import { EXPLAINER_EXCLUDED_SLUGS, isExcludedExplainer } from '@/lib/explainer-excluded';
 import {
   POLICY_DETAIL_SLUG_SET,
   EVENT_TYPE_COLORS,
@@ -78,7 +79,8 @@ export default async function Home() {
   };
 
   const [explainerData, glossaryNew, glossaryTotal, industryNewsAll, substationsCount, policyEventsAll] = await Promise.all([
-    getExplainerList({ limit: 6, orders: '-publishedAt' }),
+    // Ck-1b ■6: 非表示の記事（explainer-excluded）を新着 6 本に混ぜないよう 7 件取って除外後に 6 本へ
+    getExplainerList({ limit: 7, orders: '-publishedAt' }),
     getGlossaryList({ limit: 10, orders: '-publishedAt' }),
     getGlossaryList({ limit: 1, fields: 'id' }),
     safeFetch(() => getIndustryNews(), [] as any[]),
@@ -107,7 +109,11 @@ export default async function Home() {
     .sort((a: any, b: any) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, 3);
   const glossaryCount = glossaryTotal.totalCount;
-  const explainerCount = explainerData.totalCount;
+  // Ck-1b ■6: 一覧と同じ数（非表示を差し引く）。新着 6 本も非表示を除いてから切る
+  const explainerCount = explainerData.totalCount - EXPLAINER_EXCLUDED_SLUGS.size;
+  const explainerLatest = explainerData.contents
+    .filter((a) => !isExcludedExplainer(a.slug))
+    .slice(0, 6);
   const primaryCards = buildPrimaryCards(substationsCountStr, chubuCountStr);
 
   return (
@@ -347,11 +353,11 @@ export default async function Home() {
                 市場制度・参入手順・補助金など、実務担当者向けに体系解説。
                 <Link href="/explainer" style={{ fontWeight: 600, marginLeft: 6 }}>すべて見る →</Link>
               </p>
-              {explainerData.contents.length === 0 ? (
+              {explainerLatest.length === 0 ? (
                 <p>記事はまだありません。準備中です。</p>
               ) : (
                 <ul className="article-list">
-                  {explainerData.contents.map((article) => (
+                  {explainerLatest.map((article) => (
                     <li key={article.id} className="article-item">
                       <Link href={`/explainer/${article.slug}`} className="article-link">
                         <span className="article-category">{article.category}</span>

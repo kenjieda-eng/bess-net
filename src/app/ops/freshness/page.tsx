@@ -14,6 +14,8 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { SOP_ENTRIES, FREQ_LABEL, nextScheduledAt } from '@/lib/sop-schedule';
 import catalogData from '@/data/eic/catalog.json';
+// Ck-1b §7: 取得が止まった系列の注記（判定は src/lib/eic-date.ts の 1 箇所）
+import { stalledNote, todayJst, FEED_STALL_THRESHOLD_DAYS, STALLED_SERIES } from '@/lib/eic-date';
 
 export const revalidate = 3600; // 1 時間
 
@@ -47,6 +49,12 @@ function isOverdue(iso: string | null): boolean {
 export default function OpsFreshnessPage() {
   const now = new Date();
   const indicators = (catalogData as { indicators: CatalogIndicator[] }).indicators ?? [];
+
+  // Ck-1b §7: 取得停止中の系列（確認済み ID AND updated_at が閾値より古い）
+  const runDate = todayJst();
+  const stalled = indicators
+    .map((i) => ({ i, s: stalledNote(i.id, i.updated_at, runDate) }))
+    .filter((x): x is { i: CatalogIndicator; s: NonNullable<ReturnType<typeof stalledNote>> } => x.s !== null);
 
   // catalog SLA 違反集計
   const slaViolations = indicators.filter((i) => {
@@ -111,6 +119,44 @@ export default function OpsFreshnessPage() {
                 </tbody>
               </table>
             </div>
+          </section>
+
+          {/* ─── Ck-1b §7: 取得停止中の系列 ─── */}
+          <section style={{ marginBottom: 32 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--color-navy,#0F2D4F)', marginBottom: 12 }}>
+              取得停止中の系列（{stalled.length} / {indicators.length} 件）
+            </h2>
+            <p style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 0, marginBottom: 10 }}>
+              判定は「停止を確認した系列 ID（src/lib/eic-date.ts の STALLED_SERIES・現在 {STALLED_SERIES.length} 件）」
+              かつ「updated_at が {FEED_STALL_THRESHOLD_DAYS} 日以上前」。上流が復旧すれば updated_at が新しくなり自動で消えます。
+              値そのものは変えていません（年度で決まる値）。
+            </p>
+            {stalled.length === 0 ? (
+              <p style={{ color: '#15803d', fontSize: 15 }}>✅ 取得停止中の系列なし</p>
+            ) : (
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
+                  <thead style={{ background: '#b45309', color: '#fff' }}>
+                    <tr>
+                      <th style={{ padding: '8px 10px', textAlign: 'left' }}>系列 ID</th>
+                      <th style={{ padding: '8px 10px', textAlign: 'left' }}>注記</th>
+                      <th style={{ padding: '8px 10px', textAlign: 'left' }}>理由</th>
+                      <th style={{ padding: '8px 10px', textAlign: 'right' }}>経過(日)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {stalled.map(({ i, s }) => (
+                      <tr key={i.id} style={{ borderBottom: '1px solid var(--color-border,#e5e7eb)' }}>
+                        <td style={{ padding: '7px 10px', fontFamily: 'monospace', fontSize: 15 }}>{i.id}</td>
+                        <td style={{ padding: '7px 10px' }}>{s.note}</td>
+                        <td style={{ padding: '7px 10px' }}>{s.reason}</td>
+                        <td style={{ padding: '7px 10px', textAlign: 'right', fontWeight: 700 }}>{s.days}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </section>
 
           {/* ─── catalog SLA 違反 ─── */}

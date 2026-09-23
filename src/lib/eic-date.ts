@@ -46,3 +46,48 @@ export function lastValidPointAsOf<P extends { date: string; value: number | nul
 export function pointsAsOf<P extends { date: string }>(points: readonly P[], runDate: string = todayJst()): P[] {
   return points.filter((p) => p.date.slice(0, 10) <= runDate);
 }
+
+/**
+ * ─── 取得停止の注記（Ck-1b §7・2026-09-23） ─────────────────────────────────
+ * ★なぜ「updated_at が N 日以上前」だけで判定してはいけないか:
+ *   catalog には取得が止まったことを表すフィールドが無い（status は止まっても "active" のまま、
+ *   updated_at は「最後に成功した取得の時刻」）。年次・四半期の系列は古いのが正常で、
+ *   2026-09-23 実測では updated_at が 7 日以上前の系列が 116/688 件あり、うち 111 件
+ *   （balancing-price 46・edinet 45・capacity 20）は正常。閾値だけだとその 111 件にも
+ *   「取得停止中」と書くことになる（/tools/balancing-revenue・/tools/capacity-market-bid が表示中）。
+ * ★設計: 「停止を確認した系列 ID（前方一致）」AND「updated_at が閾値より古い」。
+ *   上流が復旧すれば updated_at が新しくなるので、下の表から消し忘れても注記は自動で消える。
+ * ★表示する値そのものは変えない（FIT 価格は年度で決まる値。5 系列中 4 件は FY2026 まで取得済み）。
+ * ★bot 判定（202・本文 0 バイト）は「ページが死んだ証拠」ではないので「終了」とは書かない。回避もしない。
+ */
+export const FEED_STALL_THRESHOLD_DAYS = 7;
+
+/** 取得が止まっていると確認済みの系列（前方一致）。理由と確認日を必ず添える */
+export const STALLED_SERIES: readonly { prefix: string; reason: string; confirmedOn: string }[] = [
+  // 2026-09-05 を最後に更新が止まっている。2026-09-23 に上流の取得元
+  // （www.enecho.meti.go.jp/category/saving_and_new/saiene/kaitori/ 配下）を確認したところ
+  // curl に 202・本文 0 バイト（AWS WAF の bot 判定）。回避はしない（R-17）。
+  { prefix: 'fit-price-', reason: '上流の取得元が bot 判定で取得停止（R-17）', confirmedOn: '2026-09-23' },
+];
+
+/** updated_at から実行日までの経過日数（JST 暦日ベース）。値が無ければ null */
+export function daysSinceUpdatedAt(updatedAt: string | null | undefined, runDate: string = todayJst()): number | null {
+  if (!updatedAt) return null;
+  const d = Date.parse(`${updatedAt.slice(0, 10)}T00:00:00+09:00`);
+  const r = Date.parse(`${runDate}T00:00:00+09:00`);
+  if (Number.isNaN(d) || Number.isNaN(r)) return null;
+  return Math.floor((r - d) / 86_400_000);
+}
+
+/** 取得停止中か（確認済みの系列 AND 閾値超え）。該当すれば注記文、そうでなければ null */
+export function stalledNote(
+  id: string,
+  updatedAt: string | null | undefined,
+  runDate: string = todayJst(),
+): { note: string; reason: string; days: number } | null {
+  const hit = STALLED_SERIES.find((s) => id.startsWith(s.prefix));
+  if (!hit) return null;
+  const days = daysSinceUpdatedAt(updatedAt, runDate);
+  if (days === null || days < FEED_STALL_THRESHOLD_DAYS) return null;
+  return { note: `取得停止中（${(updatedAt ?? '').slice(0, 10)} 時点）`, reason: hit.reason, days };
+}
