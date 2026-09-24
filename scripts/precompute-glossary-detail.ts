@@ -26,6 +26,8 @@ import {
 } from '../src/lib/microcms';
 import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
 import { GLOSSARY_301_SOURCE_SLUGS, GLOSSARY_DISPLAY_EXCLUDED_SLUGS } from '../src/lib/glossary-301';
+import { isExcludedNews } from '../src/lib/news-excluded';
+import { isTopicExcludedNews } from '../src/lib/news-topic-gate';
 
 // ── 出力型（ページが必要とする最小フィールドのみ）──────────────────
 type TermLite = { term: string; slug: string };
@@ -122,9 +124,16 @@ function normalizeGridCta(text: string | undefined, replacers: Array<[string, st
 
 // ── news を relatedTerms（glossary 関連）込みで取得 ─────────────────
 // getAllNews は NEWS_LIST_FIELDS で relatedTerms を含まないため独自取得。
+// Pj2-H-0 ■4(a): /news 一覧・詳細と同じ除外（isExcludedNews / isTopicExcludedNews）をここでも掛ける。
+// 掛けないと「登場するニュース」が詳細 404 のページへリンクする（主題ゲート ffde8f3 以降の壊れリンク）。
+// precompute-operators-detail.ts:241 と同じ条件＝表示系のズレ禁止（#118/#119）。
 type NewsWithRel = NewsRef & { relatedTermIds: string[] };
+export function isVisibleNewsSlug(slug: string): boolean {
+  return !isExcludedNews(slug) && !isTopicExcludedNews(slug);
+}
 async function fetchAllNewsWithRel(): Promise<NewsWithRel[]> {
   const all: NewsWithRel[] = [];
+  let dropped = 0;
   const limit = MICROCMS_PAGE_LIMIT;
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<any>({
@@ -132,6 +141,7 @@ async function fetchAllNewsWithRel(): Promise<NewsWithRel[]> {
       queries: { limit, offset, fields: 'id,title,slug,category,publishedAt,relatedTerms', depth: 0, orders: '-publishedAt' },
     });
     for (const n of data.contents) {
+      if (!isVisibleNewsSlug(n.slug)) { dropped++; continue; }
       const rel = Array.isArray(n.relatedTerms) ? n.relatedTerms : [];
       const ids = rel.map((r: any) => (typeof r === 'string' ? r : r?.id)).filter(Boolean);
       all.push({
@@ -142,6 +152,7 @@ async function fetchAllNewsWithRel(): Promise<NewsWithRel[]> {
     }
     if (data.contents.length < limit) break;
   }
+  console.log(`  [news] 表示対象 ${all.length} 件（除外 ${dropped} 件: news-excluded / 主題ゲート）`);
   return all;
 }
 

@@ -1,0 +1,57 @@
+{
+  "note": "Pj2-H-0 構造便（2026-09-24）の microCMS PATCH 計画。差分限定・件別。POST/PUT/DELETE なし。値（outputMw/capacityMwh/cod）は本便では触らない。",
+  "ops": [
+    {
+      "id": "pj2h0-1a-operator-mitsuuroko-tahara",
+      "endpoint": "projects",
+      "slug": "mitsuuroko-tahara",
+      "field": "operator",
+      "op": "set",
+      "from": "ミツウロコ",
+      "to": "ミツウロコグリーンエネルギー株式会社",
+      "why": "■1(a) の第2段（301 前に canonical へ非重複情報を移植）。canonical の現 operator「ミツウロコ」は operators マスタのどのレコードとも完全一致せず、事業者ページへ紐付いていない（構造化欄はマスタ完全一致＝落とし穴 operators-matching）。★依頼書は 301 元 pr-co70816-bess-3 の operator「株式会社ミツウロコグループホールディングス」の移植を想定しているが、一次（canonical 自身の sourceUrl＝日経BP）は運用主体を連結子会社「ミツウロコグリーンエネルギー」と明記しており、ホールディングス名は PR TIMES のアカウント名（親会社）である。マスタには両社とも実在する（mitsuuroko-gr-hd / agg-01067848）ため、一次の逐語が支える側＝ミツウロコグリーンエネルギー株式会社を入れる。",
+      "evidence": "URL: https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/03667/?ST=msb（HTTP 200・2026-09-24 取得）／<title> 逐語:「ミツウロコ、田原市に6MWhの系統用蓄電池を設置 - ニュース - メガソーラービジネス plus : 日経BP」／本文逐語:「ミツウロコグループホールディングスの連結子会社であるミツウロコグリーンエネルギー（東京都中央区）は、愛知県田原市に系統用蓄電池を設置し、9月20日から「ミツウロコ愛知県田原蓄電所」として運用を開始した。」「蓄電池は米テスラ製を採用し、出力は1.5MW、容量は6MWh。」／operators マスタ GET: {\"slug\":\"agg-01067848\",\"name\":\"ミツウロコグリーンエネルギー株式会社\"}・{\"slug\":\"mitsuuroko-gr-hd\",\"name\":\"株式会社ミツウロコグループホールディングス\"}",
+      "count": 1,
+      "source": "■1(a)"
+    },
+    {
+      "id": "pj2h0-4d-minamiawaji-tail",
+      "endpoint": "projects",
+      "slug": "minamiawaji-megapower",
+      "field": "body",
+      "op": "replace",
+      "from": "</p><p></p>",
+      "to": "</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "why": "■4(d) POST の後始末。出典の無い一文（朝来・丹波の諸元）を投入前に落とした際、その段落の開始タグ <p> が残り、microCMS の richEditor が空段落 <p></p> として保存した（#122 の正規化）。他 2 件と同じ末尾注記に置き換える。本文の意味は変えない。",
+      "evidence": "POST 直後の GET 照合で「タグを除いた素の本文は一致・保存側のみ末尾に <p></p>」を確認（送信 1,737字／保存 1,741字・差分 index 1737）。arida-yuasa-megapower / kitagifu-megapower は同じ末尾注記を持つ。",
+      "count": 1,
+      "source": "■4(d)"
+    },
+    {
+      "id": "pj2h0-1b-status-nc-sendai-kamiayashi",
+      "endpoint": "projects",
+      "slug": "nc-sendai-kamiayashi",
+      "field": "status",
+      "op": "set",
+      "from": "[]",
+      "to": "[\"稼働中\"]",
+      "why": "■1(b) の第2段（301 前に canonical へ非重複情報を移植）。canonical `nc-sendai-kamiayashi` は status が空で、稼働中の情報は 301 元 `pr-co33609-miyagi-2mw`（status 稼働中）だけが持っている。301 で 301 元を一覧から外すと、この情報がサイトから消える。一次（日本蓄電池 2026-06-23 リリース）が同一施設の需給調整市場運用開始を明記しているため、canonical に移植する。★値（outputMw/capacityMwh/cod）は本便では触らない。",
+      "evidence": "URL: https://prtimes.jp/main/html/rd/p/000000079.000161802.html（HTTP 200・2026-09-24 取得）／<title> 逐語:「【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市青葉区上愛子蓄電所」需給調整市場への運用開始 | 日本蓄電池株式会社のプレスリリース」／本文逐語:「2026年6月23日より需給調整市場向けの運用を開始」。受電は 2026-04-01（PR TIMES 000000199.000033609 逐語「2026年4月1日に受電を開始」・HTTP 200 で確認）。status の選択肢「稼働中」は live で使用中（#106 の drop なし）。",
+      "count": 1,
+      "source": "■1(b)"
+    },
+    {
+      "id": "pj2h0-4b-shizuoka-410-unlink",
+      "endpoint": "subsidies",
+      "slug": "shizuoka-bess-2026",
+      "field": "body",
+      "op": "replace",
+      "from": "<a href=\"https://bess-net.jp/news/news-2026-201-kepco-orix-kinokawa-startup\">紀の川蓄電所</a>",
+      "to": "紀の川蓄電所",
+      "why": "■4(b)。リンク先 /news/news-2026-201-kepco-orix-kinokawa-startup は middleware が 410 Gone を返す旧 news slug（legacy-news-allowlist に不在）。本文からリンクだけ外し、文字列「紀の川蓄電所」は残す（意味を変えない）。同型 grep は microCMS 10 endpoint・12,928 レコード全走査で本件 1 件のみ。",
+      "evidence": "curl -s -o /dev/null -w '%{http_code}' https://bess-net.jp/news/news-2026-201-kepco-orix-kinokawa-startup → 410（2026-09-24 取得）／allowlist（src/data/legacy-news-allowlist.json・28 件）に当該 slug なし／全 endpoint 走査結果 scratchpad/pj2h/scan_410.json（ヒット 1 件）",
+      "count": 1,
+      "source": "■4(b)"
+    }
+  ]
+}

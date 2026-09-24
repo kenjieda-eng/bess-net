@@ -1,0 +1,34 @@
+[
+ {
+  "endpoint": "policy-events",
+  "slug": "occto-ltdc2026-shousai-setsumeikai-2026-09",
+  "result": "mismatch",
+  "id": "3kx2nam-q9o",
+  "diffs": [
+   "eventDate: 送信=\"2026-09-17\" 保存=\"2026-09-17T00:00:00.000Z\""
+  ]
+ },
+ {
+  "endpoint": "projects",
+  "slug": "minamiawaji-megapower",
+  "result": "mismatch",
+  "id": "o_wm0oo4-1",
+  "diffs": [
+   "body: 送信=\"<p><strong>兵庫南あわじメガパワー蓄電所</strong>は、エネルギーパワー株式会社（TOKYO PRO Market・コード番号144A）が兵庫 保存=\"<p><strong>兵庫南あわじメガパワー蓄電所</strong>は、エネルギーパワー株式会社（TOKYO PRO Market・コード番号144A）が兵庫"
+  ]
+ },
+ {
+  "endpoint": "projects",
+  "slug": "arida-yuasa-megapower",
+  "result": "ok",
+  "id": "1vk6sckv3vd8",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "kitagifu-megapower",
+  "result": "ok",
+  "id": "jernjilw-0",
+  "diffs": []
+ }
+]
