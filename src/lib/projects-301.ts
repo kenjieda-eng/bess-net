@@ -33,8 +33,13 @@ export const PROJECTS_301: Record<string, string> = {
   '/projects/pr-co85927-bess':         '/projects/jfe-takeo',
   // 7 ポート群馬太田蓄電所（2026-06-30 stage9・需給調整参入PR183/計画中 ⇔ 稼働中2MW/8MWh canonical pr-co16325-gunma）
   '/projects/pr-co16325-bess':         '/projects/pr-co16325-gunma',
-  // 8 オリンピア太田・伊勢崎蓄電所（2026-07-01・PowerX PR/14.8MWh ⇔ operator=オリンピア正・slug綺麗 canonical olympia-ota-isesaki）
-  '/projects/pr-co109041-gunma-148mwh': '/projects/olympia-ota-isesaki',
+  // 8 （削除・2026-09-25 Pj2-H 実行便 A-2）オリンピア太田・伊勢崎蓄電所
+  //    旧: '/projects/pr-co109041-gunma-148mwh' → '/projects/olympia-ota-isesaki'
+  //    301 先だった olympia-ota-isesaki 自身が「2 施設の混載エントリ」として EXCLUDED になったため、
+  //    301 を残すと「301 先が noindex の混載ページ」になる。301 を消すと projects-excluded.ts の
+  //    自動 union（PROJECTS_301_SOURCE_SLUGS）から外れるので、pr-co109041-gunma-148mwh は
+  //    EXCLUDED_PROJECT_SLUGS へ明示追加した（同ファイル参照）。
+  //    構成 2 施設は既存: pr-co109041-gunma（三室町・1.998MW/7.404MWh）／oly-powerstorage-midorimachi（緑町）。
   // 9-10 日本蓄電池 PR-import 重複（2026-07-02・容量補完①）: raw「日本蓄電池 [県][市]」0/0 stub ⇔ curated NC{市}{地区}蓄電所 8.146MWh
   '/projects/pr-co161802-fukushima-2': '/projects/nc-shirakawa-omotegou', // 福島県白河市
   '/projects/pr-co161802-yamaguchi-2': '/projects/nc-shunan-yuno',        // 山口県周南市
@@ -50,7 +55,9 @@ export const PROJECTS_301: Record<string, string> = {
   '/projects/pr-co2296-bess':                      '/projects/daiwa-kurate', // 大和ハウス鞍手1.9MW/9.8MWh 同一案件
   '/projects/pr-co113700-bess-5':                  '/projects/kirishima-bess', // 霧島1.99MW/8.128MWh 同一案件（3重登載）
   '/projects/pr-co113700-bess':                    '/projects/kirishima-bess', // 霧島1.99MW/8.128MWh 同一案件（3重登載）
-  '/projects/pr-co109041-bess-3':                  '/projects/pr-co86244-bess-7', // JMES3地点（津・東浦・牧之原）同一取引
+  // ★2026-09-25 Pj2-H 実行便: 宛先を張り替え。pr-co86244-bess-7 自身が 301 元になった（下の 18 番）ため、
+  //   このままだと 301 → 301 の 2 ホップになる（middleware.ts は単発ルックアップで連鎖を畳まない）。
+  '/projects/pr-co109041-bess-3':                  '/projects/pr-co86244-mie-tsu', // JMES3地点の束ね2件目・代表は津（芸濃町萩野蓄電所）
   '/projects/pr-co161802-saga':                    '/projects/pr-co161802-saga-2', // NC唐津市相知町 同一案件
   '/projects/pr-co161802-gifu-2':                  '/projects/pr-co161802-gifu', // NC岐阜市太郎丸 同一案件
   '/projects/pr-co161802-gifu-4':                  '/projects/pr-co161802-gifu-3', // NC羽島足近町 同一案件
@@ -133,6 +140,14 @@ export const PROJECTS_301: Record<string, string> = {
   //    同一施設の日本蓄電池側 stub pr-co161802-miyagi-2 は既に nc-sendai-kamiayashi へ 301 済（前例 9-10 と同型）。
   //    301 前に canonical へ status「稼働中」を移植済（根拠: 000000079「2026年6月23日より需給調整市場向けの運用を開始」）。
   '/projects/pr-co33609-miyagi-2mw':               '/projects/nc-sendai-kamiayashi',
+  // 18 JMES BESS ONE 3施設の束ね（2026-09-25 Pj2-H 実行便 A-2・裁定書 §2(D) の分割承認）
+  //    pr-co86244-bess-7 は津・知多・牧之原の 3 施設を 1 レコードにした束ね。3 施設は本便で
+  //    pr-co86244-mie-tsu / -aichi-chita / -shizuoka-makinohara として個別起票した。
+  //    ★他の束ね 5 件が EXCLUDED なのに本件だけ 301 なのは、代表施設が一次で一意に決まるため:
+  //      PR TIMES 000000035.000086244 逐語「最初の案件は2025年3月運転開始を目指しています」＋
+  //      3 施設表で 2025年3月 は三重県津市のみ。束ねが持つ 1.99MW/7.403MWh も津市の値と一致するので
+  //      301 後も値の意味が変わらない（配列の先頭を代表にする #121 型の恣意ではない）。
+  '/projects/pr-co86244-bess-7':                   '/projects/pr-co86244-mie-tsu',
 };
 
 /** 301元の bare slug（一覧除外・noindex 判定の補助。完全一致） */

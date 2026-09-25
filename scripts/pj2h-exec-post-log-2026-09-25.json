@@ -1,0 +1,121 @@
+[
+ {
+  "endpoint": "projects",
+  "slug": "pr-co86244-mie-tsu",
+  "result": "ok",
+  "id": "d752psjsy37j",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "pr-co86244-aichi-chita",
+  "result": "ok",
+  "id": "1fypeoc3qot",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "pr-co86244-shizuoka-makinohara",
+  "result": "ok",
+  "id": "7el9oa4sp",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "pr-co55631-gunma-kameoka",
+  "result": "mismatch",
+  "id": "l7wtt8zmyz",
+  "diffs": [
+   "body: 送信=\"<p><strong>太田市亀岡町蓄電システム（上州太田蓄電所合同会社）</strong>は、群馬県太田市亀岡町に立地する系統用蓄電所。出力 2MW、蓄電池シ 保存=\"<p><strong>太田市亀岡町蓄電システム（上州太田蓄電所合同会社）</strong>は、群馬県太田市亀岡町に立地する系統用蓄電所。出力 2MW、蓄電池シ"
+  ]
+ },
+ {
+  "endpoint": "projects",
+  "slug": "pr-co55631-gunma-nitta-akabori",
+  "result": "mismatch",
+  "id": "k6r3q_gxu1n",
+  "diffs": [
+   "body: 送信=\"<p><strong>太田市新田赤堀町蓄電システム（上州太田蓄電所合同会社）</strong>は、群馬県太田市新田赤堀町に立地する系統用蓄電所。出力 2MW、 保存=\"<p><strong>太田市新田赤堀町蓄電システム（上州太田蓄電所合同会社）</strong>は、群馬県太田市新田赤堀町に立地する系統用蓄電所。出力 2MW、"
+  ]
+ },
+ {
+  "endpoint": "projects",
+  "slug": "pr-co55631-tochigi-horigome",
+  "result": "mismatch",
+  "id": "fdfovhbne7p",
+  "diffs": [
+   "body: 送信=\"<p><strong>足利市堀込町字中島蓄電システム（上州太田蓄電所合同会社）</strong>は、栃木県足利市堀込町字中島に立地する系統用蓄電所。出力 2M 保存=\"<p><strong>足利市堀込町字中島蓄電システム（上州太田蓄電所合同会社）</strong>は、栃木県足利市堀込町字中島に立地する系統用蓄電所。出力 2M"
+  ]
+ },
+ {
+  "endpoint": "projects",
+  "slug": "tc-tokushima",
+  "result": "ok",
+  "id": "zg2aawwj6",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "tc-itano",
+  "result": "ok",
+  "id": "11zaeqbue",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "banpu-fukushima-bess",
+  "result": "ok",
+  "id": "sl9lnsskyf4h",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "banpu-miyazaki-bess",
+  "result": "ok",
+  "id": "gicm480b-pp",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "tc-nasushiobara",
+  "result": "mismatch",
+  "id": "2a9towo98",
+  "diffs": [
+   "body: 送信=\"<h2>プロジェクト概要</h2><p><strong>栃木県那須塩原市蓄電所</strong>は、東京センチュリー株式会社が自社単独で出資・開発する特別高圧 保存=\"<h2 id=\\\"h3af4d147a9\\\">プロジェクト概要</h2><p><strong>栃木県那須塩原市蓄電所</strong>は、東京センチュリー株式"
+  ]
+ },
+ {
+  "endpoint": "projects",
+  "slug": "tc-isahaya",
+  "result": "mismatch",
+  "id": "123l0dw_cl",
+  "diffs": [
+   "body: 送信=\"<h2>プロジェクト概要</h2><p><strong>長崎県諫早市蓄電所</strong>は、東京センチュリー株式会社が自社単独で出資・開発する特別高圧系統 保存=\"<h2 id=\\\"h3af4d147a9\\\">プロジェクト概要</h2><p><strong>長崎県諫早市蓄電所</strong>は、東京センチュリー株式会社"
+  ]
+ },
+ {
+  "endpoint": "projects",
+  "slug": "tc-shimabara",
+  "result": "mismatch",
+  "id": "ijs856z2l6",
+  "diffs": [
+   "body: 送信=\"<h2>プロジェクト概要</h2><p><strong>長崎県島原市蓄電所</strong>は、東京センチュリー株式会社が自社単独で出資・開発する特別高圧系統 保存=\"<h2 id=\\\"h3af4d147a9\\\">プロジェクト概要</h2><p><strong>長崎県島原市蓄電所</strong>は、東京センチュリー株式会社"
+  ]
+ },
+ {
+  "endpoint": "projects",
+  "slug": "tc-taku",
+  "result": "mismatch",
+  "id": "dmq4pv8s_4",
+  "diffs": [
+   "body: 送信=\"<h2>プロジェクト概要</h2><p><strong>佐賀県多久市蓄電所</strong>は、東京センチュリー株式会社が自社単独で出資・開発する特別高圧系統 保存=\"<h2 id=\\\"h3af4d147a9\\\">プロジェクト概要</h2><p><strong>佐賀県多久市蓄電所</strong>は、東京センチュリー株式会社"
+  ]
+ },
+ {
+  "endpoint": "projects",
+  "slug": "nc-makurazaki-sakurayamahigashi",
+  "result": "ok",
+  "id": "yf1gsgtfp",
+  "diffs": []
+ }
+]

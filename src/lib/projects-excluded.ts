@@ -82,6 +82,28 @@ export const EXCLUDED_PROJECT_SLUGS: ReadonlySet<string> = new Set<string>([
   //   単一の canonical へ寄せられない＝301（同一案件宣言）は成立しないため、案件性なしとして除外する。
   //   前例: 'gifu-imari-bess'（岐阜太郎丸＋伊万里の混載）。
   'jpn-gifu-sendai',
+  // ───────────────────────────────────────────────────────────────────────
+  // 2026-09-25 Pj2-H 実行便 A-2／A-3（裁定書 §2(D)・構造便 reports/pj2h0-structure-2026-09-24.md）
+  //
+  // (A-2) 分割済みの束ねレコード 6 件。構成施設は本便で個別起票済み。
+  //   ★代表施設が一次から一意に決まらないため 301 ではなく除外（前例 'jpn-gifu-sendai'・'gifu-imari-bess'）。
+  //   唯一 pr-co86244-bess-7 だけは代表が一次で一意（「最初の案件は2025年3月」＝津市）なので 301（projects-301.ts 18）。
+  'pr-219mwh-bess',            // バンプージャパン 219MWh 受注（福島26MW・宮崎26MW が同諸元＝代表なし）→ banpu-fukushima-bess / banpu-miyazaki-bess
+  'pr-co143072-bess-2',        // テス×東京センチュリー 2施設（徳島市9月・板野町10月・諸元同一）→ tc-tokushima / tc-itano
+  'pr-co55631-gunma',          // しろくま電力 3施設（出力・運開日とも同一で代表なし）→ pr-co55631-gunma-kameoka / -nitta-akabori / -tochigi-horigome
+  'pr-co76147-bess-2',         // 東京センチュリー 4拠点・3県に分散（合計容量386,280kWhは一次に無い加算値）→ tc-nasushiobara / tc-isahaya / tc-shimabara / tc-taku
+  'pr-co21766-bess',           // 東京ガス「最適運用サービス提供開始」＝需給運用の受託発表。対象2施設は renova-mori-mutsumi2 / renova-tomakomai に既存（165MW の二重計上も解消）
+  'olympia-ota-isesaki',       // 「太田・伊勢崎蓄電所」は一次に無い合成名の混載。緑町・三室町は 2,468kWh×3＝7,404kWh／PCS1,998kW が完全同一で代表を選べない。構成は pr-co109041-gunma / oly-powerstorage-midorimachi
+  'pr-co109041-gunma-148mwh',  // 同じ 2 施設の第二の束ね（14.8MWh＝2拠点合計・cod 2023-08-08＝配信日）。projects-301.ts 8 番の 301 を削除したので自動 union から外れる＝ここに明示
+  //
+  // (A-3) 告知レコード 5 件（特定施設を指さない）。裁定: 案A＝EXCLUDED
+  //   「業界動向」枠は src に存在せず、news へ流すと publishedAt 順の新着が壊れる（#108）。
+  //   値の PATCH はしない（除外で集計に入らないため）。構成施設は個別レコードで可視。
+  'pr-co109041-bess',          // パワーエックス×ヘキサ 業務提携（「26年3月までに10か所以上」・0MW/0MWh・cod=配信日）
+  'pr-co12501-bess',           // パワーエックス×エコスタイル 業務提携（「全国各地に開発」・180MWh は目標値）
+  'pr-co161802-bess',          // 日本蓄電池 7拠点プログラム告知（0MW/0MWh・cod=配信日）
+  'pr-co33609-bess',           // 同一事象のリミックスポイント側リリース
+  'pr-co89612-bess-2',         // マーチャントバンカーズ 200MW/800MWh＝複数サイトの総容量
 ]);
 
 // 一覧（/projects）除外 = 非プロジェクト8 ∪ 301元6（重複統合・2026-06-28）。
