@@ -129,6 +129,14 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'sustainable-hd-bess-pivot-2026-09': '開発計画',                                // サステナブルHD 系統用蓄電池事業へ主軸移行
   'sustainable-hd-raptor-safety-design-2026-09': '技術',                          // Raptor 安全設計・基本保証期間
   'green-chord-lv-bess-package-2026-09': '技術',                                  // GREEN CHORD 低圧パッケージ提供開始
+  // 金曜ワンセット#7（2026-09-25・対象 9/11〜9/24 の 2 週分）— 全 category は microCMS 実在値のみ
+  'aoki-asunaro-ishikari-bess-cod-2026-09': '連系',                              // 北海道石狩市蓄電所 完成・商業運転開始（運転開始 8/1）
+  'nozomi-energy-usuki-196mwh-financial-close-2026-09': '投資',                  // 臼杵 50MW/196MWh ファイナンシャル・クローズ
+  'hirasol-izumizaki-negaposi-3800kw-2026-09': '連系',                           // 泉崎村 ネガポジ運用 事前審査合格
+  'daihen-ems-orders-2026-09': '技術',                                           // ダイヘン EMS 受注高 450億円見通し
+  'clover-saga-1988kw-groundbreaking-2026-09': '技術',                           // 佐賀市 EPC受注・着工（テス小諸EPC受注と同型）
+  'buddynet-izumo-2mw-8mwh-completion-2026-09': '連系',                          // 出雲市古志町 完工・引き渡し
+  'news-weekly-2026-09-w4': '市場統計',                                          // 週次まとめ（9/11〜9/24 の2週分合算）
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {

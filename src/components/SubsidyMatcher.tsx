@@ -23,6 +23,8 @@ import subsidiesJson from '@/data/subsidies.json';
 import type { PrecomputedSubsidy } from '../../scripts/precompute-subsidies';
 import {
   matchSubsidies,
+  countOpenForApplication,
+  matchTargetDate,
   USE_CASE_LABELS,
   ENTITY_LABELS,
   type MatchInput,
@@ -163,6 +165,13 @@ export default function SubsidyMatcher() {
   // マッチング結果 (memoized)
   const results = useMemo(
     () => matchSubsidies(input, ALL_SUBSIDIES, 10),
+    [input]
+  );
+
+  // 金曜#7 ⑦(b): 「全 N 件中」は登録件数で、申し込める件数ではなかった。
+  // 候補から外す条件（受付終了・採択結果公表）と同じ関数で数え、同じ基準日を使う（#121）。
+  const openCount = useMemo(
+    () => countOpenForApplication(ALL_SUBSIDIES, matchTargetDate(input)),
     [input]
   );
 
@@ -502,7 +511,7 @@ export default function SubsidyMatcher() {
           マッチング結果
         </h2>
         <span style={{ fontSize: 15, color: 'var(--color-muted)' }} aria-live="polite">
-          Top {results.length} 件 / 全 {ALL_SUBSIDIES.length} 件中
+          Top {results.length} 件 / 申込可 {openCount} 件（登録 {ALL_SUBSIDIES.length} 件のうち）
         </span>
       </div>
 

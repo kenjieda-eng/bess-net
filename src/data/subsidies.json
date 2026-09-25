@@ -1842,14 +1842,14 @@
       "採択結果公表"
     ],
     "subsidyRate_raw": "事業により異なる",
-    "upperLimit_raw": "数百億円規模",
+    "upperLimit_raw": "案件ごとに異なる（最大助成額 約2億円〜約1,587億円）",
     "targetEntity_raw": "蓄電池メーカー・関連事業者",
     "applicationStart": "随時",
     "deadline_raw": "事業別",
     "is_rolling": false,
     "fiscalYear": "令和4〜8年度",
     "sourceUrl": "https://www.meti.go.jp/policy/economy/economic_security/battery/",
-    "updatedAt": "2026-05-03T23:44:48.678Z",
+    "updatedAt": "2026-09-25T01:57:16.980Z",
     "scheme": "経済安全保障推進法に基づく蓄電池供給確保計画の認定結果ライブラリ。GSユアサ等の主要案件認定。",
     "applicable_prefs": [
       "北海道",
@@ -2009,8 +2009,8 @@
     "is_rolling": false,
     "fiscalYear": "令和3〜8年度（複数年度）",
     "sourceUrl": "https://green-innovation.nedo.go.jp/",
-    "updatedAt": "2026-05-03T23:44:47.034Z",
-    "scheme": "NEDO グリーンイノベーション基金の蓄電池関連事業の採択結果ライブラリ。GSユアサ・パナソニック・東芝等の主要案件採択。",
+    "updatedAt": "2026-09-25T01:57:20.814Z",
+    "scheme": "NEDO グリーンイノベーション基金の蓄電池関連事業の採択結果ライブラリ。",
     "applicable_prefs": [
       "北海道",
       "青森",
@@ -2063,7 +2063,7 @@
     "applicable_use_cases": [],
     "applicable_entities": [],
     "kind": [
-      "subsidy"
+      "other"
     ]
   },
   {

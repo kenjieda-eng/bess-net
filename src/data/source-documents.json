@@ -1,603 +1,612 @@
 {
- "_comment": "資料名の台帳（Ck-1 A6・2026-09-21）。name はサイトに書いている資料名、title_verbatim は確認時の一次の <title>／PDF 表題の逐語。書く前に一次を実機で取り、確認日つきで登録する。検査: npm run verify:source-names",
- "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md）",
- "documents": [
-  {
-   "name": "需給調整市場のΔkW上限価格について",
-   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
-   "url": "https://www.eprx.or.jp/information/post.php",
-   "title_verbatim": "上限価格 | 取引情報 | 一般社団法人 電力需給調整力取引所",
-   "checked_on": "2026-09-20",
-   "used_in": "explainer/balancing-price-cap-10yen-explainer.sources / explainer/balancing-price-cap-10yen-explainer.body"
-  },
-  {
-   "name": "系統用蓄電池事業への参入企業は4分類",
-   "publisher": "日経エネルギーNext",
-   "url": "https://project.nikkeibp.co.jp/energy/atcl/19/feature/00029/081300002/",
-   "title_verbatim": "系統用蓄電池事業への参入企業は4分類、電気事業ノウハウのない企業も｜日経エネルギーNext",
-   "checked_on": "2026-09-20",
-   "used_in": "explainer/bess-business-decision-tree.sources"
-  },
-  {
-   "name": "再エネ導入の鍵、系統用蓄電池事業に国内初の融資",
-   "publisher": "三井住友フィナンシャルグループ",
-   "url": "https://www.smfg.co.jp/sustainability/social_value/interview/0021.html",
-   "title_verbatim": "インタビュー： 三井住友フィナンシャルグループ",
-   "checked_on": "2026-09-20",
-   "note": "サイトの出典欄の発行元表記「三井住友銀行」は誤り（一次は三井住友フィナンシャルグループのインタビュー）。本文の「eRex 2MW/8MWh案件」は一次に無い（■B1）／要確認（needs_check）",
-   "used_in": "explainer/bess-pf-merchant-vs-multiuse.sources"
-  },
-  {
-   "name": "蓄電池産業戦略",
-   "publisher": "経済産業省",
-   "url": "https://www.meti.go.jp/policy/economy/economic_security/battery/",
-   "title_verbatim": "蓄電池 （METI/経済産業省）",
-   "checked_on": "2026-09-20",
-   "note": "要確認（needs_check）",
-   "used_in": "explainer/bess-supply-chain-responsibility.sources, glossary/v2x.detail"
-  },
-  {
-   "name": "容量市場 業務マニュアル",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/files/250130_jikkouseitest_jitsujukyu2027.pdf",
-   "title_verbatim": "容量市場／業務マニュアル／実効性テスト 編／（対象実需給年度：2027 年度）／2025 年 1 月 30 日 第 1 版 発行／電力広域的運営推進機関",
-   "checked_on": "2026-09-20",
-   "note": "要確認（needs_check）",
-   "used_in": "explainer/capacity-market-advanced.sources"
-  },
-  {
-   "name": "メインオークション約定結果",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/news/010680.html",
-   "title_verbatim": "容量市場メインオークション約定結果（対象実需給年度：2029年度）の公表について｜電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "used_in": "explainer/capacity-market.sources"
-  },
-  {
-   "name": "容量市場 業務マニュアル",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/files/230119_jikkouseitest_jitsujukyu2025.pdf",
-   "title_verbatim": "容量市場／業務マニュアル／実効性テスト 編／（対象実需給年度：2025 年度）／2023 年 1 月 19 日 第 1 版 発行／電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "note": "要確認（needs_check）",
-   "used_in": "explainer/capacity-market.sources"
-  },
-  {
-   "name": "容量市場の概要",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/assets/market-board/market/files/youryou_gaiyousetumei.pdf",
-   "title_verbatim": "説明会資料／容量市場の概要について／2019年10月／電力広域的運営推進機関",
-   "checked_on": "2026-09-20",
-   "used_in": "explainer/capacity-market.sources",
-   "aliases": [
-    "容量市場の概要について"
-   ]
-  },
-  {
-   "name": "脱炭素先行地域",
-   "publisher": "環境省",
-   "url": "https://policies.env.go.jp/policy/roadmap/preceding-region/",
-   "title_verbatim": "脱炭素先行地域 - 脱炭素地域づくり支援サイト｜環境省",
-   "checked_on": "2026-09-21",
-   "used_in": "explainer/decarbonization-leading-regions-detail.sources"
-  },
-  {
-   "name": "系統情報サービス",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/institution/keitoujouhou/index.html",
-   "title_verbatim": "系統情報サービス等｜電力広域的運営推進機関",
-   "checked_on": "2026-09-20",
-   "used_in": "explainer/grid-connection-process.body"
-  },
-  {
-   "name": "電力ネットワークの次世代化",
-   "publisher": "資源エネルギー庁",
-   "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/039.html",
-   "title_verbatim": "要ブラウザ",
-   "checked_on": "2026-09-20",
-   "note": "要確認（needs_check）",
-   "used_in": "explainer/grid-connection-process.sources"
-  },
-  {
-   "name": "需給調整市場の概要",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/assets/iken/2018/files/sankou_jukyuchouseishijo.pdf",
-   "title_verbatim": "（参考資料）／需給調整市場の概要／２０１８年４月２７日／電力広域的運営推進機関",
-   "checked_on": "2026-09-20",
-   "note": "同名の委員会資料版（第3回需給調整市場検討小委員会 資料5-2-2・jukyu_shijo_03_05_02_02.pdf）もある。こちらは意見募集の完成版（43頁）／要確認（needs_check）",
-   "used_in": "explainer/grid-scale-bess.sources"
-  },
-  {
-   "name": "LCOE×電源構成",
-   "publisher": "一般社団法人エネルギー情報センター（EIC Data）",
-   "url": "https://data.eic-jp.org/insight/lcoe-vs-power-mix",
-   "title_verbatim": "LCOE × 電源構成：安い電源ほど日本では少ない | EIC Data",
-   "checked_on": "2026-09-21",
-   "note": "要確認（needs_check）",
-   "used_in": "explainer/lcoe-and-power-mix.sources"
-  },
-  {
-   "name": "2026年、日本の電力需要家に訪れる3つの大変革",
-   "publisher": "SOLAR JOURNAL",
-   "url": "https://solarjournal.jp/policy/61672/",
-   "title_verbatim": "2026年、日本の電力需要家に訪れる3つの大変革。需給調整市場を低圧リソースに開放｜SOLAR JOURNAL",
-   "checked_on": "2026-09-21",
-   "used_in": "explainer/low-voltage-balancing-market-launch.sources"
-  },
-  {
-   "name": "容量市場 長期脱炭素電源オークション約定結果",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/news/market-board_market_oshirase_2025_20250428_youryouyakujokekka_kouhyou.html",
-   "title_verbatim": "容量市場　長期脱炭素電源オークション約定結果（応札年度：2024年度）の公表について｜電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "used_in": "explainer/ltdc-3rd-auction-ccs-ldes.sources"
-  },
-  {
-   "name": "需給調整市場とは",
-   "publisher": "株式会社ユーラスエナジーホールディングス",
-   "url": "https://www.eurus-energy.com/mirumiruwakaru/20260130-2618.html",
-   "title_verbatim": "需給調整市場とは？蓄電池ビジネスに欠かせない仕組みをわかりやすく解説 | 株式会社ユーラスエナジーホールディングス",
-   "checked_on": "2026-09-21",
-   "used_in": "explainer/multi-use-operation-strategy.sources"
-  },
-  {
-   "name": "次世代全固体蓄電池材料の評価・基盤技術開発",
-   "publisher": "NEDO",
-   "url": "https://www.nedo.go.jp/activities/ZZJP_100257.html",
-   "title_verbatim": "次世代全固体蓄電池材料の評価・基盤技術開発 | 事業 | NEDO",
-   "checked_on": "2026-09-20",
-   "used_in": "explainer/solid-state-battery-grid-deployment.sources"
-  },
-  {
-   "name": "再エネ併設蓄電池 制御支援サービス",
-   "publisher": "株式会社エナリス",
-   "url": "https://www.eneres.co.jp/news/20260107.html",
-   "title_verbatim": "「再エネ併設蓄電池 制御支援サービス」を2026年4月より提供開始に～再生可能エネルギーの有効活用と発電事業者の収益向上を目指し～ | 株式会社エナリス │ ENERES",
-   "checked_on": "2026-09-21",
-   "used_in": "explainer/storage-parity-aggregation.sources"
-  },
-  {
-   "name": "公募情報",
-   "publisher": "NEDO",
-   "url": "https://www.nedo.go.jp/koubo/index.html",
-   "title_verbatim": "公募 | NEDO",
-   "checked_on": "2026-09-20",
-   "used_in": "explainer/subsidies-guide.sources"
-  },
-  {
-   "name": "ゼロエミッション東京戦略",
-   "publisher": "東京都環境局",
-   "url": "https://www.kankyo.metro.tokyo.lg.jp/policy_others/zeroemission_tokyo/strategy/",
-   "title_verbatim": "ゼロエミッション東京戦略|ゼロエミッション東京|東京都環境局",
-   "checked_on": "2026-09-20",
-   "used_in": "explainer/tokyo-solar-mandate-2025.sources"
-  },
-  {
-   "name": "定置用蓄電システムの現状と課題",
-   "publisher": "経済産業省",
-   "url": "https://www.meti.go.jp/policy/mono_info_service/joho/conference/battery_strategy2/shiryo06.pdf",
-   "title_verbatim": "資料6 定置用蓄電システムの現状と課題 2025年3月12日 経済産業省",
-   "checked_on": "2026-09-20",
-   "used_in": "glossary/battery-storage-site.detail"
-  },
-  {
-   "name": "容量拠出金を知ろう！",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/capacity-market/kyoshutsukin_know/",
-   "title_verbatim": "容量拠出金を知ろう！｜かいせつ容量市場スペシャルサイト｜電力広域的運営推進機関",
-   "checked_on": "2026-09-20",
-   "used_in": "glossary/capacity-contribution.detail"
-  },
-  {
-   "name": "グリーンローンガイドライン",
-   "publisher": "環境省",
-   "url": "https://greenfinanceportal.env.go.jp/loan/guideline/guideline.html",
-   "title_verbatim": "グリーンローンガイドライン | グリーンローンガイドライン | ローン | グリーンファイナンスポータル",
-   "checked_on": "2026-09-20",
-   "used_in": "glossary/green-loan.detail"
-  },
-  {
-   "name": "グリーンローン原則（GLP）",
-   "publisher": "ローン・マーケット・アソシエーション（LMA）、アジア太平洋ローン・マーケット・アソシエーション（APLMA）、ローン・シンジケーション＆トレーディング・アソシエーション（LSTA）",
-   "url": "https://www.lsta.org/content/green-loan-principles/",
-   "title_verbatim": "Green Loan Principles - LSTA",
-   "checked_on": "2026-09-21",
-   "used_in": "glossary/green-loan.detail"
-  },
-  {
-   "name": "電源接続案件募集プロセス",
-   "publisher": "電力広域的運営推進機関",
-   "url": "https://www.occto.or.jp/institution/access/process/index.html",
-   "title_verbatim": "電源接続案件募集プロセス｜電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "used_in": "glossary/interconnection-cost-burden.detail"
-  },
-  {
-   "name": "発電等設備の設置に伴う電力系統の増強及び事業者の費用負担等の在り方に関する指針",
-   "publisher": "資源エネルギー庁 電力・ガス事業部",
-   "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/hiyoufutangl_20240515.pdf",
-   "title_verbatim": "発電等設備の設置に伴う電力系統の増強及び事業者の費用負担等の在り方に関する指針",
-   "checked_on": "2026-09-21",
-   "used_in": "glossary/interconnection-cost-burden.detail"
-  },
-  {
-   "name": "なるほど！グリッド 出力制御について",
-   "publisher": "資源エネルギー庁",
-   "url": "https://www.enecho.meti.go.jp/category/saving_and_new/saiene/grid/08_syuturyokuseigyo.html",
-   "title_verbatim": "出力制御について|なるほど！グリッド｜資源エネルギー庁",
-   "checked_on": "2026-09-20",
-   "used_in": "glossary/n-1-densei.detail"
-  },
-  {
-   "name": "N-1電制の基本的な考え方について",
-   "publisher": "電力広域的運営推進機関",
-   "url": "https://www.occto.or.jp/news/access_oshirase_2018_181001_n-1densei_shiryou.html",
-   "title_verbatim": "N-1電制の基本的な考え方について｜電力広域的運営推進機関",
-   "checked_on": "2026-09-20",
-   "used_in": "glossary/n-1-densei.detail"
-  },
-  {
-   "name": "容量市場 メインオークション約定結果",
-   "publisher": "電力広域的運営推進機関",
-   "url": "https://www.occto.or.jp/capacity-market/yoryoshijyo/main/data/",
-   "title_verbatim": "オークション情報・結果｜かいせつ容量市場スペシャルサイト｜電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "used_in": "glossary/power-market-price-trend.detail"
-  },
-  {
-   "name": "取引実績の取りまとめ結果",
-   "publisher": "一般社団法人 電力需給調整力取引所",
-   "url": "https://www.eprx.or.jp/information/summary.php",
-   "title_verbatim": "取引実績の取りまとめ結果 | 取引情報 | 一般社団法人 電力需給調整力取引所",
-   "checked_on": "2026-09-20",
-   "used_in": "glossary/power-market-price-trend.detail"
-  },
-  {
-   "name": "インターネット広告倫理綱領",
-   "publisher": "一般社団法人 日本インタラクティブ広告協会（JIAA）",
-   "url": "https://www.jiaa.org/jiaa/rinrikoryo/",
-   "title_verbatim": "広告倫理綱領 - 一般社団法人 日本インタラクティブ広告協会｜JIAA",
-   "checked_on": "2026-09-21",
-   "used_in": "glossary/pr-article.detail"
-  },
-  {
-   "name": "ストレージパリティの達成に向けた太陽光発電設備等の価格低減促進事業",
-   "publisher": "環境省",
-   "url": "https://www.env.go.jp/press/press_05272.html",
-   "title_verbatim": "令和８年度予算「ストレージパリティの達成に向けた太陽光発電設備等の価格低減促進事業」の公募について | 報道発表資料 | 環境省",
-   "checked_on": "2026-09-21",
-   "used_in": "news/news-weekly-2026-09-w1.body"
-  },
-  {
-   "name": "適正な電力取引についての指針",
-   "publisher": "公正取引委員会・経済産業省",
-   "url": "https://www.jftc.go.jp/hourei_files/denki.pdf",
-   "title_verbatim": "適正な電力取引についての指針",
-   "checked_on": "2026-09-21",
-   "used_in": "policy-events/balancing-market-reform-2026-03.description"
-  },
-  {
-   "name": "長期脱炭素電源オークション 容量確保契約約款",
-   "publisher": "電力広域的運営推進機関",
-   "url": "https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/yakkan_long.html",
-   "title_verbatim": "長期脱炭素電源オークション　容量確保契約約款｜電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "used_in": "policy-events/ltdc-2026-boshuyoukou-kouhyou-2026-09.description"
-  },
-  {
-   "name": "容量市場 長期脱炭素電源オークション募集要綱（応札年度：2026年度）",
-   "publisher": "電力広域的運営推進機関",
-   "url": "https://www.occto.or.jp/news/013102.html",
-   "title_verbatim": "「容量市場 長期脱炭素電源オークション募集要綱（応札年度：2026年度）」及び「長期脱炭素電源オークション 容量確保契約約款」の公表について｜電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "used_in": "policy-events/ltdc-2026-boshuyoukou-kouhyou-2026-09.description"
-  },
-  {
-   "name": "蓄電池・電源産業戦略",
-   "publisher": "経済産業省",
-   "url": "https://www.meti.go.jp/press/2026/06/20260602001/20260602001.html",
-   "title_verbatim": "「蓄電池産業戦略」を「蓄電池・電源産業戦略」に改訂しました（METI/経済産業省）",
-   "checked_on": "2026-09-20",
-   "used_in": "policy-events/meti-next-gen-battery-rd-plan-pubcomm-2026-07.description"
-  },
-  {
-   "name": "容量確保契約約款",
-   "publisher": "電力広域的運営推進機関",
-   "url": "https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/jitsujukyu_kyoutsu.html",
-   "title_verbatim": "容量確保契約約款｜電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "note": "要確認（needs_check）",
-   "used_in": "policy-events/meti-stable-supply-wg6-ltdc-round4-final-2026-08.description"
-  },
-  {
-   "name": "当社における系統情報について",
-   "publisher": "東京電力パワーグリッド株式会社",
-   "url": "https://www.tepco.co.jp/pg/consignment/system/",
-   "title_verbatim": "当社における系統情報について｜系統情報｜東京電力パワーグリッド株式会社",
-   "checked_on": "2026-09-20",
-   "used_in": "src/app/grid/tokyo/status/page.tsx:149, explainer/tepco-pg-grid-info-suspension-2026.sources"
-  },
-  {
-   "name": "利用する場合は、出所を明示した上でご利用下さい",
-   "publisher": "一般社団法人 日本卸電力取引所（JEPX）",
-   "url": "https://www.jepx.jp/disclaimer/",
-   "title_verbatim": "免責事項・著作権 | JEPX",
-   "checked_on": "2026-09-21",
-   "used_in": "src/app/industry/page.tsx:263 (code comment), src/lib/eic-license.ts:146 (displayed text JEPX_SPOT_FALLBACK_NOTICE)"
-  },
-  {
-   "name": "リンクについて",
-   "publisher": "一般社団法人 日本卸電力取引所（JEPX）",
-   "url": "https://www.jepx.jp/disclaimer/",
-   "title_verbatim": "免責事項・著作権 | JEPX",
-   "checked_on": "2026-09-20",
-   "used_in": "src/app/industry/page.tsx:266 (code comment)"
-  },
-  {
-   "name": "蓄電池等の低圧電線路への連系申込みについて",
-   "publisher": "九州電力送配電株式会社",
-   "url": "https://www.kyuden.co.jp/td/application/application/interconnection.html",
-   "title_verbatim": "九州電力送配電　蓄電池等の低圧電線路への連系申込みについて",
-   "checked_on": "2026-09-21",
-   "used_in": "src/app/lv/entry-guide/page.tsx:159"
-  },
-  {
-   "name": "系統用蓄電池の迅速な系統連系に向けて",
-   "publisher": "資源エネルギー庁",
-   "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/smart_power_grid_wg/pdf/002_02_00.pdf",
-   "title_verbatim": "系統用蓄電池の迅速な系統連系に向けて",
-   "checked_on": "2026-09-20",
-   "used_in": "src/app/lv/entry-guide/page.tsx:165"
-  },
-  {
-   "name": "太陽光・蓄電池、JC-STAR★1が連系条件へ",
-   "publisher": "Gridwatch（著者表記: Gridwatch Policy Desk）",
-   "url": "https://www.gridwatch.jp/policy/der-cybersecurity-jc-star-grid-connection-february-2026",
-   "title_verbatim": "太陽光・蓄電池、JC-STAR★1が連系条件へ | Gridwatch Policy Desk",
-   "checked_on": "2026-09-20",
-   "used_in": "src/app/lv/regulation-subsidy/page.tsx:191, src/app/lv/entry-guide/page.tsx:171"
-  },
-  {
-   "name": "第57回需給調整市場検討小委員会資料",
-   "publisher": "電力広域的運営推進機関",
-   "url": "https://www.occto.or.jp/iinkai/jukyuchousei/57.html",
-   "title_verbatim": "第57回 需給調整市場検討小委員会（第74回 調整力の細分化及び広域調達の技術的検討に関する作業会と合同開催）｜電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "used_in": "src/app/lv/regulation-subsidy/page.tsx:95"
-  },
-  {
-   "name": "第57回 需給調整市場検討小委員会 資料3",
-   "publisher": "電力広域的運営推進機関（需給調整市場検討小委員会 事務局）",
-   "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2025/files/jukyu_shijyo_57_03.pdf",
-   "title_verbatim": "需給調整市場における機器個別計測・低圧リソース導入について（2026年度からの制度開始に向けた整理）",
-   "checked_on": "2026-09-20",
-   "used_in": "src/app/lv/revenue-model/page.tsx:162 / src/app/lv/regulation-subsidy/page.tsx:167"
-  },
-  {
-   "name": "第4回 電力安定供給ワーキンググループ",
-   "publisher": "経済産業省",
-   "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/stable_power_supply_wg/004.html",
-   "title_verbatim": "総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ（第4回）（METI/経済産業省）",
-   "checked_on": "2026-09-20",
-   "used_in": "src/app/lv/revenue-model/page.tsx:168, src/app/lv/regulation-subsidy/page.tsx:173, src/app/lv/buying-guide/page.tsx:161, src/app/lv/risks/page.tsx:149"
-  },
-  {
-   "name": "第57回需給調整市場検討小委員会 資料",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2025/files/jukyu_shijyo_57_03.pdf",
-   "title_verbatim": "第５７回需給調整市場検討小委員会・第７４回調整力の細分化及び広域調達の技術的検討に関する作業会 資料３",
-   "checked_on": "2026-09-20",
-   "used_in": "src/app/lv/what-is/page.tsx:120, src/app/lv/revenue-model/page.tsx:86"
-  },
-  {
-   "name": "高圧電力とは？低圧電力や特別高圧電力との違い",
-   "publisher": "関西電力",
-   "url": "https://sol.kepco.jp/useful/aircontrol/w/koatsudenryokui/",
-   "title_verbatim": "高圧電力とは？低圧電力や特別高圧電力との違い、契約の注意点を解説｜役に立つコラム｜【全国対応】関西電力／公式　-　法人向けソリューションサイト",
-   "checked_on": "2026-09-20",
-   "used_in": "src/app/lv/what-is/page.tsx:147"
-  },
-  {
-   "name": "需給調整市場における機器個別計測・低圧リソース導入について",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2025/files/jukyu_shijyo_57_03.pdf",
-   "title_verbatim": "需給調整市場における機器個別計測・低圧リソース導入について",
-   "checked_on": "2026-09-20",
-   "used_in": "src/app/lv/what-is/page.tsx:153"
-  },
-  {
-   "name": "summary_2024.pdf",
-   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
-   "url": "https://www.eprx.or.jp/information/docs/summary_2024.pdf",
-   "title_verbatim": "2024年度の取引実績について",
-   "checked_on": "2026-09-21",
-   "used_in": "src/app/tools/balancing-revenue/page.tsx:484"
-  },
-  {
-   "name": "summary_2025.pdf",
-   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
-   "url": "https://www.eprx.or.jp/information/summary_2025.pdf",
-   "title_verbatim": "2025年度の取引実績について",
-   "checked_on": "2026-09-21",
-   "used_in": "src/app/tools/balancing-revenue/page.tsx:484"
-  },
-  {
-   "name": "NREL ATB",
-   "publisher": "National Renewable Energy Laboratory（NREL）",
-   "url": "https://atb.nlr.gov/electricity/2024/about",
-   "title_verbatim": "About | Electricity | 2024 | ATB | NLR",
-   "checked_on": "2026-09-21",
-   "aliases": [
-    "NREL ATB 2024",
-    "NREL ATB 2024（Annual Technology Baseline）",
-    "NREL Annual Technology Baseline (ATB) Electricity"
-   ],
-   "used_in": "src/app/tools/lcoe-lcos/page.tsx:150"
-  },
-  {
-   "name": "第 4 回 電力安定供給ワーキンググループ 資料 6",
-   "publisher": "経済産業省（総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ）",
-   "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/stable_power_supply_wg/004.html",
-   "title_verbatim": "総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ（第4回）（METI/経済産業省）",
-   "checked_on": "2026-09-20",
-   "used_in": "src/components/BalancingRevenueEstimator.tsx:187"
-  },
-  {
-   "name": "第4回 電力安定供給ワーキンググループ 資料6",
-   "publisher": "経済産業省（総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ）",
-   "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/stable_power_supply_wg/004.html",
-   "title_verbatim": "総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ（第4回）（METI/経済産業省）",
-   "checked_on": "2026-09-20",
-   "used_in": "src/components/BalancingSourceComparison.tsx:249"
-  },
-  {
-   "name": "不動産情報ライブラリ(reinfolib)",
-   "publisher": "国土交通省",
-   "url": "https://www.reinfolib.mlit.go.jp/",
-   "title_verbatim": "不動産情報ライブラリ",
-   "checked_on": "2026-09-20",
-   "used_in": "src/components/HazardRiskCard.tsx:191"
-  },
-  {
-   "name": "国土数値情報",
-   "publisher": "国土交通省",
-   "url": "https://nlftp.mlit.go.jp/",
-   "title_verbatim": "国土数値情報ダウンロードサイト",
-   "checked_on": "2026-09-21",
-   "used_in": "src/components/HazardRiskCard.tsx:191"
-  },
-  {
-   "name": "スポット市場",
-   "publisher": "一般社団法人 日本卸電力取引所（JEPX）",
-   "url": "https://www.jepx.jp/electricpower/market-data/spot/",
-   "title_verbatim": "スポット市場 | 市場情報 | 電力取引 | JEPX",
-   "checked_on": "2026-09-20",
-   "used_in": "src/components/JEPXDashboard.tsx:182, src/app/market/jepx/page.tsx:130"
-  },
-  {
-   "name": "蓄電池設備における爆発・火災事故及びその対応",
-   "publisher": "経済産業省 大臣官房 産業保安・安全グループ 電力安全課",
-   "url": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/denryoku_anzen/denki_setsubi/021.html",
-   "title_verbatim": "資料3　蓄電池設備における爆発・火災事故及びその対応について（事務局資料）",
-   "checked_on": "2026-09-20",
-   "note": "要確認（needs_check）",
-   "used_in": "src/components/Report2026Body.tsx:169"
-  },
-  {
-   "name": "脱炭素電源競売で蓄電池1GW強落札",
-   "publisher": "PVeye WEB",
-   "url": "https://www.pveye.jp/eye_sight/view/5151/",
-   "title_verbatim": "脱炭素電源競売で蓄電池1GW強落札 | 再生可能エネルギーの専門メディア　PVeyeWEB",
-   "checked_on": "2026-09-20",
-   "used_in": "src/components/Report2026Body.tsx:242"
-  },
-  {
-   "name": "鹿児島で大型蓄電池が全焼",
-   "publisher": "PVeye WEB",
-   "url": "https://www.pveye.jp/eye_sight/view/5101/",
-   "title_verbatim": "鹿児島で大型蓄電池が全焼 | 再生可能エネルギーの専門メディア　PVeyeWEB",
-   "checked_on": "2026-09-20",
-   "used_in": "src/components/Report2026Body.tsx:242"
-  },
-  {
-   "name": "容量市場メインオークション約定結果",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/news/010680.html",
-   "title_verbatim": "容量市場メインオークション約定結果（対象実需給年度：2029年度）の公表について｜電力広域的運営推進機関",
-   "checked_on": "2026-09-21",
-   "used_in": "src/data/capacity-market-history.ts:120（commit dc75185 で削除済み）/ src/app/tools/capacity-market-bid/page.tsx:351（現行は 347・357・398）"
-  },
-  {
-   "name": "AEMO 2026 ISP",
-   "publisher": "AEMO",
-   "url": "https://www.aemo.com.au/energy-systems/major-publications/integrated-system-plan-isp/2026-integrated-system-plan-isp",
-   "title_verbatim": "AEMO | 2026 Integrated System Plan (ISP)",
-   "checked_on": "2026-09-21",
-   "aliases": [
-    "AEMO 2026 ISP（統合系統計画）"
-   ],
-   "used_in": "src/data/global-markets.ts:195"
-  },
-  {
-   "name": "IRS Notice 2026-15 (FEOC)",
-   "publisher": "米国財務省（U.S. Department of the Treasury）・内国歳入庁（IRS）",
-   "url": "https://www.irs.gov/pub/irs-drop/n-26-15.pdf",
-   "title_verbatim": "Guidance to Apply Interim Safe Harbors for Purposes of Determining a Taxpayer’s Material Assistance from a Prohibited Foreign Entity; Other Prohibited Foreign Entity Guidance",
-   "checked_on": "2026-09-21",
-   "note": "要確認（needs_check）",
-   "used_in": "src/data/global-markets.ts:55"
-  },
-  {
-   "name": "SolarPower Europe European Battery Market Outlook 2026-2030",
-   "publisher": "SolarPower Europe",
-   "url": "https://www.solarpowereurope.org/insights/outlooks/european-battery-market-outlook-2026-2030-1",
-   "title_verbatim": "European Battery Market Outlook 2026-2030",
-   "checked_on": "2026-09-20",
-   "used_in": "src/data/global-markets.ts:90"
-  },
-  {
-   "name": "需給調整市場とは",
-   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
-   "url": "https://www.eprx.or.jp/outline/outline.html",
-   "title_verbatim": "需給調整市場とは | 取引概要 | 一般社団法人 電力需給調整力取引所",
-   "checked_on": "2026-09-21",
-   "used_in": "explainer/grid-scale-bess.sources（Ck-1 A11 で差し替え）"
-  },
-  {
-   "name": "取引規程（需給調整市場）",
-   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
-   "url": "https://www.eprx.or.jp/outline/docs/kitei_ver.18_260701.pdf",
-   "title_verbatim": "取引規程（需給調整市場） 2026年７月１日 実施 一般社団法人電力需給調整力取引所（PDF 1頁。掲載ページ https://www.eprx.or.jp/outline/announcement.html の title「需給調整市場に係る取引規程等の公表 | 取引概要 | 一般社団法人 電力需給調整力取引所」）",
-   "checked_on": "2026-09-22",
-   "used_in": "glossary 9 件の detail（A11-2-17）／explainer/tertiary-reserve-1-detail.sources（A11-2-15）／explainer/aggregator-business.sources（A11-2-16-c）"
-  },
-  {
-   "name": "取引実績",
-   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
-   "url": "https://www.eprx.or.jp/information/results.php",
-   "title_verbatim": "取引実績 | 取引情報 | 一般社団法人 電力需給調整力取引所",
-   "checked_on": "2026-09-22",
-   "used_in": "links/occto-data.description（A11-2-07-b）／glossary/tertiary-reserve-2.detail（A11-2-11）"
-  },
-  {
-   "name": "取引ガイド（全商品）",
-   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
-   "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
-   "title_verbatim": "取引ガイド （全商品） 2026年 7月 1日 第10版（PDF 1頁）",
-   "checked_on": "2026-09-22",
-   "used_in": "explainer/balancing-market-practical.sources（A11-2-16-b）"
-  },
-  {
-   "name": "需給調整市場の参加申込",
-   "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
-   "url": "https://www.eprx.or.jp/outline/application.html",
-   "title_verbatim": "需給調整市場の参加申込 | 取引概要 | 一般社団法人 電力需給調整力取引所",
-   "checked_on": "2026-09-22",
-   "used_in": "explainer/aggregator-business.sources（A11-2-16-c）"
-  },
-  {
-   "name": "容量市場関係の情報・手続き",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/various/capacity-market/",
-   "title_verbatim": "容量市場関係の情報・手続き｜電力広域的運営推進機関",
-   "checked_on": "2026-09-22",
-   "used_in": "explainer/bess-revenue-simulation.sources（A11-2-16-a）"
-  },
-  {
-   "name": "（参考資料）需給調整市場の概要",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2018/files/jukyu_shijo_03_05_02_02.pdf",
-   "title_verbatim": "第３回需給調整市場検討小委員会 資料５－２－２ 意見募集資料 （参考資料） 需給調整市場の概要 ２０１８年４月２７日 電力広域的運営推進機関（PDF 1頁）",
-   "checked_on": "2026-09-22",
-   "used_in": "explainer/balancing-market.sources（A11-2-24）"
-  },
-  {
-   "name": "容量市場業務マニュアル　容量停止計画の調整業務編（実需給年度の2年度前に行う容量停止計画の調整）（対象実需給年度：2026年度以降）",
-   "publisher": "電力広域的運営推進機関（OCCTO）",
-   "url": "https://www.occto.or.jp/news/012415.html",
-   "title_verbatim": "容量市場　実務説明会（容量停止計画の調整業務）（対象実需給年度：2028年度）の開催案内について｜電力広域的運営推進機関（本文に資料名が逐語で載る。マニュアル直後の空白は全角）",
-   "checked_on": "2026-09-22",
-   "used_in": "policy-events/capacity-outage-plan-briefing-2026-06.description（A5-12）"
-  }
- ]
+  "_comment": "資料名の台帳（Ck-1 A6・2026-09-21）。name はサイトに書いている資料名、title_verbatim は確認時の一次の <title>／PDF 表題の逐語。書く前に一次を実機で取り、確認日つきで登録する。検査: npm run verify:source-names",
+  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md）",
+  "documents": [
+    {
+      "name": "需給調整市場のΔkW上限価格について",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/information/post.php",
+      "title_verbatim": "上限価格 | 取引情報 | 一般社団法人 電力需給調整力取引所",
+      "checked_on": "2026-09-20",
+      "used_in": "explainer/balancing-price-cap-10yen-explainer.sources / explainer/balancing-price-cap-10yen-explainer.body"
+    },
+    {
+      "name": "系統用蓄電池事業への参入企業は4分類",
+      "publisher": "日経エネルギーNext",
+      "url": "https://project.nikkeibp.co.jp/energy/atcl/19/feature/00029/081300002/",
+      "title_verbatim": "系統用蓄電池事業への参入企業は4分類、電気事業ノウハウのない企業も｜日経エネルギーNext",
+      "checked_on": "2026-09-20",
+      "used_in": "explainer/bess-business-decision-tree.sources"
+    },
+    {
+      "name": "再エネ導入の鍵、系統用蓄電池事業に国内初の融資",
+      "publisher": "三井住友フィナンシャルグループ",
+      "url": "https://www.smfg.co.jp/sustainability/social_value/interview/0021.html",
+      "title_verbatim": "インタビュー： 三井住友フィナンシャルグループ",
+      "checked_on": "2026-09-20",
+      "note": "サイトの出典欄の発行元表記「三井住友銀行」は誤り（一次は三井住友フィナンシャルグループのインタビュー）。本文の「eRex 2MW/8MWh案件」は一次に無い（■B1）／要確認（needs_check）",
+      "used_in": "explainer/bess-pf-merchant-vs-multiuse.sources"
+    },
+    {
+      "name": "蓄電池産業戦略",
+      "publisher": "経済産業省",
+      "url": "https://www.meti.go.jp/policy/economy/economic_security/battery/",
+      "title_verbatim": "蓄電池 （METI/経済産業省）",
+      "checked_on": "2026-09-25",
+      "note": "要確認（needs_check）: この URL の <title> は「蓄電池 （METI/経済産業省）」で、資料名「蓄電池産業戦略」と一致しない（別資料）。explainer/national-battery-supply-plan.sources は 2026-09-25 に「経済産業省「蓄電池」（経済安全保障政策）」へ是正済み。残る explainer/bess-supply-chain-responsibility.sources・glossary/v2x.detail は次便で扱う。",
+      "used_in": "explainer/bess-supply-chain-responsibility.sources, glossary/v2x.detail"
+    },
+    {
+      "name": "容量市場 業務マニュアル",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/files/250130_jikkouseitest_jitsujukyu2027.pdf",
+      "title_verbatim": "容量市場／業務マニュアル／実効性テスト 編／（対象実需給年度：2027 年度）／2025 年 1 月 30 日 第 1 版 発行／電力広域的運営推進機関",
+      "checked_on": "2026-09-20",
+      "note": "要確認（needs_check）",
+      "used_in": "explainer/capacity-market-advanced.sources"
+    },
+    {
+      "name": "メインオークション約定結果",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/news/010680.html",
+      "title_verbatim": "容量市場メインオークション約定結果（対象実需給年度：2029年度）の公表について｜電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "used_in": "explainer/capacity-market.sources"
+    },
+    {
+      "name": "容量市場 業務マニュアル",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/files/230119_jikkouseitest_jitsujukyu2025.pdf",
+      "title_verbatim": "容量市場／業務マニュアル／実効性テスト 編／（対象実需給年度：2025 年度）／2023 年 1 月 19 日 第 1 版 発行／電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "note": "要確認（needs_check）",
+      "used_in": "explainer/capacity-market.sources"
+    },
+    {
+      "name": "容量市場の概要",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/market-board/market/files/youryou_gaiyousetumei.pdf",
+      "title_verbatim": "説明会資料／容量市場の概要について／2019年10月／電力広域的運営推進機関",
+      "checked_on": "2026-09-20",
+      "used_in": "explainer/capacity-market.sources",
+      "aliases": [
+        "容量市場の概要について"
+      ]
+    },
+    {
+      "name": "脱炭素先行地域",
+      "publisher": "環境省",
+      "url": "https://policies.env.go.jp/policy/roadmap/preceding-region/",
+      "title_verbatim": "脱炭素先行地域 - 脱炭素地域づくり支援サイト｜環境省",
+      "checked_on": "2026-09-21",
+      "used_in": "explainer/decarbonization-leading-regions-detail.sources"
+    },
+    {
+      "name": "系統情報サービス",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/institution/keitoujouhou/index.html",
+      "title_verbatim": "系統情報サービス等｜電力広域的運営推進機関",
+      "checked_on": "2026-09-20",
+      "used_in": "explainer/grid-connection-process.body"
+    },
+    {
+      "name": "電力ネットワークの次世代化",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/039.html",
+      "title_verbatim": "要ブラウザ",
+      "checked_on": "2026-09-20",
+      "note": "要確認（needs_check）",
+      "used_in": "explainer/grid-connection-process.sources"
+    },
+    {
+      "name": "需給調整市場の概要",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/iken/2018/files/sankou_jukyuchouseishijo.pdf",
+      "title_verbatim": "（参考資料）／需給調整市場の概要／２０１８年４月２７日／電力広域的運営推進機関",
+      "checked_on": "2026-09-20",
+      "note": "同名の委員会資料版（第3回需給調整市場検討小委員会 資料5-2-2・jukyu_shijo_03_05_02_02.pdf）もある。こちらは意見募集の完成版（43頁）／要確認（needs_check）",
+      "used_in": "explainer/grid-scale-bess.sources"
+    },
+    {
+      "name": "LCOE×電源構成",
+      "publisher": "一般社団法人エネルギー情報センター（EIC Data）",
+      "url": "https://data.eic-jp.org/insight/lcoe-vs-power-mix",
+      "title_verbatim": "LCOE × 電源構成：安い電源ほど日本では少ない | EIC Data",
+      "checked_on": "2026-09-21",
+      "note": "要確認（needs_check）",
+      "used_in": "explainer/lcoe-and-power-mix.sources"
+    },
+    {
+      "name": "2026年、日本の電力需要家に訪れる3つの大変革",
+      "publisher": "SOLAR JOURNAL",
+      "url": "https://solarjournal.jp/policy/61672/",
+      "title_verbatim": "2026年、日本の電力需要家に訪れる3つの大変革。需給調整市場を低圧リソースに開放｜SOLAR JOURNAL",
+      "checked_on": "2026-09-21",
+      "used_in": "explainer/low-voltage-balancing-market-launch.sources"
+    },
+    {
+      "name": "容量市場 長期脱炭素電源オークション約定結果",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/news/market-board_market_oshirase_2025_20250428_youryouyakujokekka_kouhyou.html",
+      "title_verbatim": "容量市場　長期脱炭素電源オークション約定結果（応札年度：2024年度）の公表について｜電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "used_in": "explainer/ltdc-3rd-auction-ccs-ldes.sources"
+    },
+    {
+      "name": "需給調整市場とは",
+      "publisher": "株式会社ユーラスエナジーホールディングス",
+      "url": "https://www.eurus-energy.com/mirumiruwakaru/20260130-2618.html",
+      "title_verbatim": "需給調整市場とは？蓄電池ビジネスに欠かせない仕組みをわかりやすく解説 | 株式会社ユーラスエナジーホールディングス",
+      "checked_on": "2026-09-21",
+      "used_in": "explainer/multi-use-operation-strategy.sources"
+    },
+    {
+      "name": "次世代全固体蓄電池材料の評価・基盤技術開発",
+      "publisher": "NEDO",
+      "url": "https://www.nedo.go.jp/activities/ZZJP_100257.html",
+      "title_verbatim": "次世代全固体蓄電池材料の評価・基盤技術開発 | 事業 | NEDO",
+      "checked_on": "2026-09-20",
+      "used_in": "explainer/solid-state-battery-grid-deployment.sources"
+    },
+    {
+      "name": "再エネ併設蓄電池 制御支援サービス",
+      "publisher": "株式会社エナリス",
+      "url": "https://www.eneres.co.jp/news/20260107.html",
+      "title_verbatim": "「再エネ併設蓄電池 制御支援サービス」を2026年4月より提供開始に～再生可能エネルギーの有効活用と発電事業者の収益向上を目指し～ | 株式会社エナリス │ ENERES",
+      "checked_on": "2026-09-21",
+      "used_in": "explainer/storage-parity-aggregation.sources"
+    },
+    {
+      "name": "公募情報",
+      "publisher": "NEDO",
+      "url": "https://www.nedo.go.jp/koubo/index.html",
+      "title_verbatim": "公募 | NEDO",
+      "checked_on": "2026-09-20",
+      "used_in": "explainer/subsidies-guide.sources"
+    },
+    {
+      "name": "ゼロエミッション東京戦略",
+      "publisher": "東京都環境局",
+      "url": "https://www.kankyo.metro.tokyo.lg.jp/policy_others/zeroemission_tokyo/strategy/",
+      "title_verbatim": "ゼロエミッション東京戦略|ゼロエミッション東京|東京都環境局",
+      "checked_on": "2026-09-20",
+      "used_in": "explainer/tokyo-solar-mandate-2025.sources"
+    },
+    {
+      "name": "定置用蓄電システムの現状と課題",
+      "publisher": "経済産業省",
+      "url": "https://www.meti.go.jp/policy/mono_info_service/joho/conference/battery_strategy2/shiryo06.pdf",
+      "title_verbatim": "資料6 定置用蓄電システムの現状と課題 2025年3月12日 経済産業省",
+      "checked_on": "2026-09-20",
+      "used_in": "glossary/battery-storage-site.detail"
+    },
+    {
+      "name": "容量拠出金を知ろう！",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/capacity-market/kyoshutsukin_know/",
+      "title_verbatim": "容量拠出金を知ろう！｜かいせつ容量市場スペシャルサイト｜電力広域的運営推進機関",
+      "checked_on": "2026-09-20",
+      "used_in": "glossary/capacity-contribution.detail"
+    },
+    {
+      "name": "グリーンローンガイドライン",
+      "publisher": "環境省",
+      "url": "https://greenfinanceportal.env.go.jp/loan/guideline/guideline.html",
+      "title_verbatim": "グリーンローンガイドライン | グリーンローンガイドライン | ローン | グリーンファイナンスポータル",
+      "checked_on": "2026-09-20",
+      "used_in": "glossary/green-loan.detail"
+    },
+    {
+      "name": "グリーンローン原則（GLP）",
+      "publisher": "ローン・マーケット・アソシエーション（LMA）、アジア太平洋ローン・マーケット・アソシエーション（APLMA）、ローン・シンジケーション＆トレーディング・アソシエーション（LSTA）",
+      "url": "https://www.lsta.org/content/green-loan-principles/",
+      "title_verbatim": "Green Loan Principles - LSTA",
+      "checked_on": "2026-09-21",
+      "used_in": "glossary/green-loan.detail"
+    },
+    {
+      "name": "電源接続案件募集プロセス",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/institution/access/process/index.html",
+      "title_verbatim": "電源接続案件募集プロセス｜電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "used_in": "glossary/interconnection-cost-burden.detail"
+    },
+    {
+      "name": "発電等設備の設置に伴う電力系統の増強及び事業者の費用負担等の在り方に関する指針",
+      "publisher": "資源エネルギー庁 電力・ガス事業部",
+      "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/hiyoufutangl_20240515.pdf",
+      "title_verbatim": "発電等設備の設置に伴う電力系統の増強及び事業者の費用負担等の在り方に関する指針",
+      "checked_on": "2026-09-21",
+      "used_in": "glossary/interconnection-cost-burden.detail"
+    },
+    {
+      "name": "なるほど！グリッド 出力制御について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/saiene/grid/08_syuturyokuseigyo.html",
+      "title_verbatim": "出力制御について|なるほど！グリッド｜資源エネルギー庁",
+      "checked_on": "2026-09-20",
+      "used_in": "glossary/n-1-densei.detail"
+    },
+    {
+      "name": "N-1電制の基本的な考え方について",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/news/access_oshirase_2018_181001_n-1densei_shiryou.html",
+      "title_verbatim": "N-1電制の基本的な考え方について｜電力広域的運営推進機関",
+      "checked_on": "2026-09-20",
+      "used_in": "glossary/n-1-densei.detail"
+    },
+    {
+      "name": "容量市場 メインオークション約定結果",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/capacity-market/yoryoshijyo/main/data/",
+      "title_verbatim": "オークション情報・結果｜かいせつ容量市場スペシャルサイト｜電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "used_in": "glossary/power-market-price-trend.detail"
+    },
+    {
+      "name": "取引実績の取りまとめ結果",
+      "publisher": "一般社団法人 電力需給調整力取引所",
+      "url": "https://www.eprx.or.jp/information/summary.php",
+      "title_verbatim": "取引実績の取りまとめ結果 | 取引情報 | 一般社団法人 電力需給調整力取引所",
+      "checked_on": "2026-09-20",
+      "used_in": "glossary/power-market-price-trend.detail"
+    },
+    {
+      "name": "インターネット広告倫理綱領",
+      "publisher": "一般社団法人 日本インタラクティブ広告協会（JIAA）",
+      "url": "https://www.jiaa.org/jiaa/rinrikoryo/",
+      "title_verbatim": "広告倫理綱領 - 一般社団法人 日本インタラクティブ広告協会｜JIAA",
+      "checked_on": "2026-09-21",
+      "used_in": "glossary/pr-article.detail"
+    },
+    {
+      "name": "ストレージパリティの達成に向けた太陽光発電設備等の価格低減促進事業",
+      "publisher": "環境省",
+      "url": "https://www.env.go.jp/press/press_05272.html",
+      "title_verbatim": "令和８年度予算「ストレージパリティの達成に向けた太陽光発電設備等の価格低減促進事業」の公募について | 報道発表資料 | 環境省",
+      "checked_on": "2026-09-21",
+      "used_in": "news/news-weekly-2026-09-w1.body"
+    },
+    {
+      "name": "適正な電力取引についての指針",
+      "publisher": "公正取引委員会・経済産業省",
+      "url": "https://www.jftc.go.jp/hourei_files/denki.pdf",
+      "title_verbatim": "適正な電力取引についての指針",
+      "checked_on": "2026-09-21",
+      "used_in": "policy-events/balancing-market-reform-2026-03.description"
+    },
+    {
+      "name": "長期脱炭素電源オークション 容量確保契約約款",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/yakkan_long.html",
+      "title_verbatim": "長期脱炭素電源オークション　容量確保契約約款｜電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "used_in": "policy-events/ltdc-2026-boshuyoukou-kouhyou-2026-09.description"
+    },
+    {
+      "name": "容量市場 長期脱炭素電源オークション募集要綱（応札年度：2026年度）",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/news/013102.html",
+      "title_verbatim": "「容量市場 長期脱炭素電源オークション募集要綱（応札年度：2026年度）」及び「長期脱炭素電源オークション 容量確保契約約款」の公表について｜電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "used_in": "policy-events/ltdc-2026-boshuyoukou-kouhyou-2026-09.description"
+    },
+    {
+      "name": "蓄電池・電源産業戦略",
+      "publisher": "経済産業省",
+      "url": "https://www.meti.go.jp/press/2026/06/20260602001/20260602001.html",
+      "title_verbatim": "「蓄電池産業戦略」を「蓄電池・電源産業戦略」に改訂しました（METI/経済産業省）",
+      "checked_on": "2026-09-20",
+      "used_in": "policy-events/meti-next-gen-battery-rd-plan-pubcomm-2026-07.description"
+    },
+    {
+      "name": "容量確保契約約款",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/jitsujukyu_kyoutsu.html",
+      "title_verbatim": "容量確保契約約款｜電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "note": "要確認（needs_check）",
+      "used_in": "policy-events/meti-stable-supply-wg6-ltdc-round4-final-2026-08.description"
+    },
+    {
+      "name": "当社における系統情報について",
+      "publisher": "東京電力パワーグリッド株式会社",
+      "url": "https://www.tepco.co.jp/pg/consignment/system/",
+      "title_verbatim": "当社における系統情報について｜系統情報｜東京電力パワーグリッド株式会社",
+      "checked_on": "2026-09-20",
+      "used_in": "src/app/grid/tokyo/status/page.tsx:149, explainer/tepco-pg-grid-info-suspension-2026.sources"
+    },
+    {
+      "name": "利用する場合は、出所を明示した上でご利用下さい",
+      "publisher": "一般社団法人 日本卸電力取引所（JEPX）",
+      "url": "https://www.jepx.jp/disclaimer/",
+      "title_verbatim": "免責事項・著作権 | JEPX",
+      "checked_on": "2026-09-21",
+      "used_in": "src/app/industry/page.tsx:263 (code comment), src/lib/eic-license.ts:146 (displayed text JEPX_SPOT_FALLBACK_NOTICE)"
+    },
+    {
+      "name": "リンクについて",
+      "publisher": "一般社団法人 日本卸電力取引所（JEPX）",
+      "url": "https://www.jepx.jp/disclaimer/",
+      "title_verbatim": "免責事項・著作権 | JEPX",
+      "checked_on": "2026-09-20",
+      "used_in": "src/app/industry/page.tsx:266 (code comment)"
+    },
+    {
+      "name": "蓄電池等の低圧電線路への連系申込みについて",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/application/interconnection.html",
+      "title_verbatim": "九州電力送配電　蓄電池等の低圧電線路への連系申込みについて",
+      "checked_on": "2026-09-21",
+      "used_in": "src/app/lv/entry-guide/page.tsx:159"
+    },
+    {
+      "name": "系統用蓄電池の迅速な系統連系に向けて",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/smart_power_grid_wg/pdf/002_02_00.pdf",
+      "title_verbatim": "系統用蓄電池の迅速な系統連系に向けて",
+      "checked_on": "2026-09-20",
+      "used_in": "src/app/lv/entry-guide/page.tsx:165"
+    },
+    {
+      "name": "太陽光・蓄電池、JC-STAR★1が連系条件へ",
+      "publisher": "Gridwatch（著者表記: Gridwatch Policy Desk）",
+      "url": "https://www.gridwatch.jp/policy/der-cybersecurity-jc-star-grid-connection-february-2026",
+      "title_verbatim": "太陽光・蓄電池、JC-STAR★1が連系条件へ | Gridwatch Policy Desk",
+      "checked_on": "2026-09-20",
+      "used_in": "src/app/lv/regulation-subsidy/page.tsx:191, src/app/lv/entry-guide/page.tsx:171"
+    },
+    {
+      "name": "第57回需給調整市場検討小委員会資料",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/iinkai/jukyuchousei/57.html",
+      "title_verbatim": "第57回 需給調整市場検討小委員会（第74回 調整力の細分化及び広域調達の技術的検討に関する作業会と合同開催）｜電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "used_in": "src/app/lv/regulation-subsidy/page.tsx:95"
+    },
+    {
+      "name": "第57回 需給調整市場検討小委員会 資料3",
+      "publisher": "電力広域的運営推進機関（需給調整市場検討小委員会 事務局）",
+      "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2025/files/jukyu_shijyo_57_03.pdf",
+      "title_verbatim": "需給調整市場における機器個別計測・低圧リソース導入について（2026年度からの制度開始に向けた整理）",
+      "checked_on": "2026-09-20",
+      "used_in": "src/app/lv/revenue-model/page.tsx:162 / src/app/lv/regulation-subsidy/page.tsx:167"
+    },
+    {
+      "name": "第4回 電力安定供給ワーキンググループ",
+      "publisher": "経済産業省",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/stable_power_supply_wg/004.html",
+      "title_verbatim": "総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ（第4回）（METI/経済産業省）",
+      "checked_on": "2026-09-20",
+      "used_in": "src/app/lv/revenue-model/page.tsx:168, src/app/lv/regulation-subsidy/page.tsx:173, src/app/lv/buying-guide/page.tsx:161, src/app/lv/risks/page.tsx:149"
+    },
+    {
+      "name": "第57回需給調整市場検討小委員会 資料",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2025/files/jukyu_shijyo_57_03.pdf",
+      "title_verbatim": "第５７回需給調整市場検討小委員会・第７４回調整力の細分化及び広域調達の技術的検討に関する作業会 資料３",
+      "checked_on": "2026-09-20",
+      "used_in": "src/app/lv/what-is/page.tsx:120, src/app/lv/revenue-model/page.tsx:86"
+    },
+    {
+      "name": "高圧電力とは？低圧電力や特別高圧電力との違い",
+      "publisher": "関西電力",
+      "url": "https://sol.kepco.jp/useful/aircontrol/w/koatsudenryokui/",
+      "title_verbatim": "高圧電力とは？低圧電力や特別高圧電力との違い、契約の注意点を解説｜役に立つコラム｜【全国対応】関西電力／公式　-　法人向けソリューションサイト",
+      "checked_on": "2026-09-20",
+      "used_in": "src/app/lv/what-is/page.tsx:147"
+    },
+    {
+      "name": "需給調整市場における機器個別計測・低圧リソース導入について",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2025/files/jukyu_shijyo_57_03.pdf",
+      "title_verbatim": "需給調整市場における機器個別計測・低圧リソース導入について",
+      "checked_on": "2026-09-20",
+      "used_in": "src/app/lv/what-is/page.tsx:153"
+    },
+    {
+      "name": "summary_2024.pdf",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/information/docs/summary_2024.pdf",
+      "title_verbatim": "2024年度の取引実績について",
+      "checked_on": "2026-09-21",
+      "used_in": "src/app/tools/balancing-revenue/page.tsx:484"
+    },
+    {
+      "name": "summary_2025.pdf",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/information/summary_2025.pdf",
+      "title_verbatim": "2025年度の取引実績について",
+      "checked_on": "2026-09-21",
+      "used_in": "src/app/tools/balancing-revenue/page.tsx:484"
+    },
+    {
+      "name": "NREL ATB",
+      "publisher": "National Renewable Energy Laboratory（NREL）",
+      "url": "https://atb.nlr.gov/electricity/2024/about",
+      "title_verbatim": "About | Electricity | 2024 | ATB | NLR",
+      "checked_on": "2026-09-21",
+      "aliases": [
+        "NREL ATB 2024",
+        "NREL ATB 2024（Annual Technology Baseline）",
+        "NREL Annual Technology Baseline (ATB) Electricity"
+      ],
+      "used_in": "src/app/tools/lcoe-lcos/page.tsx:150"
+    },
+    {
+      "name": "第 4 回 電力安定供給ワーキンググループ 資料 6",
+      "publisher": "経済産業省（総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ）",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/stable_power_supply_wg/004.html",
+      "title_verbatim": "総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ（第4回）（METI/経済産業省）",
+      "checked_on": "2026-09-20",
+      "used_in": "src/components/BalancingRevenueEstimator.tsx:187"
+    },
+    {
+      "name": "第4回 電力安定供給ワーキンググループ 資料6",
+      "publisher": "経済産業省（総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ）",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/stable_power_supply_wg/004.html",
+      "title_verbatim": "総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 電力安定供給ワーキンググループ（第4回）（METI/経済産業省）",
+      "checked_on": "2026-09-20",
+      "used_in": "src/components/BalancingSourceComparison.tsx:249"
+    },
+    {
+      "name": "不動産情報ライブラリ(reinfolib)",
+      "publisher": "国土交通省",
+      "url": "https://www.reinfolib.mlit.go.jp/",
+      "title_verbatim": "不動産情報ライブラリ",
+      "checked_on": "2026-09-20",
+      "used_in": "src/components/HazardRiskCard.tsx:191"
+    },
+    {
+      "name": "国土数値情報",
+      "publisher": "国土交通省",
+      "url": "https://nlftp.mlit.go.jp/",
+      "title_verbatim": "国土数値情報ダウンロードサイト",
+      "checked_on": "2026-09-21",
+      "used_in": "src/components/HazardRiskCard.tsx:191"
+    },
+    {
+      "name": "スポット市場",
+      "publisher": "一般社団法人 日本卸電力取引所（JEPX）",
+      "url": "https://www.jepx.jp/electricpower/market-data/spot/",
+      "title_verbatim": "スポット市場 | 市場情報 | 電力取引 | JEPX",
+      "checked_on": "2026-09-20",
+      "used_in": "src/components/JEPXDashboard.tsx:182, src/app/market/jepx/page.tsx:130"
+    },
+    {
+      "name": "蓄電池設備における爆発・火災事故及びその対応",
+      "publisher": "経済産業省 大臣官房 産業保安・安全グループ 電力安全課",
+      "url": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/denryoku_anzen/denki_setsubi/021.html",
+      "title_verbatim": "資料3　蓄電池設備における爆発・火災事故及びその対応について（事務局資料）",
+      "checked_on": "2026-09-20",
+      "note": "要確認（needs_check）",
+      "used_in": "src/components/Report2026Body.tsx:169"
+    },
+    {
+      "name": "脱炭素電源競売で蓄電池1GW強落札",
+      "publisher": "PVeye WEB",
+      "url": "https://www.pveye.jp/eye_sight/view/5151/",
+      "title_verbatim": "脱炭素電源競売で蓄電池1GW強落札 | 再生可能エネルギーの専門メディア　PVeyeWEB",
+      "checked_on": "2026-09-20",
+      "used_in": "src/components/Report2026Body.tsx:242"
+    },
+    {
+      "name": "鹿児島で大型蓄電池が全焼",
+      "publisher": "PVeye WEB",
+      "url": "https://www.pveye.jp/eye_sight/view/5101/",
+      "title_verbatim": "鹿児島で大型蓄電池が全焼 | 再生可能エネルギーの専門メディア　PVeyeWEB",
+      "checked_on": "2026-09-20",
+      "used_in": "src/components/Report2026Body.tsx:242"
+    },
+    {
+      "name": "容量市場メインオークション約定結果",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/news/010680.html",
+      "title_verbatim": "容量市場メインオークション約定結果（対象実需給年度：2029年度）の公表について｜電力広域的運営推進機関",
+      "checked_on": "2026-09-21",
+      "used_in": "src/data/capacity-market-history.ts:120（commit dc75185 で削除済み）/ src/app/tools/capacity-market-bid/page.tsx:351（現行は 347・357・398）"
+    },
+    {
+      "name": "AEMO 2026 ISP",
+      "publisher": "AEMO",
+      "url": "https://www.aemo.com.au/energy-systems/major-publications/integrated-system-plan-isp/2026-integrated-system-plan-isp",
+      "title_verbatim": "AEMO | 2026 Integrated System Plan (ISP)",
+      "checked_on": "2026-09-21",
+      "aliases": [
+        "AEMO 2026 ISP（統合系統計画）"
+      ],
+      "used_in": "src/data/global-markets.ts:195"
+    },
+    {
+      "name": "IRS Notice 2026-15 (FEOC)",
+      "publisher": "米国財務省（U.S. Department of the Treasury）・内国歳入庁（IRS）",
+      "url": "https://www.irs.gov/pub/irs-drop/n-26-15.pdf",
+      "title_verbatim": "Guidance to Apply Interim Safe Harbors for Purposes of Determining a Taxpayer’s Material Assistance from a Prohibited Foreign Entity; Other Prohibited Foreign Entity Guidance",
+      "checked_on": "2026-09-21",
+      "note": "要確認（needs_check）",
+      "used_in": "src/data/global-markets.ts:55"
+    },
+    {
+      "name": "SolarPower Europe European Battery Market Outlook 2026-2030",
+      "publisher": "SolarPower Europe",
+      "url": "https://www.solarpowereurope.org/insights/outlooks/european-battery-market-outlook-2026-2030-1",
+      "title_verbatim": "European Battery Market Outlook 2026-2030",
+      "checked_on": "2026-09-20",
+      "used_in": "src/data/global-markets.ts:90"
+    },
+    {
+      "name": "需給調整市場とは",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/outline/outline.html",
+      "title_verbatim": "需給調整市場とは | 取引概要 | 一般社団法人 電力需給調整力取引所",
+      "checked_on": "2026-09-21",
+      "used_in": "explainer/grid-scale-bess.sources（Ck-1 A11 で差し替え）"
+    },
+    {
+      "name": "取引規程（需給調整市場）",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/outline/docs/kitei_ver.18_260701.pdf",
+      "title_verbatim": "取引規程（需給調整市場） 2026年７月１日 実施 一般社団法人電力需給調整力取引所（PDF 1頁。掲載ページ https://www.eprx.or.jp/outline/announcement.html の title「需給調整市場に係る取引規程等の公表 | 取引概要 | 一般社団法人 電力需給調整力取引所」）",
+      "checked_on": "2026-09-22",
+      "used_in": "glossary 9 件の detail（A11-2-17）／explainer/tertiary-reserve-1-detail.sources（A11-2-15）／explainer/aggregator-business.sources（A11-2-16-c）"
+    },
+    {
+      "name": "取引実績",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/information/results.php",
+      "title_verbatim": "取引実績 | 取引情報 | 一般社団法人 電力需給調整力取引所",
+      "checked_on": "2026-09-22",
+      "used_in": "links/occto-data.description（A11-2-07-b）／glossary/tertiary-reserve-2.detail（A11-2-11）"
+    },
+    {
+      "name": "取引ガイド（全商品）",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
+      "title_verbatim": "取引ガイド （全商品） 2026年 7月 1日 第10版（PDF 1頁）",
+      "checked_on": "2026-09-22",
+      "used_in": "explainer/balancing-market-practical.sources（A11-2-16-b）"
+    },
+    {
+      "name": "需給調整市場の参加申込",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/outline/application.html",
+      "title_verbatim": "需給調整市場の参加申込 | 取引概要 | 一般社団法人 電力需給調整力取引所",
+      "checked_on": "2026-09-22",
+      "used_in": "explainer/aggregator-business.sources（A11-2-16-c）"
+    },
+    {
+      "name": "容量市場関係の情報・手続き",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/various/capacity-market/",
+      "title_verbatim": "容量市場関係の情報・手続き｜電力広域的運営推進機関",
+      "checked_on": "2026-09-22",
+      "used_in": "explainer/bess-revenue-simulation.sources（A11-2-16-a）"
+    },
+    {
+      "name": "（参考資料）需給調整市場の概要",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2018/files/jukyu_shijo_03_05_02_02.pdf",
+      "title_verbatim": "第３回需給調整市場検討小委員会 資料５－２－２ 意見募集資料 （参考資料） 需給調整市場の概要 ２０１８年４月２７日 電力広域的運営推進機関（PDF 1頁）",
+      "checked_on": "2026-09-22",
+      "used_in": "explainer/balancing-market.sources（A11-2-24）"
+    },
+    {
+      "name": "容量市場業務マニュアル　容量停止計画の調整業務編（実需給年度の2年度前に行う容量停止計画の調整）（対象実需給年度：2026年度以降）",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/news/012415.html",
+      "title_verbatim": "容量市場　実務説明会（容量停止計画の調整業務）（対象実需給年度：2028年度）の開催案内について｜電力広域的運営推進機関（本文に資料名が逐語で載る。マニュアル直後の空白は全角）",
+      "checked_on": "2026-09-22",
+      "used_in": "policy-events/capacity-outage-plan-briefing-2026-06.description（A5-12）"
+    },
+    {
+      "name": "経済産業省「蓄電池」（経済安全保障政策）",
+      "publisher": "経済産業省 商務情報政策局 電池産業課",
+      "url": "https://www.meti.go.jp/policy/economy/economic_security/battery/",
+      "title_verbatim": "蓄電池 （METI/経済産業省）",
+      "checked_on": "2026-09-25",
+      "note": "経済安全保障推進法に基づく蓄電池の供給確保計画の認定一覧（2026-09-25 時点で 45 件・うち認定取消 3 件）。curl は 202（本文 0 バイト）の bot 判定のためブラウザで取得。",
+      "used_in": "explainer/national-battery-supply-plan.sources"
+    }
+  ]
 }

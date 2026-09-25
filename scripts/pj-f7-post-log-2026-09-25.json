@@ -1,0 +1,37 @@
+[
+ {
+  "endpoint": "projects",
+  "slug": "kyuden-ishikari-bess",
+  "result": "ok",
+  "id": "nm4fi31d2cb",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "nozomi-usuki-bess",
+  "result": "ok",
+  "id": "3troa83bcd",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "tokuman-saga-bess",
+  "result": "ok",
+  "id": "dv0zpdb4d6",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "buddynet-izumo-koshi-bess",
+  "result": "ok",
+  "id": "4yv2yhwfg",
+  "diffs": []
+ },
+ {
+  "endpoint": "projects",
+  "slug": "hirasol-izumizaki-bess",
+  "result": "ok",
+  "id": "mel5prdlb6",
+  "diffs": []
+ }
+]

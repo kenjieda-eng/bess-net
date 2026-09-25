@@ -70,16 +70,31 @@ function isPrefMatch(input_pref: string, subsidy_prefs: string[]): boolean {
 }
 
 /**
- * 受付を終えた制度は候補に出さない（Ck-1b ■3・2026-09-23）。
+ * 申し込めない制度は候補に出さない（Ck-1b ■3・2026-09-23 ／ 金曜#7 ⑦(a)・2026-09-25）。
  * 表示側と同じ導出関数（deriveSubsidyStatus・L-EIC-027）で判定する＝「同じ意味の値を二箇所で算出しない」（#121）。
  * ★is_rolling（随時）のレコードは isDeadlineValid を必ず通るため、status を見ないと
  *   受付を終えた商品（例: DBJ 環境格付融資）が Top10 に出続ける。
+ * ★「採択結果公表」も申し込めない点は「受付終了」と同じ（金曜#7 ⑦(a)）。deriveSubsidyStatus では
+ *   終端状態として締切超過より優先されるため、受付終了だけを見ていると候補に残っていた。
  */
-function isClosedForApplication(s: PrecomputedSubsidy, target_iso: string): boolean {
-  return deriveSubsidyStatus(
+export const CLOSED_FOR_APPLICATION_STATUSES = ['受付終了', '採択結果公表'] as const;
+
+export function isClosedForApplication(s: PrecomputedSubsidy, target_iso: string): boolean {
+  const derived = deriveSubsidyStatus(
     { status: s.status ?? [], deadline_iso: s.deadline_iso, start_iso: s.start_iso, is_rolling: s.is_rolling },
     target_iso,
-  ) === '受付終了';
+  );
+  return (CLOSED_FOR_APPLICATION_STATUSES as readonly string[]).includes(derived);
+}
+
+/** マッチングの基準日（入力の設置希望日 → 無ければ当日）。matchSubsidies と表示側で同じ日を使う（#121） */
+export function matchTargetDate(input: Pick<MatchInput, 'install_target_date'>): string {
+  return input.install_target_date || new Date().toISOString().slice(0, 10);
+}
+
+/** 申込可（候補になりうる）件数。件数表示は必ずこの関数で出す（焼き込み禁止・#118/#121） */
+export function countOpenForApplication(subsidies: PrecomputedSubsidy[], target_iso: string): number {
+  return subsidies.filter((s) => !isClosedForApplication(s, target_iso)).length;
 }
 
 function isDeadlineValid(s: PrecomputedSubsidy, target_iso: string): boolean {
@@ -97,7 +112,7 @@ export function matchSubsidies(
   subsidies: PrecomputedSubsidy[],
   limit = 10
 ): MatchResult[] {
-  const target = input.install_target_date || new Date().toISOString().slice(0, 10);
+  const target = matchTargetDate(input);
 
   const results: MatchResult[] = [];
 
