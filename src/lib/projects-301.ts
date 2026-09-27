@@ -67,8 +67,11 @@ export const PROJECTS_301: Record<string, string> = {
   '/projects/pr-looop-tokyo':                      '/projects/pr-looop-saitama', // Looop比企郡小川町 同一案件（東京都事業採択のため東京都表記になっていた）
   '/projects/pr-co86244-bess-5':                   '/projects/sunvillage-echizen', // 越前2MW/8MWh 同一案件
   '/projects/pr-co175281-bess':                    '/projects/pr-co175281-shizuoka', // ブルースカイ牧之原 同一案件
-  '/projects/pr-co143072-bess-3':                  '/projects/pr-co143072-bess-2', // テス×東京センチュリー徳島2件 同一提携
-  '/projects/pr-co89612-bess':                     '/projects/pr-co89612-bess-2', // EUKA 200MW/800MWh 同一プロジェクト
+  // ★2026-09-27 Ck-2 実行便①（I-2-hit・裁定 R28）: 次の 2 本の 301 を削除した。
+  //   宛先の pr-co143072-bess-2 / pr-co89612-bess-2 は Pj2-H 実行便で EXCLUDED（200＋noindex）になったため、
+  //   301 の着地先が noindex ページになっていた。代表が一意でないので 301 先を選び直すこともできない。
+  //   → 301 を外し、元 slug の側を projects-excluded.ts に明示追加した（自動 union から外れるため）。
+  //   検査: scripts/verify-no-301-links.ts の軸3 が「宛先が 301 元／EXCLUDED でない」を prebuild で見る。
   '/projects/pr-co93934-bess':                     '/projects/ota-bess', // fantasista群馬太田8.14MWh 同一案件（3重登載）
   '/projects/pr-co93934-bess-2':                   '/projects/ota-bess', // fantasista群馬太田8.14MWh 同一案件（3重登載）
   '/projects/pr-co161802-miyagi-2':                '/projects/nc-sendai-kamiayashi', // verify_clusters判定 2026-08

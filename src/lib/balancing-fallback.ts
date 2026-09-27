@@ -56,16 +56,32 @@ export const BALANCING_BATTERY_FALLBACK: Record<BalancingFyKey, Record<Balancing
   },
 };
 
+/**
+ * 各年度の取りまとめ結果の EPRX 公表日（同じ意味の値を複数箇所で書かない・#121）。
+ * 2026-09-27 Ck-2 実行便① ■5（H-1a-5・裁定 R20）で SSOT 化した。
+ *   FY2024: 一次（summary_2024.pdf）表紙の逐語「2024年度の取引実績について／一般社団法人 電力需給調整力取引所／2025年6月19日」。
+ *           HTTP Last-Modified（2025-06-19 09:47 JST）とも一致。
+ *           ★旧記載の「2025年3月公表」は EPRX のどの面（掲載ページ・PDF 表紙・Last-Modified）にも根拠が無い誤記だった。
+ *           FY2024（2024/4〜2025/3）の通年確報を 2025年3月に出すことは原理的にもできない。
+ *   FY2025: 同じく表紙「2026年6月18日」。掲載ページの一覧注記「※2026年6月18日更新」とも一致。
+ * 表示側（本ファイルの note・BalancingSourceComparison の FY_OPTIONS・/tools/balancing-revenue の本文）は
+ * 必ずここを参照する。日付を直書きしない。
+ */
+export const BALANCING_FY_PUBLISHED: Record<BalancingFyKey, string> = {
+  FY2024: '2025年6月19日',
+  FY2025: '2026年6月18日',
+};
+
 /** FY セレクタの表示ラベル・注記（表示側で二重に書かないよう SSOT 化） */
 export const BALANCING_FY_META: Record<BalancingFyKey, { label: string; note: string; badge: string }> = {
   FY2024: {
     label: 'FY2024（通年・確定）',
-    note: '2024/4〜2025/3 通年 — EPRX 2025年3月公表',
+    note: `2024/4〜2025/3 通年 — EPRX ${BALANCING_FY_PUBLISHED.FY2024}公表`,
     badge: '既定',
   },
   FY2025: {
     label: 'FY2025（通年・確定）',
-    note: '2025/4〜2026/3 通年 — EPRX 2026年6月18日公表（旧・上期暫定値から改訂）',
+    note: `2025/4〜2026/3 通年 — EPRX ${BALANCING_FY_PUBLISHED.FY2025}公表（旧・上期暫定値から改訂）`,
     badge: '通年・確定',
   },
 };

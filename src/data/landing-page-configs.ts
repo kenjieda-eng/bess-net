@@ -24,10 +24,15 @@ const FY2024 = '2024-04-01';
 const T2_BATTERY = catalogValue(tertiary2Battery, FY2024);
 const T2_VPP = catalogValue(tertiary2Vpp, FY2024);
 const T2_PUMPED = catalogValue(tertiary2Pumped, FY2024);
-/** 「蓄電池109.43/VPP46.24/揚水0.72(三次②FY2024)＝約150倍」相当の文を動的に作る */
+/**
+ * 「蓄電池109.43/VPP46.24/揚水0.72(三次②FY2024)＝約N倍」相当の文を動的に作る。
+ * 値も倍率も catalog から算出（焼き込まない・#121）。倍率は現行データで 152 倍。
+ * ★Ck-2 ■5（H-1a-7・裁定 R20）: これらの電源種別別の年平均は EPRX の公表値ではなく、
+ *   EPRX が公表した月次値から当サイトが算出した約定月の単純平均。算出主体を画面に明記する。
+ */
 const T2_SPREAD_TEXT =
   T2_BATTERY !== null && T2_VPP !== null && T2_PUMPED !== null
-    ? `蓄電池${T2_BATTERY}/VPP${T2_VPP}/揚水${T2_PUMPED}(三次②FY2024)＝約${Math.round(T2_BATTERY / T2_PUMPED)}倍の二極構造`
+    ? `蓄電池${T2_BATTERY}/VPP${T2_VPP}/揚水${T2_PUMPED}(三次②FY2024・円/ΔkW・30分／EPRX公表の月次値から当サイト集計)＝約${Math.round(T2_BATTERY / T2_PUMPED)}倍の二極構造`
     : '蓄電池・VPPと揚水の間にある大きな価格差';
 
 export type LandingPageType = 'buyer' | 'seller';

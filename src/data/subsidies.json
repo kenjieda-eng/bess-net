@@ -653,7 +653,6 @@
       "industrial"
     ],
     "applicable_entities": [
-      "individual",
       "corporate"
     ],
     "kind": [
@@ -1983,8 +1982,7 @@
       "self_consumption"
     ],
     "applicable_entities": [
-      "corporate",
-      "municipal"
+      "corporate"
     ],
     "kind": [
       "subsidy"
@@ -2610,7 +2608,6 @@
       "industrial"
     ],
     "applicable_entities": [
-      "individual",
       "corporate"
     ],
     "kind": [
@@ -3165,7 +3162,6 @@
     ],
     "applicable_use_cases": [],
     "applicable_entities": [
-      "individual",
       "municipal"
     ],
     "kind": [
@@ -3410,8 +3406,7 @@
       "self_consumption"
     ],
     "applicable_entities": [
-      "individual",
-      "corporate"
+      "individual"
     ],
     "kind": [
       "subsidy"
@@ -3494,8 +3489,7 @@
       "self_consumption"
     ],
     "applicable_entities": [
-      "individual",
-      "corporate"
+      "individual"
     ],
     "kind": [
       "subsidy"

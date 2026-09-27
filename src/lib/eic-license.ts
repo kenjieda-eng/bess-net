@@ -15,7 +15,7 @@
 
 /** JEPX のトップ（リンク先はここに寄せる） */
 export const JEPX_TOP = 'https://www.jepx.jp/';
-/** EPRX のトップ（同上。EPRX 利用規約 §3） */
+/** EPRX のトップ（同上。EPRX「サイトのご利用にあたって」３．リンクについて） */
 export const EPRX_TOP = 'https://www.eprx.or.jp/';
 /** OCCTO のトップ（OCCTO は深いリンク可なので寄せない。表記の一貫性のために置く） */
 export const OCCTO_TOP = 'https://www.occto.or.jp/';
@@ -56,7 +56,9 @@ export const SOURCE_LINK_POLICIES: readonly SourcePolicy[] = [
     top: EPRX_TOP,
     termsUrl: 'https://www.eprx.or.jp/terms/',
     basis:
-      'EPRX 利用規約 §3「リンクについて」（https://www.eprx.or.jp/terms/ ・2026-09-20 取得）: ' +
+      // Ck-2 ■5（裁定 R21）: 資料名を一次の実名へ。EPRX に「利用規約」という資料は無く、ページの実名は
+      //   「サイトのご利用にあたって」（<title>・H1・パンくずで一致）。節は「３．リンクについて」で「§」は一次に 0 件。
+      'EPRX「サイトのご利用にあたって」３．リンクについて（https://www.eprx.or.jp/terms/ ・2026-09-27 再取得）: ' +
       '「本サイトへのリンクは原則としてトップページ（https://www.eprx.or.jp/）とし、当法人のサイトである旨を明示してください。」',
   },
   {

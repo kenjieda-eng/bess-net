@@ -3,7 +3,7 @@
  *
  * 設計:
  *   - Server Component、静的データのみ (鉄則 #2 完全準拠、SSR 外部 API 0)
- *   - シード 10件 (公開情報ベース)
+ *   - 公開情報ベース。件数は VISIBLE_INCIDENTS.length（hidden を除く）
  *   - フィルタ UI は Sprint 5 で追加予定 (現在は全件表示)
  */
 

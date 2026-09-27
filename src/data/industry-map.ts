@@ -154,7 +154,11 @@ const PLAYERS_RAW: Player[] = [
 
   // ── 金融機関 / PF ──
   // ※ DBJ / 地方銀行は補助金/PF プログラム単位で linkable、operator slug ではなく subsidy_slug を使う (EDA 5/16 19:00 指摘対応)
-  { id: 'dbj', name: '日本政策投資銀行 (DBJ)', category: 'finance', origin: 'JP', listed: false, activity: 5, subsidy_slug: 'dbj-environmental-finance', external_url: 'https://www.dbj.jp/', note: '大型 BESS PF レンダー' },
+  // 2026-09-27 Ck-2 実行便① ■7（G-src-01・裁定 R18）: note を一次の逐語へ。
+  //   旧 '大型 BESS PF レンダー' は DBJ の公表ページ 2 本のいずれにも無い主張だった。
+  //   「DBJ環境格付融資」= enviro/ の商品名、「新規申込受付終了」= rating/ の注記
+  //   （逐語「※商品見直しに伴い、環境格付は新規申込受付を終了しています」）。2026-09-27 実機確認。
+  { id: 'dbj', name: '日本政策投資銀行 (DBJ)', category: 'finance', origin: 'JP', listed: false, activity: 5, subsidy_slug: 'dbj-environmental-finance', external_url: 'https://www.dbj.jp/', note: 'DBJ環境格付融資（新規申込受付終了）' },
   { id: 'mufg', name: '三菱 UFJ 銀行', category: 'finance', origin: 'JP', listed: true, activity: 4 },
   { id: 'smbc', name: '三井住友銀行', category: 'finance', origin: 'JP', listed: true, activity: 4 },
   { id: 'mizuho', name: 'みずほ銀行', category: 'finance', origin: 'JP', listed: true, activity: 4 },
@@ -211,7 +215,10 @@ export const RELATIONS: Relation[] = [
   { from: 'fluence', to: 'eurus-energy', type: 'epc_contract' },
 
   // PF (金融機関 → 事業主)
-  { from: 'dbj', to: 'jfe-engi', type: 'equity', note: '大型 BESS PF レンダー' },
+  // 2026-09-27 Ck-2 実行便①: 同じ無根拠の主張が 157 行目と 2 箇所にあった（#123 と同型）。
+  //   片方だけ直すと repo に同じ主張が残るため note を外す。関係（dbj → jfe-engi）自体は本便で検証していないので
+  //   別の文言に差し替えることはしない。
+  { from: 'dbj', to: 'jfe-engi', type: 'equity' },
   { from: 'dbj', to: 'eurus-energy', type: 'equity' },
   { from: 'mufg', to: 'orix', type: 'equity', note: 'シンジケートローン' },
   { from: 'smbc', to: 'tokyo-gas', type: 'equity' },

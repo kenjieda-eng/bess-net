@@ -29,7 +29,8 @@ import { siteConfig } from '@/lib/site-config';
 export const revalidate = 86400;
 
 // Lc-1(2026-09-20): ライセンス表記の逐語表示と、カタログに残る 404 license_url の正規化
-// Lc-2(2026-09-20): EPRX 利用規約 §3 に従いリンク先はトップへ（EPRX_TOP）
+// Lc-2(2026-09-20): EPRX「サイトのご利用にあたって」３．リンクについて に従いリンク先はトップへ（EPRX_TOP）
+//   ※ Ck-2(2026-09-27): 資料名を一次の実名へ是正（「EPRX 利用規約」「§」は一次に存在しない）
 import { licenseNoticeLines, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
 
 // ─── catalog JSON 直読み（18 系列） ────────────────────────────────────────────
@@ -80,8 +81,10 @@ export const metadata: Metadata = {
 
 // ─── Lc-1 ■4: ライセンス表記は逐語で出す（要約しない・2026-09-20） ─────────────
 // 表示中の EPRX 系列 18 本は license_notice が全て同一・空は 0 本（実測）。代表として 1 本から読む。
-// ★2 行目「…非商用・出典明示で利用可。…商用利用は事前契約…」は EPRX 条文に無い当社データ基盤側の判断で
-//   EPRX へ照会中（Lc-1 ■1）。判定が返るまで表示しない＝逐語で出すのは出典行のみ。
+// ★2 行目「EPRX 利用規約 §4 に従い、非商用・出典明示で利用可。…」は、資料名（実名は EPRX「サイトのご利用にあたって」）・
+//   節の呼び方（「§」は一次に 0 件）・「非商用」の語（同じく 0 件）の 3 点が一次と食い違う（2026-09-27 実機で機械計数・Ck-2 ■5）。
+//   一次の「４．著作権等について」は「商用目的（個人利用・組織内利用を除きます。）…でない場合に限り自由に利用できます」で、
+//   「非商用」と要約すると carve-out が消える。上流カタログの修正を待つ間は表示しない＝逐語で出すのは出典行のみ。
 const EPRX_META = priceOverallPrimary.meta as unknown as { license_notice?: string; license_url?: string };
 const EPRX_SOURCE_LINE = licenseNoticeLines(EPRX_META.license_notice)[0] ?? '';
 const EPRX_LICENSE_URL = normalizeLicenseUrl(EPRX_META.license_url) ?? 'https://www.eprx.or.jp/terms/';
@@ -191,15 +194,16 @@ export default function BalancingTrackerPage() {
             </p>
           )}
           <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 16, lineHeight: 1.7 }}>
-            ライセンス表記（EIC カタログ license_notice の逐語）:「{EPRX_SOURCE_LINE}」 ／ 規約:{' '}
+            出典表記（EIC カタログ license_notice 1 行目の逐語）:「{EPRX_SOURCE_LINE}」 ／ 利用条件:{' '}
             <a href={EPRX_LICENSE_URL} target="_blank" rel="noopener noreferrer">
-              EPRX 利用規約
+              EPRX「サイトのご利用にあたって」
             </a>
             <br />
-            {/* ★Lc-2 ■2: 「§4 が何を定めているか」（条文の説明）と「当サイトが非商用か」（自己判定・未確定）を分ける。
-                当サイトを非商用と名乗らない。照会の結果が出たら書き直す。 */}
-            EPRX 利用規約 §4 に従い、出典と加工した旨を明記しています。§4 は商用目的での利用に EPRX との事前契約を求めており、
-            当サイトの利用が該当するかは EPRX に照会中です。
+            {/* ★Lc-2 ■2: 「同項が何を定めているか」（条文の説明）と「当サイトが非商用か」（自己判定・未確定）を分ける。
+                当サイトを非商用と名乗らない。照会の結果が出たら書き直す。
+                ★Ck-2 ■5（裁定 R21）: 資料名を一次の実名「サイトのご利用にあたって」・節「４．著作権等について」へ。 */}
+            EPRX「サイトのご利用にあたって」の「４．著作権等について」に従い、出典と、編集・加工等を行った旨を記載しています。
+            同項は商用目的での利用に EPRX との事前契約を求めており、当サイトの利用が該当するかは EPRX に照会中です。
           </p>
 
           {/* ─ L-EIC-018 重要注記 ─ */}
@@ -244,7 +248,7 @@ export default function BalancingTrackerPage() {
                   一般社団法人エネルギー情報センター
                 </a>
                 ／ 出典:{' '}
-                {/* ★Lc-2 ■3: EPRX 利用規約 §3 によりリンクはトップ。資料名は地の文で残す。 */}
+                {/* ★Lc-2 ■3: EPRX「サイトのご利用にあたって」３．リンクについて によりリンクはトップ。資料名は地の文で残す。 */}
                 <a href={EPRX_TOP} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 4 }}>
                   EPRX
                 </a>

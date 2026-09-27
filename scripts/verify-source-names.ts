@@ -23,6 +23,12 @@
  * 実行: npm run verify:source-names            （src のみ。env があれば microCMS も）
  *       set -a && . ./.env.local && set +a && npm run verify:source-names
  *       … --strict を付けると未登録があれば exit 1
+ *       … --no-cms を付けると env があっても microCMS を読まない（src だけ）
+ *
+ * ★prebuild では `npm run verify:source-names:src`（--no-cms）として走る（2026-09-27 Ck-2 実行便① ■8）。
+ *   Vercel のビルド環境には microCMS の env があるため、素で入れると毎ビルドで全件 GET してしまう（鉄則 #2）。
+ *   --no-cms なら src の出典欄だけを見る静的検査になり、microCMS へのリクエストは 0 のまま常設できる。
+ *   microCMS 側も見るときは .env.local を読み込んで手で回す（書く前に 1 回）。
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
@@ -33,6 +39,7 @@ const SRC = path.join(ROOT, 'src');
 const EIC_DIR = path.join(SRC, 'data', 'eic');
 const LEDGER = path.join(SRC, 'data', 'source-documents.json');
 const STRICT = process.argv.includes('--strict');
+const NO_CMS = process.argv.includes('--no-cms');
 
 type Doc = { name: string; publisher: string; url: string; title_verbatim: string; checked_on: string; aliases?: string[] };
 type Hit = { name: string; publisher: string; location: string };
@@ -107,6 +114,7 @@ for (const f of walk(SRC)) {
 
 // microCMS（env があるときだけ・GET のみ）
 async function cmsHits(): Promise<Hit[] | null> {
+  if (NO_CMS) return null;
   const domain = process.env.MICROCMS_SERVICE_DOMAIN;
   const key = process.env.MICROCMS_API_KEY;
   if (!domain || !key) return null;
@@ -155,7 +163,7 @@ async function cmsHits(): Promise<Hit[] | null> {
     ledgerProblems.slice(0, 20).forEach((p) => console.warn(`   - ${p}`));
   }
   const cms = await cmsHits();
-  if (cms === null) console.log('[verify:source-names] 注記: microCMS の env が無いため src のみ検査（microCMS も見るなら .env.local を読み込んで実行）');
+  if (cms === null) console.log(`[verify:source-names] 注記: ${NO_CMS ? '--no-cms のため' : 'microCMS の env が無いため'} src のみ検査（microCMS も見るなら .env.local を読み込んで --no-cms 無しで実行）`);
   // 資料名ではないもの: JSX（内部リンク「<Link…>」）・テンプレート変数（「${…}」「{…}」は定数側で台帳と突合）・
   // 当サイト自身や当サイトの解説記事を指す「」（本サイト「BESS-NET」／解説「…」）
   const SELF_PUBLISHERS = /^(本サイト|当サイト|解説|蓄電所ネット|関連記事)$/;

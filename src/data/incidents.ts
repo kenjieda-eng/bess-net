@@ -57,28 +57,49 @@ export const REGION_LABELS: Record<IncidentRegion, string> = {
   other: 'その他',
 };
 
-// シード 10件 (公開情報のみ)
+// 公開情報のみ。件数は固定で書かない（表示・件数は必ず VISIBLE_INCIDENTS を数える。#121）
 export const INCIDENTS: Incident[] = [
   {
     id: 'moss-landing-2021',
+    // Ck-2 ■1（E-inc-01〜07・裁定 R23）: 本文が一次と真逆だったため全面是正（2026-09-27 に一次を再取得・逐語一致）。
+    //   旧: 「Vistra 運営、Tesla Megapack で熱暴走発生」「2024/9 にも続発」
+    //   一次（Vistra 調査報告 2022-01-21）: 「the investigation found that the batteries were not the initial source
+    //   of smoke or a cause of the incident.」＝電池は発煙の起点でも原因でもない。セルは LG Energy Solution・EPC は Fluence。
+    //   2024/9 の事象は一次不在（隣接する PG&E Elkhorn の 2022-09-20 火災との混同。下の moss-landing-2024 参照）。
     date: '2021-09-04',
     location: '米国カリフォルニア州 Moss Landing',
     region: 'us',
-    facilityName: 'Moss Landing Energy Storage Facility (Phase 1)',
+    facilityName: 'Moss Landing Energy Storage Facility — Phase I（Moss 300）',
     capacity_mwh: 1200,
     severity: 'major',
-    cause: 'thermal_runaway',
-    summary: 'Moss Landing 蓄電所 (Vistra 運営、Tesla Megapack) で 2021/9 に熱暴走発生、施設の一部停止。以後 2022/2、2024/9 にも同施設で続発。',
-    lessons: '大型 BESS の単一サイト集約リスク。スプリンクラー作動による派生被害も議論。',
+    // 一次が電池起因を否定し、発煙源を空調ユニットの軸受故障、電池損傷を消火配管の継手不良としているため機械系。
+    cause: 'mechanical',
+    summary:
+      '2021年9月4日夜、Vistra の Moss Landing Energy Storage Facility Phase I（300MW/1,200MWh。セルは LG Energy Solution、EPC は Fluence）で水ベースの熱抑制（消火）設備が作動し、電池モジュールの約7%が損傷した。Vistra の調査は「空調ユニットの軸受故障に由来する微量の煙を検知して消火設備が作動し、可とう管・配管の継手不良で電池ラックに放水された。最初の放水時点で全モジュールの温度は規定値内であり、電池は発煙の起点でも事故原因でもなかった」と結論づけている。負傷者・周辺への影響はなく、別棟の Phase II（100MW/400MWh）は稼働を継続した。2022年2月13日にはその Phase II でも同種の事象（損傷約20%）が起きている。',
+    lessons:
+      '電池そのものが健全でも、付帯設備（空調・消火配管）の不具合が電池損傷に連鎖しうる。消火系の誤作動・継手の施工品質は電池の安全設計と同じ重みで検証する必要がある。Vistra は是正措置を実施したうえで段階的に復旧した。',
     sourceUrls: [
-      'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-power-procurement/energy-storage-incidents',
+      // Vistra（運営者）調査報告 2022-01-21。本事案の原因・損傷率の一次
+      'https://investor.vistracorp.com/news?item=217',
+      // Vistra 声明（2021-09-05 / 09-07 / 09-30）。発生当日〜1か月の一次
+      'https://investor.vistracorp.com/news?item=197',
+      // Vistra の当該サイト公式「Previous Incidents」。2021-09 / 2022-02 の位置づけと「火災ではない」旨
+      'https://www.mosslandingresponse.com/previous-incidents',
+      // ★旧 sourceUrl の cpuc.ca.gov .../energy-storage-incidents は HTTP 404（2026-09-27 実機・33,055 バイト・<title>Page not found</title>）
     ],
   },
   {
     id: 'moss-landing-2024',
     // Ck-1a ■1-5: 非表示（承認表 §0-4 src/data/incidents.ts:83 moss-landing-2024 行・同定できず）。
-    //   2024-09-26 の Moss Landing 火災は一次で確認できず、PG&E Elkhorn 火災（2022-09-20・Tesla Megapack）と
-    //   Vistra の火災（2025-01-16）を混同している。引用の EPA 資料も実在を確認できない。
+    // Ck-2 ■1 で一次により再確認（2026-09-27）。★作り直さないこと。
+    //   ・Vistra 公式 https://www.mosslandingresponse.com/previous-incidents は自社サイトの事象を
+    //     2021-09（Moss 300）と 2022-02（Moss 100）の2件のみとし、2024年の事象を一切掲げていない。
+    //     同ページは「2022年に隣接する別会社の設備で火災があり、しばしば Vistra のものと誤解される」と明記。
+    //   ・その別会社の事案＝PG&E Elkhorn BESS（182.5MW/730MWh・Tesla Megapack）の 2022-09-20 火災。
+    //     Elkhorn は Vistra のサイトの Phase 3 ではなく、隣接する PG&E Moss Landing 変電所内の別設備。
+    //     https://www.pge.com/en/newsroom/currents/safety/pg-e-shares-findings-of-september-2022-moss-landing-megapack-inc.html
+    //   ・Vistra の実在する火災は 2025-01-16（Moss 300）。下の moss-landing-2025 として起票済み。
+    //   ・引用の EPA 資料 .../2024-12/moss-landing-bess-fact-sheet.pdf は HTTP 404（2026-09-27 実機）。
     hidden: true,
     date: '2024-09-26',
     location: '米国カリフォルニア州 Moss Landing',
@@ -94,18 +115,59 @@ export const INCIDENTS: Incident[] = [
     ],
   },
   {
+    // Ck-2 ■1（E-inc-18・裁定 R23）で新設。実在する重大事案が DB から欠落していた。
+    //   2026-09-18 の再燃は独立レコードにせず lessons に織り込む（同一設備・撤去未了に由来する再着火のため）。
+    //   ★countyofmonterey.gov はブラウザ以外の UA に 403 を返す（curl では 423 バイト）。
+    //     deploy 後のリンク検査で偽の「死亡」判定が出うるので、検査側で例外に入れること。
+    id: 'moss-landing-2025',
+    date: '2025-01-16',
+    location: '米国カリフォルニア州 Monterey County（Moss Landing）',
+    region: 'us',
+    facilityName: 'Vistra Moss Landing Energy Storage Facility — Moss 300（Phase I）',
+    capacity_mwh: 1200,
+    severity: 'major',
+    // Vistra 自身が 2026-09 時点でも逐語「The cause of the January 16 battery fire remains unknown」と明言しているため
+    // 'thermal_runaway' を当てない（一次を越える断定になる）。
+    cause: 'unknown',
+    summary:
+      '2025年1月16日、Vistra の Moss Landing サイトにある 300MW の蓄電設備（Moss 300／Phase I）で電池火災が発生。社員が直ちに対応し North County Fire Protection District が出動、火災は Moss 300 の建屋内に留まり、他の蓄電設備およびガス火力には延焼しなかった。予防措置として周辺住民 約1,200人が24時間にわたり避難した。米国 EPA によれば当該 300MW 設備は約10万個のリチウムイオン電池を収容しており、うち約55%が火災で損傷した。原因は 2026年9月時点でも Vistra 自身が「不明」としており、調査が継続している。',
+    lessons:
+      '損傷した電池は撤去が完了するまで再着火しうる（2025年2月18日および2026年9月18日に再燃・後者は 1/3マイル圏に屋内退避指示）。避難は予防措置として行われ、EPA と Monterey Bay Air Resources District はいずれも健康リスクとなる大気環境を確認していない。EPA 監督下の電池撤去・処分には年単位の期間を要している。',
+    sourceUrls: [
+      // Vistra（運営者）公式の事故対応サイト。発生日時・避難規模・原因不明の継続を確認
+      'https://www.mosslandingresponse.com/',
+      // US EPA 対応ページ。設備規模・損傷率・EPA の役割・2026-09-18 の再燃
+      'https://www.epa.gov/ca/moss-landing-vistra-battery-fire',
+      // Monterey County（地元当局）。2025-02-18 の再燃と現地対応体制
+      'https://www.countyofmonterey.gov/Home/Components/News/News/11188',
+    ],
+  },
+  {
     id: 'liverpool-2020',
+    // Ck-2 ■1（E-inc-08〜13・裁定 R23）: 出典が 404 だったため消防当局の一次へ差し替え、本文を逐語で書き直した。
+    //   cause 'thermal_runaway' は維持（moss-landing-2021 と違い、消防の火災調査が明確に熱暴走を推定原因としている）。
+    //   ★capacity_mwh は削除した。20 は MW（出力）であって MWh ではない（Ørsted のリリースは「The 20 megawatt (MW)
+    //     battery … consists of three battery containers」。MFRS 報告書の全文に MWh の記載は 0 件）。
     date: '2020-09-15',
-    location: '英国リバプール',
+    location: '英国リバプール Old Swan（Carnegie Road）',
     region: 'eu',
     facilityName: 'Carnegie Road BESS',
-    capacity_mwh: 20,
     severity: 'moderate',
     cause: 'thermal_runaway',
-    summary: 'Liverpool 近郊の 20MW BESS で 2020/9 に火災発生、約2日間延焼。',
-    lessons: '近隣住宅地への BESS 設置リスク評価の重要性。',
+    summary:
+      '2020年9月15日 00:49、英国リバプール Old Swan の Carnegie Road にある Ørsted の BESS（20MW・NEC 製の電池コンテナ3基構成）で爆発を伴う火災が発生。爆風でコンテナの扉が約6m 飛ばされたが、延焼は3基のうち1基に留まった。防御的な消火活動は計59時間続き、9月17日 10:44 に鎮火（STOP）。消防の火災調査は推定原因を「リチウム電池の故障が熱暴走に移行したことによる失火」とし、電池から放出された可燃性ガスの着火による爆燃（deflagration）の痕跡を確認した。',
+    lessons:
+      '最大の教訓は、出動する消防隊が事前に持っていた現場のリスク情報（Site Specific Risk Information）が不十分だったこと。MFRS はこれを受けて、敷地内に安全情報ボックス（Gerda Box / SIB）を設け、建物図面・危険性・鍵管理者の緊急連絡先・避難計画・消火設備の情報を収める等の勧告をまとめ、英国の全国ガイダンスの土台となった。放水の流出水からはフッ化水素酸（HF）が検出され、環境保護の観点も課題となった。',
     sourceUrls: [
-      'https://www.gov.uk/government/publications/health-and-safety-of-grid-scale-electrical-energy-storage-systems',
+      // Merseyside Fire & Rescue Service（対応した消防当局）自身の公表 2024-02-06
+      'https://www.merseyfire.gov.uk/media-centre/news-press/latest-news/battery-energy-storage-site-enhances-safety-in-response-to-recommendations-from-mfrs/',
+      // MFRS Significant Incident Report v1.2（2021-12）本体。★ホストは第三者（Cherwell District Council の
+      //   planning register）で、MFRS 自身のサイトではない。文書の発行元は MFRS。
+      'https://planningregister.cherwell.gov.uk/Document/Download?module=PLA&recordNumber=154109&planId=1951104&imageId=30&isPlan=False&fileName=Appendix+2++-+Liverpool+BESS+Significant+Investigation+Report+(1).pdf',
+      // Ørsted（事業者）press release 2018-12-24。設備諸元（20MW・NEC 製コンテナ3基）の一次
+      'https://orsted.co.uk/media/newsroom/news/2018/12/orsteds-first-standalone-battery-storage-project-now-complete',
+      // ★旧 sourceUrl の gov.uk .../health-and-safety-of-grid-scale-electrical-energy-storage-systems は
+      //   HTTP 404（2026-09-27 実機・52,491 バイト・<title>Page not found - GOV.UK</title>）
     ],
   },
   {
@@ -184,6 +246,18 @@ export const INCIDENTS: Incident[] = [
   },
   {
     id: 'japan-undisclosed-policy',
+    // Ck-2 ■1（E-inc-14/15・裁定 R23）: 非表示。事故レコードの形をしているが特定の出来事が無い
+    //   （facilityName が「(個別非公表)」＝定義上、同定できる事象が存在しない）。
+    //   date '2023-06' の根拠となる一次が無く、summary の「2025年時点で限定的」「低圧産業用で複数報告」も
+    //   裏づける一次を取得できなかった（R8）。DELETE はせず hidden で /incidents から外す（moss-landing-2024 と同じ扱い）。
+    //   ★下の sourceUrls の fdma.go.jp/mission/prevention/suisin/items/secondary_batteries.html は
+    //     HTTP 404（2026-09-27 実機・17,848 バイト・<title>404 Not Found | 総務省消防庁</title>）。
+    //     復活・移設するときは、生存を確認した次の FDMA 一次を使う（ただし本レコードの主張は支えない）:
+    //       https://www.fdma.go.jp/singi_kento/kento/post-116.html（蓄電池設備のリスクに応じた防火安全対策検討部会）
+    //       https://www.fdma.go.jp/singi_kento/kento/items/post-116/03/houkokusho.pdf（同 報告書・令和５年３月）
+    //       https://www.fdma.go.jp/singi_kento/kento/post-106.html（リチウムイオン蓄電池に係る火災予防上の安全対策に関する検討会）
+    //     内容は事故ではなく制度解説なので、/incidents ではなく explainer 側に置くのが筋（実行便②以降で検討）。
+    hidden: true,
     date: '2023-06',
     location: '日本国内',
     region: 'japan',

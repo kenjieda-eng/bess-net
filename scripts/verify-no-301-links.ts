@@ -8,6 +8,15 @@
  *   ビルド成果物（built HTML）を 1 本の検査で全面走査する形に寄せた。
  *
  * 検査（書込なし）:
+ *   軸0（静的・prebuild 常設／2026-09-27 Ck-2 実行便① ■3・裁定 R28）:
+ *       GLOSSARY_301・PROJECTS_301 の全エントリについて
+ *         (a) 宛先が 301 元でない（301 → 301 の連鎖が無い。middleware は単発ルックアップで畳まない）
+ *         (b) 宛先が表示除外でない（projects: EXCLUDED_PROJECT_SLUGS＝200＋noindex／glossary: GLOSSARY_DISPLAY_EXCLUDED_SLUGS）
+ *       built HTML を見ないので prebuild に置ける。`--static-only` を付けると軸0 だけを走らせて終わる。
+ *       ★依頼書・裁定では「軸3」と呼ばれているが、本スクリプトには既に別の軸3（301 元の宛先が一覧に出ているか）が
+ *         あるため、番号の衝突を避けて軸0 とした（静的で最初に走る位置づけとも合う）。
+ *       起点: Pj2-H 実行便で 301 の宛先 2 本（pr-co143072-bess-2 / pr-co89612-bess-2）を EXCLUDED にしたため、
+ *         301 の着地先が noindex ページになっていた（Ck-2 計画便 I-2-hit）。この軸があれば当日止まっていた。
  *   軸1（配線・静的）: 一覧系の実装が除外関数を呼んでいるか（退行検知）
  *       /glossary 一覧 → isGlossaryListExcluded(   ／ sitemap → GLOSSARY_301_SOURCE_SLUGS・LIST_EXCLUDED_PROJECT_SLUGS
  *       /projects 一覧 → LIST_EXCLUDED_PROJECT_SLUGS ／ 近隣プロジェクトカード → isListExcludedProject(（verify:nearby-cards と同じ窓）
@@ -21,13 +30,40 @@
  */
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '../src/lib/glossary-301';
-import { PROJECTS_301_SOURCE_SLUGS } from '../src/lib/projects-301';
+import { GLOSSARY_301, GLOSSARY_301_SOURCE_SLUGS, GLOSSARY_DISPLAY_EXCLUDED_SLUGS, canonicalGlossarySlug } from '../src/lib/glossary-301';
+import { PROJECTS_301, PROJECTS_301_SOURCE_SLUGS } from '../src/lib/projects-301';
+import { EXCLUDED_PROJECT_SLUGS } from '../src/lib/projects-excluded';
 import { GRID_PAGE_RELATED_TERMS } from '../src/app/grid/[slug]/related-terms';
 
 const STRICT = process.argv.includes('--strict');
+const STATIC_ONLY = process.argv.includes('--static-only');
 const APP = '.next/server/app';
 let fail = 0;
+
+// ── 軸0: 301 の宛先が「301 元」でも「表示除外」でもないこと（静的・prebuild 常設）
+{
+  type Bad = { from: string; to: string; why: string };
+  const bad: Bad[] = [];
+  const slugOf = (p: string) => p.replace(/^\/(glossary|projects)\//, '');
+  for (const [from, to] of Object.entries(GLOSSARY_301)) {
+    const s = slugOf(to);
+    if (GLOSSARY_301_SOURCE_SLUGS.has(s)) bad.push({ from, to, why: '宛先が 301 元（連鎖）' });
+    else if (GLOSSARY_DISPLAY_EXCLUDED_SLUGS.has(s)) bad.push({ from, to, why: '宛先が表示除外' });
+  }
+  for (const [from, to] of Object.entries(PROJECTS_301)) {
+    const s = slugOf(to);
+    if (PROJECTS_301_SOURCE_SLUGS.has(s)) bad.push({ from, to, why: '宛先が 301 元（連鎖）' });
+    else if (EXCLUDED_PROJECT_SLUGS.has(s)) bad.push({ from, to, why: '宛先が EXCLUDED（200＋noindex）' });
+  }
+  const n = Object.keys(GLOSSARY_301).length + Object.keys(PROJECTS_301).length;
+  console.log(`[verify:no-301-links] 軸0: 301 の宛先（glossary ${Object.keys(GLOSSARY_301).length}・projects ${Object.keys(PROJECTS_301).length}＝計 ${n} 本）`);
+  console.log(`   ${bad.length === 0 ? '✓' : '✗'} 宛先が 301 元／表示除外: ${bad.length}${bad.length ? `\n${bad.map((b) => `      ${b.from} → ${b.to}（${b.why}）`).join('\n')}` : '（連鎖 0・noindex 着地 0）'}`);
+  if (bad.length) fail++;
+}
+if (STATIC_ONLY) {
+  console.log(`\n[verify:no-301-links] --static-only: 軸0 のみ実行 → ${fail === 0 ? 'All checks passed. ✓' : `FAIL ${fail}`}`);
+  process.exit(fail ? 1 : 0);
+}
 
 // ── 軸1: 配線
 function wired(file: string, re: RegExp, anchor?: [string, string]): boolean {

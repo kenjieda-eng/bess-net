@@ -23,6 +23,8 @@
  */
 
 import { useState } from 'react';
+// 公表日は src/lib/balancing-fallback.ts の 1 か所だけが持つ（#121・Ck-2 ■5）。ここで直書きしない。
+import { BALANCING_FY_PUBLISHED } from '@/lib/balancing-fallback';
 
 // ─── 型定義 ───────────────────────────────────────────────────────────────────
 
@@ -59,12 +61,12 @@ const FY_OPTIONS: { key: CompFyKey; label: string; note: string }[] = [
   {
     key:   'FY2024',
     label: 'FY2024（通年・確定）',
-    note:  '2024/4〜2025/3 — EPRX 2025年3月公表',
+    note:  `2024/4〜2025/3 — EPRX ${BALANCING_FY_PUBLISHED.FY2024}公表`,
   },
   {
     key:   'FY2025',
     label: 'FY2025（通年・確定）',
-    note:  '2025/4〜2026/3 — EPRX 2026年6月公表。水力・揚水は合算値',
+    note:  `2025/4〜2026/3 — EPRX ${BALANCING_FY_PUBLISHED.FY2025}公表。水力・揚水は合算値`,
   },
 ];
 

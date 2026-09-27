@@ -41,7 +41,7 @@ import {
   type CompSource,
 } from '@/components/BalancingSourceComparison';
 import { siteConfig } from '@/lib/site-config';
-import { BALANCING_BATTERY_FALLBACK, BALANCING_FY_DATE } from '@/lib/balancing-fallback';
+import { BALANCING_BATTERY_FALLBACK, BALANCING_FY_DATE, BALANCING_FY_PUBLISHED } from '@/lib/balancing-fallback';
 
 // Lc-1(2026-09-20): ライセンス表記の逐語表示と、カタログに残る 404 license_url の正規化
 import { licenseNoticeLines, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
@@ -127,9 +127,12 @@ export const metadata: Metadata = {
 
 // ─── Lc-1 ■4: ライセンス表記は逐語で出す（要約しない・2026-09-20） ─────────────
 // 表示中の EPRX 系列 46 本は license_notice が全て同一・空は 0 本（実測）。代表として 1 本から読む。
-// ★license_notice の 2 行目「EPRX 利用規約 §4 に従い、非商用・出典明示で利用可。…商用利用は事前契約…」は
-//   EPRX 条文に無い当社データ基盤側の判断で、EDAさんが EPRX へ照会中（Lc-1 ■1）。判定が返るまで表示しない。
-//   → 逐語で出すのは出典行のみ。照会結果が出たら上流カタログを直し、ここで全行を出す。
+// ★license_notice の 2 行目「EPRX 利用規約 §4 に従い、非商用・出典明示で利用可。…商用利用は事前契約…」は、
+//   資料名（実名は EPRX「サイトのご利用にあたって」）・節の呼び方（「§」は一次に 0 件）・「非商用」の語（同じく 0 件）の
+//   3 点が一次と食い違う（2026-09-27 実機で機械計数）。一次の「４．著作権等について」は
+//   「商用目的（個人利用・組織内利用を除きます。）…でない場合に限り自由に利用できますが、その際は、出典を記載してください」で、
+//   「非商用」と要約すると carve-out（個人利用・組織内利用）が消える。上流カタログの修正を待つ間は表示しない（Lc-1 ■1・Ck-2 ■5）。
+//   → 逐語で出すのは出典行のみ。上流が直ったら全行を出す（EPRX_NOTICE_LINES は既に全行を保持している）。
 const EPRX_META = primaryBatteryData.meta as unknown as { license_notice?: string; license_url?: string };
 const EPRX_NOTICE_LINES = licenseNoticeLines(EPRX_META.license_notice);
 const EPRX_SOURCE_LINE = EPRX_NOTICE_LINES[0] ?? '';
@@ -455,7 +458,8 @@ export default function BalancingRevenuePage() {
           >
             <strong style={{ color: '#374151', fontSize: 15 }}>出典・免責</strong>
             <br />
-            {/* ★Lc-2 ■3: EPRX 利用規約 §3「本サイトへのリンクは原則としてトップページ…」に従い、
+            {/* ★Lc-2 ■3: EPRX「サイトのご利用にあたって」３．リンクについて「本サイトへのリンクは原則としてトップページ…」に従い、
+                （Ck-2 ■5: 資料名を一次の実名へ。「利用規約」「§」は一次に無い）
                 リンク先はトップ・出所（資料名）は地の文で明示する。JEPX と同じ扱い（src/lib/eic-license.ts の方針表）。 */}
             ・単価データ出典:{' '}
             <a
@@ -468,19 +472,21 @@ export default function BalancingRevenuePage() {
             </a>
             「取引実績の取りまとめ結果」より転記・編集。
             <br />
-            {/* ★Lc-2 ■2: 「§4 が何を定めているか」（条文の説明・正しい）と
-                「当サイトが非商用か」（自己判定・未確定）を分けて書く。当サイトを非商用と名乗らない。 */}
-            ・EPRX 利用規約 §4 に従い、出典と加工した旨を明記しています。§4 は商用目的での利用に EPRX との事前契約を求めており、
-            当サイトの利用が該当するかは EPRX に照会中です。
+            {/* ★Lc-2 ■2: 「同項が何を定めているか」（条文の説明・正しい）と
+                「当サイトが非商用か」（自己判定・未確定）を分けて書く。当サイトを非商用と名乗らない。
+                ★Ck-2 ■5（裁定 R21）: 資料名を一次の実名へ。EPRX に「利用規約」という資料は無く、
+                実名は「サイトのご利用にあたって」、節は「４．著作権等について」（2026-09-27 実機確認）。 */}
+            ・EPRX「サイトのご利用にあたって」の「４．著作権等について」に従い、出典と、編集・加工等を行った旨を記載しています。
+            同項は商用目的での利用に EPRX との事前契約を求めており、当サイトの利用が該当するかは EPRX に照会中です。
             <br />
-            ・ライセンス表記（EIC カタログ license_notice の逐語）:「{EPRX_SOURCE_LINE}」 ／ 規約:{' '}
+            ・出典表記（EIC カタログ license_notice 1 行目の逐語）:「{EPRX_SOURCE_LINE}」 ／ 利用条件:{' '}
             <a
               href={EPRX_LICENSE_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'var(--color-accent)' }}
             >
-              EPRX 利用規約
+              EPRX「サイトのご利用にあたって」
             </a>
             <br />
             {/* ★Lc-2 ■4(d): 幅は年平均と出所が違う（カタログではなく PDF からの転記）。
@@ -492,7 +498,8 @@ export default function BalancingRevenuePage() {
             「取引実績の取りまとめ結果」の年次 PDF（{MONTHLY_PDF_SOURCE}）です。未約定の月は幅に含めません（「約定 N か月」がその月数）。
             月次の単純平均が上の年平均と一致することを毎ビルド検査しています（一致しない場合は幅を表示しません）。
             <br />
-            ・FY2024・FY2025 とも通年の確定値です（FY2024 は EPRX 2025年3月公表、FY2025 は EPRX 2026年6月18日公表の通年確報で旧・上期暫定値から改訂）。FY2025 は水力と揚水が EPRX 側で合算公表に変わったため、電源種別比較の FY2025 は「水力・揚水（合算）」の1行で表示しています。
+            ・FY2024・FY2025 とも通年の確定値です（FY2024 は EPRX {BALANCING_FY_PUBLISHED.FY2024}公表、FY2025 は EPRX{' '}
+            {BALANCING_FY_PUBLISHED.FY2025}公表の通年確報で旧・上期暫定値から改訂）。FY2025 は水力と揚水が EPRX 側で合算公表に変わったため、電源種別比較の FY2025 は「水力・揚水（合算）」の1行で表示しています。
             <br />
             ・データ加工・提供:{' '}
             <a

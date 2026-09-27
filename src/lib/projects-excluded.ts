@@ -104,6 +104,12 @@ export const EXCLUDED_PROJECT_SLUGS: ReadonlySet<string> = new Set<string>([
   'pr-co161802-bess',          // 日本蓄電池 7拠点プログラム告知（0MW/0MWh・cod=配信日）
   'pr-co33609-bess',           // 同一事象のリミックスポイント側リリース
   'pr-co89612-bess-2',         // マーチャントバンカーズ 200MW/800MWh＝複数サイトの総容量
+  //
+  // (A-4) 2026-09-27 Ck-2 実行便①（I-2-hit・裁定 R28）: 301 の宛先が EXCLUDED だった 2 本。
+  //   Pj2-H 実行便で宛先側（-2）を EXCLUDED にしたため、301 の着地先が noindex ページになっていた。
+  //   projects-301.ts から 301 を外した＝PROJECTS_301_SOURCE_SLUGS の自動 union から外れるので、ここに明示する。
+  'pr-co143072-bess-3',        // テス×東京センチュリー徳島の提携告知。構成施設は tc-tokushima / tc-itano に分割済みで代表が一意でない
+  'pr-co89612-bess',           // EUKA 200MW/800MWh の告知（複数サイトの総容量）。pr-co89612-bess-2 と同型
 ]);
 
 // 一覧（/projects）除外 = 非プロジェクト8 ∪ 301元6（重複統合・2026-06-28）。

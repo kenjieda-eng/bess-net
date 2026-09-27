@@ -336,9 +336,14 @@ async function main(): Promise<void> {
 
     // 対象地域は name/organization からのみ導出（本文の実施地・社名を拾わない・2026-07-20 回帰修正）
     const prefs = derivePrefectures(s.name, s.organization || '');
-    // 用途/事業者種別/種別は地理でないため従来どおり全文から抽出
+    // 事業者種別は name/organization/targetEntity からのみ導出（2026-09-27 Ck-2 実行便① ■4・裁定 R27）。
+    //   #110（applicable_prefs の派生元を絞る）と同じ考え方。scheme の散文と body を入れると、
+    //   本文中の「自治体との連携」「中小企業も参画」のような文脈語が対象者タグに化けて絞り込みを誤らせる。
+    //   ★対象者は targetEntity が一次に当たる欄なので、そこと名称・実施主体だけを見る。
+    const entityText = [s.name, s.organization || '', s.targetEntity || ''].join(' ');
+    // 用途/種別は地理でも対象者でもないため従来どおり全文から抽出
     const useCases = extractKeywordTags(fullText, USE_CASE_KEYWORDS);
-    const entities = extractKeywordTags(fullText, ENTITY_KEYWORDS);
+    const entities = extractKeywordTags(entityText, ENTITY_KEYWORDS);
     const kinds = extractKeywordTags(fullText, KIND_KEYWORDS);
     if (kinds.length === 0) kinds.push('other');
 

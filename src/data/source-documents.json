@@ -1,6 +1,6 @@
 {
   "_comment": "資料名の台帳（Ck-1 A6・2026-09-21）。name はサイトに書いている資料名、title_verbatim は確認時の一次の <title>／PDF 表題の逐語。書く前に一次を実機で取り、確認日つきで登録する。検査: npm run verify:source-names",
-  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md）",
+  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true）",
   "documents": [
     {
       "name": "需給調整市場のΔkW上限価格について",
@@ -607,6 +607,707 @@
       "checked_on": "2026-09-25",
       "note": "経済安全保障推進法に基づく蓄電池の供給確保計画の認定一覧（2026-09-25 時点で 45 件・うち認定取消 3 件）。curl は 202（本文 0 バイト）の bot 判定のためブラウザで取得。",
       "used_in": "explainer/national-battery-supply-plan.sources"
+    },
+    {
+      "name": "外部委託承認制度",
+      "publisher": "経済産業省 関東東北産業保安監督部",
+      "url": "https://www.safety-kanto.meti.go.jp/electric/jikayou/e_gaibuitaku.html",
+      "title_verbatim": "外部委託承認制度 （METI/経済産業省 関東東北産業保安監督部）",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・22,635 bytes）。<title> 冒頭および <h1> が資料名と逐語一致。制度の根拠は電気事業法施行規則第52条第2項。safety-kanto.meti.go.jp は www.meti.go.jp と違いブラウザ UA の curl で 200 が返る。fuzai-row18 / fuzai-row26 の差し替え先。"
+    },
+    {
+      "name": "容量確保契約約款（対象実需給年度：2030年度以降）",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/260730_kakuhokeiyaku_2030.pdf",
+      "title_verbatim": "容量確保契約約款／（対象実需給年度：2030 年度以降）／2026 年 7 月／電力広域的運営推進機関",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "容量市場 容量確保契約約款（対象実需給年度：2030年度以降）"
+      ],
+      "note": "2026-09-27 実機取得 HTTP 200（application/pdf・632,192 bytes）、PDF 1 頁表紙の逐語。★候補 JSON の urls にあった 260730_kakuhokeiyaku_2024-2029.pdf は別版（表紙逐語「容量確保契約約款／（対象実需給年度：2024 - 2029 年度）／2026 年 7 月／電力広域的運営推進機関」）で、資料名と対応しない。正しい URL は掲載ページ https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/jitsujukyu_kyoutsu.html（<title>「容量確保契約約款｜電力広域的運営推進機関」・更新日：2026年7月30日）のリンク文言「容量市場 容量確保契約約款（対象実需給年度：2030年度以降） (617KB)」から特定した。alias は掲載ページのリンク文言。"
+    },
+    {
+      "name": "需給調整市場について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/stable_power_supply_wg/pdf/004_06_00.pdf",
+      "title_verbatim": "資料６／需給調整市場について／2026年７月14日／資源エネルギー庁",
+      "checked_on": "2026-09-27",
+      "note": "候補に url が無いため、Lc-3（2026-09-20/21）が特定した電力安定供給ワーキンググループ（第4回）資料6 の PDF を 2026-09-27 に再取得（HTTP 200・application/pdf・2,177,736 bytes）、1 頁表紙の逐語。★同名の資料は回次ごとに複数ある（例：制度検討作業部会 第110回 資料４「需給調整市場について」2026年1月23日 https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/pdf/110_04_00.pdf ＝2026-09-27 は HTTP 202／本文0バイトで未取得）。hyoki-row4（制度検討作業部会・電力安定供給WG）と hyoki-row5（審議会提出資料）はいずれもこの資料名を指す。"
+    },
+    {
+      "name": "Japan's grid-scale BESS market: Turning market hype into reality",
+      "publisher": "IEEFA（Institute for Energy Economics and Financial Analysis）",
+      "url": "https://ieefa.org/resources/japans-grid-scale-bess-market-turning-market-hype-reality",
+      "title_verbatim": "Japan’s grid-scale BESS market: Turning market hype into reality | IEEFA",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "Japan’s grid-scale BESS market: Turning market hype into reality"
+      ],
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・71,293 bytes）。<title> と <h1> が同一。★アポストロフィは一次が U+2019（’）、サイトに書く name は ASCII の U+0027（'）。verify:source-names の照合は NFKC 正規化で両者を同一視しないため、一次表記を aliases に登録した。microCMS の richEditor に入れる場合は ' が &apos; に正規化される件（links の既知挙動）に留意。"
+    },
+    {
+      "name": "VPP・DRとは",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/advanced_systems/vpp_dr/about.html",
+      "title_verbatim": "VPP・DRとは｜資源エネルギー庁",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・14,307 bytes）。<title> 冒頭・<h1> とも逐語一致。★候補 JSON の url は親ページ（.../vpp_dr/）で、その <title> は「バーチャルパワープラント・ディマンドリスポンスについて｜資源エネルギー庁」＝別名（こちらも同日 HTTP 200・9,940 bytes で確認）。資料名「VPP・DRとは」に対応する一次は下層の about.html。"
+    },
+    {
+      "name": "グループ通算制度",
+      "publisher": "国税庁",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/hojin/group_tsusan/index.htm",
+      "title_verbatim": "グループ通算制度｜国税庁",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・12,748 bytes）。<title> 冒頭が逐語一致（<h1> は「グループ通算制度について」）。★候補 JSON の url（タックスアンサー No.5434）は <title>「No.5434 中小企業経営強化税制（中小企業者等が特定経営力向上設備等を取得した場合の特別償却又は税額控除）｜国税庁」で別資料。正しい URL は F-10 の差し替え案にある法人税の制度ページ。"
+    },
+    {
+      "name": "令和7年度補正 系統用蓄電システム等導入支援事業",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/chikudenchi07r/",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜事業トップ（令和7年度補正 系統用蓄電システム等導入支援事業）",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・39,827 bytes）。<title> の括弧内が資料名と逐語一致（<h1> は無し）。★候補 JSON の url（/information/division.html）は事業一覧ページで <title>「SII：一般社団法人 環境共創イニシアチブ｜事業一覧」＝別（同日 HTTP 200・25,702 bytes で確認）。unconf-row9 は一覧ページを主とし個別事業を例示する書き方なので、一覧ページ名「事業一覧」を出典欄に書くなら別エントリが要る。www 付き（www.sii.or.jp）は接続不可で正しいホストは sii.or.jp。"
+    },
+    {
+      "name": "再生可能エネルギー出力制御の見通し",
+      "publisher": "東京電力ホールディングス",
+      "url": "https://www.tepco.co.jp/forecast/output-control.html",
+      "title_verbatim": "再生可能エネルギー出力制御の見通し ｜でんき予報の解説｜東京電力ホールディングス株式会社",
+      "checked_on": "2026-09-27",
+      "note": "候補に url が無いため、Lc-3 が各社の代表例とした東京電力ホールディングスのページを 2026-09-27 に取得（HTTP 200・text/html・39,471 bytes）。<title> 冒頭が資料名と逐語一致。★サイトの出典欄の発行元表記「各一般送配電事業者」は総称で、実際の発行元は各社それぞれ（本 URL は東京電力ホールディングス）。hyoki-row39 の指示どおり総称のまま書くなら少なくとも 1 社の実ページを例示すること。"
+    },
+    {
+      "name": "容量市場追加オークション約定結果（対象実需給年度：2027年度）",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/news/012931.html",
+      "title_verbatim": "容量市場追加オークション約定結果（対象実需給年度：2027年度）の公表について｜電力広域的運営推進機関",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・42,234 bytes）。<title> 冒頭・<h1> とも「…の公表について」までが表題で、資料名はその前半と逐語一致。hyoki-row45（glossary/area-price.detail・richEditor）の差し替え先で、PATCH 後の照合は送信文字列の全文一致でなく marker で行うこと（#122）。"
+    },
+    {
+      "name": "日本版コネクト＆マネージの検討",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/gyomusyokai/no7.html",
+      "title_verbatim": "日本版コネクト＆マネージの検討｜電力広域的運営推進機関",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・41,338 bytes）。<title> 冒頭・<h1> とも逐語一致。unconf-row7 の差し替え先（発行元が資源エネルギー庁→OCCTO に変わる点は依頼書の裁定どおり）。"
+    },
+    {
+      "name": "特定卸供給事業について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/009.html",
+      "title_verbatim": "特定卸供給事業について（特定卸供給事業の届出に係る事業者説明会資料）（PDF形式：1,990KB）",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "特定卸供給事業にかかる届出義務について"
+      ],
+      "note": "掲載ページを 2026-09-27 実機取得 HTTP 200（text/html・9,205 bytes）。<title>／<h1> は「特定卸供給事業にかかる届出義務について｜資源エネルギー庁」で、title_verbatim はそのページ内の資料リンク文言の逐語。★PDF 実体（.../009/shiryou/06_shiryou1.pdf）は同日 HTTP 202／本文0バイト（meti の bot 判定・Referer 付き再試行も 202）で表紙は未取得のため、title_verbatim は掲載ページ側の逐語である。hyoki-row1 の after はページ名と資料名を併記するので、ページ名を aliases に登録した。"
+    },
+    {
+      "name": "系統の接続および利用ルールについて",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/grid/business/setsuzoku.html",
+      "title_verbatim": "系統の接続および利用ルールについて｜かいせつ電力ネットワーク｜電力広域的運営推進機関",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・16,418 bytes）。<title> 冒頭が逐語一致（<h1> は無し）。★候補 JSON のもう一方の url（https://www.occto.or.jp/gyomusyokai/no1.html）は <title>「全国の需給状況・系統運用の監視｜電力広域的運営推進機関」で別資料（同日 HTTP 200・44,401 bytes で確認）。fuzai-row27 はこの 2 本を併記するため、「全国の需給状況・系統運用の監視」は別エントリとして登録が要る（本シャードの候補には含まれていない）。"
+    },
+    {
+      "name": "組織概要",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/about/about.html",
+      "title_verbatim": "組織概要 | 電力需給調整力取引所について | 一般社団法人 電力需給調整力取引所",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・21,667 bytes）。<title> 冒頭・<h1> とも逐語一致。★候補 JSON の url（/outline/outline.html）は <title>「需給調整市場とは | 取引概要 | 一般社団法人 電力需給調整力取引所」で別ページ（同日 HTTP 200・22,470 bytes で確認）。A-10 の差し替え案が指す「組織概要」は /about/about.html。候補の publishers「html） 一般社団法人 電力需給調整力取引所」は抽出ノイズのため捨てた。"
+    },
+    {
+      "name": "長期脱炭素電源オークションガイドライン（令和8年8月）",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/choukigl_20260831.pdf",
+      "title_verbatim": "長期脱炭素電源オークションガイドライン／策定 ２０２３年７月１１日／改定 ２０２４年８月１４日／改定 ２０２５年８月２７日／改定 ２０２６年８月３１日／資 源 エ ネ ル ギ ー 庁",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "長期脱炭素電源オークションガイドライン"
+      ],
+      "note": "PDF を 2026-09-27 実機取得 HTTP 200（application/pdf・518,397 bytes）、1 頁表紙の逐語。★「（令和8年8月）」は掲載ページ側の呼称で、PDF 表紙自体に年月の括弧書きは無い。掲載ページ https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/ は curl が 202 のためブラウザで取得し、<title>「関係法令・ガイドライン等｜資源エネルギー庁」、逐語「長期脱炭素電源オークションガイドライン（令和8年8月）（PDF形式：507KB）（New!）」、ページ「最終更新日：2026年8月31日」を確認。発行元は「経済産業省」ではなく「資源エネルギー庁」が正（unconf-row8）。"
+    },
+    {
+      "name": "電力調査統計",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/statistics/electric_power/ep002/",
+      "title_verbatim": "電力調査統計｜資源エネルギー庁",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・8,199 bytes）。<title> 冒頭・<h1> とも逐語一致。hyoki-row28（現行「電力統計」）の差し替え先。"
+    },
+    {
+      "name": "風力・太陽光発電システムの耐用年数について",
+      "publisher": "国税庁",
+      "url": "https://www.nta.go.jp/law/shitsugi/hojin/05/12.htm",
+      "title_verbatim": "風力・太陽光発電システムの耐用年数について｜国税庁",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 実機取得 HTTP 200（text/html・5,767 bytes）。<title> 冒頭・<h1> とも逐語一致（法人税「質疑応答事例」）。★候補 JSON の url（タックスアンサー No.5434）は <title>「No.5434 中小企業経営強化税制…｜国税庁」で別資料。正しい URL は F-10 の差し替え案と一致。"
+    },
+    {
+      "name": "Fluence launching BESS trading, optimisation in Japan this year with aggregator ENERES",
+      "publisher": "Energy-Storage.News",
+      "url": "https://www.energy-storage.news/fluence-launching-bess-trading-optimisation-in-japan-this-year-with-aggregator-eneres/",
+      "title_verbatim": "Fluence, ENERES launching trading, optimisation in Japan in 2025 - Energy-Storage.News",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "Fluence, ENERES launching trading, optimisation in Japan in 2025"
+      ],
+      "note": "2026-09-27 curl HTTP 200（86,  232,897 bytes）。<title> と h1／og:title が異なる。サイトに書く資料名（hyoki-row2 の after）は h1／og:title 逐語「Fluence launching BESS trading, optimisation in Japan this year with aggregator ENERES」で、<title> 側は aliases に退避。候補 JSON に併記されていた https://www.eneres.co.jp/blog/20250722 は別資料（株式会社エナリスの自社発表。2026-09-27 HTTP 200・<title>「Fluence社と蓄電池貯蔵性能の向上を実現するシステム連携の基本合意書を締結！脱炭素社会へ向け調印式 │ 株式会社エナリス │ ENERES」）で、hyoki-row2n 側の資料名（シャード外）に対応するため本エントリには含めない。"
+    },
+    {
+      "name": "容量市場について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/110.html",
+      "title_verbatim": "第110回 総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 制度検討作業部会（METI/経済産業省）／「開催日 2026年1月23日」／「資料3-3　容量市場について（PDF形式：4,302KB）」／「最終更新日：2026年8月17日」",
+      "checked_on": "2026-09-27",
+      "needs_check": true,
+      "note": "2026-09-27 に開催資料一覧ページをブラウザで取得（www.meti.go.jp は curl に HTTP 202／本文0バイト）。資料名「容量市場について」は同ページの逐語で実在を確認した。★needs_check の理由: この表題は資源エネルギー庁が複数回の審議会で繰り返し使う汎用表題で（Lc-3 は 2023年7月31日 資料4・2017年11月10日 資料4 も列挙）、hyoki-row12（explainer/capacity-market-advanced）・hyoki-row13（explainer/capacity-market）がどの回次を指すかは本文と突き合わせて②便で確定すること。URL は直近版（第110回・2026年1月23日 資料3-3、PDF は https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/pdf/110_03_03.pdf ）を暫定登録。PDF 本文は未取得（curl 202）。"
+    },
+    {
+      "name": "系統用蓄電池の現状と課題",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/062.html",
+      "title_verbatim": "総合エネルギー調査会 省エネルギー・新エネルギー分科会／電力・ガス事業分科会 再生可能エネルギー大量導入・次世代電力ネットワーク小委員会（第62回）（METI/経済産業省）／「開催日 2024年5月29日」／「資料5　系統用蓄電池の現状と課題（PDF形式：3,374KB）」／「最終更新日：2024年11月27日」",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 にブラウザで再取得（www.meti.go.jp は curl に HTTP 202／本文0バイト）。開催日・回次・資料番号（資料5）まで一意に特定できる。PDF 本体 https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/pdf/062_05_00.pdf は curl 202 のため本便では未取得（Ck-2 計画便では Wayback 経由で p1「資料５ 系統用蓄電池の現状と課題 2024年5月29日 資源エネルギー庁」を確認済）。fuzai-row11-a・fuzai-row21 の差し替え先。"
+    },
+    {
+      "name": "FIP制度に関する政策措置について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/069.html",
+      "title_verbatim": "総合エネルギー調査会 省エネルギー・新エネルギー分科会／電力・ガス事業分科会 再生可能エネルギー大量導入・次世代電力ネットワーク小委員会（第69回）（METI/経済産業省）／「開催日 2024年9月30日」／「資料1　FIP制度に関する政策措置について（PDF形式：3,793KB）」／「最終更新日：2024年11月27日」",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 にブラウザで再取得（curl は HTTP 202／本文0バイト）。開催日・回次・資料番号（資料1）まで一意。PDF 本体（.../pdf/069_01_00.pdf）は curl 202 のため未取得＝併設蓄電池の個別ルールを本文に書く場合は PDF 取得後に。fuzai-row30 の差し替え先。"
+    },
+    {
+      "name": "No.5900 グループ通算制度の概要",
+      "publisher": "国税庁",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5900.htm",
+      "title_verbatim": "No.5900 グループ通算制度の概要｜国税庁",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 curl HTTP 200（Shift_JIS）。h1 は「No.5900&emsp;グループ通算制度の概要」。★候補 JSON の urls には https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5434.htm（No.5434 中小企業経営強化税制）が入っていたが、これは同じ F-10 行に並ぶ別資料の URL。本資料の正しい URL は .../5900.htm（F-10 の after 本文と一致）なので是正して登録した。"
+    },
+    {
+      "name": "【緊急解説】2026年度、需給調整市場の上限価格が半減！？系統用蓄電池ビジネスへの深刻な影響と対策",
+      "publisher": "情熱電力",
+      "url": "https://jo-epco.co.jp/balancing-market-2026-price-cap-warning/",
+      "title_verbatim": "【緊急解説】2026年度、需給調整市場の上限価格が半減！？系統用蓄電池ビジネスへの深刻な影響と対策 | 情熱電力",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 curl HTTP 200。<title>・og:title とも同一で、資料名は媒体名「| 情熱電力」を除いた逐語。h1 は「お知らせ」（記事見出しではない）。発行元は本文・<title> の表記どおり「情熱電力」（ページ上に法人格の表記なし）。私企業記事であり、hyoki-row3 の sources 欄には一次（経産省 制度設計WG 資料）が併記済み。"
+    },
+    {
+      "name": "事業一覧",
+      "publisher": "一般社団法人環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/information/division.html",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜事業一覧",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 curl HTTP 200。ページ本文に「令和7年度補正 系統用蓄電システム等導入支援事業」「令和7年度補正 再エネ電源併設蓄電システム等導入支援事業」等の個別事業が逐語で並ぶことを確認。unconf-row9（explainer/subsidies-guide）の差し替え先＝実在しない「補助金事業 公募情報」の代替。正しいホストは https://sii.or.jp/（www 付きは接続不可）。"
+    },
+    {
+      "name": "再エネ大量導入時代における分散型エネルギーシステムのあり方",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/069.html",
+      "title_verbatim": "総合エネルギー調査会 省エネルギー・新エネルギー分科会／電力・ガス事業分科会 再生可能エネルギー大量導入・次世代電力ネットワーク小委員会（第69回）（METI/経済産業省）／「開催日 2024年9月30日」／「資料2　再エネ大量導入時代における分散型エネルギーシステムのあり方（PDF形式：8,229KB）」／「最終更新日：2024年11月27日」",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 にブラウザで再取得（curl は HTTP 202／本文0バイト）。Lc-3 が挙げた PDF（.../pdf/069_02_00.pdf）と同一回次・同一資料番号（資料2）であることを開催資料一覧で逐語確認した。PDF 本体は curl 202 のため未取得。hyoki-row31 の差し替え先で、発行元も「経済産業省」→「資源エネルギー庁」へ是正される。"
+    },
+    {
+      "name": "取引概要",
+      "publisher": "一般社団法人 日本卸電力取引所（JEPX）",
+      "url": "https://www.jepx.jp/electricpower/outline/",
+      "title_verbatim": "取引概要 | 電力取引 | JEPX",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 curl HTTP 200。h1 も「取引概要」で一致。hyoki-row27 で explainer/jepx-arbitrage・explainer/grid-scale-bess の 2 レコードに入っている誤名「市場の概要」の差し替え先。"
+    },
+    {
+      "name": "当社初となる系統用蓄電池事業の運用開始について…",
+      "publisher": "JFEエンジニアリング株式会社",
+      "url": "https://www.jfe-eng.co.jp/news/2024/20241021.html",
+      "title_verbatim": "当社初となる系統用蓄電池事業 の運用開始について ～自社開発&quot;JFEマルチユースEMS※1&quot;により蓄電池を最適活用～ | JFEエンジニアリング株式会社",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "当社初となる系統用蓄電池事業の運用開始について～自社開発\"JFEマルチユースEMS\"により蓄電池を最適活用～",
+        "当社初となる系統用蓄電池事業 の運用開始について ～自社開発\"JFEマルチユースEMS※1\"により蓄電池を最適活用～"
+      ],
+      "note": "2026-09-27 curl HTTP 200。★候補 JSON の name は末尾が「…」で、これは Ck-2 計画便の表記（hyoki-row34n の after で既存行を省略表記したもの）。②便が実際に書く資料名は hyoki-row34（seq 付近 2392）の after のとおり全文「当社初となる系統用蓄電池事業の運用開始について～自社開発\"JFEマルチユースEMS\"により蓄電池を最適活用～」なので、それと <title> 逐語（全角空白と ※1 を含む形）の両方を aliases に入れた。候補 JSON の urls には https://www.eprx.or.jp/ 系が入っていたが、それは同じ sources 欄の別資料（EPRX・台帳登録済）の URL＝抽出時の取り違えのため jfe-eng.co.jp に是正した。発行日 2024年10月21日。"
+    },
+    {
+      "name": "第2節 建物附属設備",
+      "publisher": "国税庁",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kobetsu/sonota/700525/02/02_02.htm",
+      "title_verbatim": "第2節 建物附属設備｜国税庁",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 curl HTTP 200（Shift_JIS）。h1 も「第2節 建物附属設備」で一致。「耐用年数の適用等に関する取扱通達」第2章第2節。★候補 JSON の urls には .../taxanswer/hojin/5434.htm が入っていたが同じ F-10 行の別資料の URL で、本資料の正しい URL は F-10 の after 本文どおり .../law/tsutatsu/kobetsu/sonota/700525/02/02_02.htm。"
+    },
+    {
+      "name": "系統用蓄電池の接続・利用の在り方について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/shoene_shinene/shin_energy/keito_wg/041.html",
+      "title_verbatim": "第41回 総合資源エネルギー調査会 省エネルギー・新エネルギー分科会 新エネルギー小委員会／電力・ガス事業分科会電力・ガス基本政策小委員会 系統ワーキンググループ（METI/経済産業省）／「開催日 2022年9月14日」／「資料1　系統用蓄電池の接続・利用の在り方について ［事務局］（PDF形式：1,611KB）」／「最終更新日：2023年11月9日」",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 にブラウザで再取得（curl は HTTP 202／本文0バイト）。開催日・回次・資料番号（資料1・事務局）まで一意。PDF 本体 .../keito_wg/pdf/041_01_00.pdf は curl 202 のため未取得（Ck-2 計画便では Wayback 経由で p1「資料１ 系統用蓄電池の接続・利用の在り方について 2022年9月14日 資源エネルギー庁」・p11 の revenue stacking 逐語を確認済）。fuzai-row17-a の差し替え先。"
+    },
+    {
+      "name": "蓄電池設備の規制（資料１－４）【消防関係法令による蓄電池設備の規制体系】",
+      "publisher": "総務省消防庁",
+      "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento164_05_shiryo1-4.pdf",
+      "title_verbatim": "蓄電池設備の規制 資料１－４／【消防関係法令による蓄電池設備の規制体系】（PDF 1頁冒頭の表題。全12頁・PDF に <title> なし）",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 curl HTTP 200（759,747 bytes・全12頁）を pdfplumber で本文抽出し、1頁冒頭の表題を逐語確認した。本文該当箇所も逐語で確認:「・屋外に設けるものにあっては建築物から３ｍ以上の距離を保つこと。ただし火災予防上支障がない構造を有するキュービクル式のものは除く。（省令）」。hyoki-row11n（explainer/bess-site-acquisition）の §1「火災離隔距離の確保」を直接支える一次。既に /lv 系ページでも使用。"
+    },
+    {
+      "name": "電力取引の状況（電力取引報結果）",
+      "publisher": "電力・ガス取引監視等委員会",
+      "url": "https://www.egc.meti.go.jp/info/business/report/results.html",
+      "title_verbatim": "電力取引の状況（電力取引報結果）| 電力・ガス取引監視等委員会",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 curl HTTP 200。h1 も「電力取引の状況（電力取引報結果）」で <title> と一致し、資料名と一次が逐語で対応する。★ホストは egc.meti.go.jp（Ck-2 計画便の hyoki-row25 が想定した emsc/meti 系ではない）。meti.go.jp 配下だが本ドメインは curl で 200 が返る（bot 判定は www.meti.go.jp のみ）。hyoki-row25 の差し替え先は本資料と「電力市場のモニタリングレポート」の 2 案あり、explainer/jepx-arbitrage が参照しているのが価格動向か取引量かで②便に一方へ確定させること。"
+    },
+    {
+      "name": "需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/vpp02/",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜事業トップ（令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」について）",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」"
+      ],
+      "note": "2026-09-27 curl HTTP 200。★Ck-2 計画便が試した https://sii.or.jp/vpp/ ・/vpp04/ は 404、追加で /vpp01/ /vpp03/ /vpp05/ も 404 を実測。現存する事業ページは /vpp02/（令和2年度・最終年度）と /vpp30/（平成30年度・<title>「…｜事業トップ（平成30年度 需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金（VPP））」）の 2 本で、恒久 URL として最終年度の /vpp02/ を採用した。補助事業の所管は資源エネルギー庁・執行団体が SII（資源エネルギー庁「VPP・DR普及に関する施策」https://www.enecho.meti.go.jp/category/saving_and_new/advanced_systems/vpp_dr/measure.html にも「令和2年度『需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金（バーチャルパワープラント構築実証事業）』（一般社団法人環境共創イニシアチブ）」と逐語で掲載・同日ブラウザ確認）。hyoki-row32 の差し替え先。事業自体は終了し、後継は「分散型エネルギーリソースの更なる活用に向けた実証事業」＝別名称。"
+    },
+    {
+      "name": "FIP制度",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/about/special/johoteikyo/fip.html",
+      "title_verbatim": "再エネを日本の主力エネルギーに！「FIP制度」が2022年4月スタート｜エネこれ｜資源エネルギー庁",
+      "checked_on": "2026-09-27",
+      "needs_check": true,
+      "note": "要確認（needs_check）: 「FIP制度」は資料名ではなく、資料名「再エネを日本の主力エネルギーに！「FIP制度」が2022年4月スタート」の入れ子の「」を検査の抽出正規表現（[「『]([^「」『』\\n]{2,90})[」』]）が拾ったもの。登録しないと verify:source-names が毎回警告するため、入れ子元の一次（エネこれ記事）に紐づけて登録する。一次の <title> は 2026-09-27 にブラウザで取得（curl は enecho.meti.go.jp が HTTP 202・本文0バイト）。fuzai-row30 のもう1本の URL https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/069.html も同日ブラウザで取得し <title>「総合エネルギー調査会 省エネルギー・新エネルギー分科会／電力・ガス事業分科会 再生可能エネルギー大量導入・次世代電力ネットワーク小委員会（第69回）（METI/経済産業省）」・「資料1　FIP制度に関する政策措置について（PDF形式：3,793KB）」を確認。"
+    },
+    {
+      "name": "容量市場 業務マニュアル 実需給期間中リクワイアメント対応（発動指令電源）編（対象実需給年度：2026年度）",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2026_jitsujukyu_kanren/260427_2026_gyoumumanual_rikuwaiamento_hatsudoushirei.pdf",
+      "title_verbatim": "容量市場／業務マニュアル／実需給期間中／リクワイアメント対応／（発動指令電源）編／（対象実需給年度：2026 年度）／2026 年 4 月 27 日 第 2 版 発行／電力広域的運営推進機関",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "容量市場業務マニュアル 実需給期間中リクワイアメント対応 （発動指令電源）編（対象実需給年度：2026年度）第2版"
+      ],
+      "note": "2026-09-27 に PDF を実機取得（HTTP 200・1,679,390 バイト・全58頁）、pdfplumber で1頁目の表紙を逐語抽出。掲載ページは https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/2026_jitsujukyu_kanren.html で、そのリンクテキスト逐語が aliases の表記。既存台帳の「容量市場 業務マニュアル」2件は実効性テスト編（2025年度版・2027年度版）で別資料。"
+    },
+    {
+      "name": "本邦系統用蓄電池設備によりフルマーチャントを前提に行う事業に対する本邦初のプロジェクトファイナンス組成について",
+      "publisher": "株式会社三菱UFJ銀行",
+      "url": "https://www.bk.mufg.jp/info/pdf/full_merchant.pdf",
+      "title_verbatim": "2025年5月7日／株式会社三菱UFJ銀行／本邦系統用蓄電池設備によりフルマーチャントを前提に行う事業に対する本邦初のプロジェクトファイナンス組成について",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に PDF を実機取得（HTTP 200・216,643 バイト・全1頁）、pdfplumber で1頁目冒頭を逐語抽出。資料名と一次は完全一致（多奈川蓄電所合同会社向け・定格出力99MW／容量396MWh・商業運転開始2028年2月予定）。hyoki-row8／row9 が同一資料を指す。"
+    },
+    {
+      "name": "FIP制度について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/energy_environment/setsuden_dr/pdf/001_02_08.pdf",
+      "title_verbatim": "FIP制度について 2022年6月24日 資源エネルギー庁 資料2-8",
+      "checked_on": "2026-09-27",
+      "needs_check": true,
+      "note": "2026-09-27 に再取得できず（meti.go.jp は curl が HTTP 202・本文0バイト＝bot判定で3回とも同じ。ブラウザで開くとPDFがダウンロード扱いになり本文を読めない。enecho 側を辿ると途中で Human Verification 画面になったため中止＝突破しない）。title_verbatim は Lc-3（reports/lc3-source-name-audit-2026-09-20.md、2026-09-20 実機確認）が記録した PDF 表題の逐語を踏襲。実行便で表題を再取得できたら needs_check を外すこと。併記される「再生可能エネルギー FIT・FIP制度ガイドブック」（年度版）は未登録＝別途登録が要る。"
+    },
+    {
+      "name": "No.5434 中小企業経営強化税制（中小企業者等が特定経営力向上設備等を取得した場合の特別償却又は税額控除）",
+      "publisher": "国税庁",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5434.htm",
+      "title_verbatim": "No.5434 中小企業経営強化税制（中小企業者等が特定経営力向上設備等を取得した場合の特別償却又は税額控除）｜国税庁",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で実機取得（HTTP 200）。資料名と <title>（サイト名部分を除く）が逐語一致。F-10 の sources 差し替えで使う。"
+    },
+    {
+      "name": "kW（電力）とkWh（電力量）の違いって？",
+      "publisher": "電気事業連合会",
+      "url": "https://www.fepc.or.jp/enelog/special/vol_45.html",
+      "title_verbatim": "vol.45 SPECIAL ISSUE｜Enelog（エネログ）",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で実機取得（HTTP 200）。<title> は号名のみだが、本文の記事見出しが逐語で「SPECIAL ISSUE 2021.02 「kW（電力）とkWh（電力量）の違いって？」」＝資料名は Enelog vol.45（2021年2月）の記事表題。本文「電力需要のピーク（kW）の抑制」「累計の電力需要量（kWh）の抑制」も確認。"
+    },
+    {
+      "name": "主任技術者制度の解釈及び運用（内規）",
+      "publisher": "経済産業省",
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/syuningijutsusya_naiki.pdf",
+      "title_verbatim": "経 済 産 業 省／制定 ２０２１０２０８保局第２号 令 和 ３ 年 ３ 月 １ 日／（改正 8 件）／改正 ２０２５０３１８保局第１号 令 和 ７ 年 ４ 月 １ 日／主任技術者制度の解釈及び運用を次のように制定する。／経済産業省大臣官房技術総括・保安審議官／主任技術者制度の解釈及び運用",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "主任技術者制度の解釈及び運用"
+      ],
+      "note": "2026-09-27 に curl で PDF を実機取得（HTTP 200・521,077 バイト・全37頁。meti.go.jp だが PDF 直リンクは 202 にならず取得できた）、pdfplumber で1頁目を逐語抽出。PDF の表題自体に「（内規）」は付かず、資源エネルギー庁の関係法令ページ側の逐語が「【別添6】主任技術者制度の解釈及び運用（内規）」。本文 p2 で法第43条の選任解釈（派遣労働者・受託者・みなし設置者）を確認＝unconf-row4 の記事（電気主任技術者の選任義務と実務）を支える。"
+    },
+    {
+      "name": "全国の需給状況・系統運用の監視",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/gyomusyokai/no1.html",
+      "title_verbatim": "全国の需給状況・系統運用の監視｜電力広域的運営推進機関",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で実機取得（HTTP 200）。資料名と <title>（サイト名部分を除く）が逐語一致。fuzai-row27 のもう1本「系統の接続および利用ルールについて」（https://www.occto.or.jp/grid/business/setsuptoku… ＝ /grid/business/setsuzoku.html）は本シャードの候補に無く未登録＝別シャードか実行便で登録が要る。"
+    },
+    {
+      "name": "出力制御について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/saiene/grid/08_syuturyokuseigyo.html",
+      "title_verbatim": "出力制御について|なるほど！グリッド｜資源エネルギー庁",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 にブラウザで実機取得（curl は enecho.meti.go.jp が HTTP 202・本文0バイト）。本文「需給バランス制約による出力制御」「送電容量制約による出力制御」を確認。★既存台帳に同一 URL の「なるほど！グリッド 出力制御について」（2026-09-20 確認）が既にある。重複を避けるなら新規 entry ではなく既存エントリの aliases に「出力制御について」を足す形でもよい（検査上はどちらでも警告は消える）。"
+    },
+    {
+      "name": "建築物環境報告書制度",
+      "publisher": "東京都環境局",
+      "url": "https://www.kankyo.metro.tokyo.lg.jp/climate/green_housing/contents",
+      "title_verbatim": "東京都建築物環境報告書制度の概要|中小規模新築建物における対策|東京都環境局",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で実機取得（HTTP 200）。資料名「建築物環境報告書制度」は <title> の「東京都建築物環境報告書制度」から都名を除いた制度名＝同一の制度を指す。所管は環境局（都市整備局ではない）。"
+    },
+    {
+      "name": "租税特別措置等に係る政策の事前評価書",
+      "publisher": "環境省",
+      "url": "https://www.env.go.jp/content/900479171.pdf",
+      "title_verbatim": "租税特別措置等に係る政策の事前評価書／1 政策評価の対象とした租税特別措置等の名称：エネルギー環境負荷低減推進設備等を取得した場合の特別償却又は特別控除の拡充及び延長（グリーン投資減税）／3 担当部局 環境省地球環境局地球温暖化対策課／4 評価実施時期 平成27年8月",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で PDF を実機取得（HTTP 200・207,340 バイト・全6頁）、pdfplumber で1頁目を逐語抽出。★候補 JSON の urls は国税庁 No.5434 の URL になっているが誤り（同じ F-10 行に並ぶ別資料の URL を拾ったもの）。一次は環境省の PDF。資料名は汎用表題のため、引用時は対象措置名（グリーン投資減税）と評価実施時期（平成27年8月）を併記するのが安全。"
+    },
+    {
+      "name": "系統情報サービス等",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/institution/keitoujouhou/index.html",
+      "title_verbatim": "系統情報サービス等｜電力広域的運営推進機関",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で実機取得（HTTP 200）。資料名と <title>（サイト名部分を除く）が逐語一致。★既存台帳に同一 URL の「系統情報サービス」（末尾の「等」なし・2026-09-20 確認）がある。重複を避けるなら既存エントリの aliases に「系統情報サービス等」を足す形でもよい。"
+    },
+    {
+      "name": "蓄電池設備の基準",
+      "publisher": "消防庁",
+      "url": "https://www.fdma.go.jp/laws/kokuji/assets/s48_kokuzi2.pdf",
+      "title_verbatim": "蓄電池設備の基準／(昭和四十八年二月十日)／(消防庁告示第二号)",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で PDF を実機取得（HTTP 200・192,020 バイト・全6頁）、pdfplumber で1頁目を逐語抽出。本文冒頭「消防法施行規則(昭和三十六年自治省令第六号)第十二条第四号ロ(ホ)及び第二十四条第四号ロ(ホ)の規定に基づき、蓄電池設備の基準を次のとおり定める。」も確認。★候補 JSON の url（https://laws.e-gov.go.jp/law/348M50000008002）は本文を取れない: HTML は JS シェルのみ 800 バイトで <title> が「e-Gov 法令検索」、法令API v2 も law_data/348M50000008002 が HTTP 404、laws?law_id=348M50000008002 と law_title 検索（蓄電池設備の基準／蓄電池設備）はいずれも total_count 0（＝消防庁告示は法令APIの対象外）。したがって url は消防庁の告示 PDF を正とした。"
+    },
+    {
+      "name": "電力制御システムセキュリティガイドライン JEAG1111-2024（JESC Z0004(2025)）",
+      "publisher": "一般社団法人 日本電気協会",
+      "url": "https://store.denki.or.jp/products/%E9%9B%BB%E5%8A%9B%E5%88%B6%E5%BE%A1%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3-jeag1111-2019-jesc-z00042019-%E3%82%B3%E3%83%94%E3%83%BC",
+      "title_verbatim": "電力制御システムセキュリティガイドライン JEAG1111-2024 &ndash; 日本電気協会 Webストア",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で実機取得（商品ページ HTTP 200・107,732 バイト。検索ページ https://store.denki.or.jp/search?q=JEAG1111 は「”JEAG1111” の検索結果 1件」＝当該商品のみ）。JESC 番号の方は日本電気技術規格委員会の民間自主規格一覧（https://www.jesc.gr.jp/jesc-assent/private.html・<title>「日本電気技術規格委員会｜JESC｜日本電気技術規格委員会の承認規格(民間自主規格一覧)」）に逐語「JESC Z0004(2025) 電力制御システムセキュリティガイドライン」を確認。発行元は一般社団法人 日本電気協会で、サイト現行表記の「電気事業連合会」は誤り。★商品ページの URL スラッグは「…jeag1111-2019-jesc-z00042019-コピー」（2019年版を複製して作られた痕跡）だが、ページの表題・商品名はいずれも JEAG1111-2024。"
+    },
+    {
+      "name": "需要家主導型太陽光発電・再生可能エネルギー電源併設型蓄電池導入支援事業費補助金",
+      "publisher": "JPEA太陽光発電推進センター（JP-PC）",
+      "url": "https://jp-pc-info.jp/",
+      "title_verbatim": "需要家主導による太陽光発電導入促進補助金 需要家主導型太陽光発電及び再生可能エネルギー電源併設型蓄電池導入支援事業費補助金",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "需要家主導型太陽光発電及び再生可能エネルギー電源併設型蓄電池導入支援事業費補助金"
+      ],
+      "note": "2026-09-27 に curl で実機取得（HTTP 200）。★資料名は中点（・）、一次サイトの表題は「及び」で、この差は年度による事業名の揺れ（令和6年度予算＝「太陽光発電・再生可能エネルギー」／令和4年度第2次補正＝「太陽光発電及び再生可能エネルギー」）。引用する年度を明示するのが安全なので、及び形を aliases に入れた。運営表記はページ下部の逐語「JPEA太陽光発電推進センター（JP-PC）」、実施主体の逐語は「資源エネルギー庁から補助を受けた一般社団法人太陽光発電協会が実施しています。」。執行団体を SII とする現行表記は誤り。"
+    },
+    {
+      "name": "容量市場 メインオークション募集要綱（対象実需給年度：２０３０年度）",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/260730_mainauction_boshuyoukou_jitsujukyu2030.pdf",
+      "title_verbatim": "容量市場 メインオークション募集要綱（対象実需給年度：２０３０年度）",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "容量市場 メインオークション募集要綱（対象実需給年度：2030年度）"
+      ],
+      "note": "PDF 実体（756,630 バイト・全61頁）1頁目の表題を改行を詰めて記載。原文は「容量市場／メインオークション募集要綱／（対象実需給年度：２０３０年度）／2026 年 7 月 30 日／電力広域的運営推進機関」。掲載ページは https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/2030_jitsujukyu_kanren.html（<title>「2030年度実需給関連｜電力広域的運営推進機関」）で、リンク文言は「容量市場 メインオークション募集要綱（対象実需給年度：2030年度） (739KB)」。候補 JSON の urls にあった jitsujukyu_kyoutsu.html は別資料の掲載ページ（<title>「容量確保契約約款｜電力広域的運営推進機関」）。"
+    },
+    {
+      "name": "市場情報（スポット市場）",
+      "publisher": "一般社団法人 日本卸電力取引所（JEPX）",
+      "url": "https://www.jepx.jp/electricpower/market-data/spot/",
+      "title_verbatim": "スポット市場 | 市場情報 | 電力取引 | JEPX",
+      "checked_on": "2026-09-27",
+      "note": "curl で HTTP 200。<title> は「スポット市場」で、資料名「市場情報（スポット市場）」はサイトの階層（電力取引 > 市場情報 > スポット市場）をそのまま書いたもの。台帳には同一ページの別表記「スポット市場」が既登録。"
+    },
+    {
+      "name": "Energy Storage Market Outlook",
+      "publisher": "BloombergNEF",
+      "url": "https://about.bnef.com/insights/clean-energy/energy-storage-enters-the-100-gigawatt-era-three-things-to-know/",
+      "title_verbatim": "Energy Storage Market Outlook 1H 2026",
+      "checked_on": "2026-09-27",
+      "note": "Lc-3／候補 JSON の URL https://about.bnef.com/insights/clean-energy/energy-storage-market-outlook/ は 2026-09-27 時点で HTTP 404（<title>「Page not found | BloombergNEF」）。about.bnef.com のサイト内検索（?s=Energy+Storage+Market+Outlook は96件・?s=\"Energy Storage Outlook\" は0件）にも同名の公開ページは無く、レポート本体は購読者向け（https://www.bnef.com/insights/39385）。資料名の実在は BloombergNEF 自身の公開記事（<title>「Energy Storage Enters the 100-Gigawatt Era: Three Things to Know | BloombergNEF」）の出典リンク文言「Energy Storage Market Outlook 1H 2026」で 2026-09-27 に確認した（同記事本文も BNEF の当該レポートを参照元として明記）。半期刊。"
+    },
+    {
+      "name": "No.5433 中小企業投資促進税制（中小企業者等が機械等を取得した場合の特別償却又は税額控除）",
+      "publisher": "国税庁",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5433.htm",
+      "title_verbatim": "No.5433 中小企業投資促進税制（中小企業者等が機械等を取得した場合の特別償却又は税額控除）｜国税庁",
+      "checked_on": "2026-09-27",
+      "note": "候補 JSON の urls にあった https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5434.htm は別資料（<title>「No.5434 中小企業経営強化税制（中小企業者等が特定経営力向上設備等を取得した場合の特別償却又は税額控除）｜国税庁」）。資料名 No.5433 に対応する一次は 5433.htm で、<title>・<h1> とも逐語一致（curl HTTP 200）。"
+    },
+    {
+      "name": "VPP・DR普及に関する施策",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/advanced_systems/vpp_dr/measure.html",
+      "title_verbatim": "VPP・DR普及に関する施策｜資源エネルギー庁",
+      "checked_on": "2026-09-27",
+      "note": "curl は HTTP 202／本文0バイト（bot 判定）のため、ブラウザ（navigate ＋ get_page_text／document.title）で取得。<h1> も「VPP・DR普及に関する施策」。「バーチャルパワープラント・ディマンドリスポンスについて」の下層ページで、節見出しは「実証事業(補助金)」「エネルギー・リソース・アグリゲーション・ビジネス検討会(ERAB検討会)」。"
+    },
+    {
+      "name": "バーチャルパワープラント・ディマンドリスポンスについて",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/advanced_systems/vpp_dr/",
+      "title_verbatim": "バーチャルパワープラント・ディマンドリスポンスについて｜資源エネルギー庁",
+      "checked_on": "2026-09-27",
+      "note": "curl で HTTP 200（9,940 バイト）。<h1> も逐語一致。下層に「VPP・DRとは」「VPP・DRの意義」「取組事例紹介」「VPP・DR普及に関する施策」。Ck-2 hyoki-row30 の差し替え先。"
+    },
+    {
+      "name": "先端設備等導入制度による支援",
+      "publisher": "中小企業庁",
+      "url": "https://www.chusho.meti.go.jp/keiei/seisansei/index.html",
+      "title_verbatim": "先端設備等導入制度による支援 | 中小企業庁",
+      "checked_on": "2026-09-27",
+      "note": "候補 JSON の urls は国税庁 5434.htm（F-10 行からの抽出ノイズ）。発行元である中小企業庁の該当ページを特定して curl 取得（HTTP 200・13,006 バイト）、<title>・<h1> とも逐語一致。"
+    },
+    {
+      "name": "再生可能エネルギー出力制御の長期見通し等について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/shoene_shinene/shin_energy/keito_wg/pdf/053_01_00.pdf",
+      "title_verbatim": "再生可能エネルギー出力制御の長期見通し等について",
+      "checked_on": "2026-09-27",
+      "note": "PDF 実体（2,152,740 バイト・全29頁）1頁目の逐語は「資料１／再生可能エネルギー出力制御の／長期見通し等について／2024年12月2日／資源エネルギー庁」。掲載は第53回 系統ワーキンググループの資料1（掲載ページ <title>「第53回 総合資源エネルギー調査会 省エネルギー・新エネルギー分科会 新エネルギー小委員会／電力・ガス事業分科会電力・ガス基本政策小委員会 系統ワーキンググループ（METI/経済産業省）」）。候補 JSON の publisher「資源エネルギー庁 系統WG」のうち系統WG は開催母体で、PDF 表紙の発行元表記は「資源エネルギー庁」。"
+    },
+    {
+      "name": "平成31年度 需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金",
+      "publisher": "一般社団法人環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/vpp31/",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜事業トップ（平成31年度 バーチャルパワープラント構築実証事業）",
+      "checked_on": "2026-09-27",
+      "note": "curl で HTTP 200。<h1> が逐語「平成31年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」」。SII は執行団体で、事業の所管は資源エネルギー庁（同庁「VPP・DR普及に関する施策」の過去事業一覧に「平成31年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」（一般社団法人環境共創イニシアチブ）」として掲載）。候補 JSON のもう一方の URL https://sii.or.jp/vpp02/ は令和2年度版（<title>「SII：一般社団法人 環境共創イニシアチブ｜事業トップ（令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」について）」）＝別年度の事業。"
+    },
+    {
+      "name": "本機関等が公表する系統情報の項目等",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/institution/keitoujouhou/index.html",
+      "title_verbatim": "系統情報サービス等｜電力広域的運営推進機関",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "本機関が公表する系統情報の項目等"
+      ],
+      "note": "curl で HTTP 200。<title>・<h1> は「系統情報サービス等」だが、同ページ本文に資料名が逐語で存在する（リンク文言「本機関等が公表する系統情報の項目等」→ /occto/article/index.html#kouhyou、お知らせ「本機関等が公表する系統情報の項目等の変更について」）。規程本体は「定款・規程類」（<title>「定款・規程類｜電力広域的運営推進機関」）に2分冊で掲載され、リンク文言は「本機関が公表する系統情報の項目等 (163KB)」（https://www.occto.or.jp/assets/occto/article/kikan_kouhyou_koumoku2604.pdf・PDF 1頁目の表見出しは「表 本機関が公開する系統情報の項目及び公開時期」・全4頁）と「一般送配電事業者等が公表する系統情報の項目等 (221KB)」。「本機関『等』が…」は両者を束ねた総称として OCCTO 自身が用いている表記。"
+    },
+    {
+      "name": "発電事業について",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/004/pdf/hatsuden.pdf",
+      "title_verbatim": "発電事業について",
+      "checked_on": "2026-09-27",
+      "note": "curl で HTTP 200（application/pdf・800,610 バイト）。PDF 1頁目（全7頁）の逐語は「発電事業について／令和５年５月／資源エネルギー庁」。"
+    },
+    {
+      "name": "系統情報の公表の考え方",
+      "publisher": "資源エネルギー庁 電力・ガス事業部",
+      "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/keitou_kangaekata_20260401.pdf",
+      "title_verbatim": "系統情報の公表の考え方（令和８年４月）",
+      "checked_on": "2026-09-27",
+      "note": "PDF 実体（567,786 バイト・%PDF-1.7）の文書プロパティ /Title の逐語。掲載ページ「関係法令・ガイドライン等」（<title>「関係法令・ガイドライン等｜資源エネルギー庁」）のリンク文言は「系統情報の公表の考え方（令和8年4月改定）（PDF形式：554KB）」。Lc-3 が参照した令和6年12月改定版（keitou_kangaekata_20241209.pdf）は現行ページから差し替わっているため最新版の URL を登録した。発行元は OCCTO ではなく資源エネルギー庁 電力・ガス事業部（Lc-3 の是正どおり）。curl は HTTP 202／本文0バイトで取得できず、ブラウザで enecho.meti.go.jp オリジンから fetch して PDF 実体を取得した。"
+    },
+    {
+      "name": "蓄電池",
+      "publisher": "経済産業省",
+      "url": "https://www.meti.go.jp/policy/economy/economic_security/battery/",
+      "title_verbatim": "蓄電池 （METI/経済産業省）",
+      "checked_on": "2026-09-27",
+      "note": "curl で HTTP 200（165,358 バイト・<h1>「蓄電池」）。経済安全保障政策の下の頁。台帳には同 URL で「経済産業省「蓄電池」（経済安全保障政策）」（checked_on 2026-09-25）が既登録で、本エントリは出典欄に「蓄電池」だけで書かれる場合の登録漏れを埋めるもの。同 URL で登録済みの「蓄電池産業戦略」は <title> と一致しない別資料（既存エントリに needs_check 注記あり）。"
+    },
+    {
+      "name": "電力システムを取り巻く現状",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/denryoku_gas/pdf/069_03_00.pdf",
+      "title_verbatim": "資料3　電力システムを取り巻く現状（PDF形式：9,497KB）",
+      "checked_on": "2026-09-27",
+      "note": "掲載ページ（<title>「第69回 総合資源エネルギー調査会 電力・ガス事業分科会 電力・ガス基本政策小委員会（METI/経済産業省）」・本文「開催日 2024年1月22日」）のリンク文言の逐語。PDF 実体（9,724,917 バイト・%PDF-1.7）の文書プロパティ /Title は「スライド 1: 電力システムを取り巻く現状」（PowerPoint 由来の表記のため title_verbatim には採らなかった）。掲載ページは curl で HTTP 200 取得、PDF は curl が HTTP 202／本文0バイトのためブラウザで meti.go.jp オリジンから fetch して取得。"
+    },
+    {
+      "name": "電力貯蔵装置（蓄電池）・蓄電所を設置する場合の手引き",
+      "publisher": "経済産業省",
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/denryokucyozousouchi.html",
+      "title_verbatim": "電力貯蔵装置（蓄電池）・蓄電所を設置する場合の手引き（METI/経済産業省）",
+      "checked_on": "2026-09-27",
+      "note": "curl で HTTP 200（506,221 バイト）。<h1> も逐語一致。Ck-2 unconf-row1（explainer/bess-epc-selection.sources の「経済産業省「電気事業法に基づく工事計画」」＝実在しない名称）の差し替え先。"
+    },
+    {
+      "name": "【2025年最新版】BESS(系統用蓄電所)に最適な土地条件と選定ポイント",
+      "publisher": "株式会社翌桧地所",
+      "url": "https://kkk-asunaro.com/asunaro20250804/",
+      "title_verbatim": "【2025年最新版】BESS(系統用蓄電所)に最適な土地条件と選定ポイント - 株式会社翌桧地所",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で HTTP 200・<title> 逐語一致を確認。候補 JSON の urls にあるもう1本（fdma.go.jp の kento164_05_shiryo1-4.pdf）は別資料（総務省消防庁「蓄電池設備の規制（資料１－４）」）で、この資料名の一次ではない。"
+    },
+    {
+      "name": "容量確保契約約款（対象実需給年度：2024 - 2029 年度）",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/260730_kakuhokeiyaku_2024-2029.pdf",
+      "title_verbatim": "容量確保契約約款／（対象実需給年度：2024 - 2029 年度）／2026 年 7 月／電力広域的運営推進機関",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "容量市場 容量確保契約約款（対象実需給年度：2024-2029年度）"
+      ],
+      "note": "2026-09-27 に PDF 実体を取得（HTTP 200・全50頁）し1頁の表題を逐語採取。掲載ページ https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/jitsujukyu_kyoutsu.html は <title>「容量確保契約約款｜電力広域的運営推進機関」、リンク文言は「容量市場 容量確保契約約款（対象実需給年度：2024-2029年度） (741KB)」（同日・HTTP 200）。既登録の「容量確保契約約款」（掲載ページURL・needs_check）とは別エントリで、こちらが PDF 実体。"
+    },
+    {
+      "name": "蓄電池運用最適化システムの共同開発について",
+      "publisher": "旭化成株式会社",
+      "url": "https://www.asahi-kasei.com/jp/news/2026/ze260423.html",
+      "title_verbatim": "蓄電池運用最適化システムの共同開発について | 旭化成株式会社",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で HTTP 200（実効URL は拡張子なしの .../ze260423 にリダイレクト）。<title> 冒頭が資料名と逐語一致。候補 JSON の urls にあるもう1本（eneres.co.jp/blog/20250722）は別資料（エナリスの Fluence 基本合意書リリース）。"
+    },
+    {
+      "name": "Fluence社と蓄電池貯蔵性能の向上を実現するシステム連携の基本合意書を締結！脱炭素社会へ向け調印式",
+      "publisher": "株式会社エナリス（ENERES）",
+      "url": "https://www.eneres.co.jp/blog/20250722",
+      "title_verbatim": "Fluence社と蓄電池貯蔵性能の向上を実現するシステム連携の基本合意書を締結！脱炭素社会へ向け調印式 │ 株式会社エナリス │ ENERES",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で HTTP 200・<title> 冒頭が資料名と逐語一致。"
+    },
+    {
+      "name": "No.5925 カーボンニュートラルに向けた投資促進税制（生産工程効率化等設備を取得した場合等の特別償却又は税額控除）",
+      "publisher": "国税庁",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5925.htm",
+      "title_verbatim": "No.5925 カーボンニュートラルに向けた投資促進税制（生産工程効率化等設備を取得した場合等の特別償却又は税額控除）｜国税庁",
+      "checked_on": "2026-09-27",
+      "note": "★候補 JSON の urls は .../hojin/5434.htm だが、これは別ページ（<title>「No.5434 中小企業経営強化税制（中小企業者等が特定経営力向上設備等を取得した場合の特別償却又は税額控除）｜国税庁」・同日 HTTP 200 で確認）。資料名 No.5925 に対応する正しい URL は .../hojin/5925.htm で、2026-09-27 に HTTP 200・逐語一致を確認した。"
+    },
+    {
+      "name": "インバランス料金制度の詳細設計等について",
+      "publisher": "電力・ガス取引監視等委員会 制度設計専門会合",
+      "url": "https://www.egc.meti.go.jp/activity/emsc_system/048_haifu.html",
+      "title_verbatim": "制度設計専門会合（第48回）‐配布資料| 電力・ガス取引監視等委員会／配布資料一覧の逐語「資料5  2022年度以降のインバランス料金の詳細設計等について（PDF形式：3398KB）」（pdf/048_05_00.pdf）",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "2022年度以降のインバランス料金の詳細設計等について"
+      ],
+      "needs_check": true,
+      "note": "2026-09-27 にブラウザで配布資料ページを実機取得（HTTP 200）。★資料名が一次と完全には一致しない: 実在する資料名は「2022年度以降のインバランス料金の詳細設計等について」（第48回 資料5）で、「インバランス料金制度の詳細設計等について」という表題の資料は確認できなかった（第47〜51回を確認。第49回は「新たなインバランス料金制度を踏まえた収支管理のあり方等について」）。PDF 実体（pdf/048_05_00.pdf）は curl が HTTP 202・本文0バイト、ブラウザはダウンロードダイアログになり表題の逐語は未取得。サイトに書く資料名は一次の表題に合わせるのが望ましい。発行元も Lc-3 の指摘どおり「経産省」ではなく電力・ガス取引監視等委員会（当時の名称は制度設計専門会合。現在は制度設計・監視専門会合）。"
+    },
+    {
+      "name": "令和2年度 バーチャルパワープラント構築実証事業",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/vpp02/",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜事業トップ（令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」について）",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」"
+      ],
+      "note": "2026-09-27 に curl で HTTP 200。一次の正式名は「令和2年度『需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金』」で、サイトに書く資料名はその短縮形（同一事業を指す）。補助事業者は経済産業省／資源エネルギー庁、執行が SII。同シリーズの前年度分 https://sii.or.jp/vpp31/ は <title>「SII：一般社団法人 環境共創イニシアチブ｜事業トップ（平成31年度 バーチャルパワープラント構築実証事業）」（同日・HTTP 200）。"
+    },
+    {
+      "name": "再生可能エネルギー FIT・FIP制度ガイドブック",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/saiene/data_kaitori.html",
+      "title_verbatim": "資料・パンフレット　FIT・FIP制度関連｜なっとく！再生可能エネルギー／一覧の逐語「FIT・FIP制度ガイドブック 2026年度版[PDF形式]」（data/kaitori/2026_fit_fip_guidebook.pdf）",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "FIT・FIP制度ガイドブック"
+      ],
+      "needs_check": true,
+      "note": "2026-09-27 にブラウザで掲載ページを実機取得（HTTP 200）。★一次の現行表記は「FIT・FIP制度ガイドブック ○○年度版」で、頭に「再生可能エネルギー」は付かない（2023年度版以降）。「再生可能エネルギー 固定価格買取制度ガイドブック」が付く表記は2022年度版以前の旧称。PDF 本体（2026_fit_fip_guidebook.pdf）は curl が HTTP 202・本文0バイトで表紙表題は未取得のため needs_check。年度版を明記して書くのが望ましい。"
+    },
+    {
+      "name": "取組事例の紹介",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/advanced_systems/vpp_dr/case.html",
+      "title_verbatim": "取組事例の紹介｜資源エネルギー庁",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 にブラウザで実機取得（HTTP 200）。親ページは https://www.enecho.meti.go.jp/category/saving_and_new/advanced_systems/vpp_dr/ で <title>「バーチャルパワープラント・ディマンドリスポンスについて｜資源エネルギー庁」（同日確認）。親ページ内のリンク文言は「取組事例紹介」（「の」なし）だが、下層ページ自身の <title>・パンくずは「取組事例の紹介」で資料名と一致する。候補 JSON の urls は親ページの URL で、資料名が指すのはこの下層ページ。"
+    },
+    {
+      "name": "第4節 機械及び装置関係共通事項",
+      "publisher": "国税庁",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kobetsu/sonota/700525/01/01_04.htm",
+      "title_verbatim": "第4節 機械及び装置関係共通事項｜国税庁",
+      "checked_on": "2026-09-27",
+      "note": "耐用年数の適用等に関する取扱通達 第1章 第4節。2026-09-27 に curl で HTTP 200・<title> 逐語一致。★候補 JSON の urls（.../taxanswer/hojin/5434.htm）は別ページ（No.5434 中小企業経営強化税制）。Ck-2 計画 F-10 が挙げた .../700525/01/ は同日 HTTP 200 で 404 ページ（<title>「指定されたページを表示できませんでした」）へ転送されるため、通達目次 .../700525/01.htm（<title>「通達目次 / 耐用年数の適用等に関する取扱通達｜国税庁」）から辿って上記 URL を確定した。"
+    },
+    {
+      "name": "系統連系規程 JEAC 9701-2024",
+      "publisher": "一般社団法人 日本電気協会",
+      "url": "https://store.denki.or.jp/products/%E7%B3%BB%E7%B5%B1%E9%80%A3%E7%B3%BB%E8%A6%8F%E7%A8%8B",
+      "title_verbatim": "系統連系規程 JEAC9701-2024 &ndash; 日本電気協会 Webストア",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "系統連系規程 JEAC9701-2024"
+      ],
+      "note": "2026-09-27 に curl で HTTP 200。発行元の Web ストアの商品ページ（検索結果ページ <title>「の検索結果: 79件 - 結果 ”系統連系規程” &ndash; 日本電気協会 Webストア」から到達）。一次表記は「JEAC9701-2024」で JEAC と番号の間に空白がない点だけがサイト表記と異なる。協会トップ https://www.denki.or.jp/ は <title>「日本電気協会」（同日・HTTP 200）。★Lc-3 の指摘どおり発行元は電気学会ではなく日本電気協会。"
+    },
+    {
+      "name": "長期脱炭素電源オークション、リチウムイオン電池の募集量激減へ",
+      "publisher": "日経エネルギーNext",
+      "url": "https://project.nikkeibp.co.jp/energy/atcl/19/feature/00004/00024/",
+      "title_verbatim": "長期脱炭素電源オークション、リチウムイオン電池の募集量激減へ｜日経エネルギーNext",
+      "checked_on": "2026-09-27",
+      "note": "2026-09-27 に curl で HTTP 200・<title> 冒頭が資料名と逐語一致。媒体名は「日経BP」ではなく「日経エネルギーNext」（既登録の同媒体エントリと表記を揃える）。"
+    },
+    {
+      "name": "電力市場のモニタリングレポート",
+      "publisher": "電力・ガス取引監視等委員会",
+      "url": "https://www.egc.meti.go.jp/general/monitoring.html",
+      "title_verbatim": "自主的取組・競争状態のモニタリング報告| 電力・ガス取引監視等委員会",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "自主的取組・競争状態のモニタリング報告"
+      ],
+      "needs_check": true,
+      "note": "2026-09-27 にブラウザで実機取得（HTTP 200）。★「電力市場のモニタリングレポート」という名称の一次は確認できなかった。委員会サイトの公表名は「自主的取組・競争状態のモニタリング報告」（サイトマップの項目名・当該ページ <title> とも同じ）で、配布資料側の資料名は「モニタリングレポート（○年○月～○月期）」（例: 制度設計専門会合 第48回 資料8「モニタリングレポート(令和2年1月～3月期)」・第50回 資料7「自主的取組・競争状態のモニタリング報告（令和2年4月～6月期）」を同日確認）。サイトに書く名称はこのいずれかに寄せるのが望ましい。なお月次の取引実績は別ページ「電力取引報の結果について」（/info/business/report/results.html。同日 curl は HTTP 202 で未取得）。"
+    },
+    {
+      "name": "非化石価値取引 市場情報",
+      "publisher": "一般社団法人 日本卸電力取引所（JEPX）",
+      "url": "https://www.jepx.jp/nonfossil/market-data/",
+      "title_verbatim": "市場情報 | 非化石価値取引 | JEPX",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "非化石価値取引市場情報"
+      ],
+      "note": "2026-09-27 に curl で HTTP 200。<title> は「下層ページ名 | セクション名 | サイト名」の順で、資料名はそれをセクション＋ページ名の順に読んだ表記（同一ページ）。ページ内見出しは「取引市場データ」。★旧来の URL 候補 https://www.jepx.jp/electricpower/market-data/nonfossil/ は同日 HTTP 404（非化石は /nonfossil/ 配下へ移動済み）。取引概要は https://www.jepx.jp/nonfossil/outline/ で <title>「取引概要 | 非化石価値取引 | JEPX」（同日確認）。"
+    },
+    {
+      "name": "蓄電池設備の規制（消防関係法令による規制体系）",
+      "publisher": "総務省消防庁",
+      "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento164_05_shiryo1-4.pdf",
+      "title_verbatim": "蓄電池設備の規制 資料１－４ 【消防関係法令による蓄電池設備の規制体系】",
+      "checked_on": "2026-09-27",
+      "aliases": [
+        "蓄電池設備の規制（資料１－４）【消防関係法令による蓄電池設備の規制体系】"
+      ],
+      "note": "PDF 12 ページ・1 ページ目の表題を逐語（pdfplumber 抽出）。2026-09-27 実機で HTTP 200・759,747 バイト",
+      "used_in": "src/app/lv/buying-guide/page.tsx / src/app/lv/regulation-subsidy/page.tsx / src/app/lv/risks/page.tsx"
+    },
+    {
+      "name": "リチウムイオン電池の貯蔵に関する消防法の規制見直し（2024）",
+      "publisher": "DOWAエコジャーナル",
+      "url": "https://www.dowa-ecoj.jp/law/2024/20240102.html",
+      "title_verbatim": "リチウムイオン電池の貯蔵に関する消防法の規制が見直されました | DOWAエコジャーナル",
+      "checked_on": "2026-09-27",
+      "used_in": "src/app/lv/regulation-subsidy/page.tsx / src/app/lv/risks/page.tsx"
+    },
+    {
+      "name": "低圧蓄電所の開発が活発化",
+      "publisher": "日経BP メガソーラービジネス",
+      "url": "https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/05844/?ST=msb",
+      "title_verbatim": "「低圧」蓄電所の開発が活発化、アグリや区画販売も - ニュース - メガソーラービジネス plus : 日経BP",
+      "checked_on": "2026-09-27",
+      "used_in": "src/app/lv/what-is/page.tsx"
+    },
+    {
+      "name": "サイトのご利用にあたって",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/terms/",
+      "title_verbatim": "サイトのご利用にあたって | 一般社団法人 電力需給調整力取引所",
+      "checked_on": "2026-09-27",
+      "note": "Ck-2 ■5（裁定 R21）。当サイトが 2026-09 まで使っていた「EPRX 利用規約」という資料は存在しない。節は「３．リンクについて」「４．著作権等について」で、「§」は一次に 0 件。",
+      "used_in": "src/app/tools/balancing-revenue/page.tsx / src/app/tracker/imbalance/page.tsx / src/lib/eic-license.ts / src/data/eprx-monthly-battery.json"
     }
   ]
 }

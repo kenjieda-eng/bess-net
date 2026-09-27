@@ -96,6 +96,26 @@ export default function EditorialPolicyPage() {
             </p>
           </section>
 
+          {/* 2026-09-27 Ck-2 実行便① ■6（裁定 R22・案A）。出典元からの要請に応じる旨を明文化する。
+              時間の約束は書かない（上の「訂正・削除ポリシー」の 24 時間と /incidents の 48 時間 SOP との
+              整合が未裁定のため「速やかに」に留める）。「削除」ではなく「表示を停止」の語を使うのは、
+              同ポリシーの「記事の削除は原則行いません」と衝突させないため。
+              ★この文言が正（/terms 第4条は本ページを参照するだけ＝二重管理にしない・#119）。 */}
+          <section className="page-section">
+            <h2>出典元（データ提供元）からのご要請</h2>
+            <p>
+              当サイトは、公的機関・業界団体等が公表するデータを、各提供元の利用条件に従い、出典と、編集・加工等を行った旨を明記したうえで掲載しています。出典元から掲載内容の修正・削除のご要請をいただいた場合は、
+              <a
+                href={siteConfig.organization.contactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {siteConfig.organization.contactUrl}
+              </a>{' '}
+              にて承り、速やかに対応します。対応が完了するまでの間、該当箇所の表示を停止する場合があります。対応の内容と日付は、上記「訂正・削除ポリシー」に従い記事末の「訂正履歴」に残します。
+            </p>
+          </section>
+
           <section className="page-section">
             <h2>編集体制</h2>
             <p>
