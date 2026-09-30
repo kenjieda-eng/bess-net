@@ -157,7 +157,7 @@ export default function LvWhatIsPage() {
                 </a>
               </li>
               <li>
-                日経BP メガソーラービジネス「低圧蓄電所の開発が活発化」{' '}
+                日経BP メガソーラービジネス「低圧蓄電所の開発が活発化、アグリや区画販売も」{' '}
                 <a href="https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/05844/?ST=msb" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
                   https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/05844/?ST=msb
                 </a>

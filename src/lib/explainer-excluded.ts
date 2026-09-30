@@ -15,17 +15,10 @@
 export type ExcludedExplainer = { slug: string; row: string; reason: string };
 
 export const EXPLAINER_EXCLUDED: readonly ExcludedExplainer[] = [
-  {
-    slug: 'bess-depreciation-tax',
-    row: 'Ck-1a 報告 (5) A13 監査表',
-    // 一次（e-Gov 法令 API・国税庁タックスアンサー・中小企業庁）と突き合わせた結果:
-    //   誤り 3（カーボンニュートラル投資促進税制の対象・「年次の事前申告」・過少資本税制の説明）
-    //   古い 3（環境関連投資促進税制＝グリーン投資減税は廃止・過大支払利息税制は令和元年度改正前・連結納税制度は
-    //          令和4年4月開始事業年度からグループ通算制度へ移行）
-    //   裏付けなし 4（耐用年数 15〜17年・PCS 15年・変圧器 15〜17年・「自治体ごとの固定資産税減免 3〜5年」）
-    // 税務は読者が実務判断に使う領域で、部分修正より全面改稿が要る。改稿まで表示しない。
-    reason: '税務の記述に誤り 3・古い記述 3・裏付けなし 4（Ck-1a の A13 監査）。全面改稿まで非表示',
-  },
+  // ★2026-09-29 Ck-2 実行便② ■4（裁定 R17）: bess-depreciation-tax の除外を解除した。
+  //   Ck-1a の A13 監査（誤り 3・古い 3・裏付けなし 4）を受けて全面改稿（F-08〜F-12）を microCMS に PATCH し、
+  //   保存後の本文で鉤括弧の引用 95 か所（計画便の 51 か所を含む）を一次（国税庁・e-Gov 法令 API v2・環境省）と
+  //   照合して MISSING 0 を確認したうえで表示に戻す。照合記録: reports/ck2-exec-2-2026-09-29.md (5)。
   {
     slug: 'soc-soh-degradation-management',
     row: 'Ck-2 計画便 A-5 別表',

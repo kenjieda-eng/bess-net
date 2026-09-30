@@ -85,7 +85,7 @@ export default function LvRegulationSubsidyPage() {
                 <strong>保安</strong>: 電気工作物としての区分・必要な保安体制は設備構成により異なります。高圧（電気主任技術者の選任等が必要）に比べ低圧は負担が軽いのが一般的です（→ 解説①の<Link href="/lv/what-is">比較表</Link>）。
               </li>
               <li>
-                <strong>消防</strong>: リチウムイオン電池の電解液は消防法上の危険物（第4類）に該当し、容量・電解液量に応じて届出や市町村の火災予防条例の基準が適用される場合があります。2024年にも規制の見直しが行われるなど動きが続く領域です（出典: 総務省消防庁資料・DOWAエコジャーナル解説）。<strong>所轄消防への事前確認が実務の基本</strong>です。
+                <strong>消防</strong>: リチウムイオン電池の電解液は消防法上の危険物（第4類）に該当し、容量・電解液量に応じて届出や市町村の火災予防条例の基準が適用される場合があります。2024年にも規制の見直しが行われるなど動きが続く領域です（出典: 総務省消防庁「蓄電池設備のリスクに応じた防火安全対策検討部会報告書」令和5年3月／消防庁予防課長「改正火災予防条例（例）の運用等について（通知）」令和5年5月31日・消防予第332号〈令和6年1月1日から適用〉）。<strong>所轄消防への事前確認が実務の基本</strong>です。
               </li>
             </ul>
 
@@ -105,7 +105,7 @@ export default function LvRegulationSubsidyPage() {
                 2026年4月に低圧リソースへ開放済み（→ 当サイト解説: <Link href="/explainer/low-voltage-balancing-market-launch">低圧系統用蓄電池の需給調整市場参入</Link>）。
               </li>
               <li>
-                価格面では、一次調整力・二次調整力①・複合商品のΔkW上限価格が、<strong>2026年8月31日実需給分まで15.00円/ΔkW・30分、2026年9月1日実需給分から10.00円/ΔkW・30分</strong>に引き下げられます（適用終了は「当面の間」。二次調整力②・三次調整力①は7.21円/ΔkW・30分を当面継続、三次調整力②は上限なし。出典: 電力需給調整力取引所（EPRX）2026年7月30日公表・→ <Link href="/policy-calendar/meti-stable-supply-wg4-balancing-cap-2026-07">第4回 電力安定供給WG ── 上限価格15円→10円引下げ</Link>）。
+                価格面では、一次調整力・二次調整力①・複合商品のΔkW上限価格が、<strong>2026年8月31日実需給分まで15.00円/ΔkW・30分、2026年9月1日実需給分から10.00円/ΔkW・30分</strong>に引き下げられます（適用終了は「当面の間」。二次調整力②・三次調整力①は7.21円/ΔkW・30分を当面継続、三次調整力②は上限なし。出典: 一般社団法人 電力需給調整力取引所「需給調整市場のΔkW上限価格について」（2026年7月30日更新、https://www.eprx.or.jp/ ）・→ <Link href="/policy-calendar/meti-stable-supply-wg4-balancing-cap-2026-07">第4回 電力安定供給WG ── 上限価格15円→10円引下げ</Link>）。
               </li>
             </ul>
 
@@ -177,13 +177,13 @@ export default function LvRegulationSubsidyPage() {
                 </a>
               </li>
               <li>
-                総務省消防庁「蓄電池設備の規制（消防関係法令による規制体系）」{' '}
+                総務省消防庁「蓄電池設備の規制（資料１－４）【消防関係法令による蓄電池設備の規制体系】」{' '}
                 <a href="https://www.fdma.go.jp/singi_kento/kento/items/kento164_05_shiryo1-4.pdf" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
                   https://www.fdma.go.jp/singi_kento/kento/items/kento164_05_shiryo1-4.pdf
                 </a>
               </li>
               <li>
-                DOWAエコジャーナル「リチウムイオン電池の貯蔵に関する消防法の規制見直し（2024）」{' '}
+                DOWAエコジャーナル「リチウムイオン電池の貯蔵に関する消防法の規制が見直されました」{' '}
                 <a href="https://www.dowa-ecoj.jp/law/2024/20240102.html" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
                   https://www.dowa-ecoj.jp/law/2024/20240102.html
                 </a>

@@ -114,7 +114,7 @@ export default function LvBuyingGuidePage() {
                 <strong>土地</strong>: 所有か賃借か、地目・造成の状況、水害等のハザード該当。賃借なら期間と更新条件。
               </li>
               <li>
-                <strong>保安・消防</strong>: リチウムイオン電池の電解液は消防法上の危険物（第4類）に該当するため、設備の容量・電解液量によっては届出等や市町村の火災予防条例に基づく基準が適用される場合があります（近年も規制見直しが継続）。適用の有無は設備構成と自治体により異なるため、所轄消防への確認状況を販売会社に尋ねてください（出典: 総務省消防庁資料）。制度全体の整理は解説「<Link href="/lv/regulation-subsidy">制度・規制と補助金</Link>」へ。
+                <strong>保安・消防</strong>: リチウムイオン電池の電解液は消防法上の危険物（第4類）に該当するため、設備の容量・電解液量によっては届出等や市町村の火災予防条例に基づく基準が適用される場合があります（近年も規制見直しが継続）。適用の有無は設備構成と自治体により異なるため、所轄消防への確認状況を販売会社に尋ねてください（出典: 総務省消防庁「蓄電池設備のリスクに応じた防火安全対策検討部会報告書」令和5年3月／消防庁予防課長「改正火災予防条例（例）の運用等について（通知）」令和5年5月31日・消防予第332号〈令和6年1月1日から適用〉）。制度全体の整理は解説「<Link href="/lv/regulation-subsidy">制度・規制と補助金</Link>」へ。
               </li>
               <li>
                 <strong>出口</strong>: 将来の売却可能性（中古市場は形成途上）、撤去費用の見込み、販売会社・運用会社が事業撤退した場合の扱い。
@@ -165,7 +165,7 @@ export default function LvBuyingGuidePage() {
                 </a>
               </li>
               <li>
-                総務省消防庁「蓄電池設備の規制（消防関係法令による規制体系）」{' '}
+                総務省消防庁「蓄電池設備の規制（資料１－４）【消防関係法令による蓄電池設備の規制体系】」{' '}
                 <a href="https://www.fdma.go.jp/singi_kento/kento/items/kento164_05_shiryo1-4.pdf" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
                   https://www.fdma.go.jp/singi_kento/kento/items/kento164_05_shiryo1-4.pdf
                 </a>

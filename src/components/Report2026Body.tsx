@@ -75,7 +75,7 @@ export default function Report2026Body(props: Report2026BodyProps) {
           当サイトが公開情報をもとに整備したプロジェクトデータベース（DB）には、{n(projectCount)}件の系統用蓄電池プロジェクトが登録されており、その累積は<strong>出力 約{n(totalMW)}MW・容量 約{n(totalMWh)}MWh</strong>にのぼる（いずれも当サイトDB登録分。公開情報に基づくため、国内全体の実数とは異なる）。ステータスの内訳は<strong>稼働中{n(st('稼働中'))}件・計画中{n(st('計画中'))}件・建設中{n(st('建設中'))}件・その他{n(st('その他'))}件</strong>で、すでに動いている案件とこれから立ち上がる案件がほぼ拮抗する立ち上がり局面にある。
         </p>
         <p style={NOTE}>
-          公的統計では、系統用蓄電池の稼働は2024年12月時点で約<strong>170MW</strong>。一方、系統への接続検討申込は2025年3月に約<strong>113GW</strong>と2023年初頭の約12倍に急増しており、稼働（実装）と申込（期待）の間に大きな開きがある。2030年の導入見通しは累計<strong>14.1〜23.8GWh</strong>（資源エネルギー庁）。当サイトDBの登録 約{n(totalMW)}MW（計画・建設を含む）は、この稼働170MWと申込113GWの中間＝「公表済みの具体案件」を捕捉した数字と位置づけられる。（出所：経済産業省・資源エネルギー庁／OCCTO）
+          公的統計では、系統用蓄電池の稼働は2024年12月時点で約<strong>170MW</strong>。一方、系統への接続検討申込は2025年3月末時点で約<strong>113GW</strong>と2024年3月末比で約2.8倍に急増しており、稼働（実装）と申込（期待）の間に大きな開きがある。2030年の導入見通しは累計<strong>14.1〜23.8GWh</strong>（資源エネルギー庁）。当サイトDBの登録 約{n(totalMW)}MW（計画・建設を含む）は、この稼働170MWと申込113GWの中間＝「公表済みの具体案件」を捕捉した数字と位置づけられる。（出所：資源エネルギー庁「系統用蓄電池の迅速な系統連系に向けて」2025年3月17日・資料2 https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/smart_power_grid_wg/pdf/002_02_00.pdf ／同 2025年6月27日・資料4 https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/smart_power_grid_wg/pdf/003_04_00.pdf ／資源エネルギー庁「系統用蓄電池の現状と課題」2024年5月29日・資料5 https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/pdf/062_05_00.pdf ）
         </p>
         <h3 style={H3}>2-2. 地域偏在</h3>
         <p style={P}>
@@ -98,7 +98,7 @@ export default function Report2026Body(props: Report2026BodyProps) {
         </p>
         <h3 style={H3}>3-2. 長期脱炭素電源オークション（投資回収の柱）</h3>
         <p style={P}>
-          応札年度 2023年度に始まった、脱炭素電源の新規投資を促す制度。落札した電源は<strong>長期（20年間）にわたり固定的な収入</strong>を得られ、大型蓄電所の投資回収に道筋を付けた。第1回（応札年度：2023年度）は蓄電池・揚水で<strong>166.9万kW</strong>（蓄電池単独 約<strong>1.09GW</strong>・落札率24%）が落札され、競争が激化。第2回（応札年度：2024年度）は蓄電池・揚水（3〜6時間）で<strong>96.1万kW</strong>が落札され、応札は募集上限の5倍超に達した。20年の固定収入を前提とした大型案件の投資判断を後押ししている（出所：OCCTO 約定結果／日経エネルギーNext／PVeye）。上場企業や独立系（しろくま電力等）が大型案件に踏み込む「呼び水」となっている。
+          応札年度 2023年度に始まった、脱炭素電源の新規投資を促す制度。落札した電源は<strong>長期（20年間）にわたり固定的な収入</strong>を得られ、大型蓄電所の投資回収に道筋を付けた。第1回（応札年度：2023年度）は蓄電池・揚水で<strong>166.9万kW</strong>（蓄電池単独 約<strong>1.09GW</strong>・落札率24%）が落札され、競争が激化。第2回（応札年度：2024年度）は蓄電池・揚水（3〜6時間）で<strong>96.1万kW</strong>が落札され、応札は募集上限の5倍超に達した。20年の固定収入を前提とした大型案件の投資判断を後押ししている（出所：電力広域的運営推進機関「容量市場　長期脱炭素電源オークション約定結果（応札年度：2023年度）」2024年4月26日 https://www.occto.or.jp/news/market-board_market_oshirase_2024_20240426_youryouyakujokekka_kouhyou.html ／同「容量市場　長期脱炭素電源オークション約定結果（応札年度：2024年度）」2025年4月28日 https://www.occto.or.jp/news/market-board_market_oshirase_2025_20250428_youryouyakujokekka_kouhyou.html ）。上場企業や独立系（しろくま電力等）が大型案件に踏み込む「呼び水」となっている。
         </p>
         <h3 style={H3}>3-3. 需給調整市場（kWh・ΔkW価値）</h3>
         <p style={P}>
@@ -237,8 +237,8 @@ export default function Report2026Body(props: Report2026BodyProps) {
         <h2 style={H2}>出典</h2>
         <ul style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--color-muted)', paddingLeft: 20 }}>
           <li>資源エネルギー庁「系統用蓄電池の現状と課題」（2024-05-29）ほか meti.go.jp 各資料</li>
-          <li>OCCTO「長期脱炭素電源オークション約定結果（応札2023年度）落札電源一覧」（2024-04-26）</li>
-          <li>日経エネルギーNext「系統用蓄電池が殺到、長期脱炭素電源オークション初回入札結果」</li>
+          <li>OCCTO「容量市場　長期脱炭素電源オークション約定結果（応札年度：2023年度）　別紙：落札電源一覧」（2024-04-26）</li>
+          <li>日経エネルギーNext「系統用蓄電池が殺到、長期脱炭素電源オークションの初回入札結果をひもとく」 https://project.nikkeibp.co.jp/energy/atcl/19/feature/00004/00021/</li>
           <li>PVeye WEB「脱炭素電源競売で蓄電池1GW強落札」「鹿児島で大型蓄電池が全焼」</li>
           <li>経済産業省 産業保安・安全グループ 電力安全課「蓄電池設備における爆発・火災事故及びその対応」（2024-09-10）</li>
         </ul>

@@ -122,7 +122,7 @@ export const GLOBAL_MARKETS: Record<CountryKey, CountryMarket> = {
     ],
     priceTrend: 'セル価格は依然世界最安 (kWhあたり~50-70 USD)。強制配置撤廃で粗悪な抱き合わせ案件が淘汰され、市場型収益 (容量価格・スポット裁定) で採算が取れる案件へ選別が進む。',
     japanComparison: '導入量は日本の約50倍、価格は約半分。日本にも CATL/BYD/EVE が大量供給、国内メーカー (GS Yuasa等) はニッチ。強制配置撤廃で「量から質」への移行が、世界のセル価格・供給に波及。',
-    notes: '世界最大の BESS 生産国 + 導入国。2026年の最大テーマは強制配置撤廃後の市場型移行。出典: NEA / CNESA / Carbon Brief (136号文) / S&P Global / ess-news (容量価格)。(2026-06-30 半期更新)',
+    notes: '世界最大の BESS 生産国 + 導入国。2026年の最大テーマは強制配置撤廃後の市場型移行。出典: 国家発展改革委員会・国家能源局「关于深化新能源上网电价市场化改革 促进新能源高质量发展的通知」（发改价格〔2025〕136号、2025年2月9日 https://www.ndrc.gov.cn/xxgk/zcfb/tz/202502/t20250209_1396066.html ）／国家能源局「国家能源局举行新闻发布会介绍2025年新型储能发展情况」（2026年1月30日 https://www.nea.gov.cn/20260130/50f657ce87f848e1a9a1861d1fd9aa23/c.html ）／CNESA・S&P Global・ess-news（民間の調査・報道）。(2026-06-30 半期更新)',
     overview: '中国は2025年末に新型エネルギー貯蔵の累積導入が136GW (前年比+84%) に到達 (NEA)。2025年2月の「136号文」で再エネへの蓄電池強制配置 (強制配儲) が撤廃され市場ベース取引へ移行、短期は新規が一服 (S&P Global: 2026年44GW/116GWh、前年予測比-36%) する一方、2026年2月に系統用蓄電池の容量価格 (石炭基準連動) が導入され収益モデルが市場型へ転換中。2030年に370GW超見通し。',
     highlights: [
       '2025年末に新型蓄電 累積136GW (+84% YoY、NEA)',
@@ -158,7 +158,7 @@ export const GLOBAL_MARKETS: Record<CountryKey, CountryMarket> = {
     priceTrend: 'VGF入札タリフは2024年2.26→2025年1.48 lakhルピー/MW/月 (-35% YoY)。資本補助 + 入札競争で世界最安水準の貯蔵コストへ。',
     japanComparison: '導入量は日本の約1倍前後だが伸び率は世界最大級 (CAGR ~60%)。SECI/NTPC主導の入札 + VGF型で、日本の市場 (容量市場・需給調整市場) とは制度構造が大きく異なる。',
     notes: 'PLI + VGF + SECI入札主導で世界最速級の成長。2026年の目玉はVGFの8倍拡大。出典: 印政府/内閣 (VGF) / SECI / IEEFA / JMK Research / ess-news。(2026-06-30 半期更新)',
-    overview: 'インドは2025年に130GWh超のBESS入札が出た後、2026年に約9.2GWhが運開予定 (Saur Energy)。2026年5月14日に内閣がVGF (Viability Gap Funding) を5,400億ルピー・30GWh規模へ8倍拡大承認し、SECI/NTPC主導の入札が加速。VGF入札タリフは2024年2.26→2025年1.48 lakhルピー/MW/月へ約35%下落とコスト競争が激化。Reliance/Adani/Tata の3大財閥が垂直統合で牽引。',
+    overview: 'インドは2025年に130GWh超のBESS入札が出た後、2026年に約9.2GWhが運開予定 (Saur Energy)。2025年6月に政府がVGF (Viability Gap Funding) 第2弾（30GWh・₹5,400 crore＝約540億ルピー）を承認し、SECI/NTPC主導の入札が加速。VGF入札タリフは2024年2.26→2025年1.48 lakhルピー/MW/月へ約35%下落とコスト競争が激化。Reliance/Adani/Tata の3大財閥が垂直統合で牽引。',
     highlights: [
       '内閣がVGFを30GWh・5,400億ルピーへ拡大承認 (2026/5/14)、第1弾の8倍',
       '2025年に130GWh超を入札、2026年に約9.2GWh運開見込み',

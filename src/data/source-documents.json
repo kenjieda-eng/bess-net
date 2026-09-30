@@ -1,6 +1,6 @@
 {
   "_comment": "資料名の台帳（Ck-1 A6・2026-09-21）。name はサイトに書いている資料名、title_verbatim は確認時の一次の <title>／PDF 表題の逐語。書く前に一次を実機で取り、確認日つきで登録する。検査: npm run verify:source-names",
-  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true）",
+  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true） ／ 2026-09-29 Ck-2 実行便② で 10 件を追加・needs_check 4 件を決着（2 件は本文から外れたため理由を書いて残置）",
   "documents": [
     {
       "name": "需給調整市場のΔkW上限価格について",
@@ -766,7 +766,7 @@
       "title_verbatim": "第110回 総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 制度検討作業部会（METI/経済産業省）／「開催日 2026年1月23日」／「資料3-3　容量市場について（PDF形式：4,302KB）」／「最終更新日：2026年8月17日」",
       "checked_on": "2026-09-27",
       "needs_check": true,
-      "note": "2026-09-27 に開催資料一覧ページをブラウザで取得（www.meti.go.jp は curl に HTTP 202／本文0バイト）。資料名「容量市場について」は同ページの逐語で実在を確認した。★needs_check の理由: この表題は資源エネルギー庁が複数回の審議会で繰り返し使う汎用表題で（Lc-3 は 2023年7月31日 資料4・2017年11月10日 資料4 も列挙）、hyoki-row12（explainer/capacity-market-advanced）・hyoki-row13（explainer/capacity-market）がどの回次を指すかは本文と突き合わせて②便で確定すること。URL は直近版（第110回・2026年1月23日 資料3-3、PDF は https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/pdf/110_03_03.pdf ）を暫定登録。PDF 本文は未取得（curl 202）。"
+      "note": "2026-09-27 に開催資料一覧ページをブラウザで取得（www.meti.go.jp は curl に HTTP 202／本文0バイト）。資料名「容量市場について」は同ページの逐語で実在を確認した。★needs_check の理由: この表題は資源エネルギー庁が複数回の審議会で繰り返し使う汎用表題で（Lc-3 は 2023年7月31日 資料4・2017年11月10日 資料4 も列挙）、hyoki-row12（explainer/capacity-market-advanced）・hyoki-row13（explainer/capacity-market）がどの回次を指すかは本文と突き合わせて②便で確定すること。URL は直近版（第110回・2026年1月23日 資料3-3、PDF は https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/pdf/110_03_03.pdf ）を暫定登録。PDF 本文は未取得（curl 202）。 ／ 2026-09-29 Ck-2 実行便②（追補2）: 回次が特定できないため本文を OCCTO「容量市場の概要について」（2019年10月・説明会資料）に寄せた。現在は本文から参照されていない（needs_check は回次不明のまま残す）"
     },
     {
       "name": "系統用蓄電池の現状と課題",
@@ -880,13 +880,16 @@
       "note": "2026-09-27 curl HTTP 200。★Ck-2 計画便が試した https://sii.or.jp/vpp/ ・/vpp04/ は 404、追加で /vpp01/ /vpp03/ /vpp05/ も 404 を実測。現存する事業ページは /vpp02/（令和2年度・最終年度）と /vpp30/（平成30年度・<title>「…｜事業トップ（平成30年度 需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金（VPP））」）の 2 本で、恒久 URL として最終年度の /vpp02/ を採用した。補助事業の所管は資源エネルギー庁・執行団体が SII（資源エネルギー庁「VPP・DR普及に関する施策」https://www.enecho.meti.go.jp/category/saving_and_new/advanced_systems/vpp_dr/measure.html にも「令和2年度『需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金（バーチャルパワープラント構築実証事業）』（一般社団法人環境共創イニシアチブ）」と逐語で掲載・同日ブラウザ確認）。hyoki-row32 の差し替え先。事業自体は終了し、後継は「分散型エネルギーリソースの更なる活用に向けた実証事業」＝別名称。"
     },
     {
-      "name": "FIP制度",
+      "name": "再エネを日本の主力エネルギーに！ FIP制度が2022年4月スタート",
       "publisher": "資源エネルギー庁",
       "url": "https://www.enecho.meti.go.jp/about/special/johoteikyo/fip.html",
       "title_verbatim": "再エネを日本の主力エネルギーに！「FIP制度」が2022年4月スタート｜エネこれ｜資源エネルギー庁",
       "checked_on": "2026-09-27",
-      "needs_check": true,
-      "note": "要確認（needs_check）: 「FIP制度」は資料名ではなく、資料名「再エネを日本の主力エネルギーに！「FIP制度」が2022年4月スタート」の入れ子の「」を検査の抽出正規表現（[「『]([^「」『』\\n]{2,90})[」』]）が拾ったもの。登録しないと verify:source-names が毎回警告するため、入れ子元の一次（エネこれ記事）に紐づけて登録する。一次の <title> は 2026-09-27 にブラウザで取得（curl は enecho.meti.go.jp が HTTP 202・本文0バイト）。fuzai-row30 のもう1本の URL https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/069.html も同日ブラウザで取得し <title>「総合エネルギー調査会 省エネルギー・新エネルギー分科会／電力・ガス事業分科会 再生可能エネルギー大量導入・次世代電力ネットワーク小委員会（第69回）（METI/経済産業省）」・「資料1　FIP制度に関する政策措置について（PDF形式：3,793KB）」を確認。"
+      "note": "要確認（needs_check）: 「FIP制度」は資料名ではなく、資料名「再エネを日本の主力エネルギーに！「FIP制度」が2022年4月スタート」の入れ子の「」を検査の抽出正規表現（[「『]([^「」『』\\n]{2,90})[」』]）が拾ったもの。登録しないと verify:source-names が毎回警告するため、入れ子元の一次（エネこれ記事）に紐づけて登録する。一次の <title> は 2026-09-27 にブラウザで取得（curl は enecho.meti.go.jp が HTTP 202・本文0バイト）。fuzai-row30 のもう1本の URL https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/069.html も同日ブラウザで取得し <title>「総合エネルギー調査会 省エネルギー・新エネルギー分科会／電力・ガス事業分科会 再生可能エネルギー大量導入・次世代電力ネットワーク小委員会（第69回）（METI/経済産業省）」・「資料1　FIP制度に関する政策措置について（PDF形式：3,793KB）」を確認。 ／ 2026-09-29 Ck-2 実行便②（追補2）: 入れ子の「」を外した形で本文に書いた（検査の正規表現が内側を資料名と誤読するため）。エネこれ記事の実名に寄せたので needs_check を外した",
+      "aliases": [
+        "FIP制度",
+        "再エネを日本の主力エネルギーに！「FIP制度」が2022年4月スタート"
+      ]
     },
     {
       "name": "容量市場 業務マニュアル 実需給期間中リクワイアメント対応（発動指令電源）編（対象実需給年度：2026年度）",
@@ -914,7 +917,7 @@
       "title_verbatim": "FIP制度について 2022年6月24日 資源エネルギー庁 資料2-8",
       "checked_on": "2026-09-27",
       "needs_check": true,
-      "note": "2026-09-27 に再取得できず（meti.go.jp は curl が HTTP 202・本文0バイト＝bot判定で3回とも同じ。ブラウザで開くとPDFがダウンロード扱いになり本文を読めない。enecho 側を辿ると途中で Human Verification 画面になったため中止＝突破しない）。title_verbatim は Lc-3（reports/lc3-source-name-audit-2026-09-20.md、2026-09-20 実機確認）が記録した PDF 表題の逐語を踏襲。実行便で表題を再取得できたら needs_check を外すこと。併記される「再生可能エネルギー FIT・FIP制度ガイドブック」（年度版）は未登録＝別途登録が要る。"
+      "note": "2026-09-27 に再取得できず（meti.go.jp は curl が HTTP 202・本文0バイト＝bot判定で3回とも同じ。ブラウザで開くとPDFがダウンロード扱いになり本文を読めない。enecho 側を辿ると途中で Human Verification 画面になったため中止＝突破しない）。title_verbatim は Lc-3（reports/lc3-source-name-audit-2026-09-20.md、2026-09-20 実機確認）が記録した PDF 表題の逐語を踏襲。実行便で表題を再取得できたら needs_check を外すこと。併記される「再生可能エネルギー FIT・FIP制度ガイドブック」（年度版）は未登録＝別途登録が要る。 ／ 2026-09-29 Ck-2 実行便②（追補2）: 取得不能のため本文側をエネこれ記事に差し替えた。現在は本文から参照されていない（needs_check は取得不能のまま残す）"
     },
     {
       "name": "No.5434 中小企業経営強化税制（中小企業者等が特定経営力向上設備等を取得した場合の特別償却又は税額控除）",
@@ -1180,16 +1183,16 @@
       "note": "★候補 JSON の urls は .../hojin/5434.htm だが、これは別ページ（<title>「No.5434 中小企業経営強化税制（中小企業者等が特定経営力向上設備等を取得した場合の特別償却又は税額控除）｜国税庁」・同日 HTTP 200 で確認）。資料名 No.5925 に対応する正しい URL は .../hojin/5925.htm で、2026-09-27 に HTTP 200・逐語一致を確認した。"
     },
     {
-      "name": "インバランス料金制度の詳細設計等について",
+      "name": "2022年度以降のインバランス料金の詳細設計等について",
       "publisher": "電力・ガス取引監視等委員会 制度設計専門会合",
       "url": "https://www.egc.meti.go.jp/activity/emsc_system/048_haifu.html",
       "title_verbatim": "制度設計専門会合（第48回）‐配布資料| 電力・ガス取引監視等委員会／配布資料一覧の逐語「資料5  2022年度以降のインバランス料金の詳細設計等について（PDF形式：3398KB）」（pdf/048_05_00.pdf）",
       "checked_on": "2026-09-27",
       "aliases": [
-        "2022年度以降のインバランス料金の詳細設計等について"
+        "2022年度以降のインバランス料金の詳細設計等について",
+        "インバランス料金制度の詳細設計等について"
       ],
-      "needs_check": true,
-      "note": "2026-09-27 にブラウザで配布資料ページを実機取得（HTTP 200）。★資料名が一次と完全には一致しない: 実在する資料名は「2022年度以降のインバランス料金の詳細設計等について」（第48回 資料5）で、「インバランス料金制度の詳細設計等について」という表題の資料は確認できなかった（第47〜51回を確認。第49回は「新たなインバランス料金制度を踏まえた収支管理のあり方等について」）。PDF 実体（pdf/048_05_00.pdf）は curl が HTTP 202・本文0バイト、ブラウザはダウンロードダイアログになり表題の逐語は未取得。サイトに書く資料名は一次の表題に合わせるのが望ましい。発行元も Lc-3 の指摘どおり「経産省」ではなく電力・ガス取引監視等委員会（当時の名称は制度設計専門会合。現在は制度設計・監視専門会合）。"
+      "note": "2026-09-27 にブラウザで配布資料ページを実機取得（HTTP 200）。★資料名が一次と完全には一致しない: 実在する資料名は「2022年度以降のインバランス料金の詳細設計等について」（第48回 資料5）で、「インバランス料金制度の詳細設計等について」という表題の資料は確認できなかった（第47〜51回を確認。第49回は「新たなインバランス料金制度を踏まえた収支管理のあり方等について」）。PDF 実体（pdf/048_05_00.pdf）は curl が HTTP 202・本文0バイト、ブラウザはダウンロードダイアログになり表題の逐語は未取得。サイトに書く資料名は一次の表題に合わせるのが望ましい。発行元も Lc-3 の指摘どおり「経産省」ではなく電力・ガス取引監視等委員会（当時の名称は制度設計専門会合。現在は制度設計・監視専門会合）。 ／ 2026-09-29 Ck-2 実行便②（追補2）: 本文・sources を一次の実名（第48回 資料5）に直したので needs_check を外した。旧表記は aliases に残す"
     },
     {
       "name": "令和2年度 バーチャルパワープラント構築実証事業",
@@ -1203,16 +1206,16 @@
       "note": "2026-09-27 に curl で HTTP 200。一次の正式名は「令和2年度『需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金』」で、サイトに書く資料名はその短縮形（同一事業を指す）。補助事業者は経済産業省／資源エネルギー庁、執行が SII。同シリーズの前年度分 https://sii.or.jp/vpp31/ は <title>「SII：一般社団法人 環境共創イニシアチブ｜事業トップ（平成31年度 バーチャルパワープラント構築実証事業）」（同日・HTTP 200）。"
     },
     {
-      "name": "再生可能エネルギー FIT・FIP制度ガイドブック",
+      "name": "FIT・FIP制度ガイドブック 2026年度版",
       "publisher": "資源エネルギー庁",
       "url": "https://www.enecho.meti.go.jp/category/saving_and_new/saiene/data_kaitori.html",
       "title_verbatim": "資料・パンフレット　FIT・FIP制度関連｜なっとく！再生可能エネルギー／一覧の逐語「FIT・FIP制度ガイドブック 2026年度版[PDF形式]」（data/kaitori/2026_fit_fip_guidebook.pdf）",
       "checked_on": "2026-09-27",
       "aliases": [
-        "FIT・FIP制度ガイドブック"
+        "FIT・FIP制度ガイドブック",
+        "再生可能エネルギー FIT・FIP制度ガイドブック"
       ],
-      "needs_check": true,
-      "note": "2026-09-27 にブラウザで掲載ページを実機取得（HTTP 200）。★一次の現行表記は「FIT・FIP制度ガイドブック ○○年度版」で、頭に「再生可能エネルギー」は付かない（2023年度版以降）。「再生可能エネルギー 固定価格買取制度ガイドブック」が付く表記は2022年度版以前の旧称。PDF 本体（2026_fit_fip_guidebook.pdf）は curl が HTTP 202・本文0バイトで表紙表題は未取得のため needs_check。年度版を明記して書くのが望ましい。"
+      "note": "2026-09-27 にブラウザで掲載ページを実機取得（HTTP 200）。★一次の現行表記は「FIT・FIP制度ガイドブック ○○年度版」で、頭に「再生可能エネルギー」は付かない（2023年度版以降）。「再生可能エネルギー 固定価格買取制度ガイドブック」が付く表記は2022年度版以前の旧称。PDF 本体（2026_fit_fip_guidebook.pdf）は curl が HTTP 202・本文0バイトで表紙表題は未取得のため needs_check。年度版を明記して書くのが望ましい。 ／ 2026-09-29 Ck-2 実行便②（追補2）: 一次の現行表記「FIT・FIP制度ガイドブック 2026年度版」（掲載一覧の逐語）に本文を直したので needs_check を外した"
     },
     {
       "name": "取組事例の紹介",
@@ -1250,16 +1253,16 @@
       "note": "2026-09-27 に curl で HTTP 200・<title> 冒頭が資料名と逐語一致。媒体名は「日経BP」ではなく「日経エネルギーNext」（既登録の同媒体エントリと表記を揃える）。"
     },
     {
-      "name": "電力市場のモニタリングレポート",
+      "name": "自主的取組・競争状態のモニタリング報告",
       "publisher": "電力・ガス取引監視等委員会",
       "url": "https://www.egc.meti.go.jp/general/monitoring.html",
       "title_verbatim": "自主的取組・競争状態のモニタリング報告| 電力・ガス取引監視等委員会",
       "checked_on": "2026-09-27",
       "aliases": [
-        "自主的取組・競争状態のモニタリング報告"
+        "自主的取組・競争状態のモニタリング報告",
+        "電力市場のモニタリングレポート"
       ],
-      "needs_check": true,
-      "note": "2026-09-27 にブラウザで実機取得（HTTP 200）。★「電力市場のモニタリングレポート」という名称の一次は確認できなかった。委員会サイトの公表名は「自主的取組・競争状態のモニタリング報告」（サイトマップの項目名・当該ページ <title> とも同じ）で、配布資料側の資料名は「モニタリングレポート（○年○月～○月期）」（例: 制度設計専門会合 第48回 資料8「モニタリングレポート(令和2年1月～3月期)」・第50回 資料7「自主的取組・競争状態のモニタリング報告（令和2年4月～6月期）」を同日確認）。サイトに書く名称はこのいずれかに寄せるのが望ましい。なお月次の取引実績は別ページ「電力取引報の結果について」（/info/business/report/results.html。同日 curl は HTTP 202 で未取得）。"
+      "note": "2026-09-27 にブラウザで実機取得（HTTP 200）。★「電力市場のモニタリングレポート」という名称の一次は確認できなかった。委員会サイトの公表名は「自主的取組・競争状態のモニタリング報告」（サイトマップの項目名・当該ページ <title> とも同じ）で、配布資料側の資料名は「モニタリングレポート（○年○月～○月期）」（例: 制度設計専門会合 第48回 資料8「モニタリングレポート(令和2年1月～3月期)」・第50回 資料7「自主的取組・競争状態のモニタリング報告（令和2年4月～6月期）」を同日確認）。サイトに書く名称はこのいずれかに寄せるのが望ましい。なお月次の取引実績は別ページ「電力取引報の結果について」（/info/business/report/results.html。同日 curl は HTTP 202 で未取得）。 ／ 2026-09-29 Ck-2 実行便②（追補2）: 委員会の公表名（<title> 逐語）に本文を直した（本文を支えることは第47回資料で一文ずつ確認）ので needs_check を外した"
     },
     {
       "name": "非化石価値取引 市場情報",
@@ -1290,7 +1293,10 @@
       "url": "https://www.dowa-ecoj.jp/law/2024/20240102.html",
       "title_verbatim": "リチウムイオン電池の貯蔵に関する消防法の規制が見直されました | DOWAエコジャーナル",
       "checked_on": "2026-09-27",
-      "used_in": "src/app/lv/regulation-subsidy/page.tsx / src/app/lv/risks/page.tsx"
+      "used_in": "src/app/lv/regulation-subsidy/page.tsx / src/app/lv/risks/page.tsx",
+      "aliases": [
+        "リチウムイオン電池の貯蔵に関する消防法の規制が見直されました"
+      ]
     },
     {
       "name": "低圧蓄電所の開発が活発化",
@@ -1298,7 +1304,11 @@
       "url": "https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/05844/?ST=msb",
       "title_verbatim": "「低圧」蓄電所の開発が活発化、アグリや区画販売も - ニュース - メガソーラービジネス plus : 日経BP",
       "checked_on": "2026-09-27",
-      "used_in": "src/app/lv/what-is/page.tsx"
+      "used_in": "src/app/lv/what-is/page.tsx",
+      "aliases": [
+        "低圧蓄電所の開発が活発化、アグリや区画販売も"
+      ],
+      "note": "2026-09-29: 一次の題の入れ子の「」（「低圧」）は外して本文に書く（検査の正規表現が内側を資料名と誤読するため）"
     },
     {
       "name": "サイトのご利用にあたって",
@@ -1308,6 +1318,105 @@
       "checked_on": "2026-09-27",
       "note": "Ck-2 ■5（裁定 R21）。当サイトが 2026-09 まで使っていた「EPRX 利用規約」という資料は存在しない。節は「３．リンクについて」「４．著作権等について」で、「§」は一次に 0 件。",
       "used_in": "src/app/tools/balancing-revenue/page.tsx / src/app/tracker/imbalance/page.tsx / src/lib/eic-license.ts / src/data/eprx-monthly-battery.json"
+    },
+    {
+      "name": "蓄電池設備のリスクに応じた防火安全対策検討部会報告書",
+      "publisher": "総務省消防庁",
+      "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-116/03/houkokusho.pdf",
+      "title_verbatim": "蓄電池設備のリスクに応じた防火安全対策検討部会報告書 令和５年３月 蓄電池設備のリスクに応じた防火安全対策検討部会",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。PDF 1 ページ目の表題（pdfplumber）。HTTP 200・2,231,517 B",
+      "used_in": "src/app/lv/buying-guide/page.tsx / src/app/lv/regulation-subsidy/page.tsx"
+    },
+    {
+      "name": "改正火災予防条例（例）の運用等について（通知）",
+      "publisher": "消防庁予防課長",
+      "url": "https://www.fdma.go.jp/laws/tutatsu/items/3d9170d6f53881e638afae8b22f52dd70746c9fe.pdf",
+      "title_verbatim": "消防予第332号 令和５年５月31日 … 消防庁予防課長 … 改正火災予防条例（例）の運用等について（通知）",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。PDF 1 ページ目（pdfplumber・字間の空白を詰めた）。HTTP 200・504,349 B",
+      "used_in": "src/app/lv/buying-guide/page.tsx / src/app/lv/regulation-subsidy/page.tsx"
+    },
+    {
+      "name": "容量市場　長期脱炭素電源オークション約定結果（応札年度：2023年度）",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/news/market-board_market_oshirase_2024_20240426_youryouyakujokekka_kouhyou.html",
+      "title_verbatim": "容量市場 長期脱炭素電源オークション約定結果（応札年度：2023年度）の公表について｜電力広域的運営推進機関",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。HTTP 200",
+      "used_in": "src/components/Report2026Body.tsx"
+    },
+    {
+      "name": "关于深化新能源上网电价市场化改革 促进新能源高质量发展的通知",
+      "publisher": "国家发展和改革委员会・国家能源局",
+      "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202502/t20250209_1396066.html",
+      "title_verbatim": "【关于深化新能源上网电价市场化改革 促进新能源高质量发展的通知(发改价格〔2025〕136号)】-国家发展和改革委员会",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。HTTP 200",
+      "used_in": "src/data/global-markets.ts"
+    },
+    {
+      "name": "国家能源局举行新闻发布会介绍2025年新型储能发展情况",
+      "publisher": "国家能源局",
+      "url": "https://www.nea.gov.cn/20260130/50f657ce87f848e1a9a1861d1fd9aa23/c.html",
+      "title_verbatim": "国家能源局举行新闻发布会介绍2025年新型储能发展情况---国家能源局",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。HTTP 200",
+      "used_in": "src/data/global-markets.ts"
+    },
+    {
+      "name": "新聞広告倫理綱領／新聞広告掲載基準",
+      "publisher": "日本新聞協会",
+      "url": "https://www.pressnet.or.jp/outline/advertisement/",
+      "title_verbatim": "新聞広告倫理綱領/新聞広告掲載基準｜倫理綱領｜日本新聞協会",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。HTTP 200。サイトは全角スラッシュ「／」で書く",
+      "used_in": "glossary/pr-article.detail"
+    },
+    {
+      "name": "日本電気技術規格委員会の承認規格（民間自主規格一覧）",
+      "publisher": "日本電気技術規格委員会（JESC）",
+      "url": "https://www.jesc.gr.jp/jesc-assent/private.html",
+      "title_verbatim": "日本電気技術規格委員会｜JESC｜日本電気技術規格委員会の承認規格(民間自主規格一覧)",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。HTTP 200",
+      "used_in": "explainer/bess-safety-regulations-implementation.sources"
+    },
+    {
+      "name": "容量市場 業務マニュアル 実需給期間中 ペナルティ・容量確保契約金額対応編（対象実需給年度：2026年度）",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2026_jitsujukyu_kanren/251225_2026_gyoumumanual_penalty-youryoukakuhokingaku.pdf",
+      "title_verbatim": "容量市場 業務マニュアル 実需給期間中 ペナルティ・容量確保契約金額対応編 （対象実需給年度：2026 年度） 2025 年 12 月 25 日 第 1 版 発行 電力広域的運営推進機関",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。PDF 1 ページ目の表題（pdfplumber）。HTTP 200・1,263,435 B",
+      "used_in": "explainer/capacity-market-advanced.sources"
+    },
+    {
+      "name": "組織案内",
+      "publisher": "独立行政法人製品評価技術基盤機構",
+      "url": "https://www.nite.go.jp/nite/aboutus/soshiki/sosiki.html",
+      "title_verbatim": "組織案内 | ナイトについて | 製品評価技術基盤機構",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。HTTP 200",
+      "used_in": "glossary/nite.detail"
+    },
+    {
+      "name": "ナイトの紹介",
+      "publisher": "独立行政法人製品評価技術基盤機構",
+      "url": "https://www.nite.go.jp/nite/aboutus/gyoumu.html",
+      "title_verbatim": "ナイトの紹介 | ナイトについて | 製品評価技術基盤機構",
+      "checked_on": "2026-09-29",
+      "note": "Ck-2 実行便② ■7 で登録。HTTP 200",
+      "used_in": "glossary/nite.detail"
+    },
+    {
+      "name": "発電側課金相当額について（報告事項）",
+      "publisher": "資源エネルギー庁（調達価格等算定委員会 第116回 参考資料1）",
+      "url": "https://www.meti.go.jp/shingikai/santeii/pdf/116_s01_00.pdf",
+      "title_verbatim": "参考資料１ 発電側課金相当額について （報告事項） ２０２６年９月 資源エネルギー庁",
+      "checked_on": "2026-09-28",
+      "note": "PDF 12 頁・1 ページ目の表題（pdfplumber）。2026-09-28 週次政策便の PATCH B で description に書いた資料名の登録漏れを 2026-09-29 に補った（取得は 9/28 の read-only 検証で実施）",
+      "used_in": "policy-events/meti-chotatsu-kakaku-iinkai-116-2026-09.description"
     }
   ]
 }

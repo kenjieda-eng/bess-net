@@ -153,13 +153,13 @@ export default function LvRisksPage() {
                 </a>
               </li>
               <li>
-                総務省消防庁「蓄電池設備の規制（消防関係法令による規制体系）」{' '}
+                総務省消防庁「蓄電池設備の規制（資料１－４）【消防関係法令による蓄電池設備の規制体系】」{' '}
                 <a href="https://www.fdma.go.jp/singi_kento/kento/items/kento164_05_shiryo1-4.pdf" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
                   https://www.fdma.go.jp/singi_kento/kento/items/kento164_05_shiryo1-4.pdf
                 </a>
               </li>
               <li>
-                DOWAエコジャーナル「リチウムイオン電池の貯蔵に関する消防法の規制見直し（2024）」{' '}
+                DOWAエコジャーナル「リチウムイオン電池の貯蔵に関する消防法の規制が見直されました」{' '}
                 <a href="https://www.dowa-ecoj.jp/law/2024/20240102.html" target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
                   https://www.dowa-ecoj.jp/law/2024/20240102.html
                 </a>
