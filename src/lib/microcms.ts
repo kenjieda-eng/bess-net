@@ -1372,15 +1372,23 @@ export const getAllLinks = async (): Promise<LinkSiteLite[]> => {
     while (true) {
       const data = await client.getList<LinkSiteLite>({
         endpoint: 'links',
-        queries: { fields: LINK_LIST_FIELDS, limit: MICROCMS_PAGE_LIMIT, offset, orders: 'displayOrder' },
+        // ★並びは必ず一意にする（落とし穴 #124 のページング版・2026-09-30 Ck-2 実行便②で実害）。
+        //   displayOrder は同着が多い（22 値・最大 13 件）。同着のまま offset でページングすると、ページの境目で
+        //   同じレコードが 2 ページに入り、代わりに 1 件が抜ける。② の POST 2 件で境目が同着の中にずれ、
+        //   /links に同じカードが 2 枚出て件数が 1 多く表示された（全 200 件・正は 199）。
+        //   publishedAt は全件で一意なので第二キーに置く（FAQ の取得と同じ書き方）。
+        queries: { fields: LINK_LIST_FIELDS, limit: MICROCMS_PAGE_LIMIT, offset, orders: 'displayOrder,-publishedAt' },
       });
       all.push(...data.contents);
       if (data.contents.length < MICROCMS_PAGE_LIMIT) break;
       offset += MICROCMS_PAGE_LIMIT;
       if (offset >= MICROCMS_MAX_OFFSET) break;
     }
+    // 念のための重複除去（id 基準）。並びが一意なら起きないが、起きたときに同じカードを 2 枚出さない。
+    const seen = new Set<string>();
+    const unique = all.filter((l) => (seen.has(l.id) ? false : (seen.add(l.id), true)));
     // Ck-1a: 宛先を一次で確認できないエントリを外す（DELETE しない・src/lib/links-excluded.ts の HIDDEN_LINKS）
-    return all.filter((l) => !isHiddenLink(l.slug));
+    return unique.filter((l) => !isHiddenLink(l.slug));
   } catch {
     return [];
   }

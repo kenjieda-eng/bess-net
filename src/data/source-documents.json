@@ -1,6 +1,6 @@
 {
   "_comment": "資料名の台帳（Ck-1 A6・2026-09-21）。name はサイトに書いている資料名、title_verbatim は確認時の一次の <title>／PDF 表題の逐語。書く前に一次を実機で取り、確認日つきで登録する。検査: npm run verify:source-names",
-  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true） ／ 2026-09-29 Ck-2 実行便② で 10 件を追加・needs_check 4 件を決着（2 件は本文から外れたため理由を書いて残置）",
+  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true） ／ 2026-09-29 Ck-2 実行便② で 10 件を追加・needs_check 4 件を決着（2 件は本文から外れたため理由を書いて残置） ／ 2026-09-30 同便の本番レビュー後の是正で 1 件を追加（EPRX 商品要件 第6版）",
   "documents": [
     {
       "name": "需給調整市場のΔkW上限価格について",
@@ -1417,6 +1417,15 @@
       "checked_on": "2026-09-28",
       "note": "PDF 12 頁・1 ページ目の表題（pdfplumber）。2026-09-28 週次政策便の PATCH B で description に書いた資料名の登録漏れを 2026-09-29 に補った（取得は 9/28 の read-only 検証で実施）",
       "used_in": "policy-events/meti-chotatsu-kakaku-iinkai-116-2026-09.description"
+    },
+    {
+      "name": "需給調整市場の商品要件と取引スケジュール",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/outline/docs/shouhin_ver.6_20260313.pdf",
+      "title_verbatim": "需給調整市場の商品要件と取引スケジュール ２０２６年３月１３日 第６版（PDF 1頁）",
+      "checked_on": "2026-09-30",
+      "note": "PDF 4 頁・HTTP 200（419,027 bytes）。2026-09-29 と 09-30 に実機取得。p2「1.商品の種類と要件」の表が R26 定型文（応動 10秒以内／5分以内／5分以内／15分以内／60分以内、継続 5分以上／30分×4、英呼称 FCR／S-FRR／FRR／RR／RR-FIT）の一次。「FRR-H」「FRR-L」は 0 件。Ck-2 実行便②が本文に書いた資料名の登録漏れを、本番レビュー後の是正（order 9）で補った",
+      "used_in": "explainer/capacity-output-design.body・sources／R26 定型文を展開した 26 レコードの根拠"
     }
   ]
 }
