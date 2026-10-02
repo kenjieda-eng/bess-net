@@ -203,6 +203,9 @@ interface DeadlineInfo {
  * 数字の直後に年/月/日が続く形のみを変換＝誤変換しない。
  */
 function toSeireki(s: string): string {
+  // 全角数字（例「令和８年１０月３１日」）を拾うため、パースの入口で NFKC 正規化する（2026-09-28 週次・+6/+6）。
+  // ★戻り値は parse 専用。表示用の逐語（deadline_raw / applicationStart）には流用しない（全角括弧・空白も変わる）。
+  s = s.normalize('NFKC');
   return s
     .replace(/令和\s*(元|[0-9]+)\s*年/g, (_m, y) => `${2018 + (y === '元' ? 1 : parseInt(y, 10))}年`)
     .replace(/平成\s*(元|[0-9]+)\s*年/g, (_m, y) => `${1988 + (y === '元' ? 1 : parseInt(y, 10))}年`);

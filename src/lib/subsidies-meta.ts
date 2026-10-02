@@ -35,7 +35,8 @@ export type SubsidyDateFacts = {
  * これを見ずに M/D を出すと**原文にない精度を断定**してしまう（2026-08-09 実測7件）。
  */
 export function isDayPreciseDeadline(raw?: string | null): boolean {
-  return Boolean(raw && /\d{1,2}\s*月\s*\d{1,2}\s*日/.test(String(raw)));
+  // 全角数字（「１０月３１日」）も日まで確定として扱う（precompute の NFKC と揃える・2026-09-28 週次 追補 A）
+  return Boolean(raw && /\d{1,2}\s*月\s*\d{1,2}\s*日/.test(String(raw).normalize('NFKC')));
 }
 
 /** build 時の JST 日付（YYYY-MM-DD） */
@@ -111,9 +112,17 @@ const SITE_SUFFIX = '｜蓄電所ネット';
 /** 補助金名は元々長いため、用語集より緩めの上限にする */
 const TITLE_MAX = 40;
 
-/** 「令和7年度補正 ◯◯」「令和8年度 ◯◯」等の年度接頭辞を分離する */
+/**
+ * 「令和7年度補正 ◯◯」「令和8年度 ◯◯」等の年度接頭辞を分離する。
+ * 和暦の接頭辞は「（令和|平成）N年度（補正|当初）?（予算）?」を「・」でつないだ並びまで切る（数字は全角も可）。
+ * 旧式は「令和7年度補正」までしか切らず、「令和7年度補正予算 クリーン…」の title が「予算 クリーン…」になっていた
+ * （本番 /subsidies/meti-cev-r7h・Ck-2 ②の報告 (9)-2・2026-09-30 追補 D）。
+ */
+const ERA_FISCAL = '(?:令和|平成)[0-9０-９]+年度(?:補正|当初)?(?:予算)?';
+const FISCAL_PREFIX_RE = new RegExp(String.raw`^\s*((?:${ERA_FISCAL})(?:・(?:${ERA_FISCAL}))*|\d{4}年度(?:補正)?)\s*`);
+
 export function splitFiscalPrefix(name: string): { core: string; fiscal: string } {
-  const m = String(name || '').match(/^\s*(令和\d+年度(?:補正)?|平成\d+年度(?:補正)?|\d{4}年度(?:補正)?)\s*/);
+  const m = String(name || '').match(FISCAL_PREFIX_RE);
   if (!m) return { core: String(name || '').trim(), fiscal: '' };
   return { core: String(name).slice(m[0].length).trim(), fiscal: m[1] };
 }
