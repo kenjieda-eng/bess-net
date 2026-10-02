@@ -1,0 +1,140 @@
+{
+ "note": "ATB2025 追随便（2026-10-02）の計画と結果。plan は scripts/apply-atb2025-2026-10-02.ts が読む（既定 dry run・本実行は --apply）。",
+ "generated": "2026-10-02",
+ "plan": {
+  "patches": [
+   {
+    "ep": "explainer",
+    "slug": "lcoe-and-bess-economics",
+    "order": 1,
+    "ops": [
+     {
+      "field": "body",
+      "old": "Annual Technology Baseline（ATB, 2024年版）による主要電源のLCOE",
+      "new": "Annual Technology Baseline（ATB, 2025年版）による主要電源のLCOE",
+      "row_ids": [
+       "2-1-1"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入"
+     },
+     {
+      "field": "body",
+      "old": "<li>陸上風力：<strong>20.7</strong>／太陽光（ユーティリティ）：<strong>43.2</strong> ── 最も安い部類</li>",
+      "new": "<li>陸上風力：<strong>24.2</strong>／太陽光（ユーティリティ）：<strong>42.0</strong> ── 最も安い部類</li>",
+      "row_ids": [
+       "2-1-2"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入"
+     },
+     {
+      "field": "body",
+      "old": "<li>地熱：70.2／CSP（集光型太陽熱）：93.3／太陽光（商業用）：95.1</li>",
+      "new": "<li>地熱：56.3／CSP（集光型太陽熱）：78.1／太陽光（商業用）：78.8</li>",
+      "row_ids": [
+       "2-1-3"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入"
+     },
+     {
+      "field": "body",
+      "old": "<li>洋上風力：112.2／水力：115.0／原子力：<strong>126.6</strong>（2023年版）／バイオマス：195.5</li>",
+      "new": "<li>洋上風力：93.3／水力：98.7／原子力：<strong>126.6</strong>（2023年版・ATB 2024年版以降は当年推計なし）／バイオマス：198.1</li>",
+      "row_ids": [
+       "2-1-4"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入／原子力: ATB 2024・2025 年版の Nuclear ページ（2026-10-02 取得）は \"the cost estimates provided start in 2030\"＝当年（2024・2025）の推計なし。カタログ系列は status: retired・2023 年版で終端"
+     },
+     {
+      "field": "body",
+      "old": "（円換算は1MWhあたり、USD/JPY=158.34で約 風力3.3円/kWh・太陽光6.8円/kWh・原子力20.0円/kWh）",
+      "new": "（円換算は USD/JPY=158.81（2026年8月の月中平均、日本銀行）で約 風力3.8円/kWh・太陽光6.7円/kWh・原子力20.1円/kWh）",
+      "row_ids": [
+       "2-1-6"
+      ],
+      "note": "FX は catalog fx-usdjpy-monthly-avg の最新月 2026-08-01 = 158.81（src/data/eic の precompute JSON・2026-10-02）"
+     },
+     {
+      "field": "body",
+      "old": "NREL ATB（2024年版）では系統用4時間蓄電池のCAPEXは <strong>約525$/kWh（約8.3万円/kWh、158.34円/＄換算）</strong> です（2021年の約359$/kWhからサプライチェーン高で上昇、米国前提）。",
+      "new": "NREL ATB（2025年版）では系統用4時間蓄電池のCAPEXは <strong>約463$/kWh（約7.4万円/kWh、158.81円/＄換算・2026年8月の月中平均）</strong> です（2021年版の約359$/kWh、2024年版の約525$/kWhを経て、2025年版は前年版から約12%低下。米国前提）。",
+      "row_ids": [
+       "2-1-7"
+      ],
+      "note": "蓄電池 CAPEX: atb-capex-battery 2025-01-01 = 1851.398382 $/kW ÷ 4h = 462.85 $/kWh（2024 = 525.19・2021 = 358.57）。×158.81 = 73,505 円/kWh。2024→2025 は −11.87%／FX は catalog fx-usdjpy-monthly-avg の最新月 2026-08-01 = 158.81（src/data/eic の precompute JSON・2026-10-02）。旧文の「サプライチェーン高で上昇」は一次に対応が無い理由づけで、2024→2025 の低下とも合わないため、一次の値だけで書き直した（便ファイル 2-1 の指示）"
+     },
+     {
+      "field": "sources",
+      "old": "NREL Annual Technology Baseline (ATB), Open Energy Data Initiative (OEDI), CC BY 4.0 ／",
+      "new": "NREL Annual Technology Baseline (ATB) 2025（原子力は 2023 年版）, Open Energy Data Initiative (OEDI), CC BY 4.0 ／",
+      "row_ids": [
+       "2-1-8"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入"
+     }
+    ],
+    "expect_final": {
+     "body": "92f85a5500d268e4",
+     "sources": "2399fe4fcc3d73bb"
+    }
+   },
+   {
+    "ep": "explainer",
+    "slug": "lcoe-and-power-mix",
+    "order": 1,
+    "ops": [
+     {
+      "field": "body",
+      "old": "ATB（2024年版、$/MWh、米国前提）",
+      "new": "ATB（2025年版、$/MWh、米国前提）",
+      "row_ids": [
+       "2-2-1"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入"
+     },
+     {
+      "field": "body",
+      "old": "<li>陸上風力：<strong>20.7</strong>／太陽光（ユーティリティ）：<strong>43.2</strong>（最安グループ）</li>",
+      "new": "<li>陸上風力：<strong>24.2</strong>／太陽光（ユーティリティ）：<strong>42.0</strong>（最安グループ）</li>",
+      "row_ids": [
+       "2-2-2"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入"
+     },
+     {
+      "field": "body",
+      "old": "<li>地熱：70.2／火力（ガス・石炭、概数）：約40〜80</li>",
+      "new": "<li>地熱：56.3／火力（ガス・石炭、概数）：約40〜80</li>",
+      "row_ids": [
+       "2-2-3"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入"
+     },
+     {
+      "field": "body",
+      "old": "<li>水力：115.0／原子力：126.6／バイオマス：195.5（高コストグループ）</li>",
+      "new": "<li>水力：98.7／原子力：126.6（2023年版）／バイオマス：198.1（高コストグループ）</li>",
+      "row_ids": [
+       "2-2-4"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入／原子力: ATB 2024・2025 年版の Nuclear ページ（2026-10-02 取得）は \"the cost estimates provided start in 2030\"＝当年（2024・2025）の推計なし。カタログ系列は status: retired・2023 年版で終端"
+     },
+     {
+      "field": "sources",
+      "old": "NREL Annual Technology Baseline (ATB) 2024, OEDI, CC BY 4.0（LCOE・米国前提コスト序列）",
+      "new": "NREL Annual Technology Baseline (ATB) 2025（原子力は 2023 年版）, OEDI, CC BY 4.0（LCOE・米国前提コスト序列）",
+      "row_ids": [
+       "2-2-6"
+      ],
+      "note": "一次 EIC catalog（generated_at 2026-10-02T11:11:54+09:00）と eic-data-pipeline の CSV data/processed/tech/atb-lcoe-*.csv の 2025-01-01 行（原子力は 2023-01-01）を 2026-10-02 に再取得して一致。小数 1 桁四捨五入"
+     }
+    ],
+    "expect_final": {
+     "body": "e84972272c16f2c0",
+     "sources": "00eb18db0666310f"
+    }
+   }
+  ],
+  "posts": []
+ },
+ "expect_final_note": "expect_final は 2026-10-02 22:02 の適用後に GET した各フィールドの正規化テキストの sha256 先頭 16 桁（Ck-2 ②と同じ計算）。再実行はこれと一致すれば skip"
+}

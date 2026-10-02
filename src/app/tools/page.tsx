@@ -14,6 +14,8 @@ import substationsIndex from '@/data/substations/index.json';
 import subsidiesData from '@/data/subsidies.json';
 // Ck-1 A5: 容量市場の年度範囲はカタログから（「対象実需給年度」を明記・範囲を焼き込まない）
 import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults';
+// ATB の年はカタログ（蓄電池 CAPEX 系列の版）から。焼き込むと版の着地で取り残される（2026-10-02 ATB 2025 追随）
+import { ATB_BATTERY_LABEL } from '@/lib/nrel-atb-reference';
 
 // 件数はローカル JSON から動的参照（焼き込み drift 防止・tools分析2026-07-09 変更3。microCMS 0 req）
 const SUBSTATION_TOTAL = (substationsIndex as { total: number }).total;
@@ -87,10 +89,10 @@ const tools = [
   {
     slug: 'lcoe-lcos',
     title: 'LCOE・LCOS計算機',
-    badge: 'NREL ATB 2024 準拠',
+    badge: `${ATB_BATTERY_LABEL} 準拠`,
     available: true,
     description:
-      '系統用蓄電池の LCOS（均等化蓄電原価）と太陽光・風力・原子力等の電源別 LCOE を前提条件から試算。NREL ATB 2024 基準（米国前提）、コスト内訳・電源別比較・NREL参考値の並列表示。',
+      `系統用蓄電池の LCOS（均等化蓄電原価）と太陽光・風力・原子力等の電源別 LCOE を前提条件から試算。${ATB_BATTERY_LABEL} 基準（米国前提）、コスト内訳・電源別比較・NREL参考値の並列表示。`,
   },
 ];
 

@@ -6,6 +6,9 @@
  * microCMS 本文は書き換えない＝テンプレート側の追加のみ（負荷 0 req）。
  */
 
+// ATB の年はカタログから（焼き込まない・2026-10-02 ATB 2025 追随）。相対 import は nrel-atb-reference.ts に合わせる
+import { ATB_BATTERY_LABEL } from './nrel-atb-reference';
+
 export interface ToolCta {
   href: string;
   /** CTA 見出し */
@@ -66,7 +69,7 @@ export const TOOL_CTAS: ToolCta[] = [
   {
     href: '/tools/lcoe-lcos',
     label: 'LCOE・LCOSを前提条件から試算する',
-    text: 'NREL ATB 2024 を基準に、蓄電池 LCOS（均等化蓄電原価）と電源別 LCOE を効率・サイクル・割引率などの前提から無料で試算できます。',
+    text: `${ATB_BATTERY_LABEL} を基準に、蓄電池 LCOS（均等化蓄電原価）と電源別 LCOE を効率・サイクル・割引率などの前提から無料で試算できます。`,
     button: 'LCOE・LCOS計算機を使う',
     // 選定ルール: title「LCOE/LCOS/経済性/IRR」or slug lcoe/economics/irr（リサイクル・米国税制は文脈外のため除外）・最大5
     explainerSlugs: new Set([

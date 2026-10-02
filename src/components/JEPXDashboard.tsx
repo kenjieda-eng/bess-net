@@ -25,7 +25,7 @@ export default function JEPXDashboard() {
   const [view, setView] = useState<View>('price');
   const [area, setArea] = useState<AreaKey>('tokyo');
   const [capacityMWh, setCapacityMWh] = useState<number>(10);
-  // Ck-1 A9: 往復効率の既定はサイト内 1 箇所（storage-assumptions.ts・NREL ATB 2024 年版の 85%）
+  // Ck-1 A9: 往復効率の既定はサイト内 1 箇所（storage-assumptions.ts・NREL ATB 2025 年版の 85%＝2024 年版から値は不変）
   const [efficiency, setEfficiency] = useState<number>(ROUND_TRIP_EFFICIENCY.value);
   const [cycles, setCycles] = useState<number>(1);
   const [shareMsg, setShareMsg] = useState<string>('');

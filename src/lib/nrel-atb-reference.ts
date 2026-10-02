@@ -9,8 +9,10 @@
  *     カタログの ATB 値（太陽光 26.3%・陸上風力 44.8%）とも食い違っていた。CF も ATB に揃える。
  *   - A9/#121: 蓄電池 CAPEX の円換算（$/kW ÷ 4h × USD/JPY）を irr-simulator と lcoe-lcos が別々に計算していた。
  *
- * ★カタログの date は ATB の版（base year）。例 2024-01-01 ＝ ATB 2024 版の当年推計。
- *   原子力は ATB 2024 版に当年値が無いため最新が 2023 版になる（系列ごとに版が違いうる → 画面に版を併記）。
+ * ★カタログの date は ATB の版（base year）。例 2025-01-01 ＝ ATB 2025 版の当年推計（2026-10-01 の nightly で着地）。
+ *   各系列の最後の数値点を採るので、新しい版の点が着地すると次のビルドで自動的にその版へ切り替わる（コードは変えない）。
+ *   原子力 3 系列（atb-capex/lcoe/cf-nuclear）は上流で status: retired・2023 版で終端（点は増えない）。
+ *   そのため最新が 2023 版のまま残る（系列ごとに版が違いうる → 画面に版を併記＝atbYearsLabel）。
  * ★カタログが無ければ null（代替値を焼き込まない。画面では数値を出さない）。
  * ★相対 import（@/ ではない）。scripts から tsx で読めるように。
  */
@@ -80,6 +82,12 @@ export const BATTERY_CAPEX: BatteryCapexRef | null =
         };
       })()
     : null;
+
+/**
+ * 画面の文言に出す「NREL ATB 2025」の年（蓄電池 CAPEX 系列の版）。年を焼き込まない（#121・1 か所）。
+ * カタログが無ければ年を出さず「NREL ATB」だけにする。/tools のバッジ・説明、解説記事末尾の CTA（tools-cta.ts）が使う。
+ */
+export const ATB_BATTERY_LABEL: string = BATTERY_CAPEX ? `NREL ATB ${BATTERY_CAPEX.atbYear}` : 'NREL ATB';
 
 // ───────────── 電源別（CF・CAPEX・LCOE） ─────────────
 export type PowerSourceRef = {

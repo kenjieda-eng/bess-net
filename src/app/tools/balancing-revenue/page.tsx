@@ -517,7 +517,8 @@ export default function BalancingRevenuePage() {
             ・落札量（volume）は EPRX が図のみ・数値非公開のため系列化せず、不足率を調達逼迫度の代理として併用。市場規模は必要時にグラフ目視の概算（注釈付き・精度限定）。
             <br />
             ・感度解説内の蓄電池CAPEX参考値は{' '}
-            <a href="https://atb.nlr.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL Annual Technology Baseline (ATB) 2024</a>
+            {/* 版はカタログから（上の参考行と同じ BATTERY_CAPEX.atbYear・#121）。焼き込んだ「2024」が ATB 2025 の着地で取り残されかけた（2026-10-02） */}
+            <a href="https://atb.nlr.gov/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>NREL Annual Technology Baseline (ATB){BATTERY_CAPEX ? ` ${BATTERY_CAPEX.atbYear}` : ''}</a>
             （米国前提・CC BY 4.0）、為替換算は{' '}
             <a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>EIC Data</a>
             の fx-usdjpy-monthly-avg による。low/high は当サイトの感度レンジ仮定（mid±20%）であり、NREL の予測値ではありません。

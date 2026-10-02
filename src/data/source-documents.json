@@ -424,13 +424,16 @@
     {
       "name": "NREL ATB",
       "publisher": "National Renewable Energy Laboratory（NREL）",
-      "url": "https://atb.nlr.gov/electricity/2024/about",
-      "title_verbatim": "About | Electricity | 2024 | ATB | NLR",
-      "checked_on": "2026-09-21",
+      "url": "https://atb.nlr.gov/electricity/2025/about",
+      "title_verbatim": "About | Electricity | 2025 | ATB | NLR",
+      "checked_on": "2026-10-02",
+      "note": "2026-10-02 に 2025 年版へ更新（EIC カタログに ATB 2025 の点が 10/1 nightly で着地）。HTTP 200。旧 2024 年版 https://atb.nlr.gov/electricity/2024/about（title「About | Electricity | 2024 | ATB | NLR」・2026-09-21 確認）。「NREL ATB 2024」系の aliases は旧記事の照合用に残す",
       "aliases": [
         "NREL ATB 2024",
         "NREL ATB 2024（Annual Technology Baseline）",
-        "NREL Annual Technology Baseline (ATB) Electricity"
+        "NREL Annual Technology Baseline (ATB) Electricity",
+        "NREL ATB 2025",
+        "NREL ATB 2025 年版"
       ],
       "used_in": "src/app/tools/lcoe-lcos/page.tsx:150"
     },
