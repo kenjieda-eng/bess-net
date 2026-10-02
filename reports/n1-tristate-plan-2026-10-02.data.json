@@ -1,0 +1,403 @@
+{
+ "note": "N-1電制 三値化 計画便（2026-10-02・書込なし）。survey は読取専用 4 本（wf_e4e278af-c34）の全所見。counts は 2026-10-02 22:2x の microCMS GET（全 8,352 件）の集計。",
+ "generated": "2026-10-02",
+ "counts": {
+  "undetermined_now": {
+   "北陸": {
+    "false": 222
+   },
+   "東京": {
+    "false": 13
+   },
+   "東北": {
+    "false": 20
+   },
+   "中国": {
+    "false": 7
+   },
+   "北海道": {
+    "false": 7
+   },
+   "関西": {
+    "false": 2
+   },
+   "九州": {
+    "false": 2
+   }
+  },
+  "undetermined_total": {
+   "false": 273
+  },
+  "missing": [],
+  "all_dist": {
+   "true": 791,
+   "false": 7561
+  },
+  "by_area": {
+   "東北": {
+    "true": 100,
+    "false": 784
+   },
+   "北陸": {
+    "true": 28,
+    "false": 246
+   },
+   "四国": {
+    "false": 275,
+    "true": 19
+   },
+   "関西": {
+    "false": 1566,
+    "true": 141
+   },
+   "中国": {
+    "true": 69,
+    "false": 805
+   },
+   "沖縄": {
+    "false": 147,
+    "true": 4
+   },
+   "北海道": {
+    "false": 435,
+    "true": 24
+   },
+   "中部": {
+    "true": 148,
+    "false": 959
+   },
+   "九州": {
+    "false": 814,
+    "true": 69
+   },
+   "東京": {
+    "true": 189,
+    "false": 1530
+   }
+  }
+ },
+ "survey": {
+  "revalidate": {
+   "findings": [
+    {
+     "topic": "現状の ISR 設定（4 ルート）",
+     "detail": "4 ルートとも revalidate=3600。/grid は generateStaticParams なしの静的 prerender。/grid/[slug] は dynamicParams=true で、generateStaticParams が 9 エリア（tokyo を除く）と座標ありの変電所 slug を返す。prerender-manifest では /grid/[slug] が 1,091 件（9 エリア＋cb-* 1,082）。残りの変電所詳細 約 7,270 件（8,352−1,082）は初回アクセス時に ISR で生成される。/grid/tokyo は静的セグメントで AreaPage を描画する。/grid/prefecture/[prefecture] は dynamicParams を指定していない（Next 14 の既定は true）。generateStaticParams は getAvailablePrefectures（build 時に inventory 取得で約 84 リクエスト）で 41 県を prerender する。ローカルビルドの grid 系 1,137 エントリはすべて initialRevalidateSeconds=3600。",
+     "evidence": "src/app/grid/page.tsx:42 / src/app/grid/[slug]/page.tsx:47,53,55-67（tokyo 除外 :58-60）/ src/app/grid/tokyo/page.tsx:13 / src/app/grid/prefecture/[prefecture]/page.tsx:34,38-49 / src/lib/microcms.ts:2011（getAvailablePrefectures→fetchSubstationInventory :1990）/ .next/prerender-manifest.json の srcRoute 集計: /grid/[slug] 1091（cb- 1082）, /grid/prefecture/[prefecture] 41, /grid 1, /grid/tokyo 1。Next は 14.2.35（node_modules/next/package.json、package.json の指定は ^14.2.30）"
+    },
+    {
+     "topic": "既存の API ルート・revalidate 系",
+     "detail": "リポジトリに API ルートは 1 本もない（src/app/api 不在、route.ts 不在、pages router 不在）。revalidatePath・revalidateTag・unstable_cache の呼び出しも src・scripts のどこにも無い。本番でも /api/revalidate と /api/revalidate-grid は 404。middleware の matcher に /api は含まれないため、新設するエンドポイントへの干渉はない。",
+     "evidence": "Glob src/app/api/** と src/**/route.{ts,tsx,js} はともに 0 件。grep -rn revalidatePath|revalidateTag は src・scripts で 0 件。curl（2026-10-02 13:40:32Z）: /api/revalidate は HTTP 404・X-Vercel-Cache MISS、/api/revalidate-grid は HTTP 404・HIT。src/middleware.ts:96 の matcher は ['/news/:slug*','/glossary/:slug*','/projects/:slug*','/grid/prefecture/:slug*','/operators/:slug*']"
+    },
+    {
+     "topic": "runtime microCMS の実態（鉄則 #2/#3 の確認）",
+     "detail": "一覧系 3 ルートの本文はすべて precompute 由来の静的 JSON を読んでいる。/grid は src/data/substations/index.json の summary、エリアページ（/grid/[area]・/grid/tokyo）と県ページは src/lib/generated/grid-area-lists.json。runtime で microCMS を呼ぶのはエリアページの関連事業者 1 本（operators endpoint。URL は事業者ごとに共有）だけで、県ページと /grid は 0。変電所詳細は runtime で microCMS を読む。getSubstationBySlug は generateMetadata と本文で同じ fetch のため 1 リクエストで、全 8,352 件が id==slug なのでフォールバックは発生しない。これに関連事業者 1 本、座標ありの詳細だけ projects 全件のページング取得が加わる。関連ニュースは precompute map なので 0。precompute は prebuild（tsx）で動く。Next の fetch パッチの外なので Data Cache を使わず、ビルドごとに必ず新しいデータを取る。",
+     "evidence": "src/app/grid/page.tsx:9,30,58-67 / src/app/grid/[slug]/AreaPage.tsx:17,82（静的）,186（getRelatedOperatorsForSubstation）/ src/app/grid/prefecture/[prefecture]/page.tsx:79（getPrefectureSubstationsStatic）/ src/app/grid/[slug]/page.tsx:137,177（getSubstationBySlug）,215,222 / src/lib/microcms.ts:1547-1569,1646-1664,583-（getAllProjectsWithCoords）/ src/lib/related-cards.ts:163-173（RELATED_NEWS_MAP）/ src/lib/microcms.ts:31-34（createClient に customRequestInit なし＝Next 14 既定の fetch キャッシュ）/ package.json prebuild の build:substations = tsx scripts/precompute-substations.ts。snapshot 8,352 件で id!=slug は 0"
+    },
+    {
+     "topic": "落とし穴 #112 の前提の見直し（どの層が deploy を跨ぐか）",
+     "detail": "Vercel の現行ドキュメント（2026-10-02 取得）では、ISR キャッシュは deployment ごとに独立しており、前の deployment のものは再利用されない。一方 Data Cache（fetch キャッシュ）は deployment を跨いで保持され、revalidatePath・revalidateTag・時間切れ・手動 purge でのみ失効する。本日 13:40Z の素 URL でも、/grid/tokyo と /grid/prefecture/富山県 が X-Vercel-Cache: PRERENDER・Age 0 だった。これは新しい deployment が自分の prerender を配っている状態と整合する。つまり、deploy を跨いで旧内容を出しうるのは「runtime fetch を持つページ」（変電所詳細など）の Data Cache 経由の経路で、#116 と同じ現象にあたる。precompute だけを読む一覧系 3 ルートは、新しい deployment が公開された時点で新しい内容になる。#112 の実測（STALE・age=4,144）は観測時刻が記録されていない。12:44 に完了した deploy の prerender が TTL を超えて SWR で STALE になった可能性があり、旧 deployment 由来かどうかは判定できない。STALE 表示だけでは内容が旧いことの証明にならない。",
+     "evidence": "curl -sL https://vercel.com/docs/incremental-static-regeneration の本文に 'each new deployment uses its own ISR cache and does not reuse the cache from a previous deployment.' / https://vercel.com/docs/data-cache の本文に 'Vercel persists cached data across deployments, unless you explicitly invalidate it using ... revalidate, revalidateTag, and revalidatePath' と 'purges and updates the regional cache in all regions within 300ms' / 本番 curl 13:40:30Z: /grid は 200・HIT・Age 10、/grid/hokuriku は 200・HIT・Age 11、/grid/tokyo は 200・PRERENDER・Age 0、/grid/prefecture/%E5%AF%8C%E5%B1%B1%E7%9C%8C は 200・PRERENDER・Age 0、/grid/rkd-kikan-hss0017 は 200・HIT・Age 11（iad1 経由）"
+    },
+    {
+     "topic": "Next 14.2.35 の revalidatePath の仕様（ソースとビルド成果物で確認）",
+     "detail": "(1) revalidatePath(p) はタグ `_N_T_${p}` を失効させる。ページの ISR エントリには `_N_T_/layout,_N_T_/grid/layout,_N_T_/grid/[slug]/layout,_N_T_/grid/[slug]/page,_N_T_/grid/hokuriku` のような暗黙タグが付く。描画中の fetch にも同じ暗黙タグが soft tag として付くため、具体パスの revalidatePath はページと、そのページが読んだ fetch の両方を失効させる。(2) 動的セグメントの文字列（'/grid/[slug]'）を type なしで渡すと警告だけで効果はない。'page' を付けると /grid/[slug] 配下の全件（9 エリア＋変電所 8,352）、'/grid' に 'layout' を付けると /grid 配下の全ルートを失効させる。(3) 県ページのタグは URL 符号化された形（_N_T_/grid/prefecture/%E4%B8%89%E9%87%8D%E7%9C%8C）。生の県名で revalidatePath を呼ぶとタグが一致せず効かない（#101 と同じ型）。(4) Vercel の fetch-cache クライアントは失効タグを 64 件ずつ POST する。429 を受けると retry-after の間は黙ってスキップし、console.warn しか出さない。ハンドラの応答では成否が分からないので、素 URL での実測が必須。",
+     "evidence": "node_modules/next/dist/server/web/spec-extension/revalidate.js（revalidatePath: normalizedPath=`_N_T_${originalPath}`。isDynamicRoute かつ type なしは警告のみ）/ node_modules/next/dist/server/lib/patch-fetch.js:133-178（getDerivedTags・addImplicitTags が urlPathname を new URL(...).pathname＝符号化形でタグ化）/ node_modules/next/dist/server/lib/incremental-cache/fetch-cache.js:120-155（64 件ずつ・429 で rateLimitedUntil、失敗は console.warn）と :193（soft tags ヘッダ）/ .next/server/app/grid/hokuriku.meta・grid/prefecture/三重県.meta・grid/tokyo.meta・grid/cb-1.meta・grid.meta の x-next-cache-tags"
+    },
+    {
+     "topic": "設計案（1 案）: 保護付きの /api/revalidate-grid",
+     "detail": "新設ファイルは src/app/api/revalidate-grid/route.ts（実装は別便）。runtime='nodejs'、dynamic='force-dynamic'、POST のみ受け付け、GET/HEAD は 405。\n【保護】ヘッダ x-grid-revalidate-secret を環境変数 GRID_REVALIDATE_SECRET と crypto.timingSafeEqual で比較する。環境変数が未設定なら 503 で全件拒否する（fail closed）。シークレットはクエリに載せない。ログは件数だけ残し、シークレットを echo しない。\n【許可リスト】モジュール読込時に、バンドル済みの静的データだけから作る（microCMS 0）。lists スコープは '/grid'、AREA_META の 10 エリア（/grid/tokyo を含む）、grid-area-lists.json の pref_refs にある 41 県を `/grid/prefecture/${encodeURIComponent(県)}` にした計 52 パス。details スコープは、slug が正規表現 ^[a-z0-9][a-z0-9-]{0,63}$ に合い、grid-area-lists.json の by_area に実在し（凍結は自動で除外）、エリア slug でないものに限る。1 回 1〜64 件（Next の失効 POST 1 本の単位と一致させ、成否を原子的にする）。revalidatePath に type は渡さない。許可リスト外のパスは 400 で、拒否したパスを列挙して返す。/grid/prefecture（一覧）・/grid/chubu/map・/tracker/grid は runtime のページング取得を持つため、許可リストに入れない。\n【旧 deployment で呼ばない門】body に min_generated_at（取込本実行の最終 PATCH 完了時刻）を必須で受ける。バンドル済み grid-area-lists.json の generated_at がそれより古ければ 409 を返す。これで「webhook ビルドが走っていない／まだ切り替わっていない」ことを検出できる。実装時には precompute に fetch_started_at を追加し、そちらで比較する（取得中に最終 PATCH が重なる競合を閉じるため）。\n【応答】{scope, count, paths, bundled_generated_at, index_updated_at, summary:{total,n1_ok}}。dry_run:true なら検証だけ行い、revalidatePath は呼ばない。",
+     "evidence": "許可リストの元データ: src/app/grid/[slug]/area-meta.ts（AREA_META 10 件）/ src/lib/generated/grid-area-lists.json（generated_at 2026-10-02T13:16:11.481Z・areas 10・prefs 41・items 8,345・5.37MB）/ src/data/substations/index.json（updated_at 2026-10-02T13:16:11.527Z・66KB）/ scripts/precompute-substations.ts:374（generated_at を書く。fetch_started_at は現状なし）。snapshot 8,352 件の slug はすべて [a-z0-9-]、最大 23 文字"
+    },
+    {
+     "topic": "呼ぶタイミングと microCMS webhook との関係",
+     "detail": "現行の microCMS webhook → Vercel deploy hook（書込 1 件でビルド 1 本、中間のビルドは自動 Canceled、まれに起動しない）は変えない。revalidate エンドポイントを webhook の送り先にはしない。理由は 3 つ。(a) 一覧系はバンドル済み JSON を読むため、再ビルドなしで revalidate しても新データにならない。旧 deployment で旧データを再生成し、TTL を延ばすだけになる。(b) 書込 1 件ごとに発火するため、273 PATCH なら 273 回呼ばれる。(c) シークレットを microCMS 側に置く必要がある。\n手順は次のとおり。①取込本実行の最終 PATCH 完了時刻 T_end を記録する。②最後の webhook ビルドが Ready になるのを既存の検知手順で待つ。③dry_run で 409 でないこと（bundled_generated_at ≥ T_end）を確認する。409 ならビルドが起きていないので、再トリガーを検討する。④details で、PATCH ログ上の変更 slug を 64 件ずつ、60 秒以上の間隔で POST する。⑤lists は原則不要（新しい deployment は自分の ISR を持つ）。素 URL 検証で旧内容が出たときだけ 1 回呼ぶ。シークレットは `set -a && . ./.env.local && set +a` で読み込み、curl のヘッダで渡して表示しない。Vercel の環境変数への登録はアカウント設定の変更にあたるため、EDA さんの手作業になる。",
+     "evidence": "webhook の挙動はメモリ project_microcms_vercel_webhook.md の記録（9/5・9/19・9/28 の実測）に依拠し、本調査では未確認。リポジトリに vercel.json は無い（ls で next.config.js のみ）。409 判定の根拠は scripts/precompute-substations.ts:374 の generated_at"
+    },
+    {
+     "topic": "鉄則 #2/#3/#4 との整合（負荷試算）",
+     "detail": "エンドポイント自体の microCMS リクエストは 0（静的 JSON の import だけで、@/lib/microcms は import しない）。revalidatePath は失効させるだけで、再生成は次の訪問時に 1 回だけ起きる。\nlists（52 パス）: 上限式で 52×1×10 = 520 req/分。実際にはエリアの関連事業者 fetch が最大 10 URL だけで、/grid と県ページは 0。\ndetails（1 回 64 件）: getDetail 1＋共有 fetch を保守的に見て 2 req/件とし、64×2×10 = 1,280 req/分。5,000 以下なので SSR 許容帯。60 秒間隔なら 273 件（5 回）でも各分の上限は 1,280。\n禁止例: revalidatePath('/grid/[slug]','page') は 8,361 エントリ×2×10 ≒ 16.7 万 req/分で、★15,000+ の NG 帯。'/grid','layout' はこれに /grid/chubu/map と /grid/prefecture 一覧（inventory 約 84 req/再生成）も加わる。どちらもコード上で type を渡さない形にして封じる。\nさらにリスクが 1 点ある。詳細ページは getDetail が 429 になると、フォールバックを経て null→notFound になる。再生成が集中して 429 が出ると、404 が TTL の間キャッシュされうる。64 件・60 秒間隔はこの緩和策でもある。",
+     "evidence": "CLAUDE.md 鉄則 #4 の判定式と閾値（15,000+ / 5,000-15,000 / 5,000 以下）。src/lib/microcms.ts:1550-1567（例外時はフォールバック後に null）。src/app/grid/[slug]/page.tsx:178（notFound）。src/lib/constants.ts:23（MICROCMS_PAGE_LIMIT=100）から inventory は 8,352/100 → 84 リクエスト。src/app/grid/prefecture/page.tsx:28。src/app/grid/chubu/map/page.tsx:65"
+    },
+    {
+     "topic": "落とし穴 #116（fetch キャッシュでビルドが 1 世代遅れる）との関係",
+     "detail": "#116 の恒久策（precompute 化）は、/grid・エリア・県の 3 ルートには適用済み。これらは Data Cache の影響外にある（関連事業者 1 本だけは例外）。残っている runtime fetch 経路は、変電所詳細（getSubstationBySlug）、/grid/chubu/map、/grid/prefecture 一覧、/tracker/grid。変電所詳細では、Data Cache が deployment を跨いで保持されるため、取込直後の新しい deployment でも初回の描画が TTL 内の旧レスポンスを読み、旧い値を最大で約 2 TTL 出しうる。revalidatePath('/grid/{slug}') は、その slug の ISR エントリと、その描画で読んだ fetch（soft tag）を同時に失効させる。これにより、禁止されている no-store（静的ルートが ƒ に転落する）を使わずに、#116 の窓を対象 slug に限って閉じられる。revalidatePath を呼んだ動的扱いは Route Handler 側の store にだけ付き、ページのレンダリング方式は変わらない。N-1 三値化への当てはめでは、案A（microCMS に 273 件 PATCH）の場合、詳細ページは runtime fetch で値を読むので details の 273 件（5 回）が必要になる。案B（precompute で重ねる）は値がバンドルに入るため、新しい deployment が公開されれば足り、revalidate は不要。ただし詳細ページも同じ重ね合わせを読まないと、一覧は「未算定」・詳細は「不可」に食い違う（#119 と同じ型）。影響を受ける一覧パスは、/grid 1・7 エリア・19 県の計 27。",
+     "evidence": "src/lib/grid-static-lists.ts:3-13（#116 恒久策の注記）/ src/app/grid/[slug]/page.tsx:98-103,505-520（詳細の N-1 表示は runtime の sub.n1_eligible を fmtN1 で表示）/ node_modules/next/dist/server/web/spec-extension/revalidate.js（trackDynamicDataAccessed は呼び出し側の store に付く）/ n1_undetermined.json の 273 件を grid-area-lists と突合: 全件存在、県あり 19 県（富山68・石川89・福井59 ほか）・県なし 15、prerender 済みは 0 件（すべて on-demand ISR）"
+    },
+    {
+     "topic": "deploy 後の検証手順（鉄則 #5 との対応）",
+     "detail": "失効の成否はハンドラの応答では分からない（429 は黙ってスキップされる）。そのため、各バッチの先頭・末尾の slug と、影響するエリア 1 つ・県 1 つについて、素 URL（クエリなし）を数分おきに 2 回 curl する。毎回 HTTP・X-Vercel-Cache・Age・Date・本文の該当値（例: N-1 表示）を記録する。合格の判定は次のとおり。(1) 2 回目までに本文が新しい値になっている。(2) 詳細が 200（404 化していない）。(3) バッチ末尾の slug も新しい値になっている（64 件のうち後半の取りこぼしを検出するため）。STALE かつ旧い値なら、「TTL 内の既知の窓」として解消見込み時刻を併記する（既存の #112 運用を踏襲）。",
+     "evidence": "CLAUDE.md 鉄則 #5（素 URL＋x-vercel-cache・age の記録）。fetch-cache.js:129-155（429 時はスキップして warn のみ）"
+    }
+   ],
+   "table_markdown": "| ルート | ファイル | revalidate | 生成方式 | on-demand 時の対象パス | 備考 |\n|---|---|---|---|---|---|\n| /grid | src/app/grid/page.tsx:42（データは :9・:30・:58-67） | 3600 | 静的 prerender（generateStaticParams なし）。タグは `_N_T_/grid` | `/grid`（lists スコープ） | 本文は index.json の summary で、runtime microCMS 0。新しい deployment は自分の ISR を持つため通常は不要（保険としてのみ） |\n| /grid/[area]（9 エリア） | src/app/grid/[slug]/page.tsx:47・:53（dynamicParams=true）・:55-67（generateStaticParams）→ AreaPage.tsx:82 | 3600 | generateStaticParams で 9 件 prerender | `/grid/hokkaido` `/grid/tohoku` `/grid/chubu` `/grid/hokuriku` `/grid/kansai` `/grid/chugoku` `/grid/shikoku` `/grid/kyushu` `/grid/okinawa`（type 指定なし） | 一覧は grid-area-lists.json（静的）。runtime microCMS は関連事業者 1 本だけ（AreaPage.tsx:186、事業者ごとに URL 共有） |\n| /grid/tokyo（エリア） | src/app/grid/tokyo/page.tsx:13 | 3600 | 静的セグメントとして prerender（[slug] の generateStaticParams から除外 :58-60） | `/grid/tokyo`（'layout' 指定は禁止。/grid/tokyo/status まで巻き込む） | AreaPage と同じ |\n| /grid/prefecture/[prefecture] | src/app/grid/prefecture/[prefecture]/page.tsx:34・:38-49（generateStaticParams）。dynamicParams 未指定で既定 true | 3600 | generateStaticParams で 41 県を prerender（build 時の inventory 取得で約 84 req） | `/grid/prefecture/${encodeURIComponent(県)}`（41 件。生の県名はタグが一致せず効かない） | 本文 :79 は静的データで runtime microCMS 0。ビルド済みタグは `%E4%B8%89…` の符号化形 |\n| /grid/[slug]（変電所詳細） | src/app/grid/[slug]/page.tsx:47・:53・:55-67・:137/:177（getSubstationBySlug）・:215・:222 | 3600 | 座標ありの 1,082 件（cb-*）だけ prerender。残り約 7,270 件は初回アクセス時に ISR | `/grid/{slug}`（変更した slug のみ。1 回 64 件まで、60 秒以上の間隔） | runtime microCMS（getDetail 1＋関連事業者 1、座標ありは projects をページング取得）。Data Cache は deploy を跨いで残るため #116 の残存経路。type 付きの一括失効は禁止（8,361 件×2×10 ≒ 16.7 万 req/分） |\n| （対象外）/grid/prefecture 一覧 | src/app/grid/prefecture/page.tsx:12・:28 | 3600 | prerender | 許可リストに入れない | getPrefectureCountMap は 1 回の再生成で inventory 約 84 req（#102 未適用） |\n| （対象外）/grid/chubu/map・/tracker/grid・/grid/search・/grid/tokyo/status | chubu/map/page.tsx:46・:65 ／ tracker/grid/page.tsx:17・:33 ／ search/page.tsx:44 ／ tokyo/status/page.tsx:10 | 3600 ／ 3600 ／ force-dynamic ／ 3600 | prerender ／ prerender ／ 動的 ／ prerender | 許可リストに入れない | map と tracker は runtime でページング取得、search は静的データ、status は固定文 |\n| （新設案）/api/revalidate-grid | src/app/api/revalidate-grid/route.ts（未作成） | ―（force-dynamic・POST のみ） | Route Handler | 上の許可リストのみ | シークレットヘッダ（timingSafeEqual・未設定なら 503）＋許可リスト＋min_generated_at 門（409）。microCMS 0 |",
+   "unverified": [
+    "Vercel 上で revalidatePath を呼んだ直後、最初の素 URL 応答が MISS（その場で再生成）になるか STALE（SWR）になるか。未実測で、検証手順では 2 回取得して判定する前提にした",
+    "Vercel のビルド（next build の prerender、座標ありの cb-* 1,082 件など）が Data Cache を読むかどうか。#116 はローカルの .next/cache で実測されたもので、Vercel 上では未確認",
+    "#112 の実測（/grid/tokyo/status が STALE・age=4,144）の内容が旧 deployment 由来だったかどうか。観測時刻が CLAUDE.md に無く判定できない。Vercel docs は ISR を deployment ごとに独立と明記しており、#112 の前提と食い違う",
+    "microCMS webhook → Vercel deploy hook の設定はリポジトリ外にある。メモリの 9/5・9/19・9/28 の実測記録に依拠しており、今回は確認していない",
+    "生の県名で revalidatePath を呼んだときに Vercel 側で効かないことは、タグ文字列の不一致（ビルド済み .meta は符号化形）からの推論で、実機では確認していない",
+    "関連事業者の fetch（事業者ごとに共有される Data Cache エントリ）が、details バッチ 1 回で何回取り直されるか。soft tag の判定から最大 10 URL 程度と推定しているが、未実測",
+    "Vercel の suspense-cache revalidate エンドポイントのレート制限値（Next は 429 を黙ってスキップする）",
+    "Next 14 の ISR で、再生成時に notFound（429 縮退）になった結果が TTL の間 404 としてキャッシュされるかどうか（リスクとして記載したが未検証）",
+    "本日 13:40Z に /grid/tokyo・県ページが PRERENDER/Age 0 だったのが、どの deployment（コミット push か webhook か）によるものか"
+   ]
+  },
+  "design": {
+   "findings": [
+    {
+     "topic": "前提: 未算定は microCMS の値からは導出できない（案B は外部リスト必須）",
+     "detail": "snapshot 8,352 件は n1_eligible が全件 boolean（true 791／false 7,561。null やその他の値は 0 件）。未算定リスト 273 件は 273/273 が snapshot に実在し、重複・凍結との重なりはない。273 件はすべて false で、n1_capacity_mw も null。一方、未算定ではない不可にも false＋可能量 null が 7,236 件ある（7,561 − 可能量 0 の 52 − 273）。つまり microCMS のデータだけでは「未算定」と「不可」を見分けられない。このため案B は L-EIC-028 のような既存値からの導出にはならず、凍結リスト（#120）と同じ「リポジトリ側のリストを真実源にする」型になる。",
+     "evidence": "snapshot の python 集計: n1_eligible は {True:791, False:7561}、未算定 273 件は {(False, 可能量 None):273}。false のうち可能量 0 が 52 件（東北 51・中国 1）、null が 7,509 件。scripts/experimental/_common/build_n1_undetermined.py:7-9 に「n1_eligible は boolean（null不可）のため、取込時に未算定が false に潰れている」とある"
+    },
+    {
+     "topic": "集計の変化: 全案で同じ（「可」は不変・「不可」から未算定へ 273 件移る）",
+     "detail": "未算定 273 件はいま全件 false。三値化しても「可」で数える集計は 1 件も動かない。対象は /grid の N-1電制適用可 790、エリアの統計カード、県ページの %、注目変電所 12 件、N-1 TOP20、検索の n1=true、連系診断の +15 点。動くのは行ごとの「不可」表示だけ。全国では、不可が 7,555 → 7,282（−273）、未算定が 0 → 273。未算定の内訳は北陸 222・東北 20・東京 13・中国 7・北海道 7・関西 2・九州 2 で、中部・四国・沖縄は 0。件数は A・A'・B・C のどれでも同じで、違うのは値の出どころだけ。ただし案A は、移行に不備（#106 で値が黙って落ちる等）があると「可」の件数も変わりうる。",
+     "evidence": "凍結 7 件を除いた母数 8,345（サイトと同じ母数）。可は北海道 24・東北 100・東京 188・中部 148・北陸 28・関西 141・中国 69・四国 19・九州 69・沖縄 4、計 790。src/data/substations/index.json の summary.n1_ok=790。本番 /grid 本文「N-1電制適用可 790・9%」（2026-10-02 13:40 GMT、PRERENDER、Age 0）。grid-area-lists.json（generated_at 2026-10-02T13:16Z）のエリア別 true 件数も一致"
+    },
+    {
+     "topic": "初期DOMの実害: /grid/hokuriku の不可 40 件のうち 39 件は実は未算定",
+     "detail": "北陸ページの SSR 本文には不可バッジが 40 件ある（空容量プラス TOP20 の 20 件と一覧先頭 20 件）。このうち 39 件が未算定リストに載っている。空容量プラス TOP20 は 20/20 が未算定で、空容量が大きい有望な候補ほど誤って「不可」と表示されている。273 件のうち 208 件は空容量プラス（北陸 197・東京 8・中国 1・北海道 1・関西 1）。初期DOMでは、北陸以外にも東北・中国・北海道で各 1 件が同じ状態。個別ページは 273 件すべて「不可」と表示されている。",
+     "evidence": "本番 /grid/hokuriku: X-Vercel-Cache HIT・Age 183（13:43:22 GMT）、不可の行 40 件のうち未算定 39 件。1 回目の取得は PRERENDER・Age 0（13:40:19 GMT）。ローカル .next/server/app/grid/hokuriku.html（22:18 ビルド）では TOP20 が 20/20、一覧が 19/20。本番 /grid/rkd-kikan-hss0017 は MISS・Age 0 で、本文は「N-1電制適用可 不可」"
+    },
+    {
+     "topic": "消費側: 表示が変わる箇所と変わらない箇所",
+     "detail": "「不可」または NO を出していて三値化が要るのは 5 箇所。エリアページ（AreaPage）の空容量プラス TOP20 のバッジ、一覧（SubstationsBrowser）のバッジ、個別ページの fmtN1、ChubuMap のポップアップ（中部は未算定 0 件で現状は影響なし）、連系診断の CSV の YES/NO。値を運ぶ経路は 4 つ。precompute-substations（LiteSubstation の 131 行で boolean に寄せている）、grid-static-lists（GridListItem と toSubstationShape）、microcms.ts（Substation 型と、地図用 2 経路で boolean に寄せている箇所）、grid-connection-checker の型。可だけを見る箇所は変わらない。/grid の summary、県ページ、検索、tracker、glossary の precompute、TOP20 の可能量 > 0 がそれにあたる。",
+     "evidence": "src/app/grid/[slug]/AreaPage.tsx:485-491、src/components/SubstationsBrowser.tsx:169-175、src/app/grid/[slug]/page.tsx:98-102 と 505-517、src/components/ChubuMap.tsx:195、src/components/GridConnectionChecker.tsx:106、scripts/precompute-substations.ts:99・131・327・334、src/lib/grid-static-lists.ts:30・96、src/lib/microcms.ts:675・1686・1737、src/lib/grid-connection-checker.ts:37"
+    },
+    {
+     "topic": "0MW可の実データ: 公表値ではなく「可×可能量 0」の組み合わせ",
+     "detail": "可（true）で可能量が 0 のものは計 73 件。北海道 5・東北 7・東京 8・中部 15・北陸 6・関西 6・中国 4・四国 2・九州 20・沖縄 0。中部は 15 件。ローカルに保存してある中部の公表 CSV では、N-1 可否欄の値は「可」148（うち可能量 0 が 15、0 超が 133）・「不可」10・「不可 #2」34・「不可 #3」915 だけで、「0MW可」という文字列はない。つまり 0MW可は可と可能量 0 の組み合わせから導ける値。select の選択肢に入れると、可能量と二か所で同じ意味を持つことになる（#121）。逆に可能量 0 だけで判定すると、東北 51・中国 1 の「不可×可能量 0」を誤分類する。このため 0MW可は「可かつ可能量 0」をヘルパで導くのが安全で、集計では可に含めたまま扱う（refresh-log の「可148件（0MW可15件を含む）」と同じ扱い）。",
+     "evidence": "snapshot の集計で、true かつ可能量 0 が 73 件、false かつ可能量 0 が 52 件。scripts/experimental/chubu/src の zip CSV を読み取り専用で列 10・11 を集計。parse_chubu.py:85-93（parse_n1）・434（n1_zero_ok）、parse_hokkaido_csv.py:89、src/lib/grid-refresh-log.ts:64・92"
+    },
+    {
+     "topic": "案A の PATCH 規模と選択肢名",
+     "detail": "全件を投入する案A は PATCH 8,352 件（可 791・不可 7,288・未算定 273。凍結 7 件を含む）。1 件あたり応答約 0.6 秒（#90）と待ち 0.4 秒で試算すると、約 2.3 時間かかる。未算定だけを投入する A' なら 273 件・約 4.6 分。microCMS は書込 1 件ごとにビルドを 1 本起動する（9/28 実測）ため、どちらも webhook の停止が要る規模。選択肢は単一選択で「可」「不可」「未算定」の 3 つを推奨する。ダッシュ記号（－／―／-／ー）を選択肢の値にすると、NFKC で正規化した後の表記違いで #106 の黙った欠落を招く。0MW可は選択肢に入れない（前項）。select は配列で書く（既存の oc_possibility と同じ）。スキーマの追加は、管理 API が 403 のため EDAさんが管理画面で行う必要がある。",
+     "evidence": "scripts/experimental/tepco/microcms_update_2607.ts:104-105 で patch.oc_possibility=['有り'] と配列で書いている。webhook の挙動はメモリ project_microcms_vercel_webhook（9/28: 書込 5 件でビルド 5 本、うち中間 3 本は自動 Canceled）。src/lib/constants.ts:23 PAGE_LIMIT=100 → 前後 GET は一覧取得で各 84 回"
+    },
+    {
+     "topic": "#106 との関係（案A・A'）",
+     "detail": "select は定義されていない値を黙って捨てる。ヘルパが「空なら boolean を見る」作りだと、値が落ちたレコードは「不可」表示に戻り、いまの状態と見分けがつかない。このキーでは スキーマ GET が 403 で選択肢が実在するか確かめられないので、canary として 1 件だけ PATCH し、GET で照合してから本投入する（2026-07-06 の PATCH→GET 3 値で実証済みの手順）。投入後は全件 GET で、n1_status の分布が可 791・不可 7,288・未算定 273 と一致することを照合する。A' は空の 8,079 件が正常な状態なので、値が落ちたことを件数でしか検知できない。",
+     "evidence": "CLAUDE.md の落とし穴 #106 と停止条件（PATCH は差分限定＋前後 GET で #106 照合）。タスク文の「管理 API はこの鍵では 403」"
+    },
+    {
+     "topic": "案B の二重管理の扱い（#116・BM・#119）",
+     "detail": "microCMS では false、サイトでは未算定、という食い違いが恒常的に残る。管理画面を見ると 273 件は不可に見える。対策は 6 つ。(1) リストを src/data へ移して、TS と Python が同じ JSON を読む（substations-frozen.json と同じ型・#119「定義は一箇所」）。(2) 判定は 1 つのヘルパに置き、precompute・個別ページ（runtime の getSubstationBySlug）・地図の 2 経路がすべてそれを通る。precompute だけに置くと「一覧は未算定・個別は不可」になる（L-EIC-028 の配置規則、#119 の逆向き）。(3) リストは false を未算定へ格下げするだけにする。microCMS が true なら可を優先し、verify で矛盾として落とす（現状 0 件）。(4) 各エントリに as_of（その時点の last_updated）を持たせ、microCMS の last_updated と一致するときだけ適用する。一致しないものは verify を FAIL させ、再取込で可否が公表されたのに古い未算定で上書きし続ける事故を防ぐ（現状は 273/273 一致）。(5) リストの external_id は信用できない（北陸 222 件は slug の写し、関西 ksi-local-d-7 は旧値「kansai_local_滋D」で、本番は「滋ED」）。キーは slug に限定する。(6) リストの変更はコードの deploy で反映され、webhook では反映されない。no-store は使わないので #116 の型には当たらない。個別ページは ISR で、TTL 3600 秒の窓（#112）がある。",
+     "evidence": "src/lib/substations-frozen.ts と scripts/experimental/_common/frozen.py が同じ src/data/substations-frozen.json を読む。src/app/grid/[slug]/page.tsx:22-26・47（revalidate 3600、getSubstationBySlug を runtime で取得）。snapshot と照合した結果: last_updated は 273/273 が source の公表日と一致し、external_id は北陸で 222 件不一致・関西で 1 件不一致"
+    },
+    {
+     "topic": "鉄則#3／#102: どの案も runtime の microCMS を増やさない",
+     "detail": "一覧・集計は今も build 時の precompute を参照している（runtime 0）。案A は precompute の FETCH_FIELDS に n1_status を 1 列足すだけで、リクエスト数は変わらない（8,352 件 ÷ 100 で約 84 回）。個別ページは 1 ページにつき 1 リクエストのままで、getSubstationBySlug はフィールド指定なしなので新しい列も自動で載る。案B は静的 JSON を import するだけ。ピーク負荷の増分はどの案も 0。案A では precompute の FETCH_FIELDS・LiteSubstation・GridListItem・toSubstationShape のどれかで追加を忘れると、#118 と同じく一覧が黙って不可にフォールバックする。そのため verify-grid-list-fields の REQUIRED_FOR_LIST・MUST_HAVE_SOME_VALUE・SHAPE_CRITICAL に n1_status を足すことが前提になる（案B も同じ）。",
+     "evidence": "scripts/precompute-substations.ts:95-111、scripts/verify-grid-list-fields.ts:23-30・70-73、src/lib/microcms.ts:1531-1536（getSubstationBySlug は depth:1 で fields 指定なし）"
+    },
+    {
+     "topic": "#121・L-EIC-028 との関係",
+     "detail": "#121（同じ意味の値を二か所で算出しない）について。案A では、boolean と併存している間は可否が二つのフィールドにある。取込で両方を同じ関数から書き、verify で n1_eligible === (n1_status が可) を全件照合し、boolean の廃止日を決めておく必要がある。A' では「空なら boolean」という規則がずっと残る。L-EIC-028 は「公表元の原値という契約を持つフィールドに合成値を書くな」という規則。未算定は公表原値（－）であって、表示用に導いた区分ではない。いま 273 件に false が入っているのは、むしろ原値の契約から外れた状態。したがって案A は契約を回復する方向で、L-EIC-028 には反しない。案B は原値ではない false を microCMS に残したまま、表示だけを外部リストで直す。",
+     "evidence": "CLAUDE.md の L-EIC-028（導出は共有ヘルパ 1 箇所。precompute だけに置くと一覧と詳細が食い違う）と落とし穴 #121"
+    },
+    {
+     "topic": "関連して見つかったこと（参考）",
+     "detail": "(1) searchSubstationsByFilters（runtime microCMS、n1_eligible[equals]true の filter を持つ）は、ページからは使われていない。参照しているのは scripts/experimental/grid の parity スクリプトだけ。案A で boolean を廃止するときは一緒に整理する対象。(2) 出力制御の oc_possibility も select で、取込は「有り」のときだけ送っている。refresh-log には「出力制御の未算定 9〜15 件は現値維持」とあり、N-1 と同じ型の潰れがある可能性がある。表示は「—」で、「なし」とは書いていない。",
+     "evidence": "Grep の結果、searchSubstationsByFilters の参照は src/lib/microcms.ts:1863 の定義と scripts/experimental/grid/parity-*.ts だけ。src/lib/grid-refresh-log.ts:122・147・170・194、tepco/microcms_update_2607.ts:104-105"
+    }
+   ],
+   "table_markdown": "| 案 | 変更箇所 | microCMS 書込 | 作業量 | 集計の変化（件数） | リスク |\n|---|---|---|---|---|---|\n| A: select `n1_status` を新設して全件に投入し、boolean は後日廃止 | スキーマ追加（単一選択で「可」「不可」「未算定」）。コード共通 11 ファイル（判定ヘルパ新設 1、表示 5＝AreaPage・SubstationsBrowser・個別 page・ChubuMap・連系診断 CSV、運搬 4＝precompute・grid-static-lists・microcms.ts・checker 型、verify-grid-list-fields）。取込 8 社の microcms_update_*.ts | スキーマ追加は EDAさんが管理画面で行う（管理 API は 403）。PATCH 8,352 件（可 791・不可 7,288・未算定 273）。webhook 停止は必須 | 大。PATCH の試算は約 2.3 時間。前後の全件 GET 照合あり。後日、boolean を廃止する作業も別にある | 可 790 は不変。不可 7,555→7,282（−273）。未算定 0→273。移行に不備があると可の件数も動く | #106（選択肢名の不一致で値が黙って落ちる。スキーマ GET 不可なので canary の PATCH→GET が必須）。併存期間は同義の 2 フィールド（#121）。大量書込でビルドが連発。#112 の TTL 窓 |\n| A': select を新設し、未算定の 273 件だけ投入（空は boolean にフォールバック） | A と同じ | スキーマ追加＋PATCH 273 件。webhook 停止は要 | 中。PATCH の試算は約 4.6 分 | A と同じ | 「空なら boolean を見る」が恒久化（#121）。値が落ちても黙って「不可」表示に戻り、現状と区別できない。boolean を廃止するには結局 8,079 件の追加 PATCH が要る |\n| B: microCMS は触らず、precompute とヘルパで未算定リストを重ねる | コード共通 11 ファイル。リストを src/data/ へ移設し、TS と Python が同じ JSON を読む（凍結リストと同じ型）。as_of 列を追加。verify に軸を追加（true との矛盾・as_of の不一致・件数）。取込はリストを再生成する | 0 | 小〜中。コードだけで、webhook 停止は不要 | A と同じ（可 790 不変、不可 −273、未算定 +273） | microCMS（false）とサイト（未算定）が恒常的に二重管理になる。個別ページ（runtime GET）にも同じヘルパを通さないと「一覧は未算定・個別は不可」になる（#119、L-EIC-028 の配置規則）。再取込で古い未算定が上書きし続ける恐れ（as_of で防ぐ）。リストの external_id は 223 件が不正確なので、キーは slug に限定 |\n| C: 段階移行（B を四国 BS の前に先行し、A を単独タスクで実施。完了時にリストを撤去） | 段1 は B 一式。段2 は A 一式（ヘルパと表示 5 箇所はそのまま再利用し、データ源だけ差し替える） | 段1 は 0。段2 は A と同じ | 最大（B＋A）。ただし段2 はデータ源の差し替えに限られる | A と同じ | 二重管理は期限つきで残る。段2 で、リスト由来の未算定と n1_status を全件突合しないと #118 型の静かな欠落が起きる |\n\n**エリア別の試算**（凍結 7 件を除いた母数＝サイトと同じ。どの案でも同じ値）\n\n| エリア | 総数 | 可（不変） | うち 0MW可 | 不可 現在→三値後 | 未算定 |\n|---|---|---|---|---|---|\n| 北海道 | 459 | 24 | 5 | 435→428 | 7 |\n| 東北 | 884 | 100 | 7 | 784→764 | 20 |\n| 東京 | 1,718 | 188 | 8 | 1,530→1,517 | 13 |\n| 中部 | 1,107 | 148 | 15 | 959→959 | 0 |\n| 北陸 | 274 | 28 | 6 | 246→24 | 222 |\n| 関西 | 1,702 | 141 | 6 | 1,561→1,559 | 2 |\n| 中国 | 873 | 69 | 4 | 804→797 | 7 |\n| 四国 | 294 | 19 | 2 | 275→275 | 0 |\n| 九州 | 883 | 69 | 20 | 814→812 | 2 |\n| 沖縄 | 151 | 4 | 0 | 147→147 | 0 |\n| 計 | 8,345 | 790 | 73 | 7,555→7,282 | 273 |\n\n0MW可＝「可」かつ可能量 0 の件数。公表 CSV の値ではなく組み合わせから導く値なので、select の選択肢には入れない。初期DOMで表示が変わるのは、/grid/hokuriku の不可バッジ 40 件のうち 39 件（空容量プラス TOP20 は 20/20）と、東北・中国・北海道の各 1 件。個別ページは 273 件すべてが「不可」から「未算定」に変わる。",
+   "unverified": [
+    "microCMS の boolean フィールドに null（未設定）を入れられないかどうか。根拠は build_n1_undetermined.py の注記だけ。snapshot では 8,352 件すべてが true か false だったので矛盾はしないが、裏付けにはならない",
+    "substations の現行スキーマ（既存 select の選択肢、単一か複数か、n1_capacity_mw の型）。管理 API が 403 で確認できなかった。select の選択肢名にどの文字が使えるか（「0MW可」等）も未確認",
+    "PATCH の所要時間（8,352 件で約 2.3 時間、273 件で約 4.6 分）は #90 の約 600ms と取込スクリプトの 400ms 間隔からの試算で、実測ではない",
+    "webhook を停止・再開する手順と所要時間（EDAさんの管理画面操作）は確認していない",
+    "中部に「0MW可」という文字列が無いことは、ローカルに保存してある CSV（scripts/experimental/chubu/src、取得時点の版）で確かめただけ。最新の公表 CSV は確認していない。他社の CSV の原値も見ていない",
+    "本番で確認したのは /grid・/grid/hokuriku・/grid/rkd-kikan-hss0017 の 3 URL だけ。他エリアの初期DOMの件数はローカルの .next ビルド（22:18）で数えた",
+    "oc_possibility（出力制御）にも同じ型の未算定の潰れがあるか。なし の選択肢が未登録だという点はメモリの記述と取込コードからの推定で、スキーマでは確かめていない"
+   ]
+  },
+  "ingest": {
+   "findings": [
+    {
+     "topic": "全社共通: N-1 欄の読み方（parse_n1）",
+     "detail": "8社のパーサは同じ作りになっている。値を clean/NFKC してから、「不可」で始まれば false、「可」で始まれば true、それ以外は None。None になるのはハイフン類と空欄だけではない。想定外の表記（文字そのままの「0MW可」、注記、未知の記号など）も黙って None＝未算定に落ちる。原文（n1_raw）を正規化 JSON に残しているのは旧 PDF パーサ（parse_tepco.py・parse_tepco_all.py）だけで、現行の CSV パーサは残していない。未算定として扱う記号の集合は社ごとに違う（東京・北陸は「-」「－」「ー」「—」と空欄。東北・中国・北海道は「‐」「−」「―」も含む。関西・九州・中部は NFKC 後に判定）。ただし未知の値も全部 None に落ちるので、結果は同じになる。",
+     "evidence": "tepco/parse_tepco_csv_2607.py:51-57,76-84／hokuriku/parse_hokuriku_csv.py:54-62,81-92／tohoku/parse_tohoku_csv.py:45,58-66,85-95／chugoku/parse_chugoku_csv.py:55,92-102／hokkaido/parse_hokkaido_csv.py:51,88-96／kansai/parse_kansai_csv.py:100-108／kyushu/parse_kyushu.py:72-80／chubu/parse_chubu.py:85-93（いずれも末尾で `return None`）"
+    },
+    {
+     "topic": "全社共通: 未算定の扱い＝更新は現値維持、新設は false",
+     "detail": "既存レコードの更新では、CSV が None なら n1_eligible を送らず、現値を残す。件数は版ごとの固定値で検査して止める。一方、新設（create）では None が false に変換されて投入される。変換の書き方は `!!`、`=== true`、`is True`、`bool()` と社ごとにばらばら。初期取込で false に潰れたのもこの経路（東京の初期取込 microcms_import.ts L42 `!!r.n1_eligible`）。",
+     "evidence": "現値維持の固定値: tepco/microcms_update_2607.ts:96-102,150(13)／hokuriku/microcms_update_2608.ts:107-113,128(222)／tohoku/microcms_update_202607.ts:53(20)／chugoku/microcms_update_202608.ts:62(8)／hokkaido/microcms_update_202607.ts:67(7)／kansai/microcms_update_2608.ts:69(2)／kyushu/microcms_update_2607.ts:65(2)。新設時の false 化: tepco/microcms_update_2607.ts:126・microcms_import.ts:42／hokuriku/microcms_update_2608.ts:84／chugoku/parse_chugoku_csv.py:519／hokkaido/parse_hokkaido_csv.py:458／kansai/parse_kansai_csv.py:716／kyushu/parse_kyushu.py:649"
+    },
+    {
+     "topic": "未算定リストの漏れ5件（273件ではなく278件）",
+     "detail": "社別リストは「突合できた既存行（matched）で、baseline の値が None でない」行からしか作っていない。そのため、新設時に未算定が false で投入された5件がリストに入っていない。この5件は snapshot ですべて false、n1_undetermined.json には無い。最新の取込版の CSV で未算定（ハイフン・空欄）だった行は、No.ホワイトリスト通過後で 278 行あり、273＋5 と一致する。",
+     "evidence": "北陸 rkd-toyama-tss0074 早月第一66/22kV（CSV『-』）・tss0075 常願寺川第三（『-』）・tss0076 名称非公開（空欄）は、build_n1_undetermined.py:26 の `if b and ...` で除外。北海道 hkd-kikan-0230 富村変電所（kikan01_Tr_202607_01.csv『―』）は parse_hokkaido_csv.py:305-313 が matched のみ。関西 ksi-kikan-bu（名称「変電所」、154kv_more_trans.csv で全列『－』）は update_plan_2608.json の creates_n1_false_as_undetermined=1。北陸 CSV None 225＝一覧222＋新設3"
+    },
+    {
+     "topic": "リスト内の「未算定」に空欄（非公開）行が15件混ざっている",
+     "detail": "どの社のパーサも、空欄をハイフンと同じく未算定として扱っている。北陸の空欄行は名称非公開の行で、ほぼ全列が空。関西の2件は N-1 欄だけが空欄。三値化で「空欄＝未算定」とするのか、「非公開」として別に扱うのかを裁定する必要がある。",
+     "evidence": "北陸222件の内訳は『-』210・空欄12（csv_2608 を No.→slug で照合）。関西の一覧2件（ksi-local-ec-6 赤子山・ksi-local-d-7 高時川）は 154kv_less_trans.csv で N-1 欄が ''。中国 egz-okayama-s80004 湯原第一（岡⑤S8-4）は N-1 欄が ''"
+    },
+    {
+     "topic": "中国: 計画8件・リスト7件の差",
+     "detail": "8/16 の計画（update_plan_202608.json）の n1_undetermined_skipped=8 には、注記行を誤って取り込んだ egz-kikan-x（【留意事項】）が含まれていた。8/17 の 6a4d938（#120・凍結除外）で n1_undetermined_chugoku.json から外され、7件になった。いまの7件は CSV の実値と一致している（基S6・基S8・基S16 が『-』、島⑥S1-S3 が『－』、岡⑤S8-4 が空欄）。リストは matched だけから作り、計画は matched に振り直し分を足して作るので、作り方が非対称になっている。振り直し3件は不可だったため、今回は差が出ていない。",
+     "evidence": "git show 6a4d938 -- _common/n1_undetermined_chugoku.json（count 8→7、egz-kikan-x を削除）／parse_chugoku_csv.py:377-387（matched）と 479-498（matched＋renumber_matched）"
+    },
+    {
+     "topic": "build_n1_undetermined.py の構造",
+     "detail": "北陸・東京・東北には社別ファイルが無く、版を固定したファイル（hokuriku_csv_2608_normalized.json、tepco_csv_2607_normalized.json、reports/grid-tohoku-dryrun-2026-08-16.json）を直接読んでいる。中国・北海道・関西・九州は社別ファイルを統合しているが、中部（n1_undetermined_chubu.json、0件）は読んでいない。社単位で入れ替える仕組みが無いので、再取込で未算定が解消しても、パスを書き換えない限りリストに残る。src/ からは誰も参照しておらず、表示側にはつながっていない。",
+     "evidence": "_common/build_n1_undetermined.py:21-84（chubu の記述なし）。src・scripts/*.ts を grep しても n1_undetermined は src/ に0件"
+    },
+    {
+     "topic": "「0MW可」は CSV に書かれた表記ではない",
+     "detail": "10社の現行 CSV に「0MW可」という文字列は無い。N-1 欄は「可」で、可能量欄が 0 という組み合わせになっている。BQ 依頼書 §13 の「0MW可」はこの組み合わせを指す概念。select の選択肢にするなら、パーサで2列から導出する必要がある（読んでも出てこない）。",
+     "evidence": "「可」かつ可能量0 の行数: 東京19・北陸6・東北7・中国4・北海道5・関西6（more3・less3）・九州20・中部15・四国2（10月版 kikan00 の広見・坂出火力）。中部 2026-08-17 版の N-1 欄の実値は『不可 ＃３』915・『可』148・『不可 ＃２』34・『不可 』10 の4種だけ"
+    },
+    {
+     "topic": "四国（BS）: スクリプトは未作成。10月版の N-1 表記",
+     "detail": "scripts/experimental に四国用のディレクトリは無く、git 履歴にも取込スクリプトは無い（初期取込はリポジトリ外）。10/2 に公表ファイルを GET して確認した。5本とも cp932、メタ行は『2026年10月1日更新』、列構成は17列で、N-1 は idx11、可能量は idx12（北陸・東北・中国と同じ系統）。表記は、kikan00 が「可」19・「不可♯1」4・「不可♯4」2、local01〜04 が「不可＃２」155・「不可 #3」86（local02）・「－」（U+FF0D）28。kikan00 と local04 には注記行『*1〜*3』（N-1 欄は空）があるので、No.ホワイトリスト（数字のみ）で外さないと未算定に数えてしまう。「－」28行は、同じ No.に2行ある設備の片側（66/22kV 側で全列が「－」）。external_id `yonden_local0N_No` は本体と -2 で共通なので、slug は電圧面で決める必要がある（#115）。該当する slug は本体・-2 とも現在すべて false で、28件がすでに false に潰れている（BS 依頼書の『四国は0件』は再取込前だから）。",
+     "evidence": "curl https://www.yonden.co.jp/nw/line_access/data.html の href＝sys_capa_{kikan00,local01-04}_tr_202610_08.csv（3,093／4,549／7,616／4,729／4,807 B）。例: local01 No.11 上天神は『66,22,…,－』と『66,6.6,…,不可＃２』の2行。snapshot では ydn-kagawa-0011 と -0011-2 がともに false。四国の snapshot は true19・false275、last_updated はすべて 2026-05-01"
+    },
+    {
+     "topic": "沖縄（BT）: スクリプトは未作成。N-1 列があるのは1ファイルだけ",
+     "detail": "N-1 列があるのは con_res_map01_02.csv（本島66kV・変電所、38行）だけで、値は「可」4・「不可 ＃３」28・「不可 ＃１」5・「不可 ＃４」1。未算定は0。残り5本（01_03 配変・02_02 変電塔・02_03 配電塔・03_02・03_03）には N-1 列そのものが無い。該当する113件は microCMS 上すべて false で、可/不可/未算定のどれでもない「公表なし」の状態が false に潰れている。",
+     "evidence": "curl con_res_map01_02.csv（1,900 B、cp932、メタ『2026年8月末時点』、ヘッダ idx4『N-1電制適用可否』）。他5本のヘッダに N-1 列は無い。snapshot の沖縄は、配変77・本島22kV配変10・本島22kV変電所5・離島変電所20・離島配変1 がすべて false（計113）、本島66kV変電所は false34・true4"
+    },
+    {
+     "topic": "東京: 次回本実行に向けた前提の不足",
+     "detail": "東京には fetch_baseline.py が無い。dry-run・本実行・未算定リストのいずれも、6/22 取込時の static な tepco_grid_ready.json を baseline にしている（#113 違反の状態）。本実行スクリプトは版固定で、件数も直書き（1,717・13）。新設は `!!` で false になる。2607 版の正規化行（重複除去後1,718）は true188・false1,517・None13 で、tpg-1719 の true を足すと本番 true189 と一致する。",
+     "evidence": "ls scripts/experimental/tepco に baseline/fetch なし。microcms_update_2607.ts:31,126,149-150。tepco_csv_2607_normalized.json は count1718、除外66（True64・False2）"
+    },
+    {
+     "topic": "案A の実装上の注意（select の形と追加リクエスト）",
+     "detail": "microCMS の GET は select を配列で返す（[] または ['有り']）。各パーサは oc_possibility を [0] に正規化してから比較しており（例 parse_tohoku_csv.py:184-185）、n1_status も同じ扱いが要る。各社の更新計画は、突合した全行に last_updated を必ず PATCH しているので、同じ PATCH に n1_status を足しても追加リクエストは0。ただし再取込しない社（中部など）には一括の埋め戻しが別に要る。#106（未定義の選択肢は黙って捨てられる）への対策として、投入前に選択肢が実在するか確認し、照合 GET の fields に n1_status を加える。",
+     "evidence": "baseline_live.json の oc_possibility 分布: 東北 ['有り']879／[]5、北陸 []153／['有り']118 など。更新計画の全行に last_updated がある: hokuriku/microcms_update_2608.ts:100、parse_tohoku_csv.py:380、parse_chugoku_csv.py:485"
+    }
+   ],
+   "table_markdown": "| 社 | スクリプト | N-1 欄の読み方 | 未算定の扱い | 案A の変更点 | 案B の変更点 |\n|---|---|---|---|---|---|\n| 東京 | tepco/parse_tepco_csv_2607.py（parse_n1 L76-84）・microcms_update_2607.ts（L96-102・新設 L126）・初期取込 microcms_import.ts L42 | 県別19列は idx13、基幹24列は idx18。「-」「－」「ー」「—」と空欄を None にし、「可」で始まれば true、「不可」で始まれば false、それ以外も None。2607版: 可252／不可#3 1,509／不可#2 7／不可 ♯２ 2／不可#1 1／「-」13 | 更新は n1_eligible を送らず現値維持（13件、`n1Kept!==13` で停止）。新設 tpg-1719 と初期取込は `!!` で None が false になる。リストの baseline は static の tepco_grid_ready.json | 次回版のスクリプトで、全行の PATCH に n1_status（CSV None→['未算定']）を足す。新設も `!!` をやめて明示する。fetch_baseline.py を新設する（#113）。比較は select 配列の [0] で行う。照合 GET に n1_status を足す。固定値13をやめる。未知の表記は None にせず停止する | パーサが社別リスト（n1_undetermined_tokyo.json 相当）を出力する（今は build が 2607 のパスを直書き）。baseline を本番 GET に替える。新設の未算定もリストに入れる。現値維持の件数はリストの件数と突き合わせる |\n| 北陸 | hokuriku/parse_hokuriku_csv.py（L54-62・L81-92・L234-247）・microcms_update_2608.ts（L84・L107-113・L128） | idx10。2608版: 「-」212／空欄13（名称非公開行）／可28／不可　#3 16／不可　♯１2・♯２2・♯４1 | 現値維持222（固定値）。新設3件（tss0074・0075 は「-」、0076 は空欄）は `=== true` で false になり、リストからも漏れている。リスト222件の内訳は「-」210・空欄12 | 次回取込で n1_status を全行に書く。新設は CSV 由来の値を明示する。漏れている3件はリストに追加する（埋め戻し時）。空欄（非公開）の扱いを裁定する | 社別ファイルを出力する（今は normalized.json を直読）。新設3件を入れる。空欄に reason（非公開）を付けるかを決める |\n| 東北 | tohoku/parse_tohoku_csv.py（UNDETERMINED L45、先頭の「'」除去 L58-66、parse_n1 L85-95、一覧 L289-301、計画 L387-392）・microcms_update_202607.ts L53 | idx11。2607版: 不可 #4 661／可100／不可 #3 98／「-」20／不可 #1 5 | 現値維持20（固定値）。新設は無い。build は dry-run の report json を直読 | 計画生成時に n1_status を全行へ追加する。照合 GET を拡張する | 社別ファイルを出力する。build のパスの直書きをやめる |\n| 中国 | chugoku/parse_chugoku_csv.py（L55・L92-102・一覧 L377-387・計画 L479-498・新設 L519）・microcms_update_202608.ts L62 | idx11。tr のみ、注記行を除外: 不可　♯３447・♯２261／可69／不可　＃３53・＃２36／「-」3・「－」3／空欄1（岡⑤S8-4） | 現値維持（計画は8、リストは7。差は凍結した egz-kikan-x、6a4d938）。リストは matched のみから作り、計画は matched＋振り直し分。新設は `is True` | 同上（n1_status を全行に書き、新設も明示） | リストの作成対象を matched＋振り直し＋新設に揃える |\n| 北海道 | hokkaido/parse_hokkaido_csv.py（L51・L88-96・一覧 L303-313・計画 L425-427・新設 L458）・microcms_update_202607.ts L67 | idx11。不可　♯３300・♯２76・♯１34・♯2 12／可24（うち0MW 5）／「―」8／複合（♯３、♯５ 等）4・♯４1 | 現値維持7（固定値）。基幹の新設35件は `is True`。富村 hkd-kikan-0230（「―」）が false で投入され、リストから漏れている | 同上。0MW可は「可」＋可能量0 のまま書く。漏れ1件を埋め戻しの対象にする | 新設もリストに入れる（漏れ1件を追加） |\n| 関西 | kansai/parse_kansai_csv.py（parse_n1 L100-108、一覧 L408-412、新設 L716・L731、計画 L751・L767）・microcms_update_2608.ts（L69・照合 L178-184） | idx11（NFKC 後、空欄と「-」「ー」「―」「‐」を None）。more: 可66／不可 ＃３26・＃１22／不可　＃３9・＃１1／不可 ＃２2／「－」1。less: 不可 ＃２1,202・＃１296／可75／空欄2 | 現値維持2（いずれも less の空欄）。新設は `bool()`。ksi-kikan-bu（名称「変電所」・全列「－」）は false で投入され、リストから漏れている（計画には creates_n1_false_as_undetermined=1 と記録あり） | 同上。漏れ1件を埋め戻しの対象にする | 新設もリストに入れる（計画のフラグをそのまま流用できる） |\n| 九州 | kyushu/parse_kyushu.py（parse_n1 L72-80、一覧 L335-339、計画 L599-604、新設 L649）・microcms_update_2607.ts L65 | idx11（NFKC 後、空欄と「-」「―」「ー」を None）。不可　＃４706／可69（うち0MW 20）／不可　＃３35／…／「―」2（大鶴・南関） | 現値維持2（固定値）。新設4件に未算定は無い | 同上 | 社別ファイルはすでにある。build の入替え方式に合わせる |\n| 中部 | chubu/parse_chubu.py（parse_n1 L85-93、一覧 L423-427、build_patch L654-656） | idx10。2026-08-17版: 不可 ＃３915／可148（うち0MW 15）／不可 ＃２34／「不可 」10。未算定は0 | None なら送らない（暗黙の現値維持）。スキップ件数の検査は無い。n1_undetermined_chubu.json（0件）は build で統合されていない | 同上。スキップ件数を検査に加える | build に中部ファイルを追加する |\n| 四国（BS） | **スクリプト未作成**（scripts/experimental と git 履歴のどちらにも無い） | 10月版（10/2 GET、cp932、17列、N-1 は idx11）: kikan00 は 可19（うち0MW 2）・不可♯1 4・不可♯4 2。local01〜04 は 不可＃２155・不可 #3 86・**「－」(U+FF0D) 28**。注記行『*1〜*3』が kikan00 と local04 にある | 「－」28行は同じ No.の2行目（66/22kV 側）。external_id を本体と -2 が共有しているため、電圧面で slug を決める必要がある（#115）。該当 slug は現在すべて false で、すでに潰れている（リストは四国0件） | 新規パーサで、「－」は未算定、「不可」は表記揺れ（♯＃#・空白の有無）を許して不可、「可」は可とし、未知の表記は停止する。No.ホワイトリストは数字のみ。全294件に n1_status を書く | 新規パーサが n1_undetermined_shikoku.json（電圧面で解決した28件）を出力し、build に統合する。更新は現値維持 |\n| 沖縄（BT） | **スクリプト未作成** | N-1 列があるのは con_res_map01_02.csv（本島66kV変電所38行、idx4／可能量 idx5）だけ: 可4・不可 ＃３28・不可 ＃１5・不可 ＃４1。未算定は0。残り5本（113件）は N-1 列が無い | ダッシュの未算定は0。列が無い113件は現在すべて false（「公表なし」が false に潰れている） | 列が無い113件に入れる値（select の第4値「公表なし」か、未算定に寄せるか）を裁定する。38件には可/不可を書く。区分（変電所/配変）を突合キーに含める | リストに「列なし（no_column）」区分を持たせるか、別リストにする。ダッシュ分は0件 |\n| 共通（_common） | _common/build_n1_undetermined.py（L21-84） | — | 北陸・東京・東北は版固定のパスを直読。中部は未統合。社単位の入替えが無い。src からの参照も無い | リストは「埋め戻しの入力」の役割に縮める。select の選択肢が実在するか投入前に確認し、投入後 GET で照合する（#106）。#116／#112 の窓を報告に併記する | 社別ファイルを glob して社単位で置き換える。真実源を1か所（src/data 配下、frozen.json と同型で TS・Python 共用、#119）に置き、precompute から読む。各パーサの期待件数はリストから導出する |",
+   "unverified": [
+    "四国 2026/05/01 版（現行の取込元）の N-1 欄の表記。確認できたのは 10/1 版の公表 CSV だけ。28件が5月版でも「－」だったかは見ていない",
+    "四国の「－」28行がそれぞれ本体と -2 のどちらの slug に当たるか。snapshot に電圧面フィールドが無いため決められない（該当 slug は両側とも false であることのみ確認）",
+    "四国・沖縄の初期取込で使ったスクリプト（リポジトリ外）が未算定・列なしをどう false にしたか。コードが無いため、格納値（すべて false）からの推測",
+    "沖縄の列なし113件と、漏れ5件が本番でどう表示されているか（built HTML・素URL は本シャードでは見ていない）",
+    "microCMS の substations スキーマにある select の選択肢（管理 API が 403 のため確認できない。案A の選択肢実在確認は未実施）",
+    "東京の公表 CSV の最新版（次回本実行の対象版）は取得していない。2607 版の手元ファイルで判断している",
+    "九州の CSV データ行の再集計は885行で、本番883件と2件ずれている。凍結・重複除去の差と思われるが、内訳は追っていない",
+    "関西 ksi-kikan-bu（名称「変電所」・全列「－」）が実在の設備なのか、取込時の誤り（#120 型）なのかは見ていない"
+   ]
+  },
+  "consumers": {
+   "findings": [
+    {
+     "topic": "1c 全体像: N-1 を読む経路は「静的 precompute 系」と「runtime microCMS 系」の2系統",
+     "detail": "静的系（precompute-substations.ts → grid-area-lists.json / index.json / 県別 JSON）はエリア/東京ページ・県ページ・/grid 集計と注目変電所・/grid/search・連系診断ツール・glossary の件数焼き込み。runtime 系（microCMS を直接読む）は変電所個別ページ・/grid/chubu/map・/tracker/grid（と、表示に使っていない projects の近隣変電所）。src から n1_undetermined.json を参照している箇所は 0 件。サイト本文で「未算定」が出るのは /tracker/grid の更新ログ注記（grid-refresh-log.ts の静的な文）だけ。",
+     "evidence": "grep 結果（パターン n1_[a-z_0-9]+|n1[A-Z]…|N-1）: src の ts/tsx で約20ファイル。grep -rn 'n1_undetermined|未算定' src を実行すると grid-refresh-log.ts の 7 行だけ。本番 /tracker/grid の本文で「未算定」10 箇所（x-vercel-cache PRERENDER, Age 0）"
+    },
+    {
+     "topic": "precompute で null/undefined を false に潰している（三値が失われる最初の地点）",
+     "detail": "precompute-substations.ts:131 `n1_eligible: s.n1_eligible === true` で静的 JSON は必ず boolean になる。:133 の n1_capacity_mw は数値以外を null にする。集計は :327 `n1Ok`（=== true）と :333-340 の注目変電所（cap_avail_mw>0 かつ === true）。凍結の 7 件は除外済み。静的リストは 8,345 件で、型は bool が 8,345（null は 0）。未算定 273 件はすべて静的リストに入っており、全件 false・n1_capacity_mw は null。",
+     "evidence": "python 集計（grid-area-lists.json, generated_at 2026-10-02T13:16:11Z）: total 8345, types {'bool': 8345}, 未算定は全件 false（北陸222・東北20・東京13・中国7・北海道7・関西2・九州2）、未算定の n1_capacity_mw は {'None': 273}。index.json summary: total 8345 / n1_ok 790"
+    },
+    {
+     "topic": "エリアページ（AreaPage・東京ページも同じコンポーネント）",
+     "detail": "stat「N-1電制適用可」= `=== true` の件数（AreaPage.tsx:89, 356-357）。空容量プラス TOP20 の N-1 列（:485-491）と全変電所リスト（SubstationsBrowser.tsx:169-175）は、true→「可」(grid-badge-ok)、false→「不可」(grid-badge-info)、それ以外→「—」の三分岐。ただし入力が静的な boolean なので「—」の分岐は通らない（dead code）。N-1 TOP20（:174-183）は true かつ数値かつ >0 だけを対象にし、0MW可（true+0）は除外、値は fmt で表示（null は「—」）。SubstationsBrowser は初期 SSR で 20 行だけ描き、全件は RSC payload に入っている（北陸は false 246・true 28）。「N-1電制適用可のみ」チェック（:49-50）は !== true を除外する。",
+     "evidence": "src/app/grid/[slug]/AreaPage.tsx:89,174-183,356-357,485-491,534 / src/components/SubstationsBrowser.tsx:9(PAGE_SIZE=20),49-50,169-175 / hokuriku.html の payload で n1_eligible\\\":false が 246、true が 28"
+    },
+    {
+     "topic": "変電所個別ページ（microCMS を runtime で直接読む・三値の分岐を既に持っている唯一の箇所）",
+     "detail": "getSubstationBySlug は microCMS の生値を返し、正規化しない。fmtN1（page.tsx:99-103）は true→可、false→不可、undefined/null→「情報なし」（badge class なし）。N-1電制適用可能量（:294, :519-520）は fmtNum で、null→「情報なし」、0→「0 MW」。今は未算定が microCMS 上で false のため「不可」と出ている。静的 JSON を重ねる案（案B）を precompute にだけ入れると、ここには届かない。revalidate 3600・dynamicParams=true。build 時に事前生成されるのは座標を持つ中部 cb-* の 1,082 件とエリアページだけ。",
+     "evidence": "src/app/grid/[slug]/page.tsx:47,53,98-103,294,505-520 / src/lib/microcms.ts:1547-1569（client.get 生値）。型は microcms.ts:1463 `n1_eligible?: boolean`（null を持たない型）"
+    },
+    {
+     "topic": "/grid 集計と注目変電所",
+     "detail": "「N-1電制適用可」カードは index.json の summary.n1_ok（=== true の件数、凍結を除外）を出す。サブ文言は「9% / ノンファーム接続候補」で、N-1 とノンファームを同じものとして書いている（文言上の問題）。注目変電所の 12 件は precompute 済みで、条件は cap_avail_mw>0 かつ true。実際の 12 件はすべて関西の基幹系（ksi-kikan-*）で、未算定は 0 件。理由: n1=true のレコードは多くの社で cap_avail_mw が null（microcms.ts:1887 の注記どおり）。",
+     "evidence": "src/app/grid/page.tsx:67,246-257,512-546。built grid.html のカード: 790・「9% / ノンファーム接続候補」。highlights の slug は ksi-kikan-j-2…ksi-kikan-ab の 12 件。本番 /grid: HIT, Age 232, カード 790"
+    },
+    {
+     "topic": "県ページ",
+     "detail": "stat「N-1電制適用可（%）」= === true の件数（:87, :201-205）。一覧は true のときだけ「／ N-1電制可」を付ける（:267）。false と未算定はどちらも何も出さず、区別がない。北陸3県は未算定が大半を占め、stat は 0（0%）。",
+     "evidence": "src/app/grid/prefecture/[prefecture]/page.tsx:87,201-205,267。built: 富山県 76件中 未算定68・N-1電制可 0／石川県 98件中 未算定89・0／福井県 61件中 未算定59・0。41 県の HTML とも本文の「不可」「未算定」は 0"
+    },
+    {
+     "topic": "/grid/search（force-dynamic・静的メモリ内検索）",
+     "detail": "検索の母集団は grid-area-lists（静的）。n1_eligible パラメータは 'true' 以外を受け付けず、注意文を出す（search/page.tsx:168-172）。絞り込みは i.n1_eligible !== true を除外（grid-search-core.ts:189）。wantN1 のときは容量軸を n1_capacity_mw に切り替える（:178）。結果行は n1_capacity_mw が非 null なら「／ N-1可能量 X MW」、truthy なら「／ N-1電制可」を付ける（:532-534）。false と未算定は何も出さない。副次所見: false で容量 0 のレコード（東北51・中国1）には「N-1可能量 0MW」だけが出て「N-1電制可」は付かない。",
+     "evidence": "src/lib/grid-search-core.ts:169,178,189 / src/app/grid/search/page.tsx:44(force-dynamic),168-172,425-434,532-534。静的集計: ('東北',0,False)=51, ('中国',0,False)=1"
+    },
+    {
+     "topic": "連系診断ツール（/tools/grid-connection-check）",
+     "detail": "クライアントで県別 JSON（src/data/substations/{県}.json＝precompute で強制変換済みの boolean）を動的 import する。スコアは truthy で +15、理由に「N-1 電制適用可」を入れる（grid-connection-checker.ts:153-157）。結果カードのバッジ「N-1 適用」は truthy のときだけ出る（GridConnectionChecker.tsx:540-552）。CSV 出力の「N-1 適用」列は 'YES'/'NO' の二値で、未算定は NO になる（:93, :106）。",
+     "evidence": "src/lib/grid-connection-checker.ts:37(n1_eligible: boolean),153-157 / src/components/GridConnectionChecker.tsx:93,106,168,540-552"
+    },
+    {
+     "topic": "中部マップ（runtime microCMS・二値）",
+     "detail": "getChubuSubstationsForMap が `=== true` に強制変換する（microcms.ts:1737）。ポップアップは `s.n1_eligible ? '可' : '不可'` の二値（ChubuMap.tsx:195）。マーカー色は cap>0 かつ truthy なら緑（:45-50）。リード文の件数は cntN1 と cntGreen（page.tsx:72-75）。中部に未算定はないため今の実害は 0 件だが、構造上 null も「不可」に潰れる。副次所見: 両条件を満たす連系候補は 0 件（n1=true の cap_avail_mw が null のため）で、緑マーカーは出ない。静的リストを経由しないため、案B（静的 JSON を重ねる案）は届かない。",
+     "evidence": "src/app/grid/chubu/map/page.tsx:46(revalidate 3600),65,72-75,146-148,198 / src/components/ChubuMap.tsx:40-50,195 / built chubu/map.html: 「1082 箇所…空容量プラス 863 件、N-1電制適用可 139 件、両条件を満たす連系候補 0 件」"
+    },
+    {
+     "topic": "/tracker/grid と glossary の件数焼き込み（#121 型の二重算出）",
+     "detail": "/tracker/grid は getAllSubstations の生値を使い、truthy のとき「N-1可」タグを付ける（page.tsx:49）。precompute-glossary-detail.ts:80-97 は src/data/substations/*.json（凍結を含む）から === true を数え、「N-1電制可 約791件」「N-1電制適用可 約791件」を /glossary/non-firm-detail と /glossary/non-firm-connection に焼き込む。/grid の 790（凍結除外）と 1 件ずれる。prebuild では build:glossary-detail が build:substations より先に走るため、前回ビルドか commit 済みの県別 JSON を読んでいる。",
+     "evidence": "src/app/tracker/grid/page.tsx:49 / scripts/precompute-glossary-detail.ts:80-97,107-108 / glossary-detail-index.json: '/non-firm-detail/term/detail …（10社8,352変電所、N-1電制可 約791件）', '/non-firm-connection/term/detail …（N-1電制適用可 約791件）' / package.json:8 の prebuild 順"
+    },
+    {
+     "topic": "verify:grid-fields は三値の値域を検査しない",
+     "detail": "REQUIRED_FOR_LIST に n1_eligible と n1_capacity_mw は入っているが、見ているのはキーの有無だけ（:22-28）。MUST_HAVE_SOME_VALUE に n1 系は入っていない（:31）。軸2の SHAPE_CRITICAL は n1_capacity_mw を含むが n1_eligible を含まない（:65-68）。したがって n1_eligible が null・文字列などの三値表現になっても、それが表示側に届くかどうかは検出できない（#119 と同じ型の盲点）。",
+     "evidence": "scripts/verify-grid-list-fields.ts:22-28,31,65-68"
+    },
+    {
+     "topic": "使われていない／表示しない N-1 読み取り",
+     "detail": "microcms.ts:675（getAllSubstationsWithCoords）は強制変換するが、projects/[slug] の近隣変電所では n1 を表示しない。:1956 の searchSubstationsByFilters は src から呼ばれていない（experimental の parity スクリプトだけ）。:2308 の getSubstationsByPrefecture は県ページで import されているが呼ばれていない。:1986 の INVENTORY_FIELDS は n1_eligible を取得するが、使うのは県一覧と件数だけ。sitemap と JSON-LD（AreaPage・詳細・chubu map）は N-1 を出力しない。",
+     "evidence": "grep 'getSubstationsByPrefecture(|searchSubstationsByFilters(' の呼び出しは scripts/experimental/grid/parity-*.ts だけ。src/app/projects/[slug]/page.tsx:308-320 は n1 を使っていない。src/app/sitemap.ts の substationUrls は slug だけ"
+    },
+    {
+     "topic": "1d 実測: /grid/hokuriku の「不可」40 のうち 39 件は未算定",
+     "detail": "便ファイルの実測（10/01 素URL: 未算定0・不可40）は、ローカルビルド（10/02 22:16）でも本番でも同じ値だった。内訳は、空容量プラス TOP20 の 20 行すべてが「不可」で、20 行とも未算定リストに入っている（例 rkd-ishikawa-iss0019 西金沢77/6kV 空容量33MW）。全変電所リストの初期 20 行は「不可」が 20 で、うち 19 行が未算定、1 行が算定済み。「可」バッジは 0 件、「—」は 0 件。stat の N-1可は 28（北陸の true 28 件は基幹系で、県ページ側は 0）。payload 全体で展開すると「不可」246（未算定222）・「可」28。",
+     "evidence": "本番 GET https://bess-net.jp/grid/hokuriku: HTTP 200, X-Vercel-Cache HIT, Age 233, Date 2026-10-02 13:44:12 GMT。本文: 可badge 0／不可badge 40／未算定 0。[空容量プラス TOP 20] {'不可/未算定': 20}、[全変電所リスト] {'不可/未算定': 19, '不可/算定済': 1}。.next/server/app/grid/hokuriku.html も同じ値"
+    },
+    {
+     "topic": "1d 実測: /grid/tokyo・/grid・他エリア・個別ページ",
+     "detail": "/grid/tokyo は「不可」40（TOP20 の 20 ＋一覧の 20）で、未算定は 0 行（東京の未算定 13 件は初期表示に出ない）。stat 188。/grid はカード 790・「不可」0・「未算定」0。built の他エリアの初期表示に出ている未算定: 東北1（thk-aomori-1a0008）・中国1（egz-kikan-s0016）・北海道1（hkd-main-0047）・関西0・九州0。北陸の未算定設備2件の本番個別ページはどちらも「N-1電制適用可＝不可」（grid-badge-info）、適用可能量＝「情報なし」。事前生成済みの中部個別ページ 1,082 件は 可139（うち0MW可で「0 MW」表示が13）・不可943（全件「情報なし」）で、未算定は 0。",
+     "evidence": "本番 /grid/tokyo: HIT, Age 221, 可0/不可40/未算定0, stat 188。本番 /grid: HIT, Age 232。本番 /grid/rkd-ishikawa-iss0019 と /grid/rkd-kikan-hss0014: HTTP 200, X-Vercel-Cache MISS, Age 0（13:44:22-23 GMT）、dd=<span class=\"grid-badge grid-badge-info\">不可</span>、N-1電制適用可能量=情報なし。.next/server/app/grid/cb-*.html 1082件の集計"
+    },
+    {
+     "topic": "0MW可 の現在の表現と表示",
+     "detail": "0MW可は「true＋n1_capacity_mw=0」で表している（静的 73 件: 中部15・九州20・東京8・東北7・関西6・北陸6・北海道5・中国4・四国2）。一覧では「可」、個別では「可」＋「0 MW」と表示され、N-1 TOP20（>0）からは外れる。/tracker/grid の注記「0MW可20件を含む三値を維持」の「三値」は、この「可／0MW可／不可」を指しており、「未算定」を含む三値ではない。",
+     "evidence": "静的集計: ('中部','true0'):15 ほか合計 73。AreaPage.tsx:180 `s.n1_capacity_mw > 0`。cb-*.html: ('可','0 MW'):13。grid-refresh-log.ts:64,92"
+    },
+    {
+     "topic": "集計値への影響（1c の範囲で言えること）",
+     "detail": "/grid の n1_ok・エリアと県の stat・注目変電所・中部マップの cntN1・glossary の焼き込みは、どれも `=== true`（または truthy）の数え方である。未算定 273 件は現在すべて false で、true の側には 1 件も数えていない。したがって未算定を false から null や「未算定」に変えるだけなら、これらの「適用可」件数は変わらない（790／北陸 28 など）。変わるのは「不可」と表示されている箇所の文言だけ（エリアの一覧2表・個別ページ・中部マップのポップアップ・診断 CSV の NO）。",
+     "evidence": "n1_counts.json: undetermined_total {'false': 273}。precompute-substations.ts:327 / AreaPage.tsx:89 / prefecture page:87 / chubu map page:72 / precompute-glossary-detail.ts:93"
+    }
+   ],
+   "table_markdown": "| 消費箇所 | ファイル:行 | 読むフィールド | false/null の扱い | 画面の文言 |\n|---|---|---|---|---|\n| precompute（静的化の起点） | scripts/precompute-substations.ts:131,133,327,333-340 | n1_eligible, n1_capacity_mw（microCMS から build 時に 1 回） | `=== true` で強制変換するため、null/undefined→false。容量は数値以外→null。n1_ok と注目変電所は `=== true` で数える | （表示なし）grid-area-lists.json・index.json・県別 JSON に書き出す |\n| 静的リストの型と受け渡し | src/lib/grid-static-lists.ts:30,32,96,98 | n1_eligible: boolean / n1_capacity_mw | boolean 型のため三値を持てない。容量 null→undefined | — |\n| エリアページ stat | src/app/grid/[slug]/AreaPage.tsx:89,356-357 | n1_eligible | `=== true` の件数。false と null は数えない | 「N-1電制適用可」N 件（北陸 28・東京 188） |\n| エリア 空容量プラスTOP20 の N-1 列 | AreaPage.tsx:485-491 | n1_eligible | true→可／false→不可／その他→—（静的が boolean のため「—」には来ない） | 「可」「不可」。北陸は 20 行すべて「不可」で、20 行とも未算定 |\n| エリア N-1電制適用可TOP20 | AreaPage.tsx:174-183,534 | n1_eligible, n1_capacity_mw | true かつ容量>0 だけ。0MW可は除外。容量 null→— | 容量の数値（バッジなし） |\n| エリア 全変電所リスト（client） | src/components/SubstationsBrowser.tsx:49-50,169-175（SSR は 20 行） | n1_eligible | 上の TOP20 と同じ三分岐（実質は二値）。「N-1電制適用可のみ」は !== true を除外 | 「可」「不可」。北陸の初期 20 行は不可20（未算定19）。全件で不可246（未算定222） |\n| 変電所個別ページ（runtime microCMS） | src/app/grid/[slug]/page.tsx:98-103,294,505-520 | n1_eligible, n1_capacity_mw（getSubstationBySlug の生値） | true→可／false→不可／null・undefined→情報なし（三値の分岐あり）。容量 null→情報なし、0→「0 MW」 | 未算定は microCMS 上 false のため「不可」＋可能量「情報なし」（北陸2件を本番で実測） |\n| /grid 集計カード | src/app/grid/page.tsx:67,246-257 | summary.n1_ok | `=== true` の件数（凍結を除外） | 「N-1電制適用可 790」「9% / ノンファーム接続候補」（N-1 とノンファームを混同した文言） |\n| /grid 注目変電所 | src/app/grid/page.tsx:512-546（precompute :333-340） | summary.highlights | cap>0 かつ `=== true` | 12 件すべて関西の基幹系。N-1 の文言なし |\n| 県ページ | src/app/grid/prefecture/[prefecture]/page.tsx:87,201-205,267 | n1_eligible | stat は `=== true`。一覧は truthy のときだけ付記し、false と null は無表示 | 「N-1電制適用可（%）」「／ N-1電制可」。富山・石川・福井は 0（0%） |\n| /grid/search（静的・force-dynamic） | src/lib/grid-search-core.ts:169,178,189 / src/app/grid/search/page.tsx:168-172,532-534 | n1_eligible, n1_capacity_mw | フィルタは true だけ（パラメータも 'true' だけ受け付ける）。false と null は無表示 | 「／ N-1可能量 X MW」（非 null なら false でも出る＝東北51・中国1は 0MW）、「／ N-1電制可」 |\n| 連系診断ツール | src/lib/grid-connection-checker.ts:37,153-157 / src/components/GridConnectionChecker.tsx:93,106,540-552 | 県別 JSON の n1_eligible | truthy なら +15 点とバッジ。それ以外は加点もバッジもなし | 「N-1 適用」バッジ。CSV の「N-1 適用」列は YES/NO（未算定は NO） |\n| 中部マップ（runtime microCMS） | src/lib/microcms.ts:1737 / src/app/grid/chubu/map/page.tsx:72-75,146-148 / src/components/ChubuMap.tsx:45-50,195 | n1_eligible | `=== true` に強制変換した後の二値 | ポップアップ「N-1電制適用可: 可／不可」、リード文「N-1電制適用可 139 件・両条件 0 件」 |\n| /tracker/grid（runtime microCMS） | src/app/tracker/grid/page.tsx:49 / src/lib/grid-refresh-log.ts:64-217 | n1_eligible（生値） | truthy のときだけタグ。更新ログの注記は静的な文 | タグ「N-1可」、注記「N-1電制の未算定222件は現値維持」等（サイトで唯一の「未算定」） |\n| glossary の件数焼き込み | scripts/precompute-glossary-detail.ts:80-97,107-108 | 県別 JSON の n1_eligible（凍結を含む） | `=== true` の件数。prebuild では build:substations より先に実行される | /glossary/non-firm-detail・non-firm-connection に「N-1電制可 約791件」（/grid は 790） |\n| verify:grid-fields | scripts/verify-grid-list-fields.ts:22-28,31,65-68 | キーの有無（n1_eligible, n1_capacity_mw） | 値域（三値）は検査しない。軸2 は n1_eligible を対象外にしている | — |\n| 表示しない／呼ばれない読み取り | src/lib/microcms.ts:675（projects 近隣・非表示）, 1956（searchSubstationsByFilters・未使用）, 2308（getSubstationsByPrefecture・未呼出）, 1986（inventory） | n1_eligible | `=== true` に強制変換 | なし |\n| sitemap・JSON-LD | src/app/sitemap.ts / AreaPage.tsx:208-241 / [slug]/page.tsx:234-286 | N-1 は読まない | — | — |\n\n**1d 実測（素URL・2026-10-02 13:44 GMT）**\n\n| ページ | x-vercel-cache / age | 可 | 不可 | 未算定 | — | 備考 |\n|---|---|---|---|---|---|---|\n| /grid/hokuriku（本番） | HIT / 233 | 0 | 40 | 0 | 0 | 不可40 = TOP20の20（全件が未算定）＋一覧の20（未算定19・算定済1）。stat 28。便ファイルの実測（未算定0・不可40）と一致 |\n| /grid/tokyo（本番） | HIT / 221 | 0 | 40 | 0 | 0 | 40 行とも算定済み。stat 188 |\n| /grid（本番） | HIT / 232 | – | 0 | 0 | – | カード 790（9%） |\n| /grid/rkd-ishikawa-iss0019（本番） | MISS / 0 | – | 1 | 0 | – | 可能量「情報なし」。空容量 33MW（北陸 TOP20 にも入っている） |\n| /grid/rkd-kikan-hss0014（本番） | MISS / 0 | – | 1 | 0 | – | 可能量「情報なし」 |\n| built 中部個別 cb-*（1,082件） | – | 139 | 943 | 0 | 0 | 可のうち 13 件は「0 MW」（0MW可） |\n| built 県ページ（41件） | – | 「N-1電制可」付記のみ | 0 | 0 | – | 北陸3県は未算定216件を無表示・stat 0 |",
+   "unverified": [
+    "microCMS の substations スキーマ（n1_eligible が boolean で null を保存できるか、n1_capacity_mw の型）は管理 API が 403 のため実測していない。snapshot の 8,352 件はすべて true/false（キー欠落なし）。build_n1_undetermined.py:7 の注記「boolean（null不可）」は確かめていない。",
+    "「算定済の不可」という区分は n1_undetermined.json（2026-08-20 時点）が最新である前提で判定した。8/20 以降に再取込した社で、未算定の構成が変わっていないかは確認していない。",
+    "本番では /grid・/grid/hokuriku・/grid/tokyo・北陸の個別2件・/tracker/grid だけを取得した。本番の県ページ・/grid/search・中部マップ・glossary（約791件の表示）は、built HTML と生成 JSON とコードからの判断で、本番の素URLでは見ていない。",
+    "中部マップのポップアップと連系診断ツールの結果は client 側で描画される（ssr:false／動的 import）。そのため実画面の文言は実測しておらず、コードから読んだもの。",
+    "北陸以外の社（東京13・東北20 等）の未算定設備の個別ページは本番で取得していない。コード上は同じく「不可」＋「情報なし」になるはず。",
+    "北陸の個別2件を素URLで GET したとき MISS（Age 0）だったため、on-demand ISR の生成を 2 回起こしている（各回で getSubstationBySlug 1 リクエスト＋関連事業者・関連ニュースなどの runtime 呼び出しが発生）。",
+    "prebuild で build:glossary-detail が build:substations より先に走るため、Vercel 上で glossary の焼き込み件数が commit 済みの県別 JSON 由来になっていること（1 ビルド遅れ）は、コードの順序から推した。Vercel のビルドログでは確かめていない。",
+    "RSC payload の n1_eligible の内訳（false/true）は北陸だけ数えた。他のエリアは数えていない。"
+   ]
+  }
+ },
+ "missing_from_list": [
+  {
+   "slug": "rkd-toyama-tss0074",
+   "note": "早月第一66/22kV・CSV「-」・新設時に false"
+  },
+  {
+   "slug": "rkd-toyama-tss0075",
+   "note": "常願寺川第三・「-」"
+  },
+  {
+   "slug": "rkd-toyama-tss0076",
+   "note": "名称非公開・空欄"
+  },
+  {
+   "slug": "hkd-kikan-0230",
+   "note": "富村・「―」"
+  },
+  {
+   "slug": "ksi-kikan-bu",
+   "note": "名称「変電所」・全列「－」"
+  }
+ ]
+}
