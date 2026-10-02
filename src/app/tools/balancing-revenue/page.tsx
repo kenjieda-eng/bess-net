@@ -24,6 +24,7 @@
  *  - 二極構造: 新型（蓄電池・VPP）vs 従来型（火力・水力・揚水）
  */
 
+import { Fragment } from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
@@ -44,7 +45,7 @@ import { siteConfig } from '@/lib/site-config';
 import { BALANCING_BATTERY_FALLBACK, BALANCING_FY_DATE, BALANCING_FY_PUBLISHED } from '@/lib/balancing-fallback';
 
 // Lc-1(2026-09-20): ライセンス表記の逐語表示と、カタログに残る 404 license_url の正規化
-import { licenseNoticeLines, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
+import { eprxNoticeLinesForDisplay, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
 // Lc-2 ■4: 年度内の幅（月次 min〜max）。カタログは年平均しか持たないため EPRX 年次 PDF からの転記を使う
 import { getVerifiedMonthlyStats, getMonthlyStats, pdfFileNameOf } from '@/lib/eprx-monthly';
 import { BATTERY_CAPEX } from '@/lib/nrel-atb-reference';
@@ -131,11 +132,11 @@ export const metadata: Metadata = {
 //   資料名（実名は EPRX「サイトのご利用にあたって」）・節の呼び方（「§」は一次に 0 件）・「非商用」の語（同じく 0 件）の
 //   3 点が一次と食い違う（2026-09-27 実機で機械計数）。一次の「４．著作権等について」は
 //   「商用目的（個人利用・組織内利用を除きます。）…でない場合に限り自由に利用できますが、その際は、出典を記載してください」で、
-//   「非商用」と要約すると carve-out（個人利用・組織内利用）が消える。上流カタログの修正を待つ間は表示しない（Lc-1 ■1・Ck-2 ■5）。
-//   → 逐語で出すのは出典行のみ。上流が直ったら全行を出す（EPRX_NOTICE_LINES は既に全行を保持している）。
+//   「非商用」と要約すると carve-out（個人利用・組織内利用）が消える。
+// ★Ck2c: 上流は 2026-09-29 nightly（eic-data-pipeline #59）で 2 行目を一次の実名に修正済み（9/30 確認）→ ガード付きで全行表示。
+//   判定は eprxNoticeLinesForDisplay（eic-license.ts・/tracker/imbalance と共通）。上流が旧文に戻れば自動で 1 行目だけに戻る。
 const EPRX_META = primaryBatteryData.meta as unknown as { license_notice?: string; license_url?: string };
-const EPRX_NOTICE_LINES = licenseNoticeLines(EPRX_META.license_notice);
-const EPRX_SOURCE_LINE = EPRX_NOTICE_LINES[0] ?? '';
+const EPRX_NOTICE_LINES = eprxNoticeLinesForDisplay(EPRX_META.license_notice);
 const EPRX_LICENSE_URL = normalizeLicenseUrl(EPRX_META.license_url) ?? 'https://www.eprx.or.jp/terms/';
 
 // ─── catalog helpers ──────────────────────────────────────────────────────────
@@ -479,7 +480,14 @@ export default function BalancingRevenuePage() {
             ・EPRX「サイトのご利用にあたって」の「４．著作権等について」に従い、出典と、編集・加工等を行った旨を記載しています。
             同項は商用目的での利用に EPRX との事前契約を求めており、当サイトの利用が該当するかは EPRX に照会中です。
             <br />
-            ・出典表記（EIC カタログ license_notice 1 行目の逐語）:「{EPRX_SOURCE_LINE}」 ／ 利用条件:{' '}
+            ・{EPRX_NOTICE_LINES.length > 1 ? '出典表記・利用条件（EIC カタログ license_notice の逐語）' : '出典表記（EIC カタログ license_notice 1 行目の逐語）'}:「
+            {EPRX_NOTICE_LINES.map((line, i) => (
+              <Fragment key={i}>
+                {i > 0 && <br />}
+                {line}
+              </Fragment>
+            ))}
+            」 ／ 利用条件:{' '}
             <a
               href={EPRX_LICENSE_URL}
               target="_blank"

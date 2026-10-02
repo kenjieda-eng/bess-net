@@ -19,6 +19,8 @@
  *        出所明示を利用の条件にしている。/industry が 9 系列から作った数値を出典表記ゼロで出していた（2026-09-20 実測）。
  *        「系列を import しているのはページ、出所表記は子コンポーネント」という形があるので、
  *        page.tsx 単体ではなく import をたどった到達ファイル群で判定する。
+ *   軸5: EPRX 系列（balancing-price-*）の license_notice に「利用規約」「非商用」が含まれる系列 → 警告（Ck2c・2026-10-02）
+ *        上流が一次と食い違う旧文に戻ったら気づくため（表示側は自動で 1 行目だけに戻る）。0 が期待値。
  *
  * 実行: npm run verify:eic-license（prebuild の末尾でも走る）
  */
@@ -248,6 +250,23 @@ console.log(
   `[verify:eic-license] 注記: 動的ロード（getIndicatorsByIdPrefix / getSeriesMany）の系列は静的 import ではないため軸4 の系列数に含まれない。` +
     ` /market/jepx・/dashboard/market が該当（いずれも出典表記あり・2026-09-20 実測）。`,
 );
+
+// ─── 軸5: EPRX 系列の license_notice が一次と食い違う旧文に戻っていないか（Ck2c・2026-10-02）─────────────
+// 上流は 2026-09-29 nightly で 2 行目を一次の実名「サイトのご利用にあたって」に直した。表示側（eprxNoticeLinesForDisplay）は
+// 旧文に戻ると自動で 1 行目だけに戻すが、戻ったこと自体に気づけるよう、balancing-price-* のうち「利用規約」「非商用」を含む系列を数える（0 が期待値）。
+const eprxIds = fs.existsSync(EIC_DIR)
+  ? fs.readdirSync(EIC_DIR).filter((f) => /^balancing-price-.*\.json$/.test(f)).map((f) => f.slice(0, -5)).sort()
+  : [];
+const eprxOldWording = eprxIds.filter((id) => /利用規約|非商用/.test(metaOf(id)?.license_notice ?? ''));
+if (eprxOldWording.length === 0) {
+  console.log(`[verify:eic-license] ok   EPRX 系列（balancing-price-* ${eprxIds.length} 本）の license_notice に「利用規約」「非商用」: 0 件`);
+} else {
+  console.warn(
+    `[verify:eic-license] WARN EPRX 系列の license_notice が旧文（「利用規約」「非商用」を含む）: ${eprxOldWording.length} / ${eprxIds.length} 件` +
+      `（表示は 1 行目だけに自動で戻る。上流 eic-data-pipeline の catalog を確認）`,
+  );
+  for (const id of eprxOldWording.slice(0, 10)) console.warn(`   - ${id}`);
+}
 
 console.log('[verify:eic-license] 警告のみ・ビルドは止めない（exit 0）');
 process.exit(0);

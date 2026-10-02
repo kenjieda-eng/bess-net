@@ -20,6 +20,7 @@
  *   ※ 三次② 全体は FY2021〜の 5 年トレンド表示
  */
 
+import { Fragment } from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
@@ -31,7 +32,7 @@ export const revalidate = 86400;
 // Lc-1(2026-09-20): ライセンス表記の逐語表示と、カタログに残る 404 license_url の正規化
 // Lc-2(2026-09-20): EPRX「サイトのご利用にあたって」３．リンクについて に従いリンク先はトップへ（EPRX_TOP）
 //   ※ Ck-2(2026-09-27): 資料名を一次の実名へ是正（「EPRX 利用規約」「§」は一次に存在しない）
-import { licenseNoticeLines, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
+import { eprxNoticeLinesForDisplay, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
 
 // ─── catalog JSON 直読み（18 系列） ────────────────────────────────────────────
 // ① 全体 落札単価 (6)
@@ -84,9 +85,11 @@ export const metadata: Metadata = {
 // ★2 行目「EPRX 利用規約 §4 に従い、非商用・出典明示で利用可。…」は、資料名（実名は EPRX「サイトのご利用にあたって」）・
 //   節の呼び方（「§」は一次に 0 件）・「非商用」の語（同じく 0 件）の 3 点が一次と食い違う（2026-09-27 実機で機械計数・Ck-2 ■5）。
 //   一次の「４．著作権等について」は「商用目的（個人利用・組織内利用を除きます。）…でない場合に限り自由に利用できます」で、
-//   「非商用」と要約すると carve-out が消える。上流カタログの修正を待つ間は表示しない＝逐語で出すのは出典行のみ。
+//   「非商用」と要約すると carve-out が消える。
+// ★Ck2c: 上流は 2026-09-29 nightly（eic-data-pipeline #59）で 2 行目を一次の実名に修正済み（9/30 確認）→ ガード付きで全行表示。
+//   判定は eprxNoticeLinesForDisplay（eic-license.ts・/tools/balancing-revenue と共通）。上流が旧文に戻れば自動で 1 行目だけに戻る。
 const EPRX_META = priceOverallPrimary.meta as unknown as { license_notice?: string; license_url?: string };
-const EPRX_SOURCE_LINE = licenseNoticeLines(EPRX_META.license_notice)[0] ?? '';
+const EPRX_NOTICE_LINES = eprxNoticeLinesForDisplay(EPRX_META.license_notice);
 const EPRX_LICENSE_URL = normalizeLicenseUrl(EPRX_META.license_url) ?? 'https://www.eprx.or.jp/terms/';
 
 // ─── 型定義 ────────────────────────────────────────────────────────────────────
@@ -194,7 +197,14 @@ export default function BalancingTrackerPage() {
             </p>
           )}
           <p style={{ fontSize: 13, color: 'var(--color-muted)', marginBottom: 16, lineHeight: 1.7 }}>
-            出典表記（EIC カタログ license_notice 1 行目の逐語）:「{EPRX_SOURCE_LINE}」 ／ 利用条件:{' '}
+            {EPRX_NOTICE_LINES.length > 1 ? '出典表記・利用条件（EIC カタログ license_notice の逐語）' : '出典表記（EIC カタログ license_notice 1 行目の逐語）'}:「
+            {EPRX_NOTICE_LINES.map((line, i) => (
+              <Fragment key={i}>
+                {i > 0 && <br />}
+                {line}
+              </Fragment>
+            ))}
+            」 ／ 利用条件:{' '}
             <a href={EPRX_LICENSE_URL} target="_blank" rel="noopener noreferrer">
               EPRX「サイトのご利用にあたって」
             </a>

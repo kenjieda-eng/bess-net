@@ -166,3 +166,23 @@ export function licenseNoticeLines(notice?: string): string[] {
     .map((line) => line.trim())
     .filter((line) => line.length > 0);
 }
+
+/**
+ * EPRX 系列（balancing-price-*）の license_notice のうち、画面に出す行（Ck2c・#121: 2 ページから呼ぶ 1 か所）。
+ *
+ * 上流（eic-data-pipeline #59・main 09b1c82）の 2026-09-29 nightly で 2 行目が一次の実名に直った（9/30 の catalog で確認）。逐語:
+ *   1. 出典: 一般社団法人 電力需給調整力取引所「取引実績の取りまとめ結果」
+ *   2. EPRX「サイトのご利用にあたって」４．著作権等について に従い、出典と、編集・加工等を行った旨を記載して利用。年次取りまとめ PDF より転記・編集。
+ *   3. 商用利用は事前契約、自動的な大量取得は事前承諾が必要。
+ * 旧 2 行目は「EPRX 利用規約 §4 に従い、非商用・出典明示で利用可。…」で、資料名・節の呼び方・「非商用」の 3 点が一次と食い違うため
+ * 1 行目（出典行）だけを出していた（Lc-1 ■4・Ck-2 ■5）。
+ *
+ * ガード: 2 行目に「サイトのご利用にあたって」を含み、かつ全行に「利用規約」「非商用」を含まないときだけ全行を返す。
+ * それ以外（上流が旧文に戻った・空・1 行だけ）は 1 行目だけを返す。どちらも語句・順序・句読点は変えない。
+ */
+export function eprxNoticeLinesForDisplay(notice?: string): string[] {
+  const lines = licenseNoticeLines(notice);
+  const upstreamFixed =
+    lines.length >= 2 && lines[1].includes('サイトのご利用にあたって') && !/利用規約|非商用/.test(lines.join('\n'));
+  return upstreamFixed ? lines : lines.slice(0, 1);
+}
