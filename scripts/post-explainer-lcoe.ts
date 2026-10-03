@@ -1,5 +1,6 @@
 /**
  * scripts/post-explainer-lcoe.ts
+ * ★初回 POST 用の写し（2026-06）。本文の数値は ATB 2024 年版のまま＝現物は microCMS（2026-10-02 PATCH で 2025 年版）。再実行しない（Ck2d ■8・2026-10-03）
  *
  * 解説#1「LCOEと蓄電池の経済性」を microCMS explainer に POST。
  * 使い方: npx tsx scripts/post-explainer-lcoe.ts [--dry-run]
