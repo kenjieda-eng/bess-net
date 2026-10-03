@@ -21,6 +21,7 @@
  */
 
 import { isFrozenSubstation } from './substations-frozen';
+import type { N1Status } from './n1-status-label';
 
 export interface LiteSubstation {
   id: string;
@@ -35,6 +36,8 @@ export interface LiteSubstation {
   cap_operational_mw: number | null;
   cap_avail_mw: number | null;
   n1_eligible: boolean;
+  /** N1b: 県別 JSON（precompute）に入る表示区分。加点は n1_eligible（可）だけのまま */
+  n1_status?: N1Status;
   oc_possibility: string | null;
   latitude: number | null;
   longitude: number | null;

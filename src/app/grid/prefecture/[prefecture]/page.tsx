@@ -27,6 +27,7 @@ const PREF_META: Record<string, PrefMeta> =
   (substationsIndex as { pref_meta?: Record<string, PrefMeta> }).pref_meta ?? {};
 
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
+import { n1StatusFromRow } from '@/lib/n1-status-label';
 
 // Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件の県は非表示）
 const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
@@ -264,7 +265,11 @@ export default async function PrefecturePage({ params }: PageParams) {
                       {s.cap_avail_mw != null
                         ? ` ／ 空容量 ${s.cap_avail_mw}MW`
                         : ' ／ 空容量 —'}
-                      {s.n1_eligible && ' ／ N-1電制可'}
+                      {(() => {
+                        // N1b: 不可は従来どおり付記しない。未算定・公表なしは「不可」と区別して付記する
+                        const st = n1StatusFromRow(s);
+                        return st === 'ok' ? ' ／ N-1電制可' : st === 'undetermined' ? ' ／ N-1電制 未算定' : st === 'no_column' ? ' ／ N-1電制 公表なし' : null;
+                      })()}
                     </span>
                   </Link>
                 </li>

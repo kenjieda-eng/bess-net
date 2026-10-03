@@ -27,6 +27,7 @@ import {
   type DiagnosisResult,
 } from '@/lib/grid-connection-checker';
 import substationsIndex from '@/data/substations/index.json';
+import { n1StatusFromRow } from '@/lib/n1-status-label';
 
 // index.json の by_pref から都道府県一覧を抽出 (件数降順)
 type IndexType = {
@@ -103,7 +104,11 @@ function buildCsv(input: DiagnosisInput, result: DiagnosisResult): string {
         ? `${s.voltage_primary_kv}/${s.voltage_secondary_kv}`
         : '',
       s.cap_avail_mw !== null ? String(s.cap_avail_mw) : '',
-      s.n1_eligible ? 'YES' : 'NO',
+      // N1b: 列名「N-1 適用」は変えない。未算定・公表なしを NO に潰さない（YES／NO／未算定／公表なし）
+      (() => {
+        const st = n1StatusFromRow(s);
+        return st === 'ok' ? 'YES' : st === 'undetermined' ? '未算定' : st === 'no_column' ? '公表なし' : 'NO';
+      })(),
       `"${c.reasons.join(' / ').replace(/"/g, '""')}"`,
     ];
     lines.push(cells.join(','));

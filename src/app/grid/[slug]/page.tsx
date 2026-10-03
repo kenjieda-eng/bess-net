@@ -33,6 +33,8 @@ import { formatDataDateLabel } from '@/lib/grid-data-date';
 import GridPrintButton from '@/components/GridPrintButton';
 // Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
+// N1b: 個別ページ（runtime microCMS）も一覧と同じ規則で区分する（#121・L-EIC-028: 取得側・表示側の全経路が同じ値を得る）
+import { n1StatusOf, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status';
 
 // Gr6(2026-08-09): エリア別の変電所件数（precompute の area_dates から・runtime fetch 0）
 const AREA_SUBSTATION_COUNT: Record<string, number> = Object.fromEntries(
@@ -95,11 +97,11 @@ function fmtDate(iso: string | undefined | null): string {
   });
 }
 
-/** N-1電制適用可否のラベル */
-function fmtN1(v: boolean | undefined | null): string {
-  if (v === true) return '可';
-  if (v === false) return '不可';
-  return '情報なし';
+/** N-1電制適用可否のラベル（N1b: 未算定・公表なしは src/data/n1-status.json の一覧で「不可」から分ける） */
+function fmtN1(sub: { slug: string; n1_eligible?: boolean | null; last_updated?: string | null }): { label: string; className: string } {
+  if (sub.n1_eligible !== true && sub.n1_eligible !== false) return { label: '情報なし', className: 'grid-badge' };
+  const st = n1StatusOf(sub);
+  return { label: n1StatusLabel(st), className: n1StatusBadgeClass(st) };
 }
 
 /** 一次セレクトを文字列で取り出す（select 系は配列） */
@@ -504,17 +506,7 @@ export default async function GridSlugPage({
             <dl className="grid-info-table">
               <dt>N-1電制適用可</dt>
               <dd>
-                <span
-                  className={`grid-badge ${
-                    sub.n1_eligible === true
-                      ? 'grid-badge-ok'
-                      : sub.n1_eligible === false
-                      ? 'grid-badge-info'
-                      : ''
-                  }`}
-                >
-                  {fmtN1(sub.n1_eligible)}
-                </span>
+                <span className={fmtN1(sub).className}>{fmtN1(sub).label}</span>
               </dd>
               <dt>N-1電制適用可能量</dt>
               <dd>{n1Cap}</dd>

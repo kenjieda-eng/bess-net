@@ -13,6 +13,7 @@
  */
 import lists from './generated/grid-area-lists.json';
 import type { Substation } from './microcms';
+import type { N1Status } from './n1-status-label';
 
 export type GridListItem = {
   id: string;
@@ -28,6 +29,8 @@ export type GridListItem = {
   cap_operational_mw: number | null;
   cap_avail_mw: number | null;
   n1_eligible: boolean;
+  /** N1b: N-1 の表示区分（precompute で n1StatusOf を当てた値・#121） */
+  n1_status: N1Status;
   units: number | null;
   n1_capacity_mw: number | null;
   external_id: string | null;
@@ -94,6 +97,8 @@ export function toSubstationShape(items: GridListItem[]): Substation[] {
     cap_operational_mw: s.cap_operational_mw ?? undefined,
     cap_avail_mw: s.cap_avail_mw ?? undefined,
     n1_eligible: s.n1_eligible,
+    // N1b: 落とすと一覧の N-1 列が黙って「不可」に戻る（#118 と同型）。verify:grid-fields の SHAPE_CRITICAL に入れてある
+    n1_status: s.n1_status,
     units: s.units ?? undefined,
     n1_capacity_mw: s.n1_capacity_mw ?? undefined,
     external_id: s.external_id ?? undefined,

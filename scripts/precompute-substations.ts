@@ -26,6 +26,8 @@ import { FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
 import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
 // Gr10(2026-08-11): 系統区分・設備区分が prefecture に入っている社があるため正規化する
 import { normalizeSubstationPlace } from '../src/lib/grid-prefecture';
+// N1b（2026-10-03）: N-1 の表示区分（可／不可／未算定／公表なし）。真実源 src/data/n1-status.json を 1 か所で当てる（#121）
+import { n1StatusOf, type N1Status } from '../src/lib/n1-status';
 
 // 出力スキーマ (距離計算 + UI で必要な最小フィールド)
 //
@@ -67,8 +69,10 @@ export interface LiteSubstation {
   cap_operational_mw: number | null;
   /** 空き容量 MW */
   cap_avail_mw: number | null;
-  /** N-1 電制適用可 */
+  /** N-1 電制適用可（microCMS の boolean。三値化しても「可」の判定はこれのまま） */
   n1_eligible: boolean;
+  /** N-1 の表示区分（N1b・src/lib/n1-status.ts の n1StatusOf）。未算定・公表なしは microCMS では false のまま */
+  n1_status: N1Status;
   /** 変圧器台数（一覧の「台数」列） */
   units: number | null;
   /** N-1 電制適用可能量 MW（エリアページの N-1電制Top20表） */
@@ -140,6 +144,7 @@ async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
         latitude: typeof s.latitude === 'number' ? s.latitude : null,
         longitude: typeof s.longitude === 'number' ? s.longitude : null,
         last_updated: s.last_updated ?? null,
+        n1_status: n1StatusOf({ slug: s.slug, n1_eligible: s.n1_eligible === true, last_updated: s.last_updated ?? null }),
 
         fetched_at: typeof (s as unknown as { fetched_at?: string }).fetched_at === 'string' ? (s as unknown as { fetched_at: string }).fetched_at : null,
       });
@@ -314,6 +319,8 @@ async function main(): Promise<void> {
   const byPrefActive: Record<string, number> = {};
   let availPositive = 0;
   let n1Ok = 0;
+  let n1Undetermined = 0;
+  let n1NoColumn = 0;
   let latestLastUpdated: string | null = null;
   for (const s of active) {
     const vc = s.voltage_class || 'その他';
@@ -325,6 +332,8 @@ async function main(): Promise<void> {
     if (s.prefecture) byPrefActive[s.prefecture] = (byPrefActive[s.prefecture] ?? 0) + 1;
     if (typeof s.cap_avail_mw === 'number' && s.cap_avail_mw > 0) availPositive++;
     if (s.n1_eligible === true) n1Ok++;
+    if (s.n1_status === 'undetermined') n1Undetermined++;
+    if (s.n1_status === 'no_column') n1NoColumn++;
     if (s.last_updated && (!latestLastUpdated || s.last_updated > latestLastUpdated)) {
       latestLastUpdated = s.last_updated;
     }
@@ -383,6 +392,9 @@ async function main(): Promise<void> {
       total: active.length,
       avail_positive: availPositive,
       n1_ok: n1Ok,
+      // N1b: 「不可」から分けた件数（verify:grid-fields が n1-status.json の件数と照合する）
+      n1_undetermined: n1Undetermined,
+      n1_no_column: n1NoColumn,
       with_coords: active.filter((s) => typeof s.latitude === 'number' && typeof s.longitude === 'number').length,
       latest_last_updated: latestLastUpdated,
       by_voltage: byVoltage,

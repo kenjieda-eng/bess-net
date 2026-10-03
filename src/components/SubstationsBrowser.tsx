@@ -5,6 +5,7 @@ import Link from 'next/link';
 import type { Substation } from '@/lib/microcms';
 // Gr10(2026-08-11): 都道府県欄に系統区分・設備区分を出さない（原値は設備区分として別表示）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
+import { n1StatusFromRow, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status-label';
 
 const PAGE_SIZE = 20;
 
@@ -166,13 +167,11 @@ export default function SubstationsBrowser({ items }: Props) {
                       )}
                     </td>
                     <td>
-                      {s.n1_eligible === true ? (
-                        <span className="grid-badge grid-badge-ok">可</span>
-                      ) : s.n1_eligible === false ? (
-                        <span className="grid-badge grid-badge-info">不可</span>
-                      ) : (
-                        '—'
-                      )}
+                      {(() => {
+                        // N1b: 可／不可／未算定／公表なし（データを持たない部品だけを import＝一覧 JSON をバンドルしない）
+                        const st = n1StatusFromRow(s);
+                        return st ? <span className={n1StatusBadgeClass(st)}>{n1StatusLabel(st)}</span> : '—';
+                      })()}
                     </td>
                     <td>
                       {oc === '有り' ? (

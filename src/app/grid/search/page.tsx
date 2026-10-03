@@ -37,6 +37,7 @@ import { formatDataDateLabel } from '@/lib/grid-data-date';
 import { subsidyCountForPref } from '@/lib/grid-meta';
 import { rescueAreaParam } from '@/lib/grid-prefecture';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
+import { n1StatusFromRow } from '@/lib/n1-status-label';
 
 // Gr8(2026-08-09): 検索結果からの導線に使う県別件数（precompute・runtime fetch 0）
 const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
@@ -531,7 +532,11 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                             : ' ／ 空容量 未公表'}
                           {r.n1_capacity_mw != null &&
                             ` ／ N-1可能量 ${r.n1_capacity_mw}MW`}
-                          {r.n1_eligible && ' ／ N-1電制可'}
+                          {(() => {
+                            // N1b: 絞り込みは「可」だけのまま。結果行の付記は未算定・公表なしも出す（不可は従来どおり付記しない）
+                            const st = n1StatusFromRow(r);
+                            return st === 'ok' ? ' ／ N-1電制可' : st === 'undetermined' ? ' ／ N-1電制 未算定' : st === 'no_column' ? ' ／ N-1電制 公表なし' : null;
+                          })()}
                         </span>
                         {/* Gr7(2026-08-09): 行ごとにデータ基準日を明示（Gr2の実値を流用） */}
                         {r.area && formatDataDateLabel(r.area) && (

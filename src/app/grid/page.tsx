@@ -252,8 +252,8 @@ export default async function GridIndexPage() {
                   {n1OkCount.toLocaleString()}
                 </div>
                 <div className="grid-summary-card-sub">
-                  {Math.round((n1OkCount / total) * 100)}% /
-                  ノンファーム接続候補
+                  {/* N1b: 旧「ノンファーム接続候補」は N-1 電制とノンファーム接続を同じものとして書いていた（計画便 §5-6） */}
+                  {Math.round((n1OkCount / total) * 100)}% / N-1電制適用可の割合
                 </div>
                 <svg
                   width="100%"

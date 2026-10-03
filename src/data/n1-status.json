@@ -1,0 +1,3806 @@
+{
+ "_purpose": "N-1電制適用可否の「未算定（公表元が「－」等で明示）」「空欄」「公表なし（N-1 列が無い）」の設備。microCMS の n1_eligible は boolean のため false（不可）に潰れているので、表示はこの一覧で直す（三値化 段1）。TypeScript（src/lib/n1-status.ts）と Python（scripts/experimental/_common/n1_status.py）の唯一の真実源（#119）。",
+ "_note": "as_of はその設備の microCMS last_updated（一覧を作った時点）。表示側は as_of が microCMS の現在値と一致するときだけこの一覧を当てる（再取込で値が更新された行に古い一覧を当てない）。microCMS が true（可）なら可が勝つ。再生成: scripts/experimental/_common/build_n1_status.py（前身 build_n1_undetermined.py は残置）。四国 10 月版の「－」28 行は BS 便で足す。",
+ "generated_at": "2026-10-03T09:33:19Z",
+ "generated_from": [
+  "scripts/experimental/_common/n1_undetermined.json（前身・273 件）",
+  "scripts/experimental/hokuriku/csv_2608（2026-08-05 公表 CSV）",
+  "scripts/experimental/kansai/update_plan_2608.json・src/154kv_{less,more}_trans.csv",
+  "scripts/experimental/chugoku/zip_202608",
+  "scripts/experimental/hokkaido/update_plan_202607.json・zip_202607/sys_capa_kikan.zip",
+  "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",
+  "microCMS substations（GET・as_of）"
+ ],
+ "count": 391,
+ "count_by_reason": {
+  "blank": 16,
+  "no_column": 113,
+  "undetermined": 262
+ },
+ "count_by_area": {
+  "中国": {
+   "blank": 1,
+   "undetermined": 6
+  },
+  "九州": {
+   "undetermined": 2
+  },
+  "北海道": {
+   "undetermined": 8
+  },
+  "北陸": {
+   "blank": 13,
+   "undetermined": 212
+  },
+  "東京": {
+   "undetermined": 13
+  },
+  "東北": {
+   "undetermined": 20
+  },
+  "沖縄": {
+   "no_column": 113
+  },
+  "関西": {
+   "blank": 2,
+   "undetermined": 1
+  }
+ },
+ "entries": {
+  "egz-kikan-s0006": {
+   "area": "中国",
+   "operator": "中国電力ネットワーク",
+   "external_id": "energia_kikan_基S6",
+   "name": "新小野田変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
+   "as_of": "2026-08-06T00:00:00.000Z",
+   "raw": "-"
+  },
+  "egz-kikan-s0008": {
+   "area": "中国",
+   "operator": "中国電力ネットワーク",
+   "external_id": "energia_kikan_基S8",
+   "name": "柳井火力変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
+   "as_of": "2026-08-06T00:00:00.000Z",
+   "raw": "-"
+  },
+  "egz-kikan-s0016": {
+   "area": "中国",
+   "operator": "中国電力ネットワーク",
+   "external_id": "energia_kikan_基S16",
+   "name": "(名称非公開) energia_kikan_基S16",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
+   "as_of": "2026-08-06T00:00:00.000Z",
+   "raw": "-"
+  },
+  "egz-okayama-s80004": {
+   "area": "中国",
+   "operator": "中国電力ネットワーク",
+   "external_id": "energia_okayama_岡⑤S8-4",
+   "name": "湯原第一変電所",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
+   "as_of": "2026-07-27T00:00:00.000Z",
+   "raw": ""
+  },
+  "egz-shimane-s0001-3": {
+   "area": "中国",
+   "operator": "中国電力ネットワーク",
+   "external_id": "energia_shimane_島⑥S1",
+   "name": "西郷発電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
+   "as_of": "2026-07-27T00:00:00.000Z",
+   "raw": "－"
+  },
+  "egz-shimane-s0002": {
+   "area": "中国",
+   "operator": "中国電力ネットワーク",
+   "external_id": "energia_shimane_島⑥S2",
+   "name": "黒木発電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
+   "as_of": "2026-07-27T00:00:00.000Z",
+   "raw": "－"
+  },
+  "egz-shimane-s0003-3": {
+   "area": "中国",
+   "operator": "中国電力ネットワーク",
+   "external_id": "energia_shimane_島⑥S3",
+   "name": "海士変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
+   "as_of": "2026-07-27T00:00:00.000Z",
+   "raw": "－"
+  },
+  "hkd-kikan-0230": {
+   "area": "北海道",
+   "operator": "北海道電力ネットワーク",
+   "external_id": "hepco_sys_capa_kikan_230_v2-11.0",
+   "name": "富村変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_kikan01_Tr_202607_01.csv（2026-07-31公表）・新設時に false で投入",
+   "as_of": "2026-07-31T00:00:00.000Z",
+   "raw": "―"
+  },
+  "hkd-main-0047": {
+   "area": "北海道",
+   "operator": "北海道電力ネットワーク",
+   "external_id": "hepco_map_forecast_tide_list_03_1_v2-33.0",
+   "name": "旭川変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）",
+   "as_of": "2026-07-31T00:00:00.000Z"
+  },
+  "hkd-main-0142": {
+   "area": "北海道",
+   "operator": "北海道電力ネットワーク",
+   "external_id": "hepco_map_forecast_tide_list_10_23_v2-22.0",
+   "name": "錦橋変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）",
+   "as_of": "2026-07-31T00:00:00.000Z"
+  },
+  "hkd-main-0187": {
+   "area": "北海道",
+   "operator": "北海道電力ネットワーク",
+   "external_id": "hepco_map_forecast_tide_list_12_87_v2-33.0",
+   "name": "留産変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）",
+   "as_of": "2026-07-31T00:00:00.000Z"
+  },
+  "hkd-main-0287": {
+   "area": "北海道",
+   "operator": "北海道電力ネットワーク",
+   "external_id": "hepco_map_forecast_tide_list_18_13_v2-33.0",
+   "name": "中札内変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）",
+   "as_of": "2026-07-31T00:00:00.000Z"
+  },
+  "hkd-main-0308": {
+   "area": "北海道",
+   "operator": "北海道電力ネットワーク",
+   "external_id": "hepco_map_forecast_tide_list_18_83_v2-11.0",
+   "name": "上岩松変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）",
+   "as_of": "2026-07-31T00:00:00.000Z"
+  },
+  "hkd-main-0310": {
+   "area": "北海道",
+   "operator": "北海道電力ネットワーク",
+   "external_id": "hepco_map_forecast_tide_list_18_85_v2-11.0",
+   "name": "然別第二変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）",
+   "as_of": "2026-07-31T00:00:00.000Z"
+  },
+  "hkd-main-0312": {
+   "area": "北海道",
+   "operator": "北海道電力ネットワーク",
+   "external_id": "hepco_map_forecast_tide_list_18_87_v2-11.0",
+   "name": "然別第一変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_Tr_*.csv（2026-07-31ほか）",
+   "as_of": "2026-07-31T00:00:00.000Z"
+  },
+  "ksi-kikan-bu": {
+   "area": "関西",
+   "operator": "関西電力送配電",
+   "external_id": "kansai_kikan_ＢＵ",
+   "name": "変電所",
+   "reason": "undetermined",
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）・新設時に false で投入",
+   "as_of": "2026-08-17T00:00:00.000Z",
+   "raw": "－"
+  },
+  "ksi-local-d-7": {
+   "area": "関西",
+   "operator": "関西電力送配電",
+   "external_id": "kansai_local_滋ED",
+   "name": "高時川",
+   "reason": "blank",
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）",
+   "as_of": "2026-08-17T00:00:00.000Z",
+   "raw": ""
+  },
+  "ksi-local-ec-6": {
+   "area": "関西",
+   "operator": "関西電力送配電",
+   "external_id": "kansai_local_滋ＥC",
+   "name": "赤子山",
+   "reason": "blank",
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）",
+   "as_of": "2026-08-17T00:00:00.000Z",
+   "raw": ""
+  },
+  "kyu-278": {
+   "area": "九州",
+   "operator": "九州電力送配電",
+   "external_id": "kyuden_11_11(1)",
+   "name": "大鶴",
+   "reason": "undetermined",
+   "source": "td_rHc7Jd0i.zip（2026-07-28更新）",
+   "as_of": "2026-07-28T00:00:00.000Z"
+  },
+  "kyu-500": {
+   "area": "九州",
+   "operator": "九州電力送配電",
+   "external_id": "kyuden_16_45",
+   "name": "南関",
+   "reason": "undetermined",
+   "source": "td_rHc7Jd0i.zip（2026-07-28更新）",
+   "as_of": "2026-07-28T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0019": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_19",
+   "name": "C変電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0020": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_20",
+   "name": "安波第二変電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0021": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_21",
+   "name": "安波変電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0022": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_22",
+   "name": "D変電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0023": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_23",
+   "name": "E変電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0073": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_73",
+   "name": "汀間配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0080": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_80",
+   "name": "伊江配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0081": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_81",
+   "name": "伊是名配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0086": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_86",
+   "name": "渡嘉敷配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0088": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_88",
+   "name": "楚洲配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0090": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_90",
+   "name": "今泊配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0091": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_91",
+   "name": "知念配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0092": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_92",
+   "name": "玉城配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0094": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_94",
+   "name": "馬天配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-22kv-0095": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-22kv_95",
+   "name": "平敷屋配電塔",
+   "reason": "no_column",
+   "source": "con_res_map02_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-100001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_10 -1",
+   "name": "東町変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-10001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_1 -1",
+   "name": "糸満変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-110001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_11 -1",
+   "name": "壷川変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-120001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_12 -1",
+   "name": "松尾変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-130001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_13 -1",
+   "name": "古波蔵変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-140001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_14 -1",
+   "name": "真玉橋変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-150001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_15 -1",
+   "name": "上間変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-160001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_16 -1",
+   "name": "南風原変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-170002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_17 -2",
+   "name": "与那原変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-180001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_18 -1",
+   "name": "繁多川変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-190002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_19 -2",
+   "name": "牧志変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-200001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_20 -1",
+   "name": "久茂地変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-20001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_2 -1",
+   "name": "阿波根変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-210002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_21 -2",
+   "name": "西那覇変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-220001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_22 -1",
+   "name": "泊変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-230001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_23 -1",
+   "name": "曙変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-240001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_24 -1",
+   "name": "勢理客変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-250001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_25 -1",
+   "name": "宮城変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-260001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_26 -1",
+   "name": "城間変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-270003": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_27 -3",
+   "name": "北那覇変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-280001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_28 -1",
+   "name": "大名変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-290001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_29 -1",
+   "name": "安室変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-30002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_3 -2",
+   "name": "与根変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-310002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_31 -2",
+   "name": "小那覇変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-320001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_32 -1",
+   "name": "前田変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-330001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_33 -1",
+   "name": "浦添変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-340002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_34 -2",
+   "name": "牧港第一変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-350002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_35 -2",
+   "name": "大山変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-360001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_36 -1",
+   "name": "普天間変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-370001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_37 -1",
+   "name": "南上原変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-380001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_38 -1",
+   "name": "安谷屋変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-400002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_40 -2",
+   "name": "渡口変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-40002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_4 -2",
+   "name": "友寄変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-410001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_41 -1",
+   "name": "瑞慶覧変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-420001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_42 -1",
+   "name": "桑江変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-430002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_43 -2",
+   "name": "北谷変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-440002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_44 -2",
+   "name": "島袋変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-460001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_46 -1",
+   "name": "中の町変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-470001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_47 -1",
+   "name": "高原変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-480002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_48 -2",
+   "name": "美里変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-490002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_49 -2",
+   "name": "中城湾変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-500001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_50 -1",
+   "name": "知花変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-50001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_5 -1",
+   "name": "具志頭変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-510001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_51 -1",
+   "name": "喜仲変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-520002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_52 -2",
+   "name": "与勝変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-530001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_53 -1",
+   "name": "平安座変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-550001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_55 -1",
+   "name": "天願変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-570001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_57 -1",
+   "name": "座喜味変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-580001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_58 -1",
+   "name": "伊良皆第一変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-590001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_59 -1",
+   "name": "屋良変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-600001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_60 -1",
+   "name": "伊波変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-60001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_6 -1",
+   "name": "佐敷変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-610002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_61 -2",
+   "name": "仲石変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-630001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_63 -1",
+   "name": "石川変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-650002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_65 -2",
+   "name": "冨着変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-670001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_67 -1",
+   "name": "新金武変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-680001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_68 -1",
+   "name": "恩納変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-690001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_69 -1",
+   "name": "安富祖変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-700001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_70 -1",
+   "name": "喜瀬変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-70001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_7 -1",
+   "name": "高安変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-710001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_71 -1",
+   "name": "松田変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-720002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_72 -2",
+   "name": "辺野古変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-740001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_74 -1",
+   "name": "名護変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-750001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_75 -1",
+   "name": "新名護変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-760001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_76 -1",
+   "name": "安和変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-770002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_77 -2",
+   "name": "今帰仁変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-780001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_78 -1",
+   "name": "本部変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-790002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_79 -2",
+   "name": "海洋博変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-80001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_8 -1",
+   "name": "小禄変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-820001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_82 -1",
+   "name": "羽地変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-830002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_83 -2",
+   "name": "大保変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-840001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_84 -1",
+   "name": "慶佐次変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-850002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_85 -2",
+   "name": "奥間変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-870001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_87 -1",
+   "name": "真壁変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-890001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_89 -1",
+   "name": "伊平変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-90002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_9 -2",
+   "name": "那覇変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-honto-66kv-930001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_honto-66kv_93 -1",
+   "name": "ギンバル変電所",
+   "reason": "no_column",
+   "source": "con_res_map01_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0001": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_1",
+   "name": "平良変電所",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0001-2": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_1",
+   "name": "伊原間変電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_03.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0002": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_2",
+   "name": "久松配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0003": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_3",
+   "name": "下地配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0004": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_4",
+   "name": "更竹配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0005": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_5",
+   "name": "城辺配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0006": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_6",
+   "name": "伊良部変電所",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0007": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_7",
+   "name": "上野配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0008": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_8",
+   "name": "地盛配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0009": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_9",
+   "name": "石垣配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0010": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_10",
+   "name": "登野城配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0011": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_11",
+   "name": "名蔵配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0012": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_12",
+   "name": "盛山配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0013": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_13",
+   "name": "川平配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0014": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_14",
+   "name": "石垣第二",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0015": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_15",
+   "name": "竹富配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0016": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_16",
+   "name": "小浜配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0017": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_17",
+   "name": "西表東変電所",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0018": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_18",
+   "name": "大田配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0019": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_19",
+   "name": "宮良配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "oki-ritou-0020": {
+   "area": "沖縄",
+   "operator": "沖縄電力",
+   "external_id": "okiden_ritou_20",
+   "name": "上原配電塔",
+   "reason": "no_column",
+   "source": "con_res_map03_02.csv（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）",
+   "as_of": "2026-03-01T00:00:00.000Z"
+  },
+  "rkd-fukui-fss0001": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS001",
+   "name": "金津",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0002": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS002",
+   "name": "芦原",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0003": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS003",
+   "name": "三国",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0004": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS004",
+   "name": "臨港",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0005": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS005",
+   "name": "丸岡",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0006": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS006",
+   "name": "春江",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0007": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS007",
+   "name": "西長田",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0008": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS008",
+   "name": "北庄",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0009": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS009",
+   "name": "松岡",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0010": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS010",
+   "name": "山王",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0011": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS011",
+   "name": "開発",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0012": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS012",
+   "name": "東福井",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0013": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS013",
+   "name": "中福井",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0014": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS014",
+   "name": "北福井",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0015": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS015",
+   "name": "春山",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0016": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS016",
+   "name": "橋南",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0017": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS017",
+   "name": "南福井",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0018": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS018",
+   "name": "花堂",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0019": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS019",
+   "name": "東郷",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0020": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS020",
+   "name": "成和",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0021": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS021",
+   "name": "小和清水",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0022": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS022",
+   "name": "足羽77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0023": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS023",
+   "name": "勝山77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0024": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS024",
+   "name": "荒土",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0025": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS025",
+   "name": "友江",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0026": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS026",
+   "name": "大野",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0028": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS028",
+   "name": "神明",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0029": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS029",
+   "name": "新武生",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0030": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS030",
+   "name": "鯖江",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0031": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS031",
+   "name": "水落",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0032": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS032",
+   "name": "西田中",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0033": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS033",
+   "name": "織田77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0035": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS035",
+   "name": "西武生",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0036": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS036",
+   "name": "王子保",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0037": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS037",
+   "name": "湯尾",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0038": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS038",
+   "name": "粟田部77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0039": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS039",
+   "name": "(名称非公開) rikuden_local03_FSS039",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-fukui-fss0040": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS040",
+   "name": "敦賀",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0041": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS041",
+   "name": "西敦賀",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0042": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS042",
+   "name": "南敦賀77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0043": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS043",
+   "name": "持越",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0044": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS044",
+   "name": "蒲生",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0045": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS045",
+   "name": "宮崎配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0046": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS046",
+   "name": "白山配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0047": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS047",
+   "name": "米ノ浦配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0048": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS048",
+   "name": "四ツ杉配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0049": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS049",
+   "name": "道口配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0051": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS051",
+   "name": "(名称非公開) rikuden_local03_FSS051",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0052": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS052",
+   "name": "(名称非公開) rikuden_local03_FSS052",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-fukui-fss0053": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS053",
+   "name": "(名称非公開) rikuden_local03_FSS053",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0054": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS054",
+   "name": "(名称非公開) rikuden_local03_FSS054",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0055": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS055",
+   "name": "(名称非公開) rikuden_local03_FSS055",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0056": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS056",
+   "name": "(名称非公開) rikuden_local03_FSS056",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0057": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS057",
+   "name": "(名称非公開) rikuden_local03_FSS057",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0058": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS058",
+   "name": "(名称非公開) rikuden_local03_FSS058",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-fukui-fss0059": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS059",
+   "name": "(名称非公開) rikuden_local03_FSS059",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-fukui-fss0060": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS060",
+   "name": "(名称非公開) rikuden_local03_FSS060",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-fukui-fss0061": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS061",
+   "name": "(名称非公開) rikuden_local03_FSS061",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-fukui-fss0062": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local03_FSS062",
+   "name": "(名称非公開) rikuden_local03_FSS062",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-ishikawa-iss0001": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS001",
+   "name": "北金沢　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0002": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS002",
+   "name": "高松",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0003": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS003",
+   "name": "宇ノ気",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0004": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS004",
+   "name": "津幡",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0005": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS005",
+   "name": "大浦　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0007": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS007",
+   "name": "浅野",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0008": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS008",
+   "name": "北安江　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0010": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS010",
+   "name": "金石　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0012": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS012",
+   "name": "東金沢　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0014": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS014",
+   "name": "金沢中央",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0015": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS015",
+   "name": "長坂",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0016": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS016",
+   "name": "田上",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0017": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS017",
+   "name": "増泉",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0018": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS018",
+   "name": "大工町",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0019": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS019",
+   "name": "西金沢　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0020": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS020",
+   "name": "(名称非公開) rikuden_local02_ISS020",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-ishikawa-iss0021": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS021",
+   "name": "額",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0022": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS022",
+   "name": "安原",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0023": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS023",
+   "name": "松任",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0024": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS024",
+   "name": "美川",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0025": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS025",
+   "name": "鞍月　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0027": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS027",
+   "name": "泉野",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0028": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS028",
+   "name": "昭和町",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0029": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS029",
+   "name": "竹松",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0030": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS030",
+   "name": "下林",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0031": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS031",
+   "name": "久常",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0032": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS032",
+   "name": "根上",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0033": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS033",
+   "name": "小松",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0034": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS034",
+   "name": "安宅　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0036": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS036",
+   "name": "粟津",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0037": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS037",
+   "name": "大聖寺　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0038": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS038",
+   "name": "(名称非公開) rikuden_local02_ISS038",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-ishikawa-iss0039": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS039",
+   "name": "片山津",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0041": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS041",
+   "name": "山中　77/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0042": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS042",
+   "name": "山代",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0043": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS043",
+   "name": "沢",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0044": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS044",
+   "name": "箱宮",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0045": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS045",
+   "name": "枯渕",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0046": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS046",
+   "name": "九谷　直配",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0047": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS047",
+   "name": "荒木田",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0048": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS048",
+   "name": "川北",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0049": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS049",
+   "name": "鶴来",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0050": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS050",
+   "name": "福岡第一　直配",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0051": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS051",
+   "name": "吉野第一　直配",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0052": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS052",
+   "name": "吉野谷　直配",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0053": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS053",
+   "name": "尾口　直配",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0055": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS055",
+   "name": "三ツ又第一　直配",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0056": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS056",
+   "name": "桑島　直配",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0057": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS057",
+   "name": "白峰　直配",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0058": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS058",
+   "name": "市ノ瀬　直配",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0059": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS059",
+   "name": "羽咋",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0061": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS061",
+   "name": "押水　66/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0062": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS062",
+   "name": "能登部",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0063": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS063",
+   "name": "高浜",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0064": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS064",
+   "name": "若葉台",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0065": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS065",
+   "name": "富来",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0066": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS066",
+   "name": "徳田",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0067": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS067",
+   "name": "七尾",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0068": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS068",
+   "name": "和倉",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0069": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS069",
+   "name": "中島　66/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0070": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS070",
+   "name": "中島　66/22kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0071": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS071",
+   "name": "穴水",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0072": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS072",
+   "name": "瑞穂",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0073": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS073",
+   "name": "宇出津　66/6kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0075": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS075",
+   "name": "内浦",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0076": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS076",
+   "name": "飯田",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0077": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS077",
+   "name": "門前",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0078": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS078",
+   "name": "輪島",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0079": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS079",
+   "name": "湖南",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0080": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS080",
+   "name": "内灘",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0081": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS081",
+   "name": "鶴ヶ丘",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0082": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS082",
+   "name": "大浜",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0083": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS083",
+   "name": "千鳥台",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0084": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS084",
+   "name": "第2千鳥台",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0085": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS085",
+   "name": "蚊爪",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0086": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS086",
+   "name": "湊",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0087": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS087",
+   "name": "北陽台",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0088": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS088",
+   "name": "河原市",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0089": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS089",
+   "name": "白帆台",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0090": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS090",
+   "name": "鉄工中配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0091": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS091",
+   "name": "鉄工北配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0092": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS092",
+   "name": "鉄工西配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0093": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS093",
+   "name": "鉄工東配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0094": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS094",
+   "name": "鉄工南配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0095": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS095",
+   "name": "能登島配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0096": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS096",
+   "name": "粟蔵配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0097": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS097",
+   "name": "町野配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0098": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS098",
+   "name": "柳田配電塔",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-ishikawa-iss0099": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local02_ISS099",
+   "name": "森本",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-kikan-hss0014": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_kikan01_HSS014",
+   "name": "(名称非公開) rikuden_kikan01_HSS014",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-kikan-hss0017": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_kikan01_HSS017",
+   "name": "和田一",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-kikan-hss0018": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_kikan01_HSS018",
+   "name": "折立",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-kikan-hss0022": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_kikan01_HSS022",
+   "name": "東町",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-kikan-hss0023": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_kikan01_HSS023",
+   "name": "牧",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-kikan-hss0038": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_kikan01_HSS038",
+   "name": "和泉",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0001": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS001",
+   "name": "境川第二",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0002": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS002",
+   "name": "泊",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0003": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS003",
+   "name": "黒東第二",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0004": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS004",
+   "name": "入善",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0005": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS005",
+   "name": "(名称非公開) rikuden_local01_TSS005",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0006": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS006",
+   "name": "黒部",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0007": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS007",
+   "name": "桜井",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0008": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS008",
+   "name": "宇奈月",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0009": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS009",
+   "name": "江口",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0010": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS010",
+   "name": "魚津",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0011": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS011",
+   "name": "東滑川",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0012": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS012",
+   "name": "早月第一",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0013": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS013",
+   "name": "高月",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0014": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS014",
+   "name": "伊折",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0015": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS015",
+   "name": "馬場島",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0016": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS016",
+   "name": "舟橋",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0018": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS018",
+   "name": "上市",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0019": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS019",
+   "name": "五百石",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0020": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS020",
+   "name": "水橋",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0021": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS021",
+   "name": "真川",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0022": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS022",
+   "name": "小見",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0023": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS023",
+   "name": "常願寺第一",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0024": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS024",
+   "name": "上滝",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0025": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS025",
+   "name": "東富山",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0026": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS026",
+   "name": "(名称非公開) rikuden_local01_TSS026",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-toyama-tss0027": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS027",
+   "name": "奥田",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0029": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS029",
+   "name": "岩瀬",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0030": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS030",
+   "name": "針原",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0031": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS031",
+   "name": "広田",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0032": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS032",
+   "name": "富山",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0033": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS033",
+   "name": "牛島",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0034": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS034",
+   "name": "中富山",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0035": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS035",
+   "name": "富南",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0036": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS036",
+   "name": "南富山",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0037": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS037",
+   "name": "城南",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0038": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS038",
+   "name": "掛尾",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0039": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS039",
+   "name": "婦中",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0040": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS040",
+   "name": "猪谷",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0041": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS041",
+   "name": "大沢野",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0042": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS042",
+   "name": "五平定",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0043": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS043",
+   "name": "八尾",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0045": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS045",
+   "name": "東射水",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0046": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS046",
+   "name": "射水",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0047": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS047",
+   "name": "小杉",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0048": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS048",
+   "name": "大門",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0049": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS049",
+   "name": "新湊",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0050": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS050",
+   "name": "南高岡",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0051": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS051",
+   "name": "高岡",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0053": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS053",
+   "name": "米島",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0054": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS054",
+   "name": "西高岡",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0055": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS055",
+   "name": "沖布",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0056": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS056",
+   "name": "(名称非公開) rikuden_local01_TSS056",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-toyama-tss0057": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS057",
+   "name": "氷見",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0058": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS058",
+   "name": "戸出",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0059": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS059",
+   "name": "井波",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0060": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS060",
+   "name": "早川",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0061": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS061",
+   "name": "福岡",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0062": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS062",
+   "name": "庄西",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0063": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS063",
+   "name": "砺波",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0064": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS064",
+   "name": "石動",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0065": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS065",
+   "name": "浅地",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0066": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS066",
+   "name": "福野",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0067": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS067",
+   "name": "福野66/22kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0068": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS068",
+   "name": "福光",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0069": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS069",
+   "name": "(名称非公開) rikuden_local01_TSS069",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "rkd-toyama-tss0070": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS070",
+   "name": "城端",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0071": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS071",
+   "name": "中崎",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0073": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rikuden_local01_TSS073",
+   "name": "第一押川",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0074": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rkd-toyama-tss0074",
+   "name": "早月第一66/22kV",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0075": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rkd-toyama-tss0075",
+   "name": "常願寺川第三",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": "-"
+  },
+  "rkd-toyama-tss0076": {
+   "area": "北陸",
+   "operator": "北陸電力送配電",
+   "external_id": "rkd-toyama-tss0076",
+   "name": "(名称非公開) rikuden_local01_TSS076",
+   "reason": "blank",
+   "source": "sys_capa_*_tr_202608_05.csv（2026-08-05公表）",
+   "as_of": "2026-08-05T00:00:00.000Z",
+   "raw": ""
+  },
+  "thk-akita-3201": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local03_3201",
+   "name": "能代東",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-akita-3205": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local03_3205",
+   "name": "八森",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-akita-3307": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local03_3307",
+   "name": "土崎",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-aomori-1a0008": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local01_1A08",
+   "name": "1A08",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-fukushima-6d0011-2": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local06_6D11",
+   "name": "6D11",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-fukushima-6f0011": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local06_6F11",
+   "name": "若松",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-iwate-2407": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local02_2407",
+   "name": "後藤野",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-kikan-0002": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_kikan01_002",
+   "name": "上北",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-kikan-0006": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_kikan01_006",
+   "name": "東花巻",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-kikan-0008": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_kikan01_008",
+   "name": "西仙台",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-kikan-0020": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_kikan01_020",
+   "name": "南相馬",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-miyagi-4805": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local04_4805",
+   "name": "大日",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-niigata-7308": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local07_7308",
+   "name": "7308",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-niigata-7f0008": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local07_7F08",
+   "name": "7F08",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-niigata-7k0007-2": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local07_7K07",
+   "name": "浅貝",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-yamagata-5102": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local05_5102",
+   "name": "鳥越",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-yamagata-5103": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local05_5103",
+   "name": "真室川",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-yamagata-5106": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local05_5106",
+   "name": "大石田",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-yamagata-5208": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local05_5208",
+   "name": "寒河江",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "thk-yamagata-5505": {
+   "area": "東北",
+   "operator": "東北電力ネットワーク",
+   "external_id": "tohoku_local05_5505",
+   "name": "小松",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202607_02.csv（2026-07-03作成）",
+   "as_of": "2026-07-03T00:00:00.000Z"
+  },
+  "tpg-0017": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変栃木県 22kV 3",
+   "name": "塩原第１",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0018": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変栃木県 22kV 4",
+   "name": "塩原第２",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0019": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変栃木県 22kV 5",
+   "name": "塩原第３",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0389": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変埼玉県 22kV 5",
+   "name": "向堀",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0390": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変埼玉県 22kV 6",
+   "name": "西平",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0595": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変千葉県 154kV 11",
+   "name": "新木更津5・8B",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0608": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変千葉県 22kV 4",
+   "name": "溝原",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0609": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変千葉県 22kV 5",
+   "name": "西岬",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0610": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変千葉県 22kV 6",
+   "name": "神戸",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0611": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変千葉県 22kV 7",
+   "name": "犬石",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0612": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変千葉県 22kV 8",
+   "name": "長尾",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-0613": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変千葉県 22kV 9",
+   "name": "塩浦",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "tpg-1359": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変神奈川県 22kV 19",
+   "name": "三枚橋(1)",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
+   "as_of": "2026-07-10T00:00:00.000Z"
+  }
+ }
+}

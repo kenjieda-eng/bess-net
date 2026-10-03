@@ -18,6 +18,7 @@ import { getAreaSubstationsStatic, toSubstationShape } from '@/lib/grid-static-l
 import { siteConfig } from '@/lib/site-config';
 import { GRID_PAGE_RELATED_TERMS } from './related-terms';
 import { sourceFileName } from '@/lib/grid-source';
+import { n1StatusFromRow, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status-label';
 
 export type AreaMeta = {
   slug: string;
@@ -482,13 +483,11 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                           <span className="pos">{fmt(s.cap_avail_mw ?? null)}</span>
                         </td>
                         <td>
-                          {s.n1_eligible === true ? (
-                            <span className="grid-badge grid-badge-ok">可</span>
-                          ) : s.n1_eligible === false ? (
-                            <span className="grid-badge grid-badge-info">不可</span>
-                          ) : (
-                            '—'
-                          )}
+                          {(() => {
+                            // N1b: 可／不可／未算定／公表なし（未算定・公表なしは microCMS では false だが「不可」と言わない）
+                            const st = n1StatusFromRow(s);
+                            return st ? <span className={n1StatusBadgeClass(st)}>{n1StatusLabel(st)}</span> : '—';
+                          })()}
                         </td>
                         <td>
                           {(s.oc_possibility && s.oc_possibility[0]) === '有り' ? (

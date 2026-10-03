@@ -2940,6 +2940,8 @@
 .grid-badge-ok    { background: #dcfce7; color: #166534; }
 .grid-badge-warn  { background: #fef3c7; color: #92400e; }
 .grid-badge-info  { background: #f3f4f6; color: #4b5563; }
+/* N1b: N-1電制の「未算定」「公表なし」（不可＝grid-badge-info と見分けるため破線枠・2026-10-03） */
+.grid-badge-muted { background: #ffffff; color: #6b7280; border: 1px dashed #9ca3af; }
 
 /* 出典・データ提供元 */
 .grid-source-section {

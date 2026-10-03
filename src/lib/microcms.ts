@@ -15,6 +15,7 @@ import { isTopicExcludedNews } from './news-topic-gate';
 // 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
 import { normalizeSubstationPlace, isRealPrefecture } from './grid-prefecture';
 import { FROZEN_SUBSTATION_SLUGS } from './substations-frozen';
+import type { N1Status } from './n1-status-label';
 
 // 関連newsマップ（generated/related-news-map.json）はここでは import しない（金曜#6 追修便④ ■1・2026-09-13）。
 // microcms.ts は prebuild の precompute 各スクリプトが読むため、ここで生成物を import すると、生成物の無い
@@ -1494,6 +1495,8 @@ export type Substation = {
   cap_avail_mw?: number;
   cap_avail_upper_mw?: number;
   n1_eligible?: boolean;
+  /** N1b: 表示区分（静的リスト由来の一覧で付く。runtime の個別ページは n1StatusOf で同じ規則を当てる） */
+  n1_status?: N1Status;
   n1_capacity_mw?: number;
   oc_possibility?: string[];
   oc_target_self?: string;
@@ -1767,6 +1770,8 @@ export const getChubuSubstationsForMap = async (): Promise<
           : null,
       cap_avail_mw:
         typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
+      // N1b（2026-10-03）: 中部マップは二値（可／不可）のまま。中部は未算定・公表なしが 0 件（src/data/n1-status.json）で、
+      // runtime の地図にまで一覧を引き込む必要がないため。中部に未算定が出たら n1StatusOf を通す（#121）。
       n1_eligible: s.n1_eligible === true,
       oc_possibility:
         s.oc_possibility && s.oc_possibility.length > 0

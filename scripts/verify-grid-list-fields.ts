@@ -14,16 +14,22 @@
  *   軸2（#119）その列が消費側（toSubstationShape）まで届いているか
  * facility_class は軸1を満たしていたのに toSubstationShape が落としており、
  * 関西1,575件・沖縄151件の設備区分が一覧で不可視だった。軸1だけでは検出できない。
+ *
+ * 追補（N1b・2026-10-03）: N-1 の表示区分 n1_status（可／不可／未算定／公表なし）を軸1・軸2 に入れ、軸4〜6 を足した。
+ *   軸4（FAIL）一覧（src/data/n1-status.json）の slug で静的データが n1_eligible === true のもの＝0（true が勝つ規則と一覧の矛盾）
+ *   軸5（WARN）一覧の as_of が静的データの last_updated と一致しない件数（再取込で更新された行＝古い一覧を当てていない）
+ *   軸6（FAIL）一覧の件数（as_of 一致分・エリア×区分）＝静的データの n1_status の件数
  */
 import * as fs from 'node:fs';
 import { toSubstationShape, type GridListItem } from '../src/lib/grid-static-lists';
+import { N1_STATUS_SLUGS, n1StatusAsOfMismatch } from '../src/lib/n1-status';
 
 // 一覧ビューが参照するフィールド（追加時はここも更新する）
 const REQUIRED_FOR_LIST = [
   'id', 'slug', 'name', 'prefecture', 'facility_class', 'operator', 'area',
   'voltage_class', 'voltage_primary_kv', 'voltage_secondary_kv',
   'units', 'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw',
-  'n1_eligible', 'n1_capacity_mw', 'oc_possibility', 'external_id',
+  'n1_eligible', 'n1_status', 'n1_capacity_mw', 'oc_possibility', 'external_id',
   'last_updated', 'fetched_at', 'source_url', 'latitude', 'longitude',
 ] as const;
 
@@ -63,7 +69,7 @@ function main() {
   // 「JSONにはある／画面には出ない」を検出する。値を持つ代表レコードで往復照合する。
   console.log('\n[軸2] 消費側 shape（toSubstationShape）への到達を検査');
   const SHAPE_CRITICAL = [
-    'facility_class', 'units', 'n1_capacity_mw', 'external_id',
+    'facility_class', 'units', 'n1_capacity_mw', 'n1_status', 'external_id',
     'voltage_class', 'cap_avail_mw', 'last_updated', 'source_url',
   ] as const;
   for (const key of SHAPE_CRITICAL) {
@@ -109,6 +115,41 @@ function main() {
         ` / 実データ最新=${actualMax}（${variants}種）`
     );
   }
+
+  // ── 軸4〜6（N1b）: N-1 の未算定・公表なし一覧（src/data/n1-status.json）と静的データの整合 ──
+  console.log('\n[軸4〜6] N-1 の未算定・公表なし一覧（src/data/n1-status.json）と静的データ');
+  const n1Doc = JSON.parse(fs.readFileSync('src/data/n1-status.json', 'utf8')) as {
+    entries: Record<string, { area: string | null; reason: string; as_of: string | null }>;
+  };
+  const bySlug = new Map<string, Record<string, unknown>>();
+  for (const area of areas) for (const s of data.by_area[area]) bySlug.set(String(s.slug), s);
+  const contradict: string[] = [];
+  const asOfMismatch: string[] = [];
+  const expected: Record<string, number> = {};
+  for (const slug of N1_STATUS_SLUGS) {
+    const s = bySlug.get(slug);
+    if (!s) continue; // 凍結などで静的データに無い（一覧の側でも凍結は入れていない）
+    if (s.n1_eligible === true) contradict.push(slug);
+    if (n1StatusAsOfMismatch({ slug, last_updated: s.last_updated as string | null })) { asOfMismatch.push(slug); continue; }
+    const e = n1Doc.entries[slug];
+    const key = `${s.area}|${e.reason === 'no_column' ? 'no_column' : 'undetermined'}`;
+    expected[key] = (expected[key] ?? 0) + 1;
+  }
+  const actual: Record<string, number> = {};
+  for (const area of areas) for (const s of data.by_area[area]) {
+    if (s.n1_status === 'undetermined' || s.n1_status === 'no_column') {
+      const key = `${area}|${s.n1_status}`;
+      actual[key] = (actual[key] ?? 0) + 1;
+    }
+  }
+  if (contradict.length) fail++;
+  console.log(`  ${contradict.length ? '✗' : '✓'} 軸4 一覧の slug で n1_eligible === true: ${contradict.length} 件${contradict.length ? `（${contradict.slice(0, 10).join(', ')}）` : ''}`);
+  console.log(`  ${asOfMismatch.length ? '⚠' : '✓'} 軸5 as_of が last_updated と不一致（WARN・一覧を当てず boolean に戻している）: ${asOfMismatch.length} 件${asOfMismatch.length ? `（${asOfMismatch.slice(0, 10).join(', ')}）` : ''}`);
+  const keys = [...new Set([...Object.keys(expected), ...Object.keys(actual)])].sort();
+  const diff = keys.filter((k) => (expected[k] ?? 0) !== (actual[k] ?? 0));
+  if (diff.length) fail++;
+  console.log(`  ${diff.length ? '✗' : '✓'} 軸6 一覧（as_of 一致）と静的 n1_status の件数（期待/実際）: ` +
+    keys.map((k) => `${k} ${expected[k] ?? 0}/${actual[k] ?? 0}`).join('・'));
 
   console.log(fail === 0 ? '\n[verify-grid-list-fields] PASS' : `\n[verify-grid-list-fields] FAIL ${fail}件`);
   if (fail) process.exit(1);

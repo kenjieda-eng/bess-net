@@ -8,6 +8,7 @@ N-1電制適用可否が公表CSVで「未算定（-）」の設備一覧を社�
       その結果、詳細ページ上は「不可」と読める状態になっている（＝表示の三値化が必要）。
       再取込のたびに現値維持で据え置く対象でもあるため、機械可読な一覧として固定する。
 出力: scripts/experimental/_common/n1_undetermined.json
+★後継は build_n1_status.py → src/data/n1-status.json（N1b・2026-10-03）。本スクリプトと出力は前身として残す（消さない）。
 """
 import json, sys
 from pathlib import Path
@@ -91,6 +92,7 @@ OUT.write_text(json.dumps({
     "purpose": "公表CSVで N-1電制適用可否が未算定（-）の設備。microCMS の n1_eligible は boolean のため "
                "false に潰れているが、実態は「不可」ではなく「未算定」。表示の三値化タスクの入力。",
     "note": "再取込では上書きせず現値維持する（社を問わず既定）。",
+    "successor": "後継は src/data/n1-status.json（生成 build_n1_status.py・N1b 2026-10-03）。表示はそちらを読む。",
     "generated_from": ["hokuriku/hokuriku_csv_2608_normalized.json", "tepco/tepco_csv_2607_normalized.json",
                        "reports/grid-tohoku-dryrun-2026-08-16.json",
                        "_common/n1_undetermined_chugoku.json",
