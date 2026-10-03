@@ -26,6 +26,9 @@ import GlossaryNextStepBlock from '@/components/GlossaryNextStepBlock';
 import glossaryDetailIndex from '@/lib/generated/glossary-detail-index.json';
 // build 時事前計算: 関連 FAQ（落とし穴 #98 恒久対策、従来どおり）
 import glossaryFaqIndex from '@/lib/generated/glossary-faq-index.json';
+// 変電所の件数は /grid のカードと同じ値（precompute の summary.total・凍結除外）から出す。焼き込まない（#121・Ck2d ■7）
+import substationsIndex from '@/data/substations/index.json';
+const SUBSTATION_TOTAL_STR = (substationsIndex as unknown as { summary: { total: number } }).summary.total.toLocaleString('en-US');
 
 // /grid 系統空き容量データベースへの導線を表示する用語ページ slug 一覧（Phase 5 D-4）
 // 追修便③ ■6: 301 元の 'non-firm-detail'・'output-control' を削除（301 元の頁は描画されず死に行。宛先 non-firm-connection・curtailment は既にある）
@@ -283,7 +286,7 @@ export default async function GlossaryDetailPage({
               <h3 className="related-h3">実データを確認</h3>
               <p>
                 {term.term} に関連する変電所別の系統空き容量データを蓄電所ネットで確認できます。
-                北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の10社・8,225変電所の予想潮流・空容量・N-1電制適用可否を一元化しています。
+                北海道・東北・東京・中部・北陸・関西・中国・四国・九州・沖縄の10社・{SUBSTATION_TOTAL_STR}変電所の予想潮流・空容量・N-1電制適用可否を一元化しています。
               </p>
               <Link href="/grid" className="related-grid-button">
                 系統空き容量データベースを見る →

@@ -32,6 +32,9 @@ import { EXPLAINER_EDU_LINKS } from '@/lib/edu-links';
 import { isLvInvestExplainer } from '@/lib/lv-invest';
 import ExplainerNextStepBlock from '@/components/ExplainerNextStepBlock';
 import explainerRelatedMap from '@/lib/generated/explainer-related-map.json';
+// 変電所の件数は /grid のカードと同じ値（precompute の summary.total・凍結除外）から出す。焼き込まない（#121・Ck2d ■7）
+import substationsIndex from '@/data/substations/index.json';
+const SUBSTATION_TOTAL_STR = (substationsIndex as unknown as { summary: { total: number } }).summary.total.toLocaleString('en-US');
 
 // E1⑤フォールバック用の precompute 済み関連マップ（同カテゴリ2本・自己除外・runtime 0）
 const EXPLAINER_RELATED_MAP = explainerRelatedMap as Record<
@@ -221,7 +224,7 @@ export default async function ExplainerDetailPage({
             <section className="cta-grid-section">
               <h3>実データで確認する</h3>
               <p>
-                本記事で解説した内容について、全国10社・8,225変電所（関東含む）の最新公表データを蓄電所ネットで一元化しています。
+                本記事で解説した内容について、全国10社・{SUBSTATION_TOTAL_STR}変電所（関東含む）の最新公表データを蓄電所ネットで一元化しています。
               </p>
               <Link href="/grid" className="cta-grid-button">
                 系統空き容量データベースを見る →

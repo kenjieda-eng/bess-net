@@ -15,6 +15,9 @@ import type { CSSProperties } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import AnkenContactCTA from '@/components/AnkenContactCTA';
+// 変電所の件数は /grid のカードと同じ値（precompute の summary.total・凍結除外）から出す。焼き込まない（#121・Ck2d ■7）
+import substationsIndex from '@/data/substations/index.json';
+const SUBSTATION_TOTAL_STR = (substationsIndex as unknown as { summary: { total: number } }).summary.total.toLocaleString('en-US');
 
 export const revalidate = 86400;
 
@@ -342,7 +345,7 @@ export default async function AnkenPage() {
               案件のご紹介は、当サイトが整備する以下のデータ基盤を背景としています。
             </p>
             <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
-              <li><Link href="/grid">系統データ（全国 8,225 変電所地点）</Link></li>
+              <li><Link href="/grid">系統データ（全国 {SUBSTATION_TOTAL_STR} 変電所地点）</Link></li>
               <li><Link href="/operators">事業者データベース{opCount != null ? `（${opCount} 社）` : ''}</Link></li>
               <li><Link href="/projects">蓄電所プロジェクトDB（全国）</Link></li>
             </ul>
