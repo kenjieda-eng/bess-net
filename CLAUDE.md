@@ -92,14 +92,18 @@ deploy 後（Vercel 完了 5分以内）:
   ☐ 動的ルートサンプリング 3-5 件
   ☐ Vercel / microCMS 管理画面でエラー確認
 
-★キャッシュバスター付き照合では stale を検出できない（2026-08-16 実証・落とし穴 #112）:
-  cb 付き URL はキャッシュキーが変わるため「デプロイ完了」しか証明せず、
-  「初回訪問者が受け取る HTML」を証明しない。ISR キャッシュは deploy を跨いで保持される。
-  実測: /grid/tokyo/status で x-vercel-cache: STALE / age=4,144（revalidate 3,600 超の旧コピー配信）。
+★キャッシュバスター付き照合では「初回訪問者が受け取る HTML」を証明できない（落とし穴 #112・2026-10-03 改訂）:
+  cb 付き URL はキャッシュキーが変わるため「デプロイ完了」しか証明しない。
+  ISR キャッシュは deploy ごとに独立する（Vercel 現行ドキュメント・#112）が、runtime fetch の
+  Data Cache は deploy を跨いで残る（#116）ので、新しい deploy でも旧データで描画されうる。
+  観測（2026-08-16）: /grid/tokyo/status で x-vercel-cache: STALE / age=4,144（原因の断定は撤回＝#112）。
   ☐ 素URL（クエリ無し・キャッシュ回避ヘッダ無し）で取得した内容で判定する
   ☐ x-vercel-cache と age を必ず記録し、報告に含める
   ☐ HIT/STALE かつ内容が旧なら「未反映」ではなく「TTL 内の既知の窓」と判定し、
     解消見込み時刻（デプロイ完了 + 該当ルートの revalidate TTL）を併記する
+  ☐ 初期DOM の文言・件数は `<!-- -->` を剥がしてから数える。React は文字列と変数の継ぎ目に
+    このコメントを入れるので、剥がさないと「ATB 2025 年版」のような変数混じりの文言が 0 件に見える
+    （2026-10-02・ユウの計数で一度「未反映」と数えかけた）
 
 deploy 後 30分監視:
   ☐ microCMS から警告メール受信なし
@@ -239,13 +243,22 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
                  同一設備と見なすと別設備を誤除外する（北陸で2件実証）。値が全てnullの行も同様。
              (2) 名称の正規化で全角スペースを半角化しない。「北金沢　77/6kV」→「北金沢 77/6kV」で
                  名称不一致の偽陽性を50件生んだ（修正後0件）。数値のみ空白除去してよい。
-#112 ★★★★ ISRキャッシュは deploy を跨いで保持される — deploy 完了＝訪問者への反映ではない
-           → 該当ルートの revalidate TTL（/grid 系4ルートは3600秒）の間、素URLの訪問者は旧内容を
-             受け取る。エッジリージョンごとに独立した窓が生じる。検証は必ず素URL＋x-vercel-cache で
-             行う（鉄則 #5 の deploy 後検証要件と対）。即時反映が必要なら on-demand revalidation（#83）
-             を対象パス限定で配線する（2026-08-16 時点は未実装・提案のみ）。
-           実証: 2026-08-16 commit 5cdfef7 のデプロイ完了 12:44 → 13:53 時点で全経路新内容、
-                 途中 /grid/tokyo/status が STALE / age=4,144。
+#112 ★★★★ deploy 完了＝訪問者への反映ではない — ただし deploy を跨いで残るのは ISR ではなく Data Cache
+           （2026-10-03 改訂。旧見出し「ISRキャッシュは deploy を跨いで保持される」は撤回）
+           → Vercel の現行ドキュメント（2026-10-02・10-03 取得）:
+             https://vercel.com/docs/incremental-static-regeneration
+               "each new deployment uses its own ISR cache and does not reuse the cache from a previous deployment."
+             https://vercel.com/docs/caching/runtime-cache/data-cache
+               "Vercel persists cached data across deployments, unless you explicitly invalidate it using
+                framework APIs like res.revalidate, revalidateTag, and revalidatePath, or by manually purging the cache."
+             つまり新しい deploy は自分の ISR を配る。旧い内容が出うるのは、runtime fetch を持つページ
+             （変電所詳細・中部マップ・/tracker/grid 等）が Data Cache の旧レスポンスで描画される経路で、#116 と同じ現象。
+             precompute だけを読むページは、新しい deploy が公開された時点で新しい内容になる。
+           → 検証は従来どおり素URL＋x-vercel-cache で行う（鉄則 #5）。即時反映が要るなら対象パス限定の
+             on-demand revalidation（#83・設計案は reports/n1-tristate-plan-2026-10-02.md §4）。
+           観測（事実）: 2026-08-16 commit 5cdfef7 のデプロイ完了 12:44 → 13:53 時点で全経路新内容、
+                 途中 /grid/tokyo/status が STALE / age=4,144。観測時刻が記録されておらず、
+                 旧 deploy 由来だったかは再解釈できない＝**観測は事実・「ISR が deploy を跨ぐ」という原因の断定は撤回**。
 
 #113 ★★★★ 差分の baseline に static JSON（precompute 出力）を使わない。本番実データ（GET）を正とする
            → static は表示に不要なフィールドを落としているため、欠損キーが「新規充足」として
@@ -371,6 +384,15 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
                 第一キーが変わる位置が1件でもあれば実装ミスとして停止
              ✅ 集合・件数・日付表示が不変であることを別途確認（順序差分と混ぜて報告しない）
            詳細: reports/events-order-implicit-dependency-2026-08-31.md（#121 と同型）
+           ★ページング版（2026-10-03 追記）: 同着のある第一キーのまま offset でページングすると、
+             ページの境目で**ビルドごとに**同じレコードが 2 回入り、代わりに 1 件抜ける（確率的・取り直すと出ないこともある）。
+             実証: 2026-09-30 /links に同じカードが 2 枚・「全 200 件」（正 199）。getAllLinks の `orders: 'displayOrder'`
+             （22 値・最大 13 件同着）で、Ck-2 ②の POST 2 件でページの境目が同着の中にずれた（②報告 (7)②）。
+           → src/lib/microcms.ts の offset ページング 30 か所すべての末尾に一意なキーを置いた（Ck2d・2026-10-03）:
+             publishedAt が全件一意な API は '-publishedAt'、news は publishedAt が重複する（1,392 件中 190 行）ので
+             '-publishedAt,-createdAt'。orders の無い取得も既定順に依存させない。publishedAt が一意でない API は
+             id（slug）基準の重複除去も足し、除去が起きたらビルドのログに WARN。
+             新しくページング取得を書くときも同じ（一意性は fields=publishedAt,id の全件 GET で確かめる）。
 
 #119 ★★★★★ 正規化は「一箇所だけ」で掛ける。取得側で正規化した値を表示側で再正規化しない
            → 正規化関数が「原値 → (正規化後, 原値の退避先)」を返す設計のとき、取得側で適用済みの
@@ -427,6 +449,27 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
              定数ではなく**注記**で上限改定を時点明示する（#107 初期DOM）。
            実証: 2026-08-22。EPRX 7/30 公表の確定を反映。src 9箇所＋コメント4行、
                  microCMS 7フィールド（policy-events 2・faq 1・glossary 1・explainer 3）を是正。
+
+#125 ★★★★★ microCMS へ書くスクリプトは既定 dry run。本実行は `--apply` を明示したときだけ（R32）
+           → 冪等確認（同じ便をもう一度流して全件 skip になるか）は必ず dry run で行う。
+             冪等の判定は op 単位ではなく、レコードの最終状態（正規化テキストの sha256＝expect_final）との一致で行う。
+             op 単位だと「重複段落を 1 回分残して切除」や追記型（old ⊂ new）の op が再実行で二度当たる。
+           実証: 2026-09-29 Ck-2 実行便②。冪等確認のつもりで `--dry-run` を付け忘れて本実行し、
+                 用語集 3 レコード（auction・nite・pr-article）で残した側の段落まで削った。2 分以内にログの before から
+                 PATCH で復元し、本番には出なかった（reports/ck2-exec-2-2026-09-29.md (7)①）。
+           → 共通実装 scripts/lib/microcms-applier.ts（runApplier・Ck2d で切り出し）。--dry-run は受け付けて無視。
+             後から別の便が同じレコードを書き換えたら、その便の計画の expect_final も現在値で更新する
+             （更新しないと op の old が見つからず「中止」になる＝書込はしない）。
+
+#126 ★★★★ microCMS に select を新設して全件に値を入れるときは、canary 1 件から・5 か所同時に足す
+           → (1) select は未定義の選択肢値を黙って捨てる（#106）。管理 API（スキーマ GET）がこの鍵では 403 で
+             選択肢の実在を確かめられないので、canary 1 件の PATCH→GET で値が残ることを確かめてから全件に入れる。
+             投入後は全件 GET で値の分布を照合する。
+           → (2) 一覧に出す値は precompute の FETCH_FIELDS・LiteSubstation（静的化の型）・GridListItem・
+             toSubstationShape・verify-grid-list-fields の 5 か所に同時に足す。どれか 1 か所でも漏れると、
+             一覧だけが黙って旧い値に戻る（#118 と同型）。
+           前提として記録: N-1 三値化の段2（n1_status＝可／不可／未算定／公表なし を select で持つ案A）。
+                 裁定 2026-10-02（検証記録_10-02便…）。段1（リポ側の一覧 src/data/n1-status.json）は N1b コード便。
 ```
 ```
 
@@ -804,4 +847,5 @@ async function main() {
 - 2026-09-22（CC・Ck-1a ■2-9）: 第0章に「停止条件」を新設（rm／rmdir／Remove-Item は自作の一時物・空ディレクトリ・0 バイト残骸にも適用＝消さずに残して申告、push --force・.env 表示・microCMS DELETE/PUT の禁止を明文化）。Ck-1 で自作の空ディレクトリを rmdir した件の再発防止
 - 2026-08-17（CC・基幹ラベル調査）: 落とし穴 #119（二重正規化で原値が消える／#118 の機械検査では検出不能）を追加。verify:grid-fields を2軸化（軸2＝消費側 shape への到達検査）。「（基幹系）」は Gr10(b166f57) がコード側で「（府県の記載なし）」へ置換した文言で、microCMS のデータには全社0件（＝再取込による劣化ではない）
 - 2026-08-16（CC・中国本実行）: 落とし穴 #117（series_dedup ルール②は既定OFF・社ごとopt-in）を追加。No.振り直しは slug 維持＋external_id 更新＋履歴（_common/external_id_history.json）で扱う。last_updated はレコード単位（県により版が異なる社があるため）
+- 2026-10-03（CC・Ck2d）: 落とし穴 #112 を書き直し（Vercel 現行ドキュメントでは ISR キャッシュは deploy ごとに独立・deploy を跨ぐのは Data Cache＝#116。8/16 の観測は事実として残し、原因の断定を撤回）。#124 にページング版を追記（offset ページング 30 か所に一意な第二キー・news は publishedAt 非一意のため -createdAt）。#125（書込スクリプトは既定 dry run・本実行は --apply＝R32・scripts/lib/microcms-applier.ts）・#126（select 新設は canary 1 件から・5 か所同時に足す＝N1 段2 の前提）を追加。鉄則 #5 に「初期DOM の計数は `<!-- -->` を剥がしてから」を追記
 - （将来）: 新規セッションで追記、更新時刻 + 更新者を末尾に
