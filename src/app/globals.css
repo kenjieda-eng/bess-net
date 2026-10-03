@@ -1034,7 +1034,10 @@
     color: var(--color-navy);
     margin-bottom: 12px;
   }
-  .article-sources p, .article-related p {
+  /* `.article-sources > div`: explainer・/lv/invest の出典は microCMS の textArea（改行区切りの素のテキスト）を
+     <div> にそのまま入れて描画する。p にしか pre-line が当たらず、複数行の出典が 1 段落に連結されていた
+     （Ck-2 ②報告 (9)-10・Ck2d ■6・2026-10-03）。HTML の出典（<p><a>…</a></p>・43 本）は改行を含まないので影響しない。 */
+  .article-sources p, .article-related p, .article-sources > div {
     font-size: 15px;
     color: var(--color-muted);
     white-space: pre-line;
