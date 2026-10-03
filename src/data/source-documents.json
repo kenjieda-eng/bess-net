@@ -1,6 +1,6 @@
 {
   "_comment": "資料名の台帳（Ck-1 A6・2026-09-21）。name はサイトに書いている資料名、title_verbatim は確認時の一次の <title>／PDF 表題の逐語。書く前に一次を実機で取り、確認日つきで登録する。検査: npm run verify:source-names",
-  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true） ／ 2026-09-29 Ck-2 実行便② で 10 件を追加・needs_check 4 件を決着（2 件は本文から外れたため理由を書いて残置） ／ 2026-09-30 同便の本番レビュー後の是正で 1 件を追加（EPRX 商品要件 第6版）",
+  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true） ／ 2026-09-29 Ck-2 実行便② で 10 件を追加・needs_check 4 件を決着（2 件は本文から外れたため理由を書いて残置） ／ 2026-09-30 同便の本番レビュー後の是正で 1 件を追加（EPRX 商品要件 第6版） ／ 2026-10-03 Ck2d で PIB（インド VGF）を 1 件追加",
   "documents": [
     {
       "name": "需給調整市場のΔkW上限価格について",
@@ -1429,6 +1429,15 @@
       "checked_on": "2026-09-30",
       "note": "PDF 4 頁・HTTP 200（419,027 bytes）。2026-09-29 と 09-30 に実機取得。p2「1.商品の種類と要件」の表が R26 定型文（応動 10秒以内／5分以内／5分以内／15分以内／60分以内、継続 5分以上／30分×4、英呼称 FCR／S-FRR／FRR／RR／RR-FIT）の一次。「FRR-H」「FRR-L」は 0 件。Ck-2 実行便②が本文に書いた資料名の登録漏れを、本番レビュー後の是正（order 9）で補った",
       "used_in": "explainer/capacity-output-design.body・sources／R26 定型文を展開した 26 レコードの根拠"
+    },
+    {
+      "name": "Government Takes Multi-Pronged Steps to Scale Up Energy Storage Capacity in the Country",
+      "publisher": "インド政府 Press Information Bureau（Ministry of New and Renewable Energy＝新・再生可能エネルギー省）",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2222473",
+      "title_verbatim": "Press Release Page | Press Information Bureau（ページの <title> は汎用。見出しの逐語は「Government Takes Multi-Pronged Steps to Scale Up Energy Storage Capacity in the Country」・副見出し「MNRE Implements Several Proactive Measures to Facilitate PPA Signing」・「Posted On: 03 FEB 2026 1:31PM by PIB Delhi」・Release ID: 2222473）",
+      "checked_on": "2026-10-03",
+      "note": "HTTP 200（107,306 bytes）。VGF の逐語: 「In March 2024, government has approved a Viability Gap Funding (VGF) Scheme for the development of large-scale BESS, with an outlay of ₹3,760 crore for development of 13220 MWh at VGF of Rs 27 lakhs/MWh.」「In June 2025 the Government has approved another VGF scheme of 30 GWh, funded through ₹5,400 crore from the power system development fund (PSDF) at VGF of Rs 18 lakhs/MWh.」。発出は電力省ではなく新・再生可能エネルギー省（②の unconf-row21）。「2026/5/14 内閣承認」「第1弾の8倍」「累計 $1.09B」は一次に無い（Ck2d ■5 で src から外した）",
+      "used_in": "src/data/global-markets.ts（in: topPolicies・notes・overview・highlights）"
     }
   ]
 }
