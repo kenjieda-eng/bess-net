@@ -190,6 +190,9 @@ export function buildSubsidyTitle(
   const redundant = /結果|一覧|終了/.test(core) && /採択結果|受付終了/.test(label);
   if (label && !redundant && (out + ` — ${label}` + SITE_SUFFIX).length <= TITLE_MAX) {
     out += ` — ${label}`;
+  } else if (label.startsWith('公募中・') && (out + ' — 公募中' + SITE_SUFFIX).length <= TITLE_MAX) {
+    // 締切付きの長いラベル（「公募中・締切10/31」等）が入らないときは短い「公募中」で再試行（年度より状態が先・Ck2d 追補・2026-10-03）
+    out += ' — 公募中';
   }
   if (fiscal && (out + `（${fiscal}）` + SITE_SUFFIX).length <= TITLE_MAX) {
     out += `（${fiscal}）`;

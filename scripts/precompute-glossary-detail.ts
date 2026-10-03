@@ -75,25 +75,25 @@ function isGenericSubcategory(sub?: string): boolean {
 // ── 導線ブロックの旧値正規化（2026-07-06 恒久化バッチ）──────────────
 // microCMS glossary detail に焼き込まれた「関連：実データで確認」等の導線ブロックの
 // 旧値（9社6,507件・関東を除く・業界初）を build 時に現行値へ正規化する。
-// 件数は src/data/substations（/grid の真実源）から動的算出＝今後のデータ更新に自動追随。
+// 件数は /grid と同じ src/data/substations/index.json の summary（凍結除外）から読む（#121・Ck2d 追補・2026-10-03）。
+//   旧実装は県別 JSON の行を自前で数えており、凍結レコードまで数えていた（8,352・N-1 可 791。/grid は 8,345・790）。
+//   ★この precompute は prebuild で build:substations より先に走るため、読むのはディスク上の index.json
+//   （Vercel ではリポジトリにコミットされている版）。/grid（next build 時に再生成後の index.json を読む）とは、
+//   再取込や凍結の追加で件数が変わってから index.json をコミットするまでの間、何回ビルドしてもずれる
+//   （microCMS への書込ごとに webhook でビルドが走るので、再取込のたびに開く窓）。旧実装も同じ構造。
 // 完全一致の文脈付き置換のみ（「業界初心者」等の正当な本文・証券コード6507 を誤置換しない）。
-function loadGridStats(): { operators: number; total: string; n1: number } {
-  const dir = path.join(process.cwd(), 'src', 'data', 'substations');
-  const ops = new Set<string>();
-  let total = 0;
-  let n1 = 0;
-  for (const f of fs.readdirSync(dir)) {
-    if (!f.endsWith('.json')) continue;
-    const arr = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-    const items: Array<{ operator?: string; n1_eligible?: boolean }> = Array.isArray(arr) ? arr : arr.items ?? [];
-    for (const it of items) {
-      if (!it) continue;
-      total++;
-      if (it.operator) ops.add(it.operator);
-      if (it.n1_eligible === true) n1++;
-    }
+function loadGridStats(): { operators: number; total: string; n1: string } {
+  const p = path.join(process.cwd(), 'src', 'data', 'substations', 'index.json');
+  const summary = (JSON.parse(fs.readFileSync(p, 'utf8')) as {
+    summary?: { total?: number; n1_ok?: number; by_operator?: Record<string, number> };
+  }).summary;
+  if (!summary || typeof summary.total !== 'number' || typeof summary.n1_ok !== 'number' || !summary.by_operator) {
+    // 件数を黙って誤るより、ビルドを止めて気づく方を選ぶ
+    throw new Error(`[precompute-glossary-detail] ${p} の summary（total・n1_ok・by_operator）が読めません`);
   }
-  return { operators: ops.size, total: total.toLocaleString('en-US'), n1 };
+  // by_operator は operator 空のレコードを「その他」に寄せるので、社数には数えない（旧実装も空は数えていなかった）
+  const operators = Object.entries(summary.by_operator).filter(([k, n]) => k !== 'その他' && n > 0).length;
+  return { operators, total: summary.total.toLocaleString('en-US'), n1: summary.n1_ok.toLocaleString('en-US') };
 }
 
 function buildGridCtaReplacers(): Array<[string, string]> {
