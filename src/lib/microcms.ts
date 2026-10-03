@@ -33,6 +33,37 @@ export const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY,
 });
 
+// ===== offset ページングの並びを一意にする（落とし穴 #124 のページング版・Ck2d・2026-10-03） =====
+// 同着のある第一キー（term・name・-eventDate・applicationEnd・-cap_avail_mw 等）のまま offset でページングすると、
+// ページの境目でビルドごとに同じレコードが 2 回入り、代わりに 1 件抜ける（2026-09-30 /links の実害・getAllLinks）。
+// orders の無い取得も既定順に依存しない。全ページング取得の末尾に一意なキーを置く:
+//   - publishedAt は glossary・explainer・subsidies・policy-events・faq・projects・operators・links・substations で
+//     全件一意（2026-10-03 全件 GET で重複 0）→ '-publishedAt'
+//   - news だけは publishedAt が重複する（1,392 件中 190 行・同時投入）→ createdAt（全件一意）を足して
+//     '-publishedAt,-createdAt'。'-publishedAt' だけでは同着 190 組のうち 67 組しか createdAt 順にならなかった（実測）
+/** orders の末尾に publishedAt を足す（既に含むならそのまま）。getSubstationList のように呼び出し側が orders を渡す関数用 */
+function withPublishedAtTieBreak(orders: string): string {
+  return orders.split(',').some((k) => k.trim().replace(/^-/, '') === 'publishedAt') ? orders : `${orders},-publishedAt`;
+}
+
+/**
+ * 念のための重複除去（キー基準）。並びが一意なら起きないが、起きたときに同じものを 2 回出さず、ビルドのログで気づけるようにする。
+ * publishedAt が一意でない API（news）の取得で使う（Ck2d ■1）。
+ */
+function dedupeBy<T>(rows: T[], key: (r: T) => string, label: string): T[] {
+  const seen = new Set<string>();
+  const out = rows.filter((r) => {
+    const k = key(r);
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+  if (out.length !== rows.length) {
+    console.warn(`[microcms] WARN ${label}: ページングで重複 ${rows.length - out.length} 件を除去（並びの第二キーを確認）`);
+  }
+  return out;
+}
+
 // ===== 解説記事（explainer）の型定義 =====
 export type Explainer = {
   id: string;
@@ -114,7 +145,7 @@ export const getAllGlossary = async (): Promise<Glossary[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
-      queries: { limit, offset, orders: 'term' },
+      queries: { limit, offset, orders: 'term,-publishedAt' },
     });
     all.push(...data.contents);
     if (data.contents.length < limit) break;
@@ -128,7 +159,7 @@ export const getAllExplainer = async (): Promise<Explainer[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Explainer>({
       endpoint: 'explainer',
-      queries: { limit, offset },
+      queries: { limit, offset, orders: '-publishedAt' },
     });
     all.push(...data.contents);
     if (data.contents.length < limit) break;
@@ -164,7 +195,7 @@ export const getGlossaryHubList = async (): Promise<Glossary[]> => {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
       queries: {
-        limit, offset, orders: 'term',
+        limit, offset, orders: 'term,-publishedAt',
         fields: 'id,term,slug,reading,english,category,subcategory,shortDef',
       },
     });
@@ -180,7 +211,7 @@ export const getAllGlossarySlugs = async (): Promise<{ slug: string }[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
-      queries: { limit, offset, fields: 'slug' },
+      queries: { limit, offset, fields: 'slug', orders: '-publishedAt' },
     });
     slugs.push(...data.contents.map((g) => ({ slug: g.slug })));
     if (data.contents.length < limit) break;
@@ -194,7 +225,7 @@ export const getAllExplainerSlugs = async (): Promise<{ slug: string }[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Explainer>({
       endpoint: 'explainer',
-      queries: { limit, offset, fields: 'slug' },
+      queries: { limit, offset, fields: 'slug', orders: '-publishedAt' },
     });
     slugs.push(...data.contents.map((e) => ({ slug: e.slug })));
     if (data.contents.length < limit) break;
@@ -208,7 +239,7 @@ export const getGlossaryTermSlugMap = async (): Promise<Map<string, string>> => 
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Glossary>({
       endpoint: 'glossary',
-      queries: { limit, offset, fields: 'term,slug,english' },
+      queries: { limit, offset, fields: 'term,slug,english', orders: '-publishedAt' },
     });
     for (const g of data.contents) {
       map.set(g.term, g.slug);
@@ -251,7 +282,7 @@ export const getAllSubsidies = async (): Promise<Subsidy[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Subsidy>({
       endpoint: 'subsidies',
-      queries: { limit, offset, orders: 'applicationEnd' },
+      queries: { limit, offset, orders: 'applicationEnd,-publishedAt' },
     });
     all.push(...data.contents);
     if (data.contents.length < limit) break;
@@ -280,7 +311,7 @@ export const getAllSubsidySlugs = async (): Promise<{ slug: string }[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Subsidy>({
       endpoint: 'subsidies',
-      queries: { limit, offset, fields: 'slug' },
+      queries: { limit, offset, fields: 'slug', orders: '-publishedAt' },
     });
     slugs.push(...data.contents.map((s) => ({ slug: s.slug })));
     if (data.contents.length < limit) break;
@@ -379,7 +410,7 @@ const getAllEventsRaw = async (): Promise<PolicyEvent[]> => {
       for (let offset = 0; offset < 500; offset += limit) {
         const data = await client.getList<PolicyEvent>({
           endpoint: 'policy-events',
-          queries: { limit, offset, orders: '-eventDate' },
+          queries: { limit, offset, orders: '-eventDate,-publishedAt' },
         });
         all.push(...data.contents);
         if (data.contents.length < limit) break;
@@ -594,6 +625,7 @@ export const getAllProjectsWithCoords = async (): Promise<
           limit,
           offset,
           fields: PROJECT_GEO_FIELDS,
+          orders: '-publishedAt',
         },
       });
       for (const p of data.contents) {
@@ -647,6 +679,7 @@ export const getAllSubstationsWithCoords = async (): Promise<
           limit,
           offset,
           fields: SUBSTATION_MAP_FIELDS,
+          orders: '-publishedAt',
         },
       });
       for (const s of data.contents) {
@@ -724,7 +757,7 @@ export const getAllProjectSlugs = async (): Promise<{ slug: string }[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Project>({
       endpoint: 'projects',
-      queries: { limit, offset, fields: 'slug' },
+      queries: { limit, offset, fields: 'slug', orders: '-publishedAt' },
     });
     slugs.push(...data.contents.map((p) => ({ slug: p.slug })));
     if (data.contents.length < limit) break;
@@ -767,14 +800,14 @@ export const getAllNews = async (): Promise<News[]> => {
       queries: {
         limit,
         offset,
-        orders: '-publishedAt',
+        orders: '-publishedAt,-createdAt',
         fields: NEWS_LIST_FIELDS,
       },
     });
     all.push(...data.contents);
     if (data.contents.length < limit) break;
   }
-  return all;
+  return dedupeBy(all, (n) => n.id, 'getAllNews');
 };
 
 export const getNewsBySlug = async (slug: string): Promise<News | null> => {
@@ -796,12 +829,12 @@ export const getAllNewsSlugs = async (): Promise<{ slug: string }[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<News>({
       endpoint: 'news',
-      queries: { limit, offset, fields: 'slug' },
+      queries: { limit, offset, fields: 'slug', orders: '-publishedAt,-createdAt' },
     });
     slugs.push(...data.contents.map((n) => ({ slug: n.slug })));
     if (data.contents.length < limit) break;
   }
-  return slugs;
+  return dedupeBy(slugs, (n) => n.slug, 'getAllNewsSlugs');
 };
 
 // =================================================================
@@ -914,7 +947,7 @@ export const getAllOperators = async (): Promise<Operator[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Operator>({
       endpoint: 'operators',
-      queries: { limit, offset, orders: 'name' },
+      queries: { limit, offset, orders: 'name,-publishedAt' },
     });
     all.push(...data.contents);
     if (data.contents.length < limit) break;
@@ -957,7 +990,7 @@ export const getAllOperatorSlugs = async (): Promise<{ slug: string }[]> => {
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<Operator>({
       endpoint: 'operators',
-      queries: { limit, offset, fields: 'slug' },
+      queries: { limit, offset, fields: 'slug', orders: '-publishedAt' },
     });
     slugs.push(...data.contents.map((o) => ({ slug: o.slug })));
     if (data.contents.length < limit) break;
@@ -996,7 +1029,7 @@ export const getGlossaryLiteList = async (): Promise<TermLite[]> => {
     for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
       const data = await client.getList<Glossary>({
         endpoint: 'glossary',
-        queries: { limit, offset, fields: 'term,slug,english' },
+        queries: { limit, offset, fields: 'term,slug,english', orders: '-publishedAt' },
       });
       all.push(
         ...data.contents.map((g) => ({
@@ -1504,7 +1537,7 @@ export const getSubstationList = async (
     limit: opts.limit ?? 100,
     offset: opts.offset ?? 0,
     fields: opts.fields ?? SUBSTATION_LIST_FIELDS,
-    orders: opts.orders ?? 'name',
+    orders: withPublishedAtTieBreak(opts.orders ?? 'name'),
   };
   const filters: string[] = [];
   if (opts.area) filters.push(`area[contains]${opts.area}`);
@@ -1576,7 +1609,7 @@ export const getAllSubstationSlugs = async (): Promise<{ slug: string }[]> => {
     try {
       const data = await client.getList<Substation>({
         endpoint: 'substations',
-        queries: { limit, offset, fields: 'slug' },
+        queries: { limit, offset, fields: 'slug', orders: '-publishedAt' },
       });
       slugs.push(...data.contents.map((s) => ({ slug: s.slug })));
       if (data.contents.length < limit) break;
@@ -1606,7 +1639,7 @@ export const getSubstationSlugsWithCoords = async (): Promise<
     try {
       const data = await client.getList<Substation>({
         endpoint: 'substations',
-        queries: { limit, offset, fields: 'slug,latitude,longitude' },
+        queries: { limit, offset, fields: 'slug,latitude,longitude', orders: '-publishedAt' },
       });
       for (const s of data.contents) {
         if (
@@ -1705,7 +1738,7 @@ export const getChubuSubstationsForMap = async (): Promise<
           offset,
           fields: SUBSTATION_MAP_FIELDS,
           filters: 'area[contains]中部',
-          orders: 'name',
+          orders: 'name,-publishedAt',
         },
       });
       all.push(...data.contents);
@@ -1804,7 +1837,7 @@ export const searchSubstationsByName = async (
           offset,
           filters: `name[contains]${q}`,
           fields: SUBSTATION_SEARCH_FIELDS,
-          orders: '-cap_avail_mw',
+          orders: '-cap_avail_mw,-publishedAt',
         },
       });
       for (const c of data.contents) {
@@ -1917,7 +1950,7 @@ export const searchSubstationsByFilters = async (
   const all: SubstationSearchResult[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
   // n1=true のときは n1_capacity_mw 降順、それ以外は cap_avail_mw 降順
-  const orderBy = wantN1 ? '-n1_capacity_mw' : '-cap_avail_mw';
+  const orderBy = wantN1 ? '-n1_capacity_mw,-publishedAt' : '-cap_avail_mw,-publishedAt';
   let totalCount = 0;
   let failed = false;
 
@@ -1995,7 +2028,7 @@ const fetchSubstationInventory = async (): Promise<SubstationInventoryRow[]> => 
     try {
       const data = await client.getList<SubstationInventoryRow>({
         endpoint: 'substations',
-        queries: { limit, offset, fields: INVENTORY_FIELDS },
+        queries: { limit, offset, fields: INVENTORY_FIELDS, orders: '-publishedAt' },
       });
       all.push(...data.contents);
       if (data.contents.length < limit) break;
@@ -2110,7 +2143,7 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
     for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
       const data = await client.getList<Operator>({
         endpoint: 'operators',
-        queries: { limit, offset, fields: 'slug,name,aliases' },
+        queries: { limit, offset, fields: 'slug,name,aliases', orders: '-publishedAt' },
       });
       for (const o of data.contents) {
         const name = (o.name || '').trim();
@@ -2188,7 +2221,7 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
     for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
       const data = await client.getList<Project>({
         endpoint: 'projects',
-        queries: { limit, offset, fields: 'slug,name' },
+        queries: { limit, offset, fields: 'slug,name', orders: '-publishedAt' },
       });
       for (const p of data.contents) {
         const name = (p.name || '').trim();
@@ -2285,7 +2318,7 @@ export const getSubstationsByPrefecture = async (
           offset,
           filters: filterExpr,
           fields: SEARCH_FILTER_FIELDS,
-          orders: '-cap_avail_mw',
+          orders: '-cap_avail_mw,-publishedAt',
         },
       });
       for (const c of data.contents) {
