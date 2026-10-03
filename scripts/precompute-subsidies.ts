@@ -217,14 +217,22 @@ function parseDeadline(s: string): DeadlineInfo {
   if (/随時|通年|オープン|常時/.test(raw)) {
     return { is_rolling: true, raw };
   }
+  // 「延長」「⇒」を含む raw だけは、最後の日付（延長後の締切）を採る。それ以外は従来どおり最初の日付
+  // （二次募集の括弧書きなど、最後の日付が締切とは限らない raw があるので全面的には変えない・Ck2d ■4・2026-10-03。
+  //   例: 山梨「令和８年６月３０日(火) ⇒令和８年７月３１日(金)までに延長」→ 7/31）
+  const takeLast = /延長|⇒/.test(raw);
+  const pick = (re: RegExp): RegExpMatchArray | null => {
+    const all = [...raw.matchAll(new RegExp(re.source, 'g'))];
+    return all.length === 0 ? null : takeLast ? all[all.length - 1] : all[0];
+  };
   // YYYY-MM-DD or YYYY/MM/DD
-  let m = raw.match(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
+  let m = pick(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
   if (m) {
     const iso = `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`;
     return { is_rolling: false, deadline_iso: iso, raw };
   }
   // YYYY年MM月 (DD なし) → 月末扱い
-  m = raw.match(/(\d{4})年(\d{1,2})月(?:(\d{1,2})日)?/);
+  m = pick(/(\d{4})年(\d{1,2})月(?:(\d{1,2})日)?/);
   if (m) {
     const year = parseInt(m[1]);
     const month = parseInt(m[2]);
