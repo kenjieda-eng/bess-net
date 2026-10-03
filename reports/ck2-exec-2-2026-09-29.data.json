@@ -2065,8 +2065,8 @@
      }
     ],
     "expect_final": {
-     "body": "2d51ac7f0d6ac9ff",
-     "sources": "1a5659f22016e6c7"
+     "body": "92f85a5500d268e4",
+     "sources": "2399fe4fcc3d73bb"
     }
    },
    {
@@ -5747,7 +5747,7 @@
    "policy-events/meti-stable-supply-wg4-balancing-cap-2026-07"
   ]
  },
- "expect_final_note": "expect_final は 2026-09-29 の適用完了後（誤適用 3 件の復元後）に GET した各フィールドの正規化テキストの sha256 先頭 16 桁。applier の再実行は、これと一致するレコードを skip する（op 単位の判定だけでは重複段落の切除 op が再実行で二度当たるため）",
+ "expect_final_note": "expect_final は 2026-09-29 の適用完了後（誤適用 3 件の復元後）に GET した各フィールドの正規化テキストの sha256 先頭 16 桁。applier の再実行は、これと一致するレコードを skip する（op 単位の判定だけでは重複段落の切除 op が再実行で二度当たるため） ／ 2026-10-03（Ck2d）: explainer/lcoe-and-bess-economics は 10/2 の ATB2025 追随便が sources・body を PATCH したため、その後の値で更新（②の op の old は ATB 前の文字列なので op 単位では中止になる＝書込はしない）",
  "results": {
   "applied_on": {
    "orders_1_8": "2026-09-29",
