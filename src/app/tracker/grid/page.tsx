@@ -75,7 +75,7 @@ export default async function GridTrackerPage() {
           <h1 className="section-title">系統トラッカー (変電所空き容量)</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             変電所空き容量データの最新更新を<strong>タイムライン</strong>表示。
-            全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{substations.length}</span> 件、 last_updated 降順。
+            全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{substations.length.toLocaleString('en-US')}</span> 件、 last_updated 降順。
           </p>
           <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 24 }}>
             データ更新は 1 時間ごと (ISR)。全件は <Link href="/grid">系統空き容量</Link>、地図検索は <Link href="/grid/chubu/map">中部マップ</Link> から。

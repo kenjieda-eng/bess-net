@@ -15,6 +15,8 @@ export type Report2026BodyProps = {
   operatorCount: number;
   subsidyCount: number;
   substationCount: number;
+  /** 収録している送配電エリアの数（index.json summary.by_area_slug から・Ck2f ■4。旧「9」の焼き込み） */
+  substationAreaCount: number;
   statusMap: Record<string, number>;
   topPrefs: Array<[string, number]>;
   playersCount: number;
@@ -36,7 +38,7 @@ function n(v: number): string { return v.toLocaleString(); }
 
 export default function Report2026Body(props: Report2026BodyProps) {
   const {
-    projectCount, totalMW, totalMWh, operatorCount, subsidyCount, substationCount,
+    projectCount, totalMW, totalMWh, operatorCount, subsidyCount, substationCount, substationAreaCount,
     statusMap, topPrefs, playersCount, relationsCount, categoryCount, globalTotal2025, globalTotal2030,
   } = props;
   const st = (k: string) => statusMap[k] ?? 0;
@@ -136,9 +138,9 @@ export default function Report2026Body(props: Report2026BodyProps) {
 
       {/* 5. 系統データ */}
       <section>
-        <h2 style={H2}>5. 系統データ ── 9エリア別 空き容量 / N-1電制 / ノンファーム</h2>
+        <h2 style={H2}>5. 系統データ ── {substationAreaCount}エリア別 空き容量 / N-1電制 / ノンファーム</h2>
         <p style={P}>
-          立地選定の出発点は「系統に繋げるか」である。当サイトは9送配電エリア<strong>{n(substationCount)}変電所</strong>の系統空き容量・運用容量・予想潮流・N-1電制適用可否・ノンファーム接続可否を収録する、当サイト独自の統合データベースを提供している（関東＝東京電力パワーグリッドは系統情報公開停止の経緯があり、代替アクセスの解説を別途用意）。
+          立地選定の出発点は「系統に繋げるか」である。当サイトは{substationAreaCount}送配電エリア<strong>{n(substationCount)}変電所</strong>の系統空き容量・運用容量・予想潮流・N-1電制適用可否・ノンファーム接続可否を収録する、当サイト独自の統合データベースを提供している（関東＝東京電力パワーグリッドは2026年2月2日に系統情報の公開を停止し、6月2日の公開再開を受けて当サイトも2026年6月に収録。停止中の代替アクセスの解説は別途用意）。
         </p>
         <p style={P}>
           <strong>分析（編集部）</strong>：実務では「空き容量ゼロ」でも諦める必要はない。N-1電制（送電線1回線故障時に瞬時に出力を制御する前提で接続枠を拡大）やノンファーム接続（混雑時の出力抑制を受け入れる代わりに接続）を使えば、逼迫エリアでも連系余地が生まれる。再エネ集積エリアほど空き容量は逼迫するため、変電所単位での空き容量・N-1電制可否の確認が、立地戦略の巧拙を直接左右する。

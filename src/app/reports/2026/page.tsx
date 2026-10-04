@@ -17,8 +17,8 @@ import {
   getAllOperators,
   getAllProjects,
   getAllSubsidies,
-  getAllSubstations,
 } from '@/lib/microcms';
+import substationsIndex from '@/data/substations/index.json';
 import { isListExcludedProject } from '@/lib/projects-excluded';
 import { GLOBAL_MARKETS, COUNTRY_ORDER } from '@/data/global-markets';
 import { PLAYERS, RELATIONS, CATEGORY_LABELS } from '@/data/industry-map';
@@ -42,12 +42,19 @@ const safeFetch = async <T,>(fn: () => Promise<T[]>): Promise<T[]> => {
   try { return await fn(); } catch { return []; }
 };
 
+// Ck2f ■4（2026-10-04）: 変電所の件数とエリア数は /grid と同じ index.json の summary から（#121・凍結除外）。
+// 以前は runtime の getAllSubstations()（microCMS 約 84 リクエスト）で件数だけを数え、エリア数は「9」を焼き込んでいた。
+// エリア数は収録データにある送配電エリアの数（2026-10 時点で 北海道〜沖縄の 10。東京電力PG は 2026年6月から収録）。
+const SUBSTATION_SUMMARY = (substationsIndex as unknown as {
+  summary: { total: number; by_area_slug: Record<string, number> };
+}).summary;
+const SUBSTATION_AREA_COUNT = Object.values(SUBSTATION_SUMMARY.by_area_slug).filter((n) => n > 0).length;
+
 export default async function Report2026Page() {
-  const [operators, projectsRaw, subsidies, substations] = await Promise.all([
+  const [operators, projectsRaw, subsidies] = await Promise.all([
     safeFetch(getAllOperators),
     safeFetch(getAllProjects),
     safeFetch(getAllSubsidies),
-    safeFetch(() => getAllSubstations()),
   ]);
 
   // /projects 表示と同じ除外（非プロジェクト8＋301重複元8）を適用してから集計する。
@@ -59,7 +66,7 @@ export default async function Report2026Page() {
   const operatorCount = operators.filter((o) => !isExcludedOperator(o.slug)).length;
   const projectCount = projects.length;
   const subsidyCount = subsidies.length;
-  const substationCount = substations.length;
+  const substationCount = SUBSTATION_SUMMARY.total;
 
   // プロジェクト集計
   const totalMW = projects.reduce((sum, p) => sum + (p.outputMw ?? 0), 0);
@@ -131,7 +138,7 @@ export default async function Report2026Page() {
               <li>市場概況: 国内累積導入量、年次推移、地域偏在</li>
               <li>政策・制度: 容量市場、長期脱炭素電源オークション、需給調整市場</li>
               <li>主要プレイヤー: デベロッパー / EPC / セル / PCS / EMS / 電力</li>
-              <li>系統データ: 9送配電エリア別 空き容量 / N-1電制 / ノンファーム</li>
+              <li>系統データ: {SUBSTATION_AREA_COUNT}送配電エリア別 空き容量 / N-1電制 / ノンファーム</li>
               <li>補助金・公募動向: SII / NEDO / 経産省 / 自治体</li>
               <li>火災・トラブル事例: 国内外の代表事例と教訓</li>
               <li>海外比較: 米国 / EU / 中国 / インド / 豪州</li>
@@ -149,7 +156,7 @@ export default async function Report2026Page() {
               <Stat label="累積出力" value={`${totalMW.toLocaleString()} MW`} sub="登録分のみ" />
               <Stat label="累積容量" value={`${totalMWh.toLocaleString()} MWh`} sub="登録分のみ" />
               <Stat label="補助金" value={`${subsidyCount} 件`} sub="補助金一覧" />
-              <Stat label="変電所" value={`${substationCount.toLocaleString()} 件`} sub="9送配電エリア" />
+              <Stat label="変電所" value={`${substationCount.toLocaleString()} 件`} sub={`${SUBSTATION_AREA_COUNT}送配電エリア`} />
             </div>
           </section>
 
@@ -268,6 +275,7 @@ export default async function Report2026Page() {
             operatorCount={operatorCount}
             subsidyCount={subsidyCount}
             substationCount={substationCount}
+            substationAreaCount={SUBSTATION_AREA_COUNT}
             statusMap={projectsByStatus}
             topPrefs={topPrefs}
             playersCount={PLAYERS.length}
