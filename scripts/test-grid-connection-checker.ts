@@ -159,10 +159,18 @@ const subs: LiteSubstation[] = [
   assert('スコア降順', ordered);
 }
 
-// Test 12: total_in_prefecture = 入力件数
+// Test 12: total_in_prefecture = 入力件数（凍結が無いとき）
 {
   const r = diagnoseGridConnection(INPUT_TOKYO, subs, 5);
   assert(`total_in_prefecture = ${subs.length}`, r.total_in_prefecture === subs.length);
+}
+
+// Test 12b: 凍結変電所は total_in_prefecture にも数えない（Ck2f ■3・候補と同じ母数）
+{
+  const withFrozen = [...subs, { ...SAMPLE_SUB, id: 'tpg-1623', slug: 'tpg-1623', name: '湯船', latitude: null, longitude: null, cap_avail_mw: 999 }];
+  const r = diagnoseGridConnection(INPUT_TOKYO, withFrozen, 5);
+  assert(`凍結込み ${withFrozen.length} 件の入力で total_in_prefecture = ${subs.length}`, r.total_in_prefecture === subs.length);
+  assert('凍結変電所は候補に出ない', r.candidates.every((c) => c.substation.slug !== 'tpg-1623'));
 }
 
 // Test 13: 座標なし substation は distance_km = null

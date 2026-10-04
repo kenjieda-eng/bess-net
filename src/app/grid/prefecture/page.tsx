@@ -5,11 +5,17 @@ import { AREA_META } from '../[slug]/area-meta';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getPrefectureCountMap } from '@/lib/microcms';
+import substationsIndex from '@/data/substations/index.json';
 import { KANSAI_PREFECTURES } from '@/lib/grid-prefecture';
 import { siteConfig } from '@/lib/site-config';
 
 export const revalidate = 3600;
+
+// Ck2f ■3（2026-10-04）: 県別の件数と関西の件数は /grid・県ページと同じ index.json の summary から（凍結除外・#121）。
+// 以前は runtime に microCMS の inventory（約 84 リクエスト・凍結込み）を数えており、静岡県が一覧 252・県ページ 251 と食い違っていた。
+const SUMMARY = (substationsIndex as unknown as {
+  summary: { by_prefecture: Record<string, number>; by_area_slug: Record<string, number> };
+}).summary;
 
 export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）
@@ -24,9 +30,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PrefectureIndexPage() {
-  const map = await getPrefectureCountMap();
-  const sorted = Object.entries(map).sort((a, b) => b[1] - a[1]);
+export default function PrefectureIndexPage() {
+  // 件数の多い順。同数は県名で決める（並びを取得順に依存させない・#124）
+  const sorted = Object.entries(SUMMARY.by_prefecture).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ja'));
   const total = sorted.reduce((acc, [, n]) => acc + n, 0);
 
   const breadcrumbJsonLd = {
@@ -74,7 +80,7 @@ export default async function PrefectureIndexPage() {
           <p className="grid-source-note" style={{ margin: '-8px 0 16px' }}>
             {Array.from(KANSAI_PREFECTURES).join('・')}
             は、関西電力送配電の公表データに変電所の府県の記載がないため個別ページがありません。{' '}
-            <Link href="/grid/kansai">関西エリアの一覧（変電所1,624件）へ</Link>
+            <Link href="/grid/kansai">関西エリアの一覧（変電所{(SUMMARY.by_area_slug.kansai ?? 0).toLocaleString('en-US')}件）へ</Link>
           </p>
 
           <section className="grid-section">

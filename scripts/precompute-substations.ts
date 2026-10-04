@@ -210,6 +210,17 @@ async function main(): Promise<void> {
     }
   }
 
+  // Ck2f ■3（2026-10-04）: 県別の件数は凍結除外で、ここ 1 か所から数える（#121）。
+  // by_pref（連系チェッカーのプルダウン）・pref_meta.count（県ページの title/description）・summary.by_prefecture（/grid）
+  // が同じ値になる。以前は by_pref・pref_meta.count が県別 JSON の行数（凍結込み）で、
+  // 静岡県で meta「252件」と h1「251件」が同じページに並んでいた。県別 JSON 自体は凍結も含めて書き出す（URL 保全）。
+  const activePrefCount: Record<string, number> = {};
+  for (const s of all) {
+    if (FROZEN_SUBSTATION_SLUGS.has(s.slug)) continue;
+    const key = prefSlug(s.prefecture);
+    activePrefCount[key] = (activePrefCount[key] ?? 0) + 1;
+  }
+
   // index.json: メタ + by_pref 集計
   // Gr2是正(2026-08-08): エリア別のデータ基準日を集計してデータ側から供給する。
   // last_updated = 各社の公表時点 / fetched_at = 当サイトの取込日。
@@ -245,6 +256,7 @@ async function main(): Promise<void> {
   const prefAreaCount: Record<string, Record<string, number>> = {};
   const prefOperatorCount: Record<string, Record<string, number>> = {};
   for (const s of all) {
+    if (FROZEN_SUBSTATION_SLUGS.has(s.slug)) continue; // Ck2f ■3: 件数と同じく凍結は数えない
     const pref = s.prefecture || 'unknown';
     if (s.area) {
       const a = (prefAreaCount[pref] ??= {});
@@ -260,9 +272,9 @@ async function main(): Promise<void> {
       .sort((a, b) => b[1] - a[1])
       .map(([k]) => k);
   const prefMeta: Record<string, { count: number; areas: string[]; operators: string[] }> = {};
-  for (const [pref, count] of Object.entries(byPrefCount)) {
+  for (const pref of Object.keys(byPrefCount)) {
     prefMeta[pref] = {
-      count: count as number,
+      count: activePrefCount[pref] ?? 0,
       areas: sortedKeys(prefAreaCount[pref]),
       operators: sortedKeys(prefOperatorCount[pref]),
     };
@@ -316,7 +328,6 @@ async function main(): Promise<void> {
   const byVoltage: Record<string, number> = {};
   const byOperator: Record<string, number> = {};
   const byAreaSlug: Record<string, number> = {};
-  const byPrefActive: Record<string, number> = {};
   let availPositive = 0;
   let n1Ok = 0;
   let n1Undetermined = 0;
@@ -329,7 +340,6 @@ async function main(): Promise<void> {
     byOperator[op] = (byOperator[op] ?? 0) + 1;
     const aSlug = s.area ? AREA_JP_TO_SLUG[s.area] : undefined;
     if (aSlug) byAreaSlug[aSlug] = (byAreaSlug[aSlug] ?? 0) + 1;
-    if (s.prefecture) byPrefActive[s.prefecture] = (byPrefActive[s.prefecture] ?? 0) + 1;
     if (typeof s.cap_avail_mw === 'number' && s.cap_avail_mw > 0) availPositive++;
     if (s.n1_eligible === true) n1Ok++;
     if (s.n1_status === 'undetermined') n1Undetermined++;
@@ -400,7 +410,8 @@ async function main(): Promise<void> {
       by_voltage: byVoltage,
       by_operator: byOperator,
       by_area_slug: byAreaSlug,
-      by_prefecture: byPrefActive,
+      // Ck2f ■3: 県が確定しているものだけ（'unknown' を除く）。by_pref・pref_meta.count と同じ activePrefCount から
+      by_prefecture: Object.fromEntries(Object.entries(activePrefCount).filter(([k]) => k !== 'unknown')),
       highlights,
     },
     area_top: areaTop,
@@ -409,7 +420,8 @@ async function main(): Promise<void> {
     pref_top: prefTop,
     with_coords: withCoords,
     without_coords: withoutCoords,
-    by_pref: byPrefCount,
+    // Ck2f ■3: 件数は凍結除外（キーは県別 JSON と同じ＝ファイル名。凍結だけの県があっても 0 で残す）
+    by_pref: Object.fromEntries(Object.keys(byPrefCount).map((k) => [k, activePrefCount[k] ?? 0])),
     sizes_bytes: byPrefSize,
     total_size_kb: Math.round(totalSize / 1024),
     max_pref_size_kb: Math.round(maxSize / 1024),

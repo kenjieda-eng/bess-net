@@ -39,6 +39,11 @@ type IndexType = {
 };
 const INDEX = substationsIndex as IndexType;
 
+// Ck2f ■3: 県が空のレコード（県別 JSON の unknown）の表示名。プルダウンと CSV で同じ表記にする
+function prefLabel(pref: string): string {
+  return pref === 'unknown' ? '県不明' : pref;
+}
+
 const PREF_OPTIONS = Object.entries(INDEX.by_pref)
   .sort((a, b) => b[1] - a[1])
   .map(([pref, count]) => ({ pref, count }));
@@ -79,7 +84,7 @@ function buildCsv(input: DiagnosisInput, result: DiagnosisResult): string {
   lines.push(`# 生成日時: ${new Date().toISOString()}`);
   lines.push('');
   lines.push('## 入力条件');
-  lines.push(`都道府県,${input.prefecture}`);
+  lines.push(`都道府県,${prefLabel(input.prefecture)}`);
   if (input.latitude !== undefined && input.longitude !== undefined) {
     lines.push(`緯度,${input.latitude}`);
     lines.push(`経度,${input.longitude}`);
@@ -294,7 +299,8 @@ export default function GridConnectionChecker() {
             >
               {PREF_OPTIONS.map(({ pref, count }) => (
                 <option key={pref} value={pref}>
-                  {pref} ({count.toLocaleString()} 件)
+                  {/* Ck2f ■3: 県が空のレコード（県別 JSON の unknown）は隠さず「県不明」と表示。件数は凍結除外（index.json の by_pref） */}
+                  {prefLabel(pref)} ({count.toLocaleString()} 件)
                 </option>
               ))}
             </select>

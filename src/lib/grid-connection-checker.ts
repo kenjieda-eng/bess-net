@@ -278,7 +278,8 @@ export function diagnoseGridConnection(
     candidates,
     recommendation,
     recommendation_label,
-    total_in_prefecture: substations.length,
+    // Ck2f ■3（2026-10-04）: 凍結除外後の件数（候補と同じ母数・プルダウンの件数＝index.json by_pref と一致）
+    total_in_prefecture: active.length,
     notes,
   };
 }
