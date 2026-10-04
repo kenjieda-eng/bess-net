@@ -77,10 +77,9 @@ function isGenericSubcategory(sub?: string): boolean {
 // 旧値（9社6,507件・関東を除く・業界初）を build 時に現行値へ正規化する。
 // 件数は /grid と同じ src/data/substations/index.json の summary（凍結除外）から読む（#121・Ck2d 追補・2026-10-03）。
 //   旧実装は県別 JSON の行を自前で数えており、凍結レコードまで数えていた（8,352・N-1 可 791。/grid は 8,345・790）。
-//   ★この precompute は prebuild で build:substations より先に走るため、読むのはディスク上の index.json
-//   （Vercel ではリポジトリにコミットされている版）。/grid（next build 時に再生成後の index.json を読む）とは、
-//   再取込や凍結の追加で件数が変わってから index.json をコミットするまでの間、何回ビルドしてもずれる
-//   （microCMS への書込ごとに webhook でビルドが走るので、再取込のたびに開く窓）。旧実装も同じ構造。
+//   ★prebuild では build:substations の**後**に走る（Ck2f ■2・2026-10-04 に順序を入替）。同じビルドで作り直した
+//   index.json を読むので、/grid と件数が一致する。以前は先に走っており、Vercel ではコミット済みの旧 index.json を
+//   読んでいた（再取込から index.json のコミットまで何回ビルドしてもずれた）。順序を戻さないこと。
 // 完全一致の文脈付き置換のみ（「業界初心者」等の正当な本文・証券コード6507 を誤置換しない）。
 function loadGridStats(): { operators: number; total: string; n1: string } {
   const p = path.join(process.cwd(), 'src', 'data', 'substations', 'index.json');
@@ -93,6 +92,13 @@ function loadGridStats(): { operators: number; total: string; n1: string } {
   }
   // by_operator は operator 空のレコードを「その他」に寄せるので、社数には数えない（旧実装も空は数えていなかった）
   const operators = Object.entries(summary.by_operator).filter(([k, n]) => k !== 'その他' && n > 0).length;
+  // Ck2f ■2: 同じビルドで build:substations が書いた index.json を読んだかをログで確かめられるようにする。
+  // prebuild の開始の印（verify-generated-present.ts --mark）より古ければ、順序が戻った合図として WARN（手動の単独実行もあるので止めない）
+  const updatedAt = (JSON.parse(fs.readFileSync(p, 'utf8')) as { updated_at?: string }).updated_at ?? '(なし)';
+  const mark = path.join(process.cwd(), 'src', 'lib', 'generated', '.prebuild-started');
+  const stale = fs.existsSync(mark) && fs.statSync(p).mtimeMs < fs.statSync(mark).mtimeMs;
+  console.log(`[precompute-glossary-detail] index.json summary: total ${summary.total}・n1_ok ${summary.n1_ok}・社数 ${operators}（updated_at ${updatedAt}）`);
+  if (stale) console.warn('[precompute-glossary-detail] WARN index.json がこの prebuild より前の版です（build:substations の後に走っているか確認）');
   return { operators, total: summary.total.toLocaleString('en-US'), n1: summary.n1_ok.toLocaleString('en-US') };
 }
 
