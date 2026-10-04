@@ -5,7 +5,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig, LV_NAV_LAUNCH_DATE } from '@/lib/site-config';
-import { getExplainerList, getGlossaryList, getIndustryNews, getSubstationList, getAllPolicyEvents, type PolicyEvent } from '@/lib/microcms';
+import { getExplainerList, getGlossaryList, getIndustryNews, getAllPolicyEvents, type PolicyEvent } from '@/lib/microcms';
 import { EXPLAINER_EXCLUDED_SLUGS, isExcludedExplainer } from '@/lib/explainer-excluded';
 import {
   POLICY_DETAIL_SLUG_SET,
@@ -20,8 +20,9 @@ import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults'
 
 export const revalidate = 60;
 
-// ローカル JSON（変電所 total は microCMS 失敗時のフォールバック、with_coords は中部マップ箇所数）
-const SUBSTATION_INDEX = substationsIndex as { total: number; with_coords: number };
+// ローカル JSON（変電所件数は summary.total＝/grid と同じ真実源・凍結除外、with_coords は中部マップ箇所数）
+// Ck2f ■1（2026-10-04）: 旧実装は runtime に microCMS の totalCount（凍結込み 8,352）を取っており /grid（8,345）と食い違っていた（#121）
+const SUBSTATION_INDEX = substationsIndex as unknown as { with_coords: number; summary: { total: number } };
 
 // セクション4「データベースとツール」前面カード5枚（GA4 利用順・tools分析2026-07-09 準拠）
 // 説明文は旧「9機能」カードの文言を継承（変電所数は動的挿入）
@@ -78,13 +79,12 @@ export default async function Home() {
     try { return await fn(); } catch { return fallback; }
   };
 
-  const [explainerData, glossaryNew, glossaryTotal, industryNewsAll, substationsCount, policyEventsAll] = await Promise.all([
+  const [explainerData, glossaryNew, glossaryTotal, industryNewsAll, policyEventsAll] = await Promise.all([
     // Ck-1b ■6: 非表示の記事（explainer-excluded）を新着 6 本に混ぜないよう 7 件取って除外後に 6 本へ
     getExplainerList({ limit: 7, orders: '-publishedAt' }),
     getGlossaryList({ limit: 10, orders: '-publishedAt' }),
     getGlossaryList({ limit: 1, fields: 'id' }),
     safeFetch(() => getIndustryNews(), [] as any[]),
-    safeFetch(async () => (await getSubstationList({ limit: 0, fields: 'id' })).totalCount, 0),
     safeFetch(() => getAllPolicyEvents(), [] as PolicyEvent[]),
   ]);
   // 直近の制度スケジュール（本日以降JST・60日以内・日付昇順・最大3件。0件時は小ブロック非表示）
@@ -99,8 +99,8 @@ export default async function Home() {
     })
     .sort((a, b) => (a.eventDate < b.eventDate ? -1 : 1))
     .slice(0, 3);
-  // 変電所件数: microCMS totalCount（失敗時はローカル INDEX.total、リテラル焼き込みなし）
-  const substationsCountStr = (substationsCount > 0 ? substationsCount : SUBSTATION_INDEX.total).toLocaleString('en-US');
+  // 変電所件数: index.json の summary.total（/grid と同じ・凍結除外・リテラル焼き込みなし・runtime microCMS 0）
+  const substationsCountStr = SUBSTATION_INDEX.summary.total.toLocaleString('en-US');
   // 中部マップ箇所数: 緯度経度付き件数（現状 中部のみ座標収録＝INDEX.with_coords）
   const chubuCountStr = SUBSTATION_INDEX.with_coords.toLocaleString('en-US');
   // 業界ニュース最新3本（編集部=お知らせは除外済み）
