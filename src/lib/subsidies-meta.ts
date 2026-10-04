@@ -27,6 +27,12 @@ export type SubsidyDateFacts = {
   is_rolling?: boolean;
   /** 原文の締切表記。deadline_iso が「月末」等からの丸めかを判定するために使う */
   deadline_raw?: string | null;
+  /**
+   * 期日を一切持たない紹介ページか（hasNoSchedule の結果・Ck2f ■5・2026-10-04）。
+   * 詳細ページの factsFor で 1 回だけ決め、状態バッジ・title・description が同じ値を見る（#121）。
+   * 真なら statusLabel は空文字（「随時〜事業により異なる」に「公募中」を付けない・Gr10-⑤）。
+   */
+  no_schedule?: boolean;
 };
 
 /**
@@ -152,6 +158,9 @@ type SubstationLikeFacts = Pick<SubsidyDateFacts, 'deadline_iso' | 'start_iso'>;
 
 /** 状態ラベル（title に載せる短い形）。載せない場合は空文字。 */
 export function statusLabel(item: SubsidyDateFacts, todayISO: string): string {
+  // Ck2f ■5: 本文で状態バッジを出さないレコード（期日なしの紹介ページ）は、title・description にも状態を出さない。
+  // 本文のバッジは状態の種類を問わず消しているので、受付終了・採択結果もここで出さない（2026-10-04 時点で該当 0 件）
+  if (item.no_schedule) return '';
   const st = deriveSubsidyStatus(item, todayISO);
   if (st === '公募中') {
     if (!item.is_rolling && item.deadline_iso && item.deadline_iso >= todayISO) {

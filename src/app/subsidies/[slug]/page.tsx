@@ -39,8 +39,13 @@ const DATE_FACTS: Record<string, SubsidyDateFacts> = Object.fromEntries(
   ])
 );
 
-function factsFor(slug: string, raw: { status?: string[] }): SubsidyDateFacts {
-  return DATE_FACTS[slug] ?? { status: raw.status ?? [], deadline_iso: null, start_iso: null, is_rolling: false };
+function factsFor(
+  slug: string,
+  raw: { status?: string[]; applicationStart?: string; deadline?: string }
+): SubsidyDateFacts {
+  const f = DATE_FACTS[slug] ?? { status: raw.status ?? [], deadline_iso: null, start_iso: null, is_rolling: false };
+  // Ck2f ■5（2026-10-04）: 「期日なし」の判定はここで 1 回だけ。バッジ・title・description が同じ値を見る（#121）
+  return { ...f, no_schedule: hasNoSchedule(raw, f) };
 }
 
 export async function generateStaticParams() {
@@ -89,7 +94,7 @@ export default async function SubsidyDetailPage({
   const facts = factsFor(params.slug, item);
   // Gr10-⑤(2026-08-11): 期日を一切持たないレコード（執行団体の紹介ページ等）は状態バッジを出さない。
   // 「随時〜事業により異なる」に「公募中」を付けるのは誤り。
-  const noSchedule = hasNoSchedule(item, facts);
+  const noSchedule = facts.no_schedule === true;
   const status = noSchedule ? '' : deriveSubsidyStatus(facts, today);
   const category = (item.category && item.category[0]) || '';
   // S5: 当サイトは公式サイトではないため、H1 の「◯◯公式サイト」表記を是正する
