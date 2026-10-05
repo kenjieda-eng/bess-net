@@ -1,0 +1,152 @@
+{
+ "note": "月曜定例 2026-10-05（自走ユウ起草）の subsidies PATCH 計画。scripts/apply-subsidies-weekly-2026-10-05.ts（scripts/lib/microcms-applier.ts の runApplier を呼ぶだけ）が読む。既定 dry run・本実行は --apply。POST なし・DELETE/PUT なし。",
+ "generated": "2026-10-05",
+ "sources": {
+  "sii-dr-r7h": [
+   "https://dr-battery.sii.or.jp/r7h/",
+   "https://dr-battery.sii.or.jp/r7h/about/",
+   "https://dr-battery.sii.or.jp/r7h/assets/doc/aggregator/R7r_dr_ess_kateiyoukouboyouryou.pdf"
+  ],
+  "moe-storage-parity-r08": [
+   "https://www.eic.or.jp/eic/topics/2026/st_r08/1strst/",
+   "https://www.eic.or.jp/eic/topics/2026/st_r08/1strst/result01.pdf",
+   "https://www.eic.or.jp/eic/topics/2026/st_r08/1st/"
+  ],
+  "occto-ltdc-2026": [
+   "https://www.occto.or.jp/news/013564.html",
+   "https://www.occto.or.jp/various/capacity-market/jitsujukyukanren/2026_boshuyoukou_long.html"
+  ]
+ },
+ "plan": {
+  "patches": [
+   {
+    "ep": "subsidies",
+    "slug": "sii-dr-r7h",
+    "order": 1,
+    "ops": [
+     {
+      "field": "status",
+      "old": "[\"公募中\"]",
+      "new": "[\"採択結果公表\"]",
+      "row_ids": [
+       "W1005-1a"
+      ],
+      "note": "配列。SII「2026年5月29日（金）に交付申請額の合計額が予算に達したことを確認したため、公募は終了しました。」＋交付決定を公表中（9/30 更新）。同型の前例 = sii-daikibo-gyousan-ess-07r（1次終了→交付決定公表で 採択結果公表）"
+     },
+     {
+      "field": "applicationStart",
+      "old": "2026年4月予定",
+      "new": "2026年3月24日（火）",
+      "row_ids": [
+       "W1005-1b"
+      ],
+      "note": "一次: /r7h/about/「2026年3月24日（火）～ 2026年12月10日（木）」・公募要領 1-13"
+     },
+     {
+      "field": "deadline",
+      "old": "2026年12月予定",
+      "new": "2026年5月29日（金）に交付申請額の合計額が予算に達したため公募終了（当初の公募期間は2026年12月10日（木）まで。SIIは「公募の再開を行う予定はありません」と掲示）",
+      "row_ids": [
+       "W1005-1c"
+      ],
+      "note": "一次: https://dr-battery.sii.or.jp/r7h/ 冒頭の告知。parseDeadline は最初の日付＝2026-05-29 を採る（延長・⇒ を含まない）"
+     },
+     {
+      "field": "subsidyRate",
+      "old": "1/3〜定額",
+      "new": "3/10以内（設備費＋工事費）。補助金額は ①補助金基準額 3.45万円/kWh×初期実効容量（蓄電システム評価による補助増額: レジリエンス 0.2万円/kWh・廃棄物処理法上の広域認定 0.1万円/kWh を上乗せ可）②設備費と工事費の合計×3/10 ③1申請あたりの上限 60万円 のうち最も低い金額（出典: 公募要領 1-11）",
+      "row_ids": [
+       "W1005-1d"
+      ],
+      "note": "一次: 公募要領（2026-03-26）1-11 補助率・補助上限額。現値「1/3〜定額」はどの表記にも無い"
+     },
+     {
+      "field": "upperLimit",
+      "old": "60万円/件目安",
+      "new": "1申請あたり60万円",
+      "row_ids": [
+       "W1005-1e"
+      ],
+      "note": "一次: /r7h/about/「補助額（補助上限額） 1申請あたり60万円」"
+     },
+     {
+      "field": "targetEntity",
+      "old": "家庭用蓄電池導入者（アグリゲーター経由）",
+      "new": "日本国内において、DRに活用可能なリソースとして、家庭用蓄電システムを新規で導入する個人、法人、個人事業主（※その他にも要件あり）",
+      "row_ids": [
+       "W1005-1f"
+      ],
+      "note": "一次: /r7h/about/ 対象者（逐語・末尾の「※その他にも要件あり」を括弧に）。派生 applicable_entities に corporate が加わる（法人も対象＝一次どおり）"
+     },
+     {
+      "field": "scheme",
+      "old": "DR（デマンドレスポンス）対応の家庭用蓄電池導入支援。アグリゲーター経由でVPP・需給調整市場参加を前提とし、家庭・業務分野の需要側エネルギーリソース活用を促進。",
+      "new": "DR（デマンドレスポンス）対応の家庭用蓄電池導入支援。アグリゲーター経由でVPP・需給調整市場参加を前提とし、家庭・業務分野の需要側エネルギーリソース活用を促進。【2026-10-05 更新】2026年5月29日（金）に交付申請額の合計額が予算に達したため公募終了（SII「公募の再開を行う予定はありません」）。交付決定はSII事業概要ページの集計で交付決定総数12,214件・交付決定総額5,232,739,296円（2026年9月30日更新時点）。出典: https://dr-battery.sii.or.jp/r7h/about/",
+      "row_ids": [
+       "W1005-1g"
+      ],
+      "note": "追記型。集計値は SII の掲載値（編集部の算出ではない）"
+     }
+    ]
+   },
+   {
+    "ep": "subsidies",
+    "slug": "moe-storage-parity-r08",
+    "order": 2,
+    "ops": [
+     {
+      "field": "status",
+      "old": "[\"公募中\"]",
+      "new": "[\"受付終了\"]",
+      "row_ids": [
+       "W1005-2a"
+      ],
+      "note": "配列。二次公募は 2026年10月2日（金）正午で締切（表示は締切経過で既に受付終了＝raw を揃える）。二次の採択結果が出たら 採択結果公表 へ"
+     },
+     {
+      "field": "scheme",
+      "old": "二次公募からIP通信機器はJC-STAR適合ラベル（★1以上）必須。",
+      "new": "二次公募からIP通信機器はJC-STAR適合ラベル（★1以上）必須。【2026-10-05 更新】一次公募（2026年7月9日〜7月31日正午）の採択結果を2026年9月24日に公表（EIC機構の採択事業者一覧に9者掲載: オンサイトPPAモデル1・自己所有モデル6・リースモデル2。件数は編集部集計）。二次公募は2026年10月2日（金）正午で締切。2026年10月5日時点で三次公募の告知なし。出典: https://www.eic.or.jp/eic/topics/2026/st_r08/1strst/",
+      "row_ids": [
+       "W1005-2b"
+      ],
+      "note": "追記型。一次: EIC 9/24「一次公募の採択結果」＋ result01.pdf（法人番号 9 件）"
+     }
+    ]
+   },
+   {
+    "ep": "subsidies",
+    "slug": "moe-storage-parity-r08",
+    "order": 3,
+    "ops": [
+     {
+      "field": "body",
+      "old": "二次公募2026/8/27〜10/2正午【公募中】",
+      "new": "二次公募2026/8/27〜10/2正午（終了）",
+      "row_ids": [
+       "W1005-2c"
+      ],
+      "note": "richEditor。本番の初期DOM（.article-body）で逐語確認。microCMS の生値で 1 回に当たらなければこのレコード（order 3）だけ中止される"
+     }
+    ]
+   },
+   {
+    "ep": "subsidies",
+    "slug": "occto-ltdc-2026",
+    "order": 4,
+    "ops": [
+     {
+      "field": "scheme",
+      "old": "業務マニュアル（参加登録・応札・契約締結編）は 9/2〜9/15 意見募集中。",
+      "new": "業務マニュアル「容量市場業務マニュアル 長期脱炭素電源オークション 参加登録・応札・容量確保契約書の締結編（応札年度：2026年度）」は2026年9月30日に策定・公表（OCCTO お知らせ 2026-09-30）。",
+      "row_ids": [
+       "W1005-3a"
+      ],
+      "note": "一次: https://www.occto.or.jp/news/013564.html（更新日：2026年09月30日）。sourceUrl のページも 9/30 更新で同マニュアルを掲載。資料名は <title> と逐語一致（半角空白 2 か所）"
+     }
+    ]
+   }
+  ],
+  "posts": []
+ }
+}

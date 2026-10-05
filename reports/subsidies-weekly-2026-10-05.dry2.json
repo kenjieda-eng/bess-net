@@ -1,0 +1,39 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 8
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 4,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "patch",
+   "target": "subsidies/sii-dr-r7h",
+   "id": "u63f3aexc5",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/moe-storage-parity-r08",
+   "id": "k3vt2k7favbr",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/moe-storage-parity-r08",
+   "id": "k3vt2k7favbr",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/occto-ltdc-2026",
+   "id": "dd0pafkk5qu",
+   "result": "skip_idempotent"
+  }
+ ]
+}
