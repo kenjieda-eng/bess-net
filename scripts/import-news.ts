@@ -137,6 +137,17 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'clover-saga-1988kw-groundbreaking-2026-09': '技術',                           // 佐賀市 EPC受注・着工（テス小諸EPC受注と同型）
   'buddynet-izumo-2mw-8mwh-completion-2026-09': '連系',                          // 出雲市古志町 完工・引き渡し
   'news-weekly-2026-09-w4': '市場統計',                                          // 週次まとめ（9/11〜9/24 の2週分合算）
+  // 月次バッチ 10/1（2026-10-05 投入・対象 9/24 17:00〜9/30 配信）— 各件の _category（ユウ原稿）を正とする
+  'vena-energy-nre-nakagawa-2-ltdc-2026-09': 'オークション',                     // NRE中川第二 長期脱炭素電源オークション落札
+  'taoke-pp7-4sites-start-2026-09': '連系',                                     // PP7 4カ所 受電・運用開始
+  'taoke-pp6-primary-reserve-entry-2026-09': '連系',                            // PP6 一次調整力 市場参入
+  'kuradashi-shimane-yasugi-groundbreaking-2026-09': '開発計画',                // 島根安来 着工
+  'ntt-anode-jera-cross-docomo-hourly-matching-2026-09': '技術',                // 時間単位マッチング
+  'green-energy-fukuchiyama-haji-bess-start-2026-09': '連系',                   // 福知山市土師 運用開始
+  'mufg-trust-yufu-yonezawa-bess-2026-09': '投資',                              // 由布・米沢 出資
+  'hybrid-reu511-saga-honjo-2mw-2026-09': '開発計画',                           // RE.U511 佐賀市本庄町
+  'watt-tune-lv-aggregation-fee-2026-09': '技術',                               // 低圧アグリ 料金体系
+  'fit-founder-hokkaido-mukawa-2mw-2026-09': '開発計画',                        // むかわ町 2MW 案件
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {

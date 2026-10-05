@@ -1350,6 +1350,15 @@
       "used_in": "src/components/Report2026Body.tsx"
     },
     {
+      "name": "容量市場　長期脱炭素電源オークション約定結果（応札年度：2025年度）",
+      "publisher": "電力広域的運営推進機関",
+      "url": "https://www.occto.or.jp/news/012080.html",
+      "title_verbatim": "容量市場　長期脱炭素電源オークション約定結果（応札年度：2025年度）の公表について｜電力広域的運営推進機関",
+      "checked_on": "2026-10-05",
+      "note": "月次バッチ 10/1 で登録（2026-05-13 公表・HTTP 200）。別紙「落札電源一覧」の No.12 に NRE中川第ニ蓄電所（一覧の表記はカタカナの「ニ」）・落札容量 46,828kW",
+      "used_in": "news/vena-energy-nre-nakagawa-2-ltdc-2026-09.body"
+    },
+    {
       "name": "关于深化新能源上网电价市场化改革 促进新能源高质量发展的通知",
       "publisher": "国家发展和改革委员会・国家能源局",
       "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202502/t20250209_1396066.html",
