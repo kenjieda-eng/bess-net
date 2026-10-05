@@ -1,7 +1,7 @@
 {
  "_purpose": "N-1電制適用可否の「未算定（公表元が「－」等で明示）」「空欄」「公表なし（N-1 列が無い）」の設備。microCMS の n1_eligible は boolean のため false（不可）に潰れているので、表示はこの一覧で直す（三値化 段1）。TypeScript（src/lib/n1-status.ts）と Python（scripts/experimental/_common/n1_status.py）の唯一の真実源（#119）。",
- "_note": "as_of はその設備の microCMS last_updated（一覧を作った時点）。表示側は as_of が microCMS の現在値と一致するときだけこの一覧を当てる（再取込で値が更新された行に古い一覧を当てない）。microCMS が true（可）なら可が勝つ。再生成: scripts/experimental/_common/build_n1_status.py（前身 build_n1_undetermined.py は残置）。四国 10 月版の「－」28 行は BS 便で足す。",
- "generated_at": "2026-10-03T09:33:19Z",
+ "_note": "as_of はその設備の microCMS last_updated（一覧を作った時点）。表示側は as_of が microCMS の現在値と一致するときだけこの一覧を当てる（再取込で値が更新された行に古い一覧を当てない）。microCMS が true（可）なら可が勝つ。再生成: scripts/experimental/_common/build_n1_status.py（前身 build_n1_undetermined.py は残置）。四国（10月版の「－」）の as_of は 10月版の版日付で、再取込までは表示に効かない。",
+ "generated_at": "2026-10-04T13:53:04Z",
  "generated_from": [
   "scripts/experimental/_common/n1_undetermined.json（前身・273 件）",
   "scripts/experimental/hokuriku/csv_2608（2026-08-05 公表 CSV）",
@@ -9,13 +9,14 @@
   "scripts/experimental/chugoku/zip_202608",
   "scripts/experimental/hokkaido/update_plan_202607.json・zip_202607/sys_capa_kikan.zip",
   "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",
+  "scripts/experimental/_common/n1_undetermined_shikoku.json（四国 10月版・parse_shikoku.py）",
   "microCMS substations（GET・as_of）"
  ],
- "count": 391,
+ "count": 419,
  "count_by_reason": {
   "blank": 16,
   "no_column": 113,
-  "undetermined": 262
+  "undetermined": 290
  },
  "count_by_area": {
   "中国": {
@@ -31,6 +32,9 @@
   "北陸": {
    "blank": 13,
    "undetermined": 212
+  },
+  "四国": {
+   "undetermined": 28
   },
   "東京": {
    "undetermined": 13
@@ -3801,6 +3805,314 @@
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
    "as_of": "2026-07-10T00:00:00.000Z"
+  },
+  "ydn-ehime-0022-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_22",
+   "name": "三津変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0024-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_24",
+   "name": "吉田浜変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0026-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_26",
+   "name": "竹原変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0034-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_34",
+   "name": "卯之町変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0053-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_53",
+   "name": "多賀変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0054-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_54",
+   "name": "丹原変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0058-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_58",
+   "name": "枝堀変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0061-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_61",
+   "name": "ひうち変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0062-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_62",
+   "name": "喜多川変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0063-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_63",
+   "name": "中野変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0064-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_64",
+   "name": "政枝変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0067-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_67",
+   "name": "多喜浜変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0070-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_70",
+   "name": "朝日町変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-ehime-0075-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local02_75",
+   "name": "柳瀬変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kagawa-0005": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local01_5",
+   "name": "坂出火力変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kagawa-0011": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local01_11",
+   "name": "上天神変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kagawa-0014": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local01_14",
+   "name": "府中変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kagawa-0018": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local01_18",
+   "name": "笠山変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kagawa-0036": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local01_36",
+   "name": "丸亀変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kagawa-0049": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local01_49",
+   "name": "琴平変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kochi-0004-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local04_4",
+   "name": "春野変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kochi-0011-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local04_11",
+   "name": "仁井田変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kochi-0019-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local04_19",
+   "name": "佐川変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kochi-0022-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local04_22",
+   "name": "押岡変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kochi-0023-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local04_23",
+   "name": "須崎変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-kochi-0032-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local04_32",
+   "name": "安芸変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-tokushima-0042-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local03_42",
+   "name": "三野変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
+  },
+  "ydn-tokushima-0043-2": {
+   "area": "四国",
+   "operator": "四国電力送配電",
+   "external_id": "yonden_local03_43",
+   "name": "貞光変電所",
+   "reason": "undetermined",
+   "source": "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま",
+   "as_of": "2026-10-01T00:00:00.000Z",
+   "raw": "－",
+   "note": "as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）"
   }
  }
 }

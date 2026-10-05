@@ -14,7 +14,9 @@ reason（裁定 §2・便ファイル §1）:
   undetermined … N-1 欄に「－」「―」「-」等（公表元が未算定と明示）→ 表示「未算定」
   blank        … N-1 欄が空欄（名称非公開行など）              → 表示「未算定」
   no_column    … 公表 CSV に N-1 列そのものが無い（沖縄）       → 表示「公表なし」
-  四国 10 月版の「－」28 行は BS 便で足す（slug は電圧面で決める #115）。ここでは入れない。
+  四国 10 月版の「－」28 行は BS 便（2026-10-04）で §7 に足した（slug は電圧面で決める #115・parse_shikoku.py の一覧）。
+  ★四国の as_of は microCMS の現在値（5月版 2026-05-01）ではなく 10月版の版日付 2026-10-01。「－」を確かめたのは 10月版で、
+    5月版の CSV は公表元で 404（確かめられない）。再取込で last_updated が 2026-10-01 になった時点から表示に効く。
 
 入力（読取のみ）:
   - 前身の一覧 _common/n1_undetermined.json（273 件・社別ファイルの統合）
@@ -108,7 +110,7 @@ entries = {}   # slug -> entry
 log = []
 
 
-def add(slug, reason, source, raw=None, raw_checked=False, note=None):
+def add(slug, reason, source, raw=None, raw_checked=False, note=None, as_of=None):
     rec = LIVE.get(slug)
     if rec is None:
         log.append(f"★microCMS に無い slug: {slug}（入れない）")
@@ -126,7 +128,8 @@ def add(slug, reason, source, raw=None, raw_checked=False, note=None):
         "name": rec.get("name"),
         "reason": reason,
         "source": source,
-        "as_of": rec.get("last_updated"),
+        # as_of は原則 microCMS の現在の last_updated。公表 CSV の版が取込済みの版より新しい社（四国）は、その版の日付を渡す
+        "as_of": as_of or rec.get("last_updated"),
     }
     if raw_checked:
         e["raw"] = raw
@@ -255,6 +258,17 @@ for slug, rec in LIVE.items():
     if fn in oki_has_n1 and not oki_has_n1[fn]:
         add(slug, "no_column", f"{fn}（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）")
 
+# ── 7. 四国: 10月版（_202610_08）の N-1 欄が「－」の行（BS dry-run・parse_shikoku.py の一覧）──
+# as_of は 10月版の版日付（再取込後の last_updated）。それまでは as_of が一致しないので表示は今のまま（boolean）。
+sk = json.loads((ROOT / "_common" / "n1_undetermined_shikoku.json").read_text(encoding="utf-8"))
+SK_AS_OF = f"{sk['version']}T00:00:00.000Z"
+for x in sk["matched"]:
+    add(x["slug"], x["reason"], "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま", raw=x["raw"], raw_checked=True,
+        note="as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）", as_of=SK_AS_OF)
+for x in sk["new_rows"]:
+    log.append(f"四国の新規行（未取込）で未算定: {x['external_id']} {x['name']}（取込後に足す）")
+print(f"四国: 10月版の未算定 {len(sk['matched'])} 行（as_of {SK_AS_OF}）")
+
 # ── 出力 ──
 from collections import Counter  # noqa: E402
 
@@ -269,7 +283,7 @@ out = {
     "_note": "as_of はその設備の microCMS last_updated（一覧を作った時点）。表示側は as_of が microCMS の現在値と一致するときだけ"
              "この一覧を当てる（再取込で値が更新された行に古い一覧を当てない）。microCMS が true（可）なら可が勝つ。"
              "再生成: scripts/experimental/_common/build_n1_status.py（前身 build_n1_undetermined.py は残置）。"
-             "四国 10 月版の「－」28 行は BS 便で足す。",
+             "四国（10月版の「－」）の as_of は 10月版の版日付で、再取込までは表示に効かない。",
     "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     "generated_from": [
         "scripts/experimental/_common/n1_undetermined.json（前身・273 件）",
@@ -278,6 +292,7 @@ out = {
         "scripts/experimental/chugoku/zip_202608",
         "scripts/experimental/hokkaido/update_plan_202607.json・zip_202607/sys_capa_kikan.zip",
         "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",
+        "scripts/experimental/_common/n1_undetermined_shikoku.json（四国 10月版・parse_shikoku.py）",
         "microCMS substations（GET・as_of）",
     ],
     "count": len(entries),

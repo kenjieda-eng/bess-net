@@ -1,0 +1,815 @@
+{
+ "generated_on": "2026-10-04",
+ "area": "沖縄",
+ "operator": "沖縄電力",
+ "page": "https://www.okiden.co.jp/business-support/service/rule/plan/index.html",
+ "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ）",
+ "site_updated": "2026-09-18",
+ "requires_judgement": [
+  "last_updated に入れる日付（基準時点「2026年8月末時点」→ 2026-08-31 を提案。現行 2026-03-01 の付け方は確かめられない）",
+  "CSV と PDF の値が合わない: con_res_map01_03.csv 65 行 71-1 松田変電所（どちらを採るか・照会するか）",
+  "本実行の手順: last_updated を変えると n1-status.json の沖縄 no_column 113 件（as_of 2026-03-01）が表示に効かなくなり「不可」に戻る → webhook を止めて PATCH → build_n1_status.py を再実行（as_of を新しい last_updated に）→ push 1 回",
+  "数値にならない原値 1 件（null で読む・原値を残すか）: 奥間変電所 電圧(二次)「22-13.8」"
+ ],
+ "warnings": [],
+ "files": [
+  {
+   "file": "con_res_map01_02.csv",
+   "facility_class": "沖縄本島66kV系・変電所",
+   "url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+   "bytes": 1900,
+   "encoding": "cp932",
+   "encoding_tried": [
+    "utf-8-sig: NG",
+    "cp932: ok"
+   ],
+   "basis": "2026-08-31",
+   "basis_raw": "2026年8月末時点",
+   "data_rows": 38,
+   "columns": [
+    "変電所No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御の可能性がある設備(当該設備)",
+    "平常時出力制御の可能性がある設備(上位系設備)",
+    "備考"
+   ]
+  },
+  {
+   "file": "con_res_map01_03.csv",
+   "facility_class": "沖縄本島66kV系・配変",
+   "url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+   "bytes": 4285,
+   "encoding": "cp932",
+   "encoding_tried": [
+    "utf-8-sig: NG",
+    "cp932: ok"
+   ],
+   "basis": "2026-08-31",
+   "basis_raw": "2026年8月末時点",
+   "data_rows": 77,
+   "columns": [
+    "変電所No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "当該設備の空容量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御の可能性がある上位系設備",
+    "備考"
+   ]
+  },
+  {
+   "file": "con_res_map02_02.csv",
+   "facility_class": "沖縄本島22kV系・変電所",
+   "url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_02.csv",
+   "bytes": 515,
+   "encoding": "cp932",
+   "encoding_tried": [
+    "utf-8-sig: NG",
+    "cp932: ok"
+   ],
+   "basis": "2026-08-31",
+   "basis_raw": "2026年8月末時点",
+   "data_rows": 5,
+   "columns": [
+    "変電所No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "当該設備の空容量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御の可能性がある上位系設備",
+    "備考"
+   ]
+  },
+  {
+   "file": "con_res_map02_03.csv",
+   "facility_class": "沖縄本島22kV系・配変",
+   "url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+   "bytes": 698,
+   "encoding": "cp932",
+   "encoding_tried": [
+    "utf-8-sig: NG",
+    "cp932: ok"
+   ],
+   "basis": "2026-08-31",
+   "basis_raw": "2026年8月末時点",
+   "data_rows": 10,
+   "columns": [
+    "変電所No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "当該設備の空容量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御の可能性がある上位系設備",
+    "備考"
+   ]
+  },
+  {
+   "file": "con_res_map03_02.csv",
+   "facility_class": "沖縄離島・変電所",
+   "url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+   "bytes": 1193,
+   "encoding": "cp932",
+   "encoding_tried": [
+    "utf-8-sig: NG",
+    "cp932: ok"
+   ],
+   "basis": "2026-08-31",
+   "basis_raw": "2026年8月末時点",
+   "data_rows": 20,
+   "columns": [
+    "変電所No",
+    "変電所名",
+    "一次（kV）",
+    "二次（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW)",
+    "運用容量値(MW)",
+    "運用容量制約要因",
+    "当該設備の空容量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御の可能性がある上位系設備",
+    "備考"
+   ]
+  },
+  {
+   "file": "con_res_map03_03.csv",
+   "facility_class": "沖縄離島・配変",
+   "url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_03.csv",
+   "bytes": 304,
+   "encoding": "cp932",
+   "encoding_tried": [
+    "utf-8-sig: NG",
+    "cp932: ok"
+   ],
+   "basis": "2026-08-31",
+   "basis_raw": "2026年8月末時点",
+   "data_rows": 1,
+   "columns": [
+    "変電所No",
+    "変電所名",
+    "一次（kV）",
+    "二次（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値(MW)",
+    "運用容量制約要因",
+    "当該設備の空容量(MW)",
+    "平常時出力制御の可能性",
+    "平常時出力制御の可能性がある上位系設備",
+    "備考"
+   ]
+  }
+ ],
+ "version": {
+  "current_last_updated": "2026-03-01",
+  "new_basis": [
+   "2026-08-31"
+  ],
+  "split": false,
+  "basis_raw": [
+   "2026年8月末時点"
+  ],
+  "site_updated": "2026-09-18"
+ },
+ "excluded_note_rows": [],
+ "baseline": {
+  "count": 151
+ },
+ "dedupe": {
+  "before": 151,
+  "after": 151,
+  "removed": 0,
+  "summary": {},
+  "rule2": "不使用（#117）"
+ },
+ "matching": {
+  "key": "(ファイル＝設備区分, external_id = okiden_{系統}_{No原文})・組内は電圧面→設備容量→運用容量→台数（#115）",
+  "baseline_class_vs_file_mismatch": []
+ },
+ "counts": {
+  "baseline": 151,
+  "new_after_dedupe": 151,
+  "matched": 151,
+  "new": 0,
+  "removed": 0,
+  "renumbered": 0,
+  "renamed": 0,
+  "changed_records": 15,
+  "unchanged_records": 136,
+  "after_total": 151,
+  "change_pct": 0.0
+ },
+ "field_stats": {
+  "units": {
+   "label": "台数",
+   "changed": 3,
+   "filled": 0,
+   "dropped": 0
+  },
+  "capacity_total_mw": {
+   "label": "設備容量",
+   "changed": 4,
+   "filled": 0,
+   "dropped": 0
+  },
+  "cap_operational_mw": {
+   "label": "運用容量",
+   "changed": 4,
+   "filled": 0,
+   "dropped": 0
+  },
+  "op_constraint": {
+   "label": "運用容量制約要因",
+   "changed": 0,
+   "filled": 0,
+   "dropped": 0
+  },
+  "cap_avail_mw": {
+   "label": "空容量(当該)",
+   "changed": 11,
+   "filled": 0,
+   "dropped": 0
+  },
+  "n1_capacity_mw": {
+   "label": "N-1電制適用可能量",
+   "changed": 0,
+   "filled": 0,
+   "dropped": 0
+  },
+  "oc_possibility": {
+   "label": "平常時出力制御の可能性",
+   "changed": 0,
+   "filled": 0,
+   "dropped": 0
+  },
+  "notes": {
+   "label": "備考",
+   "changed": 0,
+   "filled": 0,
+   "dropped": 0
+  },
+  "voltage": {
+   "label": "電圧面",
+   "changed": 0,
+   "filled": 0,
+   "dropped": 0
+  }
+ },
+ "changed": [
+  {
+   "slug": "oki-honto-66kv-310002",
+   "name": "小那覇変電所",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 18,
+     "new": 19.0
+    }
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-50001",
+   "name": "具志頭変電所",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 14,
+     "new": 15.0
+    }
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-510001",
+   "name": "喜仲変電所",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 18,
+     "new": 19.0
+    }
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-710001",
+   "name": "松田変電所",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 12,
+     "new": 13.0
+    }
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-790002",
+   "name": "海洋博変電所",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 11,
+     "new": 12.0
+    }
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-850002",
+   "name": "奥間変電所",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 7,
+     "new": 9.0
+    }
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0088",
+   "name": "楚洲配電塔",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 2,
+     "new": 3.0
+    }
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0090",
+   "name": "今泊配電塔",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 5,
+     "new": 6.0
+    }
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0094",
+   "name": "馬天配電塔",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 8,
+     "new": 7.0
+    }
+   }
+  },
+  {
+   "slug": "oki-ritou-0013",
+   "name": "川平配電塔",
+   "diffs": {
+    "units": {
+     "current": 1,
+     "new": 2
+    },
+    "capacity_total_mw": {
+     "current": 5,
+     "new": 11.0
+    },
+    "cap_operational_mw": {
+     "current": 5,
+     "new": 11.0
+    }
+   }
+  },
+  {
+   "slug": "oki-ritou-0015",
+   "name": "竹富配電塔",
+   "diffs": {
+    "units": {
+     "current": 1,
+     "new": 2
+    },
+    "capacity_total_mw": {
+     "current": 5,
+     "new": 8.0
+    },
+    "cap_operational_mw": {
+     "current": 5,
+     "new": 8.0
+    }
+   }
+  },
+  {
+   "slug": "oki-ritou-0016",
+   "name": "小浜配電塔",
+   "diffs": {
+    "capacity_total_mw": {
+     "current": 5,
+     "new": 8.0
+    },
+    "cap_operational_mw": {
+     "current": 5,
+     "new": 8.0
+    }
+   }
+  },
+  {
+   "slug": "oki-ritou-0018",
+   "name": "大田配電塔",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 4,
+     "new": 5.0
+    }
+   }
+  },
+  {
+   "slug": "oki-ritou-0003",
+   "name": "下地配電塔",
+   "diffs": {
+    "units": {
+     "current": 1,
+     "new": 2
+    },
+    "capacity_total_mw": {
+     "current": 5,
+     "new": 15.0
+    },
+    "cap_operational_mw": {
+     "current": 5,
+     "new": 15.0
+    }
+   }
+  },
+  {
+   "slug": "oki-ritou-0005",
+   "name": "城辺配電塔",
+   "diffs": {
+    "cap_avail_mw": {
+     "current": 4,
+     "new": 5.0
+    }
+   }
+  }
+ ],
+ "dropped": [],
+ "voltage_changes": [],
+ "voltage_class_diff": [],
+ "new_rows": [],
+ "removed": [],
+ "renamed": [],
+ "renumbered": [],
+ "cap_decreased": {
+  "count": 1,
+  "zeroed": 0,
+  "top10": [
+   {
+    "slug": "oki-honto-22kv-0094",
+    "name": "馬天配電塔",
+    "facility_class": "沖縄本島22kV系・配変",
+    "voltage": "22/6.6",
+    "current": 8,
+    "new": 7.0,
+    "delta": -1.0,
+    "zeroed": false
+   }
+  ],
+  "all": [
+   {
+    "slug": "oki-honto-22kv-0094",
+    "name": "馬天配電塔",
+    "facility_class": "沖縄本島22kV系・配変",
+    "voltage": "22/6.6",
+    "current": 8,
+    "new": 7.0,
+    "delta": -1.0,
+    "zeroed": false
+   }
+  ]
+ },
+ "cap_increased": {
+  "count": 10,
+  "top5": [
+   {
+    "slug": "oki-honto-66kv-850002",
+    "name": "奥間変電所",
+    "facility_class": "沖縄本島66kV系・配変",
+    "voltage": "66/6.6",
+    "current": 7,
+    "new": 9.0,
+    "delta": 2.0
+   },
+   {
+    "slug": "oki-honto-22kv-0088",
+    "name": "楚洲配電塔",
+    "facility_class": "沖縄本島22kV系・配変",
+    "voltage": "13.8/6.6",
+    "current": 2,
+    "new": 3.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-honto-22kv-0090",
+    "name": "今泊配電塔",
+    "facility_class": "沖縄本島22kV系・配変",
+    "voltage": "22/6.6",
+    "current": 5,
+    "new": 6.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-honto-66kv-310002",
+    "name": "小那覇変電所",
+    "facility_class": "沖縄本島66kV系・配変",
+    "voltage": "66/6.6",
+    "current": 18,
+    "new": 19.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-honto-66kv-50001",
+    "name": "具志頭変電所",
+    "facility_class": "沖縄本島66kV系・配変",
+    "voltage": "66/6.6",
+    "current": 14,
+    "new": 15.0,
+    "delta": 1.0
+   }
+  ],
+  "all": [
+   {
+    "slug": "oki-honto-66kv-850002",
+    "name": "奥間変電所",
+    "facility_class": "沖縄本島66kV系・配変",
+    "voltage": "66/6.6",
+    "current": 7,
+    "new": 9.0,
+    "delta": 2.0
+   },
+   {
+    "slug": "oki-honto-22kv-0088",
+    "name": "楚洲配電塔",
+    "facility_class": "沖縄本島22kV系・配変",
+    "voltage": "13.8/6.6",
+    "current": 2,
+    "new": 3.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-honto-22kv-0090",
+    "name": "今泊配電塔",
+    "facility_class": "沖縄本島22kV系・配変",
+    "voltage": "22/6.6",
+    "current": 5,
+    "new": 6.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-honto-66kv-310002",
+    "name": "小那覇変電所",
+    "facility_class": "沖縄本島66kV系・配変",
+    "voltage": "66/6.6",
+    "current": 18,
+    "new": 19.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-honto-66kv-50001",
+    "name": "具志頭変電所",
+    "facility_class": "沖縄本島66kV系・配変",
+    "voltage": "66/6.6",
+    "current": 14,
+    "new": 15.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-honto-66kv-510001",
+    "name": "喜仲変電所",
+    "facility_class": "沖縄本島66kV系・配変",
+    "voltage": "66/6.6",
+    "current": 18,
+    "new": 19.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-honto-66kv-710001",
+    "name": "松田変電所",
+    "facility_class": "沖縄本島66kV系・配変",
+    "voltage": "66/6.6",
+    "current": 12,
+    "new": 13.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-honto-66kv-790002",
+    "name": "海洋博変電所",
+    "facility_class": "沖縄本島66kV系・配変",
+    "voltage": "66/6.6",
+    "current": 11,
+    "new": 12.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-ritou-0005",
+    "name": "城辺配電塔",
+    "facility_class": "沖縄離島・変電所",
+    "voltage": "22/6.6",
+    "current": 4,
+    "new": 5.0,
+    "delta": 1.0
+   },
+   {
+    "slug": "oki-ritou-0018",
+    "name": "大田配電塔",
+    "facility_class": "沖縄離島・変電所",
+    "voltage": "22/6.6",
+    "current": 4,
+    "new": 5.0,
+    "delta": 1.0
+   }
+  ]
+ },
+ "n1": {
+  "current_ok": 4,
+  "new_ok": 4,
+  "changes": [],
+  "undetermined": [],
+  "ok_list": [
+   "北那覇変電所",
+   "栄野比変電所",
+   "牧港第一変電所",
+   "西那覇変電所"
+  ],
+  "n1_capacity_values": [
+   [
+    "北那覇変電所",
+    10.0
+   ],
+   [
+    "栄野比変電所",
+    10.0
+   ],
+   [
+    "牧港第一変電所",
+    10.0
+   ],
+   [
+    "西那覇変電所",
+    10.0
+   ]
+  ]
+ },
+ "unstored_columns_nonempty": {},
+ "same_name_pairs": {
+  "both_tables": [
+   "与勝変電所",
+   "与根変電所",
+   "与那原変電所",
+   "中城湾変電所",
+   "今帰仁変電所",
+   "仲石変電所",
+   "佐敷変電所",
+   "冨着変電所",
+   "北谷変電所",
+   "北那覇変電所",
+   "南上原変電所",
+   "友寄変電所",
+   "大保変電所",
+   "大山変電所",
+   "奥間変電所",
+   "安谷屋変電所",
+   "小那覇変電所",
+   "島袋変電所",
+   "新名護変電所",
+   "曙変電所",
+   "本部変電所",
+   "浦添変電所",
+   "海洋博変電所",
+   "渡口変電所",
+   "牧志変電所",
+   "牧港第一変電所",
+   "真壁変電所",
+   "美里変電所",
+   "西那覇変電所",
+   "辺野古変電所",
+   "那覇変電所"
+  ],
+  "check": {
+   "与勝変電所": {
+    "変電所表": true,
+    "配変表": true
+   },
+   "与根変電所": {
+    "変電所表": true,
+    "配変表": true
+   },
+   "与那原変電所": {
+    "変電所表": true,
+    "配変表": true
+   },
+   "中城湾変電所": {
+    "変電所表": true,
+    "配変表": true
+   },
+   "西那覇変電所": {
+    "変電所表": true,
+    "配変表": true
+   }
+  }
+ },
+ "class_counts": {
+  "current": {
+   "沖縄本島66kV系・配変": 77,
+   "沖縄本島66kV系・変電所": 38,
+   "沖縄離島・変電所": 20,
+   "沖縄本島22kV系・配変": 10,
+   "沖縄本島22kV系・変電所": 5,
+   "沖縄離島・配変": 1
+  },
+  "after": {
+   "沖縄本島66kV系・変電所": 38,
+   "沖縄本島66kV系・配変": 77,
+   "沖縄本島22kV系・変電所": 5,
+   "沖縄本島22kV系・配変": 10,
+   "沖縄離島・変電所": 20,
+   "沖縄離島・配変": 1
+  }
+ },
+ "nonstandard_values": [
+  {
+   "file": "con_res_map01_02.csv",
+   "line": 38,
+   "no": "85 -1",
+   "name": "奥間変電所",
+   "column": "電圧(二次)",
+   "raw": "22-13.8",
+   "note": "数値にならないため null で読む（原値は失われる）"
+  }
+ ],
+ "n1_reason_codes": {
+  "不可 #3": 28,
+  "不可 #1": 5,
+  "可": 4,
+  "不可 #4": 1
+ },
+ "pdf_compare": {
+  "pdf_files": [
+   {
+    "file": "con_res_map01.pdf",
+    "url": "https://www.okiden.co.jp/shared/pdf/business/free/rule02/con_res_map01.pdf",
+    "bytes": 524006
+   },
+   {
+    "file": "con_res_map02.pdf",
+    "url": "https://www.okiden.co.jp/shared/pdf/business/free/rule02/con_res_map02.pdf",
+    "bytes": 363813
+   },
+   {
+    "file": "con_res_map03.pdf",
+    "url": "https://www.okiden.co.jp/shared/pdf/business/free/rule02/con_res_map03.pdf",
+    "bytes": 298634
+   }
+  ],
+  "csv_rows_checked": 151,
+  "csv_rows_found": 150,
+  "mismatches": [
+   {
+    "file": "con_res_map01_03.csv",
+    "line": 65,
+    "csv": [
+     "71-1",
+     "松田変電所",
+     "66",
+     "6.6",
+     "1",
+     "14",
+     "14",
+     "熱容量",
+     "13",
+     "-",
+     "-",
+     "※1"
+    ],
+    "pdf_same_no_name": [
+     [
+      "71-1",
+      "松田変電所",
+      "66",
+      "6.6",
+      "1",
+      "14",
+      "14",
+      "熱容量",
+      "12",
+      "-",
+      "-",
+      "※1"
+     ]
+    ]
+   }
+  ]
+ }
+}
