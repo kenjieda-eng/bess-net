@@ -1510,6 +1510,26 @@
       "checked_on": "2026-10-05",
       "note": "四半期Q4 便A。HTTP 200（55,247 bytes）。出資比率「東芝50% ： 三菱電機50%」。日立エナジーとの JV の一次は無い（tmeic → hitachi-energy の関係を削除した根拠）",
       "used_in": "src/data/industry-map.ts（RELATIONS から tmeic → hitachi-energy を削除）"
+    },
+    {
+      "name": "長期脱炭素電源オークション約定結果（応札年度：2025年度）",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2025_boshuyoukou_long/260513_longauction_youryouyakujokekka_kouhyou_ousatsu2025.pdf",
+      "title_verbatim": "容量市場 長期脱炭素電源オークション約定結果 （応札年度：2025年度） 2026年5月13日 電力広域的運営推進機関（PDF 1 ページ目の表題。PDF の Title メタデータは無し）",
+      "checked_on": "2026-10-05",
+      "aliases": ["OCCTO 約定結果"],
+      "note": "四半期Q4 便B。HTTP 200（1,625,918 bytes・素の UA とブラウザ UA で同一）。p.10「脱炭素電源 426.1 万kW (募集量500万kW)」「リチウムイオン蓄電池・揚水(新設を除く) 81.9 万kW」「リチウムイオン以外の蓄電池・揚水(新設)・LDES 88.6 万kW」",
+      "used_in": "explainer/ltdc-3rd-auction-ccs-ldes.body・explainer/long-term-decarbonization-auction.body"
+    },
+    {
+      "name": "長期脱炭素電源オークションの概要について（応札年度：2026年度）",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/various/capacity-market/youryou_setsumeikai/202607_youryou_gaiyousetsumei_long-r.pdf",
+      "title_verbatim": "説明会資料 長期脱炭素電源オークションの 概要について （応札年度：2026年度） 2026年7月 電力広域的運営推進機関（PDF 1 ページ目の表題。PDF の Title メタデータは空）",
+      "checked_on": "2026-10-05",
+      "aliases": ["OCCTO 概要説明会資料（2026年7月）"],
+      "note": "四半期Q4 便B。HTTP 200（2,314,299 bytes・素の UA とブラウザ UA で同一）。p.23 募集上限「リチウムイオン蓄電池 40万kW」「リチウムイオン蓄電池以外の蓄電池 40万kW」・認定付きリチウムイオン蓄電池の優先落札（※4 経済安全保障推進法に基づく供給確保計画の認定）／p.21 蓄電池 設備容量（送電端）3 万kW 以上・※2「1日1回以上連続6時間以上の運転継続が可能な能力」／p.29 蓄電池「4年後の日が属する年度の末日」（起算日は契約締結日）／p.43「優先約定」は 2025年度からの変更事項",
+      "used_in": "explainer/ltdc-3rd-auction-ccs-ldes.body・explainer/long-term-decarbonization-auction.body"
     }
   ]
 }

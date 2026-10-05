@@ -1,0 +1,158 @@
+# source: https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2025_boshuyoukou_long/260513_longauction_youryouyakujokekka_kouhyou_besshi_ousatsu2025.pdf
+# fetched 2026-10-05 JST: bare UA 200 305895B / browser UA 200 305895B (identical)
+# metadata: {'CreationDate': "D:20260512165552+09'00'", 'Creator': 'Microsoft® Excel® for Microsoft 365', 'ModDate': "D:20260512165910+09'00'", 'Producer': 'Microsoft® Excel® for Microsoft 365'}
+
+## extract_text()
+電力広域的運営推進機関
+2026年5月13日
+容量市場 長期脱炭素電源オークション約定結果（応札年度:2025年度） 別紙：落札電源一覧
+＜脱炭素電源＞
+No. 応札事業者名 落札案件名 電源種 落札容量[kW]
+1 電源開発株式会社 大間原子力発電所 原子力 1,381,275
+2 イーレックス株式会社 イーレックス新潟（仮称） バイオマス専焼 100,926
+3 北海道電力株式会社 泊発電所1号機 原子力（既設原子力の安全対策投資） 557,848
+4 北海道電力株式会社 京極発電所3号機 揚水（新設） 185,889
+5 北海道電力株式会社 苫東厚真発電所4号機 既設火力の改修（アンモニア混焼への改修） 132,200
+6 CHCJapan株式会社 益田市蓄電所 蓄電池（リチウムイオン蓄電池） 75,633
+7 CHCJapan株式会社 新富町蓄電所 蓄電池（リチウムイオン蓄電池） 36,722
+8 株式会社コベルコパワー神戸 神戸発電所1号機 既設火力の改修（アンモニア混焼への改修） 131,433
+9 ヘキサ・エネルギーサービス合同会社 HC25中国第一蓄電システム 蓄電池（リチウムイオン蓄電池以外の蓄電池） 46,927
+10 ヘキサ・エネルギーサービス合同会社 HC25東北第二蓄電システム 蓄電池（リチウムイオン蓄電池以外の蓄電池） 43,543
+11 CEF H2株式会社 三池発電所 水素専焼 146,400
+12 合同会社NRE-54インベストメント NRE中川第ニ蓄電所 蓄電池（リチウムイオン蓄電池） 46,828
+13 Stonepeak Kingdom Holdings 合同会社 Kingdom-3 蓄電池（リチウムイオン蓄電池以外の蓄電池） 95,582
+14 Stonepeak Kingdom Holdings 合同会社 Kingdom-6 蓄電池（リチウムイオン蓄電池以外の蓄電池） 45,931
+15 Stonepeak Kingdom Holdings 合同会社 Kingdom-1 蓄電池（リチウムイオン蓄電池） 32,778
+16 合同会社蓄電所1号 蓄電所3号 蓄電池（リチウムイオン蓄電池以外の蓄電池） 36,722
+17 合同会社蓄電所3号 Battery116号系統用蓄電所 蓄電池（リチウムイオン蓄電池以外の蓄電池） 141,527
+18 合同会社蓄電所3号 Battery23号系統用蓄電所 蓄電池（リチウムイオン蓄電池以外の蓄電池） 140,098
+19 ホクエナジー株式会社 第一発電所 水素専焼 106,654
+20 合同会社ホモデウス HD1号 蓄電池（リチウムイオン蓄電池） 45,192
+21 合同会社ポーラーベアー しろくま33 蓄電池（リチウムイオン蓄電池） 33,737
+22 合同会社ポーラーベアー しろくま36 蓄電池（リチウムイオン蓄電池） 30,128
+23 合同会社ZEUS ZEUS-A 蓄電池（リチウムイオン蓄電池以外の蓄電池） 75,165
+24 合同会社ZEUS ZEUS-B 蓄電池（リチウムイオン蓄電池以外の蓄電池） 74,163
+25 ＣＳ青森八戸ＥＳＳ合同会社 ＣＳ青森八戸２蓄電所 蓄電池（リチウムイオン蓄電池） 90,734
+26 合同会社バッテリーパーク１５ 鹿児島薩摩川内蓄電所 蓄電池（リチウムイオン蓄電池） 45,705
+27 合同会社バッテリーパーク２０ 宮城石巻蓄電所2号 蓄電池（リチウムイオン蓄電池） 114,012
+28 東京電力リニューアブルパワー株式会社 塩原発電所＿2号機 揚水（リプレース等） 267,550
+＜LNG専焼火力＞
+No. 応札事業者名 落札案件名 電源種 落札容量[kW]
+1 北陸電力株式会社 富山新港火力発電所ＬＮＧ２号機 LNG専焼火力 583,750
+2 九州電力株式会社 （仮称）新小倉発電所6号機 LNG専焼火力 900,000
+3 株式会社ＪＥＲＡ 袖ケ浦火力発電所新1号 LNG専焼火力 777,058
+4 株式会社ＪＥＲＡ 袖ケ浦火力発電所新2号 LNG専焼火力 777,058
+1/1
+
+## extract_tables()
+No.	応札事業者名	落札案件名	電源種	落札容量[kW]
+1	電源開発株式会社	大間原子力発電所	原子力	1,381,275
+2	イーレックス株式会社	イーレックス新潟（仮称）	バイオマス専焼	100,926
+3	北海道電力株式会社	泊発電所1号機	原子力（既設原子力の安全対策投資）	557,848
+4	北海道電力株式会社	京極発電所3号機	揚水（新設）	185,889
+5	北海道電力株式会社	苫東厚真発電所4号機	既設火力の改修（アンモニア混焼への改修）	132,200
+6	CHCJapan株式会社	益田市蓄電所	蓄電池（リチウムイオン蓄電池）	75,633
+7	CHCJapan株式会社	新富町蓄電所	蓄電池（リチウムイオン蓄電池）	36,722
+8	株式会社コベルコパワー神戸	神戸発電所1号機	既設火力の改修（アンモニア混焼への改修）	131,433
+9	ヘキサ・エネルギーサービス合同会社	HC25中国第一蓄電システム	蓄電池（リチウムイオン蓄電池以外の蓄電池）	46,927
+10	ヘキサ・エネルギーサービス合同会社	HC25東北第二蓄電システム	蓄電池（リチウムイオン蓄電池以外の蓄電池）	43,543
+11	CEF H2株式会社	三池発電所	水素専焼	146,400
+12	合同会社NRE-54インベストメント	NRE中川第ニ蓄電所	蓄電池（リチウムイオン蓄電池）	46,828
+13	Stonepeak Kingdom Holdings 合同会社	Kingdom-3	蓄電池（リチウムイオン蓄電池以外の蓄電池）	95,582
+14	Stonepeak Kingdom Holdings 合同会社	Kingdom-6	蓄電池（リチウムイオン蓄電池以外の蓄電池）	45,931
+15	Stonepeak Kingdom Holdings 合同会社	Kingdom-1	蓄電池（リチウムイオン蓄電池）	32,778
+16	合同会社蓄電所1号	蓄電所3号	蓄電池（リチウムイオン蓄電池以外の蓄電池）	36,722
+17	合同会社蓄電所3号	Battery116号系統用蓄電所	蓄電池（リチウムイオン蓄電池以外の蓄電池）	141,527
+18	合同会社蓄電所3号	Battery23号系統用蓄電所	蓄電池（リチウムイオン蓄電池以外の蓄電池）	140,098
+19	ホクエナジー株式会社	第一発電所	水素専焼	106,654
+20	合同会社ホモデウス	HD1号	蓄電池（リチウムイオン蓄電池）	45,192
+21	合同会社ポーラーベアー	しろくま33	蓄電池（リチウムイオン蓄電池）	33,737
+22	合同会社ポーラーベアー	しろくま36	蓄電池（リチウムイオン蓄電池）	30,128
+23	合同会社ZEUS	ZEUS-A	蓄電池（リチウムイオン蓄電池以外の蓄電池）	75,165
+24	合同会社ZEUS	ZEUS-B	蓄電池（リチウムイオン蓄電池以外の蓄電池）	74,163
+25	ＣＳ青森八戸ＥＳＳ合同会社	ＣＳ青森八戸２蓄電所	蓄電池（リチウムイオン蓄電池）	90,734
+26	合同会社バッテリーパーク１５	鹿児島薩摩川内蓄電所	蓄電池（リチウムイオン蓄電池）	45,705
+27	合同会社バッテリーパーク２０	宮城石巻蓄電所2号	蓄電池（リチウムイオン蓄電池）	114,012
+28	東京電力リニューアブルパワー株式会社	塩原発電所＿2号機	揚水（リプレース等）	267,550
+
+No.	応札事業者名	落札案件名	電源種	落札容量[kW]
+1	北陸電力株式会社	富山新港火力発電所ＬＮＧ２号機	LNG専焼火力	583,750
+2	九州電力株式会社	（仮称）新小倉発電所6号機	LNG専焼火力	900,000
+3	株式会社ＪＥＲＡ	袖ケ浦火力発電所新1号	LNG専焼火力	777,058
+4	株式会社ＪＥＲＡ	袖ケ浦火力発電所新2号	LNG専焼火力	777,058
+
+
+## [公式サイト] https://chcbess.com/  素UA・ブラウザUA とも 200 247032B（同一） title: Home - CHC
+# フッタ: Copyright © 2026 CHC Energy Pte Ltd
+Japan
+〒100-0006
+東京都千代田区有楽町1-1-2
+東京ミッドタウン日比谷33階
++81 (0)3-6821-2414
+View on Google Map
+Navigation
+Home
+About
+Projects
+Pres
+## [公式サイト] https://chcbess.com/press-releases/ → b2_chc.html  title: Press Releases - CHC
+Press Releases
+Discover the future of energy storage. Stay informed about the latest breakthroughs in sustainable power storage technology.
+Filter By
+Insights
+News
+Press
+Filter By
+Insights
+News
+Press
+Press
+August 6, 2025
+Matsuyama Battery Energy Storage System, utilizing Hitachi’s grid energy storage systems, starts operation
+Hitachi recently delivered a set of grid energy storage system to Matsuyama Mikan Energy LLC for its newly constructed Matsuyama Battery Energy Storage System (Matsuyama BESS) in Matsuyama City, Ehime Prefcture.
+Press
+April 29, 2025
+Energy Storage Platform Backed by Stonepeak and CHC Awarded Five Projects in Japan Long-term Decarbonization Auction
+The energy storage platform jointly established by Stonepeak and CHC (the “Platform”) today announced that it has secured 20-year fixed revenue capacity market contracts for five battery energy storage system (“BESS”) projects totaling 348MW of gross capacity in the latest round of Japan’s Long-term Decarbonization Auction (the “Auction”). The contracts represent the Platform’s second consecutive win in the government tender, following the inaugural Auction in 2024, in which the Platform was awarded contracts for four BESS projects totaling 131MW.
+Press
+May 14, 2024
+Stonepeak and CHC Form Japanese Battery Energy Storage Platform
+Stonepeak, a leading alternative investment firm specializing in infrastructure and real assets, and CHC, a leading battery energy storage system (“BESS”) project development and electricity data management company headquartered in Singapore, today announced the creation of a platform focused on the development, construction, and operation of energy storage projects in Japan.
+Press
+December 11, 2023
+Hitachi signs an MOU with MUFG Bank, Ltd., CHC Japan K.K. and Hartree Partners Singapore Pte. Limited relating to the expansion of grid-scale battery storage business
+Hitachi signs an MOU with MUFG Bank, Ltd., CHC Japan K.K. and Hartree Partners Singapore Pte. Limited relating to the expansion of grid-scale battery storage business
+Press
+August 7, 2023
+Japan: CATL JV orders Hitachi Energy BESS for grid-scale project
+Construction is set to begin on a battery storage project in Japan through a joint venture (JV) involving CATL with utility Shikoku Electric Power.
+News
+June 15, 2023
+Shikoku Electric, CHC tie up to build 12-MW/35.8-MWh battery in Japan
+Japanese electricity provider Shikoku Electric Power Co Inc (TYO:9507) has set up a joint venture with compatriot CHC Japan Co Ltd to develop a 12-MW/35.8-MWh battery energy storage project in Ehime prefecture, western Japan.
+Press
+June 14, 2023
+Establishing “Matsuyama Mikan Energy LLC” to Start Energy Storage Business in Matsuyama City, Ehime Prefecture
+Shikoku Electric Power Company, Incorporated (Head Office: Takamatsu City, Kagawa Prefecture, Japan; Director and President: Keisuke Nagai, “Shikoku Electric”) and CHC Japan K.K. (Head Office: Tokyo, Japan; Director: Al-Awa Ahmed Safwat, “CHC Japan”), have jointly established Matsuyama Mikan Energy LLC to develop and operate a grid-scale battery energy storage project(*) in Matsuyama City, Ehime Prefecture, Japan (the “Project”).
+Insights
+June 14, 2023
+Japan’s Shikoku Electric enters first grid-scale battery storage project
+Shikoku Electric Power Co (9507.T) has teamed-up with CHC Japan K.K. to develop a grid-scale battery energy project in western Japan, both companies said in a statement, as the country needs to expand in storage to accommodate renewable energy capacity.
+Press
+June 14, 2023
+Hartree, CATL and CFC Establish Joint Venture to Develop and Operate Energy Storage Power Stations Globally
+Construction is set to begin on a battery storage project in Japan through a joint venture (JV) involving CATL with utility Shikoku Electric Power.
+Home
+About
+Projects
+Press Releases
+Contact
+Home
+About
+Projects
+Press Releases
+Contact
+
+## [第三者・参考] https://digitalpr.jp/r/133123 （オリックス 2026-04-17「【オリックス銀行】国内初の系統用蓄電所開発資金を使途とするプロジェクトボンドの組成について」）内の表記:
+# 「CHC Japan株式会社（代表取締役：アル・アワ・アメード・ザフワット、以下「CHC Japan」）」
+# 「CHC Japanは、シンガポールに本社を置く、系統用蓄電所開発事業者であるCHCの日本法人です。」

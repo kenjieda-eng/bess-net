@@ -1,0 +1,13 @@
+URL: https://nw.tohoku-epco.co.jp/consignment/request/emit/upper_limit/
+取得: 2026-10-05 / 保存元: ブラウザUA
+<title>: 系統用蓄電池における一事業者あたりの接続検討数の上限設定について｜東北電力ネットワーク
+HTTP: 素UA 200 3547B / ブラウザUA 200 3547B（同一）
+掲載元: 「系統連系・発電量調整供給・電力売電に関するお申込み」https://nw.tohoku-epco.co.jp/consignment/request/emit/ の「お知らせ」欄先頭（日付表示なし）。会社の「お知らせ」一覧（/information/index.html）には掲載なし。
+ページ自体に掲載日の表示なし。掲載日は添付PDF本文の「2026年7月24日」。
+添付:
+  系統用蓄電池における一事業者あたりの接続検討数の上限設定について（90KB） https://nw.tohoku-epco.co.jp/consignment/request/emit/upper_limit/pdf/detail_260724.pdf （保存: q4-1_tohoku_notice.pdf / .txt）
+  別添_系統用蓄電池における一事業者あたりの接続検討数の上限設定に関するFAQ（671KB） https://nw.tohoku-epco.co.jp/consignment/request/emit/upper_limit/pdf/faq.pdf （保存: q4-1_tohoku_faq.pdf / .txt）
+--- 本文（主要部抜粋・HTMLから機械抽出） ---
+国の審議会（再生可能エネルギー大量導入・次世代電力ネットワーク小委員会）において、一事業者あたりの系統用蓄電池の接続検討数（系統連系希望者による接続検討申込みから接続検討結果の回答までの範囲）に上限を設定し、2026年8月1日より運用を開始することが整理されました。詳細は下記をご覧ください。
+系統用蓄電池における一事業者あたりの接続検討数の上限設定について（90KB）
+別添_系統用蓄電池における一事業者あたりの接続検討数の上限設定に関するFAQ（671KB）
