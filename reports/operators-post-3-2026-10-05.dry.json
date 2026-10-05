@@ -1,0 +1,79 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 3
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 3,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "post",
+   "target": "operators/correc-hd",
+   "row_id": "OP1005-1",
+   "result": "dry",
+   "payload": {
+    "name": "株式会社コレックホールディングス",
+    "slug": "correc-hd",
+    "category": [
+     "開発事業者"
+    ],
+    "corporateType": "株式会社",
+    "listedMarket": "東証スタンダード",
+    "ticker": "6578",
+    "prefecture": "東京都",
+    "city": "豊島区",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000110.000040575.html",
+    "aliases": "コレックホールディングス\nコレック\nCORREC",
+    "description": "エネルギー事業、アウトソーシング事業、メディアプラットフォーム事業を行う（東証スタンダード 6578）。2026年8月31日に系統用蓄電池事業への参入と、岡山県久米郡の岡山蓄電所（仮称・出力約2MW／容量約8MWh）の取得を公表した。設備は自社で取得・所有し、建設は EPC 委託、運営はアグリゲーターに委託する。当サイト掲載の案件「岡山蓄電所（仮称）」の事業者欄に社名が確認できる事業者。",
+    "bessRelation": "エネルギー事業、アウトソーシング事業、メディアプラットフォーム事業を行う（東証スタンダード 6578）。2026年8月31日に系統用蓄電池事業への参入と、岡山県久米郡の岡山蓄電所（仮称・出力約2MW／容量約8MWh）の取得を公表した。設備は自社で取得・所有し、建設は EPC 委託、運営はアグリゲーターに委託する。当サイト掲載の案件「岡山蓄電所（仮称）」の事業者欄に社名が確認できる事業者。"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "operators/glome-hd",
+   "row_id": "OP1005-2",
+   "result": "dry",
+   "payload": {
+    "name": "グローム・ホールディングス株式会社",
+    "slug": "glome-hd",
+    "category": [
+     "開発事業者"
+    ],
+    "corporateType": "株式会社",
+    "listedMarket": "東証グロース",
+    "ticker": "8938",
+    "sourceUrl": "https://contents.xj-storage.jp/xcontents/89380/087094cf/a1e7/476b/b2f0/ffb4a40b51cd/140120260721597032.pdf",
+    "websiteUrl": "https://www.glome-holdings.com/",
+    "aliases": "グロームホールディングス\nグローム\nGLOME\nグローム・エナジー株式会社",
+    "description": "東証グロース上場（8938）。2026年7月21日、系統用蓄電所事業の専業子会社「グローム・エナジー株式会社」（事業内容: 系統用蓄電所に関わる事業全般）の設立を公表した。系統用蓄電所の第2号施設として栃木県栃木市西方町金井の蓄電所を持つ。当サイト掲載の案件「GM西方町金井2465蓄電所」の事業者欄に社名が確認できる事業者。",
+    "bessRelation": "東証グロース上場（8938）。2026年7月21日、系統用蓄電所事業の専業子会社「グローム・エナジー株式会社」（事業内容: 系統用蓄電所に関わる事業全般）の設立を公表した。系統用蓄電所の第2号施設として栃木県栃木市西方町金井の蓄電所を持つ。当サイト掲載の案件「GM西方町金井2465蓄電所」の事業者欄に社名が確認できる事業者。"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "operators/chc-japan",
+   "row_id": "OP1005-3",
+   "result": "dry",
+   "payload": {
+    "name": "CHC Japan株式会社",
+    "slug": "chc-japan",
+    "category": [
+     "開発事業者"
+    ],
+    "corporateType": "株式会社",
+    "prefecture": "東京都",
+    "city": "千代田区",
+    "sourceUrl": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2025_boshuyoukou_long/260513_longauction_youryouyakujokekka_kouhyou_besshi_ousatsu2025.pdf",
+    "websiteUrl": "https://chcbess.com/",
+    "aliases": "CHCJapan株式会社\nCHC Japan K.K.\nCHCジャパン",
+    "description": "長期脱炭素電源オークション（応札年度2025年度）で、益田市蓄電所（落札容量75,633kW）・新富町蓄電所（同36,722kW）の応札事業者として落札した（OCCTO 落札電源一覧）。当サイト掲載の案件「松山蓄電所」の事業者欄に社名が確認できる事業者。（OCCTO の落札電源一覧の表記は「CHCJapan株式会社」）",
+    "bessRelation": "長期脱炭素電源オークション（応札年度2025年度）で、益田市蓄電所（落札容量75,633kW）・新富町蓄電所（同36,722kW）の応札事業者として落札した（OCCTO 落札電源一覧）。当サイト掲載の案件「松山蓄電所」の事業者欄に社名が確認できる事業者。（OCCTO の落札電源一覧の表記は「CHCJapan株式会社」）"
+   }
+  }
+ ]
+}

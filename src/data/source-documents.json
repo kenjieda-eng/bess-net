@@ -1539,6 +1539,34 @@
       "checked_on": "2026-10-05",
       "note": "補助金 月曜定例 10/5。お知らせ（更新日：2026年09月30日）・Chrome UA で HTTP 200（40,863 bytes）。本文「…を策定いたしましたので公表いたします。」。資料名の空白は半角 2 か所",
       "used_in": "subsidies/occto-ltdc-2026.scheme"
+    },
+    {
+      "name": "系統用蓄電池事業への参入及び蓄電池設備の取得に関するお知らせ（株式会社コレックホールディングス）",
+      "publisher": "株式会社コレックホールディングス（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000110.000040575.html",
+      "title_verbatim": "系統用蓄電池事業への参入及び蓄電池設備の取得に関するお知らせ | 株式会社コレックホールディングスのプレスリリース",
+      "checked_on": "2026-10-05",
+      "note": "operators POST 便 10/5。Chrome UA で HTTP 200（270,235 bytes）。掲載 2026-08-31。逐語「系統用蓄電池設備を取得・所有し」「東京都豊島区南池袋」。証券コード 6578 は同日の適時開示 PDF（https://contents.xj-storage.jp/xcontents/AS02843/dadf31e6/d7d6/4fb9/9c7f/478f5834051e/140120260831528606.pdf）にある",
+      "used_in": "operators/correc-hd.sourceUrl"
+    },
+    {
+      "name": "（開示の経過）系統用蓄電所事業の本格展開に向けた子会社設立に関するお知らせ（グローム・ホールディングス株式会社）",
+      "publisher": "グローム・ホールディングス株式会社（適時開示・自社 IR／Xj-Storage）",
+      "url": "https://contents.xj-storage.jp/xcontents/89380/087094cf/a1e7/476b/b2f0/ffb4a40b51cd/140120260721597032.pdf",
+      "title_verbatim": "（開示の経過）系統用蓄電所事業の本格展開に向けた子会社設立に関するお知らせ（PDF 1 ページ目の表題・2026年７月21日・東証グロース・コード 8938）",
+      "checked_on": "2026-10-05",
+      "aliases": ["系統用蓄電所事業の本格展開に向けた子会社設立に関するお知らせ"],
+      "note": "operators POST 便 10/5。Chrome UA で HTTP 200（17,466 bytes）。子会社「グローム・エナジー株式会社」・事業内容「系統用蓄電所に関わる事業全般」。第2号施設（西方町金井2465蓄電所）は 6/11 の開示（…/140120260611567823.pdf）",
+      "used_in": "operators/glome-hd.sourceUrl"
+    },
+    {
+      "name": "CHC（chcbess.com）",
+      "publisher": "CHC Energy Pte Ltd（日本法人 CHC Japan K.K.）",
+      "url": "https://chcbess.com/",
+      "title_verbatim": "Home - CHC",
+      "checked_on": "2026-10-05",
+      "note": "operators POST 便 10/5。Chrome UA で HTTP 200（247,032 bytes）。フッタ「Copyright © 2026 CHC Energy Pte Ltd」・日本の所在地「東京都千代田区有楽町1-1-2 東京ミッドタウン日比谷33階」。日本語の正式名は自社の一次で未確認（OCCTO 落札電源一覧の表記は「CHCJapan株式会社」）",
+      "used_in": "operators/chc-japan.websiteUrl"
     }
   ]
 }

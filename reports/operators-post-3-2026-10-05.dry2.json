@@ -1,0 +1,36 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 3
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 3,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "post",
+   "target": "operators/correc-hd",
+   "row_id": "OP1005-1",
+   "result": "skip_exists",
+   "id": "sjZ1y189Sy"
+  },
+  {
+   "kind": "post",
+   "target": "operators/glome-hd",
+   "row_id": "OP1005-2",
+   "result": "skip_exists",
+   "id": "1eYMNfz4TTs"
+  },
+  {
+   "kind": "post",
+   "target": "operators/chc-japan",
+   "row_id": "OP1005-3",
+   "result": "skip_exists",
+   "id": "egsHcs4e4c"
+  }
+ ]
+}
