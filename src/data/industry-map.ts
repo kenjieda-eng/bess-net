@@ -4,11 +4,11 @@
  * 業界カオスマップ データ (依頼AP)
  *
  * 構成:
- *   - 11 カテゴリ × 代表事業者 (operators 544 社からの典型例)
- *   - 関係データ 30+ 件 (出資/提携/EPC/オフテイク等)
+ *   - 11 カテゴリ × 代表事業者 (operators からの典型例)
+ *   - 主要事業者間の関係データ (出資/提携/EPC/オフテイク等)
  *
  * 注: 完全網羅ではなく主要プレイヤーを抽出した「業界構造可視化」用。
- *     実完全リストは /operators (544 社、microCMS) を参照。
+ *     実完全リストは /operators (microCMS) を参照。件数はコメントに書かない（ページは PLAYERS.length / RELATIONS.length で数える・#121）。
  */
 
 import { isHiddenOperator } from '@/lib/operators-excluded';
@@ -94,7 +94,7 @@ export const CATEGORY_COLORS: Record<CategoryKey, string> = {
 };
 
 // ──────────────────────────────────────
-// PLAYERS (50+ 代表的事業者)
+// PLAYERS (代表的事業者)
 // ──────────────────────────────────────
 
 const PLAYERS_RAW: Player[] = [
@@ -128,7 +128,9 @@ const PLAYERS_RAW: Player[] = [
 
   // ── BESS システム統合 ──
   { id: 'tesla', name: 'Tesla Megapack', category: 'system', origin: 'US', listed: true, activity: 5, note: 'Container BESS 業界標準' },
-  { id: 'fluence', name: 'Fluence', category: 'system', origin: 'US', listed: true, activity: 5, operator_slug: 'pr-fluenceenergyinc', note: '三菱 × Siemens JV 出自' },
+  // 四半期Q4（2026-10-05 確認）: Fluence 公式 Our Story https://fluenceenergy.com/about/our-story/
+  //   「In January 2018, Siemens and AES launched Fluence」（親会社は Siemens と AES。旧 note の「三菱」は一次に無い）
+  { id: 'fluence', name: 'Fluence', category: 'system', origin: 'US', listed: true, activity: 5, operator_slug: 'pr-fluenceenergyinc', note: 'Siemens × AES が 2018 年に設立' },
   { id: 'sungrow', name: 'Sungrow', category: 'system', origin: 'CN', listed: true, activity: 5, note: 'BESS + PCS 統合最大手' },
   { id: 'huawei-ds', name: 'Huawei DS', category: 'system', origin: 'CN', listed: false, activity: 4 },
   { id: 'hitachi-energy', name: '日立エナジー', category: 'system', origin: 'JP', listed: true, activity: 4 },
@@ -146,7 +148,9 @@ const PLAYERS_RAW: Player[] = [
   { id: 'aurora', name: 'Aurora Energy Research', category: 'ems', origin: 'EU', listed: false, activity: 4, operator_slug: 'pr-auroraenergyresearch', note: '市場分析 + 最適化' },
 
   // ── 電力会社 / 送配電 ──
-  { id: 'tepco-pg', name: '東京電力 PG', category: 'utility', origin: 'JP', listed: false, activity: 5, note: '系統運用、空き容量データ非公開中' },
+  // 四半期Q4（2026-10-05 確認）: 東電PG「系統情報更新のお知らせ」https://www.tepco.co.jp/pg/consignment/system/information/index-j.html の
+  //   2026年6月2日付「…公開を一時停止していた「系統の空き容量等に関する情報」…について、公開を再開しました。」（/grid/tokyo/status と一致）
+  { id: 'tepco-pg', name: '東京電力 PG', category: 'utility', origin: 'JP', listed: false, activity: 5, note: '系統運用。空き容量は 2026年6月2日に公開再開' },
   { id: 'kepco', name: '関西電力', category: 'utility', origin: 'JP', listed: true, activity: 5 },
   { id: 'chubu-ep', name: '中部電力', category: 'utility', origin: 'JP', listed: true, activity: 5, note: 'PG 配下 1,081 変電所 緯度経度公開' },
   { id: 'hokkaido-ep', name: '北海道電力', category: 'utility', origin: 'JP', listed: true, activity: 4 },
@@ -187,7 +191,7 @@ export const PLAYERS: Player[] = PLAYERS_RAW.map((p) => ({
 }));
 
 // ──────────────────────────────────────
-// RELATIONS (35 件、主要事業者間の関係)
+// RELATIONS (主要事業者間の関係)
 // ──────────────────────────────────────
 
 export const RELATIONS: Relation[] = [
@@ -235,7 +239,8 @@ export const RELATIONS: Relation[] = [
   { from: 'looop-om', to: 'regional-banks', type: 'partner', note: '小規模案件 保守' },
 
   // JV / 戦略パートナー
-  { from: 'tmeic', to: 'hitachi-energy', type: 'jv', note: '東芝 × 三菱電機 PCS 共同' },
+  // 四半期Q4（2026-10-05）: tmeic → hitachi-energy（jv・「東芝 × 三菱電機 PCS 共同」）を削除。TMEIC 会社概要
+  //   https://www.tmeic.co.jp/corporate/outline/ の出資比率は「東芝50% ： 三菱電機50%」で、日立エナジーとの JV の一次は無い（Ck-2 ■7 と同じく差し替えずに外す）
   { from: 'fluence', to: 'aurora', type: 'partner', note: '市場分析連携' },
   { from: 'eic', to: 'mri', type: 'partner', note: '業界統計連携' },
   { from: 'tepco-pg', to: 'occto', type: 'partner', note: '系統運用協議' },

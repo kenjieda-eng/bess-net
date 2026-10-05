@@ -96,7 +96,7 @@ export default function IncidentsPage() {
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> / 火災・トラブル事例DB
           </p>
-          <div className="section-label" style={{ color: '#c55', fontWeight: 700 }}>🔥 AJ 火災事例 DB v1 · 2026-05-28 公開</div>
+          <div className="section-label" style={{ color: '#c55', fontWeight: 700 }}>🔥 火災事例 DB v1 · 2026-05-28 公開</div>
           <h1 className="section-title">火災・トラブル事例 DB</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             蓄電池 (BESS) の火災・トラブル事例を<strong>公開情報ベース</strong>で体系化。
@@ -182,9 +182,9 @@ export default function IncidentsPage() {
 
           {/* 拡張計画 */}
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>AJ 火災事例 DB 拡張計画</h2>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>今後の拡充予定</h2>
             <ul style={{ fontSize: 15, lineHeight: 1.7, paddingLeft: 20, margin: 0 }}>
-              <li>事例を 30+ 件に拡張（公開情報ベース・順次追加）</li>
+              <li>公開情報で確認できた事例を順次追加</li>
               <li>地域 / 重大度 / 原因 によるフィルタ UI</li>
               <li>国内事例の詳細調査（経産省・消防庁・NEDO 資料ベース）</li>
               <li><Link href="/tools/fire-risk-check">火災リスク自己診断</Link> との連携強化</li>

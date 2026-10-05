@@ -284,6 +284,79 @@ export const INCIDENTS: Incident[] = [
       'https://www.lgensol.com/en/company/newsroom', // Ck-1 A3: 旧 news-list は 404。現行の Newsroom（title「Newsroom｜LG Energy Solution」）
     ],
   },
+  {
+    // 四半期Q4（2026-10-01 ユウ起草・2026-10-05 CC が一次で照合して投入）。Q3（7/1）で提案済み・未投入だった分。
+    //   ★Q3 の文面にあった「現行の改訂規格下では許可されない旧式 NMC 構成」は一次に無いので書かない。
+    //   ★cause: 所有者は「short circuit of the NMC technology」と言っている（セル不良・熱暴走とは言っていない）ので 'electrical'。
+    //   ★一次照合で削った語句（2026-10-05）: 「05:21、」（一次の 5:21 は消防が呼ばれた時刻で、発生時刻ではない）・
+    //     lessons の「初期世代の設備の更新時期の管理が論点になる。」（一次に無い編集側の推論）。
+    //   消防（Nottinghamshire Fire & Rescue Service）自身の公表は notts-fire.gov.uk のニュース一覧・サイト内検索で見つからなかった（2026-10-05）。
+    id: 'rufford-colliery-2026',
+    date: '2026-05-01',
+    location: '英国ノッティンガムシャー州 Rainworth（旧 Rufford Colliery）',
+    region: 'eu',
+    facilityName: 'Rufford BESS（Gresham House Energy Storage Fund）',
+    capacity_mwh: 9,
+    severity: 'moderate',
+    cause: 'electrical',
+    summary:
+      '2026年5月1日、英国ノッティンガムシャー州 Rainworth の旧 Rufford Colliery にある Gresham House 所有の BESS（7MW/9MWh）で電池コンテナの火災が発生し、Nottinghamshire Fire & Rescue Service が出動した。負傷者はなく、所有者によれば火災は短時間で鎮火した。所有者は初期調査の結果として、原因を同サイトで使っている NMC（ニッケル・マンガン・コバルト）系電池の短絡と公表している。',
+    lessons:
+      '2017年12月に商業運転を始めた英国でも初期の系統用 BESS で、NMC 設備の増強（augmentation）工事が火災の4日後（5月5日）に始まる予定だった。所有者は NMC が同ファンドのポートフォリオの 4.03% 未満で、2020年以降に取得した案件では採用していないとしている。',
+    sourceUrls: [
+      // 所有者 Gresham House の声明を逐語掲載（2026-05-07）。原因・規模の出典（<title>「Exclusive: Short circuit in NMC batteries caused fire at UK BESS project - Energy Storage」・2026-10-05 確認）
+      'https://www.ess-news.com/2026/05/07/exclusive-short-circuit-in-nmc-batteries-caused-fire-at-uk-bess-project/',
+    ],
+  },
+  {
+    // 四半期Q4（2026-10-01 ユウ起草・2026-10-05 CC が一次で照合して投入）。市の最終報（Abschlussmeldung）を一次とする。
+    //   ★容量 1.5MW は市の最終報には無く、ESS News が「市の広報担当によれば」として報じた値。capacity_mwh は置かない（MWh の一次なし）。
+    //   ★一次照合で削った語句（2026-10-05）: location の「ザクセン州」（2 つの一次とも Sachsen/Saxony の記載なし）・
+    //     lessons の「小規模」（一次に無い評価語）・「直接の消火ではなく」（ESS 7/22 時点の描写。市の速報 2026-270 では
+    //     コンテナを開けて注水し鎮火しており、残すと「最後まで冷却だけ」と読める）。
+    id: 'bautzen-2026',
+    date: '2026-07-21',
+    location: 'ドイツ Bautzen（Schliebenparkplatz）',
+    region: 'eu',
+    facilityName: 'Bautzen 市内の電池蓄電設備（Schliebenparkplatz・コンテナ 4 基）',
+    severity: 'moderate',
+    cause: 'unknown',
+    summary:
+      '2026年7月21日、Bautzen 市内の駐車場（Schliebenparkplatz）に置かれたリチウム電池の蓄電設備で火災が発生した。市の最終報によれば、消防・警察・技術救援隊（THW）などから約250人が出動し、火災の特殊性から全国の専門家が助言に加わった。避難した住民は全員帰宅し、建物と水の汚染測定で異常は見つかっていない。出火原因は調査中（市の公表時点）。',
+    lessons:
+      '市街地に置かれた設備（報道によれば 1.5MW・コンテナ 4 基）でも、消防は冷却（毎分 5,000L）とドローン監視で対応し、住民の避難を伴った。電池火災の現場経験の少なさが対応を難しくしたと市は説明している（ESS News 報道）。',
+    sourceUrls: [
+      // Stadt Bautzen 最終報 2026-274（<title>「Abschlussmeldung zum Brand des Batteriespeichers auf dem Schliebenparkplatz – Stadt Bautzen」・2026-10-05 確認）。出動規模・測定結果・原因調査中
+      'https://www.bautzen.de/aktuelles/2026-274',
+      // 発生当日〜翌日の経過（避難人数・冷却水量・容量 1.5MW は市広報の談話として）（<title>「Fire breaks out at 1.5 MW battery storage system in Germany - Energy Storage」）
+      'https://www.ess-news.com/2026/07/22/fire-breaks-out-at-1-5-mw-battery-storage-system-in-germany/',
+    ],
+  },
+  {
+    // 四半期Q4（2026-10-01 ユウ起草・2026-10-05 CC が一次で照合して投入）。村の公式経過ページを一次とする（事業者声明も同ページに転載）。
+    //   ★cause は 'unknown'。2023 年の事故の原因は水の浸入（water infiltration・NYSERDA）だが、2025 年分は RCA 待ちで「天候要因が推定」の段階。
+    //   ★容量の一次なし（capacity_mwh を置かない）。
+    //   ★一次照合（2026-10-05）: 村のページは Cloudflare のチャレンジで素の UA・ブラウザ UA とも 403。Wayback のスナップショット
+    //     （2026-06-11 取得・article:modified_time 2026-04-06）で照合した。直した語句: 「NYSERDA は…停止した」→ 一次は「NYSERDA が村に
+    //     停止を伝えた」で停止の主体を書いていない／「自治体側の課題として残っている」→ 一次に無い評価なので削り「（村長の指摘）」に／
+    //     「浸水」→「水の浸入」（water infiltration）／隣接コンテナへの延焼なしは事業者声明なので「事業者によれば」を付けた。
+    id: 'warwick-ny-2025',
+    date: '2025-12-19',
+    location: '米国ニューヨーク州 Warwick 村（28 Church Street）',
+    region: 'us',
+    facilityName: 'Convergent Energy and Power — West Warwick 3（28 Church Street）',
+    severity: 'moderate',
+    cause: 'unknown',
+    summary:
+      '2025年12月19日夜、Convergent Energy and Power が運営する BESS で火災報知器が作動し、コンテナ 1 基の内部で火災が発生した。負傷者はなく、事業者によれば隣接コンテナへの延焼もなかった。村によれば施設は適合証明（Certificate of Compliance）を持たないまま運転されており、村は違反通知と使用禁止（Condemnation）命令を出した。同じ村内の同社設備では 2023 年にも事故があった。',
+    lessons:
+      '2023 年の事故の根本原因は水の浸入とされ（NYSERDA）、2025 年分も天候要因が推定されているが、根本原因分析（RCA）の結果待ち（村の公表時点）。NYSERDA が村に伝えたところでは、同社は RCA の審査まで州内での新規業務を 90 日間停止されている。2026 年 1 月施行の州の新しい BESS 規制は既設設備に遡及しない（村長の指摘）。',
+    sourceUrls: [
+      // Village of Warwick 公式の経過ページ（2025-12-19〜2026-04-06 の時系列・事業者声明・違反通知・NYSERDA 会合記録）。
+      //   <title>「28 Church Street - West Warwick 3 Battery Energy Storage Site Fire: Information & Updates - Village of Warwick」（Wayback 2026-06-11 で確認）
+      'https://villageofwarwickny.gov/28-church-street-west-warwick-3-battery-energy-storage-site-fire-information-updates/',
+    ],
+  },
 ];
 
 /** 表示に使う事例（hidden を除く）。件数・一覧・JSON-LD はすべてこれを数える（#121: 同じ意味の値を二箇所で出さない） */

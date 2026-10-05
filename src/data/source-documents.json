@@ -1447,6 +1447,69 @@
       "checked_on": "2026-10-03",
       "note": "HTTP 200（107,306 bytes）。VGF の逐語: 「In March 2024, government has approved a Viability Gap Funding (VGF) Scheme for the development of large-scale BESS, with an outlay of ₹3,760 crore for development of 13220 MWh at VGF of Rs 27 lakhs/MWh.」「In June 2025 the Government has approved another VGF scheme of 30 GWh, funded through ₹5,400 crore from the power system development fund (PSDF) at VGF of Rs 18 lakhs/MWh.」。発出は電力省ではなく新・再生可能エネルギー省（②の unconf-row21）。「2026/5/14 内閣承認」「第1弾の8倍」「累計 $1.09B」は一次に無い（Ck2d ■5 で src から外した）",
       "used_in": "src/data/global-markets.ts（in: topPolicies・notes・overview・highlights）"
+    },
+    {
+      "name": "Exclusive: Short circuit in NMC batteries caused fire at UK BESS project",
+      "publisher": "ESS News（所有者 Gresham House の声明を逐語掲載）",
+      "url": "https://www.ess-news.com/2026/05/07/exclusive-short-circuit-in-nmc-batteries-caused-fire-at-uk-bess-project/",
+      "title_verbatim": "Exclusive: Short circuit in NMC batteries caused fire at UK BESS project - Energy Storage",
+      "checked_on": "2026-10-05",
+      "note": "四半期Q4 便A。素の UA・ブラウザ UA とも HTTP 200（222,932 bytes）。消防（Nottinghamshire Fire & Rescue Service）自身の公表は notts-fire.gov.uk で見つからなかった",
+      "used_in": "src/data/incidents.ts（rufford-colliery-2026）"
+    },
+    {
+      "name": "Abschlussmeldung zum Brand des Batteriespeichers auf dem Schliebenparkplatz",
+      "publisher": "Stadt Bautzen（バウツェン市）",
+      "url": "https://www.bautzen.de/aktuelles/2026-274",
+      "title_verbatim": "Abschlussmeldung zum Brand des Batteriespeichers auf dem Schliebenparkplatz – Stadt Bautzen",
+      "checked_on": "2026-10-05",
+      "note": "四半期Q4 便A。素の UA・ブラウザ UA とも HTTP 200（80,206 bytes）。ページに公開日の表示なし（市の 2026年7月アーカイブに掲載）",
+      "used_in": "src/data/incidents.ts（bautzen-2026）"
+    },
+    {
+      "name": "Fire breaks out at 1.5 MW battery storage system in Germany",
+      "publisher": "ESS News（pv magazine Deutschland から転載）",
+      "url": "https://www.ess-news.com/2026/07/22/fire-breaks-out-at-1-5-mw-battery-storage-system-in-germany/",
+      "title_verbatim": "Fire breaks out at 1.5 MW battery storage system in Germany - Energy Storage",
+      "checked_on": "2026-10-05",
+      "note": "四半期Q4 便A。素の UA・ブラウザ UA とも HTTP 200（221,975 bytes）。1.5MW は「according to a city spokesperson」",
+      "used_in": "src/data/incidents.ts（bautzen-2026）"
+    },
+    {
+      "name": "28 Church Street - West Warwick 3 Battery Energy Storage Site Fire: Information & Updates",
+      "publisher": "Village of Warwick（ニューヨーク州 Warwick 村）",
+      "url": "https://villageofwarwickny.gov/28-church-street-west-warwick-3-battery-energy-storage-site-fire-information-updates/",
+      "title_verbatim": "28 Church Street - West Warwick 3 Battery Energy Storage Site Fire: Information & Updates - Village of Warwick",
+      "checked_on": "2026-10-05",
+      "note": "四半期Q4 便A。★live は Cloudflare のチャレンジで素の UA・ブラウザ UA とも HTTP 403（「Just a moment...」）。title と本文は Wayback のスナップショット（https://web.archive.org/web/20260611155617/…・article:modified_time 2026-04-06）で確認",
+      "used_in": "src/data/incidents.ts（warwick-ny-2025）"
+    },
+    {
+      "name": "Our Story | Fluence",
+      "publisher": "Fluence Energy",
+      "url": "https://fluenceenergy.com/about/our-story/",
+      "title_verbatim": "Our Story | Fluence - A Siemens and AES Company",
+      "checked_on": "2026-10-05",
+      "note": "四半期Q4 便A。HTTP 200（106,788 bytes）。逐語「In January 2018, Siemens and AES launched Fluence」",
+      "used_in": "src/data/industry-map.ts（fluence の note）"
+    },
+    {
+      "name": "系統情報更新のお知らせ（東京電力パワーグリッド）",
+      "publisher": "東京電力パワーグリッド",
+      "url": "https://www.tepco.co.jp/pg/consignment/system/information/index-j.html",
+      "title_verbatim": "系統情報更新のお知らせ｜系統情報｜東京電力パワーグリッド株式会社",
+      "checked_on": "2026-10-05",
+      "note": "四半期Q4 便A。HTTP 200（62,954 bytes）。2026年6月2日付「…公開を一時停止していた「系統の空き容量等に関する情報」…について、公開を再開しました。」（停止は 2026年2月2日・延期告知 4/30・5/29）",
+      "used_in": "src/data/industry-map.ts（tepco-pg の note）"
+    },
+    {
+      "name": "会社概要（株式会社TMEIC）",
+      "publisher": "株式会社TMEIC",
+      "url": "https://www.tmeic.co.jp/corporate/outline/",
+      "title_verbatim": "会社概要 | 株式会社TMEIC",
+      "checked_on": "2026-10-05",
+      "note": "四半期Q4 便A。HTTP 200（55,247 bytes）。出資比率「東芝50% ： 三菱電機50%」。日立エナジーとの JV の一次は無い（tmeic → hitachi-energy の関係を削除した根拠）",
+      "used_in": "src/data/industry-map.ts（RELATIONS から tmeic → hitachi-energy を削除）"
     }
   ]
 }
