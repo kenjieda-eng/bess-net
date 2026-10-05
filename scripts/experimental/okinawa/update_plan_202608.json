@@ -1,0 +1,6646 @@
+{
+ "generated": "2026-10-05",
+ "area": "沖縄",
+ "prefix": "oki-",
+ "endpoint": "substations",
+ "expected": {
+  "updates": 151,
+  "imported": 150,
+  "value_changed_imported": 14,
+  "creates": 0,
+  "n1_ok_after": 4,
+  "n1_status_as_of_updated": 112,
+  "n1_status_as_of_kept": 1
+ },
+ "updates": [
+  {
+   "slug": "oki-honto-66kv-170001",
+   "id": "oki-honto-66kv-170001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "与那原変電所",
+    "slug": "oki-honto-66kv-170001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_17 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-190001",
+   "id": "oki-honto-66kv-190001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "牧志変電所",
+    "slug": "oki-honto-66kv-190001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_19 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-210001",
+   "id": "oki-honto-66kv-210001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "西那覇変電所",
+    "slug": "oki-honto-66kv-210001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 132,
+    "voltage_secondary_kv": 66,
+    "voltage_class": [
+     "その他"
+    ],
+    "n1_eligible": true,
+    "n1_capacity_mw": 10,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_21 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-230002",
+   "id": "oki-honto-66kv-230002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "曙変電所",
+    "slug": "oki-honto-66kv-230002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_23 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-270001",
+   "id": "oki-honto-66kv-270001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "北那覇変電所",
+    "slug": "oki-honto-66kv-270001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 132,
+    "voltage_secondary_kv": 66,
+    "voltage_class": [
+     "その他"
+    ],
+    "n1_eligible": true,
+    "n1_capacity_mw": 10,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_27 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-270002",
+   "id": "oki-honto-66kv-270002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "北那覇変電所",
+    "slug": "oki-honto-66kv-270002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_27 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-30001",
+   "id": "oki-honto-66kv-30001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "与根変電所",
+    "slug": "oki-honto-66kv-30001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_3 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-300001",
+   "id": "oki-honto-66kv-300001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "西原変電所",
+    "slug": "oki-honto-66kv-300001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 132,
+    "voltage_secondary_kv": 66,
+    "voltage_class": [
+     "その他"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_30 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-300002",
+   "id": "oki-honto-66kv-300002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "西原変電所",
+    "slug": "oki-honto-66kv-300002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_30 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-310001",
+   "id": "oki-honto-66kv-310001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "小那覇変電所",
+    "slug": "oki-honto-66kv-310001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 13.8,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_31 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-330002",
+   "id": "oki-honto-66kv-330002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "浦添変電所",
+    "slug": "oki-honto-66kv-330002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_33 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-340001",
+   "id": "oki-honto-66kv-340001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "牧港第一変電所",
+    "slug": "oki-honto-66kv-340001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 132,
+    "voltage_secondary_kv": 66,
+    "voltage_class": [
+     "その他"
+    ],
+    "n1_eligible": true,
+    "n1_capacity_mw": 10,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_34 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-340003",
+   "id": "oki-honto-66kv-340003",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "牧港第一変電所",
+    "slug": "oki-honto-66kv-340003",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_34 -3",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-350001",
+   "id": "oki-honto-66kv-350001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "大山変電所",
+    "slug": "oki-honto-66kv-350001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_35 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-370002",
+   "id": "oki-honto-66kv-370002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "南上原変電所",
+    "slug": "oki-honto-66kv-370002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_37 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-380002",
+   "id": "oki-honto-66kv-380002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "安谷屋変電所",
+    "slug": "oki-honto-66kv-380002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_38 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-40001",
+   "id": "oki-honto-66kv-40001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "友寄変電所",
+    "slug": "oki-honto-66kv-40001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 132,
+    "voltage_secondary_kv": 66,
+    "voltage_class": [
+     "その他"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_4 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-400001",
+   "id": "oki-honto-66kv-400001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "渡口変電所",
+    "slug": "oki-honto-66kv-400001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 132,
+    "voltage_secondary_kv": 66,
+    "voltage_class": [
+     "その他"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_40 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-430001",
+   "id": "oki-honto-66kv-430001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "北谷変電所",
+    "slug": "oki-honto-66kv-430001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_43 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-440001",
+   "id": "oki-honto-66kv-440001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "島袋変電所",
+    "slug": "oki-honto-66kv-440001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_44 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-480001",
+   "id": "oki-honto-66kv-480001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "美里変電所",
+    "slug": "oki-honto-66kv-480001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_48 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-490001",
+   "id": "oki-honto-66kv-490001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "中城湾変電所",
+    "slug": "oki-honto-66kv-490001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_49 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-520003",
+   "id": "oki-honto-66kv-520003",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "与勝変電所",
+    "slug": "oki-honto-66kv-520003",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_52 -3",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-560001",
+   "id": "oki-honto-66kv-560001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "栄野比変電所",
+    "slug": "oki-honto-66kv-560001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 132,
+    "voltage_secondary_kv": 66,
+    "voltage_class": [
+     "その他"
+    ],
+    "n1_eligible": true,
+    "n1_capacity_mw": 10,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_56 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-60002",
+   "id": "oki-honto-66kv-60002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "佐敷変電所",
+    "slug": "oki-honto-66kv-60002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_6 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-610001",
+   "id": "oki-honto-66kv-610001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "仲石変電所",
+    "slug": "oki-honto-66kv-610001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_61 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-620001",
+   "id": "oki-honto-66kv-620001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "石川火力変電所",
+    "slug": "oki-honto-66kv-620001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 132,
+    "voltage_secondary_kv": 66,
+    "voltage_class": [
+     "その他"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_62 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-650001",
+   "id": "oki-honto-66kv-650001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "冨着変電所",
+    "slug": "oki-honto-66kv-650001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_65 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-660001",
+   "id": "oki-honto-66kv-660001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "金武火力変電所",
+    "slug": "oki-honto-66kv-660001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 132,
+    "voltage_secondary_kv": 66,
+    "voltage_class": [
+     "その他"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_66 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-720001",
+   "id": "oki-honto-66kv-720001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "辺野古変電所",
+    "slug": "oki-honto-66kv-720001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_72 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-750002",
+   "id": "oki-honto-66kv-750002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "新名護変電所",
+    "slug": "oki-honto-66kv-750002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_75 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-770001",
+   "id": "oki-honto-66kv-770001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "今帰仁変電所",
+    "slug": "oki-honto-66kv-770001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_77 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-780002",
+   "id": "oki-honto-66kv-780002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "本部変電所",
+    "slug": "oki-honto-66kv-780002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_78 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-790001",
+   "id": "oki-honto-66kv-790001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "海洋博変電所",
+    "slug": "oki-honto-66kv-790001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_79 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-830001",
+   "id": "oki-honto-66kv-830001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "大保変電所",
+    "slug": "oki-honto-66kv-830001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 13.8,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_83 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-850001",
+   "id": "oki-honto-66kv-850001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "notes": "二次電圧の公表値は「22-13.8」（数値にならないため電圧欄は空）"
+   },
+   "changed": [
+    "notes"
+   ],
+   "before": {
+    "name": "奥間変電所",
+    "slug": "oki-honto-66kv-850001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_85 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-870002",
+   "id": "oki-honto-66kv-870002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "真壁変電所",
+    "slug": "oki-honto-66kv-870002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_87 -2",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-90001",
+   "id": "oki-honto-66kv-90001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "那覇変電所",
+    "slug": "oki-honto-66kv-90001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・変電所",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 22,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_9 -1",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-10001",
+   "id": "oki-honto-66kv-10001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "糸満変電所",
+    "slug": "oki-honto-66kv-10001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 28,
+    "cap_operational_mw": 28,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 12,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_1 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-100001",
+   "id": "oki-honto-66kv-100001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "東町変電所",
+    "slug": "oki-honto-66kv-100001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_10 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-110001",
+   "id": "oki-honto-66kv-110001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "壷川変電所",
+    "slug": "oki-honto-66kv-110001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_11 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-120001",
+   "id": "oki-honto-66kv-120001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "松尾変電所",
+    "slug": "oki-honto-66kv-120001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_12 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-130001",
+   "id": "oki-honto-66kv-130001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "古波蔵変電所",
+    "slug": "oki-honto-66kv-130001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 28,
+    "cap_operational_mw": 28,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_13 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-140001",
+   "id": "oki-honto-66kv-140001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "真玉橋変電所",
+    "slug": "oki-honto-66kv-140001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 33,
+    "cap_operational_mw": 33,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_14 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-150001",
+   "id": "oki-honto-66kv-150001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "上間変電所",
+    "slug": "oki-honto-66kv-150001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_15 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-160001",
+   "id": "oki-honto-66kv-160001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "南風原変電所",
+    "slug": "oki-honto-66kv-160001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_16 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-170002",
+   "id": "oki-honto-66kv-170002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "与那原変電所",
+    "slug": "oki-honto-66kv-170002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_17 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-180001",
+   "id": "oki-honto-66kv-180001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "繁多川変電所",
+    "slug": "oki-honto-66kv-180001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_18 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-190002",
+   "id": "oki-honto-66kv-190002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "牧志変電所",
+    "slug": "oki-honto-66kv-190002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_19 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-20001",
+   "id": "oki-honto-66kv-20001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "阿波根変電所",
+    "slug": "oki-honto-66kv-20001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 3,
+    "capacity_total_mw": 57,
+    "cap_operational_mw": 57,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_2 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-200001",
+   "id": "oki-honto-66kv-200001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "久茂地変電所",
+    "slug": "oki-honto-66kv-200001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_20 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-210002",
+   "id": "oki-honto-66kv-210002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "西那覇変電所",
+    "slug": "oki-honto-66kv-210002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 28,
+    "cap_operational_mw": 28,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_21 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-220001",
+   "id": "oki-honto-66kv-220001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "泊変電所",
+    "slug": "oki-honto-66kv-220001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 3,
+    "capacity_total_mw": 66,
+    "cap_operational_mw": 66,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_22 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-230001",
+   "id": "oki-honto-66kv-230001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "曙変電所",
+    "slug": "oki-honto-66kv-230001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 28,
+    "cap_operational_mw": 28,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_23 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-240001",
+   "id": "oki-honto-66kv-240001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "勢理客変電所",
+    "slug": "oki-honto-66kv-240001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_24 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-250001",
+   "id": "oki-honto-66kv-250001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "宮城変電所",
+    "slug": "oki-honto-66kv-250001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_25 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-260001",
+   "id": "oki-honto-66kv-260001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "城間変電所",
+    "slug": "oki-honto-66kv-260001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_26 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-270003",
+   "id": "oki-honto-66kv-270003",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "北那覇変電所",
+    "slug": "oki-honto-66kv-270003",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_27 -3",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-280001",
+   "id": "oki-honto-66kv-280001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "大名変電所",
+    "slug": "oki-honto-66kv-280001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_28 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-290001",
+   "id": "oki-honto-66kv-290001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "安室変電所",
+    "slug": "oki-honto-66kv-290001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_29 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-30002",
+   "id": "oki-honto-66kv-30002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "与根変電所",
+    "slug": "oki-honto-66kv-30002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_3 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-310002",
+   "id": "oki-honto-66kv-310002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 19.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "小那覇変電所",
+    "slug": "oki-honto-66kv-310002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 18,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_31 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-320001",
+   "id": "oki-honto-66kv-320001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "前田変電所",
+    "slug": "oki-honto-66kv-320001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_32 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-330001",
+   "id": "oki-honto-66kv-330001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "浦添変電所",
+    "slug": "oki-honto-66kv-330001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 56,
+    "cap_operational_mw": 56,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_33 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-340002",
+   "id": "oki-honto-66kv-340002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "牧港第一変電所",
+    "slug": "oki-honto-66kv-340002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_34 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-350002",
+   "id": "oki-honto-66kv-350002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "大山変電所",
+    "slug": "oki-honto-66kv-350002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_35 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-360001",
+   "id": "oki-honto-66kv-360001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "普天間変電所",
+    "slug": "oki-honto-66kv-360001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_36 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-370001",
+   "id": "oki-honto-66kv-370001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "南上原変電所",
+    "slug": "oki-honto-66kv-370001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_37 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-380001",
+   "id": "oki-honto-66kv-380001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "安谷屋変電所",
+    "slug": "oki-honto-66kv-380001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_38 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-40002",
+   "id": "oki-honto-66kv-40002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "友寄変電所",
+    "slug": "oki-honto-66kv-40002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 33,
+    "cap_operational_mw": 33,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_4 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-400002",
+   "id": "oki-honto-66kv-400002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "渡口変電所",
+    "slug": "oki-honto-66kv-400002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_40 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-410001",
+   "id": "oki-honto-66kv-410001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "瑞慶覧変電所",
+    "slug": "oki-honto-66kv-410001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_41 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-420001",
+   "id": "oki-honto-66kv-420001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "桑江変電所",
+    "slug": "oki-honto-66kv-420001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 17,
+    "cap_operational_mw": 17,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 17,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_42 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-430002",
+   "id": "oki-honto-66kv-430002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "北谷変電所",
+    "slug": "oki-honto-66kv-430002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_43 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-440002",
+   "id": "oki-honto-66kv-440002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "島袋変電所",
+    "slug": "oki-honto-66kv-440002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 28,
+    "cap_operational_mw": 28,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 28,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_44 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-460001",
+   "id": "oki-honto-66kv-460001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "中の町変電所",
+    "slug": "oki-honto-66kv-460001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_46 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-470001",
+   "id": "oki-honto-66kv-470001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "高原変電所",
+    "slug": "oki-honto-66kv-470001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_47 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-480002",
+   "id": "oki-honto-66kv-480002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "美里変電所",
+    "slug": "oki-honto-66kv-480002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_48 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-490002",
+   "id": "oki-honto-66kv-490002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "中城湾変電所",
+    "slug": "oki-honto-66kv-490002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_49 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-50001",
+   "id": "oki-honto-66kv-50001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 15.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "具志頭変電所",
+    "slug": "oki-honto-66kv-50001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_5 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-500001",
+   "id": "oki-honto-66kv-500001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "知花変電所",
+    "slug": "oki-honto-66kv-500001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_50 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-510001",
+   "id": "oki-honto-66kv-510001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 19.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "喜仲変電所",
+    "slug": "oki-honto-66kv-510001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 18,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_51 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-520002",
+   "id": "oki-honto-66kv-520002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "与勝変電所",
+    "slug": "oki-honto-66kv-520002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 18,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_52 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-530001",
+   "id": "oki-honto-66kv-530001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "平安座変電所",
+    "slug": "oki-honto-66kv-530001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 18,
+    "cap_operational_mw": 18,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 8,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_53 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-550001",
+   "id": "oki-honto-66kv-550001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "天願変電所",
+    "slug": "oki-honto-66kv-550001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_55 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-570001",
+   "id": "oki-honto-66kv-570001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "座喜味変電所",
+    "slug": "oki-honto-66kv-570001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 25,
+    "cap_operational_mw": 25,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 10,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_57 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-580001",
+   "id": "oki-honto-66kv-580001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "伊良皆第一変電所",
+    "slug": "oki-honto-66kv-580001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_58 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-590001",
+   "id": "oki-honto-66kv-590001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "屋良変電所",
+    "slug": "oki-honto-66kv-590001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 28,
+    "cap_operational_mw": 28,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_59 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-60001",
+   "id": "oki-honto-66kv-60001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "佐敷変電所",
+    "slug": "oki-honto-66kv-60001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 28,
+    "cap_operational_mw": 28,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 12,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_6 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-600001",
+   "id": "oki-honto-66kv-600001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "伊波変電所",
+    "slug": "oki-honto-66kv-600001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 18,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_60 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-610002",
+   "id": "oki-honto-66kv-610002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "仲石変電所",
+    "slug": "oki-honto-66kv-610002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 14,
+    "cap_operational_mw": 14,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_61 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-630001",
+   "id": "oki-honto-66kv-630001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "石川変電所",
+    "slug": "oki-honto-66kv-630001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_63 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-650002",
+   "id": "oki-honto-66kv-650002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "冨着変電所",
+    "slug": "oki-honto-66kv-650002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 14,
+    "cap_operational_mw": 14,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_65 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-670001",
+   "id": "oki-honto-66kv-670001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "新金武変電所",
+    "slug": "oki-honto-66kv-670001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 18,
+    "cap_operational_mw": 18,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 9,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_67 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-680001",
+   "id": "oki-honto-66kv-680001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "恩納変電所",
+    "slug": "oki-honto-66kv-680001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 14,
+    "cap_operational_mw": 14,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_68 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-690001",
+   "id": "oki-honto-66kv-690001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "安富祖変電所",
+    "slug": "oki-honto-66kv-690001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_69 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-70001",
+   "id": "oki-honto-66kv-70001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "高安変電所",
+    "slug": "oki-honto-66kv-70001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_7 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-700001",
+   "id": "oki-honto-66kv-700001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "喜瀬変電所",
+    "slug": "oki-honto-66kv-700001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 14,
+    "cap_operational_mw": 14,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_70 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-710001",
+   "id": "oki-honto-66kv-710001",
+   "patch": {
+    "notes": "※１／空容量: 2026年8月末時点の公表 CSV は 13、PDF は 12"
+   },
+   "changed": [
+    "notes"
+   ],
+   "before": {
+    "name": "松田変電所",
+    "slug": "oki-honto-66kv-710001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 14,
+    "cap_operational_mw": 14,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 12,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_71 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   },
+   "note": "取り込まない（値・last_updated 据え置き）。備考に両値だけ"
+  },
+  {
+   "slug": "oki-honto-66kv-720002",
+   "id": "oki-honto-66kv-720002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "辺野古変電所",
+    "slug": "oki-honto-66kv-720002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 8,
+    "cap_operational_mw": 8,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 7,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_72 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-740001",
+   "id": "oki-honto-66kv-740001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "名護変電所",
+    "slug": "oki-honto-66kv-740001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 28,
+    "cap_operational_mw": 28,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_74 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-750001",
+   "id": "oki-honto-66kv-750001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "新名護変電所",
+    "slug": "oki-honto-66kv-750001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_75 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-760001",
+   "id": "oki-honto-66kv-760001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "安和変電所",
+    "slug": "oki-honto-66kv-760001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 18,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_76 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-770002",
+   "id": "oki-honto-66kv-770002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "今帰仁変電所",
+    "slug": "oki-honto-66kv-770002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 14,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_77 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-780001",
+   "id": "oki-honto-66kv-780001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "本部変電所",
+    "slug": "oki-honto-66kv-780001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 28,
+    "cap_operational_mw": 28,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 11,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_78 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-790002",
+   "id": "oki-honto-66kv-790002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 12.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "海洋博変電所",
+    "slug": "oki-honto-66kv-790002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 14,
+    "cap_operational_mw": 14,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 11,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_79 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-80001",
+   "id": "oki-honto-66kv-80001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "小禄変電所",
+    "slug": "oki-honto-66kv-80001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_8 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-820001",
+   "id": "oki-honto-66kv-820001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "羽地変電所",
+    "slug": "oki-honto-66kv-820001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 14,
+    "cap_operational_mw": 14,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 10,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_82 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-830002",
+   "id": "oki-honto-66kv-830002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "大保変電所",
+    "slug": "oki-honto-66kv-830002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 4,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_83 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-840001",
+   "id": "oki-honto-66kv-840001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "慶佐次変電所",
+    "slug": "oki-honto-66kv-840001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 13.8,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "13.8kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 4,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_84 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-850002",
+   "id": "oki-honto-66kv-850002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 9.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "奥間変電所",
+    "slug": "oki-honto-66kv-850002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 7,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_85 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-870001",
+   "id": "oki-honto-66kv-870001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "真壁変電所",
+    "slug": "oki-honto-66kv-870001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 11,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_87 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-890001",
+   "id": "oki-honto-66kv-890001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "伊平変電所",
+    "slug": "oki-honto-66kv-890001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_89 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-90002",
+   "id": "oki-honto-66kv-90002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "那覇変電所",
+    "slug": "oki-honto-66kv-90002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 19,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_9 -2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-66kv-930001",
+   "id": "oki-honto-66kv-930001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "ギンバル変電所",
+    "slug": "oki-honto-66kv-930001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島66kV系・配変",
+    "voltage_primary_kv": 66,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "66kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 19,
+    "cap_operational_mw": 19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 16,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-66kv_93 -1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map01_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0019",
+   "id": "oki-honto-22kv-0019",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "C変電塔",
+    "slug": "oki-honto-22kv-0019",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・変電所",
+    "voltage_primary_kv": 13.8,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "13.8kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 0.12,
+    "cap_operational_mw": 0.12,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0.12,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_19",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0020",
+   "id": "oki-honto-22kv-0020",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "安波第二変電塔",
+    "slug": "oki-honto-22kv-0020",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・変電所",
+    "voltage_primary_kv": 13.8,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "13.8kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 0.08,
+    "cap_operational_mw": 0.08,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0.08,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_20",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0021",
+   "id": "oki-honto-22kv-0021",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "安波変電塔",
+    "slug": "oki-honto-22kv-0021",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・変電所",
+    "voltage_primary_kv": 13.8,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "13.8kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 0.47,
+    "cap_operational_mw": 0.47,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_21",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0022",
+   "id": "oki-honto-22kv-0022",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "D変電塔",
+    "slug": "oki-honto-22kv-0022",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・変電所",
+    "voltage_primary_kv": 13.8,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "13.8kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 0.19,
+    "cap_operational_mw": 0.19,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0.13,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_22",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0023",
+   "id": "oki-honto-22kv-0023",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "E変電塔",
+    "slug": "oki-honto-22kv-0023",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・変電所",
+    "voltage_primary_kv": 13.8,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "13.8kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 0.82,
+    "cap_operational_mw": 0.82,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0.82,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_23",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0073",
+   "id": "oki-honto-22kv-0073",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "汀間配電塔",
+    "slug": "oki-honto-22kv-0073",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 5,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_73",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0080",
+   "id": "oki-honto-22kv-0080",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "伊江配電塔",
+    "slug": "oki-honto-22kv-0080",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 10,
+    "cap_operational_mw": 5,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_80",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0081",
+   "id": "oki-honto-22kv-0081",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "伊是名配電塔",
+    "slug": "oki-honto-22kv-0081",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 10,
+    "cap_operational_mw": 5,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 2,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_81",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0086",
+   "id": "oki-honto-22kv-0086",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "渡嘉敷配電塔",
+    "slug": "oki-honto-22kv-0086",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 10,
+    "cap_operational_mw": 5,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 2,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_86",
+    "non_firm_eligible": false,
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0088",
+   "id": "oki-honto-22kv-0088",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 3.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "楚洲配電塔",
+    "slug": "oki-honto-22kv-0088",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 13.8,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "13.8kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 10,
+    "cap_operational_mw": 5,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 2,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_88",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0090",
+   "id": "oki-honto-22kv-0090",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 6.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "今泊配電塔",
+    "slug": "oki-honto-22kv-0090",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 5,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_90",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0091",
+   "id": "oki-honto-22kv-0091",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "知念配電塔",
+    "slug": "oki-honto-22kv-0091",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 9,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_91",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0092",
+   "id": "oki-honto-22kv-0092",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "玉城配電塔",
+    "slug": "oki-honto-22kv-0092",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 7,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_92",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0094",
+   "id": "oki-honto-22kv-0094",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 7.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "馬天配電塔",
+    "slug": "oki-honto-22kv-0094",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 8,
+    "cap_operational_mw": 8,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 8,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_94",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-honto-22kv-0095",
+   "id": "oki-honto-22kv-0095",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "平敷屋配電塔",
+    "slug": "oki-honto-22kv-0095",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄本島22kV系・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 9,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_honto-22kv_95",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map02_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0001",
+   "id": "oki-ritou-0001",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "平良変電所",
+    "slug": "oki-ritou-0001",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 3,
+    "capacity_total_mw": 35,
+    "cap_operational_mw": 35,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 9,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0010",
+   "id": "oki-ritou-0010",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "登野城配電塔",
+    "slug": "oki-ritou-0010",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 23,
+    "cap_operational_mw": 23,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 11,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_10",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0011",
+   "id": "oki-ritou-0011",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "名蔵配電塔",
+    "slug": "oki-ritou-0011",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 11,
+    "cap_operational_mw": 11,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 5,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_11",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0012",
+   "id": "oki-ritou-0012",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "盛山配電塔",
+    "slug": "oki-ritou-0012",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 11,
+    "cap_operational_mw": 11,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 2,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_12",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0013",
+   "id": "oki-ritou-0013",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "units": 2,
+    "capacity_total_mw": 11.0,
+    "cap_operational_mw": 11.0
+   },
+   "changed": [
+    "units",
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ],
+   "before": {
+    "name": "川平配電塔",
+    "slug": "oki-ritou-0013",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 5,
+    "cap_operational_mw": 5,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 5,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_13",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0014",
+   "id": "oki-ritou-0014",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "石垣第二",
+    "slug": "oki-ritou-0014",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 9,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_14",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0015",
+   "id": "oki-ritou-0015",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "units": 2,
+    "capacity_total_mw": 8.0,
+    "cap_operational_mw": 8.0
+   },
+   "changed": [
+    "units",
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ],
+   "before": {
+    "name": "竹富配電塔",
+    "slug": "oki-ritou-0015",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 5,
+    "cap_operational_mw": 5,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 2,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_15",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0016",
+   "id": "oki-ritou-0016",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "capacity_total_mw": 8.0,
+    "cap_operational_mw": 8.0
+   },
+   "changed": [
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ],
+   "before": {
+    "name": "小浜配電塔",
+    "slug": "oki-ritou-0016",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 5,
+    "cap_operational_mw": 5,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 2,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_16",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0017",
+   "id": "oki-ritou-0017",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "西表東変電所",
+    "slug": "oki-ritou-0017",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 11,
+    "cap_operational_mw": 11,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 5,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_17",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0018",
+   "id": "oki-ritou-0018",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 5.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "大田配電塔",
+    "slug": "oki-ritou-0018",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 5,
+    "cap_operational_mw": 5,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 4,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_18",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0019",
+   "id": "oki-ritou-0019",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "宮良配電塔",
+    "slug": "oki-ritou-0019",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 11,
+    "cap_operational_mw": 11,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 2,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_19",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0002",
+   "id": "oki-ritou-0002",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "久松配電塔",
+    "slug": "oki-ritou-0002",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 23,
+    "cap_operational_mw": 23,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 11,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_2",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0020",
+   "id": "oki-ritou-0020",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "上原配電塔",
+    "slug": "oki-ritou-0020",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 11,
+    "cap_operational_mw": 11,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 5,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_20",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0003",
+   "id": "oki-ritou-0003",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "units": 2,
+    "capacity_total_mw": 15.0,
+    "cap_operational_mw": 15.0
+   },
+   "changed": [
+    "units",
+    "capacity_total_mw",
+    "cap_operational_mw"
+   ],
+   "before": {
+    "name": "下地配電塔",
+    "slug": "oki-ritou-0003",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 5,
+    "cap_operational_mw": 5,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 4,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_3",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0004",
+   "id": "oki-ritou-0004",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "更竹配電塔",
+    "slug": "oki-ritou-0004",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 8,
+    "cap_operational_mw": 8,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_4",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0005",
+   "id": "oki-ritou-0005",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z",
+    "cap_avail_mw": 5.0
+   },
+   "changed": [
+    "cap_avail_mw"
+   ],
+   "before": {
+    "name": "城辺配電塔",
+    "slug": "oki-ritou-0005",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 11,
+    "cap_operational_mw": 11,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 4,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_5",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0006",
+   "id": "oki-ritou-0006",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "伊良部変電所",
+    "slug": "oki-ritou-0006",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 4,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_6",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0007",
+   "id": "oki-ritou-0007",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "上野配電塔",
+    "slug": "oki-ritou-0007",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 11,
+    "cap_operational_mw": 11,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 5,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_7",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0008",
+   "id": "oki-ritou-0008",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "地盛配電塔",
+    "slug": "oki-ritou-0008",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 9,
+    "cap_operational_mw": 9,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 8,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_8",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0009",
+   "id": "oki-ritou-0009",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "石垣配電塔",
+    "slug": "oki-ritou-0009",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・変電所",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 2,
+    "capacity_total_mw": 38,
+    "cap_operational_mw": 38,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 18,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_9",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_02.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  },
+  {
+   "slug": "oki-ritou-0001-2",
+   "id": "oki-ritou-0001-2",
+   "patch": {
+    "last_updated": "2026-08-31T00:00:00.000Z",
+    "fetched_at": "2026-10-05T00:00:00.000Z"
+   },
+   "changed": [],
+   "before": {
+    "name": "伊原間変電塔",
+    "slug": "oki-ritou-0001-2",
+    "operator": [
+     "沖縄電力"
+    ],
+    "area": [
+     "沖縄"
+    ],
+    "prefecture": "沖縄離島・配変",
+    "voltage_primary_kv": 22,
+    "voltage_secondary_kv": 6.6,
+    "voltage_class": [
+     "22kV系"
+    ],
+    "units": 1,
+    "capacity_total_mw": 0.95,
+    "cap_operational_mw": 0.95,
+    "op_constraint": "熱容量",
+    "cap_avail_mw": 0.95,
+    "n1_eligible": false,
+    "oc_possibility": [],
+    "external_id": "okiden_ritou_1",
+    "non_firm_eligible": false,
+    "notes": "※１",
+    "source_url": "https://www.okiden.co.jp/shared/csv/business-support/service/rule/plan/con_res_map03_03.csv",
+    "data_source_format": [
+     "CSV"
+    ],
+    "last_updated": "2026-03-01T00:00:00.000Z",
+    "fetched_at": "2026-05-07T00:00:00.000Z",
+    "relatedOperators": [],
+    "relatedNews": [],
+    "relatedTerms": [],
+    "relatedSubsidies": []
+   }
+  }
+ ],
+ "creates": []
+}

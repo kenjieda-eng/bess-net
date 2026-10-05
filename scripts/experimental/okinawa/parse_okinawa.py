@@ -241,9 +241,64 @@ def base_val(b, k):
     return None if v == "" else v
 
 
+META_KEYS = {"id", "createdAt", "updatedAt", "publishedAt", "revisedAt"}
+PLAN_LU = "2026-08-31T00:00:00.000Z"  # 「2026年8月末時点」＝データ基準時点（裁定 BT-1。サイト更新日 2026-09-18 は報告にだけ記録）
+PLAN_FETCHED = "2026-10-05T00:00:00.000Z"  # 当サイトの取込日（10/5 に取り直した CSV は 10/4 とハッシュ一致）
+MATSUDA = "oki-honto-66kv-710001"  # 裁定 BT-2: CSV 13／PDF 12 の食い違い → 取り込まない（現値 12・last_updated も据え置き）。備考に両値だけ残す
+OKUMA = "oki-honto-66kv-850001"    # 裁定 BT-4: 二次電圧「22-13.8」は数値にならない → 数値欄は null のまま、原値を備考に
+
+
+def append_note(cur, extra):
+    if extra in (cur or ""):  # 冪等: 取込後の baseline から計画を作り直しても二重に足さない
+        return cur
+    return f"{cur}／{extra}" if cur else extra
+
+
+def emit_plan(path, matched, new_rows, base):
+    """本実行の計画（BS+BT 本実行便 2026-10-05・裁定 §2 BT 5 点）。書込はしない（applier が読む）。"""
+    assert not new_rows, new_rows
+    updates = []
+    for b, r in matched:
+        if b["slug"] == MATSUDA:
+            patch = {"notes": append_note(b.get("notes"), "空容量: 2026年8月末時点の公表 CSV は 13、PDF は 12")}
+            updates.append({"slug": b["slug"], "id": b["id"], "patch": patch, "changed": ["notes"],
+                            "before": {k: v for k, v in b.items() if k not in META_KEYS}, "note": "取り込まない（値・last_updated 据え置き）。備考に両値だけ"})
+            continue
+        patch = {"last_updated": PLAN_LU, "fetched_at": PLAN_FETCHED}
+        if b.get("source_url") != r["source_url"]:
+            patch["source_url"] = r["source_url"]
+        changed = []
+        for k, _lab, kind in FIELDS:
+            bv, nv = base_val(b, k), r[k]
+            if kind == "num" and numeq(bv, nv) or kind == "text" and (bv or None) == (nv or None):
+                continue
+            patch[k] = ([nv] if nv else []) if k == "oc_possibility" else (int(nv) if k == "units" and nv is not None else nv)
+            changed.append(k)
+        if r["file"] == "con_res_map01_02.csv" and r["n1_eligible"] is not None and bool(b.get("n1_eligible")) != r["n1_eligible"]:
+            patch["n1_eligible"] = r["n1_eligible"]
+            changed.append("n1_eligible")
+        if b["slug"] == OKUMA:
+            raw = next(x["raw"] for x in NONSTANDARD if x["name"] == r["name"] and x["column"] == "電圧(二次)")
+            patch["notes"] = append_note(r["notes"], f"二次電圧の公表値は「{raw}」（数値にならないため電圧欄は空）")
+            changed.append("notes")
+        updates.append({"slug": b["slug"], "id": b["id"], "patch": patch, "changed": changed,
+                        "before": {k: v for k, v in b.items() if k not in META_KEYS}})
+    plan = {"generated": "2026-10-05", "area": "沖縄", "prefix": "oki-", "endpoint": "substations",
+            "expected": {"updates": 151, "imported": 150, "value_changed_imported": 14, "creates": 0, "n1_ok_after": 4,
+                         # n1-status の「公表なし」113 件の as_of: 本実行後の再生成で 112 件が 2026-08-31 に、松田 1 件は据え置き（last_updated を変えないため）
+                         "n1_status_as_of_updated": 112, "n1_status_as_of_kept": 1},
+            "updates": updates, "creates": []}
+    imported = [u for u in updates if u["slug"] != MATSUDA]
+    vc = sum(1 for u in imported if [k for k in u["changed"] if k != "notes" or u["slug"] != OKUMA])
+    assert len(updates) == 151 and len(imported) == 150 and vc == 14, (len(updates), len(imported), vc)
+    Path(path).write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"plan → {path}: updates {len(updates)}（取込 {len(imported)}・値変化 {vc}・松田は備考だけ・奥間は備考に原値）")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pdf-dir", help="公表 PDF（con_res_map0{1,2,3}.pdf）の置き場所。指定時は CSV と PDF を全行照合する")
+    ap.add_argument("--emit-plan", help="本実行の計画 JSON の出力先（指定時は計画だけ書き、dry-run の成果物は書き換えない）")
     args = ap.parse_args()
     R = {"generated_on": TODAY, "area": "沖縄", "operator": "沖縄電力", "page": PAGE_URL,
          "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ）", "site_updated": SITE_UPDATED,
@@ -432,6 +487,9 @@ def main():
     if class_mismatch:
         R["requires_judgement"].append(f"baseline の設備区分と source ファイルが食い違う {len(class_mismatch)} 件")
 
+    if args.emit_plan:
+        emit_plan(args.emit_plan, matched, new_rows, base)
+        return
     NORMALIZED.write_text(json.dumps({"basis": sorted(bases), "rows": raw_rows}, ensure_ascii=False, indent=1), encoding="utf-8")
     REPORT_JSON.write_text(json.dumps(R, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
     c = R["counts"]

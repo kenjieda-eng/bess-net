@@ -267,9 +267,74 @@ def base_val(b, k):
     return v if v not in ("",) else None
 
 
+META_KEYS = {"id", "createdAt", "updatedAt", "publishedAt", "revisedAt"}
+PLAN_LU = "2026-10-01T00:00:00.000Z"  # 版 3 点一致（ファイル名・CSV 行0・PDF）
+PLAN_FETCHED = "2026-10-05T00:00:00.000Z"  # 当サイトの取込日（本実行の日。10/5 に取り直した CSV は 10/4 とハッシュ一致）
+
+
+def plan_value(k, v):
+    if k == "oc_possibility":
+        return [v] if v else []
+    if k == "units":
+        return None if v is None else int(v)
+    return v
+
+
+def emit_plan(path, matched, new_rows, base):
+    """本実行の計画（BS+BT 本実行便 2026-10-05・裁定 §2 BS 4 点）。書込はしない（applier が読む）。
+    - 既存 294: last_updated・source_url（_202610_08）・fetched_at ＋ 値が変わった列（「－」になった 13 件は null＝公表どおり空）
+    - N-1 が未算定（－）の行は n1_eligible を送らない（現値 false を維持・n1-status.json で「未算定」表示）
+    - 新規 1: 高知変電所 187/110kV（続き行・slug は組内 2 行目＝-2）。CSV に無い欄は同じ組の 1 行目から写す"""
+    updates = []
+    for b, r in matched:
+        patch = {"last_updated": PLAN_LU, "source_url": r["source_url"], "fetched_at": PLAN_FETCHED}
+        changed = []
+        for k, _lab, kind in FIELDS:
+            bv, nv = base_val(b, k), r[k]
+            same = numeq(bv, nv) if kind == "num" else ((bv or None) == (nv or None))
+            if not same:
+                patch[k] = plan_value(k, nv)
+                changed.append(k)
+        if r["n1_eligible"] is not None and bool(b.get("n1_eligible")) != r["n1_eligible"]:
+            patch["n1_eligible"] = r["n1_eligible"]
+            changed.append("n1_eligible")
+        # before はレコード全体（メタ除く）: applier が「dry-run の後に誰かが書いたか」を全 field で判定する（便 §0・§3-3）
+        updates.append({"slug": b["slug"], "id": b["id"], "patch": patch, "changed": changed,
+                        "before": {k: v for k, v in b.items() if k not in META_KEYS}})
+    by_slug = {b["slug"]: b for b in base}
+    creates = []
+    for r in new_rows:
+        sib = by_slug[r["expected_slug"].rsplit("-", 1)[0]]  # 組の 1 行目（ydn-kikan-0013）
+        content = {
+            "name": r["name"], "slug": r["expected_slug"], "operator": sib["operator"], "area": sib["area"],
+            "voltage_primary_kv": r["voltage_primary_kv"], "voltage_secondary_kv": r["voltage_secondary_kv"],
+            "voltage_class": [r["voltage_class"]], "units": r["units"], "capacity_total_mw": r["capacity_total_mw"],
+            "cap_operational_mw": r["cap_operational_mw"], "op_constraint": r["op_constraint"],
+            "forecast_flow_mw": r["forecast_flow_mw"], "cap_avail_mw": r["cap_avail_mw"],
+            "cap_avail_upper_mw": r["cap_avail_upper_mw"], "n1_eligible": bool(r["n1_eligible"]),
+            "n1_capacity_mw": r["n1_capacity_mw"], "oc_possibility": plan_value("oc_possibility", r["oc_possibility"]),
+            "oc_target_self": r["oc_target_self"], "oc_target_upper": r["oc_target_upper"], "notes": r["notes"],
+            "external_id": r["external_id"], "non_firm_eligible": sib.get("non_firm_eligible", False),
+            "source_url": r["source_url"], "data_source_format": sib["data_source_format"],
+            "last_updated": PLAN_LU, "fetched_at": PLAN_FETCHED,
+        }
+        if r["prefecture"]:
+            content["prefecture"] = r["prefecture"]
+        creates.append({"slug": r["expected_slug"], "content": {k: v for k, v in content.items() if v is not None},
+                        "n1_raw": r["n1_raw"], "csv_line": r["line"], "continuation": r["continuation"]})
+    plan = {"generated": "2026-10-05", "area": "四国", "prefix": "ydn-", "endpoint": "substations",
+            "expected": {"updates": 294, "value_changed": 208, "creates": 1, "n1_ok_after": 19},
+            "updates": updates, "creates": creates}
+    vc = sum(1 for u in updates if u["changed"])
+    assert len(updates) == 294 and vc == 208 and len(creates) == 1, (len(updates), vc, len(creates))
+    Path(path).write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"plan → {path}: updates {len(updates)}（値変化 {vc}）creates {len(creates)}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pdf-dir", help="公表 PDF（sys_capa_*_map_*.pdf）の置き場所。指定時は CSV と PDF を全行照合する")
+    ap.add_argument("--emit-plan", help="本実行の計画 JSON の出力先（指定時は計画だけ書き、dry-run の成果物は書き換えない）")
     args = ap.parse_args()
     R = {"generated_on": TODAY, "area": "四国", "operator": "四国電力送配電",
          "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ）", "page": PAGE_URL,
@@ -486,6 +551,9 @@ def main():
     if vclass_diff:
         R["requires_judgement"].append(f"電圧階級の導出が初期取込と異なる {len(vclass_diff)} 件（§4-d）")
 
+    if args.emit_plan:
+        emit_plan(args.emit_plan, matched, new_rows, base)
+        return
     NORMALIZED.write_text(json.dumps({"version": VERSION_TAG, "rows": raw_rows}, ensure_ascii=False, indent=1), encoding="utf-8")
     N1_OUT.write_text(json.dumps({
         "purpose": "四国 10月版（_202610_08）で N-1電制適用可否が未算定（－）・空欄の行。dry-run の一覧（書込なし）。"
