@@ -69,7 +69,7 @@ microCMS 書込は **news の POST 10 件だけ**（PATCH・DELETE・PUT 0）。
 
 - 10 件の `/news/{slug}`: **10/10 が HTTP 200**。`<title>` に原稿の title、本文の**全文**（。区切りで 7〜9 文ずつ・計 73 文）が初期DOM にある（欠け 0）。x-vercel-cache は MISS 8・HIT 2（age 19・28）。
 - `/news` 一覧: 200（HIT・age 76）・**10 slug すべて掲載**。
-- （デプロイ後の再照合は下に追記）
+- **デプロイ後の再照合（11:20 JST）**: 本便の commit `fcdc525` のデプロイ（POST の後にビルド＝主題ゲートに 10 件を含む）が Ready になってから同じ照合を再実行し、**10/10 が 200・全文あり**（PRERENDER 7・HIT 3・age 0〜2）、`/news` も 10 slug 掲載（PRERENDER・age 0）。POST 10 件で起きた webhook のビルド 6 本は、後から積まれたこのデプロイで自動キャンセル（Canceled）。
 
 ## ■2 projects の同定照合（読取のみ・書込 0）
 
