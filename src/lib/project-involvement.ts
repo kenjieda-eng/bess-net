@@ -12,7 +12,7 @@
  *   (3) 役割語と社名が**同一文**にあることを要件にする、の3点を実装で担保する。
  *   単なる言及（「北海道電力ネットワーク管内の…」等）は役割語がないため採用されない。
  */
-import { coreName, findOperatorMentions } from './operator-match';
+import { coreName, findOperatorMentions, normalizeForMatch } from './operator-match';
 
 export type InvolvementRole =
   | 'オフテイク'
@@ -117,7 +117,9 @@ export function detectInvolvementRoles(
   projectBody: string | undefined,
   operatorName: string
 ): InvolvementRole[] {
-  const units = [String(projectName || ''), ...splitSentences(plainBody(projectBody))];
+  // Ck2h §6: findOperatorMentions の位置は正規化後（NFKC）の文字列上なので、unit も同じ関数で正規化してから位置を使う
+  // （plainBody・splitSentences の後で掛ける＝全角「＜」が「<」になってタグ扱いで消える事故を避ける）
+  const units = [String(projectName || ''), ...splitSentences(plainBody(projectBody))].map(normalizeForMatch);
   const roles = new Set<InvolvementRole>();
   for (const unit of units) {
     if (!unit) continue;

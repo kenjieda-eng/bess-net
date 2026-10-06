@@ -18,7 +18,14 @@
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { mentionsCoreWithBoundary } from '../src/lib/operator-match';
+import {
+  mentionsCoreWithBoundary,
+  mentionsOperator,
+  normalizeEntityName,
+  resolveStructuredEntities,
+  buildEntityIndex,
+} from '../src/lib/operator-match';
+import { detectInvolvementRoles } from '../src/lib/project-involvement';
 
 /**
  * 偽陰性検出の境界判定 回帰ケース（2026-09-08 Pj2-G 追修便）。
@@ -48,6 +55,31 @@ function runBoundaryRegression(): string[] {
   }
   const tp = BOUNDARY_CASES.filter((c) => c.want).length;
   console.log(`  ${problems.length === 0 ? '✅' : '❌'} 境界判定の回帰: ${ok}/${BOUNDARY_CASES.length} PASS（真陽性ケース ${tp}件を含む）`);
+  for (const p of problems) console.log(`      ${p}`);
+  return problems;
+}
+
+/**
+ * NFKC 正規化の回帰（Ck2h §6・2026-10-07）。全角/半角の違いで実在の紐付けを落とさず、前方一致（東急⊂東急不動産）も増やさないこと。
+ * 正規化の前（10/6 まで）のコードでは上 5 件が期待と逆になる＝正規化を外すと FAIL する否定テスト。
+ */
+const NFKC_CASES: Array<{ got: () => unknown; want: unknown; why: string }> = [
+  { got: () => mentionsOperator('三次蓄電所は、グリーンエナジー＆カンパニーのグループが保有する', '株式会社グリーンエナジー&カンパニー'), want: true, why: '全角＆⇔半角&' },
+  { got: () => normalizeEntityName('株式会社ＩＢｅｅＴ') === normalizeEntityName('IBeeT'), want: true, why: '全角英字のマスタ（pr-co110152）' },
+  { got: () => resolveStructuredEntities('合同会社クラダシ・インベストメント2号（グリーンエナジー＆カンパニー×クラダシ）', buildEntityIndex(['株式会社グリーンエナジー&カンパニー'])).length, want: 1, why: '括弧内の出資者（全角＆）' },
+  { got: () => mentionsCoreWithBoundary('Ｊ＆Ｓ蓄電合同会社', normalizeEntityName('J&S蓄電合同会社')), want: true, why: '検出器も同じ正規化' },
+  { got: () => detectInvolvementRoles('x', '<p>㈱ＧＲＥＥＮ ＡＣＴＩＯＮがアグリゲーションを担う</p>', '株式会社GREEN ACTION').join(), want: '運用・最適化', why: '㈱→(株) で長さが変わっても位置がずれない' },
+  { got: () => mentionsOperator('東急不動産株式会社', '東急株式会社'), want: false, why: 'NFKC 後も前方一致は採らない' },
+  { got: () => resolveStructuredEntities('東急不動産', buildEntityIndex(['東急株式会社'])).length, want: 0, why: '構造化欄の前方一致禁止' },
+];
+
+function runNfkcRegression(): string[] {
+  const problems: string[] = [];
+  for (const c of NFKC_CASES) {
+    const got = c.got();
+    if (got !== c.want) problems.push(`NFKC ${c.why} 期待=${String(c.want)} 実際=${String(got)}`);
+  }
+  console.log(`  ${problems.length === 0 ? '✅' : '❌'} NFKC 正規化の回帰: ${NFKC_CASES.length - problems.length}/${NFKC_CASES.length} PASS`);
   for (const p of problems) console.log(`      ${p}`);
   return problems;
 }
@@ -86,6 +118,7 @@ function main(): void {
 
   // 0) 検出器そのものの回帰（境界判定・真陽性を隠していないか）
   problems.push(...runBoundaryRegression());
+  problems.push(...runNfkcRegression());
 
   // 1) 偽陰性（0件表示なのに構造化フィールドに社名が現れる）
   for (const [label, rows] of [

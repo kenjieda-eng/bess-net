@@ -16,9 +16,23 @@
 
 const LEGAL_RE = /(株式会社|合同会社|有限会社|一般社団法人|一般財団法人|\(株\)|（株）|㈱|グループ|ホールディングス|ＨＤ)/g;
 
+/**
+ * 照合用の文字正規化（Ck2h §6・2026-10-07）。NFKC で 全角英数（ＩＢｅｅＴ→IBeeT）・全角記号（＆（）：，／→&():,/）・
+ * 全角スペース・半角カナ・㈱（→(株)）を揃える。本ファイルの照合関数は入口で両側（本文・事業者欄・社名・alias）に掛ける。
+ * NFKC はここ以外に書かない（#119）。冪等なので正規化済みの文字列が再度通っても値は変わらない。
+ * ★文字数が変わる（㈱→(株)・ｶﾞ→ガ）。findOperatorMentions の位置は「正規化後の文字列」上の位置。
+ *   位置を使う側（project-involvement.ts）は、この関数で正規化した文字列に対して位置を使うこと。
+ * ★表示には使わない（ページの社名・案件名は microCMS の原値のまま。索引の値も原名のまま）。
+ * ★LEGAL_RE の「ＨＤ」は正規化後の入力には現れない（"HD" になる）。LEGAL_RE を「HD」にすると HDRE Japan の先頭を剥がすので変えない
+ *   （2026-10-07 時点で master・aliases に全角ＨＤは 0 件）。
+ */
+export function normalizeForMatch(s: string | null | undefined): string {
+  return String(s ?? '').normalize('NFKC');
+}
+
 /** 社名から法人格・括弧注記を除いたコア名 */
 export function coreName(name: string): string {
-  return String(name || '')
+  return normalizeForMatch(name)
     .replace(/（[^）]*）|\([^)]*\)/g, '')
     .replace(LEGAL_RE, '')
     .trim();
@@ -26,9 +40,10 @@ export function coreName(name: string): string {
 
 /** 法人格を伴う完全形（その社を一意に指す表記） */
 function strictForms(name: string): string[] {
-  const core = coreName(name);
+  const n = normalizeForMatch(name).trim();
+  const core = coreName(n);
   const forms = new Set<string>();
-  if (name) forms.add(name.trim());
+  if (n) forms.add(n);
   if (core.length >= 2) {
     for (const suffix of ['株式会社', '合同会社', '有限会社', 'ホールディングス', 'グループ']) {
       forms.add(`${core}${suffix}`);
@@ -47,8 +62,10 @@ const NAME_CHAR = /[一-龥ァ-ヶーA-Za-z0-9]/;
  * text 中に op（社名）への確実な言及があるか。
  * strict=true になるのは①法人格つき完全形か、②4字以上のコア名が語境界を満たす場合のみ。
  */
-export function mentionsOperator(text: string, operatorName: string): boolean {
-  if (!text || !operatorName) return false;
+export function mentionsOperator(rawText: string, rawOperatorName: string): boolean {
+  if (!rawText || !rawOperatorName) return false;
+  const text = normalizeForMatch(rawText);
+  const operatorName = normalizeForMatch(rawOperatorName);
 
   // ① 厳格形
   for (const form of strictForms(operatorName)) {
@@ -76,10 +93,13 @@ export function mentionsOperator(text: string, operatorName: string): boolean {
 /**
  * mentionsOperator と同一の判定で、text 中の言及位置 [start, end) を返す。
  * 役割語との距離を測る用途（Op9）。判定基準がぶれないよう同じ規則を使う。
+ * ★返す位置は normalizeForMatch(text) 上の位置（Ck2h §6）。呼び出し側は正規化済みの文字列で位置を使うこと。
  */
-export function findOperatorMentions(text: string, operatorName: string): [number, number][] {
+export function findOperatorMentions(rawText: string, rawOperatorName: string): [number, number][] {
   const out: [number, number][] = [];
-  if (!text || !operatorName) return out;
+  if (!rawText || !rawOperatorName) return out;
+  const text = normalizeForMatch(rawText);
+  const operatorName = normalizeForMatch(rawOperatorName);
 
   for (const form of strictForms(operatorName)) {
     let from = 0;
@@ -117,8 +137,9 @@ export function findOperatorMentions(text: string, operatorName: string): [numbe
  */
 export function projectOperatorMatches(projectOperator: string, operatorName: string): boolean {
   if (!projectOperator || !operatorName) return false;
-  if (mentionsOperator(projectOperator, operatorName)) return true;
-  const parts = String(projectOperator)
+  const op = normalizeForMatch(projectOperator);
+  if (mentionsOperator(op, operatorName)) return true;
+  const parts = op
     .replace(/（[^）]*）|\([^)]*\)/g, ' ')
     .split(/[×／/、,・]| と | および /);
   return parts.some((p) => mentionsOperator(p.trim(), operatorName));
@@ -186,7 +207,7 @@ export function resolveStructuredEntities(
   index: Map<string, string[]>
 ): string[] {
   if (!fieldValue) return [];
-  const raw = String(fieldValue).trim();
+  const raw = normalizeForMatch(fieldValue).trim();
   // microCMS 由来の文字列 "null" 等は社名ではない（実測: tokyogas-tomakomai-75）
   if (!raw || raw === 'null' || raw === 'undefined') return [];
 
@@ -270,8 +291,11 @@ const isNameChar = (ch: string): boolean => NAME_CHAR_RE.test(ch) && !SEPARATOR_
 const LEGAL_AFTER_RE = /^(株式会社|合同会社|有限会社|合資会社|合名会社|一般社団法人|一般財団法人|\(株\)|（株）|㈱)/;
 const LEGAL_BEFORE_RE = /(株式会社|合同会社|有限会社|合資会社|合名会社|一般社団法人|一般財団法人|\(株\)|（株）|㈱)$/;
 
-export function mentionsCoreWithBoundary(raw: string, core: string): boolean {
-  if (!raw || !core) return false;
+export function mentionsCoreWithBoundary(rawText: string, rawCore: string): boolean {
+  if (!rawText || !rawCore) return false;
+  // 検出器も実マッチャと同じ正規化（Ck2h §6）。揃えないと全角/半角違いの偽陰性を見落とす
+  const raw = normalizeForMatch(rawText);
+  const core = normalizeForMatch(rawCore);
   let from = 0;
   for (;;) {
     const i = raw.indexOf(core, from);
@@ -316,7 +340,7 @@ export function findStructuredFalseNegatives(
     if (!isNetworthyCore(core)) continue;
     const already = linked.get(opName);
     for (const rec of records) {
-      const raw = (rec.value ?? '').replace(/[\s　]/g, '');
+      const raw = normalizeForMatch(rec.value).replace(/[\s　]/g, '');
       // 前方一致（東急 ⊂ 東急不動産）で誤検出しないよう、境界つきの言及だけを候補にする
       if (!raw || raw === 'null' || !mentionsCoreWithBoundary(raw, core)) continue;
       if (already?.has(rec.key)) continue;
@@ -373,7 +397,7 @@ function legalBearingForms(alias: string): string[] {
 /** alias が法人格を含む表記か */
 function aliasHasLegalForm(alias: string): boolean {
   LEGAL_RE.lastIndex = 0;
-  return LEGAL_RE.test(String(alias || ''));
+  return LEGAL_RE.test(normalizeForMatch(alias));
 }
 
 /**
@@ -382,7 +406,7 @@ function aliasHasLegalForm(alias: string): boolean {
  */
 export function strictAliasProjectMatch(projectOperator: string, alias: string): boolean {
   if (!projectOperator || !alias) return false;
-  const text = String(projectOperator);
+  const text = normalizeForMatch(projectOperator);
   const parts = [
     text,
     ...text.replace(/（[^）]*）|\([^)]*\)/g, ' ').split(/[×／/、,・]| と | および /).map((p) => p.trim()),
@@ -394,7 +418,7 @@ export function strictAliasProjectMatch(projectOperator: string, alias: string):
   }
   // ② alias 自体が法人格を含む場合のみ、語境界つきで採用
   if (aliasHasLegalForm(alias)) {
-    const a = String(alias).trim();
+    const a = normalizeForMatch(alias).trim();
     for (const p of parts) {
       let from = 0;
       for (;;) {
