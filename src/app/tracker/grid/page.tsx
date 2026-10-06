@@ -2,7 +2,7 @@
  * /tracker/grid — 系統トラッカー (依頼BF-2)
  *
  * 設計:
- *   - SSR で getAllSubstations 1回 → ISR 1時間
+ *   - SSR で getAllSubstationsChecked 1回 → ISR 1時間
  *   - last_updated 降順
  */
 
@@ -12,7 +12,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { GRID_REFRESH_LOG } from '@/lib/grid-refresh-log';
 import TrackerTimeline, { type TimelineItem } from '@/components/TrackerTimeline';
-import { getAllSubstations } from '@/lib/microcms';
+import { getAllSubstationsChecked, type Substation } from '@/lib/microcms';
 import substationsIndex from '@/data/substations/index.json';
 
 export const revalidate = 3600;
@@ -30,11 +30,17 @@ export const metadata: Metadata = {
 };
 
 export default async function GridTrackerPage() {
-  let substations: Awaited<ReturnType<typeof getAllSubstations>> = [];
+  let substations: Substation[] = [];
   // Ck2g §4（2026-10-06）: runtime の取得に失敗すると空配列になり「全 0 件」と出ていた。失敗時は静的集計
   // （index.json の summary.total＝/grid と同じ数・凍結除外）を出し、失敗したことを隠さない。成功時の表示は不変。
+  // Ck2h §4: 途中のページだけ失敗した「部分的な件数」も失敗として扱う（getAllSubstationsChecked が
+  // 最初のページの totalCount と照合し、足りなければ WARN を出して complete=false を返す）。
   let fetchFailed = false;
-  try { substations = await getAllSubstations(); } catch { fetchFailed = true; }
+  try {
+    const r = await getAllSubstationsChecked();
+    substations = r.items;
+    if (!r.complete) fetchFailed = true;
+  } catch { fetchFailed = true; }
   if (substations.length === 0) fetchFailed = true;
   const staticTotal = (substationsIndex as { summary: { total: number } }).summary.total;
 
@@ -146,7 +152,8 @@ export default async function GridTrackerPage() {
             </section>
           )}
 
-          <TrackerTimeline items={items} limit={100} />
+          {/* Ck2h §4: 取得が欠けたときは末尾の「全件」も見出しと同じ静的集計にする（件数を 2 つ出さない・#121） */}
+          <TrackerTimeline items={items} limit={100} totalCount={fetchFailed ? staticTotal : undefined} />
 
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>

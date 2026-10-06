@@ -1628,28 +1628,47 @@ export const getSubstationList = async (
   }
 };
 
-export const getAllSubstations = async (
+/**
+ * 変電所の全件取得（Ck2h §4・2026-10-07）。getSubstationList はページ単位の失敗を握りつぶして空を返すため、
+ * 途中のページで失敗すると、そこで打ち切った「部分的な件数」が成功として返っていた。
+ * 最初のページの totalCount と照合し、足りなければ WARN（warnIfMissing・Ck2g §10）を出して complete=false を返す。
+ * throw はしない（sitemap は部分でも出す＝従来どおり）。照合は凍結除外の「前」で行う
+ * （totalCount は凍結を含む microCMS の件数。除外後で比べると凍結の件数ぶん常に足りなく見える）。
+ * summary.total（precompute）とは比べない: runtime の取得は Data Cache（#116・#112）の旧い応答で描画されうるので、
+ * 取得は成功しているのに「失敗」と誤判定する窓がある。同じ取得の 1 ページ目の totalCount なら時点がそろう。
+ * 1 ページ目の失敗は totalCount 0・件数 0 になり WARN は出ない（呼び出し側の 0 件判定で扱う）。
+ */
+export const getAllSubstationsChecked = async (
   opts: { area?: string; operator?: string } = {}
-): Promise<Substation[]> => {
+): Promise<{ items: Substation[]; complete: boolean }> => {
   const all: Substation[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
+  let totalCount: number | undefined;
   // 落とし穴 #48: offset 上限は MICROCMS_MAX_OFFSET（共通定数）で一元管理
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
-    const { contents } = await getSubstationList({
+    const page = await getSubstationList({
       limit,
       offset,
       area: opts.area,
       operator: opts.operator,
     });
-    all.push(...contents);
-    if (contents.length < limit) break;
+    totalCount ??= page.totalCount;
+    all.push(...page.contents);
+    if (page.contents.length < limit) break;
   }
+  warnIfMissing('getAllSubstations', all.length, totalCount);
+  const complete = !(typeof totalCount === 'number' && all.length < totalCount);
   // 凍結変電所（更新停止・substations-frozen.ts）は一覧・集計から除外する。
   // BM積み残しの是正（2026-08-16）: /grid は除外済みだったがエリア詳細・県ページが未適用で、
   // 東京 1,718（/grid）と 1,719（/grid/tokyo）、静岡 251 と 252 の食い違いが出ていた。
   // 詳細ページ（getSubstationBySlug）は対象外＝URL は 200 のまま維持する。
-  return all.filter((s) => !FROZEN_SUBSTATION_SLUGS.has(s.slug));
+  return { items: all.filter((s) => !FROZEN_SUBSTATION_SLUGS.has(s.slug)), complete };
 };
+
+/** 変電所の全件（凍結除外）。ページの集め方は getAllSubstationsChecked の 1 か所だけ（部分失敗は WARN・配列はそのまま返す） */
+export const getAllSubstations = async (
+  opts: { area?: string; operator?: string } = {}
+): Promise<Substation[]> => (await getAllSubstationsChecked(opts)).items;
 
 export const getSubstationBySlug = async (
   slug: string

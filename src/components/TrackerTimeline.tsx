@@ -17,7 +17,7 @@ export interface TimelineItem {
   tags?: string[]; // 表示用バッジ
 }
 
-export default function TrackerTimeline({ items, limit = 100 }: { items: TimelineItem[]; limit?: number }) {
+export default function TrackerTimeline({ items, limit = 100, totalCount }: { items: TimelineItem[]; limit?: number; totalCount?: number }) {
   const sorted = [...items].sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()).slice(0, limit);
 
   // 日付ごとにグルーピング
@@ -100,7 +100,8 @@ export default function TrackerTimeline({ items, limit = 100 }: { items: Timelin
         {' '}件を表示。全件:{' '}
         <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>
           {/* Ck2g §4: 桁区切り（全 tracker 共通） */}
-          {items.length.toLocaleString('en-US')}
+          {/* Ck2h §4: 呼び出し側が全件数を渡したとき（取得の部分失敗時の静的集計）はそれを出す */}
+          {(totalCount ?? items.length).toLocaleString('en-US')}
         </span>
         {' '}件。
       </p>
