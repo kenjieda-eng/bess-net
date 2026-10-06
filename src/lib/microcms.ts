@@ -10,7 +10,7 @@ import { isExcludedNews } from './news-excluded';
 import { isExcludedEvent } from './events-excluded';
 import { isExcludedSubsidy } from '../data/subsidies-excluded';
 import { isHiddenLink, LINKS_EXCLUDED_SLUGS } from './links-excluded';
-import { isExcludedExplainer, EXPLAINER_EXCLUDED_SLUGS } from './explainer-excluded';
+import { isExcludedExplainer } from './explainer-excluded';
 import { isTopicExcludedNews } from './news-topic-gate';
 // Gr10(2026-08-11): 系統区分・設備区分が「都道府県」として入っている社があるため、
 // 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
@@ -182,10 +182,17 @@ export const getAllExplainer = async (): Promise<Explainer[]> => {
 };
 
 /**
+ * 件数関数（getExplainerDisplayCount・getGlossaryDisplayCount）の取得は 5 分キャッシュ（Ck2g レビュー・鉄則 #2/#4）。
+ * トップは revalidate 60 なので、キャッシュが無いと再生成のたびに約 19 リクエスト増える。no-store ではない（#116 の静的→動的の転落は起きない）。
+ */
+const COUNT_FETCH_INIT = { next: { revalidate: 300 } } as const;
+
+/**
  * 解説記事の「一覧に出る本数」（Ck2g §5・2026-10-06）。/explainer の一覧（src/app/explainer/page.tsx）と同じ集合を数える:
  * getAllExplainer と同じ非表示（isExcludedExplainer）を除き、さらに低圧投資ガイド（isLvInvestExplainer・/lv/invest 専用）を除く。
  * 旧実装（totalCount − 非表示の件数）は 261 で、一覧の 174 と食い違っていた（#121: 同じ意味の値を二か所で算出しない）。
- * 本文は取らない（fields は id・slug・category だけ・約 3 リクエスト）。取れないときは null（呼び出し側は件数を出さない・Ck-1a ■2-6）。
+ * 本文は取らない（fields は id・slug・category だけ・約 3 リクエスト）。取れないとき・ページングで欠けたときは null
+ * （呼び出し側は件数を出さない・Ck-1a ■2-6）。取得は 5 分キャッシュ（COUNT_FETCH_INIT）＝トップ（revalidate 60）の再生成ごとに数えない。
  */
 export const getExplainerDisplayCount = async (): Promise<number | null> => {
   try {
@@ -196,12 +203,14 @@ export const getExplainerDisplayCount = async (): Promise<number | null> => {
       const data = await client.getList<Explainer>({
         endpoint: 'explainer',
         queries: { limit, offset, orders: '-publishedAt', fields: 'id,slug,category' },
+        customRequestInit: COUNT_FETCH_INIT,
       });
       totalCount ??= data.totalCount;
       for (const e of data.contents) seen.set(e.id, e);
       if (data.contents.length < limit) break;
     }
     warnIfMissing('getExplainerDisplayCount', seen.size, totalCount);
+    if (typeof totalCount === 'number' && seen.size < totalCount) return null; // 欠けた集合の数は出さない
     const n = [...seen.values()].filter((e) => !isExcludedExplainer(e.slug) && !isLvInvestExplainer(e)).length;
     return n > 0 ? n : null;
   } catch {
@@ -215,7 +224,7 @@ export const getExplainerCountSafe = getExplainerDisplayCount;
 /**
  * 用語集の「一覧に出る語数」（Ck2g §5・2026-10-06）。/glossary の一覧（src/app/glossary/page.tsx）と同じ集合を数える:
  * 全語から isGlossaryListExcluded（表示除外＋301 の元）を除く。旧実装（totalCount）は 1,535 で一覧の 1,392 と食い違っていた（#121）。
- * fields は slug だけ（約 16 リクエスト）。取れないときは null（呼び出し側は件数を出さない）。
+ * fields は slug だけ（約 16 リクエスト）。取れないとき・ページングで欠けたときは null（呼び出し側は件数を出さない）。5 分キャッシュ。
  */
 export const getGlossaryDisplayCount = async (): Promise<number | null> => {
   try {
@@ -226,12 +235,14 @@ export const getGlossaryDisplayCount = async (): Promise<number | null> => {
       const data = await client.getList<Glossary>({
         endpoint: 'glossary',
         queries: { limit, offset, orders: '-publishedAt', fields: 'slug' },
+        customRequestInit: COUNT_FETCH_INIT,
       });
       totalCount ??= data.totalCount;
       for (const g of data.contents) slugs.add(g.slug);
       if (data.contents.length < limit) break;
     }
     warnIfMissing('getGlossaryDisplayCount', slugs.size, totalCount);
+    if (typeof totalCount === 'number' && slugs.size < totalCount) return null; // 欠けた集合の数は出さない
     const n = [...slugs].filter((s) => !isGlossaryListExcluded(s)).length;
     return n > 0 ? n : null;
   } catch {

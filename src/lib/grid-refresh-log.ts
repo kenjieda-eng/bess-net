@@ -59,7 +59,7 @@ export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
       { name: '新居浜変電所', prefecture: '愛媛県', from: 38, to: 25 },
     ],
     note: '基幹の高知変電所 187/110kV バンクを新規収録。N-1電制の「－」（未算定）28件は現値維持（「未算定」と表示）。'
-      + '公表で「－」になった既存値13件（波止浜変電所の22kVバンクの空容量など）は公表どおり空にした。',
+      + '公表で空になった既存値13件（「－」12件・空欄1件。波止浜変電所の22kVバンクの空容量など）は公表どおり空にした。',
     report: 'reports/grid-shikoku-okinawa-apply-2026-10-05.md',
   },
   {

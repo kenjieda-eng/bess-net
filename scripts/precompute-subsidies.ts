@@ -306,7 +306,8 @@ export interface PrecomputedSubsidy {
   is_rolling: boolean;
   /**
    * 期日を一切持たない紹介ページか（hasNoSchedule・Ck2g §3・2026-10-06）。ここで 1 回だけ決め、
-   * 一覧・棚・/tracker/subsidy・マッチング・詳細ページがこの値を読む（#121: 同じ意味の値を二か所で算出しない）。
+   * 一覧・棚・/tracker/subsidy・詳細ページがこの値を読む（#121: 同じ意味の値を二か所で算出しない）。
+   * マッチング（subsidy-matcher）は読まない＝随時受付のローン 3 件（no_schedule 真・is_rolling 真）を候補に残すため（Ck2g 報告 (4)）。
    * 真なら状態を持たない（「公募中」に数えない・タグを付けない）。
    */
   no_schedule: boolean;

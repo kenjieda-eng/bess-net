@@ -75,7 +75,7 @@ export default async function SubsidyTrackerPage() {
             全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{subsidies.length}</span> 件、更新日時降順。
           </p>
           <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 24 }}>
-            データ更新は 1 時間ごと (ISR)。全件一覧は <Link href="/subsidies">補助金一覧</Link> から。
+            データは補助金の更新時の再ビルドで反映し、状態のタグは 1 時間ごとに日付で判定し直します。全件一覧は <Link href="/subsidies">補助金一覧</Link> から。
           </p>
 
           <TrackerTimeline items={items} limit={100} />

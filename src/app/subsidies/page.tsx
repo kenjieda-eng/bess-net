@@ -7,7 +7,7 @@ import type { PrecomputedSubsidy } from '../../../scripts/precompute-subsidies';
 import SubsidiesBrowser, { type BrowserItem } from './SubsidiesBrowser';
 // S4(2026-08-09): 状態導出と締切表示は詳細ページと共有する（両者が drift しないように）
 // Ck2g §3（2026-10-06）: 状態は displaySubsidyStatus（期日なし＝no_schedule は状態なし）で出す。
-// no_schedule は precompute で 1 回だけ決めた値を JSON から読む（詳細ページ・tracker・マッチングと同じ・#121）
+// no_schedule は precompute で 1 回だけ決めた値を JSON から読む（詳細ページ・tracker と同じ・#121。マッチングは読まない）
 import {
   getTodayJST,
   displaySubsidyStatus,
