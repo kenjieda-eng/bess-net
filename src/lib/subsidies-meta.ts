@@ -71,9 +71,10 @@ export function deriveSubsidyStatus(item: SubsidyDateFacts, todayISO: string): s
 }
 
 /**
- * 一覧・「いま公募中」の棚・/tracker/subsidy のタグに出す状態（Ck2g §3・2026-10-06）。
- * 期日を一切持たない紹介ページ（no_schedule＝precompute で 1 回だけ決めた値）は状態を持たない＝空文字。
- * 詳細ページの statusLabel と同じ規則で、「公募中」に数えない・タグも付けない（#121）。
+ * 表示する状態（Ck2g §3・2026-10-06）。期日を一切持たない紹介ページ（no_schedule＝precompute で 1 回だけ決めた値）は
+ * 状態を持たない＝空文字（「公募中」に数えない・タグもバッジも付けない）。
+ * 「期日なし＝状態なし」の規則はここ 1 か所（Ck2h §5）。一覧・「いま公募中」の棚・/tracker/subsidy のタグ・
+ * 詳細ページのバッジ・statusLabel（title・description）がこの関数を通る（#121）。
  */
 export function displaySubsidyStatus(item: SubsidyDateFacts, todayISO: string): string {
   if (item.no_schedule) return '';

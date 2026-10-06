@@ -164,7 +164,12 @@ export function stalledNote(
   if (!hit) return null;
   const days = daysSinceUpdatedAt(updatedAt, runDate);
   if (days === null || days < FEED_STALL_THRESHOLD_DAYS) return null;
-  // Ck2h §8: kind: window の系列は「次の窓＋grace_days」までは停止扱いにしない
-  if (windowWaitNote(schedule, updatedAt, runDate) !== null) return null;
+  // Ck2h §8: kind: window の系列は「次の窓＋grace_days」までは停止扱いにしない。
+  // next_expected を満たした（updated_at ≥ next_expected）window 系列も停止扱いにしない（窓は満たした・次の窓は上流が宣言し直すまで不明。
+  // 閾値だけに戻すと、期日どおり取れた系列が 7 日後に「取得停止中」と出てしまう）
+  if (schedule?.kind === 'window') {
+    if (windowWaitNote(schedule, updatedAt, runDate) !== null) return null;
+    if (schedule.next_expected && updatedAt && updatedAt.slice(0, 10) >= schedule.next_expected.slice(0, 10)) return null;
+  }
   return { note: `取得停止中（${(updatedAt ?? '').slice(0, 10)} 時点）`, reason: hit.reason, days };
 }

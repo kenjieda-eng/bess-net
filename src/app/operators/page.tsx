@@ -109,8 +109,8 @@ export default async function OperatorListPage() {
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (当サイト独自機能)</h2>
             <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/industry/top50">事業者ランキング Top50</Link> — 総蓄電容量（MWh）順の国内勢力図</li>
-              {/* Ck2h §3: 件数を焼き込まない（旧「主要 50+ 社」・#121）。/map/industry-chaos と同じ PLAYERS.length（文字列 1 つにして初期 DOM に <!-- --> を入れない） */}
-              <li><Link href="/map/industry-chaos">業界カオスマップ</Link> — {`主要 ${PLAYERS.length} 社を 11 カテゴリで構造化`}</li>
+              {/* Ck2h §3: 件数を焼き込まない（旧「主要 50+ 社」・#121）。/map/industry-chaos と同じ PLAYERS.length（「 — 」から語句までを文字列 1 つにして初期 DOM に <!-- --> を入れない） */}
+              <li><Link href="/map/industry-chaos">業界カオスマップ</Link>{` — 主要 ${PLAYERS.length} 社を 11 カテゴリで構造化`}</li>
               <li><Link href="/tracker/ag">事業者トラッカー</Link> — 事業者ナビの追加・更新タイムライン</li>
               <li><Link href="/industry">業界分析ハブ</Link> — 4機能を一覧</li>
             </ul>

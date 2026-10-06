@@ -67,6 +67,8 @@ eq('window: 年を跨ぐ窓（12〜1 月）', nextUpdateWindow({ kind: 'window',
 eq('window: 閏年の 2 月末', nextUpdateWindow({ kind: 'window', months: [2], grace_days: 0 }, '2027-10-01'), { month: '2028-02', windowEnd: '2028-02-29', deadline: '2028-02-29' });
 eq('窓待ち注記: 期限当日までは出る', windowWaitNote(FIT, FIT_UPD, '2027-05-15'), '窓待ち（次回 2027-03）');
 eq('窓待ち注記: 期限の翌日は出ない', windowWaitNote(FIT, FIT_UPD, '2027-05-16'), null);
+eq('stalled: next_expected を満たした window 系列は 7 日後も注記なし', stalledNote('capacity-main-auction-price-chubu', '2026-12-20T00:00:00+09:00', '2026-12-28', { kind: 'window', next_expected: '2026-12-15', grace_days: 90 }, [{ prefix: 'capacity-main-', reason: 'テスト用の登録', confirmedOn: '2026-12-01' }]), null);
+eq('stalled: next_expected を満たさず期限（+90 日）を過ぎたら注記あり', stalledNote('capacity-main-auction-price-chubu', '2026-09-27T00:00:00+09:00', '2027-03-16', { kind: 'window', next_expected: '2026-12-15', grace_days: 90 }, [{ prefix: 'capacity-main-', reason: 'テスト用の登録', confirmedOn: '2026-12-01' }])?.note, '取得停止中（2026-09-27 時点）');
 
 console.log(`\n${pass}/${pass + fail} PASS`);
 process.exit(fail ? 1 : 0);

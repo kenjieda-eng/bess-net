@@ -68,7 +68,9 @@ const NFKC_CASES: Array<{ got: () => unknown; want: unknown; why: string }> = [
   { got: () => normalizeEntityName('株式会社ＩＢｅｅＴ') === normalizeEntityName('IBeeT'), want: true, why: '全角英字のマスタ（pr-co110152）' },
   { got: () => resolveStructuredEntities('合同会社クラダシ・インベストメント2号（グリーンエナジー＆カンパニー×クラダシ）', buildEntityIndex(['株式会社グリーンエナジー&カンパニー'])).length, want: 1, why: '括弧内の出資者（全角＆）' },
   { got: () => mentionsCoreWithBoundary('Ｊ＆Ｓ蓄電合同会社', normalizeEntityName('J&S蓄電合同会社')), want: true, why: '検出器も同じ正規化' },
-  { got: () => detectInvolvementRoles('x', '<p>㈱ＧＲＥＥＮ ＡＣＴＩＯＮがアグリゲーションを担う</p>', '株式会社GREEN ACTION').join(), want: '運用・最適化', why: '㈱→(株) で長さが変わっても位置がずれない' },
+  { got: () => detectInvolvementRoles('x', '<p>㈱ＧＲＥＥＮ ＡＣＴＩＯＮがアグリゲーションを担う</p>', '株式会社GREEN ACTION').join(), want: '運用・最適化', why: '全角の社名表記（㈱＋全角英字）を本文から検出する' },
+  // ㈱ 10 個は正規化で 30 字（+20）。本当の距離 70 字（> 60）を、正規化していない文単位で測ると 50 字（≤ 60）に縮む＝位置がずれると誤って帰属する
+  { got: () => detectInvolvementRoles('x', `<p>${'㈱'.repeat(10)}GREEN ACTION${'あ'.repeat(70)}アグリゲーション</p>`, '株式会社GREEN ACTION').join(), want: '', why: '㈱→(株) で長さが変わっても位置がずれない（文単位も同じ正規化）' },
   { got: () => mentionsOperator('東急不動産株式会社', '東急株式会社'), want: false, why: 'NFKC 後も前方一致は採らない' },
   { got: () => resolveStructuredEntities('東急不動産', buildEntityIndex(['東急株式会社'])).length, want: 0, why: '構造化欄の前方一致禁止' },
 ];

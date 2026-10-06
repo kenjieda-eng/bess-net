@@ -19,7 +19,9 @@ export function isLvInvestExplainer(exp: Pick<Explainer, 'category'>): boolean {
  * microCMS 側で低圧投資ガイドを外す filters（isLvInvestExplainer と同じ集合・Ck2h §10・2026-10-07）。
  * category は複数選択のため [equals]/[not_equals] は効かない（実測: equals 0 件・not_equals 263 件＝全件）。
  * [not_contains] は 176 件＝全 263 − isLvInvestExplainer 87 件と一致（category の値 8 種に「低圧投資」を部分に含む別の値は無い）。
- * contains は部分一致なので「低圧投資」を含む別の選択肢を足したら見直す（取得後にも isLvInvestExplainer で落とす＝ずれは件数不足の WARN で出る）。
+ * contains は部分一致。★「低圧投資」を名前に含む別の選択肢（例「低圧投資入門」）を足すと、filters だけがその記事も外す（除外のしすぎ）。
+ *   これは上位の記事が繰り上がるだけなので件数不足の WARN では出ない（WARN が拾えるのは除外し損ねた方向だけ）。
+ *   category に選択肢を足すときは、not_contains の totalCount ＝ 全件 − isLvInvestExplainer の件数 を GET で照合する。
  * 本文の語句検索ではない（定数 1 本・OR チェインなし）ので buildContainsFilter（鉄則 #1・[contains] の OR 連結用）の対象外。
  */
 export const NOT_LV_INVEST_FILTER = `category[not_contains]${LV_INVEST_CATEGORY}`;

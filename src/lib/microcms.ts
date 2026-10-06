@@ -1635,7 +1635,9 @@ export const getSubstationList = async (
  * throw はしない（sitemap は部分でも出す＝従来どおり）。照合は凍結除外の「前」で行う
  * （totalCount は凍結を含む microCMS の件数。除外後で比べると凍結の件数ぶん常に足りなく見える）。
  * summary.total（precompute）とは比べない: runtime の取得は Data Cache（#116・#112）の旧い応答で描画されうるので、
- * 取得は成功しているのに「失敗」と誤判定する窓がある。同じ取得の 1 ページ目の totalCount なら時点がそろう。
+ * 取得は成功しているのに「失敗」と誤判定する窓がある。同じ取得の 1 ページ目の totalCount ならふつうは時点がそろう。
+ * ただしページごとに Data Cache の再検証は独立しているので、ページ間で時点がずれると取得が成功していても complete=false になりうる
+ * （その間は静的集計の表示になるだけ＝誤った数は出ない・最長 revalidate の間）。
  * 1 ページ目の失敗は totalCount 0・件数 0 になり WARN は出ない（呼び出し側の 0 件判定で扱う）。
  */
 export const getAllSubstationsChecked = async (
