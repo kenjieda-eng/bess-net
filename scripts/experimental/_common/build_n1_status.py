@@ -259,11 +259,12 @@ for slug, rec in LIVE.items():
         add(slug, "no_column", f"{fn}（N-1 列なし・沖縄電力の公表 CSV・2026-10-03 ヘッダを確認）")
 
 # ── 7. 四国: 10月版（_202610_08）の N-1 欄が「－」の行（BS dry-run・parse_shikoku.py の一覧）──
-# as_of は 10月版の版日付（再取込後の last_updated）。それまでは as_of が一致しないので表示は今のまま（boolean）。
+# as_of は 10月版の版日付（再取込後の last_updated）。2026-10-05 の再取込（BS+BT 本実行）で一致＝表示に効いている。
+# Ck2g §9（2026-10-06）: source の「取込は5月版のまま」を事実（2026-10-05 取込）に直した。
 sk = json.loads((ROOT / "_common" / "n1_undetermined_shikoku.json").read_text(encoding="utf-8"))
 SK_AS_OF = f"{sk['version']}T00:00:00.000Z"
 for x in sk["matched"]:
-    add(x["slug"], x["reason"], "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・取込は5月版のまま", raw=x["raw"], raw_checked=True,
+    add(x["slug"], x["reason"], "sys_capa_*_tr_202610_08.csv（2026-10-01公表）・2026-10-05 取込", raw=x["raw"], raw_checked=True,
         note="as_of は 10月版の版日付（再取込で last_updated が一致した時点から効く）", as_of=SK_AS_OF)
 for x in sk["new_rows"]:
     log.append(f"四国の新規行（未取込）で未算定: {x['external_id']} {x['name']}（取込後に足す）")
