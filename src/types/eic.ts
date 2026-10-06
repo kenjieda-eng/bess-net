@@ -34,6 +34,28 @@ export interface Indicator {
    * 未設定の場合は DIR_MAP fallback (後方互換)
    */
   csv_path?: string;
+  /** 'active' | 'retired'（2026-10-06 catalog: active 710・retired 15） */
+  status?: string;
+  /**
+   * 更新予定（eic-data-pipeline の宣言・R-28 §6-2）。2026-10-06 catalog（generated_at 2026-10-06T12:03:32+09:00）で 725/725 に付与:
+   * window 182（months 162・next_expected 20）・interval 543（days はすべて 7）。
+   * 判定は src/lib/eic-date.ts の nextUpdateWindow 1 か所（#121）。
+   */
+  update_schedule?: UpdateSchedule;
+}
+
+/** catalog の update_schedule（R-28 §6-2・Ck2h §8） */
+export interface UpdateSchedule {
+  /** 'window' | 'interval'。JSON import の推論型（string）と互換にするため string。未知の値は「窓なし」扱い */
+  kind: string;
+  /** interval の間隔（日） */
+  days?: number;
+  /** window の月（1〜12）。連続する月（[4,5]）は 1 つの窓 */
+  months?: number[];
+  /** window の猶予（日）。★Indicator 直下の grace_days とは別物（capacity-main は直下 45・ここ 90 で食い違う）。判定はこちら */
+  grace_days?: number;
+  /** window の次回予定日（YYYY-MM-DD）。あれば months より優先（この形の 20 件は months を持たない） */
+  next_expected?: string;
 }
 
 export interface DataPoint {

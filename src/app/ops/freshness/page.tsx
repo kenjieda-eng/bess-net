@@ -15,7 +15,8 @@ import SiteFooter from '@/components/SiteFooter';
 import { SOP_ENTRIES, FREQ_LABEL, nextScheduledAt } from '@/lib/sop-schedule';
 import catalogData from '@/data/eic/catalog.json';
 // Ck-1b §7: 取得が止まった系列の注記（判定は src/lib/eic-date.ts の 1 箇所）
-import { stalledNote, todayJst, FEED_STALL_THRESHOLD_DAYS, STALLED_SERIES } from '@/lib/eic-date';
+import { stalledNote, windowWaitNote, todayJst, FEED_STALL_THRESHOLD_DAYS, STALLED_SERIES } from '@/lib/eic-date';
+import type { UpdateSchedule } from '@/types/eic';
 
 export const revalidate = 3600; // 1 時間
 
@@ -32,6 +33,7 @@ interface CatalogIndicator {
   freshness_sla_days?: number;
   updated_at?: string;
   observation_cutoff?: string;
+  update_schedule?: UpdateSchedule;
 }
 
 function daysSince(iso?: string): number | null {
@@ -50,10 +52,10 @@ export default function OpsFreshnessPage() {
   const now = new Date();
   const indicators = (catalogData as { indicators: CatalogIndicator[] }).indicators ?? [];
 
-  // Ck-1b §7: 取得停止中の系列（確認済み ID AND updated_at が閾値より古い）
+  // Ck-1b §7 → Ck2h §8: 取得停止中の系列（確認済み ID AND updated_at が閾値より古い AND window なら次の窓＋猶予を過ぎている）
   const runDate = todayJst();
   const stalled = indicators
-    .map((i) => ({ i, s: stalledNote(i.id, i.updated_at, runDate) }))
+    .map((i) => ({ i, s: stalledNote(i.id, i.updated_at, runDate, i.update_schedule) }))
     .filter((x): x is { i: CatalogIndicator; s: NonNullable<ReturnType<typeof stalledNote>> } => x.s !== null);
 
   // catalog SLA 違反集計
@@ -128,8 +130,8 @@ export default function OpsFreshnessPage() {
             </h2>
             <p style={{ fontSize: 14, color: 'var(--color-muted)', marginTop: 0, marginBottom: 10 }}>
               判定は「停止を確認した系列 ID（src/lib/eic-date.ts の STALLED_SERIES・現在 {STALLED_SERIES.length} 件）」
-              かつ「updated_at が {FEED_STALL_THRESHOLD_DAYS} 日以上前」。上流が復旧すれば updated_at が新しくなり自動で消えます。
-              値そのものは変えていません（年度で決まる値）。
+              かつ「updated_at が {FEED_STALL_THRESHOLD_DAYS} 日以上前」かつ「catalog の update_schedule が kind: window の系列は、次の窓＋grace_days を過ぎている」。
+              上流が復旧すれば updated_at が新しくなり自動で消えます。表示する値そのものは変えていません。
             </p>
             {stalled.length === 0 ? (
               <p style={{ color: '#15803d', fontSize: 15 }}>✅ 取得停止中の系列なし</p>
@@ -180,10 +182,15 @@ export default function OpsFreshnessPage() {
                   <tbody>
                     {slaViolations.map((v) => {
                       const ds = daysSince(v.observation_cutoff || v.updated_at) ?? 0;
+                      // Ck2h §8: kind: window の系列は「次の窓＋grace_days」の内なら注記（件数は変えない・判定は eic-date.ts の 1 か所）
+                      const wait = windowWaitNote(v.update_schedule, v.updated_at, runDate);
                       return (
                         <tr key={v.id} style={{ borderBottom: '1px solid var(--color-border,#e5e7eb)' }}>
                           <td style={{ padding: '7px 10px', fontFamily: 'monospace', fontSize: 15 }}>{v.id}</td>
-                          <td style={{ padding: '7px 10px' }}>{v.name ?? '—'}</td>
+                          <td style={{ padding: '7px 10px' }}>
+                            {v.name ?? '—'}
+                            {wait && <span style={{ marginLeft: 6, fontSize: 12, color: '#6b7280' }}>{wait}</span>}
+                          </td>
                           <td style={{ padding: '7px 10px', textAlign: 'right' }}>{v.freshness_sla_days}</td>
                           <td style={{ padding: '7px 10px', textAlign: 'right', color: '#b91c1c', fontWeight: 700 }}>{ds}</td>
                         </tr>
