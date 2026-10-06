@@ -88,6 +88,34 @@ export const EVENTS_EXCLUDED: readonly ExcludedEvent[] = [
     row: '§0-4 policy-events（依頼AC Phase A 初期データ）',
     reason: 'AC Phase A の生成データ由来。sourceUrl がドメインのトップだけで、日付・主催・会場の一次の裏付けがない',
   }))),
+
+  // ── Ck2g §1（2026-10-06）: 月次バッチ 10/1 ■3 の events 実在監査（reports/monthly-batch-2026-10-01.md）で
+  //    主催者の一次が見つからなかった 4 件。slug は policy-events を GET して title・日付で一意に特定（2026-10-06）。
+  //    ■3 #5 ENEX 2026・#6 Energy Storage Summit EU 2026 は実在するので外さない（名称・日付は Ck2e で PATCH）。
+  {
+    slug: 'meti-gx-investment-summit-2026',
+    row: '月次バッチ 10/1 ■3 #1',
+    // 「METI GX 投資サミット 2026」（2026-11-12・霞が関ナレッジスクエア）
+    reason: '該当名・日付・会場の告知は無い。近い実在イベントは「GGX Finance Summit 2026」（公式 ggxf-summit.go.jp）だが、名称・日付・会場とも違い同一とは言えない',
+  },
+  {
+    slug: 'huawei-fusionsolar-japan-2026',
+    row: '月次バッチ 10/1 ■3 #2',
+    // 「Huawei FusionSolar Japan Summit 2026」（2026-11-26・東京ミッドタウン）
+    reason: '公式イベント一覧（solar.huawei.com/jp/events/）に該当なし。表示中のリンクは製品サイトのトップ＝開催告知ではない',
+  },
+  {
+    slug: 'tesla-megapack-japan-summit-2026',
+    row: '月次バッチ 10/1 ■3 #3',
+    // 「Tesla Megapack Japan Summit 2026」（2026-08-20・ザ・プリンス パークタワー東京）
+    reason: 'tesla.com/ja_jp/events は店舗イベントのみで該当なし。表示中のリンクは製品ページ（Megapack | Tesla）',
+  },
+  {
+    slug: 'es-japan-2026',
+    row: '月次バッチ 10/1 ■3 #4',
+    // 「Energy Storage Japan 2026（蓄電池サミット）」（2026-07-15〜16・東京国際フォーラム）
+    reason: 'Solar Media の Energy Storage Summit シリーズは実在するが、2026 年の日本開催は一次に無い（2026 年のアジア版はバンコク）',
+  },
 ];
 
 export const EVENTS_EXCLUDED_SLUGS: ReadonlySet<string> = new Set<string>(EVENTS_EXCLUDED.map((e) => e.slug));
