@@ -1,0 +1,24 @@
+{
+ "mode": "apply",
+ "calls": {
+  "GET": 2,
+  "POST": 1
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 1,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/gec-fukuchiyama-haji-bess",
+   "row_id": "D5-1",
+   "id": "evv_95bku3",
+   "result": "posted",
+   "check": []
+  }
+ ]
+}

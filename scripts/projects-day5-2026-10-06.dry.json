@@ -1,0 +1,362 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 20
+ },
+ "counts": {
+  "patched": 4,
+  "posted": 12,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/gec-fukuchiyama-haji-bess",
+   "row_id": "D5-1",
+   "result": "dry",
+   "payload": {
+    "name": "福知山市土師蓄電所",
+    "status": [
+     "稼働中"
+    ],
+    "outputMw": 1.999,
+    "capacityMwh": 8.146,
+    "prefecture": "京都府",
+    "city": "福知山市土師",
+    "operator": "合同会社マイクロGX京都",
+    "epc": "グリーンエナジー・プラス",
+    "marketParticipation": [
+     "JEPX"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000042.000071823.html",
+    "slug": "gec-fukuchiyama-haji-bess",
+    "body": "<p><strong>福知山市土師蓄電所</strong>は、合同会社マイクロGX京都が京都府福知山市土師で運用する系統用蓄電所。2026年9月29日のリリースは「定格出力1,999kW、定格容量8,146kWh、リン酸鉄リチウムイオン電池を採用した系統用蓄電所について、工事及び電力系統への連系を完了し、100％子会社の合同会社マイクロGX京都にて運用を開始しました。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000042.000071823.html\" target=\"_blank\" rel=\"noopener noreferrer\">グリーンエナジー＆カンパニー、自社保有の系統用蓄電所、京都府で運用開始― 鹿児島・広島に続く３拠点目、関西エリアへ展開 ―（株式会社グリーンエナジー＆カンパニー、2026年9月29日）</a>）。</p><p>概要は「事業主体：合同会社マイクロGX京都」「出資事業者：株式会社グリーンエナジー&amp;カンパニー」とし、本文は「グリーンエナジー・プラスがEPC、GREEN ACTIONがアグリゲーション、グリーンエナジー・ファシリティーズがO&amp;Mを担当」とする。GREEN ACTIONは「初めて日本卸電力取引所（JEPX）に参入します」とされる。運用開始の日付は記載がないため、運転開始日は空としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/gec-miyoshi-bess",
+   "row_id": "D5-2",
+   "result": "dry",
+   "payload": {
+    "name": "三次蓄電所",
+    "status": [
+     "稼働中"
+    ],
+    "outputMw": 1.99,
+    "capacityMwh": 8.128,
+    "prefecture": "広島県",
+    "city": "三次市",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000039.000071823.html",
+    "slug": "gec-miyoshi-bess",
+    "body": "<p><strong>三次蓄電所</strong>は、グリーンエナジー＆カンパニーのグループが保有する広島県三次市の系統用蓄電所。2026年9月8日のリリースは「広島県三次（みよし）市の三次蓄電所（定格出力1.99MW、蓄電容量8.128MWh）を撮り下ろしで取材。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000039.000071823.html\" target=\"_blank\" rel=\"noopener noreferrer\">グリーンエナジー&amp;カンパニー、情報誌「GREEN MOOK」Vol.1を発行（株式会社グリーンエナジー＆カンパニー、2026年9月8日）</a>）。</p><p>同社の2026年9月29日の<a href=\"https://prtimes.jp/main/html/rd/p/000000042.000071823.html\" target=\"_blank\" rel=\"noopener noreferrer\">リリース</a>は「当社グループの保有蓄電所は、鹿児島県霧島市（共同保有）、広島県三次市、そして今回の京都府福知山市の3拠点となりました。」と述べている。同社サイトの「<a href=\"https://green-energy.co.jp/company/network/\" target=\"_blank\" rel=\"noopener noreferrer\">各地とのかかわり</a>」は系統用蓄電所の「［完工・稼働中］」に「広島県三次市」を挙げており（「※2026年6月2日時点」）、ステータスはこれによる。保有する法人名・EPC・運転開始日・参加市場は一次に記載がないため、各欄は空としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/vena-nre-nakagawa-2-bess",
+   "row_id": "D5-3",
+   "result": "dry",
+   "payload": {
+    "name": "NRE中川第二蓄電所",
+    "status": [
+     "計画中"
+    ],
+    "prefecture": "長野県",
+    "marketParticipation": [
+     "長期脱炭素"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000071.000052790.html",
+    "slug": "vena-nre-nakagawa-2-bess",
+    "body": "<p><strong>NRE中川第二蓄電所</strong>は、ヴィーナ・エナジーが長野県松本市近郊で開発を進める系統用蓄電池プロジェクト。2026年9月25日のリリースは「ヴィーナ・エナジー（以下、Vena Energy）は、電力広域的運営推進機関が実施する長期脱炭素電源オークションにおいて、NRE中川第二蓄電所（落札容量：46,828 kW)が落札されたことをお知らせします。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000071.000052790.html\" target=\"_blank\" rel=\"noopener noreferrer\">ヴィーナ・エナジー、2025年度長期脱炭素電源オークションにおいて NRE中川第二蓄電所が落札（ヴィーナ・エナジー・ジャパン株式会社、2026年9月25日）</a>）。</p><p>見出しの「2025年度」は応札年度（電力広域的運営推進機関の<a href=\"https://www.occto.or.jp/news/012080.html\" target=\"_blank\" rel=\"noopener noreferrer\">約定結果の公表</a>は「応札年度：2025年度」と表記）。46,828kWは落札容量で、定格出力・蓄電池容量の記載がないため出力・容量欄は空。所在地は「長野県松本市近郊」で市が確定しないため市区町村欄も空。ステータスは「落札」の語から計画中とし、着工・運転開始の時期の記載がないため運転開始日は空。所有者・事業主体を名指しする記載がないため事業者欄は空。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-kobe-bess",
+   "row_id": "D5-4",
+   "result": "dry",
+   "payload": {
+    "name": "兵庫県神戸市2MW蓄電所（TAOKE ENERGY）",
+    "status": [
+     "稼働中"
+    ],
+    "outputMw": 2,
+    "capacityMwh": 8,
+    "prefecture": "兵庫県",
+    "city": "神戸市",
+    "operator": "PP7号合同会社（TAOKE ENERGY）",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000045.000103834.html",
+    "slug": "taoke-pp7-kobe-bess",
+    "body": "<p><strong>兵庫県神戸市2MW蓄電所（TAOKE ENERGY）</strong>は、TAOKE ENERGYの第２号ファンド「PP7号合同会社」の兵庫県神戸市の蓄電所（2MW／8MWh）。2026年9月28日のリリース（2026年10月6日更新）は「TAOKE ENERGY株式会社（本社：東京都港区、以下「TAOKE」）は、自社所有の系統用蓄電所への投資を目的とした「PP7号合同会社」を第２号ファンドとして、兵庫県神戸市、福島県須賀川市、熊本県菊池市、鳥取県鳥取市において、系統用蓄電所の運転を開始したことをお知らせします。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000045.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">TAOKE ENERGY、系統用蓄電所4カ所の運転を開始（TAOKE ENERGY株式会社、2026年9月28日）</a>）。</p><p>同リリースは「本プロジェクトは、事業主体となる合同会社（GK）に対して投資家が匿名組合（TK）を通じて出資する「GK-TKスキーム」を活用した蓄電所ファンド事業です。」とし、表の受電日は「2026年9月18日」。受電日は運転開始日でないため運転開始日は空、参加市場は名指しがないため空とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-sukagawa-bess",
+   "row_id": "D5-5",
+   "result": "dry",
+   "payload": {
+    "name": "福島県須賀川市2MW蓄電所（TAOKE ENERGY）",
+    "status": [
+     "稼働中"
+    ],
+    "outputMw": 2,
+    "capacityMwh": 8,
+    "prefecture": "福島県",
+    "city": "須賀川市",
+    "operator": "PP7号合同会社（TAOKE ENERGY）",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000045.000103834.html",
+    "slug": "taoke-pp7-sukagawa-bess",
+    "body": "<p><strong>福島県須賀川市2MW蓄電所（TAOKE ENERGY）</strong>は、TAOKE ENERGYの第２号ファンド「PP7号合同会社」の福島県須賀川市の蓄電所（2MW／8MWh）。2026年9月28日のリリース（2026年10月6日更新）は「TAOKE ENERGY株式会社（本社：東京都港区、以下「TAOKE」）は、自社所有の系統用蓄電所への投資を目的とした「PP7号合同会社」を第２号ファンドとして、兵庫県神戸市、福島県須賀川市、熊本県菊池市、鳥取県鳥取市において、系統用蓄電所の運転を開始したことをお知らせします。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000045.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">TAOKE ENERGY、系統用蓄電所4カ所の運転を開始（TAOKE ENERGY株式会社、2026年9月28日）</a>）。</p><p>同リリースは「本プロジェクトは、事業主体となる合同会社（GK）に対して投資家が匿名組合（TK）を通じて出資する「GK-TKスキーム」を活用した蓄電所ファンド事業です。」とし、表の受電日は「2026年9月18日」。受電日は運転開始日でないため運転開始日は空、参加市場は名指しがないため空とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-kikuchi-bess",
+   "row_id": "D5-6",
+   "result": "dry",
+   "payload": {
+    "name": "熊本県菊池市2MW蓄電所（TAOKE ENERGY）",
+    "status": [
+     "稼働中"
+    ],
+    "outputMw": 2,
+    "capacityMwh": 8,
+    "prefecture": "熊本県",
+    "city": "菊池市",
+    "operator": "PP7号合同会社（TAOKE ENERGY）",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000045.000103834.html",
+    "slug": "taoke-pp7-kikuchi-bess",
+    "body": "<p><strong>熊本県菊池市2MW蓄電所（TAOKE ENERGY）</strong>は、TAOKE ENERGYの第２号ファンド「PP7号合同会社」の熊本県菊池市の蓄電所（2MW／8MWh）。2026年9月28日のリリース（2026年10月6日更新）は「TAOKE ENERGY株式会社（本社：東京都港区、以下「TAOKE」）は、自社所有の系統用蓄電所への投資を目的とした「PP7号合同会社」を第２号ファンドとして、兵庫県神戸市、福島県須賀川市、熊本県菊池市、鳥取県鳥取市において、系統用蓄電所の運転を開始したことをお知らせします。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000045.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">TAOKE ENERGY、系統用蓄電所4カ所の運転を開始（TAOKE ENERGY株式会社、2026年9月28日）</a>）。</p><p>同リリースは「本プロジェクトは、事業主体となる合同会社（GK）に対して投資家が匿名組合（TK）を通じて出資する「GK-TKスキーム」を活用した蓄電所ファンド事業です。」とし、表の受電日は「2026年9月18日」。受電日は運転開始日でないため運転開始日は空、参加市場は名指しがないため空とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-tottori-bess",
+   "row_id": "D5-7",
+   "result": "dry",
+   "payload": {
+    "name": "鳥取県鳥取市2MW蓄電所（TAOKE ENERGY）",
+    "status": [
+     "稼働中"
+    ],
+    "outputMw": 2,
+    "capacityMwh": 8,
+    "prefecture": "鳥取県",
+    "city": "鳥取市",
+    "operator": "PP7号合同会社（TAOKE ENERGY）",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000045.000103834.html",
+    "slug": "taoke-pp7-tottori-bess",
+    "body": "<p><strong>鳥取県鳥取市2MW蓄電所（TAOKE ENERGY）</strong>は、TAOKE ENERGYの第２号ファンド「PP7号合同会社」の鳥取県鳥取市の蓄電所（2MW／8MWh）。2026年9月28日のリリース（2026年10月6日更新）は「TAOKE ENERGY株式会社（本社：東京都港区、以下「TAOKE」）は、自社所有の系統用蓄電所への投資を目的とした「PP7号合同会社」を第２号ファンドとして、兵庫県神戸市、福島県須賀川市、熊本県菊池市、鳥取県鳥取市において、系統用蓄電所の運転を開始したことをお知らせします。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000045.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">TAOKE ENERGY、系統用蓄電所4カ所の運転を開始（TAOKE ENERGY株式会社、2026年9月28日）</a>）。</p><p>同リリースは「本プロジェクトは、事業主体となる合同会社（GK）に対して投資家が匿名組合（TK）を通じて出資する「GK-TKスキーム」を活用した蓄電所ファンド事業です。」とし、表の受電日は「2026年9月24日」。受電日は運転開始日でないため運転開始日は空、参加市場は名指しがないため空とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-oyama-higashinoda-bess",
+   "row_id": "D5-8",
+   "result": "dry",
+   "payload": {
+    "name": "栃木県小山市東野田2MW蓄電所（TAOKE ENERGY）",
+    "status": [],
+    "outputMw": 2,
+    "capacityMwh": 8,
+    "prefecture": "栃木県",
+    "city": "小山市東野田",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000044.000103834.html",
+    "slug": "taoke-oyama-higashinoda-bess",
+    "body": "<p><strong>栃木県小山市東野田2MW蓄電所（TAOKE ENERGY）</strong>は、TAOKE ENERGYの第一号ファンド「合同会社ジャパンパワーストレージⅠ」を通じて開発が進められてきた栃木県小山市の高圧蓄電所（2MW／8MWh）。2026年9月28日のリリース（2026年10月6日更新）は「本ファンドを通じて開発を進めてきた2カ所の系統用蓄電所において、2026年9月に一次調整力市場へ参入したことをお知らせいたします。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000044.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">TAOKE ENERGY、「第一号ファンド」の2案件で新たに一次調整力市場へ参入（TAOKE ENERGY株式会社、2026年9月28日）</a>）。</p><p>表は本蓄電所の市場参入開始日を「2026年9月15日」とし、運用は「子会社パワープール株式会社をアグリゲーターとして行われています」とされる。参加市場は、一次調整力を需給調整市場の商品として需給調整市場としている。市場参入開始日は運転開始日ではなく運転開始の記載もないため運転開始日とステータスを、本ファンドを事業主体・所有者とする記載もないため事業者を、空とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/mufg-trust-yufu-bess",
+   "row_id": "D5-9",
+   "result": "dry",
+   "payload": {
+    "name": "由布蓄電所",
+    "status": [
+     "建設中"
+    ],
+    "outputMw": 70,
+    "capacityMwh": 280,
+    "prefecture": "大分県",
+    "city": "由布市",
+    "marketParticipation": [
+     "JEPX",
+     "需給調整市場",
+     "容量市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000377.000036656.html",
+    "slug": "mufg-trust-yufu-bess",
+    "body": "<p><strong>由布蓄電所</strong>は、大分県由布市で建設が始まった定格出力70MW・定格容量280MWhの系統用蓄電所。2026年9月30日のリリースは「「由布蓄電所」は定格出力70MW*2、定格容量280MWh*3、「米沢蓄電所」は定格出力75MW、定格容量309MWhの大型蓄電池を電力系統に接続し、卸電力市場、需給調整市場、容量市場に参画します。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000377.000036656.html\" target=\"_blank\" rel=\"noopener noreferrer\">大分県由布市および山形県米沢市における系統用蓄電所事業への参画について（三菱UFJ信託銀行株式会社、2026年9月30日）</a>）。</p><p>*2・*3は注記番号で、*2は「瞬間的な出力の大きさ。」、*3は「放電可能な電力量。」とされる。三菱UFJ信託銀行は「連結子会社である合同会社ジーアイアイ２を営業者とする匿名組合を通じ」、オリックスを含む共同投資家3社と出資し、両蓄電所の「建設を開始しました」とする。運転開始は「「由布蓄電所」は2028年、「米沢蓄電所」は2030年の運転開始を予定しています。」と年までのため運転開始日は空とし、所有者・事業主体の法人名も記載がないため事業者欄は空とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/mufg-trust-yonezawa-bess",
+   "row_id": "D5-10",
+   "result": "dry",
+   "payload": {
+    "name": "米沢蓄電所",
+    "status": [
+     "建設中"
+    ],
+    "outputMw": 75,
+    "capacityMwh": 309,
+    "prefecture": "山形県",
+    "city": "米沢市",
+    "marketParticipation": [
+     "JEPX",
+     "需給調整市場",
+     "容量市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000377.000036656.html",
+    "slug": "mufg-trust-yonezawa-bess",
+    "body": "<p><strong>米沢蓄電所</strong>は、山形県米沢市で建設が始まった定格出力75MW・定格容量309MWhの系統用蓄電所。2026年9月30日のリリースは「「由布蓄電所」は定格出力70MW*2、定格容量280MWh*3、「米沢蓄電所」は定格出力75MW、定格容量309MWhの大型蓄電池を電力系統に接続し、卸電力市場、需給調整市場、容量市場に参画します。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000377.000036656.html\" target=\"_blank\" rel=\"noopener noreferrer\">大分県由布市および山形県米沢市における系統用蓄電所事業への参画について（三菱UFJ信託銀行株式会社、2026年9月30日）</a>）。</p><p>引用中の*2・*3は由布蓄電所の数値に付く注記番号（倍数ではない）。三菱UFJ信託銀行は「連結子会社である合同会社ジーアイアイ２を営業者とする匿名組合を通じ」、オリックスを含む共同投資家3社と出資し、両蓄電所の「建設を開始しました」とする。運転開始は「「米沢蓄電所」は2030年の運転開始を予定しています」と年までのため運転開始日は空とし、所有者・事業主体の法人名も記載がないため事業者欄は空とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/hybrid-reu511-saga-honjo-bess",
+   "row_id": "D5-11",
+   "result": "dry",
+   "payload": {
+    "name": "RE.U511蓄電所",
+    "status": [
+     "建設中"
+    ],
+    "outputMw": 2,
+    "capacityMwh": 8,
+    "prefecture": "佐賀県",
+    "city": "佐賀市本庄町",
+    "operator": "株式会社グリーンエナジーパワー",
+    "epc": "HYBRID",
+    "cod": "2027年4月",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000001.000191820.html",
+    "slug": "hybrid-reu511-saga-honjo-bess",
+    "body": "<p><strong>RE.U511蓄電所</strong>は、株式会社グリーンエナジーパワーを事業者とする佐賀県佐賀市本庄町の系統用蓄電所。2026年9月30日のリリースは「RE.U511蓄電所は、佐賀県佐賀市本庄町に開発・建設を進める定格出力2MW、蓄電容量8MWhの系統用蓄電所です。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000001.000191820.html\" target=\"_blank\" rel=\"noopener noreferrer\">株式会社HYBRID、JC-STAR ★1適合設備を採用した「RE.U511蓄電所」を起点に系統用蓄電所事業を本格展開（株式会社HYBRID、2026年9月30日）</a>）。</p><p>概要表は設立主体を株式会社ユニファクト、一気通貫型EPC事業者を株式会社HYBRID、アグリゲーターとO&amp;M事業者をRE-100電力株式会社とし、セキュリティは「JC-STAR ★1適合ラベル取得済み設備」。蓄電容量欄は「8MW」「8,000KW」と出力の単位のため、本文の「蓄電容量8MWh」を採る。</p><p>本文は「2027年4月の運転開始を予定」とし、運転開始日は月精度で記録する。ステータスは「開発・建設を進める」により建設中とした（着工日の記載なし）。参加市場の記載はなく同欄は空とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/jes-hokkaido-007-mukawa-bess",
+   "row_id": "D5-12",
+   "result": "dry",
+   "payload": {
+    "name": "北海道007蓄電所",
+    "status": [
+     "計画中"
+    ],
+    "outputMw": 2,
+    "capacityMwh": 8,
+    "prefecture": "北海道",
+    "city": "勇払郡むかわ町穂別和泉",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000013.000148720.html",
+    "slug": "jes-hokkaido-007-mukawa-bess",
+    "body": "<p><strong>北海道007蓄電所</strong>は、日本エネルギー総合システム株式会社が手掛ける北海道勇払郡むかわ町穂別和泉の蓄電所（定格出力2MW・蓄電容量8MWh）。2026年9月24日のリリースは「本案件では、Fit Founderが顧客企業による系統用蓄電池事業への参入および蓄電所の取得・保有を支援し、事業者とのマッチングから成約までをサポートしました。」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000013.000148720.html\" target=\"_blank\" rel=\"noopener noreferrer\">Fit Founder、日本エネルギー総合システムの北海道007蓄電所 プロジェクトを支援（株式会社Fit Founder、2026年9月24日）</a>）。</p><p>表では販売支援が株式会社Fit Founder、蓄電池が「CATL EnerOne + R08306P05L31」、PCSが「富士電機 PVI1500CJ-3/2750B」。電力名義は日本エネルギー総合システムだが、取得・保有は社名の記載がない顧客企業のため事業者欄は空とした。EPCの記載もなくEPC欄も空。着工・運転開始と本件の参加市場を名指しした記載はなく、ステータスは「成約」から計画中、運転開始日と参加市場は空とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/taoke-kakamigahara-no2",
+   "id": "xy7yk5af0sw0",
+   "result": "dry",
+   "fields": [
+    "city",
+    "marketParticipation",
+    "cod",
+    "body"
+   ],
+   "before": {
+    "city": "各務原市",
+    "marketParticipation": [],
+    "cod": "2026-07-07",
+    "body": "<p><strong>岐阜県各務原市②号2MW高圧蓄電所</strong>（2MW／8MWh）は、TAOKE ENERGYがSPC「PP6合同会社」を通じて推進する同社初の外部資金活用型蓄電所ファンド案件。2026年7月7日に系統連系完了。TAOKEはSI・EMS・アグリゲーションの三位一体モデルで開発から運用まで一貫支援する（2026年7月14日発表）。</p>"
+   },
+   "after": {
+    "city": "各務原市那加大門町",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "cod": "",
+    "body": "<p><strong>岐阜県各務原市②号2MW高圧蓄電所</strong>（2MW／8MWh）は、TAOKE ENERGYがSPC「PP6合同会社」を通じて推進する同社初の外部資金活用型蓄電所ファンド案件。2026年7月7日に系統連系完了。TAOKEはSI・EMS・アグリゲーションの三位一体モデルで開発から運用まで一貫支援する（2026年7月14日発表）。</p><p>2026年9月28日のTAOKE ENERGY株式会社のリリース（2026年10月6日更新・<a href=\"https://prtimes.jp/main/html/rd/p/000000044.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">TAOKE ENERGY、「第一号ファンド」の2案件で新たに一次調整力市場へ参入</a>）は、表の「岐阜県各務原市那加大門町2MW蓄電所」（2MW・8MWh）の市場参入開始日を「2026年9月17日」とし、この案件を第一号ファンド「合同会社ジャパンパワーストレージⅠ」を通じて開発を進めてきたものとしている。所在市・定格（2MW・8MWh）・外部資金による第一号のファンド案件である点が一致するため、編集部は同蓄電所を本蓄電所と同一と判断し、参加市場欄は一次調整力を需給調整市場の商品として需給調整市場としている。2026年7月14日のリリースは本蓄電所をSPC「PP6合同会社」を通じて推進する案件としており、同合同会社と本ファンドの関係は一次からは判別できない。2026年7月14日のリリースの「2026年7月7日に系統連系を完了しました」は系統連系の日で運転開始日ではなく、運転開始を述べた記載もないため、運転開始日は空としている。</p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/taoke-tahara-mutsure",
+   "id": "wn6fbuu-99z",
+   "result": "dry",
+   "fields": [
+    "cod",
+    "body"
+   ],
+   "before": {
+    "cod": "2026-07-31",
+    "body": "<p><strong>愛知県田原市六連町2MW高圧蓄電所</strong>（定格出力2MW／容量8.14MWh）は、TAOKE ENERGYがSPC「PP合同会社」を通じて推進する蓄電所ファンド案件で、系統連系を完了した6案件の一つ。2026年7月31日系統連系。2026年10月を目途に需給調整市場「一次調整力（オフライン）」への参入を予定（2026年8月3日発表）。※ミツウロコ「田原蓄電所」とは別案件。</p>"
+   },
+   "after": {
+    "cod": "",
+    "body": "<p><strong>愛知県田原市六連町2MW高圧蓄電所</strong>（定格出力2MW／容量8.14MWh）は、TAOKE ENERGYがSPC「PP合同会社」を通じて推進する蓄電所ファンド案件で、系統連系を完了した6案件の一つ。2026年7月31日系統連系。2026年10月を目途に需給調整市場「一次調整力（オフライン）」への参入を予定（2026年8月3日発表）。※ミツウロコ「田原蓄電所」とは別案件。</p><p>2026年8月3日のTAOKE ENERGY株式会社のリリース（<a href=\"https://prtimes.jp/main/html/rd/p/000000037.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">TAOKE ENERGY、愛知県田原市で高圧蓄電所の系統連系を完了</a>）は所在地を「愛知県田原市六連町」とし、「2MWの高圧蓄電所の系統連系を、2026年7月31日に完了いたしました」と述べている。系統連系日は運転開始日ではなく、運転開始を述べた記載もないため、運転開始日は空としている。</p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/gec-kuradashi-shimane-bess",
+   "id": "5s_jgqd62",
+   "result": "dry",
+   "fields": [
+    "name",
+    "city",
+    "status",
+    "body"
+   ],
+   "before": {
+    "name": "島根県の系統用蓄電所（クラダシ・インベストメント2号）",
+    "status": [
+     "計画中"
+    ],
+    "body": "<p><strong>島根県の系統用蓄電所</strong>は、グリーンエナジー＆カンパニーとクラダシの合弁「合同会社クラダシ・インベストメント2号」（出資比率50%:50%・GK-TKスキーム）による第一弾案件の一つです。定格出力1,998kW・定格容量8,224kWh。受電は2027年1月の予定です。</p><p>所在市町村は一次リリースで非公表のため、都道府県までの掲載としています。</p><p><em>※本案件情報は、各事業者の公式プレスリリース・IR資料等に基づき編集部が整備したものです。最新の進捗・諸元については、出典および各事業者の公式発表をご参照ください。</em></p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>📰 グリーンエナジー＆カンパニー: <a href=\"https://prtimes.jp/main/html/rd/p/000000028.000071823.html\" target=\"_blank\" rel=\"noopener noreferrer\">クラダシとの合弁による系統用蓄電所 国内2案件が始動（2026年8月）</a></li></ul>"
+   },
+   "after": {
+    "name": "島根安来蓄電所",
+    "city": "安来市",
+    "status": [
+     "建設中"
+    ],
+    "body": "<p><strong>島根安来蓄電所</strong>は、グリーンエナジー＆カンパニーとクラダシの合弁「合同会社クラダシ・インベストメント2号」（出資比率50%:50%・GK-TKスキーム）による第一弾案件の一つです。定格出力1,998kW・定格容量8,224kWh。受電は2027年1月の予定です。</p><p>2026年9月29日の株式会社クラダシのリリース（下記出典）は、系統用蓄電所「島根安来蓄電所」（島根県安来市）について「2026年9月28日に建設工事に着工しました」と述べています。同リリースの概要は「所在地：島根県安来市」「着工日：2026年9月28日」「系統連系予定時期：2027年1月」「事業主体：合同会社クラダシ・インベストメント２号」と記載しています。系統連系・受電の予定は月までの記載で、運転開始日の記載はないため、運転開始日欄は空としています。</p><p><em>※本案件情報は、各事業者の公式プレスリリース・IR資料等に基づき編集部が整備したものです。最新の進捗・諸元については、出典および各事業者の公式発表をご参照ください。</em></p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>📰 グリーンエナジー＆カンパニー: <a href=\"https://prtimes.jp/main/html/rd/p/000000028.000071823.html\" target=\"_blank\" rel=\"noopener noreferrer\">クラダシとの合弁による系統用蓄電所 国内2案件が始動（2026年8月）</a></li><li>📰 クラダシ: <a href=\"https://prtimes.jp/main/html/rd/p/000000734.000014485.html\" target=\"_blank\" rel=\"noopener noreferrer\">クラダシ、島根県安来市で「島根安来蓄電所」を着工（2026年9月29日）</a></li></ul>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/kirishima-bess",
+   "id": "tt04teh0yy",
+   "result": "dry",
+   "fields": [
+    "operator",
+    "body"
+   ],
+   "before": {
+    "operator": "3社共同出資",
+    "body": "<p><strong>霧島蓄電所</strong>は、3社共同出資による系統用蓄電池プロジェクトで、鹿児島県霧島市に立地予定です。容量8MWh級の規模で、2024年9月11日に発表されました。</p><p>九州電力送配電管内の主要立地で、霧島市は薩摩川内・霧島の電力インフラ集積地として、九州エリアの中核エリアの一つです。本案件は、九州エリアでの中規模蓄電所の代表事例として位置付けられます。</p><p>市場参加戦略はJEPXスポット市場・需給調整市場の組合せが想定され、九州エリアの再エネ大量導入下での需給調整・出力制御回避への貢献を担います。詳細諸元・事業者構成は出典記事および関連各社の公式発表をご参照ください。</p><p><em>※本案件情報は、各事業者の公式プレスリリース・IR資料等に基づき編集部が整備したものです。最新の進捗・諸元については、上記出典URLおよび各事業者の公式IR・プレスリリースをご参照ください。</em></p>"
+   },
+   "after": {
+    "operator": "合同会社霧島蓄電所",
+    "body": "<p><strong>霧島蓄電所</strong>は、鹿児島県霧島市の系統用蓄電所で、事業主体は合同会社霧島蓄電所です。容量8MWh級の規模で、2024年9月10日に発表されました。</p><p>日本エネルギー総合システム株式会社のリリース「<a href=\"https://prtimes.jp/main/html/rd/p/000000017.000113700.html\" target=\"_blank\" rel=\"noopener noreferrer\">系統用蓄電池1号案件の稼働と3社による合同会社設立</a>」は、「霧島蓄電所」について「系統への連系が完了し、稼働を開始したことをお知らせします」と述べ、事業概要で事業主体を合同会社霧島蓄電所、出資事業者を株式会社グリーンエナジー＆カンパニー・合同会社DMM.com・日本エネルギー総合システム株式会社としています。同リリースは「蓄電所のアセット保有は今回設立した合同会社霧島蓄電所が担い」とし、グリーンエナジー＆カンパニーの<a href=\"https://green-energy.co.jp/service/storage-battery/\" target=\"_blank\" rel=\"noopener noreferrer\">系統用蓄電所事業ページ</a>も「蓄電所の資産は合同会社が保有し」としています。</p><p>九州電力送配電管内の主要立地で、霧島市は薩摩川内・霧島の電力インフラ集積地として、九州エリアの中核エリアの一つです。本案件は、九州エリアでの中規模蓄電所の代表事例として位置付けられます。</p><p>市場参加戦略はJEPXスポット市場・需給調整市場の組合せが想定され、九州エリアの再エネ大量導入下での需給調整・出力制御回避への貢献を担います。詳細諸元・事業者構成は出典記事および関連各社の公式発表をご参照ください。</p><p><em>※本案件情報は、各事業者の公式プレスリリース・IR資料等に基づき編集部が整備したものです。最新の進捗・諸元については、上記出典URLおよび各事業者の公式IR・プレスリリースをご参照ください。</em></p>"
+   }
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 20
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 16,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/gec-fukuchiyama-haji-bess",
+   "row_id": "D5-1",
+   "result": "skip_exists",
+   "id": "evv_95bku3"
+  },
+  {
+   "kind": "post",
+   "target": "projects/gec-miyoshi-bess",
+   "row_id": "D5-2",
+   "result": "skip_exists",
+   "id": "t-gh9e2l7z"
+  },
+  {
+   "kind": "post",
+   "target": "projects/vena-nre-nakagawa-2-bess",
+   "row_id": "D5-3",
+   "result": "skip_exists",
+   "id": "t88l0vkxb8ki"
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-kobe-bess",
+   "row_id": "D5-4",
+   "result": "skip_exists",
+   "id": "1l3505jeq-l7"
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-sukagawa-bess",
+   "row_id": "D5-5",
+   "result": "skip_exists",
+   "id": "ah7f85y4d"
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-kikuchi-bess",
+   "row_id": "D5-6",
+   "result": "skip_exists",
+   "id": "2tov0kzio"
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-tottori-bess",
+   "row_id": "D5-7",
+   "result": "skip_exists",
+   "id": "gl9egvv7p1p"
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-oyama-higashinoda-bess",
+   "row_id": "D5-8",
+   "result": "skip_exists",
+   "id": "99zcjmxn0"
+  },
+  {
+   "kind": "post",
+   "target": "projects/mufg-trust-yufu-bess",
+   "row_id": "D5-9",
+   "result": "skip_exists",
+   "id": "nejx7abjon38"
+  },
+  {
+   "kind": "post",
+   "target": "projects/mufg-trust-yonezawa-bess",
+   "row_id": "D5-10",
+   "result": "skip_exists",
+   "id": "pp-k1d73i3lt"
+  },
+  {
+   "kind": "post",
+   "target": "projects/hybrid-reu511-saga-honjo-bess",
+   "row_id": "D5-11",
+   "result": "skip_exists",
+   "id": "p_dv6p547tsw"
+  },
+  {
+   "kind": "post",
+   "target": "projects/jes-hokkaido-007-mukawa-bess",
+   "row_id": "D5-12",
+   "result": "skip_exists",
+   "id": "1p5g11jlp"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/taoke-kakamigahara-no2",
+   "id": "xy7yk5af0sw0",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/taoke-tahara-mutsure",
+   "id": "wn6fbuu-99z",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/gec-kuradashi-shimane-bess",
+   "id": "5s_jgqd62",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/kirishima-bess",
+   "id": "tt04teh0yy",
+   "result": "skip_final_state"
+  }
+ ]
+}

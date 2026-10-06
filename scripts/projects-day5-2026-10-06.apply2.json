@@ -1,0 +1,104 @@
+{
+ "mode": "apply",
+ "calls": {
+  "GET": 22,
+  "POST": 11
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 11,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/gec-miyoshi-bess",
+   "row_id": "D5-2",
+   "id": "t-gh9e2l7z",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/vena-nre-nakagawa-2-bess",
+   "row_id": "D5-3",
+   "id": "t88l0vkxb8ki",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-kobe-bess",
+   "row_id": "D5-4",
+   "id": "1l3505jeq-l7",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-sukagawa-bess",
+   "row_id": "D5-5",
+   "id": "ah7f85y4d",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-kikuchi-bess",
+   "row_id": "D5-6",
+   "id": "2tov0kzio",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-pp7-tottori-bess",
+   "row_id": "D5-7",
+   "id": "gl9egvv7p1p",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-oyama-higashinoda-bess",
+   "row_id": "D5-8",
+   "id": "99zcjmxn0",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/mufg-trust-yufu-bess",
+   "row_id": "D5-9",
+   "id": "nejx7abjon38",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/mufg-trust-yonezawa-bess",
+   "row_id": "D5-10",
+   "id": "pp-k1d73i3lt",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/hybrid-reu511-saga-honjo-bess",
+   "row_id": "D5-11",
+   "id": "p_dv6p547tsw",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/jes-hokkaido-007-mukawa-bess",
+   "row_id": "D5-12",
+   "id": "1p5g11jlp",
+   "result": "posted",
+   "check": []
+  }
+ ]
+}

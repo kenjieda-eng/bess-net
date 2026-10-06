@@ -1,6 +1,6 @@
 {
   "_comment": "資料名の台帳（Ck-1 A6・2026-09-21）。name はサイトに書いている資料名、title_verbatim は確認時の一次の <title>／PDF 表題の逐語。書く前に一次を実機で取り、確認日つきで登録する。検査: npm run verify:source-names",
-  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true） ／ 2026-09-29 Ck-2 実行便② で 10 件を追加・needs_check 4 件を決着（2 件は本文から外れたため理由を書いて残置） ／ 2026-09-30 同便の本番レビュー後の是正で 1 件を追加（EPRX 商品要件 第6版） ／ 2026-10-03 Ck2d で PIB（インド VGF）を 1 件追加",
+  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true） ／ 2026-09-29 Ck-2 実行便② で 10 件を追加・needs_check 4 件を決着（2 件は本文から外れたため理由を書いて残置） ／ 2026-09-30 同便の本番レビュー後の是正で 1 件を追加（EPRX 商品要件 第6版） ／ 2026-10-03 Ck2d で PIB（インド VGF）を 1 件追加 ／ 2026-10-06 projects 便 Day5 で PR TIMES 等 15 件を追加",
   "documents": [
     {
       "name": "需給調整市場のΔkW上限価格について",
@@ -1585,6 +1585,141 @@
       "checked_on": "2026-10-06",
       "note": "Ck2g §2。素の UA・Chrome UA とも HTTP 200（199,282 bytes）。逐語「25-megawatt (MW) battery storage facility at its Bolster Substation」「Agua Fria Generating Station」「Peoria」「Tesla Megapacks」",
       "used_in": "src/data/incidents.ts（srp-bolster-2025）"
+    },
+    {
+      "name": "ヴィーナ・エナジー、2025年度長期脱炭素電源オークションにおいて NRE中川第二蓄電所が落札",
+      "publisher": "ヴィーナ・エナジー・ジャパン株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000071.000052790.html",
+      "title_verbatim": "ヴィーナ・エナジー、2025年度長期脱炭素電源オークションにおいて NRE中川第二蓄電所が落札 | ヴィーナ・エナジー・ジャパン株式会社のプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（250,878 bytes）。配信 2026-09-25 10:00:02。逐語「NRE中川第二蓄電所（落札容量：46,828 kW)」「長野県松本市近郊」。",
+      "used_in": "projects/vena-nre-nakagawa-2-bess（sourceUrl・body）"
+    },
+    {
+      "name": "TAOKE ENERGY、系統用蓄電所4カ所の運転を開始",
+      "publisher": "TAOKE ENERGY株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000045.000103834.html",
+      "title_verbatim": "TAOKE ENERGY、系統用蓄電所4カ所の運転を開始 | TAOKE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（256,421 bytes）。配信 2026-09-28 14:38:04・最終更新 2026-10-06 11:01:52。2026-10-06 11:01 に改訂（改訂前「特別目的会社（SPC）であるPP7号合同会社を通じ」→ 改訂後「「PP7号合同会社」を第２号ファンドとして」）。表（定格出力・定格容量・受電日・アグリゲーター）は不変。",
+      "used_in": "projects/taoke-pp7-kobe-bess・-sukagawa-bess・-kikuchi-bess・-tottori-bess（sourceUrl・body）"
+    },
+    {
+      "name": "TAOKE ENERGY、「第一号ファンド」の2案件で新たに一次調整力市場へ参入",
+      "publisher": "TAOKE ENERGY株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000044.000103834.html",
+      "title_verbatim": "TAOKE ENERGY、「第一号ファンド」の2案件で新たに一次調整力市場へ参入 | TAOKE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（249,806 bytes）。配信 2026-09-28 14:38:46・最終更新 2026-10-06 11:05:09。2026-10-06 11:05 に改訂。改訂前の見出し「TAOKE ENERGY、SPC「PP6合同会社」の2案件で新たに一次調整力市場へ参入」・本文「SPC「PP6合同会社」を通じて」→ 改訂後「「合同会社ジャパンパワーストレージⅠ」（以下「本ファンド」）を第一号ファンドとして」「本ファンドを通じて」。表は不変。",
+      "used_in": "projects/taoke-oyama-higashinoda-bess（sourceUrl・body）・projects/taoke-kakamigahara-no2（body）"
+    },
+    {
+      "name": "クラダシ、島根県安来市で「島根安来蓄電所」を着工",
+      "publisher": "株式会社クラダシ（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000734.000014485.html",
+      "title_verbatim": "クラダシ、島根県安来市で「島根安来蓄電所」を着工 | 株式会社クラダシのプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（253,414 bytes）。配信 2026-09-29 10:00:03。逐語「着工日：2026年9月28日」「系統連系予定時期：2027年1月」「事業主体：合同会社クラダシ・インベストメント２号」。",
+      "used_in": "projects/gec-kuradashi-shimane-bess（body の出典リスト）"
+    },
+    {
+      "name": "グリーンエナジー＆カンパニー、自社保有の系統用蓄電所、京都府で運用開始― 鹿児島・広島に続く３拠点目、関西エリアへ展開 ―",
+      "publisher": "株式会社グリーンエナジー＆カンパニー（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000042.000071823.html",
+      "title_verbatim": "グリーンエナジー＆カンパニー、自社保有の系統用蓄電所、京都府で運用開始― 鹿児島・広島に続く３拠点目、関西エリアへ展開 ― | 株式会社グリーンエナジー＆カンパニーのプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（258,677 bytes）。配信 2026-09-29 16:30:02。逐語「事業主体：合同会社マイクロGX京都」「当社グループの保有蓄電所は、鹿児島県霧島市（共同保有）、広島県三次市、そして今回の京都府福知山市の3拠点」。",
+      "used_in": "projects/gec-fukuchiyama-haji-bess（sourceUrl・body）・projects/gec-miyoshi-bess（body）"
+    },
+    {
+      "name": "大分県由布市および山形県米沢市における系統用蓄電所事業への参画について",
+      "publisher": "三菱ＵＦＪ信託銀行株式会社（PR TIMES 掲載・本文は半角「三菱UFJ信託銀行」）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000377.000036656.html",
+      "title_verbatim": "大分県由布市および山形県米沢市における系統用蓄電所事業への参画について | 三菱ＵＦＪ信託銀行株式会社のプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（234,647 bytes）。配信 2026-09-30 12:48:27・最終更新 2026-10-01 06:40:02。*2「瞬間的な出力の大きさ。」*3「放電可能な電力量。」は注記番号（倍数ではない）。",
+      "used_in": "projects/mufg-trust-yufu-bess・mufg-trust-yonezawa-bess（sourceUrl・body）"
+    },
+    {
+      "name": "株式会社HYBRID、JC-STAR ★1適合設備を採用した「RE.U511蓄電所」を起点に系統用蓄電所事業を本格展開",
+      "publisher": "株式会社HYBRID（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000001.000191820.html",
+      "title_verbatim": "株式会社HYBRID、JC-STAR ★1適合設備を採用した「RE.U511蓄電所」を起点に系統用蓄電所事業を本格展開 | 株式会社HYBRIDのプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（259,950 bytes）。配信 2026-09-30 16:58:41・最終更新 2026-10-01 04:40:01。概要表の蓄電容量は「8MW  (8,000KW)」と単位の誤記・本文は「蓄電容量8MWh」。",
+      "used_in": "projects/hybrid-reu511-saga-honjo-bess（sourceUrl・body）"
+    },
+    {
+      "name": "Fit Founder、日本エネルギー総合システムの北海道007蓄電所 プロジェクトを支援",
+      "publisher": "株式会社Fit Founder（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000013.000148720.html",
+      "title_verbatim": "Fit Founder、日本エネルギー総合システムの北海道007蓄電所 プロジェクトを支援 | 株式会社Fit Founderのプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（288,321 bytes）。配信 2026-09-24 21:17:35・最終更新 2026-09-25 09:31:10。表の蓄電所名は全角「北海道００７蓄電所」・所在地「北海道勇払郡むかわ町穂別和泉」・電力名義 日本エネルギー総合システム株式会社。",
+      "used_in": "projects/jes-hokkaido-007-mukawa-bess（sourceUrl・body）"
+    },
+    {
+      "name": "グリーンエナジー&カンパニー、情報誌「GREEN MOOK」Vol.1を発行",
+      "publisher": "株式会社グリーンエナジー＆カンパニー（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000039.000071823.html",
+      "title_verbatim": "グリーンエナジー&カンパニー、情報誌「GREEN MOOK」Vol.1を発行 | 株式会社グリーンエナジー＆カンパニーのプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（291,066 bytes）。配信 2026-09-08 12:34:15。逐語「広島県三次（みよし）市の三次蓄電所（定格出力1.99MW、蓄電容量8.128MWh）を撮り下ろしで取材。」。",
+      "used_in": "projects/gec-miyoshi-bess（sourceUrl・body）"
+    },
+    {
+      "name": "系統用蓄電池1号案件の稼働と3社による合同会社設立",
+      "publisher": "日本エネルギー総合システム株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000017.000113700.html",
+      "title_verbatim": "系統用蓄電池1号案件の稼働と3社による合同会社設立 | 日本エネルギー総合システム株式会社のプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（254,339 bytes）。配信 2024-09-10 15:00:01・最終更新 2024-09-13 00:21:44。事業概要「事業主体 合同会社霧島蓄電所／出資事業者 株式会社グリーンエナジー＆カンパニー 合同会社DMM.com 日本エネルギー総合システム株式会社」。",
+      "used_in": "projects/kirishima-bess（body）"
+    },
+    {
+      "name": "系統用蓄電池1号案件の稼働と3社による合同会社設立（日本エネルギー総合システム 自社サイト掲載）",
+      "publisher": "日本エネルギー総合システム株式会社（自社サイト）",
+      "url": "https://www.jpn-energy.jp/news/release/entry-472.html",
+      "title_verbatim": "系統用蓄電池1号案件の稼働と3社による合同会社設立 | 【公式】総合エネルギー商社・日本エネルギー総合システム株式会社",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（24,629 bytes）。。掲載日「2024年09月10日」（本文の日付も「2024年9月10日」）。kirishima-bess の body の「2024年9月11日に発表」を 9月10日に是正した根拠。",
+      "used_in": "projects/kirishima-bess（sourceUrl）"
+    },
+    {
+      "name": "TAOKE ENERGY、愛知県田原市で高圧蓄電所の系統連系を完了",
+      "publisher": "TAOKE ENERGY株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000037.000103834.html",
+      "title_verbatim": "TAOKE ENERGY、愛知県田原市で高圧蓄電所の系統連系を完了 | TAOKE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（248,339 bytes）。配信 2026-08-03 18:52:03。表「系統連系日 2026年7月31日」・所在地「愛知県田原市六連町」。",
+      "used_in": "projects/taoke-tahara-mutsure（sourceUrl・body）"
+    },
+    {
+      "name": "TAOKE ENERGY、岐阜県各務原市で2MW高圧蓄電所の系統連系を完了",
+      "publisher": "TAOKE ENERGY株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000034.000103834.html",
+      "title_verbatim": "TAOKE ENERGY、岐阜県各務原市で2MW高圧蓄電所の系統連系を完了 | TAOKE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（248,303 bytes）。配信 2026-07-14 11:37:13。表「系統連系日 2026年7月7日」・本文「SPC「PP6合同会社」を通じて推進する案件」（2026-10-06 時点で改訂なし）。",
+      "used_in": "projects/taoke-kakamigahara-no2（sourceUrl・body）"
+    },
+    {
+      "name": "各地とのかかわり",
+      "publisher": "株式会社グリーンエナジー＆カンパニー（公式サイト）",
+      "url": "https://green-energy.co.jp/company/network/",
+      "title_verbatim": "各地とのかかわり｜グリーンエナジー＆カンパニー｜自然資本の新しい時代をリードする",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（73,639 bytes）。。「系統用蓄電所 ［完工・稼働中］」に「広島県三次市」（「※2026年6月2日時点」）。",
+      "used_in": "projects/gec-miyoshi-bess（body）"
+    },
+    {
+      "name": "系統用蓄電所事業ページ",
+      "publisher": "株式会社グリーンエナジー＆カンパニー（公式サイト）",
+      "url": "https://green-energy.co.jp/service/storage-battery/",
+      "title_verbatim": "系統用蓄電所「GX-Pack」",
+      "checked_on": "2026-10-06",
+      "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（133,739 bytes）。。逐語「蓄電所の資産は合同会社が保有し」（霧島蓄電所の節）。",
+      "used_in": "projects/kirishima-bess（body）"
     }
   ]
 }
