@@ -16,6 +16,15 @@ export function isLvInvestExplainer(exp: Pick<Explainer, 'category'>): boolean {
 }
 
 /**
+ * microCMS 側で低圧投資ガイドを外す filters（isLvInvestExplainer と同じ集合・Ck2h §10・2026-10-07）。
+ * category は複数選択のため [equals]/[not_equals] は効かない（実測: equals 0 件・not_equals 263 件＝全件）。
+ * [not_contains] は 176 件＝全 263 − isLvInvestExplainer 87 件と一致（category の値 8 種に「低圧投資」を部分に含む別の値は無い）。
+ * contains は部分一致なので「低圧投資」を含む別の選択肢を足したら見直す（取得後にも isLvInvestExplainer で落とす＝ずれは件数不足の WARN で出る）。
+ * 本文の語句検索ではない（定数 1 本・OR チェインなし）ので buildContainsFilter（鉄則 #1・[contains] の OR 連結用）の対象外。
+ */
+export const NOT_LV_INVEST_FILTER = `category[not_contains]${LV_INVEST_CATEGORY}`;
+
+/**
  * 6記事の SEO メタ（titleタグは layout が「 | 蓄電所ネット」を自動付与するため、ここでは
  * サフィックスを除いた形で持つ・#88 二重回避）。ハブ分岐①のリンク順もこの配列順。
  */

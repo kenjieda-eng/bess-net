@@ -9,8 +9,8 @@ import {
   getExplainerList, getGlossaryList, getIndustryNews, getAllPolicyEvents, type PolicyEvent,
   getExplainerDisplayCount, getGlossaryDisplayCount,
 } from '@/lib/microcms';
-import { isExcludedExplainer } from '@/lib/explainer-excluded';
-import { isLvInvestExplainer } from '@/lib/lv-invest';
+import { isExcludedExplainer, EXPLAINER_EXCLUDED_SLUGS } from '@/lib/explainer-excluded';
+import { isLvInvestExplainer, NOT_LV_INVEST_FILTER } from '@/lib/lv-invest';
 import { PLAYERS, RELATIONS } from '@/data/industry-map';
 import {
   POLICY_DETAIL_SLUG_SET,
@@ -40,6 +40,9 @@ function buildPrimaryCards(substationsCountStr: string, chubuCountStr: string) {
     { href: '/tools/fire-risk-check', title: '火災リスク自己診断', desc: '25問チェック式、教育型。安全文化醸成に。', tag: 'ツール' },
   ];
 }
+
+/** トップの新着解説の本数（Ck2h §10） */
+const EXPLAINER_LATEST_N = 6;
 
 // 折りたたみ側（初期DOMに全文残す・#107 表示切替方式＝details）
 const moreFeatures = [
@@ -86,11 +89,16 @@ export default async function Home() {
   };
 
   const [explainerData, glossaryNew, glossaryCount, explainerCount, industryNewsAll, policyEventsAll] = await Promise.all([
-    // Ck-1b ■6: 非表示の記事（explainer-excluded）を新着 6 本に混ぜないよう 7 件取って除外後に 6 本へ
     // Ck2g レビュー: 新着も件数（getExplainerDisplayCount）と同じ集合から選ぶ＝低圧投資ガイド（/lv/invest 専用）を除く。
-    // 新しい順の上位に低圧投資ガイドが固まっている（2026-10-06 実測: 上位 100 件のうち低圧投資でないのは 0・1・89 番目以降）ので、
-    // 1 回の上限 100 件を取って除外してから 6 本に切る（本文は取らない・1 リクエストのまま）
-    getExplainerList({ limit: 100, orders: '-publishedAt', fields: 'id,slug,title,category,publishedAt' }),
+    // Ck2h §10: 新しい順の上位に低圧投資ガイドが固まっている（2026-10-07 実測: 上位 100 件のうち低圧投資でないのは 0・1・89 番目以降）ため、
+    // 上位 100 件から選ぶ方式では低圧投資ガイドが増えると黙って 6 本を割る。microCMS の filters で外して取る（本文は取らない・1 リクエストのまま）。
+    // 非表示（explainer-excluded）はコード側の一覧なので、その件数分だけ多めに取る
+    getExplainerList({
+      limit: EXPLAINER_LATEST_N + EXPLAINER_EXCLUDED_SLUGS.size,
+      orders: '-publishedAt',
+      fields: 'id,slug,title,category,publishedAt',
+      filters: NOT_LV_INVEST_FILTER,
+    }),
     getGlossaryList({ limit: 10, orders: '-publishedAt' }),
     // Ck2g §5（2026-10-06）: 件数は一覧（/glossary・/explainer）と同じ集合を同じ filter で数える（#121）。
     // 旧実装は totalCount（用語集 1,535・解説 261）で、一覧の表示数（1,392・174）と食い違っていた。取れないときは null＝件数を出さない
@@ -120,10 +128,16 @@ export default async function Home() {
     .slice()
     .sort((a: any, b: any) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, 3);
-  // Ck-1b ■6: 新着 6 本は非表示を除いてから切る。Ck2g: 低圧投資ガイドも除く（見出しの件数＝/explainer の集合と揃える・#121）
+  // Ck-1b ■6: 新着は非表示を除いてから切る。Ck2g: 低圧投資ガイドも除く（filters で外し、判定の正は isLvInvestExplainer のまま・#121）
   const explainerLatest = explainerData.contents
     .filter((a) => !isExcludedExplainer(a.slug) && !isLvInvestExplainer(a))
-    .slice(0, 6);
+    .slice(0, EXPLAINER_LATEST_N);
+  // Ck2h §10: 取得の外にまだ記事があるのに 6 本に届かないときは黙って減らさず WARN（throw しない）
+  if (explainerLatest.length < EXPLAINER_LATEST_N && explainerData.totalCount > explainerData.contents.length) {
+    console.warn(
+      `[home] WARN 新着解説: ${explainerData.contents.length} 件取得から ${explainerLatest.length} 本しか残らない（totalCount ${explainerData.totalCount}・filters ${NOT_LV_INVEST_FILTER}）`,
+    );
+  }
   const primaryCards = buildPrimaryCards(substationsCountStr, chubuCountStr);
 
   return (
