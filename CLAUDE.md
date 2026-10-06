@@ -228,6 +228,12 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
      検査: npm run verify:source-names（台帳に無い資料名を警告。実在の常時検証はしない＝誤検知を避ける）。
      実証: Lc-3 で 178 種を監査し不在 34・表記ゆれ 53（不在は全て microCMS の explainer.sources・glossary.detail）。
 
+【受け入れ基準の恒久追加（説明会・イベントの置き場・2026-09-27 Ck-2 ②裁定）】
+  ✅ 主催が制度運営機関（OCCTO・EPRX・経産省など）で内容が制度説明のもの（制度説明会・実務説明会）は政策
+     （/policy-calendar・policy-events の kind なし）に置く。業界（/events・kind「業界」）は展示会・業界団体・民間セミナー。
+  ✅ イベントは主催者の一次（公式の開催告知）が無ければ載せない。載せたあとで一次が無いと分かったものは
+     src/lib/events-excluded.ts で非表示（DELETE しない）。実証: 月次バッチ 10/1 ■3 の 4 件（Ck2g §1・2026-10-06）。
+
 ## 2026-08 追加（#111〜#112）
 
 ```
@@ -268,6 +274,10 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
              microCMS のリスト応答は null フィールドを省略するため、欠損キーは None 補完してから比較。
            実証: 2026-08-16 北陸で static baseline を使った初回 dry-run が「台数271件・予想潮流49件の
                  新規充足」を報告 → 実データ照合後は台数1件・予想潮流29件変化に是正。
+           ★追記（2026-10-06・Ck2g）変電所の id≠slug: `ydn-kikan-0013-2`（id `a7m1-_9p0n5`・2026-10-05 POST）だけ
+             id≠slug（POST の自動採番。contentId 指定の作成＝PUT は停止条件）。全 8,346 件で唯一。再取込は baseline の
+             id で PATCH する（各社の旧スクリプトの `client.update({contentId: slug})` 型はこの 1 件で 404）。
+             共通 applier: scripts/experimental/_common/apply_substations_plan.ts（baseline の id を使う・既定 dry run）。
 
 #114 ★★★★ 突合キーの数値は必ず型を正規化してから比較する（int と float を文字列比較しない）
            → microCMS の baseline は int（500）、CSV パース結果は float（500.0）で入る。
@@ -460,6 +470,12 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
            → 共通実装 scripts/lib/microcms-applier.ts（runApplier・Ck2d で切り出し）。--dry-run は受け付けて無視。
              後から別の便が同じレコードを書き換えたら、その便の計画の expect_final も現在値で更新する
              （更新しないと op の old が見つからず「中止」になる＝書込はしない）。
+           ★適用範囲（2026-10-06・Ck2g）: 汎用 importer 3 本（scripts/import-news.ts／import-projects.ts／import-subsidies.ts）も
+             既定 dry run 化した（--apply で本実行）。日付つきの一回物（post-*-YYYY-MM-DD.ts・patch-*.ts）は履歴として残す（触らない）。
+             変電所の再取込は scripts/experimental/_common/apply_substations_plan.ts（同じ規則・--apply は --log 必須）。
+           ★webhook は API ごと（2026-10-06・Ck2g）: 「変電所空き容量DB」API には webhook が無い（2026-10-05 に EDAさんが
+             管理画面で確認）＝一括 PATCH でビルドは起きず、反映は push のビルド。webhook OFF/ON の手順が要るのは webhook のある
+             API（解説記事・用語集・補助金・事業者など。書込 1 件ごとにビルドが走る）だけ。便を書くときは API 名で確かめる。
 
 #126 ★★★★ microCMS に select を新設して全件に値を入れるときは、canary 1 件から・5 か所同時に足す
            → (1) select は未定義の選択肢値を黙って捨てる（#106）。管理 API（スキーマ GET）がこの鍵では 403 で
@@ -470,6 +486,16 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
              一覧だけが黙って旧い値に戻る（#118 と同型）。
            前提として記録: N-1 三値化の段2（n1_status＝可／不可／未算定／公表なし を select で持つ案A）。
                  裁定 2026-10-02（検証記録_10-02便…）。段1（リポ側の一覧 src/data/n1-status.json）は N1b コード便。
+
+#127 ★★★★ 書込対象の URL は書込前に開かない（変更前の記録は microCMS の GET か書込対象でないページで取る）
+           → runtime fetch を持つページ（変電所詳細など）を書込前に開くと、その描画の取得結果が Data Cache（#116・
+             deploy を跨いで残る＝#112）に revalidate の間（1 時間）残り、新しい deploy でも旧値が出る。これから POST する
+             新規 slug を開くと「slug で引いても 0 件」が残り、新 deploy で 404 になる。
+           実証: 2026-10-05 四国沖縄の本実行。13:05 に変更前の記録として `/grid/ydn-kikan-0013-2`（これから POST）・
+                 波止浜-2・松田の 3 URL を開いた → 13:42 の新 deploy 後も新規が 404・2 件が旧値（開かなかった詳細は新値）。
+                 14:45（Data Cache と ISR の期限後）に解消。reports/grid-shikoku-okinawa-apply-2026-10-05.md (6)。
+           → 開いてしまったら「TTL 内の既知の窓」として解消見込み時刻を報告に書き、その時刻に素 URL で 2 回取って確かめる。
+             プロジェクト全体のキャッシュ削除はしない（全ページが一斉に microCMS を叩く＝鉄則 #2）。
 ```
 ```
 
@@ -848,4 +874,5 @@ async function main() {
 - 2026-08-17（CC・基幹ラベル調査）: 落とし穴 #119（二重正規化で原値が消える／#118 の機械検査では検出不能）を追加。verify:grid-fields を2軸化（軸2＝消費側 shape への到達検査）。「（基幹系）」は Gr10(b166f57) がコード側で「（府県の記載なし）」へ置換した文言で、microCMS のデータには全社0件（＝再取込による劣化ではない）
 - 2026-08-16（CC・中国本実行）: 落とし穴 #117（series_dedup ルール②は既定OFF・社ごとopt-in）を追加。No.振り直しは slug 維持＋external_id 更新＋履歴（_common/external_id_history.json）で扱う。last_updated はレコード単位（県により版が異なる社があるため）
 - 2026-10-03（CC・Ck2d）: 落とし穴 #112 を書き直し（Vercel 現行ドキュメントでは ISR キャッシュは deploy ごとに独立・deploy を跨ぐのは Data Cache＝#116。8/16 の観測は事実として残し、原因の断定を撤回）。#124 にページング版を追記（offset ページング 30 か所に一意な第二キー・news は publishedAt 非一意のため -createdAt）。#125（書込スクリプトは既定 dry run・本実行は --apply＝R32・scripts/lib/microcms-applier.ts）・#126（select 新設は canary 1 件から・5 か所同時に足す＝N1 段2 の前提）を追加。鉄則 #5 に「初期DOM の計数は `<!-- -->` を剥がしてから」を追記
+- 2026-10-06（CC・Ck2g）: 落とし穴 #127（書込対象の URL は書込前に開かない＝書込前の確認アクセスが Data Cache に旧値・0 件を残す）を追加。#113 に変電所の id≠slug（ydn-kikan-0013-2 の 1 件・再取込は baseline の id で PATCH）、#125 に適用範囲（汎用 importer 3 本も既定 dry run）と「webhook は API ごと」（変電所空き容量DB には無い）を追記。受け入れ基準に「説明会・イベントの置き場」（制度説明は政策・業界は展示会等／一次の無いイベントは events-excluded で非表示）を追加
 - （将来）: 新規セッションで追記、更新時刻 + 更新者を末尾に
