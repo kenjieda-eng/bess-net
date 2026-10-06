@@ -171,7 +171,7 @@ export default function SubsidyMatcher() {
   );
 
   // 金曜#7 ⑦(b): 「全 N 件中」は登録件数で、申し込める件数ではなかった。
-  // 候補から外す条件（受付終了・採択結果公表）と同じ関数で数え、同じ基準日を使う（#121）。
+  // 候補から外す条件（受付終了・採択結果公表・期日なしの紹介ページ＝Ck2h §1）と同じ関数で数え、同じ基準日を使う（#121）。
   const openCount = useMemo(
     () => countOpenForApplication(ALL_SUBSIDIES, matchTargetDate(input)),
     [input]

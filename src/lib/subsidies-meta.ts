@@ -30,8 +30,8 @@ export type SubsidyDateFacts = {
   /**
    * 期日を一切持たない紹介ページか（hasNoSchedule の結果・Ck2f ■5・2026-10-04）。
    * Ck2g §3（2026-10-06）から precompute（scripts/precompute-subsidies.ts）で 1 回だけ決めて subsidies.json に持たせ、
-   * 一覧・棚・/tracker/subsidy・詳細ページ（バッジ・title・description）がこの値を読む（#121）。マッチングは読まない
-   * （随時受付のローン 3 件も no_schedule 真のため・候補に残す。Ck2g 報告 (4)）。
+   * 一覧・棚・/tracker/subsidy・詳細ページ（バッジ・title・description）・マッチング（is_rolling 偽のときだけ候補から外す＝
+   * subsidy-matcher の isIntroductionPage・Ck2h §1）がこの値を読む（#121）。随時受付のローン 3 件（no_schedule 真・is_rolling 真）は候補に残る。
    * 真なら statusLabel は空文字（「随時〜事業により異なる」に「公募中」を付けない・Gr10-⑤）。
    */
   no_schedule?: boolean;

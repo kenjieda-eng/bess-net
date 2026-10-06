@@ -79,7 +79,18 @@ function isPrefMatch(input_pref: string, subsidy_prefs: string[]): boolean {
  */
 export const CLOSED_FOR_APPLICATION_STATUSES = ['受付終了', '採択結果公表'] as const;
 
+/**
+ * 期日を一切持たない紹介ページか（Ck2h §1・2026-10-06 裁定）。申込の窓口そのものではないので候補にも「申込可」にも入れない。
+ * no_schedule は precompute（hasNoSchedule）で 1 回だけ決めた値を読む（#121）。
+ * 随時受付のローン（no_schedule 真・is_rolling 真＝銀行 3 件）はいつでも申し込めるので残す（Ck2g 報告 (4)-3）。
+ * 2026-10-06 の現物では nev-portal・nedo-koubo-list の 2 件。
+ */
+export function isIntroductionPage(s: Pick<PrecomputedSubsidy, 'no_schedule' | 'is_rolling'>): boolean {
+  return s.no_schedule === true && !s.is_rolling;
+}
+
 export function isClosedForApplication(s: PrecomputedSubsidy, target_iso: string): boolean {
+  if (isIntroductionPage(s)) return true;
   const derived = deriveSubsidyStatus(
     { status: s.status ?? [], deadline_iso: s.deadline_iso, start_iso: s.start_iso, is_rolling: s.is_rolling },
     target_iso,
@@ -117,7 +128,7 @@ export function matchSubsidies(
   const results: MatchResult[] = [];
 
   for (const s of subsidies) {
-    // Ck-1b ■3: 受付終了は候補に出さない（申し込めない制度を勧めない）
+    // Ck-1b ■3／Ck2h §1: 受付終了・採択結果公表・期日なしの紹介ページは候補に出さない（申し込めない制度を勧めない）
     if (isClosedForApplication(s, target)) continue;
     let score = 0;
     const reasons: string[] = [];
