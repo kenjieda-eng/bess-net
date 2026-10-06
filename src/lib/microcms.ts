@@ -3,7 +3,8 @@
 
 import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
 import { MICROCMS_MAX_OFFSET, MICROCMS_PAGE_LIMIT } from './constants';
-import { GLOSSARY_301_SOURCE_SLUGS } from './glossary-301';
+import { GLOSSARY_301_SOURCE_SLUGS, isGlossaryListExcluded } from './glossary-301';
+import { isLvInvestExplainer } from './lv-invest';
 import { EXCLUDED_OPERATOR_SLUGS, isHiddenOperator } from './operators-excluded';
 import { isExcludedNews } from './news-excluded';
 import { isExcludedEvent } from './events-excluded';
@@ -50,8 +51,11 @@ function withPublishedAtTieBreak(orders: string): string {
 /**
  * 念のための重複除去（キー基準）。並びが一意なら起きないが、起きたときに同じものを 2 回出さず、ビルドのログで気づけるようにする。
  * publishedAt が一意でない API（news）の取得で使う（Ck2d ■1）。
+ * ★Ck2g §10（2026-10-06）: 重複除去は「2 回入った」ものを消すだけで、代わりに「1 回も入らなかった」もの（欠落）は見えない
+ *   （2026-10-05 のローカルビルドで、重複 10 件の除去と同時に news 10 件がサイトマップから欠けた・Q4A 報告 §5-5）。
+ *   最初のページの totalCount を渡すと、除去後の件数と照合して足りなければ WARN を出す（throw しない・ビルドは止めない）。
  */
-function dedupeBy<T>(rows: T[], key: (r: T) => string, label: string): T[] {
+function dedupeBy<T>(rows: T[], key: (r: T) => string, label: string, totalCount?: number): T[] {
   const seen = new Set<string>();
   const out = rows.filter((r) => {
     const k = key(r);
@@ -62,7 +66,15 @@ function dedupeBy<T>(rows: T[], key: (r: T) => string, label: string): T[] {
   if (out.length !== rows.length) {
     console.warn(`[microcms] WARN ${label}: ページングで重複 ${rows.length - out.length} 件を除去（並びの第二キーを確認）`);
   }
+  warnIfMissing(label, out.length, totalCount);
   return out;
+}
+
+/** 全件取得の結果が totalCount に足りなければ WARN（Ck2g §10・欠落の検出）。totalCount が無ければ何もしない */
+function warnIfMissing(label: string, got: number, totalCount?: number): void {
+  if (typeof totalCount === 'number' && got < totalCount) {
+    console.warn(`[microcms] WARN ${label}: ページングの欠落 ${totalCount - got} 件（totalCount ${totalCount}・取得 ${got}）`);
+  }
 }
 
 // ===== 解説記事（explainer）の型定義 =====
@@ -170,13 +182,57 @@ export const getAllExplainer = async (): Promise<Explainer[]> => {
 };
 
 /**
- * explainer の掲載本数（一覧と同じ数＝非表示を差し引いた数）。totalCount のみ参照（+1req）。
- * 取れないときは null を返し、呼び出し側は件数を出さない（Ck-1a ■2-6 と同じ規則・#121）。
+ * 解説記事の「一覧に出る本数」（Ck2g §5・2026-10-06）。/explainer の一覧（src/app/explainer/page.tsx）と同じ集合を数える:
+ * getAllExplainer と同じ非表示（isExcludedExplainer）を除き、さらに低圧投資ガイド（isLvInvestExplainer・/lv/invest 専用）を除く。
+ * 旧実装（totalCount − 非表示の件数）は 261 で、一覧の 174 と食い違っていた（#121: 同じ意味の値を二か所で算出しない）。
+ * 本文は取らない（fields は id・slug・category だけ・約 3 リクエスト）。取れないときは null（呼び出し側は件数を出さない・Ck-1a ■2-6）。
  */
-export const getExplainerCountSafe = async (): Promise<number | null> => {
+export const getExplainerDisplayCount = async (): Promise<number | null> => {
   try {
-    const r = await getExplainerList({ limit: 1, fields: 'id' });
-    const n = r.totalCount - EXPLAINER_EXCLUDED_SLUGS.size;
+    const seen = new Map<string, Pick<Explainer, 'id' | 'slug' | 'category'>>();
+    const limit = MICROCMS_PAGE_LIMIT;
+    let totalCount: number | undefined;
+    for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+      const data = await client.getList<Explainer>({
+        endpoint: 'explainer',
+        queries: { limit, offset, orders: '-publishedAt', fields: 'id,slug,category' },
+      });
+      totalCount ??= data.totalCount;
+      for (const e of data.contents) seen.set(e.id, e);
+      if (data.contents.length < limit) break;
+    }
+    warnIfMissing('getExplainerDisplayCount', seen.size, totalCount);
+    const n = [...seen.values()].filter((e) => !isExcludedExplainer(e.slug) && !isLvInvestExplainer(e)).length;
+    return n > 0 ? n : null;
+  } catch {
+    return null;
+  }
+};
+
+/** 旧名（events・faq が使う）。中身は getExplainerDisplayCount と同じ＝一覧の本数（Ck2g §5） */
+export const getExplainerCountSafe = getExplainerDisplayCount;
+
+/**
+ * 用語集の「一覧に出る語数」（Ck2g §5・2026-10-06）。/glossary の一覧（src/app/glossary/page.tsx）と同じ集合を数える:
+ * 全語から isGlossaryListExcluded（表示除外＋301 の元）を除く。旧実装（totalCount）は 1,535 で一覧の 1,392 と食い違っていた（#121）。
+ * fields は slug だけ（約 16 リクエスト）。取れないときは null（呼び出し側は件数を出さない）。
+ */
+export const getGlossaryDisplayCount = async (): Promise<number | null> => {
+  try {
+    const slugs = new Set<string>();
+    const limit = MICROCMS_PAGE_LIMIT;
+    let totalCount: number | undefined;
+    for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+      const data = await client.getList<Glossary>({
+        endpoint: 'glossary',
+        queries: { limit, offset, orders: '-publishedAt', fields: 'slug' },
+      });
+      totalCount ??= data.totalCount;
+      for (const g of data.contents) slugs.add(g.slug);
+      if (data.contents.length < limit) break;
+    }
+    warnIfMissing('getGlossaryDisplayCount', slugs.size, totalCount);
+    const n = [...slugs].filter((s) => !isGlossaryListExcluded(s)).length;
     return n > 0 ? n : null;
   } catch {
     return null;
@@ -795,6 +851,7 @@ const NEWS_LIST_FIELDS =
 export const getAllNews = async (): Promise<News[]> => {
   const all: News[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
+  let totalCount: number | undefined;
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<News>({
       endpoint: 'news',
@@ -805,10 +862,11 @@ export const getAllNews = async (): Promise<News[]> => {
         fields: NEWS_LIST_FIELDS,
       },
     });
+    totalCount ??= data.totalCount;
     all.push(...data.contents);
     if (data.contents.length < limit) break;
   }
-  return dedupeBy(all, (n) => n.id, 'getAllNews');
+  return dedupeBy(all, (n) => n.id, 'getAllNews', totalCount);
 };
 
 export const getNewsBySlug = async (slug: string): Promise<News | null> => {
@@ -827,15 +885,17 @@ export const getNewsBySlug = async (slug: string): Promise<News | null> => {
 export const getAllNewsSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
   const limit = MICROCMS_PAGE_LIMIT;
+  let totalCount: number | undefined;
   for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
     const data = await client.getList<News>({
       endpoint: 'news',
       queries: { limit, offset, fields: 'slug', orders: '-publishedAt,-createdAt' },
     });
+    totalCount ??= data.totalCount;
     slugs.push(...data.contents.map((n) => ({ slug: n.slug })));
     if (data.contents.length < limit) break;
   }
-  return dedupeBy(slugs, (n) => n.slug, 'getAllNewsSlugs');
+  return dedupeBy(slugs, (n) => n.slug, 'getAllNewsSlugs', totalCount);
 };
 
 // =================================================================

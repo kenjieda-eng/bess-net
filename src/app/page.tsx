@@ -5,8 +5,11 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig, LV_NAV_LAUNCH_DATE } from '@/lib/site-config';
-import { getExplainerList, getGlossaryList, getIndustryNews, getAllPolicyEvents, type PolicyEvent } from '@/lib/microcms';
-import { EXPLAINER_EXCLUDED_SLUGS, isExcludedExplainer } from '@/lib/explainer-excluded';
+import {
+  getExplainerList, getGlossaryList, getIndustryNews, getAllPolicyEvents, type PolicyEvent,
+  getExplainerDisplayCount, getGlossaryDisplayCount,
+} from '@/lib/microcms';
+import { isExcludedExplainer } from '@/lib/explainer-excluded';
 import {
   POLICY_DETAIL_SLUG_SET,
   EVENT_TYPE_COLORS,
@@ -79,11 +82,14 @@ export default async function Home() {
     try { return await fn(); } catch { return fallback; }
   };
 
-  const [explainerData, glossaryNew, glossaryTotal, industryNewsAll, policyEventsAll] = await Promise.all([
+  const [explainerData, glossaryNew, glossaryCount, explainerCount, industryNewsAll, policyEventsAll] = await Promise.all([
     // Ck-1b ■6: 非表示の記事（explainer-excluded）を新着 6 本に混ぜないよう 7 件取って除外後に 6 本へ
     getExplainerList({ limit: 7, orders: '-publishedAt' }),
     getGlossaryList({ limit: 10, orders: '-publishedAt' }),
-    getGlossaryList({ limit: 1, fields: 'id' }),
+    // Ck2g §5（2026-10-06）: 件数は一覧（/glossary・/explainer）と同じ集合を同じ filter で数える（#121）。
+    // 旧実装は totalCount（用語集 1,535・解説 261）で、一覧の表示数（1,392・174）と食い違っていた。取れないときは null＝件数を出さない
+    getGlossaryDisplayCount(),
+    getExplainerDisplayCount(),
     safeFetch(() => getIndustryNews(), [] as any[]),
     safeFetch(() => getAllPolicyEvents(), [] as PolicyEvent[]),
   ]);
@@ -108,9 +114,7 @@ export default async function Home() {
     .slice()
     .sort((a: any, b: any) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, 3);
-  const glossaryCount = glossaryTotal.totalCount;
-  // Ck-1b ■6: 一覧と同じ数（非表示を差し引く）。新着 6 本も非表示を除いてから切る
-  const explainerCount = explainerData.totalCount - EXPLAINER_EXCLUDED_SLUGS.size;
+  // Ck-1b ■6: 新着 6 本は非表示を除いてから切る
   const explainerLatest = explainerData.contents
     .filter((a) => !isExcludedExplainer(a.slug))
     .slice(0, 6);
@@ -133,7 +137,9 @@ export default async function Home() {
           </p>
           {/* 実績数値（全て動的導出・焼き込みなし） */}
           <p style={{ fontSize: 15, opacity: 0.92, marginTop: 8 }}>
-            解説記事 {explainerCount}本 · 用語集 {glossaryCount.toLocaleString('en-US')}語 · 変電所 {substationsCountStr}件/10社 · 中部マップ {chubuCountStr}箇所
+            {explainerCount !== null && <>解説記事 {explainerCount.toLocaleString('en-US')}本 · </>}
+            {glossaryCount !== null && <>用語集 {glossaryCount.toLocaleString('en-US')}語 · </>}
+            変電所 {substationsCountStr}件/10社 · 中部マップ {chubuCountStr}箇所
           </p>
           <div className="hero-cta">
             <Link href="/tools/grid-connection-check" className="btn-primary">
@@ -347,7 +353,7 @@ export default async function Home() {
             {/* 解説記事 */}
             <div>
               <h3 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>
-                解説記事（{explainerCount}本）
+                {explainerCount !== null ? `解説記事（${explainerCount.toLocaleString('en-US')}本）` : '解説記事'}
               </h3>
               <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
                 市場制度・参入手順・補助金など、実務担当者向けに体系解説。
@@ -374,7 +380,7 @@ export default async function Home() {
             {/* 用語集 */}
             <div>
               <h3 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>
-                用語集（{glossaryCount.toLocaleString('en-US')}語）
+                {glossaryCount !== null ? `用語集（${glossaryCount.toLocaleString('en-US')}語）` : '用語集'}
               </h3>
               <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 0, marginBottom: 12 }}>
                 業界用語を一言定義と詳細解説で整備。

@@ -10,8 +10,8 @@ import SiteFooter from '@/components/SiteFooter';
 import {
   getAllFaq,
   getGlossaryLiteList,
-  getGlossaryList,
   getExplainerCountSafe,
+  getGlossaryDisplayCount,
   getOperatorCountSafe,
   type Faq,
 } from '@/lib/microcms';
@@ -98,16 +98,8 @@ export default async function FaqPage() {
 
   // P2: 関連コンテンツ件数の動的化（/events 4087833 と同一パターン・失敗時フォールバック）
   // Ck-1a ■2-6: 取れないときは null を返して件数を出さない（固定のフォールバック値は実数と食い違うので使わない）
-  const safeCount = async (fn: () => Promise<{ totalCount: number }>): Promise<number | null> => {
-    try {
-      const r = await fn();
-      return r.totalCount > 0 ? r.totalCount : null;
-    } catch {
-      return null;
-    }
-  };
   const [glossaryCount, explainerCount, operatorCount] = await Promise.all([
-    safeCount(() => getGlossaryList({ limit: 1, fields: 'id' })),
+    getGlossaryDisplayCount(), // Ck2g §5: 用語集も一覧（/glossary）と同じ数（旧: totalCount＝一覧より多い）
     getExplainerCountSafe(), // Ck-1b ■6: 解説記事も一覧と同じ数（非表示を差し引く）
     getOperatorCountSafe(), // 事業者は一覧と同じ数（除外を差し引く）
   ]);
