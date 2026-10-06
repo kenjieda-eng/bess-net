@@ -1567,6 +1567,24 @@
       "checked_on": "2026-10-05",
       "note": "operators POST 便 10/5。Chrome UA で HTTP 200（247,032 bytes）。フッタ「Copyright © 2026 CHC Energy Pte Ltd」・日本の所在地「東京都千代田区有楽町1-1-2 東京ミッドタウン日比谷33階」。日本語の正式名は自社の一次で未確認（OCCTO 落札電源一覧の表記は「CHCJapan株式会社」）",
       "used_in": "operators/chc-japan.websiteUrl"
+    },
+    {
+      "name": "SRP District Council Meeting（2025年10月7日）会議資料",
+      "publisher": "Salt River Project（SRP）",
+      "url": "https://www.srpnet.com/v3/assets/bltefc1fc708dcc94e7/blt2b1c17950458907a/20251007_DC_packet.pdf",
+      "title_verbatim": "DISTRICT COUNCIL MEETING NOTICE AND AGENDA ／ Tuesday, October 7, 2025（PDF 1 ページ目の表題。PDF の Title メタデータは「Microsoft Word - 20251007_DC_agenda」）",
+      "checked_on": "2026-10-06",
+      "note": "Ck2g §2。素の UA・Chrome UA とも HTTP 200（6,283,464 bytes・58 頁）。p.26〜30「Bolster Battery Fire / October 1st」（10/07/2025 Council Meeting, J. Coggins）",
+      "used_in": "src/data/incidents.ts（srp-bolster-2025）"
+    },
+    {
+      "name": "Bolster Substation 25 MW battery station now online",
+      "publisher": "Salt River Project（SRPconnect Blog）",
+      "url": "https://blog.srpnet.com/new-battery-storage-system-in-the-works/",
+      "title_verbatim": "Bolster Substation 25 MW battery station now online | SRPconnect Blog",
+      "checked_on": "2026-10-06",
+      "note": "Ck2g §2。素の UA・Chrome UA とも HTTP 200（199,282 bytes）。逐語「25-megawatt (MW) battery storage facility at its Bolster Substation」「Agua Fria Generating Station」「Peoria」「Tesla Megapacks」",
+      "used_in": "src/data/incidents.ts（srp-bolster-2025）"
     }
   ]
 }

@@ -357,6 +357,33 @@ export const INCIDENTS: Incident[] = [
       'https://villageofwarwickny.gov/28-church-street-west-warwick-3-battery-energy-storage-site-fire-information-updates/',
     ],
   },
+  {
+    // Ck2g §2（2026-10-06）。四半期Q4 便A 報告 §3 の起票案を逐語で（裁定 2026-10-05 で採用）。
+    //   一次は SRP 自身の District Council 2025-10-07 会議資料（プレスリリースではなくスライド）。p.26・p.30 の逐語:
+    //   「Bolster Battery Fire / October 1st」「Bolster Battery is located adjacent to Agua Fria Generating Station」
+    //   「Tesla is the manufacturer」「Owned by SRP」「Tesla provides maintenance under long-term agreement」「25 MW size」
+    //   「Originally placed in service in 2021」「Modular design」「Fire began about 4:30 pm」「SRP Grid Incident Command responded」
+    //   「Local fire departments responded」「Site was declared safe by early morning hours」「No injuries」
+    //   「No evacuations required」「No customer outages」「Cause investigation underway」（2026-10-06 に両 UA で取り直して確認）。
+    //   場所（Peoria）と構成（Tesla Megapack）は SRP ブログ 2021-09-16。MWh は SRP の一次に無い＝capacity_mwh を置かない。
+    //   lessons は一次に教訓に当たる記述が無いので事実だけ。
+    id: 'srp-bolster-2025',
+    date: '2025-10-01',
+    location: '米国アリゾナ州 Peoria（Agua Fria Generating Station 隣接の Bolster Substation）',
+    region: 'us',
+    facilityName: 'SRP Bolster Battery（Bolster Substation・Tesla Megapack）',
+    severity: 'moderate',
+    cause: 'unknown',
+    summary:
+      '2025年10月1日 16時30分ごろ、Salt River Project（SRP）が所有する Bolster Battery（25MW・Agua Fria Generating Station 隣接）で火災が発生した。SRP の系統インシデント指揮（Grid Incident Command）と地元消防が対応し、未明までに現場の安全が宣言された。負傷者・避難・需要家の停電はなかった。原因は調査中（SRP の 2025年10月7日の評議会資料時点）。',
+    lessons: 'Tesla 製で、保守は Tesla が長期契約で担う。2021年に運転を始めたモジュール型の設備。',
+    sourceUrls: [
+      // SRP District Council 2025-10-07 会議資料（PDF 1 ページ目「DISTRICT COUNCIL MEETING NOTICE AND AGENDA」「Tuesday, October 7, 2025」）p.26〜30
+      'https://www.srpnet.com/v3/assets/bltefc1fc708dcc94e7/blt2b1c17950458907a/20251007_DC_packet.pdf',
+      // SRP ブログ 2021-09-16（<title>「Bolster Substation 25 MW battery station now online | SRPconnect Blog」）
+      'https://blog.srpnet.com/new-battery-storage-system-in-the-works/',
+    ],
+  },
 ];
 
 /** 表示に使う事例（hidden を除く）。件数・一覧・JSON-LD はすべてこれを数える（#121: 同じ意味の値を二箇所で出さない） */
