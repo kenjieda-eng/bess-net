@@ -24,7 +24,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/map/industry-chaos' },
   openGraph: {
     title: '蓄電池業界カオスマップ（蓄電所事業 主要事業者＋関係構造）',
-    description: '11 カテゴリの主要事業者 + 関係 30+ 件で業界構造を可視化',
+    // Ck2g §8（2026-10-06）: 件数を焼き込まない（旧「関係 30+ 件」・#121）。metadata.description と同じ RELATIONS.length
+    description: `11 カテゴリの主要事業者 + 関係 ${RELATIONS.length} 件で業界構造を可視化`,
     type: 'website',
     images: ['/og-image.png'],
   },
