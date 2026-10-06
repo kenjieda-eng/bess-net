@@ -10,7 +10,7 @@ import {
 } from '@/lib/microcms';
 import { linkifyHTML } from '@/lib/linkify';
 import { isExcludedProject } from '@/lib/projects-excluded';
-import { reconstructProjectBody } from '@/lib/projects-body';
+import { reconstructProjectBody, reliableSpecValue } from '@/lib/projects-body';
 import { codLabel } from '@/lib/projects-cod';
 import {
   getRelatedEntities,
@@ -29,11 +29,15 @@ export async function generateStaticParams() {
   }
 }
 
-// 0 (= 調査中) は description にも明示し、誤情報伝播を防止
-function describeMW(n?: number): string {
-  if (n == null) return '—';
-  if (n === 0) return '調査中';
-  return `${n}`;
+/**
+ * meta description の出力・容量の 1 項目（Ck2h §7）。
+ * null・undefined は項目ごと省く（旧: 「出力—MW」）。0 は「調査中」と明示する（誤情報伝播の防止・従来どおり）。
+ * 正の数の表記は従来どおり（「出力2MW」・空白なし）。正の数かどうかの判定は reliableSpecValue（#121）。
+ */
+function metaSpecItem(label: '出力' | '容量', v: number | null | undefined, unit: 'MW' | 'MWh'): string | null {
+  if (v == null) return null;
+  const r = reliableSpecValue(v);
+  return r === null ? `${label}調査中` : `${label}${r}${unit}`;
 }
 
 export async function generateMetadata({
@@ -43,11 +47,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const item = await getProjectBySlug(params.slug);
   if (!item) return {};
-  const mwStr = describeMW(item.outputMw);
-  const mwhStr = describeMW(item.capacityMwh);
+  const spec = [metaSpecItem('出力', item.outputMw, 'MW'), metaSpecItem('容量', item.capacityMwh, 'MWh')]
+    .filter((s): s is string => s !== null)
+    .join('・');
   return {
     title: item.name,
-    description: `${item.prefecture ?? ''}${item.city || ''}に所在する系統用蓄電池プロジェクト「${item.name}」の概要。出力${mwStr === '調査中' ? '調査中' : `${mwStr}MW`}・容量${mwhStr === '調査中' ? '調査中' : `${mwhStr}MWh`}。`,
+    description: `${item.prefecture ?? ''}${item.city || ''}に所在する系統用蓄電池プロジェクト「${item.name}」の概要。${spec ? `${spec}。` : ''}`,
     alternates: { canonical: `https://bess-net.jp/projects/${params.slug}` },
     // 非プロジェクト（ニュース性）8件は noindex（ページは残す＝404にしない・非破壊）
     ...(isExcludedProject(params.slug) ? { robots: { index: false, follow: true } } : {}),
@@ -100,8 +105,8 @@ export default async function ProjectDetailPage({
   const mentions = buildMentions(related);
 
   // 信頼可能な数値のみ JSON-LD に出力 (0 は調査中扱いで省略、誤情報伝播防止)
-  const reliableOutputMw = item.outputMw != null && item.outputMw > 0 ? item.outputMw : undefined;
-  const reliableCapacityMwh = item.capacityMwh != null && item.capacityMwh > 0 ? item.capacityMwh : undefined;
+  const reliableOutputMw = reliableSpecValue(item.outputMw) ?? undefined;
+  const reliableCapacityMwh = reliableSpecValue(item.capacityMwh) ?? undefined;
   const dataNotice = (item.outputMw === 0 || item.capacityMwh === 0)
     ? ' (出力/容量は調査中。一次情報未確認のため当該数値は省略)'
     : '';

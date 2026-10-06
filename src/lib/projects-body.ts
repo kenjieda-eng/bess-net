@@ -61,12 +61,21 @@ function numText(v: number): string {
 }
 
 /**
+ * 出力・容量の「信頼できる数値」＝正の数だけ。0（取込時の「調査中」の印）・null・undefined は null。
+ * 判定はここ 1 か所（#121）。本文テンプレ（specSentence）・詳細ページの JSON-LD（specSummary・additionalProperty）・
+ * meta description（Ck2h §7）が同じ判定を使う。
+ */
+export function reliableSpecValue(v?: number | null): number | null {
+  return typeof v === 'number' && v > 0 ? v : null;
+}
+
+/**
  * 出力・容量の句を組み立てる。0 / null / undefined は「調査中」扱いで句自体を出さない
  * （/projects の investigatingCount と同じ扱い。誤情報を出さない）。
  */
 function specSentence(outputMw?: number | null, capacityMwh?: number | null): string {
-  const o = typeof outputMw === 'number' && outputMw > 0 ? outputMw : null;
-  const c = typeof capacityMwh === 'number' && capacityMwh > 0 ? capacityMwh : null;
+  const o = reliableSpecValue(outputMw);
+  const c = reliableSpecValue(capacityMwh);
   if (o !== null && c !== null) return `出力 ${numText(o)} MW、容量 ${numText(c)} MWh 規模。`;
   if (o !== null) return `出力 ${numText(o)} MW 規模。`;
   if (c !== null) return `容量 ${numText(c)} MWh 規模。`;
