@@ -170,10 +170,9 @@ type SubstationLikeFacts = Pick<SubsidyDateFacts, 'deadline_iso' | 'start_iso'>;
 
 /** 状態ラベル（title に載せる短い形）。載せない場合は空文字。 */
 export function statusLabel(item: SubsidyDateFacts, todayISO: string): string {
-  // Ck2f ■5: 本文で状態バッジを出さないレコード（期日なしの紹介ページ）は、title・description にも状態を出さない。
-  // 本文のバッジは状態の種類を問わず消しているので、受付終了・採択結果もここで出さない（2026-10-04 時点で該当 0 件）
-  if (item.no_schedule) return '';
-  const st = deriveSubsidyStatus(item, todayISO);
+  // 期日なしの紹介ページ（no_schedule）は displaySubsidyStatus が '' を返す＝title・description にも状態を載せない
+  // （Ck2f ■5。'' はどの分岐にも当たらず末尾の return '' に落ちる。規則は displaySubsidyStatus の 1 か所・Ck2h §5・#121）
+  const st = displaySubsidyStatus(item, todayISO);
   if (st === '公募中') {
     if (!item.is_rolling && item.deadline_iso && item.deadline_iso >= todayISO) {
       const [, mm, dd] = item.deadline_iso.split('-');

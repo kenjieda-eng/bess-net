@@ -85,10 +85,12 @@ export default function SubsidiesListPage() {
   const browserItems: BrowserItem[] = ALL.map((item) => {
     const prefs = item.applicable_prefs || [];
     const isNationwide = prefs.length >= 47;
+    // 表示名（nev-portal の「公式サイト」を外した名前）を一覧の表示と検索の両方に使う（Ck2h §5・#121）
+    const name = subsidyDisplayName(item.slug, item.name);
     return {
       id: item.id,
       slug: item.slug,
-      name: subsidyDisplayName(item.slug, item.name),
+      name,
       organization: item.organization,
       subsidyRate: item.subsidyRate_raw || '',
       upperLimit: item.upperLimit_raw || '',
@@ -101,7 +103,7 @@ export default function SubsidiesListPage() {
       isNationwide,
       entities: item.applicable_entities || [],
       haystack: [
-        item.name, item.organization, item.targetEntity_raw, item.scheme,
+        name, item.organization, item.targetEntity_raw, item.scheme,
         item.subsidyRate_raw, item.fiscalYear, ...prefs.slice(0, 3),
       ]
         .filter(Boolean)

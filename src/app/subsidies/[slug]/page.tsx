@@ -10,7 +10,7 @@ import {
 import subsidiesData from '@/data/subsidies.json';
 import {
   getTodayJST,
-  deriveSubsidyStatus,
+  displaySubsidyStatus,
   buildSubsidyTitle,
   buildSubsidyDescription,
   subsidyDisplayName,
@@ -93,10 +93,9 @@ export default async function SubsidyDetailPage({
   // 状態は日付から導出する（生 status は drift する・L-EIC-027）
   const today = getTodayJST();
   const facts = factsFor(params.slug, item);
-  // Gr10-⑤(2026-08-11): 期日を一切持たないレコード（執行団体の紹介ページ等）は状態バッジを出さない。
-  // 「随時〜事業により異なる」に「公募中」を付けるのは誤り。
-  const noSchedule = facts.no_schedule === true;
-  const status = noSchedule ? '' : deriveSubsidyStatus(facts, today);
+  // 期日を一切持たない紹介ページ（no_schedule）は状態なし＝バッジを出さない（Gr10-⑤:「随時〜事業により異なる」に「公募中」を付けない）。
+  // 規則は displaySubsidyStatus の 1 か所（一覧・棚・tracker・title・description と同じ関数・Ck2h §5・#121）
+  const status = displaySubsidyStatus(facts, today);
   const category = (item.category && item.category[0]) || '';
   // S5: 当サイトは公式サイトではないため、H1 の「◯◯公式サイト」表記を是正する
   const displayName = subsidyDisplayName(params.slug, item.name);

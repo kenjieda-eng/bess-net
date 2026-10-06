@@ -2,7 +2,7 @@
  * scripts/import-projects.ts
  *
  * /projects（microCMS projects エンドポイント）への一括投入スクリプト
- * scripts/import-news.ts と同型（--file 指定・findBySlug 冪等・--dry-run・300ms スロットル）。
+ * scripts/import-news.ts と同型（--file 指定・findBySlug 冪等・既定は dry run／--apply で本実行・300ms スロットル）。
  * 週次連動（金曜ワンセット⑤）で毎週再利用する。
  *
  * 使い方（Ck2g §6・2026-10-06・#125: 既定は dry run。--apply を付けたときだけ POST する。--dry-run は受け付けて無視＝既定と同じ）:

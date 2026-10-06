@@ -30,7 +30,7 @@ export type BrowserItem = {
   isNationwide: boolean;
   /** 対象者（precompute の applicable_entities） */
   entities: string[];
-  /** 検索対象テキスト（制度名・実施主体・対象・要件・自治体名を連結済み） */
+  /** 検索対象テキスト（表示名・実施主体・対象・要件・自治体名を連結済み） */
   haystack: string;
 };
 

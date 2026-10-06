@@ -2,7 +2,7 @@
  * scripts/import-subsidies.ts
  *
  * /subsidies（microCMS subsidies エンドポイント＝真実源）への一括投入スクリプト
- * scripts/import-projects.ts と同型（--file 指定・findBySlug 冪等・--dry-run・--limit/--skip・300ms スロットル）。
+ * scripts/import-projects.ts と同型（--file 指定・findBySlug 冪等・既定は dry run／--apply で本実行・--limit/--skip・300ms スロットル）。
  * S3（都道府県拡張）承認後の投入・以後の週次④で再利用する。
  *
  * 使い方（Ck2g §6・2026-10-06・#125: 既定は dry run。--apply を付けたときだけ POST する。--dry-run は受け付けて無視＝既定と同じ）:
