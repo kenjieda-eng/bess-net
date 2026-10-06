@@ -37,6 +37,50 @@ export type GridRefreshEntry = {
 };
 
 export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
+  // Ck2g §4（2026-10-06）: 四国・沖縄（BS+BT 本実行 2026-10-05）を追記。数値は本実行の報告 (2)(3) と dry-run 報告の実測値。
+  {
+    importedOn: '2026-10-05',
+    areaJp: '四国',
+    areaSlug: 'shikoku',
+    operator: '四国電力送配電',
+    publishedVersion: '2026年10月1日版',
+    total: 295,
+    decreased: 144,
+    zeroed: 5,
+    increased: 10,
+    changed: 208,
+    added: 1,
+    removed: 0,
+    topDecreases: [
+      { name: '政枝変電所', prefecture: '愛媛県', from: 35, to: 17 },
+      { name: '朝日町変電所', prefecture: '愛媛県', from: 41, to: 23 },
+      { name: '今治変電所', prefecture: '愛媛県', from: 34, to: 19 },
+      { name: '富田変電所', prefecture: '愛媛県', from: 33, to: 20 },
+      { name: '新居浜変電所', prefecture: '愛媛県', from: 38, to: 25 },
+    ],
+    note: '基幹の高知変電所 187/110kV バンクを新規収録。N-1電制の「－」（未算定）28件は現値維持（「未算定」と表示）。'
+      + '公表で「－」になった既存値13件（波止浜変電所の22kVバンクの空容量など）は公表どおり空にした。',
+    report: 'reports/grid-shikoku-okinawa-apply-2026-10-05.md',
+  },
+  {
+    importedOn: '2026-10-05',
+    areaJp: '沖縄',
+    areaSlug: 'okinawa',
+    operator: '沖縄電力',
+    publishedVersion: '2026年8月末時点（サイト更新 2026-09-18）',
+    total: 151,
+    decreased: 1,
+    zeroed: 0,
+    increased: 9,
+    changed: 14,
+    added: 0,
+    removed: 0,
+    topDecreases: [
+      { name: '馬天配電塔', prefecture: '沖縄県', from: 8, to: 7 },
+    ],
+    note: '松田変電所は公表 CSV（13）と PDF（12）の空容量が食い違うため現値12を据え置き（備考に両値）。',
+    report: 'reports/grid-shikoku-okinawa-apply-2026-10-05.md',
+  },
   {
     importedOn: '2026-08-20',
     areaJp: '九州',

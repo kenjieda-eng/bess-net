@@ -13,6 +13,7 @@ import SiteFooter from '@/components/SiteFooter';
 import { GRID_REFRESH_LOG } from '@/lib/grid-refresh-log';
 import TrackerTimeline, { type TimelineItem } from '@/components/TrackerTimeline';
 import { getAllSubstations } from '@/lib/microcms';
+import substationsIndex from '@/data/substations/index.json';
 
 export const revalidate = 3600;
 
@@ -30,7 +31,12 @@ export const metadata: Metadata = {
 
 export default async function GridTrackerPage() {
   let substations: Awaited<ReturnType<typeof getAllSubstations>> = [];
-  try { substations = await getAllSubstations(); } catch { /* graceful */ }
+  // Ck2g §4（2026-10-06）: runtime の取得に失敗すると空配列になり「全 0 件」と出ていた。失敗時は静的集計
+  // （index.json の summary.total＝/grid と同じ数・凍結除外）を出し、失敗したことを隠さない。成功時の表示は不変。
+  let fetchFailed = false;
+  try { substations = await getAllSubstations(); } catch { fetchFailed = true; }
+  if (substations.length === 0) fetchFailed = true;
+  const staticTotal = (substationsIndex as { summary: { total: number } }).summary.total;
 
   const items: TimelineItem[] = substations
     .filter((s) => s.last_updated || (s as { updatedAt?: string }).updatedAt)
@@ -75,7 +81,15 @@ export default async function GridTrackerPage() {
           <h1 className="section-title">系統トラッカー (変電所空き容量)</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 16, lineHeight: 1.7 }}>
             変電所空き容量データの最新更新を<strong>タイムライン</strong>表示。
-            全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{substations.length.toLocaleString('en-US')}</span> 件、 last_updated 降順。
+            {fetchFailed ? (
+              <>
+                全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{staticTotal.toLocaleString('en-US')}</span> 件（静的集計・最新の取得に失敗）。
+              </>
+            ) : (
+              <>
+                全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{substations.length.toLocaleString('en-US')}</span> 件、 last_updated 降順。
+              </>
+            )}
           </p>
           <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 24 }}>
             データ更新は 1 時間ごと (ISR)。全件は <Link href="/grid">系統空き容量</Link>、地図検索は <Link href="/grid/chubu/map">中部マップ</Link> から。

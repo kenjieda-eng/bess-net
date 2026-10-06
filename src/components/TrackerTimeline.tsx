@@ -99,7 +99,8 @@ export default function TrackerTimeline({ items, limit = 100 }: { items: Timelin
         </span>
         {' '}件を表示。全件:{' '}
         <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>
-          {items.length}
+          {/* Ck2g §4: 桁区切り（全 tracker 共通） */}
+          {items.length.toLocaleString('en-US')}
         </span>
         {' '}件。
       </p>
