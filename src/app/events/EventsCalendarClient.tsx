@@ -109,7 +109,8 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
 
   const grouped = useMemo(() => groupByYearMonth(filtered), [filtered]);
 
-  // 直近ハイライト（status=予定、今日(JST)以降60日以内・開催日昇順=直近優先・最大5件）
+  // 直近ハイライト（表示状態=予定、今日(JST)以降60日以内・開催日昇順=直近優先・最大5件）
+  // Ck2h §2: 状態はバッジ・JSON-LD と同じ deriveDisplayStatus（#121）。開催日が今日以降なので結果は生 status と同じ。
   // 修正前は items が eventDate 降順のまま slice(0,3) しており、遠い日付が優先されて
   // 直近イベント（7/10・7/15 等）が隠れるバグがあった（2026-07-05 events分析）。
   const highlights = useMemo(() => {
@@ -120,7 +121,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
     return items
       .filter((it) => {
         if (!it.eventDate) return false;
-        if (firstOf(it.status) !== '予定') return false;
+        if (deriveDisplayStatus(it) !== '予定') return false;
         const d = jstDateOf(it.eventDate);
         return d >= today && d <= end;
       })

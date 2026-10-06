@@ -15,19 +15,22 @@ import {
 } from '@/lib/microcms';
 import EventsCalendarClient from './EventsCalendarClient';
 import { siteConfig } from '@/lib/site-config';
+import { deriveDisplayStatus } from '@/lib/policy-utils';
 
 export const revalidate = 600; // 10分
 
 export const metadata: Metadata = {
   // layout.tsx titleTemplate が自動付与（落とし穴 #86）→「… | 蓄電所ネット」（P2 SEO）
   title: '蓄電池・再エネ 業界イベント・展示会カレンダー',
+  // Ck2h §2: 固有のイベント名は並べない（非表示にした「スマートエネルギーWeek」「PV EXPO」「Energy Storage Japan」が残っていた）。
+  //   制度運営機関の説明会は /policy-calendar に置く（2026-09-30 ②裁定）ので「OCCTO/JEPX 説明会」も書かない。
   description:
-    '系統用蓄電池・再エネ業界の展示会・セミナー・学会・業界団体総会を時系列で一覧表示。スマートエネルギーWeek・PV EXPO・Energy Storage Japan・OCCTO/JEPX 説明会等の主要イベントを継続トラック。',
+    '系統用蓄電池・再エネ業界の展示会・セミナー・学会・業界団体総会を時系列で一覧表示。大型展示会・業界団体のセミナー・学会の大会等の主要イベントを継続トラック。',
   alternates: { canonical: '/events' },
   openGraph: {
     title: '蓄電池・再エネ 業界イベント・展示会カレンダー',
     description:
-      '系統用蓄電池・再エネ業界の展示会・セミナー・学会を時系列で一覧表示。大型展示会・OCCTO/JEPX 説明会・学会シンポジウム等。',
+      '系統用蓄電池・再エネ業界の展示会・セミナー・学会を時系列で一覧表示。大型展示会・業界団体のセミナー・学会シンポジウム等。',
     type: 'website',
   },
 };
@@ -69,9 +72,12 @@ export default async function EventsCalendarPage() {
     numberOfItems: items.length,
   };
 
-  // Build Event-level JSON-LD for upcoming events (status=予定 のみ、最大10件)
+  // Event 単位の JSON-LD（最大 10 件）。Ck2h §2（L-EIC-027）: 生の status ではなく、一覧のバッジ・ステータス絞り込みと
+  // 同じ deriveDisplayStatus（基準日＝endDate ?? eventDate と JST の今日）で「予定」のものだけにする（#121: 同じ判定を二箇所で作らない）。
+  // 生 status が「予定」のまま開催日を過ぎたもの（例: 2026-07-27 の台湾SEETEL × JC-STAR）は「終了」に導出され、EventScheduled で出さない。
+  // 開催中（開始日 < 今日 ≤ endDate）は終わっていないので残す。microCMS の status は書き換えない（表示側 derive のみ）。
   const upcomingEvents = items
-    .filter((it) => Array.isArray(it.status) && it.status.includes('予定'))
+    .filter((it) => deriveDisplayStatus(it) === '予定')
     .slice(0, 10);
   // P2: ItemList JSON-LD（全件・既存フィールドから機械生成、推測補完しない）
   const itemListJsonLd = {
