@@ -86,8 +86,9 @@ export default async function Home() {
   const [explainerData, glossaryNew, glossaryCount, explainerCount, industryNewsAll, policyEventsAll] = await Promise.all([
     // Ck-1b ■6: 非表示の記事（explainer-excluded）を新着 6 本に混ぜないよう 7 件取って除外後に 6 本へ
     // Ck2g レビュー: 新着も件数（getExplainerDisplayCount）と同じ集合から選ぶ＝低圧投資ガイド（/lv/invest 専用）を除く。
-    // 新しい順の上位に低圧投資が多いので 30 件取って除外してから 6 本に切る（本文は取らない）
-    getExplainerList({ limit: 30, orders: '-publishedAt', fields: 'id,slug,title,category,publishedAt' }),
+    // 新しい順の上位に低圧投資ガイドが固まっている（2026-10-06 実測: 上位 100 件のうち低圧投資でないのは 0・1・89 番目以降）ので、
+    // 1 回の上限 100 件を取って除外してから 6 本に切る（本文は取らない・1 リクエストのまま）
+    getExplainerList({ limit: 100, orders: '-publishedAt', fields: 'id,slug,title,category,publishedAt' }),
     getGlossaryList({ limit: 10, orders: '-publishedAt' }),
     // Ck2g §5（2026-10-06）: 件数は一覧（/glossary・/explainer）と同じ集合を同じ filter で数える（#121）。
     // 旧実装は totalCount（用語集 1,535・解説 261）で、一覧の表示数（1,392・174）と食い違っていた。取れないときは null＝件数を出さない
