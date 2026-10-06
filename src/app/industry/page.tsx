@@ -12,7 +12,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { PLAYERS } from '@/data/industry-map';
+import { PLAYERS, RELATIONS } from '@/data/industry-map';
 // Lc-2 ■1: JEPX の出所表記（条文で出所明示が利用の条件）。文言とリンク先は eic-license.ts に一本化（#119）
 import { jepxNoticeLines, JEPX_TOP } from '@/lib/eic-license';
 import { lastValidPointAsOf, todayJst } from '@/lib/eic-date';
@@ -132,7 +132,8 @@ export default async function IndustryHubPage() {
     {
       href: '/map/industry-chaos',
       title: '業界カオスマップ',
-      desc: '主要50+社を11カテゴリで整理 + 35件の関係 (出資/EPC/セル供給/オフテイク等) で業界構造を可視化。Matrix view + Force graph。',
+      // Ck2h §3: 件数を焼き込まない（旧「主要50+社…35件の関係」・#121）。チップ・/map/industry-chaos と同じ PLAYERS.length / RELATIONS.length
+      desc: `主要${PLAYERS.length}社を11カテゴリで整理 + ${RELATIONS.length}件の関係 (出資/EPC/セル供給/オフテイク等) で業界構造を可視化。Matrix view + Force graph。`,
       tag: '構造',
       chip: `掲載 ${PLAYERS.length}社`,
     },

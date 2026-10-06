@@ -152,7 +152,7 @@ export default async function PolicyCalendarPage() {
                 <Link href="/explainer/balancing-market">需給調整市場の解説</Link>
               </li>
               <li>
-                <Link href="/glossary">業界用語集（1,500+語）</Link>
+                <Link href="/glossary">業界用語集</Link>
               </li>
               <li>
                 <Link href="/subsidies">補助金カレンダー（公募・採択トラッキング）</Link>

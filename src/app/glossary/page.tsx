@@ -9,26 +9,47 @@ import { GLOSSARY_TOP20_SLUGS } from '@/lib/glossary-next-step';
 
 export const revalidate = 300; // 5分ごとに再生成
 
-export const metadata: Metadata = {
-  // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-  title: '系統用蓄電池 用語集｜1,500語超の業界辞典',
-  description:
-    '系統用蓄電池および低圧リソース事業に関わる1,500+の業界用語を、12 カテゴリ・116 サブカテゴリの階層フィルタで検索可能な辞典。BESS、容量市場、需給調整市場、JEPX、託送、SOC、SOHなど、専門用語を一言定義と詳細解説で整備。',
-  alternates: { canonical: '/glossary' },
-  openGraph: {
-    title: '系統用蓄電池 用語集｜1,500語超の業界辞典 | bess-net',
-    description: '系統用蓄電池・低圧リソース事業の1,500+業界用語を12カテゴリ・116サブカテゴリで検索。BESS・容量市場・需給調整市場・JEPX・SOC/SOH等を一言定義と詳細解説で整備。',
-    type: 'website',
-    url: 'https://bess-net.jp/glossary',
-    images: ['https://bess-net.jp/og-image.png'],
-  },
-};
-
-export default async function GlossaryListPage() {
+/**
+ * 一覧に出す語（Stage5 の表示除外＋301 の元を除く）。本文の件数と metadata の件数を同じ関数・同じ取得から出す（Ck2h §3・#121）。
+ * generateMetadata と page が同じ URL・同じ init の fetch を呼ぶ＝同一レンダー内の fetch memo と Data Cache（revalidate 300）を共有する
+ * （鉄則 #2: 取得は増やさない）。
+ */
+async function loadGlossaryListItems() {
   // Stage5: 表示系完全除外slug（低圧リソース重複解消）を一覧からも除去（定数1箇所管理）
   // 金曜#6 追修便 ■4: 301元（GLOSSARY_301 の元 slug）も除外。除外しないと同じ用語が重複表示され、クリックで 301 を挟む
   // C軽量化(2026-08-07): Browser使用フィールドのみのLite取得（detail等の未使用長文をflightから排除・#103全語DOMは不変）
-  const items = (await getGlossaryHubList()).filter((g) => !isGlossaryListExcluded(g.slug));
+  return (await getGlossaryHubList()).filter((g) => !isGlossaryListExcluded(g.slug));
+}
+
+// Ck2h §3: 「1,500語超／1,500+」の焼き込みを撤去。数は一覧と同じ items.length。取れないときは数を出さない（Ck-1a ■2-6）
+export async function generateMetadata(): Promise<Metadata> {
+  let n = 0;
+  try {
+    n = (await loadGlossaryListItems()).length;
+  } catch {
+    // 縮退時は件数なしの文言
+  }
+  const nStr = n > 0 ? n.toLocaleString('en-US') : null;
+  const titleTail = nStr ? `${nStr}語の業界辞典` : '業界辞典';
+  const termsPhrase = nStr ? `${nStr}の業界用語` : '業界用語';
+  return {
+    // layout.tsx titleTemplate が自動付与（落とし穴 #86）
+    title: `系統用蓄電池 用語集｜${titleTail}`,
+    description:
+      `系統用蓄電池および低圧リソース事業に関わる${termsPhrase}を、12 カテゴリ・116 サブカテゴリの階層フィルタで検索可能な辞典。BESS、容量市場、需給調整市場、JEPX、託送、SOC、SOHなど、専門用語を一言定義と詳細解説で整備。`,
+    alternates: { canonical: '/glossary' },
+    openGraph: {
+      title: `系統用蓄電池 用語集｜${titleTail} | bess-net`,
+      description: `系統用蓄電池・低圧リソース事業の${termsPhrase}を12カテゴリ・116サブカテゴリで検索。BESS・容量市場・需給調整市場・JEPX・SOC/SOH等を一言定義と詳細解説で整備。`,
+      type: 'website',
+      url: 'https://bess-net.jp/glossary',
+      images: ['https://bess-net.jp/og-image.png'],
+    },
+  };
+}
+
+export default async function GlossaryListPage() {
+  const items = await loadGlossaryListItems();
 
   // G2: よく引かれる用語（TOP20・定数順。GA4上位で四半期ごとに glossary-next-step.ts を手動更新）
   const bySlug = new Map(items.map((g) => [g.slug, g]));
@@ -64,7 +85,7 @@ export default async function GlossaryListPage() {
           <div className="section-label">Glossary</div>
           <h1 className="section-title">用語集（業界辞典）</h1>
           <p className="section-desc" style={{ marginBottom: 32 }}>
-            蓄電所事業に関わる業界用語 <strong>{items.length}語</strong> を、
+            蓄電所事業に関わる業界用語 <strong>{items.length.toLocaleString('en-US')}語</strong> を、
             12 カテゴリ ＋ 116 サブカテゴリの階層フィルタで検索できます。
             URL パラメータでブックマーク・SNS 共有可能です。
           </p>

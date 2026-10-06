@@ -11,6 +11,7 @@ import {
 } from '@/lib/microcms';
 import { isExcludedExplainer } from '@/lib/explainer-excluded';
 import { isLvInvestExplainer } from '@/lib/lv-invest';
+import { PLAYERS, RELATIONS } from '@/data/industry-map';
 import {
   POLICY_DETAIL_SLUG_SET,
   EVENT_TYPE_COLORS,
@@ -44,7 +45,8 @@ function buildPrimaryCards(substationsCountStr: string, chubuCountStr: string) {
 const moreFeatures = [
   { href: '/tools/subsidy-match', title: '補助金マッチング', desc: '事業条件から最適補助金を自動マッチング (50+件)。', tag: 'ツール' },
   { href: '/tools/capacity-market-bid', title: '容量市場応札試算', desc: `9エリア × 対象実需給年度 ${CMN.firstFy}〜${CMN.lastFy}。出典: OCCTO 約定結果（実データ連携）。`, tag: 'ツール' },
-  { href: '/map/industry-chaos', title: '業界カオスマップ', desc: '50+社 × 11カテゴリ + 35関係。Matrix + Force graph。', tag: 'ハブ' },
+  // Ck2h §3: 件数を焼き込まない（旧「50+社 … 35関係」・#121）。/map/industry-chaos の metadata と同じ PLAYERS.length / RELATIONS.length
+  { href: '/map/industry-chaos', title: '業界カオスマップ', desc: `${PLAYERS.length}社 × 11カテゴリ + ${RELATIONS.length}関係。Matrix + Force graph。`, tag: 'ハブ' },
   { href: '/market/jepx', title: 'JEPX ハブ', desc: '9エリア × 30日 × 30分。ヒートマップ + アービ計算機。', tag: 'ハブ' },
   { href: '/global', title: '海外5市場ハブ', desc: '米国/EU/中国/インド/豪州 比較マトリクス。', tag: 'ハブ' },
   { href: '/tracker', title: '業界トラッカー (4軸)', desc: '補助金/系統/事業者/案件 の更新タイムライン。', tag: 'ハブ' },

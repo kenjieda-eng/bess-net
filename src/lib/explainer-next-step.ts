@@ -71,7 +71,8 @@ export function classifyExplainerNextStep(
   const links: ExplainerNextStepLink[] = related
     .slice(0, 2)
     .map((r) => ({ href: `/explainer/${r.slug}`, label: r.title }));
-  links.push({ href: '/glossary', label: '用語集（1,500語超・技術用語の基礎）' });
+  // Ck2h §3: 語数を焼き込まない（旧「1,500語超」・一覧の表示は 1,392 語・#121）
+  links.push({ href: '/glossary', label: '用語集（技術用語の基礎）' });
   return {
     key: 'tech',
     lead: '関連する解説と用語集で、技術・設備の理解を深められます。',
