@@ -29,7 +29,8 @@ export type SubsidyDateFacts = {
   deadline_raw?: string | null;
   /**
    * 期日を一切持たない紹介ページか（hasNoSchedule の結果・Ck2f ■5・2026-10-04）。
-   * 詳細ページの factsFor で 1 回だけ決め、状態バッジ・title・description が同じ値を見る（#121）。
+   * Ck2g §3（2026-10-06）から precompute（scripts/precompute-subsidies.ts）で 1 回だけ決めて subsidies.json に持たせ、
+   * 一覧・棚・/tracker/subsidy・マッチング・詳細ページ（バッジ・title・description）がすべてこの値を読む（#121）。
    * 真なら statusLabel は空文字（「随時〜事業により異なる」に「公募中」を付けない・Gr10-⑤）。
    */
   no_schedule?: boolean;
@@ -66,6 +67,16 @@ export function deriveSubsidyStatus(item: SubsidyDateFacts, todayISO: string): s
     return '公募予定';
   }
   return item.status[0] || 'その他';
+}
+
+/**
+ * 一覧・「いま公募中」の棚・/tracker/subsidy のタグに出す状態（Ck2g §3・2026-10-06）。
+ * 期日を一切持たない紹介ページ（no_schedule＝precompute で 1 回だけ決めた値）は状態を持たない＝空文字。
+ * 詳細ページの statusLabel と同じ規則で、「公募中」に数えない・タグも付けない（#121）。
+ */
+export function displaySubsidyStatus(item: SubsidyDateFacts, todayISO: string): string {
+  if (item.no_schedule) return '';
+  return deriveSubsidyStatus(item, todayISO);
 }
 
 /**

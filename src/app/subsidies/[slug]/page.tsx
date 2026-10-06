@@ -14,7 +14,6 @@ import {
   buildSubsidyTitle,
   buildSubsidyDescription,
   subsidyDisplayName,
-  hasNoSchedule,
   SUBSIDY_POINTER_SLUGS,
   type SubsidyDateFacts,
 } from '@/lib/subsidies-meta';
@@ -35,17 +34,19 @@ const DATE_FACTS: Record<string, SubsidyDateFacts> = Object.fromEntries(
       start_iso: (s.start_iso as string | null) ?? null,
       is_rolling: Boolean(s.is_rolling),
       deadline_raw: (s.deadline_raw as string | null) ?? null,
+      // Ck2g §3（2026-10-06）: 期日なしの判定は precompute で 1 回だけ（hasNoSchedule）。ここでは JSON の値を読むだけ（#121）
+      no_schedule: Boolean(s.no_schedule),
     },
   ])
 );
 
 function factsFor(
   slug: string,
-  raw: { status?: string[]; applicationStart?: string; deadline?: string }
+  raw: { status?: string[] }
 ): SubsidyDateFacts {
-  const f = DATE_FACTS[slug] ?? { status: raw.status ?? [], deadline_iso: null, start_iso: null, is_rolling: false };
-  // Ck2f ■5（2026-10-04）: 「期日なし」の判定はここで 1 回だけ。バッジ・title・description が同じ値を見る（#121）
-  return { ...f, no_schedule: hasNoSchedule(raw, f) };
+  // バッジ・title・description が同じ値を見る（#121）。期日なし（no_schedule）は JSON の値（precompute で 1 回だけ決めた値）。
+  // JSON に無い slug（ビルド後に追加された直後の ISR など）は日付が分からないので生 status のまま・期日なしは偽。
+  return DATE_FACTS[slug] ?? { status: raw.status ?? [], deadline_iso: null, start_iso: null, is_rolling: false, no_schedule: false };
 }
 
 export async function generateStaticParams() {

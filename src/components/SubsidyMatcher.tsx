@@ -32,6 +32,8 @@ import {
   type UseCase,
   type EntityType,
 } from '@/lib/subsidy-matcher';
+// Ck2g §3: 表示名の是正（nev-portal の「公式サイト」を外す）を詳細ページ・一覧と同じ関数で
+import { subsidyDisplayName } from '@/lib/subsidies-meta';
 
 // 型キャスト (build 時 JSON import)
 const ALL_SUBSIDIES = subsidiesJson as PrecomputedSubsidy[];
@@ -97,7 +99,7 @@ function buildCsv(input: MatchInput, results: MatchResult[]): string {
     const cells = [
       String(i + 1),
       String(m.match_score),
-      `"${m.subsidy.name.replace(/"/g, '""')}"`,
+      `"${subsidyDisplayName(m.subsidy.slug, m.subsidy.name).replace(/"/g, '""')}"`,
       `"${m.subsidy.organization.replace(/"/g, '""')}"`,
       `"${m.subsidy.subsidyRate_raw.replace(/"/g, '""')}"`,
       `"${m.subsidy.upperLimit_raw.replace(/"/g, '""')}"`,
@@ -597,7 +599,7 @@ export default function SubsidyMatcher() {
                   </div>
                 </div>
                 <h4 style={{ fontSize: 15, fontWeight: 700, margin: '4px 0 8px' }}>
-                  {m.subsidy.name}
+                  {subsidyDisplayName(m.subsidy.slug, m.subsidy.name)}
                 </h4>
                 <p style={{ fontSize: 15, color: 'var(--color-muted)', margin: '0 0 8px' }}>
                   実施機関: {m.subsidy.organization}

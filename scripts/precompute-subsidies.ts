@@ -22,6 +22,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { getAllSubsidies } from '../src/lib/microcms';
+import { hasNoSchedule } from '../src/lib/subsidies-meta';
 
 // ──────────────────────────────────────
 // 抽出ルール
@@ -303,6 +304,12 @@ export interface PrecomputedSubsidy {
   deadline_raw: string;
   deadline_iso?: string;
   is_rolling: boolean;
+  /**
+   * 期日を一切持たない紹介ページか（hasNoSchedule・Ck2g §3・2026-10-06）。ここで 1 回だけ決め、
+   * 一覧・棚・/tracker/subsidy・マッチング・詳細ページがこの値を読む（#121: 同じ意味の値を二か所で算出しない）。
+   * 真なら状態を持たない（「公募中」に数えない・タグを付けない）。
+   */
+  no_schedule: boolean;
   fiscalYear: string;
   sourceUrl: string;
   /** microCMS updatedAt（S1③ 最終更新表示用・データ側真実の更新日時） */
@@ -333,6 +340,7 @@ async function main(): Promise<void> {
     rolling: 0,
     has_deadline: 0,
     has_rate: 0,
+    no_schedule: 0,
   };
 
   for (const s of subsidies) {
@@ -368,6 +376,12 @@ async function main(): Promise<void> {
     if (deadline.deadline_iso) stats.has_deadline++;
     if (rate.rate_max_pct !== undefined) stats.has_rate++;
 
+    const startIso = parseStartIso(s.applicationStart || '');
+    const noSchedule = hasNoSchedule(
+      { applicationStart: s.applicationStart, deadline: s.deadline },
+      { deadline_iso: deadline.deadline_iso, start_iso: startIso },
+    );
+    if (noSchedule) stats.no_schedule++;
     out.push({
       id: s.id,
       slug: s.slug,
@@ -380,10 +394,11 @@ async function main(): Promise<void> {
       upperLimit_raw: s.upperLimit || '',
       targetEntity_raw: s.targetEntity || '',
       applicationStart: s.applicationStart || '',
-      start_iso: parseStartIso(s.applicationStart || ''),
+      start_iso: startIso,
       deadline_raw: s.deadline || '',
       deadline_iso: deadline.deadline_iso,
       is_rolling: deadline.is_rolling,
+      no_schedule: noSchedule,
       fiscalYear: s.fiscalYear || '',
       sourceUrl: s.sourceUrl || '',
       updatedAt: (s as unknown as { updatedAt?: string }).updatedAt,
@@ -410,6 +425,7 @@ async function main(): Promise<void> {
   console.log(`    use_case 抽出済: ${stats.use_cases_extracted} 件`);
   console.log(`    entity 抽出済: ${stats.entities_extracted} 件`);
   console.log(`    随時 (is_rolling): ${stats.rolling} 件`);
+  console.log(`    期日なし (no_schedule): ${stats.no_schedule} 件`);
   console.log(`    deadline 解析済: ${stats.has_deadline} 件`);
   console.log(`    補助率 解析済: ${stats.has_rate} 件`);
 

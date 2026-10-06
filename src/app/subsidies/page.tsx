@@ -6,11 +6,17 @@ import subsidiesData from '@/data/subsidies.json';
 import type { PrecomputedSubsidy } from '../../../scripts/precompute-subsidies';
 import SubsidiesBrowser, { type BrowserItem } from './SubsidiesBrowser';
 // S4(2026-08-09): 状態導出と締切表示は詳細ページと共有する（両者が drift しないように）
+// Ck2g §3（2026-10-06）: 状態は displaySubsidyStatus（期日なし＝no_schedule は状態なし）で出す。
+// no_schedule は precompute で 1 回だけ決めた値を JSON から読む（詳細ページ・tracker・マッチングと同じ・#121）
 import {
   getTodayJST,
-  deriveSubsidyStatus as deriveStatus,
+  displaySubsidyStatus,
   deadlineCountdown,
+  subsidyDisplayName,
 } from '@/lib/subsidies-meta';
+
+/** 一覧のグループ見出しに使う状態。期日なしの紹介ページは状態を持たないので「その他」に入れる（「公募中」に数えない） */
+const listStatus = (item: PrecomputedSubsidy, todayISO: string) => displaySubsidyStatus(item, todayISO) || 'その他';
 
 // S1(2026-08-08): force-static → 日次ISR。データは bundled JSON のまま（runtime microCMS 0 維持）だが、
 // 「締切まであと◯日」と deriveStatus（L-EIC-027）が毎日自己更新される（従来はビルド時に凍結）。
@@ -45,7 +51,7 @@ const STATUS_ORDER = [
 function groupByStatus(items: PrecomputedSubsidy[], todayISO: string) {
   const groups: Record<string, PrecomputedSubsidy[]> = {};
   for (const item of items) {
-    const status = deriveStatus(item, todayISO);
+    const status = listStatus(item, todayISO);
     if (!groups[status]) groups[status] = [];
     groups[status].push(item);
   }
@@ -82,13 +88,13 @@ export default function SubsidiesListPage() {
     return {
       id: item.id,
       slug: item.slug,
-      name: item.name,
+      name: subsidyDisplayName(item.slug, item.name),
       organization: item.organization,
       subsidyRate: item.subsidyRate_raw || '',
       upperLimit: item.upperLimit_raw || '',
       applicationStart: item.applicationStart || '',
       deadlineRaw: item.deadline_raw || '',
-      status: deriveStatus(item, todayISO),
+      status: listStatus(item, todayISO),
       countdown: deadlineCountdown(item, todayISO),
       regionLabel: regionLabelOf(prefs),
       prefKeys: isNationwide ? ['all-japan'] : prefs,
@@ -105,7 +111,7 @@ export default function SubsidiesListPage() {
   });
 
   // S1① 公募中の専用棚（締切昇順・締切なし/随時は末尾）
-  const openItems = ALL.filter((i) => deriveStatus(i, todayISO) === '公募中').sort((a, b) => {
+  const openItems = ALL.filter((i) => displaySubsidyStatus(i, todayISO) === '公募中').sort((a, b) => {
     const ka = a.deadline_iso && !a.is_rolling ? a.deadline_iso : '9999-99-99';
     const kb = b.deadline_iso && !b.is_rolling ? b.deadline_iso : '9999-99-99';
     return ka < kb ? -1 : ka > kb ? 1 : 0;
@@ -148,7 +154,7 @@ export default function SubsidiesListPage() {
                   const cd = deadlineCountdown(item, todayISO);
                   return (
                     <li key={item.id}>
-                      <Link href={`/subsidies/${item.slug}`}>{item.name}</Link>
+                      <Link href={`/subsidies/${item.slug}`}>{subsidyDisplayName(item.slug, item.name)}</Link>
                       <span style={{ marginLeft: 8, fontSize: 13, color: 'var(--color-muted)' }}>
                         {item.is_rolling
                           ? '（随時受付）'
