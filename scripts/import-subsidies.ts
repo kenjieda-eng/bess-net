@@ -5,9 +5,9 @@
  * scripts/import-projects.ts と同型（--file 指定・findBySlug 冪等・--dry-run・--limit/--skip・300ms スロットル）。
  * S3（都道府県拡張）承認後の投入・以後の週次④で再利用する。
  *
- * 使い方:
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-subsidies.ts --file scripts/subsidies-import-YYYY-MM.json --dry-run
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-subsidies.ts --file scripts/subsidies-import-YYYY-MM.json
+ * 使い方（Ck2g §6・2026-10-06・#125: 既定は dry run。--apply を付けたときだけ POST する。--dry-run は受け付けて無視＝既定と同じ）:
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-subsidies.ts --file scripts/subsidies-import-YYYY-MM.json           # dry run（既定）
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-subsidies.ts --file scripts/subsidies-import-YYYY-MM.json --apply
  *
  * データ規約（2026-08 実査・[[subsidies-source-of-truth]]）:
  *   - POST するのは source(raw) フィールドのみ: name/slug/organization/category[]/status[]/
@@ -53,7 +53,8 @@ if (!API_KEY) {
   console.error('ERROR: MICROCMS_API_KEY 環境変数が必要です');
   process.exit(1);
 }
-const DRY_RUN = process.argv.includes('--dry-run');
+// #125（Ck2g §6）: 既定は dry run。本実行は --apply を明示したときだけ（--dry-run は受け付けて無視）
+const DRY_RUN = !process.argv.includes('--apply');
 function argValue(flag: string): string | undefined {
   const i = process.argv.indexOf(flag);
   return i !== -1 && i + 1 < process.argv.length ? process.argv[i + 1] : undefined;

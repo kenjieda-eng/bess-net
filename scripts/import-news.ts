@@ -3,18 +3,18 @@
  *
  * PR TIMES キュレーション ニュース一括投入スクリプト
  *
- * 使い方:
- *   # スキーマ確認 + 全件 dry-run
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts --dry-run
+ * 使い方（Ck2g §6・2026-10-06・#125: 既定は dry run。--apply を付けたときだけ POST する。--dry-run は受け付けて無視＝既定と同じ）:
+ *   # スキーマ確認 + 全件 dry run（既定）
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts
  *
  *   # 先頭 2 件だけ実投入
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts --limit 2
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts --limit 2 --apply
  *
  *   # 先頭 2 件をスキップして残り 22 件を投入
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts --skip 2
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts --skip 2 --apply
  *
  *   # ファイル指定（デフォルト: scripts/news-import-2026-05.json）
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts --file scripts/other.json
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts --file scripts/other.json [--apply]
  *
  * セキュリティ:
  *   - MICROCMS_API_KEY は環境変数でのみ受け取る
@@ -165,13 +165,14 @@ const API_KEY = process.env.MICROCMS_API_KEY;
 
 if (!API_KEY) {
   console.error('ERROR: MICROCMS_API_KEY 環境変数が必要です');
-  console.error('  例: MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts --dry-run');
+  console.error('  例: MICROCMS_API_KEY=xxx npx tsx scripts/import-news.ts（dry run）／ --apply で本実行');
   process.exit(1);
 }
 
 // ─── CLI オプション ───────────────────────────────────────────────────────────
 
-const DRY_RUN = process.argv.includes('--dry-run');
+// #125（Ck2g §6）: 既定は dry run。本実行は --apply を明示したときだけ（--dry-run は受け付けて無視）
+const DRY_RUN = !process.argv.includes('--apply');
 
 function getArgValue(flag: string): string | undefined {
   const idx = process.argv.indexOf(flag);

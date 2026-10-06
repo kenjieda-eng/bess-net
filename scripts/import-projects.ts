@@ -5,11 +5,11 @@
  * scripts/import-news.ts と同型（--file 指定・findBySlug 冪等・--dry-run・300ms スロットル）。
  * 週次連動（金曜ワンセット⑤）で毎週再利用する。
  *
- * 使い方:
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-projects.ts --dry-run
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-projects.ts --limit 2
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-projects.ts --skip 2
- *   MICROCMS_API_KEY=xxx npx tsx scripts/import-projects.ts --file scripts/projects-import-YYYY-MM.json
+ * 使い方（Ck2g §6・2026-10-06・#125: 既定は dry run。--apply を付けたときだけ POST する。--dry-run は受け付けて無視＝既定と同じ）:
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-projects.ts                       # dry run（既定）
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-projects.ts --limit 2 --apply
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-projects.ts --skip 2 --apply
+ *   MICROCMS_API_KEY=xxx npx tsx scripts/import-projects.ts --file scripts/projects-import-YYYY-MM.json --apply
  *
  * データ規約（実スキーマ 2026-08-04 実査）:
  *   - outputMw / capacityMwh は数値。不明は 0（=サイト表示「調査中」の既存規約）
@@ -50,7 +50,8 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-const DRY_RUN = process.argv.includes('--dry-run');
+// #125（Ck2g §6）: 既定は dry run。本実行は --apply を明示したときだけ（--dry-run は受け付けて無視）
+const DRY_RUN = !process.argv.includes('--apply');
 function getArgValue(flag: string): string | undefined {
   const idx = process.argv.indexOf(flag);
   if (idx === -1 || idx + 1 >= process.argv.length) return undefined;
