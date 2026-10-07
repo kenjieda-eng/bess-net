@@ -22,10 +22,9 @@
  */
 
 import { useState } from 'react';
-// EPRX 月次置換便 §3: 上限価格の注記の数値（カタログ＋未収載の改定・ビルド時に固定＝SSR とハイドレーションで同じ）
-import { capNote } from '@/lib/balancing-cap';
-
-const CAP_NOTE = capNote();
+// EPRX 月次置換便 §3: 上限価格の注記の数値は server page が capNote()（src/lib/balancing-cap.ts）で求めて props で渡す。
+// 型だけを読む（カタログ JSON をクライアントのバンドルに入れない）。
+import type { CapNote } from '@/lib/balancing-cap';
 import {
   BALANCING_BATTERY_FALLBACK,
   BALANCING_FY_META,
@@ -122,6 +121,7 @@ export type MonthlyRange = { min: number; max: number; awardedMonths: number };
 export function BalancingRevenueEstimator({
   pricesByFy,
   rangesByFy,
+  capNote,
   defaultFy = 'FY2024',
 }: {
   pricesByFy?: Record<FyKey, Record<ProductKey, number>>;
@@ -132,6 +132,8 @@ export function BalancingRevenueEstimator({
    *   カタログ年平均と突合が取れなかった商品は入ってこない（＝幅を出さずに縮退する）。
    */
   rangesByFy?: Record<FyKey, Partial<Record<ProductKey, MonthlyRange>>>;
+  /** 注記「ΔkW 上限価格の改定」の数値（カタログ＋未収載の改定・EPRX 月次置換便 §3） */
+  capNote: CapNote;
   defaultFy?: FyKey;
 }) {
   const [selectedFy, setSelectedFy] = useState<FyKey>(defaultFy);
@@ -186,8 +188,8 @@ export function BalancingRevenueEstimator({
         ・<strong>FY2024・FY2025 とも通年（各年度 4月〜翌3月）の確定値です。</strong>FY2025 は EPRX が 2026 年 6 月 18 日に公表した通年確報で、旧・上期暫定値から改訂されています。<br />
         ・<strong>ΔkW 上限価格の改定</strong>: 一次調整力・二次調整力①・複合商品の上限価格は
         {/* EPRX 月次置換便 §3: 値はカタログの上限価格系列＋カタログ未収載の改定（src/lib/balancing-cap.ts の 1 か所）。文言は不変 */}
-        <strong>{`${CAP_NOTE.until.y} 年 ${CAP_NOTE.until.m} 月 ${CAP_NOTE.until.d} 日実需給分まで ${CAP_NOTE.before} 円/ΔkW・30分、${CAP_NOTE.from.y} 年 ${CAP_NOTE.from.m} 月 ${CAP_NOTE.from.d} 日実需給分から ${CAP_NOTE.after} 円/ΔkW・30分`}</strong>
-        {`（適用終了は「当面の間」）。二次調整力②・三次調整力①は ${CAP_NOTE.keep} 円/ΔkW・30分を当面継続、三次調整力②は上限なし。`}
+        <strong>{`${capNote.until.y} 年 ${capNote.until.m} 月 ${capNote.until.d} 日実需給分まで ${capNote.before} 円/ΔkW・30分、${capNote.from.y} 年 ${capNote.from.m} 月 ${capNote.from.d} 日実需給分から ${capNote.after} 円/ΔkW・30分`}</strong>
+        {`（適用終了は「当面の間」）。二次調整力②・三次調整力①は ${capNote.keep} 円/ΔkW・30分を当面継続、三次調整力②は上限なし。`}
         <strong>下表の単価は引下げ前の実績（FY2024 通年／FY2025 通年）</strong>のため、2026 年 9 月以降を試算する場合は
         上限のある商品の単価を新上限以下に読み替えてください（出典: EPRX 2026 年 7 月 30 日公表「需給調整市場のΔkW上限価格について」、
         根拠: 第 4 回 電力安定供給ワーキンググループ 資料 6）。<br />

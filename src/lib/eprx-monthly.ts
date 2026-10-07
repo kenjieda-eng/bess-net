@@ -76,11 +76,13 @@ const MONTHLY: Record<BalancingProductKey, CatalogSeries> = {
   composite: compositeMonthly as unknown as CatalogSeries,
 };
 
-/** 月次系列の出所（カタログの source_name・license_notice・license_url。6 系列とも同一＝代表として一次調整力から読む） */
+/**
+ * 月次系列の出所表記（カタログの source_name。6 系列とも同一＝代表として一次調整力から読む）。
+ * license_notice（3 行）・license_url は表示中の年次系列と同一文字列なので、ページは年次の 3 行を 1 回だけ出す
+ * （同一であることは scripts/verify-eprx-monthly.ts の軸6 が毎ビルド検査）。
+ */
 export const EPRX_MONTHLY_SOURCE = {
   sourceName: MONTHLY.primary.meta.source_name ?? null,
-  licenseNotice: MONTHLY.primary.meta.license_notice ?? null,
-  licenseUrl: MONTHLY.primary.meta.license_url ?? null,
 } as const;
 
 /** 小数第 2 位で丸める（カタログの公表値と同じ桁） */

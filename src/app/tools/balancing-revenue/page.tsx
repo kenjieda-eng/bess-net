@@ -59,7 +59,13 @@ import { BATTERY_CAPEX } from '@/lib/nrel-atb-reference';
 const MONTHLY_SOURCE = monthlySourceLinesOf(['FY2024', 'FY2025']).join('／');
 /** 上限価格の出所（カタログ balancing-price-cap-* の notes から）と、注記の数値（カタログ＋未収載の改定） */
 const CAP_SOURCE = capSourceLines().join('／');
+// サーバで 1 回だけ求めて 2 つのクライアントコンポーネントに props で渡す（カタログ JSON をバンドルに入れない・WARN はビルドのログに）
 const CAP_NOTE = capNote();
+/** 改定の一次の公表日（「2026年7月30日」の形） */
+const CAP_REVISION_PUBLISHED = (() => {
+  const d = CAP_NOTE.revision.publishedOn;
+  return `${Number(d.slice(0, 4))}年${Number(d.slice(5, 7))}月${Number(d.slice(8, 10))}日`;
+})();
 
 // ─── catalog JSON 直読み（server only） ────────────────────────────────────────
 // battery (6 系列)
@@ -354,6 +360,7 @@ export default function BalancingRevenuePage() {
             <BalancingRevenueEstimator
               pricesByFy={pricesByFy}
               rangesByFy={rangesByFy}
+              capNote={CAP_NOTE}
               defaultFy="FY2024"
             />
           </div>
@@ -390,6 +397,7 @@ export default function BalancingRevenuePage() {
             >
               <BalancingSourceComparison
                 pricesBySourceFy={pricesBySourceFy}
+                capNote={CAP_NOTE}
                 defaultFy="FY2024"
               />
             </div>
@@ -496,14 +504,16 @@ export default function BalancingRevenuePage() {
             <a href={EPRX_TOP} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>
               EPRX
             </a>
-            「取引実績の取りまとめ結果」（{MONTHLY_SOURCE}）の電源種別別 月次平均落札単価です（EIC カタログの月次系列・{EPRX_MONTHLY_SOURCE.sourceName}）。
+            「取引実績の取りまとめ結果」{MONTHLY_SOURCE ? `（${MONTHLY_SOURCE}）` : ''}の電源種別別 月次平均落札単価です
+            {EPRX_MONTHLY_SOURCE.sourceName ? `（EIC カタログの月次系列・カタログの出典表記: ${EPRX_MONTHLY_SOURCE.sourceName}）` : '（EIC カタログの月次系列）'}。
             未約定の月は幅に含めません（「約定 N か月」がその月数）。
             月次の単純平均が上の年平均と一致することを毎ビルド検査しています（一致しない場合は幅を表示しません）。
             <br />
             {/* EPRX 月次置換便 §3: 上限価格の履歴の出所（カタログ）と、カタログ未収載の改定の一次 */}
-            ・ΔkW 上限価格の値は EIC カタログの上限価格系列（{CAP_SOURCE_NAME}：「取引実績の取りまとめ結果」（{CAP_SOURCE}）の「落札単価の分布」ページの上限価格表）
+            ・ΔkW 上限価格の値は、EPRX「取引実績の取りまとめ結果」{CAP_SOURCE ? `（${CAP_SOURCE}）` : ''}の「落札単価の分布」ページの上限価格表
+            {CAP_SOURCE_NAME ? `（EIC カタログの上限価格系列・カタログの出典表記: ${CAP_SOURCE_NAME}）` : '（EIC カタログの上限価格系列）'}
             {CAP_NOTE.afterSource === 'revision'
-              ? `と、カタログ未収載の ${CAP_NOTE.from.y}年${CAP_NOTE.from.m}月${CAP_NOTE.from.d}日実需給分からの改定（${CAP_NOTE.revision.publisher} ${CAP_NOTE.revision.publishedOn.slice(0, 4)}年${Number(CAP_NOTE.revision.publishedOn.slice(5, 7))}月${Number(CAP_NOTE.revision.publishedOn.slice(8, 10))}日公表「${CAP_NOTE.revision.sourceTitle}」）`
+              ? `と、カタログ未収載の ${CAP_NOTE.from.y}年${CAP_NOTE.from.m}月${CAP_NOTE.from.d}日実需給分からの改定（${CAP_NOTE.revision.publisher}${CAP_REVISION_PUBLISHED}公表「${CAP_NOTE.revision.sourceTitle}」）`
               : ''}
             によります。
             <br />
