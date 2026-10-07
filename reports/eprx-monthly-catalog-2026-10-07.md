@@ -8,7 +8,7 @@
 
 - 前提の検算は便のとおり（17 系列あり・battery 月次 6 本×24 点・null 月 7 点・恒等式 **12/12 一致**・手転記 JSON と **144 セル全一致**）。停止条件は発火せず、置換した。**microCMS 書込 0**。
 - `/tools/balancing-revenue` の年度内の幅 12 組・約定月数・年平均 12 値・上限価格の注記 2 か所（15.00／10.00／7.21 と日付）は変更前後のローカルビルドで**一字一句不変**。見える本文の差は出典欄の 2 行だけ（月次の出所をカタログ notes の資料名・ページに書換え／上限価格表の出所の行を新設）。`/tracker/imbalance` は見える本文が不変。
-- 2026-09-01 からの 10.00 円（一次・二次①・複合）は `src/lib/balancing-cap.ts` の定数 `CAP_REVISIONS_NOT_IN_CATALOG` 1 か所（EPRX 2026-07-30 公表）。カタログに改定日以降の点が入ると定数は自動で使われない。
+- 2026-09-01 からの 10.00 円（一次・二次①・複合）は `src/lib/balancing-cap.ts` の定数 `CAP_REVISIONS_NOT_IN_CATALOG` 1 か所（EPRX 2026-07-30 公表）。カタログに改定日ちょうどの点が入った商品では定数は自動で使われない（後の日付の点だけでは外さない・2 回目のレビュー反映）。
 - commit: e6c4bd7（§1・§3）・5d0e7cf（§2）・954b636（自前の前後比較で見つけた ⑦ の 1 空白の回帰を戻す）・b4ee776（読取専用レビュー 3 体の範囲内 13 件を反映）・336d888（b4ee776 を反証した 2 体の指摘 14 件を反映）。push は 1 回（`cc7c27a..336d888`・2026-10-07 17:49 JST・6 commit＝Ck2h の報告 b73e1ee＋この便の 5 本）。
 - 本番（デプロイ後・素 URL）: デプロイ完了 17:56:49 JST（commit status success）→ 17:57:09 に 2 URL を取得。2 URL とも 200・PRERENDER・age 0。見える本文の sha がローカル最終ビルドと同一（幅・約定月数・年平均・注記 2 か所・出典欄 2 行とも一致）。本番のクライアント JS にカタログ JSON 0 件。
 
@@ -30,7 +30,7 @@
 
 - 不一致 **0 / 12**。約定月数は年次 notes の「約定月のみ」の記載とも 12/12 一致。
 - 手転記 `src/data/eprx-monthly-battery.json` との突合: **144 セル・不一致 0**（null は null 同士）。月次 JSON の sha256 先頭 12 桁: primary b41da757324c・secondary-1 c85156282e88・secondary-2 89ec7a990650・tertiary-1 5db0a400237f・tertiary-2 823986c288c4・composite 9b3c12bfa5f2。
-- ビルドの `verify:eprx-monthly`（新しい検査・prebuild の末尾）: 軸1〜3 12 組 ok・**軸4 144 セル全一致**・WARN 0。`verify:eic-license`: EPRX 系列 57 本（40＋17）の license_notice に「利用規約」「非商用」0 件・表示系列を持つのに出典表記が無いルート 0。
+- ビルドの `verify:eprx-monthly`（新しい検査・prebuild の末尾）: 軸1〜3 12 / 12 組 ok・**軸4 144 セル全一致**・軸5（出典の読み取り・資料名 3 種とも台帳あり）ok・軸6（上限価格の注記・月次 6／上限 5 本の利用条件）ok・WARN 0。`verify:eic-license`: EPRX 系列 57 本（40＋17）の license_notice に「利用規約」「非商用」0 件・表示系列を持つのに出典表記が無いルート 0。
 
 ## (2) 変更前後（ローカルビルド・同じ比較スクリプト・`<!-- -->` 除去・script／style 外）
 
@@ -78,7 +78,7 @@
 
 1. **§3「`src/app/tools/balancing-revenue/page.tsx` L.161 付近の注記（上限 15.00／7.21・2026/9/1 から 10.00）は焼き込み」**: page.tsx の L.161 付近はコメント（「EPRX の約定実績 年平均であって ΔkW 上限価格ではない…実績値を上限値に書き換えないこと」）で、画面に出る注記は 2 か所ともコンポーネント側（`BalancingRevenueEstimator.tsx` 旧 L.183-185・`BalancingSourceComparison.tsx` 旧 L.247-249）。この 2 か所を `capNote()` から組み立てるように替えた。page.tsx のコメントは表示されないので残した（意味は今も正しい）。
 2. **§3「過去の上限（2024-04-01 19.51／2025-04-01 19.51／2026-03-14 15.00・二次②／三次① 7.21）はカタログから出す」**: 画面に出る上限の値は 15.00（2026-08-31 時点）・10.00・7.21 の 3 つだけで、19.51 は変更前も後も本文に 0 回。15.00 と 7.21 はカタログの点から `capAt` で、10.00 は定数から出る。履歴全体は `capTimeline(product)` で取れる（いまは表示に使っていない）。
-3. **§1「出所表示（`EPRX_MONTHLY_META`・`pdfFileNameOf` 等）」**: どちらも消し、`EPRX_MONTHLY_SOURCE`（source_name・license_notice・license_url）と `monthlySourceLinesOf`（notes の「出典: …p.NN」から資料名・ページ）に置き換えた（使っていたのは page.tsx だけ）。`MonthlyStats.pageHeading` は型を変えずに意味が変わった（PDF のページ見出し「2-1-4．一次調整力 電源種別別の平均落札単価 14」→ 資料名「「2024年度の取引実績について」（2025年6月19日）」）。lib の外に読み手は無い。
+3. **§1「出所表示（`EPRX_MONTHLY_META`・`pdfFileNameOf` 等）」**: どちらも消し、`EPRX_MONTHLY_SOURCE`（source_name。license_notice・license_url は未使用のためレビュー反映で外し、年次との同一性を verify 軸6 で検査）と `monthlySourceLinesOf`（notes の「出典: …p.NN」から資料名・ページ）に置き換えた（使っていたのは page.tsx だけ）。`MonthlyStats.pageHeading` は型を変えずに意味が変わった（PDF のページ見出し「2-1-4．一次調整力 電源種別別の平均落札単価 14」→ 資料名「「2024年度の取引実績について」（2025年6月19日）」）。lib の外に読み手は無い。
 4. **§1「カタログの `source_name`・`license_notice`（3 行）…を出す」**: license_notice の 3 行は Ck2c（2026-10-02）から年次系列の注記としてこのページに逐語で出ている。月次系列の license_notice・license_url は年次と同一文字列（確認済み）なので、同じ 3 行を重ねて出していない。source_name は出典欄の月次・上限の行に新たに出した。
 5. **便冒頭「新 17 系列」**: 17＝battery 月次 6＋全電源月次 6＋上限価格 5（三次調整力②は上限価格の設定が無く系列なし）。この便で読むのは battery 月次 6 と上限価格 5 の 11 本で、全電源月次 6 本は使っていない（比較表の電源種別別の年平均は従来どおり年次系列）。
 6. **§1「関数の型と意味は変えず」**: 型と値は変わらない（レビュー役が新旧の lib を 6 商品 × FY2023〜FY2026 で呼んで差分 0）。`listProducts` の並び順だけが変わった（旧＝手転記 JSON の順で …三次①・複合・三次② → 新＝PRODUCTS の順で …三次①・三次②・複合）。使うのは verify だけで、変わるのはログの行順。
@@ -93,13 +93,13 @@
   - 出典欄の「data.eic-jp.org … catalog 2026-05-26（balancing 系 39）」（2 回）・試算ツールの「catalog 2026-05-24」（1 回）が古い。EPRX の balancing-price-* はいま 57 本（verify:eic-license）で、この便で読む月次・上限の 11 本は 2026-10-06 の catalog で入った系列。catalog の generated_at と系列数をビルド時に参照するか、固定日付の記載をやめる（別便）。
   - /lv 系の 5 ページ（buying-guide・entry-guide・regulation-subsidy・revenue-model・risks）は 15.00／10.00／7.21 を直書きのまま（balancing-cap.ts の範囲は /tools/balancing-revenue の注記と出典欄だけ・コメントにも明記）。
   - 生成物（src/data/eic）がゼロの状態からの型検査は、この便より前から通らない（capacity-market-defaults.ts・fx-reference.ts ほか生成 JSON を静的 import する既存ファイル多数）。prebuild は precompute-eic-data の後に型検査が走るので実害は無い。この便の 2 ファイルも同じ性質（prebuild の各段からは import されない＝verify:eprx-monthly だけが存在確認の後に動的 import）。
-  - カタログに FY2026 の点が入ると、verify は「FY_DATE 未登録」を WARN する（表示は FY2024・FY2025 固定のため壊れない）。年度を足すときは verify の FY_DATE・page の年度一覧・BALANCING_FY_DATE を一緒に更新する。
+  - カタログに FY2026 の点が入ると、verify は「カタログ月次にページの年度に無い年度がある（軸3）」を WARN する（表示は FY2024・FY2025 固定のため壊れない）。年度を足すときは `src/lib/balancing-fallback.ts` の BALANCING_FY_DATE（verify もこれを読む）・page の年度一覧（L.181・197・277 の固定配列）・台帳をまとめて更新する。
 - **上限価格の注記に自動の縮退を持たせなかった（設計の申告）**: 月次の幅は「月次平均≠年平均なら幅を出さない」で読者に矛盾を出さないが、上限価格の注記は商品間の不一致・引上げ・null などでも表示を止めず、ビルドのログと verify の WARN で知らせる（balancing-cap.ts のコメントに理由: 縮退先の正しい値がコードの中に無い＝カタログか EPRX の一次を人が確かめる／ビルドを止めると webhook の再ビルドまで止まる）。現データでは問題 0。
 - **検証の体制**: 読取専用のレビューを 2 回。
   - 1 回目（e6c4bd7・5d0e7cf 対象・3 体: データ/検査・上限価格/表示・便との突合）: blocker/major 0。指摘は重複を除いて 14 件（minor 7・nit 7）。範囲内 13 件を b4ee776 で反映（出典が読めないときの検査と「（）」・カタログに改定日前後の点が入ったときの誤った文・afterSource を一次だけで決めていた・出典の年度固定・定数を消すと落ちるのにコメントが「消すだけ」・クライアントのバンドル・資料名の二重と空白・台帳の別名・軸4 の期待セル数・未使用フィールド・WARN の説明・skip の扱い・コメントの範囲）。範囲外 1 件（出典欄の古い catalog 日付）は上に申告。
   - 2 回目（b4ee776 を反証・2 体: コードの正しさ・検査の偽陽性/偽陰性）: blocker/major 0。minor 7・nit 7 を 336d888 で反映（引上げの検査・同日の値違いと null の点・後の点は値が変わるときだけ鳴らす・上限 notes の商品ごとの読み取りと公表日の揺れ・検査対象の年度×商品をページの年度（BALANCING_FY_DATE）で固定・年次カタログ欠けや手転記 JSON の破損で ok と言わない・例外時もそれまでの WARN を出す・WARN の説明・年度定義の二重持ちを解消・ログの順序）。注記の自動縮退だけは採らず、理由を上に申告。
   - 反映後の確認: `npm run type-check` 0・ローカルビルド BUILD EXIT 0・メモリ上の境界ケース（lib 15 件・verify 16 シナリオ）すべて期待どおり（scratchpad の cap_fault.cts・verify_fault.cts。ファイルは書かず、fs と JSON をメモリ上で差し替え）。
-- **境界ケースの試験（申告）**: 最初に書いた試験（scratchpad の cap_fault.ts・ESM の import）は、lib が読む JSON と別のインスタンスを書き換えていたため 8 件が FAIL と出た（コードではなく試験の誤り＝書き換えが lib に届いていなかった）。CJS の require で同じインスタンスを掴む cap_fault.cts に直して 11 件すべて PASS（現データ・改定日ちょうどの点・後の日付の点 2 種・一次だけ・前後同値・商品間の不一致・「当面継続」不成立・notes の新年度の資料・月次 notes の表記ゆれ）。
+- **境界ケースの試験（申告）**: 最初に書いた試験（scratchpad の cap_fault.ts・ESM の import）は、lib が読む JSON と別のインスタンスを書き換えていたため 8 件が FAIL と出た（コードではなく試験の誤り＝書き換えが lib に届いていなかった）。CJS の require で同じインスタンスを掴む cap_fault.cts に直して 11 件すべて PASS（現データ・改定日ちょうどの点・後の日付の点 2 種・一次だけ・前後同値・商品間の不一致・「当面継続」不成立・notes の新年度の資料・月次 notes の表記ゆれ）。2 回目の反映後は「後の点は値が変わるときだけ鳴らす」に合わせて期待値を直し、値が変わる点・引上げ・同日の値違い・null の 4 件を足して 15 件すべて PASS。
 - **一時物**: scratchpad（リポジトリ外）`…/scratchpad/eprx/`（前提の検算 precheck.py と出力・上限の試算 cap_check.ts・配線の編集スクリプト wire_edit.py・変更前／e6c4bd7 時点／954b636 時点／b4ee776 時点／336d888 時点のビルド HTML の写し before／after／final／review／fix2・比較スクリプト compare_html.py と結果 compare_local／final／review・境界ケースの試験 cap_fault.ts（誤った版・残置）と cap_fault.cts・verify_fault.cts と各出力・本番計測 measure_prod.py と m_prod.json・ビルドログ 4 本）。削除したものは無い。
 - 1 回目のレビュー Workflow はアプリ終了で起動に失敗（エージェント 0・何も実行されず）。再起動して実行した。
 - 本番の個別 URL は、新デプロイの前に確認目的で開いていない（便 §0・#127）。
