@@ -22,6 +22,10 @@
  */
 
 import { useState } from 'react';
+// EPRX 月次置換便 §3: 上限価格の注記の数値（カタログ＋未収載の改定・ビルド時に固定＝SSR とハイドレーションで同じ）
+import { capNote } from '@/lib/balancing-cap';
+
+const CAP_NOTE = capNote();
 import {
   BALANCING_BATTERY_FALLBACK,
   BALANCING_FY_META,
@@ -124,7 +128,7 @@ export function BalancingRevenueEstimator({
   /**
    * ★Lc-2 ■4: 単価は「年平均」なので、年度内の振れを併記しないと
    *   「その水準が年間続く」と読まれる（三次② FY2024 は 9.81〜234.89＝24 倍）。
-   *   server page が src/data/eprx-monthly-battery.json から注入する。
+   *   server page がカタログの月次系列（balancing-price-monthly-*-battery・EPRX 月次置換便）から注入する。
    *   カタログ年平均と突合が取れなかった商品は入ってこない（＝幅を出さずに縮退する）。
    */
   rangesByFy?: Record<FyKey, Partial<Record<ProductKey, MonthlyRange>>>;
@@ -181,8 +185,9 @@ export function BalancingRevenueEstimator({
         ・エネルギー制約上、蓄電池が全コマ（年 17,520）で同容量を提供することはできません。コマ数・落札率は実態に合わせて下げてください。<br />
         ・<strong>FY2024・FY2025 とも通年（各年度 4月〜翌3月）の確定値です。</strong>FY2025 は EPRX が 2026 年 6 月 18 日に公表した通年確報で、旧・上期暫定値から改訂されています。<br />
         ・<strong>ΔkW 上限価格の改定</strong>: 一次調整力・二次調整力①・複合商品の上限価格は
-        <strong>2026 年 8 月 31 日実需給分まで 15.00 円/ΔkW・30分、2026 年 9 月 1 日実需給分から 10.00 円/ΔkW・30分</strong>
-        （適用終了は「当面の間」）。二次調整力②・三次調整力①は 7.21 円/ΔkW・30分を当面継続、三次調整力②は上限なし。
+        {/* EPRX 月次置換便 §3: 値はカタログの上限価格系列＋カタログ未収載の改定（src/lib/balancing-cap.ts の 1 か所）。文言は不変 */}
+        <strong>{`${CAP_NOTE.until.y} 年 ${CAP_NOTE.until.m} 月 ${CAP_NOTE.until.d} 日実需給分まで ${CAP_NOTE.before} 円/ΔkW・30分、${CAP_NOTE.from.y} 年 ${CAP_NOTE.from.m} 月 ${CAP_NOTE.from.d} 日実需給分から ${CAP_NOTE.after} 円/ΔkW・30分`}</strong>
+        {`（適用終了は「当面の間」）。二次調整力②・三次調整力①は ${CAP_NOTE.keep} 円/ΔkW・30分を当面継続、三次調整力②は上限なし。`}
         <strong>下表の単価は引下げ前の実績（FY2024 通年／FY2025 通年）</strong>のため、2026 年 9 月以降を試算する場合は
         上限のある商品の単価を新上限以下に読み替えてください（出典: EPRX 2026 年 7 月 30 日公表「需給調整市場のΔkW上限価格について」、
         根拠: 第 4 回 電力安定供給ワーキンググループ 資料 6）。<br />

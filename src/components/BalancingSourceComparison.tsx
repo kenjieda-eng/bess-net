@@ -25,6 +25,10 @@
 import { useState } from 'react';
 // 公表日は src/lib/balancing-fallback.ts の 1 か所だけが持つ（#121・Ck-2 ■5）。ここで直書きしない。
 import { BALANCING_FY_PUBLISHED } from '@/lib/balancing-fallback';
+// EPRX 月次置換便 §3: 上限価格の注記の数値（カタログ＋未収載の改定・ビルド時に固定＝SSR とハイドレーションで同じ）
+import { capNote } from '@/lib/balancing-cap';
+
+const CAP_NOTE = capNote();
 
 // ─── 型定義 ───────────────────────────────────────────────────────────────────
 
@@ -245,8 +249,9 @@ export function BalancingSourceComparison({
         ⑤ 出典: 電力需給調整力取引所（EPRX）「取引実績の取りまとめ結果」より転記・編集 ／ data.eic-jp.org catalog 2026-05-26（balancing 系 39）。<br />
         ⑥ 火力・水力の単価は大口・代表的落札水準（複数年契約 / 発電コスト連動が多い）。蓄電池・VPP と直接比較する際は入札戦略の違いにも留意。<br />
         ⑦ <strong>ΔkW 上限価格の改定</strong>: 一次調整力・二次調整力①・複合商品の上限価格は、
-        <strong>2026年8月31日実需給分まで 15.00 円/ΔkW・30分、2026年9月1日実需給分から 10.00 円/ΔkW・30分</strong>
-        （適用終了は「当面の間」）。二次調整力②・三次調整力①は 7.21 円/ΔkW・30分を当面継続、三次調整力②は上限なし。
+        {/* EPRX 月次置換便 §3: 値はカタログの上限価格系列＋カタログ未収載の改定（src/lib/balancing-cap.ts の 1 か所）。文言は不変 */}
+        <strong>{`${CAP_NOTE.until.y}年${CAP_NOTE.until.m}月${CAP_NOTE.until.d}日実需給分まで ${CAP_NOTE.before} 円/ΔkW・30分、${CAP_NOTE.from.y}年${CAP_NOTE.from.m}月${CAP_NOTE.from.d}日実需給分から ${CAP_NOTE.after} 円/ΔkW・30分`}</strong>
+        {`（適用終了は「当面の間」）。二次調整力②・三次調整力①は ${CAP_NOTE.keep} 円/ΔkW・30分を当面継続、三次調整力②は上限なし。`}
         本表の FY2024・FY2025 は<strong>引下げ前の実績</strong>で、2026年9月以降の上限のある商品の単価水準はこれより低くなります
         （出典: 電力需給調整力取引所（EPRX）2026年7月30日公表「需給調整市場のΔkW上限価格について」、根拠: 第4回 電力安定供給ワーキンググループ 資料6）。
       </div>

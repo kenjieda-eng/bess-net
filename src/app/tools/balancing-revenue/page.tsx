@@ -46,27 +46,20 @@ import { BALANCING_BATTERY_FALLBACK, BALANCING_FY_DATE, BALANCING_FY_PUBLISHED }
 
 // Lc-1(2026-09-20): ライセンス表記の逐語表示と、カタログに残る 404 license_url の正規化
 import { eprxNoticeLinesForDisplay, normalizeLicenseUrl, EPRX_TOP } from '@/lib/eic-license';
-// Lc-2 ■4: 年度内の幅（月次 min〜max）。カタログは年平均しか持たないため EPRX 年次 PDF からの転記を使う
-import { getVerifiedMonthlyStats, getMonthlyStats, pdfFileNameOf } from '@/lib/eprx-monthly';
+// Lc-2 ■4: 年度内の幅（月次 min〜max）。EPRX 月次置換便（2026-10-07）からカタログの月次系列（balancing-price-monthly-*-battery）を使う
+import { getVerifiedMonthlyStats, monthlySourceLinesOf, EPRX_MONTHLY_SOURCE } from '@/lib/eprx-monthly';
+// EPRX 月次置換便 §3: ΔkW 上限価格の履歴はカタログ（balancing-price-cap-*）から。カタログ未収載の改定だけ balancing-cap.ts の定数
+import { capNote, capSourceLines, CAP_SOURCE_NAME } from '@/lib/balancing-cap';
 import { BATTERY_CAPEX } from '@/lib/nrel-atb-reference';
 
 /**
- * 幅の転記元を出典欄に書くための文字列（Lc-2 ■4(d)）。
- * ファイル名とページ番号をデータ側から組み立てるので、年度を足しても書き換え漏れが起きない。
+ * 幅の出所を出典欄に書くための文字列（Lc-2 ■4(d) → EPRX 月次置換便）。
+ * 資料名とページ番号をカタログ月次の notes「出典: …p.NN」から組み立てるので、年度を足しても書き換え漏れが起きない。
  */
-const MONTHLY_PDF_SOURCE = (['FY2024', 'FY2025'] as const)
-  .map((fy) => {
-    const file = pdfFileNameOf(fy);
-    if (!file) return null;
-    const pages = [...new Set(
-      (['primary', 'secondary-1', 'secondary-2', 'tertiary-1', 'tertiary-2', 'composite'] as const)
-        .map((p) => getMonthlyStats(fy, p)?.pdfPage)
-        .filter((n): n is number => typeof n === 'number'),
-    )].sort((a, b) => a - b);
-    return `${fy} は ${file} の p${pages.join('・p')}`;
-  })
-  .filter((s): s is string => s !== null)
-  .join(' ／ ');
+const MONTHLY_SOURCE = monthlySourceLinesOf(['FY2024', 'FY2025']).join('／');
+/** 上限価格の出所（カタログ balancing-price-cap-* の notes から）と、注記の数値（カタログ＋未収載の改定） */
+const CAP_SOURCE = capSourceLines().join('／');
+const CAP_NOTE = capNote();
 
 // ─── catalog JSON 直読み（server only） ────────────────────────────────────────
 // battery (6 系列)
@@ -188,9 +181,9 @@ export default function BalancingRevenuePage() {
 
   // ─── Lc-2 ■4: 年度内の幅（月次の最小〜最大）────────────────────────────────
   // 年平均だけを出すと「その水準が年間続く」と読まれる。三次②は FY2024 で 9.81〜234.89（24 倍）動く。
-  // 月次はカタログに無い（frequency: annual）ため、EPRX 年次 PDF からの転記（src/data/eprx-monthly-battery.json）を使う。
+  // 月次はカタログの月次系列（balancing-price-monthly-{product}-battery・EPRX 月次置換便 2026-10-07）を使う。
   // ★getVerifiedMonthlyStats は「月次平均（丸め）＝表示中の年平均」が成り立つときだけ値を返す。
-  //   出所の違う 2 つの数値を並べるので、ずれたら幅を出さずに縮退する（scripts/verify-eprx-monthly.ts が build で警告）。
+  //   月次と年次は同じカタログでも別系列として改訂されうるので、ずれたら幅を出さずに縮退する（scripts/verify-eprx-monthly.ts が build で警告）。
   const rangesByFy: Record<FyKey, Partial<Record<ProductKey, { min: number; max: number; awardedMonths: number }>>> = {
     FY2024: {},
     FY2025: {},
@@ -497,14 +490,22 @@ export default function BalancingRevenuePage() {
               EPRX「サイトのご利用にあたって」
             </a>
             <br />
-            {/* ★Lc-2 ■4(d): 幅は年平均と出所が違う（カタログではなく PDF からの転記）。
-                読者にも依頼者にも、どの資料の何ページから来た数値かが分かる形にする。 */}
+            {/* ★Lc-2 ■4(d) → EPRX 月次置換便（2026-10-07）: 幅の出所はカタログの月次系列。
+                読者にも依頼者にも、どの資料の何ページから来た数値かが分かる形にする（ページはカタログ notes の「出典: …p.NN」から）。 */}
             ・上表の「月次 …〜…」は年度内の幅で、出所は{' '}
             <a href={EPRX_TOP} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>
               EPRX
             </a>
-            「取引実績の取りまとめ結果」の年次 PDF（{MONTHLY_PDF_SOURCE}）です。未約定の月は幅に含めません（「約定 N か月」がその月数）。
+            「取引実績の取りまとめ結果」（{MONTHLY_SOURCE}）の電源種別別 月次平均落札単価です（EIC カタログの月次系列・{EPRX_MONTHLY_SOURCE.sourceName}）。
+            未約定の月は幅に含めません（「約定 N か月」がその月数）。
             月次の単純平均が上の年平均と一致することを毎ビルド検査しています（一致しない場合は幅を表示しません）。
+            <br />
+            {/* EPRX 月次置換便 §3: 上限価格の履歴の出所（カタログ）と、カタログ未収載の改定の一次 */}
+            ・ΔkW 上限価格の値は EIC カタログの上限価格系列（{CAP_SOURCE_NAME}：「取引実績の取りまとめ結果」（{CAP_SOURCE}）の「落札単価の分布」ページの上限価格表）
+            {CAP_NOTE.afterSource === 'revision'
+              ? `と、カタログ未収載の ${CAP_NOTE.from.y}年${CAP_NOTE.from.m}月${CAP_NOTE.from.d}日実需給分からの改定（${CAP_NOTE.revision.publisher} ${CAP_NOTE.revision.publishedOn.slice(0, 4)}年${Number(CAP_NOTE.revision.publishedOn.slice(5, 7))}月${Number(CAP_NOTE.revision.publishedOn.slice(8, 10))}日公表「${CAP_NOTE.revision.sourceTitle}」）`
+              : ''}
+            によります。
             <br />
             ・FY2024・FY2025 とも通年の確定値です（FY2024 は EPRX {BALANCING_FY_PUBLISHED.FY2024}公表、FY2025 は EPRX{' '}
             {BALANCING_FY_PUBLISHED.FY2025}公表の通年確報で旧・上期暫定値から改訂）。FY2025 は水力と揚水が EPRX 側で合算公表に変わったため、電源種別比較の FY2025 は「水力・揚水（合算）」の1行で表示しています。
