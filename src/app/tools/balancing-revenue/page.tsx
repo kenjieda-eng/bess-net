@@ -56,7 +56,7 @@ import { BATTERY_CAPEX } from '@/lib/nrel-atb-reference';
  * 幅の出所を出典欄に書くための文字列（Lc-2 ■4(d) → EPRX 月次置換便）。
  * 資料名とページ番号をカタログ月次の notes「出典: …p.NN」から組み立てるので、年度を足しても書き換え漏れが起きない。
  */
-const MONTHLY_SOURCE = monthlySourceLinesOf(['FY2024', 'FY2025']).join('／');
+const MONTHLY_SOURCE = monthlySourceLinesOf(Object.keys(BALANCING_FY_DATE)).join('／');
 /** 上限価格の出所（カタログ balancing-price-cap-* の notes から）と、注記の数値（カタログ＋未収載の改定） */
 const CAP_SOURCE = capSourceLines().join('／');
 // サーバで 1 回だけ求めて 2 つのクライアントコンポーネントに props で渡す（カタログ JSON をバンドルに入れない・WARN はビルドのログに）
@@ -134,6 +134,7 @@ export const metadata: Metadata = {
 //   「非商用」と要約すると carve-out（個人利用・組織内利用）が消える。
 // ★Ck2c: 上流は 2026-09-29 nightly（eic-data-pipeline #59）で 2 行目を一次の実名に修正済み（9/30 確認）→ ガード付きで全行表示。
 //   判定は eprxNoticeLinesForDisplay（eic-license.ts・/tracker/imbalance と共通）。上流が旧文に戻れば自動で 1 行目だけに戻る。
+// ★代表系列を変えたら scripts/verify-eprx-monthly.ts の DISPLAYED_LICENSE_SERIES も変える（月次・上限の利用条件がこの 3 行と同一かを検査している）
 const EPRX_META = primaryBatteryData.meta as unknown as { license_notice?: string; license_url?: string };
 const EPRX_NOTICE_LINES = eprxNoticeLinesForDisplay(EPRX_META.license_notice);
 const EPRX_LICENSE_URL = normalizeLicenseUrl(EPRX_META.license_url) ?? 'https://www.eprx.or.jp/terms/';

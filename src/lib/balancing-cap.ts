@@ -64,6 +64,7 @@ export const CAP_REVISIONS_NOT_IN_CATALOG: readonly [CapRevision, ...CapRevision
 
 export type CapPoint = { date: string; value: number; source: 'catalog' | 'revision' };
 
+/** カタログの点（値が null の点は捨てる＝capNoteProblems が別に知らせる） */
 function catalogPoints(product: CapProductKey): CapPoint[] {
   return (CAP[product]?.points ?? [])
     .filter((p): p is { date: string; value: number } => typeof p.value === 'number')
@@ -119,6 +120,7 @@ export type CapNote = {
 /**
  * 注記「ΔkW 上限価格の改定」の文が成り立つかの検査（空配列＝問題なし）。
  * capNote() は問題があれば console.warn し、scripts/verify-eprx-monthly.ts は同じ配列を WARN の一覧に積む（#119: 判定は 1 か所）。
+ * 注記は「引下げ」を前提にした固定の文（「引下げ前の実績」「新上限以下に読み替えて」）と並ぶので、向きも見る。
  */
 export function capNoteProblems(): string[] {
   const rev = CAP_REVISIONS_NOT_IN_CATALOG[0];
@@ -128,34 +130,49 @@ export function capNoteProblems(): string[] {
   const after = GROUP.map((p) => capAt(p, rev.from));
   const keepUntil = KEEP_GROUP.map((p) => capAt(p, until));
   const keepFrom = KEEP_GROUP.map((p) => capAt(p, rev.from));
+  const show = (xs: (number | null)[]) => xs.map((v) => v ?? 'null').join('/');
   const one = (xs: (number | null)[]) => new Set(xs).size === 1 && xs[0] !== null;
-  if (!one(before)) out.push(`改定前日 ${until} の上限が一次・二次①・複合で揃わない（${before.join('/')}）`);
-  if (!one(after)) out.push(`改定日 ${rev.from} の上限が一次・二次①・複合で揃わない（${after.join('/')}）`);
-  if (!one(keepFrom)) out.push(`改定日 ${rev.from} の上限が二次②・三次①で揃わない（${keepFrom.join('/')}）`);
-  if (one(before) && one(after) && before[0] === after[0]) {
-    out.push(`改定日の前後で上限が同じ（${before[0]}）＝「…まで A 円、…から B 円」の文が成り立たない`);
+  if (!one(before)) out.push(`改定前日 ${until} の上限が一次・二次①・複合で揃わない（${show(before)}）`);
+  if (!one(after)) out.push(`改定日 ${rev.from} の上限が一次・二次①・複合で揃わない（${show(after)}）`);
+  if (!one(keepFrom)) out.push(`改定日 ${rev.from} の上限が二次②・三次①で揃わない（${show(keepFrom)}）`);
+  if (one(before) && one(after) && (after[0] as number) >= (before[0] as number)) {
+    out.push(`改定後の上限（${after[0]}）が改定前（${before[0]}）以上＝注記の「…まで A 円、…から B 円」と「引下げ前の実績」の文が成り立たない`);
   }
   if (keepUntil.some((v, i) => v !== keepFrom[i])) {
-    out.push(`二次②・三次①の上限が改定日の前後で変わる（${keepUntil.join('/')} → ${keepFrom.join('/')}）＝「当面継続」の文が成り立たない`);
+    out.push(`二次②・三次①の上限が改定日の前後で変わる（${show(keepUntil)} → ${show(keepFrom)}）＝「当面継続」の文が成り立たない`);
   }
   for (const p of [...GROUP, ...KEEP_GROUP]) {
-    const later = catalogPoints(p).filter((x) => x.date > rev.from);
+    const raw = CAP[p]?.points ?? [];
+    const nulls = raw.filter((x) => typeof x.value !== 'number');
+    if (nulls.length > 0) {
+      out.push(`${p}: カタログに値が null の点がある（${nulls.map((x) => x.date.slice(0, 10)).join('・')}）＝無視して直前の点か改定の定数を使っている`);
+    }
+    const byDate = new Map<string, Set<number>>();
+    for (const x of catalogPoints(p)) {
+      if (!byDate.has(x.date)) byDate.set(x.date, new Set());
+      byDate.get(x.date)!.add(x.value);
+    }
+    for (const [d, vs] of byDate) if (vs.size > 1) out.push(`${p}: カタログの ${d} に値の違う点が ${vs.size} つある（${[...vs].join('/')}）`);
+    // 改定日より後に「値が変わる」点があれば、注記の「当面の間」「当面継続」を見直す合図（年度初めに同じ値を置き直すだけの点では鳴らさない）
+    const atRev = capAt(p, rev.from);
+    const later = catalogPoints(p).filter((x) => x.date > rev.from && x.value !== atRev);
     if (later.length > 0) {
-      out.push(`${p}: カタログに改定日より後の点がある（${later.map((x) => `${x.date}=${x.value}`).join('・')}）＝注記の「当面の間」「当面継続」を見直す`);
+      out.push(`${p}: 改定日より後に上限が変わる点がある（${later.map((x) => `${x.date}=${x.value}`).join('・')}）＝注記の「当面の間」「当面継続」を見直す`);
     }
   }
   return out;
 }
 
 /**
- * /tools/balancing-revenue の注記「ΔkW 上限価格の改定」の数値（一次・二次①・複合／二次②・三次①）。
+ * /tools/balancing-revenue の注記「ΔkW 上限価格の改定」の数値（一次・二次①・複合／二次②・三次①）。WARN を出さない純粋な計算。
  * 改定日は CAP_REVISIONS_NOT_IN_CATALOG の先頭（カタログに入った後も日付の拠り所として残す）。
- * ★サーバ（page.tsx）で 1 回だけ呼び、props で渡す。
+ * ★値は一次調整力（継続側は二次調整力②）から採る。商品間で食い違ったときも表示は止めず、capNoteProblems の WARN で知らせる
+ *   （月次の幅のような自動の縮退は持たない: 縮退先の「正しい値」がこのファイルの中に無い＝カタログか EPRX の一次を人が確かめる。
+ *    ビルドを止めると webhook の再ビルドまで全部止まるので、verify と同じく警告に留める）。
  */
-export function capNote(): CapNote {
+export function capNoteValues(): CapNote {
   const rev = CAP_REVISIONS_NOT_IN_CATALOG[0];
   const until = dayBefore(rev.from);
-  for (const p of capNoteProblems()) console.warn(`[balancing-cap] WARN ${p}`);
   const afterSource = GROUP.some((p) => capTimeline(p).find((x) => x.date === rev.from)?.source === 'revision')
     ? 'revision'
     : 'catalog';
@@ -171,16 +188,36 @@ export function capNote(): CapNote {
 }
 
 /**
- * 出典欄に書く上限価格の出所（カタログ notes の「出典: …（「資料名」（公表日）p.NN／…）」から・資料ごと）。
+ * capNoteValues() に、問題があればビルドのログへの WARN を足したもの。
+ * ★サーバ（page.tsx）で 1 回だけ呼び、props で渡す。scripts/verify-eprx-monthly.ts は capNoteValues と capNoteProblems を別々に呼ぶ（WARN を二重に出さない）。
+ */
+export function capNote(): CapNote {
+  for (const p of capNoteProblems()) console.warn(`[balancing-cap] WARN ${p}`);
+  return capNoteValues();
+}
+
+/** 上限価格の商品 */
+export const CAP_PRODUCT_KEYS = Object.keys(CAP) as CapProductKey[];
+
+/**
+ * 商品の上限価格 notes の「出典: …（「資料名」（公表日）p.NN／…）」から、資料とページを読む（notes に現れる順）。
+ * 例: [{ doc: '「2024年度の取引実績について」（2025年6月19日）', page: 13 }, …]
+ */
+export function capSourcesOf(product: CapProductKey): { doc: string; page: number }[] {
+  return [...(CAP[product]?.meta.notes ?? '').matchAll(/(「[^「」]+」（[^（）「」]+）)p\.(\d+)/g)].map((m) => ({ doc: m[1], page: Number(m[2]) }));
+}
+
+/**
+ * 出典欄に書く上限価格の出所（資料ごとに全商品のページをまとめる）。
  * 例: 「2024年度の取引実績について」（2025年6月19日）p.13・p.21・p.29・p.37・p.45
  * 年度を固定せず notes に現れる資料をすべて拾う（カタログに新しい年度の資料が載れば自動で行が増える）。
  */
 export function capSourceLines(): string[] {
   const docs = new Map<string, Set<number>>();
-  for (const p of Object.keys(CAP) as CapProductKey[]) {
-    for (const m of (CAP[p].meta.notes ?? '').matchAll(/(「[^「」]+」（[^（）「」]+）)p\.(\d+)/g)) {
-      if (!docs.has(m[1])) docs.set(m[1], new Set());
-      docs.get(m[1])!.add(Number(m[2]));
+  for (const p of CAP_PRODUCT_KEYS) {
+    for (const { doc, page } of capSourcesOf(p)) {
+      if (!docs.has(doc)) docs.set(doc, new Set());
+      docs.get(doc)!.add(page);
     }
   }
   return [...docs].map(([doc, pages]) => `${doc}p.${[...pages].sort((a, b) => a - b).join('・p.')}`);
