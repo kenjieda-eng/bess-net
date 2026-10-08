@@ -16,10 +16,14 @@ import subsidiesData from '@/data/subsidies.json';
 import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults';
 // ATB の年はカタログ（蓄電池 CAPEX 系列の版）から。焼き込むと版の着地で取り残される（2026-10-02 ATB 2025 追随）
 import { ATB_BATTERY_LABEL } from '@/lib/nrel-atb-reference';
+import { ledgerSheetLabels, LEDGER_SHEETS, LEDGER_CHECKLIST_ITEMS } from '@/lib/asset-ledger-spec';
 
 // 件数はローカル JSON から動的参照（焼き込み drift 防止・tools分析2026-07-09 変更3。microCMS 0 req）
 const SUBSTATION_TOTAL = (substationsIndex as { total: number }).total;
 const SUBSIDY_COUNT = (subsidiesData as unknown[]).length;
+// 資産台帳テンプレート: 記録用シートの数と 08 の項目数（焼き込まない）
+const LEDGER_RECORD_SHEETS = LEDGER_SHEETS.length;
+const LEDGER_CHECKLIST_COUNT = LEDGER_CHECKLIST_ITEMS.length;
 
 export const revalidate = 86400;
 
@@ -94,6 +98,15 @@ const tools = [
     description:
       `系統用蓄電池の LCOS（均等化蓄電原価）と太陽光・風力・原子力等の電源別 LCOE を前提条件から試算。${ATB_BATTERY_LABEL} 基準（米国前提）、コスト内訳・電源別比較・NREL参考値の並列表示。`,
   },
+  {
+    // T3 台帳便（2026-10-08）: 配布物（xlsx）。表示数はページと同じ定義（src/lib/asset-ledger-spec.ts）から
+    slug: 'asset-ledger',
+    title: '系統用蓄電所 資産台帳テンプレート',
+    badge: 'xlsx・無料・登録不要',
+    available: true,
+    description:
+      `${ledgerSheetLabels()}の記録を 1 ファイルにまとめる xlsx テンプレート（記録用 ${LEDGER_RECORD_SHEETS} シート）。売却や借入の相談で確かめられそうな ${LEDGER_CHECKLIST_COUNT} 項目の一覧つき。入力データは当サイトに送られません。`,
+  },
 ];
 
 export default function ToolsHubPage() {
@@ -127,7 +140,7 @@ export default function ToolsHubPage() {
           <h1 className="section-title">ツール一覧</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 32, lineHeight: 1.7 }}>
             系統用蓄電池プロジェクトの事業性検討・補助金マッチング等、業界事業者向けの
-            <strong>実務ツール</strong> を無料・登録不要で提供します。すべてブラウザ完結、データ送信なし。
+            <strong>実務ツール</strong>を無料・登録不要で提供します。ブラウザ完結のツールと、ダウンロードして手元で使うテンプレート（xlsx）があります。
           </p>
 
           <div
