@@ -117,6 +117,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/tools/fire-risk-check`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 4 Day 4 (依頼AT、業界唯一 容量市場応札試算、モック版)
     { url: `${siteConfig.url}/tools/capacity-market-bid`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // T1 実装便（2026-10-08）: 需給調整 入札ベンチマーク。あわせて既存なのに無かった 2 本（T3 報告 (5) の範囲外所見）
+    { url: `${siteConfig.url}/tools/balancing-benchmark`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${siteConfig.url}/tools/balancing-revenue`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${siteConfig.url}/tools/lcoe-lcos`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     // T3 台帳便（2026-10-08）: 系統用蓄電所 資産台帳テンプレート（xlsx 配布ページ）
     { url: `${siteConfig.url}/tools/asset-ledger`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     // Sprint 4 後半 (業界分析 4ハブ集約 index)

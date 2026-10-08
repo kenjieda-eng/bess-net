@@ -92,6 +92,41 @@ export function capAt(product: CapProductKey, date: string): number | null {
   return v;
 }
 
+/** その月の上限（月初・月末・月内の改定日・日数加重）。T1 実装便（/tools/balancing-benchmark・裁定 R4） */
+export type MonthCapValue = { start: number; end: number; changedOn: string | null; effective: number; changeCount: number };
+
+/**
+ * 年月（YYYY-MM）の上限。月内に改定がある月（例: 2026-03 は 3/14 に 19.51→15.00）は、上限比の分母に日数加重
+ * （(13×19.51＋18×15.00)/31＝16.8913）を使う＝コマごとの約定量はこのツールでは使わないので日数での近似。
+ * どの日も上限が無ければ（三次②・範囲外）null。
+ */
+export function capForMonth(product: CapProductKey, ym: string): MonthCapValue | null {
+  const y = Number(ym.slice(0, 4));
+  const m = Number(ym.slice(5, 7));
+  const days = new Date(Date.UTC(y, m, 0)).getUTCDate();
+  const values: number[] = [];
+  let changedOn: string | null = null;
+  let changeCount = 0;
+  for (let d = 1; d <= days; d++) {
+    const date = `${ym}-${String(d).padStart(2, '0')}`;
+    const v = capAt(product, date);
+    if (v === null) return null;
+    if (values.length > 0 && v !== values[values.length - 1]) {
+      changeCount++;
+      if (changedOn === null) changedOn = date;
+    }
+    values.push(v);
+  }
+  return {
+    start: values[0],
+    end: values[values.length - 1],
+    changedOn,
+    changeCount,
+    // 改定の無い月はその値そのもの（同じ値を足して割ると浮動小数で 19.51 が 19.509999… になる）
+    effective: changedOn === null ? values[0] : values.reduce((a, b) => a + b, 0) / values.length,
+  };
+}
+
 const dayBefore = (iso: string): string =>
   new Date(Date.parse(`${iso}T00:00:00Z`) - 86_400_000).toISOString().slice(0, 10);
 const ymd = (iso: string) => ({ y: Number(iso.slice(0, 4)), m: Number(iso.slice(5, 7)), d: Number(iso.slice(8, 10)) });
@@ -113,9 +148,26 @@ export type CapNote = {
   from: { y: number; m: number; d: number };
   /** 改定後の値の出どころ。一次・二次①・複合のどれか 1 つでも定数を使っていれば 'revision' */
   afterSource: 'catalog' | 'revision';
-  /** 改定の一次（CAP_REVISIONS_NOT_IN_CATALOG の先頭・常に入る。出典欄に出すのは afterSource が 'revision' のとき） */
+  /** 改定の一次（CAP_REVISIONS_NOT_IN_CATALOG の先頭・常に入る。出典欄に出すかは revisionCitation） */
   revision: CapRevision;
+  /**
+   * 出典欄に改定の一次（EPRX 公表）を併記するか。
+   *   'not-in-catalog' … カタログに改定日の点が無い（定数で補っている）
+   *   'catalog-without-source' … カタログに改定日の点はあるが、系列の notes にその出所の記載が無い（2026-10-08 に実際に起きた:
+   *      点だけ 2026-09-01=10 が入り、notes・coverage は 3 点のまま）。出所を書かないと 10.00 の根拠が出典欄から消えるので一次を併記する
+   *   null … カタログの notes がこの点の出所を書いている＝カタログの出典行で足りる
+   */
+  revisionCitation: 'not-in-catalog' | 'catalog-without-source' | null;
 };
+
+/** 一次・二次①・複合の上限 notes が、改定日の点の出所を書いているか（改定日か資料名が notes に現れるか） */
+function capNotesCoverRevision(rev: CapRevision): boolean {
+  const jp = `${Number(rev.from.slice(0, 4))}年${Number(rev.from.slice(5, 7))}月${Number(rev.from.slice(8, 10))}日`;
+  return GROUP.every((p) => {
+    const n = CAP[p].meta.notes ?? '';
+    return n.includes(rev.from) || n.includes(jp) || n.includes(rev.sourceTitle);
+  });
+}
 
 /**
  * 注記「ΔkW 上限価格の改定」の文が成り立つかの検査（空配列＝問題なし）。
@@ -140,6 +192,14 @@ export function capNoteProblems(): string[] {
   }
   if (keepUntil.some((v, i) => v !== keepFrom[i])) {
     out.push(`二次②・三次①の上限が改定日の前後で変わる（${show(keepUntil)} → ${show(keepFrom)}）＝「当面継続」の文が成り立たない`);
+  }
+  // カタログが改定日の点を持つなら、その値が EPRX 公表の値（定数の value）と同じか。違えば出典文の一次と値が合わない
+  //（capNoteValues は一致するときだけ一次を併記する）
+  for (const p of GROUP) {
+    const fromCatalog = capTimeline(p).find((x) => x.date === rev.from && x.source === 'catalog');
+    if (fromCatalog && fromCatalog.value !== rev.value) {
+      out.push(`${p}: カタログの ${rev.from} の上限 ${fromCatalog.value} が、EPRX ${rev.publishedOn} 公表の値 ${rev.value} と違う＝出典の一次を併記できない（値か定数を確かめる）`);
+    }
   }
   for (const p of [...GROUP, ...KEEP_GROUP]) {
     const raw = CAP[p]?.points ?? [];
@@ -176,6 +236,8 @@ export function capNoteValues(): CapNote {
   const afterSource = GROUP.some((p) => capTimeline(p).find((x) => x.date === rev.from)?.source === 'revision')
     ? 'revision'
     : 'catalog';
+  // カタログの改定日の値が EPRX 公表の値と同じときだけ、その一次を併記する（違えば capNoteProblems が WARN）
+  const catalogMatchesRevision = GROUP.every((p) => capAt(p, rev.from) === rev.value);
   return {
     before: (capAt('primary', until) ?? 0).toFixed(2),
     after: (capAt('primary', rev.from) ?? 0).toFixed(2),
@@ -184,7 +246,30 @@ export function capNoteValues(): CapNote {
     from: ymd(rev.from),
     afterSource,
     revision: rev,
+    revisionCitation:
+      afterSource === 'revision'
+        ? 'not-in-catalog'
+        : capNotesCoverRevision(rev) || !catalogMatchesRevision
+          ? null
+          : 'catalog-without-source',
   };
+}
+
+const jaDate = (iso: string) => `${Number(iso.slice(0, 4))}年${Number(iso.slice(5, 7))}月${Number(iso.slice(8, 10))}日`;
+
+/**
+ * 出典欄で上限価格表の後ろに続ける「と、…からの改定（EPRX 公表…）」の部分（revisionCitation が null なら空文字）。
+ * /tools/balancing-revenue と /tools/balancing-benchmark が同じ文を使う（#119）。範囲で出すかどうかは呼び出し側が決める。
+ */
+export function capRevisionCitationText(note: CapNote): string {
+  if (note.revisionCitation === null) return '';
+  const r = note.revision;
+  const head = `${note.revisionCitation === 'not-in-catalog' ? 'カタログ未収載の ' : ''}${jaDate(r.from)}実需給分からの改定`;
+  const tail =
+    note.revisionCitation === 'catalog-without-source'
+      ? '。カタログの上限価格系列はこの日からの値を持つが、その出所の記載が無いため EPRX の公表資料を併記'
+      : '';
+  return `と、${head}（${r.publisher}${jaDate(r.publishedOn)}公表「${r.sourceTitle}」${tail}）`;
 }
 
 /**

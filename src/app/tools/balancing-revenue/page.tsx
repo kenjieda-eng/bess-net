@@ -49,7 +49,7 @@ import { eprxNoticeLinesForDisplay, normalizeLicenseUrl, EPRX_TOP } from '@/lib/
 // Lc-2 ■4: 年度内の幅（月次 min〜max）。EPRX 月次置換便（2026-10-07）からカタログの月次系列（balancing-price-monthly-*-battery）を使う
 import { getVerifiedMonthlyStats, monthlySourceLinesOf, EPRX_MONTHLY_SOURCE } from '@/lib/eprx-monthly';
 // EPRX 月次置換便 §3: ΔkW 上限価格の履歴はカタログ（balancing-price-cap-*）から。カタログ未収載の改定だけ balancing-cap.ts の定数
-import { capNote, capSourceLines, CAP_SOURCE_NAME } from '@/lib/balancing-cap';
+import { capNote, capRevisionCitationText, capSourceLines, CAP_SOURCE_NAME } from '@/lib/balancing-cap';
 import { BATTERY_CAPEX } from '@/lib/nrel-atb-reference';
 
 /**
@@ -61,11 +61,6 @@ const MONTHLY_SOURCE = monthlySourceLinesOf(Object.keys(BALANCING_FY_DATE)).join
 const CAP_SOURCE = capSourceLines().join('／');
 // サーバで 1 回だけ求めて 2 つのクライアントコンポーネントに props で渡す（カタログ JSON をバンドルに入れない・WARN はビルドのログに）
 const CAP_NOTE = capNote();
-/** 改定の一次の公表日（「2026年7月30日」の形） */
-const CAP_REVISION_PUBLISHED = (() => {
-  const d = CAP_NOTE.revision.publishedOn;
-  return `${Number(d.slice(0, 4))}年${Number(d.slice(5, 7))}月${Number(d.slice(8, 10))}日`;
-})();
 
 // ─── catalog JSON 直読み（server only） ────────────────────────────────────────
 // battery (6 系列)
@@ -365,6 +360,12 @@ export default function BalancingRevenuePage() {
               defaultFy="FY2024"
             />
           </div>
+          {/* T1 実装便: 入札ベンチマークへの相互リンク（1 行） */}
+          <p style={{ fontSize: 15, lineHeight: 1.7, margin: '-8px 0 24px' }}>
+            {'自社の月ごとの落札単価と約定率を EPRX 公表の月次平均と比べるには、'}
+            <Link href="/tools/balancing-benchmark" style={{ color: 'var(--color-accent)' }}>需給調整 入札ベンチマーク（蓄電池）</Link>
+            {'を使えます（単価・約定率・容量はサイトに残りません）。'}
+          </p>
 
           {/* ─── 電源種別比較（5種完結）二極構造 ─── */}
           <section style={{ marginBottom: 24 }}>
@@ -513,9 +514,8 @@ export default function BalancingRevenuePage() {
             {/* EPRX 月次置換便 §3: 上限価格の履歴の出所（カタログ）と、カタログ未収載の改定の一次 */}
             ・ΔkW 上限価格の値は、EPRX「取引実績の取りまとめ結果」{CAP_SOURCE ? `（${CAP_SOURCE}）` : ''}の「落札単価の分布」ページの上限価格表
             {CAP_SOURCE_NAME ? `（EIC カタログの上限価格系列・カタログの出典表記: ${CAP_SOURCE_NAME}）` : '（EIC カタログの上限価格系列）'}
-            {CAP_NOTE.afterSource === 'revision'
-              ? `と、カタログ未収載の ${CAP_NOTE.from.y}年${CAP_NOTE.from.m}月${CAP_NOTE.from.d}日実需給分からの改定（${CAP_NOTE.revision.publisher}${CAP_REVISION_PUBLISHED}公表「${CAP_NOTE.revision.sourceTitle}」）`
-              : ''}
+            {/* revisionCitation（src/lib/balancing-cap.ts）: カタログに改定日の点が無いか、点はあっても出所の記載が無いときは EPRX の公表資料を併記 */}
+            {capRevisionCitationText(CAP_NOTE)}
             によります。
             <br />
             ・FY2024・FY2025 とも通年の確定値です（FY2024 は EPRX {BALANCING_FY_PUBLISHED.FY2024}公表、FY2025 は EPRX{' '}

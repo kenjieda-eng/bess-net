@@ -17,6 +17,9 @@ import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults'
 // ATB の年はカタログ（蓄電池 CAPEX 系列の版）から。焼き込むと版の着地で取り残される（2026-10-02 ATB 2025 追随）
 import { ATB_BATTERY_LABEL } from '@/lib/nrel-atb-reference';
 import { ledgerSheetLabels, LEDGER_SHEETS, LEDGER_CHECKLIST_ITEMS } from '@/lib/asset-ledger-spec';
+// T1 実装便: 入札ベンチマークの範囲（月数・期間）はカタログの月次から（焼き込まない）
+import { monthlyCoverageYms } from '@/lib/eprx-monthly';
+import { CAP_NEAR_RATIO } from '@/lib/balancing-benchmark-calc';
 
 // 件数はローカル JSON から動的参照（焼き込み drift 防止・tools分析2026-07-09 変更3。microCMS 0 req）
 const SUBSTATION_TOTAL = (substationsIndex as { total: number }).total;
@@ -24,6 +27,8 @@ const SUBSIDY_COUNT = (subsidiesData as unknown[]).length;
 // 資産台帳テンプレート: 記録用シートの数と 08 の項目数（焼き込まない）
 const LEDGER_RECORD_SHEETS = LEDGER_SHEETS.length;
 const LEDGER_CHECKLIST_COUNT = LEDGER_CHECKLIST_ITEMS.length;
+const BENCH_YMS = monthlyCoverageYms();
+const benchYm = (ym: string) => `${Number(ym.slice(0, 4))}年${Number(ym.slice(5, 7))}月`;
 
 export const revalidate = 86400;
 
@@ -97,6 +102,15 @@ const tools = [
     available: true,
     description:
       `系統用蓄電池の LCOS（均等化蓄電原価）と太陽光・風力・原子力等の電源別 LCOE を前提条件から試算。${ATB_BATTERY_LABEL} 基準（米国前提）、コスト内訳・電源別比較・NREL参考値の並列表示。`,
+  },
+  {
+    // T1 実装便（2026-10-08）: 範囲と閾値は定義（eprx-monthly・balancing-benchmark-calc）から
+    slug: 'balancing-benchmark',
+    title: '需給調整 入札ベンチマーク（蓄電池）',
+    badge: 'EPRX 月次平均・ブラウザ内',
+    available: true,
+    description:
+      `自社の月ごとの平均落札単価と約定率を、EPRX 公表の月次平均（全電源・蓄電池）で計算した場合と比べ、差を月別と期間合計で出します（${BENCH_YMS.length ? `${benchYm(BENCH_YMS[0])}〜${benchYm(BENCH_YMS[BENCH_YMS.length - 1])}` : ''}）。蓄電池の月次平均が上限の ${Math.round(CAP_NEAR_RATIO * 100)}% 以上の月に「上限付近」の印。運用の評価ではありません。単価・約定率・容量はサイトに残りません。`,
   },
   {
     // T3 台帳便（2026-10-08）: 配布物（xlsx）。表示数はページと同じ定義（src/lib/asset-ledger-spec.ts）から

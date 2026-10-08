@@ -18,11 +18,12 @@
  *        転記の正しさとカタログの正しさを互いに保証する。手転記 JSON の撤去（1 サイクル後の別便）と一緒にこの軸も外す
  *        （外した後も、月次の欠けは軸3 が拾う）。
  * 出典欄の検査（EPRX 月次置換便のレビュー反映・2026-10-07）:
- *   軸5: 出典の読み取り … 月次 notes から各年度の資料名・ページが読めるか（読めないとその年度・商品の出所が出典欄から抜ける）・
+ *   軸5: 出典の読み取り … 月次 notes から各年度の資料名・ページが読めるか（読めないとその年度・商品の出所が出典欄から抜ける。
+ *        全電源の月次＝/tools/balancing-benchmark の出典欄も・T1 実装便 2026-10-08）・
  *        同じ年度で商品ごとに資料名が食い違わないか・上限価格 notes から商品ごとに資料が読めるか・資料の集合と公表日が商品間で揃うか・
  *        出典欄に出る資料名（notes 由来＝テンプレート変数なので verify:source-names の対象外）が台帳 src/data/source-documents.json にあるか
  *   軸6: 上限価格の注記と利用条件 … src/lib/balancing-cap.ts の capNoteProblems()（注記の文が成り立つか）・
- *        月次 6 本と上限 5 本の license_notice／license_url が、ページに出している年次（一次 battery）と同一か
+ *        月次 12 本（蓄電池 6・全電源 6）と上限 5 本の license_notice／license_url が、ページに出している年次（一次 battery）と同一か
  *
  * 落とし穴 #119 に従い、幅の算出と一致判定は src/lib/eprx-monthly.ts、上限の判定は src/lib/balancing-cap.ts の関数を使う（表示側と同じ実装）。
  * 表示側が自動で縮退するのは軸1 だけ（月次平均≠ページの年平均の商品の幅を出さない）なので、この検査は**警告**（exit 0）に留めつつ、
@@ -115,7 +116,10 @@ async function main(): Promise<void> {
   // 月次系列はカタログの生成物（prebuild の precompute-eic-data が作る）。prebuild ではこの検査は precompute-eic-data の後に走るので、
   // 無いのは取得の失敗（10% までは許容されて先へ進む）。その場合 next build は src/lib/eprx-monthly.ts の静的 import で失敗する。
   // （src/lib/eprx-monthly.ts はこの JSON を静的 import するので、存在を確かめてから読む）。
-  const missing = PRODUCTS.filter((p) => !fs.existsSync(path.join(EIC_DIR, `balancing-price-monthly-${p}-battery.json`)));
+  // T1 実装便（2026-10-08）: 全電源の月次 6 本も src/lib/eprx-monthly.ts が静的 import する＝存在を確かめてから読む
+  const missing = PRODUCTS.flatMap((p) => [`balancing-price-monthly-${p}-battery`, `balancing-price-monthly-${p}`]).filter(
+    (id) => !fs.existsSync(path.join(EIC_DIR, `${id}.json`)),
+  );
   if (missing.length > 0) {
     problems.push(
       `検査を飛ばした: カタログ月次 ${missing.length} 本が無い（${missing.join(', ')}）。` +
@@ -240,20 +244,38 @@ async function main(): Promise<void> {
   // 軸5: 出典の読み取り（出典欄から出所が抜けないこと・資料名が台帳にあること）
   const sourceProblems: string[] = [];
   const shownDocNames = new Set<string>();
+  /** 資料名 → 商品の一覧を「商品・商品＝資料名 ／ …」の形に（食い違ったときにどの商品がずれたかを出す） */
+  const titleGroups = (m: Map<string, string[]>) => [...m].map(([t, ps]) => `${ps.join('・')}＝${t}`).join(' ／ ');
   for (const fy of FY_KEYS) {
-    const headings = new Set<string>();
+    const headings = new Map<string, string[]>();
     for (const product of lib.listProducts(fy)) {
       const s = lib.getMonthlyStats(fy, product);
       if (!s) continue;
       if (s.pdfPage === 0 || s.pageHeading === '') {
         sourceProblems.push(`${fy} ${product}: 月次 notes から資料名・ページが読めない（出典欄からこの年度・商品の出所が抜ける）`);
       } else {
-        headings.add(s.pageHeading);
+        headings.set(s.pageHeading, [...(headings.get(s.pageHeading) ?? []), product]);
       }
     }
-    if (headings.size > 1) sourceProblems.push(`${fy}: 商品ごとに資料名が食い違う（${[...headings].join(' ／ ')}）`);
+    if (headings.size > 1) sourceProblems.push(`${fy}: 商品ごとに資料名が食い違う（${titleGroups(headings)}）`);
   }
   const monthlyLines = lib.monthlySourceLinesOf(FY_KEYS);
+  // T1 実装便: 全電源の月次（/tools/balancing-benchmark の出典欄）も年度ごとに資料名・ページが読めるか
+  const monthlyAllLines = lib.monthlySourceLinesOf(FY_KEYS, 'all');
+  // 商品ごと（年度 × 6 商品）に読めるか・資料名が商品間で揃うか（1 商品だけ読めないとそのページ番号が黙って抜けるため）
+  for (const fy of FY_KEYS) {
+    const titles = new Map<string, string[]>();
+    for (const p of PRODUCTS) {
+      const src = lib.monthlySourceOf('all', fy, p);
+      if (!src) sourceProblems.push(`${fy} 全電源 ${p}: 月次 notes から資料名・ページが読めない（出典欄からこの年度・商品の出所が抜ける）`);
+      else titles.set(src.title, [...(titles.get(src.title) ?? []), p]);
+    }
+    if (titles.size > 1) sourceProblems.push(`${fy} 全電源: 商品ごとに資料名が食い違う（${titleGroups(titles)}）`);
+  }
+  if (monthlyAllLines.length !== FY_KEYS.length) {
+    sourceProblems.push(`全電源の月次の出典の行が ${monthlyAllLines.length} 行（ページの年度は ${FY_KEYS.length}）`);
+  }
+  for (const l of monthlyAllLines) for (const n of docNamesIn(l)) shownDocNames.add(n);
   if (monthlyLines.length !== FY_KEYS.length) {
     sourceProblems.push(`月次の出典の行が ${monthlyLines.length} 行（ページの年度は ${FY_KEYS.length}）`);
   }
@@ -293,15 +315,18 @@ async function main(): Promise<void> {
 
     // 軸6: 上限価格の注記が成り立つか（判定は balancing-cap.ts の 1 か所。値は WARN を出さない capNoteValues から）
     const note = cap.capNoteValues();
-    if (note.afterSource === 'revision') shownDocNames.add(note.revision.sourceTitle);
+    if (note.revisionCitation !== null) shownDocNames.add(note.revision.sourceTitle);
     capProblems.push(...cap.capNoteProblems());
     capNoteLine =
       `[verify:eprx-monthly] 軸6 上限価格の注記: ${note.until.y}/${note.until.m}/${note.until.d} まで ${note.before}・` +
       `${note.from.y}/${note.from.m}/${note.from.d} から ${note.after}（${note.afterSource === 'revision' ? 'カタログ未収載の改定' : 'カタログ'}）・継続 ${note.keep}`;
-    if (note.afterSource === 'catalog') {
+    if (note.revisionCitation === 'catalog-without-source') {
       capInfoLine =
-        '[verify:eprx-monthly] 情報: カタログに改定日の点が入った（出典欄の「カタログ未収載の改定」の一文は自動で消える）。' +
-        '上限価格の出典の行に改定の出所が含まれているかを一度確かめる。';
+        '[verify:eprx-monthly] 情報: カタログに改定日の点が入ったが、上限価格系列の notes にその出所の記載が無い。' +
+        'ページは改定の一次（EPRX 公表）を併記している。EIC 側の notes・coverage の更新（リンへ照会）を確かめる。';
+    } else if (note.afterSource === 'catalog') {
+      capInfoLine =
+        '[verify:eprx-monthly] 情報: カタログに改定日の点が入り、notes にもその出所がある（出典欄はカタログの出典行だけになる）。';
     }
   }
 
@@ -315,7 +340,7 @@ async function main(): Promise<void> {
   }
   if (sourceProblems.length === 0) {
     console.log(
-      `[verify:eprx-monthly] 軸5 出典の読み取り: 月次 ${monthlyLines.length} 行・資料名 ${shownDocNames.size} 種（すべて台帳にあり）` +
+      `[verify:eprx-monthly] 軸5 出典の読み取り: 月次 ${monthlyLines.length} 行（全電源 ${monthlyAllLines.length} 行）・資料名 ${shownDocNames.size} 種（すべて台帳にあり）` +
         `${capMissing.length > 0 ? '・上限価格は未検査' : ''}  ok`,
     );
   } else {
@@ -331,6 +356,8 @@ async function main(): Promise<void> {
   const shown = readCatalog(DISPLAYED_LICENSE_SERIES)?.meta;
   const licenseIds = [
     ...PRODUCTS.map((p) => `balancing-price-monthly-${p}-battery`),
+    // T1 実装便: 全電源の月次も、ページ（/tools/balancing-benchmark）は同じ 3 行（一次 battery の license_notice）を出す
+    ...PRODUCTS.map((p) => `balancing-price-monthly-${p}`),
     ...(capMissing.length > 0 ? [] : CAP_PRODUCTS.map((p) => `balancing-price-cap-${p}`)),
   ];
   const licenseDiffs: string[] = [];
@@ -344,7 +371,7 @@ async function main(): Promise<void> {
     }
     if (licenseDiffs.length === 0) {
       console.log(
-        `[verify:eprx-monthly] 軸6 利用条件: 月次 ${PRODUCTS.length}・上限 ${capMissing.length > 0 ? '未検査' : `${CAP_PRODUCTS.length} 本`}の license_notice／license_url ＝ ページに出している ${DISPLAYED_LICENSE_SERIES}  ok`,
+        `[verify:eprx-monthly] 軸6 利用条件: 月次 ${PRODUCTS.length * 2}（蓄電池・全電源）・上限 ${capMissing.length > 0 ? '未検査' : `${CAP_PRODUCTS.length} 本`}の license_notice／license_url ＝ ページに出している ${DISPLAYED_LICENSE_SERIES}  ok`,
       );
     } else {
       problems.push(

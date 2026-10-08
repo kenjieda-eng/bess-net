@@ -29,6 +29,15 @@ import secondary2Monthly from '../data/eic/balancing-price-monthly-secondary-2-b
 import tertiary1Monthly from '../data/eic/balancing-price-monthly-tertiary-1-battery.json';
 import tertiary2Monthly from '../data/eic/balancing-price-monthly-tertiary-2-battery.json';
 import compositeMonthly from '../data/eic/balancing-price-monthly-composite-battery.json';
+// T1 実装便（2026-10-08）: 全電源の月次 6 本（/tools/balancing-benchmark の全電源ベンチ）。
+// ★全電源の月次は「EPRX 公表の月次平均・算出方法は資料に明記なし」で、月次 12 値の単純平均は年次と一致しない（notes）。
+//   蓄電池側の自己ガード（matchesCatalogAnnual）は使えない＝点の数・null なし・値の範囲・範囲の月の連続を scripts/verify-balancing-benchmark.ts が見る。
+import primaryMonthlyAll from '../data/eic/balancing-price-monthly-primary.json';
+import secondary1MonthlyAll from '../data/eic/balancing-price-monthly-secondary-1.json';
+import secondary2MonthlyAll from '../data/eic/balancing-price-monthly-secondary-2.json';
+import tertiary1MonthlyAll from '../data/eic/balancing-price-monthly-tertiary-1.json';
+import tertiary2MonthlyAll from '../data/eic/balancing-price-monthly-tertiary-2.json';
+import compositeMonthlyAll from '../data/eic/balancing-price-monthly-composite.json';
 
 export type BalancingProductKey =
   | 'primary'
@@ -75,6 +84,20 @@ const MONTHLY: Record<BalancingProductKey, CatalogSeries> = {
   'tertiary-2': tertiary2Monthly as unknown as CatalogSeries,
   composite: compositeMonthly as unknown as CatalogSeries,
 };
+
+/** 全電源の月次（T1 実装便） */
+const MONTHLY_ALL: Record<BalancingProductKey, CatalogSeries> = {
+  primary: primaryMonthlyAll as unknown as CatalogSeries,
+  'secondary-1': secondary1MonthlyAll as unknown as CatalogSeries,
+  'secondary-2': secondary2MonthlyAll as unknown as CatalogSeries,
+  'tertiary-1': tertiary1MonthlyAll as unknown as CatalogSeries,
+  'tertiary-2': tertiary2MonthlyAll as unknown as CatalogSeries,
+  composite: compositeMonthlyAll as unknown as CatalogSeries,
+};
+
+/** 月次の種類: 全電源（all）か蓄電池（battery） */
+export type MonthlyKind = 'all' | 'battery';
+const seriesOf = (kind: MonthlyKind): Record<BalancingProductKey, CatalogSeries> => (kind === 'all' ? MONTHLY_ALL : MONTHLY);
 
 /**
  * 月次系列の出所表記（カタログの source_name。6 系列とも同一＝代表として一次調整力から読む）。
@@ -196,10 +219,11 @@ export function productJaOf(fy: string, product: BalancingProductKey): string | 
  * 例: 「2024年度の取引実績について」（2025年6月19日）p.14・p.22・p.30・p.38・p.46・p.54
  * 年度を足しても書き換え漏れが起きないよう、データ側から組み立てる（Lc-2 ■4(d)）。
  */
-export function monthlySourceLinesOf(fys: readonly string[]): string[] {
+export function monthlySourceLinesOf(fys: readonly string[], kind: MonthlyKind = 'battery'): string[] {
+  const series = seriesOf(kind);
   return fys
     .map((fy) => {
-      const srcs = PRODUCTS.map((p) => sourceOfFy(MONTHLY[p].meta.notes, fy)).filter(
+      const srcs = PRODUCTS.map((p) => sourceOfFy(series[p].meta.notes, fy)).filter(
         (s): s is { title: string; page: number } => s !== null,
       );
       if (srcs.length === 0) return null;
@@ -207,4 +231,34 @@ export function monthlySourceLinesOf(fys: readonly string[]): string[] {
       return `${srcs[0].title}p.${pages.join('・p.')}`;
     })
     .filter((s): s is string => s !== null);
+}
+
+/**
+ * 月次の生の点（年月 YYYY-MM → 値・落札なしは null・日付の昇順）。T1 実装便（/tools/balancing-benchmark）。
+ * サーバ側だけで使う（このファイルはカタログ JSON を import する＝クライアントに入れない）。
+ */
+export function getMonthlyPoints(kind: MonthlyKind, product: BalancingProductKey): { ym: string; value: number | null }[] {
+  return [...seriesOf(kind)[product].points]
+    .sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0))
+    .map((p) => ({ ym: p.date.slice(0, 7), value: typeof p.value === 'number' ? p.value : null }));
+}
+
+/** 全電源・蓄電池の月次 12 本に共通する年月（昇順）。ベンチの範囲（summary）はここから＝焼き込まない */
+export function monthlyCoverageYms(): string[] {
+  const sets = (['all', 'battery'] as const).flatMap((k) => PRODUCTS.map((p) => new Set(getMonthlyPoints(k, p).map((x) => x.ym))));
+  const first = sets[0] ? [...sets[0]] : [];
+  return first.filter((ym) => sets.every((s) => s.has(ym))).sort();
+}
+
+/** 月次系列 id（種類つき） */
+export function monthlySeriesIdOf(kind: MonthlyKind, product: BalancingProductKey): string {
+  return seriesOf(kind)[product].id;
+}
+
+/**
+ * 1 商品・1 年度の出所（資料名とページ）。読めなければ null。T1 実装便: scripts/verify-eprx-monthly.ts の軸5 が
+ * 全電源・蓄電池の全組（年度 × 商品）で、読めるか・資料名が商品間で揃うかを見るため。
+ */
+export function monthlySourceOf(kind: MonthlyKind, fy: string, product: BalancingProductKey): { title: string; page: number } | null {
+  return sourceOfFy(seriesOf(kind)[product].meta.notes, fy);
 }

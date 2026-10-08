@@ -2,7 +2,7 @@
  * src/lib/asset-ledger-spec.ts — 系統用蓄電所 資産台帳テンプレート（xlsx）の定義（T3 台帳便・2026-10-08）
  *
  * 落とし穴 #119（定義は一箇所）: シート・列・説明・選択肢・README の文・行の配置はここだけに置く。
- *   - scripts/build-asset-ledger.ts …… この定義から public/dl/bess-asset-ledger-v1.0.xlsx を生成する（手で作らない）
+ *   - scripts/build-asset-ledger.ts …… この定義から public/dl/bess-asset-ledger-v{LEDGER_VERSION}.xlsx を生成する（手で作らない）
  *   - scripts/verify-asset-ledger.ts …… 生成済みの xlsx を読み戻し、この定義と一致するかを検査する（prebuild・警告のみ）
  *   - src/app/tools/asset-ledger/page.tsx・src/app/tools/page.tsx …… シート一覧・項目の説明・件数をこの定義から描く
  * ★外部モジュールを読まない（アプリとスクリプトの両方が読む・生成物が無くても読める）。
@@ -15,7 +15,7 @@
  *   - 「買い手・貸し手が確かめる順」などの並びの理由は「当サイトの想定」と明記する（裏付けのある事実としては書かない）。
  */
 
-export const LEDGER_VERSION = '1.0';
+export const LEDGER_VERSION = '1.1';
 /** 版の年月（README・ページの表示用） */
 export const LEDGER_RELEASED = '2026-10';
 export const LEDGER_FILE_NAME = `bess-asset-ledger-v${LEDGER_VERSION}.xlsx`;
@@ -75,6 +75,15 @@ export const LEDGER_ROW = { title: 1, header: 2, desc: 3, firstInput: 4 } as con
 export const LEDGER_INPUT_ROWS = 500;
 /** 04_月次実績で数式を入れておく行数（10 年分） */
 export const LEDGER_FORMULA_ROWS = 120;
+
+/**
+ * 04_月次実績の約定率 2 列の名前と、この台帳での定義（列の説明・08 の参照・/tools/balancing-benchmark の文はここから引く＝#119）。
+ * 容量約定率が /tools/balancing-benchmark の「約定率（容量ベース）」と同じ定義。
+ */
+export const LEDGER_RATE_COLUMNS = {
+  bid: { name: '応札約定率(%)', definition: '需給調整の約定量÷応札量' },
+  capacity: { name: '容量約定率(%)', definition: '約定量÷（提供容量×当月のコマ数）' },
+} as const;
 
 /** シート名（README・説明文・08 の参照・ページはこの定数から引く＝改名しても文が取り残されない） */
 export const LEDGER_SHEET_NAMES = {
@@ -243,7 +252,13 @@ export const LEDGER_SHEETS: readonly LedgerSheet[] = [
           : { name, desc: REVENUE_DESC, type: 'number' as const },
       ),
       { name: '合計収益(円)', desc: '数式（左の収益列の和）', type: 'formula', formula: { kind: 'sum', of: REVENUE_COLUMNS } },
-      { name: '約定率(%)', desc: 'この台帳での定義: 需給調整の約定量÷応札量', type: 'number' },
+      { name: LEDGER_RATE_COLUMNS.bid.name, desc: `この台帳での定義: ${LEDGER_RATE_COLUMNS.bid.definition}`, type: 'number' },
+      {
+        name: LEDGER_RATE_COLUMNS.capacity.name,
+        desc: `この台帳での定義: ${LEDGER_RATE_COLUMNS.capacity.definition}。${LEDGER_SITE}/tools/balancing-benchmark の「約定率（容量ベース）」にそのまま写せる`,
+        type: 'number',
+        width: 18,
+      },
       { name: '平均落札単価(円/ΔkW・30分)', desc: '当月の需給調整の落札単価の平均（算定方法は備考に）', type: 'number', width: 22 },
       { name: '稼働可能率(%)', desc: 'この台帳での定義: 暦時間のうち運転できた時間の割合', type: 'number' },
       { name: '停止日数(日)', desc: '当月に停止していた日数', type: 'number' },
@@ -357,7 +372,7 @@ export const LEDGER_CHECKLIST_ITEMS: readonly { item: string; sheet: string; col
   { item: 'アグリゲーター手数料の型', sheet: N.contract, columns: ['手数料の型'] },
   { item: 'データ引継ぎ条項', sheet: N.contract, columns: ['データ引継ぎ条項（有/無/不明）'] },
   { item: '直近 12 か月の合計収益', sheet: N.monthly, columns: ['合計収益(円)'] },
-  { item: '直近 12 か月の約定率', sheet: N.monthly, columns: ['約定率(%)'] },
+  { item: '直近 12 か月の約定率', sheet: N.monthly, columns: [LEDGER_RATE_COLUMNS.bid.name, LEDGER_RATE_COLUMNS.capacity.name] },
   { item: '直近 12 か月の稼働可能率', sheet: N.monthly, columns: ['稼働可能率(%)'] },
   { item: '直近 12 か月の停止日数', sheet: N.monthly, columns: ['停止日数(日)'] },
   { item: '直近 12 か月の営業利益', sheet: N.monthly, columns: ['営業利益(円)'] },
@@ -509,6 +524,11 @@ export const LEDGER_README_PARAGRAPHS: readonly { heading: string; body: string 
 /** README の更新履歴（最後の行が現在の版＝checklistProblems が検査） */
 export const LEDGER_CHANGELOG: readonly { version: string; date: string; note: string }[] = [
   { version: '1.0', date: '2026-10', note: '初版' },
+  {
+    version: '1.1',
+    date: '2026-10',
+    note: '04_月次実績: 「約定率(%)」を「応札約定率(%)」に改名し、「容量約定率(%)」の列を追加（/tools/balancing-benchmark の約定率と同じ定義）',
+  },
 ];
 
 /** README の更新履歴の 1 行目（A 列）の表示 */

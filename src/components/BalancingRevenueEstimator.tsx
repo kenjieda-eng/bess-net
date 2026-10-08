@@ -25,6 +25,8 @@ import { useState } from 'react';
 // EPRX 月次置換便 §3: 上限価格の注記の数値は server page が capNote()（src/lib/balancing-cap.ts）で求めて props で渡す。
 // 型だけを読む（カタログ JSON をクライアントのバンドルに入れない）。
 import type { CapNote } from '@/lib/balancing-cap';
+// T1 実装便 R7: 収益の式とコマ数は /tools/balancing-benchmark と共有（#119・JSON を読まない lib）
+import { BLOCKS_PER_YEAR, balancingRevenueYen } from '@/lib/balancing-revenue-calc';
 import {
   BALANCING_BATTERY_FALLBACK,
   BALANCING_FY_META,
@@ -69,8 +71,6 @@ const FY_OPTIONS: { key: FyKey; label: string; note: string }[] = (['FY2024', 'F
  *   上限改定は上部の L-EIC-018 注記で時点明示する（#107 初期DOM）。
  */
 const FALLBACK_BY_FY: Record<FyKey, Record<ProductKey, number>> = BALANCING_BATTERY_FALLBACK;
-
-const BLOCKS_PER_YEAR = 365 * 48; // 17,520 コマ/年
 
 // ─── ユーティリティ ───────────────────────────────────────────────────────────
 
@@ -157,7 +157,7 @@ export function BalancingRevenueEstimator({
   ).map((p) => {
     const price = activePrices[p.key] ?? 0;
     const rate = rates[p.key] ?? 0;
-    const revenue = price * capacityKw * blocks * (rate / 100);
+    const revenue = balancingRevenueYen(price, capacityKw, blocks, rate);
     return { ...p, price, rate, revenue, range: activeRanges[p.key] };
   });
 
