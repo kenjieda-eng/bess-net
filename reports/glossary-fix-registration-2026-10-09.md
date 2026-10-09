@@ -141,7 +141,7 @@
 5. **「2016年」の扱い**: power-generation-business の「2016年の電気事業法改正により創設」と、generation-business-operator の「2016年4月の小売全面自由化に伴い…」は、改正法の公布年（2014年・平成26年法律第72号）と附則で直した。施行日（2016年4月1日）は XML に日付が無く、施行期日の政令を取っていないので書いていない（「施行日は政令で定める日」）。
 6. **§1 power-generation-business の「同じ語の重複（2 レコード）は本便では統合しない」**: 統合していない。差分表は (5)。
 7. **power-generation-business は既にサイトに出ていない**:
-   - `/glossary/power-generation-business` は `src/lib/glossary-301.ts:139` で `generation-business-operator` への 301。この行は 2026-06-26 の `c081b5c` 以前からある。301 元の slug は一覧・関連用語からも外れる（`GLOSSARY_301_SOURCE_SLUGS`）。
+   - `/glossary/power-generation-business` は `src/lib/glossary-301.ts:139` で `generation-business-operator` への 301。この行は 2026-06-26 の `c081b5c` で足された（`git log -S`）。301 元の slug は一覧・関連用語からも外れる（`GLOSSARY_301_SOURCE_SLUGS`）。
    - そのため、本便でこのレコードを直しても読者に見える変化は無い。microCMS のデータとしては直した（GET 照合済み）。
    - 便の「301 や統合は Ck-3 で裁定」の前提は、表示の上ではすでに統合済み。Ck-3 で裁定するのは microCMS のレコードの扱いだけになる。
    - 同じ型の 301 に `specified-wholesale-supply-business` → `specified-wholesale-supply`（同ファイル）がある。その microCMS のレコードは本便では見ていない。
