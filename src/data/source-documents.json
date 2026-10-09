@@ -1734,7 +1734,7 @@
       "title_verbatim": "電気事業法",
       "checked_on": "2026-10-08",
       "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170・elaws.e-gov.go.jp からの 301 を追って HTTP 200・1,340,946 バイト・2026-10-08 16:13 JST）で LawTitle「電気事業法」・LawNum「昭和三十九年法律第百七十号」。第2条第1項第14号〜第16号・第27条の27・第27条の30 と、附則（令和二年六月一二日法律第四九号）第1条・第2条（特定卸供給事業の届出等に関する経過措置）を逐語で確認（本則は T3 台帳便の 12:01 取得分と同一）。法令検索の HTML は JS シェルで <title> が「e-Gov 法令検索」になるため、表題は API の LawTitle を正とした。用語集是正便（2026-10-09）で登録。",
-      "used_in": "glossary/specified-wholesale-supply（shortDef・detail）・glossary/generation-business-operator（shortDef・detail）・src/lib/asset-ledger-spec.ts（台帳の条文番号）"
+      "used_in": "glossary/specified-wholesale-supply（shortDef・detail）・glossary/generation-business-operator（shortDef・detail）・glossary/aggregator・aggregator-business・resource-aggregator・power-generation-business（detail・用語集是正便 2・2026-10-09）・src/lib/asset-ledger-spec.ts（台帳の条文番号）"
     },
     {
       "name": "電気事業法施行規則",
@@ -1743,7 +1743,16 @@
       "title_verbatim": "電気事業法施行規則",
       "checked_on": "2026-10-08",
       "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077・HTTP 200・14,370,285 バイト・2026-10-08 16:13 JST）で LawTitle「電気事業法施行規則」・LawNum「平成七年通商産業省令第七十七号」。第3条の4（発電事業に係る発電等用電気工作物の要件）・第3条の4の3（特定卸供給事業に係る供給能力の要件）を逐語で確認。用語集是正便（2026-10-09）で登録。",
-      "used_in": "glossary/generation-business-operator（shortDef・detail＝規模要件・第3条の4）・glossary/specified-wholesale-supply（shortDef・detail＝規模要件・第3条の4の3）"
+      "used_in": "glossary/generation-business-operator（shortDef・detail＝規模要件・第3条の4）・glossary/specified-wholesale-supply（shortDef・detail＝規模要件・第3条の4の3）・glossary/aggregator・resource-aggregator（第3条の4の3）・power-generation-business（第3条の4）（用語集是正便 2・2026-10-09）"
+    },
+    {
+      "name": "取引会員情報",
+      "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+      "url": "https://www.eprx.or.jp/memberinfo/memberinfo.html",
+      "title_verbatim": "取引会員情報 | 取引会員情報 | 一般社団法人 電力需給調整力取引所",
+      "checked_on": "2026-10-09",
+      "note": "2026-10-09 に curl（ブラウザ UA）で HTTP 200・65,248 バイト。本文の逐語「需給調整市場で取引を行うには取引会員になる必要があります。」。参加申込ページ（https://www.eprx.or.jp/outline/application.html・<title>「需給調整市場の参加申込 | 取引概要 | 一般社団法人 電力需給調整力取引所」）には取引会員資格審査と「取引規程第４条」の記載。用語集是正便 2（2026-10-09）で登録。",
+      "used_in": "glossary/aggregator-business（detail）"
     }
   ]
 }
