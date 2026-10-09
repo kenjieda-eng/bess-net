@@ -24,8 +24,21 @@ import { CAPACITY_MARKET_NATIONAL as CMN, CAPACITY_MARKET_SOURCE_TEXT, yenLabel 
 import { SPOT_SPREAD_REFERENCE as SSR, spreadLabel } from '@/lib/spot-spread-reference';
 import { getScenarioInput } from '@/lib/irr-defaults';
 import { DEPTH_OF_DISCHARGE, PROJECT_LIFETIME_YEARS, ROUND_TRIP_EFFICIENCY } from '@/lib/storage-assumptions';
+// T4 レンダー視点便: 上限価格の区間・出典と商品名はサーバで組み立てて props で渡す（カタログ JSON をクライアントに入れない）
+import { capNoteValues, capRevisionCitationText, capSegments, capSourceLines, CAP_SOURCE_NAME } from '@/lib/balancing-cap';
+import { benchLabels, fiscalYearOfYm } from '@/lib/balancing-benchmark-data';
+import { monthlyCoverageYms } from '@/lib/eprx-monthly';
 
 export const revalidate = 86400; // 24h
+
+// ─── T4: 貸し手の見方の上限価格シナリオ（値と適用期間は balancing-cap.ts の 1 か所から・焼き込まない） ───
+const CAP_SEGMENTS = capSegments();
+const CAP_SOURCE = capSourceLines().join('／');
+const CAP_SOURCE_TEXT = `EPRX「取引実績の取りまとめ結果」${CAP_SOURCE ? `（${CAP_SOURCE}）` : ''}の「落札単価の分布」ページの上限価格表${
+  CAP_SOURCE_NAME ? `（EIC カタログの上限価格系列・カタログの出典表記: ${CAP_SOURCE_NAME}）` : '（EIC カタログの上限価格系列）'
+}${capRevisionCitationText(capNoteValues())}`;
+const COVERAGE_FYS = [...new Set(monthlyCoverageYms().map(fiscalYearOfYm))];
+const PRODUCT_LABELS = benchLabels(COVERAGE_FYS[COVERAGE_FYS.length - 1] ?? 'FY2025');
 
 export const metadata: Metadata = {
   // layout.tsx titleTemplate `%s | 蓄電所ネット` で自動付与 (落とし穴 #86)
@@ -242,6 +255,9 @@ export default function IrrSimulatorPage() {
           </div>
 
           <IRRSimulator
+            capSegments={CAP_SEGMENTS}
+            capSourceText={CAP_SOURCE_TEXT}
+            productLabels={PRODUCT_LABELS}
             capexNrel={capexNrel}
             spotHint={
               SSR.fy !== null

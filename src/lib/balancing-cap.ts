@@ -92,6 +92,33 @@ export function capAt(product: CapProductKey, date: string): number | null {
   return v;
 }
 
+/** 上限価格の区間（同じ値が続く間を 1 つにまとめ、同じ値・同じ期間の商品を束ねたもの）。T4 レンダー視点便 */
+export type CapSegment = { value: number; from: string; to: string | null; products: CapProductKey[] };
+
+/**
+ * 上限価格の区間の一覧（/tools/irr-simulator の上限価格シナリオのボタン・値と適用期間はここから＝焼き込まない）。
+ * capTimeline の点を、値が変わらない間はまとめ（FY2025 の 4/1 に同じ値を置き直す点は区切りにしない）、
+ * 次に値が変わる日の前日を適用の最終日にする（最後の区間は null＝継続中）。今のデータでは 4 区間
+ * （19.51・15.00・10.00＝一次・二次①・複合／7.21＝二次②・三次①）。
+ */
+export function capSegments(): CapSegment[] {
+  const byKey = new Map<string, CapSegment>();
+  for (const p of CAP_PRODUCT_KEYS) {
+    const tl = capTimeline(p);
+    const runs: { value: number; from: string }[] = [];
+    for (const pt of tl) if (runs.length === 0 || runs[runs.length - 1].value !== pt.value) runs.push({ value: pt.value, from: pt.date });
+    runs.forEach((run, i) => {
+      const to = i + 1 < runs.length ? dayBefore(runs[i + 1].from) : null;
+      const key = `${run.value}|${run.from}|${to ?? ''}`;
+      const seg = byKey.get(key);
+      if (seg) seg.products.push(p);
+      else byKey.set(key, { value: run.value, from: run.from, to, products: [p] });
+    });
+  }
+  // 並びは値の大きい順（便の 19.51／15.00／10.00／7.21）。同じ値は適用開始の早い順
+  return [...byKey.values()].sort((a, b) => b.value - a.value || (a.from < b.from ? -1 : a.from > b.from ? 1 : 0));
+}
+
 /** その月の上限（月初・月末・月内の改定日・日数加重）。T1 実装便（/tools/balancing-benchmark・裁定 R4） */
 export type MonthCapValue = { start: number; end: number; changedOn: string | null; effective: number; changeCount: number };
 

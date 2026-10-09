@@ -54,6 +54,15 @@ import {
 // Nv-0c ■1: 容量市場の既定値はカタログ（OCCTO 約定結果の全国加重平均）から。画面の年度ラベル・出所もここから出す
 import { CAPACITY_MARKET_NATIONAL as CMN, yenLabel } from '@/lib/capacity-market-defaults';
 import { DEPTH_OF_DISCHARGE, PROJECT_LIFETIME_YEARS, ROUND_TRIP_EFFICIENCY } from '@/lib/storage-assumptions';
+// T4 レンダー視点便: 節「貸し手の見方」。入力は既存の URL 共有に乗せる（空欄の項目は書かない）
+import LenderView from '@/components/LenderView';
+import {
+  EMPTY_LENDER_INPUT,
+  appendLenderParams,
+  lenderFromParams,
+  type CapSegmentView,
+  type LenderTextInput,
+} from '@/lib/lender-view-calc';
 // ★Nv-0c: スポットの参照値（JEPX 30 分値の日内価差）は page.tsx（サーバ）で計算し、hint 文字列だけを props で受け取る。
 //   ここで src/lib/spot-spread-reference.ts を import すると、日次 539 点 × 2 系列の JSON がクライアントに入り
 //   ページ JS が約 9 kB 増えた（12.6 → 21.6 kB を実測）。
@@ -475,10 +484,19 @@ function NumberField({
 export default function IRRSimulator({
   capexNrel,
   spotHint,
+  capSegments = [],
+  capSourceText = '',
+  productLabels = {},
 }: {
   capexNrel?: CapexNrelData;
   /** スポット高値欄の hint（page.tsx がカタログの日内価差から組み立てる） */
   spotHint?: string;
+  /** T4: 上限価格の区間（page.tsx が balancing-cap.ts の capSegments() から） */
+  capSegments?: CapSegmentView[];
+  /** T4: 上限価格の出典の文（page.tsx が組み立てる） */
+  capSourceText?: string;
+  /** T4: 需給調整の商品名（カタログの名前） */
+  productLabels?: Record<string, string>;
 }) {
   const SPOT_HINT = spotHint ?? SPOT_HINT_FALLBACK;
   // 入力 state: 3 シナリオ別の IRRInput を保持
@@ -499,6 +517,9 @@ export default function IRRSimulator({
     setActivePreset(key);
     setInputs(applyPreset(key));
   };
+
+  // T4: 貸し手の見方の入力（文字列・初期値はすべて空欄）
+  const [lender, setLender] = useState<LenderTextInput>(EMPTY_LENDER_INPUT);
 
   // ★Nv-0c: URL から復元した容量市場・需給調整が、現在の既定値と違うときに画面で知らせる
   const [urlOverride, setUrlOverride] = useState<{ cm: number; an: number } | null>(null);
@@ -521,6 +542,7 @@ export default function IRRSimulator({
         ...prev,
         standard: paramsToInput(sp, prev.standard),
       }));
+      setLender(lenderFromParams(sp));
     }
     setHydrated(true);
   }, []);
@@ -528,13 +550,13 @@ export default function IRRSimulator({
   // 入力変更時に URL を更新 (history.replaceState、history 汚染なし)
   useEffect(() => {
     if (!hydrated || typeof window === 'undefined') return;
-    const sp = inputToParams(inputs.standard);
+    const sp = appendLenderParams(inputToParams(inputs.standard), lender);
     const qs = sp.toString();
     const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
     if (window.location.pathname + window.location.search !== newUrl) {
       window.history.replaceState(null, '', newUrl);
     }
-  }, [inputs.standard, hydrated]);
+  }, [inputs.standard, lender, hydrated]);
 
   // 計算結果 (memo、入力変更時のみ再計算)
   const results = useMemo<Record<ScenarioKey, IRRResult>>(() => ({
@@ -579,7 +601,7 @@ export default function IRRSimulator({
   };
 
   const handleShareUrl = async () => {
-    const sp = inputToParams(inputs.standard);
+    const sp = appendLenderParams(inputToParams(inputs.standard), lender);
     const qs = sp.toString();
     const url = `${window.location.origin}${window.location.pathname}${qs ? `?${qs}` : ''}`;
     try {
@@ -1298,6 +1320,16 @@ export default function IRRSimulator({
           </tbody>
         </table>
       </div>
+
+      {/* T4 レンダー視点便: 貸し手の見方（既存の結果の下・別の節。既存の結果は変えない） */}
+      <LenderView
+        inputs={inputs}
+        lender={lender}
+        onLenderChange={setLender}
+        capSegments={capSegments}
+        capSourceText={capSourceText}
+        productLabels={productLabels}
+      />
 
       {/* エクスポート + 共有 */}
       <div

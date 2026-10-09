@@ -196,6 +196,39 @@ export function calcIRR(input: IRRInput): number | null {
 }
 
 /**
+ * キャッシュフロー列（円・[0] は初期投資の負値・[t] は t 年目）の NPV（億円）。T4 レンダー視点便（2026-10-09）。
+ * ★calcNPV と同じ足し算の並び（初期投資から始めて t=1.. を割り引いて足し、最後に 1e8 で割る）。
+ *   [0] に calcNPV と同じ初期投資・[t] に annualCashflowYen をそのまま入れれば calcNPV とビット一致する
+ *   （scripts/verify-lender-view.ts の恒等式「借入 0・保険料 0 でエクイティ IRR ＝ プロジェクト IRR」）。
+ */
+export function npvFromCashflowsYen(cashflowsYen: readonly number[], r: number): number {
+  let npv_yen = cashflowsYen[0] ?? 0;
+  for (let t = 1; t < cashflowsYen.length; t++) {
+    npv_yen += cashflowsYen[t] / Math.pow(1 + r, t);
+  }
+  return npv_yen / 1e8;
+}
+
+/**
+ * キャッシュフロー列の IRR（%）。calcIRR と同じ探索区間・同じ二分法（bisection）。解なしは null。
+ * エクイティ IRR（投下資本＝CAPEX×(1−補助率)−借入額・CF＝営業 CF−保険料−元利払い）に使う（T4）。
+ */
+export function irrFromCashflowsYen(cashflowsYen: readonly number[]): number | null {
+  const f = (r: number): number => npvFromCashflowsYen(cashflowsYen, r);
+  const lo_init = -0.5;
+  const hi_init = 2.0;
+  const f_lo = f(lo_init);
+  const f_hi = f(hi_init);
+  if (f_lo * f_hi > 0) {
+    const f_extra_lo = f(-0.99);
+    const f_extra_hi = f(5.0);
+    if (f_extra_lo * f_extra_hi > 0) return null;
+    return bisection(f, -0.99, 5.0);
+  }
+  return bisection(f, lo_init, hi_init);
+}
+
+/**
  * Bisection 法 (二分法)
  * f(lo) と f(hi) が異符号であることが前提
  * 100 回反復で 1e-6 精度を確保
