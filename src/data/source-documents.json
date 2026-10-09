@@ -1726,6 +1726,24 @@
       "checked_on": "2026-10-06",
       "note": "projects 便 Day5（2026-10-06）。素の UA・Chrome UA とも HTTP 200・本文同一（133,739 bytes）。。逐語「蓄電所の資産は合同会社が保有し」（霧島蓄電所の節）。",
       "used_in": "projects/kirishima-bess（body）"
+    },
+    {
+      "name": "電気事業法",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和三十九年法律第百七十号",
+      "url": "https://laws.e-gov.go.jp/law/339AC0000000170",
+      "title_verbatim": "電気事業法",
+      "checked_on": "2026-10-08",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170・elaws.e-gov.go.jp からの 301 を追って HTTP 200・1,340,946 バイト・2026-10-08 16:13 JST）で LawTitle「電気事業法」・LawNum「昭和三十九年法律第百七十号」。第2条第1項第14号〜第16号・第27条の27・第27条の30 と、附則（令和二年六月一二日法律第四九号）第1条・第2条（特定卸供給事業の届出等に関する経過措置）を逐語で確認（本則は T3 台帳便の 12:01 取得分と同一）。法令検索の HTML は JS シェルで <title> が「e-Gov 法令検索」になるため、表題は API の LawTitle を正とした。用語集是正便（2026-10-09）で登録。",
+      "used_in": "glossary/specified-wholesale-supply（shortDef・detail）・glossary/generation-business-operator（shortDef・detail）・src/lib/asset-ledger-spec.ts（台帳の条文番号）"
+    },
+    {
+      "name": "電気事業法施行規則",
+      "publisher": "e-Gov 法令検索（デジタル庁）・平成七年通商産業省令第七十七号",
+      "url": "https://laws.e-gov.go.jp/law/407M50000400077",
+      "title_verbatim": "電気事業法施行規則",
+      "checked_on": "2026-10-08",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077・HTTP 200・14,370,285 バイト・2026-10-08 16:13 JST）で LawTitle「電気事業法施行規則」・LawNum「平成七年通商産業省令第七十七号」。第3条の4（発電事業に係る発電等用電気工作物の要件）・第3条の4の3（特定卸供給事業に係る供給能力の要件）を逐語で確認。用語集是正便（2026-10-09）で登録。",
+      "used_in": "glossary/generation-business-operator（shortDef・detail＝規模要件・第3条の4）・glossary/specified-wholesale-supply（shortDef・detail＝規模要件・第3条の4の3）"
     }
   ]
 }
