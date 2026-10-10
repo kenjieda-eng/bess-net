@@ -123,6 +123,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/tools/lcoe-lcos`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     // T3 台帳便（2026-10-08）: 系統用蓄電所 資産台帳テンプレート（xlsx 配布ページ）
     { url: `${siteConfig.url}/tools/asset-ledger`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    // T2 実装便（2026-10-10）: 蓄電所 評価軸セルフチェック
+    { url: `${siteConfig.url}/tools/asset-check`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     // Sprint 4 後半 (業界分析 4ハブ集約 index)
     { url: `${siteConfig.url}/industry`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 5 開始準備 (業界レポート2026 プレビュー版)

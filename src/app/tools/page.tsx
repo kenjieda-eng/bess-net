@@ -17,6 +17,7 @@ import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults'
 // ATB の年はカタログ（蓄電池 CAPEX 系列の版）から。焼き込むと版の着地で取り残される（2026-10-02 ATB 2025 追随）
 import { ATB_BATTERY_LABEL } from '@/lib/nrel-atb-reference';
 import { ledgerSheetLabels, LEDGER_SHEETS, LEDGER_CHECKLIST_ITEMS } from '@/lib/asset-ledger-spec';
+import { ASSET_CHECK_AXES, ASSET_CHECK_QUESTIONS } from '@/data/asset-check-questions';
 // T1 実装便: 入札ベンチマークの範囲（月数・期間）はカタログの月次から（焼き込まない）
 import { monthlyCoverageYms } from '@/lib/eprx-monthly';
 import { CAP_NEAR_RATIO } from '@/lib/balancing-benchmark-calc';
@@ -120,6 +121,15 @@ const tools = [
     available: true,
     description:
       `${ledgerSheetLabels()}の記録を 1 ファイルにまとめる xlsx テンプレート（記録用 ${LEDGER_RECORD_SHEETS} シート）。売却や借入の相談で確かめられそうな ${LEDGER_CHECKLIST_COUNT} 項目の一覧つき。入力データは当サイトに送られません。`,
+  },
+  {
+    // T2 実装便（2026-10-10）: 評価軸セルフチェック。問数・軸数は定義（src/data/asset-check-questions.ts）から
+    slug: 'asset-check',
+    title: '蓄電所 評価軸セルフチェック',
+    badge: '棚卸し・ブラウザ内・保存しない',
+    available: true,
+    description:
+      `系統用蓄電所の買い手・貸し手・保険者が確かめる項目を、${ASSET_CHECK_AXES.map((a) => a.label).join('／')}の ${ASSET_CHECK_AXES.length} 軸 ${ASSET_CHECK_QUESTIONS.length} 問で棚卸し。軸ごとの整備済みの割合と、未整備の問いの「次にやること」と一次。評価・格付けではありません。入力は保存も送信もしません。`,
   },
 ];
 

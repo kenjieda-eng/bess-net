@@ -8,6 +8,15 @@
       "url": "https://www.eprx.or.jp/information/post.php",
       "title_verbatim": "上限価格 | 取引情報 | 一般社団法人 電力需給調整力取引所",
       "checked_on": "2026-09-20",
+      "pdf": {
+        "url": "https://www.eprx.or.jp/information/docs/14b85fbe8942da7d3bdddda80243e7e170f64d9e.pdf",
+        "title_verbatim": "需給調整市場のΔkW上限価格について",
+        "date": "2026-07-30",
+        "bytes": 217685,
+        "sha256": "06f84fe90ea852335c12ca35db613f700e36f72051953de758d5046471431d4a",
+        "checked_on": "2026-10-10",
+        "note": "上限価格ページに掲載の PDF（リンク文字「需給調整市場のΔkW上限価格について［212.6 KB］」）。2026-10-10 17:01 JST に取得して 217,685 バイト・sha256 が R-30 §2（リン・10/8）の記録と一致。表の行「2026年07月30日 2026年08月31日 2026年09月01日 当面の間 10.00 10.00 10.00 7.21 7.21 上限無し」。PDF はリポジトリに置かない。T2 実装便（2026-10-10）で追記。"
+      },
       "used_in": "explainer/balancing-price-cap-10yen-explainer.sources / explainer/balancing-price-cap-10yen-explainer.body / src/lib/balancing-cap.ts（CAP_REVISIONS_NOT_IN_CATALOG・/tools/balancing-revenue 出典欄）"
     },
     {
@@ -290,7 +299,16 @@
       "url": "https://www.occto.or.jp/news/013102.html",
       "title_verbatim": "「容量市場 長期脱炭素電源オークション募集要綱（応札年度：2026年度）」及び「長期脱炭素電源オークション 容量確保契約約款」の公表について｜電力広域的運営推進機関",
       "checked_on": "2026-09-21",
-      "used_in": "policy-events/ltdc-2026-boshuyoukou-kouhyou-2026-09.description"
+      "used_in": "policy-events/ltdc-2026-boshuyoukou-kouhyou-2026-09.description / src/data/asset-check-questions.ts（/tools/asset-check）＝A1・A2（A3 の他の一次）",
+      "pdf": {
+        "url": "https://www.occto.or.jp/assets/260902_boshuyoukou_long_2026.pdf",
+        "title_verbatim": "容量市場 長期脱炭素電源オークション募集要綱 （応札年度：２０２６年度） 2026 年 9 月 2 日 電力広域的運営推進機関",
+        "date": "2026-09-02",
+        "bytes": 2767941,
+        "sha256": "0921d4b89dc8becad5cb615e2e352100ffba159f756b7498591b7905937c3c5f",
+        "checked_on": "2026-10-10",
+        "note": "公表ページ（news/013102.html）の募集要綱の PDF。2026-10-10 17:59 JST に取得（HTTP 200）。表題は PDF 1 ページ目（pdftotext）。/tools/asset-check の A1・A2 がこの PDF の様式４を一次にしている。T2 実装便（2026-10-10）で追記。"
+      }
     },
     {
       "name": "蓄電池・電源産業戦略",
@@ -574,7 +592,7 @@
       "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
       "title_verbatim": "取引ガイド （全商品） 2026年 7月 1日 第10版（PDF 1頁）",
       "checked_on": "2026-09-22",
-      "used_in": "explainer/balancing-market-practical.sources（A11-2-16-b）"
+      "used_in": "explainer/balancing-market-practical.sources（A11-2-16-b） / src/data/asset-check-questions.ts（/tools/asset-check）＝E7（E3 の他の一次）"
     },
     {
       "name": "需給調整市場の参加申込",
@@ -1114,7 +1132,8 @@
       "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/004/pdf/hatsuden.pdf",
       "title_verbatim": "発電事業について",
       "checked_on": "2026-09-27",
-      "note": "curl で HTTP 200（application/pdf・800,610 バイト）。PDF 1頁目（全7頁）の逐語は「発電事業について／令和５年５月／資源エネルギー庁」。"
+      "note": "curl で HTTP 200（application/pdf・800,610 バイト）。PDF 1頁目（全7頁）の逐語は「発電事業について／令和５年５月／資源エネルギー庁」。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check）＝H1 の他の一次・H1 の文中の資料名"
     },
     {
       "name": "系統情報の公表の考え方",
@@ -1122,7 +1141,8 @@
       "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/keitou_kangaekata_20260401.pdf",
       "title_verbatim": "系統情報の公表の考え方（令和８年４月）",
       "checked_on": "2026-09-27",
-      "note": "PDF 実体（567,786 バイト・%PDF-1.7）の文書プロパティ /Title の逐語。掲載ページ「関係法令・ガイドライン等」（<title>「関係法令・ガイドライン等｜資源エネルギー庁」）のリンク文言は「系統情報の公表の考え方（令和8年4月改定）（PDF形式：554KB）」。Lc-3 が参照した令和6年12月改定版（keitou_kangaekata_20241209.pdf）は現行ページから差し替わっているため最新版の URL を登録した。発行元は OCCTO ではなく資源エネルギー庁 電力・ガス事業部（Lc-3 の是正どおり）。curl は HTTP 202／本文0バイトで取得できず、ブラウザで enecho.meti.go.jp オリジンから fetch して PDF 実体を取得した。"
+      "note": "PDF 実体（567,786 バイト・%PDF-1.7）の文書プロパティ /Title の逐語。掲載ページ「関係法令・ガイドライン等」（<title>「関係法令・ガイドライン等｜資源エネルギー庁」）のリンク文言は「系統情報の公表の考え方（令和8年4月改定）（PDF形式：554KB）」。Lc-3 が参照した令和6年12月改定版（keitou_kangaekata_20241209.pdf）は現行ページから差し替わっているため最新版の URL を登録した。発行元は OCCTO ではなく資源エネルギー庁 電力・ガス事業部（Lc-3 の是正どおり）。curl は HTTP 202／本文0バイトで取得できず、ブラウザで enecho.meti.go.jp オリジンから fetch して PDF 実体を取得した。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check）＝D7（D5 の他の一次）"
     },
     {
       "name": "蓄電池",
@@ -1146,7 +1166,8 @@
       "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/denryokucyozousouchi.html",
       "title_verbatim": "電力貯蔵装置（蓄電池）・蓄電所を設置する場合の手引き（METI/経済産業省）",
       "checked_on": "2026-09-27",
-      "note": "curl で HTTP 200（506,221 バイト）。<h1> も逐語一致。Ck-2 unconf-row1（explainer/bess-epc-selection.sources の「経済産業省「電気事業法に基づく工事計画」」＝実在しない名称）の差し替え先。"
+      "note": "curl で HTTP 200（506,221 バイト）。<h1> も逐語一致。Ck-2 unconf-row1（explainer/bess-epc-selection.sources の「経済産業省「電気事業法に基づく工事計画」」＝実在しない名称）の差し替え先。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check）＝H4・H5・E6 の他の一次・H5 の文中の資料名"
     },
     {
       "name": "【2025年最新版】BESS(系統用蓄電所)に最適な土地条件と選定ポイント",
@@ -1737,7 +1758,7 @@
       "title_verbatim": "電気事業法",
       "checked_on": "2026-10-08",
       "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170・elaws.e-gov.go.jp からの 301 を追って HTTP 200・1,340,946 バイト・2026-10-08 16:13 JST）で LawTitle「電気事業法」・LawNum「昭和三十九年法律第百七十号」。第2条第1項第14号〜第16号・第27条の27・第27条の30 と、附則（令和二年六月一二日法律第四九号）第1条・第2条（特定卸供給事業の届出等に関する経過措置）を逐語で確認（本則は T3 台帳便の 12:01 取得分と同一）。法令検索の HTML は JS シェルで <title> が「e-Gov 法令検索」になるため、表題は API の LawTitle を正とした。用語集是正便（2026-10-09）で登録。",
-      "used_in": "glossary/specified-wholesale-supply（shortDef・detail）・glossary/generation-business-operator（shortDef・detail）・glossary/aggregator・aggregator-business・resource-aggregator・power-generation-business（detail・用語集是正便 2・2026-10-09）・src/lib/asset-ledger-spec.ts（台帳の条文番号）"
+      "used_in": "glossary/specified-wholesale-supply（shortDef・detail）・glossary/generation-business-operator（shortDef・detail）・glossary/aggregator・aggregator-business・resource-aggregator・power-generation-business（detail・用語集是正便 2・2026-10-09）・src/lib/asset-ledger-spec.ts（台帳の条文番号） / src/data/asset-check-questions.ts（/tools/asset-check）＝H1・H3・H4・H5"
     },
     {
       "name": "電気事業法施行規則",
@@ -1830,7 +1851,7 @@
         "国住指第4846号"
       ],
       "note": "HTTP 200・67,326 バイト・2026-10-10 14:58 JST。記の本文（土地に自立し、必要最小限の空間のみ・稼働時は無人・機器の重大な障害発生時等を除き人が立ち入らないコンテナは建築物に該当しない。複数積み重ねる場合は建築物）を逐語で確認。fire-risk-check 是正便（2026-10-10）で登録。",
-      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）"
+      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文） / src/data/asset-check-questions.ts（/tools/asset-check）＝A6"
     },
     {
       "name": "JIS C 8715-2:2024 産業用リチウム二次電池の単電池及び電池システム―第２部：安全性要求事項",
@@ -1843,6 +1864,222 @@
       ],
       "note": "HTTP 200・87,761 バイト・2026-10-10。発行年月日 2024-03-21・状態「有効」。電技解釈 第44条の2 が名指しする規格。旧 pcs-2 の「JIS C 8980」は同じ Webdesk で「JIS C 8980:2020 小出力太陽光発電用パワーコンディショナ」（定格出力 50kW 未満の太陽光発電システム用 PCS）と確認し、蓄電所の PCS の規格ではないので選択肢から外した。fire-risk-check 是正便（2026-10-10）で登録。",
       "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）・src/app/tools/fire-risk-check/page.tsx"
+    },
+    {
+      "name": "民法",
+      "publisher": "e-Gov 法令検索（デジタル庁）・明治二十九年法律第八十九号",
+      "url": "https://laws.e-gov.go.jp/law/129AC0000000089",
+      "title_verbatim": "民法",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/129AC0000000089・HTTP 200・1,775,381 バイト・2026-10-10 17:04:51 JST）で LawTitle「民法」・LawNum「明治二十九年法律第八十九号」。第604条・第612条・第621条・第622条・第599条・第269条を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝F7・F8"
+    },
+    {
+      "name": "建設業法",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和二十四年法律第百号",
+      "url": "https://laws.e-gov.go.jp/law/324AC0000000100",
+      "title_verbatim": "建設業法",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000100・HTTP 200・568,209 バイト・2026-10-10 17:04:55 JST）で LawTitle「建設業法」・LawNum「昭和二十四年法律第百号」。第3条・第19条・第40条の3を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝B3・B4"
+    },
+    {
+      "name": "水防法",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和二十四年法律第百九十三号",
+      "url": "https://laws.e-gov.go.jp/law/324AC0000000193",
+      "title_verbatim": "水防法",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000193・HTTP 200・228,422 バイト・2026-10-10 17:04:58 JST）で LawTitle「水防法」・LawNum「昭和二十四年法律第百九十三号」。第14条〜第15条を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝C2"
+    },
+    {
+      "name": "建設業法施行規則",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和二十四年建設省令第十四号",
+      "url": "https://laws.e-gov.go.jp/law/324M50004000014",
+      "title_verbatim": "建設業法施行規則",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/324M50004000014・HTTP 200・16,041,809 バイト・2026-10-10 17:05:05 JST）で LawTitle「建設業法施行規則」・LawNum「昭和二十四年建設省令第十四号」。第26条第5項第1号・第28条第2項を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝B6"
+    },
+    {
+      "name": "電気関係報告規則",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和四十年通商産業省令第五十四号",
+      "url": "https://laws.e-gov.go.jp/law/340M50000400054",
+      "title_verbatim": "電気関係報告規則",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054・HTTP 200・15,411,677 バイト・2026-10-10 17:05:15 JST）で LawTitle「電気関係報告規則」・LawNum「昭和四十年通商産業省令第五十四号」。第2条（定期報告）・第3条（事故報告）を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝E6（E1 の他の一次）"
+    },
+    {
+      "name": "騒音規制法",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和四十三年法律第九十八号",
+      "url": "https://laws.e-gov.go.jp/law/343AC0000000098",
+      "title_verbatim": "騒音規制法",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000098・HTTP 200・98,354 バイト・2026-10-10 17:05:19 JST）で LawTitle「騒音規制法」・LawNum「昭和四十三年法律第九十八号」。第2条・第3条・第5条を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝C6（A5 の他の一次）"
+    },
+    {
+      "name": "都市計画法",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和四十三年法律第百号",
+      "url": "https://laws.e-gov.go.jp/law/343AC0000000100",
+      "title_verbatim": "都市計画法",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000100・HTTP 200・736,251 バイト・2026-10-10 17:05:22 JST）で LawTitle「都市計画法」・LawNum「昭和四十三年法律第百号」。第7条・第14条・第20条を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝C1"
+    },
+    {
+      "name": "土砂災害警戒区域等における土砂災害防止対策の推進に関する法律",
+      "publisher": "e-Gov 法令検索（デジタル庁）・平成十二年法律第五十七号",
+      "url": "https://laws.e-gov.go.jp/law/412AC0000000057",
+      "title_verbatim": "土砂災害警戒区域等における土砂災害防止対策の推進に関する法律",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/412AC0000000057・HTTP 200・99,629 バイト・2026-10-10 17:05:26 JST）で LawTitle「土砂災害警戒区域等における土砂災害防止対策の推進に関する法律」・LawNum「平成十二年法律第五十七号」。第7条・第8条・第9条を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝C3"
+    },
+    {
+      "name": "保険法",
+      "publisher": "e-Gov 法令検索（デジタル庁）・平成二十年法律第五十六号",
+      "url": "https://laws.e-gov.go.jp/law/420AC0000000056",
+      "title_verbatim": "保険法",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/420AC0000000056・HTTP 200・181,411 バイト・2026-10-10 17:05:30 JST）で LawTitle「保険法」・LawNum「平成二十年法律第五十六号」。第6条・第9条・第19条を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝G1"
+    },
+    {
+      "name": "津波防災地域づくりに関する法律",
+      "publisher": "e-Gov 法令検索（デジタル庁）・平成二十三年法律第百二十三号",
+      "url": "https://laws.e-gov.go.jp/law/423AC0000000123",
+      "title_verbatim": "津波防災地域づくりに関する法律",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/423AC0000000123・HTTP 200・245,154 バイト・2026-10-10 17:05:33 JST）で LawTitle「津波防災地域づくりに関する法律」・LawNum「平成二十三年法律第百二十三号」。第8条・第53条を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝C4"
+    },
+    {
+      "name": "有価証券報告書（内国投資証券）第12期",
+      "publisher": "東京インフラ・エネルギー投資法人（EDINET・2024年3月28日提出）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100T65O.pdf",
+      "title_verbatim": "有価証券報告書（内国投資証券）第12期（自2023年7月1日 至2023年12月31日）東京インフラ・エネルギー投資法人",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・2,759,296 バイト・2026-10-10 17:04:48 JST。表紙（pypdf）「【提出書類】 有価証券報告書」「【計算期間】 第12期（自2023年7月1日 至2023年12月31日）」「【発行者名】 東京インフラ・エネルギー投資法人」。PDF のメタデータに表題は無い。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝G4（G1 の他の一次）"
+    },
+    {
+      "name": "接続検討申込および系統連系申込に必要な様式および資料【高圧】",
+      "publisher": "東北電力ネットワーク株式会社",
+      "url": "https://nw.tohoku-epco.co.jp/consignment/request/emit/pdf/zz1.pdf",
+      "title_verbatim": "接続検討申込および系統連系申込に必要な様式および資料 【高圧】",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・152,056 バイト・2026-10-10 17:05:35 JST。PDF 1 ページ目の表題。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝B7"
+    },
+    {
+      "name": "令和７年度補正 系統用蓄電システム等導入支援事業 公募要領",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/chikudenchi07r/uploads/R7r_kess_kouboyouryou.pdf",
+      "title_verbatim": "令和７年度補正 再生可能エネルギー導入拡大・系統用蓄電池等電力貯蔵システム導入支援事業費補助金 系統用蓄電システム等導入支援事業 公募要領 2026年9月",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・1,511,280 バイト・2026-10-10 17:05:37 JST。PDF 1 ページ目の表題（pdftotext）。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝A5（A2・A3 の他の一次）"
+    },
+    {
+      "name": "浜松市適正な蓄電池設備の設置等に関する要綱",
+      "publisher": "浜松市",
+      "url": "https://www.city.hamamatsu.shizuoka.jp/documents/13411/youkou.pdf",
+      "title_verbatim": "浜松市適正な蓄電池設備の設置等に関する要綱",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・182,134 バイト・2026-10-10 17:05:40 JST。PDF 1 ページ目の表題。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝H8"
+    },
+    {
+      "name": "企業費用・利益総合保険のご案内",
+      "publisher": "三井住友海上火災保険株式会社",
+      "url": "https://www.ms-ins.com/pdf/business/cost/kigyo-hiyou.pdf",
+      "title_verbatim": "２０１７年１０月１日以降始期契約用 企業費用・利益総合保険のご案内",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・2,573,411 バイト・2026-10-10 17:07:18 JST。PDF 1 ページ目の表題（2017年10月1日以降始期契約用＝旧い版。現行商品と異なりうる）。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝G2・G5"
+    },
+    {
+      "name": "流通設備の整備計画の策定（送配電等業務指針第５５条関連）におけるＮ－１電制の考え方について",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/access/oshirase/2018/files/20250123_n-1densei.pdf",
+      "title_verbatim": "流通設備の整備計画の策定（送配電等業務指針 第５５条関連）におけるＮ－１電制の考え方について（2018 年 10 月 1 日 作成・2025 年 1 月 23 日 変更）",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・7,723,684 バイト・2026-10-10 17:07:23 JST。PDF 1 ページ目の表題。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝D4"
+    },
+    {
+      "name": "送配電等業務指針",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/occto/article/index/shishin2608.pdf",
+      "title_verbatim": "送配電等業務指針（平成２７年４月２８日施行・令和８年８月１日変更）",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・794,965 バイト・2026-10-10 17:07:25 JST。PDF 1 ページ目の表題。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝D2（D1 の他の一次）"
+    },
+    {
+      "name": "系統の接続および利用ルールについて ～ノンファーム型接続～",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/grid/assets/NF_setuzokuriyou_20260710.pdf",
+      "title_verbatim": "系統の接続および利用ルールについて ～ノンファーム型接続～（作成：2020年12月25日・更新：2024年 7月 1日）",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・5,865,946 バイト・2026-10-10 17:07:28 JST。PDF 1 ページ目の表題（ファイル名の日付 20260710 と表紙の更新日 2024年7月1日は一致しない）。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝D5"
+    },
+    {
+      "name": "発電設備等系統アクセスの流れ",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/institution/access/kentou/access_process.html",
+      "title_verbatim": "発電設備等系統アクセスの流れ｜電力広域的運営推進機関",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・52,258 バイト・2026-10-10 17:07:30 JST。<title> の逐語。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝D1"
+    },
+    {
+      "name": "企業財産のリスク",
+      "publisher": "一般社団法人 日本損害保険協会（企業のための保険ナビ）",
+      "url": "https://www.sonpo.or.jp/sme_insurance/corporate-property/",
+      "title_verbatim": "企業財産のリスク | 企業のための保険ナビ | 日本損害保険協会",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・27,881 バイト・2026-10-10 17:07:32 JST。<title> の逐語。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝G3（G1・G4 の他の一次）"
+    },
+    {
+      "name": "特定卸供給事業者一覧",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html",
+      "title_verbatim": "特定卸供給事業者一覧｜資源エネルギー庁",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・49,398 バイト・2026-10-10 17:59:58 JST。<title> の逐語。本文の見出し「特定卸供給事業届出事業者一覧（2026年9月30日時点）」。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check）＝H3（設問の文・次にやること）"
+    },
+    {
+      "name": "わがまちハザードマップ",
+      "publisher": "国土交通省・国土地理院（ハザードマップポータルサイト）",
+      "url": "https://disaportal.gsi.go.jp/hazardmap/index.html",
+      "title_verbatim": "わがまちハザードマップ",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・9,197 バイト・2026-10-10 17:59:58 JST。<title> の逐語（ハザードマップポータルサイト https://disaportal.gsi.go.jp/ の <title> は「ハザードマップポータルサイト」）。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check）＝C2（次にやること）"
+    },
+    {
+      "name": "事業中断・利益減少のリスク",
+      "publisher": "一般社団法人 日本損害保険協会（企業のための保険ナビ）",
+      "url": "https://www.sonpo.or.jp/sme_insurance/business-interruption/",
+      "title_verbatim": "事業中断・利益減少のリスク | 企業のための保険ナビ | 日本損害保険協会",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・23,702 バイト・2026-10-10 17:59:58 JST。<title> の逐語。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check）＝G4 の他の一次"
+    },
+    {
+      "name": "休業に関する補償 お支払いする主な保険金と算出方法",
+      "publisher": "東京海上日動火災保険株式会社（超ビジネス保険）",
+      "url": "https://www.tokiomarine-nichido.co.jp/hojin/jigyo/cho_business/hosho/kyugyo_tokucho04.html",
+      "title_verbatim": "休業に関する補償 お支払いする主な保険金と算出方法 | 超ビジネス保険 | 東京海上日動火災保険",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・35,546 バイト・2026-10-10 17:59:59 JST。<title> の逐語。T2 実装便（2026-10-10）で登録。",
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check）＝G5 の他の一次"
     }
   ]
 }
