@@ -1,0 +1,4687 @@
+{
+ "meta": {
+  "brief": "T2_設問研究便_蓄電所評価軸セルフチェック_8軸の設問候補と一次_読取のみ_Claude_Code投入_2026-10-09起草_ユウ.md",
+  "made": "2026-10-10",
+  "research_run": "wf_9d833588-3ed",
+  "verify_run": "wf_37e7d6c9-913",
+  "counts": {
+   "candidates": 64,
+   "selected": 40,
+   "reserve": 24,
+   "dropped": 86
+  },
+  "scoring": {
+   "yes": 1,
+   "unknown": 0.5,
+   "no": 0,
+   "not_applicable": "excluded from numerator and denominator"
+  }
+ },
+ "questions": [
+  {
+   "id": "A1",
+   "axis": "A",
+   "axis_label": "設備",
+   "question": "セル・モジュール・電池システム・蓄電システム・BMS（電池管理システム）・EMS（エネルギー管理システム）・PCS（パワーコンディショナ）の部位ごとに、メーカー名と型番（型番の無い部位はその旨）を書いた一覧が手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト",
+   "answer_note": null,
+   "why": "長期脱炭素電源オークションの様式４（蓄電池に係る事業計画）は、セルから PCS までの部位ごとにメーカー名と型番を書かせ、登録時の内容が変わる場合は落札後に計画を出し直して審査に合格するよう求めている。当サイトの資産台帳も、セルと PCS のメーカー・型式を売却時に聞かれる項目に挙げている（並びは当サイトの想定）。",
+   "next_action": "EPC かメーカーに、部位ごとのメーカー名と型番の一覧（様式４の「２．導入予定の蓄電池のメーカー・型番」と同じ項目立て）を求める",
+   "primary": {
+    "name": "容量市場 長期脱炭素電源オークション募集要綱（応札年度：2026年度）様式４ 蓄電池に係る事業計画",
+    "issuer": "電力広域的運営推進機関（OCCTO）",
+    "url": "https://www.occto.or.jp/assets/260902_boshuyoukou_long_2026.pdf",
+    "where": "PDF 59 頁・様式４ 冒頭の注記（同頁の「２．導入予定の蓄電池のメーカー・型番」から PDF 61 頁まで、セル・モジュール・電池システム・蓄電システム・BMS・EMS・PCS のメーカー名・型番欄）",
+    "quote": "電源等情報登録時に提出した以下の２～９の内容に変更が生じた場合には、落札後に再度本計画を提出し、以下の審査に合格しない限り変更は認められない。",
+    "verified": "ws-only",
+    "http_status": "200",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同 様式４ ２．の見出し",
+     "url": "https://www.occto.or.jp/assets/260902_boshuyoukou_long_2026.pdf",
+     "where": "PDF 59 頁",
+     "quote": "２．導入予定の蓄電池のメーカー・型番",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 様式４ ２．（型番が無い場合）",
+     "url": "https://www.occto.or.jp/assets/260902_boshuyoukou_long_2026.pdf",
+     "where": "PDF 59 頁",
+     "quote": "型番が存在しない場合は、記載は不要です。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳テンプレートの定義 08_売却時に聞かれる項目",
+     "url": "src/lib/asset-ledger-spec.ts:364-365",
+     "where": "LEDGER_CHECKLIST_ITEMS（364 行・365 行）",
+     "quote": "セルのメーカー・型式・化学",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       364,
+       365
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "当サイト 資産台帳テンプレートの定義 02_設備（EMS の列）",
+     "url": "src/lib/asset-ledger-spec.ts:194",
+     "where": "LEDGER_SHEETS 02_設備「EMS（メーカー/版）」",
+     "quote": "EMS の提供者とソフトウェアの版",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       194
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "market-operator-rule（長期脱炭素電源オークションの応札者向けの様式）＋site-definition",
+   "fire_risk_overlap": "一部: cell-3（セル供給メーカーの区分を点数で問う）。本問は部位ごとのメーカー名・型番が書類にあるかだけを問い、メーカーの良し悪しは問わない。重複にはならない",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "設問の文末が「一覧（または構成図）で確かめられる」になっていた。棚卸しの形の「一覧が手元にある」に直した",
+    "英字の略語（BMS・EMS・PCS）に日本語を添えた",
+    "様式４ には「型番が存在しない場合は、記載は不要」とあるので、設問に「型番の無い部位はその旨」を足した",
+    "primary の引用は変更の管理（再提出と審査）の文で、部位ごとの記載を求めることを直接示すのは見出し「２．導入予定の蓄電池のメーカー・型番」。見出しの文を other_primaries に足した",
+    "why の「登録後に内容を変えるには再審査への合格が要る」は、一次では「登録時の内容に変更が生じた場合、落札後に計画を再提出し審査に合格しない限り変更は認められない」。この文に寄せて書き直した。様式４ は応札者が出す書類なので、全サイトの義務ではない（why もその範囲で書いた）"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "A2",
+   "axis": "A",
+   "axis_label": "設備",
+   "question": "BMS（電池管理システム）・EMS（エネルギー管理システム）・PCS（パワーコンディショナ）など制御システムの主要な機器について、JC-STAR（IoT 製品のセキュリティ適合ラベル制度）★1 の適合ラベルの登録番号と、機器と取得内容の対応を示すシステム構成図が手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "長期脱炭素電源オークションに応札した蓄電所、または SII の系統用蓄電システム等導入支援事業（令和7年度補正）の補助を受ける蓄電所。それ以外の蓄電所については、JC-STAR の書類を出すよう定めた一次は見つかっていない",
+   "answer_note": null,
+   "why": "長期脱炭素電源オークションの様式４ ６．と SII 補助金の公募要領 1-6 ⑨ は、BMS・PCS・EMS などの JC-STAR ★1 の適合ラベルと、機器と取得内容の整合を示すシステム構成図を出すよう求めている。様式４ ２．にも BMS・EMS・PCS ごとに「JC-STAR 適合ラベル登録番号」の欄がある。",
+   "next_action": "BMS・EMS・PCS の各メーカーから JC-STAR ★1 の適合ラベルの登録番号を受け取り、機器と取得内容の対応を示すシステム構成図を EPC に作ってもらう",
+   "primary": {
+    "name": "容量市場 長期脱炭素電源オークション募集要綱（応札年度：2026年度）様式４ ６．セキュリティ対策 ①",
+    "issuer": "電力広域的運営推進機関（OCCTO）",
+    "url": "https://www.occto.or.jp/assets/260902_boshuyoukou_long_2026.pdf",
+    "where": "PDF 62 頁・様式４ ６．セキュリティ対策 ①（②は IP 通信機能の無い機器の扱い、③はシステム構成図。①〜③は添付資料７）。様式４ ２．の BMS・EMS・PCS 欄は PDF 60〜61 頁",
+    "quote": "導入する蓄電システムが採用するすべての制御システムのセキュリティに関する主要な構成製品（BMS, PCS, EMS 等※1）について、「セキュリティ要件適合評価及びラベリング制度（JC-STAR 制度）」における★１（レベル１）を取得していることを示す適合ラベル。",
+    "verified": "ws-only",
+    "http_status": "200",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "令和７年度補正 系統用蓄電システム等導入支援事業 公募要領（2026年9月）1-6 補助対象設備 ⑨ 1.",
+     "url": "https://sii.or.jp/chikudenchi07r/uploads/R7r_kess_kouboyouryou.pdf",
+     "where": "PDF 16 頁（印刷頁 15）・１－６．補助対象設備 ⑨ 1.",
+     "quote": "導入する蓄電システムが採用する全ての制御システムのセキュリティに関する主要な構成製品（BMS、PCS、 EMS 等（※１２））について、「セキュリティ要件適合評価及びラベリング制度（JC-STAR制度）」における★１（レベル１）を取得していることを示す適合ラベル。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 ⑨ 3.（システム構成図）",
+     "url": "https://sii.or.jp/chikudenchi07r/uploads/R7r_kess_kouboyouryou.pdf",
+     "where": "PDF 16 頁（印刷頁 15）・１－６．⑨ 3.",
+     "quote": "導入する機器とJC-STAR制度における★１の取得対象機器と取得内容との整合、セキュリティ対策を明示したシステム構成図。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "長期脱炭素電源オークション募集要綱 様式４ ２．（BMS・EMS・PCS 欄）",
+     "url": "https://www.occto.or.jp/assets/260902_boshuyoukou_long_2026.pdf",
+     "where": "PDF 60〜61 頁",
+     "quote": "JC-STAR 適合ラベル登録番号",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "セキュリティ要件適合評価及びラベリング制度（JC-STAR）（IPA）",
+     "url": "https://www.ipa.go.jp/security/jc-star/index.html",
+     "where": "本制度の概要",
+     "quote": "適合が認められた製品には、二次元バーコード付きの適合ラベルを付与することで、製品詳細や適合評価、セキュリティ情報・問合せ先等の情報を調達者・消費者が簡単に取得できるようにしています。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気設備に関する技術基準を定める省令 第15条の2（サイバーセキュリティの確保）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/409M50000400052",
+     "where": "第十五条の二",
+     "quote": "事業用電気工作物（小規模事業用電気工作物を除く。）の運転を管理する電子計算機は",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気設備の技術基準の解釈 第37条の2 第二号",
+     "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf",
+     "where": "PDF 45 頁・第37条の2 第二号（第三号は、発電事業の用に供するもの以外の自家用電気工作物の遠隔監視・制御システムについて、経産省の内規によるとしている）",
+     "quote": "電力制御システムにおいては、日本電気技術規格委員会規格 JESC Z0004（2025）「電力制御システムセキュリティガイドライン」によること。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "market-operator-rule＋government-guideline（どちらも応札者・補助事業者向けの要件）",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "当てはまる条件が設問に書かれていなかった。JC-STAR の書類を求める一次は長期脱炭素電源オークションと SII 補助金（令和7年度補正）だけなので、applies_when にその条件を書いた。2025 年より前に建った蓄電所の多くは対象外で、条件なしで問うと「いいえ」が並ぶ",
+    "英字の略語（BMS・EMS・PCS・JC-STAR）に日本語を添えた",
+    "電技解釈第37条の2 は、電力制御システムには第二号（JESC Z0004）を当て、発電事業用でない自家用電気工作物には第三号（経産省の内規）を当てている。どちらが当たるかは蓄電所によって違うので、why から外した（other_primaries に where つきで残した）",
+    "other_primaries にあったグリッドコード検討会 第21回 資料13（「要件化・審議」）は審議中の段階の資料なので、根拠から外した（落とし穴 #123）。引用そのものは 3 頁にそのまま在った"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "A3",
+   "axis": "A",
+   "axis_label": "設備",
+   "question": "容量保証の有無を確かめ、ある場合は保証書（保証容量の割合・保証期間と、SOH（電池の健全度）の測り方やサイクル数の上限などの条件が書かれたもの）が手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト",
+   "answer_note": "容量保証が無いと確かめた場合も「はい」（容量保証が無いこと自体は評価しない）",
+   "why": "当サイトの資産台帳は、容量保証の割合・期間・条件を、売却時に聞かれる項目に挙げている（並びは当サイトの想定）。SII の系統用蓄電システム補助金（令和7年度補正）も、補助を受ける事業者に、想定使用期間・保証期間等を通じた容量劣化データ（カタログ値）を実績報告までに出すよう求めている。",
+   "next_action": "メーカー（または EPC）に容量保証の保証書の写しを求め、保証容量の割合・期間・条件を書き出す",
+   "primary": {
+    "name": "当サイト 資産台帳テンプレートの定義 02_設備（容量保証の条件の列）",
+    "issuer": "蓄電所ネット（当サイト）",
+    "url": "src/lib/asset-ledger-spec.ts:201",
+    "where": "LEDGER_SHEETS 02_設備「容量保証の条件（SOH等）」",
+    "quote": "保証の条件（SOH の測り方・サイクル数の上限など保証書の記載）",
+    "verified": "exact",
+    "http_status": "local-file",
+    "repo_ref": {
+     "path": "src/lib/asset-ledger-spec.ts",
+     "lines": [
+      201
+     ]
+    },
+    "public_url": "/tools/asset-ledger"
+   },
+   "other_primaries": [
+    {
+     "name": "令和７年度補正 系統用蓄電システム等導入支援事業 公募要領（2026年9月）1-5 補助対象事業者 13）",
+     "url": "https://sii.or.jp/chikudenchi07r/uploads/R7r_kess_kouboyouryou.pdf",
+     "where": "PDF 12 頁（印刷頁 11）・１－５．補助対象事業者 １３）の注記（柱書は「導入する蓄電システムに関する以下の基本スペック（カタログ値）に関して、実績報告時までにSIIに提出できる者であること。」）",
+     "quote": "※蓄電池の電池材料（正負極材）、蓄電池容量劣化データ（想定使用期間・保証期間等を通じたデータ）、システム充放電効率(PCS AC端にて評価)、充放電サイクル数（劣化データに関しては性能を鑑み可能な年数で提出すること。）。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "SII 公募要領（令和７年度補正 系統用蓄電システム等導入支援事業）1-5 13）の柱書",
+     "url": "https://sii.or.jp/chikudenchi07r/uploads/R7r_kess_kouboyouryou.pdf",
+     "where": "PDF 12 頁・１－５．１３）",
+     "quote": "導入する蓄電システムに関する以下の基本スペック（カタログ値）に関して、実績報告時までにSIIに提出できる者であること。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳テンプレートの定義 08_売却時に聞かれる項目",
+     "url": "src/lib/asset-ledger-spec.ts:367-368",
+     "where": "LEDGER_CHECKLIST_ITEMS（「容量保証の割合と期間」「容量保証の条件」）",
+     "quote": "容量保証の割合と期間",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       367,
+       368
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "当サイト配布物「蓄電池メーカー保証 確認シート」（低圧向け）",
+     "url": "public/dl/warranty-check-sheet-v1.pdf",
+     "where": "確認項目",
+     "quote": "容量保証: 年数・保証容量（◯年で◯%）",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "public/dl/warranty-check-sheet-v1.pdf",
+      "lines": []
+     },
+     "public_url": "/dl/warranty-check-sheet-v1.pdf"
+    },
+    {
+     "name": "長期脱炭素電源オークション募集要綱 期待容量等算定諸元一覧の記載要領 2.",
+     "url": "https://www.occto.or.jp/assets/260902_boshuyoukou_long_2026.pdf",
+     "where": "PDF 68 頁・記載要領 2.（各月の管理容量）",
+     "quote": "※この値がアセスメント対象容量となり、当該容量にはあらゆる運用のリスクが織り込まれているものと見なし、アセスメントを実施いたします。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "site-definition（保証書を直接裏づけるもの）＋government-guideline（SII・補助事業者向けの劣化データの提出）",
+   "fire_risk_overlap": "一部: cell-5（SOH を追跡しているかという運用の問い）。本問は保証書があるかだけを問う。E4（月ごとの SOH を保証条件と同じ測り方で記録）とも隣接するが、重複ではない",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "primary（SII 1-5 13））は、補助事業者に基本スペック（カタログ値）の容量劣化データを実績報告までに出させる要件で、保証書の提出は求めていない。why に「カタログ値」「補助事業者に」「実績報告までに」を書き足し、保証書の根拠は当サイトの台帳の定義（02・08）と保証確認シートだと分かるように直した",
+    "why の「劣化による容量低下を運用リスクとして管理容量に織り込む必要があり」は、一次では「あらゆる運用のリスクが織り込まれているものと見なし」。応札者だけに当たる話で保証書とも直接つながらないので、final_why から外した（other_primaries に残した）",
+    "next_action に SII の提出項目（劣化データ・充放電効率・サイクル数）まで入っていて 1 行を超えていた。保証書の写しを求めて書き出す 1 行に絞った",
+    "英字の略語 SOH に日本語（電池の健全度）を添えた"
+   ],
+   "cc_change": "「有無を確かめ、ある場合は保証書」の型にした（F3・F7・H1 と同じ「無いと確かめた＝はい」）。主の一次を当サイトの台帳の定義に替え、SII の公募要領（保証書そのものは求めていない）は他の一次へ（報告のレビュー）／「無いと確かめた＝はい」の数え方は裁定 R7"
+  },
+  {
+   "id": "A5",
+   "axis": "A",
+   "axis_label": "設備",
+   "question": "PCS（パワーコンディショナ）・空調機・送風機・空気圧縮機など騒音源ごとの出力（kW）と騒音値（dB と測定距離）が載った機器仕様書か、騒音の測定記録が手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト",
+   "answer_note": null,
+   "why": "電技省令第19条第11項は、騒音規制法の特定施設（原動機の定格出力 7.5kW 以上の空気圧縮機・送風機など）を設けた蓄電所が指定地域内にある場合、規制基準（敷地の境界線での騒音の許容限度）に適合するよう求めている。SII の系統用蓄電システム補助金も、交付申請時に出力（kW）・騒音（dB）を示した機器仕様書を出すよう求めている。",
+   "next_action": "EPC・メーカーに、騒音源ごとの出力（kW）と騒音値（dB・測定距離）が載った機器仕様書を求める（運転後に測った記録があればそれも揃える）",
+   "primary": {
+    "name": "令和７年度補正 系統用蓄電システム等導入支援事業 公募要領（2026年9月）1-5 補助対象事業者 9）",
+    "issuer": "一般社団法人 環境共創イニシアチブ（SII）",
+    "url": "https://sii.or.jp/chikudenchi07r/uploads/R7r_kess_kouboyouryou.pdf",
+    "where": "PDF 11 頁（印刷頁 10）・１－５．補助対象事業者 ９）の注記（審査項目 5-③ 騒音対策は PDF 40 頁）",
+    "quote": "※交付申請時には、出力（kW）・騒音（dB）等の騒音規制に係る項目が示された機器仕様書を提出すること（特に空気圧縮機・送風機） 。",
+    "verified": "ws-only",
+    "http_status": "200",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "電気設備に関する技術基準を定める省令 第19条第11項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/409M50000400052",
+     "where": "第十九条（公害等の防止）第十一項（XML の Paragraph Num=11 で確認）",
+     "quote": "騒音規制法（昭和四十三年法律第九十八号）第二条第一項の規定による特定施設を設置する発電所、蓄電所又は変電所、開閉所若しくはこれらに準ずる場所であって同法第三条第一項の規定により指定された地域内に存するものにおいて発生する騒音は",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "騒音規制法施行令 別表第一 二",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/343CO0000000324",
+     "where": "別表第一（第一条関係）二（XML の Item Num=2）",
+     "quote": "空気圧縮機（一定の限度を超える大きさの騒音を発生しないものとして環境大臣が指定するものを除き、原動機の定格出力が七・五キロワット以上のものに限る。）及び送風機（原動機の定格出力が七・五キロワット以上のものに限る。）",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "騒音規制法 第2条第2項（規制基準の定義・C7 から統合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000098",
+     "where": "第二条第二項",
+     "quote": "この法律において「規制基準」とは、特定施設を設置する工場又は事業場（以下「特定工場等」という。）において発生する騒音の特定工場等の敷地の境界線における大きさの許容限度をいう。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "騒音規制法 第5条",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000098",
+     "where": "第五条第一項",
+     "quote": "指定地域内に特定工場等を設置している者は、当該特定工場等に係る規制基準を遵守しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳テンプレートの定義 02_設備（騒音の列・C7 から統合）",
+     "url": "src/lib/asset-ledger-spec.ts:196-197",
+     "where": "LEDGER_SHEETS 02_設備「騒音仕様(dB)」「騒音の測定距離(m)」",
+     "quote": "{ name: '騒音仕様(dB)', desc: '仕様書・測定記録の値', type: 'number' },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       196,
+       197
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "当サイト 資産台帳テンプレートの定義 05_インシデント（種別・C7 から統合）",
+     "url": "src/lib/asset-ledger-spec.ts:292",
+     "where": "LEDGER_SHEETS 05_インシデント「種別」",
+     "quote": "{ name: '種別', desc: '出来事の種類', type: 'list', options: ['停止', '故障', '火災', '系統事象', '騒音苦情', 'その他'] },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       292
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "law（電技省令・騒音規制法）＋government-guideline（SII）＋site-definition（台帳の列）",
+   "fire_risk_overlap": "none（C6＝所在地が騒音規制法の指定地域かを問う設問と隣接。本問は設備側の書類だけを問う）",
+   "merged_from": [
+    "C7"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "設問の「空調（送風機）」は空調機を送風機と同じものとして扱っていた。一次（施行令 別表第一 二・SII 9））が挙げるのは「空気圧縮機・送風機」なので、「空調機・送風機・空気圧縮機など」と並べる書き方に直した",
+    "施行令 別表第一 二 の引用は「送風機（…）」だけを切り出していた。原文は「空気圧縮機（…）及び送風機（…）」なので、号の全文に差し替えた",
+    "next_action に「所在地が指定地域かを市区町村に確かめる」と第6条の設置届出が入っていた。指定地域の確認は C6 と重なるので外し、1 行にした",
+    "C7 を統合した。C7 の一次は台帳の定義（騒音仕様・測定距離・騒音苦情）と騒音規制法第2条第2項で、どちらも本文にそのまま在った（騒音値は敷地の境界線で比べるので、測定距離が要るという根拠）",
+    "英字の略語 PCS に日本語を添えた"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "A6",
+   "axis": "A",
+   "axis_label": "設備",
+   "question": "蓄電池のコンテナ・建屋が建築基準法上の建築物に当たるかを確かめた記録（特定行政庁・指定確認検査機関とのやり取り、建築物に当たる場合は確認済証）が手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト",
+   "answer_note": null,
+   "why": "国交省の技術的助言（国住指第4846号）は、土地に自立して設置する蓄電池専用のコンテナで、内部が機能に必要な最小限の空間だけ、稼働時は無人で、機器の重大な障害発生時等を除いて内部に人が立ち入らないものを建築物に当たらないとし、複数積み重ねる場合は建築物として扱うとしている。建築物に当たる場合、規模や区域によっては、工事の前に建築基準法第6条の確認を受けて確認済証の交付を受ける。",
+   "next_action": "国住指第4846号の条件（土地に自立・内部は必要最小限の空間・稼働時は無人・重大な障害時等を除き人が立ち入らない・積み重ねない）と設置の状況を照らし、所在地の特定行政庁か指定確認検査機関に扱いを確かめて記録を残す",
+   "primary": {
+    "name": "蓄電池を収納する専用コンテナに係る建築基準法の取扱いについて（技術的助言）国住指第4846号",
+    "issuer": "国土交通省住宅局建築指導課長（平成25年3月29日）",
+    "url": "https://www.mlit.go.jp/common/000993022.pdf",
+    "where": "記（本文 2 段落目のただし書き）",
+    "quote": "ただし、複数積み重ねる場合にあっては、貯蔵槽その他これらに類する施設ではなく、建築物に該当するものとして取り扱うこととする。",
+    "verified": "ws-only",
+    "http_status": "200",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同 記（本文 1 段落目）",
+     "url": "https://www.mlit.go.jp/common/000993022.pdf",
+     "where": "記 1 段落目",
+     "quote": "稼働時は無人で、機器の重大な障害発生時等を除いて内部に人が立ち入らないものについては",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "建築基準法 第2条第1号（建築物の定義）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000201",
+     "where": "第二条第一号",
+     "quote": "プラットホームの上家、貯蔵槽その他これらに類する施設を除く。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "建築基準法 第6条第4項（確認済証の交付）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000201",
+     "where": "第六条第四項",
+     "quote": "当該申請者に確認済証を交付しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳テンプレートの定義 02_設備（設置形態の列）",
+     "url": "src/lib/asset-ledger-spec.ts:185",
+     "where": "LEDGER_SHEETS 02_設備「設置形態」（コンテナ・建屋・屋外・その他）",
+     "quote": "設置のしかた",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       185
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "government-guideline（国交省の技術的助言）＋law（建築基準法）",
+   "fire_risk_overlap": "一部: building-2（建屋の防火区画。選択肢に「区画なし（屋外コンテナ等）」がある）。本問は建築基準法上の扱いを確かめた記録の有無を問い、防火の性能は問わない",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "why に助言の条件のうち「土地に自立して設置する」と「機器の重大な障害発生時等を除いて内部に人が立ち入らない」が抜けていた。足した",
+    "設問の「確認済証」は技術的助言には出てこない語。建築基準法第6条（第1項・第4項）で裏づけ、other_primaries に足した。ただし確認が要るのは第6条第1項の各号に当たる建築物だけなので、why は「規模や区域によっては」とした",
+    "設問の主語を「設置形態（コンテナ・建屋など）」から「蓄電池のコンテナ・建屋」に直し、文末を「手元にある」にそろえた"
+   ],
+   "cc_change": "技術的助言の条件「機器の重大な障害発生時等を除いて内部に人が立ち入らない」が why と次にやることから抜けていた（検証の記録では足したことになっていた）。足した（報告のレビューで一次を取り直して確認）"
+  },
+  {
+   "id": "B3",
+   "axis": "B",
+   "axis_label": "施工・EPC",
+   "question": "施工した EPC（設計・調達・建設を請け負った元請）が建設業の許可を受けていることを、許可番号・許可業種（電気工事業など）・有効期間で確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト",
+   "answer_note": null,
+   "why": "建設業法第3条は、軽微な建設工事（1 件の請負代金 500 万円未満など）だけを請け負う者を除いて建設業の許可を求めている。許可は建設工事の種類ごとに与えられ、5 年ごとに更新しないと効力を失う。国交省の業種区分は、電気工事を「発電設備、変電設備、送配電設備、構内電気設備等を設置する工事」としている。",
+   "next_action": "国交省の建設業者・宅建業者等企業情報検索システム（https://etsuran2.mlit.go.jp/TAKKEN/）で EPC の許可番号・許可業種・有効期間を確かめ、結果を控える",
+   "primary": {
+    "name": "建設業法 第3条第2項",
+    "issuer": "e-Gov 法令検索（デジタル庁）・昭和二十四年法律第百号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000100",
+    "where": "第三条第二項（XML の Article Num=3・Paragraph Num=2 で確認）",
+    "quote": "前項の許可は、別表第一の上欄に掲げる建設工事の種類ごとに、それぞれ同表の下欄に掲げる建設業に分けて与えるものとする。",
+    "verified": "exact",
+    "http_status": "200",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "建設業法 第3条第1項ただし書",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000100",
+     "where": "第三条第一項ただし書",
+     "quote": "ただし、政令で定める軽微な建設工事のみを請け負うことを営業とする者は、この限りでない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "建設業法施行令 第1条の2第1項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/331CO0000000273",
+     "where": "第一条の二第一項",
+     "quote": "工事一件の請負代金の額が五百万円（当該建設工事が建築一式工事である場合にあつては、千五百万円）に満たない工事",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "建設業法 第3条第3項（許可の有効期間）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000100",
+     "where": "第三条第三項",
+     "quote": "第一項の許可は、五年ごとにその更新を受けなければ、その期間の経過によつて、その効力を失う。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "業種区分、建設工事の内容、例示、区分の考え方(H29.11.10改正）（国土交通省）",
+     "url": "https://www.mlit.go.jp/common/001209751.pdf",
+     "where": "PDF 2 頁・電気工事の行・建設工事の内容欄",
+     "quote": "発電設備、変電設備、送配電設備、構内電気設備等を設置する工事",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "建設業者・宅建業者等企業情報検索システム（国土交通省）",
+     "url": "https://etsuran2.mlit.go.jp/TAKKEN/",
+     "where": "トップページ（title「国土交通省 | 閲覧メニュー」・Shift_JIS）",
+     "quote": "掲載情報については、許可等行政庁が登録した情報を提供しております。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "keep",
+   "verify_problems": [
+    "直しは文の整えだけ。why の「建設業を営む者」は条文では「建設業を営もうとする者」で、許可の要件を書いた文を短くした。設問に「有効期間」を足し、EPC に日本語を添えた",
+    "MLIT の業種区分の引用は pdftotext -layout では列が交互になって一致しない。pypdf の抽出で、空白と改行を除くと 2 頁で一致した（ws-only）",
+    "業種区分の電気工事の例示に「蓄電所」「蓄電設備」の語は無い（「等」に含まれるかは一次に書かれていない）。設問の「電気工事業など」の書き方は妥当",
+    "検索システムに出るのは現在の登録の情報で、契約した時点の許可の状態は示さない。その時点の状態が要る場合は、EPC から許可通知書の写しをもらうことになる（推測なので next_action には入れていない）"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "B4",
+   "axis": "B",
+   "axis_label": "施工・EPC",
+   "question": "EPC 契約書（変更契約を含む）の写しが手元にあり、完成を確かめる検査の時期・方法と引渡しの時期の定めを確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト",
+   "answer_note": null,
+   "why": "建設業法第19条第1項は、建設工事の請負契約の当事者に、注文者が完成を確かめる検査の時期・方法と引渡しの時期（第11号）などを書面に書き、署名又は記名押印して相互に交付するよう求めている。契約の内容を変えるときも、変更の内容を書面で交付する（同条第2項）。",
+   "next_action": "発注者（設置者）の保管分から、EPC 契約書と変更契約の書面を集める",
+   "primary": {
+    "name": "建設業法 第19条第1項第11号",
+    "issuer": "e-Gov 法令検索（デジタル庁）・昭和二十四年法律第百号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000100",
+    "where": "第十九条第一項第十一号（XML の Article Num=19・Paragraph Num=1・Item Num=11 で確認）",
+    "quote": "注文者が工事の全部又は一部の完成を確認するための検査の時期及び方法並びに引渡しの時期",
+    "verified": "exact",
+    "http_status": "200",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "建設業法 第19条第1項 柱書",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000100",
+     "where": "第十九条第一項",
+     "quote": "契約の締結に際して次に掲げる事項を書面に記載し、署名又は記名押印をして相互に交付しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "建設業法 第19条第2項（変更の書面）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000100",
+     "where": "第十九条第二項",
+     "quote": "請負契約の当事者は、請負契約の内容で前項に掲げる事項に該当するものを変更するときは、その変更の内容を書面に記載し、署名又は記名押印をして相互に交付しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト配布物「低圧蓄電所 売買契約書 確認チェックシート」（低圧の売買契約向け）",
+     "url": "public/dl/contract-checklist-v1.pdf",
+     "where": "「引渡し・検収」節 1 項目め",
+     "quote": "引渡し完了の定義（何をもって完了か）が明確",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "public/dl/contract-checklist-v1.pdf",
+      "lines": []
+     },
+     "public_url": "/dl/contract-checklist-v1.pdf"
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "other_primaries の第19条第1項第13号の引用は号の途中で切れていた。原文は「…不適合を担保すべき責任又は当該責任の履行に関して講ずべき保証保険契約の締結その他の措置に関する定めをするときは、その内容」で、定めを置いたときだけ書く事項。切り出すと義務の範囲を取り違えるので外した",
+    "why の「契約上の完成検査の中身はこの定めで決まる」は一次に無い推論なので外した",
+    "next_action を、保管分から集める 1 行に絞った",
+    "チェックシートは低圧の売買契約向けの当サイトの配布物で、EPC の請負契約向けではない（類例として残した）"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "B5",
+   "axis": "B",
+   "axis_label": "施工・EPC",
+   "question": "引渡し前の検査（EPC 契約で定めた完成の検査）の記録と試験成績書の写しが手元にあり、書類名・発行者・保管場所を一覧にしている",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（出力1万kW以上又は容量8万kWh以上の蓄電所の使用前自主検査の記録は、許認可の軸の H5 に統合した設問で問う）",
+   "answer_note": null,
+   "why": "当サイトの資産台帳は書類の種別に「試験成績書」を置き、売却時に聞かれる項目に「許認可・契約書類の所在」を挙げている（並びは当サイトの想定）。当サイトの低圧蓄電所の売買契約チェックシートも、図面・検査記録・保証書の引渡しが義務になっているかを確認項目にしている。",
+   "next_action": "EPC に引渡し前の検査の記録と試験成績書の写しを求め、書類名・発行者・日付・保管場所を一覧にする",
+   "primary": {
+    "name": "当サイト 資産台帳テンプレートの定義（06_書類 の種別）",
+    "issuer": "蓄電所ネット（当サイト）",
+    "url": "src/lib/asset-ledger-spec.ts:310",
+    "where": "LEDGER_SHEETS 06_書類「種別」（type: 'list'）",
+    "quote": "options: ['契約', '許認可', '保証書', '試験成績書', '保険証券', '図面', '議事録', 'その他']",
+    "verified": "exact",
+    "http_status": "local-file",
+    "repo_ref": {
+     "path": "src/lib/asset-ledger-spec.ts",
+     "lines": [
+      310
+     ]
+    },
+    "public_url": "/tools/asset-ledger"
+   },
+   "other_primaries": [
+    {
+     "name": "当サイト 08_売却時に聞かれる項目",
+     "url": "src/lib/asset-ledger-spec.ts:391",
+     "where": "LEDGER_CHECKLIST_ITEMS",
+     "quote": "{ item: '許認可・契約書類の所在', sheet: N.documents, columns: ['書類名', '保管場所'] },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       391
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "当サイト 06_書類 の発行者の列",
+     "url": "src/lib/asset-ledger-spec.ts:311",
+     "where": "LEDGER_SHEETS 06_書類",
+     "quote": "{ name: '発行者', desc: '書類を出した者', type: 'text' },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       311
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "当サイト配布物「低圧蓄電所 売買契約書 確認チェックシート」（低圧の売買契約向け）",
+     "url": "public/dl/contract-checklist-v1.pdf",
+     "where": "「引渡し・検収」節 2 項目め",
+     "quote": "図面・検査記録・保証書など書類の引渡しが義務になっている",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "public/dl/contract-checklist-v1.pdf",
+      "lines": []
+     },
+     "public_url": "/dl/contract-checklist-v1.pdf"
+    },
+    {
+     "name": "建設業法 第19条第1項第11号（検査の定め）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000100",
+     "where": "第十九条第一項第十一号",
+     "quote": "注文者が工事の全部又は一部の完成を確認するための検査の時期及び方法並びに引渡しの時期",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "site-definition（法令は検査の定めを契約に書くことまでで、記録を注文者に渡すことは定めていない）",
+   "fire_risk_overlap": "operation-3（点検記録の保管）と隣接。あちらは運用期の点検記録の保管期間を点数で問い、本問は引渡し前の検査の記録の有無を問うので重複ではない",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "設問が当サイトの台帳の使用（「06_書類（種別「試験成績書」）に記録した」）を前提にしていた。台帳を使わない利用者にも答えられるよう、「一覧にしている」に直した",
+    "一次は当サイトの定義だけ（strength: site-definition）。B8（予備）の経産省の内規のほうが一次として強い（reserve_notes 参照）",
+    "「試験成績書」は B7（系統連系申込で出した PCS の試験成績書）と、「検査記録」は H5 に統合した使用前自主検査の記録と重なりうる。本問は「EPC 契約で定めた引渡し前の検査」に絞り、applies_when に住み分けを書いた",
+    "B4（契約の検査の定め）と対の設問なので、画面では B4 の直後に置くのがよい"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "B6",
+   "axis": "B",
+   "axis_label": "施工・EPC",
+   "question": "工事の完成図（いわゆる竣工図。工事の目的物が完成したときの状況を表した図）の写しが手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（建設業法の保存義務がかかるのは、元請が建設業の許可を受けた建設業者で、完成図を作成または受領した場合）",
+   "answer_note": null,
+   "why": "建設業法施行規則は、発注者から直接請け負った建設業者が施工上の必要に応じて作成した完成図、または発注者から受け取った完成図を、営業に関する図書として保存すると定めている（第26条第5項第1号）。保存期間は目的物の引渡しから10年間（第28条第2項）。発注者に渡す義務は条文に無い。",
+   "next_action": "元請（EPC）に完成図の写しを求める（元請が建設業者で完成図を作成・受領していれば、引渡しから10年間の保存義務がある＝建設業法施行規則第28条第2項）",
+   "primary": {
+    "name": "建設業法施行規則 第26条第5項第1号",
+    "issuer": "e-Gov 法令検索（デジタル庁）・昭和二十四年建設省令第十四号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/324M50004000014",
+    "where": "第二十六条第五項第一号（柱書は「法第四十条の三の国土交通省令で定める図書は、発注者から直接建設工事を請け負つた建設業者（作成建設業者を除く。）にあつては第一号、第二号、第四号及び第五号に掲げるもの又はその写し…」）",
+    "quote": "建設工事の施工上の必要に応じて作成し、又は発注者から受領した完成図（建設工事の目的物の完成時の状況を表した図をいう。）",
+    "verified": "exact",
+    "http_status": "200（16,041,809 B・redirects=0・2026-10-10 取り直し）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "建設業法施行規則 第28条第2項（図書の保存期間）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/324M50004000014",
+     "where": "第二十八条第二項",
+     "quote": "第二十六条第五項に規定する図書（同条第八項の規定による記録が行われた同項のファイル又は電磁的記録媒体を含む。）の保存期間は、請け負つた建設工事ごとに、当該建設工事の目的物の引渡しをしたときから十年間とする。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "建設業法 第40条の3（帳簿の備付け等）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000100",
+     "where": "第四十条の三（義務の主体が「建設業者」＝第2条第3項の許可を受けた者であることの裏づけ）",
+     "quote": "建設業者は、国土交通省令で定めるところにより、その営業所ごとに、その営業に関する事項で国土交通省令で定めるものを記載した帳簿を備え、かつ、当該帳簿及びその営業に関する図書で国土交通省令で定めるものを保存しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト配布物「低圧蓄電所 売買契約書 確認チェックシート」（補足・低圧の売買契約向け）",
+     "url": "public/dl/contract-checklist-v1.pdf",
+     "where": "引渡し・検収 2 項目め",
+     "quote": "図面・検査記録・保証書など書類の引渡しが義務になっている",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "public/dl/contract-checklist-v1.pdf",
+      "lines": []
+     },
+     "public_url": "/dl/contract-checklist-v1.pdf"
+    },
+    {
+     "name": "当サイト 資産台帳テンプレート 06_書類 の種別",
+     "url": "src/lib/asset-ledger-spec.ts:310",
+     "where": "06_書類「種別」の選択肢に「図面」",
+     "quote": "options: ['契約', '許認可', '保証書', '試験成績書', '保険証券', '図面', '議事録', 'その他']",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       310
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none（同じ軸の B5＝竣工時の検査記録・試験成績書とは別の書類）",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "why の「元請が完成図を保存する義務を負う」は言い過ぎ。義務の主体は建設業の許可を受けた建設業者（建設業法第2条第3項・第40条の3）で、対象の完成図も「施工上の必要に応じて作成し、又は発注者から受領した」もの。軽微な工事だけを請け負う無許可の施工者や、完成図を作っていない場合には保存義務がかからない。final_why に条件を入れた。",
+    "next_action の「元請は引渡しから10年間保存している」は事実の断定になっている。「保存義務がある（作成・受領していれば）」に直した。",
+    "「竣工図」は法令の語ではない（法令は「完成図」）。設問では「いわゆる竣工図」と添えるだけにした。",
+    "当サイトの売買契約チェックシートは低圧蓄電所の売買契約向けの配布物で、補足の位置づけ。"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "B7",
+   "axis": "B",
+   "axis_label": "施工・EPC",
+   "question": "系統連系申込みで一般送配電事業者に出した技術資料（単線結線図・系統連系保護リレーの仕様・逆変換装置（PCS、パワーコンディショナ）の仕様、非認証品の PCS なら工場試験成績書など）の控えが手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（一般送配電事業者の系統に連系するもの）。出す書類の範囲は、連系先の会社と電圧（低圧・高圧・特別高圧）で違う",
+   "answer_note": null,
+   "why": "東北電力ネットワークの高圧の申込書類一覧では、蓄電池の列で単線結線図（様式５の４）と系統連系保護リレーの仕様（様式３の３）に、接続検討申込みと系統連系申込みの両方で提出が要る印（◎）が付き、非認証品の PCS を使う場合は工場試験成績書の提出が要るとされている。JET（電気安全環境研究所）は、認証を受けた装置なら連系協議での個別の性能確認試験などを省略できるとしている。",
+   "next_action": "系統連系申込みの申込者から提出書類一式の控えを受け取る（どの書類を出したかは連系先の申込書類一覧で確かめる）",
+   "primary": {
+    "name": "接続検討申込および系統連系申込に必要な様式および資料【高圧】（申込みに必要な様式および資料一覧）",
+    "issuer": "東北電力ネットワーク株式会社",
+    "url": "https://nw.tohoku-epco.co.jp/consignment/request/emit/pdf/zz1.pdf",
+    "where": "表の凡例。蓄電池の列の行「様式５の４ 単線結線図」「様式３の３ 主要設備仕様（系統連系保護リレー）」「様式３の５ 発電設備仕様（逆変換装置）」「ＰＣＳの工場試験成績書（代表機）／（実機）」（備考「非認証品ＰＣＳを用いる場合提出が必要」）「保護継電器の取扱説明書」。PDF 1 頁（CreationDate 2025-12-24・ModDate 2025-12-26）",
+    "quote": "◎：接続検討申込および系統連系申込の両方で提出が必要な書類",
+    "verified": "exact",
+    "http_status": "200（152,056 B・application/pdf・2026-10-10 取り直し）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "系統連系保護装置等認証（一般財団法人 電気安全環境研究所 JET）",
+     "url": "https://www.jet.or.jp/renewable/power_conditioner/protection/",
+     "where": "「認証制度の目的」の段（<title>「系統連系保護装置等認証｜パワーコンディショナの試験・認証｜一般財団法人 電気安全環境研究所」・200・144,419 B）",
+     "quote": "認証を受けた装置は，一般送配電事業者と発電設備等設置者の連系協議における個別の性能確認試験などの省略が可能となるため，協議・検討に要する期間の短縮化が期待できます。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "系統連系・発電量調整供給・電力売電に関するお申込み（東北電力ネットワーク）",
+     "url": "https://nw.tohoku-epco.co.jp/consignment/request/emit/",
+     "where": "高圧の「契約申込み」欄のリンク文言（<title>「系統連系・発電量調整供給・電力売電に関するお申込み｜東北電力ネットワーク」・200・54,492 B）",
+     "quote": "申込みに必要な様式および資料一覧（148KB）",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "market-operator-rule（一般送配電事業者 1 社の申込書類一覧。他の 9 社は未確認）",
+   "fire_risk_overlap": "fire-risk pcs-2（PCS の認証／規格適合）と隣接。認証の種類や適合は聞かず、提出書類の控えの有無だけを聞くので重複ではない。asset-check 内では D1（接続検討の回答書・D6 を統合）と隣接するので、D 軸へ移すかは統合時に判断。",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "why の「一般送配電事業者は、高圧の系統連系申込で…提出を求めている」は、確かめた一次が東北電力ネットワークの高圧の一覧 1 社分だけなので一般化しすぎ。「東北電力ネットワークの高圧の一覧では」に限定した。",
+    "why の「非認証品なら試験成績書が連系の根拠書類になる」は一次に無い推論。一覧の備考の文（非認証品ＰＣＳを用いる場合提出が必要）に置き換えた。",
+    "設問の「PCS の試験成績書または認証の資料」のうち「認証の資料」は一覧に無い書類。「非認証品の PCS なら工場試験成績書」に直し、一覧にある逆変換装置の仕様（様式３の５）を加えた。",
+    "next_action が 2 文だったので 1 行にした。",
+    "当てはまる条件（連系先・電圧で書類が違う）を applies_when に明記した。"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "C1",
+   "axis": "C",
+   "axis_label": "立地・災害",
+   "question": "所在地の区域区分（市街化区域・市街化調整区域・区域区分の定めのない都市計画区域〔いわゆる非線引き〕・都市計画区域外のどれか）と用途地域（定めが無ければその旨）を都市計画図で確かめ、記録している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（都市計画区域外や用途地域の定めが無い土地は、それを確かめて記録していれば「はい」）",
+   "answer_note": null,
+   "why": "都市計画法は、計画図・計画書を、土地の権利者が自分の土地が市街化区域・市街化調整区域のどちらに入るか、用途地域などの地域地区に入るかを容易に判断できるものにするよう定め（第14条第2項）、その図書を公衆の縦覧に供するとしている（第20条第2項）。市街化調整区域は市街化を抑制すべき区域で（第7条第3項）、用途地域ごとに目的（第9条）と建築物の容積率・建蔽率など（第8条第3項）が定められる。",
+   "next_action": "市町村（または都道府県）の都市計画の窓口で計画図を閲覧するか、公開されている都市計画図で区域区分と用途地域を確かめる（都市計画法第20条第2項）",
+   "primary": {
+    "name": "都市計画法 第14条第2項（都市計画の図書）",
+    "issuer": "e-Gov 法令検索（デジタル庁）／法律 昭和四十三年法律第百号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000100",
+    "where": "第十四条第二項（文頭は「計画図及び計画書における区域区分の表示又は次に掲げる区域の表示は、」。第三号が「地域地区の区域」）",
+    "quote": "土地に関し権利を有する者が、自己の権利に係る土地が区域区分により区分される市街化区域若しくは市街化調整区域のいずれの区域に含まれるか又は次に掲げる区域に含まれるかどうかを容易に判断することができるものでなければならない。",
+    "verified": "exact",
+    "http_status": "200（736,251 B・redirects=0・2026-10-10 取り直し）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "都市計画法 第20条第2項（都市計画の図書の縦覧）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000100",
+     "where": "第二十条第二項",
+     "quote": "前項の図書又はその写しを当該都道府県又は市町村の事務所に備え置いて一般の閲覧に供する方法その他の適切な方法により公衆の縦覧に供しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "都市計画法 第7条第3項（市街化調整区域）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000100",
+     "where": "第七条第三項",
+     "quote": "市街化調整区域は、市街化を抑制すべき区域とする。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "不動産情報ライブラリ API操作説明（国土交通省）",
+     "url": "https://www.reinfolib.mlit.go.jp/help/apiManual/",
+     "where": "公開API一覧 XKT002（区域区分は XKT001「都市計画決定GISデータ（都市計画区域/区域区分）API」）（<title>「不動産情報ライブラリ」・200・86,637 B）",
+     "quote": "都市計画決定GISデータ（用途地域）API",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳の列定義（01_サイト基本）",
+     "url": "src/lib/asset-ledger-spec.ts:142",
+     "where": "01_サイト基本「用途地域」",
+     "quote": "{ name: '用途地域', desc: '都市計画の用途地域（区域外ならその旨）', type: 'text' },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       142
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "設問の「非線引き」は法令の語ではない（法令は第7条の「区域区分」を定めない都市計画区域）。「区域区分の定めのない都市計画区域〔いわゆる非線引き〕」に直した。",
+    "why が用途地域の目的・制限だけで、市街化調整区域の意味に触れていなかったので、第7条第3項を足した（逐語一致を確認）。",
+    "next_action の「事務所で閲覧」は第20条第2項の「その他の適切な方法」（公開の都市計画図）も含めて書き直した。"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "C2",
+   "axis": "C",
+   "axis_label": "立地・災害",
+   "question": "所在地が水防法の浸水想定区域（洪水・雨水出水・高潮）に入るかと、入る場合の想定水深を、市町村の図面で確かめ、記録している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（区域外を確かめて記録していれば「はい」）",
+   "answer_note": null,
+   "why": "水防法は、国土交通大臣・都道府県知事・市町村長が、想定最大規模の降雨・高潮で浸水が想定される区域を、区域と浸水した場合に想定される水深を明らかにして指定・公表すると定めている（第14条〜第14条の3）。市町村長はその図面を各世帯に提供し（同法施行規則第11条第1号）、図面上の所在地は宅地建物取引業者が重要事項として説明する事項でもある（宅建業法施行規則第16条の4の3第3号の2）。",
+   "next_action": "市町村の浸水想定区域の図面（水防法施行規則第11条。ハザードマップポータルサイト https://disaportal.gsi.go.jp/ の「わがまちハザードマップ」から開ける）で所在地と想定水深を確かめる",
+   "primary": {
+    "name": "水防法 第14条第3項",
+    "issuer": "e-Gov 法令検索（デジタル庁）／法律 昭和二十四年法律第百九十三号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000193",
+    "where": "第十四条第三項（洪水浸水想定区域。第十四条の二第三項〔雨水出水〕も同文、第十四条の三第二項〔高潮〕は「前項の規定による指定は、」で始まる）",
+    "quote": "前二項の規定による指定は、指定の区域、浸水した場合に想定される水深その他の国土交通省令で定める事項を明らかにしてするものとする。",
+    "verified": "exact",
+    "http_status": "200（228,422 B・redirects=0・2026-10-10 取り直し）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "水防法施行規則 第11条第1号（図面の各世帯への提供）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/412M50004000044",
+     "where": "第十一条第一号（図面には第2条・第5条・第8条の第1号「指定の区域」と第2号「浸水した場合に想定される水深」を表示）",
+     "quote": "を、印刷物の配布その他の適切な方法により、各世帯に提供すること。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "水防法 第15条第3項（市町村長による周知）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/324AC0000000193",
+     "where": "第十五条第三項",
+     "quote": "を記載した印刷物の配布その他の必要な措置を講じなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "宅地建物取引業法施行規則 第16条の4の3第3号の2",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/332M50004000012",
+     "where": "第十六条の四の三第三号の二（法第35条第1項第14号の重要事項）",
+     "quote": "水防法施行規則（平成十二年建設省令第四十四号）第十一条第一号の規定により当該宅地又は建物が所在する市町村の長が提供する図面に当該宅地又は建物の位置が表示されているときは、当該図面における当該宅地又は建物の所在地",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "ハザードマップポータルサイト（国土交通省・国土地理院）",
+     "url": "https://disaportal.gsi.go.jp/",
+     "where": "トップ「わがまちハザードマップ」（<title>「ハザードマップポータルサイト」・200・18,861 B）",
+     "quote": "市町村が法令に基づき作成・公開したハザードマップへリンクします。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "keep",
+   "verify_problems": [
+    "修正は不要。軽微な点だけ: other_primaries の第15条第3項と施行規則第11条第1号の quote は「を」で始まる文の断片（逐語は一致）。図面に区域と水深が載る根拠は施行規則第11条第1号→第2条・第5条・第8条の第1号・第2号で、final_why と next_action はこちらに寄せた。",
+    "宅建業法施行規則の説明事項は、宅地建物取引業者が関わる宅地・建物の取引に限られる（法第35条第1項）。final_why では「宅地建物取引業者が重要事項として説明する事項」と主体を明記した。"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "C3",
+   "axis": "C",
+   "axis_label": "立地・災害",
+   "question": "所在地が土砂災害警戒区域・土砂災害特別警戒区域に入るかを確かめ、記録している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（区域外を確かめて記録していれば「はい」）",
+   "answer_note": null,
+   "why": "都道府県知事は、急傾斜地の崩壊等が起きたときに住民等の生命・身体に危害が生ずるおそれがある区域を土砂災害警戒区域に、そのうち建築物に損壊が生じ著しい危害が生ずるおそれがある区域を特別警戒区域に指定して公示する（土砂災害防止法第7条・第9条）。警戒区域内にあることは、宅地建物取引業者が重要事項として説明する事項でもある（宅建業法施行規則第16条の4の3第2号）。",
+   "next_action": "都道府県の公示（土砂災害防止法第7条第4項・第9条第4項）か、市町村が配る区域を表示した図面（同法第8条第3項・同法施行規則第5条第1号）で所在地を確かめる",
+   "primary": {
+    "name": "土砂災害警戒区域等における土砂災害防止対策の推進に関する法律 第7条第1項",
+    "issuer": "e-Gov 法令検索（デジタル庁）／法律 平成十二年法律第五十七号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/412AC0000000057",
+    "where": "第七条第一項",
+    "quote": "急傾斜地の崩壊等が発生した場合には住民等の生命又は身体に危害が生ずるおそれがあると認められる土地の区域",
+    "verified": "exact",
+    "http_status": "200（99,629 B・redirects=0・2026-10-10 取り直し）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同法 第9条第1項（特別警戒区域）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/412AC0000000057",
+     "where": "第九条第一項",
+     "quote": "急傾斜地の崩壊等が発生した場合には建築物に損壊が生じ住民等の生命又は身体に著しい危害が生ずるおそれがあると認められる土地の区域",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同法 第9条第7項（図書の縦覧）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/412AC0000000057",
+     "where": "第九条第七項",
+     "quote": "関係のある市町村の長は、第五項の図書を当該市町村の事務所において、一般の縦覧に供しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同法施行規則 第5条第1号（第8条第3項の周知の措置＝区域を表示した図面）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/413M60000800071",
+     "where": "第五条第一号",
+     "quote": "土砂災害警戒区域及び土砂災害特別警戒区域並びにこれらの区域における土砂災害の発生原因となる自然現象の種類を表示した図面に法第八条第三項に規定する事項を記載したもの",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "宅地建物取引業法施行規則 第16条の4の3第2号",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/332M50004000012",
+     "where": "第十六条の四の三第二号",
+     "quote": "第七条第一項により指定された土砂災害警戒区域内にあるときは、その旨",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "keep",
+   "verify_problems": [
+    "修正は不要。next_action の「市町村が配布する印刷物（第8条第3項）」は、法第8条第3項の本文だけでは区域の図かどうかが読めないが、同法施行規則第5条第1号が区域を表示した図面の提供と定めていることを XML で確かめた（other_primaries に追加）。"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "C4",
+   "axis": "C",
+   "axis_label": "立地・災害",
+   "question": "所在地の津波浸水想定（浸水の区域と水深）と、津波災害警戒区域に入るかを確かめ、記録している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（内陸などで浸水想定の外にあることを確かめて記録していれば「はい」）",
+   "answer_note": null,
+   "why": "都道府県知事は、津波浸水想定（津波があったときに想定される浸水の区域と水深）を設定して公表し（津波防災地域づくりに関する法律第8条）、津波災害警戒区域を基準水位とともに指定・公示する（第53条）。警戒区域内にあることは、宅地建物取引業者が重要事項として説明する事項でもある（宅建業法施行規則第16条の4の3第3号）。",
+   "next_action": "都道府県が公表した津波浸水想定（津波防災地域づくりに関する法律第8条第4項）と津波災害警戒区域の公示（第53条第4項）で所在地を確かめる",
+   "primary": {
+    "name": "津波防災地域づくりに関する法律 第8条第1項",
+    "issuer": "e-Gov 法令検索（デジタル庁）／法律 平成二十三年法律第百二十三号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/423AC0000000123",
+    "where": "第八条第一項",
+    "quote": "都道府県知事は、基本指針に基づき、かつ、基礎調査の結果を踏まえ、津波浸水想定（津波があった場合に想定される浸水の区域及び水深をいう。以下同じ。）を設定するものとする。",
+    "verified": "exact",
+    "http_status": "200（245,154 B・redirects=0・2026-10-10 取り直し）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同法 第8条第4項（公表）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/423AC0000000123",
+     "where": "第八条第四項",
+     "quote": "都道府県知事は、第一項の規定により津波浸水想定を設定したときは、速やかに、これを、国土交通大臣に報告し、かつ、関係市町村長に通知するとともに、公表しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同法 第53条第4項（警戒区域の公示）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/423AC0000000123",
+     "where": "第五十三条第四項",
+     "quote": "都道府県知事は、第一項の規定による指定をするときは、国土交通省令で定めるところにより、その旨並びに当該指定の区域及び基準水位を公示しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "宅地建物取引業法施行規則 第16条の4の3第3号",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/332M50004000012",
+     "where": "第十六条の四の三第三号",
+     "quote": "第五十三条第一項により指定された津波災害警戒区域内にあるときは、その旨",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "ハザードマップポータルサイト（重ねるハザードマップ）",
+     "url": "https://disaportal.gsi.go.jp/",
+     "where": "トップ「重ねるハザードマップ」",
+     "quote": "洪水・土砂災害・高潮・津波のリスク情報、道路防災情報、土地の特徴・成り立ちなどを地図や写真に自由に重ねて表示します。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "keep",
+   "verify_problems": [
+    "修正は不要。other_primaries に第53条第4項（公示）の逐語を足した（next_action が引いている条）。"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "C6",
+   "axis": "C",
+   "axis_label": "立地・災害",
+   "question": "所在地が騒音規制法の指定地域に入るか（入る場合は区域の区分と規制基準）を確かめ、記録している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（指定地域外を確かめて記録していれば「はい」）",
+   "answer_note": null,
+   "why": "騒音規制法の指定地域では、特定施設（送風機・空気圧縮機で原動機の定格出力7.5kW以上など＝施行令別表第一）を置く工場・事業場が、敷地の境界線での騒音の規制基準を守る義務を負い（第2条第2項・第5条）、特定施設を新たに置くときは工事開始の30日前までに市町村長への届出が要る（第6条）。蓄電池・PCS そのものは別表第一に無いので、規制がかかるかは設備の構成で決まる。",
+   "next_action": "都道府県（市の区域では市）が公示した騒音規制法の指定地域と規制基準で所在地を確かめる（騒音規制法第3条第1項・第3項、第4条）",
+   "primary": {
+    "name": "騒音規制法 第3条第1項（地域の指定）",
+    "issuer": "e-Gov 法令検索（デジタル庁）／法律 昭和四十三年法律第九十八号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000098",
+    "where": "第三条第一項（指定するのは都道府県知事、市の区域内は市長）",
+    "quote": "住居が集合している地域、病院又は学校の周辺の地域その他の騒音を防止することにより住民の生活環境を保全する必要があると認める地域を、特定工場等において発生する騒音及び特定建設作業に伴つて発生する騒音について規制する地域として指定しなければならない。",
+    "verified": "exact",
+    "http_status": "200（98,354 B・redirects=0・2026-10-10 取り直し）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "騒音規制法 第2条第2項（規制基準の定義）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000098",
+     "where": "第二条第二項",
+     "quote": "この法律において「規制基準」とは、特定施設を設置する工場又は事業場（以下「特定工場等」という。）において発生する騒音の特定工場等の敷地の境界線における大きさの許容限度をいう。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "騒音規制法 第5条（規制基準の遵守義務）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000098",
+     "where": "第五条",
+     "quote": "指定地域内に特定工場等を設置している者は、当該特定工場等に係る規制基準を遵守しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "騒音規制法 第3条第3項（指定地域の公示）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000098",
+     "where": "第三条第三項",
+     "quote": "都道府県知事は、第一項の規定により地域を指定するときは、環境省令で定めるところにより、公示しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "騒音規制法施行令 別表第一（特定施設）第二号",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/343CO0000000324",
+     "where": "別表第一 第二号",
+     "quote": "空気圧縮機（一定の限度を超える大きさの騒音を発生しないものとして環境大臣が指定するものを除き、原動機の定格出力が七・五キロワット以上のものに限る。）及び送風機（原動機の定格出力が七・五キロワット以上のものに限る。）",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none（fire-risk-check に騒音の設問は無い）。asset-check 内では A5（騒音源の出力と騒音値の仕様書・C7 を統合）と隣接するが、こちらは所在地の指定地域の確認だけを聞く",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "why の「指定地域では、特定工場等が…規制基準を守る義務を負い」は、蓄電所がそのまま特定工場等に当たると読める。特定工場等は特定施設（施行令別表第一）を置く工場・事業場で、別表第一に蓄電池・PCS は無く、関係しうるのは送風機・空気圧縮機（定格出力7.5kW以上）などだけ。条件を final_why に入れた。",
+    "why の「建設工事中の特定建設作業も、指定地域で規制される」は稼働中の資産の棚卸しには関係が薄いので final_why から外した（条文自体は第3条第1項で正しい）。"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "D1",
+   "axis": "D",
+   "axis_label": "系統",
+   "question": "接続検討の回答書（最大受電電力に対する連系可否・工事費負担金概算・所要工期・運用上の制約などが書かれたもの）が、充電（順潮流側）の検討結果も含めて手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "高圧又は特別高圧の送電系統に連系する（した）サイト。接続検討の申込みが義務なのは高圧・特別高圧への連系（送配電等業務指針 第79条第1項）で、低圧連系には当てはまらない",
+   "answer_note": null,
+   "why": "接続検討の回答は、一般送配電事業者等が最大受電電力に対する連系可否・工事費負担金概算・所要工期・接続検討の前提条件・運用上の制約（制約の根拠を含む）などを書面又は電磁的方法で示すもので（送配電等業務指針 第85条）、系統用蓄電設備では充電時（順潮流側）も考慮して検討される（OCCTO）。契約申込み前の案件では、回答日から1年を過ぎると契約申込みが受け付けられない（同 第89条第1項第6号）。",
+   "next_action": "回答書が見当たらなければ、連系先の一般送配電事業者の託送供給サービス窓口（OCCTO の一覧 https://www.occto.or.jp/institution/access/link/takuso.html）に問い合わせ、見つかったら最大受電電力（台帳では「契約容量(kW)」の欄。語の違いは備考に）・連系電圧・接続変電所名を台帳の 01_サイト基本に写す",
+   "primary": {
+    "name": "発電設備等系統アクセスの流れ",
+    "issuer": "電力広域的運営推進機関（OCCTO）",
+    "url": "https://www.occto.or.jp/institution/access/kentou/access_process.html",
+    "where": "「４．接続検討のご回答」（主な回答内容の一覧の直前の有効期限の段落）",
+    "quote": "なお、接続検討回答書は、送配電等業務指針第89条第1項第6号の規定により有効期限が1年となっていますので、1年以上経過して契約申込みの手続きを行う場合には、再度の接続検討が必要となります。",
+    "verified": "exact",
+    "http_status": "200（text/html・52,258 B・2026-10-10 取得）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "送配電等業務指針（令和８年８月１日変更）第85条第1項柱書",
+     "url": "https://www.occto.or.jp/assets/occto/article/index/shishin2608.pdf",
+     "where": "第85条第1項（PDF 39頁・印字35頁）",
+     "quote": "次の各号に掲げる事項について書面又は電磁的方法にて回答するとともに必要な説明を行う。",
+     "verified": "ws-only（pdftotext の改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "送配電等業務指針 第85条第1項第8号",
+     "url": "https://www.occto.or.jp/assets/occto/article/index/shishin2608.pdf",
+     "where": "第85条第1項第8号（第7号は「接続検討の前提条件（検討に用いた系統関連データ）」）",
+     "quote": "八 運用上の制約（制約の根拠を含む。）",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "送配電等業務指針 第79条第1項（接続検討の申込み）",
+     "url": "https://www.occto.or.jp/assets/occto/article/index/shishin2608.pdf",
+     "where": "第79条第1項柱書（PDF 36頁・印字32頁）",
+     "quote": "発電設備等と高圧又は特別高圧の送電系統の連系等を希望する系統連系希望者は、次の各号に掲げる場合においては、契約申込みに先立ち、本機関又は一般送配電事業者等に対して、接続検討の申込みを行わなければならない。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "送配電等業務指針 第89条第1項第6号",
+     "url": "https://www.occto.or.jp/assets/occto/article/index/shishin2608.pdf",
+     "where": "第89条第1項第6号（PDF 43頁・印字39頁。続きに「（ただし、選定事業者による契約申込みについては、この限りでない。）」）",
+     "quote": "六 接続検討の回答日から１年を経過した場合",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "発電設備等に関する系統アクセスの流れ（２０２６年9月）p.9 ※6（D6 から統合）",
+     "url": "https://www.occto.or.jp/assets/access_nagare_20260928.pdf",
+     "where": "印字 p.9（PDF 10頁）接続検討 ※6",
+     "quote": "系統用蓄電設備の接続検討には、充電時（順潮流側） も考慮した検討を行いますので、充電電力（順潮流側）等も申込書に記載ください。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "発電設備等に関する系統アクセスの流れ（２０２６年9月）p.22（D6 から統合）",
+     "url": "https://www.occto.or.jp/assets/access_nagare_20260928.pdf",
+     "where": "印字 p.22（PDF 23頁）「系統用蓄電池の契約申込みの受付条件について」。出典表記は第９回次世代系統ワーキング(2026年3月27日) 資料１",
+     "quote": "次世代系統ワーキングで系統用蓄電池に係る契約申込みの受付条件として、発電側および需要側の両方の契約受付が要件化され同時提出が必要となっている。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "具体的な系統アクセス手続き等について",
+     "url": "https://www.occto.or.jp/grid/business/access.html",
+     "where": "「接続検討（必須）」",
+     "quote": "なお、接続検討の回答書の有効期限は、回答日から1年となっております。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳 v1.1 の定義（01_サイト基本「接続変電所名」・D3 から統合）",
+     "url": "src/lib/asset-ledger-spec.ts#L147",
+     "where": "L147（同じ表に L146 連系電圧(kV)・L154 契約容量(kW)）",
+     "quote": "{ name: '接続変電所名', desc: '接続検討の回答書・接続契約の表記で', type: 'text' },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       147
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "market-operator-rule",
+   "fire_risk_overlap": "none",
+   "merged_from": [
+    "D6",
+    "D3"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "条件の欠落: 接続検討の申込みが義務なのは「高圧又は特別高圧の送電系統」への連系（指針 第79条第1項）。低圧連系の蓄電所には当てはまらないので applies_when に明記した",
+    "why の「書面で示す」は言い過ぎ。指針 第85条は「書面又は電磁的方法にて回答」なので直した",
+    "why の「回答日から1年で契約申込みが受け付けられない」は契約申込み前の案件にだけ効く規定（第89条第1項第6号には選定事業者の除外もある）。運転中の資産では回答書は系統上の条件の記録として残る、という位置づけに直し、1年の期限は2文目に下げた",
+    "D6 統合: 充電時（順潮流側）も検討すること（p.9 ※6）は確認。発電側・需要側の同時提出の要件化は 2026年6月改定（p.22）で、それより前の案件で充電側が別の書面になっているかは一次で確かめられないため、設問は「充電（順潮流側）の検討結果も含めて」とし、別書面の存在は断定しない",
+    "D3 統合: 連系点・最大受電電力の記録は next_action（台帳 01 に写す）に回した。D3 の why にあった「最大受電電力を減らす変更は連系予約の取消事由（第94条第1号）」は連系予約の確定前の規定で、条文も「取り消すことができる」なので、運転中の資産の根拠には使わなかった",
+    "primary の quote は有効期限の段落で、設問の中身（回答事項）は指針 第85条の方が直接の根拠。primary はそのまま（exact）にし、第85条を other_primaries に足した"
+   ],
+   "cc_change": "台帳の 01_サイト基本に「最大受電電力」の列は無い（「契約容量(kW)」）。次にやることを実際の列名に合わせた（報告のレビュー）"
+  },
+  {
+   "id": "D2",
+   "axis": "D",
+   "axis_label": "系統",
+   "question": "連系承諾の通知（系統連系の承諾のお知らせ）と、工事費負担金契約書・その支払の記録が手元にある（契約申込みの受付が2026年10月1日以降で、FIT・FIP 電源になる予定のない案件は、用地の使用権原を証する書類の提出控えも）",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト。用地の使用権原を証する書類の提出控えは、契約申込みの受付が2026年10月1日以降の案件だけ（FIT・FIP 電源となる予定の設備と、出力増加等の系統影響が無い既設設備の変更申込みは提出不要）",
+   "answer_note": null,
+   "why": "接続検討は系統連系を確約せず、契約申込み後の連系承諾で系統連系が確定する（OCCTO）。連系承諾後1か月を超えて工事費負担金契約を結ばない、工事費負担金を払わない、連系承諾後2か月を超えて用地の使用権原を証する書類を出さない（FIT・FIP 電源となる予定の設備を除く）場合は、確定した連系予約が取り消される（送配電等業務指針 第97条第2項）。",
+   "next_action": "連系先の一般送配電事業者から届いた系統連系の承諾のお知らせ・工事費負担金契約書・入金の記録を揃え、見当たらなければ同社の託送供給サービス窓口に問い合わせる",
+   "primary": {
+    "name": "送配電等業務指針（令和８年８月１日変更）第97条第2項第1号",
+    "issuer": "電力広域的運営推進機関（OCCTO）",
+    "url": "https://www.occto.or.jp/assets/occto/article/index/shishin2608.pdf",
+    "where": "第97条（連系予約の確定）第2項第1号（PDF 45頁・印字41頁）。同項第2号＝工事費負担金の不払い、第4号＝用地の使用権原を証する書類の不提出",
+    "quote": "一 系統連系希望者が、連系承諾後１か月を超えて第１０３条第１項に定める工事費負担金契約を締結しない場合",
+    "verified": "ws-only",
+    "http_status": "200（application/pdf・794,965 B・2026-10-10 取得）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "発電設備等系統アクセスの流れ（注3）",
+     "url": "https://www.occto.or.jp/institution/access/kentou/access_process.html",
+     "where": "【発電設備等系統アクセス業務の流れ】注3",
+     "quote": "注3 接続検討は、系統連系を確約するものではありません。契約申込み後の連系承諾で系統連系が確定します。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "発電設備等系統アクセスの流れ（６．契約申込みと連系承諾）",
+     "url": "https://www.occto.or.jp/institution/access/kentou/access_process.html",
+     "where": "「６．契約申込み（必須）と連系承諾」",
+     "quote": "その結果をご回答いたします（系統連系の承諾のお知らせ）。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "送配電等業務指針 第97条第2項第2号",
+     "url": "https://www.occto.or.jp/assets/occto/article/index/shishin2608.pdf",
+     "where": "第97条第2項第2号（PDF 45頁）",
+     "quote": "二 系統連系希望者が、第１０３条第１項に定める工事費負担金契約に定められた工事費負担金を支払わない場合",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "送配電等業務指針 第97条第2項第4号（F6 から統合）",
+     "url": "https://www.occto.or.jp/assets/occto/article/index/shishin2608.pdf",
+     "where": "第97条第2項第4号（PDF 45頁。続きに 2か月以内の提出が困難と合理的に認められるときの別途期間のただし書き）",
+     "quote": "系統連系希望者が、連系承諾後、２か月を超えて発電設備等（ＦＩＰ電源又はＦＩＴ電源となる予定の発電設備等を除く。）を設置する用地の使用権原を証する書類を提出しない場合",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "送配電等業務指針 附則（令和８年７月２１日）第2条（F6 から統合）",
+     "url": "https://www.occto.or.jp/assets/occto/article/index/shishin2608.pdf",
+     "where": "附則（令和８年７月２１日）第2条（連系予約の取消要件の追加適用）（PDF 135頁・印字131頁）",
+     "quote": "第９７条及び第１０５条の改正規定は、系統アクセス業務のうち契約申込みのプロセスにおける用地の使用権原を証する書類の提出に関して、託送供給等約款の変更の効力が一般送配電事業者において生じた日以降に系統アクセスにおける契約申込みを行う案件について、適用する。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "発電設備等に関する系統アクセスの流れ（２０２６年9月）p.15 本文",
+     "url": "https://www.occto.or.jp/assets/access_nagare_20260928.pdf",
+     "where": "印字 p.15（PDF 16頁）＜事業用地の使用権原を証する書類の提出＞",
+     "quote": "系統連系希望者は、原則として連系承諾後２か月以内までに、発電設備等を設置する用地の使用権原を証する書類を提出してください。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 p.15 ※17",
+     "url": "https://www.occto.or.jp/assets/access_nagare_20260928.pdf",
+     "where": "印字 p.15 ※17",
+     "quote": "※17 2026年10月1日以降に契約申込みの受付を行う案件より運用を開始します。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 p.15 ※15",
+     "url": "https://www.occto.or.jp/assets/access_nagare_20260928.pdf",
+     "where": "印字 p.15 ※15（続きに既設設備の変更申込みで出力増加等が無い場合は提出不要の但し書き）",
+     "quote": "※15 ＦＩＰ電源又はＦＩＴ電源となる予定の発電設備等を除く全電源。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "託送供給等約款（令和 8 年 10 月 1 日実施）東京電力パワーグリッド 8(2)ル",
+     "url": "https://www.tepco.co.jp/pg/consignment/notification/pdf/takusou_yakkan20260722.pdf",
+     "where": "Ⅱ 契約の申込み 8（契約の要件）(2)ル（PDF 22頁）",
+     "quote": "を設置する用地についての使用権原を証する文書を提出すること。",
+     "verified": "ws-only（改行のみ。文の途中からの抜き出し）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 8(2)ル（起点の書き方）",
+     "url": "https://www.tepco.co.jp/pg/consignment/notification/pdf/takusou_yakkan20260722.pdf",
+     "where": "8(2)ル の冒頭",
+     "quote": "発電契約者が，原則として，発電量調整供給契約の申込みを当社が承諾した日から２月以内に，",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "market-operator-rule",
+   "fire_risk_overlap": "none",
+   "merged_from": [
+    "F6"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "日付の言い過ぎ: 「2026年10月1日以降に契約申込みをした案件」→ OCCTO の逐語は「2026年10月1日以降に契約申込みの受付を行う案件」。指針 附則（令和８年７月２１日）第2条は各一般送配電事業者の託送供給等約款の変更の効力発生日以降の契約申込みから適用＝日付は各社の約款で決まる（東京電力PG は令和8年10月1日実施の約款で確認、他9社は未確認）",
+    "除外の欠落: FIT・FIP 電源となる予定の設備は対象外（第97条第2項第4号・※15）。既設設備の変更申込みで出力増加等の系統影響が無い場合も提出不要（※15）。applies_when に書いた",
+    "「連系予約を保つための手続の書面」は読み手に分かりにくいので、書面の名前（系統連系の承諾のお知らせ・工事費負担金契約書・支払の記録）に直した。「系統連系の承諾のお知らせ」は OCCTO の流れのページの表記で確認",
+    "東京電力PG 約款 8(2)ル の提出期限の起点は「発電量調整供給契約の申込みを当社が承諾した日から２月以内」で、指針の「連系承諾後」と書き方が違う。候補の quote は「を設置する用地…」と文の途中から始まるので、起点を含む部分を別に足した。他9社の約款は未確認",
+    "F6 統合: F6 の土地契約の終了日・民法第604条（存続期間50年）は F8 側の論点。D2 には指針 第97条第2項第4号と附則第2条を根拠として足した（民法第604条は e-Gov で条文を確認済みだが D2 では使わない）",
+    "運転開始後の資産では連系予約の取消しはもう起きないので、why は「連系が確定するまでの手続の書面」という位置づけで書いた（期限の数字は一次どおり）"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "D4",
+   "axis": "D",
+   "axis_label": "系統",
+   "question": "特別高圧で連系している場合、自設備が N-1 電制（設備が1つ故障したときにリレーで瞬時に電源の出力を制限する仕組み）の対象か（N-1 電制装置を設置しているか）を、一般送配電事業者との書面で確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "特別高圧の系統に連系しているサイト（高圧系統以下に接続される電源は N-1 電制の対象外＝OCCTO）",
+   "answer_note": null,
+   "why": "特別高圧の系統に接続する電源は既設も含め全て N-1 電制対象電源の候補で、一般送配電事業者から N-1 電制装置の設置を求められた発電契約者等はこれに応じる必要がある（OCCTO）。高圧系統以下に接続される電源は電制対象としない（同）。なお、OCCTO の考え方は電源・発電所について書かれていて、蓄電所への当てはめは明記されていない（このため一般送配電事業者との書面で確かめる）。",
+   "next_action": "接続検討の回答書・接続契約などで N-1 電制装置の扱いを確かめ、書面で分からなければ連系先の一般送配電事業者に問い合わせる",
+   "primary": {
+    "name": "流通設備の整備計画の策定（送配電等業務指針第５５条関連）におけるＮ－１電制の考え方について（2025年1月23日変更）",
+    "issuer": "電力広域的運営推進機関（OCCTO）",
+    "url": "https://www.occto.or.jp/assets/access/oshirase/2018/files/20250123_n-1densei.pdf",
+    "where": "1.6 Ｎ－１電制の対象電源選定の考え方 脚注8（印字9頁・PDF 10頁）",
+    "quote": "発電事業者は、正当な理由がない限り、効率的設備形成の観点からのＮ－１電制装置の設置について応じる必要がある。",
+    "verified": "ws-only",
+    "http_status": "200（application/pdf・7,723,684 B・2026-10-10 取得）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同上 1.5 Ｎ－１電制対象電源",
+     "url": "https://www.occto.or.jp/assets/access/oshirase/2018/files/20250123_n-1densei.pdf",
+     "where": "1.5（印字8頁・PDF 9頁）",
+     "quote": "特別高圧の系統に接続する電源は、既設電源も含め全てＮ－１電制対象電源の候補となる。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同上 1.5（高圧以下は対象外）",
+     "url": "https://www.occto.or.jp/assets/access/oshirase/2018/files/20250123_n-1densei.pdf",
+     "where": "1.5 末尾（印字8頁）",
+     "quote": "高圧系統以下に接続される電源は電制対象としない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同上 1.6 本文（設置の求めに応じる必要）",
+     "url": "https://www.occto.or.jp/assets/access/oshirase/2018/files/20250123_n-1densei.pdf",
+     "where": "1.6 本文（印字10頁・PDF 11頁）。直後に一般送配電事業者は「丁寧な説明を行うことが望まれる」",
+     "quote": "一般送配電事業者からＮ－１電制の装置の設置の求めがあった発電契約者等は、これに応ずる必要がある",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同上 脚注14（回答書への記載）",
+     "url": "https://www.occto.or.jp/assets/access/oshirase/2018/files/20250123_n-1densei.pdf",
+     "where": "1.7 脚注14（印字11頁・PDF 12頁）",
+     "quote": "当面の措置であるため、将来Ｎ－１電制適用に伴い必要となるオペレーション費用の負担が生じる可能性があることを、原則、系統アクセス検討の全ての回答書に示していく。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同上 用語（Ｎ－１電制の説明）",
+     "url": "https://www.occto.or.jp/assets/access/oshirase/2018/files/20250123_n-1densei.pdf",
+     "where": "用語の表（印字4頁・PDF 5頁）",
+     "quote": "単一設備故障時にリレーシステムで瞬時に電源制限を行うことで運用容量を拡大する取り組み",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "系統の接続および利用ルールについて（N-1電制）",
+     "url": "https://www.occto.or.jp/grid/business/setsuzoku.html",
+     "where": "「N-1電制」",
+     "quote": "自らが電制対象電源となることを前提に、特別高圧以上に接続する電源を対象に、2018年10月より先行的にN-1電制の適用(N-1電制先行適用)を開始しました。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳 v1.1 の定義（01_サイト基本）",
+     "url": "src/lib/asset-ledger-spec.ts#L155",
+     "where": "L155（08 の項目 L386「N-1電制の対象」）",
+     "quote": "{ name: 'N-1電制の対象（有/無/不明）', desc: `接続条件での扱い。用語: ${glossary(LEDGER_GLOSSARY.n1)}`, type: 'list', options: YESNO_UNKNOWN },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       155
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "market-operator-rule",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "条件の欠落: 高圧系統以下に接続される電源は電制対象外（1.5）なので、設問に「特別高圧で連系している場合」を付けた",
+    "why の言い過ぎ: 「電制装置の設置費用と電制時のオペレーション費用は当面一般負担（1.7）」は、脚注11の例外（電源線に相当する設備の増強の代わりに設置する N-1 電制は本ガイドラインの対象外で、初期費用・オペレーション費用とも新規電源自身の負担）を落としている。棚卸しに不要なので final_why から外した",
+    "書面の種類の推測: 「接続検討の回答書・接続契約・連系協議の記録など」に N-1 電制の扱いが書かれるとする一次は無い（OCCTO は一般送配電事業者が設置を求める際に「丁寧な説明を行うことが望まれる」まで）。回答書に N-1 電制のオペレーション費用負担の可能性を原則として示すこと（脚注14）は確認できたので、next_action の探し先の例に留め、設問は「一般送配電事業者との書面」にした",
+    "設置に応じる必要の根拠は脚注8 より 1.6 本文の方が直接的（主体も「発電契約者等」）なので other_primaries に足した",
+    "「N-1 電制」の語の説明を、OCCTO の用語の表の説明に沿って付けた",
+    "当サイト /grid の「N-1電制適用可」は変電所（設備）単位の公表値で、自設備が電制対象かとは別物（D7 と混同しない注記が画面に要る）"
+   ],
+   "cc_change": "OCCTO の資料（71 頁）に「蓄電」の語が無いことを why に明記した（報告のレビュー）"
+  },
+  {
+   "id": "D5",
+   "axis": "D",
+   "axis_label": "系統",
+   "question": "ノンファーム型接続（混雑時の出力制御を前提に、設備の増強を待たずに接続する方式）が自設備に適用されているかと、その条件（混雑時の出力制御・主な混雑設備）を、接続検討の回答書・同意書の控え・接続契約で確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "10kW未満の低圧を除く全サイト（2023年3月31日以前に接続検討の受付をした案件は、適用されていないこともある）",
+   "answer_note": null,
+   "why": "2023年4月1日以降に接続検討の受付を行った案件は、接続先の電圧階級や空き容量の有無に関わらず原則としてノンファーム型接続が適用され、混雑が見込まれる場合は接続検討の回答に主な混雑設備の名称が書かれる（OCCTO）。ノンファーム型接続の電源は、系統の混雑が生じると出力制御を受ける可能性がある（資源エネルギー庁）。",
+   "next_action": "接続検討の回答書で「主な混雑設備」の記載を、同意書の控えか接続契約で適用の有無を確かめ、分からなければ連系先の一般送配電事業者に問い合わせる",
+   "primary": {
+    "name": "系統の接続および利用ルールについて ～ノンファーム型接続～",
+    "issuer": "電力広域的運営推進機関（OCCTO）",
+    "url": "https://www.occto.or.jp/grid/assets/NF_setuzokuriyou_20260710.pdf",
+    "where": "スライド7「系統アクセス手続きの基本的な進め方について」（PDF 8頁）",
+    "quote": "ノンファーム型接続での契約申込み（10kW未満の低圧を除く）に際しては、同意書の提出が必要となります。",
+    "verified": "ws-only",
+    "http_status": "200（application/pdf・5,865,946 B・2026-10-10 取得）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同上 スライド7（2023年4月1日以降は原則適用）",
+     "url": "https://www.occto.or.jp/grid/assets/NF_setuzokuriyou_20260710.pdf",
+     "where": "スライド7（PDF 8頁）。同じ文がスライド5にもある",
+     "quote": "2023年4月1日以降に接続検討の受付を行った案件は、接続先の電圧階級や空き容量の有無に関わらず、原則としてノンファーム型接続が適用されております。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同上 スライド7（主な混雑設備の記載）",
+     "url": "https://www.occto.or.jp/grid/assets/NF_setuzokuriyou_20260710.pdf",
+     "where": "スライド7（PDF 8頁）",
+     "quote": "混雑が見込まれる場合には、アクセス検討（事前相談・接続検討）において、主な混雑設備の名称（出力制御量に影響を与える主な設備）を記載※します",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同上 スライド7（同意書の廃止予定）",
+     "url": "https://www.occto.or.jp/grid/assets/NF_setuzokuriyou_20260710.pdf",
+     "where": "スライド7（PDF 8頁）",
+     "quote": "当該同意書は準備の整った各一般送配電事業者から順次廃止予定。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "系統情報の公表の考え方（令和８年４月改定）",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/keitou_kangaekata_20260401.pdf",
+     "where": "（２）実運用に資する情報 ① 地内基幹送電線に関する情報（PDF 14頁）。直前に「しかしながら、」",
+     "quote": "ノンファーム型接続をする電源は、系統の混雑が生じた場合、出力制御を受ける可能性があることから、地内基幹送電線に関する情報の公開が重要である。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "日本版コネクト＆マネージの検討",
+     "url": "https://www.occto.or.jp/gyomusyokai/no7.html",
+     "where": "「ノンファーム型接続」",
+     "quote": "系統混雑時の出力制御を前提に、設備増強をせずに新規電源を系統に接続し、系統に空きがある時には運転を認める電源接続の考え方です。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳 v1.1 の定義（01_サイト基本）",
+     "url": "src/lib/asset-ledger-spec.ts#L156",
+     "where": "L156（08 の項目 L387「ノンファーム接続」）",
+     "quote": "{ name: 'ノンファーム接続（有/無）', desc: `接続条件での扱い。用語: ${glossary(LEDGER_GLOSSARY.nonFirm)}`, type: 'list', options: YESNO },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       156
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "market-operator-rule",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "applies_when が無かった: ノンファーム型接続の対象から 10kW未満の低圧は除かれる（スライド5 ※1・スライド7）。2023年3月31日以前の受付案件は基幹系統の空き容量などで扱いが分かれる（スライド19・29）ので、その旨を書いた",
+    "why の「主な混雑設備の名称が記載される（OCCTO）」に quote が付いていなかったので、スライド7の該当文を other_primaries に足した（ws-only で一致）",
+    "「ノンファーム型接続」の語の説明を、OCCTO（日本版コネクト＆マネージ）の説明に沿って付けた",
+    "同意書の「順次廃止予定」は表紙の更新日 2024年7月1日時点の記述で、現在どの社で廃止済みかはこの一次では分からない。next_action は同意書が無い場合に接続契約で確かめる形にした",
+    "N-1 電制（D4）とは別の仕組み。当サイト /grid の「ノンファーム接続適用可否」は変電所単位の公表値で、自設備の接続条件とは別物"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "D7",
+   "axis": "D",
+   "axis_label": "系統",
+   "question": "接続変電所の公表値（空容量・N-1電制適用可否と適用可能量・ノンファーム接続適用可否）を、公表元のデータ基準日とあわせて記録している（自設備の接続条件ではなく変電所ごとの公表値。当サイト /grid で見られる）",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（接続変電所が当サイト /grid に無いときは、連系先の一般送配電事業者の公表ページで確かめる）",
+   "answer_note": null,
+   "why": "資源エネルギー庁「系統情報の公表の考え方」は、発電所又は蓄電所の立地を決めるときの予見可能性を高める情報として、送変電設備の予想潮流・N-1電制適用可否・N-1電制適用可能量（配電用変電所変圧器等は空容量）を一般送配電事業者等が公開するとしている。空容量は特定の条件下の値で、熱容量以外の電圧面・系統安定度の制約は個別の接続検討で回答される（同・脚注10・13）。",
+   "next_action": "当サイト /grid で接続変電所のページを開き、各表示値と「データ最終更新日」を写す（最新値はページの「一次ソース（公表ページ）」で確かめる）",
+   "primary": {
+    "name": "系統情報の公表の考え方（令和８年４月改定）",
+    "issuer": "資源エネルギー庁 電力・ガス事業部",
+    "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/keitou_kangaekata_20260401.pdf",
+    "where": "２．公表されるべき系統情報の整理（3頁）。公開項目の列挙は 6 頁「① 公開情報」○系統の予想潮流等に関する情報、脚注10・13",
+    "quote": "発電等設備設置者は、発電所又は蓄電所の立地地点を決めるに当たり、立地候補地点付近の系統に連系することから、当該系統について発電等設備設置者の予見可能性を高めることに資する情報が必要となる。",
+    "verified": "ws-only",
+    "http_status": "200（567,786 B・29 頁・PDF /Title「系統情報の公表の考え方（令和８年４月）」・2026-10-10 取り直し・WAF 202 なし）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同上 6 頁「① 公開情報」○系統の予想潮流等に関する情報",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/keitou_kangaekata_20260401.pdf",
+     "where": "6 頁 本文",
+     "quote": "なお、配電用変電所変圧器等については、少なくとも、回線数・変圧器台数、設備容量、運用容量、制約要因（熱容量制約）、空容量13を、電力広域的運営推進機関、一般送配電事業者及び配電事業者のウェブサイトで公開する。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同上 脚注13",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/keitou_kangaekata_20260401.pdf",
+     "where": "6 頁 脚注13",
+     "quote": "13 空容量を記載した系統図は特定の条件下における空容量を公開しているものである。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同上 脚注10",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/regulations/pdf/keitou_kangaekata_20260401.pdf",
+     "where": "6 頁 脚注10",
+     "quote": "熱容量以外の電圧面や系統安定度制約については、発電機の条件等により結果が異なり、一律に公表することは難しいことから、これまでと同様に、個別の接続検討の際に回答を行う。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 変電所ページ（/grid/[slug]）",
+     "url": "src/app/grid/[slug]/page.tsx（L467・L471 空容量、L507・L511・L513 N-1電制とノンファーム、L754・L756 データ最終更新日・蓄電所ネット取得日、L762 一次ソース）",
+     "where": "表示項目「空容量（当該設備）」「空容量（上位系考慮）」「N-1電制適用可」「N-1電制適用可能量」「ノンファーム接続適用可否」",
+     "quote": "<dt>空容量（上位系考慮）</dt>",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/app/grid/[slug]/page.tsx",
+      "lines": [
+       467,
+       471,
+       507,
+       511,
+       513,
+       754,
+       756,
+       762
+      ]
+     },
+     "public_url": "/grid"
+    },
+    {
+     "name": "当サイト N-1電制適用可否の表示区分",
+     "url": "src/lib/n1-status-label.ts L7・src/data/n1-status.json（count 419）",
+     "where": "可・不可・未算定・公表なし の 4 区分",
+     "quote": "export type N1Status = 'ok' | 'ng' | 'undetermined' | 'no_column';",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/n1-status-label.ts",
+      "lines": [
+       7
+      ]
+     },
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳の定義（01_サイト基本）",
+     "url": "src/lib/asset-ledger-spec.ts L148-153",
+     "where": "01_サイト基本「接続変電所（当サイト slug）」",
+     "quote": "desc: `当サイトの変電所ページの URL 末尾（${LEDGER_SITE}/grid/<slug> の <slug>）`,",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       148,
+       149,
+       150,
+       151,
+       152,
+       153
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "government-guideline（＋当サイト DB の定義）",
+   "fire_risk_overlap": "none。asset-check 内では D4（自設備の N-1 電制の扱い）・D5（自設備のノンファーム適用）と語が重なるので、設問文に「自設備の接続条件ではなく変電所ごとの公表値」と書いた",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "primary の quote は PDF の改行（「蓄電所」と「の立地地点」の間）があり、文字単位の一致ではなく ws-only。",
+    "一次の文脈は「立地地点を決めるに当たり」の予見可能性で、稼働中の資産の買い手・貸し手が確かめる理由としては間接的。同じ D 軸の予備 D8（電源線・自営線の所有と修繕負担）の方が資産そのものに直接かかわる（reserve_notes 参照）。",
+    "設問にある「ノンファーム接続適用可否」は、この一次の公開項目の列挙（6 頁）には無い。当サイト /grid の表示項目（各社の公表値）として残し、final_why では一次にある項目だけを書いた。",
+    "next_action が 2 文だったので 1 行にした。",
+    "N-1電制適用可否は当サイトで「未算定」「公表なし」が計 419 件（src/data/n1-status.json の count・作業ツリーで未変更）あり、「不可」と読み違えない注記が画面に要る。",
+    "src/lib/grid-connection-checker.ts の feasibility_score は当サイト独自の評価式なので、この設問の根拠・表示に使わないこと（候補の notes どおり）。",
+    "当サイトの page.tsx の行番号は候補の範囲（L448-474・L503-529・L754-757）の中に実在することを確かめた（表示項目の正確な行は L467/471/507/511/513/754/756/762）。"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "E1",
+   "axis": "E",
+   "axis_label": "運転実績",
+   "question": "直近 12 か月（運転開始から 12 か月未満なら運転開始から）の月ごとの停止日数と停止理由（故障・系統事象など）を記録している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "運転を開始しているサイト",
+   "answer_note": null,
+   "why": "当サイトの資産台帳 v1.1 は、直近 12 か月の停止日数と稼働可能率（この台帳での定義: 暦時間のうち運転できた時間の割合）を、買い手・貸し手が確かめそうな項目（当サイトの想定）に挙げている。電気事業者でない設置者が出力千kW以上の蓄電用の自家用電気工作物を系統に接続している場合は、法定の自家用発電所等運転半期報（電気関係報告規則 様式第９ 第2表）にも「運転停止期間及び停止理由」の欄がある。",
+   "next_action": "停止のあった月ごとに停止日数と停止理由を台帳の 04_月次実績に入れ、理由は 05_インシデントの記録と揃える",
+   "primary": {
+    "name": "系統用蓄電所 資産台帳テンプレート v1.1 の定義（08_売却時に聞かれる項目「直近 12 か月の停止日数」）",
+    "issuer": "蓄電所ネット（一般社団法人エネルギー情報センター）",
+    "url": "src/lib/asset-ledger-spec.ts#L377",
+    "where": "LEDGER_CHECKLIST_ITEMS L377（08 シートの purpose は L347「買い手・貸し手が確かめそうな項目…（当サイトの想定・評価や点数は入れていません）」）",
+    "quote": "{ item: '直近 12 か月の停止日数', sheet: N.monthly, columns: ['停止日数(日)'] },",
+    "verified": "exact",
+    "http_status": "local-file",
+    "repo_ref": {
+     "path": "src/lib/asset-ledger-spec.ts",
+     "lines": [
+      377
+     ]
+    },
+    "public_url": "/tools/asset-ledger"
+   },
+   "other_primaries": [
+    {
+     "name": "資産台帳 v1.1 04_月次実績「稼働可能率(%)」",
+     "url": "src/lib/asset-ledger-spec.ts#L263",
+     "where": "L263（08 の L376「直近 12 か月の稼働可能率」）",
+     "quote": "{ name: '稼働可能率(%)', desc: 'この台帳での定義: 暦時間のうち運転できた時間の割合', type: 'number' },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       263
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "資産台帳 v1.1 04_月次実績「停止日数(日)」",
+     "url": "src/lib/asset-ledger-spec.ts#L264",
+     "where": "L264",
+     "quote": "{ name: '停止日数(日)', desc: '当月に停止していた日数', type: 'number' },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       264
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "資産台帳 v1.1 04_月次実績「停止理由」",
+     "url": "src/lib/asset-ledger-spec.ts#L265",
+     "where": "L265",
+     "quote": "{ name: '停止理由', desc: `停止の理由（${N.incident}の記録と揃える）`, type: 'text', width: 24 },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       265
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "資産台帳 v1.1 08 の purpose",
+     "url": "src/lib/asset-ledger-spec.ts#L347",
+     "where": "L347",
+     "quote": "売却や借入の相手（買い手・貸し手）が確かめそうな項目を、確かめられそうな順に並べた一覧（当サイトの想定・評価や点数は入れていません）。",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       347
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "電気関係報告規則 第2条第1項の表 五（自家用発電所等運転半期報・E2 から統合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "第2条第1項の表 五の報告対象者の欄（様式第九・四月末日及び十月末日・経済産業大臣）",
+     "quote": "法第二十八条の三第一項の接続に係る発電用又は蓄電用の自家用電気工作物（出力千キロワット未満の発電等用電気工作物を除く。）を設置する者",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気関係報告規則 様式第９ 第2表（E2 から統合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "e-Gov API の ImageData（zip）内の添付 2FH00000072906.pdf（様式第9(第2条関係)）第2表の欄名",
+     "quote": "運転停止期間及び停止理由",
+     "verified": "exact（表題「第2表 自家用発電所等運転半期報(蓄電池)」は空白の違いだけ＝ws-only）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法 第28条の3第1項（特定自家用電気工作物の届出の主体）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+     "where": "第28条の3第1項",
+     "quote": "発電用又は蓄電用の自家用電気工作物であつて経済産業省令で定める要件に該当するものを維持し、及び運用する者（小売電気事業者、一般送配電事業者、配電事業者、特定送配電事業者、発電事業者及び特定卸供給事業者を除く。）",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法施行規則 第45条の27（特定自家用電気工作物）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077",
+     "where": "第45条の27",
+     "quote": "法第二十八条の三第一項の経済産業省令で定める要件は、その出力が千キロワット以上である発電用又は蓄電用の自家用電気工作物（太陽電池発電設備及び風力発電設備を除く。以下「特定自家用電気工作物」という。）であることとする。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "site-definition（法定の裏づけは半期報の対象者＝電気事業者でない出力千kW以上の設置者だけ）",
+   "fire_risk_overlap": "none",
+   "merged_from": [
+    "E2"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "例示の「計画作業」は一次に無い（台帳 05 の種別は 停止・故障・火災・系統事象・騒音苦情・その他）。例示を「故障・系統事象など」に直した",
+    "二重の問い: 「停止日数・停止理由の記録」と「稼働可能率を月ごとに出せる」を 1 問に重ねていた。停止の記録に絞り、稼働可能率は台帳の定義として why に残した（稼働可能率は台帳が「この台帳での定義」と明記した指標で、業界標準の定義ではない）",
+    "E2 統合の範囲: 半期報の提出義務は第2条の表 五の報告対象者＝電気事業法第28条の3第1項の接続に係る出力千kW以上の蓄電用の自家用電気工作物の設置者で、同条は電気事業者（発電事業者など）を除く。電気事業者が出す発受電月報（様式第二）には蓄電池の欄はあるが停止の欄は無い（添付 PDF 2FH00000072905.pdf を pdftotext で確認）。why では対象者を限って書いた",
+    "半期報の「運転停止期間及び停止理由」は半期に 1 欄で、月別の欄ではない（月別なのは充電電力量・放電電力量など）。「法定の様式にも欄がある」までに留めた",
+    "運転開始前の案件には当てはまらないので applies_when を「運転を開始しているサイト」にした",
+    "primary を設問の中身に合う 08 の L377 に差し替えた。主の一次は当サイトの定義（site-definition）で、08 は「当サイトの想定」"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "E3",
+   "axis": "E",
+   "axis_label": "運転実績",
+   "question": "需給調整市場に参加している場合、月ごとの容量約定率（約定量÷（提供容量×当月のコマ数））と平均落札単価を記録している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "需給調整市場に参加している（いた）サイト",
+   "answer_note": null,
+   "why": "容量約定率は当サイトの資産台帳での定義で、/tools/balancing-benchmark の「約定率（容量ベース）」と同じ（EPRX の取引ガイドが定めるのは「ΔkW約定量」までで、「約定率」の定義は無い）。台帳の 08 は「直近 12 か月の約定率」を、買い手・貸し手が確かめそうな項目（当サイトの想定）に挙げている。",
+   "next_action": "アグリゲーターの月次報告などから、月ごとの容量約定率と平均落札単価を台帳の 04_月次実績に写す（応札約定率とは分母が違うので混ぜない）",
+   "primary": {
+    "name": "系統用蓄電所 資産台帳テンプレート v1.1 の約定率の定義（LEDGER_RATE_COLUMNS）",
+    "issuer": "蓄電所ネット（一般社団法人エネルギー情報センター）",
+    "url": "src/lib/asset-ledger-spec.ts#L85",
+    "where": "L85（04_月次実績の列の説明 L256-258「この台帳での定義: …」・08 の項目 L375）",
+    "quote": "capacity: { name: '容量約定率(%)', definition: '約定量÷（提供容量×当月のコマ数）' },",
+    "verified": "exact",
+    "http_status": "local-file",
+    "repo_ref": {
+     "path": "src/lib/asset-ledger-spec.ts",
+     "lines": [
+      85
+     ]
+    },
+    "public_url": "/tools/asset-ledger"
+   },
+   "other_primaries": [
+    {
+     "name": "資産台帳 v1.1 08（直近 12 か月の約定率）",
+     "url": "src/lib/asset-ledger-spec.ts#L375",
+     "where": "LEDGER_CHECKLIST_ITEMS L375",
+     "quote": "{ item: '直近 12 か月の約定率', sheet: N.monthly, columns: [LEDGER_RATE_COLUMNS.bid.name, LEDGER_RATE_COLUMNS.capacity.name] },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       375
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "資産台帳 v1.1 04_月次実績「平均落札単価」",
+     "url": "src/lib/asset-ledger-spec.ts#L262",
+     "where": "L262",
+     "quote": "{ name: '平均落札単価(円/ΔkW・30分)', desc: '当月の需給調整の落札単価の平均（算定方法は備考に）', type: 'number', width: 22 },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       262
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "/tools/balancing-benchmark の使い方と定義",
+     "url": "src/app/tools/balancing-benchmark/page.tsx#L183",
+     "where": "L183（月次報告から写す）・L185（約定率（容量ベース）＝台帳の定義、「ΔkW の約定収益（単価 × 約定量）と一致します。」）・L187（応札約定率は分母が違うので写せない）",
+     "quote": "アグリゲーターの月次報告から、月ごとの平均落札単価（円/ΔkW・30分）と約定率を写します。",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/app/tools/balancing-benchmark/page.tsx",
+      "lines": [
+       183
+      ]
+     },
+     "public_url": "/tools/balancing-benchmark"
+    },
+    {
+     "name": "EPRX 取引ガイド（全商品）第10版 1-2 リソース等が満たすべき要件 a. 運用に関する要件①",
+     "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
+     "where": "PDF 10頁（同頁下に「取引規程 第2章 第13条」）",
+     "quote": "約定した商品ブロックごとの時間帯（以下、「提供期間」といいます。）において、リソースを、本市場で約定したΔkW（以下、「ΔkW約定量」といいます。）が供出可能な状態に維持すること。",
+     "verified": "ws-only（改行のみ）",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "site-definition",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "前提の押しつけ: 「アグリゲーターの月次報告から写して保管」は、委託していて月次報告がある前提。自社が取引会員の場合もあるので、設問は「記録している」にし、写し元は next_action に回した",
+    "「約定率」は EPRX の取引ガイド第10版（704頁を pdftotext し、空白を除いて検索）に 0 件（「落札率」「稼働率」も 0 件）。EPRX が定めるのは ΔkW約定量まで。容量約定率は当サイト台帳の定義と final_why に明記した",
+    "why の「分子の ΔkW約定量は EPRX が定める量」は、台帳の「約定量」と EPRX の「ΔkW約定量」を同じものとみなした推定。当サイトの /tools/balancing-benchmark L185 が「ΔkW の約定収益（単価 × 約定量）」と書くので同じ量として扱えるが、台帳の定義文は「約定量」だけ。final_why では EPRX の語を補足に留めた",
+    "主の一次は当サイトの定義だけ（site-definition）。08 は「当サイトの想定」で、買い手・貸し手が実際にこれを確かめるという外部の一次は無い"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "E4",
+   "axis": "E",
+   "axis_label": "運転実績",
+   "question": "月ごとの SOH（電池の健全度）を、その測り方（保証書の容量保証の条件に書かれた測り方かどうか）を添えて記録している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "運転を開始しているサイト（容量保証が無い設備は、測り方を添えて記録しているかだけで答える）",
+   "answer_note": null,
+   "why": "当サイトの資産台帳 v1.1 は、02_設備の「容量保証の条件（SOH等）」に SOH の測り方やサイクル数の上限など保証書の記載を入れ、04_月次実績の SOH は「測り方は備考に」と定めている。08 は「容量保証の条件」と「直近の SOH」を、買い手・貸し手が確かめそうな項目（当サイトの想定）に挙げている。",
+   "next_action": "保証書の容量保証の条件（SOH の測り方）を台帳の 02_設備に写し、月ごとの SOH を 04_月次実績に測り方を備考に添えて入れる",
+   "primary": {
+    "name": "系統用蓄電所 資産台帳テンプレート v1.1 の定義（04_月次実績 SOH(%)）",
+    "issuer": "蓄電所ネット（一般社団法人エネルギー情報センター）",
+    "url": "src/lib/asset-ledger-spec.ts#L269",
+    "where": "L269（02 の容量保証の条件 L201・08 の項目 L368-369）",
+    "quote": "{ name: 'SOH(%)', desc: '当月の SOH（測り方は備考に）', type: 'number' },",
+    "verified": "exact",
+    "http_status": "local-file",
+    "repo_ref": {
+     "path": "src/lib/asset-ledger-spec.ts",
+     "lines": [
+      269
+     ]
+    },
+    "public_url": "/tools/asset-ledger"
+   },
+   "other_primaries": [
+    {
+     "name": "資産台帳 v1.1 02_設備 容量保証の条件（SOH等）",
+     "url": "src/lib/asset-ledger-spec.ts#L201",
+     "where": "L201",
+     "quote": "{ name: '容量保証の条件（SOH等）', desc: '保証の条件（SOH の測り方・サイクル数の上限など保証書の記載）', type: 'text', width: 28 },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       201
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "資産台帳 v1.1 08（直近の SOH）",
+     "url": "src/lib/asset-ledger-spec.ts#L369",
+     "where": "L369（L368 は「容量保証の条件」）",
+     "quote": "{ item: '直近の SOH', sheet: N.monthly, columns: ['SOH(%)'] },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       369
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "蓄電池メーカー保証 確認シート v1（当サイト配布物・低圧蓄電所の投資家向け）",
+     "url": "public/dl/warranty-check-sheet-v1.pdf",
+     "where": "確認項目（pdftotext -layout で 20 行目）。発行表記は「投資家のための低圧蓄電所ガイド bess-net.jp/lv/invest ｜ 発行: 2026年7月 v1」",
+     "quote": "下回った場合の対応（修理／交換／金銭）と判定方法",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "public/dl/warranty-check-sheet-v1.pdf",
+      "lines": []
+     },
+     "public_url": "/dl/warranty-check-sheet-v1.pdf"
+    }
+   ],
+   "strength": "site-definition",
+   "fire_risk_overlap": "一部重なる: cell-5「セルの寿命管理 (劣化追跡) はされますか?」（SOH 自動追跡＋閾値アラート／定期 SOH 測定）。cell-5 は劣化追跡の運用の有無を問い、本問は SOH の値を測り方つきで残し、容量保証の条件（測り方）と突き合わせられるかを問う。画面では cell-5 へのリンクを添える",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "英字略語 SOH の初出に日本語が無かった。「SOH（電池の健全度）」を足した（台帳に SOH の定義は無いので、言い換えに留めた）",
+    "fire-risk-check cell-5 と一部重なる。依頼書の「重複設問は入れない」に照らし、本問は「測り方を添えた記録」と「保証書の測り方」の突き合わせに絞った形で残す（重複と判断するなら drop して cell-5 へリンク）",
+    "「容量保証の条件に書かれた測り方と同じかどうか」は、台帳 02 の説明（保証の条件＝SOH の測り方・サイクル数の上限など保証書の記載）から言える範囲。容量保証の無い設備では括弧内が当てはまらないので applies_when に書いた",
+    "補助の一次 warranty-check-sheet-v1.pdf は低圧蓄電所の投資家向け配布物で、系統用の台帳とは対象が違う。逐語は一致するが final_why には使っていない",
+    "運転開始前の案件には当てはまらない。主の一次は当サイトの定義だけ（site-definition）"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "E6",
+   "axis": "E",
+   "axis_label": "運転実績",
+   "question": "停止・故障・火災などの出来事を 1 件ごとに記録していて、そのうち電気関係報告規則第3条の事故報告に当たったものは、速報の記録と様式第十三の報告書の控えが手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "運転を開始しているサイト（第3条の報告義務は、電気事業者の電気工作物と自家用電気工作物が対象。蓄電所の主要電気工作物の破損事故は容量20kWh超、放電支障事故は出力10万kW以上で7日間以上）",
+   "answer_note": "出来事の 1 件ごとの記録と、事故報告に当たったものの控えがそろって「はい」。出来事が無かったと確かめていれば「はい」。事故報告に当たる出来事が無ければ、記録があれば「はい」。片方だけなら「いいえ」",
+   "why": "電気関係報告規則第3条は、容量20kWh超の蓄電所の主要電気工作物の破損事故、電気火災事故（工作物は半焼以上）、出力10万kW以上の蓄電所の7日間以上の放電支障事故などを、設置場所を管轄する産業保安監督部長へ、事故を知った時から24時間以内の電話等による速報と30日以内の様式第十三の報告書で報告するよう定める。当サイトの台帳は 05_インシデントに出来事を 1 件ずつ（日付・種別・概要・原因・対応・復旧日・報告先など）記録する欄を置き、08 に「インシデントの記録」を挙げている（当サイトの想定）。",
+   "next_action": "出来事を台帳の 05_インシデントに 1 件ずつ記録し、e-Gov の電気関係報告規則第3条の表で報告対象に当たるかを確かめ、当たったものは報告書の控えを 06_書類に登録する",
+   "primary": {
+    "name": "電気関係報告規則 第3条第2項（事故報告の方法）",
+    "issuer": "経済産業省（昭和四十年通商産業省令第五十四号・e-Gov 法令 API v1）",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+    "where": "第3条第2項 本文の後段",
+    "quote": "事故の発生を知つた日から起算して三十日以内に様式第十三の報告書を提出して行わなければならない。",
+    "verified": "exact",
+    "http_status": "200（text/xml・15,411,677 B・2026-10-10 取得）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "電気関係報告規則 第3条第2項（速報・H7 から統合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "第3条第2項 本文の前段",
+     "quote": "事故の発生を知つた時から二十四時間以内可能な限り速やかに事故の発生の日時及び場所、事故が発生した電気工作物並びに事故の概要について、電話等の方法により行うとともに",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気関係報告規則 第3条第1項の表 四 ト",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "第3条第1項の表 四（主要電気工作物の破損事故）ト。報告先は電気工作物の設置の場所を管轄する産業保安監督部長",
+     "quote": "ト　容量が二十キロワットアワーを超える蓄電所",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気関係報告規則 第3条第1項の表 七",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "第3条第1項の表 七（報告先は産業保安監督部長）",
+     "quote": "出力十万キロワット以上の蓄電所に係る七日間以上の放電支障事故",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気関係報告規則 第3条第1項の表 二",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "第3条第1項の表 二（報告先は産業保安監督部長）",
+     "quote": "電気火災事故（工作物にあつては、その半焼以上の場合に限る。）",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気関係報告規則 第3条第1項 後段（報告先が経済産業大臣になる場合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "第3条第1項 後段",
+     "quote": "この場合において、二以上の号に該当する事故であつて報告先の欄に掲げる者が異なる事故は、経済産業大臣に報告しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気関係報告規則 第1条第2項第11号（放電支障事故の定義）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "第1条第2項第11号",
+     "quote": "「放電支障事故」とは、蓄電所の電気工作物の故障、損傷、破損、欠陥又は電気工作物の誤操作若しくは電気工作物を操作しないことにより当該蓄電所が直ちに運転を停止し、又はその運転を停止しなければならなくなることをいう。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気関係報告規則 第1条第2項第4号（電気火災事故の定義）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "第1条第2項第4号（主要電気工作物は第3号ヘ＝蓄電所の変圧器・逆変換装置・電力貯蔵装置など）",
+     "quote": "「電気火災事故」とは、漏電、短絡、せん絡その他の電気的要因により建造物、車両その他の工作物（電気工作物を除く。）、山林等に火災が発生することをいう。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気関係報告規則 様式第13（電気関係事故報告）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/340M50000400054",
+     "where": "ImageData（zip）内の添付 2FH00000042311.pdf を pypdf で抽出（pdftotext は字が欠ける）。項目は 1.件名〜11.電気工作物の設置者の確認",
+     "quote": "8．復旧日時： 9．防止対策：",
+     "verified": "exact（pypdf 抽出の本文で）",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳 v1.1 05_インシデント「種別」（E5 から統合）",
+     "url": "src/lib/asset-ledger-spec.ts#L292",
+     "where": "L292（05 の列 L291-301）",
+     "quote": "{ name: '種別', desc: '出来事の種類', type: 'list', options: ['停止', '故障', '火災', '系統事象', '騒音苦情', 'その他'] },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       292
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "当サイト 資産台帳 v1.1 08（インシデントの記録・E5 から統合）",
+     "url": "src/lib/asset-ledger-spec.ts#L379",
+     "where": "L379",
+     "quote": "{ item: 'インシデントの記録', sheet: N.incident, columns: ['日付', '種別', '概要'] },",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       379
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "当サイト 資産台帳 v1.1 05_インシデント「報告先」（H7 から統合）",
+     "url": "src/lib/asset-ledger-spec.ts#L300",
+     "where": "L300",
+     "quote": "報告した先を「・」区切りで（電力会社・消防・自治体・アグリ）",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       300
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "経済産業省「電力貯蔵装置（蓄電池）・蓄電所を設置する場合の手引き」（H7 から統合）",
+     "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/denryokucyozousouchi.html",
+     "where": "「電気関係報告規則に基づく事故報告について」",
+     "quote": "令和７年１１月２０日施行の電気関係報告規則の改正により、容量20kWh超の電力貯蔵装置を事故報告の対象としています。",
+     "verified": "exact（先行の保存ファイル A_meti_tebiki.html の本文で判定。取り直しは 13:39〜13:43 に 4 回とも 202・本文 0 B）",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "一部: 電気火災事故は火災系だが、fire-risk-check の 25 問に法定の事故報告（期限・様式・控え）を問う設問は無い（emergency-1 は緊急時の連絡体制、emergency-2 は消防署との事前連絡、operation-3 は点検記録の保管）。重複しないと判断",
+   "merged_from": [
+    "E5",
+    "H7"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "E5 統合: 出来事の 1 件ごとの記録（台帳 05・当サイトの定義）を前段に置き、そのうち電気関係報告規則第3条に当たったものの報告の控えを問う 1 問にした。事故が無かったサイトは「記録していて、該当なし」で「はい」",
+    "H7 統合: 速報（24時間以内・電話等）と報告書（30日以内・様式第十三）、報告先（設置場所を管轄する産業保安監督部長。二以上の号に当たり報告先が異なる事故は経済産業大臣）を why に入れた。H7 の「社内の手順書に書いてある」は規則が手順書を求めていないので設問から外した",
+    "例示の精度: 「電気火災事故」は表の二で「工作物にあつては、その半焼以上の場合に限る」。定義（第1条第2項第4号）は電気工作物を除く工作物・山林等への火災なので、蓄電池そのものの焼損は表の四ト（容量20kWh超の蓄電所の主要電気工作物の破損事故）の側で見る。設問の文からは例示を外し、why に法文どおりに書いた",
+    "経産省の手引き（令和7年11月20日施行の改正で 20kWh超を事故報告の対象に）は meti.go.jp が 202（本文 0 B）を 4 回返し、取り直せなかった。逐語は先行の保存ファイル A_meti_tebiki.html（title「電力貯蔵装置（蓄電池）・蓄電所を設置する場合の手引き（METI/経済産業省）」）で判定した。条文（第3条第1項の表 四ト）自体は e-Gov で取り直して確認済みなので、final_why は条文だけで書いた",
+    "適用範囲: 第3条の義務者は電気事業者（法第38条第4項各号の事業を営む者）又は自家用電気工作物の設置者で、小規模事業用電気工作物と原子力発電工作物を除く。系統用蓄電所は通常どちらかに当たるが、applies_when に明記した",
+    "第3条第2項ただし書（自然現象が原因の事故は報告書不要）は表の四ハと八〜十三号だけに掛かり、蓄電所の四ト・七・二には掛からない。候補の notes の書き方は誤りではないが、蓄電所の設問には関係しないので使わなかった"
+   ],
+   "cc_change": "2 つの事柄（出来事の記録・法定報告の控え）を含むので、答え方を設問の説明に書く（批評の指摘）。H7 の「手順書」は規則が求めていないので外したまま／片方だけのときを批評の 0.5 案ではなく「いいえ」にした理由と、出来事が無いときの答え方を足した（報告のレビュー）／片方だけのとき: 批評は「不明（0.5）」を勧めたが、「不明」は分からないときに使い、片方が欠けていると分かっている状態は「いいえ」にそろえた"
+  },
+  {
+   "id": "E7",
+   "axis": "E",
+   "axis_label": "運転実績",
+   "question": "需給調整市場や容量市場に参加している場合、市場側のアセスメント（約定した量・供給力を出せたかの確認）の月ごとの結果とペナルティの有無、出せなかったときに提出した書類（需給調整市場の様式23・容量市場の容量停止計画）の写しを受け取って保管している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "需給調整市場に参加している、または容量市場の容量確保契約がある場合（どちらも無ければ該当なし）。容量市場の部分は安定電源の編で確かめた（容量停止計画のリクワイアメントは安定電源・変動電源（単独）が対象）。発動指令電源として契約している場合の記録は本便で本文を確かめていない",
+   "answer_note": null,
+   "why": "EPRX（電力需給調整力取引所）の取引ガイドでは、属地の一般送配電事業者（TSO）が、約定した調整力（ΔkW）を出せる状態だったか（アセスメントⅠ）と指令どおり調整したか（アセスメントⅡ）を確かめ、不適合ならペナルティ料金を算定する。容量市場でも OCCTO（電力広域的運営推進機関）が、容量停止計画をもとに供給力を提供できる状態を維持したかをアセスメントし、対象実需給月ごとに結果を確定して知らせる。",
+   "next_action": "アグリゲーター（取引会員）や容量提供事業者に、月ごとのアセスメント結果・ペナルティ料金の明細と、提出した様式23・容量停止計画の写しを求める",
+   "primary": {
+    "name": "取引ガイド（全商品）第10版（2026年7月1日）2-9 アセスメント（共通）a. アセスメント 概要",
+    "issuer": "一般社団法人 電力需給調整力取引所（EPRX）",
+    "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
+    "where": "PDF 480 頁（スライド内の参照表記「取引規程 第8章 第39条」）",
+    "quote": "アセスメントは、 ΔkWの供出可否を確認する「アセスメントⅠ」と属地エリアにおけるTSOの指令に従って調整を実施したか応動実績を確認する「アセスメントⅡ」に分けて実施します。",
+    "verified": "ws-only",
+    "http_status": "200（application/pdf・17,442,408 B・2026-10-10 13:34 JST）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同 取引ガイド 2-7 トラブル時の対応 a. リソーストラブル時（1/15）",
+     "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
+     "where": "PDF 454 頁（取引規程 第7章 第36条、第37条）",
+     "quote": "取引会員は別途定める様式23（ΔkW約定量供出不可理由届出書）にてΔkW約定量が供出が出来なくなった理由を速やかに属地TSOへメールにて提出いただきます。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 取引ガイド 2-10 ペナルティ a.（1/2）",
+     "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
+     "where": "PDF 643 頁（取引規程 第9章 第40条、第41条）",
+     "quote": "アセスメントⅠおよびアセスメントⅡにおいて、取引対象のΔｋWに定める要件の不適合が判明した場合、ペナルティ料金Ⅰおよびペナルティ料金Ⅱを30分コマごとに算定します",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 取引ガイド（補足スライド）基準パターン指定におけるアセスメント結果の参照期間",
+     "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
+     "where": "PDF 478 頁（アセスメント結果が月単位で、精算額の通知とともに出ることの裏づけ）",
+     "quote": "例えば、N月分精算額の通知後はN月のアセスメント結果を参照しますが、N+1月分精算額の通知がされたら、以降はN＋1月のアセスメント結果により、基準パターンの指定可否を判断します。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "容量市場 業務マニュアル 実需給期間中リクワイアメント対応（安定電源）編（対象実需給年度：2026年度）第2版 第6章 6.1 注2",
+     "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2026_jitsujukyu_kanren/260427_2026_gyoumumanual_rikuwaiamento_antei.pdf",
+     "where": "PDF 137 頁（200・application/pdf・4,426,733 B・13:34 JST。表紙は「2026 年4 月27 日 第2 版 発行」）",
+     "quote": "容量停止計画におけるアセスメントは、実需給期間中において、電源が供給力を提供できる状態に維持しているかが基準となります。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同マニュアル 1.4.1.2 容量停止計画の提出（注）",
+     "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2026_jitsujukyu_kanren/260427_2026_gyoumumanual_rikuwaiamento_antei.pdf",
+     "where": "PDF 11 頁",
+     "quote": "したがって、事故による供給力の低下、日数が短く休日等の軽負荷時に実施される作業等を含む電源等の停止・出力低下についても、容量停止計画を提出してください。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同マニュアル 6.1.4.1 確定したアセスメント結果の受領",
+     "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2026_jitsujukyu_kanren/260427_2026_gyoumumanual_rikuwaiamento_antei.pdf",
+     "where": "PDF 149 頁",
+     "quote": "本機関がアセスメント結果を確定した後、対象実需給月＋4月の中旬頃にアセスメント結果を確定した旨のメールが容量市場システムに登録したメールアドレス宛に送付されます",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同マニュアル 第6章 注1（対象となる電源）",
+     "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2026_jitsujukyu_kanren/260427_2026_gyoumumanual_rikuwaiamento_antei.pdf",
+     "where": "PDF 137 頁",
+     "quote": "容量停止計画のリクワイアメントは、安定電源・変動電源（単独）が対象となります。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "market-operator-rule",
+   "fire_risk_overlap": "none",
+   "merged_from": [
+    "E8"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "E8 を統合した。E8 の「実需給年度ごとのアセスメント結果」は不正確: 容量停止計画のアセスメント結果は対象実需給月ごとに確定し、対象実需給月＋4月の中旬頃に通知される（PDF 149 頁）。年次で通知されるのは稼働抑制のアセスメントだけ（PDF 188 頁）。設問は「月ごと」に直した",
+    "E7 の why の末尾「この市場での実際の稼働の記録はここにある」は一次に無い断定なので final_why から外した",
+    "next_action の「受け取る」を「求める」に直した。取引ガイドではアセスメントを受ける相手も様式23 を出す主体も取引会員（アグリゲーター）で、所有者が写しを受け取れるかは契約次第（F1・F3 と関係）",
+    "容量市場の部分は安定電源編だけで確かめた（容量停止計画のリクワイアメントの対象は安定電源・変動電源（単独）＝注1）。条件を applies_when に明記した",
+    "E8 の「蓄電池は低予備率のコマでの市場応札も優先的にアセスメントされる」は一次どおり（PDF 13 頁 1.4.2.3）だが、統合後の問い（記録の受け取り）の外なので final_why から外した",
+    "容量停止計画は OCCTO への計画の提出で「届出」ではないため、設問では「提出した書類」と書いた（様式23 は取引ガイド上「届出書」）"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "F1",
+   "axis": "F",
+   "axis_label": "契約",
+   "question": "アグリゲーター（運用委託）契約書の写しが手元にあり、契約終了日・自動更新の有無・中途解約の条件（通知期間・違約金）・手数料の決め方（成功報酬か固定か、率ならば何に対する率か）・報告の頻度を確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "アグリゲーターに運用を委託している場合（自社で市場取引をしていて委託していなければ該当なし）",
+   "answer_note": null,
+   "why": "当サイトの資産台帳は、売却や借入の相手（買い手・貸し手）が確かめそうな項目（当サイトの想定）として、アグリゲーター契約の残期間・解約条件・手数料の型を挙げ、03_契約に報告頻度の列を置いている。E3・E7 の記録は、この契約で決まる報告から写す。",
+   "next_action": "契約書から契約終了日・自動更新・解約条件・手数料の型・報告の頻度を書き出し、読み取れない点はアグリゲーターに問い合わせる",
+   "primary": {
+    "name": "系統用蓄電所 資産台帳テンプレート 定義（08_売却時に聞かれる項目）",
+    "issuer": "蓄電所ネット（一般社団法人エネルギー情報センター）",
+    "url": "src/lib/asset-ledger-spec.ts L347（08 の purpose）・L370-372（アグリゲーター契約の残期間・解約条件・手数料の型）・L216-222（03_契約の列定義）",
+    "where": "LEDGER_CHECKLIST_SHEET.purpose（L347）",
+    "quote": "記録用のシートの中から、売却や借入の相手（買い手・貸し手）が確かめそうな項目を、確かめられそうな順に並べた一覧（当サイトの想定・評価や点数は入れていません）。",
+    "verified": "exact",
+    "http_status": "local-file",
+    "repo_ref": {
+     "path": "src/lib/asset-ledger-spec.ts",
+     "lines": [
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      347,
+      370,
+      371,
+      372
+     ]
+    },
+    "public_url": "/tools/asset-ledger"
+   },
+   "other_primaries": [
+    {
+     "name": "系統用蓄電所 資産台帳テンプレート 定義（03_契約「報告頻度」）",
+     "url": "src/lib/asset-ledger-spec.ts:224",
+     "where": "03_契約の列定義",
+     "quote": "アグリゲーターからの報告の頻度",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       224
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "同（03_契約「手数料の型」）",
+     "url": "src/lib/asset-ledger-spec.ts:220",
+     "where": "03_契約の列定義",
+     "quote": "手数料の決め方",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       220
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "site-definition",
+   "fire_risk_overlap": "none",
+   "merged_from": [
+    "F2"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "F2 を統合した（手数料の決め方）。F2 の「配分の計算例を受け取っている」（確認シート 12 行目）は 1 問に収めるため設問から外した",
+    "元の primary（アグリゲーター契約確認シート）は /lv/invest（低圧向け）の配布物で、導入文は「商談で埋めて」と購入前の確認を想定している。/tools/asset-check の対象は系統用の資産台帳と同じなので、primary を系統用の資産台帳の 08 の定義文に替え、確認シートは other_primaries に回した",
+    "一次は当サイトの定義だけ。所有者とアグリゲーターの運用委託契約の項目を定めた法令・市場ルールは無い（ERAB ガイドラインは DR が適用範囲で裏づけにならない＝研究者の前提違いのとおり）",
+    "applies_when（委託している場合）が無かったので足した"
+   ],
+   "cc_change": "報告の頻度を足した（依頼書の F の「報告頻度」が 40 問のどこにも無かった・E3・E7 の記録の出どころ）。低圧向けの確認シートを根拠から外した（系統用の台帳の定義に揃えた）"
+  },
+  {
+   "id": "F3",
+   "axis": "F",
+   "axis_label": "契約",
+   "question": "アグリゲーター契約で、契約が終わるときの運転データの扱い（引継ぎ・切替への協力の定めの有無）を確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "アグリゲーターに運用を委託している場合",
+   "answer_note": "データの扱いの定めが無いと確かめた場合も「はい」（定めの有無そのものは評価しない）",
+   "why": "当サイトの資産台帳は「データ引継ぎ条項」（契約終了時に運転データを受け取れる条項）を、買い手・貸し手が確かめそうな項目（当サイトの想定）に挙げている。台帳は、アグリゲーターや O&M（運転・保守）事業者を替えても記録が手元に残るよう、所有者自身が持つものとして作っている。",
+   "next_action": "契約書で契約終了時の運転データの引渡し・切替への協力の定めを探し、無ければアグリゲーターに契約終了時にデータを渡してもらえるかを問い合わせる",
+   "primary": {
+    "name": "系統用蓄電所 資産台帳テンプレート 定義（03_契約）",
+    "issuer": "蓄電所ネット（一般社団法人エネルギー情報センター）",
+    "url": "src/lib/asset-ledger-spec.ts L223（列定義）・L373（08 の行）・L483-485（README「この台帳について」）",
+    "where": "03_契約「データ引継ぎ条項（有/無/不明）」列（L223）",
+    "quote": "name: 'データ引継ぎ条項（有/無/不明）', desc: '契約終了時に運転データを受け取れる条項'",
+    "verified": "exact",
+    "http_status": "local-file",
+    "repo_ref": {
+     "path": "src/lib/asset-ledger-spec.ts",
+     "lines": [
+      223,
+      373,
+      483,
+      484,
+      485
+     ]
+    },
+    "public_url": "/tools/asset-ledger"
+   },
+   "other_primaries": [
+    {
+     "name": "同 台帳 README「この台帳について」",
+     "url": "src/lib/asset-ledger-spec.ts L485",
+     "where": "LEDGER_README_PARAGRAPHS[0].body",
+     "quote": "アグリゲーターや O&M 事業者を替えても記録が手元に残るよう、利用者自身が持つ台帳として作りました。",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       485
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "site-definition",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "applies_when が無かったので足した",
+    "next_action が低圧向け確認シートの欄名を指していたので、契約書の確認と問い合わせの 1 行に直した",
+    "一次は当サイトの定義だけ。F 軸で当サイト定義だけの問いが F1・F3・F5 の 3 問になる。同じ契約書の確認なので F1 に統合する案もある（reserve_notes 参照）"
+   ],
+   "cc_change": "「条項があることを確かめた」は条項が無い契約だと「いいえ」になり、契約の良し悪しの評価に寄る。「定めの有無を確かめた」に直した（批評の指摘）。低圧向けの確認シートを根拠から外した／「無い・要らないと確かめた＝はい」を答え方に明記した（A3・G1 とそろえる・再確認の指摘）"
+  },
+  {
+   "id": "F5",
+   "axis": "F",
+   "axis_label": "契約",
+   "question": "O&M（運転・保守）契約書の写しが手元にあり、委託の範囲（点検・遠隔監視・駆け付けなど）・SLA（駆け付け時間や稼働率などの約束）・契約終了日を確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "O&M を外部に委託している場合（自社で保守していれば該当なし）",
+   "answer_note": null,
+   "why": "当サイトの資産台帳は「O&M 契約の範囲と終了日」を買い手・貸し手が確かめそうな項目（当サイトの想定）に挙げ、範囲・SLA・終了日を契約書の記載どおりに入れる列を置いている。公開のプロジェクトファイナンス（PF）の事例（三菱UFJ銀行・2025年5月7日）でも、建設・保守メンテナンス・市場での運用・運営管理を別々の事業者が担っている。",
+   "next_action": "O&M 事業者から契約書の写しを受け取り、委託の範囲・SLA・終了日を資産台帳（03_契約の O&M 列）に書き写す",
+   "primary": {
+    "name": "系統用蓄電所 資産台帳テンプレート 定義（03_契約）",
+    "issuer": "蓄電所ネット（一般社団法人エネルギー情報センター）",
+    "url": "src/lib/asset-ledger-spec.ts L226-229（O&M契約 社名・範囲・SLA・終了日）・L383（08: O&M 契約の範囲と終了日）",
+    "where": "03_契約「O&M契約 範囲」列（L227）",
+    "quote": "name: 'O&M契約 範囲', desc: '委託の範囲（点検・遠隔監視・駆け付けなど契約書の記載）'",
+    "verified": "exact",
+    "http_status": "local-file",
+    "repo_ref": {
+     "path": "src/lib/asset-ledger-spec.ts",
+     "lines": [
+      226,
+      227,
+      228,
+      229,
+      383
+     ]
+    },
+    "public_url": "/tools/asset-ledger"
+   },
+   "other_primaries": [
+    {
+     "name": "本邦系統用蓄電池設備によりフルマーチャントを前提に行う事業に対する本邦初のプロジェクトファイナンス組成について（2025年5月7日・株式会社三菱UFJ銀行）",
+     "url": "https://www.bk.mufg.jp/info/pdf/full_merchant.pdf",
+     "where": "本文第2段落（200・application/pdf・216,643 B・13:34 JST）",
+     "quote": "株式会社きんでんがエンジニアリング・蓄電池調達・蓄電所建設、及びきんでん関西サービス株式会社が蓄電所の保守・メンテナンス、E-Flow 合同会社が電力市場での蓄電池運用、関電アセットマネジメント株式会社が蓄電所の運営管理を行います。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 台帳 08 の行",
+     "url": "src/lib/asset-ledger-spec.ts L383",
+     "where": "LEDGER_CHECKLIST_ITEMS",
+     "quote": "{ item: 'O&M 契約の範囲と終了日', sheet: N.contract, columns: ['O&M契約 範囲', 'O&M契約 終了日'] }",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       383
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "アグリゲーター契約（運用委託）確認シート v1（低圧向け配布物）",
+     "url": "public/dl/aggregator-contract-sheet-v1.pdf（pdftotext -layout の 26 行目）",
+     "where": "確認欄 26 行目",
+     "quote": "責任分界（運用ミス・設備故障・O&Mとの境界）",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "public/dl/aggregator-contract-sheet-v1.pdf",
+      "lines": []
+     },
+     "public_url": "/dl/aggregator-contract-sheet-v1.pdf"
+    }
+   ],
+   "strength": "site-definition",
+   "fire_risk_overlap": "部分重複: fire-risk-checklist の operation-4（O&M 業者の体制＝専門業者か・24h 緊急対応か）。本問は契約書面の有無と記載事項（範囲・SLA・終了日）の棚卸しで、体制の良し悪しは問わない。SLA の例に「24時間対応」を足すと operation-4 と重なるので足さない",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "why の「保守の委託先と範囲が契約で分かれている」は一次（三菱UFJ銀行の公表文）に無い。公表文が言うのは役割を別々の事業者が担うことだけなので「別々の事業者が担っている」に直した",
+    "三菱UFJ銀行の事例は商業運転開始 2028 年 2 月予定の案件で、O&M 契約の中身（範囲・SLA）は公表文に無い",
+    "applies_when（O&M を外部委託している場合）を足した",
+    "英字略語の初出に日本語を添えた（O&M＝運転・保守、SLA＝約束の水準）"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "F7",
+   "axis": "F",
+   "axis_label": "契約",
+   "question": "土地を借りている場合、土地の契約書で、賃借権の譲渡・転貸についての定め（地主の承諾の要否・事前承諾の条項の有無）を確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "土地を賃借している場合（自己所有なら該当なし。地上権の譲渡は民法第612条の対象外で、本便では条文を確かめていない）",
+   "answer_note": "譲渡・転貸についての定めが無いと確かめた場合も「はい」（定めの有無そのものは評価しない）",
+   "why": "民法第612条第1項は、賃借人は賃貸人（地主）の承諾がなければ賃借権を譲り渡せないと定める。蓄電所を売るときに土地の賃借権も移すなら、契約書の定めで承諾の要否が分かる。",
+   "next_action": "土地の契約書の譲渡・転貸の条項を読み、承諾が要るなら地主の承諾書か事前承諾の条項の有無を書き出す",
+   "primary": {
+    "name": "民法 第612条（賃借権の譲渡及び転貸の制限）第1項",
+    "issuer": "e-Gov 法令検索（デジタル庁）・明治二十九年法律第八十九号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/129AC0000000089",
+    "where": "第612条第1項（第2項＝無断で第三者に使用・収益させたときの解除）",
+    "quote": "賃借人は、賃貸人の承諾を得なければ、その賃借権を譲り渡し、又は賃借物を転貸することができない。",
+    "verified": "exact",
+    "http_status": "200（e-Gov 法令 API v1・text/xml・1,775,381 B・2026-10-10 13:34 JST）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "F4 を統合した（市場の契約の当事者と承継の手続き）。F4 の約款は 2030 年度以降版だけだったが、現在の実需給年度（2026〜2029 年度）の契約に当たる 2024-2029 年度版でも第26条第1項が同文であることを確かめた（PDF 22 頁）",
+    "需給調整市場に関する契約は取引会員（調整力提供事業者）と属地TSO の契約（ひな型の甲乙・取引規程第12条第3項）。所有者が取引会員でなければ所有者は当事者ではなく、売却時に効くのは第26条（甲乙の合併・事業譲渡）より第5条第2項なお書き（対象発電契約者が替わったら甲が通知し同意書を提出）。このため設問に「当事者（自社かアグリゲーターか）」を残し、第5条を other_primaries に足した",
+    "発電量調整供給契約（発調契約）の承継手続きは各社の託送供給等約款にあるはずだが本便では本文を確かめていない。設問では手続きを断定せず、当事者の書き出しまでにした",
+    "民法第612条は賃借権の規定で、地上権の譲渡は本条の対象外（地上権の扱いは条文を確かめていない）。売買の形（設備の譲渡か SPC 持分の譲渡か）で賃借権の譲渡に当たるかは一次の範囲外なので触れない",
+    "SMFG のページは貸し手が市場との契約内容を精査した例で、承継の手続きそのものの根拠ではない（where に明記）",
+    "元の F7 は土地を借りている場合だけの問いで条件の書き方が設問文の中だけだった。統合後の条件を applies_when に書いた"
+   ],
+   "cc_change": "F4（市場の契約の承継）を外して土地だけの問いにした（批評: 相手も当てはまる条件も違い、1 問だと片方だけ整っているときに答えられない）。「承諾を確かめた」→「定め（承諾の要否・条項の有無）を確かめた」に直した。F4 は予備へ／「無い・要らないと確かめた＝はい」を答え方に明記した（A3・G1 とそろえる・再確認の指摘）"
+  },
+  {
+   "id": "F8",
+   "axis": "F",
+   "axis_label": "契約",
+   "question": "土地を借りている場合、土地の契約書（賃貸借・地上権設定など）の写しが手元にあり、契約の終了日と、終了時の設備の撤去・原状回復の範囲と費用負担の定めを確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "土地を借りている場合（自己所有地なら該当なし）",
+   "answer_note": null,
+   "why": "土地を賃貸借で借りている場合、民法第604条は存続期間を最長50年とし、第621条は賃貸借が終わったときに賃借人が損傷を原状に戻す義務を、第622条が準用する第599条第1項は借主が附属させた物を収去する義務を定める。地上権では、地上権者は工作物を収去できる（義務ではなく権利）が、土地の所有者が時価で買い取る旨を通知したときは正当な理由がなければ拒めない（民法第269条）。建物の所有を目的とする借地権なら借地借家法（存続期間 第3条・建物買取請求 第13条）が掛かる。どの規定が当たるかは契約の形で違うので、契約書の定めを確かめる。当サイトの資産台帳も「土地の権利と契約終了日」を買い手・貸し手が確かめそうな項目（当サイトの想定）に挙げている。",
+   "next_action": "土地の契約書で終了日と、終了時の設備の撤去（収去）・原状回復の範囲と費用負担の条項を確かめ、終了日を資産台帳（01_サイト基本「土地契約の終了日」）に書き写す",
+   "primary": {
+    "name": "民法 第621条（賃借人の原状回復義務）",
+    "issuer": "e-Gov 法令検索（デジタル庁）・明治二十九年法律第八十九号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/129AC0000000089",
+    "where": "第621条（本文。ただし書の前まで）。あわせて第622条（使用貸借の規定の準用）→第599条第1項（借主による収去）",
+    "quote": "賃借人は、賃借物を受け取った後にこれに生じた損傷（通常の使用及び収益によって生じた賃借物の損耗並びに賃借物の経年変化を除く。以下この条において同じ。）がある場合において、賃貸借が終了したときは、その損傷を原状に復する義務を負う。",
+    "verified": "exact",
+    "http_status": "200（e-Gov 法令 API v1・text/xml・1,775,381 B・2026-10-10 13:34 JST）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "民法 第604条（賃貸借の存続期間）第1項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/129AC0000000089",
+     "where": "第604条第1項（第2項＝更新も更新の時から50年まで）",
+     "quote": "賃貸借の存続期間は、五十年を超えることができない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "民法 第622条（使用貸借の規定の準用）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/129AC0000000089",
+     "where": "第622条",
+     "quote": "第五百九十七条第一項、第五百九十九条第一項及び第二項並びに第六百条の規定は、賃貸借について準用する。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "民法 第599条（借主による収去等）第1項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/129AC0000000089",
+     "where": "第599条第1項本文（ただし書＝分離できない物・分離に過分の費用を要する物は除く）",
+     "quote": "借主は、借用物を受け取った後にこれに附属させた物がある場合において、使用貸借が終了したときは、その附属させた物を収去する義務を負う。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "系統用蓄電所 資産台帳テンプレート 定義（01_サイト基本・08）",
+     "url": "src/lib/asset-ledger-spec.ts L144-145（土地（所有/賃借/その他）・土地契約の終了日）・L388（08 の行）",
+     "where": "LEDGER_CHECKLIST_ITEMS（L388）",
+     "quote": "{ item: '土地の権利と契約終了日', sheet: N.site, columns: ['土地（所有/賃借/その他）', '土地契約の終了日'] }",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       144,
+       145,
+       388
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    },
+    {
+     "name": "当サイト /lv/risks（低圧向けページ）リスク⑥ 流動性・出口",
+     "url": "src/app/lv/risks/page.tsx L122",
+     "where": "リスク⑥の箇条",
+     "quote": "保有期間満了時の撤去費用や土地の原状回復まで含めて計画するのが安全です。",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/app/lv/risks/page.tsx",
+      "lines": [
+       122
+      ]
+     },
+     "public_url": "/lv/risks"
+    },
+    {
+     "name": "民法 第269条（工作物等の収去等）第1項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/129AC0000000089",
+     "where": "第二百六十九条第一項",
+     "quote": "地上権者は、その権利が消滅した時に、土地を原状に復してその工作物及び竹木を収去することができる。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "借地借家法 第3条（借地権の存続期間）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/403AC0000000090",
+     "where": "第三条",
+     "quote": "借地権の存続期間は、三十年とする。ただし、契約でこれより長い期間を定めたときは、その期間とする。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "借地借家法 第13条（建物買取請求権）第1項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/403AC0000000090",
+     "where": "第十三条第一項",
+     "quote": "借地権の存続期間が満了した場合において、契約の更新がないときは、借地権者は、借地権設定者に対し、建物その他借地権者が権原により土地に附属させた物を時価で買い取るべきことを請求することができる。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [
+    "F6"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "F6 を統合した（土地の契約書の写しと終了日）。F6 の primary（送配電等業務指針 第97条第2項第4号＝用地の使用権原を証する書類）は D2 側へ回る。逐語は本便でも確かめた（ws-only・PDF 45 頁）が、附則（令和８年７月２１日）第2条により託送供給等約款の変更後の契約申込みから適用＝運転中のサイトには当てはまらないことがある",
+    "元の F8 は土地を借りている条件が設問に無かった。applies_when と設問文に足した",
+    "第621条・第599条は賃貸借・使用貸借の規定で、地上権の場合の収去は別の条文（本便では確かめていない）。設問は「契約書の定め」を確かめる形なので条文の違いは問わない",
+    "第599条第1項にはただし書（分離できない物・分離に過分の費用を要する物は除く）があり、撤去の範囲は契約で決まる。設問は契約の定めを確かめる形のままにした",
+    "/lv/risks は低圧向けページ。撤去費用の見積り・積立そのものは他の軸（設備・ファイナンス）と重なりうるので、本問は契約の定めの有無だけを問う"
+   ],
+   "cc_change": "why の法令説明を賃貸借の場合に限り、地上権（民法第269条＝収去は権利・所有者の買取り）と借地借家法（第3条・第13条）を足した（報告のレビューが e-Gov で取り直して逐語一致）／借地借家法 第13条第1項の逐語を他の一次に足した。検証の記録（verify_problems）の「地上権の場合の収去は別の条文（本便では確かめていない）」は、この調整で民法 第269条を確かめて解消"
+  },
+  {
+   "id": "G1",
+   "axis": "G",
+   "axis_label": "保険",
+   "question": "加入している保険を確かめ、加入している保険（火災（財物）・事業中断（利益）・賠償責任など）ごとに、保険証券と約款・特約が手元にあり、保険会社・保険金額・免責・満期日と、契約後に保険会社へ通知が要る事項（設備の変更・譲渡など約款で定めたもの）を一覧にしている",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（保険に加入していないと確かめた場合も「はい」）",
+   "answer_note": "加入していないと確かめた場合も「はい」（未加入そのものは評価しない）。その場合 G2〜G5 は「該当しない」",
+   "why": "保険法第6条第1項は、損害保険契約を結んだ保険者に、保険事故・期間・保険金額・保険の目的物と、契約後の通知義務を定めたときはその旨を書いた書面の交付を義務づけており、契約の中身は約款・特約で決まる（日本損害保険協会の重要事項説明の標準例・家庭用）。上場インフラ投資法人の 1 例（東京インフラ・エネルギー投資法人）は、保険契約などによる保全を投資基準に掲げている。",
+   "next_action": "保険会社・代理店から各保険の証券と約款・特約（Web 約款なら版と URL）を取り寄せ、資産台帳テンプレートの「03_契約」の保険列（保険会社・保険金額・免責・満期日）と「06_書類」（種別「保険証券」）に記録し、約款の通知事項を書き出す",
+   "primary": {
+    "name": "保険法（平成二十年法律第五十六号）第6条第1項",
+    "issuer": "国（e-Gov 法令 API v1・法令ID 420AC0000000056）",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/420AC0000000056",
+    "where": "第六条第一項 柱書（各号: 第四号 保険事故・第五号 てん補の対象となる期間・第六号 保険金額・第七号 保険の目的物・第八号 約定保険価額・第十号 第二十九条第一項第一号の通知をすべき旨）",
+    "quote": "保険者は、損害保険契約を締結したときは、遅滞なく、保険契約者に対し、次に掲げる事項を記載した書面を交付しなければならない。",
+    "verified": "exact",
+    "http_status": "200（2026-10-10 13:33 JST・181,411 B）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "保険法 第6条第1項第10号",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/420AC0000000056",
+     "where": "第六条第一項第十号",
+     "quote": "第二十九条第一項第一号の通知をすべき旨が定められているときは、その旨",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "保険法 第29条第1項第1号（危険増加による解除・G8 から統合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/420AC0000000056",
+     "where": "第二十九条第一項第一号",
+     "quote": "当該危険増加に係る告知事項について、その内容に変更が生じたときは保険契約者又は被保険者が保険者に遅滞なくその旨の通知をすべき旨が当該損害保険契約で定められていること。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "火災保険 標準例 家庭用火災保険をご契約いただくお客さまへ 重要事項のご説明（日本損害保険協会）",
+     "url": "https://www.sonpo.or.jp/about/guideline/keiyaku_guideline/ctuevu0000005hpl-att/kasai2024.pdf",
+     "where": "1 頁 冒頭（契約概要・注意喚起情報の説明）",
+     "quote": "ご契約の内容は、保険種類に応じた普通保険約款・特約によって定まります。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 標準例（日本損害保険協会・家庭用）",
+     "url": "https://www.sonpo.or.jp/about/guideline/keiyaku_guideline/ctuevu0000005hpl-att/kasai2024.pdf",
+     "where": "3 契約締結後におけるご注意事項（1）通知義務等（同じ節のしおり欄に「①建物等を売却、譲渡する場合」）",
+     "quote": "ご通知がない場合、ご契約を解除し、保険金をお支払いできないことがありますので、十分ご注意ください。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "東京インフラ・エネルギー投資法人 有価証券報告書 第12期（EDINET・2024年3月28日提出）",
+     "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100T65O.pdf",
+     "where": "（ハ）投資基準 h. 保険・保証等の条件・付保状況（PDF 61 頁／364）",
+     "quote": "再生可能エネルギー発電事業から発生するキャッシュ・フロー及び収益を不測の事態によって断絶させないため、原則として、適切な保険契約又は保証等により保全がなされていることを条件とします。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳テンプレートの定義（03_契約の保険列）",
+     "url": "src/lib/asset-ledger-spec.ts#L122-L127・#L230-L232",
+     "where": "L125「免責」列の説明",
+     "quote": "免責金額・免責期間など保険証券の記載",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       122,
+       123,
+       124,
+       125,
+       126,
+       127,
+       230,
+       231,
+       232
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "一部: emergency-4（事業者賠償責任保険の加入状況・src/data/fire-risk-checklist.ts L396-L406）と賠償責任保険で重なる。本問は補償の中身の採点ではなく、証券・約款の所在と一覧化を問うので残す。賠償の中身は fire-risk-check へリンク",
+   "merged_from": [
+    "G8"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "設問の括弧「（借入がある場合は、保険金請求権への質権設定の有無も書いている）」を外した。一次は大阪府中小企業高度化資金貸付規則 第14条だけで（逐語一致は確認）、特定の公的融資の条件であり蓄電所の融資一般の根拠ではない。1 問に別の事柄を足す複合設問にもなる",
+    "G8 の「申込書（告知書）の控え・重要事項説明書（契約概要・注意喚起情報）」は必須にしなかった。保険業法施行規則 第227条の2第3項第3号イ（e-Gov 408M50000040005・逐語一致）は「事業者の事業活動に伴って生ずる損害を塡補する保険契約その他内容の個別性又は特殊性が高い保険契約」について、理解に資する他の方法があれば書面以外の方法で情報提供できるとしている。企業向けの契約では重要事項説明書が無いことがありうる",
+    "G1 の why の「書面（保険証券）」: 第6条の条文は「書面」で、「保険証券」とは書いていない。証券が契約後に届くことは協会の標準例（家庭用）の「「ご契約のしおり（約款）」は、ご契約後、保険証券とともにお届けします。」（逐語一致）で補える",
+    "第6条第1項第5号は「保険期間」ではなく「その期間内に発生した保険事故による損害をてん補するものとして損害保険契約で定める期間」。where で号ごとに書き直した",
+    "G8 の金融庁 監督指針 II－４－２－２(2)ア(ウ)注の quote は逐語一致した。ただし統合後の設問から重要事項説明書を外したので、根拠からも外した",
+    "売却・譲渡時の通知（「①建物等を売却、譲渡する場合」）は家庭用火災保険の標準例。企業向けの扱いは各約款で確かめる前提にして、設問は「約款で定めたもの」と書いた",
+    "EDINET の quote は pypdf 抽出で改行を除けば一致（ws-only）。太陽光が主の投資法人の基準で、蓄電所の買い手の基準そのものではない"
+   ],
+   "cc_change": "「加入の有無を確かめ、加入している保険ごとに」の型にした（A3 と同じ）。why の投資法人の記述を 1 社の例として名前を出した（報告のレビュー）／付保していないことを未整備として数えるかは裁定 R7"
+  },
+  {
+   "id": "G2",
+   "axis": "G",
+   "axis_label": "保険",
+   "question": "電気的・機械的事故（電池・PCS（パワーコンディショナ）・変圧器などの故障）による損害と停止が、財物と事業中断（利益）の補償に入っているか（特約の有無と対象の設備）を、保険証券・特約で確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "財物（火災保険など）または事業中断（利益）の保険に入っている場合",
+   "answer_note": null,
+   "why": "事業中断の保険の公開の商品説明に、電気的・機械的事故を特約で補償し、その場合は対象の機械・設備を証券に明記する型がある（三井住友海上・2017年版）。日本損害保険協会の重要事項説明の標準例（家庭用）でも、破損・汚損の補償で電気的・機械的事故（故障）による損害は支払わない場合に挙がっている。",
+   "next_action": "保険証券・特約の一覧で、電気的・機械的事故の補償（特約）の有無と対象の設備の記載を確かめ、分からなければ保険会社・代理店に照会する",
+   "primary": {
+    "name": "企業費用・利益総合保険のご案内（２０１７年１０月１日以降始期契約用）",
+    "issuer": "三井住友海上火災保険株式会社",
+    "url": "https://www.ms-ins.com/pdf/business/cost/kigyo-hiyou.pdf",
+    "where": "印刷頁 8（PDF 9 頁）「５．企業費用・利益総合保険の概要②」保険の対象（１）の注。同じ頁の「保険金をお支払いする主な場合」で ⑧電気的事故・機械的事故＝△",
+    "quote": "※電気的事故・機械的事故を補償する場合には、その対象となる機械・設備を保険証券に明記する必要があります。",
+    "verified": "exact",
+    "http_status": "200（2026-10-10 13:33 JST・2,573,411 B）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同 案内（三井住友海上・2017年版）の凡例",
+     "url": "https://www.ms-ins.com/pdf/business/cost/kigyo-hiyou.pdf",
+     "where": "印刷頁 8（PDF 9 頁）「保険金をお支払いする主な場合」の凡例",
+     "quote": "△：特約をセットする場合に補償されます",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "火災保険 標準例 重要事項のご説明（日本損害保険協会・家庭用）",
+     "url": "https://www.sonpo.or.jp/about/guideline/keiyaku_guideline/ctuevu0000005hpl-att/kasai2024.pdf",
+     "where": "1 契約締結前におけるご確認事項 基本となる補償「破損、汚損 等」の支払わない場合",
+     "quote": "電気的・機械的事故（故障）によって生じた損害",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "東京インフラ・エネルギー投資法人 有価証券報告書 第12期",
+     "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100T65O.pdf",
+     "where": "（チ）付保方針（PDF 66 頁）",
+     "quote": "災害の事故等による発電設備等の損害又は第三者への損害賠償を担保するため、運用資産について火災保険（風水害、機械的事故を含みます。）、賠償責任保険を付保します。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "insurer-public",
+   "fire_risk_overlap": "none（pcs-1〜5 は保護機能そのもの、emergency-4 は賠償保険の加入。補償範囲は問わない）",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "設問の括弧「（入っているなら、対象の設備が証券に明記されている）」を外した。明記の要件は一社の 2017 年版の一商品（企業費用・利益総合保険）の説明で、すべての契約に一般化できない。確かめる中身（対象の設備の記載）として設問の括弧と next_action に残した",
+    "「確認済み」を「確かめた」に直した（文体）",
+    "where の「8 頁」は印刷頁番号で、PDF では 9 頁目",
+    "協会の標準例は家庭用火災保険。企業向け財物保険での扱いは約款で確かめる（why では家庭用と明示）",
+    "一次は 2017 年版で、現行商品や他社の条件と異なりうる。特定の商品を勧める書き方にしない",
+    "PCS の初出に日本語（パワーコンディショナ）を添えた"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "G3",
+   "axis": "G",
+   "axis_label": "保険",
+   "question": "地震・噴火・津波による損害（財物・事業中断）が補償に入っているか（地震危険補償特約などの有無と、入っていれば支払方式・支払限度額）を、保険証券・特約で確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "財物または事業中断（利益）の保険に入っている場合",
+   "answer_note": null,
+   "why": "日本損害保険協会は、企業向け火災保険の基本補償では地震・噴火・津波による損害は補償対象外で、補償は地震危険補償特約によると説明している。政府が再保険する地震保険は居住用の建物・生活用動産だけが対象で（地震保険に関する法律 第2条第2項第1号）、事業用の設備は入れない。協会が地震を補償対象外と明記しているのは財物（企業向け火災保険）の基本補償で、事業中断（利益）の扱いは証券・特約で確かめる（協会の事業中断のページに地震の記述は無い）。",
+   "next_action": "保険証券・特約の一覧で、地震危険補償特約（または同等の特約）の有無、支払方式（支払限度額方式・縮小支払方式）、支払限度額を確かめる",
+   "primary": {
+    "name": "企業のための保険ナビ「企業財産のリスク」",
+    "issuer": "一般社団法人 日本損害保険協会",
+    "url": "https://www.sonpo.or.jp/sme_insurance/corporate-property/",
+    "where": "「企業財産のリスクに備える保険」企業向け火災保険の説明",
+    "quote": "基本補償では、直接間接問わず、地震・噴火・津波によって生じた損害は補償対象外です。",
+    "verified": "exact",
+    "http_status": "200（2026-10-10 13:33 JST・27,881 B）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "地震保険に関する法律（昭和四十一年法律第七十三号）第2条第2項第1号",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/341AC0000000073",
+     "where": "第二条第二項第一号（地震保険契約の要件）",
+     "quote": "居住の用に供する建物又は生活用動産のみを保険の目的とすること。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同ページ（地震危険補償特約の節）",
+     "url": "https://www.sonpo.or.jp/sme_insurance/corporate-property/",
+     "where": "地震危険補償特約の説明",
+     "quote": "なお、個人向けの地震保険は、対象が「居住のために用いられる建物と家財」に限られるため、店舗や事務所や工場といった事業用の物件は加入することはできません。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同ページ（主な補償内容・地震危険補償特約の注）",
+     "url": "https://www.sonpo.or.jp/sme_insurance/corporate-property/",
+     "where": "主な補償内容「地震危険補償特約」の※（支払方式の根拠）",
+     "quote": "※地震保険（地震危険補償特約）の引受方法には、「支払限度額方式」と「縮小支払方式」があります。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "東京インフラ・エネルギー投資法人 有価証券報告書 第12期",
+     "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100T65O.pdf",
+     "where": "（チ）付保方針（PDF 66 頁）",
+     "quote": "ポートフォリオ全体に係るPML値を基準に、災害による影響と損害保険料等を考慮して地震保険の付保の判断を行います。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "insurer-public（法令で補強）",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "keep",
+   "verify_problems": [
+    "文言の整えだけ（「入っていれば」を足し、「確認済み」を「確かめた」に）。中身は一次どおり",
+    "NEDO「損害保険概要について」の「（４）地震、噴火、津波による損害」は逐語一致したが、NEDO 自身に帰属する資産の付保の説明で、蓄電所の契約との関係が薄いので根拠から外した",
+    "why の「政府が再保険する」は第2条ではなく第1条・第3条（政府の再保険）の内容（XML で確認）。条番号は対象の限定（第2条第2項第1号）にだけ付けた",
+    "EDINET の PML 値（予想最大損失率）の付保方針は太陽光が主の投資法人のもので、改行を除けば一致（ws-only）。英字略語なので final_why には入れなかった"
+   ],
+   "cc_change": "why の範囲を財物に限って書き、事業中断は証券・特約で確かめる旨を足した（報告のレビュー）"
+  },
+  {
+   "id": "G4",
+   "axis": "G",
+   "axis_label": "保険",
+   "question": "風災・雹（ひょう）災・雪災・水災（洪水・高潮・土砂崩れなど）による損害と停止が、財物と事業中断（利益）の補償に入っているかを、保険証券・特約で確かめた",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "財物または事業中断（利益）の保険に入っている場合",
+   "answer_note": null,
+   "why": "上場インフラ投資法人の 1 例（東京インフラ・エネルギー投資法人）は、付保方針で火災保険に「風水害、機械的事故を含みます」と明記している。事業中断の保険の公開の商品説明では水災が「特約をセットする場合に補償」の区分にあり（三井住友海上・2017年版）、日本損害保険協会も補償内容は各社で異なるとしている。",
+   "next_action": "保険証券・特約の一覧で、風災・雹災・雪災・水災それぞれの補償の有無（水災が特約かどうか）と支払の条件を確かめる",
+   "primary": {
+    "name": "有価証券報告書（内国投資証券）第12期（自2023年7月1日 至2023年12月31日）",
+    "issuer": "東京インフラ・エネルギー投資法人（EDINET・2024年3月28日提出）",
+    "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100T65O.pdf",
+    "where": "（チ）付保方針（PDF 66 頁／364）",
+    "quote": "災害の事故等による発電設備等の損害又は第三者への損害賠償を担保するため、運用資産について火災保険（風水害、機械的事故を含みます。）、賠償責任保険を付保します。",
+    "verified": "ws-only",
+    "http_status": "200（2026-10-10 13:33 JST・2,759,296 B）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "企業費用・利益総合保険のご案内（三井住友海上・2017年版）",
+     "url": "https://www.ms-ins.com/pdf/business/cost/kigyo-hiyou.pdf",
+     "where": "印刷頁 8（PDF 9 頁）「保険金をお支払いする主な場合」の凡例（⑨水災＝△。②風災、雹災、雪災＝○）",
+     "quote": "△：特約をセットする場合に補償されます",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "企業のための保険ナビ「企業財産のリスク」（日本損害保険協会）",
+     "url": "https://www.sonpo.or.jp/sme_insurance/corporate-property/",
+     "where": "「企業財産のリスクに備える保険」冒頭",
+     "quote": "補償内容や保険料の決定方法、保険金の支払限度額など、各社によって異なります。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "企業のための保険ナビ「事業中断・利益減少のリスク」（日本損害保険協会）",
+     "url": "https://www.sonpo.or.jp/sme_insurance/business-interruption/",
+     "where": "休業補償保険の説明",
+     "quote": "火災や水災などの偶然の事故により建物や設備に損害が生じ、休業した場合の利益損失や各種費用を補償します。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "火災保険 標準例 重要事項のご説明（日本損害保険協会・家庭用）",
+     "url": "https://www.sonpo.or.jp/about/guideline/keiyaku_guideline/ctuevu0000005hpl-att/kasai2024.pdf",
+     "where": "基本となる補償「5 水災」の定義（設問の括弧の根拠）",
+     "quote": "台風、暴風雨、豪雨等による洪水・融雪洪水・高潮・土砂崩れ等によって",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "public-dd-or-finance",
+   "fire_risk_overlap": "none（pcs-4 のサージ・落雷対策は設備の問いで、保険の補償範囲ではない）",
+   "merged_from": [],
+   "verify_verdict": "keep",
+   "verify_problems": [
+    "文言の整えだけ（「確認済み」を「確かめた」に、損害と停止を明示）",
+    "primary は太陽光が主の投資法人の付保方針で、蓄電所の買い手の基準そのものではない（候補の notes どおり）。pypdf 抽出で改行を除けば一致（ws-only）",
+    "協会の生 HTML では「事業中断・利益減少のリスク」の quote が <span> で分かれており、描画後の本文で一致（exact と判定）",
+    "三井住友海上の表では風災・雹災・雪災は○（基本で補償）、水災だけが△。why は水災についてだけ書いた（一次どおり）",
+    "括弧の「洪水・高潮・土砂崩れ」は協会の標準例（家庭用）の水災の定義に合わせた。浸水想定などハザードそのものは立地・災害の軸（C）"
+   ],
+   "cc_change": "why の投資法人の記述を 1 社の例として名前を出した（B7 の一般化の是正と揃えた・報告のレビュー）"
+  },
+  {
+   "id": "G5",
+   "axis": "G",
+   "axis_label": "保険",
+   "question": "事業中断（利益）保険の証券・約款から、補償期間（てん補期間）・免責時間（待機期間）と、保険金の算定の基になる収益の定義（需給調整市場・容量市場・卸電力取引など蓄電所の収益が含まれるか）を書き出している",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "事業中断（利益）保険に入っている場合",
+   "answer_note": null,
+   "why": "事業中断の保険では、事故の種類ごとの免責時間と、支払の対象になる期間（補償期間）の上限を契約で決める例がある（三井住友海上・2017年版）。収益の定義も契約で決まり、一般の休業補償（主契約）では太陽光発電の売電収入を補償対象外として別の補償で扱う商品がある（東京海上日動）。",
+   "next_action": "証券・約款から補償期間・免責時間・収益の定義を書き出して資産台帳「03_契約」の「事業中断（利益）保険 免責」列に記録し、蓄電所の収益が含まれるか分からなければ保険会社・代理店に照会する",
+   "primary": {
+    "name": "企業費用・利益総合保険のご案内（２０１７年１０月１日以降始期契約用）",
+    "issuer": "三井住友海上火災保険株式会社",
+    "url": "https://www.ms-ins.com/pdf/business/cost/kigyo-hiyou.pdf",
+    "where": "印刷頁 11（PDF 12 頁）「５．企業費用・利益総合保険の概要④」免責時間の設定",
+    "quote": "利益条項では、事故の種類ごとに免責時間（事故発生の日の午前０時から保険上の損失補償が開始されるまでの時間）を設定していただきます。",
+    "verified": "ws-only",
+    "http_status": "200（2026-10-10 13:33 JST・2,573,411 B）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同 案内（三井住友海上・2017年版）",
+     "url": "https://www.ms-ins.com/pdf/business/cost/kigyo-hiyou.pdf",
+     "where": "印刷頁 10（PDF 11 頁）「概要③-２」付保率方式",
+     "quote": "保険金お支払いの対象となる期間（補償期間）は１２か月が限度です。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "利益保険の基本（Chubb）",
+     "url": "https://www.chubb.com/jp-jp/resources2021/business-interruption-insurance-coverage-basics.html",
+     "where": "「どれくらいの期間、利益保険の補償を受けることができますか？」の段落",
+     "quote": "利益保険には 「復旧期間」（「責任期間」 や 「てん補期間」 と言われることもあります。）が設定されています。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "利益保険の基本（Chubb）",
+     "url": "https://www.chubb.com/jp-jp/resources2021/business-interruption-insurance-coverage-basics.html",
+     "where": "同じ節の次の段落",
+     "quote": "また、利益保険には 「待機期間」(「免責期間」と言われることもあります。)が設定されていることもあります。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "超ビジネス保険「休業に関する補償 お支払いする主な保険金と算出方法」（東京海上日動・G6 から統合）",
+     "url": "https://www.tokiomarine-nichido.co.jp/hojin/jigyo/cho_business/hosho/kyugyo_tokucho04.html",
+     "where": "「補償割合の設定方法」の注*1（同じページに「休業に関する補償(太陽光)」の別の算式）",
+     "quote": "家賃収入および太陽光発電の売電収入に生じた損失は「休業に関する補償(主契約)」では補償対象外のため、売上高に家賃収入額および太陽光発電の売電収入額が含まれる場合は、売上高および粗利益からこれらを除いて補償割合を計算します。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 案内（三井住友海上・2017年版・G6 から統合）",
+     "url": "https://www.ms-ins.com/pdf/business/cost/kigyo-hiyou.pdf",
+     "where": "印刷頁 9（PDF 10 頁）「概要③-１」Ⅰ．休業損失 １．営業収益を定める基準の設定",
+     "quote": "ご契約時に営業収益を定める基準について、売上高または生産高のいずれかを選択していただきます。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 案内（三井住友海上・2017年版・G6 から統合）",
+     "url": "https://www.ms-ins.com/pdf/business/cost/kigyo-hiyou.pdf",
+     "where": "印刷頁 12（PDF 13 頁）「概要⑤」保険金のお支払方法 (注１)",
+     "quote": "(注１)収益減少額とは、標準収益（事故発生直前１２か月のうち、補償期間に応当する期間の営業収益）から補償期間中の営業収益を差し引いた額をいいます。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "insurer-public",
+   "fire_risk_overlap": "隣接のみ: emergency-5（事故時の事業継続計画 BCP・src/data/fire-risk-checklist.ts L407-L418）は復旧の計画を問う。本問は保険契約の補償期間・免責時間・収益の定義の把握なので重複しない",
+   "merged_from": [
+    "G6"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "G6（収益の定義）を統合して 1 問にした",
+    "G5 の why の「別の保険会社の公開解説も…「待機期間（免責期間）」が設定されると説明している」は言い過ぎ。Chubb の本文は待機期間が「設定されていることもあります」（逐語一致）。final_why は「例がある」の書き方にした",
+    "G5 の why の「停止のうち支払の対象になるのは、この2つで区切られた期間に限られる」は一社の商品説明からの一般化なので final_why から外した",
+    "12 か月・24 時間などの数値は 2017 年版の一社の例。既定値として書かない（候補の notes どおり）",
+    "G6 の next_action の「事故直前 12 か月分の月次収益の記録を揃える」は運転実績の軸（E）と重なるので外した（標準収益の定義は other_primaries に残した）",
+    "蓄電所の収益（需給調整・容量・JEPX（日本卸電力取引所））を名指しした一次は無い。設問の括弧は当サイトの台帳の収益列（src/lib/asset-ledger-spec.ts L111-L118・BALANCING_PRODUCTS の行は Read で逐語一致を確認）に合わせた例示",
+    "Chubb の生 HTML は全角括弧が文字参照（&#xff08; など）で、描画後の本文で一致（exact と判定）",
+    "where の頁は印刷頁番号（PDF の頁は +1）。資料は 2017 年版で現行商品と異なりうる"
+   ],
+   "cc_change": null
+  },
+  {
+   "id": "H1",
+   "axis": "H",
+   "axis_label": "許認可・届出",
+   "question": "発電事業の届出（電気事業法第27条の27）が要るかを、施行規則第3条の4の要件で確かめた。要る場合は、発電事業届出書と、電力広域的運営推進機関（OCCTO）の加入届出書・毎年度の供給計画届出書の控えが手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（要否の確認）。控えは、施行規則第3条の4の要件（出力1,000kW以上などをすべて満たす設備で、小売電気事業等に使う接続最大電力の合計が1万kW超）に当たり届出が要る場合だけ",
+   "answer_note": "届出が要らないと確かめた場合も「はい」",
+   "why": "発電事業には放電する事業も入り（法第2条第1項第14号）、施行規則第3条の4の要件（出力1,000kW以上・出力に占める小売電気事業等向けの接続最大電力が5割超・放電量に占める小売電気事業等向けが5割超の見込み、をすべて満たす設備で、その接続最大電力の合計が1万kW超）に当たれば届出が義務になる。届け出た発電事業者は電気事業者として、推進機関への加入（第28条の11）と毎年度の供給計画の届出（第29条）の義務も負う。",
+   "next_action": "資源エネルギー庁「発電事業について」p.3 の要件①〜③で要否を確かめ、要なら同 p.4 の表の届出書（発電事業届出書・広域的運営推進機関加入届出書・供給計画届出書）の控えを揃える",
+   "primary": {
+    "name": "電気事業法（昭和三十九年法律第百七十号）第27条の27第1項",
+    "issuer": "国（e-Gov 法令 API v1・法令ID 339AC0000000170）",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+    "where": "第二十七条の二十七（事業の届出）第一項 柱書（第三号ロ に蓄電用の設置の場所・周波数・出力・容量）",
+    "quote": "発電事業を営もうとする者は、経済産業省令で定めるところにより、次に掲げる事項を経済産業大臣に届け出なければならない。",
+    "verified": "exact",
+    "http_status": "200（2026-10-10 13:33 JST・1,340,946 B）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "電気事業法 第2条第1項第14号（発電事業の定義）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+     "where": "第二条第一項第十四号",
+     "quote": "電気を発電し、又は放電する事業であつて、その事業の用に供する発電等用電気工作物が経済産業省令で定める要件に該当するものをいう。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法施行規則 第3条の4第1項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077",
+     "where": "第三条の四第一項 柱書末尾・第一号（第二号・第三号は割合の要件）",
+     "quote": "の合計が一万キロワットを超えることとする。／一 出力が千キロワット以上であること。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "資源エネルギー庁「発電事業について」（令和５年５月）",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/004/pdf/hatsuden.pdf",
+     "where": "p.3「発電事業の要件」冒頭",
+     "quote": "「発電事業」は、以下のいずれの条件にも該当する発電等用電気工作物から、小売電気事業等の用に供する電力の合計が１万ｋＷを超えるものであること。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法 第29条第1項（供給計画・H2 から統合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+     "where": "第二十九条第一項",
+     "quote": "電気事業者は、経済産業省令で定めるところにより、毎年度、当該年度以降経済産業省令で定める期間における電気の供給並びに電気工作物の設置及び運用についての計画（以下「供給計画」という。）を作成し",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法 第28条の11第1項（加入義務・H2 から統合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+     "where": "第二十八条の十一第一項（第四項が加入したときの届出）",
+     "quote": "電気事業者は、推進機関にその会員として加入しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "資源エネルギー庁「発電事業について」（令和５年５月）",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/004/pdf/hatsuden.pdf",
+     "where": "p.4「発電事業者に義務づけられている届出について」の表（供給計画届出書＝年度開始前・広域的運営推進機関加入届出書＝加入後遅滞なく）",
+     "quote": "広域的運営推進機関加入届出書",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳の定義（01_サイト基本「発電事業届出（有/無）」）",
+     "url": "src/lib/asset-ledger-spec.ts#L158-L164・#L389",
+     "where": "L159 の desc",
+     "quote": "電気事業法第27条の27 の発電事業の届出をしているか。",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       158,
+       159,
+       160,
+       161,
+       162,
+       163,
+       164,
+       389
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [
+    "H2"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "H2（供給計画の届出・推進機関への加入）を統合して 1 問にした",
+    "H1 の why の要件の要約が、第3条の4第1項第1号（出力1,000kW以上）と合計1万kW超だけで、第2号（出力に占める小売電気事業等用接続最大電力の割合が5割超・出力10万kW超は1割超）と第3号（電力量の割合が5割超の見込み）を落としていた。final_why で 3 号すべてに触れた",
+    "「発電事業について」p.3 の quote は「小売電／気事業等」の改行を除けば一致（ws-only）。資料は令和5年5月版（要件は現行の施行規則第3条の4と一致することを XML で確認）",
+    "施行規則第3条の4 の quote は柱書末尾と第一号の 2 断片を「／」でつないだもの（各断片は逐語一致）",
+    "推進機関の加入届出（第28条の11第4項）は H 軸では dropped だったが、統合で控えの対象に入れた",
+    "OCCTO の初出に日本語の正式名（電力広域的運営推進機関）を添えた",
+    "「届出が要らない」と確かめた場合も「はい」になる作り（yn3 のまま「対象外」を表せる）"
+   ],
+   "cc_change": "「無い・要らないと確かめた＝はい」を答え方に明記した（A3・G1 とそろえる・再確認の指摘）"
+  },
+  {
+   "id": "H3",
+   "axis": "H",
+   "axis_label": "許認可・届出",
+   "question": "自社の蓄電所の電気を集めて市場などへ供給しているアグリゲーターについて、資源エネルギー庁の「特定卸供給事業者一覧」に載っているかを確かめた（自社が届け出ている場合は、その控えが手元にある）",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明",
+    "該当しない"
+   ],
+   "applies_when": "アグリゲーターが自社の蓄電所の電気を集めて供給している場合で、自社が発電事業者（電気事業法第27条の27 の届出をした者）でない場合。自社が発電事業者なら、その蓄電所からの集約は特定卸供給の定義（法第2条第1項第15号の2「発電事業者を除く」）に当たらないので該当なし",
+   "answer_note": null,
+   "why": "電気事業法は、他の者（発電事業者を除く）から集約する電力が1,000kW（キロワット）を超える見込みの特定卸供給事業に経済産業大臣への届出を求め（第27条の30・施行規則第3条の4の3）、届出の受理から30日を経過するまで事業を始められないとしている（同条第3項）。資源エネルギー庁は届出をした事業者の一覧を名称と法人番号つきで公表している。",
+   "next_action": "資源エネルギー庁「特定卸供給事業者一覧」で、契約しているアグリゲーターの名称と法人番号を探す",
+   "primary": {
+    "name": "電気事業法 第27条の30（事業の届出）第1項",
+    "issuer": "e-Gov 法令検索（デジタル庁）・昭和三十九年法律第百七十号",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+    "where": "第二十七条の三十 第一項柱書（第三項＝受理から30日）",
+    "quote": "特定卸供給事業を営もうとする者は、経済産業省令で定めるところにより、次に掲げる事項を経済産業大臣に届け出なければならない。",
+    "verified": "exact",
+    "http_status": "200（e-Gov 法令 API v1・text/xml・1,340,946 B・2026-10-10 13:34 JST）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "電気事業法 第2条第1項第15号の2（特定卸供給の定義）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+     "where": "第二条第一項第十五号の二（第十五号の三＝特定卸供給事業は供給能力が省令の要件に当たるもの）",
+     "quote": "電気の供給能力を有する者（発電事業者を除く。）から集約した電気を、小売電気事業、一般送配電事業、配電事業又は特定送配電事業の用に供するための電気として供給することをいう。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法施行規則 第3条の4の3（特定卸供給事業に係る供給能力の要件）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077",
+     "where": "第三条の四の三 本文（200・text/xml・14,370,285 B・13:34 JST）",
+     "quote": "から集約する電力が千キロワットを超えることが見込まれることとする。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "資源エネルギー庁 特定卸供給事業にかかる届出義務について（最終更新日：2026年10月8日）",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/009.html",
+     "where": "本文冒頭（200・text/html・9,164 B・13:34 JST）",
+     "quote": "特定卸供給事業に該当する事業者は、事業を実施する30日前に経済産業大臣への届出を行う必要があります。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "資源エネルギー庁 特定卸供給事業者一覧",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html",
+     "where": "見出し（今回は curl で 200・text/html・49,398 B・13:34 JST。各社に法人番号の記載あり）",
+     "quote": "特定卸供給事業届出事業者一覧（2026年9月30日時点）",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "資源エネルギー庁 特定卸供給事業 Q&A No.3（ライセンス要件）",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/shiryou/pdf/20220315QA.pdf",
+     "where": "PDF 1 頁 番号 3 の回答（13:39・13:42 は 202／0 B、13:44 に 200・application/pdf・383,141 B で取得）",
+     "quote": "発電用又は蓄電用の電気工作物（発電事業者が維持・運用するものを除く）やネガワットによって集約する電気です。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳の定義（01_サイト基本「特定卸供給（有/無）」）",
+     "url": "src/lib/asset-ledger-spec.ts L165-171",
+     "where": "LEDGER_SHEETS[0].columns",
+     "quote": "電気事業法第27条の30 の特定卸供給事業の届出をしているか（自社が届け出ている場合に「有」）。",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       165,
+       166,
+       167,
+       168,
+       169,
+       170,
+       171
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "条件の欠落: 特定卸供給は「電気の供給能力を有する者（発電事業者を除く。）から集約した電気」の供給（法第2条第1項第15号の2）で、資源エネルギー庁 Q&A No.3 も集約する電源から「発電事業者が維持・運用するもの」を除く。自社が発電事業者なら、アグリゲーターがその蓄電所から集める分は特定卸供給に当たらず「はい＝整備済み」が一律に成り立たない。applies_when に条件を明記した",
+    "定義の文言上、アグリゲーター自身が集めた電気を供給する形でなければ特定卸供給に当たらない。設問文を「放電を指示して電気を集め、市場などへ供給しているアグリゲーター」に直し、運用の代行だけの形を外した",
+    "1,000kW 超の要件（施行規則第3条の4の3）はアグリゲーターが集める電力全体で決まり、所有者からは判定できない。届出の要否を所有者に判定させず「一覧で確かめる」形にしたのは妥当",
+    "H 軸の研究者が未取得としていた Q&A PDF は 3 回目（13:44）に取得でき、No.3 の回答を確かめた（PDF の折り返しだけ違う ws-only）"
+   ],
+   "cc_change": "「届出をしていることを確かめた」は相手の届出の有無で答えが変わる。「一覧に載っているかを確かめた」に直した（批評の指摘。届出の要否は所有者からは判定できない＝検証者の指摘も保つ）"
+  },
+  {
+   "id": "H4",
+   "axis": "H",
+   "axis_label": "許認可・届出",
+   "question": "保安規程（電気事業法第42条）の本文と、使用開始前に届け出た控え（変更したときは変更の届出の控えも）が手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（蓄電所（専ら電力の貯蔵を目的とする蓄電用の電気工作物）は出力・容量にかかわらず。発電所・需要設備などに附属する電力貯蔵装置は、附属先の設備全体として扱われる（経済産業省の手引き①））",
+   "answer_note": null,
+   "why": "事業用電気工作物を設置する者は、保安規程を定めて使用開始前に届け出、変更したときも届け出る義務がある（法第42条第1項・第2項）。経済産業省の手引きの表は、蓄電所の保安規程の届出を出力・容量にかかわらず「要」としている。",
+   "next_action": "保安規程の本文と届出（変更の届出を含む）の控えを揃える。無ければ所在地の産業保安監督部 電力安全課（経済産業省の手引きの「お問合せ先」）に手続を確かめる",
+   "primary": {
+    "name": "電気事業法 第42条第1項（保安規程）",
+    "issuer": "国（e-Gov 法令 API v1・法令ID 339AC0000000170）",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+    "where": "第四十二条第一項（小規模事業用電気工作物を除く）",
+    "quote": "保安規程を定め、当該組織における事業用電気工作物の使用（第五十一条第一項又は第五十二条第一項の自主検査を伴うものにあつては、その工事）の開始前に、主務大臣に届け出なければならない。",
+    "verified": "exact",
+    "http_status": "200（2026-10-10 13:33 JST・1,340,946 B）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "電気事業法 第42条第2項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+     "where": "第四十二条第二項",
+     "quote": "事業用電気工作物を設置する者は、保安規程を変更したときは、遅滞なく、変更した事項を主務大臣に届け出なければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "経済産業省「電力貯蔵装置（蓄電池）・蓄電所を設置する場合の手引き」",
+     "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/denryokucyozousouchi.html",
+     "where": "「電気事業法上の保安規制にかかる手続きについて」②蓄電所の表（「保安規程届出（法第42条）主任技術者選任（法第43条）」の列が 2 行とも「要」）の直後の※注記",
+     "quote": "法に基づく措置としては、①技術基準への適合維持義務、②電気主任技術者の選任、③保安規程の作成・届出を求めることとする。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法施行規則 第50条第3項第5号",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077",
+     "where": "第五十条第三項第五号（第二項第十二号も同文）",
+     "quote": "発電所又は蓄電所の運転を相当期間停止する場合における保全の方法に関すること。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 手引き「お問合せ先」",
+     "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/denryokucyozousouchi.html",
+     "where": "お問合せ先",
+     "quote": "本省又は発電設備を設置する地域の監督部の電力安全課にお問い合わせ下さい。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "参照のみ: operation-2 の reference に「電気事業法 / 保安規程」とあるが、問うのは点検の頻度。operation-5（電気主任技術者の選任）はこの設問に含めない。重複なし",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "next_action の「提出先は産業保安監督部」は取得した一次に書かれていない。手引きは「本省又は…監督部の電力安全課にお問い合わせ下さい」で問合せ先の案内、条文の届出先は「主務大臣」。final は「問合せ先で手続を確かめる」に直した",
+    "設問の「使用を始める前に届け出ており」は届出の時期の適否を判定させる形に近いので、書類の所在（本文と届出・変更届出の控え）に寄せた。変更の届出（第42条第2項）を足した",
+    "手引きの quote（注記の 1 行分「置としては、…届出を求」）は生 HTML で逐語一致したが、文の途中で切れている。注記の文全体（<br> と全角空白の改行を除けば一致＝ws-only）に差し替えた",
+    "施行規則第50条第3項第5号は逐語一致（第2項第12号も同文）。設問が届出の書類の所在だけなので final_why には入れなかった",
+    "附属先の設備に置く電力貯蔵装置は、手引き①で「附属先の設備（発電所、変電所、需要設備等）全体として包括します。」とされるので applies_when に書いた"
+   ],
+   "cc_change": "applies_when を「全サイト（…）」で始めた（3 択の問いの判定をそろえる・報告のレビュー）"
+  },
+  {
+   "id": "H5",
+   "axis": "H",
+   "axis_label": "許認可・届出",
+   "question": "工事計画の届出（電気事業法第48条）が要る規模か（出力1万kW以上または容量8万kWh以上の蓄電所か）を確かめた。要る場合は、工事計画（変更）届出書の控えと、使用前自主検査の記録・使用前安全管理審査の結果の通知（同法第51条）の写しが手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（規模の確認）。控え・記録は、出力1万kW以上または容量8万kWh以上の蓄電所の設置と、その規模の電力貯蔵装置の出力・容量を20%以上変える改造など（施行規則 別表第二 蓄電所の欄）の場合だけ",
+   "answer_note": "工事計画の届出が要る規模に当たらないと確かめた場合も「はい」",
+   "why": "施行規則の別表第二は、出力1万kW以上または容量8万kWh以上の蓄電所の設置を工事計画の事前届出が要る工事に挙げ、届出が受理されて30日を過ぎるまで工事を始められない（法第48条第2項）。この規模の蓄電所は、使用開始前に自主検査を行って結果を記録・保存し、その実施体制の審査と評定の結果が通知される（法第51条第1項・第7項、施行規則第73条の2の2第1項第5号）。",
+   "next_action": "経済産業省「電力貯蔵装置（蓄電池）・蓄電所を設置する場合の手引き」の表で規模の区分を確かめ、要なら設置者（EPC・前の所有者を含む）から工事計画（変更）届出書（様式第四十九）の控え・使用前自主検査の記録・審査の結果の通知の写しを受け取る",
+   "primary": {
+    "name": "電気事業法 第48条第1項（工事計画の事前届出）",
+    "issuer": "国（e-Gov 法令 API v1・法令ID 339AC0000000170）",
+    "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+    "where": "第四十八条第一項 前段",
+    "quote": "事業用電気工作物の設置又は変更の工事（前条第一項の主務省令で定めるものを除く。）であつて、主務省令で定めるものをしようとする者は、その工事の計画を主務大臣に届け出なければならない。",
+    "verified": "exact",
+    "http_status": "200（2026-10-10 13:33 JST・1,340,946 B）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "電気事業法施行規則 別表第二（第六十二条・第六十五条関係）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077",
+     "where": "別表第二「蓄電所／一 設置の工事」行の「事前届出を要するもの」欄（「認可を要するもの」欄は空欄）。同じく 二（九）電力貯蔵装置 2 が 20% 以上の出力・容量変更の改造",
+     "quote": "出力一万キロワット以上又は容量八万キロワットアワー以上の蓄電所の設置",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法 第48条第2項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+     "where": "第四十八条第二項",
+     "quote": "前項の規定による届出をした者は、その届出が受理された日から三十日を経過した後でなければ、その届出に係る工事を開始してはならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法 第51条第1項（使用前安全管理検査・H6／A7／B2 から統合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+     "where": "第五十一条第一項 末尾",
+     "quote": "その使用の開始前に、当該事業用電気工作物について自主検査を行い、その結果を記録し、これを保存しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法 第51条第7項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+     "where": "第五十一条第七項",
+     "quote": "主務大臣は、第三項の審査及び前項の評定の結果を、当該審査を受けた者に通知しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法施行規則 第73条の2の2第1項第5号",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077",
+     "where": "第七十三条の二の二第一項第五号（使用前安全管理検査の対象から除くもの）",
+     "quote": "電力貯蔵装置（蓄電所に属する出力一万キロワット以上又は容量八万キロワットアワー以上のものを除く。）",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法施行規則 第73条の5第1項（使用前自主検査の結果の記録・B2 から統合）",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077",
+     "where": "第七十三条の五第一項 柱書（第一号〜第十一号: 検査年月日・対象・方法・結果・実施者の氏名など）",
+     "quote": "使用前自主検査の結果の記録は、次に掲げる事項を記載するものとする。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "電気事業法施行規則 第66条第1項",
+     "url": "https://laws.e-gov.go.jp/api/1/lawdata/407M50000400077",
+     "where": "第六十六条第一項 柱書",
+     "quote": "様式第四十九の工事計画（変更）届出書に次の書類を添えて提出しなければならない。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "経済産業省「電力貯蔵装置（蓄電池）・蓄電所を設置する場合の手引き」（B1 から）",
+     "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/denryokucyozousouchi.html",
+     "where": "②蓄電所の表（「出力1万kW以上又は容量8万kWh以上」の行で「工事計画届出（法第48条）使用前安全管理検査（法第51条）」が「要」・未満の行は「※」）の直後の※注記",
+     "quote": "一方、一定の出力又は容量以上の設備については、電力系統への影響度が特に高いことに鑑み、工事計画届出等を求めることとする。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 手引き ①電力貯蔵装置（蓄電池）",
+     "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/denryokucyozousouchi.html",
+     "where": "「電気事業法上の保安規制にかかる手続きについて」①",
+     "quote": "使用前自主検査・使用前安全管理審査については蓄電所を除き対象外です。",
+     "verified": "exact",
+     "repo_ref": null,
+     "public_url": null
+    }
+   ],
+   "strength": "law",
+   "fire_risk_overlap": "none",
+   "merged_from": [
+    "H6",
+    "A7",
+    "B1",
+    "B2"
+   ],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "H6・A7・B1・B2 を統合して 1 問にした（手引きの表でも工事計画届出と使用前安全管理検査は同じ列）。規模の確認を前段に置いたので、規模未満で確かめた場合は「はい」になる（yn3 のまま「対象外」を表せる）",
+    "H5 の手引きの quote（「専ら電力の貯蔵を目的とする…蓄電所として…規定しております。」）は逐語一致したが蓄電所の定義の文で、why の「理由に系統への影響度を挙げる」を裏づけない。B1 の※注記の文（全文は <br> と全角空白の改行を除けば一致＝ws-only。B1 の断片「…鑑み、工事」は生 HTML で逐語一致）に差し替えた",
+    "B2 の why の「保存期間（検査後5年間）」は施行規則第73条の5第2項第1号ロで、第1項第1号〜第6号の事項（発電用水力設備以外）に限る。第7号〜第11号は最初の第51条第7項の通知を受けるまで。final では保存年限に触れない",
+    "H6 の「評定結果の通知」: 第51条第7項は「審査及び…評定の結果」を通知すると定める（逐語一致）。設問は「審査の結果の通知」と書いた",
+    "第47条（認可）は、別表第二の蓄電所の行の「認可を要するもの」欄が空欄（XML の表で確認）で、蓄電所の設置には無い",
+    "出力・容量を 20% 以上変える改造（別表第二 蓄電所 二（九）2）や逆変換装置の改造（二（八））も事前届出の対象なので applies_when に足した",
+    "検査項目を定めた経済産業省「使用前自主検査及び使用前自己確認の方法の解釈」は本便でも取得していない（B2 の notes どおり）"
+   ],
+   "cc_change": "「無い・要らないと確かめた＝はい」を答え方に明記した（A3・G1 とそろえる・再確認の指摘）"
+  },
+  {
+   "id": "H8",
+   "axis": "H",
+   "axis_label": "許認可・届出",
+   "question": "所在の市町村に、系統用蓄電池（蓄電所）の設置に関する条例・要綱・ガイドラインがあるかを確かめた。ある場合は、それが求める届出（事業計画・工事着手・運用開始・地位を承継したときの変更届など）の控えが手元にある",
+   "options": [
+    "はい",
+    "いいえ",
+    "不明"
+   ],
+   "applies_when": "全サイト（定めが無い市町村なら、確かめた時点で「はい」）",
+   "answer_note": null,
+   "why": "浜松市の要綱は、特定蓄電事業者に事業計画（第6条）・工事着手（第8条）・設置完了（第9条）・運用開始（第10条）などの届出を求め、売買などで地位を承継した者にも届出または変更届を求めている（第6条第4項・第8条第3項と第4項・第10条第2項）。福島市のガイドラインも、計画立案から廃止までの各段階で届出を求めている。",
+   "next_action": "市町村のホームページや担当課で系統用蓄電池の設置に関する条例・要綱・ガイドラインの有無を確かめ、あれば求められた届出の控えを揃える",
+   "primary": {
+    "name": "浜松市適正な蓄電池設備の設置等に関する要綱 第6条第1項（事業計画の届出）",
+    "issuer": "浜松市",
+    "url": "https://www.city.hamamatsu.shizuoka.jp/documents/13411/youkou.pdf",
+    "where": "第６条第１項（PDF 2 頁）。附則 1「この要綱は、令和７年１２月１日から施行する。」（PDF 5 頁）",
+    "quote": "特定蓄電事業者は、市内において特定蓄電池設備の設置に関する事業を開始しようとするときは、第７条に規定する近隣関係者への説明等を行う前までに",
+    "verified": "ws-only",
+    "http_status": "200（application/pdf・182,134 B・2026-10-10 13:34 JST）",
+    "repo_ref": null,
+    "public_url": null
+   },
+   "other_primaries": [
+    {
+     "name": "同 要綱 第6条第4項（承継）",
+     "url": "https://www.city.hamamatsu.shizuoka.jp/documents/13411/youkou.pdf",
+     "where": "第６条第４項（PDF 2〜3 頁。ただし書＝承継前の事業者が様式第１号・第３号を届け出て工事に着手していれば不要）",
+     "quote": "承継した者は「特定蓄電事業計画書（様式第１号）」により市長に届け出なければならない。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 要綱 第10条第2項（運用開始の届出事項の変更）",
+     "url": "https://www.city.hamamatsu.shizuoka.jp/documents/13411/youkou.pdf",
+     "where": "第１０条第２項（PDF 4 頁）",
+     "quote": "特定蓄電事業者は、その地位を承継した場合などを含め、前項の規定により届け出た事項に変更があったときは、当該変更の日の翌日から起算して１０日以内に、変更した内容を「事業計画変更等届（様式第２号）」により市長に届け出なければならない。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "同 要綱 附則 4（既に事業を実施している事業者）",
+     "url": "https://www.city.hamamatsu.shizuoka.jp/documents/13411/youkou.pdf",
+     "where": "附則 4（PDF 5 頁。第6条・第8条〜第10条第1項の届出は市が協力を求めることができる）",
+     "quote": "既に特定蓄電事業を実施している事業者について、第１１条から第１５条までの規定を適用する。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "福島市系統用蓄電池設備に関するガイドラインの概要",
+     "url": "https://www.city.fukushima.fukushima.jp/material/files/group/22/guidegaiyou.pdf",
+     "where": "PDF 2 頁（本文の頁番号「-1-」。1 頁目は表紙）「３．主な遵守事項 ④各段階における届出」。制定日は記者配布資料（https://www.city.fukushima.fukushima.jp/material/files/group/1/2026051503.pdf）で令和８年５月１３日（200・977,420 B／748,928 B）",
+     "quote": "系統用蓄電池のライフサイクルの各段階（計画立案、設計・施工、施設管理、廃止）において届出の提出を求め、事業動向の把握を行う。",
+     "verified": "ws-only",
+     "repo_ref": null,
+     "public_url": null
+    },
+    {
+     "name": "当サイト 資産台帳の定義（01_サイト基本「条例」）",
+     "url": "src/lib/asset-ledger-spec.ts L174",
+     "where": "LEDGER_SHEETS[0].columns",
+     "quote": "対象となる条例と手続き（名称・日付）",
+     "verified": "exact",
+     "repo_ref": {
+      "path": "src/lib/asset-ledger-spec.ts",
+      "lines": [
+       174
+      ]
+     },
+     "public_url": "/tools/asset-ledger"
+    }
+   ],
+   "strength": "government-guideline",
+   "fire_risk_overlap": "none",
+   "merged_from": [],
+   "verify_verdict": "fix",
+   "verify_problems": [
+    "why の「地位を売買・合併などで承継した者にも届出を求めている（第6条第4項）」は言い過ぎ: 第6条第4項にはただし書（承継前の事業者が様式第１号と様式第３号を届け出て工事に着手していれば不要）がある。運転中の設備を買う場合に当たるのは第8条第3項（工事着手済みなら様式第２号）と第10条第2項（地位の承継を含む変更届・様式第２号）なので、final_why に条番号を足した",
+    "浜松市の要綱の附則: 第6条〜第15条は施行日（令和7年12月1日）以後に工事に着手する事業に適用。既に事業を実施している事業者には第11条〜第15条（運用終了・撤去完了の届出など）が適用され、第6条・第8条〜第10条第1項は市の協力依頼（附則 4）。既存サイトでは控えが無くても違反とは限らない",
+    "福島市の概要の where「p.1」は本文の頁番号（-1-）で、PDF では 2 頁目。where を直した",
+    "見つかった例は要綱（浜松市）とガイドライン（福島市）で、条例ではない（研究者の前提違いのとおり）。全国の自治体の一覧は一次に無い",
+    "設問文の届出の例に「地位を承継したときの変更届」を足した（買い手・売り手が引き継ぐ書類として）"
+   ],
+   "cc_change": null
+  }
+ ],
+ "reserve": [
+  {
+   "id": "A4",
+   "reason": "一次が海外保険会社（Munich Re）の商品ページだけ。国内で同じ商品があるかは未確認。保証主体の倒産時の扱いは A3 の保証書の確認で拾える",
+   "question": "製品保証・容量保証の保証主体（メーカー・保険会社など）と、保証主体が倒産したときの扱い（保証を裏づける保険の有無など）を書面で確かめた"
+  },
+  {
+   "id": "A7",
+   "reason": "H5 に統合（工事計画届出・使用前自主検査は許認可・届出の軸）",
+   "question": "（出力1万kW以上または容量8万kWh以上の蓄電所の場合）工事計画届出の控えと、使用前自主検査の記録が手元にある"
+  },
+  {
+   "id": "A8",
+   "reason": "一次は SII 補助金の補助対象設備の要件（⑧）で、補助金を使った蓄電所にしか当てはまらない",
+   "question": "電池（セル・モジュール・電池システム・蓄電システム）を廃棄するときの委託先を取り決めた書面（供給事業者の広域認定の有無を含む）がある"
+  },
+  {
+   "id": "B1",
+   "reason": "H5 に統合",
+   "question": "（出力1万kW以上又は容量8万kWh以上の蓄電所の場合）電気事業法第48条の工事計画届出の届出書の写しが手元にある"
+  },
+  {
+   "id": "B2",
+   "reason": "H5 に統合",
+   "question": "（出力1万kW以上又は容量8万kWh以上の蓄電所の場合）使用前自主検査の結果の記録（検査年月日・対象・方法・結果・実施者の氏名など）の写しが手元にある"
+  },
+  {
+   "id": "B8",
+   "reason": "一次（主任技術者制度の解釈及び運用（内規））は外部委託承認の解釈の中の記述で、外部委託の蓄電所（出力5,000kW未満・7,000V以下）にしか当てはまらない。電気主任技術者は fire-risk-check operation-5 とも隣接",
+   "question": "工事期間中の点検（竣工時を含む）について、電気主任技術者（外部委託なら電気管理技術者等）からの報告とその記録が手元にある"
+  },
+  {
+   "id": "C5",
+   "reason": "液状化は法令上の区域が無く、一次（国交省都市局）自身が「明確な境界線を示したものではありません」とする相対的な傾向図。軸の上限 5 問のため予備に（依頼書の「見るもの」に液状化があるので、便 F で 6 問目として足すかは裁定）",
+   "question": "所在地の液状化の発生傾向（国土交通省「地形区分に基づく液状化の発生傾向図」、都道府県の液状化危険度分布図）を確かめ、記録している"
+  },
+  {
+   "id": "C7",
+   "reason": "A5 に統合（騒音の仕様値は設備の書類）",
+   "question": "設備の騒音の仕様値（dB）とその測定距離が、仕様書または測定記録で手元にある"
+  },
+  {
+   "id": "C8",
+   "reason": "立入防止（電技省令）は保安・設備の問いで、立地・災害の軸の上限 5 問から外した（予備）",
+   "question": "構内への立入防止の措置（さく・へい等、危険表示、出入口の施錠）と、さく・へい等から充電部分までの距離が、図面などで確かめられる"
+  },
+  {
+   "id": "D3",
+   "reason": "D1 に統合（連系点・最大受電電力は接続検討の回答書の記載）",
+   "question": "連系点（受電地点・接続変電所名・連系電圧）と最大受電電力（kW）を、接続検討の回答書や接続契約の表記どおりに記録している"
+  },
+  {
+   "id": "D6",
+   "reason": "D1 に統合（系統用蓄電池は充電側の接続検討も要る）",
+   "question": "系統用蓄電池として、放電（発電側）だけでなく充電（需要側・順潮流側）についても、接続検討の回答と契約申込み・回答の書面が手元にある"
+  },
+  {
+   "id": "D8",
+   "reason": "電源線・自営線の所有と修繕負担（資源エネルギー庁 事例集）。軸の上限 5 問のため予備",
+   "question": "受電地点（一般送配電事業者の設備との接続点）から蓄電所までの電源線・自営線について、所有者と工事完了後の修繕の負担者を書面で確認済み"
+  },
+  {
+   "id": "E2",
+   "reason": "E1 に統合（自家用発電所等運転半期報の様式第９ 第2表に「運転停止期間及び停止理由」欄＝停止記録の法定の裏づけ）",
+   "question": "電気関係報告規則の定期報告の対象かどうかを確認済みで、対象なら提出した報告書の控えが手元にある（発電事業者などの電気事業者は発受電月報、出力 1,000kW 以上の特定自家用電気工作物の設置者は自家用発電所等運転半期報）"
+  },
+  {
+   "id": "E5",
+   "reason": "E6 に統合（インシデント 1 件ごとの記録は台帳の定義だけ。法定の事故報告の控えを主に問う）",
+   "question": "停止・故障・火災・系統事象・騒音苦情などの出来事を、1 件ごとに日付・種別・概要・原因・対応・復旧日つきで記録している"
+  },
+  {
+   "id": "E8",
+   "reason": "E7 に統合（市場のアセスメント記録＝需給調整市場と容量市場）",
+   "question": "容量市場の容量確保契約がある場合、実需給年度ごとのアセスメント結果（容量停止計画の登録内容と、リクワイアメント未達成コマ・ペナルティの有無）の記録を受け取って保管している"
+  },
+  {
+   "id": "F2",
+   "reason": "F1 に統合（手数料の決め方はアグリゲーター契約書の確認で拾う）",
+   "question": "アグリゲーター手数料の決め方（成功報酬・固定・併用など、率ならば何に対する率か）を契約書で確認し、配分の計算例を受け取っている"
+  },
+  {
+   "id": "F6",
+   "reason": "D2（使用権原の書類の提出控え）と F8（土地契約の期間・原状回復）に統合",
+   "question": "用地の使用権原を証する書類（土地の契約書など）の写しが手元にあり、土地の契約の終了日を確認済み"
+  },
+  {
+   "id": "G6",
+   "reason": "G5 に統合（事業中断保険の補償期間・免責時間・収益の定義）",
+   "question": "事業中断（利益）保険で、保険金の算定の基になる収益の定義に、蓄電所の収益（需給調整市場・容量市場・卸電力取引など）が含まれることを証券・約款で確認済み"
+  },
+  {
+   "id": "G7",
+   "reason": "保険金額の根拠（再調達価額など）。軸の上限 5 問のため予備",
+   "question": "財物の保険金額を決めた根拠（設備の再調達価額などの評価資料、または約定保険価額の取り決め）が手元にある"
+  },
+  {
+   "id": "G8",
+   "reason": "G1 に統合（証券・約款・重要事項説明書の所在）",
+   "question": "各保険の申込書（告知書）の控え・重要事項説明書（契約概要・注意喚起情報）・約款が手元にあり、加入後に保険会社へ通知が要る事項（設備の変更・譲渡など）を書き出している"
+  },
+  {
+   "id": "H2",
+   "reason": "H1 に統合（発電事業者に当たれば供給計画の届出）",
+   "question": "（発電事業者に当たる場合）毎年度の供給計画を推進機関（OCCTO）経由で届け出ており、その控えが手元にある"
+  },
+  {
+   "id": "H6",
+   "reason": "H5 に統合",
+   "question": "（工事計画を届け出た蓄電所の場合）使用前自主検査の記録と、使用前安全管理審査の評定結果の通知が手元にある"
+  },
+  {
+   "id": "H7",
+   "reason": "E6 に統合（事故報告）",
+   "question": "電気関係報告規則の事故報告（報告先は設置場所を管轄する産業保安監督部長、事故を知ってから24時間以内の速報と30日以内の報告書）の手順を、社内の手順書に書いてある"
+  },
+  {
+   "id": "F4",
+   "reason": "市場の契約（需給調整市場に関する契約・発電量調整供給契約・容量確保契約）の当事者と承継の手続き。一次は強い（容量確保契約約款 第26条第1項・2024-2029 年度版と 2030 年度以降版とも同文、EPRX 契約書ひな型 第26条・第5条第2項）が、土地と相手も条件も違うので F7 から外した。需給調整市場の契約の当事者は取引会員（多くはアグリゲーター）で、所有者が当事者でないことがある。6 問目として足すかは裁定",
+   "question": "売却時に引き継ぐ市場関係の契約（需給調整市場に関する契約・発電量調整供給契約・容量確保契約）について、それぞれの当事者（自社かアグリゲーターか）と、地位の承継に要る承認・同意の手続きを確認済み"
+  }
+ ],
+ "dropped": [
+  {
+   "axis": "A",
+   "question": "セル化学種（LFP・NMC など）が仕様書で分かる",
+   "reason": "fire-risk-check cell-1（セル化学種は何ですか?）と重なる。台帳 02_設備 にもセル化学の列がある（src/lib/asset-ledger-spec.ts L188）。火災系は fire-risk-check へリンクする。"
+  },
+  {
+   "axis": "A",
+   "question": "セル・モジュール・電池システムの安全規格（JIS C 8715-2・IEC 62619）の第三者認証書と、類焼試験（JIS C 8715-2・JIS C 4441・IEC 62619・IEC 62933-5-2）の証明書がある",
+   "reason": "fire-risk-check cell-2（セル/モジュールの安全認証）と重なる。一次はある。電技解釈第44条の2 は、蓄電所のリチウムイオン蓄電池に JIS C 8715-2（2024）の型式試験への適合を求めている。長期脱炭素電源オークション様式４ 3.(2) と SII 公募要領も、第三者認証と類焼試験の証明書を求めている。"
+  },
+  {
+   "axis": "A",
+   "question": "UL 9540・UL 9540A の試験報告や、NFPA 855 への適合を示す書類がある",
+   "reason": "火災・安全の規格で、fire-risk-check cell-2（UL9540A を選択肢に含む）と building-1・building-3（NFPA 855 を参照）に重なる。規格の実在は公開ページで確かめた（premise_diffs）。国内の法令が参照しているのは JIS C 8715-2（電技解釈第44条の2）。"
+  },
+  {
+   "axis": "A",
+   "question": "セルの製造者・製造拠点（自社拠点か OEM か）と、経済安全保障推進法の供給確保計画の認定の有無が書類で分かる",
+   "reason": "fire-risk-check cell-3（セル供給メーカー。選択肢に OEM／リブランド）と重なる。認定の有無は、長期脱炭素電源オークション（様式４ ２．・3.(2)）と SII の加点（審査項目 4-④）にかかわる場合に限られ、設問にすると全サイトには当てはまらない。"
+  },
+  {
+   "axis": "A",
+   "question": "SOH を定期的に測っている",
+   "reason": "fire-risk-check cell-5（寿命管理・SOH 追跡）と重なる。運用（O&M）の問いで、台帳では 04_月次実績 の SOH(%) 列が受け持つ。"
+  },
+  {
+   "axis": "A",
+   "question": "BMS が過電圧・過電流・制御装置の異常・温度上昇で自動的に電路から遮断する仕様である",
+   "reason": "fire-risk-check pcs-1（BMS の保護機能）と重なる。一次は電技省令第44条と電技解釈第44条（蓄電池の保護装置。PDF 50 頁）。"
+  },
+  {
+   "axis": "A",
+   "question": "PCS の認証（JET など）の書類がある",
+   "reason": "fire-risk-check pcs-2（PCS の認証/規格適合）と重なる。"
+  },
+  {
+   "axis": "A",
+   "question": "電解液の危険物の量（指定数量の倍数）が分かり、危険物の一般取扱所の許可の要否を所轄消防に確かめた",
+   "reason": "火災系の届出・許可で、fire-risk-check emergency-2（消防への届出・事前協議）と台帳 01_サイト基本の「消防 届出/許可の種別」に重なる。一次はある。消防法第10条・第11条（e-Gov 法令 ID 323AC1000000186）と、危険物の規制に関する政令第19条第2項第9号の「危険物を用いた蓄電池設備以外では危険物を取り扱わない一般取扱所」。設問にするなら fire-risk-check 側か許認可軸で扱うのがよい。"
+  },
+  {
+   "axis": "A",
+   "question": "常時監視をしない蓄電所の監視方式（随時巡回・随時監視制御・遠隔常時監視制御）が保安規程などの書類で分かる",
+   "reason": "一次はある（電技解釈第47条の3・PDF 61 頁）。fire-risk-check emergency-1（24h オペセンタ）と pcs-5（遠隔の緊急遮断）に一部重なり、O&M 軸向きのため、8 問の上限に収める際に外した。"
+  },
+  {
+   "axis": "A",
+   "question": "保証期間を通じた容量劣化データ・システム充放電効率（PCS AC 端）・充放電サイクル数の仕様値がある",
+   "reason": "一次はある（SII 公募要領 1-5 13）・PDF 12 頁）。A3（容量保証書）と同じ一次・同じ相手（メーカー）から受け取るもので、A3 の next_action に統合した。"
+  },
+  {
+   "axis": "A",
+   "question": "交換用セルなど主要部品を迅速に供給できる拠点がある",
+   "reason": "一次は SII の審査項目 4-③ の評価基準（加点項目で、要件ではない）だけで弱い。fire-risk-check operation-4（O&M 業者の体制）とも一部重なる。"
+  },
+  {
+   "axis": "A",
+   "question": "メーカーが公開している保証条件と照らして、保証の内容を確かめた",
+   "reason": "系統用（高圧・特別高圧）のメーカー保証条件を公開している一次が見つからなかった（premise_diffs）。"
+  },
+  {
+   "axis": "A",
+   "question": "JEM 規格に基づく容量・騒音の値が仕様書にある",
+   "reason": "JEMA の公開ページで、系統用蓄電システムの容量・騒音に関する JEM を確かめられなかった（premise_diffs）。騒音の一次は、電技省令第19条第11項・騒音規制法・SII 公募要領で A5 に入れた。"
+  },
+  {
+   "axis": "A",
+   "question": "EMS・遠隔監視のサイバー対策が、電技解釈第37条の2 の指すガイドライン（JESC Z0004 など）に拠っている",
+   "reason": "一次はある（電技省令第15条の2・電技解釈第37条の2）。JC-STAR の設問（A2）と同じ機器・同じ書類を見ることになるため、A2 の other_primaries に統合した。"
+  },
+  {
+   "axis": "B",
+   "question": "施工者が電気工事業の登録（電気工事業の業務の適正化に関する法律 第3条）を受けているか",
+   "reason": "蓄電所の工事は電気工事業法の「電気工事」に当たらない。電気工事業法第2条第1項は「電気工事」を電気工事士法第2条第3項の電気工事とし、それは「一般用電気工作物等又は自家用電気工作物を設置し、又は変更する工事」。電気工事士法施行規則第1条の2はその自家用電気工作物から「発電所、蓄電所、変電所、最大電力五百キロワット以上の需要設備」などを除いている。需要設備に併設する蓄電池（蓄電所に当たらないもの）は別の扱い。"
+  },
+  {
+   "axis": "B",
+   "question": "第一種電気工事士が施工したか（電気工事士法 第3条）",
+   "reason": "上と同じ理由。電気工事士法第3条第1項の対象は自家用電気工作物に係る電気工事で、蓄電所は電気工事士法施行規則第1条の2で除かれている。"
+  },
+  {
+   "axis": "B",
+   "question": "使用前自己確認（電気事業法 第51条の2）の結果の届出控えがあるか",
+   "reason": "蓄電所は対象外。経産省の手引きの表で、使用前自己確認届出（法第51条の2）は出力等の条件の 2 行とも「不要」。施行規則第74条は対象を別表第六とし、別表第六（燃料電池・太陽電池・風力・出力20kW未満の発電所）に蓄電所は無い。"
+  },
+  {
+   "axis": "B",
+   "question": "使用前安全管理審査の結果の通知（電気事業法 第51条第7項）の写しがあるか",
+   "reason": "一次は法第51条第3項・第7項と施行規則第73条の6で十分にある。ただ、対象（出力1万kW以上又は容量8万kWh以上の蓄電所）と時期が B2 と同じなので、件数を 8 問に収めるために B2 の other_primaries と notes に寄せた。統合時に復活できる。"
+  },
+  {
+   "axis": "B",
+   "question": "連系試験の試験成績書があるか",
+   "reason": "「連系試験」という手続・様式の一次が見つからない。東京電力パワーグリッドの系統連系技術要件（令和8年10月1日実施版と11月1日実施版・令和2年4月1日実施版）に「試験」「竣工」「立会」「成績」は 0 件。連系時の書類は、一般送配電の申込様式一覧（東北電力NW）と JET の「連系協議における個別の性能確認試験」の記述で裏づけられるので、B7 に吸収した。"
+  },
+  {
+   "axis": "B",
+   "question": "受入試験の試験成績書があるか",
+   "reason": "「受入試験」は取得した一次に無い語。法令上は建設業法第19条第1項第11号の「完成を確認するための検査」で、契約の定めは B4、記録の所在は B5 に吸収した。"
+  },
+  {
+   "axis": "B",
+   "question": "施工体制台帳（下請負人・主任技術者等の一覧）を閲覧して確かめたか（建設業法 第24条の8第3項）",
+   "reason": "条件つきで、竣工後の棚卸しに向かない。特定建設業者が下請総額5,000万円以上（施行令第7条の4）の場合だけ作成義務があり、台帳は「工事現場ごとに備え置かなければならない」（第24条の8第1項）。閲覧請求は工事中が前提になる。"
+  },
+  {
+   "axis": "B",
+   "question": "監理技術者資格者証の提示を受けたか（建設業法 第26条第6項）",
+   "reason": "条件つき（専任の監理技術者を置く工事だけ）で、工事中の手続き。竣工後の書類の棚卸しとしては確かめにくい。"
+  },
+  {
+   "axis": "B",
+   "question": "保安規程の届出控えがあるか（電気事業法 第42条）",
+   "reason": "蓄電所では規模を問わず「要」（経産省手引きの表）だが、使用開始前の保安（O&M・許認可）の手続きで、施工・EPC の軸ではない。fire-risk operation-2 の reference「電気事業法 / 保安規程」とも隣接する。別の軸の候補として申し送る。"
+  },
+  {
+   "axis": "B",
+   "question": "電気主任技術者を選任しているか（電気事業法 第43条）",
+   "reason": "fire-risk operation-5（電気主任技術者の選任は?・reference 電気事業法第43条）と重複。"
+  },
+  {
+   "axis": "B",
+   "question": "PCS が JET 等の系統連系保護装置の認証を受けているか",
+   "reason": "fire-risk pcs-2（PCS の認証/規格適合は?・JET PVm / JIS C 8980）と重複。提出書類の控えの有無に絞って B7 にした。"
+  },
+  {
+   "axis": "B",
+   "question": "（使用前自主検査の対象外の蓄電所で）竣工時に電技省令への適合を確かめた記録があるか",
+   "reason": "電気事業法第39条は技術基準への適合の「維持」義務で、記録・届出の義務を定めていない。設問の根拠になる「記録」の一次が法令に無いので、外部委託の工事期間中の点検（B8・内規）と契約上の完成検査の記録（B5）に寄せた。"
+  },
+  {
+   "axis": "B",
+   "question": "系統連系規程 JEAC 9701 に適合しているか",
+   "reason": "本文が有料で、公開ページは日本電気協会 Web ストアの商品ページだけ（台帳 src/data/source-documents.json:1246）。設問の根拠になる文を取れない。しかも「適合しているか」は評価の問いになる。"
+  },
+  {
+   "axis": "B",
+   "question": "蓄電所の事故報告の体制があるか（電気関係報告規則・容量20kWh超が対象）",
+   "reason": "経産省手引きに記載はあるが、運用期のインシデントの軸で、施工・EPC ではない。"
+  },
+  {
+   "axis": "C",
+   "question": "蓄電池（屋外コンテナ等）と建築物・他設備との離隔距離が確保されているか／図面で確かめられるか",
+   "reason": "fire-risk-checklist.ts の building-1（「蓄電池設置場所と他設備の離隔距離は?」reference: NFPA 855 / 消防法第 9 条の 2）と重なるため、/tools/fire-risk-check へのリンクで済ませる。消防庁の資料1-4（source-documents.json 登録済み・屋外は建築物から3m 等）も火災予防の離隔。"
+  },
+  {
+   "axis": "C",
+   "question": "土地の取得・賃借で交付された重要事項説明書（宅建業法第35条）の写しが手元にある",
+   "reason": "交付義務は宅建業者が売主・代理・媒介になる宅地・建物の取引に限られる（宅建業法第35条第1項）。「宅地」は建物の敷地に供される土地か用途地域内の土地（第2条第1号）で、蓄電所の敷地が当たるかは一次からは決まらない。そのため「いいえ」が未整備を意味しない。水害図面上の所在地・土砂・津波の説明事項（施行規則第16条の4の3第2号・第3号・第3号の2）は、C2〜C4 の other_primaries に回した。"
+  },
+  {
+   "axis": "C",
+   "question": "敷地内に騒音規制法の特定施設（施行令別表第一）に当たる設備があるかを確かめた",
+   "reason": "別表第一に蓄電池・PCSは無く、関係しうるのは送風機・空気圧縮機（定格出力7.5kW以上）だけ。当てはまるかは設備ごとの仕様しだいで、一次から一般に決められず、判定の問いになる。C6 の notes に書き、設問は指定地域の確認にとどめた。"
+  },
+  {
+   "axis": "C",
+   "question": "所在自治体の条例（対象の条例と手続きの名称・日付）を確かめ、記録している",
+   "reason": "一次は当サイトの台帳の「条例」列（src/lib/asset-ledger-spec.ts:174「対象となる条例と手続き（名称・日付）」）だけ。対象の条例は自治体ごとに違い、確認先を国の一次で示せないため next_action を一次から書けない。統合時に site-definition の設問として残すかは判断してほしい。"
+  },
+  {
+   "axis": "C",
+   "question": "所在地が景観計画区域内か、景観法第16条の届出が要るかを確かめた",
+   "reason": "根拠条文はある（景観法第16条第1項:「景観計画区域内において、次に掲げる行為をしようとする者は、あらかじめ、国土交通省令…」。第2号が工作物の新設等）。ただし届出の対象になる工作物の規模などは各景観行政団体の計画・条例で決まり、蓄電所が対象かは一次から一般に言えない。8 問の上限もあり外した（統合時の予備）。"
+  },
+  {
+   "axis": "C",
+   "question": "農地を転用した敷地なら、農地転用の許可（農地法第4条・第5条）の書類が手元にある",
+   "reason": "根拠条文はある（農地法第4条第1項:「農地を農地以外のものにする者は、都道府県知事…の許可を受けなければならない」）。ただし土地の権利・取得を扱う軸と重なる見込みで、8 問の上限もあり外した（予備）。"
+  },
+  {
+   "axis": "C",
+   "question": "大規模盛土造成地・宅地造成等工事規制区域（宅地造成及び特定盛土等規制法）に当たるかを確かめた",
+   "reason": "今回は条文も公開ページも取っていない。不動産情報ライブラリの API 一覧に「XKT020 国土数値情報（大規模盛土造成地マップ）」があることだけ確認した。一次が未確認なので候補にしない。"
+  },
+  {
+   "axis": "D",
+   "question": "一般送配電事業者との契約（系統連系受電契約・発電量調整供給契約など）の契約名義人を書面で把握し、名義変更の手続きを確認済み",
+   "reason": "一次はある（東京電力PG 託送供給等約款 令和8年10月1日実施「52 名義の変更」逐語「この場合には，新たな契約者，発電契約者，発電者または需要抑制契約者は，その旨を当社へ文書により申し出ていただきます。」）。ただし確認できたのは1社だけで他9社は未確認、かつ8問の上限のため外した。統合時の差し替え候補。"
+  },
+  {
+   "axis": "D",
+   "question": "連系等に関する諸条件（系統連系技術要件に基づく協議の結果）の記録が手元にある",
+   "reason": "一次は協議の実施を定める（送配電等業務指針 第104条「系統連系希望者と一般送配電事業者等は、連系等の開始までに、連系等に関する諸条件を協議の上、決定し」・東京電力PG 系統連系技術要件 総則「この要件に定めのない事項も含め，個別に協議させていただきます。」・JEAC 9701-2024 公開ページ）。しかし手元に残る書面の名称・様式は定めておらず、「はい」の判定基準を一次で書けないため外した。"
+  },
+  {
+   "axis": "D",
+   "question": "連系先の系統連系技術要件が求めるサイバーセキュリティ対策（電力制御システムセキュリティガイドラインへの準拠）の実施記録がある",
+   "reason": "一次はある（電気設備に関する技術基準を定める省令 第15条の2（サイバーセキュリティの確保）e-Gov 409M50000400052、東京電力PG 系統連系技術要件 Ⅵ-25「事業用電気工作物（発電事業の用に供するものに限る。）は，電気事業法に基づき，「電力制御システムセキュリティガイドライン」に準拠した対策を講じていただきます。」）。運用・保安の軸に属すると判断し、ガイドライン本文（JEAG1111・有料）は未確認のため D 軸からは外した。"
+  },
+  {
+   "axis": "D",
+   "question": "PCS の系統連系の規格適合（JET 認証・系統連系技術要件への適合）を確認済み",
+   "reason": "fire-risk-checklist の pcs-2（PCS の認証/規格適合: JET PVm / JIS C 8980）と重複。火災系は fire-risk-check へリンクで済ませる。"
+  },
+  {
+   "axis": "D",
+   "question": "系統連系技術要件の保護装置（保護リレー・地絡検出・解列）の設置を確認済み",
+   "reason": "fire-risk-checklist の pcs-1（BMS の保護機能）・pcs-3（DC 側の絶縁監視と自動遮断）と近接するため外した（fire-risk-check へ）。"
+  },
+  {
+   "axis": "D",
+   "question": "一般送配電事業者（給電所）との連絡体制（保安通信用電話設備）が整っている",
+   "reason": "fire-risk-checklist の emergency-1（緊急時の連絡体制）と近接するため外した。一次は東京電力PG 系統連系技術要件の「連絡体制」節（保安通信用電話設備）。"
+  },
+  {
+   "axis": "D",
+   "question": "遠隔出力制御（0〜100%）の機能を持つ PCS 等を設置済み",
+   "reason": "一次はある（東京電力PG 系統連系技術要件「蓄電池には，当社の求めに応じて，当社からの遠隔制御により 0%から 100%の範囲（1%刻み）で…抑制ができる機能」）が、設備仕様の軸に近い。ノンファーム型接続の条件「系統連系開始までに混雑時に出力制御が可能となる機器の設置が必要」は D5 の確認範囲に含まれる。"
+  },
+  {
+   "axis": "D",
+   "question": "発電側課金（系統連系受電サービス料金）の課金対象電力と請求額を把握している",
+   "reason": "系統利用の費用で、収支の軸に近い。東京電力PG 約款 22（系統連系受電サービス）で課金対象電力の定義は確かめたが、系統用蓄電池に固有の扱いは今回の一次で確かめていない。"
+  },
+  {
+   "axis": "D",
+   "question": "充電側の託送料金に揚水発電設備等の特別措置（東京電力PG 約款 附則4）が適用されているか確認済み",
+   "reason": "申出をするのは接続供給契約の契約者（小売電気事業者）で、所有者の手元の書類にならないことがある。収支の軸に近く、他9社は未確認。"
+  },
+  {
+   "axis": "D",
+   "question": "系統用蓄電池の接続検討数の上限（一事業者あたり）に抵触していない",
+   "reason": "申込者（事業者）単位の制度で、個々の資産の整備状況ではない（OCCTO 系統アクセスの流れ p.16〜21・資源エネルギー庁 事例集 Ｑ1-13〜21）。"
+  },
+  {
+   "axis": "D",
+   "question": "電源接続案件一括検討プロセスの対象かどうかを確認済み",
+   "reason": "対象は原則として配電用変圧器と特別高圧の配電設備の増強が要る案件に限られ、可能性は接続検討の回答書に明記される（OCCTO）。D1 の回答書の確認に含まれるため独立の設問にしない。"
+  },
+  {
+   "axis": "D",
+   "question": "接続地点の出力制御見通し（マッピング情報）を確認済み",
+   "reason": "収益見通しの軸に近い。一次は OCCTO「一般送配電事業者の出力制御見通しマッピング情報リンク集」。"
+  },
+  {
+   "axis": "D",
+   "question": "最大受電電力（kW）の数値入力",
+   "reason": "D3（yn3）に統合した。数値入力に分けるかは統合時に判断。"
+  },
+  {
+   "axis": "E",
+   "question": "セルの劣化（SOH）を自動または定期に追跡しているか",
+   "reason": "fire-risk-check の cell-5（セルの寿命管理（劣化追跡）・SOH 自動追跡／定期 SOH 測定）と重複する。E4 は「SOH の値を測り方つきで記録し、容量保証の条件と照らせるか」に絞って残した。"
+  },
+  {
+   "axis": "E",
+   "question": "巡視・点検・検査の記録（保安規程に基づく記録）を保管しているか",
+   "reason": "fire-risk-check の operation-2（定期点検の頻度・電気事業法／保安規程）と operation-3（点検記録の保管）と重複する。根拠になりうる電気事業法施行規則第50条第3項第3号（巡視、点検及び検査）・第7号（保安についての記録）は確認したが、火災系は fire-risk-check へリンクで足りる。"
+  },
+  {
+   "axis": "E",
+   "question": "稼働可能率・容量約定率・SOH の数値（%）そのものを入力させる",
+   "reason": "数値を入力させると、水準の良し悪しの評価に変わってしまう。どれも台帳自身が「この台帳での定義」と明記した指標で、比べる基準になる一次も無い。記録の有無（yn3）だけを問う形にした。"
+  },
+  {
+   "axis": "E",
+   "question": "自社の平均落札単価が、EPRX 公表の月次平均（蓄電池）より高いか",
+   "reason": "評価の問いになる。/tools/balancing-benchmark も「この結果は運用の評価ではありません」と明記している（src/app/tools/balancing-benchmark/page.tsx L160）。"
+  },
+  {
+   "axis": "E",
+   "question": "補機電力（空調・制御など）の月次記録があるか",
+   "reason": "一次が台帳 04 の列定義（L270）だけで、台帳の 08（買い手・貸し手が確かめそうな項目）にも挙がっていない。法令の様式にも当たる欄が無い。"
+  },
+  {
+   "axis": "E",
+   "question": "月ごとの合計収益・営業利益の記録があるか",
+   "reason": "運転実績ではなく収益・財務の軸。台帳の 08 に「直近 12 か月の合計収益」「直近 12 か月の営業利益」があるので、そちらの軸で扱う。"
+  },
+  {
+   "axis": "E",
+   "question": "アグリゲーター契約の終了時に運転データを受け取れる条項（データ引継ぎ条項）があるか",
+   "reason": "契約の軸（台帳 03_契約 I 列・08 の L373）。E7・E8 の記録を受け取れるかどうかとは関係するが、本軸の設問にはしない。"
+  },
+  {
+   "axis": "E",
+   "question": "貸し手へ運転実績を定期報告する義務（コベナンツ）があり、その報告の控えがあるか",
+   "reason": "公開の融資・DD 資料に一次が見つからない。MUFG の多奈川蓄電所 PF の公表文（full_merchant.pdf）に運転実績の報告の記述は無い。グリーンローンガイドラインのページ（greenfinanceportal）は 7.7KB の外枠だけで、本文の PDF は今回取得していない。"
+  },
+  {
+   "axis": "E",
+   "question": "経済産業省『電力貯蔵装置（蓄電池）・蓄電所を設置する場合の手引き』に沿った運転・事故の記録",
+   "reason": "meti.go.jp が 202（本文 0 バイト・WAF）を 2 回返し、本文を確認できなかった。事故報告は e-Gov の電気関係報告規則で直接裏づけた（E6）。"
+  },
+  {
+   "axis": "E",
+   "question": "需給調整市場で是正勧告・取引停止の処分を受けたことがあるか",
+   "reason": "処分の対象は取引会員（アグリゲーター）で、資産そのものの記録ではない。良し悪しの問いにもなる。EPRX 取引ガイド 2-10 によれば処分は公表されるが、所有者の棚卸しとしては E7 の記録に含めれば足りる。"
+  },
+  {
+   "axis": "F",
+   "question": "委託先アグリゲーターが EPRX の取引会員一覧と、該当する場合は資源エネルギー庁の特定卸供給事業者一覧に載っていることを確認済み",
+   "reason": "一次は在る（電気事業法第27条の30第1項・EPRX 取引規程第12条第1項・EPRX「取引会員情報」2026年9月30日時点・資源エネルギー庁「特定卸供給事業届出事業者一覧（2026年9月30日時点）」）。ただし特定卸供給は「発電事業者を除く」供給能力を有する者から集約するもので（法第2条第1項第15号の2、Q&A No.3「発電事業者が維持・運用するものを除く」）、集約電力 1,000kW 超の要件（施行規則第3条の4の3）もあるため、蓄電所の保有者が発電事業者なら対象外となり「はい＝整備済み」が一律に成り立たない。EPRX 取引会員の確認は F4 の契約当事者の棚卸しに含められる。8 問の上限のため見送り（統合時に必要なら復活可）。"
+  },
+  {
+   "axis": "F",
+   "question": "土地の賃借権または地上権の登記がされていることを登記事項証明書で確認済み",
+   "reason": "一次は在る（民法第605条＝不動産賃貸借は登記したとき物権取得者その他の第三者に対抗できる、民法第177条、不動産登記法第3条第2号・第8号＝地上権・賃借権は登記できる権利、同法第119条＝登記事項証明書の交付請求）。8 問の上限と、民法の引用を 2 文に留める規則のため見送り。統合時に F6 と入れ替えの候補。"
+  },
+  {
+   "axis": "F",
+   "question": "アグリゲーターからの定期報告（月次レポート）が契約上の義務になっていて、記載項目のサンプルを受け取っている",
+   "reason": "一次は当サイト定義だけ（確認シート 16 行目「月次レポート（契約上の義務か・記載項目・サンプル入手）」、台帳 L224「報告頻度」）。F1 と同じ契約書の確認で拾えるため見送り。必要なら site-definition の候補として追加できる。"
+  },
+  {
+   "axis": "F",
+   "question": "O&M 事業者の駆け付け時間・24 時間対応が契約で決まっている",
+   "reason": "fire-risk-checklist の operation-4（O&M 業者の体制: 専門 O&M 業者 + 24h 緊急対応）と重複。火災系は /tools/fire-risk-check へリンクで済ませる。O&M は F5（契約書面の範囲・SLA・終了日の有無）に限定した。"
+  },
+  {
+   "axis": "F",
+   "question": "保安管理業務の外部委託契約（電気主任技術者の外部委託）の契約書がある",
+   "reason": "fire-risk-checklist の operation-5（電気主任技術者の選任: 外部委託を含む・電気事業法第43条）と重複。"
+  },
+  {
+   "axis": "F",
+   "question": "火災保険・事業中断（利益）保険・賠償責任保険の証券と満期日を把握している",
+   "reason": "fire-risk-checklist の emergency-4（事業者賠償責任保険の加入状況）と一部重複し、保険は契約軸の「見るもの」（アグリゲーター・O&M・土地）の外。保険者向けの別軸で扱う。"
+  },
+  {
+   "axis": "F",
+   "question": "アグリゲーターの運用（サイクル数など）が容量保証の条件（SOH・サイクル上限）の範囲に収まるよう契約で取り決めている",
+   "reason": "一次は当サイト定義だけ（確認シート 24 行目「運用と容量保証条件の整合（誰が担保するか）」、台帳 L201「容量保証の条件（SOH等）」）で、保証の軸と重なる。統合時に保証軸の候補と突き合わせる。"
+  },
+  {
+   "axis": "F",
+   "question": "アグリゲーター手数料の水準が公開料金体系の例と比べて妥当か",
+   "reason": "評価の問い（当サイトは評価者ではない）であり、一次の範囲に公開料金体系の例が無い。手数料は F2 で「決め方と計算例が手元にあるか」に限定した。"
+  },
+  {
+   "axis": "F",
+   "question": "補助金の処分制限期間中の売却に交付元の承認が要るかを確認済み",
+   "reason": "ファイナンス／補助金の軸（台帳 07_ファイナンス「補助金 処分制限期間」）。本便では SII の公募要領を取得していない（https://sii.or.jp/chikudenchi07r/ は 200 だが要領 PDF のリンクを確かめていない）ため一次未確認。"
+  },
+  {
+   "axis": "G",
+   "question": "賠償責任保険（第三者への対人・対物、隣地への延焼）に加入しており、支払限度額を把握している",
+   "reason": "fire-risk-checklist の emergency-4「事業者賠償責任保険の加入状況は?」（src/data/fire-risk-checklist.ts L396-L406。選択肢に「蓄電池火災特約 + 隣地延焼カバー」「一般事業者賠償責任保険」）と重複する。賠償保険の区分（施設賠償・生産物賠償など）は日本損害保険協会の公開ページ（https://www.sonpo.or.jp/sme_insurance/liability/）で確かめたが、設問にはせず fire-risk-check へのリンクで済ませる。証券の所在と一覧化は G1 に含めた"
+  },
+  {
+   "axis": "G",
+   "question": "蓄電所専用の保険パッケージ（火災＋利益＋賠償）に加入している",
+   "reason": "一次が無い。主要損保の公開ページで「系統用蓄電所」向けの商品説明は検索で見つからず、見つかったのは代理店・販売業者のブログと報道（日経BPの取材記事）だけだった。特定の商品の型を勧める問いにもなる"
+  },
+  {
+   "axis": "G",
+   "question": "出力制御（出力抑制）による収入減を補償する保険に加入している",
+   "reason": "一次が無い（検索で出たのは保険代理店のブログのみ）。出力制御は再エネ発電側の制度で、蓄電所の財物・事業中断の補償との関係を示す一次も確かめていない"
+  },
+  {
+   "axis": "G",
+   "question": "サイバー事故（遠隔監視・制御の系統への攻撃など）による賠償・費用・喪失利益の補償の有無を証券で確認済み",
+   "reason": "担当軸の 4 区分（火災・事業中断・賠償・自然災害）の外縁にあたる。サイバー保険が賠償・事故対応費用・自社の喪失利益を補償することは、日本損害保険協会の公開ページ（https://www.sonpo.or.jp/sme_insurance/liability/ の「サイバー事故により企業が法律上の損害賠償責任を負った場合の損害のほか、事故時に必要となる費用や自社の喪失利益を補償します。」）で一般論としては確かめた。一方、蓄電所の遠隔制御と結びつける一次は確かめていない。セキュリティ系の軸があればそちらへ回す"
+  },
+  {
+   "axis": "G",
+   "question": "補助金で取得した設備に、交付規程で求められる保険を掛けている",
+   "reason": "前提となる付保義務の一次が無い。SII の系統用蓄電池の補助金（R7 補正の交付規程・公募要領・交付申請の手引き・FAQ、R5 の公募要領）を全文取得して「保険」「付保」「災害」で検索したが、取得財産への付保義務は無かった（「保険」は中小企業信用保険法施行令の引用とリースの見積の保険料だけ）。交付規程にあるのは善管注意での管理と事故報告"
+  },
+  {
+   "axis": "G",
+   "question": "事業計画策定ガイドラインに沿って火災保険・地震保険・第三者賠償保険に加入している",
+   "reason": "系統用蓄電所の単独案件には適用されない。資源エネルギー庁「事業計画策定ガイドライン（太陽光発電）」（2026年4月改訂・https://www.enecho.meti.go.jp/category/saving_and_new/saiene/kaitori/dl/fit_2017/legal/guideline_solar.pdf・初回 202 で 100 秒後に取り直して 200）は、再エネ特措法の認定事業者（出力 10kW 以上の太陽光）に「火災保険や地震保険等に加入するように努めること」を求めている。太陽光に併設した蓄電池の案件でだけ関係する"
+  },
+  {
+   "axis": "G",
+   "question": "保険の補償内容・保険料は妥当か",
+   "reason": "評価の問いになる。当サイトの配布物 public/dl/monthly-annual-log-v1.pdf に「補償内容・保険料は妥当か」の欄があるが、「〜は妥当か」は棚卸しの設問の規則に反する"
+  },
+  {
+   "axis": "G",
+   "question": "過去のインシデントごとに保険を使ったか（保険適用の有無・申請中）を記録している",
+   "reason": "一次が当サイトの台帳定義（src/lib/asset-ledger-spec.ts L299「保険適用」列）だけで、保険者・買い手が損害歴を確かめるという外部の一次は確かめていない。インシデント記録の軸があればそちらへ回す"
+  },
+  {
+   "axis": "G",
+   "question": "地震リスク評価（PML 値）の報告書が手元にある",
+   "reason": "単独の設問にしなかった。一次は太陽光が主の上場インフラ投資法人の付保方針（PML 値を基準に地震保険を判断）だけで、蓄電所での位置づけは未確認。G3 の根拠（other_primaries）に添えた"
+  },
+  {
+   "axis": "G",
+   "question": "事故直前 12 か月の月次収益の記録（精算の確定値）が手元にある",
+   "reason": "G6 に統合した（根拠の標準収益＝事故直前 12 か月は G6 の other_primaries）。収益・運用の軸とも重なる"
+  },
+  {
+   "axis": "G",
+   "question": "売却時に保険契約の承継（名義の変更・譲渡の通知）の手続きを約款で確認済み",
+   "reason": "G8 に統合した。一次は家庭用火災保険の標準例の通知事項（「①建物等を売却、譲渡する場合」）だけで、企業向けの約款の公開本文は取得していない"
+  },
+  {
+   "axis": "H",
+   "question": "電気主任技術者を選任している（選任の届出、または保安管理業務の外部委託承認の書類が手元にある）",
+   "reason": "fire-risk-checklist の operation-5「電気主任技術者の選任は?」（reference 電気事業法第43条）と重なるので、火災系は fire-risk-check へリンクする扱いにした。一次は確認済み: 電気事業法第43条第1項「主任技術者免状の交付を受けている者のうちから、主任技術者を選任しなければならない。」・同条第3項（選任の届出）、施行規則第52条第2項第1号（「出力五千キロワット未満の太陽電池発電所又は蓄電所であって電圧七千ボルト以下で連系等をするもの」は外部委託承認で選任しないことができる）、経済産業省の手引きの表（蓄電所は規模にかかわらず「要」）。"
+  },
+  {
+   "axis": "H",
+   "question": "所轄消防への蓄電池設備の設置の届出（火災予防条例（例）第44条に当たる市町村条例・蓄電池容量20kWh超）の控えが手元にある",
+   "reason": "fire-risk-checklist の emergency-2「消防署との事前連絡・現地調査は?」（選択肢に「届出書類のみ」、risk_note に「★消防法上の届出要」）と重なるので、fire-risk-check へリンクする扱いにした。一次は確認済み: 消防庁「蓄電池設備のリスクに応じた防火安全対策検討部会報告書」（令和５年３月・p.29）「蓄電池設備を設置しようとする者はあらかじめ、その旨を消防長(消防署長)に届け 出なければならない。」、消防予第332号（令和５年５月31日）「相対的に火災危険性が低いと考えられる蓄電池容量 20 キロワット時以下の蓄電池設備は届出を要しないこととしたこと。」。資産台帳の「消防 届出/許可の種別・日付」列（src/lib/asset-ledger-spec.ts:172-173）とも対応している。"
+  },
+  {
+   "axis": "H",
+   "question": "危険物の製造所等としての設置許可（消防法第11条）の要否を確かめた",
+   "reason": "一次で蓄電所への当てはめを確かめられなかった。消防法第11条（製造所・貯蔵所・取扱所の設置許可）の条文はあるが、取得した消防庁の資料（資料１－４・報告書・消防予第332号）には、蓄電池設備を危険物施設として扱う記述が無い（報告書の「危険物」の語は部署名「危険物規制課」だけ）。推測では作らない。"
+  },
+  {
+   "axis": "H",
+   "question": "使用前自己確認の届出（第51条の2）・基礎情報の届出（第46条）をしている",
+   "reason": "蓄電所には当たらない。経済産業省の手引きの表で、蓄電所は両方とも規模にかかわらず「不要」。施行規則の別表第六（使用前自己確認の対象）にも蓄電所は無い。第46条は小規模事業用電気工作物の届出。"
+  },
+  {
+   "axis": "H",
+   "question": "工事計画の認可（第47条）を受けている",
+   "reason": "施行規則の別表第二で、蓄電所の設置は「認可を要するもの」欄が空欄で、「事前届出を要するもの」欄にだけある。届出（第48条）は H5 で扱った。"
+  },
+  {
+   "axis": "H",
+   "question": "合併・分割で蓄電所を取得した場合、設置者の地位の承継の届出（電気事業法第55条の2第2項）の控えが手元にある",
+   "reason": "合併・分割で取得した場合に限られ、自己点検の汎用の設問としては当てはまる範囲が狭い。一次は確認済み（第55条の2「その事業用電気工作物を設置する者のこの法律の規定による地位を承継する。」）。発電事業の承継届出（資源エネルギー庁「発電事業について」p.4）や浜松市要綱第6条第4項とあわせて、統合時に買い手向けの補足として使える。"
+  },
+  {
+   "axis": "H",
+   "question": "推進機関（OCCTO）に加入しており、加入の届出（第28条の11第4項）の控えがある",
+   "reason": "H1・H2 と同じ届出の流れ（「発電事業について」p.4・p.5）なので、独立した設問にせず H2 の other_primaries と notes に入れた。"
+  },
+  {
+   "axis": "H",
+   "question": "蓄電所の出力（kW）・容量（kWh）（数値入力）",
+   "reason": "H5・H6（1万kW／8万kWh）、H7（20kWh）、消防の届出（20kWh）の閾値を判定するには要るが、設備軸と共通の値なので H 軸の設問にはしない。統合時に共通の数値入力として持つ案。"
+  }
+ ],
+ "critic": {
+  "uncovered": [
+   {
+    "axis": "A",
+    "item": "セル化学",
+    "status": "fire-risk-check で扱う",
+    "note": "fire-risk-check の cell-1 が扱う。ただし cell-1 は化学種ごとに 0〜10 点を付ける格付け型。A1 の部位一覧に「化学」を足すだけなら、台帳 02_設備「セル化学」と 08「セルのメーカー・型式・化学」（src/lib/asset-ledger-spec.ts L188・L364）で裏づく（当サイトの定義）"
+   },
+   {
+    "axis": "A",
+    "item": "メーカー保証（製品保証の期間・保証の主体）",
+    "status": "一部のみ（A3）／予備（reserve）にある（A4）",
+    "note": "A3 が問うのは容量保証書だけ。台帳 08 の「製品保証の期間」（L366）に当たる問いは selected に無い。系統用のメーカー保証の公開条件は一次が無い（dropped）。A3 の primary（SII 公募要領 1-5 13）は劣化データを提出させる補助金の要件で、保証書そのものの一次ではない"
+   },
+   {
+    "axis": "A",
+    "item": "UL 9540／UL 9540A・NFPA 855・JIS C 8715-2（一次の当て先）",
+    "status": "fire-risk-check で扱う",
+    "note": "fire-risk-check の cell-2・building-1・building-3 が扱う。国内の基準が名指しするのは JIS C 8715-2（電技解釈 第44条の2・消防庁告示第7号 第2）で、fire-risk-check 側の点数付けと食い違う（fire_risk_check_findings）"
+   },
+   {
+    "axis": "A",
+    "item": "JEM 規格（容量・騒音）",
+    "status": "一次が無い（dropped に理由）",
+    "note": "2026-10-10 に取り直した JEMA「JEM 新発電システム」の一覧は 8 件（1493・1495・1498・1505・1508・1509・1515・1523）で、系統用蓄電システムの容量・騒音の JEM は無い。JEM1511 のページは 404"
+   },
+   {
+    "axis": "A",
+    "item": "消防法の危険物規制（指定数量・危険物の一般取扱所としての許可）",
+    "status": "dropped（一次はある・軸間で判断が食い違う）",
+    "note": "A 軸のリサーチャーは危険物の規制に関する政令（危政令）第19条第2項第9号「危険物を用いた蓄電池設備以外では危険物を取り扱わない一般取扱所」を一次として見つけた（取り直して一致）が、fire-risk-check と重なるとして落とした。H 軸は「蓄電所への当てはめを確かめられない」として落とした。fire-risk-check の 25 問にも許可を問う設問は無く、emergency-2 は消防署との事前連絡を問う"
+   },
+   {
+    "axis": "B",
+    "item": "施工者の資格（電気工事業の登録）",
+    "status": "一次が無い（dropped に理由）",
+    "note": "電気工事業法は蓄電所の工事に及ばない。電気工事士法施行規則 第1条の2 が蓄電所を自家用電気工作物から除いている（e-Gov で取り直して一致）"
+   },
+   {
+    "axis": "B",
+    "item": "試験成績書（受入試験）",
+    "status": "一部のみ（B4・B5）",
+    "note": "「受入試験」は一次に無い語。法令の語は建設業法 第19条第1項第11号の「完成を確認するための検査」"
+   },
+   {
+    "axis": "B",
+    "item": "試験成績書（連系試験）",
+    "status": "一部のみ（B7）",
+    "note": "「連系試験」という手続の名は一次に無い。東京電力パワーグリッド（東電PG）の系統連系技術要件（令和8年11月1日実施・取り直し）で「試験」「竣工」「立会」「成績」は 0 件。B7 の一次は東北電力ネットワークの高圧の様式一覧だけ（1 社）"
+   },
+   {
+    "axis": "B",
+    "item": "電気設備技術基準（竣工時に適合を確かめた記録）",
+    "status": "予備（reserve）にある（B8）／中小規模は一次が無い",
+    "note": "出力1万kW以上または容量8万kWh以上は使用前自主検査で扱う（H5 に統合）。それ未満は法定の記録義務が無い。B8（外部委託承認の内規）が当てはまるのは 5,000kW 未満かつ 7,000V 以下だけ"
+   },
+   {
+    "axis": "C",
+    "item": "液状化",
+    "status": "予備（reserve）にある（C5）",
+    "note": "法令上の区域は無く、一次は国交省の相対的な傾向図。6 問目に足すかは裁定"
+   },
+   {
+    "axis": "C",
+    "item": "離隔（延焼を防ぐ離隔）",
+    "status": "fire-risk-check で扱う",
+    "note": "fire-risk-check の building-1 が扱う。ただし参照の「消防法第9条の2」は誤り。屋外の蓄電池設備と建築物の離隔は新条例（例）第13条第3項（消防予第332号・取り直し）"
+   },
+   {
+    "axis": "C",
+    "item": "離隔（立入防止・充電部分までの距離）",
+    "status": "予備（reserve）にある（C8）",
+    "note": "電技省令 第23条・電技解釈 第38条"
+   },
+   {
+    "axis": "C",
+    "item": "自治体の条例（立地の規制: 景観・農地転用・盛土規制など）",
+    "status": "一部のみ（H8 は蓄電池の要綱・ガイドラインだけ）",
+    "note": "景観法 第16条と農地法 第4条・第5条は一次があり dropped。dropped の理由に「予備」と書かれているが、_selected の reserve には載っていない。宅地造成及び特定盛土等規制法は未調査"
+   },
+   {
+    "axis": "D",
+    "item": "接続契約そのもの（相手・契約日・名義）",
+    "status": "dropped（一次は 1 社だけ・reserve に未掲載）",
+    "note": "台帳 08 の「接続契約の相手と契約日」（L384）を直接問う設問が selected に無い。名義変更は東電PG 託送供給等約款 52 だけで確かめて dropped。「差し替え候補」と書かれたが reserve に無い"
+   },
+   {
+    "axis": "D",
+    "item": "電源線・自営線の所有と修繕の負担",
+    "status": "予備（reserve）にある（D8）",
+    "note": ""
+   },
+   {
+    "axis": "E",
+    "item": "インシデント記録（法定の事故報告に当たらない出来事も含めた全件）",
+    "status": "一部のみ（E5 を E6 に統合）",
+    "note": "E6 の最終文が法定の事故報告の控えだけを問うと、騒音苦情・系統事象などの記録は落ちる。E5 の一次は当サイトの台帳だけ"
+   },
+   {
+    "axis": "E",
+    "item": "約定率（容量ベース）の EPRX による定義",
+    "status": "一次が無い（dropped に理由）",
+    "note": "EPRX の 2025 年度取りまとめ（取り直し）と取引ガイド第10版（保存ファイル）で「約定率」は 0 件。E3 は当サイト台帳の定義として残る"
+   },
+   {
+    "axis": "F",
+    "item": "アグリゲーター契約の報告頻度（月次報告の義務）",
+    "status": "一次が無い（dropped に理由）",
+    "note": "一次は台帳 03「報告頻度」（L224）と低圧向けシートだけ。dropped の理由は「F1 で拾う」だが、F1 の問いに報告が無い。E3・E7 は月次報告を受け取れることが前提なので、F1 の最終文に入れるのが自然"
+   },
+   {
+    "axis": "F",
+    "item": "手数料の型（公開料金体系の例）",
+    "status": "一次が無い（dropped に理由）",
+    "note": "型が契約書で分かるかは F1（F2 を統合）で扱う。水準の比較は評価の問いになる"
+   },
+   {
+    "axis": "F",
+    "item": "土地の権利の登記（第三者への対抗要件）",
+    "status": "dropped（一次はある・reserve に未掲載）",
+    "note": "民法 第605条・不動産登記法 第3条。「F6 と入れ替えの候補」と書かれたが reserve に無い"
+   },
+   {
+    "axis": "F",
+    "item": "補助金の処分制限期間中に売却する場合の承認",
+    "status": "dropped（一次未確認とされたが、別の軸の保存ファイルに一次がある）",
+    "note": "G 軸の保存ファイル G_sii_R7r_kess_koufukitei.txt（SII 交付規程）第25条第3項に「あらかじめ様式第１６による補助事業財産処分承認申請書をＳＩＩに提出して承認を受けなければならない」とある。補助金を使った蓄電所だけが対象で、依頼書の 8 軸の表の外（台帳 07_ファイナンス）。本便では取り直していない"
+   },
+   {
+    "axis": "F",
+    "item": "特定卸供給の届出（F 軸の一次の当て先）",
+    "status": "H3 で扱う（条件つき）",
+    "note": "F 軸は「保有者が発電事業者なら成り立たない」として dropped、H 軸は採用した。同じ論点で軸間の判断が逆になっている"
+   },
+   {
+    "axis": "G",
+    "item": "賠償責任保険の加入と支払限度額",
+    "status": "fire-risk-check で扱う",
+    "note": "fire-risk-check の emergency-4 が扱う（加入の種類で 0〜10 点）。証券の所在は G1"
+   },
+   {
+    "axis": "G",
+    "item": "保険金額の根拠（再調達価額など）",
+    "status": "予備（reserve）にある（G7）",
+    "note": "G 軸 5 問のうち 3 問（G2・G3・G4）が補償範囲で、保険金額の根拠が押し出されている"
+   },
+   {
+    "axis": "G",
+    "item": "蓄電所向けのパッケージ保険・出力制御の補償",
+    "status": "一次が無い（dropped に理由）",
+    "note": ""
+   },
+   {
+    "axis": "H",
+    "item": "消防の届出（蓄電池設備・20kWh 超）",
+    "status": "fire-risk-check で扱う",
+    "note": "fire-risk-check の emergency-2 が扱う。根拠は新条例（例）第44条（消防予第332号・取り直し）で、emergency-2 の参照「消防法第9条の2」は誤り"
+   },
+   {
+    "axis": "H",
+    "item": "消防の許可（危険物の製造所等）",
+    "status": "dropped（一次はある・軸間で判断が食い違う）",
+    "note": "A 軸の行と同じ。危政令 第19条第2項第9号"
+   },
+   {
+    "axis": "H",
+    "item": "電気主任技術者",
+    "status": "fire-risk-check で扱う",
+    "note": "fire-risk-check の operation-5 が扱う（専任・兼任・外部委託で点数を付ける格付け型）"
+   },
+   {
+    "axis": "H",
+    "item": "特定自家用電気工作物の接続の届出（電気事業法 第28条の3）",
+    "status": "未調査",
+    "note": "依頼書の表に無いが、H 軸の届出に当たる。第28条の3第1項（取り直し）は、要件に当たる発電用・蓄電用の自家用電気工作物を一般送配電事業者の電線路と「電気的に接続したときは、…遅滞なく、…その旨を経済産業大臣に届け出なければならない」とする。電気事業者は除かれる。出力 1,000kW 以上が要件（施行規則 第45条の27＝E2 の other_primaries）。E2 の自家用発電所等運転半期報の対象者も、この接続をした者"
+   },
+   {
+    "axis": "H",
+    "item": "設置者の地位の承継の届出・推進機関（OCCTO）への加入",
+    "status": "dropped（買い手向けの補足に使える）",
+    "note": "電気事業法 第55条の2・第28条の11。加入の届出は H2 の notes に入っている"
+   }
+  ],
+  "duplicates": [
+   "A5×C6: A5 の next_action に「所在地が騒音規制法の指定地域かを市区町村に確かめ、…第6条の設置届出の控えも揃える」が入っており、C6（指定地域の確認）と同じ作業になる。A5 は機器の騒音仕様書（C7 の測定距離を含む）に絞り、指定地域と第6条の届出は C6 に寄せる。",
+   "A3×E4: E4 の next_action「保証書にある容量保証の条件（SOH の測り方）を台帳の 02_設備に写し」は、A3（保証書の所在と条件）と同じ作業。E4 は「月次の SOH を測り方つきで記録している」だけに絞る。",
+   "B5×B4×B7: 「試験成績書」が B5（竣工時）と B7（PCS の工場試験成績書）の両方に出る。B5 は一次が当サイトの台帳だけで、問いの「台帳の 06_書類…に記録した」は当サイトの台帳を使っていないと「いいえ」になる。B5 は「竣工時の検査記録・試験成績書の写しが手元にある」に直すか、B4（契約上の完成検査の定め）の後段に入れる。",
+   "D1（D3・D6 を統合）×D4×D5: 3 問とも接続検討の回答書・接続契約を見て答えるので、D1 が「いいえ」なら D4・D5 も実質「いいえ」に連動する。重複ではない。ただし D7（変電所単位の公表値）と D4・D5（自設備の接続条件）は紛れやすいので、画面で区別を明記する（D4・D7 の notes のとおり）。",
+   "E1＋E2（統合）: 社内の月次記録（台帳の定義）と法定の定期報告（発受電月報・自家用発電所等運転半期報）の控えを 1 問にすると二重質問になる。当てはまる条件も違う（E2 は電気事業者、または出力 1,000kW 以上の設置者）。半期報の第2表に「運転停止期間及び停止理由」の欄があることは E1 の why の補強にとどめ、問いは分ける。",
+   "E6＋E5＋H7（統合）: 法定の事故報告の控え（過去の事実）、全出来事の 1 件ごとの記録（台帳の定義）、事故報告の手順書（これからの備え）の三つが 1 問に入る。事故が無いサイトでも手順書は問えるので、E6（控え）と H7（手順）は分けたほうが答えやすい。E5 を外すと「インシデント記録（法定外）」が未対応に残る（uncovered）。",
+   "E3×E7: どちらもアグリゲーターの同じ月次報告から写す項目で、当てはまる条件（需給調整市場に参加）も同じ。別問のままでよい。ただし F1 に「報告の義務・頻度」が入っていないと、どちらの記録も手に入らない。",
+   "F7＋F4（統合）: 土地の賃借権を譲るときの地主の承諾（民法 第612条）と、市場契約の承継手続（容量確保契約約款 第26条・需給調整市場に関する契約書ひな型 第26条）は、相手も当てはまる条件（借地か、市場契約があるか）も違う。1 問にすると片方だけ整っているときに答えられない。分けるか、F4 を reserve に戻す。",
+   "F8＋F6（統合）・D2＋F6（統合）: F6 の「土地の契約の終了日」は F8 に入るはずだが、F8 の今の問いは撤去と原状回復だけ。最終文に終了日を入れないと、台帳 08「土地の権利と契約終了日」に当たる問いが無くなる。",
+   "G1＋G8（統合）: 証券の一覧化と、申込書（告知書）・重要事項説明書・約款・通知事項の書き出しは別の書類。G1 は括弧で質権まで含んでおり、G8 を足すと四重の問いになる。G8 は「加入後に保険会社へ通知が要る事項（設備の変更・譲渡など）を書き出している」だけを G1 の後段に残す。",
+   "G2・G3・G4: 同じ型（危険の種類ごとに「補償に入っているかを証券で確認済み」）が G 軸 5 問のうち 3 問を占める。重複ではないが、補償範囲に偏り、G7（保険金額の根拠）が予備に落ちている。",
+   "H1（H2 を統合）×H3: 発電事業者に当たるかどうかで H3 の当否が逆になる（特定卸供給は「発電事業者を除く」者から集約するもの）。H1 の答えを H3 の条件に使う。",
+   "H5（H6・A7・B1・B2 を統合）: 規模要件（出力1万kW以上または容量8万kWh以上）が同じなので統合は妥当。ただし統合元ごとに呼び方が揺れている（法 第51条の見出しは「使用前安全管理検査」、審査は「使用前安全管理審査」＝施行規則 第73条の6、自主検査は「使用前自主検査」）。最終文で用語を統一する。"
+  ],
+  "evaluative": [
+   "評価・格付けの語（十分・妥当・適切・適正・優れた・良好・高い／低い・問題ない・確保され・推奨・望ましい・水準など）は、selected 40 問と統合元 23 候補の question・next_action のどれにも無い（機械で照合）。why には 2 か所あるが問いではない: G1 の「適切」は一次（インフラ投資法人の投資基準）の逐語「適切な保険契約又は保証等により保全」の引用、F2 の「水準の良し悪しは問わない」は否定文。",
+   "良い条件が「あること」を「はい」にしている問いは、実質的に契約・付保の中身の評価に寄る。F3「条項があることを確認済み」→「契約終了時の運転データの扱い（引継ぎ条項の有無）を契約書で確かめた」に直す。H3「届出をしていることを確かめた」→「委託先の届出の要否と、一覧への掲載を確かめた」に直す。G2 の括弧「（入っているなら、対象の設備が証券に明記されている）」は補償の有無で答えが変わるので削るか、「証券の対象設備の記載を確かめた」にする。F7「地主の承諾…を確認済み」は承諾条項の無い契約だと「いいえ」になりうるので、「賃借権の譲渡・転貸についての定め（承諾の要否・事前承諾の条項の有無）を確かめた」にする。",
+   "B5「台帳の 06_書類（種別「試験成績書」）に…記録した」は、当サイトの台帳を使っていることを「はい」の条件にしている。棚卸しの対象は書類の所在なので、「写しが手元にある」に直す。",
+   "数値入力に分ける案（A3 の保証 %・年、A5 の dB・m、C2 の浸水深 m、D3 の kW、F6 の残り年数）は、値の大小が水準の評価として読まれる。E 軸のリサーチャーは稼働可能率などの数値入力を同じ理由で落としている。入れるなら記録欄にとどめ、採点とレーダーには使わない。",
+   "fire-risk-check へのリンクで済ませる項目（セル化学＝cell-1、賠償保険＝emergency-4、電気主任技術者＝operation-5）は、リンク先が 0〜10 点の格付け型。asset-check の画面で、リンク先は点数を付けるツールであることを断り、その点数を asset-check に持ち込まない。"
+  ],
+  "conditional_questions": [
+   {
+    "id": "A2",
+    "condition": "長期脱炭素電源オークションに応札・落札した場合（様式４ ６．）、または SII の系統用蓄電システム補助金（令和７年度補正 公募要領 1-6 ⑨）を使う場合。電技省令 第15条の2・電技解釈 第37条の2 のサイバー対策一般は JC-STAR を求めていないので、それ以外のサイトは対象外"
+   },
+   {
+    "id": "B3",
+    "condition": "全サイト。ただし請負代金 500 万円未満の工事だけを請け負う者には許可が要らない（建設業法施行令 第1条の2）ので、その場合は「許可不要と確かめた」を「はい」に"
+   },
+   {
+    "id": "D1",
+    "condition": "全サイト。統合元 D6（充電側＝需要側の書面）の部分は、系統用蓄電池（単独で系統に接続するもの）の場合。発電側・需要側の同時提出の要件化は 2026年6月の改定で、それ以前の案件の扱いは一次で確かめていない"
+   },
+   {
+    "id": "D2",
+    "condition": "連系承諾の通知・工事費負担金契約は全サイト。用地の使用権原を証する書類は、2026年10月1日以降に契約申込みをした、FIT・FIP 予定でない案件だけ（送配電等業務指針 附則 第2条＝各社の約款変更の効力が生じた日以降の申込み）"
+   },
+   {
+    "id": "D4",
+    "condition": "特別高圧に連系している場合。OCCTO の N-1 電制の考え方 1.5（取り直し）に「高圧系統以下に接続される電源は電制対象としない」とあるので、高圧連系は対象外"
+   },
+   {
+    "id": "D7",
+    "condition": "接続変電所が公表の対象（当サイト /grid に載っている）場合"
+   },
+   {
+    "id": "E1",
+    "condition": "運転を始めている場合。統合元 E2（定期報告の控え）の部分は、電気事業者（発受電月報）、または出力 1,000kW 以上の発電用・蓄電用自家用電気工作物を電気事業法 第28条の3第1項の接続をして設置する者（自家用発電所等運転半期報。電気関係報告規則 第2条の表 五＝取り直して逐語一致）"
+   },
+   {
+    "id": "E3",
+    "condition": "需給調整市場に参加している場合（問いの文に明示済み）"
+   },
+   {
+    "id": "E4",
+    "condition": "運転を始めている場合"
+   },
+   {
+    "id": "E6",
+    "condition": "運転を始めている場合（事故の有無を確かめる型なので、事故が無ければ「無いと確かめた」＝はい）"
+   },
+   {
+    "id": "E7",
+    "condition": "需給調整市場に参加している場合（明示済み）。統合元 E8 の部分は容量市場の容量確保契約がある場合で、OCCTO の業務マニュアルによれば容量停止計画のリクワイアメントは安定電源・変動電源（単独）が対象。発動指令電源は別の編で、本文を読んでいない"
+   },
+   {
+    "id": "F1",
+    "condition": "アグリゲーターに運用を委託している場合（自社が取引会員として運用している、または市場に出していない場合は対象外）"
+   },
+   {
+    "id": "F3",
+    "condition": "アグリゲーターに運用を委託している場合"
+   },
+   {
+    "id": "F5",
+    "condition": "O&M を外部に委託している場合"
+   },
+   {
+    "id": "F7",
+    "condition": "土地を賃借している場合（所有・地上権は対象外。民法 第612条は賃借権の規定）。統合元 F4 の部分は容量確保契約・需給調整市場の契約がある場合で、当てはまる条件が違うので分けるべき"
+   },
+   {
+    "id": "F8",
+    "condition": "土地を借りている場合（所有なら対象外）"
+   },
+   {
+    "id": "G1",
+    "condition": "全サイト。括弧の「保険金請求権への質権設定」の部分は借入がある場合"
+   },
+   {
+    "id": "G2",
+    "condition": "財物または事業中断の保険に加入している場合（未加入は G1 で未整備として拾うので、二重に減点しない）"
+   },
+   {
+    "id": "G3",
+    "condition": "財物または事業中断の保険に加入している場合"
+   },
+   {
+    "id": "G4",
+    "condition": "財物または事業中断の保険に加入している場合"
+   },
+   {
+    "id": "G5",
+    "condition": "事業中断（利益）保険に加入している場合"
+   },
+   {
+    "id": "H3",
+    "condition": "需給調整市場などへの参加をアグリゲーターに委託し、かつ自社が発電事業者に当たらない場合。特定卸供給は「電気の供給能力を有する者（発電事業者を除く。）から集約した電気」を供給すること（電気事業法 第2条第1項第15号の2・取り直し）"
+   },
+   {
+    "id": "H1・H5・H8・C2・C3・C4",
+    "condition": "条件を問いの中で確かめる型（「要るかを確かめた」「区域外と確かめた」＝はい）。対象外の選択肢は付けない"
+   }
+  ],
+  "scoring_notes": [
+   "「該当しない（対象外）」は足すべき。条件つきの問い（conditional_questions）が 40 問のおよそ半分ある。対象外が無いと、借地でない・需給調整市場に出ていない・高圧連系・保険未加入などのサイトは「いいえ（0）」か「不明（0.5）」を選ぶしかなく、整備済みの割合が実態より下がる。リサーチャー自身も D2・F7・A7・B1・B2 の notes で「yn3 に対象外が無い」と書いている。",
+   "計算: 整備済み＝1・不明＝0.5・未整備＝0 は据え置き、対象外は分子からも分母からも除く（軸の値＝該当する問いの得点の和 ÷ 該当する問いの数）。重み付けは一次が無いので置かない（依頼書どおり）。",
+   "全問が対象外の軸は、0% でも 100% でもなく「対象外」と表示する。レーダーではその頂点を描かないか、灰色で「対象外」と書く。0 除算で NaN を出さない。",
+   "各軸に「該当 n 問中」を併記する（n が 1〜2 だと割合が 0／50／100% に振れやすい）。対象外にした問いは、未整備・不明の一覧とは別に「対象外にした問い」として、その問いの条件と並べて出す（対象外を乱用して割合が上がるのを見えるようにする）。",
+   "対象外の選択肢は applies_when がある問いにだけ出す。「全サイト」の問いには出さない。",
+   "「要否を確かめた。要る場合は控えがある」型（H1・H5・H8・E6）と「区域外と確かめた」型（C2〜C4）は、不要・区域外と確かめた時点で整備済み（1）とする。この型に対象外を付けると「確かめていないのに対象外」を選べてしまうので付けない。",
+   "条件に当たるかどうか分からないときは「不明（0.5）」であって対象外ではない。設問の説明文に明記する。",
+   "冒頭に共通の前提質問（採点しない・保存しない・送らない）を置けば、対象外を自動で決められる。運転開始の前か後か（E 軸全体・F5・G2〜G5）、連系電圧が高圧か特別高圧か（D4）、土地は所有か賃借か（F7・F8）、参加市場は需給調整・容量・なし（E3・E7・統合元 F4・E8）、運用の委託の有無（F1・F3・H3）、O&M 委託の有無（F5）、出力・容量（H5 の 1万kW／8万kWh の判定）、発電事業者に当たるか（H3）、長期脱炭素電源オークション・SII 補助の有無（A2）。",
+   "便 F の否定テストに足すもの: 全部「対象外」で各軸が「対象外」表示になる（NaN・0% にならない）、対象外を 1 問含む軸の割合の検算、全サイトの問いに対象外の選択肢が出ない、結果に対象外の件数が出る。",
+   "二重質問（E1＋E2、E6＋E5＋H7、F7＋F4、G1＋G8）は、片方だけ整っているときの答え方が決まらない。分けない場合は「両方そろって整備済み、片方だけなら不明（0.5）」と説明文に書く。分けるほうが採点がぶれない。"
+  ],
+  "fire_risk_check_findings": [
+   "L230（building-1 reference 'NFPA 855 / 消防法第 9 条の 2'）と L381（emergency-2 reference '消防法第 9 条の 2'）: e-Gov で取り直した消防法 第9条の2第1項は「住宅の用途に供される防火対象物（…）の関係者は、…住宅用防災機器を設置し、及び維持しなければならない。」で、住宅用防災機器の規定。蓄電池設備の離隔・届出の根拠ではない。根拠は消防法 第9条（「…火災の発生のおそれのある設備の位置、構造及び管理…は、政令で定める基準に従い市町村条例でこれを定める。」）にもとづく市町村の火災予防条例。消防予第332号（2026-10-10 取り直し）は、屋外の蓄電池設備と建築物の離隔を「新条例（例）第 13 条第３項関係」、消防長（消防署長）への届出を「新条例（例）第 44 条関係」としている。",
+   "L378（emergency-2 risk_note '★消防法上の届出要、即実施'）: 届出は消防法の本則ではなく市町村の火災予防条例による（新条例（例）第44条）。消防予第332号は「蓄電池容量 20 キロワット時以下の蓄電池設備は届出を要しないこととしたこと」としている。「消防法上」は「火災予防条例上（20kWh 超）」が正確。",
+   "L104（cell-2「JIS C 8715-2 (日本)」score 6・risk_note「国内標準、海外規格との整合確認」）: 取り直した電技解釈（令和7年11月20日付け版）第44条の2 は「発電所、蓄電所又は変電所若しくはこれに準ずる場所に施設するリチウムイオン蓄電池は、日本産業規格 JIS C 8715-2（2024）…の「6 型式試験」に規定する方法により試験を行ったとき、これに適合するものであること。」とする。消防予第332号も、７号告示第２の標準規格として「JIS C 8715-2」を挙げている（IEC 62619 は同等以上の例）。国内の基準が名指しする規格を、UL1973 のみ（7）や IEC 62619（8）より低く採点している。",
+   "L101・L108（cell-2「UL9540A + UL1973 両方」・reference 'UL9540A / IEC 62619'）: 取り直した ULSE の UL 9540A ページの表題は「Test Method for Evaluating Thermal Runaway Fire Propagation in Battery Energy Storage Systems」、Scope 1.1 は「The test methodology in this Standard determines the capability of a battery technology to undergo thermal runaway…」。UL 9540A は試験方法なので、「安全認証は?」の選択肢に並べるのは不正確（試験報告の有無として扱うべき）。",
+   "L134（cell-4 'UL9540A 9.6 (Cell-level monitoring)'）・L165（pcs-1 'UL9540A 9.4'）・L158（pcs-1 risk_note 'UL9540A 推奨水準'）: 公開ページで読めるのは Scope だけで、節番号と内容は確かめられない（本文は有料）。UL 9540A は熱暴走・延焼の試験方法で、BMS の保護機能の「推奨水準」を定める規格だとは一次から言えない。BMS の保護の国内の一次は電技解釈 第44条（過電圧・過電流・制御装置の異常・内部温度の著しい上昇で自動的に電路から遮断・取り直し）。",
+   "L256（building-3 reference 'NFPA 855 9.4'）: 取り直した NFPA の公開ページ（title「NFPA 855 Standard Development」）は本文が JavaScript で描かれ、節番号を確かめられない。",
+   "L172・L173（pcs-2 の選択肢「JET PVm / JIS C 8980」）: 取り直した JET ページの title は「太陽電池モジュールの認証（JETPVm認証）｜太陽電池の試験・認証｜一般財団法人 電気安全環境研究所」で、本文は「JETPVm認証は、「モジュール認証」と「信頼性認証（保証体制）」から構成された、太陽電池モジュールに関する第三者認証制度です。」。JETPVm は PCS の認証ではない。PCS の連系保護の認証は JET の「系統連系保護装置等認証」（B 軸の一次）。JIS C 8980 の表題と適用範囲は本便では確かめられなかった（日本規格協会 Webdesk で該当ページを取得できず）。",
+   "L400（emergency-4「蓄電池火災特約 + 隣地延焼カバー (高額)」）: G 軸のリサーチャーが、損保各社と日本損害保険協会の公開資料でこの名の特約を見つけられなかった（存在しないとは断定しない。本便では取り直していない）。",
+   "L282（building-5 reference '消防法施行令第 13 条'）: 取り直した消防法施行令 第13条は表の形で、「発電機、変圧器その他これらに類する電気設備が設置されている部分で、床面積が二百平方メートル以上のもの」に「不活性ガス消火設備、ハロゲン化物消火設備又は粉末消火設備」を求める規定。選択肢（ガス系・スプリンクラ・消火栓・消火器）の序列とは対応しない。屋外コンテナが建築物・防火対象物に当たるか（国住指第4846号）も前提にしていない。L279 の risk_note「消防法違反の可能性」も、この条件抜きでは言えない。",
+   "L212（pcs-5 risk_note '★消防法上必須レベル、即設置'・L215 reference '消防法 / NFPA 855'）: 緊急遮断スイッチを求める消防法の条文は、本便で取得した範囲（消防法・消防予第332号）に見当たらない（未確認・断定しない）。",
+   "L84〜L95（cell-1）・L396〜L406（emergency-4）・L340〜L352（operation-5）は 0〜10 点の格付け型（L14「score 0-10 (高いほど安全)」）。asset-check がこれらへのリンクで済ませる場合は、リンク先が評価ツールであることを画面で断る必要がある。"
+  ],
+  "brief_premise_diffs": [
+   "B「電気工事業法」は蓄電所の工事に及ばない。電気工事業法 第2条第1項「この法律において「電気工事」とは、電気工事士法…第二条第三項に規定する電気工事をいう。」、電気工事士法 第2条第3項「一般用電気工作物等又は自家用電気工作物を設置し、又は変更する工事」、同条第2項が自家用電気工作物から「経済産業省令で定めるもの」を除き、同法施行規則 第1条の2「…発電所、蓄電所、変電所、最大電力五百キロワット以上の需要設備…」（3 本とも e-Gov で取り直し）。",
+   "「使用前自己確認」は蓄電所には無い。施行規則 第74条「法第五十一条の二第一項の主務省令で定める事業用電気工作物は、別表第六に掲げる電気工作物とする。」、別表第六は燃料電池・太陽電池・風力・出力20kW未満の発電所だけ（取り直し）。工事計画届出と使用前自主検査も、別表第二の「出力一万キロワット以上又は容量八万キロワットアワー以上の蓄電所の設置」だけが対象＝高圧 2MW 級の多くは対象外。",
+   "A「JEM 規格」: 取り直した JEMA の「JEM 新発電システム」一覧は 8 件（JEM 1493・1495・1498・1505・1508・1509・1515・1523。接続箱・単独運転検出・HEMS など）で、系統用蓄電システムの容量・騒音の JEM は無い。JEM1511 のページは 404。",
+   "E「EPRX の取引実績の公表項目（約定の定義）」: 取り直した EPRX「2025年度の取引実績について」（2026年6月18日）で「約定率」0 件。取引ガイド第10版（保存ファイル E_eprx_guide.txt。17MB のため取り直さず）も「約定率」0 件で、定義しているのは「ΔkW約定量」まで。E3 の「容量約定率」は当サイト台帳の定義（asset-ledger-spec.ts L85「約定量÷（提供容量×当月のコマ数）」）。",
+   "F「借地借家法（賃貸借の存続期間・原状回復）」: 借地借家法 第2条第1号「借地権 建物の所有を目的とする地上権又は土地の賃借権をいう。」（取り直し）。蓄電所の設備が「建物」に当たるかは同法からは決まらず、原状回復は民法 第621条、存続期間の上限は民法 第604条。",
+   "F・H「特定卸供給（第27条の30）」: 電気事業法 第2条第1項第15号の2「…電気の供給能力を有する者（発電事業者を除く。）から集約した電気を…供給することをいう。」（取り直し）。保有者が発電事業者なら、委託先の届出の当否が変わる。全サイト向けの設問にはならない（F 軸は dropped、H 軸は採用で食い違い）。",
+   "A「消防法 危険物規制（リチウムイオン蓄電池の指定数量）」: 指定数量は電池ではなく危険物ごとに決まる（消防法 第9条の4「危険物についてその危険性を勘案して政令で定める数量（以下「指定数量」という。）」）。蓄電池設備に当たる区分は危政令 第19条第2項第9号「危険物を用いた蓄電池設備以外では危険物を取り扱わない一般取扱所」（取り直し）。",
+   "H「消防の届出／許可」: 届出は消防法の本則ではなく火災予防条例による（消防予第332号「⑸ 消防長（消防署長）への届出（新条例（例）第 44 条関係）」・20kWh 以下は不要・取り直し）。fire-risk-check が参照する「消防法第9条の2」は住宅用防災機器の条文。",
+   "B「電力会社の系統連系技術要件（公開の連系規程）」には試験・竣工の定めが無い: 取り直した東電PG「系統連系技術要件【託送供給等約款別冊】令和 8 年 11 月 1 日実施」で「試験」「竣工」「立会」「成績」は 0 件（「蓄電」は 26 件）。「連系試験」「受入試験」は一次に無い語。",
+   "D「OCCTO の系統情報公表ガイドライン」という名の資料は無い。公表の基準は資源エネルギー庁の「系統情報の公表の考え方」（表紙「令和８年４月改定」「資源エネルギー庁」・本文に「ガイドライン」0 件）。enecho.meti.go.jp は 202 が 3 回続き、4 回目で 200（567,786 B）を取得して確かめた。",
+   "F「EPRX 取引会員規程」という名の文書は無い。取り直した EPRX「需給調整市場に係る取引規程等の公表」で「取引会員規程」0 件。載っているのは「取引規程（一連版　2026/7/1実施）」と「需給調整市場に関する契約書（ひな形）（2026/3/14以降）」。",
+   "F「公開されている契約の型（public/dl/aggregator-contract-sheet-v1.pdf）」は低圧向け。末尾に「蓄電所ネット 投資家のための低圧蓄電所ガイド bess-net.jp/lv/invest」とあり、/lv/invest からリンクされている（src/app/lv/invest/page.tsx L364）。系統用の定義は src/lib/asset-ledger-spec.ts の 03_契約（L215〜229）。",
+   "C「騒音規制法と施行令（特定施設）」: 取り直した施行令 別表第一に「蓄電」「変圧器」は 0 件。関係しうるのは「送風機（原動機の定格出力が七・五キロワット以上のものに限る。）」と空気圧縮機だけ。C「水防法のハザードマップ」: 取り直した水防法に「ハザードマップ」は 0 件で、法令の語は「印刷物の配布その他の必要な措置」（第15条第3項）。",
+   "A「JIS C 8715-2（二次電池の安全）」: 表題は「産業用リチウム二次電池の単電池及び電池システム－第2部：安全性要求事項」。単なる参考規格ではなく、電技解釈 第44条の2 が蓄電所のリチウムイオン蓄電池に「6 型式試験」への適合を示している（取り直し）。",
+   "D「契約容量」は一次の語ではない: 一次の語は「最大受電電力」（OCCTO・業務指針）、東電PG 約款は「契約受電電力」、当サイト台帳の列名は「契約容量(kW)」（D 軸の調べ・本便では取り直していない）。",
+   "E「当サイト火災 DB（/incidents）」は他社事例の公開情報 DB で、自社のインシデント記録の項目は台帳 05_インシデント（E 軸の調べ）。D「/grid の N-1・空き容量の定義」: n1-status は表示の区分、grid-connection-checker は当サイト独自の評価点で、asset-check の根拠に使えない（D 軸の調べ）。",
+   "G「損保各社の公開商品説明（蓄電所向け）」は、主要損保の公開ページで見つからなかった（G 軸の調べ）。また法律上の「地震保険」は居住用だけが対象（地震保険に関する法律 第2条第2項第1号）で、企業向けは地震危険補償特約。"
+  ],
+  "lv_sources_used_for_utility_scale": [
+   "F1（primary）: public/dl/aggregator-contract-sheet-v1.pdf（/lv/invest の配布物）。逐語は導入文「購入後の収入を毎年左右するのはこの契約です。5つのブロックを商談で埋めてください。…」で、確認項目そのものの裏づけでもない。src/lib/asset-ledger-spec.ts L216〜219（契約開始日・契約終了日・自動更新・解約条件（通知期間））と L370〜371（08）に差し替える。報告頻度（L224）もここで足せる。",
+   "F2（F1 に統合・primary）: 同じシートの「収益配分・手数料（率か固定か・何に対する率か）」。asset-ledger-spec.ts L220〜222（手数料の型・手数料率・固定額）と L372 に差し替える。",
+   "F3・F5（other_primaries）: 同じシート（「撤退時: データ引継ぎ・切替協力の義務」「責任分界」）。F3・F5 の primary は系統用の台帳なので、other から外すか「低圧向けの参考」と明記する。",
+   "E4（other_primaries）: public/dl/warranty-check-sheet-v1.pdf（メーカー保証確認シート・/lv/invest の配布物）。",
+   "B4・B5・B6・F7（other_primaries）: public/dl/contract-checklist-v1.pdf（表題「低圧蓄電所 売買契約書 確認チェックシート」・/lv/invest の配布物）。B5 は why でも「当サイトの低圧売買契約チェックシートも…」と根拠に使っている。",
+   "F8（other_primaries）: 当サイト /lv/risks（src/app/lv/risks/page.tsx L122・ページの表題「低圧蓄電所のリスクと注意点」）。",
+   "依頼書 §1 の F 軸の当て先自体が「当サイト public/dl/aggregator-contract-sheet-v1.pdf の項目」を挙げている（低圧向け）。E1 の public/dl/bess-asset-ledger-v1.1.xlsx は系統用の台帳なので問題ない。"
+  ],
+  "checked": "読取専用で調べた。Write・Edit は使わず、リポは変更していない。削除・git の書込・.env の表示・microCMS／bess-net.jp へのアクセスもしていない。\n\n【読んだもの】\n- _selected.json（selected 40・reserve 25）\n- _research.json（8 軸の candidates 64・dropped・premise_diffs。selected と統合元・予備の全文を python で vc_cands_full.txt に抜き出して全部読んだ）と _summary.txt\n- 依頼書（T2_設問研究便_…_ユウ.md）\n- src/data/fire-risk-checklist.ts（全 435 行）\n- src/lib/asset-ledger-spec.ts（L135〜234・L340〜395）\n- src/app/lv/invest/page.tsx（L335〜373）\n- public/dl の低圧配布物 3 本（pdftotext）\n\n【取り直した一次】（すべて 2026-10-10）\n- e-Gov 法令 API v1（全件 200・リダイレクト 0）: 消防法・電気工事業法・電気工事士法・電気工事士法施行規則・借地借家法・電気事業法・電気事業法施行規則（第3条の4・第3条の4の3・第74条・別表第二・別表第六・第73条の2の2）・危険物の規制に関する政令・消防法施行令・騒音規制法施行令・水防法・電気関係報告規則（第2条の表 五の逐語一致を確認）\n- 法令以外: OCCTO N-1 電制の考え方 PDF・電技解釈 PDF（meti・200）・消防予第332号 PDF（fdma）・EPRX 2025 年度取りまとめ PDF と取引規程等の公表ページ・東電PG 系統連系技術要件（令和8年11月1日実施）・ULSE UL 9540A ページ・NFPA 855 ページ・JEMA の JEM 一覧と JEM1511（404）・JET の JETPVm ページ・資源エネルギー庁「系統情報の公表の考え方」（202 が 3 回、間隔をあけた 4 回目で 200）\n- 取り直さず保存ファイルで判定したもの: EPRX 取引ガイド第10版の「約定率」0 件（E_eprx_guide.txt。17MB のため）、SII 交付規程 第25条第3項（G_sii_R7r_kess_koufukitei.txt）\n- 確かめられなかったもの: JIS C 8980 の表題（Webdesk で該当ページを取れず）\n\n【一時ファイル】（すべて …/scratchpad/t2q/ 直下・58 個。消していない）\nvc_art.py, vc_cands_full.txt, vc_dengikaishaku.pdf, vc_dengikaishaku.txt, vc_enecho_keitou_kangaekata.pdf（202 の間は 0 B で作られ、4 回目に 567,786 B で上書き）, vc_enecho_keitou_kangaekata.txt, vc_eprx_announce.html, vc_eprx_announce.txt, vc_eprx_summary_2025.pdf, vc_eprx_summary_2025.txt, vc_evalwords.txt, vc_fdma_tsuchi332.pdf, vc_fdma_tsuchi332.txt, vc_fdma_tsuchi332_hits.txt, vc_jema_1511.html, vc_jema_cat.html, vc_jema_cat.txt, vc_jema_cat2.txt, vc_jema_cat3.txt, vc_jet_pvm.html, vc_jet_pvm.txt, vc_jsa_c8980.html, vc_jsa_c8980.txt, vc_jsa_c8980b.html, vc_law_323AC1000000186.xml, vc_law_324AC0000000193.xml, vc_law_334CO0000000306.xml, vc_law_335AC0000000139.xml, vc_law_335M50000400097.xml, vc_law_336CO0000000037.xml, vc_law_339AC0000000170.xml, vc_law_340M50000400054.xml, vc_law_343CO0000000324.xml, vc_law_345AC1000000096.xml, vc_law_403AC0000000090.xml, vc_law_407M50000400077.xml, vc_nfpa855.html, vc_occto_n1.pdf, vc_occto_n1.txt, vc_out_appdx6.txt, vc_out_denjiho.txt, vc_out_denjiho_28_3.txt, vc_out_houkoku.txt, vc_out_kikenrei.txt, vc_out_koujigyo.txt, vc_out_koujishi.txt, vc_out_koujishi_kisoku.txt, vc_out_sekokisoku.txt, vc_out_sekokisoku2.txt, vc_out_shakuchi.txt, vc_out_shobo.txt, vc_out_shoboreii13.txt, vc_out_shoboreii13b.txt, vc_out_souonrei.txt, vc_out_suibou.txt, vc_tepco_keitou_20260911.pdf, vc_tepco_keitou_20260911.txt, vc_ul9540a.html, vc_ul9540a.txt\n\n【申告】\n- バックグラウンドの待機コマンド（sleep のあと curl）を 3 本と Monitor を 1 本使った。どれも終了済み。\n- 各設問の quote の逐語判定（verified）はこの役割の担当外なので網羅していない。取り直しの中で一致を見たのは E2 の quote と、D3 の other_primaries の「高圧系統以下に接続される電源は電制対象としない」だけ。"
+ }
+}
