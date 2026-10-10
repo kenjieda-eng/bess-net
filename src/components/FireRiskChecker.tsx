@@ -304,7 +304,7 @@ export default function FireRiskChecker() {
         })}
       </div>
 
-      {/* 質問リスト (現ステップのみ) */}
+      {/* 質問リスト（全カテゴリを描き、表示中以外は hidden） */}
       <section
         style={{
           padding: 16,
@@ -323,7 +323,11 @@ export default function FireRiskChecker() {
           </p>
         </div>
 
-        {itemsInStep.map((item, qIdx) => (
+        {/* 落とし穴 #107: 全 25 問を初期 DOM に載せ、表示中のカテゴリ以外は hidden で隠す（DOM の生成/破棄ではなく表示切替）。
+            fire-risk-check 是正便（2026-10-10）で、是正した参照・選択肢の名称が初期 DOM に出るようにした */}
+        {CATEGORY_ORDER.map((cat) => (
+        <div key={cat} hidden={cat !== step}>
+        {CHECKLIST.filter((i) => i.category === cat).map((item, qIdx) => (
           <fieldset
             key={item.id}
             style={{
@@ -422,6 +426,8 @@ export default function FireRiskChecker() {
               </p>
             )}
           </fieldset>
+        ))}
+        </div>
         ))}
 
         {/* ステップ ナビ */}

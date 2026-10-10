@@ -98,14 +98,22 @@ export const CHECKLIST: ChecklistItem[] = [
     category: 'cell',
     question: 'セル/モジュールの安全認証は?',
     options: [
-      { label: 'UL9540A + UL1973 両方', score: 10, risk_note: '北米最高水準、日本でも信頼性高' },
+      // UL 9540A は試験方法（認証ではない）。ULSE の Scope 1.1 で確認（2026-10-10・fire-risk-check 是正便）
+      { label: 'UL 9540A 試験報告あり + UL 1973 認証', score: 10, risk_note: '北米最高水準、日本でも信頼性高' },
       { label: 'UL1973 のみ', score: 7, risk_note: 'UL9540A 試験データ追加請求推奨' },
       { label: 'IEC 62619 / IEC 62933', score: 8, risk_note: '国際標準、UL と併用が望ましい' },
-      { label: 'JIS C 8715-2 (日本)', score: 6, risk_note: '国内標準、海外規格との整合確認' },
+      {
+        label: 'JIS C 8715-2 (日本)',
+        // 採点（score）は変えない（採点の見直しは別の裁定）。根拠の文だけを一次に合わせた
+        score: 6,
+        risk_note:
+          '電技解釈 第44条の2 が蓄電所のリチウムイオン蓄電池に求める規格（JIS C 8715-2（2024）「6 型式試験」）。令和5年消防庁告示第7号（7号告示）第2 の標準規格（消防予第332号で説明）',
+      },
       { label: '認証なし / 不明', score: 1, risk_note: '★調達リスク高、保険査定にも影響' },
     ],
     weight: 3,
-    reference: 'UL9540A / IEC 62619',
+    reference:
+      'UL 9540A は試験方法（Scope 1.1「The test methodology in this Standard determines the capability of a battery technology to undergo thermal runaway …」）/ IEC 62619 / 電技解釈 第44条の2（JIS C 8715-2（2024））',
   },
   {
     id: 'cell-3',
@@ -131,7 +139,8 @@ export const CHECKLIST: ChecklistItem[] = [
       { label: '監視なし / 不明', score: 1, risk_note: '★熱暴走初期検知不可、即改善' },
     ],
     weight: 3,
-    reference: 'UL9540A 9.6 (Cell-level monitoring)',
+    // 節番号（旧 'UL9540A 9.6'）は公開範囲で確かめられないので外した
+    reference: 'UL 9540A（熱暴走・延焼の試験方法）',
   },
   {
     id: 'cell-5',
@@ -155,26 +164,33 @@ export const CHECKLIST: ChecklistItem[] = [
       {
         label: '過充電・過放電・過温度・絶縁・短絡 5 重保護',
         score: 10,
-        risk_note: 'UL9540A 推奨水準',
+        // 旧「UL9540A 推奨水準」は公開範囲で確かめられない。国内の一次（電技解釈 第44条）に置き換えた
+        risk_note: '電技解釈 第44条は、蓄電所の蓄電池に過電圧・過電流・制御装置の異常など（高温形の電池は断熱容器の内部温度の著しい上昇も）で自動的に電路から遮断する装置を求める',
       },
       { label: '過充電・過放電・過温度の 3 重保護', score: 7 },
       { label: '基本機能のみ (過充電・過放電)', score: 4 },
       { label: '保護機能限定的 / 不明', score: 1, risk_note: '★熱暴走の最大要因' },
     ],
     weight: 3,
-    reference: 'UL9540A 9.4',
+    reference: '電技解釈 第44条（蓄電池の保護装置）/ UL 9540A',
   },
   {
     id: 'pcs-2',
     category: 'pcs',
     question: 'PCS の認証/規格適合は?',
+    // 旧「JET PVm」は太陽電池モジュールの認証、「JIS C 8980」は太陽光発電システム用パワーコンディショナの規格で、
+    // どちらも蓄電池の PCS の認証・規格ではない（JET・日本規格協会の公開ページで確認・2026-10-10）。PCS の系統連系の認証に置き換えた。
+    // その認証にも適用範囲（定置用リチウムイオン蓄電池は低圧 10kW 未満・高圧配電線の三相三線式 2MW 未満）があるので reference に書いた。
+    // 特別高圧に連系する PCS はこの認証の対象外＝この問の上限が 6 点になる（採点の見直しは別の裁定）
     options: [
-      { label: 'JET PVm / JIS C 8980 + UL', score: 10 },
-      { label: 'JET PVm / JIS C 8980', score: 8 },
-      { label: 'JET 認証のみ', score: 6 },
+      { label: 'JET 系統連系保護装置等認証 + UL', score: 10 },
+      { label: 'JET 系統連系保護装置等認証', score: 8 },
+      { label: '系統連系保護装置等認証以外の第三者認証のみ', score: 6 },
       { label: '認証不明', score: 2, risk_note: '★調達前に必ず確認' },
     ],
     weight: 2,
+    reference:
+      'JET 系統連系保護装置等認証（認証を受けた装置は連系協議での個別の性能確認試験などを省略できる。定置用リチウムイオン蓄電池の充放電システムは低圧で出力 10kW 未満・高圧配電線で三相三線式の出力 2MW 未満が対象で、これ以外（特別高圧に連系するものなど）は認証の対象外）',
   },
   {
     id: 'pcs-3',
@@ -209,10 +225,11 @@ export const CHECKLIST: ChecklistItem[] = [
       { label: '複数箇所 + 遠隔操作可', score: 10 },
       { label: '1 箇所 + 現場操作のみ', score: 6 },
       { label: '盤内のみ (一般操作員アクセス不可)', score: 3, risk_note: '緊急時に間に合わない' },
-      { label: '未設置', score: 1, risk_note: '★消防法上必須レベル、即設置' },
+      // 緊急遮断スイッチを求める消防法の条文は見当たらない（2026-10-10 確認）。「消防法上必須」を外した
+      { label: '未設置', score: 1, risk_note: '★緊急遮断の設置と方式を所轄消防・設計者と確認（根拠条文は未確認）' },
     ],
     weight: 3,
-    reference: '消防法 / NFPA 855',
+    reference: 'NFPA 855',
   },
 
   // ── 建屋・配置 (5問) ──
@@ -224,10 +241,12 @@ export const CHECKLIST: ChecklistItem[] = [
       { label: '3m 以上 + 防火壁', score: 10 },
       { label: '1m 以上 + 防火区画', score: 7 },
       { label: '0.5m 以上', score: 4 },
-      { label: '近接 / 制約なし', score: 1, risk_note: '★延焼リスク高、消防法確認要' },
+      { label: '近接 / 制約なし', score: 1, risk_note: '★延焼リスク高、火災予防条例（離隔）を所轄消防で確認要' },
     ],
     weight: 3,
-    reference: 'NFPA 855 / 消防法第 9 条の 2',
+    // 旧「消防法第 9 条の 2」は住宅用防災機器の規定。離隔は消防法第 9 条にもとづく市町村の火災予防条例（消防予第332号・2026-10-10 確認）
+    reference:
+      'NFPA 855 / 消防法第 9 条にもとづく市町村の火災予防条例（消防庁の火災予防条例（例）第 13 条第 3 項＝屋外の蓄電池設備の建築物からの離隔。市町村の条例では条番号が異なることがある）・消防予第332号',
   },
   {
     id: 'building-2',
@@ -253,7 +272,7 @@ export const CHECKLIST: ChecklistItem[] = [
       { label: '密閉 / 換気不明', score: 1, risk_note: '★熱・ガス蓄積で爆発リスク' },
     ],
     weight: 3,
-    reference: 'NFPA 855 9.4',
+    reference: 'NFPA 855',
   },
   {
     id: 'building-4',
@@ -276,10 +295,12 @@ export const CHECKLIST: ChecklistItem[] = [
       { label: 'スプリンクラ + 手動消火栓', score: 7 },
       { label: '手動消火栓のみ', score: 4 },
       { label: '消火器のみ', score: 2, risk_note: '蓄電池火災には性能不足' },
-      { label: '設備なし', score: 1, risk_note: '★消防法違反の可能性、即整備' },
+      // 旧「★消防法違反の可能性」は設置形態・床面積の条件抜きでは言えない（消防法施行令 第13条は表の条件つき）
+      { label: '設備なし', score: 1, risk_note: '★設置形態により消防法施行令・条例の消火設備の要否が変わる。所轄消防で確認' },
     ],
     weight: 3,
-    reference: '消防法施行令第 13 条',
+    reference:
+      '消防法施行令 第 13 条（別表第一に掲げる防火対象物の発電機・変圧器その他これらに類する電気設備が設置されている部分で床面積 200㎡以上なら、不活性ガス・ハロゲン化物・粉末消火設備のいずれか）。屋外コンテナの建築基準法上の扱いは国住指第4846号、消火設備の要否は所轄消防で個別に確認',
   },
 
   // ── 運用 (5問) ──
@@ -375,10 +396,12 @@ export const CHECKLIST: ChecklistItem[] = [
       { label: '事前協議完了 + 現地調査 + 図面共有', score: 10 },
       { label: '事前連絡のみ', score: 6 },
       { label: '届出書類のみ', score: 4 },
-      { label: '連絡なし', score: 1, risk_note: '★消防法上の届出要、即実施' },
+      { label: '連絡なし', score: 1, risk_note: '★火災予防条例上の届出要（蓄電池容量 20kWh 超・消防予第332号）、即実施' },
     ],
     weight: 3,
-    reference: '消防法第 9 条の 2',
+    // 旧「消防法第 9 条の 2」は住宅用防災機器の規定。届出は市町村の火災予防条例（新条例（例）第44条・消防予第332号）
+    reference:
+      '消防法第 9 条にもとづく市町村の火災予防条例（消防庁の火災予防条例（例）第 44 条＝消防長（消防署長）への届出。市町村の条例では条番号が異なることがある）・消防予第332号',
   },
   {
     id: 'emergency-3',
@@ -397,7 +420,8 @@ export const CHECKLIST: ChecklistItem[] = [
     category: 'emergency',
     question: '事業者賠償責任保険の加入状況は?',
     options: [
-      { label: '蓄電池火災特約 + 隣地延焼カバー (高額)', score: 10 },
+      // 旧「蓄電池火災特約」という名の特約は公開資料で見つからない。特約名は保険会社により異なるので一般化した
+      { label: '蓄電池の火災を対象に含む保険 + 隣地延焼カバー（特約名は保険会社により異なる）', score: 10 },
       { label: '一般事業者賠償責任保険', score: 7 },
       { label: '火災保険のみ', score: 5 },
       { label: '未加入 / 不明', score: 1, risk_note: '★賠償リスク無防備、即加入' },

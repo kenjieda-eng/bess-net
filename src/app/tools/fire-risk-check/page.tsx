@@ -170,8 +170,8 @@ export default function FireRiskCheckPage() {
               </dd>
               <dt style={{ fontWeight: 700, marginTop: 8 }}>消防法 (日本)</dt>
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
-                第 9 条の 2、施行令 第 13 条、施行規則 等が蓄電池に関連。設置届出・消火設備・離隔距離の
-                法的要件を規定。最終判断は所轄消防署。
+                {'第 9 条にもとづく市町村の火災予防条例（蓄電池容量 20kWh 超の蓄電池設備の届出・屋外の蓄電池設備の建築物からの離隔。消防予第332号）、' +
+                  '施行令 第 13 条（別表第一の防火対象物で、床面積 200㎡以上の電気設備が設置されている部分の消火設備）等が蓄電池に関連。最終判断は所轄消防署。'}
               </dd>
               <dt style={{ fontWeight: 700, marginTop: 8 }}>電気事業法 (日本)</dt>
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
@@ -183,7 +183,7 @@ export default function FireRiskCheckPage() {
               </dd>
               <dt style={{ fontWeight: 700, marginTop: 8 }}>JIS C 8715-2 (日本)</dt>
               <dd style={{ marginLeft: 16, marginBottom: 4 }}>
-                産業用リチウムイオン電池の安全要求事項。国内認証の参照規格。
+                {'産業用リチウム二次電池の単電池及び電池システムの安全性要求事項。電気設備の技術基準の解釈（電技解釈）第44条の2 が、蓄電所などに施設するリチウムイオン蓄電池に「6 型式試験」への適合を求める規格。令和5年消防庁告示第7号（7号告示）第2 の標準規格（消防予第332号で説明）。'}
               </dd>
             </dl>
           </section>
@@ -204,6 +204,9 @@ export default function FireRiskCheckPage() {
             <ul style={{ fontSize: 15, lineHeight: 1.8 }}>
               <li>
                 <strong>本診断は啓発・自己評価用です</strong>。法的判断・専門助言の代替にはなりません。
+              </li>
+              <li>
+                <strong>点数は当サイトの基準による目安で、法令適合の判定ではありません。</strong>
               </li>
               <li>
                 最終的な火災対策の妥当性は{' '}

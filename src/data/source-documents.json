@@ -1344,7 +1344,10 @@
       "title_verbatim": "消防予第332号 令和５年５月31日 … 消防庁予防課長 … 改正火災予防条例（例）の運用等について（通知）",
       "checked_on": "2026-09-29",
       "note": "Ck-2 実行便② ■7 で登録。PDF 1 ページ目（pdfplumber・字間の空白を詰めた）。HTTP 200・504,349 B",
-      "used_in": "src/app/lv/buying-guide/page.tsx / src/app/lv/regulation-subsidy/page.tsx"
+      "used_in": "src/app/lv/buying-guide/page.tsx / src/app/lv/regulation-subsidy/page.tsx / src/data/fire-risk-checklist.ts・src/app/tools/fire-risk-check/page.tsx（fire-risk-check 是正便・2026-10-10）",
+      "aliases": [
+        "消防予第332号"
+      ]
     },
     {
       "name": "容量市場　長期脱炭素電源オークション約定結果（応札年度：2023年度）",
@@ -1753,6 +1756,93 @@
       "checked_on": "2026-10-09",
       "note": "2026-10-09 に curl（ブラウザ UA）で HTTP 200・65,248 バイト。本文の逐語「需給調整市場で取引を行うには取引会員になる必要があります。」。参加申込ページ（https://www.eprx.or.jp/outline/application.html・<title>「需給調整市場の参加申込 | 取引概要 | 一般社団法人 電力需給調整力取引所」）には取引会員資格審査と「取引規程第４条」の記載。用語集是正便 2（2026-10-09）で登録。",
       "used_in": "glossary/aggregator-business（detail）"
+    },
+    {
+      "name": "消防法",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和二十三年法律第百八十六号",
+      "url": "https://laws.e-gov.go.jp/law/323AC1000000186",
+      "title_verbatim": "消防法",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/323AC1000000186・HTTP 200・691,510 バイト・2026-10-10 14:58 JST）で LawTitle「消防法」。第9条（火を使用する設備等の位置・構造・管理は「政令で定める基準に従い市町村条例でこれを定める。」）と第9条の2（住宅用防災機器）を逐語で確認。法令 ID は 323AC1000000186（323AC0000000186 は API で 404）。fire-risk-check 是正便（2026-10-10）で登録。",
+      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）・src/app/tools/fire-risk-check/page.tsx（参考規格・法令 概要）"
+    },
+    {
+      "name": "消防法施行令",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和三十六年政令第三十七号",
+      "url": "https://laws.e-gov.go.jp/law/336CO0000000037",
+      "title_verbatim": "消防法施行令",
+      "checked_on": "2026-10-10",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/336CO0000000037・HTTP 200・698,872 バイト・2026-10-10 14:58 JST）で LawTitle「消防法施行令」。第13条（水噴霧消火設備等を設置すべき防火対象物）の表で「発電機、変圧器その他これらに類する電気設備が設置されている部分で、床面積が二百平方メートル以上のもの」に「不活性ガス消火設備、ハロゲン化物消火設備又は粉末消火設備」を確認。fire-risk-check 是正便（2026-10-10）で登録。",
+      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）・src/app/tools/fire-risk-check/page.tsx"
+    },
+    {
+      "name": "電気設備の技術基準の解釈",
+      "publisher": "経済産業省大臣官房技術総括・保安審議官",
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf",
+      "title_verbatim": "電気設備の技術基準の解釈",
+      "checked_on": "2026-10-10",
+      "aliases": [
+        "電技解釈"
+      ],
+      "note": "HTTP 200・4,105,248 バイト・2026-10-10 14:58 JST（改正 20251104保局第2号 令和7年11月20日付け 版）。第44条（蓄電池の保護装置: 過電圧・過電流・制御装置の異常など（第四号は高温形の断熱容器の内部温度）で自動的に電路から遮断）と第44条の2（リチウムイオン蓄電池の施設: JIS C 8715-2（2024）の「6 型式試験」に適合）を逐語で確認。fire-risk-check 是正便（2026-10-10）で登録。",
+      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）・src/app/tools/fire-risk-check/page.tsx"
+    },
+    {
+      "name": "系統連系保護装置等認証",
+      "publisher": "一般財団法人 電気安全環境研究所（JET）",
+      "url": "https://www.jet.or.jp/renewable/power_conditioner/protection/",
+      "title_verbatim": "系統連系保護装置等認証｜パワーコンディショナの試験・認証｜一般財団法人 電気安全環境研究所",
+      "checked_on": "2026-10-10",
+      "aliases": [
+        "JET 系統連系保護装置等認証"
+      ],
+      "note": "HTTP 200・144,419 バイト・2026-10-10 14:58 JST。「認証制度の目的」の逐語「認証を受けた装置は，一般送配電事業者と発電設備等設置者の連系協議における個別の性能確認試験などの省略が可能となる」。適用の範囲は、定置用リチウムイオン蓄電池の充放電システムでは低圧「出力が10kW未満のもの」・高圧「電気方式は三相三線式であって、出力が2MW未満のもの」で、「これ以外のものは現時点では試験基準がなく、本認証制度の対象とはなりません」。旧表記の「JET PVm」は太陽電池モジュールの認証（https://www.jet.or.jp/renewable/photovoltaic/pvm/・<title>「太陽電池モジュールの認証（JETPVm認証）｜…」）で PCS の認証ではない。fire-risk-check 是正便（2026-10-10）で登録。",
+      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）"
+    },
+    {
+      "name": "UL 9540A",
+      "publisher": "UL Standards & Engagement（ULSE）",
+      "url": "https://www.shopulstandards.com/ProductDetail.aspx?productId=UL9540A",
+      "title_verbatim": "UL 9540A | UL Standards & Engagement | UL Standard",
+      "checked_on": "2026-10-10",
+      "aliases": [
+        "UL9540A"
+      ],
+      "note": "HTTP 200・99,784 バイト・2026-10-10 14:58 JST。表題「Test Method for Evaluating Thermal Runaway Fire Propagation in Battery Energy Storage Systems」。Scope 1.1 の逐語「The test methodology in this Standard determines the capability of a battery technology to undergo thermal runaway …」＝試験方法（認証ではない）。本文は購入（$716〜）またはログインして閲覧する Digital View で、節番号（旧表記の 9.4・9.6）は確かめていない。fire-risk-check 是正便（2026-10-10）で登録。",
+      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）"
+    },
+    {
+      "name": "NFPA 855",
+      "publisher": "National Fire Protection Association（NFPA）",
+      "url": "https://www.nfpa.org/codes-and-standards/nfpa-855-standard-development/855",
+      "title_verbatim": "NFPA 855 Standard Development",
+      "checked_on": "2026-10-10",
+      "note": "HTTP 200・253,985 バイト・2026-10-10 14:58 JST。本文は JavaScript で描画され、節番号（旧表記の 9.4）は確かめられない。fire-risk-check 是正便（2026-10-10）で登録。",
+      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）"
+    },
+    {
+      "name": "蓄電池を収納する専用コンテナに係る建築基準法の取扱いについて（技術的助言）",
+      "publisher": "国土交通省住宅局建築指導課長（国住指第4846号・平成25年3月29日）",
+      "url": "https://www.mlit.go.jp/common/000993022.pdf",
+      "title_verbatim": "国住指第4846号 平成２５年３月２９日 … 蓄電池を収納する専用コンテナに係る建築基準法の取扱いについて（技術的助言）",
+      "checked_on": "2026-10-10",
+      "aliases": [
+        "国住指第4846号"
+      ],
+      "note": "HTTP 200・67,326 バイト・2026-10-10 14:58 JST。記の本文（土地に自立し、必要最小限の空間のみ・稼働時は無人・機器の重大な障害発生時等を除き人が立ち入らないコンテナは建築物に該当しない。複数積み重ねる場合は建築物）を逐語で確認。fire-risk-check 是正便（2026-10-10）で登録。",
+      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）"
+    },
+    {
+      "name": "JIS C 8715-2:2024 産業用リチウム二次電池の単電池及び電池システム―第２部：安全性要求事項",
+      "publisher": "一般財団法人 日本規格協会（JSA Webdesk）",
+      "url": "https://webdesk.jsa.or.jp/books/W11M0090/index/?bunsyo_id=JIS%20C%208715-2:2024",
+      "title_verbatim": "JIS C 8715-2:2024 産業用リチウム二次電池の単電池及び電池システム―第２部：安全性要求事項 | 日本規格協会",
+      "checked_on": "2026-10-10",
+      "aliases": [
+        "JIS C 8715-2"
+      ],
+      "note": "HTTP 200・87,761 バイト・2026-10-10。発行年月日 2024-03-21・状態「有効」。電技解釈 第44条の2 が名指しする規格。旧 pcs-2 の「JIS C 8980」は同じ Webdesk で「JIS C 8980:2020 小出力太陽光発電用パワーコンディショナ」（定格出力 50kW 未満の太陽光発電システム用 PCS）と確認し、蓄電所の PCS の規格ではないので選択肢から外した。fire-risk-check 是正便（2026-10-10）で登録。",
+      "used_in": "src/data/fire-risk-checklist.ts（/tools/fire-risk-check の参照・根拠の文）・src/app/tools/fire-risk-check/page.tsx"
     }
   ]
 }
