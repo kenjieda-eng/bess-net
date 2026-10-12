@@ -269,7 +269,7 @@ export interface BalancingRule {
 
 - **停止条件**: CC は `rm`／`rmdir`／`Remove-Item` を発行していない。`git push --force` なし。`.env.local` は `set -a && . ./.env.local && set +a` で読み込んだだけ（GET 1 本のスクリプト）。microCMS は GET 5 回（policy-events・explainer）だけで書込 0。コードは変えていない。
 - **サブエージェントの申告（そのまま転記）**:
-  - 区分 D の調べ役: 「内蔵ブラウザで egc の PDF（/info/guideline/pdf/20250324001a.pdf）に navigate したとき、利用者側に保存ダイアログが出ました。再試行はしていません。保存されたかどうかは私からは確認できません。」→ **EDAさんの PC のダウンロードフォルダに `20250324001a.pdf`（需給調整市場ガイドライン 2025年3月24日版）が保存されている可能性がある**。不要なら手で消してください（CC は消していない）。
+  - 区分 D の調べ役: 「内蔵ブラウザで egc の PDF（/info/guideline/pdf/20250324001a.pdf）に navigate したとき、利用者側に保存ダイアログが出ました。再試行はしていません。保存されたかどうかは私からは確認できません。」→ **CC が確かめたところ、`C:\Users\kenji\Downloads\20250324001a.pdf` が保存されていた**（439,502 バイト・%PDF-1.7・2026-10-12 17:09 JST・需給調整市場ガイドライン 2025年3月24日版と見られる）。停止条件により CC は消していない。不要なら手で消してください。
   - 区分 D の調べ役: 「一度、curl の -D の出力を `2>/tmp_hdr_dummy` にリダイレクトするコマンドを打ちました。ファイル作成の禁止に反する操作です。Permission denied で失敗し、ファイルはできていません。」
   - 区分 B の反証役: 途中の出力 1 本がツールの仕組みで自動保存された（`C:\Users\kenji\.claude\projects\C--Users-kenji-Documents-GitHub-bess-net\7088fb52-56f5-41b2-8af2-6a2a5b8bb5ba\tool-results\b6t6v0a0f.txt`・EPRX 新着一覧の抜き出し）。
   - 内蔵ブラウザのタブ: 区分 A の調べ役が tab-2 を開いたまま、区分 A の反証役が tab-3 を別ページに移したまま（tab-4 は閉じた）。
