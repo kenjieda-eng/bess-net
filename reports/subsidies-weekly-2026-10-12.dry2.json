@@ -1,0 +1,21 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 2
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 1,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "patch",
+   "target": "subsidies/meti-battery-supply-plan-certification",
+   "id": "meti-battery-supply-plan-certification",
+   "result": "skip_idempotent"
+  }
+ ]
+}
