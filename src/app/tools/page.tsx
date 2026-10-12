@@ -18,6 +18,7 @@ import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults'
 import { ATB_BATTERY_LABEL } from '@/lib/nrel-atb-reference';
 import { ledgerSheetLabels, LEDGER_SHEETS, LEDGER_CHECKLIST_ITEMS } from '@/lib/asset-ledger-spec';
 import { ASSET_CHECK_AXES, ASSET_CHECK_QUESTIONS } from '@/data/asset-check-questions';
+import { NOTICE_PERIODS, NOTICE_ZONES } from '@/lib/noise-check';
 // T1 実装便: 入札ベンチマークの範囲（月数・期間）はカタログの月次から（焼き込まない）
 import { monthlyCoverageYms } from '@/lib/eprx-monthly';
 import { CAP_NEAR_RATIO } from '@/lib/balancing-benchmark-calc';
@@ -130,6 +131,15 @@ const tools = [
     available: true,
     description:
       `系統用蓄電所の買い手・貸し手・保険者が確かめる項目を、${ASSET_CHECK_AXES.map((a) => a.label).join('／')}の ${ASSET_CHECK_AXES.length} 軸 ${ASSET_CHECK_QUESTIONS.length} 問で棚卸し。軸ごとの整備済みの割合と、未整備の問いの「次にやること」と一次。評価・格付けではありません。入力は保存も送信もしません。`,
+  },
+  {
+    // T5 騒音便（2026-10-12）: 区域・時間の区分は告示の定数（src/lib/noise-check.ts）から
+    slug: 'noise-check',
+    title: '蓄電所の騒音・離隔の目安チェッカー',
+    badge: '距離減衰・告示の範囲・ブラウザ内',
+    available: true,
+    description:
+      `PCS・変圧器・空調・送風機などの騒音レベル（仕様の値と測定距離）と台数から、敷地の境界線などでの合成レベルを距離減衰で概算し、騒音規制法の規制基準の範囲（告示の ${NOTICE_ZONES.length} 区域 × ${NOTICE_PERIODS.map((p) => p.label).join('／')}）と並べる目安。送風機・空気圧縮機には特定施設（施行令 別表第一）の注記。設計・測定・自治体への確認の代わりにはなりません。入力は保存も送信もしません。`,
   },
 ];
 

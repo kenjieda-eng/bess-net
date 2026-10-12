@@ -1917,7 +1917,7 @@
       "title_verbatim": "騒音規制法",
       "checked_on": "2026-10-10",
       "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000098・HTTP 200・98,354 バイト・2026-10-10 17:05:19 JST）で LawTitle「騒音規制法」・LawNum「昭和四十三年法律第九十八号」。第2条・第3条・第5条を T2 設問研究便（10/10）の検証で逐語照合。T2 実装便（2026-10-10）で登録。",
-      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝C6（A5 の他の一次）"
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝C6（A5 の他の一次） / src/lib/noise-check.ts（/tools/noise-check の出典欄）＝第2条第2項・第3条第1項・第4条第1項・第4条第2項・第5条・第6条第1項・第8条第1項・第21条第1項（2026-10-12 に API で逐語を取り直し）"
     },
     {
       "name": "都市計画法",
@@ -2089,6 +2089,105 @@
       "checked_on": "2026-10-12",
       "used_in": "subsidies/meti-battery-supply-plan-certification.subsidyRate・scheme",
       "note": "PDF（HTTP 200・445,740 バイト・sha256 cee354bc7bff37b7129406037c71d71a222ea314f346207f541f22b0f5d8a29e・last-modified Thu, 25 Jun 2026 01:31:01 GMT・全 17 ページ・文書プロパティに /Title なし）を 2026-10-12 15:38 JST に Chrome UA の curl で取得。title_verbatim は PDF 1 ページ目の表題（pdftotext）の逐語。掲載ページ「蓄電池 （METI/経済産業省）」（https://www.meti.go.jp/policy/economy/economic_security/battery/）のリンク文字は「計画申請に関するQ＆A（PDF形式：435KB）」（Q・A は半角、＆ は全角）で、資料名はこのリンク文字に合わせた。3-1（補助率）は PDF 16 ページ・3-2（上限額）は 17 ページ（表のセル単位で逐語一致を確認）。補助金 PATCH 便 月曜定例 10/12 で登録。"
+    },
+    {
+      "name": "騒音規制法施行令",
+      "publisher": "e-Gov 法令検索（デジタル庁）・昭和四十三年政令第三百二十四号",
+      "url": "https://laws.e-gov.go.jp/law/343CO0000000324",
+      "title_verbatim": "騒音規制法施行令",
+      "checked_on": "2026-10-12",
+      "note": "e-Gov 法令API v1（https://laws.e-gov.go.jp/api/1/lawdata/343CO0000000324・HTTP 200・29,198 バイト・2026-10-12 16:14:59 JST に取得）の LawTitle の逐語。別表第一は全 11 号。第二号の現行の文言「空気圧縮機（一定の限度を超える大きさの騒音を発生しないものとして環境大臣が指定するものを除き、原動機の定格出力が七・五キロワット以上のものに限る。）及び送風機（原動機の定格出力が七・五キロワット以上のものに限る。）」（令和三年政令第三百四十六号・2022-12-01 施行で空気圧縮機の除外が入った）。T5 騒音便で登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝第1条・別表第一 第二号"
+    },
+    {
+      "name": "特定工場等において発生する騒音の規制に関する基準",
+      "publisher": "環境省（法令・告示・通達）・昭和43年 厚生省・農林省・通商産業省・運輸省告示第1号",
+      "url": "https://www.env.go.jp/hourei/07/000052.html",
+      "title_verbatim": "特定工場等において発生する騒音の規制に関する基準 | 法令・告示・通達 | 環境省",
+      "checked_on": "2026-10-12",
+      "note": "HTTP 200・49,180 バイト・2026-10-12 16:14:53 JST に取得・last-modified Sun, 02 Aug 2026 21:08:25 GMT。<title> の逐語。e-Gov には収録なし（API v2 の題名検索 0 件）。第一条第1項の表（4 区域 × 昼間・朝・夕・夜間）を HTML から機械的に抜いて src/lib/noise-check.ts の NOTICE_RANGES にした（npm run verify:noise-check -- --fetch で再照合できる）。環境省ページの改正一覧の最後は平成27年4月20日 環境省告示第67号。T5 騒音便で登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝第一条（表・ただし書・第2項の区域の定義・備考1）・第二条"
+    },
+    {
+      "name": "騒音の尺度",
+      "publisher": "宮城県（騒音と振動に係る規制について）",
+      "url": "https://www.pref.miyagi.jp/documents/13403/95295.pdf",
+      "title_verbatim": "騒音の尺度",
+      "checked_on": "2026-10-12",
+      "note": "PDF（HTTP 200・15,205 バイト・2026-10-12 16:15:00 JST に取得・sha256 e5a839f8f0bc7dccddfb41ba8ed094977c5630e5cc357e931073c366a9fba2ae・last-modified Wed, 04 Aug 2021 14:38:47 GMT・全 1 ページ）の見出しの逐語（pdfplumber。pdftotext はフォントの符号化で文字化けする）。掲載ページ https://www.pref.miyagi.jp/soshiki/kankyo-t/souon-index.html の <title>「騒音と振動に係る規制について - 宮城県公式ウェブサイト」・リンク文字「騒音の尺度について（PDF：15KB）」。「◎騒音レベルの距離減衰（点音源の場合）」の式 Ｌ₂＝Ｌ₁−２０Ｌog₁₀（ｒ₂／ｒ₁）、「◎騒音レベルの和」の式と同じ発生源の台数の表（2 台 約＋3・10 台 約＋10）。T5 騒音便で登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝距離減衰・合成・台数の式"
+    },
+    {
+      "name": "道路環境影響評価の技術手法（平成24年度版）",
+      "publisher": "国土交通省 国土技術政策総合研究所（国総研資料 第714号）",
+      "url": "https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn0714.htm",
+      "title_verbatim": "国総研資料　第 714 号",
+      "checked_on": "2026-10-12",
+      "note": "索引ページ（HTTP 200・19,665 バイト・2026-10-12 16:15:04 JST に取得・last-modified Wed, 27 Apr 2016 05:46:12 GMT・Shift_JIS）の <title> の逐語。資料名は同ページの「【資　料　名】」の逐語。使ったのは「4.2 建設機械の稼働に係る騒音」の PDF https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn0714pdf/ks071416.pdf（HTTP 200・647,916 バイト・2026-10-12 16:15:03 JST に取得・sha256 f476221c40b599a778e8646bf734d9802f6671f77df2a3514955a90686e3a57b・last-modified Wed, 27 Apr 2016 05:46:12 GMT）の解説4.2.13（音源を分割した場合の合成 10·log10 Σ）と解説4.2.14（点音源 L_WA − 10·log10(2πr²/S0)。2πr² は地面の上の半球に広がる形と読める）。T5 騒音便で登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝合成の式・点音源の式"
+    },
+    {
+      "name": "騒音障害防止のためのガイドラインの改訂について",
+      "publisher": "厚生労働省 労働基準局長（基発0420第2号・令和5年4月20日）",
+      "url": "https://www.mhlw.go.jp/content/001089239.pdf",
+      "title_verbatim": "騒音障害防止のためのガイドラインの改訂について",
+      "checked_on": "2026-10-12",
+      "note": "PDF（HTTP 200・489,308 バイト・2026-10-12 16:15:05 JST に取得・sha256 c52bf9062152ea9301ef504c741815b03d61843f12bbe0d7472667ae664e1438・last-modified Tue, 10 Oct 2023 10:50:44 GMT）1 ページ目の件名の逐語。別紙4「等価騒音レベルの推計」の Lp＝Lw−20log10 r−8（屋外作業場で、地面の上に騒音源があって周辺に建物や壁等がない場所）。T5 騒音便で登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝距離減衰の式（音響パワーレベル基準）"
+    },
+    {
+      "name": "騒音規制法の概要",
+      "publisher": "環境省 水・大気環境局",
+      "url": "https://www.env.go.jp/air/noise/low-gaiyo.html",
+      "title_verbatim": "騒音規制法の概要 | 大気環境・自動車対策 | 環境省",
+      "checked_on": "2026-10-12",
+      "note": "HTTP 200・43,891 バイト・2026-10-12 16:15:07 JST に取得・last-modified Mon, 27 Jul 2026 14:16:44 GMT。<title> の逐語。ページのリンク「騒音規制法の概要[PDF 1,848KB]」の先のパンフレット（台帳の「騒音規制法 住みよい音環境を目指して」）の Q&A に「具体的な施設が特定施設かどうかについては、市町村または特別区にお問い合わせください。」「具体的な規制基準や指定地域は、お住まいの市、特別区または都道府県にお問い合わせください。」「騒音規制法の規制基準とは異なるものです。」（環境基準について）。パンフレットの特定施設の表は令和3年改正前の書き方なので、特定施設の語は施行令から引いた。T5 騒音便で登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝確認先・規制基準と環境基準の違い"
+    },
+    {
+      "name": "騒音に係る環境基準について",
+      "publisher": "環境省（平成10年9月30日 環境庁告示第64号）",
+      "url": "https://www.env.go.jp/kijun/oto1-1.html",
+      "title_verbatim": "騒音に係る環境基準について | 環境省",
+      "checked_on": "2026-10-12",
+      "note": "HTTP 200・50,746 バイト・2026-10-12 16:15:14 JST に取得・last-modified Mon, 27 Jul 2026 17:36:30 GMT。<title> の逐語。環境基本法第16条第1項にもとづく告示（最終改正 平成24年3月30日 環告54）。工場の規制基準とは別のものであることの確認に使った。T5 騒音便で登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝規制基準と環境基準の違い"
+    },
+    {
+      "name": "工場・事業場等に対する騒音・振動の規制",
+      "publisher": "東京都環境局",
+      "url": "https://www.kankyo.metro.tokyo.lg.jp/noise/noise_vibration/rules/workplace_factory",
+      "title_verbatim": "工場・事業場等に対する騒音・振動の規制｜法律・条例による規制について｜東京都環境局",
+      "checked_on": "2026-10-12",
+      "note": "HTTP 200・532,822 バイト・2026-10-12 16:15:10 JST に取得。<title> の逐語（ページの更新日 2022年12月1日）。「※特定施設のうち、電気事業法の電気工作物・ガス事業法のガス工作物・鉱山保安法の工作物等に該当するものは、各法律に従い、届出を行います。なお、これらの施設でも規制基準を遵守しなければなりません。」。環境確保条例の工場・指定作業場の基準（条例第68条・別表第7 五）へのリンクあり。T5 騒音便で確認先の例として登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝確認先の例"
+    },
+    {
+      "name": "工場・事業場の規制について",
+      "publisher": "大阪府 環境農林水産部 環境管理室 事業所指導課",
+      "url": "https://www.pref.osaka.lg.jp/o120080/kotsukankyo/oto/koujou.html",
+      "title_verbatim": "工場・事業場の規制について／大阪府（おおさかふ）ホームページ [Osaka Prefectural Government]",
+      "checked_on": "2026-10-12",
+      "note": "HTTP 200・33,785 バイト・2026-10-12 16:15:11 JST に取得・last-modified Wed, 17 Sep 2025 04:31:03 GMT。<title> の逐語（ページの更新日 2025年9月17日）。規制基準の表（HTML）と届出書の提出先。T5 騒音便で確認先の例として登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝確認先の例"
+    },
+    {
+      "name": "公害苦情相談窓口",
+      "publisher": "総務省 公害等調整委員会",
+      "url": "https://www.soumu.go.jp/kouchoi/complaint/soudan_madoguchi.html",
+      "title_verbatim": "総務省｜公害等調整委員会｜ 公害苦情相談窓口 ",
+      "checked_on": "2026-10-12",
+      "note": "HTTP 200・46,898 バイト・2026-10-12 16:15:13 JST に取得・last-modified Sun, 17 May 2026 06:47:47 GMT・Shift_JIS。<title> の逐語（前後の半角空白も原文どおり）。苦情相談の窓口の一覧で、騒音規制法の届出の窓口の一覧ではない（ページにもそう書いた）。T5 騒音便で登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝確認先（担当窓口を探す入口）"
+    },
+    {
+      "name": "騒音規制法 住みよい音環境を目指して",
+      "publisher": "環境省（パンフレット）",
+      "url": "https://www.env.go.jp/content/000190185.pdf",
+      "title_verbatim": "騒音規制法 住みよい音環境を目指して",
+      "checked_on": "2026-10-12",
+      "note": "PDF（HTTP 200・1,941,484 バイト・sha256 f37c1987910ef5a95c46fa773d358e6597c0a6e574475e8807a0267895b9a653・last-modified Mon, 27 Jul 2026 14:16:44 GMT・全 8 ページ・文書プロパティの Title は空）を 2026-10-12 16:15 JST に取得。title_verbatim は表紙の文字（pdftotext は「騒音 規 制 法」と字間を空けて出る）。掲載ページ「騒音規制法の概要」のリンク文字は「騒音規制法の概要[PDF 1,848KB]」。Q&A の逐語「具体的な施設が特定施設かどうかについては、市町村または特別区にお問い合わせください。」「具体的な規制基準や指定地域は、お住まいの市、特別区または都道府県にお問い合わせください。」「…行政上の政策目標です。騒音規制法の規制基準とは異なるものです。」。特定施設の表は令和3年の施行令改正より前の書き方（空気圧縮機の環境大臣指定の除外が無い）なので、特定施設の語は施行令から引いた。T5 騒音便で登録。",
+      "used_in": "src/lib/noise-check.ts（/tools/noise-check の出典欄）＝規制基準と環境基準の違い・確認先の案内"
     }
   ]
 }
