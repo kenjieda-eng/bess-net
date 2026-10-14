@@ -106,8 +106,24 @@ export default function TrackerHubPage() {
           </div>
 
           <p style={{ fontSize: 15, color: 'var(--color-muted)', marginTop: 24 }}>
-            ※ データは microCMS / 当サイト DB から取得。各ページは 1 時間ごとに更新。
+            ※ 上の 4 つのトラッカーのデータは microCMS / 当サイト DB から取得。各ページは 1 時間ごとに更新。
           </p>
+
+          {/* T8 実装便（2026-10-14）: 上の 4 軸（当サイトの更新タイムライン）とは別の種類＝制度の改定の一覧。見出しを分けて「4 軸」の文を保つ */}
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '32px 0 8px' }}>{'制度の改定'}</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: 16, marginTop: 12 }}>
+            <Link href="/tracker/balancing-rules" style={{
+              display: 'block', padding: 16,
+              border: '1px solid var(--color-border)', borderRadius: 8,
+              textDecoration: 'none', color: 'inherit', background: 'white',
+            }}>
+              <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>{'需給調整市場 制度変更トラッカー'}</div>
+              <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, color: 'var(--color-text)' }}>
+                {'上限価格・募集量・商品仕様・ガイドライン・蓄電池に関わる要件の改定のうち一次が取れたものを、公表日と適用日（実需給日）を分けて一次の逐語つきで並べた一覧（網羅ではありません）'}
+              </p>
+              <div style={{ fontSize: 13, color: 'var(--color-accent)', marginTop: 8 }}>改定の一覧を見る →</div>
+            </Link>
+          </div>
         </div>
       </main>
       <SiteFooter />

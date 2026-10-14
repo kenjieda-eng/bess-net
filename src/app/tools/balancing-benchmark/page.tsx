@@ -221,7 +221,9 @@ export default function BalancingBenchmarkPage() {
             <Link href="/tracker/imbalance" style={linkStyle}>需給調整市場 約定価格トラッカー</Link>
             {'、制度の用語は'}
             <Link href="/glossary/balancing-market" style={linkStyle}>用語集「需給調整市場」</Link>
-            {'を参照してください。'}
+            {'を参照してください。上限価格・募集量・商品仕様などの改定の公表日と適用日（実需給日）は、需給調整市場 制度変更トラッカーで確かめられます（'}
+            <Link href="/tracker/balancing-rules" style={linkStyle}>制度の改定を見る</Link>
+            {'）。'}
           </p>
 
           {/* ─── 出典・免責 ─── */}
