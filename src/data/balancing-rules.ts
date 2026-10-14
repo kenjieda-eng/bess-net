@@ -4358,7 +4358,7 @@ export const BALANCING_RULES: readonly BalancingRule[] = [
         "quote": "2025年３月14日 実施"
       }
     },
-    "dateException": null
+    "dateException": "一次は取引規程の実施日（「2025年３月14日 実施」）で、実需給日として書いた記載は無い。現行（2026年７月１日 実施）の取引規程では同じ定義が第2条(26)に繰り下がっている。"
   }
 ] as BalancingRule[];
 
