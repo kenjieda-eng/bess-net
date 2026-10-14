@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Faq } from '@/lib/microcms';
+import { isExcludedExplainer } from '@/lib/explainer-excluded';
 
 // 依頼BG: FAQ answer の auto-link 適用済 HTML を server から受け取る
 // (server-side で linkifyTerms 済、glossaryLite を bundle 同梱せず安全)
@@ -174,7 +175,8 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
             const isOpen = openIds.has(it.id);
             const category = firstOf(it.category);
             const glossarySlugs = parseSlugList(it.relatedGlossary);
-            const explainerSlugs = parseSlugList(it.relatedExplainer);
+            // 是正便 10-13: 非表示の解説（404）へのリンクを出さない（src/lib/explainer-excluded.ts）
+            const explainerSlugs = parseSlugList(it.relatedExplainer).filter((s) => !isExcludedExplainer(s));
             return (
               <li
                 key={it.id}

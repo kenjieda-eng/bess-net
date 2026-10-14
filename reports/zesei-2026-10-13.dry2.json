@@ -1,0 +1,27 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 4
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 2,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "patch",
+   "target": "policy-events/balancing-market-reform-2026-03",
+   "id": "hlq3868w69",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/meti-battery-supply-plan-certification",
+   "id": "meti-battery-supply-plan-certification",
+   "result": "skip_idempotent"
+  }
+ ]
+}

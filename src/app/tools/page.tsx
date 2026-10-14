@@ -180,7 +180,8 @@ export default function ToolsHubPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              // 是正便 10-13 ■4: 320px 幅で 8px はみ出していた（T5 報告 (6)）→ 列の最小幅を画面幅で頭打ち
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))',
               gap: 16,
               marginBottom: 32,
             }}

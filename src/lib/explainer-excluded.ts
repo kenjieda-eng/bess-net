@@ -9,6 +9,9 @@
  * getExplainersByTermName）で外す。これで一覧・カテゴリ・詳細（404）・用語集の関連・sitemap・
  * トップの新着が同時に揃う（#118/#119: 一部の経路だけ外れる事態を防ぐ）。
  * 関連マップの生成（scripts/precompute-explainer-related.ts）は独自 fetch のため、そちらでも同じ集合を使う。
+ * src/lib/related-cards.ts の getAllExplainerLite（news・案件・政策詳細の関連解説と JSON-LD mentions）も独自の取得のため、
+ * 同じ集合で外す（是正便 10-13 で漏れを塞いだ）。FAQ の関連解説（faq.relatedExplainer の slug）も表示前に外す。
+ * explainer を endpoint に持つ取得は src に 7 か所（microcms.ts 6・related-cards.ts 1）。新しく足すときは必ずこの集合を通す。
  *
  * ★prebuild が読むモジュールなので、生成 JSON（src/lib/generated/*）を import しないこと。
  */
@@ -41,6 +44,17 @@ export const EXPLAINER_EXCLUDED: readonly ExcludedExplainer[] = [
     //   Lc-3 が挙げた近い実在名（NEDO グリーンイノベーション基金事業ほか）は電池材料・セル開発の事業で
     //   BESS の冷却方式選定を論じた資料ではないため、出典の差し替え先にはしない。
     reason: '数値文 7 の一次が 0 件で、温度・規模閾値という主題が R8 で落ちる（Ck-2 計画便 A-5 別表・裁定 R16）。改稿まで非表示',
+  },
+  {
+    slug: 'integrated-market-2026',
+    row: 'T8 研究便 (7)・是正便 10-13',
+    // 一次: 資源エネルギー庁「同時市場の在り方等に関する検討会」第二次中間取りまとめ
+    //   https://www.meti.go.jp/shingikai/energy_environment/doji_shijo_kento/pdf/20251015_1.pdf。
+    //   ★reason の「p.61」は便の指定どおりの逐語。2026-10-13 12:49 JST に取り直した PDF（4,801,593 バイト・sha256 e9b951c4ec595f08…）では、
+    //   引用の文は印刷頁 63（PDF 63 頁目・頁末）にある（61 頁は市場開設準備・62 頁は図 30「同時市場導入のロードマップ」）。
+    //   T8 研究便（reports/tool-balancing-rules-plan-2026-10-12.md (7)・C-9）で、題の「2026年度開始」が一次と食い違うことを確認。
+    //   Ck-1 の A11-2-X2（reports/ck1-approval-2026-09-21.md）でも、本文 #2 の「2026年度開始予定」を落とす指摘が既にあった。
+    reason: '題・リード・本文が「2026年度開始」とするが、同時市場の導入は未決定（「同時市場の在り方等に関する検討会」第二次中間取りまとめ p.61「我が国において同時市場が実現可能であると判断された場合には、同時市場の導入を最終決定することとしたい。」）。本文の大半（海外の統合市場・5 商品の呼称・清算・地域別価格・2026年4月本格運用 等）に一次が無い（R8）。改稿まで非表示',
   },
 ];
 

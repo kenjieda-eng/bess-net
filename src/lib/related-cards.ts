@@ -25,6 +25,7 @@ import {
 } from './microcms';
 import { findWithinRadius } from './geo-distance';
 import { isListExcludedProject } from './projects-excluded';
+import { isExcludedExplainer } from './explainer-excluded';
 import relatedNewsMap from './generated/related-news-map.json';
 
 /* ----------------------------- フィルタ条件 ----------------------------- */
@@ -207,6 +208,11 @@ async function getAllExplainerLite(): Promise<LiteExplainer[]> {
         },
       });
       for (const e of data.contents) {
+        // 是正便 10-13: 非表示の解説（src/lib/explainer-excluded.ts）は関連カード・JSON-LD の mentions にも出さない
+        //（この取得は getAllExplainer を通らない独自の取得で、除外が抜けていた。2026-10-14 のビルドで integrated-market-2026 が
+        //  news・政策・案件の詳細 4 ページ（html・rsc の 8 ファイル）の関連解説と JSON-LD の mentions に出ていた。
+        //  Ck-2 R16 の 2 件はキーワードが当たらず 0 件だったが、同じ経路で出うる）
+        if (isExcludedExplainer(e.slug)) continue;
         out.push({
           id: e.id,
           slug: e.slug,
