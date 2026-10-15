@@ -274,3 +274,4 @@ force-static で runtime fetch を持たないので Data Cache の窓（#112・
 - 追補の組み立て道具（`build_addendum.mjs`）はリポジトリに入れていない。追補 JSON 自体が入力で、何を直したかは rowPatch と本報告 (1) に全数がある。
 - 本報告の commit 時点の sha256: 追補 `reports/tool-balancing-rules-2026-10-13.addendum.json` = `2becf44eafe7346267e52f3a8ad3984ec5b2d19b87e8ef9712e7262d81cf23de`・生成物 `src/data/balancing-rules.ts` = `2cd4e3b848296636546e2d2cfecc4f137751df562dd3d6ed60b1f46adaea89bd`（`gen-balancing-rules --check` ok）。
 - 本報告の commit で、C-10 に日付の注記 1 文（「一次は取引規程の実施日…現行の取引規程では同じ定義が第2条(26)に繰り下がっている。」）を足した（ページの決まりの欄「一次が実施日・適用日だけを書いている行は日付の注記に書く」と合わせるため・`c96d62e` の後に気づいた）。
+- 追記（本報告の commit `80563a0` のデプロイ後）: Vercel success 22:26:15 JST → 22:26:36 に素 URL で `/tracker/balancing-rules` 200・PRERENDER・age 0・C-10 の注記「現行（2026年７月１日 実施）の取引規程では同じ定義が第2条(26)に繰り下がっている」が本文に在る・本番 HTML に verify --html 問題 0。この追記は T6 収集便の報告と同じ commit で入れた（docs だけのデプロイを 1 本減らすため）。
