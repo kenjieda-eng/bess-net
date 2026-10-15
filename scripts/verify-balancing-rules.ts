@@ -7,7 +7,10 @@
  *      うちタイムライン 48・予定 2）・watch 1・裁定 T8-R1（揚水随契 12 行の group と areas）・R2（C-9／B-28／D-4b の status と逐語）
  *   2. 日付（R4）: 形式 YYYY-MM-DD・announcedOn がいずれかの sources[].date と一致（例外は DATE_EXCEPTIONS の行だけ）・
  *      dateBasis が全行にあり、添字の出典の日付と announcedOn が一致・effectiveFrom がある行は dateBasis.effective もある・
- *      公表日 > 適用日は DATE_EXCEPTIONS の行だけ
+ *      公表日 > 適用日は DATE_EXCEPTIONS の行だけ。
+ *      公表日の決め方（裁定 2026-10-15・ページの決まりの欄と同じ文）: 公表日（一次の日付）は、その改定の内容と時期を一次が初めて示した日。
+ *      審議会（資源エネルギー庁・電力広域的運営推進機関）で内容が決まった変更はその会議の日、取引規程の改定で初めて確定した変更は
+ *      電力需給調整力取引所の改定の告知の日（データの値はこの規則で決めたもの＝この検査は値を変えない）
  *   3. 上限価格（R5）: 区分 A の行の after に、適用日のカタログの値（capAt）がある・カタログの値の変わり目に A の行がある
  *      前後の窓（R6）: 月の途中の改定月を前後どちらにも入れない・月初の改定はその月から後・リンクは前後とも月次の範囲内の行だけ
  *   4. 関連（R7）: 非表示の解説（isExcludedExplainer）・政策イベント（isExcludedEvent）は画面で外れる（--html でリンク 0 も見る）・
@@ -302,8 +305,15 @@ if (HTML) {
   const raw = fs.readFileSync(HTML, 'utf8');
   const main = (raw.match(/<main[\s\S]*<\/main>/) ?? [raw])[0];
   const text = main.replace(/<!-- -->/g, '').replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-  const LEAD = '一次が取れた改定だけを載せています（網羅ではありません）。日付は公表日（一次の日付）と適用日（実需給日）を分けています。当サイトは改定の良し悪しや収益への影響を評価しません。';
+  const LEAD = '一次が取れた改定だけを載せています（網羅ではありません）。日付は公表日（一次の日付）と適用日（実需給日）を分けています。このトラッカーは改定の良し悪しや収益への影響を評価しません。';
   ok(text.split(LEAD).length - 1 === 1, `初期 DOM に冒頭の 1 行がちょうど 1 回でない（${text.split(LEAD).length - 1}）`);
+  // 裁定 2026-10-15（T8 の (4)-10・(4)-5）: 冒頭の主語は「このトラッカーは」・決まりの欄に公表日の決め方の文・関連の解説は当サイトの記事と書く
+  ok(!text.includes('当サイトは改定の'), '初期 DOM に「当サイトは改定の」が残る（裁定で「このトラッカーは」に変えた）');
+  const ANN_RULE = '公表日（一次の日付）は、その改定の内容と時期を一次が初めて示した日です。審議会（資源エネルギー庁・電力広域的運営推進機関）で内容が決まった変更はその会議の日、取引規程の改定で初めて確定した変更は電力需給調整力取引所の改定の告知の日としています。';
+  ok(text.split(ANN_RULE).length - 1 === 1, `初期 DOM の決まりの欄に公表日の決め方の文がちょうど 1 回でない（${text.split(ANN_RULE).length - 1}）`);
+  const nRelExp = text.split('関連の解説').length - 1;
+  const nRelExpData = ALL.filter((r) => visibleRelated(r).explainers.length > 0).length;
+  ok(nRelExp > 0 && nRelExp === text.split('関連の解説（当サイトの解説記事）: ').length - 1 && nRelExp === nRelExpData, `初期 DOM の「関連の解説（当サイトの解説記事）」の数（${nRelExp}）が、関連の解説を持つ行の数（${nRelExpData}）と合わない・見出しの付いていない所がある`);
   const missingTitle = ALL.filter((r) => !text.includes(r.title));
   ok(missingTitle.length === 0, `初期 DOM に無い title: ${missingTitle.map((r) => r.id).join('・')}`);
   const nAnn = text.split('公表日（一次の日付）').length - 1;

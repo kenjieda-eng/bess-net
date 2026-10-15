@@ -120,7 +120,7 @@ function RuleCard({ r, hidden }: { r: RuleView; hidden: boolean }) {
         <p style={{ fontSize: 14, margin: '8px 0 0', lineHeight: 1.7 }}>
           {r.explainers.map((e, i) => (
             <span key={e.slug}>
-              {i === 0 ? '関連の解説: ' : '・'}
+              {i === 0 ? '関連の解説（当サイトの解説記事）: ' : '・'}
               <Link href={`/explainer/${e.slug}`} style={linkStyle}>{e.title}</Link>
             </span>
           ))}

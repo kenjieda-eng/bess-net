@@ -19,6 +19,7 @@ import { ATB_BATTERY_LABEL } from '@/lib/nrel-atb-reference';
 import { ledgerSheetLabels, LEDGER_SHEETS, LEDGER_CHECKLIST_ITEMS } from '@/lib/asset-ledger-spec';
 import { ASSET_CHECK_AXES, ASSET_CHECK_QUESTIONS } from '@/data/asset-check-questions';
 import { NOTICE_PERIODS, NOTICE_ZONES } from '@/lib/noise-check';
+import { LIMITS as RV_LIMITS } from '@/lib/residual-value-calc';
 // T1 実装便: 入札ベンチマークの範囲（月数・期間）はカタログの月次から（焼き込まない）
 import { monthlyCoverageYms } from '@/lib/eprx-monthly';
 import { CAP_NEAR_RATIO } from '@/lib/balancing-benchmark-calc';
@@ -140,6 +141,15 @@ const tools = [
     available: true,
     description:
       `PCS・変圧器・空調・送風機などの騒音レベル（仕様の値と測定距離）と台数から、敷地の境界線などでの合成レベルを距離減衰で概算し、騒音規制法の規制基準の範囲（告示の ${NOTICE_ZONES.length} 区域 × ${NOTICE_PERIODS.map((p) => p.label).join('／')}）と並べる目安。送風機・空気圧縮機には特定施設（施行令 別表第一）の注記。設計・測定・自治体への確認の代わりにはなりません。入力は保存も送信もしません。`,
+  },
+  {
+    // T7 実装便（2026-10-15）: 入力はすべて利用者（既定値なし）。年数の範囲は定義（src/lib/residual-value-calc.ts）から
+    slug: 'residual-value',
+    title: '蓄電所 残存価値の試算',
+    badge: '割引現在価値・既定値なし・ブラウザ内',
+    available: true,
+    description:
+      `残りの運転年数（${RV_LIMITS.years.min}〜${RV_LIMITS.years.max} 年）・直近 12 か月の収入と費用と、シナリオ A／B／C ごとの収入の変化・使える容量の減り・費用の変化・割引率を入れると、残りの期間のキャッシュフローを割り引いた値を 3 列で並べます。値はすべて利用者が入れます。鑑定・査定・売買価格の目安ではありません。入力は保存も送信もしません。`,
   },
 ];
 

@@ -3115,6 +3115,15 @@
       "checked_on": "2026-10-14",
       "note": "T8 実装便で登録。2026-10-14 に取り直し（HTTP 200 / 84,127）。資料の日付 2026-06-18＝PDF 1 頁の日付欄。",
       "used_in": "src/data/balancing-rules.ts（/tracker/balancing-rules の一次）"
+    },
+    {
+      "name": "公共事業評価の費用便益分析に関する技術指針（共通編）",
+      "publisher": "国土交通省（大臣官房 技術調査課・公共事業調査室）",
+      "url": "https://www.mlit.go.jp/tec/hyouka/public/250918_shishin/shishin/shishin250918.pdf",
+      "title_verbatim": "公共事業評価の費用便益分析 に関する技術指針（共通編） 令 和 ７ 年 ９ 月 国 土 交 通 省",
+      "checked_on": "2026-10-15",
+      "note": "PDF（HTTP 200・application/pdf・2,018,956 バイト・47 ページ・2026-10-15 13:29:24 JST に取得・sha256 660bbad60629ab938f2bf926bc2f31a1c16ff5706c125f83ddbe5f97e9351962・Last-Modified Thu, 18 Sep 2025 09:06:09 GMT）。PDF に /Title のメタが無いため title_verbatim は表紙の逐語（字間の空白もそのまま）。掲載ページ https://www.mlit.go.jp/tec/hyouka/public/250918_shishin/250918_shishin.html の <title>「「公共事業評価の費用便益分析に関する技術指針（共通編）」の改定について」・PDF のリンク文字「公共事業評価の費用便益分析に関する技術指針（共通編）」。改定は令和7年9月18日（一覧 https://www.mlit.go.jp/tec/hyouka/public/09_public_08.html）。使ったのは p.4（PDF 7 ページ目）表2-1 の純現在価値 Σ(Bt − Ct)／(1 + i)^(t−1) と記号の説明「ただし、n：評価期間、Bt：t年次の便益、Ct：t年次の費用、i：社会的割引率」、p.11（PDF 14 ページ目）「現在価値化の基準時点は、評価を実施する年度とする。」。T7 実装便で登録。",
+      "used_in": "src/lib/residual-value-calc.ts（/tools/residual-value の出典欄）＝割引現在価値の式"
     }
   ]
 }
