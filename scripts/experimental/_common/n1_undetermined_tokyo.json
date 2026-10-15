@@ -1,0 +1,187 @@
+{
+ "purpose": "東京 2026年9月30日更新版で N-1電制適用可否が未算定（－）・空欄の行。dry-run の一覧（書込なし）。build_n1_status.py の入力にできる形。",
+ "version": "2026-09-30",
+ "count": 18,
+ "entries": [
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0595",
+   "external_id": "変千葉県 154kV 11",
+   "name": "新木更津5・8B",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0608",
+   "external_id": "変千葉県 22kV 4",
+   "name": "溝原",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0609",
+   "external_id": "変千葉県 22kV 5",
+   "name": "西岬",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0610",
+   "external_id": "変千葉県 22kV 6",
+   "name": "神戸",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0611",
+   "external_id": "変千葉県 22kV 7",
+   "name": "犬石",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0612",
+   "external_id": "変千葉県 22kV 8",
+   "name": "長尾",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0613",
+   "external_id": "変千葉県 22kV 9",
+   "name": "塩浦",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0389",
+   "external_id": "変埼玉県 22kV 5",
+   "name": "向堀",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0390",
+   "external_id": "変埼玉県 22kV 6",
+   "name": "西平",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-1559",
+   "external_id": "変山梨県 22kV 3",
+   "name": "身延(1)",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-1561",
+   "external_id": "変山梨県 22kV 4",
+   "name": "紅葉台(1)",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-1563",
+   "external_id": "変山梨県 22kV 5",
+   "name": "富士豊茂(1)",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-1565",
+   "external_id": "変山梨県 22kV 6",
+   "name": "富士桜(1)",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-1567",
+   "external_id": "変山梨県 22kV 7",
+   "name": "富士ヶ嶺(1)",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0017",
+   "external_id": "変栃木県 22kV 3",
+   "name": "塩原第１",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0018",
+   "external_id": "変栃木県 22kV 4",
+   "name": "塩原第２",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-0019",
+   "external_id": "変栃木県 22kV 5",
+   "name": "塩原第３",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  },
+  {
+   "operator": "東京電力パワーグリッド",
+   "area": "東京",
+   "slug": "tpg-1359",
+   "external_id": "変神奈川県 22kV 19",
+   "name": "三枚橋(1)",
+   "raw": "-",
+   "reason": "undetermined",
+   "current_n1_eligible": false
+  }
+ ]
+}
