@@ -1,0 +1,646 @@
+{
+ "generated_on": "2026-10-15",
+ "area": "九州",
+ "operator": "九州電力送配電",
+ "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ）",
+ "zip": {
+  "url": "https://www.kyuden.co.jp/var/rev0/0925/6795/td_oLsu7j3Y.zip",
+  "note": "公表ページのアンカー「変圧器CSV（zipファイル）」を実確認して特定。前回のリンク td_rHc7Jd0i.zip（8/19 取得）は 404（2026-10-15 実測・本実行で area-meta のサンプル直リンクの更新要）",
+  "bytes": 33516,
+  "members": 31
+ },
+ "files": [
+  {
+   "district": "01",
+   "member": "変圧器CSV/★離島①、②、③、④_変圧器.csv",
+   "bytes": 3310,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 35
+  },
+  {
+   "district": "02",
+   "member": "変圧器CSV/★１　門司、苅田地区_変圧器.csv",
+   "bytes": 3036,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 16
+  },
+  {
+   "district": "03",
+   "member": "変圧器CSV/★１０　伊都地区_変圧器.csv",
+   "bytes": 893,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 8
+  },
+  {
+   "district": "04",
+   "member": "変圧器CSV/★１１　豊前、宇佐、中津、高田地区_変圧器.csv",
+   "bytes": 3675,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 28
+  },
+  {
+   "district": "05",
+   "member": "変圧器CSV/★１２　中央、山家地区_変圧器.csv",
+   "bytes": 1302,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 14
+  },
+  {
+   "district": "06",
+   "member": "変圧器CSV/★１３　久留米、鳥栖地区_変圧器.csv",
+   "bytes": 4459,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 57
+  },
+  {
+   "district": "07",
+   "member": "変圧器CSV/★１４　大牟田地区_変圧器.csv",
+   "bytes": 1918,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 14
+  },
+  {
+   "district": "08",
+   "member": "変圧器CSV/★１５　大分地区_変圧器.csv",
+   "bytes": 4162,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 38
+  },
+  {
+   "district": "09",
+   "member": "変圧器CSV/★１６　日田地区_変圧器.csv",
+   "bytes": 2471,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 16
+  },
+  {
+   "district": "10",
+   "member": "変圧器CSV/★１７　佐伯、竹田地区_変圧器.csv",
+   "bytes": 3474,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 38
+  },
+  {
+   "district": "11",
+   "member": "変圧器CSV/★１８　唐津、佐賀地区_変圧器.csv",
+   "bytes": 3438,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 34
+  },
+  {
+   "district": "12",
+   "member": "変圧器CSV/★１９　武雄、東佐世保地区_変圧器.csv",
+   "bytes": 4731,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 51
+  },
+  {
+   "district": "13",
+   "member": "変圧器CSV/★２    小倉地区_変圧器.csv",
+   "bytes": 2987,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 17
+  },
+  {
+   "district": "14",
+   "member": "変圧器CSV/★２０　長崎地区_変圧器.csv",
+   "bytes": 2145,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 24
+  },
+  {
+   "district": "15",
+   "member": "変圧器CSV/★２１　諫早地区_変圧器.csv",
+   "bytes": 3671,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 49
+  },
+  {
+   "district": "16",
+   "member": "変圧器CSV/★２２　熊本地区_変圧器.csv",
+   "bytes": 7828,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 79
+  },
+  {
+   "district": "17",
+   "member": "変圧器CSV/★２３　八代、水俣、天草地区_変圧器.csv",
+   "bytes": 5067,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 36
+  },
+  {
+   "district": "18",
+   "member": "変圧器CSV/★２４　人吉地区_変圧器.csv",
+   "bytes": 1803,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 7
+  },
+  {
+   "district": "19",
+   "member": "変圧器CSV/★２５　日向地区_変圧器.csv",
+   "bytes": 2483,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 23
+  },
+  {
+   "district": "20",
+   "member": "変圧器CSV/★２６　宮崎地区_変圧器.csv",
+   "bytes": 4368,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 30
+  },
+  {
+   "district": "21",
+   "member": "変圧器CSV/★２７　川内、出水地区_変圧器.csv",
+   "bytes": 3921,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 27
+  },
+  {
+   "district": "22",
+   "member": "変圧器CSV/★２８　霧島、都城地区_変圧器.csv",
+   "bytes": 6787,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 49
+  },
+  {
+   "district": "23",
+   "member": "変圧器CSV/★２９　鹿児島地区_変圧器.csv",
+   "bytes": 6171,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 45
+  },
+  {
+   "district": "24",
+   "member": "変圧器CSV/★３    若松地区_変圧器.csv",
+   "bytes": 2090,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 11
+  },
+  {
+   "district": "25",
+   "member": "変圧器CSV/★３０　大隅地区_変圧器.csv",
+   "bytes": 3743,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 24
+  },
+  {
+   "district": "26",
+   "member": "変圧器CSV/★４    八幡・遠賀地区_変圧器.csv",
+   "bytes": 2998,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 19
+  },
+  {
+   "district": "27",
+   "member": "変圧器CSV/★５　古賀地区_変圧器.csv",
+   "bytes": 1531,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 16
+  },
+  {
+   "district": "28",
+   "member": "変圧器CSV/★６    飯塚、田川地区_変圧器.csv",
+   "bytes": 2840,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 19
+  },
+  {
+   "district": "29",
+   "member": "変圧器CSV/★７　東福岡地区_変圧器.csv",
+   "bytes": 2304,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 30
+  },
+  {
+   "district": "30",
+   "member": "変圧器CSV/★８　南福岡地区_変圧器.csv",
+   "bytes": 1193,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 13
+  },
+  {
+   "district": "31",
+   "member": "変圧器CSV/★９　赤坂地区_変圧器.csv",
+   "bytes": 1654,
+   "encoding": "cp932",
+   "version": "2026-09-29",
+   "data_rows": 19
+  }
+ ],
+ "warnings": [],
+ "requires_judgement": [
+  "枝番の振り直し 1件（バンク分割掲載に伴う No→No(1)）→ slug維持で external_id 更新するか（8/20 の裁定 2 の前例＝(1)側との全一致をフィールド突合で示したうえで slug 維持・eid 更新・履歴追記）",
+  "新規 3件（うち 2件 kyuden_22_13(3)・kyuden_22_39 は 8/20 の裁定で県が確定せず保留した行が残ったもの・ほか 1件は今回の枝番分割の新バンク）→ 追加と県の付与は裁定事項。8/20 の保留理由は変わっていない: 志和池 13(3) は GSI で宮崎県都城市（muni=45202）だが既存の 13(1)/(2)（kyu-656・657）が鹿児島県＝3 件まとめて県の是正を裁定する話／原田 39 は都城市と霧島市の両方に地名があり未確定。伊集院 23(2) は 8/20 の前例（同名既存から県を継ぐ）なら kyu-713 伊集院の鹿児島県",
+  "平常時出力制御の可能性が「有り」→「―」の 6件（kyu-443・kyu-444・kyu-445・kyu-510・kyu-547・kyu-564）→ 8/20 の規則どおり現値維持か、公表どおり空にするか（四国 10/5 の本実行は公表どおり空。当方で空の 325件のうち 321件は新 CSV でも「―」＝「―」を空として持っている）"
+ ],
+ "version": {
+  "当方(現行)": [
+   "2026-07-27",
+   "2026-07-28"
+  ],
+  "新": [
+   "2026-09-29"
+  ],
+  "split": {
+   "2026-09-29": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31"
+   ]
+  },
+  "メンバー割れ": false,
+  "扱い": "割れがあればレコード単位の last_updated（中国・北海道の前例）。ページ表記の「2026年９月30日更新」は掲載日"
+ },
+ "excluded_note_rows": {
+  "count": 1,
+  "rows": [
+   {
+    "district": "12",
+    "member": "１９　武雄、東佐世保地区_変圧器.csv",
+    "no": "-",
+    "no_raw": "－",
+    "name": "武雄",
+    "voltage": "110/66",
+    "units": "1",
+    "remarks": "空き容量ほかは上記に包括",
+    "reason": "No.欄が設備No（数字・数字(枝番)）の形をしていない"
+   }
+  ]
+ },
+ "dedupe": {
+  "before": 886,
+  "after": 886,
+  "removed": 0,
+  "rule2": "不使用（#117）",
+  "examples": []
+ },
+ "nankan": {
+  "survives": true,
+  "all_values_null_in_new": true,
+  "external_id": "kyuden_16_45"
+ },
+ "oc_possibility_diff": {
+  "filled": [
+   "kyu-130",
+   "kyu-148",
+   "kyu-154",
+   "kyu-562"
+  ],
+  "lost_kept_current": [
+   "kyu-443",
+   "kyu-444",
+   "kyu-445",
+   "kyu-510",
+   "kyu-547",
+   "kyu-564"
+  ],
+  "changed": [],
+  "note": "CSV の「―」は None（parse_oc）。現値が「有り」で新が「―」の行は 8/20 の規則どおり現値維持（要判断に計上）"
+ },
+ "settled": [
+  "No.欄が『－』の行（地区12 武雄 110/66）は 8/20 の裁定 4 どおり取り込まない"
+ ],
+ "join_key": {
+  "確定": "external_id = kyuden_{NN}_{No原文}（NN=メンバー列挙順01..31）。名称(NFKC)クロスチェック",
+  "地区番号の変化": "★番号（ファイル名の地区番号）とは不一致だが、初期取込の付番は『メンバー列挙順』であり現行ZIPも同順＝旧31↔新31の完全な全単射を名前集合の重なりで確認（旧16=★22熊本・南関No45で実証）。eidはそのまま使える",
+  "一意性": "両側とも重複0（枝番 (1)(2) 込み）",
+  "名称の正規化": "格納は原文trim（括弧付き電圧・全半角を保持）。比較のみ NFKC"
+ },
+ "counts": {
+  "baseline": 883,
+  "raw": 886,
+  "dedup": 886,
+  "matched": 883,
+  "new": 3,
+  "removed": 0,
+  "renamed": 0,
+  "renumbered": 1,
+  "changed_records": 151,
+  "total_after": 886,
+  "pct": 0.34
+ },
+ "by_pref_matched": {
+  "長崎県": 140,
+  "鹿児島県": 159,
+  "福岡県": 253,
+  "大分県": 118,
+  "佐賀県": 36,
+  "熊本県": 122,
+  "宮崎県": 55
+ },
+ "field_stats": {
+  "空き容量(当該)": {
+   "変化": 77,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "空容量(上位系等)": {
+   "変化": 15,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "運用容量": {
+   "変化": 3,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "設備容量": {
+   "変化": 3,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "予想潮流": {
+   "変化": 70,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "N-1電制適用可能量": {
+   "変化": 7,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "台数": {
+   "変化": 1,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "平常時出力制御の可能性": {
+   "変化": 0,
+   "新規充足": 4,
+   "新CSVで欠落(現値維持)": 6
+  }
+ },
+ "cap_avail": {
+  "decreased": 49,
+  "zeroed": 9,
+  "increased": 28,
+  "top_decreases": [
+   {
+    "slug": "kyu-523",
+    "name": "新水俣(配変)",
+    "prefecture": "熊本県",
+    "voltage": "66/6",
+    "from": 10,
+    "to": 4.0,
+    "delta": -6.0
+   },
+   {
+    "slug": "kyu-68",
+    "name": "行橋",
+    "prefecture": "大分県",
+    "voltage": "66/6",
+    "from": 20,
+    "to": 16.0,
+    "delta": -4.0
+   },
+   {
+    "slug": "kyu-136",
+    "name": "三潴",
+    "prefecture": "福岡県",
+    "voltage": "66/6",
+    "from": 16,
+    "to": 12.0,
+    "delta": -4.0
+   },
+   {
+    "slug": "kyu-311",
+    "name": "志佐",
+    "prefecture": "長崎県",
+    "voltage": "66/6",
+    "from": 4,
+    "to": 0.0,
+    "delta": -4.0
+   },
+   {
+    "slug": "kyu-405",
+    "name": "橘",
+    "prefecture": "長崎県",
+    "voltage": "66/6",
+    "from": 12,
+    "to": 8.0,
+    "delta": -4.0
+   },
+   {
+    "slug": "kyu-535",
+    "name": "一の勢（6kV）",
+    "prefecture": "熊本県",
+    "voltage": "66/6",
+    "from": 14,
+    "to": 10.0,
+    "delta": -4.0
+   },
+   {
+    "slug": "kyu-588",
+    "name": "柏田",
+    "prefecture": "宮崎県",
+    "voltage": "66/6",
+    "from": 6,
+    "to": 2.0,
+    "delta": -4.0
+   },
+   {
+    "slug": "kyu-663",
+    "name": "飫肥",
+    "prefecture": "鹿児島県",
+    "voltage": "66/6",
+    "from": 4,
+    "to": 0.0,
+    "delta": -4.0
+   },
+   {
+    "slug": "kyu-728",
+    "name": "日吉",
+    "prefecture": "鹿児島県",
+    "voltage": "22/6",
+    "from": 4,
+    "to": 1.0,
+    "delta": -3.0
+   },
+   {
+    "slug": "kyu-40",
+    "name": "錦町",
+    "prefecture": "福岡県",
+    "voltage": "66/6",
+    "from": 15,
+    "to": 13.0,
+    "delta": -2.0
+   }
+  ],
+  "top_increases": [
+   {
+    "slug": "kyu-572",
+    "name": "富高",
+    "prefecture": "宮崎県",
+    "voltage": "66/6",
+    "from": 9,
+    "to": 13.0,
+    "delta": 4.0
+   },
+   {
+    "slug": "kyu-601",
+    "name": "平原",
+    "prefecture": "宮崎県",
+    "voltage": "66/6",
+    "from": 10,
+    "to": 14.0,
+    "delta": 4.0
+   },
+   {
+    "slug": "kyu-90",
+    "name": "山家",
+    "prefecture": "福岡県",
+    "voltage": "66/6",
+    "from": 6,
+    "to": 8.0,
+    "delta": 2.0
+   },
+   {
+    "slug": "kyu-138",
+    "name": "羽犬塚",
+    "prefecture": "福岡県",
+    "voltage": "66/6",
+    "from": 3,
+    "to": 5.0,
+    "delta": 2.0
+   },
+   {
+    "slug": "kyu-168",
+    "name": "延命寺",
+    "prefecture": "福岡県",
+    "voltage": "66/6",
+    "from": 6,
+    "to": 8.0,
+    "delta": 2.0
+   }
+  ]
+ },
+ "n1": {
+  "ok_new": 69,
+  "zero_ok": 22,
+  "changed": 0,
+  "changes": [],
+  "undetermined": 2
+ },
+ "oc_undetermined": 6,
+ "renamed_same_no": [],
+ "renumbered": [
+  {
+   "slug": "kyu-713",
+   "name": "伊集院",
+   "old_external_id": "kyuden_23_23",
+   "new_external_id": "kyuden_23_23(1)",
+   "prefecture": "鹿児島県",
+   "voltage": "66/6"
+  }
+ ],
+ "new_records_detail": [
+  {
+   "external_id": "kyuden_22_13(3)",
+   "name": "志和池",
+   "district": "22",
+   "member": "２８　霧島、都城地区_変圧器.csv",
+   "voltage": "66/22",
+   "units": 1,
+   "capacity_total_mw": 19.0,
+   "cap_avail_mw": null,
+   "prefecture_candidate": "鹿児島県",
+   "district_pref_mix": {
+    "鹿児島県": 45,
+    "宮崎県": 2
+   }
+  },
+  {
+   "external_id": "kyuden_22_39",
+   "name": "原田",
+   "district": "22",
+   "member": "２８　霧島、都城地区_変圧器.csv",
+   "voltage": "22/6",
+   "units": 1,
+   "capacity_total_mw": 9.0,
+   "cap_avail_mw": 0.0,
+   "prefecture_candidate": "鹿児島県",
+   "district_pref_mix": {
+    "鹿児島県": 45,
+    "宮崎県": 2
+   }
+  },
+  {
+   "external_id": "kyuden_23_23(2)",
+   "name": "伊集院",
+   "district": "23",
+   "member": "２９　鹿児島地区_変圧器.csv",
+   "voltage": "66/22",
+   "units": 1,
+   "capacity_total_mw": 9.0,
+   "cap_avail_mw": 0.0,
+   "prefecture_candidate": "鹿児島県",
+   "district_pref_mix": {
+    "鹿児島県": 44
+   }
+  }
+ ],
+ "disappeared_records": [],
+ "missing_groups": {
+  "conclusion": "北海道・関西型の『丸ごと欠け』なし。現行ZIPの31メンバーは初期取込の31地区と完全な全単射で、当方の external_id に無い CSV の行は 4 行（新規 3＋振り直し 1）と、除外した No.欄が設備 No の形でない行 1 行だけ。メンバー単位で件数が違うのは地区22（CSV 49／当方 47）・23（CSV 45／当方 44）だけ。500kV系 12 件も県付きで収録済み・全件マッチ。"
+ }
+}
