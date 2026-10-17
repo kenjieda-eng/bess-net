@@ -6164,6 +6164,33 @@
     }
    ],
    "internalRef": "reports/subsidies-fix-2026-10-16.data.json（報告 reports/subsidies-fix-2026-10-16.md の (6)）"
+  },
+  {
+   "id": "20261017-02",
+   "date": "2026-10-17",
+   "kind": "訂正",
+   "path": "/policy-calendar",
+   "targetTitle": "蓄電池・BESS 政策・法制度カレンダー",
+   "before": "「第63回 需給調整市場検討小委員会」の項目で「配布資料4点」と記載しながら、資料2・資料3・資料4の3点だけを挙げていた\n「電気事業法施行規則等の一部を改正する省令案等」の意見公募の項目で、改正電気事業法の「施行に向けた省令改正の可能性がある」と記載\n「中長期取引市場検討WG 第4回」の項目で、題名を「電力の中長期取引市場（先物・長期契約）の制度設計」とし、本文で同WGを「電力の中長期取引市場（先物・長期契約等）の制度設計を検討するWG」と記載",
+   "after": "配布資料を、資料1-1「議事次第」、資料1-2「需給調整市場　用語集」、資料2、資料3、資料4（2026年9月15日に一部修正、新旧対照表あり）の5点に訂正\n意見公募要領がこの改正を「電気事業法の一部を改正する法律」の施行に伴うものとしているため、「施行に伴う省令改正」に訂正\n題名を配布資料の名前「中長期取引市場の詳細検討（3）（市場範囲、供出量を高める方策等）」に改め、本文の「（先物・長期契約等）」を削除（配布資料と議事要旨に「長期契約」の語は無く、電力先物はエリア間の値差をヘッジする方法の一つとして扱われているため）",
+   "basis": [
+    {
+     "name": "第63回需給調整市場検討小委員会（第80回　調整力の細分化及び広域調達の技術的検討に関する作業会と合同開催）｜電力広域的運営推進機関",
+     "publisher": "電力広域的運営推進機関（OCCTO）",
+     "url": "https://www.occto.or.jp/iinkai/jukyuchousei/63.html"
+    },
+    {
+     "name": "電気事業法施行規則等の一部を改正する省令案等に対する意見公募要領",
+     "publisher": "資源エネルギー庁 電力・ガス事業部",
+     "url": "https://public-comment.e-gov.go.jp/pcm/download?seqNo=0000321012"
+    },
+    {
+     "name": "総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会 中長期取引市場検討ワーキンググループ（第4回）（METI/経済産業省）",
+     "publisher": "経済産業省",
+     "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/chuchoki_torihiki/004.html"
+    }
+   ],
+   "internalRef": "reports/weekly-policy-2026-10-16.md (1) PATCH D・PATCH A・PATCH E 行／(3)-3・(3)-7／reports/weekly-policy-2026-10-16.data.json patch D replace[1]・patch A replace[1]・patch E set.title と replace[2]／D の誤りの出どころは reports/weekly-policy-2026-10-09.md (9)"
   }
  ]
 }
