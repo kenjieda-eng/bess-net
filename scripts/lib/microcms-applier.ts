@@ -65,7 +65,19 @@ function sameValue(sent: unknown, got: unknown): boolean {
 const SKIP_CMP = new Set(['updatedAt', 'revisedAt', 'publishedAt', 'createdAt']);
 function pick(r: Record<string, unknown>, ks: string[]) { const o: Record<string, unknown> = {}; for (const k of ks) o[k] = r[k]; return o; }
 
-function applyOps(rec: Rec, ops: Op[]): { payload: Record<string, unknown>; already: number; problems: string[] } {
+/** 正規化テキスト（plain）では区別できない op（空白・全角半角・タグだけの変更）。plain の照合だけでは「適用済み」に見えてしまう */
+export const isInvisibleOp = (op: Op) => op.old !== op.new && plain(op.old) === plain(op.new);
+/** 見えない差の op が、生の文字列でまだ当たっていないか（new が生で在り、old が生で残っていなければ当たっている） */
+function invisiblePending(s: string, op: Op): boolean {
+  return !(op.new !== '' && s.includes(op.new) && (op.new.includes(op.old) || count(s, op.old) === 0));
+}
+const asText = (v: unknown) => (typeof v === 'string' ? v : v == null ? '' : String(v));
+
+/**
+ * 計画の ops をレコードに当てた送信値を作る（純関数・scripts/verify-applier.ts が合成レコードで検査する）。
+ * Ck2e 第 5 版便（2026-10-17）: 見えない差の op は生の文字列だけで適用済みを判定する（plain の照合では当たらなかった・Ck2e 報告 (6)）。
+ */
+export function applyOps(rec: Rec, ops: Op[]): { payload: Record<string, unknown>; already: number; problems: string[] } {
   const cur: Record<string, unknown> = {};
   const problems: string[] = [];
   let already = 0;
@@ -78,8 +90,15 @@ function applyOps(rec: Rec, ops: Op[]): { payload: Record<string, unknown>; alre
       cur[op.field] = want;
       continue;
     }
-    const s = typeof base === 'string' ? base : base == null ? '' : String(base);
+    const s = asText(base);
     const n = count(s, op.old);
+    if (isInvisibleOp(op)) {
+      // 見えない差の op: plain では old と new が同じなので、生の文字列だけで判定する
+      if (!invisiblePending(s, op)) { already++; continue; }
+      if (n === 1) { cur[op.field] = s.replace(op.old, () => op.new); continue; }
+      problems.push(`${op.field}: 見えない差の op の old が生の文字列で ${n} 回（rows ${op.row_ids.join(',')}）`);
+      continue;
+    }
     const oldP = plain(op.old), newP = plain(op.new);
     // ★追記型（old が new に含まれる）は、置換後にも old が残る。n===1 だけで判定すると再実行で二重に入る
     //   （Ck-2 ②の検証役が再実行シミュレーションで検出）。先に「new が既に在るか」を見る。
@@ -101,6 +120,47 @@ function applyOps(rec: Rec, ops: Op[]): { payload: Record<string, unknown>; alre
   return { payload, already, problems };
 }
 
+/**
+ * expect_final（正規化テキストの sha）が一致してもレコードを skip してよいか。
+ * 見えない差の op が生の文字列でまだ当たっていなければ skip しない（plain の sha は変わらないので一致に見える）。
+ */
+export function canSkipByExpectFinal(rec: Record<string, unknown>, p: Patch): boolean {
+  if (!p.expect_final || !Object.entries(p.expect_final).every(([k, hx]) => digest(rec[k] ?? null) === hx)) return false;
+  return !p.ops.some((op) => isInvisibleOp(op) && !isArrayField(rec[op.field]) && invisiblePending(asText(rec[op.field]), op));
+}
+
+/**
+ * 計画の「適用後の値」を生の文字列で作る（old がちょうど 1 回なら置換・0 回ならそのまま＝適用済みとみなす）。
+ * dry run の最後に、送る値（applyOps の payload）とこれを突き合わせる（Ck2e 第 5 版便 改修 (3)）。
+ */
+export function rawPlanAfter(rec: Record<string, unknown>, ops: Op[]): Record<string, unknown> {
+  const cur: Record<string, unknown> = {};
+  for (const op of ops) {
+    const base = op.field in cur ? cur[op.field] : rec[op.field];
+    if (isArrayField(base) || op.note?.includes('配列')) {
+      if (norm(base) === norm(JSON.parse(op.old))) cur[op.field] = JSON.parse(op.new);
+      else cur[op.field] = base;
+      continue;
+    }
+    const s = asText(base);
+    // 追記型（new が old を含む）で new が既に在るものは当てない（applyOps と同じ。richEditor の &apos; 等の正規化は plain で見る）
+    const appendDone = op.new !== '' && op.new.includes(op.old) && (s.includes(op.new) || (!isInvisibleOp(op) && plain(s).includes(plain(op.new))));
+    cur[op.field] = count(s, op.old) === 1 && !appendDone ? s.replace(op.old, () => op.new) : s;
+  }
+  return cur;
+}
+
+/** 送る値と計画の適用後の値（生の文字列）の食い違い。payload に無い欄は「送らない＝今の値のまま」として比べる */
+export function rawMismatches(rec: Record<string, unknown>, ops: Op[], payload: Record<string, unknown>): string[] {
+  const want = rawPlanAfter(rec, ops);
+  const out: string[] = [];
+  for (const [k, v] of Object.entries(want)) {
+    const sent = k in payload ? payload[k] : rec[k];
+    if (norm(sent) !== norm(v)) out.push(k);
+  }
+  return out;
+}
+
 export async function runApplier(cfg: ApplierConfig, argv: string[] = process.argv): Promise<void> {
   const DOMAIN = process.env.MICROCMS_SERVICE_DOMAIN ?? 'bess-net';
   const KEY = process.env.MICROCMS_API_KEY;
@@ -116,6 +176,7 @@ export async function runApplier(cfg: ApplierConfig, argv: string[] = process.ar
   const calls: Record<string, number> = {};
   const log: Record<string, unknown>[] = [];
   let patched = 0, posted = 0, skipped = 0, aborted = 0, failed = 0;
+  const rawMismatch: string[] = [];
 
   async function api<T = unknown>(method: string, url: string, body?: unknown): Promise<T> {
     calls[method] = (calls[method] ?? 0) + 1;
@@ -140,11 +201,17 @@ export async function runApplier(cfg: ApplierConfig, argv: string[] = process.ar
     const before = await byId(p.ep, found.id);
     // ★冪等の本判定: レコードが「適用完了後の最終状態」（plan の expect_final＝正規化テキストの sha256）と一致すれば skip。
     //   op 単位の判定だけでは、重複段落の切除（old＝隣り合う2回分＋後続）が再実行で残した側まで削る（2026-09-29 実測・復元済み）。
-    if (p.expect_final && Object.entries(p.expect_final).every(([k, hx]) => digest(before[k] ?? null) === hx)) {
-      console.log(`■ PATCH ${tag}（${found.id}）[skip] 最終状態と一致（expect_final ${Object.keys(p.expect_final).length} field）`);
+    //   ただし見えない差の op が生の文字列でまだ当たっていなければ skip しない（Ck2e 第 5 版便 改修 (1)）。
+    if (canSkipByExpectFinal(before, p)) {
+      console.log(`■ PATCH ${tag}（${found.id}）[skip] 最終状態と一致（expect_final ${Object.keys(p.expect_final!).length} field）`);
       skipped++; log.push({ kind: 'patch', target: tag, id: found.id, result: 'skip_final_state' }); return;
     }
     const { payload, already, problems } = applyOps(before, p.ops);
+    // 改修 (3): 送る値と、計画を生の文字列で当てた値の突き合わせ（中止のレコードは除く）
+    if (!problems.length) {
+      const mm = rawMismatches(before, p.ops, payload);
+      if (mm.length) { rawMismatch.push(`${tag}: ${mm.join('・')}`); console.log(`   ★生の文字列の突き合わせで不一致: ${mm.join('・')}`); }
+    }
     if (problems.length) {
       console.log(`■ PATCH ${tag}（${found.id}）[中止] ${problems.join(' / ')}`);
       aborted++; log.push({ kind: 'patch', target: tag, id: found.id, result: 'aborted', problems }); return;
@@ -203,7 +270,9 @@ export async function runApplier(cfg: ApplierConfig, argv: string[] = process.ar
     await sleep(250);
   }
   console.log(`\n[done] PATCH ${patched} / POST ${posted} / skip ${skipped} / 中止 ${aborted} / 失敗 ${failed}`);
+  console.log(`[生の文字列の突き合わせ] 送る値と計画の適用後の値の不一致 ${rawMismatch.length}${rawMismatch.length ? `: ${rawMismatch.join(' ／ ')}` : ''}`);
   console.log(`[microCMS 呼び出し] ${Object.entries(calls).map(([m, n]) => `${m} ${n}`).join('・')}`);
-  if (LOG_PATH) fs.writeFileSync(LOG_PATH, JSON.stringify({ mode: DRY ? 'dry' : 'apply', calls, counts: { patched, posted, skipped, aborted, failed }, log }, null, 1));
+  if (LOG_PATH) fs.writeFileSync(LOG_PATH, JSON.stringify({ mode: DRY ? 'dry' : 'apply', calls, counts: { patched, posted, skipped, aborted, failed, raw_mismatch: rawMismatch.length }, raw_mismatch: rawMismatch, log }, null, 1));
   if (aborted || failed) process.exitCode = 2;
+  else if (rawMismatch.length) process.exitCode = 3;
 }
