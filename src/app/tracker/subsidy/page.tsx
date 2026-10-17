@@ -12,6 +12,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import TrackerTimeline, { type TimelineItem } from '@/components/TrackerTimeline';
 import subsidiesData from '@/data/subsidies.json';
 import type { PrecomputedSubsidy } from '../../../../scripts/precompute-subsidies';
@@ -88,6 +89,9 @@ export default async function SubsidyTrackerPage() {
               <li><Link href="/tracker">業界トラッカー (4軸)</Link></li>
             </ul>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/tracker/subsidy" />
         </div>
       </main>
       <SiteFooter />

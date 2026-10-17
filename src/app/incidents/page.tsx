@@ -11,6 +11,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import { siteConfig } from '@/lib/site-config';
 // Ck-1a ■1-5: hidden の事例を除いた VISIBLE_INCIDENTS だけを数える・並べる
 import { VISIBLE_INCIDENTS as INCIDENTS, SEVERITY_LABELS, CAUSE_LABELS, REGION_LABELS } from '@/data/incidents';
@@ -200,6 +201,9 @@ export default function IncidentsPage() {
               <li><Link href="/industry">業界分析ハブ</Link></li>
             </ul>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/incidents" />
         </div>
       </main>
       <SiteFooter />

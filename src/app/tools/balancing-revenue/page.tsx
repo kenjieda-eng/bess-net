@@ -29,6 +29,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import {
   BalancingRevenueEstimator,
   type ProductKey,
@@ -546,6 +547,9 @@ export default function BalancingRevenuePage() {
             <Link href="/explainer/lcoe-and-bess-economics" style={{ color: 'var(--color-accent)' }}>「LCOEと蓄電池の経済性」</Link>
             を参照。
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/tools/balancing-revenue" />
         </div>
       </main>
       <SiteFooter />

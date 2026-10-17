@@ -12,6 +12,7 @@ import { getOperatorCountSafe } from '@/lib/microcms';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import IndustryChaosMap from '@/components/IndustryChaosMap';
 import { siteConfig } from '@/lib/site-config';
 import { PLAYERS, RELATIONS, CATEGORY_LABELS } from '@/data/industry-map';
@@ -141,6 +142,9 @@ export default async function IndustryChaosMapPage() {
               </li>
             </ul>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/map/industry-chaos" />
         </div>
       </main>
       <SiteFooter />

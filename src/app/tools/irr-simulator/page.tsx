@@ -13,6 +13,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import IRRSimulator from '@/components/IRRSimulator';
 import { siteConfig } from '@/lib/site-config';
 // NREL ATB CAPEX + FX（build 時プリコンピュート済み JSON、鉄則 #2/#4 準拠）
@@ -352,6 +353,9 @@ export default function IrrSimulatorPage() {
               </li>
             </ol>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/tools/irr-simulator" />
         </div>
       </main>
       <SiteFooter />

@@ -5,6 +5,7 @@ import { KANSAI_NO_PREFECTURE_NOTE, normalizeSubstationPlace } from '@/lib/grid-
 import { formatDataDateLabel, getAreaDates } from '@/lib/grid-data-date';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import SubstationsBrowser from '@/components/SubstationsBrowser';
 import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
@@ -640,6 +641,9 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
               <Link href="/tracker/grid" className="grid-area-link">📋 変電所データの更新タイムラインを見る（/tracker/grid）→</Link>
             </p>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path={`/grid/${meta.slug}`} />
 
           <p className="back-link">
             <Link href="/grid">← 系統空き容量データベースへ戻る</Link>

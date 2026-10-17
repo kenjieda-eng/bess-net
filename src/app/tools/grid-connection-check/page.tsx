@@ -12,6 +12,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import GridConnectionChecker from '@/components/GridConnectionChecker';
 import { siteConfig } from '@/lib/site-config';
 import substationsIndex from '@/data/substations/index.json';
@@ -204,6 +205,9 @@ export default function GridConnectionCheckPage() {
               </li>
             </ol>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/tools/grid-connection-check" />
         </div>
       </main>
       <SiteFooter />

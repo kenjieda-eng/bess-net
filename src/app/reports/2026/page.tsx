@@ -11,6 +11,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import { siteConfig } from '@/lib/site-config';
 import { isExcludedOperator } from '@/lib/operators-excluded';
 import {
@@ -307,6 +308,9 @@ export default async function Report2026Page() {
               <li><Link href="/industry">業界分析ハブ</Link></li>
             </ul>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/reports/2026" />
         </div>
       </main>
       <SiteFooter />

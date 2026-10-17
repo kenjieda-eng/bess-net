@@ -9,6 +9,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedProjectsList from '@/components/RelatedProjectsList';
 import type { News, Project } from '@/lib/microcms';
@@ -317,6 +318,9 @@ export default async function OperatorDetailPage({
               </p>
             </section>
           )}
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いページには何も出さない */}
+          <CorrectionHistory path={`/operators/${params.slug}`} />
 
           <p className="back-link">
             <Link href="/operators">← 事業者ナビ一覧へ戻る</Link>

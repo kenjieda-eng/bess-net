@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import {
   getProjectBySlug,
   getAllProjectSlugs,
@@ -341,6 +342,9 @@ export default async function ProjectDetailPage({
               よりご連絡ください。
             </p>
           </div>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いページには何も出さない */}
+          <CorrectionHistory path={`/projects/${params.slug}`} />
 
           <p className="back-link">
             <Link href="/projects">← プロジェクトDBへ戻る</Link>

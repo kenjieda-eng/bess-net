@@ -19,6 +19,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import CapacityMarketBidEstimator from '@/components/CapacityMarketBidEstimator';
 import { siteConfig } from '@/lib/site-config';
 // Nv-0b ■2: 型はモックでなく capacity-market-types（区分欄を持たない）から取る
@@ -406,6 +407,9 @@ export default function CapacityMarketBidPage() {
               catalog 自動更新対応（revalidate 86400）。
             </p>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/tools/capacity-market-bid" />
         </div>
       </main>
       <SiteFooter />

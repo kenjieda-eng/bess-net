@@ -8,6 +8,7 @@
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import { GLOBAL_MARKETS, type CountryKey } from '@/data/global-markets';
 import { siteConfig } from '@/lib/site-config';
 
@@ -123,6 +124,9 @@ export default function CountryMarketPage({ countryKey }: { countryKey: CountryK
             ※ 編集部が IEA / BloombergNEF / SolarPower Europe / 各国政府発表 等の公開情報に基づき作成 (2026年上半期 時点)。
             最新は各種一次情報を参照。
           </p>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path={`/global/${countryKey}`} />
         </div>
       </main>
       <SiteFooter />

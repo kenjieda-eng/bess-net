@@ -11,6 +11,8 @@
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
+import { correctionsForPath } from '@/lib/corrections';
 import type { LandingPageConfig } from '@/data/landing-page-configs';
 import LandingPageHero from './LandingPageHero';
 import LandingPagePainPoints from './LandingPagePainPoints';
@@ -53,6 +55,12 @@ export default function LandingPageLayout({ config }: { config: LandingPageConfi
         <LandingPageInsightCarousel insightSlugs={config.insightSlugs} />
         <LandingPageFAQ faqs={config.faqs} />
         <LandingPageCTA primary={config.ctaPrimary} secondary={config.ctaSecondary} />
+        {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+        {correctionsForPath(`/${config.slug}`).length > 0 && (
+          <div className="section-inner" style={{ padding: '0 16px 24px' }}>
+            <CorrectionHistory path={`/${config.slug}`} />
+          </div>
+        )}
       </main>
       <SiteFooter />
     </>

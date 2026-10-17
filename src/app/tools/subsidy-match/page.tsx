@@ -17,6 +17,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import SubsidyMatcher from '@/components/SubsidyMatcher';
 import { siteConfig } from '@/lib/site-config';
 import subsidiesData from '@/data/subsidies.json';
@@ -209,6 +210,9 @@ export default function SubsidyMatchPage() {
               本マッチング結果は &quot;検討の出発点&quot; として活用ください。
             </p>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/tools/subsidy-match" />
         </div>
       </main>
       <SiteFooter />

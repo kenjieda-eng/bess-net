@@ -16,6 +16,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import FireRiskChecker from '@/components/FireRiskChecker';
 import { siteConfig } from '@/lib/site-config';
 import { CHECKLIST } from '@/data/fire-risk-checklist';
@@ -258,6 +259,9 @@ export default function FireRiskCheckPage() {
               </li>
             </ol>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
+          <CorrectionHistory path="/tools/fire-risk-check" />
         </div>
       </main>
       <SiteFooter />

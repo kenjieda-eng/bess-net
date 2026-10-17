@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import {
   getSubsidyBySlug,
   getAllSubsidySlugs,
@@ -209,6 +210,9 @@ export default async function SubsidyDetailPage({
               <li><Link href="/tools/subsidy-match">補助金マッチング（事業条件から自動判定）</Link></li>
             </ul>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いページには何も出さない */}
+          <CorrectionHistory path={`/subsidies/${params.slug}`} />
 
           <p className="back-link">
             <Link href="/subsidies">← 補助金カレンダーへ戻る</Link>

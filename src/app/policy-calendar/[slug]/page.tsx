@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import CorrectionHistory from '@/components/CorrectionHistory';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import { getAllPolicyEvents, getLinkableTargets } from '@/lib/microcms';
 import { getRelatedEntities } from '@/lib/related-cards';
@@ -303,6 +304,9 @@ export default async function PolicyEventDetailPage({
               ※ 当サイトは公開情報を整理した第三者発信であり、各機関の公式情報とは独立しています。
             </p>
           </section>
+
+          {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いページには何も出さない */}
+          <CorrectionHistory path={`/policy-calendar/${params.slug}`} />
 
           <p className="back-link">
             <Link href="/policy-calendar">← 政策・法制度カレンダーへ戻る</Link>
