@@ -3160,6 +3160,33 @@
       "checked_on": "2026-10-17",
       "note": "補助金直し便 10-16 で登録。県のページのリンク文字「募集要領（PDF：374KB）」・サイトの本文では「同ページ掲載の募集要領」。2026-10-17 09:17 JST に取得（HTTP 200・382,815 バイト・sha256 7b1bb46474755c01d0dc0e54313096a2be469f27b3ce387569fc03f122f5d886＝2026-10-05 版）。title_verbatim は 1 頁目の表題 2 行（改行を空白に）。提出期限（一次〜四次）と「※三次募集で予算に達した場合は、四次募集は行いません」を確認。",
       "used_in": "subsidies/kagoshima-saiene-chikudenchi-2026.body（deadline・募集期間の段落）"
+    },
+    {
+      "name": "企業等における省エネ・再エネ活用設備導入補助金交付要綱",
+      "publisher": "埼玉県",
+      "url": "https://www.pref.saitama.lg.jp/documents/211159/r8youkou.pdf",
+      "title_verbatim": "企業等における省エネ・再エネ活用設備導入補助金交付要綱",
+      "checked_on": "2026-10-17",
+      "note": "補助金直し便 10-16 で登録。県のページのリンク文字「企業等における省エネ・再エネ活用設備導入補助金交付要綱（PDF：218KB）」。2026-10-17 09:48 JST に取得（HTTP 200・222,877 バイト・sha256 2fe8e1ae91af938e94f95d0cc9e469b05fd948a54d3af14e2f312c15c1fbfbd9）。PDF の /Title は空のため title_verbatim は 1 行目の表題。別表第３（補助額・蓄電池の上限 15.5／19.0 万円/kWh）・第４条（PPA・リース）・第９条（3 か年の報告）・第１０条（着手）を確認。",
+      "used_in": "subsidies/saitama-shoene-saiene-2026.body"
+    },
+    {
+      "name": "補助要件（太陽光発電設備及び蓄電池）",
+      "publisher": "埼玉県",
+      "url": "https://www.pref.saitama.lg.jp/documents/211159/r8youken1.pdf",
+      "title_verbatim": "（表題なし・/Title は空。1 行目は表の見出し「補助対象設備 補助要件」、2 行目は行の見出し「太陽光発電設備及び蓄電池」）",
+      "checked_on": "2026-10-17",
+      "note": "補助金直し便 10-16 で登録。★サイトの資料名「補助要件（太陽光発電設備及び蓄電池）」は一次の表題の逐語ではなく、表の見出し語とリンク文字「太陽光発電設備及び蓄電池（PDF：140KB）」を組み合わせた名前（報告 reports/subsidies-fix-2026-10-16.md (5b)・名前を変えるかはユウの裁定待ち）。2026-10-17 09:48 JST に取得（HTTP 200・143,246 バイト・sha256 9b5213ce0e20912c9caeb91733a97ed71c6f4fd86f0c55c06d08e664d62b28c6）。太陽光 (1)〜(18)・蓄電池 (1)〜(13) の要件を確認。",
+      "used_in": "subsidies/saitama-shoene-saiene-2026.body"
+    },
+    {
+      "name": "リーフレット",
+      "publisher": "埼玉県",
+      "url": "https://www.pref.saitama.lg.jp/documents/211159/r8reaflet3.pdf",
+      "title_verbatim": "PowerPoint プレゼンテーション（PDF の /Title）",
+      "checked_on": "2026-10-17",
+      "note": "補助金直し便 10-16 で登録。県のページのリンク文字「リーフレット（PDF：671KB）」・サイトの本文では「同ページ掲載の…リーフレット」。2026-10-17 09:48 JST に取得（HTTP 200・686,508 バイト・sha256 1d505087676b6b6d49cc87efc8129e79dfa5cd03fd8ed78009c563f4a4818aeb）。募集期間・上限 合計 1,500 万円・提出方法（メール）を確認。",
+      "used_in": "subsidies/saitama-shoene-saiene-2026.body"
     }
   ]
 }
