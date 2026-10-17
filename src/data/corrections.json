@@ -6191,6 +6191,28 @@
     }
    ],
    "internalRef": "reports/weekly-policy-2026-10-16.md (1) PATCH D・PATCH A・PATCH E 行／(3)-3・(3)-7／reports/weekly-policy-2026-10-16.data.json patch D replace[1]・patch A replace[1]・patch E set.title と replace[2]／D の誤りの出どころは reports/weekly-policy-2026-10-09.md (9)"
+  },
+  {
+   "id": "20261017-03",
+   "date": "2026-10-17",
+   "kind": "訂正",
+   "path": "/buyer/investor",
+   "targetTitle": "系統用蓄電池(蓄電所)への投資｜利回り・収益構造・リスクを実データで",
+   "before": "導入文に「国内の蓄電所投資は1兆円超、市場急拡大のなかで投資判断を支援します。」、課題欄に「市場規模1兆円超・300GWh級の拡大局面における出口の考え方も整理。」と記載（出典の記載なし）",
+   "after": "どちらの数値も、裏づけとなる一次資料を確認できなかったため、この 2 つの文を削除しました",
+   "basis": [],
+   "internalRef": "reports/entrance-cleanup-and-contact-tracking-2026-10-17.data.json の lp_text（/buyer/investor の rule i 2 件）"
+  },
+  {
+   "id": "20261017-04",
+   "date": "2026-10-17",
+   "kind": "訂正",
+   "path": "/seller/developer",
+   "targetTitle": "プロジェクトデベロッパー向け｜SPC スキーム・補助金・土地確保",
+   "before": "よくある質問「プロジェクトデベロッパー向けの主な支援内容は?」の答えに、SPC スキーム設計の助言を顧問チーム（公認会計士ほか）に相談できると記載（出典の記載なし）",
+   "after": "記載の顧問チームを確認できず、公認会計士が在籍するという裏づけも無いため、この文を削除しました",
+   "basis": [],
+   "internalRef": "reports/entrance-cleanup-and-contact-tracking-2026-10-17.data.json の lp_text（/seller/developer の rule a・b・c 1 件）"
   }
  ]
 }

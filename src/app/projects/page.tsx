@@ -5,9 +5,10 @@ import SiteFooter from '@/components/SiteFooter';
 import { getAllProjects, type Project } from '@/lib/microcms';
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '@/lib/projects-excluded';
 import { codCellText } from '@/lib/projects-cod';
-import { siteConfig } from '@/lib/site-config';
+import { contactUrl } from '@/lib/contact-link';
 
-const siteContactUrl = siteConfig.organization.contactUrl;
+// 「情報をお持ちの方は編集部まで」＝情報提供（position feedback）
+const feedbackContactUrl = contactUrl({ campaign: 'projects_index', position: 'feedback' });
 
 export const revalidate = 600;
 
@@ -150,7 +151,7 @@ export default async function ProjectsListPage() {
                 ※ 出力 <strong>0 MW</strong> または容量 <strong>0 MWh</strong> と表示されているプロジェクト
                 ({investigatingCount} 件) は<strong>「調査中」</strong>として扱い、合計値の集計からも除外しています。
                 公開情報が不足しているため、一次情報を確認次第順次更新します。
-                情報をお持ちの方は <a href={siteContactUrl} target="_blank" rel="noopener noreferrer">編集部</a> までお寄せください。
+                情報をお持ちの方は <a href={feedbackContactUrl} target="_blank" rel="noopener noreferrer">編集部</a> までお寄せください。
               </p>
             </section>
           )}

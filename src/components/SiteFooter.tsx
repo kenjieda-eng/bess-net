@@ -1,6 +1,7 @@
 // 全ページ共通のフッター
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
+import { contactUrl } from '@/lib/contact-link';
 
 export default function SiteFooter() {
   return (
@@ -39,7 +40,7 @@ export default function SiteFooter() {
             ))}
             <li>
               <a
-                href={siteConfig.organization.contactUrl}
+                href={contactUrl({ campaign: 'site_footer', position: 'footer' })}
                 target="_blank"
                 rel="noopener noreferrer"
               >

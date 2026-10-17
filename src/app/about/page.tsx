@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import { contactUrl } from '@/lib/contact-link';
 
 export const metadata: Metadata = {
   // 落とし穴 #86 残課題 (Sprint 2.5): layout.tsx titleTemplate `%s | 蓄電所ネット` で
@@ -121,7 +122,7 @@ export default function AboutPage() {
               <dt>お問い合わせ</dt>
               <dd>
                 <a
-                  href={siteConfig.organization.contactUrl}
+                  href={contactUrl({ campaign: 'about', position: 'org_table' })}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -138,7 +139,7 @@ export default function AboutPage() {
             </p>
             <p>
               <a
-                href={siteConfig.organization.contactUrl}
+                href={contactUrl({ campaign: 'about', position: 'inquiry' })}
                 target="_blank"
                 rel="noopener noreferrer"
               >

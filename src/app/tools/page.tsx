@@ -23,6 +23,7 @@ import { LIMITS as RV_LIMITS } from '@/lib/residual-value-calc';
 // T1 実装便: 入札ベンチマークの範囲（月数・期間）はカタログの月次から（焼き込まない）
 import { monthlyCoverageYms } from '@/lib/eprx-monthly';
 import { CAP_NEAR_RATIO } from '@/lib/balancing-benchmark-calc';
+import { contactUrl } from '@/lib/contact-link';
 
 // 件数はローカル JSON から動的参照（焼き込み drift 防止・tools分析2026-07-09 変更3。microCMS 0 req）
 const SUBSTATION_TOTAL = (substationsIndex as { total: number }).total;
@@ -281,7 +282,7 @@ export default function ToolsHubPage() {
             <p style={{ margin: 0 }}>
               ※ ツール群は Sprint 3 以降で順次拡充予定。リクエストは{' '}
               <a
-                href={siteConfig.organization.contactUrl}
+                href={contactUrl({ campaign: 'tools_index', position: 'feedback' })}
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -14,6 +14,8 @@
 import tertiary2Battery from '@/data/eic/balancing-price-tertiary-2-battery.json';
 import tertiary2Vpp from '@/data/eic/balancing-price-tertiary-2-vpp.json';
 import tertiary2Pumped from '@/data/eic/balancing-price-tertiary-2-pumped.json';
+import { contactUrl } from '@/lib/contact-link';
+import { GRID_COMPANY_COUNT, SUBSTATION_TOTAL_STR } from '@/lib/site-counts';
 
 /** カタログ JSON から指定日の値を読む（読めなければ null） */
 function catalogValue(json: unknown, date: string): number | null {
@@ -88,15 +90,15 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
   'buyer/factory-commercial': {
     slug: 'buyer/factory-commercial',
     type: 'buyer',
-    title: '工場・商業施設の蓄電池導入｜電気代削減・BCP・ピークカット - 蓄電所ネット',
+    title: '工場・商業施設の蓄電池導入｜電気代削減・BCP・ピークカット',
     description:
       '工場や商業施設での蓄電池導入を検討中の事業者向け。電気代削減 (自家消費)、ピークカット、BCP (停電対策) の費用対効果を実データで比較。容量市場・需給調整市場の参入も解説。無料相談受付中。',
     ogImage: '/og/buyer-factory-commercial.png',
     heroH1: '工場・商業施設の電気代を、蓄電池で 20-30% 削減する',
     heroSubcopy:
-      '自家消費＋ピークカット＋BCP の 3 つの効果を実データで比較。容量市場・需給調整市場参入で追加収益も可能。エネルギー情報センターの 10 年運営実績で、業界事業者を中立的に支援します。※系統用(系統に直接つなぐ大型蓄電所)での参入・投資・用地活用をお考えの方は、メニューの「これから参入する事業者」「投資家・ファンド」「土地保有者・地主」もご覧ください。',
+      '自家消費＋ピークカット＋BCP の 3 つの効果を実データで比較。容量市場・需給調整市場参入で追加収益も可能。運営元の一般社団法人エネルギー情報センター（EIC）が、業界事業者を中立的に支援します。※系統用(系統に直接つなぐ大型蓄電所)での参入・投資・用地活用をお考えの方は、メニューの「これから参入する事業者」「投資家・ファンド」「土地保有者・地主」もご覧ください。',
     heroCtaLabel: '無料相談はこちら',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_factory_commercial', position: 'hero' }),
     painPoints: [
       {
         icon: '💸',
@@ -174,7 +176,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '工場・商業施設で蓄電池を導入するメリットは何ですか?',
         answer:
-          '主に 3 つあります。①電気代削減 (自家消費＋ピークカット)、②BCP (停電時の重要負荷継続運転)、③追加収益 (容量市場・需給調整市場参入)。最新の事例では年間 20-30% の電気代削減 + 容量市場収益が報告されています。',
+          '主に 3 つあります。①電気代削減 (自家消費＋ピークカット)、②BCP (停電時の重要負荷継続運転)、③追加収益 (容量市場・需給調整市場参入)。',
       },
       {
         question: '初期費用と回収期間はどれくらいですか?',
@@ -194,17 +196,17 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '相談・問い合わせの流れは?',
         answer:
-          '「無料相談はこちら」ボタンから、エネルギー情報センターのお問い合わせフォームへ進めます。10 年運営の実績で、業界中立の立場から導入検討を支援します。',
+          '「無料相談はこちら」ボタンから、エネルギー情報センターのお問い合わせフォームへ進めます。運営元の一般社団法人エネルギー情報センター（EIC）が、業界中立の立場から導入検討を支援します。',
       },
     ],
-    ctaPrimary: { label: '無料相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: '無料相談はこちら', url: contactUrl({ campaign: 'lp_factory_commercial', position: 'cta' }) },
     ctaSecondary: { label: '業界レポート 2026 を見る', url: '/reports/2026' },
   },
   // ★★ 雛形 7 件 (5/20-5/21 で投入文面 41/43 で本実装)
   'buyer/capacity-market': {
     slug: 'buyer/capacity-market',
     type: 'buyer',
-    title: '容量市場参加検討｜kW 価値で安定収益｜蓄電所ネット',
+    title: '容量市場参加検討｜kW 価値で安定収益',
     description:
       '容量市場参加を検討中の蓄電池事業者向け。OCCTO 運営の容量市場で kW 価値による安定収益を確保。最新の約定価格、落札枠、参入条件を実データで解説。エネルギー情報センターが業界中立で支援。',
     ogImage: '/og/buyer-capacity-market.png',
@@ -212,7 +214,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       'OCCTO 運営の容量市場は蓄電池事業者にとって kW 価値 (容量提供) による安定収益源。最新の約定価格・落札枠・参入条件をリアルタイムで把握、IRR シミュレーションで投資判断を支援します。',
     heroCtaLabel: '容量市場参入相談はこちら',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_capacity_market', position: 'hero' }),
     painPoints: [
       {
         icon: '📊',
@@ -291,7 +293,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '容量市場参加の最低要件は?',
         answer:
-          '蓄電池の場合、出力 1MW 以上、安定運転実績、OCCTO 認定が主要要件です。詳細は OCCTO 公式 + 当社の容量市場入札ツールで条件チェック可能です。',
+          '蓄電池の場合、出力 1MW 以上、安定運転実績、OCCTO 認定が主要要件です。',
       },
       {
         question: 'メインオークションと追加オークションの違いは?',
@@ -306,7 +308,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '実需給期間に kW 価値を提供できなかった場合のペナルティは?',
         answer:
-          'OCCTO 規定により、未提供分の容量に対してペナルティが課されます。蓄電池の SoC (充電状態) 管理、運転計画の最適化が重要。当社の容量市場入札ツールで稼働率シミュレーションが可能です。',
+          'OCCTO 規定により、未提供分の容量に対してペナルティが課されます。蓄電池の SoC (充電状態) 管理、運転計画の最適化が重要。',
       },
       {
         question: '容量市場の今後の見通しは?',
@@ -314,13 +316,13 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '日本のエネルギー基本計画では 2030 年までに蓄電池容量を大幅拡大予定。容量市場の枠も連動して拡大見込み。最新動向は当ページのデータセクションで継続更新します。',
       },
     ],
-    ctaPrimary: { label: '容量市場参入相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: '容量市場参入相談はこちら', url: contactUrl({ campaign: 'lp_capacity_market', position: 'cta' }) },
     ctaSecondary: { label: '容量市場入札ツールを使う', url: '/tools/capacity-market-bid' },
   },
   'buyer/balancing-market': {
     slug: 'buyer/balancing-market',
     type: 'buyer',
-    title: '需給調整市場参加検討｜kWh+kW 価値で複合収益｜蓄電所ネット',
+    title: '需給調整市場参加検討｜kWh+kW 価値で複合収益',
     description:
       '需給調整市場 (5 商品 × 9 エリア) への参加を検討中の蓄電池事業者向け。一次・二次・三次調整力の最新動向、収益試算、参入条件を実データで解説。エネルギー情報センターが業界中立で支援。',
     ogImage: '/og/buyer-balancing-market.png',
@@ -328,7 +330,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '需給調整市場は一次・二次・三次調整力の 5 商品 × 9 エリア構成。蓄電池の応答速度・容量を最大活用、kWh と kW の複合収益で安定運用を実現。最新の入札動向と参入条件を解説します。',
     heroCtaLabel: '需給調整市場参入相談はこちら',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_balancing_market', position: 'hero' }),
     painPoints: [
       {
         icon: '🔄',
@@ -388,7 +390,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         label: '容量市場入札ツール',
         url: '/tools/capacity-market-bid',
-        description: '容量市場との並行参加検討。実需給期間の運転計画最適化に活用。',
+        description: '容量市場との並行参加検討。',
       },
       {
         label: '火災リスク自己診断',
@@ -398,7 +400,6 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       },
     ],
     insightSlugs: [
-      'balancing-tertiary2-vs-jepx',
       'temp-vs-price',
       'lng-vs-price-tokyo',
       'fx-decomp-lng-jepx-tokyo',
@@ -430,13 +431,13 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '再エネ大量導入に伴い調整力需要は拡大基調。特に蓄電池は応答速度・容量制御の柔軟性で参入優位性が大きい。最新の市場動向は当ページデータセクション + Insight 記事で継続更新します。',
       },
     ],
-    ctaPrimary: { label: '需給調整市場参入相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: '需給調整市場参入相談はこちら', url: contactUrl({ campaign: 'lp_balancing_market', position: 'cta' }) },
     ctaSecondary: { label: 'IRR シミュレーターを試す', url: '/tools/irr-simulator' },
   },
   'buyer/ppa-offtake': {
     slug: 'buyer/ppa-offtake',
     type: 'buyer',
-    title: 'PPA・オフテイク契約検討｜長期安定収益と金融リスク管理｜蓄電所ネット',
+    title: 'PPA・オフテイク契約検討｜長期安定収益と金融リスク管理',
     description:
       'PPA・オフテイク契約による長期安定収益化を検討中の蓄電池事業者向け。為替リスク、金利リスク、燃料コスト変動への対応、契約構造設計を実データで解説。エネルギー情報センターが業界中立で支援。',
     ogImage: '/og/buyer-ppa-offtake.png',
@@ -444,7 +445,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '蓄電池プロジェクトの PPA・オフテイク契約設計には、為替・金利・燃料コストの長期変動リスク管理が不可欠。日米金利差・円建て LNG・JGB 等のマクロ指標と連動した契約構造設計を支援します。',
     heroCtaLabel: 'PPA・オフテイク契約相談はこちら',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_ppa_offtake', position: 'hero' }),
     painPoints: [
       {
         icon: '💱',
@@ -517,7 +518,6 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     insightSlugs: [
       'jgb-vs-yen-lng',
       'fx-decomp-lng-jepx-tokyo',
-      'us-jp-rate-vs-usdjpy',
       'lng-vs-price-tokyo',
     ],
     faqs: [
@@ -529,7 +529,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '為替リスクへの対応は?',
         answer:
-          '①為替ヘッジ (Forward / Option)、②円建て契約への構造変更、③燃料費調整連動 (USD ベース)。当ページの USD/JPY + 円建て LNG データで影響度試算可能。',
+          '①為替ヘッジ (Forward / Option)、②円建て契約への構造変更、③燃料費調整連動 (USD ベース)。',
       },
       {
         question: '金利リスクのプロジェクトファイナンス影響は?',
@@ -547,7 +547,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           'Tolling Agreement (容量提供、燃料リスクなし)、Fixed Price PPA (長期固定、為替・金利リスクあり)、Hybrid (部分連動) 等が代表的。プロジェクト規模・オフテイカー業種・地域特性で最適選択が異なります。',
       },
     ],
-    ctaPrimary: { label: 'PPA・オフテイク契約相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: 'PPA・オフテイク契約相談はこちら', url: contactUrl({ campaign: 'lp_ppa_offtake', position: 'cta' }) },
     ctaSecondary: { label: 'IRR シミュレーターを試す', url: '/tools/irr-simulator' },
   },
   // ─── Buyer プレイヤー別 3 ページ（2026-05-25 追加）─────────────────────────
@@ -555,15 +555,15 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
   'buyer/new-entry': {
     slug: 'buyer/new-entry',
     type: 'buyer',
-    title: '系統用蓄電池ビジネスへの新規参入｜事業性・収益構造・参入手順を実データで｜蓄電所ネット',
+    title: '系統用蓄電池ビジネスへの新規参入｜事業性・収益構造・参入手順を実データで',
     description:
-      'これから系統用蓄電池(蓄電所)ビジネスに参入したい事業者向け。レベニュースタッキング(JEPX＋容量市場＋需給調整＋長期脱炭素)の収益構造、接続検討〜運開の手順、高圧/低圧の選択、アグリゲーター選定までを実データと業界中立(エネルギー情報センター10年運営)の視点で解説。無料事業性相談受付中。',
+      'これから系統用蓄電池(蓄電所)ビジネスに参入したい事業者向け。レベニュースタッキング(JEPX＋容量市場＋需給調整＋長期脱炭素)の収益構造、接続検討〜運開の手順、高圧/低圧の選択、アグリゲーター選定までを実データと業界中立(一般社団法人エネルギー情報センター・2015 年設立)の視点で解説。無料事業性相談受付中。',
     ogImage: '/og/buyer-new-entry.png',
     heroH1: '系統用蓄電池ビジネスに、これから参入する事業者へ',
     heroSubcopy:
-      'レベニュースタッキング(JEPX＋容量市場＋需給調整＋長期脱炭素)の収益構造、接続検討〜運開の手順、高圧/低圧の選び方、アグリゲーター選定までを、実データと業界中立の視点で。エネルギー情報センター10年運営の信頼性で、新規参入の意思決定を支援します。',
+      'レベニュースタッキング(JEPX＋容量市場＋需給調整＋長期脱炭素)の収益構造、接続検討〜運開の手順、高圧/低圧の選び方、アグリゲーター選定までを、実データと業界中立の視点で。運営元の一般社団法人エネルギー情報センター（EIC）が、新規参入の意思決定を支援します。',
     heroCtaLabel: '無料事業性相談はこちら',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_new_entry', position: 'hero' }),
     painPoints: [
       {
         icon: '💡',
@@ -646,7 +646,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '接続検討にはどれくらいかかりますか?',
         answer:
-          '接続検討の集中により申請が殺到しており、接続まで18ヶ月〜2年、想定以上の接続負担金が発生する例もあります。系統空き容量ページ(/grid、10社8,225件)で周辺の余力を先に確認するのが有効です。',
+          `接続検討の集中により申請が殺到しており、接続まで18ヶ月〜2年、想定以上の接続負担金が発生する例もあります。系統空き容量ページ(/grid、${GRID_COMPANY_COUNT}社${SUBSTATION_TOTAL_STR}件)で周辺の余力を先に確認するのが有効です。`,
       },
       {
         question: '高圧と低圧、どちらで始めるべき?',
@@ -664,22 +664,22 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '将来収益が市場依存で評価しづらく金融機関は融資に慎重です。レベニュースタッキングの収益構造とリスクを実データで示すことが調達の鍵。事業性相談で論点整理を支援します。',
       },
     ],
-    ctaPrimary: { label: '無料事業性相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: '無料事業性相談はこちら', url: contactUrl({ campaign: 'lp_new_entry', position: 'cta' }) },
     ctaSecondary: { label: 'IRR シミュレーターで試算', url: '/tools/irr-simulator' },
   },
   // ② 投資家・ファンド
   'buyer/investor': {
     slug: 'buyer/investor',
     type: 'buyer',
-    title: '系統用蓄電池(蓄電所)への投資｜利回り・収益構造・リスクを実データで｜蓄電所ネット',
+    title: '系統用蓄電池(蓄電所)への投資｜利回り・収益構造・リスクを実データで',
     description:
       '系統用蓄電池(蓄電所)への投資・取得を検討する投資家・ファンド向け。利回りの実態、レベニュースタッキングの収益構造とリスク、案件評価の勘所を、第三者中立の実データで解説。エネルギー情報センターが業界中立で支援。投資・収益試算相談受付中。',
     ogImage: '/og/buyer-investor.png',
     heroH1: '系統用蓄電池(蓄電所)に投資・取得したい投資家・ファンドへ',
     heroSubcopy:
-      '利回りの実態、レベニュースタッキング(JEPX＋容量＋需給調整)の収益とリスク、案件評価の勘所を、営業サイトではなく業界中立の実データで。国内の蓄電所投資は1兆円超、市場急拡大のなかで投資判断を支援します。',
+      '利回りの実態、レベニュースタッキング(JEPX＋容量＋需給調整)の収益とリスク、案件評価の勘所を、営業サイトではなく業界中立の実データで。',
     heroCtaLabel: '投資・収益試算の相談はこちら',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_investor', position: 'hero' }),
     painPoints: [
       {
         icon: '📈',
@@ -703,7 +703,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '🔍',
         title: '案件評価の勘所・出口が見えにくい',
         description:
-          '立地(系統空き容量)・アグリゲーター・収益構成を中立データで評価。市場規模1兆円超・300GWh級の拡大局面における出口の考え方も整理。',
+          '立地(系統空き容量)・アグリゲーター・収益構成を中立データで評価。',
       },
     ],
     dataReferences: [
@@ -794,17 +794,17 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '蓄電所を「買いたい」場合の相談は?',
         answer:
-          '新規開発だけでなく、稼働中・建設中案件の取得検討も増えています。投資・収益試算の相談から、中立の立場で論点整理を支援します(エネルギー情報センター10年運営)。',
+          '新規開発だけでなく、稼働中・建設中案件の取得検討も増えています。投資・収益試算の相談から、中立の立場で論点整理を支援します(一般社団法人エネルギー情報センター・2015 年設立)。',
       },
     ],
-    ctaPrimary: { label: '投資・収益試算の相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: '投資・収益試算の相談はこちら', url: contactUrl({ campaign: 'lp_investor', position: 'cta' }) },
     ctaSecondary: { label: '需給調整 収益シナリオを試す', url: '/tools/balancing-revenue' },
   },
   // ③ 土地保有者・地主
   'buyer/landowner': {
     slug: 'buyer/landowner',
     type: 'buyer',
-    title: '土地・遊休地を系統用蓄電池の用地に｜賃貸・売却・収益化を中立で｜蓄電所ネット',
+    title: '土地・遊休地を系統用蓄電池の用地に｜賃貸・売却・収益化を中立で',
     description:
       '土地・遊休地を系統用蓄電池(蓄電所)の用地として活用したい土地保有者・地主向け。用地条件、賃貸・売却・共同事業の選び方、系統空き容量での立地適性チェックを業界中立で解説。エネルギー情報センターが支援。用地査定・活用相談受付中。',
     ogImage: '/og/buyer-landowner.png',
@@ -812,7 +812,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '蓄電所の用地条件(目安700〜1,000㎡・高圧線が近い・大型車の搬入路)、賃貸 vs 売却 vs 共同事業の選び方、系統空き容量での立地適性を中立の視点で。営業ではなく、まず「自分の土地が向くか」を一緒に確認します。',
     heroCtaLabel: '用地査定・活用相談はこちら',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_landowner', position: 'hero' }),
     painPoints: [
       {
         icon: '🗺️',
@@ -836,7 +836,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '📡',
         title: '系統(高圧線・空き容量)の確認が難しい',
         description:
-          '系統空き容量ページ(/grid、10社8,225件)で、対象地の周辺変電所の空き容量・連系条件の当たりをつけられます。',
+          `系統空き容量ページ(/grid、${GRID_COMPANY_COUNT}社${SUBSTATION_TOTAL_STR}件)で、対象地の周辺変電所の空き容量・連系条件の当たりをつけられます。`,
       },
     ],
     dataReferences: [
@@ -861,7 +861,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         label: '系統空き容量(/grid)',
         url: '/grid',
-        description: '10社8,225件の変電所別 空き容量・連系条件。対象地周辺の系統余力を確認。',
+        description: `${GRID_COMPANY_COUNT}社${SUBSTATION_TOTAL_STR}件の変電所別 空き容量・連系条件。対象地周辺の系統余力を確認。`,
       },
       {
         label: 'IRR シミュレーター(参考)',
@@ -897,14 +897,14 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           '「用地査定・活用相談」から、対象地の住所・面積・周辺状況をもとに、向き不向きと選択肢(賃貸/売却/共同事業)を中立の立場で整理します。',
       },
     ],
-    ctaPrimary: { label: '用地査定・活用相談はこちら', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: '用地査定・活用相談はこちら', url: contactUrl({ campaign: 'lp_landowner', position: 'cta' }) },
     ctaSecondary: { label: '系統空き容量(/grid)を見る', url: '/grid' },
   },
   // ─────────────────────────────────────────────────────────────────────────────
   'seller/manufacturer': {
     slug: 'seller/manufacturer',
     type: 'seller',
-    title: 'セル・PCS・統合システムメーカー向け｜国内市場規模・競合分布・技術トレンド｜蓄電所ネット',
+    title: 'セル・PCS・統合システムメーカー向け｜国内市場規模・競合分布・技術トレンド',
     description:
       '蓄電池セル・PCS・統合システムメーカー向けハブ。国内市場規模、競合分布、技術トレンド、業界レポート引用機会を提供。エネルギー情報センターが業界中立で支援。',
     ogImage: '/og/seller-manufacturer.png',
@@ -912,7 +912,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '蓄電所ネットには「参入検討中の事業者」「投資家・ファンド」「土地保有者」が来訪しています。メーカーとして掲載・取材を受けることで、購買意欲の高い読者に製品・実績を届けられます。市場規模・競合分布・技術トレンドを業界中立で提供し、業界レポート引用・事業者ナビ掲載でメーカーの可視性を最大化します。',
     heroCtaLabel: 'Buyer に見つけてもらう — 掲載・取材のご相談',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_manufacturer', position: 'hero' }),
     painPoints: [
       {
         icon: '📈',
@@ -924,19 +924,19 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '🏭',
         title: '競合メーカーの動向追跡',
         description:
-          '国内外メーカーの新規参入、技術ロードマップ、価格動向の把握。業界レポート + メーカー DB (8 月公開予定) で詳細分析支援。',
+          '国内外メーカーの新規参入、技術ロードマップ、価格動向の把握。業界レポート + [メーカー DB](/operators/makers)で詳細分析支援。',
       },
       {
         icon: '🔬',
         title: '技術トレンドへのキャッチアップ',
         description:
-          'LFP / NMC / Na イオン / 全固体等の技術トレンド、UL9540A / NFPA855 等の規格動向。AJ 火災事例 DB (5/28 公開) + B-4 消火比較 (9 月) で技術品質向上支援。',
+          'LFP / NMC / Na イオン / 全固体等の技術トレンド、UL9540A / NFPA855 等の規格動向。[火災事例 DB](/incidents)で技術品質向上支援。',
       },
       {
         icon: '📰',
         title: '業界メディアでの可視性確保',
         description:
-          '蓄電所ネットの業界レポート 2026 (7/5公開予定) + 業界レポート 2027 (12/25) でのメーカー引用機会。技術仕様・実績データの中立的な可視化。',
+          '蓄電所ネットの[業界レポート 2026](/reports/2026)でのメーカー引用機会。技術仕様・実績データの中立的な可視化。',
       },
     ],
     dataReferences: [
@@ -985,7 +985,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: 'どんな読者が見ますか？今すぐ掲載してもらえますか？',
         answer:
-          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します(導入検討ページ群)。エネルギー情報センター10年運営の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、業界レポート2026本編(7/5公開予定)での引用・掲載、AJ火災事例DB(5/28公開)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
+          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します。一般社団法人エネルギー情報センター（2015 年設立）の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、[業界レポート2026](/reports/2026)本編での引用・掲載、[火災事例DB](/incidents)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
       },
       {
         question: 'メーカー製品の蓄電所ネット掲載基準は?',
@@ -995,31 +995,26 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '業界レポートでの製品引用機会は?',
         answer:
-          '業界レポート 2026 (7/5公開予定) + 業界レポート 2027 (12/25 公開) で、メーカー製品の引用枠あり。技術仕様・市場シェア・実績数値の中立的な引用、メーカー側の事前確認可能。',
-      },
-      {
-        question: 'メーカー DB (8 月公開予定) への登録方法は?',
-        answer:
-          'メーカー DB は 8/15 頃公開予定 (B-1 機能)。製品スペック・価格レンジ・実績案件の登録枠を準備中。8 月初旬にメーカー向け登録案内を予定。',
+          '[業界レポート 2026](/reports/2026)で、メーカー製品の引用枠あり。技術仕様・市場シェア・実績数値の中立的な引用、メーカー側の事前確認可能。',
       },
       {
         question: '蓄電所ネットの業界メディアとしての位置づけは?',
         answer:
-          'エネルギー情報センター (10 年運営) の事業として、業界中立の立場から蓄電池業界の情報インフラを提供。メーカー、EPC、デベロッパー、エンドユーザーすべてに公平な情報提供を方針とします。',
+          '一般社団法人エネルギー情報センター（2015 年設立）の事業として、業界中立の立場から蓄電池業界の情報インフラを提供。メーカー、EPC、デベロッパー、エンドユーザーすべてに公平な情報提供を方針とします。',
       },
       {
         question: '取材・寄稿の機会は?',
         answer:
-          '業界レポート企画、Insight 記事、AJ 火災事例 DB 等で取材機会あり。技術担当者・経営層へのインタビュー、技術論文寄稿の枠を準備中。お問い合わせフォームからご相談ください。',
+          '業界レポート企画、Insight 記事、[火災事例 DB](/incidents) 等で取材機会あり。お問い合わせフォームからご相談ください。',
       },
     ],
-    ctaPrimary: { label: 'Buyer に見つけてもらう — 掲載・取材のご相談', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: 'Buyer に見つけてもらう — 掲載・取材のご相談', url: contactUrl({ campaign: 'lp_manufacturer', position: 'cta' }) },
     ctaSecondary: { label: '事業者ナビで掲載例を見る', url: '/operators' },
   },
   'seller/epc': {
     slug: 'seller/epc',
     type: 'seller',
-    title: 'EPC 事業者向け｜案件規模・地理分布・容量市場/需給調整連動需要｜蓄電所ネット',
+    title: 'EPC 事業者向け｜案件規模・地理分布・容量市場/需給調整連動需要',
     description:
       '蓄電池 EPC 事業者向けハブ。案件規模、地理分布、容量市場・需給調整市場連動の需要動向、実績データ。業界中立で支援。',
     ogImage: '/og/seller-epc.png',
@@ -1027,7 +1022,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '蓄電所ネットには「参入検討中の事業者」「投資家・ファンド」「土地保有者」が来訪しています。EPC 事業者として掲載・取材を受けることで、案件化に向けて動いている読者に施工実績を届けられます。案件規模・地理分布・市場連動需要を業界中立で提供し、事業者ナビ掲載で案件候補との接点を確保します。',
     heroCtaLabel: 'Buyer に見つけてもらう — 掲載・取材のご相談',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_epc', position: 'hero' }),
     painPoints: [
       {
         icon: '📍',
@@ -1045,13 +1040,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '🏗',
         title: '実績・施工事例の中立的な可視化',
         description:
-          'EPC 事業者の施工実績・案件規模・技術ノウハウを業界レポート 2026/2027 + 案件 DB (C-3 アグリゲーター、8 月公開) で可視化機会。',
-      },
-      {
-        icon: '🔧',
-        title: 'O&M ベンチマーク',
-        description:
-          'F-4 O&M ベンチマーク (9 月公開予定) で運用保守の業界水準を比較可能、サービス差別化に活用。',
+          'EPC 事業者の施工実績・案件規模・技術ノウハウを[業界レポート 2026](/reports/2026) + 案件 DB で可視化機会。',
       },
     ],
     dataReferences: [
@@ -1099,7 +1088,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: 'どんな読者が見ますか？今すぐ掲載してもらえますか？',
         answer:
-          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します(導入検討ページ群)。エネルギー情報センター10年運営の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、業界レポート2026本編(7/5公開予定)での引用・掲載、AJ火災事例DB(5/28公開)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
+          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します。一般社団法人エネルギー情報センター（2015 年設立）の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、[業界レポート2026](/reports/2026)本編での引用・掲載、[火災事例DB](/incidents)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
       },
       {
         question: 'EPC 事業者の蓄電所ネット掲載基準は?',
@@ -1114,26 +1103,21 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: '取材・寄稿の機会は?',
         answer:
-          '業界レポート、Insight 記事、AJ 火災事例 DB 等で取材機会あり。EPC 視点での技術ノウハウ、施工事例の寄稿枠を準備中。',
-      },
-      {
-        question: 'F-4 O&M ベンチマーク (9 月公開) への参加方法は?',
-        answer:
-          'F-4 機能は 9/17-9/23 公開予定。EPC 事業者の O&M データ提供枠を準備中、8 月後半に案内予定。',
+          '業界レポート、Insight 記事、[火災事例 DB](/incidents) 等で取材機会あり。',
       },
       {
         question: 'メーカー製品の比較情報は?',
         answer:
-          'メーカー DB (B-1、8/15 頃公開) + メーカー別スペック比較 (B-1 機能内) で、EPC 事業者の機材選定支援。',
+          '[メーカー DB](/operators/makers)で、EPC 事業者の機材選定支援。',
       },
     ],
-    ctaPrimary: { label: 'Buyer に見つけてもらう — 掲載・取材のご相談', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: 'Buyer に見つけてもらう — 掲載・取材のご相談', url: contactUrl({ campaign: 'lp_epc', position: 'cta' }) },
     ctaSecondary: { label: '事業者ナビで掲載例を見る', url: '/operators' },
   },
   'seller/developer': {
     slug: 'seller/developer',
     type: 'seller',
-    title: 'プロジェクトデベロッパー向け｜SPC スキーム・補助金・土地確保｜蓄電所ネット',
+    title: 'プロジェクトデベロッパー向け｜SPC スキーム・補助金・土地確保',
     description:
       '蓄電所プロジェクトデベロッパー向けハブ。SPC スキーム、IRR シミュレーション、補助金活用、土地確保、PPA 設計支援。エネルギー情報センターが業界中立で支援。',
     ogImage: '/og/seller-developer.png',
@@ -1141,7 +1125,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '蓄電所ネットには「参入検討中の事業者」「投資家・ファンド」「土地保有者」が来訪しています。プロジェクトデベロッパーとして掲載・取材を受けることで、SPC 組成・資金調達・用地提供を求める読者に実績を届けられます。マクロ指標・補助金・IRR データを業界中立で提供し、事業者ナビ掲載でパートナー候補との接点を確保します。',
     heroCtaLabel: 'Buyer に見つけてもらう — 連携・掲載のご相談',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_developer', position: 'hero' }),
     painPoints: [
       {
         icon: '🏢',
@@ -1159,13 +1143,13 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '🏞',
         title: '土地確保・地域連携',
         description:
-          '蓄電所立地の土地確保、地元自治体との連携、E-3 自治体条例 (11/21 公開予定) 情報の把握。',
+          '蓄電所立地の土地確保、地元自治体との連携。',
       },
       {
         icon: '💼',
         title: '補助金・優遇税制の活用',
         description:
-          '蓄電池導入補助金、再エネ特措法、固定資産税優遇等の最新動向。業界レポート 2026/2027 で詳細解説予定。',
+          '蓄電池導入補助金、再エネ特措法、固定資産税優遇等の最新動向。',
       },
     ],
     dataReferences: [
@@ -1204,7 +1188,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         description: '容量市場参入を前提とした収益モデル試算。',
       },
       {
-        label: 'PPA・オフテイク契約検討 (Buyer Landing)',
+        label: 'PPA・オフテイク契約検討',
         url: '/buyer/ppa-offtake',
         description:
           'PPA・オフテイク契約相手 (Buyer 視点) の検討材料。デベロッパー視点での契約設計支援。',
@@ -1215,12 +1199,12 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: 'どんな読者が見ますか？今すぐ掲載してもらえますか？',
         answer:
-          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します(導入検討ページ群)。エネルギー情報センター10年運営の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、業界レポート2026本編(7/5公開予定)での引用・掲載、AJ火災事例DB(5/28公開)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
+          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します。一般社団法人エネルギー情報センター（2015 年設立）の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、[業界レポート2026](/reports/2026)本編での引用・掲載、[火災事例DB](/incidents)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
       },
       {
         question: 'プロジェクトデベロッパー向けの主な支援内容は?',
         answer:
-          'マクロ指標 (為替・金利・燃料) の最新動向提供、IRR シミュレーション、業界レポートでの事業性データ引用、E-3 自治体条例 (11/21 公開) 情報。SPC スキーム設計の助言は弊社顧問チーム (公認会計士、リク等) でご相談可能。',
+          'マクロ指標 (為替・金利・燃料) の最新動向提供、IRR シミュレーション、業界レポートでの事業性データ引用。',
       },
       {
         question: 'プロジェクトファイナンスへの金利影響をどう試算するか?',
@@ -1228,28 +1212,23 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
           'JGB 10y + 米 10y の最新動向を IRR シミュレーターに入力、感度分析で金利上昇シナリオの IRR 低下を可視化。マクロリスクヘッジの基礎データ提供。',
       },
       {
-        question: '土地確保・自治体連携の支援はあるか?',
-        answer:
-          'E-3 自治体条例 (11/21 公開予定) で全国の自治体条例情報を集約予定。土地確保時の地元自治体折衝の基礎情報。',
-      },
-      {
         question: '補助金・税制優遇の最新情報は?',
         answer:
-          '業界レポート 2026 (7/5公開予定) + 業界レポート 2027 (12/25) で補助金・優遇税制の最新動向を解説予定。緊急性高い場合はお問い合わせフォームから個別相談。',
+          '[業界レポート 2026](/reports/2026)で補助金の動向を解説しています。緊急性高い場合はお問い合わせフォームから個別相談。',
       },
       {
         question: 'デベロッパー実績の業界メディア掲載機会は?',
         answer:
-          '業界レポート、Insight 記事、案件 DB (C-3 アグリゲーター、8 月公開) でデベロッパー実績の掲載枠あり。お問い合わせフォームから掲載相談可能。',
+          '業界レポート、Insight 記事、案件 DB でデベロッパー実績の掲載枠あり。お問い合わせフォームから掲載相談可能。',
       },
     ],
-    ctaPrimary: { label: 'Buyer に見つけてもらう — 連携・掲載のご相談', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: 'Buyer に見つけてもらう — 連携・掲載のご相談', url: contactUrl({ campaign: 'lp_developer', position: 'cta' }) },
     ctaSecondary: { label: '事業者ナビで掲載例を見る', url: '/operators' },
   },
   'seller/reuse-secondhand': {
     slug: 'seller/reuse-secondhand',
     type: 'seller',
-    title: '中古売買・リユース事業者向け｜EV 2 次利用・劣化曲線・市場規模｜蓄電所ネット',
+    title: '中古売買・リユース事業者向け｜EV 2 次利用・劣化曲線・市場規模',
     description:
       '蓄電池中古売買・リユース事業者向けハブ。EV → 蓄電池 2 次利用、劣化曲線、市場規模、リユース事業の収益モデル。エネルギー情報センターが業界中立で支援。',
     ogImage: '/og/seller-reuse-secondhand.png',
@@ -1257,19 +1236,13 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
     heroSubcopy:
       '蓄電所ネットには「参入検討中の事業者」「投資家・ファンド」「土地保有者」が来訪しています。リユース事業者として掲載・取材を受けることで、コスト競争力のある蓄電池を探している読者に調達機会を届けられます。市場規模・劣化曲線・収益モデルを業界中立で提供し、事業者ナビ掲載で買い手との接点を確保します。',
     heroCtaLabel: 'Buyer に見つけてもらう — 掲載・取材のご相談',
-    heroCtaUrl: 'https://eic-jp.org/contact',
+    heroCtaUrl: contactUrl({ campaign: 'lp_reuse_secondhand', position: 'hero' }),
     painPoints: [
       {
         icon: '🔋',
         title: 'EV → 蓄電池 2 次利用の市場規模把握',
         description:
           '日本国内の EV 普及台数、退役予定の電池容量、2 次利用転換率の把握が散在情報で困難。業界中立のデータ集約。',
-      },
-      {
-        icon: '📉',
-        title: '劣化曲線の実測データ不足',
-        description:
-          'G-1 劣化曲線実測データ (9/24 公開予定) で、メーカー別・使用条件別の劣化曲線を可視化。リユース価格設定の基礎データ。',
       },
       {
         icon: '💰',
@@ -1281,7 +1254,7 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
         icon: '✅',
         title: '品質基準・安全性保証',
         description:
-          'UL9540A / IEC 62619 等の規格準拠、火災リスク評価。AJ 火災事例 DB (5/28 公開) で安全性ガイダンス + リユース固有のリスク管理。',
+          'UL9540A / IEC 62619 等の規格準拠、火災リスク評価。[火災事例 DB](/incidents)で安全性ガイダンス + リユース固有のリスク管理。',
       },
     ],
     dataReferences: [
@@ -1331,35 +1304,30 @@ export const LANDING_PAGE_CONFIGS: Record<string, LandingPageConfig> = {
       {
         question: 'どんな読者が見ますか？今すぐ掲載してもらえますか？',
         answer:
-          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します(導入検討ページ群)。エネルギー情報センター10年運営の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、業界レポート2026本編(7/5公開予定)での引用・掲載、AJ火災事例DB(5/28公開)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
+          '蓄電所ネットには、いま系統用蓄電池に「参入を検討する事業者」「投資・取得を考える投資家・ファンド」「用地活用を考える土地保有者」が来訪します。一般社団法人エネルギー情報センター（2015 年設立）の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、[業界レポート2026](/reports/2026)本編での引用・掲載、[火災事例DB](/incidents)やInsight記事での取材機会をご用意。掲載相談はお問い合わせフォームから随時受け付けています。',
       },
       {
         question: 'リユース蓄電池事業の市場規模は?',
         answer:
-          '日本の EV 普及に伴い、退役 EV 電池の蓄電池 2 次利用市場が 2026 年以降本格化見込み。G-1 劣化曲線実測データ (9/24 公開) + 業界レポート 2027 (12/25) で市場規模・成長率の詳細解説予定。',
-      },
-      {
-        question: '劣化曲線の実測データはいつ公開されるか?',
-        answer:
-          'G-1 劣化曲線実測データは 9/24 公開予定。メーカー別・使用条件別の劣化曲線データを業界中立で提供、リユース価格設定の基礎データ。',
+          '日本の EV 普及に伴い、退役 EV 電池の蓄電池 2 次利用市場が 2026 年以降本格化見込み。',
       },
       {
         question: 'リユース蓄電池の容量市場参入は可能?',
         answer:
-          '可能性あり、但し OCCTO 認定基準への適合確認が必須。リユース固有の劣化評価、保証期間の扱いが論点。容量市場入札ツールで参入可能性試算可能。',
+          '可能性あり、但し OCCTO 認定基準への適合確認が必須。リユース固有の劣化評価、保証期間の扱いが論点。',
       },
       {
         question: '中古セル調達の海外輸入リスクは?',
         answer:
-          'USD/JPY 為替変動、輸入規制、品質保証の確保が主要リスク。為替リスクは当ページデータセクションの USD/JPY 動向で継続把握、ヘッジ戦略の検討材料。',
+          'USD/JPY 為替変動、輸入規制、品質保証の確保が主要リスク。',
       },
       {
         question: 'リユース事業者の業界メディア掲載機会は?',
         answer:
-          '業界レポート 2026/2027、AJ 火災事例 DB、Insight 記事でリユース事業者の事例掲載機会あり。リユース事業者の技術ノウハウ、市場戦略の中立的な可視化。',
+          '[業界レポート 2026](/reports/2026)、[火災事例 DB](/incidents)、Insight 記事でリユース事業者の事例掲載機会あり。リユース事業者の技術ノウハウ、市場戦略の中立的な可視化。',
       },
     ],
-    ctaPrimary: { label: 'Buyer に見つけてもらう — 掲載・取材のご相談', url: 'https://eic-jp.org/contact' },
+    ctaPrimary: { label: 'Buyer に見つけてもらう — 掲載・取材のご相談', url: contactUrl({ campaign: 'lp_reuse_secondhand', position: 'cta' }) },
     ctaSecondary: { label: '事業者ナビで掲載例を見る', url: '/operators' },
   },
 };

@@ -20,6 +20,7 @@ import { isExcludedNews } from '@/lib/news-excluded';
 import { isOnTopicNewsArticle } from '@/lib/news-topic-gate';
 import { siteConfig } from '@/lib/site-config';
 import { canonicalizeTermLinks } from '@/lib/glossary-301';
+import { addContactUtmToHtml } from '@/lib/contact-link';
 
 export const revalidate = 600;
 
@@ -105,10 +106,14 @@ export default async function NewsDetailPage({
   const linkableTargets = (await getLinkableTargets()).filter(
     (t) => t.type === 'operator' || t.type === 'glossary'
   );
-  const bodyHtml = linkifyHTML(news.body || '', linkableTargets, {
-    firstOnly: true,
-    selfUrl: `/news/${news.slug}`,
-  });
+  // 入口の掃除と計測便（2026-10-17）: 本文の相談のリンク（eic-jp.org/contact）の href に UTM（表示の文字はそのまま）
+  const bodyHtml = addContactUtmToHtml(
+    linkifyHTML(news.body || '', linkableTargets, {
+      firstOnly: true,
+      selfUrl: `/news/${news.slug}`,
+    }),
+    { campaign: 'news_detail', position: 'body' },
+  );
 
   // 依頼Y: 関連エンティティ抽出（operators / projects / explainer）
   const related = await getRelatedEntities({

@@ -4,18 +4,20 @@
  * /start 系LPの承認済みトーンを踏襲（誇張ゼロ・無料明記・運営実績数値の追加なし）
  */
 
+import { contactUrl } from '@/lib/contact-link';
+
 const VARIANTS = {
   buy: {
     heading: '低圧蓄電所の購入・投資を検討中の方へ',
     body: '販売者ではない中立の立場で、購入前の疑問点の整理やセカンドオピニオンのご相談を無料でお受けしています。',
     button: '購入・投資について相談する（無料）',
-    href: 'https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_lv_buy',
+    href: contactUrl({ campaign: 'funnel_lv_buy', position: 'cta' }),
   },
   entry: {
     heading: '低圧蓄電所事業への参入を検討中の方へ',
     body: '事業化の進め方・市場動向・パートナー選定の考え方など、検討段階のご相談を無料でお受けしています。',
     button: '事業参入について相談する（無料）',
-    href: 'https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_lv_entry',
+    href: contactUrl({ campaign: 'funnel_lv_entry', position: 'cta' }),
   },
 } as const;
 

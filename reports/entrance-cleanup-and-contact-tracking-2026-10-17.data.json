@@ -1,0 +1,2546 @@
+{
+ "meta": {
+  "brief": "C:\\Users\\kenji\\OneDrive\\デスクトップ\\AI2026\\蓄電所ネット\\03_5月13日朝_実行\\入口の掃除と計測便_入口26ページの古い予定・符号・役名を外す・件数の自動化・相談リンクのUTMとGA4_コードのみ_Claude_Code投入_2026-10-17起草_ユウ.md",
+  "brief_sha256": "55da53a8eb2c659fead163b0daf8e4f382ca04fea774224584c465961fc0e276",
+  "note": "入口の掃除と計測便の変更一覧（報告 reports/entrance-cleanup-and-contact-tracking-2026-10-17.md の元）。lp_text は src/data/landing-page-configs.ts の置換（前・後の逐語・回数）、other_text はそれ以外のファイルの是正、uncertain は洗い出しで「迷う」とされ直していないもの、review はレビュー（5 観点）と反証（2 観点）の結果。"
+ },
+ "lp_text": [
+  {
+   "page": "/buyer/factory-commercial",
+   "rule": "d",
+   "before": "エネルギー情報センターの 10 年運営実績で、業界事業者を中立的に支援します。",
+   "after": "運営元の一般社団法人エネルギー情報センター（EIC）が、業界事業者を中立的に支援します。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/factory-commercial",
+   "rule": "d",
+   "before": "10 年運営の実績で、業界中立の立場から導入検討を支援します。",
+   "after": "運営元の一般社団法人エネルギー情報センター（EIC）が、業界中立の立場から導入検討を支援します。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/new-entry",
+   "rule": "d",
+   "before": "業界中立(エネルギー情報センター10年運営)の視点で解説。",
+   "after": "業界中立(一般社団法人エネルギー情報センター・2015 年設立)の視点で解説。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/new-entry",
+   "rule": "d",
+   "before": "エネルギー情報センター10年運営の信頼性で、新規参入の意思決定を支援します。",
+   "after": "運営元の一般社団法人エネルギー情報センター（EIC）が、新規参入の意思決定を支援します。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/investor",
+   "rule": "d",
+   "before": "中立の立場で論点整理を支援します(エネルギー情報センター10年運営)。",
+   "after": "中立の立場で論点整理を支援します(一般社団法人エネルギー情報センター・2015 年設立)。",
+   "count": 1
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "d",
+   "before": "エネルギー情報センター (10 年運営) の事業として、",
+   "after": "一般社団法人エネルギー情報センター（2015 年設立）の事業として、",
+   "count": 1
+  },
+  {
+   "page": "/seller/manufacturer・/seller/epc・/seller/developer・/seller/reuse-secondhand",
+   "rule": "b・d・a",
+   "before": "(導入検討ページ群)。エネルギー情報センター10年運営の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、業界レポート2026本編(7/5公開予定)での引用・掲載、AJ火災事例DB(5/28公開)やInsight記事での取材機会をご用意。",
+   "after": "。一般社団法人エネルギー情報センター（2015 年設立）の中立メディアとして、まず事業者ナビ(/operators)への中立掲載、[業界レポート2026](/reports/2026)本編での引用・掲載、[火災事例DB](/incidents)やInsight記事での取材機会をご用意。",
+   "count": 4
+  },
+  {
+   "page": "/buyer/investor",
+   "rule": "i",
+   "before": "業界中立の実データで。国内の蓄電所投資は1兆円超、市場急拡大のなかで投資判断を支援します。",
+   "after": "業界中立の実データで。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/investor",
+   "rule": "i",
+   "before": "立地(系統空き容量)・アグリゲーター・収益構成を中立データで評価。市場規模1兆円超・300GWh級の拡大局面における出口の考え方も整理。",
+   "after": "立地(系統空き容量)・アグリゲーター・収益構成を中立データで評価。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/factory-commercial",
+   "rule": "i",
+   "before": "③追加収益 (容量市場・需給調整市場参入)。最新の事例では年間 20-30% の電気代削減 + 容量市場収益が報告されています。",
+   "after": "③追加収益 (容量市場・需給調整市場参入)。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/capacity-market",
+   "rule": "a",
+   "before": "OCCTO 認定が主要要件です。詳細は OCCTO 公式 + 当社の容量市場入札ツールで条件チェック可能です。",
+   "after": "OCCTO 認定が主要要件です。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/capacity-market",
+   "rule": "a",
+   "before": "運転計画の最適化が重要。当社の容量市場入札ツールで稼働率シミュレーションが可能です。",
+   "after": "運転計画の最適化が重要。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/balancing-market",
+   "rule": "a",
+   "before": "description: '容量市場との並行参加検討。実需給期間の運転計画最適化に活用。',",
+   "after": "description: '容量市場との並行参加検討。',",
+   "count": 1
+  },
+  {
+   "page": "/buyer/ppa-offtake",
+   "rule": "a",
+   "before": "③燃料費調整連動 (USD ベース)。当ページの USD/JPY + 円建て LNG データで影響度試算可能。",
+   "after": "③燃料費調整連動 (USD ベース)。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/balancing-market",
+   "rule": "a",
+   "before": "'balancing-tertiary2-vs-jepx',",
+   "after": "",
+   "count": 1
+  },
+  {
+   "page": "/buyer/ppa-offtake",
+   "rule": "a",
+   "before": "'us-jp-rate-vs-usdjpy',",
+   "after": "",
+   "count": 1
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "a・b",
+   "before": "業界レポート + メーカー DB (8 月公開予定) で詳細分析支援。",
+   "after": "業界レポート + [メーカー DB](/operators/makers)で詳細分析支援。",
+   "count": 1
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "a・b",
+   "before": "AJ 火災事例 DB (5/28 公開) + B-4 消火比較 (9 月) で技術品質向上支援。",
+   "after": "[火災事例 DB](/incidents)で技術品質向上支援。",
+   "count": 1
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "a",
+   "before": "蓄電所ネットの業界レポート 2026 (7/5公開予定) + 業界レポート 2027 (12/25) でのメーカー引用機会。",
+   "after": "蓄電所ネットの[業界レポート 2026](/reports/2026)でのメーカー引用機会。",
+   "count": 1
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "a",
+   "before": "業界レポート 2026 (7/5公開予定) + 業界レポート 2027 (12/25 公開) で、メーカー製品の引用枠あり。",
+   "after": "[業界レポート 2026](/reports/2026)で、メーカー製品の引用枠あり。",
+   "count": 1
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "a・b",
+   "before": "{\n        question: 'メーカー DB (8 月公開予定) への登録方法は?',\n        answer:\n          'メーカー DB は 8/15 頃公開予定 (B-1 機能)。製品スペック・価格レンジ・実績案件の登録枠を準備中。8 月初旬にメーカー向け登録案内を予定。',\n      },",
+   "after": "",
+   "count": 1
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "a・b",
+   "before": "業界レポート企画、Insight 記事、AJ 火災事例 DB 等で取材機会あり。技術担当者・経営層へのインタビュー、技術論文寄稿の枠を準備中。お問い合わせフォームからご相談ください。",
+   "after": "業界レポート企画、Insight 記事、[火災事例 DB](/incidents) 等で取材機会あり。お問い合わせフォームからご相談ください。",
+   "count": 1
+  },
+  {
+   "page": "/seller/epc",
+   "rule": "a・b",
+   "before": "EPC 事業者の施工実績・案件規模・技術ノウハウを業界レポート 2026/2027 + 案件 DB (C-3 アグリゲーター、8 月公開) で可視化機会。",
+   "after": "EPC 事業者の施工実績・案件規模・技術ノウハウを[業界レポート 2026](/reports/2026) + 案件 DB で可視化機会。",
+   "count": 1
+  },
+  {
+   "page": "/seller/epc",
+   "rule": "a・b",
+   "before": "{\n        icon: '🔧',\n        title: 'O&M ベンチマーク',\n        description:\n          'F-4 O&M ベンチマーク (9 月公開予定) で運用保守の業界水準を比較可能、サービス差別化に活用。',\n      },",
+   "after": "",
+   "count": 1
+  },
+  {
+   "page": "/seller/epc",
+   "rule": "a・b",
+   "before": "業界レポート、Insight 記事、AJ 火災事例 DB 等で取材機会あり。EPC 視点での技術ノウハウ、施工事例の寄稿枠を準備中。",
+   "after": "業界レポート、Insight 記事、[火災事例 DB](/incidents) 等で取材機会あり。",
+   "count": 1
+  },
+  {
+   "page": "/seller/epc",
+   "rule": "a・b",
+   "before": "{\n        question: 'F-4 O&M ベンチマーク (9 月公開) への参加方法は?',\n        answer:\n          'F-4 機能は 9/17-9/23 公開予定。EPC 事業者の O&M データ提供枠を準備中、8 月後半に案内予定。',\n      },",
+   "after": "",
+   "count": 1
+  },
+  {
+   "page": "/seller/epc",
+   "rule": "a・b",
+   "before": "メーカー DB (B-1、8/15 頃公開) + メーカー別スペック比較 (B-1 機能内) で、EPC 事業者の機材選定支援。",
+   "after": "[メーカー DB](/operators/makers)で、EPC 事業者の機材選定支援。",
+   "count": 1
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "a・b",
+   "before": "蓄電所立地の土地確保、地元自治体との連携、E-3 自治体条例 (11/21 公開予定) 情報の把握。",
+   "after": "蓄電所立地の土地確保、地元自治体との連携。",
+   "count": 1
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "a",
+   "before": "蓄電池導入補助金、再エネ特措法、固定資産税優遇等の最新動向。業界レポート 2026/2027 で詳細解説予定。",
+   "after": "蓄電池導入補助金、再エネ特措法、固定資産税優遇等の最新動向。",
+   "count": 1
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "b",
+   "before": "label: 'PPA・オフテイク契約検討 (Buyer Landing)',",
+   "after": "label: 'PPA・オフテイク契約検討',",
+   "count": 1
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "a・b・c",
+   "before": "業界レポートでの事業性データ引用、E-3 自治体条例 (11/21 公開) 情報。SPC スキーム設計の助言は弊社顧問チーム (公認会計士、リク等) でご相談可能。",
+   "after": "業界レポートでの事業性データ引用。",
+   "count": 1
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "a・b",
+   "before": "{\n        question: '土地確保・自治体連携の支援はあるか?',\n        answer:\n          'E-3 自治体条例 (11/21 公開予定) で全国の自治体条例情報を集約予定。土地確保時の地元自治体折衝の基礎情報。',\n      },",
+   "after": "",
+   "count": 1
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "a",
+   "before": "業界レポート 2026 (7/5公開予定) + 業界レポート 2027 (12/25) で補助金・優遇税制の最新動向を解説予定。",
+   "after": "[業界レポート 2026](/reports/2026)で補助金の動向を解説しています。",
+   "count": 1
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "a・b",
+   "before": "業界レポート、Insight 記事、案件 DB (C-3 アグリゲーター、8 月公開) でデベロッパー実績の掲載枠あり。",
+   "after": "業界レポート、Insight 記事、案件 DB でデベロッパー実績の掲載枠あり。",
+   "count": 1
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a・b",
+   "before": "{\n        icon: '📉',\n        title: '劣化曲線の実測データ不足',\n        description:\n          'G-1 劣化曲線実測データ (9/24 公開予定) で、メーカー別・使用条件別の劣化曲線を可視化。リユース価格設定の基礎データ。',\n      },",
+   "after": "",
+   "count": 1
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a・b",
+   "before": "AJ 火災事例 DB (5/28 公開) で安全性ガイダンス + リユース固有のリスク管理。",
+   "after": "[火災事例 DB](/incidents)で安全性ガイダンス + リユース固有のリスク管理。",
+   "count": 1
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a・b",
+   "before": "2026 年以降本格化見込み。G-1 劣化曲線実測データ (9/24 公開) + 業界レポート 2027 (12/25) で市場規模・成長率の詳細解説予定。",
+   "after": "2026 年以降本格化見込み。",
+   "count": 1
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a・b",
+   "before": "{\n        question: '劣化曲線の実測データはいつ公開されるか?',\n        answer:\n          'G-1 劣化曲線実測データは 9/24 公開予定。メーカー別・使用条件別の劣化曲線データを業界中立で提供、リユース価格設定の基礎データ。',\n      },",
+   "after": "",
+   "count": 1
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a・b",
+   "before": "業界レポート 2026/2027、AJ 火災事例 DB、Insight 記事でリユース事業者の事例掲載機会あり。",
+   "after": "[業界レポート 2026](/reports/2026)、[火災事例 DB](/incidents)、Insight 記事でリユース事業者の事例掲載機会あり。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/new-entry・/buyer/landowner",
+   "rule": "e",
+   "before": "接続検討の集中により申請が殺到しており、接続まで18ヶ月〜2年、想定以上の接続負担金が発生する例もあります。系統空き容量ページ(/grid、10社8,225件)で周辺の余力を先に確認するのが有効です。",
+   "after": "接続検討の集中により申請が殺到しており、接続まで18ヶ月〜2年、想定以上の接続負担金が発生する例もあります。系統空き容量ページ(/grid、{GRID_COMPANY_COUNT}社{SUBSTATION_TOTAL_STR}件)で周辺の余力を先に確認するのが有効です。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/new-entry・/buyer/landowner",
+   "rule": "e",
+   "before": "系統空き容量ページ(/grid、10社8,225件)で、対象地の周辺変電所の空き容量・連系条件の当たりをつけられます。",
+   "after": "系統空き容量ページ(/grid、{GRID_COMPANY_COUNT}社{SUBSTATION_TOTAL_STR}件)で、対象地の周辺変電所の空き容量・連系条件の当たりをつけられます。",
+   "count": 1
+  },
+  {
+   "page": "/buyer/new-entry・/buyer/landowner",
+   "rule": "e",
+   "before": "10社8,225件の変電所別 空き容量・連系条件。対象地周辺の系統余力を確認。",
+   "after": "{GRID_COMPANY_COUNT}社{SUBSTATION_TOTAL_STR}件の変電所別 空き容量・連系条件。対象地周辺の系統余力を確認。",
+   "count": 1
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a",
+   "before": "保証期間の扱いが論点。容量市場入札ツールで参入可能性試算可能。",
+   "after": "保証期間の扱いが論点。",
+   "count": 1,
+   "note": "レビューで追加（/buyer/capacity-market と同じ型）"
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a",
+   "before": "品質保証の確保が主要リスク。為替リスクは当ページデータセクションの USD/JPY 動向で継続把握、ヘッジ戦略の検討材料。",
+   "after": "品質保証の確保が主要リスク。",
+   "count": 1,
+   "note": "レビューで追加（/buyer/ppa-offtake と同じ型）"
+  }
+ ],
+ "other_text": [
+  {
+   "page": "/contact/media",
+   "rule": "f",
+   "file": "src/data/contact-pages-configs.ts",
+   "before": "…データ利用許諾に関するお問い合わせを受け付けています。迅速に対応いたします。",
+   "after": "…データ利用許諾に関するお問い合わせを受け付けています。"
+  },
+  {
+   "page": "/contact/seller",
+   "rule": "e",
+   "file": "src/data/contact-pages-configs.ts",
+   "before": "事業者ナビ（403社掲載）への新規掲載申請…",
+   "after": "事業者ナビ（${OPERATOR_COUNT}社掲載）への新規掲載申請…（577社）"
+  },
+  {
+   "page": "/contact と /contact/* 5 ページ",
+   "rule": "g",
+   "file": "src/data/contact-pages-configs.ts",
+   "before": "title: '…のお問い合わせ | 蓄電所ネット'（6 本）",
+   "after": "title: '…のお問い合わせ'（template が「 | 蓄電所ネット」を付ける・#88）"
+  },
+  {
+   "page": "/buyer 7・/seller 4",
+   "rule": "g",
+   "file": "src/data/landing-page-configs.ts",
+   "before": "title: '…｜蓄電所ネット'（10 本）・'… - 蓄電所ネット'（1 本）",
+   "after": "title: '…'（便の (g) と同じ型・#88）"
+  },
+  {
+   "page": "/buyer 7・/seller 4（共通部品）",
+   "rule": "d",
+   "file": "src/components/LandingPage/LandingPageCTA.tsx",
+   "before": "一般社団法人エネルギー情報センター (10 年運営実績) が、業界中立で対応いたします。",
+   "after": "一般社団法人エネルギー情報センター（2015 年設立）が、業界中立で対応いたします。"
+  },
+  {
+   "page": "/start/buy・/start/sell・/start/partner（StartTrustBlock）・/info/operating-bess-introduction",
+   "rule": "e",
+   "file": "src/components/StartTrustBlock.tsx・src/app/info/operating-bess-introduction/page.tsx",
+   "before": "蓄電所ネットは全国10社・{.total}変電所の系統情報DB、540社超の事業者ナビ、",
+   "after": "{` 蓄電所ネットは全国${GRID_COMPANY_COUNT}社・${SUBSTATION_TOTAL_STR}変電所の系統情報DB、${OPERATOR_COUNT}社の事業者ナビ、`}（10社・8,346・577社）"
+  },
+  {
+   "page": "/start/partner",
+   "rule": "e",
+   "file": "src/app/start/partner/page.tsx",
+   "before": "業界データベース — 事業者ナビ（540社超）・業界カオスマップ・事業者ランキング Top50",
+   "after": "業界データベース{` — 事業者ナビ（${OPERATOR_COUNT}社）・…`}（577社）"
+  },
+  {
+   "page": "/tracker/ag",
+   "rule": "e",
+   "file": "src/app/tracker/ag/page.tsx",
+   "before": "title '事業者トラッカー (蓄電所事業者 540+ 更新タイムライン)'・description '事業者ナビ (540+社) …'・og:title '…540+)'",
+   "after": "同じ文の 540+ → ${OPERATOR_COUNT}社（577社）"
+  },
+  {
+   "page": "/（トップ）",
+   "rule": "h",
+   "file": "src/app/page.tsx",
+   "before": "…公的一次情報から編集統合した決定版です。",
+   "after": "…公的一次情報から編集統合したものです。"
+  },
+  {
+   "page": "/milestones/2026-05-22-feature-complete・/milestones/2026-06-11-vip-citation",
+   "rule": "c",
+   "file": "src/data/milestones.ts",
+   "before": "'リン (data.eic-jp.org 編集長) との Phase D 第 1 期連動。…、リン case A 準拠、L-EIC-008 §1…'／'リン担当の data.eic-jp.org（catalog 512 系列…'",
+   "after": "'data.eic-jp.org との Phase D 第 1 期連動。…、L-EIC-008 §1…'／'data.eic-jp.org（catalog 512 系列…'"
+  },
+  {
+   "page": "/ops/freshness",
+   "rule": "c",
+   "file": "src/app/ops/freshness/page.tsx",
+   "before": "表の「担当」列（セイ・モリ・ノブ・チサ・リン・ジン・山口/加藤/斎藤）",
+   "after": "「担当」列を描画しない（データ src/lib/sop-schedule.ts の persona は残す）"
+  },
+  {
+   "page": "/anken/buy・/anken/sell・/anken/flow・/anken/faq",
+   "rule": "2(d)",
+   "file": "src/app/sitemap.ts",
+   "before": "sitemap に無い",
+   "after": "4 行を足した（monthly・0.7）"
+  }
+ ],
+ "corrections_added": [
+  {
+   "id": "20261017-03",
+   "date": "2026-10-17",
+   "kind": "訂正",
+   "path": "/buyer/investor",
+   "targetTitle": "系統用蓄電池(蓄電所)への投資｜利回り・収益構造・リスクを実データで",
+   "before": "導入文に「国内の蓄電所投資は1兆円超、市場急拡大のなかで投資判断を支援します。」、課題欄に「市場規模1兆円超・300GWh級の拡大局面における出口の考え方も整理。」と記載（出典の記載なし）",
+   "after": "どちらの数値も、裏づけとなる一次資料を確認できなかったため、この 2 つの文を削除しました",
+   "basis": [],
+   "internalRef": "reports/entrance-cleanup-and-contact-tracking-2026-10-17.data.json の lp_text（/buyer/investor の rule i 2 件）"
+  },
+  {
+   "id": "20261017-04",
+   "date": "2026-10-17",
+   "kind": "訂正",
+   "path": "/seller/developer",
+   "targetTitle": "プロジェクトデベロッパー向け｜SPC スキーム・補助金・土地確保",
+   "before": "よくある質問「プロジェクトデベロッパー向けの主な支援内容は?」の答えに、SPC スキーム設計の助言を顧問チーム（公認会計士ほか）に相談できると記載（出典の記載なし）",
+   "after": "記載の顧問チームを確認できず、公認会計士が在籍するという裏づけも無いため、この文を削除しました",
+   "basis": [],
+   "internalRef": "reports/entrance-cleanup-and-contact-tracking-2026-10-17.data.json の lp_text（/seller/developer の rule a・b・c 1 件）"
+  }
+ ],
+ "contact_links_scout": [
+  {
+   "file": "src/lib/site-config.ts",
+   "line": 33,
+   "pages": "定義だけ。使うのは src/app/contact/page.tsx:185 の 1 か所（/contact）",
+   "link_text": "（定義なので表示の文字は無い）",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/lib/site-config.ts",
+   "line": 42,
+   "pages": "定義だけ。使う所は 12 か所: フッター・トップ・about×2・editorial-policy×2・privacy・terms・/tools・/projects・/grid/[slug]",
+   "link_text": "（定義なので表示の文字は無い）",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/components/SiteFooter.tsx",
+   "line": 42,
+   "pages": "全ページ共通（ビルド済み HTML 5,589 本すべてで 1 本ずつ・_not-found も含む）",
+   "link_text": "お問い合わせ",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/page.tsx",
+   "line": 454,
+   "pages": "/（トップ・『お問い合わせ・取材ご依頼』の節）",
+   "link_text": "https://eic-jp.org/contact（URL がそのまま表示されている）",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/about/page.tsx",
+   "line": 124,
+   "pages": "/about（運営者情報の表 dt『お問い合わせ』）",
+   "link_text": "https://eic-jp.org/contact（URL がそのまま表示されている）",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/about/page.tsx",
+   "line": 141,
+   "pages": "/about（『お問い合わせ・取材ご依頼』の節）",
+   "link_text": "https://eic-jp.org/contact（URL がそのまま表示されている）",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/editorial-policy/page.tsx",
+   "line": 92,
+   "pages": "/editorial-policy（『読者からのご指摘』）",
+   "link_text": "https://eic-jp.org/contact（URL がそのまま表示されている）",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": true
+  },
+  {
+   "file": "src/app/editorial-policy/page.tsx",
+   "line": 112,
+   "pages": "/editorial-policy（『出典元（データ提供元）からのご要請』）",
+   "link_text": "https://eic-jp.org/contact（URL がそのまま表示されている）",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": true
+  },
+  {
+   "file": "src/app/privacy/page.tsx",
+   "line": 110,
+   "pages": "/privacy（8. お問い合わせ窓口の表）",
+   "link_text": "https://eic-jp.org/contact（URL がそのまま表示されている）",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/terms/page.tsx",
+   "line": 110,
+   "pages": "/terms（お問い合わせ窓口）",
+   "link_text": "https://eic-jp.org/contact（URL がそのまま表示されている）",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/tools/page.tsx",
+   "line": 284,
+   "pages": "/tools",
+   "link_text": "編集部",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": true
+  },
+  {
+   "file": "src/app/projects/page.tsx",
+   "line": 153,
+   "pages": "/projects（調査中の件数 investigatingCount>0 のときだけ表示・ビルドでは表示あり）",
+   "link_text": "編集部",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": true
+  },
+  {
+   "file": "src/app/grid/[slug]/page.tsx",
+   "line": 695,
+   "pages": "/grid/[slug] の変電所詳細のうち緯度が無いものだけ（静的データでは 8,353 件中 7,271 件・目安）。事前生成の 1,093 本（9 エリア＋座標ありの変電所）には出ないので、ローカルビルドでは 0 本。本番の on-demand ページ /grid/cb-3617 で表示を確かめた（200・MISS）",
+   "link_text": "🔗 お問い合わせから位置情報を提供する",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": true
+  },
+  {
+   "file": "src/app/contact/page.tsx",
+   "line": 185,
+   "pages": "/contact",
+   "link_text": "お問い合わせフォームへ（eic-jp.org） ↗",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/contact-pages-configs.ts",
+   "line": 8,
+   "pages": "（コメント・リンクではない）",
+   "link_text": "",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/contact-pages-configs.ts",
+   "line": 95,
+   "pages": "/contact/buyer（ContactPageLayout.tsx:128 で描画）",
+   "link_text": "お問い合わせフォームへ（エネルギー情報センター） ↗",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/contact-pages-configs.ts",
+   "line": 140,
+   "pages": "/contact/seller",
+   "link_text": "お問い合わせフォームへ（エネルギー情報センター） ↗",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/contact-pages-configs.ts",
+   "line": 185,
+   "pages": "/contact/media",
+   "link_text": "取材・報道お問い合わせフォームへ（エネルギー情報センター） ↗",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/contact-pages-configs.ts",
+   "line": 230,
+   "pages": "/contact/investor",
+   "link_text": "お問い合わせフォームへ（エネルギー情報センター） ↗",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/contact-pages-configs.ts",
+   "line": 275,
+   "pages": "/contact/advisor",
+   "link_text": "お問い合わせフォームへ（エネルギー情報センター） ↗",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 99,
+   "pages": "/buyer/factory-commercial（ヒーロー・LandingPageHero.tsx:77）",
+   "link_text": "無料相談はこちら",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 200,
+   "pages": "/buyer/factory-commercial（下の CTA 帯『まずはお気軽にご相談ください』・LandingPageCTA.tsx:47）",
+   "link_text": "無料相談はこちら →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 215,
+   "pages": "/buyer/capacity-market（ヒーロー）",
+   "link_text": "容量市場参入相談はこちら",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 317,
+   "pages": "/buyer/capacity-market（下の CTA 帯）",
+   "link_text": "容量市場参入相談はこちら →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 331,
+   "pages": "/buyer/balancing-market（ヒーロー）",
+   "link_text": "需給調整市場参入相談はこちら",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 433,
+   "pages": "/buyer/balancing-market（下の CTA 帯）",
+   "link_text": "需給調整市場参入相談はこちら →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 447,
+   "pages": "/buyer/ppa-offtake（ヒーロー）",
+   "link_text": "PPA・オフテイク契約相談はこちら",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 550,
+   "pages": "/buyer/ppa-offtake（下の CTA 帯）",
+   "link_text": "PPA・オフテイク契約相談はこちら →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 566,
+   "pages": "/buyer/new-entry（ヒーロー）",
+   "link_text": "無料事業性相談はこちら",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 667,
+   "pages": "/buyer/new-entry（下の CTA 帯）",
+   "link_text": "無料事業性相談はこちら →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 682,
+   "pages": "/buyer/investor（ヒーロー）",
+   "link_text": "投資・収益試算の相談はこちら",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 800,
+   "pages": "/buyer/investor（下の CTA 帯）",
+   "link_text": "投資・収益試算の相談はこちら →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 815,
+   "pages": "/buyer/landowner（ヒーロー）",
+   "link_text": "用地査定・活用相談はこちら",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 900,
+   "pages": "/buyer/landowner（下の CTA 帯）",
+   "link_text": "用地査定・活用相談はこちら →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 915,
+   "pages": "/seller/manufacturer（ヒーロー）",
+   "link_text": "Buyer に見つけてもらう — 掲載・取材のご相談",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 1016,
+   "pages": "/seller/manufacturer（下の CTA 帯）",
+   "link_text": "Buyer に見つけてもらう — 掲載・取材のご相談 →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 1030,
+   "pages": "/seller/epc（ヒーロー）",
+   "link_text": "Buyer に見つけてもらう — 掲載・取材のご相談",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 1130,
+   "pages": "/seller/epc（下の CTA 帯）",
+   "link_text": "Buyer に見つけてもらう — 掲載・取材のご相談 →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 1144,
+   "pages": "/seller/developer（ヒーロー）",
+   "link_text": "Buyer に見つけてもらう — 連携・掲載のご相談",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 1246,
+   "pages": "/seller/developer（下の CTA 帯）",
+   "link_text": "Buyer に見つけてもらう — 連携・掲載のご相談 →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 1260,
+   "pages": "/seller/reuse-secondhand（ヒーロー）",
+   "link_text": "Buyer に見つけてもらう — 掲載・取材のご相談",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/data/landing-page-configs.ts",
+   "line": 1362,
+   "pages": "/seller/reuse-secondhand（下の CTA 帯）",
+   "link_text": "Buyer に見つけてもらう — 掲載・取材のご相談 →",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/incidents/page.tsx",
+   "line": 117,
+   "pages": "/incidents（利用上の注意・『削除依頼：』）",
+   "link_text": "お問い合わせフォーム",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": true
+  },
+  {
+   "file": "src/app/projects/[slug]/page.tsx",
+   "line": 188,
+   "pages": "/projects/[slug] のうち outputMw===0 または capacityMwh===0 のもの（ビルドでは 115 本）",
+   "link_text": "編集部",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": true
+  },
+  {
+   "file": "src/app/projects/[slug]/page.tsx",
+   "line": 339,
+   "pages": "/projects/[slug] の全ページ（ビルドでは 367 本）",
+   "link_text": "お問い合わせ",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": true
+  },
+  {
+   "file": "src/app/info/operating-bess-introduction/page.tsx",
+   "line": 24,
+   "pages": "/info/operating-bess-introduction",
+   "link_text": "EIC お問い合わせフォームへ →",
+   "has_utm_now": true,
+   "existing_campaign": "operating_bess_intro",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/start/buy/page.tsx",
+   "line": 15,
+   "pages": "/start/buy",
+   "link_text": "EIC お問い合わせフォームへ →",
+   "has_utm_now": true,
+   "existing_campaign": "funnel_buy",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/start/sell/page.tsx",
+   "line": 15,
+   "pages": "/start/sell",
+   "link_text": "EIC お問い合わせフォームへ →",
+   "has_utm_now": true,
+   "existing_campaign": "funnel_sell",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/start/partner/page.tsx",
+   "line": 15,
+   "pages": "/start/partner",
+   "link_text": "EIC お問い合わせフォームへ →",
+   "has_utm_now": true,
+   "existing_campaign": "funnel_partner",
+   "is_feedback": false
+  },
+  {
+   "file": "src/components/LvContactCta.tsx",
+   "line": 12,
+   "pages": "variant=\"buy\" を使う 6 ページ: /lv（200 行目）・/lv/buying-guide（140）・/lv/regulation-subsidy（157）・/lv/revenue-model（140）・/lv/risks（143）・/lv/what-is（136）",
+   "link_text": "購入・投資について相談する（無料） →",
+   "has_utm_now": true,
+   "existing_campaign": "funnel_lv_buy",
+   "is_feedback": false
+  },
+  {
+   "file": "src/components/LvContactCta.tsx",
+   "line": 18,
+   "pages": "variant=\"entry\" を使う 6 ページ: /lv（207 行目）・/lv/entry-guide（138）・/lv/regulation-subsidy（156）・/lv/revenue-model（141）・/lv/risks（144）・/lv/what-is（137）",
+   "link_text": "事業参入について相談する（無料） →",
+   "has_utm_now": true,
+   "existing_campaign": "funnel_lv_entry",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/lv/buying-guide/page.tsx",
+   "line": 144,
+   "pages": "/lv/buying-guide",
+   "link_text": "こちら（事業参入のご相談・無料）",
+   "has_utm_now": true,
+   "existing_campaign": "funnel_lv_entry",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/lv/entry-guide/page.tsx",
+   "line": 142,
+   "pages": "/lv/entry-guide",
+   "link_text": "こちら（購入・投資のご相談・無料）",
+   "has_utm_now": true,
+   "existing_campaign": "funnel_lv_buy",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/lv/invest/page.tsx",
+   "line": 19,
+   "pages": "/lv/invest",
+   "link_text": "無料で相談する（何かを買う必要はありません） →",
+   "has_utm_now": true,
+   "existing_campaign": "funnel_lv_invest",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/lv/invest/[slug]/page.tsx",
+   "line": 31,
+   "pages": "/lv/invest/[slug]（ビルドでは 87 本・ハブと合わせて 88 本）",
+   "link_text": "無料で相談する（何かを買う必要はありません） →",
+   "has_utm_now": true,
+   "existing_campaign": "funnel_lv_invest",
+   "is_feedback": false
+  },
+  {
+   "file": "src/components/AnkenContactCTA.tsx",
+   "line": 21,
+   "pages": "/anken・/anken/buy・/anken/sell・/anken/flow・/anken/faq（使う所は下の 8 行）",
+   "link_text": "（部品の定義）",
+   "has_utm_now": true,
+   "existing_campaign": "anken_*（utm_medium=anken）",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/anken/page.tsx",
+   "line": 132,
+   "pages": "/anken（IntentCard の external＝『まず相談したい』の 1 枚・171 行目）",
+   "link_text": "まず相談したい／守秘でお取り次ぎ／進む →（カード全体がリンク）",
+   "has_utm_now": true,
+   "existing_campaign": "anken_top",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/anken/page.tsx",
+   "line": 309,
+   "pages": "/anken",
+   "link_text": "相談する →",
+   "has_utm_now": true,
+   "existing_campaign": "anken_top",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/anken/page.tsx",
+   "line": 360,
+   "pages": "/anken",
+   "link_text": "具体的な案件の照会・売却/購入のご相談はこちら →",
+   "has_utm_now": true,
+   "existing_campaign": "anken_top",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/anken/buy/page.tsx",
+   "line": 80,
+   "pages": "/anken/buy",
+   "link_text": "購入・取得のご相談はこちら →",
+   "has_utm_now": true,
+   "existing_campaign": "anken_buy",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/anken/sell/page.tsx",
+   "line": 78,
+   "pages": "/anken/sell",
+   "link_text": "売却・譲渡のご相談はこちら →",
+   "has_utm_now": true,
+   "existing_campaign": "anken_sell",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/anken/flow/page.tsx",
+   "line": 59,
+   "pages": "/anken/flow（① お問い合わせ）",
+   "link_text": "eic-jp.org/contact（https:// なしの URL がそのまま表示されている）",
+   "has_utm_now": true,
+   "existing_campaign": "anken_flow",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/anken/flow/page.tsx",
+   "line": 85,
+   "pages": "/anken/flow",
+   "link_text": "お問い合わせ・ご相談はこちら →",
+   "has_utm_now": true,
+   "existing_campaign": "anken_flow",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/anken/faq/page.tsx",
+   "line": 92,
+   "pages": "/anken/faq",
+   "link_text": "お問い合わせはこちら →",
+   "has_utm_now": true,
+   "existing_campaign": "anken_faq",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/grid/[slug]/page.tsx",
+   "line": 685,
+   "pages": "（コメント・リンクではない）",
+   "link_text": "",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/components/AnkenContactCTA.tsx",
+   "line": 6,
+   "pages": "（コメント・リンクではない）",
+   "link_text": "",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  },
+  {
+   "file": "src/app/anken/page.tsx",
+   "line": 7,
+   "pages": "（コメント・リンクではない）",
+   "link_text": "",
+   "has_utm_now": false,
+   "existing_campaign": "",
+   "is_feedback": false
+  }
+ ],
+ "counts_scout": {
+  "sources": "【読んだもの】便: C:\\Users\\kenji\\OneDrive\\デスクトップ\\AI2026\\蓄電所ネット\\03_5月13日朝_実行\\入口の掃除と計測便_入口26ページの古い予定・符号・役名を外す・件数の自動化・相談リンクのUTMとGA4_コードのみ_Claude_Code投入_2026-10-17起草_ユウ.md（全文）／reports/ck2f-code-2026-10-04.md（全文）。本番は 2026-10-17 20:14 頃（端末時刻）に素 URL で curl（クエリ・キャッシュ回避ヘッダなし）。HTML は scratchpad\\ent1017\\prod\\cnt_*.html・.hdr、見える本文（<!-- --> を剥がし、head・script・style を除いたもの）は cnt_*.vis.txt、走査結果は cnt_scan.txt・cnt_digits.txt。スクリプトは tools\\cnt_fetch.sh・cnt_vis.py・cnt_digits.py。同じ prod フォルダにほかの役のファイルがあったので、上書きを避けるため名前の頭に cnt_ を付けた。どれも消していない。microCMS は GET 0 回（下の (b) の一致を本番の表示で確かめられたので不要だった）。リポジトリの書き換え・git 操作は 0。\n\n(a) 変電所: 出どころは src/data/substations/index.json の summary.total（Ck2f で統一）。scripts/precompute-substations.ts の 399 行（total）と 402 行（summary.total）はどちらも active.length（凍結除外）で、値は同じ。ローカル（updated_at 2026-10-17T07:17Z）は 8,346、HEAD にコミットされている版は 8,345（8/30 の版。慣例どおり未コミットで、prebuild の build:substations が作り直す）。本番は 8,346（/grid HIT age 2294・/anken・/start/*）。StartTrustBlock.tsx の 12 行と operating-bess-introduction の 20 行は、すでに index.json から自動で出しているが、読んでいるのは最上位の `.total`。トップ・/anken・/grid は `summary.total` を読む。「10社」の出どころは既存で 2 つあり、どちらも 10:\n- /reports/2026 の `Object.values(summary.by_area_slug).filter(n=>n>0).length`（SUBSTATION_AREA_COUNT・Ck2f ■4）\n- /grid の `Object.keys(AREA_META).length`（GRID_OPERATORS）\n書式は `toLocaleString('en-US')`（トップ・/anken・StartTrustBlock・/grid/prefecture と同じ）。\n\n(b) 事業者ナビの社数:\n- /operators の数え方: 本文は `getAllOperators()`（HIDDEN_OPERATORS 4 社を取得の段階で外す）に `.filter(o=>!isExcludedOperator(o.slug))` を掛けた `.length`（runtime・ISR 600）。title は `getOperatorCountSafe()`＝totalCount − EXCLUDED_OPERATOR_SLUGS.size（runtime・+1 req）。/events・/faq・/anken・/global・/industry/top50・/map/industry-chaos も `getOperatorCountSafe()` を使う。\n- 静的に同じ値を出せる既存の出どころ: `src/lib/generated/operators-category-index.json` の配列の長さ。prebuild の build:operators-detail（scripts/precompute-operators-detail.ts 108〜118 行）が `getAllOperators()` → `filter(!isExcludedOperator)` で作る。/operators の本文と同じ式で、非表示と 301 元を引いた後の数。すでに /operators/makers・/operators/aggregators・/operators/epc（revalidate なしの静的ページ）が「事業者ナビ（全{(categoryIndex as unknown[]).length}社・カテゴリ絞り込み）」として表示に使っている。verify:generated の EXPECTED_GENERATED に入っているので、ビルドごとに書かれたかを検査される。ローカルは 577 件。operators-detail-index.json のキー数（577）と operators-match-audit.json の totals.operators（577）も同じ値だが、どちらも表示には使われていない。src/data/operator-ranking.json の totalOperators は案件を持つ社の数（statsMap.size）なので別物。\n- 本番の値: /operators の title「蓄電所事業者ナビ（全国577社）」、本文「…20カテゴリ・577社で網羅」「577件中 24件を表示」（HIT age 227）。/operators/makers「全577社」（HIT age 6639）。/events・/faq・/anken・/tracker/ag 本文も 577。title（totalCount − 除外）と本文（実数）が一致したので、除外 slug は全部 microCMS に実在していて、2 つの式は今は同じ値になる。\n- 鉄則 #2/#3 との関係: この JSON を import するだけなら runtime の microCMS は 0 のまま。事業者の API は webhook がある（CLAUDE.md #125 の注記）ので、microCMS に書き込むたびにビルドが走り、件数もそれに付いていく。ビルドの取りこぼし（memory の 1199f62／da6b5cd）があると、次のビルドまで遅れる。\n- 注意: landing-page-configs.ts は scripts/verify-corrections.ts（prebuild の verify:corrections）から import されている。verify:corrections は build:operators-detail・build:substations・precompute-eic-data の後に走るので順序は問題ない。この設定ファイルは既に gitignore の src/data/eic/*.json を import しているので、生成物を読む前例もある（memory「generated-untracked-bootstrap」の「先行 step の出力だけ」に当てはまる）。contact-pages-configs.ts・StartTrustBlock・operating-bess-introduction・tracker/ag は、どのスクリプトからも import されていない。LandingPage/ContactPage の部品に 'use client' は無い（設定の型だけを import）。\n\n(c) その他: 26 ページ全部と /tracker/ag に出る共通のフッター（site-config.ts の footerLinks、94 行）が「マーケットデータ (29 系列)」と手書きしている。本番の /dashboard/market は「= 31 系列を一元可視化」（12＋7＋12・HIT age 100）。31 は src/data/eic/catalog.json（gitignore の生成物・1.37MB）の接頭辞 meti-12・fuel-7・jgb-2・us-treasury-4・fx-6 から runtime に数えている。フッター向けの軽い既存の出どころが無いので「迷うもの」とした。\n\n範囲外（入口に出ないことを本番の見える本文で確かめた）: /tracker（540+・8,200+）、/industry（540+・8,200+）、/tracker/grid、/grid/search、site-config.ts の roadmap（403社ほか・/milestones だけ）。トップは便では (h) だけだが、「10社」の手書きが 2 か所ある。「540」は 4 ページで UL9540A に誤ヒットしただけ（社数ではない）。\n\n(d) 丸めの既存の規則: 事業者数は整数そのまま（`${n}社`・区切りなし）。取れないときは件数を出さない（Ck-1a ■2-6・getOperatorCountSafe の注記）。「〜社超」「N+」に丸める既存の関数は無い。src 全体を grep して該当 0。/operators の description は 8/14 の ⑥鮮度で「400社超」をやめている。したがって「540社超」「540+」は丸めずに実数にするのが既存の規則に合う。変電所数は `toLocaleString('en-US')`。/tracker・/grid/search などの「8,200+」「8,200変電所超」は下限の焼き込みのまま（Ck2f (5)-4 で、今は誤りではないとして残した。範囲外）。",
+  "counts": [
+   {
+    "page": "/start/buy・/start/sell・/start/partner（共通部品）",
+    "file": "src/components/StartTrustBlock.tsx",
+    "line": 25,
+    "text": "蓄電所ネットは全国10社・{SUBSTATION_TOTAL_STR}変電所の系統情報DB、540社超の事業者ナビ、",
+    "what": "事業者ナビの社数「540社超」",
+    "live_value": "577（本番 /operators の title「全国577社」・本文「577社」・HIT age 227。本番 /operators/makers「全577社」）",
+    "proposed_source": "src/lib/generated/operators-category-index.json の (categoryIndex as unknown[]).length（/operators/makers・aggregators・epc が既に表示に使用）",
+    "rounding": "整数そのまま「577社」（/operators・/operators/makers と同じ。〜社超の丸め関数は既存に無い）",
+    "note": "本番の 3 ページとも「540社超」と表示（HIT age 10503／10498／7640）。部品の注記に「operating-bess-introduction 側（inline 原本）と同時に見直す」とある。同じ行の変電所数は自動（12 行・index.json の .total → 8,346）"
+   },
+   {
+    "page": "/start/buy・/start/sell・/start/partner（共通部品）",
+    "file": "src/components/StartTrustBlock.tsx",
+    "line": 25,
+    "text": "蓄電所ネットは全国10社・{SUBSTATION_TOTAL_STR}変電所の系統情報DB、",
+    "what": "系統情報DB の送配電事業者数「10社」（手書き）",
+    "live_value": "10（本番 /grid の title「全国10社」・index.json の summary.by_area_slug／by_operator は 10 キー）",
+    "proposed_source": "index.json summary.by_area_slug で値が 0 より大きいキーの数（/reports/2026 の SUBSTATION_AREA_COUNT・Ck2f ■4）。代わりに /grid の Object.keys(AREA_META).length も使える",
+    "rounding": "整数そのまま",
+    "note": "変電所数（12 行）は最上位の `.total` を読んでいる。Ck2f の統一先は `summary.total`。precompute ではどちらも active.length なので値は同じ（前後とも 8,346）"
+   },
+   {
+    "page": "/info/operating-bess-introduction",
+    "file": "src/app/info/operating-bess-introduction/page.tsx",
+    "line": 76,
+    "text": "蓄電所ネットは全国10社・{SUBSTATION_TOTAL_STR}変電所の系統情報DB、540社超の事業者ナビ、",
+    "what": "事業者ナビの社数「540社超」と送配電事業者数「10社」",
+    "live_value": "577 社・10 社（変電所 8,346 は自動で、本番の表示どおり）",
+    "proposed_source": "社数は operators-category-index.json の length。10社は summary.by_area_slug の数（StartTrustBlock と同じ）",
+    "rounding": "整数そのまま。変電所は toLocaleString('en-US')（20 行で既にそうしている）",
+    "note": "force-static。本番 HIT age 11209 で「540社超」。StartTrustBlock の原本で、文言が 2 か所に重複している。変電所数は 20 行の `(substationsIndex as { total: number }).total` で、summary.total と同じ値"
+   },
+   {
+    "page": "/start/partner",
+    "file": "src/app/start/partner/page.tsx",
+    "line": 67,
+    "text": "<strong>業界データベース</strong> — 事業者ナビ（540社超）・業界カオスマップ・事業者ランキング Top50",
+    "what": "事業者ナビの社数「540社超」",
+    "live_value": "577",
+    "proposed_source": "operators-category-index.json の length",
+    "rounding": "整数そのまま",
+    "note": "便の「ほか」に当たる 1 か所。同じ行の「Top50」は /industry/top50 の機能名（件数の自動化の対象外の候補・別行に記録）"
+   },
+   {
+    "page": "/tracker/ag",
+    "file": "src/app/tracker/ag/page.tsx",
+    "line": 20,
+    "text": "title: '事業者トラッカー (蓄電所事業者 540+ 更新タイムライン)',",
+    "what": "title の事業者数「540+」",
+    "live_value": "577（本番 /operators。同じページの本文は「全 577 件」）",
+    "proposed_source": "operators-category-index.json の length をモジュールの定数にし、静的な metadata の中で使う（generateMetadata も runtime の取得も要らない）",
+    "rounding": "整数そのまま（「540+」の下限表記はやめる）",
+    "note": "本番の <title>「事業者トラッカー (蓄電所事業者 540+ 更新タイムライン) | 蓄電所ネット」・x-vercel-cache STALE・age 7155。本文の件数は runtime の operators.length（ISR 3600）なので、ビルドとビルドの間は title と本文が一時的にずれうる"
+   },
+   {
+    "page": "/tracker/ag",
+    "file": "src/app/tracker/ag/page.tsx",
+    "line": 21,
+    "text": "description: '事業者ナビ (540+社) の追加・更新を時系列で表示。カテゴリ別フィルタ可能。当サイト独自の事業者トラッカー、無料公開・登録不要。',",
+    "what": "description の事業者数「540+社」",
+    "live_value": "577",
+    "proposed_source": "operators-category-index.json の length",
+    "rounding": "整数そのまま",
+    "note": "本番の meta description も同じ"
+   },
+   {
+    "page": "/tracker/ag",
+    "file": "src/app/tracker/ag/page.tsx",
+    "line": 24,
+    "text": "title: '事業者トラッカー (蓄電所事業者 540+)',",
+    "what": "og:title の事業者数「540+」",
+    "live_value": "577",
+    "proposed_source": "operators-category-index.json の length",
+    "rounding": "整数そのまま",
+    "note": "本番の og:title も同じ"
+   },
+   {
+    "page": "/tracker/ag",
+    "file": "src/app/tracker/ag/page.tsx",
+    "line": 69,
+    "text": "全 <span className=\"tabular-nums\" ...>{operators.length}</span> 件、更新日時降順。",
+    "what": "本文の事業者数（既に自動）",
+    "live_value": "577（本番の見える本文「全 577 件」）",
+    "proposed_source": "変更不要（runtime の getAllOperators().filter(!isExcludedOperator).length）",
+    "rounding": "整数そのまま",
+    "note": "既に自動なので参考の記録。取得に失敗すると catch で空配列になり「全 0 件」と出る（Ck2f 範囲外所見 5 の /tracker/grid と同じ型）。TrackerTimeline の「100 件を表示。全件: 577」も自動"
+   },
+   {
+    "page": "/contact/seller",
+    "file": "src/data/contact-pages-configs.ts",
+    "line": 118,
+    "text": "'事業者ナビ（403社掲載）への新規掲載申請、既存掲載情報の修正・更新依頼を承ります。',",
+    "what": "事業者ナビの掲載社数「403社」",
+    "live_value": "577",
+    "proposed_source": "operators-category-index.json の length（contact-pages-configs.ts はどのスクリプトからも import されず、ContactPageLayout はサーバー部品）",
+    "rounding": "整数そのまま「577社掲載」",
+    "note": "本番の見える本文に「事業者ナビ（403社掲載）」（HIT age 10511）。26 ページで「403社」はここだけ"
+   },
+   {
+    "page": "/buyer/new-entry",
+    "file": "src/data/landing-page-configs.ts",
+    "line": 649,
+    "text": "'接続検討の集中により申請が殺到しており、接続まで18ヶ月〜2年、想定以上の接続負担金が発生する例もあります。系統空き容量ページ(/grid、10社8,225件)で周辺の余力を先に確認するのが有効です。',",
+    "what": "変電所数「8,225件」と送配電事業者数「10社」（FAQ の回答）",
+    "live_value": "8,346 件・10 社（本番 /grid）",
+    "proposed_source": "index.json の summary.total.toLocaleString('en-US') と summary.by_area_slug の数（landing-page-configs.ts に '@/data/substations/index.json' を import。追跡済みのファイル）",
+    "rounding": "変電所は toLocaleString('en-US')、社は整数",
+    "note": "FAQ なので LandingPageFAQ の JSON-LD（FAQPage）にも同じ文字列が入る。本番 HTML では 8,225 が 4 回出る。landing-page-configs.ts は verify-corrections.ts（prebuild）から import されるが、build:substations の後に走る"
+   },
+   {
+    "page": "/buyer/landowner",
+    "file": "src/data/landing-page-configs.ts",
+    "line": 839,
+    "text": "'系統空き容量ページ(/grid、10社8,225件)で、対象地の周辺変電所の空き容量・連系条件の当たりをつけられます。',",
+    "what": "変電所数「8,225件」と「10社」（課題の欄）",
+    "live_value": "8,346 件・10 社",
+    "proposed_source": "summary.total と summary.by_area_slug の数",
+    "rounding": "変電所は toLocaleString('en-US')",
+    "note": "本番の見える本文で確認（HIT age 129）"
+   },
+   {
+    "page": "/buyer/landowner",
+    "file": "src/data/landing-page-configs.ts",
+    "line": 864,
+    "text": "description: '10社8,225件の変電所別 空き容量・連系条件。対象地周辺の系統余力を確認。',",
+    "what": "変電所数「8,225件」と「10社」（ツールの説明）",
+    "live_value": "8,346 件・10 社",
+    "proposed_source": "summary.total と summary.by_area_slug の数",
+    "rounding": "変電所は toLocaleString('en-US')",
+    "note": "本番の見える本文で確認"
+   },
+   {
+    "page": "26 ページ全部と /tracker/ag（共通のフッター）",
+    "file": "src/lib/site-config.ts",
+    "line": 94,
+    "text": "{ label: 'マーケットデータ (29 系列)', href: '/dashboard/market' },",
+    "what": "マーケットデータの系列数「29」",
+    "live_value": "31（本番 /dashboard/market「…金融指標 (12 系列) = 31 系列を一元可視化」HIT age 100。ローカルの catalog.json は meti 12・fuel 7・jgb 2・us-treasury 4・fx 6）",
+    "proposed_source": "既存の出どころは /dashboard/market の runtime 集計だけ（src/data/eic/catalog.json の接頭辞。gitignore の生成物・1.37MB）。フッターに軽い既存の出どころが無い",
+    "rounding": "整数そのまま（/dashboard/market の totalSeries）",
+    "note": "迷うもの（ユウ裁定）。SiteFooter は全ページ共通で footerLinks から描く。catalog を import するとフッターが重くなる。数を外すか残すかは、新しい言い回しを足さない決まりとの兼ね合いになる"
+   },
+   {
+    "page": "26 ページ全部と /tracker/ag（共通のフッター）",
+    "file": "src/lib/site-config.ts",
+    "line": 95,
+    "text": "{ label: '海外5市場ハブ', href: '/global' },",
+    "what": "海外の市場数「5」（機能名）",
+    "live_value": "5（/global の h1「海外5市場ハブ (蓄電池市場比較)」）",
+    "proposed_source": "なし（/global も title・h1 で手書きにしている機能名）",
+    "rounding": "—",
+    "note": "件数の自動化の対象外の候補（機能名で、データと連動しない）。迷うもの"
+   },
+   {
+    "page": "/anken",
+    "file": "src/app/anken/page.tsx",
+    "line": 348,
+    "text": "<li><Link href=\"/grid\">系統データ（全国 {SUBSTATION_TOTAL_STR} 変電所地点）</Link></li>",
+    "what": "変電所数（既に自動）",
+    "live_value": "8,346（本番の見える本文「系統データ（全国 8,346 変電所地点）」HIT age 124）",
+    "proposed_source": "変更不要（20 行で summary.total.toLocaleString('en-US')）",
+    "rounding": "toLocaleString('en-US')",
+    "note": "参考の記録"
+   },
+   {
+    "page": "/anken",
+    "file": "src/app/anken/page.tsx",
+    "line": 349,
+    "text": "<li><Link href=\"/operators\">事業者データベース{opCount != null ? `（${opCount} 社）` : ''}</Link></li>",
+    "what": "事業者数（既に自動・runtime）",
+    "live_value": "577（本番「事業者データベース（577 社）」）",
+    "proposed_source": "今は getOperatorCountSafe()（runtime・revalidate 86400・+1 req/日）。全部を静的にするなら operators-category-index.json の length に替えられる（任意）",
+    "rounding": "整数そのまま・取れないときは出さない",
+    "note": "手書きではないので (e) の対象外。ただしファイル冒頭の注記「microCMS 不使用・静的」と食い違っている。/anken の「10件」などの分布は ANKEN_DATA から数えていて自動"
+   },
+   {
+    "page": "/start/buy・/start/partner",
+    "file": "src/app/start/buy/page.tsx",
+    "line": 173,
+    "text": "<li><Link href=\"/reports/2026\">業界レポート2026（全10章）</Link></li>",
+    "what": "業界レポートの章の数「全10章」",
+    "live_value": "10（/reports/2026 自身が title・目次で「全10章」と手書き）",
+    "proposed_source": "既存の出どころ無し（目次も手書き）",
+    "rounding": "—",
+    "note": "/start/partner の 170 行も同じ文。レポートの構成でデータとは連動しないので、自動化の対象外の候補。迷うもの"
+   },
+   {
+    "page": "/start/partner",
+    "file": "src/app/start/partner/page.tsx",
+    "line": 67,
+    "text": "事業者ランキング Top50",
+    "what": "ランキングの表示枠「Top50」（機能名）",
+    "live_value": "50（/industry/top50 の機能名）",
+    "proposed_source": "なし（機能名）",
+    "rounding": "—",
+    "note": "件数の自動化の対象外の候補"
+   },
+   {
+    "page": "/start/buy・/start/sell・/start/partner・/anken/flow",
+    "file": "src/app/start/sell/page.tsx",
+    "line": 72,
+    "text": "<h2>ご相談時に「あると話が早い」情報（5点）</h2>",
+    "what": "ページ内の箇条の数（5点・3ステップ・5類型・4ステップ）",
+    "live_value": "ページ内の箇条の数と一致（データと連動しない）",
+    "proposed_source": "不要",
+    "rounding": "—",
+    "note": "対象外（ページ内の列挙の数）。ほかに start/sell:85・87、start/buy:92、start/partner:81・91・105、anken/flow:47、トップの「3つの入口」"
+   },
+   {
+    "page": "/seller/epc",
+    "file": "src/data/landing-page-configs.ts",
+    "line": 1036,
+    "text": "'全国の蓄電池プロジェクト案件の地理分布 (10 エリア別)、規模 (MW 級)、稼働時期、オーナー業種の把握が散在情報で困難。',",
+    "what": "エリアの数「10 エリア」",
+    "live_value": "10（summary.by_area_slug の数）",
+    "proposed_source": "summary.by_area_slug の数（/reports/2026 と同じ）",
+    "rounding": "整数",
+    "note": "迷うもの。課題の説明で、サイトの件数ではない。自動にするなら出どころは上のとおり"
+   },
+   {
+    "page": "/buyer/investor",
+    "file": "src/data/landing-page-configs.ts",
+    "line": 733,
+    "text": "label: '電力大手9社 ROA 推移（FY2014〜23）― 関西4.4%最高、東京HD1.1%最低',",
+    "what": "記事の題の「電力大手9社」",
+    "live_value": "—（外部の Insight 記事の題・事実）",
+    "proposed_source": "不要",
+    "rounding": "—",
+    "note": "対象外（サイトの件数ではない）。738・743・748 行も同じ"
+   },
+   {
+    "page": "/buyer/balancing-market・/buyer/capacity-market",
+    "file": "src/data/landing-page-configs.ts",
+    "line": 325,
+    "text": "需給調整市場 (5 商品 × 9 エリア) への参加を検討中の蓄電池事業者向け。",
+    "what": "制度の構成「5 商品 × 9 エリア（45 系列）」",
+    "live_value": "—（制度の事実・2026-09-22 に訂正済み）",
+    "proposed_source": "不要",
+    "rounding": "—",
+    "note": "対象外（サイトの件数ではない）。329・335・337・349・380・408・413 行（balancing）、282 行（capacity のツールの説明）も同じ"
+   },
+   {
+    "page": "/（トップ・範囲外）",
+    "file": "src/app/page.tsx",
+    "line": 162,
+    "text": "変電所 {substationsCountStr}件/10社 · 中部マップ {chubuCountStr}箇所",
+    "what": "送配電事業者数「10社」（手書き）",
+    "live_value": "10（本番トップ「変電所 8,346件/10社」）",
+    "proposed_source": "summary.by_area_slug の数",
+    "rounding": "整数",
+    "note": "範囲外（便ではトップは (h) だけ）。38 行の「全国10社・${substationsCountStr}件」も同じ。変電所・解説・用語の件数は自動"
+   },
+   {
+    "page": "/tracker（範囲外）",
+    "file": "src/app/tracker/page.tsx",
+    "line": 40,
+    "text": "desc: '事業者ナビ (540+社) の追加/更新タイムライン',",
+    "what": "事業者数「540+社」",
+    "live_value": "577",
+    "proposed_source": "operators-category-index.json の length",
+    "rounding": "整数そのまま",
+    "note": "範囲外（入口 26 ページにも /tracker/ag にも出ない。本番 /tracker だけ）。34 行「(8,200+ 件)」も同じページ"
+   },
+   {
+    "page": "/industry（範囲外）",
+    "file": "src/app/industry/page.tsx",
+    "line": 161,
+    "text": "desc: '補助金・系統 (変電所8,200+)・事業者 (540+)・プロジェクトDB の更新を時系列タイムラインで一望。',",
+    "what": "変電所数「8,200+」・事業者数「540+」",
+    "live_value": "8,346・577",
+    "proposed_source": "summary.total・operators-category-index.json の length",
+    "rounding": "変電所は toLocaleString('en-US')・社は整数",
+    "note": "範囲外（入口に出ない。本番 /industry だけ）"
+   },
+   {
+    "page": "/milestones（範囲外）",
+    "file": "src/lib/site-config.ts",
+    "line": 134,
+    "text": "'解説記事125本、用語集1,516語、編集方針・規約・プライバシーポリシー、お役立ちサイト210件、事業者ナビ403社など、業界知識基盤が整備済み。',",
+    "what": "roadmap の解説本数・用語数・リンク数・社数",
+    "live_value": "—（Sprint 1 時点の記録の文）",
+    "proposed_source": "—",
+    "rounding": "—",
+    "note": "範囲外。siteConfig.roadmap を使うのは src/app/milestones/page.tsx だけで、トップでも入口でもない。161 行の「約1,081箇所」も同じ"
+   },
+   {
+    "page": "/tracker/grid（範囲外）",
+    "file": "src/app/tracker/grid/page.tsx",
+    "line": 22,
+    "text": "description: '変電所空き容量データの最新更新を時系列で表示。10電力会社・8,200+ 変電所をカバー。当サイト独自の系統データトラッカー、無料公開・登録不要。',",
+    "what": "変電所数「8,200+」",
+    "live_value": "8,346",
+    "proposed_source": "summary.total",
+    "rounding": "toLocaleString('en-US')",
+    "note": "範囲外（Ck2f (5)-4 で下限の焼き込みとして残したもの）。src/app/grid/search/page.tsx:56「8,200変電所超」も同じく範囲外"
+   }
+  ]
+ },
+ "roles_scout": {
+  "method": "読んだ便ファイル: C:\\Users\\kenji\\OneDrive\\デスクトップ\\AI2026\\蓄電所ネット\\03_5月13日朝_実行\\入口の掃除と計測便_入口26ページの古い予定・符号・役名を外す・件数の自動化・相談リンクのUTMとGA4_コードのみ_Claude_Code投入_2026-10-17起草_ユウ.md（全177行・(c)に従った）。\n\n【コード】src の全ファイル 1,085 本と public のテキスト系 4 本を、Python（python -I -X utf8）の os.walk で読んだ。gitignore 済みの src/lib/generated 12 本も含む（Grep ツールは使っていない）。検出はカタカナの連なり（正規表現 [\\u30A1-\\u30FA\\u30FC]+）を取り出し、連なりが役名そのもの（ノブ／セイ／チサ／モリ／リク／ユウ／リン）と完全に一致するものだけを拾った。役名を含む長い語は全部数えたうえで、語の一部として外した。主なもの: リンク289・エンジニアリング189・リクワイアメント182・リクエスト29・マトリクス・ニッセイ18・メモリ11・モリタホールディングス・ヒュージモリ・マルチサイト・ユウロピウム・グリン（グリン・エナジー）。\nさらに、完全一致した「リン」108 件をすべて目で確かめ、リン酸の類（LFP 等）を外した。拾ったものは描画する側のコードまで追い、表示されるかを確かめた（sop-schedule→/ops/freshness の「担当」列、milestones.ts→/milestones/[slug] の ach.detail。source-documents.json の note と subsidies-excluded.ts の row は描画されないことも確認）。\n本番は素 URL を curl -o で取得し（prod\\names_*.html）、<!-- -->・script・style を除いた見える本文で逐語を確かめた。取得したのは /ops/freshness・/milestones・/milestones の 4 ページ・/seller/developer・/news/pr-2025-06-11-co55631-143 の計 9 本で、全部 200。x-vercel-cache は /seller/developer が HIT（age=130）、ほかは PRERENDER（age=0）。\n\n【microCMS】GET のみ（書込 0）。リクエストは 1 本ずつ順に送り、毎回 0.35 秒あけた。orders=-publishedAt,-createdAt の offset ページングで、どの API も取得件数・一意の id 数・totalCount の 3 つが一致した。\n- industry-events: 1 回（404＝API は無い）\n- faq: 1 回（62/62）\n- links: 計 8 回（212/212）。最初の 2 回は 2 ページ目が 400「Response body size is too long」で捨てた。原因の確認に 1 回。取り直しは 5 回（1 ページ目 limit=100・400 が 1 回・残りは limit=50 で 3 ページ）\n- policy-events: 2 回（139/139）\n- subsidies: 1 回（97/97）\n- explainer: 3 回（263/263）\n- glossary: 16 回（1,535/1,535）\n- operators: 6 回（583/583）\n- projects: 4 回（379/379）\n- news: 15 回（1,402/1,402）\n- substations: 項目を見るための limit=3 が 1 回と、本取得が 84 回（8,353/8,353・凍結を含む）。fields は文字列とセレクトの欄に絞った（id,slug,name,op_constraint,external_id,notes,prefecture,facility_class,operator,area,voltage_class,oc_possibility,data_source_format,source_url,last_updated,fetched_at）\n- 合計 142 リクエスト\n\n判定はコードと同じ規則で、全レコードの文字列の値すべて（参照先として展開された中身を含む）に当てた。\n- 役名との完全一致は 276 件。このうちリン 275 件はすべて「リン酸」で除外した（explainer 10・glossary 43・faq 1・news 69・operators 2・projects 6・links 144）。残りはユウ 1 件だけ。\n- 語の一部として除外したもの: ニッセイ13・チンブンセイ2／ブンセイ1（LehmanSoft の代表者名）・ユウコ2（ヘキサ・エネルギーサービスの職務執行者「ユウコ・シャー」）・リクロマ（社名）・ヒュージモリ・モリタ・エイモリー（エイモリー・ロビンス）・マルチサイト・リクワイアメント1014 など。\n- microCMS では、ノブ・セイ・チサ・モリ・リクの完全一致は 0 件。\n\n【範囲外の所見（参考・直していない）】milestones.ts の 2 か所（/milestones/2026-05-22-feature-complete と 2026-06-11-vip-citation）に「eic-jp.org (運営窓口、10 年実績)」「eic-jp.org（運営窓口・10 年実績）」がある＝便の (d) の型。/ops/freshness の担当列には、一覧外の役名らしい「ジン」と「山口/加藤/斎藤」も出ている。\n\n一時物: scratchpad\\ent1017\\tools\\ に names_cms_fetch.py・names_cms_fetch2.py・names_cms_probe.py・names_cms_one.py・names_cms_scan.py・names_cms_scan2.py・scan_code_names.py・scan_kata_runs.py・scan_exact.py・visible_names.py。cms\\ に names_*.json（10 API 分と fetchlog 3 本）と names_scan_out*.txt。prod\\ に names_*.html と .hdr。どれも消していない。\nリポジトリの変更・git 操作・.env の表示・Write ツールの使用は、いずれも 0。",
+  "hits": [
+   {
+    "where": "code",
+    "location": "src/data/landing-page-configs.ts:1223（/seller/developer の FAQ「プロジェクトデベロッパー向けの主な支援内容は?」の answer）",
+    "name": "リク",
+    "context": "E-3 自治体条例 (11/21 公開) 情報。SPC スキーム設計の助言は弊社顧問チーム (公認会計士、リク等) でご相談可能。",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "便の (c) が名指ししている箇所そのもの。本番の素 URL /seller/developer（200・x-vercel-cache HIT・age=130）の見える本文で、同じ文言を逐語で確認した。コード中の「リク」はここ 1 か所だけ（ほかはリクワイアメント・リクエスト・マトリクス等の語の一部）。"
+   },
+   {
+    "where": "code",
+    "location": "src/data/milestones.ts:90（slug 2026-05-22-feature-complete・achievements「data.eic-jp.org 連携稼働」の detail）",
+    "name": "リン",
+    "context": "リン (data.eic-jp.org 編集長) との Phase D 第 1 期連動。catalog 約 142 系列引用",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "「編集長」という肩書きの人として出ている。/milestones/[slug] が ach.detail を描画し、sitemap にも載っている。本番の素 URL /milestones/2026-05-22-feature-complete（200・PRERENDER）の見える本文に逐語で出ている。26 ページの範囲の外。"
+   },
+   {
+    "where": "code",
+    "location": "src/data/milestones.ts:90（同じ detail の後半）",
+    "name": "リン",
+    "context": "追加完了時の実測値、リン case A 準拠、L-EIC-008 §1 で 5/22 朝の実体確認で確定)",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "同じ文の中で、前の「編集長」と同じ人の案を指している。本番 /milestones/2026-05-22-feature-complete の見える本文に出ている。"
+   },
+   {
+    "where": "code",
+    "location": "src/data/milestones.ts:229（slug 2026-06-11-vip-citation・「data.eic-jp.org の中立データ基盤を引用」の detail）",
+    "name": "リン",
+    "context": "リン担当の data.eic-jp.org（catalog 512 系列 / Insight 77 本、2026-06-11 時点）を一次データとして引用。",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "「担当」の人として出ている。本番の素 URL /milestones/2026-06-11-vip-citation（200・PRERENDER）の見える本文に出ている。26 ページの範囲の外。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/sop-schedule.ts:30,35,41,45,52,57（persona 欄 → src/app/ops/freshness/page.tsx:113 の「担当」列）",
+    "name": "セイ",
+    "context": "補助金 /subsidies 週次（月曜） セイ 2026/10/19 データ鮮度チェック",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "運用者向けのページだが、認証なしで公開されている（本番の素 URL /ops/freshness が 200・PRERENDER）。robots は noindex, nofollow で、robots.txt でも /ops/ を Disallow している。サイト内のどこからもリンクされていない。表の見出しが「担当」で、人として出ている。表示される値は「セイ」「ノブ/セイ」「セイ/ノブ」「ノブ/セイ/リン」。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/sop-schedule.ts:32,47（persona → /ops/freshness「担当」列）",
+    "name": "モリ",
+    "context": "データ鮮度チェック /ops/freshness 週次（月曜） モリ 2026/10/19 政策・パブコメ予定",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "/ops/freshness（公開 URL・noindex・リンクなし）の担当列に出ている。表示される値は「モリ」「チサ/モリ」。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/sop-schedule.ts:38,41,42,52,55,57（persona → /ops/freshness「担当」列）",
+    "name": "ノブ",
+    "context": "ニュース取込 /news 月次（毎月 1 日） ノブ 2026/11/01 解説 新規 2-4 本",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "/ops/freshness（公開 URL・noindex・リンクなし）の担当列に出ている。同じ表には、一覧外の「ジン」（海外 5 市場）と「山口/加藤/斎藤」（火災事例 DB 四半期レビュー）も担当として出ている。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/sop-schedule.ts:43,44,47,49,50（persona → /ops/freshness「担当」列）",
+    "name": "チサ",
+    "context": "イベント /events 月次（毎月 1 日） チサ 2026/11/01 プロジェクト DB /projects",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "/ops/freshness（公開 URL・noindex・リンクなし）の担当列に出ている。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/sop-schedule.ts:57（persona 'ノブ/セイ/リン' → /ops/freshness「担当」列）",
+    "name": "リン",
+    "context": "業界レポート 2026 本編 /reports/2026 年次 ノブ/セイ/リン 2026/12/25",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "/ops/freshness（公開 URL・noindex・リンクなし）の担当列に出ている。"
+   },
+   {
+    "where": "microcms",
+    "location": "news/pr-2025-06-11-co55631-143(jrlpg2-8mc)/body",
+    "name": "ユウ",
+    "context": "サングロウ・ジャパン株式会社（東京都中央区、代表取締役：コウ ユウ、以下「サングロウ・ジャパン」）から調達",
+    "as_person": true,
+    "reader_visible": true,
+    "note": "社外の実在の人（サングロウ・ジャパンの代表取締役）の氏名の一部で、たまたま社内の役名と同じ音になっている。社内の役名ではない。本番の素 URL /news/pr-2025-06-11-co55631-143（200・PRERENDER）の見える本文に逐語で出ている。報告だけで、直さない（便の決まりどおり microCMS には触れない）。microCMS で完全一致した残りは、すべてリン酸。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/sop-schedule.ts:23（型定義のコメント）",
+    "name": "セイ／ノブ",
+    "context": "persona: string;     // 'セイ' / 'ノブ' / ...",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/app/info/operating-bess-introduction/page.tsx:67（JSX コメント）",
+    "name": "ノブ",
+    "context": "{/* 信頼性強化（2026-07-12 ノブ案）。記載は EIC 公式サイト・自サイトで出典が取れた事実",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "JSX コメントで、HTML には出ない。"
+   },
+   {
+    "where": "code",
+    "location": "src/components/StartTrustBlock.tsx:3（ファイル冒頭のコメント）",
+    "name": "ノブ",
+    "context": "承認済み3点ブロック（2026-07-12 ノブ案・EIC公式/自サイトで出典が",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/middleware.ts:18",
+    "name": "ユウ",
+    "context": "4 グループ（docs/glossary-dup-candidates.md）をユウ監査。",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/app/faq/page.tsx:88",
+    "name": "ユウ",
+    "context": "実データに合わせて調整（要ユウ確認・1定数で変更可）",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/app/grid/search/page.tsx:487,529",
+    "name": "ユウ",
+    "context": "{/* ユウ照合(2026-08-26): 行の「当サイト取込 =各社デ",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "JSX コメント 2 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/app/map/industry-chaos/page.tsx:112",
+    "name": "ユウ",
+    "context": "{/* PC可読性（ユウ実測 2026-07-20）: 図の説明・注記 13→15p",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "JSX コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/components/Report2026Body.tsx:7,29",
+    "name": "ユウ",
+    "context": "// PC可読性（ユウ実測 2026-07-20）: 本文14→16px・注記13",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント 2 か所（7 行目はファイル名「…_2026-07-02_ユウ.md」）。"
+   },
+   {
+    "where": "code",
+    "location": "src/data/incidents.ts:288,312,336",
+    "name": "ユウ",
+    "context": "// 四半期Q4（2026-10-01 ユウ起草・2026-10-05 CC が一次で照合して投入）。",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "// コメント 3 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/data/source-documents.json:3179（note 欄）",
+    "name": "ユウ",
+    "context": "reports/subsidies-fix-2026-10-16.md (5b)・名前を変えるかはユウの裁定待ち）",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "台帳の note 欄。描画するコードは無い（tools 系ページはコメントで台帳を参照するだけ）。"
+   },
+   {
+    "where": "code",
+    "location": "src/data/subsidies-excluded.ts:45（row 欄）",
+    "name": "ユウ",
+    "context": "row: 'ユウ裁定 2026-10-16（reports/subsidies-fix-2026-10-16.md）'",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "内部の経緯欄。row を描画する所は無く、使われるのは slug だけ（isExcludedSubsidy）。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/edu-links.ts:22",
+    "name": "ユウ",
+    "context": "/** 教材13本（#番号はユウ起案2026-07-18の呼称） */",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/eic-license.ts:12",
+    "name": "ユウ",
+    "context": "リンク先は https://www.jepx.jp/ トップ」（ユウ裁定・Lc-1 ■3）。",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/explainer-excluded.ts:55",
+    "name": "ユウ",
+    "context": "T7 実装便（2026-10-15・ユウ裁定＝是正便 (6)-1）で「p.63」に直した。",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "// コメント（reason 欄ではない）。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/glossary-301.ts:167",
+    "name": "ユウ",
+    "context": "explainerリンク監査 新規発見（2026-07-04 ユウ監査確定）",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/grid-search-core.ts:4,22,71",
+    "name": "ユウ",
+    "context": "Gr11（2026-08-25・ユウ裁定 A案）:",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント 3 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/operator-match.ts:362",
+    "name": "ユウ",
+    "context": "保有案件への alias 適用（2026-08-23・§1 ユウ裁定の必須条件）",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/operators-301.ts:12",
+    "name": "ユウ",
+    "context": "── 経緯（2026-08-23・ユウ実測 → CC 是正）",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/policy-utils.ts:5",
+    "name": "ユウ",
+    "context": "//   ユウ選定監査（policy-calendar分析_2026-07",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/projects-301.ts:13,83,89,97,108,119",
+    "name": "ユウ",
+    "context": "// 14 ADW三重松阪蓄電所（2026-09-08 Pj2-G・ユウ裁定 Pj2-F(1)）",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント 6 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/projects-body.ts:9,12,137",
+    "name": "ユウ",
+    "context": "■ 対象の判定（テンプレ指紋・ユウ裁定Aの条件① により逐語で持つ）",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント 3 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/projects-excluded.ts:68,77",
+    "name": "ユウ",
+    "context": "// 2026-09-08 Pj2-G 追修便（ユウ裁定）: 2案件の混載エントリ。",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント 2 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/related-cards.ts:636",
+    "name": "ユウ",
+    "context": "// Pj2-G ■3.5（2026-09-08・ユウ裁定）: 一覧除外レコード",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/app/explainer/[slug]/page.tsx:273・src/app/glossary/[slug]/page.tsx:298",
+    "name": "リン",
+    "context": "{/* 制度の仕組み（EIC Data 教材）— リン共有2026-07-18 */}",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "JSX コメント 2 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/app/incidents/page.tsx:95",
+    "name": "リン",
+    "context": "{/* Tier 2/3 UI 統一: 分類 C 記事系 max-w 896 (読み物用、リン推奨規約) */}",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "JSX コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/app/lv/invest/[slug]/page.tsx:151・src/app/lv/revenue-model/page.tsx:135・src/components/LvInvestEduLinks.tsx:3・src/lib/lv-invest.ts:37",
+    "name": "リン",
+    "context": "EIC Data 教材への発リンク（相互リンク・リン連携）",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント 4 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/lv-invest.ts:42",
+    "name": "リン",
+    "context": "教材への相互リンクに付与する共通 UTM（edu_cluster 流入計測用・リン→GA4）。",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   },
+   {
+    "where": "code",
+    "location": "src/app/tools/balancing-revenue/page.tsx:11・src/components/BalancingRevenueEstimator.tsx:18",
+    "name": "リン",
+    "context": "v2 (2026-05-24): FY2024 既定 + FY2025 トグル（リン回答反映）",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント 2 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/lib/edu-links.ts:2,4",
+    "name": "リン",
+    "context": "同一ファミリーサイト data.eic-jp.org（CC BY 4.0・リン運営）の「仕組み・読み方」教材",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント 2 か所。"
+   },
+   {
+    "where": "code",
+    "location": "src/data/source-documents.json:18（note 欄）",
+    "name": "リン",
+    "context": "217,685 バイト・sha256 が R-30 §2（リン・10/8）の記録と一致。",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "台帳の note 欄で、描画されない。"
+   },
+   {
+    "where": "code",
+    "location": "src/types/eic.ts:31",
+    "name": "リン",
+    "context": "D-017 ADR (2026-05-17/18 リン側完成): catalog 自己記述による csv 配置パス",
+    "as_person": true,
+    "reader_visible": false,
+    "note": "コメント。"
+   }
+  ]
+ },
+ "uncertain": [
+  {
+   "page": "/contact/buyer・/contact/seller・/contact/media・/contact/investor・/contact/advisor（共通部品 ContactPageLayout）",
+   "rule": "f",
+   "visible_text": "お問い合わせフォームはエネルギー情報センター（eic-jp.org）が管理・運営しています。 内容確認後、担当者よりご連絡いたします（平日 10:00–18:00 目安）。",
+   "source_file": "src/components/ContactPage/ContactPageLayout.tsx",
+   "source_line": 125,
+   "proposal": "迷うもの（ユウの裁定）。案1: 残す（時間帯の目安で、返信の早さの約束ではない）。案2: 括弧「（平日 10:00–18:00 目安）」だけ外す",
+   "note": "返信の日数の約束ではないが、受付時間を約束する書き方。https://eic-jp.org/contact（200・40,693B）の本文に営業時間・平日・10:00 の記載は無く、EIC の一次で裏が取れない。「担当者よりご連絡いたします」は /start 型の「折り返しご連絡します」と同じ意味なので問題にしない"
+  },
+  {
+   "page": "/contact",
+   "rule": "f",
+   "visible_text": "ご回答は平日 10:00〜18:00 を目安にしています。内容によっては回答にお時間をいただく場合があります。",
+   "source_file": "src/app/contact/page.tsx",
+   "source_line": 179,
+   "proposal": "迷うもの（ユウの裁定）。案1: 残す。案2: 箇条書きのこの 1 項目を外す",
+   "note": "上の ContactPageLayout L125 と同じ内容で、こちらは /contact 用に別に書かれている（10:00〜18:00 は全角の波ダッシュ、L125 はエンダッシュ）。EIC の /contact には営業時間の記載が無い"
+  },
+  {
+   "page": "全ページ共通のフッター（担当 10 ページすべてに出る）",
+   "rule": "e",
+   "visible_text": "マーケットデータ (29 系列)",
+   "source_file": "src/lib/site-config.ts",
+   "source_line": 94,
+   "proposal": "迷うもの（ユウの裁定）。フッターは担当 26 ページの本文ではないが、入口ページに出る手書きの件数。いまの値は /dashboard/market の「METI 12 + Fuel 7 + Finance 10 = 29 系列」と合っている。自動にするなら /dashboard/market の系列の定義から数える",
+   "note": "29 は src/app/dashboard/market/page.tsx L10・L36 にも手書きで書かれている。本番 /dashboard/market（200・3,073,121B）の本文も 29 系列で、いま食い違いは無い"
+  },
+  {
+   "page": "/contact/seller",
+   "rule": "a",
+   "visible_text": "データ連携・API提供に関するご相談 自社データや公開情報を蓄電所ネットと連携したい場合のご相談を受け付けています。",
+   "source_file": "src/data/contact-pages-configs.ts",
+   "source_line": 128,
+   "proposal": "迷うもの（ユウの裁定）。日付つきの予告ではない。ただ「API提供」は出ていない機能を思わせる。外すなら見出しの「・API提供」の語だけを外す（説明文は残す）",
+   "note": "相談の話題として書かれた文で、予告とまでは言い切れない。同じ節の /contact 一覧カードの説明（L309「事業者掲載、プロジェクト登録、データ連携のご依頼」）には API の語が無い"
+  },
+  {
+   "page": "/buyer/new-entry",
+   "rule": "i",
+   "visible_text": "そもそも儲かるのか・事業性が読めない JEPX＋容量市場＋需給調整＋長期脱炭素オークションの「積み上げ型(レベニュースタッキング)」収益構造を実データで把握。高圧2MW/8MWhで初期5〜6億円が目安、収益は電力市場取引の巧拙で変動。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 572,
+   "proposal": "出典が無いので文ごと外す候補（ページにも台帳 src/data/source-documents.json にも、この費用の出典が無い）",
+   "note": "市場規模ではなく初期費用の目安。(i) の「市場規模などの数」に入れるかはユウの裁定。"
+  },
+  {
+   "page": "/buyer/new-entry",
+   "rule": "i",
+   "visible_text": "Q. 系統用蓄電池の初期費用と回収期間の目安は?+ 高圧の代表例(出力2MW・容量8MWh)で初期5〜6億円が目安。収益は電力市場取引の巧拙で変動し回収年数も幅があります。IRRシミュレーターで自案件の前提を入れて試算できます。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 644,
+   "proposal": "出典が無いので文ごと外す候補。外すと問いの「目安は?」への答えが無くなるので、問いと答えの組ごと外すかもユウの裁定",
+   "note": "上の painPoint（572 行）と同じ数字。"
+  },
+  {
+   "page": "/buyer/new-entry",
+   "rule": "i",
+   "visible_text": "接続検討に18ヶ月〜2年・接続負担金 接続検討の集中で申請が殺到、接続まで18ヶ月〜2年・想定以上の接続負担金が発生する例も。系統空き容量(/grid)で周辺の余力と立地適性を先に確認。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 578,
+   "proposal": "出典が無いので文ごと外す候補。同じ数字が painPoint の見出し（576 行「接続検討に18ヶ月〜2年・接続負担金」）と FAQ（649 行）にもある",
+   "note": "台帳に資源エネルギー庁「系統用蓄電池の現状と課題」（2024-05-29・meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/062.html）はあるが、「18ヶ月〜2年」がそこに書かれているかは確かめていない（meti は curl に 202）。ページに出典の記載は無い。"
+  },
+  {
+   "page": "/buyer/investor",
+   "rule": "i",
+   "visible_text": "収益のブレ(市場依存)とリスク評価 蓄電池・VPPは高単価商品(三次②等)で「当たれば」単価が桁違い、ただし約定は稀。揚水は1〜4円の基準線。蓄電池109.43/VPP46.24/揚水0.72(三次②FY2024・円/ΔkW・30分／EPRX公表の月次値から当サイト集計)＝約152倍の二極構造をデータで把握。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 694,
+   "proposal": "出典が無ければ文ごと外す候補。続く 3 値と倍率は catalog から出ていて出典（EPRX 公表の月次値から当サイト集計）がついているので残す",
+   "note": "「1〜4円」は catalog から出していない手書き（揚水 FY2024 の catalog 値は 0.72）。同じカード内の出典表記がこの数にも掛かるかは判断がつかない。"
+  },
+  {
+   "page": "/buyer/investor",
+   "rule": "i",
+   "visible_text": "利回りの相場観・実態がつかめない 融資型ファンドで予定利回り数%台、エクイティ/表面では高めをうたう案件もあるが変動が大きい。実データと収益構造で相場観を補正。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 688,
+   "proposal": "出典の無い数として外すか、具体の数ではないので残すかの裁定（FAQ 777 行「融資型ファンドで予定利回り数%台、…」も同じ）",
+   "note": "「予定利回り」は金融の用語で (a) の「予定」ではない（(a) から除外）。"
+  },
+  {
+   "page": "/buyer/investor",
+   "rule": "f",
+   "visible_text": "総収益は「単価×自社入札量×落札率」で、約定の希少性を必ず織り込む(過大評価を避ける)。／FAQ: 総収益は「単価×自社入札量×落札率」で、約定の希少性(低い約定率)を必ず織り込んでください。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 700,
+   "proposal": "残す案（読者への注意で、当方の約束ではない）。ユウの確認だけ",
+   "note": "(f) の正規表現「必ず」に当たったので記録。返信の早さ等の約束ではない。"
+  },
+  {
+   "page": "/buyer/landowner",
+   "rule": "i",
+   "visible_text": "蓄電所の用地条件(目安700〜1,000㎡・高圧線が近い・大型車の搬入路)、…／目安は700〜1,000㎡、近くに高圧線、大型トレーラーの搬入路(幅6〜8m)、住居から一定距離など。／FAQ: 目安として面積700〜1,000㎡程度、近くに高圧線、大型トレーラーの搬入路(道路幅6〜8m以上)、…",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 821,
+   "proposal": "出典が無い数として外すか、用地条件の目安として残すかの裁定。外すと用地ページの主旨が抜ける",
+   "note": "市場規模ではない。ページと台帳に出典なし。"
+  },
+  {
+   "page": "/buyer/factory-commercial",
+   "rule": "i",
+   "visible_text": "工場・商業施設の電気代を、蓄電池で 20-30% 削減する",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 95,
+   "proposal": "出典の無い数。h1 なので文ごと外すとヒーローの見出しが無くなる。外すか・数を抜くかはユウの裁定（言い換えはしない決まり）",
+   "note": "削減率を見出しで言い切っており約束にも近い（(f) の型）。"
+  },
+  {
+   "page": "/buyer/factory-commercial",
+   "rule": "i",
+   "visible_text": "Q. 初期費用と回収期間はどれくらいですか?+ 規模・用途により異なりますが、500kWh クラスで初期費用 8,000-12,000 万円、補助金活用後の回収期間は 7-12 年が目安です。IRR シミュレーターで具体的な試算が可能です。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 182,
+   "proposal": "出典が無いので文ごと外す候補。外すと問いへの答えが無くなるので、問いと答えの組ごと外すかの裁定",
+   "note": "市場規模ではなく費用・回収年数の目安。"
+  },
+  {
+   "page": "/buyer/factory-commercial",
+   "rule": "other",
+   "visible_text": "★ 当サイト独自・無料 火災リスク自己診断 設置検討中の蓄電池の火災リスクを自己診断。UL9540A / NFPA855 準拠。 使ってみる →",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 159,
+   "proposal": "「UL9540A / NFPA855 準拠。」を外す候補（ツール側 src/app/tools/fire-risk-check/page.tsx:11 は「UL9540A / NFPA 855 / 消防法 は参考」と書いており、「準拠」は言い過ぎ）",
+   "note": "(a)〜(i) のどれにも当たらない。ツール自身の og:title にも「UL9540A 準拠」があり（同 page.tsx:32）、範囲外。"
+  },
+  {
+   "page": "/buyer/capacity-market",
+   "rule": "b",
+   "visible_text": "★ 当サイト独自・無料 容量市場入札ツール 容量市場の入札価格を試算。最新の約定価格・落札枠を反映、Backfill 5 年分データで傾向分析。 使ってみる →",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 270,
+   "proposal": "「Backfill 5 年分データで傾向分析。」を外す候補（「Backfill」はデータ取り込みの社内の言い方。ツールに「傾向」の機能も無い・「5 年分」も手書き）",
+   "note": "(b) の社内の言い方・(e) の手書きの数・(a) の出ていない機能のどれにも少しずつ当たる。"
+  },
+  {
+   "page": "/buyer/capacity-market",
+   "rule": "i",
+   "visible_text": "Q. 容量市場の今後の見通しは?+ 日本のエネルギー基本計画では 2030 年までに蓄電池容量を大幅拡大予定。容量市場の枠も連動して拡大見込み。最新動向は当ページのデータセクションで継続更新します。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 314,
+   "proposal": "出典（エネルギー基本計画の版・該当箇所）がページにも台帳にも無いので文ごと外す候補。外すと答えがほぼ無くなるので、問いと答えの組ごと外すかの裁定",
+   "note": "「予定」はサイトの機能の予告ではなく政策の記述（(a) からは除外）。"
+  },
+  {
+   "page": "/buyer/capacity-market",
+   "rule": "f",
+   "visible_text": "最新動向は当ページのデータセクションで継続更新します。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 314,
+   "proposal": "文ごと外す候補（データ欄は data.eic-jp.org への外部リンクのカード 4 枚だけで、このページで更新する仕組みは無い＝更新の約束）",
+   "note": "同型が /buyer/balancing-market の FAQ 2 か所（415・430 行）。"
+  },
+  {
+   "page": "/buyer/capacity-market",
+   "rule": "other",
+   "visible_text": "OCCTO 運営の容量市場は蓄電池事業者にとって kW 価値 (容量提供) による安定収益源。最新の約定価格・落札枠・参入条件をリアルタイムで把握、IRR シミュレーションで投資判断を支援します。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 213,
+   "proposal": "「リアルタイムで把握」は言い過ぎ（メインオークションは年 1 回・ページはリンクのみ）。外すかはユウの裁定（言い換えはしない決まり）",
+   "note": "(a)〜(i) に当たらない。"
+  },
+  {
+   "page": "/buyer/balancing-market",
+   "rule": "a",
+   "visible_text": "データ出典 需給調整市場 一次調整力 約定価格 → EIC Data で詳細",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 361,
+   "proposal": "行き先が 404。実在する catalog へ直す（候補 https://data.eic-jp.org/catalog/balancing-primary-price＝ではなく balancing-price-primary・HTTP 200）か、カードごと外すかの裁定",
+   "note": "見出し「需給調整市場 5 商品 × 9 エリアの最新動向」の下のカード。予告ではないが、行き先の無いリンク。"
+  },
+  {
+   "page": "/buyer/balancing-market",
+   "rule": "a",
+   "visible_text": "データ出典 需給調整市場 三次調整力② 約定価格 → EIC Data で詳細",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 366,
+   "proposal": "行き先が 404。実在する catalog へ直す（候補 balancing-price-tertiary-2・HTTP 200）か、カードごと外すかの裁定",
+   "note": "同上。"
+  },
+  {
+   "page": "/buyer/balancing-market",
+   "rule": "f",
+   "visible_text": "Q. 9 エリア別の参加判断は?+ エリア別に需要規模・約定価格・電源構成が異なります。北海道・東北は再エネ変動が大きく調整力需要高、九州は太陽光抑制対応で調整力需要急増。最新動向は当ページデータセクションで継続更新。／Q. 今後の需給調整市場の見通しは?+ …最新の市場動向は当ページデータセクション + Insight 記事で継続更新します。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 415,
+   "proposal": "2 文とも外す候補（データ欄は外部リンクのみ・更新の約束）",
+   "note": "capacity-market 314 行と同型。"
+  },
+  {
+   "page": "/buyer/balancing-market",
+   "rule": "other",
+   "visible_text": "★ 当サイト独自・無料 火災リスク自己診断 需給調整市場参加に向けて設置検討中の蓄電池の火災リスクを自己診断。UL9540A / NFPA855 準拠。 使ってみる →",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 397,
+   "proposal": "「UL9540A / NFPA855 準拠。」を外す候補（ツール側は「参考」）",
+   "note": "factory-commercial 159 行と同型。"
+  },
+  {
+   "page": "/buyer/ppa-offtake",
+   "rule": "a",
+   "visible_text": "★ 当サイト独自・無料 IRR シミュレーター PPA・オフテイク契約価格を入力、為替・金利・燃料コスト変動シナリオでの IRR 感度分析。 使ってみる →",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 502,
+   "proposal": "文ごと外す候補（IRR シミュレーターに PPA 価格・金利・燃料の入力が無い）。説明文が空になるので、カードの扱いはユウの裁定",
+   "note": "出ていない機能を今あるように書いている。"
+  },
+  {
+   "page": "/buyer/ppa-offtake",
+   "rule": "a",
+   "visible_text": "★ 当サイト独自・無料 容量市場入札ツール PPA + 容量市場の併用収益モデル試算。長期契約と短期市場収益のバランス最適化。 使ってみる →",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 508,
+   "proposal": "文ごと外す候補（容量市場ツールに PPA の機能が無い）。説明文が空になるので、カードの扱いはユウの裁定",
+   "note": ""
+  },
+  {
+   "page": "/buyer/ppa-offtake",
+   "rule": "f",
+   "visible_text": "Q. 契約期間中の燃料コスト変動への対応は?+ 燃料費調整制度 (fuel adjustment clause) の契約への組み込み、LNG/原油/石炭インデックスへの連動、固定価格 + 燃料サーチャージ等の選択肢。当社で契約設計支援可能。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 542,
+   "proposal": "外す候補（根拠の無いサービスの約束。運営は一般社団法人で「当社」とも合わない）",
+   "note": "(f) の語には当たらないが、(c)（根拠の無い専門家の書き方）と同じ型の約束。"
+  },
+  {
+   "page": "/buyer/* 7 ページ全部（共通部品。/seller/* 4 ページにも出る）",
+   "rule": "h",
+   "visible_text": "★ 当サイト独自・無料（関連ツールの各カード。7 ページで計 22 回）",
+   "source_file": "src/components/LandingPage/LandingPageToolsLinks.tsx",
+   "source_line": 55,
+   "proposal": "「独自」は最上級の語（決定版・唯一・最大・No.1・日本一）ではないので残す案。外すかはユウの裁定",
+   "note": "(h) の正規表現に「独自」を入れて当たったもの。"
+  },
+  {
+   "page": "/buyer/* 7 ページ全部（共通部品。/seller/* 4 ページにも出る）",
+   "rule": "f",
+   "visible_text": "業界の関連 Insight data.eic-jp.org の業界中立 Insight。引用可能・常時更新。",
+   "source_file": "src/components/LandingPage/LandingPageInsightCarousel.tsx",
+   "source_line": 47,
+   "proposal": "「常時更新」を外す候補（更新の約束。リンク先のうち 2 件は 404）",
+   "note": ""
+  },
+  {
+   "page": "全ページ共通のフッター（/buyer 7 ページで確認）",
+   "rule": "e",
+   "visible_text": "マーケットデータ (29 系列)",
+   "source_file": "src/lib/site-config.ts",
+   "source_line": 94,
+   "proposal": "手書きの件数。/dashboard/market の系列数から出すか、件数を外すかの裁定",
+   "note": "便 (e) の対象（事業者数・変電所数）とは別の種類の件数。/dashboard/market 側（page.tsx:36）も「29 系列」を手書き。"
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "a",
+   "visible_text": "蓄電所立地の土地確保、地元自治体との連携、E-3 自治体条例 (11/21 公開予定) 情報の把握。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1162,
+   "proposal": "外す: 「、E-3 自治体条例 (11/21 公開予定) 情報の把握」（実在しない機能・(b) 符号 E-3 も同時に消える）。残りは「蓄電所立地の土地確保、地元自治体との連携。」",
+   "note": "説明文は1文。句だけ外すか、課題カード（題「土地確保・地域連携」）ごと外すかはユウの裁定"
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "b",
+   "visible_text": "PPA・オフテイク契約相手 (Buyer 視点) の検討材料。デベロッパー視点での契約設計支援。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1210,
+   "proposal": "外す: 「 (Buyer 視点)」",
+   "note": "Buyer/Seller はページ群の社内区分の言い方。英語の一般語として残す余地もあるため迷う"
+  },
+  {
+   "page": "/seller/manufacturer・/seller/epc・/seller/developer・/seller/reuse-secondhand",
+   "rule": "b",
+   "visible_text": "まず事業者ナビ(/operators)への中立掲載、",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 988,
+   "proposal": "外す: 「(/operators)」の生パス（またはリンク文にする）",
+   "note": "社内の言い方というより URL の生書き。外すかリンク化かはユウの裁定"
+  },
+  {
+   "page": "/seller/manufacturer・/seller/epc・/seller/developer・/seller/reuse-secondhand",
+   "rule": "f",
+   "visible_text": "掲載相談はお問い合わせフォームから随時受け付けています。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 988,
+   "proposal": "迷うもの: 「随時」が受付の約束に当たるか。外すなら「随時」だけ",
+   "note": "返信の早さの約束ではない。(f) の例（迅速・すぐに・必ず・営業日）には当たらない"
+  },
+  {
+   "page": "/seller/developer",
+   "rule": "a",
+   "visible_text": "業界レポート、Insight 記事、案件 DB (C-3 アグリゲーター、8 月公開) でデベロッパー実績の掲載枠あり。お問い合わせフォームから掲載相談可能。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1243,
+   "proposal": "リンク文にする: アグリゲーター一覧（/operators/aggregators）。「C-3」「8 月公開」は書かない",
+   "note": "「案件 DB」がプロジェクトDB（/projects）を指すのか、C-3＝アグリゲーター（/operators/aggregators）を指すのか文から決まらない"
+  },
+  {
+   "page": "/seller/epc",
+   "rule": "a",
+   "visible_text": "EPC 事業者の施工実績・案件規模・技術ノウハウを業界レポート 2026/2027 + 案件 DB (C-3 アグリゲーター、8 月公開) で可視化機会。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1048,
+   "proposal": "リンク文にする: 業界レポート 2026（/reports/2026）とアグリゲーター一覧（/operators/aggregators）。「/2027」「C-3」「8 月公開」は書かない",
+   "note": "「案件 DB」の行き先（/projects か /operators/aggregators か）が決まらない点は developer 1243 と同じ"
+  },
+  {
+   "page": "/seller/epc",
+   "rule": "a",
+   "visible_text": "Q. 案件マッチング機能は提供されるか?+ / 当面は業界中立の情報提供に注力、案件マッチングは将来検討。但しお問い合わせフォーム経由でエンドユーザーとの接点機会あり。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1112,
+   "proposal": "迷うもの: 「将来検討」は出ていない機能の予告。組ごと外すか、「案件マッチングは将来検討。」だけ外すか",
+   "note": "question 1110・answer 1112。/anken へのリンク文にするのは言い換えに当たりうるため CC は提案しない"
+  },
+  {
+   "page": "/seller/epc",
+   "rule": "a",
+   "visible_text": "業界レポート、Insight 記事、AJ 火災事例 DB 等で取材機会あり。EPC 視点での技術ノウハウ、施工事例の寄稿枠を準備中。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1117,
+   "proposal": "リンク文にする: 「火災事例 DB」（/incidents）。「AJ」は外す。「寄稿枠を準備中」の文は外すか迷う",
+   "note": "「準備中」の寄稿枠は実在しない。第2文を外すかはユウの裁定"
+  },
+  {
+   "page": "/seller/epc",
+   "rule": "a",
+   "visible_text": "Q. メーカー製品の比較情報は?+ / メーカー DB (B-1、8/15 頃公開) + メーカー別スペック比較 (B-1 機能内) で、EPC 事業者の機材選定支援。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1127,
+   "proposal": "メーカー DB はリンク文に（/operators/makers・「B-1」「8/15 頃公開」は書かない）。「+ メーカー別スペック比較 (B-1 機能内)」は外す（実在しない）",
+   "note": "問い「メーカー製品の比較情報は?」の比較機能が無いので、組ごと外すべきかもしれない。question 1125・answer 1127"
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "f",
+   "visible_text": "技術仕様・市場シェア・実績数値の中立的な引用、メーカー側の事前確認可能。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 998,
+   "proposal": "迷うもの: 事前確認の約束に当たるか。外すなら「、メーカー側の事前確認可能」",
+   "note": "運用の裏付けを CC は持たない"
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "a",
+   "visible_text": "Q. メーカー DB (8 月公開予定) への登録方法は?+ / メーカー DB は 8/15 頃公開予定 (B-1 機能)。製品スペック・価格レンジ・実績案件の登録枠を準備中。8 月初旬にメーカー向け登録案内を予定。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1001,
+   "proposal": "文ごと外す: 問いと答えの組ごと外す（メーカー DB は実在するが、問いの「登録方法」＝登録枠・登録案内は実在しない）",
+   "note": "question 1001・answer 1003。メーカー DB のリンク文に直して残す案もありうるため迷う"
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "a",
+   "visible_text": "業界レポート企画、Insight 記事、AJ 火災事例 DB 等で取材機会あり。技術担当者・経営層へのインタビュー、技術論文寄稿の枠を準備中。お問い合わせフォームからご相談ください。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1013,
+   "proposal": "リンク文にする: 「火災事例 DB」（/incidents）。「AJ」は外す。「技術論文寄稿の枠を準備中」の文は外すか迷う",
+   "note": "epc 1117 と同型"
+  },
+  {
+   "page": "/seller/manufacturer",
+   "rule": "h",
+   "visible_text": "市場規模・競合分布・技術トレンドを業界中立で提供し、業界レポート引用・事業者ナビ掲載でメーカーの可視性を最大化します。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 913,
+   "proposal": "迷うもの: 「最大化します」は自称の最上級というより効果の約束。外すなら「でメーカーの可視性を最大化します」の言い切り",
+   "note": "heroSubcopy"
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a",
+   "visible_text": "劣化曲線の実測データ不足 / G-1 劣化曲線実測データ (9/24 公開予定) で、メーカー別・使用条件別の劣化曲線を可視化。リユース価格設定の基礎データ。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1272,
+   "proposal": "文ごと外す: 説明（1272）の 2 文は全部実在しない機能 G-1。課題カード（icon 📉・題 1270）ごと外す",
+   "note": "題「劣化曲線の実測データ不足」は読者の課題の言い方なので、説明だけ外して題を残す案もある"
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a",
+   "visible_text": "Q. リユース蓄電池事業の市場規模は?+ / 日本の EV 普及に伴い、退役 EV 電池の蓄電池 2 次利用市場が 2026 年以降本格化見込み。G-1 劣化曲線実測データ (9/24 公開) + 業界レポート 2027 (12/25) で市場規模・成長率の詳細解説予定。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1339,
+   "proposal": "第2文は外す（G-1・業界レポート 2027 の予告）。第1文は出典の無い見込み（(i) 別項目）。両方外れると答えが空になるので問いと答えの組ごと外す",
+   "note": "question 1337・answer 1339"
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "i",
+   "visible_text": "日本の EV 普及に伴い、退役 EV 電池の蓄電池 2 次利用市場が 2026 年以降本格化見込み。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1339,
+   "proposal": "出典が無ければ文ごと外す（ページにも台帳にも出典なし）",
+   "note": "数ではなく時期の見込み。source-documents.json（354 件）にリユース・2次利用の市場の資料は無い"
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "i",
+   "visible_text": "蓄電池リユース市場の急成長を、業界データで支援",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1256,
+   "proposal": "迷うもの: 「急成長」は出典の無い市場の断定。数ではないので (i) に当たるか判断がつかない",
+   "note": "h1。外す場合は見出しの作り直しが要り、言い換えになるため CC は案を出さない"
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a",
+   "visible_text": "市場規模・劣化曲線・収益モデルを業界中立で提供し、事業者ナビ掲載で買い手との接点を確保します。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1258,
+   "proposal": "迷うもの: 「劣化曲線」は出ていない機能（G-1）。外すなら「・劣化曲線」だけ。title（1252）と description（1254）の「劣化曲線」も同じ扱い",
+   "note": "heroSubcopy・title・meta description の 3 か所"
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "a",
+   "visible_text": "中古セルの調達コスト、再生検査・組み直し費用、販売価格、保証期間設計の最適化。業界実例集も提供。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1278,
+   "proposal": "迷うもの: 「業界実例集も提供。」は実在が確かめられない（src に「実例集」はこの 1 か所だけ）。外すなら文ごと",
+   "note": ""
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "other",
+   "visible_text": "リユース蓄電池の火災リスクを自己診断。UL9540A / NFPA855 準拠、リユース固有のリスク評価項目あり。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1315,
+   "proposal": "迷うもの: 「リユース固有のリスク評価項目あり」は事実と違う（src/data/fire-risk-checklist.ts に「リユース」「中古」の項目 0 件）。外すなら「、リユース固有のリスク評価項目あり」",
+   "note": "便の決まり (a)〜(i) のどれにも正確には当たらない＝範囲外の所見"
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "other",
+   "visible_text": "リユース蓄電池を用いた自家消費・容量市場参入の収益試算。劣化曲線を考慮したライフサイクル分析。",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1321,
+   "proposal": "迷うもの: IRR シミュレーターの劣化は「年 1% 容量低下 (下限 70%)」の固定（src/app/tools/irr-simulator/page.tsx:290）で、劣化曲線ではない",
+   "note": "範囲外の所見"
+  },
+  {
+   "page": "/seller/reuse-secondhand",
+   "rule": "other",
+   "visible_text": "データ出典 / EV 関連市場規模指標 (参考) / → EIC Data で詳細",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 1289,
+   "proposal": "迷うもの: 札は「EV 関連市場規模指標」だが、リンク先と指標は JEPX 東京スポット価格（jepx-spot-tokyo）。札と中身が違う",
+   "note": "範囲外の所見（別便向き）"
+  },
+  {
+   "page": "/seller/manufacturer・/seller/epc・/seller/developer・/seller/reuse-secondhand",
+   "rule": "b",
+   "visible_text": "Buyer に見つけてもらう — 掲載・取材のご相談",
+   "source_file": "src/data/landing-page-configs.ts",
+   "source_line": 914,
+   "proposal": "迷うもの: 「Buyer」は社内の区分（buyer/seller）の言い方。外すかはユウの裁定",
+   "note": "hero と最下部 CTA の 2 か所 × 4 ページ: 914・1016（manufacturer）、1029・1130（epc）、1143・1246（developer・「連携・掲載のご相談」）、1259・1362（reuse）"
+  },
+  {
+   "page": "全ページ共通（担当ページすべてのフッター）",
+   "rule": "b",
+   "visible_text": "メーカー向け (Seller) / EPC 事業者向け (Seller) / プロジェクトデベロッパー向け (Seller) / 中古売買・リユース (Seller)",
+   "source_file": "src/lib/site-config.ts",
+   "source_line": 111,
+   "proposal": "迷うもの: 「 (Seller)」を外すか",
+   "note": "111〜114 の 4 行。共通フッター＝全ページに出る"
+  },
+  {
+   "page": "/seller/manufacturer・/seller/epc・/seller/developer・/seller/reuse-secondhand（共通部品のため /buyer の 7 ページにも出る）",
+   "rule": "h",
+   "visible_text": "★ 当サイト独自・無料",
+   "source_file": "src/components/LandingPage/LandingPageToolsLinks.tsx",
+   "source_line": 55,
+   "proposal": "迷うもの: 「独自」は (h) の例（決定版・唯一・最大・No.1・日本一）には無いが自称に近い",
+   "note": "関連ツールのカードごと（1 ページ 3 枚）"
+  },
+  {
+   "page": "/seller/manufacturer・/seller/epc・/seller/developer・/seller/reuse-secondhand（共通部品のため /buyer にも出る）",
+   "rule": "f",
+   "visible_text": "data.eic-jp.org の業界中立 Insight。引用可能・常時更新。",
+   "source_file": "src/components/LandingPage/LandingPageInsightCarousel.tsx",
+   "source_line": 47,
+   "proposal": "迷うもの: 「常時更新」は更新の約束。外すなら「・常時更新」",
+   "note": ""
+  },
+  {
+   "page": "/anken・/anken/sell・/anken/flow・/anken/faq",
+   "rule": "f",
+   "visible_text": "A. お預かりした情報はお取り次ぎの目的の範囲でのみ扱い、しつこい営業は行いません。公開ページに住所・座標等の個別情報は掲載しません。",
+   "source_file": "src/app/anken/page.tsx",
+   "source_line": 193,
+   "proposal": "迷うもの: 「しつこい営業は行いません」は行動の約束。(f) の例（迅速・すぐに・必ず・営業日）には当たらない",
+   "note": "同じ文が src/app/anken/sell/page.tsx:71・src/app/anken/flow/page.tsx:78・src/app/anken/faq/page.tsx:41 にもある（faq は FAQPage JSON-LD にも入る）"
+  },
+  {
+   "page": "/anken",
+   "rule": "a",
+   "visible_text": "対応エリア：全国（実例の掲載は中部から順次拡大中） ／ 下表・下記分布は中部エリアの抜粋例",
+   "source_file": "src/app/anken/page.tsx",
+   "source_line": 222,
+   "proposal": "迷うもの: 「順次拡大中」は日付の無い予告。外すなら「（実例の掲載は中部から順次拡大中）」",
+   "note": "6 月 index 公開時の文。中部以外はサンプル例のまま"
+  },
+  {
+   "page": "/",
+   "rule": "a",
+   "visible_text": "サイトの歩み・公開予定 →",
+   "source_file": "src/app/page.tsx",
+   "source_line": 464,
+   "proposal": "迷うもの: リンク文に「公開予定」がある。サイトの歩み便の範囲かもしれない",
+   "note": "トップのお問い合わせ節の下。便の担当範囲（入口の節・上の帯・業界レポートのカード）の外だが相談リンクと同じ節"
+  },
+  {
+   "page": "全ページ共通（担当ページすべてのフッター）",
+   "rule": "e",
+   "visible_text": "マーケットデータ (29 系列)",
+   "source_file": "src/lib/site-config.ts",
+   "source_line": 94,
+   "proposal": "迷うもの: 手書きの件数。自動にするか、件数を外すか",
+   "note": "便の (e) の対象（入口ページと /tracker/ag の件数）に共通フッターが入るか判断がつかない"
+  }
+ ],
+ "review": [
+  {
+   "dim": "leftover",
+   "id": "R1",
+   "severity": "medium",
+   "where": "src/lib/sop-schedule.ts:30-57（persona 欄）→ src/app/ops/freshness/page.tsx:99・113（「担当」列）／ビルド .next/server/app/ops/freshness.html",
+   "what": "/ops/freshness の表の「担当」列に、社内の役名が人として出たまま。ビルドの見える本文の逐語: 「補助金 /subsidies 週次（月曜） セイ」「データ鮮度チェック … モリ」「ニュース取込 … ノブ」「解説 新規 2-4 本 … ノブ/セイ」「イベント … チサ」「系統空き容量 10 社 … チサ/モリ」「業界レポート 2026 本編 /reports/2026 年次 ノブ/セイ/リン」。一覧に無い「ジン」と「山口/加藤/斎藤」も同じ列に出ている。sop-schedule.ts も ops/freshness/page.tsx も今回の差分に入っていない。ビルドした HTML 全体を role 名＋（担当・顧問・監修・等・/ など）で grep したところ、当たったのはこのページだけだった。",
+   "fix": "(c) どおりコードの中で外す（例: 担当列の値を出さない／列ごと描画しない）。新しい名前や言い換えは入れない。運用ページなので残す判断をするなら、直さずに報告 (9)「迷うもの」に回し、ページ・列・値を逐語で書いてユウの裁定を待つ。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "leftover",
+   "id": "R2",
+   "severity": "medium",
+   "where": "src/data/landing-page-configs.ts:939・988/1091/1202/1307（共通 FAQ）・998・1043・1222・1327 → /seller/manufacturer・/seller/epc・/seller/developer・/seller/reuse-secondhand（見える本文と FAQPage JSON-LD）。meta description（manufacturer）「業界レポート引用機会を提供」も同じ型",
+   "what": "未来の「引用・掲載の機会」を、すでに公開済みの 2026 年版に付け替えて残している。逐語: 「[業界レポート2026](/reports/2026)本編での引用・掲載…の取材機会をご用意」（4 ページ共通）、「蓄電所ネットの[業界レポート 2026](/reports/2026)でのメーカー引用機会。」「[業界レポート 2026](/reports/2026)で、メーカー製品の引用枠あり。…メーカー側の事前確認可能。」「…を[業界レポート 2026](/reports/2026) + 案件 DB で可視化機会。」「[業界レポート 2026](/reports/2026)、[火災事例 DB](/incidents)、Insight 記事でリユース事業者の事例掲載機会あり。」「業界レポート、Insight 記事、案件 DB でデベロッパー実績の掲載枠あり。」。リンク先 /reports/2026 の見える本文は「業界レポート2026（本編）· 2026年7月公開」で、10 章は固定。引用枠・掲載枠・メーカーの事前確認にあたる記述は無い（あるのは「引用・転載の際は当サイト名の明記を」という、レポートを引用する側への注意だけ）。",
+   "fix": "コードは勝手に変えない。報告 (7)「ユウの前提違い」か (9)「迷うもの」に、上の 9 か所を逐語で並べてユウの裁定を待つ。選択肢は、案1「…での引用・掲載」「引用枠あり…事前確認可能」「可視化機会」「掲載機会」の節だけを外す、案2 そのまま残す。新しい文（2027 年版への言及など）は足さない。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "leftover",
+   "id": "R3",
+   "severity": "low",
+   "where": "src/components/StartTrustBlock.tsx:26・src/app/info/operating-bess-introduction/page.tsx:77 → /start/buy・/start/sell・/start/partner・/info/operating-bess-introduction",
+   "what": "JSX の文を {`…`} の式に替えたため、前の行の「—」との間の半角スペースが消えた。ビルドの見える本文: 「業界データ基盤の運営元 —蓄電所ネットは全国10社・8,346変電所の系統情報DB、577社の事業者ナビ、…」。HTML は「</strong> —<!-- -->蓄電所ネット」。本番（prod/start_buy.html・cnt_info_operating-bess-introduction.html）は「</strong> — 蓄電所ネットは」。",
+   "fix": "テンプレートの頭に空白を入れる（{` 蓄電所ネットは全国${GRID_COMPANY_COUNT}社・…`}）か、{' '} を前に置く。2 ファイルとも同じ。直したら前後のビルドの見える本文を diff し、「— 蓄電所ネットは」に戻ったことを確かめる。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "leftover",
+   "id": "R4",
+   "severity": "low",
+   "where": "src/data/landing-page-configs.ts:1043（/seller/epc の課題欄）・1222（/seller/developer の FAQ「デベロッパー実績の業界メディア掲載機会は?」）",
+   "what": "元は「案件 DB (C-3 アグリゲーター、8 月公開)」。符号と日付だけを外し、「案件 DB」はリンクも説明も無い名前のまま残った。逐語: 「…[業界レポート 2026](/reports/2026) + 案件 DB で可視化機会。」「業界レポート、Insight 記事、案件 DB でデベロッパー実績の掲載枠あり。」。サイトのナビにあるのは「プロジェクト」（/projects・関連リンクでは「プロジェクトDB」）と「流通案件」（/anken）で、「案件 DB」という名前のページは無い。便が挙げた行き先「アグリゲーター → /operators/aggregators」は、今回の差分のどこにも使われていない。",
+   "fix": "直さずに報告 (9) へ回す。選択肢を書き、ユウの裁定を待つ: 案1 便の対応づけどおり /operators/aggregators へのリンクの文、案2 「案件 DB」を /projects のことと読んでリンクする、案3「+ 案件 DB」「案件 DB」の語を外す。新しい説明の文は足さない。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "leftover",
+   "id": "R5",
+   "severity": "low",
+   "where": "src/data/landing-page-configs.ts:1109-1111（/seller/epc FAQ）・1257（/seller/reuse-secondhand 課題欄）",
+   "what": "リンクの文にした主張が、行き先のページの中身と合わない所が 2 つある。(1) FAQ「Q. メーカー製品の比較情報は?」の答えが「[メーカー DB](/operators/makers)で、EPC 事業者の機材選定支援。」。/operators/makers の見える本文は「系統用蓄電池メーカー一覧 ── 掲載32社」で、社名と掲載案件数・関与件数だけ。製品・スペック・比較の語は 0 件。元の答えにあった「+ メーカー別スペック比較 (B-1 機能内)」は実在しないとして外したので、問いが指す比較の機能はもう無い。(2) 「[火災事例 DB](/incidents)で安全性ガイダンス + リユース固有のリスク管理。」。/incidents（13 件）の見える本文に「リユース」「中古」は 0 件。",
+   "fix": "(1) は問いと答えの組を外すか、報告 (9) へ回す（scout も uncertain=true）。(2) は「 + リユース固有のリスク管理」だけを外すか、報告 (9) へ回す。どちらも言い換えの文は足さない。",
+   "votes_real": 1,
+   "votes": 2
+  },
+  {
+   "dim": "leftover",
+   "id": "R6",
+   "severity": "low",
+   "where": "src/data/landing-page-configs.ts:1317・1322（/seller/reuse-secondhand FAQ）",
+   "what": "/buyer で外したものと同じ型の、ツールやデータ欄の機能をうたう文が /seller/reuse-secondhand に残っている。逐語: 「…保証期間の扱いが論点。容量市場入札ツールで参入可能性試算可能。」「為替リスクは当ページデータセクションの USD/JPY 動向で継続把握、ヘッジ戦略の検討材料。」。同じ便で /buyer/capacity-market の「当社の容量市場入札ツールで条件チェック可能です」（理由: ツールに要件チェックの機能が無い）と、/buyer/ppa-offtake の「当ページの USD/JPY + 円建て LNG データで影響度試算可能」（理由: データ欄は外部リンクのカードだけ）を rule a で外している。scout にこの 2 文は載っていない（scout.json・scout_seller.txt とも 0 件）。",
+   "fix": "/buyer で当てた rule a と同じ扱いにする。「容量市場入札ツールで参入可能性試算可能。」と「為替リスクは当ページデータセクションの USD/JPY 動向で継続把握、ヘッジ戦略の検討材料。」は、それぞれ文ごと外す。迷うなら報告 (9) へ回す。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "leftover",
+   "id": "R7",
+   "severity": "low",
+   "where": "src/data/landing-page-configs.ts:1310-1312・1004-1007・1104-1107・1215-1217・1146・1152",
+   "what": "文を外した結果、問いと答えが合わなくなった所、説明がほぼ空になった所がある。(1) /seller/reuse-secondhand「Q. リユース蓄電池事業の市場規模は?」の答えが「…2 次利用市場が 2026 年以降本格化見込み。」だけになり、規模を答えていない（残った文自体も出典の無い見込みで、scout は (i) で uncertain）。(2) /seller/manufacturer と /seller/epc の「Q. 取材・寄稿の機会は?」の答えから寄稿の文が消え、取材だけになった。(3) /seller/developer「Q. 補助金・税制優遇の最新情報は?」の答えが「[業界レポート 2026](/reports/2026)で補助金の動向を解説しています。」。/reports/2026 の第 6 章は補助金を扱うので、主張は合っている。ただ問いの「税制優遇」には答えが無い。(4) /seller/developer の課題カードの説明が「蓄電所立地の土地確保、地元自治体との連携。」（題「土地確保・地域連携」の言い直し）と「蓄電池導入補助金、再エネ特措法、固定資産税優遇等の最新動向。」だけになった。",
+   "fix": "直さずに報告 (9) へ回す。(1) は scout の提案どおり問いと答えの組ごと外す案、(2)(3) は問いから外した中身の語（「・寄稿」「・税制優遇」）だけを外す案、(4) は残す案とカードごと外す案。どれも新しい文は足さない。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "leftover",
+   "id": "R8",
+   "severity": "low",
+   "where": "/buyer/factory-commercial（h1 は src/data/landing-page-configs.ts:96 付近の heroH1・訂正は src/data/corrections.json 20261017-04）",
+   "what": "同じページの中で、h1 と訂正履歴が食い違って読める。h1「工場・商業施設の電気代を、蓄電池で 20-30% 削減する」が残る一方、ページ末の訂正履歴は「…「最新の事例では年間 20-30% の電気代削減 + 容量市場収益が報告されています。」と記載（出典の記載なし）… 報告の出典を確認できないため、この文を削除」と表示している。h1 は scout で uncertain=true（迷うもの）なので、残したこと自体は決まりどおり。",
+   "fix": "コードは変えない。報告 (9) の h1 の行に、訂正 20261017-04 が同じページに出ていることを書き添える。ユウが h1 の扱いと訂正の載せ方を一緒に決められるようにする。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "leftover",
+   "id": "R9",
+   "severity": "info",
+   "where": "報告の (1)・(9)（実装側の申告「迷う印の付いたものは直していない」）",
+   "what": "scout で uncertain=true だった項目のうち、次の 9 件は実際には書き換えまたは削除されている。/seller/developer の課題「…E-3 自治体条例 (11/21 公開予定) 情報の把握」／同 FAQ の「案件 DB (C-3 アグリゲーター、8 月公開)」／/seller/epc の課題「業界レポート 2026/2027 + 案件 DB (C-3…)」／同 FAQ の「…寄稿枠を準備中。」の削除／同 FAQ の「メーカー DB (B-1、8/15 頃公開) + メーカー別スペック比較」／/seller/manufacturer FAQ「メーカー DB (8 月公開予定) への登録方法は?」の組ごとの削除／同「技術論文寄稿の枠を準備中。」の削除／/seller/reuse-secondhand の課題カード「劣化曲線の実測データ不足」の削除／同 FAQ「市場規模は?」の第 2 文の削除。多くは、日付・符号の部分は確実な (a)(b) で、迷う印は残りの部分に付いていたもの。",
+   "fix": "報告 (1) にこの 9 件を前・後・記号つきで載せる。残っている迷う点（R4・R5・R7）は (9) に分けて書く。コードの変更は不要。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "leftover",
+   "id": "R10",
+   "severity": "info",
+   "where": "src/data/milestones.ts:96・234（/milestones/2026-05-22-feature-complete・/milestones/2026-06-11-vip-citation、index, follow）／src/app/tools/page.tsx:283（/tools）",
+   "what": "26 ページの範囲の外だが、今回いじったファイル・要素のすぐ隣に、同じ型の記述が残っている。milestones.ts「eic-jp.org (運営窓口、10 年実績)」「eic-jp.org（運営窓口・10 年実績）」（リンを外した同じファイル・ビルドの見える本文に出ている）と、/tools「※ ツール群は Sprint 3 以降で順次拡充予定。」（UTM を付けた同じ段落）。",
+   "fix": "コードは変えない。報告 (9) の範囲外の所見に、ページと逐語を載せる。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "counts",
+   "id": "R-CNT-1",
+   "severity": "low",
+   "where": "src/components/StartTrustBlock.tsx:25-26・src/app/info/operating-bess-introduction/page.tsx:76-77（見える所: /start/buy・/start/sell・/start/partner・/info/operating-bess-introduction）",
+   "what": "件数の自動化 (e) で、行の頭の文を {`蓄電所ネットは全国${GRID_COMPANY_COUNT}社・…`} に置き換えた。その結果、件数の前の半角空白が消えた。ビルドした HTML は `業界データ基盤の運営元</strong> —<!-- -->蓄電所ネットは全国10社・8,346変電所…` で、見える本文は「運営元 —蓄電所ネットは」になる。本番（素 URL・/start/buy と /start/partner、x-vercel-cache HIT）は `</strong> — 蓄電所ネットは全国10社・<!-- -->8,346…` で、見える本文は「運営元 — 蓄電所ネットは」。件数の値（10・8,346・577）は正しい。",
+   "fix": "2 ファイルとも、`<strong>業界データ基盤の運営元</strong> —{' '}` にするか、テンプレートの頭に半角空白を入れて {` 蓄電所ネットは全国…`} にする。ビルドしなおし、見える本文が「運営元 — 蓄電所ネットは」（本番と同じ）になることを確かめる。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "counts",
+   "id": "R-CNT-2",
+   "severity": "info",
+   "where": "src/lib/site-config.ts:97（footerLinks）→ 26 ページと /tracker/ag の共通フッター",
+   "what": "フッターに「マーケットデータ (29 系列)」と手書きの件数が残っている。このビルドの /dashboard/market の見える本文は「…金融指標 (12 系列) = 31 系列を一元可視化」で、数が違う（29 と 31）。調べ役の結果（scout.json の counts）では uncertain（迷うもの）だったので、実装では直していない。",
+   "fix": "コードは変えない。報告 (9)「迷うもの」に、ページ（26 ページと /tracker/ag の共通フッター）・逐語「マーケットデータ (29 系列)」・いまの値 31（/dashboard/market の数え方＝catalog の接頭辞の集計）・フッター向けの軽い出どころが無いこと、を載せる。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "counts",
+   "id": "R-CNT-3",
+   "severity": "info",
+   "where": "src/app/tracker/page.tsx:40（/tracker のカード）。あわせて src/app/industry/page.tsx:161",
+   "what": "/tracker のカード「事業者ナビ (540+社) の追加/更新タイムライン」は /tracker/ag へのリンク。このビルドでも本番（素 URL・STALE age 3637）でも「540+社」のまま。この便で、行き先の /tracker/ag の title・description・og:title は「577社」になる。親ページと子ページで社数の書き方が食い違う。/industry の「事業者 (540+)」も同じ型。",
+   "fix": "この便ではコードを変えない。報告 (9) の範囲外の所見に、/tracker:40「540+社」・/industry:161「540+」・/tracker の「8,200+」を「/tracker/ag は 577社になった」と並べて書き、別便の候補にする。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "links",
+   "id": "M1",
+   "severity": "low",
+   "where": "scripts/verify-contact-links.ts:30（BARE_HREF）・:39（checkSrcLine）・:117（self-test の srcBad）",
+   "what": "src の検査は 1 行ずつ見ていて、`href|url|ctaUrl|heroCtaUrl` のすぐ後ろに `siteConfig.(organization.)contactUrl`／`CONTACT_DISPLAY_URL` が来る形だけを違反にしている。変更前の src/app/projects/page.tsx（HEAD:10 `const siteContactUrl = siteConfig.organization.contactUrl;`・HEAD:153 `<a href={siteContactUrl} …>`）を checkSrcLine に通すと、2 行とも見逃した（MISS）。ほかにも次が MISS だった: `href={` で改行した後の `siteConfig.organization.contactUrl` だけの行、`link={siteConfig.contactUrl}`、`` href={`${siteConfig.organization.url}contact`} ``、行頭の `{/* … */}` の後ろにある生の URL（tools/rvc_bypass.ts に 15 例を入れて確かめた。`href: siteConfig.contactUrl,`・`href={ siteConfig.contactUrl }`・`href = {…}` は検出した）。self-test の 8 本には「変数に入れてから渡す」書き方が入っていない。",
+   "fix": "判定を逆にする。`siteConfig.(organization.)?contactUrl` か `CONTACT_DISPLAY_URL` を含む行は、行全体が表示の形（`{siteConfig.organization.contactUrl}` など）であるか、site-config.ts・contact-link.ts の中であるときだけ通し、それ以外は警告にする。いまの src ではこれで誤検知は 0（上の 7 行は全部表示の形）。self-test の srcBad に、HEAD の projects の 2 行と、改行をはさむ `href={`／`siteConfig.contactUrl` を足す。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "links",
+   "id": "M2",
+   "severity": "low",
+   "where": "src/components/StartTrustBlock.tsx:25-26・src/app/info/operating-bess-introduction/page.tsx:76-77（/start/buy・/start/sell・/start/partner・/info/operating-bess-introduction の見える本文）",
+   "what": "（観点の外。差分を見ていて気づいた）「業界データ基盤の運営元 — 蓄電所ネットは…」の「—」の後ろの半角スペースが消えている。本番（変更前・素 URL）は `</strong> — 蓄電所ネットは全国10社・`、新しいビルドは `</strong> —<!-- -->蓄電所ネットは全国10社・` で、`<!-- -->` を剥がすと「—蓄電所ネットは」になる。行末の「—」の後に改行があり、続く本文を `{`…`}` に置き換えたので、改行が連結のスペースにならなくなった。/start/partner の `{` — 事業者ナビ（577社）…`}` はスペースを含んでいるので問題ない。",
+   "fix": "テンプレートの先頭に半角スペースを入れる（`{` 蓄電所ネットは全国${GRID_COMPANY_COUNT}社・…`}`）か、`—{' '}` にする。直したらビルドした HTML の本文で「— 蓄電所ネットは」になっていることを確かめる。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "links",
+   "id": "M3",
+   "severity": "low",
+   "where": "src/components/AnkenContactCTA.tsx:13・:47、src/components/ContactClickTracker.tsx:12・:39-45（/anken・/anken/buy・/sell・/flow・/faq のボタン 8 本）",
+   "what": "/anken のボタンを 1 回左クリックすると、contact_click（document の捕捉の段階で出る）と anken_contact_click（React の onClick）の 2 つのイベントが出る。名前が違うので、イベント名ごとの数え方なら別のイベントとして数えられる＝OK。ただし AnkenContactCTA の注記には「GA4 側でキーイベント昇格して利用」とある。便 (6) の手順どおり contact_click もキーイベントにすると、両方がキーイベントのとき、GA4 の「キーイベント」の合計（とそれを使う表）では /anken の 1 クリックが 2 件になる。中クリックで出るのは contact_click だけ（anken 側は onClick しか持たない）なので、2 つの数もそろわない。",
+   "fix": "コードは変えない。報告 (6) に 1 行足す: キーイベントにするのは contact_click だけにする（anken_contact_click をキーイベントにしているなら外す）。/anken の内訳は cta_campaign＝anken_* で見る。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "links",
+   "id": "M4",
+   "severity": "info",
+   "where": "src/components/ContactClickTracker.tsx:39（link_url: href）・src/lib/contact-link.ts の contactUrl",
+   "what": "いま作られる href は 102〜118 字ある（contactUrl と同じ URLSearchParams を node で組んで数えた: site_footer/footer 110、top/inquiry 103、lp_factory_commercial/cta 117、funnel_lv_entry/cross_link 118）。GA4 のイベントパラメータの値には上限がある（標準プロパティで 100 文字。page_location などは例外）。これを超えるので、link_url は途中で切れて送られる（上限は GA4 の公開ドキュメントの値で、実際のプロパティでは確かめていない）。anken_contact_click の link_url も前から同じ。",
+   "fix": "コードは変えない。報告 (6) に「ボタン別の表は cta_campaign × cta_position で作る（link_url は使わない）」と書く。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "links",
+   "id": "M5",
+   "severity": "info",
+   "where": "/news/news-2026-1010-bessnet-9companies-milestone・/news/news-2026-1011-bessnet-text-search-and-crowdsource（src/app/news/[slug]/page.tsx:110）・変電所詳細の位置情報ボタン（src/app/grid/[slug]/page.tsx:686-696。latitude が null の変電所だけに出る。例 /grid/cb-3617）",
+   "what": "どれも .next/server/app に HTML が無い。news の 2 本は info/ 側だけが先に作られていて、campaign の内訳は info_detail 2・news_detail 0・grid_detail 0。つまりローカルの --html では、本番での描画を確かめていない。addContactUtmToHtml の動きは、microCMS の本文と同じマークアップ（`<a href=\"https://eic-jp.org/contact\" target=\"_blank\" rel=\"noopener noreferrer\">https://eic-jp.org/contact</a>`）で確かめた: href だけが置き換わり、表示の文字は変わらず、2 回かけても同じ。一方、`#…` や `?…` の付いた href、引用符の無い href、`//eic-jp.org/contact` は置き換わらない。--html の側も RAW_URL が `//eic-jp.org/contact` と大文字の `<A HREF` を拾わない。いま microCMS の 9 API（GET 済みの cms_contact/search_result.json）で、これに当たるものは 0 件。",
+   "fix": "コードは変えない。deploy 後の素 URL の curl に、上の news 2 本と、位置情報ボタンが出る変電所詳細 1 件を入れる。保存したフォルダに `npx tsx scripts/verify-contact-links.ts --html <フォルダ>` を当てる。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "code",
+   "id": "R1",
+   "severity": "medium",
+   "where": "src/components/StartTrustBlock.tsx:25-26／src/app/info/operating-bess-introduction/page.tsx:76-77（見える本文: /start/buy・/start/sell・/start/partner・/info/operating-bess-introduction）",
+   "what": "文を {`…`} の template literal にしたため、「—」の後ろの半角スペースが初期 DOM から消えた。本番（変更前・素URL・HIT）: `業界データ基盤の運営元</strong> — 蓄電所ネットは全国10社・<!-- -->8,346<!-- -->変電所…`。ローカルビルド（変更後）: `業界データ基盤の運営元</strong> —<!-- -->蓄電所ネットは全国10社・8,346変電所…`。<!-- --> を剥がした見える本文は「運営元 — 蓄電所ネットは」から「運営元 —蓄電所ネットは」に変わる（4 ページで同じ）。件数の部分の <!-- --> が消えたのは意図どおり。/start/partner の「業界データベース」の行（page.tsx:68）は literal の頭に「 — 」を含めているのでスペースが残っており、問題ない。",
+   "fix": "2 ファイルとも literal の頭に半角スペースを足す: {` 蓄電所ネットは全国${GRID_COMPANY_COUNT}社・…の事業者ナビ、`}。または /start/partner と同じ形にして「—」も literal に入れる: <strong>業界データ基盤の運営元</strong>{` — 蓄電所ネットは全国…`}。直したらビルド HTML の見える本文が「運営元 — 蓄電所ネットは全国10社・8,346変電所の系統情報DB、577社の事業者ナビ、」になることを 4 ページで確かめる。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "code",
+   "id": "R2",
+   "severity": "low",
+   "where": "src/app/projects/page.tsx:8",
+   "what": "`import { siteConfig } from '@/lib/site-config';` が使われなくなった。siteContactUrl を feedbackContactUrl（contactUrl）に置き換えた結果、ファイル中の siteConfig. の参照は 0 件（変更前は 1 件）。",
+   "fix": "src/app/projects/page.tsx:8 の siteConfig の import 行を外す。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "code",
+   "id": "R3",
+   "severity": "low",
+   "where": "src/data/landing-page-configs.ts（/seller/epc の FAQ「取材・寄稿の機会は?」・/seller/manufacturer の FAQ「取材・寄稿の機会は?」・/seller/manufacturer の FAQ「メーカー DB (8 月公開予定) への登録方法は?」・/seller/reuse-secondhand の課題カード「劣化曲線の実測データ不足」）",
+   "what": "「迷う印の付いたものは直していない」という実装側の説明と合わない所がある。scout.json で uncertain=true の項目のうち、迷っている部分そのものを直したものが 2 件。(1) epc「EPC 視点での技術ノウハウ、施工事例の寄稿枠を準備中。」を外した（scout の note:「第2文を外すかはユウの裁定」）。(2) manufacturer「技術担当者・経営層へのインタビュー、技術論文寄稿の枠を準備中。」を外した（「外すか迷う」）。ほかに、scout が別案（リンク文にして残す・題だけ残す）を挙げて迷いとしていた 2 件は、組ごと・カードごと外している。reports/entrance-cleanup-and-contact-tracking-2026-10-17.data.json の lp_text には uncertain の印が無く、rule は「a・b」とだけ書かれている。",
+   "fix": "便の決まりどおりにするなら、(1)(2) の 2 文を元に戻して報告 (9) の「迷うもの」へ回す。外したまま残すなら、この 4 件を報告 (9) に「scout は迷う・実装は外した」としてそのまま載せ、ユウの裁定を待つ。どちらの場合も新しい文は足さない。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "code",
+   "id": "R4",
+   "severity": "info",
+   "where": "src/app/buyer/*/page.tsx・src/app/seller/*/page.tsx（openGraph.title: config.title）",
+   "what": "LP の config.title から手書きの「｜蓄電所ネット」を外したことで、11 ページの og:title からサイト名が無くなった（例 /buyer/investor: 変更前「…を実データで｜蓄電所ネット」、変更後「…を実データで」）。LP の openGraph には siteName が無いので og:site_name も出ていない。/contact と /contact/* は og:site_name「蓄電所ネット」があるので影響しない。<title> は全 28 入口ページでサイト名が 1 回だけになっている（#88 の目的は果たしている）。",
+   "fix": "必須ではない。気になる場合は、LP 11 ページの openGraph に siteName: siteConfig.name を足すかどうかをユウの裁定に回す（報告 (9) に 1 行）。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "code",
+   "id": "R5",
+   "severity": "info",
+   "where": "src/lib/site-counts.ts:20（GRID_COMPANY_COUNT）と src/app/reports/2026/page.tsx:52（SUBSTATION_AREA_COUNT）",
+   "what": "同じ値（summary.by_area_slug で 0 件より多いエリアの数）を 2 か所で別々に計算している。どちらも index.json の summary から同じ式で出しているので、いまの値はどちらも 10 で一致する。",
+   "fix": "この便では触らずに報告 (9) に書き、後の便で /reports/2026 側を site-counts の GRID_COMPANY_COUNT に寄せる（/reports/2026 はこの便の対象外）。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "code",
+   "id": "R6",
+   "severity": "info",
+   "where": "src/app/tools/page.tsx:283（/tools の見える本文）",
+   "what": "今回 href を直したすぐ隣の文に「※ ツール群は Sprint 3 以降で順次拡充予定。」が残っており、ビルド HTML の見える本文にも出ている。",
+   "fix": "直さずに、報告 (9) の範囲外の所見に 1 行書く。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "corrections",
+   "id": "C1",
+   "severity": "high",
+   "where": "src/data/corrections.json の 20261017-04／src/data/landing-page-configs.ts:97（/buyer/factory-commercial の heroH1）／新しいビルド .next/server/app/buyer/factory-commercial.html の見える本文",
+   "what": "20261017-04 の直す前は「最新の事例では年間 20-30% の電気代削減 + 容量市場収益が報告されています。」、直した後は「報告の出典を確認できないため、この文を削除」。ところが同じページの H1「工場・商業施設の電気代を、蓄電池で 20-30% 削減する」は残っている（scout.json では rule i・uncertain=true＝迷うもの）。新しいビルドの見える本文では、ページの先頭に H1 の「20-30% 削減する」、記事末に「20-30% の…出典を確認できないため削除」が並ぶ（20-30% は H1 で 2 回・訂正の欄で 2 回）。",
+   "fix": "20261017-04 は今回は足さない。FAQ の 1 文と H1 を一組にして、報告の「迷うもの」の表へ回す。ユウが H1 を裁定した後に、両方を 1 件（箇条 2 つ）で載せる。ユウがこの便の中で H1 の扱いを決めるなら、そのときに 1 件へまとめる。",
+   "votes_real": 1,
+   "votes": 2
+  },
+  {
+   "dim": "corrections",
+   "id": "C2",
+   "severity": "medium",
+   "where": "src/data/landing-page-configs.ts の差分（/buyer/capacity-market の FAQ 2 か所・/buyer/balancing-market の関連ツールのカード・/buyer/ppa-offtake の FAQ）／ユウの裁定 02_計画・運営/検証記録_10-17便_…_裁定_2026-10-17_ユウ.md §3 の (c)",
+   "what": "今の形でツールに無い機能を書いていた次の文が外されたが、訂正履歴には載っておらず、別表に回した印も無い。・/buyer/capacity-market「詳細は OCCTO 公式 + 当社の容量市場入札ツールで条件チェック可能です。」・同「当社の容量市場入札ツールで稼働率シミュレーションが可能です。」・/buyer/balancing-market の容量市場入札ツールのカード「実需給期間の運転計画最適化に活用。」・/buyer/ppa-offtake「当ページの USD/JPY + 円建て LNG データで影響度試算可能。」。scout.json はどれも uncertain=false で「出ていない機能を今あるように書いている」としている。src/app/tools/capacity-market-bid/page.tsx と src/components/CapacityMarketBidEstimator.tsx を「稼働率|条件チェック|参入条件|運転計画」で検索すると 0 件。",
+   "fix": "(c) は外部の一次を持たない。verify の basis 0 本は 2 型しか許していないので、今は corrections に足さない。報告の別表に「(c) に当たる・追補便で載せる候補」として、ページ・前の文・ツールに無い根拠を書く（/buyer/capacity-market は 1 件・箇条 2 つ／/buyer/balancing-market 1／/buyer/ppa-offtake 1）。「載せない」の側には入れない。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "corrections",
+   "id": "C3",
+   "severity": "low",
+   "where": "src/data/corrections.json の 20261017-03・20261017-04 の after",
+   "what": "03 の after「どちらの数値も、ページにも当サイトの出典の一覧にも出典を確認できないため、この 2 つの文を削除」、04 の after「報告の出典を確認できないため、この文を削除」。「当サイトの出典の一覧」はリポジトリの台帳（src/data/source-documents.json）のことで、公開のページは無い（src/app に該当のルートは無い）。04 の「報告の出典」は、元の文の「報告されています」を指すのか社内の報告を指すのかが読み分けにくい。",
+   "fix": "03・04 の after を裁定の文にそろえる。例: 03「どちらの数値も、裏づけとなる一次資料を確認できなかったため、この 2 つの文を削除しました」・04「裏づけとなる一次資料を確認できなかったため、この文を削除しました」。before には「（出典の記載なし）」が残り、after は /確認でき/ に当たるので、verify の basis 0 本の検査は通ったまま。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "corrections",
+   "id": "C4",
+   "severity": "low",
+   "where": "src/data/corrections.json の 20261017-05（/seller/developer）",
+   "what": "after は「運営元にそのような顧問チームは無く、公認会計士が在籍するという記載も確認できないため、この文を削除」。便 §1(c) で EDAさんが確かめたのは「『リク』という顧問はいない」ことだけで、公認会計士については「根拠が無い」という扱い。before ではリクを伏せて「顧問チーム（公認会計士ほか）」と書いているので、読者には「公認会計士のいる顧問チームは無い」と言い切っているように読める。「記載も確認できない」の「記載」は、ページの文そのものを指してしまう（確かめられないのは在籍の裏づけ）。before の末尾「（出典の記載なし）」は、自社の体制を書いた文には不自然で、basis 0 本の検査の /出典/ に合わせるために付いているように見える。",
+   "fix": "after を確かめた範囲に合わせる。例:「記載の顧問チームを運営元で確認できず、公認会計士が在籍するという裏づけも無いため、この文を削除」。before の「（出典の記載なし）」は、検査を通すために残すなら、それでよい。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "corrections",
+   "id": "C5",
+   "severity": "low",
+   "where": "src/data/landing-page-configs.ts:1317（/seller/reuse-secondhand の FAQ「リユース蓄電池の容量市場参入は可能?」）",
+   "what": "答えの末尾「容量市場入札ツールで参入可能性試算可能。」が残っている。/buyer/capacity-market から外した「当社の容量市場入札ツールで条件チェック可能です」と同じ型（ツールに無い機能を今の形で書いている）。scout.json に「参入可能性試算」は 0 件で、洗い出しから漏れている。",
+   "fix": "/buyer/capacity-market と同じく文ごと外す（rule a）。外すなら C2 と同じく、別表の (c) の候補に足す。迷うなら「迷うもの」の表へ回す。",
+   "votes_real": 2,
+   "votes": 2
+  },
+  {
+   "dim": "corrections",
+   "id": "C6",
+   "severity": "info",
+   "where": "reports/entrance-cleanup-and-contact-tracking-2026-10-17.data.json（git status は ??）／corrections.json の 3 件の internalRef",
+   "what": "3 件の internalRef が指す data.json は未追跡。verify:corrections の検査 4（internalRef の報告が在るか）がローカルで通るのは、ファイルが手元に在るからにすぎない。",
+   "fix": "push のコミットに data.json（と報告の md）を必ず入れる。",
+   "votes_real": null,
+   "votes": 0
+  },
+  {
+   "dim": "corrections",
+   "id": "C7",
+   "severity": "info",
+   "where": "src/data/corrections.json の 20261017-03〜05 の date と id",
+   "what": "date は 2026-10-17 だが、まだ push 前（確認した時点は 10/17 21:0x JST・ビルドは約 12 分）。",
+   "fix": "デプロイ成功が 10/18 JST になったら、date を 2026-10-18 に、id を 20261018-01〜03 に直す。",
+   "votes_real": null,
+   "votes": 0
+  }
+ ]
+}

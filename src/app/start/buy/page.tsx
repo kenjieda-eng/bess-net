@@ -8,11 +8,11 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
 import StartTrustBlock from '@/components/StartTrustBlock';
+import { contactUrl } from '@/lib/contact-link';
 
 export const dynamic = 'force-static';
 
-const CONTACT_URL =
-  'https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_buy';
+const CONTACT_URL = contactUrl({ campaign: 'funnel_buy', position: 'cta' });
 
 const LEAD =
   '稼働中の蓄電所の取得から、新規開発への投資、工場・施設への蓄電池導入まで — 目的に合わせて、EIC の専門家チームが無料でご相談に応じます。';

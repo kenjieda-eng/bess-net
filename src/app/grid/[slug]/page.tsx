@@ -35,6 +35,7 @@ import GridPrintButton from '@/components/GridPrintButton';
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
 // N1b: 個別ページ（runtime microCMS）も一覧と同じ規則で区分する（#121・L-EIC-028: 取得側・表示側の全経路が同じ値を得る）
 import { n1StatusOf, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status';
+import { contactUrl } from '@/lib/contact-link';
 
 // Gr6(2026-08-09): エリア別の変電所件数（precompute の area_dates から・runtime fetch 0）
 const AREA_SUBSTATION_COUNT: Record<string, number> = Object.fromEntries(
@@ -692,7 +693,7 @@ export default async function GridSlugPage({
               </p>
               <p>
                 <a
-                  href={siteConfig.organization.contactUrl}
+                  href={contactUrl({ campaign: 'grid_detail', position: 'feedback' })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="grid-location-tips-button"

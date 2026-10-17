@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { siteConfig } from '@/lib/site-config';
 import { AnnouncementBanner } from '@/components/AnnouncementBanner';
+import ContactClickTracker from '@/components/ContactClickTracker';
 import { toJstDate } from '@/lib/announcement-schedule';
 import './globals.css';
 
@@ -124,6 +125,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* 描画日を渡す: 静的ページの HTML と初回のクライアント描画を一致させる（AnnouncementBanner 冒頭参照） */}
         <AnnouncementBanner renderedJstDate={toJstDate(new Date())} />
         {children}
+        {/* 相談のリンク（eic-jp.org/contact）のクリックを GA4 の contact_click で数える（入口の掃除と計測便・2026-10-17） */}
+        <ContactClickTracker />
       </body>
     </html>
   );

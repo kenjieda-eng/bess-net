@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import { contactUrl } from '@/lib/contact-link';
 
 export const metadata: Metadata = {
   title: 'プライバシーポリシー',
@@ -107,7 +108,7 @@ export default function PrivacyPage() {
               <dt>お問い合わせ</dt>
               <dd>
                 <a
-                  href={siteConfig.organization.contactUrl}
+                  href={contactUrl({ campaign: 'privacy', position: 'org_table' })}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

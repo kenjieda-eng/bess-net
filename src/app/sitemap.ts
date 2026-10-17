@@ -189,6 +189,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/contact/advisor`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     // Sprint 6 追加: /anken 流通案件サンプルページ（2026-06-10 index公開）
     { url: `${siteConfig.url}/anken`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    // /anken の下の 4 ページ（index, follow なのに sitemap に無かった・入口の掃除と計測便 2026-10-17）
+    { url: `${siteConfig.url}/anken/buy`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${siteConfig.url}/anken/sell`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${siteConfig.url}/anken/flow`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${siteConfig.url}/anken/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${siteConfig.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/editorial-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${siteConfig.url}/privacy`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },

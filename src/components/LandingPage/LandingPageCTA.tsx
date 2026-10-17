@@ -40,7 +40,7 @@ export default function LandingPageCTA({ primary, secondary }: Props) {
           }}
           className="text-base lg:text-lg"
         >
-          一般社団法人エネルギー情報センター (10 年運営実績) が、業界中立で対応いたします。
+          一般社団法人エネルギー情報センター（2015 年設立）が、業界中立で対応いたします。
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'center' }}>
           <Link

@@ -12,16 +12,17 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
-import substationsIndex from '@/data/substations/index.json';
+import { GRID_COMPANY_COUNT, SUBSTATION_TOTAL_STR } from '@/lib/site-counts';
+import { OPERATOR_COUNT } from '@/lib/operator-count';
+import { contactUrl } from '@/lib/contact-link';
 
 export const dynamic = 'force-static';
 
-// 変電所数はローカル JSON から動的参照（焼き込み禁止・v15 原則。microCMS 0 req）
-const SUBSTATION_TOTAL_STR = (substationsIndex as { total: number }).total.toLocaleString('en-US');
+// 変電所数・送配電の会社数・事業者ナビの社数は共通の出どころから（焼き込み禁止・v15 原則。microCMS 0 req）
+// 入口の掃除と計測便（2026-10-17）: 旧「全国10社」「540社超」の手書きをやめた（StartTrustBlock と同時）
 
 const SLUG = 'operating-bess-introduction';
-const CONTACT_URL =
-  'https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=operating_bess_intro';
+const CONTACT_URL = contactUrl({ campaign: 'operating_bess_intro', position: 'cta' });
 
 const LEAD =
   '稼働中の系統用蓄電池（蓄電所）の取得をご検討の事業者・投資家の方へ、当サイト運営元の EIC が案件のご紹介を承ります。売却・譲渡をご検討のオーナー様からのご相談も受け付けています。';
@@ -73,7 +74,7 @@ export default function OperatingBessIntroductionPage() {
               </li>
               <li>
                 <strong>業界データ基盤の運営元</strong> —
-                蓄電所ネットは全国10社・{SUBSTATION_TOTAL_STR}変電所の系統情報DB、540社超の事業者ナビ、
+                {` 蓄電所ネットは全国${GRID_COMPANY_COUNT}社・${SUBSTATION_TOTAL_STR}変電所の系統情報DB、${OPERATOR_COUNT}社の事業者ナビ、`}
                 <Link href="/reports/2026">業界レポート2026</Link> 等を運営しており、案件を評価するためのデータ基盤を持っています。
               </li>
               <li>

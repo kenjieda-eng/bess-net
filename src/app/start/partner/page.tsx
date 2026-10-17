@@ -8,11 +8,12 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
 import StartTrustBlock from '@/components/StartTrustBlock';
+import { contactUrl } from '@/lib/contact-link';
+import { OPERATOR_COUNT } from '@/lib/operator-count';
 
 export const dynamic = 'force-static';
 
-const CONTACT_URL =
-  'https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_partner';
+const CONTACT_URL = contactUrl({ campaign: 'funnel_partner', position: 'cta' });
 
 const LEAD =
   'メーカー・EPC・デベロッパー・アグリゲーターなど、蓄電池ビジネスの実務に携わる方と、これから参入する方のために、データ・ツール・協業の窓口を用意しています。';
@@ -64,7 +65,7 @@ export default function StartPartnerPage() {
                 <strong>実務ツール群</strong>（無料・登録不要）— IRR・系統連系診断・補助金マッチングほか
               </li>
               <li>
-                <strong>業界データベース</strong> — 事業者ナビ（540社超）・業界カオスマップ・事業者ランキング Top50
+                <strong>業界データベース</strong>{` — 事業者ナビ（${OPERATOR_COUNT}社）・業界カオスマップ・事業者ランキング Top50`}
               </li>
               <li>
                 <strong>協業・掲載のご相談</strong>

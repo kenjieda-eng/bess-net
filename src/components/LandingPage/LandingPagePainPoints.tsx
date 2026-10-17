@@ -3,6 +3,7 @@
  */
 
 import type { LandingPagePainPoint } from '@/data/landing-page-configs';
+import { renderInlineLinks } from '@/lib/inline-links';
 
 export default function LandingPagePainPoints({
   painPoints,
@@ -67,7 +68,7 @@ export default function LandingPagePainPoints({
                 }}
                 className="text-base"
               >
-                {p.description}
+                {renderInlineLinks(p.description)}
               </p>
             </div>
           ))}

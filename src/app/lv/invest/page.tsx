@@ -12,11 +12,11 @@ import LvInvestTrustBlock from '@/components/LvInvestTrustBlock';
 import { siteConfig } from '@/lib/site-config';
 import { getIndustryNews } from '@/lib/microcms';
 import { LV_INVEST_ARTICLES_A, LV_INVEST_ARTICLES_B, LV_INVEST_ARTICLES_C, LV_INVEST_ARTICLES_D, LV_INVEST_ARTICLES_E, LV_INVEST_ARTICLES_F, LV_INVEST_ARTICLES_G } from '@/lib/lv-invest';
+import { contactUrl } from '@/lib/contact-link';
 
 export const dynamic = 'force-static';
 
-const CONTACT_URL =
-  'https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_lv_invest';
+const CONTACT_URL = contactUrl({ campaign: 'funnel_lv_invest', position: 'cta' });
 
 export const metadata: Metadata = {
   // layout titleTemplate が「 | 蓄電所ネット」を自動付与（#88 二重回避）

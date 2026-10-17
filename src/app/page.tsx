@@ -22,6 +22,7 @@ import {
 import substationsIndex from '@/data/substations/index.json';
 // Ck-1 A5: 容量市場の年度範囲はカタログから（「対象実需給年度」を明記・範囲を焼き込まない）
 import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults';
+import { contactUrl } from '@/lib/contact-link';
 
 export const revalidate = 60;
 
@@ -355,7 +356,7 @@ export default async function Home() {
             <span className="home-feature-tag">Annual Report · 公開中</span>
             <h2>📕 業界レポート2026</h2>
             <p>
-              蓄電所事業の年次レポート（本編・全10章）を公開中。市場概況・政策・主要プレイヤー・系統データ・補助金・火災事例・海外比較・展望を、当サイトのデータベースと公的一次情報から編集統合した決定版です。
+              蓄電所事業の年次レポート（本編・全10章）を公開中。市場概況・政策・主要プレイヤー・系統データ・補助金・火災事例・海外比較・展望を、当サイトのデータベースと公的一次情報から編集統合したものです。
             </p>
             <Link href="/reports/2026" className="home-feature-button">
               業界レポート2026を読む →
@@ -451,7 +452,7 @@ export default async function Home() {
           </p>
           <p>
             <a
-              href={siteConfig.organization.contactUrl}
+              href={contactUrl({ campaign: 'top', position: 'inquiry' })}
               target="_blank"
               rel="noopener noreferrer"
             >

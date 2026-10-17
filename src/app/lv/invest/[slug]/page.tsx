@@ -24,11 +24,11 @@ import { linkifyHTML } from '@/lib/linkify';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 import { isLvInvestExplainer, LV_INVEST_SEO_MAP } from '@/lib/lv-invest';
+import { contactUrl } from '@/lib/contact-link';
 
 export const revalidate = 600;
 
-const CONTACT_URL =
-  'https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_lv_invest';
+const CONTACT_URL = contactUrl({ campaign: 'funnel_lv_invest', position: 'cta' });
 
 export async function generateStaticParams() {
   try {

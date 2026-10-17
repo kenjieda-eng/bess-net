@@ -96,7 +96,6 @@ export default function OpsFreshnessPage() {
                   <tr>
                     <th style={{ padding: '8px 10px', textAlign: 'left' }}>コンテンツ</th>
                     <th style={{ padding: '8px 10px', textAlign: 'left' }}>頻度</th>
-                    <th style={{ padding: '8px 10px', textAlign: 'left' }}>担当</th>
                     <th style={{ padding: '8px 10px', textAlign: 'left' }}>次回更新予定</th>
                   </tr>
                 </thead>
@@ -110,7 +109,6 @@ export default function OpsFreshnessPage() {
                           <div style={{ fontSize: 12, color: '#6b7280' }}>{r.url}</div>
                         </td>
                         <td style={{ padding: '7px 10px' }}>{FREQ_LABEL[r.frequency]}</td>
-                        <td style={{ padding: '7px 10px' }}>{r.persona}</td>
                         <td style={{ padding: '7px 10px', color: overdue ? '#b91c1c' : '#374151', fontWeight: overdue ? 700 : 400 }}>
                           {r.next ? new Date(r.next).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '随時'}
                           {overdue && <span style={{ marginLeft: 6, fontSize: 12 }}>⚠ 期限超過</span>}

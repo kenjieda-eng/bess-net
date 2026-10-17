@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import { contactUrl } from '@/lib/contact-link';
 
 export const metadata: Metadata = {
   title: '利用規約',
@@ -107,7 +108,7 @@ export default function TermsPage() {
             <p>
               本規約に関するお問い合わせは、
               <a
-                href={siteConfig.organization.contactUrl}
+                href={contactUrl({ campaign: 'terms', position: 'body' })}
                 target="_blank"
                 rel="noopener noreferrer"
               >

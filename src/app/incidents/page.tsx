@@ -15,6 +15,7 @@ import CorrectionHistory from '@/components/CorrectionHistory';
 import { siteConfig } from '@/lib/site-config';
 // Ck-1a ■1-5: hidden の事例を除いた VISIBLE_INCIDENTS だけを数える・並べる
 import { VISIBLE_INCIDENTS as INCIDENTS, SEVERITY_LABELS, CAUSE_LABELS, REGION_LABELS } from '@/data/incidents';
+import { contactUrl } from '@/lib/contact-link';
 
 export const revalidate = 86400;
 
@@ -114,7 +115,7 @@ export default function IncidentsPage() {
               <li>詳細は必ず<strong>一次ソース</strong>を参照し、内部判断にお使いください。</li>
               <li>
                 <strong>削除依頼：</strong>掲載内容に誤りまたは削除すべき情報がある場合は
-                <a href="https://eic-jp.org/contact" target="_blank" rel="noopener noreferrer" style={{ marginLeft: 4 }}>
+                <a href={contactUrl({ campaign: 'incidents', position: 'feedback' })} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 4 }}>
                   お問い合わせフォーム
                 </a>
                 からご連絡ください。<strong>原則48時間以内</strong>に対応します（緊急の場合は件名に「DB削除依頼【緊急】」とご記入ください）。

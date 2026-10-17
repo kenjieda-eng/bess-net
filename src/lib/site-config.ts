@@ -1,3 +1,5 @@
+import { CONTACT_DISPLAY_URL } from './contact-link';
+
 // サイト全体の定数を一元管理
 // 名称・URL・メタ情報をここで定義し、各ページから参照する
 
@@ -30,7 +32,8 @@ export const siteConfig = {
     '系統用蓄電池および低圧リソース事業の情報ポータル。業界ニュース、プロジェクトデータベース、市場制度解説、補助金カレンダー、変電所別 系統空き容量、事業者一覧、用語集を一元化。',
   ogImage: '/og-image.png',
   twitter: '',
-  contactUrl: 'https://eic-jp.org/contact',
+  // 画面に文字で出す URL（UTM なし）。リンクの href は src/lib/contact-link.ts の contactUrl() で作る
+  contactUrl: CONTACT_DISPLAY_URL,
   locale: 'ja_JP',
 
   // 運営者情報（公式）
@@ -39,7 +42,7 @@ export const siteConfig = {
     nameShort: 'エネルギー情報センター',
     url: 'https://eic-jp.org/',
     address: '〒160-0022 東京都新宿区新宿2丁目9-22 多摩川新宿ビル3F',
-    contactUrl: 'https://eic-jp.org/contact',
+    contactUrl: CONTACT_DISPLAY_URL,
   },
 
   // ナビゲーション（Phase 1で順次有効化）

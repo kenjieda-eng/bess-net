@@ -8,11 +8,11 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
 import StartTrustBlock from '@/components/StartTrustBlock';
+import { contactUrl } from '@/lib/contact-link';
 
 export const dynamic = 'force-static';
 
-const CONTACT_URL =
-  'https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_sell';
+const CONTACT_URL = contactUrl({ campaign: 'funnel_sell', position: 'cta' });
 
 const LEAD =
   '保有する蓄電所の売却・譲渡、開発中案件や土地の活用など、売り手側のご相談を EIC の専門家チームが無料で承ります。';

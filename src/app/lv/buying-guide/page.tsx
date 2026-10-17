@@ -11,6 +11,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LvContactCta from '@/components/LvContactCta';
 import { siteConfig } from '@/lib/site-config';
+import { contactUrl } from '@/lib/contact-link';
 
 export const dynamic = 'force-static';
 
@@ -141,7 +142,7 @@ export default function LvBuyingGuidePage() {
           <p style={{ fontSize: 15, textAlign: 'center', marginTop: 0 }}>
             事業として開発側に回りたい方は{' '}
             <a
-              href="https://eic-jp.org/contact?utm_source=bess-net&utm_medium=referral&utm_campaign=funnel_lv_entry"
+              href={contactUrl({ campaign: 'funnel_lv_entry', position: 'cross_link' })}
               target="_blank"
               rel="noopener noreferrer"
             >

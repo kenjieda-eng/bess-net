@@ -17,19 +17,13 @@
  */
 
 import type { CSSProperties, ReactNode } from 'react';
-
-const CONTACT_BASE = 'https://eic-jp.org/contact';
+import { contactUrl } from '@/lib/contact-link';
 
 export type AnkenPage = 'top' | 'buy' | 'sell' | 'flow' | 'faq';
 
+// 入口の掃除と計測便（2026-10-17）: URL は共通の contactUrl で作る（形・名前は従来どおり＝medium anken・campaign anken_{page}・content {position}）
 function buildContactUrl(page: AnkenPage, position: string): string {
-  const params = new URLSearchParams({
-    utm_source: 'bess-net',
-    utm_medium: 'anken',
-    utm_campaign: `anken_${page}`,
-    utm_content: position,
-  });
-  return `${CONTACT_BASE}?${params.toString()}`;
+  return contactUrl({ campaign: `anken_${page}`, position, medium: 'anken' });
 }
 
 export default function AnkenContactCTA({

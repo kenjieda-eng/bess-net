@@ -16,6 +16,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { CONTACT_INDEX_CONFIG } from '@/data/contact-pages-configs';
 import { siteConfig } from '@/lib/site-config';
+import { contactUrl } from '@/lib/contact-link';
 
 export const revalidate = 86400;
 
@@ -182,7 +183,7 @@ export default function ContactIndexPage() {
             </ul>
             <div style={{ textAlign: 'center' }}>
               <a
-                href={siteConfig.contactUrl}
+                href={contactUrl({ campaign: 'contact_index', position: 'form_button' })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

@@ -4,6 +4,7 @@
  */
 
 import type { LandingPageFAQ } from '@/data/landing-page-configs';
+import { renderInlineLinks, stripInlineLinks } from '@/lib/inline-links';
 
 export default function LandingPageFAQ({ faqs }: { faqs: LandingPageFAQ[] }) {
   if (faqs.length === 0) return null;
@@ -15,7 +16,7 @@ export default function LandingPageFAQ({ faqs }: { faqs: LandingPageFAQ[] }) {
     mainEntity: faqs.map((f) => ({
       '@type': 'Question',
       name: f.question,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      acceptedAnswer: { '@type': 'Answer', text: stripInlineLinks(f.answer) },
     })),
   };
 
@@ -80,7 +81,7 @@ export default function LandingPageFAQ({ faqs }: { faqs: LandingPageFAQ[] }) {
                 }}
                 className="text-base lg:text-lg"
               >
-                {faq.answer}
+                {renderInlineLinks(faq.answer)}
               </p>
             </details>
           ))}

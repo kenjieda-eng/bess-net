@@ -13,15 +13,17 @@ import SiteFooter from '@/components/SiteFooter';
 import TrackerTimeline, { type TimelineItem } from '@/components/TrackerTimeline';
 import { getAllOperators } from '@/lib/microcms';
 import { isExcludedOperator } from '@/lib/operators-excluded';
+import { OPERATOR_COUNT } from '@/lib/operator-count';
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: '事業者トラッカー (蓄電所事業者 540+ 更新タイムライン)',
-  description: '事業者ナビ (540+社) の追加・更新を時系列で表示。カテゴリ別フィルタ可能。当サイト独自の事業者トラッカー、無料公開・登録不要。',
+  // 入口の掃除と計測便（2026-10-17）: 旧「540+」の手書きをやめ、/operators と同じ数（src/lib/operator-count.ts）を出す
+  title: `事業者トラッカー (蓄電所事業者 ${OPERATOR_COUNT}社 更新タイムライン)`,
+  description: `事業者ナビ (${OPERATOR_COUNT}社) の追加・更新を時系列で表示。カテゴリ別フィルタ可能。当サイト独自の事業者トラッカー、無料公開・登録不要。`,
   alternates: { canonical: '/tracker/ag' },
   openGraph: {
-    title: '事業者トラッカー (蓄電所事業者 540+)',
+    title: `事業者トラッカー (蓄電所事業者 ${OPERATOR_COUNT}社)`,
     description: '事業者エントリの追加/更新を時系列で一覧',
     type: 'website',
     images: ['/og-image.png'],

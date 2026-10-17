@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/lib/site-config';
+import { contactUrl } from '@/lib/contact-link';
 
 export const metadata: Metadata = {
   title: '編集方針',
@@ -89,7 +90,7 @@ export default function EditorialPolicyPage() {
             <p>
               当サイトの記事内容に関して、事実誤認・名誉毀損・権利侵害・改善のご指摘がございましたら、
               <a
-                href={siteConfig.organization.contactUrl}
+                href={contactUrl({ campaign: 'editorial_policy', position: 'feedback' })}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -109,7 +110,7 @@ export default function EditorialPolicyPage() {
             <p>
               当サイトは、公的機関・業界団体等が公表するデータを、各提供元の利用条件に従い、出典と、編集・加工等を行った旨を明記したうえで掲載しています。出典元から掲載内容の修正・削除のご要請をいただいた場合は、
               <a
-                href={siteConfig.organization.contactUrl}
+                href={contactUrl({ campaign: 'editorial_policy', position: 'feedback' })}
                 target="_blank"
                 rel="noopener noreferrer"
               >

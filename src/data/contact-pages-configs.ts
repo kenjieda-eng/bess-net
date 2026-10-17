@@ -5,10 +5,13 @@
  *
  * 設計:
  *   - Server Component のみ（'use client' 不使用）
- *   - CTA は全て https://eic-jp.org/contact へ外部リンク
+ *   - CTA は全て eic-jp.org/contact へ外部リンク（href は src/lib/contact-link.ts の contactUrl で UTM つき）
  *   - ContactPageLayout が本設定ファイルを参照してページ生成
  *   - JSON-LD ContactPage は page.tsx で出力
  */
+
+import { contactUrl } from '@/lib/contact-link';
+import { OPERATOR_COUNT } from '@/lib/operator-count';
 
 export type PlayerType = 'buyer' | 'seller' | 'media' | 'investor' | 'advisor';
 
@@ -59,7 +62,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
   buyer: {
     type: 'buyer',
     slug: 'buyer',
-    title: '蓄電池導入・参入検討者のお問い合わせ | 蓄電所ネット',
+    title: '蓄電池導入・参入検討者のお問い合わせ',
     description:
       '系統用蓄電池や低圧蓄電池の導入・参入を検討されている事業者様向けのお問い合わせページ。補助金・IRR試算・系統連系など、事業化に向けた情報提供をサポートします。',
     heroH1: '蓄電池導入・参入を検討されている方へ',
@@ -92,7 +95,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
       },
     ],
     ctaLabel: 'お問い合わせフォームへ（エネルギー情報センター）',
-    ctaUrl: 'https://eic-jp.org/contact',
+    ctaUrl: contactUrl({ campaign: 'contact_buyer', position: 'form_button' }),
     relatedLinks: [
       { label: '蓄電池IRRシミュレーター', url: '/tools/irr-simulator' },
       { label: '蓄電池補助金マッチング', url: '/tools/subsidy-match' },
@@ -104,7 +107,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
   seller: {
     type: 'seller',
     slug: 'seller',
-    title: 'メーカー・EPC・デベロッパーのお問い合わせ | 蓄電所ネット',
+    title: 'メーカー・EPC・デベロッパーのお問い合わせ',
     description:
       '蓄電池メーカー・EPC事業者・プロジェクトデベロッパー向けのお問い合わせページ。事業者掲載、プロジェクト登録、データ連携についてご相談いただけます。',
     heroH1: 'メーカー・EPC・デベロッパーの方へ',
@@ -115,7 +118,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
         icon: '🏭',
         title: '事業者ナビへの掲載・情報更新',
         description:
-          '事業者ナビ（403社掲載）への新規掲載申請、既存掲載情報の修正・更新依頼を承ります。',
+          `事業者ナビ（${OPERATOR_COUNT}社掲載）への新規掲載申請、既存掲載情報の修正・更新依頼を承ります。`,
       },
       {
         icon: '🗂️',
@@ -137,7 +140,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
       },
     ],
     ctaLabel: 'お問い合わせフォームへ（エネルギー情報センター）',
-    ctaUrl: 'https://eic-jp.org/contact',
+    ctaUrl: contactUrl({ campaign: 'contact_seller', position: 'form_button' }),
     relatedLinks: [
       { label: '事業者ナビ', url: '/operators' },
       { label: 'プロジェクトDB', url: '/projects' },
@@ -149,12 +152,12 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
   media: {
     type: 'media',
     slug: 'media',
-    title: 'メディア・報道機関のお問い合わせ | 蓄電所ネット',
+    title: 'メディア・報道機関のお問い合わせ',
     description:
       'メディア・報道機関・研究機関向けのお問い合わせページ。取材対応、資料提供、コメント依頼はこちらから受け付けています。',
     heroH1: 'メディア・報道機関の方へ',
     heroSubcopy:
-      '蓄電所ネット／エネルギー情報センターへの取材申込み、資料提供依頼、データ利用許諾に関するお問い合わせを受け付けています。迅速に対応いたします。',
+      '蓄電所ネット／エネルギー情報センターへの取材申込み、資料提供依頼、データ利用許諾に関するお問い合わせを受け付けています。',
     guidances: [
       {
         icon: '📰',
@@ -182,7 +185,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
       },
     ],
     ctaLabel: '取材・報道お問い合わせフォームへ（エネルギー情報センター）',
-    ctaUrl: 'https://eic-jp.org/contact',
+    ctaUrl: contactUrl({ campaign: 'contact_media', position: 'form_button' }),
     relatedLinks: [
       { label: '業界レポート2026', url: '/reports/2026' },
       { label: '蓄電所ネットについて', url: '/about' },
@@ -194,7 +197,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
   investor: {
     type: 'investor',
     slug: 'investor',
-    title: '投資家・ファンドのお問い合わせ | 蓄電所ネット',
+    title: '投資家・ファンドのお問い合わせ',
     description:
       '機関投資家・ベンチャーキャピタル・インフラファンド向けのお問い合わせページ。市場データ提供、業界レポート、投資判断支援情報についてご相談いただけます。',
     heroH1: '投資家・ファンドの方へ',
@@ -227,7 +230,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
       },
     ],
     ctaLabel: 'お問い合わせフォームへ（エネルギー情報センター）',
-    ctaUrl: 'https://eic-jp.org/contact',
+    ctaUrl: contactUrl({ campaign: 'contact_investor', position: 'form_button' }),
     relatedLinks: [
       { label: '業界レポート2026', url: '/reports/2026' },
       { label: 'マーケットデータダッシュボード', url: '/dashboard/market' },
@@ -239,7 +242,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
   advisor: {
     type: 'advisor',
     slug: 'advisor',
-    title: 'コンサルタント・専門家のお問い合わせ | 蓄電所ネット',
+    title: 'コンサルタント・専門家のお問い合わせ',
     description:
       'エネルギーコンサルタント・法律・財務専門家・行政関係者向けのお問い合わせページ。情報連携、コンテンツ協力、専門家ネットワークへの参加についてご相談いただけます。',
     heroH1: 'コンサルタント・専門家の方へ',
@@ -272,7 +275,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
       },
     ],
     ctaLabel: 'お問い合わせフォームへ（エネルギー情報センター）',
-    ctaUrl: 'https://eic-jp.org/contact',
+    ctaUrl: contactUrl({ campaign: 'contact_advisor', position: 'form_button' }),
     relatedLinks: [
       { label: '業界分析ハブ', url: '/industry' },
       { label: '蓄電池用語集', url: '/glossary' },
@@ -287,7 +290,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
 // ─────────────────────────────────────
 
 export const CONTACT_INDEX_CONFIG: ContactIndexConfig = {
-  title: 'お問い合わせ | 蓄電所ネット',
+  title: 'お問い合わせ',
   description:
     '蓄電所ネット（運営：一般社団法人エネルギー情報センター）へのお問い合わせ。蓄電池導入・参入検討、メーカー・EPC事業者、メディア、投資家、専門家の方それぞれの窓口をご案内します。',
   heroH1: 'お問い合わせ',

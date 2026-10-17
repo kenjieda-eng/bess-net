@@ -9,6 +9,7 @@ import {
 } from '@/lib/microcms';
 import { isExcludedInfo } from '@/lib/info-excluded';
 import { siteConfig } from '@/lib/site-config';
+import { addContactUtmToHtml } from '@/lib/contact-link';
 
 export const revalidate = 300;
 
@@ -104,7 +105,8 @@ export default async function InfoDetailPage({
           <p className="article-lead">{article.lead}</p>
           <div
             className="article-body"
-            dangerouslySetInnerHTML={{ __html: article.body }}
+            // 入口の掃除と計測便（2026-10-17）: 本文の相談のリンクの href に UTM（表示の文字はそのまま）
+            dangerouslySetInnerHTML={{ __html: addContactUtmToHtml(article.body || '', { campaign: 'info_detail', position: 'body' }) }}
           />
           {(article.sourceName || article.sourceUrl) && (
             <section className="article-sources">

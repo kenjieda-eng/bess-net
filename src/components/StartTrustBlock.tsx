@@ -4,12 +4,13 @@
  * 取れた事実のみ L-EIC-019）を原文のまま転用・コンポーネント化。
  * ※ 文言を変える場合は operating-bess-introduction 側（inline 原本）と同時に見直すこと。
  * 変電所数は substations INDEX から動的導出（焼き込み禁止・microCMS 0 req）。
+ * 入口の掃除と計測便（2026-10-17）: 送配電の会社数（旧「10社」）・事業者ナビの社数（旧「540社超」）も手書きをやめ、
+ *   src/lib/site-counts.ts（index.json の summary）と src/lib/operator-count.ts（/operators と同じ数）から出す。
  */
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
-import substationsIndex from '@/data/substations/index.json';
-
-const SUBSTATION_TOTAL_STR = (substationsIndex as { total: number }).total.toLocaleString('en-US');
+import { GRID_COMPANY_COUNT, SUBSTATION_TOTAL_STR } from '@/lib/site-counts';
+import { OPERATOR_COUNT } from '@/lib/operator-count';
 
 export default function StartTrustBlock() {
   return (
@@ -22,7 +23,7 @@ export default function StartTrustBlock() {
         </li>
         <li>
           <strong>業界データ基盤の運営元</strong> —
-          蓄電所ネットは全国10社・{SUBSTATION_TOTAL_STR}変電所の系統情報DB、540社超の事業者ナビ、
+          {` 蓄電所ネットは全国${GRID_COMPANY_COUNT}社・${SUBSTATION_TOTAL_STR}変電所の系統情報DB、${OPERATOR_COUNT}社の事業者ナビ、`}
           <Link href="/reports/2026">業界レポート2026</Link> 等を運営しており、案件を評価するためのデータ基盤を持っています。
         </li>
         <li>

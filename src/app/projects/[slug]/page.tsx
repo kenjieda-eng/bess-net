@@ -19,6 +19,7 @@ import {
   getNearbySubstations,
 } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
+import { contactUrl } from '@/lib/contact-link';
 
 export const revalidate = 600;
 
@@ -185,7 +186,7 @@ export default async function ProjectDetailPage({
             }} aria-label="データ品質に関するご案内">
               ※ このプロジェクトは<strong>「調査中」</strong>の項目があります (出力 or 容量)。
               公開情報が不足しているため、一次情報を確認次第順次更新します。
-              情報をお持ちの方は <a href="https://eic-jp.org/contact" target="_blank" rel="noopener noreferrer">編集部</a> までお寄せください。
+              情報をお持ちの方は <a href={contactUrl({ campaign: 'projects_detail', position: 'feedback' })} target="_blank" rel="noopener noreferrer">編集部</a> までお寄せください。
             </section>
           )}
 
@@ -336,7 +337,7 @@ export default async function ProjectDetailPage({
             <p style={{ margin: 0 }}>
               本ページは公開情報を構造化したものです。掲載企業の公式情報とは独立した情報として発信しています。
               掲載内容に関するご指摘は{' '}
-              <a href="https://eic-jp.org/contact" target="_blank" rel="noopener noreferrer">
+              <a href={contactUrl({ campaign: 'projects_detail', position: 'feedback' })} target="_blank" rel="noopener noreferrer">
                 お問い合わせ
               </a>{' '}
               よりご連絡ください。
