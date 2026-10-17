@@ -10,6 +10,7 @@
  * 一覧・詳細（404）・補助金マッチ・sitemap・件数・グリッドの県ページが同時に揃う（#118/#119: 一部の経路だけ外れる事態を防ぐ）。
  *
  * 理由はすべて reports/ck1-approval-2026-09-21.md「0-1. 補助金 18 件」の該当行（slug が行 id）。
+ * ただし末尾の fukushima-renewable-storage-2026 は補助金直し便 10-16 の裁定（reports/subsidies-fix-2026-10-16.md・2026-10-17 実行）。
  * いずれも一次（各自治体の制度一覧・担当課ページ）で、名称・所管・補助率・上限の揃う制度を確認できなかった。
  * 「公募終了」と書き換えるのも制度の実在を示せない以上は捏造になるため、書き換えずに外す。
  * 実在する制度への作り直しは Ck-2 で個別に裁定する。
@@ -41,6 +42,7 @@ export const SUBSIDIES_EXCLUDED: readonly ExcludedSubsidy[] = [
   { slug: 'saitama-decarbonization-2026', row: '§0-1 saitama-decarbonization-2026', reason: '同名制度なし。旧 URL の a0509 ディレクトリも県サイトに存在しない' },
   { slug: 'shizuoka-bess-2026', row: '§0-1 shizuoka-bess-2026', reason: '静岡県の補助制度一覧に同名制度なし。産業政策課は補助事業を持たない' },
   { slug: 'regional-bank-green-loans', row: '§0-1 regional-bank-green-loans', reason: '単一の制度ではなく各地銀のグリーンローンの総称。出典の全銀協ページは存在した形跡がない' },
+  { slug: 'fukushima-renewable-storage-2026', row: 'ユウ裁定 2026-10-16（reports/subsidies-fix-2026-10-16.md）', reason: '福島県エネルギー課の令和8年度の補助事業一覧に同名の制度がなく、補助率1/2・上限1億円・5月〜9月末の揃う制度も無い。sourceUrl は原子力防災課（環境放射線モニタリング）のページで、制度の記載が無い' },
 ];
 
 export const SUBSIDIES_EXCLUDED_SLUGS: ReadonlySet<string> = new Set(SUBSIDIES_EXCLUDED.map((s) => s.slug));

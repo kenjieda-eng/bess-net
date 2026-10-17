@@ -6146,6 +6146,24 @@
     }
    ],
    "internalRef": "reports/zesei-2026-10-13.md (1) ■2・(2)・(4)・(6)-4／reports/zesei-2026-10-13.data.json plan.patches[0]（note「eventDate 2026-03-13 の時点で 15.00 円は公表済み」）／reports/tool-balancing-rules-plan-2026-10-12.md (7) 表の balancing-market-reform-2026-03 行"
+  },
+  {
+   "id": "20261017-01",
+   "date": "2026-10-17",
+   "kind": "表示の停止",
+   "path": "/subsidies/fukushima-renewable-storage-2026",
+   "record": "subsidies/fukushima-renewable-storage-2026",
+   "targetTitle": "福島県 再生可能エネルギー・蓄電池導入支援事業",
+   "before": "補助率1/2・上限1億円・2026年5月〜9月末の福島県の補助金として掲載",
+   "after": "福島県エネルギー課の補助事業の一覧に該当する制度が無く、出典のリンク先が別の課のページだったため、表示を止めました",
+   "basis": [
+    {
+     "name": "エネルギー課 - 福島県ホームページ",
+     "publisher": "福島県 エネルギー課",
+     "url": "https://www.pref.fukushima.lg.jp/sec/11025c/"
+    }
+   ],
+   "internalRef": "reports/subsidies-fix-2026-10-16.data.json（報告 reports/subsidies-fix-2026-10-16.md の (6)）"
   }
  ]
 }

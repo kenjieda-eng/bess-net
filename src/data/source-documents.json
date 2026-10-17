@@ -3124,6 +3124,42 @@
       "checked_on": "2026-10-15",
       "note": "PDF（HTTP 200・application/pdf・2,018,956 バイト・47 ページ・2026-10-15 13:29:24 JST に取得・sha256 660bbad60629ab938f2bf926bc2f31a1c16ff5706c125f83ddbe5f97e9351962・Last-Modified Thu, 18 Sep 2025 09:06:09 GMT）。PDF に /Title のメタが無いため title_verbatim は表紙の逐語（字間の空白もそのまま）。掲載ページ https://www.mlit.go.jp/tec/hyouka/public/250918_shishin/250918_shishin.html の <title>「「公共事業評価の費用便益分析に関する技術指針（共通編）」の改定について」・PDF のリンク文字「公共事業評価の費用便益分析に関する技術指針（共通編）」。改定は令和7年9月18日（一覧 https://www.mlit.go.jp/tec/hyouka/public/09_public_08.html）。使ったのは p.4（PDF 7 ページ目）表2-1 の純現在価値 Σ(Bt − Ct)／(1 + i)^(t−1) と記号の説明「ただし、n：評価期間、Bt：t年次の便益、Ct：t年次の費用、i：社会的割引率」、p.11（PDF 14 ページ目）「現在価値化の基準時点は、評価を実施する年度とする。」。T7 実装便で登録。",
       "used_in": "src/lib/residual-value-calc.ts（/tools/residual-value の出典欄）＝割引現在価値の式"
+    },
+    {
+      "name": "【追加募集】令和8年度 企業等における省エネ・再エネ活用設備導入補助金",
+      "publisher": "埼玉県",
+      "url": "https://www.pref.saitama.lg.jp/a0503/datutanso.html",
+      "title_verbatim": "【追加募集】令和8年度 企業等における省エネ・再エネ活用設備導入補助金 - 埼玉県",
+      "checked_on": "2026-10-17",
+      "note": "補助金直し便 10-16 で POST の前に登録（Ck2e 計画便 報告 (6) #23 のエントリ案）。2026-10-17 09:17 JST に取得（HTTP 200・30,550 バイト・sha256 71c1f8a7585cbabc9c3234ef402e8339035c9200be0c608b2fb246a242d19249）。「3次募集 令和8年10月13日（火曜日）～令和8年11月9日（月曜日）17時必着」「約1,500万円（3次募集）」「先着順ではありません。」を確認。",
+      "used_in": "subsidies/saitama-shoene-saiene-2026.body"
+    },
+    {
+      "name": "再エネ設備と蓄電池を併用した先進的な取組導入支援事業（R8年度）のご案内",
+      "publisher": "鹿児島県（商工労働水産部 エネルギー対策課）",
+      "url": "https://www.pref.kagoshima.jp/ac10/saienesenshin2026.html",
+      "title_verbatim": "鹿児島県／再エネ設備と蓄電池を併用した先進的な取組導入支援事業（R8年度）のご案内",
+      "checked_on": "2026-10-17",
+      "note": "補助金直し便 10-16 で登録。2026-10-17 09:17 JST に取得（HTTP 200・23,957 バイト）。「更新日：2026年10月5日」「三次募集：令和8年11月6日（金曜日）必着」「四次募集：令和8年12月25日（金曜日）必着」「現在、三次募集中です。」を確認（「二次募集」「四次募集」は「二」「四」の後にタグがあり、文字列としては「二 次募集」）。",
+      "used_in": "subsidies/kagoshima-saiene-chikudenchi-2026.body"
+    },
+    {
+      "name": "ＧＸ推進再エネ導入支援事業（再エネ設備と蓄電池を併用した先進的な取組導入支援）補助金交付要綱",
+      "publisher": "鹿児島県（商工労働水産部 エネルギー対策課）",
+      "url": "https://www.pref.kagoshima.jp/ac10/documents/127695_20260507085932-1.pdf",
+      "title_verbatim": "ＧＸ推進再エネ導入支援事業（再エネ設備と蓄電池を併用した先進的な取組導入支援） 補助金交付要綱",
+      "checked_on": "2026-10-17",
+      "note": "補助金直し便 10-16 で登録。県のページのリンク文字「交付要綱（PDF：181KB）」・サイトの本文では「同ページ掲載の交付要綱」。2026-10-17 09:17 JST に取得（HTTP 200・184,957 バイト・sha256 2a35049aaca33c9e9ba553c231987ab05d7266fd3bc189313c0931d5467517f8＝2026-05-07 版）。title_verbatim は 1 頁目の表題 2 行（改行を空白に）。第３条（補助対象者）を確認。",
+      "used_in": "subsidies/kagoshima-saiene-chikudenchi-2026.body（targetEntity の語）"
+    },
+    {
+      "name": "ＧＸ推進再エネ導入支援事業（再エネ設備と蓄電池を併用した先進的な取組導入支援）補助金募集要領",
+      "publisher": "鹿児島県（商工労働水産部 エネルギー対策課）",
+      "url": "https://www.pref.kagoshima.jp/ac10/documents/127695_20261005132145-1.pdf",
+      "title_verbatim": "ＧＸ推進再エネ導入支援事業（再エネ設備と蓄電池を併用した先進的な 取組導入支援）補助金募集要領",
+      "checked_on": "2026-10-17",
+      "note": "補助金直し便 10-16 で登録。県のページのリンク文字「募集要領（PDF：374KB）」・サイトの本文では「同ページ掲載の募集要領」。2026-10-17 09:17 JST に取得（HTTP 200・382,815 バイト・sha256 7b1bb46474755c01d0dc0e54313096a2be469f27b3ce387569fc03f122f5d886＝2026-10-05 版）。title_verbatim は 1 頁目の表題 2 行（改行を空白に）。提出期限（一次〜四次）と「※三次募集で予算に達した場合は、四次募集は行いません」を確認。",
+      "used_in": "subsidies/kagoshima-saiene-chikudenchi-2026.body（deadline・募集期間の段落）"
     }
   ]
 }

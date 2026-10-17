@@ -112,8 +112,12 @@ export default async function IndustryHubPage() {
     )),
     Promise.all(axes.map((a) =>
       safeFetch(async () => {
-        const r = await a.fn({ limit: 0, fields: 'id', filters: `updatedAt[greater_than]${sevenDaysAgo}` } as any);
-        return (r as any).totalCount as number;
+        // 補助金直し便 10-16: 非表示（除外リスト）のレコードが 7 日以内に更新されても件数に入れない。
+        //   除外リストを持つ軸（補助金・事業者）だけ slug を取って引く（それ以外は従来どおり件数だけ・limit 0）。
+        const hasHidden = a.key === '補助金' || a.key === '事業者';
+        const r = await a.fn({ limit: hasHidden ? 100 : 0, fields: hasHidden ? 'slug' : 'id', filters: `updatedAt[greater_than]${sevenDaysAgo}` } as any);
+        const hidden = hasHidden ? ((r as any).contents ?? []).filter((c: { slug?: string }) => isHiddenRecord(a.key, c.slug)).length : 0;
+        return ((r as any).totalCount as number) - hidden;
       }, 0)
     )),
   ]);

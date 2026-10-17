@@ -1,0 +1,28 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 3
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 2,
+  "aborted": 0,
+  "failed": 0
+ },
+ "log": [
+  {
+   "kind": "patch",
+   "target": "subsidies/kagoshima-saiene-chikudenchi-2026",
+   "id": "69m-j-ku5z4",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "post",
+   "target": "subsidies/saitama-shoene-saiene-2026",
+   "row_id": "Ck2e-S08",
+   "result": "skip_exists",
+   "id": "f8pmc410h"
+  }
+ ]
+}
