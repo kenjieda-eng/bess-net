@@ -6,6 +6,7 @@
  *  - SEETEL 紹介ページと同族の info 型・静的ページ（SSG・runtime 外部API 0）
  *  - 実績数値の焼き込みなし（誇張なし方針・レビュー済みコピー固定）
  *  - CTA は EIC お問い合わせフォームへ UTM 付き外部リンク（変更0で 200 確認済み）
+ *  - 2026-10-17 運営者の入口と紹介の依頼便: EDAさん 10/17 夜の指示（相談につながることをする）で「ご紹介を希望されるときに「あると話が早い」条件」の節を 1 つだけ追加（ほかの文は不変）
  */
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -105,6 +106,16 @@ export default function OperatingBessIntroductionPage() {
             <p>
               <strong>ご相談・お問い合わせは無料です。</strong>
             </p>
+
+            <h2>ご紹介を希望されるときに「あると話が早い」条件</h2>
+            <ol style={{ paddingLeft: 20, lineHeight: 1.9 }}>
+              <li>エリア（都道府県・地域。複数でも可）</li>
+              <li>規模（kW／kWh）</li>
+              <li>時期（いつごろまでに取得したいか）</li>
+              <li>予算の目安</li>
+              <li>取得の形（SPC の持分・事業の譲渡など。決まっていれば）</li>
+            </ol>
+            <p>そろっていなくても大丈夫です。分かる範囲でお知らせいただければ、確認しながら進めます。</p>
 
             <h2>よくあるご質問</h2>
             <p style={{ marginBottom: 8 }}>

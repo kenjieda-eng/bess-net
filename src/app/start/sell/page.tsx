@@ -68,7 +68,7 @@ export default function StartSellPage() {
               <strong>ご相談・お問い合わせは無料です。</strong>
             </p>
 
-            {/* ── 3LP増補 A案（2026-07-19）: 固有節→流れ→安心材料→相談前FAQ。CTA/リンク4本/titleは不変 ── */}
+            {/* ── 3LP増補 A案（2026-07-19）: 固有節→流れ→安心材料→相談前FAQ。CTA/リンク4本/titleは不変（2026-10-17 に「さらに詳しく」へ /start/operate を 1 本追加） ── */}
             <h2>ご相談時に「あると話が早い」情報（5点）</h2>
             <ol style={{ paddingLeft: 20, lineHeight: 1.9 }}>
               <li>所在地（都道府県・市区町村）</li>
@@ -147,7 +147,7 @@ export default function StartSellPage() {
             本サービスは、蓄電所ネットの運営元である{siteConfig.organization.name}（EIC）が承ります。
           </p>
 
-          {/* さらに詳しく（厳選4本） */}
+          {/* さらに詳しく（厳選4本＋運営している方の入口・2026-10-17） */}
           <section
             style={{
               padding: 16,
@@ -163,6 +163,7 @@ export default function StartSellPage() {
               <li><Link href="/anken">蓄電所の流通案件（全国）</Link></li>
               <li><Link href="/seller/developer">プロジェクトデベロッパー向けページ</Link></li>
               <li><Link href="/subsidies">蓄電池 補助金カレンダー</Link></li>
+              <li><Link href="/start/operate">蓄電所を運営している方へ</Link></li>
             </ul>
           </section>
         </article>

@@ -83,6 +83,15 @@ function FeatureCard({ f }: { f: { href: string; title: string; desc: string; ta
   );
 }
 
+// あなたに合った入口へ（入口再設計 2026-07-15・運営者の入口と紹介の依頼便 2026-10-17 で /start/operate を /start/sell の次に追加）。
+// 上の文の数（「◯つの入口」）はこの配列の長さから出す（焼き込まない）。
+const START_ENTRANCES = [
+  { href: '/start/buy', title: '蓄電所を買いたい・導入したい', desc: '稼働中の取得・新規開発への投資・工場や施設への導入のご相談' },
+  { href: '/start/sell', title: '蓄電所を売りたい・案件がある', desc: '売却・譲渡、開発中案件や土地の活用のご相談' },
+  { href: '/start/operate', title: '蓄電所を運営している', desc: '売却・譲渡、収益と運用の見直し、2 機目以降のご相談' },
+  { href: '/start/partner', title: '蓄電池ビジネスに事業として関わりたい', desc: 'データ・ツール・協業の窓口' },
+];
+
 export default async function Home() {
   // 公開済みコンテンツの最新を取得（newsはAPI未作成でも落ちないようにラップ）
   const safeFetch = async <T,>(fn: () => Promise<T>, fallback: T): Promise<T> => {
@@ -179,14 +188,11 @@ export default async function Home() {
           <div className="section-label" style={{ color: '#1e40af', fontWeight: 700 }}>Start Here</div>
           <h2 className="section-title">あなたに合った入口へ</h2>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 32, lineHeight: 1.7 }}>
-            立場に合わせて、3つの入口を用意しています。
+            {`立場に合わせて、${START_ENTRANCES.length}つの入口を用意しています。`}
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
-            {[
-              { href: '/start/buy', title: '蓄電所を買いたい・導入したい', desc: '稼働中の取得・新規開発への投資・工場や施設への導入のご相談' },
-              { href: '/start/sell', title: '蓄電所を売りたい・案件がある', desc: '売却・譲渡、開発中案件や土地の活用のご相談' },
-              { href: '/start/partner', title: '蓄電池ビジネスに事業として関わりたい', desc: 'データ・ツール・協業の窓口' },
-            ].map((it) => (
+          {/* 4 枚: 幅に応じて 1 列→2 列→4 列（auto-fit だと 936〜1,255px で 3 枚＋1 枚に分かれるため・2026-10-17） */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4" style={{ gap: 24 }}>
+            {START_ENTRANCES.map((it) => (
               <Link key={it.href} href={it.href} style={{
                 display: 'block', background: 'white', padding: 28, borderRadius: 12,
                 border: '1px solid #e2e8f0', textDecoration: 'none', color: 'inherit',

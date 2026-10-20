@@ -3,7 +3,7 @@
  *
  * 設計（v2、2026-05-29 修正）:
  *   - Server Component (revalidate = 86400)
- *   - 5区分カードから /contact/[type] へ誘導
+ *   - 5区分カードから /contact/[type] へ誘導（2026-10-17: 先頭に入口 2 枚＝/info/operating-bess-introduction・/start/operate を追加）
  *   - JSON-LD: ContactPage
  *   - 外部 API 呼び出しなし（鉄則 #2 遵守）
  *   - ★ globals.css 既存標準クラス（section / section-inner / section-title / section-label /
@@ -92,7 +92,7 @@ export default function ContactIndexPage() {
               }}
             >
               {config.categories.map((cat) => (
-                <li key={cat.type}>
+                <li key={cat.url}>
                   <Link
                     href={cat.url}
                     style={{

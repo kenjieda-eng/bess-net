@@ -44,9 +44,9 @@ export interface ContactIndexConfig {
   description: string;
   heroH1: string;
   heroSubcopy: string;
-  /** 5区分カード */
+  /** 区分カード（5 区分＋入口 2 枚。入口のカードは type を持たない＝/contact/[type] のページは増やさない・2026-10-17） */
   categories: {
-    type: PlayerType;
+    type?: PlayerType;
     label: string;
     description: string;
     url: string;
@@ -297,6 +297,20 @@ export const CONTACT_INDEX_CONFIG: ContactIndexConfig = {
   heroSubcopy:
     '蓄電所ネット、および運営元である一般社団法人エネルギー情報センターへのお問い合わせは、お客様の属性に合わせた窓口よりご連絡ください。',
   categories: [
+    // 運営者の入口と紹介の依頼便（2026-10-17）: 先頭に 2 枚（文は便のとおり）
+    {
+      label: '蓄電所の紹介を希望する方',
+      description:
+        '稼働中の蓄電所の取得をご検討の方へ、案件のご紹介を承ります（開発段階の案件は「流通案件」のページでご案内しています）。',
+      url: '/info/operating-bess-introduction',
+      icon: '🤝',
+    },
+    {
+      label: '蓄電所を運営している方',
+      description: '売却・譲渡、収益と運用の見直し、2 機目以降のご相談を承ります。',
+      url: '/start/operate',
+      icon: '⚡',
+    },
     {
       type: 'buyer',
       label: '蓄電池導入・参入検討者',

@@ -82,6 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // 入口再設計 3分岐LP（2026-07-15）
     { url: `${siteConfig.url}/start/buy`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${siteConfig.url}/start/sell`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${siteConfig.url}/start/operate`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${siteConfig.url}/start/partner`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     // 低圧クラスタ Stage1（2026-07-18）
     { url: `${siteConfig.url}/lv`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },

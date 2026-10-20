@@ -6,6 +6,7 @@
  *   - medium は既定 'referral'。/anken だけは従来どおり 'anken'（AnkenContactCTA）。
  *   - 既にある campaign 名は変えない（GA の履歴を切らないため）:
  *     funnel_buy・funnel_sell・funnel_partner・operating_bess_intro・funnel_lv_buy・funnel_lv_entry・funnel_lv_invest・anken_*
+ *     （funnel_operate は運営者の入口と紹介の依頼便 2026-10-17 で /start/operate 用に追加）
  *   - ご指摘・情報提供のリンクは position を 'feedback' にして、相談と分けて数えられるようにする。
  *   - 画面に URL を文字のまま出す所は CONTACT_DISPLAY_URL（UTM なし）を表示し、href だけを contactUrl() にする。
  *   - クリックは root layout の ContactClickTracker が GA4 の contact_click（cta_campaign・cta_position・link_url）で数える。

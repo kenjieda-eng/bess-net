@@ -19,6 +19,8 @@ const START_DROPDOWN = [
   { label: '蓄電所とは', href: '/glossary/battery-storage-site' },
   { label: '買いたい・導入したい', href: '/start/buy' },
   { label: '売りたい・案件がある', href: '/start/sell' },
+  // 運営者の入口と紹介の依頼便（2026-10-17）
+  { label: '運営している', href: '/start/operate' },
   { label: '事業として関わりたい', href: '/start/partner' },
   { label: '稼働中蓄電所のご紹介', href: '/info/operating-bess-introduction' },
 ];
