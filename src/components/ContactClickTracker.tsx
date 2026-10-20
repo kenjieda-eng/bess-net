@@ -11,6 +11,7 @@
  *   - 中クリック（auxclick の button 1）も数える。gtag が無いとき（GA の ID が未設定）は何もしない。
  *   - /anken の anken_contact_click（AnkenContactCTA）は残す。名前が違うので二重には数えない。
  *   - 何も描画しない（document に listener を 1 つ置くだけ）。
+ *   - 次の一歩便（2026-10-17）: data-next-step の付いたリンク（NextStepBox）は next_step_click（step_variant・step_to＝行き先のパス）。
  */
 
 import { useEffect } from 'react';
@@ -24,8 +25,14 @@ function onActivate(e: MouseEvent): void {
   const a = target?.closest?.('a[href]') as HTMLAnchorElement | null;
   if (!a) return;
   const href = a.href;
-  if (!isContactHref(href)) return;
   const w = window as { gtag?: Gtag };
+  // 次の一歩便（2026-10-17）: 「運営元からのご案内」（NextStepBox）のリンク → next_step_click（step_variant・step_to）
+  const step = a.getAttribute('data-next-step');
+  if (step) {
+    if (w.gtag) w.gtag('event', 'next_step_click', { step_variant: step, step_to: a.getAttribute('href') ?? '' });
+    return;
+  }
+  if (!isContactHref(href)) return;
   if (!w.gtag) return;
   let campaign = '';
   let position = '';

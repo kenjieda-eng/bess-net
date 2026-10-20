@@ -18,6 +18,7 @@ import { siteConfig } from '@/lib/site-config';
 import { ATB_SOURCE_NAME, BATTERY_CAPEX, POWER_SOURCE_REFS, atbYearsLabel } from '@/lib/nrel-atb-reference';
 import { LCOE_EXCLUDED_NOTE, LCOE_EXCLUDED_SOURCE_KEYS } from '@/lib/lcoe-lcos';
 import { FX_USDJPY, fxLabel } from '@/lib/fx-reference';
+import NextStepBox from '@/components/NextStepBox';
 
 export const revalidate = 86400;
 
@@ -124,6 +125,9 @@ export default function LcoeLcosPage() {
           ) : (
             <p style={{ fontSize: 15 }}>NREL ATB または為替のデータを取得できなかったため、計算機を表示できません。</p>
           )}
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（本文の後・出典・前提・免責の前） */}
+          <NextStepBox variant="buy" tool />
 
           {/* 出典・免責（必須・L-EIC-055、本文そのまま）*/}
           <section style={{ marginTop: 24, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 8 }}>

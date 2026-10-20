@@ -38,6 +38,7 @@ import {
   ledgerRecordSheetRange,
   checklistColumnLabel,
 } from '@/lib/asset-ledger-spec';
+import NextStepBox from '@/components/NextStepBox';
 
 export const dynamic = 'force-static';
 
@@ -264,6 +265,9 @@ export default function AssetLedgerPage() {
               </div>
             </details>
           ))}
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（本文の後・データの扱いと免責の前） */}
+          <NextStepBox variant="sell" tool />
 
           <h2 style={{ fontSize: 20, fontWeight: 700, margin: '28px 0 8px' }}>データの扱いと免責</h2>
           <p style={{ fontSize: 15, lineHeight: 1.8, marginBottom: 24 }}>

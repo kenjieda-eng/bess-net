@@ -20,6 +20,7 @@ import CorrectionHistory from '@/components/CorrectionHistory';
 import FireRiskChecker from '@/components/FireRiskChecker';
 import { siteConfig } from '@/lib/site-config';
 import { CHECKLIST } from '@/data/fire-risk-checklist';
+import NextStepBox from '@/components/NextStepBox';
 
 export const revalidate = 86400;
 
@@ -188,6 +189,9 @@ export default function FireRiskCheckPage() {
               </dd>
             </dl>
           </section>
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（本文の後・重要な注意事項（免責）の前） */}
+          <NextStepBox variant="operate" tool />
 
           {/* 注意 + 使い方 */}
           <section

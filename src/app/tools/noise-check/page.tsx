@@ -26,6 +26,7 @@ import {
   ITEM2_COMPRESSOR_VERBATIM,
   ITEM2_FAN_VERBATIM,
 } from '@/lib/noise-check';
+import NextStepBox from '@/components/NextStepBox';
 
 export const dynamic = 'force-static';
 
@@ -208,6 +209,9 @@ export default function NoiseCheckPage() {
               <Link href="/glossary" style={linkStyle}>用語集</Link>
             </li>
           </ul>
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（本文の後・出典の前） */}
+          <NextStepBox variant="land" tool />
 
           <section className="article-sources">
             <h3>出典</h3>

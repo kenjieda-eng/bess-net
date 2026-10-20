@@ -113,3 +113,46 @@ export const EXPLAINER_TOP10_SLUGS: string[] = [
   'long-term-decarbonization-auction',
   'jepx-arbitrage',
 ];
+
+export type ExplainerNextStepView = {
+  lead: string;
+  links: (ExplainerNextStepLink & { star: boolean })[];
+};
+
+/**
+ * 「この解説の先へ」に実際に出す行（判定の文字・分類・E4 スターCTA・既存CTAと行き先が重なる行の省略）。
+ * ExplainerNextStepBlock の表示と、運営元からのご案内（NextStepBox・src/lib/next-step.ts）の判定が
+ * この 1 つの結果を使う（同じ意味の値を 2 か所で組まない・#119／#121。次の一歩便のレビュー 2026-10-20）。
+ */
+export function explainerNextStepView({
+  slug,
+  title,
+  category,
+  lead,
+  related,
+  excludeHrefs,
+}: {
+  slug: string;
+  title: string;
+  category?: string[] | null;
+  lead?: string | null;
+  related: RelatedExplainerEntry[];
+  excludeHrefs?: string[];
+}): ExplainerNextStepView {
+  // 判定は title＋category＋lead のみ（主題を表す部分）。長文 body まで含めると
+  // 教科書型記事は必ずどこかで市場/制度語に触れるため ⑤技術が発火しなくなる（2026-08-05 実測で調整）。
+  const text = `${title}\n${(category || []).join(' ')}\n${lead ?? ''}`;
+  const group = classifyExplainerNextStep(text, related);
+  const exclude = new Set(excludeHrefs ?? []);
+
+  // E4 スターCTA（TOP10・1本）— E1系統の行き先・既存CTAと重複しない場合のみ先頭に追加
+  const star = EXPLAINER_STAR_CTAS[slug];
+  const groupHrefs = new Set(group.links.map((l) => l.href));
+  return {
+    lead: group.lead,
+    links: [
+      ...(star && !exclude.has(star.href) && !groupHrefs.has(star.href) ? [{ ...star, star: true }] : []),
+      ...group.links.filter((l) => !exclude.has(l.href)).map((l) => ({ ...l, star: false })),
+    ],
+  };
+}

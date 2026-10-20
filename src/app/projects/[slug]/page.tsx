@@ -12,7 +12,8 @@ import {
 import { linkifyHTML } from '@/lib/linkify';
 import { isExcludedProject } from '@/lib/projects-excluded';
 import { reconstructProjectBody, reliableSpecValue } from '@/lib/projects-body';
-import { codLabel } from '@/lib/projects-cod';
+import { codLabel, isCodRealized } from '@/lib/projects-cod';
+import { projectNextStep } from '@/lib/next-step';
 import {
   getRelatedEntities,
   buildMentions,
@@ -20,6 +21,7 @@ import {
 } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 import { contactUrl } from '@/lib/contact-link';
+import NextStepBox from '@/components/NextStepBox';
 
 export const revalidate = 600;
 
@@ -332,6 +334,19 @@ export default async function ProjectDetailPage({
               </ul>
             </section>
           )}
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内。稼働中（isCodRealized）なら introduce、それ以外は land。
+              出典は情報欄の中（本文より前）にあるので、関連の群の後・免責の前に置く。noindex の除外案件（EXCLUDED_PROJECT_SLUGS）と、
+              本文や関連解説・関連ニュースのカードに EPRX の数値があるページには置かない（src/lib/next-step.ts の projectNextStep） */}
+          {(() => {
+            const v = projectNextStep(
+              isCodRealized(item),
+              [item.name, body],
+              [...related.explainers, ...related.news],
+              isExcludedProject(params.slug),
+            );
+            return v ? <NextStepBox variant={v} othersProject /> : null;
+          })()}
 
           <div className="page-section" style={{ background: 'var(--color-bg)', padding: 16, borderRadius: 8, fontSize: 15, color: 'var(--color-muted)' }}>
             <p style={{ margin: 0 }}>

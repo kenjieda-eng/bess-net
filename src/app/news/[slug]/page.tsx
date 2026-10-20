@@ -21,6 +21,8 @@ import { isOnTopicNewsArticle } from '@/lib/news-topic-gate';
 import { siteConfig } from '@/lib/site-config';
 import { canonicalizeTermLinks } from '@/lib/glossary-301';
 import { addContactUtmToHtml } from '@/lib/contact-link';
+import NextStepBox from '@/components/NextStepBox';
+import { newsNextStep } from '@/lib/next-step';
 
 export const revalidate = 600;
 
@@ -126,6 +128,13 @@ export default async function NewsDetailPage({
   });
 
   const cat = (news.category && news.category[0]) || '';
+  const nextStep = newsNextStep(
+    news.slug,
+    news.category,
+    [news.title, news.lead, news.tags, news.body, news.sourceName],
+    related.explainers,
+    isExcludedNews(news.slug),
+  );
   const dateStr = news.publishedAt
     ? new Date(news.publishedAt).toLocaleDateString('ja-JP', {
         year: 'numeric',
@@ -289,6 +298,10 @@ export default async function NewsDetailPage({
               </p>
             </section>
           )}
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（出典の後）。判定は src/lib/next-step.ts の newsNextStep
+              （投資・開発計画だけ・編集部と noindex は置かない・題・導入文・本文や関連解説のカードに EPRX の数値があれば置かない） */}
+          {nextStep && <NextStepBox variant={nextStep} othersProject />}
 
           {/* タグ */}
           {news.tags && (

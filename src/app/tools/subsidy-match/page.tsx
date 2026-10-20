@@ -21,6 +21,7 @@ import CorrectionHistory from '@/components/CorrectionHistory';
 import SubsidyMatcher from '@/components/SubsidyMatcher';
 import { siteConfig } from '@/lib/site-config';
 import subsidiesData from '@/data/subsidies.json';
+import NextStepBox from '@/components/NextStepBox';
 
 export const revalidate = 86400; // 24h
 
@@ -210,6 +211,9 @@ export default function SubsidyMatchPage() {
               本マッチング結果は &quot;検討の出発点&quot; として活用ください。
             </p>
           </section>
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（本文の後・訂正履歴の前。このページに出典・免責の節は無い） */}
+          <NextStepBox variant="buy" tool />
 
           {/* 訂正履歴便（2026-10-16）: 記事末の「訂正履歴」。記録が無いときは何も出さない */}
           <CorrectionHistory path="/tools/subsidy-match" />

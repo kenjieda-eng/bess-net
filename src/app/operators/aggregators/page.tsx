@@ -11,6 +11,7 @@ import OperatorCategoryList, {
 } from '@/components/OperatorCategoryList';
 import { siteConfig } from '@/lib/site-config';
 import categoryIndex from '@/lib/generated/operators-category-index.json';
+import NextStepBox from '@/components/NextStepBox';
 
 const CATEGORY = 'アグリゲーター';
 
@@ -65,6 +66,8 @@ export default function AggregatorsPage() {
             {' / '}
             <Link href="/operators">← 事業者ナビ（全{(categoryIndex as unknown[]).length}社・カテゴリ絞り込み）</Link>
           </p>
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（一覧の後・データソースの前） */}
+          <NextStepBox variant="operate" />
           <p className="grid-source-note">
             データソース: {siteConfig.organization.name} 編集部
           </p>

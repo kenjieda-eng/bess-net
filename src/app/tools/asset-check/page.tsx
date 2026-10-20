@@ -18,6 +18,7 @@ import AssetChecker from '@/components/AssetChecker';
 import { siteConfig } from '@/lib/site-config';
 import { ASSET_CHECK_AXES, ASSET_CHECK_QUESTIONS } from '@/data/asset-check-questions';
 import { DELEGATED_TO_FIRE_RISK_CHECK, FIRE_RISK_DISCLAIMER, PREMISES } from '@/lib/asset-check';
+import NextStepBox from '@/components/NextStepBox';
 
 export const dynamic = 'force-static';
 
@@ -152,6 +153,9 @@ export default function AssetCheckPage() {
               <Link href="/glossary" style={linkStyle}>用語集</Link>
             </li>
           </ul>
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（本文の後・出典の前） */}
+          <NextStepBox variant="asset" tool />
 
           <section className="article-sources">
             <h3>出典（主の一次）</h3>

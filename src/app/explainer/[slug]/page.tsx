@@ -35,6 +35,9 @@ import ExplainerNextStepBlock from '@/components/ExplainerNextStepBlock';
 import explainerRelatedMap from '@/lib/generated/explainer-related-map.json';
 // 変電所の件数は /grid のカードと同じ値（precompute の summary.total・凍結除外）から出す。焼き込まない（#121・Ck2d ■7）
 import substationsIndex from '@/data/substations/index.json';
+import NextStepBox from '@/components/NextStepBox';
+import { explainerNextStep } from '@/lib/next-step';
+import { explainerNextStepView } from '@/lib/explainer-next-step';
 const SUBSTATION_TOTAL_STR = (substationsIndex as unknown as { summary: { total: number } }).summary.total.toLocaleString('en-US');
 
 // E1⑤フォールバック用の precompute 済み関連マップ（同カテゴリ2本・自己除外・runtime 0）
@@ -135,6 +138,13 @@ export default async function ExplainerDetailPage({
     news: [],
     explainers: [],
   });
+
+  // 「この解説の先へ」で省く行き先（ページ上の既存CTAと重なるもの）。表示と運営元からのご案内の判定が同じ配列を使う
+  const nextStepExcludeHrefs = [
+    ...(GRID_RELATED_EXPLAINER_SLUGS.has(exp.slug) ? ['/grid'] : []),
+    ...TOOL_CTAS.filter((c) => c.explainerSlugs.has(exp.slug)).map((c) => c.href),
+    ...(toGroup(exp.category) === '制度・市場' ? ['/policy-calendar'] : []),
+  ];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -252,11 +262,7 @@ export default async function ExplainerDetailPage({
             lead={exp.lead}
             body={exp.body}
             related={EXPLAINER_RELATED_MAP[exp.slug] ?? []}
-            excludeHrefs={[
-              ...(GRID_RELATED_EXPLAINER_SLUGS.has(exp.slug) ? ['/grid'] : []),
-              ...TOOL_CTAS.filter((c) => c.explainerSlugs.has(exp.slug)).map((c) => c.href),
-              ...(toGroup(exp.category) === '制度・市場' ? ['/policy-calendar'] : []),
-            ]}
+            excludeHrefs={nextStepExcludeHrefs}
           />
 
           {/* 低圧クラスタ Stage1（2026-07-18）: 低圧解説→/lv ガイドへの接続（対象1記事のみ・最小） */}
@@ -283,6 +289,22 @@ export default async function ExplainerDetailPage({
               </ul>
             </section>
           )}
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（出典の前）。表は src/data/next-step-explainers.ts。
+              本文や「この解説の先へ」のカードに EPRX の数値があれば置かない（src/lib/next-step.ts） */}
+          {(() => {
+            // 判定に使う関連は「この解説の先へ」に実際に出す行だけ（ExplainerNextStepBlock と同じ explainerNextStepView の結果）
+            const shown = explainerNextStepView({
+              slug: exp.slug,
+              title: exp.title,
+              category: exp.category,
+              lead: exp.lead,
+              related: EXPLAINER_RELATED_MAP[exp.slug] ?? [],
+              excludeHrefs: nextStepExcludeHrefs,
+            }).links.map((l) => ({ title: l.label }));
+            const v = explainerNextStep(exp.slug, [exp.title, exp.lead, exp.body, exp.sources], shown);
+            return v ? <NextStepBox variant={v} /> : null;
+          })()}
 
           {/* 出典 */}
           {exp.sources && (

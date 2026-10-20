@@ -2,11 +2,7 @@
 // NewsNextStepBlock と同型のサーバーコンポーネント（追加フェッチ 0・初期DOM #107・.lv-invest-rows 流用）。
 // excludeHrefs: ページ上の既存CTA（/grid・ツール・政策カレンダー等）と行き先が重複する行を自動省略。
 import Link from 'next/link';
-import {
-  classifyExplainerNextStep,
-  EXPLAINER_STAR_CTAS,
-  type RelatedExplainerEntry,
-} from '@/lib/explainer-next-step';
+import { explainerNextStepView, type RelatedExplainerEntry } from '@/lib/explainer-next-step';
 
 export default function ExplainerNextStepBlock({
   slug,
@@ -25,20 +21,11 @@ export default function ExplainerNextStepBlock({
   related: RelatedExplainerEntry[];
   excludeHrefs?: string[];
 }) {
-  // 判定は title＋category＋lead のみ（主題を表す部分）。長文 body まで含めると
-  // 教科書型記事は必ずどこかで市場/制度語に触れるため ⑤技術が発火しなくなる（2026-08-05 実測で調整）。
-  const text = `${title}\n${(category || []).join(' ')}\n${lead ?? ''}`;
+  // 行の組み立て（判定の文字・分類・スターCTA・重複の省略）は explainerNextStepView に 1 つだけ置く。
+  // 運営元からのご案内（NextStepBox）の判定も同じ結果を使う（次の一歩便・2026-10-20）
   void body;
-  const group = classifyExplainerNextStep(text, related);
-  const exclude = new Set(excludeHrefs ?? []);
-
-  // E4 スターCTA（TOP10・1本）— E1系統の行き先・既存CTAと重複しない場合のみ先頭に追加
-  const star = EXPLAINER_STAR_CTAS[slug];
-  const groupHrefs = new Set(group.links.map((l) => l.href));
-  const links = [
-    ...(star && !exclude.has(star.href) && !groupHrefs.has(star.href) ? [{ ...star, star: true }] : []),
-    ...group.links.filter((l) => !exclude.has(l.href)).map((l) => ({ ...l, star: false })),
-  ];
+  const group = explainerNextStepView({ slug, title, category, lead, related, excludeHrefs });
+  const links = group.links;
   if (links.length === 0) return null;
 
   return (

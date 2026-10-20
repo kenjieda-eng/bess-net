@@ -36,6 +36,7 @@ import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
 // N1b: 個別ページ（runtime microCMS）も一覧と同じ規則で区分する（#121・L-EIC-028: 取得側・表示側の全経路が同じ値を得る）
 import { n1StatusOf, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status';
 import { contactUrl } from '@/lib/contact-link';
+import NextStepBox from '@/components/NextStepBox';
 
 // Gr6(2026-08-09): エリア別の変電所件数（precompute の area_dates から・runtime fetch 0）
 const AREA_SUBSTATION_COUNT: Record<string, number> = Object.fromEntries(
@@ -743,6 +744,9 @@ export default async function GridSlugPage({
               系統連系診断を始める →
             </Link>
           </section>
+
+          {/* 次の一歩便（2026-10-17）: 運営元からのご案内（本文の後・出典の前。静的な枠で runtime の取得は増えない） */}
+          <NextStepBox variant="land" />
 
           {/* (f) 一次ソース・データ提供元（落とし穴45：明記必須） */}
           <section className="grid-section grid-source-section">
