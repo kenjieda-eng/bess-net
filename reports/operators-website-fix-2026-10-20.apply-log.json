@@ -1,0 +1,162 @@
+{
+ "mode": "apply",
+ "calls": {
+  "GET": 27,
+  "PATCH": 9
+ },
+ "counts": {
+  "patched": 9,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "operators/global-engineering",
+   "id": "global-engineering",
+   "result": "patched",
+   "fields": [
+    "websiteUrl"
+   ],
+   "check": [],
+   "before": {
+    "websiteUrl": "https://www.global-eng.jp/"
+   },
+   "after": {
+    "websiteUrl": null
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "operators/centrica-jp",
+   "id": "centrica-jp",
+   "result": "patched",
+   "fields": [
+    "websiteUrl"
+   ],
+   "check": [],
+   "before": {
+    "websiteUrl": "https://www.centricabusinesssolutions.com/"
+   },
+   "after": {
+    "websiteUrl": null
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-sustech-0957",
+   "id": "agg-sustech-0957",
+   "result": "patched",
+   "fields": [
+    "websiteUrl"
+   ],
+   "check": [],
+   "before": {
+    "websiteUrl": "https://www.sustech.co.jp"
+   },
+   "after": {
+    "websiteUrl": "https://sustech-inc.co.jp/"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-hse-0606",
+   "id": "agg-hse-0606",
+   "result": "patched",
+   "fields": [
+    "websiteUrl"
+   ],
+   "check": [],
+   "before": {
+    "websiteUrl": "https://www.hse.com"
+   },
+   "after": {
+    "websiteUrl": "https://www.h-sustainable-energy.co.jp/"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "operators/pacifico-energy",
+   "id": "pacifico-energy",
+   "result": "patched",
+   "fields": [
+    "websiteUrl"
+   ],
+   "check": [],
+   "before": {
+    "websiteUrl": "https://www.pacifico-energy.com/"
+   },
+   "after": {
+    "websiteUrl": "https://www.pacificoenergy.jp/"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-q-enest-2883",
+   "id": "agg-q-enest-2883",
+   "result": "patched",
+   "fields": [
+    "websiteUrl"
+   ],
+   "check": [],
+   "before": {
+    "websiteUrl": "https://www.q-enest.com"
+   },
+   "after": {
+    "websiteUrl": "https://www.qenest-denki.com/corp"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "operators/energy-pool-jp",
+   "id": "energy-pool-jp",
+   "result": "patched",
+   "fields": [
+    "websiteUrl"
+   ],
+   "check": [],
+   "before": {
+    "websiteUrl": "https://energypool.jp/"
+   },
+   "after": {
+    "websiteUrl": "https://energy-pool.co.jp/"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "operators/kawasaki-green",
+   "id": "kawasaki-green",
+   "result": "patched",
+   "fields": [
+    "websiteUrl"
+   ],
+   "check": [],
+   "before": {
+    "websiteUrl": "https://www.khi.co.jp/"
+   },
+   "after": {
+    "websiteUrl": "https://kgen.co.jp/"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-fps-4015",
+   "id": "agg-fps-4015",
+   "result": "patched",
+   "fields": [
+    "websiteUrl"
+   ],
+   "check": [],
+   "before": {
+    "websiteUrl": "https://www.fps.co.jp"
+   },
+   "after": {
+    "websiteUrl": "https://fps-inc.jp/"
+   }
+  }
+ ]
+}

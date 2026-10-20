@@ -1,0 +1,298 @@
+{
+ "_note": "公式サイト欄の直し便（2026-10-20）。operators の websiteUrl だけを 9 レコード PATCH（差し替え 7・空にする 2）。確認は 2026-10-20 16:34〜16:36 JST の curl と国税庁 法人番号公表サイト。",
+ "records": [
+  {
+   "slug": "global-engineering",
+   "name": "株式会社グローバルエンジニアリング",
+   "houjin": "5290001036332",
+   "new": "",
+   "branch": "空にする（候補なし）",
+   "cur_check": "https://www.global-eng.jp/ → 200 https://global-eng.jp/・title「オンラインカジノ完全ガイド｜2026年最新おすすめランキングと安全な始め方 | Global Eng」・本文に社名「グローバルエンジニアリング」0 件",
+   "cand_check": null,
+   "nta": "株式会社グローバルエンジニアリング／福岡県福岡市東区香椎１丁目１番１号ニシコーリビング香椎２Ｆ",
+   "id": "global-engineering",
+   "old": "https://www.global-eng.jp/",
+   "record_pref": "東京都 千代田区"
+  },
+  {
+   "slug": "centrica-jp",
+   "name": "Centrica Business Solutions Japan",
+   "houjin": null,
+   "new": "",
+   "branch": "空にする（日本法人の公式サイトを特定できず）",
+   "cur_check": "https://www.centricabusinesssolutions.com/ → 200・title「Sustainable Business Energy Services | Centrica Business Solutions」・本文に「Japan」「日本」「Tokyo」0 件／https://www.centricabusinesssolutions.com/jp → 404",
+   "cand_check": "検索 2 回（「セントリカ ビジネスソリューションズ ジャパン 株式会社 東京 蓄電池」「\"Centrica Business Solutions Japan\"」）で日本法人の公式サイトは出ず。特定卸供給・EPRX・JEPX の一覧にも無い（T6 data.json publicLists が全て null）",
+   "nta": null,
+   "id": "centrica-jp",
+   "old": "https://www.centricabusinesssolutions.com/",
+   "record_pref": "東京都 千代田区"
+  },
+  {
+   "slug": "agg-sustech-0957",
+   "name": "株式会社Sustech",
+   "houjin": "5010401160957",
+   "new": "https://sustech-inc.co.jp/",
+   "branch": "一致 → 差し替え",
+   "cur_check": "https://www.sustech.co.jp → 200・title「株式会社サステック」・所在地「〒541-0056 大阪府大阪市中央区久太郎町3丁目6番8号」（別法人）",
+   "cand_check": "https://sustech-inc.co.jp/ → 200・title「株式会社Sustech（サステック）」・/about/ の「本社所在地 〒105-0014 東京都港区芝3丁目1番14号 芝公園阪神ビル5階」・サービスに「蓄電池アグリゲーション」",
+   "nta": "株式会社Ｓｕｓｔｅｃｈ／東京都港区芝３丁目１番１４号芝公園阪神ビル５階",
+   "id": "agg-sustech-0957",
+   "old": "https://www.sustech.co.jp",
+   "record_pref": "東京都"
+  },
+  {
+   "slug": "agg-hse-0606",
+   "name": "HSE株式会社",
+   "houjin": "5050001040606",
+   "new": "https://www.h-sustainable-energy.co.jp/",
+   "branch": "一致 → 差し替え",
+   "cur_check": "https://www.hse.com → 200 https://www.hse.de/?utm_source=www.hse.com…・title「HSE - einfach online shoppen」（ドイツの通販）",
+   "cand_check": "https://www.h-sustainable-energy.co.jp/ → 200・title「HSE株式会社」・本文「〒317-0073 茨城県日立市幸町三丁目2番2号 HSE株式会社 事業開発第一部 宛」（/company/ は「Request Rejected」で読めず）。国税庁の旧商号「日立サステナブルエナジー株式会社」とドメインが対応",
+   "nta": "ＨＳＥ株式会社／茨城県日立市幸町３丁目２番２号（旧商号 日立サステナブルエナジー株式会社・令和3年7月1日変更）",
+   "id": "agg-hse-0606",
+   "old": "https://www.hse.com",
+   "record_pref": "茨城県"
+  },
+  {
+   "slug": "pacifico-energy",
+   "name": "パシフィコ・エナジー株式会社",
+   "houjin": "2010001149346",
+   "new": "https://www.pacificoenergy.jp/",
+   "branch": "一致 → 差し替え",
+   "cur_check": "https://www.pacifico-energy.com/ → curl (60) 証明書の名前が不一致・http は「Welcome to nginx!」（T6 時点は Pacifico Energy Partners GmbH・ミュンヘン）",
+   "cand_check": "https://www.pacificoenergy.jp/ → 200・title「パシフィコ・エナジー株式会社 | 再生可能エネルギー発電事業のプロフェッショナル」・「〒106-0032 東京都港区六本木3-2-1 六本木グランドタワー33階」・メニューに「蓄電池」",
+   "nta": "パシフィコ・エナジー株式会社／東京都港区六本木３丁目２番１号六本木グランドタワー",
+   "id": "pacifico-energy",
+   "old": "https://www.pacifico-energy.com/",
+   "record_pref": "東京都 港区"
+  },
+  {
+   "slug": "agg-q-enest-2883",
+   "name": "Q.ENESTでんき株式会社",
+   "houjin": "8020003012883",
+   "new": "https://www.qenest-denki.com/corp",
+   "branch": "一致 → 差し替え",
+   "cur_check": "https://www.q-enest.com → curl (35) TLS ハンドシェイク失敗・http は「Welcome to nginx!」",
+   "cand_check": "https://www.qenest-denki.com/corp → 200・title「企業情報｜【公式】Q.ENEST（キューエネス）でんき」・「会社名 Q.ENEST（キューエネス）でんき株式会社」・「東京本社 〒108-0014 東京都港区芝四丁目10番1号 ハンファビル3階」",
+   "nta": "Ｑ．ＥＮＥＳＴでんき株式会社／東京都港区芝４丁目１０番１号",
+   "id": "agg-q-enest-2883",
+   "old": "https://www.q-enest.com",
+   "record_pref": "東京都"
+  },
+  {
+   "slug": "energy-pool-jp",
+   "name": "エナジープールジャパン株式会社",
+   "houjin": "1010401118868",
+   "new": "https://energy-pool.co.jp/",
+   "branch": "一致 → 差し替え",
+   "cur_check": "https://energypool.jp/ → 200 https://www.brandshelter.com/registered/・title「Registered - BrandShelter™」（ドメインの預かりページ）",
+   "cand_check": "https://energy-pool.co.jp/ → 200・title「エナジープールジャパン株式会社」・/company/ の「所在地 〒105-0012 東京都港区芝大門1-3-4 グランファースト芝大門9階」。グループの https://energy-pool.com/world-offices の Japan 欄「Energy Pool Japan KK 1-3-4 Shiba Daimon, Minato-ku」と一致",
+   "nta": "エナジープールジャパン株式会社／東京都港区芝大門１丁目３番４号",
+   "id": "energy-pool-jp",
+   "old": "https://energypool.jp/",
+   "record_pref": "東京都 港区"
+  },
+  {
+   "slug": "kawasaki-green",
+   "name": "カワサキグリーンエナジー株式会社",
+   "houjin": "8140001121047",
+   "new": "https://kgen.co.jp/",
+   "branch": "一致 → 差し替え",
+   "cur_check": "https://www.khi.co.jp/ → 200・title「川崎重工業株式会社」（親会社）",
+   "cand_check": "https://kgen.co.jp/ → 200・title「カワサキグリーンエナジー株式会社 | 川崎重工グループの…」・/company/ の「会社名 カワサキグリーンエナジー株式会社 … 所在地 本店：兵庫県神戸市中央区東川崎町三丁目1番1号（川崎重工 神戸工場内）」",
+   "nta": "カワサキグリーンエナジー株式会社／兵庫県神戸市中央区東川崎町３丁目１番１号",
+   "id": "kawasaki-green",
+   "old": "https://www.khi.co.jp/",
+   "record_pref": "兵庫県 神戸市"
+  },
+  {
+   "slug": "agg-fps-4015",
+   "name": "株式会社FPS",
+   "houjin": "7010401164015",
+   "new": "https://fps-inc.jp/",
+   "branch": "一致 → 差し替え",
+   "cur_check": "https://www.fps.co.jp → 200 https://fps.co.jp/・title「シュリンク包装機の設計・製造・販売はフジヤマパックシステム株式会社」（別法人）",
+   "cand_check": "https://fps-inc.jp/ → 200・title「【株式会社FPS】再エネ・新電力の小売・卸売業」・メニューに「再エネ アグリゲーター サービス」「蓄電池 運用サポート」。/company/ は 403。自社のプレスリリース https://fps-inc.jp/pressrelease/20260831/ に「株式会社FPS(本社:東京都港区、代表取締役:洞洋平…)」",
+   "nta": "株式会社ＦＰＳ／東京都港区赤坂１丁目８番１号（令和7年9月5日に中央区八重洲から移転）",
+   "id": "agg-fps-4015",
+   "old": "https://www.fps.co.jp",
+   "record_pref": "東京都"
+  }
+ ],
+ "plan": {
+  "patches": [
+   {
+    "ep": "operators",
+    "slug": "global-engineering",
+    "order": 1,
+    "ops": [
+     {
+      "field": "websiteUrl",
+      "old": "https://www.global-eng.jp/",
+      "new": "",
+      "row_ids": [
+       "global-engineering"
+      ],
+      "note": "空にする（候補なし）"
+     }
+    ],
+    "expect_final": {
+     "websiteUrl": "e3b0c44298fc1c14"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "centrica-jp",
+    "order": 2,
+    "ops": [
+     {
+      "field": "websiteUrl",
+      "old": "https://www.centricabusinesssolutions.com/",
+      "new": "",
+      "row_ids": [
+       "centrica-jp"
+      ],
+      "note": "空にする（日本法人の公式サイトを特定できず）"
+     }
+    ],
+    "expect_final": {
+     "websiteUrl": "e3b0c44298fc1c14"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-sustech-0957",
+    "order": 3,
+    "ops": [
+     {
+      "field": "websiteUrl",
+      "old": "https://www.sustech.co.jp",
+      "new": "https://sustech-inc.co.jp/",
+      "row_ids": [
+       "agg-sustech-0957"
+      ],
+      "note": "一致 → 差し替え"
+     }
+    ],
+    "expect_final": {
+     "websiteUrl": "347a68ae61316559"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-hse-0606",
+    "order": 4,
+    "ops": [
+     {
+      "field": "websiteUrl",
+      "old": "https://www.hse.com",
+      "new": "https://www.h-sustainable-energy.co.jp/",
+      "row_ids": [
+       "agg-hse-0606"
+      ],
+      "note": "一致 → 差し替え"
+     }
+    ],
+    "expect_final": {
+     "websiteUrl": "1f7123c74096b4ad"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "pacifico-energy",
+    "order": 5,
+    "ops": [
+     {
+      "field": "websiteUrl",
+      "old": "https://www.pacifico-energy.com/",
+      "new": "https://www.pacificoenergy.jp/",
+      "row_ids": [
+       "pacifico-energy"
+      ],
+      "note": "一致 → 差し替え"
+     }
+    ],
+    "expect_final": {
+     "websiteUrl": "a51a7803b20d6026"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-q-enest-2883",
+    "order": 6,
+    "ops": [
+     {
+      "field": "websiteUrl",
+      "old": "https://www.q-enest.com",
+      "new": "https://www.qenest-denki.com/corp",
+      "row_ids": [
+       "agg-q-enest-2883"
+      ],
+      "note": "一致 → 差し替え"
+     }
+    ],
+    "expect_final": {
+     "websiteUrl": "c0786e763993f540"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "energy-pool-jp",
+    "order": 7,
+    "ops": [
+     {
+      "field": "websiteUrl",
+      "old": "https://energypool.jp/",
+      "new": "https://energy-pool.co.jp/",
+      "row_ids": [
+       "energy-pool-jp"
+      ],
+      "note": "一致 → 差し替え"
+     }
+    ],
+    "expect_final": {
+     "websiteUrl": "a890f1411c9fbc08"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "kawasaki-green",
+    "order": 8,
+    "ops": [
+     {
+      "field": "websiteUrl",
+      "old": "https://www.khi.co.jp/",
+      "new": "https://kgen.co.jp/",
+      "row_ids": [
+       "kawasaki-green"
+      ],
+      "note": "一致 → 差し替え"
+     }
+    ],
+    "expect_final": {
+     "websiteUrl": "cf5323798c91b305"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-fps-4015",
+    "order": 9,
+    "ops": [
+     {
+      "field": "websiteUrl",
+      "old": "https://www.fps.co.jp",
+      "new": "https://fps-inc.jp/",
+      "row_ids": [
+       "agg-fps-4015"
+      ],
+      "note": "一致 → 差し替え"
+     }
+    ],
+    "expect_final": {
+     "websiteUrl": "3e4cb1df8db3e2d1"
+    }
+   }
+  ],
+  "posts": []
+ }
+}
