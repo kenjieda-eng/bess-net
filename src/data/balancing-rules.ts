@@ -325,7 +325,7 @@ export const BALANCING_RULES: readonly BalancingRule[] = [
       "explainer": [
         {
           "slug": "balancing-market-cap-cut-2026",
-          "title": "2026年度 需給調整市場 上限価格引下げ ── 一次・二次調整力①の19.51→15円が業界に与える影響"
+          "title": "2026年3月 需給調整市場 上限価格引下げ ── 一次・二次調整力①の19.51→15円が業界に与える影響"
         },
         {
           "slug": "balancing-price-cap-10yen-explainer",
@@ -2656,7 +2656,7 @@ export const BALANCING_RULES: readonly BalancingRule[] = [
       "explainer": [
         {
           "slug": "tertiary-reserve-2-strategy",
-          "title": "需給調整市場 三次調整力②応札戦略 ── 60分応動の中規模蓄電池に適した市場"
+          "title": "需給調整市場 三次調整力②応札戦略 ── 60分応動の商品"
         }
       ],
       "policyEvent": [],
@@ -3055,7 +3055,7 @@ export const BALANCING_RULES: readonly BalancingRule[] = [
       "explainer": [
         {
           "slug": "tertiary-reserve-2-strategy",
-          "title": "需給調整市場 三次調整力②応札戦略 ── 60分応動の中規模蓄電池に適した市場"
+          "title": "需給調整市場 三次調整力②応札戦略 ── 60分応動の商品"
         }
       ],
       "policyEvent": [],
@@ -3476,7 +3476,12 @@ export const BALANCING_RULES: readonly BalancingRule[] = [
           "title": "蓄電池の応答時間と一次・二次・三次調整力 ── 応答性能による収益機会の差"
         }
       ],
-      "policyEvent": [],
+      "policyEvent": [
+        {
+          "slug": "eprx-jukyuchosei-torihikikitei-setsumeikai-2025-10",
+          "title": "需給調整市場 2026年度取引に向けた取引規程改定に関する説明会（EPRX）"
+        }
+      ],
       "catalogSeries": []
     },
     "benchmarkWindow": {
@@ -4015,7 +4020,12 @@ export const BALANCING_RULES: readonly BalancingRule[] = [
           "title": "低圧系統用蓄電池の需給調整市場参入 ── 4月実装開始とアグリ事業の本格化"
         }
       ],
-      "policyEvent": [],
+      "policyEvent": [
+        {
+          "slug": "eprx-jukyuchosei-torihikikitei-setsumeikai-2025-10",
+          "title": "需給調整市場 2026年度取引に向けた取引規程改定に関する説明会（EPRX）"
+        }
+      ],
       "catalogSeries": []
     },
     "benchmarkWindow": {
@@ -4214,7 +4224,12 @@ export const BALANCING_RULES: readonly BalancingRule[] = [
           "title": "需給調整市場の実務：応札から精算までのプロセス"
         }
       ],
-      "policyEvent": [],
+      "policyEvent": [
+        {
+          "slug": "eprx-jukyuchosei-torihikikitei-setsumeikai-2025-10",
+          "title": "需給調整市場 2026年度取引に向けた取引規程改定に関する説明会（EPRX）"
+        }
+      ],
       "catalogSeries": []
     },
     "benchmarkWindow": {

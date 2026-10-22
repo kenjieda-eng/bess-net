@@ -1,0 +1,54 @@
+{
+ "mode": "apply",
+ "calls": {
+  "GET": 6,
+  "PATCH": 2
+ },
+ "counts": {
+  "patched": 2,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "operators/kuradashi-investment-2",
+   "id": "jWXZIwH-unPj",
+   "result": "patched",
+   "fields": [
+    "description",
+    "bessRelation",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "description": "グリーンエナジー＆カンパニーとクラダシがGK-TKスキームで各50%出資する事業主体。静岡県・島根県の系統用蓄電所を開発・運営する。 当サイト掲載の案件「島根県の系統用蓄電所（クラダシ・インベストメント2号）」ほか3件で、案件本文の関与記述とニュースに社名が確認できる事業者。",
+    "bessRelation": "グリーンエナジー＆カンパニーとクラダシがGK-TKスキームで各50%出資する事業主体。静岡県・島根県の系統用蓄電所を開発・運営する。 当サイト掲載の案件「島根県の系統用蓄電所（クラダシ・インベストメント2号）」ほか3件で、案件本文の関与記述とニュースに社名が確認できる事業者。",
+    "body": "<h3 id=\"hd8e3a95884\">会社概要</h3><ul><li>事業区分: 開発事業者</li></ul><h3 id=\"haa55bb17b0\">蓄電所事業との関係</h3><p>当サイト掲載の案件「島根県の系統用蓄電所（クラダシ・インベストメント2号）」ほか3件で、案件本文の関与記述とニュースに社名が確認できる事業者。一次情報には「蓄電設備の設置、運用及び保守管理事業」と記載されている。</p><h3 id=\"h1b9eb7c3a9\">出典</h3><ul><li><a href=\"https://prtimes.jp/main/html/rd/p/000000028.000071823.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000028.000071823.html</a></li><li>当サイト: <a href=\"https://bess-net.jp/projects/gec-kuradashi-shimane-bess\">https://bess-net.jp/projects/gec-kuradashi-shimane-bess</a></li></ul>"
+   },
+   "after": {
+    "description": "グリーンエナジー＆カンパニーとクラダシがGK-TKスキームで各50%出資する事業主体。静岡県・島根県の系統用蓄電所を開発・運営する。 当サイト掲載の案件「島根安来蓄電所」などの事業者欄に社名が確認できる事業者。",
+    "bessRelation": "グリーンエナジー＆カンパニーとクラダシがGK-TKスキームで各50%出資する事業主体。静岡県・島根県の系統用蓄電所を開発・運営する。 当サイト掲載の案件「島根安来蓄電所」などの事業者欄に社名が確認できる事業者。",
+    "body": "<h3 id=\"hd8e3a95884\">会社概要</h3><ul><li>事業区分: 開発事業者</li></ul><h3 id=\"haa55bb17b0\">蓄電所事業との関係</h3><p>当サイト掲載の案件「島根安来蓄電所」などの事業者欄に社名が確認できる事業者。一次情報には「蓄電設備の設置、運用及び保守管理事業」と記載されている。</p><h3 id=\"h1b9eb7c3a9\">出典</h3><ul><li><a href=\"https://prtimes.jp/main/html/rd/p/000000028.000071823.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000028.000071823.html</a></li><li>当サイト: <a href=\"https://bess-net.jp/projects/gec-kuradashi-shimane-bess\">https://bess-net.jp/projects/gec-kuradashi-shimane-bess</a></li></ul>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "operators/vena-energy",
+   "id": "vena-energy",
+   "result": "patched",
+   "fields": [
+    "aliases"
+   ],
+   "check": [],
+   "before": {},
+   "after": {
+    "aliases": "ヴィーナ・エナジー\nVena Energy"
+   }
+  }
+ ]
+}

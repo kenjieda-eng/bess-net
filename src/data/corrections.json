@@ -6213,6 +6213,4231 @@
    "after": "記載の顧問チームを確認できず、公認会計士が在籍するという裏づけも無いため、この文を削除しました",
    "basis": [],
    "internalRef": "reports/entrance-cleanup-and-contact-tracking-2026-10-17.data.json の lp_text（/seller/developer の rule a・b・c 1 件）"
+  },
+  {
+   "id": "20261022-01",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/bess-business-decision-tree",
+   "record": "explainer/bess-business-decision-tree",
+   "targetTitle": "系統用蓄電池ビジネス参入の決定木 ── 開発・運用・投資のどれを担うか",
+   "before": "需給調整市場の動向として「(2026年4月の上限価格引き下げ等)」と記載していました。",
+   "after": "「(2026年3月14日・9月1日実需給分からの上限価格引き下げ等)」に修正しました（EPRX の公表資料では、上限価格の改定は2026年3月14日実需給分からと9月1日実需給分からで、2026年4月の改定はないためです）。",
+   "basis": [
+    {
+     "name": "需給調整市場のΔkW上限価格について",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/information/docs/14b85fbe8942da7d3bdddda80243e7e170f64d9e.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/bess-business-decision-tree／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-02",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/bess-pf-merchant-vs-multiuse",
+   "record": "explainer/bess-pf-merchant-vs-multiuse",
+   "targetTitle": "系統用蓄電池プロジェクトファイナンス ── フルマーチャント vs マルチユース",
+   "before": "出典欄で「再エネ導入の鍵、系統用蓄電池事業に国内初の融資」の発行元を「三井住友銀行」と記載していました。",
+   "after": "発行元を「三井住友フィナンシャルグループ」に修正しました（この資料は三井住友フィナンシャルグループのサイトに載っているインタビュー記事のためです）。",
+   "basis": [
+    {
+     "name": "再エネ導入の鍵、系統用蓄電池事業に国内初の融資",
+     "publisher": "三井住友フィナンシャルグループ",
+     "url": "https://www.smfg.co.jp/sustainability/social_value/interview/0021.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/bess-pf-merchant-vs-multiuse／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-03",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/subsidies-guide",
+   "record": "explainer/subsidies-guide",
+   "targetTitle": "蓄電池の補助金完全ガイド：経産省・エネ庁・自治体の主要制度",
+   "before": "SII（環境共創イニシアチブ）が執行する補助金の箇条に「需要家主導型太陽光発電導入支援事業：自家消費を目的とした太陽光＋蓄電池への補助」と書いていました。",
+   "after": "この箇条を削除しました。この事業は資源エネルギー庁の補助を受けて一般社団法人太陽光発電協会が実施しているもので、SII の事業一覧には載っていないためです。",
+   "basis": [
+    {
+     "name": "需要家主導型太陽光発電・再生可能エネルギー電源併設型蓄電池導入支援事業費補助金",
+     "publisher": "JPEA太陽光発電推進センター（JP-PC）",
+     "url": "https://jp-pc-info.jp/"
+    },
+    {
+     "name": "事業一覧",
+     "publisher": "一般社団法人環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/information/division.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/subsidies-guide／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-04",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/substation-availability-cross-area-analysis",
+   "record": "explainer/substation-availability-cross-area-analysis",
+   "targetTitle": "全国変電所空き容量データの実態 ── 蓄電所ネット統合DB（送配電10社）から読み解くエリア別パターン",
+   "before": "まとめに「中部マップで実証されたパターンを全国展開し、業界全体のデータ標準化と地図ベース可視化を推進することが、業界の競争優位性の源泉となります」と書いていました。\nN-1電制について「ノンファーム接続でも連系可能性が確保される」と書いていました。\nまとめに「…を劇的に効率化します」と書いていました。",
+   "after": "この文を削除しました（裏づけとなる一次資料を確認できなかったためです）。\n電力広域的運営推進機関の資料にある記述に合わせて、「平常時に混雑が発生する系統では、N-1電制による運用容量拡大に、その系統のノンファーム電源の平常時の出力制御を緩和する効果が期待されるとしています」に修正しました（元の文は N-1電制とノンファーム接続を混同しており、一次資料に無い内容だったためです）。\n「劇的に」を削除して「…を効率化します」に修正しました（裏づけとなる一次資料を確認できなかったためです）。",
+   "basis": [
+    {
+     "name": "系統の接続および利用ルールについて ～ノンファーム型接続～",
+     "publisher": "電力広域的運営推進機関（OCCTO）",
+     "url": "https://www.occto.or.jp/grid/assets/NF_setuzokuriyou_20260710.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/substation-availability-cross-area-analysis／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-05",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/balancing-market",
+   "record": "glossary/balancing-market",
+   "targetTitle": "需給調整市場",
+   "before": "「三次調整力②の応動時間は45分→60分（2025年度）、三次調整力①②の継続時間は3時間→30分（三次②は2025年度・三次①は2026年度）に見直されました」と書いていました。\n「海外の系統では、一次調整力（FFR）の主役が火力から蓄電池に置き換わりつつあります。日本でも同様の構造変化が予想され…蓄電池の落札比率が高まっていく見込みです」と書いていました。\n「三次調整力②は最も重要な収益源の一つで、容量市場・JEPX と組み合わせた『3市場運用モデル』の中核です」と書いていました。\n概要に「特に三次調整力②が主要収益源」と書いていました。\n「再エネ比率が高まるほど誤差量も増えるため、三次調整力②の取引量と価格は上昇傾向にあります」と書いていました。",
+   "after": "三次調整力②は2025年3月14日受渡分から応動時間が45分→60分、継続時間が3時間→30分に見直されたこと、一次調整力～三次調整力①は2026年3月14日受渡分（3月13日取引分）から30分単位になったことを、分けて書く形に修正しました（EPRX「2025年度の取引実績について」p.56・57）。\nこの段落を削除しました（裏づけとなる一次資料を確認できなかったためです）。\nこの文を削除しました（裏づけとなる一次資料を確認できなかったためです）。\n「特に三次調整力②が主要収益源」を削除しました（裏づけとなる一次資料を確認できなかったためです）。\nこの文を削除しました（EPRX「2025年度の取引実績について」p.51 では、三次調整力②の年平均が2024年度の3.30から2025年度は1.15に下がっており、記述と合わないためです）。",
+   "basis": [
+    {
+     "name": "2025年度の取引実績について",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/information/summary_2025.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/balancing-market／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-06",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/secondary-reserve-2",
+   "record": "glossary/secondary-reserve-2",
+   "targetTitle": "二次調整力②",
+   "before": "価格について「応答性能要件の厳しさを反映した価格水準で、需給逼迫期には高単価となります」と書いていました。\n今後の展望の箇条に「需給逼迫対応の重要性増加」と書いていました。",
+   "after": "「価格は一般社団法人 電力需給調整力取引所（EPRX）が公表する取引実績で確認できます」に修正しました（価格水準についての記述の裏づけとなる一次資料を確認できなかったためです）。\nこの箇条を削除しました（EPRX は二次調整力②を「ゲートクローズ以降に生じる予測誤差（長周期成分）に対応する調整力」と説明しており、記述と合わないためです）。",
+   "basis": [
+    {
+     "name": "需給調整市場とは",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/outline/outline.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/secondary-reserve-2／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-07",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/tertiary-reserve-2",
+   "record": "glossary/tertiary-reserve-2",
+   "targetTitle": "三次調整力②",
+   "before": "役割を「再生可能エネルギーの長時間予測誤差を補正すること」と書き、「本商品の取引量と価格は上昇傾向にあり、蓄電池事業者にとって最も重要な収益源の一つ」と書いていました。\n「近年は再エネ拡大で約定価格が緩やかに上昇」と書いていました。\n「6. 蓄電池事業の収益構造」の節に、「三次調整力②が中核」という記述、「容量市場：年間収益の30〜50%」などの収益比率、「長期的に拡大していく見通し」を書いていました。\n「三次調整力②は持続的な収益機会を提供する中核市場となります」と書いていました。\n「10. 今後の展望」の節に「三次調整力②の重要性は今後さらに増します」という予測と箇条を書いていました。",
+   "after": "役割を EPRX の商品説明に合わせて「FIT特例制度①およびFIT特例制度③を利用している再生可能エネルギーの予測誤差に対応すること」に修正し、価格の傾向と収益源についての評価は削除しました（裏づけとなる一次資料を確認できなかったためです）。\nこの箇条を削除しました（裏づけとなる一次資料を確認できなかったためです）。\nこの節を削除しました（裏づけとなる一次資料を確認できなかったためです）。\nこの文を削除しました（裏づけとなる一次資料を確認できなかったためです）。\nこの節を削除しました（裏づけとなる一次資料を確認できなかったためです）。",
+   "basis": [
+    {
+     "name": "需給調整市場とは",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/outline/outline.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/tertiary-reserve-2／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-08",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/balancing-market-cap-cut-2026",
+   "record": "explainer/balancing-market-cap-cut-2026",
+   "targetTitle": "2026年3月 需給調整市場 上限価格引下げ ── 一次・二次調整力①の19.51→15円が業界に与える影響",
+   "before": "題名に「2026年度 需給調整市場 上限価格引下げ」と記載\nリードと本文第1節に「2026年度から…上限価格が、19.51円/ΔkW・30分から15円/ΔkW・30分に引き下げられる」と記載\n「これは資源エネルギー庁の制度設計WGで議論され、約定価格の高止まり是正と需要家負担の軽減が目的」と記載\n「2026年4月から新しい上限価格での約定が始まる。3月13日の前日取引移行(3月14日精算)を境に…約定結果はOCCTOが週次で公表する」と記載\n「同時に募集量も見直され、市場の流動性と安定性のバランスが図られる」と記載",
+   "after": "題名の「2026年度」を「2026年3月」に修正しました（15円の上限価格は2026年3月14日実需給分からの適用で、年度では2025年度内のため）\n「2026年3月13日実需給分まで19.51円/ΔkW・30分、2026年3月14日実需給分から15.00円/ΔkW・30分となった」に修正しました（電力需給調整力取引所の上限価格の表による）\n会議名を「第110回制度検討作業部会（2026年1月23日）の審議結果にもとづく」に修正しました。目的の句は、裏づけとなる一次資料を確認できなかったため削除しました\n「15.00円の上限価格は2026年2月5日に公表され、2026年3月14日実需給分から適用された（初回の約定処理は2026年3月13日）」に修正しました。3月14日は精算日ではなく実需給日です。また「2026年4月から」は一次資料と合わず、約定結果の週次公表は裏づけとなる一次資料を確認できなかったため削除しました\n「同時に募集量も見直された」に修正しました。「市場の流動性と安定性のバランスが図られる」は、裏づけとなる一次資料を確認できなかったため削除しました",
+   "basis": [
+    {
+     "name": "需給調整市場のΔkW上限価格について",
+     "publisher": "一般社団法人 電力需給調整力取引所",
+     "url": "https://www.eprx.or.jp/information/docs/14b85fbe8942da7d3bdddda80243e7e170f64d9e.pdf"
+    },
+    {
+     "name": "需給調整市場のΔkW上限価格の更新について",
+     "publisher": "一般社団法人 電力需給調整力取引所",
+     "url": "https://www.eprx.or.jp/j_information/docs/202602051500_news.pdf"
+    },
+    {
+     "name": "需給調整市場について（第110回 制度検討作業部会 資料4）",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/pdf/110_04_00.pdf"
+    },
+    {
+     "name": "需給調整市場について（第109回 制度検討作業部会 資料6）",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/pdf/109_06_00.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/balancing-market-cap-cut-2026／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-09",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/dscr-llcr-bess-pf",
+   "record": "explainer/dscr-llcr-bess-pf",
+   "targetTitle": "DSCR・LLCRの実務 ── 蓄電所プロジェクトファイナンスの核心指標",
+   "before": "菊川西村蓄電所の例について「のような大型案件では、(1)BNEF/Wood Mac等の市場価格予測の保守的ケース採用、(2)複数収益源スタッキング…(4)リプレース戦略の精緻織込み、で組成可能性を確保しています」と記載",
+   "after": "「のような市場販売型の大型案件では、一般に…(4)リプレース戦略の精緻織込み、といった観点で評価されます」に修正しました（個別案件の融資審査の内容を断定する記述は、裏づけとなる一次資料を確認できなかったため一般論に改めました。「市場販売型」は一次資料の語）",
+   "basis": [
+    {
+     "name": "電力市場販売型系統用蓄電池事業に対するプロジェクトファイナンスの組成について",
+     "publisher": "株式会社SBI新生銀行",
+     "url": "https://corp.sbishinseibank.co.jp/ja/news/news/20260331b.html"
+    },
+    {
+     "name": "当社の蓄電事業に関する融資関連契約の締結のお知らせ",
+     "publisher": "株式会社レノバ",
+     "url": "https://www.renovainc.com/news/ir/pdf/20260331_02_PRESS.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/dscr-llcr-bess-pf／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-10",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/global-bess-fire-cases",
+   "record": "explainer/global-bess-fire-cases",
+   "targetTitle": "蓄電池火災のグローバル事例 ── 韓国・米国・豪州の教訓",
+   "before": "「東京海上ディーアールが「蓄電所施設リスクレポート」を定期発行(2024〜)」と記載",
+   "after": "「東京海上ディーアールが「系統用蓄電池を導入するうえで把握しておきたい施設リスクについて ～第2回長期脱炭素電源オークションに向けて～」（Tokio dR-EYE）を2024年12月に公表」に修正しました（一次資料は2024年12月25日付の1本で、「定期発行」は裏づけとなる一次資料を確認できなかったため）",
+   "basis": [
+    {
+     "name": "系統用蓄電池を導入するうえで把握しておきたい施設リスクについて ～第2回長期脱炭素電源オークションに向けて～",
+     "publisher": "東京海上ディーアール株式会社",
+     "url": "https://www.tokio-dr.jp/publication/report/tokio-dr-eye/tdr-eye-2024-05.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/global-bess-fire-cases／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-11",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/low-voltage-resources-and-vpp",
+   "record": "explainer/low-voltage-resources-and-vpp",
+   "targetTitle": "低圧リソースとVPP：分散電源を束ねた新しい電力ビジネス",
+   "before": "「VPP・DRには複数の補助金が用意されています。代表的なものは以下です」と記載\n「SII「需要家側エネルギーリソース活用に関する実証事業」（DR補助金）」と記載\n「NEDO「VPP・DR関連実証事業」」と記載\n「補助金額は事業規模により数千万円〜数億円、補助率は1/3〜1/2が一般的です」と記載",
+   "after": "「関連する事業の例は以下です（終了した事業を含みます）」に修正しました\n「SII（一般社団法人 環境共創イニシアチブ）「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」（過去の実証事業。SII の執行は平成29年度〜令和2年度）」に修正しました（執行を終えた事業であるため）\nNEDO の事業の記載は、裏づけとなる一次資料を確認できなかったため削除しました\n補助金額・補助率の記述は、裏づけとなる一次資料を確認できなかったため削除しました",
+   "basis": [
+    {
+     "name": "執行終了した事業一覧",
+     "publisher": "一般社団法人 環境共創イニシアチブ",
+     "url": "https://sii.or.jp/information/close_division.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/low-voltage-resources-and-vpp／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-12",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/tertiary-reserve-2-strategy",
+   "record": "explainer/tertiary-reserve-2-strategy",
+   "targetTitle": "需給調整市場 三次調整力②応札戦略 ── 60分応動の商品",
+   "before": "題名に「── 60分応動の中規模蓄電池に適した市場」と記載",
+   "after": "「── 60分応動の商品」に修正しました（「中規模蓄電池に適した」は裏づけとなる一次資料を確認できなかったため削除。応動時間60分以内は一次資料による）",
+   "basis": [
+    {
+     "name": "需給調整市場とは",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/outline/outline.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/tertiary-reserve-2-strategy／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-13",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/adjustment-power-tender",
+   "record": "glossary/adjustment-power-tender",
+   "targetTitle": "調整力公募",
+   "before": "引用元を「取引規程 第32条は「本市場における取引は，…」」と記載\n「需給調整市場の決済は、取引規程 第46条が…と定める約定料金と、上げ／下げで構成される「調整電力量料金」の二本立てである」と記載\n「（2026年3月13日の商品要件見直し後の値）」「三次調整力②の応動時間は45分→60分（2025年度）、三次調整力①②の継続時間は3時間→30分（三次②は2025年度・三次①は2026年度）」と記載",
+   "after": "「取引規程別冊（三次調整力②）第32条は…」に修正しました（引用文は本則ではなく別冊の第32条にあるため）\n「決済の対象は、取引規程 第46条が定める約定料金・調整電力量料金・ペナルティ料金・売買手数料の4つです」に修正しました（第46条は決済の対象を4つと定めているため）\n「（2026年3月14日受渡分以降の値）」「三次調整力②は2025年3月14日受渡分から応動時間が45分以内から60分以内に、継続時間が3時間から30分に、三次調整力①は2026年3月14日受渡分（3月13日取引分）から継続時間が3時間から30分に見直されました」に修正しました（適用は受渡日で数えると上記のとおりで、三次①は2026年度ではないため）",
+   "basis": [
+    {
+     "name": "取引規程（需給調整市場）",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/outline/docs/kitei_ver.18_260701.pdf"
+    },
+    {
+     "name": "2025年度の取引実績について",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/information/summary_2025.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/adjustment-power-tender／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-14",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/secondary-reserve-1",
+   "record": "glossary/secondary-reserve-1",
+   "targetTitle": "二次調整力①",
+   "before": "「いずれも2026年3月13日の商品要件見直し後の値（三次②の応動は2025年度に45分→60分、継続時間は3時間→30分（三次②は2025年度・三次①は2026年度））」と記載",
+   "after": "「いずれも2026年3月14日受渡分以降の値です。三次②は2025年3月14日受渡分から応動時間が45分以内から60分以内に、継続時間が3時間から30分に、三次①は2026年3月14日受渡分（3月13日取引分）から継続時間が3時間から30分に変わりました」に修正しました（適用は受渡日で数えると上記のとおりで、三次①は2026年度ではないため）",
+   "basis": [
+    {
+     "name": "三次調整力②の取引単位時間30分化のフォローアップについて",
+     "publisher": "電力広域的運営推進機関（需給調整市場検討小委員会 事務局）",
+     "url": "https://www.occto.or.jp/assets/iinkai/chouseiryoku/jukyuchousei/2025/files/jukyu_shijyo_56_05.pdf"
+    },
+    {
+     "name": "2025年度の取引実績について",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/information/summary_2025.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/secondary-reserve-1／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-15",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/tertiary-reserve-1",
+   "record": "glossary/tertiary-reserve-1",
+   "targetTitle": "三次調整力①",
+   "before": "「2024年4月に三次調整力①の本格運用が開始され、再エネ大量導入下での需給調整市場の中核商品として定着しつつあります。今後は…さらに活発化すると見込まれます」と記載",
+   "after": "段落ごと削除しました（三次調整力①の導入は2022年4月で開始時期が一次資料と異なり、残りの評価・予測も裏づけとなる一次資料を確認できなかったため）",
+   "basis": [
+    {
+     "name": "需給調整市場とは",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/outline/outline.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/tertiary-reserve-1／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-16",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/subsidies/chiba-gyomu-datsutanso-2026",
+   "record": "subsidies/chiba-gyomu-datsutanso-2026",
+   "targetTitle": "令和8年度千葉県業務用設備等脱炭素化促進事業補助金",
+   "before": "締切に「2026年8月14日に受付終了（申請額が予算に達したため…）」と記載し、受付終了の範囲を書いていなかった\n仕組み概要に「令和8年度分は、申請額が予算に達したため令和8年8月14日に受付を終了しました」と記載",
+   "after": "8月14日に終了したのは設備導入等に係る交付申請で、省エネルギー診断受診費のみの交付申請は2026年12月11日（金）まで受け付けることを書き添えました\n「…2026年8月14日に受付を終了しました（設備導入等に係る交付申請。省エネルギー診断受診費のみの交付申請は2026年12月11日まで）」に修正しました",
+   "basis": [
+    {
+     "name": "令和8年度千葉県業務用設備等脱炭素化促進事業補助金",
+     "publisher": "千葉県",
+     "url": "https://www.pref.chiba.lg.jp/ontai/hojo/r8jigyousyahojo.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の subsidies/chiba-gyomu-datsutanso-2026／reports/main-run-2026-10-22.apply-log-v5-subsidies.json"
+  },
+  {
+   "id": "20261022-17",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/subsidies/oita-jika-shohi-solar-2026",
+   "record": "subsidies/oita-jika-shohi-solar-2026",
+   "targetTitle": "大分県自家消費型太陽光発電設備等導入事業費補助金（事業者向け）",
+   "before": "「受付状況・予算残額は2026年9月29日時点の大分県ホームページの掲載に基づきます」と記載",
+   "after": "「2026年9月29日に大分県ホームページで確認（予算残額は同ページ掲載の9月1日時点の値）」に修正しました（県のページの予算残額は9月1日時点の値であるため）",
+   "basis": [
+    {
+     "name": "個人向け及び事業者向け自家消費型太陽光発電設備等導入事業費補助金について",
+     "publisher": "大分県",
+     "url": "https://www.pref.oita.jp/soshiki/13090/taiyoko-hojo-2026.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の subsidies/oita-jika-shohi-solar-2026／reports/main-run-2026-10-22.apply-log-v5-subsidies.json"
+  },
+  {
+   "id": "20261022-18",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/faq",
+   "record": "faq/faq-gijutsu-04",
+   "targetTitle": "全固体電池とは？いつ実用化されますか？",
+   "before": "「安全性向上（液漏れ・熱暴走リスクほぼゼロ）、高エネルギー密度、長寿命、急速充電が期待されます」と記載",
+   "after": "「（液漏れ・熱暴走リスクほぼゼロ）」は、裏づけとなる一次資料を確認できなかったため削除しました。あわせて、経済産業省が2026年6月2日に改訂した「蓄電池・電源産業戦略」で「2030年頃に全固体電池を本格実用化」を目標の一つに掲げていることを記載しました",
+   "basis": [
+    {
+     "name": "蓄電池・電源産業戦略",
+     "publisher": "経済産業省",
+     "url": "https://www.meti.go.jp/press/2026/06/20260602001/20260602001.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の faq/faq-gijutsu-04／reports/main-run-2026-10-22.apply-log-v5-faq.json"
+  },
+  {
+   "id": "20261022-19",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/events",
+   "record": "policy-events/energy-storage-summit-eu-2026",
+   "targetTitle": "Energy Storage Summit 2026",
+   "before": "名称を「Energy Storage Summit EU 2026」と記載\n開催日を2026年2月25日〜26日と記載",
+   "after": "主催者の表記に合わせ「Energy Storage Summit 2026」に修正しました\n主催者の公式サイトの「24-25 February 2026」に合わせ、2026年2月24日〜25日に修正しました",
+   "basis": [
+    {
+     "name": "Energy Storage Summit 2026 公式サイト（2026年2月18日の保存版）",
+     "publisher": "Energy Storage Summit 2026 主催者",
+     "url": "https://web.archive.org/web/20260218145314/https://storagesummit.solarenergyevents.com/"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の policy-events/energy-storage-summit-eu-2026／reports/main-run-2026-10-22.apply-log-v5-policy-events.json"
+  },
+  {
+   "id": "20261022-20",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/events",
+   "record": "policy-events/enex-2026",
+   "targetTitle": "ENEX2026 第50回地球環境とエネルギーの調和展",
+   "before": "名称を「ENEX 2026（エネルギー総合展）」と記載\n説明に「系統用蓄電池の自家消費補完・デマンドレスポンス連動の事例展示が増加」と記載",
+   "after": "主催者の開催結果の正式名「ENEX2026 第50回地球環境とエネルギーの調和展」に修正しました（「エネルギー総合展」は一次資料に無いため）\n蓄電池・デマンドレスポンスの事例展示の記述は、裏づけとなる一次資料を確認できなかったため削除しました",
+   "basis": [
+    {
+     "name": "2026開催結果（2026年1月開催）",
+     "publisher": "一般財団法人省エネルギーセンター",
+     "url": "https://www.low-cf.jp/east/2026_report/index.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の policy-events/enex-2026／reports/main-run-2026-10-22.apply-log-v5-policy-events.json"
+  },
+  {
+   "id": "20261022-21",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/bess-esg-green-finance",
+   "record": "explainer/bess-esg-green-finance",
+   "targetTitle": "蓄電所のESG/グリーンファイナンス ── 認証・KPI・ディスクロージャー",
+   "before": "「2023年8月のSMFLみらいパートナーズ国内初系統用蓄電池PF」と記載\n「ポート(三菱UFJ16億円グリーンローン、2026/4)」と記載\n「日本蓄電池(リコーリース49億円ノンリコース、2026/4)」と記載（49億円を実行した額と読める形）\n「実績が急増している」と記載",
+   "after": "「国内初」は三井住友フィナンシャルグループの記事（三井住友ファイナンス＆リース調べ）によるものと明記しました。あわせて、三菱UFJ銀行の2025年5月7日の発表（フルマーチャントを前提とした本邦初のプロジェクトファイナンス）を書き足しました\n「2026年4月17日に三菱UFJ銀行がポート株式会社とグリーンローン（組成金額16億円）の融資契約を締結」に修正しました\n日本蓄電池の発表どおりに修正しました。49億円は、同社が組成するSPCとリコーリースとの限度貸付契約の貸付限度額です。実行したのは第1回目のプロジェクトファイナンス（SPCを活用したノンリコースローン）です\n「実績が急増している」を削除しました（裏づけとなる一次資料を確認できなかったため）",
+   "basis": [
+    {
+     "name": "本邦系統用蓄電池設備によりフルマーチャントを前提に行う事業に対する本邦初のプロジェクトファイナンス組成について",
+     "publisher": "株式会社三菱UFJ銀行",
+     "url": "https://www.bk.mufg.jp/info/pdf/full_merchant.pdf"
+    },
+    {
+     "name": "ポート株式会社と「グリーンローン」を成約",
+     "publisher": "株式会社三菱UFJ銀行",
+     "url": "https://www.bk.mufg.jp/houjin/info/pdf/port_green_loan_contract.pdf"
+    },
+    {
+     "name": "再エネ導入の鍵、系統用蓄電池事業に国内初の融資",
+     "publisher": "三井住友フィナンシャルグループ",
+     "url": "https://www.smfg.co.jp/sustainability/social_value/interview/0021.html"
+    },
+    {
+     "name": "系統用蓄電池事業におけるプロジェクトファイナンスの実行について",
+     "publisher": "日本蓄電池株式会社",
+     "url": "https://www.nipponchikudenchi.co.jp/news/1629/"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/bess-esg-green-finance／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-22",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/bms-vs-ems",
+   "record": "explainer/bms-vs-ems",
+   "targetTitle": "BMSとEMSの違いと役割：蓄電所制御システムの全体像",
+   "before": "「BMS：電池メーカーが内蔵することが多い（CATL、BYD、東芝、村田など）」「EMS：独立系プロバイダーが提供（Smarter Grid Solutions、Greensmith、自社開発が増加）」と記載（出典の記載なし）",
+   "after": "括弧内のメーカー名・事業者名の例と「自社開発が増加」を削除しました（裏づけとなる一次資料を確認できなかったため）",
+   "basis": [],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/bms-vs-ems／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-23",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/chief-electrical-engineer",
+   "record": "explainer/chief-electrical-engineer",
+   "targetTitle": "電気主任技術者の選任義務と実務：蓄電所運営の必須要件",
+   "before": "4節の外部委託の条件に、対象となる設備の範囲が書かれていませんでした\nまとめに「専任・兼任・外部委託の3パターン」とだけ記載",
+   "after": "条件の先頭に「対象設備が出力5,000キロワット未満の蓄電所であって電圧7,000ボルト以下で連系等をするものである（電気事業法施行規則第52条第2項第一号）」を追加しました（施行規則の定めに合わせるため）\nまとめに「外部委託は出力5,000キロワット未満・電圧7,000ボルト以下で連系等をする蓄電所に限る」を追記しました",
+   "basis": [
+    {
+     "name": "電気事業法施行規則",
+     "publisher": "e-Gov 法令検索（デジタル庁）・平成七年通商産業省令第七十七号",
+     "url": "https://laws.e-gov.go.jp/law/407M50000400077"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/chief-electrical-engineer／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-24",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/global-bess-trends-2026",
+   "record": "explainer/global-bess-trends-2026",
+   "targetTitle": "系統用蓄電池の海外動向2026 ── 米国IRA・中国・欧州・豪州の政策と主要案件",
+   "before": "題名に「米国IRA・欧州・豪州の規模感」と記載\nリードに「日本の系統用蓄電池市場は2026年で年間4.2GWh規模だが、米国・中国・豪州は10倍以上のスケール」と記載\n米国IRAについて「最大30%の投資税額控除(ITC)」と記載し、Tesla・Fluence等が大規模案件を相次いで稼働させていると記載\n中国について市場規模・電池メーカーの列挙・併設を強制する政策・「グローバル覇権」を記載し、「BYDがサウジで世界最大級12.5GWh案件を受注」と記載\n欧州について「蓄電池需要が急増」と記載し、英独西で案件が相次ぐと記載\n豪州の Hornsdale Power Reserve を「150MW/194MWh、Tesla」と記載し、「世界最先端事例」「日本も学ぶべき水準」と記載\n日本について「世界最先端水準」「日本勢の海外展開は限定的」と記載し、「みずほリースが英で3GW BESS出資(2025/12)」と記載\n7節に「市場拡大は確実」「2030年までに年10〜20GWh規模に成長する見込み」と記載",
+   "after": "「米国IRA・中国・欧州・豪州の政策と主要案件」に修正しました（本文に規模の比較が無いため）\n4.2GWh・10倍以上など市場規模の比較を削除しました（裏づけとなる一次資料を確認できなかったため）\n「最大30%」を削除し、「蓄電池プロジェクトを投資税額控除(ITC)の対象とした」に修正しました（IRS の説明では、控除率は基本6%、賃金・見習い要件を満たすと30%で、さらに上乗せがあるため）。事業者名を挙げた稼働の文は削除しました（裏づけとなる一次資料を確認できなかったため）\n市場規模・メーカーの列挙・政策・覇権の記述を削除しました。BYD については自社製品ページの記載どおり、2025年のサウジアラビアの系統側蓄電池案件（12,500MWh）を自社製品の事例として挙げている、に修正しました（「受注」は一次に無いため）\n「蓄電池需要が急増」と英独西の事例を削除しました。REPowerEU は欧州委員会の説明どおり、2022年5月に開始し、ロシア産化石燃料の輸入の段階的な停止と再エネの拡大を進めている、に修正しました\nHornsdale を「Neoen、150MW」に修正しました（一次は100MW/129MWh＋50MW/64.5MWh、全体で150MW）。Wallgrove は Transgrid の記載（50MW/75MWh）としました。評価の記述は削除しました（裏づけとなる一次資料を確認できなかったため）\n評価の記述を削除しました。みずほリースの文はリリースどおり、2025年12月8日に、英国で合計3.1GW規模の系統用蓄電池プロジェクト3件を開発・建設中の Fidra Energy への出資参画を公表した、に修正しました\n7節を削除しました（裏づけとなる一次資料を確認できなかったため）",
+   "basis": [
+    {
+     "name": "Clean Electricity Investment Credit",
+     "publisher": "米国内国歳入庁（IRS）",
+     "url": "https://www.irs.gov/credits-deductions/clean-electricity-investment-credit"
+    },
+    {
+     "name": "Utility-Scale - MC Cube-T BESS",
+     "publisher": "BYD Energy Storage",
+     "url": "https://www.bydenergy.com/en/productDetails/Utility-Scale/MC_Cube-T_BESS"
+    },
+    {
+     "name": "REPowerEU",
+     "publisher": "欧州委員会",
+     "url": "https://commission.europa.eu/topics/energy/repowereu_en"
+    },
+    {
+     "name": "Hornsdale Power Reserve - South Australia's Big Battery",
+     "publisher": "Neoen",
+     "url": "https://hornsdalepowerreserve.com.au/"
+    },
+    {
+     "name": "Wallgrove Grid Lithium Ion Battery Installation",
+     "publisher": "Transgrid",
+     "url": "https://www.transgrid.com.au/projects-innovation/wallgrove-grid-battery"
+    },
+    {
+     "name": "英国における系統用蓄電池事業への出資参画について",
+     "publisher": "みずほリース株式会社（PR TIMES 掲載）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000123.000085927.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/global-bess-trends-2026／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-25",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/grid-scale-bess",
+   "record": "explainer/grid-scale-bess",
+   "targetTitle": "系統用蓄電池とは？仕組みと収益源、参入手順を解説",
+   "before": "届出制の発電事業者の要件として「②託送契約上の同時最大受電電力が5割超、③年間の逆潮流量（電力量）が5割超」と記載（何に対する割合かが書かれていなかった）",
+   "after": "「②出力に占める託送契約上の同時最大受電電力の割合が5割超、③発電（放電）電力量に占める年間の逆潮流量の割合が5割超」に修正しました（電気事業法施行規則第3条の4の定めに合わせるため）",
+   "basis": [
+    {
+     "name": "電気事業法施行規則",
+     "publisher": "e-Gov 法令検索（デジタル庁）・平成七年通商産業省令第七十七号",
+     "url": "https://laws.e-gov.go.jp/law/407M50000400077"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/grid-scale-bess／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-26",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/main-auction",
+   "record": "glossary/main-auction",
+   "targetTitle": "メインオークション",
+   "before": "要約に「蓄電池の安定収益確保の最重要機会」と記載\n発動指令電源を「蓄電池の主要な参加形態」と記載し、安定電源を「火力・原子力・大型水力が対象」と記載\n4節「評価基準」で、応動時間・継続発動可能時間・年間発動可能時間数を蓄電池の評価の軸として記載\n「沖縄エリアなど独立系統では別途扱い」と記載\n「エリアによっては高値約定が続いています」「制度精緻化が継続的に進む見込みです」と記載",
+   "after": "削除しました（裏づけとなる一次資料を確認できなかったため）\n「蓄電池の主要な参加形態」を削除しました。安定電源は募集要綱の記載どおり、蓄電池は「1 日 1 回以上連続3時間以上の運転継続が可能な能力を有するもの」が該当する、に修正しました\n裏づけのない3項目を削除しました。見出しを「蓄電池の参加要件」とし、募集要綱の記載（安定電源の蓄電池の要件・発動指令電源の期待容量の算定）だけを置きました\n募集要綱の対象エリアの記載どおり「沖縄地域及びその他地域の離島は対象外」に修正しました\n時点の無い「高値約定が続いています」と予測の文を削除し、「メインオークションは2024年度実需給から本格運用が始まりました。」としました（裏づけとなる一次資料を確認できなかったため）",
+   "basis": [
+    {
+     "name": "容量市場 メインオークション募集要綱（対象実需給年度：２０３０年度）",
+     "publisher": "電力広域的運営推進機関（OCCTO）",
+     "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/260730_mainauction_boshuyoukou_jitsujukyu2030.pdf"
+    },
+    {
+     "name": "容量市場 メインオークション約定結果",
+     "publisher": "電力広域的運営推進機関",
+     "url": "https://www.occto.or.jp/capacity-market/yoryoshijyo/main/data/"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/main-auction／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-27",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/non-firm-connection",
+   "record": "glossary/non-firm-connection",
+   "targetTitle": "ノンファーム接続",
+   "before": "「N-1電制適用可（ノンファーム接続候補）の変電所」と記載し、N-1電制とノンファーム接続を同じものとして扱っていた。中部地方は「地図上で N-1電制可を青枠表示」と記載\n中部地方マップへのリンク文に「青枠 = N-1電制適用可、業界初」と記載",
+   "after": "電力広域的運営推進機関の資料に基づき、別の仕組みであることが分かるように書き直しました。ノンファーム型接続は平常時に発電に必要な容量が系統に確保されない接続方法、N-1電制はリレー等で自動的に電源制限を行い運用容量を拡大する仕組みです。地図の説明は「空容量プラスかつ N-1電制適用可の変電所を緑のマーカーで表示」に修正しました\n地図の実際の表示に合わせて「緑 = 空容量プラスかつ N-1電制適用可」に修正し、「業界初」を削除しました（地図では青は空容量プラスを示すため。また、裏づけとなる一次資料を確認できなかったため）",
+   "basis": [
+    {
+     "name": "系統の接続および利用ルールについて ～ノンファーム型接続～",
+     "publisher": "電力広域的運営推進機関（OCCTO）",
+     "url": "https://www.occto.or.jp/grid/assets/NF_setuzokuriyou_20260710.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/non-firm-connection／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-28",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/tertiary-reserve",
+   "record": "glossary/tertiary-reserve",
+   "targetTitle": "三次調整力",
+   "before": "「2026年3月13日の商品要件見直し後の値」「三次調整力②の応動時間は45分→60分（2025年度）、三次調整力①②の継続時間は3時間→30分（三次②は2025年度・三次①は2026年度）」と記載\n要約に「蓄電池の主要収益源」と記載\n「三次調整力②は再エネ拡大に伴い取引量・価格が上昇傾向。蓄電池の主要収益源です。」と記載\n7節「三次調整力②の重要性」に「最重要収益源」「取引量が大きい」「応動性能要件が緩く参入容易」「再エネ拡大で需要増加」と記載",
+   "after": "「2026年3月14日受渡分以降の値」に修正しました。あわせて、見直しの時期を次のとおり修正しました。三次調整力②は2025年3月14日受渡分から、応動時間が45分以内から60分以内に、継続時間が3時間から30分に変わりました。三次調整力①は2026年3月14日受渡分（3月13日取引分）から、継続時間が3時間から30分に変わりました\n削除しました（裏づけとなる一次資料を確認できなかったため）\n削除し、「価格は電力需給調整力取引所（EPRX）が公表する取引実績で確認できます。」に差し替えました（EPRX「2025年度の取引実績について」では、三次②の平均落札単価の年平均は2024年度3.30円から2025年度1.15円（ΔkW・30分あたり）に下がっており、「上昇傾向」とは逆のため）\n7節を削除しました（裏づけとなる一次資料を確認できなかったため）",
+   "basis": [
+    {
+     "name": "2025年度の取引実績について",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/information/summary_2025.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/tertiary-reserve／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-29",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/subsidies/hokkaido-zero-carbon-village-2026",
+   "record": "subsidies/hokkaido-zero-carbon-village-2026",
+   "targetTitle": "ゼロカーボン・ビレッジ構築支援事業費補助金（北海道地球温暖化防止対策基金活用事業）",
+   "before": "締切を「2026年8月28日（金）17:00までに事業計画書を提出」と記載\n対象事業者欄に「令和8年度の三次公募は2026年8月28日17:00で受付を終了」と記載\n本文に「8月28日（金）17:00までで」と記載",
+   "after": "「2026年8月28日（金）（三次公募・受付終了）」に修正しました（公募案内の応募受付期間は「８月28日（金）まで」です。17:00 は窓口の受付時間の終わりで、締切の時刻ではないため）\nこの文を削除しました（本文の受付状況と重複し、17:00 は締切の時刻ではないため）\n「8月28日（金）までで」に修正しました",
+   "basis": [
+    {
+     "name": "ゼロカーボン・ビレッジ構築支援事業費補助金 ３次公募案内（令和８年度）",
+     "publisher": "北海道経済部 GX推進局 GX推進課",
+     "url": "https://www.pref.hokkaido.lg.jp/fs/1/3/1/8/9/4/6/7/_/02%20%E3%80%90%E4%B8%89%E6%AC%A1%E5%85%AC%E5%8B%9F%E3%80%91%E5%85%AC%E5%8B%9F%E6%A1%88%E5%86%85(%E3%83%93%E3%83%AC%E3%83%83%E3%82%B8).pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の subsidies/hokkaido-zero-carbon-village-2026／reports/main-run-2026-10-22.apply-log-v5-subsidies.json"
+  },
+  {
+   "id": "20261022-30",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/projects/kirishima-bess",
+   "record": "projects/kirishima-bess",
+   "targetTitle": "霧島蓄電所",
+   "before": "市場参加欄に「JEPX」「需給調整市場」と記載\n「霧島市は薩摩川内・霧島の電力インフラ集積地として、九州エリアの中核エリアの一つ」「九州エリアでの中規模蓄電所の代表事例として位置付けられます」と記載\n「市場参加戦略はJEPXスポット市場・需給調整市場の組合せが想定され、…出力制御回避への貢献を担います」と記載",
+   "after": "市場参加欄を空にしました（一次では、市場取引は今後の予定として述べられているだけで、参加を始めたという記載が無いため）\n削除しました（裏づけとなる一次資料を確認できなかったため）\nリリースの記載（「３社は今後、…異なる市場取引を組み合わせた運用により事業性の確保に努めます。」）を引用し、JEPX・需給調整市場への参画は予定であることが分かるように修正しました",
+   "basis": [
+    {
+     "name": "系統用蓄電池1号案件の稼働と3社による合同会社設立",
+     "publisher": "日本エネルギー総合システム株式会社（PR TIMES 掲載）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000017.000113700.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の projects/kirishima-bess／reports/main-run-2026-10-22.apply-log-v5-projects.json"
+  },
+  {
+   "id": "20261022-31",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/subsidies/kagoshima-saiene-chikudenchi-2026",
+   "record": "subsidies/kagoshima-saiene-chikudenchi-2026",
+   "targetTitle": "再エネ設備と蓄電池を併用した先進的な取組導入支援事業（R8年度）",
+   "before": "対象者を「県内市町村、県内に事業所を置く企業及び法人格を持った団体並びに個人事業主、又はこれらの者」と記載（対象から除く者の定めが抜けていた）",
+   "after": "交付要綱第3条(1)の記載どおり、「（国、地方公共団体、独立行政法人並びに国及び地方公共団体の出資又は費用負担の比率が50％を超えるものを除く）」を戻しました",
+   "basis": [
+    {
+     "name": "ＧＸ推進再エネ導入支援事業（再エネ設備と蓄電池を併用した先進的な取組導入支援）補助金交付要綱",
+     "publisher": "鹿児島県（商工労働水産部 エネルギー対策課）",
+     "url": "https://www.pref.kagoshima.jp/ac10/documents/127695_20260507085932-1.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の subsidies/kagoshima-saiene-chikudenchi-2026／reports/main-run-2026-10-22.apply-log-v5-subsidies.json"
+  },
+  {
+   "id": "20261022-32",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/balancing-market-practical",
+   "record": "explainer/balancing-market-practical",
+   "targetTitle": "需給調整市場の実務：応札から精算までのプロセス",
+   "before": "商品の分け方を「応答速度・継続時間の違いで分かれます」とし、一次調整力を「応動10秒以内・オフライン監視は30秒以内・継続5分以上」、値の時点を「2026年3月13日の商品要件見直し後の値」と記載\n「決済の対象はこの2つに加えてペナルティ料金があります（取引規程 第46条）」と記載\n7節に「再エネ比率の上昇とともに需要が拡大しています。蓄電池事業者にとって最も重要な収益源の一つです。」と記載\nまとめに「三次調整力②が最重要収益源」と記載",
+   "after": "「主に応動時間の違いで分かれます」とし、一次調整力を「応動10秒以内・継続5分以上（オフライン監視の場合は応動30秒以内・継続時間の設定なし）」に修正しました。何が見直されたかを一次資料で確認できなかったため、時点は「EPRX「需給調整市場の商品要件と取引スケジュール（第６版）」2026年3月13日の値」に改めました（同資料の商品要件の表に合わせました）\n「ペナルティ料金と売買手数料があります」に修正しました（取引規程 第46条の決済の対象に売買手数料が含まれるため）\n需要の拡大と「最も重要な収益源の一つ」の記述を削除しました（裏づけとなる一次資料を確認できなかったため）\n「三次調整力②が最重要収益源」の箇条を削除しました（裏づけとなる一次資料を確認できなかったため）",
+   "basis": [
+    {
+     "name": "需給調整市場の商品要件と取引スケジュール",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/outline/docs/shouhin_ver.6_20260313.pdf"
+    },
+    {
+     "name": "取引規程（需給調整市場）",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/outline/docs/kitei_ver.18_260701.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/balancing-market-practical／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-33",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/capacity-market-advanced",
+   "record": "explainer/capacity-market-advanced",
+   "targetTitle": "容量市場の応用編：発動指令電源の運用とリクワイアメント遵守",
+   "before": "導入文に「容量市場で蓄電池が落札する場合、多くは「発動指令電源」として参加します。」と記載\n1節に「蓄電池は応答速度が速いため、多くが発動指令電源として登録されます。」と記載\n2節の見出しを「評価軸：時間定格と応動時間」、導入文を「蓄電池の評価は以下の軸で決まります。」とし、箇条に「時間定格：定格出力で何時間放電できるか」「継続発動可能時間：1回の発動でどれだけ継続できるか」と記載\n7節「発動指令の頻度と実態」に「発動指令は年間12回（1日1回）を上限として発令され」「実際の発令回数は需給状況による」と記載し、まとめに「リクワイアメントは1回の発動につき継続時間3時間・年間12回（1日1回）が上限」と記載",
+   "after": "「多く」の記述を削除し、「容量市場の発動指令電源では、発動時に…」に修正しました（裏づけとなる一次資料を確認できなかったため。OCCTO の資料では、1日1回以上連続3時間以上運転できる蓄電池は安定電源としての参加が基本とされています）\nこの文を削除しました（裏づけとなる一次資料を確認できなかったため）\n見出しを「要件：継続時間と指令のリードタイム」、導入文を「発動指令電源に求められる要件は次のとおりです。」に修正し、「時間定格」の箇条を削除、もう一つの箇条を「継続時間：1回の発動につき3時間」に修正しました（業務マニュアルの要件は継続時間3時間・指令は応動の3時間以上前・年間発動回数12回で、時間定格の項目は無いため）\n7節の見出しを「アセスメントの対象となる発動の回数と時間」とし、本文とまとめを「アセスメントの対象となる発動指令は年間12回・1日1回まで（1回の継続時間は3時間）」に修正しました。裏づけの無い「実際の発令回数は需給状況による」の文は削除しました（業務マニュアルでは、12回・1日1回は発令の上限ではなくアセスメントの対象となる範囲のため）",
+   "basis": [
+    {
+     "name": "容量市場 業務マニュアル 実需給期間中リクワイアメント対応（発動指令電源）編（対象実需給年度：2026年度）",
+     "publisher": "電力広域的運営推進機関",
+     "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2026_jitsujukyu_kanren/260427_2026_gyoumumanual_rikuwaiamento_hatsudoushirei.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/capacity-market-advanced／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-34",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/capacity-market-transitional",
+   "record": "explainer/capacity-market-transitional",
+   "targetTitle": "蓄電所と容量市場の経過措置 ── 容量確保契約金額からの控除と対象実需給年度2029年度限りでの廃止",
+   "before": "「経過措置の控除は電源等の区分が安定電源又は変動電源（単独）で、かつ2010年度末までに建設された電源又は低価格で応札した電源が対象のため、これから建設する蓄電所には事実上適用されない」と記載",
+   "after": "経過年数に応じた控除は2010年度末までに建設された電源が対象だが、入札内容に応じた控除は応札価格で対象が決まり建設年の条件がないため、対象実需給年度2029年度までの分を安定電源として落札し、応札価格が条件を満たす蓄電所は対象になりうる、と修正しました。「事実上適用されない」は削除し、両方の控除が対象実需給年度2029年度を最後に廃止されることを書きました（容量確保契約約款の附則によるもの。2030年度以降の約款と募集要綱には経過措置の定めが無い）",
+   "basis": [
+    {
+     "name": "容量確保契約約款（対象実需給年度：2024 - 2029 年度）",
+     "publisher": "電力広域的運営推進機関（OCCTO）",
+     "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/260730_kakuhokeiyaku_2024-2029.pdf"
+    },
+    {
+     "name": "容量確保契約約款（対象実需給年度：2030年度以降）",
+     "publisher": "電力広域的運営推進機関",
+     "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/260730_kakuhokeiyaku_2030.pdf"
+    },
+    {
+     "name": "容量市場 メインオークション募集要綱（対象実需給年度：２０３０年度）",
+     "publisher": "電力広域的運営推進機関（OCCTO）",
+     "url": "https://www.occto.or.jp/assets/market-board/market/jitsujukyukanren/260730_mainauction_boshuyoukou_jitsujukyu2030.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/capacity-market-transitional／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-35",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/explainer/lcoe-and-bess-economics",
+   "record": "explainer/lcoe-and-bess-economics",
+   "targetTitle": "LCOEと蓄電池の経済性 ─ なぜ蓄電所は「LCOS」で見るべきか",
+   "before": "「陸上風力・大規模太陽光はこの水準も下回ってきています」と記載",
+   "after": "「陸上風力はこの水準も下回っています（大規模太陽光は 42.0 で、この範囲の下端）」に修正しました（本文で示している NREL ATB 2025 の大規模太陽光の値 42.0 は 40〜80 の範囲内にあり、下回っていないため）",
+   "basis": [
+    {
+     "name": "NREL ATB",
+     "publisher": "National Renewable Energy Laboratory（NREL）",
+     "url": "https://atb.nlr.gov/electricity/2025/about"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の explainer/lcoe-and-bess-economics／reports/main-run-2026-10-22.apply-log-v5-explainer.json"
+  },
+  {
+   "id": "20261022-36",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/fast-frequency-response",
+   "record": "glossary/fast-frequency-response",
+   "targetTitle": "FFR",
+   "before": "「日本の一次調整力（10秒以内）よりさらに高速な商品として、将来導入の可能性。」と記載\n「8. 今後の制度議論」の節に「日本でも再エネ拡大に伴いFFR的な商品の必要性が議論される可能性。」と記載（出典の記載なし）",
+   "after": "この文を削除しました（裏づけとなる一次資料を確認できなかったため）\nこの節を削除しました（裏づけとなる一次資料を確認できなかったため）",
+   "basis": [],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/fast-frequency-response／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-37",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/subsidies/meti-battery-supply-plan-certification",
+   "record": "subsidies/meti-battery-supply-plan-certification",
+   "targetTitle": "経産省 蓄電池供給確保計画 認定結果一覧",
+   "before": "「第三者への委託等により製造したセル〔OEMを含む〕」と記載\n根拠の箇所を「第6章1.(1)・※10」と記載",
+   "after": "「第三者への委託等により当該メーカーが自ら保有する製造拠点以外で製造したセル〔OEMを含む〕」に修正しました（募集要綱 ※10 にある限定の句が抜けていたため）\n「第4章3.(7) の表の※10・第6章1.(1)」に修正しました（※10 は第6章1.(1) ではなく、第4章3.(7)「安定電源の登録項目及び提出書類」の表の脚注にあるため）",
+   "basis": [
+    {
+     "name": "容量市場 長期脱炭素電源オークション募集要綱（応札年度：２０２６年度）",
+     "publisher": "電力広域的運営推進機関（OCCTO）",
+     "url": "https://www.occto.or.jp/assets/260902_boshuyoukou_long_2026.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の subsidies/meti-battery-supply-plan-certification／reports/main-run-2026-10-22.apply-log-v5-subsidies.json"
+  },
+  {
+   "id": "20261022-38",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/subsidies/sii-dr-r7h",
+   "record": "subsidies/sii-dr-r7h",
+   "targetTitle": "令和7年度補正 DR家庭用蓄電池事業",
+   "before": "制度の説明に「アグリゲーター経由でVPP・需給調整市場参加を前提とし、家庭・業務分野の需要側エネルギーリソース活用を促進」と記載\n本文に「SII（環境共創イニシアチブ）が経済産業省の委託を受けて運用する補助制度で…アグリゲーター経由でVPP・需給調整市場への参加を前提とした事業設計が特徴です」と記載\n本文に「家庭部門の蓄電池導入が加速し、需要側エネルギーリソースの集約・市場参加モデルが本格普及します」と記載し、詳細の例に「VPP参加要件」を挙げていた",
+   "after": "申請は「アグリ型」（蓄電池アグリゲーターとDR契約）と「小売型」（小売電気事業者のDRメニューに加入）の2パターンの内どちらか、に修正しました（公募要領 1-4。公募要領に VPP・需給調整市場の記載は無く、家庭用の事業のため業務分野も外しました）\nSII と大日本印刷株式会社の二者で構成し、SII を幹事社とする事務局が取り扱う補助金で、申請はアグリ型・小売型の2パターン、に修正しました（「経済産業省の委託を受けて運用する」は公募要領に無いため）\n予測の文を削除しました（裏づけとなる一次資料を確認できなかったため）。公募要領に無い「VPP参加要件」も外しました",
+   "basis": [
+    {
+     "name": "再生可能エネルギー導入拡大・分散型エネルギーリソース導入支援等事業費補助金",
+     "publisher": "一般社団法人環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/aggregator/R7r_dr_ess_kateiyoukouboyouryou.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の subsidies/sii-dr-r7h／reports/main-run-2026-10-22.apply-log-v5-subsidies.json"
+  },
+  {
+   "id": "20261022-39",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/faq",
+   "record": "faq/faq-hojokin-11",
+   "targetTitle": "令和7年度補正予算の系統用蓄電池向け補助金には何がありますか？",
+   "before": "代表例として「(1) 系統用蓄電システム等導入支援事業（系統用蓄電池・水電解装置）、(2) 再生可能エネルギー導入拡大・系統用蓄電池等電力貯蔵システム導入支援事業（大規模業務産業用蓄電システム等を含む）、(3) 省エネ・非化石転換補助金」と記載し、「大規模案件ではGXフューチャー・リーグ会員要件や排出量実績報告が求められる場合があります」と記載",
+   "after": "「再生可能エネルギー導入拡大・系統用蓄電池等電力貯蔵システム導入支援事業費補助金」の下に、系統用蓄電システム等導入支援事業・大規模業務産業用蓄電システム等導入支援事業・再エネ電源併設蓄電システム等導入支援事業の3事業がある書き方に修正しました（SII の各事業ページの表記に合わせました）。蓄電池との結びつきを SII のページで確認できなかった省エネ・非化石転換補助金は外しました。GX の要件は、公募要領の記載（2021年度のCO2排出量が20万t以上の民間企業に GXフューチャー・リーグへの参加と排出量実績の報告を求める。ただし排出削減目標の設定・報告などと同様の取組に対応している場合は実施するものとみなす）に合わせて修正しました",
+   "basis": [
+    {
+     "name": "令和7年度補正 系統用蓄電システム等導入支援事業",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/chikudenchi07r/"
+    },
+    {
+     "name": "令和7年度補正 大規模業務産業用蓄電システム等導入支援事業",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/daikibogyousan07r/"
+    },
+    {
+     "name": "令和7年度補正 再エネ電源併設蓄電システム等導入支援事業",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/saieneheisetsu07r/"
+    },
+    {
+     "name": "令和７年度補正 系統用蓄電システム等導入支援事業 公募要領",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/chikudenchi07r/uploads/R7r_kess_kouboyouryou.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の faq/faq-hojokin-11／reports/main-run-2026-10-22.apply-log-v5-faq.json"
+  },
+  {
+   "id": "20261022-40",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/kuradashi-investment-2",
+   "record": "operators/kuradashi-investment-2",
+   "targetTitle": "合同会社クラダシ・インベストメント2号",
+   "before": "「当サイト掲載の案件「島根県の系統用蓄電所（クラダシ・インベストメント2号）」ほか3件で、案件本文の関与記述とニュースに社名が確認できる事業者。」と記載",
+   "after": "「当サイト掲載の案件「島根安来蓄電所」などの事業者欄に社名が確認できる事業者。」に修正しました（一次の案件名は「島根安来蓄電所」であるため。当サイトの掲載案件は2件で「ほか3件」は作成時から1件多く、ニュースでの言及も無かったため、件数と「案件本文の関与記述とニュース」を外しました）",
+   "basis": [
+    {
+     "name": "クラダシ、島根県安来市で「島根安来蓄電所」を着工",
+     "publisher": "株式会社クラダシ（PR TIMES 掲載）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000734.000014485.html"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の operators/kuradashi-investment-2／reports/main-run-2026-10-22.apply-log-v5-operators.json"
+  },
+  {
+   "id": "20261022-41",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/glossary/adjustment-reserve",
+   "record": "glossary/adjustment-reserve",
+   "targetTitle": "調整力",
+   "before": "「上記は2026年3月13日の商品要件見直し後の値です。三次調整力②の応動時間は45分→60分（2025年度）、三次調整力①②の継続時間は3時間→30分（三次②は2025年度・三次①は2026年度）に見直されました」と記載",
+   "after": "「上記は2026年3月14日受渡分以降の値です。三次調整力②は2025年3月14日受渡分から応動時間が45分以内から60分以内に、継続時間が3時間から30分に、三次調整力①は2026年3月14日受渡分（3月13日取引分）から継続時間が3時間から30分に見直されました」に修正しました（見直しの適用時期を受渡日で示すため。三次調整力②の見直しは2025年3月14日受渡分からで、「2025年度」ではないため）",
+   "basis": [
+    {
+     "name": "2025年度の取引実績について",
+     "publisher": "一般社団法人 電力需給調整力取引所（EPRX）",
+     "url": "https://www.eprx.or.jp/information/summary_2025.pdf"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.v5-plan.json の glossary/adjustment-reserve／reports/main-run-2026-10-22.apply-log-v5-glossary.json"
+  },
+  {
+   "id": "20261022-42",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01001933",
+   "record": "operators/agg-01001933",
+   "targetTitle": "四国電力株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載\n本文に「として登録され、」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n「として届出を行い、」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号22に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01001933／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-43",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01002318",
+   "record": "operators/agg-01002318",
+   "targetTitle": "鈴与商事株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号125に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01002318／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-44",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01003022",
+   "record": "operators/agg-01003022",
+   "targetTitle": "北陸電力株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載\n本文に「として登録され、」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n「として届出を行い、」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号20に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01003022／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-45",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01003515",
+   "record": "operators/agg-01003515",
+   "targetTitle": "株式会社大崎クリエーション",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号59に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01003515／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-46",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01006753",
+   "record": "operators/agg-01006753",
+   "targetTitle": "中国電力株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号28に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01006753／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-47",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01006847",
+   "record": "operators/agg-01006847",
+   "targetTitle": "ローカルエナジー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号94に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01006847／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-48",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01006942",
+   "record": "operators/agg-01006942",
+   "targetTitle": "オリックス株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号3に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01006942／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-49",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01008825",
+   "record": "operators/agg-01008825",
+   "targetTitle": "東京電力ホールディングス株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号26に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01008825／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-50",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01011214",
+   "record": "operators/agg-01011214",
+   "targetTitle": "株式会社永輝商事",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号96に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01011214／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-51",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01011311",
+   "record": "operators/agg-01011311",
+   "targetTitle": "東北電力株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号6に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01011311／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-52",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01011318",
+   "record": "operators/agg-01011318",
+   "targetTitle": "出光興産株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載\n本文に「として登録され、」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n「として届出を行い、」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号63に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01011318／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-53",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01012536",
+   "record": "operators/agg-01012536",
+   "targetTitle": "日本電力株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号138に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01012536／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-54",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01017136",
+   "record": "operators/agg-01017136",
+   "targetTitle": "オムロンフィールドエンジニアリング株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号65に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01017136／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-55",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01018441",
+   "record": "operators/agg-01018441",
+   "targetTitle": "エクセルギー・パワー・システムズ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号86に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01018441／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-56",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01019099",
+   "record": "operators/agg-01019099",
+   "targetTitle": "フローティング・ウィンド・アグリゲーション株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号90に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01019099／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-57",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01020788",
+   "record": "operators/agg-01020788",
+   "targetTitle": "株式会社エナリス",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号1に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01020788／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-58",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01022043",
+   "record": "operators/agg-01022043",
+   "targetTitle": "コスモエコパワー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号91に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01022043／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-59",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01022351",
+   "record": "operators/agg-01022351",
+   "targetTitle": "北海道電力株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号21に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01022351／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-60",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01022387",
+   "record": "operators/agg-01022387",
+   "targetTitle": "東邦瓦斯株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号17に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01022387／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-61",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01025887",
+   "record": "operators/agg-01025887",
+   "targetTitle": "四国リバブル株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号139に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01025887／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-62",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01026969",
+   "record": "operators/agg-01026969",
+   "targetTitle": "株式会社エネルギーポイント",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載\n本文に「として登録し、」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n「として届出を行い、」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号103に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01026969／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-63",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01029229",
+   "record": "operators/agg-01029229",
+   "targetTitle": "株式会社グリーンパワー大東",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号78に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01029229／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-64",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01029986",
+   "record": "operators/agg-01029986",
+   "targetTitle": "パシフィックパワー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号4に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01029986／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-65",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01030733",
+   "record": "operators/agg-01030733",
+   "targetTitle": "しろくま電力株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号55に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01030733／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-66",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01036116",
+   "record": "operators/agg-01036116",
+   "targetTitle": "九電みらいエナジー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号116に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01036116／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-67",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01039205",
+   "record": "operators/agg-01039205",
+   "targetTitle": "株式会社クリーンエナジーコネクト",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号85に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01039205／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-68",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01040140",
+   "record": "operators/agg-01040140",
+   "targetTitle": "ヒラソル・エナジー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号89に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01040140／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-69",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01045571",
+   "record": "operators/agg-01045571",
+   "targetTitle": "株式会社スマートパワーシステム",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号122に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01045571／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-70",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01048311",
+   "record": "operators/agg-01048311",
+   "targetTitle": "株式会社ファミリーネット・ジャパン",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号30に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01048311／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-71",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01049350",
+   "record": "operators/agg-01049350",
+   "targetTitle": "株式会社ユーラスエナジーホールディングス",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号98に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01049350／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-72",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01050764",
+   "record": "operators/agg-01050764",
+   "targetTitle": "電源開発株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号11に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01050764／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-73",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01056993",
+   "record": "operators/agg-01056993",
+   "targetTitle": "テス・エンジニアリング株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号12に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01056993／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-74",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01058382",
+   "record": "operators/agg-01058382",
+   "targetTitle": "ユニバーサルエコロジー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載\n本文に「として登録完了。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n「として届出。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号126に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01058382／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-75",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01066839",
+   "record": "operators/agg-01066839",
+   "targetTitle": "イーレックス株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号40に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01066839／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-76",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01067848",
+   "record": "operators/agg-01067848",
+   "targetTitle": "ミツウロコグリーンエネルギー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号58に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01067848／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-77",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01077601",
+   "record": "operators/agg-01077601",
+   "targetTitle": "大阪瓦斯株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号7に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01077601／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-78",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01078551",
+   "record": "operators/agg-01078551",
+   "targetTitle": "伊藤忠エネクス株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載\n本文に「として登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n「として届出。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号107に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01078551／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-79",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01089656",
+   "record": "operators/agg-01089656",
+   "targetTitle": "ゼロワットパワー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号77に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01089656／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-80",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01090640",
+   "record": "operators/agg-01090640",
+   "targetTitle": "オムロンソーシアルソリューションズ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号60に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01090640／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-81",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01093845",
+   "record": "operators/agg-01093845",
+   "targetTitle": "北海道再エネアグリゲーション株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号112に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01093845／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-82",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01095057",
+   "record": "operators/agg-01095057",
+   "targetTitle": "エレビスタ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号118に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01095057／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-83",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01096367",
+   "record": "operators/agg-01096367",
+   "targetTitle": "アズビル株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号5に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01096367／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-84",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01097868",
+   "record": "operators/agg-01097868",
+   "targetTitle": "リニューアブル・ジャパン株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号35に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01097868／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-85",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01099094",
+   "record": "operators/agg-01099094",
+   "targetTitle": "株式会社タクマエナジー",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号2に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01099094／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-86",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01101380",
+   "record": "operators/agg-01101380",
+   "targetTitle": "株式会社再生可能エネルギー推進機構",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載\n本文に「として登録し、」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n「として届出を行い、」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号37に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01101380／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-87",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01103145",
+   "record": "operators/agg-01103145",
+   "targetTitle": "株式会社アイ・グリッド・ソリューションズ",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号82に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01103145／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-88",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01103550",
+   "record": "operators/agg-01103550",
+   "targetTitle": "アーバンエナジー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号13に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01103550／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-89",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01107572",
+   "record": "operators/agg-01107572",
+   "targetTitle": "株式会社東急パワーサプライ",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号74に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01107572／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-90",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01108219",
+   "record": "operators/agg-01108219",
+   "targetTitle": "石油資源開発株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号119に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01108219／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-91",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01110827",
+   "record": "operators/agg-01110827",
+   "targetTitle": "株式会社リミックスポイント",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号114に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01110827／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-92",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01118501",
+   "record": "operators/agg-01118501",
+   "targetTitle": "株式会社まち未来製作所",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号47に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01118501／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-93",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01118851",
+   "record": "operators/agg-01118851",
+   "targetTitle": "エフィシエント株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号84に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01118851／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-94",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01122052",
+   "record": "operators/agg-01122052",
+   "targetTitle": "株式会社エコスタイル",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号124に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01122052／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-95",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01124077",
+   "record": "operators/agg-01124077",
+   "targetTitle": "株式会社操電",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号117に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01124077／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-96",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01127795",
+   "record": "operators/agg-01127795",
+   "targetTitle": "カスタマイズドエナジーソリューションズジャパン株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号18に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01127795／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-97",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01128505",
+   "record": "operators/agg-01128505",
+   "targetTitle": "ダイヤモンドパワー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号39に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01128505／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-98",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01135973",
+   "record": "operators/agg-01135973",
+   "targetTitle": "中部電力ミライズ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号23に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01135973／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-99",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01137740",
+   "record": "operators/agg-01137740",
+   "targetTitle": "丸紅新電力株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号50に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01137740／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-100",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01142678",
+   "record": "operators/agg-01142678",
+   "targetTitle": "株式会社リエネ",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号88に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01142678／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-101",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01142907",
+   "record": "operators/agg-01142907",
+   "targetTitle": "株式会社ユーラスグリーンエナジー",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号54に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01142907／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-102",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01146664",
+   "record": "operators/agg-01146664",
+   "targetTitle": "テプコカスタマーサービス株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号128に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01146664／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-103",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01147239",
+   "record": "operators/agg-01147239",
+   "targetTitle": "株式会社グリーングロース",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号92に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01147239／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-104",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01152524",
+   "record": "operators/agg-01152524",
+   "targetTitle": "株式会社リ・パワー",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号97に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01152524／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-105",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01154421",
+   "record": "operators/agg-01154421",
+   "targetTitle": "グローシップ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号111に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01154421／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-106",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01157738",
+   "record": "operators/agg-01157738",
+   "targetTitle": "エネルエックス・ジャパン株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号15に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01157738／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-107",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01159056",
+   "record": "operators/agg-01159056",
+   "targetTitle": "株式会社パワーエックス",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号70に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01159056／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-108",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01164271",
+   "record": "operators/agg-01164271",
+   "targetTitle": "燈・アンド・カンパニー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号102に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01164271／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-109",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01164398",
+   "record": "operators/agg-01164398",
+   "targetTitle": "エネグローバル株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載\n本文に「として登録し、」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n「として届出を行い、」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号133に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01164398／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-110",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01165368",
+   "record": "operators/agg-01165368",
+   "targetTitle": "株式会社工営エナジー",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号25に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01165368／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-111",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01166930",
+   "record": "operators/agg-01166930",
+   "targetTitle": "東京電力エナジーパートナー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号19に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01166930／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-112",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01168850",
+   "record": "operators/agg-01168850",
+   "targetTitle": "株式会社ふるなび電力",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号120に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01168850／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-113",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01168909",
+   "record": "operators/agg-01168909",
+   "targetTitle": "エンジー・エナジー・マーケティング・ジャパン株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号75に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01168909／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-114",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01168914",
+   "record": "operators/agg-01168914",
+   "targetTitle": "株式会社シムックスイニシアティブ",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号41に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01168914／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-115",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01186556",
+   "record": "operators/agg-01186556",
+   "targetTitle": "パワープール株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号99に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01186556／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-116",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01187063",
+   "record": "operators/agg-01187063",
+   "targetTitle": "デジタルグリッド株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号32に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01187063／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-117",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01190784",
+   "record": "operators/agg-01190784",
+   "targetTitle": "東京リズエナジ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号123に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01190784／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-118",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01198050",
+   "record": "operators/agg-01198050",
+   "targetTitle": "株式会社クローバー・テクノロジーズ",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号121に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01198050／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-119",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-01254112",
+   "record": "operators/agg-01254112",
+   "targetTitle": "株式会社オーラパワー",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号110に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-01254112／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-120",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-03001791",
+   "record": "operators/agg-03001791",
+   "targetTitle": "株式会社サンヴィレッジ",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号57に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-03001791／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-121",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-03002881",
+   "record": "operators/agg-03002881",
+   "targetTitle": "シンクアイ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号134に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-03002881／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-122",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-03010421",
+   "record": "operators/agg-03010421",
+   "targetTitle": "株式会社エネフォワード",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号141に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-03010421／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-123",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-au-5850",
+   "record": "operators/agg-au-5850",
+   "targetTitle": "auエネルギー&ライフ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号69に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-au-5850／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-124",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-bluefield-energy-9566",
+   "record": "operators/agg-bluefield-energy-9566",
+   "targetTitle": "Bluefield Energy株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号106に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-bluefield-energy-9566／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-125",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-bp-8802",
+   "record": "operators/agg-bp-8802",
+   "targetTitle": "BPエナジージャパン株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号100に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-bp-8802／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-126",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-daigas-4165",
+   "record": "operators/agg-daigas-4165",
+   "targetTitle": "Daigasエナジー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号105に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-daigas-4165／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-127",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-e-flow-3766",
+   "record": "operators/agg-e-flow-3766",
+   "targetTitle": "E-Flow合同会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号48に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-e-flow-3766／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-128",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-electroroute-japan-5628",
+   "record": "operators/agg-electroroute-japan-5628",
+   "targetTitle": "ElectroRoute Japan株式会社",
+   "before": "蓄電所との関わりの欄に「METI登録(2023/5/1)」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2023/5/1)」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号43に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-electroroute-japan-5628／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-129",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-eneos-5088",
+   "record": "operators/agg-eneos-5088",
+   "targetTitle": "ENEOSリニューアブル・エナジー・ソリューションズ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号45に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-eneos-5088／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-130",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-eneos-power-7378",
+   "record": "operators/agg-eneos-power-7378",
+   "targetTitle": "ENEOS Power株式会社",
+   "before": "蓄電所との関わりの欄に「METI登録(2024/4/1)」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2024/4/1)」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号66に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-eneos-power-7378／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-131",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-enexia-3163",
+   "record": "operators/agg-enexia-3163",
+   "targetTitle": "ENEXIA合同会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号93に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-enexia-3163／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-132",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-fps-4015",
+   "record": "operators/agg-fps-4015",
+   "targetTitle": "株式会社FPS",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号81に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-fps-4015／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-133",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-goal-connect-2681",
+   "record": "operators/agg-goal-connect-2681",
+   "targetTitle": "Goal Connect株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号8に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-goal-connect-2681／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-134",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-green-action-1973",
+   "record": "operators/agg-green-action-1973",
+   "targetTitle": "株式会社GREEN ACTION",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号127に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-green-action-1973／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-135",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-greenest-energy-2259",
+   "record": "operators/agg-greenest-energy-2259",
+   "targetTitle": "Greenest Energy株式会社",
+   "before": "蓄電所との関わりの欄に「METI登録(2022/9/9)」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2022/9/9)」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号34に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-greenest-energy-2259／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-136",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-gridbeyond-8646",
+   "record": "operators/agg-gridbeyond-8646",
+   "targetTitle": "GridBeyond合同会社",
+   "before": "蓄電所との関わりの欄に「METI登録(2024/4/1)」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2024/4/1)」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号51に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-gridbeyond-8646／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-137",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-helm-aggregation-4906",
+   "record": "operators/agg-helm-aggregation-4906",
+   "targetTitle": "HeLM Aggregation株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号109に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-helm-aggregation-4906／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-138",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-hse-0606",
+   "record": "operators/agg-hse-0606",
+   "targetTitle": "HSE株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号38に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-hse-0606／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-139",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-iqg-7072",
+   "record": "operators/agg-iqg-7072",
+   "targetTitle": "株式会社IQg",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号67に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-iqg-7072／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-140",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-jera-cross-5038",
+   "record": "operators/agg-jera-cross-5038",
+   "targetTitle": "株式会社JERA Cross",
+   "before": "蓄電所との関わりの欄に「METI登録(2024/6/7)」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2024/6/7)」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号68に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-jera-cross-5038／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-141",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-lehmansoft-japan-6584",
+   "record": "operators/agg-lehmansoft-japan-6584",
+   "targetTitle": "LehmanSoft Japan株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号137に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-lehmansoft-japan-6584／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-142",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-looop-1521",
+   "record": "operators/agg-looop-1521",
+   "targetTitle": "株式会社Looop",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号79に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-looop-1521／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-143",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-mc-0075",
+   "record": "operators/agg-mc-0075",
+   "targetTitle": "MCリテールエナジー株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号14に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-mc-0075／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-144",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-next-e-solutions-1017",
+   "record": "operators/agg-next-e-solutions-1017",
+   "targetTitle": "NExT-e Solutions株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号71に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-next-e-solutions-1017／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-145",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-nika-3539",
+   "record": "operators/agg-nika-3539",
+   "targetTitle": "株式会社Nika商事",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号101に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-nika-3539／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-146",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-ntt-1446",
+   "record": "operators/agg-ntt-1446",
+   "targetTitle": "NTTアノードエナジー株式会社",
+   "before": "蓄電所との関わりの欄に「METI特定卸登録(2022/6/30、最初期)」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2022/6/30)」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号31に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-ntt-1446／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-147",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-nuvve-japan-0128",
+   "record": "operators/agg-nuvve-japan-0128",
+   "targetTitle": "NUVVE JAPAN株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号115に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-nuvve-japan-0128／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-148",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-open-quant-3929",
+   "record": "operators/agg-open-quant-3929",
+   "targetTitle": "Open Quant株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号80に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-open-quant-3929／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-149",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-optech-energy-3173",
+   "record": "operators/agg-optech-energy-3173",
+   "targetTitle": "OPTECH ENERGY株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号132に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-optech-energy-3173／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-150",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-q-enest-2883",
+   "record": "operators/agg-q-enest-2883",
+   "targetTitle": "Q.ENESTでんき株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号29に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-q-enest-2883／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-151",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-qvou-8695",
+   "record": "operators/agg-qvou-8695",
+   "targetTitle": "株式会社Qvou",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号76に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-qvou-8695／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-152",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-re-3399",
+   "record": "operators/agg-re-3399",
+   "targetTitle": "株式会社REフォワード",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号108に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-re-3399／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-153",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-re100-5605",
+   "record": "operators/agg-re100-5605",
+   "targetTitle": "RE100電力株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号52に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-re100-5605／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-154",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-rs-9244",
+   "record": "operators/agg-rs-9244",
+   "targetTitle": "RSアセットアドバイザーズ株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号136に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-rs-9244／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-155",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-rutilea-3272",
+   "record": "operators/agg-rutilea-3272",
+   "targetTitle": "株式会社RUTILEA",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号104に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-rutilea-3272／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-156",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-sassor-7558",
+   "record": "operators/agg-sassor-7558",
+   "targetTitle": "株式会社Sassor",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号113に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-sassor-7558／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-157",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-second-foundation-japan-8803",
+   "record": "operators/agg-second-foundation-japan-8803",
+   "targetTitle": "Second Foundation Japan合同会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号62に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-second-foundation-japan-8803／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-158",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-sunpin-japan-3074",
+   "record": "operators/agg-sunpin-japan-3074",
+   "targetTitle": "株式会社SUNPIN JAPAN",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号135に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-sunpin-japan-3074／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-159",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-sustech-0957",
+   "record": "operators/agg-sustech-0957",
+   "targetTitle": "株式会社Sustech",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号72に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-sustech-0957／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-160",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-taoke-energy-6288",
+   "record": "operators/agg-taoke-energy-6288",
+   "targetTitle": "TAOKE ENERGY株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号95に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-taoke-energy-6288／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-161",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-tensor-energy-2333",
+   "record": "operators/agg-tensor-energy-2333",
+   "targetTitle": "Tensor Energy株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号87に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-tensor-energy-2333／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-162",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-univergy-4611",
+   "record": "operators/agg-univergy-4611",
+   "targetTitle": "UNIVERGY株式会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号46に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-univergy-4611／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-163",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-updater-3900",
+   "record": "operators/agg-updater-3900",
+   "targetTitle": "株式会社UPDATER",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号16に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-updater-3900／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-164",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-v-power-5128",
+   "record": "operators/agg-v-power-5128",
+   "targetTitle": "株式会社V-Power",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号130に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-v-power-5128／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-165",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/agg-valhall-0871",
+   "record": "operators/agg-valhall-0871",
+   "targetTitle": "Valhall合同会社",
+   "before": "蓄電所との関わりの欄に「特定卸供給事業者(アグリゲーター)登録事業者。」と記載\n紹介文に「特定卸供給事業者(アグリゲーター)登録。」と記載",
+   "after": "「特定卸供給事業(アグリゲーター)の届出事業者。」に修正\n「特定卸供給事業(アグリゲーター)の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号53に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/agg-valhall-0871／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-166",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/energy-pool-jp",
+   "record": "operators/energy-pool-jp",
+   "targetTitle": "エナジープールジャパン株式会社",
+   "before": "蓄電所との関わりの欄に「METI登録。」と記載\n紹介文に「METI特定卸登録。」と記載",
+   "after": "「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号49に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/energy-pool-jp／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-167",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/ennet",
+   "record": "operators/ennet",
+   "targetTitle": "株式会社エネット",
+   "before": "本文に「を実施する登録事業者である」と記載",
+   "after": "「を実施する事業者である」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではないため、「登録」の語を外しました",
+   "basis": [
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/ennet／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-168",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/global-engineering",
+   "record": "operators/global-engineering",
+   "targetTitle": "株式会社グローバルエンジニアリング",
+   "before": "蓄電所との関わりの欄に「METIアグリ登録(初期登録、福岡)」と記載\n紹介文に「METIアグリ登録。」と記載\n本文に「METIアグリ登録。」と記載\n本文に「事業者として登録されている事業者である」と記載",
+   "after": "「特定卸供給事業の届出(福岡)」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n「事業者として特定卸供給事業の届出を行っている事業者である」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号9に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/global-engineering／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-169",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/itochu",
+   "record": "operators/itochu",
+   "targetTitle": "伊藤忠商事株式会社",
+   "before": "蓄電所との関わりの欄に「METI特定卸登録(2022/11/21、初期登録)」と記載\n本文に「運用を担う登録事業者である」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2022/11/21)」に修正\n「運用を担う事業者である（特定卸供給事業の届出あり）」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号33に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/itochu／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-170",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/japex",
+   "record": "operators/japex",
+   "targetTitle": "石油資源開発株式会社（JAPEX）",
+   "before": "蓄電所との関わりの欄に「METI特定卸登録(2025/9/1)」と記載\n紹介文に「METIアグリ登録。」と記載\n本文に「METIアグリ登録。」と記載\n本文に「と呼ばれる新しい事業形態として登録されている。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2025/9/1)」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n「と呼ばれる事業者として届出を行っている。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号119に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/japex／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-171",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/jepco-pg-bess",
+   "record": "operators/jepco-pg-bess",
+   "targetTitle": "ブルースカイエナジー株式会社",
+   "before": "蓄電所との関わりの欄に「METI特定卸登録(2026/4/1)」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2026/4/1)」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号140に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/jepco-pg-bess／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-172",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/jpower",
+   "record": "operators/jpower",
+   "targetTitle": "電源開発株式会社（J-POWER）",
+   "before": "蓄電所との関わりの欄に「METIアグリ登録あり、」と記載\n紹介文に「METIアグリ登録。」と記載\n本文に「METIアグリ登録。」と記載",
+   "after": "「特定卸供給事業の届出あり、」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号11に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/jpower／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-173",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/kanadevia",
+   "record": "operators/kanadevia",
+   "targetTitle": "カナデビア株式会社",
+   "before": "蓄電所との関わりの欄に「METI特定卸供給事業者登録あり。」と記載\n紹介文に「METIアグリ登録。」と記載\n本文に「METIアグリ登録。」と記載\n本文に「を実施する登録事業者である」と記載",
+   "after": "「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n「を実施する事業者である（特定卸供給事業の届出あり）」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号27に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/kanadevia／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-174",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/kawasaki-green",
+   "record": "operators/kawasaki-green",
+   "targetTitle": "カワサキグリーンエナジー株式会社",
+   "before": "蓄電所との関わりの欄に「METIアグリ登録(2023/1/1)」と記載\n紹介文に「METIアグリ登録。」と記載\n本文に「METIアグリ登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2023/1/1)」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号36に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/kawasaki-green／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-175",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/kitahiroshima-energy",
+   "record": "operators/kitahiroshima-energy",
+   "targetTitle": "一般社団法人北広島町地域エネルギー会社",
+   "before": "蓄電所との関わりの欄に「METI登録(2025/12/15)」と記載\n紹介文に「METIアグリ登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2025/12/15)」に修正\n「特定卸供給事業の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号129に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/kitahiroshima-energy／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-176",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/kyocera",
+   "record": "operators/kyocera",
+   "targetTitle": "京セラ株式会社",
+   "before": "蓄電所との関わりの欄に「METI特定卸供給事業者登録(2024/5/7)」と記載\n本文に「（アグリゲーター）登録を受けた」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2024/5/7)」に修正\n「（アグリゲーター）の届出を行った」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号64に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/kyocera／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-177",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/looop-energy",
+   "record": "operators/looop-energy",
+   "targetTitle": "株式会社Looop（蓄電所事業）",
+   "before": "蓄電所との関わりの欄に「METI特定卸登録(2024/12/1)」と記載\n紹介文に「METIアグリ登録。」と記載\n本文に「METIアグリ登録。」と記載\n本文に「事業者として登録されている事業者である」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2024/12/1)」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n「事業者として特定卸供給事業の届出を行っている事業者である」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号79に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/looop-energy／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-178",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/nara-shinrin",
+   "record": "operators/nara-shinrin",
+   "targetTitle": "株式会社奈良森林資源保全公社",
+   "before": "蓄電所との関わりの欄に「METI登録(2026/2/9)」と記載\n紹介文に「METIアグリ登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2026/2/9)」に修正\n「特定卸供給事業の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号131に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/nara-shinrin／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-179",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/nittetsu-eng",
+   "record": "operators/nittetsu-eng",
+   "targetTitle": "日鉄エンジニアリング株式会社",
+   "before": "蓄電所との関わりの欄に「METIアグリ登録(2024/4/1)」と記載\n本文に「を実施する登録事業者である」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2024/4/1)」に修正\n「を実施する事業者である（特定卸供給事業の届出あり）」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号61に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/nittetsu-eng／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-180",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/ntt-smart-connect",
+   "record": "operators/ntt-smart-connect",
+   "targetTitle": "NTTスマートコネクト株式会社",
+   "before": "本文に「として活動する登録事業者である」と記載",
+   "after": "「として活動する事業者である」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではないため、「登録」の語を外しました",
+   "basis": [
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/ntt-smart-connect／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-181",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/pacifico-energy",
+   "record": "operators/pacifico-energy",
+   "targetTitle": "パシフィコ・エナジー株式会社",
+   "before": "蓄電所との関わりの欄に「METI特定卸登録(2026/5/1)」と記載\n紹介文に「METI特定卸登録。」と記載\n本文に「METI特定卸登録。」と記載\n本文に「として活動する登録事業者である」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2026/5/1)」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n「として活動する事業者である（特定卸供給事業の届出あり）」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号142に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/pacifico-energy／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-182",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/shizen-connect",
+   "record": "operators/shizen-connect",
+   "targetTitle": "株式会社Shizen Connect",
+   "before": "蓄電所との関わりの欄に「METIアグリ登録(2023/10/20)」と記載\n紹介文に「METIアグリ登録。」と記載\n本文に「METIアグリ登録。」と記載\n本文に「として登録された事業者である」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2023/10/20)」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n「として届出を行った事業者である」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号56に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/shizen-connect／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-183",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/smart-solar",
+   "record": "operators/smart-solar",
+   "targetTitle": "スマートソーラー株式会社",
+   "before": "本文に「を実施する登録事業者である」と記載",
+   "after": "「を実施する事業者である」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではないため、「登録」の語を外しました",
+   "basis": [
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/smart-solar／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-184",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/tokyo-century",
+   "record": "operators/tokyo-century",
+   "targetTitle": "東京センチュリー株式会社",
+   "before": "蓄電所との関わりの欄に「METI特定卸登録(2025/1/1)」と記載\n紹介文に「METIアグリ登録。」と記載\n本文に「METIアグリ登録。」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2025/1/1)」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号83に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/tokyo-century／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-185",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/tokyo-gas",
+   "record": "operators/tokyo-gas",
+   "targetTitle": "東京ガス株式会社",
+   "before": "蓄電所との関わりの欄に「METI特定卸登録あり。」と記載\n本文に「（アグリゲーター）登録を受けた」と記載",
+   "after": "「特定卸供給事業の届出あり。」に修正\n「（アグリゲーター）の届出を行った」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号24に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/tokyo-gas／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-186",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/toyota-tsusho",
+   "record": "operators/toyota-tsusho",
+   "targetTitle": "豊田通商株式会社",
+   "before": "蓄電所との関わりの欄に「METI特定卸登録(2023/6/1)」と記載\n紹介文に「METI特定卸登録あり。」と記載\n本文に「METI特定卸登録あり。」と記載\n本文に「事業者として登録されている事業者である」と記載",
+   "after": "「特定卸供給事業の届出(事業開始日 2023/6/1)」に修正\n「特定卸供給事業の届出あり。」に修正\n「特定卸供給事業の届出あり。」に修正\n「事業者として特定卸供給事業の届出を行っている事業者である」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の番号44に掲載）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/toyota-tsusho／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-187",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/jera",
+   "record": "operators/jera",
+   "targetTitle": "株式会社JERA",
+   "before": "蓄電所との関わりの欄に「METIアグリ登録(2024/6/7)」と記載",
+   "after": "「JERA Cross が特定卸供給事業の届出あり(事業開始日 2024/6/7)」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません。資源エネルギー庁の特定卸供給事業届出事業者一覧（2026年9月30日時点）で届出をしているのはグループの別法人のJERA Crossのため、届出をした法人名を書きました",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/jera／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-188",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/shizen-energy",
+   "record": "operators/shizen-energy",
+   "targetTitle": "自然電力株式会社",
+   "before": "蓄電所との関わりの欄に「METIアグリ登録(2023/10/20)」と記載",
+   "after": "「Shizen Connect が特定卸供給事業の届出あり(事業開始日 2023/10/20)」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません。資源エネルギー庁の特定卸供給事業届出事業者一覧（2026年9月30日時点）で届出をしているのはグループの別法人のShizen Connectのため、届出をした法人名を書きました",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/shizen-energy／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261022-189",
+   "date": "2026-10-22",
+   "kind": "訂正",
+   "path": "/operators/toshiba-energy-systems",
+   "record": "operators/toshiba-energy-systems",
+   "targetTitle": "東芝エネルギーシステムズ株式会社",
+   "before": "蓄電所との関わりの欄に「METIアグリゲーター登録(2023/1/16)も保有し、」と記載",
+   "after": "「特定卸供給事業の届出は株式会社東芝(事業開始日 2023/1/16)。東芝エネルギーシステムズは」に修正\n特定卸供給事業は電気事業法第27条の30 にもとづく届出制で、登録制ではありません。資源エネルギー庁の特定卸供給事業届出事業者一覧（2026年9月30日時点）で届出をしているのはグループの別法人の株式会社東芝のため、届出をした法人名を書きました",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/toshiba-energy-systems／reports/main-run-2026-10-22.apply-log-k.json"
   }
  ]
 }

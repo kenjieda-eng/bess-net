@@ -1886,11 +1886,11 @@
    "balancing-price-cap-10yen-explainer": "需給調整市場の上限価格が10円に ── 「19.51円→15円→10円」の3年間と、蓄電池収益への意味",
    "response-time-vs-reserves": "蓄電池の応答時間と一次・二次・三次調整力 ── 応答性能による収益機会の差",
    "integrated-market-2026": "同時市場（一体市場）2026年度開始 ── kWhと調整力の同時最適化への移行",
-   "tertiary-reserve-2-strategy": "需給調整市場 三次調整力②応札戦略 ── 60分応動の中規模蓄電池に適した市場",
+   "tertiary-reserve-2-strategy": "需給調整市場 三次調整力②応札戦略 ── 60分応動の商品",
    "balancing-market-fcr-detail": "需給調整市場 一次調整力（FCR）詳解 ── 高速応答が要求される最高峰市場",
    "multi-use-operation-strategy": "容量市場×需給調整市場×JEPXのマルチユース運用 ── 蓄電所収益最大化の実務",
    "low-voltage-balancing-market-launch": "低圧系統用蓄電池の需給調整市場参入 ── 4月実装開始とアグリ事業の本格化",
-   "balancing-market-cap-cut-2026": "2026年度 需給調整市場 上限価格引下げ ── 一次・二次調整力①の19.51→15円が業界に与える影響",
+   "balancing-market-cap-cut-2026": "2026年3月 需給調整市場 上限価格引下げ ── 一次・二次調整力①の19.51→15円が業界に与える影響",
    "tertiary-reserve-1-detail": "需給調整市場 三次調整力①── 蓄電池の主要収益源を徹底解説",
    "balancing-market-practical": "需給調整市場の実務：応札から精算までのプロセス",
    "balancing-market": "需給調整市場と蓄電池：応答速度の優位性と収益機会"
@@ -1902,9 +1902,7 @@
    },
    "eprx-jukyuchosei-torihikikitei-setsumeikai-2025-10": {
     "title": "需給調整市場 2026年度取引に向けた取引規程改定に関する説明会（EPRX）",
-    "kind": [
-     "業界"
-    ]
+    "kind": []
    },
    "meti-doji-shijo-kentoukai-25-2026-09": {
     "title": "第25回 同時市場の在り方等に関する検討会: 技術研究の進め方・第1フェーズ検討進捗・詳細業務設計の進捗報告",

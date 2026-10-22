@@ -1,0 +1,653 @@
+{
+ "_note": "本実行便（2026-10-22）の記録。PATCH 前後の値と照合は apply-log-*.json（各 PATCH の before／after／check）にある。計画は k-plan.json・v5-plan.json。",
+ "webhook": {
+  "off_confirmed": "2026-10-22 12:38 JST（EDAさん: 9 API）",
+  "on_confirmed": "2026-10-22 13:10 JST（EDAさん: 9 API）",
+  "apis": [
+   "explainer",
+   "glossary",
+   "subsidies",
+   "projects",
+   "operators",
+   "policy-events",
+   "faq",
+   "news",
+   "links"
+  ]
+ },
+ "writes": {
+  "k": {
+   "window": "12:39:58–12:44:50",
+   "patch": 148,
+   "ops": 314
+  },
+  "v5_patch": {
+   "window": "12:45:02–12:49:47",
+   "patch": 126,
+   "ops": 457,
+   "by_api": {
+    "explainer": 71,
+    "glossary": 16,
+    "subsidies": 14,
+    "faq": 7,
+    "policy-events": 7,
+    "links": 2,
+    "projects": 5,
+    "operators": 2,
+    "news": 2
+   }
+  },
+  "v5_post": {
+   "window": "12:49:56–12:50:05",
+   "post": 3,
+   "ids": {
+    "re-plus-2026-us": "krpblnc338d",
+    "sew-autumn-2026": "yjkp2i3ehp-d",
+    "sew-spring-2026": "ecgwedjvp3r"
+   }
+  }
+ },
+ "apply_logs": {
+  "main-run-2026-10-22.apply-log-k.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 444,
+    "PATCH": 148
+   },
+   "counts": {
+    "patched": 148,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-explainer.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 213,
+    "PATCH": 71
+   },
+   "counts": {
+    "patched": 71,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-faq.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 21,
+    "PATCH": 7
+   },
+   "counts": {
+    "patched": 7,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-glossary.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 48,
+    "PATCH": 16
+   },
+   "counts": {
+    "patched": 16,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-links.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 6,
+    "PATCH": 2
+   },
+   "counts": {
+    "patched": 2,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-news.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 6,
+    "PATCH": 2
+   },
+   "counts": {
+    "patched": 2,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-operators.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 6,
+    "PATCH": 2
+   },
+   "counts": {
+    "patched": 2,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-policy-events.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 21,
+    "PATCH": 7
+   },
+   "counts": {
+    "patched": 7,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-posts.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 6,
+    "POST": 3
+   },
+   "counts": {
+    "patched": 0,
+    "posted": 3,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-projects.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 15,
+    "PATCH": 5
+   },
+   "counts": {
+    "patched": 5,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  },
+  "main-run-2026-10-22.apply-log-v5-subsidies.json": {
+   "mode": "apply",
+   "calls": {
+    "GET": 42,
+    "PATCH": 14
+   },
+   "counts": {
+    "patched": 14,
+    "posted": 0,
+    "skipped": 0,
+    "aborted": 0,
+    "failed": 0,
+    "raw_mismatch": 0
+   }
+  }
+ },
+ "excluded_at_run": [
+  {
+   "ep": "explainer",
+   "slug": "capacity-output-design",
+   "order": 22,
+   "ops": 7,
+   "reason": "2026-10-22 EDAさんの指示で今回の書込から外す。まとめの新しい文「1回の発動につき継続時間3時間、発動は年間12回（1日1回）が上限」が、同じ窓で直す explainer/capacity-market-advanced の「12回・1日1回は発令の上限ではなくアセスメントの対象の範囲」と食い違う。一次で確かめてから別便で直す。"
+  }
+ ],
+ "invisible_ops_raw_check": [
+  "OK glossary/nite.detail new生=true old生なし=true | new「、（6）技術相談・コンサルティング」",
+  "OK glossary/nite.detail new生=true old生なし=true | new「、（d）安全性試験（PSE法対応試験」",
+  "OK glossary/power-market-price-trend.detail new生=true old生なし=true | new「、（b）為替レート（円安」",
+  "OK glossary/power-market-price-trend.detail new生=true old生なし=true | new「、（d）再エネ供給能力（PV接続容量増加」",
+  "OK glossary/power-market-price-trend.detail new生=true old生なし=true | new「、（f）系統連系線運用（北海道」",
+  "OK subsidies/okinawa-ritou-saiene-2025.subsidyRate new生=true old生なし=true | new「補助対象経費の3分の2以内」",
+  "OK subsidies/okinawa-ritou-saiene-2025.upperLimit new生=true old生なし=true | new「一申請あたり3億円を上限とする」",
+  "OK policy-events/enex-2026.issuer new生=true old生なし=true | new「一般財団法人省エネルギーセンター」",
+  "見えない差の op 8 本・NG 0"
+ ],
+ "rerun_dry": {
+  "k": "PATCH 0 / skip 148 / 中止 0",
+  "v5": "PATCH 0 / skip 127（PATCH 124・POST 3）/ 中止 2＝links/kyoto-ondanka・links/occto-iinkai の relatedTerms（関連欄の現値が [{id}] で、計画の old・new が ID 文字列の配列のため。現値の ID は計画の new と一致＝6/6・7/7。再実行で書込は起きない）"
+ },
+ "corrections": {
+  "added": 189,
+  "ids": [
+   "20261022-01",
+   "20261022-189"
+  ],
+  "records": [
+   "explainer/bess-business-decision-tree",
+   "explainer/bess-pf-merchant-vs-multiuse",
+   "explainer/subsidies-guide",
+   "explainer/substation-availability-cross-area-analysis",
+   "glossary/balancing-market",
+   "glossary/secondary-reserve-2",
+   "glossary/tertiary-reserve-2",
+   "explainer/balancing-market-cap-cut-2026",
+   "explainer/dscr-llcr-bess-pf",
+   "explainer/global-bess-fire-cases",
+   "explainer/low-voltage-resources-and-vpp",
+   "explainer/tertiary-reserve-2-strategy",
+   "glossary/adjustment-power-tender",
+   "glossary/secondary-reserve-1",
+   "glossary/tertiary-reserve-1",
+   "subsidies/chiba-gyomu-datsutanso-2026",
+   "subsidies/oita-jika-shohi-solar-2026",
+   "faq/faq-gijutsu-04",
+   "policy-events/energy-storage-summit-eu-2026",
+   "policy-events/enex-2026",
+   "explainer/bess-esg-green-finance",
+   "explainer/bms-vs-ems",
+   "explainer/chief-electrical-engineer",
+   "explainer/global-bess-trends-2026",
+   "explainer/grid-scale-bess",
+   "glossary/main-auction",
+   "glossary/non-firm-connection",
+   "glossary/tertiary-reserve",
+   "subsidies/hokkaido-zero-carbon-village-2026",
+   "projects/kirishima-bess",
+   "subsidies/kagoshima-saiene-chikudenchi-2026",
+   "explainer/balancing-market-practical",
+   "explainer/capacity-market-advanced",
+   "explainer/capacity-market-transitional",
+   "explainer/lcoe-and-bess-economics",
+   "glossary/fast-frequency-response",
+   "subsidies/meti-battery-supply-plan-certification",
+   "subsidies/sii-dr-r7h",
+   "faq/faq-hojokin-11",
+   "operators/kuradashi-investment-2",
+   "glossary/adjustment-reserve",
+   "operators/agg-01001933",
+   "operators/agg-01002318",
+   "operators/agg-01003022",
+   "operators/agg-01003515",
+   "operators/agg-01006753",
+   "operators/agg-01006847",
+   "operators/agg-01006942",
+   "operators/agg-01008825",
+   "operators/agg-01011214",
+   "operators/agg-01011311",
+   "operators/agg-01011318",
+   "operators/agg-01012536",
+   "operators/agg-01017136",
+   "operators/agg-01018441",
+   "operators/agg-01019099",
+   "operators/agg-01020788",
+   "operators/agg-01022043",
+   "operators/agg-01022351",
+   "operators/agg-01022387",
+   "operators/agg-01025887",
+   "operators/agg-01026969",
+   "operators/agg-01029229",
+   "operators/agg-01029986",
+   "operators/agg-01030733",
+   "operators/agg-01036116",
+   "operators/agg-01039205",
+   "operators/agg-01040140",
+   "operators/agg-01045571",
+   "operators/agg-01048311",
+   "operators/agg-01049350",
+   "operators/agg-01050764",
+   "operators/agg-01056993",
+   "operators/agg-01058382",
+   "operators/agg-01066839",
+   "operators/agg-01067848",
+   "operators/agg-01077601",
+   "operators/agg-01078551",
+   "operators/agg-01089656",
+   "operators/agg-01090640",
+   "operators/agg-01093845",
+   "operators/agg-01095057",
+   "operators/agg-01096367",
+   "operators/agg-01097868",
+   "operators/agg-01099094",
+   "operators/agg-01101380",
+   "operators/agg-01103145",
+   "operators/agg-01103550",
+   "operators/agg-01107572",
+   "operators/agg-01108219",
+   "operators/agg-01110827",
+   "operators/agg-01118501",
+   "operators/agg-01118851",
+   "operators/agg-01122052",
+   "operators/agg-01124077",
+   "operators/agg-01127795",
+   "operators/agg-01128505",
+   "operators/agg-01135973",
+   "operators/agg-01137740",
+   "operators/agg-01142678",
+   "operators/agg-01142907",
+   "operators/agg-01146664",
+   "operators/agg-01147239",
+   "operators/agg-01152524",
+   "operators/agg-01154421",
+   "operators/agg-01157738",
+   "operators/agg-01159056",
+   "operators/agg-01164271",
+   "operators/agg-01164398",
+   "operators/agg-01165368",
+   "operators/agg-01166930",
+   "operators/agg-01168850",
+   "operators/agg-01168909",
+   "operators/agg-01168914",
+   "operators/agg-01186556",
+   "operators/agg-01187063",
+   "operators/agg-01190784",
+   "operators/agg-01198050",
+   "operators/agg-01254112",
+   "operators/agg-03001791",
+   "operators/agg-03002881",
+   "operators/agg-03010421",
+   "operators/agg-au-5850",
+   "operators/agg-bluefield-energy-9566",
+   "operators/agg-bp-8802",
+   "operators/agg-daigas-4165",
+   "operators/agg-e-flow-3766",
+   "operators/agg-electroroute-japan-5628",
+   "operators/agg-eneos-5088",
+   "operators/agg-eneos-power-7378",
+   "operators/agg-enexia-3163",
+   "operators/agg-fps-4015",
+   "operators/agg-goal-connect-2681",
+   "operators/agg-green-action-1973",
+   "operators/agg-greenest-energy-2259",
+   "operators/agg-gridbeyond-8646",
+   "operators/agg-helm-aggregation-4906",
+   "operators/agg-hse-0606",
+   "operators/agg-iqg-7072",
+   "operators/agg-jera-cross-5038",
+   "operators/agg-lehmansoft-japan-6584",
+   "operators/agg-looop-1521",
+   "operators/agg-mc-0075",
+   "operators/agg-next-e-solutions-1017",
+   "operators/agg-nika-3539",
+   "operators/agg-ntt-1446",
+   "operators/agg-nuvve-japan-0128",
+   "operators/agg-open-quant-3929",
+   "operators/agg-optech-energy-3173",
+   "operators/agg-q-enest-2883",
+   "operators/agg-qvou-8695",
+   "operators/agg-re-3399",
+   "operators/agg-re100-5605",
+   "operators/agg-rs-9244",
+   "operators/agg-rutilea-3272",
+   "operators/agg-sassor-7558",
+   "operators/agg-second-foundation-japan-8803",
+   "operators/agg-sunpin-japan-3074",
+   "operators/agg-sustech-0957",
+   "operators/agg-taoke-energy-6288",
+   "operators/agg-tensor-energy-2333",
+   "operators/agg-univergy-4611",
+   "operators/agg-updater-3900",
+   "operators/agg-v-power-5128",
+   "operators/agg-valhall-0871",
+   "operators/energy-pool-jp",
+   "operators/ennet",
+   "operators/global-engineering",
+   "operators/itochu",
+   "operators/japex",
+   "operators/jepco-pg-bess",
+   "operators/jpower",
+   "operators/kanadevia",
+   "operators/kawasaki-green",
+   "operators/kitahiroshima-energy",
+   "operators/kyocera",
+   "operators/looop-energy",
+   "operators/nara-shinrin",
+   "operators/nittetsu-eng",
+   "operators/ntt-smart-connect",
+   "operators/pacifico-energy",
+   "operators/shizen-connect",
+   "operators/smart-solar",
+   "operators/tokyo-century",
+   "operators/tokyo-gas",
+   "operators/toyota-tsusho",
+   "operators/jera",
+   "operators/shizen-energy",
+   "operators/toshiba-energy-systems"
+  ]
+ },
+ "primary_fetched_2026_10_22": {
+  "port": {
+   "url": "https://www.bk.mufg.jp/houjin/info/pdf/port_green_loan_contract.pdf",
+   "http": "200",
+   "bytes": 229553,
+   "sha256": "ca402c07ecbc592304184dc8be2f9044a51f859d6d894355d93b0ed073e5c41f",
+   "at": "2026-10-22T11:02:55+0900",
+   "meta_title": ""
+  },
+  "nipponchiku": {
+   "url": "https://www.nipponchikudenchi.co.jp/news/1629/",
+   "http": "200",
+   "bytes": 61507,
+   "sha256": "bc4bb2775d5b07828ea140c67f1a4898bd7db764dbadb4f96d11afa9bc123baf",
+   "at": "2026-10-22T11:02:56+0900",
+   "title": "系統用蓄電池事業におけるプロジェクトファイナンスの実行について｜ニュース｜日本蓄電池株式会社"
+  },
+  "smfg": {
+   "url": "https://www.smfg.co.jp/sustainability/social_value/interview/0021.html",
+   "http": "200",
+   "bytes": 18805,
+   "sha256": "630c868f70ca6aa0e54154eb2f83a2d996a0bf318ea21b7dd19da283a89d16b6",
+   "at": "2026-10-22T11:02:57+0900",
+   "title": "インタビュー： 三井住友フィナンシャルグループ"
+  },
+  "meti-ets": {
+   "url": "https://www.meti.go.jp/policy/energy_environment/global_warming/ets.html",
+   "http": "200",
+   "bytes": 24642,
+   "sha256": "81ceb3451277e0e7f1a4f0de2247f332720a7afadd1c1e4064bc2cdd08eec07e",
+   "at": "2026-10-22T11:02:59+0900",
+   "title": "排出量取引制度 （METI/経済産業省）"
+  },
+  "eic-ets": {
+   "url": "https://data.eic-jp.org/insight/eu-ets-vs-jp-gx",
+   "http": "200",
+   "bytes": 68174,
+   "sha256": "8a2a424aeb5c673173c0f16a45e0008178b80e512eec69610b97420fcd652236",
+   "at": "2026-10-22T11:03:00+0900",
+   "title": "EU ETS × 日本 GX-ETS：炭素価格20年の実績と、日本が立つ入口 | EIC Data",
+   "dateModified": "2026-06-09"
+  },
+  "egov-gx": {
+   "url": "https://laws.e-gov.go.jp/api/1/lawdata/505AC0000000032",
+   "http": "403",
+   "bytes": 15763,
+   "sha256": "1647d092e4048abcbd80ac7595f40d8820b7b047ae54a94400a02cd860001f5d",
+   "at": "2026-10-22T11:03:02+0900",
+   "title": "ただいまシステムメンテナンス中です｜e-Gov"
+  },
+  "irs": {
+   "url": "https://www.irs.gov/credits-deductions/clean-electricity-investment-credit",
+   "http": "200",
+   "bytes": 104306,
+   "sha256": "f3308dae1f8fbb74eeca893d7adf4999cc86914cfb74d08ab1c7d8d27b16dba1",
+   "at": "2026-10-22T11:03:03+0900",
+   "title": "Clean Electricity Investment Credit | Internal Revenue Service"
+  },
+  "byd": {
+   "url": "https://www.bydenergy.com/en/productDetails/Utility-Scale/MC_Cube-T_BESS",
+   "http": "200",
+   "bytes": 55794,
+   "sha256": "7ccab95ca2410b4acc48b54a88aad856b421f6e84444638bc0c3b1fecb52fd6b",
+   "at": "2026-10-22T11:03:05+0900",
+   "title": "Utility-Scale - MC Cube-T BESS"
+  },
+  "repower": {
+   "url": "https://commission.europa.eu/topics/energy/repowereu_en",
+   "http": "200",
+   "bytes": 191177,
+   "sha256": "660342e7e24c9678f85105de44751b6017297a26473e48b86c16825a4c1f82f1",
+   "at": "2026-10-22T11:03:07+0900",
+   "title": "REPowerEU",
+   "dateModified": "2026-06-03T17:56:22+02:00"
+  },
+  "hornsdale": {
+   "url": "https://hornsdalepowerreserve.com.au/",
+   "http": "200",
+   "bytes": 127104,
+   "sha256": "5bb67b1654fc7b84b848ff19118d1f10a416208af13198545ff026e490093f63",
+   "at": "2026-10-22T11:03:11+0900",
+   "title": "Hornsdale Power Reserve - South Australia's Big Battery",
+   "dateModified": "2026-01-29T12:18:22+10:30"
+  },
+  "transgrid": {
+   "url": "https://www.transgrid.com.au/projects-innovation/wallgrove-grid-battery",
+   "http": "200",
+   "bytes": 278681,
+   "sha256": "5e98ab15fed69c6e24ca8e52d16ad122e30829d0d2af6fd3b3eaec5e792ff6be",
+   "at": "2026-10-22T11:03:13+0900",
+   "title": "Wallgrove Grid Lithium Ion Battery Installation | Transgrid"
+  },
+  "mizuho-prt": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000123.000085927.html",
+   "http": "200",
+   "bytes": 237678,
+   "sha256": "19f291b6f637e178f1a0d845b4ac61df47b275172eec54524f1124f15f04151b",
+   "at": "2026-10-22T11:03:15+0900",
+   "title": "英国における系統用蓄電池事業への出資参画について | みずほリース株式会社のプレスリリース",
+   "dateModified": "2025-12-08 14:10:37"
+  },
+  "occto-nre": {
+   "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2025_boshuyoukou_long/260513_longauction_youryouyakujokekka_kouhyou_besshi_ousatsu2025.pdf",
+   "http": "200",
+   "bytes": 305895,
+   "sha256": "ca3c8a443200f09dacfcf67c4709556588a7e0416a608c627ac27a9711794fc7",
+   "at": "2026-10-22T11:03:16+0900",
+   "meta_title": null
+  },
+  "tokio-dr": {
+   "url": "https://www.tokio-dr.jp/publication/report/tokio-dr-eye/tdr-eye-2024-05.html",
+   "http": "200",
+   "bytes": 29516,
+   "sha256": "c08516b3873c2493341716afe6da8669c4573745dfb17ebfd5c345f5044aa428",
+   "at": "2026-10-22T11:03:17+0900",
+   "title": "系統用蓄電池を導入するうえで把握しておきたい施設リスクについて ～第2回長期脱炭素電源オークションに向けて～ | Tokio dR-EYE | 東京海上ディーアール株式会社"
+  },
+  "aps": {
+   "url": "https://www.aps.com/-/media/APS/APSCOM-PDFs/About/Our-Company/Newsroom/McMickenFinalTechnicalReport.ashx",
+   "http": "200",
+   "bytes": 20139274,
+   "sha256": "8f23ec5e21ee9d37e5d9b09854e365ffb05e96b02264f3c42d5378f547dfaa33",
+   "at": "2026-10-22T11:03:21+0900",
+   "meta_title": "APS DNVGL Report 7-18-20a FINAL"
+  },
+  "motir": {
+   "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/161771/view",
+   "http": "200",
+   "bytes": 113280,
+   "sha256": "5cf708d4bd1c170a5ac97506df77b8523d37f05588e2b23837d11581681a6a85",
+   "at": "2026-10-22T11:03:23+0900",
+   "title": "ESS 사고원인 조사결과 및 안전강화 대책 발표 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부"
+  },
+  "kansai-td": {
+   "url": "https://www.kansai-td.co.jp/consignment/disclosure/distribution-equipment/index.html",
+   "http": "200",
+   "bytes": 67641,
+   "sha256": "abaa96b2f60dd6fd05eedd06341c0ddd295ae976d305f0ab953239bdde7b9c36",
+   "at": "2026-10-22T11:03:24+0900",
+   "title": "流通設備建設計画・系統連系制約等 | お知らせ・情報公開資料 | 託送（たくそう）とは | 関西電力送配電株式会社"
+  },
+  "kyuden": {
+   "url": "https://www.kyuden.co.jp/td/service/wheeling/disclosure.html",
+   "http": "200",
+   "bytes": 1289,
+   "sha256": "765b8aa953a361acf88bfd6cc9ef7afd547b335ad3ba69dd46db22c8cdaefd2b",
+   "at": "2026-10-22T11:03:43+0900",
+   "title": "お知らせ"
+  },
+  "sii-dr": {
+   "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/aggregator/R7r_dr_ess_kateiyoukouboyouryou.pdf",
+   "http": "200",
+   "bytes": 1459862,
+   "sha256": "44508ca43e0be51d417d9e2bc62e77bbae017438448ebc945a026a6157dda1f1",
+   "at": "2026-10-22T11:03:44+0900",
+   "meta_title": null
+  },
+  "meti-109-6": {
+   "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/pdf/109_06_00.pdf",
+   "http": "200",
+   "bytes": 5323263,
+   "sha256": "39db889c4567b8cc830b2edfbbccba1c18c47da9ceb2caaf8fd457964c188074",
+   "at": "2026-10-22T11:03:45+0900",
+   "meta_title": null
+  },
+  "sbi": {
+   "url": "https://corp.sbishinseibank.co.jp/ja/news/news/20260331b.html",
+   "http": "200",
+   "bytes": 31807,
+   "sha256": "4057d28f97bca0ce9922aeea6a6d594eb6dc4baef06afdf1afdadbf9312a28f3",
+   "at": "2026-10-22T11:03:47+0900",
+   "title": "電力市場販売型系統用蓄電池事業に対するプロジェクトファイナンスの組成について［SBI新生銀行］ | ニュース | ニュース | 株式会社SBI新生銀行"
+  },
+  "renova": {
+   "url": "https://www.renovainc.com/news/ir/pdf/20260331_02_PRESS.pdf",
+   "http": "200",
+   "bytes": 271569,
+   "sha256": "d7af3391c28d5182b359be5b172080ea2aef9f0a048b79e5c91227c9c5956413",
+   "at": "2026-10-22T11:03:48+0900",
+   "meta_title": "当社の蓄電事業に関する融資関連契約の締結のお知らせ"
+  },
+  "meti-gx-8-3": {
+   "url": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/emissions_trading/pdf/008_03_00.pdf",
+   "http": "200",
+   "bytes": 2591196,
+   "sha256": "fab9dd7e85b838e6c56f5e966b3a73c3819dcc5f320605e738bba4dd7c3bb37c",
+   "at": "2026-10-22T11:03:50+0900",
+   "meta_title": ""
+  },
+  "meti-110-4": {
+   "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/pdf/110_04_00.pdf",
+   "http": "200",
+   "bytes": 1970997,
+   "sha256": "21208c361017c67a8eba9e9fc20aa49c8142481967c3dfafc60c8af52f51de6b",
+   "at": "2026-10-22T11:03:51+0900",
+   "meta_title": null
+  },
+  "occto-nf": {
+   "url": "https://www.occto.or.jp/grid/assets/NF_setuzokuriyou_20260710.pdf",
+   "http": "200",
+   "bytes": 5865946,
+   "sha256": "a7503a4b740567931901f68581d24ce76796f85c516302431de83419ecf95bd2",
+   "at": "2026-10-22T11:03:52+0900",
+   "meta_title": ""
+  },
+  "jpea-r6": {
+   "url": "https://jp-pc-info.jp/r6c/pdf/%E4%BA%A4%E4%BB%98%E8%A6%8F%E7%A8%8B_R6_240826_1.01.pdf",
+   "http": "200",
+   "bytes": 674749,
+   "sha256": "fd0cc81a401ec909d88186a636907d8b0fbd29d4d9d8d15ff1198885835971b0",
+   "at": "2026-10-22T11:03:54+0900",
+   "meta_title": null
+  }
+ }
+}

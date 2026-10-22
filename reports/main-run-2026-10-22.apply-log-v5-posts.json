@@ -1,0 +1,42 @@
+{
+ "mode": "apply",
+ "calls": {
+  "GET": 6,
+  "POST": 3
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 3,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "post",
+   "target": "policy-events/re-plus-2026-us",
+   "row_id": "S13",
+   "id": "krpblnc338d",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "policy-events/sew-autumn-2026",
+   "row_id": "S12",
+   "id": "yjkp2i3ehp-d",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "policy-events/sew-spring-2026",
+   "row_id": "S11",
+   "id": "ecgwedjvp3r",
+   "result": "posted",
+   "check": []
+  }
+ ]
+}

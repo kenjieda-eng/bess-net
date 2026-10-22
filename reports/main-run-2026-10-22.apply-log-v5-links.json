@@ -1,0 +1,203 @@
+{
+ "mode": "apply",
+ "calls": {
+  "GET": 6,
+  "PATCH": 2
+ },
+ "counts": {
+  "patched": 2,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "links/kyoto-ondanka",
+   "id": "vybh4sd1br9",
+   "result": "patched",
+   "fields": [
+    "relatedTerms"
+   ],
+   "check": [],
+   "before": {
+    "relatedTerms": [
+     {
+      "id": "storage-parity-subsidy"
+     },
+     {
+      "id": "battery-supply-plan"
+     },
+     {
+      "id": "grid-scale-bess-subsidy"
+     },
+     {
+      "id": "storage-parity"
+     },
+     {
+      "id": "gje0tbc8u"
+     },
+     {
+      "id": "vudbqkp6y3l8"
+     },
+     {
+      "id": "htnrmlz0i36"
+     },
+     {
+      "id": "5c6m1dy5csi"
+     },
+     {
+      "id": "kjr8y8b-rv"
+     },
+     {
+      "id": "bxsw8h_g1"
+     },
+     {
+      "id": "commercial-battery"
+     },
+     {
+      "id": "property-tax"
+     },
+     {
+      "id": "22eu_kjbh"
+     },
+     {
+      "id": "payback-period"
+     },
+     {
+      "id": "initial-investment"
+     }
+    ]
+   },
+   "after": {
+    "relatedTerms": [
+     {
+      "id": "htnrmlz0i36"
+     },
+     {
+      "id": "storage-parity"
+     },
+     {
+      "id": "kjr8y8b-rv"
+     },
+     {
+      "id": "9wt9hh__kbts"
+     },
+     {
+      "id": "j7kmdjmqu7ig"
+     },
+     {
+      "id": "vb7fqfv2z"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "links/occto-iinkai",
+   "id": "kreo1mm068",
+   "result": "patched",
+   "fields": [
+    "category",
+    "contentTypes",
+    "tags",
+    "description",
+    "relatedTerms"
+   ],
+   "check": [],
+   "before": {
+    "category": [
+     "データソース"
+    ],
+    "contentTypes": [
+     "統計・データ"
+    ],
+    "tags": "OCCTO,容量市場,需給調整市場,データ",
+    "description": "【OCCTO 委員会・検討会 とは】\n\nOCCTO 委員会・検討会は、電力広域的運営推進機関（OCCTO）の委員会・検討会の一覧ページ。調整力及び需給バランス評価等に関する委員会、需給調整市場検討小委員会、広域系統整備委員会、容量市場の在り方等に関する検討会などの開催案内と配布資料をここから辿れる。需給調整市場の取引実績は一般社団法人 電力需給調整力取引所が「取引実績」「取引実績の取りまとめ結果」で公表。公式URL：https://www.occto.or.jp/iinkai/",
+    "relatedTerms": [
+     {
+      "id": "tesla-autobidder"
+     },
+     {
+      "id": "fluence-mosaic"
+     },
+     {
+      "id": "wood-mackenzie"
+     },
+     {
+      "id": "nodal-pricing"
+     },
+     {
+      "id": "tensor-energy"
+     },
+     {
+      "id": "bloombergnef"
+     },
+     {
+      "id": "battery-subscription"
+     },
+     {
+      "id": "multi-use-operation"
+     },
+     {
+      "id": "entso-e-europe"
+     },
+     {
+      "id": "arbitrage-detail"
+     },
+     {
+      "id": "sustech"
+     },
+     {
+      "id": "fluence-corporation"
+     },
+     {
+      "id": "mosaic-fluence"
+     },
+     {
+      "id": "multi-use-detail"
+     },
+     {
+      "id": "8-1qe97ag5rv"
+     }
+    ]
+   },
+   "after": {
+    "category": [
+     "規制機関・系統運用"
+    ],
+    "contentTypes": [
+     "政策・規制"
+    ],
+    "tags": "OCCTO,容量市場,需給調整市場",
+    "description": "【OCCTO 委員会・検討会 とは】\n\nOCCTO 委員会・検討会は、電力広域的運営推進機関（OCCTO）の委員会・検討会の一覧ページ。調整力及び需給バランス評価等に関する委員会、需給調整市場検討小委員会、広域系統整備委員会、容量市場の在り方等に関する検討会などの開催案内と配布資料をここから辿れる。公式URL：https://www.occto.or.jp/iinkai/",
+    "relatedTerms": [
+     {
+      "id": "skcifnmbprlc"
+     },
+     {
+      "id": "qfy02dukr"
+     },
+     {
+      "id": "bxsw8h_g1"
+     },
+     {
+      "id": "ltdc-detail"
+     },
+     {
+      "id": "izr4vgw1-a"
+     },
+     {
+      "id": "7wt6emdurvpu"
+     },
+     {
+      "id": "ftm0qemez9"
+     }
+    ]
+   }
+  }
+ ]
+}
