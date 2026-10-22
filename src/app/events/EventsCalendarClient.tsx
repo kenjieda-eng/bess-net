@@ -359,7 +359,7 @@ export default function EventsCalendarClient({ items }: { items: IndustryEvent[]
                           rel="noopener noreferrer"
                           style={{ fontSize: 15, color: 'var(--color-accent, #0066cc)' }}
                         >
-                          公式サイト →
+                          出典 →
                         </a>
                       )}
                       {it.registrationDeadline && (

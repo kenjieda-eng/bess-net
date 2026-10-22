@@ -21,6 +21,7 @@ import {
 import { csvTermsToTermList } from '@/lib/term-linker';
 import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary-301';
 import { linkifyHTML } from '@/lib/linkify';
+import { linkifyPlainSources } from '@/lib/source-links';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 import { isLvInvestExplainer, LV_INVEST_SEO_MAP } from '@/lib/lv-invest';
@@ -170,7 +171,7 @@ export default async function LvInvestArticlePage({
           {exp.sources && (
             <section className="article-sources">
               <h3>出典</h3>
-              <div dangerouslySetInnerHTML={{ __html: exp.sources }} />
+              <div dangerouslySetInnerHTML={{ __html: linkifyPlainSources(exp.sources) }} />
             </section>
           )}
 

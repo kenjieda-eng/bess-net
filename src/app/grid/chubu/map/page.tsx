@@ -36,7 +36,7 @@ const ChubuMap = dynamic(() => import('@/components/ChubuMap'), {
         <div style={{ fontSize: '32px', marginBottom: '8px' }}>🗺</div>
         <div style={{ fontSize: '15px' }}>マップを初期化中…</div>
         <div style={{ fontSize: '13px', marginTop: '4px', color: '#9ca3af' }}>
-          1,081 箇所の変電所データを準備しています
+          {MAP_POINTS.toLocaleString()} 箇所の変電所データを準備しています
         </div>
       </div>
     </div>

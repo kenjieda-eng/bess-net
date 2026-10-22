@@ -1,6 +1,6 @@
 {
   "_comment": "資料名の台帳（Ck-1 A6・2026-09-21）。name はサイトに書いている資料名、title_verbatim は確認時の一次の <title>／PDF 表題の逐語。書く前に一次を実機で取り、確認日つきで登録する。検査: npm run verify:source-names",
-  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true） ／ 2026-09-29 Ck-2 実行便② で 10 件を追加・needs_check 4 件を決着（2 件は本文から外れたため理由を書いて残置） ／ 2026-09-30 同便の本番レビュー後の是正で 1 件を追加（EPRX 商品要件 第6版） ／ 2026-10-03 Ck2d で PIB（インド VGF）を 1 件追加 ／ 2026-10-06 projects 便 Day5 で PR TIMES 等 15 件を追加",
+  "_source": "Lc-3 で「実在（逐語一致）」と判定した 70 種を 2026-09-20/21 に再取得して登録（reports/lc3-source-name-audit-2026-09-20.md） ／ 2026-09-27 Ck-2 実行便① ■7 で 79 件を追加（実行便②が書く資料名を先行登録。一次を実機で取れなかったものは needs_check: true） ／ 2026-09-29 Ck-2 実行便② で 10 件を追加・needs_check 4 件を決着（2 件は本文から外れたため理由を書いて残置） ／ 2026-09-30 同便の本番レビュー後の是正で 1 件を追加（EPRX 商品要件 第6版） ／ 2026-10-03 Ck2d で PIB（インド VGF）を 1 件追加 ／ 2026-10-06 projects 便 Day5 で PR TIMES 等 15 件を追加 ／ 2026-10-22 本実行便（Ck2e 第4版・第5版の採る分）で 21 件を追加・7 件の used_in／note を更新",
   "documents": [
     {
       "name": "需給調整市場のΔkW上限価格について",
@@ -32,9 +32,9 @@
       "publisher": "三井住友フィナンシャルグループ",
       "url": "https://www.smfg.co.jp/sustainability/social_value/interview/0021.html",
       "title_verbatim": "インタビュー： 三井住友フィナンシャルグループ",
-      "checked_on": "2026-09-20",
-      "note": "サイトの出典欄の発行元表記「三井住友銀行」は誤り（一次は三井住友フィナンシャルグループのインタビュー）。本文の「eRex 2MW/8MWh案件」は一次に無い（■B1）／要確認（needs_check）",
-      "used_in": "explainer/bess-pf-merchant-vs-multiuse.sources"
+      "checked_on": "2026-10-22",
+      "note": "サイトの出典欄の発行元表記「三井住友銀行」は誤り（一次は三井住友フィナンシャルグループのインタビュー）→ Ck2e（本実行便）で是正（bess-pf-merchant-vs-multiuse.sources）。本文の「eRex 2MW/8MWh案件」は一次に無い（■B1）／要確認（needs_check） ／ 2026-10-22 に curl で HTTP 200・18,805 バイト（title「インタビュー： 三井住友フィナンシャルグループ」一致・本実行便）。h1 は「再エネ導入の鍵、系統用蓄電池事業に国内初*の融資」、注は「*三井住友ファイナンス＆リース調べ」、掲載日 2024.11.08（シャカカチStories）。サイトでは「*」を外した name で書き、調べた主体は括弧書きで示す。",
+      "used_in": "explainer/bess-pf-merchant-vs-multiuse.sources / explainer/bess-esg-green-finance.sources"
     },
     {
       "name": "蓄電池産業戦略",
@@ -259,7 +259,7 @@
       "url": "https://www.eprx.or.jp/information/summary.php",
       "title_verbatim": "取引実績の取りまとめ結果 | 取引情報 | 一般社団法人 電力需給調整力取引所",
       "checked_on": "2026-09-20",
-      "used_in": "glossary/power-market-price-trend.detail"
+      "used_in": "glossary/power-market-price-trend.detail ／ explainer/balancing-price-cap-10yen-explainer.body（Ck2e 第4版 B01）"
     },
     {
       "name": "インターネット広告倫理綱領",
@@ -576,7 +576,7 @@
       "url": "https://www.eprx.or.jp/outline/docs/kitei_ver.18_260701.pdf",
       "title_verbatim": "取引規程（需給調整市場） 2026年７月１日 実施 一般社団法人電力需給調整力取引所（PDF 1頁。掲載ページ https://www.eprx.or.jp/outline/announcement.html の title「需給調整市場に係る取引規程等の公表 | 取引概要 | 一般社団法人 電力需給調整力取引所」）",
       "checked_on": "2026-09-22",
-      "used_in": "glossary 9 件の detail（A11-2-17）／explainer/tertiary-reserve-1-detail.sources（A11-2-15）／explainer/aggregator-business.sources（A11-2-16-c）"
+      "used_in": "glossary 9 件の detail（A11-2-17）／explainer/tertiary-reserve-1-detail.sources（A11-2-15）／explainer/aggregator-business.sources（A11-2-16-c） ／ explainer/balancing-market-practical.sources（Ck2e 第4版 B01）"
     },
     {
       "name": "取引実績",
@@ -1038,7 +1038,7 @@
       "aliases": [
         "需要家主導型太陽光発電及び再生可能エネルギー電源併設型蓄電池導入支援事業費補助金"
       ],
-      "note": "2026-09-27 に curl で実機取得（HTTP 200）。★資料名は中点（・）、一次サイトの表題は「及び」で、この差は年度による事業名の揺れ（令和6年度予算＝「太陽光発電・再生可能エネルギー」／令和4年度第2次補正＝「太陽光発電及び再生可能エネルギー」）。引用する年度を明示するのが安全なので、及び形を aliases に入れた。運営表記はページ下部の逐語「JPEA太陽光発電推進センター（JP-PC）」、実施主体の逐語は「資源エネルギー庁から補助を受けた一般社団法人太陽光発電協会が実施しています。」。執行団体を SII とする現行表記は誤り。"
+      "note": "2026-09-27 に curl で実機取得（HTTP 200）。★資料名は中点（・）、一次サイトの表題は「及び」で、この差は年度による事業名の揺れ（令和6年度予算＝「太陽光発電・再生可能エネルギー」／令和4年度第2次補正＝「太陽光発電及び再生可能エネルギー」）。引用する年度を明示するのが安全なので、及び形を aliases に入れた。運営表記はページ下部の逐語「JPEA太陽光発電推進センター（JP-PC）」、実施主体の逐語は「資源エネルギー庁から補助を受けた一般社団法人太陽光発電協会が実施しています。」。執行団体を SII とする現行表記は誤り。 ／ 中点形の一次: 令和6年度予算の交付規程（https://jp-pc-info.jp/r6c/pdf/%E4%BA%A4%E4%BB%98%E8%A6%8F%E7%A8%8B_R6_240826_1.01.pdf・表題「需要家主導型太陽光発電・再生可能エネルギー電源併設型蓄電池導入支援事業費補助金 交付規程」・制定 JP-PC2024-078・2024年8月26日）。2026-10-22 に curl で HTTP 200・674,749 バイト（本実行便・Ck2e 第5版 G5）。"
     },
     {
       "name": "容量市場 メインオークション募集要綱（対象実需給年度：２０３０年度）",
@@ -2025,7 +2025,7 @@
       "title_verbatim": "系統の接続および利用ルールについて ～ノンファーム型接続～（作成：2020年12月25日・更新：2024年 7月 1日）",
       "checked_on": "2026-10-10",
       "note": "HTTP 200・5,865,946 バイト・2026-10-10 17:07:28 JST。PDF 1 ページ目の表題（ファイル名の日付 20260710 と表紙の更新日 2024年7月1日は一致しない）。T2 実装便（2026-10-10）で登録。",
-      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝D5"
+      "used_in": "src/data/asset-check-questions.ts（/tools/asset-check の設問の一次・出典欄）＝D5 ／ explainer/substation-availability-cross-area-analysis（body §5 (2)・sources・Ck2e 第5版 G2）"
     },
     {
       "name": "発電設備等系統アクセスの流れ",
@@ -2493,7 +2493,7 @@
       "title_verbatim": "需給調整市場について 2026年1月23日 資源エネルギー庁 資料４",
       "checked_on": "2026-10-14",
       "note": "T8 実装便で登録。2026-10-14 に取り直し（HTTP 200 / 1,970,997）。資料の日付 2026-01-23＝PDF 表紙（第110回 制度検討作業部会の会議ページ 110.html の開催日「2026年1月23日」とも一致）。",
-      "used_in": "src/data/balancing-rules.ts（/tracker/balancing-rules の一次）"
+      "used_in": "src/data/balancing-rules.ts（/tracker/balancing-rules の一次） ／ explainer/balancing-market-cap-cut-2026.sources（Ck2e 第5版 G1）"
     },
     {
       "name": "三次調整力②の必要量テーブルの2026年度取引に向けた更新等について",
@@ -2718,7 +2718,7 @@
       "title_verbatim": "需給調整市場の商品要件と取引スケジュール ２０２６年３月１３日 第６版",
       "checked_on": "2026-10-14",
       "note": "T8 実装便で登録。2026-10-14 に取り直し（HTTP 200 / 419,027）。資料の日付 2026-03-13＝PDF 表紙。",
-      "used_in": "src/data/balancing-rules.ts（/tracker/balancing-rules の一次）"
+      "used_in": "src/data/balancing-rules.ts（/tracker/balancing-rules の一次） ／ explainer/balancing-market-practical.body・sources（Ck2e 第4版 B01）"
     },
     {
       "name": "三次②市場ルール見直し時期等について",
@@ -3187,6 +3187,197 @@
       "checked_on": "2026-10-17",
       "note": "補助金直し便 10-16 で登録。県のページのリンク文字「リーフレット（PDF：671KB）」・サイトの本文では「同ページ掲載の…リーフレット」。2026-10-17 09:48 JST に取得（HTTP 200・686,508 バイト・sha256 1d505087676b6b6d49cc87efc8129e79dfa5cd03fd8ed78009c563f4a4818aeb）。募集期間・上限 合計 1,500 万円・提出方法（メール）を確認。",
       "used_in": "subsidies/saitama-shoene-saiene-2026.body"
+    },
+    {
+      "name": "ポート株式会社と「グリーンローン」を成約",
+      "publisher": "株式会社三菱UFJ銀行",
+      "url": "https://www.bk.mufg.jp/houjin/info/pdf/port_green_loan_contract.pdf",
+      "title_verbatim": "2026年4月17日／株式会社三菱UFJ銀行／ポート株式会社と「グリーンローン」を成約",
+      "checked_on": "2026-10-22",
+      "aliases": ["グリーンローン"],
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・229,553 バイト・全2頁。PDF の Title メタデータは空のため 1 頁目冒頭の逐語を title_verbatim にした。名前に入れ子の「」があり、verify:source-names の BRACKET は内側の「グリーンローン」だけを拾うため aliases に置く（一般語の別名なので、この資料以外の「グリーンローン」も素通りする点に注意）。",
+      "used_in": "explainer/bess-esg-green-finance.sources"
+    },
+    {
+      "name": "系統用蓄電池事業におけるプロジェクトファイナンスの実行について",
+      "publisher": "日本蓄電池株式会社",
+      "url": "https://www.nipponchikudenchi.co.jp/news/1629/",
+      "title_verbatim": "系統用蓄電池事業におけるプロジェクトファイナンスの実行について｜ニュース｜日本蓄電池株式会社",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・61,507 バイト。掲載日 2026.04.27。49億円は貸付限度額（実行は第1回分）。同じ文の PR TIMES もあるが、配信後に改訂されうるため出典は自社ページにした。",
+      "used_in": "explainer/bess-esg-green-finance.sources / explainer/bess-esg-green-finance.body"
+    },
+    {
+      "name": "排出量取引制度",
+      "publisher": "経済産業省",
+      "url": "https://www.meti.go.jp/policy/energy_environment/global_warming/ets.html",
+      "title_verbatim": "排出量取引制度 （METI/経済産業省）",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・24,642 バイト（2026-10-15 は curl が 403 で内蔵ブラウザで確認していた）。",
+      "used_in": "explainer/eu-ets-and-gx-ets-for-bess.sources"
+    },
+    {
+      "name": "EU ETS × 日本 GX-ETS：炭素価格20年の実績と、日本が立つ入口",
+      "publisher": "一般社団法人エネルギー情報センター（EIC Data）",
+      "url": "https://data.eic-jp.org/insight/eu-ets-vs-jp-gx",
+      "title_verbatim": "EU ETS × 日本 GX-ETS：炭素価格20年の実績と、日本が立つ入口 | EIC Data",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・68,174 バイト。EIC Data Insight #75。",
+      "used_in": "explainer/eu-ets-and-gx-ets-for-bess.sources"
+    },
+    {
+      "name": "Clean Electricity Investment Credit",
+      "publisher": "米国内国歳入庁（IRS）",
+      "url": "https://www.irs.gov/credits-deductions/clean-electricity-investment-credit",
+      "title_verbatim": "Clean Electricity Investment Credit | Internal Revenue Service",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・104,306 バイト。",
+      "used_in": "explainer/global-bess-trends-2026.sources"
+    },
+    {
+      "name": "Utility-Scale - MC Cube-T BESS",
+      "publisher": "BYD Energy Storage",
+      "url": "https://www.bydenergy.com/en/productDetails/Utility-Scale/MC_Cube-T_BESS",
+      "title_verbatim": "Utility-Scale - MC Cube-T BESS",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・55,794 バイト。",
+      "used_in": "explainer/global-bess-trends-2026.sources"
+    },
+    {
+      "name": "REPowerEU",
+      "publisher": "欧州委員会",
+      "url": "https://commission.europa.eu/topics/energy/repowereu_en",
+      "title_verbatim": "REPowerEU",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・191,177 バイト。2026-10-16 の確認では dateModified 2026-06-03、逐語「Launched in May 2022」「phase out Russian fossil fuel imports」。",
+      "used_in": "explainer/global-bess-trends-2026.sources"
+    },
+    {
+      "name": "Hornsdale Power Reserve - South Australia's Big Battery",
+      "publisher": "Neoen",
+      "url": "https://hornsdalepowerreserve.com.au/",
+      "title_verbatim": "Hornsdale Power Reserve - South Australia's Big Battery",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・127,104 バイト。アポストロフィは一次・サイトとも ASCII（U+0027）。",
+      "used_in": "explainer/global-bess-trends-2026.sources"
+    },
+    {
+      "name": "Wallgrove Grid Lithium Ion Battery Installation",
+      "publisher": "Transgrid",
+      "url": "https://www.transgrid.com.au/projects-innovation/wallgrove-grid-battery",
+      "title_verbatim": "Wallgrove Grid Lithium Ion Battery Installation | Transgrid",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・278,681 バイト。逐語「A 50MW/75MWh lithium ion battery」（2026-10-16 の確認）。",
+      "used_in": "explainer/global-bess-trends-2026.sources"
+    },
+    {
+      "name": "英国における系統用蓄電池事業への出資参画について",
+      "publisher": "みずほリース株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000123.000085927.html",
+      "title_verbatim": "英国における系統用蓄電池事業への出資参画について | みずほリース株式会社のプレスリリース",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・237,678 バイト。配信 2025-12-08 11:00:02・dateModified 2025-12-08 14:10:37（2026-10-16 の確認と同じ＝改訂なし）。",
+      "used_in": "explainer/global-bess-trends-2026.sources"
+    },
+    {
+      "name": "容量市場 長期脱炭素電源オークション約定結果（応札年度:2025年度） 別紙：落札電源一覧",
+      "publisher": "電力広域的運営推進機関（OCCTO）",
+      "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2025_boshuyoukou_long/260513_longauction_youryouyakujokekka_kouhyou_besshi_ousatsu2025.pdf",
+      "title_verbatim": "容量市場 長期脱炭素電源オークション約定結果（応札年度:2025年度） 別紙：落札電源一覧（PDF 1 ページ目の表題。PDF の Title メタデータは無し）",
+      "checked_on": "2026-10-22",
+      "aliases": ["別紙：落札電源一覧"],
+      "note": "Ck2e S21 で登録（本実行便）。2026-10-22 に curl で HTTP 200・305,895 バイト・1 ページ。No.12「合同会社NRE-54インベストメント NRE中川第ニ蓄電所 蓄電池（リチウムイオン蓄電池） 46,828」（ニは U+30CB）。表題の「応札年度」の後のコロンは半角・「別紙」の後は全角。",
+      "used_in": "projects/vena-nre-nakagawa-2-bess.body"
+    },
+    {
+      "name": "系統用蓄電池を導入するうえで把握しておきたい施設リスクについて ～第2回長期脱炭素電源オークションに向けて～",
+      "publisher": "東京海上ディーアール株式会社",
+      "url": "https://www.tokio-dr.jp/publication/report/tokio-dr-eye/tdr-eye-2024-05.html",
+      "title_verbatim": "系統用蓄電池を導入するうえで把握しておきたい施設リスクについて ～第2回長期脱炭素電源オークションに向けて～ | Tokio dR-EYE | 東京海上ディーアール株式会社",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・29,516 バイト。",
+      "used_in": "explainer/global-bess-fire-cases.sources / explainer/global-bess-fire-cases.body"
+    },
+    {
+      "name": "McMicken Battery Energy Storage System Event Technical Analysis and Recommendations",
+      "publisher": "DNV GL Energy Insights USA, Inc.（Arizona Public Service 向け）",
+      "url": "https://www.aps.com/-/media/APS/APSCOM-PDFs/About/Our-Company/Newsroom/McMickenFinalTechnicalReport.ashx",
+      "title_verbatim": "McMicken Battery Energy Storage System Event Technical Analysis and Recommendations（表紙。上に「TECHNICAL SUPPORT FOR APS RELATED TO MCMICKEN THERMAL RUNAWAY AND EXPLOSION」・Date: July 18, 2020。PDF の /Title は「APS DNVGL Report 7-18-20a FINAL」）",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・20,139,274 バイト・78 頁。",
+      "used_in": "explainer/global-bess-fire-cases.sources"
+    },
+    {
+      "name": "ESS 사고원인 조사결과 및 안전강화 대책 발표",
+      "publisher": "韓国 産業通商資源部",
+      "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/161771/view",
+      "title_verbatim": "ESS 사고원인 조사결과 및 안전강화 대책 발표 < 보도·참고자료 < 보도자료 < 알림·뉴스 < 산업통상부",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・113,280 バイト。등록일 2019-06-11。",
+      "used_in": "explainer/global-bess-fire-cases.sources"
+    },
+    {
+      "name": "系統情報の公開",
+      "publisher": "関西電力送配電株式会社",
+      "url": "https://www.kansai-td.co.jp/consignment/disclosure/distribution-equipment/index.html",
+      "title_verbatim": "流通設備建設計画・系統連系制約等 | お知らせ・情報公開資料 | 託送（たくそう）とは | 関西電力送配電株式会社",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・67,641 バイト。name はページ内の h2「系統情報の公開」（title とは別）。同名・発行元違いのエントリが九州電力送配電にもある。",
+      "used_in": "explainer/grid-capacity-map-reading.sources"
+    },
+    {
+      "name": "系統情報の公開",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/service/wheeling/disclosure.html",
+      "title_verbatim": "九州電力送配電　系統情報の公開",
+      "checked_on": "2026-10-15",
+      "note": "Ck2e（本実行便）で登録。確認日は 2026-10-15 の curl（HTTP 200・title 一致）。2026-10-22 11:03 JST の取り直しは九州電力のホームページ停止（システムメンテナンス・2026年10月21日22時頃〜22日午前中の予定）の案内ページ（title「お知らせ」）が返り、取れなかった。同名・発行元違いのエントリが関西電力送配電にもある。",
+      "used_in": "explainer/grid-capacity-map-reading.sources"
+    },
+    {
+      "name": "再生可能エネルギー導入拡大・分散型エネルギーリソース導入支援等事業費補助金",
+      "publisher": "一般社団法人環境共創イニシアチブ（SII）",
+      "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/aggregator/R7r_dr_ess_kateiyoukouboyouryou.pdf",
+      "title_verbatim": "令和７年度補正 「再生可能エネルギー導入拡大・分散型エネルギーリソース導入支援等 事業費補助金」 （DRリソース導入のための家庭用蓄電システム等導入支援事業） 家庭用蓄電システム導入支援事業 公 募 要 領 １．１版 ２０２６年３月２６日（PDF 1 頁目の表題）",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e（本実行便）で登録。2026-10-22 に curl で HTTP 200・1,459,862 バイト・44 頁。subsidies.body は verify:source-names の対象外（CLAUDE.md の受け入れ基準による登録）。",
+      "used_in": "subsidies/sii-dr-r7h.body"
+    },
+    {
+      "name": "需給調整市場について（第109回 制度検討作業部会 資料6）",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/system_review/pdf/109_06_00.pdf",
+      "title_verbatim": "資料６ 需給調整市場について 2025年12月12日 資源エネルギー庁",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e 第5版（本実行便）で登録。2026-10-22 に curl で HTTP 200・5,323,263 バイト。PDF 1 頁目の表題の逐語。p.2 ※「2026年3月13日の市場取引（3月14日受渡分）より前日取引に移行する予定」。",
+      "used_in": "explainer/balancing-market-cap-cut-2026.sources"
+    },
+    {
+      "name": "電力市場販売型系統用蓄電池事業に対するプロジェクトファイナンスの組成について",
+      "publisher": "株式会社SBI新生銀行",
+      "url": "https://corp.sbishinseibank.co.jp/ja/news/news/20260331b.html",
+      "title_verbatim": "電力市場販売型系統用蓄電池事業に対するプロジェクトファイナンスの組成について［SBI新生銀行］ | ニュース | ニュース | 株式会社SBI新生銀行",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e 第5版（本実行便）で登録。2026-10-22 に curl で HTTP 200・31,807 バイト。",
+      "used_in": "explainer/dscr-llcr-bess-pf.sources"
+    },
+    {
+      "name": "当社の蓄電事業に関する融資関連契約の締結のお知らせ",
+      "publisher": "株式会社レノバ",
+      "url": "https://www.renovainc.com/news/ir/pdf/20260331_02_PRESS.pdf",
+      "title_verbatim": "当社の蓄電事業に関する融資関連契約の締結のお知らせ",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e 第5版（本実行便）で登録。2026-10-22 に curl で HTTP 200・271,569 バイト・3 頁。PDF の /Title の逐語（1 頁目の表題と同じ）。蓄電事業（静岡県菊川市河東・90MW/270MWh）。",
+      "used_in": "explainer/dscr-llcr-bess-pf.sources"
+    },
+    {
+      "name": "排出枠取引市場の詳細設計の検討",
+      "publisher": "経済産業省 GXグループ",
+      "url": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/emissions_trading/pdf/008_03_00.pdf",
+      "title_verbatim": "排出枠取引市場の詳細設計の検討 / 令和８年８月26日 / 経済産業省 GXグループ（PDF 1 頁。PDF の /Title は空）",
+      "checked_on": "2026-10-22",
+      "note": "Ck2e 第5版（本実行便）で登録。2026-10-22 に curl で HTTP 200・2,591,196 バイト・56 頁。産業構造審議会 イノベーション・環境分科会 排出量取引制度小委員会 第8回 資料3。p.25「2027年度秋頃に開設予定」。",
+      "used_in": "explainer/eu-ets-and-gx-ets-for-bess.sources"
     }
   ]
 }

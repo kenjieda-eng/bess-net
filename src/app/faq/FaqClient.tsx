@@ -33,6 +33,15 @@ function parseSlugList(text: string | undefined): string[] {
     .filter((s) => s.length > 0);
 }
 
+/** 出典 URL の欄を空白（半角スペース・改行）で分ける。1 本だけの FAQ は従来どおり 1 本（Ck2e R40・本実行便 2026-10-22） */
+function parseSourceUrls(text: string | undefined): string[] {
+  if (!text) return [];
+  return text
+    .split(/\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+}
+
 export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [openIds, setOpenIds] = useState<Set<string>>(new Set());
@@ -354,17 +363,22 @@ export default function FaqClient({ items }: { items: FaqWithLinkifiedAnswer[] }
                         {it.sourceUrl && (
                           <div>
                             ▶ 出典:{' '}
-                            <a
-                              href={it.sourceUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              style={{
-                                color: 'var(--color-accent, #0066cc)',
-                                wordBreak: 'break-all',
-                              }}
-                            >
-                              {it.sourceUrl}
-                            </a>
+                            {parseSourceUrls(it.sourceUrl).map((u, k) => (
+                              <span key={u}>
+                                {k > 0 && ' / '}
+                                <a
+                                  href={u}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{
+                                    color: 'var(--color-accent, #0066cc)',
+                                    wordBreak: 'break-all',
+                                  }}
+                                >
+                                  {u}
+                                </a>
+                              </span>
+                            ))}
                           </div>
                         )}
                       </div>

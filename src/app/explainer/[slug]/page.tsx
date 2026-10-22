@@ -26,6 +26,7 @@ import { csvTermsToTermList } from '@/lib/term-linker';
 import { toGroup } from '@/lib/explainer-utils';
 import { GLOSSARY_301_SOURCE_SLUGS, canonicalGlossarySlug } from '@/lib/glossary-301';
 import { linkifyHTML } from '@/lib/linkify';
+import { linkifyPlainSources } from '@/lib/source-links';
 import { getRelatedEntities, buildMentions } from '@/lib/related-cards';
 import { siteConfig } from '@/lib/site-config';
 import { TOOL_CTAS } from '@/lib/tools-cta';
@@ -310,7 +311,7 @@ export default async function ExplainerDetailPage({
           {exp.sources && (
             <section className="article-sources">
               <h3>出典</h3>
-              <div dangerouslySetInnerHTML={{ __html: exp.sources }} />
+              <div dangerouslySetInnerHTML={{ __html: linkifyPlainSources(exp.sources) }} />
             </section>
           )}
 

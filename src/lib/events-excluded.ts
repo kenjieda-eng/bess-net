@@ -59,6 +59,8 @@ export const EVENTS_EXCLUDED: readonly ExcludedEvent[] = [
   //    現在も sourceUrl がドメインのトップだけのもの（(a) と重複する 9 件・Ck-1 A4 の 1 件を除く）。承認表 §0-4 最終行。
   //    ★energy-storage-summit-eu-2026 も機械抽出には該当するが、■3-1（B0）で公式サイトへの差し替えが承認済み
   //      （一次で 2026-02-24〜25・InterContinental London を確認）のため非表示にしない。
+  //      公式トップは 2026-10 時点で 2027 年版。2026 年の会期は Wayback 2026-02-18 でのみ確認
+  //      （sourceUrl はアーカイブにせず公式トップのまま・Ck2e 裁定 §2 #20・本実行便 2026-10-22）。
   ...([
     'smart-energy-week-spring-2026',
     'smart-energy-week-autumn-2026',

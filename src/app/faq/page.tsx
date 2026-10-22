@@ -172,7 +172,7 @@ export default async function FaqPage() {
               borderTop: 'none',
             }}
           >
-            ※ 各 FAQ の出典は経済産業省・OCCTO・SII 等の公式情報源を明記しています。
+            ※ 出典のある FAQ には公式情報源を明記しています（編集部の整理による回答はその旨を記載）。
             ※ より詳細な解説は{' '}
             <Link href="/explainer">解説記事</Link> / 用語集（{' '}
             <Link href="/glossary">/glossary</Link> ）も併せてご参照ください。
