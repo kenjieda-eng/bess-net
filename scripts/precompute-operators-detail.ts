@@ -392,6 +392,7 @@ async function main(): Promise<void> {
         corporateType: op.corporateType, prefecture: op.prefecture, city: op.city, foundedYear: op.foundedYear,
         listedMarket: op.listedMarket, ticker: op.ticker, description: op.description, products: op.products,
         bessRelation: op.bessRelation, websiteUrl: op.websiteUrl, sourceUrl: op.sourceUrl,
+        publishedAt: op.publishedAt, revisedAt: op.revisedAt, // 日付表示便（2026-10-25）: 詳細の「公開日・更新日」
       },
       bodyHtml,
       relatedNews: relatedNewsTop,

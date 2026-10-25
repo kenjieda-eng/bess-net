@@ -10,6 +10,7 @@ import { notFound } from 'next/navigation';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import CorrectionHistory from '@/components/CorrectionHistory';
+import PageDates from '@/components/PageDates';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 import { getAllPolicyEvents, getLinkableTargets } from '@/lib/microcms';
 import { getRelatedEntities } from '@/lib/related-cards';
@@ -149,6 +150,8 @@ export default async function PolicyEventDetailPage({
           </p>
           <div className="section-label">Policy & Regulation</div>
           <h1 className="article-title">{ev.title}</h1>
+          {/* 日付表示便（2026-10-25）: ページの公開日・更新日。開催日は下のメタ行（混ざらないよう別の行） */}
+          <PageDates publishedAt={ev.publishedAt} revisedAt={ev.revisedAt} path={`/policy-calendar/${params.slug}`} />
 
           {/* メタ行（一覧と同じ表示ロジック＝policy-utils 共有） */}
           <div

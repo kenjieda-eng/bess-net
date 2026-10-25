@@ -12,6 +12,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import CorrectionHistory from '@/components/CorrectionHistory';
+import PageDates from '@/components/PageDates';
 import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedExplainersList from '@/components/RelatedExplainersList';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
@@ -51,6 +52,7 @@ type GlossaryDetailEntry = {
   term: {
     id: string; term: string; slug: string; english?: string; reading?: string;
     shortDef: string; detail?: string; category: string[]; subcategory?: string;
+    publishedAt?: string; revisedAt?: string; // 日付表示便（2026-10-25）: 詳細の「公開日・更新日」
   };
   relatedNews: NewsRef[];
   relatedExplainers: ExplainerRef[];
@@ -90,6 +92,7 @@ function entryFromTerm(t: NonNullable<Awaited<ReturnType<typeof getGlossaryBySlu
     term: {
       id: t.id, term: t.term, slug: t.slug, english: t.english, reading: t.reading,
       shortDef: t.shortDef, detail: t.detail, category: t.category ?? [], subcategory: t.subcategory,
+      publishedAt: t.publishedAt, revisedAt: t.revisedAt,
     },
     relatedNews: [], relatedExplainers: [], relatedOperators: [], relatedProjects: [],
     sameCategoryTerms: [], useCategoryFallback: isGenericSubcategory(t.subcategory), relatedTerms: [],
@@ -260,6 +263,7 @@ export default async function GlossaryDetailPage({
           </p>
           {cat && <span className="article-category">{cat}</span>}
           <h1 className="article-title">{term.term}</h1>
+          <PageDates publishedAt={term.publishedAt} revisedAt={term.revisedAt} path={`/glossary/${params.slug}`} />
           {term.english && <p className="glossary-en">英: {term.english}</p>}
           {term.reading && <p className="glossary-reading">読み: {term.reading}</p>}
           <p className="article-lead">{term.shortDef}</p>

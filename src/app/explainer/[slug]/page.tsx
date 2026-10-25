@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import CorrectionHistory from '@/components/CorrectionHistory';
+import PageDates from '@/components/PageDates';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
 
 // /grid 系統空き容量データベースへの導線を表示する解説記事 slug 一覧（Phase 5 D-4）
@@ -184,6 +185,7 @@ export default async function ExplainerDetailPage({
           </p>
           {cat && <span className="article-category">{cat}</span>}
           <h1 className="article-title">{exp.title}</h1>
+          <PageDates publishedAt={exp.publishedAt} revisedAt={exp.revisedAt} path={`/explainer/${params.slug}`} />
           <p className="article-lead">{exp.lead}</p>
           <div
             className="article-body"

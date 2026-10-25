@@ -24,6 +24,7 @@
     "verify:corrections": "tsx scripts/verify-corrections.ts",
     "verify:contact-links": "tsx scripts/verify-contact-links.ts",
     "verify:next-step": "tsx scripts/verify-next-step.ts",
+    "verify:page-dates": "tsx scripts/verify-page-dates.ts",
     "build:generated-mark": "tsx scripts/verify-generated-present.ts --mark",
     "verify:generated": "tsx scripts/verify-generated-present.ts --check",
     "build:related-news": "tsx scripts/precompute-related-news.ts",

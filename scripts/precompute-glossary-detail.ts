@@ -40,6 +40,7 @@ type GlossaryDetailEntry = {
   term: {
     id: string; term: string; slug: string; english?: string; reading?: string;
     shortDef: string; detail?: string; category: string[]; subcategory?: string;
+    publishedAt?: string; revisedAt?: string; // 日付表示便（2026-10-25）: 詳細の「公開日・更新日」
   };
   relatedNews: NewsRef[];
   relatedExplainers: ExplainerRef[];
@@ -270,6 +271,7 @@ async function main(): Promise<void> {
       term: {
         id: g.id, term: g.term, slug: g.slug, english: g.english, reading: g.reading,
         shortDef: shortDefNorm, detail: detailNorm, category: g.category ?? [], subcategory: g.subcategory,
+        publishedAt: g.publishedAt, revisedAt: g.revisedAt,
       },
       relatedNews, relatedExplainers, relatedOperators, relatedProjects,
       sameCategoryTerms, useCategoryFallback, relatedTerms,

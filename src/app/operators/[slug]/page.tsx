@@ -10,6 +10,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import CorrectionHistory from '@/components/CorrectionHistory';
+import PageDates from '@/components/PageDates';
 import RelatedNewsList from '@/components/RelatedNewsList';
 import RelatedProjectsList from '@/components/RelatedProjectsList';
 import type { News, Project } from '@/lib/microcms';
@@ -36,6 +37,7 @@ type OperatorRaw = {
   corporateType?: string; prefecture?: string; city?: string; foundedYear?: number;
   listedMarket?: string; ticker?: string; description?: string; products?: string;
   bessRelation?: string; websiteUrl?: string; sourceUrl?: string;
+  publishedAt?: string; revisedAt?: string; // 日付表示便（2026-10-25）: 詳細の「公開日・更新日」
 };
 type OperatorDetailEntry = {
   operator: OperatorRaw;
@@ -69,6 +71,7 @@ async function loadEntry(slug: string): Promise<OperatorDetailEntry | null> {
       corporateType: op.corporateType, prefecture: op.prefecture, city: op.city, foundedYear: op.foundedYear,
       listedMarket: op.listedMarket, ticker: op.ticker, description: op.description, products: op.products,
       bessRelation: op.bessRelation, websiteUrl: op.websiteUrl, sourceUrl: op.sourceUrl,
+      publishedAt: op.publishedAt, revisedAt: op.revisedAt,
     },
     bodyHtml: op.body ?? '',
     relatedNews: [], relatedProjects: [], involvedProjects: [], relatedExplainers: [], sameCategoryOperators: [], gridArea: null,
@@ -168,6 +171,7 @@ export default async function OperatorDetailPage({
             </div>
             <h1 className="op-detail-title">{operator.name}</h1>
             {operator.nameEn && <p className="op-detail-en">{operator.nameEn}</p>}
+            <PageDates publishedAt={operator.publishedAt} revisedAt={operator.revisedAt} path={`/operators/${params.slug}`} />
             <p className="op-detail-lead">{operator.description}</p>
           </div>
 

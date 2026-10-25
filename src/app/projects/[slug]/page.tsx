@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import CorrectionHistory from '@/components/CorrectionHistory';
+import PageDates from '@/components/PageDates';
 import {
   getProjectBySlug,
   getAllProjectSlugs,
@@ -161,6 +162,7 @@ export default async function ProjectDetailPage({
           </p>
 
           <h1 className="page-title">{item.name}</h1>
+          <PageDates publishedAt={item.publishedAt} revisedAt={item.revisedAt} path={`/projects/${params.slug}`} />
 
           <div className="subsidy-status-badges">
             <span className={`badge badge-status-${status === '稼働中' ? 'open' : status === '建設中' ? 'upcoming' : 'closed'}`}>

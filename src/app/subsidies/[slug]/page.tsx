@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import CorrectionHistory from '@/components/CorrectionHistory';
+import PageDates from '@/components/PageDates';
 import {
   getSubsidyBySlug,
   getAllSubsidySlugs,
@@ -122,6 +123,7 @@ export default async function SubsidyDetailPage({
           )}
 
           <h1 className="page-title">{displayName}</h1>
+          <PageDates publishedAt={item.publishedAt} revisedAt={item.revisedAt} path={`/subsidies/${params.slug}`} />
 
           {/* S5: 出典が主のページは「当サイトは公式サイトではない」ことを本文で明示する */}
           {isPointer && (

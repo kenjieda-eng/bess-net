@@ -11,7 +11,7 @@ export default function CorrectionHistory({ path }: { path: string }) {
   const list = correctionsForPath(path);
   if (list.length === 0) return null;
   return (
-    <section aria-labelledby="correction-history-title" className="correction-history" style={{ borderTop: '1px solid var(--color-border, #cbd5e1)', marginTop: 28, paddingTop: 16 }}>
+    <section id="correction-history" aria-labelledby="correction-history-title" className="correction-history" style={{ borderTop: '1px solid var(--color-border, #cbd5e1)', marginTop: 28, paddingTop: 16, scrollMarginTop: 110 /* 題名の下の「訂正履歴を見る」で飛んだとき、固定ヘッダの下に隠れないように */ }}>
       <h3 id="correction-history-title" style={{ fontSize: 17, fontWeight: 700, margin: '0 0 8px' }}>{'訂正履歴'}</h3>
       {list.map((c) => (
         <div key={c.id} id={`correction-${c.id}`} style={{ fontSize: 14, lineHeight: 1.8, margin: '0 0 12px', overflowWrap: 'anywhere' }}>
