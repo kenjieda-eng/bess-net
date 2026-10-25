@@ -46,6 +46,12 @@ export const plain = (s: string) =>
 export const digest = (v: unknown) =>
   createHash('sha256').update(Array.isArray(v) || (typeof v === 'object' && v !== null) ? JSON.stringify(v) : plain(String(v ?? ''))).digest('hex').slice(0, 16);
 const isArrayField = (v: unknown) => Array.isArray(v);
+/** 関連（relation）欄の形をそろえる: GET の [{ id: 'a' }] を ID の文字列の配列 ['a'] に直す（計画の op は文字列の配列で書く）。
+ *  それ以外の値はそのまま。本実行便 10-22 で links の relatedTerms 2 件が、当てた後の再実行で「中止」になった（形の違いで不一致）。 */
+export const relIds = (v: unknown): unknown =>
+  Array.isArray(v) && v.length > 0 && v.every((x) => x && typeof x === 'object' && !Array.isArray(x) && typeof (x as { id?: unknown }).id === 'string')
+    ? v.map((x) => (x as { id: string }).id) : v;
+const normArr = (v: unknown) => norm(relIds(v));
 const count = (s: string, w: string) => (w ? s.split(w).length - 1 : 0);
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 /** 照合用の同値判定。microCMS の保存形式の差を吸収する:
@@ -85,8 +91,8 @@ export function applyOps(rec: Rec, ops: Op[]): { payload: Record<string, unknown
     const base = op.field in cur ? cur[op.field] : rec[op.field];
     if (isArrayField(base) || op.note?.includes('配列')) {
       const want = JSON.parse(op.new);
-      if (norm(base) === norm(want)) { already++; continue; }
-      if (norm(base) !== norm(JSON.parse(op.old))) { problems.push(`${op.field}: 配列の現在値 ${norm(base)} が old と不一致`); continue; }
+      if (normArr(base) === normArr(want)) { already++; continue; }
+      if (normArr(base) !== normArr(JSON.parse(op.old))) { problems.push(`${op.field}: 配列の現在値 ${norm(base)} が old と不一致`); continue; }
       cur[op.field] = want;
       continue;
     }
@@ -125,7 +131,8 @@ export function applyOps(rec: Rec, ops: Op[]): { payload: Record<string, unknown
  * 見えない差の op が生の文字列でまだ当たっていなければ skip しない（plain の sha は変わらないので一致に見える）。
  */
 export function canSkipByExpectFinal(rec: Record<string, unknown>, p: Patch): boolean {
-  if (!p.expect_final || !Object.entries(p.expect_final).every(([k, hx]) => digest(rec[k] ?? null) === hx)) return false;
+  // 関連欄は GET の [{id}] と、計画の文字列の配列のどちらの形で expect_final を計算していても一致とみなす
+  if (!p.expect_final || !Object.entries(p.expect_final).every(([k, hx]) => digest(rec[k] ?? null) === hx || digest(relIds(rec[k] ?? null)) === hx)) return false;
   return !p.ops.some((op) => isInvisibleOp(op) && !isArrayField(rec[op.field]) && invisiblePending(asText(rec[op.field]), op));
 }
 
@@ -138,7 +145,7 @@ export function rawPlanAfter(rec: Record<string, unknown>, ops: Op[]): Record<st
   for (const op of ops) {
     const base = op.field in cur ? cur[op.field] : rec[op.field];
     if (isArrayField(base) || op.note?.includes('配列')) {
-      if (norm(base) === norm(JSON.parse(op.old))) cur[op.field] = JSON.parse(op.new);
+      if (normArr(base) === normArr(JSON.parse(op.old))) cur[op.field] = JSON.parse(op.new);
       else cur[op.field] = base;
       continue;
     }
@@ -156,7 +163,7 @@ export function rawMismatches(rec: Record<string, unknown>, ops: Op[], payload: 
   const out: string[] = [];
   for (const [k, v] of Object.entries(want)) {
     const sent = k in payload ? payload[k] : rec[k];
-    if (norm(sent) !== norm(v)) out.push(k);
+    if (normArr(sent) !== normArr(v)) out.push(k);
   }
   return out;
 }

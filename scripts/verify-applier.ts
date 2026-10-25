@@ -11,9 +11,10 @@
  *   (b) 当てた後の再実行で skip になる（already・payload 空・expect_final で skip）
  *   (c) 置換・追記・空にする・配列（JSON 値モード）・中止の判定が、改修前の applyOps（下に逐語で写した legacyApplyOps）と同じ
  *   (d) 改修前の判定（見えない差の op を適用済みにする）を rawMismatches が不一致として検出する／改修後は不一致 0
+ *   (e) 関連（relation）欄: GET の [{id}] と計画の ID の文字列の配列を同じに扱う。当てた後の再実行で skip・old が違えば中止（2026-10-25）
  * 実行: npx tsx scripts/verify-applier.ts
  */
-import { applyOps, canSkipByExpectFinal, digest, isInvisibleOp, plain, rawMismatches, type Op, type Patch } from './lib/microcms-applier';
+import { applyOps, canSkipByExpectFinal, digest, isInvisibleOp, plain, rawMismatches, relIds, type Op, type Patch } from './lib/microcms-applier';
 
 export {};
 
@@ -116,7 +117,43 @@ for (const c of CASES) {
   if (!now.problems.length) ok(rawMismatches(r, c.ops, now.payload).length === 0, `(c) ${c.name}: 生の文字列の突き合わせが不一致（誤検出）`);
 }
 
-console.log(`[verify:applier] 検査 ${checks} 件（見えない差 ${INVIS.length} 型・その他 ${CASES.length} 型）`);
+// ---- (e) 関連（relation）欄: GET は [{id}]、計画の new は ID の文字列の配列（本実行便 10-22 の links relatedTerms 2 件・2026-10-25 改修）----
+const ids = (...xs: string[]) => xs.map((id) => ({ id }));
+const NEW_REL = '["c","d"]';
+const REL: { name: string; oldStr: string }[] = [
+  { name: 'old が [{id}] の形（GET の値をそのまま写した計画）', oldStr: '[{"id":"a"},{"id":"b"}]' },
+  { name: 'old が文字列の配列の形', oldStr: '["a","b"]' },
+];
+for (const c of REL) {
+  const ops = [op('relatedTerms', c.oldStr, NEW_REL, '配列（関連）')];
+  const p: Patch = { ep: 'links', slug: 'x', order: 1, ops, expect_final: { relatedTerms: digest(['c', 'd']) } };
+  // 初回: 当たる
+  const r0 = rec({ relatedTerms: ids('a', 'b') });
+  const a = applyOps(r0, ops);
+  ok(a.problems.length === 0 && J(a.payload.relatedTerms) === NEW_REL, `(e) ${c.name}: 初回に当たらない（${J(a)}）`);
+  ok(!canSkipByExpectFinal(r0, p), `(e) ${c.name}: 初回に expect_final で skip した`);
+  ok(rawMismatches(r0, ops, a.payload).length === 0, `(e) ${c.name}: 初回の生の突き合わせが不一致`);
+  // 当てた後の再実行（GET は [{id}] で返る）: skip
+  const r1 = rec({ relatedTerms: ids('c', 'd') });
+  const b = applyOps(r1, ops);
+  ok(b.problems.length === 0 && Object.keys(b.payload).length === 0 && b.already === 1, `(e) ${c.name}: 再実行で skip にならない（${J(b)}）`);
+  ok(canSkipByExpectFinal(r1, p), `(e) ${c.name}: 再実行で expect_final（文字列の配列で計算）による skip にならない`);
+  ok(canSkipByExpectFinal(r1, { ...p, expect_final: { relatedTerms: digest(ids('c', 'd')) } }), `(e) ${c.name}: expect_final を [{id}] の形で計算した計画でも skip する`);
+  ok(rawMismatches(r1, ops, b.payload).length === 0, `(e) ${c.name}: 再実行の生の突き合わせが不一致`);
+  if (c.oldStr.startsWith('[{')) ok(legacyApplyOps(r1, ops).problems.length === 1, `(e) ${c.name}: 改修前は再実行で中止のはず（前提の確認）`);
+  // old が違う: 中止
+  for (const [nm, v] of [['別の ID', ids('x')], ['順序が違う', ids('d', 'c')], ['空', []]] as const) {
+    const r2 = rec({ relatedTerms: v });
+    const d = applyOps(r2, ops);
+    ok(d.problems.length === 1 && Object.keys(d.payload).length === 0, `(e) ${c.name}: 現在値が${nm}のとき中止にならない（${J(d)}）`);
+    ok(!canSkipByExpectFinal(r2, p), `(e) ${c.name}: 現在値が${nm}のとき expect_final で skip した`);
+  }
+}
+// relIds は {id} 以外の要素を含む配列・文字列の配列・空配列を変えない（select・テキストの配列の判定を変えない）
+ok(J(relIds(['a'])) === '["a"]' && J(relIds([])) === '[]' && J(relIds([{ id: 'a', x: 1 }])) === '["a"]' && J(relIds([{ x: 1 }])) === '[{"x":1}]' && relIds('s') === 's' && relIds(null) === null,
+  '(e) relIds の変換範囲が想定と違う');
+
+console.log(`[verify:applier] 検査 ${checks} 件（見えない差 ${INVIS.length} 型・その他 ${CASES.length} 型・関連欄 ${REL.length} 型）`);
 if (fails.length) {
   console.error(`[verify:applier] NG ${fails.length} 件`);
   for (const f of fails) console.error(`  - ${f}`);
