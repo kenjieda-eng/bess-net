@@ -3378,6 +3378,51 @@
       "checked_on": "2026-10-22",
       "note": "Ck2e 第5版（本実行便）で登録。2026-10-22 に curl で HTTP 200・2,591,196 バイト・56 頁。産業構造審議会 イノベーション・環境分科会 排出量取引制度小委員会 第8回 資料3。p.25「2027年度秋頃に開設予定」。",
       "used_in": "explainer/eu-ets-and-gx-ets-for-bess.sources"
+    },
+    {
+      "name": "【２次公募開始】令和８年度福島県再生可能エネルギー等導入促進支援事業費（再生可能エネルギーに係るもの）（地産地消型再生可能エネルギー発電設備導入促進事業）について",
+      "publisher": "福島県",
+      "url": "https://www.pref.fukushima.lg.jp/sec/11025c/chisanchisyo-r8-2.html",
+      "title_verbatim": "【２次公募開始】令和８年度福島県再生可能エネルギー等導入促進支援事業費（再生可能エネルギーに係るもの）（地産地消型再生可能エネルギー発電設備導入促進事業）について - 福島県ホームページ",
+      "checked_on": "2026-10-25",
+      "note": "補助金便 10-20（月曜定例・2026-10-25 実行）で登録。2026-10-25 17:46 JST に curl（Chrome UA）で取得（HTTP 200・17,587 バイト・sha256 dcc75bec494a307919c4ff9305ee40f5d44389c1bd2d4a2d942802ef46ef0b41＝便の 10-20 取得と同一）。「掲載日：2026年10月15日更新」。公募期間「令和８年１０月１５日（木曜日）から令和８年１１月２０日（金曜日）１７時まで」・申請希望届「令和８年１１月１３日（金曜日）17時00分（必着）」を確認。",
+      "used_in": "subsidies/fukushima-chisanchisyo-saiene-2026.body"
+    },
+    {
+      "name": "公募要領",
+      "publisher": "福島県",
+      "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/767043.pdf",
+      "title_verbatim": "（PDF の /Title なし。表紙「令和８年度（２０２６年度）／福島県再生可能エネルギー等導入促進支援事業費／（再生可能エネルギーに係るもの）／（地産地消型再生可能エネルギー発電設備導入促進事業）／第２次公募／公募要領／２０２６年１０月／福島県」）",
+      "checked_on": "2026-10-25",
+      "note": "補助金便 10-20 で登録。2026-10-25 17:46 JST に curl（Chrome UA）で取得（HTTP 200・586,432 バイト・22 頁・sha256 424e73ceb704dbef4ee468659f9d23c7b227cb1309efe39894e4fbfd3468a78a＝便の 10-20 取得と同一）。補助事業者（民間法人）・補助率（１／２以内、蓄電池１／３以内）・上限（１０億円／計画策定１千万円）・表２・表３（蓄電池は発電出力に対し１００％以下）・事業期間を確認。表２の蓄電池の単位は表のまま「２０万円／ｋＷ」（事業概要は「20万円/kWh」）。",
+      "used_in": "subsidies/fukushima-chisanchisyo-saiene-2026.body"
+    },
+    {
+      "name": "事業概要（令和８年度事業）",
+      "publisher": "福島県",
+      "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/754156.pdf",
+      "title_verbatim": "PowerPoint プレゼンテーション（PDF の /Title）／表紙行「令和８年度 地産地消型再生可能エネルギー発電設備導入促進事業」",
+      "checked_on": "2026-10-25",
+      "note": "補助金便 10-20 で登録。2026-10-25 17:46 JST に curl（Chrome UA）で取得（HTTP 200・631,205 バイト・1 頁・sha256 da4a1e636f497def6a8e7dbbefaa1fbafb6a5edb52c6f7f3ef8a64f93be79de6＝便の 10-20 取得と同一）。「(非FIT・非FIP)」「オフサイトPPA(第三者所有モデル)方式に限る」「蓄電池：容量(kWh) × 20万円/kWh × 1/3以内」を確認。",
+      "used_in": "subsidies/fukushima-chisanchisyo-saiene-2026.body"
+    },
+    {
+      "name": "【公募開始】福島県再生可能エネルギー等導入促進支援事業費（再生可能エネルギーに係るもの）（地域活用型再生可能エネルギー導入支援事業）について",
+      "publisher": "福島県",
+      "url": "https://www.pref.fukushima.lg.jp/sec/11025c/katsuyo-r8.html",
+      "title_verbatim": "【公募開始】福島県再生可能エネルギー等導入促進支援事業費（再生可能エネルギーに係るもの）（地域活用型再生可能エネルギー導入支援事業）について - 福島県ホームページ",
+      "checked_on": "2026-10-25",
+      "note": "補助金便 10-20 で登録。2026-10-25 17:46 JST に curl（Chrome UA）で取得（HTTP 200・16,559 バイト・sha256 d8f5918f68c2493c963e1d93ced744ddbdc3e11e5629d940d6445f41e319a3d8＝便の 10-20 取得と同一）。「掲載日：2026年9月2日更新」。公募期間「令和８年７月１日（水）から令和８年１１月１６日（月）１７時まで」・「※予算上限に達した場合は募集を締め切ります。」を確認。",
+      "used_in": "subsidies/fukushima-katsuyo-saiene-2026.body"
+    },
+    {
+      "name": "公募要領",
+      "publisher": "福島県",
+      "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/753429.pdf",
+      "title_verbatim": "（PDF の /Title なし。表紙「令和８年度（２０２６年度）／福島県再生可能エネルギー等導入促進支援事業費／（再生可能エネルギーに係るもの）／（地域活用型再生可能エネルギー導入支援事業）／公募要領／２０２６年７月／福島県」）",
+      "checked_on": "2026-10-25",
+      "note": "補助金便 10-20 で登録。2026-10-25 17:46 JST に curl（Chrome UA）で取得（HTTP 200・545,485 バイト・20 頁・sha256 40197631c7db3a11c7be4636a36162539d79c8cc719d51a5df10baa9cb8a77e8＝便の 10-20 取得と同一）。補助事業者（県内の市町村・県内に事務所等を有する法人）・補助率（１／１０以内）・上限（１億円）・表２（蓄電池の定格出力・容量）を確認。",
+      "used_in": "subsidies/fukushima-katsuyo-saiene-2026.body"
     }
   ]
 }

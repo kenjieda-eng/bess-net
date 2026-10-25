@@ -1,0 +1,73 @@
+{
+ "mode": "apply",
+ "calls": {
+  "GET": 9,
+  "PATCH": 3
+ },
+ "counts": {
+  "patched": 3,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "subsidies/kochi-bess-2026",
+   "id": "ss8zx2r_o",
+   "result": "patched",
+   "fields": [
+    "deadline"
+   ],
+   "check": [],
+   "before": {
+    "deadline": "令和８年10月30日（金）まで　17時必着"
+   },
+   "after": {
+    "deadline": "令和８年11月30日（月）まで　17時必着　［延長］（延長前は10月30日（金）まで　17時必着。募集期間内であっても、内示額の合計が予算額に達した時点で募集を終了）"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/saga-bess-2026",
+   "id": "tvs__p89kmzk",
+   "result": "patched",
+   "fields": [
+    "deadline"
+   ],
+   "check": [],
+   "before": {
+    "deadline": "令和８年10月30日（金）17時まで（先着順）※予算がなくなり次第、受付を終了します"
+   },
+   "after": {
+    "deadline": "令和８年11月30日（月）17時まで（先着順）※予算がなくなり次第、受付を終了します（受付終了日は10月30日（金）から延長）"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/mie-bess-2026",
+   "id": "o51k5czja6d",
+   "result": "patched",
+   "fields": [
+    "status",
+    "deadline"
+   ],
+   "check": [],
+   "before": {
+    "status": [
+     "受付終了"
+    ],
+    "deadline": "令和８年１１月６日（金曜日）"
+   },
+   "after": {
+    "status": [
+     "公募中"
+    ],
+    "deadline": "令和８年１１月６日（金曜日）（三重県は2026年9月7日に「※補助金の申請受付を再開します。」と告知。補助金の残り金額は430,000円〔2026年10月6日（火）時点・三重県地球温暖化防止活動推進センターの掲示〕）"
+   }
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 6
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 3,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "subsidies/kochi-bess-2026",
+   "id": "ss8zx2r_o",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/saga-bess-2026",
+   "id": "tvs__p89kmzk",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/mie-bess-2026",
+   "id": "o51k5czja6d",
+   "result": "skip_idempotent"
+  }
+ ]
+}
