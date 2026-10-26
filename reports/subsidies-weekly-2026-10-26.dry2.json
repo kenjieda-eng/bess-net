@@ -1,0 +1,41 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 8
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 4,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "subsidies/tochigi-bess-2026",
+   "id": "fy-ajkuxzws",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/shiga-energy-saving-2026",
+   "id": "tdlhluna7xb",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/tottori-bess-2026",
+   "id": "7q1ky3riyt",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/ehime-bess-2026",
+   "id": "5wtsubx5v",
+   "result": "skip_idempotent"
+  }
+ ]
+}
