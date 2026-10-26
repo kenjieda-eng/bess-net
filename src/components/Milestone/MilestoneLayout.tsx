@@ -1,6 +1,8 @@
 /**
  * MilestoneLayout — 達成記念ページ共通レイアウト (Server Component)
  *
+ * ★2026-10-26 から使わない（サイトの歩み便 第 2 版）: /milestones は更新履歴（src/data/site-history.ts）に作り直し、詳細 4 枚は next.config.js の redirects で 301。表示に使わない（消さずに残す）。
+ *
  * 設計:
  *   - L-JEPX-UI-001: inline style + className 併用
  *   - L-JEPX-UI-006: fontSize 16-18px 業界事業者向け

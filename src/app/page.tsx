@@ -466,9 +466,9 @@ export default async function Home() {
             </a>{' '}
             までご連絡ください。
           </p>
-          {/* 記録系（ロードマップ・公開予定）は /milestones へ移設（top分析2026-07-12） */}
+          {/* /milestones は更新履歴（主な公開と更新）。2026-10-26 に作り直した（サイトの歩み便 第 2 版） */}
           <p style={{ fontSize: 15, marginTop: 16 }}>
-            <Link href="/milestones" style={{ fontWeight: 600 }}>サイトの歩み・公開予定 →</Link>
+            <Link href="/milestones" style={{ fontWeight: 600 }}>更新履歴 →</Link>
           </p>
         </div>
       </section>

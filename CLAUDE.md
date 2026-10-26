@@ -214,6 +214,7 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
   ✅ 主要テキストが初期DOMに存在（deploy後 curl の script外照合、#107）
   ✅ title に主要キーワード「蓄電池/蓄電所」（policy・events・faq で3連続の同型修正実績）
   ✅ 件数・数値は焼き込まず動的参照（totalCount／safeCount）
+  ✅ 新しいページ・データベース・ツールを公開する便は、`src/data/site-history.ts` に 1 件足す（日付は本番に出た日・事実だけ・未来の予定は書かない）。
 
 【受け入れ基準の恒久追加（補助金の地域データ）】
   ✅ 補助金の地域データ（scheme 等）を触る PATCH 後は、applicable_prefs の before/after 監査＋

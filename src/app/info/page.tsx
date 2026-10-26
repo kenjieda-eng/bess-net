@@ -10,7 +10,7 @@ export const revalidate = 300; // 5分ごと
 export const metadata: Metadata = {
   title: 'お知らせ',
   description:
-    '蓄電所ネット運営からのお知らせ・サイト更新情報・編集後記。業界ニュースは「ニュース」、市場制度や技術の解説は「解説」をご覧ください。',
+    '蓄電所ネット運営からのお知らせ・編集後記。サイトの主な公開と更新は「更新履歴」、業界ニュースは「ニュース」、市場制度や技術の解説は「解説」をご覧ください。',
   alternates: { canonical: '/info' },
 };
 
@@ -34,7 +34,8 @@ export default async function InfoListPage() {
           <div className="section-label">Info</div>
           <h1 className="section-title">お知らせ</h1>
           <p className="section-desc" style={{ marginBottom: 32 }}>
-            蓄電所ネット運営からのお知らせ・サイト更新情報・編集後記をお届けします。
+            蓄電所ネット運営からのお知らせ・編集後記をお届けします。
+            サイトの主な公開と更新は<Link href="/milestones">更新履歴</Link>、
             業界の速報は<Link href="/news">ニュース</Link>、
             市場制度や技術の解説は<Link href="/explainer">解説</Link>をご覧ください。
           </p>

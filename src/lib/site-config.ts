@@ -100,8 +100,8 @@ export const siteConfig = {
     // Sprint 5 開始準備
     { label: '業界レポート2026', href: '/reports/2026' },
     { label: '火災・トラブル事例DB', href: '/incidents' },
-    // L-029 先回り起草: 5/22 機能完全形達成記念ページ
-    { label: '達成記念', href: '/milestones' },
+    // 更新履歴（主な公開と更新）。2026-10-26 に達成記念ページ一覧から作り直した（サイトの歩み便 第 2 版）
+    { label: '更新履歴', href: '/milestones' },
     // Buyer プレイヤー別 (2026-05-25 再設計)
     { label: 'これから参入する事業者', href: '/buyer/new-entry' },
     { label: '投資家・ファンド', href: '/buyer/investor' },
@@ -128,6 +128,7 @@ export const siteConfig = {
 
   // ロードマップ（トップページ表示用）
   // description 中の `{substations}` プレースホルダーは page.tsx 側で実際の件数に置換
+  // ★2026-10-26 から表示に使わない（サイトの歩み便 第 2 版）: /milestones は更新履歴に作り直した。データは消さずに残す。
   roadmap: [
     {
       phase: 'Sprint 1',

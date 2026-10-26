@@ -42,7 +42,7 @@ export const GLOBAL_MARKETS: Record<CountryKey, CountryMarket> = {
     ],
     keyPlayers: [
       'Tesla (Megapack、大型BESS最大手)',
-      'Fluence (Siemens × AES、世界 No.1 級)',
+      'Fluence (Siemens × AES)',
       'Wärtsilä (フィンランド系、米国展開大)',
       'Powin (米国系、大型案件多)',
       'LG Energy Solution (韓国、米国工場展開)',

@@ -1,6 +1,8 @@
 /**
  * src/data/milestones.ts — 達成記念ページ用データ定義
  *
+ * ★2026-10-26 から使わない（サイトの歩み便 第 2 版）: /milestones は更新履歴（src/data/site-history.ts）に作り直し、詳細 4 枚は next.config.js の redirects で 301。表示に使わない（消さずに残す）。
+ *
  * 設計:
  *   - /milestones/[slug] 動的ルートのデータソース
  *   - status: 'upcoming' (準備中、公開待ち) / 'achieved' (達成済) / 'planned' (詳細未定)

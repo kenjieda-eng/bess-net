@@ -1,215 +1,132 @@
 /**
- * /milestones — 達成記念ページ一覧
+ * /milestones — 更新履歴（主な公開と更新）（サイトの歩み便 第 2 版・2026-10-26）
  *
- * 設計:
- *   - Server Component、静的 import のみ (鉄則 #2 SSR 外部 API 0)
- *   - L-029: 先回り起草対応、追加 milestone は src/data/milestones.ts に追記
+ * 蓄電所ネットで公開した主なページ・データベース・ツールを、公開した日の新しい順に記録する。
+ * - データは src/data/site-history.ts（文案の逐語）。force-static・外部取得 0（鉄則 #2）。全件を初期 DOM に載せる（#107）。
+ * - 記述の訂正は /corrections（訂正履歴）に分ける。未来の予定・達成の演出・自称の最上級は載せない。
+ * - 2026-10-26 まで: 達成記念ページ一覧（src/data/milestones.ts・site-config の roadmap）。旧データは残すが表示に使わない。
+ *   達成記念の詳細 4 枚は next.config.js の redirects で 301。
  */
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { getAchievedMilestones, getUpcomingMilestones } from '@/data/milestones';
+import { SITE_HISTORY, type SiteHistoryItem } from '@/data/site-history';
 import { siteConfig } from '@/lib/site-config';
-import type { RoadmapStatus } from '@/lib/site-config';
-import substationsIndex from '@/data/substations/index.json';
 
-export const revalidate = 86400;
+export const dynamic = 'force-static';
 
-// トップから移設（top分析2026-07-12・削除ではなく移設の大原則）: 公開ロードマップ＋公開予定コンテンツ
-const ROADMAP_BADGE: Record<RoadmapStatus, { label: string; className: string }> = {
-  done: { label: '✅ 公開済', className: 'roadmap-badge roadmap-badge-done' },
-  'in-progress': { label: '🚧 開発中', className: 'roadmap-badge roadmap-badge-in-progress' },
-  planned: { label: '📅 計画中', className: 'roadmap-badge roadmap-badge-planned' },
-};
-
-// 変電所数はローカル JSON（本ページは静的 import のみの設計＝鉄則 #2 を維持）
-const SUBSTATIONS_STR = (substationsIndex as { total: number }).total.toLocaleString('en-US');
-
-const upcomingFeatures = [
-  {
-    num: '01',
-    title: '業界レポート2026',
-    body:
-      '当サイト独自機能で蓄積したデータ (補助金/系統/事業者/案件/JEPX/海外5市場) を編集統合した年次レポートを公開予定。',
-    status: 'Sprint 5',
-  },
-  {
-    num: '02',
-    title: '火災・トラブル事例DB',
-    body:
-      '国内外の蓄電池トラブル事例（火災・性能低下・系統影響）を公開資料に基づき体系化。業界の安全文化向上に資する情報基盤を構築。',
-    status: 'Sprint 5',
-  },
-  {
-    num: '03',
-    title: '日本の蓄電所マップ全国展開',
-    body:
-      '中部電力PG 1,081箇所を先行公開（地図対応は現状この1社のみ）。残る9社（北海道・東北・東京・北陸・関西・中国・四国・九州・沖縄）の緯度経度補完を進めつつ、Leaflet レイヤーへ順次展開予定。',
-    status: 'Sprint 5〜6',
-  },
-];
+const PAGE_PATH = '/milestones';
+const PAGE_TITLE = '更新履歴（主な公開と更新）｜蓄電所ネット';
+const DESCRIPTION = '蓄電所ネットで公開した主なページ・データベース・ツールを、公開した日の新しい順に記録しています。記述の訂正は、訂正履歴にまとめています。';
 
 export const metadata: Metadata = {
-  // #88: 手書き「- 蓄電所ネット」を除去（template が自動付与・本番二重を実測し修正 2026-07-15）
-  title: '達成記念ページ一覧',
-  description:
-    '蓄電所ネット (bess-net) の達成記念ページ一覧。機能完全形達成、業界レポート公開、業界唯一性達成等の主要マイルストーン。一般社団法人エネルギー情報センターが業界中立で運営。',
-  alternates: { canonical: '/milestones' },
+  title: { absolute: PAGE_TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_PATH },
+  openGraph: {
+    title: PAGE_TITLE,
+    description: DESCRIPTION,
+    url: `${siteConfig.url}${PAGE_PATH}`,
+    type: 'website',
+    // openGraph を書くと layout の既定が丸ごと置き換わるので、画像・サイト名・言語も明示する
+    images: [siteConfig.ogImage],
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+  },
 };
 
 function formatDateJa(dateStr: string): string {
-  const [year, month, day] = dateStr.split('-').map(Number);
-  return `${year}年${month}月${day}日`;
+  const [y, m, d] = dateStr.split('-').map(Number);
+  return `${y}年${m}月${d}日`;
 }
 
-export default function MilestonesIndexPage() {
-  const achieved = getAchievedMilestones();
-  const upcoming = getUpcomingMilestones();
+function HistoryLink({ label, url }: { label: string; url: string }) {
+  if (/^https?:\/\//.test(url)) {
+    return (
+      <a href={url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>
+        {label}
+      </a>
+    );
+  }
+  return (
+    <Link href={url} style={{ color: 'var(--color-accent)' }}>
+      {label}
+    </Link>
+  );
+}
 
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'トップ', item: 'https://bess-net.jp/' },
-      { '@type': 'ListItem', position: 2, name: '達成記念', item: 'https://bess-net.jp/milestones' },
-    ],
-  };
-
+export default function MilestonesPage() {
+  // 年ごとに分ける（データは新しい順）
+  const years: { year: string; items: SiteHistoryItem[] }[] = [];
+  for (const it of SITE_HISTORY) {
+    const y = it.date.slice(0, 4);
+    const last = years[years.length - 1];
+    if (last && last.year === y) last.items.push(it);
+    else years.push({ year: y, items: [it] });
+  }
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: '更新履歴',
+      url: `${siteConfig.url}${PAGE_PATH}`,
+      description: DESCRIPTION,
+      publisher: { '@type': 'Organization', name: siteConfig.organization.name, url: siteConfig.organization.url },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'トップ', item: `${siteConfig.url}/` },
+        { '@type': 'ListItem', position: 2, name: '更新履歴', item: `${siteConfig.url}${PAGE_PATH}` },
+      ],
+    },
+  ];
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader />
-      <main className="section">
-        {/* L-JEPX-UI-002: max-w 1320 inline 上書き */}
-        <div className="section-inner" style={{ maxWidth: 1024 }}>
+      <main className="page">
+        <div className="page-inner">
           <p className="article-breadcrumb">
-            <Link href="/">トップ</Link> / 達成記念
+            <Link href="/">トップ</Link> / 更新履歴
           </p>
-          <h1 className="section-title">達成記念ページ一覧</h1>
-          <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 32, lineHeight: 1.7 }}>
-            蓄電所ネット (bess-net) の主要マイルストーンの達成記念ページを一覧表示します。業界唯一性達成過程、業界レポート公開、データベース連携等の節目を継続的に蓄積していきます。
+          <h1 className="page-title">更新履歴</h1>
+          <p className="page-lead">
+            {'蓄電所ネットで公開した主なページ・データベース・ツールを、公開した日の新しい順に記録しています。記述の訂正は、'}
+            <Link href="/corrections" style={{ color: 'var(--color-accent)' }}>{'訂正履歴'}</Link>
+            {'にまとめています。'}
           </p>
-
-          {achieved.length > 0 && (
-            <section style={{ marginBottom: 48 }}>
-              <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, color: '#0f172a' }}>
-                達成済 (<span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums' }}>{achieved.length}</span> 件)
-              </h2>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {achieved.map((m) => (
-                  <li key={m.slug}>
-                    <Link
-                      href={`/milestones/${m.slug}`}
-                      style={{
-                        display: 'block',
-                        padding: 20,
-                        background: '#f8fafc',
-                        border: '1px solid #e2e8f0',
-                        borderRadius: 8,
-                        textDecoration: 'none',
-                        color: 'inherit',
-                      }}
-                    >
-                      <div style={{ fontSize: 15, fontWeight: 600, color: '#1d4ed8', fontVariantNumeric: 'tabular-nums' }} className="tabular-nums">
-                        {formatDateJa(m.date)}
-                      </div>
-                      <div style={{ fontSize: 18, fontWeight: 700, color: '#0f172a', marginTop: 4, lineHeight: 1.5 }}>
-                        {m.heroTitle}
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {upcoming.length > 0 && (
-            <section style={{ marginBottom: 48 }}>
-              <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, color: '#0f172a' }}>
-                今後の達成予定 (<span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums' }}>{upcoming.length}</span> 件)
-              </h2>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {upcoming.map((m) => (
-                  <li key={m.slug}>
-                    <Link
-                      href={`/milestones/${m.slug}`}
-                      style={{
-                        display: 'block',
-                        padding: 20,
-                        background: 'white',
-                        border: '1px solid #e2e8f0',
-                        borderRadius: 8,
-                        textDecoration: 'none',
-                        color: 'inherit',
-                      }}
-                    >
-                      <div style={{ fontSize: 15, fontWeight: 600, color: '#d97706', fontVariantNumeric: 'tabular-nums' }} className="tabular-nums">
-                        {formatDateJa(m.date)}
-                        {m.status === 'upcoming' && ' (公開待ち)'}
-                        {m.status === 'planned' && ' (予定)'}
-                      </div>
-                      <div style={{ fontSize: 18, fontWeight: 700, color: '#0f172a', marginTop: 4, lineHeight: 1.5 }}>
-                        {m.heroTitle}
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {/* ── トップから移設: 公開予定の主要コンテンツ（本文不変） ── */}
-          <section className="features" style={{ marginBottom: 48 }}>
-            <div className="section-label">Coming · 順次公開</div>
-            <h2 className="section-title" style={{ fontSize: 24 }}>公開予定の主要コンテンツ</h2>
-            <div className="feature-grid">
-              {upcomingFeatures.map((f) => (
-                <div key={f.num} className="feature">
-                  <div className="feature-num">
-                    {f.num}
-                    <span className="feature-status">{f.status}</span>
-                  </div>
-                  <h3>{f.title}</h3>
-                  <p>{f.body}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* ── トップから移設: 公開ロードマップ（Sprint 1〜5・本文不変） ── */}
-          <section className="roadmap" style={{ marginBottom: 48 }}>
-            <div className="section-label">Roadmap</div>
-            <h2 className="section-title" style={{ fontSize: 24 }}>公開ロードマップ</h2>
-            <div className="roadmap-list">
-              {siteConfig.roadmap.map((r, i) => {
-                const badge = ROADMAP_BADGE[r.status];
-                const description = r.description.replace('{substations}', SUBSTATIONS_STR);
-                return (
-                  <div
-                    key={i}
-                    className={`roadmap-item${r.isCurrent ? ' is-current' : ''}`}
+          {years.map(({ year, items }) => (
+            <section key={year} aria-labelledby={`site-history-${year}`} style={{ marginTop: 28 }}>
+              <h2 id={`site-history-${year}`} style={{ fontSize: 22, fontWeight: 700, margin: '0 0 12px' }}>{`${year}年`}</h2>
+              <ol style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {items.map((it) => (
+                  <li
+                    key={it.id}
+                    id={`site-history-${it.id}`}
+                    style={{ borderTop: '1px solid var(--color-border, #e2e8f0)', padding: '14px 0' }}
                   >
-                    <div className="roadmap-when">
-                      {r.phase}
-                      <small>{r.period}</small>
+                    <div style={{ fontSize: 14, color: 'var(--color-text-sub, #475569)', display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+                      <time dateTime={it.date} style={{ fontVariantNumeric: 'tabular-nums' }}>{formatDateJa(it.date)}</time>
+                      <span style={{ border: '1px solid var(--color-border, #cbd5e1)', borderRadius: 4, padding: '0 6px', fontSize: 13 }}>{it.category}</span>
                     </div>
-                    <div className="roadmap-content">
-                      <h4>
-                        {r.title}
-                        <span className={badge.className}>{badge.label}</span>
-                      </h4>
-                      <p>{description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
+                    <h3 style={{ fontSize: 17, fontWeight: 700, margin: '6px 0 4px', lineHeight: 1.5 }}>{it.title}</h3>
+                    <p style={{ fontSize: 15, lineHeight: 1.8, margin: '0 0 6px' }}>{it.summary}</p>
+                    <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0 }}>
+                      {it.links.map((l, i) => (
+                        <span key={`${l.url}-${i}`}>
+                          {i > 0 && ' ／ '}
+                          <HistoryLink label={l.label} url={l.url} />
+                        </span>
+                      ))}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))}
         </div>
       </main>
       <SiteFooter />

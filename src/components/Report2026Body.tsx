@@ -185,7 +185,7 @@ export default function Report2026Body(props: Report2026BodyProps) {
           当サイト海外5市場ハブの集計では、5大市場の蓄電容量は<strong>2025年累積 約{n(globalTotal2025)}GWh → 2030年予測 約{n(globalTotal2030)}GWh</strong>（公開予測ベース）。市場別の数値・出典は本ページ上部の「海外比較」表および<Link href="/global">海外5市場ハブ</Link>を参照。
         </p>
         <p style={P}>
-          <strong>分析（編集部・市場別）</strong>：<strong>米国</strong>＝FERC Order 841による市場参加ルール整備とIRA（インフレ抑制法）の税額控除が導入を牽引。<strong>EU</strong>＝電池規則・REPowerEU がサプライチェーンと導入を後押し（イタリアMACSE等の容量報酬型が始動）。<strong>中国</strong>＝CATL・BYDを軸とする圧倒的な製造基盤で最大規模。<strong>インド</strong>＝低い基点からの急拡大で最高CAGR（目安約60%）。<strong>豪州</strong>＝NEM／FCAS市場での蓄電池運用が先行し大型案件が続く。日本は市場規模では中国・米国に見劣りするが、容量市場・長期脱炭素オークション・需給調整市場という制度設計は海外先行事例に学びつつ独自進化している。技術・サプライチェーン・金融・規制が国際的に連動するため、海外動向の把握は国内事業の前提である。
+          <strong>分析（編集部・市場別）</strong>：<strong>米国</strong>＝FERC Order 841による市場参加ルール整備とIRA（インフレ抑制法）の税額控除が導入を牽引。<strong>EU</strong>＝電池規則・REPowerEU がサプライチェーンと導入を後押し（イタリアMACSE等の容量報酬型が始動）。<strong>中国</strong>＝CATL・BYDを軸とする製造基盤で最大規模。<strong>インド</strong>＝低い基点からの急拡大で最高CAGR（目安約60%）。<strong>豪州</strong>＝NEM／FCAS市場での蓄電池運用が先行し大型案件が続く。日本は市場規模では中国・米国に見劣りするが、容量市場・長期脱炭素オークション・需給調整市場という制度設計は海外先行事例に学びつつ独自進化している。技術・サプライチェーン・金融・規制が国際的に連動するため、海外動向の把握は国内事業の前提である。
         </p>
         <p style={LINKS}>
           関連：<Link href="/global">海外5市場ハブ</Link>・<Link href="/global/us">米国</Link>・<Link href="/global/eu">EU</Link>・<Link href="/global/cn">中国</Link>

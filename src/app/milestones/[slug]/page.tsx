@@ -1,6 +1,8 @@
 /**
  * /milestones/[slug] — 達成記念ページ動的ルート (SSG)
  *
+ * ★2026-10-26 から使わない（サイトの歩み便 第 2 版）: /milestones は更新履歴（src/data/site-history.ts）に作り直し、詳細 4 枚は next.config.js の redirects で 301。表示に使わない（消さずに残す）。
+ *
  * 設計:
  *   - generateStaticParams で全 milestone を build 時に静的生成
  *   - 鉄則 #2 SSR 外部 API 0 (静的データのみ)
@@ -9,15 +11,17 @@
 
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { MILESTONES, getMilestoneBySlug } from '@/data/milestones';
+import { getMilestoneBySlug } from '@/data/milestones';
 import MilestoneLayout from '@/components/Milestone/MilestoneLayout';
 
 interface Props {
   params: { slug: string };
 }
 
+// 2026-10-26 から 4 枚とも next.config.js の redirects で行き先へ飛ばすので、事前生成しない（src/data/milestones.ts のデータは残す）
+export const dynamicParams = false;
 export function generateStaticParams() {
-  return MILESTONES.map((m) => ({ slug: m.slug }));
+  return [] as { slug: string }[];
 }
 
 export function generateMetadata({ params }: Props): Metadata {

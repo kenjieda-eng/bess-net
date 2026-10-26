@@ -152,12 +152,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteConfig.url}/seller/epc`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${siteConfig.url}/seller/developer`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${siteConfig.url}/seller/reuse-secondhand`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    // 達成記念ページ (5/22 機能完全形達成準備、L-029 先回り起草)
+    // 更新履歴（主な公開と更新）。達成記念の詳細 4 枚は 2026-10-26 から 301（next.config.js）なので載せない
     { url: `${siteConfig.url}/milestones`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${siteConfig.url}/milestones/2026-05-22-feature-complete`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${siteConfig.url}/milestones/2026-05-24-industry-report-2026`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${siteConfig.url}/milestones/2026-05-28-aj-fire-database`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${siteConfig.url}/milestones/2026-06-11-vip-citation`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     // Sprint 4 後半 (依頼AP、業界唯一 業界カオスマップ)
     { url: `${siteConfig.url}/map/industry-chaos`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Sprint 4 後半 (依頼AN、業界唯一 JEPX ハブ)
