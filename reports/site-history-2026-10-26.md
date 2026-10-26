@@ -164,7 +164,23 @@
 
 ## (4) 本番の確認
 
-（push 後に追記）
+- **デプロイ**: commit `d563c7a` を 17:43 に push し、Vercel の Production `bess-ltkd9imwo` が Ready になった（17:54 に確認）。
+- **1 回目（17:54:46 JST）** と **30 分後（18:23:20 JST）**: どちらも NG 0。30 分後は、補助金便 10-26 の `3fb1b19` の後のデプロイでも確かめた。
+
+| 確認 | 1 回目（cache・age） | 30 分後（cache・age） | 結果 |
+|---|---|---|---|
+| `/milestones`（素の URL） | PRERENDER・0 | PRERENDER・0 | 200。`<title>`「更新履歴（主な公開と更新）｜蓄電所ネット」、h1「更新履歴」、項目 59、先頭 N2（2026-10-25） |
+| `/milestones?v=` | HIT・0 | HIT・0 | 同じ |
+| 本文の語（`<!-- -->` を剥がしてから数えた） | — | — | 「Sprint」「業界唯一」「日本一」「達成記念」「達成済」「ロードマップ」は、どれも 0。「予定」は 1（#44 の文案「…オークションの予定と結果…」・要判断 4） |
+| 4 枚 | 308 | 308 | Location は 4 本とも 10/17 裁定の行き先で、追った先はどれも 200 |
+| `/sitemap.xml` | PRERENDER・0 | PRERENDER・0 | 4 枚は 0、`/milestones` は 1 |
+| `/`（トップ） | HIT・40 | STALE・103 | 「更新履歴 →」1・「サイトの歩み」0・フッター「更新履歴」1・「達成記念」0。STALE も新しい内容（デプロイの後に作られた版） |
+| `/info` | HIT・39 | HIT・102 | description は便の文の逐語。「サイト更新情報」0。/milestones への「更新履歴」のリンク 2（冒頭の文とフッター） |
+| `/reports/2026` | HIT・4 | HIT・5 | 「圧倒的な製造基盤」0・「製造基盤で最大規模」1 |
+| `/global/us` | PRERENDER・0 | PRERENDER・0 | 「No.1 級」0・「Fluence (Siemens × AES)」1 |
+| `/lv/invest/capital-recovery` | PRERENDER・0 | PRERENDER・0 | 「唯一の確実」0。description は「…回収を早める要素を解説します。」 |
+
+- microCMS の警告メールは、EDAさんの受信箱で確かめてもらう（私からは見えない）。
 
 ## (5) 要判断
 
