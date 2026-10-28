@@ -10438,6 +10438,24 @@
     }
    ],
    "internalRef": "reports/main-run-2026-10-22.md (3)／reports/main-run-2026-10-22.k-plan.json の operators/toshiba-energy-systems／reports/main-run-2026-10-22.apply-log-k.json"
+  },
+  {
+   "id": "20261029-01",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/explainer/capacity-output-design",
+   "record": "explainer/capacity-output-design",
+   "targetTitle": "蓄電池容量と出力の最適設計：時間定格を決める考え方",
+   "before": "導入文で本文の内容を「用途別の最適設計」と紹介し、2節の見出しを「2. 用途別の最適時間定格」と記載\n「7. 国内・海外の動向」の節に、見出しのほかは「再エネ比率の上昇に伴い、長時間の需給シフトに対応できる時間定格への関心が高まっています。」の 1 文だけを記載\nまとめに「容量市場発動指令電源のリクワイアメントは継続時間3時間・年間12回（1日1回）が上限」と記載\nまとめに「JEPX中心なら2〜4時間、FIP併設なら長時間」と記載（本文に対応する記述なし）",
+   "after": "導入文を「市場ごとの継続時間要件」、2節の見出しを「2. 市場ごとに求められる継続時間」に修正しました（本文2節の内容に合わせました）\n7節を削除し、続く節の番号を詰めました（裏づけとなる一次資料を確認できなかったため）\n「容量市場の発動指令電源のリクワイアメントは、1回の発動の継続時間が3時間、年間の発動回数が12回（1日1回）。年間13回目以降・1日2回目以降の発動要請は、アセスメントとペナルティの対象外」に修正しました（業務マニュアルの表では、年間13回目以降・1日2回目以降の発動要請もありえ、それらはアセスメントとペナルティの対象外とされているため）\n「JEPXアービトラージ・日内シフトは制度上の継続時間要件がなく、価格差の出る時間帯の長さで決まる」に差し替えました（本文2節の記述に合わせ、裏づけとなる一次資料を確認できなかった時間の目安を外しました）",
+   "basis": [
+    {
+     "name": "容量市場 業務マニュアル 実需給期間中リクワイアメント対応（発動指令電源）編（対象実需給年度：2026年度）",
+     "publisher": "電力広域的運営推進機関",
+     "url": "https://www.occto.or.jp/assets/various/capacity-market/jitsujukyukanren/2026_jitsujukyu_kanren/260427_2026_gyoumumanual_rikuwaiamento_hatsudoushirei.pdf"
+    }
+   ],
+   "internalRef": "reports/capacity-output-design-2026-10-27.md (1)／reports/capacity-output-design-2026-10-27.data.json plan.patches[0]（op0・op1・op2・op5）／reports/capacity-output-design-2026-10-27.apply.json／reports/main-run-2026-10-22.md (2)「外した」"
   }
  ]
 }
