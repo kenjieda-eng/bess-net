@@ -11,7 +11,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: '業界レポート（蓄電池・蓄電所 年次）',
-  description: '蓄電所業界の年次レポートを公開予定。業界レポート2026 (7月予定)。',
+  description: '蓄電所業界の年次レポートの一覧です。業界レポート2026（本編）を公開しています。',
   alternates: { canonical: '/reports' },
 };
 
@@ -27,20 +27,19 @@ export default function ReportsIndexPage() {
           </p>
           <h1 className="section-title">業界レポート</h1>
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>
-            蓄電所業界の年次レポートを公開予定。当サイト独自機能で蓄積したデータを編集統合します。
+            蓄電所業界の年次レポートの一覧です。当サイトのデータベースのデータをもとに、編集部がまとめています。
           </p>
 
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{
               padding: 16, border: '1px solid var(--color-border)', borderRadius: 8, marginBottom: 12,
             }}>
-              <div style={{ fontSize: 11, color: '#c70', fontWeight: 700, marginBottom: 4 }}>準備中 · 2026年7月公開予定</div>
+              <div style={{ fontSize: 11, color: '#c70', fontWeight: 700, marginBottom: 4 }}>公開中 · 2026年7月2日公開</div>
               <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>
                 <Link href="/reports/2026">業界レポート2026 (蓄電所事業 年次レポート)</Link>
               </h2>
               <p style={{ fontSize: 13, lineHeight: 1.7, margin: 0, color: 'var(--color-muted)' }}>
-                市場規模 / 政策動向 / 主要プレイヤー / 系統 / 火災・トラブル / 海外比較 を集約した当サイト独自の年次レポート。
-                本編（全10章）を公開中。
+                市場規模 / 政策動向 / 主要プレイヤー / 系統 / 火災・トラブル / 海外比較 を集約した年次レポートです。
               </p>
             </li>
           </ul>

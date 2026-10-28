@@ -92,7 +92,7 @@ function fmtDate(iso: string | undefined | null): string {
   if (!iso) return '情報なし';
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return '情報なし';
-  return d.toLocaleDateString('ja-JP', {
+  return d.toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo',
     year: 'numeric',
     month: 'numeric',
     day: 'numeric',

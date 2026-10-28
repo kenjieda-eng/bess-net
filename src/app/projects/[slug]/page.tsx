@@ -262,7 +262,7 @@ export default async function ProjectDetailPage({
               <ul className="related-news-list">
                 {related.news.map((n) => {
                   const dateStr = n.publishedAt
-                    ? new Date(n.publishedAt).toLocaleDateString('ja-JP', {
+                    ? new Date(n.publishedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo',
                         year: 'numeric',
                         month: 'numeric',
                         day: 'numeric',

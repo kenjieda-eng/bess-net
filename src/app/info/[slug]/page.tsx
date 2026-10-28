@@ -98,9 +98,9 @@ export default async function InfoDetailPage({
           {category && <span className="article-category">{category}</span>}
           <h1 className="article-title">{article.title}</h1>
           <p className="article-meta">
-            公開日：{new Date(article.publishedAt).toLocaleDateString('ja-JP')}
+            公開日：{new Date(article.publishedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}
             {article.updatedAt && article.updatedAt !== article.publishedAt &&
-              ` / 最終更新：${new Date(article.updatedAt).toLocaleDateString('ja-JP')}`}
+              ` / 最終更新：${new Date(article.updatedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}`}
           </p>
           <p className="article-lead">{article.lead}</p>
           <div

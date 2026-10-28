@@ -17,15 +17,15 @@ import { siteConfig } from '@/lib/site-config';
 export const dynamic = 'force-static';
 
 const PAGE_PATH = '/milestones';
-const PAGE_TITLE = '更新履歴（主な公開と更新）｜蓄電所ネット';
+const PAGE_TITLE = '更新履歴（主な公開と更新）'; // layout の template で「… | 蓄電所ネット」になる
 const DESCRIPTION = '蓄電所ネットで公開した主なページ・データベース・ツールを、公開した日の新しい順に記録しています。記述の訂正は、訂正履歴にまとめています。';
 
 export const metadata: Metadata = {
-  title: { absolute: PAGE_TITLE },
+  title: PAGE_TITLE,
   description: DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
   openGraph: {
-    title: PAGE_TITLE,
+    title: `${PAGE_TITLE} | ${siteConfig.name}`,
     description: DESCRIPTION,
     url: `${siteConfig.url}${PAGE_PATH}`,
     type: 'website',

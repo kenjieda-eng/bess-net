@@ -60,7 +60,7 @@ export function getYear(iso: string): string {
 export function formatDate(iso: string): string {
   const d = new Date(iso);
   if (isNaN(d.getTime())) return iso;
-  return d.toLocaleDateString('ja-JP');
+  return d.toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' });
 }
 
 /** カテゴリ別件数 */

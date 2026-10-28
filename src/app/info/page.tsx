@@ -55,7 +55,7 @@ export default async function InfoListPage() {
                     <h2 className="article-title">{article.title}</h2>
                     <p className="article-lead">{article.lead}</p>
                     <span className="article-date">
-                      {new Date(article.publishedAt).toLocaleDateString('ja-JP')}
+                      {new Date(article.publishedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}
                     </span>
                   </Link>
                 </li>

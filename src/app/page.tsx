@@ -287,7 +287,7 @@ export default async function Home() {
                         <h4 className="article-title" style={{ margin: 0 }}>{article.title}</h4>
                         <p className="article-lead">{article.lead}</p>
                         <span className="article-date">
-                          {new Date(article.publishedAt).toLocaleDateString('ja-JP')}
+                          {new Date(article.publishedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}
                         </span>
                       </Link>
                     </li>
@@ -396,7 +396,7 @@ export default async function Home() {
                         <span className="article-category">{article.category}</span>
                         <h4 className="article-title" style={{ margin: 0 }}>{article.title}</h4>
                         <span className="article-date">
-                          {new Date(article.publishedAt).toLocaleDateString('ja-JP')}
+                          {new Date(article.publishedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}
                         </span>
                       </Link>
                     </li>

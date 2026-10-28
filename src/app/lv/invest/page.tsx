@@ -387,7 +387,7 @@ export default async function LvInvestHubPage() {
                       <Link href={`/news/${n.slug}`}>{n.title}</Link>
                       {n.publishedAt && (
                         <span style={{ fontSize: 13, color: 'var(--color-muted)', marginLeft: 8 }}>
-                          {new Date(n.publishedAt).toLocaleDateString('ja-JP')}
+                          {new Date(n.publishedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}
                         </span>
                       )}
                     </li>

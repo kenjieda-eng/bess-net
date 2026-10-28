@@ -158,7 +158,7 @@ export default async function GridIndexPage() {
     const dt = new Date(d);
     return Number.isNaN(dt.getTime())
       ? d
-      : dt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'numeric', day: 'numeric' });
+      : dt.toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo', year: 'numeric', month: 'numeric', day: 'numeric' });
   })();
 
   const jsonLd = {

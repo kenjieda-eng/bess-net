@@ -110,7 +110,7 @@ export default function OpsFreshnessPage() {
                         </td>
                         <td style={{ padding: '7px 10px' }}>{FREQ_LABEL[r.frequency]}</td>
                         <td style={{ padding: '7px 10px', color: overdue ? '#b91c1c' : '#374151', fontWeight: overdue ? 700 : 400 }}>
-                          {r.next ? new Date(r.next).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '随時'}
+                          {r.next ? new Date(r.next).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit' }) : '随時'}
                           {overdue && <span style={{ marginLeft: 6, fontSize: 12 }}>⚠ 期限超過</span>}
                         </td>
                       </tr>

@@ -80,7 +80,7 @@ export function parseTags(s: string | null | undefined): string[] {
 export function formatDate(iso: string): string {
   const d = new Date(iso);
   if (isNaN(d.getTime())) return iso;
-  return d.toLocaleDateString('ja-JP');
+  return d.toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' });
 }
 
 /** カテゴリグループ別に件数を集計 */

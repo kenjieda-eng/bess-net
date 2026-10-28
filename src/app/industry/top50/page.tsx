@@ -56,7 +56,7 @@ export default async function IndustryTop50Page() {
   const { ranking, noCapacityOperators, generatedAt, totalProjects, totalOperators } =
     rankingData;
 
-  const generatedDate = new Date(generatedAt).toLocaleDateString('ja-JP', {
+  const generatedDate = new Date(generatedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo',
     year: 'numeric',
     month: 'numeric',
     day: 'numeric',

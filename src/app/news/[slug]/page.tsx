@@ -136,7 +136,7 @@ export default async function NewsDetailPage({
     isExcludedNews(news.slug),
   );
   const dateStr = news.publishedAt
-    ? new Date(news.publishedAt).toLocaleDateString('ja-JP', {
+    ? new Date(news.publishedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo',
         year: 'numeric',
         month: 'numeric',
         day: 'numeric',
@@ -192,7 +192,7 @@ export default async function NewsDetailPage({
             {news.revisedAt && (
               <>
                 {' '}/ 最終更新：
-                {new Date(news.revisedAt).toLocaleDateString('ja-JP')}
+                {new Date(news.revisedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}
               </>
             )}
           </p>

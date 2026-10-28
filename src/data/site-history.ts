@@ -190,7 +190,7 @@ export const SITE_HISTORY: readonly SiteHistoryItem[] = [
     summary: "一定の期間の主なニュースから編集部が数本を選び、注目する理由を添えてまとめる記事を始めました。ニュース一覧の「今週のまとめ」から最新号を読めます。",
     links: [
       { label: "編集部まとめ（初回）", url: "/news/news-weekly-2026-07" },
-      { label: "ニュース一覧", url: "/news" },
+      { label: "業界ニュース", url: "/news" },
     ],
     ref: "c9a3b55",
   },
@@ -691,7 +691,7 @@ export const SITE_HISTORY: readonly SiteHistoryItem[] = [
     title: "業界ニュースの掲載を開始",
     summary: "蓄電池・蓄電所に関わる業界のニュースを、一覧と記事のページで読めるようになりました。",
     links: [
-      { label: "ニュース", url: "/news" },
+      { label: "業界ニュース", url: "/news" },
     ],
     ref: "8775491 / ccb83d1",
   },
