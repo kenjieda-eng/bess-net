@@ -1,0 +1,352 @@
+{
+ "_note": "事業者の追修便 10-29（operators PATCH・DELETE/PUT/POST 0）。op の old は 2026-10-29 の GET（live-before.json）にちょうど 1 回。expect_final は make_expect.ts で足す。",
+ "plan": {
+  "patches": [
+   {
+    "ep": "operators",
+    "slug": "agg-01190784",
+    "order": 1,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、",
+      "new": "",
+      "row_ids": [
+       "A-agg-01190784-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "d5236c82ca62c8ef"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01095057",
+    "order": 2,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得。",
+      "new": "",
+      "row_ids": [
+       "A-agg-01095057-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "7ebd36ad986eb5f8"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01124077",
+    "order": 3,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、",
+      "new": "",
+      "row_ids": [
+       "A-agg-01124077-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "d242ca00b570a6aa"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01186556",
+    "order": 4,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、",
+      "new": "",
+      "row_ids": [
+       "A-agg-01186556-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "34c3728135f3ab8a"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01152524",
+    "order": 5,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、",
+      "new": "",
+      "row_ids": [
+       "A-agg-01152524-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "e31c5e2b3feb1313"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01147239",
+    "order": 6,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し",
+      "new": "",
+      "row_ids": [
+       "A-agg-01147239-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "a71515cc7866033d"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01029229",
+    "order": 7,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、",
+      "new": "",
+      "row_ids": [
+       "A-agg-01029229-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "403e8d599265d47b"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-qvou-8695",
+    "order": 8,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、",
+      "new": "",
+      "row_ids": [
+       "A-agg-qvou-8695-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "f16a37855fc83c73"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01131465",
+    "order": 9,
+    "ops": [
+     {
+      "field": "description",
+      "old": "METI 特定卸供給事業者(アグリゲーター)登録。",
+      "new": "",
+      "row_ids": [
+       "A-agg-01131465-description"
+      ],
+      "note": "追修便 10-29 A"
+     },
+     {
+      "field": "bessRelation",
+      "old": "METI 特定卸供給事業者(アグリゲーター)登録事業者。事業開始日: 2024-10-01。",
+      "new": "",
+      "row_ids": [
+       "A-agg-01131465-bessRelation"
+      ],
+      "note": "追修便 10-29 A"
+     },
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、",
+      "new": "",
+      "row_ids": [
+       "A-agg-01131465-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "description": "29103c36520ad65b",
+     "bessRelation": "d83910856f4ae4ff",
+     "body": "4d3a68c8efc0676a"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01003515",
+    "order": 10,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を受け、",
+      "new": "",
+      "row_ids": [
+       "A-agg-01003515-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "33d8cf2613668d35"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-hse-0606",
+    "order": 11,
+    "ops": [
+     {
+      "field": "body",
+      "old": "SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、",
+      "new": "",
+      "row_ids": [
+       "A-agg-hse-0606-body"
+      ],
+      "note": "追修便 10-29 A"
+     }
+    ],
+    "expect_final": {
+     "body": "d00b079b0d1b9a8a"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01135973",
+    "order": 12,
+    "ops": [
+     {
+      "field": "body",
+      "old": "「リソースアグリゲーター」「アグリゲーションコーディネーター」の双方として登録。",
+      "new": "令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」（B事業：VPPアグリゲーター事業）で、アグリゲーションコーディネーター（幹事）とリソースアグリゲーターとして採択。",
+      "row_ids": [
+       "B-agg-01135973-body"
+      ],
+      "note": "追修便 10-29 B"
+     }
+    ],
+    "expect_final": {
+     "body": "082a81a32bdf8e62"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01108219",
+    "order": 13,
+    "ops": [
+     {
+      "field": "body",
+      "old": "特定卸供給事業者（アグリゲーター登録番号01108219）として",
+      "new": "特定卸供給事業の届出事業者（事業開始日 2025年9月1日）として",
+      "row_ids": [
+       "B-agg-01108219-body"
+      ],
+      "note": "追修便 10-29 B"
+     }
+    ],
+    "expect_final": {
+     "body": "4280dc042d2e4d00"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01066839",
+    "order": 14,
+    "ops": [
+     {
+      "field": "body",
+      "old": "2000年の電力自由化時に第3番目に登録された老舗の特定規模電気事業者（新電力）",
+      "new": "2001年1月に経済産業省へ特定規模電気事業者（新電力）の届出をした事業者",
+      "row_ids": [
+       "B-agg-01066839-body"
+      ],
+      "note": "追修便 10-29 B"
+     }
+    ],
+    "expect_final": {
+     "body": "b851d20e64c06509"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01168850",
+    "order": 15,
+    "ops": [
+     {
+      "field": "body",
+      "old": "アグリゲーター登録を活用した需給調整・需要家側蓄電池の統合運用も視野に入れ、",
+      "new": "",
+      "row_ids": [
+       "B-agg-01168850-body"
+      ],
+      "note": "追修便 10-29 B"
+     }
+    ],
+    "expect_final": {
+     "body": "b516f27a19690223"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "asahi-shinden",
+    "order": 16,
+    "ops": [
+     {
+      "field": "body",
+      "old": "あさひ総合電力株式会社は、新電力（PPS）として電気事業者登録を行い、特定規模電気事業者として小売電気事業を展開している。",
+      "new": "",
+      "row_ids": [
+       "B-asahi-shinden-body"
+      ],
+      "note": "追修便 10-29 B"
+     }
+    ],
+    "expect_final": {
+     "body": "c6f6099e8af52998"
+    }
+   },
+   {
+    "ep": "operators",
+    "slug": "agg-01002318",
+    "order": 17,
+    "ops": [
+     {
+      "field": "body",
+      "old": "静岡県の「ふじのくに0円ソーラー事業」登録事業者として",
+      "new": "静岡県の「静岡県0円ソーラー事業」の住宅用プラン一覧に載る事業者として",
+      "row_ids": [
+       "C-agg-01002318-body"
+      ],
+      "note": "追修便 10-29 C"
+     }
+    ],
+    "expect_final": {
+     "body": "c61e4162e8ed1473"
+    }
+   }
+  ],
+  "posts": []
+ },
+ "_run_note": "2026-10-29 CC: 実行日の GET（2026-10-29 09:10:23 +0900）の上で op を当てた値から expect_final を作った（problems 0・raw mismatch 0）。"
+}

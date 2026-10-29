@@ -1,0 +1,119 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 34
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 17,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "operators/agg-01190784",
+   "id": "agg-01190784",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01095057",
+   "id": "agg-01095057",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01124077",
+   "id": "agg-01124077",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01186556",
+   "id": "agg-01186556",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01152524",
+   "id": "agg-01152524",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01147239",
+   "id": "agg-01147239",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01029229",
+   "id": "agg-01029229",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-qvou-8695",
+   "id": "agg-qvou-8695",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01131465",
+   "id": "agg-01131465",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01003515",
+   "id": "agg-01003515",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-hse-0606",
+   "id": "agg-hse-0606",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01135973",
+   "id": "agg-01135973",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01108219",
+   "id": "agg-01108219",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01066839",
+   "id": "agg-01066839",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01168850",
+   "id": "agg-01168850",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/asahi-shinden",
+   "id": "asahi-shinden",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "operators/agg-01002318",
+   "id": "agg-01002318",
+   "result": "skip_final_state"
+  }
+ ]
+}

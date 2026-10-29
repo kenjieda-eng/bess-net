@@ -3423,6 +3423,105 @@
       "checked_on": "2026-10-25",
       "note": "補助金便 10-20 で登録。2026-10-25 17:46 JST に curl（Chrome UA）で取得（HTTP 200・545,485 バイト・20 頁・sha256 40197631c7db3a11c7be4636a36162539d79c8cc719d51a5df10baa9cb8a77e8＝便の 10-20 取得と同一）。補助事業者（県内の市町村・県内に事務所等を有する法人）・補助率（１／１０以内）・上限（１億円）・表２（蓄電池の定格出力・容量）を確認。",
       "used_in": "subsidies/fukushima-katsuyo-saiene-2026.body"
+    },
+    {
+      "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。PDF https://sii.or.jp/DRchikudenchi_gyousan07r/uploads/R7r_dr_ess_aggregator.pdf（「2026年6月23日時点」・3 社）。対象 11 社（東京リズエナジ・エレビスタ・操電・パワープール・リ・パワー・グリーングロース・グリーンパワー大東・Qvou・ヒュージモリ商事・大崎クリエーション・HSE）は社名なし。一覧は同じ URL で差し替えられ、過去の版は取れない。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。PDF https://sii.or.jp/DRchikudenchi_gyousan06r/uploads/chikudenchiaggre.pdf（「2025年10月28日時点」・10 社）。対象 11 社（東京リズエナジ・エレビスタ・操電・パワープール・リ・パワー・グリーングロース・グリーンパワー大東・Qvou・ヒュージモリ商事・大崎クリエーション・HSE）は社名なし。一覧は同じ URL で差し替えられ、過去の版は取れない。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。PDF https://sii.or.jp/DRchikudenchi05r/uploads/chikudenchiaggre.pdf（「2024年10月31日時点」・15 社）。対象 11 社（東京リズエナジ・エレビスタ・操電・パワープール・リ・パワー・グリーングロース・グリーンパワー大東・Qvou・ヒュージモリ商事・大崎クリエーション・HSE）は社名なし。一覧は同じ URL で差し替えられ、過去の版は取れない。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。PDF https://sii.or.jp/DRchikudenchi04r/uploads/chikudenchiaggre.pdf（「2023年11月10日時点」・17 社。PDF の表題は「問い合わせ先一覧」）。対象 11 社（東京リズエナジ・エレビスタ・操電・パワープール・リ・パワー・グリーングロース・グリーンパワー大東・Qvou・ヒュージモリ商事・大崎クリエーション・HSE）は社名なし。一覧は同じ URL で差し替えられ、過去の版は取れない。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf",
+      "title_verbatim": "（PDF の /Title なし。1 頁目の表題「令和７年度補正 再生可能エネルギー導入拡大・分散型エネルギーリソース導入支援等事業費補助金 （DRリソース導入のための家庭用蓄電システム等導入支援事業） 家庭用蓄電システム導入支援事業 蓄電池アグリゲーター一覧 2026年5月21日時点」）",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。特設サイト https://dr-battery.sii.or.jp/r7h/（title「令和7年度補正 DR家庭用蓄電池事業【公式】」）からリンク・12 社。対象 11 社（東京リズエナジ・エレビスタ・操電・パワープール・リ・パワー・グリーングロース・グリーンパワー大東・Qvou・ヒュージモリ商事・大崎クリエーション・HSE）は社名なし。一覧は同じ URL で差し替えられ、過去の版は取れない。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf",
+      "title_verbatim": "（PDF の /Title なし。1 頁目の表題「令和６年度補正 再生可能エネルギー導入拡大・分散型エネルギーリソース導入支援等事業費補助金 （DRリソース導入のための家庭用蓄電システム導入支援事業） 蓄電池アグリゲーター一覧 2025年6月16日時点」）",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。特設サイト https://dr-battery.sii.or.jp/r6h/（title「DR家庭用蓄電池事業【公式】」）からリンク・12 社。対象 11 社（東京リズエナジ・エレビスタ・操電・パワープール・リ・パワー・グリーングロース・グリーンパワー大東・Qvou・ヒュージモリ商事・大崎クリエーション・HSE）は社名なし。一覧は同じ URL で差し替えられ、過去の版は取れない。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "採択結果について（令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」について）",
+      "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+      "url": "https://sii.or.jp/vpp02/adoption_result.html",
+      "title_verbatim": "SII：一般社団法人 環境共創イニシアチブ｜採択結果について（令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」について）",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。添付 PDF「B事業者_採択結果について」https://sii.or.jp/vpp02/uploads/VPPB_saitakukekka.pdf（令和2年6月12日・「＜B事業：VPPアグリゲーター事業 111社（順不同）＞」・注記「※幹事：幹事会社、AC：アグリゲーションコーディネーター、RA：リソースアグリゲーター、実証協力：実証協力事業者」）。No.91 中部電力ミライズ株式会社の ● は x 座標 339・392・444＝見出し 幹事（335〜353）・AC（390〜402）・RA（442〜455）の列。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "沿革",
+      "publisher": "イーレックス株式会社",
+      "url": "https://www.erex.co.jp/company/history/",
+      "title_verbatim": "沿革 | イーレックス株式会社（erex Co.,Ltd）",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。本文「2001 年 1月 経済産業省へ「特定規模電気事業者」の届出」。curl はブラウザに近い UA で 200（UA なしは 403 との T6 の記録）。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "登録小売電気事業者一覧",
+      "publisher": "資源エネルギー庁",
+      "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/retailers_list/",
+      "title_verbatim": "登録小売電気事業者一覧｜電気事業制度の概要｜資源エネルギー庁",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。本文「令和8年9月30日現在 計823事業者（電気事業法に基づく登録事業者数）」。Excel 版 list.xlsx（823 行＋見出し）も同じページ。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "住宅用プラン一覧",
+      "publisher": "静岡県",
+      "url": "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/1081940/1047855.html",
+      "title_verbatim": "住宅用プラン一覧｜静岡県公式ホームページ",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。ページID1047855・更新日 2026年7月23日。「3 鈴与商事株式会社 電力販売、リース 太陽光、太陽光＋蓄電池 県内全域」・プラン名称「鈴与の0円ソーラー」。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
+    },
+    {
+      "name": "静岡県0円ソーラー事業",
+      "publisher": "静岡県",
+      "url": "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/1081940/index.html",
+      "title_verbatim": "静岡県0円ソーラー事業｜静岡県公式ホームページ",
+      "checked_on": "2026-10-29",
+      "note": "2026-10-29 09:10 JST に curl（Chrome UA）で HTTP 200。ページID1081940（エネルギー政策課）。「ふじのくに0円ソーラー」の語はこのページ・住宅用・事業用のプラン一覧のどれにも無い（「ふじのくに」は案内欄の「ふじのくにエネルギー総合戦略」だけ）。",
+      "used_in": "operators の本文・訂正履歴（事業者の追修便 10-29・reports/operators-followup-2026-10-29.md (1)）"
     }
   ]
 }

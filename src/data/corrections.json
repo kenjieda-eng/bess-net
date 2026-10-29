@@ -10456,6 +10456,602 @@
     }
    ],
    "internalRef": "reports/capacity-output-design-2026-10-27.md (1)／reports/capacity-output-design-2026-10-27.data.json plan.patches[0]（op0・op1・op2・op5）／reports/capacity-output-design-2026-10-27.apply.json／reports/main-run-2026-10-22.md (2)「外した」"
+  },
+  {
+   "id": "20261029-02",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01190784",
+   "record": "operators/agg-01190784",
+   "targetTitle": "東京リズエナジ株式会社",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01190784／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-03",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01095057",
+   "record": "operators/agg-01095057",
+   "targetTitle": "エレビスタ株式会社",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得。」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01095057／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-04",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01124077",
+   "record": "operators/agg-01124077",
+   "targetTitle": "株式会社操電",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01124077／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-05",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01186556",
+   "record": "operators/agg-01186556",
+   "targetTitle": "パワープール株式会社",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01186556／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-06",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01152524",
+   "record": "operators/agg-01152524",
+   "targetTitle": "株式会社リ・パワー",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01152524／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-07",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01147239",
+   "record": "operators/agg-01147239",
+   "targetTitle": "株式会社グリーングロース",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01147239／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-08",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01029229",
+   "record": "operators/agg-01029229",
+   "targetTitle": "株式会社グリーンパワー大東",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01029229／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-09",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-qvou-8695",
+   "record": "operators/agg-qvou-8695",
+   "targetTitle": "株式会社Qvou",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-qvou-8695／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-10",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01131465",
+   "record": "operators/agg-01131465",
+   "targetTitle": "株式会社ヒュージモリ商事",
+   "before": "蓄電所との関わりの欄に「METI 特定卸供給事業者(アグリゲーター)登録事業者。事業開始日: 2024-10-01。」と記載\n紹介文に「METI 特定卸供給事業者(アグリゲーター)登録。」と記載\n本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、」と記載",
+   "after": "3か所とも削除しました（資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕に社名・法人番号とも見当たらず、環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕にも社名が見当たらないため。一次で確かめられない記述は外しています）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01131465／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-11",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01003515",
+   "record": "operators/agg-01003515",
+   "targetTitle": "株式会社大崎クリエーション",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を受け、」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01003515／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-12",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-hse-0606",
+   "record": "operators/agg-hse-0606",
+   "targetTitle": "HSE株式会社",
+   "before": "本文に「SII（環境共創イニシアチブ）の蓄電池アグリゲーター登録を取得し、」と記載",
+   "after": "この記述を削除しました（環境共創イニシアチブ〔SII〕が公表している蓄電池アグリゲーター一覧〔令和4年度補正〜令和7年度補正の6件・現行版〕に社名が見当たらず、一次で確かめられないため。各一覧は同じ場所で差し替えられており、過去の版は確かめられません）",
+   "basis": [
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan07r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi_gyousan06r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和5年度補正 家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi05r/aggregator_list.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和4年度補正 電力需給ひっ迫等に活用可能な家庭・業務産業用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/DRchikudenchi04r/chiaggre.html"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和7年度補正 家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r7h/assets/doc/R7r_dr_ess_aggregator.pdf"
+    },
+    {
+     "name": "蓄電池アグリゲーター一覧（令和6年度補正 DRリソース導入のための家庭用蓄電システム導入支援事業）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://dr-battery.sii.or.jp/r6h/assets/doc/R6r_dr_ess_aggregator.pdf"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-hse-0606／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-13",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01135973",
+   "record": "operators/agg-01135973",
+   "targetTitle": "中部電力ミライズ株式会社",
+   "before": "本文に「「リソースアグリゲーター」「アグリゲーションコーディネーター」の双方として登録。」と記載",
+   "after": "「令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」（B事業：VPPアグリゲーター事業）で、アグリゲーションコーディネーター（幹事）とリソースアグリゲーターとして採択。」に修正しました（この2つは登録の制度の名前ではなく、資源エネルギー庁の補助事業〔執行団体は環境共創イニシアチブ〕で使われる役割の名前で、同社は令和2年度の採択結果に幹事・アグリゲーションコーディネーター・リソースアグリゲーターとして載っているため）",
+   "basis": [
+    {
+     "name": "採択結果について（令和2年度「需要家側エネルギーリソースを活用したバーチャルパワープラント構築実証事業費補助金」について）",
+     "publisher": "一般社団法人 環境共創イニシアチブ（SII）",
+     "url": "https://sii.or.jp/vpp02/adoption_result.html"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01135973／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-14",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01108219",
+   "record": "operators/agg-01108219",
+   "targetTitle": "石油資源開発株式会社",
+   "before": "本文に「特定卸供給事業者（アグリゲーター登録番号01108219）として」と記載",
+   "after": "「特定卸供給事業の届出事業者（事業開始日 2025年9月1日）として」に修正しました（特定卸供給事業は電気事業法第27条の30 にもとづく届出制で登録番号は無く、「01108219」は同社の法人番号の下8桁であるため。事業開始日は資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕の記載です）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    },
+    {
+     "name": "電気事業法",
+     "publisher": "e-Gov 法令検索（デジタル庁）",
+     "url": "https://laws.e-gov.go.jp/law/339AC0000000170"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01108219／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-15",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01066839",
+   "record": "operators/agg-01066839",
+   "targetTitle": "イーレックス株式会社",
+   "before": "本文に「2000年の電力自由化時に第3番目に登録された老舗の特定規模電気事業者（新電力）」と記載",
+   "after": "「2001年1月に経済産業省へ特定規模電気事業者（新電力）の届出をした事業者」に修正しました（同社の沿革では、経済産業省への特定規模電気事業者の届出は2001年1月で、年と「登録」の言い方が一次と合わなかったため。「第3番目」は一次で確かめられないため外しました）",
+   "basis": [
+    {
+     "name": "沿革",
+     "publisher": "イーレックス株式会社",
+     "url": "https://www.erex.co.jp/company/history/"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01066839／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-16",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01168850",
+   "record": "operators/agg-01168850",
+   "targetTitle": "株式会社ふるなび電力",
+   "before": "本文に「アグリゲーター登録を活用した需給調整・需要家側蓄電池の統合運用も視野に入れ、」と記載",
+   "after": "この記述を削除しました（アグリゲーターに当たる特定卸供給事業は登録ではなく届出の制度で、同社は資源エネルギー庁の特定卸供給事業届出事業者一覧〔2026年9月30日時点〕に事業開始日2026年7月1日で載っているものの、需給調整・需要家側蓄電池の統合運用の計画は一次で確かめられないため）",
+   "basis": [
+    {
+     "name": "特定卸供給事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electricity_measures/009/list/aguri-list.html"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01168850／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-17",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/asahi-shinden",
+   "record": "operators/asahi-shinden",
+   "targetTitle": "あさひ総合電力株式会社",
+   "before": "本文に「あさひ総合電力株式会社は、新電力（PPS）として電気事業者登録を行い、特定規模電気事業者として小売電気事業を展開している。」と記載",
+   "after": "この文を削除しました（資源エネルギー庁の登録小売電気事業者一覧〔令和8年9月30日現在〕に社名が見当たらず、一次で確かめられないため）",
+   "basis": [
+    {
+     "name": "登録小売電気事業者一覧",
+     "publisher": "資源エネルギー庁",
+     "url": "https://www.enecho.meti.go.jp/category/electricity_and_gas/electric/summary/retailers_list/"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/asahi-shinden／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261029-18",
+   "date": "2026-10-29",
+   "kind": "訂正",
+   "path": "/operators/agg-01002318",
+   "record": "operators/agg-01002318",
+   "targetTitle": "鈴与商事株式会社",
+   "before": "本文に「静岡県の「ふじのくに0円ソーラー事業」登録事業者として」と記載",
+   "after": "「静岡県の「静岡県0円ソーラー事業」の住宅用プラン一覧に載る事業者として」に修正しました（県の事業名は「静岡県0円ソーラー事業」で、同社は県の「住宅用プラン一覧」に載っているため）",
+   "basis": [
+    {
+     "name": "住宅用プラン一覧",
+     "publisher": "静岡県",
+     "url": "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/1081940/1047855.html"
+    },
+    {
+     "name": "静岡県0円ソーラー事業",
+     "publisher": "静岡県",
+     "url": "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/1081940/index.html"
+    }
+   ],
+   "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01002318／reports/operators-followup-2026-10-29.apply.json"
   }
  ]
 }
