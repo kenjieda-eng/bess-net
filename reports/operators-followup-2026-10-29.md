@@ -20,7 +20,7 @@
 - ヒュージモリ商事は、特定卸供給事業届出事業者一覧にも社名・法人番号とも無かった。そのため、紹介文・蓄電所との関わりの欄の「登録」も消した。
 - あさひ総合電力は、登録小売電気事業者一覧に無かった。句を消し、要判断に回した（(3) 1）。
 - 訂正履歴に 17 件（`20261029-02`〜`-18`）を足した。台帳に一次 11 件を登録した。
-- 本番: (5)。
+- 本番（デプロイ `qjsfiezcj`・09:43）: 17 ページとも、素の URL と `?v=` で old 0・新しい文あり。`/corrections` は 490 件（(5)）。
 
 ## (1) 一次の取り直し（§1）
 
@@ -174,7 +174,23 @@ dry run（reports/operators-followup-2026-10-29.dry.json・09:16）
 
 ## (5) 本番の確認
 
-（デプロイ後に追記）
+- デプロイ: `qjsfiezcj`（`bc01331` から・GitHub のコミットの状態が success になったのは 09:42:49）。
+  - PATCH 17 件の webhook で起きたビルドは、待ち行列のものが自動で Canceled になった。
+  - 09:43 の時点で、Queued・Building は 0。
+- 09:43:16 に素の URL と `?v=` で取った。
+- 数え方:
+  - `<!-- -->` を剥がした。
+  - 記事末の訂正履歴の節は除いた。
+  - タグを外し、空白を外し、NFKC にして数えた。
+  - 「後の文」は、当てた所の前 12 字＋new＋後 12 字（削除のときは前後をつないだ文）。
+
+| ページ | 素の URL | `?v=` | 結果 |
+|---|---|---|---|
+| `/operators/<slug>` 17 件 | どれも 200・PRERENDER・age 0 | どれも 200・HIT・age 10〜17 | 19 個の op とも old 0・後の文 1。どのページの記事末にも訂正履歴 `20261029-xx` が 1 件ある |
+| `/corrections` | 200・PRERENDER・age 0 | 200・HIT・age 9 | 記録 490 件。`20261029-01`〜`-18` の 18 件 |
+
+- 照合の記録: scratchpad の `opf/prod1.txt`（NG 0）。
+- デプロイ後の見張り: microCMS の警告メールと Vercel のエラー率は、私からは見えない（EDAさんの受信箱と管理画面）。このページは事前計算の JSON を読む静的ページで、ランタイムで microCMS を呼ばない（`revalidate` 86400）。
 
 ## (6) 私の前提違い（便の逐語 → 実際）
 
@@ -190,5 +206,6 @@ dry run（reports/operators-followup-2026-10-29.dry.json・09:16）
   - 一次の控え（`dl/` に 22 本）
   - GET の控え: `live-before.json`・`live-after.json`
   - スクリプト: `dump_t6.py`・`get17.py`・`read_primary.py`・`detail.py`・`build_plan.py`・`make_expect.ts`・`add_records.py`
-  - 出力: `t6.txt`・`live-scan.txt`・`primary.txt`・`detail.txt`・`plan.json`・`plan-preview.txt`
+  - 出力: `t6.txt`・`live-scan.txt`・`primary.txt`・`detail.txt`・`plan.json`・`plan-preview.txt`・`build.log`
+  - 本番の照合: `prod_check.py`・`prod1.txt`
 - 新しく足したファイル: `scripts/apply-operators-followup-2026-10-29.ts`。
