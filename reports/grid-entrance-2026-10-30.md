@@ -135,14 +135,42 @@
    - 県の蓄電所案件の件数は、箱と「このデータの読み方・関連」の両方に出る（関連の欄は導線として残した）。
 8. **asset-check の台帳の行番号**: `grid/[slug]/page.tsx` に行を足したので、台帳 D7 の行番号が 4 行ずれ、prebuild で ★WARN が出た。中身で対応づけて直し（469→473 ほか 8 行・説明の L 番号も）、verify:asset-check は ok。
 9. **便の「type-check」**: package.json に無いので `npx tsc --noEmit -p .` で代えた（0 エラー）。
-10. **気づいた点（直していない・別便の候補）**: 詳細ページのパンくずの JSON-LD が、生の prefecture を県の段として出している。
-    - 例: `ksi-local-gx-2` は「トップ／系統空き容量／関西エリア／関西ローカル系／アネックス三和」。
-    - 例: `oki-honto-22kv-0019` は「…／沖縄エリア／沖縄本島22kV系・変電所／C変電塔」。
-    - 本文の表示は `normalizeSubstationPlace` を通しているので、構造化データだけが原値のまま（#119 と同じ型）。その段のリンク先も、変電所自身の URL になっている。
+10. **気づいた点 → 同じ日に直した（(5)）**: 詳細ページのパンくずの JSON-LD が、生の prefecture を県の段として出していた。
+    - 例: `ksi-local-gx-2` は「トップ／系統空き容量／関西エリア／関西ローカル系／アネックス三和」だった。
+    - 例: `oki-honto-22kv-0019` は「…／沖縄エリア／沖縄本島22kV系・変電所／C変電塔」だった。
+    - 本文の表は `normalizeSubstationPlace` を通しているのに、パンくず・Place の addressRegion だけが原値のままだった（#119 と同じ型）。その段のリンク先も、変電所自身の URL だった。
 - 使った道具: curl・Python・tsx・Vercel CLI・内蔵ブラウザ（ローカルの `next start` を 375px で開いただけ）。Claude in Chrome・調べ役は使っていない。
 - 一時物（scratchpad の `ge/`）。消していない。
-  - スクリプト: `grab_meta.py`・`check_after.py`・`prod_check.py`
-  - 出力: `before-local.json`・`after-local.json`・`check.txt`・`prod1.txt`・`build.log`・`build2.log`
+  - スクリプト: `grab_meta.py`・`check_after.py`・`prod_check.py`・`prod_crumb.py`
+  - 出力: `before-local.json`・`after-local.json`・`check.txt`・`prod1.txt`・`prod2.txt`・`build.log`・`build2.log`・`build3.log`
+
+## (5) 追補: 詳細ページのパンくず（EDAさん 10/30「ここで直す」）
+
+- 直した所（`src/app/grid/[slug]/page.tsx`・7 行の置き換え・行数は不変＝asset-check の台帳はずれない）:
+  - 見えるパンくず: 府県の段を `place.prefecture`（本文の表と同じ）にし、県のページへのリンクにした。
+  - BreadcrumbList の JSON-LD: 府県の段を `place.prefecture` にし、URL を `/grid/prefecture/{県}` にした（前は変電所自身の URL）。
+  - Place の address.addressRegion: `place.prefecture` にした。
+  - 府県が確定しないレコード（関西ローカル系・基幹系統）は、府県の段も addressRegion も出さない。
+  - 沖縄の設備区分のレコードは「沖縄県」（定義による導出・Gr10）。
+- commit `6b5b9e0`（push 10:58）。ビルドは PASS（★WARN 0）。デプロイ `e49tf92zg`（Ready 11:06）。
+- 本番（11:06:36、素の URL と `?v=`）: 6 件とも NG 0。
+
+| slug | 府県の段（JSON-LD と見える文） | addressRegion |
+|---|---|---|
+| cb-1205 | 愛知県 → /grid/prefecture/愛知県 | 愛知県 |
+| tpg-1016 | 東京都 → /grid/prefecture/東京都 | 東京都 |
+| kyu-648 | 鹿児島県 → /grid/prefecture/鹿児島県 | 鹿児島県 |
+| oki-honto-22kv-0019 | 沖縄県 → /grid/prefecture/沖縄県（前は「沖縄本島22kV系・変電所」） | 沖縄県 |
+| ksi-local-gx-2（関西ローカル系） | 段なし（前は「関西ローカル系」） | なし |
+| cb-1（基幹系統） | 段なし | なし |
+
+- 素の URL: PRERENDER（cb-1205・cb-1）／MISS（ほか 4 件・新しいデプロイで初めての描画）。`?v=` は HIT。
+- リンク先の県のページ 4 枚（愛知・東京・鹿児島・沖縄）は 200。
+- まだ生の prefecture を使っている所（直していない・見える文の書き方の話）:
+  - 冒頭の一文「{事業者} 管内・{生の prefecture} の{電圧階級}」（関西ローカル系では「・関西ローカル系」と出る）。
+  - 県の蓄電所案件の導線（`PREF_PROJECT_COUNT[sub.prefecture]`。沖縄の設備区分のレコードでは引けない）。
+  - 関連ニュースの見出し（`${sub.prefecture ?? sub.name} 関連ニュース`）。
+  - 関連ニュースの検索の手がかり（`sub.prefecture || sub.name`）。
 - 変更したファイル:
   - `src/lib/grid-meta.ts`（gridFacts・説明文の組み立て・areaHasMap・詳細の題名・短い名）
   - `src/lib/grid-data-date.ts`（latestPublishedForAreas）
