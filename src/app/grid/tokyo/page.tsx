@@ -7,8 +7,9 @@ import type { Metadata } from 'next';
 import AreaPage from '../[slug]/AreaPage';
 import { AREA_META } from '../[slug]/area-meta';
 import substationsIndex from '@/data/substations/index.json';
-import { buildAreaTitle, buildAreaDescription } from '@/lib/grid-meta';
-import { formatDataDateLabel } from '@/lib/grid-data-date';
+import { buildAreaTitle, buildAreaDescription, gridFacts, areaHasMap } from '@/lib/grid-meta';
+import { latestPublishedForAreas } from '@/lib/grid-data-date';
+import { getAreaSubstationsStatic } from '@/lib/grid-static-lists';
 
 export const revalidate = 3600;
 
@@ -19,13 +20,13 @@ const META = AREA_META.tokyo;
 const TOKYO_COUNT =
   (substationsIndex as { area_dates?: Record<string, { count: number }> }).area_dates?.[META.areaJp]
     ?.count ?? null;
-const TOKYO_TITLE = buildAreaTitle(META.areaJp, META.operator, TOKYO_COUNT);
+// 検索の入口便（2026-10-30）: [slug] のエリアと同じ組み立て（title に「変電所一覧」・description は件数と最大の 1 件が先）
+const TOKYO_TITLE = buildAreaTitle(META.areaJp, META.operator, TOKYO_COUNT, areaHasMap(META.slug));
 const TOKYO_DESC = buildAreaDescription(
   META.areaJp,
   META.operator,
-  TOKYO_COUNT,
-  formatDataDateLabel(META.areaJp),
-  META.description.substring(0, 90)
+  latestPublishedForAreas([META.areaJp]),
+  gridFacts(getAreaSubstationsStatic(META.areaJp))
 );
 
 export const metadata: Metadata = {

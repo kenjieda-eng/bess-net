@@ -2964,6 +2964,67 @@
   line-height: 1.7;
 }
 
+/* 検索の入口便（2026-10-30）: 県ページ冒頭の要約（375px で 1 列に折り返す） */
+.grid-answer-box {
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  background: #f0f7ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+}
+.grid-answer-title {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0F2D4F;
+}
+.grid-answer-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin: 0 0 10px;
+}
+.grid-answer-facts > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 6px;
+  align-items: baseline;
+}
+.grid-answer-facts dt {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+.grid-answer-facts dd {
+  margin: 0;
+  font-weight: 700;
+  color: #0F2D4F;
+}
+.grid-answer-sub {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #374151;
+}
+.grid-answer-top {
+  margin: 0 0 8px;
+  padding-left: 1.4em;
+}
+.grid-answer-top li {
+  margin: 2px 0;
+  overflow-wrap: anywhere;
+}
+.grid-answer-meta {
+  margin-left: 8px;
+  font-size: 0.85rem;
+  color: #4b5563;
+  white-space: nowrap;
+}
+.grid-answer-date {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
 /* 一覧ページ */
 .grid-stats {
   display: grid;

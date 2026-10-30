@@ -49,15 +49,23 @@ export function operatorLabelMulti(operators: string[]): string {
   return `${operators[0]}ほか${operators.length - 1}社`;
 }
 
+/** 地図のあるエリアか（AreaPage の「中部限定マップへの導線」＝/grid/chubu/map と同じ条件。地図は中部だけ） */
+export function areaHasMap(areaSlug: string): boolean {
+  return areaSlug === 'chubu';
+}
+
 /**
  * エリアページの title。
- * 「{事業者名}の系統空き容量 — 変電所{n}件（{エリア}エリア）｜蓄電所ネット」
- * 優先度は 事業者名+空き容量 → 件数 → エリア名。
+ * 「{事業者名}の系統空き容量・変電所一覧 — {n}件（{エリア}エリア）｜蓄電所ネット」
+ * 地図のあるエリア（中部だけ・/grid/chubu/map）は「{事業者名}の変電所一覧・空き容量マップ」
+ * （「系統空き容量」と「空き容量マップ」を両方入れると 36 字に収まらないため、地図のあるエリアは後者だけ）。
+ * 優先度は 事業者名+空き容量+変電所一覧 → 件数 → エリア名（検索の入口便・2026-10-30 で「変電所一覧」「マップ」を足した）。
  */
-export function buildAreaTitle(areaJp: string, operator: string, count: number | null): string {
-  let out = operator ? `${operator}の系統空き容量` : `${areaJp}エリアの系統空き容量`;
-  if (count && (out + ` — 変電所${count.toLocaleString()}件` + SITE_SUFFIX).length <= TITLE_MAX) {
-    out += ` — 変電所${count.toLocaleString()}件`;
+export function buildAreaTitle(areaJp: string, operator: string, count: number | null, hasMap = false): string {
+  const who = operator || `${areaJp}エリア`;
+  let out = hasMap ? `${who}の変電所一覧・空き容量マップ` : `${who}の系統空き容量・変電所一覧`;
+  if (count && (out + ` — ${count.toLocaleString()}件` + SITE_SUFFIX).length <= TITLE_MAX) {
+    out += ` — ${count.toLocaleString()}件`;
   }
   if (operator && (out + `（${areaJp}エリア）` + SITE_SUFFIX).length <= TITLE_MAX) {
     out += `（${areaJp}エリア）`;
@@ -65,20 +73,79 @@ export function buildAreaTitle(areaJp: string, operator: string, count: number |
   return `${out}${SITE_SUFFIX}`;
 }
 
-export function buildAreaDescription(
-  areaJp: string,
-  operator: string,
-  count: number | null,
-  dataDateLabel: string | null,
-  base: string
-): string {
-  const head = [
-    operator ? `${operator}管内（${areaJp}エリア）` : `${areaJp}エリア`,
-    count ? `の変電所${count.toLocaleString()}件` : 'の変電所',
-    'の系統空き容量・予想潮流・N-1電制適用可否を一覧化。',
-  ].join('');
-  const date = dataDateLabel ? `${dataDateLabel}。` : '';
-  return `${head}${date}${base}`.slice(0, 200);
+/* ------------------------------------------------------------------ *
+ * 検索の入口便（2026-10-30）: description とページ冒頭の要約を「答えが先」に
+ *  GSC（7/27〜10/26）で県のページ 39 枚が検索の稼ぎ頭（CTR 3.14%・加重順位 6.1）、
+ *  愛知 0.9%・長野／福岡 1.8%・静岡 1.9% と低い県がある。題名は Gr6 で既に事業者名と件数を含むので、
+ *  今回は検索結果に出る説明文に「件数・空きのある件数・空き容量が最も大きい変電所」を先に出す。
+ *  数字はすべてページが表示している一覧（precompute・凍結除外済み）から作る＝焼き込まない。
+ * ------------------------------------------------------------------ */
+
+/** description の目安上限（Google の切れ目の前後）。超えるときは後ろの句から落とす */
+const DESC_MAX = 120;
+
+/** 説明文・要約の箱に使う一覧の行（GridListItem の一部） */
+export type GridFactsItem = {
+  slug: string;
+  name: string;
+  cap_avail_mw: number | null;
+  voltage_primary_kv: number | null;
+};
+export type GridFacts = {
+  count: number;
+  positive: number;
+  top: GridFactsItem[];
+  /** 最大値と同じ空き容量の変電所の数（同着が多い＝三重 49MW が 3 件など。1 件だけ名指しすると誤解を生む） */
+  maxCount: number;
+  /** 上位 n 件の切れ目（n 位）と同じ値の変電所が、上位 n 件の外にもある */
+  tieAtCutoff: boolean;
+};
+
+/**
+ * 一覧から 変電所数・空きのある変電所数（空き容量 > 0）・空き容量の上位 n 件 を取る。
+ * 並びは 空き容量の降順 → 名称 → slug（#124: 同着でもビルドごとに変わらない）。
+ */
+export function gridFacts(items: GridFactsItem[], topN = 5): GridFacts {
+  const withCap = items.filter((s) => typeof s.cap_avail_mw === 'number' && s.cap_avail_mw > 0);
+  const top = [...withCap]
+    .sort((a, b) => (b.cap_avail_mw as number) - (a.cap_avail_mw as number)
+      || a.name.localeCompare(b.name, 'ja') || a.slug.localeCompare(b.slug))
+    .slice(0, topN);
+  const sameAs = (v: number | null | undefined) => withCap.filter((s) => s.cap_avail_mw === v).length;
+  const last = top[top.length - 1]?.cap_avail_mw;
+  return {
+    count: items.length,
+    positive: withCap.length,
+    top,
+    maxCount: top.length ? sameAs(top[0].cap_avail_mw) : 0,
+    tieAtCutoff: top.length > 0 && sameAs(last) > top.filter((s) => s.cap_avail_mw === last).length,
+  };
+}
+
+/**
+ * 「{対象}の変電所{N}件の系統空き容量（{事業者}・公表{日付}）。空きのある変電所{M}件、空き容量が最も大きいのは{名}（{X}MW）。{使い方}」
+ * 長いときは 使い方 → 最大の 1 件 → 空きのある件数 の順に落とす（自前で文字を切らない）。
+ */
+function buildGridDescription(subject: string, operatorText: string, published: string | null, facts: GridFacts, howTo: string): string {
+  const paren = [operatorText, published ? `公表${published}` : ''].filter(Boolean).join('・');
+  const s1 = `${subject}の変電所${facts.count.toLocaleString()}件の系統空き容量${paren ? `（${paren}）` : ''}。`;
+  const s2a = `空きのある変電所${facts.positive.toLocaleString()}件`;
+  const top = facts.top[0];
+  // 最大値が同着のときは 1 件だけ名指ししない（「◯◯ほか2件（各49MW）」）
+  const s2b = !top ? ''
+    : facts.maxCount > 1
+      ? `、空き容量が最も大きいのは${top.name}ほか${facts.maxCount - 1}件（各${top.cap_avail_mw}MW）`
+      : `、空き容量が最も大きいのは${top.name}（${top.cap_avail_mw}MW）`;
+  const cands = [`${s1}${s2a}${s2b}。${howTo}`, `${s1}${s2a}${s2b}。`, `${s1}${s2a}。`, s1];
+  return cands.find((c) => c.length <= DESC_MAX) ?? s1;
+}
+
+/**
+ * エリアページの description。
+ * 使い方の句はエリアページの一覧（SubstationsBrowser）の実装どおり＝電圧階級・空容量あり・N-1電制で絞り込める。
+ */
+export function buildAreaDescription(areaJp: string, operator: string, published: string | null, facts: GridFacts): string {
+  return buildGridDescription(`${areaJp}エリア`, operator, published, facts, '電圧階級・空容量あり・N-1電制で絞り込めます。');
 }
 
 /**
@@ -101,17 +168,37 @@ export function buildPrefTitle(pref: string, operators: string[], count: number 
   return `${out}${SITE_SUFFIX}`;
 }
 
-export function buildPrefDescription(
-  pref: string,
-  operators: string[],
-  count: number | null,
-  dataDateLabel: string | null
-): string {
-  const op = operatorLabelMulti(operators);
-  const who = op ? `${op}管内の` : '';
-  const head = `${pref}にある${who}変電所${count ? count.toLocaleString() + '件' : ''}の系統空き容量を、空容量の大きい順に一覧表示。`;
-  const date = dataDateLabel ? `${dataDateLabel}。` : '';
-  return `${head}${date}N-1電制適用可否・電圧階級もあわせて確認でき、蓄電所の連系検討の初期スクリーニングに使えます。`;
+/**
+ * 県ページの description（検索の入口便・2026-10-30）。
+ * 県ページには絞り込みの部品が無い（空容量の大きい順の一覧だけ）ので、使い方の句は「一覧で確認できます」にする。
+ */
+export function buildPrefDescription(pref: string, operators: string[], published: string | null, facts: GridFacts): string {
+  return buildGridDescription(pref, operatorLabelMulti(operators), published, facts, '空容量の大きい順の一覧で、N-1電制・電圧も確認できます。');
+}
+
+/**
+ * 変電所の詳細の題名に入れる事業者の短い名（/grid の出典欄の表記と同じ）。表に無い名前はそのまま返す。
+ */
+const OPERATOR_SHORT: Record<string, string> = {
+  北海道電力ネットワーク: '北海道電力NW',
+  東北電力ネットワーク: '東北電力NW',
+  東京電力パワーグリッド: '東京電力PG',
+  中部電力パワーグリッド: '中部電力PG',
+  中国電力ネットワーク: '中国電力NW',
+};
+export function operatorShortName(operator: string): string {
+  return OPERATOR_SHORT[operator] ?? operator;
+}
+
+/**
+ * 変電所の詳細の title（検索の入口便・2026-10-30）。
+ * 「{変電所名}（{県}・{事業者の短い名}）の系統空き容量・蓄電池連系条件」。県が確定しないレコード（基幹系統・関西ローカル系）は従来どおり。
+ * 同じ名前の変電所が別の県・別の社にある（ロングテールの「◯◯変電所」の取り違え）ため。サイト名は layout の titleTemplate が付ける。
+ */
+export function buildSubstationTitle(name: string, prefecture: string | null, operator: string): string {
+  if (!prefecture) return `${name}の系統空き容量・蓄電池連系条件`;
+  const where = [prefecture, operator ? operatorShortName(operator) : ''].filter(Boolean).join('・');
+  return `${name}（${where}）の系統空き容量・蓄電池連系条件`;
 }
 
 /* ------------------------------------------------------------------ *

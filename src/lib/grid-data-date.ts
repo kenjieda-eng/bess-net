@@ -36,6 +36,21 @@ export function formatDataDateLabel(areaJp: string): string | null {
   return `${pub}${got ? `（${got}）` : ''}${note}`;
 }
 
+/**
+ * 検索の入口便（2026-10-30）: description に入れる公表日（「2026/7/31」形式）。
+ * formatDataDateLabelForAreas と同じ規則（エリアの中で公表時点が最も新しいもの・#121）で 1 つ選ぶ。取込日は入れない。
+ */
+export function latestPublishedForAreas(areasJp: string[]): string | null {
+  const latest = [...new Set(areasJp.filter(Boolean))]
+    .map((a) => AREA_DATES[a]?.last_updated)
+    .filter((d): d is string => !!d)
+    .sort()
+    .pop();
+  if (!latest) return null;
+  const m = latest.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? `${m[1]}/${Number(m[2])}/${Number(m[3])}` : null;
+}
+
 /** 複数エリアが混在する県ページ用: 最新の公表時点を持つエリアの文言を返す */
 export function formatDataDateLabelForAreas(areasJp: string[]): string | null {
   const uniq = [...new Set(areasJp.filter(Boolean))];

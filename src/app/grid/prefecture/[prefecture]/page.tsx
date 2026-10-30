@@ -10,13 +10,14 @@ import {
   getSubstationsByPrefecture,
 } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
-import { formatDataDateLabelForAreas } from '@/lib/grid-data-date';
+import { formatDataDateLabelForAreas, latestPublishedForAreas } from '@/lib/grid-data-date';
 // 落とし穴 #116 の恒久策(2026-08-16): 県一覧も build 時 precompute の静的データを使う
 import { getPrefectureSubstationsStatic } from '@/lib/grid-static-lists';
 import substationsIndex from '@/data/substations/index.json';
 import {
   buildPrefTitle,
   buildPrefDescription,
+  gridFacts,
   operatorLabelMulti,
   subsidyCountForPref,
 } from '@/lib/grid-meta';
@@ -61,11 +62,12 @@ export async function generateMetadata({
   const operators = meta?.operators ?? [];
   const count = meta?.count ?? null;
   const title = buildPrefTitle(decoded, operators, count);
+  // 検索の入口便（2026-10-30）: 件数・空きのある件数・最大の 1 件は、ページが表示する一覧（凍結除外済み）から作る
   const description = buildPrefDescription(
     decoded,
     operators,
-    count,
-    formatDataDateLabelForAreas(meta?.areas ?? [])
+    latestPublishedForAreas(meta?.areas ?? []),
+    gridFacts(getPrefectureSubstationsStatic(decoded))
   );
   return {
     title: { absolute: title },
@@ -85,6 +87,9 @@ export default async function PrefecturePage({ params }: PageParams) {
   const prefOperators = prefMeta?.operators ?? [];
 
   const positive = subs.filter((s) => (s.cap_avail_mw ?? 0) > 0).length;
+  // 検索の入口便（2026-10-30）: 冒頭の要約（description と同じ事実・同じ一覧から）
+  const facts = gridFacts(subs);
+  const dataDateLabel = formatDataDateLabelForAreas(subs.map((s) => s.area || ''));
   const n1 = subs.filter((s) => s.n1_eligible === true).length;
   const totalCap = subs.reduce(
     (sum, s) => sum + (typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : 0),
@@ -134,17 +139,54 @@ export default async function PrefecturePage({ params }: PageParams) {
           </p>
 
           <h1 className="page-title">{decoded}の変電所一覧（{subs.length}件）</h1>
+
+          {/* 検索の入口便（2026-10-30）: 答えが先の要約。数字は下の一覧と同じ precompute から（焼き込まない）。
+              データ基準日（公表日・取込日）は Gr2 是正（2026-08-08）の行をこの箱の中へ移した（出どころは同じ area_dates） */}
+          <section className="grid-answer-box" aria-labelledby="grid-answer-title">
+            <h2 id="grid-answer-title" className="grid-answer-title">{decoded}の変電所の要約</h2>
+            <dl className="grid-answer-facts">
+              <div>
+                <dt>変電所</dt>
+                <dd>{facts.count.toLocaleString()}件</dd>
+              </div>
+              <div>
+                <dt>空きのある変電所</dt>
+                <dd>{facts.positive.toLocaleString()}件</dd>
+              </div>
+              {PREF_PROJECT_COUNT[decoded] ? (
+                <div>
+                  <dt>この県の蓄電所案件</dt>
+                  <dd>
+                    <Link href="/projects">{PREF_PROJECT_COUNT[decoded]}件 → プロジェクトDB</Link>
+                  </dd>
+                </div>
+              ) : null}
+            </dl>
+            {facts.top.length > 0 && (
+              <>
+                <p className="grid-answer-sub">
+                  空き容量の上位{facts.top.length}件
+                  {facts.tieAtCutoff ? `（${facts.top[facts.top.length - 1].cap_avail_mw}MW は同じ値の変電所がほかにもあり、名前順で表示）` : ''}
+                </p>
+                <ol className="grid-answer-top">
+                  {facts.top.map((s) => (
+                    <li key={s.slug}>
+                      <Link href={`/grid/${s.slug}`}>{s.name}</Link>
+                      <span className="grid-answer-meta">
+                        {s.cap_avail_mw}MW{s.voltage_primary_kv != null ? `・${s.voltage_primary_kv}kV` : ''}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            )}
+            {dataDateLabel && <p className="grid-answer-date">データ基準日: {dataDateLabel}</p>}
+          </section>
+
           <p className="page-lead">
             蓄電所ネット 統合データベースから {decoded} の変電所{' '}
             {subs.length}件を空容量大きい順に一覧表示しています。連系検討の初期スクリーニングに。
           </p>
-
-          {/* データ基準日: microCMS 実値（precompute area_dates）から供給（Gr2是正・2026-08-08） */}
-          {formatDataDateLabelForAreas(subs.map((s) => s.area || '')) && (
-            <p style={{ fontSize: 13, color: 'var(--color-muted)', margin: '-8px 0 16px' }}>
-              データ基準日: {formatDataDateLabelForAreas(subs.map((s) => s.area || ''))}
-            </p>
-          )}
 
           {/* Gr3+Gr4(2026-08-08): 逆ブリッジ＋県内案件リンク（ゼロfetch） */}
           <section className="page-section news-shelf" style={{ marginBottom: 20 }}>

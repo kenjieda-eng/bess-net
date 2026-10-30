@@ -28,8 +28,9 @@ import { getNearbyProjects, getRelatedNewsForSubstation } from '@/lib/related-ca
 import { siteConfig } from '@/lib/site-config';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import substationsIndex from '@/data/substations/index.json';
-import { buildAreaTitle, buildAreaDescription } from '@/lib/grid-meta';
-import { formatDataDateLabel } from '@/lib/grid-data-date';
+import { buildAreaTitle, buildAreaDescription, buildSubstationTitle, gridFacts, areaHasMap } from '@/lib/grid-meta';
+import { latestPublishedForAreas } from '@/lib/grid-data-date';
+import { getAreaSubstationsStatic } from '@/lib/grid-static-lists';
 import GridPrintButton from '@/components/GridPrintButton';
 // Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
@@ -121,14 +122,14 @@ export async function generateMetadata({
   if (area) {
     // Gr6(2026-08-09): 「◯◯電力 空き容量」の検索語に当たるよう、事業者名を title に入れる。
     // サイト名は title 内に1回だけ入れるため titleTemplate を absolute で回避する。
+    // 検索の入口便（2026-10-30）: title に「変電所一覧」（中部は「空き容量マップ」も）・description は件数と最大の 1 件が先
     const count = AREA_SUBSTATION_COUNT[area.areaJp] ?? null;
-    const title = buildAreaTitle(area.areaJp, area.operator, count);
+    const title = buildAreaTitle(area.areaJp, area.operator, count, areaHasMap(area.slug));
     const description = buildAreaDescription(
       area.areaJp,
       area.operator,
-      count,
-      formatDataDateLabel(area.areaJp),
-      area.description.substring(0, 90)
+      latestPublishedForAreas([area.areaJp]),
+      gridFacts(getAreaSubstationsStatic(area.areaJp))
     );
     return {
       title: { absolute: title },
@@ -145,20 +146,23 @@ export async function generateMetadata({
   const avail = sub.cap_avail_mw;
   const availStr = avail !== undefined && avail !== null ? `${avail}MW` : '情報なし';
   const desc = `${sub.name}（${operator}・${vc}）の系統空き容量・連系条件・出力制御情報。空容量${availStr}。出典・最終更新日明記、蓄電所事業の検討材料に。`;
+  // 検索の入口便（2026-10-30）: 題名に県と事業者の短い名。県は本文と同じ normalizeSubstationPlace を生値に 1 回だけ通す（#119）
+  const place = normalizeSubstationPlace(sub.prefecture, Array.isArray(sub.area) ? sub.area[0] : (sub.area as unknown as string | undefined));
+  const pageTitle = buildSubstationTitle(sub.name, place.prefecture, operator);
   return {
     // layout.tsx titleTemplate が自動付与（落とし穴 #86）
-    title: `${sub.name}の系統空き容量・蓄電池連系条件`,
+    title: pageTitle,
     description: desc.substring(0, 160),
     alternates: { canonical: `/grid/${sub.slug}` },
     openGraph: {
-      title: `${sub.name}の系統空き容量・蓄電池連系条件`,
+      title: pageTitle,
       description: desc.substring(0, 160),
       type: 'article',
       images: ['/og-image.png'],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${sub.name}の系統空き容量・蓄電池連系条件`,
+      title: pageTitle,
       description: desc.substring(0, 160),
     },
   };
