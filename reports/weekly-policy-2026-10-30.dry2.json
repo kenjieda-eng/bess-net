@@ -1,0 +1,80 @@
+[
+  {
+    "kind": "post",
+    "slug": "occto-balancing-committee-64-2026-11",
+    "result": "skip_exists",
+    "id": "m417bjl3j"
+  },
+  {
+    "kind": "post",
+    "slug": "occto-capacity-kentoukai-77-2026-10",
+    "result": "skip_exists",
+    "id": "92bepjkx8q6"
+  },
+  {
+    "kind": "post",
+    "slug": "occto-chousei-iinkai-123-jukyu-kensho-2026-10",
+    "result": "skip_exists",
+    "id": "l721lxqff524"
+  },
+  {
+    "kind": "post",
+    "slug": "meti-haishutsuryo-torihiki-shoiinkai-10-2026-10",
+    "result": "skip_exists",
+    "id": "y702cen7hvd"
+  },
+  {
+    "kind": "post",
+    "slug": "egc-seido-kanshi-25-2026-10",
+    "result": "skip_exists",
+    "id": "dv1ilddgxfxh"
+  },
+  {
+    "kind": "post",
+    "slug": "occto-access-setsuzoku-kentou-shinyoushiki-tokko-2026-11",
+    "result": "skip_exists",
+    "id": "8gijsiiwmwg"
+  },
+  {
+    "kind": "post",
+    "slug": "egov-haikibutsu-shorei-lithium-chikudenchi-pubcomm-2026-10",
+    "result": "skip_exists",
+    "id": "pkl98i1pjdh"
+  },
+  {
+    "kind": "patch",
+    "key": "A",
+    "id": "3apxmlozq-zm",
+    "result": "skip_idempotent"
+  },
+  {
+    "kind": "patch",
+    "key": "B",
+    "id": "4g6ah3qtwbd",
+    "result": "skip_idempotent"
+  },
+  {
+    "kind": "patch",
+    "key": "C",
+    "id": "9vchyg4h3k",
+    "result": "skip_idempotent"
+  },
+  {
+    "kind": "patch",
+    "key": "D",
+    "id": "273brdxbqin5",
+    "result": "skip_idempotent"
+  },
+  {
+    "kind": "patch",
+    "key": "E",
+    "id": "1188jc97rsd6",
+    "result": "skip_idempotent"
+  },
+  {
+    "kind": "patch",
+    "key": "F",
+    "id": "3m8y5vvxwn",
+    "result": "skip_idempotent"
+  }
+]
