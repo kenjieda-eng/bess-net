@@ -172,7 +172,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--emit-plan", action="store_true")
+    # BU・BV 本実行便（2026-10-30）: 実行日の baseline を使い、10/15 の dry-run の報告（手で足した節あり）を上書きしない
+    ap.add_argument("--baseline", default=None)
+    ap.add_argument("--out-dir", default=None)
+    ap.add_argument("--plan-out", default="scripts/experimental/kyushu/update_plan_202610.json")
     args = ap.parse_args()
+    global BASELINE, REPORT_MD, REPORT_JSON, N1_OUT
+    if args.baseline:
+        BASELINE = Path(args.baseline)
+    if args.out_dir:
+        REPORT_MD = Path(args.out_dir) / "kyushu-report.md"
+        REPORT_JSON = Path(args.out_dir) / "kyushu-report.json"
+        N1_OUT = Path(args.out_dir) / "n1_undetermined_kyushu.json"
 
     R = {"generated_on": str(date.today()), "area": "九州", "operator": "九州電力送配電",
          "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ）",
@@ -587,50 +598,41 @@ def main():
     REPORT_MD.write_text("\n".join(L) + "\n", encoding="utf-8")
 
     # =========================================================================
-    # --emit-plan: 本実行用の update_plan（microCMS 書込はしない）
-    # 裁定（2026-08-20 承認）:
-    #   1. kyu-764 待金→侍金（4項目一致＋「待金」不在を証明済）→ 名称更新・履歴保持
-    #   2. 振り直し2件（大口 21_4→21_4(1)・ｱｲﾗﾝﾄﾞｼﾃｨ 27_11→27_11(1)）→ (1)側一致を
-    #      フィールド突合で証明済（(2)は電圧面が異なり判別可能）→ slug維持・eid更新・履歴
-    #   3. 新規6件のうち県が確定した4件のみ投入（null投入は厳禁＝基幹導出ヘルパの誤発火防止）:
-    #        大口4(2)=鹿児島県（同名継承）・宮人23=鹿児島県（GSI: 伊佐市「大口宮人」muni46224）
-    #        枕崎20(3)=鹿児島県（同名継承）・ｱｲﾗﾝﾄﾞｼﾃｨ11(2)=福岡県（同名継承）
-    #      ★保留2件: 志和池13(3)（GSIで宮崎県都城市 muni45202 と確定したが、既存13(1)/(2)が
-    #        鹿児島県で収録されており同時修正は裁定外＝3件まとめて要判断）・
-    #        原田39（都城市と霧島市の両方に実在・地区マップPDFは画像で判定不能＝確定不能）
-    #   4. 武雄 No『-』行は取り込まない（除外1件としてレポート残置）
-    #   ＋ last_updated はレコード単位（7/27=14地区・7/28=17地区）
-    #   ＋ source_url を現行URL（td_rHc7Jd0i.zip）へ全件更新（旧URLは404実測済み）
+    # --emit-plan: 本実行用の計画（apply_substations_plan.ts の形式・microCMS 書込はしない）
+    # 裁定（2026-10-29 ユウ・検証記録_BU東京・BV九州dry-run_裁定）:
+    #   1. 枝番の振り直し 1 件（kyu-713 伊集院 23_23 → 23_23(1)）は 8/20 の前例どおり＝slug 維持・external_id 更新・履歴に追記
+    #   2. 新規 3 件のうち伊集院 23_23(2) だけ足す（県は同名既存 kyu-713 から継ぐ＝鹿児島県）。志和池 22_13(3)・原田 22_39 は保留
+    #   3. 平常時出力制御の可能性が「有り」→「―」は公表どおり空（[]）にする（8/20 の「現値維持」を改める・四国 10/5 と同じ）
+    #   4. 地区 22 の県は変えない（別の便）
+    #   5. source_url を新しい ZIP の URL にする（883 件が 404 の旧 ZIP）
+    #   ＋ last_updated は CSV のメタ行の版（31 メンバーとも 2026-09-29・割れなし）・fetched_at は実行日
+    #   ＋ 武雄 No『－』行は取り込まない（8/20 の裁定 4）
+    # 8/19〜20 の版（update_plan_2607.json を書いていた部分）は git の履歴に残っている（commit 前の版）。
     # =========================================================================
     if args.emit_plan:
         VC_MAP = {500: "500kV系", 220: "220kV系", 110: "110kV系", 66: "66kV系", 22: "22kV系"}
-        vclass = lambda kv: VC_MAP.get(kv, "その他") if kv is not None else "その他"  # noqa: E731
+        vclass = lambda kv: VC_MAP.get(int(kv), "その他") if kv is not None else "その他"  # noqa: E731
         iso = lambda d: f"{d}T00:00:00.000Z"  # noqa: E731
-
-        NEW_PREF = {  # 県が確定した新規のみ（確定方法つき）
-            "kyuden_21_4(2)": ("鹿児島県", "同名既存 kyu-619 大口（鹿児島県）から継承"),
-            "kyuden_21_23": ("鹿児島県", "GSI地名検索: 伊佐市「大口宮人」「宮人」muni=46224"),
-            "kyuden_23_20(3)": ("鹿児島県", "同名既存 kyu-708/709 枕崎（鹿児島県）から継承"),
-            "kyuden_27_11(2)": ("福岡県", "同名既存 kyu-798 ｱｲﾗﾝﾄﾞｼﾃｨ（福岡県）から継承"),
-        }
+        FETCHED = iso(str(date.today()))
+        NEW_PREF = {"kyuden_23_23(2)": ("鹿児島県", "同名既存 kyu-713 伊集院（鹿児島県）から継承（10/29 裁定 BV-2・8/20 の前例）")}
         HOLD = {
-            "kyuden_22_13(3)": "志和池: GSIで宮崎県都城市（muni=45202）と確定したが、既存13(1)/(2)が"
-                               "鹿児島県で収録済み。同時修正は裁定外のため3件まとめて要判断（今回保留）",
-            "kyuden_22_39": "原田: 都城市（宮崎）と霧島市（鹿児島）の両方に実在し、地区マップPDFは"
-                            "画像ベースで判定不能＝県を確定できず保留（次回更新待ち）",
+            "kyuden_22_13(3)": "志和池: 県が決まらない（既存 13(1)/(2) は鹿児島県で収録・地名検索では宮崎県都城市）。地区 22 の県の確かめの便で一緒に（10/29 裁定 BV-2・4）",
+            "kyuden_22_39": "原田: 都城市（宮崎）と霧島市（鹿児島）の両方に地名があり県が決まらない。地区 22 の県の確かめの便で一緒に（10/29 裁定 BV-2・4）",
         }
-
+        raw_base = {b["slug"]: b for b in json.load(open(BASELINE, encoding="utf-8"))}
+        META_KEYS = {"id", "createdAt", "updatedAt", "publishedAt", "revisedAt"}
         RENUM_BY_SLUG = {x["slug"]: x for x in renumber}
         RENAME_BY_SLUG = {x["slug"]: x for x in renamed}
         NUMF = ["units", "capacity_total_mw", "cap_operational_mw", "forecast_flow_mw",
                 "cap_avail_mw", "cap_avail_upper_mw", "n1_capacity_mw"]
-        updates, value_changed, n1_skip, oc_skip = [], 0, 0, 0
+        updates, value_changed, n1_skip, oc_emptied, oc_set = [], 0, 0, [], []
         for b_, r_ in matched:
+            raw = raw_base[b_["slug"]]
             patch, changed = {}, []
             for k in NUMF:
                 ov, nv = b_.get(k), r_.get(k)
                 if nv is None:
-                    continue
+                    continue  # 数値欄の「―」は 10/15 の dry-run で変化 0（現値も null）＝送らない
                 if ov is None or abs(float(ov) - float(nv)) > 1e-6:
                     patch[k] = nv
                     changed.append(k)
@@ -639,16 +641,19 @@ def main():
                 changed.append("op_constraint")
             if r_.get("n1_eligible") is None:
                 if b_.get("n1_eligible") is not None:
-                    n1_skip += 1
+                    n1_skip += 1  # 未算定は boolean を潰さない（現値維持・n1-status の一覧で表示）
             elif bool(b_.get("n1_eligible")) != r_["n1_eligible"]:
                 patch["n1_eligible"] = r_["n1_eligible"]
                 changed.append("n1_eligible")
             if r_.get("oc_possibility") is None:
                 if b_.get("oc_possibility") is not None:
-                    oc_skip += 1
+                    patch["oc_possibility"] = []  # 裁定 3: 公表どおり空（GET は空の select を [] で返す）
+                    changed.append("oc_possibility")
+                    oc_emptied.append(b_["slug"])
             elif (b_.get("oc_possibility") or None) != r_["oc_possibility"]:
                 patch["oc_possibility"] = [r_["oc_possibility"]]
                 changed.append("oc_possibility")
+                oc_set.append(b_["slug"])
             if any(c in NUMF for c in changed):
                 value_changed += 1
             rn = RENUM_BY_SLUG.get(b_["slug"])
@@ -660,23 +665,25 @@ def main():
                 patch["name"] = nm["new_name"]
                 changed.append("name")
             patch["last_updated"] = iso(r_["last_updated"])
-            patch["source_url"] = ZIP_URL          # 旧URLは404（全件更新）
-            updates.append({"slug": b_["slug"], "patch": patch, "changed": changed})
+            patch["source_url"] = ZIP_URL
+            patch["fetched_at"] = FETCHED
+            updates.append({"slug": b_["slug"], "id": raw["id"], "patch": patch, "changed": changed,
+                            "before": {k: v for k, v in raw.items() if k not in META_KEYS}})
 
         creates, held = [], []
-        next_no = 880
+        next_no = max(int(s.split("-")[1]) for s in raw_base if s.split("-")[1].isdigit()) + 1
         for r_ in sorted(new_rows, key=lambda x: (x["district"], x["no"])):
             eid = r_["external_id"]
             if eid in HOLD:
                 held.append({"external_id": eid, "name": r_["name"], "reason": HOLD[eid]})
                 continue
-            pref, evidence = NEW_PREF[eid]
+            pref, evidence = NEW_PREF[eid]  # 裁定に無い新規が出たら KeyError で止まる（想定外）
             slug = f"kyu-{next_no}"
             next_no += 1
             content = {
                 "name": r_["name"], "slug": slug,
                 "operator": ["九州電力送配電"], "area": ["九州"],
-                "prefecture": pref,                 # ★null投入は厳禁（基幹導出ヘルパの誤発火）
+                "prefecture": pref,
                 "voltage_primary_kv": r_["voltage_primary_kv"],
                 "voltage_secondary_kv": r_["voltage_secondary_kv"],
                 "voltage_class": [vclass(r_["voltage_primary_kv"])],
@@ -694,39 +701,36 @@ def main():
                 "source_url": ZIP_URL,
                 "data_source_format": ["CSV"],
                 "last_updated": iso(r_["last_updated"]),
+                "fetched_at": FETCHED,
             }
             if r_["oc_possibility"] is not None:
                 content["oc_possibility"] = [r_["oc_possibility"]]
             content = {k: v for k, v in content.items() if v is not None}
-            creates.append({"slug": slug, "external_id": eid, "name": r_["name"],
-                            "prefecture": pref, "evidence": evidence, "content": content,
-                            "n1_undetermined_as_false": r_["n1_eligible"] is None})
+            creates.append({"slug": slug, "external_id": eid, "name": r_["name"], "prefecture": pref, "evidence": evidence,
+                            "content": content, "n1_raw": r_.get("n1_raw"), "n1_undetermined_as_false": r_["n1_eligible"] is None})
 
+        n1_ok_after = sum(1 for u in updates if (u["patch"]["n1_eligible"] if "n1_eligible" in u["patch"] else u["before"].get("n1_eligible")) is True) \
+            + sum(1 for c in creates if c["content"].get("n1_eligible") is True)
         plan = {
-            "generated_on": R["generated_on"],
-            "update_count": len(updates), "value_changed": value_changed,
-            "create_count": len(creates), "held": held,
-            "n1_undetermined_skipped": n1_skip, "oc_undetermined_skipped": oc_skip,
-            "renumber": renumber, "renamed": renamed,
-            "source_url_new": ZIP_URL,
+            "generated": str(date.today()), "area": "九州", "prefix": "kyu-", "endpoint": "substations",
+            "expected": {"updates": len(updates), "value_changed": value_changed, "creates": len(creates), "n1_ok_after": n1_ok_after},
+            "ruling": "02_計画・運営/検証記録_BU東京・BV九州dry-run_裁定_2026-10-29_ユウ.md（BV-1〜5・共通）",
+            "held": held, "n1_undetermined_kept": n1_skip, "oc_emptied": oc_emptied, "oc_set": oc_set,
+            "renumber": renumber, "renamed": renamed, "source_url_new": ZIP_URL,
             "updates": updates, "creates": creates,
         }
-        Path("scripts/experimental/kyushu/update_plan_2607.json").write_text(
-            json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
-        lu = {}
-        for u in updates:
-            d = str(u["patch"]["last_updated"])[:10]
-            lu[d] = lu.get(d, 0) + 1
-        print("\n=== emit-plan ===")
-        print(f"  更新PATCH: {plan['update_count']}（数値変化 {value_changed}・名称修正 {len(renamed)}・eid更新 {len(renumber)}）")
-        print(f"  last_updated（レコード単位）: {lu}")
-        print(f"  新規POST: {plan['create_count']}件（保留 {len(held)}件）")
+        Path(args.plan_out).write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
+        lu = Counter(str(u["patch"]["last_updated"])[:10] for u in updates)
+        print("\n=== emit-plan（10/29 裁定）===")
+        print(f"  更新PATCH: {len(updates)}（数値変化 {value_changed}・名称修正 {len(renamed)}・eid更新 {len(renumber)}）")
+        print(f"  last_updated: {dict(lu)}・fetched_at {FETCHED}")
+        print(f"  出力制御の可能性: 空にする {len(oc_emptied)} {oc_emptied}・値を入れる {len(oc_set)} {oc_set}")
+        print(f"  新規POST: {len(creates)}件（保留 {len(held)}件）・N-1 可（取込後）{n1_ok_after}・N-1 未算定で現値維持 {n1_skip}")
         for c in creates:
-            print(f"    + {c['slug']} {c['name']} {c['prefecture']} ← {c['evidence']}")
+            print(f"    + {c['slug']} {c['name']} {c['prefecture']} n1_raw={c['n1_raw']} ← {c['evidence']}")
         for h in held:
             print(f"    保留: {h['external_id']} {h['name']}")
-        print(f"  現値維持: N-1 {n1_skip} / 出力制御 {oc_skip}")
-        print("  -> scripts/experimental/kyushu/update_plan_2607.json")
+        print(f"  -> {args.plan_out}")
 
     print(f"\n-> {REPORT_MD} / {REPORT_JSON} / {N1_OUT} 出力")
     print("[dry-run] 完了（microCMS 書込なし）")

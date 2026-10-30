@@ -1,0 +1,3204 @@
+{
+ "generated_on": "2026-10-30",
+ "area": "東京",
+ "operator": "東京電力パワーグリッド",
+ "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ）",
+ "page": "https://www.tepco.co.jp/pg/consignment/system/",
+ "requires_judgement": [
+  "新規 変東京都（23区） 66kV 11 南多摩（tokyo）を足すか",
+  "新規 変東京都（23区） 66kV 14 北多摩（tokyo）を足すか",
+  "新規 変東京都（23区） 66kV 15 聖蹟桜ヶ丘（tokyo）を足すか",
+  "新規 変東京都（23区） 66kV 2 青梅（tokyo）を足すか",
+  "新規 変東京都（23区） 66kV 6 武蔵野（tokyo）を足すか",
+  "新規 変東京都（23区） 66kV 7 多摩（tokyo）を足すか",
+  "新規 変東京都（23区） 66kV 8 昭島（tokyo）を足すか",
+  "新規 変茨城県 66kV 6 茨城（ibaraki）を足すか",
+  "新規 変静岡県（富士川以東） 66kV 6 岳南（shizuoka）を足すか",
+  "新 CSV で「－」・空欄になった既存値 5 件の扱い（現値維持か公表どおり空か）: 平常時出力制御の可能性 5"
+ ],
+ "warnings": [],
+ "files": [
+  {
+   "area": "kikan",
+   "heading": "基幹系統",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_kikan.zip",
+   "zip_bytes": 6498,
+   "zip_sha256": "92a191330c7ecbb691b0923a4f852a6f52bc93e5bcaf10e2e75799719cb09f99",
+   "zip_sha256_july": "38c782da60b1ceb7b814e456f5ef592b1a9f07e37cde157e18861813c6fc7511",
+   "csv_name": "csv_yosochoryu_kikan_hendensyo.csv",
+   "csv_bytes": 6621,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 28,
+   "definition_column": true,
+   "notes_column_absent": false
+  },
+  {
+   "area": "tochigi",
+   "heading": "栃木県",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_tochigi.zip",
+   "zip_bytes": 8034,
+   "zip_sha256": "3063bfdcb42a26e1a5653ac9da42de660ab58725518801805cbb04acb1d080a8",
+   "zip_sha256_july": "329ad77a53360a893fd7f91222bfbcf9d85de04ab4b4aab38902e4c07cdebc91",
+   "csv_name": "csv_yosochoryu_tochigi_hendensyo.csv",
+   "csv_bytes": 24401,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 19,
+   "data_rows": 112,
+   "definition_column": true,
+   "notes_column_absent": true
+  },
+  {
+   "area": "gunma",
+   "heading": "群馬県",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_gunma.zip",
+   "zip_bytes": 7675,
+   "zip_sha256": "cc8973d9da08b3219864eb9c33c809a4d745778038d8ed2be95d708c6a1b7db6",
+   "zip_sha256_july": "9c83ab48a20e1f673780b307bdcc139badc44d6028e42de60a9a4a97923307f1",
+   "csv_name": "csv_yosochoryu_gunma_hendensyo.csv",
+   "csv_bytes": 21386,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 19,
+   "data_rows": 116,
+   "definition_column": true,
+   "notes_column_absent": true
+  },
+  {
+   "area": "ibaraki",
+   "heading": "茨城県",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_ibaraki.zip",
+   "zip_bytes": 8848,
+   "zip_sha256": "21ee67492aeda49f368080c67b0eeff80e78a1834e3698dc12561289dad0a006",
+   "zip_sha256_july": "b5a7df261c8b606b77de7fc8a8133f3d009425b734e8f2d5b6be224747b27954",
+   "csv_name": "csv_yosochoryu_ibaraki_hendensyo.csv",
+   "csv_bytes": 29293,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 19,
+   "data_rows": 137,
+   "definition_column": true,
+   "notes_column_absent": true
+  },
+  {
+   "area": "saitama",
+   "heading": "埼玉県",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_saitama.zip",
+   "zip_bytes": 10269,
+   "zip_sha256": "30f9f8bd0df376eae0050efd2fd669997d8851b10c6d5ad958e37c0787924e68",
+   "zip_sha256_july": "70a78dcb232aba3074c4493c3426ff228019ea887a8b08ebffb4c25c26521b95",
+   "csv_name": "csv_yosochoryu_saitama_hendensyo.csv",
+   "csv_bytes": 34621,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 19,
+   "data_rows": 231,
+   "definition_column": true,
+   "notes_column_absent": true
+  },
+  {
+   "area": "chiba",
+   "heading": "千葉県",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_chiba.zip",
+   "zip_bytes": 10028,
+   "zip_sha256": "b1eceb5a68a5104e44345003f32f9e5449077e1f0bfc8da83917a4b4041a2a4a",
+   "zip_sha256_july": "9d411ca0464f16b76c639ec253bad45659ad2b008fbba87f5513c31f0d442b63",
+   "csv_name": "csv_yosochoryu_chiba_hendensyo.csv",
+   "csv_bytes": 37924,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 201,
+   "definition_column": true,
+   "notes_column_absent": false
+  },
+  {
+   "area": "tokyo",
+   "heading": "東京都[23区]",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_tokyo.zip",
+   "zip_bytes": 10633,
+   "zip_sha256": "7fc53d51a607c5626d6db41fb36d5d081b6fe0620cc404ec53c0aa46ec2d4ef6",
+   "zip_sha256_july": "ce4f5816e9df1895ac54dd02edf48c5ba56d0e1e162cce93d7b6735a8ee0ffde",
+   "csv_name": "csv_yosochoryu_tokyo_hendensyo .csv",
+   "csv_bytes": 72894,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 417,
+   "definition_column": true,
+   "notes_column_absent": false
+  },
+  {
+   "area": "tama",
+   "heading": "東京都[多摩地区]",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_tama.zip",
+   "zip_bytes": 4972,
+   "zip_sha256": "e3acb725bb91fc0add236345128735464eac249d608f060929500aeb3d2ab152",
+   "zip_sha256_july": "d8f042d0ac165dee1a6bba6e0edb410402356206e91c112511b0ed849404a8f3",
+   "csv_name": "csv_yosochoryu_tama_hendensyo.csv",
+   "csv_bytes": 20228,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 112,
+   "definition_column": true,
+   "notes_column_absent": false
+  },
+  {
+   "area": "kanagawa",
+   "heading": "神奈川県",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_kanagawa.zip",
+   "zip_bytes": 11798,
+   "zip_sha256": "ff7402c765034cb09cc4998a7728f6d426f5c3edfef846e288aa3ef6d45f6aba",
+   "zip_sha256_july": "403156f07cb866b4f8b29eb7b553b2fba41bd2988465b91e2e4ce22905766e51",
+   "csv_name": "csv_yosochoryu_kanagawa_hendensyo.csv",
+   "csv_bytes": 45202,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 266,
+   "definition_column": true,
+   "notes_column_absent": false
+  },
+  {
+   "area": "yamanashi",
+   "heading": "山梨県",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_yamanashi.zip",
+   "zip_bytes": 4512,
+   "zip_sha256": "952e42bc6cd283d68325e7a458ae1ceec29c496bccc7d18b21985c781bd9eab7",
+   "zip_sha256_july": "5dd78df9be1444c496ad4930f3fd16c48ac91d15ccc695e7da38d69a1e574d5f",
+   "csv_name": "csv_yosochoryu_yamanashi_hendensyo.csv",
+   "csv_bytes": 11770,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 77,
+   "definition_column": true,
+   "notes_column_absent": false
+  },
+  {
+   "area": "shizuoka",
+   "heading": "静岡県［富士川以東］",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_shizuoka.zip",
+   "zip_bytes": 5216,
+   "zip_sha256": "ba781cc1e93820e0445206e7fb59d18bba551c7989ea6b8ab2d7475cda7bc591",
+   "zip_sha256_july": "fa207c41b852f79583eda0bfc7b8dd75792d6cea638de13551f9c6a008c78255",
+   "csv_name": "csv_yosochoryu_shizuoka_hendensyo.csv",
+   "csv_bytes": 16074,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 81,
+   "definition_column": true,
+   "notes_column_absent": false
+  },
+  {
+   "area": "fukushima",
+   "heading": "福島県[一部]",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_fukushima.zip",
+   "zip_bytes": 1805,
+   "zip_sha256": "b2b17621db087c616824fa43bc5faed4f6b67a15d426c3eb8e9cc57ea78a9a1d",
+   "zip_sha256_july": "485764983c25a80e197c1ce8d0bce6c082aebd313b98650112595205f9b427c2",
+   "csv_name": "csv_yosochoryu_fukushima_hendensyo.csv",
+   "csv_bytes": 3419,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 1,
+   "definition_column": true,
+   "notes_column_absent": false
+  },
+  {
+   "area": "nagano",
+   "heading": "長野県[一部]",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_nagano.zip",
+   "zip_bytes": 2066,
+   "zip_sha256": "bf41cf3e23114b5e58499eec433d882419b9aa37fdfca01b854dc24c2a8d89bb",
+   "zip_sha256_july": "d6ef464483c3c3919c3bd2abb32dcf6a8007c9294fe52e686e90fa2ab20ac4df",
+   "csv_name": "csv_yosochoryu_nagano_hendensyo.csv",
+   "csv_bytes": 3705,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 3,
+   "definition_column": true,
+   "notes_column_absent": false
+  },
+  {
+   "area": "niigata",
+   "heading": "新潟県[一部]",
+   "url": "https://www.tepco.co.jp/pg/consignment/system/pdf/csv_yosochoryu_niigata.zip",
+   "zip_bytes": 1680,
+   "zip_sha256": "517cb344b771799b48f0772bf6daa46ad51a7e60ca884551ab833caa3a1f45a1",
+   "zip_sha256_july": "95b2ae296f0973c53793fbd59d68c57fcf6f566be9cee607020b65e905dd9a8b",
+   "csv_name": "csv_yosochoryu_niigata_hendensyo.csv",
+   "csv_bytes": 3532,
+   "encoding": "utf-8-sig",
+   "encoding_tried": [
+    "utf-8-sig: ok"
+   ],
+   "meta_line": "＜送電線_予想潮流・空容量のフォーマット＞2026年10月06日更新",
+   "columns": 20,
+   "data_rows": 2,
+   "definition_column": true,
+   "notes_column_absent": false
+  }
+ ],
+ "excluded_note_rows": [
+  {
+   "area": "kikan",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "kikan",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "kikan",
+   "line": 35,
+   "cells": [
+    "以上",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "kikan",
+   "line": 132,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "tochigi",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "tochigi",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "tochigi",
+   "line": 119,
+   "cells": [
+    "以上",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "gunma",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "gunma",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "ibaraki",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "ibaraki",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "ibaraki",
+   "line": 144,
+   "cells": [
+    "以上",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "saitama",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "saitama",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "saitama",
+   "line": 238,
+   "cells": [
+    "以上",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "chiba",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "chiba",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "tokyo",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "tokyo",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "tokyo",
+   "line": 424,
+   "cells": [
+    "以上",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "tama",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "tama",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "tama",
+   "line": 119,
+   "cells": [
+    "以上",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "kanagawa",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "kanagawa",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "kanagawa",
+   "line": 273,
+   "cells": [
+    "以上",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "yamanashi",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "yamanashi",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "yamanashi",
+   "line": 84,
+   "cells": [
+    "以上",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "shizuoka",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "shizuoka",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "fukushima",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "fukushima",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "fukushima",
+   "line": 132,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "nagano",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "nagano",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "nagano",
+   "line": 132,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "niigata",
+   "line": 5,
+   "cells": [
+    "",
+    "",
+    "",
+    "1次/2次"
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "niigata",
+   "line": 6,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  },
+  {
+   "area": "niigata",
+   "line": 132,
+   "cells": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "reason": "No.欄が設備の No. の形でない（注記・見出しの行）"
+  }
+ ],
+ "baseline": {
+  "count_raw": 1719,
+  "count": 1718,
+  "frozen_dropped": [
+   "tpg-1623"
+  ],
+  "source": "microCMS GET（scripts/experimental/shikoku/fetch_baseline.py tpg-）",
+  "last_updated": {
+   "2026-07-10": 1718
+  }
+ },
+ "dedupe": {
+  "before": 1784,
+  "after": 1727,
+  "removed": 57,
+  "summary": {
+   "同名同値": 57
+  },
+  "rule2": "不使用（BU 依頼書・#117）",
+  "examples": [
+   {
+    "external_id": "変栃木県 66kV 1",
+    "name": "那須野",
+    "reason": "同一ソース内の 変栃木県 154kV 1 と同名同値（系列別ビューの再掲）"
+   },
+   {
+    "external_id": "変栃木県 66kV 2",
+    "name": "鬼怒川",
+    "reason": "同一ソース内の 変栃木県 154kV 9 と同名同値（系列別ビューの再掲）"
+   },
+   {
+    "external_id": "変栃木県 66kV 3",
+    "name": "河内",
+    "reason": "同一ソース内の 変栃木県 154kV 3 と同名同値（系列別ビューの再掲）"
+   },
+   {
+    "external_id": "変栃木県 66kV 4",
+    "name": "西宇都宮",
+    "reason": "同一ソース内の 変栃木県 154kV 4 と同名同値（系列別ビューの再掲）"
+   },
+   {
+    "external_id": "変栃木県 66kV 5",
+    "name": "芳賀",
+    "reason": "同一ソース内の 変栃木県 154kV 5 と同名同値（系列別ビューの再掲）"
+   }
+  ],
+  "by_area": {
+   "tochigi": 8,
+   "gunma": 5,
+   "ibaraki": 4,
+   "saitama": 6,
+   "chiba": 4,
+   "tokyo": 6,
+   "tama": 2,
+   "kanagawa": 13,
+   "yamanashi": 3,
+   "shizuoka": 5,
+   "nagano": 1
+  }
+ },
+ "version": {
+  "current": [
+   "2026-07-10"
+  ],
+  "new": "2026-10-28",
+  "evidence": "更新履歴 2026年10月28日「予想潮流を更新」・ZIP の Last-Modified は 13 本が 2026-10-26・1 本が 2026-10-28（版の日付は要判断）・CSV のメタ行はフォーマット改定日（10月06日）",
+  "split": false,
+  "split_note": "系統レベル（基幹・地域供給・配電）ごとの更新日は CSV にもページにも書かれていない。8/21 は配電（22kV 以下）だけの更新、9/30 は「予想潮流を更新」（系統レベルの記載なし）。14 本の ZIP は全て 9/30 に差し替わっている"
+ },
+ "matching": {
+  "key": "external_id = No.欄（同じ external_id の複数行は 電圧面→設備容量→運用容量→台数→行順・#115）",
+  "multi_row_ids_baseline": 1,
+  "multi_row_ids_new": 1
+ },
+ "counts": {
+  "baseline": 1718,
+  "csv_raw": 1784,
+  "csv_after_dedupe": 1727,
+  "matched": 1718,
+  "new": 9,
+  "removed": 0,
+  "renumbered": 0,
+  "renamed": 0,
+  "changed_records": 346,
+  "unchanged_records": 1372,
+  "after_total": 1727,
+  "change_pct": 0.52
+ },
+ "field_stats": {
+  "units": {
+   "label": "台数",
+   "changed": 2,
+   "filled": 0,
+   "dropped": 0
+  },
+  "capacity_total_mw": {
+   "label": "設備容量",
+   "changed": 7,
+   "filled": 0,
+   "dropped": 0
+  },
+  "cap_operational_mw": {
+   "label": "運用容量",
+   "changed": 16,
+   "filled": 0,
+   "dropped": 0
+  },
+  "forecast_flow_mw": {
+   "label": "予想潮流",
+   "changed": 117,
+   "filled": 0,
+   "dropped": 0
+  },
+  "cap_avail_mw": {
+   "label": "空容量(当該)",
+   "changed": 206,
+   "filled": 0,
+   "dropped": 0
+  },
+  "cap_avail_upper_mw": {
+   "label": "空容量(上位系等)",
+   "changed": 76,
+   "filled": 0,
+   "dropped": 0
+  },
+  "n1_capacity_mw": {
+   "label": "N-1電制適用可能量",
+   "changed": 4,
+   "filled": 0,
+   "dropped": 0
+  },
+  "oc_possibility": {
+   "label": "平常時出力制御の可能性",
+   "changed": 0,
+   "filled": 8,
+   "dropped": 5
+  },
+  "notes": {
+   "label": "備考",
+   "changed": 1,
+   "filled": 1,
+   "dropped": 0
+  }
+ },
+ "dropped_examples": {
+  "oc_possibility": [
+   {
+    "slug": "tpg-1579",
+    "name": "八ツ沢",
+    "current": "有り"
+   },
+   {
+    "slug": "tpg-1580",
+    "name": "富浜",
+    "current": "有り"
+   },
+   {
+    "slug": "tpg-0089",
+    "name": "足利",
+    "current": "有り"
+   },
+   {
+    "slug": "tpg-0097",
+    "name": "山辺",
+    "current": "有り"
+   },
+   {
+    "slug": "tpg-0103",
+    "name": "御厨",
+    "current": "有り"
+   }
+  ]
+ },
+ "new_rows": [
+  {
+   "area": "tokyo",
+   "line": 47,
+   "external_id": "変東京都（23区） 66kV 11",
+   "name": "南多摩",
+   "prefecture": "東京都",
+   "voltage_raw": "275/66",
+   "units": 4,
+   "capacity_total_mw": 0.0,
+   "cap_operational_mw": 0.0,
+   "forecast_flow_mw": 0.0,
+   "cap_avail_mw": null,
+   "n1_raw": "可",
+   "notes": null
+  },
+  {
+   "area": "tokyo",
+   "line": 50,
+   "external_id": "変東京都（23区） 66kV 14",
+   "name": "北多摩",
+   "prefecture": "東京都",
+   "voltage_raw": "275/66",
+   "units": 3,
+   "capacity_total_mw": 0.0,
+   "cap_operational_mw": 0.0,
+   "forecast_flow_mw": 0.0,
+   "cap_avail_mw": null,
+   "n1_raw": "可",
+   "notes": null
+  },
+  {
+   "area": "tokyo",
+   "line": 51,
+   "external_id": "変東京都（23区） 66kV 15",
+   "name": "聖蹟桜ヶ丘",
+   "prefecture": "東京都",
+   "voltage_raw": "154/66",
+   "units": 2,
+   "capacity_total_mw": 0.0,
+   "cap_operational_mw": 0.0,
+   "forecast_flow_mw": 0.0,
+   "cap_avail_mw": null,
+   "n1_raw": "可",
+   "notes": null
+  },
+  {
+   "area": "tokyo",
+   "line": 38,
+   "external_id": "変東京都（23区） 66kV 2",
+   "name": "青梅",
+   "prefecture": "東京都",
+   "voltage_raw": "275/66",
+   "units": 3,
+   "capacity_total_mw": 0.0,
+   "cap_operational_mw": 0.0,
+   "forecast_flow_mw": 0.0,
+   "cap_avail_mw": null,
+   "n1_raw": "可",
+   "notes": null
+  },
+  {
+   "area": "tokyo",
+   "line": 42,
+   "external_id": "変東京都（23区） 66kV 6",
+   "name": "武蔵野",
+   "prefecture": "東京都",
+   "voltage_raw": "154/66",
+   "units": 4,
+   "capacity_total_mw": 0.0,
+   "cap_operational_mw": 0.0,
+   "forecast_flow_mw": 0.0,
+   "cap_avail_mw": null,
+   "n1_raw": "可",
+   "notes": null
+  },
+  {
+   "area": "tokyo",
+   "line": 43,
+   "external_id": "変東京都（23区） 66kV 7",
+   "name": "多摩",
+   "prefecture": "東京都",
+   "voltage_raw": "275/66",
+   "units": 4,
+   "capacity_total_mw": 0.0,
+   "cap_operational_mw": 0.0,
+   "forecast_flow_mw": 0.0,
+   "cap_avail_mw": null,
+   "n1_raw": "可",
+   "notes": null
+  },
+  {
+   "area": "tokyo",
+   "line": 44,
+   "external_id": "変東京都（23区） 66kV 8",
+   "name": "昭島",
+   "prefecture": "東京都",
+   "voltage_raw": "154/66",
+   "units": 3,
+   "capacity_total_mw": 0.0,
+   "cap_operational_mw": 0.0,
+   "forecast_flow_mw": 0.0,
+   "cap_avail_mw": null,
+   "n1_raw": "可",
+   "notes": null
+  },
+  {
+   "area": "ibaraki",
+   "line": 20,
+   "external_id": "変茨城県 66kV 6",
+   "name": "茨城",
+   "prefecture": "茨城県",
+   "voltage_raw": "154/66",
+   "units": 4,
+   "capacity_total_mw": 600.0,
+   "cap_operational_mw": 555.0,
+   "forecast_flow_mw": -472.0,
+   "cap_avail_mw": null,
+   "n1_raw": "可",
+   "notes": null
+  },
+  {
+   "area": "shizuoka",
+   "line": 20,
+   "external_id": "変静岡県（富士川以東） 66kV 6",
+   "name": "岳南",
+   "prefecture": "静岡県",
+   "voltage_raw": "154/66",
+   "units": 3,
+   "capacity_total_mw": 600.0,
+   "cap_operational_mw": 453.0,
+   "forecast_flow_mw": -173.0,
+   "cap_avail_mw": null,
+   "n1_raw": "可",
+   "notes": null
+  }
+ ],
+ "new_name_hits": [
+  {
+   "external_id": "変東京都（23区） 66kV 11",
+   "name": "南多摩",
+   "area": "tokyo",
+   "same_name_existing": [
+    "tpg-1193"
+   ]
+  },
+  {
+   "external_id": "変東京都（23区） 66kV 14",
+   "name": "北多摩",
+   "area": "tokyo",
+   "same_name_existing": [
+    "tpg-1194"
+   ]
+  },
+  {
+   "external_id": "変東京都（23区） 66kV 15",
+   "name": "聖蹟桜ヶ丘",
+   "area": "tokyo",
+   "same_name_existing": [
+    "tpg-1186",
+    "tpg-1187"
+   ]
+  },
+  {
+   "external_id": "変東京都（23区） 66kV 2",
+   "name": "青梅",
+   "area": "tokyo",
+   "same_name_existing": [
+    "tpg-1190",
+    "tpg-1191"
+   ]
+  },
+  {
+   "external_id": "変東京都（23区） 66kV 6",
+   "name": "武蔵野",
+   "area": "tokyo",
+   "same_name_existing": [
+    "tpg-0373",
+    "tpg-1189"
+   ]
+  },
+  {
+   "external_id": "変東京都（23区） 66kV 7",
+   "name": "多摩",
+   "area": "tokyo",
+   "same_name_existing": [
+    "tpg-1192"
+   ]
+  },
+  {
+   "external_id": "変東京都（23区） 66kV 8",
+   "name": "昭島",
+   "area": "tokyo",
+   "same_name_existing": [
+    "tpg-1184",
+    "tpg-1185"
+   ]
+  },
+  {
+   "external_id": "変茨城県 66kV 6",
+   "name": "茨城",
+   "area": "ibaraki",
+   "same_name_existing": [
+    "tpg-0227"
+   ]
+  },
+  {
+   "external_id": "変静岡県（富士川以東） 66kV 6",
+   "name": "岳南",
+   "area": "shizuoka",
+   "same_name_existing": [
+    "tpg-1628"
+   ]
+  }
+ ],
+ "removed": [],
+ "renamed": [],
+ "renumbered": [],
+ "voltage_diff": [],
+ "cap_decreased": {
+  "count": 149,
+  "zeroed": 35,
+  "top10": [
+   {
+    "slug": "tpg-0059",
+    "name": "粟野",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 43",
+    "current": 19,
+    "new": 0.0,
+    "delta": -19.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0045",
+    "name": "通洞",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 28",
+    "current": 19,
+    "new": 2.0,
+    "delta": -17.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0051",
+    "name": "鹿沼",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 35",
+    "current": 14,
+    "new": 0.0,
+    "delta": -14.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0053",
+    "name": "市塙",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 37",
+    "current": 14,
+    "new": 0.0,
+    "delta": -14.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0055",
+    "name": "清原",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 39",
+    "current": 14,
+    "new": 1.0,
+    "delta": -13.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0052",
+    "name": "茂木",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 36",
+    "current": 19,
+    "new": 7.0,
+    "delta": -12.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0046",
+    "name": "烏山",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 29",
+    "current": 11,
+    "new": 0.0,
+    "delta": -11.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0087",
+    "name": "栃木",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 71",
+    "current": 17,
+    "new": 6.0,
+    "delta": -11.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1200",
+    "name": "車返(2)",
+    "prefecture": "東京都",
+    "external_id": "変東京都（多摩地区） 配電用変電所 34",
+    "current": 19,
+    "new": 9.0,
+    "delta": -10.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1291",
+    "name": "郷地",
+    "prefecture": "東京都",
+    "external_id": "変東京都（多摩地区） 配電用変電所 95",
+    "current": 19,
+    "new": 9.0,
+    "delta": -10.0,
+    "zeroed": false
+   }
+  ],
+  "all": [
+   {
+    "slug": "tpg-0059",
+    "name": "粟野",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 43",
+    "current": 19,
+    "new": 0.0,
+    "delta": -19.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0045",
+    "name": "通洞",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 28",
+    "current": 19,
+    "new": 2.0,
+    "delta": -17.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0051",
+    "name": "鹿沼",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 35",
+    "current": 14,
+    "new": 0.0,
+    "delta": -14.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0053",
+    "name": "市塙",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 37",
+    "current": 14,
+    "new": 0.0,
+    "delta": -14.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0055",
+    "name": "清原",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 39",
+    "current": 14,
+    "new": 1.0,
+    "delta": -13.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0052",
+    "name": "茂木",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 36",
+    "current": 19,
+    "new": 7.0,
+    "delta": -12.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0046",
+    "name": "烏山",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 29",
+    "current": 11,
+    "new": 0.0,
+    "delta": -11.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0087",
+    "name": "栃木",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 71",
+    "current": 17,
+    "new": 6.0,
+    "delta": -11.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1200",
+    "name": "車返(2)",
+    "prefecture": "東京都",
+    "external_id": "変東京都（多摩地区） 配電用変電所 34",
+    "current": 19,
+    "new": 9.0,
+    "delta": -10.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1291",
+    "name": "郷地",
+    "prefecture": "東京都",
+    "external_id": "変東京都（多摩地区） 配電用変電所 95",
+    "current": 19,
+    "new": 9.0,
+    "delta": -10.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1622",
+    "name": "富沢",
+    "prefecture": "山梨県",
+    "external_id": "変山梨県 配電用変電所 62",
+    "current": 19,
+    "new": 9.0,
+    "delta": -10.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0048",
+    "name": "宝積寺",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 31",
+    "current": 9,
+    "new": 0.0,
+    "delta": -9.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0070",
+    "name": "梅沢",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 54",
+    "current": 9,
+    "new": 0.0,
+    "delta": -9.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0093",
+    "name": "犬伏",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 78",
+    "current": 9,
+    "new": 0.0,
+    "delta": -9.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0023",
+    "name": "川治",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 4",
+    "current": 8,
+    "new": 0.0,
+    "delta": -8.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0025",
+    "name": "黒磯",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 6",
+    "current": 8,
+    "new": 0.0,
+    "delta": -8.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0032",
+    "name": "湯津上",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 14",
+    "current": 8,
+    "new": 0.0,
+    "delta": -8.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0034",
+    "name": "所野",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 17",
+    "current": 7,
+    "new": 0.0,
+    "delta": -7.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0058",
+    "name": "三の沢",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 42",
+    "current": 19,
+    "new": 12.0,
+    "delta": -7.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0084",
+    "name": "二宮",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 68",
+    "current": 7,
+    "new": 0.0,
+    "delta": -7.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0082",
+    "name": "東山",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 66",
+    "current": 6,
+    "new": 0.0,
+    "delta": -6.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0088",
+    "name": "片柳",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 72",
+    "current": 9,
+    "new": 3.0,
+    "delta": -6.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0095",
+    "name": "城山",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 80",
+    "current": 11,
+    "new": 5.0,
+    "delta": -6.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1609",
+    "name": "平野",
+    "prefecture": "山梨県",
+    "external_id": "変山梨県 配電用変電所 43",
+    "current": 19,
+    "new": 13.0,
+    "delta": -6.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1619",
+    "name": "飯富",
+    "prefecture": "山梨県",
+    "external_id": "変山梨県 配電用変電所 58",
+    "current": 7,
+    "new": 1.0,
+    "delta": -6.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1690",
+    "name": "富士根",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 60",
+    "current": 15,
+    "new": 9.0,
+    "delta": -6.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0039",
+    "name": "喜連川",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 22",
+    "current": 5,
+    "new": 0.0,
+    "delta": -5.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0056",
+    "name": "平出",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 40",
+    "current": 19,
+    "new": 14.0,
+    "delta": -5.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0096",
+    "name": "東足利",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 81",
+    "current": 5,
+    "new": 0.0,
+    "delta": -5.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0490",
+    "name": "天沼",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 105",
+    "current": 19,
+    "new": 14.0,
+    "delta": -5.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0540",
+    "name": "宮前",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 156",
+    "current": 19,
+    "new": 14.0,
+    "delta": -5.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1362",
+    "name": "下野毛",
+    "prefecture": "神奈川県",
+    "external_id": "変神奈川県 配電用変電所 2",
+    "current": 19,
+    "new": 14.0,
+    "delta": -5.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1617",
+    "name": "鐘ヶ渕",
+    "prefecture": "山梨県",
+    "external_id": "変山梨県 配電用変電所 53",
+    "current": 16,
+    "new": 11.0,
+    "delta": -5.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1693",
+    "name": "内野",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 63",
+    "current": 5,
+    "new": 0.0,
+    "delta": -5.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0022",
+    "name": "関谷",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 3",
+    "current": 4,
+    "new": 0.0,
+    "delta": -4.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0204",
+    "name": "八斗島",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 84",
+    "current": 13,
+    "new": 9.0,
+    "delta": -4.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0297",
+    "name": "南古河",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 61",
+    "current": 10,
+    "new": 6.0,
+    "delta": -4.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0392",
+    "name": "北加須",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 2",
+    "current": 8,
+    "new": 4.0,
+    "delta": -4.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0400",
+    "name": "別府",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 10",
+    "current": 10,
+    "new": 6.0,
+    "delta": -4.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0401",
+    "name": "深谷",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 11",
+    "current": 8,
+    "new": 4.0,
+    "delta": -4.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0412",
+    "name": "吹上",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 22",
+    "current": 7,
+    "new": 3.0,
+    "delta": -4.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1679",
+    "name": "滝川",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 49",
+    "current": 16,
+    "new": 12.0,
+    "delta": -4.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1695",
+    "name": "北原",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 65",
+    "current": 16,
+    "new": 12.0,
+    "delta": -4.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0081",
+    "name": "石橋",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 65",
+    "current": 3,
+    "new": 0.0,
+    "delta": -3.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0083",
+    "name": "葉鹿",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 67",
+    "current": 3,
+    "new": 0.0,
+    "delta": -3.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0092",
+    "name": "沼和田",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 77",
+    "current": 12,
+    "new": 9.0,
+    "delta": -3.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0193",
+    "name": "うずら",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 73",
+    "current": 9,
+    "new": 6.0,
+    "delta": -3.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0298",
+    "name": "八千代",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 62",
+    "current": 3,
+    "new": 0.0,
+    "delta": -3.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0348",
+    "name": "神之池",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 112",
+    "current": 5,
+    "new": 2.0,
+    "delta": -3.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0386",
+    "name": "和志山(2)",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 50",
+    "current": 6,
+    "new": 3.0,
+    "delta": -3.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0397",
+    "name": "平戸",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 7",
+    "current": 6,
+    "new": 3.0,
+    "delta": -3.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0415",
+    "name": "三ヶ尻",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 25",
+    "current": 3,
+    "new": 0.0,
+    "delta": -3.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0705",
+    "name": "茜浜",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 93",
+    "current": 19,
+    "new": 16.0,
+    "delta": -3.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0737",
+    "name": "作田川",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 125",
+    "current": 4,
+    "new": 1.0,
+    "delta": -3.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1697",
+    "name": "新富士（局配）",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 67",
+    "current": 19,
+    "new": 16.0,
+    "delta": -3.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0024",
+    "name": "稲沢",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 5",
+    "current": 2,
+    "new": 0.0,
+    "delta": -2.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0029",
+    "name": "大田原",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 11",
+    "current": 9,
+    "new": 7.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0071",
+    "name": "葛生",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 55",
+    "current": 2,
+    "new": 0.0,
+    "delta": -2.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0131",
+    "name": "薄根",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 7",
+    "current": 3,
+    "new": 1.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0163",
+    "name": "保渡田",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 40",
+    "current": 4,
+    "new": 2.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0166",
+    "name": "生品",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 44",
+    "current": 2,
+    "new": 0.0,
+    "delta": -2.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0172",
+    "name": "駒形",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 50",
+    "current": 7,
+    "new": 5.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0189",
+    "name": "海老瀬",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 69",
+    "current": 12,
+    "new": 10.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0192",
+    "name": "青柳",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 72",
+    "current": 5,
+    "new": 3.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0196",
+    "name": "内ヶ島",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 76",
+    "current": 9,
+    "new": 7.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0202",
+    "name": "世良田",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 82",
+    "current": 12,
+    "new": 10.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0205",
+    "name": "大正寺",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 85",
+    "current": 5,
+    "new": 3.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0309",
+    "name": "猿島",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 73",
+    "current": 5,
+    "new": 3.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0311",
+    "name": "沓掛",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 75",
+    "current": 2,
+    "new": 0.0,
+    "delta": -2.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0330",
+    "name": "菅生",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 94",
+    "current": 7,
+    "new": 5.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0336",
+    "name": "平井",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 100",
+    "current": 11,
+    "new": 9.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0341",
+    "name": "南守谷",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 105",
+    "current": 13,
+    "new": 11.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0344",
+    "name": "取手",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 108",
+    "current": 6,
+    "new": 4.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0352",
+    "name": "木有戸",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 116",
+    "current": 10,
+    "new": 8.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0371",
+    "name": "豊岡(2)",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 144",
+    "current": 19,
+    "new": 17.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0393",
+    "name": "東羽生",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 3",
+    "current": 7,
+    "new": 5.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0396",
+    "name": "行田",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 6",
+    "current": 12,
+    "new": 10.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0399",
+    "name": "熊谷",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 9",
+    "current": 19,
+    "new": 17.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0402",
+    "name": "上柴",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 12",
+    "current": 16,
+    "new": 14.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0425",
+    "name": "箭弓",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 36",
+    "current": 14,
+    "new": 12.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0430",
+    "name": "樋口",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 41",
+    "current": 2,
+    "new": 0.0,
+    "delta": -2.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0442",
+    "name": "品沢",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 55",
+    "current": 7,
+    "new": 5.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0482",
+    "name": "日高",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 97",
+    "current": 7,
+    "new": 5.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0500",
+    "name": "旭台",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 115",
+    "current": 18,
+    "new": 16.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0551",
+    "name": "松郷",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 167",
+    "current": 19,
+    "new": 17.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0556",
+    "name": "小手指",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 172",
+    "current": 19,
+    "new": 17.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0579",
+    "name": "千本桜",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 195",
+    "current": 2,
+    "new": 0.0,
+    "delta": -2.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0661",
+    "name": "犬吠",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 49",
+    "current": 19,
+    "new": 17.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0668",
+    "name": "富里",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 56",
+    "current": 6,
+    "new": 4.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0670",
+    "name": "佐倉",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 58",
+    "current": 6,
+    "new": 4.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0687",
+    "name": "根郷",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 75",
+    "current": 18,
+    "new": 16.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0688",
+    "name": "四街道",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 76",
+    "current": 5,
+    "new": 3.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0740",
+    "name": "九十九里",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 128",
+    "current": 2,
+    "new": 0.0,
+    "delta": -2.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0750",
+    "name": "茂原",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 138",
+    "current": 5,
+    "new": 3.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0757",
+    "name": "木更津",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 145",
+    "current": 8,
+    "new": 6.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0761",
+    "name": "大多喜",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 149",
+    "current": 2,
+    "new": 0.0,
+    "delta": -2.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0768",
+    "name": "大原",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 156",
+    "current": 2,
+    "new": 0.0,
+    "delta": -2.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0770",
+    "name": "勝浦",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 158",
+    "current": 6,
+    "new": 4.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1524",
+    "name": "金子",
+    "prefecture": "神奈川県",
+    "external_id": "変神奈川県 配電用変電所 181",
+    "current": 19,
+    "new": 17.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1526",
+    "name": "内山",
+    "prefecture": "神奈川県",
+    "external_id": "変神奈川県 配電用変電所 183",
+    "current": 19,
+    "new": 17.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1633",
+    "name": "須走",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 3",
+    "current": 18,
+    "new": 16.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1637",
+    "name": "原里",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 7",
+    "current": 6,
+    "new": 4.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1658",
+    "name": "韮山",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 28",
+    "current": 19,
+    "new": 17.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1659",
+    "name": "大仁",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 29",
+    "current": 8,
+    "new": 6.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1669",
+    "name": "市山",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 39",
+    "current": 6,
+    "new": 4.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1685",
+    "name": "松岡",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 55",
+    "current": 17,
+    "new": 15.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1689",
+    "name": "大渕",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 59",
+    "current": 7,
+    "new": 5.0,
+    "delta": -2.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0011",
+    "name": "小山(2)",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 75",
+    "current": 7,
+    "new": 6.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0078",
+    "name": "都賀",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 62",
+    "current": 1,
+    "new": 0.0,
+    "delta": -1.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0086",
+    "name": "惣社町",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 70",
+    "current": 4,
+    "new": 3.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0135",
+    "name": "沼田",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 12",
+    "current": 5,
+    "new": 4.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0150",
+    "name": "相老",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 27",
+    "current": 6,
+    "new": 5.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0170",
+    "name": "伊勢崎",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 48",
+    "current": 18,
+    "new": 17.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0171",
+    "name": "宮郷",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 49",
+    "current": 18,
+    "new": 17.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0173",
+    "name": "野中",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 51",
+    "current": 16,
+    "new": 15.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0183",
+    "name": "大類",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 62",
+    "current": 18,
+    "new": 17.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0190",
+    "name": "楠",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 70",
+    "current": 15,
+    "new": 14.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0206",
+    "name": "玉村",
+    "prefecture": "群馬県",
+    "external_id": "変群馬県 配電用変電所 86",
+    "current": 17,
+    "new": 16.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0243",
+    "name": "大子",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 4",
+    "current": 4,
+    "new": 3.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0254",
+    "name": "真弓",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 15",
+    "current": 7,
+    "new": 6.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0256",
+    "name": "大みか",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 18",
+    "current": 18,
+    "new": 17.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0258",
+    "name": "笠松",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 20",
+    "current": 9,
+    "new": 8.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0271",
+    "name": "見川",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 33",
+    "current": 4,
+    "new": 3.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0279",
+    "name": "川島",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 41",
+    "current": 1,
+    "new": 0.0,
+    "delta": -1.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0280",
+    "name": "下館",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 42",
+    "current": 11,
+    "new": 10.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0314",
+    "name": "東光台",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 78",
+    "current": 6,
+    "new": 5.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0315",
+    "name": "大生郷",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 79",
+    "current": 7,
+    "new": 6.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0337",
+    "name": "潮来",
+    "prefecture": "茨城県",
+    "external_id": "変茨城県 配電用変電所 101",
+    "current": 5,
+    "new": 4.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0395",
+    "name": "大竹",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 5",
+    "current": 5,
+    "new": 4.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0439",
+    "name": "青鳥",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 51",
+    "current": 1,
+    "new": 0.0,
+    "delta": -1.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0444",
+    "name": "庄和",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 57",
+    "current": 19,
+    "new": 18.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0458",
+    "name": "北坂戸",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 71",
+    "current": 19,
+    "new": 18.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0462",
+    "name": "秩父",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 76",
+    "current": 14,
+    "new": 13.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0475",
+    "name": "芳野台",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 90",
+    "current": 12,
+    "new": 11.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0497",
+    "name": "大中居",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 112",
+    "current": 19,
+    "new": 18.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0528",
+    "name": "上ノ原",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 143",
+    "current": 14,
+    "new": 13.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0552",
+    "name": "並木",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 168",
+    "current": 19,
+    "new": 18.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0555",
+    "name": "所沢",
+    "prefecture": "埼玉県",
+    "external_id": "変埼玉県 配電用変電所 171",
+    "current": 13,
+    "new": 12.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0617",
+    "name": "旭村",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 4",
+    "current": 6,
+    "new": 5.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0658",
+    "name": "笹川",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 45",
+    "current": 1,
+    "new": 0.0,
+    "delta": -1.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-0669",
+    "name": "公津東",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 57",
+    "current": 17,
+    "new": 16.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-0765",
+    "name": "青堀",
+    "prefecture": "千葉県",
+    "external_id": "変千葉県 配電用変電所 153",
+    "current": 1,
+    "new": 0.0,
+    "delta": -1.0,
+    "zeroed": true
+   },
+   {
+    "slug": "tpg-1265",
+    "name": "大楽寺",
+    "prefecture": "東京都",
+    "external_id": "変東京都（多摩地区） 配電用変電所 65",
+    "current": 18,
+    "new": 17.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1286",
+    "name": "小峰",
+    "prefecture": "東京都",
+    "external_id": "変東京都（多摩地区） 配電用変電所 90",
+    "current": 8,
+    "new": 7.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1343",
+    "name": "末広",
+    "prefecture": "神奈川県",
+    "external_id": "変神奈川県 22kV 7",
+    "current": 42,
+    "new": 41.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1523",
+    "name": "中井",
+    "prefecture": "神奈川県",
+    "external_id": "変神奈川県 配電用変電所 180",
+    "current": 19,
+    "new": 18.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1576",
+    "name": "長坂",
+    "prefecture": "山梨県",
+    "external_id": "変山梨県 配電用変電所 8",
+    "current": 2,
+    "new": 1.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1581",
+    "name": "駒橋",
+    "prefecture": "山梨県",
+    "external_id": "変山梨県 配電用変電所 13",
+    "current": 9,
+    "new": 8.0,
+    "delta": -1.0,
+    "zeroed": false
+   },
+   {
+    "slug": "tpg-1692",
+    "name": "入山瀬",
+    "prefecture": "静岡県",
+    "external_id": "変静岡県（富士川以東） 配電用変電所 62",
+    "current": 9,
+    "new": 8.0,
+    "delta": -1.0,
+    "zeroed": false
+   }
+  ]
+ },
+ "cap_increased": {
+  "count": 57,
+  "top5": [
+   {
+    "slug": "tpg-0062",
+    "name": "宇都宮",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 46",
+    "current": 0,
+    "new": 19.0,
+    "delta": 19.0
+   },
+   {
+    "slug": "tpg-0091",
+    "name": "本郷町",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 76",
+    "current": 0,
+    "new": 17.0,
+    "delta": 17.0
+   },
+   {
+    "slug": "tpg-0061",
+    "name": "宿郷",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 45",
+    "current": 3,
+    "new": 19.0,
+    "delta": 16.0
+   },
+   {
+    "slug": "tpg-0065",
+    "name": "松ヶ峰",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 49",
+    "current": 0,
+    "new": 14.0,
+    "delta": 14.0
+   },
+   {
+    "slug": "tpg-0074",
+    "name": "砂田",
+    "prefecture": "栃木県",
+    "external_id": "変栃木県 配電用変電所 58",
+    "current": 2,
+    "new": 16.0,
+    "delta": 14.0
+   }
+  ]
+ },
+ "n1": {
+  "current_ok": 188,
+  "new_ok": 197,
+  "changes": [],
+  "undetermined_matched": [
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0595",
+    "external_id": "変千葉県 154kV 11",
+    "name": "新木更津5・8B",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0608",
+    "external_id": "変千葉県 22kV 4",
+    "name": "溝原",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0609",
+    "external_id": "変千葉県 22kV 5",
+    "name": "西岬",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0610",
+    "external_id": "変千葉県 22kV 6",
+    "name": "神戸",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0611",
+    "external_id": "変千葉県 22kV 7",
+    "name": "犬石",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0612",
+    "external_id": "変千葉県 22kV 8",
+    "name": "長尾",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0613",
+    "external_id": "変千葉県 22kV 9",
+    "name": "塩浦",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0389",
+    "external_id": "変埼玉県 22kV 5",
+    "name": "向堀",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0390",
+    "external_id": "変埼玉県 22kV 6",
+    "name": "西平",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-1559",
+    "external_id": "変山梨県 22kV 3",
+    "name": "身延(1)",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-1561",
+    "external_id": "変山梨県 22kV 4",
+    "name": "紅葉台(1)",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-1563",
+    "external_id": "変山梨県 22kV 5",
+    "name": "富士豊茂(1)",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-1565",
+    "external_id": "変山梨県 22kV 6",
+    "name": "富士桜(1)",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-1567",
+    "external_id": "変山梨県 22kV 7",
+    "name": "富士ヶ嶺(1)",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0017",
+    "external_id": "変栃木県 22kV 3",
+    "name": "塩原第１",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0018",
+    "external_id": "変栃木県 22kV 4",
+    "name": "塩原第２",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-0019",
+    "external_id": "変栃木県 22kV 5",
+    "name": "塩原第３",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   },
+   {
+    "operator": "東京電力パワーグリッド",
+    "area": "東京",
+    "slug": "tpg-1359",
+    "external_id": "変神奈川県 22kV 19",
+    "name": "三枚橋(1)",
+    "raw": "-",
+    "reason": "undetermined",
+    "current_n1_eligible": false
+   }
+  ]
+ },
+ "pref_counts": {
+  "current": {
+   "栃木県": 107,
+   "群馬県": 116,
+   "茨城県": 133,
+   "埼玉県": 229,
+   "千葉県": 202,
+   "東京都": 516,
+   "神奈川県": 255,
+   "山梨県": 75,
+   "静岡県": 77,
+   "福島県": 3,
+   "長野県": 3,
+   "新潟県": 2
+  },
+  "after": {
+   "千葉県": 202,
+   "福島県": 3,
+   "長野県": 3,
+   "山梨県": 75,
+   "静岡県": 78,
+   "神奈川県": 255,
+   "東京都": 523,
+   "栃木県": 107,
+   "埼玉県": 229,
+   "茨城県": 134,
+   "群馬県": 116,
+   "新潟県": 2
+  }
+ },
+ "series_groups": [
+  {
+   "series": "変千葉県 154kV",
+   "baseline": 11,
+   "csv_after_dedupe": 11
+  },
+  {
+   "series": "変千葉県 22kV",
+   "baseline": 9,
+   "csv_after_dedupe": 9
+  },
+  {
+   "series": "変千葉県 66kV",
+   "baseline": 10,
+   "csv_after_dedupe": 10
+  },
+  {
+   "series": "変千葉県 配電用変電所",
+   "baseline": 167,
+   "csv_after_dedupe": 167
+  },
+  {
+   "series": "変基幹 275kV",
+   "baseline": 28,
+   "csv_after_dedupe": 28
+  },
+  {
+   "series": "変埼玉県 154kV",
+   "baseline": 15,
+   "csv_after_dedupe": 15
+  },
+  {
+   "series": "変埼玉県 22kV",
+   "baseline": 6,
+   "csv_after_dedupe": 6
+  },
+  {
+   "series": "変埼玉県 66kV",
+   "baseline": 10,
+   "csv_after_dedupe": 10
+  },
+  {
+   "series": "変埼玉県 配電用変電所",
+   "baseline": 194,
+   "csv_after_dedupe": 194
+  },
+  {
+   "series": "変山梨県 154kV",
+   "baseline": 5,
+   "csv_after_dedupe": 5
+  },
+  {
+   "series": "変山梨県 22kV",
+   "baseline": 7,
+   "csv_after_dedupe": 7
+  },
+  {
+   "series": "変山梨県 66kV",
+   "baseline": 1,
+   "csv_after_dedupe": 1
+  },
+  {
+   "series": "変山梨県 配電用変電所",
+   "baseline": 61,
+   "csv_after_dedupe": 61
+  },
+  {
+   "series": "変新潟県（一部） 154kV",
+   "baseline": 1,
+   "csv_after_dedupe": 1
+  },
+  {
+   "series": "変新潟県（一部） 66kV",
+   "baseline": 1,
+   "csv_after_dedupe": 1
+  },
+  {
+   "series": "変東京都（23区） 154kV",
+   "baseline": 30,
+   "csv_after_dedupe": 30
+  },
+  {
+   "series": "変東京都（23区） 22kV",
+   "baseline": 48,
+   "csv_after_dedupe": 48
+  },
+  {
+   "series": "変東京都（23区） 66kV",
+   "baseline": 6,
+   "csv_after_dedupe": 13
+  },
+  {
+   "series": "変東京都（23区） 配電用変電所",
+   "baseline": 320,
+   "csv_after_dedupe": 320
+  },
+  {
+   "series": "変東京都（多摩地区） 154kV",
+   "baseline": 4,
+   "csv_after_dedupe": 4
+  },
+  {
+   "series": "変東京都（多摩地区） 22kV",
+   "baseline": 5,
+   "csv_after_dedupe": 5
+  },
+  {
+   "series": "変東京都（多摩地区） 66kV",
+   "baseline": 4,
+   "csv_after_dedupe": 4
+  },
+  {
+   "series": "変東京都（多摩地区） 配電用変電所",
+   "baseline": 97,
+   "csv_after_dedupe": 97
+  },
+  {
+   "series": "変栃木県 154kV",
+   "baseline": 9,
+   "csv_after_dedupe": 9
+  },
+  {
+   "series": "変栃木県 22kV",
+   "baseline": 4,
+   "csv_after_dedupe": 4
+  },
+  {
+   "series": "変栃木県 配電用変電所",
+   "baseline": 91,
+   "csv_after_dedupe": 91
+  },
+  {
+   "series": "変神奈川県 154kV",
+   "baseline": 23,
+   "csv_after_dedupe": 23
+  },
+  {
+   "series": "変神奈川県 22kV",
+   "baseline": 17,
+   "csv_after_dedupe": 17
+  },
+  {
+   "series": "変神奈川県 66kV",
+   "baseline": 6,
+   "csv_after_dedupe": 6
+  },
+  {
+   "series": "変神奈川県 配電用変電所",
+   "baseline": 207,
+   "csv_after_dedupe": 207
+  },
+  {
+   "series": "変福島県（一部） 66kV",
+   "baseline": 1,
+   "csv_after_dedupe": 1
+  },
+  {
+   "series": "変群馬県 154kV",
+   "baseline": 7,
+   "csv_after_dedupe": 7
+  },
+  {
+   "series": "変群馬県 22kV",
+   "baseline": 2,
+   "csv_after_dedupe": 2
+  },
+  {
+   "series": "変群馬県 66kV",
+   "baseline": 2,
+   "csv_after_dedupe": 2
+  },
+  {
+   "series": "変群馬県 配電用変電所",
+   "baseline": 100,
+   "csv_after_dedupe": 100
+  },
+  {
+   "series": "変茨城県 154kV",
+   "baseline": 8,
+   "csv_after_dedupe": 8
+  },
+  {
+   "series": "変茨城県 22kV",
+   "baseline": 2,
+   "csv_after_dedupe": 2
+  },
+  {
+   "series": "変茨城県 66kV",
+   "baseline": 5,
+   "csv_after_dedupe": 6
+  },
+  {
+   "series": "変茨城県 配電用変電所",
+   "baseline": 117,
+   "csv_after_dedupe": 117
+  },
+  {
+   "series": "変長野県（一部） 154kV",
+   "baseline": 2,
+   "csv_after_dedupe": 2
+  },
+  {
+   "series": "変静岡県（富士川以東） 154kV",
+   "baseline": 8,
+   "csv_after_dedupe": 8
+  },
+  {
+   "series": "変静岡県（富士川以東） 66kV",
+   "baseline": 0,
+   "csv_after_dedupe": 1
+  },
+  {
+   "series": "変静岡県（富士川以東） 配電用変電所",
+   "baseline": 67,
+   "csv_after_dedupe": 67
+  }
+ ]
+}
