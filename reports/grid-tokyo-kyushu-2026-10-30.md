@@ -136,9 +136,25 @@
   - 2 件とも 9/29 版の CSV でも「－」（10/15 の dry-run §10）。source の文言（td_rHc7Jd0i.zip・7/28 更新）は前身の一覧のまま。
 - ログのファイル名: applier は `--log=<p>` の `<p>` に要約、`<p>l` に 1 件ずつを書く。`.jsonl` を渡したので `.jsonll` ができた。`mv` で `kyushu-apply.json`（要約）・`kyushu-apply.jsonl`（1 件ずつ）にした。
 
-## (4) 本番の確認
+## (4) 本番の確認（1 回目・九州）
 
-（デプロイ後に追記）
+- push: `8b0e9a5`（12:29）。デプロイ `429j0oz09`（GitHub のコミットの状態が success・Ready 12:4x）。
+- 12:42:08 に素の URL で取った（`<!-- -->` を剥がした）。12:42:38 に `?v=` で取った。
+
+| ページ | 素の URL | 結果 |
+|---|---|---|
+| `/grid/kyushu` | 200・PRERENDER・age 0 | データ基準日「公表 2026/09/29 時点（当サイト取込 2026/10/30）」。「2026/07/28」の表記は 0。title「九州電力送配電の系統空き容量・変電所一覧 — 884件｜蓄電所ネット」（883→884） |
+| `/grid/kyu-311` 志佐（ゼロ化） | 200・MISS・age 0 | 空容量（当該）**0 MW**（前 4）・最終更新 2026/9/29・取得日 2026/10/30・長崎県 |
+| `/grid/kyu-663` 飫肥（ゼロ化） | 200・MISS・age 0 | 空容量（当該）**0 MW**（前 4）・2026/9/29・鹿児島県 |
+| `/grid/kyu-292` 岩屋（ゼロ化） | 200・MISS・age 0 | 空容量（当該）**0 MW**（前 2）・2026/9/29・佐賀県 |
+| `/grid/kyu-884` 伊集院（新規） | 200・MISS・age 0 | h1「伊集院」・鹿児島県・空容量 0 MW・出力制御の可能性 有り・2026/9/29 |
+| `/grid/kyu-443` 南熊本(66kV)（出力制御の可能性を空に） | 200・MISS・age 0 | 出力制御の可能性「**情報なし**」（前「有り」）・2026/9/29 |
+| `/grid/kyu-713` 伊集院（振り直し） | 200・MISS・age 0 | 空容量 **2 MW**（前 0）・2026/9/29 |
+| `/grid/prefecture/鹿児島県` | 200・PRERENDER・age 0 | h1「鹿児島県の変電所一覧（**160件**）」（159→160）・description も「公表2026/9/29」。伊集院 kyu-884 へのリンクあり |
+
+- `?v=`: `/grid/kyushu`・`/grid/kyu-884` とも 200・HIT（age 26・17）。
+- 詳細ページはどれも MISS＝新しいデプロイで初めての描画で、旧値は出ていない（Data Cache の旧い応答に当たっていない・#112／#116）。どのページも source の表示は新しい ZIP 名（`td_oLsu7j3Y`）。
+- 30 分後の再確認は、EDAさんの指示によりユウが行う（私はしていない）。
 
 ## (5) 地区 22 の県の疑いの再掲（変えていない）
 
@@ -148,6 +164,47 @@
 - この本実行では県を変えていない（裁定 BV-4）。新規の伊集院（kyu-884）は地区 23 で、地区 22 ではない。
 - 志和池 `kyuden_22_13(3)`・原田 `kyuden_22_39` は保留のまま（地区 22 の県の確かめの便で一緒に）。
 
-## (6) 申告・一時物
+## (6) 申告・一時物・要判断
 
-（最後に追記）
+**要判断（ユウ）**
+1. **東京の本実行**: 10/28 の版で計画を作って本実行するか（(2)-B の表）。新しく裁定が要るのは 2 つ。
+   - 版の日付（更新履歴 10/28／ZIP の Last-Modified 10/26・10/28）。
+   - 備考の列が無い 4 本の扱い。
+   - BU-1・2・4・共通 1 の考え方は、そのまま当てられる（岳南 tpg-1628 の再掲が今回新しく出た）。
+   - 9 月版の計画は使わない。
+2. **CLAUDE.md #113 の追記の更新**: 「変電所の id≠slug は `ydn-kikan-0013-2` の 1 件だけ（全 8,346 件で唯一）」が古くなった。今は `kyu-884`（id `o66z7a3i9`）と 2 件・全 8,347 件。CLAUDE.md は便の範囲外なので触っていない。
+3. 地区 22 の県（33 件）・志和池・原田は、別の便（読取のみ）のまま（(5)）。
+
+**便の工程のうち、変えた所・しなかった所**
+- 便 §1-4 の「30 分後にもう一度」は、EDAさん 10/30 の指示（ユウが代わる）でしていない。
+- 便 §1-1「新しい CSV／ZIP を取り直し」:
+  - 九州は ZIP を取り直し、10/15 のリポの ZIP と sha256 が一致したので、リポの ZIP をそのまま使った（取り直した ZIP は scratchpad の `bv/kyu_dl/`）。
+  - 東京は 14 本を `scripts/experimental/tepco/csv_2611/` に取った（9 月版の `csv_2610/` は残している）。
+- applier の dry run（全件）を本実行の前に 1 回流した（便の工程にはない・(2)-A）。
+
+**道具・一時物**
+- 使った道具: curl（公表ページ・ZIP・microCMS の GET・本番の確認）・Python・tsx（applier）・Vercel CLI。内蔵ブラウザ・Claude in Chrome・調べ役は使っていない。
+- 停止条件: rm 系 0（ログのファイル名は `mv` で直した）・push --force 0・.env の表示 0（`set -a && . ./.env.local && set +a` で読み込んだだけ）。microCMS は九州の PATCH 883・POST 1 だけ。DELETE・PUT 0。
+- リポジトリに足した・変えたもの:
+  - 九州:
+    - `scripts/experimental/kyushu/parse_kyushu_2610.py`（--emit-plan の書き換え・--baseline／--out-dir／--plan-out）
+    - `update_plan_202610.json`
+    - `baseline_live_2610b.json`
+    - `_common/external_id_history.json`
+    - `src/data/n1-status.json`
+  - 東京:
+    - `scripts/experimental/tepco/parse_tepco_csv_2611.py`
+    - `csv_2611/`（14 本）
+    - `baseline_live_2611.json`
+    - `tepco_csv_2611_normalized.json`
+    - `_common/n1_undetermined_tokyo_2611.json`（10/15 の `n1_undetermined_tokyo.json` は上書きしていない）
+  - 報告類: `reports/grid-tokyo-dryrun-2026-10-30.json`・本書・apply の記録 2 本。
+  - src のコードの変更 0。生成物（`src/data/substations/*.json` 44 本）は commit していない。
+- 一時物（scratchpad の `bv/`・消していない）:
+  - スクリプト: `new_emit.py.txt`・`swap_emit.py`・`make_2611.py`・`renum_check.py`・`verify_after.py`・`prod_kyu.py`
+  - 九州（`kyu_out/`）: `parse.log`・`dry.log`・`apply.log`・`after.json`・`verify.txt`・`renum.txt`
+  - 九州の ZIP: `kyu_dl/`（ZIP と応答ヘッダ）
+  - 東京: `bu_hdr_2611/`（ZIP 14 本の応答ヘッダ）・`tepco_2611_parse.log`
+  - 公表ページの控え: `kyu_disclosure.html`・`tepco_info.html`・`tepco_page.html`
+  - そのほか: `n1-status.before.json`・`n1.log`・`build.log`・`grid-fields.log`
+  - 九州のパーサーを `--out-dir` で流した出力（`kyu_out/kyushu-report.*`・`n1_undetermined_kyushu.json`）。
