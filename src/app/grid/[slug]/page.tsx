@@ -244,10 +244,10 @@ export default async function GridSlugPage({
     '@type': 'Place',
     name: sub.name,
     description: `${operatorName ?? ''} ${voltageClass ?? ''} 変電所`.trim(),
-    address: sub.prefecture
+    address: place.prefecture
       ? {
           '@type': 'PostalAddress',
-          addressRegion: sub.prefecture,
+          addressRegion: place.prefecture,
           addressCountry: 'JP',
         }
       : undefined,
@@ -261,7 +261,7 @@ export default async function GridSlugPage({
     ...(sourcePageUrl ? { isBasedOn: sourcePageUrl } : {}),
   };
 
-  // BreadcrumbList JSON-LD: トップ > 系統空き容量 > {エリア}エリア > {都道府県} > {変電所名}
+  // BreadcrumbList JSON-LD: トップ > 系統空き容量 > {エリア}エリア > {都道府県} > {変電所名}（都道府県は本文の表と同じ place.prefecture・確定しない設備区分〔関西ローカル系・基幹系統〕は段を出さない・2026-10-30）
   const breadcrumbItems: { name: string; item: string }[] = [
     { name: 'トップ', item: 'https://bess-net.jp/' },
     { name: '系統空き容量', item: 'https://bess-net.jp/grid' },
@@ -272,10 +272,10 @@ export default async function GridSlugPage({
       item: `https://bess-net.jp/grid/${areaSlug}`,
     });
   }
-  if (sub.prefecture) {
+  if (place.prefecture) {
     breadcrumbItems.push({
-      name: sub.prefecture,
-      item: `https://bess-net.jp/grid/${sub.slug}`,
+      name: place.prefecture,
+      item: `https://bess-net.jp/grid/prefecture/${encodeURIComponent(place.prefecture)}`,
     });
   }
   breadcrumbItems.push({
@@ -332,7 +332,7 @@ export default async function GridSlugPage({
                 )}
               </>
             )}
-            {sub.prefecture && ` / ${sub.prefecture}`}
+            {place.prefecture && <>{' / '}<Link href={`/grid/prefecture/${encodeURIComponent(place.prefecture)}`}>{place.prefecture}</Link></>}
           </p>
 
           {/* ヘッダー */}
