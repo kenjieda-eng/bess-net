@@ -132,7 +132,7 @@
    - ローカルのビルドは日本時間で動くので、前後で変わったページは 0 だった。
    - 本番（UTC）で変わるページは 34 件で、データから数えた（(2)）。
    - ビルドの前後の比較で効果を見るには、`TZ=UTC` でビルドする必要がある。
-2. 「`npm run type-check`」: package.json に type-check のスクリプトは無いので、`npx tsc --noEmit -p .` で代えた。
+2. ~~「`npm run type-check`」: package.json に type-check のスクリプトは無いので、`npx tsc --noEmit -p .` で代えた。~~ **【訂正 2026-10-31】これは私の誤り**。`type-check`（`tsc --noEmit`）は 2026-04-29 の `e358324` から package.json にあり、便の指示に前提違いは無かった。実際に回したのは `npx tsc --noEmit -p .` で、中身は同じ検査（0 エラー）。
 
 ## (6) 申告・一時物
 
