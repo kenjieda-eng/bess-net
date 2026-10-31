@@ -4,15 +4,16 @@
  *
  * ★既定は dry run（送る URL の件数と先頭 10 件を表示するだけ）。送るのは --apply を明示したときだけ（R32 と同じ考え方）。
  * ★同じ URL を、変わっていないのに何度も送らない（IndexNow の作法）。送るのは中身が変わったページだけ。
+ * ★変電所の詳細（/grid/{slug}）は送らない（裁定 2026-10-31）: 約 7,300 件が事前生成でなく、巡回が集中すると microCMS に当たり、429 で 404 になる（鉄則 #2・#4）。
+ *   Bing はサイトマップで自分の速さで巡回する。どの選び方でも、この道具は変電所の詳細を外す。変電所のデータ更新の便では IndexNow を使わない。
  *
  * 送る URL の選び方（どれか 1 つ）:
- *   --all                 本番 sitemap.xml の全 URL（初回だけ）
- *   --since YYYY-MM-DD    sitemap の lastmod がその日（JST）以降の URL
+ *   --all                 本番 sitemap.xml の全 URL（変電所の詳細を除く）
+ *   --since YYYY-MM-DD    sitemap の lastmod がその日（JST）以降の URL（変電所の詳細を除く）
  *   --urls <ファイル>      1 行 1 URL（https://bess-net.jp/… か /…。空行と # で始まる行は無視）。便で直したページの一覧
  *
  * ★--since の限界（reports/indexnow-2026-10-31.md (1)）: sitemap の lastmod は「中身が変わった日」とは限らない。
  *   - 固定ページ・ハブ・links など: sitemap を作った時刻（毎回変わる）→ 毎日全部を送ることになるので、--since では外す
- *   - 変電所の詳細: 公表元の版の日（当方が取り込んだ日ではない）→ 取り込みが版の日より後なら拾えない。再取込の便は --urls で送る
  *   - news・解説・用語・補助金・案件・事業者: microCMS の updatedAt。コードだけの変更は反映されない
  *
  * 応答: 200／202 は受理。それ以外（400／403／422／429 など）はコードと本文を表示して止める。
@@ -82,6 +83,13 @@ function normalize(raw: string): string {
   return u.href;
 }
 
+/** /grid/ 直下で変電所の詳細でないページ（エリア・検索・県の一覧） */
+const GRID_NOT_DETAIL = new Set(['tohoku', 'hokuriku', 'shikoku', 'kansai', 'chugoku', 'okinawa', 'hokkaido', 'chubu', 'kyushu', 'tokyo', 'search', 'prefecture']);
+function isSubstationDetail(url: string): boolean {
+  const m = /^\/grid\/([^/]+)\/?$/.exec(new URL(url).pathname);
+  return !!m && !GRID_NOT_DETAIL.has(m[1]);
+}
+
 async function selectUrls(): Promise<string[]> {
   if ([ALL, SINCE !== undefined, URLS_FILE !== undefined].filter(Boolean).length !== 1) {
     stop('--all・--since YYYY-MM-DD・--urls <ファイル> のどれか 1 つを指定する');
@@ -101,15 +109,15 @@ async function selectUrls(): Promise<string[]> {
   const generated = stamps.filter((l) => l === newest).length >= 2 ? newest : null;
   const dated = rows.filter((r) => r.lastmod !== null && r.lastmod !== generated);
   console.log(`--since ${SINCE}: lastmod が sitemap を作った時刻・空の ${rows.length - dated.length} 件は外す（中身の日ではない）`);
-  console.log('  変電所の詳細の lastmod は公表元の版の日。再取込の便は --urls で送る');
   return dated.filter((r) => new Date(r.lastmod!).getTime() >= from).map((r) => r.url);
 }
 
 async function main(): Promise<void> {
   const key = readKey();
   const keyLocation = `${SITE}/${key}.txt`;
-  const urls = [...new Set((await selectUrls()).map(normalize))];
-  console.log(`[indexnow] mode=${APPLY ? '本実行' : 'DRY-RUN'}・送る URL ${urls.length.toLocaleString()} 件・鍵 ${key.slice(0, 4)}…`);
+  const selected = [...new Set((await selectUrls()).map(normalize))];
+  const urls = selected.filter((u) => !isSubstationDetail(u));
+  console.log(`[indexnow] mode=${APPLY ? '本実行' : 'DRY-RUN'}・送る URL ${urls.length.toLocaleString()} 件（変電所の詳細 ${(selected.length - urls.length).toLocaleString()} 件を外した）・鍵 ${key.slice(0, 4)}…`);
   urls.slice(0, 10).forEach((u) => console.log(`  ${u}`));
   if (urls.length > 10) console.log(`  …ほか ${(urls.length - 10).toLocaleString()} 件`);
 
