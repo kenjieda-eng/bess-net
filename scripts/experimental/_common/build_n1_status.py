@@ -270,6 +270,14 @@ for x in sk["new_rows"]:
     log.append(f"四国の新規行（未取込）で未算定: {x['external_id']} {x['name']}（取込後に足す）")
 print(f"四国: 10月版の未算定 {len(sk['matched'])} 行（as_of {SK_AS_OF}）")
 
+# ── 8. 東京: 10/28 版の N-1 欄が「-」の行（BU 本実行・parse_tepco_csv_2611.py の一覧 18 件）──
+# 13 件は前身の一覧にある。足りない山梨の 5 件（身延・紅葉台・富士豊茂・富士桜・富士ヶ嶺）を足す。as_of は add の既定＝再取込後の last_updated。
+tk = json.loads((ROOT / "_common" / "n1_undetermined_tokyo_2611.json").read_text(encoding="utf-8"))
+tk_added = [x for x in tk["entries"] if x["slug"] not in entries]
+for x in tk_added:
+    add(x["slug"], x["reason"], "csv_yosochoryu_*_hendensyo.csv（2026-10-28公表）・2026-11-02 取込", raw=x["raw"], raw_checked=True)
+print(f"東京: 10/28 版の未算定 {len(tk['entries'])} 行のうち、前身の一覧に無い {len(tk_added)} 行を足した")
+
 # ── 出力 ──
 from collections import Counter  # noqa: E402
 
@@ -294,6 +302,7 @@ out = {
         "scripts/experimental/hokkaido/update_plan_202607.json・zip_202607/sys_capa_kikan.zip",
         "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",
         "scripts/experimental/_common/n1_undetermined_shikoku.json（四国 10月版・parse_shikoku.py）",
+        "scripts/experimental/_common/n1_undetermined_tokyo_2611.json（東京 10/28 版・parse_tepco_csv_2611.py）",
         "microCMS substations（GET・as_of）",
     ],
     "count": len(entries),

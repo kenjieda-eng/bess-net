@@ -1,7 +1,7 @@
 {
  "_purpose": "N-1電制適用可否の「未算定（公表元が「－」等で明示）」「空欄」「公表なし（N-1 列が無い）」の設備。microCMS の n1_eligible は boolean のため false（不可）に潰れているので、表示はこの一覧で直す（三値化 段1）。TypeScript（src/lib/n1-status.ts）と Python（scripts/experimental/_common/n1_status.py）の唯一の真実源（#119）。",
  "_note": "as_of はその設備の microCMS last_updated（一覧を作った時点）。表示側は as_of が microCMS の現在値と一致するときだけこの一覧を当てる（再取込で値が更新された行に古い一覧を当てない）。microCMS が true（可）なら可が勝つ。再生成: scripts/experimental/_common/build_n1_status.py（前身 build_n1_undetermined.py は残置）。四国（10月版の「－」）の as_of は 10月版の版日付で、再取込までは表示に効かない。",
- "generated_at": "2026-10-30T03:23:30Z",
+ "generated_at": "2026-11-02T04:09:05Z",
  "generated_from": [
   "scripts/experimental/_common/n1_undetermined.json（前身・273 件）",
   "scripts/experimental/hokuriku/csv_2608（2026-08-05 公表 CSV）",
@@ -10,13 +10,14 @@
   "scripts/experimental/hokkaido/update_plan_202607.json・zip_202607/sys_capa_kikan.zip",
   "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",
   "scripts/experimental/_common/n1_undetermined_shikoku.json（四国 10月版・parse_shikoku.py）",
+  "scripts/experimental/_common/n1_undetermined_tokyo_2611.json（東京 10/28 版・parse_tepco_csv_2611.py）",
   "microCMS substations（GET・as_of）"
  ],
- "count": 419,
+ "count": 424,
  "count_by_reason": {
   "blank": 16,
   "no_column": 113,
-  "undetermined": 290
+  "undetermined": 295
  },
  "count_by_area": {
   "中国": {
@@ -37,7 +38,7 @@
    "undetermined": 28
   },
   "東京": {
-   "undetermined": 13
+   "undetermined": 18
   },
   "東北": {
    "undetermined": 20
@@ -3696,7 +3697,7 @@
    "name": "塩原第１",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0018": {
    "area": "東京",
@@ -3705,7 +3706,7 @@
    "name": "塩原第２",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0019": {
    "area": "東京",
@@ -3714,7 +3715,7 @@
    "name": "塩原第３",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0389": {
    "area": "東京",
@@ -3723,7 +3724,7 @@
    "name": "向堀",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0390": {
    "area": "東京",
@@ -3732,7 +3733,7 @@
    "name": "西平",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0595": {
    "area": "東京",
@@ -3741,7 +3742,7 @@
    "name": "新木更津5・8B",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0608": {
    "area": "東京",
@@ -3750,7 +3751,7 @@
    "name": "溝原",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0609": {
    "area": "東京",
@@ -3759,7 +3760,7 @@
    "name": "西岬",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0610": {
    "area": "東京",
@@ -3768,7 +3769,7 @@
    "name": "神戸",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0611": {
    "area": "東京",
@@ -3777,7 +3778,7 @@
    "name": "犬石",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0612": {
    "area": "東京",
@@ -3786,7 +3787,7 @@
    "name": "長尾",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-0613": {
    "area": "東京",
@@ -3795,7 +3796,7 @@
    "name": "塩浦",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
   },
   "tpg-1359": {
    "area": "東京",
@@ -3804,7 +3805,57 @@
    "name": "三枚橋(1)",
    "reason": "undetermined",
    "source": "csv_yosochoryu_*_hendensyo.csv（2026-07-10公表）",
-   "as_of": "2026-07-10T00:00:00.000Z"
+   "as_of": "2026-10-28T00:00:00.000Z"
+  },
+  "tpg-1559": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変山梨県 22kV 3",
+   "name": "身延(1)",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-10-28公表）・2026-11-02 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
+   "raw": "-"
+  },
+  "tpg-1561": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変山梨県 22kV 4",
+   "name": "紅葉台(1)",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-10-28公表）・2026-11-02 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
+   "raw": "-"
+  },
+  "tpg-1563": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変山梨県 22kV 5",
+   "name": "富士豊茂(1)",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-10-28公表）・2026-11-02 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
+   "raw": "-"
+  },
+  "tpg-1565": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変山梨県 22kV 6",
+   "name": "富士桜(1)",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-10-28公表）・2026-11-02 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
+   "raw": "-"
+  },
+  "tpg-1567": {
+   "area": "東京",
+   "operator": "東京電力パワーグリッド",
+   "external_id": "変山梨県 22kV 7",
+   "name": "富士ヶ嶺(1)",
+   "reason": "undetermined",
+   "source": "csv_yosochoryu_*_hendensyo.csv（2026-10-28公表）・2026-11-02 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
+   "raw": "-"
   },
   "ydn-ehime-0022-2": {
    "area": "四国",

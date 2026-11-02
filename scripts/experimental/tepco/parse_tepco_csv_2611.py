@@ -14,7 +14,7 @@ scripts/experimental/tepco/parse_tepco_csv_2611.py
 [取得元] 公表ページ https://www.tepco.co.jp/pg/consignment/system/ の「系統の予想潮流等」の href を実取得（2026-10-15）。
   /pg/consignment/system/pdf/csv_yosochoryu_{area}.zip ×14（基幹＋13 都県域）。各 ZIP に hendensyo（変電所）と
   soudensen（送電線）。本スクリプトは変電所だけ扱う（既存 tpg-* は全て変電所＝従来どおり）。
-[版] 14 本とも Last-Modified: Wed, 30 Sep 2026（応答ヘッダ）。更新履歴ページ 2026年9月30日「予想潮流を更新」。
+[版] 更新履歴ページ 2026年10月28日「予想潮流を更新」＝版の日付 2026-10-28（裁定 10/30 §2-1）。ZIP の Last-Modified（10/26・10/28）はサーバの属性。
   CSV の先頭メタ行「＜送電線_予想潮流・空容量のフォーマット＞2026年09月02日更新」は**フォーマット改定日**（7 月版は 06月22日）。
 [encoding] 14 本とも utf-8-sig strict 成功（7 月版は gunma・shizuoka・yamanashi が cp932）。ファイルごとに実測して出す。
 [レイアウト] 14 本とも 19 列（7 月版の基幹は 24 列だった＝基幹の列が県別と同じになった）。
@@ -28,8 +28,9 @@ scripts/experimental/tepco/parse_tepco_csv_2611.py
   ルール②（baseline の名称で写像）は使わない（BU 依頼書）。残った新規行は名称で既存に当たるかを報告するだけ（自動で除外しない）。
 [#120] No.欄はホワイトリスト（ID_RE）。注記・見出しの行は除外して一覧に出す。「全項目 null」を除外条件にしない。
 """
-import csv, io, json, re, sys, unicodedata, zipfile
+import argparse, csv, io, json, re, sys, unicodedata, zipfile
 from collections import Counter, defaultdict
+from datetime import date
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -216,7 +217,90 @@ def base_val(b, k):
     return v if v not in ("",) else None
 
 
+def emit_plan(plan_out, raw_base, matched, new_rows, removed, renamed, renumber, raw_rows, base):
+    """本実行の計画（裁定 2026-10-30 §2・2026-10-29 BU-2〜4）。microCMS には書かない。想定の外は計画を作らずに止める。
+    - 版の日付 2026-10-28・全件同じ。fetched_at は実行日
+    - 備考の列が無いファイル（栃木・群馬・茨城・埼玉）: 備考は別の列に移っていないので、公表どおり空（null）
+    - 「当該設備名称の定義」は取り込まない。制約要因・出力制御の対象設備は当方に元々入れていない欄で、今回も触らない
+    - 再掲と本体の食い違いは本体の値（baseline が紐づく No.）・出力制御の可能性の空欄は公表どおり空（[]）・既存の重複 4 組は触らない
+    - 新規は 1 行ずつ分ける。66kV 系列の再掲・値 0 の参照は足さない。本当に新しい設備が出たら止める（10/28 版は 0 件の想定）
+    """
+    if removed or renamed or renumber:
+        raise SystemExit(f"想定の外: 消滅 {len(removed)}・名称変更 {len(renamed)}・振り直し {len(renumber)}")
+    iso = lambda d: f"{d}T00:00:00.000Z"  # noqa: E731
+    META = {"id", "createdAt", "updatedAt", "publishedAt", "revisedAt"}
+    raw = {b["slug"]: b for b in raw_base}
+    updates, notes_cleared, oc_emptied, oc_set, n1_kept = [], [], [], [], 0
+    for b, r in matched:
+        patch, changed = {}, []
+        for k, _lab, kind in FIELDS:
+            bv, nv = base_val(b, k), r[k]
+            if k == "notes" and r.get("notes_absent"):
+                nv = None
+            if (numeq(bv, nv) if kind == "num" else ((bv or None) == (nv or None))):
+                continue
+            if k == "oc_possibility":
+                patch[k] = [nv] if nv else []  # GET は空の select を [] で返す
+                (oc_set if nv else oc_emptied).append(b["slug"])
+            else:
+                patch[k] = nv
+                if k == "notes" and nv is None:
+                    notes_cleared.append({"slug": b["slug"], "name": b.get("name"), "external_id": b.get("external_id"), "before": bv, "area": r["area"]})
+            changed.append(k)
+        if r["n1_eligible"] is None:
+            n1_kept += 1  # 未算定は boolean を潰さない（現値維持・n1-status の一覧で表示）
+        elif bool(b.get("n1_eligible")) != r["n1_eligible"]:
+            patch["n1_eligible"] = r["n1_eligible"]
+            changed.append("n1_eligible")
+        patch["last_updated"] = iso(NEW_VERSION)
+        patch["fetched_at"] = iso(str(date.today()))
+        updates.append({"slug": b["slug"], "id": raw[b["slug"]]["id"], "patch": patch, "changed": changed,
+                        "before": {k: v for k, v in raw[b["slug"]].items() if k not in META}})
+    bnames = {base_name(b.get("name")) for b in base}
+    new_table = []
+    for r in new_rows:
+        twin = [x for x in raw_rows if x["area"] == r["area"] and NFKC(x["name"]) == NFKC(r["name"]) and x["external_id"] != r["external_id"]]
+        zero = all(numeq(r[k], 0.0) for k in ("capacity_total_mw", "cap_operational_mw", "forecast_flow_mw"))
+        if zero and NFKC(r["name"]) in bnames:
+            kind = "値 0 の参照（他地区の局）"
+        elif r["series_66kv"] and twin:
+            kind = "66kV 系列の再掲（値が本体と食い違う）"
+        else:
+            raise SystemExit(f"想定の外（本当に新しい設備かもしれない）: {r['external_id']} {r['name']}")
+        new_table.append({"area": r["area"], "line": r["line"], "external_id": r["external_id"], "name": r["name"], "voltage": r["voltage_raw"], "units": r["units"],
+                          "capacity_total_mw": r["capacity_total_mw"], "cap_operational_mw": r["cap_operational_mw"], "forecast_flow_mw": r["forecast_flow_mw"], "n1_capacity_mw": r["n1_capacity_mw"],
+                          "kind": kind, "main_rows": [{k: x[k] for k in ("external_id", "capacity_total_mw", "cap_operational_mw", "forecast_flow_mw", "n1_capacity_mw")} for x in twin]})
+    n1_ok = sum(1 for u in updates if (u["patch"]["n1_eligible"] if "n1_eligible" in u["patch"] else u["before"].get("n1_eligible")) is True)
+    value_changed = sum(1 for u in updates if u["changed"])
+    plan = {"generated": str(date.today()), "area": "東京", "prefix": "tpg-", "endpoint": "substations",
+            "expected": {"updates": len(updates), "value_changed": value_changed, "creates": 0, "n1_ok_after": n1_ok},
+            "ruling": "02_計画・運営/検証記録_BU_BV本実行便_九州完了・東京10月28日版の裁定_2026-10-30_ユウ.md §2",
+            "version": NEW_VERSION, "new_rows": new_table, "notes_cleared": notes_cleared, "oc_emptied": oc_emptied, "oc_set": oc_set, "n1_undetermined_kept": n1_kept,
+            "updates": updates, "creates": []}
+    Path(plan_out).write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"=== emit-plan: PATCH {len(updates)}（値の変化 {value_changed}）・POST 0・N-1 可 {n1_ok}・未算定で現値維持 {n1_kept}")
+    print(f"  備考を空に {[(x['slug'], x['name']) for x in notes_cleared]}")
+    print(f"  出力制御の可能性 空に {oc_emptied}・入れる {oc_set}")
+    print(f"  新規 {len(new_table)} 行: {dict(Counter(x['kind'] for x in new_table))}・足す 0")
+    print(f"  列ごとの変化 {dict(Counter(k for u in updates for k in u['changed']))}")
+    print(f"  -> {plan_out}")
+
+
 def main():
+    ap = argparse.ArgumentParser()
+    # BU 東京 本実行便（2026-11-02）: 実行日の baseline を使い、10/30 の dry-run の記録を上書きしない
+    ap.add_argument("--baseline", default=None)
+    ap.add_argument("--out-dir", default=None)
+    ap.add_argument("--emit-plan", action="store_true")
+    ap.add_argument("--plan-out", default=str(HERE / "update_plan_202610.json"))
+    args = ap.parse_args()
+    global BASELINE, REPORT_JSON, NORMALIZED, N1_OUT
+    if args.baseline:
+        BASELINE = Path(args.baseline)
+    if args.out_dir:
+        REPORT_JSON = Path(args.out_dir) / "tokyo-report.json"
+        NORMALIZED = Path(args.out_dir) / "tokyo-normalized.json"
+        N1_OUT = Path(args.out_dir) / "n1_undetermined_tokyo.json"
     R = {"generated_on": TODAY, "area": "東京", "operator": "東京電力パワーグリッド",
          "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ）", "page": PAGE_URL, "requires_judgement": [], "warnings": []}
     files, raw_rows, skipped = load_files()
@@ -383,6 +467,8 @@ def main():
         "purpose": "東京 2026年10月28日更新版で N-1電制適用可否が未算定（－）・空欄の行。dry-run の一覧（書込なし）。build_n1_status.py の入力にできる形。",
         "version": NEW_VERSION, "count": len(n1_undet), "entries": n1_undet}, ensure_ascii=False, indent=1), encoding="utf-8")
     REPORT_JSON.write_text(json.dumps(R, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
+    if args.emit_plan:
+        emit_plan(args.plan_out, raw_base, matched, new_rows, removed, renamed, renumber, raw_rows, base)
     c = R["counts"]
     print("files:", ", ".join(f"{f['area']} {f['encoding']} cols{f['columns']} rows{f['data_rows']}" for f in files))
     print(f"note rows excluded {len(skipped)}; dedupe {len(raw_rows)}->{len(kept)} ({len(removed_dup)} removed {R['dedupe']['summary']})")
