@@ -28,7 +28,7 @@ import { getNearbyProjects, getRelatedNewsForSubstation } from '@/lib/related-ca
 import { siteConfig } from '@/lib/site-config';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import substationsIndex from '@/data/substations/index.json';
-import { buildAreaTitle, buildAreaDescription, buildSubstationTitle, gridFacts, areaHasMap } from '@/lib/grid-meta';
+import { buildAreaTitle, buildAreaDescription, buildSubstationTitle, displaySubstationName, substationBasicSentence, gridFacts, areaHasMap } from '@/lib/grid-meta';
 import { latestPublishedForAreas } from '@/lib/grid-data-date';
 import { getAreaSubstationsStatic, substationNameQualifier } from '@/lib/grid-static-lists';
 import GridPrintButton from '@/components/GridPrintButton';
@@ -145,10 +145,12 @@ export async function generateMetadata({
   const vc = firstOf(sub.voltage_class) || '';
   const avail = sub.cap_avail_mw;
   const availStr = avail !== undefined && avail !== null ? `${avail}MW` : '情報なし';
-  const desc = `${sub.name}（${operator}・${vc}）の系統空き容量・連系条件・出力制御情報。空容量${availStr}。出典・最終更新日明記、蓄電所事業の検討材料に。`;
+  // 変電所の名前便（2026-11-02）: 題名・description は表示用の名前（基本情報の「変電所名」の欄は一次の表記のまま）
+  const displayName = displaySubstationName(sub);
+  const desc = `${displayName}（${operator}・${vc}）の系統空き容量・連系条件・出力制御情報。空容量${availStr}。出典・最終更新日明記、蓄電所事業の検討材料に。`;
   // 検索の入口便（2026-10-30）: 題名に県と事業者の短い名。県は本文と同じ normalizeSubstationPlace を生値に 1 回だけ通す（#119）
   const place = normalizeSubstationPlace(sub.prefecture, Array.isArray(sub.area) ? sub.area[0] : (sub.area as unknown as string | undefined));
-  const pageTitle = buildSubstationTitle(sub.name, place.prefecture, operator, substationNameQualifier(sub.slug));
+  const pageTitle = buildSubstationTitle(displayName, place.prefecture, operator, substationNameQualifier(sub.slug));
   return {
     // layout.tsx titleTemplate が自動付与（落とし穴 #86）
     title: pageTitle,
@@ -239,10 +241,12 @@ export default async function GridSlugPage({
     slug: o.slug,
   }));
 
+  const displayName = displaySubstationName(sub);
+  const basicSentence = substationBasicSentence(sub, operatorName);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Place',
-    name: sub.name,
+    name: displayName,
     description: `${operatorName ?? ''} ${voltageClass ?? ''} 変電所`.trim(),
     address: place.prefecture
       ? {
@@ -279,7 +283,7 @@ export default async function GridSlugPage({
     });
   }
   breadcrumbItems.push({
-    name: sub.name,
+    name: displayName,
     item: `https://bess-net.jp/grid/${sub.slug}`,
   });
   const breadcrumbJsonLd = {
@@ -355,8 +359,9 @@ export default async function GridSlugPage({
               <div>このページのURL: {siteConfig.url}/grid/{sub.slug}</div>
               <div>印刷日時: <span className="grid-print-datetime" /></div>
             </div>
-            <h1 className="article-title">{sub.name}{substationNameQualifier(sub.slug) ? `（${substationNameQualifier(sub.slug)}）` : ''}</h1>
+            <h1 className="article-title">{displayName}{substationNameQualifier(sub.slug) ? `（${substationNameQualifier(sub.slug)}）` : ''}</h1>
             <p className="grid-detail-lead">
+              {basicSentence}
               {operatorName ?? '事業者情報なし'} 管内
               {place.prefecture ? `・${place.prefecture}` : ''} の{voltageClass ?? '変電所'}
               。系統空き容量・出力制御の可能性・N-1電制適用可否などの公表情報を整理しています。

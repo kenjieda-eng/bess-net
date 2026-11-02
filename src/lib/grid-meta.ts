@@ -190,9 +190,96 @@ export function operatorShortName(operator: string): string {
   return OPERATOR_SHORT[operator] ?? operator;
 }
 
+/* ------------------------------------------------------------------ *
+ * 変電所の名前便（2026-11-02）: 詳細の題名・h1・OG・JSON-LD・description・冒頭の一文に出す名前
+ *  検索語は「◯◯変電所」なのに、名前が素のままのエリアでは詳細のページに「変電所」の語が無かった。
+ *  10 社の列見出しはすべて「変電所名」（関西だけ表の題が「電気所（発電所，変電所，配電塔）」）。
+ *  ただし一次の名前が別の設備を指すもの・番号の意味が分からないものには足さない（足さないのは誤りにならない）。
+ *  DB の name と基本情報の「変電所名」の欄は一次の表記のまま。同名の判定（nameQualifiers）も一次の名前のまま。
+ * ------------------------------------------------------------------ */
+
+type SubstationNameInput = {
+  name: string;
+  voltage_primary_kv?: number | null;
+  voltage_secondary_kv?: number | null;
+};
+
+/** 既に設備の語がある（配電塔・変電塔・(塔)は「塔」）／名前が非公開 */
+const NAME_HAS_KIND = /変電所|変電設備|塔|開閉|発電所|変換所|SS$|S\/S$|非公開/;
+/** 一次の語尾が変電所以外を指す（東京の「中間」「局」「局配」「（発）」・中部の「第二発」・北陸の「火力」「直配」）。九州の「中間」は地名なので 1 字以上前に付くものだけ */
+const NAME_OTHER_KIND = /.中間$|局$|局配$|[（(](?:局配|発)[）)]$|[一二三四五六七八九十]発$|火力$|水力$|直配$/;
+/** 東北の番号だけの名前（一次の変電所名の欄が No. と同じ＝名前が公表されていない） */
+const NAME_ONLY_CODE = /^[0-9A-Za-z]+$/;
+/** 末尾の番号が設備の一部か変圧器の番号か分からない（西宮浜1号・坂下№1・高崎1）。第N は名前の一部なので除く */
+const NAME_UNCLEAR_NUMBER = /(?:[0-9０-９]+号|[№]\s*[0-9０-９]+|No\.\s*[0-9０-９]+|(?<!第)[0-9０-９]+)$/;
+/** 「(変)」は中国の一次の略記で、変電所そのもの */
+const NAME_ABBREVIATED = /^(.+?)[（(]変[）)]$/;
+/** 北陸の名前の末尾の電圧（中島　66/22kV・伏木66/22kV） */
+const NAME_VOLTAGE_SUFFIX = /[\s　]*\d+(?:\.\d+)?\/\d+(?:\.\d+)?kV$/;
+/** 名前の後ろに残す部分: (1)・(22kV)・（奥多々良木）／ 77/6kV ／ 変圧器の番号 11・12・14B・5，7，8B・2U */
+const NAME_SUFFIX = [
+  /^(.+?)([\s　]*[（(].*[）)])$/,
+  /^(.+?)([\s　]*\d+(?:\.\d+)?\/\d+(?:\.\d+)?kV)$/,
+  /^(.+?)([0-9０-９]+(?:[，,・\-－][0-9０-９]+)+[BＢUＵ]?)$/,
+  /^(.+?)([0-9０-９]+[BＢUＵ](?:[0-9０-９]+[BＢUＵ])*)$/,
+];
+/**
+ * 足すと同じエリアの別の行「◯◯変電所」と題名が重なる素の名前（東京 4 組。同じ栃木県・山梨県に両方の行がある）。
+ * 再取込で組が増えたら verify:grid-pages が落ちるので、ここに足す。
+ */
+const NAME_WOULD_COLLIDE: ReadonlySet<string> = new Set(['関谷', '谷村', '東山梨', '北巨摩']);
+
+/** 発電機側の電圧の行（一次 ≤ 二次／一次が 11kV 以下／二次が 11kV。関西の小原 154/11・九州の上椎葉 11/6 など）。関西の表は発電所も含むが名前に語が無い */
+function hasGeneratorVoltage({ voltage_primary_kv: p, voltage_secondary_kv: s }: SubstationNameInput): boolean {
+  if (typeof p !== 'number' || typeof s !== 'number') return false;
+  return p <= s || p <= 11 || s === 11;
+}
+
+/** 変電所の詳細に出す名前。足さないものは一次の名前のまま返す */
+export function displaySubstationName(sub: SubstationNameInput): string {
+  const name = sub.name;
+  const abbreviated = NAME_ABBREVIATED.exec(name);
+  if (abbreviated) return `${abbreviated[1]}変電所`;
+  if (NAME_HAS_KIND.test(name) || NAME_OTHER_KIND.test(name) || NAME_ONLY_CODE.test(name)) return name;
+  if (NAME_WOULD_COLLIDE.has(name) || hasGeneratorVoltage(sub)) return name;
+  for (const suffix of NAME_SUFFIX) {
+    const m = suffix.exec(name);
+    if (m) return `${m[1]}変電所${m[2]}`;
+  }
+  if (NAME_UNCLEAR_NUMBER.test(name)) return name;
+  return `${name}変電所`;
+}
+
+/**
+ * 詳細の冒頭に足す基本の 1 文（データから。数字が無い欄は書かない・評価の語は書かない）。
+ * 「新野田変電所は東京電力パワーグリッド管内の 500/275kV の変電所で、変圧器 4 台・運用容量 3,420MW。」
+ * 名前が公表されていないレコードは主語が立たないので出さない。
+ */
+export function substationBasicSentence(
+  sub: SubstationNameInput & { units?: number | null; cap_operational_mw?: number | null },
+  operator: string | null | undefined,
+): string | null {
+  if (!sub.name || sub.name === '変電所' || sub.name.includes('非公開') || NAME_ONLY_CODE.test(sub.name)) return null;
+  const display = displaySubstationName(sub);
+  // 北陸の「粟田部変電所77/6kV」は同じ文の電圧欄（77/6.6kV）と食い違うので、主語からは外す
+  const subject = display.replace(NAME_VOLTAGE_SUFFIX, '');
+  const volt = sub.voltage_primary_kv != null && sub.voltage_secondary_kv != null
+    ? ` ${sub.voltage_primary_kv}/${sub.voltage_secondary_kv}kV の` : '';
+  const kind = display.includes('変電所') ? '変電所' : '設備';
+  // 運用容量は基本情報の表（fmtNum）と同じ桁で出す（沖縄の 0.12MW が表では 0.1 MW）
+  const cap = sub.cap_operational_mw;
+  const capText = cap == null ? '' : Number.isInteger(cap) ? cap.toLocaleString() : cap.toFixed(1);
+  const facts = [
+    sub.units != null ? `変圧器 ${sub.units.toLocaleString()} 台` : '',
+    capText ? `運用容量 ${capText}MW` : '',
+  ].filter(Boolean).join('・');
+  const head = `${subject}は${operator ? `${operator}管内の` : ''}${volt}${kind}`;
+  return facts ? `${head}で、${facts}。` : `${head}。`;
+}
+
 /**
  * 変電所の詳細の title（検索の入口便・2026-10-30）。
- * 「{変電所名}（{県}・{事業者の短い名}）の系統空き容量・蓄電池連系条件」。県が確定しないレコード（基幹系統・関西ローカル系）は従来どおり。
+ * 「{変電所名}（{県}・{事業者の短い名}）の系統空き容量・蓄電池連系条件」。県が確定しないレコード（基幹系統・関西ローカル系）は従来どおり。name は displaySubstationName を通した名前を渡す。
  * 同じ名前の変電所が別の県・別の社にある（ロングテールの「◯◯変電所」の取り違え）ため。サイト名は layout の titleTemplate が付ける。
  * qualifier は同じエリアの同名を見分ける語（substationNameQualifier・2026-11-02）。名前が重ならない変電所は null で、題名は変わらない。
  */
