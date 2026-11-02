@@ -148,6 +148,45 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'hybrid-reu511-saga-honjo-2mw-2026-09': '開発計画',                           // RE.U511 佐賀市本庄町
   'watt-tune-lv-aggregation-fee-2026-09': '技術',                               // 低圧アグリ 料金体系
   'fit-founder-hokkaido-mukawa-2mw-2026-09': '開発計画',                        // むかわ町 2MW 案件
+  // 月次バッチ 11/2（2026-11-02 投入・対象 10/1〜10/31 配信）— 各件の _category（ユウ原稿）を正とする
+  'digitalgrid-bess-200mw-2026-10': '市場統計',                                 // 取扱量 200MW 突破（実績統計）
+  'ntt-anode-aomori-misawa-cod-2026-10': '連系',                                // 青森三沢 商用運転開始
+  'ibeet-shizuoka-gas-hamamatsu-bluestorage-2026-10': '技術',                   // 静岡ガス 浜松 Bluestorage 供給
+  'nc-maniwa-tabane-juden-2026-10': '連系',                                     // NC真庭市田羽根 受電開始
+  'nc-shunan-yuno-balancing-entry-2026-10': '連系',                             // NC周南市湯野 需給調整市場
+  'tokyo-century-iizuka-solar-bess-start-2026-10': '連系',                      // 飯塚 FIP 併設蓄電池 運転開始
+  'port-tensor-sassor-aggregation-2026-10': '開発計画',                         // ポート×Tensor／Sassor アグリ契約
+  'powerx-daiwa-house-kurate-delivery-2026-10': '技術',                         // 大和ハウス 鞍手 蓄電システム納入
+  'nc-kainan-kizu-setti-2026-10': '開発計画',                                   // NC海南市木津 蓄電池設置
+  'keiyo-gas-isesaki-bess-start-2026-10': '連系',                               // 京葉ガス 伊勢崎 本格稼働
+  'ocean-power-grid-kuribayashi-hachinohe-order-2026-10': '技術',               // 海上パワーグリッド 八戸 受注
+  'nc-pioneer-smtb-project-finance-2026-10': '投資',                            // NCパイオニア プロジェクトファイナンス
+  'gritz-3sites-juden-2026-10': '連系',                                         // GRITZ 3 件 受電開始
+  'hexa-oyabe-50mw-2026-10': '開発計画',                                        // ヘキサ小矢部 事業概要
+  'helios-ones-energy-lv-primary-reserve-test-2026-10': '技術',                 // 低圧 2 拠点 一次調整力の試験
+  'marubeni-sunvillage-4sites-balancing-entry-2026-10': '連系',                 // 丸紅×サンヴィレッジ 4 件 参入完了
+  'qenest-sano-primary-reserve-entry-2026-10': '連系',                          // Q.ENEST 佐野 一次調整力
+  'trina-storage-nozu-196mwh-2026-10': '技術',                                  // AEJ野津 供給業者に選定
+  'nc-nagahama-mikawa-balancing-entry-2026-10': '連系',                         // NC長浜市三川町 需給調整市場
+  'amp-lify-mihama-200mwh-ing-finance-2026-10': '投資',                         // 美浜 ING ファイナンス
+  'fantasista-nagahama-chakou-2026-10': '開発計画',                             // fantasista nagahama PSS 着工
+  'sumitomo-namie-62mw-pf-2026-10': '投資',                                     // 住友商事 浪江 プロジェクトファイナンス
+  'tess-yasugi-kani-bess-orders-2026-10': '技術',                               // TESS 安来・可児 受注
+  'power-pool-pp7-gk-tk-45oku-2026-10': '投資',                                 // PP7号合同会社 GK-TK
+  'nc-sbi-smart-energy-bess-fund-2026-10': '投資',                              // 日本蓄電池×SBIスマートエナジー ファンド
+  'remixpoint-ena-iwamura3-site-2026-10': '開発計画',                           // 恵那岩村3 用地取得
+  'mitsuuroko-kitahiroshima-primary-reserve-2026-10': '連系',                   // 北広島 第一・第二 一次調整力
+  'nc-kuchiharu-balancing-entry-2026-10': '連系',                               // NC口春 需給調整市場
+  'erex-sanbu-bess-cod-2026-10': '連系',                                        // 千葉県山武郡 商業運転開始
+  'kanei-teras-bluefield-tk1-2026-10': '開発計画',                              // TK蓄電所1号 共同開発
+  'sustech-soden-kyoto-2sites-2026-10': '連系',                                 // 綜電 綾部・福知山 アグリ受託
+  'taoke-ota-ryumai-wake-renkei-2026-10': '連系',                               // 太田市龍舞町・和気郡 系統連系
+  'kepco-eflow-solar-bess-multiuse-110mw-2026-10': '技術',                      // 関電×E-Flow 併設蓄電池マルチユース
+  'tokyo-century-retail-registration-aggregation-2026-10': '開発計画',          // 東京センチュリー 小売登録・自社アグリ化
+  'tensor-microgx-kyoto-fukuchiyama-2026-10': '技術',                           // Tensor 福知山市土師 システム提供
+  'denki-no-eki-isahaya-16mw-chakou-2026-10': '開発計画',                       // でんきの駅諫早 着工
+  'taoke-minamichita-renkei-2026-10': '連系',                                   // 南知多町 系統連系
+  'powerx-kansai-td-grid-congestion-mou-2026-10': '制度',                       // パワーエックス×関西電力送配電 基本合意
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
