@@ -280,9 +280,9 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
              microCMS のリスト応答は null フィールドを省略するため、欠損キーは None 補完してから比較。
            実証: 2026-08-16 北陸で static baseline を使った初回 dry-run が「台数271件・予想潮流49件の
                  新規充足」を報告 → 実データ照合後は台数1件・予想潮流29件変化に是正。
-           ★追記（2026-10-06・Ck2g）変電所の id≠slug: `ydn-kikan-0013-2`（id `a7m1-_9p0n5`・2026-10-05 POST）だけ
-             id≠slug（POST の自動採番。contentId 指定の作成＝PUT は停止条件）。全 8,346 件で唯一。再取込は baseline の
-             id で PATCH する（各社の旧スクリプトの `client.update({contentId: slug})` 型はこの 1 件で 404）。
+           ★追記（2026-10-06・Ck2g／2026-11-02 更新）変電所の id≠slug: `ydn-kikan-0013-2`（id `a7m1-_9p0n5`・2026-10-05 POST）と
+             `kyu-884`（id `o66z7a3i9`・2026-10-30 POST）の 2 件（POST の自動採番。contentId 指定の作成＝PUT は停止条件）。全 8,347 件でこの 2 件だけ。
+             再取込は baseline の id で PATCH する（各社の旧スクリプトの `client.update({contentId: slug})` 型はこの 2 件で 404）。
              共通 applier: scripts/experimental/_common/apply_substations_plan.ts（baseline の id を使う・既定 dry run）。
 
 #114 ★★★★ 突合キーの数値は必ず型を正規化してから比較する（int と float を文字列比較しない）
@@ -882,4 +882,5 @@ async function main() {
 - 2026-10-06（CC・Ck2g）: 落とし穴 #127（書込対象の URL は書込前に開かない＝書込前の確認アクセスが Data Cache に旧値・0 件を残す）を追加。#113 に変電所の id≠slug（ydn-kikan-0013-2 の 1 件・再取込は baseline の id で PATCH）、#125 に適用範囲（汎用 importer 3 本も既定 dry run）と「webhook は API ごと」（変電所空き容量DB には無い）を追記。受け入れ基準に「説明会・イベントの置き場」（制度説明は政策・業界は展示会等・2026-09-30 ②裁定）を追加
 - 2026-10-07（CC・Ck2h）: 受け入れ基準「説明会・イベントの置き場」に「業界イベント（/events）は主催者の一次で実在を確かめたものだけ載せる・無いものは events-excluded.ts で非表示・一次は sourceUrl に」を追加（2026-10-06 Ck2g 裁定。便の「sourceUrl か備考に」の備考欄は policy-events に無い）。2026-07 のコードブロックの閉じ位置を是正（7cc6958 で 2026-08 節が元の閉じ ``` の手前に差し込まれ、#111〜#127 がブロックの外に出ていた）
 - 2026-10-16（CC・訂正履歴便）: 第0章に「調べ方の注意」を 1 行追加（調べ役は Claude in Chrome＝EDAさんのログイン状態の Chrome を使わない・使うのは内蔵ブラウザと curl だけ。2026-10-15 の T6 で 1 体が拡張機能で公開ページを読んだ件の再発防止）
+- 2026-11-02（CC・小さな直し便）: #113 の変電所の id≠slug を 2 件に更新（`kyu-884` を追加）
 - （将来）: 新規セッションで追記、更新時刻 + 更新者を末尾に

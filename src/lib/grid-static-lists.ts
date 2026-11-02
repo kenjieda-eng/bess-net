@@ -63,15 +63,52 @@ export function getAreaSubstationsStatic(areaJp: string): GridListItem[] {
   return DATA.by_area[areaJp] ?? [];
 }
 
-/** 都道府県の変電所一覧。沖縄県は microCMS 側に県値がなくエリアで引き当てる（Gr10の既存仕様を踏襲） */
+/**
+ * 都道府県の変電所一覧（空容量の大きい順）。pref_refs は precompute が空容量の降順に並べた参照。
+ * 沖縄県も pref_refs にある（正規化で全件が沖縄県）。以前はここで by_area（名前順）を返していて、沖縄県だけ降順でなかった（2026-11-02 是正）。
+ */
 export function getPrefectureSubstationsStatic(prefecture: string): GridListItem[] {
-  if (prefecture === '沖縄県') return DATA.by_area['沖縄'] ?? [];
   const hit = _prefCache.get(prefecture);
   if (hit) return hit;
   const refs = DATA.pref_refs[prefecture] ?? [];
   const list = refs.map(([areaJp, i]) => DATA.by_area[areaJp][i]).filter(Boolean);
   _prefCache.set(prefecture, list);
   return list;
+}
+
+/** 公式の No.: external_id の社名などの前置きを外した部分（kyuden_23_20(2) → 20(2)・東京は external_id がそのまま No.） */
+const officialNo = (externalId: string | null) => (externalId ? externalId.slice(externalId.lastIndexOf('_') + 1) : null);
+
+/**
+ * 同じエリアで同じ名前の変電所を見分ける語（slug → 語）。名前が重ならない変電所は入らない＝題名を変えない。
+ * 電圧（66/22kV）を添え、組の中で電圧だけでは見分けられないものは公式の No. を、No. も同じもの（#115: 東北 7307 など）は設備容量を足す。
+ */
+export function nameQualifiers(rows: GridListItem[]): Map<string, string> {
+  const out = new Map<string, string>();
+  const groups = new Map<string, GridListItem[]>();
+  for (const s of rows) groups.set(s.name, [...(groups.get(s.name) ?? []), s]);
+  for (const group of groups.values()) {
+    if (group.length < 2) continue;
+    const volt = (s: GridListItem) => (s.voltage_primary_kv == null ? '' : `${[s.voltage_primary_kv, s.voltage_secondary_kv].filter((v) => v != null).join('/')}kV`);
+    const count = (f: (s: GridListItem) => string, v: string) => group.filter((s) => f(s) === v).length;
+    const no = (s: GridListItem) => officialNo(s.external_id) ?? '';
+    for (const s of group) {
+      const parts = [volt(s)];
+      if (!volt(s) || count(volt, volt(s)) > 1) {
+        parts.push(no(s) ? `No.${no(s)}` : '');
+        if (count(no, no(s)) > 1 && s.capacity_total_mw != null) parts.push(`${s.capacity_total_mw}MW`);
+      }
+      out.set(s.slug, parts.filter(Boolean).join('・'));
+    }
+  }
+  return out;
+}
+
+let _qualifiers: Map<string, string> | null = null;
+/** 変電所の詳細の題名・h1 に添える語。名前が重ならない変電所は null */
+export function substationNameQualifier(slug: string): string | null {
+  _qualifiers ??= new Map(Object.values(DATA.by_area).flatMap((rows) => [...nameQualifiers(rows)]));
+  return _qualifiers.get(slug) ?? null;
 }
 
 /**

@@ -30,7 +30,7 @@ import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import substationsIndex from '@/data/substations/index.json';
 import { buildAreaTitle, buildAreaDescription, buildSubstationTitle, gridFacts, areaHasMap } from '@/lib/grid-meta';
 import { latestPublishedForAreas } from '@/lib/grid-data-date';
-import { getAreaSubstationsStatic } from '@/lib/grid-static-lists';
+import { getAreaSubstationsStatic, substationNameQualifier } from '@/lib/grid-static-lists';
 import GridPrintButton from '@/components/GridPrintButton';
 // Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
@@ -148,7 +148,7 @@ export async function generateMetadata({
   const desc = `${sub.name}（${operator}・${vc}）の系統空き容量・連系条件・出力制御情報。空容量${availStr}。出典・最終更新日明記、蓄電所事業の検討材料に。`;
   // 検索の入口便（2026-10-30）: 題名に県と事業者の短い名。県は本文と同じ normalizeSubstationPlace を生値に 1 回だけ通す（#119）
   const place = normalizeSubstationPlace(sub.prefecture, Array.isArray(sub.area) ? sub.area[0] : (sub.area as unknown as string | undefined));
-  const pageTitle = buildSubstationTitle(sub.name, place.prefecture, operator);
+  const pageTitle = buildSubstationTitle(sub.name, place.prefecture, operator, substationNameQualifier(sub.slug));
   return {
     // layout.tsx titleTemplate が自動付与（落とし穴 #86）
     title: pageTitle,
@@ -223,7 +223,7 @@ export default async function GridSlugPage({
       ? getRelatedOperatorsForSubstation(operatorName, 5).catch(() => [])
       : Promise.resolve([]),
     getRelatedNewsForSubstation(
-      sub.prefecture || sub.name || '',
+      place.prefecture || sub.name || '',
       5
     ).catch(() => []),
     // 依頼AA Phase 4: 半径10km以内の projects（緯度経度なし substation は早期return で空配列）
@@ -355,10 +355,10 @@ export default async function GridSlugPage({
               <div>このページのURL: {siteConfig.url}/grid/{sub.slug}</div>
               <div>印刷日時: <span className="grid-print-datetime" /></div>
             </div>
-            <h1 className="article-title">{sub.name}</h1>
+            <h1 className="article-title">{sub.name}{substationNameQualifier(sub.slug) ? `（${substationNameQualifier(sub.slug)}）` : ''}</h1>
             <p className="grid-detail-lead">
               {operatorName ?? '事業者情報なし'} 管内
-              {sub.prefecture ? `・${sub.prefecture}` : ''} の{voltageClass ?? '変電所'}
+              {place.prefecture ? `・${place.prefecture}` : ''} の{voltageClass ?? '変電所'}
               。系統空き容量・出力制御の可能性・N-1電制適用可否などの公表情報を整理しています。
             </p>
             {/* 鮮度の明示 */}
@@ -555,13 +555,13 @@ export default async function GridSlugPage({
           <HazardRiskCard slug={params.slug} />
 
           {/* Gr4(2026-08-08): この県の蓄電所案件（precompute件数・0件の県は非表示・ゼロfetch） */}
-          {sub.prefecture && PREF_PROJECT_COUNT[sub.prefecture] ? (
+          {place.prefecture && PREF_PROJECT_COUNT[place.prefecture] ? (
             <section className="page-section news-shelf">
               <h2 className="news-shelf-title" style={{ fontSize: 16 }}>この県の蓄電所案件</h2>
               <ul className="lv-invest-rows">
                 <li>
                   <Link href="/projects">
-                    {sub.prefecture}の蓄電所案件 {PREF_PROJECT_COUNT[sub.prefecture]}件 → プロジェクトDB
+                    {place.prefecture}の蓄電所案件 {PREF_PROJECT_COUNT[place.prefecture]}件 → プロジェクトDB
                   </Link>
                 </li>
               </ul>
@@ -646,7 +646,7 @@ export default async function GridSlugPage({
           {relatedNews.length > 0 && (
             <RelatedNewsList
               news={relatedNews}
-              title={`${sub.prefecture ?? sub.name} 関連ニュース`}
+              title={`${place.prefecture ?? sub.name} 関連ニュース`}
             />
           )}
 

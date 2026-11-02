@@ -134,8 +134,8 @@ function buildGridDescription(subject: string, operatorText: string, published: 
   // 最大値が同着のときは 1 件だけ名指ししない（「◯◯ほか2件（各49MW）」）
   const s2b = !top ? ''
     : facts.maxCount > 1
-      ? `、空き容量が最も大きいのは${top.name}ほか${facts.maxCount - 1}件（各${top.cap_avail_mw}MW）`
-      : `、空き容量が最も大きいのは${top.name}（${top.cap_avail_mw}MW）`;
+      ? `、空き容量が最も大きいのは${top.name}ほか${facts.maxCount - 1}件（各${top.cap_avail_mw?.toLocaleString()}MW）`
+      : `、空き容量が最も大きいのは${top.name}（${top.cap_avail_mw?.toLocaleString()}MW）`;
   const cands = [`${s1}${s2a}${s2b}。${howTo}`, `${s1}${s2a}${s2b}。`, `${s1}${s2a}。`, s1];
   return cands.find((c) => c.length <= DESC_MAX) ?? s1;
 }
@@ -194,11 +194,11 @@ export function operatorShortName(operator: string): string {
  * 変電所の詳細の title（検索の入口便・2026-10-30）。
  * 「{変電所名}（{県}・{事業者の短い名}）の系統空き容量・蓄電池連系条件」。県が確定しないレコード（基幹系統・関西ローカル系）は従来どおり。
  * 同じ名前の変電所が別の県・別の社にある（ロングテールの「◯◯変電所」の取り違え）ため。サイト名は layout の titleTemplate が付ける。
+ * qualifier は同じエリアの同名を見分ける語（substationNameQualifier・2026-11-02）。名前が重ならない変電所は null で、題名は変わらない。
  */
-export function buildSubstationTitle(name: string, prefecture: string | null, operator: string): string {
-  if (!prefecture) return `${name}の系統空き容量・蓄電池連系条件`;
-  const where = [prefecture, operator ? operatorShortName(operator) : ''].filter(Boolean).join('・');
-  return `${name}（${where}）の系統空き容量・蓄電池連系条件`;
+export function buildSubstationTitle(name: string, prefecture: string | null, operator: string, qualifier: string | null = null): string {
+  const where = [qualifier, prefecture, prefecture && operator ? operatorShortName(operator) : ''].filter(Boolean).join('・');
+  return where ? `${name}（${where}）の系統空き容量・蓄電池連系条件` : `${name}の系統空き容量・蓄電池連系条件`;
 }
 
 /* ------------------------------------------------------------------ *
