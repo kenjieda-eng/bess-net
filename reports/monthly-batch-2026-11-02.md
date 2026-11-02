@@ -164,7 +164,17 @@ microCMS 書込は **news の POST 38 件だけ**（PATCH・DELETE・PUT 0）。
 
 範囲外の所見（触っていない）: `tc-nagasaki`（長崎市・東京センチュリー・16／64・cod 空）は、同じ社の `tc-isahaya`・`tc-shimabara` と諸元が近く、重複の可能性がある。
 
-## ■3 申告
+## ■3 本番（素の URL・script 外の本文・`<!-- -->` 除去）
+
+commit `ab08561`（17:56 push）。webhook は EDAさんが POST の後に ON へ戻し、push のビルドで反映した（Vercel success 18:11 ごろ）。
+
+- **18:11:36** 38 件の `/news/{slug}`: **38/38 が HTTP 200**。`<title>` に原稿の title、本文の全文（関連リンクの行を除く）と title・lead の数値が script 外にある（欠け 0）。x-vercel-cache は全件 PRERENDER・age 0。
+- `/news`: HTTP 200・PRERENDER・age 0。新規は **12 件が載る**（一覧の先頭は直近の枠なので 38 件全部は載らない）。残りを含む **38/38 が `/news/archive/2026` と `/sitemap.xml` にある**。掲載日の新しい順で、最後に POST した 10/30 配信のものが先頭。
+- microCMS の警告メールは CC からは見えない（受信の確認は EDAさん）。30 分後の再確認はしていない（便に指示なし）。
+
+**IndexNow**（18:12）: 本番確認の後に `scripts/indexnow-submit.ts --urls` で `/news` と新規 38 件の計 39 URL を 1 回送り、**HTTP 200（受理）**。変電所の詳細は 0 件。一覧は `reports/indexnow-2026-11-02.urls.txt`、応答は `reports/indexnow-2026-11-02.json`。鍵は 605d…。
+
+## ■4 申告
 
 **便の前提との違い**
 1. 「記事日付は配信日＝`_publishedDate`（前回どおり）」→ 前回と同じく送っていないので、**サイトの掲載日は POST の日（2026/11/2）** になる。本文の冒頭が配信日を書いている。38 件の publishedAt は 11/2 17:42〜17:43 の 1 分余り。
