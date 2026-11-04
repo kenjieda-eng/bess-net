@@ -21,7 +21,7 @@ import type { N1Status } from './n1-status-label';
 // 関連newsマップ（generated/related-news-map.json）はここでは import しない（金曜#6 追修便④ ■1・2026-09-13）。
 // microcms.ts は prebuild の precompute 各スクリプトが読むため、ここで生成物を import すると、生成物の無い
 // 新規クローン（Vercel）では prebuild の1本目から起動できない（MODULE_NOT_FOUND・実測）。
-// マップを引く getRelatedNewsForSubstation は related-cards.ts（ページだけが読む）に置く。
+// マップを引く getRelatedNewsForSubstation は related-news-substation.ts（ページだけが読む）に置く。
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is not defined');
@@ -679,49 +679,58 @@ let _projectGeoCache: ProjectGeoPoint[] | null = null;
  * - latitude/longitude が null/undefined のレコードは除外
  * - 落とし穴 #82: build 時間影響を抑えるためモジュールキャッシュで 1 回のみ fetch
  */
+/**
+ * 緯度経度付き projects を全件取得する本体（失敗は throw）。
+ * 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: precompute-substations が近くの案件を前もって計算するときに使う。
+ * ビルドで黙って空にしないため、ここでは握りつぶさない（実行時の getAllProjectsWithCoords は従来どおり縮退する）。
+ */
+export const fetchProjectsWithCoords = async (out: ProjectGeoPoint[] = []): Promise<ProjectGeoPoint[]> => {
+  const limit = MICROCMS_PAGE_LIMIT;
+  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
+    const data = await client.getList<Project>({
+      endpoint: 'projects',
+      queries: {
+        limit,
+        offset,
+        fields: PROJECT_GEO_FIELDS,
+        orders: '-publishedAt',
+      },
+    });
+    for (const p of data.contents) {
+      if (
+        typeof p.latitude !== 'number' ||
+        typeof p.longitude !== 'number' ||
+        Number.isNaN(p.latitude) ||
+        Number.isNaN(p.longitude)
+      ) {
+        continue;
+      }
+      out.push({
+        slug: p.slug,
+        name: p.name,
+        prefecture: p.prefecture ?? null,
+        outputMw: typeof p.outputMw === 'number' ? p.outputMw : null,
+        capacityMwh: typeof p.capacityMwh === 'number' ? p.capacityMwh : null,
+        operator: p.operator ?? null,
+        status: p.status && p.status.length > 0 ? p.status[0] : null,
+        latitude: p.latitude,
+        longitude: p.longitude,
+      });
+    }
+    if (data.contents.length < limit) break;
+  }
+  return out;
+};
+
 export const getAllProjectsWithCoords = async (): Promise<
   ProjectGeoPoint[]
 > => {
   if (_projectGeoCache) return _projectGeoCache;
   const out: ProjectGeoPoint[] = [];
-  const limit = MICROCMS_PAGE_LIMIT;
   try {
-    for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
-      const data = await client.getList<Project>({
-        endpoint: 'projects',
-        queries: {
-          limit,
-          offset,
-          fields: PROJECT_GEO_FIELDS,
-          orders: '-publishedAt',
-        },
-      });
-      for (const p of data.contents) {
-        if (
-          typeof p.latitude !== 'number' ||
-          typeof p.longitude !== 'number' ||
-          Number.isNaN(p.latitude) ||
-          Number.isNaN(p.longitude)
-        ) {
-          continue;
-        }
-        out.push({
-          slug: p.slug,
-          name: p.name,
-          prefecture: p.prefecture ?? null,
-          outputMw: typeof p.outputMw === 'number' ? p.outputMw : null,
-          capacityMwh: typeof p.capacityMwh === 'number' ? p.capacityMwh : null,
-          operator: p.operator ?? null,
-          status: p.status && p.status.length > 0 ? p.status[0] : null,
-          latitude: p.latitude,
-          longitude: p.longitude,
-        });
-      }
-      if (data.contents.length < limit) break;
-    }
-    _projectGeoCache = out;
+    _projectGeoCache = await fetchProjectsWithCoords(out);
   } catch {
-    _projectGeoCache = out.length > 0 ? out : [];
+    _projectGeoCache = out.length > 0 ? out : []; // 途中まで取れた分は使う（従来どおり）
   }
   return _projectGeoCache;
 };
@@ -1663,7 +1672,7 @@ export const getAllSubstationsChecked = async (
   // 凍結変電所（更新停止・substations-frozen.ts）は一覧・集計から除外する。
   // BM積み残しの是正（2026-08-16）: /grid は除外済みだったがエリア詳細・県ページが未適用で、
   // 東京 1,718（/grid）と 1,719（/grid/tokyo）、静岡 251 と 252 の食い違いが出ていた。
-  // 詳細ページ（getSubstationBySlug）は対象外＝URL は 200 のまま維持する。
+  // 詳細ページ（2026-11-04〜 ビルド時の JSON・grid-detail-static.ts）は凍結も含む＝URL は 200 のまま維持する。
   return { items: all.filter((s) => !FROZEN_SUBSTATION_SLUGS.has(s.slug)), complete };
 };
 
@@ -1672,29 +1681,8 @@ export const getAllSubstations = async (
   opts: { area?: string; operator?: string } = {}
 ): Promise<Substation[]> => (await getAllSubstationsChecked(opts)).items;
 
-export const getSubstationBySlug = async (
-  slug: string
-): Promise<Substation | null> => {
-  try {
-    const data = await client.get<Substation>({
-      endpoint: 'substations',
-      contentId: slug,
-      queries: { depth: 1 },
-    });
-    return data;
-  } catch {
-    // Fallback: filter
-    try {
-      const data = await client.getList<Substation>({
-        endpoint: 'substations',
-        queries: { filters: `slug[equals]${slug}`, depth: 1, limit: 1 },
-      });
-      return data.contents[0] ?? null;
-    } catch {
-      return null;
-    }
-  }
-};
+// 変電所の詳細（/grid/[slug]）は 2026-11-04 からビルド時の JSON（src/lib/grid-detail-static.ts）から読む。
+// 実行時の getSubstationBySlug（429 → null → 404 が revalidate つきでキャッシュされた）は外した。
 
 export const getAllSubstationSlugs = async (): Promise<{ slug: string }[]> => {
   const slugs: { slug: string }[] = [];
@@ -1707,45 +1695,6 @@ export const getAllSubstationSlugs = async (): Promise<{ slug: string }[]> => {
         queries: { limit, offset, fields: 'slug', orders: '-publishedAt' },
       });
       slugs.push(...data.contents.map((s) => ({ slug: s.slug })));
-      if (data.contents.length < limit) break;
-    } catch {
-      break;
-    }
-  }
-  return slugs;
-};
-
-/**
- * 緯度経度ありの substations slug のみを返す（依頼AB Phase D, 落とし穴 #79 対策）
- *
- * Vercel build の 45 min timeout 回避のため、generateStaticParams で
- * 全 8,225 件を pre-build するのではなく、緯度経度ありの 1,081 件
- * （中部エリアのみ運用）だけを pre-build する。
- *
- * 残りは dynamicParams=true (Next.js default) により、
- * 初回アクセス時に ISR で on-demand 生成される。
- */
-export const getSubstationSlugsWithCoords = async (): Promise<
-  { slug: string }[]
-> => {
-  const slugs: { slug: string }[] = [];
-  const limit = MICROCMS_PAGE_LIMIT;
-  for (let offset = 0; offset < MICROCMS_MAX_OFFSET; offset += limit) {
-    try {
-      const data = await client.getList<Substation>({
-        endpoint: 'substations',
-        queries: { limit, offset, fields: 'slug,latitude,longitude', orders: '-publishedAt' },
-      });
-      for (const s of data.contents) {
-        if (
-          typeof s.latitude === 'number' &&
-          typeof s.longitude === 'number' &&
-          !Number.isNaN(s.latitude) &&
-          !Number.isNaN(s.longitude)
-        ) {
-          slugs.push({ slug: s.slug });
-        }
-      }
       if (data.contents.length < limit) break;
     } catch {
       break;
@@ -1771,24 +1720,24 @@ export const getSubstationsByOperator = async (
 };
 
 /** 関連事業者の自動マッチ：operator フィールドにマッチする事業者を上位 N 社 */
-export const getRelatedOperatorsForSubstation = async (
+/**
+ * 送配電事業者の名前を含む事業者（関連事業者のバッジ）。失敗は throw。
+ * 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: precompute-substations が事業者ごとに 1 回だけ呼び、結果を JSON に持つ。
+ */
+export const fetchRelatedOperatorsForSubstation = async (
   operatorName: string,
   limit = 5
 ): Promise<Operator[]> => {
   if (!operatorName) return [];
-  try {
-    const data = await client.getList<Operator>({
-      endpoint: 'operators',
-      queries: {
-        filters: `name[contains]${operatorName}`,
-        limit,
-        fields: 'id,slug,name,description,category,prefecture',
-      },
-    });
-    return data.contents.filter((o) => !isHiddenOperator(o.slug)); // Ck-1a ■1-3
-  } catch {
-    return [];
-  }
+  const data = await client.getList<Operator>({
+    endpoint: 'operators',
+    queries: {
+      filters: `name[contains]${operatorName}`,
+      limit,
+      fields: 'id,slug,name,description,category,prefecture',
+    },
+  });
+  return data.contents.filter((o) => !isHiddenOperator(o.slug)); // Ck-1a ■1-3
 };
 
 /* =================================================================
@@ -1966,7 +1915,7 @@ export const searchSubstationsByName = async (
   return all;
 };
 
-// getRelatedNewsForSubstation（変電所ページの関連ニュース）は related-cards.ts へ移設（追修便④ ■1・上の import 部の注記を参照）。
+// getRelatedNewsForSubstation（変電所ページの関連ニュース）は related-news-substation.ts にある（追修便④ ■1 で related-cards.ts へ・2026-11-04 に今の場所へ）
 
 /* =================================================================
    v25: 多角的検索（searchSubstationsByFilters）

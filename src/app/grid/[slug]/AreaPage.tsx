@@ -9,10 +9,9 @@ import CorrectionHistory from '@/components/CorrectionHistory';
 import SubstationsBrowser from '@/components/SubstationsBrowser';
 import RelatedOperatorBadges from '@/components/RelatedOperatorBadges';
 import RelatedTermBadges from '@/components/RelatedTermBadges';
-import {
-  getRelatedOperatorsForSubstation,
-  type Substation,
-} from '@/lib/microcms';
+import type { Substation } from '@/lib/microcms';
+// 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: 関連事業者もビルド時に取った表から（実行時の microCMS 0）
+import { relatedOperatorsStatic } from '@/lib/grid-related-operators';
 // 落とし穴 #116 の恒久策(2026-08-16): エリアの一覧は build 時 precompute の静的データを使う。
 // runtime microCMS だと Next の fetch キャッシュで再取込直後のビルドが旧データを出力する。
 import { getAreaSubstationsStatic, toSubstationShape } from '@/lib/grid-static-lists';
@@ -185,10 +184,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
     .slice(0, 20);
 
   // ===== 関連事業者 =====
-  const relatedOps = await getRelatedOperatorsForSubstation(meta.operator, 5).catch(
-    () => []
-  );
-  const relatedOpsBadges = relatedOps.map((o) => ({ name: o.name, slug: o.slug }));
+  const relatedOpsBadges = relatedOperatorsStatic(meta.operator);
 
   // ===== 出典の最終更新日 =====
   // 落とし穴 #121(2026-08-17): ヘッダの「データ基準日」と二重管理にしない。

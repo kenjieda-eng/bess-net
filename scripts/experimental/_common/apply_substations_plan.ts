@@ -16,7 +16,7 @@
  *   - PATCH 後に GET し、送った field は送信値と同値・送っていない field は変化 0（#106）。本実行では NG・例外が 1 件でも出たら止める
  *     （以後の PATCH も POST も行わない）。
  * POST の規則（新規）: slug が既にあれば skip（中身を照合して報告）。microCMS の PUT（contentId 指定の作成）は使わない（停止条件）
- *   ＝ id は microCMS の自動採番になり slug と一致しない。詳細ページは getSubstationBySlug の slug フィルタ fallback で引ける。
+ *   ＝ id は microCMS の自動採番になり slug と一致しない。詳細ページ（2026-11-04〜 ビルド時の JSON を slug で引く）には影響しない。
  *   POST は冪等でないので 429 以外では再送しない（5xx の再送で同じ slug が 2 件できるのを防ぐ）。POST 後は slug の件数が 1 であることも照合する。
  * DELETE／PUT は無い。逐次・間隔 400ms・429（PATCH・GET は 5xx も）は backoff し、再送は数えてログに出す。
  *

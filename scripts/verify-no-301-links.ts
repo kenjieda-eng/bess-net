@@ -78,7 +78,9 @@ const WIRES: Array<[string, string, RegExp, [string, string]?]> = [
   ['sitemap（glossary）', 'src/app/sitemap.ts', /GLOSSARY_301_SOURCE_SLUGS\.has\(/],
   ['sitemap（projects）', 'src/app/sitemap.ts', /LIST_EXCLUDED_PROJECT_SLUGS|isListExcludedProject\s*\(/],
   ['/projects 一覧', 'src/app/projects/page.tsx', /LIST_EXCLUDED_PROJECT_SLUGS\.has\(/],
-  ['近隣プロジェクトカード', 'src/lib/related-cards.ts', /isListExcludedProject\s*\(/, ['export async function getNearbyProjects', 'export async function getNearbySubstations']],
+  // 2026-11-04: 近隣カードの選び方は nearby-projects.ts の nearbyProjectsFrom 1 か所（/grid/[slug] はビルド時の precompute がこれで計算する）
+  ['近隣プロジェクトカード', 'src/lib/nearby-projects.ts', /isListExcludedProject\s*\(/, ['export function nearbyProjectsFrom', '\n}\n']],
+  ['近隣プロジェクトカード（ビルド時の計算）', 'scripts/precompute-substations.ts', /nearbyProjectsFrom\s*\(/],
 ];
 console.log('[verify:no-301-links] 軸1: 一覧系の除外配線');
 for (const [label, file, re, anchor] of WIRES) {

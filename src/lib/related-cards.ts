@@ -18,13 +18,11 @@ import {
   getAllProjectsWithCoords,
   getAllSubstationsWithCoords,
   type LinkifyTarget,
-  type News,
   type Explainer,
-  type ProjectGeoPoint,
   type SubstationGeoPoint,
 } from './microcms';
 import { findWithinRadius } from './geo-distance';
-import { isListExcludedProject } from './projects-excluded';
+import { nearbyProjectsFrom, type NearbyProject } from './nearby-projects';
 import { isExcludedExplainer } from './explainer-excluded';
 import relatedNewsMap from './generated/related-news-map.json';
 
@@ -143,35 +141,15 @@ export type RelatedProject = {
   capacityMwh?: number | null;
 };
 
-export type RelatedNewsItem = {
-  id: string;
-  slug: string;
-  title: string;
-  publishedAt?: string;
-  category?: string[];
-};
+// 関連 news の 1 件の形は related-news-substation.ts の 1 か所で定義する
+import type { RelatedNewsItem } from './related-news-substation';
+export type { RelatedNewsItem };
 
 /** build 時事前計算した関連newsマップ（"project:<slug>" / "pref:<base>" → NewsRef[]）。runtime q を排除（鉄則#98） */
 const RELATED_NEWS_MAP = relatedNewsMap as Record<string, RelatedNewsItem[]>;
 
-/**
- * 関連ニュース（変電所ページ用）：build 時事前計算マップ（related-news-map.json）の都道府県キーから返す。
- * 旧実装は q=都道府県 で news 全文検索していたが、runtime microCMS q を撤去（2026-06-30・鉄則#98）。
- * query は grid/[slug] が渡す sub.prefecture（例「群馬県」）。事前計算側と同じ base 形に正規化して引く。
- * 2026-09-13 追修便④ ■1: microcms.ts から移設（microcms.ts は prebuild の各スクリプトが読むため、そこで生成物を
- * import すると生成物の無い新規クローンで prebuild が起動できない）。マップの読込もこのファイルの 1 箇所に揃う。
- */
-export const getRelatedNewsForSubstation = async (
-  query: string,
-  limit = 5
-): Promise<News[]> => {
-  const q = (query || '').trim();
-  if (!q) return [];
-  const base = q === '北海道' ? '北海道' : q.replace(/(都|府|県)$/, '');
-  const refs = (RELATED_NEWS_MAP[`pref:${base}`] ?? []).slice(0, limit);
-  // refs は表示に必要な最小フィールド（id,slug,title,publishedAt,category）。RelatedNewsList は本5項目のみ参照。
-  return refs as unknown as News[];
-};
+// 関連ニュース（変電所ページ用）は related-news-substation.ts へ移した（変電所の詳細をビルド時の JSON から読む便・2026-11-04）。
+// /grid/[slug] が microCMS のクライアントを読み込まないようにするため（このファイルは microcms.ts を import している）。
 
 export type RelatedExplainerItem = {
   id: string;
@@ -601,8 +579,8 @@ export async function getRelatedEntities(
    - 候補リストはモジュールキャッシュ (microcms.ts) で 1 回のみ fetch
    ================================================================= */
 
-/** 緯度経度付き project + 距離（km） */
-export type NearbyProject = ProjectGeoPoint & { distanceKm: number };
+/** 緯度経度付き project + 距離（km）。選び方は nearby-projects.ts の nearbyProjectsFrom 1 か所（ビルド時の precompute と共有） */
+export type { NearbyProject } from './nearby-projects';
 
 /** 緯度経度付き substation + 距離（km） */
 export type NearbySubstation = SubstationGeoPoint & { distanceKm: number };
@@ -621,36 +599,10 @@ export async function getNearbyProjects(opts: {
   limit?: number;
   excludeSlug?: string;
 }): Promise<NearbyProject[]> {
-  const { origin, radiusKm = 10, limit = 5, excludeSlug } = opts;
-  // 早期 return: origin に緯度経度がない場合は空配列
-  if (
-    typeof origin.latitude !== 'number' ||
-    typeof origin.longitude !== 'number' ||
-    Number.isNaN(origin.latitude) ||
-    Number.isNaN(origin.longitude)
-  ) {
-    return [];
-  }
-  const candidates = await getAllProjectsWithCoords();
-  // findWithinRadius 用に lat/lng エイリアスを付与
-  // Pj2-G ■3.5（2026-09-08・ユウ裁定）: 一覧除外レコード（301元＋案件性なし）を近隣カードの候補から外す。
-  //   301元は middleware が canonical へ 301 するため、カードのリンクが「クリックすると別 slug に飛ぶ」状態になり、
-  //   同一設備が canonical と重複して並ぶこともある。/projects 一覧・sitemap は既に除外済みで、
-  //   近隣カードだけが未配線だった（表示側のみの変更・microCMS レコードは不変更）。
-  const aliased = candidates
-    .filter((c) => c.slug !== excludeSlug && !isListExcludedProject(c.slug))
-    .map((c) => ({ ...c, lat: c.latitude, lng: c.longitude }));
-  const matches = findWithinRadius(
-    { lat: origin.latitude, lng: origin.longitude },
-    aliased,
-    radiusKm,
-    limit
-  );
-  // 余分な lat/lng エイリアスを取り除き ProjectGeoPoint + distanceKm に戻す
-  return matches.map(({ lat: _lat, lng: _lng, distanceKm, ...rest }) => ({
-    ...(rest as ProjectGeoPoint),
-    distanceKm,
-  }));
+  const { origin, ...rest } = opts;
+  // 早期 return（候補の取得もしない）: origin に緯度経度がない場合は空配列
+  if (typeof origin.latitude !== 'number' || typeof origin.longitude !== 'number') return [];
+  return nearbyProjectsFrom(await getAllProjectsWithCoords(), origin, rest);
 }
 
 /**

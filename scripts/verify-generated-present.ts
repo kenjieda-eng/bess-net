@@ -29,6 +29,8 @@ export const EXPECTED_GENERATED: ReadonlyArray<{ file: string; writer: string }>
   { file: 'operators-category-index.json', writer: 'build:operators-detail' },
   { file: 'operators-match-audit.json', writer: 'build:operators-detail' },
   { file: 'grid-area-lists.json', writer: 'build:substations' },
+  { file: 'grid-detail-index.json', writer: 'build:substations' },
+  { file: 'grid-detail/kansai.json', writer: 'build:substations' },
   { file: 'related-news-map.json', writer: 'build:related-news' },
   { file: 'explainer-related-map.json', writer: 'build:explainer-related' },
   { file: 'projects-pref-count.json', writer: 'build:projects-pref-count' },

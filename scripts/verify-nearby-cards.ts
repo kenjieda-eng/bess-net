@@ -3,7 +3,8 @@
  * scripts/verify-nearby-cards.ts — 「近隣プロジェクトカードに一覧除外レコード（301元／案件性なし）が出ない」機械検査
  *
  * 背景（Pj2-G ■3.5・2026-09-08 ユウ裁定）:
- *   /grid/[slug] の「近隣のプロジェクト」カードは getNearbyProjects（src/lib/related-cards.ts）が返す。
+ *   /grid/[slug] の「近隣のプロジェクト」カードは nearbyProjectsFrom（src/lib/nearby-projects.ts）で選ぶ
+ *   （2026-11-04〜 ビルド時に precompute-substations が計算して JSON に持つ。related-cards.ts の getNearbyProjects も同じ関数を呼ぶ）。
  *   /projects 一覧・sitemap は LIST_EXCLUDED_PROJECT_SLUGS で除外済みだったが、近隣カードだけ未配線で、
  *   301元レコード（クリックすると canonical へ 301 する）や案件性なしレコードが候補に残っていた。
  *
@@ -50,14 +51,15 @@ async function main(): Promise<void> {
   else fail++;
 
   // ── 軸3: 実装が isListExcludedProject を呼んでいるか（退行検知）
-  // 宣言（export async function …）から関数末尾までの範囲で呼んでいるかを見る。
-  // ★ファイル冒頭の説明コメントにも関数名が出るため、アンカーは export 宣言に取ること（窓が広すぎ/狭すぎると誤判定する）
-  const src = readFileSync('src/lib/related-cards.ts', 'utf8');
-  const decl = src.indexOf('export async function getNearbyProjects');
-  const nextDecl = src.indexOf('export async function getNearbySubstations');
-  const body = decl >= 0 ? src.slice(decl, nextDecl > decl ? nextDecl : decl + 3000) : '';
-  const wired = /isListExcludedProject/.test(src) && /isListExcludedProject\s*\(/.test(body);
-  console.log(`\n軸3: related-cards.ts が getNearbyProjects 内で isListExcludedProject を呼ぶ → ${wired ? '✓' : '✗ 未配線'}`);
+  // 宣言（export function …）から関数末尾までの範囲で呼んでいるかを見る（2026-11-04〜 選び方は nearby-projects.ts の 1 か所）。
+  // ビルド時に precompute-substations がこの関数で計算していることも見る（/grid/[slug] はその JSON を読む）
+  const src = readFileSync('src/lib/nearby-projects.ts', 'utf8');
+  const decl = src.indexOf('export function nearbyProjectsFrom');
+  const end = src.indexOf('\n}\n', decl + 1);
+  const body = decl >= 0 ? src.slice(decl, end > decl ? end : decl + 3000) : '';
+  const pre = readFileSync('scripts/precompute-substations.ts', 'utf8');
+  const wired = /isListExcludedProject\s*\(/.test(body) && /nearbyProjectsFrom\s*\(/.test(pre);
+  console.log(`\n軸3: nearby-projects.ts の nearbyProjectsFrom が isListExcludedProject を呼び、precompute-substations がそれで計算する → ${wired ? '✓' : '✗ 未配線'}`);
   if (!wired) fail++;
 
   console.log(`\n[verify:nearby-cards] ${fail === 0 ? 'All checks passed. ✓' : `FAIL ${fail} 軸`}`);

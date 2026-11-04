@@ -19,12 +19,15 @@ import { isFrozenSubstation, frozenSubstationNote } from '@/lib/substations-froz
 import { AREA_META, AREA_JP_TO_SLUG } from './area-meta';
 import { sourceFileName } from '@/lib/grid-source';
 import { GRID_PAGE_RELATED_TERMS } from './related-terms';
+// 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: 実行時に microCMS を呼ばない（鉄則 #3・#102）。
+// このページとその読み込み先は microcms.ts を値として import しない（verify:grid-detail-static が検査）
 import {
-  getSubstationBySlug,
-  getSubstationSlugsWithCoords,
-  getRelatedOperatorsForSubstation,
-} from '@/lib/microcms';
-import { getNearbyProjects, getRelatedNewsForSubstation } from '@/lib/related-cards';
+  getSubstationDetailStatic,
+  substationSlugsWithCoordsStatic,
+  nearbyProjectsStatic,
+} from '@/lib/grid-detail-static';
+import { relatedOperatorsStatic } from '@/lib/grid-related-operators';
+import { getRelatedNewsForSubstation } from '@/lib/related-news-substation';
 import { siteConfig } from '@/lib/site-config';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import substationsIndex from '@/data/substations/index.json';
@@ -34,7 +37,7 @@ import { getAreaSubstationsStatic, substationNameQualifier } from '@/lib/grid-st
 import GridPrintButton from '@/components/GridPrintButton';
 // Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
-// N1b: 個別ページ（runtime microCMS）も一覧と同じ規則で区分する（#121・L-EIC-028: 取得側・表示側の全経路が同じ値を得る）
+// N1b: 個別ページ（2026-11-04〜 ビルド時の JSON）も一覧と同じ規則で区分する（#121・L-EIC-028: 取得側・表示側の全経路が同じ値を得る）
 import { n1StatusOf, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status';
 import { contactUrl } from '@/lib/contact-link';
 import NextStepBox from '@/components/NextStepBox';
@@ -49,12 +52,14 @@ const AREA_SUBSTATION_COUNT: Record<string, number> = Object.fromEntries(
 // Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件は非表示）
 const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
 
-export const revalidate = 3600; // 1時間
+// 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: データはビルドの JSON だけ。作り直しは毎朝の再ビルド
+// （.github/workflows/daily-rebuild.yml）で入れ替わるので、1 時間ごとの作り直しをやめる（作り直しで 429→404 に置き換わる穴を無くす）
+export const revalidate = false;
 
 // 落とし穴 #79 対策: 全 6,516 件 pre-build すると Vercel 45min timeout に
 // 引っかかるため、緯度経度ありの substations（~1,081件、中部エリア）+ AREA_META
 // のみを pre-build する。残りの substations は dynamicParams=true (Next.js default)
-// により初回アクセス時に ISR on-demand で生成される。
+// により初回アクセス時に生成される（2026-11-04〜 ビルド時の JSON から作る・microCMS は読まない）。
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
@@ -63,12 +68,7 @@ export async function generateStaticParams() {
   const areaParams = Object.keys(AREA_META)
     .filter((slug) => slug !== 'tokyo')
     .map((slug) => ({ slug }));
-  try {
-    const subs = await getSubstationSlugsWithCoords();
-    return [...areaParams, ...subs];
-  } catch {
-    return areaParams;
-  }
+  return [...areaParams, ...substationSlugsWithCoordsStatic()];
 }
 
 /** 数値整形（小数1桁、null 時 "情報なし"） */
@@ -139,7 +139,7 @@ export async function generateMetadata({
     };
   }
 
-  const sub = await getSubstationBySlug(params.slug);
+  const sub = await getSubstationDetailStatic(params.slug);
   if (!sub) return {};
   const operator = firstOf(sub.operator) || '';
   const vc = firstOf(sub.voltage_class) || '';
@@ -184,7 +184,7 @@ export default async function GridSlugPage({
     return <AreaPage meta={area} />;
   }
 
-  const sub = await getSubstationBySlug(params.slug);
+  const sub = await getSubstationDetailStatic(params.slug);
   if (!sub) notFound();
 
   const operatorName = firstOf(sub.operator);
@@ -219,27 +219,11 @@ export default async function GridSlugPage({
   const sourcePageUrl = areaSlug ? AREA_META[areaSlug]?.landingUrl : undefined;
   const sourceFile = sourceFileName(sub.source_url);
 
-  // 関連連携を並列取得
-  const [relatedOps, relatedNews, nearbyProjects] = await Promise.all([
-    operatorName
-      ? getRelatedOperatorsForSubstation(operatorName, 5).catch(() => [])
-      : Promise.resolve([]),
-    getRelatedNewsForSubstation(
-      place.prefecture || sub.name || '',
-      5
-    ).catch(() => []),
-    // 依頼AA Phase 4: 半径10km以内の projects（緯度経度なし substation は早期return で空配列）
-    getNearbyProjects({
-      origin: { latitude: sub.latitude, longitude: sub.longitude },
-      radiusKm: 10,
-      limit: 5,
-    }).catch(() => []),
-  ]);
-
-  const relatedOpsBadges = relatedOps.map((o) => ({
-    name: o.name,
-    slug: o.slug,
-  }));
+  // 関連の事業者・ニュース・近くの案件（すべてビルド時の JSON。実行時の microCMS 0）
+  const relatedNews = await getRelatedNewsForSubstation(place.prefecture || sub.name || '', 5);
+  // 依頼AA Phase 4: 半径10km以内の projects（緯度経度のある変電所だけ・ビルド時に計算）
+  const nearbyProjects = nearbyProjectsStatic(sub.slug);
+  const relatedOpsBadges = relatedOperatorsStatic(operatorName);
 
   const displayName = displaySubstationName(sub);
   const basicSentence = substationBasicSentence(sub, operatorName);

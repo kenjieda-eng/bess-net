@@ -21,13 +21,16 @@
 
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { client, type Substation } from '../src/lib/microcms';
+import { client, fetchRelatedOperatorsForSubstation, fetchProjectsWithCoords, type Substation } from '../src/lib/microcms';
 import { FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
 import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
 // Gr10(2026-08-11): 系統区分・設備区分が prefecture に入っている社があるため正規化する
 import { normalizeSubstationPlace } from '../src/lib/grid-prefecture';
 // N1b（2026-10-03）: N-1 の表示区分（可／不可／未算定／公表なし）。真実源 src/data/n1-status.json を 1 か所で当てる（#121）
 import { n1StatusOf, type N1Status } from '../src/lib/n1-status';
+// 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: 詳細が使う欄・近くの案件の選び方
+import { GRID_DETAIL_FIELDS, GRID_DETAIL_SHARD, GRID_DETAIL_SHARD_OTHER, type SubstationDetail } from '../src/lib/grid-detail-fields';
+import { nearbyProjectsFrom, type NearbyProject } from '../src/lib/nearby-projects';
 
 // 出力スキーマ (距離計算 + UI で必要な最小フィールド)
 //
@@ -95,15 +98,20 @@ export interface LiteSubstation {
   source_url: string | null;
 }
 
-// 取得対象 fields (cost 最適化: 必要なものだけ)
-const FETCH_FIELDS = [
+// 取得対象 fields: 一覧（LiteSubstation）の欄＋詳細ページの欄（GRID_DETAIL_FIELDS）。
+// 変電所の詳細をビルド時の JSON から読む便（2026-11-04）で詳細の欄を足した。取得の回数（約 84 回）は変わらない。
+const FETCH_FIELDS = [...new Set([
   'id', 'slug', 'name', 'prefecture', 'operator', 'area',
   'voltage_primary_kv', 'voltage_secondary_kv', 'voltage_class',
   'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw',
   'n1_eligible', 'n1_capacity_mw', 'units', 'external_id',
   'oc_possibility', 'latitude', 'longitude',
   'last_updated', 'fetched_at', 'area', 'source_url',
-].join(',');
+  ...GRID_DETAIL_FIELDS,
+])].join(',');
+
+/** 詳細ページ用の生のレコード（microCMS の形のまま・GRID_DETAIL_FIELDS だけ）。凍結も含める（詳細の URL は 200 のまま） */
+const detailRecords: SubstationDetail[] = [];
 
 async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
   const all: LiteSubstation[] = [];
@@ -114,6 +122,10 @@ async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
       queries: { limit, offset, fields: FETCH_FIELDS, orders: 'slug' },
     });
     for (const s of data.contents) {
+      const raw = s as unknown as Record<string, unknown>;
+      detailRecords.push(Object.fromEntries(
+        GRID_DETAIL_FIELDS.filter((k) => raw[k] !== undefined).map((k) => [k, raw[k]])
+      ) as unknown as SubstationDetail);
       all.push({
         id: s.id,
         slug: s.slug,
@@ -166,6 +178,17 @@ async function main(): Promise<void> {
   const all = await fetchAllSubstationsLight();
   const tFetch = Date.now() - t0;
   console.log(`  ${all.length} 件取得 (${tFetch}ms、~${(tFetch/1000).toFixed(1)}s)`);
+
+  // 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: microCMS からの取得はファイルを書く前に全部済ませる
+  // （途中で失敗したとき、新しい県別 JSON と古い index.json が混ざって残らないように）。失敗は throw＝ビルドを止める（黙って空にしない）
+  // 関連事業者（送配電の各社の名前を含む事業者）: 事業者ごとに 1 回（約 10 回）
+  const operatorNames = [...new Set(detailRecords.map((r) => (Array.isArray(r.operator) ? r.operator[0] : null)).filter((o): o is string => !!o))].sort();
+  const relatedOperators: Record<string, Array<{ name: string; slug: string }>> = {};
+  for (const op of operatorNames) {
+    relatedOperators[op] = (await fetchRelatedOperatorsForSubstation(op, 5)).map((o) => ({ name: o.name, slug: o.slug }));
+  }
+  // 近くの蓄電所案件の候補（緯度経度のある案件）: 1 回だけ取る
+  const projectGeo = await fetchProjectsWithCoords();
 
   // 都道府県別分割
   const byPref = new Map<string, LiteSubstation[]>();
@@ -393,6 +416,53 @@ async function main(): Promise<void> {
   fs.writeFileSync(listsPath, JSON.stringify({ generated_at: new Date().toISOString(), by_area: areaLists, pref_refs: prefRefs }));
   console.log(`  grid-area-lists.json: エリア${Object.keys(areaLists).length} / 県${Object.keys(prefRefs).length}`
     + ` (${(fs.statSync(listsPath).size / 1024).toFixed(0)} KB)`);
+
+  // ── 変電所の詳細をビルド時の JSON から読む便（2026-11-04）─────────────────────
+  // /grid/[slug] は実行時に microCMS を呼ばない（鉄則 #3・#102）。以前は約 7,265 枚が初回表示と 1 時間ごとの作り直しで
+  // microCMS を 1 枚 2 回読み、429 を受けると notFound() の 404 が revalidate つきでキャッシュされ、表示できていたページが
+  // 最大 1 時間 404 に置き換わっていた（reports/grid-429-404-investigation-2026-11-04.md）。
+  // 生のレコードをエリアごとに分けて書き出し（関数が読むのはそのエリアの 1 本だけ）、slug → 分け先は索引に持つ。
+  const detailDir = path.join(genDir, 'grid-detail');
+  fs.mkdirSync(detailDir, { recursive: true });
+  // 分け先は固定（10 エリア＋other）なので毎回上書きになる。索引に無いファイルは読まれない（消す処理は置かない）
+  const shards: Record<string, Record<string, SubstationDetail>> = {};
+  const shardOf: Record<string, string> = {};
+  for (const r of detailRecords) {
+    const areaJp = Array.isArray(r.area) && r.area.length > 0 ? r.area[0] : '';
+    const shard = GRID_DETAIL_SHARD[areaJp] ?? GRID_DETAIL_SHARD_OTHER;
+    if (shardOf[r.slug]) throw new Error(`[precompute-substations] slug が重複: ${r.slug}`);
+    (shards[shard] ??= {})[r.slug] = r;
+    shardOf[r.slug] = shard;
+  }
+  const shardSizes: Record<string, number> = {};
+  for (const [shard, recs] of Object.entries(shards)) {
+    const json = JSON.stringify(recs);
+    fs.writeFileSync(path.join(detailDir, `${shard}.json`), json);
+    shardSizes[shard] = Buffer.byteLength(json, 'utf8');
+  }
+  // 近くの蓄電所案件（座標のある変電所だけ・半径 10km・5 件）。候補は上で取った projectGeo
+  const nearbyProjects: Record<string, NearbyProject[]> = {};
+  const withCoordsSlugs: string[] = [];
+  for (const r of detailRecords) {
+    if (typeof r.latitude !== 'number' || typeof r.longitude !== 'number') continue;
+    withCoordsSlugs.push(r.slug);
+    const near = nearbyProjectsFrom(projectGeo, { latitude: r.latitude, longitude: r.longitude }, { radiusKm: 10, limit: 5 });
+    if (near.length > 0) nearbyProjects[r.slug] = near;
+  }
+  const detailIndexPath = path.join(genDir, 'grid-detail-index.json');
+  fs.writeFileSync(detailIndexPath, JSON.stringify({
+    generated_at: new Date().toISOString(),
+    count: detailRecords.length,
+    shard_of: shardOf,
+    shard_sizes_bytes: shardSizes,
+    with_coords: withCoordsSlugs,
+    related_operators: relatedOperators,
+    nearby_projects: nearbyProjects,
+    project_geo_count: projectGeo.length,
+  }));
+  console.log(`  grid-detail: ${detailRecords.length} 件・${Object.keys(shards).length} 本`
+    + `（最大 ${(Math.max(...Object.values(shardSizes)) / 1024).toFixed(0)} KB・計 ${(Object.values(shardSizes).reduce((a, b) => a + b, 0) / 1024).toFixed(0)} KB）`
+    + `・索引 ${(fs.statSync(detailIndexPath).size / 1024).toFixed(0)} KB・事業者 ${operatorNames.length}・座標あり ${withCoordsSlugs.length}・近くの案件あり ${Object.keys(nearbyProjects).length}`);
 
   const index = {
     // 凍結変電所は総数から除外（2026-08-16裁定: 湯船−1・新富士21B22B+1 で総表示は不変）
