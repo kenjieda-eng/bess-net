@@ -1,0 +1,61 @@
+# 毎朝の再ビルド（毎朝の再ビルド便・2026-11-04）
+#
+# 日付で表示が変わるのにビルド／ISR の時点で固まるページ（/subsidies の「公募中・本日締切」は revalidate 1 日、
+# 静的ページのお知らせバナーの HTML など）を、毎朝 00:10 JST に Vercel の deploy hook で作り直す。
+# microCMS には触らない（ビルドの prebuild が通常の push と同じだけ読むだけ）。
+#
+# - 再ビルド: 毎日 00:10 JST（UTC 15:10）と手動実行（workflow_dispatch）。secret VERCEL_DEPLOY_HOOK_URL が無いときは何もせず成功で終わる。
+# - IndexNow の後段: 毎日 01:00 JST（UTC 16:00）。リポジトリ変数 INDEXNOW_DAILY が "on" のときだけ動く（既定は止めておく）。
+#   本番の sitemap の lastmod が前日 00:00 JST 以降の URL を scripts/indexnow-submit.ts --since で送る。
+#   生成時刻の lastmod と変電所の詳細は道具の側で外れる。送る URL が 0 件なら送らない。
+# - 止め方: Actions の画面でこのワークフローを Disable する（再ビルドも IndexNow も止まる）。IndexNow だけ止めるときは INDEXNOW_DAILY を on 以外にする。
+# ★deploy hook の URL は秘密（.env と同じ扱い）。ログに出さない（set -x を使わない・curl の応答は state だけ表示する）。
+
+name: daily-rebuild
+
+on:
+  schedule:
+    - cron: '10 15 * * *' # 00:10 JST 再ビルド
+    - cron: '0 16 * * *' # 01:00 JST IndexNow の後段（INDEXNOW_DAILY=on のときだけ）
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-rebuild-${{ github.event.schedule || 'manual' }}
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '10 15 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Vercel の deploy hook に POST する
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "secret VERCEL_DEPLOY_HOOK_URL が無いので何もしない"
+            exit 0
+          fi
+          code=$(curl -sS --max-time 30 -o resp.json -w '%{http_code}' -X POST "$HOOK") || true
+          state=$(jq -r '.job.state // "?"' resp.json 2>/dev/null || echo "?")
+          echo "deploy hook: HTTP $code・job.state $state（$(TZ=Asia/Tokyo date '+%F %T') JST）"
+          case "$code" in 2??) ;; *) exit 1 ;; esac
+
+  indexnow:
+    if: github.event.schedule == '0 16 * * *' && vars.INDEXNOW_DAILY == 'on'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: 前日 00:00 JST 以降に変わった URL を IndexNow に送る
+        run: |
+          since=$(TZ=Asia/Tokyo date -d 'yesterday' +%F)
+          echo "--since $since"
+          npx --yes tsx@4.21.0 scripts/indexnow-submit.ts --since "$since" --apply
