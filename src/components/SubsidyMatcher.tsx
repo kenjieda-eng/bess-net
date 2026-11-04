@@ -25,6 +25,7 @@ import {
   matchSubsidies,
   countOpenForApplication,
   matchTargetDate,
+  defaultInstallTargetDate,
   USE_CASE_LABELS,
   ENTITY_LABELS,
   type MatchInput,
@@ -136,7 +137,7 @@ const DEFAULT_INPUT: MatchInput = {
   entity_type: 'corporate',
   capacity_kwh: 50000,
   output_kw: 12500,
-  install_target_date: new Date(new Date().getFullYear() + 1, 5, 1).toISOString().slice(0, 10),
+  install_target_date: defaultInstallTargetDate(),
 };
 
 export default function SubsidyMatcher() {

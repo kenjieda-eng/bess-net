@@ -18,7 +18,7 @@
  */
 
 import type { PrecomputedSubsidy } from '../../scripts/precompute-subsidies';
-import { deriveSubsidyStatus } from './subsidies-meta';
+import { deriveSubsidyStatus, getTodayJST } from './subsidies-meta';
 
 export type UseCase = 'grid' | 'self_consumption' | 'industrial';
 export type EntityType = 'individual' | 'corporate' | 'municipal';
@@ -98,9 +98,19 @@ export function isClosedForApplication(s: PrecomputedSubsidy, target_iso: string
   return (CLOSED_FOR_APPLICATION_STATUSES as readonly string[]).includes(derived);
 }
 
-/** マッチングの基準日（入力の設置希望日 → 無ければ当日）。matchSubsidies と表示側で同じ日を使う（#121） */
+/**
+ * マッチングの基準日（入力の設置希望日 → 無ければ当日）。matchSubsidies と表示側で同じ日を使う（#121）。
+ * 当日は JST（getTodayJST）。以前は UTC の日付で、JST 0〜9 時は前日になり、前日締切の補助金を申込可に数えていた（2026-11-04）。
+ */
 export function matchTargetDate(input: Pick<MatchInput, 'install_target_date'>): string {
-  return input.install_target_date || new Date().toISOString().slice(0, 10);
+  return input.install_target_date || getTodayJST();
+}
+
+/**
+ * 設置希望日の初期値（JST の翌年 6/1）。以前は端末の時刻の 6/1 0:00 を UTC の日付にしていて、JST の端末では 5/31 になっていた（2026-11-04）。
+ */
+export function defaultInstallTargetDate(): string {
+  return `${Number(getTodayJST().slice(0, 4)) + 1}-06-01`;
 }
 
 /** 申込可（候補になりうる）件数。件数表示は必ずこの関数で出す（焼き込み禁止・#118/#121） */
