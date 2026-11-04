@@ -4,13 +4,19 @@
  *
  * ★既定は dry run（送る URL の件数と先頭 10 件を表示するだけ）。送るのは --apply を明示したときだけ（R32 と同じ考え方）。
  * ★同じ URL を、変わっていないのに何度も送らない（IndexNow の作法）。送るのは中身が変わったページだけ。
- * ★変電所の詳細（/grid/{slug}）は送らない（裁定 2026-10-31）: 約 7,300 件が事前生成でなく、巡回が集中すると microCMS に当たり、429 で 404 になる（鉄則 #2・#4）。
- *   Bing はサイトマップで自分の速さで巡回する。どの選び方でも、この道具は変電所の詳細を外す。変電所のデータ更新の便では IndexNow を使わない。
+ * ★変電所の詳細（/grid/{slug}）は送ってよい（2026-11-04 改め・変電所の詳細を Bing に知らせる便）。
+ *   11/4 の JSON 便（18fabb8）で /grid/[slug] の実行時の microCMS は 0 になった（巡回が集中しても microCMS に当たらず、429 で 404 にならない）。
+ *   以前（10/31 の裁定 2・3・5）は「どの選び方でも変電所の詳細を外す」だった。
+ *   ただし既定で混ざらないようにする: --all と --since は今までどおり変電所の詳細を含めない（毎朝の後段〔INDEXNOW_DAILY〕が
+ *   うっかり 8,000 件を送らないように）。変電所の詳細を送るのは --grid（全件・1 回だけ）と --urls（便で変わった slug だけ）。
+ *   データ更新の便（再取込）は、本実行・push・本番確認のあとに、変わった slug だけを --urls で送る。
+ * ★名称非公開の変電所（NO_SUBMIT_SLUGS・23 件）は、どの選び方でも送らない（次の便で noindex にする予定・名前で探されない）。
  *
  * 送る URL の選び方（どれか 1 つ）:
  *   --all                 本番 sitemap.xml の全 URL（変電所の詳細を除く）
  *   --since YYYY-MM-DD    sitemap の lastmod がその日（JST）以降の URL（変電所の詳細を除く）
- *   --urls <ファイル>      1 行 1 URL（https://bess-net.jp/… か /…。空行と # で始まる行は無視）。便で直したページの一覧
+ *   --grid                本番 sitemap.xml の変電所の詳細だけ（エリア・県・検索のページは含めない）。全件を 1 回だけ送るとき
+ *   --urls <ファイル>      1 行 1 URL（https://bess-net.jp/… か /…。空行と # で始まる行は無視）。便で直したページの一覧（変電所の詳細も可）
  *
  * ★--since の限界（reports/indexnow-2026-10-31.md (1)）: sitemap の lastmod は「中身が変わった日」とは限らない。
  *   - 固定ページ・ハブ・links など: sitemap を作った時刻（毎回変わる）→ 毎日全部を送ることになるので、--since では外す
@@ -20,6 +26,7 @@
  * 鍵: public/{32 桁の 16 進}.txt（中身は鍵だけ）。公開してよい値だが、ログには先頭 4 文字だけ出す。送る前に本番の鍵のファイルを確かめる。
  *
  * 実行: npx tsx scripts/indexnow-submit.ts --all [--apply] [--log=<path>]
+ *       npx tsx scripts/indexnow-submit.ts --grid [--apply] [--log=<path>]  （変電所の詳細の全件・2026-11-04 に 1 回）
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
@@ -39,6 +46,7 @@ const flagValue = (name: string): string | undefined => {
 };
 const APPLY = argv.includes('--apply');
 const ALL = argv.includes('--all');
+const GRID = argv.includes('--grid');
 const SINCE = flagValue('since');
 const URLS_FILE = flagValue('urls');
 const LOG_PATH = flagValue('log');
@@ -83,6 +91,24 @@ function normalize(raw: string): string {
   return u.href;
 }
 
+/**
+ * 名称非公開の変電所（公表元が名前を伏せている設備・関西は備考「◇」）。どの選び方でも送らない（2026-11-04）。
+ * 題名に内部の番号が出ていて名前で探されない。次の小さな直し便で noindex にしてサイトマップから外す予定（そうなればここは空にしてよい）。
+ * 一覧の元: サイトのデータで名前が「(名称非公開)」で始まる 22 件と、名前が「変電所」だけの 1 件（近藤さんの c4 と同じ 23 件）。
+ */
+const NO_SUBMIT_SLUGS: ReadonlySet<string> = new Set([
+  'ksi-kikan-bu', 'egz-kikan-s0016', 'rkd-kikan-hss0014',
+  'rkd-toyama-tss0005', 'rkd-toyama-tss0026', 'rkd-toyama-tss0056', 'rkd-toyama-tss0069', 'rkd-toyama-tss0076',
+  'rkd-ishikawa-iss0020', 'rkd-ishikawa-iss0038',
+  'rkd-fukui-fss0039', 'rkd-fukui-fss0051', 'rkd-fukui-fss0052', 'rkd-fukui-fss0053', 'rkd-fukui-fss0054', 'rkd-fukui-fss0055',
+  'rkd-fukui-fss0056', 'rkd-fukui-fss0057', 'rkd-fukui-fss0058', 'rkd-fukui-fss0059', 'rkd-fukui-fss0060', 'rkd-fukui-fss0061',
+  'rkd-fukui-fss0062',
+]);
+function isNoSubmit(url: string): boolean {
+  const m = /^\/grid\/([^/]+)\/?$/.exec(new URL(url).pathname);
+  return !!m && NO_SUBMIT_SLUGS.has(decodeURIComponent(m[1]));
+}
+
 /** /grid/ 直下で変電所の詳細でないページ（エリア・検索・県の一覧） */
 const GRID_NOT_DETAIL = new Set(['tohoku', 'hokuriku', 'shikoku', 'kansai', 'chugoku', 'okinawa', 'hokkaido', 'chubu', 'kyushu', 'tokyo', 'search', 'prefecture']);
 function isSubstationDetail(url: string): boolean {
@@ -91,8 +117,8 @@ function isSubstationDetail(url: string): boolean {
 }
 
 async function selectUrls(): Promise<string[]> {
-  if ([ALL, SINCE !== undefined, URLS_FILE !== undefined].filter(Boolean).length !== 1) {
-    stop('--all・--since YYYY-MM-DD・--urls <ファイル> のどれか 1 つを指定する');
+  if ([ALL, GRID, SINCE !== undefined, URLS_FILE !== undefined].filter(Boolean).length !== 1) {
+    stop('--all・--since YYYY-MM-DD・--grid・--urls <ファイル> のどれか 1 つを指定する');
   }
   if (URLS_FILE !== undefined) {
     return fs.readFileSync(URLS_FILE, 'utf8').split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith('#'));
@@ -100,6 +126,7 @@ async function selectUrls(): Promise<string[]> {
   const rows = await readSitemap();
   if (rows.length === 0) stop('sitemap.xml に URL が無い');
   if (ALL) return rows.map((r) => r.url);
+  if (GRID) return rows.map((r) => r.url).filter(isSubstationDetail);
 
   if (!/^\d{4}-\d{2}-\d{2}$/.test(SINCE!)) stop(`--since は YYYY-MM-DD: ${SINCE}`);
   const from = new Date(`${SINCE}T00:00:00+09:00`).getTime();
@@ -116,8 +143,12 @@ async function main(): Promise<void> {
   const key = readKey();
   const keyLocation = `${SITE}/${key}.txt`;
   const selected = [...new Set((await selectUrls()).map(normalize))];
-  const urls = selected.filter((u) => !isSubstationDetail(u));
-  console.log(`[indexnow] mode=${APPLY ? '本実行' : 'DRY-RUN'}・送る URL ${urls.length.toLocaleString()} 件（変電所の詳細 ${(selected.length - urls.length).toLocaleString()} 件を外した）・鍵 ${key.slice(0, 4)}…`);
+  // --all・--since は変電所の詳細を含めない（既定で混ざらない）。--grid・--urls は含める。名称非公開はどの選び方でも外す
+  const keepGrid = GRID || URLS_FILE !== undefined;
+  const noSubmit = selected.filter(isNoSubmit);
+  const urls = selected.filter((u) => (keepGrid || !isSubstationDetail(u)) && !isNoSubmit(u));
+  const droppedGrid = keepGrid ? 0 : selected.filter((u) => isSubstationDetail(u) && !isNoSubmit(u)).length;
+  console.log(`[indexnow] mode=${APPLY ? '本実行' : 'DRY-RUN'}・送る URL ${urls.length.toLocaleString()} 件（変電所の詳細 ${droppedGrid.toLocaleString()} 件・名称非公開 ${noSubmit.length} 件を外した）・鍵 ${key.slice(0, 4)}…`);
   urls.slice(0, 10).forEach((u) => console.log(`  ${u}`));
   if (urls.length > 10) console.log(`  …ほか ${(urls.length - 10).toLocaleString()} 件`);
 
