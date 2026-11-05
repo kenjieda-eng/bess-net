@@ -25,6 +25,8 @@ const nextConfig = {
       // 11/4 の JSON 便から slug でしか引けず 404 になったので、slug へ恒久の転送（小さな直し便・2026-11-05）
       { source: '/grid/a7m1-_9p0n5', destination: '/grid/ydn-kikan-0013-2', permanent: true },
       { source: '/grid/o66z7a3i9', destination: '/grid/kyu-884', permanent: true },
+      // BW 関西 本実行便（2026-11-05）の POST 1 件（南GC 咲洲２）も id ≠ slug
+      { source: '/grid/7c1n48509wi9', destination: '/grid/ksi-local-gc-5', permanent: true },
     ];
   },
 

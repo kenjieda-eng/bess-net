@@ -180,7 +180,8 @@ kp = json.loads((ROOT / "kansai" / "update_plan_2608.json").read_text(encoding="
 ks_rows = {}
 for fname in ("154kv_less_trans.csv", "154kv_more_trans.csv"):
     kind = "local" if "less" in fname else "kikan"
-    for r in read_csv_bytes((ROOT / "kansai" / "src" / fname).read_bytes())[2:]:
+    # BW 関西 本実行（2026-11-05）から 11/02 版の CSV（src_2611）で空欄か「－」かを判定する（8/17 版は kansai/src に残置）
+    for r in read_csv_bytes((ROOT / "kansai" / "src_2611" / fname).read_bytes())[2:]:
         if r and r[0].strip():
             ks_rows.setdefault((kind, N(r[0])), []).append(r)
 
@@ -278,6 +279,22 @@ for x in tk_added:
     add(x["slug"], x["reason"], "csv_yosochoryu_*_hendensyo.csv（2026-10-28公表）・2026-11-02 取込", raw=x["raw"], raw_checked=True)
 print(f"東京: 10/28 版の未算定 {len(tk['entries'])} 行のうち、前身の一覧に無い {len(tk_added)} 行を足した")
 
+# ── 9. 関西: 11/02 版の N-1 欄が「－」・空欄の行（BW 関西 本実行・parse_kansai_csv_2611.py の一覧 3 件）──
+# 3 件（ＢＵ・赤子山・高時川）は前身の一覧と §3 で入っている。source を 11/02 版の取込に直し、足りない行があれば足す。
+# as_of は add の既定＝再取込後の last_updated（2026-11-02）。
+kn = json.loads((ROOT / "_common" / "n1_undetermined_kansai_2611.json").read_text(encoding="utf-8"))
+KN_SOURCE = "154kv_{more,less}_trans.csv（2026-11-02公表）・2026-11-05 取込"
+kn_added = []
+for x in kn["entries"]:
+    if x["slug"] in entries:
+        entries[x["slug"]]["source"] = KN_SOURCE
+    else:
+        raw, ok = kansai_raw(x["external_id"])
+        add(x["slug"], classify(raw) or "undetermined", KN_SOURCE, raw=raw, raw_checked=ok)
+        kn_added.append(x["slug"])
+kn_missing = sorted({e for e, v in entries.items() if v["area"] == "関西"} ^ {x["slug"] for x in kn["entries"]})
+print(f"関西: 11/02 版の未算定・空欄 {len(kn['entries'])} 行（足した {kn_added}・一覧と食い違う {kn_missing}）")
+
 # ── 出力 ──
 from collections import Counter  # noqa: E402
 
@@ -297,7 +314,8 @@ out = {
     "generated_from": [
         "scripts/experimental/_common/n1_undetermined.json（前身・273 件）",
         "scripts/experimental/hokuriku/csv_2608（2026-08-05 公表 CSV）",
-        "scripts/experimental/kansai/update_plan_2608.json・src/154kv_{less,more}_trans.csv",
+        "scripts/experimental/kansai/update_plan_2608.json・src_2611/154kv_{less,more}_trans.csv（2026-11-02 版）",
+        "scripts/experimental/_common/n1_undetermined_kansai_2611.json（関西 11/02 版・parse_kansai_csv_2611.py）",
         "scripts/experimental/chugoku/zip_202608",
         "scripts/experimental/hokkaido/update_plan_202607.json・zip_202607/sys_capa_kikan.zip",
         "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",

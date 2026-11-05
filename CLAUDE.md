@@ -281,10 +281,11 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
            実証: 2026-08-16 北陸で static baseline を使った初回 dry-run が「台数271件・予想潮流49件の
                  新規充足」を報告 → 実データ照合後は台数1件・予想潮流29件変化に是正。
            ★追記（2026-10-06・Ck2g／2026-11-02 更新）変電所の id≠slug: `ydn-kikan-0013-2`（id `a7m1-_9p0n5`・2026-10-05 POST）と
-             `kyu-884`（id `o66z7a3i9`・2026-10-30 POST）の 2 件（POST の自動採番。contentId 指定の作成＝PUT は停止条件）。全 8,347 件でこの 2 件だけ。
+             `kyu-884`（id `o66z7a3i9`・2026-10-30 POST）・`ksi-local-gc-5`（id `7c1n48509wi9`・2026-11-05 POST）の 3 件
+             （POST の自動採番。contentId 指定の作成＝PUT は停止条件）。全 8,346 件でこの 3 件だけ（2026-11-05）。
              再取込は baseline の id で PATCH する（各社の旧スクリプトの `client.update({contentId: slug})` 型はこの 2 件で 404）。
              共通 applier: scripts/experimental/_common/apply_substations_plan.ts（baseline の id を使う・既定 dry run）。
-           ★2026-11-05: id で開く URL（/grid/a7m1-_9p0n5・/grid/o66z7a3i9）は next.config.js の redirects で slug へ恒久の転送（308）。
+           ★2026-11-05: id で開く URL（/grid/a7m1-_9p0n5・/grid/o66z7a3i9・/grid/7c1n48509wi9）は next.config.js の redirects で slug へ恒久の転送（308）。
              11/4 の JSON 便から詳細は slug でしか引けない。id ≠ slug のレコードが増えたら、ここにも足す。
 
 #114 ★★★★ 突合キーの数値は必ず型を正規化してから比較する（int と float を文字列比較しない）
@@ -905,4 +906,5 @@ async function main() {
 - 2026-11-04（CC・変電所の詳細をビルド時の JSON から読む便）: #127 に追記（変電所の詳細は実行時の microCMS 0・revalidate false＝書込前に開いても旧値は残らない。runtime fetch の残るページには今も当てはまる）
 - 2026-11-04（CC・変電所の詳細を Bing に知らせる便）: 第2章に 2-4「IndexNow の決まり」を新設（変電所の詳細は送ってよい・--all／--since は今までどおり含めない・送るのは --grid と --urls・名称非公開 23 件は送らない）。それまで CLAUDE.md に IndexNow の決まりは無く、道具の説明にあった
 - 2026-11-05（CC・小さな直し便）: #113 に id の URL 2 件の slug への恒久の転送（next.config.js redirects）を追記
+- 2026-11-05（CC・BW 関西 本実行便）: #113 の id≠slug を 3 件に更新（`ksi-local-gc-5`・id `7c1n48509wi9` を追加・転送も足した）
 - （将来）: 新規セッションで追記、更新時刻 + 更新者を末尾に

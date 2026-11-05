@@ -15,7 +15,8 @@ scripts/experimental/kansai/parse_kansai_csv_2611.py
   - 空容量: 当該設備の欄が「-」「ー」なら 運用容量 − |予想潮流|（同社の留意事項(2)）
 変えたのは、版に依存する定数・文言と、BW 便の報告項目の追加（◇・ＢＵ・凍結 5 件・基幹の丸ごと欠け・
 府県の情報なし・未算定のハイフンの種類・No.＋名称の一致率・11/4 の府県の図にあった記号）だけ。
-本実行の計画（8/19 の --emit-plan）は持たない（dry-run の便。本実行は承認後の別の便）。
+本実行の計画は --emit-plan で出す（BW 関西 本実行便 2026-11-05 で追加。8/19 の --emit-plan と同じ作り＋裁定 1〜6）。
+  python -P scripts/experimental/kansai/parse_kansai_csv_2611.py --baseline=<実行時の GET> --out-json=<別の場所> --n1-out=<別の場所> --emit-plan
 
 使い方（リポジトリ直下）: python -P scripts/experimental/kansai/parse_kansai_csv_2611.py
 """
@@ -182,7 +183,170 @@ def load_rows():
     return files, rows, skipped
 
 
+# ── 本実行の計画（BW 関西 本実行便 2026-11-05・裁定 `検証記録_小さな直し便・BW関西dry-run_裁定_2026-11-05_ユウ.md` 2 本目 1〜6）──
+# 想定の外（下の 4 つの一覧と違う名前の変化・振り直し・消滅・新規、電圧面の変化、曖昧な組）が 1 件でもあれば、計画を作らずに止める。
+EXPECT_RENAME = {"ksi-kikan-m": "西京都（154）", "ksi-local-ef-8": "有馬", "ksi-local-ef-9": "有馬"}  # 裁定 1: この 3 件だけ名前の上書きを許す
+EXPECT_RENUMBER = {"ksi-local-gl-2": ("kansai_local_北GL", "kansai_local_北GO"),
+                   "ksi-local-gl-3": ("kansai_local_北GL", "kansai_local_北GO")}  # 裁定 2
+EXPECT_REMOVED = {"ksi-local-cq-6", "ksi-local-fx"}  # 裁定 3: DELETE せず凍結（substations-frozen.json）・計画では書かない
+EXPECT_NEW = {"kansai_local_南GC"}  # 裁定 3: 咲洲２ を新規に POST
+META = {"id", "createdAt", "updatedAt", "publishedAt", "revisedAt"}
+VC_MAP = {500: "500kV系", 275: "275kV系", 187: "187kV系", 154: "154kV系", 110: "110kV系",
+          77: "77kV系", 66: "66kV系", 22: "22kV系", 13.8: "13.8kV系"}  # 8/19 と同じ（33kV は「その他」）
+NUMF = ["units", "capacity_total_mw", "cap_operational_mw", "forecast_flow_mw",
+        "cap_avail_mw", "cap_avail_upper_mw", "n1_capacity_mw"]
+
+
+def emit_plan(plan_out, raw_base, base, matched, new_rows, removed, renamed, renamed_unmatched, renumber,
+              face_changed, ambiguous, fetched_on):
+    """8/19 の --emit-plan（parse_kansai_csv.py）と同じ作り＋裁定 1〜6。microCMS には書かない。
+    - PATCH は突合した全件（値の変化が無くても last_updated・fetched_at を更新する＝8/19・10/30・11/2 と同じ）
+    - 数値は CSV に値があるときだけ（無ければ現値維持）。N-1・出力制御の未算定は現値維持（boolean を潰さない）
+    - name は EXPECT_RENAME の 3 件だけ。external_id は振り直しの 2 件だけ。notes は書かない（裁定 5）。電圧面は変えない（変化 0）
+    - 空容量の算出の作りは変えない（負の値も 8/19 と同じ・裁定 6）
+    """
+    errs = []
+    got_rename = {x["slug"]: x["new_name"] for x in renamed}
+    if got_rename != EXPECT_RENAME or renamed_unmatched:
+        errs.append(f"名前の変化が裁定と違う: {got_rename}・突合外 {renamed_unmatched}")
+    got_renum = {x["slug"]: (x["old_external_id"], x["new_external_id"]) for x in renumber}
+    if got_renum != EXPECT_RENUMBER:
+        errs.append(f"振り直しが裁定と違う: {got_renum}")
+    if {b["slug"] for b in removed} != EXPECT_REMOVED:
+        errs.append(f"消滅が裁定と違う: {sorted(b['slug'] for b in removed)}")
+    if {r["external_id"] for r in new_rows} != EXPECT_NEW:
+        errs.append(f"新規が裁定と違う: {sorted(r['external_id'] for r in new_rows)}")
+    if face_changed or ambiguous:
+        errs.append(f"電圧面の変化 {len(face_changed)}・曖昧 {len(ambiguous)}")
+    if errs:
+        raise SystemExit("想定の外のため計画を作らない: " + " / ".join(errs))
+
+    iso = lambda d: f"{d}T00:00:00.000Z"  # noqa: E731
+    vclass = lambda kv: VC_MAP.get(kv, "その他") if kv is not None else "その他"  # noqa: E731
+    raw = {b["slug"]: b for b in raw_base}
+    renum_by = {x["slug"]: x for x in renumber}
+    updates, n1_kept, oc_kept = [], [], []
+    for b, r in matched:
+        patch, changed = {}, []
+        for k in NUMF:
+            ov, nv = b.get(k), r.get(k)
+            if nv is None:
+                continue
+            if ov is None or abs(float(ov) - float(nv)) > 1e-6:
+                patch[k] = nv
+                changed.append(k)
+        if r.get("op_constraint") and (b.get("op_constraint") or "") != r["op_constraint"]:
+            patch["op_constraint"] = r["op_constraint"]
+            changed.append("op_constraint")
+        if r.get("n1_eligible") is None:
+            if b.get("n1_eligible") is not None:
+                n1_kept.append(b["slug"])
+        elif bool(b.get("n1_eligible")) != r["n1_eligible"]:
+            patch["n1_eligible"] = r["n1_eligible"]
+            changed.append("n1_eligible")
+        if r.get("oc_possibility") is None:
+            if b.get("oc_possibility") is not None:
+                oc_kept.append(b["slug"])
+        elif (b.get("oc_possibility") or None) != r["oc_possibility"]:
+            patch["oc_possibility"] = [r["oc_possibility"]]
+            changed.append("oc_possibility")
+        if b["slug"] in EXPECT_RENAME:
+            patch["name"] = EXPECT_RENAME[b["slug"]]
+            changed.append("name")
+        if b["slug"] in renum_by:
+            patch["external_id"] = renum_by[b["slug"]]["new_external_id"]
+            changed.append("external_id")
+        patch["last_updated"] = iso(NEW_VERSION)
+        patch["fetched_at"] = iso(fetched_on)
+        rb = raw[b["slug"]]
+        updates.append({"slug": b["slug"], "id": rb["id"], "patch": patch, "changed": changed,
+                        "before": {k: v for k, v in rb.items() if k not in META}})
+
+    # 新規の slug（8/19 の採番と同じ: No. の頭の字を外した英字 → 使用済みなら -2, -3 …・全国の slug と凍結で衝突 0）
+    taken = set(json.load(open("src/lib/generated/grid-detail-index.json", encoding="utf-8"))["shard_of"].keys())
+    taken |= {x["slug"] for x in raw_base}
+    taken |= set(json.load(open("src/data/substations-frozen.json", encoding="utf-8"))["frozen"].keys())
+
+    def base_token(no_norm):
+        t = re.sub(r"^(海|陸|北|神|京|姫|南|滋|和|奈)", "", no_norm)
+        m = re.fullmatch(r"([A-Z]+)-?(\d+)", t)
+        return f"{m.group(1).lower()}{int(m.group(2)):04d}" if m else t.lower()
+
+    def assign_slug(prefix, no_norm):
+        b_ = f"{prefix}{base_token(no_norm)}"
+        if b_ not in taken:
+            taken.add(b_)
+            return b_
+        n = 2
+        while f"{b_}-{n}" in taken:
+            n += 1
+        taken.add(f"{b_}-{n}")
+        return f"{b_}-{n}"
+
+    creates = []
+    for r in new_rows:
+        slug = assign_slug(r["slug_prefix"], r["no"])
+        content = {
+            "name": r["name"], "slug": slug, "operator": ["関西電力送配電"], "area": ["関西"],
+            "voltage_primary_kv": r["voltage_primary_kv"], "voltage_secondary_kv": r["voltage_secondary_kv"],
+            "voltage_class": [vclass(r["voltage_primary_kv"])], "units": r["units"],
+            "capacity_total_mw": r["capacity_total_mw"], "cap_operational_mw": r["cap_operational_mw"],
+            "op_constraint": r["op_constraint"], "forecast_flow_mw": r["forecast_flow_mw"],
+            "cap_avail_mw": r["cap_avail_mw"], "cap_avail_upper_mw": r["cap_avail_upper_mw"],
+            "n1_eligible": bool(r["n1_eligible"]), "n1_capacity_mw": r["n1_capacity_mw"],
+            "external_id": r["external_id"], "non_firm_eligible": False,
+            "source_url": f"{BASE_URL}/154kv_{r['set']}_trans.csv", "data_source_format": ["CSV"],
+            "last_updated": iso(NEW_VERSION), "fetched_at": iso(fetched_on),
+        }
+        if r["oc_possibility"] is not None:
+            content["oc_possibility"] = [r["oc_possibility"]]
+        if r["set"] == "less":
+            content["prefecture"] = "関西ローカル系"
+        content = {k: v for k, v in content.items() if v is not None}
+        creates.append({"slug": slug, "content": content, "external_id": r["external_id"], "no": r["no_raw"],
+                        "n1_undetermined_as_false": r["n1_eligible"] is None,
+                        "csv": {k: r[k] for k in ("op_constraint", "n1_raw", "oc_raw", "note_raw", "avail_source")}})
+
+    n1_ok = sum(1 for u in updates if (u["patch"]["n1_eligible"] if "n1_eligible" in u["patch"] else u["before"].get("n1_eligible")) is True) \
+        + sum(1 for c in creates if c["content"].get("n1_eligible") is True)
+    value_changed = sum(1 for u in updates if set(u["changed"]) - {"name"})
+    name_changed = sum(1 for u in updates if "name" in u["changed"])
+    date_only = sum(1 for u in updates if not u["changed"])
+    plan = {"generated": str(date.today()), "area": "関西", "prefix": "ksi-", "endpoint": "substations",
+            "version": NEW_VERSION, "fetched_on": fetched_on,
+            "ruling": "02_計画・運営/検証記録_小さな直し便・BW関西dry-run_裁定_2026-11-05_ユウ.md（2 本目 1〜6）",
+            "expected": {"updates": len(updates), "value_changed": value_changed, "name_changed": name_changed,
+                         "date_only": date_only, "creates": len(creates), "n1_ok_after": n1_ok},
+            "allow_name_change": EXPECT_RENAME, "renumber": renumber,
+            "frozen_slugs": sorted(b["slug"] for b in removed),
+            "n1_undetermined_kept": n1_kept, "oc_undetermined_kept": oc_kept,
+            "updates": updates, "creates": creates}
+    Path(plan_out).write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"=== emit-plan: PATCH {len(updates)}（値 {value_changed}・名前 {name_changed}・日付だけ {date_only}）・"
+          f"POST {len(creates)} {[c['slug'] for c in creates]}・凍結 {plan['frozen_slugs']}・N-1 可 {n1_ok}・"
+          f"現値維持 N-1 {len(n1_kept)}／出力制御 {len(oc_kept)}")
+    print(f"  列ごとの変化 {dict(collections.Counter(k for u in updates for k in u['changed']))}")
+    print(f"  -> {plan_out}")
+
+
 def main():
+    global BASELINE, OUT_JSON, N1_OUT
+    import argparse
+    ap = argparse.ArgumentParser()
+    # 本実行便（2026-11-05）: 実行時の baseline を使い、11/5 の dry-run の記録（reports/…json・n1_undetermined_kansai_2611.json）を上書きしない
+    ap.add_argument("--baseline", default=None)
+    ap.add_argument("--out-json", default=None)
+    ap.add_argument("--n1-out", default=None)
+    ap.add_argument("--emit-plan", action="store_true")
+    ap.add_argument("--plan-out", default=str(HERE / "update_plan_202611.json"))
+    ap.add_argument("--fetched-on", default=str(date.today()))
+    args = ap.parse_args()
+    if args.baseline:
+        BASELINE = Path(args.baseline)
+    if args.out_json:
+        OUT_JSON = Path(args.out_json)
+    if args.n1_out:
+        N1_OUT = Path(args.n1_out)
     R = {"generated_on": str(date.today()), "area": "関西", "operator": "関西電力送配電",
          "scope": "dry-run（差分レポートのみ・microCMS 書込 0・baseline は GET のみ）",
          "landing": LANDING, "new_version": NEW_VERSION, "current_version": CUR_VERSION,
@@ -515,6 +679,10 @@ def main():
     print(f"=== 10. 区分 現行 more {base_by['more']} / less {base_by['less']} → 新 more {by_set['more']} / less {by_set['less']}・"
           f"取込後 {total_after}（{pct:+.1f}%）===")
     print(f"-> {OUT_JSON} / {N1_OUT}（microCMS 書込なし）")
+    if args.emit_plan:
+        raw_base = json.load(open(BASELINE, encoding="utf-8"))  # 正規化前の GET のまま（before に使う）
+        emit_plan(args.plan_out, raw_base, base, matched, new_rows, removed, renamed, renamed_unmatched, renumber,
+                  face_changed, ambiguous, args.fetched_on)
 
 
 if __name__ == "__main__":

@@ -186,8 +186,30 @@
    "changed_on": "2026-10-30",
    "source_version": "2026-09-29",
    "evidence": "バンク分割掲載（66/6・38MW・2台・熱容量の既存が(1)側と全一致。空容量のみ版の更新で 0→2。(2)=66/22・9MW・1台は新設バンク＝kyu-884）。裁定 2026-10-29 BV-1"
+  },
+  {
+   "area": "関西",
+   "operator": "関西電力送配電",
+   "slug": "ksi-local-gl-2",
+   "name": "新大岩",
+   "old_external_id": "kansai_local_北GL",
+   "new_external_id": "kansai_local_北GO",
+   "changed_on": "2026-11-05",
+   "source_version": "2026-11-02",
+   "evidence": "名称・電圧面(77/6.6)・設備容量(52)・運用容量(52)・台数(3)の5項目一致。新CSVに北GLの行は無い。裁定 2026-11-05（BW 関西 dry-run 2 本目の 2）"
+  },
+  {
+   "area": "関西",
+   "operator": "関西電力送配電",
+   "slug": "ksi-local-gl-3",
+   "name": "新大岩",
+   "old_external_id": "kansai_local_北GL",
+   "new_external_id": "kansai_local_北GO",
+   "changed_on": "2026-11-05",
+   "source_version": "2026-11-02",
+   "evidence": "名称・電圧面(77/22)・設備容量(57)・運用容量(31)・台数(2)の5項目一致。新CSVに北GLの行は無い。裁定 2026-11-05（BW 関西 dry-run 2 本目の 2）"
   }
  ],
  "note": "No.の振り直しで external_id が変わった設備の履歴。slug は公開URLのため維持し、external_id のみ更新する（次回の突合を壊さないため）。microCMS の notes は詳細ページに表示されるフィールドのため、履歴はリポジトリ側で保持する。",
- "count": 13
+ "count": 19
 }
