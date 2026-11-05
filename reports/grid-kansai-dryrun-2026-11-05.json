@@ -1,0 +1,3115 @@
+{
+ "generated_on": "2026-11-05",
+ "area": "関西",
+ "operator": "関西電力送配電",
+ "scope": "dry-run（差分レポートのみ・microCMS 書込 0・baseline は GET のみ）",
+ "landing": "https://www.kansai-td.co.jp/consignment/disclosure/distribution-equipment/index.html",
+ "new_version": "2026-11-02",
+ "current_version": "2026-08-17",
+ "warnings": [],
+ "requires_judgement": [],
+ "files": [
+  {
+   "file": "154kv_more_trans.csv",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_more_trans.csv",
+   "bytes": 13832,
+   "encoding": "cp932",
+   "encoding_attempts": [
+    "utf-8-sig NG（invalid start byte・5 バイト目）",
+    "cp932 OK"
+   ],
+   "version_row": "2026年11月02日更新",
+   "pdf": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_more_space.pdf",
+   "data_rows": 127
+  },
+  {
+   "file": "154kv_less_trans.csv",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_trans.csv",
+   "bytes": 161591,
+   "encoding": "cp932",
+   "encoding_attempts": [
+    "utf-8-sig NG（invalid start byte・5 バイト目）",
+    "cp932 OK"
+   ],
+   "version_row": "2026年11月02日更新",
+   "pdf": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_space.pdf",
+   "data_rows": 1574
+  }
+ ],
+ "excluded_note_rows": {
+  "count": 1,
+  "rows": [
+   {
+    "set": "more",
+    "no": "*1 当該系統は、系統安定度等により制約がありますので、連系可能量については、別途詳細検討が必要となります。",
+    "name": "",
+    "reason": "No. 欄が設備の No. の形をしていない（注記行）"
+   }
+  ]
+ },
+ "avail_calculation": {
+  "more": {
+   "運用容量−|予想潮流|（算出）": 126,
+   "算出不能（運用容量か予想潮流が公表されていない）": 1
+  },
+  "less": {
+   "運用容量−|予想潮流|（算出）": 278,
+   "欄の値（直読）": 1296
+  }
+ },
+ "baseline": {
+  "file": "C:/Users/kenji/Documents/GitHub/bess-net/scripts/experimental/kansai/baseline_live_2611.json",
+  "get_total": 1707,
+  "frozen_excluded": 5,
+  "count": 1702,
+  "last_updated": {
+   "2026-08-17": 1702
+  }
+ },
+ "dedupe": {
+  "before": 1701,
+  "after": 1701,
+  "removed": 0,
+  "rule2_baseline_name": "使用しない（#117）",
+  "breakdown": {},
+  "examples": []
+ },
+ "external_id_shift_check": {
+  "more": {
+   "matched": 127,
+   "same_name": 126
+  },
+  "less": {
+   "matched": 1571,
+   "same_name": 1569
+  }
+ },
+ "versions": {
+  "more": "2026年11月02日更新",
+  "less": "2026年11月02日更新",
+  "split": false
+ },
+ "counts": {
+  "baseline": 1702,
+  "csv_raw": 1701,
+  "csv_dedup": 1701,
+  "matched": 1700,
+  "new": 1,
+  "removed": 2,
+  "ambiguous": 0,
+  "changed_records": 274,
+  "unchanged_records": 1426,
+  "total_after": 1701,
+  "pct": -0.06
+ },
+ "by_set": {
+  "more": 127,
+  "less": 1574
+ },
+ "baseline_by_set": {
+  "more": 127,
+  "less": 1575
+ },
+ "no_groups": {
+  "more": {
+   "海": {
+    "new_csv": 6,
+    "baseline": 6
+   },
+   "陸": {
+    "new_csv": 8,
+    "baseline": 8
+   },
+   "（接頭辞なし）": {
+    "new_csv": 113,
+    "baseline": 113
+   }
+  },
+  "less": {
+   "京": {
+    "new_csv": 242,
+    "baseline": 242
+   },
+   "北": {
+    "new_csv": 226,
+    "baseline": 227
+   },
+   "南": {
+    "new_csv": 210,
+    "baseline": 209
+   },
+   "和": {
+    "new_csv": 129,
+    "baseline": 129
+   },
+   "奈": {
+    "new_csv": 113,
+    "baseline": 113
+   },
+   "姫": {
+    "new_csv": 226,
+    "baseline": 226
+   },
+   "滋": {
+    "new_csv": 159,
+    "baseline": 159
+   },
+   "神": {
+    "new_csv": 269,
+    "baseline": 270
+   }
+  }
+ },
+ "field_stats": {
+  "空き容量（当該設備）": {
+   "変化": 197,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "空容量（上位系等考慮）": {
+   "変化": 197,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "予想潮流": {
+   "変化": 104,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "運用容量": {
+   "変化": 6,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "設備容量": {
+   "変化": 6,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "N-1電制適用可能量": {
+   "変化": 21,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  },
+  "台数": {
+   "変化": 0,
+   "新規充足": 0,
+   "新CSVで欠落(現値維持)": 0
+  }
+ },
+ "other_field_changes": {
+  "op_constraint": 0,
+  "n1_eligible": 0,
+  "oc_possibility": 24
+ },
+ "cap_avail": {
+  "decreased": 142,
+  "zeroed": 11,
+  "increased": 55,
+  "newly_filled": 0,
+  "newly_filled_rows": [],
+  "top_decreases": [
+   {
+    "slug": "ksi-kikan-b-3",
+    "name": "北摂",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｂ",
+    "voltage": "500/275",
+    "from": -318,
+    "to": -1176.0,
+    "delta": -858.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-h",
+    "name": "新生駒",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｈ",
+    "voltage": "500/275",
+    "from": -127,
+    "to": -711.0,
+    "delta": -584.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-ad",
+    "name": "東大阪",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＤ",
+    "voltage": "275/154",
+    "from": 356,
+    "to": -130.0,
+    "delta": -486.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bh",
+    "name": "洛南",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＨ",
+    "voltage": "275/77",
+    "from": 412,
+    "to": 266.0,
+    "delta": -146.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-c-3",
+    "name": "猪名川",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｃ",
+    "voltage": "500/275",
+    "from": 365,
+    "to": 230.0,
+    "delta": -135.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-as",
+    "name": "新綾部",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＳ",
+    "voltage": "275/77",
+    "from": 259,
+    "to": 161.0,
+    "delta": -98.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-ak",
+    "name": "北摂",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＫ",
+    "voltage": "275/77",
+    "from": -7,
+    "to": -88.0,
+    "delta": -81.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-d-3",
+    "name": "新綾部",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｄ",
+    "voltage": "500/275",
+    "from": 1108,
+    "to": 1039.0,
+    "delta": -69.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-cz",
+    "name": "新奈良",
+    "set": "more",
+    "external_id": "kansai_kikan_ＣＺ",
+    "voltage": "154/77",
+    "from": 305,
+    "to": 262.0,
+    "delta": -43.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bt",
+    "name": "多奈川",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＴ",
+    "voltage": "275/77",
+    "from": -78,
+    "to": -111.0,
+    "delta": -33.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   }
+  ],
+  "zeroed_rows": [
+   {
+    "slug": "ksi-kikan-ad",
+    "name": "東大阪",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＤ",
+    "voltage": "275/154",
+    "from": 356,
+    "to": -130.0,
+    "delta": -486.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ca-9",
+    "name": "志方",
+    "set": "less",
+    "external_id": "kansai_local_姫CA",
+    "voltage": "77/6.6",
+    "from": 3,
+    "to": 0.0,
+    "delta": -3.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-aq-9",
+    "name": "那波",
+    "set": "less",
+    "external_id": "kansai_local_姫AQ",
+    "voltage": "77/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bn-10",
+    "name": "宮井",
+    "set": "less",
+    "external_id": "kansai_local_和BN",
+    "voltage": "33/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-cd-7",
+    "name": "途中谷",
+    "set": "less",
+    "external_id": "kansai_local_滋CD",
+    "voltage": "33/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-d-4",
+    "name": "黒井",
+    "set": "less",
+    "external_id": "kansai_local_神D",
+    "voltage": "77/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-fi-5",
+    "name": "勝雄",
+    "set": "less",
+    "external_id": "kansai_local_姫FI",
+    "voltage": "22/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bn-8",
+    "name": "土山町",
+    "set": "less",
+    "external_id": "kansai_local_滋BN",
+    "voltage": "77/6.6",
+    "from": 1,
+    "to": 0.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bq-8",
+    "name": "大原",
+    "set": "less",
+    "external_id": "kansai_local_滋BQ",
+    "voltage": "77/6.6",
+    "from": 1,
+    "to": 0.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-cc-9",
+    "name": "国包",
+    "set": "less",
+    "external_id": "kansai_local_姫CC",
+    "voltage": "77/6.6",
+    "from": 1,
+    "to": 0.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-y-8",
+    "name": "大野",
+    "set": "less",
+    "external_id": "kansai_local_姫Y",
+    "voltage": "77/6.6",
+    "from": 1,
+    "to": 0.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   }
+  ],
+  "top_increases": [
+   {
+    "slug": "ksi-kikan-g-2",
+    "name": "南京都",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｇ",
+    "voltage": "500/275",
+    "from": 1136,
+    "to": 1312.0,
+    "delta": 176.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-q",
+    "name": "御坊",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｑ",
+    "voltage": "500/77",
+    "from": -393,
+    "to": -247.0,
+    "delta": 146.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-p",
+    "name": "信貴",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｐ",
+    "voltage": "500/154",
+    "from": 259,
+    "to": 385.0,
+    "delta": 126.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-k-2",
+    "name": "金剛",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｋ",
+    "voltage": "500/275",
+    "from": 340,
+    "to": 396.0,
+    "delta": 56.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bs",
+    "name": "海南港",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＳ",
+    "voltage": "275/77",
+    "from": -16,
+    "to": 15.0,
+    "delta": 31.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   }
+  ],
+  "all_decreases": [
+   {
+    "slug": "ksi-kikan-b-3",
+    "name": "北摂",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｂ",
+    "voltage": "500/275",
+    "from": -318,
+    "to": -1176.0,
+    "delta": -858.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-h",
+    "name": "新生駒",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｈ",
+    "voltage": "500/275",
+    "from": -127,
+    "to": -711.0,
+    "delta": -584.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-ad",
+    "name": "東大阪",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＤ",
+    "voltage": "275/154",
+    "from": 356,
+    "to": -130.0,
+    "delta": -486.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bh",
+    "name": "洛南",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＨ",
+    "voltage": "275/77",
+    "from": 412,
+    "to": 266.0,
+    "delta": -146.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-c-3",
+    "name": "猪名川",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｃ",
+    "voltage": "500/275",
+    "from": 365,
+    "to": 230.0,
+    "delta": -135.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-as",
+    "name": "新綾部",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＳ",
+    "voltage": "275/77",
+    "from": 259,
+    "to": 161.0,
+    "delta": -98.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-ak",
+    "name": "北摂",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＫ",
+    "voltage": "275/77",
+    "from": -7,
+    "to": -88.0,
+    "delta": -81.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-d-3",
+    "name": "新綾部",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｄ",
+    "voltage": "500/275",
+    "from": 1108,
+    "to": 1039.0,
+    "delta": -69.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-cz",
+    "name": "新奈良",
+    "set": "more",
+    "external_id": "kansai_kikan_ＣＺ",
+    "voltage": "154/77",
+    "from": 305,
+    "to": 262.0,
+    "delta": -43.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bt",
+    "name": "多奈川",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＴ",
+    "voltage": "275/77",
+    "from": -78,
+    "to": -111.0,
+    "delta": -33.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bn",
+    "name": "泉南",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＮ",
+    "voltage": "275/77",
+    "from": 757,
+    "to": 725.0,
+    "delta": -32.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-be",
+    "name": "甲賀",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＥ",
+    "voltage": "275/77",
+    "from": 235,
+    "to": 208.0,
+    "delta": -27.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bo",
+    "name": "南大阪",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＯ",
+    "voltage": "275/77",
+    "from": 773,
+    "to": 747.0,
+    "delta": -26.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-o",
+    "name": "新生駒",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｏ",
+    "voltage": "500/154",
+    "from": 2511,
+    "to": 2489.0,
+    "delta": -22.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-an",
+    "name": "東播",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＮ",
+    "voltage": "275/77",
+    "from": 554,
+    "to": 540.0,
+    "delta": -14.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-dl",
+    "name": "勢野",
+    "set": "more",
+    "external_id": "kansai_kikan_ＤＬ",
+    "voltage": "154/77",
+    "from": 229,
+    "to": 218.0,
+    "delta": -11.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-f-2",
+    "name": "西京都",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｆ",
+    "voltage": "500/275",
+    "from": 2634,
+    "to": 2623.0,
+    "delta": -11.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-dj",
+    "name": "新宮",
+    "set": "more",
+    "external_id": "kansai_kikan_ＤＪ",
+    "voltage": "154/77",
+    "from": 81,
+    "to": 71.0,
+    "delta": -10.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bf",
+    "name": "湖南",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＦ",
+    "voltage": "275/77",
+    "from": 669,
+    "to": 660.0,
+    "delta": -9.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bk",
+    "name": "新生駒",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＫ",
+    "voltage": "275/77",
+    "from": 422,
+    "to": 413.0,
+    "delta": -9.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-br",
+    "name": "紀の川",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＲ",
+    "voltage": "275/77",
+    "from": 45,
+    "to": 36.0,
+    "delta": -9.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-cx",
+    "name": "高島",
+    "set": "more",
+    "external_id": "kansai_kikan_ＣＸ",
+    "voltage": "154/77",
+    "from": 40,
+    "to": 31.0,
+    "delta": -9.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ah-9",
+    "name": "海南",
+    "set": "less",
+    "external_id": "kansai_local_和AH",
+    "voltage": "77/33",
+    "from": 11,
+    "to": 2.0,
+    "delta": -9.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-at-11",
+    "name": "内原",
+    "set": "less",
+    "external_id": "kansai_local_和AT",
+    "voltage": "77/33",
+    "from": -12,
+    "to": -20.0,
+    "delta": -8.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-by-2",
+    "name": "浅香山",
+    "set": "less",
+    "external_id": "kansai_local_南BY",
+    "voltage": "77/22",
+    "from": 59,
+    "to": 52.0,
+    "delta": -7.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-q-3",
+    "name": "高津",
+    "set": "less",
+    "external_id": "kansai_local_南Ｑ",
+    "voltage": "77/22",
+    "from": 79,
+    "to": 72.0,
+    "delta": -7.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-am",
+    "name": "新加古川",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＭ",
+    "voltage": "275/77",
+    "from": 25,
+    "to": 19.0,
+    "delta": -6.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-dm-4",
+    "name": "祝園",
+    "set": "less",
+    "external_id": "kansai_local_京DM",
+    "voltage": "77/22",
+    "from": 55,
+    "to": 49.0,
+    "delta": -6.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bq",
+    "name": "北葛城",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＱ",
+    "voltage": "275/77",
+    "from": 59,
+    "to": 54.0,
+    "delta": -5.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-co-3",
+    "name": "石津川",
+    "set": "less",
+    "external_id": "kansai_local_南CO",
+    "voltage": "77/22",
+    "from": 80,
+    "to": 75.0,
+    "delta": -5.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-af",
+    "name": "西播",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＦ",
+    "voltage": "275/77",
+    "from": 58,
+    "to": 54.0,
+    "delta": -4.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-ba",
+    "name": "西京都",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＡ",
+    "voltage": "275/77",
+    "from": 385,
+    "to": 381.0,
+    "delta": -4.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-l-2",
+    "name": "猪名川",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｌ",
+    "voltage": "500/154",
+    "from": 946,
+    "to": 942.0,
+    "delta": -4.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ai-7",
+    "name": "幡川",
+    "set": "less",
+    "external_id": "kansai_local_和AI",
+    "voltage": "77/6.6",
+    "from": 14,
+    "to": 10.0,
+    "delta": -4.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-al-3",
+    "name": "阿倍野",
+    "set": "less",
+    "external_id": "kansai_local_南AL",
+    "voltage": "77/22",
+    "from": 27,
+    "to": 23.0,
+    "delta": -4.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-as-7",
+    "name": "由良",
+    "set": "less",
+    "external_id": "kansai_local_和AS",
+    "voltage": "33/6.6",
+    "from": 7,
+    "to": 3.0,
+    "delta": -4.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bj-11",
+    "name": "太地",
+    "set": "less",
+    "external_id": "kansai_local_和BJ",
+    "voltage": "77/6.6",
+    "from": 9,
+    "to": 5.0,
+    "delta": -4.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-dh-2",
+    "name": "北野田",
+    "set": "less",
+    "external_id": "kansai_local_南DH",
+    "voltage": "77/6.6",
+    "from": 17,
+    "to": 13.0,
+    "delta": -4.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ef-4",
+    "name": "滝谷",
+    "set": "less",
+    "external_id": "kansai_local_南EF",
+    "voltage": "77/22",
+    "from": 56,
+    "to": 52.0,
+    "delta": -4.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ey-2",
+    "name": "水間",
+    "set": "less",
+    "external_id": "kansai_local_南EY",
+    "voltage": "77/6.6",
+    "from": 15,
+    "to": 11.0,
+    "delta": -4.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-l-10",
+    "name": "桃山",
+    "set": "less",
+    "external_id": "kansai_local_和L",
+    "voltage": "77/6.6",
+    "from": 5,
+    "to": 1.0,
+    "delta": -4.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-kikan-ap",
+    "name": "神戸",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＰ",
+    "voltage": "275/77",
+    "from": 738,
+    "to": 735.0,
+    "delta": -3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-az-3",
+    "name": "敷津",
+    "set": "less",
+    "external_id": "kansai_local_南AZ",
+    "voltage": "77/22",
+    "from": 57,
+    "to": 54.0,
+    "delta": -3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-bd-7",
+    "name": "大砂後",
+    "set": "less",
+    "external_id": "kansai_local_滋BD",
+    "voltage": "77/6.6",
+    "from": 7,
+    "to": 4.0,
+    "delta": -3.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ca-9",
+    "name": "志方",
+    "set": "less",
+    "external_id": "kansai_local_姫CA",
+    "voltage": "77/6.6",
+    "from": 3,
+    "to": 0.0,
+    "delta": -3.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ch-4",
+    "name": "松原",
+    "set": "less",
+    "external_id": "kansai_local_南CH",
+    "voltage": "77/22",
+    "from": 56,
+    "to": 53.0,
+    "delta": -3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-cp-3",
+    "name": "道明寺",
+    "set": "less",
+    "external_id": "kansai_local_南CP",
+    "voltage": "77/22",
+    "from": 56,
+    "to": 53.0,
+    "delta": -3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ds-3",
+    "name": "新狭山",
+    "set": "less",
+    "external_id": "kansai_local_南DS",
+    "voltage": "77/22",
+    "from": 57,
+    "to": 54.0,
+    "delta": -3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-dt-4",
+    "name": "忠岡",
+    "set": "less",
+    "external_id": "kansai_local_南DT",
+    "voltage": "77/22",
+    "from": 57,
+    "to": 54.0,
+    "delta": -3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-o-3",
+    "name": "意岐部",
+    "set": "less",
+    "external_id": "kansai_local_南O",
+    "voltage": "77/22",
+    "from": 70,
+    "to": 67.0,
+    "delta": -3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-s-3",
+    "name": "湊町",
+    "set": "less",
+    "external_id": "kansai_local_南S",
+    "voltage": "77/22",
+    "from": 55,
+    "to": 52.0,
+    "delta": -3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-x-3",
+    "name": "下寺町",
+    "set": "less",
+    "external_id": "kansai_local_南X",
+    "voltage": "77/22",
+    "from": 85,
+    "to": 82.0,
+    "delta": -3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-ay",
+    "name": "湖東",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＹ",
+    "voltage": "275/77",
+    "from": 228,
+    "to": 226.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bi",
+    "name": "枚方",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＩ",
+    "voltage": "275/77",
+    "from": 420,
+    "to": 418.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-cc",
+    "name": "酉島",
+    "set": "more",
+    "external_id": "kansai_kikan_ＣＣ",
+    "voltage": "154/77",
+    "from": 62,
+    "to": 60.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-dd",
+    "name": "八尾",
+    "set": "more",
+    "external_id": "kansai_kikan_ＤＤ",
+    "voltage": "154/77",
+    "from": 531,
+    "to": 529.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-j-2",
+    "name": "能勢",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｊ",
+    "voltage": "500/275",
+    "from": 1817,
+    "to": 1815.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-aa-7",
+    "name": "比良",
+    "set": "less",
+    "external_id": "kansai_local_滋AA",
+    "voltage": "77/6.6",
+    "from": 7,
+    "to": 5.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ab-3",
+    "name": "岩井",
+    "set": "less",
+    "external_id": "kansai_local_京AB",
+    "voltage": "77/6.6",
+    "from": 15,
+    "to": 13.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ae-5",
+    "name": "榛原",
+    "set": "less",
+    "external_id": "kansai_local_奈ＡＥ",
+    "voltage": "77/6.6",
+    "from": 6,
+    "to": 4.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ag-11",
+    "name": "北条",
+    "set": "less",
+    "external_id": "kansai_local_姫AG",
+    "voltage": "77/6.6",
+    "from": 4,
+    "to": 2.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ag-7",
+    "name": "上牧町",
+    "set": "less",
+    "external_id": "kansai_local_奈ＡＧ",
+    "voltage": "77/6.6",
+    "from": 17,
+    "to": 15.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ai-4",
+    "name": "市場",
+    "set": "less",
+    "external_id": "kansai_local_奈ＡＩ",
+    "voltage": "77/6.6",
+    "from": 18,
+    "to": 16.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-al-4",
+    "name": "八木",
+    "set": "less",
+    "external_id": "kansai_local_京AL",
+    "voltage": "77/6.6",
+    "from": 6,
+    "to": 4.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-al-7",
+    "name": "西橿原",
+    "set": "less",
+    "external_id": "kansai_local_奈AL",
+    "voltage": "77/6.6",
+    "from": 19,
+    "to": 17.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-an-6",
+    "name": "結崎",
+    "set": "less",
+    "external_id": "kansai_local_奈AN",
+    "voltage": "77/6.6",
+    "from": 14,
+    "to": 12.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-an-8",
+    "name": "下津",
+    "set": "less",
+    "external_id": "kansai_local_和AN",
+    "voltage": "77/6.6",
+    "from": 5,
+    "to": 3.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ao-3",
+    "name": "巽",
+    "set": "less",
+    "external_id": "kansai_local_南AO",
+    "voltage": "77/22",
+    "from": 56,
+    "to": 54.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ap-6",
+    "name": "田原本",
+    "set": "less",
+    "external_id": "kansai_local_奈AP",
+    "voltage": "77/6.6",
+    "from": 18,
+    "to": 16.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-aq-5",
+    "name": "千代",
+    "set": "less",
+    "external_id": "kansai_local_奈AQ",
+    "voltage": "77/6.6",
+    "from": 16,
+    "to": 14.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-aq-8",
+    "name": "湯浅",
+    "set": "less",
+    "external_id": "kansai_local_和AQ",
+    "voltage": "77/6.6",
+    "from": 7,
+    "to": 5.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-aq-9",
+    "name": "那波",
+    "set": "less",
+    "external_id": "kansai_local_姫AQ",
+    "voltage": "77/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-au-8",
+    "name": "島",
+    "set": "less",
+    "external_id": "kansai_local_和AU",
+    "voltage": "77/6.6",
+    "from": 13,
+    "to": 11.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-aw-5",
+    "name": "御所",
+    "set": "less",
+    "external_id": "kansai_local_奈AW",
+    "voltage": "77/6.6",
+    "from": 15,
+    "to": 13.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-aw-6",
+    "name": "葉山東",
+    "set": "less",
+    "external_id": "kansai_local_滋AW",
+    "voltage": "77/6.6",
+    "from": 16,
+    "to": 14.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ay-4",
+    "name": "南港",
+    "set": "less",
+    "external_id": "kansai_local_南AY",
+    "voltage": "77/22",
+    "from": 57,
+    "to": 55.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ba-10",
+    "name": "志染",
+    "set": "less",
+    "external_id": "kansai_local_姫BA",
+    "voltage": "77/22",
+    "from": 6,
+    "to": 4.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-be-8",
+    "name": "湯崎",
+    "set": "less",
+    "external_id": "kansai_local_和BE",
+    "voltage": "77/6.6",
+    "from": 17,
+    "to": 15.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bg-6",
+    "name": "志津",
+    "set": "less",
+    "external_id": "kansai_local_滋BG",
+    "voltage": "77/6.6",
+    "from": 13,
+    "to": 11.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bh-7",
+    "name": "膳所",
+    "set": "less",
+    "external_id": "kansai_local_滋BH",
+    "voltage": "77/6.6",
+    "from": 19,
+    "to": 17.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bh-9",
+    "name": "串本",
+    "set": "less",
+    "external_id": "kansai_local_和BH",
+    "voltage": "77/6.6",
+    "from": 16,
+    "to": 14.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bm-9",
+    "name": "新宮",
+    "set": "less",
+    "external_id": "kansai_local_和BM",
+    "voltage": "77/33",
+    "from": 27,
+    "to": 25.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-bn-10",
+    "name": "宮井",
+    "set": "less",
+    "external_id": "kansai_local_和BN",
+    "voltage": "33/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-c-7",
+    "name": "高野口",
+    "set": "less",
+    "external_id": "kansai_local_和C",
+    "voltage": "77/6.6",
+    "from": 7,
+    "to": 5.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-cb-3",
+    "name": "吉祥院",
+    "set": "less",
+    "external_id": "kansai_local_京CB",
+    "voltage": "77/6.6",
+    "from": 19,
+    "to": 17.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-cd-7",
+    "name": "途中谷",
+    "set": "less",
+    "external_id": "kansai_local_滋CD",
+    "voltage": "33/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-cj-9",
+    "name": "浜の宮",
+    "set": "less",
+    "external_id": "kansai_local_姫CJ",
+    "voltage": "77/6.6",
+    "from": 19,
+    "to": 17.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-cl-10",
+    "name": "稲美",
+    "set": "less",
+    "external_id": "kansai_local_姫CL",
+    "voltage": "77/6.6",
+    "from": 8,
+    "to": 6.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-cz-4",
+    "name": "井吹",
+    "set": "less",
+    "external_id": "kansai_local_神CZ",
+    "voltage": "77/6.6",
+    "from": 14,
+    "to": 12.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-d-4",
+    "name": "黒井",
+    "set": "less",
+    "external_id": "kansai_local_神D",
+    "voltage": "77/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-d-9",
+    "name": "妙寺",
+    "set": "less",
+    "external_id": "kansai_local_和D",
+    "voltage": "77/6.6",
+    "from": 7,
+    "to": 5.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-da-3",
+    "name": "市辺",
+    "set": "less",
+    "external_id": "kansai_local_京DA",
+    "voltage": "77/6.6",
+    "from": 9,
+    "to": 7.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-df-4",
+    "name": "大住",
+    "set": "less",
+    "external_id": "kansai_local_京DF",
+    "voltage": "77/6.6",
+    "from": 18,
+    "to": 16.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-dj-2",
+    "name": "平尾",
+    "set": "less",
+    "external_id": "kansai_local_南DJ",
+    "voltage": "77/6.6",
+    "from": 18,
+    "to": 16.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-dm-3",
+    "name": "祝園",
+    "set": "less",
+    "external_id": "kansai_local_京DM",
+    "voltage": "77/6.6",
+    "from": 17,
+    "to": 15.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-dn-4",
+    "name": "小山",
+    "set": "less",
+    "external_id": "kansai_local_神DN",
+    "voltage": "77/6.6",
+    "from": 14,
+    "to": 12.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-dt-6",
+    "name": "土山",
+    "set": "less",
+    "external_id": "kansai_local_神DT",
+    "voltage": "77/6.6",
+    "from": 12,
+    "to": 10.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ew-3",
+    "name": "りんくうタウン",
+    "set": "less",
+    "external_id": "kansai_local_南EW",
+    "voltage": "77/22",
+    "from": 60,
+    "to": 58.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-fi-5",
+    "name": "勝雄",
+    "set": "less",
+    "external_id": "kansai_local_姫FI",
+    "voltage": "22/6.6",
+    "from": 2,
+    "to": 0.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-i-4",
+    "name": "道頓堀",
+    "set": "less",
+    "external_id": "kansai_local_南I",
+    "voltage": "77/22",
+    "from": 56,
+    "to": 54.0,
+    "delta": -2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-o-10",
+    "name": "松江",
+    "set": "less",
+    "external_id": "kansai_local_和O",
+    "voltage": "77/6.6",
+    "from": 12,
+    "to": 10.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-t-7",
+    "name": "米原",
+    "set": "less",
+    "external_id": "kansai_local_滋T",
+    "voltage": "77/6.6",
+    "from": 7,
+    "to": 5.0,
+    "delta": -2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-kikan-ao",
+    "name": "西神戸",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＯ",
+    "voltage": "275/77",
+    "from": 800,
+    "to": 799.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-cw",
+    "name": "堺港",
+    "set": "more",
+    "external_id": "kansai_kikan_ＣＷ",
+    "voltage": "154/77",
+    "from": 738,
+    "to": 737.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-dc",
+    "name": "矢田",
+    "set": "more",
+    "external_id": "kansai_kikan_ＤＣ",
+    "voltage": "154/77",
+    "from": 317,
+    "to": 316.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-dm",
+    "name": "堺浜",
+    "set": "more",
+    "external_id": "kansai_kikan_ＤＭ",
+    "voltage": "154/77",
+    "from": 347,
+    "to": 346.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-ea",
+    "name": "西淡",
+    "set": "more",
+    "external_id": "kansai_kikan_ＥＡ",
+    "voltage": "187/77",
+    "from": 76,
+    "to": 75.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-a-7",
+    "name": "上狛",
+    "set": "less",
+    "external_id": "kansai_local_奈A",
+    "voltage": "77/33",
+    "from": 16,
+    "to": 15.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-a-8",
+    "name": "紀見",
+    "set": "less",
+    "external_id": "kansai_local_和A",
+    "voltage": "77/6.6",
+    "from": 7,
+    "to": 6.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ae-7",
+    "name": "真野",
+    "set": "less",
+    "external_id": "kansai_local_滋AE",
+    "voltage": "77/6.6",
+    "from": 16,
+    "to": 15.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-aq-6",
+    "name": "祇王",
+    "set": "less",
+    "external_id": "kansai_local_滋AQ",
+    "voltage": "77/6.6",
+    "from": 18,
+    "to": 17.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-av-8",
+    "name": "桜谷",
+    "set": "less",
+    "external_id": "kansai_local_滋AV",
+    "voltage": "77/22",
+    "from": 20,
+    "to": 19.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ay-3",
+    "name": "南港",
+    "set": "less",
+    "external_id": "kansai_local_南AY",
+    "voltage": "77/6.6",
+    "from": 18,
+    "to": 17.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ba-3",
+    "name": "平野",
+    "set": "less",
+    "external_id": "kansai_local_南BA",
+    "voltage": "77/22",
+    "from": 42,
+    "to": 41.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ba-7",
+    "name": "矢橋",
+    "set": "less",
+    "external_id": "kansai_local_滋BA",
+    "voltage": "77/6.6",
+    "from": 17,
+    "to": 16.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bc-7",
+    "name": "日野",
+    "set": "less",
+    "external_id": "kansai_local_滋BC",
+    "voltage": "77/6.6",
+    "from": 7,
+    "to": 6.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bk-7",
+    "name": "柏木",
+    "set": "less",
+    "external_id": "kansai_local_滋BK",
+    "voltage": "77/6.6",
+    "from": 10,
+    "to": 9.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bn-8",
+    "name": "土山町",
+    "set": "less",
+    "external_id": "kansai_local_滋BN",
+    "voltage": "77/6.6",
+    "from": 1,
+    "to": 0.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bo",
+    "name": "交野",
+    "set": "less",
+    "external_id": "kansai_local_北BO",
+    "voltage": "77/6.6",
+    "from": 17,
+    "to": 16.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bq-8",
+    "name": "大原",
+    "set": "less",
+    "external_id": "kansai_local_滋BQ",
+    "voltage": "77/6.6",
+    "from": 1,
+    "to": 0.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bt-3",
+    "name": "松屋",
+    "set": "less",
+    "external_id": "kansai_local_南BT",
+    "voltage": "77/22",
+    "from": 80,
+    "to": 79.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-cc-9",
+    "name": "国包",
+    "set": "less",
+    "external_id": "kansai_local_姫CC",
+    "voltage": "77/6.6",
+    "from": 1,
+    "to": 0.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ct-3",
+    "name": "金田",
+    "set": "less",
+    "external_id": "kansai_local_南CT",
+    "voltage": "77/22",
+    "from": 28,
+    "to": 27.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-cu-3",
+    "name": "大塚",
+    "set": "less",
+    "external_id": "kansai_local_京CU",
+    "voltage": "77/6.6",
+    "from": 19,
+    "to": 18.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-d-8",
+    "name": "荒川",
+    "set": "less",
+    "external_id": "kansai_local_滋D",
+    "voltage": "33/6.6",
+    "from": 5,
+    "to": 4.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-df-3",
+    "name": "福泉",
+    "set": "less",
+    "external_id": "kansai_local_南DF",
+    "voltage": "77/22",
+    "from": 54,
+    "to": 53.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-dk-3",
+    "name": "喜志",
+    "set": "less",
+    "external_id": "kansai_local_南DK",
+    "voltage": "77/22",
+    "from": 56,
+    "to": 55.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-du-6",
+    "name": "二見島",
+    "set": "less",
+    "external_id": "kansai_local_神DU",
+    "voltage": "77/22",
+    "from": 28,
+    "to": 27.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-dv-3",
+    "name": "黒鳥",
+    "set": "less",
+    "external_id": "kansai_local_南DV",
+    "voltage": "77/6.6",
+    "from": 9,
+    "to": 8.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ef-2",
+    "name": "舞洲",
+    "set": "less",
+    "external_id": "kansai_local_北EF",
+    "voltage": "77/22",
+    "from": 39,
+    "to": 38.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-eh-3",
+    "name": "岸和田",
+    "set": "less",
+    "external_id": "kansai_local_南EH",
+    "voltage": "77/22",
+    "from": 56,
+    "to": 55.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ej-2",
+    "name": "栂",
+    "set": "less",
+    "external_id": "kansai_local_南EJ",
+    "voltage": "77/6.6",
+    "from": 18,
+    "to": 17.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-eo-2",
+    "name": "土生",
+    "set": "less",
+    "external_id": "kansai_local_南EO",
+    "voltage": "77/6.6",
+    "from": 8,
+    "to": 7.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ev-3",
+    "name": "佐野",
+    "set": "less",
+    "external_id": "kansai_local_南EV",
+    "voltage": "77/22",
+    "from": 85,
+    "to": 84.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ga",
+    "name": "尊延寺",
+    "set": "less",
+    "external_id": "kansai_local_北GA",
+    "voltage": "22/6.6",
+    "from": 4,
+    "to": 3.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-gc",
+    "name": "生駒",
+    "set": "less",
+    "external_id": "kansai_local_北GC",
+    "voltage": "22/6.6",
+    "from": 5,
+    "to": 4.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-m-6",
+    "name": "今津",
+    "set": "less",
+    "external_id": "kansai_local_滋M",
+    "voltage": "77/6.6",
+    "from": 13,
+    "to": 12.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-m-7",
+    "name": "今津",
+    "set": "less",
+    "external_id": "kansai_local_滋M",
+    "voltage": "77/22",
+    "from": 5,
+    "to": 4.0,
+    "delta": -1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-n-9",
+    "name": "加太",
+    "set": "less",
+    "external_id": "kansai_local_和N",
+    "voltage": "77/6.6",
+    "from": 15,
+    "to": 14.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-o-2",
+    "name": "意岐部",
+    "set": "less",
+    "external_id": "kansai_local_南O",
+    "voltage": "77/6.6",
+    "from": 9,
+    "to": 8.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-p-5",
+    "name": "藤原台",
+    "set": "less",
+    "external_id": "kansai_local_神P",
+    "voltage": "77/6.6",
+    "from": 8,
+    "to": 7.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-y-8",
+    "name": "大野",
+    "set": "less",
+    "external_id": "kansai_local_姫Y",
+    "voltage": "77/6.6",
+    "from": 1,
+    "to": 0.0,
+    "delta": -1.0,
+    "how": "欄の値（直読）"
+   }
+  ],
+  "all_increases": [
+   {
+    "slug": "ksi-kikan-g-2",
+    "name": "南京都",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｇ",
+    "voltage": "500/275",
+    "from": 1136,
+    "to": 1312.0,
+    "delta": 176.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-q",
+    "name": "御坊",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｑ",
+    "voltage": "500/77",
+    "from": -393,
+    "to": -247.0,
+    "delta": 146.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-p",
+    "name": "信貴",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｐ",
+    "voltage": "500/154",
+    "from": 259,
+    "to": 385.0,
+    "delta": 126.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-k-2",
+    "name": "金剛",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｋ",
+    "voltage": "500/275",
+    "from": 340,
+    "to": 396.0,
+    "delta": 56.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bs",
+    "name": "海南港",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＳ",
+    "voltage": "275/77",
+    "from": -16,
+    "to": 15.0,
+    "delta": 31.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-i",
+    "name": "紀の川",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｉ",
+    "voltage": "500/275",
+    "from": 2580,
+    "to": 2609.0,
+    "delta": 29.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-e-3",
+    "name": "嶺南",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｅ",
+    "voltage": "500/275",
+    "from": 447,
+    "to": 462.0,
+    "delta": 15.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-dh-4",
+    "name": "三山木",
+    "set": "less",
+    "external_id": "kansai_local_京DH",
+    "voltage": "77/22",
+    "from": 36,
+    "to": 51.0,
+    "delta": 15.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bg",
+    "name": "栗東",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＧ",
+    "voltage": "275/77",
+    "from": 827,
+    "to": 836.0,
+    "delta": 9.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-ax",
+    "name": "嶺南",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＸ",
+    "voltage": "275/77",
+    "from": 3,
+    "to": 7.0,
+    "delta": 4.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bm",
+    "name": "南河内",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＭ",
+    "voltage": "275/77",
+    "from": 843,
+    "to": 847.0,
+    "delta": 4.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-cv",
+    "name": "東意岐部",
+    "set": "more",
+    "external_id": "kansai_kikan_ＣＶ",
+    "voltage": "154/77",
+    "from": 330,
+    "to": 334.0,
+    "delta": 4.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-r",
+    "name": "奥多々良木",
+    "set": "more",
+    "external_id": "kansai_kikan_Ｒ",
+    "voltage": "500/77",
+    "from": 125,
+    "to": 129.0,
+    "delta": 4.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-cd-9",
+    "name": "石守",
+    "set": "less",
+    "external_id": "kansai_local_姫CD",
+    "voltage": "77/6.6",
+    "from": 4,
+    "to": 8.0,
+    "delta": 4.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-g-3",
+    "name": "高浜",
+    "set": "less",
+    "external_id": "kansai_local_京Ｇ",
+    "voltage": "77/6.6",
+    "from": 12,
+    "to": 16.0,
+    "delta": 4.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-kikan-a",
+    "name": "西播",
+    "set": "more",
+    "external_id": "kansai_kikan_Ａ",
+    "voltage": "500/275",
+    "from": 2267,
+    "to": 2270.0,
+    "delta": 3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-cm",
+    "name": "横大路",
+    "set": "more",
+    "external_id": "kansai_kikan_ＣＭ",
+    "voltage": "154/77",
+    "from": 806,
+    "to": 809.0,
+    "delta": 3.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-k-4",
+    "name": "沢谷",
+    "set": "less",
+    "external_id": "kansai_local_神K",
+    "voltage": "77/6.6",
+    "from": 10,
+    "to": 13.0,
+    "delta": 3.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-kikan-al0001",
+    "name": "高砂",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＬ-1",
+    "voltage": "275/77",
+    "from": 420,
+    "to": 422.0,
+    "delta": 2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bb",
+    "name": "北大阪",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＢ",
+    "voltage": "275/77",
+    "from": 510,
+    "to": 512.0,
+    "delta": 2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-df",
+    "name": "長曽根",
+    "set": "more",
+    "external_id": "kansai_kikan_ＤＦ",
+    "voltage": "154/77",
+    "from": 551,
+    "to": 553.0,
+    "delta": 2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-af-4",
+    "name": "和知",
+    "set": "less",
+    "external_id": "kansai_local_京ＡＦ",
+    "voltage": "77/33",
+    "from": 5,
+    "to": 7.0,
+    "delta": 2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-ag-8",
+    "name": "勝堂",
+    "set": "less",
+    "external_id": "kansai_local_滋AG",
+    "voltage": "77/6.6",
+    "from": 0,
+    "to": 2.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-as-5",
+    "name": "香久山",
+    "set": "less",
+    "external_id": "kansai_local_奈AS",
+    "voltage": "77/6.6",
+    "from": 16,
+    "to": 18.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-bo-7",
+    "name": "深川",
+    "set": "less",
+    "external_id": "kansai_local_滋BO",
+    "voltage": "77/6.6",
+    "from": 0,
+    "to": 2.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-c-3",
+    "name": "春日部",
+    "set": "less",
+    "external_id": "kansai_local_神C",
+    "voltage": "33/6.6",
+    "from": 0,
+    "to": 2.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ce-7",
+    "name": "福田",
+    "set": "less",
+    "external_id": "kansai_local_和CE",
+    "voltage": "33/6.6",
+    "from": 0,
+    "to": 2.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-dh-8",
+    "name": "神鍋",
+    "set": "less",
+    "external_id": "kansai_local_姫DH",
+    "voltage": "33/6.6",
+    "from": 0,
+    "to": 2.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-dz-4",
+    "name": "五色",
+    "set": "less",
+    "external_id": "kansai_local_神DZ",
+    "voltage": "77/6.6",
+    "from": 3,
+    "to": 5.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-et-4",
+    "name": "美山",
+    "set": "less",
+    "external_id": "kansai_local_京ET",
+    "voltage": "33/6.6",
+    "from": 1,
+    "to": 3.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-f-2",
+    "name": "本郷",
+    "set": "less",
+    "external_id": "kansai_local_京Ｆ",
+    "voltage": "33/6.6",
+    "from": 3,
+    "to": 5.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-f-3",
+    "name": "柏原",
+    "set": "less",
+    "external_id": "kansai_local_神F",
+    "voltage": "77/6.6",
+    "from": 6,
+    "to": 8.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-ff-2",
+    "name": "尾崎",
+    "set": "less",
+    "external_id": "kansai_local_南FF",
+    "voltage": "77/6.6",
+    "from": 12,
+    "to": 14.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-i-12",
+    "name": "国府",
+    "set": "less",
+    "external_id": "kansai_local_姫I",
+    "voltage": "77/33",
+    "from": 13,
+    "to": 15.0,
+    "delta": 2.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-j-5",
+    "name": "広野",
+    "set": "less",
+    "external_id": "kansai_local_神J",
+    "voltage": "77/6.6",
+    "from": 4,
+    "to": 6.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-l-8",
+    "name": "浅井",
+    "set": "less",
+    "external_id": "kansai_local_滋L",
+    "voltage": "77/6.6",
+    "from": 4,
+    "to": 6.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-r-10",
+    "name": "生野",
+    "set": "less",
+    "external_id": "kansai_local_姫R",
+    "voltage": "77/6.6",
+    "from": 3,
+    "to": 5.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-t-4",
+    "name": "平",
+    "set": "less",
+    "external_id": "kansai_local_京Ｔ",
+    "voltage": "33/6.6",
+    "from": 3,
+    "to": 5.0,
+    "delta": 2.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-kikan-aa",
+    "name": "伊丹",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＡ",
+    "voltage": "275/154",
+    "from": 769,
+    "to": 770.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-av",
+    "name": "下穂積",
+    "set": "more",
+    "external_id": "kansai_kikan_ＡＶ",
+    "voltage": "275/77",
+    "from": 391,
+    "to": 392.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bj",
+    "name": "新寝屋川",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＪ",
+    "voltage": "275/77",
+    "from": 372,
+    "to": 373.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-bl",
+    "name": "東大阪",
+    "set": "more",
+    "external_id": "kansai_kikan_ＢＬ",
+    "voltage": "275/77",
+    "from": 566,
+    "to": 567.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-cb",
+    "name": "南大浜",
+    "set": "more",
+    "external_id": "kansai_kikan_ＣＢ",
+    "voltage": "154/77",
+    "from": 556,
+    "to": 557.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-kikan-cn",
+    "name": "新八幡",
+    "set": "more",
+    "external_id": "kansai_kikan_ＣＮ",
+    "voltage": "154/77",
+    "from": 348,
+    "to": 349.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-aq-7",
+    "name": "祇王",
+    "set": "less",
+    "external_id": "kansai_local_滋AQ",
+    "voltage": "77/22",
+    "from": 25,
+    "to": 26.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-at-12",
+    "name": "三木",
+    "set": "less",
+    "external_id": "kansai_local_姫AT",
+    "voltage": "77/6.6",
+    "from": 0,
+    "to": 1.0,
+    "delta": 1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-at-2",
+    "name": "津田",
+    "set": "less",
+    "external_id": "kansai_local_北AT",
+    "voltage": "77/22",
+    "from": 55,
+    "to": 56.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-bo-9",
+    "name": "城東",
+    "set": "less",
+    "external_id": "kansai_local_姫BO",
+    "voltage": "77/6.6",
+    "from": 11,
+    "to": 12.0,
+    "delta": 1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-cx-4",
+    "name": "高塚山",
+    "set": "less",
+    "external_id": "kansai_local_神CX",
+    "voltage": "77/6.6",
+    "from": 18,
+    "to": 19.0,
+    "delta": 1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-do-4",
+    "name": "岩岡",
+    "set": "less",
+    "external_id": "kansai_local_神DO",
+    "voltage": "77/6.6",
+    "from": 0,
+    "to": 1.0,
+    "delta": 1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-eg-4",
+    "name": "唐国",
+    "set": "less",
+    "external_id": "kansai_local_南EG",
+    "voltage": "77/22",
+    "from": 54,
+    "to": 55.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-f-4",
+    "name": "柏原",
+    "set": "less",
+    "external_id": "kansai_local_神F",
+    "voltage": "77/33",
+    "from": 12,
+    "to": 13.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-n-6",
+    "name": "三田",
+    "set": "less",
+    "external_id": "kansai_local_神N",
+    "voltage": "77/22",
+    "from": 44,
+    "to": 45.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   },
+   {
+    "slug": "ksi-local-s-10",
+    "name": "加美町",
+    "set": "less",
+    "external_id": "kansai_local_姫S",
+    "voltage": "77/6.6",
+    "from": 9,
+    "to": 10.0,
+    "delta": 1.0,
+    "how": "欄の値（直読）"
+   },
+   {
+    "slug": "ksi-local-x-9",
+    "name": "正法寺",
+    "set": "less",
+    "external_id": "kansai_local_滋X",
+    "voltage": "77/22",
+    "from": 28,
+    "to": 29.0,
+    "delta": 1.0,
+    "how": "運用容量−|予想潮流|（算出）"
+   }
+  ]
+ },
+ "hyphens": {
+  "more": {
+   "N-1電制適用可否": {
+    "U+FF0D「－」": 1
+   },
+   "平常時出力制御の可能性": {
+    "U+30FC「ー」": 68,
+    "U+FF0D「－」": 1
+   }
+  },
+  "less": {
+   "N-1電制適用可否": {},
+   "平常時出力制御の可能性": {
+    "U+30FC「ー」": 860,
+    "U+FF0D「－」": 15
+   }
+  }
+ },
+ "n1_undetermined": {
+  "count": 3,
+  "entries": [
+   {
+    "operator": "関西電力送配電",
+    "area": "関西",
+    "slug": "ksi-kikan-bu",
+    "external_id": "kansai_kikan_ＢＵ",
+    "name": "変電所",
+    "prefecture": null,
+    "stored_n1_eligible": false,
+    "csv_value": "－",
+    "source": "154kv_more_trans.csv（2026-11-02 更新）"
+   },
+   {
+    "operator": "関西電力送配電",
+    "area": "関西",
+    "slug": "ksi-local-ec-6",
+    "external_id": "kansai_local_滋ＥC",
+    "name": "赤子山",
+    "prefecture": "関西ローカル系",
+    "stored_n1_eligible": false,
+    "csv_value": "",
+    "source": "154kv_less_trans.csv（2026-11-02 更新）"
+   },
+   {
+    "operator": "関西電力送配電",
+    "area": "関西",
+    "slug": "ksi-local-d-7",
+    "external_id": "kansai_local_滋ED",
+    "name": "高時川",
+    "prefecture": "関西ローカル系",
+    "stored_n1_eligible": false,
+    "csv_value": "",
+    "source": "154kv_less_trans.csv（2026-11-02 更新）"
+   }
+  ],
+  "file": "C:/Users/kenji/Documents/GitHub/bess-net/scripts/experimental/_common/n1_undetermined_kansai_2611.json",
+  "new_records_n1_undetermined": []
+ },
+ "oc_undetermined": {
+  "count": 17,
+  "entries": [
+   {
+    "slug": "ksi-kikan-ae",
+    "name": "新愛本",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-kikan-bp",
+    "name": "泉北",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-kikan-bs",
+    "name": "海南港",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-kikan-cw",
+    "name": "堺港",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-kikan-j",
+    "name": "角川",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-kikan-k",
+    "name": "打保",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-local-da",
+    "name": "岡町",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-local-b-4",
+    "name": "市島",
+    "stored": "有り",
+    "csv_value": "－"
+   },
+   {
+    "slug": "ksi-local-e-5",
+    "name": "氷上",
+    "stored": "有り",
+    "csv_value": "－"
+   },
+   {
+    "slug": "ksi-local-f-3",
+    "name": "柏原",
+    "stored": "有り",
+    "csv_value": "－"
+   },
+   {
+    "slug": "ksi-local-f-4",
+    "name": "柏原",
+    "stored": "有り",
+    "csv_value": "－"
+   },
+   {
+    "slug": "ksi-local-aw-5",
+    "name": "御所",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-local-ax-6",
+    "name": "越智岡",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-local-ay-8",
+    "name": "池ノ内",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-local-ay-9",
+    "name": "池ノ内",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-local-az-6",
+    "name": "阿田峯",
+    "stored": "有り",
+    "csv_value": "ー"
+   },
+   {
+    "slug": "ksi-local-az-7",
+    "name": "阿田峯",
+    "stored": "有り",
+    "csv_value": "ー"
+   }
+  ]
+ },
+ "n1_changed": {
+  "count": 0,
+  "entries": []
+ },
+ "n1_status_json_kansai": {
+  "ksi-kikan-bu": {
+   "area": "関西",
+   "operator": "関西電力送配電",
+   "external_id": "kansai_kikan_ＢＵ",
+   "name": "変電所",
+   "reason": "undetermined",
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）・新設時に false で投入",
+   "as_of": "2026-08-17T00:00:00.000Z",
+   "raw": "－"
+  },
+  "ksi-local-d-7": {
+   "area": "関西",
+   "operator": "関西電力送配電",
+   "external_id": "kansai_local_滋ED",
+   "name": "高時川",
+   "reason": "blank",
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）",
+   "as_of": "2026-08-17T00:00:00.000Z",
+   "raw": ""
+  },
+  "ksi-local-ec-6": {
+   "area": "関西",
+   "operator": "関西電力送配電",
+   "external_id": "kansai_local_滋ＥC",
+   "name": "赤子山",
+   "reason": "blank",
+   "source": "154kv_{more,less}_trans.csv（2026-08-17公表）",
+   "as_of": "2026-08-17T00:00:00.000Z",
+   "raw": ""
+  }
+ },
+ "renamed_same_no": [
+  {
+   "slug": "ksi-kikan-m",
+   "external_id": "kansai_kikan_Ｍ",
+   "old_name": "西京都",
+   "new_name": "西京都（154）",
+   "voltage": "500/154",
+   "old_name_in_new_csv": true
+  },
+  {
+   "slug": "ksi-local-ef-8",
+   "external_id": "kansai_local_神EF",
+   "old_name": "有馬6",
+   "new_name": "有馬",
+   "voltage": "77/6.6",
+   "old_name_in_new_csv": false
+  },
+  {
+   "slug": "ksi-local-ef-9",
+   "external_id": "kansai_local_神EF",
+   "old_name": "有馬22",
+   "new_name": "有馬",
+   "voltage": "77/22",
+   "old_name_in_new_csv": false
+  }
+ ],
+ "renamed_unmatched": [],
+ "renumbered": [
+  {
+   "slug": "ksi-local-gl-2",
+   "name": "新大岩",
+   "old_external_id": "kansai_local_北GL",
+   "new_external_id": "kansai_local_北GO",
+   "voltage": "77/6.6",
+   "capacity_total_mw": 52.0,
+   "units": 3,
+   "old_units": 3,
+   "old_cap_operational_mw": 52,
+   "new_cap_operational_mw": 52.0
+  },
+  {
+   "slug": "ksi-local-gl-3",
+   "name": "新大岩",
+   "old_external_id": "kansai_local_北GL",
+   "new_external_id": "kansai_local_北GO",
+   "voltage": "77/22",
+   "capacity_total_mw": 57.0,
+   "units": 2,
+   "old_units": 2,
+   "old_cap_operational_mw": 31,
+   "new_cap_operational_mw": 31.0
+  }
+ ],
+ "voltage_face_changed": [],
+ "ambiguous_rows": [],
+ "external_id_dup_in_baseline": 268,
+ "new_records_detail": [
+  {
+   "external_id": "kansai_local_南GC",
+   "no": "南GC",
+   "name": "咲洲２",
+   "set": "less",
+   "voltage": "22/6.6",
+   "units": 1,
+   "capacity_total_mw": 5.0,
+   "cap_operational_mw": 5.0,
+   "cap_avail_mw": 5.0,
+   "same_name_in_baseline": []
+  }
+ ],
+ "disappeared_records": [
+  {
+   "slug": "ksi-local-cq-6",
+   "external_id": "kansai_local_神CQ",
+   "name": "須磨",
+   "voltage": "77/33",
+   "units": 2,
+   "capacity_total_mw": 57,
+   "cap_avail_mw": 31,
+   "same_name_in_new_csv": [
+    "神CQ 77/6.6"
+   ]
+  },
+  {
+   "slug": "ksi-local-fx",
+   "external_id": "kansai_local_北FX",
+   "name": "間谷",
+   "voltage": "22/6.6",
+   "units": 1,
+   "capacity_total_mw": 5,
+   "cap_avail_mw": 5,
+   "same_name_in_new_csv": []
+  }
+ ],
+ "diamond_rows": {
+  "more": [
+   {
+    "no": "ＢＵ",
+    "name": "変電所",
+    "note": "◇",
+    "values": {
+     "voltage_primary_kv": 275.0,
+     "voltage_secondary_kv": 154.0,
+     "units": 3,
+     "capacity_total_mw": null,
+     "cap_operational_mw": null,
+     "forecast_flow_mw": null
+    }
+   }
+  ],
+  "less": []
+ },
+ "bu": {
+  "csv_rows": [
+   {
+    "no": "ＢＵ",
+    "name": "変電所",
+    "note": "◇",
+    "voltage": "275/154",
+    "units": 3,
+    "capacity_total_mw": null,
+    "cap_operational_mw": null,
+    "forecast_flow_mw": null,
+    "n1_raw": "－",
+    "oc_raw": "ー"
+   }
+  ],
+  "baseline": {
+   "slug": "ksi-kikan-bu",
+   "name": "変電所",
+   "external_id": "kansai_kikan_ＢＵ",
+   "voltage_primary_kv": 275,
+   "voltage_secondary_kv": 154,
+   "units": 3,
+   "capacity_total_mw": null,
+   "cap_operational_mw": null,
+   "notes": null,
+   "n1_eligible": false
+  },
+  "matched": true
+ },
+ "frozen_check": [
+  {
+   "slug": "ksi-kikan-l",
+   "name": "万波",
+   "external_id": "kansai_kikan_陸Ｌ",
+   "voltage": "154/6.6",
+   "same_external_id_in_new": [],
+   "same_name_in_new": []
+  },
+  {
+   "slug": "ksi-local-ct-4",
+   "name": "美豆",
+   "external_id": "kansai_local_京CT",
+   "voltage": "77/6.6",
+   "same_external_id_in_new": [],
+   "same_name_in_new": []
+  },
+  {
+   "slug": "ksi-local-ea-4",
+   "name": "玄妙",
+   "external_id": "kansai_local_京EA",
+   "voltage": "33/6.6",
+   "same_external_id_in_new": [],
+   "same_name_in_new": []
+  },
+  {
+   "slug": "ksi-local-ga-2",
+   "name": "金剛中",
+   "external_id": "kansai_local_南GA",
+   "voltage": "22/6.6",
+   "same_external_id_in_new": [],
+   "same_name_in_new": []
+  },
+  {
+   "slug": "ksi-local-gb-2",
+   "name": "金剛南",
+   "external_id": "kansai_local_南GB",
+   "voltage": "22/6.6",
+   "same_external_id_in_new": [],
+   "same_name_in_new": []
+  }
+ ],
+ "prefecture_baseline": {
+  "（null）": 127,
+  "関西ローカル系": 1575
+ },
+ "map_only_symbols_2611": {
+  "京CT": {
+   "in_csv": [],
+   "new_records": 0,
+   "in_baseline": 0
+  },
+  "京EA": {
+   "in_csv": [],
+   "new_records": 0,
+   "in_baseline": 0
+  },
+  "北F": {
+   "in_csv": [],
+   "new_records": 0,
+   "in_baseline": 0
+  },
+  "北GO": {
+   "in_csv": [
+    "北GO 新大岩 77/6.6",
+    "北GO 新大岩 77/22"
+   ],
+   "new_records": 0,
+   "in_baseline": 0
+  },
+  "南C": {
+   "in_csv": [],
+   "new_records": 0,
+   "in_baseline": 0
+  },
+  "南GC": {
+   "in_csv": [
+    "南GC 咲洲２ 22/6.6"
+   ],
+   "new_records": 1,
+   "in_baseline": 0
+  },
+  "姫F": {
+   "in_csv": [
+    "姫F1 豊岡（新綾部） 77/6.6",
+    "姫F1 豊岡（新綾部） 77/33",
+    "姫F2 豊岡（奥多々良木） 77/6.6",
+    "姫F2 豊岡（奥多々良木） 77/33"
+   ],
+   "new_records": 0,
+   "in_baseline": 4
+  },
+  "姫FX": {
+   "in_csv": [],
+   "new_records": 0,
+   "in_baseline": 0
+  }
+ }
+}
