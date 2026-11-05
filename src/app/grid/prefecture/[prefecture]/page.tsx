@@ -29,6 +29,8 @@ const PREF_META: Record<string, PrefMeta> =
 
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import { n1StatusFromRow } from '@/lib/n1-status-label';
+// 名称非公開の 23 件は「名称非公開の変電所（事業者・No.）」で出す（小さな直し便・2026-11-05）
+import { substationShownName } from '@/lib/substation-undisclosed';
 
 // Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件の県は非表示）
 const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
@@ -171,7 +173,7 @@ export default async function PrefecturePage({ params }: PageParams) {
                 <ol className="grid-answer-top">
                   {facts.top.map((s) => (
                     <li key={s.slug}>
-                      <Link href={`/grid/${s.slug}`}>{s.name}</Link>
+                      <Link href={`/grid/${s.slug}`}>{substationShownName(s)}</Link>
                       <span className="grid-answer-meta">
                         {s.cap_avail_mw}MW{s.voltage_primary_kv != null ? `・${s.voltage_primary_kv}kV` : ''}
                       </span>
@@ -297,7 +299,7 @@ export default async function PrefecturePage({ params }: PageParams) {
               {subs.map((s) => (
                 <li key={s.slug} className="grid-search-item">
                   <Link href={`/grid/${s.slug}`} className="grid-search-link">
-                    <strong>{s.name}</strong>
+                    <strong>{substationShownName(s)}</strong>
                     <span className="grid-search-meta">
                       {s.operator}
                       {' ／ '}

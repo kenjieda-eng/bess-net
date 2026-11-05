@@ -80,13 +80,30 @@ export function getPrefectureSubstationsStatic(prefecture: string): GridListItem
 const officialNo = (externalId: string | null) => (externalId ? externalId.slice(externalId.lastIndexOf('_') + 1) : null);
 
 /**
+ * 同名の判定のキー（小さな直し便・2026-11-05）: 名前から「変電所」を外して比べる。
+ * 以前は一次の名前のまま比べていたので、東京の「東山梨」と「東山梨変電所」のような組を同名と見なせず、
+ * 名前便（2026-11-02）で「東山梨」に変電所を足すと題名が重なった（足さない側に倒していた＝NAME_WOULD_COLLIDE）。
+ * ★今ある組は東京の 4 組だけで、4 組とも裁定待ち（SAME_NAME_RULING_PENDING）なので、今は誰の題名も変わらない。
+ *   再取込でほかに組ができたら、電圧などを添えて見分ける（11/2 の小さな直し便と同じ形）。
+ */
+export const SAME_NAME_RULING_PENDING: ReadonlySet<string> = new Set([
+  // 東山梨: 500/154・3 台・2,250MW・運用 1,705MW・潮流 -1,037 がすべて同じ＝重複の候補（No. だけ違う・#111 の系列別ビュー）
+  'tpg-1713', 'tpg-1549',
+  // 関谷・谷村・北巨摩: 素の名前の方は配電用変電所の行で電圧が「—」＝電圧で分けられない（要判断）
+  'tpg-0022', 'tpg-0016', 'tpg-1610', 'tpg-1550', 'tpg-1591', 'tpg-1554',
+]);
+export function sameNameKey(s: { slug: string; name: string }): string {
+  return SAME_NAME_RULING_PENDING.has(s.slug) ? s.name : s.name.replace(/変電所/g, '');
+}
+
+/**
  * 同じエリアで同じ名前の変電所を見分ける語（slug → 語）。名前が重ならない変電所は入らない＝題名を変えない。
  * 電圧（66/22kV）を添え、組の中で電圧だけでは見分けられないものは公式の No. を、No. も同じもの（#115: 東北 7307 など）は設備容量を足す。
  */
 export function nameQualifiers(rows: GridListItem[]): Map<string, string> {
   const out = new Map<string, string>();
   const groups = new Map<string, GridListItem[]>();
-  for (const s of rows) groups.set(s.name, [...(groups.get(s.name) ?? []), s]);
+  for (const s of rows) groups.set(sameNameKey(s), [...(groups.get(sameNameKey(s)) ?? []), s]);
   for (const group of groups.values()) {
     if (group.length < 2) continue;
     const volt = (s: GridListItem) => (s.voltage_primary_kv == null ? '' : `${[s.voltage_primary_kv, s.voltage_secondary_kv].filter((v) => v != null).join('/')}kV`);
@@ -102,6 +119,13 @@ export function nameQualifiers(rows: GridListItem[]): Map<string, string> {
     }
   }
   return out;
+}
+
+let _bySlug: Map<string, GridListItem> | null = null;
+/** slug の一覧の行（凍結は入らない）。名前しか持たない参照（index.json の pref_top など）から表示名を出すのに使う */
+export function getListItemBySlug(slug: string): GridListItem | undefined {
+  _bySlug ??= new Map(Object.values(DATA.by_area).flatMap((rows) => rows.map((s) => [s.slug, s] as const)));
+  return _bySlug.get(slug);
 }
 
 let _qualifiers: Map<string, string> | null = null;

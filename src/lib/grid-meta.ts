@@ -23,6 +23,9 @@
  */
 
 import subsidiesData from '@/data/subsidies.json';
+import { isUndisclosedSubstation, undisclosedDisplayName, undisclosedReason, operatorShortName, substationShownName } from './substation-undisclosed';
+
+export { operatorShortName };
 
 const SITE_SUFFIX = '｜蓄電所ネット';
 /** エリアページの目安上限（全角）。事業者名が先頭に来るので短くできる */
@@ -90,6 +93,9 @@ export type GridFactsItem = {
   name: string;
   cap_avail_mw: number | null;
   voltage_primary_kv: number | null;
+  /** 名称非公開の表示名に使う（2026-11-05） */
+  external_id?: string | null;
+  operator?: string | null;
 };
 export type GridFacts = {
   count: number;
@@ -134,8 +140,8 @@ function buildGridDescription(subject: string, operatorText: string, published: 
   // 最大値が同着のときは 1 件だけ名指ししない（「◯◯ほか2件（各49MW）」）
   const s2b = !top ? ''
     : facts.maxCount > 1
-      ? `、空き容量が最も大きいのは${top.name}ほか${facts.maxCount - 1}件（各${top.cap_avail_mw?.toLocaleString()}MW）`
-      : `、空き容量が最も大きいのは${top.name}（${top.cap_avail_mw?.toLocaleString()}MW）`;
+      ? `、空き容量が最も大きいのは${substationShownName(top)}ほか${facts.maxCount - 1}件（各${top.cap_avail_mw?.toLocaleString()}MW）`
+      : `、空き容量が最も大きいのは${substationShownName(top)}（${top.cap_avail_mw?.toLocaleString()}MW）`;
   const cands = [`${s1}${s2a}${s2b}。${howTo}`, `${s1}${s2a}${s2b}。`, `${s1}${s2a}。`, s1];
   return cands.find((c) => c.length <= DESC_MAX) ?? s1;
 }
@@ -176,19 +182,7 @@ export function buildPrefDescription(pref: string, operators: string[], publishe
   return buildGridDescription(pref, operatorLabelMulti(operators), published, facts, '空容量の大きい順の一覧で、N-1電制・電圧も確認できます。');
 }
 
-/**
- * 変電所の詳細の題名に入れる事業者の短い名（/grid の出典欄の表記と同じ）。表に無い名前はそのまま返す。
- */
-const OPERATOR_SHORT: Record<string, string> = {
-  北海道電力ネットワーク: '北海道電力NW',
-  東北電力ネットワーク: '東北電力NW',
-  東京電力パワーグリッド: '東京電力PG',
-  中部電力パワーグリッド: '中部電力PG',
-  中国電力ネットワーク: '中国電力NW',
-};
-export function operatorShortName(operator: string): string {
-  return OPERATOR_SHORT[operator] ?? operator;
-}
+// 変電所の詳細の題名に入れる事業者の短い名（operatorShortName）は substation-undisclosed.ts に移した（ブラウザの部品からも読むため・2026-11-05）
 
 /* ------------------------------------------------------------------ *
  * 変電所の名前便（2026-11-02）: 詳細の題名・h1・OG・JSON-LD・description・冒頭の一文に出す名前
@@ -202,6 +196,9 @@ type SubstationNameInput = {
   name: string;
   voltage_primary_kv?: number | null;
   voltage_secondary_kv?: number | null;
+  /** 名称非公開の表示名（No.・事業者）に使う（小さな直し便・2026-11-05） */
+  external_id?: string | null;
+  operator?: string | string[] | null;
 };
 
 /** 既に設備の語がある（配電塔・変電塔・(塔)は「塔」）／名前が非公開 */
@@ -237,6 +234,8 @@ function hasGeneratorVoltage({ voltage_primary_kv: p, voltage_secondary_kv: s }:
 
 /** 変電所の詳細に出す名前。足さないものは一次の名前のまま返す */
 export function displaySubstationName(sub: SubstationNameInput): string {
+  // 名称非公開（23 件）は「名称非公開の変電所（事業者・No.）」に（小さな直し便・2026-11-05・substation-undisclosed.ts）
+  if (isUndisclosedSubstation(sub)) return undisclosedDisplayName(sub);
   const name = sub.name;
   const abbreviated = NAME_ABBREVIATED.exec(name);
   if (abbreviated) return `${abbreviated[1]}変電所`;
@@ -253,13 +252,15 @@ export function displaySubstationName(sub: SubstationNameInput): string {
 /**
  * 詳細の冒頭に足す基本の 1 文（データから。数字が無い欄は書かない・評価の語は書かない）。
  * 「新野田変電所は東京電力パワーグリッド管内の 500/275kV の変電所で、変圧器 4 台・運用容量 3,420MW。」
- * 名前が公表されていないレコードは主語が立たないので出さない。
+ * 名称非公開の 23 件は理由の文（substation-undisclosed.ts）。東北の番号だけの名前は主語が立たないので出さない。
  */
 export function substationBasicSentence(
   sub: SubstationNameInput & { units?: number | null; cap_operational_mw?: number | null },
   operator: string | null | undefined,
 ): string | null {
-  if (!sub.name || sub.name === '変電所' || sub.name.includes('非公開') || NAME_ONLY_CODE.test(sub.name)) return null;
+  // 名称非公開は理由の文（推測の名前・位置は書かない）。東北の番号だけの名前は主語が立たないので出さない
+  if (isUndisclosedSubstation(sub)) return undisclosedReason(sub);
+  if (!sub.name || NAME_ONLY_CODE.test(sub.name)) return null;
   const display = displaySubstationName(sub);
   // 北陸の「粟田部変電所77/6kV」は同じ文の電圧欄（77/6.6kV）と食い違うので、主語からは外す
   const subject = display.replace(NAME_VOLTAGE_SUFFIX, '');

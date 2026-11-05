@@ -8,6 +8,7 @@ import { siteConfig } from '@/lib/site-config';
 import { getAreaDates } from '@/lib/grid-data-date';
 import substationsIndex from '@/data/substations/index.json';
 import { AREA_META } from './[slug]/area-meta';
+import { substationShownName } from '@/lib/substation-undisclosed';
 
 // Gr5②(2026-08-08): 件数はデータ実数から動的算出（焼き込み廃止・データ増減に自動追従）
 // BM(2026-08-16): 本文・meta とも下記 summary を単一ソースにする（従来は本文=runtime microCMS /
@@ -529,7 +530,7 @@ export default async function GridIndexPage() {
                           </span>
                         )}
                       </div>
-                      <div className="grid-card-name">{s.name}</div>
+                      <div className="grid-card-name">{substationShownName(s)}</div>
                       <div className="grid-card-meta">
                         {s.prefecture && <span>{s.prefecture}</span>}
                         {typeof s.cap_avail_mw === 'number' && (

@@ -21,6 +21,10 @@ const nextConfig = {
       { source: '/milestones/2026-05-24-industry-report-2026', destination: '/reports/2026', permanent: true },
       { source: '/milestones/2026-05-28-aj-fire-database', destination: '/incidents', permanent: true },
       { source: '/milestones/2026-06-11-vip-citation', destination: '/milestones', permanent: true },
+      // 変電所の microCMS の id で開く URL（id ≠ slug の 2 件・CLAUDE.md #113）。以前は id でも引けて 200 だった（canonical は slug）。
+      // 11/4 の JSON 便から slug でしか引けず 404 になったので、slug へ恒久の転送（小さな直し便・2026-11-05）
+      { source: '/grid/a7m1-_9p0n5', destination: '/grid/ydn-kikan-0013-2', permanent: true },
+      { source: '/grid/o66z7a3i9', destination: '/grid/kyu-884', permanent: true },
     ];
   },
 

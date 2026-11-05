@@ -38,6 +38,7 @@ import { subsidyCountForPref } from '@/lib/grid-meta';
 import { rescueAreaParam } from '@/lib/grid-prefecture';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import { n1StatusFromRow } from '@/lib/n1-status-label';
+import { substationShownName } from '@/lib/substation-undisclosed';
 
 // Gr8(2026-08-09): 検索結果からの導線に使う県別件数（precompute・runtime fetch 0）
 const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
@@ -511,7 +512,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                         href={`/grid/${r.slug}`}
                         className="grid-search-link"
                       >
-                        <strong>{r.name}</strong>
+                        <strong>{substationShownName(r)}</strong>
                         <span className="grid-search-meta">
                           {r.operator}
                           {' ／ '}

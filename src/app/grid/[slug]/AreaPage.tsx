@@ -12,6 +12,7 @@ import RelatedTermBadges from '@/components/RelatedTermBadges';
 import type { Substation } from '@/lib/microcms';
 // 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: 関連事業者もビルド時に取った表から（実行時の microCMS 0）
 import { relatedOperatorsStatic } from '@/lib/grid-related-operators';
+import { substationShownName } from '@/lib/substation-undisclosed';
 // 落とし穴 #116 の恒久策(2026-08-16): エリアの一覧は build 時 precompute の静的データを使う。
 // runtime microCMS だと Next の fetch キャッシュで再取込直後のビルドが旧データを出力する。
 import { getAreaSubstationsStatic, toSubstationShape } from '@/lib/grid-static-lists';
@@ -384,7 +385,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                         {r.top3.map((s, i) => (
                           <span key={s.id}>
                             {i > 0 ? '・' : ''}
-                            <Link href={`/grid/${s.slug}`}>{s.name}</Link>
+                            <Link href={`/grid/${s.slug}`}>{substationShownName(s)}</Link>
                           </span>
                         ))}
                       </td>
@@ -422,7 +423,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                           {r.top3.map((x, i) => (
                             <span key={x.id}>
                               {i > 0 ? '・' : ''}
-                              <Link href={`/grid/${x.slug}`}>{x.name}</Link>
+                              <Link href={`/grid/${x.slug}`}>{substationShownName(x)}</Link>
                             </span>
                           ))}
                         </td>
@@ -471,7 +472,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                     {topAvail.map((s) => (
                       <tr key={s.id}>
                         <td>
-                          <Link href={`/grid/${s.slug}`}>{s.name}</Link>
+                          <Link href={`/grid/${s.slug}`}>{substationShownName(s)}</Link>
                         </td>
                         <td>{placeLabel(s)}</td>
                         <td>{(s.voltage_class && s.voltage_class[0]) || '—'}</td>
@@ -523,7 +524,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                     {topN1.map((s) => (
                       <tr key={s.id}>
                         <td>
-                          <Link href={`/grid/${s.slug}`}>{s.name}</Link>
+                          <Link href={`/grid/${s.slug}`}>{substationShownName(s)}</Link>
                         </td>
                         <td>{placeLabel(s)}</td>
                         <td>{(s.voltage_class && s.voltage_class[0]) || '—'}</td>

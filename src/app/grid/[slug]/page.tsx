@@ -33,7 +33,9 @@ import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import substationsIndex from '@/data/substations/index.json';
 import { buildAreaTitle, buildAreaDescription, buildSubstationTitle, displaySubstationName, substationBasicSentence, gridFacts, areaHasMap } from '@/lib/grid-meta';
 import { latestPublishedForAreas } from '@/lib/grid-data-date';
-import { getAreaSubstationsStatic, substationNameQualifier } from '@/lib/grid-static-lists';
+import { getAreaSubstationsStatic, substationNameQualifier, getListItemBySlug } from '@/lib/grid-static-lists';
+// 名称非公開の 23 件: 表示名・noindex（小さな直し便・2026-11-05）
+import { isUndisclosedSubstation, substationShownName } from '@/lib/substation-undisclosed';
 import GridPrintButton from '@/components/GridPrintButton';
 // Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
@@ -154,6 +156,8 @@ export async function generateMetadata({
   return {
     // layout.tsx titleTemplate が自動付与（落とし穴 #86）
     title: pageTitle,
+    // 名称非公開の 23 件は noindex（名前で探されず、題名に内部の番号が出ていた・サイトマップからも外す）。canonical は今のまま
+    ...(isUndisclosedSubstation(sub) ? { robots: { index: false, follow: true } } : {}),
     description: desc.substring(0, 160),
     alternates: { canonical: `/grid/${sub.slug}` },
     openGraph: {
@@ -408,7 +412,8 @@ export default async function GridSlugPage({
             <h2 className="grid-section-h2">基本情報</h2>
             <dl className="grid-info-table">
               <dt>変電所名</dt>
-              <dd>{fmtStr(sub.name)}</dd>
+              {/* 名称非公開は内部の番号を出さない（表示名）。ほかは一次の表記のまま */}
+              <dd>{fmtStr(isUndisclosedSubstation(sub) ? displayName : sub.name)}</dd>
               <dt>送配電事業者</dt>
               <dd>{fmtStr(operatorName)}</dd>
               <dt>エリア</dt>
@@ -613,7 +618,7 @@ export default async function GridSlugPage({
                 {samePrefOthers.map((o) => (
                   <li key={o.slug}>
                     <Link href={`/grid/${o.slug}`}>
-                      {o.name}
+                      {substationShownName(getListItemBySlug(o.slug) ?? o)}
                       {o.kv != null && ` — ${o.kv}kV`}
                       {o.cap != null && ` ／ 空容量 ${o.cap}MW`}
                     </Link>

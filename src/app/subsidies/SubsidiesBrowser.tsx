@@ -184,6 +184,10 @@ export default function SubsidiesBrowser({ items }: { items: BrowserItem[] }) {
 
       {groups.map((g) => {
         const shown = g.items.filter((i) => matches.has(i.id)).length;
+        // 見出しの件数＝その下に並ぶ行の数（小さな直し便・2026-11-05）。見えている節は絞り込みに合う行の数。
+        // 隠れている節（shown 0・hidden）は全行を hidden のまま DOM に置いている（#107）ので、その行の数を出す。
+        // 以前は隠れた節も shown（0）を出していて、HTML の文字では「受付終了（0件）」の下に 30 行が並んでいた
+        const headingCount = shown > 0 ? shown : g.items.length;
         return (
           <section key={g.status} className="subsidy-status-section" hidden={shown === 0}>
             <h2
@@ -191,7 +195,7 @@ export default function SubsidiesBrowser({ items }: { items: BrowserItem[] }) {
                 g.status === '公募中' ? 'open' : g.status === '公募予定' ? 'upcoming' : 'closed'
               }`}
             >
-              {g.status}（{shown}件）
+              {g.status}（{headingCount}件）
             </h2>
             <div className="subsidy-table-wrapper">
               <table className="subsidy-table">

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Substation } from '@/lib/microcms';
 // Gr10(2026-08-11): 都道府県欄に系統区分・設備区分を出さない（原値は設備区分として別表示）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
+// 名称非公開の 23 件は「名称非公開の変電所（事業者・No.）」で出す（小さな直し便・2026-11-05）
+import { substationShownName } from '@/lib/substation-undisclosed';
 import { n1StatusFromRow, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status-label';
 
 const PAGE_SIZE = 20;
@@ -35,7 +37,7 @@ export default function SubstationsBrowser({ items }: Props) {
     const q = query.trim().toLowerCase();
     return items.filter((s) => {
       if (q) {
-        const hay = `${s.name} ${s.prefecture ?? ''} ${
+        const hay = `${s.name} ${substationShownName(s)} ${s.prefecture ?? ''} ${
           s.external_id ?? ''
         }`.toLowerCase();
         if (!hay.includes(q)) return false;
@@ -136,7 +138,7 @@ export default function SubstationsBrowser({ items }: Props) {
                 return (
                   <tr key={s.id}>
                     <td>
-                      <Link href={`/grid/${s.slug}`}>{s.name}</Link>
+                      <Link href={`/grid/${s.slug}`}>{substationShownName(s)}</Link>
                     </td>
                     <td>
                       {(() => {
