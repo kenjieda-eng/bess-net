@@ -38,9 +38,14 @@ export function isUndisclosedSubstation(s: UndisclosedInput): boolean {
   return name.startsWith(UNDISCLOSED_PREFIX) || name === '変電所';
 }
 
-/** 公表元の No.（external_id の社名などの前置きを外した部分。無ければ名前の内部の番号から） */
+/**
+ * 公表元の No.（社名などの前置き「rikuden_local01_」「energia_kikan_」「kansai_kikan_」を外した部分）。
+ * 北陸・中国は名前の「(名称非公開)」の後ろから採る。external_id は使わない＝rkd-toyama-tss0076 だけ external_id が slug と同じ値で、
+ * そこから採ると「No.rkd-toyama-tss0076」になる（495b246 の本番で出た・同じ日に直した）。関西の ＢＵ は名前が「変電所」だけなので external_id から。
+ */
 function officialNoOf(s: UndisclosedInput): string {
-  const src = (s.external_id ?? (s.name ?? '').replace(UNDISCLOSED_PREFIX, '')).trim();
+  const name = (s.name ?? '').trim();
+  const src = (name.startsWith(UNDISCLOSED_PREFIX) ? name.slice(UNDISCLOSED_PREFIX.length) : s.external_id ?? '').trim();
   return src.slice(src.lastIndexOf('_') + 1).trim();
 }
 

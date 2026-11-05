@@ -82,6 +82,9 @@ for (const area of Object.keys(index.area_dates)) {
       undisclosed.push(s.slug);
       const title = buildSubstationTitle(display, s.prefecture, s.operator ?? '', q);
       if (/\(名称非公開\)|rikuden_|energia_|kansai_/.test(title + display) || !display.startsWith('名称非公開の変電所（')) problems.push(`${s.slug}: 名称非公開の表示名が崩れている「${display}」`);
+      // No. は公表元の番号の形（英数・全角英字・「基」などで、slug や「-」「_」を含まない）。495b246 で rkd-toyama-tss0076 が「No.rkd-toyama-tss0076」になった
+      const no = display.match(/・No\.([^）]+)）$/)?.[1] ?? '';
+      if (!no || /[-_\s]/.test(no) || display.includes(s.slug)) problems.push(`${s.slug}: 名称非公開の No. が公表元の番号の形でない「${display}」`);
       if (sentence !== undisclosedReason(s)) problems.push(`${s.slug}: 名称非公開の冒頭の文が理由の文でない「${sentence}」`);
     }
     if (sentence && /\d\/\d[\d.]*kVは/.test(sentence)) problems.push(`${s.slug} ${s.name}: 主語に電圧が残っている「${sentence}」`);
@@ -128,6 +131,7 @@ for (const [rec, want] of [
   [{ name: '(名称非公開) rikuden_local03_FSS062', external_id: 'rikuden_local03_FSS062', operator: '北陸電力送配電' }, '名称非公開の変電所（北陸電力送配電・No.FSS062）'],
   [{ name: '(名称非公開) energia_kikan_基S16', external_id: 'energia_kikan_基S16', operator: '中国電力ネットワーク' }, '名称非公開の変電所（中国電力NW・No.基S16）'],
   [{ name: '変電所', external_id: 'kansai_kikan_ＢＵ', operator: '関西電力送配電' }, '名称非公開の変電所（関西電力送配電・No.ＢＵ）'],
+  [{ name: '(名称非公開) rikuden_local01_TSS076', external_id: 'rkd-toyama-tss0076', operator: '北陸電力送配電' }, '名称非公開の変電所（北陸電力送配電・No.TSS076）'],
 ] as const) {
   const got = displaySubstationName({ ...rec, voltage_primary_kv: 275, voltage_secondary_kv: 154 });
   if (got !== want) problems.push(`例「${rec.name}」: 期待「${want}」・実際「${got}」`);
