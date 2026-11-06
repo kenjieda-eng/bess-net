@@ -1,0 +1,50 @@
+[
+  {
+    "kind": "post",
+    "slug": "meti-doji-shijo-kentoukai-26-2026-11",
+    "result": "skip_exists",
+    "id": "l66j-l5u3"
+  },
+  {
+    "kind": "post",
+    "slug": "meti-jisedai-kiban-shoiinkai-7-2026-11",
+    "result": "skip_exists",
+    "id": "3gsrcm86dr"
+  },
+  {
+    "kind": "post",
+    "slug": "egov-haikibutsu-kisoku-lithium-chikudenchi-pubcomm-2026-11",
+    "result": "skip_exists",
+    "id": "swi36e2d_vsk"
+  },
+  {
+    "kind": "patch",
+    "key": "A",
+    "id": "dv1ilddgxfxh",
+    "result": "skip_idempotent"
+  },
+  {
+    "kind": "patch",
+    "key": "B",
+    "id": "m417bjl3j",
+    "result": "skip_idempotent"
+  },
+  {
+    "kind": "patch",
+    "key": "C",
+    "id": "u63xq484k",
+    "result": "skip_idempotent"
+  },
+  {
+    "kind": "patch",
+    "key": "D",
+    "id": "6i1u2sgun-k4",
+    "result": "skip_idempotent"
+  },
+  {
+    "kind": "patch",
+    "key": "E",
+    "id": "lkuuuf36h",
+    "result": "skip_idempotent"
+  }
+]
