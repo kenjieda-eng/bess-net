@@ -187,6 +187,15 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'denki-no-eki-isahaya-16mw-chakou-2026-10': '開発計画',                       // でんきの駅諫早 着工
   'taoke-minamichita-renkei-2026-10': '連系',                                   // 南知多町 系統連系
   'powerx-kansai-td-grid-congestion-mou-2026-10': '制度',                       // パワーエックス×関西電力送配電 基本合意
+  // 週次ニュース便 11/6（2026-11-06 起草・対象 11/1〜11/6 12:00 配信）— 各件の _category（ユウ原稿）を正とする
+  'nc-izumo-minamiaizu-setti-2026-11': '開発計画',                              // NC出雲市国富町・NC南会津町田島 蓄電池設置（既定のマッピングでは決まらない）
+  'sunpin-shiga-otsu-45mw-renkei-2026-11': '連系',                              // SP滋賀大津 系統接続（商業運転は 12 月予定）
+  'nextes-kasama-bousai-bess-2026-11': '技術',                                  // 笠間 防災連携型 NEXTES 蓄電池採用
+  'nc-makurazaki-juden-2026-11': '連系',                                        // NC枕崎市桜山東町 受電開始
+  'bluefield-aggregation-150mw-2026-11': '市場統計',                            // 採用決定容量 150MW（内示を含む・既存 100MW 記事の続報）
+  'digitalgrid-bess-250mw-2026-11': '市場統計',                                 // 取扱量 250MW（既存 200MW 記事の続報）
+  'buddynet-3sites-completion-2026-11': '連系',                                 // 弟子屈・富士宮・佐久 完工（既存 buddynet-izumo の連系に合わせる。既定は技術）
+  'powerx-energy-vault-partnership-2026-11': '海外',                            // Energy Vault 戦略的パートナーシップ（米国向け供給の検討。既定は開発計画）
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
