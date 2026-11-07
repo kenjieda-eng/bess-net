@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Substation } from '@/lib/microcms';
 // Gr10(2026-08-11): 都道府県欄に系統区分・設備区分を出さない（原値は設備区分として別表示）
-import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
 // 名称非公開の 23 件は「名称非公開の変電所（事業者・No.）」で出す（小さな直し便・2026-11-05）
 import { substationShownName } from '@/lib/substation-undisclosed';
 import { n1StatusFromRow, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status-label';
@@ -142,15 +141,11 @@ export default function SubstationsBrowser({ items }: Props) {
                     </td>
                     <td>
                       {(() => {
-                        const place = normalizeSubstationPlace(
-                          s.prefecture,
-                          Array.isArray(s.area) ? s.area[0] : (s.area as unknown as string | undefined)
-                        );
-                        if (place.prefecture) return place.prefecture;
-                        // #119(2026-08-17): 渡ってくる record は正規化済みで原値は
-                        // facility_class にある。再正規化の結果だけを見ると全行「—」になる。
-                        const stored = (s as { facility_class?: string | null }).facility_class;
-                        const fc = stored ?? place.facilityClass;
+                        // 関西の府県の割り当て便(2026-11-07): 渡ってくる record は precompute で正規化済み（prefecture は
+                        // 実在の府県か null・原値は facility_class）。ここで normalizeSubstationPlace を掛け直さない（#119・二重の正規化）。
+                        // 掛け直すと関西の府県の対応表がブラウザに送られる（府県の導出はサーバー側の 1 か所だけ）。
+                        if (s.prefecture) return s.prefecture;
+                        const fc = (s as { facility_class?: string | null }).facility_class;
                         if (fc) return `設備区分: ${fc}`;
                         return '—';
                       })()}

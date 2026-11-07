@@ -1,0 +1,8405 @@
+{
+ "_purpose": "関西電力送配電の変電所の府県（表示用）。microCMS の prefecture は書き換えない（L-EIC-028）。表示の府県は src/lib/grid-prefecture.ts の normalizeSubstationPlace の 1 か所で、この表から導出する（#119）。ローカル系は関西電力送配電『マッピング（154kV未満）』の府県別の図に No. が 1 つの府県の図にだけ出るもの、基幹系統は同社『供給可能エリアマップ』の住所で府県が決まるものだけ。図に「所在地」とは書かれていない。",
+ "_rebuild": "python -P scripts/experimental/kansai/build_prefecture_map.py --mapping-html=… --pdf-dir=… --area-map=…（一次は curl で先に取る）",
+ "generated_at": "2026-11-07T03:41:29Z",
+ "source": {
+  "mapping": {
+   "url": "https://www.kansai-td.co.jp/consignment/disclosure/distribution-equipment/mapping.html",
+   "asof": "2026-11-04",
+   "label": "（2026年11月04日時点）"
+  },
+  "area_map": {
+   "url": "https://www.kansai-td.co.jp/consignment/welcome-zone-map/pdf/area_map.pdf",
+   "asof_label": "2026年9月時点"
+  }
+ },
+ "figures": {
+  "1": {
+   "pref": "大阪府",
+   "title": "池田市／茨木市／島本町／吹田市／摂津市／高槻市／豊中市／豊能町／能勢町／箕面市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_01.pdf"
+  },
+  "2": {
+   "pref": "大阪府",
+   "title": "交野市／門真市／四條畷市／大東市／寝屋川市／枚方市／守口市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_02.pdf"
+  },
+  "3": {
+   "pref": "大阪府",
+   "title": "大阪市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_03.pdf"
+  },
+  "4": {
+   "pref": "大阪府",
+   "title": "東大阪市／八尾市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_04.pdf"
+  },
+  "5": {
+   "pref": "大阪府",
+   "title": "堺市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_05.pdf"
+  },
+  "6": {
+   "pref": "大阪府",
+   "title": "泉大津市／泉佐野市／和泉市／大阪狭山市／貝塚市／柏原市／河南町／河内長野市／岸和田市／熊取町／泉南市／太子町／高石市／田尻町／忠岡町／千早赤阪村／富田林市／羽曳野市／阪南市／藤井寺市／松原市／岬町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_06.pdf"
+  },
+  "7": {
+   "pref": "京都府",
+   "title": "綾部市／伊根町／亀岡市／京丹後市／京丹波町／南丹市／福知山市／舞鶴市／宮津市／与謝野町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_07.pdf"
+  },
+  "8": {
+   "pref": "京都府",
+   "title": "京都市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_08.pdf"
+  },
+  "9": {
+   "pref": "京都府",
+   "title": "井手町／宇治市／宇治田原町／大山崎町／笠置町／木津川市／京田辺市／久御山町／城陽市／精華町／長岡京市／南山城村／向日市／八幡市／和束町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_09.pdf"
+  },
+  "10": {
+   "pref": "兵庫県",
+   "title": "朝来市／市川町／神河町／香美町／宍粟市／新温泉町／豊岡市／福崎町／養父市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_10.pdf"
+  },
+  "11": {
+   "pref": "兵庫県",
+   "title": "相生市／赤穂市／上郡町／佐用町／たつの市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_11.pdf"
+  },
+  "12": {
+   "pref": "兵庫県",
+   "title": "太子町／姫路市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_12.pdf"
+  },
+  "13": {
+   "pref": "兵庫県",
+   "title": "稲美町／加古川市／高砂市／播磨町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_13.pdf"
+  },
+  "14": {
+   "pref": "兵庫県",
+   "title": "小野市／加西市／加東市／多可町／西脇市／三木市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_14.pdf"
+  },
+  "15": {
+   "pref": "兵庫県",
+   "title": "淡路市／篠山市／洲本市／丹波市／南あわじ市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_15.pdf"
+  },
+  "16": {
+   "pref": "兵庫県",
+   "title": "明石市／神戸市（北区・須磨区・垂水区・西区）",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_16.pdf"
+  },
+  "17": {
+   "pref": "兵庫県",
+   "title": "神戸市（東灘区・灘区・中央区・兵庫区・長田区）",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_17.pdf"
+  },
+  "18": {
+   "pref": "兵庫県",
+   "title": "伊丹市／猪名川町／川西市／三田市／宝塚市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_18.pdf"
+  },
+  "19": {
+   "pref": "兵庫県",
+   "title": "芦屋市／尼崎市／西宮市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_19.pdf"
+  },
+  "20": {
+   "pref": "奈良県",
+   "title": "明日香村／安堵町／斑鳩町／生駒市／宇陀市／王寺町／香芝市／橿原市／葛城市／河合町／川西町／上牧町／広陵町／御所市／桜井市／三郷町／曽爾村／高取町／田原本町／天理市／奈良市／平群町／御杖村／三宅町／山添村／大和郡山市／大和高田市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_20.pdf"
+  },
+  "21": {
+   "pref": "奈良県",
+   "title": "大淀町／上北山村／川上村／黒滝村／五條市／下市町／下北山村／天川村／十津川村／野迫川村／東吉野村／吉野町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_21.pdf"
+  },
+  "22": {
+   "pref": "滋賀県",
+   "title": "大津市／草津市／守山市／野洲市／栗東市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_22.pdf"
+  },
+  "23": {
+   "pref": "滋賀県",
+   "title": "高島市／長浜市／米原市／関ケ原町（岐阜県）",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_23.pdf"
+  },
+  "24": {
+   "pref": "滋賀県",
+   "title": "愛荘町／近江八幡市／甲賀市／甲良町／湖南市／多賀町／豊郷町／東近江市／彦根市／日野町／竜王町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_24.pdf"
+  },
+  "25": {
+   "pref": "和歌山県",
+   "title": "有田市／岩出市／海南市／和歌山市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_25.pdf"
+  },
+  "26": {
+   "pref": "和歌山県",
+   "title": "かつらぎ町／紀の川市／紀美野町／九度山町／高野町／橋本市",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_26.pdf"
+  },
+  "27": {
+   "pref": "和歌山県",
+   "title": "有田川町／印南町／御坊市／日高川町／日高町／広川町／美浜町／湯浅町／由良町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_27.pdf"
+  },
+  "28": {
+   "pref": "和歌山県",
+   "title": "上富田町／白浜町／すさみ町／田辺市／みなべ町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_28.pdf"
+  },
+  "29": {
+   "pref": "和歌山県",
+   "title": "北山村／串本町／古座川町／新宮市／太地町／那智勝浦町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_29.pdf"
+  },
+  "30": {
+   "pref": "福井県",
+   "title": "おおい町／小浜市／高浜町／美浜町／若狭町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_30.pdf"
+  },
+  "31": {
+   "pref": "三重県",
+   "title": "紀宝町／熊野市／御浜町",
+   "url": "https://www.kansai-td.co.jp/interchange/takusou/pdf/154kv_less_mapping_31.pdf"
+  }
+ },
+ "counts": {
+  "local_records": 1574,
+  "local_assigned_records": 1332,
+  "kikan_records": 127,
+  "kikan_assigned_records": 7,
+  "by_category_records": {
+   "2府県以上": 54,
+   "割り当て（図）": 1332,
+   "組み立て": 71,
+   "見つからない": 106,
+   "関ケ原": 6,
+   "頭の字が合わない": 5
+  },
+  "by_pref_records": {
+   "三重県": 6,
+   "京都府": 189,
+   "兵庫県": 452,
+   "和歌山県": 112,
+   "大阪府": 323,
+   "奈良県": 93,
+   "滋賀県": 152,
+   "福井県": 12
+  },
+  "entries": 1120,
+  "figure_only_codes": 8
+ },
+ "excluded": {
+  "2府県以上": [
+   "京A",
+   "京AA",
+   "京AD",
+   "京AM",
+   "京AO",
+   "京AP",
+   "京AQ",
+   "京AS",
+   "京AT",
+   "京C",
+   "京CG",
+   "京CH",
+   "京DF",
+   "京DH",
+   "京DK",
+   "京DL",
+   "京E",
+   "京FT",
+   "京FV",
+   "北AF",
+   "北AV",
+   "北ER",
+   "南EN",
+   "和N",
+   "和O",
+   "和Q",
+   "和R",
+   "和S",
+   "奈A",
+   "奈BA",
+   "奈BD",
+   "奈CS",
+   "神AA",
+   "神AB",
+   "神AD",
+   "神C",
+   "神U",
+   "神V",
+   "神W"
+  ],
+  "関ケ原": [
+   "滋CH",
+   "滋CI",
+   "滋CJ",
+   "滋R",
+   "滋T"
+  ],
+  "頭の字が合わない": [
+   "北FE",
+   "奈B",
+   "奈C"
+  ],
+  "組み立て": [
+   "京CQ",
+   "京EL",
+   "京EP",
+   "北CZ",
+   "北EC",
+   "北EK",
+   "北EP",
+   "北ET",
+   "北I",
+   "北J",
+   "北O",
+   "北Q",
+   "北U",
+   "南AE",
+   "南AL",
+   "南AM",
+   "南AQ",
+   "南AW",
+   "南AX",
+   "南AY",
+   "南AZ",
+   "南BC",
+   "南BG",
+   "南BP",
+   "南BU",
+   "南BZ",
+   "南CU",
+   "南EC",
+   "南ED",
+   "南EX",
+   "南H",
+   "南I",
+   "南P",
+   "南Q",
+   "南S",
+   "南U",
+   "南W",
+   "南X",
+   "和BC",
+   "和U",
+   "奈AH",
+   "奈AI",
+   "奈CB",
+   "奈D",
+   "奈E",
+   "奈G",
+   "奈H",
+   "奈S",
+   "奈U",
+   "姫BK",
+   "姫EO",
+   "姫EQ",
+   "姫ES",
+   "姫EU",
+   "姫EZ",
+   "神GT"
+  ],
+  "見つからない": [
+   "京AH",
+   "京CE",
+   "京CW",
+   "京EN",
+   "京EO",
+   "京EQ",
+   "京EV",
+   "京GV",
+   "北AB",
+   "北AD",
+   "北AM",
+   "北BL",
+   "北BN",
+   "北CA",
+   "北CQ",
+   "北DF",
+   "北DG",
+   "北DH",
+   "北DI",
+   "北DJ",
+   "北DK",
+   "北DL",
+   "北DM",
+   "北DN",
+   "北DO",
+   "北DP",
+   "北DQ",
+   "北DR",
+   "北DT",
+   "北DU",
+   "北DV",
+   "北DW",
+   "北DZ",
+   "北EA",
+   "北EB",
+   "北EH",
+   "北EJ",
+   "北EL",
+   "北EQ",
+   "北ES",
+   "北EY",
+   "北EZ",
+   "北FF",
+   "北FG",
+   "北FP",
+   "北FY",
+   "北GD",
+   "北GE",
+   "北GF",
+   "北GG",
+   "北GI",
+   "北GK",
+   "北GN",
+   "北K",
+   "北L",
+   "北S",
+   "南DF",
+   "南DJ",
+   "南DM",
+   "南DO",
+   "南DR",
+   "南EL",
+   "南FJ",
+   "南FR",
+   "南FT",
+   "南Y",
+   "和W",
+   "奈F",
+   "奈P",
+   "姫AG",
+   "姫AJ",
+   "姫BL",
+   "姫BY",
+   "姫EY",
+   "姫F1",
+   "姫F2",
+   "姫GE",
+   "滋BO",
+   "神BW",
+   "神CA",
+   "神CV",
+   "神DP",
+   "神EJ",
+   "神EQ",
+   "神ER",
+   "神FA",
+   "神FY",
+   "神FZ",
+   "神GP",
+   "神GS"
+  ]
+ },
+ "entries": {
+  "kansai_kikan_AU": {
+   "p": "大阪府",
+   "b": "住所",
+   "a": "大阪府豊中市少路1丁目付近",
+   "pg": 27
+  },
+  "kansai_kikan_BM": {
+   "p": "大阪府",
+   "b": "住所",
+   "a": "大阪府富田林市別井２丁目付近",
+   "pg": 13
+  },
+  "kansai_kikan_BN": {
+   "p": "大阪府",
+   "b": "住所",
+   "a": "大阪府泉南郡熊取町成合北付近",
+   "pg": 15
+  },
+  "kansai_kikan_CA": {
+   "p": "兵庫県",
+   "b": "住所",
+   "a": "兵庫県西宮市津門飯田町付近",
+   "pg": 33
+  },
+  "kansai_kikan_CB": {
+   "p": "兵庫県",
+   "b": "住所",
+   "a": "兵庫県尼崎市大浜町１丁目付近",
+   "pg": 31
+  },
+  "kansai_kikan_CH": {
+   "p": "大阪府",
+   "b": "住所",
+   "a": "大阪府大阪市淀川区西三国１丁目付近",
+   "pg": 11
+  },
+  "kansai_kikan_DB": {
+   "p": "大阪府",
+   "b": "住所",
+   "a": "大阪府大阪市西区川口１丁目付近",
+   "pg": 29
+  },
+  "kansai_local_京AB": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AC": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AE": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AF": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AG": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AI": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AJ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AK": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AL": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AN": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京AR": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京AU": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京AV": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京AW": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京AX": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京AY": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京AZ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京B": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京BA": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BB": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BC": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BD": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BE": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BG": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BH": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BI": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BJ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BK": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BL": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BM": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BN": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BO": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BP": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BQ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BR": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BS": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BT": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BU": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BV": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BW": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BX": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BY": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京BZ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CA": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CB": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CC": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CD": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CF": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CJ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8,
+    9
+   ]
+  },
+  "kansai_local_京CK": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CL": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CM": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CN": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8,
+    9
+   ]
+  },
+  "kansai_local_京CO": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8,
+    9
+   ]
+  },
+  "kansai_local_京CP": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8,
+    9
+   ]
+  },
+  "kansai_local_京CR": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CS": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CU": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CV": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8,
+    9
+   ]
+  },
+  "kansai_local_京CX": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京CY": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京CZ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京D": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京DA": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京DB": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京DC": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京DD": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8,
+    9
+   ]
+  },
+  "kansai_local_京DE": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京DG": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京DI": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京DJ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京DM": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京DN": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京DO": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8,
+    9
+   ]
+  },
+  "kansai_local_京DP": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京DQ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京DR": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京DS": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京DT": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京DU": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京DV": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京DW": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京DX": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京DY": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京DZ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EB": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EC": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京ED": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EE": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EF": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京EG": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EH": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京EI": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EJ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EK": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EM": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京ER": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京ES": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京ET": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EU": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EW": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EX": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EY": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京EZ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京F": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京FA": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FB": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FC": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FD": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FE": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FF": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FG": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FH": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FI": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京FJ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京FK": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京FL": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FM": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    8
+   ]
+  },
+  "kansai_local_京FN": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FO": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FP": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FQ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FR": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FS": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FU": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FW": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FX": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京FY": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京FZ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京G": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京GA": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GB": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GC": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GD": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GE": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GF": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GG": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GH": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GI": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GJ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GK": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GL": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GM": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GN": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GO": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GP": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GQ": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京GR": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京GS": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GT": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京GU": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    9
+   ]
+  },
+  "kansai_local_京GW": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京GX": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京H": {
+   "p": "福井県",
+   "b": "図",
+   "f": [
+    30
+   ]
+  },
+  "kansai_local_京I": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京J": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京K": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京L": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京M": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京N": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京O": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京P": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京Q": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京R": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京S": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京T": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京U": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京V": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京W": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京X": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京Y": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_京Z": {
+   "p": "京都府",
+   "b": "図",
+   "f": [
+    7
+   ]
+  },
+  "kansai_local_北A": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北AA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北AC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北AE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北AG": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北AI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北AJ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北AK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北AL": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北AN": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AP": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AQ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AR": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AT": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AU": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AW": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AX": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AY": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北AZ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    2
+   ]
+  },
+  "kansai_local_北BC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    2
+   ]
+  },
+  "kansai_local_北BD": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北BE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北BF": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北BG": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    2
+   ]
+  },
+  "kansai_local_北BH": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北BI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    2
+   ]
+  },
+  "kansai_local_北BJ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BM": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BP": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BQ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BR": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BT": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    2
+   ]
+  },
+  "kansai_local_北BU": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BV": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    2
+   ]
+  },
+  "kansai_local_北BW": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BX": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    2
+   ]
+  },
+  "kansai_local_北BY": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北BZ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    3
+   ]
+  },
+  "kansai_local_北C": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    3
+   ]
+  },
+  "kansai_local_北CB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北CC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北CD": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    3
+   ]
+  },
+  "kansai_local_北CE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北CF": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    3
+   ]
+  },
+  "kansai_local_北CG": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北CH": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北CI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北CJ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北CK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北CL": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北CM": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北CN": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北CO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北CP": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    3
+   ]
+  },
+  "kansai_local_北CR": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北CS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北CT": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北CU": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    3
+   ]
+  },
+  "kansai_local_北CV": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北CW": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北CX": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北CY": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北D": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    3
+   ]
+  },
+  "kansai_local_北DA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北DB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北DC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北DD": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北DE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北DS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北DX": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北DY": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北E": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1,
+    3
+   ]
+  },
+  "kansai_local_北ED": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EF": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EG": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EM": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EN": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EV": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EW": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北EX": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北FA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_北FB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4
+   ]
+  },
+  "kansai_local_北FC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_北FD": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北FH": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FJ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FL": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FM": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FN": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FQ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FR": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FT": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FV": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FW": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北FZ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北G": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北GA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北GB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北GC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2
+   ]
+  },
+  "kansai_local_北GH": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北GJ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_北GL": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北GM": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北GO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北H": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北M": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北N": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北P": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北R": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北T": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北V": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北W": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北X": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北Y": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_北Z": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    1
+   ]
+  },
+  "kansai_local_南A": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    3,
+    4
+   ]
+  },
+  "kansai_local_南AA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4
+   ]
+  },
+  "kansai_local_南AB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南AC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南AD": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南AF": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南AG": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南AH": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南AJ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南AK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南AN": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南AO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南AR": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南AS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南AT": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4
+   ]
+  },
+  "kansai_local_南AU": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南AV": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南B": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    3,
+    4
+   ]
+  },
+  "kansai_local_南BA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南BB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南BD": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    5
+   ]
+  },
+  "kansai_local_南BE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南BF": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南BH": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南BI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "kansai_local_南BJ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南BK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南BL": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4,
+    5
+   ]
+  },
+  "kansai_local_南BM": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "kansai_local_南BN": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    5
+   ]
+  },
+  "kansai_local_南BO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南BQ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    5,
+    6
+   ]
+  },
+  "kansai_local_南BR": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "kansai_local_南BS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南BT": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    5
+   ]
+  },
+  "kansai_local_南BV": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4,
+    5
+   ]
+  },
+  "kansai_local_南BW": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4,
+    6
+   ]
+  },
+  "kansai_local_南BX": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4,
+    6
+   ]
+  },
+  "kansai_local_南BY": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南CA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CD": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南CE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CF": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    5
+   ]
+  },
+  "kansai_local_南CG": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南CH": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CJ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4,
+    6
+   ]
+  },
+  "kansai_local_南CK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CL": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CM": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南CN": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南CP": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4,
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CQ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南CR": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南CS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南CT": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CV": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南CX": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南CY": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南CZ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南D": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    4
+   ]
+  },
+  "kansai_local_南DA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南DB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南DC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南DD": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南DE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南DG": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南DH": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南DI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南DK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南DL": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南DN": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南DP": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南DQ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南DS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南DT": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南DU": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南DV": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南DX": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南DY": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南DZ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南E": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    4
+   ]
+  },
+  "kansai_local_南EA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南EB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南EE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南EF": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南EG": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南EH": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南EI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南EJ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南EK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南EM": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南EO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南EP": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5,
+    6
+   ]
+  },
+  "kansai_local_南EQ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南ER": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南ES": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南ET": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南EU": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南EV": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南EW": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南EY": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南EZ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南F": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4,
+    6
+   ]
+  },
+  "kansai_local_南FA": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南FB": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南FC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南FD": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南FE": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南FF": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南FG": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南FI": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南FK": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南FL": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南FM": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南FN": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南FO": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南FP": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南FQ": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南FS": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    6
+   ]
+  },
+  "kansai_local_南FW": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南FX": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南FY": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    5
+   ]
+  },
+  "kansai_local_南G": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南GC": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3
+   ]
+  },
+  "kansai_local_南J": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南K": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4
+   ]
+  },
+  "kansai_local_南L": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    4
+   ]
+  },
+  "kansai_local_南M": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南N": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    4
+   ]
+  },
+  "kansai_local_南O": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南R": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    3,
+    4
+   ]
+  },
+  "kansai_local_南T": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    4
+   ]
+  },
+  "kansai_local_南V": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    4
+   ]
+  },
+  "kansai_local_南Z": {
+   "p": "大阪府",
+   "b": "図",
+   "f": [
+    2,
+    4
+   ]
+  },
+  "kansai_local_和A": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和AA": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AB": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AC": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AD": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AE": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AF": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AG": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AH": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AI": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AJ": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25,
+    26
+   ]
+  },
+  "kansai_local_和AK": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25,
+    26
+   ]
+  },
+  "kansai_local_和AL": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和AM": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和AN": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AO": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和AP": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25,
+    27
+   ]
+  },
+  "kansai_local_和AQ": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和AR": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和AS": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和AT": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和AU": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和AV": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27,
+    28
+   ]
+  },
+  "kansai_local_和AW": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和AX": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和AY": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和AZ": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和B": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和BA": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和BB": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和BD": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和BE": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和BF": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和BG": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和BH": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和BI": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和BJ": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和BK": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和BL": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和BM": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和BN": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和BO": {
+   "p": "三重県",
+   "b": "図",
+   "f": [
+    31
+   ]
+  },
+  "kansai_local_和BP": {
+   "p": "三重県",
+   "b": "図",
+   "f": [
+    31
+   ]
+  },
+  "kansai_local_和BQ": {
+   "p": "三重県",
+   "b": "図",
+   "f": [
+    31
+   ]
+  },
+  "kansai_local_和BS": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和BT": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和BU": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和BV": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和BW": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和BX": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和BY": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和BZ": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和C": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和CA": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和CB": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和CC": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和CD": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和CE": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和CF": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和CG": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和CH": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和CJ": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和CK": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CL": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和CM": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    27
+   ]
+  },
+  "kansai_local_和CN": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CO": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CP": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28,
+    29
+   ]
+  },
+  "kansai_local_和CQ": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CR": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CS": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CT": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CU": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CV": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CW": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CX": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和CY": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和CZ": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和D": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和DA": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和DB": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    28
+   ]
+  },
+  "kansai_local_和DC": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和DD": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    29
+   ]
+  },
+  "kansai_local_和DE": {
+   "p": "三重県",
+   "b": "図",
+   "f": [
+    31
+   ]
+  },
+  "kansai_local_和DF": {
+   "p": "三重県",
+   "b": "図",
+   "f": [
+    31
+   ]
+  },
+  "kansai_local_和DG": {
+   "p": "三重県",
+   "b": "図",
+   "f": [
+    31
+   ]
+  },
+  "kansai_local_和E": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和F": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和G": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和H": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    26
+   ]
+  },
+  "kansai_local_和I": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25,
+    26
+   ]
+  },
+  "kansai_local_和J": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25,
+    26
+   ]
+  },
+  "kansai_local_和K": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25,
+    26
+   ]
+  },
+  "kansai_local_和L": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25,
+    26
+   ]
+  },
+  "kansai_local_和P": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和T": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和V": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和X": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_和Z": {
+   "p": "和歌山県",
+   "b": "図",
+   "f": [
+    25
+   ]
+  },
+  "kansai_local_奈AA": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AB": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AC": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AD": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AE": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AF": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AG": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AJ": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AK": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AL": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AM": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AN": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AO": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AP": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AQ": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AR": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AS": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AT": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AU": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AV": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AW": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AX": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AY": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈AZ": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20,
+    21
+   ]
+  },
+  "kansai_local_奈BC": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈BE": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BF": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈BG": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈BH": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈BI": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈BJ": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈BK": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈BL": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈BM": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈BN": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BO": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BP": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BQ": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BR": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BS": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BT": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BU": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BV": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BW": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BX": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BY": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈BZ": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CA": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CC": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CD": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CE": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CF": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CG": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CH": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CI": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CJ": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CK": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CL": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CM": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CN": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CO": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CP": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CQ": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CR": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    21
+   ]
+  },
+  "kansai_local_奈CT": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈CU": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈I": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈J": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈K": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈L": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈M": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈N": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈O": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈Q": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈R": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈T": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈V": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈W": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈X": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈Y": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_奈Z": {
+   "p": "奈良県",
+   "b": "図",
+   "f": [
+    20
+   ]
+  },
+  "kansai_local_姫A": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫AA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫AC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14,
+    15
+   ]
+  },
+  "kansai_local_姫AD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫AF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14,
+    15
+   ]
+  },
+  "kansai_local_姫AH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫AI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫AK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫AN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫AP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫AT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫AU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫AV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫AX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11,
+    12
+   ]
+  },
+  "kansai_local_姫AY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫AZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫B": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫BA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫BB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫BC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫BZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫C": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13,
+    16
+   ]
+  },
+  "kansai_local_姫CE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_姫CF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13,
+    16
+   ]
+  },
+  "kansai_local_姫CM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13,
+    16
+   ]
+  },
+  "kansai_local_姫CO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫CP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫CZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫D": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫DQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫DR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫DS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫DT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫DU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫DV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫DW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫DX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫DY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫DZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫E": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10,
+    14
+   ]
+  },
+  "kansai_local_姫EA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10,
+    12
+   ]
+  },
+  "kansai_local_姫EB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10,
+    12
+   ]
+  },
+  "kansai_local_姫EC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10,
+    12
+   ]
+  },
+  "kansai_local_姫ED": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10,
+    12
+   ]
+  },
+  "kansai_local_姫EE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫EF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫EG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫EH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫EI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫EJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫EK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫EL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫EM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫EN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫EP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫ER": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫ET": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫EW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫EX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫FN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫FO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫FP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13
+   ]
+  },
+  "kansai_local_姫FQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫FR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫FS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫FT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫FU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫FV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫FW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫FY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫FZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫G": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10,
+    14
+   ]
+  },
+  "kansai_local_姫GA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫GB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫GC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    12
+   ]
+  },
+  "kansai_local_姫GD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫H": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫I": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫J": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫K": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫L": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫M": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫N": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10,
+    15
+   ]
+  },
+  "kansai_local_姫O": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫P": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫Q": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫R": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫S": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫T": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14
+   ]
+  },
+  "kansai_local_姫U": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫V": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_姫W": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    10
+   ]
+  },
+  "kansai_local_姫X": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14,
+    15
+   ]
+  },
+  "kansai_local_姫Y": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    14,
+    15
+   ]
+  },
+  "kansai_local_姫Z": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    11
+   ]
+  },
+  "kansai_local_滋AA": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AB": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AC": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AD": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AE": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AF": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AG": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AH": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AI": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AJ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AK": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AL": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AM": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AN": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AO": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AP": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AQ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AR": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AS": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AT": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AU": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AV": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋AW": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AX": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AY": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋AZ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋B": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋BA": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋BB": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋BC": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BD": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BE": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BF": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋BG": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋BH": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋BI": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BJ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋BK": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BL": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BM": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋BN": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BP": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BQ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BR": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋BS": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋BT": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋BV": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋BW": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋BX": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋BY": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋BZ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋C": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋CA": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋CB": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋CC": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋CD": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋CE": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋CF": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋CG": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋CK": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CL": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CM": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CN": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CO": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋CP": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CQ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CR": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CS": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CT": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋CU": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CV": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CW": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋CX": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋CY": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋CZ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋D": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋DA": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DB": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DC": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DD": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DE": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DF": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DG": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DH": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DI": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DK": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋DL": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋DM": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋DN": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DO": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DP": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DQ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DR": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DS": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DT": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DU": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DV": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DW": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    22
+   ]
+  },
+  "kansai_local_滋DX": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DY": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋DZ": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋EA": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋EB": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋EC": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋ED": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋G": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋H": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋I": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋J": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋K": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋L": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋M": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋N": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋O": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋P": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋Q": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋S": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋U": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    23
+   ]
+  },
+  "kansai_local_滋V": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋W": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋X": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋Y": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_滋Z": {
+   "p": "滋賀県",
+   "b": "図",
+   "f": [
+    24
+   ]
+  },
+  "kansai_local_神A": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神AC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神AE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神AF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神AG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神AH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神AI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神AJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神AK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神AL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神AM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神AN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神AZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神B": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神BA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神BB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神BC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神BD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神BE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神BF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神BG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神BH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神BI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神BJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神BK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神BZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    17
+   ]
+  },
+  "kansai_local_神CP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神CQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    17
+   ]
+  },
+  "kansai_local_神CR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    17
+   ]
+  },
+  "kansai_local_神CS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神CU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神CW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神CX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神CY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神CZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神D": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神DA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    13,
+    16
+   ]
+  },
+  "kansai_local_神DU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神DV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神DW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神DX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神DY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神DZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神E": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神ED": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15,
+    16,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神EG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神ES": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神ET": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神EX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神EY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神EZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神F": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神FB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神FC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神FD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神FE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神FF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神FG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神FH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神FI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神FJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18
+   ]
+  },
+  "kansai_local_神FK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神FL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神FV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神FW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神FX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神G": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神GA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    19
+   ]
+  },
+  "kansai_local_神GQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神GR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神GU": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神GV": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神GW": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神GX": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神GY": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神GZ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神H": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HA": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HB": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HC": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HD": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HE": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HF": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HG": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HH": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HI": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HJ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HK": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HL": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HM": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HN": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HO": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HP": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HQ": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HR": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神HS": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18
+   ]
+  },
+  "kansai_local_神HT": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15
+   ]
+  },
+  "kansai_local_神I": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    15,
+    18
+   ]
+  },
+  "kansai_local_神J": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神K": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神L": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神M": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神N": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神O": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18
+   ]
+  },
+  "kansai_local_神P": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神Q": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神S": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16
+   ]
+  },
+  "kansai_local_神T": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    16,
+    18,
+    19
+   ]
+  },
+  "kansai_local_神X": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神Y": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18
+   ]
+  },
+  "kansai_local_神Z": {
+   "p": "兵庫県",
+   "b": "図",
+   "f": [
+    18,
+    19
+   ]
+  }
+ }
+}

@@ -25,6 +25,18 @@ export const SITE_HISTORY_CATEGORIES: readonly SiteHistoryCategory[] = ['ペー�
 /** 新しい順（文案の並び） */
 export const SITE_HISTORY: readonly SiteHistoryItem[] = [
   {
+    id: "N3",
+    date: "2026-11-07",
+    category: "ページ",
+    title: "関西の 6 府県の変電所ページ",
+    summary: "関西電力送配電の変電所のうち、同社の府県別の図などで府県が決まるものを、大阪府・京都府・兵庫県・滋賀県・奈良県・和歌山県の都道府県別ページに載せました。変電所の詳細ページにも府県と、その根拠の資料を表示します。府県の決まらない変電所は、これまでどおり関西エリアの一覧に載っています。",
+    links: [
+      { label: "都道府県別 変電所一覧", url: "/grid/prefecture" },
+      { label: "関西エリア", url: "/grid/kansai" },
+    ],
+    ref: "関西の府県の割り当て便（reports/kansai-prefecture-assign-2026-11-07.md）",
+  },
+  {
     id: "N2",
     date: "2026-10-25",
     category: "ページ",

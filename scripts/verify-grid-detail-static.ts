@@ -106,7 +106,7 @@ const listRows = Object.values((lists as unknown as { by_area: Record<string, Re
 for (const s of listRows) {
   const r = detail.get(s.slug);
   if (!r) { problems.push(`${s.slug}: 一覧にあるのに詳細の JSON に無い`); continue; }
-  const place = normalizeSubstationPlace(r.prefecture ?? null, Array.isArray(r.area) ? r.area[0] : null);
+  const place = normalizeSubstationPlace(r.prefecture ?? null, Array.isArray(r.area) ? r.area[0] : null, typeof r.external_id === 'string' ? r.external_id : null);
   if (place.prefecture !== s.prefecture || place.facilityClass !== s.facility_class) {
     problems.push(`${s.slug}: 府県が一覧と違う（詳細 ${place.prefecture}/${place.facilityClass}・一覧 ${s.prefecture}/${s.facility_class}）`);
   }

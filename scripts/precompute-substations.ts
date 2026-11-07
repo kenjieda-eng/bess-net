@@ -131,9 +131,11 @@ async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
         slug: s.slug,
         name: s.name,
         ...(() => {
+          // 関西の府県は external_id で対応表を引く（関西の府県の割り当て便・2026-11-07）。生のレコードに 1 回だけ（#119）
           const place = normalizeSubstationPlace(
             s.prefecture,
-            Array.isArray(s.area) && s.area.length > 0 ? s.area[0] : null
+            Array.isArray(s.area) && s.area.length > 0 ? s.area[0] : null,
+            typeof s.external_id === 'string' ? s.external_id : null
           );
           return { prefecture: place.prefecture, facility_class: place.facilityClass };
         })(),

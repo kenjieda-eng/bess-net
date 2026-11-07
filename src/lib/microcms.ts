@@ -1858,7 +1858,7 @@ export type SubstationSearchFilters = {
 };
 
 const SUBSTATION_SEARCH_FIELDS =
-  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw';
+  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,external_id';
 
 const SEARCH_DISPLAY_LIMIT = 100;
 
@@ -1895,7 +1895,8 @@ export const searchSubstationsByName = async (
           ...(() => {
             const place = normalizeSubstationPlace(
               c.prefecture,
-              Array.isArray(c.area) ? c.area[0] : c.area
+              Array.isArray(c.area) ? c.area[0] : c.area,
+              c.external_id
             );
             return { prefecture: place.prefecture, facility_class: place.facilityClass };
           })(),
@@ -1923,7 +1924,7 @@ export const searchSubstationsByName = async (
    - 表示上限 200 件
    ================================================================= */
 const SEARCH_FILTER_FIELDS =
-  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,n1_capacity_mw,n1_eligible';
+  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,n1_capacity_mw,n1_eligible,external_id';
 const SEARCH_FILTER_LIMIT = 200;
 
 /** Gr7(2026-08-09): 件数表示のため totalCount も返す（表示は上限200件のまま） */
@@ -2022,7 +2023,8 @@ export const searchSubstationsByFilters = async (
           ...(() => {
             const place = normalizeSubstationPlace(
               c.prefecture,
-              Array.isArray(c.area) ? c.area[0] : c.area
+              Array.isArray(c.area) ? c.area[0] : c.area,
+              c.external_id
             );
             return { prefecture: place.prefecture, facility_class: place.facilityClass };
           })(),
@@ -2059,10 +2061,12 @@ type SubstationInventoryRow = {
   voltage_primary_kv?: number;
   cap_avail_mw?: number;
   n1_eligible?: boolean;
+  external_id?: string;
 };
 
+// external_id: 関西の府県の導出に使う（関西の府県の割り当て便・2026-11-07）
 const INVENTORY_FIELDS =
-  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,n1_eligible';
+  'slug,name,operator,area,prefecture,voltage_primary_kv,cap_avail_mw,n1_eligible,external_id';
 
 let _inventoryCache: SubstationInventoryRow[] | null = null;
 
@@ -2096,7 +2100,8 @@ export const getAvailablePrefectures = async (): Promise<string[]> => {
       r.prefecture,
       Array.isArray((r as { area?: string[] | string }).area)
         ? ((r as { area?: string[] }).area as string[])[0]
-        : ((r as { area?: string }).area as string | undefined)
+        : ((r as { area?: string }).area as string | undefined),
+      r.external_id
     );
     if (place.prefecture) set.add(place.prefecture);
   }
@@ -2112,7 +2117,8 @@ export const getPrefectureCountMap = async (): Promise<Record<string, number>> =
       r.prefecture,
       Array.isArray((r as { area?: string[] | string }).area)
         ? ((r as { area?: string[] }).area as string[])[0]
-        : ((r as { area?: string }).area as string | undefined)
+        : ((r as { area?: string }).area as string | undefined),
+      r.external_id
     );
     if (!place.prefecture) continue;
     result[place.prefecture] = (result[place.prefecture] || 0) + 1;
@@ -2376,7 +2382,8 @@ export const getSubstationsByPrefecture = async (
           ...(() => {
             const place = normalizeSubstationPlace(
               c.prefecture,
-              Array.isArray(c.area) ? c.area[0] : c.area
+              Array.isArray(c.area) ? c.area[0] : c.area,
+              c.external_id
             );
             return { prefecture: place.prefecture, facility_class: place.facilityClass };
           })(),

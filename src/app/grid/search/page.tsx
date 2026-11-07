@@ -25,6 +25,7 @@ import {
   getSearchPopulationTotal,
   getAvailablePrefectures,
   getOperatorsWithoutPrefecture,
+  getKansaiPrefectureCoverage,
   getCapUnpublishedTotal,
   GRID_INDEX_TOTAL,
   type GridSearchFilters,
@@ -225,6 +226,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const capUnpublishedTotal = getCapUnpublishedTotal();
   // Gr11-①: 都道府県の区分を持たない事業者（データ由来。0社なら注記なし）
   const opsWithoutPref = getOperatorsWithoutPrefecture();
+  // 関西の府県の割り当て便（2026-11-07）: 関西は府県の決まる変電所にだけ府県が付く（データ由来の件数）
+  const kansaiPref = getKansaiPrefectureCoverage();
   // Gr11-⑤: 印刷ヘッダ用（出典=結果に含まれる事業者・公表日=エリア基準日・取込日=母集団生成日時）
   const printOperators = [...new Set(results.map((r) => r.operator).filter(Boolean))] as string[];
   const printAreaDates = [...new Set(results.map((r) => r.area).filter(Boolean))]
@@ -337,6 +340,11 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 ))}
               </select>
               {/* Gr11-①: 県の区分を持たない事業者の注記（データから導出。該当0社なら出さない） */}
+              {kansaiPref && (
+                <span style={{ fontSize: 12, color: '#6b7280', display: 'block', marginTop: 4 }}>
+                  {`${kansaiPref.operator}の公表データには府県の記載がなく、府県は同社の府県別の図などで決まる${kansaiPref.withPref.toLocaleString()}件（全${kansaiPref.total.toLocaleString()}件）にだけ付いています。府県の決まらない変電所はエリア「関西」で絞ってください。`}
+                </span>
+              )}
               {opsWithoutPref.length > 0 && (
                 <span style={{ fontSize: 12, color: '#6b7280', display: 'block', marginTop: 4 }}>
                   {opsWithoutPref.map((o) => `${o.operator}の公表データ（${o.count.toLocaleString()}件）には都道府県の区分がありません。エリア「${o.area}」で絞ってください。`).join(' ')}

@@ -39,6 +39,7 @@ import { isUndisclosedSubstation, substationShownName } from '@/lib/substation-u
 import GridPrintButton from '@/components/GridPrintButton';
 // Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
+import { kansaiPrefectureBasisLabel } from '@/lib/kansai-prefecture';
 // N1b: 個別ページ（2026-11-04〜 ビルド時の JSON）も一覧と同じ規則で区分する（#121・L-EIC-028: 取得側・表示側の全経路が同じ値を得る）
 import { n1StatusOf, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status';
 import { contactUrl } from '@/lib/contact-link';
@@ -151,7 +152,7 @@ export async function generateMetadata({
   const displayName = displaySubstationName(sub);
   const desc = `${displayName}（${operator}・${vc}）の系統空き容量・連系条件・出力制御情報。空容量${availStr}。出典・最終更新日明記、蓄電所事業の検討材料に。`;
   // 検索の入口便（2026-10-30）: 題名に県と事業者の短い名。県は本文と同じ normalizeSubstationPlace を生値に 1 回だけ通す（#119）
-  const place = normalizeSubstationPlace(sub.prefecture, Array.isArray(sub.area) ? sub.area[0] : (sub.area as unknown as string | undefined));
+  const place = normalizeSubstationPlace(sub.prefecture, Array.isArray(sub.area) ? sub.area[0] : (sub.area as unknown as string | undefined), sub.external_id);
   const pageTitle = buildSubstationTitle(displayName, place.prefecture, operator, substationNameQualifier(sub.slug));
   return {
     // layout.tsx titleTemplate が自動付与（落とし穴 #86）
@@ -196,7 +197,8 @@ export default async function GridSlugPage({
   // ★これを通さないと、詳細ページだけ生値（「関西ローカル系」「沖縄本島66kV系・配変」）が残る。
   const place = normalizeSubstationPlace(
     sub.prefecture,
-    Array.isArray(sub.area) ? sub.area[0] : (sub.area as unknown as string | undefined)
+    Array.isArray(sub.area) ? sub.area[0] : (sub.area as unknown as string | undefined),
+    sub.external_id
   );
   const areaJpForLinks = Array.isArray(sub.area) ? sub.area[0] : undefined;
   const idxTops = substationsIndex as {
@@ -421,7 +423,8 @@ export default async function GridSlugPage({
               {/* Gr10追補(2026-08-11): 生の原値を「都道府県」として出さない。
                   府県が確定しない社（関西電力送配電・沖縄電力）は「設備区分」として別行で出す。*/}
               <dt>都道府県</dt>
-              <dd>{fmtStr(place.prefecture)}</dd>
+              {/* 関西の府県は公表図・住所の資料から決めたもの。根拠を一言添える（所在地を確かめたとは書かない・2026-11-07） */}
+              <dd>{place.prefecture && place.prefectureBasis ? `${place.prefecture}（${kansaiPrefectureBasisLabel(place.prefectureBasis)}）` : fmtStr(place.prefecture)}</dd>
               {place.facilityClass && (
                 <>
                   <dt>設備区分</dt>

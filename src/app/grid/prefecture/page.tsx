@@ -75,12 +75,13 @@ export default function PrefectureIndexPage() {
             変電所を一覧表示。各都道府県をクリックすると該当変電所の一覧へ遷移します。
           </p>
 
-          {/* Gr10(2026-08-11): 掲載が無い府県について、無いことを黙らずに理由を書く。
-              関西電力送配電の公表データには変電所の府県の記載がないため個別ページを作れない。*/}
+          {/* Gr10(2026-08-11)→関西の府県の割り当て便(2026-11-07): 関西電力送配電の公表データには変電所の府県の記載がない。
+              府県は公表図で決まる変電所にだけ付け、府県なしで残るものはエリアの一覧にあることを書く。*/}
           <p className="grid-source-note" style={{ margin: '-8px 0 16px' }}>
             {Array.from(KANSAI_PREFECTURES).join('・')}
-            は、関西電力送配電の公表データに変電所の府県の記載がないため個別ページがありません。{' '}
-            <Link href="/grid/kansai">関西エリアの一覧（変電所{(SUMMARY.by_area_slug.kansai ?? 0).toLocaleString('en-US')}件）へ</Link>
+            の変電所は、関西電力送配電の公表データに府県の記載がないため、同社の府県別の図などで府県が決まるものだけを各府県のページに載せています。府県の決まらない変電所を含む全件は{' '}
+            <Link href="/grid/kansai">関西エリアの一覧（変電所{(SUMMARY.by_area_slug.kansai ?? 0).toLocaleString('en-US')}件）</Link>
+            にあります。
           </p>
 
           <section className="grid-section">

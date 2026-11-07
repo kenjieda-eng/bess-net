@@ -111,6 +111,21 @@ export function getOperatorsWithoutPrefecture(): Array<{ operator: string; area:
     .map(([operator, v]) => ({ operator, area: v.area, count: v.total }));
 }
 
+/**
+ * 関西エリアの府県の付き方（関西の府県の割り当て便・2026-11-07）。関西電力送配電の公表データには府県が無く、
+ * 府県は公表図・住所の資料で決まる変電所にだけ付く（src/lib/kansai-prefecture.ts）。select 下の注記に使う。
+ */
+export function getKansaiPrefectureCoverage(): { operator: string; withPref: number; total: number } | null {
+  let withPref = 0, total = 0, operator = '';
+  for (const i of getSearchPopulation()) {
+    if (i.area !== '関西') continue;
+    total++;
+    if (i.prefecture) withPref++;
+    if (!operator && i.operator) operator = i.operator;
+  }
+  return total > 0 && withPref > 0 && withPref < total ? { operator, withPref, total } : null;
+}
+
 /** 空容量が未公表（null）の全件数（注記用。焼き込まずデータから算出） */
 export function getCapUnpublishedTotal(): number {
   return getSearchPopulation().filter((i) => i.cap_avail_mw === null || i.cap_avail_mw === undefined).length;

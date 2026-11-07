@@ -1,7 +1,7 @@
 // AreaPage.tsx - エリア別系統空き容量ページ (server component)
 // /grid/tohoku, /grid/hokuriku, /grid/shikoku から呼び出される
 import Link from 'next/link';
-import { KANSAI_NO_PREFECTURE_NOTE, normalizeSubstationPlace } from '@/lib/grid-prefecture';
+import { KANSAI_PREFECTURE_NOTE, normalizeSubstationPlace } from '@/lib/grid-prefecture';
 import { formatDataDateLabel, getAreaDates } from '@/lib/grid-data-date';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -290,11 +290,11 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
             </ul>
           </section>
 
-          {/* Gr10(2026-08-11): 関西は公表データに府県の記載がないため府県ページを作れない。
-              「無い」ことを黙って隠さず、理由と代替手段を書く。*/}
+          {/* Gr10(2026-08-11)→関西の府県の割り当て便(2026-11-07): 関西は公表データに府県の記載がない。
+              府県は公表図で決まるものだけ出す。根拠と、府県なしで残るものがあることを書く（所在地を確かめたとは書かない）。*/}
           {meta.slug === 'kansai' && (
             <p className="grid-source-note" style={{ margin: '4px 0 16px' }}>
-              📋 {KANSAI_NO_PREFECTURE_NOTE}
+              📋 {KANSAI_PREFECTURE_NOTE}
             </p>
           )}
 
