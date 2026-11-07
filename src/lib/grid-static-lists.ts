@@ -28,6 +28,8 @@ export type GridListItem = {
   capacity_total_mw: number | null;
   cap_operational_mw: number | null;
   cap_avail_mw: number | null;
+  /** 予想潮流（小さな直し便・2026-11-07: 関西の算出値が負かを grid-avail.ts が算定式で確かめる） */
+  forecast_flow_mw: number | null;
   n1_eligible: boolean;
   /** N1b: N-1 の表示区分（precompute で n1StatusOf を当てた値・#121） */
   n1_status: N1Status;
@@ -49,6 +51,8 @@ const DATA = lists as unknown as {
   by_area: Record<string, GridListItem[]>;
   /** 県 → [エリア名, by_area 内の添字]。実体を二重に持たないための参照（生成JSONのサイズ半減） */
   pref_refs: Record<string, Array<[string, number]>>;
+  /** 凍結の行（エリアごと・一覧には出さない）。同名の判定だけに使う（小さな直し便・2026-11-07）。旧生成物では undefined */
+  frozen_by_area?: Record<string, GridListItem[]>;
 };
 
 const _prefCache = new Map<string, GridListItem[]>();
@@ -128,10 +132,24 @@ export function getListItemBySlug(slug: string): GridListItem | undefined {
   return _bySlug.get(slug);
 }
 
+/** 凍結（更新を停止した）変電所の行（エリアごと）。一覧・件数には入れない。同名の判定と検査だけに使う */
+export function getFrozenAreaSubstationsStatic(areaJp: string): GridListItem[] {
+  return DATA.frozen_by_area?.[areaJp] ?? [];
+}
+
+/**
+ * 同名の判定に使う行＝そのエリアの一覧＋凍結の行（小さな直し便・2026-11-07）。
+ * 凍結を外して数えていたため、動いている須磨（77/6.6）と凍結の須磨（77/33）が同じ題名になっていた。
+ * 凍結のページも開ける（noindex）ので、題名は電圧などで分ける。
+ */
+export function sameNameRows(areaJp: string): GridListItem[] {
+  return [...getAreaSubstationsStatic(areaJp), ...getFrozenAreaSubstationsStatic(areaJp)];
+}
+
 let _qualifiers: Map<string, string> | null = null;
-/** 変電所の詳細の題名・h1 に添える語。名前が重ならない変電所は null */
+/** 変電所の詳細の題名・h1 に添える語（凍結のページも含む）。名前が重ならない変電所は null */
 export function substationNameQualifier(slug: string): string | null {
-  _qualifiers ??= new Map(Object.values(DATA.by_area).flatMap((rows) => [...nameQualifiers(rows)]));
+  _qualifiers ??= new Map(Object.keys(DATA.by_area).flatMap((areaJp) => [...nameQualifiers(sameNameRows(areaJp))]));
   return _qualifiers.get(slug) ?? null;
 }
 
@@ -157,6 +175,8 @@ export function toSubstationShape(items: GridListItem[]): Substation[] {
     capacity_total_mw: s.capacity_total_mw ?? undefined,
     cap_operational_mw: s.cap_operational_mw ?? undefined,
     cap_avail_mw: s.cap_avail_mw ?? undefined,
+    // 小さな直し便（2026-11-07）: 落とすと関西の算出値が負の行を一覧で 0 にできない（grid-avail.ts が算定式で確かめる）
+    forecast_flow_mw: s.forecast_flow_mw ?? undefined,
     n1_eligible: s.n1_eligible,
     // N1b: 落とすと一覧の N-1 列が黙って「不可」に戻る（#118 と同型）。verify:grid-fields の SHAPE_CRITICAL に入れてある
     n1_status: s.n1_status,

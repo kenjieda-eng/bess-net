@@ -28,6 +28,8 @@ import {
 } from '@/lib/grid-connection-checker';
 import substationsIndex from '@/data/substations/index.json';
 import { n1StatusFromRow } from '@/lib/n1-status-label';
+// 関西の算出値が負の空容量は 0 と表示し、印と注記を付ける（小さな直し便・2026-11-07・導出は grid-avail.ts の 1 か所）
+import { shownAvailMw, negativeAvailCalc, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
 
 // index.json の by_pref から都道府県一覧を抽出 (件数降順)
 type IndexType = {
@@ -108,7 +110,7 @@ function buildCsv(input: DiagnosisInput, result: DiagnosisResult): string {
       s.voltage_primary_kv !== null && s.voltage_secondary_kv !== null
         ? `${s.voltage_primary_kv}/${s.voltage_secondary_kv}`
         : '',
-      s.cap_avail_mw !== null ? String(s.cap_avail_mw) : '',
+      shownAvailMw(s) !== null ? String(shownAvailMw(s)) : '',
       // N1b: 列名「N-1 適用」は変えない。未算定・公表なしを NO に潰さない（YES／NO／未算定／公表なし）
       (() => {
         const st = n1StatusFromRow(s);
@@ -589,7 +591,7 @@ export default function GridConnectionChecker() {
                   <div>
                     <div style={{ color: 'var(--color-muted)', fontSize: 13 }}>空き容量</div>
                     <div style={{ fontWeight: 600 }}>
-                      {s.cap_avail_mw !== null ? `${s.cap_avail_mw} MW` : '—'}
+                      {shownAvailMw(s) !== null ? `${shownAvailMw(s)} MW${negativeAvailCalc(s) ? NEGATIVE_AVAIL_MARK : ''}` : '—'}
                     </div>
                   </div>
                   <div>
@@ -633,6 +635,9 @@ export default function GridConnectionChecker() {
             );
           })}
         </ol>
+      )}
+      {result.candidates.some((c) => negativeAvailCalc(c.substation) !== null) && (
+        <p className="grid-avail-list-note" style={{ marginTop: -12, marginBottom: 16 }}>{NEGATIVE_AVAIL_LIST_NOTE}</p>
       )}
 
       {/* 注意事項 */}

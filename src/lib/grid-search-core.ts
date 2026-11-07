@@ -24,6 +24,7 @@
 import { getAreaSubstationsStatic, type GridListItem } from './grid-static-lists';
 import { AREA_META } from '@/app/grid/[slug]/area-meta';
 import substationsIndex from '@/data/substations/index.json';
+import { shownAvailMw } from './grid-avail';
 
 export type GridSearchFilters = {
   q?: string;
@@ -190,7 +191,8 @@ export function searchGridStatic(filters: GridSearchFilters): GridSearchOutcome 
   const vMin = voltageMin && Number.isFinite(Number(voltageMin)) ? Number(voltageMin) : null;
   const cMin = capMin && Number.isFinite(Number(capMin)) ? Number(capMin) : null;
   const cMax = capMax && Number.isFinite(Number(capMax)) ? Number(capMax) : null;
-  const capField = (i: GridListItem): number | null => (wantN1 ? i.n1_capacity_mw : i.cap_avail_mw);
+  // 小さな直し便（2026-11-07）: 空容量は表示と同じ値（関西の算出値が負なら 0・grid-avail.ts）で絞り込み・並べ替える
+  const capField = (i: GridListItem): number | null => (wantN1 ? i.n1_capacity_mw : shownAvailMw(i));
 
   const matched = getSearchPopulation().filter((i) => {
     if (q && !(i.name ?? '').includes(q)) return false;

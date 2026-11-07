@@ -289,6 +289,28 @@ export function buildSubstationTitle(name: string, prefecture: string | null, op
   return where ? `${name}（${where}）の系統空き容量・蓄電池連系条件` : `${name}の系統空き容量・蓄電池連系条件`;
 }
 
+/**
+ * 変電所の詳細の見出しの名前（h1・JSON-LD の名前・パンくずの最後の段）。小さな直し便（2026-11-07）。
+ * 名称非公開は府県も含めて括弧を 1 つにまとめる（「名称非公開の変電所（福井県・北陸電力送配電・No.FSS062）」）。
+ * ほかは表示用の名前に、同名を見分ける語（qualifier）を括弧で添える（今までの h1 と同じ）。
+ */
+export function substationHeadingName(sub: SubstationNameInput, prefecture: string | null, qualifier: string | null = null): string {
+  if (isUndisclosedSubstation(sub)) return undisclosedDisplayName(sub, prefecture);
+  const display = displaySubstationName(sub);
+  return qualifier ? `${display}（${qualifier}）` : display;
+}
+
+/**
+ * 変電所の詳細の title・OG・twitter の題名（小さな直し便・2026-11-07）。
+ * 名称非公開は見出しの名前（括弧 1 つ・府県と事業者と No.）に「の系統空き容量・蓄電池連系条件」を付ける＝事業者は 1 回だけ。
+ * ほかは buildSubstationTitle（{名前}（{見分ける語}・{県}・{事業者}））。
+ */
+export function substationPageTitle(sub: SubstationNameInput, prefecture: string | null, qualifier: string | null = null): string {
+  if (isUndisclosedSubstation(sub)) return `${undisclosedDisplayName(sub, prefecture)}の系統空き容量・蓄電池連系条件`;
+  const operator = Array.isArray(sub.operator) ? sub.operator[0] ?? '' : sub.operator ?? '';
+  return buildSubstationTitle(displaySubstationName(sub), prefecture, operator, qualifier);
+}
+
 /* ------------------------------------------------------------------ *
  * Gr8（2026-08-09）: 県からの導線に使う件数
  * ------------------------------------------------------------------ */

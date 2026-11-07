@@ -31,6 +31,8 @@ import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import { n1StatusFromRow } from '@/lib/n1-status-label';
 // 名称非公開の 23 件は「名称非公開の変電所（事業者・No.）」で出す（小さな直し便・2026-11-05）
 import { substationShownName } from '@/lib/substation-undisclosed';
+// 関西の算出値が負の空容量は 0 と表示・合計（小さな直し便・2026-11-07・導出は grid-avail.ts の 1 か所）
+import { shownAvailMw, negativeAvailCalc, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
 
 // Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件の県は非表示）
 const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
@@ -93,10 +95,9 @@ export default async function PrefecturePage({ params }: PageParams) {
   const facts = gridFacts(subs);
   const dataDateLabel = formatDataDateLabelForAreas(subs.map((s) => s.area || ''));
   const n1 = subs.filter((s) => s.n1_eligible === true).length;
-  const totalCap = subs.reduce(
-    (sum, s) => sum + (typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : 0),
-    0
-  );
+  // 小さな直し便（2026-11-07）: 関西の算出値が負の変電所は 0 として足す（負のまま足すと合計が減っていた）
+  const totalCap = subs.reduce((sum, s) => sum + (shownAvailMw(s) ?? 0), 0);
+  const anyNegativeCalc = subs.some((s) => negativeAvailCalc(s) !== null);
 
 
   const breadcrumbJsonLd = {
@@ -306,8 +307,8 @@ export default async function PrefecturePage({ params }: PageParams) {
                       {s.area}エリア
                       {s.voltage_primary_kv != null &&
                         ` ／ ${s.voltage_primary_kv}kV`}
-                      {s.cap_avail_mw != null
-                        ? ` ／ 空容量 ${s.cap_avail_mw}MW`
+                      {shownAvailMw(s) != null
+                        ? ` ／ 空容量 ${shownAvailMw(s)}MW${negativeAvailCalc(s) ? NEGATIVE_AVAIL_MARK : ''}`
                         : ' ／ 空容量 —'}
                       {(() => {
                         // N1b: 不可は従来どおり付記しない。未算定・公表なしは「不可」と区別して付記する
@@ -319,6 +320,7 @@ export default async function PrefecturePage({ params }: PageParams) {
                 </li>
               ))}
             </ul>
+            {anyNegativeCalc && <p className="grid-avail-list-note">{NEGATIVE_AVAIL_LIST_NOTE}</p>}
           </section>
 
           <p className="grid-source-note">

@@ -7,6 +7,8 @@ import type { Substation } from '@/lib/microcms';
 // 名称非公開の 23 件は「名称非公開の変電所（事業者・No.）」で出す（小さな直し便・2026-11-05）
 import { substationShownName } from '@/lib/substation-undisclosed';
 import { n1StatusFromRow, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status-label';
+// 関西の算出値が負の空容量は 0 と表示し、印と注記を付ける（小さな直し便・2026-11-07・導出は grid-avail.ts の 1 か所）
+import { shownAvailMw, negativeAvailCalc, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
 
 const PAGE_SIZE = 20;
 
@@ -46,7 +48,8 @@ export default function SubstationsBrowser({ items }: Props) {
         if (vc !== voltageClass) return false;
       }
       if (availableOnly) {
-        if (!(typeof s.cap_avail_mw === 'number' && s.cap_avail_mw > 0)) return false;
+        const v = shownAvailMw(s);
+        if (!(typeof v === 'number' && v > 0)) return false;
       }
       if (n1Only) {
         if (s.n1_eligible !== true) return false;
@@ -62,6 +65,7 @@ export default function SubstationsBrowser({ items }: Props) {
 
   const visibleItems = filtered.slice(0, visible);
   const hasMore = visible < filtered.length;
+  const anyNegativeCalc = useMemo(() => items.some((s) => negativeAvailCalc(s) !== null), [items]);
 
   return (
     <div className="grid-browser">
@@ -132,8 +136,8 @@ export default function SubstationsBrowser({ items }: Props) {
               {visibleItems.map((s) => {
                 const vc = (s.voltage_class && s.voltage_class[0]) || '';
                 const oc = (s.oc_possibility && s.oc_possibility[0]) || '';
-                const avail =
-                  typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null;
+                const avail = shownAvailMw(s);
+                const negCalc = negativeAvailCalc(s) !== null;
                 return (
                   <tr key={s.id}>
                     <td>
@@ -158,6 +162,7 @@ export default function SubstationsBrowser({ items }: Props) {
                       {avail !== null ? (
                         <span className={avail > 0 ? 'pos' : 'zero'}>
                           {avail}
+                          {negCalc ? NEGATIVE_AVAIL_MARK : ''}
                         </span>
                       ) : (
                         '—'
@@ -186,6 +191,7 @@ export default function SubstationsBrowser({ items }: Props) {
           </table>
         </div>
       )}
+      {filtered.length > 0 && anyNegativeCalc && <p className="grid-avail-list-note">{NEGATIVE_AVAIL_LIST_NOTE}</p>}
 
       {hasMore && (
         <div className="grid-browser-more">

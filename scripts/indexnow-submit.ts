@@ -10,7 +10,7 @@
  *   ただし既定で混ざらないようにする: --all と --since は今までどおり変電所の詳細を含めない（毎朝の後段〔INDEXNOW_DAILY〕が
  *   うっかり 8,000 件を送らないように）。変電所の詳細を送るのは --grid（全件・1 回だけ）と --urls（便で変わった slug だけ）。
  *   データ更新の便（再取込）は、本実行・push・本番確認のあとに、変わった slug だけを --urls で送る。
- * ★名称非公開の変電所（NO_SUBMIT_SLUGS・23 件）は、どの選び方でも送らない（次の便で noindex にする予定・名前で探されない）。
+ * ★noindex の変電所の詳細（NO_SUBMIT_SLUGS＝名称非公開の 23 件＋凍結のページ）は、どの選び方でも送らない（--urls に来ても外す）。
  *
  * 送る URL の選び方（どれか 1 つ）:
  *   --all                 本番 sitemap.xml の全 URL（変電所の詳細を除く）
@@ -30,6 +30,8 @@
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+// 凍結（更新を停止した）変電所の slug。真実源は src/data/substations-frozen.json（#119）。詳細は 2026-11-07 から noindex
+import { FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
 export {};
 
 const SITE = 'https://bess-net.jp';
@@ -92,11 +94,11 @@ function normalize(raw: string): string {
 }
 
 /**
- * 名称非公開の変電所（公表元が名前を伏せている設備・関西は備考「◇」）。どの選び方でも送らない（2026-11-04）。
- * 題名に内部の番号が出ていて名前で探されない。次の小さな直し便で noindex にしてサイトマップから外す予定（そうなればここは空にしてよい）。
+ * 名称非公開の変電所（公表元が名前を伏せている設備・関西は備考「◇」）。2026-11-05 から noindex・サイトマップの外。
  * 一覧の元: サイトのデータで名前が「(名称非公開)」で始まる 22 件と、名前が「変電所」だけの 1 件（近藤さんの c4 と同じ 23 件）。
+ * verify:grid-pages が、サイトの判定（isUndisclosedSubstation）と同じ 23 件かを検査する。
  */
-const NO_SUBMIT_SLUGS: ReadonlySet<string> = new Set([
+const UNDISCLOSED_SLUGS: ReadonlySet<string> = new Set([
   'ksi-kikan-bu', 'egz-kikan-s0016', 'rkd-kikan-hss0014',
   'rkd-toyama-tss0005', 'rkd-toyama-tss0026', 'rkd-toyama-tss0056', 'rkd-toyama-tss0069', 'rkd-toyama-tss0076',
   'rkd-ishikawa-iss0020', 'rkd-ishikawa-iss0038',
@@ -104,6 +106,11 @@ const NO_SUBMIT_SLUGS: ReadonlySet<string> = new Set([
   'rkd-fukui-fss0056', 'rkd-fukui-fss0057', 'rkd-fukui-fss0058', 'rkd-fukui-fss0059', 'rkd-fukui-fss0060', 'rkd-fukui-fss0061',
   'rkd-fukui-fss0062',
 ]);
+/**
+ * どの選び方でも送らない変電所の詳細＝noindex の 2 種類（src/lib/substation-noindex.ts と同じ）:
+ * 名称非公開の 23 件と、凍結（更新を停止した）のページ（2026-11-07 から noindex・関西 7・東京 1・中国 1）。
+ */
+const NO_SUBMIT_SLUGS: ReadonlySet<string> = new Set([...UNDISCLOSED_SLUGS, ...FROZEN_SUBSTATION_SLUGS]);
 function isNoSubmit(url: string): boolean {
   const m = /^\/grid\/([^/]+)\/?$/.exec(new URL(url).pathname);
   return !!m && NO_SUBMIT_SLUGS.has(decodeURIComponent(m[1]));
@@ -143,12 +150,12 @@ async function main(): Promise<void> {
   const key = readKey();
   const keyLocation = `${SITE}/${key}.txt`;
   const selected = [...new Set((await selectUrls()).map(normalize))];
-  // --all・--since は変電所の詳細を含めない（既定で混ざらない）。--grid・--urls は含める。名称非公開はどの選び方でも外す
+  // --all・--since は変電所の詳細を含めない（既定で混ざらない）。--grid・--urls は含める。noindex（名称非公開・凍結）はどの選び方でも外す
   const keepGrid = GRID || URLS_FILE !== undefined;
   const noSubmit = selected.filter(isNoSubmit);
   const urls = selected.filter((u) => (keepGrid || !isSubstationDetail(u)) && !isNoSubmit(u));
   const droppedGrid = keepGrid ? 0 : selected.filter((u) => isSubstationDetail(u) && !isNoSubmit(u)).length;
-  console.log(`[indexnow] mode=${APPLY ? '本実行' : 'DRY-RUN'}・送る URL ${urls.length.toLocaleString()} 件（変電所の詳細 ${droppedGrid.toLocaleString()} 件・名称非公開 ${noSubmit.length} 件を外した）・鍵 ${key.slice(0, 4)}…`);
+  console.log(`[indexnow] mode=${APPLY ? '本実行' : 'DRY-RUN'}・送る URL ${urls.length.toLocaleString()} 件（変電所の詳細 ${droppedGrid.toLocaleString()} 件・noindex〔名称非公開・凍結〕 ${noSubmit.length} 件を外した）・鍵 ${key.slice(0, 4)}…`);
   urls.slice(0, 10).forEach((u) => console.log(`  ${u}`));
   if (urls.length > 10) console.log(`  …ほか ${(urls.length - 10).toLocaleString()} 件`);
 

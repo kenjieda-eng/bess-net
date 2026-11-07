@@ -2921,6 +2921,20 @@
   font-size: 0.78rem;
   color: #6b7280;
 }
+/* 関西の算出値が負の空容量を 0 MW と出したときの一文（小さな直し便・2026-11-07・src/lib/grid-avail.ts） */
+.grid-avail-calc-note {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+.grid-avail-list-note {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 8px 0 0;
+}
 .grid-prose {
   font-size: 0.95rem;
   line-height: 1.8;

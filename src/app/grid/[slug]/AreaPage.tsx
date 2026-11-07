@@ -13,6 +13,8 @@ import type { Substation } from '@/lib/microcms';
 // 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: 関連事業者もビルド時に取った表から（実行時の microCMS 0）
 import { relatedOperatorsStatic } from '@/lib/grid-related-operators';
 import { substationShownName } from '@/lib/substation-undisclosed';
+// 関西の算出値が負の空容量は 0 と表示・並べ替え（小さな直し便・2026-11-07・導出は grid-avail.ts の 1 か所）
+import { shownAvailMw, negativeAvailCalc, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
 // 落とし穴 #116 の恒久策(2026-08-16): エリアの一覧は build 時 precompute の静的データを使う。
 // runtime microCMS だと Next の fetch キャッシュで再取込直後のビルドが旧データを出力する。
 import { getAreaSubstationsStatic, toSubstationShape } from '@/lib/grid-static-lists';
@@ -119,8 +121,8 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
       const top3 = [...list]
         .sort(
           (a, b) =>
-            ((b.cap_avail_mw as number) || -Infinity) -
-            ((a.cap_avail_mw as number) || -Infinity)
+            (shownAvailMw(b) || -Infinity) -
+            (shownAvailMw(a) || -Infinity)
         )
         .slice(0, 3);
       return { p, count: list.length, posCount: pos.length, top3 };
@@ -136,8 +138,8 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
       const top3 = [...list]
         .sort(
           (a, b) =>
-            ((b.cap_avail_mw as number) || -Infinity) -
-            ((a.cap_avail_mw as number) || -Infinity)
+            (shownAvailMw(b) || -Infinity) -
+            (shownAvailMw(a) || -Infinity)
         )
         .slice(0, 3);
       return { p, count: list.length, posCount: pos.length, top3 };
@@ -529,12 +531,13 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                         <td>{placeLabel(s)}</td>
                         <td>{(s.voltage_class && s.voltage_class[0]) || '—'}</td>
                         <td className="num">{fmt(s.n1_capacity_mw ?? null)}</td>
-                        <td className="num">{fmt(s.cap_avail_mw ?? null)}</td>
+                        <td className="num">{fmt(shownAvailMw(s))}{negativeAvailCalc(s) ? NEGATIVE_AVAIL_MARK : ''}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
+              {topN1.some((s) => negativeAvailCalc(s) !== null) && <p className="grid-avail-list-note">{NEGATIVE_AVAIL_LIST_NOTE}</p>}
             </section>
           )}
 

@@ -31,6 +31,8 @@ import { n1StatusOf, type N1Status } from '../src/lib/n1-status';
 // 変電所の詳細をビルド時の JSON から読む便（2026-11-04）: 詳細が使う欄・近くの案件の選び方
 import { GRID_DETAIL_FIELDS, GRID_DETAIL_SHARD, GRID_DETAIL_SHARD_OTHER, type SubstationDetail } from '../src/lib/grid-detail-fields';
 import { nearbyProjectsFrom, type NearbyProject } from '../src/lib/nearby-projects';
+// 小さな直し便（2026-11-07）: 関西の算出値が負の空容量は、並べ替えでも 0 として扱う（表示値の導出は grid-avail.ts の 1 か所）
+import { shownAvailMw } from '../src/lib/grid-avail';
 
 // 出力スキーマ (距離計算 + UI で必要な最小フィールド)
 //
@@ -70,8 +72,10 @@ export interface LiteSubstation {
   capacity_total_mw: number | null;
   /** 運用容量 MW */
   cap_operational_mw: number | null;
-  /** 空き容量 MW */
+  /** 空き容量 MW（microCMS の値のまま。関西の算出値が負でも 0 にしない＝表示は grid-avail.ts の shownAvailMw） */
   cap_avail_mw: number | null;
+  /** 予想潮流 MW（小さな直し便・2026-11-07: 関西の算出値が負かを、一覧でも算定式で確かめるため） */
+  forecast_flow_mw: number | null;
   /** N-1 電制適用可（microCMS の boolean。三値化しても「可」の判定はこれのまま） */
   n1_eligible: boolean;
   /** N-1 の表示区分（N1b・src/lib/n1-status.ts の n1StatusOf）。未算定・公表なしは microCMS では false のまま */
@@ -103,7 +107,7 @@ export interface LiteSubstation {
 const FETCH_FIELDS = [...new Set([
   'id', 'slug', 'name', 'prefecture', 'operator', 'area',
   'voltage_primary_kv', 'voltage_secondary_kv', 'voltage_class',
-  'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw',
+  'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw', 'forecast_flow_mw',
   'n1_eligible', 'n1_capacity_mw', 'units', 'external_id',
   'oc_possibility', 'latitude', 'longitude',
   'last_updated', 'fetched_at', 'area', 'source_url',
@@ -146,6 +150,7 @@ async function fetchAllSubstationsLight(): Promise<LiteSubstation[]> {
         capacity_total_mw: typeof s.capacity_total_mw === 'number' ? s.capacity_total_mw : null,
         cap_operational_mw: typeof s.cap_operational_mw === 'number' ? s.cap_operational_mw : null,
         cap_avail_mw: typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
+        forecast_flow_mw: typeof s.forecast_flow_mw === 'number' ? s.forecast_flow_mw : null,
         n1_eligible: s.n1_eligible === true,
         units: typeof s.units === 'number' ? s.units : null,
         n1_capacity_mw: typeof s.n1_capacity_mw === 'number' ? s.n1_capacity_mw : null,
@@ -314,7 +319,8 @@ async function main(): Promise<void> {
     (prefTop[pref] ??= []).push({
       slug: s.slug,
       name: s.name,
-      cap: typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
+      // 表示する値（関西の算出値が負なら 0・小さな直し便 2026-11-07）。並べ替えもこの値
+      cap: shownAvailMw(s),
       kv: typeof s.voltage_primary_kv === 'number' ? s.voltage_primary_kv : null,
     });
   }
@@ -333,7 +339,8 @@ async function main(): Promise<void> {
     (areaTop[s.area] ??= []).push({
       slug: s.slug,
       name: s.name,
-      cap: typeof s.cap_avail_mw === 'number' ? s.cap_avail_mw : null,
+      // 表示する値（関西の算出値が負なら 0・小さな直し便 2026-11-07）。並べ替えもこの値
+      cap: shownAvailMw(s),
       kv: typeof s.voltage_primary_kv === 'number' ? s.voltage_primary_kv : null,
     });
   }
@@ -406,16 +413,23 @@ async function main(): Promise<void> {
   }
   for (const k of Object.keys(prefRefs)) {
     prefRefs[k].sort((x, y) => {
-      const a = areaLists[x[0]][x[1]].cap_avail_mw ?? -1;
-      const b = areaLists[y[0]][y[1]].cap_avail_mw ?? -1;
+      // 小さな直し便（2026-11-07）: 関西の算出値が負なら 0 として並べる（表示と同じ値・grid-avail.ts）
+      const a = shownAvailMw(areaLists[x[0]][x[1]]) ?? -1;
+      const b = shownAvailMw(areaLists[y[0]][y[1]]) ?? -1;
       return b - a;
     });
+  }
+  // 小さな直し便（2026-11-07）: 凍結の行もエリアごとに持つ（一覧には出さない）。同名の判定（nameQualifiers）は凍結も入れて数え、
+  // 凍結のページと動いているページの題名が重ならないようにする（須磨 77/6.6 と凍結の須磨 77/33 が同じ題名だった）
+  const frozenByArea: Record<string, LiteSubstation[]> = {};
+  for (const s of all) {
+    if (FROZEN_SUBSTATION_SLUGS.has(s.slug) && s.area) (frozenByArea[s.area] ??= []).push(s);
   }
   const genDir = path.join(process.cwd(), 'src', 'lib', 'generated');
   fs.mkdirSync(genDir, { recursive: true });
   const listsPath = path.join(genDir, 'grid-area-lists.json');
   // Gr11(2026-08-25): 検索母集団の生成日時を JSON 内に持つ（ユウ条件3。鮮度の追跡用）
-  fs.writeFileSync(listsPath, JSON.stringify({ generated_at: new Date().toISOString(), by_area: areaLists, pref_refs: prefRefs }));
+  fs.writeFileSync(listsPath, JSON.stringify({ generated_at: new Date().toISOString(), by_area: areaLists, pref_refs: prefRefs, frozen_by_area: frozenByArea }));
   console.log(`  grid-area-lists.json: エリア${Object.keys(areaLists).length} / 県${Object.keys(prefRefs).length}`
     + ` (${(fs.statSync(listsPath).size / 1024).toFixed(0)} KB)`);
 

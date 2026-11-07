@@ -31,11 +31,15 @@ import { getRelatedNewsForSubstation } from '@/lib/related-news-substation';
 import { siteConfig } from '@/lib/site-config';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import substationsIndex from '@/data/substations/index.json';
-import { buildAreaTitle, buildAreaDescription, buildSubstationTitle, displaySubstationName, substationBasicSentence, gridFacts, areaHasMap } from '@/lib/grid-meta';
+import { buildAreaTitle, buildAreaDescription, substationPageTitle, substationHeadingName, displaySubstationName, substationBasicSentence, gridFacts, areaHasMap } from '@/lib/grid-meta';
 import { latestPublishedForAreas } from '@/lib/grid-data-date';
 import { getAreaSubstationsStatic, substationNameQualifier, getListItemBySlug } from '@/lib/grid-static-lists';
 // 名称非公開の 23 件: 表示名・noindex（小さな直し便・2026-11-05）
 import { isUndisclosedSubstation, substationShownName } from '@/lib/substation-undisclosed';
+// noindex は名称非公開と凍結（更新を停止した）の 2 種類だけ（小さな直し便・2026-11-07・判定は 1 か所）
+import { isNoindexSubstation } from '@/lib/substation-noindex';
+// 関西の算出値が負の空容量は 0 MW と表示し、計算値を一文で示す（小さな直し便・2026-11-07・データは変えない）
+import { shownAvailMw, shownAvailUpperMw, negativeAvailCalc, negativeCalcOf, negativeAvailNote } from '@/lib/grid-avail';
 import GridPrintButton from '@/components/GridPrintButton';
 // Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
@@ -146,19 +150,24 @@ export async function generateMetadata({
   if (!sub) return {};
   const operator = firstOf(sub.operator) || '';
   const vc = firstOf(sub.voltage_class) || '';
-  const avail = sub.cap_avail_mw;
-  const availStr = avail !== undefined && avail !== null ? `${avail}MW` : '情報なし';
-  // 変電所の名前便（2026-11-02）: 題名・description は表示用の名前（基本情報の「変電所名」の欄は一次の表記のまま）
-  const displayName = displaySubstationName(sub);
-  const desc = `${displayName}（${operator}・${vc}）の系統空き容量・連系条件・出力制御情報。空容量${availStr}。出典・最終更新日明記、蓄電所事業の検討材料に。`;
+  // 小さな直し便（2026-11-07）: 関西の算出値が負なら 0（本文の「空容量」と同じ値・grid-avail.ts）
+  const avail = shownAvailMw(sub);
+  const availStr = avail !== null ? `${avail}MW` : '情報なし';
   // 検索の入口便（2026-10-30）: 題名に県と事業者の短い名。県は本文と同じ normalizeSubstationPlace を生値に 1 回だけ通す（#119）
   const place = normalizeSubstationPlace(sub.prefecture, Array.isArray(sub.area) ? sub.area[0] : (sub.area as unknown as string | undefined), sub.external_id);
-  const pageTitle = buildSubstationTitle(displayName, place.prefecture, operator, substationNameQualifier(sub.slug));
+  // 変電所の名前便（2026-11-02）: 題名・description は表示用の名前（基本情報の「変電所名」の欄は一次の表記のまま）。
+  // 名称非公開は府県・事業者・No. を 1 つの括弧にまとめた名前（小さな直し便・2026-11-07: 事業者が 2 回出ていた）
+  const undisclosed = isUndisclosedSubstation(sub);
+  const displayName = undisclosed ? substationHeadingName(sub, place.prefecture) : displaySubstationName(sub);
+  const descParen = [undisclosed ? '' : operator, vc].filter(Boolean).join('・');
+  const desc = `${displayName}${descParen ? `（${descParen}）` : ''}の系統空き容量・連系条件・出力制御情報。空容量${availStr}。出典・最終更新日明記、蓄電所事業の検討材料に。`;
+  const pageTitle = substationPageTitle(sub, place.prefecture, substationNameQualifier(sub.slug));
   return {
     // layout.tsx titleTemplate が自動付与（落とし穴 #86）
     title: pageTitle,
-    // 名称非公開の 23 件は noindex（名前で探されず、題名に内部の番号が出ていた・サイトマップからも外す）。canonical は今のまま
-    ...(isUndisclosedSubstation(sub) ? { robots: { index: false, follow: true } } : {}),
+    // noindex は名称非公開の 23 件（名前で探されない・2026-11-05）と凍結のページ（公表元の今のデータに無く、更新を止めた・2026-11-07）。
+    // canonical は今のまま。どちらもサイトマップに入れない（sitemap.ts も同じ関数）
+    ...(isNoindexSubstation(sub) ? { robots: { index: false, follow: true } } : {}),
     description: desc.substring(0, 160),
     alternates: { canonical: `/grid/${sub.slug}` },
     openGraph: {
@@ -232,11 +241,16 @@ export default async function GridSlugPage({
   const relatedOpsBadges = relatedOperatorsStatic(operatorName);
 
   const displayName = displaySubstationName(sub);
+  // 見出しの名前（h1・JSON-LD・パンくず）。名称非公開は府県・事業者・No. を 1 つの括弧に（小さな直し便・2026-11-07）。
+  // h1 には同名を見分ける語も添える（凍結のページも入れて数える）
+  const qualifier = substationNameQualifier(sub.slug);
+  const ldName = substationHeadingName(sub, place.prefecture);
+  const h1Name = substationHeadingName(sub, place.prefecture, qualifier);
   const basicSentence = substationBasicSentence(sub, operatorName);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Place',
-    name: displayName,
+    name: ldName,
     description: `${operatorName ?? ''} ${voltageClass ?? ''} 変電所`.trim(),
     address: place.prefecture
       ? {
@@ -273,7 +287,7 @@ export default async function GridSlugPage({
     });
   }
   breadcrumbItems.push({
-    name: displayName,
+    name: ldName,
     item: `https://bess-net.jp/grid/${sub.slug}`,
   });
   const breadcrumbJsonLd = {
@@ -291,8 +305,11 @@ export default async function GridSlugPage({
   const capTotal = fmtNum(sub.capacity_total_mw, ' MW');
   const capOp = fmtNum(sub.cap_operational_mw, ' MW');
   const flow = fmtNum(sub.forecast_flow_mw, ' MW');
-  const capAvail = fmtNum(sub.cap_avail_mw, ' MW');
-  const capAvailUpper = fmtNum(sub.cap_avail_upper_mw, ' MW');
+  // 小さな直し便（2026-11-07）: 関西の算出値（運用容量 − |予想潮流|）が負なら 0 MW と出し、計算値を一文で添える。データは変えない
+  const capAvail = fmtNum(shownAvailMw(sub), ' MW');
+  const capAvailUpper = fmtNum(shownAvailUpperMw(sub), ' MW');
+  const availNeg = negativeAvailCalc(sub);
+  const upperNeg = negativeCalcOf(sub.cap_avail_upper_mw, sub);
   const n1Cap = fmtNum(sub.n1_capacity_mw, ' MW');
   const v1 = fmtNum(sub.voltage_primary_kv, ' kV');
   const v2 = fmtNum(sub.voltage_secondary_kv, ' kV');
@@ -349,7 +366,7 @@ export default async function GridSlugPage({
               <div>このページのURL: {siteConfig.url}/grid/{sub.slug}</div>
               <div>印刷日時: <span className="grid-print-datetime" /></div>
             </div>
-            <h1 className="article-title">{displayName}{substationNameQualifier(sub.slug) ? `（${substationNameQualifier(sub.slug)}）` : ''}</h1>
+            <h1 className="article-title">{h1Name}</h1>
             <p className="grid-detail-lead">
               {basicSentence}
               {operatorName ?? '事業者情報なし'} 管内
@@ -470,9 +487,19 @@ export default async function GridSlugPage({
               <dt>空容量（当該設備）</dt>
               <dd>
                 <strong>{capAvail}</strong>
+                {availNeg && <span className="grid-avail-calc-note">{negativeAvailNote(availNeg)}</span>}
               </dd>
               <dt>空容量（上位系考慮）</dt>
-              <dd>{capAvailUpper}</dd>
+              <dd>
+                {capAvailUpper}
+                {upperNeg && (
+                  <span className="grid-avail-calc-note">
+                    {availNeg && upperNeg.computed === availNeg.computed
+                      ? `計算値は当該設備と同じ −${Math.abs(upperNeg.computed).toLocaleString('ja-JP', { maximumFractionDigits: 3 })} MW です。`
+                      : negativeAvailNote(upperNeg)}
+                  </span>
+                )}
+              </dd>
             </dl>
           </section>
 

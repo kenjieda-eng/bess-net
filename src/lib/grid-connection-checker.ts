@@ -22,6 +22,8 @@
 
 import { isFrozenSubstation } from './substations-frozen';
 import type { N1Status } from './n1-status-label';
+// 関西の算出値が負の空容量は 0 として判定・表示する（小さな直し便・2026-11-07・導出は grid-avail.ts の 1 か所）
+import { shownAvailMw } from './grid-avail';
 
 export interface LiteSubstation {
   id: string;
@@ -35,6 +37,8 @@ export interface LiteSubstation {
   capacity_total_mw: number | null;
   cap_operational_mw: number | null;
   cap_avail_mw: number | null;
+  /** 予想潮流（小さな直し便・2026-11-07: 関西の算出値が負かを算定式で確かめる。旧 JSON では無い） */
+  forecast_flow_mw?: number | null;
   n1_eligible: boolean;
   /** N1b: 県別 JSON（precompute）に入る表示区分。加点は n1_eligible（可）だけのまま */
   n1_status?: N1Status;
@@ -117,21 +121,22 @@ export function scoreSubstation(
   const reasons: string[] = [];
 
   // 空き容量チェック
-  if (typeof s.cap_avail_mw === 'number' && input.output_mw > 0) {
-    const ratio = s.cap_avail_mw / input.output_mw;
+  const avail = shownAvailMw(s);
+  if (typeof avail === 'number' && input.output_mw > 0) {
+    const ratio = avail / input.output_mw;
     if (ratio >= 1.5) {
       score += 30;
-      reasons.push(`空き容量 ${s.cap_avail_mw}MW (出力比 ${ratio.toFixed(1)}x、余裕)`);
+      reasons.push(`空き容量 ${avail}MW (出力比 ${ratio.toFixed(1)}x、余裕)`);
     } else if (ratio >= 1.0) {
       score += 20;
-      reasons.push(`空き容量 ${s.cap_avail_mw}MW (出力比 ${ratio.toFixed(1)}x、適合)`);
+      reasons.push(`空き容量 ${avail}MW (出力比 ${ratio.toFixed(1)}x、適合)`);
     } else if (ratio >= 0.5) {
       score += 10;
-      reasons.push(`空き容量 ${s.cap_avail_mw}MW (出力比 ${ratio.toFixed(1)}x、タイト)`);
+      reasons.push(`空き容量 ${avail}MW (出力比 ${ratio.toFixed(1)}x、タイト)`);
     } else {
-      reasons.push(`空き容量 ${s.cap_avail_mw}MW (出力比 ${ratio.toFixed(1)}x、不足)`);
+      reasons.push(`空き容量 ${avail}MW (出力比 ${ratio.toFixed(1)}x、不足)`);
     }
-  } else if (s.cap_avail_mw === null) {
+  } else if (avail === null) {
     reasons.push('空き容量情報なし (要確認)');
   }
 

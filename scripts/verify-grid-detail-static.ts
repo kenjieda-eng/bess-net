@@ -110,7 +110,7 @@ for (const s of listRows) {
   if (place.prefecture !== s.prefecture || place.facilityClass !== s.facility_class) {
     problems.push(`${s.slug}: 府県が一覧と違う（詳細 ${place.prefecture}/${place.facilityClass}・一覧 ${s.prefecture}/${s.facility_class}）`);
   }
-  for (const k of ['name', 'cap_avail_mw', 'cap_operational_mw', 'capacity_total_mw', 'units', 'voltage_primary_kv', 'voltage_secondary_kv', 'n1_capacity_mw', 'last_updated', 'external_id', 'latitude', 'longitude']) {
+  for (const k of ['name', 'cap_avail_mw', 'forecast_flow_mw', 'cap_operational_mw', 'capacity_total_mw', 'units', 'voltage_primary_kv', 'voltage_secondary_kv', 'n1_capacity_mw', 'last_updated', 'external_id', 'latitude', 'longitude']) {
     if ((r[k] ?? null) !== (s[k] ?? null)) problems.push(`${s.slug}: ${k} が一覧と違う（詳細 ${r[k]}・一覧 ${s[k]}）`);
   }
 }

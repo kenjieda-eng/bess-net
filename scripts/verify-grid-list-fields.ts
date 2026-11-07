@@ -28,7 +28,7 @@ import { N1_STATUS_SLUGS, n1StatusAsOfMismatch } from '../src/lib/n1-status';
 const REQUIRED_FOR_LIST = [
   'id', 'slug', 'name', 'prefecture', 'facility_class', 'operator', 'area',
   'voltage_class', 'voltage_primary_kv', 'voltage_secondary_kv',
-  'units', 'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw',
+  'units', 'capacity_total_mw', 'cap_operational_mw', 'cap_avail_mw', 'forecast_flow_mw',
   'n1_eligible', 'n1_status', 'n1_capacity_mw', 'oc_possibility', 'external_id',
   'last_updated', 'fetched_at', 'source_url', 'latitude', 'longitude',
 ] as const;
@@ -70,7 +70,7 @@ function main() {
   console.log('\n[軸2] 消費側 shape（toSubstationShape）への到達を検査');
   const SHAPE_CRITICAL = [
     'facility_class', 'units', 'n1_capacity_mw', 'n1_status', 'external_id',
-    'voltage_class', 'cap_avail_mw', 'last_updated', 'source_url',
+    'voltage_class', 'cap_avail_mw', 'forecast_flow_mw', 'last_updated', 'source_url',
   ] as const;
   for (const key of SHAPE_CRITICAL) {
     // その列に実値を持つレコードを全エリアから1件拾う（無ければ検査対象外）

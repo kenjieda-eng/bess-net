@@ -49,11 +49,17 @@ function officialNoOf(s: UndisclosedInput): string {
   return src.slice(src.lastIndexOf('_') + 1).trim();
 }
 
-/** 「名称非公開の変電所（{事業者の短い名}・No.{公表元の No.}）」 */
-export function undisclosedDisplayName(s: UndisclosedInput): string {
+/**
+ * 「名称非公開の変電所（{事業者の短い名}・No.{公表元の No.}）」。
+ * 府県を渡すと、詳細の題名・h1・OG・JSON-LD 用に括弧を 1 つにまとめる（小さな直し便・2026-11-07）:
+ * 「名称非公開の変電所（福井県・北陸電力送配電・No.FSS062）」。以前の題名は府県つきの題名の形（{名前}（{県}・{事業者}））を
+ * そのまま重ねていたので「…（北陸電力送配電・No.FSS062）（福井県・北陸電力送配電）」と事業者が 2 回出ていた（北陸の 20 件）。
+ * 一覧・県のページ・検索は府県の列が別にあるので、府県を渡さない（今のまま）。
+ */
+export function undisclosedDisplayName(s: UndisclosedInput, prefecture: string | null = null): string {
   const operator = Array.isArray(s.operator) ? s.operator[0] : s.operator;
   const no = officialNoOf(s);
-  const parts = [operator ? operatorShortName(operator) : '', no && no !== '変電所' ? `No.${no}` : ''].filter(Boolean);
+  const parts = [prefecture ?? '', operator ? operatorShortName(operator) : '', no && no !== '変電所' ? `No.${no}` : ''].filter(Boolean);
   return parts.length ? `名称非公開の変電所（${parts.join('・')}）` : '名称非公開の変電所';
 }
 

@@ -1601,8 +1601,9 @@ export type Substation = {
   revisedAt: string;
 };
 
+// forecast_flow_mw: /tracker/grid が関西の算出値の負を 0 と表示するため（小さな直し便・2026-11-07・取得の回数は変わらない）
 const SUBSTATION_LIST_FIELDS =
-  'id,slug,name,operator,area,prefecture,voltage_primary_kv,voltage_secondary_kv,voltage_class,units,capacity_total_mw,cap_operational_mw,cap_avail_mw,cap_avail_upper_mw,n1_eligible,n1_capacity_mw,oc_possibility,non_firm_eligible,source_url,last_updated,fetched_at';
+  'id,slug,name,operator,area,prefecture,voltage_primary_kv,voltage_secondary_kv,voltage_class,units,capacity_total_mw,cap_operational_mw,cap_avail_mw,cap_avail_upper_mw,forecast_flow_mw,n1_eligible,n1_capacity_mw,oc_possibility,non_firm_eligible,source_url,last_updated,fetched_at';
 
 type SubstationListOpts = {
   limit?: number;

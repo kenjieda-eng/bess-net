@@ -11,13 +11,21 @@
  * 5. 名称非公開（小さな直し便・2026-11-05）: 判定（isUndisclosedSubstation）が 23 件ちょうどで、IndexNow の NO_SUBMIT_SLUGS と同じ集合。
  *    題名・h1 に内部の番号（「(名称非公開)」・rikuden_ など）が出ない。冒頭の文は理由の文。noindex（page.tsx）とサイトマップの除外
  *    （sitemap.ts）が同じ関数を通る。同名の判定は「変電所」を外したキー（sameNameKey）で、東京の 4 組は裁定待ちの例外。
+ * 6. 凍結（小さな直し便・2026-11-07）: 同名の判定は凍結の行も入れて数え、凍結のページと動いているページの title・h1 が重ならない
+ *    （須磨 77/6.6 と凍結の須磨 77/33 が同じ題名だった）。noindex は名称非公開と凍結の 2 種類だけ（isNoindexSubstation）で、
+ *    page.tsx の robots・sitemap.ts・IndexNow の NO_SUBMIT_SLUGS が同じ集合を見る。
+ * 7. 名称非公開の題名・h1（小さな直し便・2026-11-07）: 事業者の名前が 1 回だけ（府県・事業者・No. を 1 つの括弧に）。
+ * 8. 県の一覧の並びは表示と同じ空容量（関西の算出値が負なら 0・grid-avail.ts の shownAvailMw）で降順。
  *
  * microCMS へのアクセスなし（precompute の静的データだけ）。問題があれば exit 1＝ビルドで落ちる。prebuild に入れている。
  */
 import substationsIndex from '../src/data/substations/index.json';
-import { buildSubstationTitle, displaySubstationName, substationBasicSentence } from '../src/lib/grid-meta';
-import { getAreaSubstationsStatic, getPrefectureSubstationsStatic, nameQualifiers, sameNameKey, SAME_NAME_RULING_PENDING } from '../src/lib/grid-static-lists';
+import { substationPageTitle, substationHeadingName, displaySubstationName, substationBasicSentence, operatorShortName } from '../src/lib/grid-meta';
+import { getAreaSubstationsStatic, getFrozenAreaSubstationsStatic, getPrefectureSubstationsStatic, nameQualifiers, sameNameKey, SAME_NAME_RULING_PENDING } from '../src/lib/grid-static-lists';
 import { isUndisclosedSubstation, undisclosedReason } from '../src/lib/substation-undisclosed';
+import { isNoindexSubstation } from '../src/lib/substation-noindex';
+import { FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
+import { shownAvailMw } from '../src/lib/grid-avail';
 import * as fs from 'node:fs';
 export {};
 
@@ -31,8 +39,8 @@ const prefs = Object.keys(index.pref_meta).filter((p) => p !== 'unknown');
 for (const pref of prefs) {
   const list = getPrefectureSubstationsStatic(pref);
   if (list.length !== index.pref_meta[pref].count) problems.push(`${pref}: 一覧 ${list.length} 件・pref_meta ${index.pref_meta[pref].count} 件`);
-  const inversions = list.filter((s, i) => i > 0 && (s.cap_avail_mw ?? -1) > (list[i - 1].cap_avail_mw ?? -1)).length;
-  if (inversions) problems.push(`${pref}: 空容量の降順でない所が ${inversions} か所（先頭 ${list[0]?.name} ${list[0]?.cap_avail_mw}MW）`);
+  const inversions = list.filter((s, i) => i > 0 && (shownAvailMw(s) ?? -1) > (shownAvailMw(list[i - 1]) ?? -1)).length;
+  if (inversions) problems.push(`${pref}: 空容量（表示値）の降順でない所が ${inversions} か所（先頭 ${list[0]?.name} ${list[0] ? shownAvailMw(list[0]) : '—'}MW）`);
 }
 
 const perArea: string[] = [];
@@ -41,17 +49,37 @@ let membersTotal = 0;
 let added = 0;
 let kept = 0;
 const undisclosed: string[] = [];
+const frozenSeen: string[] = [];
+const frozenPairs: string[] = [];
+let noindexActive = 0;
 for (const area of Object.keys(index.area_dates)) {
   const rows = getAreaSubstationsStatic(area);
-  const qualifiers = nameQualifiers(rows);
+  // 凍結の行も入れて同名を数える（凍結のページも開けるので、題名が重なってはいけない・2026-11-07）
+  const frozen = getFrozenAreaSubstationsStatic(area);
+  const withFrozen = [...rows, ...frozen];
+  const qualifiers = nameQualifiers(withFrozen);
   const byName = new Map<string, number>();
-  for (const s of rows) byName.set(sameNameKey(s), (byName.get(sameNameKey(s)) ?? 0) + 1);
+  for (const s of withFrozen) byName.set(sameNameKey(s), (byName.get(sameNameKey(s)) ?? 0) + 1);
+  for (const f of frozen) {
+    frozenSeen.push(f.slug);
+    if (!FROZEN_SUBSTATION_SLUGS.has(f.slug)) problems.push(`${f.slug}: 凍結の行にあるのに凍結の一覧に無い`);
+    if (rows.some((s) => s.slug === f.slug)) problems.push(`${f.slug}: 凍結なのに一覧に出ている`);
+    if (!isNoindexSubstation(f)) problems.push(`${f.slug}: 凍結のページが noindex でない`);
+    const mates = rows.filter((s) => sameNameKey(s) === sameNameKey(f));
+    if (mates.length) frozenPairs.push(`${f.slug}「${substationPageTitle(f, f.prefecture, qualifiers.get(f.slug) ?? null)}」／${mates.map((m) => `${m.slug}「${substationPageTitle(m, m.prefecture, qualifiers.get(m.slug) ?? null)}」`).join('／')}`);
+  }
+  for (const s of rows) {
+    if (isNoindexSubstation(s)) {
+      noindexActive++;
+      if (!isUndisclosedSubstation(s)) problems.push(`${s.slug}: 名称非公開でも凍結でもないのに noindex`);
+    }
+  }
   const groups = [...byName.values()].filter((n) => n > 1);
   perArea.push(`${area} ${groups.length}`);
   groupsTotal += groups.length;
   membersTotal += groups.reduce((a, b) => a + b, 0);
 
-  for (const s of rows) {
+  for (const s of withFrozen) {
     const same = (byName.get(sameNameKey(s)) ?? 0) > 1;
     if (same !== qualifiers.has(s.slug)) problems.push(`${s.slug} ${s.name}: 同名 ${same} なのに見分ける語が ${qualifiers.get(s.slug) ?? 'なし'}`);
     if (same && !qualifiers.get(s.slug)) problems.push(`${s.slug} ${s.name}: 見分ける語が空`);
@@ -62,11 +90,15 @@ for (const area of Object.keys(index.area_dates)) {
     if (seen.has(key)) problems.push(`${area}: ${kind}が重なる「${value}」（${seen.get(key)}・${slug}）`);
     seen.set(key, slug);
   };
+  // title・h1 の重なりは凍結のページも入れて見る（題名は page.tsx と同じ関数）
+  for (const s of withFrozen) {
+    const q = qualifiers.get(s.slug) ?? null;
+    check('title', substationPageTitle(s, s.prefecture, q), s.slug);
+    check('h1', substationHeadingName(s, s.prefecture, q), s.slug);
+  }
   for (const s of rows) {
     const q = qualifiers.get(s.slug) ?? null;
     const display = displaySubstationName(s);
-    check('title', buildSubstationTitle(display, s.prefecture, s.operator ?? '', q), s.slug);
-    check('h1', q ? `${display}（${q}）` : display, s.slug);
 
     // 一次の名前に元からある語（四日市火力変電所）は問わない。九州の「中間」は地名なので 1 字以上前に付くものだけ
     if (display.includes('変電所変電所') || (display !== s.name && /(?:配電塔|変電塔|開閉所|発電所|発電|水力|変換所|塔|SS|.中間|局|局配|火力|直配)変電所/.test(display))) problems.push(`${s.slug} ${s.name}: 二重になった「${display}」`);
@@ -80,8 +112,19 @@ for (const area of Object.keys(index.area_dates)) {
     if (sentence && /^[0-9A-Za-z]+$/.test(s.name)) problems.push(`${s.slug} ${s.name}: 名前が公表されていないのに文がある`);
     if (isUndisclosedSubstation(s)) {
       undisclosed.push(s.slug);
-      const title = buildSubstationTitle(display, s.prefecture, s.operator ?? '', q);
+      const title = substationPageTitle(s, s.prefecture, q);
+      const h1 = substationHeadingName(s, s.prefecture, q);
       if (/\(名称非公開\)|rikuden_|energia_|kansai_/.test(title + display) || !display.startsWith('名称非公開の変電所（')) problems.push(`${s.slug}: 名称非公開の表示名が崩れている「${display}」`);
+      // 事業者の名前は 1 回だけ（2026-11-07: 北陸の 20 件で「（北陸電力送配電・No.…）（福井県・北陸電力送配電）」と 2 回出ていた）。
+      // 正式名と短い名（中国電力NW など）のどちらで出ても数える。短い名が正式名の一部でないので重ねて数えない
+      const op = s.operator ?? '';
+      const names = [...new Set([op, operatorShortName(op)].filter(Boolean))];
+      const opCount = (t: string) => names.reduce((n, name) => n + (t.split(name).length - 1), 0);
+      for (const [kind, t] of [['title', title], ['h1', h1]] as const) {
+        if (op && opCount(t) !== 1) problems.push(`${s.slug}: 名称非公開の${kind}に事業者が ${opCount(t)} 回「${t}」`);
+        if ((t.match(/（/g) ?? []).length !== 1) problems.push(`${s.slug}: 名称非公開の${kind}の括弧が 1 つでない「${t}」`);
+        if (s.prefecture && !t.includes(`（${s.prefecture}・`)) problems.push(`${s.slug}: 名称非公開の${kind}に府県が無い「${t}」`);
+      }
       // No. は公表元の番号の形（英数・全角英字・「基」などで、slug や「-」「_」を含まない）。495b246 で rkd-toyama-tss0076 が「No.rkd-toyama-tss0076」になった
       const no = display.match(/・No\.([^）]+)）$/)?.[1] ?? '';
       if (!no || /[-_\s]/.test(no) || display.includes(s.slug)) problems.push(`${s.slug}: 名称非公開の No. が公表元の番号の形でない「${display}」`);
@@ -138,20 +181,27 @@ for (const [rec, want] of [
 }
 // 名称非公開は 23 件ちょうどで、IndexNow の道具の NO_SUBMIT_SLUGS と同じ集合（どちらかだけ変えると、送る・送らないと noindex が食い違う）
 const toolSrc = fs.readFileSync('scripts/indexnow-submit.ts', 'utf8');
-const noSubmitBlock = toolSrc.slice(toolSrc.indexOf('const NO_SUBMIT_SLUGS'), toolSrc.indexOf(']);', toolSrc.indexOf('const NO_SUBMIT_SLUGS')));
+const noSubmitBlock = toolSrc.slice(toolSrc.indexOf('const UNDISCLOSED_SLUGS'), toolSrc.indexOf(']);', toolSrc.indexOf('const UNDISCLOSED_SLUGS')));
 const noSubmit = new Set([...noSubmitBlock.matchAll(/'([a-z0-9-]+)'/g)].map((m) => m[1]));
 if (undisclosed.length !== 23) problems.push(`名称非公開が ${undisclosed.length} 件（23 件のはず）`);
-if (undisclosed.length !== noSubmit.size || undisclosed.some((s) => !noSubmit.has(s))) problems.push('名称非公開と IndexNow の NO_SUBMIT_SLUGS が食い違う');
+if (undisclosed.length !== noSubmit.size || undisclosed.some((s) => !noSubmit.has(s))) problems.push('名称非公開と IndexNow の UNDISCLOSED_SLUGS が食い違う');
+// IndexNow の NO_SUBMIT_SLUGS は 名称非公開＋凍結（noindex の 2 種類）
+if (!/const NO_SUBMIT_SLUGS[^=]*=\s*new Set\(\[\.\.\.UNDISCLOSED_SLUGS,\s*\.\.\.FROZEN_SUBSTATION_SLUGS\]\)/.test(toolSrc)) problems.push('IndexNow の NO_SUBMIT_SLUGS が 名称非公開＋凍結 になっていない');
+// 凍結: 全件がエリアの凍結の行にある（noindex と同名の判定に入る）
+if (frozenSeen.length !== FROZEN_SUBSTATION_SLUGS.size) problems.push(`凍結の行 ${frozenSeen.length} 件・凍結の一覧 ${FROZEN_SUBSTATION_SLUGS.size} 件`);
+if (noindexActive !== undisclosed.length) problems.push(`一覧の noindex ${noindexActive} 件・名称非公開 ${undisclosed.length} 件`);
 // noindex とサイトマップの除外が同じ判定を通る
 const pageSrc = fs.readFileSync('src/app/grid/[slug]/page.tsx', 'utf8');
-if (!/isUndisclosedSubstation\(sub\)\s*\?\s*\{\s*robots:\s*\{\s*index:\s*false,\s*follow:\s*true\s*\}/.test(pageSrc)) problems.push('page.tsx の noindex が isUndisclosedSubstation を通っていない');
+if (!/isNoindexSubstation\(sub\)\s*\?\s*\{\s*robots:\s*\{\s*index:\s*false,\s*follow:\s*true\s*\}/.test(pageSrc)) problems.push('page.tsx の noindex が isNoindexSubstation を通っていない');
+if (!/substationPageTitle\(sub,/.test(pageSrc) || !/substationHeadingName\(sub,/.test(pageSrc)) problems.push('page.tsx の題名・見出しが substationPageTitle／substationHeadingName を通っていない');
 const sitemapSrc = fs.readFileSync('src/app/sitemap.ts', 'utf8');
-if (!/substations\.filter\(\(s\)\s*=>\s*!isUndisclosedSubstation\(s\)\)/.test(sitemapSrc)) problems.push('sitemap.ts が名称非公開を外していない');
+if (!/substations\.filter\(\(s\)\s*=>\s*!isNoindexSubstation\(s\)\)/.test(sitemapSrc)) problems.push('sitemap.ts が noindex（名称非公開・凍結）を外していない');
 for (const slug of SAME_NAME_RULING_PENDING) {
   if (!Object.keys(index.area_dates).some((a) => getAreaSubstationsStatic(a).some((s) => s.slug === slug))) problems.push(`裁定待ちの ${slug} が一覧に無い（再取込で変わった？）`);
 }
 
-console.log(`[verify:grid-pages] 名称非公開 ${undisclosed.length} 件（noindex・サイトマップ外）・同名の判定の裁定待ち ${SAME_NAME_RULING_PENDING.size} 件`);
+console.log(`[verify:grid-pages] 名称非公開 ${undisclosed.length} 件・凍結 ${frozenSeen.length} 件（どちらも noindex・サイトマップ外）・同名の判定の裁定待ち ${SAME_NAME_RULING_PENDING.size} 件`);
+frozenPairs.forEach((p) => console.log(`[verify:grid-pages] 凍結と同名: ${p}`));
 console.log(`[verify:grid-pages] 県 ${prefs.length}・同じエリアで同名の組 ${groupsTotal}（${membersTotal} 件）: ${perArea.join('・')}`);
 console.log(`[verify:grid-pages] 表示名に「変電所」を足した ${added} 件・そのまま ${kept} 件`);
 if (problems.length) {

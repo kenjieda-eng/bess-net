@@ -13,6 +13,7 @@ import SiteFooter from '@/components/SiteFooter';
 import { GRID_REFRESH_LOG } from '@/lib/grid-refresh-log';
 import TrackerTimeline, { type TimelineItem } from '@/components/TrackerTimeline';
 import { getAllSubstationsChecked, type Substation } from '@/lib/microcms';
+import { shownAvailMw } from '@/lib/grid-avail';
 import substationsIndex from '@/data/substations/index.json';
 
 export const revalidate = 3600;
@@ -56,7 +57,8 @@ export default async function GridTrackerPage() {
         href: `/grid/${s.slug}`,
         updatedAt: s.last_updated || (s as { updatedAt?: string }).updatedAt || '',
         category: areaStr || opStr || '系統',
-        description: `${s.prefecture ?? ''} ${vcStr} / 空き容量 ${s.cap_avail_mw ?? '-'} MW`,
+        // 小さな直し便（2026-11-07）: 関西の算出値が負なら 0（表示値の導出は grid-avail.ts）
+        description: `${s.prefecture ?? ''} ${vcStr} / 空き容量 ${shownAvailMw(s) ?? '-'} MW`,
         tags: [
           ...(s.n1_eligible ? ['N-1可'] : []),
           ...(s.non_firm_eligible ? ['ノンファーム可'] : []),

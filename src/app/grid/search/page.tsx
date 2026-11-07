@@ -40,6 +40,8 @@ import { rescueAreaParam } from '@/lib/grid-prefecture';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import { n1StatusFromRow } from '@/lib/n1-status-label';
 import { substationShownName } from '@/lib/substation-undisclosed';
+// 関西の算出値が負の空容量は 0 と表示（並べ替え・絞り込みも 0・grid-search-core）（小さな直し便・2026-11-07）
+import { shownAvailMw, negativeAvailCalc, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
 
 // Gr8(2026-08-09): 検索結果からの導線に使う県別件数（precompute・runtime fetch 0）
 const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
@@ -513,6 +515,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 <GridPrintButton page="grid_search" />
               </p>
               {results.length > 0 ? (
+                <>
                 <ul className="grid-search-list">
                   {results.map((r) => (
                     <li key={r.slug} className="grid-search-item">
@@ -536,8 +539,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                             ` ／ 二次${r.voltage_secondary_kv}kV`}
                           {r.disambiguator && ` ／ ${r.disambiguator}`}
                           {/* ユウ照合(2026-08-26): 未公表は空白でなく明記（注記③「未公表は空容量条件で対象外」と対応） */}
-                          {r.cap_avail_mw != null
-                            ? ` ／ 空容量 ${r.cap_avail_mw}MW`
+                          {shownAvailMw(r) != null
+                            ? ` ／ 空容量 ${shownAvailMw(r)}MW${negativeAvailCalc(r) ? NEGATIVE_AVAIL_MARK : ''}`
                             : ' ／ 空容量 未公表'}
                           {r.n1_capacity_mw != null &&
                             ` ／ N-1可能量 ${r.n1_capacity_mw}MW`}
@@ -557,6 +560,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                     </li>
                   ))}
                 </ul>
+                {results.some((r) => negativeAvailCalc(r) !== null) && <p className="grid-avail-list-note">{NEGATIVE_AVAIL_LIST_NOTE}</p>}
+                </>
               ) : (
                 /* Gr11: メモリ内検索のため「取得失敗」は構造的に起きない（failed 分岐を撤去） */
                 <div className="grid-source-note">

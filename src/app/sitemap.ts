@@ -12,7 +12,8 @@ import {
 import { GLOSSARY_301_SOURCE_SLUGS, GLOSSARY_DISPLAY_EXCLUDED_SLUGS } from '@/lib/glossary-301';
 import { isListExcludedProject } from '@/lib/projects-excluded';
 import { REAL_PREFECTURES } from '@/lib/grid-prefecture';
-import { isUndisclosedSubstation } from '@/lib/substation-undisclosed';
+// noindex の詳細（名称非公開・凍結）はサイトマップに入れない。判定は page.tsx の robots と同じ関数（小さな直し便・2026-11-07）
+import { isNoindexSubstation } from '@/lib/substation-noindex';
 import operatorCategoryIndex from '@/lib/generated/operators-category-index.json';
 import { isExcludedOperator } from '@/lib/operators-excluded';
 import { POLICY_DETAIL_SLUGS } from '@/lib/policy-utils';
@@ -438,8 +439,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
-  // 名称非公開の 23 件は noindex なので載せない（小さな直し便・2026-11-05・判定は substation-undisclosed.ts の 1 か所）
-  const substationUrls: MetadataRoute.Sitemap = substations.filter((s) => !isUndisclosedSubstation(s)).map((s) => ({
+  // 名称非公開の 23 件は noindex なので載せない（小さな直し便・2026-11-05）。凍結は getAllSubstations が既に外している（2026-11-07 から noindex）。
+  // 判定は substation-noindex.ts の 1 か所（page.tsx の robots と同じ）
+  const substationUrls: MetadataRoute.Sitemap = substations.filter((s) => !isNoindexSubstation(s)).map((s) => ({
     url: `${siteConfig.url}/grid/${s.slug}`,
     lastModified: s.last_updated ? new Date(s.last_updated) : now,
     changeFrequency: 'monthly' as const,
