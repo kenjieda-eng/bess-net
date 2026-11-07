@@ -1,0 +1,3160 @@
+{
+ "_purpose": "projects 便・段 1（2026-11-07・読取のみ・microCMS 書込 0）の計画。段 2 の便が、ユウの裁定のあとに使う。",
+ "generated_at": "2026-11-07T17:15:38",
+ "snapshot": {
+  "endpoint": "projects",
+  "totalCount": 379,
+  "items": 379,
+  "fetched_at": "2026-11-07T08:00:20.735Z",
+  "sha256": "5e06ac587f93f23ee647fbd550721aa49afca2aa994bc593b35d5955aab49495"
+ },
+ "primaries": {
+  "m01": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000080.000111866.html",
+   "http": "200",
+   "bytes": 236295,
+   "sha256_html": "8c1ff6c65f3ea019a2ff0e293f8e3ae2deeff99f69d2035bdfeb91e8a3be9797",
+   "sha256_text": "eabe78731446a3d253488c1ea82bf25777de14c114d92855bd27ddf1c65cb8f5",
+   "title": "青森三沢蓄電所の商用運転を開始 | NTTアノードエナジー株式会社のプレスリリース",
+   "datePublished": "2026-10-01 15:00:02",
+   "dateModified": "2026-10-02 08:40:02",
+   "text_chars": 1190,
+   "fetched_at": "2026-11-07T17:01:37+0900"
+  },
+  "m02": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000011.000110152.html",
+   "http": "200",
+   "bytes": 245289,
+   "sha256_html": "8485843bd7074e49dba4bcbeed6aec527f7260ee9d1c1f3fd82dea7c874eb432",
+   "sha256_text": "e44f0fe764606a0970e1c8bbfe291e0191cd0f32b381074a446e5eebd8c2022a",
+   "title": "IBeeT、静岡ガスグループ向けに伊藤忠商事「Bluestorage」高圧蓄電システムを供給 | 株式会社ＩＢｅｅＴのプレスリリース",
+   "datePublished": "2026-10-01 15:00:02",
+   "dateModified": "2026-10-01 18:10:57",
+   "text_chars": 1053,
+   "fetched_at": "2026-11-07T17:01:39+0900"
+  },
+  "m03": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000111.000161802.html",
+   "http": "200",
+   "bytes": 251504,
+   "sha256_html": "20782a1f68fc1e566757696cafcb6ac06cd7c94e6eb14b50688ef323b89012a9",
+   "sha256_text": "46f309145949113caabc46588ee71f18d05b8f861e8f46547af4c16fc694db54",
+   "title": "【日本蓄電池株式会社】岡山県真庭市にて系統用蓄電施設「NC真庭市田羽根蓄電所」受電開始 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-10-01 12:00:02",
+   "dateModified": "2026-10-02 00:10:02",
+   "text_chars": 1604,
+   "fetched_at": "2026-11-07T17:01:40+0900"
+  },
+  "m04": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000110.000161802.html",
+   "http": "200",
+   "bytes": 249506,
+   "sha256_html": "cf557437b39b6090c79cec1a7f350af09f74df5f29d9aa08e53f2dad218a9b9f",
+   "sha256_text": "0da5ca5eeda0efdb197889dbd83aac018fbbf47b7ca83fdd08ceba87f3c869e0",
+   "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」需給調整市場への参入 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-10-01 12:00:02",
+   "dateModified": "2026-10-02 00:10:02",
+   "text_chars": 1347,
+   "fetched_at": "2026-11-07T17:01:42+0900"
+  },
+  "m05": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000253.000076147.html",
+   "http": "200",
+   "bytes": 320982,
+   "sha256_html": "b7c918ecf632da1d86c6cc5aea9dd6e594a25e26a153f32efdcd8ad6d5106840",
+   "sha256_text": "2af7cf06f502b5eff7b8aae406449887aa8f213b5cedfffb13cb392fcf65781d",
+   "title": "福岡・飯塚第一メガソーラー発電所における併設蓄電池の運転開始 | 東京センチュリー株式会社のプレスリリース",
+   "datePublished": "2026-10-01 10:10:01",
+   "dateModified": "2026-10-09 17:33:38",
+   "text_chars": 3482,
+   "fetched_at": "2026-11-07T17:01:44+0900"
+  },
+  "m06": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000222.000016325.html",
+   "http": "200",
+   "bytes": 279288,
+   "sha256_html": "6b1cd60896311fc253682fb42e857f3f69782f4886e24c3d9913909d8ee821ce",
+   "sha256_text": "4b483fe93335830b7adc33bfc885ccaaf6a8ed82871645c775f8bcdf0ee00387",
+   "title": "Tensor Energy、ポートは高圧系統用蓄電所のアグリゲーション契約を締結 | ポート株式会社のプレスリリース",
+   "datePublished": "2026-10-02 10:00:02",
+   "dateModified": "2026-10-03 03:40:02",
+   "text_chars": 4409,
+   "fetched_at": "2026-11-07T17:01:46+0900"
+  },
+  "m07": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000270.000109041.html",
+   "http": "200",
+   "bytes": 238873,
+   "sha256_html": "efc891f77442e5fdb0a6b91c8b3af30e74b34bef74ba893547a18ba661fe94c2",
+   "sha256_text": "aa9f64741576fc4711247d41530f95f5b2e311736255ce798b585254f4a923ac",
+   "title": "大和ハウス工業の系統蓄電所に蓄電システムを納入 | 株式会社パワーエックスのプレスリリース",
+   "datePublished": "2026-10-02 11:00:02",
+   "dateModified": "2026-10-02 14:11:14",
+   "text_chars": 1296,
+   "fetched_at": "2026-11-07T17:01:47+0900"
+  },
+  "m08": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000112.000161802.html",
+   "http": "200",
+   "bytes": 249282,
+   "sha256_html": "8f09674e411b4487603152f95db953ed3494df3d9ecfca786453bbd4acf91f80",
+   "sha256_text": "617f90e3bdfa5497b51352db2a0705a4212c3f6aea553162bed402457a0ca276",
+   "title": "【日本蓄電池株式会社】和歌山県海南市にて系統用蓄電施設　「NC海南市木津蓄電所」蓄電池設置開始 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-10-02 12:00:02",
+   "dateModified": "2026-10-02 15:10:43",
+   "text_chars": 1216,
+   "fetched_at": "2026-11-07T17:01:49+0900"
+  },
+  "m09": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000012.000125331.html",
+   "http": "200",
+   "bytes": 263101,
+   "sha256_html": "6456681b5c81e776fb8335230d08156d0647adf128e8d560664ca20aa80e39a3",
+   "sha256_text": "262db05767d7d7069b221970cf0b86e51106c65a46244455388ba64088ed83ab",
+   "title": "国内系統用蓄電池事業への参入について | 京葉ガス株式会社のプレスリリース",
+   "datePublished": "2026-10-05 14:00:01",
+   "dateModified": "2026-10-05 17:10:31",
+   "text_chars": 1508,
+   "fetched_at": "2026-11-07T17:01:51+0900"
+  },
+  "m10": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000274.000109041.html",
+   "http": "200",
+   "bytes": 247357,
+   "sha256_html": "5233a7b04feeb6da97767493cefacfdfb54eff7951d00dc2642a71a5df729a93",
+   "sha256_text": "af568956ae1dc4d7aa2c4c2a93b1d0364682da5186c914e2163befabfc3cbe47",
+   "title": "栗林商会の系統蓄電所向けに海上パワーグリッドが受注 | 株式会社パワーエックスのプレスリリース",
+   "datePublished": "2026-10-06 11:00:02",
+   "dateModified": "2026-10-06 14:11:22",
+   "text_chars": 2147,
+   "fetched_at": "2026-11-07T17:01:52+0900"
+  },
+  "m12": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000012.000117277.html",
+   "http": "200",
+   "bytes": 242122,
+   "sha256_html": "717d8d7d1a4ccd9cb2f0efc2a4875bc87b339a3bf80cb0926f887747761692f0",
+   "sha256_text": "9039584af598cabb7545c6452795218f445a5c739d5a09122f8f32bf0b72460a",
+   "title": "株式会社GRITZ、高圧系統用蓄電所3拠点（茨城・栃木・岩手）で受電開始－電力系統の安定化に貢献 | 株式会社ＧＲＩＴＺのプレスリリース",
+   "datePublished": "2026-10-08 13:00:01",
+   "dateModified": "2026-10-08 16:10:10",
+   "text_chars": 1521,
+   "fetched_at": "2026-11-07T17:01:54+0900"
+  },
+  "m13": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000009.000173123.html",
+   "http": "200",
+   "bytes": 260830,
+   "sha256_html": "fbff48ecdb5239b818b44180e21463f84c8873ff1fc0e057a8ba7ecb4c2af882",
+   "sha256_text": "b3ed0129dbb76878a322821f1f9321c8551419762297ca3daa6c81f86463f6c5",
+   "title": "小矢部市と共同記者会見を実施 | ヘキサ・エネルギーサービス合同会社のプレスリリース",
+   "datePublished": "2026-10-08 14:52:14",
+   "dateModified": "2026-10-08 16:56:20",
+   "text_chars": 1994,
+   "fetched_at": "2026-11-07T17:01:56+0900"
+  },
+  "m15": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000048.000051303.html",
+   "http": "200",
+   "bytes": 284232,
+   "sha256_html": "4961afc1ce397405d5d06c1f005b44c00c58b3cf5023a6f3e9cc5ebdde986403",
+   "sha256_text": "f2cce84685bdf040521e033e9ae4235eaff403fa3801ad086a702d08b96de985",
+   "title": "丸紅新電力-サンヴィレッジ/系統用蓄電池4件の需給調整市場への参入完了について | 丸紅新電力株式会社のプレスリリース",
+   "datePublished": "2026-10-13 10:00:02",
+   "dateModified": "2026-10-13 21:40:02",
+   "text_chars": 3083,
+   "fetched_at": "2026-11-07T17:01:57+0900"
+  },
+  "m16": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000033.000126341.html",
+   "http": "200",
+   "bytes": 259694,
+   "sha256_html": "05e685c4b4c5c128f0fe7bc064fb38dca2c2858b75de189b1622c7d3b2d74ea2",
+   "sha256_text": "b3ff1b82c6f56dc102b2235989398e3e467339cd93e97d2d63fe7394da5664b5",
+   "title": "Q.ENEST（キューエネス）ホールディングス、自社所有の系統用蓄電池で需給調整市場へ参入 | Q.ENESTホールディングス株式会社のプレスリリース",
+   "datePublished": "2026-10-13 11:00:02",
+   "dateModified": "2026-10-13 14:10:27",
+   "text_chars": 2629,
+   "fetched_at": "2026-11-07T17:01:59+0900"
+  },
+  "m17": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000247.000008483.html",
+   "http": "200",
+   "bytes": 245119,
+   "sha256_html": "5e05e4f23b9b6dbd7aae30045075ba4aea27c0d5a1cb7199430bab67a3b995c5",
+   "sha256_text": "ecc9558b39ad867608947633d1e648e5c5ca333e514d582a41ac756ea009ec94",
+   "title": "トリナ・ストレージ、「野津」のAEJ蓄電池プロジェクトに196MWhの蓄電池システムを供給 | トリナ・ソーラー・ジャパン株式会社のプレスリリース",
+   "datePublished": "2026-10-14 11:00:02",
+   "dateModified": "2026-10-14 14:10:42",
+   "text_chars": 2432,
+   "fetched_at": "2026-11-07T17:02:01+0900"
+  },
+  "m18": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000114.000161802.html",
+   "http": "200",
+   "bytes": 249625,
+   "sha256_html": "36fa5a64435049eec492c3426a78530714af8fb14bba641309f1b1918d1272b0",
+   "sha256_text": "e69fd1d8da61a349d18d998a56726116157bbab900f05dae5fa377fd6ed40e25",
+   "title": "【日本蓄電池株式会社】滋賀県長浜市にて系統用蓄電施設「NC長浜市三川町蓄電所」需給調整市場への参入 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-10-15 10:00:02",
+   "dateModified": "2026-10-15 11:24:58",
+   "text_chars": 1346,
+   "fetched_at": "2026-11-07T17:02:02+0900"
+  },
+  "m19": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000009.000167879.html",
+   "http": "200",
+   "bytes": 248610,
+   "sha256_html": "728029dbafc643e8ed6f07b11a3dc05227a6eb56c6d09ef05f58d15e41ced083",
+   "sha256_text": "dfb491f6b41dbb5ed4327ab57248131634377f81452a572771275a249db27636",
+   "title": "オーロラ・エナジー・リサーチ、AMP-lify株式会社による福井県美浜町における系統用蓄電池プロジェクト（50MW／200MWh）の経済性分析を支援 | Aurora Energy Research株式会社のプレスリリース",
+   "datePublished": "2026-10-15 15:00:02",
+   "dateModified": "2026-10-16 02:40:02",
+   "text_chars": 5533,
+   "fetched_at": "2026-11-07T17:02:04+0900"
+  },
+  "m20": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000066.000093934.html",
+   "http": "200",
+   "bytes": 242532,
+   "sha256_html": "694031b003f68195da70e5e5c6c943c645ee79f9a8bf9eb4d74917104845e427",
+   "sha256_text": "99d334e3d2d7dbb0ca4e4e7ecff7ebe77ea783af5d772fb25c10ac5c2cd9592f",
+   "title": "系統用高圧蓄電所「fantasista nagahama PSS（長浜蓄電所）」の着工に関するお知らせ | 株式会社fantasistaのプレスリリース",
+   "datePublished": "2026-10-16 12:03:32",
+   "dateModified": "2026-10-16 23:40:03",
+   "text_chars": 1063,
+   "fetched_at": "2026-11-07T17:02:06+0900"
+  },
+  "m21": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000010.000167879.html",
+   "http": "200",
+   "bytes": 249182,
+   "sha256_html": "e61fdadae88ac006477606e29716ea177ee54eb37ee324ee8d3c769a31c1b050",
+   "sha256_text": "2110ddc145cfdfb46091fb65e882649ed04c243cfb921c2e4402b542c897cf3c",
+   "title": "オーロラ・エナジー・リサーチ、住友商事株式会社による福島県浪江町における系統用蓄電所（62MW）の経済性分析を支援 | Aurora Energy Research株式会社のプレスリリース",
+   "datePublished": "2026-10-16 10:00:01",
+   "dateModified": "2026-10-16 13:11:10",
+   "text_chars": 4792,
+   "fetched_at": "2026-11-07T17:02:08+0900"
+  },
+  "m22": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000184.000143072.html",
+   "http": "200",
+   "bytes": 257567,
+   "sha256_html": "dabae30300a8ff12115312fd41800695ea2b86de2b9bbf126d31a5f3c278d988",
+   "sha256_text": "522ea959aeddcc24188e2e3acd8809fdf94803ad2fec6858710b3b8d95a45942",
+   "title": "TESSグループ、合同会社クラダシ・インベストメント２号様から「系統用蓄電所」の設置工事を受注 | テスホールディングス株式会社のプレスリリース",
+   "datePublished": "2026-10-16 10:00:01",
+   "dateModified": "2026-10-17 03:40:02",
+   "text_chars": 1573,
+   "fetched_at": "2026-11-07T17:02:09+0900"
+  },
+  "m23": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000005.000183333.html",
+   "http": "200",
+   "bytes": 235432,
+   "sha256_html": "5108674d00eaba3faa861166f34a19abdc19d89f9b7b342402f35882789872e6",
+   "sha256_text": "55dbdd78341fbd6f9d8d91ed4c4fa9f642bac850cd5208c11e9311fdb5fa1220",
+   "title": "POWER POOL、総事業規模約45億円の系統用蓄電所事業を展開 | パワープール株式会社のプレスリリース",
+   "datePublished": "2026-10-16 16:40:21",
+   "dateModified": "2026-10-16 18:26:27",
+   "text_chars": 929,
+   "fetched_at": "2026-11-07T17:02:11+0900"
+  },
+  "m25": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000231.000033609.html",
+   "http": "200",
+   "bytes": 265932,
+   "sha256_html": "13aa30b603687e77e4c998ca6e6032f6fb71d4a8b8e40b4ab8410e35949770dd",
+   "sha256_text": "96048744ecdbd5d69a46406e070ac75d6f41e73467fc1afbe41b44c85070f10b",
+   "title": "【自社保有案件蓄電所12か所目】「恵那岩村3蓄電所（仮称）」の開発用地等を取得 | 株式会社リミックスポイントのプレスリリース",
+   "datePublished": "2026-10-19 12:00:02",
+   "dateModified": "2026-10-19 15:10:14",
+   "text_chars": 1882,
+   "fetched_at": "2026-11-07T17:02:13+0900"
+  },
+  "m26": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000379.000070816.html",
+   "http": "200",
+   "bytes": 255543,
+   "sha256_html": "6db5fc0a3130c6507e984bbb111b23cd5c08d7cc76ee1cb28e95f44d56bef2cf",
+   "sha256_text": "f3bc626462c0fa43690cf17e3a602428fb1d44a3d2da831dc1e541a2fbbfd00b",
+   "title": "ミツウロコ北海道北広島第一・第二蓄電所、需給調整市場「一次調整力（オフライン枠）」へ新規参入。さらなる市場領域の拡大を推進 | 株式会社ミツウロコグループホールディングスのプレスリリース",
+   "datePublished": "2026-10-19 10:30:02",
+   "dateModified": "2026-10-19 22:10:02",
+   "text_chars": 1187,
+   "fetched_at": "2026-11-07T17:02:14+0900"
+  },
+  "m27": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000116.000161802.html",
+   "http": "200",
+   "bytes": 252487,
+   "sha256_html": "bbeadd36e52943692b8e3ee2bd89187b6b1c0ff570a22a492100bcc4d44d53f9",
+   "sha256_text": "cdc267817f35ff107b15a71b1bfe06982654c5329743fcdcf4a7db986b9e8628",
+   "title": "【日本蓄電池株式会社】福岡県嘉麻市にて系統用蓄電施設「NC口春蓄電所」需給調整市場への参入 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-10-20 15:00:01",
+   "dateModified": "2026-10-20 16:36:00",
+   "text_chars": 1714,
+   "fetched_at": "2026-11-07T17:02:16+0900"
+  },
+  "m28": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000179.000029914.html",
+   "http": "200",
+   "bytes": 252613,
+   "sha256_html": "0a388b049ebc2cb95ea8359401b8aac452de6494c7ecd86386aeeeb693c42759",
+   "sha256_text": "99bce141ae97a8a8e91f6fd7d523510b137206a94f5e9983b65f0a4a12482a1e",
+   "title": "イーレックス、系統用蓄電池第2号案件の商業運転を開始 | イーレックス株式会社のプレスリリース",
+   "datePublished": "2026-10-20 15:30:01",
+   "dateModified": "2026-10-20 19:10:32",
+   "text_chars": 1565,
+   "fetched_at": "2026-11-07T17:02:18+0900"
+  },
+  "m29": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000042.000174524.html",
+   "http": "200",
+   "bytes": 255801,
+   "sha256_html": "934d053997667e6143b6c50acdee64c42b509abc2516ae084bbd75ece38cb48a",
+   "sha256_text": "4c17e98f67c8200d1ba17dcf7a4588eb03996e17461553452ea4ed35434393a1",
+   "title": "カンエイ・TERASが系統用蓄電池事業を共同開発、Bluefield Energyがアグリゲーターとして運用 | Bluefield Energy株式会社のプレスリリース",
+   "datePublished": "2026-10-21 11:00:02",
+   "dateModified": "2026-10-21 12:48:09",
+   "text_chars": 3237,
+   "fetched_at": "2026-11-07T17:02:19+0900"
+  },
+  "m30": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000095.000092942.html",
+   "http": "200",
+   "bytes": 254115,
+   "sha256_html": "2408f5279a58929426b4177266cad1c289e272a025b185b20875c6f6952e62a5",
+   "sha256_text": "e1a3f1985692dfe0013e8dfaa92f7a8dd98e8c0a07ffdd4a2a85c1a4c1b881f6",
+   "title": "Sustechがアグリゲーターを担う、綜電（株）の系統用蓄電所2件が京都にて本格運転開始 | 株式会社Sustechのプレスリリース",
+   "datePublished": "2026-10-23 15:30:01",
+   "dateModified": "2026-10-23 21:40:07",
+   "text_chars": 2214,
+   "fetched_at": "2026-11-07T17:02:21+0900"
+  },
+  "m31": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000046.000103834.html",
+   "http": "200",
+   "bytes": 250174,
+   "sha256_html": "ee006d2d2737babfb5a41c791feb294be29b81874c9a30faac98d2df783a1907",
+   "sha256_text": "ef8dbfd18537a304b6c0441f2a13acc3d38df6d6b5b9d2e2c09a13a78e352387",
+   "title": "TAOKE ENERGY、群馬と岡山で系統用蓄電所が系統連系を完了 | TAOKE ENERGY株式会社のプレスリリース",
+   "datePublished": "2026-10-23 16:32:10",
+   "dateModified": "2026-10-26 18:42:46",
+   "text_chars": 1031,
+   "fetched_at": "2026-11-07T17:02:23+0900"
+  },
+  "m32": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000003.000189198.html",
+   "http": "200",
+   "bytes": 237621,
+   "sha256_html": "174412c1a13000460193a1b2c43f41cb46aac8cf44683e4966a69a314bea1c52",
+   "sha256_text": "77616de4c8eb4e5b1bc96eb84c74bb04e71c6bab37cd3b4b8c940f420b382548",
+   "title": "太陽光発電併設型蓄電池におけるマルチユース運用の取組み　　～複数の電力市場を活用し、再エネの有効活用と収益機会の拡大に貢献～ | E-Flow合同会社のプレスリリース",
+   "datePublished": "2026-10-23 14:00:01",
+   "dateModified": "2026-10-24 07:40:02",
+   "text_chars": 820,
+   "fetched_at": "2026-11-07T17:02:24+0900"
+  },
+  "m34": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000054.000096424.html",
+   "http": "200",
+   "bytes": 251089,
+   "sha256_html": "72ba49d9fc37041a01bb46dbd8349945cce8e863d3f4e3ebedc0ef25c1c1f94c",
+   "sha256_text": "e733a887e817f3c1e0780034812b558081526f5d6d4d311f704da8c556645349",
+   "title": "Tensor Energy、グリーンエナジー＆カンパニーグループの合同会社マイクロGX京都にアグリゲーションシステムの提供を開始 | Tensor Energy株式会社のプレスリリース",
+   "datePublished": "2026-10-26 10:00:02",
+   "dateModified": "2026-10-26 17:40:03",
+   "text_chars": 2528,
+   "fetched_at": "2026-11-07T17:02:26+0900"
+  },
+  "m35": {
+   "url": "https://prtimes.jp/main/html/rd/p/000001441.000037933.html",
+   "http": "200",
+   "bytes": 268014,
+   "sha256_html": "d05def06cf3ad30de97587b0a187af72485054f51ac4337853b82a31799aa5c2",
+   "sha256_text": "ded651382af8e4eaa695798ec4e5b50f48ef784c7501509d5da5e85f35ce73f6",
+   "title": "JR九州×住友商事グループによる共同事業第3号案件「でんきの駅諫早」を長崎県諫早市で着工 | 九州旅客鉄道株式会社のプレスリリース",
+   "datePublished": "2026-10-28 10:22:40",
+   "dateModified": "2026-10-28 14:11:41",
+   "text_chars": 2283,
+   "fetched_at": "2026-11-07T17:02:28+0900"
+  },
+  "m36": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000047.000103834.html",
+   "http": "200",
+   "bytes": 247619,
+   "sha256_html": "3285eb22b5891444c35ee3cdca272cfc00588c6c176352f526a9ced9f0da39e1",
+   "sha256_text": "ed88a417d3a6151e4ecc4abc087803978b4f9cdec8356785642cd51f7b62db4e",
+   "title": "TAOKE ENERGY、愛知県南知多町の2MW系統用蓄電所が系統連系を完了 | TAOKE ENERGY株式会社のプレスリリース",
+   "datePublished": "2026-10-30 16:06:06",
+   "dateModified": "2026-10-30 16:14:52",
+   "text_chars": 937,
+   "fetched_at": "2026-11-07T17:02:29+0900"
+  },
+  "w00": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000118.000161802.html",
+   "http": "200",
+   "bytes": 245953,
+   "sha256_html": "2311e80f4ec0c4d9947048cb371751d5310cf47c5f8f98dcd256261afa8dae57",
+   "sha256_text": "b028c460dcec46c1b0d10d4e8847c419957e48c898a34e07b3b98d439091c05e",
+   "title": "【日本蓄電池株式会】島根県出雲市にて系統用蓄電施設「NC出雲市国富町蓄電所」蓄電池設置開始 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-11-02 10:00:02",
+   "dateModified": "2026-11-02 21:40:02",
+   "text_chars": 812,
+   "fetched_at": "2026-11-07T17:02:31+0900"
+  },
+  "w01": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000002.000193954.html",
+   "http": "200",
+   "bytes": 248722,
+   "sha256_html": "99775394a1e0d5261ba3f5d158a8bb3310c8f7d5f6503827cfa8d09ef4fcecf7",
+   "sha256_text": "ed98b5a7242c55c078d89df698619e224f8699c16c57171db239f2ad16c65ea3",
+   "title": "SUNPIN、45MWの滋賀大津蓄電所を系統接続 | 株式会社SUNPIN JAPANのプレスリリース",
+   "datePublished": "2026-11-05 08:03:31",
+   "dateModified": "2026-11-07 12:40:03",
+   "text_chars": 1522,
+   "fetched_at": "2026-11-07T17:02:33+0900"
+  },
+  "w02": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000021.000176308.html",
+   "http": "200",
+   "bytes": 248816,
+   "sha256_html": "b2319797de0db12a53c0bcaa4a119f483a0b49fe331bce0a51dad93021f9008d",
+   "sha256_text": "fef3127f377a8267b845dfb7f4196fcc63e1b94d07bc81332e79aad8ae623717",
+   "title": "NEXTES の蓄電池が“地域の防災インフラ” に | 株式会社NEXTESのプレスリリース",
+   "datePublished": "2026-11-05 10:00:03",
+   "dateModified": "2026-11-05 13:10:59",
+   "text_chars": 1860,
+   "fetched_at": "2026-11-07T17:02:34+0900"
+  },
+  "w03": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000232.000033609.html",
+   "http": "200",
+   "bytes": 277275,
+   "sha256_html": "66785421990f53ef38ec3d6870739740e2a5653f9422e3ae18c29561b8378428",
+   "sha256_text": "3552ffdaea89cdc218103b776eec01fd747d22cfed201a76383f59f182d8e5f3",
+   "title": "【日本蓄電池との共同プロジェクト】鹿児島県枕崎市で約2MW系統用蓄電所が受電開始 | 株式会社リミックスポイントのプレスリリース",
+   "datePublished": "2026-11-05 11:00:02",
+   "dateModified": "2026-11-05 14:11:46",
+   "text_chars": 2591,
+   "fetched_at": "2026-11-07T17:02:36+0900"
+  },
+  "w06": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000021.000168478.html",
+   "http": "200",
+   "bytes": 287313,
+   "sha256_html": "265b669acf1fd331b5ffe69618bd2d44d9f964a1fb1f60a973e4b9469fabc405",
+   "sha256_text": "9eeb74fd56e35d116702a61dac03b82e7661ceb74ce192fecb5fff0fd8c9ba8e",
+   "title": "バディネット、北海道川上郡弟子屈町にて系統用蓄電池（2MW/8MWh）建設プロジェクトが完工 | 株式会社バディネットのプレスリリース",
+   "datePublished": "2026-11-05 13:00:02",
+   "dateModified": "2026-11-06 06:40:02",
+   "text_chars": 3658,
+   "fetched_at": "2026-11-07T17:02:38+0900"
+  },
+  "w00b": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000117.000161802.html",
+   "http": "200",
+   "bytes": 246746,
+   "sha256_html": "54ba0ad2e27a7629e30619624e201accd64f1d5e580f9a056a43e5cb03964724",
+   "sha256_text": "2e3a6e8e5c1c6e8d4a29f28046de7946452df8abb083f1440f2784a5f7392d4b",
+   "title": "【日本蓄電池株式会社】福島県南会津郡にて系統用蓄電施設「NC南会津町田島蓄電所」蓄電池設置開始 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-11-02 10:00:02",
+   "dateModified": "2026-11-02 21:40:02",
+   "text_chars": 931,
+   "fetched_at": "2026-11-07T17:03:34+0900"
+  },
+  "w03b": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000119.000161802.html",
+   "http": "200",
+   "bytes": 250963,
+   "sha256_html": "68c9012107f57248583256d6a2ce47d7e851898b84b33796ec006243491ffabd",
+   "sha256_text": "ef91bea12d26a5a152946ff4f3d5ed96b1b5a61091334b299ab4eabf88341bc9",
+   "title": "【日本蓄電池株式会社】鹿児島県枕崎市にて系統用蓄電施設「NC枕崎市桜山東町蓄電所」受電開始 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-11-05 15:00:02",
+   "dateModified": "2026-11-06 02:40:02",
+   "text_chars": 1557,
+   "fetched_at": "2026-11-07T17:03:36+0900"
+  },
+  "w06b": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000023.000168478.html",
+   "http": "200",
+   "bytes": 287215,
+   "sha256_html": "e7e4ff07ba75715225c48c6447999eefb7de9a8e7fe54fd3fd186db4c291c018",
+   "sha256_text": "f5a881b53136abd73ffb8e973c6a8c2d3f270aba16ada6eabf16f531f395966f",
+   "title": "バディネット、静岡県富士宮市にて系統用蓄電池（2MW/8MWh）建設プロジェクトが完工 | 株式会社バディネットのプレスリリース",
+   "datePublished": "2026-11-05 13:00:02",
+   "dateModified": "2026-11-06 06:40:02",
+   "text_chars": 3652,
+   "fetched_at": "2026-11-07T17:03:38+0900"
+  },
+  "w06c": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000024.000168478.html",
+   "http": "200",
+   "bytes": 287379,
+   "sha256_html": "90154000101f150950ac8dd262ef07b056f4edfd50491a864986da98f101e8d2",
+   "sha256_text": "717ed4a284c1cef64359ff7b8345d9e60679587e0914769f8c5e0e055b376405",
+   "title": "バディネット、長野県佐久市にて系統用蓄電池（2MW/8MWh）建設プロジェクトが完工 | 株式会社バディネットのプレスリリース",
+   "datePublished": "2026-11-05 13:00:02",
+   "dateModified": "2026-11-06 06:40:02",
+   "text_chars": 3695,
+   "fetched_at": "2026-11-07T17:03:39+0900"
+  },
+  "m09b": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000078.000086244.html",
+   "http": "200",
+   "bytes": 238785,
+   "sha256_html": "64620be8f2063f471af54621e45c2294a09d213a7bbad6a8f49fb9231efbeb78",
+   "sha256_text": "1d0c967230965d9b94152f20b1febb9020320a4b0106ef7a0e263b2a7f2a7fb8",
+   "title": "京葉ガス株式会社初となる国内系統用蓄電所の開発・建設を完了 | 株式会社サンヴィレッジのプレスリリース",
+   "datePublished": "2026-10-05 14:00:01",
+   "dateModified": "2026-10-05 17:10:10",
+   "text_chars": 1316,
+   "fetched_at": "2026-11-07T17:03:41+0900"
+  },
+  "m15b": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000079.000086244.html",
+   "http": "200",
+   "bytes": 250277,
+   "sha256_html": "e43cc92b7e969dd0d59838788859729ecad4d58ee3cca22d577a0417ac35f1bf",
+   "sha256_text": "71c75c5fe62ae336eb464a7ba4e2066507e7312509125221fbb41450299909d0",
+   "title": "系統用蓄電池4案件の需給調整市場への参入完了について | 株式会社サンヴィレッジのプレスリリース",
+   "datePublished": "2026-10-13 10:00:02",
+   "dateModified": "2026-10-13 21:40:02",
+   "text_chars": 2081,
+   "fetched_at": "2026-11-07T17:03:43+0900"
+  },
+  "m20b": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000064.000093934.html",
+   "http": "200",
+   "bytes": 267092,
+   "sha256_html": "79da6942ccded6565a027a1b9131fc6bec428f71e25ef55f2af6518b348f1482",
+   "sha256_text": "1b7f9c07bf3c3eb63f879bf90a7a2a0bbaf911bd556d9dbf374fb004098bea7f",
+   "title": "系統用蓄電池事業の第2号案件始動滋賀県長浜市に「fantasista nagahama PSS」建設開始 | 株式会社fantasistaのプレスリリース",
+   "datePublished": "2026-10-14 12:05:52",
+   "dateModified": "2026-10-14 23:40:02",
+   "text_chars": 1844,
+   "fetched_at": "2026-11-07T17:03:44+0900"
+  },
+  "m22b": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000185.000143072.html",
+   "http": "200",
+   "bytes": 256856,
+   "sha256_html": "7d249bc31ce2e73f6e4206845fb87b8508da4b7afca73e7c394d10312203ff7d",
+   "sha256_text": "388b4ca1566cd9caffe183a916cb09f34e794999ef16a368e8e738534c21e768",
+   "title": "TESSグループ、株式会社糺の森様から「系統用蓄電所」の設置工事を受注 | テスホールディングス株式会社のプレスリリース",
+   "datePublished": "2026-10-20 10:00:02",
+   "dateModified": "2026-10-20 13:10:42",
+   "text_chars": 1538,
+   "fetched_at": "2026-11-07T17:03:46+0900"
+  },
+  "m18old": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000071.000161802.html",
+   "http": "200",
+   "bytes": 250042,
+   "sha256_html": "f189026da8a10dfe88c294bc4d976dfdd30b12abccc50a9788e123357565e503",
+   "sha256_text": "828456e81b9ac4d34ad004d52dbda959276a5838bb43da90d807126fa80a06bc",
+   "title": "【日本蓄電池株式会社】滋賀県長浜市にて系統用蓄電施設「NC長浜市三川町蓄電所」受電開始 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-06-04 10:00:03",
+   "dateModified": "2026-06-04 11:25:17",
+   "text_chars": 1409,
+   "fetched_at": "2026-11-07T17:03:48+0900"
+  },
+  "dup059": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000059.000161802.html",
+   "http": "200",
+   "bytes": 250491,
+   "sha256_html": "cdcbf964d2ededdfc9ee8f6a18f2e4472c0d791330afa772b9b071e754337d86",
+   "sha256_text": "9c60c4552df2502579751dbdf337da1926e3f5de510ef4685f609aa0bb7f7950",
+   "title": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-04-23 10:00:02",
+   "dateModified": "2026-04-23 22:10:01",
+   "text_chars": 1510,
+   "fetched_at": "2026-11-07T17:06:41+0900"
+  },
+  "dup063": {
+   "url": "https://prtimes.jp/main/html/rd/p/000000063.000161802.html",
+   "http": "200",
+   "bytes": 250529,
+   "sha256_html": "dbea6aff130c5f00b30fffc944b8cc34fe15783537c7113aa78cc67e7c43ebdf",
+   "sha256_text": "13fd664ce011c9c3236001eaf0af564513ef9bcf4748f32de880ea317f8491ea",
+   "title": "【日本蓄電池株式会社】福島県白河市にて系統用蓄電施設「NC白河市表郷番沢蓄電所」受電開始 | 日本蓄電池株式会社のプレスリリース",
+   "datePublished": "2026-05-13 12:00:02",
+   "dateModified": "2026-08-06 10:40:44",
+   "text_chars": 1416,
+   "fetched_at": "2026-11-07T17:06:43+0900"
+  }
+ },
+ "rules": {
+  "status": "運転開始・商業運転開始・本格稼働・運用開始（需給調整市場での運用開始を含む）の日付が過去→稼働中。受電が過去→稼働中（前例 稼働中 5・空 3 の多い方。TAOKE の受電日も前例 taoke-pp7-* が稼働中）。設置開始→建設中（前例 3/3）。着工が過去→建設中。完工・引き渡しだけ→建設中（同じ会社の前例 buddynet-izumo-koshi-bess）。系統連系だけ→前例が稼働中 1・空 1 で一定しない（個別に判断・flags）。計画・開発中・受注・ファイナンス→計画中。",
+  "cod": "運転開始（商業運転開始・本格稼働・運用開始を含む）の日付だけ。受電・系統連系・設置開始・完工・納入の日付は入れず本文に逐語（R3）。予定は「YYYY年M月（予定）」。年だけの精度は入れない（R2）。",
+  "operator": "R-op1: 一次が事業主体・所有・保有・運営・運用事業者・自社投資・表の「事業者」と言う法人。R-op2: それが無く、開発・推進の主体だけが名指しされ、引き渡し先も無いもの→開発主体（flags に明記・裁定）。R-op3: 施工・供給側の発表で引き渡し先の名前が無いもの→空。",
+  "city": "一次の所在地の書き方の精度（町名まで書くものは町名まで・番地は入れない）。名称の中にだけある町名は入れない。",
+  "name": "一次の施設名。無いものは前例の「{県}{市}の系統用蓄電所（{会社}）」の形（既存 6 件）。",
+  "marketParticipation": "その蓄電所について一次が実績・予定で名指しする市場だけ。会社全体の方針・「対応する位置づけ」は入れない。",
+  "body": "段 2 で Day5（reports/projects-day5-2026-10-06.md）の形で作る: 冒頭に一次の逐語 1 文＋出典リンク、表・本文の逐語、空にした欄の理由、末尾の注記。ここの ev（逐語）を使う。"
+ },
+ "posts": [
+  {
+   "key": "m01",
+   "slug": "ntt-ae-aomori-misawa-bess",
+   "name": "青森三沢蓄電所",
+   "status": "稼働中",
+   "outputMw": 1.999,
+   "capacityMwh": 8.226,
+   "prefecture": "青森県",
+   "city": "三沢市南町",
+   "operator": "NTTアノードエナジー株式会社",
+   "epc": null,
+   "cod": "2026年9月",
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000080.000111866.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m01.txt",
+      "quote": "「青森三沢蓄電所（青森県三沢市南町）」を建設し",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/m01.txt",
+      "quote": "：NTTアノードエナジー株式会社",
+      "verified": true
+     },
+     {
+      "file": "prim/m01.txt",
+      "quote": "NTTアノードエナジーが自社で開発・運用する蓄電所は全国で11システムとなり",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m01.txt",
+      "quote": "：青森県三沢市南町",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/m01.txt",
+      "quote": "：1,999kW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/m01.txt",
+      "quote": "：8,226kWh",
+      "verified": true
+     }
+    ],
+    "status_cod": [
+     {
+      "file": "prim/m01.txt",
+      "quote": "2026年9月から商用運転を開始しました",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "epc": "一次に記載なし",
+    "marketParticipation": "「今後、…各種電力市場（卸電力市場、需給調整市場、容量市場）での最適取引」は同社の 11 システム全体の今後の方針で、この蓄電所の参入の記載ではない"
+   },
+   "notes": "出力は PCS 出力・容量は公称容量（表の項目名）。運転開始は月まで（2026年9月）。"
+  },
+  {
+   "key": "m03",
+   "slug": "nc-maniwa-tabane-bess",
+   "name": "NC真庭市田羽根蓄電所",
+   "status": "稼働中",
+   "outputMw": 1.999,
+   "capacityMwh": 8.146,
+   "prefecture": "岡山県",
+   "city": "真庭市",
+   "operator": "日本蓄電池株式会社",
+   "epc": "株式会社中電工",
+   "cod": "2026-09-30",
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000111.000161802.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m03.txt",
+      "quote": "系統用蓄電施設「NC真庭市田羽根蓄電所」が、2026年9月30日に受電を開始した",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/m03.txt",
+      "quote": "岡山県真庭市に建設した系統用蓄電施設",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m03.txt",
+      "quote": "岡山県真庭市",
+      "verified": true
+     }
+    ],
+    "output_capacity": [
+     {
+      "file": "prim/m03.txt",
+      "quote": "1,999kW・8,146kWh",
+      "verified": true
+     }
+    ],
+    "epc": [
+     {
+      "file": "prim/m03.txt",
+      "quote": "施工は株式会社中電工が担当し",
+      "verified": true
+     }
+    ],
+    "status_cod": [
+     {
+      "file": "prim/m03.txt",
+      "quote": "運転開始日|2026年9月30日",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "marketParticipation": "「JEPX（卸売市場）、需給調整市場、容量市場に対応する…位置づけ」は対応の位置づけで参入の記載ではない（日本蓄電池の既存レコードの多くも空）"
+   },
+   "notes": "表の「運転開始日 2026年9月30日」で cod（本文は同じ日を「受電を開始」）。所在地は「岡山県真庭市」まで（田羽根は名称の中だけ）。",
+   "flags": [
+    "operator: 一次は「建設した」まで。日本蓄電池の既存レコード（nc-iwami-bess・nc-ikeda-yawata-bess ほか）に合わせて「日本蓄電池株式会社」とした（R-op2・開発主体）"
+   ]
+  },
+  {
+   "key": "m09",
+   "slug": "kg-bess-isesaki-bess",
+   "name": "群馬県伊勢崎市の系統用蓄電所（京葉ガス）",
+   "status": "稼働中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "群馬県",
+   "city": "伊勢崎市上植木本町",
+   "operator": "KG BESS合同会社",
+   "epc": "株式会社サンヴィレッジ",
+   "cod": "2026-10-01",
+   "market": [
+    "JEPX",
+    "需給調整市場",
+    "容量市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000012.000125331.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m09.txt",
+      "quote": "当社初となる国内系統用蓄電所を開設し",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim2/m09b.txt",
+      "quote": "KG BESS合同会社が運営する、出力2MW・容量8MWhの高圧系統用蓄電所です",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m09.txt",
+      "quote": "群馬県伊勢崎市上植木本町",
+      "verified": true
+     }
+    ],
+    "output_capacity": [
+     {
+      "file": "prim/m09.txt",
+      "quote": "同社が、群馬県伊勢崎市において出力2MW、容量8MWhの高圧系統用蓄電所を運営します。",
+      "verified": true
+     }
+    ],
+    "epc": [
+     {
+      "file": "prim/m09.txt",
+      "quote": "なお本蓄電所は株式会社サンヴィレッジが開発・建設したものです。",
+      "verified": true
+     }
+    ],
+    "status_cod": [
+     {
+      "file": "prim/m09.txt",
+      "quote": "当社初となる国内系統用蓄電所を開設し、2026年10月1日より本格稼働を開始しました。",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim/m09.txt",
+      "quote": "本蓄電所では、卸電力市場、需給調整市場および容量市場を通じて電力・調整力を提供し",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {},
+   "notes": "施設の固有名は一次に無い（写真の説明「群馬県伊勢崎市の系統用蓄電所（蓄電設備の一部）」）。KG BESS合同会社は京葉ガスと京葉ガス不動産が設立。市場の取引はアグリゲーターの丸紅新電力に委託。",
+   "flags": [
+    "name: 固有名が無いので「{県}{市}の系統用蓄電所（{会社}）」の前例（nc-kainan など 6 件）の形にした",
+    "epc: 一次の語は「開発・建設」（EPC の語は無い）"
+   ]
+  },
+  {
+   "key": "m10",
+   "slug": "sevenpower-hachinohe-bess",
+   "name": "青森県八戸市の系統用蓄電所（栗林商会）",
+   "status": "計画中",
+   "outputMw": 1.998,
+   "capacityMwh": 7.52,
+   "prefecture": "青森県",
+   "city": "八戸市櫛引",
+   "operator": "セブンパワーストレージ合同会社",
+   "epc": null,
+   "cod": "2027年10月（予定）",
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000274.000109041.html",
+   "ev": {
+    "operator": [
+     {
+      "file": "prim/m10.txt",
+      "quote": "事業者：セブンパワーストレージ合同会社（出資者：株式会社栗林商会100%）",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m10.txt",
+      "quote": "所在地：青森県八戸市櫛引",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/m10.txt",
+      "quote": "PCS出力：1,998 kW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/m10.txt",
+      "quote": "合計蓄電容量：7.52 MWh",
+      "verified": true
+     }
+    ],
+    "status_cod": [
+     {
+      "file": "prim/m10.txt",
+      "quote": "運転開始時期：2027年10月（予定）",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "epc": "一次に記載なし（海上パワーグリッドは資機材販売・パワーエックスは運用）",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "容量は公称（7.52 MWh）。機器一式の受注の発表で、着工の記載なし＝計画中。",
+   "flags": [
+    "name: 固有名が無いので前例の形（出資者の栗林商会を括弧に）"
+   ]
+  },
+  {
+   "key": "m12-kitaibaraki",
+   "slug": "gritz-kitaibaraki-bess",
+   "name": "茨城県北茨城市の系統用蓄電所（GRITZ）",
+   "status": "稼働中",
+   "outputMw": 1.986,
+   "capacityMwh": 8.194,
+   "prefecture": "茨城県",
+   "city": "北茨城市",
+   "operator": "株式会社GRITZ",
+   "epc": "株式会社GRITZ",
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000012.000117277.html",
+   "ev": {
+    "city": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "① 茨城県北茨城市",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "・定格出力：1,986kW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "・蓄電容量：8,194kWh",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "・受電開始日：2026年9月28日",
+      "verified": true
+     }
+    ],
+    "operator_epc": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "今回の3件は、GRITZが用地選定・用地取得から、系統連系に向けた各種手続き、設計・施工、蓄電池をはじめとする機器調達",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "一次の日付は受電開始日（2026年9月28日）で運転開始日ではない（R3）→本文に逐語",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "3 件とも同じ諸元（3 件合計 5,958kW／24,582kWh と一致）。",
+   "flags": [
+    "status: 受電だけ→前例（受電が過去の既存は稼働中 5・空 3）の多い方の稼働中",
+    "operator: 一次は GRITZ が開発・事業化したとまで（所有・運営の語なし）→ 開発主体として GRITZ（R-op2）"
+   ]
+  },
+  {
+   "key": "m12-tochigi",
+   "slug": "gritz-tochigi-bess",
+   "name": "栃木県栃木市の系統用蓄電所（GRITZ）",
+   "status": "稼働中",
+   "outputMw": 1.986,
+   "capacityMwh": 8.194,
+   "prefecture": "栃木県",
+   "city": "栃木市",
+   "operator": "株式会社GRITZ",
+   "epc": "株式会社GRITZ",
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000012.000117277.html",
+   "ev": {
+    "city": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "② 栃木県栃木市",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "・定格出力：1,986kW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "・蓄電容量：8,194kWh",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "・受電開始日：2026年10月5日",
+      "verified": true
+     }
+    ],
+    "operator_epc": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "今回の3件は、GRITZが用地選定・用地取得から、系統連系に向けた各種手続き、設計・施工、蓄電池をはじめとする機器調達",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "一次の日付は受電開始日（2026年10月5日）で運転開始日ではない（R3）→本文に逐語",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "3 件とも同じ諸元（3 件合計 5,958kW／24,582kWh と一致）。",
+   "flags": [
+    "status: 受電だけ→前例（受電が過去の既存は稼働中 5・空 3）の多い方の稼働中",
+    "operator: 一次は GRITZ が開発・事業化したとまで（所有・運営の語なし）→ 開発主体として GRITZ（R-op2）"
+   ]
+  },
+  {
+   "key": "m12-oshu",
+   "slug": "gritz-oshu-bess",
+   "name": "岩手県奥州市の系統用蓄電所（GRITZ）",
+   "status": "稼働中",
+   "outputMw": 1.986,
+   "capacityMwh": 8.194,
+   "prefecture": "岩手県",
+   "city": "奥州市",
+   "operator": "株式会社GRITZ",
+   "epc": "株式会社GRITZ",
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000012.000117277.html",
+   "ev": {
+    "city": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "③ 岩手県奥州市",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "・定格出力：1,986kW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "・蓄電容量：8,194kWh",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "・受電開始日：2026年10月8日",
+      "verified": true
+     }
+    ],
+    "operator_epc": [
+     {
+      "file": "prim/m12.txt",
+      "quote": "今回の3件は、GRITZが用地選定・用地取得から、系統連系に向けた各種手続き、設計・施工、蓄電池をはじめとする機器調達",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "一次の日付は受電開始日（2026年10月8日）で運転開始日ではない（R3）→本文に逐語",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "3 件とも同じ諸元（3 件合計 5,958kW／24,582kWh と一致）。",
+   "flags": [
+    "status: 受電だけ→前例（受電が過去の既存は稼働中 5・空 3）の多い方の稼働中",
+    "operator: 一次は GRITZ が開発・事業化したとまで（所有・運営の語なし）→ 開発主体として GRITZ（R-op2）"
+   ]
+  },
+  {
+   "key": "m13",
+   "slug": "hexa-oyabe-bess",
+   "name": "ヘキサ小矢部蓄電所",
+   "status": "計画中",
+   "outputMw": 50,
+   "capacityMwh": null,
+   "prefecture": "富山県",
+   "city": "小矢部市石名田",
+   "operator": "ヘキサ・エネルギーサービス合同会社",
+   "epc": "しろくま電力株式会社",
+   "cod": "2028年5月（予定）",
+   "market": [
+    "長期脱炭素"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000009.000173123.html",
+   "ev": {
+    "name_output": [
+     {
+      "file": "prim/m13.txt",
+      "quote": "系統用蓄電所「ヘキサ小矢部蓄電所」（送電端容量：50 MWac）",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/m13.txt",
+      "quote": "当社は、本蓄電所の建設・運営にあたり",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m13.txt",
+      "quote": "富山県小矢部市石名田",
+      "verified": true
+     }
+    ],
+    "epc": [
+     {
+      "file": "prim/m13.txt",
+      "quote": "バランス・オブ・プラントのEPCを担うしろくま電力株式会社",
+      "verified": true
+     }
+    ],
+    "status_cod": [
+     {
+      "file": "prim/m13.txt",
+      "quote": "本蓄電所は2028年5月の商業運転開始を予定しています。",
+      "verified": true
+     },
+     {
+      "file": "prim/m13.txt",
+      "quote": "これに先立つ2026年9月6日、当社は建設予定地において地鎮祭を執り行いました。",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim/m13.txt",
+      "quote": "「長期脱炭素電源オークション」の第1回で落札された案件です",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "capacityMwh": "一次に MWh の記載なし"
+   },
+   "notes": "出力は送電端 50MWac。EPC はバランス・オブ・プラントの範囲。",
+   "flags": [
+    "status: 地鎮祭（2026-09-06）までで着工日の記載なし・「当社が開発を進める」→計画中（便 §3「計画・開発中→計画中」）。社長の談話「着実に建設を進めてまいります」で建設中とする読みもある"
+   ]
+  },
+  {
+   "key": "m15-honjo-1",
+   "slug": "sunvillage-honjo-1-bess",
+   "name": "埼玉県本庄市の系統用蓄電所①（サンヴィレッジ）",
+   "status": "稼働中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "埼玉県",
+   "city": "本庄市",
+   "operator": "株式会社サンヴィレッジ",
+   "epc": null,
+   "cod": null,
+   "market": [
+    "需給調整市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000079.000086244.html",
+   "ev": {
+    "row": [
+     {
+      "file": "prim2/m15b.txt",
+      "quote": "埼玉県本庄市|2MW/8MWh|2026年3月|2026年6月",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim2/m15b.txt",
+      "quote": "当社が開発・保有する栃木県足利市の1案件、埼玉県本庄市の2案件",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim2/m15b.txt",
+      "quote": "4案件すべてにおいて所定の参入審査に合格し、実需給を開始しています。",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "一次は受電（2026年3月）と需給調整市場への参入（2026年6月）で、運転開始日の記載なし（R3）→本文に逐語",
+    "epc": "一次に記載なし（サンヴィレッジの EPC は第三者向け商品の説明だけ）"
+   },
+   "notes": "表の行: 受電 2026年3月・需給調整市場参入 2026年6月。アグリゲーターは丸紅新電力。",
+   "flags": [
+    "name: 一次に施設名も町名も無く、本庄市の 2 件は表の行の順と日付（受電 2026年3月／4月）でしか見分けられない。①②は表の順。2 件を分けて登録するか、所在の公表を待つかは裁定"
+   ]
+  },
+  {
+   "key": "m15-honjo-2",
+   "slug": "sunvillage-honjo-2-bess",
+   "name": "埼玉県本庄市の系統用蓄電所②（サンヴィレッジ）",
+   "status": "稼働中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "埼玉県",
+   "city": "本庄市",
+   "operator": "株式会社サンヴィレッジ",
+   "epc": null,
+   "cod": null,
+   "market": [
+    "需給調整市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000079.000086244.html",
+   "ev": {
+    "row": [
+     {
+      "file": "prim2/m15b.txt",
+      "quote": "埼玉県本庄市|2MW/8MWh|2026年4月|2026年7月",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim2/m15b.txt",
+      "quote": "当社が開発・保有する栃木県足利市の1案件、埼玉県本庄市の2案件",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim2/m15b.txt",
+      "quote": "4案件すべてにおいて所定の参入審査に合格し、実需給を開始しています。",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "一次は受電（2026年4月）と需給調整市場への参入（2026年7月）で、運転開始日の記載なし（R3）→本文に逐語",
+    "epc": "一次に記載なし（サンヴィレッジの EPC は第三者向け商品の説明だけ）"
+   },
+   "notes": "表の行: 受電 2026年4月・需給調整市場参入 2026年7月。アグリゲーターは丸紅新電力。",
+   "flags": [
+    "name: 本庄市の 2 件目（表の 3 行目）。上と同じ"
+   ]
+  },
+  {
+   "key": "m15-yorii",
+   "slug": "sunvillage-yorii-bess",
+   "name": "埼玉県寄居町の系統用蓄電所（サンヴィレッジ）",
+   "status": "稼働中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "埼玉県",
+   "city": "大里郡寄居町",
+   "operator": "株式会社サンヴィレッジ",
+   "epc": null,
+   "cod": null,
+   "market": [
+    "需給調整市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000079.000086244.html",
+   "ev": {
+    "row": [
+     {
+      "file": "prim2/m15b.txt",
+      "quote": "埼玉県大里郡寄居町|2MW/8MWh|2026年7月|2026年9月",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim2/m15b.txt",
+      "quote": "当社が開発・保有する栃木県足利市の1案件、埼玉県本庄市の2案件",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim2/m15b.txt",
+      "quote": "4案件すべてにおいて所定の参入審査に合格し、実需給を開始しています。",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "一次は受電（2026年7月）と需給調整市場への参入（2026年9月）で、運転開始日の記載なし（R3）→本文に逐語",
+    "epc": "一次に記載なし（サンヴィレッジの EPC は第三者向け商品の説明だけ）"
+   },
+   "notes": "表の行: 受電 2026年7月・需給調整市場参入 2026年9月。アグリゲーターは丸紅新電力。",
+   "flags": [
+    "name: 施設名が無いので前例の形"
+   ]
+  },
+  {
+   "key": "m16",
+   "slug": "qenest-sano-bess",
+   "name": "Q.ENEST 佐野高圧蓄電所",
+   "status": "稼働中",
+   "outputMw": 1.999,
+   "capacityMwh": 8.226,
+   "prefecture": "栃木県",
+   "city": "佐野市",
+   "operator": "Q.ENESTホールディングス株式会社",
+   "epc": null,
+   "cod": "2026年5月",
+   "market": [
+    "JEPX",
+    "需給調整市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000033.000126341.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m16.txt",
+      "quote": "当社初の系統用蓄電所「Q.ENEST 佐野高圧蓄電所」",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/m16.txt",
+      "quote": "当社自身が蓄電池を保有・運用し",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m16.txt",
+      "quote": "栃木県佐野市",
+      "verified": true
+     }
+    ],
+    "output_capacity": [
+     {
+      "file": "prim/m16.txt",
+      "quote": "定格出力1,999kW、公称容量8,226kWhの系統用蓄電池であり",
+      "verified": true
+     }
+    ],
+    "status_cod": [
+     {
+      "file": "prim/m16.txt",
+      "quote": "当社は2026年5月より、本施設において卸電力市場の価格変動に応じた充放電運用を開始し",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim/m16.txt",
+      "quote": "今回、新たに需給調整市場の一次調整力へ参入した",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "epc": "一次に記載なし"
+   },
+   "notes": "需給調整市場（一次調整力）への参入は 2026年10月。",
+   "flags": [
+    "cod: 一次の語は「充放電運用を開始」（2026年5月）。便 §3 の「運用開始の日付が過去→稼働中」に当たるとして cod に月まで入れた。運転開始日と書かれてはいない"
+   ]
+  },
+  {
+   "key": "m19",
+   "slug": "amp-lify-mihama-bess",
+   "name": "福井県美浜町の系統用蓄電所（AMP-lify）",
+   "status": "計画中",
+   "outputMw": 50,
+   "capacityMwh": 200,
+   "prefecture": "福井県",
+   "city": "美浜町",
+   "operator": "AMP-lify株式会社",
+   "epc": null,
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000009.000167879.html",
+   "ev": {
+    "operator_city": [
+     {
+      "file": "prim/m19.txt",
+      "quote": "AMP-lify株式会社が福井県美浜町で進める出力50メガワット",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/m19.txt",
+      "quote": "200MWhの系統用蓄電池プロジェクト",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "一次に運転開始の時期の記載なし",
+    "epc": "一次に記載なし",
+    "marketParticipation": "一次に市場名なし（マーチャント型の説明だけ）"
+   },
+   "notes": "一次はアドバイザー（オーロラ）のリリース。ING が単独主幹事で 64億8,100万円のファイナンス。",
+   "flags": [
+    "operator: 一次は「AMP-lify株式会社が…進める」（開発主体）で所有・事業主体の語なし（R-op2）",
+    "name: 施設名が無いので前例の形"
+   ]
+  },
+  {
+   "key": "m20",
+   "slug": "fantasista-nagahama-pss",
+   "name": "fantasista nagahama PSS（長浜蓄電所）",
+   "status": "建設中",
+   "outputMw": 1.999,
+   "capacityMwh": 7.521,
+   "prefecture": "滋賀県",
+   "city": "長浜市木之本町千田",
+   "operator": "合同会社fantasista battery 3",
+   "epc": "スズカ電工株式会社",
+   "cod": "2027年4月（予定）",
+   "market": [
+    "需給調整市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000066.000093934.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim2/m20b.txt",
+      "quote": "fantasista nagahama PSS（長浜蓄電所）",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim2/m20b.txt",
+      "quote": "の100％子会社である合同会社fantasista battery 3（以下「fb3社」）を事業主体として",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m20.txt",
+      "quote": "滋賀県長浜市木之本町千田237-1、238-1",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim2/m20b.txt",
+      "quote": "定格出力 1,999kW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim2/m20b.txt",
+      "quote": "7,521kWh",
+      "verified": true
+     }
+    ],
+    "epc": [
+     {
+      "file": "prim2/m20b.txt",
+      "quote": "・基本設計・建設：スズカ電工株式会社",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/m20.txt",
+      "quote": "（１）着工日　2026年10月16日",
+      "verified": true
+     }
+    ],
+    "cod": [
+     {
+      "file": "prim/m20.txt",
+      "quote": "（２）運用開始　2027年4月（予定）",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim/m20.txt",
+      "quote": "国内の需給調整市場等を活用した系統用蓄電所として運営する予定",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {},
+   "notes": "蓄電池はパワーエックス・PCS は富士電機・アグリゲーターは E-Flow合同会社。10/14 の一次は着工を「2026年10月」の予定、10/16 の一次が着工日 2026年10月16日（新しい方を採る）。番地（237-1、238-1）は city に入れない。",
+   "flags": [
+    "epc: 一次の語は「基本設計・建設」"
+   ]
+  },
+  {
+   "key": "m21",
+   "slug": "sumitomo-namie-bess",
+   "name": "福島県浪江町の系統用蓄電所（住友商事）",
+   "status": "計画中",
+   "outputMw": 62,
+   "capacityMwh": 291,
+   "prefecture": "福島県",
+   "city": "浪江町",
+   "operator": "住友商事株式会社（BSホールディングス株式会社を通じて）",
+   "epc": null,
+   "cod": null,
+   "market": [
+    "長期脱炭素"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000010.000167879.html",
+   "ev": {
+    "operator_city": [
+     {
+      "file": "prim/m21.txt",
+      "quote": "がBSホールディングス株式会社（注1）を通じて福島県浪江町で開発する系統用蓄電所",
+      "verified": true
+     }
+    ],
+    "output_capacity": [
+     {
+      "file": "prim/m21.txt",
+      "quote": "出力62メガワット、蓄電容量291メガワット時",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/m21.txt",
+      "quote": "国内主要金融機関によるプロジェクトファイナンスの組成を経て建設工事を開始します",
+      "verified": true
+     }
+    ],
+    "cod_body": [
+     {
+      "file": "prim/m21.txt",
+      "quote": "2029年の商業運転開始を予定しています",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim/m21.txt",
+      "quote": "本事業は2024年に開始された長期脱炭素電源オークション（注2）の採択案件で",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "「2029年の商業運転開始を予定」は年までの精度（前例 R2: 年精度は cod に入れず本文に逐語）",
+    "epc": "一次に記載なし"
+   },
+   "notes": "一次はアドバイザー（オーロラ）のリリース。出典として住友商事のリリース（sumitomocorp.com …/2026/group/21720）を挙げている。既存 namie-redox-flow（RS Technologies 2MW）とは別設備。",
+   "flags": [
+    "operator: 一次は住友商事が BSホールディングスを通じて「開発する」（所有・事業主体の語なし・R-op2）。書き方（住友商事／BSホールディングス）は裁定",
+    "status: 建設工事は「開始します」（日付なし）→計画中"
+   ]
+  },
+  {
+   "key": "m22-kani",
+   "slug": "tadasunomori-kani-bess",
+   "name": "岐阜県可児市の系統用蓄電所（糺の森）",
+   "status": "計画中",
+   "outputMw": 1.999,
+   "capacityMwh": 6.266,
+   "prefecture": "岐阜県",
+   "city": "可児市",
+   "operator": "株式会社糺の森",
+   "epc": "テス・エンジニアリング株式会社",
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000185.000143072.html",
+   "ev": {
+    "operator": [
+     {
+      "file": "prim2/m22b.txt",
+      "quote": "本件は、糺の森が運用事業者となる「系統用蓄電所」（容量約6.3MWh）の設置工事を受注したものであります。",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim2/m22b.txt",
+      "quote": "所在地|岐阜県可児市",
+      "verified": true
+     }
+    ],
+    "output_capacity": [
+     {
+      "file": "prim2/m22b.txt",
+      "quote": "PCS出力：1,999kW、容量：6,266kWh（HUAWEI製241kWh×26台）",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim2/m22b.txt",
+      "quote": "納入時期（予定）|2027年３月",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "一次の予定は「納入」（2027年3月）で運転開始ではない",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "一次は施工側（テスホールディングス）のリリース。出力は PCS 出力。",
+   "flags": [
+    "epc: 一次は「設置工事を受注」（EPC の語なし）",
+    "name: 施設名が無いので前例の形"
+   ]
+  },
+  {
+   "key": "m25",
+   "slug": "remixpoint-ena-iwamura-3-bess",
+   "name": "恵那岩村3蓄電所（仮称）",
+   "status": "計画中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "岐阜県",
+   "city": "恵那市",
+   "operator": "株式会社リミックスポイント",
+   "epc": null,
+   "cod": null,
+   "market": [
+    "需給調整市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000231.000033609.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m25.txt",
+      "quote": "「恵那岩村3蓄電所（仮称）」の開発用地等を取得しました",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/m25.txt",
+      "quote": "今回の取得により、高圧系統用蓄電所の自社保有案件（開発段階を含む）は合計12か所となりました",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m25.txt",
+      "quote": "岐阜県恵那市",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/m25.txt",
+      "quote": "約2MW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/m25.txt",
+      "quote": "約8MWh",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim/m25.txt",
+      "quote": "2027年秋頃（2028年3月期）の需給調整市場への参入を予定しており",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "予定は着工 2027年4月・受電 2027年7月下旬で、運転開始の記載なし",
+    "epc": "一次に記載なし"
+   },
+   "notes": "出力・容量は「約」（本文に「約」を残す）。名称は仮称。"
+  },
+  {
+   "key": "m26-1",
+   "slug": "mitsuuroko-kitahiroshima-1-bess",
+   "name": "ミツウロコ北海道北広島第一蓄電所",
+   "status": "稼働中",
+   "outputMw": 1.534,
+   "capacityMwh": 7.834,
+   "prefecture": "北海道",
+   "city": "北広島市",
+   "operator": "ミツウロコグリーンエネルギー株式会社",
+   "epc": null,
+   "cod": "2026-06-01",
+   "market": [
+    "需給調整市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000379.000070816.html",
+   "ev": {
+    "row": [
+     {
+      "file": "prim/m26.txt",
+      "quote": "ミツウロコ北海道北広島第一蓄電所*1|出　　　力|1,534kW|容　　　量|7,834kWh|運用開始日|2026年6月1日",
+      "verified": true
+     }
+    ],
+    "operator_city": [
+     {
+      "file": "prim/m26.txt",
+      "quote": "当社グループ連結子会社であるミツウロコグリーンエネルギー株式会社（以下、「MGE」）は、ミツウロコ北海道北広島第一蓄電所・第二蓄電所（北海道北広島市）について",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim/m26.txt",
+      "quote": "2026年10月16日より需給調整市場（一次調整力・オフライン枠）への参入を開始しました",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "epc": "一次に記載なし"
+   },
+   "notes": "第一・第二は表の値が同じ。既存 marubeni-kitahiroshima（丸紅 30MW）とは別。",
+   "flags": [
+    "operator: 一次は MGE が参入・運用（「三次調整力①および三次調整力②での運用を行っていましたが」）で所有の語なし。運用の主体として MGE"
+   ]
+  },
+  {
+   "key": "m26-2",
+   "slug": "mitsuuroko-kitahiroshima-2-bess",
+   "name": "ミツウロコ北海道北広島第二蓄電所",
+   "status": "稼働中",
+   "outputMw": 1.534,
+   "capacityMwh": 7.834,
+   "prefecture": "北海道",
+   "city": "北広島市",
+   "operator": "ミツウロコグリーンエネルギー株式会社",
+   "epc": null,
+   "cod": "2026-06-01",
+   "market": [
+    "需給調整市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000379.000070816.html",
+   "ev": {
+    "row": [
+     {
+      "file": "prim/m26.txt",
+      "quote": "ミツウロコ北海道北広島第二蓄電所*1|出　　　力|1,534kW|容　　　量|7,834kWh|運用開始日|2026年6月1日",
+      "verified": true
+     }
+    ],
+    "operator_city": [
+     {
+      "file": "prim/m26.txt",
+      "quote": "当社グループ連結子会社であるミツウロコグリーンエネルギー株式会社（以下、「MGE」）は、ミツウロコ北海道北広島第一蓄電所・第二蓄電所（北海道北広島市）について",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim/m26.txt",
+      "quote": "2026年10月16日より需給調整市場（一次調整力・オフライン枠）への参入を開始しました",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "epc": "一次に記載なし"
+   },
+   "notes": "第一・第二は表の値が同じ。既存 marubeni-kitahiroshima（丸紅 30MW）とは別。",
+   "flags": [
+    "operator: 一次は MGE が参入・運用（「三次調整力①および三次調整力②での運用を行っていましたが」）で所有の語なし。運用の主体として MGE"
+   ]
+  },
+  {
+   "key": "m28",
+   "slug": "erex-no2-sanbu-bess",
+   "name": "千葉県山武郡蓄電所",
+   "status": "稼働中",
+   "outputMw": 1.9896,
+   "capacityMwh": 8.147,
+   "prefecture": "千葉県",
+   "city": "山武郡芝山町",
+   "operator": "イーレックス株式会社",
+   "epc": null,
+   "cod": "2026-10-20",
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000179.000029914.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m28.txt",
+      "quote": "系統用蓄電池第2号案件「千葉県山武郡蓄電所」",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m28.txt",
+      "quote": "所在地|千葉県山武郡芝山町",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/m28.txt",
+      "quote": "定格出力|1,989.6kW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/m28.txt",
+      "quote": "定格容量|8,147kWh",
+      "verified": true
+     }
+    ],
+    "status_cod": [
+     {
+      "file": "prim/m28.txt",
+      "quote": "2026年10月20日に商業運転を開始したことをお知らせいたします",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/m28.txt",
+      "quote": "当社の主な役割|蓄電池の運用・制御（アグリゲーター）",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "epc": "一次に記載なし",
+    "marketParticipation": "一次に市場名なし"
+   },
+   "notes": "既存の第1号（erex-no1-kushima）・第3号（erex-no3-kameoka）は operator「イーレックス」系の書き方。",
+   "flags": [
+    "operator: 一次は同社の役割を「蓄電池の運用・制御（アグリゲーター）」とし、所有の語なし。同社の「系統用蓄電池第2号案件」で、既存の第1号・第3号に合わせて「イーレックス株式会社」"
+   ]
+  },
+  {
+   "key": "m30-ayabe",
+   "slug": "soden-ayabe-bess",
+   "name": "SD京都綾部蓄電所",
+   "status": "稼働中",
+   "outputMw": 1.96,
+   "capacityMwh": 8.146,
+   "prefecture": "京都府",
+   "city": "綾部市上矢田",
+   "operator": "綜電株式会社",
+   "epc": null,
+   "cod": "2026年9月",
+   "market": [
+    "JEPX",
+    "需給調整市場",
+    "容量市場"
+   ],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000095.000092942.html",
+   "ev": {
+    "name_city": [
+     {
+      "file": "prim/m30.txt",
+      "quote": "「SD京都綾部蓄電所」（京都府綾部市上矢田、接続容量1,960kW、蓄電池容量8,146kWh）",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/m30.txt",
+      "quote": "綜電株式会社（大阪市北区、代表取締役：中澤博司／以下、綜電）が所有する",
+      "verified": true
+     }
+    ],
+    "output_capacity": [
+     {
+      "file": "prim/m30.txt",
+      "quote": "①1,960kW / 8,146kWh",
+      "verified": true
+     }
+    ],
+    "status_cod": [
+     {
+      "file": "prim/m30.txt",
+      "quote": "2026年9月に本格運転を開始した",
+      "verified": true
+     }
+    ],
+    "market": [
+     {
+      "file": "prim/m30.txt",
+      "quote": "卸電力市場（JEPX）、需給調整市場（EPRX）及び容量市場を対象に",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "epc": "一次に記載なし"
+   },
+   "notes": "アグリゲーターは Sustech。本文は 1,960kW を「接続容量」、表は「出力/蓄電池容量（定格）」。"
+  },
+  {
+   "key": "m31-ryumai",
+   "slug": "taoke-ota-ryumai-bess",
+   "name": "群馬県太田市龍舞町2MW蓄電所（TAOKE ENERGY）",
+   "status": "稼働中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "群馬県",
+   "city": "太田市龍舞町",
+   "operator": "TAOKE ENERGY株式会社",
+   "epc": null,
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000046.000103834.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m31.txt",
+      "quote": "群馬県太田市龍舞町2MW蓄電所",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/m31.txt",
+      "quote": "群馬県太田市の案件はTAOKEによる「自社投資」",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m31.txt",
+      "quote": "群馬県太田市龍舞町と岡山県和気郡で開発していた系統用蓄電所",
+      "verified": true
+     }
+    ],
+    "output_capacity": [
+     {
+      "file": "prim/m31.txt",
+      "quote": "２MW",
+      "verified": true
+     },
+     {
+      "file": "prim/m31.txt",
+      "quote": "８MWh",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/m31.txt",
+      "quote": "2026年10月9日",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "cod": "一次は受電日（2026年10月9日）と系統連系で、運転開始日の記載なし（R3）→本文に逐語",
+    "epc": "一次に記載なし",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "表は 項目｜群馬｜岡山 の 3 列（受電日 群馬 2026年10月9日・岡山 2026年10月10日）。",
+   "flags": [
+    "status: 受電日のある TAOKE の前例（taoke-pp7-* 4 件・受電日→稼働中・cod 空）に合わせた",
+    "operator: 一次は「自社投資」（所有の語なし）"
+   ]
+  },
+  {
+   "key": "m31-wake",
+   "slug": "taoke-wake-bess",
+   "name": "岡山県和気郡2MW蓄電所（TAOKE ENERGY）",
+   "status": "稼働中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "岡山県",
+   "city": "和気郡",
+   "operator": null,
+   "epc": null,
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000046.000103834.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m31.txt",
+      "quote": "岡山県和気郡2MW蓄電所",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m31.txt",
+      "quote": "群馬県太田市龍舞町と岡山県和気郡で開発していた系統用蓄電所",
+      "verified": true
+     }
+    ],
+    "operator_empty": [
+     {
+      "file": "prim/m31.txt",
+      "quote": "岡山県和気郡の案件は合同会社（GK）と匿名組合（TK）を組み合わせた「GK-TKスキーム」で構築されています",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/m31.txt",
+      "quote": "2026年10月10日",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "operator": "GK-TK スキームの合同会社の名前が一次に無い",
+    "cod": "受電日（2026年10月10日）で運転開始日ではない（R3）",
+    "epc": "一次に記載なし",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "所在地は郡まで（和気郡）。",
+   "flags": [
+    "status: 上と同じ TAOKE の前例"
+   ]
+  },
+  {
+   "key": "m35",
+   "slug": "denkinoeki-isahaya-bess",
+   "name": "でんきの駅諫早",
+   "status": "建設中",
+   "outputMw": 16,
+   "capacityMwh": 70,
+   "prefecture": "長崎県",
+   "city": "諫早市",
+   "operator": "でんきの駅合同会社",
+   "epc": null,
+   "cod": "2028年12月（予定）",
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000001441.000037933.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m35.txt",
+      "quote": "系統用蓄電所「でんきの駅諫早」",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/m35.txt",
+      "quote": "でんきの駅合同会社",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m35.txt",
+      "quote": "長崎県諫早市（JR九州鉄道用変電所跡地および隣接地）",
+      "verified": true
+     }
+    ],
+    "output_capacity": [
+     {
+      "file": "prim/m35.txt",
+      "quote": "定格出力16メガワット、蓄電容量70メガワット時の系統用蓄電所を整備する",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/m35.txt",
+      "quote": "準備工事を2026年10月より着工し",
+      "verified": true
+     }
+    ],
+    "cod": [
+     {
+      "file": "prim/m35.txt",
+      "quote": "2028年12月の運用開始を予定しています",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "epc": "一次に記載なし",
+    "marketParticipation": "一次にこの蓄電所の市場の記載なし（需給調整市場は第1・2号の記述）"
+   },
+   "notes": "既存 tc-isahaya（東京センチュリー単独・16MW／64.38MWh・2028年度）とは事業主体・容量・運開・用地が違う＝別設備（11/2 の ■2 の判定どおり）。出資者は JR九州・BSホールディングス・住友商事九州。"
+  },
+  {
+   "key": "m36",
+   "slug": "taoke-minamichita-bess",
+   "name": "愛知県南知多町2MW高圧蓄電所（TAOKE ENERGY）",
+   "status": "建設中",
+   "outputMw": 2,
+   "capacityMwh": 8.14,
+   "prefecture": "愛知県",
+   "city": "南知多町",
+   "operator": null,
+   "epc": null,
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000047.000103834.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/m36.txt",
+      "quote": "愛知県南知多町2MW高圧蓄電所",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/m36.txt",
+      "quote": "愛知県南知多町",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/m36.txt",
+      "quote": "2MW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/m36.txt",
+      "quote": "8.14MWh",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/m36.txt",
+      "quote": "2026年10月30日に系統連系を完了した",
+      "verified": true
+     },
+     {
+      "file": "prim/m36.txt",
+      "quote": "今後、設備の試運転・調整を実施し、完了後にBTホールディングへの引き渡しを予定しています",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "operator": "一次に所有・事業主体の記載なし（TAOKE は開発・BTホールディングは引き渡し先の予定）",
+    "cod": "系統連系日で運転開始日ではない",
+    "epc": "一次に記載なし",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "所在地は一次の書き方「愛知県南知多町」（郡名なし）。",
+   "flags": [
+    "status: 系統連系だけの前例は稼働中 1・空 1 で一定しない。一次が「今後、設備の試運転・調整を実施」とするので建設中とした（空にする案もある）"
+   ]
+  },
+  {
+   "key": "w00",
+   "slug": "nc-izumo-kunitomi-bess",
+   "name": "NC出雲市国富町蓄電所",
+   "status": "建設中",
+   "outputMw": null,
+   "capacityMwh": null,
+   "prefecture": "島根県",
+   "city": "出雲市",
+   "operator": "日本蓄電池株式会社",
+   "epc": "株式会社カンドー",
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000118.000161802.html",
+   "ev": {
+    "name_city": [
+     {
+      "file": "prim/w00.txt",
+      "quote": "開発を進めているNC出雲市国富町蓄電所（所在地：島根県出雲市）において系統用蓄電池を設置した",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/w00.txt",
+      "quote": "設置開始日|2026年10月21日",
+      "verified": true
+     }
+    ],
+    "epc": [
+     {
+      "file": "prim/w00.txt",
+      "quote": "株式会社カンドー",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "outputMw": "一次に記載なし",
+    "capacityMwh": "一次に記載なし",
+    "cod": "設置開始だけ"
+   },
+   "notes": "所在地は「島根県出雲市」まで（国富町は名称の中だけ）。",
+   "flags": [
+    "status: 設置開始→建設中（前例 3 件とも建設中）",
+    "operator: 一次は「開発を進めている」まで。日本蓄電池の既存に合わせた（R-op2）"
+   ]
+  },
+  {
+   "key": "w00b",
+   "slug": "nc-minamiaizu-tajima-bess",
+   "name": "NC南会津町田島蓄電所",
+   "status": "建設中",
+   "outputMw": null,
+   "capacityMwh": null,
+   "prefecture": "福島県",
+   "city": "南会津郡",
+   "operator": "日本蓄電池株式会社",
+   "epc": "株式会社クラフティア",
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000117.000161802.html",
+   "ev": {
+    "name_city": [
+     {
+      "file": "prim2/w00b.txt",
+      "quote": "開発を進めているNC南会津町田島蓄電所（所在地：福島県南会津郡）において系統用蓄電池を設置した",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim2/w00b.txt",
+      "quote": "設置開始日|2026年10月21日",
+      "verified": true
+     }
+    ],
+    "epc": [
+     {
+      "file": "prim2/w00b.txt",
+      "quote": "株式会社クラフティア",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "outputMw": "一次に記載なし",
+    "capacityMwh": "一次に記載なし",
+    "cod": "設置開始だけ"
+   },
+   "notes": "所在地は「福島県南会津郡」まで。",
+   "flags": [
+    "status: 設置開始→建設中",
+    "operator: 上と同じ（R-op2）"
+   ]
+  },
+  {
+   "key": "w01",
+   "slug": "sunpin-shiga-otsu-bess",
+   "name": "SP滋賀大津蓄電所",
+   "status": "建設中",
+   "outputMw": 45,
+   "capacityMwh": 180,
+   "prefecture": "滋賀県",
+   "city": "大津市石山千町",
+   "operator": "株式会社SUNPIN JAPAN",
+   "epc": "株式会社ブルーポイントパワーソリューション",
+   "cod": "2026年12月（予定）",
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000002.000193954.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/w01.txt",
+      "quote": "特別高圧の系統用蓄電所「SP滋賀大津蓄電所」",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/w01.txt",
+      "quote": "本蓄電所は滋賀県大津市石山千町に立地し",
+      "verified": true
+     }
+    ],
+    "output_capacity": [
+     {
+      "file": "prim/w01.txt",
+      "quote": "出力は45MW、蓄電容量は180MWhです",
+      "verified": true
+     }
+    ],
+    "operator": [
+     {
+      "file": "prim/w01.txt",
+      "quote": "SUNPIN JAPANは、本蓄電所を皮切りに、日本国内で系統用蓄電所の開発・運営を拡大していきます",
+      "verified": true
+     }
+    ],
+    "epc": [
+     {
+      "file": "prim/w01.txt",
+      "quote": "建設は、グループのEPC会社である株式会社ブルーポイントパワーソリューションが担当しました",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/w01.txt",
+      "quote": "2026年11月5日に送配電網への系統接続を完了しました",
+      "verified": true
+     }
+    ],
+    "cod": [
+     {
+      "file": "prim/w01.txt",
+      "quote": "商業運転は2026年12月を予定し",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "marketParticipation": "一次に市場名なし"
+   },
+   "notes": "運用・アグリゲーションは E-Flow合同会社と連携。関西電力送配電の 77kV 湖南新山科線に接続。一次は 2026-11-07 12:40 に更新（本文は 11/6 の写しと同じ・日時だけ）。",
+   "flags": [
+    "operator: 一次は SUNPIN JAPAN が建設を進め・開発を主導、「本蓄電所を皮切りに…開発・運営を拡大」（所有の語なし・R-op2）",
+    "status: 系統接続済み・商業運転は 2026年12月予定→建設中"
+   ]
+  },
+  {
+   "key": "w02",
+   "slug": "kasama-bousai-bess",
+   "name": "茨城県笠間市の防災連携型系統用蓄電所",
+   "status": "稼働中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "茨城県",
+   "city": "笠間市",
+   "operator": null,
+   "epc": null,
+   "cod": "2026-10-30",
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000021.000176308.html",
+   "ev": {
+    "city": [
+     {
+      "file": "prim/w02.txt",
+      "quote": "茨城県笠間市（笠間市民体育館隣接地）",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/w02.txt",
+      "quote": "2,000kW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/w02.txt",
+      "quote": "8,000kWh",
+      "verified": true
+     }
+    ],
+    "status_cod": [
+     {
+      "file": "prim/w02.txt",
+      "quote": "運転開始時期 ： 2026 年10 月30 日",
+      "verified": true
+     }
+    ],
+    "operator_empty": [
+     {
+      "file": "prim/w02.txt",
+      "quote": "本事業は、笠間市、芙蓉総合リース株式会社および東電タウンプランニング株式会社が進めるもので",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "operator": "三者が「進める」とあるだけで、事業主体・所有の記載なし",
+    "epc": "一次に記載なし",
+    "marketParticipation": "一次に市場名なし"
+   },
+   "notes": "一次は蓄電池の供給側（NEXTES）のリリースで、事業概要は「東電タウンプランニング株式会社の公表内容に基づいて」いる＝二次の記載。東電タウンプランニングの公表を一次として取り直すかは裁定。写真のコンテナの「笠間系統蓄電所 01」は本文の文字に無い。",
+   "flags": [
+    "source: 事業の一次は東電タウンプランニングの公表（NEXTES の注記）。段 2 の前に取り直す案",
+    "name: 施設名が無いので記述的な名前"
+   ]
+  },
+  {
+   "key": "w06-teshikaga",
+   "slug": "buddynet-teshikaga-bess",
+   "name": "弟子屈蓄電所",
+   "status": "建設中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "北海道",
+   "city": "川上郡弟子屈町",
+   "operator": null,
+   "epc": "株式会社バディネット",
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000021.000168478.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim/w06.txt",
+      "quote": "■弟子屈蓄電所の実績詳細",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim/w06.txt",
+      "quote": "北海道川上郡弟子屈町内の系統用蓄電池建設プロジェクトにおいて",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim/w06.txt",
+      "quote": "2MW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim/w06.txt",
+      "quote": "8MWh",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim/w06.txt",
+      "quote": "2026年9月にすべての工程を完了し、無事に建設工事の完工および引き渡しを迎えました",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "operator": "施工側（バディネット）の完工・引き渡しの発表で、引き渡し先（所有者）の名前が無い",
+    "cod": "完工・引き渡しで運転開始日ではない",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "一次は施工側（バディネット）のリリース。",
+   "flags": [
+    "status: 完工・引き渡し→建設中（同じ会社の前例 buddynet-izumo-koshi-bess が建設中）。完工の前例は稼働中 4・建設中 2・計画中 1 で一定しない"
+   ]
+  },
+  {
+   "key": "w06-fujinomiya",
+   "slug": "buddynet-fujinomiya-bess",
+   "name": "日進LRD蓄電所",
+   "status": "建設中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "静岡県",
+   "city": "富士宮市",
+   "operator": null,
+   "epc": "株式会社バディネット",
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000023.000168478.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim2/w06b.txt",
+      "quote": "■日進LRD蓄電所の実績詳細",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim2/w06b.txt",
+      "quote": "静岡県富士宮市内の系統用蓄電池建設プロジェクトにおいて",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim2/w06b.txt",
+      "quote": "2MW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim2/w06b.txt",
+      "quote": "8MWh",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim2/w06b.txt",
+      "quote": "2026年9月にすべての工程を完了し、無事に建設工事の完工および引き渡しを迎えました",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "operator": "施工側（バディネット）の完工・引き渡しの発表で、引き渡し先（所有者）の名前が無い",
+    "cod": "完工・引き渡しで運転開始日ではない",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "一次は施工側（バディネット）のリリース。",
+   "flags": [
+    "status: 完工・引き渡し→建設中（同じ会社の前例 buddynet-izumo-koshi-bess が建設中）。完工の前例は稼働中 4・建設中 2・計画中 1 で一定しない"
+   ]
+  },
+  {
+   "key": "w06-saku",
+   "slug": "buddynet-saku-bess",
+   "name": "長野5号蓄電所",
+   "status": "建設中",
+   "outputMw": 2,
+   "capacityMwh": 8,
+   "prefecture": "長野県",
+   "city": "佐久市",
+   "operator": null,
+   "epc": "株式会社バディネット",
+   "cod": null,
+   "market": [],
+   "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000024.000168478.html",
+   "ev": {
+    "name": [
+     {
+      "file": "prim2/w06c.txt",
+      "quote": "■長野5号蓄電所の実績詳細",
+      "verified": true
+     }
+    ],
+    "city": [
+     {
+      "file": "prim2/w06c.txt",
+      "quote": "長野県佐久市内の系統用蓄電池建設プロジェクトにおいて",
+      "verified": true
+     }
+    ],
+    "output": [
+     {
+      "file": "prim2/w06c.txt",
+      "quote": "2MW",
+      "verified": true
+     }
+    ],
+    "capacity": [
+     {
+      "file": "prim2/w06c.txt",
+      "quote": "8MWh",
+      "verified": true
+     }
+    ],
+    "status": [
+     {
+      "file": "prim2/w06c.txt",
+      "quote": "2026年10月にすべての工程を完了し、無事に建設工事の完工および引き渡しを迎えました",
+      "verified": true
+     }
+    ]
+   },
+   "empty": {
+    "operator": "施工側（バディネット）の完工・引き渡しの発表で、引き渡し先（所有者）の名前が無い",
+    "cod": "完工・引き渡しで運転開始日ではない",
+    "marketParticipation": "一次に記載なし"
+   },
+   "notes": "一次は施工側（バディネット）のリリース。",
+   "flags": [
+    "status: 完工・引き渡し→建設中（同じ会社の前例 buddynet-izumo-koshi-bess が建設中）。完工の前例は稼働中 4・建設中 2・計画中 1 で一定しない"
+   ]
+  }
+ ],
+ "patches": [
+  {
+   "slug": "shizuokagas-hamamatsu-bess",
+   "ops": [
+    {
+     "field": "city",
+     "old": "浜松市",
+     "new": "浜松市中央区有玉西町",
+     "ev": [
+      {
+       "file": "prim/m02.txt",
+       "quote": "静岡県浜松市中央区有玉西町",
+       "verified": true
+      }
+     ],
+     "note": "便 §3 の裁定どおり（一次の逐語）"
+    }
+   ],
+   "other": "ほかの値（出力 1.999・容量 8.584・運転開始 2028年4月（予定）・事業主体 静岡ガス＆パワー）は IBeeT の一次と一致。本文に IBeeT のリリースを出典として 1 文足す案（段 2 で文案）。"
+  },
+  {
+   "slug": "nc-shunan-yuno",
+   "ops": [
+    {
+     "field": "status",
+     "old": [],
+     "new": [
+      "稼働中"
+     ],
+     "ev": [
+      {
+       "file": "prim/m04.txt",
+       "quote": "2026年9月25日より需給調整市場における運用を開始した",
+       "verified": true
+      }
+     ],
+     "note": "運用開始の日付が過去→稼働中（便 §3）"
+    },
+    {
+     "field": "marketParticipation",
+     "old": [],
+     "new": [
+      "需給調整市場"
+     ],
+     "ev": [
+      {
+       "file": "prim/m04.txt",
+       "quote": "2026年9月25日より需給調整市場における運用を開始した",
+       "verified": true
+      }
+     ],
+     "note": ""
+    },
+    {
+     "field": "sourceUrl",
+     "old": "https://prtimes.jp/main/html/rd/p/000000063.000161802.html",
+     "new": "https://prtimes.jp/main/html/rd/p/000000059.000161802.html",
+     "ev": [
+      {
+       "file": "prim3/dup059.txt",
+       "quote": "NC周南市湯野蓄電所",
+       "verified": true
+      },
+      {
+       "file": "prim3/dup059.txt",
+       "quote": "運転開始日|2026年4月1日",
+       "verified": true
+      }
+     ],
+     "note": "★範囲外の是正案: 今の出典（000000063.000161802）は白河市の NC白河市表郷番沢蓄電所のリリースで、湯野のものではない。湯野の受電の一次は 000000059.000161802（2026-04-23・表「運転開始日 2026年4月1日」＝今の cod と一致）"
+    },
+    {
+     "field": "body",
+     "old": "（空・0 字）",
+     "new": "（段 2 で文案）受電の一次（059）と需給調整市場の運用開始 2026年9月25日（m04）の逐語。アグリゲーターはデジタルグリッド",
+     "ev": [
+      {
+       "file": "prim/m04.txt",
+       "quote": "デジタルグリッド株式会社",
+       "verified": true
+      }
+     ],
+     "note": "湯野の需給調整の運用開始は欄が無いので本文（便 §3）"
+    }
+   ]
+  },
+  {
+   "slug": "daiwa-kurate",
+   "ops": [
+    {
+     "field": "name",
+     "old": "福岡鞍手系統用蓄電所（大和ハウス工業）",
+     "new": "DREAM Storage Battery 福岡鞍手系統用蓄電所",
+     "ev": [
+      {
+       "file": "prim/m07.txt",
+       "quote": "拠点名：「DREAM Storage Battery 福岡鞍手系統用蓄電所」",
+       "verified": true
+      }
+     ],
+     "note": "便 §3"
+    },
+    {
+     "field": "status",
+     "old": [
+      "建設中"
+     ],
+     "new": [
+      "稼働中"
+     ],
+     "ev": [
+      {
+       "file": "prim/m07.txt",
+       "quote": "同蓄電所は2026年9月16日に運転を開始しました。",
+       "verified": true
+      }
+     ],
+     "note": "便 §3"
+    },
+    {
+     "field": "cod",
+     "old": null,
+     "new": "2026-09-16",
+     "ev": [
+      {
+       "file": "prim/m07.txt",
+       "quote": "運転開始：2026年9月16日",
+       "verified": true
+      }
+     ],
+     "note": "便 §3"
+    },
+    {
+     "field": "city",
+     "old": "鞍手郡",
+     "new": "鞍手郡鞍手町",
+     "ev": [
+      {
+       "file": "prim/m07.txt",
+       "quote": "所在地：福岡県鞍手郡鞍手町新延448-8（大和ハウス工業九州工場敷地内）",
+       "verified": true
+      }
+     ],
+     "note": "便 §3（番地は入れない）"
+    },
+    {
+     "field": "body",
+     "old": "第 1 段落「福岡鞍手系統用蓄電所は、…2025年8月18日より着工し、系統用蓄電所事業の実用化に向けた実証実験の一環として位置付けられています。…」ほか",
+     "new": "（段 2 で文案）名称・運転開始 2026年9月16日・PCS出力 1.9MW・定格 9.8MWh・パワーエックスの納入とアグリゲーターを一次の逐語で。今の本文の評価の文（「代表例」「象徴します」「想定され」）の扱いは裁定",
+     "ev": [
+      {
+       "file": "prim/m07.txt",
+       "quote": "アグリゲーター：株式会社パワーエックス",
+       "verified": true
+      }
+     ],
+     "note": ""
+    }
+   ],
+   "other": "marketParticipation［JEPX・需給調整市場］は今回の一次に記載なし（今の本文も「想定され」）＝変えない案・裁定。出力 1.9／容量 9.8 は一次と一致。"
+  },
+  {
+   "slug": "nc-kainan",
+   "ops": [
+    {
+     "field": "name",
+     "old": "和歌山県海南市の系統用蓄電所（NCパイオニア）",
+     "new": "NC海南市木津蓄電所",
+     "ev": [
+      {
+       "file": "prim/m08.txt",
+       "quote": "NC海南市木津蓄電所（所在地：和歌山県海南市）において系統用蓄電池を設置した",
+       "verified": true
+      }
+     ],
+     "note": "便 §3"
+    },
+    {
+     "field": "status",
+     "old": [
+      "計画中"
+     ],
+     "new": [
+      "建設中"
+     ],
+     "ev": [
+      {
+       "file": "prim/m08.txt",
+       "quote": "設置開始日|2026年9月26日",
+       "verified": true
+      }
+     ],
+     "note": "設置開始→建設中（前例 3 件）"
+    },
+    {
+     "field": "cod",
+     "old": null,
+     "new": "2026年11月（予定）",
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "残る3か所の受電開始は、和歌山県海南市の系統用蓄電所が2026年11月",
+       "verified": true
+      }
+     ],
+     "note": "便 §3「受電の見込み（11/5 の発表の「2026年11月」）を反映」。揖斐川・長野（cod に受電の見込み）と同じ書き方。★cod は運転開始の欄で、受電の見込みを入れるのは R3 と合わない（今の揖斐川・長野も同じ）→ 3 件そろえて空にする案もある"
+    },
+    {
+     "field": "epc",
+     "old": null,
+     "new": "株式会社ワイ・ジャスト",
+     "ev": [
+      {
+       "file": "prim/m08.txt",
+       "quote": "ワイ・ジャスト",
+       "verified": true
+      }
+     ],
+     "note": "表の項目名は「施工会社」"
+    },
+    {
+     "field": "body",
+     "old": "受電開始は2026年9月見込み。",
+     "new": "受電開始は2026年11月見込み（2026年11月5日のリミックスポイントの発表）。",
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "和歌山県海南市の系統用蓄電所が2026年11月",
+       "verified": true
+      }
+     ],
+     "note": "便 §3（「受電開始は2026年9月見込み」を直す）＋設置開始（2026年9月26日）の段落を追記（段 2 で文案）。★w03 は施設名を書いていない（「和歌山県海南市の系統用蓄電所」）。海南市の NC の案件はこれ 1 件"
+    }
+   ]
+  },
+  {
+   "slug": "pr-co86244-tochigi-8mwh",
+   "ops": [
+    {
+     "field": "marketParticipation",
+     "old": [],
+     "new": [
+      "需給調整市場"
+     ],
+     "ev": [
+      {
+       "file": "prim2/m15b.txt",
+       "quote": "栃木県足利市|2MW/8MWh|2025年9月|2026年1月",
+       "verified": true
+      },
+      {
+       "file": "prim2/m15b.txt",
+       "quote": "4案件すべてにおいて所定の参入審査に合格し、実需給を開始しています。",
+       "verified": true
+      }
+     ],
+     "note": ""
+    },
+    {
+     "field": "body",
+     "old": "（末尾に追記）",
+     "new": "（段 2 で文案）需給調整市場への参入 2026年1月（m15b の表）・アグリゲーター 丸紅新電力",
+     "ev": [
+      {
+       "file": "prim2/m15b.txt",
+       "quote": "丸紅新電力がアグリゲーター（※2）として、電力市場への入札および運用を担っています。",
+       "verified": true
+      }
+     ],
+     "note": "便 §3（参入の日付は本文）"
+    }
+   ],
+   "other": "status 稼働中・2MW／8MWh・事業者 サンヴィレッジは一次と一致。"
+  },
+  {
+   "slug": "nc-nagahama-mikawacho",
+   "ops": [
+    {
+     "field": "outputMw",
+     "old": 1.988,
+     "new": 1.999,
+     "ev": [
+      {
+       "file": "prim/m18.txt",
+       "quote": "1,999kW・8,146kWh",
+       "verified": true
+      }
+     ],
+     "note": "便 §3: 新しい日付の一次（10/15）を採る。6/4 の 1,988kW は本文に残す"
+    },
+    {
+     "field": "status",
+     "old": [],
+     "new": [
+      "稼働中"
+     ],
+     "ev": [
+      {
+       "file": "prim/m18.txt",
+       "quote": "2026年10月13日より需給調整市場における運用を開始した",
+       "verified": true
+      }
+     ],
+     "note": "運用開始の日付が過去"
+    },
+    {
+     "field": "marketParticipation",
+     "old": [],
+     "new": [
+      "需給調整市場"
+     ],
+     "ev": [
+      {
+       "file": "prim/m18.txt",
+       "quote": "2026年10月13日より需給調整市場における運用を開始した",
+       "verified": true
+      }
+     ],
+     "note": ""
+    },
+    {
+     "field": "body",
+     "old": "定格出力1,988kW・容量8,146kWh。",
+     "new": "定格出力1,999kW・容量8,146kWh（2026年10月15日のリリース。2026年6月4日のリリースは定格出力を1,988kWとしていた）。",
+     "ev": [
+      {
+       "file": "prim2/m18old.txt",
+       "quote": "1,988kW・8,146kWh",
+       "verified": true
+      },
+      {
+       "file": "prim/m18.txt",
+       "quote": "1,999kW・8,146kWh",
+       "verified": true
+      }
+     ],
+     "note": "＋需給調整市場の運用開始 2026年10月13日・アグリゲーター デジタルグリッドの段落（段 2 で文案）。10/15 の本文は「NC長浜市三川蓄電所」（町なし）と書く箇所があるが、題・表・写真は三川町"
+    }
+   ],
+   "other": "cod 2026-05-22 は 6/4 の表「運転開始日 2026年5月22日」と一致＝変えない。"
+  },
+  {
+   "slug": "nc-kama-kuchiharu",
+   "ops": [
+    {
+     "field": "status",
+     "old": [],
+     "new": [
+      "稼働中"
+     ],
+     "ev": [
+      {
+       "file": "prim/m27.txt",
+       "quote": "2026年10月20日より需給調整市場における運用を開始した",
+       "verified": true
+      }
+     ],
+     "note": "運用開始の日付が過去"
+    },
+    {
+     "field": "marketParticipation",
+     "old": [],
+     "new": [
+      "需給調整市場"
+     ],
+     "ev": [
+      {
+       "file": "prim/m27.txt",
+       "quote": "2026年10月20日より需給調整市場における運用を開始した",
+       "verified": true
+      }
+     ],
+     "note": ""
+    },
+    {
+     "field": "body",
+     "old": "（末尾に追記）",
+     "new": "（段 2 で文案）需給調整市場の運用開始 2026年10月20日・日本蓄電池が開発・運営、リミックスポイントが事業管理・統括",
+     "ev": [
+      {
+       "file": "prim/m27.txt",
+       "quote": "日本蓄電池が開発・運営、リミックスポイントが事業管理・統括を担っています",
+       "verified": true
+      }
+     ],
+     "note": "便 §3"
+    }
+   ]
+  },
+  {
+   "slug": "nc-makurazaki-sakurayamahigashi",
+   "ops": [
+    {
+     "field": "outputMw",
+     "old": null,
+     "new": 1.988,
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "1,988kW",
+       "verified": true
+      }
+     ],
+     "note": "便 §3"
+    },
+    {
+     "field": "capacityMwh",
+     "old": null,
+     "new": 8.146,
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "8,146kWh",
+       "verified": true
+      }
+     ],
+     "note": "便 §3"
+    },
+    {
+     "field": "status",
+     "old": [
+      "建設中"
+     ],
+     "new": [
+      "稼働中"
+     ],
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "2026年11月4日に受電を開始しました",
+       "verified": true
+      }
+     ],
+     "note": "受電が過去→前例（稼働中 5・空 3）の多い方"
+    },
+    {
+     "field": "operator",
+     "old": "日本蓄電池株式会社",
+     "new": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "当社の連結子会社である合同会社NCパイオニアを通じ、全国7か所で系統用蓄電所※1の開発を進めています",
+       "verified": true
+      }
+     ],
+     "note": "便 §3（ほかの NCパイオニアの 3 件と同じ書き方）"
+    },
+    {
+     "field": "body",
+     "old": "第 2 段落「定格出力・定格容量・運転開始予定は、施設個別のリリース（2026年5月25日）には記載がない。…（調査中）。」",
+     "new": "（段 2 で文案）受電開始 2026年11月4日・1,988kW／8,146kWh・需給調整市場への参入は2027年3月頃の予定（w03 の逐語）",
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "このうち需給調整市場への参入は2027年3月頃を予定しています",
+       "verified": true
+      }
+     ],
+     "note": "cod は空のまま（受電日・R3）"
+    }
+   ]
+  },
+  {
+   "slug": "nc-ibigawa",
+   "ops": [
+    {
+     "field": "cod",
+     "old": "2026年10月（予定）",
+     "new": "2026年12月（予定）",
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "岐阜県揖斐郡揖斐川町が同年12月",
+       "verified": true
+      }
+     ],
+     "note": "便 §3（cod と本文の両方）。★R3 の注記は nc-kainan と同じ"
+    },
+    {
+     "field": "body",
+     "old": "受電開始は2026年10月見込み。",
+     "new": "受電開始は2026年12月見込み（2026年11月5日のリミックスポイントの発表）。",
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "岐阜県揖斐郡揖斐川町が同年12月",
+       "verified": true
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "slug": "nc-nagano-city",
+   "ops": [
+    {
+     "field": "cod",
+     "old": "2026年10月（予定）",
+     "new": "2027年3月（予定）",
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "長野県長野市が2027年3月を見込んでいます",
+       "verified": true
+      }
+     ],
+     "note": "便 §3。★R3 の注記は nc-kainan と同じ"
+    },
+    {
+     "field": "body",
+     "old": "受電開始は2026年10月見込み。",
+     "new": "受電開始は2027年3月見込み（2026年11月5日のリミックスポイントの発表）。",
+     "ev": [
+      {
+       "file": "prim/w03.txt",
+       "quote": "長野県長野市が2027年3月を見込んでいます",
+       "verified": true
+      }
+     ],
+     "note": ""
+    }
+   ]
+  }
+ ],
+ "no_change": [
+  {
+   "slug": "nozomi-usuki-bess",
+   "why": "一次（トリナ・ストレージ 10/14）の 50MW／196MWh・臼杵市野津町西畑・第一回長期脱炭素電源オークション落札は今の値と一致。「2028年第3四半期に完成する予定」は今の cod「2028年9月」と矛盾しない（便 §3: 違いが無ければ変えない）。",
+   "ev": [
+    {
+     "file": "prim/m17.txt",
+     "quote": "50MW/196MWh規模のAEJ野津蓄電池プロジェクト",
+     "verified": true
+    },
+    {
+     "file": "prim/m17.txt",
+     "quote": "2028年第3四半期に完成する予定です",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "slug": "gec-kuradashi-shimane-bess",
+   "why": "便 §3「安来は今回は変えない」。TESS の一次は PCS出力 1,995kW（今 1.998）・納入時期 2027年2月（今の本文の系統連系予定 2027年1月より後＝一次同士で順序が合わない）。報告だけ。",
+   "ev": [
+    {
+     "file": "prim/m22.txt",
+     "quote": "PCS出力：1,995kW、容量：8,224kWh（Sungrow製 514kWh×16台）",
+     "verified": true
+    },
+    {
+     "file": "prim/m22.txt",
+     "quote": "納入時期（予定）|2027年２月",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "slug": "gec-fukuchiyama-haji-bess",
+   "why": "一次（Tensor 10/26）の 1,999kW／8,146kWh・事業主体 合同会社マイクロGX京都・EPC グリーンエナジー・プラス・JEPX は今の値と一致。違いは「需給調整市場への参加を予定」の 1 つ（marketParticipation に足すかは裁定・足さない案）。所在地は「京都府福知山市」まで（土師は名称）。",
+   "ev": [
+    {
+     "file": "prim/m34.txt",
+     "quote": "合同会社マイクロGX京都：事業主体",
+     "verified": true
+    },
+    {
+     "file": "prim/m34.txt",
+     "quote": "本蓄電所は需給調整市場への参加を予定しております",
+     "verified": true
+    }
+   ]
+  }
+ ],
+ "skips": [
+  {
+   "key": "m05",
+   "facility": "福岡・飯塚第一メガソーラー発電所の併設蓄電池（東京センチュリーグループ・1,500kW／約6,000kWh）",
+   "reason": "再エネ併設の前例の形が一定しない（便 §3「一定でなければ見送り・報告」）: 佐渡 sado-megasolar-bess は名前が「…併設メガソーラー」で 5／5、石狩 ishikari-wind-bess は outputMw に風車の 2.35MW、サーラ pr-co40055-bess は「再エネ併設型蓄電所」で蓄電池の値。便が例に挙げた hybrid-reu511-saga-honjo-bess は系統用蓄電所で併設ではない（前提違い）",
+   "src": "https://prtimes.jp/main/html/rd/p/000000253.000076147.html"
+  },
+  {
+   "key": "m29",
+   "facility": "TK蓄電所1号（カンエイ・TERAS・2MW／4MWh）",
+   "reason": "所在地（府県）が一次に無い＝所在地の公表待ち（便 §3）。株式会社TK蓄電所1号は SPC の名前。運転開始は 2027年4月の予定",
+   "src": "https://prtimes.jp/main/html/rd/p/000000042.000174524.html"
+  },
+  {
+   "key": "m06",
+   "facility": "ポートの高圧系統用蓄電所",
+   "reason": "判別不能（便 §3）: 所在地を公表しない（11/2 の ■2）",
+   "src": "https://prtimes.jp/main/html/rd/p/000000222.000016325.html"
+  },
+  {
+   "key": "m30-fukuchiyama",
+   "facility": "SD京都福知山蓄電所（綜電・1,969kW／8,146kWh・福知山市土師）",
+   "reason": "判別不能（便 §3）: 既存 gec-fukuchiyama-haji-bess（福知山市土師・1,999kW／8,146kWh・合同会社マイクロGX京都）と所在・容量が同じで、所有（綜電株式会社）と出力が違う。どちらの一次も相手に触れていない",
+   "src": "https://prtimes.jp/main/html/rd/p/000000095.000092942.html"
+  },
+  {
+   "key": "m32",
+   "facility": "関西電力・E-Flow の太陽光併設蓄電池（複数エリア合計 110MW）",
+   "reason": "判別不能（便 §3）: 発電所名・所在地が一次に無い",
+   "src": "https://prtimes.jp/main/html/rd/p/000000003.000189198.html"
+  },
+  {
+   "key": "m23",
+   "facility": "POWER POOL「PP7号合同会社」の 6 案件",
+   "reason": "登録も紐づけもしない（便 §3）: 一次は 6 案件の所在地を書いていない。既存 taoke-pp7-*（神戸・須賀川・菊池・鳥取）の 4 件との関係も一次に無い",
+   "src": "https://prtimes.jp/main/html/rd/p/000000005.000183333.html"
+  }
+ ],
+ "checks": {
+  "quotes": 202,
+  "quotes_not_found": 0,
+  "slug_collisions": [],
+  "patch_targets_exist": true
+ }
+}
