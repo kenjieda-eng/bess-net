@@ -1,0 +1,31 @@
+# 小さな直し便（2026-11-07）: 題名や表示が変わったページ。凍結（noindex）と名称非公開（noindex）は入れない
+# 須磨の動いている側（題名に電圧が付いた）
+https://bess-net.jp/grid/ksi-local-cq-5
+# 関西の算出値が負の 18 件（空容量を 0 MW と表示し、計算値の一文を足した）
+https://bess-net.jp/grid/ksi-kikan-a-3
+https://bess-net.jp/grid/ksi-kikan-ad
+https://bess-net.jp/grid/ksi-kikan-ag
+https://bess-net.jp/grid/ksi-kikan-ak
+https://bess-net.jp/grid/ksi-kikan-b-3
+https://bess-net.jp/grid/ksi-kikan-bt
+https://bess-net.jp/grid/ksi-kikan-d-2
+https://bess-net.jp/grid/ksi-kikan-e
+https://bess-net.jp/grid/ksi-kikan-h
+https://bess-net.jp/grid/ksi-kikan-q
+https://bess-net.jp/grid/ksi-local-aj-10
+https://bess-net.jp/grid/ksi-local-al-5
+https://bess-net.jp/grid/ksi-local-at-11
+https://bess-net.jp/grid/ksi-local-av-10
+https://bess-net.jp/grid/ksi-local-dx-6
+https://bess-net.jp/grid/ksi-local-f-7
+https://bess-net.jp/grid/ksi-local-s-8
+https://bess-net.jp/grid/ksi-local-w-11
+# 一覧の表示が変わったページ（0 MW※ と注記・県の合計空容量）
+https://bess-net.jp/grid/kansai
+https://bess-net.jp/grid/prefecture/%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C
+https://bess-net.jp/grid/prefecture/%E5%85%B5%E5%BA%AB%E7%9C%8C
+https://bess-net.jp/grid/prefecture/%E4%BA%AC%E9%83%BD%E5%BA%9C
+https://bess-net.jp/grid/prefecture/%E6%BB%8B%E8%B3%80%E7%9C%8C
+# 府県の割り当て便で題名が「ほか1社」に変わった県のページ（11/7 の裁定 2）
+https://bess-net.jp/grid/prefecture/%E7%A6%8F%E4%BA%95%E7%9C%8C
+https://bess-net.jp/grid/prefecture/%E4%B8%89%E9%87%8D%E7%9C%8C
