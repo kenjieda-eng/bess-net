@@ -1,0 +1,557 @@
+{
+ "mode": "apply",
+ "calls": {
+  "GET": 98,
+  "POST": 32,
+  "PATCH": 11
+ },
+ "counts": {
+  "patched": 11,
+  "posted": 32,
+  "skipped": 1,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/ntt-ae-aomori-misawa-bess",
+   "row_id": "P2-m01",
+   "result": "skip_exists",
+   "id": "14vn62wprv"
+  },
+  {
+   "kind": "post",
+   "target": "projects/nc-maniwa-tabane-bess",
+   "row_id": "P2-m03",
+   "id": "uuvalv6b7",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/kg-bess-isesaki-bess",
+   "row_id": "P2-m09",
+   "id": "2xn3hdg48x",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/sevenpower-hachinohe-bess",
+   "row_id": "P2-m10",
+   "id": "ah6pmu9ajlj",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/gritz-kitaibaraki-bess",
+   "row_id": "P2-m12-kitaibaraki",
+   "id": "i9_59g-oh",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/gritz-tochigi-bess",
+   "row_id": "P2-m12-tochigi",
+   "id": "0tsnxrh_x",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/gritz-oshu-bess",
+   "row_id": "P2-m12-oshu",
+   "id": "hcmvcvsa9",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/hexa-oyabe-bess",
+   "row_id": "P2-m13",
+   "id": "7scgyvosx0",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/sunvillage-honjo-1-bess",
+   "row_id": "P2-m15-honjo-1",
+   "id": "h0h4ytnygnh",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/sunvillage-honjo-2-bess",
+   "row_id": "P2-m15-honjo-2",
+   "id": "samkcqj-s5",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/sunvillage-yorii-bess",
+   "row_id": "P2-m15-yorii",
+   "id": "2w1ok9667ab5",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/qenest-sano-bess",
+   "row_id": "P2-m16",
+   "id": "6-o8dn8-w",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/amp-lify-mihama-bess",
+   "row_id": "P2-m19",
+   "id": "nry60eewb",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/fantasista-nagahama-pss",
+   "row_id": "P2-m20",
+   "id": "i8n4whclie",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/sumitomo-namie-bess",
+   "row_id": "P2-m21",
+   "id": "eoj78pfd2hz",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/tadasunomori-kani-bess",
+   "row_id": "P2-m22-kani",
+   "id": "03a7hwv45-qw",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/remixpoint-ena-iwamura-3-bess",
+   "row_id": "P2-m25",
+   "id": "gy-6o0nj4db",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/mitsuuroko-kitahiroshima-1-bess",
+   "row_id": "P2-m26-1",
+   "id": "a_x9y4m3n73",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/mitsuuroko-kitahiroshima-2-bess",
+   "row_id": "P2-m26-2",
+   "id": "gl--oxxtzo",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/erex-no2-sanbu-bess",
+   "row_id": "P2-m28",
+   "id": "9r67pzonka8",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/soden-ayabe-bess",
+   "row_id": "P2-m30-ayabe",
+   "id": "facmgufmu0s",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-ota-ryumai-bess",
+   "row_id": "P2-m31-ryumai",
+   "id": "svoiy9l4e",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-wake-bess",
+   "row_id": "P2-m31-wake",
+   "id": "nfg-xooj0vr3",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/denkinoeki-isahaya-bess",
+   "row_id": "P2-m35",
+   "id": "8hb3gfoy8_4a",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-minamichita-bess",
+   "row_id": "P2-m36",
+   "id": "zn5ub7l2w0",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/nc-izumo-kunitomi-bess",
+   "row_id": "P2-w00",
+   "id": "yzyzugoj5jif",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/nc-minamiaizu-tajima-bess",
+   "row_id": "P2-w00b",
+   "id": "mf448u6u7",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/sunpin-shiga-otsu-bess",
+   "row_id": "P2-w01",
+   "id": "jqjhdkscvtwa",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/kasama-bousai-bess",
+   "row_id": "P2-w02",
+   "id": "dswaivktqp-4",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/buddynet-teshikaga-bess",
+   "row_id": "P2-w06-teshikaga",
+   "id": "e7m6g7shvz",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/buddynet-fujinomiya-bess",
+   "row_id": "P2-w06-fujinomiya",
+   "id": "e9kub9j8zl1",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/buddynet-saku-bess",
+   "row_id": "P2-w06-saku",
+   "id": "mt4a8vmhzj",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/tc-iizuka-megasolar-bess",
+   "row_id": "P2-m05",
+   "id": "b_39a1tgmh",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "patch",
+   "target": "projects/shizuokagas-hamamatsu-bess",
+   "id": "woehuj7z7ete",
+   "result": "patched",
+   "fields": [
+    "city",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "city": "浜松市",
+    "body": "<p>静岡ガスの100%子会社・<strong>静岡ガス＆パワー</strong>が静岡県浜松市で計画する系統用蓄電所（定格出力1,999kW／公称容量8,584kWh）。建設はグリーンエナジー＆カンパニーの100%子会社グリーンエナジー・プラスが受注し、用地開発から各種権利の取得、建設工事までを一体で担う。着工は2027年11月、運転開始は2028年4月の予定。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   },
+   "after": {
+    "city": "浜松市中央区有玉西町",
+    "body": "<p>静岡ガスの100%子会社・<strong>静岡ガス＆パワー</strong>が静岡県浜松市で計画する系統用蓄電所（定格出力1,999kW／公称容量8,584kWh）。建設はグリーンエナジー＆カンパニーの100%子会社グリーンエナジー・プラスが受注し、用地開発から各種権利の取得、建設工事までを一体で担う。着工は2027年11月、運転開始は2028年4月の予定。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p><p>2026年10月1日の株式会社IBeeTのリリースは、静岡ガスグループ初となる高圧蓄電所（静岡県浜松市）向けに伊藤忠商事株式会社の系統用蓄電システム「Bluestorage」を供給するとし、事業概要の設置場所を「静岡県浜松市中央区有玉西町」、事業主体を静岡ガス＆パワー株式会社とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000011.000110152.html\" target=\"_blank\" rel=\"noopener noreferrer\">IBeeT、静岡ガスグループ向けに伊藤忠商事「Bluestorage」高圧蓄電システムを供給（株式会社ＩＢｅｅＴ、2026年10月1日）</a>）。</p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-shunan-yuno",
+   "id": "345jghibk62",
+   "result": "patched",
+   "fields": [
+    "status",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "status": [],
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000063.000161802.html"
+   },
+   "after": {
+    "status": [
+     "稼働中"
+    ],
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000059.000161802.html",
+    "body": "<p><strong>NC周南市湯野蓄電所</strong>は、山口県周南市の系統用蓄電所。2026年4月23日の日本蓄電池株式会社のリリースは「山口県周南市に建設した系統用蓄電施設「NC周南市湯野蓄電所」が、2026年4月1日に受電を開始した」と述べ、施設概要の表は定格出力・容量を「1,988kW・8,146kWh」、運転開始日を「2026年4月1日」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000059.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始（日本蓄電池株式会社、2026年4月23日）</a>）。</p><p>2026年10月1日の日本蓄電池株式会社とデジタルグリッド株式会社のリリースは、同所が「2026年9月25日より需給調整市場における運用を開始した」と述べ、アグリゲータをデジタルグリッド株式会社とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000110.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」需給調整市場への参入（日本蓄電池株式会社、2026年10月1日）</a>）。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/daiwa-kurate",
+   "id": "2m0u0r28c0t",
+   "result": "patched",
+   "fields": [
+    "name",
+    "status",
+    "cod",
+    "city",
+    "marketParticipation",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "name": "福岡鞍手系統用蓄電所（大和ハウス工業）",
+    "status": [
+     "建設中"
+    ],
+    "cod": null,
+    "city": "鞍手郡",
+    "marketParticipation": [
+     "JEPX",
+     "需給調整市場"
+    ],
+    "body": "<p><strong>福岡鞍手系統用蓄電所</strong>は、大和ハウス工業株式会社が運営する系統用蓄電池プロジェクトで、福岡県鞍手郡に立地します。2025年8月18日より着工し、系統用蓄電所事業の実用化に向けた実証実験の一環として位置付けられています。大和ハウス工業の九州工場と連動した実証事業として、住宅・建築事業者によるエネルギー領域参入の代表例です。</p><p>福岡県鞍手郡は、九州電力送配電管内の太陽光集積エリアで、再エネ余剰時の出力制御課題が顕在化する立地です。本案件は、ハウスメーカー・建設会社による系統用蓄電池事業参入モデルとして、業界の多角化トレンドを象徴します。同社の住宅・ZEH・住宅用蓄電池事業との統合展開も期待されます。</p><p>市場参加戦略はJEPXスポット市場・需給調整市場の組合せが想定され、九州エリアの系統運用ニーズに応える調整力リソースの位置付けです。出力・容量等の詳細は、最新公表情報をご参照ください。</p><p><em>※本案件情報は、公開発表（プレスリリース・ニュース等）に基づき編集部が整備したものです。最新の進捗・諸元については、上記出典URLおよび各事業者の公式IR・プレスリリースをご参照ください。掲載内容に修正・追加が必要な場合は編集部までお寄せください。</em></p>"
+   },
+   "after": {
+    "name": "DREAM Storage Battery 福岡鞍手系統用蓄電所",
+    "status": [
+     "稼働中"
+    ],
+    "cod": "2026-09-16",
+    "city": "鞍手郡鞍手町",
+    "marketParticipation": [],
+    "body": "<p><strong>DREAM Storage Battery 福岡鞍手系統用蓄電所</strong>は、大和ハウス工業株式会社の福岡県鞍手郡鞍手町の系統用蓄電所。2026年10月2日の株式会社パワーエックスのリリースは「このたび運転を開始した「DREAM Storage Battery 福岡鞍手系統用蓄電所」は、大和ハウス工業が蓄電池事業への参入後、初めて開設した高圧蓄電所です。」と述べ、「同蓄電所は2026年9月16日に運転を開始しました。」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000270.000109041.html\" target=\"_blank\" rel=\"noopener noreferrer\">大和ハウス工業の系統蓄電所に蓄電システムを納入（株式会社パワーエックス、2026年10月2日）</a>）。</p><p>概要は「所在地：福岡県鞍手郡鞍手町新延448-8（大和ハウス工業九州工場敷地内）」「PCS出力：1.9 MW」「運転開始：2026年9月16日」「アグリゲーター：株式会社パワーエックス」とし、パワーエックスは蓄電システム「Mega Power 2700A」4台（定格容量：9.8 MWh）を納入した。参加市場の記載はない。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-kainan",
+   "id": "qtst1yvdh",
+   "result": "patched",
+   "fields": [
+    "name",
+    "status",
+    "epc",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "name": "和歌山県海南市の系統用蓄電所（NCパイオニア）",
+    "status": [
+     "計画中"
+    ],
+    "body": "<p><strong>和歌山県海南市の系統用蓄電所</strong>は、リミックスポイントと日本蓄電池の共同出資ファンド「合同会社NCパイオニア」が2026年末までに全国7か所で開発する系統用蓄電所の一つ。受電開始は2026年9月見込み。出力・容量・施設名は一次リリースに記載がなく調査中（2026年6月1日発表のNC口春蓄電所受電リリース内「今後の見通し」に記載）。</p><p>出力・容量は一次リリースに記載がありません（同リリース内の諸元表は別施設 NC口春蓄電所〈福岡県嘉麻市〉のものです）。7拠点の一覧表は画像として掲載されており、画像内の表からの目視転記は値として採っていません。</p>"
+   },
+   "after": {
+    "name": "NC海南市木津蓄電所",
+    "status": [
+     "建設中"
+    ],
+    "epc": "株式会社ワイ・ジャスト",
+    "body": "<p><strong>NC海南市木津蓄電所</strong>は、和歌山県海南市の系統用蓄電所。2026年10月2日の日本蓄電池株式会社のリリースは「NC海南市木津蓄電所（所在地：和歌山県海南市）において系統用蓄電池を設置した」と述べ、表は設置開始日を2026年9月26日、施工会社を株式会社ワイ・ジャストとする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000112.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】和歌山県海南市にて系統用蓄電施設　「NC海南市木津蓄電所」蓄電池設置開始（日本蓄電池株式会社、2026年10月2日）</a>）。</p><p>2026年11月5日の株式会社リミックスポイントのリリースは「残る3か所の受電開始は、和歌山県海南市の系統用蓄電所が2026年11月、岐阜県揖斐郡揖斐川町が同年12月、長野県長野市が2027年3月を見込んでいます」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000232.000033609.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池との共同プロジェクト】鹿児島県枕崎市で約2MW系統用蓄電所が受電開始（株式会社リミックスポイント、2026年11月5日）</a>）。受電は運転開始ではないため、運転開始日の欄は空。出力・容量は一次に記載がない。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co86244-tochigi-8mwh",
+   "id": "eiqc6ns2fuvh",
+   "result": "patched",
+   "fields": [
+    "marketParticipation",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "marketParticipation": [],
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>8MWhの自社蓄電所</strong>は、栃木県株式会社サンヴィレッジ、栃木県足利市に立地する系統用蓄電所。出力 2 MW、容量 8 MWh 規模。発表企業：株式会社サンヴィレッジ。ステータス：計画中（発表日：2025-10-17）。</p><p>～初の自社運用案件、全国展開に向けて蓄電池開発を加速～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://sunvillage-co-ltd.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://sunvillage-co-ltd.com/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000059.000086244.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000059.000086244.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>一次リリース（株式会社サンヴィレッジ、2025年10月17日）には運転開始日の記載がなく、記載があるのは系統連系日 2025年9月16日である。従来この欄にあった 2025-10-17 は配信日のため、運転開始欄は空としている。</p>"
+   },
+   "after": {
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>8MWhの自社蓄電所</strong>は、栃木県株式会社サンヴィレッジ、栃木県足利市に立地する系統用蓄電所。出力 2 MW、容量 8 MWh 規模。発表企業：株式会社サンヴィレッジ。ステータス：計画中（発表日：2025-10-17）。</p><p>～初の自社運用案件、全国展開に向けて蓄電池開発を加速～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://sunvillage-co-ltd.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://sunvillage-co-ltd.com/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000059.000086244.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000059.000086244.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>一次リリース（株式会社サンヴィレッジ、2025年10月17日）には運転開始日の記載がなく、記載があるのは系統連系日 2025年9月16日である。従来この欄にあった 2025-10-17 は配信日のため、運転開始欄は空としている。</p><p>2026年10月13日の株式会社サンヴィレッジのリリースは「4案件すべてにおいて所定の参入審査に合格し、実需給を開始しています。」とし、表は本案件（栃木県足利市）の受電を2025年9月、需給調整市場への参入を2026年1月とする。「丸紅新電力がアグリゲーター（※2）として、電力市場への入札および運用を担っています。」（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000079.000086244.html\" target=\"_blank\" rel=\"noopener noreferrer\">系統用蓄電池4案件の需給調整市場への参入完了について（株式会社サンヴィレッジ、2026年10月13日）</a>）。</p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-nagahama-mikawacho",
+   "id": "guq60_4ukv4",
+   "result": "patched",
+   "fields": [
+    "outputMw",
+    "status",
+    "marketParticipation",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "outputMw": 1.988,
+    "status": [],
+    "marketParticipation": [],
+    "body": "<p><strong>NC長浜市三川町蓄電所</strong>は、滋賀県長浜市三川町に立地する系統用蓄電所で、定格出力1,988kW・容量8,146kWh。日本蓄電池が開発し、2026年5月22日に受電した（6月4日発表）。蓄電池はCATL製、PCSはTMEIC製。施工はカンドー。</p>"
+   },
+   "after": {
+    "outputMw": 1.999,
+    "status": [
+     "稼働中"
+    ],
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "body": "<p><strong>NC長浜市三川町蓄電所</strong>は、滋賀県長浜市の系統用蓄電所。2026年6月4日の日本蓄電池株式会社のリリースは「滋賀県長浜市に建設した系統用蓄電施設「NC長浜市三川町蓄電所」が、2026年5月22日に受電を開始した」と述べ、施設概要の表は定格出力・容量を「1,988kW・8,146kWh」、運転開始日を「2026年5月22日」、設計・施工会社を株式会社カンドーとする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000071.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】滋賀県長浜市にて系統用蓄電施設「NC長浜市三川町蓄電所」受電開始（日本蓄電池株式会社、2026年6月4日）</a>）。</p><p>2026年10月15日の日本蓄電池株式会社とデジタルグリッド株式会社のリリースは、同所が「2026年10月13日より需給調整市場における運用を開始した」と述べ、表の定格出力・容量を「1,999kW・8,146kWh」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000114.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】滋賀県長浜市にて系統用蓄電施設「NC長浜市三川町蓄電所」需給調整市場への参入（日本蓄電池株式会社、2026年10月15日）</a>）。定格出力の欄は新しいリリースの1,999kWとした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-kama-kuchiharu",
+   "id": "9s-us_1k0jfq",
+   "result": "patched",
+   "fields": [
+    "status",
+    "marketParticipation",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "status": [],
+    "marketParticipation": [],
+    "body": "<p><strong>NC口春蓄電所</strong>は、福岡県嘉麻市に立地する系統用蓄電所で、定格出力1,975kW・容量8,146kWh。日本蓄電池がリミックスポイントと共同組成したファンドで開発し、2026年6月1日に受電を開始した。蓄電池はCATL製、PCSはTMEIC製。設計・施工はクラフティア（福岡市）。需給調整市場・JEPX（卸売市場）・容量市場での運用と再エネ出力平準化に対応する。</p><p>一次（日本蓄電池 2026年6月1日）は「NC口春蓄電所(所在地:福岡県嘉麻市)において受電を開始したことをお知らせいたします。」と述べるのみで日付を明示していない。従来この欄にあった 2026-06-01 は配信日のため、運転開始欄は空としている。</p>"
+   },
+   "after": {
+    "status": [
+     "稼働中"
+    ],
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "body": "<p><strong>NC口春蓄電所</strong>は、福岡県嘉麻市に立地する系統用蓄電所で、定格出力1,975kW・容量8,146kWh。日本蓄電池がリミックスポイントと共同組成したファンドで開発し、2026年6月1日に受電を開始した。蓄電池はCATL製、PCSはTMEIC製。設計・施工はクラフティア（福岡市）。需給調整市場・JEPX（卸売市場）・容量市場での運用と再エネ出力平準化に対応する。</p><p>一次（日本蓄電池 2026年6月1日）は「NC口春蓄電所(所在地:福岡県嘉麻市)において受電を開始したことをお知らせいたします。」と述べるのみで日付を明示していない。従来この欄にあった 2026-06-01 は配信日のため、運転開始欄は空としている。</p><p>2026年10月20日の日本蓄電池株式会社とデジタルグリッド株式会社のリリースは、同所が「2026年10月20日より需給調整市場における運用を開始した」と述べ、「日本蓄電池が開発・運営、リミックスポイントが事業管理・統括を担っています」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000116.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】福岡県嘉麻市にて系統用蓄電施設「NC口春蓄電所」需給調整市場への参入（日本蓄電池株式会社、2026年10月20日）</a>）。</p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-makurazaki-sakurayamahigashi",
+   "id": "yf1gsgtfp",
+   "result": "patched",
+   "fields": [
+    "outputMw",
+    "capacityMwh",
+    "status",
+    "operator",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "status": [
+     "建設中"
+    ],
+    "operator": "日本蓄電池株式会社",
+    "body": "<p><strong>NC枕崎市桜山東町蓄電所</strong>は、日本蓄電池が鹿児島県枕崎市桜山東町で建設中の系統用蓄電所。2026年5月25日、同社はリミックスポイントと共同で組成したファンドにて開発を進める本所において「系統用蓄電池を設置した」ことを公表した。設計・施工は鹿栄電設。主用途として需給調整市場・JEPX（卸売市場）・容量市場への対応と再エネ出力の平準化を掲げる。</p><p>定格出力・定格容量・運転開始予定は、施設個別のリリース（2026年5月25日）には記載がない。リミックスポイントが2025年12月9日に公表した業務提携リリース掲載の表「現在開発中の系統用蓄電所」には、鹿児島県枕崎市の欄に定格出力2MW・定格容量8MWh・運開予定2026年8月と記載されているが、同表は本文中に画像として掲載されたものであるため、本サイトでは出力・容量・運転開始予定の数値としては採用していない（調査中）。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>📰 日本蓄電池: <a href=\"https://prtimes.jp/main/html/rd/p/000000065.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">鹿児島県枕崎市にて系統用蓄電施設「NC枕崎市桜山東町蓄電所」蓄電池設置開始（2026年5月25日）</a></li><li>📰 日本蓄電池（自社サイト版）: <a href=\"https://www.nipponchikudenchi.co.jp/news/1649/\" target=\"_blank\" rel=\"noopener noreferrer\">鹿児島県枕崎市にて系統用蓄電施設「NC枕崎市桜山東町蓄電所」蓄電池設置開始（2026.05.25）</a></li><li>📰 リミックスポイント: <a href=\"https://prtimes.jp/main/html/rd/p/000000186.000033609.html\" target=\"_blank\" rel=\"noopener noreferrer\">リミックスポイント、日本蓄電池株式会社と業務提携契約を締結（2025年12月9日）</a></li></ul>"
+   },
+   "after": {
+    "outputMw": 1.988,
+    "capacityMwh": 8.146,
+    "status": [
+     "稼働中"
+    ],
+    "operator": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+    "body": "<p><strong>NC枕崎市桜山東町蓄電所</strong>は、鹿児島県枕崎市の系統用蓄電所。2026年11月5日の株式会社リミックスポイントのリリースは、日本蓄電池株式会社との共同プロジェクトとして、同社の「連結子会社である合同会社NCパイオニアを通じ、全国7か所で系統用蓄電所※1の開発を進めています」とし、「「NC枕崎市桜山東町蓄電所」（定格出力約2MW、定格容量約8MWh）が、2026年11月4日に受電を開始しました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000232.000033609.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池との共同プロジェクト】鹿児島県枕崎市で約2MW系統用蓄電所が受電開始（株式会社リミックスポイント、2026年11月5日）</a>）。</p><p>表の定格出力は「1,988kW」、定格容量は「8,146kWh」。「このうち需給調整市場への参入は2027年3月頃を予定しています」とされる。受電は運転開始ではなく、日本蓄電池株式会社の同日のリリースの表にも運転開始日の項目は無いため、運転開始日の欄は空としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-ibigawa",
+   "id": "06-_2m8ll",
+   "result": "patched",
+   "fields": [
+    "cod",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "cod": "2026年10月（予定）",
+    "body": "<p><strong>岐阜県揖斐川町の系統用蓄電所</strong>は、リミックスポイントと日本蓄電池の共同出資ファンド「合同会社NCパイオニア」が2026年末までに全国7か所で開発する系統用蓄電所の一つ。受電開始は2026年10月見込み。出力・容量・施設名は一次リリースに記載がなく調査中（2026年6月1日発表のNC口春蓄電所受電リリース内「今後の見通し」に記載）。</p><p>出力・容量は一次リリースに記載がありません（同リリース内の諸元表は別施設 NC口春蓄電所〈福岡県嘉麻市〉のものです）。7拠点の一覧表は画像として掲載されており、画像内の表からの目視転記は値として採っていません。</p>"
+   },
+   "after": {
+    "cod": null,
+    "body": "<p><strong>岐阜県揖斐川町の系統用蓄電所</strong>は、リミックスポイントと日本蓄電池の共同出資ファンド「合同会社NCパイオニア」が2026年末までに全国7か所で開発する系統用蓄電所の一つ。受電開始は2026年12月の見込み。2026年11月5日の株式会社リミックスポイントのリリースは、合同会社NCパイオニアを通じて開発する全国7か所のうち「残る3か所の受電開始は、和歌山県海南市の系統用蓄電所が2026年11月、岐阜県揖斐郡揖斐川町が同年12月、長野県長野市が2027年3月を見込んでいます」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000232.000033609.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池との共同プロジェクト】鹿児島県枕崎市で約2MW系統用蓄電所が受電開始（株式会社リミックスポイント、2026年11月5日）</a>）。出力・容量・施設名は一次リリースに記載がなく調査中（2026年6月1日発表のNC口春蓄電所受電リリース内「今後の見通し」に記載）。</p><p>出力・容量は一次リリースに記載がありません（同リリース内の諸元表は別施設 NC口春蓄電所〈福岡県嘉麻市〉のものです）。7拠点の一覧表は画像として掲載されており、画像内の表からの目視転記は値として採っていません。</p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-nagano-city",
+   "id": "se8smrm58z",
+   "result": "patched",
+   "fields": [
+    "cod",
+    "body"
+   ],
+   "check": [],
+   "before": {
+    "cod": "2026年10月（予定）",
+    "body": "<p><strong>NC長野市上ケ屋蓄電所</strong>は、リミックスポイントと日本蓄電池の共同出資ファンド「合同会社NCパイオニア」が2026年末までに全国7か所で開発する系統用蓄電所の一つで、長野県長野市に立地します。2026年8月4日に蓄電池の設置を開始しました（施工は中部プラントサービス）。受電開始は2026年10月見込み。</p><p>需給調整市場・JEPX・容量市場への対応を想定しています。出力・容量は一次リリースに記載がなく調査中です。</p><p><em>※本案件情報は、各事業者の公式プレスリリース・IR資料等に基づき編集部が整備したものです。最新の進捗・諸元については、出典および各事業者の公式発表をご参照ください。</em></p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>📰 リミックスポイント: <a href=\"https://prtimes.jp/main/html/rd/p/000000201.000033609.html\" target=\"_blank\" rel=\"noopener noreferrer\">NCパイオニアによる系統用蓄電所開発（2026年6月1日）</a></li><li>📰 日本蓄電池: <a href=\"https://prtimes.jp/main/html/rd/p/000000098.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">NC長野市上ケ屋蓄電所 蓄電池設置開始（2026年8月）</a></li></ul><p>出力・容量は一次リリース（日本蓄電池 2026年8月10日・リミックスポイント 2026年6月1日）のいずれにも記載がありません。7拠点の一覧表は画像として掲載されており、画像内の表からの目視転記は値として採っていません。</p>"
+   },
+   "after": {
+    "cod": null,
+    "body": "<p><strong>NC長野市上ケ屋蓄電所</strong>は、リミックスポイントと日本蓄電池の共同出資ファンド「合同会社NCパイオニア」が2026年末までに全国7か所で開発する系統用蓄電所の一つで、長野県長野市に立地します。2026年8月4日に蓄電池の設置を開始しました（施工は中部プラントサービス）。受電開始は2027年3月の見込み。2026年11月5日の株式会社リミックスポイントのリリースは、合同会社NCパイオニアを通じて開発する全国7か所のうち「残る3か所の受電開始は、和歌山県海南市の系統用蓄電所が2026年11月、岐阜県揖斐郡揖斐川町が同年12月、長野県長野市が2027年3月を見込んでいます」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000232.000033609.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池との共同プロジェクト】鹿児島県枕崎市で約2MW系統用蓄電所が受電開始（株式会社リミックスポイント、2026年11月5日）</a>）。</p><p>需給調整市場・JEPX・容量市場への対応を想定しています。出力・容量は一次リリースに記載がなく調査中です。</p><p><em>※本案件情報は、各事業者の公式プレスリリース・IR資料等に基づき編集部が整備したものです。最新の進捗・諸元については、出典および各事業者の公式発表をご参照ください。</em></p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>📰 リミックスポイント: <a href=\"https://prtimes.jp/main/html/rd/p/000000201.000033609.html\" target=\"_blank\" rel=\"noopener noreferrer\">NCパイオニアによる系統用蓄電所開発（2026年6月1日）</a></li><li>📰 日本蓄電池: <a href=\"https://prtimes.jp/main/html/rd/p/000000098.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">NC長野市上ケ屋蓄電所 蓄電池設置開始（2026年8月）</a></li></ul><p>出力・容量は一次リリース（日本蓄電池 2026年8月10日・リミックスポイント 2026年6月1日）のいずれにも記載がありません。7拠点の一覧表は画像として掲載されており、画像内の表からの目視転記は値として採っていません。</p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-shirakawa-omotegou",
+   "id": "flllwcadgfpc",
+   "result": "patched",
+   "fields": [
+    "status"
+   ],
+   "check": [],
+   "before": {
+    "status": []
+   },
+   "after": {
+    "status": [
+     "稼働中"
+    ]
+   }
+  }
+ ]
+}

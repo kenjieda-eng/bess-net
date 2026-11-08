@@ -1,0 +1,314 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 55
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 44,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/ntt-ae-aomori-misawa-bess",
+   "row_id": "P2-m01",
+   "result": "skip_exists",
+   "id": "14vn62wprv"
+  },
+  {
+   "kind": "post",
+   "target": "projects/nc-maniwa-tabane-bess",
+   "row_id": "P2-m03",
+   "result": "skip_exists",
+   "id": "uuvalv6b7"
+  },
+  {
+   "kind": "post",
+   "target": "projects/kg-bess-isesaki-bess",
+   "row_id": "P2-m09",
+   "result": "skip_exists",
+   "id": "2xn3hdg48x"
+  },
+  {
+   "kind": "post",
+   "target": "projects/sevenpower-hachinohe-bess",
+   "row_id": "P2-m10",
+   "result": "skip_exists",
+   "id": "ah6pmu9ajlj"
+  },
+  {
+   "kind": "post",
+   "target": "projects/gritz-kitaibaraki-bess",
+   "row_id": "P2-m12-kitaibaraki",
+   "result": "skip_exists",
+   "id": "i9_59g-oh"
+  },
+  {
+   "kind": "post",
+   "target": "projects/gritz-tochigi-bess",
+   "row_id": "P2-m12-tochigi",
+   "result": "skip_exists",
+   "id": "0tsnxrh_x"
+  },
+  {
+   "kind": "post",
+   "target": "projects/gritz-oshu-bess",
+   "row_id": "P2-m12-oshu",
+   "result": "skip_exists",
+   "id": "hcmvcvsa9"
+  },
+  {
+   "kind": "post",
+   "target": "projects/hexa-oyabe-bess",
+   "row_id": "P2-m13",
+   "result": "skip_exists",
+   "id": "7scgyvosx0"
+  },
+  {
+   "kind": "post",
+   "target": "projects/sunvillage-honjo-1-bess",
+   "row_id": "P2-m15-honjo-1",
+   "result": "skip_exists",
+   "id": "h0h4ytnygnh"
+  },
+  {
+   "kind": "post",
+   "target": "projects/sunvillage-honjo-2-bess",
+   "row_id": "P2-m15-honjo-2",
+   "result": "skip_exists",
+   "id": "samkcqj-s5"
+  },
+  {
+   "kind": "post",
+   "target": "projects/sunvillage-yorii-bess",
+   "row_id": "P2-m15-yorii",
+   "result": "skip_exists",
+   "id": "2w1ok9667ab5"
+  },
+  {
+   "kind": "post",
+   "target": "projects/qenest-sano-bess",
+   "row_id": "P2-m16",
+   "result": "skip_exists",
+   "id": "6-o8dn8-w"
+  },
+  {
+   "kind": "post",
+   "target": "projects/amp-lify-mihama-bess",
+   "row_id": "P2-m19",
+   "result": "skip_exists",
+   "id": "nry60eewb"
+  },
+  {
+   "kind": "post",
+   "target": "projects/fantasista-nagahama-pss",
+   "row_id": "P2-m20",
+   "result": "skip_exists",
+   "id": "i8n4whclie"
+  },
+  {
+   "kind": "post",
+   "target": "projects/sumitomo-namie-bess",
+   "row_id": "P2-m21",
+   "result": "skip_exists",
+   "id": "eoj78pfd2hz"
+  },
+  {
+   "kind": "post",
+   "target": "projects/tadasunomori-kani-bess",
+   "row_id": "P2-m22-kani",
+   "result": "skip_exists",
+   "id": "03a7hwv45-qw"
+  },
+  {
+   "kind": "post",
+   "target": "projects/remixpoint-ena-iwamura-3-bess",
+   "row_id": "P2-m25",
+   "result": "skip_exists",
+   "id": "gy-6o0nj4db"
+  },
+  {
+   "kind": "post",
+   "target": "projects/mitsuuroko-kitahiroshima-1-bess",
+   "row_id": "P2-m26-1",
+   "result": "skip_exists",
+   "id": "a_x9y4m3n73"
+  },
+  {
+   "kind": "post",
+   "target": "projects/mitsuuroko-kitahiroshima-2-bess",
+   "row_id": "P2-m26-2",
+   "result": "skip_exists",
+   "id": "gl--oxxtzo"
+  },
+  {
+   "kind": "post",
+   "target": "projects/erex-no2-sanbu-bess",
+   "row_id": "P2-m28",
+   "result": "skip_exists",
+   "id": "9r67pzonka8"
+  },
+  {
+   "kind": "post",
+   "target": "projects/soden-ayabe-bess",
+   "row_id": "P2-m30-ayabe",
+   "result": "skip_exists",
+   "id": "facmgufmu0s"
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-ota-ryumai-bess",
+   "row_id": "P2-m31-ryumai",
+   "result": "skip_exists",
+   "id": "svoiy9l4e"
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-wake-bess",
+   "row_id": "P2-m31-wake",
+   "result": "skip_exists",
+   "id": "nfg-xooj0vr3"
+  },
+  {
+   "kind": "post",
+   "target": "projects/denkinoeki-isahaya-bess",
+   "row_id": "P2-m35",
+   "result": "skip_exists",
+   "id": "8hb3gfoy8_4a"
+  },
+  {
+   "kind": "post",
+   "target": "projects/taoke-minamichita-bess",
+   "row_id": "P2-m36",
+   "result": "skip_exists",
+   "id": "zn5ub7l2w0"
+  },
+  {
+   "kind": "post",
+   "target": "projects/nc-izumo-kunitomi-bess",
+   "row_id": "P2-w00",
+   "result": "skip_exists",
+   "id": "yzyzugoj5jif"
+  },
+  {
+   "kind": "post",
+   "target": "projects/nc-minamiaizu-tajima-bess",
+   "row_id": "P2-w00b",
+   "result": "skip_exists",
+   "id": "mf448u6u7"
+  },
+  {
+   "kind": "post",
+   "target": "projects/sunpin-shiga-otsu-bess",
+   "row_id": "P2-w01",
+   "result": "skip_exists",
+   "id": "jqjhdkscvtwa"
+  },
+  {
+   "kind": "post",
+   "target": "projects/kasama-bousai-bess",
+   "row_id": "P2-w02",
+   "result": "skip_exists",
+   "id": "dswaivktqp-4"
+  },
+  {
+   "kind": "post",
+   "target": "projects/buddynet-teshikaga-bess",
+   "row_id": "P2-w06-teshikaga",
+   "result": "skip_exists",
+   "id": "e7m6g7shvz"
+  },
+  {
+   "kind": "post",
+   "target": "projects/buddynet-fujinomiya-bess",
+   "row_id": "P2-w06-fujinomiya",
+   "result": "skip_exists",
+   "id": "e9kub9j8zl1"
+  },
+  {
+   "kind": "post",
+   "target": "projects/buddynet-saku-bess",
+   "row_id": "P2-w06-saku",
+   "result": "skip_exists",
+   "id": "mt4a8vmhzj"
+  },
+  {
+   "kind": "post",
+   "target": "projects/tc-iizuka-megasolar-bess",
+   "row_id": "P2-m05",
+   "result": "skip_exists",
+   "id": "b_39a1tgmh"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/shizuokagas-hamamatsu-bess",
+   "id": "woehuj7z7ete",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-shunan-yuno",
+   "id": "345jghibk62",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/daiwa-kurate",
+   "id": "2m0u0r28c0t",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-kainan",
+   "id": "qtst1yvdh",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co86244-tochigi-8mwh",
+   "id": "eiqc6ns2fuvh",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-nagahama-mikawacho",
+   "id": "guq60_4ukv4",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-kama-kuchiharu",
+   "id": "9s-us_1k0jfq",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-makurazaki-sakurayamahigashi",
+   "id": "yf1gsgtfp",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-ibigawa",
+   "id": "06-_2m8ll",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-nagano-city",
+   "id": "se8smrm58z",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-shirakawa-omotegou",
+   "id": "flllwcadgfpc",
+   "result": "skip_idempotent"
+  }
+ ]
+}
