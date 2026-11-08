@@ -1,0 +1,891 @@
+{
+  "started": "2026-11-08T06:35:47Z",
+  "posts": [
+    {
+      "slug": "ntt-ae-aomori-misawa-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "青森県 三沢市南町",
+        "事業者": "NTTアノードエナジー株式会社",
+        "運転開始": "2026年9月",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000080.000111866.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.999 MW",
+        "容量 8.226 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-maniwa-tabane-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "岡山県 真庭市",
+        "EPC": "株式会社中電工",
+        "運転開始": "2026-09-30",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000111.000161802.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.999 MW",
+        "容量 8.146 MWh"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "kg-bess-isesaki-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "群馬県 伊勢崎市上植木本町",
+        "事業者": "KG BESS合同会社",
+        "EPC": "株式会社サンヴィレッジ",
+        "運転開始": "2026-10-01",
+        "市場参加": "JEPX / 需給調整市場 / 容量市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000012.000125331.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "sevenpower-hachinohe-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "青森県 八戸市櫛引",
+        "事業者": "セブンパワーストレージ合同会社",
+        "運転開始予定": "2027年10月（予定）",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000274.000109041.html"
+      },
+      "badges": [
+        "計画中",
+        "出力 1.998 MW",
+        "容量 7.52 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "gritz-kitaibaraki-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "茨城県 北茨城市",
+        "EPC": "株式会社GRITZ",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000012.000117277.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.986 MW",
+        "容量 8.194 MWh"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "gritz-tochigi-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "栃木県 栃木市",
+        "EPC": "株式会社GRITZ",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000012.000117277.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.986 MW",
+        "容量 8.194 MWh"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "gritz-oshu-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "岩手県 奥州市",
+        "EPC": "株式会社GRITZ",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000012.000117277.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.986 MW",
+        "容量 8.194 MWh"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "hexa-oyabe-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "富山県 小矢部市石名田",
+        "事業者": "ヘキサ・エネルギーサービス合同会社",
+        "EPC": "しろくま電力株式会社",
+        "運転開始予定": "2028年5月（予定）",
+        "市場参加": "長期脱炭素",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000009.000173123.html"
+      },
+      "badges": [
+        "計画中",
+        "出力 50 MW"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "sunvillage-honjo-1-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "埼玉県 本庄市",
+        "事業者": "株式会社サンヴィレッジ",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000079.000086244.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "sunvillage-honjo-2-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "埼玉県 本庄市",
+        "事業者": "株式会社サンヴィレッジ",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000079.000086244.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "sunvillage-yorii-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "埼玉県 大里郡寄居町",
+        "事業者": "株式会社サンヴィレッジ",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000079.000086244.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "qenest-sano-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "栃木県 佐野市",
+        "事業者": "Q.ENESTホールディングス株式会社",
+        "運転開始": "2026年5月",
+        "市場参加": "JEPX / 需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000033.000126341.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.999 MW",
+        "容量 8.226 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "amp-lify-mihama-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "福井県 美浜町",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000009.000167879.html"
+      },
+      "badges": [
+        "計画中",
+        "出力 50 MW",
+        "容量 200 MWh"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "fantasista-nagahama-pss",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "滋賀県 長浜市木之本町千田",
+        "事業者": "合同会社fantasista battery 3",
+        "EPC": "スズカ電工株式会社",
+        "運転開始予定": "2027年4月（予定）",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000066.000093934.html"
+      },
+      "badges": [
+        "建設中",
+        "出力 1.999 MW",
+        "容量 7.521 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "sumitomo-namie-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "福島県 浪江町",
+        "事業者": "BSホールディングス株式会社（住友商事）",
+        "市場参加": "長期脱炭素",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000010.000167879.html"
+      },
+      "badges": [
+        "計画中",
+        "出力 62 MW",
+        "容量 291 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "tadasunomori-kani-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "岐阜県 可児市",
+        "事業者": "株式会社糺の森",
+        "EPC": "テス・エンジニアリング株式会社",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000185.000143072.html"
+      },
+      "badges": [
+        "計画中",
+        "出力 1.999 MW",
+        "容量 6.266 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "remixpoint-ena-iwamura-3-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "岐阜県 恵那市",
+        "事業者": "株式会社リミックスポイント",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000231.000033609.html"
+      },
+      "badges": [
+        "計画中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "mitsuuroko-kitahiroshima-1-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "北海道 北広島市",
+        "事業者": "ミツウロコグリーンエネルギー株式会社",
+        "運転開始": "2026-06-01",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000379.000070816.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.534 MW",
+        "容量 7.834 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "mitsuuroko-kitahiroshima-2-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "北海道 北広島市",
+        "事業者": "ミツウロコグリーンエネルギー株式会社",
+        "運転開始": "2026-06-01",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000379.000070816.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.534 MW",
+        "容量 7.834 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "erex-no2-sanbu-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "千葉県 山武郡芝山町",
+        "事業者": "イーレックス株式会社",
+        "運転開始": "2026-10-20",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000179.000029914.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.9896 MW",
+        "容量 8.147 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "soden-ayabe-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "京都府 綾部市上矢田",
+        "事業者": "綜電株式会社",
+        "運転開始": "2026年9月",
+        "市場参加": "JEPX / 需給調整市場 / 容量市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000095.000092942.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.96 MW",
+        "容量 8.146 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "taoke-ota-ryumai-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "群馬県 太田市龍舞町",
+        "事業者": "TAOKE ENERGY株式会社",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000046.000103834.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "taoke-wake-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "岡山県 和気郡",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000046.000103834.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "denkinoeki-isahaya-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "長崎県 諫早市",
+        "事業者": "でんきの駅合同会社",
+        "運転開始予定": "2028年12月（予定）",
+        "出典": "https://prtimes.jp/main/html/rd/p/000001441.000037933.html"
+      },
+      "badges": [
+        "建設中",
+        "出力 16 MW",
+        "容量 70 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "taoke-minamichita-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "愛知県 南知多町",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000047.000103834.html"
+      },
+      "badges": [
+        "建設中",
+        "出力 2 MW",
+        "容量 8.14 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-izumo-kunitomi-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "島根県 出雲市",
+        "EPC": "株式会社カンドー",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000118.000161802.html"
+      },
+      "badges": [
+        "建設中"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-minamiaizu-tajima-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "福島県 南会津郡",
+        "EPC": "株式会社クラフティア",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000117.000161802.html"
+      },
+      "badges": [
+        "建設中"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "sunpin-shiga-otsu-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "滋賀県 大津市石山千町",
+        "EPC": "株式会社ブルーポイントパワーソリューション",
+        "運転開始予定": "2026年12月（予定）",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000002.000193954.html"
+      },
+      "badges": [
+        "建設中",
+        "出力 45 MW",
+        "容量 180 MWh"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "kasama-bousai-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "茨城県 笠間市",
+        "運転開始": "2026-10-30",
+        "出典": "https://www.ttplan.co.jp/news/entry/001017.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "buddynet-teshikaga-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "北海道 川上郡弟子屈町",
+        "EPC": "株式会社バディネット",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000021.000168478.html"
+      },
+      "badges": [
+        "建設中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "buddynet-fujinomiya-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "静岡県 富士宮市",
+        "EPC": "株式会社バディネット",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000023.000168478.html"
+      },
+      "badges": [
+        "建設中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "buddynet-saku-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "長野県 佐久市",
+        "EPC": "株式会社バディネット",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000024.000168478.html"
+      },
+      "badges": [
+        "建設中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 4,
+      "body_missing": []
+    },
+    {
+      "slug": "tc-iizuka-megasolar-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "福岡県 飯塚市",
+        "事業者": "京セラTCLソーラー合同会社",
+        "EPC": "テス・エンジニアリング株式会社",
+        "運転開始": "2026年10月",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000253.000076147.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.5 MW",
+        "容量 6 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    }
+  ],
+  "patches": [
+    {
+      "slug": "shizuokagas-hamamatsu-bess",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "静岡県 浜松市中央区有玉西町",
+        "事業者": "静岡ガス＆パワー株式会社",
+        "運転開始予定": "2028年4月（予定）",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000035.000071823.html"
+      },
+      "badges": [
+        "計画中",
+        "出力 1.999 MW",
+        "容量 8.584 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-shunan-yuno",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "山口県 周南市",
+        "事業者": "日本蓄電池",
+        "運転開始": "2026-04-01",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000059.000161802.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.988 MW",
+        "容量 8.146 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "daiwa-kurate",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "福岡県 鞍手郡鞍手町",
+        "事業者": "大和ハウス工業",
+        "運転開始": "2026-09-16",
+        "出典": "https://www.daiwahouse.co.jp/about/release/house/20250818115959.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.9 MW",
+        "容量 9.8 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-kainan",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "和歌山県 海南市",
+        "事業者": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+        "EPC": "株式会社ワイ・ジャスト",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000201.000033609.html"
+      },
+      "badges": [
+        "建設中"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "pr-co86244-tochigi-8mwh",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [
+        "本文の段落 1/7 がページに無い"
+      ],
+      "dl": {
+        "所在地": "栃木県 足利市",
+        "事業者": "株式会社サンヴィレッジ",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000059.000086244.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 2 MW",
+        "容量 8 MWh"
+      ],
+      "body_paras": 7,
+      "body_missing": [
+        "8MWhの自社蓄電所は、栃木県株式会社サンヴィレッジ、栃木県足利市に立地する系統"
+      ]
+    },
+    {
+      "slug": "nc-nagahama-mikawacho",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "滋賀県 長浜市",
+        "事業者": "日本蓄電池",
+        "EPC": "カンドー",
+        "運転開始": "2026-05-22",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000071.000161802.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.999 MW",
+        "容量 8.146 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-kama-kuchiharu",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "福岡県 嘉麻市",
+        "事業者": "日本蓄電池",
+        "EPC": "クラフティア",
+        "市場参加": "需給調整市場",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000067.000161802.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.975 MW",
+        "容量 8.146 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-makurazaki-sakurayamahigashi",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "鹿児島県 枕崎市桜山東町",
+        "事業者": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+        "EPC": "鹿栄電設",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000065.000161802.html"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.988 MW",
+        "容量 8.146 MWh"
+      ],
+      "body_paras": 3,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-ibigawa",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "岐阜県 揖斐郡揖斐川町",
+        "事業者": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000201.000033609.html"
+      },
+      "badges": [
+        "建設中"
+      ],
+      "body_paras": 2,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-nagano-city",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "長野県 長野市",
+        "事業者": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+        "出典": "https://prtimes.jp/main/html/rd/p/000000098.000161802.html"
+      },
+      "badges": [
+        "建設中"
+      ],
+      "body_paras": 6,
+      "body_missing": []
+    },
+    {
+      "slug": "nc-shirakawa-omotegou",
+      "status": 200,
+      "x_vercel_cache": "PRERENDER",
+      "age": "0",
+      "problems": [],
+      "dl": {
+        "所在地": "福島県 白河市",
+        "事業者": "日本蓄電池",
+        "運転開始": "2026-04-28",
+        "出典": "https://www.nipponchikudenchi.co.jp/"
+      },
+      "badges": [
+        "稼働中",
+        "出力 1.988 MW",
+        "容量 8.146 MWh"
+      ],
+      "body_paras": 0,
+      "body_missing": []
+    }
+  ],
+  "list": {
+    "status": 200,
+    "x_vercel_cache": "PRERENDER",
+    "age": "0",
+    "count_shown": 307,
+    "new_slugs_linked": 33,
+    "new_slugs_missing": []
+  },
+  "redirect": {
+    "status": 301,
+    "location": "/projects/nc-shunan-yuno",
+    "x_vercel_cache": null
+  },
+  "finished": "2026-11-08T06:37:29Z"
+}
