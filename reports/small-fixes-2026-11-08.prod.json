@@ -1,0 +1,378 @@
+{
+ "at": "2026-11-08T23:32:30+0900",
+ "pages": {
+  "/projects/fantasista-nagahama-pss": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "badge": "建設中",
+   "dl": {
+    "所在地": "滋賀県 長浜市木之本町千田",
+    "事業者": "合同会社fantasista battery 3",
+    "EPC": "スズカ電工株式会社",
+    "運転開始予定": "2027年4月（予定）",
+    "参加予定の市場": "需給調整市場",
+    "出典": "https://prtimes.jp/main/html/rd/p/000000066.000093934.html"
+   },
+   "corrections": []
+  },
+  "/projects/hexa-oyabe-bess": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "badge": "計画中",
+   "dl": {
+    "所在地": "富山県 小矢部市石名田",
+    "事業者": "ヘキサ・エネルギーサービス合同会社",
+    "EPC": "しろくま電力株式会社",
+    "運転開始予定": "2028年5月（予定）",
+    "参加予定の市場": "長期脱炭素",
+    "出典": "https://prtimes.jp/main/html/rd/p/000000009.000173123.html"
+   },
+   "corrections": []
+  },
+  "/projects/nc-shunan-yuno": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "badge": "稼働中",
+   "dl": {
+    "所在地": "山口県 周南市",
+    "事業者": "日本蓄電池",
+    "運転開始": "2026-04-01",
+    "市場参加": "需給調整市場",
+    "出典": "https://prtimes.jp/main/html/rd/p/000000059.000161802.html"
+   },
+   "corrections": [
+    "history",
+    "history-title",
+    "20261108-01"
+   ]
+  },
+  "/projects/gec-fukuchiyama-haji-bess": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "badge": "稼働中",
+   "dl": {
+    "所在地": "京都府 福知山市土師",
+    "事業者": "合同会社マイクロGX京都",
+    "EPC": "グリーンエナジー・プラス",
+    "市場参加": "JEPX",
+    "出典": "https://prtimes.jp/main/html/rd/p/000000042.000071823.html"
+   },
+   "corrections": []
+  },
+  "/projects/nc-ibigawa": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "badge": "建設中",
+   "dl": {
+    "所在地": "岐阜県 揖斐郡揖斐川町",
+    "事業者": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+    "出典": "https://prtimes.jp/main/html/rd/p/000000201.000033609.html"
+   },
+   "corrections": [
+    "history",
+    "history-title",
+    "20261108-02"
+   ]
+  },
+  "/projects/nc-nagano-city": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "badge": "建設中",
+   "dl": {
+    "所在地": "長野県 長野市",
+    "事業者": "合同会社NCパイオニア（リミックスポイント×日本蓄電池）",
+    "出典": "https://prtimes.jp/main/html/rd/p/000000098.000161802.html"
+   },
+   "corrections": [
+    "history",
+    "history-title",
+    "20261108-03"
+   ]
+  },
+  "/projects/daiwa-kurate": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "badge": "稼働中",
+   "dl": {
+    "所在地": "福岡県 鞍手郡鞍手町",
+    "事業者": "大和ハウス工業",
+    "運転開始": "2026-09-16",
+    "出典": "https://www.daiwahouse.co.jp/about/release/house/20250818115959.html"
+   },
+   "corrections": [
+    "history",
+    "history-title",
+    "20261108-04"
+   ]
+  },
+  "/projects/remixpoint-ena-iwamura-3-bess": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "badge": "計画中",
+   "dl": {
+    "所在地": "岐阜県 恵那市",
+    "事業者": "株式会社リミックスポイント",
+    "参加予定の市場": "需給調整市場",
+    "出典": "https://prtimes.jp/main/html/rd/p/000000231.000033609.html"
+   },
+   "corrections": []
+  },
+  "/corrections": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "count": 494,
+   "new": [
+    "20261108-04",
+    "20261108-03",
+    "20261108-02",
+    "20261108-01"
+   ],
+   "new_text": {
+    "20261108-04": "id=\"correction-20261108-04\" style=\"border:1px solid var(--color-border, #cbd5e1);border-radius:8px;padding:12px 14px;margin:10px 0;background:#fff;min-width:0;overflow-wrap:anywhere\"> 2026年11月8日・訂正・案件 ",
+    "20261108-03": "id=\"correction-20261108-03\" style=\"border:1px solid var(--color-border, #cbd5e1);border-radius:8px;padding:12px 14px;margin:10px 0;background:#fff;min-width:0;overflow-wrap:anywhere\"> 2026年11月8日・訂正・案件 ",
+    "20261108-02": "id=\"correction-20261108-02\" style=\"border:1px solid var(--color-border, #cbd5e1);border-radius:8px;padding:12px 14px;margin:10px 0;background:#fff;min-width:0;overflow-wrap:anywhere\"> 2026年11月8日・訂正・案件 ",
+    "20261108-01": "id=\"correction-20261108-01\" style=\"border:1px solid var(--color-border, #cbd5e1);border-radius:8px;padding:12px 14px;margin:10px 0;background:#fff;min-width:0;overflow-wrap:anywhere\"> 2026年11月8日・訂正・案件 "
+   }
+  },
+  "/grid/egz-kikan-x": {
+   "status": 308,
+   "location": "/grid/chugoku",
+   "x_vercel_cache": null,
+   "age": null,
+   "robots": null
+  },
+  "/grid/prefecture/兵庫県": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "stats": [
+    [
+     "452",
+     "変電所件数"
+    ],
+    [
+     "396",
+     "空容量プラス（88%）"
+    ],
+    [
+     "23",
+     "N-1電制適用可（5%）"
+    ],
+    [
+     "6,130",
+     "合計空容量 (MW)"
+    ]
+   ]
+  },
+  "/grid/prefecture/愛知県": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "stats": [
+    [
+     "407",
+     "変電所件数"
+    ],
+    [
+     "329",
+     "空容量プラス（81%）"
+    ],
+    [
+     "67",
+     "N-1電制適用可（16%）"
+    ],
+    [
+     "12,920",
+     "合計空容量 (MW)"
+    ]
+   ]
+  },
+  "/grid/prefecture/北海道": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "stats": [
+    [
+     "424",
+     "変電所件数"
+    ],
+    [
+     "355",
+     "空容量プラス（84%）"
+    ],
+    [
+     "3",
+     "N-1電制適用可（1%）"
+    ],
+    [
+     "3,110",
+     "合計空容量 (MW)"
+    ]
+   ]
+  },
+  "/grid/prefecture/和歌山県": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "stats": [
+    [
+     "112",
+     "変電所件数"
+    ],
+    [
+     "99",
+     "空容量プラス（88%）"
+    ],
+    [
+     "2",
+     "N-1電制適用可（2%）"
+    ],
+    [
+     "780",
+     "合計空容量 (MW)"
+    ]
+   ]
+  },
+  "/grid/kansai": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "stats": [
+    [
+     "1,701",
+     "変電所数"
+    ],
+    [
+     "1,552",
+     "空容量プラス"
+    ],
+    [
+     "140",
+     "N-1電制適用可"
+    ],
+    [
+     "48",
+     "平均空容量(プラス分のみ, MW)"
+    ]
+   ],
+   "links_egz_kikan_x": 0
+  },
+  "/grid/tokyo": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "stats": [
+    [
+     "1,718",
+     "変電所数"
+    ],
+    [
+     "1,306",
+     "空容量プラス"
+    ],
+    [
+     "188",
+     "N-1電制適用可"
+    ],
+    [
+     "16.9",
+     "平均空容量(プラス分のみ, MW)"
+    ]
+   ],
+   "links_egz_kikan_x": 0
+  },
+  "/grid/chugoku": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "stats": [
+    [
+     "873",
+     "変電所数"
+    ],
+    [
+     "599",
+     "空容量プラス"
+    ],
+    [
+     "69",
+     "N-1電制適用可"
+    ],
+    [
+     "9.2",
+     "平均空容量(プラス分のみ, MW)"
+    ]
+   ],
+   "links_egz_kikan_x": 0
+  },
+  "/grid/chubu": {
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "stats": [
+    [
+     "1,107",
+     "変電所数"
+    ],
+    [
+     "864",
+     "空容量プラス"
+    ],
+    [
+     "148",
+     "N-1電制適用可"
+    ],
+    [
+     "29.4",
+     "平均空容量(プラス分のみ, MW)"
+    ]
+   ],
+   "links_egz_kikan_x": 0
+  },
+  "/grid/ksi-local-ca-9": {
+   "status": 200,
+   "x_vercel_cache": "MISS",
+   "age": "0",
+   "robots": "index, follow",
+   "top_heading": "兵庫県の他の変電所（空容量の大きい順）",
+   "top_links": [
+    "/grid/ksi-kikan-cb",
+    "/grid/ksi-kikan-ca",
+    "/grid/ksi-local-ah-5"
+   ]
+  },
+  "/grid/egz-kikan-s0016": {
+   "status": 200,
+   "x_vercel_cache": "MISS",
+   "age": "0",
+   "robots": "noindex, follow",
+   "top_heading": "中国エリアで空容量の大きい変電所",
+   "top_links": [
+    "/grid/egz-hiroshima-s90002",
+    "/grid/egz-okayama-s130004",
+    "/grid/egz-okayama-s0009-4"
+   ]
+  },
+  "/grid/tpg-1623": {
+   "status": 200,
+   "x_vercel_cache": "MISS",
+   "age": "0",
+   "robots": "noindex, follow",
+   "top_heading": "静岡県の他の変電所（空容量の大きい順）",
+   "top_links": [
+    "/grid/cb-2213",
+    "/grid/cb-2127",
+    "/grid/cb-2131"
+   ]
+  }
+ }
+}
