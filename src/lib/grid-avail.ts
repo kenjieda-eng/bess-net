@@ -71,6 +71,16 @@ export function shownAvailUpperMw(s: AvailInput): number | null {
   return typeof s.cap_avail_upper_mw === 'number' ? s.cap_avail_upper_mw : null;
 }
 
+/**
+ * サマリ統計の数（県のページ・エリアのページの「サマリ統計」の大きな数字）の書き方（小さな直し便・2026-11-08）。
+ * 桁区切りを付け、整数なら小数を付けない。小数は今までの精度（1 桁）まで。値は変えない（表示だけ）。
+ * それまで県のページの合計空容量は toFixed(1)＝「6130.0」の形だった（全県）。
+ * 例: 6130 → 「6,130」・780.5 → 「780.5」・1701（件数）→ 「1,701」
+ */
+export function formatStatNumber(v: number): string {
+  return (Math.round(v * 10) / 10).toLocaleString('ja-JP', { maximumFractionDigits: 1 });
+}
+
 function mw(v: number): string {
   return Math.abs(v).toLocaleString('ja-JP', { maximumFractionDigits: 3 });
 }

@@ -1,3 +1,6 @@
+// 凍結の変電所（転送にしたものだけ redirects で使う）。TS・Python と同じ 1 つの JSON を読む
+const FROZEN_SUBSTATIONS = require('./src/data/substations-frozen.json').frozen;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -27,6 +30,11 @@ const nextConfig = {
       { source: '/grid/o66z7a3i9', destination: '/grid/kyu-884', permanent: true },
       // BW 関西 本実行便（2026-11-05）の POST 1 件（南GC 咲洲２）も id ≠ slug
       { source: '/grid/7c1n48509wi9', destination: '/grid/ksi-local-gc-5', permanent: true },
+      // 凍結のうち変電所でない誤取込（egz-kikan-x＝中国電力NW の公表 CSV の「【留意事項】」の注記の行）は、エリアのページへ恒久の転送
+      // （小さな直し便・2026-11-08）。転送先は src/data/substations-frozen.json の redirectTo（定義はそこ 1 か所・#119）。データは消さない
+      ...Object.entries(FROZEN_SUBSTATIONS)
+        .filter(([, v]) => typeof v.redirectTo === 'string')
+        .map(([slug, v]) => ({ source: `/grid/${slug}`, destination: v.redirectTo, permanent: true })),
     ];
   },
 

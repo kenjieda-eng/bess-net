@@ -13,7 +13,7 @@ import {
 import { linkifyHTML } from '@/lib/linkify';
 import { isExcludedProject } from '@/lib/projects-excluded';
 import { reconstructProjectBody, reliableSpecValue } from '@/lib/projects-body';
-import { codLabel, isCodRealized } from '@/lib/projects-cod';
+import { codLabel, isCodRealized, marketLabel } from '@/lib/projects-cod';
 import { projectNextStep } from '@/lib/next-step';
 import {
   getRelatedEntities,
@@ -213,7 +213,8 @@ export default async function ProjectDetailPage({
               <dd>{item.cod}</dd>
             </>)}
             {item.marketParticipation && item.marketParticipation.length > 0 && (<>
-              <dt>市場参加</dt>
+              {/* 小さな直し便（2026-11-08）: 稼働中は「市場参加」、それ以外は「参加予定の市場」（判定は codLabel と同じ projects-cod.ts） */}
+              <dt>{marketLabel(item)}</dt>
               <dd>{item.marketParticipation.join(' / ')}</dd>
             </>)}
             {item.sourceUrl && (<>

@@ -11052,6 +11052,78 @@
     }
    ],
    "internalRef": "reports/operators-followup-2026-10-29.md (2)・(4)／reports/operators-followup-2026-10-29.data.json の operators/agg-01002318／reports/operators-followup-2026-10-29.apply.json"
+  },
+  {
+   "id": "20261108-01",
+   "date": "2026-11-08",
+   "kind": "訂正",
+   "path": "/projects/nc-shunan-yuno",
+   "record": "projects/nc-shunan-yuno",
+   "targetTitle": "NC周南市湯野蓄電所",
+   "before": "出典の欄に、別の蓄電所（福島県白河市の「NC白河市表郷番沢蓄電所」）の受電開始のリリースを挙げていた",
+   "after": "出典を、この蓄電所の受電開始のリリース（日本蓄電池株式会社・2026年4月23日）に直しました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000059.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-write-2026-11-08.md (3)・(8)／reports/projects-write-2026-11-08.json の projects/nc-shunan-yuno（op の old）"
+  },
+  {
+   "id": "20261108-02",
+   "date": "2026-11-08",
+   "kind": "訂正",
+   "path": "/projects/nc-ibigawa",
+   "record": "projects/nc-ibigawa",
+   "targetTitle": "岐阜県揖斐川町の系統用蓄電所（NCパイオニア）",
+   "before": "「運転開始予定 2026年10月（予定）」と表示",
+   "after": "運転開始予定の欄を外しました（一次の「2026年10月」は受電開始の見込みで、運転開始の時期ではないため）。\n受電開始の見込みは、2026年11月5日の発表にある「2026年12月」を本文に書きました",
+   "basis": [
+    {
+     "name": "【日本蓄電池との共同プロジェクト】鹿児島県枕崎市で約2MW系統用蓄電所が受電開始",
+     "publisher": "株式会社リミックスポイント（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000232.000033609.html"
+    }
+   ],
+   "internalRef": "reports/projects-write-2026-11-08.md (3)・(8)／reports/projects-write-2026-11-08.json の projects/nc-ibigawa（op の old）"
+  },
+  {
+   "id": "20261108-03",
+   "date": "2026-11-08",
+   "kind": "訂正",
+   "path": "/projects/nc-nagano-city",
+   "record": "projects/nc-nagano-city",
+   "targetTitle": "NC長野市上ケ屋蓄電所（NCパイオニア）",
+   "before": "「運転開始予定 2026年10月（予定）」と表示",
+   "after": "運転開始予定の欄を外しました（一次の「2026年10月」は受電開始の見込みで、運転開始の時期ではないため）。\n受電開始の見込みは、2026年11月5日の発表にある「2027年3月」を本文に書きました",
+   "basis": [
+    {
+     "name": "【日本蓄電池との共同プロジェクト】鹿児島県枕崎市で約2MW系統用蓄電所が受電開始",
+     "publisher": "株式会社リミックスポイント（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000232.000033609.html"
+    }
+   ],
+   "internalRef": "reports/projects-write-2026-11-08.md (3)・(8)／reports/projects-write-2026-11-08.json の projects/nc-nagano-city（op の old）"
+  },
+  {
+   "id": "20261108-04",
+   "date": "2026-11-08",
+   "kind": "訂正",
+   "path": "/projects/daiwa-kurate",
+   "record": "projects/daiwa-kurate",
+   "targetTitle": "DREAM Storage Battery 福岡鞍手系統用蓄電所",
+   "before": "市場参加を「JEPX / 需給調整市場」と表示\n本文に、一次に無い評価の語（「代表例」「象徴します」「想定され」）があった",
+   "after": "市場参加の欄を外しました（どの一次にも参加する市場の記載が無いため）\n本文を、一次の記載だけで書き直しました",
+   "basis": [
+    {
+     "name": "大和ハウス工業の系統蓄電所に蓄電システムを納入",
+     "publisher": "株式会社パワーエックス（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000270.000109041.html"
+    }
+   ],
+   "internalRef": "reports/projects-write-2026-11-08.md (3)・(8)／reports/projects-write-2026-11-08.json の projects/daiwa-kurate（op の old）"
   }
  ]
 }

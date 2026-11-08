@@ -22,7 +22,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { client, fetchRelatedOperatorsForSubstation, fetchProjectsWithCoords, type Substation } from '../src/lib/microcms';
-import { FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
+import { FROZEN_PAGE_SLUGS, FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
 import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
 // Gr10(2026-08-11): 系統区分・設備区分が prefecture に入っている社があるため正規化する
 import { normalizeSubstationPlace } from '../src/lib/grid-prefecture';
@@ -313,8 +313,10 @@ async function main(): Promise<void> {
   // Gr9(2026-08-09): 県ごとの空容量トップ（変電所詳細の「この県の他の変電所」用）。
   // ★見出しに「近隣」「周辺」は使わない — 座標を持たないため物理的な近さは保証できない。
   // 自ページを除いて5件出せるよう、余裕を見て8件持つ。
+  // 凍結は一覧・TOP20 と同じく外す（小さな直し便・2026-11-08。それまでは凍結も並べていたが、上位 8 件に入っていなかった）
   const prefTop: Record<string, Array<{ slug: string; name: string; cap: number | null; kv: number | null }>> = {};
   for (const s of all) {
+    if (FROZEN_SUBSTATION_SLUGS.has(s.slug)) continue;
     const pref = s.prefecture || 'unknown';
     (prefTop[pref] ??= []).push({
       slug: s.slug,
@@ -336,6 +338,7 @@ async function main(): Promise<void> {
   const areaTop: Record<string, Array<{ slug: string; name: string; cap: number | null; kv: number | null }>> = {};
   for (const s of all) {
     if (!s.area) continue;
+    if (FROZEN_SUBSTATION_SLUGS.has(s.slug)) continue; // 凍結は外す（prefTop と同じ・2026-11-08）
     (areaTop[s.area] ??= []).push({
       slug: s.slug,
       name: s.name,
@@ -421,9 +424,10 @@ async function main(): Promise<void> {
   }
   // 小さな直し便（2026-11-07）: 凍結の行もエリアごとに持つ（一覧には出さない）。同名の判定（nameQualifiers）は凍結も入れて数え、
   // 凍結のページと動いているページの題名が重ならないようにする（須磨 77/6.6 と凍結の須磨 77/33 が同じ題名だった）
+  // 小さな直し便（2026-11-08）: 転送にした凍結（FROZEN_REDIRECTS・egz-kikan-x）はページが無いので入れない（凍結のページ 9 → 8）
   const frozenByArea: Record<string, LiteSubstation[]> = {};
   for (const s of all) {
-    if (FROZEN_SUBSTATION_SLUGS.has(s.slug) && s.area) (frozenByArea[s.area] ??= []).push(s);
+    if (FROZEN_PAGE_SLUGS.has(s.slug) && s.area) (frozenByArea[s.area] ??= []).push(s);
   }
   const genDir = path.join(process.cwd(), 'src', 'lib', 'generated');
   fs.mkdirSync(genDir, { recursive: true });

@@ -32,7 +32,7 @@ import { n1StatusFromRow } from '@/lib/n1-status-label';
 // 名称非公開の 23 件は「名称非公開の変電所（事業者・No.）」で出す（小さな直し便・2026-11-05）
 import { substationShownName } from '@/lib/substation-undisclosed';
 // 関西の算出値が負の空容量は 0 と表示・合計（小さな直し便・2026-11-07・導出は grid-avail.ts の 1 か所）
-import { shownAvailMw, negativeAvailCalc, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
+import { shownAvailMw, negativeAvailCalc, formatStatNumber, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
 
 // Gr4(2026-08-08): 県別プロジェクト件数（precompute・runtime 0・0件の県は非表示）
 const PREF_PROJECT_COUNT = projectsPrefCount as Record<string, number>;
@@ -233,25 +233,26 @@ export default async function PrefecturePage({ params }: PageParams) {
 
           <section className="grid-section">
             <h2 className="grid-section-h2">サマリ統計</h2>
+            {/* 小さな直し便（2026-11-08）: 数は formatStatNumber（桁区切り・整数は小数なし）。合計空容量は「6130.0」の形だった */}
             <div className="grid-stats">
               <div className="grid-stat-card">
-                <div className="grid-stat-num">{subs.length}</div>
+                <div className="grid-stat-num">{formatStatNumber(subs.length)}</div>
                 <div className="grid-stat-label">変電所件数</div>
               </div>
               <div className="grid-stat-card">
-                <div className="grid-stat-num">{positive}</div>
+                <div className="grid-stat-num">{formatStatNumber(positive)}</div>
                 <div className="grid-stat-label">
                   空容量プラス（{Math.round((positive / subs.length) * 100)}%）
                 </div>
               </div>
               <div className="grid-stat-card">
-                <div className="grid-stat-num">{n1}</div>
+                <div className="grid-stat-num">{formatStatNumber(n1)}</div>
                 <div className="grid-stat-label">
                   N-1電制適用可（{Math.round((n1 / subs.length) * 100)}%）
                 </div>
               </div>
               <div className="grid-stat-card">
-                <div className="grid-stat-num">{totalCap.toFixed(1)}</div>
+                <div className="grid-stat-num">{formatStatNumber(totalCap)}</div>
                 <div className="grid-stat-label">合計空容量 (MW)</div>
               </div>
             </div>

@@ -11,7 +11,7 @@
  *   矛盾し、maintenance の予定日超過判定とも二重になる（status と cod の関係を二重に持たない）。
  *   status が空（「その他」）の 8 件も同じ扱い（maintenance では予定日超過に数えている）。
  *
- * 消費側: src/app/projects/[slug]/page.tsx（dt ラベル）・src/app/projects/page.tsx（一覧の運転開始列）・
+ * 消費側: src/app/projects/[slug]/page.tsx（dt ラベル＝運転開始の欄と市場の欄）・src/app/projects/page.tsx（一覧の運転開始列）・
  *         scripts/precompute-projects-maintenance.ts（予定日超過リスト）。
  */
 
@@ -64,6 +64,16 @@ export function isCodOverdue(p: CodLike, today: string = jstTodayISO()): boolean
 /** 詳細ページの見出しラベル */
 export function codLabel(p: StatusLike): '運転開始' | '運転開始予定' {
   return isCodRealized(p) ? '運転開始' : '運転開始予定';
+}
+
+/**
+ * 詳細ページの市場の欄の見出しラベル（小さな直し便・2026-11-08）。
+ * 決まり（2026-11-08）: 稼働中は実績の市場だけを入れる／計画中・建設中は、一次がその蓄電所について名指しする予定の市場も入れてよい。
+ * 欄の名前をこの決まりに合わせて分ける（稼働中でないものを「市場参加」と書くと、実績に読める）。
+ * 判定は codLabel と同じ isCodRealized（status＝稼働中）だけ。新しい判定を作らない。値（marketParticipation）は変えない。
+ */
+export function marketLabel(p: StatusLike): '市場参加' | '参加予定の市場' {
+  return isCodRealized(p) ? '市場参加' : '参加予定の市場';
 }
 
 /** 一覧表の「運転開始」列のセル。未実現の日付には「（予定）」を付ける（cod 自体が「予定」を含むなら重ねない） */

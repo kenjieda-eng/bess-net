@@ -16,6 +16,9 @@
  *    page.tsx の robots・sitemap.ts・IndexNow の NO_SUBMIT_SLUGS が同じ集合を見る。
  * 7. 名称非公開の題名・h1（小さな直し便・2026-11-07）: 事業者の名前が 1 回だけ（府県・事業者・No. を 1 つの括弧に）。
  * 8. 県の一覧の並びは表示と同じ空容量（関西の算出値が負なら 0・grid-avail.ts の shownAvailMw）で降順。
+ * 9. 小さな直し便（2026-11-08）: (a) 詳細の「同じ県の他の変電所」「〇〇エリアで空容量の大きい変電所」（index.json の pref_top・area_top）に
+ *    凍結が 0。(b) 転送にした凍結（FROZEN_REDIRECTS・egz-kikan-x）は next.config.js の redirects に permanent で載り、転送先はエリアのページ。
+ *    凍結の行（同名の判定）・一覧・pref_top・area_top のどれにも入らない（凍結のページ 9 → 8）。
  *
  * microCMS へのアクセスなし（precompute の静的データだけ）。問題があれば exit 1＝ビルドで落ちる。prebuild に入れている。
  */
@@ -24,14 +27,18 @@ import { substationPageTitle, substationHeadingName, displaySubstationName, subs
 import { getAreaSubstationsStatic, getFrozenAreaSubstationsStatic, getPrefectureSubstationsStatic, nameQualifiers, sameNameKey, SAME_NAME_RULING_PENDING } from '../src/lib/grid-static-lists';
 import { isUndisclosedSubstation, undisclosedReason } from '../src/lib/substation-undisclosed';
 import { isNoindexSubstation } from '../src/lib/substation-noindex';
-import { FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
+import { FROZEN_PAGE_SLUGS, FROZEN_REDIRECTS, FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
+import { AREA_META } from '../src/app/grid/[slug]/area-meta';
 import { shownAvailMw } from '../src/lib/grid-avail';
 import * as fs from 'node:fs';
 export {};
 
+type TopRow = { slug: string; name: string; cap: number | null; kv: number | null };
 const index = substationsIndex as unknown as {
   area_dates: Record<string, unknown>;
   pref_meta: Record<string, { count: number }>;
+  pref_top: Record<string, TopRow[]>;
+  area_top: Record<string, TopRow[]>;
 };
 const problems: string[] = [];
 
@@ -62,7 +69,7 @@ for (const area of Object.keys(index.area_dates)) {
   for (const s of withFrozen) byName.set(sameNameKey(s), (byName.get(sameNameKey(s)) ?? 0) + 1);
   for (const f of frozen) {
     frozenSeen.push(f.slug);
-    if (!FROZEN_SUBSTATION_SLUGS.has(f.slug)) problems.push(`${f.slug}: 凍結の行にあるのに凍結の一覧に無い`);
+    if (!FROZEN_PAGE_SLUGS.has(f.slug)) problems.push(`${f.slug}: 凍結の行にあるのに凍結のページの一覧に無い（転送にしたものは入れない）`);
     if (rows.some((s) => s.slug === f.slug)) problems.push(`${f.slug}: 凍結なのに一覧に出ている`);
     if (!isNoindexSubstation(f)) problems.push(`${f.slug}: 凍結のページが noindex でない`);
     const mates = rows.filter((s) => sameNameKey(s) === sameNameKey(f));
@@ -187,8 +194,22 @@ if (undisclosed.length !== 23) problems.push(`名称非公開が ${undisclosed.l
 if (undisclosed.length !== noSubmit.size || undisclosed.some((s) => !noSubmit.has(s))) problems.push('名称非公開と IndexNow の UNDISCLOSED_SLUGS が食い違う');
 // IndexNow の NO_SUBMIT_SLUGS は 名称非公開＋凍結（noindex の 2 種類）
 if (!/const NO_SUBMIT_SLUGS[^=]*=\s*new Set\(\[\.\.\.UNDISCLOSED_SLUGS,\s*\.\.\.FROZEN_SUBSTATION_SLUGS\]\)/.test(toolSrc)) problems.push('IndexNow の NO_SUBMIT_SLUGS が 名称非公開＋凍結 になっていない');
-// 凍結: 全件がエリアの凍結の行にある（noindex と同名の判定に入る）
-if (frozenSeen.length !== FROZEN_SUBSTATION_SLUGS.size) problems.push(`凍結の行 ${frozenSeen.length} 件・凍結の一覧 ${FROZEN_SUBSTATION_SLUGS.size} 件`);
+// 凍結のページ: 全件がエリアの凍結の行にある（noindex と同名の判定に入る）。転送にした凍結は入らない（2026-11-08）
+if (frozenSeen.length !== FROZEN_PAGE_SLUGS.size) problems.push(`凍結の行 ${frozenSeen.length} 件・凍結のページ ${FROZEN_PAGE_SLUGS.size} 件`);
+if (FROZEN_PAGE_SLUGS.size + FROZEN_REDIRECTS.size !== FROZEN_SUBSTATION_SLUGS.size) problems.push('凍結のページ＋転送 ≠ 凍結の全件');
+// 9(a). 詳細の「同じ県の他の変電所」「〇〇エリアで空容量の大きい変電所」に凍結が 0（2026-11-08）
+const topFrozen: string[] = [];
+for (const [key, rows] of [...Object.entries(index.pref_top), ...Object.entries(index.area_top)]) {
+  for (const r of rows) if (FROZEN_SUBSTATION_SLUGS.has(r.slug)) topFrozen.push(`${key}:${r.slug}`);
+}
+if (topFrozen.length) problems.push(`pref_top・area_top に凍結 ${topFrozen.length} 件（${topFrozen.slice(0, 5).join('・')}）`);
+// 9(b). 転送にした凍結: どの一覧にも無く、転送先はエリアのページ（redirects は下の finish で照合）
+for (const [slug, to] of FROZEN_REDIRECTS) {
+  const m = /^\/grid\/([a-z]+)$/.exec(to);
+  if (!m || !AREA_META[m[1]]) problems.push(`${slug}: 転送先 ${to} がエリアのページでない`);
+  if (frozenSeen.includes(slug)) problems.push(`${slug}: 転送にしたのに凍結の行に入っている`);
+  if (Object.keys(index.area_dates).some((a) => getAreaSubstationsStatic(a).some((s) => s.slug === slug))) problems.push(`${slug}: 転送にしたのに一覧に出ている`);
+}
 if (noindexActive !== undisclosed.length) problems.push(`一覧の noindex ${noindexActive} 件・名称非公開 ${undisclosed.length} 件`);
 // noindex とサイトマップの除外が同じ判定を通る
 const pageSrc = fs.readFileSync('src/app/grid/[slug]/page.tsx', 'utf8');
@@ -200,13 +221,27 @@ for (const slug of SAME_NAME_RULING_PENDING) {
   if (!Object.keys(index.area_dates).some((a) => getAreaSubstationsStatic(a).some((s) => s.slug === slug))) problems.push(`裁定待ちの ${slug} が一覧に無い（再取込で変わった？）`);
 }
 
-console.log(`[verify:grid-pages] 名称非公開 ${undisclosed.length} 件・凍結 ${frozenSeen.length} 件（どちらも noindex・サイトマップ外）・同名の判定の裁定待ち ${SAME_NAME_RULING_PENDING.size} 件`);
-frozenPairs.forEach((p) => console.log(`[verify:grid-pages] 凍結と同名: ${p}`));
-console.log(`[verify:grid-pages] 県 ${prefs.length}・同じエリアで同名の組 ${groupsTotal}（${membersTotal} 件）: ${perArea.join('・')}`);
-console.log(`[verify:grid-pages] 表示名に「変電所」を足した ${added} 件・そのまま ${kept} 件`);
-if (problems.length) {
-  console.error(`[verify:grid-pages] ★NG ${problems.length} 件`);
-  problems.slice(0, 40).forEach((p) => console.error(`  - ${p}`));
-  process.exit(1);
+async function finish(): Promise<void> {
+  // 9(b). next.config.js の redirects（評価した結果）に、転送にした凍結が permanent で 1 本ずつ載っている
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const nextConfig = require('../next.config.js') as { redirects: () => Promise<{ source: string; destination: string; permanent?: boolean }[]> };
+  const redirects = await nextConfig.redirects();
+  for (const [slug, to] of FROZEN_REDIRECTS) {
+    const hit = redirects.filter((r) => r.source === `/grid/${slug}`);
+    if (hit.length !== 1 || hit[0].destination !== to || hit[0].permanent !== true) problems.push(`${slug}: next.config.js の redirects に「/grid/${slug} → ${to}（permanent）」が 1 本でない（${JSON.stringify(hit)}）`);
+  }
+  console.log(`[verify:grid-pages] 名称非公開 ${undisclosed.length} 件・凍結のページ ${frozenSeen.length} 件（どちらも noindex・サイトマップ外）・凍結の転送 ${FROZEN_REDIRECTS.size} 件（${[...FROZEN_REDIRECTS].map(([s, t]) => `${s} → ${t}`).join('・')}）・同名の判定の裁定待ち ${SAME_NAME_RULING_PENDING.size} 件`);
+  frozenPairs.forEach((p) => console.log(`[verify:grid-pages] 凍結と同名: ${p}`));
+  console.log(`[verify:grid-pages] 県 ${prefs.length}・同じエリアで同名の組 ${groupsTotal}（${membersTotal} 件）: ${perArea.join('・')}`);
+  console.log(`[verify:grid-pages] 表示名に「変電所」を足した ${added} 件・そのまま ${kept} 件・pref_top／area_top の凍結 ${topFrozen.length} 件`);
+  if (problems.length) {
+    console.error(`[verify:grid-pages] ★NG ${problems.length} 件`);
+    problems.slice(0, 40).forEach((p) => console.error(`  - ${p}`));
+    process.exit(1);
+  }
+  console.log('[verify:grid-pages] ok   県の一覧は降順・同じエリアで title と h1 の重なり 0・凍結は詳細の並びに 0・転送は redirects に 1 本');
 }
-console.log('[verify:grid-pages] ok   県の一覧は降順・同じエリアで title と h1 の重なり 0');
+finish().catch((e) => {
+  console.error('[verify:grid-pages] ★NG', e);
+  process.exit(1);
+});

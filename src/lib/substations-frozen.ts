@@ -7,6 +7,7 @@
  *
  * 凍結の扱い（tpg-1623 湯船・2026-08-16裁定で確立）:
  *   - データは当時のまま保持・ページ維持（URL保全・削除/301しない）
+ *     ★例外: 変電所でない誤取込（egz-kikan-x）は、データを残したままページを転送にする（redirectTo・2026-11-08）
  *   - 空容量プラス集計・TOP20・検索・エリア件数からは除外する
  *   - 詳細ページには slug ごとの注記を初期DOMで表示する（落とし穴 #107）
  *
@@ -22,11 +23,30 @@ type FrozenEntry = {
   decidedOn: string;
   reason: string;
   note: string;
+  /** 恒久の転送先（ページを開かせない凍結だけ）。next.config.js の redirects がこの欄から作る */
+  redirectTo?: string;
+  redirectDecidedOn?: string;
+  redirectReason?: string;
 };
 
 const FROZEN = (frozenData as { frozen: Record<string, FrozenEntry> }).frozen;
 
+/** 凍結の全件（件数・一覧・検索・TOP20・IndexNow から外す）。転送にしたものも入る */
 export const FROZEN_SUBSTATION_SLUGS: ReadonlySet<string> = new Set(Object.keys(FROZEN));
+
+/**
+ * 凍結のうち、ページを開かせず転送にしたもの（slug → 転送先）。小さな直し便（2026-11-08）:
+ * egz-kikan-x は変電所ではない（公表 CSV の「【留意事項】」の注記の行）ので、/grid/chugoku へ恒久の転送にした。
+ * データは消さない（凍結のまま＝件数・一覧・検索からは今までどおり外れる）。
+ */
+export const FROZEN_REDIRECTS: ReadonlyMap<string, string> = new Map(
+  Object.entries(FROZEN).filter(([, v]) => !!v.redirectTo).map(([slug, v]) => [slug, v.redirectTo as string]),
+);
+
+/** 凍結のページ（開ける凍結＝noindex・注記つき）。転送にしたものは入らない */
+export const FROZEN_PAGE_SLUGS: ReadonlySet<string> = new Set(
+  [...FROZEN_SUBSTATION_SLUGS].filter((slug) => !FROZEN_REDIRECTS.has(slug)),
+);
 
 /** 詳細ページに出す凍結注記（slug ごと。裁定で確定した文言を JSON 側に持つ） */
 export function frozenSubstationNote(slug: string | undefined | null): string | null {

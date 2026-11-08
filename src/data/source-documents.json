@@ -3864,6 +3864,24 @@
       "checked_on": "2026-11-08",
       "note": "projects 便・段 2（2026-11-08）。curl で HTTP 200（303,328 bytes）。No.12「ＢＳホールディングス株式会社｜BS浪江｜蓄電池（運転継続時間が3時間以上6時間未満）｜49,905」。",
       "used_in": "projects/sumitomo-namie-bess（operator の根拠・body は公表ページへリンク）"
+    },
+    {
+      "name": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始",
+      "publisher": "日本蓄電池株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000059.000161802.html",
+      "title_verbatim": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」受電開始 | 日本蓄電池株式会社のプレスリリース",
+      "checked_on": "2026-11-08",
+      "note": "小さな直し便（2026-11-08）。Chrome UA で HTTP 200（250,489 bytes）。配信 2026-04-23 10:00:02・更新 2026-04-23 22:10:01。projects 便・段 2 の本文で出典に挙げたが台帳に足していなかった。",
+      "used_in": "projects/nc-shunan-yuno（sourceUrl・body）・訂正履歴 20261108-01（basis）"
+    },
+    {
+      "name": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」需給調整市場への参入",
+      "publisher": "日本蓄電池株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000110.000161802.html",
+      "title_verbatim": "【日本蓄電池株式会社】山口県周南市にて系統用蓄電施設「NC周南市湯野蓄電所」需給調整市場への参入 | 日本蓄電池株式会社のプレスリリース",
+      "checked_on": "2026-11-08",
+      "note": "小さな直し便（2026-11-08）。Chrome UA で HTTP 200（249,506 bytes）。配信 2026-10-01 12:00:02・更新 2026-10-02 00:10:02。projects 便・段 2 の本文で出典に挙げたが台帳に足していなかった。",
+      "used_in": "projects/nc-shunan-yuno（body）"
     }
   ]
 }

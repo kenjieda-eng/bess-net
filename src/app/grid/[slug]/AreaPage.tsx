@@ -14,7 +14,7 @@ import type { Substation } from '@/lib/microcms';
 import { relatedOperatorsStatic } from '@/lib/grid-related-operators';
 import { substationShownName } from '@/lib/substation-undisclosed';
 // 関西の算出値が負の空容量は 0 と表示・並べ替え（小さな直し便・2026-11-07・導出は grid-avail.ts の 1 か所）
-import { shownAvailMw, negativeAvailCalc, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
+import { shownAvailMw, negativeAvailCalc, formatStatNumber, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
 // 落とし穴 #116 の恒久策(2026-08-16): エリアの一覧は build 時 precompute の静的データを使う。
 // runtime microCMS だと Next の fetch キャッシュで再取込直後のビルドが旧データを出力する。
 import { getAreaSubstationsStatic, toSubstationShape } from '@/lib/grid-static-lists';
@@ -344,21 +344,22 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
           {/* サマリ統計 */}
           <section className="grid-section">
             <h2 className="grid-section-h2">サマリ統計</h2>
+            {/* 小さな直し便（2026-11-08）: 県のページと同じ formatStatNumber（桁区切り・整数は小数なし）。変電所数は「1701」の形だった */}
             <div className="grid-stats">
               <div className="grid-stat-card">
-                <div className="grid-stat-num">{total}</div>
+                <div className="grid-stat-num">{formatStatNumber(total)}</div>
                 <div className="grid-stat-label">変電所数</div>
               </div>
               <div className="grid-stat-card">
-                <div className="grid-stat-num">{positive.length}</div>
+                <div className="grid-stat-num">{formatStatNumber(positive.length)}</div>
                 <div className="grid-stat-label">空容量プラス</div>
               </div>
               <div className="grid-stat-card">
-                <div className="grid-stat-num">{n1ok.length}</div>
+                <div className="grid-stat-num">{formatStatNumber(n1ok.length)}</div>
                 <div className="grid-stat-label">N-1電制適用可</div>
               </div>
               <div className="grid-stat-card">
-                <div className="grid-stat-num">{fmt(availAvg)}</div>
+                <div className="grid-stat-num">{formatStatNumber(availAvg)}</div>
                 <div className="grid-stat-label">平均空容量(プラス分のみ, MW)</div>
               </div>
             </div>
