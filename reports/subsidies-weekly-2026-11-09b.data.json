@@ -1,0 +1,30 @@
+{
+ "note": "補助金 月曜定例 11-09 の追い便（b）。11-09 の補助金便（`_QUEUE.md` 102 行・`87e0c63`）の本番照合で、業務産業用（小規模）のページに「（公募中）」が残った。出どころは概要の欄（scheme）の「公募期間2026-03-24〜10-30（公募中）。」で、検索結果の説明文・SNS の説明文・本文の概要に出る（CC の報告 `reports/subsidies-weekly-2026-11-09.md`）。SII は 2026-10-30 に「「令和7年度補正 業務産業用蓄電システム導入支援事業」の公募は終了しました。」と掲示しているので、括弧の中だけを直す。old は src/data/subsidies.json（main `d5cf7d5`）の現値にちょうど 1 回現れる（ユウが 11/9 12:3x に確認）。府県の名前を含まないので applicable_prefs は変わらない見込み（#110・CC が build の差分で確かめる）。POST 0。",
+ "generated": "2026-11-09",
+ "sources": {
+  "sii-syoukibo-gyousan-ess-07r": [
+   "https://sii.or.jp/DRchikudenchi_gyousan07r/"
+  ]
+ },
+ "plan": {
+  "patches": [
+   {
+    "ep": "subsidies",
+    "slug": "sii-syoukibo-gyousan-ess-07r",
+    "order": 1,
+    "ops": [
+     {
+      "field": "scheme",
+      "old": "公募期間2026-03-24〜10-30（公募中）。",
+      "new": "公募期間2026-03-24〜10-30（2026年10月30日に公募終了）。",
+      "row_ids": [
+       "W1109b-01"
+      ],
+      "note": "SII の事業ページの新着情報「令和8年10月30日（金）「令和7年度補正 業務産業用蓄電システム導入支援事業」の公募は終了しました。」。scheme のほかの文は変えない。"
+     }
+    ]
+   }
+  ],
+  "posts": []
+ }
+}
