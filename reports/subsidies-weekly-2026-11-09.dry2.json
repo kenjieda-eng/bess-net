@@ -1,0 +1,35 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 6
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 3,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "subsidies/sii-syoukibo-gyousan-ess-07r",
+   "id": "fexb5t8o48p",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/sii-daikibo-gyousan-ess-07r",
+   "id": "xbto4lcso-9t",
+   "result": "skip_idempotent"
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/sii-saiene-heisetsu-ess-07r",
+   "id": "xij59tdwho86",
+   "result": "skip_idempotent"
+  }
+ ]
+}

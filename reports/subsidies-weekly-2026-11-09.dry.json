@@ -1,0 +1,69 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 6
+ },
+ "counts": {
+  "patched": 3,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "subsidies/sii-syoukibo-gyousan-ess-07r",
+   "id": "fexb5t8o48p",
+   "result": "dry",
+   "fields": [
+    "deadline",
+    "status"
+   ],
+   "before": {
+    "deadline": "2026年10月30日（金）（公募中）",
+    "status": [
+     "公募中"
+    ]
+   },
+   "after": {
+    "deadline": "2026年10月30日（金）に公募終了（SIIは2026年10月30日に「「令和7年度補正 業務産業用蓄電システム導入支援事業」の公募は終了しました。」と掲示）。交付決定の公表は2026年8月28日に開始",
+    "status": [
+     "採択結果公表"
+    ]
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/sii-daikibo-gyousan-ess-07r",
+   "id": "xbto4lcso-9t",
+   "result": "dry",
+   "fields": [
+    "deadline"
+   ],
+   "before": {
+    "deadline": "2026年5月29日（金）12:00必着（1次公募終了。2次公募は申請・採択状況により実施の場合あり）。交付決定は2026年7月下旬以降"
+   },
+   "after": {
+    "deadline": "2026年5月29日（金）12:00必着（1次公募終了。SIIは「本事業は、1次公募の結果をもって終了いたしました。」と掲示）。交付決定は2026年7月30日に公開"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "subsidies/sii-saiene-heisetsu-ess-07r",
+   "id": "xij59tdwho86",
+   "result": "dry",
+   "fields": [
+    "deadline"
+   ],
+   "before": {
+    "deadline": "2026年5月29日（金）12:00必着（1次公募終了。2次公募は申請・採択状況により実施の場合あり）。交付決定は2026年7月下旬以降"
+   },
+   "after": {
+    "deadline": "2026年5月29日（金）12:00必着（1次公募終了。SIIは「本事業は、1次公募の結果をもって終了いたしました。」と掲示）。交付決定は2026年7月30日に公開"
+   }
+  }
+ ]
+}
