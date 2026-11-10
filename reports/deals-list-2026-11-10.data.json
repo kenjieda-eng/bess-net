@@ -1,0 +1,2450 @@
+{
+ "_comment": "売買事例の一覧便（2026-11-10）: 研究便 reports/deals-research-2026-10-20.data.json の 228 行の行き先（載せた・関連の発表・保留・外した）と、初版 deals.json の行と研究便の行の対応。外した理由の §2 は裁定ファイルの 81 行の判定、R◯ は §1 の原則。",
+ "ruling": "02_計画・運営/売買事例_裁定_原則15と81行と設計13問_2026-10-27_ユウ.md（sha256 d716e2e0…2b0b）",
+ "rows": [
+  {
+   "cid": "C374",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 一次（PR TIMES 000000002.000181258）が 2026-10-17 に 404（「お探しのページは移動もしくは削除された可能性があります」"
+  },
+  {
+   "cid": "C001",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画",
+   "dest": "載せた（D-20240112-01）"
+  },
+  {
+   "cid": "C004",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20240201-01）"
+  },
+  {
+   "cid": "C008",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 蓄電池の製品の売買（パワーエックスの系統用蓄電システム『Mega Power』が小角田蓄電所で採用・受注数量3台）。文中の「共同出資」は既存の SPC（坂東蓄電"
+  },
+  {
+   "cid": "C009",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画",
+   "dest": "載せた（D-20240226-01）"
+  },
+  {
+   "cid": "C010",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 発表の主旨は設備保安管理業務（O&M）の受託と、系統用蓄電所の開発・EPC への参入方針で、取得・譲渡・出資・参画の発表ではない。文中の「共同出資」は C009"
+  },
+  {
+   "cid": "C020",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20240425-01）"
+  },
+  {
+   "cid": "C022",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R1（共同開発の合意・保有の役割分担だけ）"
+  },
+  {
+   "cid": "C023",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 建屋（テント倉庫）の施工受注・完工の発表で、売買・出資の発表ではない。「出資」は事業者の説明（「九州旅客鉄道株式会社や住友商事株式会社などが出資するでんきの駅合"
+  },
+  {
+   "cid": "C026",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 長期脱炭素電源オークションの落札と、しろくま電力の業務受託（土地取得・設計・施工・管理・運用・メンテナンス）の発表で、売買・出資の発表ではない。「取得」は受託し"
+  },
+  {
+   "cid": "C029",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 「今後4社は武雄蓄電所合同会社に出資を行ない」は予定。7/12 の追記の会社概要には出資者の欄がある＝出資の実行か予定か一次で決まらない（R1）"
+  },
+  {
+   "cid": "C030",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: C029 と同じ一次の重複（ニュースの重複記事）。C029 と同じく保留"
+  },
+  {
+   "cid": "C031",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R1"
+  },
+  {
+   "cid": "C032",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画",
+   "dest": "載せた（D-20240730-01）"
+  },
+  {
+   "cid": "C035",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（「系統枠を確保した適地を複数組成」「募集を開始する予定」＝取得の完了・契約の締結の記載なし）"
+  },
+  {
+   "cid": "C036",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20240813-01）"
+  },
+  {
+   "cid": "C037",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20240910-01）"
+  },
+  {
+   "cid": "C040",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20240920-01）"
+  },
+  {
+   "cid": "C041",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R7（月次の報告で新しい取引なし）"
+  },
+  {
+   "cid": "C044",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R7（前の月と同じ用地の載せ直し）。新しく出た取引が月報にあれば、その分だけ行に"
+  },
+  {
+   "cid": "C045",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R3（J＆S蓄電合同会社への出資・設立は 2023-07-27 の JFEエンジニアリングの発表＝期間外）"
+  },
+  {
+   "cid": "C046",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す → 出資・参画",
+   "dest": "載せた（D-20241025-01）"
+  },
+  {
+   "cid": "C047",
+   "status": "fixed",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: C046 と同じ発表（PR TIMES 000000058.000092942）を重複して収録した news 記事。1 件の発表は 1 行なので C046 にま"
+  },
+  {
+   "cid": "C049",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R7（月次の報告で新しい取引なし）"
+  },
+  {
+   "cid": "C461",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R4（自社の蓄電所の建設に伴う固定資産の取得）。価格の一覧から外す"
+  },
+  {
+   "cid": "C054",
+   "status": "fixed",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 運転開始の発表で、蓄電所の取得・譲渡・出資の発表ではない。本文の「取得」は「しろくま電力は土地取得、設計・施工、管理・運用、メンテナンス業務を受託します」（開発"
+  },
+  {
+   "cid": "C058",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝ファンドの組成",
+   "dest": "載せた（D-20241219-01）"
+  },
+  {
+   "cid": "C059",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20241219-01）"
+  },
+  {
+   "cid": "C060",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: C059 と同じ発表の重複。news の pr-2024-12-19-tecra-143-2 と -3 は題名・本文・sourceUrl（PR TIMES 00"
+  },
+  {
+   "cid": "C061",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R1（業務提携・役割分担だけ）"
+  },
+  {
+   "cid": "C062",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R7（月次の報告で新しい取引なし）"
+  },
+  {
+   "cid": "C064",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250117-01）"
+  },
+  {
+   "cid": "C065",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R1（基本合意）"
+  },
+  {
+   "cid": "C066",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R1（合弁の検討の基本合意）。exclude_reason を R1 の語に直す"
+  },
+  {
+   "cid": "C462",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250122-01）"
+  },
+  {
+   "cid": "C069",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（業務提携契約・出資は役割の分担だけ）"
+  },
+  {
+   "cid": "C070",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R7（月次の報告で新しい取引なし）"
+  },
+  {
+   "cid": "C072",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（「組成で合意」・出資の実行・出資契約の締結の記載なし）"
+  },
+  {
+   "cid": "C074",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 「支援決定しましたので」＝決定。特別目的会社の株主の欄に脱炭素化支援機構があるが、出資の実行・契約の締結の語が無い（R1・C112 と同じ型）"
+  },
+  {
+   "cid": "C075",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250304-01）"
+  },
+  {
+   "cid": "C077",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R1・R9"
+  },
+  {
+   "cid": "C080",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 迷うもの（ユウの裁定待ち）: 一次は 2 社の「協業」（新たな系統用蓄電池事業を実施することで合意）。RSアセットアドバイザーズが用地の選定・取得交渉・系統の確"
+  },
+  {
+   "cid": "C081",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R7（月次の報告で新しい取引なし）"
+  },
+  {
+   "cid": "C082",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250317-01）"
+  },
+  {
+   "cid": "C083",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20250317-01）"
+  },
+  {
+   "cid": "C084",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 業務提携（系統用蓄電所等の開発業務に関する業務提携契約の再締結）の発表で、取得・譲渡・出資・ファンド・成約の支援の発表ではない。題名・本文の「取得」は「RETR"
+  },
+  {
+   "cid": "C086",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（「購入者を大募集」＝販売の募集・成約の記載なし）"
+  },
+  {
+   "cid": "C088",
+   "status": "dropped",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 売買の場（マッチングサイト「タイナビ発電所」）で系統用蓄電所を掲載できるようにしたという、サービス開始の告知。一次は「新たに投資用系統用蓄電所（完成案件・土地権"
+  },
+  {
+   "cid": "C091",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 運転開始の発表で、売買・出資の取引の発表ではない。「出資」は事業会社の紹介の一句（「…）が出資する合同会社taMEL」）だけで、出資の時期・比率・形態の記載がな"
+  },
+  {
+   "cid": "C092",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画（段階 → 不明）",
+   "dest": "載せた（D-20250408-01）"
+  },
+  {
+   "cid": "C093",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 蓄電池の製品の受注（パワーエックスが系統蓄電システム「Mega Power」32台を受注）＝製品の売買。"
+  },
+  {
+   "cid": "C463",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（取締役会で建設を決議・「計画段階のもの」）"
+  },
+  {
+   "cid": "C095",
+   "status": "fixed",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 個別の蓄電所の取得・出資の発表ではなく、系統用蓄電池事業のアセットマネジメント会社（RSBM株式会社）の共同設立。対象の蓄電所・場所・規模の記載がない（残すもの"
+  },
+  {
+   "cid": "C096",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R7（「新規の事業用地取得を見送りました」）"
+  },
+  {
+   "cid": "C097",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250421-01）"
+  },
+  {
+   "cid": "C098",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 「EPC…サンヴィレッジ」「事業主として日本蓄電池株式会社が取得」＝完成した設備の引渡し（R4）か、完成した蓄電所の売買か一次で決まらない"
+  },
+  {
+   "cid": "C102",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す → 譲渡",
+   "dest": "載せた（D-20250516-01）"
+  },
+  {
+   "cid": "C105",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R1（取得を前提とした専属的交渉の基本合意）"
+  },
+  {
+   "cid": "C107",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250606-01）"
+  },
+  {
+   "cid": "C110",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: コンサルティングとアグリゲーションの業務提携の発表で、個別の蓄電所の取得・譲渡・出資・ファンド組成の案件ではない。「ファンド組成」は提携の業務領域（プランニング"
+  },
+  {
+   "cid": "C111",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: C110 と同じ業務提携（コンサルティング＋アグリゲーション）の NUVVE JAPAN 側の配信。個別の蓄電所の取得・譲渡・出資・ファンド組成の案件ではなく、"
+  },
+  {
+   "cid": "C112",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 「出資・参画を決定しました」＝決定。出資の実行・契約の締結の語が無い（R1）"
+  },
+  {
+   "cid": "C113",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 宅地建物取引業の許認可の「取得」の報告と、系統用蓄電池などの用地の取得・売買を事業として始める方針の発表。個別の用地・接続権・蓄電所の取得や売買の案件（場所・規"
+  },
+  {
+   "cid": "C115",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "出資の初出なら残す",
+   "dest": "関連の発表（D-20250304-01）"
+  },
+  {
+   "cid": "C116",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R7（月次の報告で新しい取引なし）"
+  },
+  {
+   "cid": "C469",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250620-01）"
+  },
+  {
+   "cid": "C118",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R8・R11（担保付ローンファンド＝貸付・「募集を開始」）"
+  },
+  {
+   "cid": "C123",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R10（解説の取引の型の参考には可）"
+  },
+  {
+   "cid": "C129",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "譲渡が成約していれば残す（価格は入れない）・予定だけなら外す",
+   "dest": "外した: §2（業務提携の枠組みで、個別の譲渡の成約なし＝予定だけ）"
+  },
+  {
+   "cid": "C130",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R1（覚書・検討）"
+  },
+  {
+   "cid": "C132",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R7（月次の報告で新しい取引なし）"
+  },
+  {
+   "cid": "C137",
+   "status": "fixed",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: サービス（系統用蓄電池のフルパッケージ商品）の提供開始の告知で、個別の取得・譲渡・出資・成約の発表ではない。語の当たりは定型文（「100%出資連結子会社」「電気"
+  },
+  {
+   "cid": "C138",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: C137 と同じ発表（同題・同時刻・同文）をサンヴィレッジのアカウントで配信したもの。内容もサービス（フルパッケージ商品）の提供開始の告知で、個別の取得・譲渡・"
+  },
+  {
+   "cid": "C140",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250729-01）"
+  },
+  {
+   "cid": "C143",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝接続権・用地の取得",
+   "dest": "載せた（D-20250805-01）"
+  },
+  {
+   "cid": "C464",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R4"
+  },
+  {
+   "cid": "C147",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R3（出資は 2023-06-07・期間外）"
+  },
+  {
+   "cid": "C154",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画（段階 → 不明）",
+   "dest": "載せた（D-20250829-01）"
+  },
+  {
+   "cid": "C155",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画（段階 → 不明）",
+   "dest": "関連の発表（D-20250829-01）"
+  },
+  {
+   "cid": "C156",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "出資の初出なら残す",
+   "dest": "載せた（D-20250901-01）"
+  },
+  {
+   "cid": "C159",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R1（基本合意・出資の記載なし）"
+  },
+  {
+   "cid": "C158",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R3（C147 と同じ出来事・出資は期間外）"
+  },
+  {
+   "cid": "C160",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 蓄電池の製品の受注（パワーエックス製「Mega Power 2700A」計24台）の発表で、蓄電所の取得・譲渡・出資の発表ではない（便 §1「蓄電池の製品の売買"
+  },
+  {
+   "cid": "C161",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」資金調達（新株予約権）の資金使途で、蓄電所の取引ではない"
+  },
+  {
+   "cid": "C164",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 着工の報告（「紀の川上田井蓄電所」2025年9月2日着工）で、取得・譲渡・出資などの取引の発表ではない。拾った語「接続権」「取得」は 2025-08-05 付の"
+  },
+  {
+   "cid": "C173",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250926-01）"
+  },
+  {
+   "cid": "C465",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20251027-01）"
+  },
+  {
+   "cid": "C175",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20250930-01）"
+  },
+  {
+   "cid": "C179",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝接続権・用地の取得",
+   "dest": "載せた（D-20251001-01）"
+  },
+  {
+   "cid": "C180",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R2（アグリゲーターへの出資）"
+  },
+  {
+   "cid": "C466",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝接続権・用地の取得",
+   "dest": "載せた（D-20251009-01）"
+  },
+  {
+   "cid": "C183",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "初出なら残す",
+   "dest": "外した: §2「初出なら残す」→ 初出でない（共同出資は 2023-08-01 の SMFL の発表・期間外＝R3）"
+  },
+  {
+   "cid": "C184",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R3・R7（C185 と同じ一次）"
+  },
+  {
+   "cid": "C185",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R3（出資〔合同会社姫路蓄電所の設立〕は 2023-08・期間外）"
+  },
+  {
+   "cid": "C186",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R11"
+  },
+  {
+   "cid": "C189",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R1（方針・予定。SPC は今後設立予定）"
+  },
+  {
+   "cid": "C467",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R4"
+  },
+  {
+   "cid": "C199",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝取得＋**譲渡の行を 1 つ足す**",
+   "dest": "載せた（D-20251027-01）"
+  },
+  {
+   "cid": "C468-b",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20251031-01）"
+  },
+  {
+   "cid": "C202",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "R1・R7 で当てる",
+   "dest": "保留: 「出資者（2 社）を正式決定」「正式契約締結（現状、未締結）」（R1）"
+  },
+  {
+   "cid": "C203",
+   "status": "fixed",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 外した理由は重複だけで、内容は「残すもの」に当たる。C202（pr-2025-11-05-co89612-159）と同じ発表で、news の重複記事（同じ so"
+  },
+  {
+   "cid": "C206",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝ファンドの組成（段階＝用地・接続権）",
+   "dest": "載せた（D-20251111-01）"
+  },
+  {
+   "cid": "C207",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 外した理由は重複だけで、内容は「残すもの」に当たる。C206（pr-2025-11-11-co136212-96）と同じ発表（PR TIMES 00000009"
+  },
+  {
+   "cid": "C208",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 外した理由は重複だけで、内容は「残すもの」に当たる。C206（pr-2025-11-11-co136212-96）と同じ発表（PR TIMES 00000009"
+  },
+  {
+   "cid": "C209",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 外した理由は重複だけで、内容は「残すもの」に当たる。C206（pr-2025-11-11-co136212-96）と同じ発表（PR TIMES 00000009"
+  },
+  {
+   "cid": "C210",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "R7 で整理",
+   "dest": "関連の発表（D-20251111-01）"
+  },
+  {
+   "cid": "C211",
+   "status": "dropped",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: C210・C206〜C209 と同じ発表（PR TIMES 000000096.000136212）の重複。microCMS の news を GET すると "
+  },
+  {
+   "cid": "C212",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R12"
+  },
+  {
+   "cid": "C216",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R1（法的拘束力の無い基本合意・合弁は未設立）"
+  },
+  {
+   "cid": "C217",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R13・R1（製品の購入の枠組み・個別契約は順次）"
+  },
+  {
+   "cid": "C218",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 再エネ併設型蓄電池の「設置の決定」の発表で、売買・出資の発表ではない。「共同出資」は発電所運営会社の構成を説明する語で、その出資は ※1 の 2022年10月2"
+  },
+  {
+   "cid": "C222",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "R1・R2 で当てる",
+   "dest": "外した: §2「R1・R2 で当てる」→ 共同開発の合意だけ（出資・SPC の持分の記載なし）"
+  },
+  {
+   "cid": "C227",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画（段階 → 不明）",
+   "dest": "載せた（D-20251125-01）"
+  },
+  {
+   "cid": "C228",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（用地の「販売を開始」・成約の記載なし）"
+  },
+  {
+   "cid": "C229",
+   "status": "fixed",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 商業運転開始の発表で、出資・参画の発表ではない。武雄蓄電所合同会社への出資・参画は 2024年7月11日の「佐賀県武雄市における系統用蓄電池事業への出資・参画に"
+  },
+  {
+   "cid": "C230",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 重複: C229（pr-2025-11-27-co85927-118）と同じ発表。news の DB に同じ PR TIMES 原文（000000118.000"
+  },
+  {
+   "cid": "C231",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 重複: C229（pr-2025-11-27-co85927-118）と C230（-2）と同じ発表。news の DB に同じ PR TIMES 原文（000"
+  },
+  {
+   "cid": "C232",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 系統用蓄電池の投資・売買のマッチングサイト「系統用蓄電池.com」を開設したという告知。当事者・場所・規模が特定できる個別の取得・譲渡・出資・成約の事例が書かれ"
+  },
+  {
+   "cid": "C234",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "R13 で当てる",
+   "dest": "外した: §2「R13 で当てる」→ 蓄電池の販売実績（完成した蓄電所の売買ではない）"
+  },
+  {
+   "cid": "C235",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 商業運転開始の告知。「出資」は開発主体の資本関係（「Brawnが100%出資する日本拠点の開発プラットフォームであるManoa Energy」）、「取得」は会社"
+  },
+  {
+   "cid": "C240",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20251201-01）"
+  },
+  {
+   "cid": "C241",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝ファンドの組成（段階 → 不明）",
+   "dest": "載せた（D-20251201-01）"
+  },
+  {
+   "cid": "C243",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20251210-01）"
+  },
+  {
+   "cid": "C244",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20251201-01）"
+  },
+  {
+   "cid": "C245",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R12"
+  },
+  {
+   "cid": "C248",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（「2案件の販売を開始」）"
+  },
+  {
+   "cid": "C249",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 「竣工後、お客様へ事業権利を譲渡しました」。所在地・面積・容量がクラダシの 2025-01-22 の取得（相手先は「一事業法人」で非開示）と一致するが、同じ取引だと一次で決まらない（R7）"
+  },
+  {
+   "cid": "C255",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20251222-01）"
+  },
+  {
+   "cid": "C257",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20251224-01）"
+  },
+  {
+   "cid": "C258",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: C257 と同じ発表（同じ一次 PR TIMES 000000102.000035396）の重複記事。当サイトの news に同じ発表が 2 本ある（pr-20"
+  },
+  {
+   "cid": "C259",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R9（別枠も作らない）"
+  },
+  {
+   "cid": "C270",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（パートナーシップの締結・出資・持分の語なし）"
+  },
+  {
+   "cid": "C275",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "→ 外す",
+   "dest": "外した: §2「→ 外す」R1（共同実証・「運営に参画」だけで出資の記載なし）。C278 とそろえる"
+  },
+  {
+   "cid": "C291-b",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（「取得を予定」）"
+  },
+  {
+   "cid": "C278",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R1"
+  },
+  {
+   "cid": "C279",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画",
+   "dest": "載せた（D-20260130-01）"
+  },
+  {
+   "cid": "C284",
+   "status": "fixed",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 蓄電池の設置（工事の進捗）の発表。取得・譲渡・出資・ファンドの組成の発表ではない。ファンドは「共同で組成したファンド」として、すでにあるものに触れているだけで、"
+  },
+  {
+   "cid": "C287",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 連結子会社が自社で開発する事業の実施を決めた発表（補助金の採択・2028年6月の事業開始が目標）。取得・譲渡・出資の相手がいない。題名の「参画」は事業に参入する"
+  },
+  {
+   "cid": "C288",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 包括的業務提携（共同開発の体制と役割分担）の発表。個別の蓄電所の取得・譲渡・出資・ファンドの組成ではない。場所の記載は無く、規模は開発目標だけ"
+  },
+  {
+   "cid": "C289",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 包括的業務提携（設備の供給・共同開発・O&M の提供）の発表。個別の蓄電所の取得・譲渡・出資・ファンドの組成ではない。場所の記載は無く、規模は開発目標だけ"
+  },
+  {
+   "cid": "C291-a",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 2026-01-28 の資本業務提携の再掲（RP 社 CEO の PR 動画を受け取って公表したもの）。新しい取引の発表ではないので、事例は一次の開示 C291"
+  },
+  {
+   "cid": "C293",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 「出資…を行うことを決議」「出資契約締結日（予定）」（R1）"
+  },
+  {
+   "cid": "C294",
+   "status": "fixed",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 取引の発表ではない（系統用蓄電所「でんきの駅富合」の完工の発表）。本文・会社概要の「出資」は合弁会社でんきの駅合同会社の出資者の説明で（題名に「出資」の語は無い"
+  },
+  {
+   "cid": "C303",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "R7・R8 で当てる",
+   "dest": "載せた（D-20260219-01）"
+  },
+  {
+   "cid": "C305",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す（出典を初出に）",
+   "dest": "載せた（D-20251121-01）"
+  },
+  {
+   "cid": "C306",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260224-01）"
+  },
+  {
+   "cid": "C307",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R1"
+  },
+  {
+   "cid": "C308",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R1（「特定の事業実施、土地取得、投資等を約束するものではありません」）"
+  },
+  {
+   "cid": "C316",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R11（貸付資金を募集するファンド）"
+  },
+  {
+   "cid": "C317",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260306-01）"
+  },
+  {
+   "cid": "C319",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 蓄電所の受電開始の発表（「共同出資」「私募ファンド「合同会社NCパイオニア」」は既往のファンドの説明）で、取得・譲渡・出資・ファンド組成そのものの発表でない"
+  },
+  {
+   "cid": "C321",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R15"
+  },
+  {
+   "cid": "C329",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 「開発に着手」。出資はスキーム図だけで、実行・締結の語が無い（R1）"
+  },
+  {
+   "cid": "C330",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 「共同出資による…事業の実施を決定しました」。共同出資の実行・締結の語が無い（R1）"
+  },
+  {
+   "cid": "C340",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 本連系・稼働開始のお知らせで、取得・譲渡・出資の発表ではない。「用地取得」は副題（用地取得から12カ月で稼働開始・積極的な用地取得も継続）と今後の方針（積極的な"
+  },
+  {
+   "cid": "C344",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "R15 で当てる",
+   "dest": "関連の発表（D-20251201-01）"
+  },
+  {
+   "cid": "C345",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝取得（段階 → 用地・接続権）",
+   "dest": "載せた（D-20260401-01）"
+  },
+  {
+   "cid": "C346",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "R15 で当てる",
+   "dest": "関連の発表（D-20251201-01）"
+  },
+  {
+   "cid": "C347",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す → 出資・参画",
+   "dest": "載せた（D-20260401-02）"
+  },
+  {
+   "cid": "C348",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1・R14（基本合意・区画の販売の成約なし）"
+  },
+  {
+   "cid": "C349",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "初出なら残す",
+   "dest": "外した: §2「初出なら残す」→ 初出でない（2025-06-20 の東京都の発表に投資家として森トラスト）"
+  },
+  {
+   "cid": "C350",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260402-01）"
+  },
+  {
+   "cid": "C351",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C352",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C353",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C354",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C355",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C356",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C357",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C358",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C359",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C360",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C361",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C362",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C363",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260402-01）"
+  },
+  {
+   "cid": "C364",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝ファンドの組成",
+   "dest": "載せた（D-20260402-02）"
+  },
+  {
+   "cid": "C365",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260403-01）"
+  },
+  {
+   "cid": "C366",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260403-01）"
+  },
+  {
+   "cid": "C367",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260403-01）"
+  },
+  {
+   "cid": "C380",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 最適運用サービス契約（東京ガスによる蓄電所の運用受託）の発表で、取得・譲渡・出資・ファンドの組成・成約の支援の発表ではない（「出資」は相手方の蓄電池事業者の出資"
+  },
+  {
+   "cid": "C381",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260417-01）"
+  },
+  {
+   "cid": "C383",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R13"
+  },
+  {
+   "cid": "C384",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 個別の取引の発表ではない。低圧系統用蓄電池（50kW未満）の導入支援サービス（電力会社への接続申請・蓄電池およびEMSの選定・アグリゲーター選定・市場運用設計）"
+  },
+  {
+   "cid": "C391",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画",
+   "dest": "載せた（D-20260423-01）"
+  },
+  {
+   "cid": "C393",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 当社組成の合同会社によるプロジェクトファイナンスの調達＝融資（R11）か、ファンドの組成（C241・C255 と同じ型）か"
+  },
+  {
+   "cid": "C396",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1・R14（区画の販売の「想定」・計画）"
+  },
+  {
+   "cid": "C397",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260430-01）"
+  },
+  {
+   "cid": "C405",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R9"
+  },
+  {
+   "cid": "C406",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260507-01）"
+  },
+  {
+   "cid": "C413",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 蓄電池の製品の売買（パワーエックスが系統用蓄電システム「Mega Power 2500」72台を受注した発表）。「出資」は、バンプージャパンが事業者（日光バッテ"
+  },
+  {
+   "cid": "C415",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 持株会社体制への移行と経営戦略の発表で、蓄電所の取引の発表ではない。「インフラファンド組成」は「組成を計画しています」「インフラファンド組成計画の始動」という計"
+  },
+  {
+   "cid": "C410",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R9"
+  },
+  {
+   "cid": "C411",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 系統連系の完了の発表で、取引の発表ではない。ファンドは「TAOKE初の系統用蓄電所ファンドの対象案件の一つ」「2026年2月末に募集を完了」という言及だけ（新し"
+  },
+  {
+   "cid": "C468",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260525-01）"
+  },
+  {
+   "cid": "C419-a",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260529-01）"
+  },
+  {
+   "cid": "C419-b",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "R1・R2 で当てる",
+   "dest": "載せた（D-20260529-01）"
+  },
+  {
+   "cid": "C420",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260529-02）"
+  },
+  {
+   "cid": "C421",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260601-01）"
+  },
+  {
+   "cid": "C423",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 受電開始の発表。ファンドは「共同で組成したファンドにて開発を進めている」と、すでにあるものとして触れているだけで、この発表自体は取得・出資・組成の発表ではない（"
+  },
+  {
+   "cid": "C422",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R1（業務提携・目標値）"
+  },
+  {
+   "cid": "C425",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260701-01）"
+  },
+  {
+   "cid": "C432",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝出資・参画（印なし）",
+   "dest": "載せた（D-20260708-01）"
+  },
+  {
+   "cid": "C427",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R1（「契約締結日：2026年７月17日（予定）」・締結・引渡しの完了の開示なし〔2026-11-10 時点〕）"
+  },
+  {
+   "cid": "C470",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R9"
+  },
+  {
+   "cid": "C426",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260529-03）"
+  },
+  {
+   "cid": "C429",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R9（低圧の協業。区画の販売の成約が一次に無い）"
+  },
+  {
+   "cid": "C430",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R10"
+  },
+  {
+   "cid": "C291-c",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260730-01）"
+  },
+  {
+   "cid": "C436",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R9（マッチングサービスの開始の予定）"
+  },
+  {
+   "cid": "C434",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 一次調整力市場への参入（運用開始）の発表。ファンド（SPC「PP6合同会社」・外部資金）は既存の事業形態の説明として出てくるだけで、ファンドの組成・取得・出資の"
+  },
+  {
+   "cid": "C435",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260812-01）"
+  },
+  {
+   "cid": "C451",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝取得（出典 → 2026-06-11 の適時開示）",
+   "dest": "載せた（D-20260611-01）"
+  },
+  {
+   "cid": "C440",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R15"
+  },
+  {
+   "cid": "C441",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "外した: R9（ポータルサイトの公開）"
+  },
+  {
+   "cid": "C442",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 事業提携の基本合意（一部の条項を除き法的拘束力なし）。具体的な案件・投資金額・ファンド組成額は未定で、商品の組成・募集の有無も「現時点で決定しておりません」と一"
+  },
+  {
+   "cid": "C443",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R13・R1（EPC の受注・「提供します」は予定）"
+  },
+  {
+   "cid": "C444",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R9"
+  },
+  {
+   "cid": "C445",
+   "status": "ok",
+   "researchKeep": false,
+   "s2": "",
+   "dest": "外した（研究便）: 個別の用地取得・取引の発表ではない（低圧〔出力50kW未満〕系統用蓄電池の用地紹介パートナーの募集告知）。拾った語「成約」は紹介料の支払時点（「成約時（負担金確"
+  },
+  {
+   "cid": "C446",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260828-01）"
+  },
+  {
+   "cid": "C449",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "残す＝取得",
+   "dest": "載せた（D-20260831-01）"
+  },
+  {
+   "cid": "C452",
+   "status": "uncertain",
+   "researchKeep": false,
+   "s2": "外す＝",
+   "dest": "外した: §2「外す＝」R4（完成した設備の引渡し。取得・購入・譲渡の語なし）"
+  },
+  {
+   "cid": "C453",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260910-01）"
+  },
+  {
+   "cid": "C460",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "保留: 「案件の成約を支援しました」。個別の成約はあるが「成約の支援」の種類は作らない（R9）。取得として載せるなら買い手・売り手の記載が無い"
+  },
+  {
+   "cid": "C455",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260928-01）"
+  },
+  {
+   "cid": "C456",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "関連の発表（D-20260306-01）"
+  },
+  {
+   "cid": "C457",
+   "status": "uncertain",
+   "researchKeep": true,
+   "s2": "R3・R7 で当てる",
+   "dest": "関連の発表（D-20260812-01）"
+  },
+  {
+   "cid": "C291-d",
+   "status": "fixed",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260930-01）"
+  },
+  {
+   "cid": "C458",
+   "status": "ok",
+   "researchKeep": true,
+   "s2": "",
+   "dest": "載せた（D-20260930-02）"
+  }
+ ],
+ "hold": {
+  "C029": "「今後4社は武雄蓄電所合同会社に出資を行ない」は予定。7/12 の追記の会社概要には出資者の欄がある＝出資の実行か予定か一次で決まらない（R1）",
+  "C098": "「EPC…サンヴィレッジ」「事業主として日本蓄電池株式会社が取得」＝完成した設備の引渡し（R4）か、完成した蓄電所の売買か一次で決まらない",
+  "C112": "「出資・参画を決定しました」＝決定。出資の実行・契約の締結の語が無い（R1）",
+  "C202": "「出資者（2 社）を正式決定」「正式契約締結（現状、未締結）」（R1）",
+  "C293": "「出資…を行うことを決議」「出資契約締結日（予定）」（R1）",
+  "C329": "「開発に着手」。出資はスキーム図だけで、実行・締結の語が無い（R1）",
+  "C330": "「共同出資による…事業の実施を決定しました」。共同出資の実行・締結の語が無い（R1）",
+  "C393": "当社組成の合同会社によるプロジェクトファイナンスの調達＝融資（R11）か、ファンドの組成（C241・C255 と同じ型）か",
+  "C460": "「案件の成約を支援しました」。個別の成約はあるが「成約の支援」の種類は作らない（R9）。取得として載せるなら買い手・売り手の記載が無い",
+  "C249": "「竣工後、お客様へ事業権利を譲渡しました」。所在地・面積・容量がクラダシの 2025-01-22 の取得（相手先は「一事業法人」で非開示）と一致するが、同じ取引だと一次で決まらない（R7）",
+  "C074": "「支援決定しましたので」＝決定。特別目的会社の株主の欄に脱炭素化支援機構があるが、出資の実行・契約の締結の語が無い（R1・C112 と同じ型）"
+ },
+ "items": [
+  {
+   "id": "D-20240112-01",
+   "announcedOn": "2024-01-12",
+   "publisher": "株式会社レノバ",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C001"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20240201-01",
+   "announcedOn": "2024-02-01",
+   "publisher": "スパークス・グループ株式会社",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C004"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20240226-01",
+   "announcedOn": "2024-02-26",
+   "publisher": "みずほリース株式会社・東北電力株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C009"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20240425-01",
+   "announcedOn": "2024-04-25",
+   "publisher": "東京都",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C020"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20240730-01",
+   "announcedOn": "2024-07-30",
+   "publisher": "株式会社IQg",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C032"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20240813-01",
+   "announcedOn": "2024-08-13",
+   "publisher": "株式会社fantasista",
+   "kinds": [
+    "site-rights"
+   ],
+   "researchCids": [
+    "C036"
+   ],
+   "areaBasis": "福井県越前市・大野市・坂井市＝北陸、兵庫県姫路市・相生市＝関西は、市区町村から当てた（一次に管内の記載なし・約款にも市区町村の境目の記載なし）"
+  },
+  {
+   "id": "D-20240910-01",
+   "announcedOn": "2024-09-10",
+   "publisher": "日本エネルギー総合システム株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C037"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20240920-01",
+   "announcedOn": "2024-09-20",
+   "publisher": "株式会社サンヴィレッジ",
+   "kinds": [
+    "transfer"
+   ],
+   "researchCids": [
+    "C040"
+   ],
+   "areaBasis": "一次「中部電力管内：三重県津市・愛知県知多郡・静岡県牧之原市」"
+  },
+  {
+   "id": "D-20241025-01",
+   "announcedOn": "2024-10-25",
+   "publisher": "日本ガイシ株式会社・株式会社Sustech",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C046"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20241219-01",
+   "announcedOn": "2024-12-19",
+   "publisher": "TECRA株式会社",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C058",
+    "C059"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250117-01",
+   "announcedOn": "2025-01-17",
+   "publisher": "株式会社fantasista",
+   "kinds": [
+    "transfer"
+   ],
+   "researchCids": [
+    "C064"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250122-01",
+   "announcedOn": "2025-01-22",
+   "publisher": "株式会社クラダシ",
+   "kinds": [
+    "acquisition"
+   ],
+   "researchCids": [
+    "C462"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250304-01",
+   "announcedOn": "2025-03-04",
+   "publisher": "大阪ガス株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C075",
+    "C115"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250317-01",
+   "announcedOn": "2025-03-17",
+   "publisher": "東京センチュリー株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C082",
+    "C083"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250408-01",
+   "announcedOn": "2025-04-08",
+   "publisher": "東京センチュリー株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C092"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250421-01",
+   "announcedOn": "2025-04-21",
+   "publisher": "株式会社ADワークスグループ",
+   "kinds": [
+    "site-rights"
+   ],
+   "researchCids": [
+    "C097"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250516-01",
+   "announcedOn": "2025-05-16",
+   "publisher": "株式会社fantasista",
+   "kinds": [
+    "transfer"
+   ],
+   "researchCids": [
+    "C102"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250606-01",
+   "announcedOn": "2025-06-06",
+   "publisher": "株式会社サンヴィレッジ",
+   "kinds": [
+    "transfer"
+   ],
+   "researchCids": [
+    "C107"
+   ],
+   "areaBasis": "一次「三重県松阪市（中部電力管内）」"
+  },
+  {
+   "id": "D-20250620-01",
+   "announcedOn": "2025-06-20",
+   "publisher": "東京都 産業労働局",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C469"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250729-01",
+   "announcedOn": "2025-07-29",
+   "publisher": "しろくま電力株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C140"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250805-01",
+   "announcedOn": "2025-08-05",
+   "publisher": "スターシーズ株式会社",
+   "kinds": [
+    "site-rights"
+   ],
+   "researchCids": [
+    "C143"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250829-01",
+   "announcedOn": "2025-08-29",
+   "publisher": "MIRARTHホールディングス株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C154",
+    "C155"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250901-01",
+   "announcedOn": "2025-09-01",
+   "publisher": "しろくま電力株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C156"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250926-01",
+   "announcedOn": "2025-09-26",
+   "publisher": "日本エネルギー総合システム株式会社",
+   "kinds": [
+    "transfer"
+   ],
+   "researchCids": [
+    "C173"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20250930-01",
+   "announcedOn": "2025-09-30",
+   "publisher": "三井住友ファイナンス＆リース株式会社・SMFLみらいパートナーズ株式会社・株式会社ウエストホールディングス・株式会社ウエストエネルギーソリューション",
+   "kinds": [
+    "acquisition"
+   ],
+   "researchCids": [
+    "C175"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251001-01",
+   "announcedOn": "2025-10-01",
+   "publisher": "AIストーム株式会社",
+   "kinds": [
+    "site-rights"
+   ],
+   "researchCids": [
+    "C179"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251009-01",
+   "announcedOn": "2025-10-09",
+   "publisher": "スターシーズ株式会社",
+   "kinds": [
+    "site-rights"
+   ],
+   "researchCids": [
+    "C466"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251027-01",
+   "announcedOn": "2025-10-27",
+   "publisher": "スターシーズ株式会社",
+   "kinds": [
+    "acquisition"
+   ],
+   "researchCids": [
+    "C199",
+    "C465"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251027-02",
+   "announcedOn": "2025-10-27",
+   "publisher": "スターシーズ株式会社",
+   "kinds": [
+    "transfer"
+   ],
+   "researchCids": [
+    "C199(⑤の売却)"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251031-01",
+   "announcedOn": "2025-10-31",
+   "publisher": "株式会社多摩川ホールディングス",
+   "kinds": [
+    "site-rights"
+   ],
+   "researchCids": [
+    "C468-b"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251031-02",
+   "announcedOn": "2025-10-31",
+   "publisher": "株式会社多摩川ホールディングス",
+   "kinds": [
+    "transfer"
+   ],
+   "researchCids": [
+    "C468-b(南九州市の譲渡)"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251111-01",
+   "announcedOn": "2025-11-11",
+   "publisher": "株式会社グローバルクラウドエステート",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C206",
+    "C210"
+   ],
+   "areaBasis": "三重県亀山市＝中部は、市区町村から当てた（一次に管内の記載なし）"
+  },
+  {
+   "id": "D-20251121-01",
+   "announcedOn": "2025-11-21",
+   "publisher": "大和エナジー・インフラ株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C305"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251125-01",
+   "announcedOn": "2025-11-25",
+   "publisher": "東京ガス株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C227"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251201-01",
+   "announcedOn": "2025-12-01",
+   "publisher": "株式会社リミックスポイント",
+   "kinds": [
+    "fund",
+    "investment"
+   ],
+   "researchCids": [
+    "C241",
+    "C240",
+    "C244",
+    "C344",
+    "C346"
+   ],
+   "areaBasis": "一次（2025年12月9日の ecoプロパティーズの発表）の表のエリアの欄（岐阜県揖斐郡揖斐川町＝中部）"
+  },
+  {
+   "id": "D-20251210-01",
+   "announcedOn": "2025-12-10",
+   "publisher": "TAOKE ENERGY株式会社",
+   "kinds": [
+    "transfer"
+   ],
+   "researchCids": [
+    "C243"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20251222-01",
+   "announcedOn": "2025-12-22",
+   "publisher": "株式会社ｅｃｏプロパティーズ",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C255"
+   ],
+   "areaBasis": "一次の表のエリアの欄（岐阜県羽鳥市・静岡県御前崎市・岐阜県高山市＝中部）"
+  },
+  {
+   "id": "D-20251224-01",
+   "announcedOn": "2025-12-24",
+   "publisher": "株式会社ビーロット",
+   "kinds": [
+    "site-rights"
+   ],
+   "researchCids": [
+    "C257"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260130-01",
+   "announcedOn": "2026-01-30",
+   "publisher": "ブルースカイエナジー株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C279"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260219-01",
+   "announcedOn": "2026-02-19",
+   "publisher": "ヤマワケエステート株式会社",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C303"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260224-01",
+   "announcedOn": "2026-02-24",
+   "publisher": "株式会社ライフワン",
+   "kinds": [
+    "site-rights"
+   ],
+   "researchCids": [
+    "C306"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260306-01",
+   "announcedOn": "2026-03-06",
+   "publisher": "TAOKE ENERGY株式会社",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C317",
+    "C456"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260401-01",
+   "announcedOn": "2026-04-01",
+   "publisher": "Neoen",
+   "kinds": [
+    "acquisition"
+   ],
+   "researchCids": [
+    "C345"
+   ],
+   "areaBasis": "一次「送配電事業者である関西電力株式会社との系統接続契約」"
+  },
+  {
+   "id": "D-20260401-02",
+   "announcedOn": "2026-04-01",
+   "publisher": "シェルパグループ合同会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C347"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260402-01",
+   "announcedOn": "2026-04-02",
+   "publisher": "株式会社グローバルクラウドエステート",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C350",
+    "C351",
+    "C352",
+    "C353",
+    "C354",
+    "C355",
+    "C356",
+    "C357",
+    "C358",
+    "C359",
+    "C360",
+    "C361",
+    "C362",
+    "C363"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260402-02",
+   "announcedOn": "2026-04-02",
+   "publisher": "ミラリタ株式会社",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C364"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260403-01",
+   "announcedOn": "2026-04-03",
+   "publisher": "日鉄興和不動産株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C365",
+    "C366",
+    "C367"
+   ],
+   "areaBasis": "一次の表のエリアの欄（三重県伊勢市＝中部）"
+  },
+  {
+   "id": "D-20260417-01",
+   "announcedOn": "2026-04-17",
+   "publisher": "三井住友トラスト・パナソニックファイナンス株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C381"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260423-01",
+   "announcedOn": "2026-04-23",
+   "publisher": "北陸電力株式会社・みずほリース株式会社・エムエル・パワー株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C391"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260430-01",
+   "announcedOn": "2026-04-30",
+   "publisher": "ミラリタ株式会社",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C397"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260507-01",
+   "announcedOn": "2026-05-07",
+   "publisher": "みずほリース株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C406"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260525-01",
+   "announcedOn": "2026-05-25",
+   "publisher": "株式会社多摩川ホールディングス",
+   "kinds": [
+    "acquisition"
+   ],
+   "researchCids": [
+    "C468"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260529-01",
+   "announcedOn": "2026-05-29",
+   "publisher": "RSアセットアドバイザーズ株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C419-b",
+    "C419-a"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260529-02",
+   "announcedOn": "2026-05-29",
+   "publisher": "Eku Energy Japan株式会社",
+   "kinds": [
+    "site-rights"
+   ],
+   "researchCids": [
+    "C420"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260529-03",
+   "announcedOn": "2026-05-29",
+   "publisher": "グローム・ホールディングス株式会社",
+   "kinds": [
+    "acquisition"
+   ],
+   "researchCids": [
+    "C426"
+   ],
+   "areaBasis": "一次（2026年7月21日の発表）「接続電力会社 関西電力送配電株式会社」"
+  },
+  {
+   "id": "D-20260601-01",
+   "announcedOn": "2026-06-01",
+   "publisher": "伊藤忠商事株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C421"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260611-01",
+   "announcedOn": "2026-06-11",
+   "publisher": "グローム・ホールディングス株式会社",
+   "kinds": [
+    "acquisition"
+   ],
+   "researchCids": [
+    "C451"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260701-01",
+   "announcedOn": "2026-07-01",
+   "publisher": "SBIマネープラザ株式会社",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C425"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260708-01",
+   "announcedOn": "2026-07-08",
+   "publisher": "Juniper Assets",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C432"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260730-01",
+   "announcedOn": "2026-07-30",
+   "publisher": "株式会社ジェイホールディングス",
+   "kinds": [
+    "acquisition"
+   ],
+   "researchCids": [
+    "C291-c"
+   ],
+   "areaBasis": "岐阜県高山市は中部・北陸・関西に分かれる県で、一次に管内の記載が無い"
+  },
+  {
+   "id": "D-20260812-01",
+   "announcedOn": "2026-08-12",
+   "publisher": "株式会社グリーンエナジー＆カンパニー",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C435",
+    "C457"
+   ],
+   "areaBasis": "静岡県は市区町村の記載が無く、富士川の東か西か一次で決まらない"
+  },
+  {
+   "id": "D-20260828-01",
+   "announcedOn": "2026-08-28",
+   "publisher": "株式会社IBeeT",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C446"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260831-01",
+   "announcedOn": "2026-08-31",
+   "publisher": "株式会社コレックホールディングス",
+   "kinds": [
+    "acquisition"
+   ],
+   "researchCids": [
+    "C449"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260910-01",
+   "announcedOn": "2026-09-10",
+   "publisher": "青木あすなろ建設株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C453"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260928-01",
+   "announcedOn": "2026-09-28",
+   "publisher": "TAOKE ENERGY株式会社",
+   "kinds": [
+    "fund"
+   ],
+   "researchCids": [
+    "C455"
+   ],
+   "areaBasis": "兵庫県神戸市＝関西は、市区町村から当てた（一次に管内の記載なし）"
+  },
+  {
+   "id": "D-20260930-01",
+   "announcedOn": "2026-09-30",
+   "publisher": "株式会社ジェイホールディングス",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C291-d"
+   ],
+   "areaBasis": ""
+  },
+  {
+   "id": "D-20260930-02",
+   "announcedOn": "2026-09-30",
+   "publisher": "オリックス株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "researchCids": [
+    "C458"
+   ],
+   "areaBasis": ""
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+[
+ {
+  "at_jst": "2026-11-10 21:17:23",
+  "url": "https://bess-net.jp/tracker/deals",
+  "status": "200",
+  "x-vercel-cache": "PRERENDER",
+  "age": "0",
+  "bytes": 592460,
+  "rows": 67,
+  "shown": "67 件のうち 67 件を表示",
+  "lead": true,
+  "note_count": 3,
+  "next_step": [
+   "introduce",
+   "sell"
+  ],
+  "brokerage": 0,
+  "title": "蓄電所の売買・出資 公表事例トラッカー（取得・譲渡・出資・ファンドの組成） | 蓄電所ネット"
+ },
+ {
+  "at_jst": "2026-11-10 21:17:24",
+  "url": "https://bess-net.jp/tracker/deals?v=20261110",
+  "status": "200",
+  "x-vercel-cache": "HIT",
+  "age": "0",
+  "bytes": 592460,
+  "rows": 67,
+  "shown": "67 件のうち 67 件を表示",
+  "lead": true,
+  "note_count": 3,
+  "next_step": [
+   "introduce",
+   "sell"
+  ],
+  "brokerage": 0,
+  "title": "蓄電所の売買・出資 公表事例トラッカー（取得・譲渡・出資・ファンドの組成） | 蓄電所ネット"
+ },
+ {
+  "at_jst": "2026-11-10 21:17:25",
+  "url": "https://bess-net.jp/tracker",
+  "status": "200",
+  "x-vercel-cache": "PRERENDER",
+  "age": "0",
+  "bytes": 50867,
+  "card": true,
+  "h2_deals": true,
+  "ld_deals": true
+ },
+ {
+  "at_jst": "2026-11-10 21:17:26",
+  "url": "https://bess-net.jp/milestones",
+  "status": "200",
+  "x-vercel-cache": "PRERENDER",
+  "age": "0",
+  "bytes": 201209,
+  "history": true
+ },
+ {
+  "at_jst": "2026-11-10 21:17:27",
+  "url": "https://bess-net.jp/sitemap.xml",
+  "status": "200",
+  "x-vercel-cache": "PRERENDER",
+  "age": "0",
+  "bytes": 2104298,
+  "loc_count": 12587,
+  "has_deals": true
+ }
+]
