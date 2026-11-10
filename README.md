@@ -53,9 +53,10 @@ public/               # 静的アセット（ロゴ、ファビコン）
 
 GitHub の main ブランチにpushすると、Vercelが自動デプロイします。
 
-- 毎朝の再ビルド: `.github/workflows/daily-rebuild.yml` が毎日 00:10 JST に Vercel の deploy hook（secret `VERCEL_DEPLOY_HOOK_URL`）を叩き、日付で変わる表示（補助金の「公募中・本日締切」など）を作り直す。手動実行は Actions の画面か `gh workflow run daily-rebuild.yml`。
+- 毎朝の再ビルド: `.github/workflows/daily-rebuild.yml` が毎日 00:10 JST に Vercel の deploy hook（secret `VERCEL_DEPLOY_HOOK_URL`）を叩き、日付で変わる表示（補助金の「公募中・本日締切」など）を作り直す。手動実行は Actions の画面か `gh workflow run daily-rebuild.yml`（00:10 と手動実行は必ず叩く）。
+- 再ビルドの予備: 00:10 の実行が始まらなかった日に備えて、02:10・04:10・06:10・09:10 JST にもう一度動く。ビルドの日付の印 `https://bess-net.jp/build-info.json`（`dateJst`・`builtAt`・ビルド時に決まる静的な JSON）を見て、印が今日ならやり直さない（何もせず成功）・前の日付なら hook を叩く。印が読めないときは 06:10 の回だけ叩く。判定だけ試すなら `gh workflow run daily-rebuild.yml -f check_only=true`（叩かない）。
 - IndexNow の後段: リポジトリ変数 `INDEXNOW_DAILY` を `on` にしたときだけ、01:00 JST に前日以降 lastmod の URL を `scripts/indexnow-submit.ts --since` で送る（既定は止めてある・変電所の詳細は送らない）。
-- 止め方: Actions の画面で daily-rebuild を Disable（両方止まる）。IndexNow だけ止めるなら `INDEXNOW_DAILY` を `on` 以外にする。
+- 止め方: Actions の画面で daily-rebuild を Disable（再ビルド・予備・IndexNow の後段がすべて止まる）。IndexNow だけ止めるなら `INDEXNOW_DAILY` を `on` 以外にする。
 
 ## ライセンス
 

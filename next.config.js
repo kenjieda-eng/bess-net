@@ -50,6 +50,11 @@ const nextConfig = {
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
         ],
       },
+      // ビルドの日付の印（毎朝の再ビルドの予備が読む・2026-11-10）は検索に出さない
+      {
+        source: '/build-info.json',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      },
     ];
   },
 };
