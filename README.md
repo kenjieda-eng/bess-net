@@ -53,8 +53,9 @@ public/               # 静的アセット（ロゴ、ファビコン）
 
 GitHub の main ブランチにpushすると、Vercelが自動デプロイします。
 
-- 毎朝の再ビルド: `.github/workflows/daily-rebuild.yml` が毎日 00:10 JST に Vercel の deploy hook（secret `VERCEL_DEPLOY_HOOK_URL`）を叩き、日付で変わる表示（補助金の「公募中・本日締切」など）を作り直す。手動実行は Actions の画面か `gh workflow run daily-rebuild.yml`（00:10 と手動実行は必ず叩く）。
-- 再ビルドの予備: 00:10 の実行が始まらなかった日に備えて、02:10・04:10・06:10・09:10 JST にもう一度動く。ビルドの日付の印 `https://bess-net.jp/build-info.json`（`dateJst`・`builtAt`・ビルド時に決まる静的な JSON）を見て、印が今日ならやり直さない（何もせず成功）・前の日付なら hook を叩く。印が読めないときは 06:10 の回だけ叩く。判定だけ試すなら `gh workflow run daily-rebuild.yml -f check_only=true`（叩かない）。
+- 毎朝の再ビルド: `.github/workflows/daily-rebuild.yml` が毎日 00:10 JST に Vercel の deploy hook（secret `VERCEL_DEPLOY_HOOK_URL`）を叩き、ビルドの時点で固まるもの（静的なページのお知らせバナーの HTML・ビルド時の生成物・JEPX のページなど）を作り直す。GitHub の定時の実行は毎日 数時間 遅れて始まる（00:10 の分の開始は 04:23〜08:45 JST だった・2026-11-05〜11-10）。手動実行は Actions の画面か `gh workflow run daily-rebuild.yml`（手動実行は印を見ずに必ず叩く）。
+- 補助金の一覧（`/subsidies`）は再ビルドに頼らない: `revalidate` 600（10 分）で自分で作り直す（ビルド時の `subsidies.json` と今日の日付だけで作る・実行時の microCMS 0）。日付が変わって 10 分ほどで「本日締切」「受付終了」が今日の表示になる。間隔が 600 であることと、実行時の読み込み（microCMS・`fetch(`）が無いことは `verify:jst-today` が見る。
+- 印を見て決める（00:10 と予備）: 00:10 の回と、予備の 02:10・04:10・06:10・09:10 JST の回は、ビルドの日付の印 `https://bess-net.jp/build-info.json`（`dateJst`・`builtAt`・ビルド時に決まる静的な JSON）を見て、印が今日ならやり直さない（何もせず成功）・前の日付なら hook を叩く。印が読めないときは 06:10 の回だけ叩く。遅れた 00:10 の回が、先に作り直した日に 2 本目のビルドを走らせない。判定だけ試すなら `gh workflow run daily-rebuild.yml -f check_only=true`（叩かない）。
 - IndexNow の後段: リポジトリ変数 `INDEXNOW_DAILY` を `on` にしたときだけ、01:00 JST に前日以降 lastmod の URL を `scripts/indexnow-submit.ts --since` で送る（既定は止めてある・変電所の詳細は送らない）。
 - 止め方: Actions の画面で daily-rebuild を Disable（再ビルド・予備・IndexNow の後段がすべて止まる）。IndexNow だけ止めるなら `INDEXNOW_DAILY` を `on` 以外にする。
 

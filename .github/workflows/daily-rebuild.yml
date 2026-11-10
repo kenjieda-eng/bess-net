@@ -1,25 +1,28 @@
-# 毎朝の再ビルド（毎朝の再ビルド便・2026-11-04／予備便・2026-11-10）
+# 毎朝の再ビルド（毎朝の再ビルド便・2026-11-04／予備便・2026-11-10／補助金の一覧の作り直しの間隔便・2026-11-10）
 #
-# 日付で表示が変わるのにビルド／ISR の時点で固まるページ（/subsidies の「公募中・本日締切」は revalidate 1 日、
-# 静的ページのお知らせバナーの HTML など）を、毎朝 00:10 JST に Vercel の deploy hook で作り直す。
-# microCMS には触らない（ビルドの prebuild が通常の push と同じだけ読むだけ）。
+# 日付で表示が変わるのにビルドの時点で固まるもの（静的ページのお知らせバナーの HTML・ビルド時の生成物・JEPX のページなど）を、
+# 毎朝 Vercel の deploy hook で作り直す。microCMS には触らない（ビルドの prebuild が通常の push と同じだけ読むだけ）。
+# 補助金の一覧（/subsidies）は 2026-11-10 から revalidate 10 分で自分で作り直すので、この再ビルドには頼らない。
 #
-# - 再ビルド: 毎日 00:10 JST（UTC 15:10）と手動実行（workflow_dispatch）。どちらも印を見ずに必ず hook を叩く。
-#   secret VERCEL_DEPLOY_HOOK_URL が無いときは何もせず成功で終わる。
-# - 予備: 02:10・04:10・06:10・09:10 JST（UTC 17:10・19:10・21:10・00:10）。00:10 の実行が始まらなかった日に備える
-#   （2026-11-10 に実例: 00:10 の分が始まらず、/subsidies が約 8 時間 前日の見え方だった）。
+# ★GitHub の定時の実行は、毎日 数時間 遅れて始まる（00:10 の分の開始は 11/5〜11/9 が 04:23〜06:27 JST・11/10 は 08:45 JST）。
+#   時刻を早めても「今日」が前の日になるだけなので、時刻はそのままにしている（2026-11-10 ユウ裁定）。
+#
+# - 定時: 00:10・02:10・04:10・06:10・09:10 JST（UTC 15:10・17:10・19:10・21:10・00:10）。5 回とも同じ決め方:
 #   本番のビルドの日付の印 https://bess-net.jp/build-info.json（src/app/build-info.json/route.ts・ビルド時に決まる静的な JSON）の
 #   dateJst を見て決める。
 #     dateJst が今日（JST）→ 今日の日付でビルド済みなので何もしない（成功で終わる）。
 #     dateJst が前の日付 → hook を叩く。
 #     印が読めない（HTTP が 200 でない・JSON でない・dateJst が無い・時間切れ）→ 06:10 の回だけ叩く
 #     （印がずっと読めなくても、余計なビルドは 1 日 1 本まで）。
-#   00:10 の実行が大きく遅れて予備と重なると、ビルドが 2 本走ることがある（害は無い）。
-# - 手動実行の入力 check_only（既定 false）: true なら予備と同じ判定の 1 行を出すだけで叩かない（予備の経路の試し用）。
+#   00:10 の回も印を見る（2026-11-10 から）: 遅れた 00:10 の回が、先に始まった予備や手動実行のあとで 2 本目のビルドを走らせないため
+#   （11/10 の朝は手動 08:00 のあとに遅れた 00:10 の回 08:45 が来て 2 本走った）。
+#   2 つの回が 10 分ほどの間に続けて始まると、どちらも前の日付の印を読んで 2 本走ることがある（害は無い）。
+# - 手動実行（workflow_dispatch）: 印を見ずに必ず hook を叩く。secret VERCEL_DEPLOY_HOOK_URL が無いときは何もせず成功で終わる。
+# - 手動実行の入力 check_only（既定 false）: true なら定時と同じ判定の 1 行を出すだけで叩かない（定時の経路の試し用）。
 # - IndexNow の後段: 毎日 01:00 JST（UTC 16:00）。リポジトリ変数 INDEXNOW_DAILY が "on" のときだけ動く（既定は止めておく）。
 #   本番の sitemap の lastmod が前日 00:00 JST 以降の URL を scripts/indexnow-submit.ts --since で送る。
 #   生成時刻の lastmod と変電所の詳細は道具の側で外れる。送る URL が 0 件なら送らない。
-# - Actions の一覧には 1 日に 6 本並ぶ（再ビルド 1・予備 4・IndexNow 1）。予備で何もしなかった回も「成功」になる。
+# - Actions の一覧には 1 日に 6 本並ぶ（再ビルド 1・予備 4・IndexNow 1）。印を見て何もしなかった回も「成功」になる。
 # - 止め方: Actions の画面でこのワークフローを Disable する（再ビルドも予備も IndexNow も止まる）。IndexNow だけ止めるときは INDEXNOW_DAILY を on 以外にする。
 # ★deploy hook の URL は秘密（.env と同じ扱い）。ログに出さない（set -x を使わない・curl の応答は state だけ表示する）。
 # ★run の中に ${{ }} を書かない（値は env で渡す）。判定の手順はローカルで env を差し替えて試せる形にしてある。
@@ -28,7 +31,7 @@ name: daily-rebuild
 
 on:
   schedule:
-    - cron: '10 15 * * *' # 00:10 JST 再ビルド（必ず叩く）
+    - cron: '10 15 * * *' # 00:10 JST 再ビルド（印を見て決める・2026-11-10 から）
     - cron: '10 17 * * *' # 02:10 JST 予備 1（印を見て決める）
     - cron: '10 19 * * *' # 04:10 JST 予備 2（印を見て決める）
     - cron: '10 21 * * *' # 06:10 JST 予備 3（印を見て決める・印が読めないときは叩く）
@@ -54,7 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: 叩くかを決める（予備の時刻と check_only はビルドの日付の印を見る）
+      - name: 叩くかを決める（定時と check_only はビルドの日付の印を見る・手動は必ず叩く）
         id: decide
         shell: bash
         env:
@@ -64,18 +67,14 @@ jobs:
           MARKER_URL: https://bess-net.jp/build-info.json
         run: |
           today=$(TZ=Asia/Tokyo date +%F)
-          # 00:10 の定時と手動実行（check_only でない）は、印を見ずに必ず叩く（今までどおり）
-          if [ "$EVENT" = "schedule" ] && [ "$SCHEDULE" = "10 15 * * *" ]; then
-            echo "判定: 今日 $today・00:10 の定時なので印を見ずに叩く"
-            echo "fire=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
+          # 手動実行（check_only でない）は、印を見ずに必ず叩く（今までどおり）。定時は 00:10 の回も印を見る（2026-11-10 から）
           if [ "$EVENT" = "workflow_dispatch" ] && [ "$CHECK_ONLY" != "true" ]; then
             echo "判定: 今日 $today・手動実行なので印を見ずに叩く"
             echo "fire=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           case "$SCHEDULE" in
+            '10 15 * * *') slot='00:10' ;;
             '10 17 * * *') slot='02:10' ;;
             '10 19 * * *') slot='04:10' ;;
             '10 21 * * *') slot='06:10' ;;

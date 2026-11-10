@@ -18,9 +18,14 @@ import {
 /** 一覧のグループ見出しに使う状態。期日なしの紹介ページは状態を持たないので「その他」に入れる（「公募中」に数えない） */
 const listStatus = (item: PrecomputedSubsidy, todayISO: string) => displaySubsidyStatus(item, todayISO) || 'その他';
 
-// S1(2026-08-08): force-static → 日次ISR。データは bundled JSON のまま（runtime microCMS 0 維持）だが、
-// 「締切まであと◯日」と deriveStatus（L-EIC-027）が毎日自己更新される（従来はビルド時に凍結）。
-export const revalidate = 86400;
+// S1(2026-08-08): force-static → ISR。データは bundled JSON のまま（runtime microCMS 0 維持）だが、
+// 「締切まであと◯日」と deriveStatus（L-EIC-027）が日付どおりに自己更新される（従来はビルド時に凍結）。
+// 2026-11-10（補助金の一覧の作り直しの間隔便）: 1 日（86400）→ 10 分（600）。1 日だと作り直しの起点が 0 時ではなく
+// 前に作った時刻になり、毎朝の再ビルド（GitHub の定時・毎日 数時間 遅れて始まる）が来るまで前日の見え方が残った。
+// 10 分なら日付が変わって 10 分ほどで今日の表示になる（詳細ページ /subsidies/[slug] と同じ間隔）。
+// 作り直しで読むのは bundled JSON と getTodayJST() だけ＝実行時の microCMS 0 のまま。実行時の読み込み（microCMS・fetch）を
+// 足すと verify:jst-today が落ちる（10 分ごとに外部を読みに行く形にしない）。
+export const revalidate = 600;
 
 export const metadata: Metadata = {
   title: '蓄電池 補助金カレンダー',
@@ -81,7 +86,7 @@ export default function SubsidiesListPage() {
   const todayISO = getTodayJST();
 
   // 絞り込みバー用の enriched props（deriveStatus・カウントダウンはサーバ側で計算＝
-  // revalidate=86400 の日次自己更新がそのままクライアント表示に反映される）
+  // revalidate=600 の自己更新がそのままクライアント表示に反映される）
   const browserItems: BrowserItem[] = ALL.map((item) => {
     const prefs = item.applicable_prefs || [];
     const isNationwide = prefs.length >= 47;
@@ -172,7 +177,7 @@ export default function SubsidiesListPage() {
           )}
 
           {/* 絞り込みバー＋一覧（クライアント）: 全件をDOMに出し、除外行は hidden。
-              deriveStatus/カウントダウンはサーバ計算値を props で受け渡し＝日次ISRの自己更新を維持 */}
+              deriveStatus/カウントダウンはサーバ計算値を props で受け渡し＝ISR（10 分）の自己更新を維持 */}
           <SubsidiesBrowser items={browserItems} />
 
           <section style={{

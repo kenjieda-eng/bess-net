@@ -4,7 +4,7 @@
 // - OperatorBrowser のUIパターンを流用（#92 回避: useSearchParams を使わず
 //   window.location + history.replaceState で URL 状態を扱う。初期 state はデフォルト＝SSR は全件描画）
 // - deriveStatus / カウントダウンはサーバ側で計算済みの値を props で受け取る
-//   → ハブの revalidate=86400（日次自己更新）を壊さない。フィルタはクライアント完結。
+//   → ハブの revalidate=600（10 分ごとの自己更新・2026-11-10 に 86400 から短縮）を壊さない。フィルタはクライアント完結。
 // - 全件を DOM に出し、絞り込みで外れた行は hidden 属性で隠す（#107: 表示切替であってDOM生成/破棄ではない）
 
 import { useState, useEffect, useMemo } from 'react';
@@ -19,7 +19,7 @@ export type BrowserItem = {
   upperLimit: string;
   applicationStart: string;
   deadlineRaw: string;
-  /** サーバ側 deriveStatus 結果（日次 ISR で更新） */
+  /** サーバ側 deriveStatus 結果（ISR 10 分で更新） */
   status: string;
   /** サーバ側計算のカウントダウン（「あと◯日」等・null は非表示） */
   countdown: string | null;

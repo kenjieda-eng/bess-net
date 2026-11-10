@@ -5,7 +5,7 @@
  *   - Ck2g §3（2026-10-06）: データ源を precompute 済みの subsidies.json に変更（runtime microCMS 0・鉄則 #3）。
  *     旧実装は getAllSubsidies の runtime 取得で生 status をそのままタグに出しており、締切超過・公募予定・期日なしの
  *     紹介ページにも「公募中」が付いていた（L-EIC-027）。タグは一覧・詳細と同じ displaySubsidyStatus で導出する（#121）。
- *   - ISR 1時間は残す（導出の today が進むため・/subsidies の日次 ISR と同じ考え方）
+ *   - ISR 1時間は残す（導出の today が進むため・/subsidies の ISR〔2026-11-10 から 10 分〕と同じ考え方）
  */
 
 import Link from 'next/link';

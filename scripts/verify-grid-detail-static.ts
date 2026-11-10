@@ -22,67 +22,18 @@ import { GRID_DETAIL_FIELDS } from '../src/lib/grid-detail-fields';
 import { normalizeSubstationPlace } from '../src/lib/grid-prefecture';
 import { FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
 import { AREA_META } from '../src/app/grid/[slug]/area-meta';
+import { walkValueImports } from './lib/import-graph';
 export {};
 
 const ROOT = process.cwd();
 const problems: string[] = [];
 
-// ── 1. 読み込み先をたどる ─────────────────────────────────────────
+// ── 1. 読み込み先をたどる（scripts/lib/import-graph.ts・2026-11-10 に切り出した・挙動は不変）───────
 const START = path.join(ROOT, 'src', 'app', 'grid', '[slug]', 'page.tsx');
 const STARTS = [START, path.join(ROOT, 'src', 'app', 'layout.tsx'), path.join(ROOT, 'src', 'app', 'not-found.tsx')].filter((f) => fs.existsSync(f));
-const FORBIDDEN_FILE = path.join(ROOT, 'src', 'lib', 'microcms.ts');
-const resolveLocal = (from: string, spec: string): string | null => {
-  let base: string;
-  if (spec.startsWith('@/')) base = path.join(ROOT, 'src', spec.slice(2));
-  else if (spec.startsWith('.')) base = path.resolve(path.dirname(from), spec);
-  else return null;
-  for (const ext of ['', '.ts', '.tsx', '/index.ts', '/index.tsx']) {
-    const f = base + ext;
-    if (fs.existsSync(f) && fs.statSync(f).isFile()) return f;
-  }
-  return null;
-};
-/** import 句が型だけか（import type X／import { type A, type B }） */
-const isTypeOnly = (clause: string): boolean => {
-  const c = clause.trim();
-  if (/^type\s/.test(c)) return true;
-  const m = /^\{([\s\S]*)\}$/.exec(c);
-  return !!m && m[1].split(',').map((s) => s.trim()).filter(Boolean).every((s) => /^type\s/.test(s));
-};
-const seen = new Set<string>();
-const parent = new Map<string, string>();
-const queue = [...STARTS];
-while (queue.length) {
-  const file = queue.shift()!;
-  if (seen.has(file)) continue;
-  seen.add(file);
-  if (!/\.(ts|tsx)$/.test(file)) continue;
-  const src = fs.readFileSync(file, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
-  const specs: Array<{ spec: string; typeOnly: boolean }> = [];
-  // 句の形を限る（`export type X = …` のような from の無い文から次の from まで伸びて、値の import を「型だけ」と見誤らない）
-  const CLAUSE = String.raw`(?:type\s+)?(?:[\w$]+\s*,\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+|\*|[\w$]+)`;
-  for (const m of src.matchAll(new RegExp(String.raw`^\s*(?:import|export)\s+(${CLAUSE})\s*from\s+['"]([^'"]+)['"]`, 'gm'))) {
-    specs.push({ spec: m[2], typeOnly: isTypeOnly(m[1]) });
-  }
-  for (const m of src.matchAll(/\brequire\(\s*['"]([^'"]+)['"]\s*\)/g)) specs.push({ spec: m[1], typeOnly: false });
-  for (const m of src.matchAll(/^\s*import\s+['"]([^'"]+)['"]/gm)) specs.push({ spec: m[1], typeOnly: false });
-  for (const m of src.matchAll(/import\(\s*['"`]([^'"`$]+)/g)) specs.push({ spec: m[1], typeOnly: false });
-  for (const { spec, typeOnly } of specs) {
-    if (typeOnly) continue;
-    if (spec === 'microcms-js-sdk') problems.push(`${path.relative(ROOT, file)} が microcms-js-sdk を import している`);
-    const target = resolveLocal(file, spec);
-    if (!target) continue;
-    if (target === FORBIDDEN_FILE) {
-      const via: string[] = [path.relative(ROOT, file)];
-      let cur = file;
-      while (parent.has(cur)) { cur = parent.get(cur)!; via.unshift(path.relative(ROOT, cur)); }
-      problems.push(`microcms.ts を値として import している: ${via.join(' → ')} → src/lib/microcms.ts`);
-      continue;
-    }
-    if (!seen.has(target) && !parent.has(target) && !STARTS.includes(target)) parent.set(target, file);
-    queue.push(target);
-  }
-}
+const walk = walkValueImports(ROOT, STARTS);
+const seen = walk.seen;
+problems.push(...walk.problems);
 
 // ── 2〜6. データ ───────────────────────────────────────────────
 type Rec = Record<string, unknown> & { slug: string; area?: string[]; operator?: string[]; prefecture?: string | null };
