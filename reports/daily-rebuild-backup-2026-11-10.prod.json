@@ -1,0 +1,58 @@
+{
+ "url": "https://bess-net.jp/build-info.json",
+ "reads": [
+  {
+   "when": "10:17:52 push deploy 後",
+   "status": 200,
+   "x_vercel_cache": "PRERENDER",
+   "age": "0",
+   "x_robots_tag": "noindex",
+   "content_type": "application/json",
+   "body": {
+    "dateJst": "2026-11-10",
+    "builtAt": "2026-11-10T10:13:19+09:00"
+   }
+  },
+  {
+   "when": "10:17:56 push deploy 後",
+   "status": 200,
+   "x_vercel_cache": "HIT",
+   "age": "3",
+   "x_robots_tag": "noindex",
+   "content_type": "application/json",
+   "body": {
+    "dateJst": "2026-11-10",
+    "builtAt": "2026-11-10T10:13:19+09:00"
+   }
+  },
+  {
+   "when": "15:18:43 手動実行 (b) の deploy 後",
+   "status": 200,
+   "x_vercel_cache": "HIT",
+   "age": "389",
+   "x_robots_tag": "noindex",
+   "content_type": "application/json",
+   "body": {
+    "dateJst": "2026-11-10",
+    "builtAt": "2026-11-10T10:23:52+09:00"
+   }
+  },
+  {
+   "when": "15:18:46 手動実行 (b) の deploy 後",
+   "status": 200,
+   "x_vercel_cache": "HIT",
+   "age": "392",
+   "x_robots_tag": "noindex",
+   "content_type": "application/json",
+   "body": {
+    "dateJst": "2026-11-10",
+    "builtAt": "2026-11-10T10:23:52+09:00"
+   }
+  }
+ ],
+ "sitemap": {
+  "status": 200,
+  "urls": 12586,
+  "build_info_hits": 0
+ }
+}
