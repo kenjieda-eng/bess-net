@@ -1,0 +1,34 @@
+# 判定の試し（補助金の一覧の作り直しの間隔便・2026-11-10 19:56 JST・YAML から decide の手順を取り出して流した・hook の手順は流していない）
+crons ['10 15 * * *', '10 17 * * *', '10 19 * * *', '10 21 * * *', '10 0 * * *', '0 16 * * *']
+rebuild if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && github.event.schedule != '0 16 * * *')
+steps [('叩くかを決める（定時と check_only はビルドの日付の印を見る・手動は必ず叩く）', 'decide', None, 'bash'), ('Vercel の deploy hook に POST する', None, "steps.decide.outputs.fire == 'true'", None)]
+decide env {'EVENT': '${{ github.event_name }}', 'SCHEDULE': '${{ github.event.schedule }}', 'CHECK_ONLY': '${{ inputs.check_only }}', 'MARKER_URL': 'https://bess-net.jp/build-info.json'}
+indexnow if: github.event.schedule == '0 16 * * *' && vars.INDEXNOW_DAILY == 'on'
+concurrency {'group': "daily-rebuild-${{ github.event.schedule || 'manual' }}", 'cancel-in-progress': False}
+
+== 予備便の 13 通り（9 だけ結果が変わる見込み: 叩く → 叩かない）==
+[1 印が今日・02:10] exit 0 | 判定: 今日 2026-11-10・枠 02:10・印 HTTP 200・dateJst 2026-11-10 → 今日の日付でビルド済み。何もしない（hook: 叩かない） | fire=false
+[2 印が昨日・02:10] exit 0 | 判定: 今日 2026-11-10・枠 02:10・印 HTTP 200・dateJst 2026-11-09 → 前の日付のビルドなので叩く（hook: 叩く） | fire=true
+[3 壊れた JSON・02:10] exit 0 | 判定: 今日 2026-11-10・枠 02:10・印 HTTP 200・dateJst （読めない） → 印が読めないので、この回は何もしない（hook: 叩かない） | fire=false
+[4 壊れた JSON・06:10] exit 0 | 判定: 今日 2026-11-10・枠 06:10・印 HTTP 200・dateJst （読めない） → 印が読めないので、06:10 の回として叩く（hook: 叩く） | fire=true
+[5 印が昨日・09:10] exit 0 | 判定: 今日 2026-11-10・枠 09:10・印 HTTP 200・dateJst 2026-11-09 → 前の日付のビルドなので叩く（hook: 叩く） | fire=true
+[6 HTTP 404・04:10] exit 0 | 判定: 今日 2026-11-10・枠 04:10・印 HTTP 404・dateJst （読めない） → 印が読めないので、この回は何もしない（hook: 叩かない） | fire=false
+[7 dateJst 無し・06:10] exit 0 | 判定: 今日 2026-11-10・枠 06:10・印 HTTP 200・dateJst （読めない） → 印が読めないので、06:10 の回として叩く（hook: 叩く） | fire=true
+[8 つながらない・02:10] exit 0 | 判定: 今日 2026-11-10・枠 02:10・印 HTTP 000・dateJst （読めない） → 印が読めないので、この回は何もしない（hook: 叩かない） | fire=false
+[9 00:10 の定時（印は今日）] exit 0 | 判定: 今日 2026-11-10・枠 00:10・印 HTTP 200・dateJst 2026-11-10 → 今日の日付でビルド済み。何もしない（hook: 叩かない） | fire=false
+[10 手動・入力なし] exit 0 | 判定: 今日 2026-11-10・手動実行なので印を見ずに叩く | fire=true
+[11 手動・check_only・印が今日] exit 0 | 判定: 今日 2026-11-10・枠 手動（check_only）・印 HTTP 200・dateJst 2026-11-10 → 今日の日付でビルド済み。何もしない（hook: 叩かない） | fire=false
+[12 手動・check_only・印が昨日] exit 0 | 判定: 今日 2026-11-10・枠 手動（check_only）・印 HTTP 200・dateJst 2026-11-09 → 前の日付のビルドなので叩く（check_only なので叩かない）（hook: 叩かない） | fire=false
+[13 手動・check_only・壊れた JSON] exit 0 | 判定: 今日 2026-11-10・枠 手動（check_only）・印 HTTP 200・dateJst （読めない） → 印が読めないので、この回は何もしない（hook: 叩かない） | fire=false
+== 00:10 の回の追加（便の 3 通り＋読めない形 2 つ）==
+[14 00:10・印が昨日] exit 0 | 判定: 今日 2026-11-10・枠 00:10・印 HTTP 200・dateJst 2026-11-09 → 前の日付のビルドなので叩く（hook: 叩く） | fire=true
+[15 00:10・壊れた JSON（読めない）] exit 0 | 判定: 今日 2026-11-10・枠 00:10・印 HTTP 200・dateJst （読めない） → 印が読めないので、この回は何もしない（hook: 叩かない） | fire=false
+[16 00:10・HTTP 404（読めない）] exit 0 | 判定: 今日 2026-11-10・枠 00:10・印 HTTP 404・dateJst （読めない） → 印が読めないので、この回は何もしない（hook: 叩かない） | fire=false
+[17 00:10・つながらない（読めない）] exit 0 | 判定: 今日 2026-11-10・枠 00:10・印 HTTP 000・dateJst （読めない） → 印が読めないので、この回は何もしない（hook: 叩かない） | fire=false
+[18 00:10・dateJst 無し（読めない）] exit 0 | 判定: 今日 2026-11-10・枠 00:10・印 HTTP 200・dateJst （読めない） → 印が読めないので、この回は何もしない（hook: 叩かない） | fire=false
+
+== 予備便の 13 通りとの差（diff）==
+9c9
+< [9 00:10 の定時（印は今日）] exit 0 | 判定: 今日 2026-11-10・00:10 の定時なので印を見ずに叩く | fire=true
+---
+> [9 00:10 の定時（印は今日）] exit 0 | 判定: 今日 2026-11-10・枠 00:10・印 HTTP 200・dateJst 2026-11-10 → 今日の日付でビルド済み。何もしない（hook: 叩かない） | fire=false

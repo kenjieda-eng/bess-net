@@ -1,0 +1,262 @@
+{
+ "_comment": "補助金の一覧の作り直しの間隔便（2026-11-10）の本番の記録。素の URL（クエリ・キャッシュ回避ヘッダ無し）。headings は <!-- --> と script を外した初期 DOM の見出しの件数。",
+ "deploy": {
+  "commit": "dd1b5fc",
+  "deployment": "bess-iow869t2m-kenjieda-engs-projects.vercel.app",
+  "created_jst": "2026-11-10 20:04:57",
+  "status_success_seen_jst": "2026-11-10 20:12:14",
+  "build_info": {
+   "dateJst": "2026-11-10",
+   "builtAt": "2026-11-10T20:07:44+09:00"
+  }
+ },
+ "expected_counts_2026-11-10": {
+  "公募中": 27,
+  "採択結果公表": 16,
+  "受付終了": 32,
+  "その他": 5,
+  "total": 80
+ },
+ "reads": {
+  "before": [
+   {
+    "at_jst": "2026-11-10 20:01:53",
+    "url": "https://bess-net.jp/subsidies",
+    "status": "200",
+    "x-vercel-cache": "PRERENDER",
+    "age": "0",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "x-vercel-id": "hnd1::c7fvn-1794308513461-70a26c315030",
+    "bytes": 165212,
+    "headings": {
+     "公募中": 27,
+     "採択結果公表": 16,
+     "受付終了": 32,
+     "その他": 5
+    },
+    "latestUpdated": "2026-11-09",
+    "open_shelf_count": 27,
+    "open_shelf_first3": [
+     "令和8年度 福島県 地域活用型再生可能エネルギー導入支援事業（締切 2026-11-16・あと6日）",
+     "令和8年度 福島県 地産地消型再生可能エネルギー発電設備導入促進事業（締切 2026-11-20・あと10日）",
+     "福岡県中小企業脱炭素化緊急支援事業補助金（締切 2026-11-27・あと17日）"
+    ],
+    "countdowns": [
+     "あと10日",
+     "あと120日",
+     "あと17日",
+     "あと20日",
+     "あと24日",
+     "あと31日",
+     "あと45日",
+     "あと48日",
+     "あと63日",
+     "あと6日",
+     "あと77日",
+     "あと80日"
+    ],
+    "has_honjitsu": false
+   }
+  ],
+  "after1": [
+   {
+    "at_jst": "2026-11-10 20:12:16",
+    "url": "https://bess-net.jp/subsidies",
+    "status": "200",
+    "x-vercel-cache": "PRERENDER",
+    "age": "0",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "x-vercel-id": "hnd1::f992b-1794309136440-167c94b4579c",
+    "bytes": 165212,
+    "headings": {
+     "公募中": 27,
+     "採択結果公表": 16,
+     "受付終了": 32,
+     "その他": 5
+    },
+    "latestUpdated": "2026-11-09",
+    "open_shelf_count": 27,
+    "open_shelf_first3": [
+     "令和8年度 福島県 地域活用型再生可能エネルギー導入支援事業（締切 2026-11-16・あと6日）",
+     "令和8年度 福島県 地産地消型再生可能エネルギー発電設備導入促進事業（締切 2026-11-20・あと10日）",
+     "福岡県中小企業脱炭素化緊急支援事業補助金（締切 2026-11-27・あと17日）"
+    ],
+    "countdowns": [
+     "あと10日",
+     "あと120日",
+     "あと17日",
+     "あと20日",
+     "あと24日",
+     "あと31日",
+     "あと45日",
+     "あと48日",
+     "あと63日",
+     "あと6日",
+     "あと77日",
+     "あと80日"
+    ],
+    "has_honjitsu": false
+   },
+   {
+    "at_jst": "2026-11-10 20:12:17",
+    "url": "https://bess-net.jp/subsidies/sii-chikudenchi07r",
+    "status": "200",
+    "x-vercel-cache": "PRERENDER",
+    "age": "0",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "x-vercel-id": "hnd1::4jw6z-1794309137778-512481cb441a",
+    "bytes": 41978
+   },
+   {
+    "at_jst": "2026-11-10 20:12:19",
+    "url": "https://bess-net.jp/tracker/subsidy",
+    "status": "200",
+    "x-vercel-cache": "PRERENDER",
+    "age": "0",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "x-vercel-id": "hnd1::4jw6z-1794309138964-dbfe6963ec81",
+    "bytes": 209258
+   },
+   {
+    "at_jst": "2026-11-10 20:12:20",
+    "url": "https://bess-net.jp/build-info.json",
+    "status": "200",
+    "x-vercel-cache": "PRERENDER",
+    "age": "0",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "x-vercel-id": "hnd1::mp8f9-1794309140191-aebf51d82b0c",
+    "bytes": 62
+   },
+   {
+    "at_jst": "2026-11-10 20:12:21",
+    "url": "https://bess-net.jp/",
+    "status": "200",
+    "x-vercel-cache": "HIT",
+    "age": "4",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "x-vercel-id": "hnd1::iad1::g66zp-1794309141044-96c92c82",
+    "bytes": 78295
+   }
+  ],
+  "reval1": [
+   {
+    "at_jst": "2026-11-10 20:23:04",
+    "url": "https://bess-net.jp/subsidies",
+    "status": "200",
+    "x-vercel-cache": "STALE",
+    "age": "647",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "x-vercel-id": "hnd1::pgxm5-1794309784735-f5486c594f96",
+    "bytes": 165212,
+    "headings": {
+     "公募中": 27,
+     "採択結果公表": 16,
+     "受付終了": 32,
+     "その他": 5
+    },
+    "latestUpdated": "2026-11-09",
+    "open_shelf_count": 27,
+    "open_shelf_first3": [
+     "令和8年度 福島県 地域活用型再生可能エネルギー導入支援事業（締切 2026-11-16・あと6日）",
+     "令和8年度 福島県 地産地消型再生可能エネルギー発電設備導入促進事業（締切 2026-11-20・あと10日）",
+     "福岡県中小企業脱炭素化緊急支援事業補助金（締切 2026-11-27・あと17日）"
+    ],
+    "countdowns": [
+     "あと10日",
+     "あと120日",
+     "あと17日",
+     "あと20日",
+     "あと24日",
+     "あと31日",
+     "あと45日",
+     "あと48日",
+     "あと63日",
+     "あと6日",
+     "あと77日",
+     "あと80日"
+    ],
+    "has_honjitsu": false
+   }
+  ],
+  "reval2": [
+   {
+    "at_jst": "2026-11-10 20:24:05",
+    "url": "https://bess-net.jp/subsidies",
+    "status": "200",
+    "x-vercel-cache": "HIT",
+    "age": "343",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "x-vercel-id": "hnd1::iad1::k4kql-1794309845237-8b7bae67",
+    "bytes": 165212,
+    "headings": {
+     "公募中": 27,
+     "採択結果公表": 16,
+     "受付終了": 32,
+     "その他": 5
+    },
+    "latestUpdated": "2026-11-09",
+    "open_shelf_count": 27,
+    "open_shelf_first3": [
+     "令和8年度 福島県 地域活用型再生可能エネルギー導入支援事業（締切 2026-11-16・あと6日）",
+     "令和8年度 福島県 地産地消型再生可能エネルギー発電設備導入促進事業（締切 2026-11-20・あと10日）",
+     "福岡県中小企業脱炭素化緊急支援事業補助金（締切 2026-11-27・あと17日）"
+    ],
+    "countdowns": [
+     "あと10日",
+     "あと120日",
+     "あと17日",
+     "あと20日",
+     "あと24日",
+     "あと31日",
+     "あと45日",
+     "あと48日",
+     "あと63日",
+     "あと6日",
+     "あと77日",
+     "あと80日"
+    ],
+    "has_honjitsu": false
+   }
+  ],
+  "reval3": [
+   {
+    "at_jst": "2026-11-10 20:25:05",
+    "url": "https://bess-net.jp/subsidies",
+    "status": "200",
+    "x-vercel-cache": "HIT",
+    "age": "403",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "x-vercel-id": "hnd1::iad1::pf782-1794309905720-d36fff74",
+    "bytes": 165212,
+    "headings": {
+     "公募中": 27,
+     "採択結果公表": 16,
+     "受付終了": 32,
+     "その他": 5
+    },
+    "latestUpdated": "2026-11-09",
+    "open_shelf_count": 27,
+    "open_shelf_first3": [
+     "令和8年度 福島県 地域活用型再生可能エネルギー導入支援事業（締切 2026-11-16・あと6日）",
+     "令和8年度 福島県 地産地消型再生可能エネルギー発電設備導入促進事業（締切 2026-11-20・あと10日）",
+     "福岡県中小企業脱炭素化緊急支援事業補助金（締切 2026-11-27・あと17日）"
+    ],
+    "countdowns": [
+     "あと10日",
+     "あと120日",
+     "あと17日",
+     "あと20日",
+     "あと24日",
+     "あと31日",
+     "あと45日",
+     "あと48日",
+     "あと63日",
+     "あと6日",
+     "あと77日",
+     "あと80日"
+    ],
+    "has_honjitsu": false
+   }
+  ]
+ }
+}
