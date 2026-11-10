@@ -215,6 +215,7 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
   ✅ title に主要キーワード「蓄電池/蓄電所」（policy・events・faq で3連続の同型修正実績）
   ✅ 件数・数値は焼き込まず動的参照（totalCount／safeCount）
   ✅ 新しいページ・データベース・ツールを公開する便は、`src/data/site-history.ts` に 1 件足す（日付は本番に出た日・事実だけ・未来の予定は書かない）。
+  ✅ 売買・出資の公表事例（`src/data/deals.json`）は、月次バッチのニュースの取り込みに合わせて足す（手順は `reports/deals-research-2026-10-20.md` 3-11・載せる基準はユウの裁定ファイルの原則）。
 
 【受け入れ基準の恒久追加（補助金の地域データ）】
   ✅ 補助金の地域データ（scheme 等）を触る PATCH 後は、applicable_prefs の before/after 監査＋
@@ -908,4 +909,5 @@ async function main() {
 - 2026-11-05（CC・小さな直し便）: #113 に id の URL 2 件の slug への恒久の転送（next.config.js redirects）を追記
 - 2026-11-05（CC・BW 関西 本実行便）: #113 の id≠slug を 3 件に更新（`ksi-local-gc-5`・id `7c1n48509wi9` を追加・転送も足した）
 - 2026-11-07（CC・小さな直し便）: 2-4 の送らない変電所に凍結のページを足した（凍結のページは noindex・判定は src/lib/substation-noindex.ts）
+- 2026-11-10（CC・売買事例の一覧便）: 受け入れ基準に「売買・出資の公表事例（src/data/deals.json）は月次バッチのニュースの取り込みに合わせて足す」を 1 行追加（/tracker/deals を新設・検査 npm run verify:deals）
 - （将来）: 新規セッションで追記、更新時刻 + 更新者を末尾に

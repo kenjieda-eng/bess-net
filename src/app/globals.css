@@ -3959,3 +3959,13 @@
     text-decoration: none;
   }
 }
+
+/* /tracker/deals（売買事例の一覧便・2026-11-10）: 375px では 1 行の dl を 1 列に（設計 3-4） */
+@media (max-width: 480px) {
+  .deal-dl {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .deal-dl dd {
+    margin-bottom: 4px !important;
+  }
+}

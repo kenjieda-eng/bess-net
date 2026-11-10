@@ -59,6 +59,20 @@ for (const d of ledger.documents) {
   known.add(norm(d.name));
   for (const a of d.aliases ?? []) known.add(norm(a));
 }
+// 売買・出資の公表事例（src/data/deals.json）の出典の題名は、deals.json 自身を台帳と見なす
+// （売買事例の一覧便・2026-11-10・ユウ裁定 §3-8: 題名の逐語・発行者・URL・取得日・sha256 を deals.json が持つ。source-documents.json に数十〜百本を足さない）
+const DEALS = path.join(SRC, 'data', 'deals.json');
+let dealTitles = 0;
+if (fs.existsSync(DEALS)) {
+  const df = JSON.parse(fs.readFileSync(DEALS, 'utf8')) as { items: { id: string; sources: { title: string; publisher: string; url: string; fetchedOn: string }[] }[] };
+  for (const it of df.items) {
+    for (const s of it.sources) {
+      if (!s.title || !s.publisher || !s.url || !s.fetchedOn) ledgerProblems.push(`deals.json ${it.id} の出典「${s.title ?? '?'}」に題名・発行者・URL・取得日のどれかが無い`);
+      if (s.title) known.add(norm(s.title));
+      dealTitles++;
+    }
+  }
+}
 
 // ─── 抽出 ───
 const BRACKET = /[「『]([^「」『』\n]{2,90})[」』]/g;
@@ -157,7 +171,7 @@ async function cmsHits(): Promise<Hit[] | null> {
 }
 
 (async () => {
-  console.log(`[verify:source-names] 台帳 ${ledger.documents.length} 件（別名込み ${known.size} 表記）`);
+  console.log(`[verify:source-names] 台帳 ${ledger.documents.length} 件＋deals.json の出典 ${dealTitles} 本（別名込み ${known.size} 表記）`);
   if (ledgerProblems.length) {
     console.warn(`[verify:source-names] WARN 台帳の不備 ${ledgerProblems.length} 件`);
     ledgerProblems.slice(0, 20).forEach((p) => console.warn(`   - ${p}`));

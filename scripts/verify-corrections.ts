@@ -23,6 +23,7 @@ import { AREA_META } from '../src/app/grid/[slug]/area-meta';
 import { POLICY_DETAIL_SLUGS } from '../src/lib/policy-utils';
 import { GLOBAL_MARKETS } from '../src/data/global-markets';
 
+import { INTERNAL } from './lib/internal-words';
 export {};
 
 const ROOT = process.cwd();
@@ -39,21 +40,7 @@ const ok = (cond: boolean, msg: string) => {
   if (!cond) problems.push(msg);
 };
 
-/** 画面に出してはいけない社内の語（「リンク」「便利」「郵便」などを誤検出しない形にする） */
-const INTERNAL: [RegExp, string][] = [
-  // 「〜便」全般（直し便・週次便・訂正履歴便 等）。郵便・便利・便乗・便箋・便宜・便益・便器・便所は除く
-  [/(?<!郵)便(?!利|乗|箋|宜|益|器|所)|調べ役|検証役|反証役|見直し役/, '便・役の名前'],
-  [/\bCC\b/, 'CC'],
-  [/Ck-?\d|Ck2[a-z]?/, 'Ck'],
-  [/裁定/, '裁定'],
-  [/ユウ/, 'ユウ'],
-  [/(?<![ァ-ヶー])リン(?![ァ-ヶー酸])/, 'リン'], // 「リンク」「プリンス」「ベルリン」「リン酸鉄」は除く（前後がカタカナでない単独の「リン」だけ）
-  [/\border\s*\d/i, 'order'],
-  [/\brow[_\s-]?(id)?\b/i, 'row'],
-  [/\bR\d{1,2}\b(?![年補])/, 'R 番号'], // 「R8年度」「R7補正」（令和の略・正式名の一部）は除く
-  [/Sprint/i, 'Sprint'],
-  [/依頼書|依頼[A-Z]{1,3}\b/, '依頼'],
-];
+/** 画面に出してはいけない社内の語は scripts/lib/internal-words.ts（verify-deals と共用・2026-11-10 に切り出した） */
 
 const todayJst = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
 const ids = new Set<string>();

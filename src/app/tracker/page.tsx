@@ -48,14 +48,29 @@ const TRACKERS = [
   },
 ];
 
+/** 4 軸とは別の種類の一覧（見出しを分けて下に置く）。ハブの JSON-LD には 4 軸と合わせて入れる（売買事例の一覧便・裁定 §3-12） */
+const OTHER_LISTS = [
+  {
+    href: '/tracker/balancing-rules',
+    title: '需給調整市場 制度変更トラッカー',
+    desc: '上限価格・募集量・商品仕様・ガイドライン・蓄電池に関わる要件の改定のうち一次が取れたものを、公表日と適用日（実需給日）を分けて一次の逐語つきで並べた一覧（網羅ではありません）',
+  },
+  {
+    href: '/tracker/deals',
+    title: '蓄電所の売買・出資 公表事例',
+    desc: '蓄電所の取得・譲渡・出資・ファンドの組成・接続権や用地の取得のうち、一次で確かめた公表事例を、公表日の新しい順に一次の逐語つきで並べた一覧（網羅ではありません）',
+  },
+];
+
 export default function TrackerHubPage() {
+  const allLists = [...TRACKERS, ...OTHER_LISTS];
   const itemListJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: '業界トラッカーハブ',
-    description: '蓄電所事業の最新動向を 4 軸でタイムライン化',
-    numberOfItems: TRACKERS.length,
-    itemListElement: TRACKERS.map((t, idx) => ({
+    description: '蓄電所事業の最新動向を 4 軸でタイムライン化（ほかに制度の改定と売買・出資の公表事例の一覧）',
+    numberOfItems: allLists.length,
+    itemListElement: allLists.map((t, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
       name: t.title,
@@ -117,11 +132,27 @@ export default function TrackerHubPage() {
               border: '1px solid var(--color-border)', borderRadius: 8,
               textDecoration: 'none', color: 'inherit', background: 'white',
             }}>
-              <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>{'需給調整市場 制度変更トラッカー'}</div>
+              <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>{OTHER_LISTS[0].title}</div>
               <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, color: 'var(--color-text)' }}>
-                {'上限価格・募集量・商品仕様・ガイドライン・蓄電池に関わる要件の改定のうち一次が取れたものを、公表日と適用日（実需給日）を分けて一次の逐語つきで並べた一覧（網羅ではありません）'}
+                {OTHER_LISTS[0].desc}
               </p>
               <div style={{ fontSize: 13, color: 'var(--color-accent)', marginTop: 8 }}>改定の一覧を見る →</div>
+            </Link>
+          </div>
+
+          {/* 売買事例の一覧便（2026-11-10）: 制度の改定と同じく、4 軸とは別の種類＝一次で確かめた公表事例の一覧。見出しを分ける */}
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '32px 0 8px' }}>{'売買・出資の公表事例'}</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: 16, marginTop: 12 }}>
+            <Link href="/tracker/deals" style={{
+              display: 'block', padding: 16,
+              border: '1px solid var(--color-border)', borderRadius: 8,
+              textDecoration: 'none', color: 'inherit', background: 'white',
+            }}>
+              <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>{OTHER_LISTS[1].title}</div>
+              <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, color: 'var(--color-text)' }}>
+                {OTHER_LISTS[1].desc}
+              </p>
+              <div style={{ fontSize: 13, color: 'var(--color-accent)', marginTop: 8 }}>事例の一覧を見る →</div>
             </Link>
           </div>
         </div>

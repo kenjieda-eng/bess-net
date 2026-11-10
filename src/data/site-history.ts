@@ -25,6 +25,17 @@ export const SITE_HISTORY_CATEGORIES: readonly SiteHistoryCategory[] = ['ペー�
 /** 新しい順（文案の並び） */
 export const SITE_HISTORY: readonly SiteHistoryItem[] = [
   {
+    id: "N4",
+    date: "2026-11-10",
+    category: "トラッカー",
+    title: "蓄電所の売買・出資 公表事例トラッカーを公開",
+    summary: "蓄電所の取得・譲渡・出資・ファンドの組成・接続権や用地の取得のうち、各社の発表や適時開示などの一次で確かめた公表事例を、公表日の新しい順に一次の逐語つきで並べました。年・種類・段階・エリアなどで絞り込めます。",
+    links: [
+      { label: "蓄電所の売買・出資 公表事例トラッカー", url: "/tracker/deals" },
+    ],
+    ref: "売買事例の一覧便（reports/deals-list-2026-11-10.md）",
+  },
+  {
     id: "N3",
     date: "2026-11-07",
     category: "ページ",
