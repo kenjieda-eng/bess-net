@@ -18,6 +18,7 @@
  *   9〜11（裁定）: 裁定で「外す」とした研究便の行（EXCLUDED_CIDS）と、保留の行（HOLD_CIDS）が items に 0。
  *   12〜13（直し便・2026-11-11）: 当事者が空の行を作らない（発表者が当事者なら必ず入れる）。出典の画面用の題名（displayTitle）は、
  *      元の題名から「【…】」の 1 か所を除いたものと同じ（データの title は逐語のまま）。
+ *   14（小さな直し便・2026-11-11）: 補足（note）の中の「」の断片は、その行の出典の逐語に含まれる（「…」は略）。
  *
  * microCMS へのアクセスなし。prebuild では警告だけ（exit 0）。--strict で問題があれば exit 1。
  * 実行: npm run verify:deals   …   npm run verify:deals -- --strict   …   npm run verify:deals -- --strict --html .next/server/app/tracker/deals.html
@@ -135,6 +136,21 @@ for (const d of items) {
   if (d.researchCids.length === 0) notes.push(`${at}: 研究便の行番号なし（この便より後に足した行）`);
 }
 
+/** 文の中の「」の断片（「」の中に「」が 1 段入っていてもよい） */
+function quoteFragments(text: string): string[] {
+  return [...text.matchAll(/「((?:[^「」]|「[^「」]*」)*)」/g)].map((m) => m[1]);
+}
+/** 断片を「…」で切り、各片が text に順に出てくるか */
+function containsInOrder(text: string, frag: string): boolean {
+  let pos = 0;
+  for (const piece of frag.split('…').filter(Boolean)) {
+    const i = text.indexOf(piece, pos);
+    if (i < 0) return false;
+    pos = i + piece.length;
+  }
+  return true;
+}
+
 // ── 2. 逐語 ──
 for (const d of items) {
   const quoteText = d.sources.flatMap((s) => s.quotes.map((q) => q.text)).join('\n');
@@ -145,6 +161,10 @@ for (const d of items) {
   // 規模は「／」で別の箇所からの抜き出しをつなぐことがある（画面の決まりと同じ）。つなぎ目ごとに逐語を確かめる
   for (const seg of d.scale ? d.scale.split('／').filter(Boolean) : []) {
     if (!quoteText.includes(seg)) problems.push(`${d.id}: 規模の「${seg}」がどの出典の逐語にも無い`);
+  }
+  // 14. 補足の中の「」の断片は、その行の出典の逐語に含まれる（小さな直し便 1-2・「…」は略として順に探す）
+  for (const frag of quoteFragments(d.note)) {
+    if (!containsInOrder(quoteText, frag)) problems.push(`${d.id}: 補足の「${frag.slice(0, 40)}」がどの出典の逐語にも無い`);
   }
   const primary = d.sources.find((s) => s.role === 'primary');
   if (primary && primary.publishedOn !== d.announcedOn && !DATE_EXCEPTIONS[d.id]) {
