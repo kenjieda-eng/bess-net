@@ -1,0 +1,1940 @@
+{
+ "_comment": "売買事例の月次の下調べ便（2026-11-12・読むだけ）。行は足していない。proposals は Deal の形の案（id なし）で、ユウの裁定の後に別の便で deals.json に入れる。逐語はすべて取得物（HTML はタグを取るだけ・PDF はグリフの並び）にあることを確かめた。",
+ "proposals": [
+  {
+   "_judgement": "新しい行",
+   "_rules": [
+    "R8",
+    "R1"
+   ],
+   "_from": "A #25",
+   "announcedOn": "2026-10-19",
+   "publisher": "日本蓄電池株式会社",
+   "kinds": [
+    "fund",
+    "investment"
+   ],
+   "stages": [
+    "unknown"
+   ],
+   "places": [
+    {
+     "text": "日本国内",
+     "pref": null,
+     "city": null
+    }
+   ],
+   "areas": [
+    "unknown"
+   ],
+   "areaBasis": "",
+   "scale": "計7件の高圧系統用蓄電施設",
+   "parties": [
+    "日本蓄電池株式会社",
+    "SBIスマートエナジー株式会社"
+   ],
+   "price": null,
+   "marks": [],
+   "newsSlug": "nc-sbi-smart-energy-bess-fund-2026-10",
+   "projectSlugs": [],
+   "researchCids": [],
+   "note": "共同出資によるファンドの組成（2026年10月1日に運営開始）。SPC の名前と 7 件の所在地・規模は一次に無い。アセットマネジメントは RSアセットアドバイザーズ株式会社（当事者に入れない）",
+   "sources": [
+    {
+     "title": "【日本蓄電池株式会社】系統用蓄電池事業ファンドの組成及び運営開始のお知らせ | 日本蓄電池株式会社のプレスリリース",
+     "publisher": "日本蓄電池株式会社",
+     "url": "https://prtimes.jp/main/html/rd/p/000000115.000161802.html",
+     "type": "prtimes",
+     "role": "primary",
+     "publishedOn": "2026-10-19",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "1f68b5e726743808542beefcb04095a3f5b9b83767b19cda7455192180542706",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "日付（datePublished 2026-10-19 10:00:02・dateModified 2026-10-19 10:48:13）／「SBIスマートエナジー株式会社（本社：東京都港区、代表取締役社長：河原武志、以下「SBIスマートエナジー」）と共同で系統用蓄電池事業ファンドを組成し、10月１日より運営を開始しましたのでお知らせいたします。」「本件は、当社とSBIスマートエナジーが共同出資を行う系統用蓄電池事業として、SPCを活用したノンリコース型のプロジェクトファイナンスにより資金調達を行い」「本ファンドは、全国に分散配置された計7件の高圧系統用蓄電施設を対象としており、2026年度中に全拠点の商業運転開始を見込んでおります。」「アセットマネジメント業務はRSアセットアドバイザーズ株式会社（本社：東京都港区、代表取締役：岡澤恭弥）が担当します。」"
+      }
+     ]
+    },
+    {
+     "title": "系統用蓄電池事業ファンドの組成及び運営開始のお知らせ | RSアセットアドバイザーズ株式会社のプレスリリース",
+     "publisher": "RSアセットアドバイザーズ株式会社",
+     "url": "https://prtimes.jp/main/html/rd/p/000000016.000154894.html",
+     "type": "prtimes",
+     "role": "related",
+     "publishedOn": "2026-10-19",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "404b9e92645d90e780b8d86cdca75d60eb05cb5e65fdaaf9c48171c1240677ae",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "日付（datePublished 2026-10-19 10:00:02・dateModified 2026-10-19 10:57:03）／「SBIスマートエナジー株式会社（本社：東京都港区、代表取締役社長：河原武志、以下「SBIスマートエナジー」）と日本蓄電池株式会社（本社：東京都千代田区、代表取締役社長：漆原秀一、以下「日本蓄電池」）が共同で組成した系統用蓄電池事業ファンドにおいて、アセットマネジメント業務を担当することとなり、10月１日より運営を開始しましたのでお知らせいたします。」"
+      }
+     ]
+    }
+   ],
+   "_openPoints": [
+    "SPC（営業者）の名前・出資比率・出資額は一次に無い（2 本とも）",
+    "7 件の所在地と規模は一次に無い（場所は「日本国内」・エリアは unknown）",
+    "完了の語は「組成し…運営を開始しました」。出資の実行・契約の締結の語そのものは無い（R1 の読み方。R8 のファンドの組成の完了として読めるか）",
+    "段階は一次に「2026年度中に全拠点の商業運転開始を見込んで」とだけあり、unknown にした"
+   ]
+  },
+  {
+   "_judgement": "新しい行",
+   "_rules": [
+    "R1"
+   ],
+   "_from": "A #26",
+   "announcedOn": "2026-10-19",
+   "publisher": "株式会社リミックスポイント",
+   "kinds": [
+    "site-rights"
+   ],
+   "stages": [
+    "site-rights"
+   ],
+   "places": [
+    {
+     "text": "岐阜県恵那市",
+     "pref": "岐阜県",
+     "city": "恵那市"
+    }
+   ],
+   "areas": [
+    "chubu"
+   ],
+   "areaBasis": "岐阜県は中部・北陸・関西に分かれる。恵那市は中部（市区町村から当てた。一次に管内の記載は無い）",
+   "scale": "約2MW／約8MWh",
+   "parties": [
+    "株式会社リミックスポイント"
+   ],
+   "price": null,
+   "marks": [],
+   "newsSlug": "remixpoint-ena-iwamura3-site-2026-10",
+   "projectSlugs": [],
+   "researchCids": [],
+   "note": "開発用地等の取得（自社保有の 12 か所目）。売り手・価格・接続権の有無は一次に無い",
+   "sources": [
+    {
+     "title": "【自社保有案件蓄電所12か所目】「恵那岩村3蓄電所（仮称）」の開発用地等を取得 | 株式会社リミックスポイントのプレスリリース",
+     "publisher": "株式会社リミックスポイント",
+     "url": "https://prtimes.jp/main/html/rd/p/000000231.000033609.html",
+     "type": "prtimes",
+     "role": "primary",
+     "publishedOn": "2026-10-19",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "f21b23eb4308c02ee6fd1a38054fdc5d0c9446a1ac6e8a6410c36b9f1a408f44",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "日付（datePublished 2026-10-19 12:00:02・dateModified 2026-10-19 15:10:14）／「岐阜県内で2か所目となる「恵那岩村3蓄電所（仮称）」の開発用地等を取得しました。」「今回の取得により、高圧系統用蓄電所の自社保有案件（開発段階を含む）は合計12か所となりました。」／施設概要の表「岐阜県恵那市」「約2MW」「約8MWh」"
+      }
+     ]
+    }
+   ],
+   "_openPoints": [
+    "売り手（相手）の名前が一次に無い（当事者がリミックスポイント 1 社になる）",
+    "「開発用地等」の「等」（接続権を含むか）は一次に無い",
+    "同社のこれまでの用地の取得（1〜11 か所目）は研究便の行に無い（研究便の 228 行に「自社保有」の用地の取得の行は 0。月次でまとめて探すかはユウの裁定）",
+    "恵那市のエリアは市区町村から当てた（一次に管内の記載なし）"
+   ]
+  },
+  {
+   "_judgement": "関連の発表",
+   "_rules": [
+    "R7",
+    "R8"
+   ],
+   "_from": "A #24",
+   "_targetRow": "D-20260928-01",
+   "source": {
+    "title": "POWER POOL、総事業規模約45億円の系統用蓄電所事業を展開 | パワープール株式会社のプレスリリース",
+    "publisher": "パワープール株式会社",
+    "url": "https://prtimes.jp/main/html/rd/p/000000005.000183333.html",
+    "type": "prtimes",
+    "role": "related",
+    "publishedOn": "2026-10-16",
+    "modifiedOn": null,
+    "fetchedOn": "2026-11-12",
+    "sha256": "05ab9b5978d84352b5b3f5f6ac89c4f19e554cc96df6e752995dbfa6a9f1f50c",
+    "quotes": [
+     {
+      "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+      "text": "日付（datePublished 2026-10-16 16:40:21・dateModified 2026-10-16 18:26:27）／「パワープール株式会社（本社：東京都港区、以下「POWER POOL」）は2026年9月18日、国内の高圧系統用蓄電所6案件を投資対象とする「PP7号合同会社」を設立いたしましたので、お知らせいたします。」「匿名組合出資の募集はすでに完了しています。」「POWER POOLは、本事業の匿名組合へ出資するとともに、対象蓄電所のアグリゲーション業務を担当いたします。」「TAOKE ENERGY株式会社（本社：東京都港区、以下「TAOKE ENERGY」）がアセットマネジメントおよび運用・保守（O&M）業務を担い」"
+     }
+    ]
+   },
+   "_proposedChanges": {
+    "parties": {
+     "before": [
+      "TAOKE ENERGY株式会社",
+      "PP7号合同会社"
+     ],
+     "after": [
+      "パワープール株式会社",
+      "PP7号合同会社"
+     ]
+    },
+    "note_add": "ファンドを設立し匿名組合へ出資したのはパワープール株式会社（2026年10月16日の発表）。TAOKE ENERGY はアセットマネジメントと運用・保守"
+   },
+   "_openPoints": [
+    "`D-20260306-01`（合同会社ジャパンパワーストレージ＝第一号ファンド・2026年2月27日設立・6 案件・約45億円）とは別のファンド。数（6 案件・約45億円）が偶然そろっているだけで、名前と設立日が違う＝今の 2 行は同じ取引ではない",
+    "最初の公表は 9/28 の行（PP7号合同会社を第２号ファンドとして運転開始を発表）。10/16 は設立の発表だが後なので関連の発表（R7）",
+    "TAOKE ENERGY が PP7 に出資しているかは一次に無い（9/28 の TAOKE の発表は「自社所有の系統用蓄電所への投資を目的とした「PP7号合同会社」」）。外すかはユウの裁定",
+    "総事業規模 約45億円は事業費の見込みで、価格の欄には載せない（R6）"
+   ]
+  },
+  {
+   "_judgement": "新しい行",
+   "_rules": [
+    "R1",
+    "R8",
+    "R7"
+   ],
+   "_from": "C の探索（C293 の後の一次を探していて見つけた・研究便の行に無い）",
+   "announcedOn": "2026-06-23",
+   "publisher": "株式会社クラダシ",
+   "kinds": [
+    "fund",
+    "investment"
+   ],
+   "stages": [
+    "unknown"
+   ],
+   "places": [
+    {
+     "text": "日本国内",
+     "pref": null,
+     "city": null
+    }
+   ],
+   "areas": [
+    "unknown"
+   ],
+   "areaBasis": "",
+   "scale": "国内3案件",
+   "parties": [
+    "株式会社クラダシ",
+    "辻・本郷スマートアセット株式会社",
+    "合同会社クラダシ・インベストメント"
+   ],
+   "price": null,
+   "marks": [],
+   "newsSlug": null,
+   "projectSlugs": [],
+   "researchCids": [],
+   "note": "共同出資による SPC（合同会社クラダシ・インベストメント）の設立と、SPC と辻・本郷スマートアセットの匿名組合出資契約の締結。2025年11月13日の基本合意の具体化",
+   "sources": [
+    {
+     "title": "クラダシ、辻・本郷スマートアセット株式会社と系統用蓄電所開発に係る匿名組合契約を締結 | 株式会社クラダシのプレスリリース",
+     "publisher": "株式会社クラダシ",
+     "url": "https://prtimes.jp/main/html/rd/p/000000708.000014485.html",
+     "type": "prtimes",
+     "role": "primary",
+     "publishedOn": "2026-06-23",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "6d000afb9557d54532d46e38571e7b628cfa3aa6999b61bf1379bcaf188a0ac0",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "日付（datePublished 2026-06-23 15:40:02・dateModified 2026-06-23 19:10:41）／「との共同出資により、特別目的会社（SPC）となる「合同会社クラダシ・インベストメント」を設立いたしました。」「合同会社クラダシ・インベストメントは、辻・本郷スマートアセットとの間で系統用蓄電所の共同開発・運用を目的とした匿名組合出資契約を締結し、まずは国内3案件の開発・運用を推進してまいります。」「本件は、2025年11月13日に発表した両社による合弁事業の具体化であり」"
+      }
+     ]
+    }
+   ],
+   "_openPoints": [
+    "R7: 最初の公表は 2025-11-13 の基本合意（研究便 C216・EXCLUDED_CIDS）。基本合意は取引ではないので 6/23 を行の出典にした（11/13 を関連の発表にするかはユウの裁定）",
+    "3 案件の場所・規模は一次に無い",
+    "クラダシは SPC の AM も受託（当事者には共同出資者として入れた）",
+    "研究便の範囲（〜2026-09-30）の中の取りこぼし"
+   ]
+  },
+  {
+   "_judgement": "新しい行",
+   "_rules": [
+    "R1",
+    "R4"
+   ],
+   "_from": "C の探索（C249 の後の一次を探していて見つけた・研究便の行に無い）",
+   "announcedOn": "2026-08-28",
+   "publisher": "TAOKE ENERGY株式会社",
+   "kinds": [
+    "transfer"
+   ],
+   "stages": [
+    "unknown"
+   ],
+   "places": [
+    {
+     "text": "宮城県刈田郡蔵王町",
+     "pref": "宮城県",
+     "city": "刈田郡蔵王町"
+    }
+   ],
+   "areas": [
+    "tohoku"
+   ],
+   "areaBasis": "",
+   "scale": "2MW／8.14MWh",
+   "parties": [
+    "TAOKE ENERGY株式会社",
+    "株式会社BTホールディング"
+   ],
+   "price": null,
+   "marks": [],
+   "newsSlug": null,
+   "projectSlugs": [],
+   "researchCids": [],
+   "note": "開発した蓄電所の引渡し（2026年8月27日に完了）。引渡し後も電力市場の運用は TAOKE ENERGY が担う。価格は一次に無い",
+   "sources": [
+    {
+     "title": "TAOKE ENERGY、宮城県蔵王町の2MW／8.14MWh系統用蓄電所を株式会社BTホールディングへ引き渡し | TAOKE ENERGY株式会社のプレスリリース",
+     "publisher": "TAOKE ENERGY株式会社",
+     "url": "https://prtimes.jp/main/html/rd/p/000000042.000103834.html",
+     "type": "prtimes",
+     "role": "primary",
+     "publishedOn": "2026-08-28",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "ac11aef749928e6088f5118208b64aca0242557d3c83f77f54e6c382129cef08",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "日付（datePublished 2026-08-28 14:31:17・dateModified 2026-08-28 18:10:10）／「8月27日にステンレスタンクの大手企業である株式会社ベルテクノ（本社：愛知県名古屋市）の持株会社で再生可能エネルギーの開発を手掛ける株式会社BTホールディング（本社：東京都千代田区）への引渡しを完了しましたので、お知らせいたします。」「本蓄電所は、TAOKEが開発から設計・調達・建設、系統連系までを推進した系統用蓄電所であり」"
+      }
+     ]
+    }
+   ],
+   "_openPoints": [
+    "R4 との境目: 開発した会社が建てて引き渡した蓄電所。「完成した蓄電所の売買」（サンヴィレッジ→JA三井リースの `D-20240920-01` と同じ型）か「完成した設備の引渡し」（C098 と同じ型・外した）か",
+    "段階は系統連系の後・商用運用の前（2026年12月から）で、unknown にした",
+    "2 件目（愛知県南知多町・A #37）は引渡し予定（R1）",
+    "研究便の範囲（〜2026-09-30）の中の取りこぼし"
+   ]
+  },
+  {
+   "_judgement": "保留を解く",
+   "_rules": [
+    "R1",
+    "R7"
+   ],
+   "_from": "C（C029＋C030）",
+   "announcedOn": "2024-07-11",
+   "publisher": "大阪ガス株式会社",
+   "kinds": [
+    "investment"
+   ],
+   "stages": [
+    "unknown"
+   ],
+   "places": [
+    {
+     "text": "佐賀県武雄市",
+     "pref": "佐賀県",
+     "city": "武雄市"
+    }
+   ],
+   "areas": [
+    "kyushu"
+   ],
+   "areaBasis": "",
+   "scale": "定格出力2MW／定格容量8MWh",
+   "parties": [
+    "エムエル・パワー株式会社",
+    "大阪ガス株式会社",
+    "JFEエンジニアリング株式会社",
+    "九州製鋼株式会社",
+    "武雄蓄電所合同会社"
+   ],
+   "price": null,
+   "marks": [],
+   "newsSlug": null,
+   "projectSlugs": [],
+   "researchCids": [
+    "C029",
+    "C030"
+   ],
+   "note": "4 社の共同出資の合同会社（武雄蓄電所合同会社）。出資は 2025年11月27日の商業運転の開始の発表で「共同で出資する」とある。エムエル・パワーはみずほリースの 100% 子会社",
+   "sources": [
+    {
+     "title": "佐賀県武雄市における系統用蓄電池事業への出資・参画について | Daigasグループのプレスリリース",
+     "publisher": "大阪ガス株式会社",
+     "url": "https://prtimes.jp/main/html/rd/p/000000025.000139670.html",
+     "type": "prtimes",
+     "role": "primary",
+     "publishedOn": "2024-07-11",
+     "modifiedOn": "2024-07-12",
+     "fetchedOn": "2026-11-12",
+     "sha256": "71969ee9a427fa54ffd611b8bebf396ad9c24deaaad15ac1cf70350e18076af4",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "日付（datePublished 2024-07-11 11:00:07・dateModified 2024-07-12 13:23:02）／「今後4社（＊１追記）は武雄蓄電所合同会社に出資を行ない」"
+      }
+     ]
+    },
+    {
+     "title": "武雄蓄電所の商業運転開始について | Daigasグループのプレスリリース",
+     "publisher": "大阪ガス株式会社",
+     "url": "https://prtimes.jp/main/html/rd/p/000000180.000139670.html",
+     "type": "prtimes",
+     "role": "related",
+     "publishedOn": "2025-11-27",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "8be231ec0b99ef5853f2df548b853331b2b0aa336e069a80a841465af039e072",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "日付（datePublished 2025-11-27 14:00:03・dateModified 2025-11-27 17:10:30）／「の100%子会社であるエムエル・パワー株式会社」「が共同で出資する武雄蓄電所合同会社は、本日、佐賀県武雄市に位置する系統用蓄電所（定格出力2MW、定格容量8MWh、以下「武雄蓄電所」）の商業運転を開始しました。」「武雄蓄電所合同会社（出資：エムエル・パワー、大阪ガス、JFEエンジニアリング、九州製鋼）」"
+      }
+     ]
+    }
+   ],
+   "_openPoints": [
+    "載せられる条件は「出資の実行か出資契約の締結」。11/27 は「共同で出資する」（いまの形の説明）と事業概要の「出資：…」で、実行日・締結の語は無い。これで実行と読めるかはユウの裁定",
+    "規模の「定格出力2MW」「定格容量8MWh」は 11/27（関連の発表）の逐語",
+    "C030 は C029 と同じ一次の重複記事"
+   ]
+  },
+  {
+   "_judgement": "関連の発表",
+   "_rules": [
+    "R7",
+    "R1"
+   ],
+   "_from": "B（杵築市の初出）",
+   "_targetRow": "D-20251027-01",
+   "source": {
+    "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ（大分県杵築市）",
+    "publisher": "スターシーズ株式会社",
+    "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747420/00.pdf",
+    "type": "disclosure",
+    "role": "related",
+    "publishedOn": "2026-01-30",
+    "modifiedOn": null,
+    "fetchedOn": "2026-11-12",
+    "sha256": "91b2ea20f7be01eea7d474bea36331b4439d03267b73a414321600241978e6c9",
+    "quotes": [
+     {
+      "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+      "text": "「株式会社ヒュージモリ商事（代表取締役 李 慧娟。以下、「ヒュージモリ」といいます。）から、系統用蓄電所の土地、設備及び電力接続権を取得することを決議いたしました」「（１） 所在地 大分県杵築市大字日野字井ノ尻2726-１他」「（３） 最大受電電力 1999.9ｋW」「（４） 接続電力会社 九州電力送配電株式会社」「当社の前連結会計年度の末日における連結売上高の10%（511百万円）以上に相当する額」「（１） 工事完了日 2026年２月中旬（予定）」"
+     }
+    ]
+   },
+   "_proposedChanges": {
+    "parties": {
+     "before": [
+      "スターシーズ株式会社"
+     ],
+     "after": [
+      "スターシーズ株式会社",
+      "株式会社ヒュージモリ商事"
+     ]
+    },
+    "price": {
+     "label": "取得価額",
+     "text": "当社の前連結会計年度の末日における連結売上高の10%（511百万円）以上に相当する額"
+    },
+    "scale": "最大受電電力 1999.9ｋW"
+   },
+   "_openPoints": [
+    "杵築市を 2025年6月前後に公表した一次は無い（IR の一覧〔ssl4.eir-parts.net の announcement_1.js・765 件〕の 2025年6月の蓄電の開示は 6/12 の豊橋市植田町だけ）。初出は今の行の出典（10/27 の進捗の表）のまま",
+    "10/27 の表は「① 2025年６月 大分県杵築市」、1/30 の開示は 2026-01-30 に取得を決議＝時期が合わない。1/30 は決議と予定だけで、完了の語は無い（R1）。行の段階・完了の根拠をどちらに置くかはユウの裁定"
+   ]
+  },
+  {
+   "_judgement": "関連の発表（行の直しを伴う）",
+   "_rules": [
+    "R1"
+   ],
+   "_from": "B（豊橋市雲谷町の売却）",
+   "_targetRow": "D-20251009-01",
+   "sources": [
+    {
+     "title": "（開示事項の中止）販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ（愛知県豊橋市）",
+     "publisher": "スターシーズ株式会社",
+     "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747417/00.pdf",
+     "type": "disclosure",
+     "role": "related",
+     "publishedOn": "2026-01-30",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "89d0e6e17c61524c32d7817d104c45761a1c020cc5bc2973100f614fa03169c5",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "「本日、取得中止を決議いたしましたので」「系統用蓄電池事業ポートフォリオを見直した結果、引渡しを受けることなく解約することといたしました。」「（２） 名称 NO.188 豊橋市雲谷町蓄電所」"
+      }
+     ]
+    },
+    {
+     "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ",
+     "publisher": "スターシーズ株式会社",
+     "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2725089/00.pdf",
+     "type": "disclosure",
+     "role": "related",
+     "publishedOn": "2025-11-27",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "e3dae18f781a01ddccf98c786f40734afda2edb906fa5bae517a07c7edba7306",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "「（２） 名称 NO.188豊橋市雲谷町蓄電所」「（１） 契約日 2025年11月27日（予定）」"
+      }
+     ]
+    },
+    {
+     "title": "（開示事項の中止）販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ（愛知県豊橋市）",
+     "publisher": "スターシーズ株式会社",
+     "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747418/00.pdf",
+     "type": "disclosure",
+     "role": "related",
+     "publishedOn": "2026-01-30",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "3130bfc872205b998997f87173adc759818a765caa86a81dba1899d367a82674",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "「売却先が契約行使資金を確保できずに当社への支払いが滞ったため、売却契約を解除することといたしました。」"
+      }
+     ]
+    }
+   ],
+   "_proposedChanges": {
+    "places": {
+     "before": [
+      "愛知県田原市",
+      "愛知県豊橋市"
+     ],
+     "after": [
+      "愛知県田原市"
+     ]
+    },
+    "note": "豊橋市雲谷町の取得は 2026年1月30日に中止（引渡し前に解約）。規模は田原市の 1 か所",
+    "D-20251027-01_note": "⑥（豊橋市雲谷町）と⑦（福岡県筑紫野市）の取得は 2026年1月30日に中止"
+   },
+   "_openPoints": [
+    "今の行は 2 か所（田原市・豊橋市）の取得。豊橋市は取得中止＝行を田原市だけにするか、豊橋市を残して補足に中止を書くかはユウの裁定（訂正履歴が要る）",
+    "11/27 の豊橋市の売却（B の 2）は、売却そのものも 2026-01-30 に中止（売却先の不払い）＝新しい行にしない",
+    "10/27 の進捗の表（`D-20251027-01` の出典）の ⑥⑦ は後に中止された"
+   ]
+  },
+  {
+   "_judgement": "外す",
+   "_rules": [
+    "R1"
+   ],
+   "_from": "B（2025-10-17 筑紫野市の取得）",
+   "sources": [
+    {
+     "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ",
+     "publisher": "スターシーズ株式会社",
+     "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2699253/00.pdf",
+     "type": "disclosure",
+     "role": "primary",
+     "publishedOn": "2025-10-17",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "53a0744be5a11613e467b97a3e90e3958ba6aa600af437f3661f4a7e3a10fd4f",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "「株式会社ダイサン（代表取締役 峠元 幹也。以下、「ダイサン」といいます。）から、系統用蓄電所の土地、設備及び電力接続権を取得することを決議いたしました」「（１） 所在地 福岡県筑紫野市大字原713番50」"
+      }
+     ]
+    },
+    {
+     "title": "（開示事項の中止）販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ（福岡県筑紫野市）",
+     "publisher": "スターシーズ株式会社",
+     "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747413/00.pdf",
+     "type": "disclosure",
+     "role": "related",
+     "publishedOn": "2026-01-30",
+     "modifiedOn": null,
+     "fetchedOn": "2026-11-12",
+     "sha256": "d280d50628042c3571ddb422b0002e3f0e59998284785391514cbc22800517a1",
+     "quotes": [
+      {
+       "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+       "text": "「本日、取得中止を決議いたしましたので」「引渡しを受けることなく解約することといたしました。」"
+      }
+     ]
+    }
+   ],
+   "_openPoints": [
+    "取得は 2026-01-30 に中止（引渡し前に解約）＝載せない"
+   ]
+  },
+  {
+   "_judgement": "出典を替える",
+   "_rules": [
+    "R7"
+   ],
+   "_from": "B の確認中に気づいた",
+   "_targetRow": "D-20251027-02",
+   "source": {
+    "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ",
+    "publisher": "スターシーズ株式会社",
+    "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2700001/00.pdf",
+    "type": "disclosure",
+    "role": "primary",
+    "publishedOn": "2025-10-22",
+    "modifiedOn": null,
+    "fetchedOn": "2026-11-12",
+    "sha256": "094ae6793e4c85ee78a1f3b122934d9627f3bec83681b66ea52f789a5b22e356",
+    "quotes": [
+     {
+      "where": "一次の逐語（2026年11月12日に取得して照合・「」内が逐語）",
+      "text": "「（１） 所在地 愛知県田原市保美町段土362番地１、及び２」「（２） 名称 NO.568田原市保美町蓄電所」「（１） 契約日 2025年10月22日（予定）」「（２） 引渡・決済日 2026年１月31日（予定）」"
+     }
+    ]
+   },
+   "_proposedChanges": {
+    "announcedOn": "2025-10-22",
+    "primary": "2025-10-22 の売却の開示（今は関連の発表）",
+    "related": "2025-10-27 の進捗の表（「⑤ … 売却済み」＝完了の根拠）",
+    "id": "公表日が変わるので id も変わる（旧 id `D-20251027-02` は欠番）"
+   },
+   "_openPoints": [
+    "10/22 は決議と予定（契約日 10/22〔予定〕・引渡 2026-01-31〔予定〕）。完了の根拠は 10/27 の表の「売却済み」",
+    "IR の一覧に 2026-01-26 の売却の開示と 2026-01-27 の（訂正）がある（取得していない・月次で見る）"
+   ]
+  }
+ ],
+ "newsTable": [
+  {
+   "n": 1,
+   "slug": "digitalgrid-bess-200mw-2026-10",
+   "publishedDate": "2026-10-01",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000063.000045726.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "アグリゲーターの取扱量の発表（取引ではない）",
+   "quote": "「系統用蓄電池の取扱量が2026年9月末時点で計100拠点を超え、200MWを突破したことをお知らせいたします。」",
+   "sha256": "2d8c314a2da91746f62cb4e457bda25a21ac6aa317b75cac5b946b4b68f643ae"
+  },
+  {
+   "n": 2,
+   "slug": "ntt-anode-aomori-misawa-cod-2026-10",
+   "publishedDate": "2026-10-01",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000080.000111866.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "自社が建設した蓄電所の商用運転の開始",
+   "quote": "「を建設し、2026年9月から商用運転を開始しました」",
+   "sha256": "8e2ea5fa5b55c45f3ca270fb4ce09baa8afa922966c2d168169ce1441ef8f147"
+  },
+  {
+   "n": 3,
+   "slug": "ibeet-shizuoka-gas-hamamatsu-bluestorage-2026-10",
+   "publishedDate": "2026-10-01",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000011.000110152.html",
+   "class": "(iii) 外す",
+   "rule": "R13",
+   "note": "蓄電システムの供給（事業主体は静岡ガス＆パワー・開発はグリーンエナジー・プラス。取得・譲渡の語なし）",
+   "quote": "「伊藤忠商事株式会社が展開する系統用蓄電システム「Bluestorage」を供給いたします。」",
+   "sha256": "a68f9b32c6508b1668c333ea9e195224cc2f8cc7c8fd6c814773d0e9771f8a4c"
+  },
+  {
+   "n": 4,
+   "slug": "nc-maniwa-tabane-juden-2026-10",
+   "publishedDate": "2026-10-01",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000111.000161802.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "受電開始",
+   "quote": "「「NC真庭市田羽根蓄電所」受電開始」",
+   "sha256": "79fe8961fb7b9a02f048ed0c95b2a2df1e41e08d91c4bc7ece5a2d2a4b3dd062"
+  },
+  {
+   "n": 5,
+   "slug": "nc-shunan-yuno-balancing-entry-2026-10",
+   "publishedDate": "2026-10-01",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000110.000161802.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "需給調整市場への参入",
+   "quote": "「「NC周南市湯野蓄電所」需給調整市場への参入」",
+   "sha256": "c7fdd2ad503a4f8e1c675120ab5234abcc75edd2952ddd9f33e1d3537352aca2"
+  },
+  {
+   "n": 6,
+   "slug": "tokyo-century-iizuka-solar-bess-start-2026-10",
+   "publishedDate": "2026-10-01",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000253.000076147.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "自社グループの太陽光発電所への併設蓄電池の運転開始",
+   "quote": "「本蓄電池の運転開始に伴い、売電方式をFIT制度からFIP制度へ移行いたしました。」",
+   "sha256": "938cad3f8cfface3b00f7643d0d798ce68baf947b3c69035006df11865b07801"
+  },
+  {
+   "n": 7,
+   "slug": "port-tensor-sassor-aggregation-2026-10",
+   "publishedDate": "2026-10-02",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000222.000016325.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "アグリゲーション契約",
+   "quote": "「高圧系統用蓄電所のアグリゲーション契約を締結」",
+   "sha256": "9c4aa52c6423240a5c2136b0091a96ebad9bdbfee2deeac57c3f7a30141f5405"
+  },
+  {
+   "n": 8,
+   "slug": "powerx-daiwa-house-kurate-delivery-2026-10",
+   "publishedDate": "2026-10-02",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000270.000109041.html",
+   "class": "(iii) 外す",
+   "rule": "R13",
+   "note": "蓄電システムの納入",
+   "quote": "「大和ハウス工業の系統蓄電所に蓄電システムを納入」",
+   "sha256": "f66c08694a8a93cb9b78ce5c7d9def3634678f80d61cc961d34027d4a6ef4262"
+  },
+  {
+   "n": 9,
+   "slug": "nc-kainan-kizu-setti-2026-10",
+   "publishedDate": "2026-10-02",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000112.000161802.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "蓄電池の設置開始（`D-20251201-01` の NCパイオニアの 7 か所のうち和歌山県海南市。取引の新しい記述なし）",
+   "quote": "「「NC海南市木津蓄電所」蓄電池設置開始」",
+   "sha256": "727d52ae487c09c1f9a23854bf618b19ef19e240cdf96cbfc8d8ecb76f094e33"
+  },
+  {
+   "n": 10,
+   "slug": "keiyo-gas-isesaki-bess-start-2026-10",
+   "publishedDate": "2026-10-05",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000012.000125331.html",
+   "class": "(iii) 外す",
+   "rule": "R12",
+   "note": "自社グループ（京葉ガス＋京葉ガス不動産）で設立した合同会社の蓄電所の本格稼働。サンヴィレッジは「開発・建設したもの」とだけあり、取得・購入の語なし",
+   "quote": "「当社は京葉ガスグループの京葉ガス不動産株式会社と共同で、2026年2月に「KG BESS合同会社」を設立しました。」「なお本蓄電所は株式会社サンヴィレッジが開発・建設したものです。」",
+   "sha256": "e84fcad9703b96bf8114ecc0bb608c5ce624bf1c4017ad37930c46dc3904e1b3"
+  },
+  {
+   "n": 11,
+   "slug": "ocean-power-grid-kuribayashi-hachinohe-order-2026-10",
+   "publishedDate": "2026-10-06",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000274.000109041.html",
+   "class": "(iii) 外す",
+   "rule": "R13",
+   "note": "蓄電システムの受注。発注者（栗林商会）の「本蓄電所への出資を決定しました」は自社の蓄電所への出資の決定（R1・R12）",
+   "quote": "「栗林商会の系統蓄電所向けに海上パワーグリッドが受注」「本蓄電所への出資を決定しました。」",
+   "sha256": "c6ee24c41355243b5ede54230b415bbe66533f1c08788c2aa184100e1011d909"
+  },
+  {
+   "n": 12,
+   "slug": "nc-pioneer-smtb-project-finance-2026-10",
+   "publishedDate": "2026-10-08",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000113.000161802.html",
+   "class": "(iii) 外す",
+   "rule": "R11",
+   "note": "`D-20251201-01`（合同会社NCパイオニア）のプロジェクトファイナンス。新しい出資・持分の取得の語なし",
+   "quote": "「をシニアレンダーとするプロジェクトファイナンス契約を締結いたしました」",
+   "sha256": "7a252de534eb2a431f5843ae1f7f0311add6531dcdbee9e9008efaaa5a155204"
+  },
+  {
+   "n": 13,
+   "slug": "gritz-3sites-juden-2026-10",
+   "publishedDate": "2026-10-08",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000012.000117277.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "自社開発の 3 拠点の受電開始",
+   "quote": "「高圧系統用蓄電所3拠点（茨城・栃木・岩手）で受電開始」",
+   "sha256": "cdbeb58dc0ee62f5d3bd8f56d6aef4fec3ab893a52a0643e5b4e9adcb4f42507"
+  },
+  {
+   "n": 14,
+   "slug": "hexa-oyabe-50mw-2026-10",
+   "publishedDate": "2026-10-08",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000009.000173123.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "自社の蓄電所の地鎮祭・建設",
+   "quote": "「本蓄電所は2028年5月の商業運転開始を予定しています。」",
+   "sha256": "ca5df5bdd170fad7800ee6ac785c26e749baa6612a0f69f96d81ce61ac6b98f6"
+  },
+  {
+   "n": 15,
+   "slug": "helios-ones-energy-lv-primary-reserve-test-2026-10",
+   "publishedDate": "2026-10-13",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000004.000185181.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "運用技術の実証（取引ではない）",
+   "quote": "「クラウドで束ねた低圧蓄電所で一次調整力を実証」",
+   "sha256": "b80db01870bcaa89932ad5d0b21727967e3a1397ae0f40a382fb3fd3b62bf6c3"
+  },
+  {
+   "n": 16,
+   "slug": "marubeni-sunvillage-4sites-balancing-entry-2026-10",
+   "publishedDate": "2026-10-13",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000048.000051303.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "需給調整市場への参入とアグリゲーション（サンヴィレッジは土地・系統権利の提供と EPC。所有者・譲渡の語なし）",
+   "quote": "「系統用蓄電池4件の需給調整市場への参入完了について」",
+   "sha256": "9c7ba9be7af44c4f0eb0fc26f41e4844007a521c996890f599d1b83ab408b862"
+  },
+  {
+   "n": 17,
+   "slug": "qenest-sano-primary-reserve-entry-2026-10",
+   "publishedDate": "2026-10-13",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000033.000126341.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "自社所有の蓄電所の市場参入",
+   "quote": "「自社所有の系統用蓄電池で需給調整市場へ参入」",
+   "sha256": "6d6f8d028cf535ec5358043174da7c8e6d19aa244add1042320d5e1a8ecfe75d"
+  },
+  {
+   "n": 18,
+   "slug": "trina-storage-nozu-196mwh-2026-10",
+   "publishedDate": "2026-10-14",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000247.000008483.html",
+   "class": "(iii) 外す",
+   "rule": "R13",
+   "note": "蓄電池システムの供給",
+   "quote": "「「野津」のAEJ蓄電池プロジェクトに196MWhの蓄電池システムを供給」",
+   "sha256": "946c5f82c438f973f2eb47cc443a9d3490c1252d6975b29871298a3be9c72b2e"
+  },
+  {
+   "n": 19,
+   "slug": "nc-nagahama-mikawa-balancing-entry-2026-10",
+   "publishedDate": "2026-10-15",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000114.000161802.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "需給調整市場への参入",
+   "quote": "「「NC長浜市三川町蓄電所」需給調整市場への参入」",
+   "sha256": "f9b04076b1802aeac0b766a624efbfe52758b0abb137235f9ce24caf770edd1e"
+  },
+  {
+   "n": 20,
+   "slug": "amp-lify-mihama-200mwh-ing-finance-2026-10",
+   "publishedDate": "2026-10-15",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000009.000167879.html",
+   "class": "(iii) 外す",
+   "rule": "R11",
+   "note": "プロジェクトファイナンス（発表者は分析の会社）。持分・出資の語なし",
+   "quote": "「が単独主幹事、アカウントバンク」",
+   "sha256": "827b057d02c225cb1c7f6a4f9ac25e8c15359d54d8c2c40f749a445ebffaac1d"
+  },
+  {
+   "n": 21,
+   "slug": "fantasista-nagahama-chakou-2026-10",
+   "publishedDate": "2026-10-16",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000066.000093934.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "自社の 100% 子会社の蓄電所の着工",
+   "quote": "「の100％子会社である合同会社fantasista battery 3」",
+   "sha256": "c488834f6dfdfabff96a700bd384464d2854b55ca10677059b62a94a2f394bce"
+  },
+  {
+   "n": 22,
+   "slug": "sumitomo-namie-62mw-pf-2026-10",
+   "publishedDate": "2026-10-16",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000010.000167879.html",
+   "class": "(iii) 外す",
+   "rule": "R11",
+   "note": "プロジェクトファイナンス（発表者は分析の会社）。持分・出資の語なし",
+   "quote": "「本蓄電所は、国内主要金融機関によるプロジェクトファイナンスの組成を経て建設工事を開始します。」",
+   "sha256": "a9379df74cce6b6046fb67bda573c4525f4e89db4dfc412a400dd8052dc17cc0"
+  },
+  {
+   "n": 23,
+   "slug": "tess-yasugi-kani-bess-orders-2026-10",
+   "publishedDate": "2026-10-16",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000184.000143072.html",
+   "class": "(iii) 外す",
+   "rule": "R4",
+   "note": "設置工事の受注（発注者は合同会社クラダシ・インベストメント２号＝`D-20260812-01` の SPC）",
+   "quote": "「「系統用蓄電所」の設置工事を受注」",
+   "sha256": "7e52fca5262e5a754a604ffb7e87dddcabc7d8c92c366ffc452908bda175da3d"
+  },
+  {
+   "n": 24,
+   "slug": "power-pool-pp7-gk-tk-45oku-2026-10",
+   "publishedDate": "2026-10-16",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000005.000183333.html",
+   "class": "(ii) 今ある行の関連の発表",
+   "rule": "R7",
+   "note": "`D-20260928-01`（第２号ファンド PP7号合同会社）と同じファンド。最初の公表は 9/28 の行。当事者の直し案あり（proposals）",
+   "quote": "「2026年9月18日、国内の高圧系統用蓄電所6案件を投資対象とする「PP7号合同会社」を設立いたしましたので、お知らせいたします。」「匿名組合出資の募集はすでに完了しています。」",
+   "sha256": "05ab9b5978d84352b5b3f5f6ac89c4f19e554cc96df6e752995dbfa6a9f1f50c"
+  },
+  {
+   "n": 25,
+   "slug": "nc-sbi-smart-energy-bess-fund-2026-10",
+   "publishedDate": "2026-10-19",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000115.000161802.html",
+   "class": "(i) 新しい行の候補",
+   "rule": "R8",
+   "note": "日本蓄電池と SBIスマートエナジーの共同出資のファンドの組成・運営開始（proposals）",
+   "quote": "「と共同で系統用蓄電池事業ファンドを組成し、10月１日より運営を開始しましたのでお知らせいたします。」",
+   "sha256": "1f68b5e726743808542beefcb04095a3f5b9b83767b19cda7455192180542706"
+  },
+  {
+   "n": 26,
+   "slug": "remixpoint-ena-iwamura3-site-2026-10",
+   "publishedDate": "2026-10-19",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000231.000033609.html",
+   "class": "(i) 新しい行の候補",
+   "rule": "R1",
+   "note": "開発用地等の取得（完了の語「取得しました」・proposals）",
+   "quote": "「の開発用地等を取得しました。」",
+   "sha256": "f21b23eb4308c02ee6fd1a38054fdc5d0c9446a1ac6e8a6410c36b9f1a408f44"
+  },
+  {
+   "n": 27,
+   "slug": "mitsuuroko-kitahiroshima-primary-reserve-2026-10",
+   "publishedDate": "2026-10-19",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000379.000070816.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "需給調整市場への参入",
+   "quote": "「需給調整市場「一次調整力（オフライン枠）」へ新規参入」",
+   "sha256": "95d1d4e6103494234d8aed0fc48a458a363f31c829eaacfb4999b0d89087d02b"
+  },
+  {
+   "n": 28,
+   "slug": "nc-kuchiharu-balancing-entry-2026-10",
+   "publishedDate": "2026-10-20",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000116.000161802.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "需給調整市場への参入（`D-20251201-01` の NCパイオニアの 7 か所のうち福岡県嘉麻市）",
+   "quote": "「「NC口春蓄電所」需給調整市場への参入」",
+   "sha256": "e42dbc74314393612ca9835a626810c296096f870b077bf0e18dad834ba77e09"
+  },
+  {
+   "n": 29,
+   "slug": "erex-sanbu-bess-cod-2026-10",
+   "publishedDate": "2026-10-20",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000179.000029914.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "自社の第 2 号案件の商業運転の開始",
+   "quote": "「系統用蓄電池第2号案件の商業運転を開始」",
+   "sha256": "905f41729bbe14a468646daa983034247b846f7f899012461ee501bb309dd5da"
+  },
+  {
+   "n": 30,
+   "slug": "kanei-teras-bluefield-tk1-2026-10",
+   "publishedDate": "2026-10-21",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000042.000174524.html",
+   "class": "(iv) 決められない",
+   "rule": "R1／R12",
+   "note": "カンエイと TERAS が SPC「株式会社TK蓄電所1号」を設立（完了）。ただし「出資」「持分」の語が一次に無い（共同出資と読めるかはユウの裁定）。規模 2MW・4MWh、運転開始 2027年4月予定",
+   "quote": "「系統用蓄電池事業の共同開発を進めるため、SPC（特別目的会社）「株式会社TK蓄電所1号」を設立し」",
+   "sha256": "f4cb0aef193993a7f1317eedd36e8c447f30197dfba44e8755098e3b2b2193c9"
+  },
+  {
+   "n": 31,
+   "slug": "sustech-soden-kyoto-2sites-2026-10",
+   "publishedDate": "2026-10-23",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000095.000092942.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "アグリゲーションを担う蓄電所の運転開始",
+   "quote": "「Sustechがアグリゲーターを担う」",
+   "sha256": "edb8023300f2e2f871a3420c3c1c1c1d488743149a50a5698a437d9260b79c5e"
+  },
+  {
+   "n": 32,
+   "slug": "taoke-ota-ryumai-wake-renkei-2026-10",
+   "publishedDate": "2026-10-23",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000046.000103834.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "系統連系。群馬県太田市は「自社投資」（R12）、岡山県和気郡は GK-TK だが、ファンドの組成・出資の語は無く、どのファンドかも一次に無い",
+   "quote": "「群馬県太田市の案件はTAOKEによる「自社投資」、岡山県和気郡の案件は合同会社（GK）と匿名組合（TK）を組み合わせた「GK-TKスキーム」で構築されています。」",
+   "sha256": "006812f34edbf1d57e905eb2899c63db29dbfb548bca426f388b3d6df1103d2b"
+  },
+  {
+   "n": 33,
+   "slug": "kepco-eflow-solar-bess-multiuse-110mw-2026-10",
+   "publishedDate": "2026-10-23",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000003.000189198.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "併設蓄電池の運用の取組み",
+   "quote": "「マルチユース運用の取組み」",
+   "sha256": "8a7655d4ecf937a60e1d3b9408c0ca848cc0787bf88ae0960babfd2d26d7e049"
+  },
+  {
+   "n": 34,
+   "slug": "tokyo-century-retail-registration-aggregation-2026-10",
+   "publishedDate": "2026-10-26",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000257.000076147.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "小売電気事業者の登録とアグリゲーションの体制。保留の C330（筑後市）に当たる記述は無い（東北エリアの単独出資の蓄電所の運用の切替だけ）",
+   "quote": "「当社によるアグリゲーションへ切り替えることを計画しています。」",
+   "sha256": "c5e139f224a4adf5d47a62114b87ab5061807eb7b337c5eba2659caf81320cae"
+  },
+  {
+   "n": 35,
+   "slug": "tensor-microgx-kyoto-fukuchiyama-2026-10",
+   "publishedDate": "2026-10-26",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000054.000096424.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "アグリゲーションシステムの提供",
+   "quote": "「アグリゲーションシステムの提供を開始」",
+   "sha256": "6a4b7a33e1e7755b207e8c278f61ade13fd989ee193bc7fa389ce87c4a835d5a"
+  },
+  {
+   "n": 36,
+   "slug": "denki-no-eki-isahaya-16mw-chakou-2026-10",
+   "publishedDate": "2026-10-28",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000001441.000037933.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "着工。研究便の C294（でんきの駅富合の完工＝外した）と同じ型。でんきの駅の出資者 3 社は 2023年4月の設立",
+   "quote": "「を長崎県諫早市で着工」",
+   "sha256": "9f938442060338d4093287272d74cb36dc24f7d8b9f429be9dfb9ca306e98a5c"
+  },
+  {
+   "n": 37,
+   "slug": "taoke-minamichita-renkei-2026-10",
+   "publishedDate": "2026-10-30",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000047.000103834.html",
+   "class": "(iii) 外す",
+   "rule": "R1",
+   "note": "系統連系。BTホールディングへの引渡しは予定（2 件目の協業。1 件目の蔵王町は 8/28 に引渡し完了＝proposals）",
+   "quote": "「完了後にBTホールディングへの引き渡しを予定しています。」",
+   "sha256": "ae825e7f769b3542af2d626b2eb3ce6f1ae1866c11b5062cae500f7c13082362"
+  },
+  {
+   "n": 38,
+   "slug": "powerx-kansai-td-grid-congestion-mou-2026-10",
+   "publishedDate": "2026-10-30",
+   "file": "scripts/news-import-2026-11.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000283.000109041.html",
+   "class": "(iii) 外す",
+   "rule": "R1",
+   "note": "基本合意書",
+   "quote": "「基本合意書の締結について」",
+   "sha256": "0025dfcff3a99e6f44cde531d8f11427df0c9f7a57aa6a60b966cf74215889f9"
+  },
+  {
+   "n": 39,
+   "slug": "nc-izumo-minamiaizu-setti-2026-11",
+   "publishedDate": "2026-11-02",
+   "file": "scripts/news-import-2026-11-06.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000118.000161802.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "蓄電池の設置",
+   "quote": "「「NC出雲市国富町蓄電所」蓄電池設置開始」",
+   "sha256": "4bae9ed53ed999a764c5ded1e30183930016f098cb501dff989c2b64f2cd0c08"
+  },
+  {
+   "n": 40,
+   "slug": "sunpin-shiga-otsu-45mw-renkei-2026-11",
+   "publishedDate": "2026-11-05",
+   "file": "scripts/news-import-2026-11-06.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000002.000193954.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "自社の蓄電所の系統接続",
+   "quote": "「2026年11月5日に送配電網への系統接続」",
+   "sha256": "a4e19885bf9b80bc773c3bb24035190be6152f71308bf673b4859ddbe3503a65"
+  },
+  {
+   "n": 41,
+   "slug": "nextes-kasama-bousai-bess-2026-11",
+   "publishedDate": "2026-11-05",
+   "file": "scripts/news-import-2026-11-06.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000021.000176308.html",
+   "class": "(iii) 外す",
+   "rule": "R13",
+   "note": "蓄電池の採用（事業者は笠間市・芙蓉総合リース・東電タウンプランニング。取得・出資の語なし）",
+   "quote": "「当社の13ft 水冷式系統用蓄電池が採用されたこと」",
+   "sha256": "fbc2ebdb7232e43231604e217b695f5a3c397e66271c892279f44f332924cd78"
+  },
+  {
+   "n": 42,
+   "slug": "nc-makurazaki-juden-2026-11",
+   "publishedDate": "2026-11-05",
+   "file": "scripts/news-import-2026-11-06.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000232.000033609.html",
+   "class": "(iii) 外す",
+   "rule": "R15",
+   "note": "受電開始（`D-20251201-01` の NCパイオニアの 7 か所のうち鹿児島県枕崎市）",
+   "quote": "「鹿児島県枕崎市で約2MW系統用蓄電所が受電開始」",
+   "sha256": "77315303b66dd36849a62c680913c6901c852d5d3bb97f94f275cec8009165db"
+  },
+  {
+   "n": 43,
+   "slug": "bluefield-aggregation-150mw-2026-11",
+   "publishedDate": "2026-11-05",
+   "file": "scripts/news-import-2026-11-06.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000046.000174524.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "アグリゲーションの採用容量",
+   "quote": "「アグリゲーションサービス、採用決定容量150MWを突破」",
+   "sha256": "72d087dd570f1b372fd6e1279442989029c91cba5ff292653f26a77ffe7ac627"
+  },
+  {
+   "n": 44,
+   "slug": "digitalgrid-bess-250mw-2026-11",
+   "publishedDate": "2026-11-05",
+   "file": "scripts/news-import-2026-11-06.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000068.000045726.html",
+   "class": "(iii) 外す",
+   "rule": "R10",
+   "note": "アグリゲーターの取扱量",
+   "quote": "「系統用蓄電池の取扱量が2026年11月4日時点で250MWを突破したことをお知らせいたします。」",
+   "sha256": "4bac30bd74c74b1d74d651e60258379b47c1d67aa6dd9b0e5a9a8a3780686922"
+  },
+  {
+   "n": 45,
+   "slug": "buddynet-3sites-completion-2026-11",
+   "publishedDate": "2026-11-05",
+   "file": "scripts/news-import-2026-11-06.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000021.000168478.html",
+   "class": "(iii) 外す",
+   "rule": "R4",
+   "note": "施工の完工・引渡し（EPC）",
+   "quote": "「2026年9月に完工・引き渡しを完了しました。」",
+   "sha256": "4597f97785854756fab9e1303d00797ea354cf5329396ab6a9c9f4ae86687778"
+  },
+  {
+   "n": 46,
+   "slug": "powerx-energy-vault-partnership-2026-11",
+   "publishedDate": "2026-11-05",
+   "file": "scripts/news-import-2026-11-06.json",
+   "url": "https://prtimes.jp/main/html/rd/p/000000284.000109041.html",
+   "class": "(iii) 外す",
+   "rule": "R1",
+   "note": "戦略的パートナーシップ（法的拘束力なし）",
+   "quote": "「本契約は法的拘束力を有するものではなく、上記の数量は目安です。」",
+   "sha256": "f8fe62563a9173f5653a9740f98e8674a32a152f61c1a0698d5bf78c14861d63"
+  }
+ ],
+ "B": [
+  {
+   "item": "1. 2025-10-17 福岡県筑紫野市の取得",
+   "result": "外す（2026-01-30 に取得中止）",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2699253/00.pdf",
+   "proposal": 9
+  },
+  {
+   "item": "2. 2025-11-27 愛知県豊橋市雲谷町の売却",
+   "result": "外す（2026-01-30 に売却中止＝売却先の不払い）。あわせて `D-20251009-01` の豊橋市の取得も 2026-01-30 に中止＝行の直しの案",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2725089/00.pdf",
+   "proposal": 8
+  },
+  {
+   "item": "3. 2025-06-12 愛知県豊橋市植田町の譲受",
+   "result": "決められない（決議だけ。「譲受することを決議」・譲受価額は非開示。後の完了の一次は見つからない。10/27 の進捗の表〔①〜⑦〕にも植田町は無い）",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2638240/00.pdf",
+   "quote": "「が保有する系統用蓄電所事業用地（以下、「本事業用地」といいます。 ）を譲受することを決議いたしましたので」「（2） 所在地 愛知県豊橋市植田町」"
+  },
+  {
+   "item": "4. 杵築市の初出",
+   "result": "2025年6月前後の一次は無い。専用の開示は 2026-01-30（決議）＝関連の発表と当事者・価格の案",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747420/00.pdf",
+   "proposal": 7
+  }
+ ],
+ "C": [
+  {
+   "cid": "C449",
+   "found": false,
+   "searched": [
+    "https://prtimes.jp/companyrdf.php?company_id=40575（2018-12-27〜2026-10-29・91 件）"
+   ],
+   "note": "8/31 の後の蓄電の発表なし（PR TIMES）。適時開示（TDnet）は見ていない"
+  },
+  {
+   "cid": "C330",
+   "found": false,
+   "searched": [
+    "https://prtimes.jp/companyrdf.php?company_id=76147（2021-09-30〜2026-10-29・200 件）"
+   ],
+   "note": "3/25 の後に筑後市の発表なし（6/1 は筑前町＝`D-20260601-01`）"
+  },
+  {
+   "cid": "C329",
+   "found": false,
+   "searched": [
+    "https://prtimes.jp/companyrdf.php?company_id=154894（10 件）"
+   ],
+   "note": "3/19 の後の RSアセットアドバイザーズの発表（5/29・7/9・8/17・10/19）に、ヒューリック・芙蓉総合リース・伊藤忠商事との出資・締結の記述なし"
+  },
+  {
+   "cid": "C293",
+   "found": false,
+   "searched": [
+    "https://prtimes.jp/companyrdf.php?company_id=14485（2024-06-27〜2026-11-10・200 件）"
+   ],
+   "note": "出資先は「合同会社ジャパンパワーストレージ1」＝POWER POOL の第一号ファンド（`D-20260306-01` と同じファンド）。2/13 の契約・2/23 の出資の実行の一次は PR TIMES に無い（適時開示は見ていない）。探す途中で 6/23 の辻・本郷の取引を見つけた（proposals 4）"
+  },
+  {
+   "cid": "C249",
+   "found": false,
+   "searched": [
+    "https://prtimes.jp/companyrdf.php?company_id=103834（27 件）"
+   ],
+   "note": "クラダシの名前の出る TAOKE の発表なし。探す途中で 8/28 の蔵王町の引渡しを見つけた（proposals 5）"
+  },
+  {
+   "cid": "C202",
+   "found": false,
+   "searched": [
+    "https://mbkworld.co.jp/news/（2026-11-12 取得）"
+   ],
+   "note": "EUKA Power の開示は 2025-11-04（保留の出典）が最新"
+  },
+  {
+   "cid": "C112",
+   "found": false,
+   "searched": [
+    "https://prtimes.jp/companyrdf.php?company_id=125331（7 件）"
+   ],
+   "note": "6/18 の後は 2025-09-30（米国の分散型太陽光への出資の決定）と 2026-10-05（国内の蓄電所＝A #10）だけ"
+  },
+  {
+   "cid": "C074",
+   "found": false,
+   "searched": [
+    "https://prtimes.jp/companyrdf.php?company_id=140317（53 件）"
+   ],
+   "note": "後の蓄電の発表は 2025-10-14（エネルギーパワー株式会社への支援の決定・別の案件）だけ。レノバ側の一次は見ていない"
+  },
+  {
+   "cid": "C046",
+   "found": false,
+   "searched": [
+    "https://prtimes.jp/companyrdf.php?company_id=92942（79 件）"
+   ],
+   "note": "日本ガイシとのファンドの後の発表なし（日本ガイシ側は見ていない）"
+  },
+  {
+   "cid": "C029",
+   "found": true,
+   "searched": [
+    "https://prtimes.jp/companyrdf.php?company_id=139670（2024-09-09〜2026-11-11・200 件）"
+   ],
+   "note": "2025-11-27 の商業運転の開始の発表に「共同で出資する武雄蓄電所合同会社」と出資者 4 社（proposals 6）"
+  }
+ ],
+ "D": [
+  {
+   "item": "クラダシ `D-20250122-01` の元の開示",
+   "result": "元は 2024-12-18「再生可能エネルギー事業（系統用蓄電池事業など）への参入検討開始に関するお知らせ」。参入の検討の開始で、栃木・小山・取得の語は無い（R1）＝行の出典は今のまま",
+   "url": "https://prtimes.jp/main/html/rd/p/000000564.000014485.html",
+   "quote": "「再生可能エネルギー事業（系統用蓄電池事業など）への参入の検討開始を決定いたしましたので」"
+  },
+  {
+   "item": "`D-20260730-01`（岐阜県高山市）のエリア",
+   "result": "ジェイホールディングスの 7/30 の後の開示は 9/30 の匿名組合出資（`D-20260930-01`）だけで、高山市の接続先・管内の記述なし＝unknown のまま",
+   "url": "https://jholdings.co.jp/news/（2026-11-12 取得）"
+  }
+ ],
+ "starseedsOtherDisclosures": [
+  {
+   "date": "2026-01-13",
+   "title": "固定資産（系統用蓄電所設備）及び電力接続権の取得に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2740054/00.pdf"
+  },
+  {
+   "date": "2026-01-26",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2743874/00.pdf"
+  },
+  {
+   "date": "2026-01-27",
+   "title": "（訂正）販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2743990/00.pdf"
+  },
+  {
+   "date": "2026-01-30",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ（和歌山県紀の川市上田井）",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747421/00.pdf"
+  },
+  {
+   "date": "2026-02-19",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2765519/00.pdf"
+  },
+  {
+   "date": "2026-02-27",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2768953/00.pdf"
+  },
+  {
+   "date": "2026-03-19",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2778541/00.pdf"
+  },
+  {
+   "date": "2026-03-26",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2781302/00.pdf"
+  },
+  {
+   "date": "2026-03-30",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2783157/00.pdf"
+  },
+  {
+   "date": "2026-04-08",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2788000/00.pdf"
+  },
+  {
+   "date": "2026-06-25",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2840827/00.pdf"
+  },
+  {
+   "date": "2026-09-28",
+   "title": "（開示事項の中止）販売用不動産（系統用蓄電所の土地及び設備） 並びに電力接続権の売却に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2888041/00.pdf"
+  },
+  {
+   "date": "2026-10-28",
+   "title": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ",
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2899659/00.pdf"
+  }
+ ],
+ "fetched": [
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000063.000045726.html",
+   "http": "200",
+   "bytes": 236409,
+   "sha256": "2d8c314a2da91746f62cb4e457bda25a21ac6aa317b75cac5b946b4b68f643ae",
+   "fetchedAtJst": "2026-11-12 08:35:44",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n01_digitalgrid-bess-200mw-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000080.000111866.html",
+   "http": "200",
+   "bytes": 235693,
+   "sha256": "8e2ea5fa5b55c45f3ca270fb4ce09baa8afa922966c2d168169ce1441ef8f147",
+   "fetchedAtJst": "2026-11-12 08:35:46",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n02_ntt-anode-aomori-misawa-cod-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000011.000110152.html",
+   "http": "200",
+   "bytes": 244687,
+   "sha256": "a68f9b32c6508b1668c333ea9e195224cc2f8cc7c8fd6c814773d0e9771f8a4c",
+   "fetchedAtJst": "2026-11-12 08:35:47",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n03_ibeet-shizuoka-gas-hamamatsu-bluestorage-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000111.000161802.html",
+   "http": "200",
+   "bytes": 250902,
+   "sha256": "79fe8961fb7b9a02f048ed0c95b2a2df1e41e08d91c4bc7ece5a2d2a4b3dd062",
+   "fetchedAtJst": "2026-11-12 08:35:49",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n04_nc-maniwa-tabane-juden-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000110.000161802.html",
+   "http": "200",
+   "bytes": 248904,
+   "sha256": "c7fdd2ad503a4f8e1c675120ab5234abcc75edd2952ddd9f33e1d3537352aca2",
+   "fetchedAtJst": "2026-11-12 08:35:50",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n05_nc-shunan-yuno-balancing-entry-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000253.000076147.html",
+   "http": "200",
+   "bytes": 320380,
+   "sha256": "938cad3f8cfface3b00f7643d0d798ce68baf947b3c69035006df11865b07801",
+   "fetchedAtJst": "2026-11-12 08:35:52",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n06_tokyo-century-iizuka-solar-bess-start-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000222.000016325.html",
+   "http": "200",
+   "bytes": 278688,
+   "sha256": "9c4aa52c6423240a5c2136b0091a96ebad9bdbfee2deeac57c3f7a30141f5405",
+   "fetchedAtJst": "2026-11-12 08:35:53",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n07_port-tensor-sassor-aggregation-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000270.000109041.html",
+   "http": "200",
+   "bytes": 238271,
+   "sha256": "f66c08694a8a93cb9b78ce5c7d9def3634678f80d61cc961d34027d4a6ef4262",
+   "fetchedAtJst": "2026-11-12 08:35:55",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n08_powerx-daiwa-house-kurate-delivery-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000112.000161802.html",
+   "http": "200",
+   "bytes": 248682,
+   "sha256": "727d52ae487c09c1f9a23854bf618b19ef19e240cdf96cbfc8d8ecb76f094e33",
+   "fetchedAtJst": "2026-11-12 08:35:56",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n09_nc-kainan-kizu-setti-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000012.000125331.html",
+   "http": "200",
+   "bytes": 262499,
+   "sha256": "e84fcad9703b96bf8114ecc0bb608c5ce624bf1c4017ad37930c46dc3904e1b3",
+   "fetchedAtJst": "2026-11-12 08:35:58",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n10_keiyo-gas-isesaki-bess-start-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000274.000109041.html",
+   "http": "200",
+   "bytes": 246757,
+   "sha256": "c6ee24c41355243b5ede54230b415bbe66533f1c08788c2aa184100e1011d909",
+   "fetchedAtJst": "2026-11-12 08:36:00",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n11_ocean-power-grid-kuribayashi-hachinohe-order-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000113.000161802.html",
+   "http": "200",
+   "bytes": 235311,
+   "sha256": "7a252de534eb2a431f5843ae1f7f0311add6531dcdbee9e9008efaaa5a155204",
+   "fetchedAtJst": "2026-11-12 08:36:02",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n12_nc-pioneer-smtb-project-finance-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000012.000117277.html",
+   "http": "200",
+   "bytes": 241520,
+   "sha256": "cdbeb58dc0ee62f5d3bd8f56d6aef4fec3ab893a52a0643e5b4e9adcb4f42507",
+   "fetchedAtJst": "2026-11-12 08:36:03",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n13_gritz-3sites-juden-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000009.000173123.html",
+   "http": "200",
+   "bytes": 260228,
+   "sha256": "ca5df5bdd170fad7800ee6ac785c26e749baa6612a0f69f96d81ce61ac6b98f6",
+   "fetchedAtJst": "2026-11-12 08:36:04",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n14_hexa-oyabe-50mw-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000004.000185181.html",
+   "http": "200",
+   "bytes": 274494,
+   "sha256": "b80db01870bcaa89932ad5d0b21727967e3a1397ae0f40a382fb3fd3b62bf6c3",
+   "fetchedAtJst": "2026-11-12 08:36:07",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n15_helios-ones-energy-lv-primary-reserve-test-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000048.000051303.html",
+   "http": "200",
+   "bytes": 283630,
+   "sha256": "9c7ba9be7af44c4f0eb0fc26f41e4844007a521c996890f599d1b83ab408b862",
+   "fetchedAtJst": "2026-11-12 08:36:08",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n16_marubeni-sunvillage-4sites-balancing-entry-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000033.000126341.html",
+   "http": "200",
+   "bytes": 259094,
+   "sha256": "6d6f8d028cf535ec5358043174da7c8e6d19aa244add1042320d5e1a8ecfe75d",
+   "fetchedAtJst": "2026-11-12 08:36:10",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n17_qenest-sano-primary-reserve-entry-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000247.000008483.html",
+   "http": "200",
+   "bytes": 244519,
+   "sha256": "946c5f82c438f973f2eb47cc443a9d3490c1252d6975b29871298a3be9c72b2e",
+   "fetchedAtJst": "2026-11-12 08:36:12",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n18_trina-storage-nozu-196mwh-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000114.000161802.html",
+   "http": "200",
+   "bytes": 249027,
+   "sha256": "f9b04076b1802aeac0b766a624efbfe52758b0abb137235f9ce24caf770edd1e",
+   "fetchedAtJst": "2026-11-12 08:36:13",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n19_nc-nagahama-mikawa-balancing-entry-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000009.000167879.html",
+   "http": "200",
+   "bytes": 248006,
+   "sha256": "827b057d02c225cb1c7f6a4f9ac25e8c15359d54d8c2c40f749a445ebffaac1d",
+   "fetchedAtJst": "2026-11-12 08:36:14",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n20_amp-lify-mihama-200mwh-ing-finance-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000066.000093934.html",
+   "http": "200",
+   "bytes": 241930,
+   "sha256": "c488834f6dfdfabff96a700bd384464d2854b55ca10677059b62a94a2f394bce",
+   "fetchedAtJst": "2026-11-12 08:36:16",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n21_fantasista-nagahama-chakou-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000010.000167879.html",
+   "http": "200",
+   "bytes": 248580,
+   "sha256": "a9379df74cce6b6046fb67bda573c4525f4e89db4dfc412a400dd8052dc17cc0",
+   "fetchedAtJst": "2026-11-12 08:36:17",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n22_sumitomo-namie-62mw-pf-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000184.000143072.html",
+   "http": "200",
+   "bytes": 256963,
+   "sha256": "7e52fca5262e5a754a604ffb7e87dddcabc7d8c92c366ffc452908bda175da3d",
+   "fetchedAtJst": "2026-11-12 08:36:18",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n23_tess-yasugi-kani-bess-orders-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000005.000183333.html",
+   "http": "200",
+   "bytes": 234830,
+   "sha256": "05ab9b5978d84352b5b3f5f6ac89c4f19e554cc96df6e752995dbfa6a9f1f50c",
+   "fetchedAtJst": "2026-11-12 08:36:20",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n24_power-pool-pp7-gk-tk-45oku-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000115.000161802.html",
+   "http": "200",
+   "bytes": 236060,
+   "sha256": "1f68b5e726743808542beefcb04095a3f5b9b83767b19cda7455192180542706",
+   "fetchedAtJst": "2026-11-12 08:36:21",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n25_nc-sbi-smart-energy-bess-fund-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000231.000033609.html",
+   "http": "200",
+   "bytes": 265330,
+   "sha256": "f21b23eb4308c02ee6fd1a38054fdc5d0c9446a1ac6e8a6410c36b9f1a408f44",
+   "fetchedAtJst": "2026-11-12 08:36:22",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n26_remixpoint-ena-iwamura3-site-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000379.000070816.html",
+   "http": "200",
+   "bytes": 254941,
+   "sha256": "95d1d4e6103494234d8aed0fc48a458a363f31c829eaacfb4999b0d89087d02b",
+   "fetchedAtJst": "2026-11-12 08:36:24",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n27_mitsuuroko-kitahiroshima-primary-reserve-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000116.000161802.html",
+   "http": "200",
+   "bytes": 251889,
+   "sha256": "e42dbc74314393612ca9835a626810c296096f870b077bf0e18dad834ba77e09",
+   "fetchedAtJst": "2026-11-12 08:36:26",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n28_nc-kuchiharu-balancing-entry-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000179.000029914.html",
+   "http": "200",
+   "bytes": 252011,
+   "sha256": "905f41729bbe14a468646daa983034247b846f7f899012461ee501bb309dd5da",
+   "fetchedAtJst": "2026-11-12 08:36:27",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n29_erex-sanbu-bess-cod-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000042.000174524.html",
+   "http": "200",
+   "bytes": 255199,
+   "sha256": "f4cb0aef193993a7f1317eedd36e8c447f30197dfba44e8755098e3b2b2193c9",
+   "fetchedAtJst": "2026-11-12 08:36:29",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n30_kanei-teras-bluefield-tk1-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000095.000092942.html",
+   "http": "200",
+   "bytes": 253481,
+   "sha256": "edb8023300f2e2f871a3420c3c1c1c1d488743149a50a5698a437d9260b79c5e",
+   "fetchedAtJst": "2026-11-12 08:36:30",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n31_sustech-soden-kyoto-2sites-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000046.000103834.html",
+   "http": "200",
+   "bytes": 249572,
+   "sha256": "006812f34edbf1d57e905eb2899c63db29dbfb548bca426f388b3d6df1103d2b",
+   "fetchedAtJst": "2026-11-12 08:36:32",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n32_taoke-ota-ryumai-wake-renkei-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000003.000189198.html",
+   "http": "200",
+   "bytes": 237017,
+   "sha256": "8a7655d4ecf937a60e1d3b9408c0ca848cc0787bf88ae0960babfd2d26d7e049",
+   "fetchedAtJst": "2026-11-12 08:36:34",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n33_kepco-eflow-solar-bess-multiuse-110mw-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000257.000076147.html",
+   "http": "200",
+   "bytes": 238468,
+   "sha256": "c5e139f224a4adf5d47a62114b87ab5061807eb7b337c5eba2659caf81320cae",
+   "fetchedAtJst": "2026-11-12 08:36:35",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n34_tokyo-century-retail-registration-aggregation-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000054.000096424.html",
+   "http": "200",
+   "bytes": 250487,
+   "sha256": "6a4b7a33e1e7755b207e8c278f61ade13fd989ee193bc7fa389ce87c4a835d5a",
+   "fetchedAtJst": "2026-11-12 08:36:37",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n35_tensor-microgx-kyoto-fukuchiyama-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000001441.000037933.html",
+   "http": "200",
+   "bytes": 268014,
+   "sha256": "9f938442060338d4093287272d74cb36dc24f7d8b9f429be9dfb9ca306e98a5c",
+   "fetchedAtJst": "2026-11-12 08:36:38",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n36_denki-no-eki-isahaya-16mw-chakou-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000047.000103834.html",
+   "http": "200",
+   "bytes": 247017,
+   "sha256": "ae825e7f769b3542af2d626b2eb3ce6f1ae1866c11b5062cae500f7c13082362",
+   "fetchedAtJst": "2026-11-12 08:36:39",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n37_taoke-minamichita-renkei-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000283.000109041.html",
+   "http": "200",
+   "bytes": 248314,
+   "sha256": "0025dfcff3a99e6f44cde531d8f11427df0c9f7a57aa6a60b966cf74215889f9",
+   "fetchedAtJst": "2026-11-12 08:36:41",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n38_powerx-kansai-td-grid-congestion-mou-2026-10.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000118.000161802.html",
+   "http": "200",
+   "bytes": 245349,
+   "sha256": "4bae9ed53ed999a764c5ded1e30183930016f098cb501dff989c2b64f2cd0c08",
+   "fetchedAtJst": "2026-11-12 08:36:42",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n39_nc-izumo-minamiaizu-setti-2026-11.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000002.000193954.html",
+   "http": "200",
+   "bytes": 248122,
+   "sha256": "a4e19885bf9b80bc773c3bb24035190be6152f71308bf673b4859ddbe3503a65",
+   "fetchedAtJst": "2026-11-12 08:36:43",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n40_sunpin-shiga-otsu-45mw-renkei-2026-11.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000021.000176308.html",
+   "http": "200",
+   "bytes": 248218,
+   "sha256": "fbc2ebdb7232e43231604e217b695f5a3c397e66271c892279f44f332924cd78",
+   "fetchedAtJst": "2026-11-12 08:36:45",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n41_nextes-kasama-bousai-bess-2026-11.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000232.000033609.html",
+   "http": "200",
+   "bytes": 276667,
+   "sha256": "77315303b66dd36849a62c680913c6901c852d5d3bb97f94f275cec8009165db",
+   "fetchedAtJst": "2026-11-12 08:36:47",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n42_nc-makurazaki-juden-2026-11.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000046.000174524.html",
+   "http": "200",
+   "bytes": 254982,
+   "sha256": "72d087dd570f1b372fd6e1279442989029c91cba5ff292653f26a77ffe7ac627",
+   "fetchedAtJst": "2026-11-12 08:36:48",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n43_bluefield-aggregation-150mw-2026-11.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000068.000045726.html",
+   "http": "200",
+   "bytes": 237934,
+   "sha256": "4bac30bd74c74b1d74d651e60258379b47c1d67aa6dd9b0e5a9a8a3780686922",
+   "fetchedAtJst": "2026-11-12 08:36:50",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n44_digitalgrid-bess-250mw-2026-11.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000021.000168478.html",
+   "http": "200",
+   "bytes": 286711,
+   "sha256": "4597f97785854756fab9e1303d00797ea354cf5329396ab6a9c9f4ae86687778",
+   "fetchedAtJst": "2026-11-12 08:36:51",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n45_buddynet-3sites-completion-2026-11.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000284.000109041.html",
+   "http": "200",
+   "bytes": 245526,
+   "sha256": "f8fe62563a9173f5653a9740f98e8674a32a152f61c1a0698d5bf78c14861d63",
+   "fetchedAtJst": "2026-11-12 08:36:53",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\news\\n46_powerx-energy-vault-partnership-2026-11.html"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2638240/00.pdf",
+   "http": "200",
+   "bytes": 713059,
+   "sha256": "bddc776debd7641f0884970cf1bd74b445870b748773db35be69190b2384ffeb",
+   "fetchedAtJst": "2026-11-12 08:41:38（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\ss_2638240.pdf"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2699253/00.pdf",
+   "http": "200",
+   "bytes": 223133,
+   "sha256": "53a0744be5a11613e467b97a3e90e3958ba6aa600af437f3661f4a7e3a10fd4f",
+   "fetchedAtJst": "2026-11-12 08:41:39（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\ss_2699253.pdf"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2725089/00.pdf",
+   "http": "200",
+   "bytes": 169184,
+   "sha256": "e3dae18f781a01ddccf98c786f40734afda2edb906fa5bae517a07c7edba7306",
+   "fetchedAtJst": "2026-11-12 08:41:41（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\ss_2725089.pdf"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747420/00.pdf",
+   "http": "200",
+   "bytes": 194492,
+   "sha256": "91b2ea20f7be01eea7d474bea36331b4439d03267b73a414321600241978e6c9",
+   "fetchedAtJst": "2026-11-12 08:41:42（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\ss_2747420.pdf"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747413/00.pdf",
+   "http": "200",
+   "bytes": 147963,
+   "sha256": "d280d50628042c3571ddb422b0002e3f0e59998284785391514cbc22800517a1",
+   "fetchedAtJst": "2026-11-12 08:41:43（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\ss_2747413.pdf"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747417/00.pdf",
+   "http": "200",
+   "bytes": 151436,
+   "sha256": "89d0e6e17c61524c32d7817d104c45761a1c020cc5bc2973100f614fa03169c5",
+   "fetchedAtJst": "2026-11-12 08:41:44（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\ss_2747417.pdf"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747418/00.pdf",
+   "http": "200",
+   "bytes": 153739,
+   "sha256": "3130bfc872205b998997f87173adc759818a765caa86a81dba1899d367a82674",
+   "fetchedAtJst": "2026-11-12 08:41:45（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\ss_2747418.pdf"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2695881/00.pdf",
+   "http": "200",
+   "bytes": 222134,
+   "sha256": "8ca048571574deb0c6643e47741a125d6def14c4b9cb5d3c4c633a09a13b1740",
+   "fetchedAtJst": "2026-11-12 08:41:46（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\ss_2695881.pdf"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2700001/00.pdf",
+   "http": "200",
+   "bytes": 167271,
+   "sha256": "094ae6793e4c85ee78a1f3b122934d9627f3bec83681b66ea52f789a5b22e356",
+   "fetchedAtJst": "2026-11-12 08:46:41（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\ss_2700001.pdf"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000671.000014485.html",
+   "http": "200",
+   "bytes": 247699,
+   "sha256": "5385e04599503beecc6df39b3ce5ca3ef034b90d6c43631be175dd3ca9647401",
+   "fetchedAtJst": "2026-11-12 08:43:39（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\h_000000671.000014485.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000708.000014485.html",
+   "http": "200",
+   "bytes": 280074,
+   "sha256": "6d000afb9557d54532d46e38571e7b628cfa3aa6999b61bf1379bcaf188a0ac0",
+   "fetchedAtJst": "2026-11-12 08:43:40（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\h_000000708.000014485.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000180.000139670.html",
+   "http": "200",
+   "bytes": 331103,
+   "sha256": "8be231ec0b99ef5853f2df548b853331b2b0aa336e069a80a841465af039e072",
+   "fetchedAtJst": "2026-11-12 08:43:41（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\h_000000180.000139670.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000025.000139670.html",
+   "http": "200",
+   "bytes": 324006,
+   "sha256": "71969ee9a427fa54ffd611b8bebf396ad9c24deaaad15ac1cf70350e18076af4",
+   "fetchedAtJst": "2026-11-12 08:43:42（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\h_000000025.000139670.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000016.000154894.html",
+   "http": "200",
+   "bytes": 247005,
+   "sha256": "404b9e92645d90e780b8d86cdca75d60eb05cb5e65fdaaf9c48171c1240677ae",
+   "fetchedAtJst": "2026-11-12 08:43:43（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\h_000000016.000154894.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000011.000154894.html",
+   "http": "200",
+   "bytes": 245238,
+   "sha256": "82b169ce407e3856c6144b5e5b2cf0e64ad98a655a3a3254b9fefc905fbc6e57",
+   "fetchedAtJst": "2026-11-12 08:43:44（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\h_000000011.000154894.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000042.000103834.html",
+   "http": "200",
+   "bytes": 249054,
+   "sha256": "ac11aef749928e6088f5118208b64aca0242557d3c83f77f54e6c382129cef08",
+   "fetchedAtJst": "2026-11-12 08:43:45（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\h_000000042.000103834.html"
+  },
+  {
+   "url": "https://prtimes.jp/main/html/rd/p/000000564.000014485.html",
+   "http": "200",
+   "bytes": 255113,
+   "sha256": "474020ee3b465f7bf297c2a3b16b3155fde5d36d74fc48d968df47398b6c7f1b",
+   "fetchedAtJst": "2026-11-12 08:45:03（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\h_000000564.000014485.html"
+  },
+  {
+   "url": "https://prtimes.jp/companyrdf.php?company_id=40575",
+   "http": "200",
+   "bytes": 85351,
+   "sha256": "fca9f5a0c025c293a5c1106674a67594fbb9837e92a4b0b9b23ce11853068770",
+   "fetchedAtJst": "2026-11-12 08:43:00（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\rss_40575.xml"
+  },
+  {
+   "url": "https://prtimes.jp/companyrdf.php?company_id=76147",
+   "http": "200",
+   "bytes": 182462,
+   "sha256": "d87873c783cf0c39f459b91e17b1ea0ee6ebbc1cbfa911796adc0974a909a082",
+   "fetchedAtJst": "2026-11-12 08:43:01（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\rss_76147.xml"
+  },
+  {
+   "url": "https://prtimes.jp/companyrdf.php?company_id=154894",
+   "http": "200",
+   "bytes": 10489,
+   "sha256": "b626196dd25e311b29474a051832239ecd5da59c4495350e3a3bb56a3bbdb3ee",
+   "fetchedAtJst": "2026-11-12 08:43:02（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\rss_154894.xml"
+  },
+  {
+   "url": "https://prtimes.jp/companyrdf.php?company_id=14485",
+   "http": "200",
+   "bytes": 173055,
+   "sha256": "b6a5df6d6d0a87b5b0376782ff7fd7abbf8908fbcfbed007e9b3d2a5c64cecda",
+   "fetchedAtJst": "2026-11-12 08:43:03（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\rss_14485.xml"
+  },
+  {
+   "url": "https://prtimes.jp/companyrdf.php?company_id=103834",
+   "http": "200",
+   "bytes": 23970,
+   "sha256": "113775709f571de069ac8286669ff3277838f45e0c6575275f082a4149c4a7c6",
+   "fetchedAtJst": "2026-11-12 08:43:04（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\rss_103834.xml"
+  },
+  {
+   "url": "https://prtimes.jp/companyrdf.php?company_id=125331",
+   "http": "200",
+   "bytes": 6950,
+   "sha256": "e552361a86ed80832b713412261c652c4380fd8a163c62bedd7575fa808248f5",
+   "fetchedAtJst": "2026-11-12 08:43:05（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\rss_125331.xml"
+  },
+  {
+   "url": "https://prtimes.jp/companyrdf.php?company_id=140317",
+   "http": "200",
+   "bytes": 48071,
+   "sha256": "de01c466de3e9e2f8be65d0a25261127c4927fe6c95341feece17ea32060cca3",
+   "fetchedAtJst": "2026-11-12 08:43:06（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\rss_140317.xml"
+  },
+  {
+   "url": "https://prtimes.jp/companyrdf.php?company_id=92942",
+   "http": "200",
+   "bytes": 69690,
+   "sha256": "696e0f3a97b34fbd555792042f1b17959679b9d6263629da531357ca93289af4",
+   "fetchedAtJst": "2026-11-12 08:43:07（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\rss_92942.xml"
+  },
+  {
+   "url": "https://prtimes.jp/companyrdf.php?company_id=139670",
+   "http": "200",
+   "bytes": 175880,
+   "sha256": "c1e6e2d7300e5b280b630d1335cb145323d8ed820b06f5324097be0beb1dda13",
+   "fetchedAtJst": "2026-11-12 08:43:08（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\hold\\rss_139670.xml"
+  },
+  {
+   "url": "https://ssl4.eir-parts.net/V4Public/EIR/3083/ja/announcement/announcement_1.js",
+   "http": "200",
+   "bytes": 569195,
+   "sha256": "6a12ae0edc2cd8b3bf3f3fa70753ab87dcaa2d84a89f905352a3be8262d1738c",
+   "fetchedAtJst": "2026-11-12 08:41:18（ファイルの更新時刻）",
+   "saved": "C:\\Users\\kenji\\AppData\\Local\\Temp\\claude\\76d4d28da6870112\\c7db94e8-ce59-46b9-aa85-de5390184ac4\\scratchpad\\prep1112\\ss\\eir_announcement_1.js"
+  }
+ ]
+}
