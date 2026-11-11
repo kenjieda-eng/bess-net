@@ -25,6 +25,8 @@ export interface DealQuote {
 export interface DealSource {
   /** 一次の題名（<title> か PDF の表題の逐語） */
   title: string;
+  /** 画面に出す題名（題名の中の利回りの表示「【…】」を 1 か所省いたもの）。無ければ title をそのまま出す。データの title は逐語のまま持つ（2026-11-11 直し便） */
+  displayTitle?: string;
   publisher: string;
   url: string;
   type: 'press' | 'prtimes' | 'disclosure' | 'securities-report' | 'other';

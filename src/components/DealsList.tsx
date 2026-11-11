@@ -45,6 +45,8 @@ export type DealView = {
   note: string;
   sources: {
     title: string;
+    /** 題名の一部を画面で省いたときの断り（〔利回りの表示を省略〕）。無ければ '' */
+    titleNote: string;
     publisher: string;
     url: string;
     roleLabel: string;
@@ -105,7 +107,7 @@ function DealCard({ d, hidden }: { d: DealView; hidden: boolean }) {
             <li key={`${s.url}-${i}`} style={{ marginBottom: 8 }}>
               {`${s.roleLabel}: ${s.publisher}「`}
               <a href={s.url} target="_blank" rel="noopener noreferrer" style={linkStyle}>{s.title}</a>
-              {`」`}
+              {`」${s.titleNote}`}
               <span style={{ display: 'block', ...muted }}>
                 {[s.publishedLabel ? `資料の日付 ${s.publishedLabel}` : null, s.modifiedLabel ? `更新日 ${s.modifiedLabel}` : null, `取得日 ${s.fetchedLabel}`].filter(Boolean).join('　')}
               </span>

@@ -16,6 +16,8 @@
  *   8. --html <path>: 冒頭の 1 行・全行の公表日と発表者・件数＝データの件数・「このページの案件の売買を仲介・紹介するものではありません。」・
  *      次の一歩の枠が introduce と sell で各 1 か所・EPRX の数値が無い・「成約の支援」が 0。
  *   9〜11（裁定）: 裁定で「外す」とした研究便の行（EXCLUDED_CIDS）と、保留の行（HOLD_CIDS）が items に 0。
+ *   12〜13（直し便・2026-11-11）: 当事者が空の行を作らない（発表者が当事者なら必ず入れる）。出典の画面用の題名（displayTitle）は、
+ *      元の題名から「【…】」の 1 か所を除いたものと同じ（データの title は逐語のまま）。
  *
  * microCMS へのアクセスなし。prebuild では警告だけ（exit 0）。--strict で問題があれば exit 1。
  * 実行: npm run verify:deals   …   npm run verify:deals -- --strict   …   npm run verify:deals -- --strict --html .next/server/app/tracker/deals.html
@@ -70,12 +72,17 @@ const EXCLUDED_CIDS: readonly string[] = [
   'C467', 'C212', 'C216', 'C217', 'C245', 'C259', 'C275', 'C278', 'C307', 'C308',
   'C321', 'C383', 'C405', 'C410', 'C422', 'C470', 'C429', 'C430', 'C440', 'C443',
   'C444', 'C452',
+  // 直し便（2026-11-11・ユウの裁定＝02_計画・運営/検証記録_売買事例の一覧便_2026-11-10_ユウ.md と直し便 1-1）: 自社だけで行う投資（R12）を外す 3 行と、保留から外すに移した 3 行
+  'C092', 'C347', 'C432', // R12（東京センチュリー長崎・シェルパ・Juniper）
+  'C098', 'C393', 'C460', // R4（EPC が建てて事業主が取得）・R11（プロジェクトファイナンスの調達）・R9（成約の支援）
 ];
 
 /** 原則でも決まらず、ユウの裁定を待つ行（cid）。裁定で載せると決まったら、ここから外して deals.json に足す */
 const HOLD_CIDS: readonly string[] = [
-  // 初版（2026-11-10）で原則でも決まらなかった行（報告 reports/deals-list-2026-11-10.md (3)）
-  'C029', 'C074', 'C098', 'C112', 'C202', 'C249', 'C293', 'C329', 'C330', 'C393', 'C460',
+  // 初版（2026-11-10）で原則でも決まらなかった行（報告 reports/deals-list-2026-11-10.md (3)）。C098・C393・C460 は直し便（2026-11-11）で EXCLUDED_CIDS へ
+  'C029', 'C030', 'C074', 'C112', 'C202', 'C249', 'C293', 'C329', 'C330',
+  // 直し便（2026-11-11）: 完了・締結の語が無い（R1）ので行から外して保留へ（後の一次を月次のバッチで確かめる）
+  'C449', 'C046',
 ];
 
 /** 見出し・補足に使わない評価の語 */
@@ -98,6 +105,8 @@ for (const d of items) {
   if (d.announcedOn < '2024-01-01') problems.push(`${at}: 公表日 ${d.announcedOn} が 2024-01-01 より前`);
   if (d.announcedOn > todayJst) problems.push(`${at}: 公表日 ${d.announcedOn} が未来`);
   if (!d.publisher.trim()) problems.push(`${at}: 発表者が空`);
+  // 12. 当事者が空の行を作らない（直し便 1-3: 発表者がその取引の当事者なら必ず入れる）
+  if (d.parties.length === 0 || d.parties.some((p) => !p.trim())) problems.push(`${at}: 当事者が空（取引の当事者を一次の逐語から入れる）`);
   if (d.kinds.length === 0) problems.push(`${at}: 種類が空`);
   for (const k of d.kinds) if (!(KIND_ORDER as readonly string[]).includes(k)) problems.push(`${at}: 種類「${k}」は定義に無い（成約の支援は作らない）`);
   if (d.stages.length === 0) problems.push(`${at}: 段階が空`);
@@ -113,6 +122,15 @@ for (const d of items) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(s.fetchedOn)) problems.push(`${at}: 出典の取得日が YYYY-MM-DD でない（${s.url}）`);
     if (s.sha256 !== null && !/^[0-9a-f]{64}$/.test(s.sha256)) problems.push(`${at}: 出典の sha256 の形が違う（${s.url}）`);
     if (s.quotes.length === 0) problems.push(`${at}: 出典に逐語が無い（${s.url}）`);
+    // 13. 画面用の題名は、元の題名から「【…】」の 1 か所を除いたもの（直し便 1-6）
+    if (s.displayTitle !== undefined) {
+      const brackets = s.title.match(/【[^【】]*】/g) ?? [];
+      const ok = brackets.some((b) => {
+        const i = s.title.indexOf(b);
+        return (s.title.slice(0, i) + s.title.slice(i + b.length)).trim() === s.displayTitle;
+      });
+      if (!ok) problems.push(`${at}: 画面用の題名が、元の題名から「【…】」の 1 か所を除いたものと違う（${s.displayTitle}）`);
+    }
   }
   if (d.researchCids.length === 0) notes.push(`${at}: 研究便の行番号なし（この便より後に足した行）`);
 }

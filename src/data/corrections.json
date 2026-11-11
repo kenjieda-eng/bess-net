@@ -11124,6 +11124,53 @@
     }
    ],
    "internalRef": "reports/projects-write-2026-11-08.md (3)・(8)／reports/projects-write-2026-11-08.json の projects/daiwa-kurate（op の old）"
+  },
+  {
+   "id": "20261111-01",
+   "date": "2026-11-11",
+   "kind": "訂正",
+   "path": "/tracker/deals",
+   "targetTitle": "蓄電所の売買・出資 公表事例トラッカー",
+   "before": "「この一覧の決まり」に合わない 5 行を載せていた（取得の決議と予定だけの発表 1 行・出資をこれから行うと書いた発表 1 行・自社だけで行う投資 3 行）\n1 つの行に 2 つの取引を入れていた（スターシーズ株式会社の 2025年10月27日の進捗の発表の行）",
+   "after": "5 行を外しました（株式会社コレックホールディングス 2026年8月31日・日本ガイシ株式会社と株式会社Sustech 2024年10月25日・東京センチュリー株式会社 2025年4月8日・シェルパグループ合同会社 2026年4月1日・Juniper Assets 2026年7月8日）\nスターシーズ株式会社の行は 2 行に分け、和歌山市の取得は、最初に公表した 2025年9月26日の開示を出典にしました",
+   "basis": [
+    {
+     "name": "系統用蓄電池事業への参入及び蓄電池設備の取得に関するお知らせ",
+     "publisher": "株式会社コレックホールディングス（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000110.000040575.html"
+    },
+    {
+     "name": "日本ガイシとSustech、電力運用プラットフォームELICを活用した蓄電所ファンドの設立検討",
+     "publisher": "株式会社Sustech（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000058.000092942.html"
+    },
+    {
+     "name": "長崎市畝刈町の特別高圧系統用蓄電池事業における事業組成および実施について",
+     "publisher": "東京センチュリー株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000185.000076147.html"
+    },
+    {
+     "name": "石川県加賀市にて約2MW／約4MWh 蓄電所を運転開始しました",
+     "publisher": "シェルパグループ合同会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000004.000180465.html"
+    },
+    {
+     "name": "Juniper Assets Closes Kyushu Battery Energy Storage Investment Backed by Toll Agreement",
+     "publisher": "Juniper Assets",
+     "url": "https://juniperassets.com/2026/07/juniper-assets-closes-kyushu-battery-energy-storage-investment-backed-by-toll-agreement/"
+    },
+    {
+     "name": "固定資産（系統用蓄電所の土地及び設備）並びに電力接続権の取得に関するお知らせ",
+     "publisher": "スターシーズ株式会社（適時開示）",
+     "url": "https://www2.jpx.co.jp/disc/30830/140120250926563574.pdf"
+    },
+    {
+     "name": "系統用蓄電池事業の進捗状況について",
+     "publisher": "スターシーズ株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000046.000088876.html"
+    }
+   ],
+   "internalRef": "reports/deals-list-fix-2026-11-11.md (1)・(6)"
   }
  ]
 }
