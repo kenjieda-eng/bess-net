@@ -5,6 +5,7 @@ microCMS の書込 0・webhook 不要（コードのみ）。
 
 ## (0) 絶対パス
 
+- commit: `7b55cc0`（本体: データ・画面・検査・訂正履歴・CLAUDE.md・この報告の下書き）／この報告の (7) 本番の追記は次の docs の commit。
 - 報告: `C:\Users\kenji\Documents\GitHub\bess-net\reports\deals-list-fix-2026-11-11.md`
 - 真実源: `C:\Users\kenji\Documents\GitHub\bess-net\src\data\deals.json`（67 → 63 行）
 - 画面: `C:\Users\kenji\Documents\GitHub\bess-net\src\app\tracker\deals\page.tsx`・`src\components\DealsList.tsx`・`src\lib\deals.ts`
@@ -264,9 +265,22 @@ microCMS の書込 0・webhook 不要（コードのみ）。
 - `npm run verify:deals -- --strict --html .next/server/app/tracker/deals.html` exit 0（582,773 バイト）。
 - ビルド出力の数え（`prod106.py local`・script と `<!-- -->` を外した初期 DOM）: 行 63・「63 件のうち 63 件を表示」・ItemList 63（numberOfItems 63・要素 63）・当事者の欄 63/63・外した 5 行の id 0・`deal-D-20250926-02` 1・「想定年利」「希少」「最先端」「高単価」0・〔利回りの表示を省略〕1・冒頭の 1 行あり・次の一歩 introduce と sell・「成約の支援」0・決まりの新しい文 4/4・末尾の訂正履歴あり。`/corrections` に 1 件。
 
-### 本番
+### 本番（素の URL・クエリなし・キャッシュ回避ヘッダなし）
 
-（push・デプロイの後に追記する）
+- commit `7b55cc0` を 09:34 JST に push → Vercel success 09:41:08 JST（commits/{sha}/status）。
+- 1 回目（デプロイ直後）と 2 回目（18 秒後）。記録 `scratchpad\fix1111\prod106_a.json`・`prod106_b.json`。
+
+| 時刻（JST） | URL | HTTP | x-vercel-cache | age | 数え |
+|---|---|---|---|---|---|
+| 09:41:41 | `/tracker/deals` | 200 | PRERENDER | 0 | 行 63・「63 件のうち 63 件を表示」・ItemList 63（numberOfItems 63・要素 63）・当事者の欄 63/63 |
+| 09:41:43 | `/corrections` | 200 | PRERENDER | 0 | 20261111-01 の「後」の文 1 件 |
+| 09:41:43 | `/sitemap.xml` | 200 | PRERENDER | 0 | `<loc>` 12,587（前と同じ）・`/tracker/deals` あり |
+| 09:41:59 | `/tracker/deals` | 200 | HIT | 17 | 行 63（同じ内容） |
+| 09:42:00 | `/corrections` | 200 | HIT | 16 | 1 件 |
+| 09:42:00 | `/sitemap.xml` | 200 | HIT | 15 | 12,587 |
+
+- `/tracker/deals`（1 回目・script と `<!-- -->` を外した初期 DOM）: 外した 5 行の id（`deal-D-20260831-01`・`deal-D-20241025-01`・`deal-D-20250408-01`・`deal-D-20260401-02`・`deal-D-20260708-01`）0 回・`deal-D-20250926-02` 1 回・「想定年利」「希少」「最先端」「高単価」0 回・〔利回りの表示を省略〕1 回・冒頭の 1 行あり・次の一歩 introduce と sell の 2 枠・「成約の支援」0・決まりの新しい文 4/4・末尾に訂正履歴（`id="correction-history"`・「5 行を外しました（株式会社コレックホールディングス 2026年8月31日」が「この一覧の決まり」より後）。582,773 バイト（ローカルのビルド出力と同じ）。
+- **IndexNow**: `--urls`（`/tracker/deals`・`/corrections` の 2 件）を dry run → 本実行 09:41:59 JST・HTTP 200（受理）・鍵 605d…・本番の鍵のファイル HTTP 200 で中身一致。記録 `scratchpad\fix1111\indexnow106.json`。
 
 ## (8) 月次のバッチで見るもの
 
