@@ -196,6 +196,20 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'digitalgrid-bess-250mw-2026-11': '市場統計',                                 // 取扱量 250MW（既存 200MW 記事の続報）
   'buddynet-3sites-completion-2026-11': '連系',                                 // 弟子屈・富士宮・佐久 完工（既存 buddynet-izumo の連系に合わせる。既定は技術）
   'powerx-energy-vault-partnership-2026-11': '海外',                            // Energy Vault 戦略的パートナーシップ（米国向け供給の検討。既定は開発計画）
+  // 週次ニュース便 11/13（2026-11-13 起草・対象 11/6〜11/13 12:00 配信）— 各件の _category（ユウ原稿）を正とする
+  'eflow-unyou-jutaku-1-5gw-2026-11': '市場統計',                                   // 運用受託容量 1.5GW 突破の見込み（既存 digitalgrid-bess-250mw・bluefield-aggregation-150mw に合わせる。既定は開発計画）
+  'adw-miyazaki-nichinan-unten-2026-11': '連系',                                  // ADW宮崎日南市蓄電所 竣工・引渡し（稼働 3 か所目）
+  'nc-karatsu-hamatama-jukyu-2026-11': '連系',                                    // NC唐津市浜玉町浜崎 需給調整市場への参入
+  'ecokaku-11sites-keiren-2026-11': '連系',                                       // エコ革 11 か所の系統連系（容量の合計は一次の中で合わないので書いていない）
+  'glome-nishikata-no2-unyou-2026-11': '連系',                                    // GM西方町金井2465 第 2 号施設の運用開始
+  'nc-arao-setti-2026-11': '開発計画',                                              // NC荒尾市府本字打越 蓄電池設置開始
+  'renon-power-1500sites-2026-11': '技術',                                        // 低圧系統用蓄電池の累計受注 1,500 サイト（規模は標準パッケージ換算）
+  'nc-kainan-kizu-juden-2026-11': '連系',                                         // NC海南市木津 受電開始（リミックスポイント・日本蓄電池の 2 本を統合）
+  'adw-chibagin-loan-2026-11': '投資',                                            // 千葉銀行の融資（2 件合計 11億4,310万円）
+  'enblue-sakaiminato-hikiwatashi-2026-11': '連系',                               // 境港市新屋町1158 完工・NAMIJU へ引渡し（既存 buddynet-3sites-completion の連系に合わせる。既定は技術）
+  'rearth-energy-development-2026-11': '開発計画',                                  // Rearth Energy Development 設立（NAXT と BLD Power Stations の共同出資）
+  'digitalgrid-izumo-koshi-jukyu-2026-11': '連系',                                // 出雲古志 需給調整市場への参入（自社保有 3 か所目）
+  'nomura-re-4sites-bess-2026-11': '投資',                                        // 野村不動産 4 拠点の取得（既定の 事業者動向→開発計画 ではない・蓄電所の取得）
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
