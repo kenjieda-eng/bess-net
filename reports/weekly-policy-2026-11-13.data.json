@@ -1,0 +1,304 @@
+{
+ "meta": {
+  "batch": "週次政策_policy-calendar投入_2026-11-13",
+  "author": "ユウ（Cowork 定時タスク「週１金曜日政策・パブコメ予定チェック（v2）」11:10 JST の回。発火は 12:04 JST）",
+  "draftedAt": "2026-11-13 JST",
+  "microcmsGetAt": "未実施（本セッションは microCMS 未接続。CC が実行時に全件 GET）",
+  "publicSnapshot": "2026-11-13 12:07 JST に素 URL https://bess-net.jp/policy-calendar?v=20261113a を取得（JSON-LD numberOfItems 94）",
+  "countsAtSnapshot": {
+   "policyCalendarDisplayed": 94,
+   "note": "11/6 便の期待値（全 152 件＝kind 未設定 104・業界 48、表示 91→94）と表示件数は一致。microCMS の総数は CC が GET で確認"
+  },
+  "expectedAfter": {
+   "allRows": {
+    "total": 154,
+    "kindUnset(政策)": 106,
+    "policyCalendarDisplayed": "94 → 96 を期待（表示条件で差が出うる。POST 2 件の title が出ていることを正とする）"
+   },
+   "skipOptional": {
+    "total": 153,
+    "kindUnset(政策)": 105,
+    "policyCalendarDisplayed": "94 → 95 を期待"
+   }
+  },
+  "note": "post[].optional=true（② 860202606）と patch[].required=false（F・G・H）は任意。既定は投入。「2026年11月13日時点」（POST ①末尾・PATCH F）は実行日に置き換える（.md §4）。キー名が _ で始まるものは照合にも送信にも使わない。"
+ },
+ "post": [
+  {
+   "_no": "①",
+   "_importance": "★★",
+   "optional": false,
+   "slug": "meti-electric-power-wg5-2026-11",
+   "title": "第5回 電力事業環境整備WG: 小売電気事業者の量的な供給力確保の在り方・小売電気事業の登録の取消しに関する審査基準・ベースロード市場・特定小売供給約款の変更届出（報告）（11月18日）",
+   "eventDate": "2026-11-18",
+   "eventType": [
+    "重要会議"
+   ],
+   "issuer": "経済産業省 資源エネルギー庁（電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会）",
+   "description": "経済産業省 総合資源エネルギー調査会 電力・ガス事業分科会 次世代電力・ガス事業基盤構築小委員会の第5回 電力事業環境整備ワーキンググループが2026年11月18日（水）11時00分〜13時00分にオンラインで開催される（インターネット配信あり。開催案内の最終更新日は2026年11月12日）。議題は「小売電気事業者の量的な供給力確保の在り方について」「改正電気事業法に基づく小売電気事業の登録の取消しに関する審査基準について」「ベースロード市場について」「特定小売供給約款の変更届出について（報告事項）」。第4回（2026年9月18日）でも、同じ題の資料4「小売電気事業者の量的な供給力確保の在り方について」が示されている（第4回の議事要旨・議事録は委員会ページに掲載済み、最終更新日 2026年11月9日）。小売電気事業者の供給力確保義務の在り方は、容量市場・相対契約による供給力調達の需要側ルールとして蓄電池のkW価値の買い手行動に影響し、ベースロード市場は卸電力取引の価格形成の一部をなす。配布資料は2026年11月13日時点で未掲載（開催案内のみ）。",
+   "sourceUrl": "https://www.meti.go.jp/shingikai/information/2026/20261118_3k.html",
+   "status": [
+    "予定"
+   ],
+   "category": [
+    "重要会議"
+   ],
+   "kind": [],
+   "relatedTopics": [],
+   "eventTopics": []
+  },
+  {
+   "_no": "②",
+   "_importance": "★★（任意）",
+   "optional": true,
+   "slug": "egov-kikenbutsu-kisoku-lithium-chikudenchi-pubcomm-2026-11",
+   "title": "総務省消防庁 意見公募:「危険物の規制に関する規則の一部を改正する省令（案）」等（リチウムイオン蓄電池に係る屋内貯蔵所のスプリンクラー設備の見直し、案件番号 860202606、12/7 締切）",
+   "eventDate": "2026-11-07",
+   "endDate": "2026-12-07",
+   "eventType": [
+    "パブコメ"
+   ],
+   "issuer": "総務省消防庁（予防課危険物保安室）",
+   "description": "総務省消防庁予防課危険物保安室は2026年11月7日、「危険物の規制に関する規則の一部を改正する省令（案）」「危険物の規制に関する技術上の基準の細目を定める告示の一部を改正する件（案）」「製造所等の泡消火設備の技術上の基準の細目を定める告示の一部を改正する件（案）」に対する意見公募を公示した（e-Gov 案件番号 860202606、行政手続法に基づく手続、受付締切 2026年12月7日23時59分）。改正内容は「（１）特定屋外貯蔵タンクの底部溶接部試験への交流電磁場測定法の導入」「（２）リチウムイオン蓄電池に係る屋内貯蔵所のスプリンクラー設備の見直し」「（３）セルフ給油取扱所における泡消火薬剤に係る措置」の3点で、施行期日は「公布の日の翌日から施行する。」とされている。（２）は、リチウムイオン蓄電池の電解液が消防法上の危険物にあたるため一定量以上のリチウムイオン蓄電池を保管する屋内貯蔵所に求められる消火設備について、現行の規則第35条の2第3項第1号で開放型スプリンクラーヘッドを用いるものに限って認めている特例を、閉鎖型スプリンクラーヘッドを用いるものにも一定の基準（放水量等）を満たした場合に広げる規制緩和で、規制の事前評価書は「リチウムイオン蓄電池に係る火災予防上の安全対策に関する検討会」の報告書（令和５年２月15日）と事業者からの要望を踏まえたものとしている。系統用蓄電池の事業でも、蓄電池モジュール等を倉庫に保管する場合の、消防法上の設備要件に関わる。",
+   "sourceUrl": "https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&id=860202606&Mode=0",
+   "status": [
+    "進行中"
+   ],
+   "category": [
+    "パブコメ",
+    "法改正"
+   ],
+   "kind": [],
+   "relatedTopics": [],
+   "eventTopics": []
+  }
+ ],
+ "patch": [
+  {
+   "key": "A",
+   "required": true,
+   "_carryover": "11/6 便 §6 (a′)",
+   "slug": "meti-doji-shijo-kentoukai-26-2026-11",
+   "id": "l66j-l5u3",
+   "updatedAt": "2026-11-06T03:08:50.543Z",
+   "expected": {
+    "status": [
+     "予定"
+    ],
+    "sourceUrl": "https://www.meti.go.jp/shingikai/information/2026/20261109_2k.html",
+    "descLen": 535,
+    "_note": "公開ページ /policy-calendar の埋め込みデータ（2026-11-13 12:07 JST に素 URL https://bess-net.jp/policy-calendar?v=20261113a を取得（JSON-LD numberOfItems 94））で読んだ値。本セッションは microCMS 未接続＝CC が GET で microCMS の現在値と照合し、1 項目でも違えば中止して報告"
+   },
+   "set": {
+    "status": [
+     "終了"
+    ],
+    "sourceUrl": "https://www.meti.go.jp/shingikai/energy_environment/doji_shijo_kento/026.html"
+   },
+   "replace": [
+    {
+     "from": "15時00分〜18時00分に開催される（対面",
+     "to": "15時00分〜18時00分に開催された（対面"
+    },
+    {
+     "from": "配布資料は2026年11月6日時点で未掲載（開催案内のみ）。",
+     "to": "配布資料（資料1 議事次第、資料2 委員等名簿、資料3「同時市場の今後の検討の進め方について」、資料4「海外調査の進捗報告について」、資料5「詳細業務設計アンケートの現状報告について」、参考資料1〜4）は委員会ページに掲載された（最終更新日 2026年11月9日。動画あり）。資料3（資源エネルギー庁・電力広域的運営推進機関）は、第25回での議論等を踏まえ「本年度末までに一定の結果を示すことを前提としたシミュレーションは実施しないこととした。」とし、導入可能性の最終判断に向けた進め方として、第1フェーズの前半で検証に依存しない論点の整理と検証を要する論点の方向性の整理を先に進め、途中で中間報告を行い、後半で論点ごとの技術検証と検証結果の反映を行ったうえで第1フェーズの取りまとめに進む案を示した。論点の取扱いでは「揚水・蓄電池の入札・運用方法」を第1フェーズの後半で技術検証等を踏まえて整理する論点の例に挙げ、第1フェーズの成果の取りまとめ時期は「技術研究及び詳細業務設計の検討の状況を踏まえて判断することとしたい。」とした。資料5（合同会社デロイト トーマツ）は、発電事業者等54社（57問）と一般送配電事業者9社（30問）向けアンケートの結果概要を報告し（小売電気事業者等88社向けの結果は次回以降に報告予定）、設問には「揚水・蓄電池」の項目が含まれる。"
+    }
+   ],
+   "_afterLen": 1087
+  },
+  {
+   "key": "B",
+   "required": true,
+   "_carryover": "11/6 便 §6 (a′)",
+   "slug": "meti-jisedai-kiban-shoiinkai-7-2026-11",
+   "id": "3gsrcm86dr",
+   "updatedAt": "2026-11-06T03:08:52.332Z",
+   "expected": {
+    "status": [
+     "予定"
+    ],
+    "sourceUrl": "https://www.meti.go.jp/shingikai/information/2026/20261110_3k.html",
+    "descLen": 471,
+    "_note": "公開ページ /policy-calendar の埋め込みデータ（2026-11-13 12:07 JST に素 URL https://bess-net.jp/policy-calendar?v=20261113a を取得（JSON-LD numberOfItems 94））で読んだ値。本セッションは microCMS 未接続＝CC が GET で microCMS の現在値と照合し、1 項目でも違えば中止して報告"
+   },
+   "set": {
+    "status": [
+     "終了"
+    ],
+    "sourceUrl": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/007.html"
+   },
+   "replace": [
+    {
+     "from": "15時00分〜18時00分にオンラインで開催される（",
+     "to": "15時00分〜18時00分にオンラインで開催された（"
+    },
+    {
+     "from": "系統用蓄電池に関わる供給力確保・分散型エネルギー・中長期取引市場の各ワーキンググループの親会議として、配布資料の掲載後に内容を反映する。配布資料は2026年11月6日時点で未掲載（開催案内のみ）。",
+     "to": "配布資料（資料1 議事次第、資料2 委員等名簿、資料3-1・3-2 ガスシステム改革の検証結果と今後の方向性（概要・本体）、資料4「電気事業法の一部を改正する法律の概要」、資料5「改正電気事業法に基づくファイナンス支援の実施に向けて」、資料6「次世代の電力産業の構築に向けて」、資料7「今夏の電力需給及び今冬以降の需給見通しと対策について」）は委員会ページに掲載された（最終更新日 2026年11月11日。動画あり）。資料5（資源エネルギー庁）は、電力事業環境整備WG（7月28日・8月25日）での議論を踏まえた電力広域機関によるファイナンス支援（改正電気事業法に基づく財政投融資等を活用した融資制度）の詳細設計の報告で、同WGでの決定事項として「融資対象となる出力要件については、50万kW以上とする。」ことと、対象となる電源を広く安定供給に資する50万kW以上の大規模電源とした上で脱炭素化への貢献の観点から長期脱炭素電源オークションの対象となる脱炭素電源を優先的に支援することを挙げ、2026年度分は2027年3月頃、2027年度分は2027年4月以降の融資実行を想定するスケジュール案を示した。資料6は、次世代系統WGで議論していく主な早期連系策の一つに「蓄電池に対する規律強化による系統容量の開放（N-1充電停止装置の事後的な設置、充放電制限）」を挙げている。資料7の2026年度冬季の電力需給対策（案）は、構造的対策に「容量市場、長期脱炭素電源オークションの着実な運用による供給力確保」「揚水発電の維持・強化、蓄電池等の分散型電源の活用」を、需要対策に「DRの更なる普及拡大（工場等のDR促進、家庭用蓄電池等の導入支援）」を挙げている。"
+    }
+   ],
+   "_afterLen": 1097
+  },
+  {
+   "key": "C",
+   "required": true,
+   "_carryover": "11/6 便 §6 (g)",
+   "slug": "meti-der-wg4-2026-10",
+   "id": "9vchyg4h3k",
+   "updatedAt": "2026-10-30T03:48:29.708Z",
+   "expected": {
+    "status": [
+     "終了"
+    ],
+    "sourceUrl": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/distributed_energy_wg/004.html",
+    "descLen": 1353,
+    "_note": "公開ページ /policy-calendar の埋め込みデータ（2026-11-13 12:07 JST に素 URL https://bess-net.jp/policy-calendar?v=20261113a を取得（JSON-LD numberOfItems 94））で読んだ値。本セッションは microCMS 未接続＝CC が GET で microCMS の現在値と照合し、1 項目でも違えば中止して報告"
+   },
+   "set": {},
+   "replace": [
+    {
+     "from": "令和9年度概算要求（再生可能エネルギー導入拡大に向けた系統用蓄電池等の電力貯蔵システム導入支援事業 399億円）などを報告した。",
+     "to": "令和9年度概算要求（再生可能エネルギー導入拡大に向けた系統用蓄電池等の電力貯蔵システム導入支援事業 399億円）などを報告した。議事要旨は委員会ページに掲載された（最終更新日 2026年11月6日。議事録は未掲載）。議事要旨には、委員からの主な意見として「系統用蓄電池については、政策の重心を量的な導入促進から、電力システムにおける機能の発揮へ移す段階に来ている。」「需給調整市場の充足を見据え、系統用蓄電池への過熱した投資に対する情報発信が必要。」などが、事務局からの主な回答として「市場の成熟度や蓄電池の劣化も踏まえ、今後の導入支援等を検討する。」「将来の電力需給シナリオ、再エネ出力制御の発生状況及び既に見込まれる導入量を踏まえ、追加的に必要となる蓄電池量と支援のあり方を議論する。」が記録されている。"
+    }
+   ],
+   "_afterLen": 1643
+  },
+  {
+   "key": "D",
+   "required": true,
+   "_carryover": "11/6 便 §6 (i)",
+   "slug": "egov-keitou-renkei-gijutsu-youken-gl-pubcomm-2026-10",
+   "id": "xr9b7urq09",
+   "updatedAt": "2026-10-10T02:48:11.775Z",
+   "expected": {
+    "status": [
+     "進行中"
+    ],
+    "sourceUrl": "https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&id=620340012&Mode=0",
+    "descLen": 547,
+    "_note": "公開ページ /policy-calendar の埋め込みデータ（2026-11-13 12:07 JST に素 URL https://bess-net.jp/policy-calendar?v=20261113a を取得（JSON-LD numberOfItems 94））で読んだ値。本セッションは microCMS 未接続＝CC が GET で microCMS の現在値と照合し、1 項目でも違えば中止して報告"
+   },
+   "set": {
+    "status": [
+     "終了"
+    ]
+   },
+   "replace": [
+    {
+     "from": "資料4「系統連系技術要件の改定について（JC-STAR★1要件化）」と参考資料2として報告された。",
+     "to": "資料4「系統連系技術要件の改定について（JC-STAR★1要件化）」と参考資料2として報告された。意見の受付は2026年11月6日23時59分で終了した。"
+    }
+   ],
+   "_afterLen": 575
+  },
+  {
+   "key": "E",
+   "required": true,
+   "_carryover": "11/6 便 §6 (i)",
+   "slug": "egov-denjiho-kaisei-sekou-seirei-pubcomm-2026-10",
+   "id": "k4b614rqha",
+   "updatedAt": "2026-10-17T06:54:19.490Z",
+   "expected": {
+    "status": [
+     "進行中"
+    ],
+    "sourceUrl": "https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&id=620340014&Mode=0",
+    "descLen": 647,
+    "_note": "公開ページ /policy-calendar の埋め込みデータ（2026-11-13 12:07 JST に素 URL https://bess-net.jp/policy-calendar?v=20261113a を取得（JSON-LD numberOfItems 94））で読んだ値。本セッションは microCMS 未接続＝CC が GET で microCMS の現在値と照合し、1 項目でも違えば中止して報告"
+   },
+   "set": {
+    "status": [
+     "終了"
+    ]
+   },
+   "replace": [
+    {
+     "from": "（案件番号 620340007、10月15日締切）の意見公募も行われた。",
+     "to": "（案件番号 620340007、10月15日締切）の意見公募も行われた。意見の受付は2026年11月7日23時59分で終了した。"
+    }
+   ],
+   "_afterLen": 675
+  },
+  {
+   "key": "F",
+   "required": false,
+   "_carryover": "11/6 便 追記 (j)",
+   "slug": "occto-balancing-committee-64-2026-11",
+   "id": "m417bjl3j",
+   "updatedAt": "2026-11-06T03:08:57.701Z",
+   "expected": {
+    "status": [
+     "終了"
+    ],
+    "sourceUrl": "https://www.occto.or.jp/iinkai/jukyuchousei/64.html",
+    "descLen": 961,
+    "_note": "公開ページ /policy-calendar の埋め込みデータ（2026-11-13 12:07 JST に素 URL https://bess-net.jp/policy-calendar?v=20261113a を取得（JSON-LD numberOfItems 94））で読んだ値。本セッションは microCMS 未接続＝CC が GET で microCMS の現在値と照合し、1 項目でも違えば中止して報告"
+   },
+   "set": {},
+   "replace": [
+    {
+     "from": "16時〜17時に開催（電力広域的運営推進機関",
+     "to": "16時〜17時に開催された（電力広域的運営推進機関"
+    },
+    {
+     "from": "予定議題は「需給調整市場前日取引化後の市場外調整力の状況等について（その２）」の1件で",
+     "to": "議題は「需給調整市場前日取引化後の市場外調整力の状況等について（その２）」の1件で"
+    },
+    {
+     "from": "録画・議事録は2026年11月6日時点で未掲載。",
+     "to": "録画・議事録は2026年11月13日時点で未掲載。"
+    }
+   ],
+   "_afterLen": 963
+  },
+  {
+   "key": "G",
+   "required": false,
+   "_carryover": "11/6 便 追記 (k)",
+   "slug": "occto-teikan-kitei-henkou-pubcomm-2026-09",
+   "id": "6i1u2sgun-k4",
+   "updatedAt": "2026-11-06T03:09:01.169Z",
+   "expected": {
+    "status": [
+     "終了"
+    ],
+    "sourceUrl": "https://www.occto.or.jp/iken/2026_260902_ikenboshu.html",
+    "descLen": 771,
+    "_note": "公開ページ /policy-calendar の埋め込みデータ（2026-11-13 12:07 JST に素 URL https://bess-net.jp/policy-calendar?v=20261113a を取得（JSON-LD numberOfItems 94））で読んだ値。本セッションは microCMS 未接続＝CC が GET で microCMS の現在値と照合し、1 項目でも違えば中止して報告"
+   },
+   "set": {},
+   "replace": [
+    {
+     "from": "上位法令の意見公募は今後資源エネルギー庁が別途実施予定。",
+     "to": "上位法令については、資源エネルギー庁が2026年9月16日に電気事業法施行規則等の一部を改正する省令案等（e-Gov 案件番号 620340007、10月15日締切。意見公募要領によれば、広域的運営推進機関の財務・会計及び業務に関する規定の整備と、広域的運営推進機関が貸付けの内容を決定するに当たって従うべき基準の制定を含む）、10月9日に改正法の施行期日を定める政令案と関係政令の整備に関する政令案（案件番号 620340014、11月7日締切）の意見公募を実施し、いずれも受付を終了している。"
+    }
+   ],
+   "_afterLen": 991
+  },
+  {
+   "key": "H",
+   "required": false,
+   "_carryover": "新規（第5回の POST に伴う結果反映）",
+   "slug": "meti-electric-power-wg4-2026-09",
+   "id": "gpdmg43hfw",
+   "updatedAt": "2026-09-19T11:08:30.441Z",
+   "expected": {
+    "status": [
+     "終了"
+    ],
+    "sourceUrl": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/jisedai_kiban/electric_power_wg/004.html",
+    "descLen": 532,
+    "_note": "公開ページ /policy-calendar の埋め込みデータ（2026-11-13 12:07 JST に素 URL https://bess-net.jp/policy-calendar?v=20261113a を取得（JSON-LD numberOfItems 94））で読んだ値。本セッションは microCMS 未接続＝CC が GET で microCMS の現在値と照合し、1 項目でも違えば中止して報告"
+   },
+   "set": {},
+   "replace": [
+    {
+     "from": "配布資料4点は同ページで公開。",
+     "to": "配布資料4点は同ページで公開。議事要旨と議事録は委員会ページに掲載された（最終更新日 2026年11月9日）。第5回は2026年11月18日に開催予定。"
+    }
+   ],
+   "_afterLen": 593
+  }
+ ]
+}
