@@ -15,7 +15,8 @@
  *   endDate は JSON にある行だけ。registrationDeadline は送らない。
  * ★#122: description は textArea。置換は置換元が description 内でちょうど 1 回出現するときだけ。
  *
- * 実行: set -a && . ./.env.local && set +a && npx tsx scripts/post-policy-events-2026-11-13.ts [--apply] [--skip-optional] [--exclude=①,A,…] [--data=…] [--log=…]
+ * 実行: set -a && . ./.env.local && set +a && npx tsx scripts/post-policy-events-2026-11-13.ts [--apply] [--skip-optional] [--exclude=①,A,…] [--only=①,A,B] [--asof=YYYY-MM-DD] [--data=…] [--log=…]
+ *   追い便（2026-11-14・_QUEUE.md 112 行）: --only=①,A,B --asof=2026-11-14（①の「…時点」を実行日に置き換え・実行日が違えば ①は中止）
  */
 import * as fs from 'node:fs';
 export {};
@@ -28,6 +29,18 @@ const DRY = !ARGV.includes('--apply');
 const SKIP_OPTIONAL = ARGV.includes('--skip-optional');
 // --exclude=①,A,B: 一次（sourceUrl）を読めなかった行を書かない（原稿 §4 手順 3「WebFetch で読めなければ…その行は書かない」）
 const EXCLUDE = new Set((ARGV.find((a) => a.startsWith('--exclude='))?.slice(10) ?? '').split(',').map((x) => x.trim()).filter(Boolean));
+// --only=①,A,B: この行だけを対象にする（追い便 11/14・_QUEUE.md 112 行）。指定が無ければ全行
+const ONLY = new Set((ARGV.find((a) => a.startsWith('--only='))?.slice(7) ?? '').split(',').map((x) => x.trim()).filter(Boolean));
+// --asof=YYYY-MM-DD: POST の description の「…時点」の日付を、その日（＝実行日 JST）に置き換えて送る（追い便 ■2）。
+//   実行日（JST）が指定日と違えば、その POST は書かずに中止。置換元が description 内でちょうど 1 回のときだけ置換。JSON は書き換えない。
+const ASOF = ARGV.find((a) => a.startsWith('--asof='))?.slice(7);
+const ASOF_REPLACE: Record<string, { from: string; to: (d: string) => string }> = {
+  '①': {
+    from: '配布資料は2026年11月13日時点で未掲載（開催案内のみ）。',
+    to: (d) => `配布資料は${Number(d.slice(0, 4))}年${Number(d.slice(5, 7))}月${Number(d.slice(8, 10))}日時点で未掲載（開催案内のみ）。`,
+  },
+};
+const todayJst = () => new Date(Date.now() + 9 * 3600_000).toISOString().slice(0, 10);
 const DATA_PATH = ARGV.find((a) => a.startsWith('--data='))?.slice(7) ?? 'reports/weekly-policy-2026-11-13.data.json';
 const LOG_PATH = ARGV.find((a) => a.startsWith('--log='))?.slice(6);
 const EP = `https://${DOMAIN}.microcms.io/api/v1/policy-events`;
@@ -131,6 +144,19 @@ async function runPost(row: PostRow): Promise<void> {
   const cur = await bySlug(row.slug);
   if (cur) { console.log(`   [skip] 既存あり（id=${cur.id}）`); skipped++; log.push({ kind: 'post', slug: row.slug, result: 'skip_exists', id: cur.id }); return; }
   const payload = payloadOf(row);
+  if (ASOF) {
+    const ar = ASOF_REPLACE[row._no];
+    if (ar) {
+      const today = todayJst();
+      if (today !== ASOF) { console.log(`   [中止] --asof=${ASOF} だが実行日（JST）は ${today}（「…時点」を確かめ直してから流す）`); aborted++; log.push({ kind: 'post', slug: row.slug, result: 'aborted_asof_date', asof: ASOF, today }); return; }
+      const desc = String(payload.description);
+      const n = count(desc, ar.from);
+      if (n !== 1) { console.log(`   [中止] 「…時点」の置換元が ${n} 回（一意でない）`); aborted++; log.push({ kind: 'post', slug: row.slug, result: 'aborted_asof_count', n }); return; }
+      const to = ar.to(ASOF);
+      payload.description = desc.replace(ar.from, () => to);
+      console.log(`   「…時点」: 「${ar.from}」→「${to}」（description ${desc.length}→${String(payload.description).length} 字）`);
+    }
+  }
   console.log(`   title: ${payload.title}`);
   console.log(`   eventDate: ${payload.eventDate}${payload.endDate ? `／endDate: ${payload.endDate}` : ''}・status ${norm(payload.status)}・description ${String(payload.description).length} 字`);
   if (DRY) { posted++; log.push({ kind: 'post', slug: row.slug, result: 'dry', payload }); return; }
@@ -208,9 +234,16 @@ async function runPatch(p: Patch): Promise<void> {
 
 async function main(): Promise<void> {
   console.log(`[週次政策 2026-11-13 policy-events] mode=${DRY ? 'DRY-RUN' : '本実行'}${SKIP_OPTIONAL ? '・任意は skip' : ''} data=${DATA_PATH}`);
-  const posts = data.post.filter((r) => !(SKIP_OPTIONAL && r.optional) && !EXCLUDE.has(r._no));
-  const patches = data.patch.filter((p) => !(SKIP_OPTIONAL && !p.required) && !EXCLUDE.has(p.key));
+  const posts = data.post.filter((r) => !(SKIP_OPTIONAL && r.optional) && !EXCLUDE.has(r._no) && (ONLY.size === 0 || ONLY.has(r._no)));
+  const patches = data.patch.filter((p) => !(SKIP_OPTIONAL && !p.required) && !EXCLUDE.has(p.key) && (ONLY.size === 0 || ONLY.has(p.key)));
   if (EXCLUDE.size) console.log(`--exclude: ${[...EXCLUDE].join('・')} は書かない（一次を読めなかった）`);
+  if (ONLY.size) {
+    const known = new Set([...data.post.map((r) => r._no), ...data.patch.map((p) => p.key)]);
+    const unknown = [...ONLY].filter((x) => !known.has(x));
+    if (unknown.length) { console.log(`[中止] --only に原稿に無い行: ${unknown.join('・')}`); process.exit(1); }
+    console.log(`--only: ${[...ONLY].join('・')} だけ（POST ${posts.map((r) => r._no).join('・') || 'なし'}・PATCH ${patches.map((p) => p.key).join('・') || 'なし'}）`);
+  }
+  if (ASOF) console.log(`--asof: ${ASOF}（実行日 JST ${todayJst()}）`);
   const bad = [...posts.flatMap((r) => checkSelects(r, r.slug)), ...patches.flatMap((p) => checkSelects(p.set, p.key))];
   if (bad.length) { console.log(`[中止] #106 選択肢の不実在: ${bad.join(' / ')}`); process.exit(1); }
   console.log(`#106: POST ${posts.length} 件・PATCH ${patches.length} 件の select はすべて v4 の選択肢に実在・配列`);
