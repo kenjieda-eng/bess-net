@@ -1,0 +1,1623 @@
+{
+ "generated": "2026-11-15",
+ "version_old": "2026/8/6（基幹・広島）・2026/7/27（鳥取・島根・岡山・山口）",
+ "version_new": "2026/10/28",
+ "files": [
+  {
+   "zip": "csv_220kv.zip",
+   "member": "sys_capa_kikan01_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_220kv.zip",
+   "zip_bytes": 3206,
+   "bytes": 4940,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 33,
+   "prefecture": null
+  },
+  {
+   "zip": "csv_tori.zip",
+   "member": "sys_capa_local11_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_tori.zip",
+   "zip_bytes": 6146,
+   "bytes": 4152,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 25,
+   "prefecture": "鳥取県"
+  },
+  {
+   "zip": "csv_tori.zip",
+   "member": "sys_capa_local12_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_tori.zip",
+   "zip_bytes": 6146,
+   "bytes": 3006,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 9,
+   "prefecture": "鳥取県"
+  },
+  {
+   "zip": "csv_tori.zip",
+   "member": "sys_capa_local13_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_tori.zip",
+   "zip_bytes": 6146,
+   "bytes": 4738,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 29,
+   "prefecture": "鳥取県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local21_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "zip_bytes": 10736,
+   "bytes": 3724,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 22,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local22_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "zip_bytes": 10736,
+   "bytes": 3588,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 18,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local23_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "zip_bytes": 10736,
+   "bytes": 4098,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 21,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local24_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "zip_bytes": 10736,
+   "bytes": 4154,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 19,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local25_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "zip_bytes": 10736,
+   "bytes": 3776,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 16,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_shima.zip",
+   "member": "sys_capa_local26_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_shima.zip",
+   "zip_bytes": 10736,
+   "bytes": 2431,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 3,
+   "prefecture": "島根県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local31_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "zip_bytes": 14857,
+   "bytes": 5322,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 41,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local32_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "zip_bytes": 14857,
+   "bytes": 6223,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 54,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local33_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "zip_bytes": 14857,
+   "bytes": 4252,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 33,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local34_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "zip_bytes": 14857,
+   "bytes": 4020,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 28,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local35_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "zip_bytes": 14857,
+   "bytes": 5729,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 41,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_oka.zip",
+   "member": "sys_capa_local36_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_oka.zip",
+   "zip_bytes": 14857,
+   "bytes": 4638,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 24,
+   "prefecture": "岡山県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local41_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "zip_bytes": 17174,
+   "bytes": 7954,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 68,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local42_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "zip_bytes": 17174,
+   "bytes": 5929,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 45,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local43_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "zip_bytes": 17174,
+   "bytes": 5471,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 39,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local44_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "zip_bytes": 17174,
+   "bytes": 5090,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 26,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local45_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "zip_bytes": 17174,
+   "bytes": 4462,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 29,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_hiro.zip",
+   "member": "sys_capa_local46_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_hiro.zip",
+   "zip_bytes": 17174,
+   "bytes": 7681,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 86,
+   "prefecture": "広島県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local51_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "zip_bytes": 11977,
+   "bytes": 10239,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 65,
+   "prefecture": "山口県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local52_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "zip_bytes": 11977,
+   "bytes": 5067,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 23,
+   "prefecture": "山口県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local53_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "zip_bytes": 11977,
+   "bytes": 6788,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 37,
+   "prefecture": "山口県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local54_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "zip_bytes": 11977,
+   "bytes": 3844,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 18,
+   "prefecture": "山口県"
+  },
+  {
+   "zip": "csv_yama.zip",
+   "member": "sys_capa_local55_tr_202610_07.csv",
+   "url": "https://www.energia.co.jp/nw/service/retailer/keitou/access/zip/csv_yama.zip",
+   "zip_bytes": 11977,
+   "bytes": 6494,
+   "encoding": "cp932",
+   "meta_row": "2026年10月28日更新",
+   "file_version": "202610",
+   "columns": 17,
+   "header": [
+    "変電所 No",
+    "変電所名",
+    "電圧(一次)（kV）",
+    "電圧(二次)（kV）",
+    "台数",
+    "設備容量(100%×台数)（MW）",
+    "運用容量値（MW）",
+    "運用容量制約要因",
+    "予想潮流",
+    "空容量(当該設備)（MW）",
+    "空容量(上位系等考慮)（MW）",
+    "N-1電制適用可否",
+    "N-1電制適用可能量（MW）",
+    "平常時出力制御の可能性",
+    "平常時出力制御が必要となりうる設備（当該設備）",
+    "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+    "備考"
+   ],
+   "data_rows": 23,
+   "prefecture": "山口県"
+  }
+ ],
+ "warnings": [],
+ "requires_judgement": [
+  "新規 4件（追加は裁定事項・slug は本実行の前に決める）",
+  "消滅（新CSVに不在）2件 → 301/凍結の方針判断",
+  "No.の振り直し 2件 → slug 維持で external_id を更新するか（8/16 の裁定1 と同じ扱いか）"
+ ],
+ "file_versions": {
+  "202610": 27
+ },
+ "meta_rows": {
+  "2026年10月28日更新": 27
+ },
+ "encodings": {
+  "cp932": 27
+ },
+ "header_variants": 1,
+ "header": [
+  "変電所 No",
+  "変電所名",
+  "電圧(一次)（kV）",
+  "電圧(二次)（kV）",
+  "台数",
+  "設備容量(100%×台数)（MW）",
+  "運用容量値（MW）",
+  "運用容量制約要因",
+  "予想潮流",
+  "空容量(当該設備)（MW）",
+  "空容量(上位系等考慮)（MW）",
+  "N-1電制適用可否",
+  "N-1電制適用可能量（MW）",
+  "平常時出力制御の可能性",
+  "平常時出力制御が必要となりうる設備（当該設備）",
+  "平常時出力制御が必要となりうる設備（上位系のノンファーム設備）",
+  "備考"
+ ],
+ "excluded_note_rows": {
+  "count": 30,
+  "rows": [
+   {
+    "member": "csv_220kv/sys_capa_kikan01_tr_202610_07.csv",
+    "no": "【留意事項】",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_220kv/sys_capa_kikan01_tr_202610_07.csv",
+    "no": "・基L3，基L9については，電力広域的運営推進機関が公表している関西中国間連系線",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_220kv/sys_capa_kikan01_tr_202610_07.csv",
+    "no": "・基L6，基L11については，500kV系統はループ系統で運用しており，フェンス",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_220kv/sys_capa_kikan01_tr_202610_07.csv",
+    "no": "※3 高圧側から低圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_tori/sys_capa_local11_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_tori/sys_capa_local12_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_tori/sys_capa_local13_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_shima/sys_capa_local21_tr_202610_07.csv",
+    "no": "※６　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_shima/sys_capa_local22_tr_202610_07.csv",
+    "no": "※６　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_shima/sys_capa_local23_tr_202610_07.csv",
+    "no": "※６　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_shima/sys_capa_local24_tr_202610_07.csv",
+    "no": "※６　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_shima/sys_capa_local25_tr_202610_07.csv",
+    "no": "※６　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_shima/sys_capa_local26_tr_202610_07.csv",
+    "no": "※６　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_oka/sys_capa_local31_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_oka/sys_capa_local32_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_oka/sys_capa_local33_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_oka/sys_capa_local34_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_oka/sys_capa_local35_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_oka/sys_capa_local36_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_hiro/sys_capa_local41_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_hiro/sys_capa_local42_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_hiro/sys_capa_local43_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_hiro/sys_capa_local44_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_hiro/sys_capa_local45_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_hiro/sys_capa_local46_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_yama/sys_capa_local51_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_yama/sys_capa_local52_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_yama/sys_capa_local53_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_yama/sys_capa_local54_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   },
+   {
+    "member": "csv_yama/sys_capa_local55_tr_202610_07.csv",
+    "no": "※6　高電圧側から低電圧側に流れる方向を正",
+    "reason": "No.欄が注記見出し"
+   }
+  ]
+ },
+ "nonpublic_rows": [],
+ "dedupe": {
+  "before": 875,
+  "after": 875,
+  "removed": 0,
+  "breakdown": {},
+  "examples": []
+ },
+ "counts": {
+  "baseline_all": 874,
+  "baseline": 873,
+  "raw": 875,
+  "new_after_dedupe": 875,
+  "matched": 869,
+  "new_records": 4,
+  "disappeared": 2,
+  "ambiguous": 0,
+  "renumbered": 2,
+  "changed": 127,
+  "unchanged": 744,
+  "total_after": 875,
+  "delta_pct": 0.23
+ },
+ "field_stats": {
+  "空き容量(当該)": {
+   "changed": 61,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "空容量(上位系等考慮)": {
+   "changed": 24,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "運用容量": {
+   "changed": 2,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "予想潮流": {
+   "changed": 53,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "設備容量": {
+   "changed": 1,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "N-1電制適用可能量": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "台数": {
+   "changed": 1,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "出力制御の可能性": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  },
+  "運用容量制約要因": {
+   "changed": 0,
+   "filled": 0,
+   "lost_to_undetermined": 0
+  }
+ },
+ "avail_decreased": {
+  "count": 43,
+  "zeroed": 5,
+  "zeroed_list": [
+   {
+    "slug": "egz-tottori-s0006",
+    "name": "浜村変電所",
+    "prefecture": "鳥取県",
+    "kv": "110/6",
+    "old": 2,
+    "new": 0.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-yamaguchi-s20001-4",
+    "name": "高森(変)",
+    "prefecture": "山口県",
+    "kv": "66/6",
+    "old": 2,
+    "new": 0.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-hiroshima-h0002-2",
+    "name": "大林配電塔",
+    "prefecture": "広島県",
+    "kv": "22/6",
+    "old": 1,
+    "new": 0.0,
+    "delta": -1.0
+   },
+   {
+    "slug": "egz-hiroshima-s110003",
+    "name": "竹原変電所",
+    "prefecture": "広島県",
+    "kv": "110/6",
+    "old": 1,
+    "new": 0.0,
+    "delta": -1.0
+   },
+   {
+    "slug": "egz-shimane-s0006-3",
+    "name": "大田変電所",
+    "prefecture": "島根県",
+    "kv": "66/6",
+    "old": 1,
+    "new": 0.0,
+    "delta": -1.0
+   }
+  ],
+  "top10": [
+   {
+    "slug": "egz-hiroshima-s0001-2",
+    "name": "大門変電所",
+    "prefecture": "広島県",
+    "kv": "110/6",
+    "old": 14,
+    "new": 11.0,
+    "delta": -3.0
+   },
+   {
+    "slug": "egz-yamaguchi-s10001",
+    "name": "彦島(変)",
+    "prefecture": "山口県",
+    "kv": "110/6",
+    "old": 15,
+    "new": 12.0,
+    "delta": -3.0
+   },
+   {
+    "slug": "egz-yamaguchi-s60001",
+    "name": "唐戸(変)",
+    "prefecture": "山口県",
+    "kv": "110/6",
+    "old": 16,
+    "new": 13.0,
+    "delta": -3.0
+   },
+   {
+    "slug": "egz-hiroshima-s120002-3",
+    "name": "沼隈変電所",
+    "prefecture": "広島県",
+    "kv": "110/6",
+    "old": 10,
+    "new": 8.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-hiroshima-s150002-2",
+    "name": "駅家北変電所",
+    "prefecture": "広島県",
+    "kv": "110/6",
+    "old": 11,
+    "new": 9.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-hiroshima-s20002-3",
+    "name": "西高屋変電所",
+    "prefecture": "広島県",
+    "kv": "110/6",
+    "old": 9,
+    "new": 7.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-hiroshima-s300002-3",
+    "name": "因島変電所",
+    "prefecture": "広島県",
+    "kv": "110/6",
+    "old": 11,
+    "new": 9.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-hiroshima-s30003",
+    "name": "福山変電所",
+    "prefecture": "広島県",
+    "kv": "110/6",
+    "old": 17,
+    "new": 15.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-hiroshima-s40002-2",
+    "name": "蔵王変電所",
+    "prefecture": "広島県",
+    "kv": "110/6",
+    "old": 18,
+    "new": 16.0,
+    "delta": -2.0
+   },
+   {
+    "slug": "egz-okayama-s0009-4",
+    "name": "蒜山変電所",
+    "prefecture": "岡山県",
+    "kv": "110/6",
+    "old": 24,
+    "new": 22.0,
+    "delta": -2.0
+   }
+  ]
+ },
+ "avail_increased": {
+  "count": 18,
+  "top5": [
+   {
+    "slug": "egz-okayama-s0005-3",
+    "name": "久世変電所",
+    "prefecture": "岡山県",
+    "kv": "66/6",
+    "old": 4,
+    "new": 8.0,
+    "delta": 4.0
+   },
+   {
+    "slug": "egz-hiroshima-s240002",
+    "name": "石内変電所",
+    "prefecture": "広島県",
+    "kv": "110/6",
+    "old": 14,
+    "new": 16.0,
+    "delta": 2.0
+   },
+   {
+    "slug": "egz-okayama-s120002-5",
+    "name": "上市変電所",
+    "prefecture": "岡山県",
+    "kv": "66/6",
+    "old": 3,
+    "new": 5.0,
+    "delta": 2.0
+   },
+   {
+    "slug": "egz-okayama-s20002-5",
+    "name": "真加部変電所",
+    "prefecture": "岡山県",
+    "kv": "66/6",
+    "old": 4,
+    "new": 6.0,
+    "delta": 2.0
+   },
+   {
+    "slug": "egz-okayama-s80002",
+    "name": "当新田変電所",
+    "prefecture": "岡山県",
+    "kv": "110/6",
+    "old": 17,
+    "new": 19.0,
+    "delta": 2.0
+   }
+  ]
+ },
+ "avail_plus_after": 600,
+ "n1": {
+  "new": {
+   "可": 69,
+   "未算定": 6,
+   "不可": 800
+  },
+  "current": {
+   "不可": 804,
+   "可": 69
+  },
+  "changed": [],
+  "undetermined_new": [
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-kikan-s0006",
+    "external_id": "energia_kikan_基S6",
+    "name": "新小野田変電所",
+    "prefecture": null,
+    "stored_n1_eligible": false,
+    "csv_value": "-",
+    "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-kikan-s0008",
+    "external_id": "energia_kikan_基S8",
+    "name": "柳井火力変電所",
+    "prefecture": null,
+    "stored_n1_eligible": false,
+    "csv_value": "-",
+    "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-kikan-s0016",
+    "external_id": "energia_kikan_基S16",
+    "name": "(名称非公開) energia_kikan_基S16",
+    "prefecture": null,
+    "stored_n1_eligible": false,
+    "csv_value": "-",
+    "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-shimane-s0001-3",
+    "external_id": "energia_shimane_島⑥S1",
+    "name": "西郷発電所",
+    "prefecture": "島根県",
+    "stored_n1_eligible": false,
+    "csv_value": "－",
+    "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-shimane-s0002",
+    "external_id": "energia_shimane_島⑥S2",
+    "name": "黒木発電所",
+    "prefecture": "島根県",
+    "stored_n1_eligible": false,
+    "csv_value": "－",
+    "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）"
+   },
+   {
+    "operator": "中国電力ネットワーク",
+    "area": "中国",
+    "slug": "egz-shimane-s0003-3",
+    "external_id": "energia_shimane_島⑥S3",
+    "name": "海士変電所",
+    "prefecture": "島根県",
+    "stored_n1_eligible": false,
+    "csv_value": "－",
+    "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）"
+   }
+  ],
+  "undetermined_current_file": {
+   "count": 7,
+   "slugs": [
+    "egz-kikan-s0006",
+    "egz-kikan-s0008",
+    "egz-kikan-s0016",
+    "egz-shimane-s0001-3",
+    "egz-shimane-s0002",
+    "egz-shimane-s0003-3",
+    "egz-okayama-s80004"
+   ]
+  }
+ },
+ "oc": {
+  "undetermined": [],
+  "changes": {},
+  "csv_values": {
+   "有り": 781,
+   "－": 91,
+   "―": 3
+  },
+  "current": {
+   "有り": 779,
+   "（空）": 94
+  }
+ },
+ "renamed_blocking": [],
+ "renamed_soft": [],
+ "disclosure_change": [],
+ "renumber_pairs": [
+  {
+   "slug": "egz-okayama-s0005-3",
+   "name": "久世変電所",
+   "prefecture": "岡山県",
+   "old_external_id": "energia_okayama_岡⑤S5",
+   "new_external_id": "energia_okayama_岡⑤S5-2",
+   "kv": "66/6",
+   "capacity_total_mw": 38,
+   "cap_avail_old": 4,
+   "cap_avail_new": 8.0
+  },
+  {
+   "slug": "egz-okayama-s0001-2",
+   "name": "大原変電所",
+   "prefecture": "岡山県",
+   "old_external_id": "energia_okayama_岡⑥S1",
+   "new_external_id": "energia_okayama_岡⑥S1-2",
+   "kv": "66/6",
+   "capacity_total_mw": 9,
+   "cap_avail_old": 7,
+   "cap_avail_new": 7.0
+  }
+ ],
+ "ambiguous_rows": [],
+ "new_records_detail": [
+  {
+   "external_id": "energia_okayama_岡⑤S5-1",
+   "name": "久世変電所",
+   "prefecture": "岡山県",
+   "kv": "66/22",
+   "units": 1,
+   "capacity_total_mw": 9.0,
+   "cap_operational_mw": 6.0,
+   "cap_avail_mw": 6.0,
+   "n1": "不可　♯３",
+   "oc": "有り",
+   "member": "sys_capa_local35_tr_202610_07.csv"
+  },
+  {
+   "external_id": "energia_okayama_岡⑥S1-1",
+   "name": "大原変電所",
+   "prefecture": "岡山県",
+   "kv": "66/22",
+   "units": 1,
+   "capacity_total_mw": 9.0,
+   "cap_operational_mw": 6.0,
+   "cap_avail_mw": 6.0,
+   "n1": "不可　♯３",
+   "oc": "有り",
+   "member": "sys_capa_local36_tr_202610_07.csv"
+  },
+  {
+   "external_id": "energia_yamaguchi_山⑤S9-1",
+   "name": "西市(変)",
+   "prefecture": "山口県",
+   "kv": "66/6",
+   "units": 2,
+   "capacity_total_mw": 23.0,
+   "cap_operational_mw": 23.0,
+   "cap_avail_mw": 2.0,
+   "n1": "不可　♯３",
+   "oc": "有り",
+   "member": "sys_capa_local55_tr_202610_07.csv"
+  },
+  {
+   "external_id": "energia_yamaguchi_山⑤S9-2",
+   "name": "西市(変)",
+   "prefecture": "山口県",
+   "kv": "66/22",
+   "units": 1,
+   "capacity_total_mw": 14.0,
+   "cap_operational_mw": 6.0,
+   "cap_avail_mw": 2.0,
+   "n1": "不可　♯２",
+   "oc": "有り",
+   "member": "sys_capa_local55_tr_202610_07.csv"
+  }
+ ],
+ "disappeared_records": [
+  {
+   "slug": "egz-yamaguchi-s0009-2",
+   "external_id": "energia_yamaguchi_山⑤S9",
+   "name": "西市(変)",
+   "prefecture": "山口県",
+   "kv": "66/6"
+  },
+  {
+   "slug": "egz-okayama-s80004",
+   "external_id": "energia_okayama_岡⑤S8-4",
+   "name": "湯原第一変電所",
+   "prefecture": "岡山県",
+   "kv": "11/6"
+  }
+ ],
+ "pref_counts": {
+  "baseline": {
+   "島根県": 99,
+   "（基幹系）": 33,
+   "山口県": 165,
+   "広島県": 293,
+   "岡山県": 220,
+   "鳥取県": 63
+  },
+  "new": {
+   "（基幹系）": 33,
+   "鳥取県": 63,
+   "島根県": 99,
+   "岡山県": 221,
+   "広島県": 293,
+   "山口県": 166
+  },
+  "page_bare_url": {
+   "広島県": 293,
+   "岡山県": 220,
+   "山口県": 165,
+   "島根県": 99,
+   "鳥取県": 63,
+   "基幹系統": 33
+  }
+ },
+ "vclass": {
+  "baseline": {
+   "110kV系": 508,
+   "その他": 27,
+   "22kV系": 85,
+   "66kV系": 242,
+   "500kV系": 11
+  },
+  "after": {
+   "500kV系": 11,
+   "その他": 26,
+   "110kV系": 508,
+   "66kV系": 245,
+   "22kV系": 85
+  },
+  "page_bare_url": {
+   "500kV系": 11,
+   "110kV系": 508,
+   "66kV系": 242,
+   "22kV系": 85,
+   "その他": 27
+  }
+ },
+ "page": {
+  "pref": {
+   "広島県": 293,
+   "岡山県": 220,
+   "山口県": 165,
+   "島根県": 99,
+   "鳥取県": 63,
+   "基幹系統": 33
+  },
+  "vclass": {
+   "500kV系": 11,
+   "110kV系": 508,
+   "66kV系": 242,
+   "22kV系": 85,
+   "その他": 27
+  },
+  "total": 873,
+  "avail_plus": 599,
+  "n1_ok": 69,
+  "basis": "公表 2026/08/06 時点（当サイト取込 2026/08/16）／エリア内に複数時点のデータを含む（最新を表示・2種）（中国電力ネットワークの公表データ）"
+ },
+ "page_meta": "2026-11-15 22:45:35 JST・PRERENDER・age 0",
+ "kikan": {
+  "new_rows": 33,
+  "baseline_rows": 33
+ },
+ "prev_new_record_862aed3": {
+  "slug": "egz-shimane-s60001-2",
+  "external_id": "energia_shimane_島①S6-1",
+  "name": "玉造変電所",
+  "in_new_csv": [
+   {
+    "name": "玉造変電所",
+    "kv": "110/22",
+    "cap_avail_mw": 6.0,
+    "member": "sys_capa_local21_tr_202610_07.csv"
+   }
+  ],
+  "matched_to": [
+   "egz-shimane-s60001-2"
+  ]
+ },
+ "last_updated_current": {
+  "2026-07-27": 547,
+  "2026-08-06": 326
+ }
+}
