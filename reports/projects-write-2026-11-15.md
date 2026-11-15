@@ -104,11 +104,40 @@ slug の衝突は 8 件とも 0。名称の固有部分・所在地の固有部�
 
 ## (6) デプロイ・本番の確認
 
-（デプロイの後に記入）
+- push 前のローカル: `npx tsc --noEmit` PASS・`npm run build` PASS（BUILD EXIT 0・prebuild の verify は全部通過・`verify:corrections` ok 497 件）・`verify:linkify` PASS（15 ページ clean）・`verify:projects-body` 28 PASS／0 FAIL・`verify:source-names --no-cms` ok。
+  - ローカルのビルドは `.next/cache/fetch-cache` の旧い取得を使い、新規 7 件の詳細を事前生成せず、PATCH 6 件の詳細も旧い値で出した（#116。一覧 `/projects` は新しい値で 掲載件数 314）。本番は下のとおり新しい値。ビルドのログの「WARN getAllNews 重複除去 13 件」も同じ fetch-cache の新旧混在（本番と関係ない）。
+- commit **`82af2f0`** を 21:30 に push → Vercel **success**（21:40:56 に確認・`/build-info.json` の builtAt 2026-11-15T21:36:38+09:00）。
+- 本番（素の URL・クエリなし・初期 DOM〔script を除き `<!-- -->` を剥がした〕）:
+
+| 時刻（JST） | URL | HTTP | x-vercel-cache | age | 確認 |
+|---|---|---|---|---|---|
+| 21:41:14〜21:41:20 | `/projects/{P2・P1・P3〜P7 の 7 slug}` | 7 本とも 200 | PRERENDER | 0 | h1＝name・状態のバッジ・「出力 X MW」「容量 X MWh」のバッジ（P2 は空＝無い）・所在地・事業者・EPC・運転開始・「市場参加」（P1）・出典リンク・本文の段落すべて（計画の body の各段落の文字がある）＝**7 件とも全項目一致** |
+| 21:41:21〜21:41:26 | `/projects/{U1〜U6 の 6 slug}` | 6 本とも 200 | PRERENDER | 0 | 日南: h1「ADW宮崎日南市蓄電所」・稼働中・出典 093／西方町金井: 運転開始 **2026-11-04**・「市場参加」需給調整市場・出典 013／海南: 「出力 1.996 MW」「容量 8.146 MWh」・稼働中・運転開始 **2026-11-09**・出典 123.000161802／多気・熊本: 本文に千葉銀行の融資の 1 段落／出雲古志: h1「出雲古志蓄電所」・事業者「デジタルグリッドアセットマネジメント株式会社」・稼働中・「出力 1.997 MW」「容量 8.128 MWh」・「市場参加」需給調整市場・出典 071.000045726＝**6 件とも全項目一致**（本文の段落もすべてある） |
+| 21:41:27 | `/projects` | 200 | PRERENDER | 0 | 掲載件数 **314**（307＋7・GET 419−除外 105）・新規 7 件のリンクが一覧にある |
+| 21:41:27 | `/corrections` | 200 | PRERENDER | 0 | `20261115-01` の targetTitle・before・after の 2 行・`/projects/glome-nishikata-kanai-2465-bess` へのリンクがある |
+| 21:41:29 | `/projects/pr-co161802-saga` | **301** | — | — | Location `/projects/pr-co161802-saga-2`（301 のまま） |
+
+- 新規 7 件の詳細も PRERENDER（本番のビルドが新しい slug の一覧で事前生成した）。
+- 照合の記録: スクリプトと結果は一時物の `wp1115\work\prod.py`・`prod1\prod1.json`（(9)）。
+
+### 30 分後（鉄則 #5）
+
+| 時刻（JST） | URL | HTTP | x-vercel-cache | age | 確認 |
+|---|---|---|---|---|---|
+| 22:35:54〜22:35:58 | `/projects/{新規 7 slug}` | 7 本とも 200 | STALE | 621〜627 | 21:41 と同じく全項目一致（revalidate 600 秒を過ぎた STALE＝裏で作り直し中。中身は新しい値） |
+| 22:35:59〜22:36:02 | `/projects/{U1〜U6 の 6 slug}` | 6 本とも 200 | HIT | 468〜469 | 21:41 と同じく全項目一致 |
+| 22:36:03 | `/projects` | 200 | HIT | 484 | 掲載件数 314・新規 7 件のリンク |
+| 22:36:03 | `/corrections` | 200 | HIT | 3,274 | `20261115-01` の内容とリンク |
+| 22:36:04 | `/projects/pr-co161802-saga` | 301 | — | — | Location `/projects/pr-co161802-saga-2` |
+
+- `/build-info.json` の builtAt は 21:36:38 のまま（その後のビルドなし）。
+- **確認はデプロイ（21:40:56）の 55 分後になった**: 22:11 まで待つ背景のコマンドが exit code 4 で先に終わっていて、22:11 に起こされなかった（EDAさんの 22:3x の連絡で取った）。30 分の間に取った本番のページは 21:41 の 15 本だけで、全部 200。Vercel の管理画面のエラー率は見ていない（CLI で見られる記録が無い）。microCMS の警告メールの有無は EDAさんの受信箱で（CC からは見えない）。
 
 ## (7) IndexNow
 
-（本番確認の後に記入）
+- `scripts/indexnow-submit.ts --urls reports/projects-write-2026-11-15.indexnow-urls.txt`: dry run → `--apply`（21:41:5x JST・鍵 605d…）。
+- 送った URL **15 件**（新規 7＋PATCH 6＋`/projects`＋`/corrections`。P8 を書いていないので便の 16 より 1 件少ない）。変電所の詳細 0・noindex 0。
+- 応答: **1〜15 件目 HTTP 200（受理）**・1 回（記録 `reports/projects-write-2026-11-15.indexnow.json`）。本番の鍵のファイルは HTTP 200・中身一致。
 
 ## (8) 見るだけ（書いていない）
 
