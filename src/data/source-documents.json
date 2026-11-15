@@ -3882,6 +3882,141 @@
       "checked_on": "2026-11-08",
       "note": "小さな直し便（2026-11-08）。Chrome UA で HTTP 200（249,506 bytes）。配信 2026-10-01 12:00:02・更新 2026-10-02 00:10:02。projects 便・段 2 の本文で出典に挙げたが台帳に足していなかった。",
       "used_in": "projects/nc-shunan-yuno（body）"
+    },
+    {
+      "name": "【日本蓄電池株式会社】佐賀県唐津市にて系統用蓄電施設「NC唐津市浜玉町浜崎蓄電所」需給調整市場への参入",
+      "publisher": "日本蓄電池株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000120.000161802.html",
+      "title_verbatim": "【日本蓄電池株式会社】佐賀県唐津市にて系統用蓄電施設「NC唐津市浜玉町浜崎蓄電所」需給調整市場への参入 | 日本蓄電池株式会社のプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（249,229 bytes）。配信 2026-11-06 17:00:02・更新 2026-11-07 04:40:02。",
+      "used_in": "projects/nc-karatsu-hamatama-bess（body）"
+    },
+    {
+      "name": "【日本蓄電池株式会社】佐賀県唐津市にて系統用蓄電施設「NC唐津市浜玉町浜崎蓄電所」受電開始",
+      "publisher": "日本蓄電池株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000076.000161802.html",
+      "title_verbatim": "【日本蓄電池株式会社】佐賀県唐津市にて系統用蓄電施設「NC唐津市浜玉町浜崎蓄電所」受電開始 | 日本蓄電池株式会社のプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（250,743 bytes）。配信 2026-06-17 11:00:02・更新 2026-06-17 12:16:31。",
+      "used_in": "projects/nc-karatsu-hamatama-bess（body）"
+    },
+    {
+      "name": "【日本蓄電池株式会社】熊本県荒尾市にて系統用蓄電施設「NC荒尾市府本字打越蓄電所」蓄電池設置開始",
+      "publisher": "日本蓄電池株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000121.000161802.html",
+      "title_verbatim": "【日本蓄電池株式会社】熊本県荒尾市にて系統用蓄電施設「NC荒尾市府本字打越蓄電所」蓄電池設置開始 | 日本蓄電池株式会社のプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（246,698 bytes）。配信 2026-11-09 10:00:02・更新 2026-11-09 12:01:58。",
+      "used_in": "projects/nc-arao-bess（body）"
+    },
+    {
+      "name": "株式会社エンブルー、鳥取県「境港市新屋町1158蓄電所」が完工、株式会社NAMIJUへ引き渡しを完了",
+      "publisher": "株式会社エンブルー（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000012.000171049.html",
+      "title_verbatim": "株式会社エンブルー、鳥取県「境港市新屋町1158蓄電所」が完工、株式会社NAMIJUへ引き渡しを完了 | 株式会社エンブルーのプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（252,402 bytes）。配信 2026-11-11 11:00:02・更新 2026-11-12 04:40:02。",
+      "used_in": "projects/namiju-sakaiminato-bess（body）"
+    },
+    {
+      "name": "全国４拠点の系統用蓄電所を取得し、系統用蓄電池事業へ本格参入",
+      "publisher": "野村不動産株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000001034.000025694.html",
+      "title_verbatim": "全国４拠点の系統用蓄電所を取得し、系統用蓄電池事業へ本格参入 | 野村不動産ホールディングス株式会社のプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（270,877 bytes）。配信 2026-11-12 14:30:01・更新 2026-11-12 18:10:09。",
+      "used_in": "projects/nomura-re-iwaki-bess（body）・projects/nomura-re-kodama-bess（body）・projects/nomura-re-maebashi-bess（body）・projects/nomura-re-fujinomiya-bess（body）"
+    },
+    {
+      "name": "系統用蓄電所（４拠点）設備施工・管理のお知らせ",
+      "publisher": "ブルースカイエナジー株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000018.000175281.html",
+      "title_verbatim": "系統用蓄電所（４拠点）設備施工・管理のお知らせ | ブルースカイエナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（250,670 bytes）。配信 2026-11-12 14:30:01・更新 2026-11-12 18:10:03。",
+      "used_in": "projects/nomura-re-iwaki-bess（body）・projects/nomura-re-kodama-bess（body）・projects/nomura-re-maebashi-bess（body）・projects/nomura-re-fujinomiya-bess（body）"
+    },
+    {
+      "name": "エー・ディー・ワークスの系統用蓄電所事業 稼働開始３か所目として「ADW宮崎日南市蓄電所」が竣工・稼働開始",
+      "publisher": "株式会社ADワークスグループ（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000093.000160356.html",
+      "title_verbatim": "エー・ディー・ワークスの系統用蓄電所事業 稼働開始３か所目として「ADW宮崎日南市蓄電所」が竣工・稼働開始 | 株式会社ADワークスグループのプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（255,770 bytes）。配信 2026-11-06 16:30:01・更新 2026-11-06 20:10:13。",
+      "used_in": "projects/adw-nichinan-bess（body）"
+    },
+    {
+      "name": "系統用蓄電所第２号施設の運用を開始",
+      "publisher": "グローム・ホールディングス株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000013.000185790.html",
+      "title_verbatim": "系統用蓄電所第２号施設の運用を開始 | グローム・ホールディングス株式会社のプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（233,846 bytes）。配信 2026-11-09 16:30:02・更新 2026-11-09 20:10:21。",
+      "used_in": "projects/glome-nishikata-kanai-2465-bess（body）"
+    },
+    {
+      "name": "系統用蓄電所事業、適時開示（４月30日）記載の系統用蓄電所事業開始引渡予定日について、約7週間前倒しで第2号施設が稼働段階へ ― その後、公表していた引渡予定日をさらに1週間前倒しして検収を完了",
+      "publisher": "グローム・ホールディングス株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000008.000185790.html",
+      "title_verbatim": "系統用蓄電所事業、適時開示（４月30日）記載の系統用蓄電所事業開始引渡予定日について、約7週間前倒しで第2号施設が稼働段階へ ― その後、公表していた引渡予定日をさらに1週間前倒しして検収を完了 | グローム・ホールディングス株式会社のプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（277,714 bytes）。配信 2026-08-14 19:01:28・更新 2026-08-15 15:10:02。",
+      "used_in": "projects/glome-nishikata-kanai-2465-bess（body）"
+    },
+    {
+      "name": "【日本蓄電池株式会社】和歌山県海南市にて系統用蓄電施設「NC海南市木津蓄電所」受電開始",
+      "publisher": "日本蓄電池株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000123.000161802.html",
+      "title_verbatim": "【日本蓄電池株式会社】和歌山県海南市にて系統用蓄電施設「NC海南市木津蓄電所」受電開始 | 日本蓄電池株式会社のプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（253,376 bytes）。配信 2026-11-10 15:00:02・更新 2026-11-10 18:10:14。",
+      "used_in": "projects/nc-kainan（body）"
+    },
+    {
+      "name": "【日本蓄電池との共同プロジェクト】和歌山県海南市で約2MW系統用蓄電所が受電開始",
+      "publisher": "株式会社リミックスポイント（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000233.000033609.html",
+      "title_verbatim": "【日本蓄電池との共同プロジェクト】和歌山県海南市で約2MW系統用蓄電所が受電開始 | 株式会社リミックスポイントのプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（277,126 bytes）。配信 2026-11-10 12:00:02・更新 2026-11-10 15:10:38。",
+      "used_in": "projects/nc-kainan（body）"
+    },
+    {
+      "name": "エー・ディー・ワークス、千葉銀行の「ちばぎんリーダーズローンNEXT（環境設備型）」を活用し系統用蓄電所事業のための資金調達を実施",
+      "publisher": "株式会社ADワークスグループ（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000094.000160356.html",
+      "title_verbatim": "エー・ディー・ワークス、千葉銀行の「ちばぎんリーダーズローンNEXT（環境設備型）」を活用し系統用蓄電所事業のための資金調達を実施 | 株式会社ADワークスグループのプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（251,363 bytes）。配信 2026-11-10 15:30:02・更新 2026-11-10 19:10:39。",
+      "used_in": "projects/adw-taki-bess（body）・projects/adw-kumamoto-bess（body）"
+    },
+    {
+      "name": "島根県出雲市の系統用蓄電所が需給調整市場に参入",
+      "publisher": "デジタルグリッド株式会社（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000071.000045726.html",
+      "title_verbatim": "島根県出雲市の系統用蓄電所が需給調整市場に参入 | デジタルグリッド株式会社のプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（235,743 bytes）。配信 2026-11-12 08:30:01・更新 2026-11-12 12:10:12。",
+      "used_in": "projects/buddynet-izumo-koshi-bess（body）"
+    },
+    {
+      "name": "バディネット、島根県出雲市における系統用蓄電池（2MW/8MWh）建設プロジェクトが完工",
+      "publisher": "株式会社バディネット（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000015.000168478.html",
+      "title_verbatim": "バディネット、島根県出雲市における系統用蓄電池（2MW/8MWh）建設プロジェクトが完工 | 株式会社バディネットのプレスリリース",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（282,152 bytes）。配信 2026-09-17 10:00:02・更新 2026-09-18 03:40:02。",
+      "used_in": "projects/buddynet-izumo-koshi-bess（body）"
+    },
+    {
+      "name": "出雲古志蓄電所 - 島根県出雲市古志町での施工事例",
+      "publisher": "株式会社バディネット",
+      "url": "https://www.buddynet.jp/solution/energy/grid-battery/works/koshi-bess/",
+      "title_verbatim": "出雲古志蓄電所 - 島根県出雲市古志町での施工事例｜株式会社バディネット",
+      "checked_on": "2026-11-15",
+      "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（55,139 bytes）。",
+      "used_in": "projects/buddynet-izumo-koshi-bess（body）"
     }
   ]
 }

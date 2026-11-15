@@ -1,0 +1,102 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 19
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 13,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/nc-arao-bess",
+   "row_id": "P2",
+   "result": "skip_exists",
+   "id": "12s9l02dsvf7"
+  },
+  {
+   "kind": "post",
+   "target": "projects/nc-karatsu-hamatama-bess",
+   "row_id": "P1",
+   "result": "skip_exists",
+   "id": "qxyhqiwr8t2z"
+  },
+  {
+   "kind": "post",
+   "target": "projects/namiju-sakaiminato-bess",
+   "row_id": "P3",
+   "result": "skip_exists",
+   "id": "8iwl8fc_r"
+  },
+  {
+   "kind": "post",
+   "target": "projects/nomura-re-iwaki-bess",
+   "row_id": "P4",
+   "result": "skip_exists",
+   "id": "ypibqkgsftii"
+  },
+  {
+   "kind": "post",
+   "target": "projects/nomura-re-kodama-bess",
+   "row_id": "P5",
+   "result": "skip_exists",
+   "id": "ixnh-jvyg"
+  },
+  {
+   "kind": "post",
+   "target": "projects/nomura-re-maebashi-bess",
+   "row_id": "P6",
+   "result": "skip_exists",
+   "id": "qbehw_fux"
+  },
+  {
+   "kind": "post",
+   "target": "projects/nomura-re-fujinomiya-bess",
+   "row_id": "P7",
+   "result": "skip_exists",
+   "id": "cl0ia83r5"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/adw-nichinan-bess",
+   "id": "w90_f0qufmf4",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/glome-nishikata-kanai-2465-bess",
+   "id": "6nf7or1-rj12",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nc-kainan",
+   "id": "qtst1yvdh",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/adw-taki-bess",
+   "id": "ub53w4hqi",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/adw-kumamoto-bess",
+   "id": "94xu2v85m",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/buddynet-izumo-koshi-bess",
+   "id": "4yv2yhwfg",
+   "result": "skip_final_state"
+  }
+ ]
+}

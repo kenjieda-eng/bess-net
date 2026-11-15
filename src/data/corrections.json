@@ -11203,6 +11203,29 @@
     }
    ],
    "internalRef": "reports/deals-monthly-add-2026-11-13.md (1)・(6)"
+  },
+  {
+   "id": "20261115-01",
+   "date": "2026-11-15",
+   "kind": "訂正",
+   "path": "/projects/glome-nishikata-kanai-2465-bess",
+   "record": "projects/glome-nishikata-kanai-2465-bess",
+   "targetTitle": "GM西方町金井2465蓄電所（グローム・ホールディングス）",
+   "before": "「運転開始 2026-07-10」と表示（2026年7月10日は、検収・引渡しが完了した日）",
+   "after": "運転開始を 2026-11-04 に直しました（2026年11月9日の発表に「同年11月４日より運用を開始」とあるため）\n2026年7月10日の検収・引渡しの完了は、本文に書きました",
+   "basis": [
+    {
+     "name": "系統用蓄電所第２号施設の運用を開始",
+     "publisher": "グローム・ホールディングス株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000013.000185790.html"
+    },
+    {
+     "name": "系統用蓄電所事業、適時開示（４月30日）記載の系統用蓄電所事業開始引渡予定日について、約7週間前倒しで第2号施設が稼働段階へ ― その後、公表していた引渡予定日をさらに1週間前倒しして検収を完了",
+     "publisher": "グローム・ホールディングス株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000008.000185790.html"
+    }
+   ],
+   "internalRef": "reports/projects-write-2026-11-15.md (3)・(5)／reports/projects-write-2026-11-15.json の projects/glome-nishikata-kanai-2465-bess（cod の op の old）"
   }
  ]
 }
