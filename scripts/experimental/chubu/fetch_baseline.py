@@ -26,9 +26,11 @@ while True:
         break
     offset += 100
     time.sleep(0.4)
-json.dump(out, open("scripts/experimental/chubu/baseline_live.json", "w", encoding="utf-8"),
+# 出力先は引数で変えられる（2026-11-15 BX: baseline_live_2611.json。既定は従来どおり）
+OUT = sys.argv[1] if len(sys.argv) > 1 else "scripts/experimental/chubu/baseline_live.json"
+json.dump(out, open(OUT, "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
-print(f"取得 {len(out)}件 → baseline_live.json")
+print(f"取得 {len(out)}件（totalCount {j['totalCount']}）→ {OUT}")
 print("フィールド:", sorted(out[0].keys()))
 print("slug例:", [r["slug"] for r in out[:5]])
 print("external_id例:", [r.get("external_id") for r in out[:5]])
