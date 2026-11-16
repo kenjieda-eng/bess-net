@@ -1,0 +1,29 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 4
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 2,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "projects/pr-co160356-bess-2",
+   "id": "5wym-85hrn9",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co160356-bess",
+   "id": "hn71p7s3tx",
+   "result": "skip_final_state"
+  }
+ ]
+}

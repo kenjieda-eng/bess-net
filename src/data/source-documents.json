@@ -4017,6 +4017,24 @@
       "checked_on": "2026-11-15",
       "note": "projects 便（2026-11-15・_QUEUE.md 113 行）。素の curl で HTTP 200（55,139 bytes）。",
       "used_in": "projects/buddynet-izumo-koshi-bess（body）"
+    },
+    {
+      "name": "エー・ディー・ワークスの系統用蓄電所事業、第２号「ADW熊本益城町蓄電所」が竣工・稼働開始",
+      "publisher": "株式会社ADワークスグループ（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000085.000160356.html",
+      "title_verbatim": "エー・ディー・ワークスの系統用蓄電所事業、 第２号「ADW熊本益城町蓄電所」が竣工・稼働開始 | 株式会社ADワークスグループのプレスリリース",
+      "checked_on": "2026-11-16",
+      "note": "projects の小さな直し便（2026-11-16・_QUEUE.md 116 行）。素の curl で HTTP 200（258,129 bytes）。配信 2026-08-31 15:30:02・更新 2026-08-31 19:10:48。",
+      "used_in": "projects/pr-co160356-bess-2（body）・訂正履歴 20261116-01（basis）"
+    },
+    {
+      "name": "エー・ディー・ワークスの系統用蓄電所事業 第一拠点のADW三重松阪市蓄電所が本連系・稼働開始",
+      "publisher": "株式会社ADワークスグループ（PR TIMES 掲載）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000054.000160356.html",
+      "title_verbatim": "エー・ディー・ワークスの系統用蓄電所事業 第一拠点のADW三重松阪市蓄電所が本連系・稼働開始 | 株式会社ADワークスグループのプレスリリース",
+      "checked_on": "2026-11-16",
+      "note": "projects の小さな直し便（2026-11-16・_QUEUE.md 116 行）。素の curl で HTTP 200（240,944 bytes）。配信 2026-03-31 15:30:01・更新 2026-03-31 19:10:57。",
+      "used_in": "訂正履歴 20261116-02（basis）"
     }
   ]
 }

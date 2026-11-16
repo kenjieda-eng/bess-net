@@ -1,0 +1,261 @@
+{
+ "note": "projects の小さな直し便（2026-11-16・_QUEUE.md 116 行）。ユウの計画（reports/projects-plan-2026-11-15b_ユウ.json）を書込直前の GET で確かめて applier の形にしたもの。scripts/apply-projects-2026-11-16b.ts（runApplier）が読む。既定 dry run・本実行は --apply。",
+ "generated": "2026-11-16T01:35:45.827Z",
+ "baseline": {
+  "totalCount": 419,
+  "fetched_at": "2026-11-16T01:35:44.678Z",
+  "records": [
+   {
+    "key": "V1",
+    "slug": "pr-co160356-bess-2",
+    "id": "5wym-85hrn9",
+    "updatedAt": "2026-09-03T10:27:32.273Z",
+    "before": {
+     "name": "系統用蓄電所（ADワークスグループ）",
+     "operator": "ADワークスグループ",
+     "cod": "2026-08-31",
+     "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>系統用蓄電所</strong>は、三重に立地する系統用蓄電所。発表企業：ADワークスグループ。ステータス：稼働中（発表日：2026-02-12）。</p><p>～脱炭素社会に向けた新規ビジネスで再エネ普及に貢献～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://www.adwg.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.adwg.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000043.000160356.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000043.000160356.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+    }
+   },
+   {
+    "key": "V2",
+    "slug": "pr-co160356-bess",
+    "id": "hn71p7s3tx",
+    "updatedAt": "2026-09-08T04:37:08.909Z",
+    "before": {
+     "cod": "2026-03-31"
+    }
+   }
+  ]
+ },
+ "checks": {
+  "problems": [],
+  "old": [
+   {
+    "key": "V1",
+    "field": "name",
+    "plan_old": "系統用蓄電所（ADワークスグループ）",
+    "get": "系統用蓄電所（ADワークスグループ）",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "operator",
+    "plan_old": "ADワークスグループ",
+    "get": "ADワークスグループ",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "cod",
+    "plan_old": "2026-08-31",
+    "get": "2026-08-31",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 563,
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "cod",
+    "plan_old": "2026-03-31",
+    "get": "2026-03-31",
+    "ok": true
+   }
+  ],
+  "keep": [
+   {
+    "key": "V1",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "prefecture",
+    "keep": "熊本県",
+    "get": "熊本県",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "city",
+    "keep": "益城町",
+    "get": "益城町",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000085.000160356.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000085.000160356.html",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "name",
+    "keep": "ADW三重松阪市蓄電所",
+    "get": "ADW三重松阪市蓄電所",
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "outputMw",
+    "keep": 1.995,
+    "get": 1.995,
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "capacityMwh",
+    "keep": 8.34,
+    "get": 8.34,
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "prefecture",
+    "keep": "三重県",
+    "get": "三重県",
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "city",
+    "keep": "松阪市",
+    "get": "松阪市",
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "operator",
+    "keep": "株式会社エー・ディー・ワークス",
+    "get": "株式会社エー・ディー・ワークス",
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000054.000160356.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000054.000160356.html",
+    "ok": true
+   }
+  ]
+ },
+ "plan": {
+  "posts": [],
+  "patches": [
+   {
+    "ep": "projects",
+    "slug": "pr-co160356-bess-2",
+    "row_id": "V1",
+    "order": 1,
+    "ops": [
+     {
+      "field": "name",
+      "old": "系統用蓄電所（ADワークスグループ）",
+      "new": "ADW熊本益城町蓄電所",
+      "row_ids": [
+       "V1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "ADワークスグループ",
+      "new": "株式会社エー・ディー・ワークス",
+      "row_ids": [
+       "V1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "cod",
+      "old": "2026-08-31",
+      "new": "",
+      "row_ids": [
+       "V1"
+      ],
+      "note": "空にする（11/8 の揖斐川・長野と同じ new \"\"）"
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>系統用蓄電所</strong>は、三重に立地する系統用蓄電所。発表企業：ADワークスグループ。ステータス：稼働中（発表日：2026-02-12）。</p><p>～脱炭素社会に向けた新規ビジネスで再エネ普及に貢献～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://www.adwg.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.adwg.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000043.000160356.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000043.000160356.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>ADW熊本益城町蓄電所</strong>は、株式会社ADワークスグループの子会社である株式会社エー・ディー・ワークス（ADW）の熊本県益城町の系統用蓄電所。2026年8月31日のリリースは、「熊本県益城町において開発を進めてきた系統用蓄電所の第2号「ADW熊本益城町蓄電所」が竣工し、引渡しを受けた」とし、「ADWが運用を開始した系統用蓄電所は2か所目となります」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000085.000160356.html\" target=\"_blank\" rel=\"noopener noreferrer\">エー・ディー・ワークスの系統用蓄電所事業、第２号「ADW熊本益城町蓄電所」が竣工・稼働開始（株式会社ADワークスグループ、2026年8月31日）</a>）。</p><p>概要の表は出力／容量を「約2MW／約8MWh」（いずれも概数）、竣工・引渡日を「2026年8月31日」、電力市場運用を「卸電力市場：引き渡し後速やかに運用開始」とする。需給調整市場は「2026年11月末頃を目途に」参入する予定とされている。</p><p>表の日付は竣工・引渡日で、稼働開始の日付の記載が無いため、運転開始日の欄は空にした。市場の欄は、実績の記載が無いため空にした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "V1"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "48fb7ff7b5310398",
+     "operator": "442df274f7dafcaa",
+     "cod": "e3b0c44298fc1c14",
+     "body": "16acfecc76b01158"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co160356-bess",
+    "row_id": "V2",
+    "order": 2,
+    "ops": [
+     {
+      "field": "cod",
+      "old": "2026-03-31",
+      "new": "",
+      "row_ids": [
+       "V2"
+      ],
+      "note": "空にする（11/8 の揖斐川・長野と同じ new \"\"）"
+     }
+    ],
+    "expect_final": {
+     "cod": "e3b0c44298fc1c14"
+    }
+   }
+  ]
+ }
+}

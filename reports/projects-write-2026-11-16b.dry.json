@@ -1,0 +1,56 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 4
+ },
+ "counts": {
+  "patched": 2,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "projects/pr-co160356-bess-2",
+   "id": "5wym-85hrn9",
+   "result": "dry",
+   "fields": [
+    "name",
+    "operator",
+    "cod",
+    "body"
+   ],
+   "before": {
+    "name": "系統用蓄電所（ADワークスグループ）",
+    "operator": "ADワークスグループ",
+    "cod": "2026-08-31",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>系統用蓄電所</strong>は、三重に立地する系統用蓄電所。発表企業：ADワークスグループ。ステータス：稼働中（発表日：2026-02-12）。</p><p>～脱炭素社会に向けた新規ビジネスで再エネ普及に貢献～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://www.adwg.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.adwg.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000043.000160356.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000043.000160356.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "ADW熊本益城町蓄電所",
+    "operator": "株式会社エー・ディー・ワークス",
+    "cod": "",
+    "body": "<p><strong>ADW熊本益城町蓄電所</strong>は、株式会社ADワークスグループの子会社である株式会社エー・ディー・ワークス（ADW）の熊本県益城町の系統用蓄電所。2026年8月31日のリリースは、「熊本県益城町において開発を進めてきた系統用蓄電所の第2号「ADW熊本益城町蓄電所」が竣工し、引渡しを受けた」とし、「ADWが運用を開始した系統用蓄電所は2か所目となります」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000085.000160356.html\" target=\"_blank\" rel=\"noopener noreferrer\">エー・ディー・ワークスの系統用蓄電所事業、第２号「ADW熊本益城町蓄電所」が竣工・稼働開始（株式会社ADワークスグループ、2026年8月31日）</a>）。</p><p>概要の表は出力／容量を「約2MW／約8MWh」（いずれも概数）、竣工・引渡日を「2026年8月31日」、電力市場運用を「卸電力市場：引き渡し後速やかに運用開始」とする。需給調整市場は「2026年11月末頃を目途に」参入する予定とされている。</p><p>表の日付は竣工・引渡日で、稼働開始の日付の記載が無いため、運転開始日の欄は空にした。市場の欄は、実績の記載が無いため空にした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co160356-bess",
+   "id": "hn71p7s3tx",
+   "result": "dry",
+   "fields": [
+    "cod"
+   ],
+   "before": {
+    "cod": "2026-03-31"
+   },
+   "after": {
+    "cod": ""
+   }
+  }
+ ]
+}

@@ -11226,6 +11226,42 @@
     }
    ],
    "internalRef": "reports/projects-write-2026-11-15.md (3)・(5)／reports/projects-write-2026-11-15.json の projects/glome-nishikata-kanai-2465-bess（cod の op の old）"
+  },
+  {
+   "id": "20261116-01",
+   "date": "2026-11-16",
+   "kind": "訂正",
+   "path": "/projects/pr-co160356-bess-2",
+   "record": "projects/pr-co160356-bess-2",
+   "targetTitle": "ADW熊本益城町蓄電所",
+   "before": "「運転開始 2026-08-31」と表示（2026年8月31日は、竣工・引渡しの日）\n事業者を、親会社の「ADワークスグループ」と表示",
+   "after": "運転開始の欄を外しました（一次の表の日付は「竣工・引渡日」で、稼働開始の日付の記載が無いため）\n事業者を、蓄電所の引渡しを受けた「株式会社エー・ディー・ワークス」に直しました\n名称を、一次の施設名の「ADW熊本益城町蓄電所」にしました",
+   "basis": [
+    {
+     "name": "エー・ディー・ワークスの系統用蓄電所事業、第２号「ADW熊本益城町蓄電所」が竣工・稼働開始",
+     "publisher": "株式会社ADワークスグループ（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000085.000160356.html"
+    }
+   ],
+   "internalRef": "reports/projects-write-2026-11-16b.md (2)・(3)／reports/projects-write-2026-11-16b.json の projects/pr-co160356-bess-2（op の old）"
+  },
+  {
+   "id": "20261116-02",
+   "date": "2026-11-16",
+   "kind": "訂正",
+   "path": "/projects/pr-co160356-bess",
+   "record": "projects/pr-co160356-bess",
+   "targetTitle": "ADW三重松阪市蓄電所",
+   "before": "「運転開始 2026-03-31」と表示（2026年3月31日は、発表の配信日）",
+   "after": "運転開始の欄を外しました（一次は「本連系を完了し、稼働開始したことをお知らせいたします」と述べ、稼働開始の日付を書いていないため）",
+   "basis": [
+    {
+     "name": "エー・ディー・ワークスの系統用蓄電所事業 第一拠点のADW三重松阪市蓄電所が本連系・稼働開始",
+     "publisher": "株式会社ADワークスグループ（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000054.000160356.html"
+    }
+   ],
+   "internalRef": "reports/projects-write-2026-11-16b.md (2)・(3)／reports/projects-write-2026-11-16b.json の projects/pr-co160356-bess（op の old）"
   }
  ]
 }
