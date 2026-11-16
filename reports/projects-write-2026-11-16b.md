@@ -53,11 +53,25 @@ microCMS の書込は `projects` の **PATCH 2 件（5 op）**（POST・DELETE�
 
 ## (4) デプロイ・本番の確認
 
-（デプロイの後に記入）
+- push 前のローカル: `npx tsc --noEmit` PASS・`npm run build` PASS（BUILD EXIT 0・prebuild の verify は全部通過・`verify:corrections` ok 499 件・`verify:source-names` ok 台帳 448 件）・`verify:linkify` PASS（15 ページ clean）・`verify:projects-body` 28 PASS／0 FAIL。
+  - 1 回目の build（11/16 10:3x）は Git Bash の fork の失敗（`dofork: child -1 - forked process died unexpectedly`・`Resource temporarily unavailable`）で途中で止まった（コードの失敗ではない）。16:1x に取り直して PASS。取り直しの前に、書込後の dry run をもう一度流して 2 件とも skip（microCMS は書いた状態のまま）を確かめた。
+- PATCH 2 件は 10:36 に書いた（webhook のビルドで本番に出ていた・書き直していない）。commit **`062a78d`** を 16:15 に push → Vercel **success**（16:26:29 に確認・`/build-info.json` の builtAt 2026-11-16T16:20:44+09:00）。
+- 本番（素の URL・クエリなし・初期 DOM〔script を除き `<!-- -->` を剥がした〕）:
+
+| 時刻（JST） | URL | HTTP | x-vercel-cache | age | 確認 |
+|---|---|---|---|---|---|
+| 16:26:37 | `/projects/pr-co160356-bess-2` | 200 | PRERENDER | 0 | h1「**ADW熊本益城町蓄電所**」・事業者「**株式会社エー・ディー・ワークス**」・**運転開始の行が無い**（欄は 所在地「熊本県 益城町」・事業者・出典 の 3 つ）・本文は計画の本文の 4 段落とも文字どおり・旧本文の「三重に立地」は無い・「訂正履歴を見る」と記事末の `correction-20261116-01` |
+| 16:26:38 | `/projects/pr-co160356-bess` | 200 | PRERENDER | 0 | h1「ADW三重松阪市蓄電所」・**運転開始の行が無い**（所在地「三重県 松阪市」・事業者・出典）・第 1 段落が「…ステータス：稼働中。」で終わる・「訂正履歴を見る」と `correction-20261116-02` |
+| 16:26:39 | `/projects` | 200 | HIT | 8 | 掲載件数 **314**（変わらず）・「ADW熊本益城町蓄電所」がある・「系統用蓄電所（ADワークスグループ）」は無い・`/projects/pr-co160356-bess-2` へのリンク |
+| 16:26:40 | `/corrections` | 200 | PRERENDER | 0 | 2 件とも targetTitle・before の各行・after の各行（益城町 3 行・松阪 1 行）・対象ページへのリンクがある |
+
+- 30 分後の確かめはユウが行う（EDAさん 11/16 の指示）。CC は待たずに終えた。
 
 ## (5) IndexNow
 
-（本番確認の後に記入）
+- `scripts/indexnow-submit.ts --urls reports/projects-write-2026-11-16b.indexnow-urls.txt`: dry run → `--apply`（16:26:5x JST・鍵 605d…）。
+- 送った URL **4 件**（`/projects/pr-co160356-bess-2`・`/projects/pr-co160356-bess`・`/projects`・`/corrections`）。変電所の詳細 0・noindex 0。
+- 応答: **1〜4 件目 HTTP 200（受理）**・1 回（記録 `reports/projects-write-2026-11-16b.indexnow.json`）。本番の鍵のファイルは HTTP 200・中身一致。
 
 ## (6) 申告
 
