@@ -125,3 +125,53 @@ applier の dry run（10:11:49〜10:18:22・GET のみ）
 | `egz-shimane-s0001-3`・`egz-shimane-s0002`・`egz-shimane-s0003-3` | 西郷発電所・黒木発電所・海士変電所 | as_of 2026-07-27 → **2026-10-28**・source を 10/28 版の取込に |
 
 - 6 件とも reason は undetermined のまま（10/28 版の CSV で N-1 欄が「－」等）。microCMS の n1_eligible は false のまま（boolean を潰していない）。as_of が last_updated（2026-10-28）と一致するので、表示は「未算定」のまま効く。
+
+## build・push
+
+- `npm run build`（10:47:44〜10:53:05）: **BUILD EXIT 0**・★WARN 0・prebuild の verify は全部 ok。
+  - `verify:grid-pages`: 名称非公開 23・凍結のページ 9（8 → 9・どれも noindex）・凍結の転送 1（egz-kikan-x）・title と h1 の重なり 0。湯原第一 S8-4 は凍結と同名の組（S8-1〜S8-3）に入り、題名は電圧で分かれる（「湯原第一変電所（11/6kV・岡山県・中国電力NW）」）。
+  - `verify:grid-detail-static`: 詳細 8,358 件＝一覧 8,348＋凍結 10。
+- `verify:grid-fields`: **PASS**（軸 1 中国 875 件・台数あり 875／軸 3 中国の `area_dates` 2026-10-28〔**1 種**〕＝実データの最新版／軸 4〜6 ok・中国 undetermined 6/6）。
+- `tsc --noEmit` 0・`verify:linkify` 15 ページ clean。全国の一覧は 8,346 → **8,348**（中国 873 → 875: 新規 3・凍結 1）。
+- commit **`b06b2ea`**（10:54 push）→ Vercel **success 11:03:21**（`/build-info.json` の builtAt 2026-11-17T10:59:06+09:00）。生成物（`src/data/substations/*.json`）は commit していない。
+
+## (6) 本番の確認（素の URL・クエリ無し・script を除き `<!-- -->` を剥がした初期 DOM）
+
+| 時刻（JST） | ページ | x-vercel-cache・age | 結果 |
+|---|---|---|---|
+| 11:03:40 | `/grid/chugoku` | HIT・12 | データ基準日「**公表 2026/10/28 時点（当サイト取込 2026/11/17）**」・「複数時点」**0 回**（前は 2 種の断り）・サマリ **875 変電所／空容量プラス 600／N-1 電制適用可 69**・県別 広島 293・**岡山 221**・**山口 166**・島根 99・鳥取 63・基幹 33・凍結の `egz-okayama-s80004` は HTML のどこにも無い |
+| 11:04:35 | `/grid/prefecture/岡山県` | PRERENDER・0 | 題名「岡山県の変電所 系統空き容量 — 中国電力ネットワーク管内**221件**」 |
+| 11:04:38 | `/grid/prefecture/山口県` | PRERENDER・0 | 題名「山口県の変電所 系統空き容量 — 中国電力ネットワーク管内**166件**」 |
+| 11:03:42 | `egz-hiroshima-s0001-2` 大門（減） | MISS・0 | 空容量（当該設備）**11 MW**・2 台・52 MW・公表日 2026/10/28 |
+| 11:03:46 | `egz-tottori-s0006` 浜村（ゼロ化） | MISS・0 | 空容量（当該設備）**0 MW**・公表日 2026/10/28 |
+| 11:03:47 | `egz-okayama-s0005-3` 久世（振り直し） | MISS・0 | 題名「久世変電所（66/6kV・岡山県・中国電力NW）」・空容量 **8 MW**・3 台・38／33・公式変電所No `energia_okayama_岡⑤S5-2` |
+| 11:03:49 | `egz-okayama-s0001-2` 大原（振り直し） | MISS・0 | 題名「大原変電所（66/6kV・…）」・空容量 7 MW・1 台・9 MW・No `…岡⑥S1-2`・備考 ※４ |
+| 11:03:51 | `egz-yamaguchi-s0009-2` 西市（同じ設備） | MISS・0 | 題名「西市変電所（66/6kV・山口県・中国電力NW）」・**2 台・設備容量 23 MW・運用容量 23 MW・空容量 2 MW**・No `…山⑤S9-1`・備考 ※４ |
+| 11:03:53 | `egz-okayama-s50001-3` 新規 久世 | MISS・0 | 200・「久世変電所（66/22kV・岡山県・中国電力NW）」・1 台・9 MW・運用容量 6・空容量 6 MW・N-1 不可・index |
+| 11:03:55 | `egz-okayama-s10001-5` 新規 大原 | MISS・0 | 200・「大原変電所（66/22kV・…）」・1 台・9 MW・空容量 6 MW |
+| 11:03:56 | `egz-yamaguchi-s90002-4` 新規 西市 | MISS・0 | 200・「西市変電所（66/22kV・山口県・…）」・1 台・14 MW・運用容量 6・空容量 2 MW |
+| 11:03:58 | `egz-okayama-s80004` 湯原第一 S8-4（凍結） | MISS・0 | 200・**robots `noindex, follow`**・凍結の注記「…2026年10月28日更新版の公表データに掲載がないため、更新を停止しています。…」あり・公表日 2026/7/27 のまま・一覧に出ない |
+| 11:04:00〜04 | `egz-kikan-s0006` 新小野田・`egz-shimane-s0002` 黒木発電所・`egz-shimane-s0003-3` 海士（N-1） | MISS・0 | N-1電制適用可「**未算定**」（3 件とも）・公表日 2026/10/28 |
+| 11:04:48〜51 | `/grid/e6s8mq29b5rf`・`/grid/gjexgvl2xv6`・`/grid/3n-52ir2o`（新規の id） | — | **308** → 各 slug |
+
+- 変電所の詳細は 11/4 からビルド時の JSON で描くので、Data Cache の旧値の窓（#116・#127）は無い。1 回目から全部新しい値だった。書込の前に対象の詳細ページは開いていない（#127）。
+- 西市(変) の題名は「西市変電所」と表示される（名前の「(変)」を「変電所」に読み替える既存の規則）。
+- 30 分後の確かめはユウがする（便 §0）。CC は待たずに終えた。30 分の監視（microCMS の警告メール・Vercel のエラー率）は EDAさん・ユウの側で。
+
+## (7) IndexNow の応答
+
+- `npx tsx scripts/indexnow-submit.ts --urls reports/grid-chugoku-2026-11-17.indexnow-urls.txt`: dry run → `--apply` を 1 回（11:04:5x JST・鍵 605d…・本番の鍵のファイル HTTP 200・中身一致）。
+- 送った **133 件**: 値か external_id が変わった slug 129（値 128＋大原 1・振り直し 3 件を含む）・新規 3・`/grid/chugoku`。日付だけの 743 件と凍結 2 件は送っていない（noindex・名称非公開の除外 0 件）。
+- 応答: **1〜133 件目 HTTP 200（受理）**（`reports/grid-chugoku-2026-11-17.indexnow.json`）。
+
+## (8) 申告・一時物
+
+- 停止条件: rm 系・push --force・.env の表示・microCMS の DELETE／PUT は、どれも 0。microCMS の書込は「変電所空き容量DB」の中国 PATCH 872＋POST 3 だけ。
+- 便に無い追加（すべて #113・既存の決まりに従ったもの、またはこの便で見つけた小さな是正）:
+  - `next.config.js` の転送 3 本と CLAUDE.md #113 の件数（3 → 6）・更新履歴 1 行（新規 3 件が id ≠ slug のため・#113 の決まりのとおり）。
+  - `build_n1_status.py` の沖縄のヘッダ確認から、ブラウザのふりをする UA を外した（2026-11-13 の決まり。既定の UA で HTTP 200 を確かめた）。
+  - `fetch_baseline.py` に `orders=-publishedAt` と id の重複検査（#124）。
+  - 凍結の注記に「〇日公表時点の値のまま」を付けなかった（(3)・値の出どころが last_updated の版と違うため）。
+- 一時物（リポの外・消していない）: `C:\Users\kenji\AppData\Local\Temp\claude\76d4d28da6870112\c7db94e8-ce59-46b9-aa85-de5390184ac4\scratchpad\by1117\`
+  - `access.html`／`.hdr`・`zip\`（取り直した ZIP 6 本と応答ヘッダ）・`work\`（`check_plan.py`・`verify_after.py`〔＋`verify_after.json`〕・`prod.py`〔＋`prod.json`・取ったページ〕・`dry_1028.json`・`n1_1028.json`・applier と build のログ・`oki_test.csv`・県のページの HTML）。
+- 作業前からある未コミットの差分（`src/data/substations/*.json`・`scripts/experimental/operators/alias-expansion-report.json`）は commit に入れていない。
