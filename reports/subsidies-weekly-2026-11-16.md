@@ -44,3 +44,58 @@ microCMS の書込は `subsidies` の **PATCH 1 レコード（3 op）**（POST�
 
 - 書込前の値（dry run の GET）は便 §1 の「当サイトの今の値」と同じ（status `["受付終了"]`・deadline「2026年10月2日（金）正午必着【厳守】」・scheme の末尾「…2026年10月5日時点で三次公募の告知なし。出典: …/1strst/」）。
 - 書込後: status `["採択結果公表"]`・deadline「2026年10月2日（金）正午必着【厳守】（二次公募は終了。二次公募の採択結果は2026年10月28日にEIC機構が公表）」・scheme の末尾「…二次公募は2026年10月2日（金）正午で締切。【2026-11-17 更新】二次公募（2026年8月27日〜10月2日正午）の採択結果を2026年10月28日に公表（EIC機構の採択事業者一覧に2者掲載: オンサイトPPAモデル1・自己所有モデル1。件数は編集部集計）。2026年11月17日時点で三次公募の告知なし（EIC機構の公募ページは「【公募は終了しました】」と掲示）。出典: …/1strst/ ／ …/2ndrst/」。
+
+## (3) `src/data/subsidies.json` の diff（`npm run build` の prebuild で作り直したもの）
+
+```diff
+@@ -640,21 +640,21 @@
+     "status": [
+-      "受付終了"
++      "採択結果公表"
+     ],
+@@
+-    "deadline_raw": "2026年10月2日（金）正午必着【厳守】",
++    "deadline_raw": "2026年10月2日（金）正午必着【厳守】（二次公募は終了。二次公募の採択結果は2026年10月28日にEIC機構が公表）",
+     "deadline_iso": "2026-10-02",
+@@
+-    "updatedAt": "2026-10-05T03:44:17.588Z",
+-    "scheme": "…二次公募は2026年10月2日（金）正午で締切。2026年10月5日時点で三次公募の告知なし。出典: https://www.eic.or.jp/eic/topics/2026/st_r08/1strst/",
++    "updatedAt": "2026-11-17T00:51:49.532Z",
++    "scheme": "…二次公募は2026年10月2日（金）正午で締切。【2026-11-17 更新】二次公募（2026年8月27日〜10月2日正午）の採択結果を2026年10月28日に公表（EIC機構の採択事業者一覧に2者掲載: オンサイトPPAモデル1・自己所有モデル1。件数は編集部集計）。2026年11月17日時点で三次公募の告知なし（EIC機構の公募ページは「【公募は終了しました】」と掲示）。出典: https://www.eic.or.jp/eic/topics/2026/st_r08/1strst/ ／ https://www.eic.or.jp/eic/topics/2026/st_r08/2ndrst/",
+```
+（scheme の前半〔「自家消費型の太陽光発電設備と…【2026-10-05 更新】一次公募…9者掲載…」〕は前後で同じなので「…」で略した。全文は commit `20901dd` の diff）
+
+- 機械で全キーを比べた結果: 件数 80 → 80・slug の集合は同じ。**変わったのは `moe-storage-parity-r08` の `status`・`deadline_raw`・`scheme`・`updatedAt` の 4 キーだけ**。ほかの 79 件の変化 0。`deadline_iso`（2026-10-02）・`start_iso`（2026-08-27）・`is_rolling`・`no_schedule`・`applicable_prefs`（47）・`applicable_use_cases`・`applicable_entities` は不変（便 ■1 の派生の期待どおり）。
+- `/subsidies` の見出し（**ビルドの日 2026-11-17** の `displaySubsidyStatus` で数えた値）: HEAD 公募中 26・受付終了 33・採択結果公表 16・その他 5 → 今 公募中 26・受付終了 **32**・採択結果公表 **17**・その他 5。
+  - 便の 11/16 基準の見込み（採択結果公表 16 → 17・受付終了 32 → 31・公募中 27）と、受付終了・公募中の数が 1 ずつ違うのは、便の注意書きのとおり、福島 地域活用型（締切 2026-11-16）が 11/17 には公募中 → 受付終了に移っているため（HEAD の subsidies.json を 11/16 の日付で数えると 公募中 27・受付終了 32・採択結果公表 16・その他 5＝便の前提と一致）。
+- `verify:source-names:src` ok（台帳 448 件・台帳に無い資料名 0）・`type-check` ok・`npm run build` BUILD EXIT 0（prebuild の verify は全部 ok・★WARN 0）・`verify:linkify` 15 ページ clean。
+
+## (4) 本番照合（素の URL・script を除いた初期 DOM・`<!-- -->` を剥がして数えた）
+
+- deploy: `20901dd` を 09:58 に push → Vercel **success 10:08:33**（`/build-info.json` の builtAt 2026-11-17T10:04:15+09:00）。照合は 10:09:07〜10:09:08。
+  - その前に、microCMS の PATCH（09:51）の webhook のビルドが 09:56:46 に出ていた（builtAt で確認）。
+
+| URL | HTTP・x-vercel-cache・age | 結果 |
+|---|---|---|
+| `/subsidies/moe-storage-parity-r08` | 200・HIT・9 | 状態のバッジ「**採択結果公表**」（本文で「受付終了」0・「公募中」0）・「2026年10月28日」6 回・**「2026年10月5日時点」0 回**・「2者掲載」3 回・「【2026-11-17 更新】」3 回・「2026年11月17日時点」3 回・「二次公募は終了」3 回・2ndrst の URL 3 回 |
+| `/subsidies` | 200・HIT・8 | 見出し 公募中 26・**採択結果公表 17**・**受付終了 32**・その他 5（(3) の数えた値と一致）。詳細へのリンクあり |
+| `/tracker/subsidy` | 200・PRERENDER・0 | 2026-11-17 の行に「ストレージパリティの達成に向けた…（令和8年度当初予算）」・タグ「**採択結果公表**」 |
+
+- 3 回ずつ出るのは、meta description・og:description と本文の 3 か所に出るため（11-09 と同じ）。
+- **★便の期待と違う 1 点: `<title>` に「採択結果」は入らない**（`<title>`「ストレージパリティの達成に向けた太陽光発電設備等の価格低減促進事業（令和8年度当初予算）｜蓄電所ネット」）。
+  - 理由: `buildSubsidyTitle`（`src/lib/subsidies-meta.ts`）は、題が `TITLE_MAX`（40 字）を超えるときは状態のラベルを付けない（自前で切り詰めない・要素を落とす）。このレコードは名称だけで 44 字あるので、前の「受付終了」のときも状態のラベルは付いていなかった（この便で変わったものではない）。
+  - 状態は meta description・og:description の先頭（「採択結果／対象: …」）と、本文のバッジに出ている。
+
+## (5) IndexNow
+
+- 2 URL（詳細・`/subsidies`）を `--urls` で（`reports/subsidies-weekly-2026-11-16.indexnow-urls.txt`）。dry run（送る 2 件・変電所の詳細 0・noindex 0・鍵 605d…・本番の鍵のファイル HTTP 200 で中身一致）のあと `--apply` を 1 回。
+- 応答: **1〜2 件目 HTTP 200（受理）**・10:09:4x JST（`reports/subsidies-weekly-2026-11-16.indexnow.json`）。
+
+## (6) 申告
+
+- **★日付を替えた**: 計画のコピーで W1116-03 の 2 か所を 11-16 → 11-17（(0) のとおり・替える前に三次公募の告知なしを確かめた）。
+- **一時物をリポの中に作って、mv で外に出した**: `/subsidies` の見出しを数える小さなスクリプトを `scripts/.count-sub-1117.ts` に作って 1 回使い（import の相対パスの都合）、すぐに scratchpad（`…\scratchpad\sub1117\work\count-sub-1117.ts`）へ mv した（消していない・commit にも入れていない）。最初から scratchpad で動かすべきだった。
+- 一時物（リポの外・消していない）: `C:\Users\kenji\AppData\Local\Temp\claude\76d4d28da6870112\c7db94e8-ce59-46b9-aa85-de5390184ac4\scratchpad\sub1117\`（`prim\` に一次 3 本と応答ヘッダ・`work\` に build のログ・数えたスクリプト・本番照合のスクリプトと結果）。
+- 作業前からある未コミットの差分（`src/data/substations/*.json`・`scripts/experimental/operators/alias-expansion-report.json`）は commit に入れていない。118 行（BX）の作業中の差分（`scripts/experimental/chubu/` ほか）もこの便の commit には入れていない。
+- rm／Remove-Item・`git push --force`・`.env` の表示はしていない。microCMS の書込は subsidies の PATCH 1 だけ。訂正履歴は足していない（便 ■3）。
+- 30 分の監視（microCMS の警告メール・Vercel のエラー率）は EDAさん・ユウの側で（CC は受信箱を見られない）。
