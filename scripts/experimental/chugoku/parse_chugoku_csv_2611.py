@@ -15,6 +15,11 @@
 使い方（リポジトリ直下で）:
   python scripts/experimental/chugoku/parse_chugoku_csv_2611.py --grid-html <素URLで取った /grid/chugoku の HTML>
 
+2026-11-17（BY 本実行便）: --emit-plan を足した（下の emit_plan・裁定 BY 1〜5）。
+  python scripts/experimental/chugoku/parse_chugoku_csv_2611.py --emit-plan --fetched-on 2026-11-17 \\
+      --baseline <書込直前の GET> --out-json <scratchpad> --n1-out <scratchpad> --plan-out scripts/experimental/chugoku/update_plan_202611.json
+  11/15 の dry-run の記録（reports/grid-chugoku-dryrun-2026-11-15.json・_common/n1_undetermined_chugoku_2611.json）は上書きしない。
+
 突合キー（8/16 と同じ）: external_id = `energia_{県キー}_{No}`。同じ eid に複数行（電圧違い・バンク違い）があれば
 電圧面 → 設備容量 → 運用容量 → 台数でタイブレーク（#115）。新規×消滅は名称＋電圧面＋設備容量＋運用容量＋台数で
 No. の振り直しとして突合（#117）。
@@ -210,10 +215,21 @@ def grid_page_counts(path: str):
 
 
 def main():
+    global BASELINE, OUT_JSON, N1_OUT
     ap = argparse.ArgumentParser()
-    ap.add_argument("--grid-html", required=True)
+    ap.add_argument("--grid-html", default="", help="dry-run の報告用（--emit-plan のときは省略可）")
     ap.add_argument("--grid-meta", default="")
+    # BY 本実行（2026-11-17）: 計画の出力。11/15 の dry-run の記録（OUT_JSON・N1_OUT）は上書きしないよう出力先を変える
+    ap.add_argument("--emit-plan", action="store_true")
+    ap.add_argument("--plan-out", default=str(HERE / "update_plan_202611.json"))
+    ap.add_argument("--baseline", default=str(BASELINE))
+    ap.add_argument("--out-json", default=str(OUT_JSON))
+    ap.add_argument("--n1-out", default=str(N1_OUT))
+    ap.add_argument("--fetched-on", default="")
     args = ap.parse_args()
+    BASELINE, OUT_JSON, N1_OUT = Path(args.baseline), Path(args.out_json), Path(args.n1_out)
+    if args.emit_plan and not args.fetched_on:
+        raise SystemExit("--emit-plan には --fetched-on が必要")
 
     R = {"generated": date.today().isoformat(), "version_old": "2026/8/6（基幹・広島）・2026/7/27（鳥取・島根・岡山・山口）",
          "version_new": "2026/10/28", "files": [], "warnings": [], "requires_judgement": []}
@@ -401,7 +417,7 @@ def main():
                                       "cap_avail_mw": r["cap_avail_mw"], "member": r["member"]} for r in prev_new],
                       "matched_to": [b["slug"] for b, r in pairs if r["external_id"] == "energia_shimane_島①S6-1"]}
 
-    page = grid_page_counts(args.grid_html)
+    page = grid_page_counts(args.grid_html) if args.grid_html else {"pref": {}, "vclass": {}}
     total_after = len(base) + len(new_rows) - len(removed)
     delta_pct = (total_after - len(base)) / len(base) * 100 if base else 0
     avail_plus_after = 0
@@ -472,7 +488,177 @@ def main():
     print(f"=== 出力制御 === 変化 {dict(oc_changes)}・未算定化 {len(oc_undetermined)}")
     print(f"=== 基幹 === 新 {len(kikan_new)}・baseline {len(kikan_base)}・前回の新規 {prev_new_check}")
     print(f"→ {OUT_JSON} / {N1_OUT}")
+    if args.emit_plan:
+        raw_base = json.loads(BASELINE.read_text(encoding="utf-8"))  # 正規化前の GET のまま（before と id に使う）
+        emit_plan(args.plan_out, raw_base, base, kept, matched, renumber_pairs, renumber_matched, new_rows, removed,
+                  ambiguous, renamed_hard, renamed_soft, disclosure, args.fetched_on)
     print("[dry-run] 完了（microCMS 書込なし）")
+
+
+# =============================================================================
+# --emit-plan（BY 本実行・2026-11-17）: 本実行の計画（microCMS には書かない）
+# 裁定（02_計画・運営/検証記録_BX中部・BY中国dry-run_確かめと裁定の案_2026-11-15_ユウ.md の BY 1〜5・EDAさん 11/16 10:03「任せます」）:
+#   1. 西市(変) 66/6（egz-yamaguchi-s0009-2）は同じ設備として slug を保つ。external_id 山⑤S9 → 山⑤S9-1・値を 10/28 版に。
+#      前の版（zip_202608）・baseline・新しい版のどれかで西市(変) の 66/6 の行が 1 行でなければ止める。
+#   2. 湯原第一 S8-4（egz-okayama-s80004）は凍結（DELETE しない・計画には入れない＝frozen.json は別に足す）。
+#   3. 久世・大原の No. の振り直しは slug 維持・external_id 更新（8/16 裁定 1 と同じ）。
+#   4. 新規 3 件（久世 S5-1・大原 S1-1・西市 S9-2・どれも 66/22）を POST。slug は今の体系（egz-{県}-s{番号}{枝番4桁}・衝突は -2…）。
+#   5. 全件 PATCH（last_updated を 2026-10-28 にそろえる・#121）。
+# 値の欄は 8/16 の --emit-plan と同じ（数値 7 欄は CSV に値があるときだけ・N-1 と出力制御の未算定は現値維持・出力制御は「有り」を足すだけ）。
+# 備考（notes）は書かない（8/16 と同じ）。11/15 の dry run の件数と 1 つでも違えば計画を作らない。
+# =============================================================================
+NEW_VERSION = "2026-10-28"
+EXPECT_RENUMBER = {"egz-okayama-s0005-3": ("energia_okayama_岡⑤S5", "energia_okayama_岡⑤S5-2"),
+                   "egz-okayama-s0001-2": ("energia_okayama_岡⑥S1", "energia_okayama_岡⑥S1-2")}
+SAIICHI = {"slug": "egz-yamaguchi-s0009-2", "old": "energia_yamaguchi_山⑤S9", "new": "energia_yamaguchi_山⑤S9-1", "name": "西市(変)", "kv": "66/6"}
+EXPECT_NEW = {"energia_okayama_岡⑤S5-1", "energia_okayama_岡⑥S1-1", "energia_yamaguchi_山⑤S9-2"}
+EXPECT_FROZEN = {"egz-okayama-s80004"}
+EXPECT = {"matched": 869, "updates": 872, "creates": 3, "value_changed": 128, "n1_ok_after": 69, "n1_changed": 0, "oc_changed": 0,
+          "op_constraint": 0, "total_after": 875}
+APPROVED = ["cap_avail_mw", "cap_avail_upper_mw", "cap_operational_mw", "forecast_flow_mw", "capacity_total_mw", "n1_capacity_mw", "units"]
+META = {"id", "createdAt", "updatedAt", "publishedAt", "revisedAt"}
+
+
+def _rows_named(rows, name, kv):
+    return [r for r in rows if (r.get("name") or "").strip() == name and vkey(r.get("voltage_primary_kv"), r.get("voltage_secondary_kv")) == kv]
+
+
+def emit_plan(plan_out, raw_base, base, kept, matched, renumber_pairs, renumber_matched, new_rows, removed,
+              ambiguous, renamed_hard, renamed_soft, disclosure, fetched_on):
+    global SRC
+    errs = []
+    if len(matched) != EXPECT["matched"] or ambiguous or renamed_hard or renamed_soft or disclosure:
+        errs.append(f"突合が dry run と違う: マッチ {len(matched)}・曖昧 {len(ambiguous)}・名称の変化 {len(renamed_hard)}/{len(renamed_soft)}/{len(disclosure)}")
+    got_renum = {p["slug"]: (p["old_external_id"], p["new_external_id"]) for p in renumber_pairs}
+    if got_renum != EXPECT_RENUMBER:
+        errs.append(f"振り直しが裁定と違う: {got_renum}")
+    if {r["external_id"] for r in new_rows} != EXPECT_NEW | {SAIICHI["new"]}:
+        errs.append(f"新規が裁定と違う: {sorted(r['external_id'] for r in new_rows)}")
+    if {b["slug"] for b in removed} != EXPECT_FROZEN | {SAIICHI["slug"]}:
+        errs.append(f"消滅が裁定と違う: {sorted(b['slug'] for b in removed)}")
+    # 裁定 1: 西市(変) の 66/6 は前の版・baseline・新しい版とも 1 行だけ
+    saved = SRC
+    try:
+        SRC = HERE / "zip_202608"
+        _, old_rows, _, _ = load_zip_rows()
+    finally:
+        SRC = saved
+    n_old, n_base, n_new = (len(_rows_named(x, SAIICHI["name"], SAIICHI["kv"])) for x in (old_rows, base, kept))
+    if (n_old, n_base, n_new) != (1, 1, 1):
+        errs.append(f"西市(変) 66/6 の行が 1 行でない: 前の版 {n_old}・baseline {n_base}・新しい版 {n_new}")
+    sb = next((b for b in removed if b["slug"] == SAIICHI["slug"]), None)
+    sr = next((r for r in new_rows if r["external_id"] == SAIICHI["new"]), None)
+    if sb is None or sr is None or sb.get("external_id") != SAIICHI["old"]:
+        errs.append("西市(変) の組が作れない")
+    if errs:
+        raise SystemExit("想定の外のため計画を作らない:\n  " + "\n  ".join(errs))
+
+    iso = lambda d: f"{d}T00:00:00.000Z"  # noqa: E731
+    raw = {b["slug"]: b for b in raw_base}
+    renum_by = {p["slug"]: p["new_external_id"] for p in renumber_pairs}
+    renum_by[SAIICHI["slug"]] = SAIICHI["new"]
+    pairs = list(matched) + list(renumber_matched) + [(sb, sr)]
+    updates, n1_kept, oc_kept, cnt = [], [], [], Counter()
+    for b, r in pairs:
+        if r.get("src_meta") != "2026年10月28日更新":
+            raise SystemExit(f"版の行が想定外: {r.get('src_meta')!r}")
+        rb = raw[b["slug"]]
+        patch, changed = {}, []
+        for k in APPROVED:
+            o, n = b.get(k), r.get(k)
+            if n is None:
+                continue
+            if o is None or not num_eq(o, n):
+                patch[k] = n
+                changed.append(k)
+        if r.get("op_constraint") and (b.get("op_constraint") or None) != r["op_constraint"]:
+            patch["op_constraint"] = r["op_constraint"]
+            changed.append("op_constraint")
+        if r.get("n1_eligible") is None:
+            if b.get("n1_eligible") is not None:
+                n1_kept.append(b["slug"])
+        elif r["n1_eligible"] != b.get("n1_eligible"):
+            patch["n1_eligible"] = r["n1_eligible"]
+            changed.append("n1_eligible")
+        if r.get("oc_possibility") is None:
+            if b.get("oc_possibility") is not None:
+                oc_kept.append(b["slug"])
+        elif r["oc_possibility"] == "有り" and b.get("oc_possibility") != "有り":
+            patch["oc_possibility"] = ["有り"]
+            changed.append("oc_possibility")
+        elif r["oc_possibility"] != "有り" and b.get("oc_possibility") is not None:
+            raise SystemExit(f"{b['slug']}: 出力制御の可能性 {b.get('oc_possibility')} → {r['oc_possibility']}（想定外）")
+        if b["slug"] in renum_by:
+            patch["external_id"] = renum_by[b["slug"]]
+            changed.append("external_id")
+        patch["source_url"] = f"{BASE_URL}/zip/{r['zip']}.zip"
+        patch["last_updated"] = iso(NEW_VERSION)
+        patch["fetched_at"] = iso(fetched_on)
+        for c in changed:
+            cnt[c] += 1
+        updates.append({"slug": b["slug"], "id": rb["id"], "patch": patch, "changed": changed,
+                        "external_id_row": r["external_id"], "before": {k: v for k, v in rb.items() if k not in META}})
+
+    # 新規の slug（今の体系: egz-{県キー}-{記号小文字}{番号}（枝番なし 4 桁／枝番ありは 番号＋枝番 4 桁）・使用済みなら -2, -3 …）
+    taken = set(json.load(open("src/lib/generated/grid-detail-index.json", encoding="utf-8"))["shard_of"].keys())
+    taken |= {x["slug"] for x in raw_base}
+    taken |= set(json.load(open("src/data/substations-frozen.json", encoding="utf-8"))["frozen"].keys())
+
+    def assign_slug(prefkey, no):
+        m = re.fullmatch(r"[^A-Z]*([A-Z])(\d+)(?:-(\d+))?", no)
+        if not m:
+            raise SystemExit(f"No. の形が想定外: {no}")
+        letter, n, br = m.groups()
+        b_ = f"egz-{prefkey}-{letter.lower()}{int(n):04d}" if br is None else f"egz-{prefkey}-{letter.lower()}{n}{int(br):04d}"
+        s, k = b_, 2
+        while s in taken:
+            s, k = f"{b_}-{k}", k + 1
+        taken.add(s)
+        return s
+
+    creates = []
+    for r in sorted((r for r in new_rows if r["external_id"] in EXPECT_NEW), key=lambda x: x["external_id"]):
+        prefkey = r["external_id"].split("_")[1]
+        slug = assign_slug(prefkey, r["no"])
+        content = {"slug": slug, "name": r["name"], "operator": ["中国電力ネットワーク"], "area": ["中国"],
+                   "prefecture": r["prefecture"], "voltage_class": [vclass(r["voltage_primary_kv"])],
+                   "n1_eligible": r["n1_eligible"] is True, "external_id": r["external_id"], "non_firm_eligible": False,
+                   "source_url": f"{BASE_URL}/zip/{r['zip']}.zip", "data_source_format": ["CSV"],
+                   "last_updated": iso(NEW_VERSION), "fetched_at": iso(fetched_on)}
+        for k in ["voltage_primary_kv", "voltage_secondary_kv"] + APPROVED:
+            if r.get(k) is not None:
+                content[k] = r[k]
+        if r.get("op_constraint"):
+            content["op_constraint"] = r["op_constraint"]
+        if r.get("oc_possibility") == "有り":
+            content["oc_possibility"] = ["有り"]
+        creates.append({"slug": slug, "content": content, "external_id": r["external_id"], "no": r["no"],
+                        "n1_undetermined_as_false": r["n1_eligible"] is None,
+                        "csv": {"n1_raw": r["n1_raw"], "oc_raw": r["oc_raw"], "member": r["member"]}})
+
+    value_changed = sum(1 for u in updates if set(u["changed"]) - {"external_id"})
+    n1_ok = sum(1 for u in updates if (u["patch"]["n1_eligible"] if "n1_eligible" in u["patch"] else u["before"].get("n1_eligible")) is True) \
+        + sum(1 for c in creates if c["content"]["n1_eligible"] is True)
+    got = {"matched": len(matched), "updates": len(updates), "creates": len(creates), "value_changed": value_changed, "n1_ok_after": n1_ok,
+           "n1_changed": cnt["n1_eligible"], "oc_changed": cnt["oc_possibility"], "op_constraint": cnt["op_constraint"],
+           "total_after": len(updates) + len(creates)}
+    bad = {k: (v, EXPECT[k]) for k, v in got.items() if v != EXPECT[k]}
+    if bad:
+        raise SystemExit(f"件数が dry run の見込みと違うため計画を作らない（計画, 見込み）: {bad}")
+    plan = {"generated": str(date.today()), "area": "中国", "prefix": "egz-", "endpoint": "substations",
+            "version": NEW_VERSION, "fetched_on": fetched_on,
+            "ruling": "02_計画・運営/検証記録_BX中部・BY中国dry-run_確かめと裁定の案_2026-11-15_ユウ.md（BY 1〜5・EDAさん 11/16 10:03）",
+            "expected": {"updates": len(updates), "creates": len(creates), "n1_ok_after": n1_ok, "value_changed": value_changed,
+                         "date_only": sum(1 for u in updates if not u["changed"]), "by_field": dict(cnt)},
+            "renumber": [{"slug": s, "old_external_id": o, "new_external_id": n} for s, (o, n) in EXPECT_RENUMBER.items()]
+            + [{"slug": SAIICHI["slug"], "old_external_id": SAIICHI["old"], "new_external_id": SAIICHI["new"]}],
+            "frozen_slugs": sorted(EXPECT_FROZEN), "n1_undetermined_kept": n1_kept, "oc_undetermined_kept": oc_kept,
+            "updates": updates, "creates": creates}
+    Path(plan_out).write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"\n=== emit-plan: PATCH {len(updates)}（値 {value_changed}・日付だけ {plan['expected']['date_only']}）・POST {len(creates)} "
+          f"{[(c['slug'], c['external_id']) for c in creates]}・凍結 {sorted(EXPECT_FROZEN)}・N-1 可 {n1_ok}")
+    print(f"  列ごとの変化 {dict(cnt)}・現値維持 N-1 {len(n1_kept)}／出力制御 {len(oc_kept)}")
+    print(f"  -> {plan_out}")
 
 
 if __name__ == "__main__":

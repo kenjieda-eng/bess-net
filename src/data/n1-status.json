@@ -1,28 +1,28 @@
 {
  "_purpose": "N-1電制適用可否の「未算定（公表元が「－」等で明示）」「空欄」「公表なし（N-1 列が無い）」の設備。microCMS の n1_eligible は boolean のため false（不可）に潰れているので、表示はこの一覧で直す（三値化 段1）。TypeScript（src/lib/n1-status.ts）と Python（scripts/experimental/_common/n1_status.py）の唯一の真実源（#119）。",
  "_note": "as_of はその設備の microCMS last_updated（一覧を作った時点）。表示側は as_of が microCMS の現在値と一致するときだけこの一覧を当てる（再取込で値が更新された行に古い一覧を当てない）。microCMS が true（可）なら可が勝つ。再生成: scripts/experimental/_common/build_n1_status.py（前身 build_n1_undetermined.py は残置）。四国（10月版の「－」）の as_of は 10月版の版日付で、再取込までは表示に効かない。",
- "generated_at": "2026-11-05T11:08:01Z",
+ "generated_at": "2026-11-17T01:47:33Z",
  "generated_from": [
   "scripts/experimental/_common/n1_undetermined.json（前身・273 件）",
   "scripts/experimental/hokuriku/csv_2608（2026-08-05 公表 CSV）",
   "scripts/experimental/kansai/update_plan_2608.json・src_2611/154kv_{less,more}_trans.csv（2026-11-02 版）",
   "scripts/experimental/_common/n1_undetermined_kansai_2611.json（関西 11/02 版・parse_kansai_csv_2611.py）",
-  "scripts/experimental/chugoku/zip_202608",
+  "scripts/experimental/chugoku/zip_202611（2026-10-28 版）",
+  "scripts/experimental/_common/n1_undetermined_chugoku_2611.json（中国 10/28 版・parse_chugoku_csv_2611.py）",
   "scripts/experimental/hokkaido/update_plan_202607.json・zip_202607/sys_capa_kikan.zip",
   "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",
   "scripts/experimental/_common/n1_undetermined_shikoku.json（四国 10月版・parse_shikoku.py）",
   "scripts/experimental/_common/n1_undetermined_tokyo_2611.json（東京 10/28 版・parse_tepco_csv_2611.py）",
   "microCMS substations（GET・as_of）"
  ],
- "count": 424,
+ "count": 423,
  "count_by_reason": {
-  "blank": 16,
+  "blank": 15,
   "no_column": 113,
   "undetermined": 295
  },
  "count_by_area": {
   "中国": {
-   "blank": 1,
    "undetermined": 6
   },
   "九州": {
@@ -59,8 +59,8 @@
    "external_id": "energia_kikan_基S6",
    "name": "新小野田変電所",
    "reason": "undetermined",
-   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
-   "as_of": "2026-08-06T00:00:00.000Z",
+   "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）・2026-11-17 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
    "raw": "-"
   },
   "egz-kikan-s0008": {
@@ -69,8 +69,8 @@
    "external_id": "energia_kikan_基S8",
    "name": "柳井火力変電所",
    "reason": "undetermined",
-   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
-   "as_of": "2026-08-06T00:00:00.000Z",
+   "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）・2026-11-17 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
    "raw": "-"
   },
   "egz-kikan-s0016": {
@@ -79,19 +79,9 @@
    "external_id": "energia_kikan_基S16",
    "name": "(名称非公開) energia_kikan_基S16",
    "reason": "undetermined",
-   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
-   "as_of": "2026-08-06T00:00:00.000Z",
+   "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）・2026-11-17 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
    "raw": "-"
-  },
-  "egz-okayama-s80004": {
-   "area": "中国",
-   "operator": "中国電力ネットワーク",
-   "external_id": "energia_okayama_岡⑤S8-4",
-   "name": "湯原第一変電所",
-   "reason": "blank",
-   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
-   "as_of": "2026-07-27T00:00:00.000Z",
-   "raw": ""
   },
   "egz-shimane-s0001-3": {
    "area": "中国",
@@ -99,8 +89,8 @@
    "external_id": "energia_shimane_島⑥S1",
    "name": "西郷発電所",
    "reason": "undetermined",
-   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
-   "as_of": "2026-07-27T00:00:00.000Z",
+   "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）・2026-11-17 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
    "raw": "－"
   },
   "egz-shimane-s0002": {
@@ -109,8 +99,8 @@
    "external_id": "energia_shimane_島⑥S2",
    "name": "黒木発電所",
    "reason": "undetermined",
-   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
-   "as_of": "2026-07-27T00:00:00.000Z",
+   "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）・2026-11-17 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
    "raw": "－"
   },
   "egz-shimane-s0003-3": {
@@ -119,8 +109,8 @@
    "external_id": "energia_shimane_島⑥S3",
    "name": "海士変電所",
    "reason": "undetermined",
-   "source": "sys_capa_*_tr_2026{07,08}_07.csv（2026-08-06公表）",
-   "as_of": "2026-07-27T00:00:00.000Z",
+   "source": "sys_capa_*_tr_202610_07.csv（2026-10-28公表）・2026-11-17 取込",
+   "as_of": "2026-10-28T00:00:00.000Z",
    "raw": "－"
   },
   "hkd-kikan-0230": {

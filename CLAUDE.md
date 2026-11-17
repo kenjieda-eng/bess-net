@@ -282,11 +282,12 @@ Sprint 3-8 で再発する可能性が高い順。詳細は `01_最初に読む/
            実証: 2026-08-16 北陸で static baseline を使った初回 dry-run が「台数271件・予想潮流49件の
                  新規充足」を報告 → 実データ照合後は台数1件・予想潮流29件変化に是正。
            ★追記（2026-10-06・Ck2g／2026-11-02 更新）変電所の id≠slug: `ydn-kikan-0013-2`（id `a7m1-_9p0n5`・2026-10-05 POST）と
-             `kyu-884`（id `o66z7a3i9`・2026-10-30 POST）・`ksi-local-gc-5`（id `7c1n48509wi9`・2026-11-05 POST）の 3 件
-             （POST の自動採番。contentId 指定の作成＝PUT は停止条件）。全 8,346 件でこの 3 件だけ（2026-11-05）。
+             `kyu-884`（id `o66z7a3i9`・2026-10-30 POST）・`ksi-local-gc-5`（id `7c1n48509wi9`・2026-11-05 POST）・
+             `egz-okayama-s50001-3`（id `e6s8mq29b5rf`）・`egz-okayama-s10001-5`（id `gjexgvl2xv6`）・`egz-yamaguchi-s90002-4`（id `3n-52ir2o`・3 件とも 2026-11-17 POST）の 6 件
+             （POST の自動採番。contentId 指定の作成＝PUT は停止条件）。全国でこの 6 件だけ（2026-11-17）。
              再取込は baseline の id で PATCH する（各社の旧スクリプトの `client.update({contentId: slug})` 型はこの 2 件で 404）。
              共通 applier: scripts/experimental/_common/apply_substations_plan.ts（baseline の id を使う・既定 dry run）。
-           ★2026-11-05: id で開く URL（/grid/a7m1-_9p0n5・/grid/o66z7a3i9・/grid/7c1n48509wi9）は next.config.js の redirects で slug へ恒久の転送（308）。
+           ★2026-11-05: id で開く URL（/grid/a7m1-_9p0n5・/grid/o66z7a3i9・/grid/7c1n48509wi9・11/17 に /grid/e6s8mq29b5rf・/grid/gjexgvl2xv6・/grid/3n-52ir2o）は next.config.js の redirects で slug へ恒久の転送（308）。
              11/4 の JSON 便から詳細は slug でしか引けない。id ≠ slug のレコードが増えたら、ここにも足す。
 
 #114 ★★★★ 突合キーの数値は必ず型を正規化してから比較する（int と float を文字列比較しない）
@@ -912,4 +913,5 @@ async function main() {
 - 2026-11-10（CC・売買事例の一覧便）: 受け入れ基準に「売買・出資の公表事例（src/data/deals.json）は月次バッチのニュースの取り込みに合わせて足す」を 1 行追加（/tracker/deals を新設・検査 npm run verify:deals）
 - 2026-11-11（CC・売買事例の一覧の直し便）: 売買・出資の受け入れ基準に「保留の行の後の一次も月次で確かめる」「出資・参画は、ほかの者の案件・会社への出資か共同出資だけ」を追加（決まりに合わない 5 行を外した・verify:deals は当事者が空の行で落ちる）
 - 2026-11-13（CC・売買事例の月次の足し＋直し便）: 売買・出資の受け入れ基準に「スターシーズ株式会社の行は月次で同社の IR の一覧を見て、中止・解約の開示が無いか確かめる」を追加（2025-10-09 の行の豊橋市雲谷町の取得が 2026-01-30 に中止されていた・63 → 76 行）
+- 2026-11-17（CC・BY 中国 本実行便）: #113 の id≠slug を 6 件に更新（POST 3 件〔久世・大原・西市の 66/22〕を追加・転送も足した）
 - （将来）: 新規セッションで追記、更新時刻 + 更新者を末尾に

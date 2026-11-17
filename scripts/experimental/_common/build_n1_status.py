@@ -47,7 +47,6 @@ sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path("scripts/experimental")
 OUT = Path("src/data/n1-status.json")
 FROZEN = Path("src/data/substations-frozen.json")
-UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
 
 DASHES = {"-", "－", "―", "ー", "—", "‐", "−"}
 
@@ -208,8 +207,9 @@ for slug, e in list(entries.items()):
         log.append(f"関西: CSV で一意に引けない {slug} {e['external_id']}（reason は {e['reason']} のまま）")
 
 # ── 4. 中国: 空欄か「－」かの判定（zip の *_tr_*.csv を No. の原文で引く）──
+# BY 中国 本実行（2026-11-17）から 10/28 版の ZIP（zip_202611）で判定する（8/06・7/27 版は chugoku/zip_202608 に残置）
 cg_rows = {}
-for z in sorted((ROOT / "chugoku" / "zip_202608").glob("*.zip")):
+for z in sorted((ROOT / "chugoku" / "zip_202611").glob("*.zip")):
     with zipfile.ZipFile(z) as Z:
         for n in Z.namelist():
             if "_tr_" not in n:
@@ -247,7 +247,8 @@ OKI_BASE = "https://www.okiden.co.jp/shared/csv/business-support/service/rule/pl
 oki_has_n1 = {}
 for fn in ("con_res_map01_02.csv", "con_res_map01_03.csv", "con_res_map02_02.csv", "con_res_map02_03.csv",
            "con_res_map03_02.csv", "con_res_map03_03.csv"):
-    b = urllib.request.urlopen(urllib.request.Request(OKI_BASE + fn, headers={"User-Agent": UA}), timeout=60).read()
+    # 2026-11-17（BY 本実行）: ブラウザのふりをする UA をやめた（2026-11-13 からの決まり）。既定の UA でも HTTP 200 で取れることを確かめた
+    b = urllib.request.urlopen(urllib.request.Request(OKI_BASE + fn), timeout=60).read()
     rows = read_csv_bytes(b)
     hdr = " ".join(" ".join(r) for r in rows[:4])
     oki_has_n1[fn] = "N-1" in N(hdr)
@@ -295,6 +296,21 @@ for x in kn["entries"]:
 kn_missing = sorted({e for e, v in entries.items() if v["area"] == "関西"} ^ {x["slug"] for x in kn["entries"]})
 print(f"関西: 11/02 版の未算定・空欄 {len(kn['entries'])} 行（足した {kn_added}・一覧と食い違う {kn_missing}）")
 
+# ── 10. 中国: 10/28 版の N-1 欄が「－」・空欄の行（BY 中国 本実行・parse_chugoku_csv_2611.py の一覧 6 件）──
+# 6 件（新小野田・柳井火力・基S16・西郷発電所・黒木発電所・海士）は前身の一覧で入っている。source を 10/28 版の取込に直す。
+# 湯原第一 S8-4（egz-okayama-s80004）は凍結（2026-11-16 裁定）なので add() が入れない。as_of は add の既定＝再取込後の last_updated（2026-10-28）。
+cn = json.loads((ROOT / "_common" / "n1_undetermined_chugoku_2611.json").read_text(encoding="utf-8"))
+CN_SOURCE = "sys_capa_*_tr_202610_07.csv（2026-10-28公表）・2026-11-17 取込"
+cn_added = []
+for x in cn["entries"]:
+    if x["slug"] in entries:
+        entries[x["slug"]]["source"] = CN_SOURCE
+    else:
+        add(x["slug"], "undetermined", CN_SOURCE)
+        cn_added.append(x["slug"])
+cn_missing = sorted({e for e, v in entries.items() if v["area"] == "中国"} ^ {x["slug"] for x in cn["entries"]})
+print(f"中国: 10/28 版の未算定 {len(cn['entries'])} 行（足した {cn_added}・一覧と食い違う {cn_missing}）")
+
 # ── 出力 ──
 from collections import Counter  # noqa: E402
 
@@ -316,7 +332,8 @@ out = {
         "scripts/experimental/hokuriku/csv_2608（2026-08-05 公表 CSV）",
         "scripts/experimental/kansai/update_plan_2608.json・src_2611/154kv_{less,more}_trans.csv（2026-11-02 版）",
         "scripts/experimental/_common/n1_undetermined_kansai_2611.json（関西 11/02 版・parse_kansai_csv_2611.py）",
-        "scripts/experimental/chugoku/zip_202608",
+        "scripts/experimental/chugoku/zip_202611（2026-10-28 版）",
+        "scripts/experimental/_common/n1_undetermined_chugoku_2611.json（中国 10/28 版・parse_chugoku_csv_2611.py）",
         "scripts/experimental/hokkaido/update_plan_202607.json・zip_202607/sys_capa_kikan.zip",
         "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",
         "scripts/experimental/_common/n1_undetermined_shikoku.json（四国 10月版・parse_shikoku.py）",

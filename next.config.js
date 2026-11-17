@@ -30,6 +30,10 @@ const nextConfig = {
       { source: '/grid/o66z7a3i9', destination: '/grid/kyu-884', permanent: true },
       // BW 関西 本実行便（2026-11-05）の POST 1 件（南GC 咲洲２）も id ≠ slug
       { source: '/grid/7c1n48509wi9', destination: '/grid/ksi-local-gc-5', permanent: true },
+      // BY 中国 本実行便（2026-11-17）の POST 3 件（久世・大原・西市の 66/22）も id ≠ slug
+      { source: '/grid/e6s8mq29b5rf', destination: '/grid/egz-okayama-s50001-3', permanent: true },
+      { source: '/grid/gjexgvl2xv6', destination: '/grid/egz-okayama-s10001-5', permanent: true },
+      { source: '/grid/3n-52ir2o', destination: '/grid/egz-yamaguchi-s90002-4', permanent: true },
       // 凍結のうち変電所でない誤取込（egz-kikan-x＝中国電力NW の公表 CSV の「【留意事項】」の注記の行）は、エリアのページへ恒久の転送
       // （小さな直し便・2026-11-08）。転送先は src/data/substations-frozen.json の redirectTo（定義はそこ 1 か所・#119）。データは消さない
       ...Object.entries(FROZEN_SUBSTATIONS)

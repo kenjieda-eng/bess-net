@@ -208,8 +208,44 @@
    "changed_on": "2026-11-05",
    "source_version": "2026-11-02",
    "evidence": "名称・電圧面(77/22)・設備容量(57)・運用容量(31)・台数(2)の5項目一致。新CSVに北GLの行は無い。裁定 2026-11-05（BW 関西 dry-run 2 本目の 2）"
+  },
+  {
+   "changed_on": "2026-11-17",
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-okayama-s0005-3",
+   "name": "久世変電所",
+   "prefecture": "岡山県",
+   "external_id_prev": "energia_okayama_岡⑤S5",
+   "external_id_new": "energia_okayama_岡⑤S5-2",
+   "source_version": "2026-10-28",
+   "evidence": "名称・電圧面(66/6)・設備容量(38)・運用容量(33)・台数(3)の5項目一致。新CSVに岡⑤S5 の行は無く、66/22 の行（岡⑤S5-1・備考※５）が載ったのに合わせて枝番が付いた。裁定 2026-11-16（BY 3・8/16 裁定 1 と同じ）"
+  },
+  {
+   "changed_on": "2026-11-17",
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-okayama-s0001-2",
+   "name": "大原変電所",
+   "prefecture": "岡山県",
+   "external_id_prev": "energia_okayama_岡⑥S1",
+   "external_id_new": "energia_okayama_岡⑥S1-2",
+   "source_version": "2026-10-28",
+   "evidence": "名称・電圧面(66/6)・設備容量(9)・運用容量(9)・台数(1)の5項目一致。新CSVに岡⑥S1 の行は無く、66/22 の行（岡⑥S1-1・備考※４,※５）が載ったのに合わせて枝番が付いた。裁定 2026-11-16（BY 3・8/16 裁定 1 と同じ）"
+  },
+  {
+   "changed_on": "2026-11-17",
+   "operator": "中国電力ネットワーク",
+   "area": "中国",
+   "slug": "egz-yamaguchi-s0009-2",
+   "name": "西市(変)",
+   "prefecture": "山口県",
+   "external_id_prev": "energia_yamaguchi_山⑤S9",
+   "external_id_new": "energia_yamaguchi_山⑤S9-1",
+   "source_version": "2026-10-28",
+   "evidence": "名称と電圧面(66/6)が同じで、西市(変) の 66/6 の行は 7/27 版（山⑤S9）も 10/28 版（山⑤S9-1）も 1 行だけ（baseline も 1 件）。台数 1→2・設備容量 9→23・運用容量 9→23 は同じ版で変わった。66/22 の行（山⑤S9-2・備考※４,※５）が載ったのに合わせて枝番が付いたのは久世・大原と同じ型。裁定 2026-11-16（BY 1）"
   }
  ],
  "note": "No.の振り直しで external_id が変わった設備の履歴。slug は公開URLのため維持し、external_id のみ更新する（次回の突合を壊さないため）。microCMS の notes は詳細ページに表示されるフィールドのため、履歴はリポジトリ側で保持する。",
- "count": 19
+ "count": 22
 }
