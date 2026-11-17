@@ -138,9 +138,9 @@ export default async function GridTrackerPage() {
                       <p style={{ fontSize: 15, lineHeight: 1.8, margin: '0 0 4px', color: 'var(--color-muted)' }}>
                         減少の例:{' '}
                         {r.topDecreases.map((d, i) => (
-                          <span key={d.name}>
+                          <span key={`${i}-${d.name}`}>
                             {i > 0 && ' ／ '}
-                            {d.name}（{d.prefecture}）{d.from} → {d.to} MW
+                            {d.name}（{d.prefecture}）{d.from.toLocaleString('en-US')} → {d.to.toLocaleString('en-US')} MW
                           </span>
                         ))}
                       </p>
