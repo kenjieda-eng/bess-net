@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { KANSAI_PREFECTURE_NOTE, normalizeSubstationPlace } from '@/lib/grid-prefecture';
 import { formatDataDateLabel, getAreaDates } from '@/lib/grid-data-date';
+import { CHUBU_MAP_POINTS } from '@/lib/grid-map-points';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import CorrectionHistory from '@/components/CorrectionHistory';
@@ -327,7 +328,7 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                   fontWeight: 'bold',
                 }}
               >
-                🗺 中部地方マップで見る（緯度経度付き約1,081箇所）
+                🗺 中部地方マップで見る（緯度経度付き{CHUBU_MAP_POINTS.toLocaleString()}箇所）
               </Link>
               <span
                 style={{

@@ -27,6 +27,12 @@ type FrozenEntry = {
   redirectTo?: string;
   redirectDecidedOn?: string;
   redirectReason?: string;
+  /**
+   * 凍結に入れた時点の詳細ページの N-1電制の表示区分（2026-11-17 小さな直し便・JSON の _n1_field）。
+   * 表示の定義は src/data/n1-status.json（凍結の slug も frozen: true で残る）。この欄は verify:grid-pages の照合用で、
+   * 凍結のページの今の表示がこの値から黙って変わったら落ちる。転送にした凍結には無い。
+   */
+  n1StatusAtFreeze?: 'ok' | 'ng' | 'undetermined' | 'no_column';
 };
 
 const FROZEN = (frozenData as { frozen: Record<string, FrozenEntry> }).frozen;
@@ -52,6 +58,12 @@ export const FROZEN_PAGE_SLUGS: ReadonlySet<string> = new Set(
 export function frozenSubstationNote(slug: string | undefined | null): string | null {
   if (!slug) return null;
   return FROZEN[slug]?.note ?? null;
+}
+
+/** 凍結に入れた時点の N-1 の表示区分（verify:grid-pages 用・無ければ null） */
+export function frozenN1StatusAtFreeze(slug: string | undefined | null): FrozenEntry['n1StatusAtFreeze'] | null {
+  if (!slug) return null;
+  return FROZEN[slug]?.n1StatusAtFreeze ?? null;
 }
 
 export function isFrozenSubstation(slug: string | undefined | null): boolean {

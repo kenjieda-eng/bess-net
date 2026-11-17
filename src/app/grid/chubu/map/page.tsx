@@ -11,10 +11,10 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getChubuSubstationsForMap } from '@/lib/microcms';
 import { siteConfig } from '@/lib/site-config';
-import substationsIndex from '@/data/substations/index.json';
+import { CHUBU_MAP_POINTS } from '@/lib/grid-map-points';
 
-// 件数は焼き込まず index.json から動的参照（CLAUDE.md 受け入れ基準）
-const MAP_POINTS = (substationsIndex as { with_coords?: number }).with_coords ?? 0;
+// 件数は焼き込まず index.json から動的参照（CLAUDE.md 受け入れ基準）。定義は src/lib/grid-map-points.ts の 1 か所（2026-11-17）
+const MAP_POINTS = CHUBU_MAP_POINTS;
 const MAP_TITLE = `中部電力パワーグリッドの空き容量マップ — 変電所${MAP_POINTS.toLocaleString()}件を地図表示｜蓄電所ネット`;
 
 const ChubuMap = dynamic(() => import('@/components/ChubuMap'), {

@@ -66,6 +66,110 @@ export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
       + 'N-1電制は可148件・可否の変化なし。空容量が未公表（-）の193件は独自算出せず未設定のまま。',
     report: 'reports/grid-chubu-2026-11-17b.md',
   },
+  // 小さな直し便（2026-11-17）: 10/30 九州・11/2 東京・11/5 関西・11/17 中国の本実行で足しもらしていた 4 件を追記（取込日の新しい順）。
+  // 件数は各便の報告の実測値（書込の記録 reports/*.apply.jsonl の空容量の前後でも同じ数を確かめた）。減少の例は各報告の「減った上位」の表から。
+  // 関西は、算出値が負の空容量を 0 と表示している（2026-11-07〜・grid-avail.ts）ので、例はその表示の値で減り幅の大きい順に選んだ。
+  // 九州は、県の割り当てに疑いの残る行橋・飫肥を例に使わず、地名の所在を GSI の地名検索で表示の県と確かめられた 4 件だけ（報告 reports/small-fixes-2026-11-17.md (3)）。
+  {
+    importedOn: '2026-11-17',
+    areaJp: '中国',
+    areaSlug: 'chugoku',
+    operator: '中国電力ネットワーク',
+    publishedVersion: '2026年10月28日更新版（全27ファイル同一版）',
+    total: 875,
+    decreased: 43,
+    zeroed: 5,
+    increased: 19,
+    changed: 128,
+    added: 3,
+    removed: 0,
+    topDecreases: [
+      { name: '大門変電所', prefecture: '広島県', from: 14, to: 11 },
+      { name: '彦島(変)', prefecture: '山口県', from: 15, to: 12 },
+      { name: '唐戸(変)', prefecture: '山口県', from: 16, to: 13 },
+      { name: '沼隈変電所', prefecture: '広島県', from: 10, to: 8 },
+      { name: '駅家北変電所', prefecture: '広島県', from: 11, to: 9 },
+    ],
+    note: '久世・大原・西市の66/22kVの3件を新規収録（配電系統として扱う設備が、10月28日更新版から公表の表に載った）。'
+      + '久世・大原・西市の66/6kVは公表No.の振り直し（設備は同一・URLは維持）で、西市(変)は2台・設備容量23MWに。'
+      + '湯原第一変電所の11/6kVの1件は最新版に掲載がないため更新を停止（凍結）。N-1電制の未算定6件は現値維持（「未算定」と表示）。',
+    report: 'reports/grid-chugoku-2026-11-17.md',
+  },
+  {
+    importedOn: '2026-11-05',
+    areaJp: '関西',
+    areaSlug: 'kansai',
+    operator: '関西電力送配電',
+    publishedVersion: '2026年11月2日更新版（154kV以上・未満とも同一版）',
+    total: 1701,
+    decreased: 142,
+    zeroed: 11,
+    increased: 55,
+    changed: 274,
+    added: 1,
+    removed: 0,
+    topDecreases: [
+      { name: '東大阪', prefecture: '基幹系統', from: 356, to: 0 },
+      { name: '洛南', prefecture: '基幹系統', from: 412, to: 266 },
+      { name: '猪名川', prefecture: '基幹系統', from: 365, to: 230 },
+      { name: '新綾部', prefecture: '基幹系統', from: 259, to: 161 },
+      { name: '新綾部', prefecture: '基幹系統', from: 1108, to: 1039 },
+    ],
+    note: '咲洲２（22/6.6kV）を新規収録。名称の変更3件（西京都（154）・有馬の2件）。新大岩の2件は公表No.の振り直し（設備は同一・URLは維持）。'
+      + '須磨（77/33kV）と間谷は最新版に掲載がないため更新を停止（凍結）。空容量が0以下になった11件を含む'
+      + '（関西の空容量は運用容量と予想潮流から算出しており、算出値が負のものは0と表示。減少の例も表示の値）。'
+      + 'N-1電制の未算定3件は現値維持（「未算定」と表示）。',
+    report: 'reports/grid-kansai-2026-11-05.md',
+  },
+  {
+    importedOn: '2026-11-02',
+    areaJp: '東京',
+    areaSlug: 'tokyo',
+    operator: '東京電力パワーグリッド',
+    publishedVersion: '2026年10月28日更新版（CSV版・全14ファイル）',
+    total: 1718,
+    decreased: 149,
+    zeroed: 35,
+    increased: 57,
+    changed: 346,
+    added: 0,
+    removed: 0,
+    topDecreases: [
+      { name: '粟野', prefecture: '栃木県', from: 19, to: 0 },
+      { name: '通洞', prefecture: '栃木県', from: 19, to: 2 },
+      { name: '鹿沼', prefecture: '栃木県', from: 14, to: 0 },
+      { name: '市塙', prefecture: '栃木県', from: 14, to: 0 },
+      { name: '清原', prefecture: '栃木県', from: 14, to: 1 },
+    ],
+    note: '設備の増減なし。公表の表で新しく見えた9行は、ほかの系列の再掲と値0の参照の行で、新しい設備は0件。'
+      + 'ゼロ化35件の都県は栃木21・千葉5・埼玉4・茨城3・静岡1・群馬1。'
+      + 'N-1電制の未算定18件は「未算定」と表示（山梨の5件を一覧に追加）。出力制御の可能性は公表に合わせて5件を空に・8件を「有り」に。',
+    report: 'reports/grid-tokyo-2026-11-02.md',
+  },
+  {
+    importedOn: '2026-10-30',
+    areaJp: '九州',
+    areaSlug: 'kyushu',
+    operator: '九州電力送配電',
+    publishedVersion: '2026年9月29日更新版（全31地区同一版）',
+    total: 884,
+    decreased: 49,
+    zeroed: 9,
+    increased: 28,
+    changed: 151,
+    added: 1,
+    removed: 0,
+    topDecreases: [
+      { name: '新水俣(配変)', prefecture: '熊本県', from: 10, to: 4 },
+      { name: '三潴', prefecture: '福岡県', from: 16, to: 12 },
+      { name: '志佐', prefecture: '長崎県', from: 4, to: 0 },
+      { name: '柏田', prefecture: '宮崎県', from: 6, to: 2 },
+    ],
+    note: '伊集院の66/22kVを新規収録。伊集院の66/6kVは公表No.の振り直し（設備は同一・URLは維持）。'
+      + '志和池の第3バンク・原田の2件は、8月20日と同じく収録を保留。'
+      + 'N-1電制の未算定2件（大鶴・南関）は現値維持（「未算定」と表示）。出力制御の可能性は公表に合わせて6件を空に・4件を「有り」に。',
+    report: 'reports/grid-tokyo-kyushu-2026-10-30.md',
+  },
   // Ck2g §4（2026-10-06）: 四国・沖縄（BS+BT 本実行 2026-10-05）を追記。数値は本実行の報告 (2)(3) と dry-run 報告の実測値。
   {
     importedOn: '2026-10-05',

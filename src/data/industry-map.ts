@@ -152,7 +152,9 @@ const PLAYERS_RAW: Player[] = [
   //   2026年6月2日付「…公開を一時停止していた「系統の空き容量等に関する情報」…について、公開を再開しました。」（/grid/tokyo/status と一致）
   { id: 'tepco-pg', name: '東京電力 PG', category: 'utility', origin: 'JP', listed: false, activity: 5, note: '系統運用。空き容量は 2026年6月2日に公開再開' },
   { id: 'kepco', name: '関西電力', category: 'utility', origin: 'JP', listed: true, activity: 5 },
-  { id: 'chubu-ep', name: '中部電力', category: 'utility', origin: 'JP', listed: true, activity: 5, note: 'PG 配下 1,081 変電所 緯度経度公開' },
+  // 小さな直し便（2026-11-17）: 「1,081 変電所」は 8/19 から 1,082 件で古かった。この表はクライアントの部品（IndustryChaosMap）が読むので、
+  //   index.json を引き込まず、数を文から外した（件数は /grid/chubu/map が src/lib/grid-map-points.ts から出す）。
+  { id: 'chubu-ep', name: '中部電力', category: 'utility', origin: 'JP', listed: true, activity: 5, note: 'PG 配下の変電所の緯度経度を公開' },
   { id: 'hokkaido-ep', name: '北海道電力', category: 'utility', origin: 'JP', listed: true, activity: 4 },
   { id: 'occto', name: 'OCCTO', category: 'utility', origin: 'JP', listed: false, activity: 5, note: '広域機関、容量市場 運営' },
 

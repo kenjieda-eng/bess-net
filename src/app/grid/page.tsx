@@ -8,6 +8,7 @@ import { siteConfig } from '@/lib/site-config';
 import { getAreaDates } from '@/lib/grid-data-date';
 import substationsIndex from '@/data/substations/index.json';
 import { AREA_META } from './[slug]/area-meta';
+import { CHUBU_MAP_POINTS } from '@/lib/grid-map-points';
 import { substationShownName } from '@/lib/substation-undisclosed';
 
 // Gr5②(2026-08-08): 件数はデータ実数から動的算出（焼き込み廃止・データ増減に自動追従）
@@ -617,7 +618,7 @@ export default async function GridIndexPage() {
               </li>
               <li><Link href="/tools/grid-connection-check">系統連系診断</Link> — 緯度経度から接続候補変電所を 5 件抽出</li>
               <li><Link href="/tracker/grid">系統トラッカー</Link> — 変電所データの更新タイムライン</li>
-              <li><Link href="/grid/chubu/map">中部マップ (Leaflet)</Link> — 1,081箇所 地図検索</li>
+              <li><Link href="/grid/chubu/map">中部マップ (Leaflet)</Link> — {CHUBU_MAP_POINTS.toLocaleString()}箇所 地図検索</li>
               <li><Link href="/industry">業界分析ハブ</Link></li>
             </ul>
           </section>

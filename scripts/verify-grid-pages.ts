@@ -19,6 +19,9 @@
  * 9. 小さな直し便（2026-11-08）: (a) 詳細の「同じ県の他の変電所」「〇〇エリアで空容量の大きい変電所」（index.json の pref_top・area_top）に
  *    凍結が 0。(b) 転送にした凍結（FROZEN_REDIRECTS・egz-kikan-x）は next.config.js の redirects に permanent で載り、転送先はエリアのページ。
  *    凍結の行（同名の判定）・一覧・pref_top・area_top のどれにも入らない（凍結のページ 9 → 8）。
+ * 10. 小さな直し便（2026-11-17）: 凍結のページの N-1 の表示（n1StatusOf）が、src/data/substations-frozen.json の n1StatusAtFreeze
+ *    （凍結に入れた時点の区分）と同じ。11/17 の BY で湯原第一 S8-4 を凍結に入れたとき、N-1 の一覧から外れて「未算定」→「不可」に
+ *    黙って変わった（n1-status.json は凍結の slug も frozen: true で残すように直した）。欄が無い凍結のページも落とす。
  *
  * microCMS へのアクセスなし（precompute の静的データだけ）。問題があれば exit 1＝ビルドで落ちる。prebuild に入れている。
  */
@@ -27,7 +30,8 @@ import { substationPageTitle, substationHeadingName, displaySubstationName, subs
 import { getAreaSubstationsStatic, getFrozenAreaSubstationsStatic, getPrefectureSubstationsStatic, nameQualifiers, sameNameKey, SAME_NAME_RULING_PENDING } from '../src/lib/grid-static-lists';
 import { isUndisclosedSubstation, undisclosedReason } from '../src/lib/substation-undisclosed';
 import { isNoindexSubstation } from '../src/lib/substation-noindex';
-import { FROZEN_PAGE_SLUGS, FROZEN_REDIRECTS, FROZEN_SUBSTATION_SLUGS } from '../src/lib/substations-frozen';
+import { FROZEN_PAGE_SLUGS, FROZEN_REDIRECTS, FROZEN_SUBSTATION_SLUGS, frozenN1StatusAtFreeze } from '../src/lib/substations-frozen';
+import { n1StatusOf } from '../src/lib/n1-status';
 import { AREA_META } from '../src/app/grid/[slug]/area-meta';
 import { shownAvailMw } from '../src/lib/grid-avail';
 import * as fs from 'node:fs';
@@ -58,6 +62,7 @@ let kept = 0;
 const undisclosed: string[] = [];
 const frozenSeen: string[] = [];
 const frozenPairs: string[] = [];
+const frozenN1: string[] = [];
 let noindexActive = 0;
 for (const area of Object.keys(index.area_dates)) {
   const rows = getAreaSubstationsStatic(area);
@@ -72,6 +77,12 @@ for (const area of Object.keys(index.area_dates)) {
     if (!FROZEN_PAGE_SLUGS.has(f.slug)) problems.push(`${f.slug}: 凍結の行にあるのに凍結のページの一覧に無い（転送にしたものは入れない）`);
     if (rows.some((s) => s.slug === f.slug)) problems.push(`${f.slug}: 凍結なのに一覧に出ている`);
     if (!isNoindexSubstation(f)) problems.push(`${f.slug}: 凍結のページが noindex でない`);
+    // 10. 凍結のページの N-1 の表示（page.tsx の fmtN1 と同じ n1StatusOf）が、凍結に入れた時点の区分から黙って変わらない
+    const atFreeze = frozenN1StatusAtFreeze(f.slug);
+    const nowN1 = n1StatusOf({ slug: f.slug, n1_eligible: f.n1_eligible === true, last_updated: f.last_updated ?? null });
+    if (!atFreeze) problems.push(`${f.slug}: 凍結のページに n1StatusAtFreeze が無い（凍結に入れた時点の N-1 の表示を src/data/substations-frozen.json に書く）`);
+    else if (nowN1 !== atFreeze) problems.push(`${f.slug}: 凍結のページの N-1 の表示が ${nowN1}（凍結に入れた時点は ${atFreeze}）`);
+    frozenN1.push(`${f.slug} ${nowN1}`);
     const mates = rows.filter((s) => sameNameKey(s) === sameNameKey(f));
     if (mates.length) frozenPairs.push(`${f.slug}「${substationPageTitle(f, f.prefecture, qualifiers.get(f.slug) ?? null)}」／${mates.map((m) => `${m.slug}「${substationPageTitle(m, m.prefecture, qualifiers.get(m.slug) ?? null)}」`).join('／')}`);
   }
@@ -232,6 +243,7 @@ async function finish(): Promise<void> {
   }
   console.log(`[verify:grid-pages] 名称非公開 ${undisclosed.length} 件・凍結のページ ${frozenSeen.length} 件（どちらも noindex・サイトマップ外）・凍結の転送 ${FROZEN_REDIRECTS.size} 件（${[...FROZEN_REDIRECTS].map(([s, t]) => `${s} → ${t}`).join('・')}）・同名の判定の裁定待ち ${SAME_NAME_RULING_PENDING.size} 件`);
   frozenPairs.forEach((p) => console.log(`[verify:grid-pages] 凍結と同名: ${p}`));
+  console.log(`[verify:grid-pages] 凍結のページの N-1（凍結に入れた時点と同じ）: ${frozenN1.join('・')}`);
   console.log(`[verify:grid-pages] 県 ${prefs.length}・同じエリアで同名の組 ${groupsTotal}（${membersTotal} 件）: ${perArea.join('・')}`);
   console.log(`[verify:grid-pages] 表示名に「変電所」を足した ${added} 件・そのまま ${kept} 件・pref_top／area_top の凍結 ${topFrozen.length} 件`);
   if (problems.length) {

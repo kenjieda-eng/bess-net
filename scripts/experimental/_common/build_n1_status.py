@@ -114,9 +114,10 @@ def add(slug, reason, source, raw=None, raw_checked=False, note=None, as_of=None
     if rec is None:
         log.append(f"★microCMS に無い slug: {slug}（入れない）")
         return
-    if slug in frozen:
-        log.append(f"凍結のため入れない: {slug}")
-        return
+    # 2026-11-17（小さな直し便）: 凍結の slug も入れる（frozen: true）。凍結の詳細ページの N-1 の欄を、最後に取り込んだ版の
+    # 公表値どおりに出すため（11/17 の BY で湯原第一 S8-4 を凍結に入れたとき、ここで外して「未算定」→「不可」になった）。
+    # 一覧・集計・検索・地図は凍結を元から入れないので、ここに残しても数は変わらない（verify:grid-fields の軸 6 も凍結を数えない）。
+    is_frozen = slug in frozen
     if rec.get("n1_eligible") is True:
         log.append(f"★microCMS が true（可）なので入れない: {slug}")
         return
@@ -134,6 +135,9 @@ def add(slug, reason, source, raw=None, raw_checked=False, note=None, as_of=None
         e["raw"] = raw
     if note:
         e["note"] = note
+    if is_frozen:
+        e["frozen"] = True
+        log.append(f"凍結（詳細ページの N-1 の欄だけに効く・一覧と集計には入らない）: {slug}")
     entries[slug] = e
 
 
@@ -208,20 +212,29 @@ for slug, e in list(entries.items()):
 
 # ── 4. 中国: 空欄か「－」かの判定（zip の *_tr_*.csv を No. の原文で引く）──
 # BY 中国 本実行（2026-11-17）から 10/28 版の ZIP（zip_202611）で判定する（8/06・7/27 版は chugoku/zip_202608 に残置）
-cg_rows = {}
-for z in sorted((ROOT / "chugoku" / "zip_202611").glob("*.zip")):
-    with zipfile.ZipFile(z) as Z:
-        for n in Z.namelist():
-            if "_tr_" not in n:
-                continue
-            for r in read_csv_bytes(Z.read(n))[2:]:
-                if r and r[0].strip():
-                    cg_rows.setdefault(N(r[0]), []).append(r)
+# 凍結の slug は、最後に取り込んだ版（湯原第一 S8-4 は 7/27 版＝zip_202608）の行で判定する（2026-11-17 小さな直し便）
+def cg_read(dirname):
+    out = {}
+    for z in sorted((ROOT / "chugoku" / dirname).glob("*.zip")):
+        with zipfile.ZipFile(z) as Z:
+            for n in Z.namelist():
+                if "_tr_" not in n:
+                    continue
+                for r in read_csv_bytes(Z.read(n))[2:]:
+                    if r and r[0].strip():
+                        out.setdefault(N(r[0]), []).append(r)
+    return out
+
+
+cg_rows = cg_read("zip_202611")
+cg_rows_frozen = cg_read("zip_202608")
 for slug, e in list(entries.items()):
     if e["area"] != "中国":
         continue
     m = re.match(r"^energia_[a-z0-9]+_(.+)$", e["external_id"] or "")
-    rows = cg_rows.get(N(m.group(1)), []) if m else []
+    rows = (cg_rows_frozen if e.get("frozen") else cg_rows).get(N(m.group(1)), []) if m else []
+    if e.get("frozen"):
+        e["source"] = "sys_capa_*_tr_202607_07.csv（2026-07-27公表・最後に取り込んだ版）・2026-11-16 に凍結"
     if len(rows) == 1 and len(rows[0]) > 11:
         e["raw"] = rows[0][11]
         e["reason"] = classify(rows[0][11]) or e["reason"]
@@ -308,15 +321,18 @@ for x in cn["entries"]:
     else:
         add(x["slug"], "undetermined", CN_SOURCE)
         cn_added.append(x["slug"])
-cn_missing = sorted({e for e, v in entries.items() if v["area"] == "中国"} ^ {x["slug"] for x in cn["entries"]})
+cn_missing = sorted({e for e, v in entries.items() if v["area"] == "中国" and not v.get("frozen")} ^ {x["slug"] for x in cn["entries"]})
 print(f"中国: 10/28 版の未算定 {len(cn['entries'])} 行（足した {cn_added}・一覧と食い違う {cn_missing}）")
 
 # ── 出力 ──
 from collections import Counter  # noqa: E402
 
-by_reason = Counter(e["reason"] for e in entries.values())
+# 件数は凍結を除いて数える（一覧・集計と同じ数え方）。凍結は count_frozen に分ける（2026-11-17 小さな直し便）
+active_entries = [e for e in entries.values() if not e.get("frozen")]
+frozen_entries = sorted(k for k, e in entries.items() if e.get("frozen"))
+by_reason = Counter(e["reason"] for e in active_entries)
 by_area = {}
-for e in entries.values():
+for e in active_entries:
     by_area.setdefault(e["area"], Counter())[e["reason"]] += 1
 out = {
     "_purpose": "N-1電制適用可否の「未算定（公表元が「－」等で明示）」「空欄」「公表なし（N-1 列が無い）」の設備。"
@@ -325,7 +341,9 @@ out = {
     "_note": "as_of はその設備の microCMS last_updated（一覧を作った時点）。表示側は as_of が microCMS の現在値と一致するときだけ"
              "この一覧を当てる（再取込で値が更新された行に古い一覧を当てない）。microCMS が true（可）なら可が勝つ。"
              "再生成: scripts/experimental/_common/build_n1_status.py（前身 build_n1_undetermined.py は残置）。"
-             "四国（10月版の「－」）の as_of は 10月版の版日付で、再取込までは表示に効かない。",
+             "四国（10月版の「－」）の as_of は 10月版の版日付で、再取込までは表示に効かない。"
+             "frozen: true の entry は凍結した変電所（src/data/substations-frozen.json）で、詳細ページの N-1 の欄だけに効く"
+             "（最後に取り込んだ版の公表値どおりに出す）。一覧・集計・検索には凍結が入らないので、count・count_by_reason・count_by_area は凍結を除いた数。",
     "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     "generated_from": [
         "scripts/experimental/_common/n1_undetermined.json（前身・273 件）",
@@ -340,13 +358,15 @@ out = {
         "scripts/experimental/_common/n1_undetermined_tokyo_2611.json（東京 10/28 版・parse_tepco_csv_2611.py）",
         "microCMS substations（GET・as_of）",
     ],
-    "count": len(entries),
+    "count": len(active_entries),
+    "count_frozen": len(frozen_entries),
+    "frozen_slugs": frozen_entries,
     "count_by_reason": dict(sorted(by_reason.items())),
     "count_by_area": {a: dict(sorted(c.items())) for a, c in sorted(by_area.items())},
     "entries": dict(sorted(entries.items())),
 }
 OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-print(f"\n出力 {OUT}: {len(entries)} 件 reason={dict(by_reason)}")
+print(f"\n出力 {OUT}: {len(active_entries)} 件（＋凍結 {len(frozen_entries)} 件 {frozen_entries}） reason={dict(by_reason)}")
 for a, c in sorted(by_area.items()):
     print(f"  {a}: {dict(c)}")
 print(f"microCMS GET {GETS}")
