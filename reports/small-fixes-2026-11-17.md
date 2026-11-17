@@ -89,3 +89,38 @@
 - 読む所: `/grid/chubu` の地図への案内（`src/app/grid/[slug]/AreaPage.tsx`・「緯度経度付き約1,081箇所」→「緯度経度付き{件数}箇所」・正確な数なので「約」を外した）、`/grid` の「中部マップ (Leaflet) — {件数}箇所 地図検索」（`src/app/grid/page.tsx`）、`/grid/chubu/map` の題名と件数（`src/app/grid/chubu/map/page.tsx`・前は index.json のトップの `with_coords` を自分で読んでいた。今日の値はどちらも 1,082）。どれもサーバーのコンポーネント。
 - `src/data/industry-map.ts` の「PG 配下 1,081 変電所 緯度経度公開」は画面に出る（`/map/industry-chaos` の部品 `IndustryChaosMap` の説明と JSON-LD）。この表はクライアントの部品が読むので、index.json（73 KB）を引き込まず、**数を文から外して**「PG 配下の変電所の緯度経度を公開」にした（便は「同じ値に直す」だったが、数を焼き込まないことを優先した）。
 - 過去の記録の文（`src/lib/site-config.ts` のお知らせ・`grid-refresh-log.ts` の 8/19 の行）と、コードのコメントの「1,081」は変えていない。
+
+## (5) 検証・本番
+
+- `npx tsc --noEmit` 0・`npm run build`（13:03:12〜13:06:43）: **BUILD EXIT 0**・★WARN 0。prebuild の verify は全部 ok（`verify:grid-pages` の 10「凍結のページの N-1（凍結に入れた時点と同じ）: egz-okayama-s80004 undetermined・ksi-kikan-l ng・ksi-local-cq-6 ok・…・tpg-1623 ok」・`verify:kansai-prefecture` ok・`verify:grid-detail-static` ok）。`verify:grid-fields` PASS（軸 6 中国 6/6 ほか全エリア一致）・`verify:linkify` clean。
+- built HTML: `/grid/chubu`「中部地方マップで見る（緯度経度付き1,082箇所）」・`/grid`「中部マップ (Leaflet) — 1,082箇所 地図検索」・`/tracker/grid` の取込日の並び 11/17・11/17・11/05・11/02・10/30・10/05…。
+- commit **`ed45ca9`**（13:07 push）→ Vercel **success 13:14:06**（`/build-info.json` の builtAt 2026-11-17T13:10:03+09:00）。
+
+本番（素の URL・クエリ無し・script を除き `<!-- -->` を剥がした初期 DOM・13:14:33〜13:14:57）:
+
+| ページ | cache・age | 結果 |
+|---|---|---|
+| `/grid/egz-okayama-s80004` | MISS・0 | N-1電制適用可「**未算定**」（前は「不可」）・注記が §2 の文（空白を除いて全文一致）・`noindex, follow` のまま |
+| `/grid/tpg-1623`・`ksi-local-cq-6` | MISS・0 | 「可」（変わらず）・noindex |
+| `/grid/ksi-kikan-l`・`ksi-local-ea-4`・`ct-4`・`gb-2`・`ga-2`・`ksi-local-fx` | MISS・0 | 「不可」（変わらず）・noindex |
+| `/grid/chugoku` | PRERENDER・0 | 875 変電所・空容量プラス 600・N-1 電制適用可 69（変わらず） |
+| `/grid/egz-kikan-s0006`（中国の未算定の例） | MISS・0 | 「未算定」のまま |
+| `/tracker/grid` | PRERENDER・0 | 先頭から 中部 11/17（1,107件）・**中国 11/17（875件・減 43〔ゼロ化 5〕・増 19・値 128・新規 3）**・**関西 11/05（1,701件・142〔11〕・55・274・1）**・**東京 11/02（1,718件・149〔35〕・57・346）**・**九州 10/30（884件・49〔9〕・28・151・1）**・四国 10/05 …。減少の例は (3) のとおりに出ている |
+| `/grid/chubu` | PRERENDER・0 | 「中部地方マップで見る（緯度経度付き**1,082**箇所）」・本文の「1,081」0 回 |
+| `/grid` | PRERENDER・0 | 「中部マップ (Leaflet) — **1,082**箇所 地図検索」・「1,081」0 回 |
+
+- 気づき（直していない）: `/tracker/grid` の減少の例は数を桁区切りなしで出す（「新綾部（基幹系統）1108 → 1039 MW」）。前からの書き方（`src/app/tracker/grid/page.tsx` の `{d.from} → {d.to} MW`）で、千を超える例が出たのは今回が初めて。直すなら `toLocaleString()` を通す 1 行。
+- 30 分後の確かめはユウがする（便 §0）。CC は待たずに終えた。
+
+## (6) IndexNow
+
+- 3 URL（`/tracker/grid`・`/grid/chubu`・`/grid`）を `--urls` で（`reports/small-fixes-2026-11-17.indexnow-urls.txt`）。dry run（鍵 605d…・本番の鍵のファイル HTTP 200・中身一致）のあと `--apply` を 1 回。凍結のページは送っていない。
+- 応答: **1〜3 件目 HTTP 200（受理）**・13:15 JST（`reports/small-fixes-2026-11-17.indexnow.json`）。
+
+## (7) 申告・一時物
+
+- microCMS の書込 0（GET は `build_n1_status.py` の 84 だけ）。rm 系・push --force・.env の表示は 0。
+- 便と違えたところ: (3) 関西の減少の例を表示の値で選んだ・九州の例は 4 件／(4) `industry-map.ts` は数を文から外した（同じ値に直さなかった）。どちらも理由は上に書いた。
+- verify の故障注入のため、`src/data/n1-status.json` を一時的に scratchpad の写し（S8-4 を外したもの）に入れ替え、終わってから mv で元に戻した（`cmp` で同じことを確かめた）。消したファイルは無い。
+- 一時物（リポの外・消していない）: `C:\Users\kenji\AppData\Local\Temp\claude\76d4d28da6870112\c7db94e8-ce59-46b9-aa85-de5390184ac4\scratchpad\sf1117\`（`n1-status.real.json`・`n1-status.bug.json`〔故障注入の写し〕・`gsi_*.json`〔地名検索の結果〕・`build.log`・`prod.py`〔＋`prod.json`・取ったページ〕）。
+- 作業前からある未コミットの差分（`src/data/substations/*.json`・`scripts/experimental/operators/alias-expansion-report.json`）は commit に入れていない。
