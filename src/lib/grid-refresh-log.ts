@@ -37,6 +37,35 @@ export type GridRefreshEntry = {
 };
 
 export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
+  // BX 中部 本実行便（その 2・2026-11-17）: 数値は reports/grid-chubu-2026-11-17b.md (2)（書いた計画の実数・GET 全件照合で不一致 0）。
+  // topDecreases は空き容量の減り幅の大きい順に 5 件（同じ幅は slug の順）。
+  {
+    importedOn: '2026-11-17',
+    areaJp: '中部',
+    areaSlug: 'chubu',
+    operator: '中部電力パワーグリッド',
+    publishedVersion: '2026年11月13日更新版（gridmap・全7レイヤ同一版）',
+    total: 1107,
+    decreased: 338,
+    zeroed: 15,
+    increased: 90,
+    changed: 476,
+    added: 0,
+    removed: 0,
+    topDecreases: [
+      { name: '城北変電所', prefecture: '愛知県', from: 57, to: 28 },
+      { name: '形原変電所', prefecture: '愛知県', from: 45, to: 28 },
+      { name: '広小路変電所', prefecture: '愛知県', from: 57, to: 42 },
+      { name: '池下変電所', prefecture: '愛知県', from: 57, to: 42 },
+      { name: '烏森変電所（２）', prefecture: '愛知県', from: 49, to: 37 },
+    ],
+    note: '設備の増減なし（新規0・消滅0）。出力制御の3欄（平常時出力制御の可能性・対象設備の当該設備と上位系設備）を公表のとおりに表示'
+      + '（「有り」727→1,102件・当該設備の「対象」9→27件・訂正履歴に記録）。'
+      + '運用容量制約要因は長野県の32件が新たに「熱容量」に（公表の記載）。'
+      + '座標は公表側の位置修正に追随して6件を更新（逆ジオコーダで県一致を確認・座標保有は1,082件のまま）。'
+      + 'N-1電制は可148件・可否の変化なし。空容量が未公表（-）の193件は独自算出せず未設定のまま。',
+    report: 'reports/grid-chubu-2026-11-17b.md',
+  },
   // Ck2g §4（2026-10-06）: 四国・沖縄（BS+BT 本実行 2026-10-05）を追記。数値は本実行の報告 (2)(3) と dry-run 報告の実測値。
   {
     importedOn: '2026-10-05',

@@ -543,16 +543,26 @@ def main():
 #      oc_target_upper ←「(上位系設備)」（trim だけ・区切りの「、」も CSV のまま・'-' は空）。
 #      「有り」→空・「対象」→空 が 1 件でも出たら計画を作らない。
 #   2. 座標は cb-5168 御代田だけ新しい公表値に（GSI 逆ジオコーダの県一致は別に確かめる・旧値は coordinate_history.json）。
+#      → 11/17 の裁定 1（BX その 2）: 11/13 版で違う 6 件（御代田＋南豊田（２）・猿投・三好ヶ丘・篠原・八草）とも新しい公表値に。
 #   3. 空容量が '-' の 193 件は算出しない（null のまま・8/19 裁定 4）。
-#   4. 全 1,107 件を PATCH（last_updated を 2026-11-10 にそろえる・#121）。
+#   4. 全 1,107 件を PATCH（last_updated を版の日付にそろえる・#121）。
 #   予想潮流と備考（notes）は書かない（8/19 と同じ）。
-# 11/15 の dry run の件数（マッチ 1,107・新規 0・消滅 0・値の変化 457 ほか）と合わなければ計画を作らない。
+# dry run の件数（マッチ 1,107・新規 0・消滅 0・値の変化ほか）と合わなければ計画を作らない。
+# 2026-11-17 BX その 2: 既定を 11/13 版（src_2611b）に。件数は reports/grid-chubu-dryrun-2026-11-17.json（11/13 版の dry run）。
+#   11/10 版の件数は値の変化 457・空容量 425・運用容量 87・制約要因 1・座標 1（reports/grid-chubu-dryrun-2026-11-15.json）。
 # =============================================================================
-NEW_VERSION = "2026-11-10"
-COORD_ADOPT = {"cb-5168": (36.311849, 138.494028)}   # 裁定 2（御代田・長野県）
-EXPECT = {"matched": 1107, "value_changed": 457, "cap_avail_mw": 425, "cap_operational_mw": 87, "capacity_total_mw": 17,
-          "n1_capacity_mw": 20, "units": 7, "op_constraint": 1, "n1_eligible": 0,
-          "oc_possibility": 375, "oc_target_self": 18, "coords": 1, "n1_ok_after": 148}
+NEW_VERSION = "2026-11-13"
+COORD_ADOPT = {   # 11/13 版の GeoJSON の値（11/17 の裁定 1・GSI で県が同じことを書く前に確かめる）
+    "cb-5168": (36.311849, 138.494028),   # 御代田（長野県御代田町）
+    "cb-6139": (35.045808, 137.131734),   # 南豊田（２）（愛知県豊田市）
+    "cb-6154": (35.131088, 137.138042),   # 猿投（豊田市）
+    "cb-6155": (35.127479, 137.10647),    # 三好ヶ丘（みよし市）
+    "cb-6156": (35.144726, 137.116557),   # 篠原（豊田市）
+    "cb-6157": (35.167956, 137.11243),    # 八草（豊田市）
+}
+EXPECT = {"matched": 1107, "value_changed": 476, "cap_avail_mw": 428, "cap_operational_mw": 89, "capacity_total_mw": 17,
+          "n1_capacity_mw": 20, "units": 7, "op_constraint": 33, "n1_eligible": 0,
+          "oc_possibility": 375, "oc_target_self": 18, "coords": 6, "n1_ok_after": 148}
 META = {"id", "createdAt", "updatedAt", "publishedAt", "revisedAt"}
 NUMF = ["units", "capacity_total_mw", "cap_operational_mw", "cap_avail_mw", "n1_capacity_mw"]
 

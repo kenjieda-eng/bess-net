@@ -4035,6 +4035,15 @@
       "checked_on": "2026-11-16",
       "note": "projects の小さな直し便（2026-11-16・_QUEUE.md 116 行）。素の curl で HTTP 200（240,944 bytes）。配信 2026-03-31 15:30:01・更新 2026-03-31 19:10:57。",
       "used_in": "訂正履歴 20261116-02（basis）"
+    },
+    {
+      "name": "系統予想潮流・空容量マッピング",
+      "publisher": "中部電力パワーグリッド株式会社",
+      "url": "https://gridmap.powergrid.chuden.co.jp/",
+      "title_verbatim": "系統予想潮流・空容量マッピング",
+      "checked_on": "2026-11-17",
+      "note": "BX 中部 本実行便（その 2・2026-11-17・_QUEUE.md 120 行）。素の curl で HTTP 200（9,379 bytes）。中部の変電所データ（geo_data/KRSIH001・002・010〜016）の取得元のトップページ。",
+      "used_in": "訂正履歴 20261117-01（basis）・/grid/chubu の出典（area-meta の landingUrl）"
     }
   ]
 }
