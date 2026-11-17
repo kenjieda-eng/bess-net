@@ -19,6 +19,10 @@ scripts/experimental/chubu/parse_chubu_2611.py
   - 8/17 版（src/）と 11/10 版の CSV の列ごとの変化（同じ No. の行どうし）。
   - 県別の現行値は素 URL の /grid/chubu から取る（--grid-html）。
   - --emit-plan は持たない（dry-run まで・本実行は別便）。
+2026-11-17（BX 本実行便）: --emit-plan を足した（下の emit_plan・裁定 BX 1〜4）。
+  python scripts/experimental/chubu/parse_chubu_2611.py --emit-plan --fetched-on 2026-11-17 \\
+      --baseline <書込直前の GET> --out-json <scratchpad> --n1-out <scratchpad> --plan-out scripts/experimental/chubu/update_plan_202611.json
+  11/15 の dry-run の記録（reports/grid-chubu-dryrun-2026-11-15.json・_common/n1_undetermined_chubu_2611.json）は上書きしない（出力先を変える）。
 """
 import argparse, csv, gzip, io, json, re, sys, unicodedata, zipfile
 from collections import Counter
@@ -156,6 +160,7 @@ def load_layers(src: Path):
                 "n1_raw": NFKC(r[10]), "n1_eligible": parse_n1(r[10]), "n1_capacity_mw": to_float(r[11]),
                 "oc_raw": NFKC(r[12]), "oc_possibility": parse_oc(r[12]),
                 "oc_self_raw": NFKC(r[13]), "oc_upper_raw": NFKC(r[14]),
+                "oc_upper_csv": (r[14] or "").strip(),   # 本実行で書く値（裁定 1: CSV の文字のまま・trim だけ）
                 "remarks": NFKC(r[15]), "src_version": version,
             })
             cnt += 1
@@ -204,10 +209,27 @@ def grid_page_counts(path: str):
 
 
 def main():
+    global BASELINE, REPORT_JSON, N1_OUT, SRC, NEW_VERSION
     ap = argparse.ArgumentParser()
-    ap.add_argument("--grid-html", required=True)
+    ap.add_argument("--grid-html", default="", help="dry-run の報告用（--emit-plan のときは省略可）")
     ap.add_argument("--grid-meta", default="", help="/grid/chubu を取った時刻・x-vercel-cache・age（報告に写すだけ）")
+    # BX 本実行（2026-11-17）: 計画の出力。11/15 の dry-run の記録（REPORT_JSON・N1_OUT）は上書きしないよう出力先を変える
+    ap.add_argument("--emit-plan", action="store_true")
+    ap.add_argument("--plan-out", default="scripts/experimental/chubu/update_plan_202611.json")
+    ap.add_argument("--baseline", default=str(BASELINE))
+    ap.add_argument("--out-json", default=str(REPORT_JSON))
+    ap.add_argument("--n1-out", default=str(N1_OUT))
+    ap.add_argument("--fetched-on", default="")
+    # 2026-11-17: 便の最初の版の取り直しで新しい版（11/13）が出ていた → その版で dry run をやり直す（書込しない）ための引数
+    ap.add_argument("--src", default=str(SRC), help="取得物のフォルダ（既定 src_2611＝11/10 版）")
+    ap.add_argument("--new-version", default=NEW_VERSION, help="取込む版の日付（last_updated）")
+    ap.add_argument("--no-expect", action="store_true",
+                    help="11/15 の dry run の件数と照らさない（新しい版の dry run 用）。計画は書くが、想定の外は止めずに一覧にする")
     args = ap.parse_args()
+    BASELINE, REPORT_JSON, N1_OUT = Path(args.baseline), Path(args.out_json), Path(args.n1_out)
+    SRC, NEW_VERSION = Path(args.src), args.new_version
+    if args.emit_plan and not args.fetched_on:
+        raise SystemExit("--emit-plan には --fetched-on が必要")
 
     R = {"generated_on": str(date.today()), "area": "中部", "operator": "中部電力パワーグリッド",
          "scope": "dry-run（差分レポートのみ・microCMS 書込ゼロ・本実行の計画も作らない）",
@@ -386,7 +408,7 @@ def main():
     # ── N-1（三値）──
     n1_und = [{"operator": "中部電力パワーグリッド", "area": "中部", "slug": b["slug"], "external_id": b.get("external_id"),
                "name": clean_name(b.get("name")), "prefecture": b.get("prefecture"), "stored_n1_eligible": b.get("n1_eligible"),
-               "csv_value": r["n1_raw"], "source": "gridmap geo_data/KRSIH010-016（2026年11月10日更新）"}
+               "csv_value": r["n1_raw"], "source": f"gridmap geo_data/KRSIH010-016（{vers[0] if len(vers) == 1 else vers}）"}
               for b, r in matched if r.get("n1_eligible") is None and b.get("n1_eligible") is not None]
     n1_chg = [{"slug": b["slug"], "name": clean_name(b.get("name")), "from": b.get("n1_eligible"), "to": r.get("n1_eligible"),
                "n1_capacity_from": b.get("n1_capacity_mw"), "n1_capacity_to": r.get("n1_capacity_mw")}
@@ -454,7 +476,7 @@ def main():
     # ── 県別（現行は素 URL の /grid/chubu）──
     by_pref_new = Counter(r["prefecture"] or "基幹系統" for r in kept)
     by_pref_base = Counter(b.get("prefecture") or "基幹系統" for b in base)
-    page = grid_page_counts(args.grid_html)
+    page = grid_page_counts(args.grid_html) if args.grid_html else {}
     total_after = len(base) + len(new_rows) - len(removed)
     pct = (total_after - len(base)) / len(base) * 100
     flow_only = sum(1 for r in kept if r.get("cap_avail_mw") is None and r.get("forecast_flow_mw") is not None)
@@ -506,7 +528,136 @@ def main():
     REPORT_JSON.parent.mkdir(parents=True, exist_ok=True)
     REPORT_JSON.write_text(json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n-> {REPORT_JSON} / {N1_OUT}（Markdown の報告は手で書く）")
+    if args.emit_plan:
+        raw_base = json.load(open(BASELINE, encoding="utf-8"))  # 正規化前の GET のまま（before と id に使う）
+        emit_plan(args.plan_out, raw_base, matched, new_rows, removed, ambiguous, eid_mismatch, face_changed, renamed,
+                  coord_diff, coord_gain, coord_lost_in_map, args.fetched_on, strict=not args.no_expect)
     print("[dry-run] 完了（microCMS 書込なし）")
+
+
+# =============================================================================
+# --emit-plan（BX 本実行・2026-11-17）: 本実行の計画（microCMS には書かない）
+# 裁定（02_計画・運営/検証記録_BX中部・BY中国dry-run_確かめと裁定の案_2026-11-15_ユウ.md の BX 1〜4・EDAさん 11/16 10:03「任せます」）:
+#   1. 出力制御の 3 欄は公表の CSV の列のとおり。
+#      oc_possibility ←「平常時出力制御の可能性」（'-' は空＝現値の空のまま）／oc_target_self ←「(当該設備)」（'-' は空）／
+#      oc_target_upper ←「(上位系設備)」（trim だけ・区切りの「、」も CSV のまま・'-' は空）。
+#      「有り」→空・「対象」→空 が 1 件でも出たら計画を作らない。
+#   2. 座標は cb-5168 御代田だけ新しい公表値に（GSI 逆ジオコーダの県一致は別に確かめる・旧値は coordinate_history.json）。
+#   3. 空容量が '-' の 193 件は算出しない（null のまま・8/19 裁定 4）。
+#   4. 全 1,107 件を PATCH（last_updated を 2026-11-10 にそろえる・#121）。
+#   予想潮流と備考（notes）は書かない（8/19 と同じ）。
+# 11/15 の dry run の件数（マッチ 1,107・新規 0・消滅 0・値の変化 457 ほか）と合わなければ計画を作らない。
+# =============================================================================
+NEW_VERSION = "2026-11-10"
+COORD_ADOPT = {"cb-5168": (36.311849, 138.494028)}   # 裁定 2（御代田・長野県）
+EXPECT = {"matched": 1107, "value_changed": 457, "cap_avail_mw": 425, "cap_operational_mw": 87, "capacity_total_mw": 17,
+          "n1_capacity_mw": 20, "units": 7, "op_constraint": 1, "n1_eligible": 0,
+          "oc_possibility": 375, "oc_target_self": 18, "coords": 1, "n1_ok_after": 148}
+META = {"id", "createdAt", "updatedAt", "publishedAt", "revisedAt"}
+NUMF = ["units", "capacity_total_mw", "cap_operational_mw", "cap_avail_mw", "n1_capacity_mw"]
+
+
+def _blank(v):
+    return v is None or v == "" or v == [] or (isinstance(v, str) and v.strip() in HYPHENS)
+
+
+def emit_plan(plan_out, raw_base, matched, new_rows, removed, ambiguous, eid_mismatch, face_changed, renamed,
+              coord_diff, coord_gain, coord_lost_in_map, fetched_on, strict=True):
+    errs = []
+    if len(matched) != EXPECT["matched"] or new_rows or removed or ambiguous or eid_mismatch or face_changed or renamed:
+        errs.append(f"突合が dry run と違う: マッチ {len(matched)}・新規 {len(new_rows)}・消滅 {len(removed)}・曖昧 {len(ambiguous)}"
+                    f"・eid 食い違い {len(eid_mismatch)}・電圧面 {len(face_changed)}・名称 {len(renamed)}")
+    got_coord = {x["slug"]: tuple(x["new"]) for x in coord_diff}
+    if got_coord != COORD_ADOPT or coord_gain or coord_lost_in_map:
+        errs.append(f"座標が dry run と違う: 差 {got_coord}・新規 {len(coord_gain)}・地図に無い {len(coord_lost_in_map)}")
+    iso = lambda d: f"{d}T00:00:00.000Z"  # noqa: E731
+    raw = {b["slug"]: b for b in raw_base}
+    updates, cnt, oc_hyphen_keep, upper_trans = [], Counter(), [], Counter()
+    for b, r in matched:
+        rb = raw[b["slug"]]
+        patch, changed = {}, []
+        for k in NUMF:
+            ov, nv = b.get(k), r.get(k)
+            if nv is None:
+                continue   # 裁定 3: 空容量 '-' は null のまま（送らない）。ほかの欄の欠落も現値維持
+            if ov is None or abs(float(ov) - float(nv)) > 1e-6:
+                patch[k] = nv
+                changed.append(k)
+        if r.get("op_constraint") is None:
+            if b.get("op_constraint") is not None:
+                errs.append(f"{b['slug']}: 制約要因が CSV で '-' なのに現値 {b.get('op_constraint')!r}")
+        elif (b.get("op_constraint") or "") != r["op_constraint"]:
+            patch["op_constraint"] = r["op_constraint"]
+            changed.append("op_constraint")
+        if r.get("n1_eligible") is None:
+            if b.get("n1_eligible") is not None:
+                errs.append(f"{b['slug']}: N-1 が CSV で未算定（boolean を潰さない・dry run では 0）")
+        elif bool(b.get("n1_eligible")) != r["n1_eligible"]:
+            patch["n1_eligible"] = r["n1_eligible"]
+            changed.append("n1_eligible")
+        # ── 出力制御の 3 欄（裁定 1・公表のとおり）──
+        if r["oc_raw"] not in ("有り",) and r["oc_raw"] not in HYPHENS:
+            errs.append(f"{b['slug']}: 出力制御の可能性が想定外の値 {r['oc_raw']!r}")
+        oc_new = "有り" if r["oc_raw"] == "有り" else None
+        oc_cur = b.get("oc_possibility")
+        if oc_new is None:
+            oc_hyphen_keep.append(b["slug"])
+            if oc_cur is not None:
+                errs.append(f"{b['slug']}: 出力制御の可能性 {oc_cur}→空（止める）")
+        elif oc_cur != oc_new:
+            patch["oc_possibility"] = [oc_new]
+            changed.append("oc_possibility")
+        if r["oc_self_raw"] not in ("対象",) and r["oc_self_raw"] not in HYPHENS:
+            errs.append(f"{b['slug']}: 当該設備が想定外の値 {r['oc_self_raw']!r}")
+        self_new = "対象" if r["oc_self_raw"] == "対象" else None
+        self_cur = None if _blank(rb.get("oc_target_self")) else rb.get("oc_target_self")
+        if self_cur is not None and self_new is None:
+            errs.append(f"{b['slug']}: 当該設備 対象→空（止める）")
+        elif self_cur != self_new:
+            patch["oc_target_self"] = self_new
+            changed.append("oc_target_self")
+        upper_new = None if r["oc_upper_csv"] in HYPHENS else r["oc_upper_csv"]
+        upper_cur = None if _blank(rb.get("oc_target_upper")) else rb.get("oc_target_upper")
+        if upper_cur != upper_new:
+            patch["oc_target_upper"] = upper_new
+            changed.append("oc_target_upper")
+            upper_trans["空→値" if upper_cur is None else ("値→空" if upper_new is None else "値→別の値")] += 1
+        if b["slug"] in COORD_ADOPT:
+            patch["latitude"], patch["longitude"] = COORD_ADOPT[b["slug"]]
+            changed.append("coords")
+        patch["last_updated"] = iso(NEW_VERSION)
+        patch["fetched_at"] = iso(fetched_on)
+        for c in changed:
+            cnt[c] += 1
+        updates.append({"slug": b["slug"], "id": rb["id"], "patch": patch, "changed": changed,
+                        "before": {k: v for k, v in rb.items() if k not in META}})
+    value_changed = sum(1 for u in updates if set(u["changed"]) & set(NUMF + ["op_constraint", "n1_eligible"]))
+    n1_ok = sum(1 for u in updates if (u["patch"]["n1_eligible"] if "n1_eligible" in u["patch"] else u["before"].get("n1_eligible")) is True)
+    got = {"value_changed": value_changed, "n1_ok_after": n1_ok, "coords": cnt["coords"],
+           **{k: cnt[k] for k in NUMF + ["op_constraint", "n1_eligible", "oc_possibility", "oc_target_self"]}}
+    for k, v in got.items():
+        if EXPECT[k] != v:
+            errs.append(f"{k}: 計画 {v} ≠ dry run {EXPECT[k]}")
+    if errs and strict:
+        raise SystemExit("想定の外のため計画を作らない:\n  " + "\n  ".join(errs[:30]))
+    if errs:
+        print("\n=== emit-plan（--no-expect）: 想定の外（止めずに一覧） ===\n  " + "\n  ".join(errs[:60]))
+    plan = {"generated": str(date.today()), "area": "中部", "prefix": "cb-", "endpoint": "substations",
+            "version": NEW_VERSION, "fetched_on": fetched_on,
+            "ruling": "02_計画・運営/検証記録_BX中部・BY中国dry-run_確かめと裁定の案_2026-11-15_ユウ.md（BX 1〜4・EDAさん 11/16 10:03）",
+            "expected": {"updates": len(updates), "creates": 0, "n1_ok_after": n1_ok, "value_changed": value_changed,
+                         "date_only": sum(1 for u in updates if not u["changed"]), "by_field": dict(cnt),
+                         "oc_target_upper_transitions": dict(upper_trans)},
+            "oc_hyphen_kept_blank": oc_hyphen_keep,
+            "coord_adopt": [{"slug": s, "lat": v[0], "lng": v[1]} for s, v in COORD_ADOPT.items()],
+            "coord_history": coord_diff,
+            "not_expected": errs, "strict": strict,
+            "updates": updates, "creates": []}
+    Path(plan_out).write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"\n=== emit-plan: PATCH {len(updates)}（値 {value_changed}・日付だけ {plan['expected']['date_only']}）・N-1 可 {n1_ok}")
+    print(f"  列ごとの変化 {dict(cnt)}")
+    print(f"  上位系設備の変化 {dict(upper_trans)}・出力制御 '-' で空のまま {oc_hyphen_keep}")
+    print(f"  -> {plan_out}")
 
 
 if __name__ == "__main__":
