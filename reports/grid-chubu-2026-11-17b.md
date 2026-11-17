@@ -89,3 +89,45 @@
   - importedOn 2026-11-17・中部・中部電力パワーグリッド・publishedVersion「2026年11月13日更新版（gridmap・全7レイヤ同一版）」・total 1,107・**decreased 338・zeroed 15・increased 90・changed 476**・added 0・removed 0（計画の実数）。
   - topDecreases（減り幅の大きい順・同じ幅は slug の順）: 城北 57→28・形原 45→28・広小路 57→42・池下 57→42・烏森（２）49→37（愛知県）。
   - note: 設備の増減なし・出力制御の 3 欄を公表のとおりに（「有り」727→1,102・当該設備の「対象」9→27・訂正履歴に記録）・制約要因は長野県の 32 件が新たに「熱容量」に・座標 6 件・N-1 可 148・可否の変化なし・空容量が「-」の 193 件は独自算出せず未設定。report はこの報告。
+
+## build・push
+
+- `npm run build`（12:36:18〜12:40:39）: **BUILD EXIT 0**・★WARN 0・prebuild の verify は全部 ok（`verify:corrections` 500 件・`verify:source-names` 台帳に無い資料名 0・`verify:grid-pages` ok・`verify:grid-detail-static` 座標あり 1,082）。
+- `verify:grid-fields`: **PASS**（軸 1 中部 1,107 件・台数あり 1,107／軸 2 中部の実値が shape まで到達／軸 3 中部の `area_dates` 2026-11-13〔1 種〕＝実データの最新版）。`tsc --noEmit` 0・`verify:linkify` clean。
+- commit **`21ee7c0`**（12:41 push）→ Vercel **success 12:50:20**（`/build-info.json` の builtAt 2026-11-17T12:45:44+09:00）。生成物（`src/data/substations/*.json`）は commit していない。
+
+## (6) 本番の確認（素の URL・クエリ無し・script を除き `<!-- -->` を剥がした初期 DOM・12:50:42〜12:51:17）
+
+| ページ | cache・age | 結果 |
+|---|---|---|
+| `/grid/chubu` | PRERENDER・0 | データ基準日「**公表 2026/11/13 時点（当サイト取込 2026/11/17）**」・サマリ **1,107 変電所／空容量プラス 857／N-1 電制適用可 148** |
+| `cb-1286` 城北（減） | PRERENDER・0 | 空容量（当該設備）**28 MW**・運用容量 28・対象設備（上位系）「**変1、送20**」・出力制御 有り・公表日 2026/11/13 |
+| `cb-1311` 豊丘（ゼロ化） | PRERENDER・0 | 空容量 **0 MW** |
+| `cb-3757` 桜（ゼロ化） | PRERENDER・0 | 空容量 **0 MW**・上位系「変1、送20、変3601」 |
+| `cb-1275` 南武平町（２）（増） | PRERENDER・0 | 空容量 **74 MW** |
+| `cb-5152` 坂城（制約要因） | PRERENDER・0 | 運用容量制約要因「**熱容量**」（前は空） |
+| `cb-1004` 犬山（１） | PRERENDER・0 | 平常時出力制御の可能性「**有り**」（前は空）・対象設備（当該設備）「**対象**」（前は空）・上位系「送20、送30、送50、送80、送90」 |
+| `cb-5001` 新北信 | PRERENDER・0 | 出力制御「**有り**」（前は空）・上位系「送20、送30、送50、変6、送90」 |
+| `cb-2004` 磐田（１） | PRERENDER・0 | 出力制御「**有り**」（前は空）・上位系「送20、送30、送50、送90」 |
+| `cb-5168`・`cb-6139`・`cb-6154`〜`6157`（座標 6 件） | PRERENDER・0 | 6 件とも 200・公表日 2026/11/13（詳細ページは座標を本文に出さない） |
+| `/grid/chubu/map` | PRERENDER・0 | 「1,082 箇所」・**座標 6 件とも新しい値がページのデータにあり、旧い値は 0** |
+| `/tools/grid-connection-check` | PRERENDER・0 | 200 |
+| `/corrections` | PRERENDER・0 | `20261117-01`（中部電力パワーグリッドの系統空き容量…・直す前／直した後の文） |
+| `/tracker/grid` | PRERENDER・0 | 「直近の再取込サマリ」の先頭が「中部エリア（中部電力パワーグリッド）2026年11月13日更新版（gridmap・全7レイヤ同一版）／取込 2026-11-17／1,107件・減った 338 件（うちゼロ化 15 件）／増えた 90 件／値が変わった 476 件・減少の例: 城北変電所（愛知県）57 → 28 …」 |
+
+- 変電所の詳細は 11/4 からビルド時の JSON で描くので、Data Cache の旧値の窓（#116・#127）は無い。1 回目から全部新しい値だった。書込の前に対象の詳細ページは開いていない（#127）。
+- `/grid/chubu` の地図への案内は「緯度経度付き約1,081箇所」のまま（便 2-9 のとおり触っていない・121 行の小さな直し便で直す）。
+- 30 分後の確かめはユウがする（便 §1）。CC は待たずに終えた。30 分の監視（microCMS の警告メール・Vercel のエラー率）は EDAさん・ユウの側で。
+
+## (7) IndexNow の応答
+
+- `npx tsx scripts/indexnow-submit.ts --urls reports/grid-chubu-2026-11-17b.indexnow-urls.txt`: dry run → `--apply` を 1 回（12:51:3x JST・鍵 605d…・本番の鍵のファイル HTTP 200・中身一致）。
+- 送った **1,106 件**: 値・出力制御の 3 欄・座標のどれかが変わった slug 1,104（上位系設備が 1,102 件で変わるため、ほぼ全件）・`/grid/chubu`・`/corrections`。日付だけ変わった 3 件（`cb-4411`・`cb-4421`・`cb-5271`）は送っていない。
+- 応答: **1〜1,106 件目 HTTP 200（受理）**（`reports/grid-chubu-2026-11-17b.indexnow.json`）。
+
+## (8) 申告・一時物
+
+- 停止条件: rm 系・push --force・.env の表示・microCMS の DELETE／PUT は、どれも 0。microCMS の書込は「変電所空き容量DB」の中部 PATCH 1,107 だけ。
+- `n1-status.json` は回し直した結果 `generated_at` だけが変わった（entries は同じ）。そのまま commit に入れた。
+- 一時物（リポの外・消していない）: `C:\Users\kenji\AppData\Local\Temp\claude\76d4d28da6870112\c7db94e8-ce59-46b9-aa85-de5390184ac4\scratchpad\bx2\`（`src\` に取り直した 10 本と応答ヘッダ・gridmap のトップ／`work\` に `check_plan.py`・`verify_after.py`〔＋結果〕・`prod.py`〔＋取ったページ〕・`gsi.txt`・`dry_1113.json`・`n1_1113.json`・applier と build のログ）。
+- 作業前からある未コミットの差分（`src/data/substations/*.json`・`scripts/experimental/operators/alias-expansion-report.json`）は commit に入れていない。
