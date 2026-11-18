@@ -701,6 +701,12 @@ def main():
         NUMF = ["units", "capacity_total_mw", "cap_operational_mw", "forecast_flow_mw",
                 "cap_avail_mw", "cap_avail_upper_mw", "n1_capacity_mw"]
         updates, value_changed, n1_skip, oc_emptied, oc_set = [], 0, 0, [], []
+        # 11/17 裁定 1: 電圧を書くのはこの 3 件だけ。ほかに電圧が違う行があれば書かずに止める
+        VOLT_EXPECT = {"kyu-110": "110/6", "kyu-111": "110/22", "kyu-112": "110/6"}
+        VOLT_SLUGS = {x["slug"] for x in volt_chg}
+        if VOLT_SLUGS != set(VOLT_EXPECT) or any(x["to"] != VOLT_EXPECT[x["slug"]] for x in volt_chg):
+            sys.exit(f"★止める: 電圧が違う行が裁定の 3 件と違う: {[(x['slug'], x['from'], x['to']) for x in volt_chg]}")
+        volt_patched = []
         for b_, r_ in matched:
             raw = raw_base[b_["slug"]]
             patch, changed = {}, []
@@ -714,6 +720,20 @@ def main():
             if r_.get("op_constraint") and (b_.get("op_constraint") or "") != r_["op_constraint"]:
                 patch["op_constraint"] = r_["op_constraint"]
                 changed.append("op_constraint")
+            # 11/17 裁定 1（2026-11-18 本実行）: 電圧が変わった行は公表どおりに書く（一次・二次と電圧階級）。slug・名称・県は変えない
+            if b_["slug"] in VOLT_SLUGS:
+                for k in ("voltage_primary_kv", "voltage_secondary_kv"):
+                    if r_.get(k) is not None and (b_.get(k) is None or abs(float(b_[k]) - float(r_[k])) > 1e-6):
+                        patch[k] = r_[k]
+                        changed.append(k)
+                vc_new = [vclass(r_["voltage_primary_kv"])]
+                if (raw.get("voltage_class") or []) != vc_new:
+                    patch["voltage_class"] = vc_new
+                    changed.append("voltage_class")
+                volt_patched.append({"slug": b_["slug"], "name": clean_name(b_.get("name")),
+                                     "from": vkey(b_.get("voltage_primary_kv"), b_.get("voltage_secondary_kv")),
+                                     "to": vkey(r_["voltage_primary_kv"], r_["voltage_secondary_kv"]),
+                                     "voltage_class": [raw.get("voltage_class"), vc_new], "other_changed": [c for c in changed if not c.startswith("voltage")]})
             if r_.get("n1_eligible") is None:
                 if b_.get("n1_eligible") is not None:
                     n1_skip += 1  # 未算定は boolean を潰さない（現値維持・n1-status の一覧で表示）
@@ -786,18 +806,27 @@ def main():
 
         n1_ok_after = sum(1 for u in updates if (u["patch"]["n1_eligible"] if "n1_eligible" in u["patch"] else u["before"].get("n1_eligible")) is True) \
             + sum(1 for c in creates if c["content"].get("n1_eligible") is True)
+        # 11/17 裁定 1: 電圧の 3 行で、電圧のほかに違う欄があれば止める
+        bad_volt = [(x["slug"], x["other_changed"]) for x in volt_patched if x["other_changed"]]
+        if bad_volt or len(volt_patched) != 3:
+            sys.exit(f"★止める: 電圧の 3 行で電圧のほかにも違う欄がある／行が 3 でない: {bad_volt}・{len(volt_patched)}")
         plan = {
             "generated": str(date.today()), "area": "九州", "prefix": "kyu-", "endpoint": "substations",
-            "expected": {"updates": len(updates), "value_changed": value_changed, "creates": len(creates), "n1_ok_after": n1_ok_after},
-            "ruling": "02_計画・運営/検証記録_BU東京・BV九州dry-run_裁定_2026-10-29_ユウ.md（BV-1〜5・共通）",
+            "expected": {"updates": len(updates), "value_changed": value_changed, "voltage_changed": len(volt_patched),
+                         "changed_any": sum(1 for u in updates if u["changed"]), "creates": len(creates), "n1_ok_after": n1_ok_after},
+            "ruling": ("02_計画・運営/検証記録_BV九州dry-run_確かめと裁定_2026-11-17_ユウ.md（電圧 3 件は公表どおり・県は変えない・保留 2 行・POST 0）"
+                       "／02_計画・運営/検証記録_BU東京・BV九州dry-run_裁定_2026-10-29_ユウ.md（出力制御は公表どおり・振り直しは slug 維持）"),
+            "voltage": volt_patched,
             "held": held, "n1_undetermined_kept": n1_skip, "oc_emptied": oc_emptied, "oc_set": oc_set,
             "renumber": renumber, "renamed": renamed, "source_url_new": ZIP_URL,
             "updates": updates, "creates": creates,
         }
         Path(args.plan_out).write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
         lu = Counter(str(u["patch"]["last_updated"])[:10] for u in updates)
-        print("\n=== emit-plan（10/29 裁定）===")
-        print(f"  更新PATCH: {len(updates)}（数値変化 {value_changed}・名称修正 {len(renamed)}・eid更新 {len(renumber)}）")
+        print("\n=== emit-plan（11/17・10/29 裁定）===")
+        print(f"  更新PATCH: {len(updates)}（数値変化 {value_changed}・電圧 {len(volt_patched)}・何か変わる {plan['expected']['changed_any']}・名称修正 {len(renamed)}・eid更新 {len(renumber)}）")
+        for x in volt_patched:
+            print(f"    電圧 {x['slug']} {x['name']} {x['from']} -> {x['to']}・voltage_class {x['voltage_class'][0]} -> {x['voltage_class'][1]}")
         print(f"  last_updated: {dict(lu)}・fetched_at {FETCHED}")
         print(f"  出力制御の可能性: 空にする {len(oc_emptied)} {oc_emptied}・値を入れる {len(oc_set)} {oc_set}")
         print(f"  新規POST: {len(creates)}件（保留 {len(held)}件）・N-1 可（取込後）{n1_ok_after}・N-1 未算定で現値維持 {n1_skip}")

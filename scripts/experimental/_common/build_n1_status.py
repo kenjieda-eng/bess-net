@@ -324,6 +324,21 @@ for x in cn["entries"]:
 cn_missing = sorted({e for e, v in entries.items() if v["area"] == "中国" and not v.get("frozen")} ^ {x["slug"] for x in cn["entries"]})
 print(f"中国: 10/28 版の未算定 {len(cn['entries'])} 行（足した {cn_added}・一覧と食い違う {cn_missing}）")
 
+# ── 11. 九州: 10/30 版の N-1 欄が「―」の行（BV 九州 本実行 2026-11-18・parse_kyushu_2611.py の一覧 2 件）──
+# 2 件（大鶴 kyu-278・南関 kyu-500）は前身の一覧で入っている。source を 10/30 版の取込に直し、足りない行があれば足す。
+# as_of は add の既定＝再取込後の last_updated（2026-10-30）。
+kq = json.loads((ROOT / "_common" / "n1_undetermined_kyushu_2611.json").read_text(encoding="utf-8"))
+KQ_SOURCE = "td_oIcmhBw1.zip（2026-10-30公表）・2026-11-18 取込"
+kq_added = []
+for x in kq["entries"]:
+    if x["slug"] in entries:
+        entries[x["slug"]]["source"] = KQ_SOURCE
+    else:
+        add(x["slug"], "undetermined", KQ_SOURCE)
+        kq_added.append(x["slug"])
+kq_missing = sorted({e for e, v in entries.items() if v["area"] == "九州" and not v.get("frozen")} ^ {x["slug"] for x in kq["entries"]})
+print(f"九州: 10/30 版の未算定 {len(kq['entries'])} 行（足した {kq_added}・一覧と食い違う {kq_missing}）")
+
 # ── 出力 ──
 from collections import Counter  # noqa: E402
 
@@ -356,6 +371,7 @@ out = {
         "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",
         "scripts/experimental/_common/n1_undetermined_shikoku.json（四国 10月版・parse_shikoku.py）",
         "scripts/experimental/_common/n1_undetermined_tokyo_2611.json（東京 10/28 版・parse_tepco_csv_2611.py）",
+        "scripts/experimental/_common/n1_undetermined_kyushu_2611.json（九州 10/30 版・parse_kyushu_2611.py）",
         "microCMS substations（GET・as_of）",
     ],
     "count": len(active_entries),

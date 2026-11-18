@@ -1,7 +1,7 @@
 {
  "_purpose": "N-1電制適用可否の「未算定（公表元が「－」等で明示）」「空欄」「公表なし（N-1 列が無い）」の設備。microCMS の n1_eligible は boolean のため false（不可）に潰れているので、表示はこの一覧で直す（三値化 段1）。TypeScript（src/lib/n1-status.ts）と Python（scripts/experimental/_common/n1_status.py）の唯一の真実源（#119）。",
  "_note": "as_of はその設備の microCMS last_updated（一覧を作った時点）。表示側は as_of が microCMS の現在値と一致するときだけこの一覧を当てる（再取込で値が更新された行に古い一覧を当てない）。microCMS が true（可）なら可が勝つ。再生成: scripts/experimental/_common/build_n1_status.py（前身 build_n1_undetermined.py は残置）。四国（10月版の「－」）の as_of は 10月版の版日付で、再取込までは表示に効かない。frozen: true の entry は凍結した変電所（src/data/substations-frozen.json）で、詳細ページの N-1 の欄だけに効く（最後に取り込んだ版の公表値どおりに出す）。一覧・集計・検索には凍結が入らないので、count・count_by_reason・count_by_area は凍結を除いた数。",
- "generated_at": "2026-11-17T03:56:11Z",
+ "generated_at": "2026-11-18T03:22:44Z",
  "generated_from": [
   "scripts/experimental/_common/n1_undetermined.json（前身・273 件）",
   "scripts/experimental/hokuriku/csv_2608（2026-08-05 公表 CSV）",
@@ -13,6 +13,7 @@
   "okiden con_res_map0{1,2,3}_0{2,3}.csv のヘッダ（GET）",
   "scripts/experimental/_common/n1_undetermined_shikoku.json（四国 10月版・parse_shikoku.py）",
   "scripts/experimental/_common/n1_undetermined_tokyo_2611.json（東京 10/28 版・parse_tepco_csv_2611.py）",
+  "scripts/experimental/_common/n1_undetermined_kyushu_2611.json（九州 10/30 版・parse_kyushu_2611.py）",
   "microCMS substations（GET・as_of）"
  ],
  "count": 423,
@@ -237,8 +238,8 @@
    "external_id": "kyuden_11_11(1)",
    "name": "大鶴",
    "reason": "undetermined",
-   "source": "td_rHc7Jd0i.zip（2026-07-28更新）",
-   "as_of": "2026-09-29T00:00:00.000Z"
+   "source": "td_oIcmhBw1.zip（2026-10-30公表）・2026-11-18 取込",
+   "as_of": "2026-10-30T00:00:00.000Z"
   },
   "kyu-500": {
    "area": "九州",
@@ -246,8 +247,8 @@
    "external_id": "kyuden_16_45",
    "name": "南関",
    "reason": "undetermined",
-   "source": "td_rHc7Jd0i.zip（2026-07-28更新）",
-   "as_of": "2026-09-29T00:00:00.000Z"
+   "source": "td_oIcmhBw1.zip（2026-10-30公表）・2026-11-18 取込",
+   "as_of": "2026-10-30T00:00:00.000Z"
   },
   "oki-honto-22kv-0019": {
    "area": "沖縄",

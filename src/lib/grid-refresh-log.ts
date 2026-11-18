@@ -39,6 +39,35 @@ export type GridRefreshEntry = {
 };
 
 export const GRID_REFRESH_LOG: readonly GridRefreshEntry[] = [
+  // BV 九州 本実行便（2026-11-18）: 数値は reports/grid-kyushu-2026-11-18.md (2)（書いた計画の実数・GET 全件照合で不一致 0）。
+  // changed は数値 7 欄が変わった 87 件と電圧が変わった 3 件（重なり 0）の 90 件。
+  // topDecreases は減り幅の大きい順に、県を一次で確かめたもの（src/data/kyushu-prefecture-map.json の verified）か、県をまたがない地区のものだけ
+  // （確認中の行橋・宇島・高崎1 ほかと、規則に届かなかった泉ほか 14 件は使わない）。同じ幅の中では、同名の別設備がある橘・名前が島の名と紛らわしい壱岐を外した。
+  {
+    importedOn: '2026-11-18',
+    areaJp: '九州',
+    areaSlug: 'kyushu',
+    operator: '九州電力送配電',
+    publishedVersion: '2026年10月30日更新版（全31地区同一版）',
+    total: 884,
+    decreased: 30,
+    zeroed: 4,
+    increased: 10,
+    changed: 90,
+    added: 0,
+    removed: 0,
+    topDecreases: [
+      { name: '串木野', prefecture: '鹿児島県', from: 22, to: 16 },
+      { name: '木佐木（66/6kV）', prefecture: '福岡県', from: 5, to: 3 },
+      { name: '土谷', prefecture: '佐賀県', from: 2, to: 0 },
+      { name: '石原町', prefecture: '福岡県', from: 9, to: 7 },
+      { name: '宮原', prefecture: '熊本県', from: 9, to: 7 },
+    ],
+    note: '原田・基山の3件は、公表の一次電圧が66kVから110kVに変わった（設備は同一・URLは維持）。'
+      + '志和池の第3バンク・原田（22/6kV）の2件は、収録を保留のまま。'
+      + 'N-1電制の未算定2件（大鶴・南関）は現値維持（「未算定」と表示）。出力制御の可能性の変化はなし。',
+    report: 'reports/grid-kyushu-2026-11-18.md',
+  },
   // BX 中部 本実行便（その 2・2026-11-17）: 数値は reports/grid-chubu-2026-11-17b.md (2)（書いた計画の実数・GET 全件照合で不一致 0）。
   // topDecreases は空き容量の減り幅の大きい順に 5 件（同じ幅は slug の順）。
   {
