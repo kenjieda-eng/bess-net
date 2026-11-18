@@ -44,6 +44,8 @@ import GridPrintButton from '@/components/GridPrintButton';
 // Gr10追補(2026-08-11): 詳細ページも正規化モジュールを通す（独自ロジックを再実装しない）
 import { normalizeSubstationPlace } from '@/lib/grid-prefecture';
 import { kansaiPrefectureBasisLabel } from '@/lib/kansai-prefecture';
+import { KYUSHU_PREFECTURE_PENDING_SENTENCE } from '@/lib/kyushu-prefecture';
+import { PREF_PENDING_CELL } from '@/lib/grid-pref-pending';
 // N1b: 個別ページ（2026-11-04〜 ビルド時の JSON）も一覧と同じ規則で区分する（#121・L-EIC-028: 取得側・表示側の全経路が同じ値を得る）
 import { n1StatusOf, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status';
 import { contactUrl } from '@/lib/contact-link';
@@ -441,7 +443,16 @@ export default async function GridSlugPage({
                   府県が確定しない社（関西電力送配電・沖縄電力）は「設備区分」として別行で出す。*/}
               <dt>都道府県</dt>
               {/* 関西の府県は公表図・住所の資料から決めたもの。根拠を一言添える（所在地を確かめたとは書かない・2026-11-07） */}
-              <dd>{place.prefecture && place.prefectureBasis ? `${place.prefecture}（${kansaiPrefectureBasisLabel(place.prefectureBasis)}）` : fmtStr(place.prefecture)}</dd>
+              {/* 九州（2026-11-18）: 確認中は「確認中」・収録の県は「（当サイトの推定）」を添える・供給余力マップで確かめた県は添えない */}
+              <dd>
+                {place.kyushuPrefectureStatus === 'pending'
+                  ? PREF_PENDING_CELL
+                  : place.kyushuPrefectureStatus === 'estimated' && place.prefecture
+                    ? `${place.prefecture}（当サイトの推定）`
+                    : place.prefecture && place.prefectureBasis
+                      ? `${place.prefecture}（${kansaiPrefectureBasisLabel(place.prefectureBasis)}）`
+                      : fmtStr(place.prefecture)}
+              </dd>
               {place.facilityClass && (
                 <>
                   <dt>設備区分</dt>
@@ -463,6 +474,9 @@ export default async function GridSlugPage({
                 </>
               )}
             </dl>
+            {place.kyushuPrefectureStatus === 'pending' && (
+              <p className="grid-source-note" style={{ marginTop: 8 }}>{KYUSHU_PREFECTURE_PENDING_SENTENCE}</p>
+            )}
           </section>
 
           {/* (b) 系統空き容量 */}

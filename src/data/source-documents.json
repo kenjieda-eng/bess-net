@@ -4044,6 +4044,87 @@
       "checked_on": "2026-11-17",
       "note": "BX 中部 本実行便（その 2・2026-11-17・_QUEUE.md 120 行）。素の curl で HTTP 200（9,379 bytes）。中部の変電所データ（geo_data/KRSIH001・002・010〜016）の取得元のトップページ。",
       "used_in": "訂正履歴 20261117-01（basis）・/grid/chubu の出典（area-meta の landingUrl）"
+    },
+    {
+      "name": "供給余力マップ（系統用変電所）",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map.html",
+      "title_verbatim": "九州電力送配電　供給余力マップ（系統用変電所）",
+      "checked_on": "2026-11-18",
+      "note": "九州の県の直し便（2026-11-18・_QUEUE.md 125 行）。素の curl で HTTP 200（53,890 bytes）。供給余力マップの入口（県ごとの 8 ページへのリンク）。",
+      "used_in": "対応表 src/data/kyushu-prefecture-map.json（source）・訂正履歴 20261118-03（basis）"
+    },
+    {
+      "name": "九州電力送配電　福岡県 福岡・久留米エリア",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-kurume.html",
+      "title_verbatim": "九州電力送配電　福岡県 福岡・久留米エリア",
+      "checked_on": "2026-11-18",
+      "note": "九州の県の直し便（2026-11-18・_QUEUE.md 125 行）。素の curl で HTTP 200（57,443 bytes）。県ごとの地図の絵（変電所の名前つき・空き容量は2026年３月時点）。",
+      "used_in": "対応表 src/data/kyushu-prefecture-map.json（source）"
+    },
+    {
+      "name": "九州電力送配電　福岡県 北九州・筑豊エリア",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-kitakyushu.html",
+      "title_verbatim": "九州電力送配電　福岡県 北九州・筑豊エリア",
+      "checked_on": "2026-11-18",
+      "note": "九州の県の直し便（2026-11-18・_QUEUE.md 125 行）。素の curl で HTTP 200（54,504 bytes）。県ごとの地図の絵（変電所の名前つき・空き容量は2026年３月時点）。",
+      "used_in": "対応表 src/data/kyushu-prefecture-map.json（source）"
+    },
+    {
+      "name": "九州電力送配電　佐賀県エリア",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-saga.html",
+      "title_verbatim": "九州電力送配電　佐賀県エリア",
+      "checked_on": "2026-11-18",
+      "note": "九州の県の直し便（2026-11-18・_QUEUE.md 125 行）。素の curl で HTTP 200（54,504 bytes）。県ごとの地図の絵（変電所の名前つき・空き容量は2026年３月時点）。",
+      "used_in": "対応表 src/data/kyushu-prefecture-map.json（source）・訂正履歴 20261118-01（basis）"
+    },
+    {
+      "name": "九州電力送配電　長崎県エリア",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-nagasaki.html",
+      "title_verbatim": "九州電力送配電　長崎県エリア",
+      "checked_on": "2026-11-18",
+      "note": "九州の県の直し便（2026-11-18・_QUEUE.md 125 行）。素の curl で HTTP 200（58,422 bytes）。県ごとの地図の絵（変電所の名前つき・空き容量は2026年３月時点）。",
+      "used_in": "対応表 src/data/kyushu-prefecture-map.json（source）"
+    },
+    {
+      "name": "九州電力送配電　大分県エリア",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-oita.html",
+      "title_verbatim": "九州電力送配電　大分県エリア",
+      "checked_on": "2026-11-18",
+      "note": "九州の県の直し便（2026-11-18・_QUEUE.md 125 行）。素の curl で HTTP 200（56,037 bytes）。県ごとの地図の絵（変電所の名前つき・空き容量は2026年３月時点）。",
+      "used_in": "対応表 src/data/kyushu-prefecture-map.json（source）"
+    },
+    {
+      "name": "九州電力送配電　熊本県エリア",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-kumamoto.html",
+      "title_verbatim": "九州電力送配電　熊本県エリア",
+      "checked_on": "2026-11-18",
+      "note": "九州の県の直し便（2026-11-18・_QUEUE.md 125 行）。素の curl で HTTP 200（56,098 bytes）。県ごとの地図の絵（変電所の名前つき・空き容量は2026年３月時点）。",
+      "used_in": "対応表 src/data/kyushu-prefecture-map.json（source）"
+    },
+    {
+      "name": "九州電力送配電　宮崎県エリア",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-miyazaki.html",
+      "title_verbatim": "九州電力送配電　宮崎県エリア",
+      "checked_on": "2026-11-18",
+      "note": "九州の県の直し便（2026-11-18・_QUEUE.md 125 行）。素の curl で HTTP 200（54,729 bytes）。県ごとの地図の絵（変電所の名前つき・空き容量は2026年３月時点）。",
+      "used_in": "対応表 src/data/kyushu-prefecture-map.json（source）・訂正履歴 20261118-02（basis）"
+    },
+    {
+      "name": "九州電力送配電　鹿児島県エリア",
+      "publisher": "九州電力送配電株式会社",
+      "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-kagoshima.html",
+      "title_verbatim": "九州電力送配電　鹿児島県エリア",
+      "checked_on": "2026-11-18",
+      "note": "九州の県の直し便（2026-11-18・_QUEUE.md 125 行）。素の curl で HTTP 200（57,177 bytes）。県ごとの地図の絵（変電所の名前つき・空き容量は2026年３月時点）。",
+      "used_in": "対応表 src/data/kyushu-prefecture-map.json（source）"
     }
   ]
 }

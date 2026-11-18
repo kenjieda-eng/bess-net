@@ -1,0 +1,1981 @@
+{
+ "_purpose": "九州電力送配電の変電所の県（表示用）。microCMS の prefecture は書き換えない（L-EIC-028）。表示の県は src/lib/grid-prefecture.ts の normalizeSubstationPlace の 1 か所で、この表から導出する（#119）。verified＝同社「供給余力マップ（系統用変電所）」の県ごとの地図に名前が出る変電所（一次）。pending＝県を出さない（確認中）もの。どちらにも無い九州のレコードは、収録の県を「当サイトの推定」として出す。",
+ "_rebuild": "① 一次を素の curl で取る: 入口 https://www.kyuden.co.jp/td/application/firm-location/capacity-map.html と 8 枚の県のページ（source.maps の url）と、各ページの地図の絵（img の src）。② 地図の絵を人が読み、名前を計画の maps に書く（文字の層が無い絵＝機械で読めない）。③ 名前（「変電所」・括弧の中・末尾の数字を外す）で当サイトのレコードに当て、同じ名前が複数の地区にあるときは一次電圧がいちばん高い地区だけを採る（verified）。④ 県をまたぐ 8 地区の、③で当たらなかったレコードの名前を国土地理院の地名検索に当て、規則（source.pending_rule.flag）で確認中を選ぶ（手がかり・一次ではない）。⑤ python -I -X utf8 scripts/experimental/kyushu/build_prefecture_map.py --plan=<計画.json> --baseline=<fetch_baseline.py の出力>。⑥ npm run verify:kyushu-prefecture の EXPECT を新しい数に直す。",
+ "generated_at": "2026-11-18T02:23:11Z",
+ "plan_sha256": "d00828982511b0d50b53379d00e4e984b5e3ebc8d9ae2315b876fc06eff06d22",
+ "source": {
+  "primary": {
+   "name": "供給余力マップ（系統用変電所）",
+   "publisher": "九州電力送配電株式会社",
+   "entry": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map.html",
+   "title_verbatim": "九州電力送配電　供給余力マップ（系統用変電所）",
+   "asof_label": "空き容量は2026年３月時点"
+  },
+  "maps": [
+   {
+    "pref": "福岡県",
+    "title": "九州電力送配電　福岡県 福岡・久留米エリア",
+    "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-kurume.html",
+    "names": [
+     "古賀変電所",
+     "東福岡変電所",
+     "住吉変電所",
+     "赤坂変電所",
+     "伊都変電所",
+     "南福岡変電所",
+     "西福岡変電所",
+     "山家変電所",
+     "久留米変電所",
+     "木佐木変電所",
+     "三池変電所"
+    ]
+   },
+   {
+    "pref": "福岡県",
+    "title": "九州電力送配電　福岡県 北九州・筑豊エリア",
+    "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-kitakyushu.html",
+    "names": [
+     "若松変電所",
+     "到津変電所",
+     "門司変電所",
+     "西谷変電所",
+     "上津役変電所",
+     "苅田変電所",
+     "筑豊変電所",
+     "東豊前変電所"
+    ]
+   },
+   {
+    "pref": "佐賀県",
+    "title": "九州電力送配電　佐賀県エリア",
+    "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-saga.html",
+    "names": [
+     "唐津変電所",
+     "北佐賀変電所",
+     "鳥栖変電所",
+     "武雄変電所"
+    ]
+   },
+   {
+    "pref": "長崎県",
+    "title": "九州電力送配電　長崎県エリア",
+    "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-nagasaki.html",
+    "names": [
+     "西佐世保変電所",
+     "東佐世保変電所",
+     "松島変電所",
+     "北長崎変電所",
+     "諫早変電所",
+     "長崎変電所"
+    ]
+   },
+   {
+    "pref": "大分県",
+    "title": "九州電力送配電　大分県エリア",
+    "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-oita.html",
+    "names": [
+     "速見変電所",
+     "日田変電所",
+     "東大分変電所",
+     "新大分変電所",
+     "大分変電所",
+     "西大分変電所",
+     "海崎変電所"
+    ]
+   },
+   {
+    "pref": "熊本県",
+    "title": "九州電力送配電　熊本県エリア",
+    "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-kumamoto.html",
+    "names": [
+     "熊本変電所",
+     "弓削変電所",
+     "北熊本変電所",
+     "緑川変電所",
+     "南熊本変電所",
+     "八代変電所",
+     "苓北変電所",
+     "人吉変電所"
+    ]
+   },
+   {
+    "pref": "宮崎県",
+    "title": "九州電力送配電　宮崎県エリア",
+    "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-miyazaki.html",
+    "names": [
+     "上椎葉変電所",
+     "新日向変電所",
+     "一ツ瀬変電所",
+     "柏田変電所",
+     "南宮崎変電所",
+     "都城変電所"
+    ]
+   },
+   {
+    "pref": "鹿児島県",
+    "title": "九州電力送配電　鹿児島県エリア",
+    "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-kagoshima.html",
+    "names": [
+     "出水変電所",
+     "川内変電所",
+     "鹿児島変電所",
+     "新鹿児島変電所",
+     "霧島変電所",
+     "大隅変電所"
+    ]
+   }
+  ],
+  "pending_rule": {
+   "scope": "県をまたぐ 8 地区（01・04・06・07・09・12・18・22）の、一次で確かめていないレコード（226 件）",
+   "candidates": {
+    "01": [
+     "長崎県",
+     "鹿児島県"
+    ],
+    "04": [
+     "福岡県",
+     "大分県"
+    ],
+    "06": [
+     "福岡県",
+     "佐賀県"
+    ],
+    "07": [
+     "福岡県",
+     "熊本県"
+    ],
+    "09": [
+     "大分県",
+     "熊本県"
+    ],
+    "12": [
+     "佐賀県",
+     "長崎県"
+    ],
+    "18": [
+     "熊本県",
+     "宮崎県"
+    ],
+    "22": [
+     "宮崎県",
+     "鹿児島県"
+    ]
+   },
+   "query": "名前から「変電所」・括弧の中・末尾の数字を外した語を https://msearch.gsi.go.jp/address-search/AddressSearch?q= に当て、結果を県ごとに数える（addressCode の頭 2 桁。コードが無い結果は title の頭の県名）",
+   "flag": "いまの県の件数が 0 で、地区のもう 1 つの県の件数が 2 以上。または、いまの県の件数が 1 以上で、もう 1 つの県の件数がその 3 倍以上",
+   "run": "2026-11-17 16:5x JST・ユウ・191 語・0.7 秒あけ"
+  }
+ },
+ "verified": {
+  "kyu-36": {
+   "eid": "kyuden_02_1",
+   "name": "門司",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "門司変電所"
+  },
+  "kyu-37": {
+   "eid": "kyuden_02_2",
+   "name": "苅田",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "苅田変電所"
+  },
+  "kyu-53": {
+   "eid": "kyuden_03_2",
+   "name": "伊都",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "伊都変電所"
+  },
+  "kyu-61": {
+   "eid": "kyuden_04_2",
+   "name": "東豊前",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "東豊前変電所"
+  },
+  "kyu-62": {
+   "eid": "kyuden_04_3(1)",
+   "name": "速見",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "速見変電所"
+  },
+  "kyu-63": {
+   "eid": "kyuden_04_3(2)",
+   "name": "速見",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "速見変電所"
+  },
+  "kyu-89": {
+   "eid": "kyuden_05_2(1)",
+   "name": "山家",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "山家変電所"
+  },
+  "kyu-90": {
+   "eid": "kyuden_05_2(2)",
+   "name": "山家",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "山家変電所"
+  },
+  "kyu-102": {
+   "eid": "kyuden_06_1(1)",
+   "name": "鳥栖",
+   "p": "佐賀県",
+   "was": "佐賀県",
+   "map": 2,
+   "on_map": "鳥栖変電所"
+  },
+  "kyu-103": {
+   "eid": "kyuden_06_1(2)",
+   "name": "鳥栖",
+   "p": "佐賀県",
+   "was": "佐賀県",
+   "map": 2,
+   "on_map": "鳥栖変電所"
+  },
+  "kyu-104": {
+   "eid": "kyuden_06_2(1)",
+   "name": "久留米",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "久留米変電所"
+  },
+  "kyu-105": {
+   "eid": "kyuden_06_2(2)",
+   "name": "久留米",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "久留米変電所"
+  },
+  "kyu-106": {
+   "eid": "kyuden_06_2(3)",
+   "name": "久留米",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "久留米変電所"
+  },
+  "kyu-107": {
+   "eid": "kyuden_06_3(1)",
+   "name": "木佐木",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "木佐木変電所"
+  },
+  "kyu-108": {
+   "eid": "kyuden_06_3(2)",
+   "name": "木佐木",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "木佐木変電所"
+  },
+  "kyu-109": {
+   "eid": "kyuden_06_3(3)",
+   "name": "木佐木",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "木佐木変電所"
+  },
+  "kyu-159": {
+   "eid": "kyuden_07_1(1)",
+   "name": "三池",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "三池変電所"
+  },
+  "kyu-160": {
+   "eid": "kyuden_07_1(2)",
+   "name": "三池",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "三池変電所"
+  },
+  "kyu-161": {
+   "eid": "kyuden_07_1(3)",
+   "name": "三池",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "三池変電所"
+  },
+  "kyu-174": {
+   "eid": "kyuden_08_2",
+   "name": "新大分",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "新大分変電所"
+  },
+  "kyu-175": {
+   "eid": "kyuden_08_3(1)",
+   "name": "大分",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "大分変電所"
+  },
+  "kyu-176": {
+   "eid": "kyuden_08_3(2)",
+   "name": "大分",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "大分変電所"
+  },
+  "kyu-177": {
+   "eid": "kyuden_08_3(3)",
+   "name": "大分",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "大分変電所"
+  },
+  "kyu-178": {
+   "eid": "kyuden_08_4",
+   "name": "東大分",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "東大分変電所"
+  },
+  "kyu-179": {
+   "eid": "kyuden_08_5",
+   "name": "西大分",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "西大分変電所"
+  },
+  "kyu-211": {
+   "eid": "kyuden_09_1(1)",
+   "name": "日田",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "日田変電所"
+  },
+  "kyu-212": {
+   "eid": "kyuden_09_1(2)",
+   "name": "日田",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "日田変電所"
+  },
+  "kyu-227": {
+   "eid": "kyuden_10_1(1)",
+   "name": "海崎",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "海崎変電所"
+  },
+  "kyu-228": {
+   "eid": "kyuden_10_1(2)",
+   "name": "海崎",
+   "p": "大分県",
+   "was": "大分県",
+   "map": 4,
+   "on_map": "海崎変電所"
+  },
+  "kyu-266": {
+   "eid": "kyuden_11_2(1)",
+   "name": "唐津",
+   "p": "佐賀県",
+   "was": "佐賀県",
+   "map": 2,
+   "on_map": "唐津変電所"
+  },
+  "kyu-267": {
+   "eid": "kyuden_11_2(2)",
+   "name": "唐津",
+   "p": "佐賀県",
+   "was": "佐賀県",
+   "map": 2,
+   "on_map": "唐津変電所"
+  },
+  "kyu-268": {
+   "eid": "kyuden_11_3(1)",
+   "name": "北佐賀",
+   "p": "佐賀県",
+   "was": "佐賀県",
+   "map": 2,
+   "on_map": "北佐賀変電所"
+  },
+  "kyu-269": {
+   "eid": "kyuden_11_3(2)",
+   "name": "北佐賀",
+   "p": "佐賀県",
+   "was": "佐賀県",
+   "map": 2,
+   "on_map": "北佐賀変電所"
+  },
+  "kyu-299": {
+   "eid": "kyuden_12_1(1)",
+   "name": "武雄",
+   "p": "佐賀県",
+   "was": "長崎県",
+   "map": 2,
+   "on_map": "武雄変電所"
+  },
+  "kyu-300": {
+   "eid": "kyuden_12_1(2)",
+   "name": "武雄",
+   "p": "佐賀県",
+   "was": "長崎県",
+   "map": 2,
+   "on_map": "武雄変電所"
+  },
+  "kyu-301": {
+   "eid": "kyuden_12_1(3)",
+   "name": "武雄",
+   "p": "佐賀県",
+   "was": "長崎県",
+   "map": 2,
+   "on_map": "武雄変電所"
+  },
+  "kyu-302": {
+   "eid": "kyuden_12_2",
+   "name": "東佐世保",
+   "p": "長崎県",
+   "was": "長崎県",
+   "map": 3,
+   "on_map": "東佐世保変電所"
+  },
+  "kyu-306": {
+   "eid": "kyuden_12_4",
+   "name": "西佐世保",
+   "p": "長崎県",
+   "was": "長崎県",
+   "map": 3,
+   "on_map": "西佐世保変電所"
+  },
+  "kyu-350": {
+   "eid": "kyuden_13_1",
+   "name": "到津",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "到津変電所"
+  },
+  "kyu-351": {
+   "eid": "kyuden_13_2(1)",
+   "name": "西谷(110kV)",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "西谷変電所"
+  },
+  "kyu-352": {
+   "eid": "kyuden_13_2(2)",
+   "name": "西谷(66kV)",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "西谷変電所"
+  },
+  "kyu-367": {
+   "eid": "kyuden_14_1",
+   "name": "北長崎",
+   "p": "長崎県",
+   "was": "長崎県",
+   "map": 3,
+   "on_map": "北長崎変電所"
+  },
+  "kyu-368": {
+   "eid": "kyuden_14_2",
+   "name": "長崎",
+   "p": "長崎県",
+   "was": "長崎県",
+   "map": 3,
+   "on_map": "長崎変電所"
+  },
+  "kyu-369": {
+   "eid": "kyuden_14_3",
+   "name": "松島",
+   "p": "長崎県",
+   "was": "長崎県",
+   "map": 3,
+   "on_map": "松島変電所"
+  },
+  "kyu-391": {
+   "eid": "kyuden_15_1(1)",
+   "name": "諫早",
+   "p": "長崎県",
+   "was": "長崎県",
+   "map": 3,
+   "on_map": "諫早変電所"
+  },
+  "kyu-392": {
+   "eid": "kyuden_15_1(2)",
+   "name": "諫早",
+   "p": "長崎県",
+   "was": "長崎県",
+   "map": 3,
+   "on_map": "諫早変電所"
+  },
+  "kyu-393": {
+   "eid": "kyuden_15_1(3)",
+   "name": "諫早",
+   "p": "長崎県",
+   "was": "長崎県",
+   "map": 3,
+   "on_map": "諫早変電所"
+  },
+  "kyu-440": {
+   "eid": "kyuden_16_1(1)",
+   "name": "熊本",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "熊本変電所"
+  },
+  "kyu-441": {
+   "eid": "kyuden_16_1(2)",
+   "name": "熊本(220kV)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "熊本変電所"
+  },
+  "kyu-442": {
+   "eid": "kyuden_16_2(1)",
+   "name": "南熊本(110kV)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "南熊本変電所"
+  },
+  "kyu-443": {
+   "eid": "kyuden_16_2(2)",
+   "name": "南熊本(66kV)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "南熊本変電所"
+  },
+  "kyu-444": {
+   "eid": "kyuden_16_2(3)",
+   "name": "南熊本(6kV)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "南熊本変電所"
+  },
+  "kyu-445": {
+   "eid": "kyuden_16_2(4)",
+   "name": "南熊本(22kV)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "南熊本変電所"
+  },
+  "kyu-446": {
+   "eid": "kyuden_16_3",
+   "name": "緑川",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "緑川変電所"
+  },
+  "kyu-447": {
+   "eid": "kyuden_16_4",
+   "name": "北熊本",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "北熊本変電所"
+  },
+  "kyu-448": {
+   "eid": "kyuden_16_5(1)",
+   "name": "弓削(110kV)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "弓削変電所"
+  },
+  "kyu-449": {
+   "eid": "kyuden_16_5(2)",
+   "name": "弓削(66kV)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "弓削変電所"
+  },
+  "kyu-450": {
+   "eid": "kyuden_16_5(3)",
+   "name": "弓削(配変)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "弓削変電所"
+  },
+  "kyu-520": {
+   "eid": "kyuden_17_2(1)",
+   "name": "八代(220kV)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "八代変電所"
+  },
+  "kyu-521": {
+   "eid": "kyuden_17_2(2)",
+   "name": "八代(配変)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "八代変電所"
+  },
+  "kyu-554": {
+   "eid": "kyuden_17_28",
+   "name": "苓北",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "苓北変電所"
+  },
+  "kyu-555": {
+   "eid": "kyuden_18_1(1)",
+   "name": "人吉（110ｋＶ）",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "人吉変電所"
+  },
+  "kyu-556": {
+   "eid": "kyuden_18_1(2)",
+   "name": "人吉（66ｋＶ）",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "人吉変電所"
+  },
+  "kyu-557": {
+   "eid": "kyuden_18_1(3)",
+   "name": "人吉(配変)",
+   "p": "熊本県",
+   "was": "熊本県",
+   "map": 5,
+   "on_map": "人吉変電所"
+  },
+  "kyu-562": {
+   "eid": "kyuden_19_1(1)",
+   "name": "新日向",
+   "p": "宮崎県",
+   "was": "宮崎県",
+   "map": 6,
+   "on_map": "新日向変電所"
+  },
+  "kyu-563": {
+   "eid": "kyuden_19_1(2)",
+   "name": "新日向",
+   "p": "宮崎県",
+   "was": "宮崎県",
+   "map": 6,
+   "on_map": "新日向変電所"
+  },
+  "kyu-564": {
+   "eid": "kyuden_19_2(1)",
+   "name": "上椎葉",
+   "p": "宮崎県",
+   "was": "宮崎県",
+   "map": 6,
+   "on_map": "上椎葉変電所"
+  },
+  "kyu-565": {
+   "eid": "kyuden_19_2(2)",
+   "name": "上椎葉",
+   "p": "宮崎県",
+   "was": "宮崎県",
+   "map": 6,
+   "on_map": "上椎葉変電所"
+  },
+  "kyu-587": {
+   "eid": "kyuden_20_3(1)",
+   "name": "柏田",
+   "p": "宮崎県",
+   "was": "宮崎県",
+   "map": 6,
+   "on_map": "柏田変電所"
+  },
+  "kyu-588": {
+   "eid": "kyuden_20_3(2)",
+   "name": "柏田",
+   "p": "宮崎県",
+   "was": "宮崎県",
+   "map": 6,
+   "on_map": "柏田変電所"
+  },
+  "kyu-589": {
+   "eid": "kyuden_20_4",
+   "name": "一ツ瀬",
+   "p": "宮崎県",
+   "was": "宮崎県",
+   "map": 6,
+   "on_map": "一ツ瀬変電所"
+  },
+  "kyu-616": {
+   "eid": "kyuden_21_2",
+   "name": "出水",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "出水変電所"
+  },
+  "kyu-617": {
+   "eid": "kyuden_21_3(1)",
+   "name": "川内",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "川内変電所"
+  },
+  "kyu-618": {
+   "eid": "kyuden_21_3(2)",
+   "name": "川内",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "川内変電所"
+  },
+  "kyu-640": {
+   "eid": "kyuden_22_1",
+   "name": "南宮崎",
+   "p": "宮崎県",
+   "was": "鹿児島県",
+   "map": 6,
+   "on_map": "南宮崎変電所"
+  },
+  "kyu-641": {
+   "eid": "kyuden_22_2(1)",
+   "name": "都城",
+   "p": "宮崎県",
+   "was": "宮崎県",
+   "map": 6,
+   "on_map": "都城変電所"
+  },
+  "kyu-642": {
+   "eid": "kyuden_22_2(2)",
+   "name": "都城",
+   "p": "宮崎県",
+   "was": "宮崎県",
+   "map": 6,
+   "on_map": "都城変電所"
+  },
+  "kyu-643": {
+   "eid": "kyuden_22_3(1)",
+   "name": "霧島",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "霧島変電所"
+  },
+  "kyu-644": {
+   "eid": "kyuden_22_3(2)",
+   "name": "霧島",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "霧島変電所"
+  },
+  "kyu-687": {
+   "eid": "kyuden_23_1(1)",
+   "name": "鹿児島",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "鹿児島変電所"
+  },
+  "kyu-688": {
+   "eid": "kyuden_23_1(2)",
+   "name": "鹿児島",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "鹿児島変電所"
+  },
+  "kyu-689": {
+   "eid": "kyuden_23_2",
+   "name": "新鹿児島",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "新鹿児島変電所"
+  },
+  "kyu-730": {
+   "eid": "kyuden_24_1(1)",
+   "name": "若松(110kV)",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "若松変電所"
+  },
+  "kyu-731": {
+   "eid": "kyuden_24_1(2)",
+   "name": "若松(66kV1,2号)",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "若松変電所"
+  },
+  "kyu-732": {
+   "eid": "kyuden_24_1(3)",
+   "name": "若松(22kV)",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "若松変電所"
+  },
+  "kyu-741": {
+   "eid": "kyuden_25_1(1)",
+   "name": "大隅",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "大隅変電所"
+  },
+  "kyu-742": {
+   "eid": "kyuden_25_1(2)",
+   "name": "大隅",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "大隅変電所"
+  },
+  "kyu-743": {
+   "eid": "kyuden_25_1(3)",
+   "name": "大隅",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "大隅変電所"
+  },
+  "kyu-744": {
+   "eid": "kyuden_25_1(4)",
+   "name": "大隅",
+   "p": "鹿児島県",
+   "was": "鹿児島県",
+   "map": 7,
+   "on_map": "大隅変電所"
+  },
+  "kyu-766": {
+   "eid": "kyuden_26_2(1)",
+   "name": "上津役(1,2号)",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "上津役変電所"
+  },
+  "kyu-767": {
+   "eid": "kyuden_26_2(2)",
+   "name": "上津役(3,4号)",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "上津役変電所"
+  },
+  "kyu-768": {
+   "eid": "kyuden_26_2(3)",
+   "name": "上津役(6kV)",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "上津役変電所"
+  },
+  "kyu-784": {
+   "eid": "kyuden_27_1(1)",
+   "name": "古賀",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "古賀変電所"
+  },
+  "kyu-785": {
+   "eid": "kyuden_27_1(2)",
+   "name": "古賀",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "古賀変電所"
+  },
+  "kyu-799": {
+   "eid": "kyuden_28_1",
+   "name": "筑豊",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 1,
+   "on_map": "筑豊変電所"
+  },
+  "kyu-818": {
+   "eid": "kyuden_29_1(1)",
+   "name": "東福岡",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "東福岡変電所"
+  },
+  "kyu-819": {
+   "eid": "kyuden_29_1(2)",
+   "name": "東福岡",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "東福岡変電所"
+  },
+  "kyu-820": {
+   "eid": "kyuden_29_1(3)",
+   "name": "東福岡",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "東福岡変電所"
+  },
+  "kyu-821": {
+   "eid": "kyuden_29_2(1)",
+   "name": "住吉",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "住吉変電所"
+  },
+  "kyu-822": {
+   "eid": "kyuden_29_2(2)",
+   "name": "住吉",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "住吉変電所"
+  },
+  "kyu-823": {
+   "eid": "kyuden_29_2(3)",
+   "name": "住吉",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "住吉変電所"
+  },
+  "kyu-848": {
+   "eid": "kyuden_30_1",
+   "name": "南福岡",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "南福岡変電所"
+  },
+  "kyu-861": {
+   "eid": "kyuden_31_1",
+   "name": "赤坂",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "赤坂変電所"
+  },
+  "kyu-862": {
+   "eid": "kyuden_31_2(1)",
+   "name": "西福岡",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "西福岡変電所"
+  },
+  "kyu-863": {
+   "eid": "kyuden_31_2(2)",
+   "name": "西福岡",
+   "p": "福岡県",
+   "was": "福岡県",
+   "map": 0,
+   "on_map": "西福岡変電所"
+  }
+ },
+ "pending": {
+  "kyu-65": {
+   "eid": "kyuden_04_5(1)",
+   "name": "築城(22kV)",
+   "was": "大分県",
+   "district": "04",
+   "other": "福岡県",
+   "hits": [
+    2,
+    12
+   ]
+  },
+  "kyu-66": {
+   "eid": "kyuden_04_5(2)",
+   "name": "築城(6kV)",
+   "was": "大分県",
+   "district": "04",
+   "other": "福岡県",
+   "hits": [
+    2,
+    12
+   ]
+  },
+  "kyu-67": {
+   "eid": "kyuden_04_6",
+   "name": "宇島",
+   "was": "大分県",
+   "district": "04",
+   "other": "福岡県",
+   "hits": [
+    0,
+    7
+   ]
+  },
+  "kyu-68": {
+   "eid": "kyuden_04_7",
+   "name": "行橋",
+   "was": "大分県",
+   "district": "04",
+   "other": "福岡県",
+   "hits": [
+    0,
+    49
+   ]
+  },
+  "kyu-69": {
+   "eid": "kyuden_04_8(1)",
+   "name": "岸井(22kV)",
+   "was": "大分県",
+   "district": "04",
+   "other": "福岡県",
+   "hits": [
+    0,
+    2
+   ]
+  },
+  "kyu-70": {
+   "eid": "kyuden_04_8(2)",
+   "name": "岸井(6kV)",
+   "was": "大分県",
+   "district": "04",
+   "other": "福岡県",
+   "hits": [
+    0,
+    2
+   ]
+  },
+  "kyu-82": {
+   "eid": "kyuden_04_19",
+   "name": "鶴川",
+   "was": "大分県",
+   "district": "04",
+   "other": "福岡県",
+   "hits": [
+    1,
+    5
+   ]
+  },
+  "kyu-111": {
+   "eid": "kyuden_06_5(1)",
+   "name": "基山",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    1,
+    11
+   ]
+  },
+  "kyu-112": {
+   "eid": "kyuden_06_5(2)",
+   "name": "基山",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    1,
+    11
+   ]
+  },
+  "kyu-113": {
+   "eid": "kyuden_06_6(1)",
+   "name": "神辺",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    2
+   ]
+  },
+  "kyu-114": {
+   "eid": "kyuden_06_6(2)",
+   "name": "神辺",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    2
+   ]
+  },
+  "kyu-115": {
+   "eid": "kyuden_06_7",
+   "name": "轟木",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    4
+   ]
+  },
+  "kyu-116": {
+   "eid": "kyuden_06_8",
+   "name": "曽根崎",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    2
+   ]
+  },
+  "kyu-118": {
+   "eid": "kyuden_06_10(1)",
+   "name": "原古賀",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    1,
+    5
+   ]
+  },
+  "kyu-119": {
+   "eid": "kyuden_06_10(2)",
+   "name": "原古賀",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    1,
+    5
+   ]
+  },
+  "kyu-125": {
+   "eid": "kyuden_06_15(1)",
+   "name": "村田",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    5
+   ]
+  },
+  "kyu-126": {
+   "eid": "kyuden_06_15(2)",
+   "name": "村田",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    5
+   ]
+  },
+  "kyu-127": {
+   "eid": "kyuden_06_16(1)",
+   "name": "上峰",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    6
+   ]
+  },
+  "kyu-128": {
+   "eid": "kyuden_06_16(2)",
+   "name": "上峰",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    6
+   ]
+  },
+  "kyu-129": {
+   "eid": "kyuden_06_17",
+   "name": "神埼",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    5,
+    39
+   ]
+  },
+  "kyu-130": {
+   "eid": "kyuden_06_18",
+   "name": "諸富",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    2,
+    19
+   ]
+  },
+  "kyu-154": {
+   "eid": "kyuden_06_38",
+   "name": "久保泉",
+   "was": "福岡県",
+   "district": "06",
+   "other": "佐賀県",
+   "hits": [
+    1,
+    5
+   ]
+  },
+  "kyu-162": {
+   "eid": "kyuden_07_2",
+   "name": "荒尾",
+   "was": "福岡県",
+   "district": "07",
+   "other": "熊本県",
+   "hits": [
+    0,
+    47
+   ]
+  },
+  "kyu-164": {
+   "eid": "kyuden_07_4",
+   "name": "南関",
+   "was": "福岡県",
+   "district": "07",
+   "other": "熊本県",
+   "hits": [
+    0,
+    14
+   ]
+  },
+  "kyu-169": {
+   "eid": "kyuden_07_8",
+   "name": "万田",
+   "was": "福岡県",
+   "district": "07",
+   "other": "熊本県",
+   "hits": [
+    0,
+    9
+   ]
+  },
+  "kyu-170": {
+   "eid": "kyuden_07_9",
+   "name": "菰屋",
+   "was": "福岡県",
+   "district": "07",
+   "other": "熊本県",
+   "hits": [
+    0,
+    4
+   ]
+  },
+  "kyu-171": {
+   "eid": "kyuden_07_10",
+   "name": "沖洲",
+   "was": "福岡県",
+   "district": "07",
+   "other": "熊本県",
+   "hits": [
+    0,
+    2
+   ]
+  },
+  "kyu-172": {
+   "eid": "kyuden_07_11",
+   "name": "玉名",
+   "was": "福岡県",
+   "district": "07",
+   "other": "熊本県",
+   "hits": [
+    0,
+    57
+   ]
+  },
+  "kyu-216": {
+   "eid": "kyuden_09_5",
+   "name": "城町",
+   "was": "大分県",
+   "district": "09",
+   "other": "熊本県",
+   "hits": [
+    5,
+    32
+   ]
+  },
+  "kyu-224": {
+   "eid": "kyuden_09_13",
+   "name": "下筌",
+   "was": "大分県",
+   "district": "09",
+   "other": "熊本県",
+   "hits": [
+    1,
+    3
+   ]
+  },
+  "kyu-225": {
+   "eid": "kyuden_09_14",
+   "name": "小国",
+   "was": "大分県",
+   "district": "09",
+   "other": "熊本県",
+   "hits": [
+    0,
+    18
+   ]
+  },
+  "kyu-226": {
+   "eid": "kyuden_09_15",
+   "name": "杖立",
+   "was": "大分県",
+   "district": "09",
+   "other": "熊本県",
+   "hits": [
+    1,
+    8
+   ]
+  },
+  "kyu-319": {
+   "eid": "kyuden_12_13",
+   "name": "熊野",
+   "was": "長崎県",
+   "district": "12",
+   "other": "佐賀県",
+   "hits": [
+    1,
+    4
+   ]
+  },
+  "kyu-329": {
+   "eid": "kyuden_12_22",
+   "name": "有田",
+   "was": "長崎県",
+   "district": "12",
+   "other": "佐賀県",
+   "hits": [
+    3,
+    29
+   ]
+  },
+  "kyu-330": {
+   "eid": "kyuden_12_23",
+   "name": "嬉野",
+   "was": "長崎県",
+   "district": "12",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    21
+   ]
+  },
+  "kyu-333": {
+   "eid": "kyuden_12_26",
+   "name": "塩田",
+   "was": "長崎県",
+   "district": "12",
+   "other": "佐賀県",
+   "hits": [
+    1,
+    19
+   ]
+  },
+  "kyu-334": {
+   "eid": "kyuden_12_27(1)",
+   "name": "鹿島",
+   "was": "長崎県",
+   "district": "12",
+   "other": "佐賀県",
+   "hits": [
+    5,
+    38
+   ]
+  },
+  "kyu-335": {
+   "eid": "kyuden_12_27(2)",
+   "name": "鹿島",
+   "was": "長崎県",
+   "district": "12",
+   "other": "佐賀県",
+   "hits": [
+    5,
+    38
+   ]
+  },
+  "kyu-338": {
+   "eid": "kyuden_12_29",
+   "name": "七浦",
+   "was": "長崎県",
+   "district": "12",
+   "other": "佐賀県",
+   "hits": [
+    1,
+    5
+   ]
+  },
+  "kyu-339": {
+   "eid": "kyuden_12_30",
+   "name": "太良",
+   "was": "長崎県",
+   "district": "12",
+   "other": "佐賀県",
+   "hits": [
+    0,
+    9
+   ]
+  },
+  "kyu-561": {
+   "eid": "kyuden_18_5",
+   "name": "村所",
+   "was": "熊本県",
+   "district": "18",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    6
+   ]
+  },
+  "kyu-645": {
+   "eid": "kyuden_22_4",
+   "name": "細野",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    7
+   ]
+  },
+  "kyu-646": {
+   "eid": "kyuden_22_5",
+   "name": "高原",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    3,
+    24
+   ]
+  },
+  "kyu-648": {
+   "eid": "kyuden_22_7(1)",
+   "name": "えびの",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    48
+   ]
+  },
+  "kyu-649": {
+   "eid": "kyuden_22_7(2)",
+   "name": "えびの",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    48
+   ]
+  },
+  "kyu-656": {
+   "eid": "kyuden_22_13(1)",
+   "name": "志和池",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    4
+   ]
+  },
+  "kyu-657": {
+   "eid": "kyuden_22_13(2)",
+   "name": "志和池",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    4
+   ]
+  },
+  "kyu-659": {
+   "eid": "kyuden_22_15",
+   "name": "都北",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    2
+   ]
+  },
+  "kyu-660": {
+   "eid": "kyuden_22_16(1)",
+   "name": "鷹尾",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    10
+   ]
+  },
+  "kyu-661": {
+   "eid": "kyuden_22_16(2)",
+   "name": "鷹尾",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    10
+   ]
+  },
+  "kyu-663": {
+   "eid": "kyuden_22_18",
+   "name": "飫肥",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    16
+   ]
+  },
+  "kyu-664": {
+   "eid": "kyuden_22_19",
+   "name": "田野",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    33
+   ]
+  },
+  "kyu-665": {
+   "eid": "kyuden_22_20(1)",
+   "name": "青島",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    24
+   ]
+  },
+  "kyu-666": {
+   "eid": "kyuden_22_20(2)",
+   "name": "青島",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    24
+   ]
+  },
+  "kyu-667": {
+   "eid": "kyuden_22_21(1)",
+   "name": "日南",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    1,
+    63
+   ]
+  },
+  "kyu-668": {
+   "eid": "kyuden_22_21(2)",
+   "name": "日南",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    1,
+    63
+   ]
+  },
+  "kyu-670": {
+   "eid": "kyuden_22_23",
+   "name": "北郷",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    15
+   ]
+  },
+  "kyu-671": {
+   "eid": "kyuden_22_24",
+   "name": "折生迫",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    3
+   ]
+  },
+  "kyu-672": {
+   "eid": "kyuden_22_25(1)",
+   "name": "高崎1",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    6,
+    24
+   ]
+  },
+  "kyu-673": {
+   "eid": "kyuden_22_25(2)",
+   "name": "高崎2",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    6,
+    24
+   ]
+  },
+  "kyu-674": {
+   "eid": "kyuden_22_26",
+   "name": "庄内",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    9
+   ]
+  },
+  "kyu-676": {
+   "eid": "kyuden_22_28",
+   "name": "北俣",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    2,
+    7
+   ]
+  },
+  "kyu-678": {
+   "eid": "kyuden_22_30",
+   "name": "今町",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    15
+   ]
+  },
+  "kyu-679": {
+   "eid": "kyuden_22_31",
+   "name": "岩満",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    2
+   ]
+  },
+  "kyu-680": {
+   "eid": "kyuden_22_32",
+   "name": "万ヶ塚",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    3
+   ]
+  },
+  "kyu-681": {
+   "eid": "kyuden_22_33",
+   "name": "江平",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    1,
+    13
+   ]
+  },
+  "kyu-682": {
+   "eid": "kyuden_22_34",
+   "name": "丸谷",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    8
+   ]
+  },
+  "kyu-683": {
+   "eid": "kyuden_22_35",
+   "name": "関之尾",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    5
+   ]
+  },
+  "kyu-685": {
+   "eid": "kyuden_22_37",
+   "name": "大井手",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    0,
+    2
+   ]
+  },
+  "kyu-686": {
+   "eid": "kyuden_22_38",
+   "name": "末永",
+   "was": "鹿児島県",
+   "district": "22",
+   "other": "宮崎県",
+   "hits": [
+    1,
+    6
+   ]
+  }
+ },
+ "corrections": [
+  {
+   "slug": "kyu-299",
+   "name": "武雄",
+   "old": "長崎県",
+   "new": "佐賀県"
+  },
+  {
+   "slug": "kyu-300",
+   "name": "武雄",
+   "old": "長崎県",
+   "new": "佐賀県"
+  },
+  {
+   "slug": "kyu-301",
+   "name": "武雄",
+   "old": "長崎県",
+   "new": "佐賀県"
+  },
+  {
+   "slug": "kyu-640",
+   "name": "南宮崎",
+   "old": "鹿児島県",
+   "new": "宮崎県"
+  }
+ ],
+ "excluded_same_name": [
+  {
+   "slug": "kyu-551",
+   "name": "松島",
+   "district": "17",
+   "voltage": "22/6",
+   "reason": "長崎県の地図の「松島変電所」は kyu-369（220/66・地区 14）。kyu-551 は別の地区の同じ名前で、確かめたものに入れない"
+  }
+ ],
+ "near_miss_keep_label": [
+  {
+   "slug": "kyu-2",
+   "name": "浦桑",
+   "district": "01",
+   "site_pref": "長崎県",
+   "other_pref": "鹿児島県",
+   "site_pref_hits": 1,
+   "other_pref_hits": 1
+  },
+  {
+   "slug": "kyu-215",
+   "name": "玉川",
+   "district": "09",
+   "site_pref": "大分県",
+   "other_pref": "熊本県",
+   "site_pref_hits": 4,
+   "other_pref_hits": 4
+  },
+  {
+   "slug": "kyu-163",
+   "name": "港",
+   "district": "07",
+   "site_pref": "福岡県",
+   "other_pref": "熊本県",
+   "site_pref_hits": 83,
+   "other_pref_hits": 84
+  },
+  {
+   "slug": "kyu-77",
+   "name": "高田",
+   "district": "04",
+   "site_pref": "大分県",
+   "other_pref": "福岡県",
+   "site_pref_hits": 24,
+   "other_pref_hits": 62
+  },
+  {
+   "slug": "kyu-342",
+   "name": "山田",
+   "district": "12",
+   "site_pref": "長崎県",
+   "other_pref": "佐賀県",
+   "site_pref_hits": 13,
+   "other_pref_hits": 15
+  },
+  {
+   "slug": "kyu-662",
+   "name": "若葉",
+   "district": "22",
+   "site_pref": "鹿児島県",
+   "other_pref": "宮崎県",
+   "site_pref_hits": 3,
+   "other_pref_hits": 6
+  },
+  {
+   "slug": "kyu-217",
+   "name": "森",
+   "district": "09",
+   "site_pref": "大分県",
+   "other_pref": "熊本県",
+   "site_pref_hits": 63,
+   "other_pref_hits": 74
+  },
+  {
+   "slug": "kyu-677",
+   "name": "諏訪原",
+   "district": "22",
+   "site_pref": "鹿児島県",
+   "other_pref": "宮崎県",
+   "site_pref_hits": 1,
+   "other_pref_hits": 1
+  },
+  {
+   "slug": "kyu-658",
+   "name": "川東",
+   "district": "22",
+   "site_pref": "鹿児島県",
+   "other_pref": "宮崎県",
+   "site_pref_hits": 8,
+   "other_pref_hits": 11
+  },
+  {
+   "slug": "kyu-64",
+   "name": "泉",
+   "district": "04",
+   "site_pref": "大分県",
+   "other_pref": "福岡県",
+   "site_pref_hits": 40,
+   "other_pref_hits": 98
+  },
+  {
+   "slug": "kyu-318",
+   "name": "大野",
+   "district": "12",
+   "site_pref": "長崎県",
+   "other_pref": "佐賀県",
+   "site_pref_hits": 25,
+   "other_pref_hits": 26
+  },
+  {
+   "slug": "kyu-221",
+   "name": "湯山",
+   "district": "09",
+   "site_pref": "大分県",
+   "other_pref": "熊本県",
+   "site_pref_hits": 4,
+   "other_pref_hits": 9
+  },
+  {
+   "slug": "kyu-675",
+   "name": "縄瀬",
+   "district": "22",
+   "site_pref": "鹿児島県",
+   "other_pref": "宮崎県",
+   "site_pref_hits": 5,
+   "other_pref_hits": 7
+  },
+  {
+   "slug": "kyu-167",
+   "name": "浜田",
+   "district": "07",
+   "site_pref": "福岡県",
+   "other_pref": "熊本県",
+   "site_pref_hits": 5,
+   "other_pref_hits": 5
+  }
+ ],
+ "counts": {
+  "records": 884,
+  "verified": 105,
+  "pending": 70,
+  "estimated": 709,
+  "corrections": 4,
+  "verified_by_pref": {
+   "福岡県": 37,
+   "大分県": 12,
+   "佐賀県": 9,
+   "長崎県": 8,
+   "熊本県": 17,
+   "宮崎県": 10,
+   "鹿児島県": 12
+  },
+  "by_pref_before": {
+   "鹿児島県": 160,
+   "福岡県": 253,
+   "宮崎県": 55,
+   "熊本県": 122,
+   "長崎県": 140,
+   "佐賀県": 36,
+   "大分県": 118
+  },
+  "by_pref_after": {
+   "鹿児島県": 130,
+   "福岡県": 232,
+   "確認中": 70,
+   "宮崎県": 56,
+   "熊本県": 121,
+   "長崎県": 129,
+   "佐賀県": 39,
+   "大分県": 107
+  }
+ }
+}

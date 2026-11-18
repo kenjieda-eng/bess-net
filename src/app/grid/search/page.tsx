@@ -40,6 +40,7 @@ import { rescueAreaParam } from '@/lib/grid-prefecture';
 import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import { n1StatusFromRow } from '@/lib/n1-status-label';
 import { substationShownName } from '@/lib/substation-undisclosed';
+import { isPrefPending, PREF_PENDING_ROW } from '@/lib/grid-pref-pending';
 // 関西の算出値が負の空容量は 0 と表示（並べ替え・絞り込みも 0・grid-search-core）（小さな直し便・2026-11-07）
 import { shownAvailMw, negativeAvailCalc, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
 
@@ -531,6 +532,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                           {r.prefecture && ` ／ ${r.prefecture}`}
                           {/* Gr10(2026-08-11): 系統区分・設備区分は都道府県として表示しない */}
                           {!r.prefecture && r.facility_class && ` ／ 設備区分: ${r.facility_class}`}
+                          {/* 九州の県の直し便(2026-11-18): 県を確認中にしたもの */}
+                          {isPrefPending(r.area, r.prefecture, r.facility_class) && ` ／ ${PREF_PENDING_ROW}`}
                           {/* Gr11-②: 二次電圧を常時表示（同名の識別の第一手段）。同名グループで
                               二次電圧も同値のときのみ disambiguator（公式Noの枝番 等）を併記 */}
                           {r.voltage_primary_kv != null &&

@@ -148,6 +148,10 @@ export default async function GridTrackerPage() {
                     {r.note && (
                       <p style={{ fontSize: 15, lineHeight: 1.7, margin: 0, color: 'var(--color-muted)' }}>※ {r.note}</p>
                     )}
+                    {/* 九州の県の直し便(2026-11-18): 九州の行に共通で出す（行の文は書き換えない・grid-refresh-log.ts は追記のみ） */}
+                    {r.areaSlug === 'kyushu' && (
+                      <p style={{ fontSize: 15, lineHeight: 1.7, margin: '4px 0 0', color: 'var(--color-muted)' }}>※ 九州の県は、当サイトの推定を含みます。</p>
+                    )}
                   </div>
                 ))}
               </div>

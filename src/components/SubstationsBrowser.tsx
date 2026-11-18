@@ -6,6 +6,7 @@ import type { Substation } from '@/lib/microcms';
 // Gr10(2026-08-11): 都道府県欄に系統区分・設備区分を出さない（原値は設備区分として別表示）
 // 名称非公開の 23 件は「名称非公開の変電所（事業者・No.）」で出す（小さな直し便・2026-11-05）
 import { substationShownName } from '@/lib/substation-undisclosed';
+import { isPrefPending, PREF_PENDING_CELL } from '@/lib/grid-pref-pending';
 import { n1StatusFromRow, n1StatusLabel, n1StatusBadgeClass } from '@/lib/n1-status-label';
 // 関西の算出値が負の空容量は 0 と表示し、印と注記を付ける（小さな直し便・2026-11-07・導出は grid-avail.ts の 1 か所）
 import { shownAvailMw, negativeAvailCalc, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
@@ -151,6 +152,9 @@ export default function SubstationsBrowser({ items }: Props) {
                         if (s.prefecture) return s.prefecture;
                         const fc = (s as { facility_class?: string | null }).facility_class;
                         if (fc) return `設備区分: ${fc}`;
+                        // 九州の県の直し便(2026-11-18): 九州で県も設備区分も無いのは、県を確認中にしたものだけ（対応表は読まない）
+                        const ar = Array.isArray(s.area) ? s.area[0] : (s.area as unknown as string | undefined);
+                        if (isPrefPending(ar, s.prefecture, fc)) return PREF_PENDING_CELL;
                         return '—';
                       })()}
                     </td>

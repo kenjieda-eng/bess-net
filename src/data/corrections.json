@@ -11279,6 +11279,62 @@
     }
    ],
    "internalRef": "reports/grid-chubu-2026-11-17b.md (2)・(4)・(5)／reports/grid-chubu-dryrun-2026-11-15.md §2（出力制御の 2 通りの読み）／scripts/experimental/chubu/update_plan_202611.json"
+  },
+  {
+   "id": "20261118-01",
+   "date": "2026-11-18",
+   "kind": "訂正",
+   "path": "/grid/kyushu",
+   "targetTitle": "九州電力送配電の系統空き容量（エリアページ）と武雄変電所の各ページ（題名は「〇〇の系統空き容量・蓄電池連系条件」）",
+   "before": "武雄変電所の 3 件（220/110kV・220/66kV・66/6kV）を長崎県と表示（長崎県の変電所一覧にも掲載）",
+   "after": "佐賀県と表示（佐賀県の変電所一覧に掲載）。九州電力送配電の「供給余力マップ（系統用変電所）」の佐賀県エリアの地図に、武雄変電所が出ている",
+   "basis": [
+    {
+     "name": "九州電力送配電　佐賀県エリア",
+     "publisher": "九州電力送配電株式会社",
+     "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-saga.html"
+    }
+   ],
+   "internalRef": "reports/kyushu-prefecture-fix-2026-11-18.md (2)・(3)／src/data/kyushu-prefecture-map.json／reports/kyushu-prefecture-investigation-2026-11-17.md"
+  },
+  {
+   "id": "20261118-02",
+   "date": "2026-11-18",
+   "kind": "訂正",
+   "path": "/grid/kyushu",
+   "targetTitle": "九州電力送配電の系統空き容量（エリアページ）と南宮崎変電所のページ（題名は「〇〇の系統空き容量・蓄電池連系条件」）",
+   "before": "南宮崎変電所（220/66kV）を鹿児島県と表示（鹿児島県の変電所一覧にも掲載）",
+   "after": "宮崎県と表示（宮崎県の変電所一覧に掲載）。九州電力送配電の「供給余力マップ（系統用変電所）」の宮崎県エリアの地図に、南宮崎変電所が出ている",
+   "basis": [
+    {
+     "name": "九州電力送配電　宮崎県エリア",
+     "publisher": "九州電力送配電株式会社",
+     "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map/map-miyazaki.html"
+    }
+   ],
+   "internalRef": "reports/kyushu-prefecture-fix-2026-11-18.md (2)・(3)／src/data/kyushu-prefecture-map.json／reports/kyushu-prefecture-investigation-2026-11-17.md"
+  },
+  {
+   "id": "20261118-03",
+   "date": "2026-11-18",
+   "kind": "表示の停止",
+   "path": "/grid/kyushu",
+   "targetTitle": "九州電力送配電の系統空き容量（エリアページ・県別の変電所一覧）と 70 件の変電所のページの県の表示",
+   "before": "九州電力送配電の 70 件の変電所に県を表示（鹿児島県 29 件・福岡県 21 件・大分県 11 件・長崎県 8 件・熊本県 1 件）。それぞれの県の変電所一覧にも掲載",
+   "after": "県の表示を止め、県の欄を「確認中」と表示。九州電力送配電の公表資料で所在の県を確かめられず、変電所の名前が別の県の地名に当たるため。県の変電所一覧からも外した（エリアページの一覧には載っている）",
+   "basis": [
+    {
+     "name": "供給余力マップ（系統用変電所）",
+     "publisher": "九州電力送配電株式会社",
+     "url": "https://www.kyuden.co.jp/td/application/firm-location/capacity-map.html"
+    },
+    {
+     "name": "系統情報の公開",
+     "publisher": "九州電力送配電株式会社",
+     "url": "https://www.kyuden.co.jp/td/service/wheeling/disclosure.html"
+    }
+   ],
+   "internalRef": "reports/kyushu-prefecture-fix-2026-11-18.md (2)・(3)／src/data/kyushu-prefecture-map.json／reports/kyushu-prefecture-investigation-2026-11-17.md（確認中の選び方は対応表の source.pending_rule。国土地理院の地名検索は手がかりで一次ではない）"
   }
  ]
 }

@@ -19,8 +19,13 @@
  *    → 2026-11-07（関西の府県の割り当て便）から、同社の公表図から機械で作った対応表（src/data/kansai-prefecture-map.json・
  *      src/lib/kansai-prefecture.ts）で決まるものだけ府県を出す。決まらないもの（2 府県以上の図に出る・図に無い・
  *      基幹系統の大半など）は府県なしのまま。「関西ローカル系」の旧 URL はエリアページへ 301 のまま。
+ *  - 九州電力送配電の県は、最初の取込で当サイトが推定したもの（2026-11-18 九州の県の直し便から）。
+ *    → 同社「供給余力マップ（系統用変電所）」で確かめた 105 件は一次の県（違っていた 4 件はここで直る）。
+ *      名前が別の県の地名に当たる 70 件は県を出さない（確認中）。そのほかは収録の県を「当サイトの推定」として出す。
+ *      対応表 src/data/kyushu-prefecture-map.json・src/lib/kyushu-prefecture.ts。
  */
 import { kansaiPrefectureOf, type KansaiPrefectureBasis } from './kansai-prefecture';
+import { kyushuPrefectureOf } from './kyushu-prefecture';
 
 /** 実在する47都道府県 */
 export const REAL_PREFECTURES: ReadonlySet<string> = new Set([
@@ -59,6 +64,11 @@ export type NormalizedPlace = {
   facilityClass: string | null;
   /** 府県を公表データの外の資料から決めたときの根拠（関西の対応表の「図」「住所」）。原値が府県・沖縄の定義なら付かない */
   prefectureBasis?: KansaiPrefectureBasis;
+  /**
+   * 九州だけ（2026-11-18）: 'verified'＝供給余力マップで確かめた県／'estimated'＝収録の県（当サイトの推定）／
+   * 'pending'＝県を出さない（確認中・prefecture は null）
+   */
+  kyushuPrefectureStatus?: 'verified' | 'estimated' | 'pending';
 };
 
 /**
@@ -75,6 +85,16 @@ export function normalizeSubstationPlace(
 ): NormalizedPlace {
   const raw = (rawPrefecture ?? '').trim();
   const ar = (area ?? '').trim();
+
+  // 九州（2026-11-18）: 収録の県は推定。供給余力マップで確かめたものは一次の県、確認中は県を出さない。
+  //   ★正規化済みの値に掛け直されたとき（externalId なし・確認中は prefecture が null）も確認中のまま返す
+  //     （下の「府県も設備区分も無い＝基幹系統」に落とさない。九州は全件に収録の県がある）。
+  if (ar === '九州') {
+    const k = kyushuPrefectureOf(externalId);
+    if (k?.status === 'verified') return { prefecture: k.prefecture, facilityClass: null, kyushuPrefectureStatus: 'verified' };
+    if (k?.status === 'pending' || !isRealPrefecture(raw)) return { prefecture: null, facilityClass: null, kyushuPrefectureStatus: 'pending' };
+    return { prefecture: raw, facilityClass: null, kyushuPrefectureStatus: 'estimated' };
+  }
 
   if (isRealPrefecture(raw)) return { prefecture: raw, facilityClass: null };
 

@@ -31,6 +31,7 @@ import projectsPrefCount from '@/lib/generated/projects-pref-count.json';
 import { n1StatusFromRow } from '@/lib/n1-status-label';
 // 名称非公開の 23 件は「名称非公開の変電所（事業者・No.）」で出す（小さな直し便・2026-11-05）
 import { substationShownName } from '@/lib/substation-undisclosed';
+import { KYUSHU_PREFECTURES, KYUSHU_PREFECTURE_NOTE } from '@/lib/kyushu-prefecture';
 // 関西の算出値が負の空容量は 0 と表示・合計（小さな直し便・2026-11-07・導出は grid-avail.ts の 1 か所）
 import { shownAvailMw, negativeAvailCalc, formatStatNumber, NEGATIVE_AVAIL_MARK, NEGATIVE_AVAIL_LIST_NOTE } from '@/lib/grid-avail';
 
@@ -190,6 +191,12 @@ export default async function PrefecturePage({ params }: PageParams) {
             蓄電所ネット 統合データベースから {decoded} の変電所{' '}
             {subs.length}件を空容量大きい順に一覧表示しています。連系検討の初期スクリーニングに。
           </p>
+          {/* 九州の県の直し便(2026-11-18): 九州の県は推定を含む・確認中のものはこの一覧に入らない（/grid/kyushu と同じ文） */}
+          {KYUSHU_PREFECTURES.has(decoded) && (
+            <p className="grid-source-note" style={{ margin: '4px 0 16px' }}>
+              📋 {KYUSHU_PREFECTURE_NOTE}
+            </p>
+          )}
 
           {/* Gr3+Gr4(2026-08-08): 逆ブリッジ＋県内案件リンク（ゼロfetch） */}
           <section className="page-section news-shelf" style={{ marginBottom: 20 }}>

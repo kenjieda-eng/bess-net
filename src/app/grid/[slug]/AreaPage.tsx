@@ -2,6 +2,8 @@
 // /grid/tohoku, /grid/hokuriku, /grid/shikoku から呼び出される
 import Link from 'next/link';
 import { KANSAI_PREFECTURE_NOTE, normalizeSubstationPlace } from '@/lib/grid-prefecture';
+import { KYUSHU_PREFECTURE_NOTE } from '@/lib/kyushu-prefecture';
+import { isPrefPending, PREF_PENDING_CELL, PREF_PENDING_ROW } from '@/lib/grid-pref-pending';
 import { formatDataDateLabel, getAreaDates } from '@/lib/grid-data-date';
 import { CHUBU_MAP_POINTS } from '@/lib/grid-map-points';
 import SiteHeader from '@/components/SiteHeader';
@@ -80,7 +82,13 @@ function placeLabel(s: Substation): string {
   const place = resolvePlace(s);
   if (place.prefecture) return place.prefecture;
   if (place.facilityClass) return `設備区分: ${place.facilityClass}`;
+  // 九州の県の直し便(2026-11-18): 九州で県も設備区分も無いのは、県を確認中にしたものだけ
+  if (isPrefPending(areaOf(s), place.prefecture, place.facilityClass)) return PREF_PENDING_CELL;
   return '—';
+}
+
+function areaOf(s: Substation): string | undefined {
+  return Array.isArray(s.area) ? s.area[0] : (s.area as unknown as string | undefined);
 }
 
 export default async function AreaPage({ meta }: { meta: AreaMeta }) {
@@ -104,7 +112,9 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
   const byFacility = new Map<string, Substation[]>();
   for (const s of subs) {
     const place = resolvePlace(s);
-    const p = place.prefecture || place.facilityClass || '（府県の記載なし）';
+    // 九州の県の直し便(2026-11-18): 県を確認中にしたもの（九州で県も設備区分も無い行）は「県は確認中」の行に
+    const p = place.prefecture || place.facilityClass
+      || (isPrefPending(areaOf(s), place.prefecture, place.facilityClass) ? PREF_PENDING_ROW : '（府県の記載なし）');
     if (!byPref.has(p)) byPref.set(p, []);
     byPref.get(p)!.push(s);
     // 「設備区分別」表は、府県が確定していて設備区分が上表に出ない社（沖縄）専用。
@@ -398,6 +408,12 @@ export default async function AreaPage({ meta }: { meta: AreaMeta }) {
                 </tbody>
               </table>
             </div>
+            {/* 九州の県の直し便(2026-11-18): 県は供給余力マップで確かめたもののほかは推定・確認中の行がある（件数は対応表から） */}
+            {meta.slug === 'kyushu' && (
+              <p className="grid-source-note" style={{ margin: '8px 0 0' }}>
+                📋 {KYUSHU_PREFECTURE_NOTE}
+              </p>
+            )}
           </section>
 
           {/* Gr10(2026-08-11): 設備区分別（沖縄電力・関西電力送配電の原値。都道府県ではない） */}
