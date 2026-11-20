@@ -210,6 +210,18 @@ const CATEGORY_OVERRIDE: Record<string, string> = {
   'rearth-energy-development-2026-11': '開発計画',                                  // Rearth Energy Development 設立（NAXT と BLD Power Stations の共同出資）
   'digitalgrid-izumo-koshi-jukyu-2026-11': '連系',                                // 出雲古志 需給調整市場への参入（自社保有 3 か所目）
   'nomura-re-4sites-bess-2026-11': '投資',                                        // 野村不動産 4 拠点の取得（既定の 事業者動向→開発計画 ではない・蓄電所の取得）
+  // 週次ニュース便 11/20（2026-11-20 起草・対象 11/13〜11/20 12:00 配信）— 各件の _category（ユウ原稿）を正とする
+  'lehmansoft-bess-gateway-jc-star-2026-11': '技術',                              // LehmanSoft BESS Gateway の JC-STAR★1 適合ラベル取得
+  'sunvillage-sendai-kamiayashi-heisetsu-2026-11': '開発計画',                     // 仙台市上愛子発電所への蓄電池併設（完工 2027年3月予定）。日本蓄電池の NC仙台市上愛子 とは別の設備
+  'sonnedix-osakagas-oita-heisetsu-unten-2026-11': '連系',                        // 大分市の太陽光への併設蓄電池（約30MW／約125MWh）の運転開始（2 本を統合・運転開始の日付は一次に無い）
+  'bluefield-openadr-2b-2026-11': '技術',                                         // Bluefield Energy の VEN が OpenADR 2.0b 認証
+  'second-foundation-ray8-4projects-2026-11': '投資',                             // 4 件（各出力2MW）の売却（蓄電所の売買。nomura-re-4sites-bess-2026-11 に合わせる）
+  'renon-power-jc-star-3products-2026-11': '技術',                                // RENON POWER 3 製品の JC-STAR★1
+  'adw-kumamoto-mashiki-jukyu-2026-11': '連系',                                   // ADW熊本益城町蓄電所 需給調整市場への参入（取引開始の日付は一次に無い）
+  'ecostyle-teiatsu-kiki-package-2026-11': '技術',                                // エコスタイル 低圧系統用蓄電所の機器パッケージ
+  'powerx-averroes-gcc-partnership-2026-11': '海外',                              // パワーエックス×Averroes 中東湾岸の共同販売（powerx-energy-vault-partnership-2026-11 に合わせる）
+  'digitalgrid-jukyu-150mw-2026-11': '市場統計',                                  // 需給調整市場に参入した運用受託の容量 150MW 突破（既存 digitalgrid-bess-250mw-2026-11 に合わせる）
+  'hanwha-japan-teiatsu-bess-2026-11': '開発計画',                                // ハンファジャパン 低圧系統用蓄電池事業へ参入（2 本を統合）
 };
 
 function mapCategory(slug: string, suggestion?: string): string[] | undefined {
