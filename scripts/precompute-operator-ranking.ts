@@ -9,6 +9,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { getAllProjects, getAllOperators } from '../src/lib/microcms';
+import { isListExcludedProject } from '../src/lib/projects-excluded';
 
 // ──────────────────────────────────────
 // 正規化ユーティリティ
@@ -121,7 +122,11 @@ async function main() {
   console.log('[precompute-operator-ranking] 開始...');
 
   // 1. 全 projects 取得（1回のみ、鉄則#93）
-  const projects = await getAllProjects();
+  // 2026-11-21 projects の合計を正す便: 一覧から外したもの（EXCLUDED・301 元）は集計に入れない（/projects の掲載件数・合計と同じ集合）。
+  //   それまでは 419 件すべてを数えており、複数の蓄電所を合わせた計画（丸紅新電力 2.4GWh など）や重複の 301 元が順位に入っていた。
+  const projectsAll = await getAllProjects();
+  const projects = projectsAll.filter((p) => !isListExcludedProject(p.slug));
+  console.log(`[precompute-operator-ranking] 一覧から外したもの（EXCLUDED・301 元）を除く: ${projectsAll.length} → ${projects.length}件`);
   console.log(`[precompute-operator-ranking] projects: ${projects.length}件`);
 
   // 2. 全 operators 取得 → name/alias → slug マッピング（build 時のみ）
