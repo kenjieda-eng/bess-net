@@ -325,7 +325,7 @@ export default function BessInvestmentSeminarPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/projects">蓄電所プロジェクトデータベース（国内の事例）</Link>
+                <Link href="/projects">蓄電所一覧（国内の事例）</Link>
               </li>
             </ul>
           </section>

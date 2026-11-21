@@ -34,6 +34,7 @@ export const EXPECTED_GENERATED: ReadonlyArray<{ file: string; writer: string }>
   { file: 'related-news-map.json', writer: 'build:related-news' },
   { file: 'explainer-related-map.json', writer: 'build:explainer-related' },
   { file: 'projects-pref-count.json', writer: 'build:projects-pref-count' },
+  { file: 'projects-listed-count.json', writer: 'build:projects-pref-count' }, // 蓄電所一覧便（2026-11-21）: トップの「蓄電所一覧 N件」
   { file: 'projects-maintenance.json', writer: 'build:projects-maintenance' },
 ];
 

@@ -206,7 +206,7 @@ export default async function EventsCalendarPage() {
                 <Link href="/operators">事業者ナビ（EPC・O&M・PCS・電池メーカー等{operatorCount != null ? ` ${operatorCount}社` : ''}）</Link>
               </li>
               <li>
-                <Link href="/projects">プロジェクトデータベース（国内蓄電所事例）</Link>
+                <Link href="/projects">蓄電所一覧（国内の事例）</Link>
               </li>
               <li>
                 <Link href="/policy-calendar">政策・法制度カレンダー（パブコメ・重要会議）</Link>

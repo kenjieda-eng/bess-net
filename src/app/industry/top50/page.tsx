@@ -250,7 +250,7 @@ export default async function IndustryTop50Page() {
                 <Link href="/operators">事業者データベース</Link>{opCount != null ? `（${opCount}社の詳細情報）` : ''}
               </li>
               <li>
-                <Link href="/projects">プロジェクトデータベース</Link>（{totalProjects}件のプロジェクト詳細）
+                <Link href="/projects">蓄電所一覧</Link>（{totalProjects}件のプロジェクト詳細）
               </li>
               <li>
                 <Link href="/industry">業界分析ハブ</Link>（業界カオスマップ・JEPX・海外市場・トラッカー）

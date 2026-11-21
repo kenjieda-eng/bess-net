@@ -26,9 +26,9 @@ const ROUTE_BY_GROUP: Record<string, { lead: string; links: GlossaryNextStepLink
     ],
   },
   business: {
-    lead: '実際の案件動向は、全国プロジェクトDBと流通案件で確認できます。',
+    lead: '実際の案件動向は、全国の蓄電所一覧と流通案件で確認できます。',
     links: [
-      { href: '/projects', label: '全国の蓄電所プロジェクトDB' },
+      { href: '/projects', label: '全国の蓄電所一覧' },
       { href: '/anken', label: '流通案件（売買・連系枠確保済）' },
     ],
   },

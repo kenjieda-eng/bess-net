@@ -12,6 +12,7 @@
  *   - /anken の anken_contact_click（AnkenContactCTA）は残す。名前が違うので二重には数えない。
  *   - 何も描画しない（document に listener を 1 つ置くだけ）。
  *   - 次の一歩便（2026-10-17）: data-next-step の付いたリンク（NextStepBox）は next_step_click（step_variant・step_to＝行き先のパス）。
+ *   - 蓄電所一覧便（2026-11-21）: data-list-entry の付いたリンク（トップの「蓄電所一覧を見る」・先頭のカード）は list_entry_click（entry_position・entry_to）。
  */
 
 import { useEffect } from 'react';
@@ -30,6 +31,12 @@ function onActivate(e: MouseEvent): void {
   const step = a.getAttribute('data-next-step');
   if (step) {
     if (w.gtag) w.gtag('event', 'next_step_click', { step_variant: step, step_to: a.getAttribute('href') ?? '' });
+    return;
+  }
+  // 蓄電所一覧便（2026-11-21）: トップの「蓄電所一覧」への入口（data-list-entry＝top_hero・top_card）→ list_entry_click（entry_position・entry_to）
+  const entry = a.getAttribute('data-list-entry');
+  if (entry) {
+    if (w.gtag) w.gtag('event', 'list_entry_click', { entry_position: entry, entry_to: a.getAttribute('href') ?? '' });
     return;
   }
   if (!isContactHref(href)) return;

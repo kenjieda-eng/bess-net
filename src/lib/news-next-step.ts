@@ -42,7 +42,7 @@ export const NEWS_NEXT_STEP_GROUPS: NextStepGroup[] = [
     heading: '事業・案件の動きを追う',
     test: /出資|建設|MW|連系/,
     links: [
-      { href: '/projects', label: 'プロジェクトDB' },
+      { href: '/projects', label: '蓄電所一覧' },
       { href: '/anken', label: '流通案件' },
     ],
   },

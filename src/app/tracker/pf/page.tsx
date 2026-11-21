@@ -77,7 +77,7 @@ export default async function ProjectTrackerPage() {
             全 <span className="tabular-nums" style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{projects.length}</span> 件、更新日時降順。
           </p>
           <p className="page-meta" style={{ fontSize: 15, color: 'var(--color-muted)', marginBottom: 24 }}>
-            データ更新は 1 時間ごと (ISR)。全件は <Link href="/projects">プロジェクトDB</Link>、IRR シムは <Link href="/tools/irr-simulator">IRRシミュレーター</Link> から。
+            データ更新は 1 時間ごと (ISR)。全件は <Link href="/projects">蓄電所一覧</Link>、IRR シムは <Link href="/tools/irr-simulator">IRRシミュレーター</Link> から。
           </p>
 
           <TrackerTimeline items={items} limit={100} />
@@ -85,7 +85,7 @@ export default async function ProjectTrackerPage() {
           <section style={{ marginTop: 32, padding: 16, background: 'var(--color-bg)', border: '1px solid var(--color-border)', borderRadius: 6 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連</h2>
             <ul style={{ fontSize: 15, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
-              <li><Link href="/projects">プロジェクトDB (全件)</Link></li>
+              <li><Link href="/projects">蓄電所一覧 (全件)</Link></li>
               <li><Link href="/tools/irr-simulator">蓄電池 IRR シミュレーター (無料・登録不要)</Link></li>
               <li><Link href="/tools/capacity-market-bid">容量市場応札試算 (OCCTO実データ連携)</Link></li>
               <li><Link href="/tracker">業界トラッカー (4軸)</Link></li>

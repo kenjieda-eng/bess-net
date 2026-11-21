@@ -6,6 +6,7 @@ import { getAllProjects, type Project } from '@/lib/microcms';
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '@/lib/projects-excluded';
 import { codCellText } from '@/lib/projects-cod';
 import { contactUrl } from '@/lib/contact-link';
+import { jstDay, jaDayLabel } from '@/lib/page-dates';
 
 // 「情報をお持ちの方は編集部まで」＝情報提供（position feedback）
 const feedbackContactUrl = contactUrl({ campaign: 'projects_index', position: 'feedback' });
@@ -72,6 +73,19 @@ function fmtMWh(n?: number) {
   return `${n.toLocaleString()} MWh`;
 }
 
+// 蓄電所一覧便（2026-11-21）: 合計は小数 1 桁まで（値そのもの・数え方は変えない）
+function fmtTotal(n: number): string {
+  return n.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+}
+
+// 蓄電所一覧便（2026-11-21）: 状態ごとの表の見出し（h2）の id。知らない状態は並びの番号で（状態が増えても飛べる）
+const STATUS_ANCHOR: Record<string, string> = {
+  稼働中: 'status-operating', 建設中: 'status-construction', 接続検討中: 'status-grid-study', 計画中: 'status-planned', 廃止: 'status-retired', その他: 'status-other',
+};
+function statusAnchor(status: string, index: number): string {
+  return STATUS_ANCHOR[status] ?? `status-${index + 1}`;
+}
+
 // 「調査中」セル用のクラス (CSS で控えめな色に)
 function cellClass(n?: number): string {
   return n === 0 ? 'cell-investigating' : '';
@@ -106,6 +120,9 @@ export default async function ProjectsListPage() {
   const reliableMWhCount = reliableCount(items, 'capacityMwh');
   const investigatingCount = items.filter((i) => i.outputMw === 0 || i.capacityMwh === 0).length;
   const grouped = groupByStatus(items);
+  // 蓄電所一覧便（2026-11-21）: 最終更新日＝掲載中の蓄電所の revisedAt のうち、いちばん新しい日（JST・詳細ページの「更新日」と同じ関数）
+  const latestRevised = items.reduce((m, i) => (i.revisedAt && i.revisedAt > m ? i.revisedAt : m), '');
+  const latestDay = jstDay(latestRevised);
 
   return (
     <>
@@ -114,13 +131,13 @@ export default async function ProjectsListPage() {
         {/* Tier 1 UI 統一: max-w 1320 */}
         <div className="section-inner" style={{ maxWidth: 1320 }}>
           <p className="article-breadcrumb">
-            <Link href="/">トップ</Link> / プロジェクトDB
+            <Link href="/">トップ</Link> / 蓄電所一覧
           </p>
           <div className="section-label">Projects Database</div>
-          <h1 className="section-title">日本の蓄電所プロジェクトDB</h1>
+          <h1 className="section-title">全国の蓄電所一覧</h1>
           {/* Tier 1 UI 統一 #1: text-base lg:text-lg */}
           <p className="section-desc text-base lg:text-lg" style={{ marginBottom: 24, lineHeight: 1.7 }}>
-            国内の系統用蓄電池プロジェクトを公開情報ベースで一元管理しています。
+            計画中・建設中・稼働中の系統用蓄電池プロジェクトを、公開情報をもとに一覧にしています。
           </p>
 
           {items.length > 0 && (
@@ -130,14 +147,34 @@ export default async function ProjectsListPage() {
                 <div className="stat-label">掲載件数</div>
               </div>
               <div className="stat-card">
-                <div className="stat-num">{totalMW.toLocaleString()}</div>
+                <div className="stat-num">{fmtTotal(totalMW)}</div>
                 <div className="stat-label">合計出力 MW <small style={{ display: 'block', fontWeight: 400, color: 'var(--color-muted)', fontSize: 12 }}>({reliableMWCount} 件分)</small></div>
               </div>
               <div className="stat-card">
-                <div className="stat-num">{totalMWh.toLocaleString()}</div>
+                <div className="stat-num">{fmtTotal(totalMWh)}</div>
                 <div className="stat-label">合計容量 MWh <small style={{ display: 'block', fontWeight: 400, color: 'var(--color-muted)', fontSize: 12 }}>({reliableMWhCount} 件分)</small></div>
               </div>
             </div>
+          )}
+
+          {/* 蓄電所一覧便（2026-11-21）: 表へ飛ぶリンク（件数と並びは表と同じ grouped から）・最終更新日 */}
+          {items.length > 0 && (
+            <nav aria-label="状態ごとの表へ移動" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 4px', alignItems: 'center', margin: '0 0 12px', fontSize: 16 }}>
+              {grouped.map((g, i) => (
+                <span key={g.status} style={{ display: 'inline-flex', alignItems: 'center' }}>
+                  {i > 0 && <span aria-hidden="true" style={{ color: 'var(--color-muted)', margin: '0 4px' }}>｜</span>}
+                  <a href={`#${statusAnchor(g.status, i)}`} style={{ display: 'inline-block', padding: '6px 4px', fontWeight: 600 }}>
+                    {g.status}（{g.items.length}）
+                  </a>
+                </span>
+              ))}
+            </nav>
+          )}
+          {latestDay && (
+            <p style={{ margin: '0 0 20px', fontSize: 15, color: 'var(--color-muted)' }}>
+              最終更新: {jaDayLabel(latestDay)}
+              <Link href="/tracker/pf" style={{ marginLeft: 12 }}>追加・更新の履歴 →</Link>
+            </p>
           )}
 
           {/* データ品質 disclaimer (依頼: /projects 精査修正 Phase C) */}
@@ -168,9 +205,9 @@ export default async function ProjectsListPage() {
               </p>
             </div>
           ) : (
-            grouped.map((g) => (
+            grouped.map((g, gi) => (
               <section key={g.status} className="project-status-section">
-                <h2 className={`subsidy-status-title status-${g.status === '稼働中' ? 'open' : g.status === '建設中' ? 'upcoming' : 'closed'}`}>
+                <h2 id={statusAnchor(g.status, gi)} className={`subsidy-status-title status-${g.status === '稼働中' ? 'open' : g.status === '建設中' ? 'upcoming' : 'closed'}`}>
                   {g.status}（{g.items.length}件）
                 </h2>
                 <div className="subsidy-table-wrapper">

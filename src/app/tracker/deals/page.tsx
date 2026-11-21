@@ -162,7 +162,7 @@ export default function DealsPage() {
           <h2 style={{ fontSize: 20, fontWeight: 700, margin: '28px 0 8px' }}>{'関連'}</h2>
           <ul style={{ fontSize: 15, lineHeight: 1.9, paddingLeft: 22, marginBottom: 20 }}>
             <li><Link href="/tracker" style={linkStyle}>業界トラッカー</Link></li>
-            <li><Link href="/projects" style={linkStyle}>蓄電所プロジェクトDB</Link></li>
+            <li><Link href="/projects" style={linkStyle}>全国の蓄電所一覧</Link></li>
             <li><Link href="/operators" style={linkStyle}>事業者ナビ</Link></li>
             <li><Link href="/news" style={linkStyle}>蓄電池ニュース</Link></li>
           </ul>

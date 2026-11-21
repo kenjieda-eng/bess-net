@@ -127,7 +127,7 @@ function DealCard({ d, hidden }: { d: DealView; hidden: boolean }) {
           {d.projectSlugs.map((p, i) => (
             <span key={p}>
               {i === 0 ? '' : '・'}
-              <Link href={`/projects/${p}`} style={linkStyle}>{'プロジェクトDB'}</Link>
+              <Link href={`/projects/${p}`} style={linkStyle}>{'蓄電所のページ'}</Link>
             </span>
           ))}
         </p>

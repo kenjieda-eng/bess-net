@@ -153,7 +153,7 @@ export default async function Report2026Page() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📊 業界主要指標 (リアルタイム集計)</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12, marginBottom: 16 }}>
               <Stat label="主要事業者" value={`${operatorCount} 社`} sub="事業者ナビ" />
-              <Stat label="プロジェクト" value={`${projectCount} 件`} sub="プロジェクトDB" />
+              <Stat label="プロジェクト" value={`${projectCount} 件`} sub="蓄電所一覧" />
               <Stat label="累積出力" value={`${totalMW.toLocaleString()} MW`} sub="登録分のみ" />
               <Stat label="累積容量" value={`${totalMWh.toLocaleString()} MWh`} sub="登録分のみ" />
               <Stat label="補助金" value={`${subsidyCount} 件`} sub="補助金一覧" />
@@ -300,7 +300,7 @@ export default async function Report2026Page() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginTop: 0, marginBottom: 8 }}>関連 (一次データへ)</h2>
             <ul style={{ fontSize: 16, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
               <li><Link href="/operators">事業者ナビ ({operatorCount}社)</Link></li>
-              <li><Link href="/projects">プロジェクトDB ({projectCount}件)</Link></li>
+              <li><Link href="/projects">蓄電所一覧 ({projectCount}件)</Link></li>
               <li><Link href="/subsidies">補助金一覧 ({subsidyCount}件)</Link></li>
               <li><Link href="/grid">系統空き容量 ({substationCount.toLocaleString()}変電所)</Link></li>
               <li><Link href="/map/industry-chaos">業界カオスマップ</Link></li>

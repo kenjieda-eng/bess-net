@@ -38,9 +38,9 @@ const RULES: { key: ExplainerNextStepGroup['key']; pattern: RegExp; lead: string
   {
     key: 'business',
     pattern: /案件|事業計画|開発|出資|ファイナンス|SPC|IRR|デベロッパ|用地|EPC選定/,
-    lead: '実際の案件動向は、全国プロジェクトDBと流通案件で確認できます。',
+    lead: '実際の案件動向は、全国の蓄電所一覧と流通案件で確認できます。',
     links: [
-      { href: '/projects', label: '全国の蓄電所プロジェクトDB' },
+      { href: '/projects', label: '全国の蓄電所一覧' },
       { href: '/anken', label: '流通案件（売買・連系枠確保済）' },
     ],
   },
@@ -88,7 +88,7 @@ export const EXPLAINER_STAR_CTAS: Record<string, ExplainerNextStepLink> = {
   'grid-capacity-map-reading': { href: '/grid', label: '変電所別 系統空き容量ツールで実データを確認する' },
   'battery-passport-2027-implementation': { href: '/policy-calendar', label: '政策・法制度カレンダーで施行スケジュールを追う' },
   'grid-scale-bess': { href: '/lv/invest', label: '低圧から始める蓄電所投資ガイドを見る' },
-  'national-battery-supply-plan': { href: '/projects', label: '全国の蓄電所プロジェクトDBで開発状況を見る' },
+  'national-battery-supply-plan': { href: '/projects', label: '全国の蓄電所一覧で開発状況を見る' },
   'capacity-market-advanced': { href: '/tools/capacity-market-bid', label: '容量市場応札試算ツールで水準を確認する' },
   'chief-electrical-engineer': { href: '/lv/invest', label: '低圧蓄電所の実務ガイド（保安体制含む）を見る' },
   'environmental-assessment-bess': { href: '/policy-calendar', label: '政策カレンダーでアセス関連の制度動向を追う' },

@@ -135,7 +135,7 @@ export default async function IndustryChaosMapPage() {
                 <Link href="/operators">事業者ナビ{opCount != null ? ` (${opCount} 社、完全リスト)` : '（完全リスト）'}</Link>
               </li>
               <li>
-                <Link href="/projects">プロジェクトデータベース</Link>
+                <Link href="/projects">蓄電所一覧</Link>
               </li>
               <li>
                 <Link href="/explainer/grid-scale-bess">解説: 系統用蓄電池とは</Link>

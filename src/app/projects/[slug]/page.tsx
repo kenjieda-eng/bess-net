@@ -157,7 +157,7 @@ export default async function ProjectDetailPage({
         <div className="page-inner">
           <p className="article-breadcrumb">
             <Link href="/">トップ</Link> /{' '}
-            <Link href="/projects">プロジェクトDB</Link>
+            <Link href="/projects">蓄電所一覧</Link>
             {item.prefecture && ` / ${item.prefecture}`}
           </p>
 
@@ -366,7 +366,7 @@ export default async function ProjectDetailPage({
           <CorrectionHistory path={`/projects/${params.slug}`} />
 
           <p className="back-link">
-            <Link href="/projects">← プロジェクトDBへ戻る</Link>
+            <Link href="/projects">← 蓄電所一覧へ戻る</Link>
           </p>
         </div>
       </main>

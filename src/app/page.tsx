@@ -20,6 +20,7 @@ import {
   jstTodayISO,
 } from '@/lib/policy-utils';
 import substationsIndex from '@/data/substations/index.json';
+import projectsListed from '@/lib/generated/projects-listed-count.json';
 // Ck-1 A5: 容量市場の年度範囲はカタログから（「対象実需給年度」を明記・範囲を焼き込まない）
 import { CAPACITY_MARKET_NATIONAL as CMN } from '@/lib/capacity-market-defaults';
 import { contactUrl } from '@/lib/contact-link';
@@ -29,11 +30,17 @@ export const revalidate = 60;
 // ローカル JSON（変電所件数は summary.total＝/grid と同じ真実源・凍結除外、with_coords は中部マップ箇所数）
 // Ck2f ■1（2026-10-04）: 旧実装は runtime に microCMS の totalCount（凍結込み 8,352）を取っており /grid（8,345）と食い違っていた（#121）
 const SUBSTATION_INDEX = substationsIndex as unknown as { with_coords: number; summary: { total: number } };
+// 蓄電所一覧便（2026-11-21）: /projects の掲載件数（一覧除外を除く・build:projects-pref-count の生成物＝ビルド時・runtime の microCMS 0）
+const listedCount: number | null = typeof (projectsListed as { listed?: unknown }).listed === 'number' ? (projectsListed as { listed: number }).listed : null;
 
 // セクション4「データベースとツール」前面カード5枚（GA4 利用順・tools分析2026-07-09 準拠）
 // 説明文は旧「9機能」カードの文言を継承（変電所数は動的挿入）
-function buildPrimaryCards(substationsCountStr: string, chubuCountStr: string) {
+function buildPrimaryCards(substationsCountStr: string, chubuCountStr: string, listedCount: number | null) {
   return [
+    // 蓄電所一覧便（2026-11-21）: 先頭に /projects（件数はヒーローの数字の行と同じ値・取れないときはカードを出さない）
+    ...(listedCount !== null
+      ? [{ href: '/projects', title: '全国の蓄電所一覧', desc: `計画中・建設中・稼働中の系統用蓄電池 ${listedCount.toLocaleString('en-US')}件。出力・容量・事業者・運転開始を一覧で。`, tag: 'DB', entry: 'top_card' }]
+      : []),
     { href: '/tools/grid-connection-check', title: '系統連系診断', desc: `緯度経度 / 都道府県から接続候補変電所 5件抽出 (${substationsCountStr}件DB)。`, tag: 'ツール' },
     { href: '/tools/irr-simulator', title: '蓄電池 IRR シミュレーター', desc: '11入力 × 20年DCF × 感度分析。無料・登録不要のオープン公開ツール。', tag: 'ツール' },
     { href: '/grid', title: '変電所別 系統空き容量DB', desc: `全国10社・${substationsCountStr}件の予想潮流・空容量・N-1電制適用可否を一元化（表形式・エリア別/都道府県別/名称検索）。`, tag: 'DB' },
@@ -57,9 +64,9 @@ const moreFeatures = [
 ];
 
 // カード共通レンダリング
-function FeatureCard({ f }: { f: { href: string; title: string; desc: string; tag: string } }) {
+function FeatureCard({ f }: { f: { href: string; title: string; desc: string; tag: string; entry?: string } }) {
   return (
-    <Link key={f.href} href={f.href} style={{
+    <Link key={f.href} href={f.href} {...(f.entry ? { 'data-list-entry': f.entry } : {})} style={{
       display: 'block',
       padding: 14,
       border: '1px solid var(--color-border)',
@@ -148,7 +155,7 @@ export default async function Home() {
       `[home] WARN 新着解説: ${explainerData.contents.length} 件取得から ${explainerLatest.length} 本しか残らない（totalCount ${explainerData.totalCount}・filters ${NOT_LV_INVEST_FILTER}）`,
     );
   }
-  const primaryCards = buildPrimaryCards(substationsCountStr, chubuCountStr);
+  const primaryCards = buildPrimaryCards(substationsCountStr, chubuCountStr, listedCount);
 
   return (
     <>
@@ -163,10 +170,12 @@ export default async function Home() {
             <span className="accent">実務情報ポータル</span>
           </h1>
           <p>
-            業界ニュース、プロジェクトデータベース、市場制度解説、補助金カレンダー、政策・法制度カレンダー、業界イベント、業界用語FAQ、変電所別 系統空き容量、事業者情報。蓄電所事業に関わるすべての方が「ここに来れば一通りわかる」サイトを目指します。
+            業界ニュース、全国の蓄電所一覧、市場制度解説、補助金カレンダー、政策・法制度カレンダー、業界イベント、業界用語FAQ、変電所別 系統空き容量、事業者情報。蓄電所事業に関わるすべての方が「ここに来れば一通りわかる」サイトを目指します。
           </p>
           {/* 実績数値（全て動的導出・焼き込みなし） */}
           <p style={{ fontSize: 15, opacity: 0.92, marginTop: 8 }}>
+            {/* 蓄電所一覧便（2026-11-21）: 先頭に /projects の掲載件数（ビルド時の生成物・取れないときは出さない） */}
+            {listedCount !== null && <>蓄電所一覧 {listedCount.toLocaleString('en-US')}件 · </>}
             {explainerCount !== null && <>解説記事 {explainerCount.toLocaleString('en-US')}本 · </>}
             {glossaryCount !== null && <>用語集 {glossaryCount.toLocaleString('en-US')}語 · </>}
             変電所 {substationsCountStr}件/10社 · 中部マップ {chubuCountStr}箇所
@@ -174,6 +183,10 @@ export default async function Home() {
           <div className="hero-cta">
             <Link href="/tools/grid-connection-check" className="btn-primary">
               系統連系診断を使う
+            </Link>
+            {/* 蓄電所一覧便（2026-11-21）: いちばん見られている /projects への入口（クリックは list_entry_click で数える） */}
+            <Link href="/projects" className="btn-secondary" data-list-entry="top_hero">
+              蓄電所一覧を見る
             </Link>
             <Link href="/reports/2026" className="btn-secondary">
               業界レポート2026を読む

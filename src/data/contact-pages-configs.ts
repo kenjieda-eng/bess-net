@@ -143,7 +143,7 @@ export const CONTACT_PAGES_CONFIGS: Record<PlayerType, ContactPageConfig> = {
     ctaUrl: contactUrl({ campaign: 'contact_seller', position: 'form_button' }),
     relatedLinks: [
       { label: '事業者ナビ', url: '/operators' },
-      { label: 'プロジェクトDB', url: '/projects' },
+      { label: '蓄電所一覧', url: '/projects' },
       { label: 'メーカー向け情報', url: '/seller/manufacturer' },
       { label: 'EPC事業者向け情報', url: '/seller/epc' },
     ],

@@ -55,5 +55,10 @@ async function main(): Promise<void> {
   fs.mkdirSync(path.dirname(outPath), { recursive: true }); // 新規クローンには出力フォルダ自体が無い
   fs.writeFileSync(outPath, JSON.stringify(sorted, null, 1) + '\n');
   console.log(`[projects-pref-count] projects ${all.length}件（可視 ${visible.length}）→ ${Object.keys(sorted).length}都道府県 → ${outPath}`);
+  // 蓄電所一覧便（2026-11-21）: トップの「蓄電所一覧 N件」用に、/projects の掲載件数と同じ集合（一覧除外を除く）の件数を別の生成物に書く。
+  //   projects-pref-count.json は県→件数の対応表（変電所のページがキーで引く）なので、合計のキーを混ぜない。
+  const listedPath = path.join(process.cwd(), 'src/lib/generated/projects-listed-count.json');
+  fs.writeFileSync(listedPath, JSON.stringify({ listed: visible.length, generatedAt: new Date().toISOString() }, null, 1) + '\n');
+  console.log(`[projects-pref-count] 掲載件数 ${visible.length} → ${listedPath}`);
 }
 main().catch((e) => { console.error('[projects-pref-count] FATAL:', e); process.exit(1); });

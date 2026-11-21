@@ -65,7 +65,7 @@ export default function Report2026Body(props: Report2026BodyProps) {
           本レポートは、当サイトが独自機能（プロジェクトDB・事業者ナビ・系統空き容量・補助金カレンダー・用語集・火災事例DB・海外市場ハブ等）で蓄積したデータを編集統合し、市場・政策・プレイヤー・系統・補助金・安全・海外・展望を1冊に束ねたものである。<strong>分析</strong>：本質は「変動する安い再エネを、必要なときに使える電力へ変える」こと。この一点に、蓄電所事業のすべての収益機会と社会的意義が集約される。
         </p>
         <p style={LINKS}>
-          関連：<Link href="/projects">プロジェクトDB</Link>・<Link href="/industry">業界分析ハブ</Link>・解説<Link href="/explainer/lcoe-and-power-mix">LCOEと電源構成</Link>
+          関連：<Link href="/projects">蓄電所一覧</Link>・<Link href="/industry">業界分析ハブ</Link>・解説<Link href="/explainer/lcoe-and-power-mix">LCOEと電源構成</Link>
         </p>
       </section>
 
@@ -84,7 +84,7 @@ export default function Report2026Body(props: Report2026BodyProps) {
           プロジェクトの所在地は特定エリアへの集中が顕著で、登録件数の上位5都道府県は {pref(0)}・{pref(1)}・{pref(2)}・{pref(3)}・{pref(4)}（件）。<strong>分析</strong>：この偏在は各エリアの系統事情と再エネ導入状況を反映する。<strong>北海道</strong>＝風力の大量連系と出力制御リスクが最も高く、系統安定化の蓄電池価値が突出（Helios I 50MW/104MWh 等の海外資本含む大型案件が集中）。<strong>九州（福岡・熊本）</strong>＝太陽光集積で昼間の出力制御が頻発し、余剰吸収・需給調整の需要が大きい（RED大牟田・武雄など連携型）。<strong>群馬</strong>＝東京電力パワーグリッド管内で上場企業（ポート）・独立系（fantasista・オリンピア）等の中規模案件が集積。<strong>埼玉</strong>＝関東近郊立地（坂東蓄電所1号ほか）。系統の空き容量が逼迫する再エネ集積エリアほど蓄電池ニーズが高い構造が読み取れる（第5章 系統データと接続）。
         </p>
         <p style={LINKS}>
-          関連：<Link href="/projects">プロジェクトDB</Link>・<Link href="/grid">系統空き容量</Link>・解説<Link href="/explainer/hokkaido-bess-outlook">北海道の動向</Link>・<Link href="/explainer/gunma-bess-outlook">群馬の動向</Link>
+          関連：<Link href="/projects">蓄電所一覧</Link>・<Link href="/grid">系統空き容量</Link>・解説<Link href="/explainer/hokkaido-bess-outlook">北海道の動向</Link>・<Link href="/explainer/gunma-bess-outlook">群馬の動向</Link>
         </p>
       </section>
 
@@ -226,7 +226,7 @@ export default function Report2026Body(props: Report2026BodyProps) {
         </p>
         <ul style={{ ...P, paddingLeft: 20 }}>
           <li><Link href="/operators">主要事業者一覧（{n(operatorCount)}社）</Link></li>
-          <li><Link href="/projects">プロジェクトDB（{n(projectCount)}件）</Link></li>
+          <li><Link href="/projects">蓄電所一覧（{n(projectCount)}件）</Link></li>
           <li><Link href="/grid">系統空き容量（{n(substationCount)}変電所）</Link></li>
           <li><Link href="/subsidies">補助金一覧（{n(subsidyCount)}件）</Link></li>
           <li><Link href="/faq">業界用語よくある質問（FAQ）</Link>・<Link href="/policy-calendar">政策・法制度カレンダー</Link></li>
