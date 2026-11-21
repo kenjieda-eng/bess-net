@@ -12,6 +12,7 @@ import { isExcludedSubsidy } from '../data/subsidies-excluded';
 import { isHiddenLink, LINKS_EXCLUDED_SLUGS } from './links-excluded';
 import { isExcludedExplainer } from './explainer-excluded';
 import { isTopicExcludedNews } from './news-topic-gate';
+import { isListExcludedProject } from './projects-excluded';
 // Gr10(2026-08-11): 系統区分・設備区分が「都道府県」として入っている社があるため、
 // 取得層で都道府県と設備区分に分離する（microCMS は書き換えない）
 import { normalizeSubstationPlace, isRealPrefecture } from './grid-prefecture';
@@ -2279,6 +2280,10 @@ export const getLinkableTargets = async (): Promise<LinkifyTarget[]> => {
       for (const p of data.contents) {
         const name = (p.name || '').trim();
         if (!p.slug || !name || name.length < 4) continue;
+        // 2026-11-21 projects の合計を正す便: 一覧から外したもの（EXCLUDED＝検索エンジン非掲載・301 元＝統合先へ転送）は
+        // 自動リンク・関連カードの宛先にしない（一覧・sitemap・近隣カードと同じ判定 isListExcludedProject）。
+        // 301 元の名前を統合先へ張り替えないのは、関連カードが同じ slug の最長の名前を出すため（PR 題名の名前が出てしまう）。
+        if (isListExcludedProject(p.slug)) continue;
         const url = `/projects/${p.slug}`;
         out.push({ text: name, url, type: 'project' });
         const arr = projectByName.get(name) ?? [];

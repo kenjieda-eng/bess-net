@@ -28,6 +28,7 @@ import { MICROCMS_PAGE_LIMIT, MICROCMS_MAX_OFFSET } from '../src/lib/constants';
 import { GLOSSARY_301_SOURCE_SLUGS, GLOSSARY_DISPLAY_EXCLUDED_SLUGS } from '../src/lib/glossary-301';
 import { isExcludedNews } from '../src/lib/news-excluded';
 import { isTopicExcludedNews } from '../src/lib/news-topic-gate';
+import { isListExcludedProject } from '../src/lib/projects-excluded';
 
 // ── 出力型（ページが必要とする最小フィールドのみ）──────────────────
 type TermLite = { term: string; slug: string };
@@ -230,7 +231,9 @@ async function main(): Promise<void> {
       .map((op) => ({ id: op.id, slug: op.slug, name: op.name, bessRelation: op.bessRelation }));
 
     // relatedProjects: body/name に keyword を含む、-publishedAt、limit 5
+    //   2026-11-21 projects の合計を正す便: 一覧から外したもの（EXCLUDED・301 元）は出さない（一覧・sitemap・近隣カードと同じ判定）
     const relatedProjects: ProjectRef[] = keywords.length === 0 ? [] : projects
+      .filter((p) => !isListExcludedProject(p.slug))
       .filter((p) => keywords.some((kw) => (p.body ?? '').includes(kw) || (p.name ?? '').includes(kw)))
       .sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''))
       .slice(0, 5)

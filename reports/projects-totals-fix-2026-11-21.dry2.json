@@ -1,0 +1,59 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 14
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 7,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "projects/tagawa-130mwh",
+   "id": "xxc-c210cur",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/renova-himeji",
+   "id": "ts42w9orf",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/eurus-tagawa-4",
+   "id": "79l9pdf84t_9",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/sparx-sapporo-351",
+   "id": "u1ulndgu3t",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/jfe-tc-memuro",
+   "id": "1wf8z6r9z",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co10686-tokyo",
+   "id": "vzllm0p-b",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co72482-miyagi-264mwh",
+   "id": "ejgkpix1ntf",
+   "result": "skip_final_state"
+  }
+ ]
+}

@@ -12,6 +12,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import TrackerTimeline, { type TimelineItem } from '@/components/TrackerTimeline';
 import { getAllProjects } from '@/lib/microcms';
+import { isListExcludedProject } from '@/lib/projects-excluded';
 
 export const revalidate = 3600;
 
@@ -30,6 +31,8 @@ export const metadata: Metadata = {
 export default async function ProjectTrackerPage() {
   let projects: Awaited<ReturnType<typeof getAllProjects>> = [];
   try { projects = await getAllProjects(); } catch { /* graceful */ }
+  // 2026-11-21 projects の合計を正す便: 一覧から外したもの（EXCLUDED・301 元）は出さない＝件数も /projects の掲載件数と同じ集合
+  projects = projects.filter((p) => !isListExcludedProject(p.slug));
 
   const items: TimelineItem[] = projects.map((p) => ({
     id: p.id,

@@ -87,12 +87,12 @@ for (const [key, list] of byTarget) {
 }
 
 // 4b. 記事末の部品の差し込み: 表示中の記録（訂正・表示の再開）のパスに、<CorrectionHistory path=…> を出すページがあるか（ソースで突き合わせる）。
-//     一覧のページ（/events・/policy-calendar・/subsidies）は記事末を持たない＝/corrections にだけ載る。
+//     一覧のページ（/events・/policy-calendar・/subsidies・/projects〔2026-11-21 projects の合計を正す便で追加〕）は記事末を持たない＝/corrections にだけ載る。
 //     変数の部分は、ページが実在する値の集合に展開する（.+ で置くと、どのパスにも一致して検査が素通りになる）:
 //       ${config.slug} → 着地ページの設定の slug・/grid/${meta.slug} → エリア（変電所の詳細は記事末を持たない）・
 //       /policy-calendar/${params.slug} → 詳細を持つ slug（それ以外は 404）・/global/${countryKey} → 国のキー。
 //     その他の ${params.slug}（microCMS の詳細ページ）は 1 階層の任意の slug（表示中かどうかは 2 で見る）。
-const LIST_PAGES = new Set(['/events', '/policy-calendar', '/subsidies']);
+const LIST_PAGES = new Set(['/events', '/policy-calendar', '/subsidies', '/projects']);
 const EXPAND: [RegExp, string[]][] = [
   [/^\/\$\{config\.slug\}$/, Object.values(LANDING_PAGE_CONFIGS).map((x) => `/${x.slug}`)],
   [/^\/grid\/\$\{meta\.slug\}$/, Object.keys(AREA_META).map((s) => `/grid/${s}`)],
