@@ -25,6 +25,17 @@ export const SITE_HISTORY_CATEGORIES: readonly SiteHistoryCategory[] = ['ペー�
 /** 新しい順（文案の並び） */
 export const SITE_HISTORY: readonly SiteHistoryItem[] = [
   {
+    id: "N5",
+    date: "2026-11-21",
+    category: "データベース",
+    title: "蓄電所一覧に絞り込み・並べ替え・CSV を追加",
+    summary: "全国の蓄電所一覧を、キーワード・地域・状態・出力・運転開始の年で絞り込み、出力や運転開始の順に並べ替えられるようになりました。当てはまる件数と合計がその場で分かり、条件つきの URL を共有できます。表示中の結果は、出典と取得日時の入った CSV でダウンロードできます。",
+    links: [
+      { label: "全国の蓄電所一覧", url: "/projects" },
+    ],
+    ref: "蓄電所一覧の検索便（reports/projects-search-2026-11-21.md）",
+  },
+  {
     id: "N4",
     date: "2026-11-10",
     category: "トラッカー",

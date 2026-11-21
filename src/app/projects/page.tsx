@@ -4,9 +4,12 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getAllProjects, type Project } from '@/lib/microcms';
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '@/lib/projects-excluded';
-import { codCellText } from '@/lib/projects-cod';
 import { contactUrl } from '@/lib/contact-link';
 import { jstDay, jaDayLabel } from '@/lib/page-dates';
+// 蓄電所一覧の検索便（2026-11-21）: 状態の並び・調査中・合計・数字の書式は src/lib/projects-list.ts の 1 か所（#119）。
+//   絞り込み・並べ替え・CSV はブラウザの部品 ProjectsBrowser（初めの状態で今と同じ 4 つの表を全行 描く）。
+import { fmtTotal, groupByStatus, isInvestigating, reliableCount, sumReliable, toListRow } from '@/lib/projects-list';
+import ProjectsBrowser from './ProjectsBrowser';
 
 // 「情報をお持ちの方は編集部まで」＝情報提供（position feedback）
 const feedbackContactUrl = contactUrl({ campaign: 'projects_index', position: 'feedback' });
@@ -20,89 +23,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://bess-net.jp/projects' },
 };
 
-const STATUS_ORDER = ['稼働中', '建設中', '接続検討中', '計画中', '廃止'];
-
-// 「調査中」(0 値) を各 status グループの最下位にソート (依頼: Phase C)
-function sortInvestigatingLast(items: Project[]): Project[] {
-  return [...items].sort((a, b) => {
-    const aInvestigating = a.outputMw === 0 || a.capacityMwh === 0 ? 1 : 0;
-    const bInvestigating = b.outputMw === 0 || b.capacityMwh === 0 ? 1 : 0;
-    if (aInvestigating !== bInvestigating) return aInvestigating - bInvestigating;
-    // 二次キー: 出力 MW 降順 (信頼可能データの中で大きい順)
-    const aMw = a.outputMw ?? 0;
-    const bMw = b.outputMw ?? 0;
-    return bMw - aMw;
-  });
-}
-
-function groupByStatus(items: Project[]) {
-  const groups: Record<string, Project[]> = {};
-  for (const item of items) {
-    const status = (item.status && item.status[0]) || 'その他';
-    if (!groups[status]) groups[status] = [];
-    groups[status].push(item);
-  }
-  // 各グループ内で「調査中」を最下位に
-  for (const s of Object.keys(groups)) {
-    groups[s] = sortInvestigatingLast(groups[s]);
-  }
-  const ordered: Array<{ status: string; items: Project[] }> = [];
-  for (const s of STATUS_ORDER) {
-    if (groups[s]) {
-      ordered.push({ status: s, items: groups[s] });
-      delete groups[s];
-    }
-  }
-  for (const s of Object.keys(groups)) {
-    ordered.push({ status: s, items: groups[s] });
-  }
-  return ordered;
-}
-
-// 0 MW / 0 MWh を「調査中」と表示 (依頼: /projects データ精査修正 Phase C)
-// 公開情報が不足しているプロジェクトの誤情報伝播を防止
-function fmtMW(n?: number) {
-  if (n == null) return '—';
-  if (n === 0) return '調査中';
-  return `${n.toLocaleString()} MW`;
-}
-
-function fmtMWh(n?: number) {
-  if (n == null) return '—';
-  if (n === 0) return '調査中';
-  return `${n.toLocaleString()} MWh`;
-}
-
-// 蓄電所一覧便（2026-11-21）: 合計は小数 1 桁まで（値そのもの・数え方は変えない）
-function fmtTotal(n: number): string {
-  return n.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-}
-
-// 蓄電所一覧便（2026-11-21）: 状態ごとの表の見出し（h2）の id。知らない状態は並びの番号で（状態が増えても飛べる）
-const STATUS_ANCHOR: Record<string, string> = {
-  稼働中: 'status-operating', 建設中: 'status-construction', 接続検討中: 'status-grid-study', 計画中: 'status-planned', 廃止: 'status-retired', その他: 'status-other',
-};
-function statusAnchor(status: string, index: number): string {
-  return STATUS_ANCHOR[status] ?? `status-${index + 1}`;
-}
-
-// 「調査中」セル用のクラス (CSS で控えめな色に)
-function cellClass(n?: number): string {
-  return n === 0 ? 'cell-investigating' : '';
-}
-
-// 合計値: 0 MW/MWh はカウントから除外 (info-only エントリの誤計上防止)
-function sumReliable(items: Project[], key: 'outputMw' | 'capacityMwh'): number {
-  return items.reduce((s, i) => {
-    const v = i[key];
-    return v != null && v > 0 ? s + v : s;
-  }, 0);
-}
-
-function reliableCount(items: Project[], key: 'outputMw' | 'capacityMwh'): number {
-  return items.filter((i) => i[key] != null && (i[key] as number) > 0).length;
-}
-
 export default async function ProjectsListPage() {
   let items: Project[] = [];
   try {
@@ -114,15 +34,49 @@ export default async function ProjectsListPage() {
   items = items.filter((p) => !LIST_EXCLUDED_PROJECT_SLUGS.has(p.slug));
 
   // 「調査中」(0 値) を除いた信頼可能な合計のみ集計
-  const totalMW = sumReliable(items, 'outputMw');
-  const totalMWh = sumReliable(items, 'capacityMwh');
-  const reliableMWCount = reliableCount(items, 'outputMw');
-  const reliableMWhCount = reliableCount(items, 'capacityMwh');
-  const investigatingCount = items.filter((i) => i.outputMw === 0 || i.capacityMwh === 0).length;
-  const grouped = groupByStatus(items);
+  const totalMW = sumReliable(items.map((i) => i.outputMw));
+  const totalMWh = sumReliable(items.map((i) => i.capacityMwh));
+  const reliableMWCount = reliableCount(items.map((i) => i.outputMw));
+  const reliableMWhCount = reliableCount(items.map((i) => i.capacityMwh));
+  const investigatingCount = items.filter((i) => isInvestigating(i.outputMw, i.capacityMwh)).length;
+  // 今の並び（状態の順 → 状態の中は「調査中」を最後・出力の大きい順）。ブラウザはこの順をそのまま使い、並べ直さない
+  //   ブラウザへ渡すのは軽い形だけ（body・緯度経度・市場・id は渡さない）
+  const rows = groupByStatus(items).flatMap((g) => g.items.map((p) => toListRow(p, jstDay)));
   // 蓄電所一覧便（2026-11-21）: 最終更新日＝掲載中の蓄電所の revisedAt のうち、いちばん新しい日（JST・詳細ページの「更新日」と同じ関数）
   const latestRevised = items.reduce((m, i) => (i.revisedAt && i.revisedAt > m ? i.revisedAt : m), '');
   const latestDay = jstDay(latestRevised);
+
+  // 最終更新日と注記 2 つ（サーバーの JSX のまま。一覧があるときはブラウザの部品の children で渡す）
+  const notes = (
+    <>
+      {latestDay && (
+        <p style={{ margin: '0 0 20px', fontSize: 15, color: 'var(--color-muted)' }}>
+          最終更新: {jaDayLabel(latestDay)}
+          <Link href="/tracker/pf" style={{ marginLeft: 12 }}>追加・更新の履歴 →</Link>
+        </p>
+      )}
+
+      {/* データ品質 disclaimer (依頼: /projects 精査修正 Phase C) */}
+      {investigatingCount > 0 && (
+        <section style={{
+          marginTop: 0, marginBottom: 24, padding: 16,
+          background: 'rgba(255,200,0,0.08)', border: '1px solid #c70',
+          borderRadius: 6,
+        }} aria-label="データ品質に関するご案内">
+          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.7 }}>
+            ※ 出力 <strong>0 MW</strong> または容量 <strong>0 MWh</strong> と表示されているプロジェクト
+            ({investigatingCount} 件) は<strong>「調査中」</strong>として扱い、合計値の集計からも除外しています。
+            公開情報が不足しているため、一次情報を確認次第順次更新します。
+            情報をお持ちの方は <a href={feedbackContactUrl} target="_blank" rel="noopener noreferrer">編集部</a> までお寄せください。
+          </p>
+        </section>
+      )}
+
+      <p className="page-meta" style={{ marginTop: 0, marginBottom: 32, paddingTop: 0, borderTop: 'none' }}>
+        ※ 本DBは各社プレスリリース・公開資料・電力会社の公表情報に基づき構造化したものです。最新情報は事業者の公式情報でご確認ください。
+      </p>
+    </>
+  );
 
   return (
     <>
@@ -157,96 +111,19 @@ export default async function ProjectsListPage() {
             </div>
           )}
 
-          {/* 蓄電所一覧便（2026-11-21）: 表へ飛ぶリンク（件数と並びは表と同じ grouped から）・最終更新日 */}
-          {items.length > 0 && (
-            <nav aria-label="状態ごとの表へ移動" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 4px', alignItems: 'center', margin: '0 0 12px', fontSize: 16 }}>
-              {grouped.map((g, i) => (
-                <span key={g.status} style={{ display: 'inline-flex', alignItems: 'center' }}>
-                  {i > 0 && <span aria-hidden="true" style={{ color: 'var(--color-muted)', margin: '0 4px' }}>｜</span>}
-                  <a href={`#${statusAnchor(g.status, i)}`} style={{ display: 'inline-block', padding: '6px 4px', fontWeight: 600 }}>
-                    {g.status}（{g.items.length}）
-                  </a>
-                </span>
-              ))}
-            </nav>
-          )}
-          {latestDay && (
-            <p style={{ margin: '0 0 20px', fontSize: 15, color: 'var(--color-muted)' }}>
-              最終更新: {jaDayLabel(latestDay)}
-              <Link href="/tracker/pf" style={{ marginLeft: 12 }}>追加・更新の履歴 →</Link>
-            </p>
-          )}
-
-          {/* データ品質 disclaimer (依頼: /projects 精査修正 Phase C) */}
-          {investigatingCount > 0 && (
-            <section style={{
-              marginTop: 0, marginBottom: 24, padding: 16,
-              background: 'rgba(255,200,0,0.08)', border: '1px solid #c70',
-              borderRadius: 6,
-            }} aria-label="データ品質に関するご案内">
-              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.7 }}>
-                ※ 出力 <strong>0 MW</strong> または容量 <strong>0 MWh</strong> と表示されているプロジェクト
-                ({investigatingCount} 件) は<strong>「調査中」</strong>として扱い、合計値の集計からも除外しています。
-                公開情報が不足しているため、一次情報を確認次第順次更新します。
-                情報をお持ちの方は <a href={feedbackContactUrl} target="_blank" rel="noopener noreferrer">編集部</a> までお寄せください。
-              </p>
-            </section>
-          )}
-
-          <p className="page-meta" style={{ marginTop: 0, marginBottom: 32, paddingTop: 0, borderTop: 'none' }}>
-            ※ 本DBは各社プレスリリース・公開資料・電力会社の公表情報に基づき構造化したものです。最新情報は事業者の公式情報でご確認ください。
-          </p>
-
           {items.length === 0 ? (
-            <div className="empty-state">
-              <p>プロジェクトデータはまだ準備中です。</p>
-              <p style={{ marginTop: 8, fontSize: 15, color: 'var(--color-muted)' }}>
-                公開情報のリサーチを経て、Sprint 1終了までに10件以上の初期データを公開予定です。
-              </p>
-            </div>
+            <>
+              {notes}
+              <div className="empty-state">
+                <p>プロジェクトデータはまだ準備中です。</p>
+                <p style={{ marginTop: 8, fontSize: 15, color: 'var(--color-muted)' }}>
+                  公開情報のリサーチを経て、Sprint 1終了までに10件以上の初期データを公開予定です。
+                </p>
+              </div>
+            </>
           ) : (
-            grouped.map((g, gi) => (
-              <section key={g.status} className="project-status-section">
-                <h2 id={statusAnchor(g.status, gi)} className={`subsidy-status-title status-${g.status === '稼働中' ? 'open' : g.status === '建設中' ? 'upcoming' : 'closed'}`}>
-                  {g.status}（{g.items.length}件）
-                </h2>
-                <div className="subsidy-table-wrapper">
-                  <table className="subsidy-table">
-                    <thead>
-                      <tr>
-                        <th>プロジェクト名</th>
-                        <th>所在地</th>
-                        <th>出力</th>
-                        <th>容量</th>
-                        <th>事業者</th>
-                        {/* 金曜#6 追修便 ■2: 列見出しは「運転開始」、未実現の日付にだけセル側で「（予定）」を付ける（projects-cod.ts） */}
-                        <th>運転開始</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {g.items.map((item) => (
-                        <tr key={item.id}>
-                          <td>
-                            <Link href={`/projects/${item.slug}`} className="subsidy-link">
-                              {item.name}
-                            </Link>
-                          </td>
-                          <td>
-                            {item.prefecture}
-                            {item.city && ` ${item.city}`}
-                          </td>
-                          {/* Tier 1 UI 統一 #3: 数値カラムは tabular-nums で桁揃え */}
-                          <td className={`tabular-nums ${cellClass(item.outputMw)}`} style={item.outputMw === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic', fontVariantNumeric: 'tabular-nums' } : { fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{fmtMW(item.outputMw)}</td>
-                          <td className={`tabular-nums ${cellClass(item.capacityMwh)}`} style={item.capacityMwh === 0 ? { color: 'var(--color-muted)', fontStyle: 'italic', fontVariantNumeric: 'tabular-nums' } : { fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>{fmtMWh(item.capacityMwh)}</td>
-                          <td>{item.operator || '—'}</td>
-                          <td>{codCellText(item)}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </section>
-            ))
+            // 並び（§1）: 絞り込みの箱 → 結果の行 → 表へ移動 → 最終更新日・注記 2 つ（children）→ 表
+            <ProjectsBrowser rows={rows}>{notes}</ProjectsBrowser>
           )}
 
           <section style={{

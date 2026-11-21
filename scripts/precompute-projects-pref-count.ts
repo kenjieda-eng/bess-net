@@ -24,6 +24,7 @@ const BASE = `https://${SERVICE_DOMAIN}.microcms.io/api/v1/projects`;
 // 一覧除外集合はコード SSOT（src/lib/projects-excluded.ts）と同じ定義を re-export できないため
 // （tsx から src/lib の import は可能）直接 import する。
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '../src/lib/projects-excluded';
+import { prefOf } from '../src/lib/projects-list';
 
 type Row = { slug: string; prefecture?: string };
 
@@ -42,11 +43,11 @@ async function main(): Promise<void> {
 
   const counts: Record<string, number> = {};
   for (const p of visible) {
-    const pref = (p.prefecture || '').trim();
-    // 「宮城県」「東京都・兵庫県…（複数）」等の表記に対応: 単一都道府県のみ計上（複数県・空は対象外）
-    const m = pref.match(/^(.{2,3}?[都道府県])$/);
-    if (!m) continue;
-    counts[m[1]] = (counts[m[1]] || 0) + 1;
+    // 単一の都道府県だけ数える（複数県・空・文の切れ端は数えない）。決め方は /projects の地域の絞り込みと同じ関数
+    //   （src/lib/projects-list.ts の prefOf＝47 都道府県の名前とぴったり同じときだけ・蓄電所一覧の検索便 2026-11-21）
+    const pref = prefOf(p.prefecture);
+    if (!pref) continue;
+    counts[pref] = (counts[pref] || 0) + 1;
   }
   const sorted: Record<string, number> = {};
   for (const k of Object.keys(counts).sort()) sorted[k] = counts[k];

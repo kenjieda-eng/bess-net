@@ -11,7 +11,7 @@
  *   - overdue: 運開予定日超過 = cod（解釈可能なもの）< ビルド日(JST) かつ status !== '稼働中'
  *   いずれも一覧除外集合（LIST_EXCLUDED_PROJECT_SLUGS）を除いた「掲載対象」から抽出する。
  *
- * 判定定義は /projects の実装（src/app/projects/page.tsx）と同じ式を使う（#119: 定義は一箇所）。
+ * 判定定義は /projects の実装と同じ関数を使う（src/lib/projects-list.ts の isInvestigating・#119: 定義は一箇所）。
  * ここで式を変えると「サイトの表示件数」と「保守リストの件数」がずれるので、変える時は両方直すこと。
  *
  * 出力はキー順を固定しタイムスタンプを持たない＝データ不変なら差分ゼロ（drift 抑制。
@@ -25,6 +25,7 @@ import * as path from 'node:path';
 import { LIST_EXCLUDED_PROJECT_SLUGS } from '../src/lib/projects-excluded';
 // cod の解釈と予定日超過の判定は src/lib/projects-cod.ts に一本化（詳細ページの「運転開始／運転開始予定」ラベルと同じ関数・#119）
 import { isCodOverdue, jstTodayISO } from '../src/lib/projects-cod';
+import { isInvestigating as isInvestigatingValues } from '../src/lib/projects-list';
 
 const SERVICE_DOMAIN = process.env.MICROCMS_SERVICE_DOMAIN;
 const API_KEY = process.env.MICROCMS_API_KEY;
@@ -46,9 +47,9 @@ type Row = {
   cod?: string;
 };
 
-/** 「調査中」判定（/projects の investigatingCount と同一式） */
+/** 「調査中」判定。式は src/lib/projects-list.ts の 1 か所（/projects の件数・注記・「調査中だけ」の絞り込みと同じ関数・蓄電所一覧の検索便 2026-11-21） */
 export function isInvestigating(p: Pick<Row, 'outputMw' | 'capacityMwh'>): boolean {
-  return p.outputMw === 0 || p.capacityMwh === 0;
+  return isInvestigatingValues(p.outputMw, p.capacityMwh);
 }
 
 type Entry = {
