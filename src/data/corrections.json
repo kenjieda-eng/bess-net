@@ -12681,6 +12681,213 @@
     }
    ],
    "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-45",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co161802-kumamoto",
+   "record": "projects/pr-co161802-kumamoto",
+   "targetTitle": "NC玉名市青野蓄電所（日本蓄電池）",
+   "before": "運転開始を 2026-03-09 と表示（2026年3月9日は発表の配信日）\n名称に事業者名の表示なし\n出典は会社のトップページで、本文は自動の文だった",
+   "after": "運転開始の欄を空にしました（発表に運転開始の日が書かれていないため。受電の開始と、需給調整市場向けの運用の開始の日は本文に書きました）\n名称に事業者名を添えました\nEPC を足し、本文と出典を、需給調整市場向けの運用の開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】熊本県玉名市にて系統用蓄電施設「NC玉名市青野蓄電所」需給調整市場への参入",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000102.000161802.html"
+    },
+    {
+     "name": "熊本県玉名市にて系統用蓄電施設「NC玉名市青野蓄電所」蓄電池受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000043.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup4-1-2026-11-22.md"
+  },
+  {
+   "id": "20261122-46",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co161802-saga-2",
+   "record": "projects/pr-co161802-saga-2",
+   "targetTitle": "NC唐津市相知町蓄電所（日本蓄電池）",
+   "before": "運転開始を 2025-10-14 と表示（2025年10月14日は発表の配信日）\n出典は会社のトップページで、本文は自動の文だった",
+   "after": "運転開始の欄を空にしました（発表に運転開始の日が書かれていないため。受電の開始と、需給調整市場向けの運用の開始の日は本文に書きました）\n所在地を 唐津市相知町 に直しました\n市場（需給調整市場）と EPC を足し、本文と出典を、需給調整市場向けの運用の開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】佐賀県唐津市にて系統用蓄電施設「NC唐津市相知町蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000052.000161802.html"
+    },
+    {
+     "name": "日本蓄電池は佐賀県唐津市にて系統用蓄電所の運転開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000009.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup4-1-2026-11-22.md"
+  },
+  {
+   "id": "20261122-47",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co161802-gifu-3",
+   "record": "projects/pr-co161802-gifu-3",
+   "targetTitle": "NC羽島市足近町蓄電所（日本蓄電池）",
+   "before": "運転開始を 2026-01-05 と表示（2026年1月5日は発表の配信日）\n出典は会社のトップページで、本文は自動の文だった",
+   "after": "運転開始を、受電の開始の発表の表にある運転開始日 2025年10月15日 に直しました\n市場（需給調整市場）と EPC を足し、本文と出典を、需給調整市場向けの運用の開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】岐阜県羽島市足近町にて系統用蓄電施設「NC羽島市足近町蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000014.000161802.html"
+    },
+    {
+     "name": "日本蓄電池株式会社、岐阜県羽島市足近町にて系統用蓄電施設「NC羽島足近町蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000010.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup4-1-2026-11-22.md"
+  },
+  {
+   "id": "20261122-48",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co161802-yamaguchi",
+   "record": "projects/pr-co161802-yamaguchi",
+   "targetTitle": "NC北山田堤下蓄電所（日本蓄電池）",
+   "before": "運転開始を 2026-02-16 と表示（2026年2月16日は発表の配信日）\n出典は会社のトップページで、本文は自動の文だった",
+   "after": "運転開始を、受電の開始の発表の表にある運転開始日 2026年1月30日 に直しました\n市場（需給調整市場）と EPC を足し、本文と出典を、需給調整市場向けの運用の開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】山口県山口市にて系統用蓄電施設「NC北山田堤下蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000100.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】山口県山口市嘉川にて系統用蓄電施設　　「NC北山田堤下蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000038.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup4-1-2026-11-22.md"
+  },
+  {
+   "id": "20261122-49",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co161802-fukushima",
+   "record": "projects/pr-co161802-fukushima",
+   "targetTitle": "NC岩瀬郡鏡石町蓄電所（日本蓄電池）",
+   "before": "運転開始を 2026-03-06 と表示（2026年3月6日は発表の配信日）\n出力を 1.988 MW と表示\n出典は会社のトップページで、本文は自動の文だった",
+   "after": "運転開始を、受電の開始の発表の表にある運転開始日 2026年3月3日 に直しました\n出力を、新しい方の発表の 1.977 MW に直しました\n市場（需給調整市場）と EPC を足し、本文と出典を、需給調整市場向けの運用の開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】福島県岩瀬郡にて系統用蓄電施設「NC岩瀬郡鏡石町蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000081.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】福島県岩瀬郡にて系統用蓄電施設「NC岩瀬郡鏡石町蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000042.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup4-1-2026-11-22.md"
+  },
+  {
+   "id": "20261122-50",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co161802-shimane",
+   "record": "projects/pr-co161802-shimane",
+   "targetTitle": "NC益田市東町蓄電所（日本蓄電池）",
+   "before": "出典は会社のトップページで、本文は自動の文だった",
+   "after": "市場（需給調整市場）と EPC を足し、本文と出典を、需給調整市場向けの運用の開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】鳥取県益田市にて系統用蓄電施設「NC益田市東町蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000101.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】島根県益田市にて系統用蓄電施設「NC益田市東町蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000055.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup4-1-2026-11-22.md"
+  },
+  {
+   "id": "20261122-51",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co161802-gifu",
+   "record": "projects/pr-co161802-gifu",
+   "targetTitle": "NC岐阜市太郎丸蓄電所（日本蓄電池）",
+   "before": "運転開始を 2026-04-13 と表示（2026年4月13日は発表の配信日）\n出典は会社のトップページで、本文は自動の文だった",
+   "after": "運転開始を、受電の開始の発表の表にある運転開始日 2026年1月26日 に直しました\n市場（需給調整市場）と EPC を足し、本文と出典を、需給調整市場向けの運用の開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000057.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000034.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup4-1-2026-11-22.md"
+  },
+  {
+   "id": "20261122-52",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co161802-kumamoto-2",
+   "record": "projects/pr-co161802-kumamoto-2",
+   "targetTitle": "NC宇城市豊野町蓄電所（日本蓄電池）",
+   "before": "状態を「建設中」と表示\n出力を 1.998 MW と表示\n出典は会社のトップページで、本文は自動の文だった",
+   "after": "状態を「稼働中」に直しました（発表は、需給調整市場向けの運用を開始したとしている）\n出力を、新しい方の発表の 1.988 MW に直しました\n市場（需給調整市場）と EPC を足し、本文と出典を、需給調整市場向けの運用の開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】熊本県宇城市にて系統用蓄電施設「NC宇城市豊野町蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000066.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】宇城市豊野町にて系統用蓄電施設「NC宇城市豊野町蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000013.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup4-1-2026-11-22.md"
+  },
+  {
+   "id": "20261122-53",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co161802-miyagi",
+   "record": "projects/pr-co161802-miyagi",
+   "targetTitle": "NC仙台市上愛子B蓄電所（日本蓄電池）",
+   "before": "出力を 1.988 MW と表示\n本文は自動の文で、出典は受電の開始の発表だった",
+   "after": "出力を、新しい方の発表の 1.959 MW に直しました\n市場（需給調整市場）と EPC を足し、本文と出典を、需給調整市場向けの運用の開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC青葉区上愛子B蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000085.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000056.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup4-1-2026-11-22.md"
   }
  ]
 }

@@ -1,8 +1,8 @@
 #!/usr/bin/env tsx
 /**
- * scripts/build-projects-2026-11-22.ts — projects の 11/22 の 3 便（_QUEUE.md 132 行「掃除その 2」＝--part=A／133 行「名前の直し」＝--part=B／135 行「掃除その 3」＝--part=C）の書込計画を作る（読むだけ）
+ * scripts/build-projects-2026-11-22.ts — projects の 11/22 の 5 便（_QUEUE.md 132 行「掃除その 2」＝--part=A／133 行「名前の直し」＝--part=B／135 行「掃除その 3」＝--part=C／137 行「掃除その 4-1」＝--part=E1／138 行「掃除その 4-2」＝--part=E2）の書込計画を作る（読むだけ）
  *
- * 計画: reports/projects-plan-2026-11-22-A_ユウ.json（sha256 先頭 16 桁 df908094a87b2d04）／…-B_ユウ.json（dc58147dc0acdc9c）／…-C_ユウ.json（afe4141b97e26a0c）＝OneDrive の正本の写し。
+ * 計画: reports/projects-plan-2026-11-22-A_ユウ.json（sha256 先頭 16 桁 df908094a87b2d04）／…-B_ユウ.json（dc58147dc0acdc9c）／…-C_ユウ.json（afe4141b97e26a0c）／…-E1_ユウ.json（add159ed75f4e31e）／…-E2_ユウ.json（91e8ed4b790f99ff）＝OneDrive の正本の写し。
  * やること（microCMS は GET だけ・書込 0）:
  *   1. patches を slug で GET し、計画の old（空は null・[]・''・未設定を同じに扱う）・keep と照らす。old が違う op は、その op だけ計画に入れない（problems に書く）。
  *   2. applier（scripts/apply-projects-2026-11-22.ts → runApplier）の計画を書く。
@@ -20,10 +20,16 @@ const KEY = process.env.MICROCMS_API_KEY;
 if (!KEY) { console.error('MICROCMS_API_KEY 未設定'); process.exit(1); }
 const arg = (k: string) => process.argv.find((x) => x.startsWith(`--${k}=`))?.slice(k.length + 3);
 const PART = arg('part') ?? '';
-if (PART !== 'A' && PART !== 'B' && PART !== 'C') { console.error('--part=A か --part=B か --part=C'); process.exit(1); }
+const PARTS: Record<string, [out: string, label: string]> = {
+  A: ['reports/projects-cleanup2-A-2026-11-22.json', 'projects の掃除便その 2（_QUEUE.md 132 行）'],
+  B: ['reports/projects-names-2026-11-22.json', 'projects の名前の直し便（_QUEUE.md 133 行）'],
+  C: ['reports/projects-cleanup3-2026-11-22.json', 'projects の掃除便その 3（_QUEUE.md 135 行）'],
+  E1: ['reports/projects-cleanup4-1-2026-11-22.json', 'projects の掃除便その 4-1（_QUEUE.md 137 行）'],
+  E2: ['reports/projects-cleanup4-2-2026-11-22.json', 'projects の掃除便その 4-2（_QUEUE.md 138 行）'],
+};
+if (!PARTS[PART]) { console.error(`--part=${Object.keys(PARTS).join('|')}`); process.exit(1); }
 const PLAN_IN = `reports/projects-plan-2026-11-22-${PART}_ユウ.json`;
-const OUT = PART === 'A' ? 'reports/projects-cleanup2-A-2026-11-22.json' : PART === 'B' ? 'reports/projects-names-2026-11-22.json' : 'reports/projects-cleanup3-2026-11-22.json';
-const LABEL = PART === 'A' ? 'projects の掃除便その 2（_QUEUE.md 132 行）' : PART === 'B' ? 'projects の名前の直し便（_QUEUE.md 133 行）' : 'projects の掃除便その 3（_QUEUE.md 135 行）';
+const [OUT, LABEL] = PARTS[PART];
 const SKIP = new Set((arg('skip') ?? '').split(',').filter(Boolean));
 const SKIP_OP = new Set((arg('skip-op') ?? '').split(',').filter(Boolean));
 const EP = `https://${DOMAIN}.microcms.io/api/v1/projects`;

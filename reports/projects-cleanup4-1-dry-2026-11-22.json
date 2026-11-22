@@ -1,0 +1,286 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 18
+ },
+ "counts": {
+  "patched": 9,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-kumamoto",
+   "id": "kdzy1ll1o8e",
+   "result": "dry",
+   "fields": [
+    "name",
+    "epc",
+    "cod",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "name": "NC玉名市青野蓄電所",
+    "epc": null,
+    "cod": "2026-03-09",
+    "sourceUrl": "https://www.nipponchikudenchi.co.jp",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>NC玉名市青野蓄電所</strong>は、熊本県玉名市に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：稼働中（発表日：2026-03-09）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000043.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000043.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p><strong>【2026年8月19日追記】</strong>2026年8月19日より、デジタルグリッドをアグリゲーターとして需給調整市場での運用を開始した。本施設は日本蓄電池とリミックスポイントが共同で組成したファンドにより開発され、日本蓄電池が開発・運営、リミックスポイントが事業管理・統括を担う。</p>"
+   },
+   "after": {
+    "name": "NC玉名市青野蓄電所（日本蓄電池）",
+    "epc": "株式会社クラフティア",
+    "cod": "",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000102.000161802.html",
+    "body": "<p><strong>NC玉名市青野蓄電所</strong>は、日本蓄電池株式会社が熊本県玉名市に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年8月19日のリリースは、「熊本県玉名市に設置した系統用蓄電施設「NC玉名市青野蓄電所」について、2026年8月19日より需給調整市場における運用を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000102.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】熊本県玉名市にて系統用蓄電施設「NC玉名市青野蓄電所」需給調整市場への参入（日本蓄電池株式会社、2026年8月19日）</a>）。</p><p>施設概要は、施設名を「NC玉名市青野蓄電所」、所在地を「熊本県玉名市」、定格出力・容量を「1,998kW・8,146kWh」、蓄電池システムを「TMEIC（蓄電池：CATL）」、需給調整運用開始日を「2026年8月19日」、アグリゲータを「デジタルグリッド株式会社」とする。蓄電池システムはTMEIC製（蓄電池はCATL製）。</p><p>受電の開始について、2026年3月9日のリリースは「株式会社リミックスポイント（本社：東京都港区、代表取締役社長CEO：高橋由彦）と共同で組成したファンドにて開発を進めているNC玉名市青野蓄電所（所在地：熊本県玉名市）において受電を開始したことをお知らせいたします」と述べ、施設概要は、設計・施工会社を「株式会社 クラフティア」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000043.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">熊本県玉名市にて系統用蓄電施設「NC玉名市青野蓄電所」蓄電池受電開始（日本蓄電池株式会社、2026年3月9日）</a>）。リリースに運転開始の日の記載はないため、運転開始の欄は空にしている。定格出力・容量は、このリリースでは「1,988kW・8,146kWh」。当サイトの出力の欄は、新しい方のリリースの値による。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-saga-2",
+   "id": "92awa-pkbhim",
+   "result": "dry",
+   "fields": [
+    "city",
+    "epc",
+    "cod",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "city": "唐津市",
+    "epc": null,
+    "cod": "2025-10-14",
+    "marketParticipation": [],
+    "sourceUrl": "https://www.nipponchikudenchi.co.jp",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>日本蓄電池は佐賀県唐津市にて系統用蓄電所</strong>は、佐賀県日本蓄電池は佐賀県唐津市に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：稼働中（発表日：2025-10-14）。</p><p>九州エリアで第一号</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000009.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000009.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "city": "唐津市相知町",
+    "epc": "クラフティア",
+    "cod": "",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000052.000161802.html",
+    "body": "<p><strong>NC唐津市相知町蓄電所</strong>は、日本蓄電池株式会社が佐賀県唐津市相知町に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年3月31日のリリースは、「佐賀県唐津市相知町に設置した系統用蓄電施設「NC唐津市相知町蓄電所」について、2026年3月27日より需給調整市場向けの運用を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000052.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】佐賀県唐津市にて系統用蓄電施設「NC唐津市相知町蓄電所」需給調整市場への運用開始（日本蓄電池株式会社、2026年3月31日）</a>）。</p><p>施設概要は、施設名を「NC唐津市相知町蓄電所」、所在地を「佐賀県唐津市相知町」、定格出力・容量を「1,988kW・8,146kWh」、蓄電池システムを「ダイヘン（蓄電池：CATL）」、需給調整運用開始日を「2026年3月27日」、アグリゲータを「デジタルグリッド株式会社」とする。蓄電池システムはダイヘン製（蓄電池はCATL製）。役割について、リリースは「日本蓄電池：プロジェクト全体の開発・運用・現場管理」「デジタルグリッド：デジタルグリッドプラットフォームを活用したアグリゲーション・需給調整市場などへの参入支援」としている。</p><p>受電の開始について、2025年10月14日のリリースは「令和7年10月10日、開発を進めていたNC唐津市相知町蓄電所（所在地：佐賀県唐津市、以下「当蓄電所」）において、受電を開始したことをお知らせいたします」「本受電開始により、蓄電システムの各機器試験および運転確認を経て、今後、商用運転開始に向けた最終調整を行ってまいります」と述べ、蓄電所概要は、設計・施工を「クラフティア（旧社名：九電工）」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000009.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">日本蓄電池は佐賀県唐津市にて系統用蓄電所の運転開始（日本蓄電池株式会社、2025年10月14日）</a>）。リリースの題は「日本蓄電池は佐賀県唐津市にて系統用蓄電所の運転開始」だが、本文が知らせているのは受電の開始で、運転開始の日の記載はないため、運転開始の欄は空にしている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-gifu-3",
+   "id": "m12nta4i82u",
+   "result": "dry",
+   "fields": [
+    "epc",
+    "cod",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "epc": null,
+    "cod": "2026-01-05",
+    "marketParticipation": [],
+    "sourceUrl": "https://www.nipponchikudenchi.co.jp",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>日本蓄電池</strong>は、岐阜県【日本蓄電池株式会社】岐阜県羽島市に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：稼働中（発表日：2026-01-05）。</p><p>〜再生可能エネルギーの安定供給と脱炭素社会の実現に向けて〜</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000014.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000014.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "epc": "株式会社ワイ・ジャスト",
+    "cod": "2025-10-15",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000014.000161802.html",
+    "body": "<p><strong>NC羽島市足近町蓄電所</strong>は、日本蓄電池株式会社が岐阜県羽島市足近町に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年1月5日のリリースは、「岐阜県羽島市足近町に設置した系統用蓄電施設「NC羽島市足近町蓄電所」について、2026年1月3日より需給調整市場向けの運用を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000014.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】岐阜県羽島市足近町にて系統用蓄電施設「NC羽島市足近町蓄電所」需給調整市場への運用開始（日本蓄電池株式会社、2026年1月5日）</a>）。</p><p>施設概要は、施設名を「NC羽島市足近町蓄電所」、所在地を「岐阜県羽島市足近町」、定格出力・容量を「1,988kW・8,146kWh」、蓄電池システムを「TMEIC（蓄電池：CATL）」、需給調整運用開始日を「2026年1月3日」、アグリゲータを「デジタルグリッド株式会社」とする。蓄電池システムはTMEIC製（蓄電池はCATL製）。</p><p>受電の開始について、2025年11月5日のリリースは「岐阜県羽島市足近町に建設した系統用蓄電施設「NC羽島足近町蓄電所」が、2025年10月15日に受電を開始したことをお知らせいたします」と述べ、施設概要は、運転開始日を「2025年10月15日」、施工会社を「株式会社ワイ・ジャスト」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000010.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">日本蓄電池株式会社、岐阜県羽島市足近町にて系統用蓄電施設「NC羽島足近町蓄電所」受電開始（日本蓄電池株式会社、2025年11月5日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。施設名は、このリリースでは「NC羽島足近町蓄電所」。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-yamaguchi",
+   "id": "ljc794b75ey",
+   "result": "dry",
+   "fields": [
+    "epc",
+    "cod",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "epc": null,
+    "cod": "2026-02-16",
+    "marketParticipation": [],
+    "sourceUrl": "https://www.nipponchikudenchi.co.jp/",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>日本蓄電池</strong>は、山口県【日本蓄電池株式会社】山口県山口市に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：稼働中（発表日：2026-02-16）。</p><p>〜再エネ電力の安定供給と防災力向上に貢献〜</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000038.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000038.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "epc": "株式会社カンドー",
+    "cod": "2026-01-30",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000100.000161802.html",
+    "body": "<p><strong>NC北山田堤下蓄電所</strong>は、日本蓄電池株式会社が山口県山口市に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年8月18日のリリースは、「山口県山口市に設置した系統用蓄電施設「NC北山田堤下蓄電所」について、2026年8月18日より需給調整市場向けの運用を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000100.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】山口県山口市にて系統用蓄電施設「NC北山田堤下蓄電所」需給調整市場への運用開始（日本蓄電池株式会社、2026年8月18日）</a>）。</p><p>施設概要は、施設名を「NC北山田堤下蓄電所」、所在地を「山口県山口市」、定格出力・容量を「1,988kW・8,146kWh」、蓄電池システムを「TMEIC（蓄電池：CATL）」、需給調整運用開始日を「2026年8月18日」、アグリゲータを「デジタルグリッド株式会社」とする。蓄電池システムはTMEIC製（蓄電池はCATL製）。</p><p>受電の開始について、2026年2月16日のリリースは「山口県山口市嘉川に建設した系統用蓄電施設「NC北山田堤下蓄電所」が、2026年1月30日に受電を開始したことをお知らせいたします」と述べ、施設概要は、運転開始日を「2026年1月30日」、施工会社を「株式会社カンドー」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000038.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】山口県山口市嘉川にて系統用蓄電施設　　「NC北山田堤下蓄電所」受電開始（日本蓄電池株式会社、2026年2月16日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-fukushima",
+   "id": "y5twq9vapu",
+   "result": "dry",
+   "fields": [
+    "epc",
+    "outputMw",
+    "cod",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "epc": null,
+    "outputMw": 1.988,
+    "cod": "2026-03-06",
+    "marketParticipation": [],
+    "sourceUrl": "https://www.nipponchikudenchi.co.jp",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>日本蓄電池</strong>は、福島県【日本蓄電池株式会社】福島県岩瀬郡にて系統用蓄電施設「NC岩瀬郡鏡石町に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：稼働中（発表日：2026-03-06）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000042.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000042.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "epc": "鈴木電機株式会社",
+    "outputMw": 1.977,
+    "cod": "2026-03-03",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000081.000161802.html",
+    "body": "<p><strong>NC岩瀬郡鏡石町蓄電所</strong>は、日本蓄電池株式会社が福島県岩瀬郡に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年6月25日のリリースは、「福島県岩瀬郡に設置した系統用蓄電施設「NC岩瀬郡鏡石町蓄電所」について、2026年6月23日より需給調整市場向けの運用を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000081.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】福島県岩瀬郡にて系統用蓄電施設「NC岩瀬郡鏡石町蓄電所」需給調整市場への運用開始（日本蓄電池株式会社、2026年6月25日）</a>）。</p><p>施設概要は、施設名を「NC岩瀬郡鏡石町蓄電所」、所在地を「福島県岩瀬郡」、定格出力・容量を「1,977kW・8,146kWh」、蓄電池システムを「TMEIC（蓄電池：CATL）」、需給調整運用開始日を「2026年6月23日」、アグリゲータを「デジタルグリッド株式会社」とする。蓄電池システムはTMEIC製（蓄電池はCATL製）。</p><p>受電の開始について、2026年3月6日のリリースは「福島県岩瀬郡に建設した系統用蓄電施設「NC岩瀬郡鏡石町蓄電所」が、2026年3月3日に受電を開始したことをお知らせいたします」と述べ、施設概要は、運転開始日を「2026年3月3日」、設計・施工会社を「鈴木電機株式会社」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000042.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】福島県岩瀬郡にて系統用蓄電施設「NC岩瀬郡鏡石町蓄電所」受電開始（日本蓄電池株式会社、2026年3月6日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。定格出力・容量は、このリリースでは「1,988kW・8,146kWh」。当サイトの出力の欄は、新しい方のリリースの値による。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-shimane",
+   "id": "y07-uo67gow",
+   "result": "dry",
+   "fields": [
+    "epc",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "epc": null,
+    "marketParticipation": [],
+    "sourceUrl": "https://www.nipponchikudenchi.co.jp",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>日本蓄電池</strong>は、島根県【日本蓄電池株式会社】島根県益田市に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：稼働中（発表日：2026-04-01）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000055.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000055.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "epc": "株式会社カンドー",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000101.000161802.html",
+    "body": "<p><strong>NC益田市東町蓄電所</strong>は、日本蓄電池株式会社が島根県益田市に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年8月18日のリリースは、「鳥取県益田市に設置した系統用蓄電施設「NC益田市東町蓄電所」について、2026年8月18日より需給調整市場向けの運用を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000101.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】鳥取県益田市にて系統用蓄電施設「NC益田市東町蓄電所」需給調整市場への運用開始（日本蓄電池株式会社、2026年8月18日）</a>）。</p><p>施設概要は、施設名を「NC益田市東町蓄電所」、所在地を「鳥取県益田市」、定格出力・容量を「1,988kW・8,146kWh」、蓄電池システムを「TMEIC（蓄電池：CATL）」、需給調整運用開始日を「2026年8月18日」、アグリゲータを「デジタルグリッド株式会社」とする。蓄電池システムはTMEIC製（蓄電池はCATL製）。</p><p>受電の開始について、2026年4月1日のリリースは「島根県益田市に建設した系統用蓄電施設「NC益田市東町蓄電所」が、2026年3月19日に受電を開始したことをお知らせいたします」と述べ、施設概要は、運転開始日を「2026年3月19日」、設計・施工会社を「株式会社カンドー」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000055.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】島根県益田市にて系統用蓄電施設「NC益田市東町蓄電所」受電開始（日本蓄電池株式会社、2026年4月1日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。需給調整市場のリリースは所在地を「鳥取県益田市」と書いているが、受電のリリースは「島根県益田市」としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-gifu",
+   "id": "fpc29cnw7",
+   "result": "dry",
+   "fields": [
+    "epc",
+    "cod",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "epc": null,
+    "cod": "2026-04-13",
+    "marketParticipation": [],
+    "sourceUrl": "https://www.nipponchikudenchi.co.jp",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>日本蓄電池</strong>は、岐阜県【日本蓄電池株式会社】岐阜県岐阜市に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：稼働中（発表日：2026-04-13）。</p><p>〜再生可能エネルギーの安定供給と脱炭素社会の実現に向けて〜</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000057.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000057.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "epc": "株式会社ワイ・ジャスト",
+    "cod": "2026-01-26",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000057.000161802.html",
+    "body": "<p><strong>NC岐阜市太郎丸蓄電所</strong>は、日本蓄電池株式会社が岐阜県岐阜市太郎丸に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年4月13日のリリースは、「岐阜県岐阜市太郎丸に設置した系統用蓄電施設「NC岐阜市太郎丸蓄電所」について、2026年4月13日より需給調整市場向けの運用を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000057.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」需給調整市場への運用開始（日本蓄電池株式会社、2026年4月13日）</a>）。</p><p>施設概要は、施設名を「NC岐阜市太郎丸蓄電所」、所在地を「岐阜県岐阜市太郎丸」、定格出力・容量を「1,988kW・8,146kWh」、蓄電池システムを「TMEIC（蓄電池：CATL）」、需給調整運用開始日を「2026年 4月13日」、アグリゲーターを「デジタルグリッド株式会社」とする。蓄電池システムはTMEIC製（蓄電池はCATL製）。役割について、リリースは「日本蓄電池：プロジェクト全体の開発・運用・現場管理」「デジタルグリッド：デジタルグリッドプラットフォームを活用したアグリゲーション・需給調整市場などへの参入支援」としている。</p><p>受電の開始について、2026年1月27日のリリースは「岐阜県岐阜市太郎丸に建設した系統用蓄電施設「NC岐阜市太郎丸蓄電所」が、2026年1月26日に受電を開始したことをお知らせいたします」と述べ、施設概要は、運転開始日を「2026年1月26日」、施工会社を「株式会社ワイ・ジャスト」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000034.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】岐阜県岐阜市太郎丸にて系統用蓄電施設「NC岐阜市太郎丸蓄電所」受電開始（日本蓄電池株式会社、2026年1月27日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-kumamoto-2",
+   "id": "osw85lfvjdvy",
+   "result": "dry",
+   "fields": [
+    "epc",
+    "status",
+    "outputMw",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "epc": null,
+    "status": [
+     "建設中"
+    ],
+    "outputMw": 1.998,
+    "marketParticipation": [],
+    "sourceUrl": "https://www.nipponchikudenchi.co.jp",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>日本蓄電池</strong>は、熊本県【日本蓄電池株式会社】宇城市に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：建設中（発表日：2025-06-18）。</p><p>熊本県 第一号となる系統蓄電所を新設</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000004.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000004.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "epc": "株式会社クラフティア",
+    "status": [
+     "稼働中"
+    ],
+    "outputMw": 1.988,
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000066.000161802.html",
+    "body": "<p><strong>NC宇城市豊野町蓄電所</strong>は、日本蓄電池株式会社が熊本県宇城市豊野町に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年6月1日のリリースは、「熊本県宇城市豊野町に設置した系統用蓄電施設「NC宇城市豊野町蓄電所」について、2026年5月28日より需給調整市場向けの運用を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000066.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】熊本県宇城市にて系統用蓄電施設「NC宇城市豊野町蓄電所」需給調整市場への運用開始（日本蓄電池株式会社、2026年6月1日）</a>）。</p><p>施設概要は、施設名を「NC宇城市豊野町蓄電所」、所在地を「熊本県宇城市豊野町」、定格出力・容量を「1,988kW・8,146kWh」、蓄電池システムを「TMEIC（蓄電池：CATL）」、需給調整運用開始日を「2026年5月28日」、アグリゲータを「デジタルグリッド株式会社」とする。蓄電池システムはTMEIC製（蓄電池はCATL製）。役割について、リリースは「日本蓄電池：プロジェクト全体の開発・運用・現場管理」「デジタルグリッド：デジタルグリッドプラットフォームを活用したアグリゲーション・需給調整市場などへの参入支援」としている。</p><p>受電の開始について、2025年12月19日のリリースは「熊本県宇城市豊野町に建設した系統用蓄電施設「NC宇城市豊野町蓄電所」が、2025年12月18日に受電を開始したことをお知らせいたします」と述べ、施設概要は、運転開始日を「2025年12月18日」、設計・施工会社を「株式会社クラフティア（旧九電工）」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000013.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】宇城市豊野町にて系統用蓄電施設「NC宇城市豊野町蓄電所」受電開始（日本蓄電池株式会社、2025年12月19日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。定格出力・容量は、このリリースでは「1,999kW・8,146kWh」。当サイトの出力の欄は、新しい方のリリースの値による。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-miyagi",
+   "id": "kqd6n6hf7e",
+   "result": "dry",
+   "fields": [
+    "epc",
+    "outputMw",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "epc": null,
+    "outputMw": 1.988,
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000056.000161802.html",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>日本蓄電池</strong>は、宮城県【日本蓄電池株式会社】宮城県仙台市に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：稼働中（発表日：2026-04-03）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000056.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000056.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>※同一地区の別施設: 本施設「NC仙台市上愛子B蓄電所」と「NC仙台市青葉区上愛子蓄電所」は、宮城県仙台市・上愛子地区にある別々の系統用蓄電所です。定格出力1,988kW・定格容量8,146kWh・蓄電システムTMEIC（蓄電池：CATL）・設計施工 株式会社ミライト・ワンが同値のため重複と誤認されやすいものの、受電の告知は別リリース（本施設 2026年4月3日公表／青葉区上愛子 同年4月1日公表）で、需給調整市場の運用開始日も 2026年6月30日／同年6月23日と異なります。重複登録ではありません。なお事業者は本施設を「NC青葉区上愛子B蓄電所」とも表記します。</p>"
+   },
+   "after": {
+    "epc": "株式会社ミライト・ワン",
+    "outputMw": 1.959,
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000085.000161802.html",
+    "body": "<p><strong>NC仙台市上愛子B蓄電所</strong>は、日本蓄電池株式会社が宮城県仙台市に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年7月6日のリリースは、「宮城県仙台市に設置した系統用蓄電施設「NC青葉区上愛子B蓄電所」について、2026年6月30日より需給調整市場向けの運用を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000085.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC青葉区上愛子B蓄電所」需給調整市場への運用開始（日本蓄電池株式会社、2026年7月6日）</a>）。</p><p>施設概要は、施設名を「NC青葉区上愛子B蓄電所」、所在地を「宮城県仙台市」、定格出力・容量を「1,959kW・8,146kWh」、蓄電池システムを「TMEIC（蓄電池：CATL）」、需給調整運用開始日を「2026年6月30日」、アグリゲータを「デジタルグリッド株式会社」とする。蓄電池システムはTMEIC製（蓄電池はCATL製）。</p><p>受電の開始について、2026年4月3日のリリースは「宮城県仙台市に建設した系統用蓄電施設「NC仙台市上愛子B蓄電所」が、2026年4月1日に受電を開始したことをお知らせいたします」と述べ、施設概要は、運転開始日を「2026年4月1日」、設計・施工会社を「株式会社ミライト・ワン」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000056.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】宮城県仙台市にて系統用蓄電施設「NC仙台市上愛子B蓄電所」受電開始（日本蓄電池株式会社、2026年4月3日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。定格出力・容量は、このリリースでは「1,988kW・8,146kWh」。当サイトの出力の欄は、新しい方のリリースの値による。施設名は、このリリースでは「NC仙台市上愛子B蓄電所」。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  }
+ ]
+}
