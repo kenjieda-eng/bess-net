@@ -12,7 +12,13 @@
  *   (3) 役割語と社名が**同一文**にあることを要件にする、の3点を実装で担保する。
  *   単なる言及（「北海道電力ネットワーク管内の…」等）は役割語がないため採用されない。
  */
-import { coreName, findOperatorMentions, normalizeForMatch } from './operator-match';
+import {
+  coreName,
+  findOperatorMentions,
+  normalizeForMatch,
+  projectOperatorMatches,
+  resolveStructuredEntities,
+} from './operator-match';
 
 export type InvolvementRole =
   | 'オフテイク'
@@ -20,6 +26,15 @@ export type InvolvementRole =
   | 'EPC・施工'
   | '機器供給'
   | '出資';
+
+/** 役割の表示順（ページ・索引とも同じ順） */
+export const INVOLVEMENT_ROLE_ORDER: readonly InvolvementRole[] = [
+  'オフテイク',
+  '運用・最適化',
+  'EPC・施工',
+  '機器供給',
+  '出資',
+];
 
 /**
  * 役割ラベル → その役割を示す語。
@@ -131,6 +146,74 @@ export function detectInvolvementRoles(
     if (companyAnchoredSupply(unit, operatorName)) roles.add('機器供給');
   }
   // 役割の表示順を安定させる
-  const order: InvolvementRole[] = ['オフテイク', '運用・最適化', 'EPC・施工', '機器供給', '出資'];
-  return order.filter((r) => roles.has(r));
+  return INVOLVEMENT_ROLE_ORDER.filter((r) => roles.has(r));
+}
+
+/* ------------------------------------------------------------------------ *
+ * 案件の EPC の欄（projects.epc）を使う（2026-11-22・_QUEUE.md 136 行）
+ *
+ * 本文だけで判定していたため、(1) 事業者の欄を持ち主に直した案件が、建設した会社のページから消えた
+ * （実測: 御前崎＝サンヴィレッジ・和光＝TAOKE ENERGY）。(2) 表の引用を 1 つの文として書いた本文で、
+ * 隣の欄の「EPC」の語が別の会社に付いた（実測: tokuman-saga-bess の「EMS デジタルグリッド株式会社／EPC契約日」）。
+ *   ① EPC の欄が結び付く事業者に「EPC・施工」を付ける。
+ *   ② EPC の欄に値がある案件では、本文からの「EPC・施工」を、欄が結び付く事業者だけに残す。
+ *   EPC の欄が空の案件は、本文からの判定をそのまま使う。
+ *   ①は、事業者の欄が空の案件（所有者が一次に無い）では足さない。この節のページの文は「◯◯はこれらの案件を保有していません」で、
+ *   所有者が分からない案件を足すと、裏づけの無い断定になるため（実測: GRITZ の 3 件・NC真庭＝開発・設計・施工をした会社だけが一次にある）。
+ * ------------------------------------------------------------------------ */
+
+/** 欄の値（空・文字列の "null" は空として扱う） */
+export function fieldText(raw: string | null | undefined): string {
+  const t = normalizeForMatch(raw).trim();
+  return t === 'null' || t === 'undefined' ? '' : t;
+}
+
+/**
+ * EPC の欄がその事業者に結び付くか。保有の判定と同じ厳しさ＝
+ * 構造化欄のマスタ完全一致（entityIndex に入れた正式名・別名）か、projectOperatorMatches。素の部分一致は使わない。
+ */
+export function epcFieldMatches(
+  epc: string | null | undefined,
+  operatorName: string,
+  entityIndex: Map<string, string[]>
+): boolean {
+  const t = fieldText(epc);
+  if (!t) return false;
+  return resolveStructuredEntities(t, entityIndex).includes(operatorName) || projectOperatorMatches(t, operatorName);
+}
+
+/** 本文からの役割に EPC の欄を合わせる（上の ①②）。ownerKnown＝事業者の欄に値がある。順は INVOLVEMENT_ROLE_ORDER */
+export function applyEpcField(
+  bodyRoles: Iterable<InvolvementRole>,
+  epc: string | null | undefined,
+  matchesEpc: boolean,
+  ownerKnown: boolean
+): InvolvementRole[] {
+  const roles = new Set<InvolvementRole>(bodyRoles);
+  if (fieldText(epc)) {
+    if (!matchesEpc) roles.delete('EPC・施工');
+    else if (ownerKnown) roles.add('EPC・施工');
+  }
+  return INVOLVEMENT_ROLE_ORDER.filter((r) => roles.has(r));
+}
+
+/**
+ * 案件とその事業者の「関与」の役割（1 つも無ければ空＝載せない）。
+ * 保有している事業者（owned）には付けない＝保有と関与を重ねない。
+ */
+export function involvementRolesFor(
+  project: { name?: string | null; body?: string; epc?: string | null; operator?: string | null },
+  operatorName: string,
+  nameVariants: readonly string[],
+  entityIndex: Map<string, string[]>,
+  owned: boolean
+): InvolvementRole[] {
+  if (owned) return [];
+  const bodyRoles = nameVariants.flatMap((nv) => detectInvolvementRoles(project.name ?? '', project.body, nv));
+  return applyEpcField(
+    bodyRoles,
+    project.epc,
+    epcFieldMatches(project.epc, operatorName, entityIndex),
+    fieldText(project.operator) !== ''
+  );
 }

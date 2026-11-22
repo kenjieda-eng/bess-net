@@ -33,7 +33,7 @@ import {
   explainerSlugsForOperator,
   OPERATOR_EXPLAINER_LIMIT,
 } from '../src/lib/operator-explainer-routing';
-import { detectInvolvementRoles, type InvolvementRole } from '../src/lib/project-involvement';
+import { involvementRolesFor, type InvolvementRole } from '../src/lib/project-involvement';
 import * as path from 'node:path';
 import {
   client,
@@ -328,17 +328,18 @@ async function main(): Promise<void> {
         .map((s) => s.trim())
         .filter(Boolean),
     ];
+    // 2026-11-22: 案件の EPC の欄も使う（欄が結び付く会社に「EPC・施工」・欄に値がある案件では本文からの EPC を欄の会社だけに残す）。
+    //   欄の突合は保有の判定と同じ索引（正式名＋別名の完全一致）。判定は project-involvement.ts の involvementRolesFor。
     const involvedAll = projectsVisible
-      .filter((p) => !ownedSlugs.has(p.slug))
       .map((p) => ({
         p,
-        roles: [
-          ...new Set(
-            aliasVariants.flatMap((nv) =>
-              detectInvolvementRoles(p.name ?? '', (p as any).body, nv)
-            )
-          ),
-        ],
+        roles: involvementRolesFor(
+          { name: p.name, body: (p as any).body, epc: p.epc, operator: p.operator },
+          op.name,
+          aliasVariants,
+          projectsEntityIndexAlias,
+          ownedSlugs.has(p.slug)
+        ),
       }))
       .filter((x) => x.roles.length > 0);
     involvedCountByOp.set(op.name, involvedAll.length);
