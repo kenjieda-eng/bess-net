@@ -1,0 +1,706 @@
+{
+ "note": "projects の掃除便その 2（_QUEUE.md 132 行）。ユウの計画（reports/projects-plan-2026-11-22-A_ユウ.json）の patches を、書込直前の GET で確かめて applier の形にしたもの。scripts/apply-projects-2026-11-22.ts（runApplier）が読む。既定 dry run・本実行は --apply。",
+ "generated": "2026-11-22T02:47:06.015Z",
+ "part": "A",
+ "checks": {
+  "problems": [],
+  "old": [
+   {
+    "key": "V1",
+    "field": "name",
+    "plan_old": "日本蓄電池",
+    "get": "日本蓄電池",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "prefecture",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "city",
+    "plan_old": "日本蓄電池・デジタルグリッド、第一号系統用蓄電施設「NC春日井西尾蓄電所」需給調整市",
+    "get": "日本蓄電池・デジタルグリッド、第一号系統用蓄電施設「NC春日井西尾蓄電所」需給調整市",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "cod",
+    "plan_old": "2025-10-14",
+    "get": "2025-10-14",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "marketParticipation",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "sourceUrl",
+    "plan_old": "https://www.nipponchikudenchi.co.jp",
+    "get": "https://www.nipponchikudenchi.co.jp",
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 797,
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "name",
+    "plan_old": "七本木蓄電所（HOBE ENERGY）",
+    "get": "七本木蓄電所（HOBE ENERGY）",
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "operator",
+    "plan_old": "HOBE ENERGY",
+    "get": "HOBE ENERGY",
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "status",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "outputMw",
+    "plan_old": null,
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "cod",
+    "plan_old": "2026-03-31",
+    "get": "2026-03-31",
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "city",
+    "plan_old": "上里町",
+    "get": "上里町",
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "marketParticipation",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "sourceUrl",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 0,
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "name",
+    "plan_old": "上奈良蓄電所（HOBE ENERGY）",
+    "get": "上奈良蓄電所（HOBE ENERGY）",
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "operator",
+    "plan_old": "HOBE ENERGY",
+    "get": "HOBE ENERGY",
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "outputMw",
+    "plan_old": null,
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "cod",
+    "plan_old": "2026-03-27",
+    "get": "2026-03-27",
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "city",
+    "plan_old": "熊谷市",
+    "get": "熊谷市",
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "marketParticipation",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "sourceUrl",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 0,
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "name",
+    "plan_old": "静岡県牧之原市にて第一号蓄電所",
+    "get": "静岡県牧之原市にて第一号蓄電所",
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "marketParticipation",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 607,
+    "ok": true
+   }
+  ],
+  "keep": [
+   {
+    "key": "V1",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "outputMw",
+    "keep": 1.949,
+    "get": 1.949,
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "capacityMwh",
+    "keep": 8.128,
+    "get": 8.128,
+    "ok": true
+   },
+   {
+    "key": "V1",
+    "field": "operator",
+    "keep": "日本蓄電池株式会社",
+    "get": "日本蓄電池株式会社",
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "capacityMwh",
+    "keep": 5,
+    "get": 5,
+    "ok": true
+   },
+   {
+    "key": "V2",
+    "field": "prefecture",
+    "keep": "埼玉県",
+    "get": "埼玉県",
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "capacityMwh",
+    "keep": 5,
+    "get": 5,
+    "ok": true
+   },
+   {
+    "key": "V3",
+    "field": "prefecture",
+    "keep": "埼玉県",
+    "get": "埼玉県",
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "prefecture",
+    "keep": "静岡県",
+    "get": "静岡県",
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "city",
+    "keep": "牧之原市",
+    "get": "牧之原市",
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "operator",
+    "keep": "ブルースカイエナジー株式会社",
+    "get": "ブルースカイエナジー株式会社",
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "cod",
+    "keep": "2026-03-23",
+    "get": "2026-03-23",
+    "ok": true
+   },
+   {
+    "key": "V4",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000007.000175281.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000007.000175281.html",
+    "ok": true
+   }
+  ]
+ },
+ "plan": {
+  "posts": [],
+  "patches": [
+   {
+    "ep": "projects",
+    "slug": "pr-co161802-bess-4",
+    "row_id": "V1",
+    "order": 1,
+    "id": "w25p39fcn",
+    "updatedAt": "2026-08-04T14:20:25.897Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "日本蓄電池",
+      "new": "NC春日井西尾蓄電所（日本蓄電池）",
+      "row_ids": [
+       "V1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "prefecture",
+      "old": "null",
+      "new": "\"愛知県\"",
+      "row_ids": [
+       "V1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "city",
+      "old": "日本蓄電池・デジタルグリッド、第一号系統用蓄電施設「NC春日井西尾蓄電所」需給調整市",
+      "new": "春日井市西尾町",
+      "row_ids": [
+       "V1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "cod",
+      "old": "2025-10-14",
+      "new": "2025-05-07",
+      "row_ids": [
+       "V1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"株式会社サンヴィレッジ\"",
+      "row_ids": [
+       "V1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "marketParticipation",
+      "old": "[]",
+      "new": "[\"需給調整市場\"]",
+      "row_ids": [
+       "V1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.nipponchikudenchi.co.jp",
+      "new": "https://prtimes.jp/main/html/rd/p/000000008.000161802.html",
+      "row_ids": [
+       "V1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>日本蓄電池</strong>は、日本蓄電池・デジタルグリッド、第一号系統用蓄電施設「NC春日井西尾蓄電所」需給調整市に立地する系統用蓄電所。発表企業：日本蓄電池株式会社。ステータス：計画中（発表日：2025-10-14）。</p><p>〜 再生可能エネルギーの安定供給と脱炭素社会の実現に向けて 〜</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.nipponchikudenchi.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp</a></li><li>企業公式サイト: <a href=\"https://www.nipponchikudenchi.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.nipponchikudenchi.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000008.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000008.000161802.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>NC春日井西尾蓄電所</strong>は、日本蓄電池株式会社の愛知県春日井市西尾町の系統用蓄電所。日本蓄電池とデジタルグリッドの2025年10月14日のリリースは、「愛知県春日井市西尾町に建設された第一号の系統用蓄電施設「NC春日井西尾蓄電所」が需給調整市場への参入を開始した」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000008.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">日本蓄電池・デジタルグリッド、第一号系統用蓄電施設「NC春日井西尾蓄電所」需給調整市場へ参入（日本蓄電池株式会社・デジタルグリッド株式会社、2025年10月14日）</a>）。</p><p>施設概要は、施設名を「NC春日井西尾蓄電所」、所在地を「愛知県春日井市西尾町666番地」、定格出力を「1,949kW」、定格容量を「8,128kWh」、アグリゲーターを「デジタルグリッド株式会社」とする。役割について、リリースは、日本蓄電池を「プロジェクト全体の開発・運用・現場管理」、デジタルグリッドを「デジタルグリッドプラットフォームを活用したアグリゲーション・需給調整市場などへの参入支援」としている。</p><p>日本蓄電池の2025年5月7日のリリースは、「本蓄電所は、株式会社サンヴィレッジ（本社：栃木県足利市、代表取締役 三村挑嗣）がEPC（設計・調達・建設）が担い、事業主として日本蓄電池株式会社が取得、運用するものです」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000001.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】系統用蓄電池施設の運用開始（日本蓄電池株式会社、2025年5月7日）</a>）。</p><p>施工した株式会社サンヴィレッジの同じ日のリリースは、「高圧系統用蓄電池設置工事を完了し、5月７日に商業運転を開始しました」と述べ、着工を2024年11月、系統連系を2025年4月24日としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000046.000086244.html\" target=\"_blank\" rel=\"noopener noreferrer\">中部電力管内での系統用蓄電所（２MW/8MWh）の運転開始のお知らせ（株式会社サンヴィレッジ、2025年5月7日）</a>）。運転開始の欄は、この商業運転の開始日とした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "V1"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "78694ca821b6a6b0",
+     "prefecture": "233c311e7a92f7a4",
+     "city": "035fb886839bcb6b",
+     "cod": "bbe514082e82640d",
+     "epc": "cebbc052ac287650",
+     "marketParticipation": "39f9984df264faa6",
+     "sourceUrl": "327a0c3c9c5a7b51",
+     "body": "72a234dc8114a3c6"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "nanahongi-bess",
+    "row_id": "V2",
+    "order": 2,
+    "id": "h041mltp4wga",
+    "updatedAt": "2026-05-17T03:33:31.983Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "七本木蓄電所（HOBE ENERGY）",
+      "new": "七本木蓄電所（日本蓄電開発機構）",
+      "row_ids": [
+       "V2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "HOBE ENERGY",
+      "new": "日本蓄電開発機構株式会社",
+      "row_ids": [
+       "V2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "status",
+      "old": "[]",
+      "new": "[\"稼働中\"]",
+      "row_ids": [
+       "V2"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "outputMw",
+      "old": "null",
+      "new": "2",
+      "row_ids": [
+       "V2"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "2026-03-31",
+      "new": "2026-06-16",
+      "row_ids": [
+       "V2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "city",
+      "old": "上里町",
+      "new": "児玉郡上里町",
+      "row_ids": [
+       "V2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"イー・トップ株式会社\"",
+      "row_ids": [
+       "V2"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "marketParticipation",
+      "old": "[]",
+      "new": "[\"需給調整市場\"]",
+      "row_ids": [
+       "V2"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "null",
+      "new": "\"https://prtimes.jp/main/html/rd/p/000000007.000173175.html\"",
+      "row_ids": [
+       "V2"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "body",
+      "old": "null",
+      "new": "\"<p><strong>七本木蓄電所</strong>は、日本蓄電開発機構株式会社が開発した、埼玉県児玉郡上里町の系統用蓄電所。同社の2026年6月16日のリリースは、「埼玉県児玉郡上里町にて開発を進めていた系統用蓄電池プロジェクト「七本木蓄電所」において、本日2026年6月16日に運転を開始した」と述べている（出典: <a href=\\\"https://prtimes.jp/main/html/rd/p/000000007.000173175.html\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">日本蓄電開発機構、埼玉県上里町に「七本木蓄電所」を開設 ― 着工から約3.5ヶ月での受電を経て、上奈良蓄電所と同日・受電後2ヶ月半で需給調整市場に参入（日本蓄電開発機構株式会社、2026年6月16日）</a>）。</p><p>設置概要は、所在地を「埼玉県児玉郡上里町」、出力を「2MW」、着工日を「2025年12月15日」、受電日を「2026年3月31日」、運転開始日を「2026年6月16日」、建設パートナーを「イー・トップ株式会社」、運用支援を「株式会社RUTILEA」とする。市場について、同じリリースは「需給調整市場（一次調整力）への参入を実現しました」と述べている。容量は、同社の2026年3月31日のリリースが「出力2MWに対して5MWhの容量を確保しており」としている（出典: <a href=\\\"https://prtimes.jp/main/html/rd/p/000000003.000173175.html\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">埼玉県上里町で5MWh規模の系統用蓄電池「七本木蓄電所」を受電、上奈良蓄電所に続き3月での連続受電により、蓄電インフラ整備を加速（日本蓄電開発機構株式会社、2026年3月31日）</a>）。</p><p>蓄電システムは、HOBE ENERGY株式会社が供給した。日本蓄電開発機構の6月16日のリリースは、「蓄電池・EMS・PCS・受変電設備の全機器をHOBE ENERGY社が一体設計・一括供給するモデル」と書いている。HOBE ENERGY株式会社の2026年3月31日のリリースは、蓄電所開発を「日本蓄電開発機構株式会社（JESDI）」としている（出典: <a href=\\\"https://prtimes.jp/main/html/rd/p/000000007.000169829.html\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">次世代蓄電池ソリューションを手掛ける「HOBE ENERGY」 自社製 EMS を系統用蓄電所に実装、上奈良蓄電所に続き 5MWh 規模の「七本木蓄電所」が受電完了（HOBE ENERGY株式会社、2026年3月31日）</a>）。</p><p>建設パートナーのイー・トップ株式会社は、同じリリースのコメントで「七本木蓄電所の建設にあたり、EPCとして安全最優先で工程・品質を一元管理し、計画どおりに完工を迎えられた」と述べている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>\"",
+      "row_ids": [
+       "V2"
+      ],
+      "note": "配列・JSON 値モード。今は空の本文に全文を入れる"
+     }
+    ],
+    "expect_final": {
+     "name": "331b5551a1f7a991",
+     "operator": "d3d4d14e0774abf3",
+     "status": "e37693682efbcfc4",
+     "outputMw": "d4735e3a265e16ee",
+     "cod": "f00c125bd8e10e6a",
+     "city": "5cfedc668ecdce21",
+     "epc": "48b4135a23659cf2",
+     "marketParticipation": "39f9984df264faa6",
+     "sourceUrl": "804f090ef8e4874e",
+     "body": "9ca52a6242147df8"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "kaminara-bess",
+    "row_id": "V3",
+    "order": 3,
+    "id": "xe565pnilk3g",
+    "updatedAt": "2026-06-28T07:10:53.536Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "上奈良蓄電所（HOBE ENERGY）",
+      "new": "上奈良蓄電所（日本蓄電開発機構）",
+      "row_ids": [
+       "V3"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "HOBE ENERGY",
+      "new": "日本蓄電開発機構株式会社",
+      "row_ids": [
+       "V3"
+      ],
+      "note": ""
+     },
+     {
+      "field": "outputMw",
+      "old": "null",
+      "new": "2",
+      "row_ids": [
+       "V3"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "2026-03-27",
+      "new": "2026-06-16",
+      "row_ids": [
+       "V3"
+      ],
+      "note": ""
+     },
+     {
+      "field": "city",
+      "old": "熊谷市",
+      "new": "熊谷市上奈良",
+      "row_ids": [
+       "V3"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"イー・トップ株式会社\"",
+      "row_ids": [
+       "V3"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "marketParticipation",
+      "old": "[]",
+      "new": "[\"需給調整市場\"]",
+      "row_ids": [
+       "V3"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "null",
+      "new": "\"https://prtimes.jp/main/html/rd/p/000000006.000173175.html\"",
+      "row_ids": [
+       "V3"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "body",
+      "old": "null",
+      "new": "\"<p><strong>上奈良蓄電所</strong>は、日本蓄電開発機構株式会社が開発した、埼玉県熊谷市上奈良の系統用蓄電所。同社の2026年6月16日のリリースは、「埼玉県熊谷市にて開発を進めていた系統用蓄電池プロジェクト「上奈良蓄電所」において、本日2026年6月16日に運転を開始した」と述べている（出典: <a href=\\\"https://prtimes.jp/main/html/rd/p/000000006.000173175.html\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">日本蓄電開発機構、埼玉県熊谷市に「上奈良蓄電所」を開設 ― HOBE ENERGY社製統合システムにより、受電後2ヶ月半で需給調整市場に参入（日本蓄電開発機構株式会社、2026年6月16日）</a>）。</p><p>設置概要は、所在地を「埼玉県熊谷市上奈良」、出力を「2MW」、着工日を「2025年12月1日」、受電日を「2026年3月27日」、運転開始日を「2026年6月16日」、建設パートナーを「イー・トップ株式会社」、運用支援を「株式会社RUTILEA」とする。市場について、同じリリースは「受電からわずか2ヶ月半での需給調整市場参入を達成しました」と述べている。容量は、同社の2026年3月27日のリリースが設備容量を「5MWh（出力 2MW）」としている（出典: <a href=\\\"https://prtimes.jp/main/html/rd/p/000000002.000173175.html\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">埼玉県熊谷市で「上奈良蓄電所」が受電開始、HOBE ENERGY社製系統用蓄電システムの初号実績（5MWh）として新たな蓄電所展開モデルを確立（日本蓄電開発機構株式会社、2026年3月27日）</a>）。</p><p>蓄電システムは、HOBE ENERGY株式会社が供給した。日本蓄電開発機構の6月16日のリリースは、「これらの全機器をHOBE ENERGY株式会社が一体設計・一括供給」と書いている。HOBE ENERGY株式会社の2026年3月27日のリリースは、蓄電所開発を「日本蓄電開発機構株式会社（JESDI）」としている（出典: <a href=\\\"https://prtimes.jp/main/html/rd/p/000000006.000169829.html\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">次世代蓄電池ソリューションを手掛ける「HOBE ENERGY」　自社製EMSを系統用蓄電所に実装し初号実績を確立、5MWh規模の「上奈良蓄電所」が稼働開始（HOBE ENERGY株式会社、2026年3月27日）</a>）。</p><p>建設パートナーのイー・トップ株式会社は、同じリリースのコメントで「上奈良系統用蓄電所の建設にあたり、EPCとして安全最優先で工程・品質を一元管理し、計画どおりに完工を迎えられた」と述べている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>\"",
+      "row_ids": [
+       "V3"
+      ],
+      "note": "配列・JSON 値モード。今は空の本文に全文を入れる"
+     }
+    ],
+    "expect_final": {
+     "name": "50e1d7f91ae35754",
+     "operator": "d3d4d14e0774abf3",
+     "outputMw": "d4735e3a265e16ee",
+     "cod": "f00c125bd8e10e6a",
+     "city": "0386fbb4654efadf",
+     "epc": "48b4135a23659cf2",
+     "marketParticipation": "39f9984df264faa6",
+     "sourceUrl": "d2926b5fe614afb3",
+     "body": "dbf33c28f920b88a"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co175281-shizuoka",
+    "row_id": "V4",
+    "order": 4,
+    "id": "4o_e0xsi_3h",
+    "updatedAt": "2026-08-04T14:20:53.030Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "静岡県牧之原市にて第一号蓄電所",
+      "new": "牧之原蓄電所（ブルースカイエナジー）",
+      "row_ids": [
+       "V4"
+      ],
+      "note": ""
+     },
+     {
+      "field": "marketParticipation",
+      "old": "[]",
+      "new": "[\"需給調整市場\"]",
+      "row_ids": [
+       "V4"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>静岡県牧之原市にて第一号蓄電所</strong>は、静岡県牧之原市に立地する系統用蓄電所。発表企業：ブルースカイエナジー株式会社。ステータス：稼働中（発表日：2026-03-23）。</p><p>～ブルースカイエナジー系統用蓄電所100カ所開発の第一弾が完工連系～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://www.blueskyenergy.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.blueskyenergy.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000007.000175281.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000007.000175281.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>牧之原蓄電所</strong>は、ブルースカイエナジー株式会社の静岡県牧之原市の系統用蓄電所。同社の2026年3月23日のリリースは、「静岡県牧之原市において系統用蓄電所の商業運転開始をしております」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000007.000175281.html\" target=\"_blank\" rel=\"noopener noreferrer\">静岡県牧之原市にて第一号蓄電所が運転開始（ブルースカイエナジー株式会社、2026年3月23日）</a>）。</p><p>このリリースは、所在地を「静岡県牧之原市」、蓄電池種類を「リチウムイオン蓄電池」、発電出力/蓄電容量を「2MW/8MWh」、商業運転開始を「2026年3月23日」とする。</p><p>同社の2026年4月28日のリリースは、「静岡県牧之原市に設置した系統用蓄電所において、2026年4月28日より需給調整市場向けの運用を開始した」と述べ、アグリゲーターを「株式会社ユーラスエナジーホールディングス」、事業主体を「ブルースカイエナジー株式会社」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000012.000175281.html\" target=\"_blank\" rel=\"noopener noreferrer\">牧之原蓄電所における需給調整市場への参入開始のお知らせ（ブルースカイエナジー株式会社、2026年4月28日）</a>）。蓄電所の名前は、このリリースの題名「牧之原蓄電所における需給調整市場への参入開始のお知らせ」によった。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "V4"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "2103ab870084498f",
+     "marketParticipation": "39f9984df264faa6",
+     "body": "d723f8c2ce68d5ec"
+    }
+   }
+  ]
+ }
+}

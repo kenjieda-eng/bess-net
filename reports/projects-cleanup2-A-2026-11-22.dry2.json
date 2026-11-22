@@ -1,0 +1,41 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 8
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 4,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "projects/pr-co161802-bess-4",
+   "id": "w25p39fcn",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/nanahongi-bess",
+   "id": "h041mltp4wga",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/kaminara-bess",
+   "id": "xe565pnilk3g",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co175281-shizuoka",
+   "id": "4o_e0xsi_3h",
+   "result": "skip_final_state"
+  }
+ ]
+}

@@ -4260,6 +4260,168 @@
       "checked_on": "2026-11-21",
       "note": "projects の合計を正す便（2026-11-21・_QUEUE.md 129 行）。素の curl で HTTP 200（257,802 bytes）。発表日 2026年2月26日。",
       "used_in": "訂正履歴 20261121-15・20261121-16（basis）"
+    },
+    {
+      "name": "日本蓄電池・デジタルグリッド、第一号系統用蓄電施設「NC春日井西尾蓄電所」需給調整市場へ参入",
+      "publisher": "日本蓄電池株式会社・デジタルグリッド株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000008.000161802.html",
+      "title_verbatim": "日本蓄電池・デジタルグリッド、第一号系統用蓄電施設「NC春日井西尾蓄電所」需給調整市場へ参入 | 日本蓄電池株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（255,804 bytes）。発表日 2025年10月14日。",
+      "used_in": "訂正履歴 20261122-01・20261122-02・20261122-07（basis）・projects の本文（V1）"
+    },
+    {
+      "name": "【日本蓄電池株式会社】系統用蓄電池施設の運用開始",
+      "publisher": "日本蓄電池株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000001.000161802.html",
+      "title_verbatim": "【日本蓄電池株式会社】系統用蓄電池施設の運用開始 | 日本蓄電池株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（250,723 bytes）。発表日 2025年5月7日。",
+      "used_in": "訂正履歴 20261122-01・20261122-02・20261122-07（basis）・projects の本文（V1）"
+    },
+    {
+      "name": "中部電力管内での系統用蓄電所（２MW/8MWh）の運転開始のお知らせ",
+      "publisher": "株式会社サンヴィレッジ（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000046.000086244.html",
+      "title_verbatim": "中部電力管内での系統用蓄電所（２MW/8MWh）の運転開始のお知らせ | 株式会社サンヴィレッジのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（249,335 bytes）。発表日 2025年5月7日。",
+      "used_in": "訂正履歴 20261122-01・20261122-02・20261122-07・20261122-15（basis）・projects の本文（V1）"
+    },
+    {
+      "name": "日本蓄電開発機構、埼玉県上里町に「七本木蓄電所」を開設 ― 着工から約3.5ヶ月での受電を経て、上奈良蓄電所と同日・受電後2ヶ月半で需給調整市場に参入",
+      "publisher": "日本蓄電開発機構株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000007.000173175.html",
+      "title_verbatim": "日本蓄電開発機構、埼玉県上里町に「七本木蓄電所」を開設 ― 着工から約3.5ヶ月での受電を経て、上奈良蓄電所と同日・受電後2ヶ月半で需給調整市場に参入 | 日本蓄電開発機構株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（247,736 bytes）。発表日 2026年6月16日。",
+      "used_in": "訂正履歴 20261122-03・20261122-08・20261122-15（basis）・projects の本文（V2）"
+    },
+    {
+      "name": "埼玉県上里町で5MWh規模の系統用蓄電池「七本木蓄電所」を受電、上奈良蓄電所に続き3月での連続受電により、蓄電インフラ整備を加速",
+      "publisher": "日本蓄電開発機構株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000003.000173175.html",
+      "title_verbatim": "埼玉県上里町で5MWh規模の系統用蓄電池「七本木蓄電所」を受電、上奈良蓄電所に続き3月での連続受電により、蓄電インフラ整備を加速 | 日本蓄電開発機構株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（265,432 bytes）。発表日 2026年3月31日。",
+      "used_in": "訂正履歴 20261122-03・20261122-08（basis）・projects の本文（V2）"
+    },
+    {
+      "name": "日本蓄電開発機構、埼玉県熊谷市に「上奈良蓄電所」を開設 ― HOBE ENERGY社製統合システムにより、受電後2ヶ月半で需給調整市場に参入",
+      "publisher": "日本蓄電開発機構株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000006.000173175.html",
+      "title_verbatim": "日本蓄電開発機構、埼玉県熊谷市に「上奈良蓄電所」を開設 ― HOBE ENERGY社製統合システムにより、受電後2ヶ月半で需給調整市場に参入 | 日本蓄電開発機構株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（246,318 bytes）。発表日 2026年6月16日。",
+      "used_in": "訂正履歴 20261122-04・20261122-09・20261122-15（basis）・projects の本文（V3）"
+    },
+    {
+      "name": "埼玉県熊谷市で「上奈良蓄電所」が受電開始、HOBE ENERGY社製系統用蓄電システムの初号実績（5MWh）として新たな蓄電所展開モデルを確立",
+      "publisher": "日本蓄電開発機構株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000002.000173175.html",
+      "title_verbatim": "埼玉県熊谷市で「上奈良蓄電所」が受電開始、HOBE ENERGY社製系統用蓄電システムの初号実績（5MWh）として新たな蓄電所展開モデルを確立 | 日本蓄電開発機構株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（265,237 bytes）。発表日 2026年3月27日。",
+      "used_in": "訂正履歴 20261122-09（basis）・projects の本文（V3）"
+    },
+    {
+      "name": "次世代蓄電池ソリューションを手掛ける「HOBE ENERGY」　自社製EMSを系統用蓄電所に実装し初号実績を確立、5MWh規模の「上奈良蓄電所」が稼働開始",
+      "publisher": "HOBE ENERGY株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000006.000169829.html",
+      "title_verbatim": "次世代蓄電池ソリューションを手掛ける「HOBE ENERGY」　自社製EMSを系統用蓄電所に実装し初号実績を確立、5MWh規模の「上奈良蓄電所」が稼働開始 | HOBE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（261,191 bytes）。発表日 2026年3月27日。",
+      "used_in": "訂正履歴 20261122-04・20261122-09（basis）・projects の本文（V3）"
+    },
+    {
+      "name": "次世代蓄電池ソリューションを手掛ける「HOBE ENERGY」 自社製 EMS を系統用蓄電所に実装、上奈良蓄電所に続き 5MWh 規模の「七本木蓄電所」が受電完了",
+      "publisher": "HOBE ENERGY株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000007.000169829.html",
+      "title_verbatim": "次世代蓄電池ソリューションを手掛ける「HOBE ENERGY」 自社製 EMS を系統用蓄電所に実装、上奈良蓄電所に続き 5MWh 規模の「七本木蓄電所」が受電完了 | HOBE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（260,812 bytes）。発表日 2026年3月31日。",
+      "used_in": "訂正履歴 20261122-08（basis）・projects の本文（V2）"
+    },
+    {
+      "name": "当社初となる系統用蓄電池事業の運用開始について",
+      "publisher": "JFEエンジニアリング株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000089.000061878.html",
+      "title_verbatim": "当社初となる系統用蓄電池事業の運用開始について | JFEエンジニアリング株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（283,589 bytes）。発表日 2024年10月21日。",
+      "used_in": "訂正履歴 20261122-05・20261122-15（basis）"
+    },
+    {
+      "name": "静岡県牧之原市にて第一号蓄電所が運転開始",
+      "publisher": "ブルースカイエナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000007.000175281.html",
+      "title_verbatim": "静岡県牧之原市にて第一号蓄電所が運転開始 | ブルースカイエナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（266,935 bytes）。発表日 2026年3月23日。",
+      "used_in": "訂正履歴 20261122-06・20261122-10・20261122-15（basis）・projects の本文（V4）"
+    },
+    {
+      "name": "牧之原蓄電所における需給調整市場への参入開始のお知らせ",
+      "publisher": "ブルースカイエナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000012.000175281.html",
+      "title_verbatim": "牧之原蓄電所における需給調整市場への参入開始のお知らせ | ブルースカイエナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（273,310 bytes）。発表日 2026年4月28日。",
+      "used_in": "訂正履歴 20261122-06・20261122-10（basis）・projects の本文（V4）"
+    },
+    {
+      "name": "Sungrow Japan株式会社との系統用蓄電池システム購入に関する基本合意書締結のお知らせ",
+      "publisher": "ブルースカイエナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000008.000175281.html",
+      "title_verbatim": "Sungrow Japan株式会社との系統用蓄電池システム購入に関する基本合意書締結のお知らせ | ブルースカイエナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（248,901 bytes）。発表日 2026年3月24日。",
+      "used_in": "訂正履歴 20261122-06（basis）"
+    },
+    {
+      "name": "Shizen Connect、ヒューリックグループの系統用蓄電池事業2拠点・計4MWの運用に採用",
+      "publisher": "株式会社Shizen Connect（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000034.000168657.html",
+      "title_verbatim": "Shizen Connect、ヒューリックグループの系統用蓄電池事業2拠点・計4MWの運用に採用 | 株式会社Shizen Connectのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（282,427 bytes）。発表日 2026年4月15日。",
+      "used_in": "訂正履歴 20261122-11・20261122-15（basis）"
+    },
+    {
+      "name": "系統用蓄電所（４拠点）運転開始のお知らせ",
+      "publisher": "ブルースカイエナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000016.000175281.html",
+      "title_verbatim": "系統用蓄電所（４拠点）運転開始のお知らせ | ブルースカイエナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（269,462 bytes）。発表日 2026年8月17日。",
+      "used_in": "訂正履歴 20261122-11（basis）"
+    },
+    {
+      "name": "ヒューリック株式会社・芙蓉総合リース株式会社・伊藤忠商事株式会社との系統用蓄電池事業の共同開発に関するお知らせ",
+      "publisher": "RSアセットアドバイザーズ株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000011.000154894.html",
+      "title_verbatim": "ヒューリック株式会社・芙蓉総合リース株式会社・伊藤忠商事株式会社との系統用蓄電池事業の共同開発に関するお知らせ | RSアセットアドバイザーズ株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（245,828 bytes）。発表日 2026年3月19日。",
+      "used_in": "訂正履歴 20261122-12・20261122-15（basis）"
+    },
+    {
+      "name": "三菱ＨＣキャピタルエナジーとサンヴィレッジフルマーチャントでの系統用蓄電所開発に関する業務提携契約を締結",
+      "publisher": "株式会社サンヴィレッジ（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000043.000086244.html",
+      "title_verbatim": "三菱ＨＣキャピタルエナジーとサンヴィレッジフルマーチャントでの系統用蓄電所開発に関する業務提携契約を締結 | 株式会社サンヴィレッジのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（234,665 bytes）。発表日 2025年2月4日。",
+      "used_in": "訂正履歴 20261122-13・20261122-15（basis）"
+    },
+    {
+      "name": "しろくま電力はヘキサ・エネルギーサービスと、全国10カ所の系統用蓄電所を開発中。第一号案件は25年秋に運転開始予定",
+      "publisher": "しろくま電力株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000148.000055631.html",
+      "title_verbatim": "しろくま電力はヘキサ・エネルギーサービスと、全国10カ所の系統用蓄電所を開発中。第一号案件は25年秋に運転開始予定 | しろくま電力株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（239,443 bytes）。発表日 2025年7月29日。",
+      "used_in": "訂正履歴 20261122-14・20261122-15（basis）"
     }
   ]
 }
