@@ -12367,6 +12367,320 @@
     }
    ],
    "internalRef": "reports/projects-names-2026-11-22.md （計画 reports/projects-plan-2026-11-22-B_ユウ.json）"
+  },
+  {
+   "id": "20261122-30",
+   "date": "2026-11-22",
+   "kind": "表示の停止",
+   "path": "/projects/pr-co55631-tokyo-4mw",
+   "record": "projects/pr-co55631-tokyo-4mw",
+   "targetTitle": "系統用大規模蓄電池",
+   "before": "群馬県の 2 か所の蓄電所（太田市小角田町蓄電システム・桐生市境野町蓄電システム・各 2MW）の運転開始の発表を、2 か所の合計（4 MW）を持つ 1 件の稼働中の蓄電所として掲載し、合計値に計上。2 か所は、それぞれ個別のページでも掲載していた（合計値に二重に計上）\n事業者を「しろくま電力株式会社」、運転開始を 2024-12-17 と表示（しろくま電力は設計・施工と管理・運用の受託者。2024年12月17日は発表の配信日）",
+   "after": "一覧・件数・合計値・サイトマップから外した（詳細ページは検索エンジン非掲載の扱いで残置）。2 か所は /projects/ota-johyo-bess と /projects/sakaino-johyo-bess で掲載している",
+   "basis": [
+    {
+     "name": "しろくま電力、東京都「系統用大規模蓄電池導入促進事業」の第一号案件を2024年12月に運転開始。事業主は兵庫県JYSグループ。",
+     "publisher": "しろくま電力株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000129.000055631.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-31",
+   "date": "2026-11-22",
+   "kind": "表示の停止",
+   "path": "/projects/pr-co13775-bess",
+   "record": "projects/pr-co13775-bess",
+   "targetTitle": "低圧系統用蓄電池（株式会社テクノロジーズ）",
+   "before": "4 社による低圧系統用蓄電池事業の協議の発表を、1 件の計画中の蓄電所（出力 0.05 MW・容量 0.1 MWh）として掲載し、合計値に計上（運転開始予定 2026-03-14 と表示。2026年3月14日は発表の配信日）",
+   "after": "一覧・件数・合計値・サイトマップから外した（詳細ページは検索エンジン非掲載の扱いで残置）。発表は「約 6 坪から設置可能なAC49.9kWの低圧系統用蓄電池を各地に分散配置し」という事業の構想で、個別の蓄電所の名前・所在地は書かれていない",
+   "basis": [
+    {
+     "name": "低圧系統用蓄電池が事業化、2026年度の需給調整市場に対応！約6坪から始まる新事業",
+     "publisher": "株式会社テクノロジーズ（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000027.000013775.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-32",
+   "date": "2026-11-22",
+   "kind": "表示の停止",
+   "path": "/projects/pr-co28193-bess",
+   "record": "projects/pr-co28193-bess",
+   "targetTitle": "防災型低圧蓄電所",
+   "before": "3 社の事業提携の基本合意と、低圧系統用蓄電池事業の開始の発表を、1 件の計画中の蓄電所（出力 0.05 MW・容量 0.1 MWh）として掲載し、合計値に計上（運転開始予定 2026-04-02 と表示。2026年4月2日は発表の配信日）",
+   "after": "一覧・件数・合計値・サイトマップから外した（詳細ページは検索エンジン非掲載の扱いで残置）。発表は「2026年度より需給調整市場に対応した低圧系統用蓄電池事業を本格的に開始いたします」というもので、個別の蓄電所の名前・所在地は書かれていない",
+   "basis": [
+    {
+     "name": "2026年度需給調整市場に対応した『防災型低圧蓄電所』事業の開始について",
+     "publisher": "株式会社メディオテック（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000040.000028193.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-33",
+   "date": "2026-11-22",
+   "kind": "表示の停止",
+   "path": "/projects/pr-co169202-bess-2",
+   "record": "projects/pr-co169202-bess-2",
+   "targetTitle": "系統用蓄電池（野村屋グループ）",
+   "before": "系統用蓄電池の販売実績（15 サイト）の発表を、1 件の計画中の蓄電所（出力 2 MW・容量 8 MWh）として掲載し、合計値に計上（運転開始予定 2025-12-01 と表示。2025年12月1日は発表の配信日）",
+   "after": "一覧・件数・合計値・サイトマップから外した（詳細ページは検索エンジン非掲載の扱いで残置）。発表は「2025年7月〜4ヶ月間で系統用蓄電池販売実績が15サイト累計120,000kWを達成いたしました」というもので、同社が販売した 15 か所の一覧。同社が自社で運営する上田市古里蓄電所は /projects/pr-co169202-bess で掲載している",
+   "basis": [
+    {
+     "name": "【野村屋ホールディングス】系統用蓄電池販売実績が累計120,000kWを達成、TUN POWERとの協業で導入支援を拡大",
+     "publisher": "株式会社野村屋ホールディングス（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000004.000169202.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-34",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/ota-johyo-bess",
+   "record": "projects/ota-johyo-bess",
+   "targetTitle": "太田市小角田町蓄電システム（城洋）",
+   "before": "名称を「群馬太田蓄電所（城洋・JYSグループ）」、事業者を「城洋（JYSグループ・しろくま電力/旧afterFIT 運用）」と表示。状態と運転開始の表示なし（一覧では「その他」の区分に入っていた）",
+   "after": "名称を、発表の案件名「太田市小角田町蓄電システム」に直し、所在地を 太田市小角田 に直しました（事業者名を添えて表示）\n事業者を、発表の「株式会社城洋」（JYSグループ）に直し、設計・施工と管理・運用を受託するしろくま電力株式会社は EPC の欄に移しました\n状態を「稼働中」、運転開始を、発表の 2024年12月15日 にしました。本文と出典を、運転開始の発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "しろくま電力、東京都「系統用大規模蓄電池導入促進事業」の第一号案件を2024年12月に運転開始。事業主は兵庫県JYSグループ。",
+     "publisher": "しろくま電力株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000129.000055631.html"
+    },
+    {
+     "name": "JYSグループ３社（城洋、城洋商事、光遊社）はafterFITと協業し、系統用蓄電池事業に参入",
+     "publisher": "しろくま電力株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000104.000055631.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-35",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/sakaino-johyo-bess",
+   "record": "projects/sakaino-johyo-bess",
+   "targetTitle": "桐生市境野町蓄電システム（城洋商事）",
+   "before": "名称を「境野蓄電所」と表示。所在地・状態・運転開始の表示なし（一覧では「その他」の区分に入っていた）",
+   "after": "名称を、発表の案件名「桐生市境野町蓄電システム」に直し、所在地（群馬県桐生市境野）を足しました（事業者名を添えて表示）\n状態を「稼働中」、運転開始を、発表の 2024年12月15日 にしました。設計・施工と管理・運用を受託するしろくま電力株式会社を EPC の欄に足しました\n本文を足し、出典を、運転開始の発表に替えました",
+   "basis": [
+    {
+     "name": "しろくま電力、東京都「系統用大規模蓄電池導入促進事業」の第一号案件を2024年12月に運転開始。事業主は兵庫県JYSグループ。",
+     "publisher": "しろくま電力株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000129.000055631.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-36",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co67590-bess",
+   "record": "projects/pr-co67590-bess",
+   "targetTitle": "（仮称）KSE熊本蓄電所（KSエナジー）",
+   "before": "名称を「特別高圧系統用蓄電池」（発表の題名の一部）、事業者を「株式会社 日立製作所」と表示。所在地の表示なし\n運転開始予定を 2026-02-10 と表示（2026年2月10日は発表の配信日）",
+   "after": "名称を、発表の「仮称）KSE熊本蓄電所」に直し、所在地（熊本県）を足しました（事業者名を添えて表示）\n事業者を、蓄電所の開発と運用を行う「株式会社KSエナジー」に直しました（株式会社日立製作所は、プロジェクト開発を支援する立場として括弧に添えました）\n運転開始予定を、発表の「2029年1月」に直し、本文と出典を発表に基づく内容に替えました（出典は会社のトップページだった）",
+   "basis": [
+    {
+     "name": "KSエナジーと日立、特別高圧系統用蓄電池事業にて協創",
+     "publisher": "株式会社 日立製作所（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000551.000067590.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-37",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co176308-bess",
+   "record": "projects/pr-co176308-bess",
+   "targetTitle": "NC庄原市七塚町蓄電所（日本蓄電池）",
+   "before": "名称を「13ft系統用蓄電池」（蓄電池の製品の発表の題名の一部）、事業者を、蓄電池を納めた「株式会社NEXTES」と表示。出力は「調査中」\n運転開始を 2026-01-30 と表示（2026年1月30日は、蓄電池の製品の発表の配信日）",
+   "after": "名称を、事業者の発表の「NC庄原市七塚町蓄電所」に直し、事業者を「日本蓄電池株式会社」に直しました\n出力を、発表の 1,998kW にしました。市場（需給調整市場）を足しました\n運転開始の欄は空にしました（発表に運転開始の日が書かれていないため。需給調整市場向けの運用の開始は 2026年6月10日）。本文を発表に基づく内容に書き直しました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】広島県庄原市にて系統用蓄電施設「NC庄原市七塚町蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000078.000161802.html"
+    },
+    {
+     "name": "NExT-e Solutions、東京電力グループと共同開発。日本の市場に最適化した「13ft系統用蓄電池」を初出荷",
+     "publisher": "株式会社NEXTES（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000002.000176308.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-38",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co95695-bess",
+   "record": "projects/pr-co95695-bess",
+   "targetTitle": "プロロジスパーク千葉1の系統用蓄電池（プロロジス）",
+   "before": "名称を「系統用蓄電池（プロロジス）」と表示。所在地の欄に、発表の題名の一部が入っていた\n運転開始を 2026-04-23 と表示（2026年4月23日は発表の配信日）",
+   "after": "名称を、設置した施設の名前による呼び名に直し（発表に蓄電所の固有の名前が無いため）、所在地を 千葉県千葉市 に直しました\n運転開始を、発表が稼働開始とする 4月1日（2026年）に直しました\n市場（卸電力市場・需給調整市場・容量市場）を足し、本文を発表に基づく内容に書き直しました",
+   "basis": [
+    {
+     "name": "プロロジス、国内事業者として初めて物流施設敷地内で 系統用蓄電池を稼働させ、電力調整市場に参入",
+     "publisher": "株式会社プロロジス（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000177.000095695.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-39",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co169202-bess",
+   "record": "projects/pr-co169202-bess",
+   "targetTitle": "上田市古里蓄電所（野村屋ホールディングス）",
+   "before": "事業者を「野村屋グループ」と表示。所在地の欄に、発表の題名の一部（「【野村」）が入っていた\n運転開始を 2026-02-09 と表示（2026年2月9日は発表の配信日）",
+   "after": "所在地を 長野県上田市古里 に直し、事業者を、発表の「株式会社野村屋ホールディングス」に直しました（名称に事業者名を添えて表示）\n運転開始を、発表の運転開始日 2026年1月27日 に直し、本文を発表に基づく内容に書き直しました",
+   "basis": [
+    {
+     "name": "【野村屋ホールディングス】系統用蓄電施設「上田市古里蓄電所（BESS KOSATO）」が受電・運転開始",
+     "publisher": "株式会社野村屋ホールディングス（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000008.000169202.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-40",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/pr-co43349-bess",
+   "record": "projects/pr-co43349-bess",
+   "targetTitle": "仙台地点系統用蓄電所（関電エネルギーソリューション）",
+   "before": "所在地を「仙台市」とだけ表示（県の表示なし）。本文は「テスラ Megapack 設置。」の 1 行で、出典は蓄電池の製品のページだった",
+   "after": "所在地に 宮城県 を足し、市場（需給調整市場）を足しました\n本文を、運転開始を知らせる発表に基づく内容に書き直し、出典をその発表に替えました",
+   "basis": [
+    {
+     "name": "テスラ系統用蓄電池 Megapackが仙台市の系統用蓄電所で稼働開始",
+     "publisher": "Tesla Japan合同会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000013.000043349.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-41",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/mirait-chikushino",
+   "record": "projects/mirait-chikushino",
+   "targetTitle": "筑紫野天山蓄電所（芙蓉総合リース）",
+   "before": "名称を「筑紫野市蓄電所（ミライト・ワン）」、事業者を「株式会社ミライト・ワン」と表示（ミライト・ワンは、蓄電所を建設した EPC 事業者）\n運転開始を「2025年7月」と表示。市場に JEPX・需給調整市場 と表示（発表に根拠なし）。本文に「2025年7月28日に竣工しました」と記載（2025年7月28日は発表の日で、竣工は 2025年6月30日）",
+   "after": "名称を、発表の「筑紫野天山蓄電所」に直し、事業者を、発表の事業者名「芙蓉総合リース株式会社」に直しました。株式会社ミライト・ワンは EPC の欄に移しました\n運転開始を、発表の商業運転開始 2025年7月1日 に直し、出力・容量を発表の 1,958.4kW・7,833.6kWh に合わせました\n市場の欄を空にしました（発表は「電力取引市場での取引を行い」とだけ書いている）。本文と出典を発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "福岡県筑紫野市における系統用蓄電池事業開始について",
+     "publisher": "株式会社グローバルエンジニアリング（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000015.000081706.html"
+    },
+    {
+     "name": "2025年7月28日 福岡県筑紫野市における系統用蓄電所竣工のお知らせ｜ニュース｜株式会社ミライト・ワン",
+     "publisher": "株式会社ミライト・ワン",
+     "url": "https://www.mirait-one.com/info/001697.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-42",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/bluesky-miyaki-bess",
+   "record": "projects/bluesky-miyaki-bess",
+   "targetTitle": "佐賀県みやき町蓄電所（ヒューリックエナジーソリューション）",
+   "before": "名称を「佐賀県みやき町蓄電所（ブルースカイエナジー）」、事業者を「ブルースカイエナジー株式会社」と表示（ブルースカイエナジーは開発会社）",
+   "after": "事業者を、この蓄電所の事業を実施する「ヒューリックエナジーソリューション株式会社」（ヒューリックグループ）に直し、開発会社のブルースカイエナジーを括弧に添えました。名称の事業者名も合わせて直しました\n本文に、事業の主体と運用についての発表の記述を足しました",
+   "basis": [
+    {
+     "name": "Shizen Connect、ヒューリックグループの系統用蓄電池事業2拠点・計4MWの運用に採用",
+     "publisher": "株式会社Shizen Connect（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000034.000168657.html"
+    },
+    {
+     "name": "系統用蓄電所（４拠点）運転開始のお知らせ",
+     "publisher": "ブルースカイエナジー株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000016.000175281.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-43",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects/bluesky-himeji-bess",
+   "record": "projects/bluesky-himeji-bess",
+   "targetTitle": "兵庫県姫路市蓄電所（ヒューリックエナジーソリューション）",
+   "before": "名称を「兵庫県姫路市蓄電所（ブルースカイエナジー）」、事業者を「ブルースカイエナジー株式会社」と表示（ブルースカイエナジーは開発会社）",
+   "after": "事業者を、この蓄電所の事業を実施する「ヒューリックエナジーソリューション株式会社」（ヒューリックグループ）に直し、開発会社のブルースカイエナジーを括弧に添えました。名称の事業者名も合わせて直しました\n本文に、事業の主体と運用についての発表の記述を足しました",
+   "basis": [
+    {
+     "name": "Shizen Connect、ヒューリックグループの系統用蓄電池事業2拠点・計4MWの運用に採用",
+     "publisher": "株式会社Shizen Connect（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000034.000168657.html"
+    },
+    {
+     "name": "系統用蓄電所（４拠点）運転開始のお知らせ",
+     "publisher": "ブルースカイエナジー株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000016.000175281.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
+  },
+  {
+   "id": "20261122-44",
+   "date": "2026-11-22",
+   "kind": "訂正",
+   "path": "/projects",
+   "targetTitle": "全国の蓄電所一覧",
+   "before": "掲載 294 件・合計出力 3,112.5 MW（269 件分）・合計容量 9,304.6 MWh（250 件分） と表示（2 か所の合計を 1 件の蓄電所として掲載していた 1 件と、個別の蓄電所でない発表の 3 件が入っていた）",
+   "after": "この 4 件を一覧から外し、出力が未確認だった 1 件（NC庄原市七塚町蓄電所）に発表の値を入れて、掲載 290 件・合計出力 3,108.4 MW（266 件分）・合計容量 9,296.4 MWh（247 件分） になりました。同じデータから作る事業者ランキング・事業者ナビの掲載案件数・変電所のページの県別の案件数も、これに合わせて変わりました",
+   "basis": [
+    {
+     "name": "しろくま電力、東京都「系統用大規模蓄電池導入促進事業」の第一号案件を2024年12月に運転開始。事業主は兵庫県JYSグループ。",
+     "publisher": "しろくま電力株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000129.000055631.html"
+    },
+    {
+     "name": "低圧系統用蓄電池が事業化、2026年度の需給調整市場に対応！約6坪から始まる新事業",
+     "publisher": "株式会社テクノロジーズ（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000027.000013775.html"
+    },
+    {
+     "name": "2026年度需給調整市場に対応した『防災型低圧蓄電所』事業の開始について",
+     "publisher": "株式会社メディオテック（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000040.000028193.html"
+    },
+    {
+     "name": "【野村屋ホールディングス】系統用蓄電池販売実績が累計120,000kWを達成、TUN POWERとの協業で導入支援を拡大",
+     "publisher": "株式会社野村屋ホールディングス（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000004.000169202.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】広島県庄原市にて系統用蓄電施設「NC庄原市七塚町蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000078.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup3-2026-11-22.md （計画 reports/projects-plan-2026-11-22-C_ユウ.json）"
   }
  ]
 }
