@@ -1,0 +1,440 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 28
+ },
+ "counts": {
+  "patched": 14,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "projects/pr-co81706-iwate-58mwh",
+   "id": "aqub2zr3ch",
+   "result": "dry",
+   "fields": [
+    "name",
+    "operator",
+    "cod",
+    "body"
+   ],
+   "before": {
+    "name": "岩手県遠野市における大規模系統用蓄電所",
+    "operator": "株式会社グローバルエンジニアリング",
+    "cod": "2025-07-24",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>岩手県遠野市における大規模系統用蓄電所</strong>は、岩手県遠野市に立地する系統用蓄電所。出力 14.5 MW、容量 58 MWh 規模。発表企業：株式会社グローバルエンジニアリング。ステータス：稼働中（発表日：2025-07-24）。</p><p>～14.5 MW／58 MWhの蓄電システムが2025年6月30日より稼働～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://www.g-eng.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.g-eng.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000014.000081706.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000014.000081706.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "岩手県遠野市の系統用蓄電所（バンプージャパン・グローバルエンジニアリング）",
+    "operator": "J＆A Energy合同会社（バンプージャパン・グローバルエンジニアリング）",
+    "cod": "2025-06-30",
+    "body": "<p><strong>岩手県遠野市の系統用蓄電所</strong>は、バンプージャパン株式会社と株式会社グローバルエンジニアリングが共同で設立した特別目的会社「J＆A Energy合同会社」の系統用蓄電所。株式会社グローバルエンジニアリングの2025年7月24日のリリースは、両社がこの会社を通じて「岩手県遠野市において大規模系統用蓄電所（BESS: Battery Energy Storage System）を建設し、2025年6月30日より運用を開始いたしました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000014.000081706.html\" target=\"_blank\" rel=\"noopener noreferrer\">岩手県遠野市における大規模系統用蓄電所の運転開始について（株式会社グローバルエンジニアリング、2025年7月24日）</a>）。</p><p>施設概要は、所在地を「岩手県遠野市」、出力規模を「14.5 MW」、蓄電容量を「58 MWh」、主な用途を「系統安定化、需給調整市場・容量市場への参加、再エネ平準化」、運用開始日を「2025年6月30日」、SPC名称を「J＆A Energy合同会社（共同設立）」とする。リリースは、この事業が、経済産業省の「定置用蓄電池導入促進補助金（令和3年度補正予算事業）」の採択を受けているとしている。</p><p>リリースに蓄電所の固有の名前は書かれていないため、当サイトでは所在地と事業者で呼んでいる。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co86244-bess-2",
+   "id": "mlhw92kut5",
+   "result": "dry",
+   "fields": [
+    "name",
+    "prefecture",
+    "city",
+    "operator",
+    "epc",
+    "cod",
+    "body"
+   ],
+   "before": {
+    "name": "株式会社東急パワーサプライ向け系統用蓄電池",
+    "prefecture": null,
+    "city": null,
+    "operator": "株式会社サンヴィレッジ",
+    "epc": null,
+    "cod": "2026-04-14",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>株式会社東急パワーサプライ向け系統用蓄電池</strong>は、に立地する系統用蓄電所。発表企業：株式会社サンヴィレッジ。ステータス：稼働中（発表日：2026-04-14）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://sunvillage-co-ltd.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://sunvillage-co-ltd.com/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000066.000086244.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000066.000086244.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "TPS静岡御前崎01蓄電所（東急パワーサプライ）",
+    "prefecture": "静岡県",
+    "city": "御前崎市",
+    "operator": "東急パワーサプライ",
+    "epc": "株式会社サンヴィレッジ",
+    "cod": "2026年4月",
+    "body": "<p><strong>TPS静岡御前崎01蓄電所</strong>は、株式会社サンヴィレッジが株式会社東急パワーサプライ向けに開発・建設した、静岡県御前崎市の高圧の系統用蓄電所。サンヴィレッジの2026年4月14日のリリースは、「本蓄電所は、静岡県御前崎市において出力2MW／容量8MWhの高圧蓄電所として建設され、2026年4月より商業運転を開始いたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000066.000086244.html\" target=\"_blank\" rel=\"noopener noreferrer\">株式会社東急パワーサプライ向け系統用蓄電池設置工事の完工および運転開始について（株式会社サンヴィレッジ、2026年4月14日）</a>）。</p><p>蓄電所の概要は、「TPS静岡御前崎01蓄電所」について、蓄電所の容量を「2MW/8MWh（高圧）」、設置場所を「静岡県御前崎市（中部電力管内）」、蓄電池システムを「SUNGROW製 ST2752UX コンテナ型蓄電システム」、運転開始を「2026年4月」とする。写真の説明は「御前崎市白羽蓄電所」となっている。</p><p>運用について、リリースは「東急パワーサプライは今後、卸電力市場、需給調整市場および容量市場における運用を予定しております」としている。リリースは日を書いていないため、運転開始の欄は月までとした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-taokeenergy-mie-2mw",
+   "id": "01jnnxzcdi",
+   "result": "dry",
+   "fields": [
+    "name",
+    "city",
+    "marketParticipation",
+    "sourceUrl"
+   ],
+   "before": {
+    "name": "三重県志摩市で2MWの蓄電所",
+    "city": "志摩市",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000025.000103834.html"
+   },
+   "after": {
+    "name": "三重県志摩市阿児町2MW高圧蓄電所（TAOKE ENERGY）",
+    "city": "志摩市阿児町",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000038.000103834.html"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co53091-chiba",
+   "id": "f7be5sph5_p",
+   "result": "dry",
+   "fields": [
+    "name",
+    "operator",
+    "cod",
+    "epc",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "name": "千葉県旭市にて系統用蓄電所",
+    "operator": "シナネンホールディングス株式会社",
+    "cod": "2025-08-12",
+    "epc": null,
+    "sourceUrl": "https://sinanen.com/",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>千葉県旭市にて系統用蓄電所</strong>は、千葉県旭市に立地する系統用蓄電所。発表企業：シナネンホールディングス株式会社。ステータス：計画中（発表日：2025-08-12）。</p><p>再エネの有効活用および普及拡大、電力需給の安定化に貢献</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://sinanen.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://sinanen.com/</a></li><li>企業公式サイト: <a href=\"https://sinanengroup.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://sinanengroup.co.jp</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000220.000053091.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000220.000053091.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "千葉県旭市の系統用蓄電所（シナネン）",
+    "operator": "シナネン株式会社（シナネンホールディングス）",
+    "cod": "2025-08-08",
+    "epc": "三菱電機システムサービス株式会社",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000220.000053091.html",
+    "body": "<p><strong>千葉県旭市の系統用蓄電所</strong>は、シナネンホールディングス株式会社の子会社のシナネン株式会社が、千葉県旭市のミライフ株式会社 千葉支店旭店の敷地内に建設した系統用蓄電所。シナネンホールディングスの2025年8月12日のリリースは、この蓄電所について「８月８日に竣工式を執り行い、同日、稼働を開始した」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000220.000053091.html\" target=\"_blank\" rel=\"noopener noreferrer\">千葉県旭市にて系統用蓄電所の稼働を開始いたしました（シナネンホールディングス株式会社、2025年8月12日）</a>）。</p><p>事業の概要は、サプライヤーを「伊藤忠商事株式会社」、建設・施工を「三菱電機システムサービス株式会社」、定格容量を「5.3 MWh」、系統出力を「1MW」、電池種別を「リチウムイオン電池」、設置場所を「ミライフ株式会社　千葉支店　旭店（千葉県旭市二５９００）」、建設開始日を「2025年2月」、営業運転開始日を「2025年８月」とする。運転開始の欄は、稼働を開始した2025年8月8日とした。</p><p>今後について、リリースは「容量市場・卸電力市場・需給調整市場への参画を通じて、再生可能エネルギーの更なる普及と電力バランスの最適化を図ります」としている。</p><p>リリースに蓄電所の固有の名前は書かれていないため、当サイトでは所在地と事業者で呼んでいる。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co173175-shiga-4mwh",
+   "id": "1hr57fw33ru",
+   "result": "dry",
+   "fields": [
+    "name",
+    "city",
+    "marketParticipation",
+    "body"
+   ],
+   "before": {
+    "name": "滋賀県で4MWh規模の系統用蓄電池",
+    "city": "愛荘町",
+    "marketParticipation": [],
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>滋賀県で4MWh規模の系統用蓄電池</strong>は、滋賀県に立地する系統用蓄電所。容量 4 MWh 規模。発表企業：日本蓄電開発機構株式会社。ステータス：稼働中（発表日：2025-11-18）。</p><p>─ 着工からわずか3カ月での連系を実現 ─</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000001.000173175.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000001.000173175.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>一次（日本蓄電開発機構 2025年12月3日付ニュース）に運転開始日の記載はなく、記載があるのは受電完了日 2025年11月4日である。出力（MW）も一次に記載がないため未掲載としている。</p>"
+   },
+   "after": {
+    "name": "滋賀県愛荘町蓄電所（日本蓄電開発機構）",
+    "city": "愛知郡愛荘町",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "body": "<p><strong>滋賀県愛荘町蓄電所</strong>は、日本蓄電開発機構株式会社が開発した、滋賀県愛知郡愛荘町の系統用蓄電所。同社のウェブサイトは、この蓄電所を「JESDIの第一号案件」とし、所在地を「滋賀県愛知郡愛荘町」、規模を「4MWh規模」、受電を「2025年11月4日」、市場参入を「2025年12月29日」としている（出典: <a href=\"https://japan-energystorage.co.jp/projects/aisho/\" target=\"_blank\" rel=\"noopener noreferrer\">滋賀県愛荘町蓄電所（TRACK RECORD）（日本蓄電開発機構株式会社、2026年11月22日に閲覧）</a>）。</p><p>同社の2025年11月18日のリリースは、「4MWh規模の系統用蓄電池プロジェクトにおいて、2025年11月に受電を開始した」と述べ、プロジェクト概要で、アセットホルダーを「滋賀県愛称町バッテリーJSD24001合同会社」（原文のまま）、容量を「4MWh（2MWh × 2系列）」、受電完了を「2025年11月4日」、建設パートナーを「株式会社上里建設」、アグリゲーターを「株式会社RUTILEA」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000001.000173175.html\" target=\"_blank\" rel=\"noopener noreferrer\">日本蓄電開発機構、滋賀県で4MWh規模の系統用蓄電池プロジェクトが受電完了（日本蓄電開発機構株式会社、2025年11月18日）</a>）。</p><p>参入した市場について、株式会社RUTILEAは、別のリリースに寄せたコメントで「滋賀県愛荘町蓄電所における、受電から約2か月での需給調整市場（一次調整力）への参入」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000006.000169829.html\" target=\"_blank\" rel=\"noopener noreferrer\">次世代蓄電池ソリューションを手掛ける「HOBE ENERGY」　自社製EMSを系統用蓄電所に実装し初号実績を確立、5MWh規模の「上奈良蓄電所」が稼働開始（HOBE ENERGY株式会社、2026年3月27日）</a>）。運転開始の日と出力（MW）は、これらの資料に書かれていない。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co151398-bess",
+   "id": "95ge18is5j",
+   "result": "dry",
+   "fields": [
+    "name",
+    "prefecture",
+    "city",
+    "body"
+   ],
+   "before": {
+    "name": "「8∞ (エイト・インフィニティ)」が未来のエネルギーを変える！",
+    "prefecture": null,
+    "city": null,
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>「8∞ (エイト・インフィニティ)」が未来のエネルギーを変える！</strong>は系統用蓄電所。出力 1.99 MW、容量 8 MWh 規模。事業者：株式会社REAL PARTNERS。</p><p>2026年運転開始予定、系統用蓄電池プロジェクトの購入者を大募集！</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000001.000151398.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000001.000151398.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "8∞ (エイト・インフィニティ)（REAL PARTNERS）",
+    "prefecture": "千葉県",
+    "city": "長生郡長生村",
+    "body": "<p><strong>8∞ (エイト・インフィニティ)</strong>は、株式会社REAL PARTNERSが2025年3月25日のリリースで案内した、千葉県長生郡長生村の系統用蓄電池の計画。リリースは、「千葉県長生郡長生村に蓄電容量約8MWhの系統用蓄電池を設置し」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000001.000151398.html\" target=\"_blank\" rel=\"noopener noreferrer\">「8∞ (エイト・インフィニティ)」が未来のエネルギーを変える！（株式会社REAL PARTNERS、2025年3月25日）</a>）。</p><p>プロジェクト概要は、名称を「8∞ (エイト・インフィニティ)」、所在地を「千葉県長生郡長生村（敷地面積 約496㎡）」、AC出力を「約1.99MWh」（原文のまま）、蓄電容量を「約8MWh（2台 or 4台構成のコンテナ型システム）」、連系形態を「ノンファーム連系（工事負担金込み）」、運転開始目標を「2026年」とする。</p><p>このリリースは、計画の販売の案内として出されたもの。運転を始めたことを示す発表は、確認できていない（2026年11月時点）。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co154894-bess-2",
+   "id": "5gii-ygcu",
+   "result": "dry",
+   "fields": [
+    "name",
+    "prefecture",
+    "city",
+    "operator",
+    "cod",
+    "epc",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "name": "RSアセットアドバイザーズと前田建設工業が系統用蓄電池",
+    "prefecture": null,
+    "city": null,
+    "operator": "RSアセットアドバイザーズ株式会社",
+    "cod": "2026年8月",
+    "epc": null,
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000002.000154894.html",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>RSアセットアドバイザーズと前田建設工業が系統用蓄電池</strong>は系統用蓄電所。出力 1.969 MW、容量 8 MWh 規模。事業者：RSアセットアドバイザーズ株式会社。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://rs-advisors.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://rs-advisors.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000002.000154894.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000002.000154894.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>運転開始予定は、一次リリース（RSアセットアドバイザーズ、2025年2月25日）の「運転開始予定年月:2026年8月」に基づく月精度の値である。従来この欄にあった 2025-02-25 はリリースの配信日であった。</p>"
+   },
+   "after": {
+    "name": "青森三戸蓄電所（RSアセットアドバイザーズ・前田建設工業）",
+    "prefecture": "青森県",
+    "city": "三戸郡五戸町",
+    "operator": "RSアセットアドバイザーズ株式会社・前田建設工業株式会社",
+    "cod": "",
+    "epc": "株式会社ブロードリンクス",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000014.000154894.html",
+    "body": "<p><strong>青森三戸蓄電所</strong>は、RSアセットアドバイザーズ株式会社と前田建設工業株式会社が共同で開発している、青森県三戸郡五戸町の系統用蓄電所。RSアセットアドバイザーズの2025年2月25日のリリースは、両社が「青森県三戸郡における系統用蓄電池事業の組成で合意しました」と述べ、これを「第1号案件」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000002.000154894.html\" target=\"_blank\" rel=\"noopener noreferrer\">RSアセットアドバイザーズと前田建設工業が系統用蓄電池事業で第１号案件を組成（RSアセットアドバイザーズ株式会社、2025年2月25日）</a>）。</p><p>このリリースのプロジェクト概要は、案件名を「青森三戸郡蓄電所」、所在地を「青森県三戸郡五戸町」、出力を「1,969kW/8,000kWh」、運転開始予定年月を「2026年8月」、接続先を「東北電力ネットワーク株式会社」としていた。2026年8月17日のリリースは、案件名を「青森三戸蓄電所」、JEPX参入日を「2026年12月」、工事会社を「株式会社ブロードリンクス」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000014.000154894.html\" target=\"_blank\" rel=\"noopener noreferrer\">RSアセットアドバイザーズと前田建設工業が共同開発する系統用蓄電所2拠点がJEPXおよび需給調整市場へ参入（RSアセットアドバイザーズ株式会社、2026年8月17日）</a>）。新しいリリースに運転開始の時期は書かれていないため、運転開始の欄は空にしている。</p><p>役割について、リリースは、RSアセットアドバイザーズが「事業への出資のほか、事業用地の選定、取得交渉、電力系統の確保、事業計画の作成など、開発・事務業務全般」を担うとしている。前田建設工業は、「事業への出資に加え、蓄電所のEPC（設計・調達・建設）・蓄電池メーカー・アグリゲーターの選定、メンテナンス業務の受託検討など、技術や運用に関する戦略」を担うとしている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co113700-bess-3",
+   "id": "w29d811zjg",
+   "result": "dry",
+   "fields": [
+    "name",
+    "prefecture",
+    "city",
+    "operator",
+    "cod",
+    "body"
+   ],
+   "before": {
+    "name": "エレビスタ株式会社の系統用蓄電所",
+    "prefecture": null,
+    "city": null,
+    "operator": "日本エネルギー総合システム株式会社",
+    "cod": "2025-09-26",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>エレビスタ株式会社の系統用蓄電所</strong>は、に立地する系統用蓄電所。発表企業：日本エネルギー総合システム株式会社。ステータス：計画中（発表日：2025-09-26）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.jpn-energy.jp/news/release/entry-507.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.jpn-energy.jp/news/release/entry-507.html</a></li><li>企業公式サイト: <a href=\"https://www.jpn-energy.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.jpn-energy.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000030.000113700.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000030.000113700.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "和歌山県和歌山市の系統用蓄電所（エレビスタ）",
+    "prefecture": "和歌山県",
+    "city": "和歌山市",
+    "operator": "エレビスタ株式会社",
+    "cod": "2026年3月",
+    "body": "<p><strong>和歌山県和歌山市の系統用蓄電所</strong>は、日本エネルギー総合システム株式会社が開発し、エレビスタ株式会社と売買契約を結んだ系統用蓄電所。日本エネルギー総合システムの2025年9月26日のリリースは、「当社が開発した関西電力管内の系統用蓄電所の売買契約」をエレビスタ株式会社と締結したと述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000030.000113700.html\" target=\"_blank\" rel=\"noopener noreferrer\">日本エネルギー総合システム、エレビスタ株式会社の系統用蓄電所開発に関するお知らせ（日本エネルギー総合システム株式会社、2025年9月26日）</a>）。</p><p>系統用蓄電所概要は、所在地を「和歌山県和歌山市」、AC容量を「1.99MW」、DC容量を「8.128MWh」、運用開始時期（予定）を「2026年3月」とする。リリースは、「今回新設される系統用蓄電所は 2026 年 3 月の連系を目指しており」とし、アグリゲーションは「JPN グループのＲＥ１００電力株式会社が請け負います」としている。</p><p>リリースに蓄電所の固有の名前は書かれていないため、当サイトでは所在地と事業者で呼んでいる。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co86244-mie-8mwh",
+   "id": "qqzn8blaoyu",
+   "result": "dry",
+   "fields": [
+    "name",
+    "cod",
+    "body"
+   ],
+   "before": {
+    "name": "8MWhの自社蓄電所",
+    "cod": "2025-11-25",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>8MWhの自社蓄電所</strong>は、三重県名張市に立地する系統用蓄電所。出力 2 MW、容量 8 MWh 規模。発表企業：株式会社サンヴィレッジ。ステータス：稼働中（発表日：2025-11-25）。</p><p>～初の自社アグリゲーション案件、全国展開に向けて蓄電池開発を加速～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://sunvillage-co-ltd.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://sunvillage-co-ltd.com/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000063.000086244.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000063.000086244.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "名張市八幡蓄電所（サンヴィレッジ）",
+    "cod": "2025-11-20",
+    "body": "<p><strong>名張市八幡蓄電所</strong>は、株式会社サンヴィレッジが三重県名張市に建設し、所有する系統用蓄電所。同社の2025年11月25日のリリースは、「三重県名張市に建設した当社所有の2MW/8MWh蓄電所が、2025年10月20日に系統連系を完了し、試運転を経て同年11月20日に商業運転を開始しました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000063.000086244.html\" target=\"_blank\" rel=\"noopener noreferrer\">三重県名張市に2MW/8MWhの自社蓄電所を建設・商業運転開始（株式会社サンヴィレッジ、2025年11月25日）</a>）。</p><p>蓄電所の概要は、蓄電所の容量を「2MW/8MWh（高圧）」、設置場所を「三重県名張市（中部電力管内）」、蓄電池システムを「HUAWEI製 LUNA2000-2.0MWHコンテナ型蓄電池×4台」、アグリゲーターを「株式会社サンヴィレッジ」、系統連系を「2025年10月20日」、商業運転開始を「2025年11月20日」とする。リリースは、「本蓄電所は当社初の自社アグリゲーション案件で、卸売市場・需給調整市場・容量市場において運用を行います」としている。</p><p>蓄電所の名前は、リリースの写真の説明「名張市八幡蓄電所」によった。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-energy-ntt-bess",
+   "id": "36jbyyftc",
+   "result": "dry",
+   "fields": [
+    "name",
+    "prefecture",
+    "city",
+    "operator",
+    "epc",
+    "cod",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "name": "系統用蓄電所（TAOKE ENERGY）",
+    "prefecture": null,
+    "city": null,
+    "operator": "TAOKE ENERGY株式会社",
+    "epc": null,
+    "cod": "2025-06-30",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000005.000103834.html",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>ENERGYがNTTアノードエナジーの系統用蓄電所</strong>は、に立地する系統用蓄電所。容量 5.3 MWh 規模。発表企業：TAOKE ENERGY株式会社。ステータス：計画中（発表日：2025-06-30）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://www.taoke-energy.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.taoke-energy.com/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000005.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000005.000103834.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "埼玉和光蓄電所（NTTアノードエナジー）",
+    "prefecture": "埼玉県",
+    "city": "和光市新倉",
+    "operator": "NTTアノードエナジー株式会社",
+    "epc": "TAOKE ENERGY株式会社",
+    "cod": "2025年1月",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000056.000111866.html",
+    "body": "<p><strong>埼玉和光蓄電所</strong>は、NTTアノードエナジー株式会社の埼玉県和光市の系統用蓄電所。同社の2025年5月23日のリリースは、「埼玉和光蓄電所（埼玉県和光市）」を含む3か所の蓄電所を建設し、「2025年から順次運転を開始しました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000056.000111866.html\" target=\"_blank\" rel=\"noopener noreferrer\">埼玉和光、埼玉三芳および埼玉鶴ヶ島蓄電所の商用運転を開始（NTTアノードエナジー株式会社、2025年5月23日）</a>）。</p><p>このリリースは、名称を「埼玉和光蓄電所」、設置場所を「埼玉県和光市新倉」、電池種類を「リチウムイオン電池」、PCS出力を「1,124kW」、公称容量を「5,304kWh」、運転開始を「2025年１月」、事業者を「NTTアノードエナジー株式会社」とする。リリースは日を書いていないため、運転開始の欄は月までとした。</p><p>建設したTAOKE ENERGY株式会社の2025年6月30日のリリースは、「埼玉県和光市にNTTアノードエナジー株式会社（以下、NTTアノードエナジー）の系統用蓄電所「埼玉和光蓄電所」を建設し、2025年1月より商用運転を開始しました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000005.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">TAOKE ENERGYがNTTアノードエナジーの系統用蓄電所5.3MWhを開発（TAOKE ENERGY株式会社、2025年6月30日）</a>）。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-lehmanhodings-saitama",
+   "id": "s6o6pn7m-n",
+   "result": "dry",
+   "fields": [
+    "name",
+    "cod",
+    "marketParticipation",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "name": "埼玉県における系統用蓄電所",
+    "cod": "2025-12-16",
+    "marketParticipation": [],
+    "sourceUrl": "https://lehmansoft.co.jp/",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>埼玉県における系統用蓄電所</strong>は、埼玉県に立地する系統用蓄電所。発表企業：Lehman Hodings。ステータス：稼働中（発表日：2025-12-16）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://lehmansoft.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://lehmansoft.co.jp/</a></li><li>企業公式サイト: <a href=\"https://lehmansoft.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://lehmansoft.com/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000225.000116500.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000225.000116500.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "LehmanSoft Japan埼玉蓄電所",
+    "cod": "2025-11-01",
+    "marketParticipation": [
+     "JEPX"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000225.000116500.html",
+    "body": "<p><strong>LehmanSoft Japan埼玉蓄電所</strong>は、LehmanSoft Japan株式会社の埼玉県の系統用蓄電所。同社の2025年12月16日のリリースは、「埼玉県において開発を進めてまいりました系統用蓄電所が、2025年11月1日付で商用稼働を開始し、あわせてJEPX（日本卸電力取引所）における電力取引を開始しました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000225.000116500.html\" target=\"_blank\" rel=\"noopener noreferrer\">埼玉県における系統用蓄電所の稼働開始および JEPX（日本卸電力取引所）での電力取引開始のお知らせ（LehmanSoft Japan株式会社、2025年12月16日）</a>）。</p><p>蓄電所の概要は、名称を「LehmanSoft Japan埼玉蓄電所」、所在地を「埼玉県」、蓄電池出力を「2MW」、蓄電池容量を「8MWh」、稼働開始日を「2025年11月1日」、取引市場を「JEPX（卸電力市場）、需給調整市場（参入準備中）」とする。市町村は書かれていない。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-matsuo-toyama-8mwh",
+   "id": "ml-pec02qp2",
+   "result": "dry",
+   "fields": [
+    "name",
+    "operator",
+    "status",
+    "cod",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "name": "富山県富山市にて8MWhの系統用蓄電池",
+    "operator": "MATSUO",
+    "status": [
+     "計画中"
+    ],
+    "cod": "2026-01-09",
+    "sourceUrl": "https://www.matsuo-sangyo.co.jp/",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>富山県富山市にて8MWhの系統用蓄電池</strong>は、富山県富山市に立地する系統用蓄電所。容量 8 MWh 規模。発表企業：MATSUO。ステータス：計画中（発表日：2026-01-09）。</p><p>トータルソリューションの提供により、高圧系統用蓄電池の導入を支援</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.matsuo-sangyo.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.matsuo-sangyo.co.jp/</a></li><li>企業公式サイト: <a href=\"https://www.matsuo-sangyo.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.matsuo-sangyo.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000021.000077442.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000021.000077442.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "富山県富山市の系統用蓄電所（松尾産業）",
+    "operator": "",
+    "status": [
+     "建設中"
+    ],
+    "cod": "",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000021.000077442.html",
+    "body": "<p><strong>富山県富山市の系統用蓄電所</strong>は、松尾産業株式会社が蓄電池の供給から導入までを支援した、富山県富山市の系統用蓄電池設備。同社の2026年1月9日のリリースは、「富山県富山市で導入を進めていた当社初となる系統用蓄電池について、2026年1月9日より受電を開始した」と述べ、設備を「エネルギー関連企業様向けに導入したもの」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000021.000077442.html\" target=\"_blank\" rel=\"noopener noreferrer\">富山県富山市にて8MWhの系統用蓄電池設備の受電を開始（松尾産業株式会社、2026年1月9日）</a>）。導入先の会社の名前は書かれていない。</p><p>プロジェクト概要は、設置場所を「富山県富山市」、定格出力・容量を「2MW × 1基/2.6MWh × 3基（合計 8MWh）」、用途を「需給調整市場（一次調整力等）への参加」、着工を「2025年10月」、受電開始を「2026年1月9日」、電池を「Gotion（LFP コンテナ型）」、PCSを「LS ELECTRIC」とする。運転開始の日はリリースに書かれていないため、運転開始の欄は空にしている。</p><p>リリースに蓄電所の固有の名前は書かれていないため、当サイトでは所在地と、発表した会社の名前で呼んでいる。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-matsuo-okayama-8mwh",
+   "id": "9ow00yotc1id",
+   "result": "dry",
+   "fields": [
+    "name",
+    "operator",
+    "status",
+    "cod",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "name": "岡山県で8MWhの系統用蓄電池",
+    "operator": "MATSUO",
+    "status": [
+     "計画中"
+    ],
+    "cod": "2026-03-12",
+    "sourceUrl": "https://www.matsuo-sangyo.co.jp/",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>岡山県で8MWhの系統用蓄電池</strong>は、岡山県に立地する系統用蓄電所。容量 8 MWh 規模。発表企業：MATSUO。ステータス：計画中（発表日：2026-03-12）。</p><p>高圧系統用蓄電池の導入をトータルソリューションで支援</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.matsuo-sangyo.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.matsuo-sangyo.co.jp/</a></li><li>企業公式サイト: <a href=\"https://www.matsuo-sangyo.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.matsuo-sangyo.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000023.000077442.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000023.000077442.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "岡山県の系統用蓄電所（松尾産業）",
+    "operator": "",
+    "status": [
+     "建設中"
+    ],
+    "cod": "",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000023.000077442.html",
+    "body": "<p><strong>岡山県の系統用蓄電所</strong>は、松尾産業株式会社が蓄電池の供給から導入までを支援した、岡山県の系統用蓄電池設備。同社の2026年3月12日のリリースは、「岡山県において導入を進めていた系統用蓄電池設備について、2026年2月27日に受電を開始し、2026年3月4日に系統連系を開始した」と述べ、設備を「エネルギー関連企業向けに導入されたもの」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000023.000077442.html\" target=\"_blank\" rel=\"noopener noreferrer\">岡山県で8MWhの系統用蓄電池設備が連系開始（松尾産業株式会社、2026年3月12日）</a>）。導入先の会社の名前と市町村は書かれていない。</p><p>プロジェクト概要は、設置場所を「岡山県」、定格出力・容量を「2MW × 1基、2.6MWh × 3基（合計8MWh）」、用途を「需給調整市場（一次調整力等）への参加」、着工を「2025年12月」、受電開始を「2026年2月27日」、系統連系開始を「2026年3月4日」、電池を「Gotion（LFPコンテナ型）」、PCSを「LS ELECTRIC」とする。運転開始の日はリリースに書かれていないため、運転開始の欄は空にしている。</p><p>リリースに蓄電所の固有の名前は書かれていないため、当サイトでは所在地と、発表した会社の名前で呼んでいる。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-sustech-bess",
+   "id": "4r8nwehxq38s",
+   "result": "dry",
+   "fields": [
+    "name",
+    "prefecture",
+    "city",
+    "operator",
+    "status",
+    "cod",
+    "sourceUrl",
+    "body"
+   ],
+   "before": {
+    "name": "ユアサとSustechが共同で系統用蓄電所",
+    "prefecture": null,
+    "city": null,
+    "operator": "株式会社Sustech",
+    "status": [
+     "稼働中"
+    ],
+    "cod": "2026-01-27",
+    "sourceUrl": "https://sustech-inc.co.jp/",
+    "body": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>ユアサとSustechが共同で系統用蓄電所</strong>は、に立地する系統用蓄電所。発表企業：株式会社Sustech。ステータス：稼働中（発表日：2026-01-27）。</p><p>― 2026年度上旬の運転開始を予定 ―</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://sustech-inc.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://sustech-inc.co.jp/</a></li><li>企業公式サイト: <a href=\"https://www.sustech-inc.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.sustech-inc.com/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000076.000092942.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000076.000092942.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>"
+   },
+   "after": {
+    "name": "滋賀県米原市の系統用蓄電所（GSユアサ・Sustech）",
+    "prefecture": "滋賀県",
+    "city": "米原市",
+    "operator": "株式会社ＧＳユアサ・株式会社Sustech",
+    "status": [
+     "計画中"
+    ],
+    "cod": "2026年9月",
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000076.000092942.html",
+    "body": "<p><strong>滋賀県米原市の系統用蓄電所</strong>は、株式会社 ＧＳユアサと株式会社Sustechが共同実証事業として開発する系統用蓄電所。株式会社Sustechの2026年1月27日のリリースは、「ＧＳユアサ製の定置用リチウムイオン電池設備を用いた系統用蓄電所を滋賀県米原市に設置します」とし、「運転開始は2026年9月の予定です」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000076.000092942.html\" target=\"_blank\" rel=\"noopener noreferrer\">ＧＳユアサとSustechが共同で系統用蓄電所の事業開発を開始（株式会社Sustech、2026年1月27日）</a>）。</p><p>蓄電池設備のシステム概要は、電池の種類を「リチウムイオン電池 LEPS-2-14」、出力を「1.3ＭＷ」、容量を「4.2MWh」、コンテナ数を「2コンテナ」とする。運用について、リリースは「Sustechが開発した分散型電力プラットフォーム「ELIC」を通じて、AIによる市場予測や最適な充放電制御・市場運用を行い」としている。</p><p>運転を始めたことを示す発表は、確認できていない（2026年11月時点）。</p><p>リリースに蓄電所の固有の名前は書かれていないため、当サイトでは所在地と事業者で呼んでいる。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  }
+ ]
+}

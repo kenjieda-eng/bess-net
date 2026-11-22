@@ -4331,7 +4331,7 @@
       "title_verbatim": "次世代蓄電池ソリューションを手掛ける「HOBE ENERGY」　自社製EMSを系統用蓄電所に実装し初号実績を確立、5MWh規模の「上奈良蓄電所」が稼働開始 | HOBE ENERGY株式会社のプレスリリース",
       "checked_on": "2026-11-22",
       "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（261,191 bytes）。発表日 2026年3月27日。",
-      "used_in": "訂正履歴 20261122-04・20261122-09（basis）・projects の本文（V3）"
+      "used_in": "訂正履歴 20261122-04・20261122-09（basis）・projects の本文（V3）・訂正履歴 20261122-20（basis）・projects の本文（名前の直し便 W5）"
     },
     {
       "name": "次世代蓄電池ソリューションを手掛ける「HOBE ENERGY」 自社製 EMS を系統用蓄電所に実装、上奈良蓄電所に続き 5MWh 規模の「七本木蓄電所」が受電完了",
@@ -4422,6 +4422,168 @@
       "checked_on": "2026-11-22",
       "note": "projects の掃除便その 2（2026-11-22・_QUEUE.md 132 行）。素の curl で HTTP 200（239,443 bytes）。発表日 2025年7月29日。",
       "used_in": "訂正履歴 20261122-14・20261122-15（basis）"
+    },
+    {
+      "name": "岩手県遠野市における大規模系統用蓄電所の運転開始について",
+      "publisher": "株式会社グローバルエンジニアリング（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000014.000081706.html",
+      "title_verbatim": "岩手県遠野市における大規模系統用蓄電所の運転開始について | 株式会社グローバルエンジニアリングのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（236,238 bytes）。発表日 2025年7月24日。",
+      "used_in": "訂正履歴 20261122-16（basis）・projects の本文（W1）"
+    },
+    {
+      "name": "株式会社東急パワーサプライ向け系統用蓄電池設置工事の完工および運転開始について",
+      "publisher": "株式会社サンヴィレッジ（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000066.000086244.html",
+      "title_verbatim": "株式会社東急パワーサプライ向け系統用蓄電池設置工事の完工および運転開始について | 株式会社サンヴィレッジのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（273,841 bytes）。発表日 2026年4月14日。",
+      "used_in": "訂正履歴 20261122-17（basis）・projects の本文（W2）"
+    },
+    {
+      "name": "TAOKE ENERGY、三重県志摩市で2MWの蓄電所を開発 9月に一次調整力市場へ参加予定 脱炭素社会の実現に貢献",
+      "publisher": "TAOKE ENERGY株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000025.000103834.html",
+      "title_verbatim": "TAOKE ENERGY、三重県志摩市で2MWの蓄電所を開発 9月に一次調整力市場へ参加予定 脱炭素社会の実現に貢献 | TAOKE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（238,148 bytes）。発表日 2026年5月7日。",
+      "used_in": "訂正履歴 20261122-18（basis）"
+    },
+    {
+      "name": "TAOKE ENERGY、ファンド投資案件で初の一次調整力市場への参入を実現",
+      "publisher": "TAOKE ENERGY株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000038.000103834.html",
+      "title_verbatim": "TAOKE ENERGY、ファンド投資案件で初の一次調整力市場への参入を実現 | TAOKE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（250,891 bytes）。発表日 2026年8月10日。",
+      "used_in": "訂正履歴 20261122-18（basis）"
+    },
+    {
+      "name": "千葉県旭市にて系統用蓄電所の稼働を開始いたしました",
+      "publisher": "シナネンホールディングス株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000220.000053091.html",
+      "title_verbatim": "千葉県旭市にて系統用蓄電所の稼働を開始いたしました | シナネンホールディングス株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（254,717 bytes）。発表日 2025年8月12日。",
+      "used_in": "訂正履歴 20261122-19（basis）・projects の本文（W4）"
+    },
+    {
+      "name": "日本蓄電開発機構、滋賀県で4MWh規模の系統用蓄電池プロジェクトが受電完了",
+      "publisher": "日本蓄電開発機構株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000001.000173175.html",
+      "title_verbatim": "日本蓄電開発機構、滋賀県で4MWh規模の系統用蓄電池プロジェクトが受電完了 | 日本蓄電開発機構株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（244,794 bytes）。発表日 2025年11月18日。",
+      "used_in": "訂正履歴 20261122-20（basis）・projects の本文（W5）"
+    },
+    {
+      "name": "滋賀県愛荘町蓄電所（TRACK RECORD）",
+      "publisher": "日本蓄電開発機構株式会社",
+      "url": "https://japan-energystorage.co.jp/projects/aisho/",
+      "title_verbatim": "滋賀県愛荘町蓄電所｜TRACK RECORD｜日本蓄電開発機構株式会社（JESDI）",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（86,623 bytes）。発表日 2026年11月22日に閲覧。",
+      "used_in": "訂正履歴 20261122-20（basis）・projects の本文（W5）"
+    },
+    {
+      "name": "「8∞ (エイト・インフィニティ)」が未来のエネルギーを変える！",
+      "publisher": "株式会社REAL PARTNERS（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000001.000151398.html",
+      "title_verbatim": "「8∞ (エイト・インフィニティ)」が未来のエネルギーを変える！ | 株式会社REAL PARTNERSのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（243,004 bytes）。発表日 2025年3月25日。",
+      "used_in": "訂正履歴 20261122-21（basis）・projects の本文（W6）"
+    },
+    {
+      "name": "RSアセットアドバイザーズと前田建設工業が系統用蓄電池事業で第１号案件を組成",
+      "publisher": "RSアセットアドバイザーズ株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000002.000154894.html",
+      "title_verbatim": "RSアセットアドバイザーズと前田建設工業が系統用蓄電池事業で第１号案件を組成 | RSアセットアドバイザーズ株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（232,023 bytes）。発表日 2025年2月25日。",
+      "used_in": "訂正履歴 20261122-22（basis）・projects の本文（W7）"
+    },
+    {
+      "name": "RSアセットアドバイザーズと前田建設工業が共同開発する系統用蓄電所2拠点がJEPXおよび需給調整市場へ参入",
+      "publisher": "RSアセットアドバイザーズ株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000014.000154894.html",
+      "title_verbatim": "RSアセットアドバイザーズと前田建設工業が共同開発する系統用蓄電所2拠点がJEPXおよび需給調整市場へ参入 | RSアセットアドバイザーズ株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（330,055 bytes）。発表日 2026年8月17日。",
+      "used_in": "訂正履歴 20261122-22（basis）・projects の本文（W7）"
+    },
+    {
+      "name": "日本エネルギー総合システム、エレビスタ株式会社の系統用蓄電所開発に関するお知らせ",
+      "publisher": "日本エネルギー総合システム株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000030.000113700.html",
+      "title_verbatim": "日本エネルギー総合システム、エレビスタ株式会社の系統用蓄電所開発に関するお知らせ | 日本エネルギー総合システム株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（279,190 bytes）。発表日 2025年9月26日。",
+      "used_in": "訂正履歴 20261122-23（basis）・projects の本文（W8）"
+    },
+    {
+      "name": "三重県名張市に2MW/8MWhの自社蓄電所を建設・商業運転開始",
+      "publisher": "株式会社サンヴィレッジ（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000063.000086244.html",
+      "title_verbatim": "三重県名張市に2MW/8MWhの自社蓄電所を建設・商業運転開始 | 株式会社サンヴィレッジのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（246,955 bytes）。発表日 2025年11月25日。",
+      "used_in": "訂正履歴 20261122-24（basis）・projects の本文（W9）"
+    },
+    {
+      "name": "埼玉和光、埼玉三芳および埼玉鶴ヶ島蓄電所の商用運転を開始",
+      "publisher": "NTTアノードエナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000056.000111866.html",
+      "title_verbatim": "埼玉和光、埼玉三芳および埼玉鶴ヶ島蓄電所の商用運転を開始 | NTTアノードエナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（243,394 bytes）。発表日 2025年5月23日。",
+      "used_in": "訂正履歴 20261122-25（basis）・projects の本文（W10）"
+    },
+    {
+      "name": "TAOKE ENERGYがNTTアノードエナジーの系統用蓄電所5.3MWhを開発",
+      "publisher": "TAOKE ENERGY株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000005.000103834.html",
+      "title_verbatim": "TAOKE ENERGYがNTTアノードエナジーの系統用蓄電所5.3MWhを開発 | TAOKE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（253,703 bytes）。発表日 2025年6月30日。",
+      "used_in": "訂正履歴 20261122-25（basis）・projects の本文（W10）"
+    },
+    {
+      "name": "埼玉県における系統用蓄電所の稼働開始および JEPX（日本卸電力取引所）での電力取引開始のお知らせ",
+      "publisher": "LehmanSoft Japan株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000225.000116500.html",
+      "title_verbatim": "埼玉県における系統用蓄電所の稼働開始および JEPX（日本卸電力取引所）での電力取引開始のお知らせ | Lehman Holdings株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（259,535 bytes）。発表日 2025年12月16日。",
+      "used_in": "訂正履歴 20261122-26（basis）・projects の本文（W11）"
+    },
+    {
+      "name": "富山県富山市にて8MWhの系統用蓄電池設備の受電を開始",
+      "publisher": "松尾産業株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000021.000077442.html",
+      "title_verbatim": "富山県富山市にて8MWhの系統用蓄電池設備の受電を開始 | 松尾産業株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（246,557 bytes）。発表日 2026年1月9日。",
+      "used_in": "訂正履歴 20261122-27（basis）・projects の本文（W12）"
+    },
+    {
+      "name": "岡山県で8MWhの系統用蓄電池設備が連系開始",
+      "publisher": "松尾産業株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000023.000077442.html",
+      "title_verbatim": "岡山県で8MWhの系統用蓄電池設備が連系開始 | 松尾産業株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（245,011 bytes）。発表日 2026年3月12日。",
+      "used_in": "訂正履歴 20261122-28（basis）・projects の本文（W13）"
+    },
+    {
+      "name": "ＧＳユアサとSustechが共同で系統用蓄電所の事業開発を開始",
+      "publisher": "株式会社Sustech（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000076.000092942.html",
+      "title_verbatim": "ＧＳユアサとSustechが共同で系統用蓄電所の事業開発を開始 | 株式会社Sustechのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の名前の直し便（2026-11-22・_QUEUE.md 133 行）。素の curl で HTTP 200（279,079 bytes）。発表日 2026年1月27日。",
+      "used_in": "訂正履歴 20261122-29（basis）・projects の本文（W14）"
     }
   ]
 }

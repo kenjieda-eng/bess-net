@@ -1,0 +1,101 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 28
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 0,
+  "skipped": 14,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "projects/pr-co81706-iwate-58mwh",
+   "id": "aqub2zr3ch",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co86244-bess-2",
+   "id": "mlhw92kut5",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-taokeenergy-mie-2mw",
+   "id": "01jnnxzcdi",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co53091-chiba",
+   "id": "f7be5sph5_p",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co173175-shiga-4mwh",
+   "id": "1hr57fw33ru",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co151398-bess",
+   "id": "95ge18is5j",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co154894-bess-2",
+   "id": "5gii-ygcu",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co113700-bess-3",
+   "id": "w29d811zjg",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-co86244-mie-8mwh",
+   "id": "qqzn8blaoyu",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-energy-ntt-bess",
+   "id": "36jbyyftc",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-lehmanhodings-saitama",
+   "id": "s6o6pn7m-n",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-matsuo-toyama-8mwh",
+   "id": "ml-pec02qp2",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-matsuo-okayama-8mwh",
+   "id": "9ow00yotc1id",
+   "result": "skip_final_state"
+  },
+  {
+   "kind": "patch",
+   "target": "projects/pr-sustech-bess",
+   "id": "4r8nwehxq38s",
+   "result": "skip_final_state"
+  }
+ ]
+}
