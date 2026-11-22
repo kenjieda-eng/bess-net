@@ -388,14 +388,15 @@ export function describeState(s: ListState, statusLabelOf: (key: string) => stri
 /** CSV の文字列（BOM なし・CRLF。BOM はダウンロードのときに付ける）。stamp は「YYYY-MM-DD HH:MM」 */
 export function buildCsv(rows: ListRow[], s: ListState, total: number, stamp: string, statusLabelOf: (key: string) => string, codText: (r: ListRow) => string): string {
   const conds = describeState(s, statusLabelOf);
+  // 1〜3 行目も " で囲む（キーワードに , や " があっても 3 行目が割れない。小さな直し便 ②・2026-11-22）。運転開始は cod が空の行では空欄（画面の表の「—」は変えない・①）
   const lines = [
-    `出典: 蓄電所ネット bess-net.jp（取得日時: ${stamp}）`,
-    CSV_NOTE,
-    conds.length ? `条件: ${conds.join('／')}（該当 ${rows.length} 件）` : `条件: なし（全 ${total} 件）`,
+    csvText(`出典: 蓄電所ネット bess-net.jp（取得日時: ${stamp}）`),
+    csvText(CSV_NOTE),
+    csvText(conds.length ? `条件: ${conds.join('／')}（該当 ${rows.length} 件）` : `条件: なし（全 ${total} 件）`),
     CSV_HEADER,
     ...rows.map((r) => [
       csvText(r.n), csvText(statusLabel(r.st)), csvText(r.p), csvText(r.c), csvNum(r.mw), csvNum(r.mwh), csvText(r.op), csvText(r.epc),
-      csvText(codText(r)), csvText(r.src), csvText(`https://bess-net.jp/projects/${r.s}`), csvText(r.pd), csvText(r.rd),
+      csvText(r.cod.trim() ? codText(r) : ''), csvText(r.src), csvText(`https://bess-net.jp/projects/${r.s}`), csvText(r.pd), csvText(r.rd),
     ].join(',')),
   ];
   return lines.join('\r\n') + '\r\n';

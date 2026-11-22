@@ -206,7 +206,16 @@ function axis1(): void {
   for (const r of recs.slice(4)) for (const i of [4, 5]) if (/[^0-9.]/.test(r[i] ?? '')) ng(`CSV 数字の欄に単位か桁区切り: ${r[i]}`);
   eq('csvText の囲み', csvText('a"b'), '"a""b"');
   const none = buildCsv(cr, EMPTY_STATE, 2, '2026-11-22 10:15', (k) => k, codText).split('\r\n');
-  eq('CSV 条件なしの 3 行目', none[2], '条件: なし（全 2 件）');
+  eq('CSV 条件なしの 3 行目', none[2], csvText('条件: なし（全 2 件）'));
+  // 小さな直し便（2026-11-22）: 運転開始が空の行は 9 列目が空欄（「—」でない）・値がある行は画面と同じ文字・1〜3 行目は " で囲む・キーワードに , と " があっても 3 行目が割れない・5 行目から 13 列
+  const cr2 = [row({ s: 'e1', n: '空', cod: '' }), row({ s: 'e2', n: '値あり', st: '計画中', cod: '2026年8月' }), row({ s: 'e3', n: '稼働', st: '稼働中', cod: '2026-04-08' })];
+  const csv2 = buildCsv(cr2, { ...EMPTY_STATE, q: 'a,b"c' }, 304, '2026-11-22 10:15', (k) => k, codText);
+  const recs2 = parseCsv(csv2);
+  eq('CSV 運転開始が空の行は空欄', recs2[4]?.[8], '');
+  eq('CSV 運転開始がある行は画面と同じ文字', [recs2[5]?.[8], recs2[6]?.[8]], ['2026年8月（予定）', '2026-04-08']);
+  for (const i of [0, 1, 2]) { const line = csv2.split('\r\n')[i]; if (!line.startsWith('"') || !line.endsWith('"')) ng(`CSV ${i + 1} 行目が " で囲まれていない: ${line.slice(0, 40)}`); }
+  eq('CSV 3 行目は 1 つの欄（キーワードに , と "）', recs2[2], ['条件: キーワード=a,b"c（該当 3 件）']);
+  eq('CSV 5 行目からの列の数', recs2.slice(4).map((x) => x.length), [13, 13, 13]);
 }
 
 /** CSV を読む（" の囲み・"" ・囲みの中の改行に対応） */

@@ -418,6 +418,32 @@ export default function ProjectsBrowser({ rows, children }: { rows: ListRow[]; c
         </nav>
       </div>
 
+      {/* 1 つの表（条件か並べ替えを選んだときだけ描く＝初めの HTML には無い）。結果の行のすぐ下に置く（小さな直し便 ③・2026-11-22。注記は表の後ろ） */}
+      {active && shown.length > 0 && (
+        <section className="project-status-section">
+          <div className="subsidy-table-wrapper">
+            <table className="subsidy-table projects-table projects-table-flat">
+              <thead>
+                <tr>
+                  <th>プロジェクト名</th>
+                  <th>状態</th>
+                  <th>所在地</th>
+                  <th>出力</th>
+                  <th>容量</th>
+                  <th>事業者</th>
+                  <th>運転開始</th>
+                </tr>
+              </thead>
+              <tbody>
+                {shown.map((r) => (
+                  <Row key={r.s} r={r} flat epcHint={ts.length > 0 && matchKeyword(r, ts).epcOnly} showPd={st.sort === 'new'} />
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
+
       {children}
 
       {/* 4 つの表（初めの表示・条件を選ぶと隠す） */}
@@ -450,32 +476,6 @@ export default function ProjectsBrowser({ rows, children }: { rows: ListRow[]; c
           </section>
         ))}
       </div>
-
-      {/* 1 つの表（条件か並べ替えを選んだときだけ描く＝初めの HTML には無い） */}
-      {active && shown.length > 0 && (
-        <section className="project-status-section">
-          <div className="subsidy-table-wrapper">
-            <table className="subsidy-table projects-table projects-table-flat">
-              <thead>
-                <tr>
-                  <th>プロジェクト名</th>
-                  <th>状態</th>
-                  <th>所在地</th>
-                  <th>出力</th>
-                  <th>容量</th>
-                  <th>事業者</th>
-                  <th>運転開始</th>
-                </tr>
-              </thead>
-              <tbody>
-                {shown.map((r) => (
-                  <Row key={r.s} r={r} flat epcHint={ts.length > 0 && matchKeyword(r, ts).epcOnly} showPd={st.sort === 'new'} />
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-      )}
     </div>
   );
 }

@@ -4131,10 +4131,29 @@
     letter-spacing: 0;
   }
   .projects-filter {
-    padding: 12px;
+    padding: 10px 12px;
   }
+  .projects-filter-title {
+    margin-bottom: 4px;
+  }
+  .projects-field label {
+    margin-bottom: 2px;
+  }
+  /* キーワード 1 段＋選ぶ欄 2 段（小さな直し便 ④・2026-11-22。文字 16px・高さ 44px はそのまま） */
   .projects-filter-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .projects-field-q {
+    grid-column: 1 / -1;
+  }
+  .projects-chips {
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .projects-chip {
+    padding: 6px 10px;
+    font-size: 14px;
   }
   /* 表は HTML のまま、1 行を 1 つのかたまりに（上に名前・下に欄の名前つきで 状態・所在地・出力と容量・事業者・運転開始） */
   .projects-table,
