@@ -4863,6 +4863,249 @@
       "checked_on": "2026-11-22",
       "note": "projects の掃除便その 4-1（2026-11-22・_QUEUE.md 137 行）。素の curl で HTTP 200（249,436 bytes）。発表日 2026年7月6日。",
       "used_in": "訂正履歴 20261122-53（basis）・projects の本文（N9）"
+    },
+    {
+      "name": "ポート群馬太田蓄電所の需給調整市場での取引開始のお知らせ",
+      "publisher": "ポート株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000183.000016325.html",
+      "title_verbatim": "ポート群馬太田蓄電所の需給調整市場での取引開始のお知らせ | ポート株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（264,659 bytes）。発表日 2025年12月1日。",
+      "used_in": "訂正履歴 20261122-58・20261122-59・20261122-60（basis）・projects の本文（Q1・Q2・Q3）"
+    },
+    {
+      "name": "群馬県伊勢崎市における系統用蓄電所の商業運転開始のお知らせ",
+      "publisher": "ポート株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000178.000016325.html",
+      "title_verbatim": "群馬県伊勢崎市における系統用蓄電所の商業運転開始のお知らせ | ポート株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（259,644 bytes）。発表日 2025年10月17日。",
+      "used_in": "訂正履歴 20261122-60（basis）・projects の本文（Q3）"
+    },
+    {
+      "name": "系統用蓄電所の需給調整市場での取引開始のお知らせ",
+      "publisher": "ポート株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000177.000016325.html",
+      "title_verbatim": "系統用蓄電所の需給調整市場での取引開始のお知らせ | ポート株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（262,773 bytes）。発表日 2025年10月16日。",
+      "used_in": "訂正履歴 20261122-59（basis）・projects の本文（Q2）"
+    },
+    {
+      "name": "群馬県太田市における系統用蓄電所の商業運転開始のお知らせ｜ポート株式会社（PORT INC.）",
+      "publisher": "ポート株式会社",
+      "url": "https://www.theport.jp/news/2025/11497",
+      "title_verbatim": "群馬県太田市における系統用蓄電所の商業運転開始のお知らせ｜ポート株式会社（PORT INC.）",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（44,762 bytes）。発表日 2025年6月19日。",
+      "used_in": "訂正履歴 20261122-58（basis）・projects の本文（Q1）"
+    },
+    {
+      "name": "石川県加賀市にて約2MW／約4MWh 蓄電所を運転開始しました",
+      "publisher": "シェルパグループ合同会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000004.000180465.html",
+      "title_verbatim": "石川県加賀市にて約2MW／約4MWh 蓄電所を運転開始しました | シェルパグループ合同会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（244,385 bytes）。発表日 2026年4月1日。",
+      "used_in": "訂正履歴 20261122-61（basis）・projects の本文（Q4）"
+    },
+    {
+      "name": "徳島県吉野川市にて約2MW／約4MWh 蓄電所が運転開始",
+      "publisher": "ヒラソル・エナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000026.000085634.html",
+      "title_verbatim": "徳島県吉野川市にて約2MW／約4MWh 蓄電所が運転開始 | ヒラソル・エナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（248,176 bytes）。発表日 2026年4月8日。",
+      "used_in": "訂正履歴 20261122-62（basis）・projects の本文（Q5）"
+    },
+    {
+      "name": "中川商事、ヒラソル・エナジーが福岡県古賀市で系統用蓄電所運転開始",
+      "publisher": "ヒラソル・エナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000019.000085634.html",
+      "title_verbatim": "中川商事、ヒラソル・エナジーが福岡県古賀市で系統用蓄電所運転開始 | ヒラソル・エナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（264,143 bytes）。発表日 2025年11月5日。",
+      "used_in": "訂正履歴 20261122-56・20261122-76・20261122-78（basis）・projects の本文（Q19）"
+    },
+    {
+      "name": "株式会社オリンピアに系統用蓄電所システムを納入",
+      "publisher": "株式会社パワーエックス（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000133.000109041.html",
+      "title_verbatim": "株式会社オリンピアに系統用蓄電所システムを納入 | 株式会社パワーエックスのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（238,244 bytes）。発表日 2025年2月13日。",
+      "used_in": "訂正履歴 20261122-54・20261122-63・20261122-78（basis）・projects の本文（Q6）"
+    },
+    {
+      "name": "オリンピアに系統用蓄電システムを納入",
+      "publisher": "株式会社パワーエックス（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000155.000109041.html",
+      "title_verbatim": "オリンピアに系統用蓄電システムを納入 | 株式会社パワーエックスのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（237,901 bytes）。発表日 2025年4月18日。",
+      "used_in": "訂正履歴 20261122-64・20261122-78（basis）・projects の本文（Q7）"
+    },
+    {
+      "name": "茨城県取手市にてノーバル・ソーラーがテスラ社製リチウムイオン電池を用いた系統用蓄電所の運転を開始しました",
+      "publisher": "株式会社ノーバル・ホールディングス（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000005.000069153.html",
+      "title_verbatim": "茨城県取手市にてノーバル・ソーラーがテスラ社製リチウムイオン電池を用いた系統用蓄電所の運転を開始しました | 株式会社ノーバル・ホールディングスのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（240,618 bytes）。発表日 2025年7月3日。",
+      "used_in": "訂正履歴 20261122-55・20261122-66・20261122-78（basis）・projects の本文（Q9）"
+    },
+    {
+      "name": "ノーバル・ソーラーが茨城県常総市にてCATL製リチウムイオン電池を用いた系統用蓄電所の商業運転を開始しました",
+      "publisher": "株式会社ノーバル・ホールディングス（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000006.000069153.html",
+      "title_verbatim": "ノーバル・ソーラーが茨城県常総市にてCATL製リチウムイオン電池を用いた系統用蓄電所の商業運転を開始しました | 株式会社ノーバル・ホールディングスのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（244,098 bytes）。発表日 2025年7月9日。",
+      "used_in": "訂正履歴 20261122-65（basis）・projects の本文（Q8）"
+    },
+    {
+      "name": "Eku Energy Japan、福岡県直方市において「上頓野蓄電所」の運転開始",
+      "publisher": "Eku Energy Japan株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000001.000182081.html",
+      "title_verbatim": "Eku Energy Japan、福岡県直方市において「上頓野蓄電所」の運転開始 | Eku Energy Japan株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（238,833 bytes）。発表日 2026年4月22日。",
+      "used_in": "訂正履歴 20261122-67（basis）・projects の本文（Q10）"
+    },
+    {
+      "name": "NTT アノードエナジーが開発、建設の「上頓野蓄電所」が完成",
+      "publisher": "NTTアノードエナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000073.000111866.html",
+      "title_verbatim": "NTT アノードエナジーが開発、建設の「上頓野蓄電所」が完成 | NTTアノードエナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（234,157 bytes）。発表日 2026年4月22日。",
+      "used_in": "訂正履歴 20261122-67（basis）・projects の本文（Q10）"
+    },
+    {
+      "name": "系統用蓄電池事業「紀の川上田井蓄電所」における工事着工のお知らせ",
+      "publisher": "スターシーズ株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000037.000088876.html",
+      "title_verbatim": "系統用蓄電池事業「紀の川上田井蓄電所」における工事着工のお知らせ | スターシーズ株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（237,481 bytes）。発表日 2025年9月4日。",
+      "used_in": "訂正履歴 20261122-68（basis）・projects の本文（Q11）"
+    },
+    {
+      "name": "系統用蓄電池事業「紀の川桃山町蓄電所」における工事着工のお知らせ",
+      "publisher": "スターシーズ株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000042.000088876.html",
+      "title_verbatim": "系統用蓄電池事業「紀の川桃山町蓄電所」における工事着工のお知らせ | スターシーズ株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（234,263 bytes）。発表日 2025年9月17日。",
+      "used_in": "訂正履歴 20261122-69（basis）・projects の本文（Q12）"
+    },
+    {
+      "name": "固定資産（系統用蓄電所設備）及び電力接続権の取得に関するお知らせ",
+      "publisher": "スターシーズ株式会社",
+      "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2740054/00.pdf",
+      "title_verbatim": "（PDF・本文の見出し）固定資産（系統用蓄電所設備）及び電力接続権の取得に関するお知らせ",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（232,520 bytes）。発表日 2026年1月13日。",
+      "used_in": "訂正履歴 20261122-68・20261122-69（basis）・projects の本文（Q11・Q12）"
+    },
+    {
+      "name": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ",
+      "publisher": "スターシーズ株式会社",
+      "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2743874/00.pdf",
+      "title_verbatim": "（PDF・本文の見出し）販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（193,052 bytes）。発表日 2026年1月26日。",
+      "used_in": "訂正履歴 20261122-69（basis）・projects の本文（Q12）"
+    },
+    {
+      "name": "販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ（和歌山県紀の川市上田井）",
+      "publisher": "スターシーズ株式会社",
+      "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2747421/00.pdf",
+      "title_verbatim": "（PDF・本文の見出し）販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ（和歌山県紀の川市上田井）",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（205,061 bytes）。発表日 2026年1月30日。",
+      "used_in": "訂正履歴 20261122-68（basis）・projects の本文（Q11）"
+    },
+    {
+      "name": "2026年２月期 決算短信〔日本基準〕（連結）",
+      "publisher": "スターシーズ株式会社",
+      "url": "https://ssl4.eir-parts.net/doc/3083/tdnet/2792306/00.pdf",
+      "title_verbatim": "（PDF・本文の見出し）2026年２月期 決算短信〔日本基準〕（連結）",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（413,042 bytes）。発表日 2026年4月17日。",
+      "used_in": "訂正履歴 20261122-68・20261122-69（basis）・projects の本文（Q11・Q12）"
+    },
+    {
+      "name": "【稼働開始】岡山県備前市に伊部蓄電所が竣工・運転開始",
+      "publisher": "株式会社エネフォワード（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000007.000176494.html",
+      "title_verbatim": "【稼働開始】岡山県備前市に伊部蓄電所が竣工・運転開始 | 株式会社エネフォワードのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（240,571 bytes）。発表日 2026年2月10日。",
+      "used_in": "訂正履歴 20261122-70（basis）・projects の本文（Q13）"
+    },
+    {
+      "name": "TAOKE ENERGYが開発した岩手北上蓄電所の商業運転を開始",
+      "publisher": "TAOKE ENERGY株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000015.000103834.html",
+      "title_verbatim": "TAOKE ENERGYが開発した岩手北上蓄電所の商業運転を開始 | TAOKE ENERGY株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（249,965 bytes）。発表日 2025年12月10日。",
+      "used_in": "訂正履歴 20261122-71（basis）・projects の本文（Q14）"
+    },
+    {
+      "name": "【サーラエナジー】再エネ併設型蓄電所「サーラ東三河蓄電所」の建設を開始",
+      "publisher": "株式会社サーラコーポレーション（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000052.000040055.html",
+      "title_verbatim": "【サーラエナジー】再エネ併設型蓄電所「サーラ東三河蓄電所」の建設を開始 | 株式会社サーラコーポレーションのプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（280,546 bytes）。発表日 2024年10月6日。",
+      "used_in": "訂正履歴 20261122-72（basis）・projects の本文（Q15）"
+    },
+    {
+      "name": "サービスステーション跡地を活用した高圧系統用蓄電所の建設に着手",
+      "publisher": "コスモエネルギーホールディングス株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000291.000098598.html",
+      "title_verbatim": "サービスステーション跡地を活用した高圧系統用蓄電所の建設に着手 | コスモエネルギーホールディングス株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（268,732 bytes）。発表日 2026年2月25日。",
+      "used_in": "訂正履歴 20261122-73（basis）・projects の本文（Q16）"
+    },
+    {
+      "name": "「埼玉県比企郡蓄電ステーション」の運転を開始　～電力卸市場・容量市場・需給調整市場へ寄与する系統用蓄電所の運用～ | Ｌｏｏｏｐ (ループ)",
+      "publisher": "株式会社Looop",
+      "url": "https://looop.co.jp/info/4923_20250403",
+      "title_verbatim": "「埼玉県比企郡蓄電ステーション」の運転を開始　～電力卸市場・容量市場・需給調整市場へ寄与する系統用蓄電所の運用～ | Ｌｏｏｏｐ (ループ)",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（1,060,730 bytes）。発表日 2025年4月3日。",
+      "used_in": "訂正履歴 20261122-74（basis）・projects の本文（Q17）"
+    },
+    {
+      "name": "森トラスト 「琵琶湖蓄電所プロジェクト」を開始 | 森トラスト株式会社｜Create the Future",
+      "publisher": "森トラスト株式会社",
+      "url": "https://www.mori-trust.co.jp/news/2026/20260402/",
+      "title_verbatim": "森トラスト 「琵琶湖蓄電所プロジェクト」を開始 | 森トラスト株式会社｜Create the Future",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（75,086 bytes）。発表日 2026年4月2日。",
+      "used_in": "訂正履歴 20261122-75（basis）・projects の本文（Q18）"
+    },
+    {
+      "name": "NTTアノードエナジーの「福岡若松蓄電所」が竣工",
+      "publisher": "NTTアノードエナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000052.000111866.html",
+      "title_verbatim": "NTTアノードエナジーの「福岡若松蓄電所」が竣工 | NTTアノードエナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（239,570 bytes）。発表日 2025年4月3日。",
+      "used_in": "訂正履歴 20261122-77（basis）・projects の本文（Q20）"
+    },
+    {
+      "name": "低圧系統用蓄電所 全国開発プロジェクトを始動",
+      "publisher": "HPリニューエナジー株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000004.000164583.html",
+      "title_verbatim": "低圧系統用蓄電所 全国開発プロジェクトを始動 | HPリニューエナジー株式会社のプレスリリース",
+      "checked_on": "2026-11-22",
+      "note": "projects の掃除便その 4-2（2026-11-22・_QUEUE.md 138 行）。素の curl で HTTP 200（245,022 bytes）。発表日 2026年4月28日。",
+      "used_in": "訂正履歴 20261122-57・20261122-78（basis）"
     }
   ]
 }

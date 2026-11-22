@@ -1,0 +1,2973 @@
+{
+ "note": "projects の掃除便その 4-2（_QUEUE.md 138 行）。ユウの計画（reports/projects-plan-2026-11-22-E2_ユウ.json）の patches を、書込直前の GET で確かめて applier の形にしたもの。scripts/apply-projects-2026-11-22.ts（runApplier）が読む。既定 dry run・本実行は --apply。",
+ "generated": "2026-11-22T14:02:29.845Z",
+ "part": "E2",
+ "checks": {
+  "problems": [],
+  "old": [
+   {
+    "key": "Q1",
+    "field": "city",
+    "plan_old": "太田市",
+    "get": "太田市",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "cod",
+    "plan_old": "2025-06-19",
+    "get": "2025-06-19",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "marketParticipation",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "sourceUrl",
+    "plan_old": "https://www.theport.jp/news/2025/11497",
+    "get": "https://www.theport.jp/news/2025/11497",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 416,
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "city",
+    "plan_old": "伊勢崎市",
+    "get": "伊勢崎市",
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "cod",
+    "plan_old": "2025-10-17",
+    "get": "2025-10-17",
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "marketParticipation",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "sourceUrl",
+    "plan_old": "https://prtimes.jp/main/html/rd/p/000000178.000016325.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000178.000016325.html",
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 420,
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "city",
+    "plan_old": "伊勢崎市",
+    "get": "伊勢崎市",
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "status",
+    "plan_old": [
+     "計画中"
+    ],
+    "get": [
+     "計画中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "marketParticipation",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "sourceUrl",
+    "plan_old": "https://www.theport.jp/news/2025/11497",
+    "get": "https://www.theport.jp/news/2025/11497",
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 420,
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "name",
+    "plan_old": "石川県加賀市2MW/4MWh蓄電所",
+    "get": "石川県加賀市2MW/4MWh蓄電所",
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "city",
+    "plan_old": "加賀市",
+    "get": "加賀市",
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "operator",
+    "plan_old": "シェルパグループ合同会社",
+    "get": "シェルパグループ合同会社",
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 446,
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "name",
+    "plan_old": "徳島県吉野川市2MW/4MWh蓄電所",
+    "get": "徳島県吉野川市2MW/4MWh蓄電所",
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "city",
+    "plan_old": "吉野川市",
+    "get": "吉野川市",
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "cod",
+    "plan_old": "2026-04-08",
+    "get": "2026-04-08",
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "sourceUrl",
+    "plan_old": "https://pplc.co/",
+    "get": "https://pplc.co/",
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 718,
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "operator",
+    "plan_old": "パワーエックス",
+    "get": "パワーエックス",
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 585,
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "name",
+    "plan_old": "OLYPowerstorage緑町",
+    "get": "OLYPowerstorage緑町",
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "prefecture",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "city",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "operator",
+    "plan_old": "オリンピア",
+    "get": "オリンピア",
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "status",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "capacityMwh",
+    "plan_old": null,
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "cod",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "sourceUrl",
+    "plan_old": "https://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/type/9.html.ja",
+    "get": "https://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/type/9.html.ja",
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 0,
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "operator",
+    "plan_old": "株式会社ノーバル・ホールディングス",
+    "get": "株式会社ノーバル・ホールディングス",
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "sourceUrl",
+    "plan_old": "https://www.noval.jp",
+    "get": "https://www.noval.jp",
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 28,
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "operator",
+    "plan_old": "株式会社ノーバル・ホールディングス",
+    "get": "株式会社ノーバル・ホールディングス",
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "outputMw",
+    "plan_old": 1.927,
+    "get": 1.927,
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "capacityMwh",
+    "plan_old": 3.854,
+    "get": 3.854,
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "cod",
+    "plan_old": "2025-07-03",
+    "get": "2025-07-03",
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "sourceUrl",
+    "plan_old": "https://www.noval.jp",
+    "get": "https://www.noval.jp",
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 804,
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "name",
+    "plan_old": "上頓野蓄電所",
+    "get": "上頓野蓄電所",
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "cod",
+    "plan_old": "2026-04-22",
+    "get": "2026-04-22",
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 602,
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "name",
+    "plan_old": "紀の川上田井蓄電所（スターシーズ）",
+    "get": "紀の川上田井蓄電所（スターシーズ）",
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "prefecture",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "city",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "operator",
+    "plan_old": "スターシーズ株式会社",
+    "get": "スターシーズ株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "cod",
+    "plan_old": "2025-09-04",
+    "get": "2025-09-04",
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 688,
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "name",
+    "plan_old": "紀の川桃山町蓄電所（スターシーズ）",
+    "get": "紀の川桃山町蓄電所（スターシーズ）",
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "operator",
+    "plan_old": "スターシーズ株式会社",
+    "get": "スターシーズ株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "cod",
+    "plan_old": "2025-09-17",
+    "get": "2025-09-17",
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 703,
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "cod",
+    "plan_old": "2026-02-10",
+    "get": "2026-02-10",
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 594,
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "name",
+    "plan_old": "岩手北上蓄電所（TAOKE ENERGY）",
+    "get": "岩手北上蓄電所（TAOKE ENERGY）",
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "city",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "operator",
+    "plan_old": "TAOKE ENERGY株式会社",
+    "get": "TAOKE ENERGY株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 597,
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "name",
+    "plan_old": "再エネ併設型蓄電所（株式会社サーラコーポレーション）",
+    "get": "再エネ併設型蓄電所（株式会社サーラコーポレーション）",
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "prefecture",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "city",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "operator",
+    "plan_old": "株式会社サーラコーポレーション",
+    "get": "株式会社サーラコーポレーション",
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "cod",
+    "plan_old": "2024-10-06",
+    "get": "2024-10-06",
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "sourceUrl",
+    "plan_old": "https://www.salaenergy.co.jp/",
+    "get": "https://www.salaenergy.co.jp/",
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 711,
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "name",
+    "plan_old": "サービスステーション跡地を活用した高圧系統用蓄電所",
+    "get": "サービスステーション跡地を活用した高圧系統用蓄電所",
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "operator",
+    "plan_old": "COSMO",
+    "get": "COSMO",
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "status",
+    "plan_old": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "cod",
+    "plan_old": "2026-02-25",
+    "get": "2026-02-25",
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "sourceUrl",
+    "plan_old": "https://www.cosmo-energy.co.jp",
+    "get": "https://www.cosmo-energy.co.jp",
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 828,
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "city",
+    "plan_old": "小川町",
+    "get": "小川町",
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "operator",
+    "plan_old": "株式会社Looop",
+    "get": "株式会社Looop",
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "marketParticipation",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 709,
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "name",
+    "plan_old": "琵琶湖蓄電所",
+    "get": "琵琶湖蓄電所",
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "city",
+    "plan_old": "守山市",
+    "get": "守山市",
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "cod",
+    "plan_old": "2026-04-02",
+    "get": "2026-04-02",
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 25,
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "cod",
+    "plan_old": "2025-11-05",
+    "get": "2025-11-05",
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "sourceUrl",
+    "plan_old": "https://www.h-nac.co.jp/shoji/",
+    "get": "https://www.h-nac.co.jp/shoji/",
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 751,
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "city",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 18,
+    "ok": true
+   }
+  ],
+  "keep": [
+   {
+    "key": "Q1",
+    "field": "name",
+    "keep": "群馬太田蓄電所（ポート）",
+    "get": "群馬太田蓄電所（ポート）",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "prefecture",
+    "keep": "群馬県",
+    "get": "群馬県",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "operator",
+    "keep": "ポート株式会社",
+    "get": "ポート株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "name",
+    "keep": "群馬伊勢崎第一蓄電所（ポート）",
+    "get": "群馬伊勢崎第一蓄電所（ポート）",
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "prefecture",
+    "keep": "群馬県",
+    "get": "群馬県",
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "operator",
+    "keep": "ポート株式会社",
+    "get": "ポート株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q2",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "name",
+    "keep": "群馬伊勢崎第二蓄電所（ポート）",
+    "get": "群馬伊勢崎第二蓄電所（ポート）",
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "prefecture",
+    "keep": "群馬県",
+    "get": "群馬県",
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "operator",
+    "keep": "ポート株式会社",
+    "get": "ポート株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "Q3",
+    "field": "cod",
+    "keep": "2025-10-16",
+    "get": "2025-10-16",
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "prefecture",
+    "keep": "石川県",
+    "get": "石川県",
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "capacityMwh",
+    "keep": 4,
+    "get": 4,
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "cod",
+    "keep": "2026-04-01",
+    "get": "2026-04-01",
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q4",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000004.000180465.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000004.000180465.html",
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "prefecture",
+    "keep": "徳島県",
+    "get": "徳島県",
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "operator",
+    "keep": "ヒラソル・エナジー株式会社",
+    "get": "ヒラソル・エナジー株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "capacityMwh",
+    "keep": 4,
+    "get": 4,
+    "ok": true
+   },
+   {
+    "key": "Q5",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "name",
+    "keep": "OLY Power Storage 三室町（オリンピア）",
+    "get": "OLY Power Storage 三室町（オリンピア）",
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "prefecture",
+    "keep": "群馬県",
+    "get": "群馬県",
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "city",
+    "keep": "伊勢崎市三室町",
+    "get": "伊勢崎市三室町",
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "outputMw",
+    "keep": 1.998,
+    "get": 1.998,
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "capacityMwh",
+    "keep": 7.404,
+    "get": 7.404,
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "cod",
+    "keep": "2025-02-13",
+    "get": "2025-02-13",
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q6",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000133.000109041.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000133.000109041.html",
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "outputMw",
+    "keep": 1.998,
+    "get": 1.998,
+    "ok": true
+   },
+   {
+    "key": "Q7",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "name",
+    "keep": "ノーバル・パワーC2（ノーバル・ソーラー）",
+    "get": "ノーバル・パワーC2（ノーバル・ソーラー）",
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "prefecture",
+    "keep": "茨城県",
+    "get": "茨城県",
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "city",
+    "keep": "常総市",
+    "get": "常総市",
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "outputMw",
+    "keep": 1.9272,
+    "get": 1.9272,
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "capacityMwh",
+    "keep": 4.8876,
+    "get": 4.8876,
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "cod",
+    "keep": "2025-06-19",
+    "get": "2025-06-19",
+    "ok": true
+   },
+   {
+    "key": "Q8",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "name",
+    "keep": "ノーバル・パワーC3（ノーバル・ソーラー）",
+    "get": "ノーバル・パワーC3（ノーバル・ソーラー）",
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "prefecture",
+    "keep": "茨城県",
+    "get": "茨城県",
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "city",
+    "keep": "取手市",
+    "get": "取手市",
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q9",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "prefecture",
+    "keep": "福岡県",
+    "get": "福岡県",
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "city",
+    "keep": "直方市上頓野",
+    "get": "直方市上頓野",
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "operator",
+    "keep": "Eku Energy Japan株式会社",
+    "get": "Eku Energy Japan株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q10",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000001.000182081.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000001.000182081.html",
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "status",
+    "keep": [
+     "建設中"
+    ],
+    "get": [
+     "建設中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q11",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000037.000088876.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000037.000088876.html",
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "prefecture",
+    "keep": "和歌山県",
+    "get": "和歌山県",
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "city",
+    "keep": "紀の川市桃山町最上",
+    "get": "紀の川市桃山町最上",
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "status",
+    "keep": [
+     "建設中"
+    ],
+    "get": [
+     "建設中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q12",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000042.000088876.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000042.000088876.html",
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "name",
+    "keep": "岡山県備前市伊部蓄電所（エネフォワード）",
+    "get": "岡山県備前市伊部蓄電所（エネフォワード）",
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "prefecture",
+    "keep": "岡山県",
+    "get": "岡山県",
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "city",
+    "keep": "備前市伊部",
+    "get": "備前市伊部",
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "operator",
+    "keep": "株式会社エネフォワード",
+    "get": "株式会社エネフォワード",
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q13",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000007.000176494.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000007.000176494.html",
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "prefecture",
+    "keep": "岩手県",
+    "get": "岩手県",
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "outputMw",
+    "keep": 1.99,
+    "get": 1.99,
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "capacityMwh",
+    "keep": 8.146,
+    "get": 8.146,
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "cod",
+    "keep": "2025-12-09",
+    "get": "2025-12-09",
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q14",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000015.000103834.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000015.000103834.html",
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "status",
+    "keep": [
+     "計画中"
+    ],
+    "get": [
+     "計画中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "outputMw",
+    "keep": 1.999,
+    "get": 1.999,
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "capacityMwh",
+    "keep": 7.52,
+    "get": 7.52,
+    "ok": true
+   },
+   {
+    "key": "Q15",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "prefecture",
+    "keep": "長崎県",
+    "get": "長崎県",
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "city",
+    "keep": "松浦市",
+    "get": "松浦市",
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "Q16",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "name",
+    "keep": "埼玉県比企郡蓄電ステーション（Looop）",
+    "get": "埼玉県比企郡蓄電ステーション（Looop）",
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "prefecture",
+    "keep": "埼玉県",
+    "get": "埼玉県",
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "outputMw",
+    "keep": 0,
+    "get": 0,
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "capacityMwh",
+    "keep": 7.6838,
+    "get": 7.6838,
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "cod",
+    "keep": "2025-02-21",
+    "get": "2025-02-21",
+    "ok": true
+   },
+   {
+    "key": "Q17",
+    "field": "sourceUrl",
+    "keep": "https://looop.co.jp/info/4923_20250403",
+    "get": "https://looop.co.jp/info/4923_20250403",
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "prefecture",
+    "keep": "滋賀県",
+    "get": "滋賀県",
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "operator",
+    "keep": "森トラスト株式会社",
+    "get": "森トラスト株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "status",
+    "keep": [
+     "計画中"
+    ],
+    "get": [
+     "計画中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "outputMw",
+    "keep": 8.7,
+    "get": 8.7,
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "capacityMwh",
+    "keep": 19.7,
+    "get": 19.7,
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q18",
+    "field": "sourceUrl",
+    "keep": "https://www.mori-trust.co.jp/news/2026/20260402/",
+    "get": "https://www.mori-trust.co.jp/news/2026/20260402/",
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "name",
+    "keep": "中川商事株式会社 第一系統用蓄電所",
+    "get": "中川商事株式会社 第一系統用蓄電所",
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "prefecture",
+    "keep": "福岡県",
+    "get": "福岡県",
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "city",
+    "keep": "古賀市",
+    "get": "古賀市",
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "operator",
+    "keep": "中川商事株式会社",
+    "get": "中川商事株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "capacityMwh",
+    "keep": 8,
+    "get": 8,
+    "ok": true
+   },
+   {
+    "key": "Q19",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "name",
+    "keep": "福岡若松蓄電所",
+    "get": "福岡若松蓄電所",
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "prefecture",
+    "keep": "福岡県",
+    "get": "福岡県",
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "operator",
+    "keep": "NTTアノードエナジー株式会社",
+    "get": "NTTアノードエナジー株式会社",
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "outputMw",
+    "keep": 1.999,
+    "get": 1.999,
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "capacityMwh",
+    "keep": 8.226,
+    "get": 8.226,
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "cod",
+    "keep": "2025-04-03",
+    "get": "2025-04-03",
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "Q20",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000052.000111866.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000052.000111866.html",
+    "ok": true
+   }
+  ]
+ },
+ "plan": {
+  "posts": [],
+  "patches": [
+   {
+    "ep": "projects",
+    "slug": "pr-co16325-gunma",
+    "row_id": "Q1",
+    "order": 1,
+    "id": "dxrqbul59md0",
+    "updatedAt": "2026-06-30T01:42:19.616Z",
+    "ops": [
+     {
+      "field": "city",
+      "old": "太田市",
+      "new": "太田市世良田町",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "cod",
+      "old": "2025-06-19",
+      "new": "2025-06-18",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "marketParticipation",
+      "old": "[]",
+      "new": "[\"JEPX\",\"需給調整市場\"]",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.theport.jp/news/2025/11497",
+      "new": "https://prtimes.jp/main/html/rd/p/000000183.000016325.html",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>群馬太田蓄電所（ポート）</strong>は、群馬県太田市に立地する系統用蓄電所。発表企業：ポート株式会社。ステータス：稼働中（発表日：2025-06-19）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000161.000016325.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000161.000016325.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>群馬太田蓄電所</strong>は、ポート株式会社の、群馬県太田市世良田町の系統用蓄電所。同社の2025年12月1日のリリースは、「今期2026年３月期においては、ポート群馬伊勢崎第一蓄電所（稼働開始日：2025年６月10日）、ポート群馬太田蓄電所（稼働開始日：2025年６月18日）、ポート群馬伊勢崎第二蓄電所（稼働開始日：2025年10月16日）の３ヶ所全ての稼働を開始しております」と述べ、太田について「第二弾のポート群馬太田蓄電所においても、需給調整市場（一次調整力）での取引を開始いたしました」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000183.000016325.html\" target=\"_blank\" rel=\"noopener noreferrer\">ポート群馬太田蓄電所の需給調整市場での取引開始のお知らせ（ポート株式会社、2025年12月1日）</a>）。</p><p>同リリースの表は、群馬太田蓄電所について、所在地を「群馬県太田市世良田町」、蓄電池出力を「約２MW」、蓄電池容量を「約８MWh」、着工を「2024年11月」、稼働開始を「2025年6月18日」とし、現在の取引市場を、卸電力市場と需給調整市場（「2025年12月1日～」）とする。商業運転の開始について、同社は2025年6月19日に「群馬県太田市における系統用蓄電所の商業運転も開始いたしました」と知らせている（出典: <a href=\"https://www.theport.jp/news/2025/11497\" target=\"_blank\" rel=\"noopener noreferrer\">群馬県太田市における系統用蓄電所の商業運転開始のお知らせ（ポート株式会社、2025年6月19日）</a>）。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "city": "57d66886de405795",
+     "cod": "2d7064038cfaeb69",
+     "marketParticipation": "9426ee6055293e89",
+     "sourceUrl": "34cf02e386112bb0",
+     "body": "f2342e603c20d916"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co16325-gunma-2",
+    "row_id": "Q2",
+    "order": 2,
+    "id": "ijbw_xna38m",
+    "updatedAt": "2026-06-30T02:31:06.345Z",
+    "ops": [
+     {
+      "field": "city",
+      "old": "伊勢崎市",
+      "new": "伊勢崎市北千木町",
+      "row_ids": [
+       "Q2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "cod",
+      "old": "2025-10-17",
+      "new": "2025-06-10",
+      "row_ids": [
+       "Q2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "marketParticipation",
+      "old": "[]",
+      "new": "[\"JEPX\",\"需給調整市場\"]",
+      "row_ids": [
+       "Q2"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://prtimes.jp/main/html/rd/p/000000178.000016325.html",
+      "new": "https://prtimes.jp/main/html/rd/p/000000177.000016325.html",
+      "row_ids": [
+       "Q2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>群馬伊勢崎第一蓄電所（ポート）</strong>は、群馬県伊勢崎市に立地する系統用蓄電所。発表企業：ポート株式会社。ステータス：稼働中（発表日：2025-10-17）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000178.000016325.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000178.000016325.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>群馬伊勢崎第一蓄電所</strong>は、ポート株式会社の、群馬県伊勢崎市北千木町の系統用蓄電所。同社の2025年12月1日のリリースは、「今期2026年３月期においては、ポート群馬伊勢崎第一蓄電所（稼働開始日：2025年６月10日）、ポート群馬太田蓄電所（稼働開始日：2025年６月18日）、ポート群馬伊勢崎第二蓄電所（稼働開始日：2025年10月16日）の３ヶ所全ての稼働を開始しております」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000183.000016325.html\" target=\"_blank\" rel=\"noopener noreferrer\">ポート群馬太田蓄電所の需給調整市場での取引開始のお知らせ（ポート株式会社、2025年12月1日）</a>）。同リリースの表は、群馬伊勢崎第一蓄電所について、所在地を「群馬県伊勢崎市北千木町」、蓄電池出力を「約２MW」、蓄電池容量を「約８MWh」、着工を「2024年11月」、稼働開始を「2025年6月10日」とし、現在の取引市場を、卸電力市場と需給調整市場（「2025年10月16日～」）とする。</p><p>需給調整市場について、同社の2025年10月16日のリリースは、「この度、計画通り順調にポート群馬伊勢崎第一蓄電所が需給調整市場（一次調整力）での取引を開始いたしました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000177.000016325.html\" target=\"_blank\" rel=\"noopener noreferrer\">系統用蓄電所の需給調整市場での取引開始のお知らせ（ポート株式会社、2025年10月16日）</a>）。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q2"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "city": "95a9f122717715bf",
+     "cod": "fd8a44599993e90b",
+     "marketParticipation": "9426ee6055293e89",
+     "sourceUrl": "5177150066237575",
+     "body": "3d7998771fed1d16"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co16325-bess-2",
+    "row_id": "Q3",
+    "order": 3,
+    "id": "5t5ultlbft",
+    "updatedAt": "2026-06-30T01:42:20.045Z",
+    "ops": [
+     {
+      "field": "city",
+      "old": "伊勢崎市",
+      "new": "伊勢崎市北千木町",
+      "row_ids": [
+       "Q3"
+      ],
+      "note": ""
+     },
+     {
+      "field": "status",
+      "old": "[\"計画中\"]",
+      "new": "[\"稼働中\"]",
+      "row_ids": [
+       "Q3"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "marketParticipation",
+      "old": "[]",
+      "new": "[\"JEPX\"]",
+      "row_ids": [
+       "Q3"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.theport.jp/news/2025/11497",
+      "new": "https://prtimes.jp/main/html/rd/p/000000178.000016325.html",
+      "row_ids": [
+       "Q3"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>群馬伊勢崎第二蓄電所（ポート）</strong>は、群馬県伊勢崎市に立地する系統用蓄電所。発表企業：ポート株式会社。ステータス：計画中（発表日：2025-10-16）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000177.000016325.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000177.000016325.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>群馬伊勢崎第二蓄電所</strong>は、ポート株式会社の、群馬県伊勢崎市北千木町の系統用蓄電所。同社の2025年10月17日のリリースは、「当初計画通り群馬県伊勢崎市における２ヶ所目となるポート群馬伊勢崎第二蓄電所の系統用蓄電所の商業運転も開始いたしました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000178.000016325.html\" target=\"_blank\" rel=\"noopener noreferrer\">群馬県伊勢崎市における系統用蓄電所の商業運転開始のお知らせ（ポート株式会社、2025年10月17日）</a>）。</p><p>同社の2025年12月1日のリリースの表は、群馬伊勢崎第二蓄電所について、所在地を「群馬県伊勢崎市北千木町」、蓄電池出力を「約２MW」、蓄電池容量を「約８MWh」、着工を「2025年5月」、稼働開始を「2025年10月16日」とし、現在の取引市場を卸電力市場とする。需給調整市場について、同リリースは「第三弾のポート群馬伊勢崎第二蓄電所においても需給調整市場での取引開始に向けて準備を進めております」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000183.000016325.html\" target=\"_blank\" rel=\"noopener noreferrer\">ポート群馬太田蓄電所の需給調整市場での取引開始のお知らせ（ポート株式会社、2025年12月1日）</a>）。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q3"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "city": "95a9f122717715bf",
+     "status": "e37693682efbcfc4",
+     "marketParticipation": "1601a60abea6d07e",
+     "sourceUrl": "d7d3a06d67b88819",
+     "body": "9ff610b0ec26d914"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-2mw-4mwh-bess-2",
+    "row_id": "Q4",
+    "order": 4,
+    "id": "glsiwmr4e02",
+    "updatedAt": "2026-07-01T00:32:24.825Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "石川県加賀市2MW/4MWh蓄電所",
+      "new": "石川県加賀市分校町蓄電所（シェルパグループ）",
+      "row_ids": [
+       "Q4"
+      ],
+      "note": ""
+     },
+     {
+      "field": "city",
+      "old": "加賀市",
+      "new": "加賀市分校町",
+      "row_ids": [
+       "Q4"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "シェルパグループ合同会社",
+      "new": "合同会社SGB001（シェルパグループ）",
+      "row_ids": [
+       "Q4"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"ヒラソル電設株式会社\"",
+      "row_ids": [
+       "Q4"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>石川県加賀市2MW/4MWh蓄電所</strong>は、石川県加賀市に立地する系統用蓄電所。出力 2 MW、容量 4 MWh 規模。発表企業：シェルパグループ合同会社。ステータス：稼働中（発表日：2026-04-01）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000004.000180465.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000004.000180465.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>石川県加賀市分校町蓄電所</strong>は、シェルパグループの投資案件として、合同会社SGB001が所有する、石川県加賀市分校町の系統用蓄電所。シェルパグループの2026年4月1日のリリースは、「石川県加賀市分校町において系統用蓄電所「石川県加賀市分校町蓄電所」（以下、本蓄電所）が2026年4月1日に系統連系し、運転を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000004.000180465.html\" target=\"_blank\" rel=\"noopener noreferrer\">石川県加賀市にて約2MW／約4MWh 蓄電所を運転開始しました（シェルパグループ合同会社、2026年4月1日）</a>）。</p><p>リリースは、蓄電所名を「石川県加賀市分校町蓄電所」、設置場所を「石川県加賀市分校町」、系統連系日を「2026年4月1日」、蓄電所所有者を「合同会社SGB001」、蓄電池出力を「約2MW」、蓄電池容量を「約4MWh」、アグリゲーターを「ヒラソル・エナジー株式会社」、設計・施工を「ヒラソル電設株式会社」とする。ヒラソル・エナジー株式会社がアグリゲーターとして運用を担い、リリースは「本蓄電所では、ヒラソル・エナジー株式会社が、その有するエネルギー資産の最適化および電力市場への参加に関しての豊富な経験を活かし、運用・管理を担当します」としている。市場について、リリースは「本蓄電所では、需給調整市場を通じて調整力を提供し、再生可能エネルギーのさらなる普及と安定した電力系統の両立を推進していく予定です」としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q4"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "6d9fc30c692517a4",
+     "city": "bfc812843f637d89",
+     "operator": "39974c231b29c788",
+     "epc": "179e0438929c3942",
+     "body": "d210218d92c2184d"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-2mw-4mwh-bess",
+    "row_id": "Q5",
+    "order": 5,
+    "id": "5fsksmr2nu",
+    "updatedAt": "2026-07-01T00:32:25.157Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "徳島県吉野川市2MW/4MWh蓄電所",
+      "new": "徳島県吉野川市上浦系統用蓄電所（ヒラソル・エナジー）",
+      "row_ids": [
+       "Q5"
+      ],
+      "note": ""
+     },
+     {
+      "field": "city",
+      "old": "吉野川市",
+      "new": "吉野川市上浦",
+      "row_ids": [
+       "Q5"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"ヒラソル電設株式会社\"",
+      "row_ids": [
+       "Q5"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "2026-04-08",
+      "new": "2026-04-06",
+      "row_ids": [
+       "Q5"
+      ],
+      "note": ""
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://pplc.co/",
+      "new": "https://prtimes.jp/main/html/rd/p/000000026.000085634.html",
+      "row_ids": [
+       "Q5"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>徳島県吉野川市2MW/4MWh蓄電所</strong>は、徳島県吉野川市に立地する系統用蓄電所。出力 2 MW、容量 4 MWh 規模。発表企業：ヒラソル・エナジー株式会社。ステータス：稼働中（発表日：2026-04-08）。</p><p>系統安定化と再生可能エネルギー普及に貢献</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://pplc.co/\" target=\"_blank\" rel=\"noopener noreferrer\">https://pplc.co/</a></li><li>企業公式サイト: <a href=\"https://www.pplc.co/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.pplc.co/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000026.000085634.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000026.000085634.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>徳島県吉野川市上浦系統用蓄電所</strong>は、ヒラソル・エナジー株式会社が所有する、徳島県吉野川市上浦の系統用蓄電所。同社の2026年4月8日のリリースは、「徳島県吉野川市上浦において系統用蓄電所「徳島県吉野川市上浦系統用蓄電所」（以下、本蓄電所）が2026年4月6日に系統連系し、運転を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000026.000085634.html\" target=\"_blank\" rel=\"noopener noreferrer\">徳島県吉野川市にて約2MW／約4MWh 蓄電所が運転開始（ヒラソル・エナジー株式会社、2026年4月8日）</a>）。</p><p>リリースは、蓄電所名を「徳島県吉野川市上浦系統用蓄電所」、設置場所を「徳島県吉野川市上浦」、系統連系日を「2026年4月6日」、蓄電所所有者を「ヒラソル・エナジー株式会社」、蓄電池出力を「約2MW」、蓄電池容量を「約4MWh」、設計・施工を「ヒラソル電設株式会社」とし、「本蓄電所は当社の100%子会社であるヒラソル電設株式会社が設計・施工・機器調達を担当し、株式会社ワイヤーエナジーおよびEnergy Concierge株式会社の開発支援のもと構築されました」としている。市場について、リリースは「本蓄電所では、需給調整市場を通じて調整力を提供し、再生可能エネルギーのさらなる普及と安定した電力系統の両立を推進していく予定です」としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q5"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "2ec7301a41e034ed",
+     "city": "e8210256a732aece",
+     "epc": "179e0438929c3942",
+     "cod": "c7b068f85950ab4c",
+     "sourceUrl": "78948fc369a57f1f",
+     "body": "eea024f8d7849769"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co109041-gunma",
+    "row_id": "Q6",
+    "order": 6,
+    "id": "gw_a72rg2",
+    "updatedAt": "2026-09-08T02:53:49.412Z",
+    "ops": [
+     {
+      "field": "operator",
+      "old": "パワーエックス",
+      "new": "株式会社オリンピア",
+      "row_ids": [
+       "Q6"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>株式会社オリンピアに系統用蓄電所</strong>は、群馬県～群馬県伊勢崎市に立地する系統用蓄電所。発表企業：パワーエックス。ステータス：稼働中（発表日：2025-02-13）。</p><p>～群馬県伊勢崎市「OLY Power Storage 三室町」において運転開始～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://power-x.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://power-x.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000133.000109041.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000133.000109041.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>OLY Power Storage 三室町</strong>は、株式会社オリンピアが群馬県伊勢崎市三室町に新設した系統用蓄電所。蓄電システムは株式会社パワーエックスが納入した。同社の2025年2月13日のリリースは、「株式会社オリンピア（本社：東京都中央区、代表取締役：西村 和広）が新設した系統用蓄電所「OLY Power Storage 三室町」（群馬県伊勢崎市）に、大型定置用蓄電池「Mega Power」3台を納入し、2025年2月13日から運転を開始しました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000133.000109041.html\" target=\"_blank\" rel=\"noopener noreferrer\">株式会社オリンピアに系統用蓄電所システムを納入（株式会社パワーエックス、2025年2月13日）</a>）。</p><p>リリースは、名称を「OLYPowerstorage三室町」、設置場所を「群馬県伊勢崎市三室町」、蓄電容量（定格）を「7,404kWh」、運転開始を「2025年2月13日」とし、システムを「パワーエックス製「Mega Power」3台」「PCS出力 1,998kW」とする。アグリゲーションは、E-Flow合同会社が行う。運用について、リリースは「アグリゲーターのE-Flow合同会社とパワーエックスが開発する蓄電池制御ソフトウェア「PowerOS」がWebAPIでシステム連携し、充放電指令を現地の蓄電所に伝えて制御します」としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q6"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "operator": "d63738cf4723c12a",
+     "body": "1ade6b33322c51e1"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "oly-powerstorage-midorimachi",
+    "row_id": "Q7",
+    "order": 7,
+    "id": "yn7kur5grfub",
+    "updatedAt": "2026-06-28T13:48:19.734Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "OLYPowerstorage緑町",
+      "new": "OLY Power Storage 緑町（オリンピア）",
+      "row_ids": [
+       "Q7"
+      ],
+      "note": ""
+     },
+     {
+      "field": "prefecture",
+      "old": "null",
+      "new": "\"群馬県\"",
+      "row_ids": [
+       "Q7"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "city",
+      "old": "null",
+      "new": "\"太田市緑町\"",
+      "row_ids": [
+       "Q7"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "operator",
+      "old": "オリンピア",
+      "new": "株式会社オリンピア",
+      "row_ids": [
+       "Q7"
+      ],
+      "note": ""
+     },
+     {
+      "field": "status",
+      "old": "[]",
+      "new": "[\"稼働中\"]",
+      "row_ids": [
+       "Q7"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "capacityMwh",
+      "old": "null",
+      "new": "7.404",
+      "row_ids": [
+       "Q7"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "null",
+      "new": "\"2025-04-17\"",
+      "row_ids": [
+       "Q7"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/type/9.html.ja",
+      "new": "https://prtimes.jp/main/html/rd/p/000000155.000109041.html",
+      "row_ids": [
+       "Q7"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "null",
+      "new": "\"<p><strong>OLY Power Storage 緑町</strong>は、株式会社オリンピアが群馬県太田市緑町に新設した系統用蓄電所。蓄電システムは株式会社パワーエックスが納入した。同社の2025年4月18日のリリースは、「株式会社オリンピア（本社：東京都中央区、代表取締役：西村 和広）が新設した系統用蓄電所「OLY Power Storage 緑町」（群馬県太田市）に、系統用蓄電システム「Mega Power」3台を納入し、4月17日から運転を開始しました」と述べている（出典: <a href=\\\"https://prtimes.jp/main/html/rd/p/000000155.000109041.html\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">オリンピアに系統用蓄電システムを納入（株式会社パワーエックス、2025年4月18日）</a>）。</p><p>リリースは、名称を「OLY Power Storage 緑町」、設置場所を「群馬県太田市緑町」、PCS出力を「1,998kW」、蓄電容量（定格）を「7,404kWh」、運転開始を「2025年4月17日」とし、システムを「パワーエックス製「Mega Power」3台」とする。リリースは「オリンピアへの納入は、群馬県伊勢崎市での導入に続く２ヶ所目となります」としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>\"",
+      "row_ids": [
+       "Q7"
+      ],
+      "note": "配列・JSON 値モード。今は空の本文に全文を入れる"
+     }
+    ],
+    "expect_final": {
+     "name": "8a356ad6271c652e",
+     "prefecture": "3a857ae9e828d1c6",
+     "city": "37f9bb58206c4131",
+     "operator": "d63738cf4723c12a",
+     "status": "e37693682efbcfc4",
+     "capacityMwh": "883a5c9a3fa5d15e",
+     "cod": "16d9788290b1fd9c",
+     "sourceUrl": "3a79b2aba138468a",
+     "body": "5b83349fe5751bda"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co69153-ibaraki-3",
+    "row_id": "Q8",
+    "order": 8,
+    "id": "sq_n3le13f",
+    "updatedAt": "2026-09-11T06:46:54.461Z",
+    "ops": [
+     {
+      "field": "operator",
+      "old": "株式会社ノーバル・ホールディングス",
+      "new": "合同会社ノーバル・ソーラー（ノーバル・ホールディングス）",
+      "row_ids": [
+       "Q8"
+      ],
+      "note": ""
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.noval.jp",
+      "new": "https://prtimes.jp/main/html/rd/p/000000006.000069153.html",
+      "row_ids": [
+       "Q8"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<p>2025-07-09 はプレスリリース日。</p>",
+      "new": "<p><strong>ノーバル・パワーC2</strong>は、合同会社ノーバル・ソーラー（株式会社ノーバル・ホールディングスの100％子会社）が茨城県常総市で開発した系統用蓄電所。同社の2025年7月9日のリリースは、「「ノーバル・パワーC2」は、2025年3月7日に電力系統への連系を完了し、試運転を経て、6月19日より正式に商業運転を開始しました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000006.000069153.html\" target=\"_blank\" rel=\"noopener noreferrer\">ノーバル・ソーラーが茨城県常総市にてCATL製リチウムイオン電池を用いた系統用蓄電所の商業運転を開始しました（株式会社ノーバル・ホールディングス、2025年7月9日）</a>）。</p><p>設備について、リリースは「システム構成は1927.2kW出力の4887.6kWh（2時間システム）となっており、407.3kWhの蓄電ユニットを12台使用しています」とし、「本システムに採用されているCATL製の蓄電ユニットには水冷式冷却装置および自動不活性ガス消火装置が標準装備されており」としている。E-Flow合同会社が運用を受託しており、リリースは「E-Flow合同会社が、ノーバル・ソーラーとの間で締結した運用委託契約に基づき、アグリゲーターとして設備の制御を行います」としている。市場について、リリースは「本蓄電所の稼働を通じ、今後は卸電力取引市場、需給調整市場、容量市場等の各種電力市場に参画し」としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q8"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "operator": "35dd083920239931",
+     "sourceUrl": "b97120dad5dc43ec",
+     "body": "db47cee05dbc4a5e"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co69153-ibaraki",
+    "row_id": "Q9",
+    "order": 9,
+    "id": "axd26ir84-x",
+    "updatedAt": "2026-09-08T02:53:25.691Z",
+    "ops": [
+     {
+      "field": "operator",
+      "old": "株式会社ノーバル・ホールディングス",
+      "new": "合同会社ノーバル・ソーラー（ノーバル・ホールディングス）",
+      "row_ids": [
+       "Q9"
+      ],
+      "note": ""
+     },
+     {
+      "field": "outputMw",
+      "old": "1.927",
+      "new": "1.9272",
+      "row_ids": [
+       "Q9"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "capacityMwh",
+      "old": "3.854",
+      "new": "3.8544",
+      "row_ids": [
+       "Q9"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "2025-07-03",
+      "new": "2025-06-25",
+      "row_ids": [
+       "Q9"
+      ],
+      "note": ""
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.noval.jp",
+      "new": "https://prtimes.jp/main/html/rd/p/000000005.000069153.html",
+      "row_ids": [
+       "Q9"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>茨城県取手市にてノーバル・ソーラーがテスラ社製リチウムイオン電池を用いた系統用蓄電所</strong>は、茨城県取手市に立地する系統用蓄電所。発表企業：株式会社ノーバル・ホールディングス。ステータス：稼働中（発表日：2025-07-03）。</p><p>株式会社ノーバル・ホールディングスの子会社である合同会社ノーバル・ソーラーが茨城県取手市で開発した系統用蓄電所「ノーバル・パワーC3」が、2025年6月25日より商業運転を開始しました。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.noval.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.noval.jp</a></li><li>企業公式サイト: <a href=\"http://www.noval.jp\" target=\"_blank\" rel=\"noopener noreferrer\">http://www.noval.jp</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000005.000069153.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000005.000069153.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>ノーバル・パワーC3</strong>は、合同会社ノーバル・ソーラー（株式会社ノーバル・ホールディングスの100%子会社）が茨城県取手市で開発した系統用蓄電所。同社の2025年7月3日のリリースは、「「ノーバル・パワーC3」は、2025年4月1日に電力系統への連系を完了し、試運転を経て、6月25日より正式に商業運転を開始しました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000005.000069153.html\" target=\"_blank\" rel=\"noopener noreferrer\">茨城県取手市にてノーバル・ソーラーがテスラ社製リチウムイオン電池を用いた系統用蓄電所の運転を開始しました（株式会社ノーバル・ホールディングス、2025年7月3日）</a>）。</p><p>設備について、リリースは「本蓄電所では、世界最大手の蓄電池メーカーであるTESLA社製のリチウムイオン電池ユニットMEGAPACKを採用しました」とし、「システムの仕様は1927.2kWの出力で3854.4kWhの容量を持つ2時間システムであり、大型の蓄電池ユニット1台で構成されています」としている。E-Flow合同会社が運用を受託しており、リリースは「E-Flow合同会社が、ノーバル・ソーラーとの間で締結した運用委託契約に基づき、アグリゲーターとして設備の制御を行います」としている。市場について、リリースは「本蓄電所の稼働を通じ、今後は卸電力取引市場、需給調整市場、容量市場等の各種電力市場に参画し」としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q9"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "operator": "35dd083920239931",
+     "outputMw": "0cde9e515a652656",
+     "capacityMwh": "f724f688031bf05a",
+     "cod": "3799a45fdd7045d8",
+     "sourceUrl": "65b2ca474f3ce8ac",
+     "body": "528a768876d004ba"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-ekuenergyjapan-fukuoka",
+    "row_id": "Q10",
+    "order": 10,
+    "id": "0anzefyk-8",
+    "updatedAt": "2026-08-06T07:58:06.860Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "上頓野蓄電所",
+      "new": "上頓野蓄電所（Eku Energy Japan）",
+      "row_ids": [
+       "Q10"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"NTTアノードエナジー株式会社\"",
+      "row_ids": [
+       "Q10"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "2026-04-22",
+      "new": "2026年4月",
+      "row_ids": [
+       "Q10"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>上頓野蓄電所</strong>は、福岡県Japan、福岡県直方市に立地する系統用蓄電所。発表企業：Eku Energy Japan株式会社。ステータス：稼働中（発表日：2026-04-22）。</p><p>～系統用蓄電所の運用を通じ、日本での事業展開を推進～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://www.ekuenergy.com/ja-jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.ekuenergy.com/ja-jp</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000001.000182081.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000001.000182081.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>上頓野蓄電所</strong>は、Eku Energy Japan株式会社が事業主体の、福岡県直方市上頓野の系統用蓄電所。同社の2026年4月22日のリリースは、「本プロジェクトは、出力2MW、容量8MWhの系統用蓄電所で、NTTアノードエナジー株式会社（本社：東京都港区、代表取締役社長：岸本 照之）が提供する「蓄電所構築・運用おまかせサービス」を活用して開発・建設された施設を、当社が取得する形で推進しています」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000001.000182081.html\" target=\"_blank\" rel=\"noopener noreferrer\">Eku Energy Japan、福岡県直方市において「上頓野蓄電所」の運転開始（Eku Energy Japan株式会社、2026年4月22日）</a>）。</p><p>リリースは、所在地を「福岡県直方市上頓野」、運転開始を「2026年4月」、事業主体を「Eku Energy Japan株式会社」とし、「本施設の運営・保守（O&M）についてもNTTアノードエナジー株式会社が担います」としている。開発と建設を行った同社の同じ日のリリースは、「このたび、2026年４月に、Eku Energy Japanが運用を開始しました」と述べ、各社の主な役割を「事業主体： Eku Energy Japan」「開発・建設： NTT アノードエナジー」「監視・保守 ：NTT アノードエナジー」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000073.000111866.html\" target=\"_blank\" rel=\"noopener noreferrer\">NTT アノードエナジーが開発、建設の「上頓野蓄電所」が完成（NTTアノードエナジー株式会社、2026年4月22日）</a>）。どちらのリリースも日を書いていないため、運転開始の欄は月までとした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q10"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "33c6be852f9e731c",
+     "epc": "3e1995bdfe716e92",
+     "cod": "1548fc406bbb61e4",
+     "body": "9892e385978c8a4e"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co88876-bess-2",
+    "row_id": "Q11",
+    "order": 11,
+    "id": "mvrwfgit6",
+    "updatedAt": "2026-09-25T04:27:22.288Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "紀の川上田井蓄電所（スターシーズ）",
+      "new": "紀の川上田井蓄電所（徳馬科技）",
+      "row_ids": [
+       "Q11"
+      ],
+      "note": ""
+     },
+     {
+      "field": "prefecture",
+      "old": "null",
+      "new": "\"和歌山県\"",
+      "row_ids": [
+       "Q11"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "city",
+      "old": "null",
+      "new": "\"紀の川市上田井\"",
+      "row_ids": [
+       "Q11"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "operator",
+      "old": "スターシーズ株式会社",
+      "new": "徳馬科技株式会社（開発: スターシーズ）",
+      "row_ids": [
+       "Q11"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"日本エネルギー総合システム株式会社\"",
+      "row_ids": [
+       "Q11"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "2025-09-04",
+      "new": "2026年1月下旬",
+      "row_ids": [
+       "Q11"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>系統用蓄電池</strong>は、に立地する系統用蓄電所。発表企業：スターシーズ株式会社。ステータス：建設中（発表日：2025-09-04）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://starseeds.co.jp/ir/\" target=\"_blank\" rel=\"noopener noreferrer\">https://starseeds.co.jp/ir/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000037.000088876.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000037.000088876.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>※出力・容量の出典はエネハブ（enehub.jp）（一次リリース非公表のため媒体値を採用）。</p><p>運転開始日は一次に記載が無い。IR は工事完了 2025年11月下旬・引渡済と述べるのみで「運転開始」の逐語が無いため、ステータスは建設中のまま維持している（推定で稼働中にはしない）。</p>",
+      "new": "<p><strong>紀の川上田井蓄電所</strong>は、和歌山県紀の川市上田井の系統用蓄電所。スターシーズ株式会社が開発し、2026年に徳馬科技株式会社へ売却した。スターシーズの2026年1月13日の開示は、日本エネルギー総合システム株式会社から系統用蓄電所の設備と電力接続権を取得したことを知らせ、「①紀の川上田井発電所」について、所在地を「和歌山県紀の川市上田井字尾崎谷423-1」、蓄電池メーカーを「HUAWEI」、申請出力／容量を「定格出力２MW 定格容量８MWh」とし、工期を「工事着工日 2025年 ９月中旬（済）」「工事完了日 2025年11月下旬（済）」「運転開始日 2026年 １月下旬（予定）」とする（出典: <a href=\"https://ssl4.eir-parts.net/doc/3083/tdnet/2740054/00.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">固定資産（系統用蓄電所設備）及び電力接続権の取得に関するお知らせ（スターシーズ株式会社、2026年1月13日）</a>）。着工について、同社の2025年9月4日のリリースは「２０２５年９月２日に「紀の川上田井蓄電所」の建設工事に着工いたしました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000037.000088876.html\" target=\"_blank\" rel=\"noopener noreferrer\">系統用蓄電池事業「紀の川上田井蓄電所」における工事着工のお知らせ（スターシーズ株式会社、2025年9月4日）</a>）。建設工事は、業務提携先の日本エネルギー総合システム株式会社による。</p><p>売却について、スターシーズの2026年1月30日の開示は、「販売用不動産（系統用蓄電所の土地、設備）並びに電力接続権を売却することを決議いたしました」と述べ、売却先を「徳馬科技株式会社」、引渡・決済日を「2026年２月25日（予定）」とする（出典: <a href=\"https://ssl4.eir-parts.net/doc/3083/tdnet/2747421/00.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ（和歌山県紀の川市上田井）（スターシーズ株式会社、2026年1月30日）</a>）。同社の2026年2月期の決算短信は、「・和歌山県「紀の川上田井蓄電所」 売却済み 引渡し済み」としている（出典: <a href=\"https://ssl4.eir-parts.net/doc/3083/tdnet/2792306/00.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">2026年２月期 決算短信〔日本基準〕（連結）（スターシーズ株式会社、2026年4月17日）</a>）。</p><p>2026年11月時点で、運転を始めたことを示す発表は、確認できていない。運転開始の欄は、2026年1月13日の開示の予定（2026年1月下旬）のままにしている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q11"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "6b14380abed6b848",
+     "prefecture": "55dfb1d624997b12",
+     "city": "384f404b162cd90a",
+     "operator": "37d38e85e1a9768f",
+     "epc": "a8246565e7efd425",
+     "cod": "c503846d5a19c7df",
+     "body": "da555e4aab5ff5be"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co88876-bess",
+    "row_id": "Q12",
+    "order": 12,
+    "id": "mre7rv-4lk",
+    "updatedAt": "2026-09-25T04:27:20.260Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "紀の川桃山町蓄電所（スターシーズ）",
+      "new": "紀の川桃山町蓄電所（アルプス建設）",
+      "row_ids": [
+       "Q12"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "スターシーズ株式会社",
+      "new": "株式会社アルプス建設（開発: スターシーズ）",
+      "row_ids": [
+       "Q12"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"日本エネルギー総合システム株式会社\"",
+      "row_ids": [
+       "Q12"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "2025-09-17",
+      "new": "2026年1月下旬",
+      "row_ids": [
+       "Q12"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>系統用蓄電池</strong>は、系統用蓄電池事業「紀の川桃山町に立地する系統用蓄電所。発表企業：スターシーズ株式会社。ステータス：建設中（発表日：2025-09-17）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://starseeds.co.jp/ir/\" target=\"_blank\" rel=\"noopener noreferrer\">https://starseeds.co.jp/ir/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000042.000088876.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000042.000088876.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>※出力・容量の出典はエネハブ（enehub.jp）（一次リリース非公表のため媒体値を採用）。</p><p>運転開始日は一次に記載が無い。IR は工事完了 2025年11月下旬・引渡済と述べるのみで「運転開始」の逐語が無いため、ステータスは建設中のまま維持している（推定で稼働中にはしない）。</p>",
+      "new": "<p><strong>紀の川桃山町蓄電所</strong>は、和歌山県紀の川市桃山町最上の系統用蓄電所。スターシーズ株式会社が開発し、2026年に株式会社アルプス建設へ売却した。スターシーズの2026年1月13日の開示は、日本エネルギー総合システム株式会社から系統用蓄電所の設備と電力接続権を取得したことを知らせ、「②紀の川桃山町発電所」について、所在地を「和歌山県紀の川市桃山町最上字東垣内400-1他」、蓄電池メーカーを「HUAWEI」、申請出力／容量を「定格出力２MW 定格容量８MWh」とし、工期を「工事着工日 2025年 ９月中旬（済）」「工事完了日 2025年11月下旬（済）」「運転開始日 2026年 １月下旬（予定）」とする（出典: <a href=\"https://ssl4.eir-parts.net/doc/3083/tdnet/2740054/00.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">固定資産（系統用蓄電所設備）及び電力接続権の取得に関するお知らせ（スターシーズ株式会社、2026年1月13日）</a>）。着工について、同社の2025年9月17日のリリースは「本日、２基目となる「紀の川桃山町蓄電所」の建設工事に着工いたしました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000042.000088876.html\" target=\"_blank\" rel=\"noopener noreferrer\">系統用蓄電池事業「紀の川桃山町蓄電所」における工事着工のお知らせ（スターシーズ株式会社、2025年9月17日）</a>）。建設工事は、業務提携先の日本エネルギー総合システム株式会社による。</p><p>売却について、スターシーズの2026年1月26日の開示は、「販売用不動産（系統用蓄電所の土地、設備）並びに電力接続権を売却することを決議いたしました」と述べ、売却先を「株式会社アルプス建設」、引渡・決済日を「2026年２月25日（予定）」とする（出典: <a href=\"https://ssl4.eir-parts.net/doc/3083/tdnet/2743874/00.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">販売用不動産（系統用蓄電所の土地及び設備）並びに電力接続権の売却に関するお知らせ（スターシーズ株式会社、2026年1月26日）</a>）。同社の2026年2月期の決算短信は、「・和歌山県「紀の川桃山町蓄電所」 売却済み 引渡し済み」としている（出典: <a href=\"https://ssl4.eir-parts.net/doc/3083/tdnet/2792306/00.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">2026年２月期 決算短信〔日本基準〕（連結）（スターシーズ株式会社、2026年4月17日）</a>）。</p><p>2026年11月時点で、運転を始めたことを示す発表は、確認できていない。運転開始の欄は、2026年1月13日の開示の予定（2026年1月下旬）のままにしている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q12"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "42c76fce29d950a4",
+     "operator": "3b5274ff8f89db8b",
+     "epc": "a8246565e7efd425",
+     "cod": "c503846d5a19c7df",
+     "body": "9451d2a0a034302e"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co176494-okayama",
+    "row_id": "Q13",
+    "order": 13,
+    "id": "e5cio8g4m8z",
+    "updatedAt": "2026-09-08T02:53:22.054Z",
+    "ops": [
+     {
+      "field": "cod",
+      "old": "2026-02-10",
+      "new": "2026-01-30",
+      "row_ids": [
+       "Q13"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>岡山県備前市に伊部蓄電所</strong>は、岡山県【稼働開始】岡山県備前市に立地する系統用蓄電所。発表企業：株式会社エネフォワード。ステータス：稼働中（発表日：2026-02-10）。</p><p>〜2026年4月より需給調整市場へ参入し、次世代の電力ネットワーク構築を加速〜</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://eneforward.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://eneforward.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000007.000176494.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000007.000176494.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>岡山県備前市伊部蓄電所</strong>は、株式会社エネフォワードの、岡山県備前市伊部の系統用蓄電所。同社の2026年2月10日のリリースは、「岡山県備前市伊部（敷地面積：約1,070平米）にて建設を進めていた「岡山県備前市伊部蓄電所」が先日完工し、営業運転を開始したことをお知らせいたします」と述べ、日程を「2026年1月30日：完工・運転開始」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000007.000176494.html\" target=\"_blank\" rel=\"noopener noreferrer\">【稼働開始】岡山県備前市に伊部蓄電所が竣工・運転開始（株式会社エネフォワード、2026年2月10日）</a>）。</p><p>リリースは、所在地を「岡山県備前市伊部（県道沿い）」、定格出力を「2,000kW」、蓄電容量を「8,000kWh」、採用メーカーを「HUAWEI」、アグリゲーターを「RE100電力株式会社」とし、「運用面においては、最新のAI予測・最適制御技術を有するRE100電力株式会社のアグリゲーションプラットフォームを導入しました」としている。市場について、リリースは「本施設は2026年4月末より需給調整市場への参入を予定しております」とし、「これまでの卸電力市場（JEPX）での裁定取引に加え、同社の高度な制御技術を活用し、電力系統の周波数調整等を行う需給調整市場へ参入することで」と述べている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q13"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "cod": "d0d57b1e40df11b3",
+     "body": "50c42137467e45d6"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-energy-bess",
+    "row_id": "Q14",
+    "order": 14,
+    "id": "0zyc0d4aa",
+    "updatedAt": "2026-09-25T04:26:50.851Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "岩手北上蓄電所（TAOKE ENERGY）",
+      "new": "岩手北上蓄電所（東京センチュリー）",
+      "row_ids": [
+       "Q14"
+      ],
+      "note": ""
+     },
+     {
+      "field": "city",
+      "old": "null",
+      "new": "\"北上市村崎野\"",
+      "row_ids": [
+       "Q14"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "operator",
+      "old": "TAOKE ENERGY株式会社",
+      "new": "東京センチュリー株式会社",
+      "row_ids": [
+       "Q14"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"TAOKE ENERGY株式会社\"",
+      "row_ids": [
+       "Q14"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>岩手北上蓄電所（TAOKE ENERGY）</strong>は、岩手県に立地する系統用蓄電所。出力 1.99 MW、容量 8.146 MWh 規模。事業者：TAOKE ENERGY株式会社。</p><p>系統用蓄電所全ライフサイクルサービスで事業実現を支援</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>企業公式サイト: <a href=\"https://www.taoke-energy.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.taoke-energy.com/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000015.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000015.000103834.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>岩手北上蓄電所</strong>は、TAOKE ENERGY株式会社が開発・建設し、完工後に東京センチュリー株式会社へ事業の権利を譲渡した、岩手県北上市村崎野の系統用蓄電所。TAOKE ENERGYの2025年12月10日のリリースは、「12月9日、岩手県北上市にて高圧系統用蓄電所「岩手北上蓄電所」の竣工式を執り行いました」と述べ、式典の出席者が「本日から始まる商業運転の安全・成功を祈願いたしました」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000015.000103834.html\" target=\"_blank\" rel=\"noopener noreferrer\">TAOKE ENERGYが開発した岩手北上蓄電所の商業運転を開始（TAOKE ENERGY株式会社、2025年12月10日）</a>）。</p><p>事業の主体について、リリースは「本蓄電所は、TAOKE ENERGYが開発・建設を担当し、完工後に東京センチュリーへ事業権利を譲渡したものです」としている。リリースは、蓄電所所在地を「岩手県北上市村崎野」、定格出力を「1,990kW」、定格容量を「8,146kWh」とする。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q14"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "416c564d0f4303ec",
+     "city": "298d8a826e145d34",
+     "operator": "5a7941b15cf3474d",
+     "epc": "f7f8b11ae8fd4e75",
+     "body": "b1be0a35aeab0677"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co40055-bess",
+    "row_id": "Q15",
+    "order": 15,
+    "id": "rmim9o9mis5",
+    "updatedAt": "2026-08-04T14:21:01.123Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "再エネ併設型蓄電所（株式会社サーラコーポレーション）",
+      "new": "サーラ東三河蓄電所（サーラエナジー）",
+      "row_ids": [
+       "Q15"
+      ],
+      "note": ""
+     },
+     {
+      "field": "prefecture",
+      "old": "null",
+      "new": "\"愛知県\"",
+      "row_ids": [
+       "Q15"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "city",
+      "old": "null",
+      "new": "\"豊橋市新西浜町\"",
+      "row_ids": [
+       "Q15"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "operator",
+      "old": "株式会社サーラコーポレーション",
+      "new": "サーラエナジー株式会社（サーラコーポレーション）",
+      "row_ids": [
+       "Q15"
+      ],
+      "note": ""
+     },
+     {
+      "field": "cod",
+      "old": "2024-10-06",
+      "new": "2025年夏頃",
+      "row_ids": [
+       "Q15"
+      ],
+      "note": ""
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.salaenergy.co.jp/",
+      "new": "https://prtimes.jp/main/html/rd/p/000000052.000040055.html",
+      "row_ids": [
+       "Q15"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>再エネ併設型蓄電所</strong>は、に立地する系統用蓄電所。発表企業：株式会社サーラコーポレーション。ステータス：計画中（発表日：2024-10-06）。</p><p>～地域における脱炭素社会の実現を目指して～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.salaenergy.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.salaenergy.co.jp/</a></li><li>企業公式サイト: <a href=\"https://www.sala.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.sala.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000052.000040055.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000052.000040055.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>サーラ東三河蓄電所</strong>は、サーラエナジー株式会社（株式会社サーラコーポレーションの連結子会社）が、愛知県豊橋市の東三河バイオマス発電所の敷地内に建設する、再生可能エネルギー併設型の蓄電所。2024年10月6日のリリースは、「日本初※1となる再生可能エネルギー併設型蓄電所「サーラ東三河蓄電所（以下「本蓄電所」）」の建設を2024年11月より開始いたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000052.000040055.html\" target=\"_blank\" rel=\"noopener noreferrer\">【サーラエナジー】再エネ併設型蓄電所「サーラ東三河蓄電所」の建設を開始（株式会社サーラコーポレーション、2024年10月6日）</a>）。</p><p>リリースは、名称を「サーラ東三河蓄電所（SALA Higashimikawa Storage Station）」、設置場所を「愛知県豊橋市新西浜町2-10」、出力を「1,999kW（高圧）」、蓄電池容量を「7,520kWh（直流換算）」、運転開始を「2025年夏頃本格稼働開始予定」とする。市場での取引について、リリースは「株式会社エナリス（本社：東京都千代田区、代表取締役社長：都築 実宏）と、同社を介した取引の実施に合意いたしました」としている。</p><p>2026年11月時点で、運転を始めたことを示す発表は、確認できていない。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q15"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "a769f763faf347d0",
+     "prefecture": "233c311e7a92f7a4",
+     "city": "fbe531c9c477b6d2",
+     "operator": "453037cd124cec25",
+     "cod": "06601abe9f16e2c3",
+     "sourceUrl": "c35e23a3b15d4ce7",
+     "body": "f65eb6f19d823e12"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co98598-bess",
+    "row_id": "Q16",
+    "order": 16,
+    "id": "xyjyx3rae2",
+    "updatedAt": "2026-09-08T02:53:35.223Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "サービスステーション跡地を活用した高圧系統用蓄電所",
+      "new": "松浦市SS跡地系統用蓄電所（コスモエネルギーHD）",
+      "row_ids": [
+       "Q16"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "COSMO",
+      "new": "コスモエネルギーホールディングス",
+      "row_ids": [
+       "Q16"
+      ],
+      "note": ""
+     },
+     {
+      "field": "status",
+      "old": "[\"稼働中\"]",
+      "new": "[\"計画中\"]",
+      "row_ids": [
+       "Q16"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "2026-02-25",
+      "new": "2027年度下期",
+      "row_ids": [
+       "Q16"
+      ],
+      "note": ""
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.cosmo-energy.co.jp",
+      "new": "https://prtimes.jp/main/html/rd/p/000000291.000098598.html",
+      "row_ids": [
+       "Q16"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>サービスステーション跡地を活用した高圧系統用蓄電所</strong>は、～松浦市に立地する系統用蓄電所。出力 4 MW 規模。発表企業：COSMO。ステータス：稼働中（発表日：2026-02-25）。</p><p>～松浦市、仙台市の2拠点で計約4MW、2027年度より順次運転開始へ～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.cosmo-energy.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.cosmo-energy.co.jp</a></li><li>企業公式サイト: <a href=\"https://ceh.cosmo-oil.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://ceh.cosmo-oil.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000291.000098598.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000291.000098598.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p><p>※出力約2MWは松浦単体。従来表記4MWは松浦＋仙台の2拠点合計（コスモ公式リリースで確認・2026-08照合）。</p>",
+      "new": "<p><strong>松浦市SS跡地系統用蓄電所</strong>は、コスモエネルギーホールディングス株式会社が、長崎県松浦市のサービスステーション跡地に建設する高圧の系統用蓄電所。同社の2026年2月25日のリリースは、「長崎県松浦市および宮城県仙台市の2拠点において、コスモ石油マーケティング株式会社（代表取締役社長：髙山 直樹）が管理するサービスステーション（以下「SS」）跡地を活用した高圧系統用蓄電所の建設に着手することをお知らせします。2027年度から順次、松浦市、仙台市において蓄電所の運転開始をめざします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000291.000098598.html\" target=\"_blank\" rel=\"noopener noreferrer\">サービスステーション跡地を活用した高圧系統用蓄電所の建設に着手（コスモエネルギーホールディングス株式会社、2026年2月25日）</a>）。</p><p>リリースの「➀長崎県松浦市の蓄電所概要」は、所在地を「長崎県松浦市」、運転開始時期（予定）を「2027年度下期」、採用蓄電池を「(株)パワーエックス社製」、発電出力を「約2 MW」、蓄電池容量を「約8 MWh」とする。市場について、リリースは「今回建設する蓄電所では、卸電力市場に加え、需給調整市場や容量市場への参画による取引を計画しており、これらの取引業務は当社グループのコスモエネルギーソリューションズ株式会社（代表取締役社長：河村 靖之）が担います」としている。リリースに蓄電所の固有の名前は書かれていないため、当サイトでは所在地と立地で呼んでいる。もう 1 か所の宮城県仙台市は、仙台市SS跡地系統用蓄電所として別に掲載している。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q16"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "00fab2c524aa9c21",
+     "operator": "d53fadb1bf24e5cd",
+     "status": "9000bc5020ada47a",
+     "cod": "5b4ea0deb2518d65",
+     "sourceUrl": "9fb37941b2daa36f",
+     "body": "550e2db9c12b26db"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-looop-saitama",
+    "row_id": "Q17",
+    "order": 17,
+    "id": "olbkwdexdni",
+    "updatedAt": "2026-09-25T04:26:43.052Z",
+    "ops": [
+     {
+      "field": "city",
+      "old": "小川町",
+      "new": "比企郡小川町",
+      "row_ids": [
+       "Q17"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "株式会社Looop",
+      "new": "合同会社taMEL（Looop）",
+      "row_ids": [
+       "Q17"
+      ],
+      "note": ""
+     },
+     {
+      "field": "marketParticipation",
+      "old": "[]",
+      "new": "[\"JEPX\"]",
+      "row_ids": [
+       "Q17"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>埼玉県～電力卸市蓄電所</strong>は、埼玉県～電力卸市に立地する系統用蓄電所。発表企業：株式会社Looop。ステータス：計画中（発表日：2025-04-03）。</p><p>～電力卸市場・容量市場・需給調整市場へ寄与する系統用蓄電所の運用～</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://looop.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://looop.co.jp/</a></li><li>企業公式サイト: <a href=\"https://looop.co.jp/\" target=\"_blank\" rel=\"noopener noreferrer\">https://looop.co.jp/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000135.000058095.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000135.000058095.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>埼玉県比企郡蓄電ステーション</strong>は、株式会社Looopが出資する合同会社taMELの、埼玉県比企郡小川町の系統用蓄電所。Looopの2025年4月3日のお知らせは、「合同会社taMEL（以下、「本事業会社」）は、埼玉県比企郡蓄電ステーションの建設工事を完了し、2025年2月に営業運転を開始しました」と述べている（出典: <a href=\"https://looop.co.jp/info/4923_20250403\" target=\"_blank\" rel=\"noopener noreferrer\">「埼玉県比企郡蓄電ステーション」の運転を開始（株式会社Looop、2025年4月3日）</a>）。</p><p>お知らせは、蓄電設備所在地を「埼玉県比企郡小川町」、容量を「7,683.8kWh」、本工事開始日を「2023年10月16日」、運転開始日を「2025年2月21日」とし、市場について「電力卸市場へは参入が完了しており、今後は容量市場・需給調整市場への参入を目指して運用を進めていく予定です」としている。出力の記載はない。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q17"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "city": "70d0d088dd620c3b",
+     "operator": "d5821ae5796ad161",
+     "marketParticipation": "1601a60abea6d07e",
+     "body": "5b29ca5d01cfb239"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co18049-bess",
+    "row_id": "Q18",
+    "order": 18,
+    "id": "wtts5zhg-7",
+    "updatedAt": "2026-05-17T03:33:25.073Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "琵琶湖蓄電所",
+      "new": "琵琶湖蓄電所（森トラスト）",
+      "row_ids": [
+       "Q18"
+      ],
+      "note": ""
+     },
+     {
+      "field": "city",
+      "old": "守山市",
+      "new": "守山市今浜町",
+      "row_ids": [
+       "Q18"
+      ],
+      "note": ""
+     },
+     {
+      "field": "cod",
+      "old": "2026-04-02",
+      "new": "2027年下期",
+      "row_ids": [
+       "Q18"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<p>パワーエックス製リチウムイオン電池。</p>",
+      "new": "<p><strong>琵琶湖蓄電所</strong>は、森トラスト株式会社が滋賀県守山市で計画する系統用蓄電所（事業名称は「琵琶湖蓄電所プロジェクト」）。同社の2026年4月2日のお知らせは、「滋賀県守山市にて系統用蓄電所の開発・事業運営を開始することをお知らせいたします。本件は、当社初となる系統用蓄電所事業であり、当社が設立する特別目的会社を通じて運営いたします」と述べ、「当該蓄電所は、2026年夏に建設を開始し、2027年下期に運転開始を予定しております」としている（出典: <a href=\"https://www.mori-trust.co.jp/news/2026/20260402/\" target=\"_blank\" rel=\"noopener noreferrer\">森トラスト 「琵琶湖蓄電所プロジェクト」を開始（森トラスト株式会社、2026年4月2日）</a>）。</p><p>施設概要は、所在地を「滋賀県守山市今浜町十軒家2870」、定格出力を「8.7MW」、定格容量を「19.7MWh」、蓄電池メーカーを「株式会社パワーエックス」、運転開始日を「2027年下期(予定)」とする（蓄電池は株式会社パワーエックス製）。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q18"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "021a61a11128882e",
+     "city": "1c5775412edb4262",
+     "cod": "af945bdca253da29",
+     "body": "f66494fdef201809"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co85634-fukuoka",
+    "row_id": "Q19",
+    "order": 19,
+    "id": "oa-4dk5c6",
+    "updatedAt": "2026-09-08T02:53:51.253Z",
+    "ops": [
+     {
+      "field": "cod",
+      "old": "2025-11-05",
+      "new": "",
+      "row_ids": [
+       "Q19"
+      ],
+      "note": ""
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.h-nac.co.jp/shoji/",
+      "new": "https://prtimes.jp/main/html/rd/p/000000019.000085634.html",
+      "row_ids": [
+       "Q19"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>ヒラソル・エナジーが福岡県古賀市で系統用蓄電所</strong>は、福岡県中川商事、ヒラソル・エナジーが福岡県古賀市に立地する系統用蓄電所。発表企業：ヒラソル・エナジー株式会社。ステータス：稼働中（発表日：2025-11-05）。</p><p>地域金融との連携で新たな再エネ推進モデルを構築</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.h-nac.co.jp/shoji/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.h-nac.co.jp/shoji/</a></li><li>企業公式サイト: <a href=\"https://www.pplc.co/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.pplc.co/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000019.000085634.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000019.000085634.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>中川商事株式会社 第一系統用蓄電所</strong>は、中川商事株式会社の、福岡県古賀市の系統用蓄電所。中川商事とヒラソル・エナジー株式会社の2025年11月5日のリリースは、「「中川商事株式会社 第一系統用蓄電所（約2MW／8MWh）」にて系統用蓄電事業を開始したことをお知らせいたします」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000019.000085634.html\" target=\"_blank\" rel=\"noopener noreferrer\">中川商事、ヒラソル・エナジーが福岡県古賀市で系統用蓄電所運転開始（ヒラソル・エナジー株式会社、2025年11月5日）</a>）。</p><p>リリースは、蓄電所名（通称）を「中川商事株式会社 第一系統用蓄電所」、所在地を「福岡県古賀市」、出力・容量を「約2MW/8MWh」、事業者を「中川商事株式会社」、系統連系日を「2025年10月2日」とする。ヒラソル・エナジー株式会社が運用を受託しており、リリースは「ヒラソル・エナジー株式会社（本社：東京都文京区、代表取締役：李 旻、以下「ヒラソル・エナジー」）が中川商事より本蓄電所の運用業務を受託し、独自の市場取引機能付きエネルギーマネジメントシステム「J-EMS」を用いて安定的な運用を担います」としている。リリースに運転開始の日の記載はないため、運転開始の欄は空にしている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q19"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "cod": "e3b0c44298fc1c14",
+     "sourceUrl": "552799bd721bb78d",
+     "body": "8c3d73fa5876c1c9"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-co111866-bess",
+    "row_id": "Q20",
+    "order": 20,
+    "id": "nszhr6hkco",
+    "updatedAt": "2026-06-26T01:19:54.546Z",
+    "ops": [
+     {
+      "field": "city",
+      "old": "null",
+      "new": "\"北九州市若松区\"",
+      "row_ids": [
+       "Q20"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"西部電気工業株式会社\"",
+      "row_ids": [
+       "Q20"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "body",
+      "old": "<p>パワーエックス製電池。</p>",
+      "new": "<p><strong>福岡若松蓄電所</strong>は、NTTアノードエナジー株式会社の、福岡県北九州市若松区の系統用蓄電所。同社の2025年4月3日のリリースは、西部電気工業株式会社、株式会社パワーエックスと「福岡県北九州市若松区に系統用高圧蓄電所「福岡若松蓄電所」（福岡県北九州市若松区）を建設し、4月3日に竣工しました」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000052.000111866.html\" target=\"_blank\" rel=\"noopener noreferrer\">NTTアノードエナジーの「福岡若松蓄電所」が竣工（NTTアノードエナジー株式会社、2025年4月3日）</a>）。</p><p>リリースは、名称を「福岡若松蓄電所」、設置場所を「福岡県北九州市若松区」、PCS出力を「1,999kW」、公称容量を「8,226kWh」、運転開始を「2025年4月3日」、蓄電システムを「パワーエックス製「Mega Power」3台」とし、「設計および施工は西部電気工業が担当しました」としている。蓄電システムは株式会社パワーエックスが納入した。運用について、リリースは「福岡若松蓄電所は、NTTアノードエナジーがアグリゲーターとして各種電力市場での最適取引や充放電制御をはじめ蓄電所の保守監視を一体的におこないます」としている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q20"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "city": "3084eb04a7ed1549",
+     "epc": "12b559eb2823ee3e",
+     "body": "a73e15751a0be98e"
+    }
+   }
+  ]
+ }
+}
