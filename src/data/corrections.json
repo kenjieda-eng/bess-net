@@ -13407,6 +13407,75 @@
     }
    ],
    "internalRef": "reports/projects-cleanup4-2-2026-11-22.md"
+  },
+  {
+   "id": "20261123-01",
+   "date": "2026-11-23",
+   "kind": "訂正",
+   "path": "/projects/jpn-kawasaki",
+   "record": "projects/jpn-kawasaki",
+   "targetTitle": "NC柴田郡川崎町今宿蓄電所（日本蓄電池）",
+   "before": "EPC を「TMEIC」と表示（TMEIC は PCS の製造元）。運転開始を「2026年2月」と表示。出力を 1.999 MW と表示",
+   "after": "EPC を、発表の施工会社「鈴木電機株式会社」に直し、運転開始を、発表の表の運転開始日 2026年2月13日 に直しました\n出力を、新しい方の発表の 1,998kW に直し、所在地を 柴田郡川崎町 に直しました。本文と出典を発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】宮城県柴田郡川崎町にて系統用蓄電施設　「NC柴田郡川崎町今宿蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000040.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】宮城県柴田郡にて系統用蓄電施設「NC柴田郡川崎町今宿蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000080.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-smallfix-2026-11-23.md"
+  },
+  {
+   "id": "20261123-02",
+   "date": "2026-11-23",
+   "kind": "訂正",
+   "path": "/projects/jpn-takayama",
+   "record": "projects/jpn-takayama",
+   "targetTitle": "NC高山市久々野町蓄電所（日本蓄電池）",
+   "before": "EPC を「TMEIC」と表示（TMEIC は PCS の製造元）。運転開始を「2026年2月」と表示。出力を 1.99 MW と表示",
+   "after": "EPC を、発表の施工会社「株式会社ワイ・ジャスト」に直し、運転開始を、発表の表の運転開始日 2026年2月27日 に直しました\n出力を、発表の 1,988kW に直し、所在地を 高山市久々野町 に直しました。本文と出典を発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】岐阜県高山市にて系統用蓄電施設「NC高山市久々野町蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000044.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】岐阜県高山市久々野町にて系統用蓄電施設「NC高山市久々野町蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000062.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-smallfix-2026-11-23.md"
+  },
+  {
+   "id": "20261123-03",
+   "date": "2026-11-23",
+   "kind": "訂正",
+   "path": "/projects/ota-johyo-bess",
+   "record": "projects/ota-johyo-bess",
+   "targetTitle": "太田市小角田町蓄電システム（城洋）",
+   "before": "容量を 7 MWh と表示（発表に容量の記載は無く、計画の段階の報道の値だった）",
+   "after": "容量の欄を空にしました（運転開始のリリースにも、計画の段階のリリースにも容量の記載が無いため）",
+   "basis": [
+    {
+     "name": "しろくま電力、東京都「系統用大規模蓄電池導入促進事業」の第一号案件を2024年12月に運転開始。事業主は兵庫県JYSグループ。",
+     "publisher": "しろくま電力株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000129.000055631.html"
+    },
+    {
+     "name": "JYSグループ３社（城洋、城洋商事、光遊社）はafterFITと協業し、系統用蓄電池事業に参入",
+     "publisher": "しろくま電力株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000104.000055631.html"
+    }
+   ],
+   "internalRef": "reports/projects-smallfix-2026-11-23.md"
   }
  ]
 }
