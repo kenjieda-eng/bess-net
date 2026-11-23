@@ -5142,6 +5142,15 @@
       "checked_on": "2026-11-23",
       "note": "projects の小さな直し便（2026-11-23・_QUEUE.md 139 行）。素の curl で HTTP 200（249,821 bytes）。発表日 2026年5月13日。",
       "used_in": "訂正履歴 20261123-02（basis）・projects の本文（F2）"
+    },
+    {
+      "name": "【日本蓄電池株式会社】宇城市と立地協定を締結",
+      "publisher": "日本蓄電池株式会社（PR TIMES）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000004.000161802.html",
+      "title_verbatim": "【日本蓄電池株式会社】宇城市と立地協定を締結 | 日本蓄電池株式会社のプレスリリース",
+      "checked_on": "2026-11-23",
+      "note": "projects の松橋町の統合・九電工の別名の便（2026-11-23・_QUEUE.md 140 行）。素の curl で HTTP 200（244,488 bytes）。発表日 2025年6月18日。",
+      "used_in": "訂正履歴 20261123-04（basis）"
     }
   ]
 }

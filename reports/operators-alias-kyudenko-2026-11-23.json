@@ -1,0 +1,41 @@
+{
+ "note": "九電工の別名の便（_QUEUE.md 140 行）。ユウの計画（reports/projects-plan-2026-11-23-G_ユウ.json）の operator_alias を、書込直前の GET で確かめて applier の形にしたもの。",
+ "generated": "2026-11-23T02:37:32.099Z",
+ "checks": {
+  "problems": [],
+  "name": "株式会社九電工",
+  "aliases_now": null,
+  "add": [
+   "クラフティア",
+   "株式会社クラフティア"
+  ],
+  "final": "クラフティア\n株式会社クラフティア"
+ },
+ "plan": {
+  "posts": [],
+  "patches": [
+   {
+    "ep": "operators",
+    "slug": "kyudenko",
+    "row_id": "A1",
+    "order": 1,
+    "id": "kyudenko",
+    "updatedAt": "2026-05-04T12:26:28.260Z",
+    "ops": [
+     {
+      "field": "aliases",
+      "old": "null",
+      "new": "\"クラフティア\\n株式会社クラフティア\"",
+      "row_ids": [
+       "A1"
+      ],
+      "note": "配列・JSON 値モード。今は空の aliases に改行区切りで入れる"
+     }
+    ],
+    "expect_final": {
+     "aliases": "4027e05e14e298f3"
+    }
+   }
+  ]
+ }
+}

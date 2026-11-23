@@ -13476,6 +13476,46 @@
     }
    ],
    "internalRef": "reports/projects-smallfix-2026-11-23.md"
+  },
+  {
+   "id": "20261123-04",
+   "date": "2026-11-23",
+   "kind": "表示の停止",
+   "path": "/projects/jpn-uki",
+   "record": "projects/jpn-uki",
+   "targetTitle": "NC宇城市・松橋町蓄電所（日本蓄電池）",
+   "before": "「NC宇城市・松橋町蓄電所」（熊本県宇城市・出力 1.999 MW・容量 8.226 MWh）を掲載し、合計値に計上。発表に、この名前の蓄電所は無く、本文の出典は NC宇城市豊野町蓄電所の発表だった",
+   "after": "/projects/pr-co161802-kumamoto-2（NC宇城市豊野町蓄電所）へ統合し、古いページからは転送にしました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】宇城市豊野町にて系統用蓄電施設「NC宇城市豊野町蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000013.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】宇城市と立地協定を締結",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000004.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-uki-merge-kyudenko-alias-2026-11-23.md"
+  },
+  {
+   "id": "20261123-05",
+   "date": "2026-11-23",
+   "kind": "訂正",
+   "path": "/projects",
+   "targetTitle": "全国の蓄電所一覧",
+   "before": "掲載 286 件・合計出力 3,102.4 MW（263 件分）・合計容量 9,296.8 MWh（247 件分）と表示（同じ設備を、別の名前でもう 1 件掲載していた）",
+   "after": "重複の 1 件を統合して、掲載 285 件・合計出力 3,100.4 MW（262 件分）・合計容量 9,288.6 MWh（246 件分）になりました。同じデータから作る事業者ランキング・事業者ナビの掲載案件数・変電所のページの県別の案件数も、これに合わせて変わりました",
+   "basis": [
+    {
+     "name": "【日本蓄電池株式会社】宇城市豊野町にて系統用蓄電施設「NC宇城市豊野町蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000013.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-uki-merge-kyudenko-alias-2026-11-23.md"
   }
  ]
 }

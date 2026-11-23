@@ -1,0 +1,30 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 2
+ },
+ "counts": {
+  "patched": 1,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "operators/kyudenko",
+   "id": "kyudenko",
+   "result": "dry",
+   "fields": [
+    "aliases"
+   ],
+   "before": {},
+   "after": {
+    "aliases": "クラフティア\n株式会社クラフティア"
+   }
+  }
+ ]
+}
