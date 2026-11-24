@@ -13516,6 +13516,195 @@
     }
    ],
    "internalRef": "reports/projects-uki-merge-kyudenko-alias-2026-11-23.md"
+  },
+  {
+   "id": "20261124-01",
+   "date": "2026-11-24",
+   "kind": "表示の停止",
+   "path": "/projects/pr-tecra-miyagi",
+   "record": "projects/pr-tecra-miyagi",
+   "targetTitle": "系統用蓄電池（TECRA株式会社）",
+   "before": "土地の購入と造成の資金を集めるファンドの発表を、1 件の計画中の蓄電所として掲載",
+   "after": "一覧・件数・合計値・サイトマップから外した（詳細ページは検索エンジン非掲載の扱いで残置）。発表は「本ファンドは、対象土地の購入、土地の造成のための必要資金をご出資いただくファンドです」というもので、蓄電所の事業者・規模・運転開始の記載は無い",
+   "basis": [
+    {
+     "name": "【想定年利12.0%】不動産クラウドファンディング「TECROWD」、国内開発型ファンド「宮城県角田市 系統用蓄電池発電所」を投資対象とするファンド募集終了",
+     "publisher": "TECRA株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000143.000061009.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261124-02",
+   "date": "2026-11-24",
+   "kind": "訂正",
+   "path": "/projects/kita-toyotomi-bess",
+   "record": "projects/kita-toyotomi-bess",
+   "targetTitle": "北豊富変電所蓄電池設備",
+   "before": "状態・容量・運転開始の表示なし（一覧では「その他」の区分に入っていた）",
+   "after": "状態を「稼働中」、運転開始を、発表の 2023年4月12日 にし、容量（720MWh）を足しました。事業者を正式な社名に直し、本文を足し、出典を発表に替えました\n一覧の合計容量が 720MWh 増えました（風力発電の出力変動の緩和・調整のための、送変電設備と一体の蓄電池です）",
+   "basis": [
+    {
+     "name": "北海道 道北地域における送電・蓄電事業の設備が竣工～国内最大のリチウムイオン蓄電池設備で風力発電の出力変動を調整～ | 豊田通商株式会社",
+     "publisher": "豊田通商株式会社",
+     "url": "https://www.toyota-tsusho.com/press/detail/230516_006236.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261124-03",
+   "date": "2026-11-24",
+   "kind": "訂正",
+   "path": "/projects/oyama-au-bess",
+   "record": "projects/oyama-au-bess",
+   "targetTitle": "小山蓄電所（auリニューアブルエナジー）",
+   "before": "名称を「小山市蓄電所」と表示。状態・運転開始の表示なし（一覧では「その他」の区分に入っていた）",
+   "after": "名称を、発表の「小山蓄電所」に直し、状態を「稼働中」、運転開始を、発表の「2025年8月」にしました。本文を足し、出典を発表に替えました",
+   "basis": [
+    {
+     "name": "auリニューアブルエナジーと日本エネルギー総合システム　 系統用蓄電池設備の建設に着手 | 【公式】総合エネルギー商社・日本エネルギー総合システム株式会社",
+     "publisher": "日本エネルギー総合システム株式会社",
+     "url": "https://www.jpn-energy.jp/news/release/entry-511.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261124-04",
+   "date": "2026-11-24",
+   "kind": "訂正",
+   "path": "/projects/jpn-iwata-4",
+   "record": "projects/jpn-iwata-4",
+   "targetTitle": "NC磐田市見附蓄電所（日本蓄電池）",
+   "before": "運転開始を「2025年11月」と表示。EPC の表示なし",
+   "after": "運転開始を、発表の表の運転開始日 2025年11月6日 に直し、EPC（鈴木電機株式会社）を足しました。所在地を 磐田市見附 に直し、本文と出典を発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "日本蓄電池株式会社、静岡県磐田市見附にて系統用蓄電施設「NC磐田市見附蓄電所」受電開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000011.000161802.html"
+    },
+    {
+     "name": "【日本蓄電池株式会社】静岡県磐田市見附にて系統用蓄電施設「NC磐田市見附蓄電所」需給調整市場への運用開始",
+     "publisher": "日本蓄電池株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000033.000161802.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261124-05",
+   "date": "2026-11-24",
+   "kind": "訂正",
+   "path": "/projects/tokyu-higashimatsuyama",
+   "record": "projects/tokyu-higashimatsuyama",
+   "targetTitle": "リエネ東松山蓄電所（東急不動産）",
+   "before": "名称を「東松山蓄電所（東急不動産・パワーエックス）」、EPC を「パワーエックス」と表示。運転開始の表示なし",
+   "after": "名称を、発表の「リエネ東松山蓄電所」に直し（事業者名を添えて表示）、運転開始を、発表の「2025年1月」にしました\nEPC の欄を空にしました（発表に EPC の記載が無いため）。本文と出典を発表に基づく内容に替えました",
+   "basis": [
+    {
+     "name": "300 億円規模の系統用蓄電池コンソーシアムを組成",
+     "publisher": "東急不動産株式会社・株式会社リエネ",
+     "url": "https://www.tokyu-land.co.jp/news/uploads/c554f57c028fc403df4bf40f1ad46b2ac9471aec.pdf"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261124-06",
+   "date": "2026-11-24",
+   "kind": "訂正",
+   "path": "/projects/pr-daigas-hokkaido",
+   "record": "projects/pr-daigas-hokkaido",
+   "targetTitle": "千歳市の系統用蓄電池（上長都ひかり蓄電）",
+   "before": "名称を「北海道千歳市の系統用蓄電池」、事業者を「Daigasグループ」と表示\n運転開始予定を 2025-06-20 と表示",
+   "after": "事業者を、発表の SPC「上長都ひかり蓄電合同会社」に直し（出資する 4 社を括弧に添えました）、名称に添えました\n運転開始予定を、発表の「2027年1月」に直し、本文と出典を発表に基づく内容に替えました（出典は会社のトップページだった）",
+   "basis": [
+    {
+     "name": "北海道千歳市の系統用蓄電池設備着工のお知らせ",
+     "publisher": "三菱ＨＣキャピタル・三菱ＨＣキャピタルエナジー・三菱地所・サムスン物産・大阪ガス",
+     "url": "https://dcu5wktmv85os.cloudfront.net/news/mec250616_chitose/mec250616_chitose.pdf"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261124-07",
+   "date": "2026-11-24",
+   "kind": "訂正",
+   "path": "/projects/au-tsu",
+   "record": "projects/au-tsu",
+   "targetTitle": "津蓄電所（auリニューアブル・エナリス）",
+   "before": "状態を「計画中」と表示。運転開始予定の表示なし",
+   "after": "状態を「建設中」に直し、運転開始予定（2027年度）を足しました（発表は「建設しており2027年度の運転開始を目指しております」）",
+   "basis": [
+    {
+     "name": "auリニューアブルエナジーと日本エネルギー総合システム　 系統用蓄電池設備の建設に着手 | 【公式】総合エネルギー商社・日本エネルギー総合システム株式会社",
+     "publisher": "日本エネルギー総合システム株式会社",
+     "url": "https://www.jpn-energy.jp/news/release/entry-511.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261124-08",
+   "date": "2026-11-24",
+   "kind": "訂正",
+   "path": "/projects/minamiawaji-megapower",
+   "record": "projects/minamiawaji-megapower",
+   "targetTitle": "兵庫南あわじメガパワー蓄電所",
+   "before": "状態の表示なし（一覧では「その他」の区分に入っていた）",
+   "after": "状態を「計画中」にしました（開示は取得の決議と、着工・商業運転開始の予定を知らせるもの）",
+   "basis": [
+    {
+     "name": "固定資産の取得に関するお知らせ",
+     "publisher": "エネルギーパワー株式会社",
+     "url": "https://kenep.co.jp/pdf/ir_20251014-2.pdf"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261124-09",
+   "date": "2026-11-24",
+   "kind": "訂正",
+   "path": "/projects/taoke-tahara-mutsure",
+   "record": "projects/taoke-tahara-mutsure",
+   "targetTitle": "愛知県田原市六連町2MW高圧蓄電所（TAOKE ENERGY）",
+   "before": "状態の表示なし（一覧では「その他」の区分に入っていた）",
+   "after": "状態を「建設中」にしました（発表は系統連系の完了を知らせるもので、運転の開始は書いていない）",
+   "basis": [
+    {
+     "name": "TAOKE ENERGY、愛知県田原市で高圧蓄電所の系統連系を完了",
+     "publisher": "TAOKE ENERGY株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000037.000103834.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261124-10",
+   "date": "2026-11-24",
+   "kind": "訂正",
+   "path": "/projects",
+   "targetTitle": "全国の蓄電所一覧",
+   "before": "掲載 285 件・合計出力 3,100.4 MW（262 件分）・合計容量 9,288.6 MWh（246 件分） と表示（土地のファンドの発表 1 件を蓄電所として掲載し、北豊富変電所蓄電池設備の容量 720MWh が入っていなかった）",
+   "after": "1 件を一覧から外し、北豊富変電所蓄電池設備の容量を足して、掲載 284 件・合計出力 3,100.4 MW（262 件分）・合計容量 10,008.6 MWh（247 件分） になりました。同じデータから作る事業者ランキング・事業者ナビの掲載案件数・変電所のページの県別の案件数も、これに合わせて変わりました",
+   "basis": [
+    {
+     "name": "北海道 道北地域における送電・蓄電事業の設備が竣工～国内最大のリチウムイオン蓄電池設備で風力発電の出力変動を調整～ | 豊田通商株式会社",
+     "publisher": "豊田通商株式会社",
+     "url": "https://www.toyota-tsusho.com/press/detail/230516_006236.html"
+    },
+    {
+     "name": "【想定年利12.0%】不動産クラウドファンディング「TECROWD」、国内開発型ファンド「宮城県角田市 系統用蓄電池発電所」を投資対象とするファンド募集終了",
+     "publisher": "TECRA株式会社（PR TIMES）",
+     "url": "https://prtimes.jp/main/html/rd/p/000000143.000061009.html"
+    }
+   ],
+   "internalRef": "reports/projects-cleanup5-2026-11-24.md"
   }
  ]
 }

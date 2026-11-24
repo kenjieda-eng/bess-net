@@ -1,0 +1,1124 @@
+{
+ "note": "projects の掃除便その 5（_QUEUE.md 141 行）。ユウの計画（reports/projects-plan-2026-11-24-H_ユウ.json）の patches を、書込直前の GET で確かめて applier の形にしたもの。scripts/apply-projects-2026-11-24.ts（runApplier）が読む。既定 dry run・本実行は --apply。",
+ "generated": "2026-11-24T11:46:46.270Z",
+ "part": "H",
+ "checks": {
+  "problems": [],
+  "old": [
+   {
+    "key": "H1",
+    "field": "operator",
+    "plan_old": "北海道北部風力送電",
+    "get": "北海道北部風力送電",
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "status",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "capacityMwh",
+    "plan_old": null,
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "cod",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "sourceUrl",
+    "plan_old": "https://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/type/9.html.ja",
+    "get": "https://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/type/9.html.ja",
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 0,
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "name",
+    "plan_old": "小山市蓄電所（auリニューアブルエナジー）",
+    "get": "小山市蓄電所（auリニューアブルエナジー）",
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "operator",
+    "plan_old": "auリニューアブルエナジー",
+    "get": "auリニューアブルエナジー",
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "status",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "cod",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "sourceUrl",
+    "plan_old": "https://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/type/9.html.ja",
+    "get": "https://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/type/9.html.ja",
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 0,
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "city",
+    "plan_old": "磐田市",
+    "get": "磐田市",
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "epc",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "cod",
+    "plan_old": "2025年11月",
+    "get": "2025年11月",
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "sourceUrl",
+    "plan_old": "https://www.nipponchikudenchi.co.jp/news/operation-start-iwata/",
+    "get": "https://www.nipponchikudenchi.co.jp/news/operation-start-iwata/",
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 978,
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "name",
+    "plan_old": "東松山蓄電所（東急不動産・パワーエックス）",
+    "get": "東松山蓄電所（東急不動産・パワーエックス）",
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "operator",
+    "plan_old": "東急不動産",
+    "get": "東急不動産",
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "epc",
+    "plan_old": "パワーエックス",
+    "get": "パワーエックス",
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "cod",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "sourceUrl",
+    "plan_old": "https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/03554/?ST=msb",
+    "get": "https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/03554/?ST=msb",
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 527,
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "name",
+    "plan_old": "北海道千歳市の系統用蓄電池",
+    "get": "北海道千歳市の系統用蓄電池",
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "operator",
+    "plan_old": "Daigasグループ",
+    "get": "Daigasグループ",
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "cod",
+    "plan_old": "2025-06-20",
+    "get": "2025-06-20",
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "sourceUrl",
+    "plan_old": "https://www.daigasgroup.com/",
+    "get": "https://www.daigasgroup.com/",
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 702,
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "status",
+    "plan_old": [
+     "計画中"
+    ],
+    "get": [
+     "計画中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "cod",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "status",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "status",
+    "plan_old": [],
+    "get": [],
+    "ok": true
+   }
+  ],
+  "keep": [
+   {
+    "key": "H1",
+    "field": "name",
+    "keep": "北豊富変電所蓄電池設備",
+    "get": "北豊富変電所蓄電池設備",
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "prefecture",
+    "keep": "北海道",
+    "get": "北海道",
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "city",
+    "keep": "豊富町",
+    "get": "豊富町",
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "outputMw",
+    "keep": 240,
+    "get": 240,
+    "ok": true
+   },
+   {
+    "key": "H1",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "prefecture",
+    "keep": "栃木県",
+    "get": "栃木県",
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "city",
+    "keep": "小山市",
+    "get": "小山市",
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "outputMw",
+    "keep": 1.999,
+    "get": 1.999,
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "capacityMwh",
+    "keep": null,
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H2",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "name",
+    "keep": "NC磐田市見附蓄電所（日本蓄電池）",
+    "get": "NC磐田市見附蓄電所（日本蓄電池）",
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "prefecture",
+    "keep": "静岡県",
+    "get": "静岡県",
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "operator",
+    "keep": "日本蓄電池",
+    "get": "日本蓄電池",
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "outputMw",
+    "keep": 1.988,
+    "get": 1.988,
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "capacityMwh",
+    "keep": 8.146,
+    "get": 8.146,
+    "ok": true
+   },
+   {
+    "key": "H3",
+    "field": "marketParticipation",
+    "keep": [
+     "需給調整市場",
+     "JEPX"
+    ],
+    "get": [
+     "需給調整市場",
+     "JEPX"
+    ],
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "prefecture",
+    "keep": "埼玉県",
+    "get": "埼玉県",
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "city",
+    "keep": "東松山市",
+    "get": "東松山市",
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "status",
+    "keep": [
+     "稼働中"
+    ],
+    "get": [
+     "稼働中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "outputMw",
+    "keep": 1.8,
+    "get": 1.8,
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "capacityMwh",
+    "keep": 4.9,
+    "get": 4.9,
+    "ok": true
+   },
+   {
+    "key": "H4",
+    "field": "marketParticipation",
+    "keep": [
+     "JEPX",
+     "需給調整市場"
+    ],
+    "get": [
+     "JEPX",
+     "需給調整市場"
+    ],
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "prefecture",
+    "keep": "北海道",
+    "get": "北海道",
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "city",
+    "keep": "千歳市",
+    "get": "千歳市",
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "status",
+    "keep": [
+     "建設中"
+    ],
+    "get": [
+     "建設中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "outputMw",
+    "keep": 25,
+    "get": 25,
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "capacityMwh",
+    "keep": 50,
+    "get": 50,
+    "ok": true
+   },
+   {
+    "key": "H5",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "name",
+    "keep": "津蓄電所（auリニューアブル・エナリス）",
+    "get": "津蓄電所（auリニューアブル・エナリス）",
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "prefecture",
+    "keep": "三重県",
+    "get": "三重県",
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "city",
+    "keep": "津市",
+    "get": "津市",
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "operator",
+    "keep": "auリニューアブルエナジー・エナリス",
+    "get": "auリニューアブルエナジー・エナリス",
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "outputMw",
+    "keep": 28,
+    "get": 28,
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "capacityMwh",
+    "keep": 90,
+    "get": 90,
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "marketParticipation",
+    "keep": [
+     "容量市場",
+     "需給調整市場",
+     "JEPX"
+    ],
+    "get": [
+     "容量市場",
+     "需給調整市場",
+     "JEPX"
+    ],
+    "ok": true
+   },
+   {
+    "key": "H6",
+    "field": "sourceUrl",
+    "keep": "https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/04964/?ST=msb",
+    "get": "https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/04964/?ST=msb",
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "name",
+    "keep": "兵庫南あわじメガパワー蓄電所",
+    "get": "兵庫南あわじメガパワー蓄電所",
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "prefecture",
+    "keep": "兵庫県",
+    "get": "兵庫県",
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "city",
+    "keep": "南あわじ市",
+    "get": "南あわじ市",
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "operator",
+    "keep": "エネルギーパワー株式会社",
+    "get": "エネルギーパワー株式会社",
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "outputMw",
+    "keep": 1.979,
+    "get": 1.979,
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "capacityMwh",
+    "keep": 8.226,
+    "get": 8.226,
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "cod",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "marketParticipation",
+    "keep": [
+     "容量市場"
+    ],
+    "get": [
+     "容量市場"
+    ],
+    "ok": true
+   },
+   {
+    "key": "H7",
+    "field": "sourceUrl",
+    "keep": "https://kenep.co.jp/pdf/ir_20251014-2.pdf",
+    "get": "https://kenep.co.jp/pdf/ir_20251014-2.pdf",
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "name",
+    "keep": "愛知県田原市六連町2MW高圧蓄電所（TAOKE ENERGY）",
+    "get": "愛知県田原市六連町2MW高圧蓄電所（TAOKE ENERGY）",
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "prefecture",
+    "keep": "愛知県",
+    "get": "愛知県",
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "city",
+    "keep": "田原市",
+    "get": "田原市",
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "operator",
+    "keep": "TAOKE ENERGY（SPC: PP合同会社）",
+    "get": "TAOKE ENERGY（SPC: PP合同会社）",
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "epc",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "outputMw",
+    "keep": 2,
+    "get": 2,
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "capacityMwh",
+    "keep": 8.14,
+    "get": 8.14,
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "cod",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "marketParticipation",
+    "keep": [],
+    "get": [],
+    "ok": true
+   },
+   {
+    "key": "H8",
+    "field": "sourceUrl",
+    "keep": "https://prtimes.jp/main/html/rd/p/000000037.000103834.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000037.000103834.html",
+    "ok": true
+   }
+  ]
+ },
+ "plan": {
+  "posts": [],
+  "patches": [
+   {
+    "ep": "projects",
+    "slug": "kita-toyotomi-bess",
+    "row_id": "H1",
+    "order": 1,
+    "id": "mrp8axp04",
+    "updatedAt": "2026-06-28T13:48:13.762Z",
+    "ops": [
+     {
+      "field": "operator",
+      "old": "北海道北部風力送電",
+      "new": "北海道北部風力送電株式会社",
+      "row_ids": [
+       "H1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "status",
+      "old": "[]",
+      "new": "[\"稼働中\"]",
+      "row_ids": [
+       "H1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "capacityMwh",
+      "old": "null",
+      "new": "720",
+      "row_ids": [
+       "H1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "null",
+      "new": "\"2023-04-12\"",
+      "row_ids": [
+       "H1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/type/9.html.ja",
+      "new": "https://www.toyota-tsusho.com/press/detail/230516_006236.html",
+      "row_ids": [
+       "H1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "null",
+      "new": "\"<p><strong>北豊富変電所蓄電池設備</strong>は、北海道北部風力送電株式会社（ユーラスエナジーなどが出資して設立した特別目的会社）が、北海道の道北地域で風力発電の出力の変動を緩和・調整するために、送変電設備と一体で設けた大規模なリチウムイオン蓄電池。電力市場で取引する系統用蓄電所とは役割が違うが、系統に直接つながる蓄電池として掲載している。</p><p>豊田通商株式会社の2023年5月16日のリリースは、「2013年に北部送電が事業者として採択され、開発、建設工事、試験調整などを経て、2023年4月12日に商業運転を開始いたしました」と述べ、竣工した設備を、送電線、北豊富変電所・開閉所と「国内最大規模のリチウムイオン蓄電池からなるシステム（240MW/720MWh）」とする（出典: <a href=\\\"https://www.toyota-tsusho.com/press/detail/230516_006236.html\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">北海道 道北地域における送電・蓄電事業の設備が竣工（豊田通商株式会社、2023年5月16日）</a>）。事業は、経済産業省資源エネルギー庁による「風力発電のための送電網整備実証事業」の一角とされている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>\"",
+      "row_ids": [
+       "H1"
+      ],
+      "note": "配列・JSON 値モード。今は空の本文に全文を入れる"
+     }
+    ],
+    "expect_final": {
+     "operator": "019b73dbffc4a138",
+     "status": "e37693682efbcfc4",
+     "capacityMwh": "d829857eb1366e70",
+     "cod": "27238eb46599b5ff",
+     "sourceUrl": "664041272a98d6c6",
+     "body": "d9bee97e17757411"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "oyama-au-bess",
+    "row_id": "H2",
+    "order": 2,
+    "id": "5cb246qzxrr",
+    "updatedAt": "2026-06-29T04:02:19.451Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "小山市蓄電所（auリニューアブルエナジー）",
+      "new": "小山蓄電所（auリニューアブルエナジー）",
+      "row_ids": [
+       "H2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "auリニューアブルエナジー",
+      "new": "auリニューアブルエナジー株式会社",
+      "row_ids": [
+       "H2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "status",
+      "old": "[]",
+      "new": "[\"稼働中\"]",
+      "row_ids": [
+       "H2"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "null",
+      "new": "\"2025年8月\"",
+      "row_ids": [
+       "H2"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/type/9.html.ja",
+      "new": "https://www.jpn-energy.jp/news/release/entry-511.html",
+      "row_ids": [
+       "H2"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "null",
+      "new": "\"<p><strong>小山蓄電所</strong>は、auリニューアブルエナジー株式会社の、栃木県小山市の KDDI小山ネットワークセンター内にある系統用蓄電所。同社と日本エネルギー総合システム株式会社の2025年11月14日の発表は、「auリニューアブルエナジーは、KDDI小山ネットワークセンター（栃木県小山市）内の「小山蓄電所」（蓄電池出力1,999kW、蓄電池容量5,608Wh）を蓄電池事業の初号機として2025年8月から運用を開始しました」と述べている（出典: <a href=\\\"https://www.jpn-energy.jp/news/release/entry-511.html\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">auリニューアブルエナジーと日本エネルギー総合システム 系統用蓄電池設備の建設に着手（日本エネルギー総合システム株式会社、2025年11月14日）</a>）。</p><p>容量は、この発表の書き方（「5,608Wh」）では単位が確かめられないため、容量の欄は空にしている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>\"",
+      "row_ids": [
+       "H2"
+      ],
+      "note": "配列・JSON 値モード。今は空の本文に全文を入れる"
+     }
+    ],
+    "expect_final": {
+     "name": "09d4c2b908641f65",
+     "operator": "63f25f96004a12cc",
+     "status": "e37693682efbcfc4",
+     "cod": "13fe0b0cc2eb10eb",
+     "sourceUrl": "7b87e3475fd90a8c",
+     "body": "31c2d7b6cd406f89"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "jpn-iwata-4",
+    "row_id": "H3",
+    "order": 3,
+    "id": "dp7pi6u_uiak",
+    "updatedAt": "2026-05-11T02:23:07.938Z",
+    "ops": [
+     {
+      "field": "city",
+      "old": "磐田市",
+      "new": "磐田市見附",
+      "row_ids": [
+       "H3"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "null",
+      "new": "\"鈴木電機株式会社\"",
+      "row_ids": [
+       "H3"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "2025年11月",
+      "new": "2025-11-06",
+      "row_ids": [
+       "H3"
+      ],
+      "note": ""
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.nipponchikudenchi.co.jp/news/operation-start-iwata/",
+      "new": "https://prtimes.jp/main/html/rd/p/000000033.000161802.html",
+      "row_ids": [
+       "H3"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<p><strong>NC磐田市見附蓄電所</strong>は、日本蓄電池株式会社が運営する系統用蓄電所で、静岡県磐田市見附に立地します。出力1,988kW・容量8,146kWh級の規模で、2025年11月6日に受電を開始した、同社4号機目の系統用蓄電池プロジェクトです。2026年1月から需給調整市場での運用を開始しています。</p><p>本施設は再生可能エネルギーの出力変動を吸収・平準化し、JEPX（卸電力取引所）、需給調整市場、容量市場に対応する地域分散型エネルギー拠点として位置付けられています。磐田市と防災協定を締結し、停電時には蓄電所の電気を地域に提供する社会価値型の事業モデルが特徴です。</p><p>中部電力パワーグリッド管内の主要立地で、日本蓄電池の「自立型・系統用蓄電池」モデルの全国展開の重点エリアの一つ。地域に根差した蓄電所運営の代表事例として注目されており、自治体との防災協定による地域価値創造とビジネスモデルの両立が業界の参考になっています。</p><p><em>※本案件情報は、各事業者の公式プレスリリース・IR資料等に基づき編集部が整備したものです。最新の進捗・諸元については、上記出典URLおよび各事業者の公式IR・プレスリリースをご参照ください。</em></p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>📰 PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000033.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000033.000161802.html</a></li><li>📰 PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000011.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000011.000161802.html</a></li></ul>",
+      "new": "<p><strong>NC磐田市見附蓄電所</strong>は、日本蓄電池株式会社が静岡県磐田市見附に設置した系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年1月26日のリリースは、施設概要を、施設名「NC磐田市見附蓄電所」、所在地「静岡県磐田市見附」、定格出力・容量「1,988kW・8,146kWh」、蓄電池システム「TMEIC（蓄電池：CATL）」、需給調整運用開始日「2026年1月24日」、アグリゲータ「デジタルグリッド株式会社」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000033.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】静岡県磐田市見附にて系統用蓄電施設「NC磐田市見附蓄電所」需給調整市場への運用開始（日本蓄電池株式会社、2026年1月26日）</a>）。</p><p>受電の開始について、2025年11月14日のリリースは、施設概要を、所在地「静岡県磐田市見附字大谷口」、運転開始日「2025年11月6日」、施工会社「鈴木電機株式会社」とし、「本施設は日本蓄電池株式会社が開発・運営する4号機目の系統用蓄電池プロジェクトです」としている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000011.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">日本蓄電池株式会社、静岡県磐田市見附にて系統用蓄電施設「NC磐田市見附蓄電所」受電開始（日本蓄電池株式会社、2025年11月14日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "H3"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "city": "af3bc5ea560b4a44",
+     "epc": "ad40918657f633bc",
+     "cod": "571982fa13b1bba7",
+     "sourceUrl": "6c69c2c537ddbe0b",
+     "body": "59a0de6f3b783161"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "tokyu-higashimatsuyama",
+    "row_id": "H4",
+    "order": 4,
+    "id": "0ehl3gj-5r",
+    "updatedAt": "2026-08-04T14:21:50.159Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "東松山蓄電所（東急不動産・パワーエックス）",
+      "new": "リエネ東松山蓄電所（東急不動産）",
+      "row_ids": [
+       "H4"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "東急不動産",
+      "new": "東急不動産株式会社",
+      "row_ids": [
+       "H4"
+      ],
+      "note": ""
+     },
+     {
+      "field": "epc",
+      "old": "パワーエックス",
+      "new": "",
+      "row_ids": [
+       "H4"
+      ],
+      "note": ""
+     },
+     {
+      "field": "cod",
+      "old": "null",
+      "new": "\"2025年1月\"",
+      "row_ids": [
+       "H4"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://project.nikkeibp.co.jp/ms/atcl/19/news/00001/03554/?ST=msb",
+      "new": "https://www.tokyu-land.co.jp/news/uploads/c554f57c028fc403df4bf40f1ad46b2ac9471aec.pdf",
+      "row_ids": [
+       "H4"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<p><strong>東松山蓄電所</strong>は、東急不動産株式会社が運営する系統用蓄電池プロジェクトで、埼玉県東松山市に立地します。パワーエックス製の蓄電システムを採用しており、2023年8月5日に発表されました。</p><p>東京電力パワーグリッド管内の主要立地で、東急不動産は2027年度までに23カ所・合計184MWhの蓄電所稼働を計画、また東急不など6カ所・合計174MWの特高蓄電所連携も発表しており、本案件はその先駆けです。本案件で蓄積される運用ノウハウは、東急不動産グループの蓄電池ポートフォリオ拡大の基盤となります。</p><p>パワーエックスは岡山発のスタートアップで、Mega Power 2500（10ftコンテナ型）を主力製品として国内BESSハードウェアシェア拡大中です。本案件は同社の関東エリア展開の代表例として、業界の注目を集めています。詳細諸元は東急不動産の公式発表をご参照ください。</p><p><em>※本案件情報は、各事業者の公式プレスリリース・IR資料等に基づき編集部が整備したものです。最新の進捗・諸元については、上記出典URLおよび各事業者の公式IR・プレスリリースをご参照ください。</em></p>",
+      "new": "<p><strong>リエネ東松山蓄電所</strong>は、東急不動産株式会社の、埼玉県東松山市の系統用蓄電所。東急不動産と株式会社リエネの2026年4月3日の発表は、「系統用蓄電池事業は 2023 年より開始し、埼玉県東松山市でリエネ東松山蓄電所（2MW）を 2025 年 1 月に運転開始」としている（出典: <a href=\"https://www.tokyu-land.co.jp/news/uploads/c554f57c028fc403df4bf40f1ad46b2ac9471aec.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">東急不動産グループと国内大手 7 社 300 億円規模の系統用蓄電池コンソーシアムを組成（東急不動産株式会社・株式会社リエネ、2026年4月3日）</a>）。</p><p>同じ発表は、東急不動産の開発実績として「リエネ東松山蓄電所（2MW）」を挙げている。出力・容量の欄は、これまでの値（1.8MW／4.9MWh）のままにしている（発表は出力を 2MW と丸めて書き、容量を書いていない）。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "H4"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "11d59fddc712d0dd",
+     "operator": "7b3c313068cc0683",
+     "epc": "e3b0c44298fc1c14",
+     "cod": "92a65ffc343ad7d3",
+     "sourceUrl": "9dd4681fb9ba0b32",
+     "body": "655561dc4b7be416"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "pr-daigas-hokkaido",
+    "row_id": "H5",
+    "order": 5,
+    "id": "b887sl9rvlx",
+    "updatedAt": "2026-08-04T14:21:28.293Z",
+    "ops": [
+     {
+      "field": "name",
+      "old": "北海道千歳市の系統用蓄電池",
+      "new": "千歳市の系統用蓄電池（上長都ひかり蓄電）",
+      "row_ids": [
+       "H5"
+      ],
+      "note": ""
+     },
+     {
+      "field": "operator",
+      "old": "Daigasグループ",
+      "new": "上長都ひかり蓄電合同会社（三菱ＨＣキャピタルエナジー／三菱地所／サムスン物産／大阪ガス）",
+      "row_ids": [
+       "H5"
+      ],
+      "note": ""
+     },
+     {
+      "field": "cod",
+      "old": "2025-06-20",
+      "new": "2027年1月",
+      "row_ids": [
+       "H5"
+      ],
+      "note": ""
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://www.daigasgroup.com/",
+      "new": "https://dcu5wktmv85os.cloudfront.net/news/mec250616_chitose/mec250616_chitose.pdf",
+      "row_ids": [
+       "H5"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<h2 id=\"h3af4d147a9\">プロジェクト概要</h2><p><strong>北海道千歳市の系統用蓄電池</strong>は、北海道千歳市に立地する系統用蓄電所。発表企業：Daigasグループ。ステータス：建設中（発表日：2025-06-20）。</p><h2 id=\"h1b9eb7c3a9\">出典</h2><ul><li>🎯 <strong>企業元リリース</strong>: <a href=\"https://www.daigasgroup.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.daigasgroup.com/</a></li><li>企業公式サイト: <a href=\"https://www.daigasgroup.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.daigasgroup.com/</a></li><li>PR TIMES: <a href=\"https://prtimes.jp/main/html/rd/p/000000131.000139670.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://prtimes.jp/main/html/rd/p/000000131.000139670.html</a></li></ul><p>※本ページは公開情報を構造化したものです。最新の進捗・諸元については、上記出典URLをご参照ください。</p>",
+      "new": "<p><strong>千歳市の系統用蓄電池（上長都ひかり蓄電）</strong>は、三菱ＨＣキャピタルエナジー株式会社、三菱地所株式会社、サムスン物産株式会社、大阪ガス株式会社の 4 社が出資する上長都ひかり蓄電合同会社が、北海道千歳市に設置する系統用蓄電池。5 社の2025年6月16日の発表は、「4 社が出資する上長都ひかり蓄電合同会社(以下、SPC)が、北海道千歳市での系統用蓄電池設備の設置にむけ着工したことをお知らせします。当初発表の通り 2027 年 1 月の運転開始をめざしています」と述べ、「出力 25MW、容量 50MWh の系統用蓄電池となります」としている（出典: <a href=\"https://dcu5wktmv85os.cloudfront.net/news/mec250616_chitose/mec250616_chitose.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">北海道千歳市の系統用蓄電池設備着工のお知らせ（三菱ＨＣキャピタル・三菱ＨＣキャピタルエナジー・三菱地所・サムスン物産・大阪ガス、2025年6月16日）</a>）。</p><p>発表は、本事業が三菱ＨＣキャピタルエナジーにとって「フルマーチャントでは初の系統用蓄電池事業」であるとしている。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "H5"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "name": "a8ea17614bcb4839",
+     "operator": "cfd92f77b85a84a1",
+     "cod": "a64118223eab042b",
+     "sourceUrl": "62e1f4352bd7cc50",
+     "body": "49e2b27b9e8e165b"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "au-tsu",
+    "row_id": "H6",
+    "order": 6,
+    "id": "n438ei0jpc2",
+    "updatedAt": "2026-08-04T14:19:32.117Z",
+    "ops": [
+     {
+      "field": "status",
+      "old": "[\"計画中\"]",
+      "new": "[\"建設中\"]",
+      "row_ids": [
+       "H6"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "null",
+      "new": "\"2027年度\"",
+      "row_ids": [
+       "H6"
+      ],
+      "note": "配列・JSON 値モード。"
+     }
+    ],
+    "expect_final": {
+     "status": "55ed604c1141fe82",
+     "cod": "282b5844f8bd06e9"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "minamiawaji-megapower",
+    "row_id": "H7",
+    "order": 7,
+    "id": "o_wm0oo4-1",
+    "updatedAt": "2026-09-24T14:39:30.317Z",
+    "ops": [
+     {
+      "field": "status",
+      "old": "[]",
+      "new": "[\"計画中\"]",
+      "row_ids": [
+       "H7"
+      ],
+      "note": "配列・JSON 値モード。"
+     }
+    ],
+    "expect_final": {
+     "status": "9000bc5020ada47a"
+    }
+   },
+   {
+    "ep": "projects",
+    "slug": "taoke-tahara-mutsure",
+    "row_id": "H8",
+    "order": 8,
+    "id": "wn6fbuu-99z",
+    "updatedAt": "2026-10-06T12:18:08.739Z",
+    "ops": [
+     {
+      "field": "status",
+      "old": "[]",
+      "new": "[\"建設中\"]",
+      "row_ids": [
+       "H8"
+      ],
+      "note": "配列・JSON 値モード。"
+     }
+    ],
+    "expect_final": {
+     "status": "55ed604c1141fe82"
+    }
+   }
+  ]
+ }
+}
