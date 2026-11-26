@@ -1,0 +1,30 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 2
+ },
+ "counts": {
+  "patched": 1,
+  "posted": 0,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "patch",
+   "target": "operators/samsung-cnt",
+   "id": "cBg_u39nYCo",
+   "result": "dry",
+   "fields": [
+    "aliases"
+   ],
+   "before": {},
+   "after": {
+    "aliases": "サムスン物産\nサムスン物産株式会社"
+   }
+  }
+ ]
+}

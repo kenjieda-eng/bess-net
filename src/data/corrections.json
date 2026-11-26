@@ -13705,6 +13705,24 @@
     }
    ],
    "internalRef": "reports/projects-cleanup5-2026-11-24.md"
+  },
+  {
+   "id": "20261126-01",
+   "date": "2026-11-26",
+   "kind": "表示の停止",
+   "path": "/projects/pr-co113700-bess-2",
+   "record": "projects/pr-co113700-bess-2",
+   "targetTitle": "系統用蓄電池（日本エネルギー総合システム株式会社）",
+   "before": "岐阜県と愛知県の 3 拠点の建設の発表を、1 件の蓄電所（所在地なし・出力 1.9 MW・容量 8.2 MWh・運転開始予定 2025-11-19）として掲載",
+   "after": "一覧・件数・合計値・サイトマップから外した（詳細ページは検索エンジン非掲載の扱いで残置）。3 拠点（岐阜県下呂市・愛知県瀬戸市・岐阜県高山市）を、それぞれ 1 件として掲載しました",
+   "basis": [
+    {
+     "name": "auリニューアブルエナジーと日本エネルギー総合システム　 系統用蓄電池設備の建設に着手 | 【公式】総合エネルギー商社・日本エネルギー総合システム株式会社",
+     "publisher": "日本エネルギー総合システム株式会社",
+     "url": "https://www.jpn-energy.jp/news/release/entry-511.html"
+    }
+   ],
+   "internalRef": "reports/projects-au-jpn-3sites-2026-11-26.md"
   }
  ]
 }

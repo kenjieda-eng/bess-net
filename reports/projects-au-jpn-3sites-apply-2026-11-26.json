@@ -1,0 +1,42 @@
+{
+ "mode": "apply",
+ "calls": {
+  "GET": 6,
+  "POST": 3
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 3,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/au-jpn-gero-bess",
+   "row_id": "P1",
+   "id": "o6n03m2golvw",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/au-jpn-seto-bess",
+   "row_id": "P2",
+   "id": "8ytaonzzuai",
+   "result": "posted",
+   "check": []
+  },
+  {
+   "kind": "post",
+   "target": "projects/au-jpn-takayama-bess",
+   "row_id": "P3",
+   "id": "i6uay773voo0",
+   "result": "posted",
+   "check": []
+  }
+ ]
+}

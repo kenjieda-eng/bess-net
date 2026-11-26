@@ -1,0 +1,41 @@
+{
+ "note": "サムスン物産の別名の便（_QUEUE.md 143 行）。ユウの計画（reports/projects-plan-2026-11-26-I_ユウ.json）の operator_alias を、書込直前の GET で確かめて applier の形にしたもの。",
+ "generated": "2026-11-26T01:39:18.385Z",
+ "checks": {
+  "problems": [],
+  "name": "Samsung C&T Corporation（サムスン物産）",
+  "aliases_now": null,
+  "add": [
+   "サムスン物産",
+   "サムスン物産株式会社"
+  ],
+  "final": "サムスン物産\nサムスン物産株式会社"
+ },
+ "plan": {
+  "posts": [],
+  "patches": [
+   {
+    "ep": "operators",
+    "slug": "samsung-cnt",
+    "row_id": "A1",
+    "order": 1,
+    "id": "cBg_u39nYCo",
+    "updatedAt": "2026-05-09T11:13:36.990Z",
+    "ops": [
+     {
+      "field": "aliases",
+      "old": "null",
+      "new": "\"サムスン物産\\nサムスン物産株式会社\"",
+      "row_ids": [
+       "A1"
+      ],
+      "note": "配列・JSON 値モード。今は空の aliases に改行区切りで入れる"
+     }
+    ],
+    "expect_final": {
+     "aliases": "9af3bfd18463b13c"
+    }
+   }
+  ]
+ }
+}
