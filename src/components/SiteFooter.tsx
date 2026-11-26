@@ -28,6 +28,10 @@ export default function SiteFooter() {
             <a href="https://data.eic-jp.org/" target="_blank" rel="noopener noreferrer">
               EIC Data（エネルギー×金融データ）
             </a>
+            {' '}·{' '}
+            <a href="https://dc-site.jp/" target="_blank" rel="noopener noreferrer">
+              データセンター（DC）ネット
+            </a>
           </div>
         </div>
 
