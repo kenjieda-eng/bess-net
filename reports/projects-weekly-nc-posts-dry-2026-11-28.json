@@ -1,0 +1,65 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 2
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 2,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/nc-omaezaki-ikeshinden-bess",
+   "row_id": "P1",
+   "result": "dry",
+   "payload": {
+    "name": "NC御前崎市池新田蓄電所",
+    "status": [
+     "稼働中"
+    ],
+    "outputMw": 1.997,
+    "capacityMwh": 8.128,
+    "prefecture": "静岡県",
+    "city": "御前崎市",
+    "operator": "",
+    "epc": "株式会社カンドー",
+    "cod": "2026-07-31",
+    "marketParticipation": [
+     "需給調整市場"
+    ],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000127.000161802.html",
+    "slug": "nc-omaezaki-ikeshinden-bess",
+    "body": "<p><strong>NC御前崎市池新田蓄電所</strong>は、日本蓄電池株式会社の系統用蓄電所。日本蓄電池とデジタルグリッド株式会社の2026年11月26日のリリースは、「静岡県御前崎市に設置した系統用蓄電施設「NC御前崎市池新田蓄電所」について、2026年11月25日より需給調整市場における運用を開始したことをお知らせいたします」と述べ、施設概要を、所在地「静岡県御前崎市」、定格出力・容量「1,997kW・8,128kWh」、蓄電池システム「HUAWEI製」、需給調整運用開始日「2026年11月25日」、アグリゲータ「デジタルグリッド株式会社」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000127.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】静岡県御前崎市にて系統用蓄電施設「NC御前崎市池新田蓄電所」需給調整市場への参入（日本蓄電池株式会社、2026年11月26日）</a>）。受電の開始について、2026年8月4日のリリースは「静岡県御前崎市に建設した系統用蓄電施設「NC御前崎市池新田蓄電所」が、2026年7月31日に受電を開始したことをお知らせいたします」と述べ、施設概要は、運転開始日を「2026年7月31日」、設計・施工会社を「株式会社カンドー」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000094.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】静岡県御前崎市にて系統用蓄電施設「NC御前崎市池新田蓄電所」受電開始（日本蓄電池株式会社、2026年8月4日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。</p><p>一次は日本蓄電池が「建設した」とするまでで、事業主体・所有者の記載が無いため、事業者の欄は空にした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  },
+  {
+   "kind": "post",
+   "target": "projects/nc-aisho-bess",
+   "row_id": "P2",
+   "result": "dry",
+   "payload": {
+    "name": "NC愛知郡愛荘町蓄電所",
+    "status": [
+     "稼働中"
+    ],
+    "outputMw": 1.998,
+    "capacityMwh": 8.146,
+    "prefecture": "滋賀県",
+    "city": "愛知郡愛荘町",
+    "operator": "",
+    "epc": "株式会社カンドー",
+    "cod": "2026-11-20",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000126.000161802.html",
+    "slug": "nc-aisho-bess",
+    "body": "<p><strong>NC愛知郡愛荘町蓄電所</strong>は、日本蓄電池株式会社の系統用蓄電所。2026年11月26日のリリースは、「滋賀県愛知郡に建設した系統用蓄電施設「NC愛知郡愛荘町蓄電所」が、2026年11月20日に受電を開始したことをお知らせいたします」と述べ、施設概要を、所在地「滋賀県愛知郡」、定格出力・容量「1,998kW・8,146kWh」、蓄電池システム「TMEIC（蓄電池：CATL）」、運転開始日「2026年11月20日」、設計・施工会社「株式会社カンドー」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000126.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】滋賀県愛知郡にて系統用蓄電施設「NC愛知郡愛荘町蓄電所」受電開始（日本蓄電池株式会社、2026年11月26日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。</p><p>一次は日本蓄電池が「建設した」とするまでで、事業主体・所有者の記載が無いため、事業者の欄は空にした。同じ愛荘町の、日本蓄電開発機構株式会社の蓄電所とは別の設備。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  }
+ ]
+}

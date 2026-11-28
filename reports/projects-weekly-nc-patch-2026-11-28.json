@@ -1,0 +1,170 @@
+{
+ "note": "日本蓄電池の新しい発表 4 本の便（_QUEUE.md 144 行）。ユウの計画（reports/projects-plan-2026-11-28-J_ユウ.json）の patches を、書込直前の GET で確かめて applier の形にしたもの。scripts/apply-projects-2026-11-28.ts（runApplier）が読む。既定 dry run・本実行は --apply。",
+ "generated": "2026-11-28T08:41:06.421Z",
+ "part": "J",
+ "checks": {
+  "problems": [],
+  "old": [
+   {
+    "key": "Q1",
+    "field": "status",
+    "plan_old": [
+     "建設中"
+    ],
+    "get": [
+     "建設中"
+    ],
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "outputMw",
+    "plan_old": null,
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "capacityMwh",
+    "plan_old": null,
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "cod",
+    "plan_old": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "sourceUrl",
+    "plan_old": "https://prtimes.jp/main/html/rd/p/000000118.000161802.html",
+    "get": "https://prtimes.jp/main/html/rd/p/000000118.000161802.html",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "body",
+    "check": "GET の値を old に使う",
+    "len": 507,
+    "ok": true
+   }
+  ],
+  "keep": [
+   {
+    "key": "Q1",
+    "field": "name",
+    "keep": "NC出雲市国富町蓄電所",
+    "get": "NC出雲市国富町蓄電所",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "prefecture",
+    "keep": "島根県",
+    "get": "島根県",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "city",
+    "keep": "出雲市",
+    "get": "出雲市",
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "operator",
+    "keep": "",
+    "get": null,
+    "ok": true
+   },
+   {
+    "key": "Q1",
+    "field": "epc",
+    "keep": "株式会社カンドー",
+    "get": "株式会社カンドー",
+    "ok": true
+   }
+  ]
+ },
+ "plan": {
+  "posts": [],
+  "patches": [
+   {
+    "ep": "projects",
+    "slug": "nc-izumo-kunitomi-bess",
+    "row_id": "Q1",
+    "order": 1,
+    "id": "yzyzugoj5jif",
+    "updatedAt": "2026-11-08T03:36:40.437Z",
+    "ops": [
+     {
+      "field": "status",
+      "old": "[\"建設中\"]",
+      "new": "[\"稼働中\"]",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "outputMw",
+      "old": "null",
+      "new": "1.988",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "capacityMwh",
+      "old": "null",
+      "new": "8.146",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "cod",
+      "old": "null",
+      "new": "\"2026-11-20\"",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": "配列・JSON 値モード。"
+     },
+     {
+      "field": "sourceUrl",
+      "old": "https://prtimes.jp/main/html/rd/p/000000118.000161802.html",
+      "new": "https://prtimes.jp/main/html/rd/p/000000125.000161802.html",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": ""
+     },
+     {
+      "field": "body",
+      "old": "<p><strong>NC出雲市国富町蓄電所</strong>は、日本蓄電池株式会社が開発を進める島根県出雲市の系統用蓄電所。2026年11月2日のリリースは、同社が「開発を進めているNC出雲市国富町蓄電所（所在地：島根県出雲市）において系統用蓄電池を設置した」と述べている（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000118.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会】島根県出雲市にて系統用蓄電施設「NC出雲市国富町蓄電所」蓄電池設置開始（日本蓄電池株式会社、2026年11月2日）</a>）。</p><p>施設概要の表は設置開始日を2026年10月21日、設計・施工会社を株式会社カンドーとする。定格出力・容量と運転開始の時期の記載はない。</p><p>一次は日本蓄電池が「開発を進めている」までで、事業主体・所有者の記載が無いため、事業者の欄は空にした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "new": "<p><strong>NC出雲市国富町蓄電所</strong>は、日本蓄電池株式会社の系統用蓄電所。2026年11月26日のリリースは、「島根県出雲市に建設した系統用蓄電施設「NC出雲市国富町蓄電所」が、2026年11月20日に受電を開始したことをお知らせいたします」と述べ、施設概要を、所在地「島根県出雲市」、定格出力・容量「1,988kW・8,146kWh」、蓄電池システム「TMEIC（蓄電池：CATL）」、運転開始日「2026年11月20日」、設計・施工会社「株式会社カンドー」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000125.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】島根県出雲市にて系統用蓄電施設「NC出雲市国富町蓄電所」受電開始（日本蓄電池株式会社、2026年11月26日）</a>）。当サイトの運転開始の欄は、この「運転開始日」による。蓄電池の設置は、2026年11月2日のリリースで「設置開始日 2026年10月21日」とされていた（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000118.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会】島根県出雲市にて系統用蓄電施設「NC出雲市国富町蓄電所」蓄電池設置開始（日本蓄電池株式会社、2026年11月2日）</a>）。</p><p>一次は日本蓄電池が「建設した」とするまでで、事業主体・所有者の記載が無いため、事業者の欄は空にした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>",
+      "row_ids": [
+       "Q1"
+      ],
+      "note": "全文の置換（old は GET の値）"
+     }
+    ],
+    "expect_final": {
+     "status": "e37693682efbcfc4",
+     "outputMw": "6d38d56b4a3afcc2",
+     "capacityMwh": "25463f278c417596",
+     "cod": "87069b0c5b390896",
+     "sourceUrl": "ee1f7d98dd00e3d5",
+     "body": "ae3dd3b54064f7b2"
+    }
+   }
+  ]
+ }
+}
