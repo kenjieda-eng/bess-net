@@ -1,0 +1,40 @@
+{
+ "mode": "dry",
+ "calls": {
+  "GET": 1
+ },
+ "counts": {
+  "patched": 0,
+  "posted": 1,
+  "skipped": 0,
+  "aborted": 0,
+  "failed": 0,
+  "raw_mismatch": 0
+ },
+ "raw_mismatch": [],
+ "log": [
+  {
+   "kind": "post",
+   "target": "projects/nc-fuji-obuchi-bess",
+   "row_id": "P3",
+   "result": "dry",
+   "payload": {
+    "name": "NC富士市大渕蓄電所",
+    "status": [
+     "建設中"
+    ],
+    "outputMw": null,
+    "capacityMwh": null,
+    "prefecture": "静岡県",
+    "city": "富士市",
+    "operator": "",
+    "epc": "株式会社クラフティア",
+    "cod": "",
+    "marketParticipation": [],
+    "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000124.000161802.html",
+    "slug": "nc-fuji-obuchi-bess",
+    "body": "<p><strong>NC富士市大渕蓄電所</strong>は、日本蓄電池株式会社の系統用蓄電所。2026年11月24日のリリースは、「開発を進めているNC富士市大渕蓄電所（所在地：静岡県富士市）において系統用蓄電池を設置したことをお知らせいたします」と述べ、施設概要を、所在地「静岡県富士市」、施工会社「株式会社 クラフティア」、設置開始日「2026年11月16日」とする（出典: <a href=\"https://prtimes.jp/main/html/rd/p/000000124.000161802.html\" target=\"_blank\" rel=\"noopener noreferrer\">【日本蓄電池株式会社】静岡県富士市にて系統用蓄電施設「NC富士市大渕蓄電所」蓄電池設置開始（日本蓄電池株式会社、2026年11月24日）</a>）。出力・容量・運転開始の記載はない。</p><p>一次は日本蓄電池が「系統用蓄電池を設置した」とするまでで、事業主体・所有者の記載が無いため、事業者の欄は空にした。</p><p><em>※本項目は一次情報（出典リンク）に基づく編集部の整理です。</em></p>"
+   }
+  }
+ ]
+}

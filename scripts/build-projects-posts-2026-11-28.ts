@@ -1,12 +1,12 @@
 #!/usr/bin/env tsx
 /**
- * scripts/build-projects-posts-2026-11-28.ts — 日本蓄電池の新しい発表 4 本の便（_QUEUE.md 144 行）の POST の計画を作る（読むだけ）。scripts/build-projects-posts-2026-11-26.ts の写し
+ * scripts/build-projects-posts-2026-11-28.ts — 11/28 の 2 便（_QUEUE.md 144 行「日本蓄電池の新しい発表 4 本」＝--part=J／145 行「富士市大渕の登録」＝--part=K）の POST の計画を作る（読むだけ）。scripts/build-projects-posts-2026-11-26.ts の写し
  *
- * 計画: reports/projects-plan-2026-11-28-J_ユウ.json（sha256 先頭 16 桁 1fc921173df2173d）＝OneDrive の正本の写し。
+ * 計画: reports/projects-plan-2026-11-28-J_ユウ.json（sha256 先頭 16 桁 1fc921173df2173d）／…-K_ユウ.json（8f5686fc4a55d529）＝OneDrive の正本の写し。
  * やること（microCMS は GET だけ・書込 0）: posts の slug が microCMS に無いことを確かめ、applier（scripts/apply-projects-2026-11-28.ts → runApplier）の形に書く。
  * slug が既にあれば、その件は計画に入れない（problems に書く）。--skip=<key,…> で一次が合わなかった件を外せる。
  *
- * 実行: set -a && . ./.env.local && set +a && npx tsx scripts/build-projects-posts-2026-11-28.ts [--skip=P3]
+ * 実行: set -a && . ./.env.local && set +a && npx tsx scripts/build-projects-posts-2026-11-28.ts --part=J [--skip=P3]
  */
 import * as fs from 'node:fs';
 export {};
@@ -14,8 +14,14 @@ export {};
 const DOMAIN = process.env.MICROCMS_SERVICE_DOMAIN ?? 'bess-net';
 const KEY = process.env.MICROCMS_API_KEY;
 if (!KEY) { console.error('MICROCMS_API_KEY 未設定'); process.exit(1); }
-const PLAN_IN = 'reports/projects-plan-2026-11-28-J_ユウ.json';
-const OUT = 'reports/projects-weekly-nc-posts-2026-11-28.json';
+const PART = process.argv.find((x) => x.startsWith('--part='))?.slice(7) ?? 'J';
+const PARTS: Record<string, [out: string, label: string]> = {
+  J: ['reports/projects-weekly-nc-posts-2026-11-28.json', '日本蓄電池の新しい発表 4 本の便（_QUEUE.md 144 行）'],
+  K: ['reports/projects-weekly-nc-fix-posts-2026-11-28.json', '富士市大渕の登録と池新田の役割の文の便（_QUEUE.md 145 行）'],
+};
+if (!PARTS[PART]) { console.error(`--part=${Object.keys(PARTS).join('|')}`); process.exit(1); }
+const PLAN_IN = `reports/projects-plan-2026-11-28-${PART}_ユウ.json`;
+const [OUT, LABEL] = PARTS[PART];
 const SKIP = new Set((process.argv.find((x) => x.startsWith('--skip='))?.slice(7) ?? '').split(',').filter(Boolean));
 const EP = `https://${DOMAIN}.microcms.io/api/v1/projects`;
 const yu = JSON.parse(fs.readFileSync(PLAN_IN, 'utf8')) as { posts: { key: string; slug: string; payload: Record<string, unknown> }[] };
@@ -40,7 +46,7 @@ async function main(): Promise<void> {
     await new Promise((x) => setTimeout(x, 300));
   }
   const out = {
-    note: `日本蓄電池の新しい発表 4 本の便（_QUEUE.md 144 行）。ユウの計画（${PLAN_IN}）の posts を、書込直前の GET で slug の空きを確かめて applier の形にしたもの。scripts/apply-projects-2026-11-28.ts（runApplier）が読む。既定 dry run・本実行は --apply。`,
+    note: `${LABEL}。ユウの計画（${PLAN_IN}）の posts を、書込直前の GET で slug の空きを確かめて applier の形にしたもの。scripts/apply-projects-2026-11-28.ts（runApplier）が読む。既定 dry run・本実行は --apply。`,
     generated: new Date().toISOString(),
     checks: { problems },
     plan: { posts, patches: [] },

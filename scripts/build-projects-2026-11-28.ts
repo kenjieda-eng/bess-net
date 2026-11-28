@@ -1,8 +1,8 @@
 #!/usr/bin/env tsx
 /**
- * scripts/build-projects-2026-11-28.ts — 日本蓄電池の新しい発表 4 本の便（_QUEUE.md 144 行・--part=J）の PATCHの書込計画を作る（読むだけ）。scripts/build-projects-2026-11-22.ts の写し（表だけ替えた）
+ * scripts/build-projects-2026-11-28.ts — 11/28 の 2 便（_QUEUE.md 144 行＝--part=J／145 行＝--part=K）の PATCHの書込計画を作る（読むだけ）。scripts/build-projects-2026-11-22.ts の写し（表だけ替えた）
  *
- * 計画: reports/projects-plan-2026-11-28-J_ユウ.json（sha256 先頭 16 桁 1fc921173df2173d）＝OneDrive の正本の写し。
+ * 計画: reports/projects-plan-2026-11-28-J_ユウ.json（sha256 先頭 16 桁 1fc921173df2173d）／…-K_ユウ.json（8f5686fc4a55d529）＝OneDrive の正本の写し。
  * やること（microCMS は GET だけ・書込 0）:
  *   1. patches を slug で GET し、計画の old（空は null・[]・''・未設定を同じに扱う）・keep と照らす。old が違う op は、その op だけ計画に入れない（problems に書く）。
  *   2. applier（scripts/apply-projects-2026-11-28.ts → runApplier）の計画を書く。
@@ -22,6 +22,7 @@ const arg = (k: string) => process.argv.find((x) => x.startsWith(`--${k}=`))?.sl
 const PART = arg('part') ?? '';
 const PARTS: Record<string, [out: string, label: string]> = {
   J: ['reports/projects-weekly-nc-patch-2026-11-28.json', '日本蓄電池の新しい発表 4 本の便（_QUEUE.md 144 行）'],
+  K: ['reports/projects-weekly-nc-fix-patch-2026-11-28.json', '富士市大渕の登録と池新田の役割の文の便（_QUEUE.md 145 行）'],
 };
 if (!PARTS[PART]) { console.error(`--part=${Object.keys(PARTS).join('|')}`); process.exit(1); }
 const PLAN_IN = `reports/projects-plan-2026-11-28-${PART}_ユウ.json`;

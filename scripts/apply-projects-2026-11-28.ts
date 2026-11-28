@@ -1,6 +1,7 @@
 #!/usr/bin/env tsx
 /**
- * scripts/apply-projects-2026-11-28.ts — 日本蓄電池の新しい発表 4 本の便（_QUEUE.md 144 行）の applier
+ * scripts/apply-projects-2026-11-28.ts — 11/28 の 2 便（_QUEUE.md 144 行「日本蓄電池の新しい発表 4 本」・145 行「富士市大渕の登録と池新田の役割の文」）の applier
+ * 145 行の計画は reports/projects-weekly-nc-fix-posts-2026-11-28.json・reports/projects-weekly-nc-fix-patch-2026-11-28.json（--plan= で渡す）
  *
  * 計画 JSON: POST は scripts/build-projects-posts-2026-11-28.ts が書く（reports/projects-weekly-nc-posts-2026-11-28.json・既定）／
  * PATCH は scripts/build-projects-2026-11-28.ts --part=J が書く（reports/projects-weekly-nc-patch-2026-11-28.json＝--plan= で渡す）。中身は scripts/lib/microcms-applier.ts。
